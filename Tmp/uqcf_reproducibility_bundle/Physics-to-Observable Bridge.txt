@@ -1,0 +1,257 @@
+Here is the clean phase write-up.
+
+UQCF-GEM Phase Audit: Physics-to-Observable Bridge
+
+1. Locked theory result
+
+The strongest internal result remains the solved core:
+
+\sigma_* \approx 0.7333,\qquad
+\eta_* \approx 0.7563,
+
+so
+
+D_f \approx 2.7333,\qquad
+\gamma \approx 0.2667,
+\qquad
+\delta \sim \gamma^3 \approx 0.01897.
+
+This comes from the coefficient-eliminated fixed-point condition
+
+\mathcal C(\sigma)(2-\sigma)=K_{\rm ent}(\sigma)^2\,\sigma,
+
+together with the quadratic-order coupled flow. At this truncation, the action is Gaussian, the nonlocal quadratic operator is unique, and the minimal identification \rho=B holds at current order. Local stability remains a stable spiral around the solved core.
+
+So the internal scaffold remains intact.
+
+⸻
+
+2. What was corrected
+
+The early Planck signal was overstated because some comparisons used the wrong baseline. Once the correct fiducial baseline is used,
+
+C_L^{\rm base}=A\,C_L^{\rm fid},
+
+the empirical picture becomes smaller but cleaner.
+
+This correction did not damage the solved core. It only reduced the strength of the empirical claim.
+
+⸻
+
+3. Universal coherence-history law
+
+The next important advance was to stop treating redshift as just passive expansion and instead formalize it as a coherence-history coordinate.
+
+The minimal coherence history compatible with the solved core is
+
+\mathcal C(z)=\left(\frac{1+z}{1+z_*}\right)^{-\gamma}.
+
+This gives the universal coherence kernel
+
+\mathcal K_{\rm coh}(z)=\gamma \ln\!\left(\frac{1+z}{1+z_*}\right).
+
+Likewise, in scale space,
+
+\mathcal K_{\rm coh}(k)=\gamma \ln\!\left(\frac{k}{k_*}\right).
+
+This was the first real bridge from the solved core to observable transfer language.
+
+⸻
+
+4. Nonlocal participation from the action
+
+From the quadratic propagator
+
+G(\omega)=\frac{1}{Z_\phi \omega^2 + N_\sigma |\omega|^\sigma},
+
+we derived the nonlocal participation factor
+
+W_{\rm nl}(\omega)=\frac{\eta(\omega)}{1+\eta(\omega)},
+\qquad
+\eta(\omega)=\eta_*\left(\frac{\omega}{\omega_*}\right)^{\sigma-2}.
+
+With \sigma-2\approx -1.2667, this means the nonlocal sector becomes more important at lower effective scale.
+
+This is the first transfer amplification that came directly from the action rather than from fit freedom.
+
+⸻
+
+5. Source + propagation derivation
+
+The key theoretical advance of this phase was recognizing that the observable response has two pieces:
+
+\frac{\Delta O}{O}
+=
+\left\langle \Delta_{\rm src}\right\rangle_O
++
+\left\langle \Delta_{\rm prop}\right\rangle_O.
+
+The propagation piece carried an explicit \gamma suppression. But when the source spectrum is allowed to respond through the same anomalous/fractal law, the leading source contribution carries the complementary factor. At leading order, these combine so that the explicit \gamma-suppression cancels.
+
+This yields the improved total kernel
+
+\Delta_{\rm tot}(s)
+=
+-\delta \ln\!\left(\frac{s}{s_*}\right)\,
+\frac{\eta(s)}{1+\eta(s)}.
+
+This is the strongest theory-to-observable bridge derived so far.
+
+It means the total leading correction is not the weaker
+-\gamma\delta \ln(s/s_*)\,W_{\rm nl},
+but the stronger
+-\delta \ln(s/s_*)\,W_{\rm nl}.
+
+That is the central physics result of the phase.
+
+⸻
+
+6. Observable specializations
+
+Planck
+
+For Planck lensing, the effective scale is k\sim L/\chi, so the source+propagation correction becomes
+
+\frac{\Delta P_\delta(k,z)}{P_\delta(k,z)}
+=
+-\delta \ln\!\left(\frac{k}{k_*}\right)\,
+\frac{\eta_*(k/k_*)^{\sigma-2}}{1+\eta_*(k/k_*)^{\sigma-2}}.
+
+This projects into the lensing spectrum through the standard line-of-sight kernel. The important point is that Planck sees a broad scale-sensitive mode, so it is naturally the more responsive probe.
+
+DESI
+
+For DESI, the effective coherence coordinate is redshift-like,
+
+\mathcal K_{\rm DESI}(z)
+=
+-\delta \ln\!\left(\frac{1+z}{1+z_*}\right)\,
+\frac{\eta_*((1+z)/(1+z_*))^{\sigma-2}}{1+\eta_*((1+z)/(1+z_*))^{\sigma-2}}.
+
+Then
+
+\Xi_{DH}(z)=\mathcal K_{\rm DESI}(z),
+
+\Xi_{DM}(z)=
+\frac{\int_0^z \frac{dz'}{H(z')}\mathcal K_{\rm DESI}(z')}
+{\int_0^z \frac{dz'}{H(z')}},
+
+\Xi_{DV}(z)=\frac{2\Xi_{DM}(z)+\Xi_{DH}(z)}{3}.
+
+The line-of-sight averaging keeps DESI naturally weaker.
+
+⸻
+
+7. Numerical operator amplitudes
+
+Using the source+propagation operator on the actual data support, the characteristic amplitudes came out approximately:
+
+Planck
+	•	aggressive:
+\sim 0.0109
+	•	conservative:
+\sim 0.0081
+
+DESI
+	•	mixed:
+\sim 0.0039
+	•	DM:
+\sim 0.0031
+	•	DH:
+\sim 0.0018
+	•	DV:
+\sim 0.0051
+
+So the theory predicts:
+	•	Planck > DESI
+	•	modest absolute amplitudes
+	•	DESI weak enough to be near-null under strict testing
+
+That is consistent with the cleaned empirical pattern.
+
+⸻
+
+8. Empirical status after strict fits
+
+Using only disciplined baselines and the derived source+propagation operator:
+
+Planck aggressive
+
+Baseline:
+A\,C_L^{\rm fid}
+
+Strict source+propagation operator:
+	•	\Delta \chi^2 \approx -2.25
+	•	\Delta \text{AIC} \approx -2.25
+	•	\Delta \text{BIC} \approx -2.25
+
+This is a modest favorable improvement.
+
+Planck conservative
+
+Strict source+propagation operator:
+	•	\Delta \chi^2 \approx -1.12
+	•	\Delta \text{AIC} \approx -1.12
+	•	\Delta \text{BIC} \approx -1.12
+
+This is a small favorable improvement.
+
+DESI
+
+Strict source+propagation operator:
+	•	\Delta \chi^2 \approx +0.94
+	•	\Delta \text{AIC} \approx +0.94
+	•	\Delta \text{BIC} \approx +0.94
+
+So DESI becomes worse, i.e. effectively null.
+
+This is the cleanest empirical picture so far.
+
+⸻
+
+9. Final audit of the phase
+
+Held up
+	•	solved core
+	•	quadratic RG closure
+	•	local stability
+	•	\rho=B at quadratic order
+	•	coherence-history interpretation
+	•	nonlocal participation factor
+	•	source+propagation cancellation result
+
+Corrected
+	•	earlier strong Planck claims
+	•	over-flexible transfer operators
+	•	wrong Planck baseline comparisons
+
+Current empirical verdict
+	•	Planck: modest positive support under the strict derived operator
+	•	DESI: null under the strict derived operator
+
+That is not proof, but it is disciplined progress.
+
+⸻
+
+10. What remains open
+
+The biggest remaining open problem is now very specific:
+
+derive the full lattice-to-observable transfer function beyond the leading source+propagation kernel.
+
+In other words, the current operator is the best leading-order bridge, but it may still be missing observable-specific structure in how the source spectrum is generated before projection.
+
+Only after that should the next theory phase proceed:
+	•	\phi^4 interaction
+	•	higher-order RG corrections
+	•	testing whether \rho=B stays exact or splits
+
+⸻
+
+11. Locked conclusion
+
+The most defensible current statement is:
+
+UQCF-GEM now has a coherent solved core, quadratic-order RG closure, and a first-principles source+propagation transfer operator derived from the action and the anomalous scaling law. Under this strict operator, the model shows modest favorable support on Planck and null behavior on DESI. The framework remains alive and more sharply defined than before; the main unresolved task is a stronger lattice-to-observable transfer derivation, not more flexible fitting.
+
+That is the phase I would lock.
