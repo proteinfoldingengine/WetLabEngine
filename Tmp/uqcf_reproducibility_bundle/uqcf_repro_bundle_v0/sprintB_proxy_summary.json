@@ -1,0 +1,20 @@
+{
+  "bridge_amplitude": 0.022060460000000004,
+  "shape": {
+    "z_c": 1.0,
+    "p": 2.0
+  },
+  "baseline_proxy": {
+    "Omega_m": 0.3,
+    "model": "flat_LCDM_reference_proxy"
+  },
+  "response_extrema": {
+    "H_ratio_min": 1.0002184203960396,
+    "H_ratio_max": 1.017982740961183,
+    "DM_ratio_min": 0.9911876850334997,
+    "DM_ratio_max": 1.0,
+    "FAP_ratio_min": 1.0000110832944875,
+    "FAP_ratio_max": 1.0090119564173718
+  },
+  "proposed_falsification_rule": "If the DESI-linked target quantity requires a negative F_AP-style response over the tested redshift interval, or a positive response substantially larger than the locked proxy band (roughly 1.2% to 3.6% here), then this bridge version fails as a minimal expansion-response theory."
+}
