@@ -1,0 +1,37 @@
+{
+  "packet_name": "uqcf_ai_peer_review_packet_v1",
+  "copied_files": [
+    "01_math_spine/equations.md",
+    "02_quantitative_proxy/sprintF_proxy_confrontation_table.csv",
+    "02_quantitative_proxy/sprintF_proxy_confrontation_summary.json",
+    "02_quantitative_proxy/sprintF_proxy_confrontation_note.md",
+    "02_quantitative_proxy/sprintF_residual_mode_audit.csv",
+    "02_quantitative_proxy/sprintF_residual_mode_audit_summary.json",
+    "02_quantitative_proxy/sprintF_residual_mode_audit_note.md",
+    "03_context/context_novelty_note.md",
+    "04_observable_lock/sprintB_locked_falsification_grid.csv",
+    "04_observable_lock/sprintB_locked_falsification_grid_summary.json",
+    "05_scope/sprintD_hard_falsification_note.md"
+  ],
+  "missing_files": [],
+  "review_targets": {
+    "math_visibility": true,
+    "quantitative_proxy_check": true,
+    "context_positioning": true,
+    "hard_falsification_scope": true
+  },
+  "current_claim_level": {
+    "supports": [
+      "explicit equation visibility",
+      "status labeling of assumptions vs derived vs numerically certified relations",
+      "first quantitative proxy confrontation",
+      "context/novelty positioning note",
+      "locked falsification layer"
+    ],
+    "does_not_support_yet": [
+      "full likelihood cosmology claim",
+      "symbolic global proof",
+      "human-journal-ready final theory manuscript"
+    ]
+  }
+}
