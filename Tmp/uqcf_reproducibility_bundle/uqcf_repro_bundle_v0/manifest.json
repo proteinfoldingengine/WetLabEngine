@@ -1,0 +1,46 @@
+{
+  "bundle_name": "uqcf_repro_bundle_v0",
+  "copied_files": [
+    "01_baseline_closure/flow_selection_runs.csv",
+    "01_baseline_closure/flow_selection_trajectories.csv",
+    "01_baseline_closure/flow_selection_summary.json",
+    "02_selector_audit/ablation_results.csv",
+    "02_selector_audit/ablation_trajectories.csv",
+    "02_selector_audit/ablation_summary.json",
+    "03_selector_refinement/joint_selector_scan.csv",
+    "03_selector_refinement/joint_selector_summary.json",
+    "03_selector_refinement/narrow_lag_refine_scan.csv",
+    "03_selector_refinement/narrow_lag_refine_summary.json",
+    "04_observable_proxy/sprintB_expansion_response_ansatz.md",
+    "04_observable_proxy/sprintB_proxy_curves.csv",
+    "04_observable_proxy/sprintB_proxy_samples.csv",
+    "04_observable_proxy/sprintB_proxy_summary.json",
+    "04_observable_proxy/sprintB_locked_falsification_grid.csv",
+    "04_observable_proxy/sprintB_locked_falsification_grid_summary.json"
+  ],
+  "missing_files": [],
+  "expected_highlights": {
+    "baseline_selector_target": {
+      "gamma_final": 0.273032,
+      "W_final": 0.430698,
+      "chi_final": 0.400546
+    },
+    "best_narrow_selector": {
+      "lam_coeff": 1.4,
+      "q_exp": 0.75,
+      "gamma_final": 0.268643,
+      "W_final": 0.430646,
+      "chi_final": 0.400982
+    },
+    "locked_falsification_band_percent": {
+      "min": 0.2587,
+      "max": 0.9111
+    }
+  },
+  "entrypoints": [
+    "scripts/reproduce_baseline_closure.py",
+    "scripts/reproduce_selector_refinement.py",
+    "scripts/reproduce_observable_proxy.py"
+  ],
+  "run_order_file": "RUN_ORDER.md"
+}
