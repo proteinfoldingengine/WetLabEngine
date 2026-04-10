@@ -1,0 +1,56 @@
+{
+  "toy_parameters": {
+    "A0": 1.0,
+    "B0": 1.0,
+    "C0": 1.0,
+    "d_eff": 3.9
+  },
+  "affine_sigma_map": {
+    "a": -2.619076613414477,
+    "b": 4.824526991712046
+  },
+  "mode_summary": [
+    {
+      "mode": "full",
+      "D_spec_min": 0.6916256250196626,
+      "D_spec_max": 0.6983226789283474,
+      "gap_min": 1.3615384615384614,
+      "gap_max": 1.430769230769231,
+      "half_life_min": 0.4844577068429724,
+      "half_life_max": 0.5090911495638016,
+      "F_at_0.18": 0.10231011734740053,
+      "F_at_gamma_star": -1.1102230246251565e-16,
+      "F_at_0.36": -0.10999999999999999,
+      "D_spec_monotone_increasing": true,
+      "gap_monotone_decreasing": true
+    },
+    {
+      "mode": "micro",
+      "D_spec_min": 0.734161069532468,
+      "D_spec_max": 0.7373493127501003,
+      "gap_min": 0.9076923076923082,
+      "gap_max": 0.9538461538461536,
+      "half_life_min": 0.726686560264459,
+      "half_life_max": 0.763636724345702,
+      "F_at_0.18": -0.10290328280909905,
+      "F_at_gamma_star": -0.1971614956788882,
+      "F_at_0.36": -0.29828504826870905,
+      "D_spec_monotone_increasing": true,
+      "gap_monotone_decreasing": true
+    },
+    {
+      "mode": "shell_only",
+      "D_spec_min": 0.3687771232904285,
+      "D_spec_max": 0.37196536650806034,
+      "gap_min": 0.0,
+      "gap_max": 4.2099881092857046e-17,
+      "half_life_min": 1.646435007811814e+16,
+      "half_life_max": Infinity,
+      "F_at_0.18": 1.6599014281738838,
+      "F_at_gamma_star": 1.5656432153040853,
+      "F_at_0.36": 1.464519662714276,
+      "D_spec_monotone_increasing": true,
+      "gap_monotone_decreasing": false
+    }
+  ]
+}
