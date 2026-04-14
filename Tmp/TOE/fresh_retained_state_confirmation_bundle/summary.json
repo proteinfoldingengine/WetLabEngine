@@ -1,0 +1,30 @@
+{
+  "predictor": [
+    {
+      "model": "G_only",
+      "roc_auc": 0.9446664207851816,
+      "pr_auc": 0.18224373040995687,
+      "log_loss": 0.3930158841093144
+    },
+    {
+      "model": "G_plus_R",
+      "roc_auc": 0.9568512143813348,
+      "pr_auc": 0.18677931101435166,
+      "log_loss": 0.38934276069853013
+    }
+  ],
+  "matched_pair_summary": [
+    {
+      "n_close_pairs": 301,
+      "close_pair_disagreement_rate": 0.013289036544850499,
+      "n_far_pairs": 275,
+      "far_pair_disagreement_rate": 0.5018181818181818,
+      "disagreement_gap_far_minus_close": 0.48852914527333136
+    }
+  ],
+  "repeated_split": {
+    "mean_roc_auc_lift": 0.006108697407391922,
+    "median_roc_auc_lift": 0.01192323480351326,
+    "share_positive_roc_auc_lift": 0.725
+  }
+}
