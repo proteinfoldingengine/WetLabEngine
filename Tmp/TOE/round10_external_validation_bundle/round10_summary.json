@@ -1,0 +1,58 @@
+{
+  "status_label": "Meaningful pilot external-validation evidence",
+  "galaxies": {
+    "DDO154": {
+      "recon_vs_sparc": {
+        "rmse": 2.602876583761136,
+        "mae": 2.261228991413643,
+        "corr": 0.986430679831266
+      },
+      "gas_shape": {
+        "corr_cumulative": 0.889718995264571,
+        "corr_support": 0.801791934614489
+      },
+      "disk_shape": {
+        "corr_best_weighted": 0.75204623497818
+      },
+      "bridge": {
+        "best_improvement_kms": 2.7391184743800103
+      }
+    },
+    "NGC2403": {
+      "recon_vs_things": {
+        "rmse": 12.281412698947783,
+        "mae": 9.650646103408947,
+        "corr": 0.9032954075782117
+      },
+      "recon_vs_sparc": {
+        "rmse": 12.658111213226343,
+        "mae": 10.024416467113335,
+        "corr": 0.9330104773234925
+      },
+      "gas_shape": {
+        "corr_cumulative": 0.9902646535994493,
+        "corr_support": 0.7011521370350217
+      },
+      "disk_shape": {
+        "corr_support": 0.890290163220834
+      },
+      "bridge": {
+        "ext_gas_improvement_kms": 2.5424074538552617,
+        "ext_gas_ext_disk_improvement_kms": 2.67392440533693
+      }
+    },
+    "NGC3198": {
+      "recon_vs_things": {
+        "rmse": 16.606280475686198,
+        "mae": 13.694498434303373,
+        "corr": 0.8445709589265276
+      },
+      "recon_vs_sparc": {
+        "rmse": 20.523555844498805,
+        "mae": 17.086998589725102,
+        "corr": 0.8489596140790168
+      },
+      "status": "external reconstruction success"
+    }
+  }
+}
