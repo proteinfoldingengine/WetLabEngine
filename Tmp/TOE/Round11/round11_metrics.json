@@ -1,0 +1,65 @@
+{
+  "NGC6946": {
+    "gas_side": {
+      "rmse_baryonic": 43.80458801593429,
+      "rmse_bridge": 35.23687526090526,
+      "improvement": 8.567712755029035
+    },
+    "near_full_raw": {
+      "rmse_baryonic": 26.557843077550487,
+      "rmse_bridge": 31.880901395050532,
+      "improvement": -5.323058317500045
+    },
+    "near_full_smoothed_disk": {
+      "rmse_baryonic": 27.021962570814235,
+      "rmse_bridge": 32.9564960837582,
+      "improvement": -5.934533512943968
+    },
+    "near_full_disk_normalized": {
+      "scale_factor": 0.746734329227971,
+      "rmse_baryonic": 47.69270752955982,
+      "rmse_bridge": 38.57884946297066,
+      "improvement": 9.11385806658916
+    }
+  },
+  "NGC5055": {
+    "reconstruction": {
+      "rmse_things": 14.796302425861908,
+      "rmse_sparc": 12.614445487928933,
+      "corr_things": 0.8278592676255341,
+      "corr_sparc": 0.9545098358817726
+    },
+    "gas_shape": {
+      "corr_cumulative": 0.8842458860139433,
+      "corr_support_proxy": 0.6837466218205499
+    },
+    "gas_side_raw": {
+      "rmse_baryonic": 52.34936933133581,
+      "rmse_bridge": 62.99009791973796,
+      "improvement": -10.640728588402155
+    },
+    "gas_side_residual_aware_ablation": {
+      "rmse_baryonic": 52.34936933133581,
+      "rmse_frozen": 62.99009791973796,
+      "rmse_resid_aware": 50.907245908248356,
+      "improvement_vs_baryonic": 1.4421234230874518
+    }
+  },
+  "NGC2841": {
+    "reconstruction": {
+      "rmse_things": 10.798876745106169,
+      "rmse_sparc": 16.464945407067283,
+      "corr_things": 0.9280840610374256,
+      "corr_sparc": 0.9104745976235217
+    },
+    "gas_shape": {
+      "corr_cumulative": 0.9558957521328661,
+      "corr_support_proxy": 0.5655414740897033
+    },
+    "gas_side_raw": {
+      "rmse_baryonic": 81.5441388103896,
+      "rmse_bridge": 68.00262930251242,
+      "improvement": 13.54150950787718
+    }
+  }
+}

@@ -1,0 +1,7 @@
+galaxy,reconstruction_status,gas_side_status,near_full_status,notes
+DDO154,strong,positive,success,Anchor near-full external success.
+NGC2403,strong,positive,success,Strong near-full external success.
+NGC3198,strong,positive_modest,not_run,Reconstruction success; gas-side pilot positive but modest.
+NGC6946,strong,strong_positive,success_with_disk_amplitude_caveat,Raw near-full failed due to outer disk proxy amplitude inflation; disk-amplitude-normalized ablation restored strong positive Bridge result.
+NGC5055,strong,raw_fail_then_residual_aware_positive,not_run,Raw gas-side frozen Bridge worsened fit; root cause localized to missing residual-awareness/sparsity control. Diagnostic residual-aware ablation became positive.
+NGC2841,strong,strong_positive,not_run,Catastrophic first pass rescued by basin relocation; gas-side pilot strongly positive.
