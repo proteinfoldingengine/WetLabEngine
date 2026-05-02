@@ -1,0 +1,27 @@
+{
+  "n": 171,
+  "n_exception_flagged": 0,
+  "positive_improvement_rate": 0.9415204678362573,
+  "mean_hybrid_improvement": 15.33268559946402,
+  "catastrophic_failures": 0,
+  "btfr_obs": {
+    "n": 171,
+    "slope": 0.27081376090947457,
+    "intercept": 0.6927894345755312,
+    "scatter_rmse": 0.10993146042311981
+  },
+  "btfr_bridge": {
+    "n": 171,
+    "slope": 0.2877617844049857,
+    "intercept": 0.5594247978135547,
+    "scatter_rmse": 0.10310158244409962
+  },
+  "rar_baryonic": {
+    "n": 3373,
+    "scatter_rmse": 0.3901826147286833
+  },
+  "rar_bridge": {
+    "n": 3375,
+    "scatter_rmse": 0.18175595069131176
+  }
+}
