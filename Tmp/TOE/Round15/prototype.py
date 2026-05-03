@@ -200,3 +200,25 @@ df.loc[mask, "status"] = "ready_to_score"
 df.to_csv(HARVEST, index=False)
 
 print(df[df["system_name"] == "Abell 1689"][["system_name", "status", "notes_working"]].to_string(index=False))
+
+from pathlib import Path
+import json
+
+OUT = Path("/content/Round15/challenge15_scoreable/abell1689_prototype_classification.json")
+
+payload = {
+    "system_name": "Abell 1689",
+    "challenge": 15,
+    "prototype_status": "weak_negative_not_claimable",
+    "reason": [
+        "temporary prototype values",
+        "manual extraction still approximate",
+        "first Tier 1 mapping only",
+        "insufficient basis for frozen-scaffold judgment"
+    ],
+    "recommended_next_step": "start Abell 1835 while later refining A1689 extraction once"
+}
+
+OUT.write_text(json.dumps(payload, indent=2))
+print(f"Saved: {OUT}")
+print(json.dumps(payload, indent=2))
