@@ -190,3 +190,37 @@ print("Updated gas:")
 print(gas.to_string(index=False))
 print("\nUpdated mass:")
 print(mass.to_string(index=False))
+
+from pathlib import Path
+import pandas as pd
+
+HARVEST = Path("/content/Round15/challenge15_harvest/challenge15_data_harvest_template.csv")
+GAS = Path("/content/Round15/challenge15_sources/abell1689/abell1689_gas_profile_manual.csv")
+MASS = Path("/content/Round15/challenge15_sources/abell1689/abell1689_mass_profile_manual.csv")
+
+df = pd.read_csv(HARVEST)
+gas = pd.read_csv(GAS)
+mass = pd.read_csv(MASS)
+
+mask = df["system_name"] == "Abell 1689"
+
+gas_nonempty = gas["gas_profile_manual_extract"].notna().sum()
+mass_nonempty = mass["mass_profile_manual_extract"].notna().sum()
+
+if gas_nonempty > 0 and mass_nonempty > 0:
+    df.loc[mask, "has_radial_profile_ready"] = True
+    df.loc[mask, "status"] = "mapped"
+    df.loc[mask, "notes_working"] = (
+        f"Gas and mass prototype curves extracted locally "
+        f"(gas points={gas_nonempty}, mass points={mass_nonempty}). "
+        "Next step: densify curves and build first scoreable Tier 1 prototype."
+    )
+
+df.to_csv(HARVEST, index=False)
+
+print(df[df["system_name"] == "Abell 1689"][[
+    "system_name", "status", "has_radial_profile_ready", "notes_working"
+]].to_string(index=False))
+print("\nUpdated:", HARVEST)
+
+
