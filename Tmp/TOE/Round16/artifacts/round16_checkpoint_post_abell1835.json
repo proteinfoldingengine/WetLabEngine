@@ -1,0 +1,56 @@
+{
+  "round": 16,
+  "stage": "post_abell1835_positive",
+  "systems": [
+    {
+      "system_name": "1E 0657-56 (Bullet Cluster)",
+      "tier": "tier_2_merger",
+      "status": "reference_locked_positive_from_round15"
+    },
+    {
+      "system_name": "MACS J0025.4-1222",
+      "tier": "tier_2_merger",
+      "verdict": "positive_signal",
+      "main_offset_kpc": 328.60919037665394,
+      "subcluster_offset_kpc": 200.63897926375125,
+      "catastrophic_failure": false
+    },
+    {
+      "system_name": "Abell 2744",
+      "tier": "tier_2_merger",
+      "verdict": "positive_signal",
+      "main_offset_kpc": 32.40906080438343,
+      "subcluster_offset_kpc": 61.662443549087826,
+      "catastrophic_failure": false,
+      "evidence_level": "page_locked_map_readoff_with_table_support"
+    },
+    {
+      "system_name": "Abell 2261",
+      "tier": "tier_1_relaxed",
+      "status": "reference_locked_positive_from_round15"
+    },
+    {
+      "system_name": "Abell 1689",
+      "tier": "tier_1_relaxed",
+      "status": "reference_locked_neutral_from_round15"
+    },
+    {
+      "system_name": "Abell 1835",
+      "tier": "tier_1_relaxed",
+      "verdict": "positive_signal",
+      "mean_abs_norm_gap": 0.02807017543859644,
+      "max_abs_norm_gap": 0.0701754385964911,
+      "catastrophic_failure": false,
+      "evidence_level": "single_source_proxy"
+    }
+  ],
+  "round16_read": {
+    "tier2_positive_count": 3,
+    "tier1_positive_count": 2,
+    "tier1_neutral_count": 1,
+    "catastrophic_failures": 0,
+    "minimum_valid_scored_sample_reached": true,
+    "round16_status": "likely_win_path"
+  },
+  "scientific_position": "Round 16 now shows broadened positive signal across both merger and relaxed-cluster regimes under the frozen scaffold, with zero catastrophic failures."
+}

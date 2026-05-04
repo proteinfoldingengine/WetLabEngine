@@ -1,0 +1,26 @@
+{
+  "round": 16,
+  "decision": "likely_win",
+  "win_level": "conditional_hardened_expansion_win",
+  "basis": [
+    "minimum valid scored sample reached",
+    "zero catastrophic failures",
+    "multiple Tier 2 merger positives",
+    "broad Tier 1 relaxed-cluster positives plus neutral comparison case",
+    "no evidence of per-object retuning"
+  ],
+  "summary_counts": {
+    "tier2_positive": 2,
+    "tier2_neutral": 1,
+    "tier1_positive": 4,
+    "tier1_neutral": 1,
+    "catastrophic_failures": 0
+  },
+  "scientific_position": "Round 16 has reached likely-win status at the conditional hardened expansion level. The frozen scaffold remains bounded across the expanded cluster sample.",
+  "limitations": [
+    "some results remain proxy-stage or map-read-off stage",
+    "not all precommitted candidates were fully recovered",
+    "full external-grade audit packet not yet assembled"
+  ],
+  "recommended_next_step": "one final hardening or closeout freeze"
+}

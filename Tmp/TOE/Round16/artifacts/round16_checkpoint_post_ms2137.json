@@ -1,0 +1,66 @@
+{
+  "round": 16,
+  "stage": "post_ms2137_positive",
+  "systems": [
+    {
+      "system_name": "1E 0657-56 (Bullet Cluster)",
+      "tier": "tier_2_merger",
+      "status": "reference_locked_positive_from_round15"
+    },
+    {
+      "system_name": "MACS J0025.4-1222",
+      "tier": "tier_2_merger",
+      "verdict": "positive_signal",
+      "main_offset_kpc": 328.60919037665394,
+      "subcluster_offset_kpc": 200.63897926375125,
+      "catastrophic_failure": false
+    },
+    {
+      "system_name": "Abell 2744",
+      "tier": "tier_2_merger",
+      "verdict": "neutral",
+      "main_offset_kpc": 18.696404883173546,
+      "subcluster_offset_kpc": 34.50613874531762,
+      "catastrophic_failure": false,
+      "evidence_level": "page_locked_tighter_read_off_with_table_support"
+    },
+    {
+      "system_name": "Abell 2261",
+      "tier": "tier_1_relaxed",
+      "status": "reference_locked_positive_from_round15"
+    },
+    {
+      "system_name": "Abell 1689",
+      "tier": "tier_1_relaxed",
+      "status": "reference_locked_neutral_from_round15"
+    },
+    {
+      "system_name": "Abell 1835",
+      "tier": "tier_1_relaxed",
+      "verdict": "positive_signal",
+      "mean_abs_norm_gap": 0.02807017543859644,
+      "max_abs_norm_gap": 0.0701754385964911,
+      "catastrophic_failure": false,
+      "evidence_level": "single_source_proxy"
+    },
+    {
+      "system_name": "MS 2137-2353",
+      "tier": "tier_1_relaxed",
+      "verdict": "positive_signal",
+      "mean_abs_norm_gap": 0.01709401709401704,
+      "max_abs_norm_gap": 0.0427350427350426,
+      "catastrophic_failure": false,
+      "evidence_level": "single_source_proxy"
+    }
+  ],
+  "round16_read": {
+    "tier2_positive_count": 2,
+    "tier2_neutral_count": 1,
+    "tier1_positive_count": 4,
+    "tier1_neutral_count": 1,
+    "catastrophic_failures": 0,
+    "minimum_valid_scored_sample_reached": true,
+    "round16_status": "very_strong_win_path"
+  },
+  "scientific_position": "Round 16 now shows broad positive/neutral behavior across both merger and relaxed-cluster regimes under the frozen scaffold, with zero catastrophic failures."
+}

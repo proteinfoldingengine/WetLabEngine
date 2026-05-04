@@ -1,0 +1,19 @@
+{
+  "round": 16,
+  "system_name": "Abell 1835",
+  "status": "partial_salvage_candidate",
+  "valid_candidate": [
+    "abell1835_chandra_allen_2002.pdf"
+  ],
+  "bad_candidates": [
+    "abell1835_chandra_schmidt_2001.pdf",
+    "abell1835_cluster_lensing_2008.pdf",
+    "abell1835_wl_cfht_2006.pdf",
+    "abell1835_xray_mass_2006.pdf"
+  ],
+  "reason": [
+    "Allen 2002 is a real cluster/X-ray anchor and may support Abell 1835 gas/hydrostatic mass extraction",
+    "other copied PDFs are unrelated or generic review material"
+  ],
+  "next_step": "scan Allen 2002 for Abell 1835-specific pages and determine whether first-pass Tier 1 extraction is possible"
+}

@@ -1,0 +1,45 @@
+{
+  "round": 16,
+  "stage": "post_abell2744_positive",
+  "systems": [
+    {
+      "system_name": "1E 0657-56 (Bullet Cluster)",
+      "tier": "tier_2_merger",
+      "status": "reference_locked_positive_from_round15"
+    },
+    {
+      "system_name": "MACS J0025.4-1222",
+      "tier": "tier_2_merger",
+      "verdict": "positive_signal",
+      "main_offset_kpc": 328.60919037665394,
+      "subcluster_offset_kpc": 200.63897926375125,
+      "catastrophic_failure": false
+    },
+    {
+      "system_name": "Abell 2744",
+      "tier": "tier_2_merger",
+      "verdict": "positive_signal",
+      "main_offset_kpc": 32.40906080438343,
+      "subcluster_offset_kpc": 61.662443549087826,
+      "catastrophic_failure": false,
+      "evidence_level": "page_locked_map_readoff_with_table_support"
+    },
+    {
+      "system_name": "Abell 2261",
+      "tier": "tier_1_relaxed",
+      "status": "reference_locked_positive_from_round15"
+    },
+    {
+      "system_name": "Abell 1689",
+      "tier": "tier_1_relaxed",
+      "status": "reference_locked_neutral_from_round15"
+    }
+  ],
+  "round16_read": {
+    "new_scored_systems": 2,
+    "new_positive_count": 2,
+    "new_catastrophic_failures": 0,
+    "tier2_generalization_status": "strongly_strengthened"
+  },
+  "scientific_position": "Round 16 now has positive Tier 2 merger results on MACS J0025.4-1222 and Abell 2744, adding to the locked Bullet reference and materially strengthening merger-regime generalization."
+}

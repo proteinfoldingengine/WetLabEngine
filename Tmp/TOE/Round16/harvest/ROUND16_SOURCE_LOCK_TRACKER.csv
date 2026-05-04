@@ -1,0 +1,15 @@
+system_name,tier,gas_source_found,mass_source_found,gas_pages_locked,mass_pages_locked,support_table_locked,extraction_feasible,source_lock_pass,score_gate_pass,current_stage,notes
+1E 0657-56 (Bullet Cluster),tier_2_merger,True,True,True,True,True,True,True,True,reference_locked,Carried from Round 15; fully usable as Round 16 reference case.
+MACS J0025.4-1222,tier_2_merger,True,True,True,True,True,True,True,True,mapped,"Round 16 score complete: verdict=positive_signal, main_offset_kpc=328.6, subcluster_offset_kpc=200.6. Unified Bradac 2008 source; page-7 map, page-6 table."
+Abell 2744,tier_2_merger,True,True,True,True,True,True,True,True,mapped,"Merten 2011 tighter pass complete: verdict=neutral, main_offset_kpc=18.7, subcluster_offset_kpc=34.5. Page-locked map with Table 2 support."
+Abell 520,tier_2_merger,False,False,False,False,False,False,False,False,blocked_bad_sources,Initial Abell 520 candidate PDFs were unrelated or unusable. Need refreshed gas-map and lensing-map candidates before locking.
+ACT-CL J0102-4915 (El Gordo),tier_2_merger,False,False,False,False,False,False,False,False,blocked_bad_sources,Initial El Gordo candidate PDFs were unrelated or unusable. Need refreshed gas-map and lensing-map candidates before locking.
+Tier2_HOLDOUT_TBD,tier_2_merger,False,False,False,False,False,False,False,False,holdout_reserved,Do not unlock until holdout moment.
+Abell 2261,tier_1_relaxed,True,True,True,True,False,True,True,True,reference_locked,Carried from Round 15 positive Tier 1 case.
+Abell 1689,tier_1_relaxed,True,True,True,True,False,True,True,True,reference_locked,Carried from Round 15 neutral Tier 1 case.
+Abell 1835,tier_1_relaxed,True,True,True,True,True,True,True,True,proxy_mapped,"Allen 2002 proxy score complete: verdict=positive_signal, mean_abs_norm_gap=0.0281. Single-source proxy only."
+Relaxed_TBD_1,tier_1_relaxed,False,False,False,False,False,False,False,False,not_started,Reserved relaxed cluster slot.
+Relaxed_TBD_2,tier_1_relaxed,False,False,False,False,False,False,False,False,not_started,Reserved relaxed cluster slot.
+Relaxed_TBD_3,tier_1_relaxed,False,False,False,False,False,False,False,False,not_started,Reserved relaxed cluster slot.
+RX J1347.5-1145,tier_1_relaxed,False,False,False,False,False,False,False,False,reclassified_disturbed,"Miranda 2008 is valid but indicates bimodal/merger structure. Keep as reserve Tier 2/disturbed system, not primary relaxed-cluster add."
+MS 2137-2353,tier_1_relaxed,True,True,True,True,True,True,True,True,proxy_mapped,"Allen 2002 proxy score complete: verdict=positive_signal, mean_abs_norm_gap=0.0171. Single-source proxy only."
