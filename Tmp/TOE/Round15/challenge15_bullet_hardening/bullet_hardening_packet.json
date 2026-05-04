@@ -1,0 +1,36 @@
+{
+  "challenge": 15,
+  "system_name": "1E 0657-56 (Bullet Cluster)",
+  "stage": "hardened_tier2_evidence_packet",
+  "source_lock": {
+    "gas_map": {
+      "pdf": "bullet_cluster_chandra_2006.pdf",
+      "page": 2,
+      "role": "primary gas/X-ray morphology anchor"
+    },
+    "mass_map": {
+      "pdf": "bullet_cluster_lensing_2006.pdf",
+      "page": 10,
+      "role": "primary lensing mass-map anchor"
+    },
+    "offset_table_support": {
+      "pdf": "bullet_cluster_lensing_2006.pdf",
+      "page": 8,
+      "role": "published offset calibration support"
+    }
+  },
+  "current_best_result": {
+    "challenge": 15,
+    "system_name": "1E 0657-56 (Bullet Cluster)",
+    "tier": "tier_2_merger",
+    "prototype_stage": "tighter_table_anchored_pass",
+    "primary_metric": "gas_mass_offset_kpc",
+    "main_offset_kpc": 306.03000904530063,
+    "subcluster_offset_kpc": 182.26315941245875,
+    "mean_offset_kpc": 244.1465842288797,
+    "verdict": "positive_signal",
+    "catastrophic_failure": false,
+    "interpretation_guardrail": "page-8 table anchored prototype; still not final claim quality"
+  },
+  "scientific_guardrail": "This packet is stronger than the first prototype because the result is page-anchored and table-calibrated, but it is still not final claim quality because the extraction remains manual."
+}

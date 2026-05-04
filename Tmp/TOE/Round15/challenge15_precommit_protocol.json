@@ -1,0 +1,43 @@
+{
+  "challenge": "15",
+  "name": "skeptics_challenge_cluster_lensing_stress_test",
+  "frozen_from": "Challenge 14 closeout",
+  "rules": {
+    "retuning_allowed": false,
+    "new_parameters_allowed": false,
+    "new_selector_logic_allowed": false,
+    "dark_component_added_by_hand": false,
+    "post_hoc_cluster_specific_fixes": false
+  },
+  "tiers": {
+    "tier_1_relaxed_clusters": {
+      "goal": "test frozen scaffold against cluster-scale radial mass/lensing structure",
+      "required_inputs": [
+        "gas_map_or_profile",
+        "reference_total_mass_or_lensing_profile"
+      ]
+    },
+    "tier_2_merging_clusters": {
+      "goal": "test frozen scaffold on merger-offset systems",
+      "required_inputs": [
+        "gas_map_or_profile",
+        "reference_lensing_or_mass_map",
+        "merger_system"
+      ]
+    }
+  },
+  "outputs": [
+    "locked_sample.csv",
+    "per_system_summary.csv",
+    "aggregate_summary.json",
+    "top_gain_audit.csv",
+    "top_failure_audit.csv",
+    "challenge15_closeout_memo.md"
+  ],
+  "success_logic": {
+    "positive_signal_required": true,
+    "catastrophic_failures_should_be_zero_or_bounded": true,
+    "worst_case_audit_required": true,
+    "public_precommit_required": true
+  }
+}

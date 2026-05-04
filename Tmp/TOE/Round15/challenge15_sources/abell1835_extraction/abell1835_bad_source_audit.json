@@ -1,0 +1,17 @@
+{
+  "system_name": "Abell 1835",
+  "challenge": 15,
+  "status": "downloaded_not_locked",
+  "bad_candidates": [
+    "abell1835_chandra_schmidt_2001.pdf",
+    "abell1835_wl_cfht_2006.pdf",
+    "abell1835_xray_mass_2006.pdf",
+    "abell1835_cluster_lensing_2008.pdf"
+  ],
+  "reason": [
+    "not Abell 1835 profile anchors",
+    "general review or unrelated paper",
+    "not suitable for Tier 1 radial-profile locking"
+  ],
+  "next_step": "refresh candidate source set"
+}
