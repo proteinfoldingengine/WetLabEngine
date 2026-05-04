@@ -1,0 +1,29 @@
+{
+  "challenge": 15,
+  "stage": "tier1_relaxed_two_cluster_checkpoint",
+  "systems": [
+    {
+      "system_name": "Abell 1689",
+      "verdict": "neutral",
+      "mean_abs_norm_gap": 0.10646864686468643,
+      "max_abs_norm_gap": 0.43089108910891083,
+      "n_shared_points": 9,
+      "catastrophic_failure": false
+    },
+    {
+      "system_name": "Abell 2261",
+      "verdict": "positive_signal",
+      "mean_abs_norm_gap": 0.09067254826748498,
+      "max_abs_norm_gap": 0.1440736478711162,
+      "n_shared_points": 9,
+      "catastrophic_failure": false
+    }
+  ],
+  "aggregate_read": {
+    "n_systems": 2,
+    "positive_count": 1,
+    "neutral_count": 1,
+    "destructive_count": 0,
+    "tier1_path_status": "viable_but_not_final"
+  }
+}

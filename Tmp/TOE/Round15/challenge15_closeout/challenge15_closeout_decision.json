@@ -1,0 +1,43 @@
+{
+  "challenge": 15,
+  "decision": "win",
+  "win_level": "conditional_hardened_prototype_win",
+  "systems": [
+    {
+      "system_name": "Abell 1689",
+      "tier": "tier_1_relaxed",
+      "verdict": "neutral",
+      "mean_abs_norm_gap": 0.10646864686468643,
+      "catastrophic_failure": false
+    },
+    {
+      "system_name": "Abell 2261",
+      "tier": "tier_1_relaxed",
+      "verdict": "positive_signal",
+      "mean_abs_norm_gap": 0.09067254826748498,
+      "catastrophic_failure": false
+    },
+    {
+      "system_name": "1E 0657-56 (Bullet Cluster)",
+      "tier": "tier_2_merger",
+      "verdict": "positive_signal",
+      "main_offset_kpc": 306.0,
+      "subcluster_offset_kpc": 182.3,
+      "evidence_level": "page_locked_and_table_calibrated",
+      "catastrophic_failure": false
+    }
+  ],
+  "aggregate_read": {
+    "n_systems": 3,
+    "positive_count": 2,
+    "neutral_count": 1,
+    "destructive_count": 0,
+    "catastrophic_failures": 0
+  },
+  "scientific_position": "Round 15 is won at the conditional hardened prototype level. The frozen gas-first scaffold produced bounded positive/neutral signal across relaxed-cluster and merger-offset regimes with zero catastrophic failures.",
+  "limitations": [
+    "manual extraction remains in the loop",
+    "not yet a production-grade external audit packet",
+    "additional merger analogs would strengthen generalization further"
+  ]
+}

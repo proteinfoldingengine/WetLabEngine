@@ -1,0 +1,22 @@
+{
+  "goal": "Map each locked Challenge 15 system to concrete gas and mass/lensing data products.",
+  "minimum_for_tier1": [
+    "gas radial profile or recoverable radial gas map",
+    "reference total-mass/lensing radial profile",
+    "shared radius scale or alignable scale"
+  ],
+  "minimum_for_tier2": [
+    "gas 2D map",
+    "mass/lensing 2D map",
+    "common coordinate frame or recoverable registration",
+    "offset-measurement capability"
+  ],
+  "required_status_values": [
+    "unfilled",
+    "candidate_found",
+    "downloaded",
+    "mapped",
+    "ready_to_score",
+    "blocked"
+  ]
+}

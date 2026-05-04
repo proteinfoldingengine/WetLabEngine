@@ -1,0 +1,20 @@
+{
+  "challenge": 15,
+  "name": "skeptics_challenge_cluster_lensing_stress_test",
+  "frozen_from": "Challenge 14 closeout",
+  "rules": {
+    "retuning_allowed": false,
+    "new_parameters_allowed": false,
+    "new_selector_logic_allowed": false,
+    "dark_component_added_by_hand": false,
+    "post_hoc_cluster_specific_fixes": false
+  },
+  "success_criteria": {
+    "profile_fit_required": true,
+    "offset_test_required_for_mergers": true,
+    "zero_catastrophic_failures_required": true,
+    "worst_case_audit_required": true
+  },
+  "sample_file": "/content/challenge15_locked_sample/challenge15_locked_sample.csv",
+  "n_systems": 6
+}

@@ -1,0 +1,32 @@
+{
+  "challenge": 15,
+  "tier_1_relaxed_clusters": {
+    "primary_metric": "profile_rmse_or_equivalent",
+    "secondary_metrics": [
+      "outer_profile_match",
+      "mass_profile_shape_agreement"
+    ],
+    "failure_classes": [
+      "positive_signal",
+      "neutral",
+      "destructive_failure"
+    ]
+  },
+  "tier_2_merging_clusters": {
+    "primary_metric": "offset_structure_agreement",
+    "secondary_metrics": [
+      "mass_peak_alignment_behavior",
+      "gas_peak_separation_behavior"
+    ],
+    "failure_classes": [
+      "positive_signal",
+      "neutral",
+      "destructive_failure"
+    ]
+  },
+  "global_rules": {
+    "catastrophic_failure_definition": "large destructive mismatch or unphysical output pattern relative to locked observable target",
+    "worst_case_audit_required": true,
+    "retuning_allowed": false
+  }
+}

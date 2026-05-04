@@ -1,0 +1,7 @@
+tier,system_name,system_type,primary_observable,gas_data_expected,reference_mass_expected,must_include_offset_test,notes
+tier_1_relaxed,Abell 1689,relaxed_cluster,radial_mass_lensing_profile,xray_gas_profile_or_map,strong_plus_weak_lensing_profile,False,Relaxed reference cluster
+tier_1_relaxed,Abell 1835,relaxed_cluster,radial_mass_lensing_profile,xray_gas_profile_or_map,lensing_or_hydrostatic_profile,False,Relaxed reference cluster
+tier_1_relaxed,Abell 2261,relaxed_cluster,radial_mass_lensing_profile,xray_gas_profile_or_map,lensing_profile,False,Relaxed reference cluster
+tier_2_merger,1E 0657-56 (Bullet Cluster),merging_cluster,gas_mass_lensing_offset,xray_gas_map,weak_plus_strong_lensing_mass_map,True,Canonical skeptic stress test
+tier_2_merger,MACS J0025.4-1222,merging_cluster,gas_mass_lensing_offset,xray_gas_map,lensing_mass_map,True,Bullet-like merger analog
+tier_2_merger,Abell 2744,merging_cluster,gas_mass_lensing_offset,xray_gas_map,lensing_mass_map,True,Complex merger stress test

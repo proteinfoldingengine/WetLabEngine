@@ -1,0 +1,37 @@
+{
+  "challenge": 15,
+  "stage": "tier1_tier2_prototype_checkpoint_tighter_bullet",
+  "systems": [
+    {
+      "system_name": "Abell 1689",
+      "tier": "tier_1_relaxed",
+      "verdict": "neutral",
+      "mean_abs_norm_gap": 0.10646864686468643,
+      "catastrophic_failure": false
+    },
+    {
+      "system_name": "Abell 2261",
+      "tier": "tier_1_relaxed",
+      "verdict": "positive_signal",
+      "mean_abs_norm_gap": 0.09067254826748498,
+      "catastrophic_failure": false
+    },
+    {
+      "system_name": "1E 0657-56 (Bullet Cluster)",
+      "tier": "tier_2_merger",
+      "verdict": "positive_signal",
+      "main_offset_kpc": 306.0,
+      "subcluster_offset_kpc": 182.3,
+      "catastrophic_failure": false
+    }
+  ],
+  "aggregate_read": {
+    "n_systems": 3,
+    "positive_count": 2,
+    "neutral_count": 1,
+    "destructive_count": 0,
+    "catastrophic_failures": 0,
+    "round15_status": "strong_prototype_checkpoint"
+  },
+  "scientific_position": "Round 15 now shows positive prototype-stage signal in both relaxed-cluster and merger-offset regimes under the frozen gas-first scaffold, with zero catastrophic failures."
+}

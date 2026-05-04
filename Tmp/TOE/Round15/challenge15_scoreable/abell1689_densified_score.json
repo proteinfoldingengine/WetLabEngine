@@ -1,0 +1,16 @@
+{
+  "challenge": 15,
+  "system_name": "Abell 1689",
+  "tier": "tier_1_relaxed",
+  "prototype_stage": "densified_first_pass",
+  "primary_metric": "mean_abs_norm_gap",
+  "mean_abs_norm_gap": 0.2509393066010957,
+  "max_abs_norm_gap": 0.6451612903225806,
+  "n_gas_points": 10,
+  "n_mass_points": 10,
+  "shared_r_min_kpc": 120.0,
+  "shared_r_max_kpc": 380.0,
+  "verdict": "destructive_failure",
+  "catastrophic_failure": true,
+  "interpretation_guardrail": "temporary prototype values only; not valid for final scientific claim"
+}
