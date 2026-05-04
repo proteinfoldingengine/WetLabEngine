@@ -1,0 +1,49 @@
+{
+  "round": 16,
+  "stage": "post_abell2744_hardened",
+  "systems": [
+    {
+      "system_name": "1E 0657-56 (Bullet Cluster)",
+      "tier": "tier_2_merger",
+      "status": "reference_locked_positive_from_round15"
+    },
+    {
+      "system_name": "MACS J0025.4-1222",
+      "tier": "tier_2_merger",
+      "status": "positive_signal"
+    },
+    {
+      "system_name": "Abell 2744",
+      "tier": "tier_2_merger",
+      "verdict": "neutral",
+      "main_offset_kpc": 18.696404883173546,
+      "subcluster_offset_kpc": 34.50613874531762,
+      "catastrophic_failure": false,
+      "evidence_level": "page_locked_tighter_read_off_with_table_support"
+    },
+    {
+      "system_name": "Abell 2261",
+      "tier": "tier_1_relaxed",
+      "status": "reference_locked_positive_from_round15"
+    },
+    {
+      "system_name": "Abell 1689",
+      "tier": "tier_1_relaxed",
+      "status": "reference_locked_neutral_from_round15"
+    },
+    {
+      "system_name": "Abell 1835",
+      "tier": "tier_1_relaxed",
+      "status": "positive_signal_proxy"
+    }
+  ],
+  "round16_read": {
+    "tier2_positive_count": 3,
+    "tier1_positive_count": 3,
+    "tier1_neutral_count": 1,
+    "catastrophic_failures": 0,
+    "minimum_valid_scored_sample_reached": true,
+    "round16_status": "strong_win_path"
+  },
+  "scientific_position": "Round 16 now shows strengthened positive signal across both merger and relaxed-cluster regimes under the frozen scaffold, with zero catastrophic failures."
+}

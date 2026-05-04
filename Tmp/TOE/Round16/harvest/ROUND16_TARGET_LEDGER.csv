@@ -1,0 +1,15 @@
+system_name,tier,origin,status,source_lock_ready,score_ready,holdout,notes
+1E 0657-56 (Bullet Cluster),tier_2_merger,carried_from_round15,source_locked_reference,True,True,False,Reference Tier 2 case from Round 15; page-locked and table-calibrated.
+MACS J0025.4-1222,tier_2_merger,preactivated_round15,mapped,True,True,False,"Positive Round 16 Tier 2 result. main_offset_kpc=328.6, subcluster_offset_kpc=200.6."
+Abell 2744,tier_2_merger,preactivated_round15,mapped_candidate,True,False,False,Unified source locked from Merten 2011; ready for first offset extraction.
+Abell 520,tier_2_merger,new_round16,blocked_bad_sources,False,False,False,Initial candidate PDFs audited and rejected; requires source refresh.
+ACT-CL J0102-4915 (El Gordo),tier_2_merger,new_round16,blocked_bad_sources,False,False,False,Initial candidate PDFs audited and rejected; requires source refresh.
+Tier2_HOLDOUT_TBD,tier_2_merger,new_round16,holdout_reserved,False,False,True,Reserved holdout merger system; do not open sources until scaffold is fully frozen.
+Abell 2261,tier_1_relaxed,carried_from_round15,source_locked_reference,True,True,False,Reference Tier 1 positive case from Round 15.
+Abell 1689,tier_1_relaxed,carried_from_round15,source_locked_reference,True,True,False,Reference Tier 1 neutral comparison case from Round 15.
+Abell 1835,tier_1_relaxed,preactivated_round15,proxy_mapped_candidate,True,False,False,Allen 2002 locked as first proxy source; ready for relaxed-cluster proxy scoring.
+Relaxed_TBD_1,tier_1_relaxed,new_round16,candidate_not_started,False,False,False,Reserved relaxed-cluster slot.
+Relaxed_TBD_2,tier_1_relaxed,new_round16,candidate_not_started,False,False,False,Reserved relaxed-cluster slot.
+Relaxed_TBD_3,tier_1_relaxed,new_round16,candidate_not_started,False,False,False,Reserved relaxed-cluster slot.
+RX J1347.5-1145,tier_1_relaxed,new_round16,reclassified_disturbed,False,False,False,"Valid source found, but system is not cleanly relaxed; reserve for disturbed/Tier 2 use."
+MS 2137-2353,tier_1_relaxed,new_round16,proxy_mapped_candidate,True,False,False,Allen 2002 locked as first proxy source; ready for relaxed-cluster proxy scoring.

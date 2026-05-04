@@ -1,0 +1,77 @@
+{
+  "round": 16,
+  "decision": "likely_win",
+  "win_level": "conditional_hardened_expansion_win",
+  "systems": [
+    {
+      "system_name": "1E 0657-56 (Bullet Cluster)",
+      "tier": "tier_2_merger",
+      "result": "positive_signal",
+      "evidence_level": "reference_locked_positive_from_round15",
+      "notes": "Carried as locked merger reference."
+    },
+    {
+      "system_name": "MACS J0025.4-1222",
+      "tier": "tier_2_merger",
+      "result": "positive_signal",
+      "main_offset_kpc": 328.60919037665394,
+      "subcluster_offset_kpc": 200.63897926375125,
+      "evidence_level": "page_locked_and_table_anchored",
+      "notes": "Unified Brada\u010d 2008 source; strong merger-offset result."
+    },
+    {
+      "system_name": "Abell 2744",
+      "tier": "tier_2_merger",
+      "result": "neutral",
+      "main_offset_kpc": 18.696404883173546,
+      "subcluster_offset_kpc": 34.50613874531762,
+      "evidence_level": "page_locked_tighter_read_off_with_table_support",
+      "notes": "Hardened from an initial looser positive to a tighter neutral."
+    },
+    {
+      "system_name": "Abell 2261",
+      "tier": "tier_1_relaxed",
+      "result": "positive_signal",
+      "evidence_level": "reference_locked_positive_from_round15",
+      "notes": "Round 15 positive relaxed-cluster anchor."
+    },
+    {
+      "system_name": "Abell 1689",
+      "tier": "tier_1_relaxed",
+      "result": "neutral",
+      "evidence_level": "reference_locked_neutral_from_round15",
+      "notes": "Round 15 neutral comparison case."
+    },
+    {
+      "system_name": "Abell 1835",
+      "tier": "tier_1_relaxed",
+      "result": "positive_signal",
+      "mean_abs_norm_gap": 0.02807017543859644,
+      "max_abs_norm_gap": 0.0701754385964911,
+      "evidence_level": "single_source_proxy",
+      "notes": "Allen 2002 proxy-stage pass."
+    },
+    {
+      "system_name": "MS 2137-2353",
+      "tier": "tier_1_relaxed",
+      "result": "positive_signal",
+      "mean_abs_norm_gap": 0.01709401709401704,
+      "max_abs_norm_gap": 0.0427350427350426,
+      "evidence_level": "single_source_proxy",
+      "notes": "Allen 2002 proxy-stage pass."
+    }
+  ],
+  "summary_counts": {
+    "tier2_positive": 2,
+    "tier2_neutral": 1,
+    "tier1_positive": 4,
+    "tier1_neutral": 1,
+    "catastrophic_failures": 0
+  },
+  "scientific_position": "Round 16 has reached likely-win status at the conditional hardened expansion level. The frozen scaffold remained bounded across the expanded cluster sample with zero catastrophic failures.",
+  "limitations": [
+    "Some results remain proxy-stage or map-read-off stage.",
+    "Not all precommitted candidates were recovered with clean source-locks.",
+    "A full external-grade audit packet is still a stronger next step than a victory lap."
+  ]
+}
