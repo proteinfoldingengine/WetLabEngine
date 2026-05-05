@@ -1,0 +1,16 @@
+ADM causal slice action verifier
+==================================================
+Route:
+h_ab sequence -> K_ab proxy + R3 proxy -> ADM-like action sum
+This is not full ADM/EH convergence.
+
+PASS: 95.0
+SOFT_FAIL: 0.0
+HARD_FAIL: 5.0
+n_slices_median: 9.0
+action_proxy_median: 1536.5295729464574
+action_abs_proxy_median: 1713.2725166548257
+median_volume_median: 622.8593153687095
+median_K_norm_median: 0.16377724219581252
+median_R3_proxy_median: 0.4512541438778868
+finite_fraction_median: 1.0
