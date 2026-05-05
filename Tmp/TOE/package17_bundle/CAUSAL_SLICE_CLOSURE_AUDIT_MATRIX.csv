@@ -1,0 +1,12 @@
+seam,file,status,verifier_result,main_limitation
+Causal partial order,CAUSAL_ORDER_DERIVATION.md,Verifier-backed candidate,"PASS 84.0%; SOFT 16.0%; HARD 0.0%","Update order not proven physical time"
+Interval scaling,CAUSAL_INTERVAL_GEOMETRY.md,Verifier-backed coordinate-assisted,"PASS 87.5%; SOFT 2.5%; HARD 10.0%","Proper time still coordinate-assisted"
+Order-only distance proxy,ORDER_ONLY_METRIC_RECONSTRUCTION.md,Verifier-backed proxy,"PASS 88.75%; SOFT 1.25%; HARD 10.0%","Does not reconstruct metric"
+Naive order embedding,ORDER_DISTANCE_EMBEDDING.md,Failed,"HARD 100.0%","Causal distance not full metric distance"
+Failure analysis,ORDER_DISTANCE_FAILURE_ANALYSIS.md,Closed diagnostic,"Confirmed missingness/nonmetric failure","Diagnostic only"
+Causal-set reconstruction,CAUSAL_SET_RECONSTRUCTION.md,Verifier-backed candidate,"PASS 95.0%; HARD 5.0%","Spatial adjacency still proxy"
+Antichain spatial geometry,ANTICHAIN_SPATIAL_GEOMETRY.md,Verifier-backed candidate,"PASS 92.0%; HARD 8.0%","No spatial metric yet"
+Antichain graph metric,ANTICHAIN_GRAPH_METRIC.md,Verifier-backed candidate,"PASS 92.5%; HARD 7.5%","Metric proxy not full metric proof"
+Causal-slice Lorentzian metric,CAUSAL_SLICE_LORENTZIAN_METRIC.md,Verifier-backed candidate,"PASS 78.75%; SOFT 13.75%; HARD 7.5%","Lapse/shift not derived"
+Causal-slice curvature,CAUSAL_SLICE_CURVATURE.md,Proxy/verifier-backed,"PASS 80.0%; SOFT 2.5%; HARD 17.5%","Curvature proxies not Ricci scalar"
+ADM causal-slice action,ADM_CAUSAL_SLICE_ACTION.md,Proxy/verifier-backed,"PASS 95.0%; HARD 5.0%","Not full ADM/EH action"
