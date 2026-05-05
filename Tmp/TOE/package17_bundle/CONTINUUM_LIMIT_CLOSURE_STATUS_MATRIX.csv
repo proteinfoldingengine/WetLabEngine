@@ -1,0 +1,14 @@
+seam,file,status,primary_evidence,main_gap,public_claim_safe
+Microscopic pruning law,MICROSCOPIC_LAW.md,Open/upstream,Assumed source law,Needs final explicit law and invariant statement,No
+Bridge operator form,OPERATOR_THEOREM.md,Conditional,Theorem-shaped affine bridge,Needs full closure from microscopic law,Limited
+Bridge coefficient chi,CHI_FIXED_POINT.md,Verifier-backed,Fixed-point/loading sweep,No first-principles uniqueness,Yes with caveat
+Micro-to-block constants,MICRO_TO_BLOCK_ACTION.md,Verifier-backed candidate,micro_to_block_action_verifier.py,Constants not uniquely derived,Yes with caveat
+Block memory action,DISCRETE_MEMORY_ACTION.md,Verifier-backed candidate,discrete_memory_action_verifier.py,Block action not unique/covariant,Yes with caveat
+Continuum coefficients,COEFFICIENT_DERIVATION.md,Verifier-backed candidate,continuum_limit_verifier_v2.py,Scale constants remain,Yes with caveat
+Scalar coarse-graining,COARSE_GRAINING_MAP.md,Verifier-backed candidate,coarse_graining_map_verifier.py,Metric-compatible covariance open,Yes with caveat
+Local metric reconstruction,EMERGENT_METRIC_MAP.md,Verifier-backed candidate,emergent_metric_map_verifier.py,Riemannian/local only,Yes with caveat
+Lorentzian signature,LORENTZIAN_SIGNATURE_MAP.md,Verifier-backed candidate,lorentzian_signature_map_verifier.py,Causal/time label not derived,Yes with caveat
+Curvature estimation,CURVATURE_ESTIMATION.md,Failure-prone/verifier-backed toy,curvature_estimation_verifier.py,Full 4D Lorentzian curvature open,Limited
+Einstein-Hilbert action limit,EINSTEIN_HILBERT_LIMIT.md,Failure-prone/verifier-backed toy,einstein_hilbert_limit_verifier.py,4D Lorentzian EH convergence open,Limited
+Field-equation variation,FIELD_EQUATION_VARIATION.md,Conditional/verifier-backed proxy,field_equation_variation_verifier.py,Exact Q_nu and full EH variation open,Limited
+Full continuum GR limit,CONTINUUM_LIMIT.md,Not closed,Organized chain + verifiers,Requires all seams closed together,No
