@@ -1,0 +1,15 @@
+Field equation variation verifier
+==================================================
+Symbolic proxy:
+Tmem_general: eta**2*(ZR*dr2/2 + r**2*v2/2) + eta*(Tmat*lam*r + r*v1) + v0
+Tmem_with_V0_zero: eta**2*(ZR*dr2/2 + r**2*v2/2) + eta*(Tmat*lam*r + r*v1)
+Q_exchange_proxy: eta*(Tmat*lam + divT*lam*r)
+
+Sweep results:
+PASS: 95.1
+SOFT_FAIL: 0.0
+HARD_FAIL: 4.9
+leading_order_median: 1.0
+fraction_Oeta: 100.0
+fraction_Oeta2: 0.0
+fraction_Q_Oeta: 100.0
