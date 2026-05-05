@@ -1,0 +1,17 @@
+Lorentzian signature map verifier
+==================================================
+Candidate tested:
+time-oriented coordinates + positive lapse/geometry scales + adjacency
+-> signed interval relation
+-> local symmetric metric estimate
+-> signature check: one negative, three positive
+
+Sweep results:
+PASS: 94.0
+SOFT_FAIL: 0.0
+HARD_FAIL: 6.0
+valid_fraction_median: 1.0
+signature_fraction_median: 1.0
+cond_median: 1.5625773434744308
+metric_variation_median: 0.5218283833020964
+valid_fraction_min: 1.0
