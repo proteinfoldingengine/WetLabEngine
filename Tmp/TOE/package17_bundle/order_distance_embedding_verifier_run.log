@@ -1,0 +1,9 @@
+Order-distance embedding verifier
+==================================================
+Pipeline:
+causal order -> chain/interval distances -> local MDS embedding -> metric proxy
+Hidden coordinates are used only for evaluation correlation.
+
+PASS: 0.0
+SOFT_FAIL: 0.0
+HARD_FAIL: 100.0
