@@ -1,0 +1,19 @@
+Symbolic weak-memory expansions
+========================================
+
+general:
+v0 + eta*(Tmat*lam*r + r*v1) + eta**2*(ZR*dr2/2 + r**2*v2/2) + O(eta**3)
+
+V0_zero:
+eta*(Tmat*lam*r + r*v1) + eta**2*(ZR*dr2/2 + r**2*v2/2) + O(eta**3)
+
+V0_Vprime0_zero:
+eta**2*(ZR*dr2/2 + r**2*v2/2) + eta**3*r**3*v3/6 + Tmat*eta*lam*r + O(eta**4)
+
+Weak-memory decoupling only
+========================================
+{'PASS': 94.24, 'SOFT_FAIL': 0.0, 'HARD_FAIL': 5.76}
+
+With stronger stationary-vacuum condition V'(0)=0
+========================================
+{'PASS': 0.0, 'SOFT_FAIL': 94.24, 'HARD_FAIL': 5.76}
