@@ -1,0 +1,16 @@
+Antichain spatial geometry verifier
+==================================================
+Route:
+causal order -> rank antichains -> causal-profile adjacency -> spatial graph diagnostics
+Coordinates are used only for hidden spatial-neighbor evaluation.
+
+PASS: 92.0
+SOFT_FAIL: 0.0
+HARD_FAIL: 8.0
+n_slices_median: 9.0
+median_slice_size_median: 38.25
+antichain_violation_rate_median: 0.0
+neighbor_precision_median: 0.6858272508869291
+neighbor_recall_proxy_median: 0.7379981884057971
+graph_connectivity_fraction_median: 1.0
+laplacian_rank_median_median: 37.25
