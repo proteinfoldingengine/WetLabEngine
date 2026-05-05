@@ -1,0 +1,5 @@
+quantity,status,evidence,safe_use,next_gap
+N lapse,Verifier-backed candidate,"PASS 93.33%; lapse_cv_median 0.0608",Main ADM proxy,Unique normalization
+raw centroid N_a,Failed proxy,"hidden_shift_corr_median -0.0975",Do not use,Gauge noise
+aligned N_a,Structured proxy/open,"PASS 86%; hidden_shift_corr_median 0.0746",Diagnostic only,Slice matching and gauge-stable vector field
+full ADM lapse+shift,Not closed,Shift unresolved,Not yet,Covariant ADM integration
