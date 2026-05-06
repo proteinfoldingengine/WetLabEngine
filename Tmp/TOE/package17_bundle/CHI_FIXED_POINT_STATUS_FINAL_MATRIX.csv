@@ -1,0 +1,11 @@
+item,status,evidence,next_action
+target_loading_condition,derived,b≈2.75(1-a),carry forward
+pruning_integrals,derived_under_Gaussian,If/Is=exp(-eps^2/(2sigma^2)),derive/noise law later
+coefficient_map,micro_to_block_constrained,m_R2=1-a and Z/lambda scale with chi(1-chi),carry selected chi
+broad_naturalness,rare_but_reachable,0.8588% hit rate,do not claim natural
+free_selection,selection_plausible,5.066% hit rate,not enough
+block_selection,rare_block_selection,3.824% hit rate,not enough
+failure_mode,localized,corr_Lopt_q=0.985,anchor issue
+asymmetry_principle,stabilization_plausible,5.15% hit rate,needs derivation
+block_asymmetry,failed,0 joint A/B q0 hits,freeze chi status
+final_chi_status,selected_regime_not_derived,reachable but not derived,return to geometry

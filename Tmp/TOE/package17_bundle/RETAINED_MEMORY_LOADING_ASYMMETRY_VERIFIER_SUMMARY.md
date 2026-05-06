@@ -1,0 +1,123 @@
+# RETAINED_MEMORY_LOADING_ASYMMETRY_VERIFIER_SUMMARY.md
+
+# Verifier Summary
+## Retained-memory loading asymmetry
+
+## Status
+**Executed bottleneck verifier. Target loading remains rare.**
+
+Verifier file:
+
+```text
+retained_memory_loading_asymmetry_verifier.py
+```
+
+Execution log:
+
+```text
+retained_memory_loading_asymmetry_verifier_run.log
+```
+
+## Captured output
+
+```text
+Retained memory loading asymmetry verifier
+==================================================
+Route:
+explicit pruning integrals + micro-to-block loading -> q=b/(1-a) distribution
+
+broad_valid_samples: 74865
+broad_target_hits_2p75_to_3p3: 1127
+broad_target_hit_rate_percent: 1.5053763440860215
+broad_near_hits_2p4_to_3p6: 2503
+broad_near_hit_rate_percent: 3.3433513657917584
+broad_q_median_all: 0.17553275951011793
+broad_chi_median_all: 0.8506781218217448
+broad_loading_drive_median_all: 0.17553275950955477
+broad_G_star_median_all: 0.30487392734473956
+broad_memory_input_median_all: 0.09364437647497151
+broad_eps_over_sigma_median_all: 1.9985299033466326
+broad_If_over_Is_median_all: 0.13573363400045274
+broad_target_q_median: 3.00163458100821
+broad_target_chi_median: 0.24989788041766936
+broad_target_a_median: 0.12198660695972319
+broad_target_b_median: 2.6125731028995873
+broad_target_loading_drive_median: 3.0016345809912077
+broad_target_G_star_median: 0.09304888619570047
+broad_target_memory_input_median: 0.425642713581517
+broad_target_eps_over_sigma_median: 1.7398882957443078
+broad_target_If_over_Is_median: 0.22011489018406866
+broad_target_beta_s_median: 0.5455845430595797
+broad_target_beta_f_median: 0.27473944834952674
+broad_target_sigma_median: 1.5539329352873918
+broad_near_q_median: 2.9205216608899565
+broad_near_chi_median: 0.2550680971809758
+broad_near_a_median: 0.12211250020713382
+broad_near_b_median: 2.484265742342554
+broad_near_loading_drive_median: 2.9205216608776694
+broad_near_G_star_median: 0.0927627095969295
+broad_near_memory_input_median: 0.4263795998332962
+broad_near_eps_over_sigma_median: 1.6960638696891888
+broad_near_If_over_Is_median: 0.2373270040238931
+broad_near_beta_s_median: 0.5343902274738956
+broad_near_beta_f_median: 0.21310557889959997
+broad_near_sigma_median: 1.6004428751284772
+broad_naturalness_class: RARE_BUT_PRESENT
+memory_biased_valid_samples: 74885
+memory_biased_target_hits_2p75_to_3p3: 1902
+memory_biased_target_hit_rate_percent: 2.539894504907525
+memory_biased_near_hits_2p4_to_3p6: 4232
+memory_biased_near_hit_rate_percent: 5.651332042465113
+memory_biased_q_median_all: 14.532719099008165
+memory_biased_chi_median_all: 0.0643802281896577
+memory_biased_loading_drive_median_all: 14.532719098948832
+memory_biased_G_star_median_all: 0.14233722350781067
+memory_biased_memory_input_median_all: 3.5253770781651808
+memory_biased_eps_over_sigma_median_all: 1.0030739280772307
+memory_biased_If_over_Is_median_all: 0.6046662339558795
+memory_biased_target_q_median: 2.99164457906397
+memory_biased_target_chi_median: 0.2505233069340437
+memory_biased_target_a_median: 0.08933522751600764
+memory_biased_target_b_median: 2.69619454864175
+memory_biased_target_loading_drive_median: 2.9916445790512283
+memory_biased_target_G_star_median: 0.3850389091547527
+memory_biased_target_memory_input_median: 2.098756270123192
+memory_biased_target_eps_over_sigma_median: 1.0755665937154273
+memory_biased_target_If_over_Is_median: 0.5607827261999365
+memory_biased_target_beta_s_median: 0.7713984979120911
+memory_biased_target_beta_f_median: 1.0611081596297955
+memory_biased_target_sigma_median: 2.6483416366253154
+memory_biased_near_q_median: 2.9337759150877556
+memory_biased_near_chi_median: 0.25420868438986466
+memory_biased_near_a_median: 0.08653838307803899
+memory_biased_near_b_median: 2.5878497442817268
+memory_biased_near_loading_drive_median: 2.9337759150836087
+memory_biased_near_G_star_median: 0.3887049324522912
+memory_biased_near_memory_input_median: 2.138953361382151
+memory_biased_near_eps_over_sigma_median: 1.0663335995099925
+memory_biased_near_If_over_Is_median: 0.5663552933116897
+memory_biased_near_beta_s_median: 0.8129074750787195
+memory_biased_near_beta_f_median: 0.999430485615717
+memory_biased_near_sigma_median: 2.6349991783927527
+memory_biased_naturalness_class: RARE_BUT_PRESENT
+```
+
+## Interpretation
+
+The verifier tests whether:
+
+\[
+q_{\mathrm{block}}=\frac{b}{1-a}
+\]
+
+naturally falls in the target window:
+
+\[
+2.75\le q_{\mathrm{block}}\le3.3.
+\]
+
+Broad sampling underproduces the target. Strong memory-biased sampling often overshoots it.
+
+The target appears to require an intermediate stabilization principle.
+
+**End of summary.**
