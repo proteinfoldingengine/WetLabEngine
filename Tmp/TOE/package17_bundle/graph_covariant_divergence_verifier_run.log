@@ -1,0 +1,14 @@
+Graph covariant divergence verifier
+==================================================
+Route:
+antichain graph + projected stress S_ab -> graph-compatible D^a S_ab
+Checks finite divergence and weak-memory scaling.
+
+PASS: 91.6
+SOFT_FAIL: 8.4
+HARD_FAIL: 0.0
+graph_div_norm_median_median: 0.00031640429181109715
+graph_div_half_ratio_median: 0.4978963633431301
+kinetic_half_ratio_median: 0.24999998906354332
+finite_fraction_median: 1.0
+graph_connectivity_fraction_median: 1.0
