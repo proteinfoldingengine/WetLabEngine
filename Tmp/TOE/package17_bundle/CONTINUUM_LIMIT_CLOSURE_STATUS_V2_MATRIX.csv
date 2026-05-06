@@ -1,0 +1,20 @@
+seam,file,status,evidence,main_limitation
+Bridge coefficient,CHI_FIXED_POINT.md,Verifier-backed candidate,fixed-point/loading verifier,Not microscopic uniqueness
+Micro-to-block constants,MICRO_TO_BLOCK_ACTION.md,Verifier-backed candidate,positive block constants verifier,Not uniquely derived
+Discrete memory action,DISCRETE_MEMORY_ACTION.md,Verifier-backed candidate,stable action coefficient map,Not covariant/unique
+Continuum coefficients,COEFFICIENT_DERIVATION.md,Verifier-backed candidate,CL-2 coefficient verifier,Scale constants remain
+Scalar memory action,CONTINUUM_LIMIT.md Option A,Verifier-backed candidate,weak-memory decoupling,Coefficients not microscopically derived
+Naive order-distance embedding,ORDER_DISTANCE_EMBEDDING.md,Failed,100 percent hard fail,Causal distance not full metric distance
+Causal order,CAUSAL_ORDER_DERIVATION.md,Verifier-backed candidate,partial-order verifier,Update order not physical time yet
+Causal interval geometry,CAUSAL_INTERVAL_GEOMETRY.md,Verifier-backed coordinate-assisted,interval scaling verifier,Proper time coordinate-assisted
+Causal-set reconstruction,CAUSAL_SET_RECONSTRUCTION.md,Verifier-backed candidate,chains and antichains verifier,Manifoldlikeness not proven
+Antichain spatial geometry,ANTICHAIN_SPATIAL_GEOMETRY.md,Verifier-backed candidate,spatial adjacency verifier,Metric not full
+Antichain graph metric,ANTICHAIN_GRAPH_METRIC.md,Verifier-backed proxy,Laplacian metric proxy verifier,Graph/gauge dependence
+Lorentzian metric,CAUSAL_SLICE_LORENTZIAN_METRIC.md,Verifier-backed candidate,signature verifier,Shift not closed
+Lapse,LAPSE_SHIFT_DERIVATION.md,Verifier-backed candidate,stable lapse verifier,Normalization not unique
+Shift,SLICE_ALIGNMENT_AND_SHIFT.md,Structured proxy/open,alignment verifier,Weak physical correlation
+Spatial graph curvature,SPATIAL_GRAPH_CURVATURE.md,Verifier-backed graph proxy,graph curvature verifier,Not continuum R3
+ADM action with graph curvature,ADM_ACTION_WITH_GRAPH_CURVATURE.md,Verifier-backed proxy,finite integrated action,Not ADM/EH
+ADM variation target,CAUSAL_ADM_VARIATION_TARGET.md,Verifier-backed proxy,finite gradient verifier,Not Einstein variation
+ADM field equation proxy,CAUSAL_ADM_FIELD_EQUATION_PROXY.md,Verifier-backed proxy,weak-memory source scaling,Not Einstein equation
+Full GR continuum limit,CONTINUUM_LIMIT.md,Open/not closed,all above,EH covariance source closure open
