@@ -1,0 +1,15 @@
+Causal ADM variation target verifier
+==================================================
+Route:
+finite-difference variation of S_proxy^(N,R3) with respect to h_ab slices
+This is proxy variation, not Einstein variation.
+
+PASS: 100.0
+SOFT_FAIL: 0.0
+HARD_FAIL: 0.0
+action0_median: 28.155098086688078
+grad_norm_median_median: 0.67397372229357
+grad_norm_max_median: 1.5477056417511443
+finite_fraction_median: 1.0
+positive_definite_fraction_median: 1.0
+nontrivial_fraction_median: 1.0
