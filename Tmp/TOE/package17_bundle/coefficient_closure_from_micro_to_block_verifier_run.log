@@ -1,0 +1,21 @@
+Coefficient closure from micro-to-block verifier
+==================================================
+Route:
+slow/fast retained-memory recursion -> loading map -> block constants -> continuum coefficients
+
+PASS: 95.83
+SOFT_FAIL: 3.139
+HARD_FAIL: 1.031
+a_median: 0.10674701349097675
+b_median: 0.005524549282684422
+Lambda_star_median: 0.005724076204032303
+chi_star_median: 0.9941180154858547
+K_t_median: 1.496616008842975
+K_U_median: 1.2362240659484336
+K_x_median: 1.7981908096673307e-05
+K_int_median: 0.0004154678168615637
+Z_R_median: 1.2218828132443919e-05
+m_R2_median: 0.8932529865090233
+V_quad_median: 0.44662649325451165
+lambda_int_median: 0.00027984441608704206
+finite_fraction_median: 1.0

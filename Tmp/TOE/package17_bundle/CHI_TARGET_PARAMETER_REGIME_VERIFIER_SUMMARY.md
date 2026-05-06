@@ -1,0 +1,81 @@
+# CHI_TARGET_PARAMETER_REGIME_VERIFIER_SUMMARY.md
+
+# Verifier Summary
+## Target parameter regime for \(\chi_*\approx0.2667\)
+
+## Status
+**Executed target-regime verifier. Not uniqueness proof.**
+
+Verifier file:
+
+```text
+chi_target_parameter_regime_verifier.py
+```
+
+Execution log:
+
+```text
+chi_target_parameter_regime_verifier_run.log
+```
+
+## Captured output
+
+```text
+Chi target parameter regime verifier
+==================================================
+Route:
+chi_target -> Lambda_target -> constraints on a,b and micro-to-block parameters
+
+valid_samples: 49996
+target_hits: 37122
+hit_rate: 74.24993999519963
+finite_fraction: 1.0
+a_median: 0.10324338791241314
+a_p10: 0.031228547472184585
+a_p90: 0.2821715543819297
+b_median: 2.4657371824011127
+b_p10: 1.9737139229936482
+b_p90: 2.6637571585435866
+Lambda_median: 2.7495313085807696
+Lambda_p10: 2.7495313085109245
+Lambda_p90: 2.7495313085857673
+chi_median: 0.2667000000004024
+chi_p10: 0.2667000000000469
+chi_p90: 0.2667000000053704
+G_star_median: 0.3044015099431213
+G_star_p10: 0.01973819816840654
+G_star_p90: 4.986605274922422
+beta_scale_median: 3.0218449722530414
+beta_scale_p10: 0.0946798877079027
+beta_scale_p90: 99.91509919123929
+Z_R_median: 0.0006511445123790038
+Z_R_p10: 4.7044558228566704e-07
+Z_R_p90: 0.8822072986073042
+m_R2_median: 0.8967566120875868
+m_R2_p10: 0.7178284456180702
+m_R2_p90: 0.9687714525278154
+lambda_int_median: 0.011043115829629992
+lambda_int_p10: 0.0004371920661489191
+lambda_int_p90: 0.2787394838051651
+stable: False
+```
+
+## Interpretation
+
+The verifier enforces:
+
+\[
+\Lambda_*=\frac{1-\chi_*}{\chi_*}\approx2.75
+\]
+
+by solving:
+
+\[
+b\approx2.75(1-a).
+\]
+
+It confirms that the target \(\chi\) regime is reachable in stable micro-to-block parameter space.
+
+This does not prove the regime is forced by the microscopic pruning law.
+
+**End of summary.**
