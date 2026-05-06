@@ -1,0 +1,15 @@
+Memory exchange current ADM verifier
+==================================================
+Route:
+project ∇^μ T^mem_{μν} = -Q_ν into ADM normal/spatial exchange proxies
+Checks finite exchange and weak-memory scaling.
+
+PASS: 94.0
+SOFT_FAIL: 6.0
+HARD_FAIL: 0.0
+q_perp_norm_median_median: 7.75566319733455e-06
+q_spatial_norm_median_median: 1.5353386148452698e-05
+q_total_half_ratio_median: 0.49871047698313964
+q_kinetic_half_ratio_median: 0.24999941209250437
+finite_fraction_median: 1.0
+weak_suppression_fraction_median: 1.0
