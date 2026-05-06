@@ -1,0 +1,14 @@
+Boundary flux terms verifier
+==================================================
+Route:
+graph boundary nodes + projected stress -> boundary flux proxy
+Checks finite flux and weak-memory scaling.
+
+PASS: 88.4
+SOFT_FAIL: 11.6
+HARD_FAIL: 0.0
+boundary_fraction_median: 0.3888888888888889
+flux_abs_median_median: 5.12362974652485e-05
+flux_half_ratio_median: 0.49838122090563597
+kinetic_half_ratio_median: 0.24999991906027905
+finite_fraction_median: 1.0
