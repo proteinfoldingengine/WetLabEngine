@@ -1,0 +1,50 @@
+# HEAT_CURVATURE_MAGNITUDE_TEST_VERIFIER_SUMMARY.md
+
+# Verifier Summary
+## Renormalized heat curvature magnitude test
+
+## Status
+**Executed magnitude diagnostic.**
+
+Verifier file:
+
+```text
+heat_curvature_magnitude_test_verifier.py
+```
+
+Execution log:
+
+```text
+heat_curvature_magnitude_test_verifier_run.log
+```
+
+## Captured output
+
+```text
+Heat curvature magnitude test verifier
+==================================================
+Route:
+renormalized sphere coefficient -> compare to continuum target 8*pi
+No per-sphere magnitude fit.
+
+n,flat_lambda1_scale,flat_baseline,sphere_residual_median,sphere_residual_std,relative_error_to_8pi,flat_window_cv,sphere_window_cv
+70,6.601524405803193,28.38975392259178,6.495258888046177,2.015589339003611,0.7415618603264709,0.279329131017032,0.11863158904750143
+110,5.617020047595984,-4.356881616871824,22.790580185796195,9.931741921225944,0.09319162687458227,2.6355531495271523,0.6453097941177763
+160,5.868268245929568,-0.14802651097761288,21.270400740355914,1.9290767138802305,0.1536776451567115,0.7736115121732458,0.3370596192231909
+positive_all: True
+relative_error_improves: True
+final_relative_error_lt_0p75: True
+classification: MAGNITUDE_TEST_PROMISING
+```
+
+## Interpretation
+
+The verifier compares the renormalized sphere heat coefficient to the continuum target:
+
+\[
+\int_{S^2}R\,dV=8\pi.
+\]
+
+This tests magnitude, not just sign/separation.
+
+**End of summary.**

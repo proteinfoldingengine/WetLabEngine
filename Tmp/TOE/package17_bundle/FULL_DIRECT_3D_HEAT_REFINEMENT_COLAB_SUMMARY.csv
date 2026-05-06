@@ -1,0 +1,17 @@
+metric,result
+device,Tesla T4
+classification_auto,FULL_DIRECT_3D_HEAT_REFINEMENT_WEAK
+classification_human,SHAPE_SIGN_STRONG_SCALE_UNSTABLE
+n_completed,4
+N_completed,"8,10,12,14"
+scale_cv_across_grids,0.2675395461387084
+corr_ok_all,true
+thresholded_sign_ok_all,true
+retained_ok_all,true
+final_error_lt_0p70,true
+scale_cv_lt_0p25,false
+conductance_corr_ok_all,true
+best_corr_scaled_R,0.9661749692674315
+best_corr_RdV,0.9997256004209331
+best_relative_L2_error,0.25788743428298294
+next_target,LOCAL_HEAT_3D_SCALE_NORMALIZATION.md

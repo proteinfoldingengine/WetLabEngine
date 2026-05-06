@@ -1,0 +1,6 @@
+failure_cause,why_it_matters,next_fix
+boundary_contamination,adds half-power heat terms,use compact/boundaryless reference
+noncompact_patch,heat trace sees support and edge effects,use periodic or compact geometry
+extrinsic_distance_bias,not intrinsic scalar curvature,use intrinsic metric distances
+mixed_curvature,no clean integrated target,use known metric with computable R
+baseline_mismatch,flat torus baseline class differs from patch,use same boundaryless/periodic class

@@ -1,0 +1,26 @@
+3D conformal spatial reference verifier
+==================================================
+Route:
+periodic 3D conformal metric -> analytic R^(3), dV, finite-difference sanity, metric stencil
+
+N: 24
+amp: 0.15
+dx: 0.2617993877991494
+int_R_dV: 4.192473805996352
+mean_R: -0.08491032800191478
+R_min: -2.4297458536368053
+R_max: 1.333472797227092
+positive_R_fraction: 0.3949652777777778
+negative_R_fraction: 0.6050347222222222
+rho_positive_integral: 59.16038062402014
+rho_negative_integral: -54.96790681802379
+finite_difference_R_relative_error: 0.0058354214932062045
+nodes: 13824
+undirected_edges: 41472
+edge_length_min: 0.22590940996964828
+edge_length_max: 0.30339116666816957
+edge_length_mean: 0.262161552391206
+weight_min: 0.7148058742762994
+weight_max: 0.8301460895027147
+weight_mean: 0.7779947054789503
+classification: CONFORMAL_3D_REFERENCE_READY

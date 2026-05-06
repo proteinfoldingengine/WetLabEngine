@@ -1,0 +1,185 @@
+# ADM_SPATIAL_ZERO_MODE_RECOVERY.md
+
+# ADM Spatial Zero-Mode Recovery
+## First diagnostic for recovering the missing mean curvature mode
+
+## Status
+**Zero-mode diagnostic. Not autonomous closure. Not full ADM closure.**
+
+`DIRECT_HEAT_ADM_ACTION_COLAB_RESULT.md` showed that dx-normalized direct heat curvature assembles into the ADM spatial curvature term when the analytic mean curvature is supplied:
+
+\[
+\widehat R_{\mathrm{action}}
+=
+s(\widehat R-\langle \widehat R\rangle)+\langle R\rangle.
+\]
+
+It also showed that the no-mean version fails:
+
+```text
+zero_mode_status: ZERO_MODE_NOT_AUTONOMOUSLY_RECOVERED
+```
+
+This file begins the zero-mode recovery branch.
+
+---
+
+## Tagging rule
+
+Every item in this file is labeled as one of:
+
+- **Observation**
+- **Definition**
+- **Failure condition**
+- **Derivation target**
+- **Closure status**
+
+Nothing here should be interpreted as proving autonomous ADM closure.
+
+---
+
+# 1. Problem
+
+The local heat estimator recovers the centered curvature field well:
+
+\[
+R^{(3)}-\langle R^{(3)}\rangle.
+\]
+
+But the ADM spatial curvature action needs the full scalar curvature:
+
+\[
+R^{(3)}.
+\]
+
+The missing component is the zero mode:
+
+\[
+\langle R^{(3)}\rangle
+\]
+
+or equivalently:
+
+\[
+\int \sqrt h R^{(3)}d^3x.
+\]
+
+---
+
+# 2. Diagnostic approach
+
+We vary the conformal amplitude:
+
+\[
+\phi=a\cos x\cos y\cos z
+\]
+
+and test whether graph/global observables can predict the volume-mean curvature:
+
+\[
+\bar R_V
+=
+\frac{\int \sqrt h R^{(3)}d^3x}{\int \sqrt h d^3x}.
+\]
+
+Candidate predictors include:
+
+```text
+var_phi
+mean_degree
+var_degree
+mean_neg_degree_deficit
+int_degree_deficit_dV
+int_centered_degree_sq_dV
+```
+
+This is not yet an autonomous theorem because \(\phi\) and \(dV\) are still known from the reference geometry. It is a first diagnostic for whether the zero mode is encoded in graph/global observables.
+
+---
+
+# 3. Verifier implementation
+
+## Status
+**Implemented as `adm_spatial_zero_mode_recovery_verifier.py`. Execution log captured.**
+
+The verifier:
+1. varies amplitude;
+2. computes analytic volume-mean \(R^{(3)}\);
+3. computes graph/global observables;
+4. fits simple linear predictors;
+5. reports best candidate.
+
+## Captured verifier output
+
+```text
+ADM spatial zero-mode recovery verifier
+==================================================
+Route:
+vary conformal amplitude, test graph/global observables as predictors of volume-mean R^(3)
+
+AMPLITUDE_ROWS:
+amp,N,dx,mean_R_volume,int_RdV,volume,var_phi,mean_degree,var_degree,mean_neg_degree_deficit,int_degree_deficit_dV,int_centered_degree_sq_dV,corr_minus_degree_R,corr_minus_degree_RdV
+0.05,32,0.19634954084936207,0.001872694053648566,0.46517591094980176,248.39931009739712,0.00031250000000000006,4.672262463513612,0.0016746601508541284,1.3277375364863886,330.3486063621724,0.4187509516209521,0.9971503032645508,0.9999654306434951
+0.08,32,0.19634954084936207,0.0047848998399129105,1.1911769122147637,248.94500450743902,0.0007999999999999999,4.671416971240582,0.004292760914737865,1.328583028759419,332.1309356417104,1.086861098524769,0.9927499136325812,0.999911333998277
+0.1,32,0.19634954084936207,0.007463161620411742,1.8616850566704057,249.44991832666443,0.0012500000000000002,4.6706369449728005,0.006715540198274802,1.329363055027199,333.78460664309887,1.7197795788649421,0.9887360072872964,0.9998612154015798
+0.12,32,0.19634954084936207,0.01072368098621328,2.681655864700306,250.06859754108052,0.0017999999999999995,4.669684140371564,0.009684597957168396,1.3303158596284357,335.8168041256571,2.51466803926248,0.983891427393443,0.9997997188870555
+0.15,32,0.19634954084936207,0.016688984610118158,4.192473805996354,251.21203619868822,0.0028124999999999995,4.667931737287597,0.015172914962110439,1.332068262712403,339.58980078338755,4.040093913485141,0.9751446011480012,0.9996858116425003
+0.18,32,0.19634954084936207,0.023915064918796754,6.041364738985859,252.61753457493103,0.00405,4.665792794049363,0.0219202443778791,1.3342072059506367,344.25773472116487,6.015729518901701,0.9647449852958296,0.9995453486900379
+0.2,32,0.19634954084936207,0.02941421823113768,7.462459879146275,253.7024720666065,0.005000000000000001,4.66415295001849,0.02712914693860559,1.3358470499815092,347.88365273112817,7.617033939935869,0.9569696289621599,0.9994365781130864
+0.25,32,0.19634954084936207,0.04545151726452113,11.67854302262791,256.94506422438025,0.0078125,4.659309383046951,0.04269648983066354,1.3406906169530486,358.8367597387937,12.801954006634684,0.9349448888905383,0.999109670210939
+FITS:
+predictor,intercept,slope,relative_error,R2
+var_phi,0.0002092022648790862,5.81607145907614,0.005571587301872106,0.9999186165809291
+mean_degree,15.733989890464013,-3.3671024867938253,0.004723665563980955,0.9999415026307397
+var_degree,0.0003457291687091288,1.063904909560532,0.009157650827200173,0.9997801400058353
+mean_neg_degree_deficit,-4.468625030299016,3.3671024867938892,0.004723665564038245,0.9999415026307382
+int_degree_deficit_dV,-0.5041338915302388,0.0015328400781391485,0.013112452818252057,0.9995492394204393
+int_centered_degree_sq_dV,0.001549631477594972,0.0035321724475333356,0.040326215123316245,0.9957366304727042
+best_predictor: mean_degree
+best_R2: 0.9999415026307397
+best_relative_error: 0.004723665563980955
+classification: ZERO_MODE_GRAPH_GLOBAL_PROMISING
+```
+
+---
+
+# 4. Interpretation
+
+A promising result means at least one global graph observable tracks the curvature zero mode across amplitude variation.
+
+This does not yet solve zero-mode recovery, but it identifies a candidate observable for the next theorem or calibration step.
+
+---
+
+# 5. What remains open
+
+1. Test without using analytic volume weights.
+2. Derive the relation analytically.
+3. Test multiple conformal metric families.
+4. Use heat trace coefficients directly.
+5. Integrate zero-mode estimate into direct ADM action test.
+6. Remove fitted amplitude-family calibration.
+
+---
+
+# 6. Next target
+
+If promising:
+
+```text
+ZERO_MODE_HEAT_TRACE_TEST.md
+```
+
+If weak:
+
+```text
+ZERO_MODE_FAILURE_ANALYSIS.md
+```
+
+---
+
+# Honest status line
+
+> `ADM_SPATIAL_ZERO_MODE_RECOVERY.md` starts the zero-mode recovery branch by testing whether global graph/geometry observables predict volume-mean scalar curvature across conformal amplitudes. It is a diagnostic only, not autonomous recovery.
+
+**End of file.**

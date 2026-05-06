@@ -1,0 +1,13 @@
+category,status,evidence,next_step
+3D_reference,passed,CONFORMAL_3D_REFERENCE_READY,none
+3D_conductance,passed_diagnostic,corr_R 0.975 at N=32,derive mechanism
+3D_direct_raw_shape_sign,passed_diagnostic,corr_R ~0.965 sign 1.0,scale normalization
+3D_raw_scale,failed,scale CV 0.2675,dx normalization
+3D_dx_normalized_scale,passed_diagnostic,scale CV 0.0681,derive dx theorem
+3D_dxnorm_corr_R,passed,corr_R ~0.965,multi-metric test
+3D_dxnorm_corr_RdV,passed,corr_RdV ~0.9996,ADM integration
+3D_thresholded_sign,passed,sign match 1.0,derive sign theorem
+dx_normalization_theorem,open,diagnostic only,LOCAL_HEAT_3D_DX_THEOREM.md
+heat_window_theorem,open,empirical window,HEAT_WINDOW_SCALE_SELECTION.md
+multi_metric_3D,open,single metric only,LOCAL_HEAT_3D_MULTI_METRIC_TEST.md
+ADM_spatial_action,open,not integrated,HEAT_CURVATURE_TO_ADM_ACTION.md

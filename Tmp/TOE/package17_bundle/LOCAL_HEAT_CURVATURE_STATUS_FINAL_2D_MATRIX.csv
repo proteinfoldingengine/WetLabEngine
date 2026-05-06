@@ -1,0 +1,13 @@
+category,status,evidence,next_step
+reference_geometry,passed,Gauss-Bonnet ~5e-17 and FD R error ~8e-4,none
+direct_heat_2D,passed_diagnostic,FULL_DIRECT_HEAT_REFINEMENT_PROMISING,extend to 3D
+best_corr_R,passed,0.9290734827146709,larger grids optional
+best_corr_RdV,passed,0.9934943648841913,larger grids optional
+best_relative_L2,passed,0.3698952063982705,derive scale
+thresholded_sign,passed,0.9909706546275395,derive sign theorem
+scale_stability,passed,scale CV 0.0364,derive scale theorem
+sign_theorem,open,conductance-supported,LOCAL_HEAT_SIGN_THEOREM_PROOF
+scale_theorem,open,stable fitted scale,LOCAL_HEAT_SCALE_THEOREM
+heat_window_theorem,open,empirical time window,HEAT_WINDOW_SCALE_SELECTION
+3D_extension,open,2D only,HEAT_KERNEL_3D_SPATIAL_TESTS
+ADM_integration,open,not yet integrated,HEAT_CURVATURE_TO_ADM_ACTION
