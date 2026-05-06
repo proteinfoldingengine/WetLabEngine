@@ -1,0 +1,69 @@
+# MICRO_RECURSION_EXTRACTION_VERIFIER_SUMMARY.md
+
+# Verifier Summary
+## Extracting memory-action coefficients from affine two-mode recursion
+
+## Status
+**Executed extraction verifier. Production recursion still required.**
+
+Verifier file:
+
+```text
+micro_recursion_extraction_verifier.py
+```
+
+Execution log:
+
+```text
+micro_recursion_extraction_verifier_run.log
+```
+
+## Captured output
+
+```text
+Micro recursion extraction verifier
+==================================================
+Route:
+affine two-mode recursion -> k_R, D_R, lambda_micro -> Z_R, V, lambda_int
+This validates extraction mechanics; production recursion still required.
+
+PASS: 92.02
+SOFT_FAIL: 6.15
+HARD_FAIL: 1.83
+k_R_median: 3.5978165282102834
+D_R_median: 0.04893378248571067
+lambda_micro_median: 0.22267537160464354
+R_star_median: -0.003968720594299582
+A_star_median: 0.004030400545775885
+Z_R_median: 10.217889862611925
+m_R2_median: 67.85511792230393
+lambda_int_median: 1.039728801189361
+stable_spectral_radius_median: 0.7249770898644605
+finite_fraction_median: 1.0
+```
+
+## Interpretation
+
+The verifier confirms that local affine recursion parameters:
+
+\[
+a_R,b_R,c_R,d_R,\sigma_R,a_A,b_A,d_A,\sigma_A
+\]
+
+can be mapped to:
+
+\[
+k_R,D_R,\lambda_{\mathrm{micro}}
+\]
+
+and then to:
+
+\[
+Z_R,V,\lambda_{\mathrm{int}}.
+\]
+
+It detects unstable fixed points, zero/negative diffusion, and singular coefficients.
+
+This is extraction machinery, not final closure.
+
+**End of summary.**

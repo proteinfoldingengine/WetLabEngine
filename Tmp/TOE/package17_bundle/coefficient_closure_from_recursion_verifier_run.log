@@ -1,0 +1,7 @@
+Coefficient closure from recursion verifier
+==================================================
+STATUS: CONDITIONAL_NOT_CLOSED
+Reason: production_recursion_coefficients.json was not supplied.
+
+To close this seam, provide JSON with:
+a_R,b_R,c_R,d_R,sigma_R,a_A,b_A,d_A,sigma_A,dt,chi,eps_star
