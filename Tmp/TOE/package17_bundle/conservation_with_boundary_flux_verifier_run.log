@@ -1,0 +1,15 @@
+Conservation with boundary flux verifier
+==================================================
+Route:
+interaction cancellation + graph divergence + boundary flux -> ADM graph residual
+Checks finite residual and weak-memory scaling.
+
+PASS: 89.2
+SOFT_FAIL: 10.8
+HARD_FAIL: 0.0
+interaction_residual_ratio_median: 0.0
+boundary_flux_norm_median: 1.0363461993860918e-05
+total_residual_norm_median: 9.211580268481072e-05
+total_half_ratio_median: 0.49891436334642714
+kinetic_half_ratio_median: 0.2499999614841444
+finite_fraction_median: 1.0
