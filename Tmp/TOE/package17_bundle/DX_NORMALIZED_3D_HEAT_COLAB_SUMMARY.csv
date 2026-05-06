@@ -1,0 +1,18 @@
+metric,result
+device,Tesla T4
+classification,DX_NORMALIZED_3D_HEAT_PROMISING
+n_completed,4
+N_completed,"8,10,12,14"
+raw_scale_cv_across_grids,0.2675395461387084
+dxnorm_scale_cv_across_grids,0.06809330473651544
+scale_improved_by_dx_normalization,true
+corr_ok_all,true
+thresholded_sign_ok_all,true
+retained_ok_all,true
+final_error_lt_0p70,true
+dxnorm_scale_cv_lt_0p15,true
+conductance_corr_ok_all,true
+best_dxnorm_corr_R,0.9661749692674317
+best_dxnorm_corr_RdV,0.9997256004209408
+best_dxnorm_relative_L2_error,0.25788743428298294
+next_target,LOCAL_HEAT_3D_STATUS.md

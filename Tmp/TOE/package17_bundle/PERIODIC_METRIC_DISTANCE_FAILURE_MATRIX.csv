@@ -1,0 +1,6 @@
+failure,root_cause,fix
+distance approximation,not true geodesic distance,use metric-weighted local stencil
+sampling bias,uniform coordinate sampling not volume sampling,use exact volume weights
+gauss_bonnet failure,noisy/inexact integration,use deterministic periodic grid
+global coefficient mismatch,total curvature on torus is zero,test local curvature density
+embedding carryover,pairwise ambient-style distances,avoid embedding distances

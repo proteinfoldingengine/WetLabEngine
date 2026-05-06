@@ -1,0 +1,16 @@
+metric,result
+device,Tesla T4
+classification,DIRECT_HEAT_ADM_SPATIAL_ACTION_PROMISING
+zero_mode_status,ZERO_MODE_NOT_AUTONOMOUSLY_RECOVERED
+n_completed,4
+N_completed,"8,10,12,14"
+local_corr_ok,true
+mean_restored_action_rel_error_max,0.038724664264110926
+mean_restored_action_ok_all,true
+mean_restored_density_corr_min,0.9673883378491533
+mean_restored_density_corr_ok_all,true
+no_mean_action_rel_error_max,5.126100747863962
+no_mean_action_ok_all,false
+no_mean_density_corr_min,0.9683458290031943
+no_mean_density_corr_ok_all,true
+next_target,ADM_SPATIAL_ZERO_MODE_RECOVERY.md
