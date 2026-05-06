@@ -1,0 +1,15 @@
+Causal ADM field equation proxy verifier
+==================================================
+Route:
+finite Euler response E_ab^(k) = weak-memory source S_ab^(mem,k)
+This is a discrete proxy, not Einstein's equation.
+
+PASS: 100.0
+SOFT_FAIL: 0.0
+HARD_FAIL: 0.0
+euler_norm_median_median: 0.6800877978990056
+source_norm_median_median: 0.0011714507094753575
+residual_norm_median_median: 0.6791999554202897
+source_to_euler_ratio_median: 0.001612824295743367
+weak_scaling_ratio_median: 0.499999999573022
+finite_fraction_median: 1.0
