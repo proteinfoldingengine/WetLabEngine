@@ -1,0 +1,13 @@
+component,old_status,new_replacement,status,limitation
+Causal order,Schematic,CAUSAL_ORDER_DERIVATION.md,Verifier-backed candidate,Update order not proven physical time
+Interval geometry,Schematic,CAUSAL_INTERVAL_GEOMETRY.md + ORDER_ONLY_METRIC_RECONSTRUCTION.md,Verifier-backed partly coordinate-assisted,Dimension not fully coordinate-free
+Naive metric embedding,Tempting path,ORDER_DISTANCE_EMBEDDING.md,Failed,Causal distance not full metric distance
+Causal-set reconstruction,Missing,CAUSAL_SET_RECONSTRUCTION.md,Verifier-backed candidate,Manifoldlikeness not proven
+Spatial metric,Schematic,ANTICHAIN_GRAPH_METRIC.md,Verifier-backed proxy,Graph-embedding dependent
+Lorentzian metric,Schematic,CAUSAL_SLICE_LORENTZIAN_METRIC.md,Verifier-backed candidate,Shift not closed
+Lapse,Fixed N=1,LAPSE_SHIFT_CLOSURE_STATUS.md,Verifier-backed candidate,Normalization not unique
+Shift,Fixed N_a=0,SLICE_ALIGNMENT_AND_SHIFT.md,Diagnostic-only proxy,Not closed
+Spatial curvature,Spectral placeholder,SPATIAL_GRAPH_CURVATURE.md,Verifier-backed graph proxy,Not continuum R3
+ADM action,Schematic,ADM_ACTION_WITH_GRAPH_CURVATURE.md,Verifier-backed proxy,Not EH action
+Variation,Schematic,CAUSAL_ADM_VARIATION_TARGET.md,Verifier-backed proxy,Not Einstein variation
+Field equation,Schematic,CAUSAL_ADM_FIELD_EQUATION_PROXY.md,Verifier-backed proxy,Not Einstein equation
