@@ -1,0 +1,14 @@
+Matter exchange derivation verifier
+==================================================
+Route:
+L_int = lambda R_eff O_mat -> Q_mat ADM proxy
+Checks O(eta) scaling and cancellation with interaction memory exchange.
+
+PASS: 100.0
+SOFT_FAIL: 0.0
+HARD_FAIL: 0.0
+q_mat_norm_median_median: 4.2702961654984524e-05
+q_mat_half_ratio_median: 0.4999999882889808
+q_mem_int_norm_median_median: 4.2702961654984524e-05
+best_residual_ratio_median: 0.0
+finite_fraction_median: 1.0
