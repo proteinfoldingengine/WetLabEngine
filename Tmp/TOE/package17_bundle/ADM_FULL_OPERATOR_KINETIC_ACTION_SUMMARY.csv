@@ -1,0 +1,20 @@
+metric,result
+device,Tesla T4
+classification,ADM_FULL_OPERATOR_KINETIC_ACTION_PROMISING
+n_completed,4
+N_completed,"8,10,12,14"
+R_action_rel_error_max,0.01901442453894631
+K_action_rel_error_max,4.0791373907658086e-10
+ADM_action_rel_error_max,0.01904928074467361
+ADM_action_rel_error_mean,0.009327799265061852
+ADM_density_corr_min,0.9686359771050526
+R_heat_auto_corr_min,0.9660605208747566
+phidot_corr_min,0.9999999998224379
+phidot_rel_L2_max,1.2815126181522582e-09
+K_corr_min,0.9999998111992732
+K_rel_L2_max,1.6821814887719605e-09
+ADM_local_corr_min,0.9660622484947106
+ADM_action_ok_all,true
+ADM_density_corr_ok_all,true
+ADM_local_corr_ok_all,true
+next_target,HEAT_NORMALIZATION_THEOREM_PROGRAM.md

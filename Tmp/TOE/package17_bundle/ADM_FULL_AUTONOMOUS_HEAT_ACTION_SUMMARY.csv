@@ -1,0 +1,17 @@
+metric,result
+device,Tesla T4
+classification,ADM_FULL_AUTONOMOUS_HEAT_ACTION_PROMISING
+n_completed,4
+N_completed,"8,10,12,14"
+R_action_rel_error_max,0.01901442453894631
+K_action_rel_error_max,0.0508534133543777
+ADM_action_rel_error_max,0.018962788487328623
+ADM_action_rel_error_mean,0.009428531981687043
+ADM_density_corr_min,0.968637661489886
+R_heat_auto_corr_min,0.9660605208747566
+K_corr_min,0.9597173754471388
+ADM_local_corr_min,0.9660610275779339
+ADM_action_ok_all,true
+ADM_density_corr_ok_all,true
+ADM_local_corr_ok_all,true
+next_target,DEGREE_TIME_RESPONSE_DERIVATION.md
