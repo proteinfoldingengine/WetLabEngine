@@ -1,0 +1,38 @@
+{
+  "device": "cuda",
+  "quick_mode": true,
+  "operator_kind": "dx2",
+  "window": "long",
+  "n_geometries": 23,
+  "n_rows": 460,
+  "N_completed": [
+    8,
+    10,
+    12,
+    14
+  ],
+  "amp_completed": [
+    0.06,
+    0.08,
+    0.12,
+    0.15,
+    0.22
+  ],
+  "q_mean": 1.3927945025542205,
+  "q_std": 0.5266491050655111,
+  "q_min": 0.7379248593377242,
+  "q_max": 2.868463507847548,
+  "I_rel_error_mean": 0.1726636697101881,
+  "I_rel_error_max": 0.5900418823301335,
+  "delta_sign_consistency_mean": 1.0,
+  "amp_power_I_mean": 2.013305847364697,
+  "amp_power_I_std": 0.0033096199005719913,
+  "amp_power_delta_mean": 2.022246302905766,
+  "amp_power_delta_std": 0.007821095867775279,
+  "best_descriptor_model": "log_E1+log_modal_n_eff",
+  "best_descriptor_features": "log_E1+log_modal_n_eff",
+  "best_logo_rel_C_error_mean": 0.2380423454324535,
+  "best_logo_rel_C_error_median": 0.11736081854491645,
+  "best_logo_rel_C_error_max": 0.8882997869587564,
+  "classification": "FROZEN_DX2_LONG_VALIDATED"
+}
