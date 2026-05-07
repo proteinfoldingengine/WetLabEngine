@@ -1,0 +1,12 @@
+branch,status,evidence,next_blocker
+3D_reference,ready,CONFORMAL_3D_REFERENCE_READY,multi_metric_reference
+spatial_conductance_proxy,strong_diagnostic,corr_R~0.975 corr_RdV~0.9997,derive scale
+direct_heat_local_R3,promising,corr_R~0.965 sign_match=1.0,dx/sign/heat_window theorem
+heat_trace_zero_mode,strong_diagnostic,R2>0.999949 rel_error<0.00445,derive trace normalization
+autonomous_ADM_spatial_action,promising,max_action_error<0.01964,remove calibration and expand metrics
+ADM_kinetic_analytic_reference,ready,KijKij-K2=-6 phidot^2 verified,graph recovery
+graph_extrinsic_proxy,promising,min_phidot_corr=0.993 max_K_action_error=0.0523,derive degree-time scale
+full_ADM_geometric_proxy,promising,max_ADM_action_error=0.0831,replace degree spatial with heat autonomous
+lapse_shift,open,zero shift only,graph lapse-shift extension
+action_variation,open,not varied,discrete variation program
+GR_derivation,open,no field equations yet,derive variation and continuum limit
