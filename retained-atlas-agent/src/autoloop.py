@@ -87,7 +87,7 @@ def run_python(script_path: Path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--version", default="V309B")
+    parser.add_argument("--version", default="V309D")
     parser.add_argument("--memory-limit", type=int, default=5)
     args = parser.parse_args()
 
@@ -115,13 +115,25 @@ Use this memory to avoid repeating tests unless repetition is explicitly needed.
 Continue from the latest decision and smallest useful next test.
 
 Important current correction:
-If the prior run failed because metrics were degenerate, treat that as a harness/regime failure, not as a law failure.
-For example:
+Prior V309/V309B/V309C runs show the ablation harness was repeatedly invalid or degenerate.
+Treat that as a harness/regime failure, not as a law failure.
+
+Known failure modes to repair:
 - bad_rate too low
+- bad_rate above target window
 - trigger_rate = 0
 - score variance = 0
 - AUC = 0.5 for all variants
 - mean_bad and mean_safe identical
+- selected regime outside target window because it was merely closest
+
+For regime-repair runs:
+- Do not select a regime unless validity_gate.valid_for_interpretation = true.
+- If no valid regime is found, report "no valid regime found" and branch.
+- Never choose a regime outside the target bad_rate window merely because it is closest.
+- For bad_rate targeting, sweep intercept/base_failure as well as severity.
+- Use a 2D sweep over at least severity and base_failure/intercept/noise.
+- Only run ablation after a valid regime is found.
 
 Return ONLY valid JSON.
 
@@ -152,8 +164,13 @@ Rules for python_code:
   - nonzero_trigger_rate: true/false
   - enough_positive_cases: true/false
   - valid_for_interpretation: true/false
-- If valid_for_interpretation is false, the report decision must be branch, not freeze.
 - For ablation/intervention tests, target bad_rate should be between 0.20 and 0.40 unless the test explicitly studies rare failure.
+- For regime-repair runs, valid_for_interpretation must require:
+  - 0.20 <= bad_rate <= 0.40
+  - trigger_rate > 0.05
+  - score_var > 0
+  - enough_positive_cases = true
+- If valid_for_interpretation is false, the report decision must be branch, not freeze.
 - For ablation tests, first verify the full score is non-degenerate before interpreting component drops.
 - Must be compact and robust.
 """
@@ -216,6 +233,10 @@ Validity rule:
 If validity_gate.valid_for_interpretation is false, classify the result as a harness/regime failure.
 Do not freeze.
 Decision should be branch unless there is a stronger reason to stop.
+
+Regime-repair rule:
+If no valid regime was found, say so directly.
+Do not interpret ablation numbers as component evidence unless the run explicitly reports valid_for_interpretation = true.
 
 Prior run memory:
 {prior_memory}
