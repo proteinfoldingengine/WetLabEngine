@@ -1,3 +1,37 @@
+# V310_REPORT_SPLIT_TEST — Supervisor Decision
+
+## Supervisor Verdict
+branch
+
+## Reason
+The run did not produce a valid nondegenerate regime.  
+Audit says validity_gate failed for all displayed candidate regimes, with:
+- `bad_rate_range = false`
+- `horizon_nonzero = false`
+- `phase_counts_bad_gt_0 = false`
+- `trigger_rate_gt_0p05 = false`
+
+So the intervention branch is not valid yet, and controller comparison is not scientifically interpretable.  
+This is a harness/regime failure, not evidence for controller validation.
+
+## Next Version
+V311
+
+## Next Objective
+Repair the regime-search harness so it can produce at least one valid nondegenerate regime before any controller comparison or ablation is interpreted.
+
+Minimum requirements for the next run:
+- `bad_rate > 0`
+- `trigger_rate > 0.05`
+- at least one of `horizon_width` or `horizon_area` nonzero
+- `balanced_accuracy` reported
+- explicit valid/invalid gate status per candidate
+- no interpretation of invalid rows
+
+If a valid regime cannot be produced, stop the intervention branch.
+
+## Required Prompt Update
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -200,3 +234,4 @@ Smallest useful next test: determine whether the harness can produce one valid n
 
 ## Guardrail Reminder
 If no valid regime exists, stop this branch rather than adding new metrics or reinterpreting invalid rows as evidence.
+END_LOOP_PROMPT
