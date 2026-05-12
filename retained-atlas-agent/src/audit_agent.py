@@ -48,6 +48,9 @@ def main():
     stderr = read(run_dir / f"{version}_stderr.txt")
     plan = read(run_dir / f"{version}_agent_plan.md")
 
+    validation_md = read(run_dir / f"{version}_validation.md")
+    validation_json = read(run_dir / f"{version}_validation.json")
+
     code_files = list(run_dir.glob("*.py"))
     code_text = "\n\n".join(
         f"--- CODE FILE: {p.name} ---\n{read(p, limit=30000)}"
@@ -61,7 +64,7 @@ Your job is to audit the latest retained-atlas loop like a skeptical reviewer.
 
 You are NOT the generator.
 You are NOT trying to rescue the result.
-You are checking whether the report, code, results, and decision obey the constitution and current state.
+You are checking whether the report, code, results, validation output, and decision obey the constitution and current state.
 
 Scientific current state:
 {read(CURRENT_STATE)}
@@ -79,6 +82,12 @@ pass / warning / fail
 ## Decision Check
 Was the reported decision justified?
 Expected decision if different:
+
+## Execution Validator Check
+Did execution_validator.py run?
+Did interpretation_allowed pass?
+If interpretation_allowed is false, did the report avoid scientific interpretation?
+Did the validator catch saturated trigger rates, invalid rows, dead horizon metrics, or missing/invalid AUC?
 
 ## Validity Gate Check
 Did validity_gate exist?
@@ -112,12 +121,20 @@ Example: V309_CLEAN
 Smallest useful next test.
 
 Important rules:
-- If validity_gate.valid_for_interpretation is false, audit should reject freeze.
-- If chosen_regime is null, audit should reject component interpretation.
-- If code failed, audit should reject all result interpretation.
+- Treat execution validation as a hard pre-audit signal.
+- If interpretation_allowed is false, reject scientific interpretation even if the report sounds plausible.
+- If validity_gate.valid_for_interpretation is false, reject freeze unless the branch is explicitly being frozen/stopped for failure.
+- If chosen_regime is null, reject component interpretation.
+- If code failed, reject all result interpretation.
 - If report says branch because harness failed, that is usually correct.
 - Keep toy-model language only.
 - Do not invent results.
+
+EXECUTION VALIDATION MD:
+{validation_md}
+
+EXECUTION VALIDATION JSON:
+{validation_json}
 
 REPORT:
 {report}
