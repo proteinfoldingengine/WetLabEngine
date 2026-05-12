@@ -9,7 +9,7 @@ on:
       version:
         description: "Version to run"
         required: true
-        default: "V309F"
+        default: "V309_VALIDATOR_TEST"
 
 jobs:
   run-loop:
@@ -37,6 +37,11 @@ jobs:
           cd retained-atlas-agent
           python src/autoloop.py --version ${{ github.event.inputs.version }}
 
+      - name: Validate execution outputs
+        run: |
+          cd retained-atlas-agent
+          python src/execution_validator.py --version ${{ github.event.inputs.version }}
+
       - name: Audit retained-atlas loop
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -56,11 +61,10 @@ jobs:
           git config user.name "retained-atlas-agent"
           git config user.email "retained-atlas-agent@users.noreply.github.com"
 
-          git add retained-atlas-agent/runs retained-atlas-agent/reports retained-atlas-agent/src retained-atlas-agent/prompts
+          git add retained-atlas-agent/runs retained-atlas-agent/reports retained-atlas-agent/src retained-atlas-agent/prompts retained-atlas-agent/state
 
           git commit -m "Run retained atlas loop ${{ github.event.inputs.version }}" || echo "No changes to commit"
 
           git pull --rebase origin main
 
           git push origin HEAD:main
-      
