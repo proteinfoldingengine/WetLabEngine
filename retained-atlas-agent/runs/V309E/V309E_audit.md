@@ -1,14 +1,14 @@
 # V309E — Audit Report
 
 ## Audit Verdict
-warning
+fail
 
 ## Decision Check
 Was the reported decision justified?
-Yes, given the reported gate failure and `chosen_regime: null`, `branch` was justified.
+No. The report’s `branch` decision is consistent with `chosen_regime: null` and `valid_for_interpretation: false`.
 
 Expected decision if different:
-None; `branch` matches the stated validity failure.
+If the code had found a valid regime, the decision should have been `continue`. Given the reported outputs, `branch` is appropriate.
 
 ## Validity Gate Check
 Did validity_gate exist?
@@ -18,55 +18,52 @@ Did valid_for_interpretation pass?
 No.
 
 If it failed, did the report avoid interpretation?
-Mostly yes. The interpretation stayed at harness/regime-failure level and did not claim component importance.
+Mostly yes. The report explicitly says no valid regime was found and does not make component-level claims. However, it still provides an interpretation section; that is acceptable only because it stays within the toy and says the run is a harness/regime failure.
 
 ## Numerical Integrity Check
 Were numbers grounded in stdout/results?
-Mostly yes. The listed regime values match the provided stdout.
+Mostly yes for the numbers explicitly shown in `STDOUT` / `RESULTS JSON`.
 
 Any invented or unsupported numbers?
-Potentially yes:
-- The report presents only selected sweep points, but not the full sweep. That is acceptable if clearly labeled as selected, which it was.
-- However, the `REPORT` text says “No valid regime was found,” which is supported by `chosen_regime: null`.
-- One caution: the JSON file is missing in the prompt, so I cannot independently verify stdout against the saved results file.
+Potentially yes by omission/ambiguity:
+- The report states “Selected sweep outputs” and lists several regimes, but the provided JSON/stdout are truncated before the full sweep is shown in the prompt. Those specific listed rows are present in the visible `RESULTS JSON` section, so they are grounded.
+- No obvious invented numbers inside the visible portion.
+- However, the report does not state whether the listed sweep points were the only ones examined or just examples. That is a presentation issue, not necessarily fabrication.
 
 ## Code/Method Check
 Was the code runnable?
-Mostly yes.
+Yes, it appears runnable Python.
 
 Any obvious harness flaws?
-Yes:
-- The code averages per-seed AUC values even when some seeds have undefined AUC; it catches exceptions and substitutes `0.5`, which can mask degeneracy.
-- The `validity_gate` is computed twice: once per seed and once on aggregated regime values. That is not necessarily wrong, but it complicates interpretation.
-- The trigger condition may be too strict or poorly coupled to the bad-label regime, since `trigger_rate` stayed at `0.0` across the shown points.
-- The sweep appears to have many degenerate points with all-safe labels, making AUC undefined and some metrics uninformative.
+Yes, a major one:
+- `bad_rate` is 0.0 for all shown regimes, so the validity gate is impossible to satisfy under the current parameterization.
+- `trigger_rate` is also 0.0 everywhere shown.
+- The harness may be “seed-sensitive” in code, but the chosen dynamics still do not produce any bad cases in the tested grid.
 
-Degenerate regime problems?
+Any degenerate regime problems?
 Yes:
-- Multiple regimes had `bad_rate = 0`.
-- Many points had `trigger_rate = 0.0`.
-- The intended nondegenerate window was not found.
+- All reported regimes are degenerate on the target labels (`bad_rate = 0.0`).
+- This makes `AUC = 0.5` and balanced accuracy = 0.5 for the shown cases.
+- Because `valid_for_interpretation = false`, no component interpretation should proceed.
+- The code computes a custom AUC, which is acceptable, but it is uninformative under all-safe labels.
 
 ## Claim Boundary Check
 Any overclaiming?
-No major overclaiming in the report itself.
+No major overclaiming. The report stays inside the toy boundary and labels the result as a harness/regime failure.
 
 Any forbidden GR/physics language?
-No forbidden claims. Only toy-model / GR-adjacent language appears, and it stays within the boundary.
+No forbidden claim-level language detected in the report. It uses toy-model wording appropriately.
 
 ## Required Correction
 What must be fixed before next loop?
-- The harness must be redesigned so the sweep can actually reach a regime with:
-  - `bad_rate` in `[0.20, 0.40]`
-  - `trigger_rate > 0.05`
-  - nonzero score variance
-  - enough positive bad cases
-- Avoid using fallback AUC values that hide degenerate label cases, or report them explicitly as undefined.
-- Provide the full sweep results or a compact table with the best candidate and the worst degenerate cases, so the gate failure is transparent.
+- The harness must produce at least one nondegenerate regime with `bad_rate > 0` and `trigger_rate > 0`.
+- Do not proceed to any component ablation while `chosen_regime` is null.
+- The sweep window likely needs expansion or dynamics need retuning so the bad class actually occurs.
+- If the run is meant to audit seed sensitivity, the report should include a compact seed-by-seed summary or a seed-wise variance check, not only aggregated values.
 
 ## Recommended Next Version
-V309F
+Example: V309F
 
 ## Recommended Next Test
 Smallest useful next test:
-Run a narrower harness calibration that explicitly tunes the trigger definition and bad-label calibration on held-out seeds, then re-check whether any regime satisfies the interpretation gate before attempting component ablation.
+Expand the regime search just enough to find any regime with nonzero `bad_rate` and nonzero `trigger_rate`, then re-run the validity gate before any ablation.
