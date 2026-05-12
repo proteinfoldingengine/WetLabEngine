@@ -9,10 +9,10 @@ from openai import OpenAI
 ROOT = Path(__file__).resolve().parents[1]
 
 CONSTITUTION = ROOT / "constitution" / "agent_constitution.md"
+CURRENT_STATE = ROOT / "state" / "current_state.md"
 LOOP_PROMPT = ROOT / "prompts" / "loop_prompt.md"
 
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
-
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
@@ -28,17 +28,16 @@ def write(path: Path, text: str) -> None:
 
 
 def load_prior_memory(limit: int = 5) -> str:
-    reports_dir = ROOT / "reports"
-    runs_dir = ROOT / "runs"
-
     memory = []
 
+    reports_dir = ROOT / "reports"
     if reports_dir.exists():
         reports = sorted(reports_dir.glob("V*_report.md"))[-limit:]
         for path in reports:
             memory.append(f"\n--- PRIOR REPORT: {path.name} ---\n")
             memory.append(path.read_text(encoding="utf-8")[:8000])
 
+    runs_dir = ROOT / "runs"
     if runs_dir.exists():
         results = sorted(runs_dir.glob("V*/V*_results.json"))[-limit:]
         for path in results:
@@ -61,18 +60,10 @@ def call_agent(prompt: str) -> str:
 
 def extract_json(text: str) -> dict:
     text = text.strip()
-
     fenced = re.search(r"```json\s*(.*?)```", text, re.DOTALL | re.IGNORECASE)
     if fenced:
         text = fenced.group(1).strip()
-
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError as e:
-        raise ValueError(
-            f"Could not parse JSON from agent response.\n"
-            f"Error: {e}\n\nRaw response:\n{text}"
-        )
+    return json.loads(text)
 
 
 def run_python(script_path: Path):
@@ -87,7 +78,7 @@ def run_python(script_path: Path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--version", default="V309D")
+    parser.add_argument("--version", default="V308_CLEAN")
     parser.add_argument("--memory-limit", type=int, default=5)
     args = parser.parse_args()
 
@@ -105,35 +96,20 @@ You are executing retained-atlas loop {version}.
 
 Read and obey the constitution.
 
-Loop prompt:
+Scientific current state:
+{read(CURRENT_STATE)}
+
+Operational loop prompt:
 {read(LOOP_PROMPT)}
 
 Prior run memory:
 {prior_memory}
 
-Use this memory to avoid repeating tests unless repetition is explicitly needed.
-Continue from the latest decision and smallest useful next test.
-
-Important current correction:
-Prior V309/V309B/V309C runs show the ablation harness was repeatedly invalid or degenerate.
-Treat that as a harness/regime failure, not as a law failure.
-
-Known failure modes to repair:
-- bad_rate too low
-- bad_rate above target window
-- trigger_rate = 0
-- score variance = 0
-- AUC = 0.5 for all variants
-- mean_bad and mean_safe identical
-- selected regime outside target window because it was merely closest
-
-For regime-repair runs:
-- Do not select a regime unless validity_gate.valid_for_interpretation = true.
-- If no valid regime is found, report "no valid regime found" and branch.
-- Never choose a regime outside the target bad_rate window merely because it is closest.
-- For bad_rate targeting, sweep intercept/base_failure as well as severity.
-- Use a 2D sweep over at least severity and base_failure/intercept/noise.
-- Only run ablation after a valid regime is found.
+Use this order of authority:
+1. constitution = behavioral/governance law
+2. current_state.md = scientific state and lineage
+3. loop_prompt.md = current operational objective
+4. prior run memory = recent evidence
 
 Return ONLY valid JSON.
 
@@ -158,33 +134,14 @@ Rules for python_code:
 - Must use fixed seeds.
 - Must include numerical metrics.
 - Must include a validity_gate object in the JSON results.
-- validity_gate must report:
-  - nondegenerate_bad_rate: true/false
-  - nonzero_score_variance: true/false
-  - nonzero_trigger_rate: true/false
-  - enough_positive_cases: true/false
-  - valid_for_interpretation: true/false
-- For ablation/intervention tests, target bad_rate should be between 0.20 and 0.40 unless the test explicitly studies rare failure.
-- For regime-repair runs, valid_for_interpretation must require:
-  - 0.20 <= bad_rate <= 0.40
-  - trigger_rate > 0.05
-  - score_var > 0
-  - enough_positive_cases = true
-- If valid_for_interpretation is false, the report decision must be branch, not freeze.
-- For ablation tests, first verify the full score is non-degenerate before interpreting component drops.
 - Must be compact and robust.
 """
 
     print(f"Calling agent for {version}...")
     agent_raw = call_agent(experiment_prompt)
-
     write(run_dir / f"{version}_agent_raw.txt", agent_raw)
 
-    try:
-        payload = extract_json(agent_raw)
-    except Exception as e:
-        write(run_dir / f"{version}_parse_error.txt", str(e))
-        raise
+    payload = extract_json(agent_raw)
 
     plan_md = payload.get("plan_markdown", "")
     python_filename = payload.get("python_filename", f"{version.lower()}_experiment.py")
@@ -221,6 +178,9 @@ Use the constitution-required loop format exactly:
 ## Decision
 ## Next
 
+Scientific current state:
+{read(CURRENT_STATE)}
+
 Use only the execution output below.
 Do not invent numbers.
 Do not overclaim.
@@ -228,18 +188,6 @@ Use toy-model language only.
 
 Decision must be one of:
 continue / stop / branch / freeze
-
-Validity rule:
-If validity_gate.valid_for_interpretation is false, classify the result as a harness/regime failure.
-Do not freeze.
-Decision should be branch unless there is a stronger reason to stop.
-
-Regime-repair rule:
-If no valid regime was found, say so directly.
-Do not interpret ablation numbers as component evidence unless the run explicitly reports valid_for_interpretation = true.
-
-Prior run memory:
-{prior_memory}
 
 Agent plan:
 {plan_md}
