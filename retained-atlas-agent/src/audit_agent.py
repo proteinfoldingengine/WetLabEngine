@@ -6,6 +6,7 @@ from openai import OpenAI
 ROOT = Path(__file__).resolve().parents[1]
 CONSTITUTION = ROOT / "constitution" / "agent_constitution.md"
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
+CURRENT_STATE = ROOT / "state" / "current_state.md"
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
