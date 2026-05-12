@@ -27,6 +27,27 @@ def write(path: Path, text: str) -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def load_prior_memory(limit: int = 5) -> str:
+    reports_dir = ROOT / "reports"
+    runs_dir = ROOT / "runs"
+
+    memory = []
+
+    if reports_dir.exists():
+        reports = sorted(reports_dir.glob("V*_report.md"))[-limit:]
+        for path in reports:
+            memory.append(f"\n--- PRIOR REPORT: {path.name} ---\n")
+            memory.append(path.read_text(encoding="utf-8")[:8000])
+
+    if runs_dir.exists():
+        results = sorted(runs_dir.glob("V*/V*_results.json"))[-limit:]
+        for path in results:
+            memory.append(f"\n--- PRIOR RESULTS: {path} ---\n")
+            memory.append(path.read_text(encoding="utf-8")[:4000])
+
+    return "\n".join(memory) if memory else "No prior run memory found."
+
+
 def call_agent(prompt: str) -> str:
     response = client.responses.create(
         model=MODEL,
@@ -39,10 +60,6 @@ def call_agent(prompt: str) -> str:
 
 
 def extract_json(text: str) -> dict:
-    """
-    Robustly extract JSON from model output.
-    Accepts either raw JSON or fenced ```json blocks.
-    """
     text = text.strip()
 
     fenced = re.search(r"```json\s*(.*?)```", text, re.DOTALL | re.IGNORECASE)
@@ -52,7 +69,10 @@ def extract_json(text: str) -> dict:
     try:
         return json.loads(text)
     except json.JSONDecodeError as e:
-        raise ValueError(f"Could not parse JSON from agent response.\nError: {e}\n\nRaw response:\n{text}")
+        raise ValueError(
+            f"Could not parse JSON from agent response.\n"
+            f"Error: {e}\n\nRaw response:\n{text}"
+        )
 
 
 def run_python(script_path: Path):
@@ -68,6 +88,7 @@ def run_python(script_path: Path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--version", default="V308")
+    parser.add_argument("--memory-limit", type=int, default=5)
     args = parser.parse_args()
 
     version = args.version
@@ -77,6 +98,8 @@ def main():
     run_dir.mkdir(parents=True, exist_ok=True)
     report_path.parent.mkdir(parents=True, exist_ok=True)
 
+    prior_memory = load_prior_memory(limit=args.memory_limit)
+
     experiment_prompt = f"""
 You are executing retained-atlas loop {version}.
 
@@ -84,6 +107,12 @@ Read and obey the constitution.
 
 Loop prompt:
 {read(LOOP_PROMPT)}
+
+Prior run memory:
+{prior_memory}
+
+Use this memory to avoid repeating tests unless repetition is explicitly needed.
+Continue from the latest decision and smallest useful next test.
 
 Return ONLY valid JSON.
 
@@ -162,6 +191,9 @@ Do not overclaim.
 Use toy-model language only.
 Decision must be one of:
 continue / stop / branch / freeze
+
+Prior run memory:
+{prior_memory}
 
 Agent plan:
 {plan_md}
