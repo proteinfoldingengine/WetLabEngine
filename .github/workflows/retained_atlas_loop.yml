@@ -47,7 +47,12 @@ jobs:
           git add retained-atlas-agent/runs retained-atlas-agent/reports
 
           git commit -m "Run retained atlas loop ${{ github.event.inputs.version }}" || echo "No changes to commit"
-
           git pull --rebase origin main
-
           git push origin HEAD:main
+
+      - name: Audit retained-atlas loop
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd retained-atlas-agent
+          python src/audit_agent.py --version ${{ github.event.inputs.version }}
