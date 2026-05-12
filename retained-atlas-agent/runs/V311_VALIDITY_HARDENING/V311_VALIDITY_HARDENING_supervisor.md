@@ -1,3 +1,28 @@
+# V311_VALIDITY_HARDENING — Supervisor Decision
+
+## Supervisor Verdict
+branch
+
+## Reason
+The run failed the validity gate and produced no selected nondegenerate regime. The audit confirms `interpretation_allowed: false`, `selected_regime_present: false`, chance-level `AUC = 0.5`, chance-level `balanced_accuracy = 0.5`, saturated `bad_rate = 0`, saturated `trigger_rate = 0`, and zero horizon metrics across candidates. That means the controller-validation branch did not succeed, and it should not be frozen as stable evidence.
+
+This is not a law result. It is a harness failure that needs repair before any controller comparison can be interpreted.
+
+## Next Version
+V312_REGENERATE_REGIMES
+
+## Next Objective
+Repair the regime-generation harness so it can produce at least one valid nondegenerate regime with:
+- `bad_rate > 0`
+- `trigger_rate > 0.05`
+- `horizon_area > 0` or `horizon_width > 0`
+- held-out validation metrics reported
+- explicit controller comparison rows only after validity passes
+
+If no such regime can be produced in the revised search, stop the intervention branch.
+
+## Required Prompt Update
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -233,3 +258,4 @@ If no such regime can be produced in the revised search, stop the intervention b
 ## Required Prompt Update
 BEGIN_LOOP_PROMPT
 ...full markdown prompt...
+END_LOOP_PROMPT
