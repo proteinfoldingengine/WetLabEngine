@@ -1,5 +1,8 @@
 name: Retained Atlas Loop
 
+permissions:
+  contents: write
+  
 on:
   workflow_dispatch:
     inputs:
