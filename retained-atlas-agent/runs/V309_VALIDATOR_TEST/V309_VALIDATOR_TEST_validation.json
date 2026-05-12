@@ -1,0 +1,30 @@
+{
+  "interpretation_allowed": true,
+  "overall_status": "pass",
+  "failures": [],
+  "warnings": [],
+  "valid_row_count": 2,
+  "total_row_count": 2,
+  "controller_checks": [
+    {
+      "name": "chosen_regime",
+      "trigger_rate": null,
+      "bad_rate": null,
+      "auc": null,
+      "valid_for_interpretation": null,
+      "failures": [],
+      "warnings": [
+        "auc_missing"
+      ]
+    },
+    {
+      "name": "chosen_result",
+      "trigger_rate": 0.375,
+      "bad_rate": 0.375,
+      "auc": 1.0,
+      "valid_for_interpretation": true,
+      "failures": [],
+      "warnings": []
+    }
+  ]
+}
