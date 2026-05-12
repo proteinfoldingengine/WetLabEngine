@@ -9,7 +9,7 @@ on:
       version:
         description: "Version to run"
         required: true
-        default: "V309_VALIDATOR_TEST"
+        default: "V310_REPORT_SPLIT_TEST"
 
 jobs:
   run-loop:
@@ -30,7 +30,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run retained-atlas autoloop
+      - name: Run retained-atlas execution agent
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
@@ -41,6 +41,13 @@ jobs:
         run: |
           cd retained-atlas-agent
           python src/execution_validator.py --version ${{ github.event.inputs.version }}
+
+      - name: Write retained-atlas report
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd retained-atlas-agent
+          python src/report_agent.py --version ${{ github.event.inputs.version }}
 
       - name: Audit retained-atlas loop
         env:
