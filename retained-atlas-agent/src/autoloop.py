@@ -87,7 +87,7 @@ def run_python(script_path: Path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--version", default="V308")
+    parser.add_argument("--version", default="V309B")
     parser.add_argument("--memory-limit", type=int, default=5)
     args = parser.parse_args()
 
@@ -114,6 +114,15 @@ Prior run memory:
 Use this memory to avoid repeating tests unless repetition is explicitly needed.
 Continue from the latest decision and smallest useful next test.
 
+Important current correction:
+If the prior run failed because metrics were degenerate, treat that as a harness/regime failure, not as a law failure.
+For example:
+- bad_rate too low
+- trigger_rate = 0
+- score variance = 0
+- AUC = 0.5 for all variants
+- mean_bad and mean_safe identical
+
 Return ONLY valid JSON.
 
 Required JSON schema:
@@ -136,6 +145,16 @@ Rules for python_code:
 - Must not call OpenAI.
 - Must use fixed seeds.
 - Must include numerical metrics.
+- Must include a validity_gate object in the JSON results.
+- validity_gate must report:
+  - nondegenerate_bad_rate: true/false
+  - nonzero_score_variance: true/false
+  - nonzero_trigger_rate: true/false
+  - enough_positive_cases: true/false
+  - valid_for_interpretation: true/false
+- If valid_for_interpretation is false, the report decision must be branch, not freeze.
+- For ablation/intervention tests, target bad_rate should be between 0.20 and 0.40 unless the test explicitly studies rare failure.
+- For ablation tests, first verify the full score is non-degenerate before interpreting component drops.
 - Must be compact and robust.
 """
 
@@ -189,8 +208,14 @@ Use only the execution output below.
 Do not invent numbers.
 Do not overclaim.
 Use toy-model language only.
+
 Decision must be one of:
 continue / stop / branch / freeze
+
+Validity rule:
+If validity_gate.valid_for_interpretation is false, classify the result as a harness/regime failure.
+Do not freeze.
+Decision should be branch unless there is a stronger reason to stop.
 
 Prior run memory:
 {prior_memory}
