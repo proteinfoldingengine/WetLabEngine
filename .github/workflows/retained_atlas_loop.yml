@@ -42,11 +42,13 @@ jobs:
           git config user.name "retained-atlas-agent"
           git config user.email "retained-atlas-agent@users.noreply.github.com"
 
+          git pull --rebase origin main
+
           git add retained-atlas-agent/runs retained-atlas-agent/reports
 
           git commit -m "Run retained atlas loop ${{ github.event.inputs.version }}" || echo "No changes to commit"
 
-          git fetch origin main
-          git rebase origin/main || git rebase --abort
+          git pull --rebase origin main
 
           git push origin HEAD:main
+          
