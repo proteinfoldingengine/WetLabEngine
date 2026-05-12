@@ -1,0 +1,65 @@
+V300 Retained-Atlas Reachability Collapse Law Proof Harness
+==============================================================================
+Boundary: toy-model law proof only; no physical GR/spacetime claim.
+Untreated cases: 432
+Untreated phase counts: {'adaptive': 265, 'runaway': 111, 'fragment': 52, 'pockets': 2, 'slow': 2}
+Untreated bad rate: 0.377
+
+Regime A50 baselines:
+  base            : 0.8636
+  sparse          : 0.7487
+  dense           : 0.9492
+  noisy           : 0.8673
+  irregular_shock : 0.8807
+  long_memory     : 0.8813
+
+Threshold law performance:
+  Raw A50 AUC:      0.989
+  Raw A50 best:     threshold=0.5009 bal_acc=0.946 acc=0.938
+  A_norm AUC:       0.990
+  A_norm best:      threshold=0.5355 bal_acc=0.949 acc=0.944
+
+Operational threshold by variant:
+  base            : bad=0.403 bal_acc=0.948 acc=0.944 trigger=0.431
+  sparse          : bad=0.472 bal_acc=0.933 acc=0.931 trigger=0.514
+  dense           : bad=0.222 bal_acc=0.951 acc=0.958 trigger=0.236
+  noisy           : bad=0.333 bal_acc=0.937 acc=0.931 trigger=0.375
+  irregular_shock : bad=0.389 bal_acc=0.942 acc=0.944 trigger=0.389
+  long_memory     : bad=0.444 bal_acc=0.962 acc=0.958 trigger=0.486
+
+Reachability-triggered full staged repair:
+Treated phase counts: {'adaptive': 326, 'runaway': 99, 'fragment': 7}
+  Untreated bad rate: 0.377
+  Treated bad rate:   0.245
+  Untreated adaptive: 0.613
+  Treated adaptive:   0.755
+  Trigger rate:       0.405
+  Rescued:            57
+  Harmed:             0
+
+Severity reduction:
+  late_field    :    21.127 ->    12.517
+  late_action   :    28.694 ->    17.903
+  late_residual :    16.633 ->    10.331
+  late_pocket   :     5.151 ->     1.976
+
+Weak partial repair comparison:
+  Weak bad rate:      0.294
+  Weak adaptive:      0.699
+  Weak rescued:       36
+  Weak harmed:        0
+
+Safe conclusion:
+Inside this retained-atlas toy, normalized adaptive reachability is a strong predictor of bad-basin entry. Reachability-triggered full staged repair reduces fragmentation/runaway and severity across multiple variants. Weak partial repair is less reliable. This supports the toy-level law: failure begins when adaptive future trajectories contract below a regime-relative threshold.
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/generated/interface/models.py", line 48821, in hydrate_crdt_from_proto
+  File "/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/rpc/remote.py", line 747, in __call__
+  File "/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
