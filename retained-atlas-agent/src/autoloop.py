@@ -78,21 +78,26 @@ def run_python(script_path: Path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--version", default="V308_CLEAN")
+    parser.add_argument("--version", required=True)
     parser.add_argument("--memory-limit", type=int, default=5)
     args = parser.parse_args()
 
     version = args.version
     run_dir = ROOT / "runs" / version
-    report_path = ROOT / "reports" / f"{version}_report.md"
-
     run_dir.mkdir(parents=True, exist_ok=True)
-    report_path.parent.mkdir(parents=True, exist_ok=True)
 
     prior_memory = load_prior_memory(limit=args.memory_limit)
 
     experiment_prompt = f"""
-You are executing retained-atlas loop {version}.
+You are the Retained-Atlas Execution Agent.
+
+Your job is only:
+1. create the experiment plan
+2. write runnable Python
+3. ensure the Python saves results JSON
+
+You are NOT writing the final report.
+The final report will be written later by report_agent.py after deterministic validation.
 
 Read and obey the constitution.
 
@@ -135,9 +140,10 @@ Rules for python_code:
 - Must include numerical metrics.
 - Must include a validity_gate object in the JSON results.
 - Must be compact and robust.
+- Must not write the final report.
 """
 
-    print(f"Calling agent for {version}...")
+    print(f"Calling execution agent for {version}...")
     agent_raw = call_agent(experiment_prompt)
     write(run_dir / f"{version}_agent_raw.txt", agent_raw)
 
@@ -158,61 +164,17 @@ Rules for python_code:
     print(f"Running experiment: {script_path}")
     code_status, stdout, stderr = run_python(script_path)
 
+    write(run_dir / f"{version}_returncode.txt", str(code_status))
     write(run_dir / f"{version}_stdout.txt", stdout)
     write(run_dir / f"{version}_stderr.txt", stderr)
 
-    report_prompt = f"""
-Write the final retained-atlas report for {version}.
-
-Use the constitution-required loop format exactly:
-
-# V### — Title
-
-## Question
-## Hypothesis
-## Method
-## Controls
-## Results
-## Interpretation
-## Failure / Caveat
-## Decision
-## Next
-
-Scientific current state:
-{read(CURRENT_STATE)}
-
-Use only the execution output below.
-Do not invent numbers.
-Do not overclaim.
-Use toy-model language only.
-
-Decision must be one of:
-continue / stop / branch / freeze
-
-Agent plan:
-{plan_md}
-
-Execution return code:
-{code_status}
-
-STDOUT:
-{stdout}
-
-STDERR:
-{stderr}
-"""
-
-    print(f"Writing report for {version}...")
-    report = call_agent(report_prompt)
-    write(report_path, report)
-
     print("\nDONE")
-    print(f"Raw:    {run_dir / f'{version}_agent_raw.txt'}")
-    print(f"Plan:   {run_dir / f'{version}_agent_plan.md'}")
-    print(f"Script: {script_path}")
-    print(f"Report: {report_path}")
-    print(f"Stdout: {run_dir / f'{version}_stdout.txt'}")
-    print(f"Stderr: {run_dir / f'{version}_stderr.txt'}")
+    print(f"Raw:        {run_dir / f'{version}_agent_raw.txt'}")
+    print(f"Plan:       {run_dir / f'{version}_agent_plan.md'}")
+    print(f"Script:     {script_path}")
+    print(f"Returncode: {run_dir / f'{version}_returncode.txt'}")
+    print(f"Stdout:     {run_dir / f'{version}_stdout.txt'}")
+    print(f"Stderr:     {run_dir / f'{version}_stderr.txt'}")
 
 
 if __name__ == "__main__":
