@@ -1,3 +1,32 @@
+# V308_INTERVENTION_CLEAN — Supervisor Decision
+
+## Supervisor Verdict
+branch
+
+## Reason
+The intervention comparison was run, but the audit shows the branch is not a controller-validation success:
+
+- `D_A` did not outperform `A_norm`
+- `D_A` validity gate failed
+- horizon controller was non-informative (`horizon_area = 0.0`, `horizon_width = 0.0`)
+- the report mixed valid and invalid rows for interpretation
+- no harm occurred, so the comparison does not justify promoting a new controller
+
+This is enough evidence to preserve the current toy-law boundary and freeze the controller branch rather than branch further. `A_norm` remains the controller; `D_A` remains diagnostic.
+
+## Next Version
+V309
+
+## Next Objective
+Run a narrower calibration/diagnostic test to repair the degenerate horizon/controller regime before any ablation:
+- verify whether there exists a regime where horizon metrics are nonzero
+- avoid saturated trigger rates
+- require held-out seeds
+- keep `D_A` as diagnostic only unless it clearly improves control
+
+## Required Prompt Update
+
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -183,3 +212,7 @@ Smallest useful next test: determine whether the harness can produce a nondegene
 
 ## Guardrail Reminder
 If horizon metrics remain zero and trigger rates remain saturated, stop this branch and preserve the current toy-law boundary. Do not reinterpret the failed intervention branch as controller validation.
+END_LOOP_PROMPT
+
+## Supervisor Safety Override
+Original verdict was `freeze`, but the text described a harness/regime failure or failed validity gate. Per constitution hardening, this was overridden to `branch`.
