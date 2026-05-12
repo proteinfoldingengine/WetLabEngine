@@ -1,3 +1,34 @@
+# V309_VALIDATOR_TEST — Supervisor Decision
+
+## Supervisor Verdict
+branch
+
+## Reason
+The run did **not** produce a valid controller-comparison regime. The audit says the validity gate was not broadly satisfied, and the results show the candidate regimes were still degenerate:
+- `bad_rate_range = false` for the shown candidates
+- `trigger_rate = 0.0` for the shown candidates
+- `horizon_width = 0.0`, `horizon_area = 0.0` for the shown candidates
+- `balanced_accuracy = 0.5` for the shown candidates
+
+One narrow candidate earlier appeared valid in the report, but the audit correctly warns that the broader run is not a clean validation and that the controller comparison is not actually demonstrated from the provided results. This is a harness/regime-finding issue, not evidence to promote any controller law.
+
+Per the hard rules: if the validity gate failed or the run is a harness failure, do **not** freeze. Branch is the correct choice.
+
+## Next Version
+V309_CLEAN
+
+## Next Objective
+Repair the harness/reporting path by restricting to a **single valid nondegenerate regime** and requiring an explicit controller comparison output before any ablation.
+
+If the next run still cannot produce:
+- nonzero horizon metrics,
+- non-saturated trigger rates,
+- valid comparison rows,
+
+then stop the branch rather than adding metrics.
+
+## Required Prompt Update
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -196,3 +227,4 @@ Smallest useful next test: determine whether the harness can produce one valid n
 
 ## Guardrail Reminder
 If no valid regime exists, stop this branch rather than adding new metrics or reinterpreting invalid rows as evidence.
+END_LOOP_PROMPT
