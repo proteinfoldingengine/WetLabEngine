@@ -1,0 +1,43 @@
+name: Retained Atlas Loop
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to run"
+        required: true
+        default: "V308"
+
+jobs:
+  run-loop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          cd retained-atlas-agent
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run retained-atlas autoloop
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd retained-atlas-agent
+          python src/autoloop.py --version ${{ github.event.inputs.version }}
+
+      - name: Commit generated outputs
+        run: |
+          git config user.name "retained-atlas-agent"
+          git config user.email "retained-atlas-agent@users.noreply.github.com"
+          git add retained-atlas-agent/runs retained-atlas-agent/reports
+          git commit -m "Run retained atlas loop ${{ github.event.inputs.version }}" || echo "No changes to commit"
+          git push
