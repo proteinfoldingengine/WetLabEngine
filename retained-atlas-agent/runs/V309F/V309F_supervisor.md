@@ -1,3 +1,29 @@
+# V309F — Supervisor Decision
+
+## Supervisor Verdict
+branch
+
+## Reason
+The audit failed the run on validity and numerical integrity. `chosen_regime` is null, `valid_for_interpretation` is false everywhere shown, and the reported AUC is degenerate rather than a real ranking metric. This is a harness repair issue, not interpretable ablation evidence. We should not freeze, because the audit explicitly says the harness needs correction and the next test should repair it before any component ablation.
+
+## Next Version
+V310
+
+## Next Objective
+Repair the harness so the next run can produce at least one valid regime before ablation. Specifically:
+- implement a real AUC or remove AUC from the decision gate if not meaningful
+- require a non-null `chosen_regime`
+- require `0.20 <= bad_rate <= 0.40`
+- require `trigger_rate > 0.05`
+- require `phase_counts.bad > 0`
+- keep `validity_gate` as a first-class output
+- if no valid regime is found, report that as a harness failure and stop before ablation
+
+Do not run component ablation until the harness passes the gate.
+
+## Required Prompt Update
+
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -157,3 +183,4 @@ If code execution is not available:
 1. write the runnable Python
 2. state clearly that execution was not performed
 3. do not invent numerical results
+END_LOOP_PROMPT
