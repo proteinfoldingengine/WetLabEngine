@@ -1,3 +1,27 @@
+# V309E — Supervisor Decision
+
+## Supervisor Verdict
+branch
+
+## Reason
+The audit says `fail`, `chosen_regime` is `null`, and the validity gate did not pass. Under the hard rules, this cannot freeze. The current toy harness still produces only degenerate all-safe regimes in the tested window, so the next run must repair the harness with a narrower calibration test before any ablation.
+
+## Next Version
+V310E
+
+## Next Objective
+Repair the harness with a narrower calibration sweep that is designed to produce at least one nondegenerate regime with:
+- `chosen_regime != null`
+- `bad_rate > 0`
+- `trigger_rate > 0`
+- `phase_counts.bad > 0`
+- `valid_for_interpretation = true`
+
+If that cannot be achieved, stop and report harness failure. Do not ablate components yet.
+
+## Required Prompt Update
+
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -237,3 +261,5 @@ Smallest useful next test: run a narrower calibration sweep around the previous 
 
 ## Guardrail Reminder
 If the new sweep still yields `chosen_regime = null`, stop and report a harness failure. Do not ablate components.
+
+END_LOOP_PROMPT
