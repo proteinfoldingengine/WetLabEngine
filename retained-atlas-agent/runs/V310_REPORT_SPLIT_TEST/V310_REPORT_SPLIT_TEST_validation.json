@@ -1,0 +1,58 @@
+{
+  "interpretation_allowed": true,
+  "overall_status": "pass",
+  "failures": [],
+  "warnings": [],
+  "valid_row_count": 3,
+  "total_row_count": 4,
+  "controller_checks": [
+    {
+      "name": "controller_rows",
+      "trigger_rate": null,
+      "bad_rate": null,
+      "auc": null,
+      "valid_for_interpretation": null,
+      "failures": [],
+      "warnings": [
+        "auc_missing"
+      ]
+    },
+    {
+      "name": "notes",
+      "trigger_rate": null,
+      "bad_rate": null,
+      "auc": null,
+      "valid_for_interpretation": null,
+      "failures": [],
+      "warnings": [
+        "auc_missing"
+      ]
+    },
+    {
+      "name": "selected_baseline",
+      "trigger_rate": 0.0,
+      "bad_rate": 0.0,
+      "auc": 0.5,
+      "valid_for_interpretation": false,
+      "failures": [
+        "trigger_rate_saturated",
+        "bad_rate_saturated",
+        "validity_gate_false"
+      ],
+      "warnings": [
+        "horizon_metrics_zero"
+      ]
+    },
+    {
+      "name": "selected_regime",
+      "trigger_rate": null,
+      "bad_rate": null,
+      "auc": null,
+      "valid_for_interpretation": null,
+      "failures": [],
+      "warnings": [
+        "auc_missing"
+      ]
+    }
+  ]
+}
