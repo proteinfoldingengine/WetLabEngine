@@ -1,4 +1,5 @@
 import argparse
+import json
 import os
 import re
 import subprocess
@@ -6,39 +7,52 @@ from pathlib import Path
 from openai import OpenAI
 
 ROOT = Path(__file__).resolve().parents[1]
+
 CONSTITUTION = ROOT / "constitution" / "agent_constitution.md"
 LOOP_PROMPT = ROOT / "prompts" / "loop_prompt.md"
+
+MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def read(path: Path) -> str:
     if not path.exists():
-        raise FileNotFoundError(path)
+        raise FileNotFoundError(f"Missing required file: {path}")
     return path.read_text(encoding="utf-8")
 
 
-def write(path: Path, text: str):
+def write(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8")
 
 
-def extract_python_block(text: str) -> str:
-    match = re.search(r"```python\n(.*?)```", text, re.DOTALL)
-    if not match:
-        raise ValueError("No Python code block found in agent response.")
-    return match.group(1).strip()
-
-
 def call_agent(prompt: str) -> str:
     response = client.responses.create(
-        model="gpt-5.4-mini",
+        model=MODEL,
         input=[
             {"role": "system", "content": read(CONSTITUTION)},
             {"role": "user", "content": prompt},
         ],
     )
     return response.output_text
+
+
+def extract_json(text: str) -> dict:
+    """
+    Robustly extract JSON from model output.
+    Accepts either raw JSON or fenced ```json blocks.
+    """
+    text = text.strip()
+
+    fenced = re.search(r"```json\s*(.*?)```", text, re.DOTALL | re.IGNORECASE)
+    if fenced:
+        text = fenced.group(1).strip()
+
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Could not parse JSON from agent response.\nError: {e}\n\nRaw response:\n{text}")
 
 
 def run_python(script_path: Path):
@@ -60,29 +74,64 @@ def main():
     run_dir = ROOT / "runs" / version
     report_path = ROOT / "reports" / f"{version}_report.md"
 
-    prompt = f"""
+    run_dir.mkdir(parents=True, exist_ok=True)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+
+    experiment_prompt = f"""
+You are executing retained-atlas loop {version}.
+
+Read and obey the constitution.
+
+Loop prompt:
 {read(LOOP_PROMPT)}
 
-You are now executing {version}.
+Return ONLY valid JSON.
 
-Return:
-1. the required loop report draft
-2. one runnable Python code block only
+Required JSON schema:
 
-The Python script must:
-- save outputs under runs/{version}/
-- save a JSON result file
-- print results
+{{
+  "version": "{version}",
+  "title": "short title",
+  "plan_markdown": "markdown plan using the required loop format",
+  "python_filename": "{version.lower()}_experiment.py",
+  "python_code": "complete runnable Python code as a string"
+}}
+
+Rules for python_code:
+- Must be complete runnable Python.
+- Must save outputs under runs/{version}/.
+- Must save a JSON result file under runs/{version}/{version}_results.json.
+- Must print the JSON results to stdout.
+- Must not require external files unless it creates them.
+- Must not use secrets.
+- Must not call OpenAI.
+- Must use fixed seeds.
+- Must include numerical metrics.
+- Must be compact and robust.
 """
 
     print(f"Calling agent for {version}...")
-    agent_output = call_agent(prompt)
+    agent_raw = call_agent(experiment_prompt)
 
-    write(run_dir / f"{version}_agent_plan.md", agent_output)
+    write(run_dir / f"{version}_agent_raw.txt", agent_raw)
 
-    code = extract_python_block(agent_output)
-    script_path = run_dir / f"{version.lower()}_experiment.py"
-    write(script_path, code)
+    try:
+        payload = extract_json(agent_raw)
+    except Exception as e:
+        write(run_dir / f"{version}_parse_error.txt", str(e))
+        raise
+
+    plan_md = payload.get("plan_markdown", "")
+    python_filename = payload.get("python_filename", f"{version.lower()}_experiment.py")
+    python_code = payload.get("python_code", "")
+
+    if not python_code.strip():
+        raise ValueError("Agent JSON did not include python_code.")
+
+    write(run_dir / f"{version}_agent_plan.md", plan_md)
+
+    script_path = run_dir / python_filename
+    write(script_path, python_code)
 
     print(f"Running experiment: {script_path}")
     code_status, stdout, stderr = run_python(script_path)
@@ -91,10 +140,31 @@ The Python script must:
     write(run_dir / f"{version}_stderr.txt", stderr)
 
     report_prompt = f"""
-Using the constitution and loop format, write the final report for {version}.
+Write the final retained-atlas report for {version}.
+
+Use the constitution-required loop format exactly:
+
+# V### — Title
+
+## Question
+## Hypothesis
+## Method
+## Controls
+## Results
+## Interpretation
+## Failure / Caveat
+## Decision
+## Next
+
+Use only the execution output below.
+Do not invent numbers.
+Do not overclaim.
+Use toy-model language only.
+Decision must be one of:
+continue / stop / branch / freeze
 
 Agent plan:
-{agent_output}
+{plan_md}
 
 Execution return code:
 {code_status}
@@ -104,12 +174,6 @@ STDOUT:
 
 STDERR:
 {stderr}
-
-Rules:
-- do not invent numbers
-- use only execution output
-- decision must be continue / stop / branch / freeze
-- if code failed, decision should not be freeze unless justified
 """
 
     print(f"Writing report for {version}...")
@@ -117,6 +181,7 @@ Rules:
     write(report_path, report)
 
     print("\nDONE")
+    print(f"Raw:    {run_dir / f'{version}_agent_raw.txt'}")
     print(f"Plan:   {run_dir / f'{version}_agent_plan.md'}")
     print(f"Script: {script_path}")
     print(f"Report: {report_path}")
