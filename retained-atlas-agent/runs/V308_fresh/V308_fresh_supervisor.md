@@ -1,3 +1,39 @@
+# V308_fresh — Supervisor Decision
+
+## Supervisor Verdict
+branch
+
+## Reason
+The latest run repaired calibration enough to produce one valid regime, but the audit says the stated V308 objective was not actually executed. The run was a narrow calibration sweep, not the required controller/intervention comparison. The audit also flags that `horizon_area` and `horizon_width` were always `0.0`, and that the trigger logic did not compare scalar, deficit, horizon-area, and combined controllers. That means the result is valid as a narrow calibration confirmation, but not valid as V308 intervention evidence.
+
+So: continue the research line, but branch into a true intervention comparison rather than freezing or accepting the current run as completion of V308.
+
+## Next Version
+V308_INTERVENTION_CLEAN
+
+## Next Objective
+Run the actual V308 controller comparison on the valid regime from the repaired calibration sweep:
+- scalar `A_norm` trigger
+- `D_A` trigger
+- horizon-area trigger
+- combined trigger
+
+Use the same seed set and the same baseline protocol. Report:
+- baseline bad rate
+- treated bad rate
+- adaptive rate
+- trigger rate
+- rescued
+- harmed
+- net rescue
+- severity reduction
+- phase counts
+- variant-level performance
+
+Do not reinterpret the calibration sweep as an intervention result.
+
+## Required Prompt Update
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -231,3 +267,5 @@ Smallest useful next test: run the actual controller comparison on the valid reg
 
 ## Guardrail Reminder
 If the intervention harness still hardwires one trigger rule or does not simulate controller side-by-side, stop and report a harness failure. Do not ablate components.
+
+END_LOOP_PROMPT
