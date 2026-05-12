@@ -2,14 +2,14 @@ name: Retained Atlas Loop
 
 permissions:
   contents: write
-  
+
 on:
   workflow_dispatch:
     inputs:
       version:
         description: "Version to run"
         required: true
-        default: "V308"
+        default: "V309"
 
 jobs:
   run-loop:
@@ -51,4 +51,3 @@ jobs:
           git pull --rebase origin main
 
           git push origin HEAD:main
-          
