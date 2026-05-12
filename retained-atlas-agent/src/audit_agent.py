@@ -4,14 +4,15 @@ from pathlib import Path
 from openai import OpenAI
 
 ROOT = Path(__file__).resolve().parents[1]
+
 CONSTITUTION = ROOT / "constitution" / "agent_constitution.md"
-MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
 CURRENT_STATE = ROOT / "state" / "current_state.md"
 
+MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-def read(path: Path, limit: int = 20000) -> str:
+def read(path: Path, limit: int = 30000) -> str:
     if not path.exists():
         return f"[MISSING: {path}]"
     return path.read_text(encoding="utf-8")[:limit]
@@ -60,7 +61,10 @@ Your job is to audit the latest retained-atlas loop like a skeptical reviewer.
 
 You are NOT the generator.
 You are NOT trying to rescue the result.
-You are checking whether the report, code, results, and decision obey the constitution.
+You are checking whether the report, code, results, and decision obey the constitution and current state.
+
+Scientific current state:
+{read(CURRENT_STATE)}
 
 Audit version:
 {version}
@@ -94,11 +98,15 @@ Any degenerate regime problems?
 Any overclaiming?
 Any forbidden GR/physics language?
 
+## Current-State Consistency Check
+Did the run respect current_state.md?
+Did it preserve the V307 law boundary?
+
 ## Required Correction
 What must be fixed before next loop?
 
 ## Recommended Next Version
-Example: V309E
+Example: V309_CLEAN
 
 ## Recommended Next Test
 Smallest useful next test.
