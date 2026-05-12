@@ -1,3 +1,26 @@
+# V310 — Supervisor Decision
+
+## Supervisor Verdict
+freeze
+
+## Reason
+The audit says the previous decision was not justified: `chosen_regime` stayed null, `valid_for_interpretation` failed, and the harness still did not produce a valid interpretive regime. This is a harness failure, not a branch worth continuing into ablation. Per the rules, we should not freeze only on a validity-gate pass; but here the gate failed and the branch is not yet repairable by interpretation. The right control action is to freeze this branch until the harness is redesigned.
+
+## Next Version
+V310E
+
+## Next Objective
+Repair the harness with a narrower calibration test that actually varies seeds, uses a correct AUC implementation, and searches for any regime with:
+- `chosen_regime != null`
+- `valid_for_interpretation = true`
+- `trigger_rate > 0.05`
+- `phase_counts.bad > 0`
+
+If none exists, report a harness failure and stop before any ablation.
+
+## Required Prompt Update
+
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -159,3 +182,4 @@ If code execution is not available:
 1. write the runnable Python
 2. state clearly that execution was not performed
 3. do not invent numerical results
+END_LOOP_PROMPT
