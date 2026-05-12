@@ -7,6 +7,7 @@ from openai import OpenAI
 ROOT = Path(__file__).resolve().parents[1]
 
 CONSTITUTION = ROOT / "constitution" / "agent_constitution.md"
+CURRENT_STATE = ROOT / "state" / "current_state.md"
 LOOP_PROMPT = ROOT / "prompts" / "loop_prompt.md"
 NEXT_VERSION_FILE = ROOT / "prompts" / "next_version.txt"
 
@@ -61,11 +62,6 @@ def extract_next_version(supervisor_output: str) -> str:
 
 
 def harden_bad_freeze(supervisor_output: str) -> str:
-    """
-    Safety patch:
-    If the model says freeze while also describing a harness failure,
-    rewrite the verdict to branch. This prevents bad freeze decisions.
-    """
     lower = supervisor_output.lower()
 
     has_freeze = "## supervisor verdict" in lower and re.search(
@@ -130,6 +126,9 @@ You are not writing code.
 You are not interpreting invalid results as law evidence.
 You are controlling the research loop.
 
+Scientific current state:
+{read(CURRENT_STATE)}
+
 Required output format:
 
 # {version} — Supervisor Decision
@@ -157,6 +156,8 @@ Hard supervisor rules:
 - If audit says validity_gate failed, do not freeze.
 - If chosen_regime is null, next objective must repair the harness before ablation.
 - If the last run was a harness failure, the next run should be a narrower calibration test.
+- Preserve current_state.md as the scientific lineage source.
+- Do not overwrite the V307 law boundary unless new valid evidence justifies it.
 - Do not overclaim.
 - Use toy-model language only.
 - The updated loop_prompt.md must be specific enough that the next agent run knows exactly what to do.
