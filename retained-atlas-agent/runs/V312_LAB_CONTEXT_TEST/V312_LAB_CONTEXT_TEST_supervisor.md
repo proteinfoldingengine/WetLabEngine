@@ -1,3 +1,46 @@
+# V312_LAB_CONTEXT_TEST — Supervisor Decision
+
+## Supervisor Verdict
+branch
+
+## Reason
+The run is not a validated controller result, but it is a stable failure branch.
+
+The audit says:
+- `execution_validator.py` ran
+- `overall_status: pass`
+- `interpretation_allowed: true`
+- but `valid_for_interpretation: false` for the displayed candidate regimes
+- `selected_regime_present: false`
+- `valid_controller_row_count: 0`
+- `horizon_nonzero: false` everywhere shown
+
+So the branch did not produce interpretable controller evidence, and there is no need to keep pushing the same intervention setup immediately. This is exactly the kind of stable failure that should be frozen rather than retested without a harness change.
+
+This does not change the V307 boundary:
+- `D_A` remains a strong toy-level diagnostic law
+- `A_norm` remains the controller
+- `D_A` is not validated as an intervention controller here
+
+## Next Version
+V313_FREEZE
+
+## Next Objective
+Freeze the failed intervention branch and preserve the current toy-law boundary.
+
+Smallest useful next test:
+- do not rerun intervention comparison yet
+- instead, write a new harness only after changing the regime generator so at least one candidate can satisfy:
+  - `bad_rate > 0`
+  - `trigger_rate > 0.05`
+  - `horizon_area > 0` or `horizon_width > 0`
+  - `valid_for_interpretation: true`
+  - explicit controller rows surviving the gate
+
+If the next branch is opened later, it should start with a narrower calibration repair, not ablation.
+
+## Required Prompt Update
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -214,3 +257,8 @@ Smallest useful next test: only after harness repair, search for one valid nonde
 
 ## Guardrail Reminder
 If no valid regime exists, do not add new metrics or reframe invalid rows as evidence.
+
+END_LOOP_PROMPT
+
+## Supervisor Safety Override
+Original verdict was `freeze`, but the text described a harness/regime failure or failed validity gate. Per constitution hardening, this was overridden to `branch`.
