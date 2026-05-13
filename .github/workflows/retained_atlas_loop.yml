@@ -63,6 +63,7 @@ jobs:
           cd retained-atlas-agent
           python src/supervisor_agent.py --version ${{ github.event.inputs.version }}
 
+      
       - name: Commit generated outputs
         run: |
           git config user.name "retained-atlas-agent"
@@ -73,5 +74,7 @@ jobs:
           git commit -m "Run retained atlas loop ${{ github.event.inputs.version }}" || echo "No changes to commit"
 
           git pull --rebase origin main
+
+          git push origin HEAD:mainmain
 
           git push origin HEAD:main
