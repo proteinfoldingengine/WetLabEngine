@@ -9,7 +9,7 @@ on:
       version:
         description: "Version to run"
         required: true
-        default: "V310_REPORT_SPLIT_TEST"
+        default: "V312_LAB_CONTEXT_TEST"
 
 jobs:
   run-loop:
@@ -29,6 +29,11 @@ jobs:
           cd retained-atlas-agent
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Build lab context
+        run: |
+          cd retained-atlas-agent
+          python src/build_lab_context.py
 
       - name: Run retained-atlas execution agent
         env:
@@ -63,7 +68,11 @@ jobs:
           cd retained-atlas-agent
           python src/supervisor_agent.py --version ${{ github.event.inputs.version }}
 
-      
+      - name: Rebuild lab context after run
+        run: |
+          cd retained-atlas-agent
+          python src/build_lab_context.py
+
       - name: Commit generated outputs
         run: |
           git config user.name "retained-atlas-agent"
@@ -74,7 +83,5 @@ jobs:
           git commit -m "Run retained atlas loop ${{ github.event.inputs.version }}" || echo "No changes to commit"
 
           git pull --rebase origin main
-
-          git push origin HEAD:mainmain
 
           git push origin HEAD:main
