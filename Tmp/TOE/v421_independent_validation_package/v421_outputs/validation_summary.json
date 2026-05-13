@@ -1,0 +1,84 @@
+{
+  "seed": 421001,
+  "n_per_regime": 80000,
+  "law": "S_t = M_t * R_t * L_t with confidence-adjusted dynamic floors and drift guard",
+  "controllers": [
+    "greedy_damage_minimizer",
+    "A_only",
+    "A_plus_L",
+    "S_constrained_dynamic_floors",
+    "S_residual_uncertainty",
+    "V420_full_guarded_law"
+  ],
+  "regimes": [
+    "clean",
+    "noisy",
+    "missing_channel",
+    "high_stress",
+    "fragmentation_heavy",
+    "delayed_recovery",
+    "coordinated_drift"
+  ],
+  "summary": [
+    {
+      "controller": "V420_full_guarded_law",
+      "bad": 0.46937321428571427,
+      "harmed": 0.07840178571428572,
+      "reclosed": 0.4717803571428571,
+      "fidelity": 0.4765956619476314,
+      "future_R": 0.5210897188824909,
+      "attractor": 0.5468888007392209,
+      "score": 2.175871157174463
+    },
+    {
+      "controller": "S_residual_uncertainty",
+      "bad": 0.47580357142857144,
+      "harmed": 0.08214107142857142,
+      "reclosed": 0.5033678571428571,
+      "fidelity": 0.4649867641257345,
+      "future_R": 0.5066691554474126,
+      "attractor": 0.5245978465734605,
+      "score": 2.260454362632908
+    },
+    {
+      "controller": "S_constrained_dynamic_floors",
+      "bad": 0.4898535714285715,
+      "harmed": 0.08865535714285713,
+      "reclosed": 0.5357821428571429,
+      "fidelity": 0.4521297034004107,
+      "future_R": 0.4902139301246139,
+      "attractor": 0.49873013421393236,
+      "score": 2.3619290762533596
+    },
+    {
+      "controller": "A_plus_L",
+      "bad": 0.5216875,
+      "harmed": 0.14161607142857144,
+      "reclosed": 0.5891303571428572,
+      "fidelity": 0.4151649626313448,
+      "future_R": 0.44817936316506135,
+      "attractor": 0.44977652141243435,
+      "score": 2.6320241371109394
+    },
+    {
+      "controller": "A_only",
+      "bad": 0.5344607142857143,
+      "harmed": 0.16479464285714288,
+      "reclosed": 0.6219,
+      "fidelity": 0.39538187834158023,
+      "future_R": 0.42647451474393483,
+      "attractor": 0.42261107842072443,
+      "score": 2.7698083239361604
+    },
+    {
+      "controller": "greedy_damage_minimizer",
+      "bad": 0.5056232142857143,
+      "harmed": 0.6799910714285714,
+      "reclosed": 0.7847928571428572,
+      "fidelity": 0.2597794335214047,
+      "future_R": 0.2315026629305871,
+      "attractor": 0.28450554980731346,
+      "score": 4.104853227786353
+    }
+  ]
+}
