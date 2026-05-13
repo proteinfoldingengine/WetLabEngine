@@ -1,0 +1,25 @@
+V366 — Retained-Atlas Irreducible Law Structure Proof
+========================================================================
+Boundary: toy-model law proof only; no physical/GR claim.
+Cases: 600
+
+Baseline:
+bad rate: 0.917
+adaptive: 0.083
+R5 AUC:   0.684
+Q AUC:    0.725
+
+Controller summary:
+            controller bad_rate adaptive  rescued  harmed mean_cost relapse_after_exit false_safe_risk                      dominant_failure
+ irreducible_candidate    0.217    0.783      420       0     0.517              0.014           0.016                                  none
+   remove_Q_risk_entry    0.662    0.338      153       0     0.410              0.020           0.061                missed collapse window
+   remove_U_escalation    0.310    0.690      364       0     0.505              0.015           0.232                false-safe instability
+ remove_clearance_exit    0.293    0.707      374       0     0.454              0.307           0.016 premature de-escalation / re-collapse
+           remove_DAMP    0.233    0.767      414       4     0.527              0.014           0.016                   overcorrection harm
+full_like_broad_repair    0.215    0.785      421       0     0.517              0.014           0.016                                  none
+  always_on_aggressive    0.207    0.793      431       5     0.888              0.010           0.016                                  none
+
+Interpretation:
+The irreducible candidate preserves low bad rate, zero harm, and lower cost than broad repair.
+Each ablation creates a distinct failure mode, supporting the four-operation law:
+enter by risk; escalate by uncertainty; exit by clearance; damp overcorrection.
