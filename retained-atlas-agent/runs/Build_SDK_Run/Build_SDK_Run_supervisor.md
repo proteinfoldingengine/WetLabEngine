@@ -1,3 +1,35 @@
+# Build_SDK_Run — Supervisor Decision
+
+## Supervisor Verdict
+branch
+
+## Reason
+The run is a harness/regime-search failure, not a validated controller result.
+
+The audit says:
+- `valid_for_interpretation: false` for all displayed regimes
+- `horizon_nonzero: false` everywhere
+- `valid_controller_row_count: 0`
+- no explicit controller-comparison rows survived the validity gate
+- the report contains mild overclaiming about controller validation and “one valid nondegenerate regime,” which is not supported
+
+This means the current V312 branch did not produce interpretable controller evidence. It should not be frozen, because the branch is not stable. It should also not be stopped outright yet, because the failure is diagnostic: the harness is producing candidates, but the gate structure is too strict or the search space is miscentered such that horizon metrics never become nonzero.
+
+## Next Version
+V313_REPAIR_HORIZON_REGIME
+
+## Next Objective
+Repair the regime-search harness so it can produce at least one valid nondegenerate regime with:
+- `bad_rate > 0`
+- `trigger_rate > 0.05`
+- `horizon_area > 0` or `horizon_width > 0`
+- held-out validation metrics reported
+- explicit controller comparison rows only after validity passes
+
+If the revised search still yields `horizon_nonzero: false` for all candidates, stop the intervention branch.
+
+## Required Prompt Update
+BEGIN_LOOP_PROMPT
 # Retained-Atlas Loop Prompt
 
 ## Current Task
@@ -241,3 +273,4 @@ If the revised search still yields `horizon_nonzero: false` for all candidates, 
 ## Required Prompt Update
 BEGIN_LOOP_PROMPT
 ...full markdown prompt...
+END_LOOP_PROMPT
