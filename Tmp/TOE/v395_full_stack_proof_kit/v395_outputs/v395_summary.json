@@ -1,0 +1,154 @@
+{
+  "config": {
+    "seed": 367395,
+    "n_episodes": 1200,
+    "horizon": 80,
+    "base_noise": 0.035,
+    "shock_prob": 0.045,
+    "shock_scale": 0.16,
+    "recovery_base": 0.055,
+    "recovery_noise": 0.02,
+    "collapse_floor_bias": 0.22,
+    "reserve_buffer": 0.055,
+    "harm_cost_threshold": 0.125,
+    "reclose_window": 8,
+    "product_repair_gain": 0.18,
+    "floor_lower_gain": 0.12,
+    "r_preserve_gain": 0.1,
+    "turbulence_damp_gain": 0.1,
+    "cost_floor_ratio": 0.45,
+    "buffer_floor_ratio": 0.35
+  },
+  "law_candidate": "A_t = M_t * R_t; collapse when A_t < A_floor(t)",
+  "dynamic_floor": "A_floor rises with turbulence and low-R pressure; falls with recovery velocity",
+  "reserve_rule": "product repair allowed when R_t > A_floor + C_int + B_t",
+  "main_controller_comparison": [
+    {
+      "controller": "no_control",
+      "bad_rate": 0.38104166666666667,
+      "harmed_rate": 0.0,
+      "reclosed_rate": 0.0,
+      "mean_total_cost": 0.0,
+      "auc": 0.6660530550777503
+    },
+    {
+      "controller": "explicit_hierarchy",
+      "bad_rate": 0.3164583333333333,
+      "harmed_rate": 0.003541666666666667,
+      "reclosed_rate": 0.23145833333333332,
+      "mean_total_cost": 0.12628075607606626,
+      "auc": 0.5716214477392447
+    },
+    {
+      "controller": "future_reachability_optimizer",
+      "bad_rate": 0.28604166666666664,
+      "harmed_rate": 0.012708333333333334,
+      "reclosed_rate": 0.23812500000000003,
+      "mean_total_cost": 0.2882301452629764,
+      "auc": 0.6062534357796758
+    },
+    {
+      "controller": "floor_lowering_only",
+      "bad_rate": 0.3202083333333333,
+      "harmed_rate": 0.014166666666666666,
+      "reclosed_rate": 0.22604166666666667,
+      "mean_total_cost": 0.13505000000000006,
+      "auc": 0.5841861962955717
+    },
+    {
+      "controller": "product_repair_only",
+      "bad_rate": 0.391875,
+      "harmed_rate": 0.208125,
+      "reclosed_rate": 0.20187499999999997,
+      "mean_total_cost": 9.294449122874555,
+      "auc": 0.6692622952030894
+    },
+    {
+      "controller": "greedy_bad_minimizer",
+      "bad_rate": 0.3347916666666667,
+      "harmed_rate": 0.371875,
+      "reclosed_rate": 0.190625,
+      "mean_total_cost": 104.99009613782064,
+      "auc": 0.7821626761553682
+    }
+  ],
+  "ablation_comparison": [
+    {
+      "controller": "explicit_hierarchy",
+      "bad_rate": 0.41416666666666674,
+      "harmed_rate": 0.0030555555555555557,
+      "reclosed_rate": 0.29083333333333333,
+      "mean_total_cost": 0.16536900691249293,
+      "auc": 0.6179725517399306
+    },
+    {
+      "controller": "remove_R_preservation",
+      "bad_rate": 0.41222222222222227,
+      "harmed_rate": 0.0019444444444444446,
+      "reclosed_rate": 0.3038888888888889,
+      "mean_total_cost": 0.1698355907944821,
+      "auc": 0.6052315812964258
+    },
+    {
+      "controller": "remove_floor_lowering",
+      "bad_rate": 0.4725,
+      "harmed_rate": 0.005277777777777778,
+      "reclosed_rate": 0.3308333333333333,
+      "mean_total_cost": 0.2700761176962965,
+      "auc": 0.6408304237157414
+    },
+    {
+      "controller": "remove_product_repair",
+      "bad_rate": 0.42333333333333334,
+      "harmed_rate": 0.005,
+      "reclosed_rate": 0.3136111111111111,
+      "mean_total_cost": 0.09264479797114748,
+      "auc": 0.6207028300980347
+    },
+    {
+      "controller": "remove_reserve_confirmed_exit",
+      "bad_rate": 0.4022222222222222,
+      "harmed_rate": 0.0038888888888888883,
+      "reclosed_rate": 0.3022222222222222,
+      "mean_total_cost": 0.16305387872988228,
+      "auc": 0.6065290074550415
+    }
+  ],
+  "regime_summary": [
+    {
+      "regime": "high_stress",
+      "bad_rate": 0.8145833333333333,
+      "harmed_rate": 0.25972222222222224,
+      "reclosed_rate": 0.5202777777777777,
+      "auc": 0.7902129594522332
+    },
+    {
+      "regime": "moderate",
+      "bad_rate": 0.11291666666666667,
+      "harmed_rate": 0.032777777777777774,
+      "reclosed_rate": 0.026944444444444448,
+      "auc": 0.576669747345594
+    },
+    {
+      "regime": "normal",
+      "bad_rate": 0.035833333333333335,
+      "harmed_rate": 0.012500000000000002,
+      "reclosed_rate": 0.0043055555555555555,
+      "auc": 0.5531625706385613
+    },
+    {
+      "regime": "stress",
+      "bad_rate": 0.3902777777777778,
+      "harmed_rate": 0.10194444444444445,
+      "reclosed_rate": 0.1738888888888889,
+      "auc": 0.6663141267307449
+    }
+  ],
+  "peer_review_questions": [
+    "Does M*R outperform additive M+R under alternative synthetic processes?",
+    "Does the dynamic floor remain derivable without regime labels?",
+    "Does the optimizer still recover the hierarchy if action costs are perturbed?",
+    "Do ablations remain active under different random seeds and horizons?",
+    "Can M and R be mapped to concrete observables in the target domain?"
+  ]
+}
