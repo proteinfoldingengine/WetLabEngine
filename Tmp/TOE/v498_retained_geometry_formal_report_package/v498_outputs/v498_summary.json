@@ -1,0 +1,101 @@
+{
+  "law": {
+    "C_t": "M_t * R_t * L_t + lambda0 * eta_convert(t) * B_t",
+    "field_equation": "dg_eff/dt = G_L * [T_retained / (C_t - C_floor + eps)] - R_repair - D_leakage",
+    "curvature": "K_eff = Curv(g_eff)",
+    "defect": "D_i \u221d [T_i / C_surplus_i] * Lambda_i * Pi_i",
+    "repair_cost": "path_cost + hub_saturation_cost + lineage_reconnection_cost"
+  },
+  "aggregate": {
+    "n_nodes": 178.16666666666666,
+    "n_edges": 547.5,
+    "source_reserve_to_metric_R2": 0.8895750490952302,
+    "metric_to_curvature_R2": 0.7935245890760062,
+    "defect_localization_AUC": 0.9999312856455713,
+    "leakage_path_AUC": 0.9857279659423518,
+    "repair_path_AUC": 0.9946307634646644,
+    "mean_C": 0.4111589328986553,
+    "mean_C_surplus": 0.28547943841413276,
+    "mean_eta_convert": 0.16931865765530385
+  },
+  "by_family": [
+    {
+      "family": "lattice",
+      "n_nodes": 169,
+      "n_edges": 312,
+      "source_reserve_to_metric_R2": 0.8763773353201102,
+      "metric_to_curvature_R2": 0.8163485416681722,
+      "defect_localization_AUC": 1.0,
+      "leakage_path_AUC": 0.9992987377279102,
+      "repair_path_AUC": 0.996026180458158,
+      "mean_C": 0.5784132723705356,
+      "mean_C_surplus": 0.43606601073938495,
+      "mean_eta_convert": 0.29693331741805984
+    },
+    {
+      "family": "random_geometric",
+      "n_nodes": 180,
+      "n_edges": 1198,
+      "source_reserve_to_metric_R2": 0.7537701938080663,
+      "metric_to_curvature_R2": 0.4798023028695876,
+      "defect_localization_AUC": 0.9995877138734282,
+      "leakage_path_AUC": 0.9927849927849928,
+      "repair_path_AUC": 0.9913419913419913,
+      "mean_C": 0.5553378730480615,
+      "mean_C_surplus": 0.4489107780945574,
+      "mean_eta_convert": 0.2495023502655406
+    },
+    {
+      "family": "scale_free",
+      "n_nodes": 180,
+      "n_edges": 531,
+      "source_reserve_to_metric_R2": 0.9519651351466121,
+      "metric_to_curvature_R2": 0.9197412084966983,
+      "defect_localization_AUC": 1.0,
+      "leakage_path_AUC": 0.9699031127602556,
+      "repair_path_AUC": 0.9890744176458462,
+      "mean_C": 0.2556631922954402,
+      "mean_C_surplus": 0.12063294958751862,
+      "mean_eta_convert": 0.0630685000961395
+    },
+    {
+      "family": "small_world",
+      "n_nodes": 180,
+      "n_edges": 540,
+      "source_reserve_to_metric_R2": 0.9211918435564704,
+      "metric_to_curvature_R2": 0.8778723931860954,
+      "defect_localization_AUC": 1.0,
+      "leakage_path_AUC": 0.9987631416202845,
+      "repair_path_AUC": 0.9962894248608534,
+      "mean_C": 0.40238693127146663,
+      "mean_C_surplus": 0.26511260258649216,
+      "mean_eta_convert": 0.1900659589772719
+    },
+    {
+      "family": "tree_with_loops",
+      "n_nodes": 180,
+      "n_edges": 224,
+      "source_reserve_to_metric_R2": 0.9711911735561896,
+      "metric_to_curvature_R2": 0.9390890863285428,
+      "defect_localization_AUC": 1.0,
+      "leakage_path_AUC": 0.9540300968872397,
+      "repair_path_AUC": 0.9960832817975674,
+      "mean_C": 0.2660396816004037,
+      "mean_C_surplus": 0.1377810714448037,
+      "mean_eta_convert": 0.07219894368233182
+    },
+    {
+      "family": "fragmented",
+      "n_nodes": 180,
+      "n_edges": 480,
+      "source_reserve_to_metric_R2": 0.8629546131839321,
+      "metric_to_curvature_R2": 0.728294001906941,
+      "defect_localization_AUC": 1.0,
+      "leakage_path_AUC": 0.9995877138734282,
+      "repair_path_AUC": 0.9989692846835704,
+      "mean_C": 0.40911264680602377,
+      "mean_C_surplus": 0.30437321803203954,
+      "mean_eta_convert": 0.14414287549247934
+    }
+  ]
+}
