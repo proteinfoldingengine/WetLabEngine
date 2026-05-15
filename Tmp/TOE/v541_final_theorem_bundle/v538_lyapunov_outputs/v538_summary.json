@@ -1,0 +1,55 @@
+{
+  "auc_E_only": 0.6817592592592593,
+  "auc_constrained_V": 1.0,
+  "interpretation": "V = E + reserve penalty + defect mass penalty + bottleneck penalty separates stable recovery from false recovery/collapse better than E alone",
+  "aggregate": [
+    {
+      "kind": "collapse",
+      "E_final_minus_initial": 1.3146002574253193,
+      "V_final_minus_initial": 5.031957868178916,
+      "frac_dE_negative": 0.3767507002801121,
+      "frac_dV_negative": 0.3352941176470588,
+      "mu_final_minus_initial": 0.7157737285317258,
+      "C_min": -0.12598801036987528,
+      "bottleneck_final_minus_initial": 0.7145272528006739,
+      "badness_E_only": 1.3146002574253193,
+      "badness_V": 8.453260235553003
+    },
+    {
+      "kind": "false_recovery",
+      "E_final_minus_initial": -1.9140208456514016,
+      "V_final_minus_initial": -0.23917024952616947,
+      "frac_dE_negative": 0.7320728291316526,
+      "frac_dV_negative": 0.5163865546218488,
+      "mu_final_minus_initial": 0.4304818977571375,
+      "C_min": 0.24024590533566464,
+      "bottleneck_final_minus_initial": 0.29932292586619413,
+      "badness_E_only": -1.9140208456514016,
+      "badness_V": 1.070777934787397
+    },
+    {
+      "kind": "repair_then_defect_jump",
+      "E_final_minus_initial": -1.6144706878438302,
+      "V_final_minus_initial": -1.3644798879914468,
+      "frac_dE_negative": 0.7061624649859943,
+      "frac_dV_negative": 0.5973389355742297,
+      "mu_final_minus_initial": 0.020001516658470164,
+      "C_min": 0.37387878323052004,
+      "bottleneck_final_minus_initial": 0.09999350410310391,
+      "badness_E_only": -1.6144706878438302,
+      "badness_V": -1.1742646056154913
+    },
+    {
+      "kind": "stable_recovery",
+      "E_final_minus_initial": -1.861115297720692,
+      "V_final_minus_initial": -3.215592181921154,
+      "frac_dE_negative": 0.7386554621848739,
+      "frac_dV_negative": 0.7149859943977591,
+      "mu_final_minus_initial": -0.3445745863095555,
+      "C_min": 0.34881250717663964,
+      "bottleneck_final_minus_initial": -0.2465202092132868,
+      "badness_E_only": -1.861115297720692,
+      "badness_V": -3.215592181921154
+    }
+  ]
+}
