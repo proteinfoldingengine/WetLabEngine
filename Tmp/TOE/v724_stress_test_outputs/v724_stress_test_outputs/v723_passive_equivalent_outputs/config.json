@@ -1,0 +1,28 @@
+{
+  "seed": 723,
+  "n_grid": 48,
+  "n_steps": 260,
+  "probe_times": [
+    75,
+    110,
+    145,
+    180,
+    215
+  ],
+  "relax_steps": 18,
+  "high_k": 1.0,
+  "low_k": 0.35,
+  "n_calibration_pairs": 24,
+  "n_test_pairs": 36,
+  "perturb_amp": 1.2,
+  "field_noise": 0.007,
+  "relax_noise": 0.0055,
+  "evolve_dt": 0.055,
+  "relax_dt": 0.085,
+  "diffusion_coupling": 0.035,
+  "passive_background_restore": 0.012,
+  "damping": 1.0,
+  "bootstrap_n": 300,
+  "make_png": true,
+  "output_dir": "v723_passive_equivalent_outputs"
+}
