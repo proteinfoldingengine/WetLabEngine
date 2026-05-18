@@ -1,0 +1,48 @@
+{
+  "summary": [
+    {
+      "regime": "coordinated_liquidity_trap",
+      "mean_B_error": 0.7416938262637689,
+      "mean_repair_error": 0.26614664996162785,
+      "mean_naive_C_error": 0.8461160722831336,
+      "mean_audited_C_error": 0.03514059780820799,
+      "median_naive_C_error": 0.8078096320392549,
+      "median_audited_C_error": 0.02516055190407976,
+      "trap_rate": 0.9885,
+      "trap_detection_AUC": 0.9996646214070507
+    },
+    {
+      "regime": "fake_B_liquidity",
+      "mean_B_error": 0.878381174640593,
+      "mean_repair_error": 0.0,
+      "mean_naive_C_error": 0.856602915231689,
+      "mean_audited_C_error": 0.0,
+      "median_naive_C_error": 0.8429550905531278,
+      "median_audited_C_error": 0.0,
+      "trap_rate": 0.99325,
+      "trap_detection_AUC": 1.0
+    },
+    {
+      "regime": "hidden_repair_burden",
+      "mean_B_error": 0.0,
+      "mean_repair_error": 0.2836073970762745,
+      "mean_naive_C_error": 0.031809630729685685,
+      "mean_audited_C_error": 0.0,
+      "median_naive_C_error": 0.022255983677990684,
+      "median_audited_C_error": 0.0,
+      "trap_rate": 0.7015,
+      "trap_detection_AUC": 1.0
+    },
+    {
+      "regime": "honest",
+      "mean_B_error": 0.0,
+      "mean_repair_error": 0.0,
+      "mean_naive_C_error": 0.0,
+      "mean_audited_C_error": 0.0,
+      "median_naive_C_error": 0.0,
+      "median_audited_C_error": 0.0,
+      "trap_rate": 0.0,
+      "trap_detection_AUC": NaN
+    }
+  ]
+}

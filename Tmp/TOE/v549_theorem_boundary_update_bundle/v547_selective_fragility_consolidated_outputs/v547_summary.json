@@ -1,0 +1,105 @@
+{
+  "selective_fragility_AUC": 1.0,
+  "interpretation": "Admissible transformations preserve the conformal recoverability flow; assumption-breaking transformations fail through source/reserve, defect, B_t liquidity, repair, or V accounting guards.",
+  "aggregate": [
+    {
+      "class": "admissible",
+      "scenario": "clean",
+      "geometry_consistency": 0.9946642604879731,
+      "weak_residual": 0.005390849449607524,
+      "defect_accounting_error": 0.00499287728896644,
+      "B_liquidity_error": 0.00510273342564144,
+      "repair_burden_error": 0.005260700601607399,
+      "V_accounting_error": 0.004825164635466926,
+      "validity_score": 0.9753389241549828
+    },
+    {
+      "class": "admissible",
+      "scenario": "coordinate_relabel",
+      "geometry_consistency": 0.9734906556156555,
+      "weak_residual": 0.04953378356305458,
+      "defect_accounting_error": 0.018699325497725433,
+      "B_liquidity_error": 0.014728341479250553,
+      "repair_burden_error": 0.015333430314984308,
+      "V_accounting_error": 0.02485945599737328,
+      "validity_score": 0.8955328186711194
+    },
+    {
+      "class": "admissible",
+      "scenario": "omega_rescale_equivalent",
+      "geometry_consistency": 0.9948040408119566,
+      "weak_residual": 0.005175232251472581,
+      "defect_accounting_error": 0.005113130772950429,
+      "B_liquidity_error": 0.004875703308631489,
+      "repair_burden_error": 0.00485779257934897,
+      "V_accounting_error": 0.004991305187266765,
+      "validity_score": 0.9759150099954755
+    },
+    {
+      "class": "admissible",
+      "scenario": "smooth_topology_preserving",
+      "geometry_consistency": 0.9798659785476055,
+      "weak_residual": 0.028830752910355518,
+      "defect_accounting_error": 0.019237886237242686,
+      "B_liquidity_error": 0.02541853907893886,
+      "repair_burden_error": 0.02529550563629201,
+      "V_accounting_error": 0.030224065688820016,
+      "validity_score": 0.8840181576267583
+    },
+    {
+      "class": "principle_breaking",
+      "scenario": "coordinated_fake_recovery",
+      "geometry_consistency": 0.9262874583560232,
+      "weak_residual": 1.320286571885884,
+      "defect_accounting_error": 0.49847244367744015,
+      "B_liquidity_error": 0.722070362910932,
+      "repair_burden_error": 0.34757827163861194,
+      "V_accounting_error": 0.5605986675542265,
+      "validity_score": -1.3301152938233027
+    },
+    {
+      "class": "principle_breaking",
+      "scenario": "destroy_source_reserve",
+      "geometry_consistency": -0.18834807065335832,
+      "weak_residual": 3.0389406785100226,
+      "defect_accounting_error": 0.4998938609192149,
+      "B_liquidity_error": 0.02562945040116931,
+      "repair_burden_error": 0.02438690354410085,
+      "V_accounting_error": 0.5483853393264879,
+      "validity_score": -1.9837445967305702
+    },
+    {
+      "class": "principle_breaking",
+      "scenario": "fake_B_liquidity",
+      "geometry_consistency": 0.9745384312780757,
+      "weak_residual": 0.025323400199715962,
+      "defect_accounting_error": 0.0241773358204281,
+      "B_liquidity_error": 0.7972664801511921,
+      "repair_burden_error": 0.02415364669394814,
+      "V_accounting_error": 0.2667885268132287,
+      "validity_score": -0.03404983984200762
+    },
+    {
+      "class": "principle_breaking",
+      "scenario": "hidden_repair_burden",
+      "geometry_consistency": 0.9758546244401336,
+      "weak_residual": 0.04014797477917141,
+      "defect_accounting_error": 0.02449596559965479,
+      "B_liquidity_error": 0.02410936205692374,
+      "repair_burden_error": 0.3833490917798326,
+      "V_accounting_error": 0.3727537694711222,
+      "validity_score": 0.2763378029984154
+    },
+    {
+      "class": "principle_breaking",
+      "scenario": "scramble_defects",
+      "geometry_consistency": 0.4517884008834508,
+      "weak_residual": 0.5833960083858524,
+      "defect_accounting_error": 0.5149792796634999,
+      "B_liquidity_error": 0.052921176789622125,
+      "repair_burden_error": 0.12421636331892492,
+      "V_accounting_error": 0.35287504765929856,
+      "validity_score": -0.5938997381938733
+    }
+  ]
+}
