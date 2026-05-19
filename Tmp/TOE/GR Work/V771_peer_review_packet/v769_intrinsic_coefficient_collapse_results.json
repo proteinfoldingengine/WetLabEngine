@@ -1,0 +1,87 @@
+{
+  "version": "V769",
+  "title": "Intrinsic Geometry-Scale Coefficient Collapse",
+  "summary": {
+    "best_G_scheme": "dx_lap",
+    "best_G_ratio_std": 0.0029412919012418988,
+    "best_G_fit_r2": 0.9942624811278648,
+    "best_R_scheme": "zscore",
+    "best_R_ratio_std": 0.01805234229070464,
+    "best_R_fit_r2": 0.9998480705201396,
+    "zscore_G_ratio_std": 0.037872996842924896,
+    "zscore_R_ratio_std": 0.01805234229070464
+  },
+  "scheme_summary": [
+    {
+      "scheme": "dx_lap",
+      "target": "G",
+      "mean_ratio_std": 0.0029412919012418988,
+      "max_ratio_std": 0.007160686252719971,
+      "sign_consistency": 0.8333333333333334,
+      "mean_fit_r2": 0.9942624811278648
+    },
+    {
+      "scheme": "dx_lap",
+      "target": "R",
+      "mean_ratio_std": 0.029092880398459565,
+      "max_ratio_std": 0.14112921534572856,
+      "sign_consistency": 0.8333333333333334,
+      "mean_fit_r2": 0.9998478742093725
+    },
+    {
+      "scheme": "intrinsic_field",
+      "target": "G",
+      "mean_ratio_std": 0.018841082685093952,
+      "max_ratio_std": 0.06838854962802164,
+      "sign_consistency": 0.875,
+      "mean_fit_r2": 0.9695798879778946
+    },
+    {
+      "scheme": "intrinsic_field",
+      "target": "R",
+      "mean_ratio_std": 0.20196728410446102,
+      "max_ratio_std": 0.477104480403415,
+      "sign_consistency": 0.85,
+      "mean_fit_r2": 0.9982711264904162
+    },
+    {
+      "scheme": "intrinsic_lap",
+      "target": "G",
+      "mean_ratio_std": 0.035320945159607355,
+      "max_ratio_std": 0.06835490356415024,
+      "sign_consistency": 0.8333333333333333,
+      "mean_fit_r2": 0.9696612181171647
+    },
+    {
+      "scheme": "intrinsic_lap",
+      "target": "R",
+      "mean_ratio_std": 0.14145734099051058,
+      "max_ratio_std": 0.37116572472982656,
+      "sign_consistency": 0.9166666666666666,
+      "mean_fit_r2": 0.9991224741048924
+    },
+    {
+      "scheme": "zscore",
+      "target": "G",
+      "mean_ratio_std": 0.037872996842924896,
+      "max_ratio_std": 0.06407954316683402,
+      "sign_consistency": 0.8333333333333334,
+      "mean_fit_r2": 0.9942625500591838
+    },
+    {
+      "scheme": "zscore",
+      "target": "R",
+      "mean_ratio_std": 0.01805234229070464,
+      "max_ratio_std": 0.057413293764802024,
+      "sign_consistency": 0.8333333333333334,
+      "mean_fit_r2": 0.9998480705201396
+    }
+  ],
+  "verdict": "intrinsic_scale_collapse_partial",
+  "boundary": [
+    "ordered recoverability updates",
+    "coefficient collapse audit",
+    "not coefficient-free proof",
+    "not physical GR"
+  ]
+}

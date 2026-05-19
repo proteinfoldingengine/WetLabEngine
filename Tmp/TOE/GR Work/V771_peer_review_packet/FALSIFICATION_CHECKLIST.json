@@ -1,0 +1,25 @@
+{
+  "version": "V771",
+  "title": "Peer Review Packet / Falsification Checklist",
+  "claim": "A compact recoverability-source law generates stable GR-like conformal/curvature structure across ordered recoverability updates.",
+  "not_claimed": [
+    "physical GR",
+    "physical time",
+    "Einstein equations in nature",
+    "coordinate-covariant tensor theory",
+    "coefficient-free theorem"
+  ],
+  "falsifiers": [
+    "dual-branch closure fails on independent geometries",
+    "closure only works under one update-order schedule",
+    "zero/first-order source classes close G_proxy as well as Laplacian classes",
+    "R_conf closes without conformal weighting",
+    "coefficients fail to transfer after intrinsic normalization",
+    "grid refinement drives closure toward chance",
+    "simpler non-recoverability source explains same closure",
+    "hidden k/oracle label leakage is found",
+    "result requires physical-time interpretation"
+  ],
+  "status": "ready_for_peer_review_packet",
+  "next": "V771A only if a concrete coefficient-free variational derivation route is specified"
+}

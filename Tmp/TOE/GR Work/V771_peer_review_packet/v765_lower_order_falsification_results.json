@@ -1,0 +1,70 @@
+{
+  "version": "V765",
+  "title": "Falsification of Zero/First-Order G-side Source Classes",
+  "summary": {
+    "zero_order_r2": 0.24097139693341496,
+    "first_derivative_r2": 0.5143655891669392,
+    "zero_plus_first_r2": 0.3710900832438957,
+    "lap_repair_surplus_r2": 0.992538407657607,
+    "minimal_G_r2": 0.9926116811087016,
+    "laplacian_advantage_over_zero_first": 0.6214483244137113
+  },
+  "class_scores": [
+    {
+      "source_class": "zero_order_only",
+      "n_terms": 5,
+      "r2": 0.24097139693341496,
+      "corr": 0.6009888808586522,
+      "terms": "log_mu,repair,C,phi,repair_phi"
+    },
+    {
+      "source_class": "first_derivative_only",
+      "n_terms": 4,
+      "r2": 0.5143655891669392,
+      "corr": 0.7669896649183913,
+      "terms": "grad_mu_mag,grad_repair_mag,grad_C_mag,grad_phi_mag"
+    },
+    {
+      "source_class": "zero_plus_first",
+      "n_terms": 9,
+      "r2": 0.3710900832438957,
+      "corr": 0.670879481451463,
+      "terms": "log_mu,repair,C,phi,repair_phi,grad_mu_mag,grad_repair_mag,grad_C_mag,grad_phi_mag"
+    },
+    {
+      "source_class": "laplacian_repair_surplus",
+      "n_terms": 2,
+      "r2": 0.992538407657607,
+      "corr": 0.9964828475293235,
+      "terms": "lap_repair,lap_C"
+    },
+    {
+      "source_class": "all_laplacian",
+      "n_terms": 3,
+      "r2": 0.9925384067176064,
+      "corr": 0.996482847459462,
+      "terms": "lap_mu,lap_repair,lap_C"
+    },
+    {
+      "source_class": "minimal_G",
+      "n_terms": 4,
+      "r2": 0.9926116811087016,
+      "corr": 0.9965379653021752,
+      "terms": "log_mu,lap_repair,lap_C,repair_phi"
+    },
+    {
+      "source_class": "oracle_lap_phi_control",
+      "n_terms": 1,
+      "r2": 0.9999999999999998,
+      "corr": 1.0,
+      "terms": "lap_phi"
+    }
+  ],
+  "verdict": "laplacian_necessity_empirically_supported",
+  "boundary": [
+    "ordered recoverability updates",
+    "empirical falsification of lower-order source classes",
+    "not formal proof",
+    "not physical GR"
+  ]
+}

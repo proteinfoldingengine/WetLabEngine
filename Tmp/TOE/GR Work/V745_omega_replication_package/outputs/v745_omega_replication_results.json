@@ -1,0 +1,98 @@
+{
+  "version": "V745",
+  "title": "Omega Branch Replication Package",
+  "direct_k_in_metric_or_law": false,
+  "uses_adm_z": false,
+  "train_law_fit": {
+    "terms": [
+      "dev_mean",
+      "repair_mean",
+      "eta_mean",
+      "repair_var",
+      "logom_p90",
+      "logom_repair",
+      "curv_var"
+    ],
+    "beta": [
+      -0.009059788645468516,
+      -0.003819233099255295,
+      0.052907369184008166,
+      -0.0412589622045246,
+      0.0035454114429492854,
+      0.012972932589318758,
+      -0.00583538347158039,
+      -0.0038840202518515554
+    ],
+    "mean": [
+      0.5125959448158078,
+      0.32972998595723896,
+      0.47117215667077567,
+      0.08036491534079336,
+      1.1361994195354337,
+      0.16806825835019956,
+      18.716961900040502
+    ],
+    "sd": [
+      0.4407533725255612,
+      0.35334282031112474,
+      0.3288298491830234,
+      0.09328856214960263,
+      0.4248409088428043,
+      0.21179303449190043,
+      19.492016379246078
+    ],
+    "test_r2": 0.5958025044718263,
+    "test_corr": 0.7719297732067347
+  },
+  "omega_main": {
+    "omega_mean_auc": 0.8036734693877552,
+    "omega_p90_auc": 0.7961224489795918,
+    "omega2_mean_auc": 0.8073469387755102,
+    "passive_mean_auc": 0.5,
+    "passive_curv_auc": 0.5
+  },
+  "omega_null": {
+    "omega_mean_auc": 0.4999999999999999,
+    "omega_p90_auc": 0.5,
+    "omega2_mean_auc": 0.5,
+    "passive_mean_auc": 0.5,
+    "passive_curv_auc": 0.4999999999999999
+  },
+  "omega_noisy": {
+    "omega_mean_auc": 0.89,
+    "omega_p90_auc": 0.9072222222222222,
+    "omega2_mean_auc": 0.891388888888889,
+    "passive_mean_auc": 0.5,
+    "passive_curv_auc": 0.5000000000000001
+  },
+  "law_main": {
+    "r2": 0.5828676080700839,
+    "corr": 0.765100441403337,
+    "true_dlog_auc": 0.9991836734693879,
+    "pred_dlog_auc": 1.0,
+    "passive_mean_auc": 0.5,
+    "passive_curv_auc": 0.5
+  },
+  "law_null": {
+    "r2": 0.7328398775290099,
+    "corr": 0.8581745549410539,
+    "true_dlog_auc": 0.5,
+    "pred_dlog_auc": 0.4999999999999998,
+    "passive_mean_auc": 0.5,
+    "passive_curv_auc": 0.4999999999999999
+  },
+  "law_noisy": {
+    "r2": 0.4287932490345926,
+    "corr": 0.679216716783594,
+    "true_dlog_auc": 1.0,
+    "pred_dlog_auc": 1.0,
+    "passive_mean_auc": 0.5,
+    "passive_curv_auc": 0.5000000000000001
+  },
+  "boundary": [
+    "Simulated conformal / metric-like response geometry.",
+    "No physical GR claim.",
+    "No Einstein equations.",
+    "No actual spacetime curvature claim."
+  ]
+}
