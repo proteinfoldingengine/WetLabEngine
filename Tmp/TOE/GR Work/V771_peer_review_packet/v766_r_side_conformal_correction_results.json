@@ -1,0 +1,77 @@
+{
+  "version": "V766",
+  "title": "R-side Conformal Correction Necessity",
+  "summary": {
+    "unweighted_G_r2": -0.18756595850275093,
+    "conformal_weighted_G_r2": 0.9999999999999996,
+    "base_4_r2": 0.9594109217602526,
+    "full_refined_r2": 0.999204681067365,
+    "conformal_gain_over_unweighted_G": 1.1875659585027505,
+    "refined_gain_over_base": 0.039793759307112486
+  },
+  "class_scores": [
+    {
+      "source_class": "unweighted_G_proxy",
+      "n_terms": 1,
+      "r2": -0.18756595850275093,
+      "corr": 0.20124883715593683,
+      "terms": "G_proxy"
+    },
+    {
+      "source_class": "conformal_weighted_G",
+      "n_terms": 1,
+      "r2": 0.9999999999999996,
+      "corr": 0.9999999999999991,
+      "terms": "exp_phi_Gproxy"
+    },
+    {
+      "source_class": "base_4",
+      "n_terms": 4,
+      "r2": 0.9594109217602526,
+      "corr": 0.9803480104148524,
+      "terms": "log_mu,lap_repair,lap_C,repair_phi"
+    },
+    {
+      "source_class": "base_plus_conformal_lap",
+      "n_terms": 6,
+      "r2": 0.9991984059229004,
+      "corr": 0.9996300906443987,
+      "terms": "log_mu,lap_repair,lap_C,repair_phi,exp_phi_lap_C,exp_phi_lap_repair"
+    },
+    {
+      "source_class": "curvature_energy_only",
+      "n_terms": 3,
+      "r2": 0.9757454011698288,
+      "corr": 0.9878460773145743,
+      "terms": "grad_phi_energy,phi_lap_C,C_grad_phi"
+    },
+    {
+      "source_class": "full_R_refined",
+      "n_terms": 10,
+      "r2": 0.999204681067365,
+      "corr": 0.9996328191330374,
+      "terms": "log_mu,lap_repair,lap_C,repair_phi,exp_phi_lap_C,exp_phi_lap_repair,grad_phi_energy,phi_lap_C,C_grad_phi,boundary_proxy"
+    },
+    {
+      "source_class": "no_exp_conformal",
+      "n_terms": 8,
+      "r2": 0.9969640569097281,
+      "corr": 0.9985041159225952,
+      "terms": "log_mu,lap_repair,lap_C,repair_phi,grad_phi_energy,phi_lap_C,C_grad_phi,boundary_proxy"
+    },
+    {
+      "source_class": "no_curvature_energy",
+      "n_terms": 7,
+      "r2": 0.9992729267344435,
+      "corr": 0.9996601525903973,
+      "terms": "log_mu,lap_repair,lap_C,repair_phi,exp_phi_lap_C,exp_phi_lap_repair,boundary_proxy"
+    }
+  ],
+  "verdict": "R_side_conformal_correction_necessity_supported",
+  "boundary": [
+    "ordered recoverability updates",
+    "R-side conformal correction audit",
+    "not formal proof",
+    "not physical GR"
+  ]
+}

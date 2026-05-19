@@ -1,0 +1,150 @@
+{
+  "version": "V737",
+  "title": "Independent Atrium Metric Reproducibility Harness",
+  "direct_k_in_metric": false,
+  "uses_adm_z": false,
+  "main": {
+    "n": 840,
+    "atrium_auc": 0.9600226757369613,
+    "restoration_residual_auc": 1.0,
+    "passive_mean_auc": 0.5,
+    "passive_curvature_auc": 0.5,
+    "mean_atrium_high_k": 0.9405805831575086,
+    "mean_atrium_low_k": 3.2440276636102237
+  },
+  "gap_results": [
+    {
+      "n": 520,
+      "atrium_auc": 0.9644378698224852,
+      "restoration_residual_auc": 1.0,
+      "passive_mean_auc": 0.5,
+      "passive_curvature_auc": 0.5,
+      "mean_atrium_high_k": 0.9551070716111351,
+      "mean_atrium_low_k": 3.287954670676003,
+      "k_gap": 0.8
+    },
+    {
+      "n": 520,
+      "atrium_auc": 0.8386390532544378,
+      "restoration_residual_auc": 1.0,
+      "passive_mean_auc": 0.5,
+      "passive_curvature_auc": 0.5,
+      "mean_atrium_high_k": 0.9314774837245863,
+      "mean_atrium_low_k": 1.8839664477890157,
+      "k_gap": 0.65
+    },
+    {
+      "n": 520,
+      "atrium_auc": 0.7523816568047338,
+      "restoration_residual_auc": 1.0,
+      "passive_mean_auc": 0.5,
+      "passive_curvature_auc": 0.5,
+      "mean_atrium_high_k": 0.9080835528351915,
+      "mean_atrium_low_k": 1.304313742329798,
+      "k_gap": 0.5
+    },
+    {
+      "n": 520,
+      "atrium_auc": 0.6996153846153846,
+      "restoration_residual_auc": 0.993165680473373,
+      "passive_mean_auc": 0.5,
+      "passive_curvature_auc": 0.5,
+      "mean_atrium_high_k": 0.9351758242904192,
+      "mean_atrium_low_k": 1.0625733350430613,
+      "k_gap": 0.3
+    },
+    {
+      "n": 520,
+      "atrium_auc": 0.6259023668639053,
+      "restoration_residual_auc": 0.9422337278106508,
+      "passive_mean_auc": 0.5,
+      "passive_curvature_auc": 0.5,
+      "mean_atrium_high_k": 0.9650343441670914,
+      "mean_atrium_low_k": 1.0131950157282494,
+      "k_gap": 0.15
+    },
+    {
+      "n": 520,
+      "atrium_auc": 0.5424112426035503,
+      "restoration_residual_auc": 0.6861538461538462,
+      "passive_mean_auc": 0.5,
+      "passive_curvature_auc": 0.5,
+      "mean_atrium_high_k": 0.9349085118537394,
+      "mean_atrium_low_k": 0.9485337938278584,
+      "k_gap": 0.05
+    },
+    {
+      "n": 520,
+      "atrium_auc": 0.5,
+      "restoration_residual_auc": 0.5,
+      "passive_mean_auc": 0.5,
+      "passive_curvature_auc": 0.5,
+      "mean_atrium_high_k": 0.8677746983427884,
+      "mean_atrium_low_k": 0.8677746983427884,
+      "k_gap": 0.0
+    }
+  ],
+  "family_results": [
+    {
+      "n": 168,
+      "atrium_auc": 1.0,
+      "restoration_residual_auc": 1.0,
+      "passive_mean_auc": 0.4999999999999999,
+      "passive_curvature_auc": 0.5000000000000001,
+      "mean_atrium_high_k": 0.5297086083467674,
+      "mean_atrium_low_k": 2.6687004315499085,
+      "family": "colored_noise"
+    },
+    {
+      "n": 168,
+      "atrium_auc": 1.0,
+      "restoration_residual_auc": 1.0,
+      "passive_mean_auc": 0.5,
+      "passive_curvature_auc": 0.4999999999999999,
+      "mean_atrium_high_k": 1.0325761525946326,
+      "mean_atrium_low_k": 3.6228933277191238,
+      "family": "double_kink"
+    },
+    {
+      "n": 168,
+      "atrium_auc": 0.998157596371882,
+      "restoration_residual_auc": 1.0,
+      "passive_mean_auc": 0.5000000000000001,
+      "passive_curvature_auc": 0.5,
+      "mean_atrium_high_k": 2.1802804826715088,
+      "mean_atrium_low_k": 4.837228085601037,
+      "family": "gaussian_packet"
+    },
+    {
+      "n": 168,
+      "atrium_auc": 1.0,
+      "restoration_residual_auc": 1.0,
+      "passive_mean_auc": 0.4999999999999999,
+      "passive_curvature_auc": 0.5,
+      "mean_atrium_high_k": 0.48431745790762715,
+      "mean_atrium_low_k": 2.5523646174245793,
+      "family": "mixed"
+    },
+    {
+      "n": 168,
+      "atrium_auc": 1.0,
+      "restoration_residual_auc": 1.0,
+      "passive_mean_auc": 0.5,
+      "passive_curvature_auc": 0.4999999999999999,
+      "mean_atrium_high_k": 0.476020214267007,
+      "mean_atrium_low_k": 2.5389518557564688,
+      "family": "sawtooth"
+    }
+  ],
+  "pass_conditions": {
+    "atrium_auc_high": true,
+    "passive_controls_chance": true,
+    "null_gap_chance": true
+  },
+  "boundary": [
+    "No direct k inside metric.",
+    "No adm_z-only shortcut.",
+    "No GR or tensor claim.",
+    "Synthetic reproducibility only."
+  ]
+}
