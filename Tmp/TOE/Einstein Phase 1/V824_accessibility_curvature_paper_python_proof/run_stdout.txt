@@ -1,0 +1,58 @@
+{
+  "core_law": "G_proxy = 2 alpha Delta log(A + epsilon)",
+  "A": "exp(C - mu + eta * repair)",
+  "eta": 0.35,
+  "alpha": 0.127348327184804,
+  "heldout_summary": [
+    {
+      "feature": "lap_balance",
+      "mean_r2": 0.87004332950775,
+      "min_r2": 0.8403374365980264,
+      "mean_corr": 0.9333903277592684
+    },
+    {
+      "feature": "lap_log_A",
+      "mean_r2": 0.870044249626941,
+      "min_r2": 0.8403391600373881,
+      "mean_corr": 0.9333908124510687
+    }
+  ],
+  "perturbation_summary": [
+    {
+      "predictor": "correct_delta_lap_logA",
+      "mean_r2": 1.0,
+      "min_r2": 1.0,
+      "mean_corr": 0.9999999999999998
+    },
+    {
+      "predictor": "null_zero",
+      "mean_r2": 2.9429990500151605e-09,
+      "min_r2": 5.747384790311116e-10,
+      "mean_corr": NaN
+    },
+    {
+      "predictor": "shuffled_correct",
+      "mean_r2": -1.0076133059650059,
+      "min_r2": -1.0326103186476603,
+      "mean_corr": -0.0038066559352031015
+    },
+    {
+      "predictor": "wrong_sign",
+      "mean_r2": -2.9999999882280077,
+      "min_r2": -2.9999999977010505,
+      "mean_corr": -0.9999999999999998
+    },
+    {
+      "predictor": "zero_order_q",
+      "mean_r2": -30.354303924101963,
+      "min_r2": -60.25797661234861,
+      "mean_corr": -0.7374525703865423
+    },
+    {
+      "predictor": "unrelated_lap",
+      "mean_r2": -33.47292101626426,
+      "min_r2": -110.70238570137661,
+      "mean_corr": -0.01285816528656153
+    }
+  ]
+}
