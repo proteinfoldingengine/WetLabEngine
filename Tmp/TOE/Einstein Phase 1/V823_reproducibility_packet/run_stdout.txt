@@ -1,0 +1,51 @@
+{
+  "version": "V823",
+  "core_law": "G_proxy = 2 alpha Delta log(A + epsilon)",
+  "A": "exp(C - mu + eta * repair)",
+  "heldout_summary": [
+    {
+      "feature": "lap_balance",
+      "mean_r2": 0.8835480455602068,
+      "min_r2": 0.8731361730924942,
+      "mean_corr": 0.9414139191104653
+    },
+    {
+      "feature": "lap_log_A",
+      "mean_r2": 0.8835487360751598,
+      "min_r2": 0.8731367089728812,
+      "mean_corr": 0.9414142397184797
+    }
+  ],
+  "perturbation_summary": [
+    {
+      "predictor": "correct_delta_lap_logA",
+      "mean_r2": 1.0,
+      "min_r2": 1.0,
+      "mean_corr": 0.9999999999999998
+    },
+    {
+      "predictor": "null_zero",
+      "mean_r2": 2.9429990500151605e-09,
+      "min_r2": 5.747384790311116e-10,
+      "mean_corr": NaN
+    },
+    {
+      "predictor": "shuffled_correct",
+      "mean_r2": -1.0076133059650059,
+      "min_r2": -1.0326103186476603,
+      "mean_corr": -0.0038066559352031015
+    },
+    {
+      "predictor": "wrong_sign",
+      "mean_r2": -2.9999999882280077,
+      "min_r2": -2.9999999977010505,
+      "mean_corr": -0.9999999999999998
+    },
+    {
+      "predictor": "zero_order_q",
+      "mean_r2": -30.354303924101963,
+      "min_r2": -60.25797661234861,
+      "mean_corr": -0.7374525703865423
+    }
+  ]
+}
