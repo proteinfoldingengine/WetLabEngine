@@ -1,0 +1,90 @@
+{
+  "document_id": "V832_FULL_STACK_SUCCESSOR_RUNNER",
+  "config": {
+    "seed": 832,
+    "bound": 8.0,
+    "nt": 10,
+    "defects": 5,
+    "complexity": 4,
+    "eta": 0.35,
+    "alpha": 0.127348327184804,
+    "operator_order": 2,
+    "train_nx": 20,
+    "ladder": [
+      12,
+      16,
+      20,
+      24,
+      28,
+      32
+    ],
+    "train_modes": [
+      "standard",
+      "radial",
+      "shear",
+      "counterrot"
+    ],
+    "test_modes": [
+      "standard",
+      "radial",
+      "shear",
+      "counterrot",
+      "pulse"
+    ]
+  },
+  "law": {
+    "H": {
+      "features": [
+        "access_curv",
+        "A_n",
+        "K_n",
+        "K2_n"
+      ],
+      "coef": [
+        -0.21973305286486253,
+        0.7274636769789258,
+        -0.22417042553610997,
+        0.0003897925052986205,
+        0.013572969890602046
+      ]
+    },
+    "M_parallel": {
+      "features": [
+        "Jmag",
+        "dJ_parallel",
+        "divJ"
+      ],
+      "coef": [
+        -0.02159352116144389,
+        0.011254123316353537,
+        1.1325644626875795,
+        -0.011259105860559256
+      ]
+    },
+    "M_perp": {
+      "features": [
+        "Jmag",
+        "dJ_perp",
+        "divJ"
+      ],
+      "coef": [
+        -0.01955930867890443,
+        0.004218964794780768,
+        1.1849244604725606,
+        0.008100636749294515
+      ]
+    }
+  },
+  "summary": {
+    "mean_true_transfer_r2": 0.8618196463500848,
+    "true_compat_rms": 0.891944193478451,
+    "bad_rotated_compat_rms": 2.8349615229219474,
+    "shuffled_compat_rms": 3.106020006864777
+  },
+  "verdict": {
+    "compact_law_supported": true,
+    "bad_frame_falsification_passed": true,
+    "shuffled_falsification_passed": true,
+    "claim_boundary": "ADM-like same-slice constraint analog only; no GR/Einstein/physical-spacetime claim."
+  }
+}
