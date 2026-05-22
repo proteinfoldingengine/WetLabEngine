@@ -1,0 +1,85 @@
+{
+  "audit": "V923_FULL_STACK_SOURCE_ROLE_CLOSURE_PROOF",
+  "verdict": "ternary_source_role_primitive_full_stack_closure_certified",
+  "certified": true,
+  "rows": 840,
+  "source_families": [
+    "active_source",
+    "passive_source",
+    "rejected_or_broken_source",
+    "structured_source"
+  ],
+  "class_count": 7,
+  "classes": [
+    "active_initial_basin_no_repair_needed",
+    "active_repair_source_compatible",
+    "initial_basin_broken_hold_not_passive",
+    "outside_basin_rejected",
+    "passive_no_motion_basin_member",
+    "structured_endpoint_collapse_not_legit",
+    "structured_source_failed_basin_entry"
+  ],
+  "minimal_exact_symbol_count": 3,
+  "ternary_role_mapping": {
+    "active_source": "source_active_role",
+    "passive_source": "source_basin_eligible_nonactive_role",
+    "structured_source": "source_basin_eligible_nonactive_role",
+    "rejected_or_broken_source": "source_rejected_or_broken_role"
+  },
+  "lift_table": [
+    {
+      "lift_name": "observable_quotient_only",
+      "symbol_count": 1,
+      "accuracy": 0.6285714285714286,
+      "false_cases": 312,
+      "collision_groups": 3,
+      "collision_rows": 662,
+      "mapping_json": "{\"active_source\": \"observable_only\", \"passive_source\": \"observable_only\", \"rejected_or_broken_source\": \"observable_only\", \"structured_source\": \"observable_only\"}"
+    },
+    {
+      "lift_name": "best_binary_source_role_lift",
+      "symbol_count": 2,
+      "accuracy": 0.9166666666666666,
+      "false_cases": 70,
+      "collision_groups": 2,
+      "collision_rows": 306,
+      "mapping_json": "{\"active_source\": \"symbol_0\", \"passive_source\": \"symbol_1\", \"rejected_or_broken_source\": \"symbol_0\", \"structured_source\": \"symbol_1\"}"
+    },
+    {
+      "lift_name": "ternary_source_role_primitive",
+      "symbol_count": 3,
+      "accuracy": 1.0,
+      "false_cases": 0,
+      "collision_groups": 0,
+      "collision_rows": 0,
+      "mapping_json": "{\"active_source\": \"source_active_role\", \"passive_source\": \"source_basin_eligible_nonactive_role\", \"rejected_or_broken_source\": \"source_rejected_or_broken_role\", \"structured_source\": \"source_basin_eligible_nonactive_role\"}"
+    },
+    {
+      "lift_name": "full_four_family_source_lift",
+      "symbol_count": 4,
+      "accuracy": 1.0,
+      "false_cases": 0,
+      "collision_groups": 0,
+      "collision_rows": 0,
+      "mapping_json": "{\"active_source\": \"active_source\", \"passive_source\": \"passive_source\", \"rejected_or_broken_source\": \"rejected_or_broken_source\", \"structured_source\": \"structured_source\"}"
+    }
+  ],
+  "claim_boundary": {
+    "positive_claims": [
+      "E_OSC closes basin geometry in the tested branch.",
+      "Endpoint/path observables define a quotient taxonomy that is source-degenerate.",
+      "A binary source-role lift is insufficient for exact seven-class closure.",
+      "A ternary source-role primitive is sufficient for exact seven-class closure in this branch.",
+      "The four-state source-family/source-origin label is over-complete for exact closure here."
+    ],
+    "negative_claims": [
+      "No 1/f ledger claim is used or certified by this proof.",
+      "No physical-time claim is made.",
+      "No CMB or black-hole claim is made.",
+      "No unique repair-channel law is claimed.",
+      "No GR, Einstein-equation, physical-spacetime-curvature, or continuum-closure claim is made."
+    ]
+  },
+  "input_file": "/mnt/data/v921_ternary_source_role_primitive_blind_regeneration_audit/v921_ternary_endpoint_scores.csv",
+  "output_dir": "/mnt/data/v923_full_stack_source_role_closure_proof_run"
+}

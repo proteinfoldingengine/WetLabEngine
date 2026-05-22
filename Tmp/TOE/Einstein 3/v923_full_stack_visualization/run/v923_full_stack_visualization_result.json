@@ -1,0 +1,66 @@
+{
+  "verdict": "v923_full_stack_visualization_recomputed_from_v921_data",
+  "certified": true,
+  "input": "/mnt/data/v921_ternary_source_role_primitive_blind_regeneration_audit/v921_ternary_endpoint_scores.csv",
+  "rows": 840,
+  "quotient_column": "v921_observable_quotient",
+  "minimal_exact_symbol_count": 3,
+  "lift_ladder": [
+    {
+      "lift": "observable_quotient_only",
+      "symbol_count": 1,
+      "rows": 840.0,
+      "accuracy": 0.6285714285714286,
+      "false_cases": 312,
+      "collision_groups": 3,
+      "collision_rows": 662,
+      "mapping_json": "{\"active_source\": \"symbol_0\", \"passive_source\": \"symbol_0\", \"rejected_or_broken_source\": \"symbol_0\", \"structured_source\": \"symbol_0\"}"
+    },
+    {
+      "lift": "best_binary_source_role_lift",
+      "symbol_count": 2,
+      "rows": NaN,
+      "accuracy": 0.9166666666666666,
+      "false_cases": 70,
+      "collision_groups": 2,
+      "collision_rows": 306,
+      "mapping_json": "{\"active_source\": \"symbol_0\", \"passive_source\": \"symbol_1\", \"rejected_or_broken_source\": \"symbol_0\", \"structured_source\": \"symbol_1\"}"
+    },
+    {
+      "lift": "ternary_source_role_primitive",
+      "symbol_count": 3,
+      "rows": 840.0,
+      "accuracy": 1.0,
+      "false_cases": 0,
+      "collision_groups": 0,
+      "collision_rows": 0,
+      "mapping_json": "{\"active_source\": \"source_active_role\", \"passive_source\": \"source_basin_eligible_nonactive_role\", \"rejected_or_broken_source\": \"source_rejected_or_broken_role\", \"structured_source\": \"source_basin_eligible_nonactive_role\"}"
+    },
+    {
+      "lift": "full_four_family_source_lift",
+      "symbol_count": 4,
+      "rows": 840.0,
+      "accuracy": 1.0,
+      "false_cases": 0,
+      "collision_groups": 0,
+      "collision_rows": 0,
+      "mapping_json": "{\"active_source\": \"active_source\", \"passive_source\": \"passive_source\", \"rejected_or_broken_source\": \"rejected_or_broken_source\", \"structured_source\": \"structured_source\"}"
+    }
+  ],
+  "claim_boundary": {
+    "z_axis": "discrete source-role information index, not physical dimension",
+    "not_claimed": [
+      "1/f ledger",
+      "physical time",
+      "CMB or black-hole claim",
+      "GR / Einstein equations / spacetime curvature / continuum closure",
+      "unique repair-channel law"
+    ]
+  },
+  "outputs": {
+    "bridge_png": "/mnt/data/v923_full_stack_visualization/run/v923_geometry_information_bridge_full_stack.png",
+    "ladder_png": "/mnt/data/v923_full_stack_visualization/run/v923_lift_ladder_full_stack.png",
+    "lift_ladder_csv": "/mnt/data/v923_full_stack_visualization/run/v923_full_stack_lift_ladder.csv",
+    "endpoint_scores_csv": "/mnt/data/v923_full_stack_visualization/run/v923_full_stack_visualization_endpoint_scores.csv"
+  }
+}

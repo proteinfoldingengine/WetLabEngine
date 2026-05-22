@@ -1,0 +1,7 @@
+source_role_from,source_role_to,affected_rows,accuracy,false_cases
+source_basin_eligible_nonactive_role,source_active_role,360,0.5714285714285714,360
+source_basin_eligible_nonactive_role,source_rejected_or_broken_role,360,0.5714285714285714,360
+source_active_role,source_basin_eligible_nonactive_role,240,0.7142857142857143,240
+source_rejected_or_broken_role,source_basin_eligible_nonactive_role,240,0.7142857142857143,240
+source_active_role,source_rejected_or_broken_role,240,0.719047619047619,236
+source_rejected_or_broken_role,source_active_role,240,0.9095238095238095,76
