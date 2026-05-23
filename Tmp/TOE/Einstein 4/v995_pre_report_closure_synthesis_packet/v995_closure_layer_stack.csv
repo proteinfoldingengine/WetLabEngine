@@ -1,0 +1,13 @@
+order,layer,purpose
+1,Q_obs,admissible form
+2,S_ternary,source-role disambiguation
+3,symbol_emission_event_ledger,event provenance
+4,generator_compatibility_causal,compatible dynamics and event-to-symbol coupling
+5,event_freshness_credential,fresh/authorized event identity
+6,anchored_append_only_freshness_ledger,"anti-replay, anti-rollback event ledger"
+7,byzantine_fault_bound_quorum_witness,fault-bounded root witnessing
+8,authorized_witness_identity_weight_registry,Sybil-resistant witness membership
+9,current_registry_quorum_epoch_governance,governed registry rotation
+10,append_only_one_successor_registry_update_ledger,anti-fork registry-update history
+11,anchored_registry_update_ledger_root,anti-rollback registry-update root
+12,genesis pins,initial witness registry + initial anchor roots

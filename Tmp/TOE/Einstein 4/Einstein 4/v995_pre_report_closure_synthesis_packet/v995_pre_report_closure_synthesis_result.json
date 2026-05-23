@@ -1,0 +1,14 @@
+{
+  "verdict": "pre_report_closure_synthesis_ready",
+  "closed_for_v995_pre_report": true,
+  "current_object": "C_reganchor = (Q_obs, S_ternary, symbol_emission_event_ledger, generator_compatibility_causal, event_freshness_credential, anchored_append_only_freshness_ledger, byzantine_fault_bound_quorum_witness, authorized_witness_identity_weight_registry, current_registry_quorum_epoch_governance, append_only_one_successor_registry_update_ledger, anchored_registry_update_ledger_root)",
+  "minimal_genesis_assumption": "pinned genesis witness registry + pinned genesis anchor roots",
+  "report_thesis": "Valid geometry-like form is not enough; in the tested recoverability stack, legitimacy requires certified generative history, recursively maintained after a pinned genesis registry and pinned genesis anchors.",
+  "criteria": {
+    "v993_C_reganchor_freeze_closed": true,
+    "v994_bootstrap_audit_closed": true,
+    "minimal_genesis_candidate_identified": true,
+    "self_bootstrap_rejected": true,
+    "report_boundary_clear": true
+  }
+}

@@ -1,0 +1,5 @@
+model,attacks,vulnerabilities,blocked,bootstraps_without_circularity,minimal_genesis_candidate
+genesis_registry_only,3,1,2,False,False
+genesis_registry_plus_anchor,3,0,3,True,True
+recursive_external_anchor,3,0,3,True,False
+self_bootstrap_only,3,3,0,False,False

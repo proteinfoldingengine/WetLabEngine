@@ -1,0 +1,4 @@
+history,final_x,final_y,same_visible_state,genesis_registry_matches,genesis_root_matches,accepted_without_genesis_pin,accepted_with_genesis_pin,reason
+Legitimate history,0.0,0.0,True,True,True,True,True,accepted: pinned genesis registry + pinned anchor root
+Forked counterfeit,0.0,0.0,True,True,False,True,False,rejected: wrong genesis anchor root
+Self-defined counterfeit,0.0,0.0,True,False,False,True,False,rejected: self-defined registry and self-defined root
