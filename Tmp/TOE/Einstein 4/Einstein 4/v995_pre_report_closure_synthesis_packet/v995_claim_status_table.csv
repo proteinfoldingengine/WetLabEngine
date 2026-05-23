@@ -1,7 +1,0 @@
-claim,status,basis
-Geometry-like admissible form is insufficient by itself,supported_in_tested_stack,Earlier V923+ path showed Q_obs/source degeneracy requiring source-role and event provenance.
-Closure is recursively maintainable after genesis,supported_in_tested_stack,V993 C_reganchor freeze + V994 bootstrap audit.
-Closure is derivable from zero assumptions,not_supported,V994: self_bootstrap_only has 3 vulnerabilities.
-Minimal genesis assumption is pinned witness registry plus pinned anchor roots,supported_as_tested_minimal_candidate,V994: genesis_registry_plus_anchor has 0 vulnerabilities and bootstraps without circularity.
-Universal closure over arbitrary adversaries/implementations,not_supported,All certifications are bounded to tested domains and adversarial families.
-Physical spacetime / GR / Einstein equations,not_claimed,"This is an informational recoverability closure stack, not a physical-law derivation."
