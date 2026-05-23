@@ -1,0 +1,15 @@
+{
+  "verdict": "C_reganchor_closure_freeze_certified",
+  "closed_for_v993_C_reganchor_freeze": true,
+  "core_object": "C_reganchor = (Q_obs, S_ternary, symbol_emission_event_ledger, generator_compatibility_causal, event_freshness_credential, anchored_append_only_freshness_ledger, byzantine_fault_bound_quorum_witness, authorized_witness_identity_weight_registry, current_registry_quorum_epoch_governance, append_only_one_successor_registry_update_ledger, anchored_registry_update_ledger_root)",
+  "certification_rows": 6,
+  "passed_rows": 6,
+  "failed_rows": 0,
+  "canonical_registry_update_ledger_rows": 2,
+  "canonical_registry_update_root": "78a80f92eb0215ccd3fcf36d",
+  "naive_local_regchain_accepted_updates": 3,
+  "naive_local_regchain_unsafe_accepts": 2,
+  "anchored_regchain_accepted_updates": 0,
+  "anchored_regchain_unsafe_accepts": 0,
+  "status_boundary": "Certified for tested symbolic/event-ledger/generator-compatible domains and tested far/near/replay/full-credential-copy/rollback-fork/root-equivocation/split-brain/within-bound Byzantine/Sybil-membership/registry-rotation/registry-epoch-fork/registry-update-ledger-rollback attacks. Not universal over arbitrary generators, adversaries, registries, quorum systems, identity infrastructure, governance rules, roots, or ledger implementations."
+}
