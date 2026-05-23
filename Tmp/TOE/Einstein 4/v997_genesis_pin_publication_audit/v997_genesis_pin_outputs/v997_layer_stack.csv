@@ -1,0 +1,5 @@
+layer,name,role,audit_test,failure_without_pin
+V923,Observable-state insufficiency,Visible equality is not legitimacy.,All histories converge to same final observable coordinate.,All paths accepted under visible-state equivalence.
+V994,Bootstrap/circularity boundary,Prevent self-defined legitimacy.,Reject self-defined registry/root.,Attacker can define its own registry and root.
+V995,Recoverable-history legitimacy,"Legitimacy requires rooted continuity, not just final state.","Require pinned root, quorum, append-only chain.","Forks, replays, and tampered chains can end at same visible state."
+V997,Genesis Pin publication audit,Merge audit engine with publication package.,"Five histories; 5 accepted without pin, 1 accepted with pin.",Visible-state-only certification is underdetermined.

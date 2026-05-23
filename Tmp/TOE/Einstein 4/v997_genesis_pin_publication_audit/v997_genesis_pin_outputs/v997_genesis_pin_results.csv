@@ -1,0 +1,6 @@
+history,final_x,final_y,same_visible_state,accepted_without_genesis_pin,genesis_registry_matches,genesis_root_matches,witness_quorum_all_steps,append_only_chain_valid,circular_bootstrap_detected,accepted_with_genesis_pin,reason,genesis_registry,genesis_root,final_chain_root
+Legitimate history,0.0,0.0,True,True,True,True,True,True,False,True,accepted: visible state + pinned genesis + quorum + append-only chain,"W1,W2,W3,W4",ROOT:GENESIS_ANCHOR_000,f3d10be3fa4d
+Forked counterfeit,0.0,0.0,True,True,True,False,True,True,True,False,rejected: wrong genesis anchor root,"W1,W2,W3,W4",ROOT:FORKED_ANCHOR_999,63d1799e5d6b
+Self-defined counterfeit,0.0,0.0,True,True,False,False,False,True,True,False,rejected: self-defined registry and self-defined root,"A1,A2,A3,A4",ROOT:SELF_DEFINED_123,7ec4bd325a40
+Quorum-failed replay,0.0,0.0,True,True,True,True,False,True,False,False,rejected: witness quorum failed,"W1,W2,W3,W4",ROOT:GENESIS_ANCHOR_000,81d4b2fd9595
+Tampered append chain,0.0,0.0,True,True,True,True,True,False,False,False,rejected: append-only chain failed,"W1,W2,W3,W4",ROOT:GENESIS_ANCHOR_000,f3d10be3fa4d
