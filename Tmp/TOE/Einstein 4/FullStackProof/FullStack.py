@@ -181,7 +181,7 @@ def make_results(histories: List[HistoryPath]) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def draw_box(ax, xy, w, h, text, fc="#f7f7f7", ec="#333333", fontsize=9, weight="normal"):
+def draw_box(ax, xy, w, h, text, fc="#f7f7f7", ec="#333333", fontsize=10, weight="normal"):
     box = FancyBboxPatch(
         xy, w, h,
         boxstyle="round,pad=0.03,rounding_size=0.04",
@@ -194,97 +194,92 @@ def draw_box(ax, xy, w, h, text, fc="#f7f7f7", ec="#333333", fontsize=9, weight=
 
 
 def setup_axes(ax):
-    ax.set_xlim(-4.8, 4.8)
-    ax.set_ylim(-3.6, 3.8)
-    ax.set_aspect("equal")
-    ax.grid(True, alpha=0.25)
-    ax.set_xlabel("Observable coordinate 1")
-    ax.set_ylabel("Observable coordinate 2")
+    ax.set_xlim(-5.5, 5.5)
+    ax.set_ylim(-4, 4)
+    ax.grid(True, alpha=0.25, linestyle='--')
+    ax.set_xlabel("Observable coordinate 1", fontsize=11)
+    ax.set_ylabel("Observable coordinate 2", fontsize=11)
 
 
 def draw_frame(fig, histories: List[HistoryPath], frame: int, results: pd.DataFrame):
     fig.clear()
-    gs = fig.add_gridspec(2, 2, height_ratios=[2.3, 1.25], width_ratios=[1.25, 1.0])
+    
+    # Updated GridSpec layout proportions
+    gs = fig.add_gridspec(2, 2, height_ratios=[1.8, 1], width_ratios=[1.3, 1.0])
 
     ax = fig.add_subplot(gs[0, 0])
     ax2 = fig.add_subplot(gs[0, 1])
     ax3 = fig.add_subplot(gs[1, :])
 
     setup_axes(ax)
-    ax.text(0.5, 1.10, "Genesis Pin Visual Proof", transform=ax.transAxes,
-            ha="center", fontsize=18, fontweight="bold")
-    ax.text(0.5, 1.04, "Same observable state can arise from incompatible histories.",
-            transform=ax.transAxes, ha="center", fontsize=10)
+    ax.set_title("Genesis Pin Visual Proof\nSame observable state can arise from incompatible histories.", fontsize=14, fontweight='bold', pad=15)
 
-    ax.add_patch(Circle(COMMON_VISIBLE_STATE, 0.35, facecolor="#9ecae1", edgecolor="#08519c", alpha=0.6))
-    ax.text(0, -0.62, "same visible\nstate", ha="center", va="top", fontsize=9, color="#08306b")
+    # Re-centered and sized observable state circle
+    ax.add_patch(Circle(COMMON_VISIBLE_STATE, 0.5, facecolor="#9ecae1", edgecolor="#08519c", alpha=0.6, zorder=2))
+    ax.text(0, -0.7, "same visible\nstate", ha="center", va="top", fontsize=10, color="#08306b", fontweight='bold')
 
     k = min(frame, N_STEPS - 1)
 
     for h in histories:
         pts = h.points
-        ax.plot(pts[:k+1, 0], pts[:k+1, 1], color=h.color, linewidth=3, alpha=0.9)
-        ax.scatter(pts[k, 0], pts[k, 1], color=h.color, s=110, edgecolor="white", linewidth=1.4, zorder=5)
-        ax.text(pts[0, 0], pts[0, 1] + 0.25, h.name, color=h.color, fontsize=9, ha="center")
+        ax.plot(pts[:k+1, 0], pts[:k+1, 1], color=h.color, linewidth=3.5, alpha=0.85, zorder=3)
+        ax.scatter(pts[k, 0], pts[k, 1], color=h.color, s=150, edgecolor="white", linewidth=1.5, zorder=5)
+        
+        # Dynamic padding for the history labels so they do not overlap
+        if "Legitimate" in h.name:
+            txt_pos = (pts[0, 0] - 0.2, pts[0, 1] + 0.4)
+        elif "Forked" in h.name:
+            txt_pos = (pts[0, 0] - 0.2, pts[0, 1] - 0.6)
+        else:
+            txt_pos = (pts[0, 0] + 0.2, pts[0, 1] + 0.4)
+        ax.text(txt_pos[0], txt_pos[1], h.name, color=h.color, fontsize=11, fontweight='bold', ha="center", zorder=6)
 
+    # Only draw the results indicators once the lines hit the state node
     if frame >= N_STEPS:
         for h in histories:
             symbol = "ACCEPT" if h.accept_with_pin else "REJECT"
-            yoff = {"Legitimate history": 0.75, "Forked counterfeit": 0.25, "Self-defined counterfeit": -0.25}[h.name]
-            ax.text(0.65, yoff, symbol, color=h.color, fontsize=12, fontweight="bold")
-            ax.plot([0.35, 0.6], [0, yoff], color=h.color, alpha=0.5)
+            yoff = {"Legitimate history": 1.2, "Forked counterfeit": -1.2, "Self-defined counterfeit": 0}[h.name]
+            ax.text(1.5, yoff, symbol, color=h.color, fontsize=12, fontweight="bold", va='center')
+            ax.plot([0.5, 1.2], [0, yoff], color=h.color, alpha=0.5, linestyle=':', linewidth=2)
 
+    # Plot 2: Genesis Pin Checkboxes
     ax2.axis("off")
-    ax2.text(0.5, 1.04, "Genesis Pin Check", transform=ax2.transAxes,
-             ha="center", fontsize=15, fontweight="bold")
-    ax2.text(0.5, 0.98, "Minimal non-circular initialization boundary",
-             transform=ax2.transAxes, ha="center", fontsize=9)
+    ax2.text(0.5, 1.05, "Genesis Pin Check", transform=ax2.transAxes, ha="center", fontsize=16, fontweight="bold")
+    ax2.text(0.5, 0.95, "Minimal non-circular initialization boundary", transform=ax2.transAxes, ha="center", fontsize=11)
 
-    draw_box(ax2, (0.08, 0.78), 0.84, 0.13, "Pinned Genesis Registry\nREGISTRY: W1,W2,W3,W4",
-             fc="#edf8e9", ec="#238b45", fontsize=9, weight="bold")
-    draw_box(ax2, (0.08, 0.60), 0.84, 0.13, "Pinned Genesis Anchor Root\nROOT: GENESIS_ANCHOR_000",
-             fc="#eff3ff", ec="#3182bd", fontsize=9, weight="bold")
-    draw_box(ax2, (0.08, 0.39), 0.84, 0.12, "Without Genesis Pin:\ncheck only final visible state",
-             fc="#fee0d2", ec="#de2d26", fontsize=9)
-    draw_box(ax2, (0.08, 0.20), 0.84, 0.12, "With Genesis Pin:\ncheck final state + rooted history",
-             fc="#e5f5e0", ec="#31a354", fontsize=9)
+    draw_box(ax2, (0.05, 0.70), 0.9, 0.18, "Pinned Genesis Registry\nREGISTRY: W1,W2,W3,W4", fc="#edf8e9", ec="#238b45", fontsize=11, weight="bold")
+    draw_box(ax2, (0.05, 0.48), 0.9, 0.18, "Pinned Genesis Anchor Root\nROOT: GENESIS_ANCHOR_000", fc="#eff3ff", ec="#3182bd", fontsize=11, weight="bold")
+    draw_box(ax2, (0.05, 0.26), 0.9, 0.16, "Without Genesis Pin:\ncheck only final visible state", fc="#fee0d2", ec="#de2d26", fontsize=11)
+    draw_box(ax2, (0.05, 0.05), 0.9, 0.16, "With Genesis Pin:\ncheck final state + rooted history", fc="#e5f5e0", ec="#31a354", fontsize=11)
 
-    if frame >= N_STEPS:
-        verdict_text = "Observed result:\n3/3 accepted without pin\n1/3 accepted with pin"
-        draw_box(ax2, (0.08, 0.02), 0.84, 0.12, verdict_text,
-                 fc="#fff7bc", ec="#d95f0e", fontsize=9, weight="bold")
-
+    # Plot 3: Certification Outcomes Table
     ax3.axis("off")
-    ax3.text(0.02, 0.92, "Certification outcomes", transform=ax3.transAxes,
-             fontsize=13, fontweight="bold")
+    ax3.text(0.02, 0.9, "Certification Outcomes", transform=ax3.transAxes, fontsize=14, fontweight="bold")
 
-    x_cols = [0.02, 0.31, 0.50, 0.70, 0.88]
-    headers = ["History", "Visible state?", "Genesis root?", "Registry?", "With pin"]
+    x_cols = [0.02, 0.35, 0.55, 0.75, 0.90]
+    headers = ["History", "Same Visible State?", "Genesis Root Matches?", "Registry Matches?", "With Pin"]
     for x, head in zip(x_cols, headers):
-        ax3.text(x, 0.75, head, transform=ax3.transAxes, fontsize=9, fontweight="bold")
+        ax3.text(x, 0.75, head, transform=ax3.transAxes, fontsize=11, fontweight="bold", ha='left')
 
-    y0 = 0.58
-    for i, h in enumerate(histories):
-        y = y0 - i * 0.20
-        ax3.text(x_cols[0], y, h.name, transform=ax3.transAxes, fontsize=9, color=h.color, fontweight="bold")
-        ax3.text(x_cols[1], y, "YES", transform=ax3.transAxes, fontsize=9)
-        ax3.text(x_cols[2], y, "YES" if h.genesis_root == PINNED_GENESIS_ROOT else "NO",
-                 transform=ax3.transAxes, fontsize=9)
-        ax3.text(x_cols[3], y, "YES" if h.genesis_registry == PINNED_GENESIS_REGISTRY else "NO",
-                 transform=ax3.transAxes, fontsize=9)
-        ax3.text(x_cols[4], y, "ACCEPT" if h.accept_with_pin else "REJECT",
-                 transform=ax3.transAxes, fontsize=9,
-                 color="#238b45" if h.accept_with_pin else "#de2d26",
-                 fontweight="bold")
+    y0 = 0.50
+    colors_map = {"Legitimate history": "#2ca25f", "Forked counterfeit": "#de2d26", "Self-defined counterfeit": "#fdae6b"}
 
-    bottom = (
-        "Proof idea: visible-state equivalence accepts all paths. "
-        "A Genesis Pin adds a pinned registry and anchor root, separating legitimate continuity from forked or self-defined histories."
-    )
-    ax3.text(0.02, 0.05, bottom, transform=ax3.transAxes, fontsize=10,
-             bbox=dict(boxstyle="round,pad=0.35", facecolor="#f7f7f7", edgecolor="#999999"))
+    for i, row in results.iterrows():
+        y = y0 - i * 0.25
+        c = colors_map.get(row['history'], "black")
+        
+        ax3.text(x_cols[0], y, row['history'], transform=ax3.transAxes, fontsize=11, color=c, fontweight="bold", ha='left')
+        ax3.text(x_cols[1], y, "YES" if row['same_visible_state'] else "NO", transform=ax3.transAxes, fontsize=11, ha='left')
+        ax3.text(x_cols[2], y, "YES" if row['genesis_root_matches'] else "NO", transform=ax3.transAxes, fontsize=11, ha='left')
+        ax3.text(x_cols[3], y, "YES" if row['genesis_registry_matches'] else "NO", transform=ax3.transAxes, fontsize=11, ha='left')
+        
+        accept = row['accepted_with_genesis_pin']
+        ax3.text(x_cols[4], y, "ACCEPT" if accept else "REJECT", transform=ax3.transAxes, fontsize=11, color="#238b45" if accept else "#de2d26", fontweight="bold", ha='left')
 
-    fig.tight_layout()
+    bottom_text = "Proof idea: visible-state equivalence accepts all paths. A Genesis Pin adds a pinned registry and anchor root, separating legitimate continuity from forked or self-defined histories."
+    ax3.text(0.5, -0.1, bottom_text, transform=ax3.transAxes, ha='center', fontsize=11, bbox=dict(boxstyle="round,pad=0.5", facecolor="#f7f7f7", edgecolor="#999999"))
+
+    fig.subplots_adjust(hspace=0.4, wspace=0.1)
 
 
 def main():
@@ -308,7 +303,8 @@ def main():
     }
     (OUT / "v996_genesis_pin_result.json").write_text(json.dumps(result_json, indent=2))
 
-    fig = plt.figure(figsize=(13, 8), dpi=140)
+    # Increased figure size and DPI for proper layout dimensions
+    fig = plt.figure(figsize=(14, 9), dpi=150)
     total_frames = N_STEPS + 4
 
     def update(frame):
