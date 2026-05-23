@@ -1,0 +1,11 @@
+{
+  "verdict": "genesis_pin_visual_proof_complete",
+  "claim_demonstrated": "Same observable state does not imply legitimate history.",
+  "accepted_without_genesis_pin": 3,
+  "accepted_with_genesis_pin": 1,
+  "minimal_genesis_pin": {
+    "pinned_genesis_registry": "REGISTRY:W1,W2,W3,W4",
+    "pinned_genesis_anchor_root": "ROOT:GENESIS_ANCHOR_000"
+  },
+  "interpretation": "Without pinned genesis, all histories landing on the same visible state are accepted. With pinned genesis, only histories rooted in the pinned registry and pinned anchor root are accepted."
+}
