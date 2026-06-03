@@ -1,0 +1,21 @@
+{
+  "document_id": "V1472_23_LOCAL_UCI_RUN_BUNDLE",
+  "status": "completed",
+  "decision": "runtime_download_blocked_local_bundle_ready",
+  "core_axiom": "No pruning-order trace, no empirical geometry claim.",
+  "download_status": "Direct UCI ZIP download failed in runtime.",
+  "local_bundle": "Ready to run once incident_event_log.csv is placed in the bundle directory.",
+  "preregistered_threshold": 0.7,
+  "pilot_small_trace": false,
+  "files": [
+    "README_LOCAL_UCI_RUN.md",
+    "V1472_20_UCI_INCIDENT_RUNBOOK.md",
+    "run_uci_v1472_local.sh",
+    "uci_incident_preregistration_manifest.json",
+    "uci_incident_preregistration_manifest_template.json",
+    "v1472_11_run_trace_preregistered.py",
+    "v1472_12_manifest_runner.py",
+    "v1472_20_uci_incident_adapter.py"
+  ],
+  "next_action": "Place incident_event_log.csv in bundle directory and run ./run_uci_v1472_local.sh"
+}

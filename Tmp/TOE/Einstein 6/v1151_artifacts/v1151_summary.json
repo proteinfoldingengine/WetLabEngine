@@ -1,0 +1,31 @@
+{
+  "document_id": "V1151_INDEPENDENT_REBUILD_EXECUTION",
+  "status": "independent rebuild executed",
+  "claim_boundary": "Model-native independent rebuild only; no physical continuum theorem, no physical gauge symmetry, no continuum GR, no ADM algebra, no Einstein equations, no tensor covariance, and no physical spacetime curvature claim.",
+  "scaffold_returncode": 0,
+  "scaffold_summary": {
+    "valid_recall": 1.0,
+    "invalid_rate": 0.0,
+    "invalid_certified": 0,
+    "native_rate": 1.0,
+    "label_transported_shift_rate": 1.0,
+    "raw_shifted_rate": 0.0,
+    "time_shuffle_certified": 0,
+    "matched_cost_certified": 0,
+    "source_event_shuffled_certified": 0,
+    "pass_fail": {
+      "valid_recall_min": 0.95,
+      "invalid_rate_max": 0.0,
+      "time_shuffle_certified_max": 0,
+      "matched_cost_certified_max": 0,
+      "source_event_shuffled_certified_max": 0,
+      "raw_shifted_cert_rate_max": 0.05,
+      "certification_instability_max": 0
+    },
+    "passed": true
+  },
+  "stdout_tail": "{\n  \"valid_recall\": 1.0,\n  \"invalid_rate\": 0.0,\n  \"invalid_certified\": 0,\n  \"native_rate\": 1.0,\n  \"label_transported_shift_rate\": 1.0,\n  \"raw_shifted_rate\": 0.0,\n  \"time_shuffle_certified\": 0,\n  \"matched_cost_certified\": 0,\n  \"source_event_shuffled_certified\": 0,\n  \"pass_fail\": {\n    \"valid_recall_min\": 0.95,\n    \"invalid_rate_max\": 0.0,\n    \"time_shuffle_certified_max\": 0,\n    \"matched_cost_certified_max\": 0,\n    \"source_event_shuffled_certified_max\": 0,\n    \"raw_shifted_cert_rate_max\": 0.05,\n    \"certification_instability_max\": 0\n  },\n  \"passed\": true\n}\n",
+  "stderr_tail": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/generated/interface/models.py\", line 48821, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/rpc/remote.py\", line 747, in __call__\n  File \"/tmp/tmp.9eeVjt35CN/artifact_tool_v2-2.7.5/artifact_tool/rpc/client.py\", line 150, in call\nartifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\n",
+  "interpretation": "This run executes the blind rebuild scaffold from the written V1150 specification rather than importing prior scored CSV outputs.",
+  "next_recommended_branch": "V1152 \u2014 Independent Rebuild Closure if passed; Rebuild Failure Audit if failed"
+}

@@ -1,0 +1,8 @@
+trace_name,passed,M_total,C_closure,P_sequence,E_arrow,failure_reason,events_processed
+valid_pruning_order_trace,True,1.0,1.0,1.0,1.0,,6
+event_order_shuffle,False,0.0,0.0,0.0,1.0,missing_prior_dependency:e0_source,0
+provenance_shuffle,True,1.0,1.0,1.0,1.0,,6
+repair_before_disruption_null,False,0.0,0.0,0.0,1.0,missing_prior_dependency:e2_loss,1
+source_removed_null,False,0.0,0.0,0.0,1.0,missing_prior_dependency:e0_source,0
+entropy_arrow_reverse_null,False,0.0,0.0,1.0,0.0,entropy_arrow_violation:e1_disruption,1
+closure_only_static_null,False,0.0,0.0,0.0,1.0,missing_prior_dependency:e4_recovery,0

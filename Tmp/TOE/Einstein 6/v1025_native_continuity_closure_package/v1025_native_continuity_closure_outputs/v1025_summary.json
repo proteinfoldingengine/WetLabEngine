@@ -1,0 +1,16 @@
+{
+  "document_id": "V1025_NATIVE_CONTINUITY_CLOSURE",
+  "transitions_tested": 1080,
+  "legitimate_mean_C_norm": 0.4107443781715948,
+  "control_mean_C_norm": 10.364879969443374,
+  "legitimate_mean_C_rms": 149.17651569460398,
+  "control_mean_C_rms": 0.685001195675709,
+  "legitimate_mean_corr_delta_flux": 0.9011880461484345,
+  "control_mean_corr_delta_flux": 0.0042721141683898225,
+  "pass_conditions": {
+    "native_continuity_lower_than_controls": true,
+    "native_continuity_near_zero": false,
+    "effect_gap": 9.954135591271779
+  },
+  "claim_boundary": "Native source-continuity closure only; no physical GR/Bianchi/ADM/tensor claim."
+}

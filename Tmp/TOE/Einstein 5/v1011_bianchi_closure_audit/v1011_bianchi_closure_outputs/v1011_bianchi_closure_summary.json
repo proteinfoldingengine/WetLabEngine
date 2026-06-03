@@ -1,0 +1,20 @@
+{
+  "document_id": "V1011_ACCESSIBILITY_FLOW_BIANCHI_CLOSURE_AUDIT",
+  "groups_tested": 40,
+  "histories_tested": 280,
+  "geometry_only_certified_total": 280,
+  "full_certified_total": 80,
+  "invalid_geometry_only_certified": 240,
+  "invalid_full_certified": 40,
+  "legitimate_mean_B_like_rms": 0.06716857129806345,
+  "invalid_mean_B_like_rms": 0.0679951052306306,
+  "legitimate_mean_provenance_weighted_B_rms": 0.06716857129806345,
+  "invalid_mean_provenance_weighted_B_rms": 0.4130395896854014,
+  "geometry_matched_invalid_mean_omega_similarity": 0.9999999999995998,
+  "pass_condition": {
+    "geometry_counterfeits_exist": true,
+    "no_invalid_full_certified": false,
+    "provenance_weighted_residual_separates": true
+  },
+  "claim_boundary": "Bianchi-like software closure diagnostic only; no physical GR/Bianchi/tensor claim."
+}

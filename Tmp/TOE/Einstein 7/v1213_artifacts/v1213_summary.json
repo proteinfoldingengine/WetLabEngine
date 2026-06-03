@@ -1,0 +1,31 @@
+{
+  "document_id": "V1213_POST_ANTI_TAUTOLOGY_VERDICT_UPGRADE",
+  "status": "completed",
+  "prior_verdict": "WEAK PASS",
+  "updated_verdict": "PASS for the narrow B-like/source-flow bridge inside tested simulations",
+  "reason_for_upgrade": [
+    "V1212 directly tested the main V1211 concern: tautology risk.",
+    "The closure pressure term improved all five held-out closure definitions.",
+    "Improvements were not limited to the exact linear training closure used inside U_info.",
+    "Source-flow alignment and flow coherence improved alongside held-out closure metrics.",
+    "ADM-like H/M recovery remains unresolved and excluded from the upgraded claim."
+  ],
+  "v1212_key_result": {
+    "heldout_improved_count": 5,
+    "heldout_metric_improved": {
+      "delta_heldout_nonlinear_closure": true,
+      "delta_heldout_spectral_closure": true,
+      "delta_heldout_derivative_closure": true,
+      "delta_heldout_lagged_closure": true,
+      "delta_heldout_mutual_proxy_closure": true
+    }
+  },
+  "upgraded_claim": "Within the tested synthetic information-to-geometry simulations, path-certified admissibility with closure pressure robustly produces source-flow-consistent retained histories, improving B-like closure across multiple held-out closure definitions and stabilizing ordered-slice source-flow propagation.",
+  "remaining_boundaries": [
+    "Does not establish full ADM-like H/M constraint recovery.",
+    "Does not establish physical GR or Einstein equations.",
+    "Does not yet prove universality beyond tested simulation families.",
+    "Still needs external clean-room replication."
+  ],
+  "recommended_next": "V1214 \u2014 Final Supported-Bridge Report with upgraded PASS verdict and external replication instructions."
+}

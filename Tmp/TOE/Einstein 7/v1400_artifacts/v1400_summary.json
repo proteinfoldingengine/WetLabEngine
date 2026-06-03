@@ -1,0 +1,70 @@
+{
+  "document_id": "V1400_LOCAL_CONSTRAINT_PROPAGATION_BRIDGE",
+  "status": "completed",
+  "question": "Does retained identity + closure produce local ADM-like constraint propagation across ordered recoverability slices?",
+  "summary_by_regime": [
+    {
+      "regime": "closure_only",
+      "valid_winner_rate": 0.0,
+      "mean_valid_weight": 0.010855646933250734,
+      "mean_H": 1.0173213360349673,
+      "mean_M": 1.3402097159826598,
+      "mean_continuity": 1.0882064107438567,
+      "mean_alignment": 0.9499076909058292
+    },
+    {
+      "regime": "identity_only",
+      "valid_winner_rate": 1.0,
+      "mean_valid_weight": 0.511849684137044,
+      "mean_H": 1.0230061008365934,
+      "mean_M": 0.01873170698178101,
+      "mean_continuity": 0.4257163154826223,
+      "mean_alignment": 0.06882711814667773
+    },
+    {
+      "regime": "identity_plus_closure",
+      "valid_winner_rate": 1.0,
+      "mean_valid_weight": 0.9999999999117901,
+      "mean_H": 1.0204037316714034,
+      "mean_M": 0.01873170698178103,
+      "mean_continuity": 0.4257163154826223,
+      "mean_alignment": -0.08439842892430238
+    },
+    {
+      "regime": "weak_control",
+      "valid_winner_rate": 0.0,
+      "mean_valid_weight": 0.15970024464742152,
+      "mean_H": 1.0508108870147652,
+      "mean_M": 0.8412412713725971,
+      "mean_continuity": 0.8979204281099565,
+      "mean_alignment": 0.02020934716887892
+    }
+  ],
+  "deltas": [
+    {
+      "regime": "closure_only",
+      "delta_H_vs_identity_closure": -0.003082395636436086,
+      "delta_M_vs_identity_closure": 1.3214780090008789,
+      "delta_continuity_vs_identity_closure": 0.6624900952612345
+    },
+    {
+      "regime": "identity_only",
+      "delta_H_vs_identity_closure": 0.002602369165189966,
+      "delta_M_vs_identity_closure": -1.734723475976807e-17,
+      "delta_continuity_vs_identity_closure": 0.0
+    },
+    {
+      "regime": "identity_plus_closure",
+      "delta_H_vs_identity_closure": 0.0,
+      "delta_M_vs_identity_closure": 0.0,
+      "delta_continuity_vs_identity_closure": 0.0
+    },
+    {
+      "regime": "weak_control",
+      "delta_H_vs_identity_closure": 0.030407155343361802,
+      "delta_M_vs_identity_closure": 0.822509564390816,
+      "delta_continuity_vs_identity_closure": 0.47220411262733425
+    }
+  ],
+  "boundary": "synthetic ADM-like diagnostics only; no physical GR/EFE claim"
+}

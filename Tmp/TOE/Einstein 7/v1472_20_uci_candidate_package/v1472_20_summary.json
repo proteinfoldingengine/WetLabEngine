@@ -1,0 +1,14 @@
+{
+  "document_id": "V1472_20_INDEPENDENT_EMPIRICAL_CANDIDATE",
+  "status": "completed_candidate_selection",
+  "decision": "uci_incident_management_event_log_selected_as_first_external_candidate",
+  "dataset": {
+    "name": "Incident management process enriched event log",
+    "repository": "UCI Machine Learning Repository",
+    "dataset_id": 498,
+    "license": "CC BY 4.0 per UCI page",
+    "file": "incident_event_log.csv"
+  },
+  "not_run_yet": "Dataset was identified and adapter prepared; direct download/run was not completed in this runtime.",
+  "next_work": "Download UCI incident_event_log.csv, convert with adapter, run under preregistered manifest threshold 0.70."
+}

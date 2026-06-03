@@ -1,0 +1,103 @@
+{
+  "document_id": "V1306_IDENTITY_MATCHED_COUNTERFEIT_TEST",
+  "status": "completed",
+  "purpose": "Adversarially test retained path identity by constructing identity-matched counterfeits that try to preserve identity while breaking closure or momentum.",
+  "candidate_summary": [
+    {
+      "mode": "identity_matched_current_flip",
+      "mean_identity": 182223.57224615506,
+      "mean_closure": 2.9362180162584783,
+      "mean_momentum": 2.538613110665884,
+      "mean_source_path": 1.7059618597641025e-07
+    },
+    {
+      "mode": "identity_matched_flow_phase_warp",
+      "mean_identity": 3440.7984426907624,
+      "mean_closure": 1.1150682437068207,
+      "mean_momentum": 1.2780510506615999,
+      "mean_source_path": 1.7059618597641025e-07
+    },
+    {
+      "mode": "identity_matched_local_spike",
+      "mean_identity": 42593.276048972984,
+      "mean_closure": 1.0439334542839704,
+      "mean_momentum": 1.1062923266582763,
+      "mean_source_path": 1.7037512589269477e-07
+    },
+    {
+      "mode": "identity_matched_response_scramble",
+      "mean_identity": 9.99999000001e-07,
+      "mean_closure": 6.513835344569172,
+      "mean_momentum": 0.9944463306051523,
+      "mean_source_path": 1.7059618597641025e-07
+    },
+    {
+      "mode": "legitimate_transport",
+      "mean_identity": 9.99999000001e-07,
+      "mean_closure": 0.999925882783167,
+      "mean_momentum": 0.9944463306051523,
+      "mean_source_path": 1.7059618597641025e-07
+    },
+    {
+      "mode": "source_shuffle",
+      "mean_identity": 485859.0809395283,
+      "mean_closure": 5.840891307739123,
+      "mean_momentum": 3.4560147175606626,
+      "mean_source_path": 2.5898080823635525e-08
+    },
+    {
+      "mode": "time_reverse",
+      "mean_identity": 1000361.2602459422,
+      "mean_closure": 0.9999258827831672,
+      "mean_momentum": 2.092154805066178,
+      "mean_source_path": 1.7059618040991354e-07
+    }
+  ],
+  "summary_by_regime": [
+    {
+      "regime": "identity_closure_momentum",
+      "valid_winner_rate": 1.0,
+      "mean_valid_weight": 0.9999999999821871,
+      "mean_identity_counterfeit_weight": 1.6812831778505493e-11,
+      "mean_identity_residual": 9.043520390712077e-15,
+      "mean_B_like_residual": 0.15838370036663055,
+      "mean_ADM_M_residual": 0.0009080708825508388,
+      "mean_continuity_residual": 0.4043246081924366,
+      "mean_flow_coherence": 0.999998968118844
+    },
+    {
+      "regime": "identity_only",
+      "valid_winner_rate": 1.0,
+      "mean_valid_weight": 0.5066900607568874,
+      "mean_identity_counterfeit_weight": 0.49330993924260585,
+      "mean_identity_residual": 9.06065346207975e-15,
+      "mean_B_like_residual": 0.7022719534049365,
+      "mean_ADM_M_residual": 0.0009080708825502151,
+      "mean_continuity_residual": 0.4043246081924366,
+      "mean_flow_coherence": 0.999998968118844
+    },
+    {
+      "regime": "identity_plus_closure",
+      "valid_winner_rate": 1.0,
+      "mean_valid_weight": 0.9999999999821871,
+      "mean_identity_counterfeit_weight": 1.6812831778505496e-11,
+      "mean_identity_residual": 9.043520390712077e-15,
+      "mean_B_like_residual": 0.15838370036663055,
+      "mean_ADM_M_residual": 0.0009080708825508388,
+      "mean_continuity_residual": 0.4043246081924366,
+      "mean_flow_coherence": 0.999998968118844
+    },
+    {
+      "regime": "identity_plus_momentum",
+      "valid_winner_rate": 1.0,
+      "mean_valid_weight": 0.5066900607568874,
+      "mean_identity_counterfeit_weight": 0.49330993924260585,
+      "mean_identity_residual": 9.053457572105327e-15,
+      "mean_B_like_residual": 0.7022719534049365,
+      "mean_ADM_M_residual": 0.0009080708825502152,
+      "mean_continuity_residual": 0.4043246081924366,
+      "mean_flow_coherence": 0.999998968118844
+    }
+  ],
+  "finding": "If identity-only selects identity-matched counterfeits, retained identity is not sufficient; if full identity+closure+momentum rejects them, the unified stack requires more than identity alone."
+}

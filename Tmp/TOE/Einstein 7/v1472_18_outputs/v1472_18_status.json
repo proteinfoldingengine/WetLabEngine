@@ -1,0 +1,18 @@
+{
+  "document_id": "V1472_18_METHODOLOGY_AND_DATASET_PACKAGE",
+  "status": "completed",
+  "decision": "methodology_paper_and_dataset_plan_ready",
+  "core_axiom": "No pruning-order trace, no empirical geometry claim.",
+  "evidence_scoring_status": "locked_until_independent_trace_present",
+  "files": [
+    "INDEPENDENT_TRACE_DATA_REQUEST.md",
+    "PEER_REVIEW_PACKET.md",
+    "PUBLIC_REPRODUCIBILITY_README.md",
+    "V1472_18_EXTERNAL_DATASET_ACQUISITION_PLAN.md",
+    "V1472_18_METHODOLOGY_PAPER_DRAFT.md",
+    "blank_independent_trace_manifest_template.json",
+    "v1472_11_run_trace_preregistered.py",
+    "v1472_12_manifest_runner.py"
+  ],
+  "next_step": "Acquire or upload independent trace and run with preregistered manifest."
+}

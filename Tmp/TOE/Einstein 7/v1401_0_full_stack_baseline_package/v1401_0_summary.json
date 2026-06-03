@@ -1,0 +1,15 @@
+{
+  "document_id": "V1401_0_FULL_STACK_BASELINE_HARNESS",
+  "status": "completed",
+  "purpose": "Anti-regression baseline from Genesis key through pruning, retained network, geometry proxy, and ADM-like diagnostics.",
+  "claim_boundary": "Synthetic ADM-like diagnostics only; no physical GR/EFE/full ADM/physical spacetime/physical curvature.",
+  "key_findings": {
+    "identity_plus_closure_valid_weight": 0.4999999999778174,
+    "identity_plus_closure_M": 0.019389615237135026,
+    "closure_only_M": 1.3683939540782817,
+    "weak_control_M": 0.8521703624849235,
+    "identity_plus_closure_H_current": 1.0297569914374074,
+    "interpretation": "Identity+closure preserves M/continuity much better than controls; H-like scalar branch remains unresolved."
+  },
+  "next_task": "V1401 proper: H-Branch Root Cause Audit using non-fitted H definitions."
+}

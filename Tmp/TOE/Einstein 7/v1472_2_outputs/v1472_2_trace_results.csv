@@ -1,0 +1,10 @@
+trace_name,passed,M_total,C_closure,P_sequence,E_arrow,source_seen,source_provenance,failure_reasons,events_processed
+valid_pruning_order_trace,True,1.0,1.0,1.0,1.0,True,P0,,6
+partial_recovery_trace,False,0.5,0.5,1.0,1.0,True,P0,,4
+branching_valid_trace,True,1.0,1.0,1.0,1.0,True,P0,,6
+event_order_shuffle,False,0.8125,1.0,0.8125,1.0,True,P0,non_source_before_source:e3_repair;provenance_lineage_violation:e3_repair:P0;missing_prior_event_dependency:e3_repair->e2_loss;non_source_before_source:e2_loss;provenance_lineage_violation:e2_loss:P0;missing_prior_event_dependency:e2_loss->e1_disruption,6
+provenance_shuffle,False,0.84375,1.0,0.84375,1.0,True,PX0,provenance_lineage_violation:e1_disruption:PX1;provenance_lineage_violation:e2_loss:PX2;provenance_lineage_violation:e3_repair:PX3;provenance_lineage_violation:e4_recovery:PX4;provenance_lineage_violation:e5_closure:PX5,6
+repair_before_disruption_null,False,0.96875,1.0,0.96875,1.0,True,P0,missing_prior_event_dependency:e3_repair->e2_loss,6
+source_removed_null,False,0.6206896551724138,1.0,0.6206896551724138,1.0,False,,non_source_before_source:e1_disruption;provenance_lineage_violation:e1_disruption:P0;missing_prior_event_dependency:e1_disruption->e0_source;non_source_before_source:e2_loss;provenance_lineage_violation:e2_loss:P0;non_source_before_source:e3_repair;provenance_lineage_violation:e3_repair:P0;non_source_before_source:e4_recovery;provenance_lineage_violation:e4_recovery:P0;non_source_before_source:e5_closure;provenance_lineage_violation:e5_closure:P0,5
+entropy_arrow_reverse_null,False,0.16666666666666666,1.0,1.0,0.16666666666666666,True,P0,entropy_arrow_violation:e1_disruption;entropy_arrow_violation:e2_loss;entropy_arrow_violation:e3_repair;entropy_arrow_violation:e4_recovery;entropy_arrow_violation:e5_closure,6
+closure_only_static_null,False,0.4,1.0,0.4,1.0,False,,non_source_before_source:static_closure;provenance_lineage_violation:static_closure:P0;missing_prior_event_dependency:static_closure->missing_recovery,1

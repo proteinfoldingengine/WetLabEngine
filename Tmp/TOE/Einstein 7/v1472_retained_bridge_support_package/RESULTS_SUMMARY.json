@@ -1,0 +1,22 @@
+{
+  "document_id": "V1472_RETAINED_BRIDGE_EMPIRICAL_SUPPORT_PACKAGE",
+  "status": "support_package",
+  "core_axiom": "No pruning-order trace, no empirical geometry claim.",
+  "combined_status": {
+    "UCI_498": {
+      "status": "robust_near_miss_not_certification",
+      "holdout_mean_M_total": 0.7302186335959073,
+      "holdout_pass_fraction": 0.6762820512820513,
+      "required_pass_fraction": 0.7,
+      "final_verdict": "FAIL_HOLDOUT_CERTIFICATION"
+    },
+    "BPI2014": {
+      "status": "clean_full_null_suite_pass_under_V1472_43",
+      "mean_M_total": 0.8751,
+      "all_8_nulls_failed": true,
+      "final_verdict": "PASS_FULL_NULL_SUITE_REPAIRED_CERTIFICATION"
+    }
+  },
+  "safe_claim": "Order-dependent recoverability traces carry geometry-like closure signals that adversarial nulls cannot reproduce when sequence, provenance, entropy arrow, and phase order are jointly enforced.",
+  "claim_boundary": "Not proof of physical spacetime, GR, ADM, Einstein equations, physical curvature, or a complete Theory of Everything."
+}

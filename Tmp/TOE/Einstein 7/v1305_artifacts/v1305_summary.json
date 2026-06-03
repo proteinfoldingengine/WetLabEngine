@@ -1,0 +1,34 @@
+{
+  "document_id": "V1305_FREEZE_UNIFIED_CAUSAL_DIAGRAM",
+  "status": "completed",
+  "basis": "V1304 Bridge Unification Test",
+  "frozen_diagram": {
+    "common_ancestor": "retained path identity",
+    "downstream_branch_1": "B-like/source-flow closure propagation",
+    "downstream_branch_2": "ADM_M-like momentum/transport propagation",
+    "weaker_branch": "closure-only; preserves B-like structure but does not recover momentum strongly"
+  },
+  "key_v1304_results": {
+    "identity_only": {
+      "valid_winner_rate": 1.0,
+      "valid_weight": "~1.0",
+      "ADM_M_residual": 0.00036,
+      "flow_coherence": "~1.0",
+      "B_like_residual": 0.0212
+    },
+    "closure_only": {
+      "valid_weight": 0.288,
+      "ADM_M_residual": 0.822,
+      "flow_coherence": 0.66
+    }
+  },
+  "claim": "Inside the tested synthetic transport simulations, retained path identity is the strongest common ancestor: it recovers both B-like closure and ADM_M-like propagation, while closure alone does not recover momentum.",
+  "not_claimed": [
+    "physical GR",
+    "Einstein equations",
+    "full ADM derivation",
+    "physical spacetime curvature",
+    "universal law beyond tested simulations"
+  ],
+  "next": "V1306 should adversarially test retained path identity by constructing identity-matched counterfeits."
+}

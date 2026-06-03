@@ -1,0 +1,12 @@
+{
+  "document_id": "V1472_24_WGET_UCI_RUN_BUNDLE",
+  "status": "completed",
+  "decision": "wget_download_added_to_local_run_bundle",
+  "core_axiom": "No pruning-order trace, no empirical geometry claim.",
+  "new_files": [
+    "run_uci_v1472_with_wget.sh",
+    "download_uci_incident_event_log.py",
+    "README_WGET_UCI_RUN.md"
+  ],
+  "boundary": "If download is blocked, script stops and does not substitute sample data."
+}
