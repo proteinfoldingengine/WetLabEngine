@@ -1,0 +1,113 @@
+{
+  "document_id": "V1152_5_ROBUST_CINEMATIC_PROVENANCE_FLOW_ENGINE",
+  "status": "generated",
+  "seed": 11525,
+  "frames": 120,
+  "points": 360,
+  "modes": [
+    "valid_label_transported",
+    "valid_noisy_holdout",
+    "raw_c_only_shift",
+    "retained_order_shuffle",
+    "source_event_shuffle",
+    "valid_prefix_invalid_suffix",
+    "geometry_matched_counterfeit",
+    "genesis_valid_source_shuffled",
+    "closure_matched_counterfeit"
+  ],
+  "valid_modes": [
+    "valid_label_transported",
+    "valid_noisy_holdout"
+  ],
+  "thresholds": {
+    "B_like_mean": 0.3973067940868674,
+    "B_like_std": 0.000649744639111754,
+    "B_like_threshold": 0.3992560280042027,
+    "source_alignment_mean": -0.11558107333831509,
+    "source_alignment_std": 0.0016662008280388014,
+    "source_alignment_min": -0.1205796758224315,
+    "flow_alignment_mean": 0.916167290194356,
+    "flow_alignment_std": 0.004370086836601544,
+    "flow_alignment_min": 0.9030570296845514
+  },
+  "valid_full_certified_count": 1,
+  "invalid_full_certified_count": 0,
+  "holdout_valid_certified_rate": 0.0,
+  "full_certified_modes": [
+    "valid_label_transported"
+  ],
+  "killed_modes": {
+    "raw_c_only_shift": {
+      "frame": 0,
+      "k_points": 3,
+      "margin": -1.0,
+      "k_event": 1,
+      "phase": "genesis_pin",
+      "reason": "Genesis Pin failed"
+    },
+    "geometry_matched_counterfeit": {
+      "frame": 0,
+      "k_points": 3,
+      "margin": -1.0,
+      "k_event": 1,
+      "phase": "genesis_pin",
+      "reason": "Genesis Pin failed"
+    },
+    "closure_matched_counterfeit": {
+      "frame": 0,
+      "k_points": 3,
+      "margin": -1.0,
+      "k_event": 1,
+      "phase": "genesis_pin",
+      "reason": "Genesis Pin failed"
+    },
+    "retained_order_shuffle": {
+      "frame": 85,
+      "k_points": 258,
+      "margin": -2.7407639948106293,
+      "k_event": 5,
+      "phase": "omega_geometry",
+      "reason": "\u03a9 similarity failed"
+    },
+    "source_event_shuffle": {
+      "frame": 85,
+      "k_points": 258,
+      "margin": -1.0803467470334995,
+      "k_event": 5,
+      "phase": "omega_geometry",
+      "reason": "\u03a9 similarity failed"
+    },
+    "valid_prefix_invalid_suffix": {
+      "frame": 85,
+      "k_points": 258,
+      "margin": -1.0,
+      "k_event": 5,
+      "phase": "genesis_pin",
+      "reason": "Genesis Pin failed"
+    },
+    "genesis_valid_source_shuffled": {
+      "frame": 85,
+      "k_points": 258,
+      "margin": -1.3910322536794903,
+      "k_event": 5,
+      "phase": "omega_geometry",
+      "reason": "\u03a9 similarity failed"
+    },
+    "valid_noisy_holdout": {
+      "frame": 119,
+      "k_points": 360,
+      "margin": -0.056541461114249854,
+      "k_event": 7,
+      "phase": "source_flow_closure",
+      "reason": "Source-flow closure failed"
+    }
+  },
+  "outputs": {
+    "full_stack_results": "v1152_5_full_stack_results.csv",
+    "valid_holdout_results": "v1152_5_valid_holdout_results.csv",
+    "live_causal_log": "v1152_5_live_causal_log.csv",
+    "static_3d": "v1152_5_static_3d.png",
+    "certification_panels": "v1152_5_certification_panels.png",
+    "gif": "v1152_5_cinematic_provenance_flow.gif"
+  }
+}

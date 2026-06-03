@@ -1,0 +1,448 @@
+{
+  "valid_pruning_order_trace": [
+    {
+      "event_id": "e0_source",
+      "pruning_order_index": 0,
+      "event_type": "source",
+      "provenance_id": "P0",
+      "requires_prior": false,
+      "prior_dependency": null,
+      "entropy_before": 0.1,
+      "entropy_after": 0.1,
+      "state_delta": 0.0,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e1_disruption",
+      "pruning_order_index": 1,
+      "event_type": "disruption",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e0_source",
+      "entropy_before": 0.1,
+      "entropy_after": 0.75,
+      "state_delta": 0.65,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e2_loss",
+      "pruning_order_index": 2,
+      "event_type": "loss",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e1_disruption",
+      "entropy_before": 0.75,
+      "entropy_after": 0.9,
+      "state_delta": 0.15,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e3_repair",
+      "pruning_order_index": 3,
+      "event_type": "repair",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e2_loss",
+      "entropy_before": 0.9,
+      "entropy_after": 0.55,
+      "state_delta": -0.35,
+      "recovery_status": "attempted"
+    },
+    {
+      "event_id": "e4_recovery",
+      "pruning_order_index": 4,
+      "event_type": "recovery",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e3_repair",
+      "entropy_before": 0.55,
+      "entropy_after": 0.25,
+      "state_delta": -0.3,
+      "recovery_status": "complete"
+    },
+    {
+      "event_id": "e5_closure",
+      "pruning_order_index": 5,
+      "event_type": "closure",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e4_recovery",
+      "entropy_before": 0.25,
+      "entropy_after": 0.12,
+      "state_delta": -0.13,
+      "recovery_status": "complete"
+    }
+  ],
+  "event_order_shuffle": [
+    {
+      "event_id": "e0_source",
+      "pruning_order_index": 2,
+      "event_type": "source",
+      "provenance_id": "P0",
+      "requires_prior": false,
+      "prior_dependency": null,
+      "entropy_before": 0.1,
+      "entropy_after": 0.1,
+      "state_delta": 0.0,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e1_disruption",
+      "pruning_order_index": 0,
+      "event_type": "disruption",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e0_source",
+      "entropy_before": 0.1,
+      "entropy_after": 0.75,
+      "state_delta": 0.65,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e2_loss",
+      "pruning_order_index": 1,
+      "event_type": "loss",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e1_disruption",
+      "entropy_before": 0.75,
+      "entropy_after": 0.9,
+      "state_delta": 0.15,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e3_repair",
+      "pruning_order_index": 5,
+      "event_type": "repair",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e2_loss",
+      "entropy_before": 0.9,
+      "entropy_after": 0.55,
+      "state_delta": -0.35,
+      "recovery_status": "attempted"
+    },
+    {
+      "event_id": "e4_recovery",
+      "pruning_order_index": 3,
+      "event_type": "recovery",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e3_repair",
+      "entropy_before": 0.55,
+      "entropy_after": 0.25,
+      "state_delta": -0.3,
+      "recovery_status": "complete"
+    },
+    {
+      "event_id": "e5_closure",
+      "pruning_order_index": 4,
+      "event_type": "closure",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e4_recovery",
+      "entropy_before": 0.25,
+      "entropy_after": 0.12,
+      "state_delta": -0.13,
+      "recovery_status": "complete"
+    }
+  ],
+  "provenance_shuffle": [
+    {
+      "event_id": "e0_source",
+      "pruning_order_index": 0,
+      "event_type": "source",
+      "provenance_id": "PX0",
+      "requires_prior": false,
+      "prior_dependency": null,
+      "entropy_before": 0.1,
+      "entropy_after": 0.1,
+      "state_delta": 0.0,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e1_disruption",
+      "pruning_order_index": 1,
+      "event_type": "disruption",
+      "provenance_id": "PX1",
+      "requires_prior": true,
+      "prior_dependency": "e0_source",
+      "entropy_before": 0.1,
+      "entropy_after": 0.75,
+      "state_delta": 0.65,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e2_loss",
+      "pruning_order_index": 2,
+      "event_type": "loss",
+      "provenance_id": "PX2",
+      "requires_prior": true,
+      "prior_dependency": "PX1",
+      "entropy_before": 0.75,
+      "entropy_after": 0.9,
+      "state_delta": 0.15,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e3_repair",
+      "pruning_order_index": 3,
+      "event_type": "repair",
+      "provenance_id": "PX3",
+      "requires_prior": true,
+      "prior_dependency": "PX2",
+      "entropy_before": 0.9,
+      "entropy_after": 0.55,
+      "state_delta": -0.35,
+      "recovery_status": "attempted"
+    },
+    {
+      "event_id": "e4_recovery",
+      "pruning_order_index": 4,
+      "event_type": "recovery",
+      "provenance_id": "PX4",
+      "requires_prior": true,
+      "prior_dependency": "PX3",
+      "entropy_before": 0.55,
+      "entropy_after": 0.25,
+      "state_delta": -0.3,
+      "recovery_status": "complete"
+    },
+    {
+      "event_id": "e5_closure",
+      "pruning_order_index": 5,
+      "event_type": "closure",
+      "provenance_id": "PX5",
+      "requires_prior": true,
+      "prior_dependency": "PX4",
+      "entropy_before": 0.25,
+      "entropy_after": 0.12,
+      "state_delta": -0.13,
+      "recovery_status": "complete"
+    }
+  ],
+  "repair_before_disruption_null": [
+    {
+      "event_id": "e0_source",
+      "pruning_order_index": 0,
+      "event_type": "source",
+      "provenance_id": "P0",
+      "requires_prior": false,
+      "prior_dependency": null,
+      "entropy_before": 0.1,
+      "entropy_after": 0.1,
+      "state_delta": 0.0,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e1_disruption",
+      "pruning_order_index": 2,
+      "event_type": "disruption",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e0_source",
+      "entropy_before": 0.1,
+      "entropy_after": 0.75,
+      "state_delta": 0.65,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e2_loss",
+      "pruning_order_index": 3,
+      "event_type": "loss",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e1_disruption",
+      "entropy_before": 0.75,
+      "entropy_after": 0.9,
+      "state_delta": 0.15,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e3_repair",
+      "pruning_order_index": 1,
+      "event_type": "repair",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e2_loss",
+      "entropy_before": 0.9,
+      "entropy_after": 0.55,
+      "state_delta": -0.35,
+      "recovery_status": "attempted"
+    },
+    {
+      "event_id": "e4_recovery",
+      "pruning_order_index": 4,
+      "event_type": "recovery",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e3_repair",
+      "entropy_before": 0.55,
+      "entropy_after": 0.25,
+      "state_delta": -0.3,
+      "recovery_status": "complete"
+    },
+    {
+      "event_id": "e5_closure",
+      "pruning_order_index": 5,
+      "event_type": "closure",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e4_recovery",
+      "entropy_before": 0.25,
+      "entropy_after": 0.12,
+      "state_delta": -0.13,
+      "recovery_status": "complete"
+    }
+  ],
+  "source_removed_null": [
+    {
+      "event_id": "e1_disruption",
+      "pruning_order_index": 1,
+      "event_type": "disruption",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e0_source",
+      "entropy_before": 0.1,
+      "entropy_after": 0.75,
+      "state_delta": 0.65,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e2_loss",
+      "pruning_order_index": 2,
+      "event_type": "loss",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e1_disruption",
+      "entropy_before": 0.75,
+      "entropy_after": 0.9,
+      "state_delta": 0.15,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e3_repair",
+      "pruning_order_index": 3,
+      "event_type": "repair",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e2_loss",
+      "entropy_before": 0.9,
+      "entropy_after": 0.55,
+      "state_delta": -0.35,
+      "recovery_status": "attempted"
+    },
+    {
+      "event_id": "e4_recovery",
+      "pruning_order_index": 4,
+      "event_type": "recovery",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e3_repair",
+      "entropy_before": 0.55,
+      "entropy_after": 0.25,
+      "state_delta": -0.3,
+      "recovery_status": "complete"
+    },
+    {
+      "event_id": "e5_closure",
+      "pruning_order_index": 5,
+      "event_type": "closure",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e4_recovery",
+      "entropy_before": 0.25,
+      "entropy_after": 0.12,
+      "state_delta": -0.13,
+      "recovery_status": "complete"
+    }
+  ],
+  "entropy_arrow_reverse_null": [
+    {
+      "event_id": "e0_source",
+      "pruning_order_index": 0,
+      "event_type": "source",
+      "provenance_id": "P0",
+      "requires_prior": false,
+      "prior_dependency": null,
+      "entropy_before": 0.1,
+      "entropy_after": 0.1,
+      "state_delta": -0.0,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e1_disruption",
+      "pruning_order_index": 1,
+      "event_type": "disruption",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e0_source",
+      "entropy_before": 0.75,
+      "entropy_after": 0.1,
+      "state_delta": -0.65,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e2_loss",
+      "pruning_order_index": 2,
+      "event_type": "loss",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e1_disruption",
+      "entropy_before": 0.9,
+      "entropy_after": 0.75,
+      "state_delta": -0.15,
+      "recovery_status": "none"
+    },
+    {
+      "event_id": "e3_repair",
+      "pruning_order_index": 3,
+      "event_type": "repair",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e2_loss",
+      "entropy_before": 0.55,
+      "entropy_after": 0.9,
+      "state_delta": 0.35,
+      "recovery_status": "attempted"
+    },
+    {
+      "event_id": "e4_recovery",
+      "pruning_order_index": 4,
+      "event_type": "recovery",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e3_repair",
+      "entropy_before": 0.25,
+      "entropy_after": 0.55,
+      "state_delta": 0.3,
+      "recovery_status": "complete"
+    },
+    {
+      "event_id": "e5_closure",
+      "pruning_order_index": 5,
+      "event_type": "closure",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e4_recovery",
+      "entropy_before": 0.12,
+      "entropy_after": 0.25,
+      "state_delta": 0.13,
+      "recovery_status": "complete"
+    }
+  ],
+  "closure_only_static_null": [
+    {
+      "event_id": "e_static_closure",
+      "pruning_order_index": 0,
+      "event_type": "closure",
+      "provenance_id": "P0",
+      "requires_prior": true,
+      "prior_dependency": "e4_recovery",
+      "entropy_before": 0.25,
+      "entropy_after": 0.12,
+      "state_delta": -0.13,
+      "recovery_status": "complete"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "trace_name": "REPLACE_WITH_TRACE_NAME",
+  "trace_source": "REPLACE_WITH_EXTERNAL_SOURCE_OR_SYSTEM",
+  "is_independent_external_trace": true,
+  "input_file": "REPLACE_WITH_TRACE_FILE.csv",
+  "threshold": 0.7,
+  "pilot_small_trace": false,
+  "event_type_mapping": {
+    "REPLACE_SOURCE_KIND": "source",
+    "REPLACE_DISRUPTION_KIND": "disruption",
+    "REPLACE_LOSS_KIND": "loss",
+    "REPLACE_REPAIR_KIND": "repair",
+    "REPLACE_RECOVERY_KIND": "recovery",
+    "REPLACE_CLOSURE_KIND": "closure"
+  },
+  "entropy_definition": "REPLACE: define entropy_before/entropy_after for this dataset.",
+  "damaged_repaired_definition": "REPLACE: define damaged_dependencies and repaired_dependencies or proxies.",
+  "prior_dependency_definition": "REPLACE: prior_dependency references prior event_id only.",
+  "provenance_definition": "REPLACE: provenance_id defines lineage and cannot satisfy prior_dependency.",
+  "exclusion_rules": "REPLACE: list preprocessing or exclusions.",
+  "claim_boundary": "Passing this manifest-gated run is an empirical evidence candidate, not proof of physical geometry."
+}

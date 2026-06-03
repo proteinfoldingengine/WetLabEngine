@@ -1,0 +1,37 @@
+{
+  "document_id": "V1309_FREEZE_MINIMAL_SUFFICIENCY_THEOREM",
+  "status": "completed",
+  "basis": [
+    "V1306 Identity-Matched Counterfeit Test",
+    "V1308 Minimal Sufficiency Test"
+  ],
+  "minimal_sufficient_stack": "identity + closure",
+  "tested_full_stack": "identity + closure + momentum",
+  "key_result": {
+    "identity_plus_closure": {
+      "counterfeit_rejection_rate": 1.0,
+      "adm_pass_rate": 1.0,
+      "closure_pass_rate": 1.0,
+      "all_pass_rate": 1.0,
+      "valid_weight": "~1.0",
+      "identity_counterfeit_weight": "~0.0"
+    },
+    "identity_plus_momentum": {
+      "counterfeit_rejection_rate": 0.0,
+      "reason": "adm passed but closure/counterfeit rejection failed"
+    },
+    "closure_plus_momentum": {
+      "counterfeit_rejection_rate": 0.0,
+      "reason": "valid winner could occur, but identity-matched counterfeits retained too much weight"
+    }
+  },
+  "frozen_claim": "Inside the tested synthetic transport simulations, identity + closure is the minimal sufficient stack for rejecting identity-matched counterfeits while preserving B-like closure and ADM_M-like propagation. Momentum is not required as an explicit selector once identity and closure are enforced, though it remains a downstream diagnostic of transport consistency.",
+  "not_claimed": [
+    "physical GR",
+    "Einstein equations",
+    "full ADM derivation",
+    "physical spacetime curvature",
+    "universal law beyond tested simulations"
+  ],
+  "next": "V1310 should test whether this minimal stack scales and survives unseen adversary families."
+}

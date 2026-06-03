@@ -1,0 +1,22 @@
+{
+  "document_id": "V1472_27_ADAPTER_FIX",
+  "decision": "adapter_patch_required_before_retesting",
+  "uploaded_full_certification_verdict": "FAIL_FULL_CERTIFICATION",
+  "root_cause": "resolved_at/closed_at were used as row-level classifiers but appear repeated across incident rows, causing Active rows to be misclassified as closure.",
+  "observed_event_type_collapse": {
+    "closure": 2787,
+    "source": 430,
+    "disruption_loss_repair_recovery": 0
+  },
+  "observed_dependency_totals": {
+    "damaged_dependencies": 0,
+    "repaired_dependencies": 2804
+  },
+  "preserved_good_results": {
+    "all_nulls_fail": true,
+    "no_inadmissible_geometry_computed": true,
+    "P_sequence_real": 1.0,
+    "E_arrow_real": 1.0
+  },
+  "next_step": "Rerun V1472.26 with V1472.27 classifier patch."
+}

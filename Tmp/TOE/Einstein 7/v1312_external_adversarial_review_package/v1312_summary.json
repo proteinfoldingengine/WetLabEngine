@@ -1,0 +1,27 @@
+{
+  "document_id": "V1312_EXTERNAL_ADVERSARIAL_REVIEW_PACKAGE",
+  "status": "completed",
+  "branch": "V1300-V1311 identity+closure minimal sufficiency branch",
+  "frozen_claim": "Inside the tested synthetic transport simulations, identity + closure is a scaled, adversarially tested minimal sufficient stack for rejecting identity-matched counterfeits while preserving B-like closure and ADM_M-like propagation.",
+  "review_verdict_options": [
+    "PASS",
+    "WEAK PASS",
+    "FAIL"
+  ],
+  "primary_attack_points": [
+    "identity definition leakage",
+    "closure metric tautology",
+    "counterfeit diversity",
+    "ADM_M diagnostic dependence",
+    "scaling limits",
+    "whether momentum is truly downstream or only construction-coupled"
+  ],
+  "not_claimed": [
+    "physical GR",
+    "Einstein equations",
+    "full ADM derivation",
+    "physical spacetime curvature",
+    "universal law beyond tested simulations"
+  ],
+  "next_after_review": "If external review passes, create V1313 final branch closure report. If weak/fail, run targeted failure autopsy."
+}

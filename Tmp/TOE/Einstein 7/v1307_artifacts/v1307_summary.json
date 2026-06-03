@@ -1,0 +1,37 @@
+{
+  "document_id": "V1307_FREEZE_REFINED_UNIFICATION_CLAIM",
+  "status": "completed",
+  "basis": [
+    "V1304 Bridge Unification Test",
+    "V1306 Identity-Matched Counterfeit Test"
+  ],
+  "refined_causal_diagram": {
+    "common_ancestor": "retained path identity",
+    "necessary_adversarial_guard": "closure consistency",
+    "momentum_branch": "identity + momentum gives ADM_M-like propagation",
+    "sufficient_stack_under_adversary": "identity + closure + momentum"
+  },
+  "key_v1306_result": {
+    "identity_only": {
+      "valid_weight": 0.507,
+      "identity_counterfeit_weight": 0.493,
+      "interpretation": "identity alone admits identity-matched response-scramble counterfeit"
+    },
+    "identity_closure_momentum": {
+      "valid_weight": "~1.000",
+      "identity_counterfeit_weight": "~0.000",
+      "ADM_M_residual": 0.0009,
+      "flow_coherence": "~1.000",
+      "interpretation": "full stack rejects identity-matched counterfeit"
+    }
+  },
+  "frozen_claim": "Inside the tested synthetic transport simulations, retained path identity is the common ancestor of B-like closure and ADM_M-like propagation, but identity alone is not adversarially sufficient; closure consistency is required to reject identity-matched counterfeits, and momentum consistency preserves ADM_M-like transport.",
+  "not_claimed": [
+    "physical GR",
+    "Einstein equations",
+    "full ADM derivation",
+    "physical spacetime curvature",
+    "universal law beyond tested simulations"
+  ],
+  "next": "V1308 should test minimal sufficiency: which two-term stacks pass identity-matched counterfeits and ADM_M propagation?"
+}

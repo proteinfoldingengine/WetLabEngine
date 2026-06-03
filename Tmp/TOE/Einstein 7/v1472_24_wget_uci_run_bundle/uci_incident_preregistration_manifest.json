@@ -1,0 +1,22 @@
+{
+  "trace_name": "UCI Incident Management Process Enriched Event Log \u2014 first independent empirical run",
+  "trace_source": "UCI Machine Learning Repository dataset 498, incident_event_log.csv",
+  "is_independent_external_trace": true,
+  "input_file": "uci_incident_v1472_trace.csv",
+  "threshold": 0.7,
+  "pilot_small_trace": false,
+  "event_type_mapping": {
+    "source": "source",
+    "disruption": "disruption",
+    "loss": "loss",
+    "repair": "repair",
+    "recovery": "recovery",
+    "closure": "closure"
+  },
+  "entropy_definition": "Normalized incident disorder proxy from priority, impact, urgency, active status, reassignment_count, reopen_count, and SLA status.",
+  "damaged_repaired_definition": "Damaged proxy from increases in disorder/reassignment/reopen/unresolved state; repaired proxy from decreases in disorder and transition toward resolved/closed.",
+  "prior_dependency_definition": "depends_on references previous event log_id within each incident only; prior_dependency references prior event_id only.",
+  "provenance_definition": "ticket/incident number is provenance_id and cannot satisfy prior_dependency.",
+  "exclusion_rules": "Drop incidents with fewer than four ordered records; drop rows without resolvable ordering fields.",
+  "claim_boundary": "A pass is an empirical evidence candidate for pruning-order recoverability geometry-like closure, not proof of physical geometry, spacetime, GR, ADM, or physical curvature."
+}

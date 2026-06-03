@@ -1,0 +1,26 @@
+{
+  "trace_name": "UCI Incident Management Process Enriched Event Log",
+  "trace_source": "UCI Machine Learning Repository dataset 498; ServiceNow incident management process event log from an anonymized IT company.",
+  "is_independent_external_trace": true,
+  "input_file": "incident_event_log.csv",
+  "threshold": 0.7,
+  "pilot_small_trace": false,
+  "event_type_mapping": {
+    "first_record_for_incident": "source",
+    "incident_state_new_or_active_with_high_priority_or_impact": "disruption",
+    "increase_in_reassignment_or_reopen_or_priority": "loss",
+    "state_progression_toward_resolved_or_decreased_priority": "repair",
+    "resolved_state_or_resolved_at_present": "recovery",
+    "closed_state_or_closed_at_present": "closure"
+  },
+  "entropy_definition": "Externally derived incident disorder proxy from normalized priority/impact/urgency, active status, reassignment_count, reopen_count, and sys_mod_count. Must be preregistered before scoring.",
+  "damaged_repaired_definition": "Damaged proxy: increases in priority/impact/urgency, active unresolved state, reassignment/reopen increments. Repaired proxy: transition toward resolved/closed state, resolved_at/closed_at present, active=false, lower disorder proxy.",
+  "prior_dependency_definition": "For each incident number, prior_dependency references the previous event_id within that incident ordered by sys_updated_at/sys_mod_count. It references prior event_id only.",
+  "provenance_definition": "Incident number is provenance_id and cannot satisfy prior_dependency.",
+  "exclusion_rules": [
+    "Drop incidents with fewer than four ordered records unless running a small-trace pilot.",
+    "Drop rows whose ordering cannot be resolved by sys_updated_at and sys_mod_count.",
+    "Do not use rows with missing critical fields for the primary run; report exclusion counts."
+  ],
+  "claim_boundary": "A pass would be an empirical evidence candidate for pruning-order recoverability geometry-like closure, not proof of physical geometry, GR, ADM, or physical curvature."
+}

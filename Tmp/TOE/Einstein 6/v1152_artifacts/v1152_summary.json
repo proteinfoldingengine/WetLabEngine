@@ -1,0 +1,26 @@
+{
+  "document_id": "V1152_3D_GENESIS_PROVENANCE_FLOW_ENGINE",
+  "status": "3D runnable engine generated",
+  "seed": 1152,
+  "frames": 90,
+  "points": 360,
+  "modes": [
+    "valid",
+    "raw_shift",
+    "time_shuffle",
+    "source_shuffle"
+  ],
+  "stack": [
+    "genesis source key",
+    "source-origin identity",
+    "retained-sequence identity",
+    "label-transported equivalence",
+    "dimensionless provenance margin",
+    "3D geometric flow response"
+  ],
+  "outputs": {
+    "metrics_csv": "v1152_provenance_flow_metrics.csv",
+    "static_png": "v1152_genesis_provenance_flow.png",
+    "gif": "v1152_genesis_provenance_flow.gif"
+  }
+}

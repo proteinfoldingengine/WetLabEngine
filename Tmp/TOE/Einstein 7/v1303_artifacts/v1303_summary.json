@@ -1,0 +1,52 @@
+{
+  "document_id": "V1303_MOMENTUM_PROPAGATION_TEST",
+  "status": "completed",
+  "purpose": "Test whether corrected native momentum/continuity selection propagates ADM_M-like consistency across ordered slices.",
+  "case_summary": [
+    {
+      "regime": "closure_only",
+      "valid_winner_rate": 0.6666666666666666,
+      "mean_valid_weight": 0.29021209151284744,
+      "mean_ADM_M_residual": 0.6875713790198924,
+      "mean_ADM_M_std": 0.26997814391322755,
+      "mean_continuity_residual": 0.6440229941403844,
+      "mean_continuity_std": 0.18780957526019637,
+      "mean_B_like_residual": 0.026133724265171146,
+      "mean_flow_coherence": 0.7269258312240352
+    },
+    {
+      "regime": "closure_plus_momentum",
+      "valid_winner_rate": 1.0,
+      "mean_valid_weight": 0.999869941427577,
+      "mean_ADM_M_residual": 0.15580239783972194,
+      "mean_ADM_M_std": 0.13351354460015596,
+      "mean_continuity_residual": 0.4269114261328067,
+      "mean_continuity_std": 0.24071389996206646,
+      "mean_B_like_residual": 0.019424911823912525,
+      "mean_flow_coherence": 0.9788078777408189
+    },
+    {
+      "regime": "identity_plus_momentum",
+      "valid_winner_rate": 1.0,
+      "mean_valid_weight": 0.9999999999989999,
+      "mean_ADM_M_residual": 0.011217122282885532,
+      "mean_ADM_M_std": 0.017622827926429163,
+      "mean_continuity_residual": 0.3496144056062515,
+      "mean_continuity_std": 0.2486808075939706,
+      "mean_B_like_residual": 0.01942363394339872,
+      "mean_flow_coherence": 0.9997817759973907
+    },
+    {
+      "regime": "momentum_only",
+      "valid_winner_rate": 1.0,
+      "mean_valid_weight": 0.9998697834853467,
+      "mean_ADM_M_residual": 0.1632764952199958,
+      "mean_ADM_M_std": 0.13996475307848397,
+      "mean_continuity_residual": 0.4269114154592929,
+      "mean_continuity_std": 0.24071390811270377,
+      "mean_B_like_residual": 0.019424912709450477,
+      "mean_flow_coherence": 0.9767090992244625
+    }
+  ],
+  "finding": "V1303 tests ordered-slice propagation after V1302 showed the normalized momentum primitive selects legitimate transport."
+}

@@ -1,0 +1,225 @@
+{
+  "document_id": "V1472_1_CAUSAL_GOVERNOR_SYNTHETIC_TRACE_HARNESS",
+  "status": "completed",
+  "decision": "causal_governor_synthetic_trace_harness_not_closed",
+  "core_axiom": "No pruning-order trace, no empirical geometry claim.",
+  "valid_trace_passed": true,
+  "all_nulls_failed": false,
+  "results": {
+    "valid_pruning_order_trace": {
+      "passed": true,
+      "M_total": 1.0,
+      "C_closure": 1.0,
+      "P_sequence": 1.0,
+      "E_arrow": 1.0,
+      "failure_reason": null,
+      "events_processed": 6,
+      "slice_history": [
+        {
+          "tau": 0,
+          "event_id": "e0_source",
+          "pruning_order_index": 0,
+          "event_type": "source",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 1,
+          "event_id": "e1_disruption",
+          "pruning_order_index": 1,
+          "event_type": "disruption",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 2,
+          "event_id": "e2_loss",
+          "pruning_order_index": 2,
+          "event_type": "loss",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 3,
+          "event_id": "e3_repair",
+          "pruning_order_index": 3,
+          "event_type": "repair",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 4,
+          "event_id": "e4_recovery",
+          "pruning_order_index": 4,
+          "event_type": "recovery",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 5,
+          "event_id": "e5_closure",
+          "pruning_order_index": 5,
+          "event_type": "closure",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 1.0,
+          "M_total": 1.0
+        }
+      ]
+    },
+    "event_order_shuffle": {
+      "passed": false,
+      "M_total": 0.0,
+      "C_closure": 0.0,
+      "P_sequence": 0.0,
+      "E_arrow": 1.0,
+      "failure_reason": "missing_prior_dependency:e0_source",
+      "events_processed": 0,
+      "slice_history": []
+    },
+    "provenance_shuffle": {
+      "passed": true,
+      "M_total": 1.0,
+      "C_closure": 1.0,
+      "P_sequence": 1.0,
+      "E_arrow": 1.0,
+      "failure_reason": null,
+      "events_processed": 6,
+      "slice_history": [
+        {
+          "tau": 0,
+          "event_id": "e0_source",
+          "pruning_order_index": 0,
+          "event_type": "source",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 1,
+          "event_id": "e1_disruption",
+          "pruning_order_index": 1,
+          "event_type": "disruption",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 2,
+          "event_id": "e2_loss",
+          "pruning_order_index": 2,
+          "event_type": "loss",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 3,
+          "event_id": "e3_repair",
+          "pruning_order_index": 3,
+          "event_type": "repair",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 4,
+          "event_id": "e4_recovery",
+          "pruning_order_index": 4,
+          "event_type": "recovery",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        },
+        {
+          "tau": 5,
+          "event_id": "e5_closure",
+          "pruning_order_index": 5,
+          "event_type": "closure",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 1.0,
+          "M_total": 1.0
+        }
+      ]
+    },
+    "repair_before_disruption_null": {
+      "passed": false,
+      "M_total": 0.0,
+      "C_closure": 0.0,
+      "P_sequence": 0.0,
+      "E_arrow": 1.0,
+      "failure_reason": "missing_prior_dependency:e2_loss",
+      "events_processed": 1,
+      "slice_history": [
+        {
+          "tau": 0,
+          "event_id": "e0_source",
+          "pruning_order_index": 0,
+          "event_type": "source",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        }
+      ]
+    },
+    "source_removed_null": {
+      "passed": false,
+      "M_total": 0.0,
+      "C_closure": 0.0,
+      "P_sequence": 0.0,
+      "E_arrow": 1.0,
+      "failure_reason": "missing_prior_dependency:e0_source",
+      "events_processed": 0,
+      "slice_history": []
+    },
+    "entropy_arrow_reverse_null": {
+      "passed": false,
+      "M_total": 0.0,
+      "C_closure": 0.0,
+      "P_sequence": 1.0,
+      "E_arrow": 0.0,
+      "failure_reason": "entropy_arrow_violation:e1_disruption",
+      "events_processed": 1,
+      "slice_history": [
+        {
+          "tau": 0,
+          "event_id": "e0_source",
+          "pruning_order_index": 0,
+          "event_type": "source",
+          "P_sequence": 1.0,
+          "E_arrow": 1.0,
+          "C_closure": 0.0,
+          "M_total": 0.0
+        }
+      ]
+    },
+    "closure_only_static_null": {
+      "passed": false,
+      "M_total": 0.0,
+      "C_closure": 0.0,
+      "P_sequence": 0.0,
+      "E_arrow": 1.0,
+      "failure_reason": "missing_prior_dependency:e4_recovery",
+      "events_processed": 0,
+      "slice_history": []
+    }
+  },
+  "interpretation": "Sequential causal governor admits valid pruning-order recoverability trace and rejects order/provenance/entropy/static nulls."
+}

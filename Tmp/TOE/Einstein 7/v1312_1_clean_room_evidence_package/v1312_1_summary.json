@@ -1,0 +1,32 @@
+{
+  "document_id": "V1312_1_CLEAN_ROOM_EVIDENCE_HARNESS",
+  "status": "completed",
+  "claim_under_test": "identity + closure minimal sufficiency inside synthetic transport simulations",
+  "identity_plus_closure": {
+    "valid_winner_rate": 1.0,
+    "mean_valid_weight": 0.9978518008472849,
+    "mean_identity_counterfeit_weight": 0.0021481991517170902,
+    "counterfeit_pass_rate": 1.0,
+    "adm_pass_rate": 1.0,
+    "closure_pass_rate": 1.0,
+    "all_pass_rate": 1.0,
+    "mean_B_like_residual": 0.15843567578939874,
+    "mean_ADM_M_residual": 0.0005487540749018619,
+    "mean_flow_coherence": 0.9999996162273782
+  },
+  "review_attack_points_supported_by_outputs": [
+    "identity leakage: compare identity_only vs identity_plus_closure",
+    "closure tautology: compare closure_only, identity_only, and identity_plus_closure",
+    "counterfeit diversity: inspect candidate_summary and candidate_terms",
+    "ADM_M dependence: compare ADM_M pass in identity_only, identity_plus_momentum, identity_plus_closure",
+    "scaling: inspect by_scale",
+    "minimality: inspect summary_by_regime"
+  ],
+  "not_claimed": [
+    "physical GR",
+    "Einstein equations",
+    "full ADM derivation",
+    "physical spacetime curvature",
+    "universal law beyond tested simulations"
+  ]
+}

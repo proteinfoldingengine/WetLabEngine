@@ -1,0 +1,38 @@
+{
+  "document_id": "V1066_PRELIMIT_CLOSURE_REPORT",
+  "status": "prelimit structural closure checkpoint",
+  "purpose": "Consolidate V1025\u2013V1065 results and define the stop point before stronger continuum/GR-adjacent claims.",
+  "claim_boundary": "Model-native recoverability/accessibility constraint structure only; no continuum GR, ADM algebra, Einstein equations, tensor covariance, physical spacetime, or quantum gravity claim.",
+  "strongest_supported_claim": "The recoverability/accessibility framework now supports a model-native prelimit constraint stack with primitive continuity, projected propagation compatibility, pairwise empirical bracket closure, Jacobi-like triple compatibility, resolution-normalized clock/Jacobi handling, and targeted full-stack adversarial rejection.",
+  "key_results": {
+    "V1025": "primitive native continuity closure produced strong legitimate-vs-control separation",
+    "V1046": "projected contracted compatibility passed after diagnostic/operator alignment",
+    "V1053": "frozen full-stack bracket holdout passed: legit 1120/1120, invalid 0/6160",
+    "V1055": "frozen algebraic holdout passed: legit 168/168, invalid 0/672",
+    "V1056": "noise/curvature stress sweep passed: legit 800/800, invalid 0/800",
+    "V1057": "resolution scaling failed usefully due to clock_swap leak",
+    "V1058": "resolution-normalized clock binding fixed clock_swap leak",
+    "V1061": "resolution-normalized Jacobi passed fresh validation: legit 360/360, invalid 0/2160",
+    "V1065": "field-level targeted raw_source/Jacobi ablation passed: legit 240/240, invalid 0/720"
+  },
+  "non_redundant_layers": [
+    "source/provenance binding",
+    "event-clock dtN binding",
+    "direction-origin binding",
+    "pairwise bracket correlation",
+    "pairwise bracket residual",
+    "raw source-manifold residual",
+    "leakage residual",
+    "Jacobi-like triple compatibility"
+  ],
+  "not_proven": [
+    "continuum limit",
+    "physical ADM algebra",
+    "Einstein equations",
+    "physical Bianchi identity",
+    "tensor covariance",
+    "physical spacetime curvature",
+    "quantum gravity"
+  ],
+  "recommended_next": "V1067 \u2014 Continuum Prelimit Criteria Definition: define exact conditions required before attempting continuum scaling or Einstein-equation emergence tests."
+}

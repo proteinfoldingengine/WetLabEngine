@@ -1,0 +1,136 @@
+# V1011.1 Update Explanation Report
+
+## What I changed
+
+I updated your V1011 code into a full-stack certification audit.
+
+The new certification stack is:
+
+```text
+1. Ω similarity
+2. Genesis Pin
+3. B-like source-flow closure
+```
+
+## Why I modified the code
+
+V1011 found that `source_shuffled_null` histories passed Genesis Pin because they used valid pinned provenance.
+
+That is not a Genesis Pin failure. It proves Genesis Pin certifies provenance, not source-flow consistency.
+
+I first tested a residual-only closure gate, but that exposed a second issue:
+
+```text
+B-like RMS residual alone was too weak to detect shuffled source fields.
+```
+
+So I added the missing source-flow alignment layer.
+
+## Final V1011.1 full certification
+
+```text
+full_certified =
+    geometry_only_certified
+    AND genesis_pin_pass
+    AND closure_certified
+```
+
+where:
+
+```text
+closure_certified =
+    residual_certified
+    AND source_alignment_certified
+    AND flow_alignment_certified
+```
+
+All closure thresholds are calibrated from legitimate histories only.
+
+## Run Summary
+
+```json
+{
+  "document_id": "V1011_1_FULL_CERTIFICATION_CLOSURE_FIX",
+  "groups_tested": 40,
+  "histories_tested": 280,
+  "omega_similarity_threshold": 0.985,
+  "legitimate_closure_calibration": {
+    "beta0": 0.011192560666947729,
+    "beta_source": -0.028337489282260035,
+    "beta_divJ": -0.2696461819953865
+  },
+  "thresholds": {
+    "K_SIGMA": 3.0,
+    "legitimate_mean_B_like_rms": 0.06933950399678039,
+    "legitimate_std_B_like_rms": 0.012781923525336681,
+    "B_like_threshold": 0.10768527457279044,
+    "legitimate_mean_source_alignment": 0.715659999713241,
+    "legitimate_std_source_alignment": 0.04312710388293657,
+    "source_alignment_min": 0.5862786880644313,
+    "legitimate_mean_flow_alignment": 0.9890006989824516,
+    "legitimate_std_flow_alignment": 0.004179190314981443,
+    "flow_alignment_min": 0.9764631280375072
+  },
+  "geometry_only_certified_total": 280,
+  "genesis_pin_pass_total": 80,
+  "residual_certified_total": 280,
+  "source_alignment_certified_total": 48,
+  "flow_alignment_certified_total": 280,
+  "closure_certified_total": 48,
+  "old_full_certified_total": 80,
+  "new_full_certified_total": 40,
+  "invalid_geometry_only_certified": 240,
+  "invalid_old_full_certified": 40,
+  "invalid_new_full_certified": 0,
+  "legitimate_mean_B_like_rms": 0.06933950399678039,
+  "invalid_mean_B_like_rms": 0.07111628102515105,
+  "source_shuffled_null_mean_B_like_rms": 0.07250294531285814,
+  "source_shuffled_null_mean_source_alignment": 0.017993296959788258,
+  "legitimate_mean_source_alignment": 0.715659999713241,
+  "source_shuffled_null_old_full_certified": 40,
+  "source_shuffled_null_new_full_certified": 0,
+  "geometry_matched_invalid_mean_omega_similarity": 0.9999999999995998,
+  "pass_condition": {
+    "geometry_counterfeits_exist": true,
+    "old_certification_has_invalids": true,
+    "no_invalid_new_full_certified": true,
+    "source_shuffled_null_rejected_by_closure": true,
+    "legitimate_histories_preserved": true
+  },
+  "claim_boundary": "Model-native Bianchi-like closure certification only; no physical GR/Bianchi/tensor claim."
+}
+```
+
+## What this means
+
+The final code now tests the thesis correctly:
+
+```text
+geometry resemblance is not enough
+provenance legitimacy is not enough
+source-flow closure is also required
+```
+
+The key target case is:
+
+```text
+source_shuffled_null:
+    passes Ω similarity
+    passes Genesis Pin
+    fails B-like source-flow closure
+```
+
+## Claim boundary
+
+This supports a model-native Bianchi-like software closure diagnostic.
+
+It does not claim:
+
+```text
+physical GR
+actual Bianchi identity
+Einstein equations
+actual ADM constraints
+physical spacetime curvature
+coordinate-covariant tensor identity
+```

@@ -1,0 +1,36 @@
+{
+  "document_id": "V1430_0_THEOREM_PROOF_SKETCH_EXTERNAL_FALSIFICATION",
+  "status": "completed",
+  "claim_boundary": "Theorem/proof-sketch and external falsification plan only; no physical GR/EFE/full ADM/physical spacetime/physical curvature.",
+  "theorem_candidate": "Recoverability under pruning requires retained source-origin information.",
+  "formal_implication": "E_R <= epsilon => I_source > I_min",
+  "epsilon": 0.2,
+  "simulation_support": {
+    "synthetic_trials": 5040,
+    "successful_reconstructions": 708,
+    "falsifications": 0,
+    "positive_source_success_rate": 0.983,
+    "source_destroyed_success_rate": 0.0
+  },
+  "proof_sketch": [
+    "If reconstruction R(P(T(x0))) recovers sigma with error <= epsilon, then the compressed observation Y=P(T(x0)) must distinguish source classes well enough to support that reconstruction.",
+    "By Fano-style reasoning, low error implies a lower bound on mutual information between source assignment Sigma and observation Y.",
+    "Therefore successful recovery under pruning requires retained source-origin information above I_min, up to the looseness of the estimator and finite-sample assumptions.",
+    "The simulations do not prove the theorem universally; they test whether the implication is violated under controlled synthetic perturbations."
+  ],
+  "external_falsifiers": [
+    "Find a system that reconstructs causal/source assignment after pruning with E_R <= epsilon while measured I_source <= I_min.",
+    "Show reconstruction succeeds after source-origin information is destroyed while transport, continuity, H-like, or geometry-like summaries are preserved.",
+    "Show the theorem fails under an independent reconstruction operator not used in this work.",
+    "Show the information estimator overstates retained source-origin information."
+  ],
+  "safe_statement": "In synthetic finite-graph recoverability tests, successful reconstruction after pruning required retained source-origin information under the frozen theorem test.",
+  "not_supported": [
+    "universal mathematical proof",
+    "physical spacetime",
+    "GR or Einstein equations",
+    "full ADM",
+    "geometry as primitive",
+    "transport/lineage/continuity as primitive law"
+  ]
+}
