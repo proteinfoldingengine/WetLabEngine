@@ -1,0 +1,9 @@
+check,ok,payload_json
+operator_coverage,True,"{""ok"": true, ""n_target_operators"": 4, ""operators"": [""independent_reconstruction_conservative_vD"", ""independent_reconstruction_oriented_vB"", ""independent_reconstruction_phase_vC"", ""independent_reconstruction_symmetric_vA""]}"
+family_coverage,True,"{""ok"": true, ""n_runs"": 14, ""n_families"": 14}"
+alignment,True,"{""ok"": true, ""n_targets"": 56, ""expected"": 56}"
+candidate_target_separation,True,"{""ok"": true}"
+target_nondegeneracy_per_operator,True,"{""ok"": true, ""O_std_by_operator"": {""independent_reconstruction_conservative_vD"": 0.005696754175555436, ""independent_reconstruction_oriented_vB"": 0.007379366262138733, ""independent_reconstruction_phase_vC"": 0.017878797662329183, ""independent_reconstruction_symmetric_vA"": 0.004404583970739173}}"
+normalization_guard,True,"{""ok"": true}"
+null_suite,True,"{""ok"": true}"
+anti_circularity_per_operator,True,"{""ok"": true, ""rows"": [{""target_operator_id"": ""independent_reconstruction_conservative_vD"", ""passed"": true, ""corr_driver_target"": -0.3244698767261291}, {""target_operator_id"": ""independent_reconstruction_oriented_vB"", ""passed"": true, ""corr_driver_target"": -0.01997566097764889}, {""target_operator_id"": ""independent_reconstruction_phase_vC"", ""passed"": true, ""corr_driver_target"": 0.1445047153744538}, {""target_operator_id"": ""independent_reconstruction_symmetric_vA"", ""passed"": true, ""corr_driver_target"": 0.29537448353958073}]}"

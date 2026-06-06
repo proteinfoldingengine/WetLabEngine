@@ -1,0 +1,52 @@
+{
+  "document_id": "V1592_CANONICAL_OBSTRUCTION_REPRESENTATIVE_RUNNER",
+  "status": "completed",
+  "verdict": "CANONICAL_OBSTRUCTION_CLASS_NOT_SUPPORTED",
+  "interpretation": "Canonicalization did not produce useful nontrivial obstruction classes.",
+  "checks": {
+    "protocol_lock": {
+      "ok": true
+    },
+    "upstream_validation": {
+      "ok": true
+    },
+    "null_behavior": {
+      "ok": true
+    },
+    "schema": {
+      "ok": true,
+      "missing": []
+    },
+    "operator_coverage": {
+      "ok": true
+    }
+  },
+  "metrics": {
+    "n_operators": 4,
+    "n_representatives": 56,
+    "orientation_driver_independent": true,
+    "quotient_removed_or_equal_all": true,
+    "all_operators_nontrivial": false,
+    "any_operator_nontrivial": false,
+    "mean_fraction_canonical_nonzero": 0.0,
+    "mean_canonical_norm": 1.0003805681410475e-17,
+    "n_canonical_equivalence_edges": 0,
+    "largest_canonical_component_size": 1,
+    "mean_canonical_sign_agreement": 0.011904761904761904,
+    "mean_canonical_norm_corr": 0.0,
+    "mean_canonical_quotient_stability": 0.0
+  },
+  "driver_audit_authorized": false,
+  "scalar_target_law_authorized": false,
+  "closure_claim_authorized": false,
+  "law_state": {
+    "L1": "closed",
+    "L2": "closed",
+    "L3": "unresolved",
+    "canonical_obstruction_class": "CANONICAL_OBSTRUCTION_CLASS_NOT_SUPPORTED"
+  },
+  "law_change_authorized": false,
+  "counterterm_authorized": false,
+  "epsilon_floor_update_authorized": false,
+  "threshold_tuning_authorized": false
+}

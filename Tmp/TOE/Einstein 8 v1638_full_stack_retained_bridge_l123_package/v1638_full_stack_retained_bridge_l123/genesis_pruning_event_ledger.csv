@@ -1,0 +1,11 @@
+event_id,event_type,pruning_order_index,provenance_id,requires_prior,prior_dependency,entropy_before,entropy_after,damaged,repaired,branch,witnesses
+g0_source_A,source,0,P0,False,,0.1,0.1,0,0,A,"('W1', 'W2', 'W3')"
+g1_source_B,source,4,P0,True,g0_source_A,0.1,0.12,0,0,B,"('W1', 'W2', 'W3')"
+g2_source_C,source,8,P0,True,g1_source_B,0.12,0.13,0,0,C,"('W1', 'W2', 'W3')"
+dA,disruption,12,P0,True,g2_source_C,0.13,0.55,3,0,A,"('W1', 'W2', 'W4')"
+dB,loss,17,P0,True,dA,0.55,0.74,2,0,B,"('W1', 'W3', 'W4')"
+dC,loss,22,P0,True,dB,0.74,0.86,1,0,C,"('W2', 'W3', 'W4')"
+rA,repair,29,P0,True,dA,0.86,0.61,0,2,A,"('W1', 'W2', 'W3')"
+rB,repair,37,P0,True,dB,0.61,0.43,0,2,B,"('W1', 'W2', 'W3')"
+rC,recovery,46,P0,True,dC,0.43,0.27,0,1,C,"('W1', 'W2', 'W3')"
+h3,closure,57,P0,True,rC,0.27,0.18,0,1,ABC,"('W1', 'W2', 'W4')"
