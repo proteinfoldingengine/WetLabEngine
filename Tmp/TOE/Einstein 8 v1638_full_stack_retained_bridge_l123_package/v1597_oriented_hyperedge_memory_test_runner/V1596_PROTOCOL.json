@@ -1,0 +1,57 @@
+{
+  "document_id": "V1596_REOPEN_HYPOTHESIS_PROTOCOL_ORIENTED_HYPEREDGE_MEMORY",
+  "status": "completed_protocol_lock",
+  "reopen_hypothesis": "oriented_hyperedge_memory_non_pairwise_boundary_holonomy",
+  "prior_freeze": "L3 unresolved under current axioms",
+  "new_skeleton_axiom_candidate": "S+ = (V,E,F,H,P,A,N), where H is oriented hyperedge memory",
+  "core_object": "Omega_ijk = Hol(H_ijk | E_ij,E_jk,E_ki,P,A)",
+  "irreducibility_condition": "H_ijk != f(E_ij,E_jk,E_ki) under admissible pairwise reconstructions",
+  "required_validations": [
+    "schema validation",
+    "provenance alignment",
+    "order preservation",
+    "damage-before-repair preservation",
+    "admissibility preservation",
+    "null sensitivity",
+    "non-pairwise irreducibility",
+    "operator independence or equivalence-class stability",
+    "non-degeneracy"
+  ],
+  "forbidden_methods": [
+    "driver-guided hyperedge definition",
+    "threshold tuning",
+    "fitted coefficients",
+    "post-hoc hyperedge selection",
+    "operator selection by support",
+    "epsilon-floor update",
+    "counterterm",
+    "scalar residual relabeling"
+  ],
+  "required_outputs": [
+    "hyperedge_memory_candidates.csv",
+    "hyperedge_irreducibility_tests.csv",
+    "hyperedge_null_sensitivity.csv",
+    "hyperedge_operator_stability.csv",
+    "hyperedge_holonomy_classes.csv",
+    "v1597_hyperedge_memory_summary.json"
+  ],
+  "allowed_verdicts": [
+    "HYPEREDGE_MEMORY_REOPEN_SIGNAL_SUPPORTED",
+    "HYPEREDGE_MEMORY_REOPEN_SIGNAL_PARTIAL",
+    "NO_HYPEREDGE_MEMORY_SIGNAL",
+    "HYPEREDGE_MEMORY_TEST_INVALID"
+  ],
+  "driver_audit_authorized": false,
+  "target_search_authorized": false,
+  "closure_claim_authorized": false,
+  "next": "V1597_ORIENTED_HYPEREDGE_MEMORY_TEST_RUNNER",
+  "law_state": {
+    "L1": "closed",
+    "L2": "closed",
+    "L3": "unresolved_under_current_axioms"
+  },
+  "law_change_authorized": false,
+  "counterterm_authorized": false,
+  "epsilon_floor_update_authorized": false,
+  "threshold_tuning_authorized": false
+}

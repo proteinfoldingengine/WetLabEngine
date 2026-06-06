@@ -1,0 +1,52 @@
+{
+  "document_id": "V1597_ORIENTED_HYPEREDGE_MEMORY_TEST_RUNNER",
+  "status": "completed",
+  "verdict": "HYPEREDGE_MEMORY_REOPEN_SIGNAL_PARTIAL",
+  "interpretation": "Oriented hyperedge memory shows partial irreducible signal or class-local stability. This is a reopen clue, not closure.",
+  "checks": {
+    "protocol_lock": {
+      "ok": true
+    },
+    "upstream_validation": {
+      "ok": true
+    },
+    "null_behavior": {
+      "ok": true
+    },
+    "schema": {
+      "ok": true,
+      "missing": []
+    },
+    "operator_coverage": {
+      "ok": true
+    }
+  },
+  "metrics": {
+    "n_runs": 14,
+    "n_operators": 4,
+    "n_candidates": 56,
+    "mean_raw_nonzero_fraction": 1.0,
+    "mean_irreducible_nonzero_fraction": 1.0,
+    "mean_raw_norm": 0.0018100784839438133,
+    "mean_irreducible_norm": 0.0017862557980356222,
+    "mean_irreducible_ratio": 0.988508304413899,
+    "operator_stability_edges": 3,
+    "largest_holonomy_component_size": 3,
+    "mean_operator_norm_corr": 0.624311540585768,
+    "mean_operator_sign_agreement": 0.44047619047619047,
+    "null_sensitive_all": true
+  },
+  "driver_audit_authorized": false,
+  "target_search_authorized": false,
+  "closure_claim_authorized": false,
+  "law_state": {
+    "L1": "closed",
+    "L2": "closed",
+    "L3": "unresolved_under_current_axioms",
+    "hyperedge_memory_signal": "HYPEREDGE_MEMORY_REOPEN_SIGNAL_PARTIAL"
+  },
+  "law_change_authorized": false,
+  "counterterm_authorized": false,
+  "epsilon_floor_update_authorized": false,
+  "threshold_tuning_authorized": false
+}

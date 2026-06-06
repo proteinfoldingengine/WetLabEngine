@@ -1,0 +1,58 @@
+{
+  "document_id": "V1638_FULL_STACK_RETAINED_BRIDGE_L123_CLAIMSAFE",
+  "status": "completed",
+  "full_stack_included": true,
+  "data_status": "synthetic controlled simulation",
+  "claim_status": "illustrative full-stack mechanism demo",
+  "closure_status": "l1_l2_closed_l3_integrated_only_not_closed",
+  "not_empirical_validation": true,
+  "not_closure_proof": true,
+  "claim_boundary": "Synthetic controlled full-stack mechanism demo only. Genesis Pin, pruning governor, admissible ordered slice, L1, L2, and L3 are simulated in one chain. L3 remains integrated-only, not closed.",
+  "language_guardrail": "No physical-time primitive; animation uses pruning-order frame.",
+  "full_stack_layers": [
+    "Genesis Pin / source-origin identity",
+    "Pruning-order causal governor",
+    "Admissible ordered slice",
+    "L1 dissipative convergence",
+    "L2 irreducible plateau",
+    "L3 third-order retained-current integrated signal",
+    "CT3/CT7 closure blockers"
+  ],
+  "status_flags": {
+    "genesis_pin_valid": true,
+    "l1_closed_in_controlled_demo": true,
+    "l2_closed_in_controlled_demo": true,
+    "l3_integrated_only": true,
+    "l3_closed": false
+  },
+  "target": "T_H = [Omega_ijk] synthetic hyperedge-memory target",
+  "driver": "D_L3 = (E_order, Delta^2 E_order, A123, D123*Omega123, I_cov_transfer)",
+  "l3_decomposition_terms": [
+    "A123 associator",
+    "D123 third-order divergence",
+    "Omega123 triple-overlap support",
+    "I_cov_transfer geometry-transfer covariance",
+    "delta_C_L3 excess over pairwise recovery"
+  ],
+  "closure_blockers": [
+    "CT3 minimality",
+    "CT7 operator-class boundary"
+  ],
+  "synthetic_payoff": {
+    "ordered_trace_L3_fidelity": 0.9815743777734904,
+    "ordered_trace_pairwise_fidelity": 0.8517589555598432,
+    "avg_ordered_null_L3": 0.1646467848185001,
+    "avg_ordered_null_pairwise": 0.04644143399208034,
+    "separation_L3": 0.8169275929549904,
+    "separation_pairwise": 0.8053175215677628,
+    "relative_improvement_percent": 1.4416762427601926
+  },
+  "outputs": [
+    "static_full_stack_claimsafe.png",
+    "animation_full_stack_claimsafe.gif",
+    "trace.csv",
+    "genesis_pruning_event_ledger.csv",
+    "summary.json",
+    "README.md"
+  ]
+}

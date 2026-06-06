@@ -1,0 +1,98 @@
+{
+  "document_id": "V1620_DRIVER_PAIR_REPLICATION_PROTOCOL",
+  "status": "completed_protocol_lock",
+  "authorized_by": "V1619_COMPANION_OBSERVABLE_SUPPORTED",
+  "validated_target": "T_H = [Omega_ijk]",
+  "driver_pair": "D_pair = (entropy_order, C_order_curvature)",
+  "pair_components": {
+    "entropy_order": "entropy/order observable over retained family order",
+    "C_order_curvature": "second difference of entropy/order observable across retained family order"
+  },
+  "target_fixed": true,
+  "driver_pair_fixed": true,
+  "required_replication_classes": [
+    "clean_pair_replication_class",
+    "noisy_pair_replication_class",
+    "family_shift_pair_replication_class",
+    "operator_stress_pair_replication_class",
+    "null_adversarial_pair_replication_class",
+    "cross_family_pair_replication_class"
+  ],
+  "minimum_requirements": {
+    "n_replication_classes": 6,
+    "n_families": 42,
+    "n_candidates": 126,
+    "operators": "C_orient+ only"
+  },
+  "required_tests": [
+    "pair_target_association_replicates",
+    "pair_rank_structure_replicates",
+    "pair_class_stability",
+    "pair_family_holdout_stability",
+    "pair_operator_class_stability",
+    "pair_null_response_separation",
+    "pair_target_leakage_absent",
+    "pair_non_fitted",
+    "pair_nondegenerate",
+    "pair_anti_circularity",
+    "pair_scalar_projection_diagnostic_only"
+  ],
+  "locked_metrics": [
+    "primary_driver_pair",
+    "n_replication_classes",
+    "n_families",
+    "n_candidates",
+    "pair_rank_restoration_score",
+    "pair_rank_structure_fraction",
+    "pair_class_stability_fraction",
+    "pair_holdout_stability_fraction",
+    "pair_operator_class_stability",
+    "pair_target_leakage_absent",
+    "pair_null_response_separation",
+    "required_pass_count",
+    "required_total"
+  ],
+  "forbidden_methods": [
+    "coefficient fitting",
+    "regression tuning",
+    "driver pair weighting",
+    "threshold scanning",
+    "third-observable addition",
+    "post-hoc driver switching",
+    "target retuning",
+    "using T_H labels as driver",
+    "using T_H norm as driver",
+    "closure claim"
+  ],
+  "allowed_verdicts": [
+    "DRIVER_PAIR_REPLICATED",
+    "DRIVER_PAIR_REPLICATION_PARTIAL",
+    "DRIVER_PAIR_NOT_REPLICATED",
+    "DRIVER_PAIR_REPLICATION_INVALID"
+  ],
+  "required_outputs": [
+    "driver_pair_replication_runs.csv",
+    "driver_pair_replication_target_representatives.csv",
+    "driver_pair_replication_candidates.csv",
+    "driver_pair_replication_scores.csv",
+    "driver_pair_replication_rank_tests.csv",
+    "driver_pair_replication_null_response.csv",
+    "driver_pair_replication_operator_stability.csv",
+    "driver_pair_replication_family_holdout.csv",
+    "driver_pair_replication_leakage_checks.csv",
+    "driver_pair_replication_summary_matrix.csv",
+    "v1621_driver_pair_replication_summary.json"
+  ],
+  "next": "V1621_DRIVER_PAIR_REPLICATION_RUNNER",
+  "driver_pair_formalization_protocol_authorized_if_replicated": true,
+  "closure_claim_authorized": false,
+  "law_state": {
+    "L1": "closed",
+    "L2": "closed",
+    "L3": "target_validated_driver_pair_candidate_supported_not_replicated_not_closed"
+  },
+  "law_change_authorized": false,
+  "counterterm_authorized": false,
+  "epsilon_floor_update_authorized": false,
+  "threshold_tuning_authorized": false
+}
