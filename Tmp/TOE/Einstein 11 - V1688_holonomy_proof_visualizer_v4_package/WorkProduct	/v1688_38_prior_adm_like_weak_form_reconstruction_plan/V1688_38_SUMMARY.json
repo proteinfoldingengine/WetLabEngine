@@ -1,0 +1,27 @@
+{
+  "document_id": "V1688_38_PRIOR_ADM_LIKE_WEAK_FORM_RECONSTRUCTION_PLAN",
+  "status": "completed",
+  "verdict": "PRIOR_ADM_LIKE_WEAK_FORM_RECONSTRUCTION_PLAN_DEFINED",
+  "reason": "Synthetic independent targets were saturated; the prior ADM-like weak-form branch had nontrivial residual signals and should be reconstructed instead.",
+  "target": "R_weak_form = reconstructed same-slice retained-flow / weak-form constraint residual",
+  "model_stack": {
+    "M0": "original source-flow / same-slice weak-form predictors",
+    "M1": "M0 + Gamma_R edge-faithfulness",
+    "M2": "M0 + O3/L3 associator features",
+    "M3": "M0 + H4_perp/L4 features",
+    "M4": "M0 + edge + O3 + H4_perp"
+  },
+  "required_nulls": [
+    "edge-faithfulness shuffle",
+    "O3 shuffle",
+    "H4_perp shuffle",
+    "source-flow-preserving null",
+    "branch-label shuffle",
+    "transport-randomized null",
+    "linear recombination control",
+    "resolution/refinement ladder",
+    "operator-family variation"
+  ],
+  "recommended_next": "V1688.39 Clean-Room Weak-Form Harness Rebuild",
+  "claim_boundary": "Reconstruction protocol only; no ADM derivation, GR, Riemann curvature, or physical spacetime claim."
+}
