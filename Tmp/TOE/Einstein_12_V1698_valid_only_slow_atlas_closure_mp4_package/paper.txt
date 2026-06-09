@@ -1,0 +1,289 @@
+As of the current literature search and our present knowledge,
+we have not found a published paper that claims or demonstrates this exact result.
+
+That matters. Standard mathematics already has atlases, transition maps, compatibility, cocycle conditions, parallel transport, and holonomy. A smooth atlas is normally a collection of charts covering a manifold with smooth transition functions on overlaps, and compatibility of charts is standard differential geometry.   Holonomy and parallel transport around closed loops are also classical, with holonomy capturing what transport around loops does to objects in a fiber or frame.  
+
+But that is not what we just produced.
+
+What appears new is the retained-ledger global atlas closure rule-set:
+
+provenance/order-retained charts
++ generated algebra transitions
++ witness-certified filling
++ source-current admissibility
++ signed boundary pairing
++ W3-certified Bianchi compatibility
++ null-family rejection
++ global cocycle / holonomy closure
+
+I do not know of a published system that has produced that full stack.
+
+The rules of Global Retained-Atlas Closure
+
+The rules are now clear enough to state as a formal closure definition.
+
+A retained atlas is globally closed only if all of the following hold.
+
+Rule 1 — Retained chart coverage
+
+There must be a family of retained local charts:
+
+A_R = { U_i, G_i, S_i, O_i, P_i }
+
+where each chart carries:
+
+U_i  = local chart / patch
+G_i  = generated local algebra
+S_i  = source assignment
+O_i  = retained-order / provenance ordering
+P_i  = support / provenance witness data
+
+Closure requires the charts to cover the retained object:
+
+⋃ U_i = retained domain
+
+In the Python proof, this was the chart coverage condition.
+
+Rule 2 — Pairwise retained transition maps
+
+For every nonempty overlap:
+
+U_i ∩ U_j ≠ ∅
+
+there must be a retained transition map:
+
+T_ij : G_i → G_j
+
+This is not just a coordinate map. It must transport the generated algebra while preserving the retained source/order/support ledger.
+
+In the proof:
+
+T_ij = B_j^-1 B_i
+
+That gave explicit transition maps between local retained charts.
+
+Rule 3 — Inverse consistency
+
+Every transition must have a valid reverse transition:
+
+T_ji T_ij = I
+
+or, in residual form:
+
+|| T_ji T_ij − I || ≤ ε_inv
+
+This blocks fake one-way chart stitching.
+
+In the proof, valid atlas inverse residuals passed, while transition-corrupt nulls failed.
+
+Rule 4 — Triple-overlap cocycle closure
+
+For every admissible triple overlap:
+
+U_i ∩ U_j ∩ U_k ≠ ∅
+
+the transition maps must close:
+
+T_ki T_jk T_ij = I
+
+or:
+
+|| T_ki T_jk T_ij − I || ≤ ε_cocycle
+
+This is the local-to-global compatibility rule. It says the atlas is not merely pairwise consistent; it is globally glueable.
+
+This is one of the central rules.
+
+Rule 5 — Retained-loop holonomy closure
+
+For every admissible retained loop:
+
+U_i → U_j → U_k → ... → U_i
+
+the composed transport must close:
+
+H_loop = T_i...k ... T_jk T_ij
+
+and for flat/admissible closure:
+
+|| H_loop − I || ≤ ε_holonomy
+
+If holonomy is nontrivial, it must be accounted for as a legitimate curvature/source defect, not as an untracked closure error.
+
+In our proof, the valid retained atlas had identity retained-loop holonomy. The nulls broke closure.
+
+Rule 6 — Retained source/order/support admissibility
+
+This is the part that classical atlas theory does not have.
+
+Even if the matrices close, the retained atlas fails if the ledger is corrupted:
+
+source assignment must remain admissible
+support assignment must remain admissible
+retained-order signature must remain admissible
+
+So the closure condition is not merely:
+
+matrix cocycle closes
+
+It is:
+
+matrix cocycle closes
+and retained provenance/order/source ledger remains admissible
+
+That is one of the novel rules.
+
+Rule 7 — Witness-certified filling
+
+Higher-order closure cannot be inferred from graph cycles alone.
+
+You need witness layers:
+
+W1 = edge witness
+W2 = face/path filling witness
+W3 = cell/cycle filling witness
+
+The closure stack requires:
+
+W1 → W2 → W3
+
+with each layer carrying retained provenance/order/source compatibility.
+
+This prevents a fake closure where a graph has loops but no admissible retained filling.
+
+Rule 8 — Source-current compatibility
+
+There must be an explicit retained source/provenance current:
+
+J_R
+
+and every W3-certified cell must have an associated current row.
+
+A source-free cell is allowed:
+
+J_R = 0
+
+but missing J_R is not allowed.
+
+That distinction was important in the validator repair.
+
+Rule 9 — Signed boundary pairing
+
+Boundary closure must be checked with signed orientation:
+
+⟨δA_R, ∂C⟩
+
+not with a scalar proxy.
+
+The rule is:
+
+signed boundary residual = decomposed deltaA_R + boundary_pairing
+
+A scalar “boundary score” is not enough.
+
+Rule 10 — W3-certified Bianchi compatibility
+
+Bianchi-like compatibility may only be evaluated on W3-certified cells.
+
+The rule is:
+
+B_R(C) = Alt(D_R F2)(C) + F3(C) − J_R(C)
+
+and it is admissible only if:
+
+C has W3 witness certification
+C has explicit J_R
+C has retained source/order/support provenance
+
+This prevents a fake Bianchi closure on unsupported graph cycles.
+
+Rule 11 — Null-family rejection
+
+The atlas must reject retained-breaking nulls.
+
+The frozen null families are:
+
+source_shuffle
+order_shuffle
+support_shuffle
+edge_package_shuffle
+cycle_package_shuffle
+transition_shuffle
+cocycle_break
+
+A valid atlas closes. These nulls must fail in their expected channels.
+
+That means global atlas closure is not just “the valid case works.” It is:
+
+valid closes
+retained-breaking nulls fail
+
+Rule 12 — Multi-domain closure
+
+The closure must hold across both domain regimes:
+
+open
+closed_filled
+
+A closed-only atlas is not enough. An open-only atlas is not enough.
+
+The full retained atlas protocol requires both.
+
+The compressed law
+
+The whole thing can be compressed to:
+
+Global Retained-Atlas Closure =
+Coverage
+× Transition Existence
+× Inverse Consistency
+× Cocycle Closure
+× Retained-Holonomy Closure
+× Source/Support/Order Admissibility
+× W1/W2/W3 Witness Filling
+× J_R Source-Current Compatibility
+× Signed Boundary Pairing
+× W3-Bianchi Compatibility
+× Null Rejection
+× Open/Closed Domain Validity
+
+Or symbolically:
+
+GAC_R =
+C_cover · C_trans · C_inv · C_cocycle · C_hol
+· A_source/order/support
+· W123
+· J_R
+· ∂_signed
+· B_R
+· N_reject
+· D_open/closed
+
+Closure exists only when:
+
+GAC_R = 1
+
+Why this appears unprecedented
+
+Classical geometry has atlases and transition maps. Gauge theory has holonomy. Differential geometry has connections and curvature. Numerical relativity has ADM-like constraints. Recent computational work also explores learned/neural atlases and transition maps, including cocycle-style compatibility in learned manifold settings.  
+
+But those are still missing the defining stack here:
+
+retained provenance/order admissibility
+witness-certified filling W1/W2/W3
+explicit source-current J_R
+signed boundary pairing
+W3-certified Bianchi compatibility
+multi-null rejection
+GR-like ADM / holonomy / flow behavior in the same executable retained-ledger system
+
+So the accurate strong claim is:
+
+We have not found any published work that claims or demonstrates Global Retained-Atlas Closure in this sense.
+
+And the even cleaner version:
+
+The novelty is not that atlases, holonomy, or cocycle closure exist.
+The novelty is that a provenance/order-retained computational system produced a globally closed retained atlas with witness-certified filling, source-current compatibility, signed boundary pairing, W3-certified Bianchi compatibility, null rejection, and GR-like structural behavior in simulation.
+
+That is the claim to prepare.
