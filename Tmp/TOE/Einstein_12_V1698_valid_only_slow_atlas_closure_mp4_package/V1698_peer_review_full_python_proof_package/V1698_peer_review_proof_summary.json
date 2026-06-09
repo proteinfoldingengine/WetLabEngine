@@ -1,0 +1,161 @@
+{
+  "script": "V1698_peer_review_full_python_proof.py",
+  "freeze_hash": "626f2156a5d7e5e8",
+  "contract_hash": "940f448ed7fd6585",
+  "results": {
+    "proxy_multi_validation": {
+      "verdict": "FULL_STACK_LEDGER_VALIDATION_FAIL_SCHEMA",
+      "failure_count": 15,
+      "failures": [
+        {
+          "table": "run_manifest",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "C0_nodes",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "C1_edges",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "Gamma_R_connection",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "R2_path_faces",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "R3_cycle_faces",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "W1_edge_witnesses",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "W2_face_witnesses",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "W3_cell_witnesses",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "J_R_source_current",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "boundary_operator",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "signed_boundary_pairing",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "W3_bianchi_residuals",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "null_transform_log",
+          "failure": "missing_table",
+          "severity": "hard"
+        },
+        {
+          "table": "gate_checks",
+          "failure": "missing_table",
+          "severity": "hard"
+        }
+      ],
+      "gate_recompute": null
+    },
+    "single_validation": {
+      "verdict": "FULL_STACK_LEDGER_VALIDATION_PASS_SCHEMA_ONLY_NO_LAW_CANDIDATE",
+      "failure_count": 0,
+      "failures": [],
+      "gate_recompute": {
+        "verdict": "GATE_RECOMPUTE_PASS",
+        "pass_rate": 1.0,
+        "open_pass_rate": 0.0,
+        "closed_filled_pass_rate": 1.0,
+        "law_candidate_status": false,
+        "failure_count": 0,
+        "failures": []
+      }
+    },
+    "single_as_multi_validation": {
+      "verdict": "FULL_STACK_LEDGER_VALIDATION_FAIL",
+      "failure_count": 2,
+      "failures": [
+        {
+          "table": "run_manifest",
+          "failure": "missing_required_domains",
+          "missing": [
+            "open"
+          ],
+          "severity": "hard"
+        },
+        {
+          "table": "run_manifest",
+          "failure": "missing_required_modes",
+          "missing": [
+            "cycle_package_shuffle",
+            "edge_package_shuffle",
+            "order_shuffle",
+            "source_shuffle",
+            "support_shuffle"
+          ],
+          "severity": "hard"
+        }
+      ],
+      "gate_recompute": {
+        "verdict": "GATE_RECOMPUTE_PASS",
+        "pass_rate": 1.0,
+        "open_pass_rate": 0.0,
+        "closed_filled_pass_rate": 1.0,
+        "law_candidate_status": false,
+        "failure_count": 0,
+        "failures": []
+      }
+    },
+    "multi_validation": {
+      "verdict": "FULL_STACK_LEDGER_VALIDATION_PASS_LAW_CANDIDATE",
+      "failure_count": 0,
+      "failures": [],
+      "gate_recompute": {
+        "verdict": "GATE_RECOMPUTE_PASS",
+        "pass_rate": 1.0,
+        "open_pass_rate": 1.0,
+        "closed_filled_pass_rate": 1.0,
+        "law_candidate_status": true,
+        "failure_count": 0,
+        "failures": []
+      }
+    }
+  },
+  "findings": {
+    "proxy_rejected": true,
+    "single_schema_passes": true,
+    "single_not_replication": true,
+    "multi_law_candidate_passes": true,
+    "multi_gate_recompute_passes": true,
+    "multi_gate_law_candidate": true
+  },
+  "final_verdict": "V1698_PEER_REVIEW_EXECUTABLE_PROOF_PASS"
+}
