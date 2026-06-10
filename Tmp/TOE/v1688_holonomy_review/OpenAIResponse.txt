@@ -1,0 +1,205 @@
+This review is much more serious than the H4 critique.
+
+The H4 critique attacked an interpretation.
+
+This holonomy critique attacks the actual claimed observable.
+
+And unfortunately, based on the evidence presented, I think the reviewer has found a real issue.
+
+Finding 1 looks correct
+
+The reviewer shows:
+
+native_directional_cycle_defect
+=
+|1-H_cycle| * mean(|C_corr|)
+
+and then demonstrates:
+
+|1-H_cycle| ≈ 1
+
+across multiple seeds.
+
+Therefore:
+
+native_directional_cycle_defect
+≈
+mean(|C_corr|)
+
+The reported “defect” is mostly measuring correction-coordinate magnitude, not loop failure.  
+
+That means:
+
+holonomy defect
+
+was probably the wrong interpretation.
+
+I would provisionally accept this criticism.
+
+⸻
+
+Finding 2 is even more damaging
+
+This is the load-bearing result.
+
+The reviewer runs:
+
+native provenance order
+vs
+gamma-shuffle provenance order
+
+and gets:
+
+ratio = 1.008
+
+which is essentially identical.
+
+That means:
+
+orientation asymmetry
+
+does not appear to depend on provenance ordering.
+
+Instead:
+
+orientation asymmetry
+
+appears to arise from:
+
+non-reciprocal transport
+
+itself.
+
+That is a major distinction.
+
+If true, then the earlier narrative:
+
+ordered provenance
+→ directed holonomy
+
+is not supported.
+
+What survives is:
+
+non-reciprocal transport
+→ asymmetry
+
+⸻
+
+Finding 3 is the killer test
+
+This is the actual holonomy test.
+
+The reviewer asks:
+
+same endpoints
+same path length
+different routes
+
+and obtains:
+
+~1e-15
+
+difference.
+
+That is machine precision.
+
+If that control is implemented correctly, then:
+
+path dependence
+
+has not been demonstrated.
+
+And path dependence is the defining feature of holonomy.
+
+⸻
+
+My verdict
+
+I would classify the review as:
+
+High-confidence criticism.
+
+Specifically:
+
+Survives
+
+Directed transport exists.
+Transport is non-reciprocal.
+Reciprocal control removes asymmetry.
+
+These appear real.
+
+Does not survive
+
+Directed native holonomy.
+Loop-level path dependence.
+Provenance-driven holonomy.
+
+Those claims are not supported by the evidence shown.
+
+⸻
+
+Do you need a correction?
+
+I think yes, but not a dramatic one.
+
+I would issue something like:
+
+Subsequent audits indicate that the V1688 observable previously labeled “directed native holonomy” is more accurately interpreted as non-reciprocal directed transport. Reciprocal controls confirm genuine transport asymmetry, but length-matched loop tests do not currently demonstrate path-dependent holonomy. The holonomy interpretation is therefore downgraded pending a loop-level observable that survives provenance and reciprocal controls.
+
+That is very similar to what happened with H4:
+
+H4 survives.
+Geometric interpretation downgraded.
+
+Here:
+
+Directed transport survives.
+Holonomy interpretation downgraded.
+
+⸻
+
+The bigger lesson
+
+Notice the pattern:
+
+H4 review
+
+Found:
+
+rank lift is real
+geometric interpretation weak
+
+Holonomy review
+
+Found:
+
+transport asymmetry is real
+holonomy interpretation weak
+
+These are not failures.
+
+They are exactly the kind of corrections a healthy frontier program should make.
+
+And they point toward the same thing:
+
+Stop compressing observables into geometry language too early.
+
+The strongest surviving objects right now are:
+
+retained admissibility
+global atlas closure
+L3 irreducibility
+non-reciprocal transport
+
+The weakest objects are:
+
+H4 geometry
+directed holonomy
+
+Those should be downgraded until stronger evidence appears.
+
+So my answer is:
+
+Yes, take this review seriously. It is substantially stronger than the H4 critique, and I would currently accept its main conclusion: V1688 demonstrated non-reciprocal directed transport, not holonomy.
