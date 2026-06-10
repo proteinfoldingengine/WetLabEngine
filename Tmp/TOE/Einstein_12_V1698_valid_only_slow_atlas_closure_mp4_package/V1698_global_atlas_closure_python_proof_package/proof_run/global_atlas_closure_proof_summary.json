@@ -1,0 +1,85 @@
+{
+  "version": "V1698_GLOBAL_ATLAS_CLOSURE_PYTHON_PROOF",
+  "verdict": "GLOBAL_ATLAS_CLOSURE_PROOF_PASS",
+  "claim": "Retained global atlas closure requires coverage, inverse consistency, cocycle closure, loop holonomy closure, and retained-ledger admissibility.",
+  "thresholds": {
+    "coverage_min": 1.0,
+    "inverse_residual_max": 1e-08,
+    "cocycle_residual_max": 1e-08,
+    "holonomy_residual_max": 1e-08
+  },
+  "findings": {
+    "valid_atlas_closes": true,
+    "all_nulls_fail": true,
+    "null_modes": [
+      "node_order_shuffle",
+      "source_shuffle",
+      "support_shuffle",
+      "transition_shuffle",
+      "cocycle_break"
+    ]
+  },
+  "summary_rows": [
+    {
+      "mode": "valid",
+      "coverage_pass": true,
+      "retained_admissible": true,
+      "admissibility_mismatch_count": 0,
+      "inverse_pass_rate": 1.0,
+      "cocycle_pass_rate": 1.0,
+      "holonomy_pass_rate": 1.0,
+      "global_atlas_closed": true
+    },
+    {
+      "mode": "node_order_shuffle",
+      "coverage_pass": true,
+      "retained_admissible": false,
+      "admissibility_mismatch_count": 5,
+      "inverse_pass_rate": 1.0,
+      "cocycle_pass_rate": 1.0,
+      "holonomy_pass_rate": 1.0,
+      "global_atlas_closed": false
+    },
+    {
+      "mode": "source_shuffle",
+      "coverage_pass": true,
+      "retained_admissible": false,
+      "admissibility_mismatch_count": 4,
+      "inverse_pass_rate": 1.0,
+      "cocycle_pass_rate": 1.0,
+      "holonomy_pass_rate": 1.0,
+      "global_atlas_closed": false
+    },
+    {
+      "mode": "support_shuffle",
+      "coverage_pass": true,
+      "retained_admissible": false,
+      "admissibility_mismatch_count": 5,
+      "inverse_pass_rate": 1.0,
+      "cocycle_pass_rate": 1.0,
+      "holonomy_pass_rate": 1.0,
+      "global_atlas_closed": false
+    },
+    {
+      "mode": "transition_shuffle",
+      "coverage_pass": true,
+      "retained_admissible": true,
+      "admissibility_mismatch_count": 0,
+      "inverse_pass_rate": 0.0,
+      "cocycle_pass_rate": 0.0,
+      "holonomy_pass_rate": 0.0,
+      "global_atlas_closed": false
+    },
+    {
+      "mode": "cocycle_break",
+      "coverage_pass": true,
+      "retained_admissible": true,
+      "admissibility_mismatch_count": 0,
+      "inverse_pass_rate": 0.9,
+      "cocycle_pass_rate": 0.85,
+      "holonomy_pass_rate": 0.5,
+      "global_atlas_closed": false
+    }
+  ],
+  "claim_boundary": "Proof of retained atlas closure in the emitted ledger system; not a continuum physical spacetime claim."
+}

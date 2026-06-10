@@ -1,0 +1,429 @@
+{
+  "verdict": "V1698_2_SPARSE_RANDOMIZED_L3L4_ATLAS_HARDENING_PASS",
+  "claim_tested": "Sparse randomized retained atlas closure with embedded L3/O3 and L4/H4_perp obstruction fields, generated-algebra product faithfulness, randomized/multi-point adversaries, and residual spread reporting.",
+  "valid_closes_all_trials": true,
+  "all_null_modes_fail_global_closure": true,
+  "modes": {
+    "multi_transition_perturb": {
+      "count": 50,
+      "global_closed_rate": 0.0,
+      "geometry_pass_rate": 0.0,
+      "ledger_pass_rate": 1.0,
+      "l3l4_pass_rate": 0.0,
+      "product_pass_rate": 0.0,
+      "ledger_mismatch_mean": 0.0,
+      "residuals": {
+        "inverse_max": {
+          "max": 0.03895603501817204,
+          "mean": 0.03712890252514701,
+          "p95": 0.03848812776191672
+        },
+        "cocycle_max": {
+          "max": 0.046324901039804675,
+          "mean": 0.03739843923038523,
+          "p95": 0.04421637229065324
+        },
+        "holonomy_max": {
+          "max": 0.05361766402038433,
+          "mean": 0.0409899023737514,
+          "p95": 0.04883651683752782
+        },
+        "branch_transport_max": {
+          "max": 0.011859848351043308,
+          "mean": 0.00953798525612126,
+          "p95": 0.010841649959612482
+        },
+        "o3_transport_max": {
+          "max": 0.00017442340601557275,
+          "mean": 8.348342645944825e-05,
+          "p95": 0.00013193161893905187
+        },
+        "h4_transport_max": {
+          "max": 0.011225434813607785,
+          "mean": 0.008587772226902527,
+          "p95": 0.010364092732334539
+        },
+        "product_faithfulness_max": {
+          "max": 0.0018747342947616871,
+          "mean": 0.0013546959745086894,
+          "p95": 0.0015831202052053505
+        }
+      }
+    },
+    "near_cocycle_attack": {
+      "count": 50,
+      "global_closed_rate": 0.0,
+      "geometry_pass_rate": 0.0,
+      "ledger_pass_rate": 1.0,
+      "l3l4_pass_rate": 0.0,
+      "product_pass_rate": 0.0,
+      "ledger_mismatch_mean": 0.0,
+      "residuals": {
+        "inverse_max": {
+          "max": 5.00000000004686e-05,
+          "mean": 5.0000000000175474e-05,
+          "p95": 5.000000000045464e-05
+        },
+        "cocycle_max": {
+          "max": 7.366329935257845e-05,
+          "mean": 5.605645968138248e-05,
+          "p95": 7.197155964395209e-05
+        },
+        "holonomy_max": {
+          "max": 7.366329935277021e-05,
+          "mean": 6.058939833484837e-05,
+          "p95": 7.264185582269983e-05
+        },
+        "branch_transport_max": {
+          "max": 3.8313666965326444e-05,
+          "mean": 2.7553125095068536e-05,
+          "p95": 3.709109290372161e-05
+        },
+        "o3_transport_max": {
+          "max": 4.1759651213121846e-07,
+          "mean": 2.3116690493099026e-07,
+          "p95": 3.9042018584074924e-07
+        },
+        "h4_transport_max": {
+          "max": 3.4980604877053095e-05,
+          "mean": 2.0172237736391787e-05,
+          "p95": 3.2026683667951266e-05
+        },
+        "product_faithfulness_max": {
+          "max": 4.867039337399283e-06,
+          "mean": 3.29079855774407e-06,
+          "p95": 4.515938196824813e-06
+        }
+      }
+    },
+    "obstruction_scramble": {
+      "count": 50,
+      "global_closed_rate": 0.0,
+      "geometry_pass_rate": 1.0,
+      "ledger_pass_rate": 1.0,
+      "l3l4_pass_rate": 0.0,
+      "product_pass_rate": 1.0,
+      "ledger_mismatch_mean": 0.0,
+      "residuals": {
+        "inverse_max": {
+          "max": 3.6321179263354105e-15,
+          "mean": 2.8453175030618243e-15,
+          "p95": 3.3376414818095748e-15
+        },
+        "cocycle_max": {
+          "max": 4.071097947394435e-15,
+          "mean": 3.282171080918794e-15,
+          "p95": 3.6612679124653016e-15
+        },
+        "holonomy_max": {
+          "max": 5.315521993465277e-15,
+          "mean": 4.282513943933182e-15,
+          "p95": 4.9756291591986326e-15
+        },
+        "branch_transport_max": {
+          "max": 1.0993275399547627e-15,
+          "mean": 8.26668237443754e-16,
+          "p95": 1.0096435941649897e-15
+        },
+        "o3_transport_max": {
+          "max": 0.02429590865921795,
+          "mean": 0.012854677202441553,
+          "p95": 0.01809203477393402
+        },
+        "h4_transport_max": {
+          "max": 1.4142135623762584,
+          "mean": 1.4142135623730607,
+          "p95": 1.4142135623739194
+        },
+        "product_faithfulness_max": {
+          "max": 3.278273063011935e-15,
+          "mean": 2.1915736640576804e-15,
+          "p95": 2.819915723321158e-15
+        }
+      }
+    },
+    "product_mismatch": {
+      "count": 50,
+      "global_closed_rate": 0.0,
+      "geometry_pass_rate": 1.0,
+      "ledger_pass_rate": 1.0,
+      "l3l4_pass_rate": 1.0,
+      "product_pass_rate": 0.0,
+      "ledger_mismatch_mean": 0.0,
+      "residuals": {
+        "inverse_max": {
+          "max": 3.851727074831457e-15,
+          "mean": 2.862176151158023e-15,
+          "p95": 3.2891384004138734e-15
+        },
+        "cocycle_max": {
+          "max": 3.977227063005305e-15,
+          "mean": 3.2715474101978808e-15,
+          "p95": 3.760694109252104e-15
+        },
+        "holonomy_max": {
+          "max": 5.4006852723891046e-15,
+          "mean": 4.3657995109401764e-15,
+          "p95": 5.201514990676786e-15
+        },
+        "branch_transport_max": {
+          "max": 1.1967329087540621e-15,
+          "mean": 8.320037054821033e-16,
+          "p95": 1.1111271871108455e-15
+        },
+        "o3_transport_max": {
+          "max": 1.404868326581043e-17,
+          "mean": 7.217397260078404e-18,
+          "p95": 1.2153384962801053e-17
+        },
+        "h4_transport_max": {
+          "max": 1.1206259948072315e-15,
+          "mean": 7.273745700131097e-16,
+          "p95": 1.003220423739026e-15
+        },
+        "product_faithfulness_max": {
+          "max": 0.1878091966251677,
+          "mean": 0.15001201980207418,
+          "p95": 0.16952613830289495
+        }
+      }
+    },
+    "random_node_order_shuffle": {
+      "count": 50,
+      "global_closed_rate": 0.0,
+      "geometry_pass_rate": 1.0,
+      "ledger_pass_rate": 0.0,
+      "l3l4_pass_rate": 1.0,
+      "product_pass_rate": 1.0,
+      "ledger_mismatch_mean": 7.0,
+      "residuals": {
+        "inverse_max": {
+          "max": 3.509914838704621e-15,
+          "mean": 2.8341844427106348e-15,
+          "p95": 3.276884139100253e-15
+        },
+        "cocycle_max": {
+          "max": 4.468226860329704e-15,
+          "mean": 3.2341979891792237e-15,
+          "p95": 3.823356740136225e-15
+        },
+        "holonomy_max": {
+          "max": 5.597914828249788e-15,
+          "mean": 4.365340937726015e-15,
+          "p95": 5.060032665227075e-15
+        },
+        "branch_transport_max": {
+          "max": 1.139416243306824e-15,
+          "mean": 8.213528910006999e-16,
+          "p95": 1.038653109652349e-15
+        },
+        "o3_transport_max": {
+          "max": 1.1323588586294735e-17,
+          "mean": 6.6917655364957384e-18,
+          "p95": 1.0449944145956316e-17
+        },
+        "h4_transport_max": {
+          "max": 1.3024296464031445e-15,
+          "mean": 6.938415082756232e-16,
+          "p95": 8.95051947656909e-16
+        },
+        "product_faithfulness_max": {
+          "max": 3.1905936605979165e-15,
+          "mean": 2.2582969145237605e-15,
+          "p95": 2.970395458578743e-15
+        }
+      }
+    },
+    "random_source_shuffle": {
+      "count": 50,
+      "global_closed_rate": 0.0,
+      "geometry_pass_rate": 1.0,
+      "ledger_pass_rate": 0.0,
+      "l3l4_pass_rate": 1.0,
+      "product_pass_rate": 1.0,
+      "ledger_mismatch_mean": 7.0,
+      "residuals": {
+        "inverse_max": {
+          "max": 3.4087891767336773e-15,
+          "mean": 2.8521872198335385e-15,
+          "p95": 3.237347470826976e-15
+        },
+        "cocycle_max": {
+          "max": 4.161260916174021e-15,
+          "mean": 3.3162259207793344e-15,
+          "p95": 3.848257620608243e-15
+        },
+        "holonomy_max": {
+          "max": 6.091725560522458e-15,
+          "mean": 4.447969607689546e-15,
+          "p95": 5.082014393108743e-15
+        },
+        "branch_transport_max": {
+          "max": 1.4506935577442062e-15,
+          "mean": 8.597707993571844e-16,
+          "p95": 1.2103258378439008e-15
+        },
+        "o3_transport_max": {
+          "max": 1.402492097870681e-17,
+          "mean": 6.746714344335409e-18,
+          "p95": 9.95895967842373e-18
+        },
+        "h4_transport_max": {
+          "max": 1.0270031811263634e-15,
+          "mean": 6.749599413336574e-16,
+          "p95": 8.653829775050222e-16
+        },
+        "product_faithfulness_max": {
+          "max": 3.658870267778035e-15,
+          "mean": 2.3059401088659787e-15,
+          "p95": 3.182263508765298e-15
+        }
+      }
+    },
+    "random_support_shuffle": {
+      "count": 50,
+      "global_closed_rate": 0.0,
+      "geometry_pass_rate": 1.0,
+      "ledger_pass_rate": 0.0,
+      "l3l4_pass_rate": 1.0,
+      "product_pass_rate": 1.0,
+      "ledger_mismatch_mean": 6.54,
+      "residuals": {
+        "inverse_max": {
+          "max": 3.538735058437208e-15,
+          "mean": 2.76797910282727e-15,
+          "p95": 3.2587425505049133e-15
+        },
+        "cocycle_max": {
+          "max": 3.979429695233232e-15,
+          "mean": 3.2025418184691545e-15,
+          "p95": 3.719986133969257e-15
+        },
+        "holonomy_max": {
+          "max": 5.438727989996259e-15,
+          "mean": 4.3413559272467184e-15,
+          "p95": 5.225625793125579e-15
+        },
+        "branch_transport_max": {
+          "max": 1.5143490129525926e-15,
+          "mean": 8.300302420957338e-16,
+          "p95": 1.0378660964250586e-15
+        },
+        "o3_transport_max": {
+          "max": 1.2036597473490876e-17,
+          "mean": 6.7006173655449676e-18,
+          "p95": 1.0357035907865965e-17
+        },
+        "h4_transport_max": {
+          "max": 1.0430752484039487e-15,
+          "mean": 6.84329564545265e-16,
+          "p95": 9.620288787532592e-16
+        },
+        "product_faithfulness_max": {
+          "max": 3.753499077151338e-15,
+          "mean": 2.213465115857565e-15,
+          "p95": 2.74902142799624e-15
+        }
+      }
+    },
+    "transition_random_rewire": {
+      "count": 50,
+      "global_closed_rate": 0.0,
+      "geometry_pass_rate": 0.0,
+      "ledger_pass_rate": 1.0,
+      "l3l4_pass_rate": 0.0,
+      "product_pass_rate": 0.0,
+      "ledger_mismatch_mean": 0.0,
+      "residuals": {
+        "inverse_max": {
+          "max": 3.436981539519956e-15,
+          "mean": 2.8317258269822934e-15,
+          "p95": 3.1596744072624802e-15
+        },
+        "cocycle_max": {
+          "max": 5.46325096680365,
+          "mean": 5.15379518406059,
+          "p95": 5.369454723447599
+        },
+        "holonomy_max": {
+          "max": 5.46325096680365,
+          "mean": 5.161975171433669,
+          "p95": 5.369454723447599
+        },
+        "branch_transport_max": {
+          "max": 1.8891872590890835,
+          "mean": 1.7309620215424681,
+          "p95": 1.8412158408381083
+        },
+        "o3_transport_max": {
+          "max": 0.023025096553494735,
+          "mean": 0.014930013293103896,
+          "p95": 0.02125711211276426
+        },
+        "h4_transport_max": {
+          "max": 1.8324150730962903,
+          "mean": 1.6232461672129954,
+          "p95": 1.7621513538457594
+        },
+        "product_faithfulness_max": {
+          "max": 0.1943069875835326,
+          "mean": 0.15920451226782364,
+          "p95": 0.18777731412586154
+        }
+      }
+    },
+    "valid": {
+      "count": 50,
+      "global_closed_rate": 1.0,
+      "geometry_pass_rate": 1.0,
+      "ledger_pass_rate": 1.0,
+      "l3l4_pass_rate": 1.0,
+      "product_pass_rate": 1.0,
+      "ledger_mismatch_mean": 0.0,
+      "residuals": {
+        "inverse_max": {
+          "max": 3.621447841794417e-15,
+          "mean": 2.7977829166225127e-15,
+          "p95": 3.2143538931550338e-15
+        },
+        "cocycle_max": {
+          "max": 4.137596883160813e-15,
+          "mean": 3.2313153057641004e-15,
+          "p95": 3.712459621350978e-15
+        },
+        "holonomy_max": {
+          "max": 5.149477959687132e-15,
+          "mean": 4.292362625174182e-15,
+          "p95": 4.8925679910434185e-15
+        },
+        "branch_transport_max": {
+          "max": 1.1913900994273004e-15,
+          "mean": 8.480743599077271e-16,
+          "p95": 1.085411189583084e-15
+        },
+        "o3_transport_max": {
+          "max": 1.6835621063867736e-17,
+          "mean": 6.763808245802849e-18,
+          "p95": 1.0276024365753946e-17
+        },
+        "h4_transport_max": {
+          "max": 9.334295403729119e-16,
+          "mean": 6.665586582259414e-16,
+          "p95": 8.508077859176296e-16
+        },
+        "product_faithfulness_max": {
+          "max": 2.8968448529275215e-15,
+          "mean": 2.2525028035431503e-15,
+          "p95": 2.7118585778919713e-15
+        }
+      }
+    }
+  },
+  "objections_addressed": {
+    "researcher_chosen_complete_cover": "addressed_by_randomized_orthonormal_chart_frames_and_sparse_partial_overlap_graph",
+    "gentle_null_suite": "addressed_by_randomized_shuffles_transition_rewire_multi_transition_perturb_near_cocycle_product_mismatch_obstruction_scramble",
+    "l3_l4_not_embedded": "addressed_by_chart_embedded_O3_and_H4_perp_transport_faithfulness_and_rank_lift_check",
+    "residual_sensitivity": "addressed_by_reporting_residual_distribution_across_trials_not_single_value"
+  },
+  "boundary": "Executable finite-sector hardening. Not empirical transfer, not a continuum physical theorem, not a complete exhaustion of all possible adversaries."
+}
