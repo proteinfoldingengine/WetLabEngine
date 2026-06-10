@@ -1,0 +1,15 @@
+{
+  "verdict": "GLOBAL_ATLAS_CLOSURE_PROOF_PASS",
+  "findings": {
+    "valid_atlas_closes": true,
+    "all_nulls_fail": true,
+    "null_modes": [
+      "node_order_shuffle",
+      "source_shuffle",
+      "support_shuffle",
+      "transition_shuffle",
+      "cocycle_break"
+    ]
+  },
+  "summary": "/mnt/data/V1698_global_atlas_closure_python_proof_outputs/proof_run/global_atlas_closure_proof_summary.json"
+}

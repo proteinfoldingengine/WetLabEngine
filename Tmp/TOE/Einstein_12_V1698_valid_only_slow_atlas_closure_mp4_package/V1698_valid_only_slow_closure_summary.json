@@ -1,0 +1,32 @@
+{
+  "version": "V1698_VALID_ONLY_SLOW_3D_GLOBAL_ATLAS_CLOSURE",
+  "verdict": "PASS",
+  "construction": "T_ij = B_j^-1 B_i",
+  "findings": {
+    "valid_atlas_closes": true,
+    "non_looping": true,
+    "seconds": 10,
+    "fps": 8
+  },
+  "phases": [
+    "Genesis/provenance",
+    "3D local charts",
+    "Gamma_R transition transport",
+    "triple-overlap cocycle",
+    "R3 holonomy",
+    "J_R source-current/signed boundary",
+    "W1/W2/W3 Bianchi-certified filling",
+    "Global closure lock"
+  ],
+  "metrics": {
+    "mode": "valid_atlas_only",
+    "retained_admissible": true,
+    "max_inverse_residual": 3.265078780033138e-16,
+    "max_cocycle_residual": 4.467792012687185e-16,
+    "max_holonomy_residual": 4.2217357623976824e-16,
+    "inverse_pass": true,
+    "cocycle_pass": true,
+    "holonomy_pass": true,
+    "global_atlas_closed": true
+  }
+}
