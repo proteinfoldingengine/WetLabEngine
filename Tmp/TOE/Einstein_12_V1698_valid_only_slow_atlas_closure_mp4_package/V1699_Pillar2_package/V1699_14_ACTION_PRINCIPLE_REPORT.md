@@ -1,0 +1,65 @@
+# V1699.14 — Retained Action Principle / Euler-Lagrange Derivation Test
+
+**Verdict:** `PILLAR2_VARIATIONAL_DERIVATION_CANDIDATE_PASS`
+
+## Action
+
+```text
+A[q] = 1/2 || R_R + Lq - J_R + B_R ||^2
+```
+
+## Euler-Lagrange equation
+
+```text
+L^T(Lq + R_R - J_R + B_R) = 0
+```
+
+The final residual is measured after q is solved from this stationarity equation.
+
+## Metrics
+
+```json
+{
+  "valid_full_stack_pass_rate": 1.0,
+  "null_full_stack_fail_rate": 1.0,
+  "max_valid_final_EL_residual": 5.551115123125783e-17,
+  "max_valid_EL_gradient_norm": 0.0,
+  "max_valid_action_value": 0.0,
+  "max_valid_inverse_residual": 5.673786554076402e-16,
+  "max_valid_cocycle_residual": 5.448740741048668e-16,
+  "max_valid_holonomy_residual": 5.448740741048668e-16,
+  "residual_copy_used": false,
+  "action_principle_used": true,
+  "null_fail_by_mode": {
+    "genesis_root_break": 1.0,
+    "retained_order_shuffle": 1.0,
+    "source_value_shuffle": 1.0,
+    "source_provenance_shuffle": 1.0,
+    "support_shuffle": 1.0,
+    "transition_shuffle": 1.0,
+    "cocycle_break": 1.0,
+    "source_current_shuffle": 1.0,
+    "boundary_pairing_shuffle": 1.0,
+    "W3_random_basis": 1.0,
+    "W3_adjacency_shuffle": 1.0,
+    "W3_provenance_shuffle": 1.0,
+    "W3_subdivision_break": 1.0,
+    "W3_coarse_fine_break": 1.0,
+    "W3_basis_shuffle": 1.0,
+    "W3_missing": 1.0,
+    "EL_operator_break": 1.0
+  }
+}
+```
+
+## Pillar status
+
+```text
+Pillar 1 — Global Atlas Closure: COMPLETE
+Pillar 2 — Retained Curvature / Source-Current Compatibility: VARIATIONAL CANDIDATE PASS
+Pillar 3 — GR / ADM Correspondence and Continuum Identification: OPEN
+```
+
+## Boundary
+
+This is finite retained-sector variational closure. It does not establish continuum GR/ADM correspondence.
