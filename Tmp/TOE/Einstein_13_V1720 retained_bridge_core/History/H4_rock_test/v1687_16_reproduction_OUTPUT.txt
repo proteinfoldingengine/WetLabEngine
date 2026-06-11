@@ -1,0 +1,8 @@
+VERDICT: H4_ERASURE_PROJECTION_INADMISSIBLE_POSTHOC
+baseline rank(B4+O3)=8  rank(B4+O3+H4)=9
+H4 residual to B4+O3 (before) = 5.573534e+03
+after projection: rank(PB4+PO3)=8  rank(+PH4)=8  H4 resid after=1.133e-09  erases_H4=True
+pair_gap_max=6.295e-12  nested_gap_max=1.790e-09
+random_composite_gap_max=5.448e-11
+generated_gap_max=3.352748e+08  generated_gap_mean=8.332377e+06
+passes_branch_proxy=True pair_faithful=True nested_faithful=True generated_faithful=False

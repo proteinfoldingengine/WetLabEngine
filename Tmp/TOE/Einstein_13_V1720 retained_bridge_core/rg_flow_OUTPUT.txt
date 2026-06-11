@@ -1,0 +1,29 @@
+V1712 - coupled RG coarse-graining: does non-metricity flow to zero?
+
+NATIVE kernel RG flow:
+  block  n_patches     ||Q||
+      1        256    0.5604
+      2        128    0.5579
+      4         64    0.5458
+      8         32    0.5594
+     16         16    0.5583
+     32          8    0.5917
+     64          4    0.5858
+    128          2    0.5614
+
+ASSOCIATIVE kernel RG flow (sanity: must be ~0 at all scales):
+      1        256    0.0000
+      2        128    0.0000
+      4         64    0.0000
+      8         32    0.0000
+     16         16    0.0000
+     32          8    0.0000
+     64          4    0.0000
+    128          2    0.0000
+----------------------------------------
+
+native ||Q|| flow: 0.5604 (scale 1) -> 0.5614 (largest block)
+flow ratio = 1.002
+=> RG STAYS NON-METRIC: non-metricity is an RG-stable (coherent) feature.
+   The effective theory is metric-affine at ALL scales, even under interacting
+   coarse-graining. Non-metricity is a true fixed-point property, not a fluctuation.

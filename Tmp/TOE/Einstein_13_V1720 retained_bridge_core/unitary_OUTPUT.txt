@@ -1,0 +1,22 @@
+TEST 1 - norm conservation under native transport:
+  ||T dx|| / ||dx|| = 1.0190 +/- 0.0984
+  (1.0 = norm-preserving/unitary-like; !=1 = dissipative/non-unitary)
+
+TEST 2 - generator decomposition J = skew + symmetric:
+  ||skew|| = 1.9498   ||symmetric|| = 3.3771
+  skew fraction = 0.366
+  (skew-dominated => unitary-like rotation; symmetric => dissipative/scaling)
+
+TEST 3 - does unitary exp(g*skew) reproduce native transport?
+  relative error ||exp(gJ_skew)dx - T_native dx|| = 0.1955
+  (small => native transport IS approximately unitary; large => it is not)
+
+TEST 4 - squared-norm (Born-like) structure:
+  |sum h|^2 / sum|h|^2 = 22.0161
+  (this is just a diagnostic; Born rule requires probability normalization we do NOT claim)
+
+==========================================================
+VERDICT LOGIC:
+REAL SIGNED ONLY: norm ratio 1.019 (not 1), skew fraction 0.366. The interference is
+  real signed cancellation, DISSIPATIVE/non-unitary - amplitude-LIKE but NOT quantum-
+  mechanical amplitude dynamics. No phase/norm-conservation structure.

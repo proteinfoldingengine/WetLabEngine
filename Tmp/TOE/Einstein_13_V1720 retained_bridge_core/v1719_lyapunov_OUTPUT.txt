@@ -1,0 +1,26 @@
+V1719 - Retained-Order Lyapunov Audit (each candidate tested SEPARATELY, no tuning)
+
+monotonicity = fraction of forward steps moving in the candidate's consistent direction
+(per-trajectory, then averaged; strict Lyapunov would be ~1.00)
+
+                   candidate  native mono%  invertible-control
+--------------------------------------------------------------
+/usr/local/lib/python3.12/dist-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/usr/local/lib/python3.12/dist-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+         L1 log||amplitude||           58%                nan%
+   L2 reconstruction deficit           62%                 60%
+             L3 support size           52%                 50%
+            L4 concentration           53%                 50%
+ L5 non-invertibility defect           50%                 50%
+--------------------------------------------------------------
+
+Focused check - L2 (cumulative distance from origin) over a single long trajectory:
+  L2 strictly increasing fraction = 54.24%, net 0.093 -> 2.463
+
+VERDICT:
+  NO STRICT MONOTONE: best L2 = 62%. Arrow is dissipative/statistical, not
+  governed by a strict scalar Lyapunov function in this audit.
+
+(No composite was fitted. Candidates reported separately per the no-heuristics rule.)

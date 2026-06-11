@@ -1,0 +1,13 @@
+########## OUTPUT: v1703_2_assoc_faith.py ##########
+=== L3 ASSOCIATOR FAITHFULNESS ACROSS ATLAS (can fail) ===
+faithfulness residual: max=2.631e-15  mean=1.061e-15  p95=1.525e-15
+gamma-mismatch null:   max=1.805e-02  mean=7.376e-03
+
+--- PRE-REGISTERED VERDICT ---
+  L3 ALGEBRAICALLY GLOBAL : faithfulness < 1e-8 AND null >> 1e-8
+  L3 OBSTRUCTED           : faithfulness >> 1e-8
+
+RESULT: L3 IS ALGEBRAICALLY GLOBAL. The third-order associator, computed with
+  each chart's own local product, transports faithfully across the atlas
+  (residual 2.6e-15); a genuine gamma change breaks it (null 7.38e-03).
+  This is NOT a construction identity: non-associative local products agree under transport.

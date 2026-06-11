@@ -1,0 +1,9 @@
+RUNG 1 (real) - cross-chart metric consistency with LOCAL chart states
+
+atlas-coupled charts (same geometry re-expressed): mismatch = 2.919e-01 +/- 4e-02
+null (unrelated local states per chart):           mismatch = 2.834e-01 +/- 2e-02
+
+ratio null/atlas = 1.0
+-------------------------------------------------------
+PARTIAL/FAIL: atlas mismatch 2.92e-01 not ~0; the metric is not globally coherent.
+  Characterize: the model has LOCAL metrics that do not glue into one global metric.

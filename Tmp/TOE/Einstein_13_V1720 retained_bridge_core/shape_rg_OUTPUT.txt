@@ -1,0 +1,20 @@
+V1713 - shear/Weyl decomposition under RG flow
+
+  block     n |    Weyl%   shear%  shear/Weyl
+--------------------------------------------
+      1   256 |      32%      93%        2.93
+      2   128 |      32%      93%        2.93
+      4    64 |      32%      93%        2.93
+      8    32 |      32%      93%        2.93
+     16    16 |      32%      93%        2.94
+     32     8 |      31%      93%        2.94
+     64     4 |      31%      92%        2.93
+    128     2 |      32%      92%        2.87
+--------------------------------------------
+
+shear/Weyl ratio: 2.93 (finest) -> 2.87 (coarsest)
+relative variation across scales = 0.74%
+=> SHAPE IS ALSO RG-INVARIANT: shear/Weyl ratio is preserved under coarse-graining.
+   The non-metric geometry is a fixed point in BOTH magnitude AND shape. The shear
+   character is intrinsic and scale-free - a fully scale-invariant metric-affine
+   structure. The geometry the recombination builds looks the SAME at every scale.

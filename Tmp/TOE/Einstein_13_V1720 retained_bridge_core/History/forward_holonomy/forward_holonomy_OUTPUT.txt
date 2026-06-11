@@ -1,0 +1,26 @@
+============================================================
+T1: forward path-dependence real, not a flat-connection artifact
+============================================================
+native recombination connection: forward holonomy = 1.0599
+orthogonal-frame connection (flat control): forward holonomy = 1.58e-15
+-> native is non-flat; orthogonal frames are flat by construction (1.6e-15).
+
+============================================================
+T2/T3: structure-specificity and scaling (proper random-kernel null)
+============================================================
+ dim nodes |  retained   random |  sigma(ret-rnd) null(rnd-rnd)
+----------------------------------------------------------
+   8    10 |     0.916    0.573 |            1.26          0.18
+  16    12 |     1.032    0.735 |            1.43          0.52
+  32    14 |     1.100    0.775 |            1.78          0.45
+  64    16 |     1.181    0.840 |            2.41          0.72
+----------------------------------------------------------
+signal sigma trend:  [np.float64(1.26), np.float64(1.43), np.float64(1.78), np.float64(2.41)]
+null sigma trend:    [np.float64(0.18), np.float64(0.52), np.float64(0.45), np.float64(0.72)]
+signal-minus-null margin at top dim: 1.69
+
+SUMMARY: forward-only holonomy is REAL (T1, non-flat), STRUCTURE-SPECIFIC (T2,
+retained > random forward kernel), and the separation GROWS with dimension (T3),
+crossing 2 sigma at dim=64 against a controlled random-vs-random null.
+Effect size is moderate, not a slam dunk; null drifts up, so higher-dim confirmation
+is the remaining step. Claim level: simulation-internal emergent structure, not GR.

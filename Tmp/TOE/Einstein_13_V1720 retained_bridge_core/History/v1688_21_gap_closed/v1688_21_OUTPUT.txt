@@ -1,0 +1,14 @@
+=== V1688.21: loop closure under the REAL native connection vs the flat orthogonal one ===
+
+ORTHOGONAL frame connection (old tests): mean path-diff = 9.971e-16  (flat by construction)
+NATIVE recombination connection (real):  mean path-diff = 0.8097  min=0.1930  max=1.4028
+
+there-and-back closure defect (native): mean = 1.1316
+  (nonzero => transport is non-invertible/curved, not flat)
+
+--- READING ---
+GAP CLOSED: under the real native connection, two matched-length loops DIFFER
+  by 0.810 (vs 1.0e-15 for the flat orthogonal connection).
+  The earlier machine-precision closure was an artifact of using orthogonal frames
+  as the connection. The native recombination kernel is NOT flat: it has genuine
+  path dependence. This is the holonomy object the prior tests could never see.

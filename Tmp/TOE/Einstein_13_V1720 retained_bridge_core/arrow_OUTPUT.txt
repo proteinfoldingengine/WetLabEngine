@@ -1,0 +1,23 @@
+TEST 1 - forward/reverse asymmetry:
+         native(pruning): fwd norm ratio=1.030  reconstruction error=0.326
+   invertible(un-pruned): fwd norm ratio=1.000  reconstruction error=0.155
+  (native: reverse does NOT undo forward => retained-order direction is real)
+
+TEST 4 - loop irreversibility (A->B->C->A norm drift):
+         native(pruning): loop norm = 1.059 +/- 0.188  (1.0 = closes; !=1 = drifts)
+   invertible(un-pruned): loop norm = 1.000 +/- 0.000  (1.0 = closes; !=1 = drifts)
+  (native loop drifts from 1.0 => dissipative; invertible returns to 1.0 => no drift)
+
+TEST 3 - monotonicity of candidate arrows (fraction of steps moving one direction):
+                log-norm: 93% of steps move up  | net 0.019->0.448
+                 entropy: 69% of steps move down  | net 1.415->1.211
+    concentration(max p): 72% of steps move up  | net 0.454->0.551
+  (a near-100% one-directional candidate = a real monotone/Lyapunov arrow)
+
+==========================================================
+VERDICT:
+forward/reverse: native recon err 0.33 vs invertible 0.16
+loop drift: native 1.08 vs invertible 1.00
+concentration monotonicity: 72%
+
+Partial - inspect which condition is borderline.
