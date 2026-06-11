@@ -1,0 +1,9 @@
+       h |   native R flat R(floor)  sphere R
+----------------------------------------------
+   1e-03 |     0.0977      0.00e+00   30.0000
+   3e-04 |     0.0977      0.00e+00   30.0000
+   1e-04 |     0.0977      0.00e+00   30.0000
+   3e-05 |     0.0977      0.00e+00   30.0000
+----------------------------------------------
+native R h-stable & >> flat floor => REAL curvature. tracks h or ~floor => artifact.
+sphere R should be stable positive (sanity that the scheme detects real curvature).

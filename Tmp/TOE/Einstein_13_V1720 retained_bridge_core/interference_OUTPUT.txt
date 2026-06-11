@@ -1,0 +1,30 @@
+V1716 - Recombination History Interference Audit
+
+interference ratio = ||sum h_i|| / sum||h_i||.  =1 no cancellation; <1 destructive interference.
+
+  native (g=0.17):            ratio = 0.9641
+  associative control:        ratio = 1.0000
+  g=0 flat limit:             ratio = 1.0000
+  phase-randomized null:      ratio = 0.0890
+--------------------------------------------------------
+
+native vs associative: 0.964 vs 1.000  (diff -0.036)
+native vs phase-random: 0.964 vs 0.089  (diff +0.875)
+
+AMBIGUOUS: native=0.964, controls assoc=1.000 g0=1.000 phase=0.089
+  inspect which control it differs from.
+
+
+=== g-sweep: does the cancellation scale with non-associativity coupling? ===
+     g | interference ratio  cancellation %
+------------------------------------------
+  0.00 |             1.0000           0.00%
+  0.05 |             0.9968           0.32%
+  0.10 |             0.9873           1.27%
+  0.17 |             0.9631           3.69%
+  0.25 |             0.9224           7.76%
+  0.40 |             0.8191          18.09%
+  0.60 |             0.6701          32.99%
+------------------------------------------
+If cancellation grows monotonically from 0 with g -> real interference, weak at g=0.17.
+If flat/noisy -> the 3.6% is not a structure-specific interference effect.

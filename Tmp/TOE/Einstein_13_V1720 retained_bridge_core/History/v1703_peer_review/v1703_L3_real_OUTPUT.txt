@@ -1,0 +1,16 @@
+########## OUTPUT: v1703_L3_real.py ##########
+=== L3 REAL CLOSURE TEST ===
+third-order associator captured by lower-order (branch+pairwise) span:
+  mean=0.7363  min=0.2467  max=0.9918
+random control (random target into random same-size span):
+  mean=1.0000  min=1.0000  max=1.0000
+
+rank(lower)=10.0   rank(lower+O3)=12.0   lift=2.0
+
+--- PRE-REGISTERED VERDICT ---
+  L3 CLOSES (reducible)      if mean capture > 0.90 AND rank lift ~ 0
+  L3 OPEN (irreducible 3rd)  if mean capture < 0.50 OR rank lift > 0
+
+RESULT: L3 OPEN / IRREDUCIBLE. Third-order associator carries genuine structure
+  not captured by lower order (capture=0.736, rank lift=2.0).
+  This is a REAL third-order excess -- the narrative claim, now computed, holds.

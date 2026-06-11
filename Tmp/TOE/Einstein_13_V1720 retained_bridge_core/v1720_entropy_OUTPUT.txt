@@ -1,0 +1,34 @@
+V1720 - Entropy Production Audit (T1). sigma = mean Delta S per ordered step.
+
+=== S_support ===
+                 condition  mean sigma  frac sigma>0
+           native (g=0.17)    -0.00697         0.473
+  invertible (master null)     0.00018         0.499
+                  g=0 flat     0.00000         0.000
+        associative kernel     0.00934         0.733
+  g-sweep (native) mean sigma:
+     g=0.00: sigma=+0.00000  frac>0=0.000
+     g=0.05: sigma=-0.00184  frac>0=0.480
+     g=0.10: sigma=-0.00454  frac>0=0.474
+     g=0.17: sigma=-0.00697  frac>0=0.473
+     g=0.25: sigma=-0.00827  frac>0=0.473
+     g=0.40: sigma=-0.00975  frac>0=0.474
+
+=== S_participation ===
+                 condition  mean sigma  frac sigma>0
+           native (g=0.17)    -0.00726         0.472
+  invertible (master null)     0.00026         0.502
+                  g=0 flat     0.00000         0.000
+        associative kernel     0.01243         0.744
+  g-sweep (native) mean sigma:
+     g=0.00: sigma=+0.00000  frac>0=0.000
+     g=0.05: sigma=-0.00214  frac>0=0.483
+     g=0.10: sigma=-0.00492  frac>0=0.475
+     g=0.17: sigma=-0.00726  frac>0=0.472
+     g=0.25: sigma=-0.00846  frac>0=0.471
+     g=0.40: sigma=-0.00988  frac>0=0.472
+
+========================================================
+T1 PASS requires: native sigma sign-definite (frac>0 far from 0.5),
+  invertible control sigma ~ 0, g=0 ~ 0, associative weakened, sigma scales with g.
+If native sigma ~ 0 or invertible control also nonzero -> NO pruning entropy production.

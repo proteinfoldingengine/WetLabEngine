@@ -1,0 +1,33 @@
+================================================================
+FINDING 1: native_directional_cycle_defect == mean(|C_corr|) ?
+================================================================
+seed= 168864 | H_cycle=-1.482e-03 | |1-H|=1.001482 | mean|C|=0.542648 | defect=0.543452
+seed=      1 | H_cycle=-2.632e-04 | |1-H|=1.000263 | mean|C|=0.541756 | defect=0.541899
+seed=     42 | H_cycle=+1.895e-05 | |1-H|=0.999981 | mean|C|=0.546950 | defect=0.546940
+>> |1-H_cycle| ~ 1.0 always (product of 8 cosines ~ 0), so defect collapses to mean|C_corr|.
+>> The 'defect' carries NO cycle information; it is the C_corr scale times ~1.
+
+================================================================
+FINDING 2: does forward/reverse asymmetry depend on provenance order?
+================================================================
+native (provenance order):  mean=2.362e-04
+gamma-shuffle null:         mean=2.343e-04
+reciprocal control:         mean=1.110e-18  (should be ~0)
+native/shuffle ratio = 1.008
+>> ratio ~ 1.0 => asymmetry is IDENTICAL with/without provenance order.
+>> reciprocal control ~1e-18 => test logic sound; asymmetry needs non-reciprocity, not provenance.
+
+================================================================
+FINDING 3: is there LOOP dependence (the actual holonomy question)?
+================================================================
+length-matched two-path difference (linear transport): mean=9.132e-16 max=2.578e-15
+>> ~1e-15: with matched path length, loops close to machine precision.
+>> The earlier nonzero 'path dependence' was a path-LENGTH confound, not holonomy.
+
+================================================================
+SUMMARY
+================================================================
+F1: defect == mean(|C_corr|), carries no cycle info.
+F2: orientation asymmetry is provenance-independent (native==shuffle, ratio~1).
+F3: loop-dependence vanishes under length-matched control.
+=> Real: non-reciprocal EDGE transport.  Not demonstrated: LOOP holonomy.

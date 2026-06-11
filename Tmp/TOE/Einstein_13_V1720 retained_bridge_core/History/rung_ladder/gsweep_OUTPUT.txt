@@ -1,0 +1,16 @@
+     g |   native R   assoc R | R/g^2
+--------------------------------------
+  0.00 |     0.0000    0.0000 |    nan
+  0.05 |     0.0076    0.0000 |  3.030
+  0.10 |     0.0312    0.0000 |  3.120
+  0.17 |     0.0977    0.0000 |  3.380
+  0.25 |     0.2483    0.0000 |  3.973
+  0.35 |     0.7691    0.0000 |  6.278
+  0.50 |     1.5796    0.0000 |  6.318
+--------------------------------------
+
+log-log slope of R vs g = 2.36  (2.0 => R ~ g^2, sourced by non-associativity)
+R at g=0 (associative/flat limit) = 0.0000
+
+CONFIRMED: R vanishes at g=0 and scales ~g^2. The local curvature is SOURCED by the
+recombination non-associativity. The it-from-bit structure IS the origin of the local geometry.

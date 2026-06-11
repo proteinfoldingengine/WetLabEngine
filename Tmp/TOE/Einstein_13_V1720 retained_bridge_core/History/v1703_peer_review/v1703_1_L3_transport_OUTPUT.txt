@@ -1,0 +1,14 @@
+########## OUTPUT: v1703_1_L3_transport.py ##########
+=== L3 IRREDUCIBLE-EXCESS ATLAS TRANSPORT ===
+irreducible L3 dimension (per trial): mean=2.00 (expect ~2)
+valid transport residual:  max=1.016e-15  mean=7.423e-16
+valid holonomy residual:   max=1.399e-15  mean=1.143e-15
+scrambled-null residual:   max=1.873e+00  mean=1.768e+00
+
+--- PRE-REGISTERED VERDICT ---
+  GLOBAL  : valid transport & holonomy < 1e-8, null fails (>>0)
+  LOCAL/OBSTRUCTED: valid transport or holonomy >> 1e-8
+
+RESULT: L3 IS GLOBAL. The irreducible third-order excess transports faithfully
+  across the atlas and closes around loops; scrambled transitions break it.
+  => irreducible L3 + atlas closure COMPOSE: L3 is a coherent global object.
