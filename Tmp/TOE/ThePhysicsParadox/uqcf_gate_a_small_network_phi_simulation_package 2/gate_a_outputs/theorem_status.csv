@@ -1,0 +1,6 @@
+claim,result,evidence
+Bare Genesis + conservation selects unique Phi,FAIL,cycle_dim_beta1=3; J=J0+Za gives multiple conserved currents
+Network-only Hodge closes Phi canonically,FAIL,multiple local positive metrics W select different minimum-action currents
+Observer/response closes Phi when rank(RZ)=dim(Z),PASS,"full observer rank_RZ=3, dim_Z=3, current error=2.884e-16"
+Rank-deficient observer leaves gauge,PASS,"weak observer rank_RZ=1, dim_Z=3"
+ADM/GR derived,NO CLAIM,finite graph source-current identifiability only
