@@ -1,0 +1,63 @@
+VISUAL W-HOLONOMY SIMULATION: PASS
+{
+  "pure_amplitudes": [
+    [
+      0.652887001950334,
+      0.2091376644325563
+    ],
+    [
+      0.40611160221445847,
+      -0.39379355828505547
+    ],
+    [
+      0.19136584241867124,
+      0.4163881774923398
+    ]
+  ],
+  "pure_probabilities": [
+    0.46999999999999986,
+    0.3199999999999999,
+    0.21
+  ],
+  "pure_loop_matrix": [
+    [
+      1.0,
+      1.4530880219516475e-16,
+      0.0
+    ],
+    [
+      -4.781395973689741e-16,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "pure_loop_eigenvalues": [
+    -1.0,
+    1.0,
+    1.0
+  ],
+  "pure_loop_singular_values": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "pure_loop_determinant": -1.0,
+  "orthogonality_error": 3.328307951738094e-16,
+  "transition_example_probabilities": [
+    0.8,
+    0.1,
+    0.1
+  ],
+  "transition_threshold": 0.0625,
+  "below_threshold_class": "LOSSLESS REFLECTION",
+  "at_threshold_class": "RANK-LOSS SURFACE",
+  "above_threshold_class": "LOSSLESS IDENTITY"
+}
+Visuals written to: /mnt/data/UQCF_W_Holonomy_Visual_Simulation/visual_output
+
+STDERR:
