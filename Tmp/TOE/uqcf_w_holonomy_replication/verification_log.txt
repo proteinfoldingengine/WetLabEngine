@@ -1,0 +1,21 @@
+INDEPENDENT W-HOLONOMY REPLICATION: PASS
+Pure generalized-W trials: 50
+Regularized classification trials: 50
+Maximum pure-state orthogonality error: 8.882e-16
+
+Controls:
+  product loop singular values: [0. 0. 0.]
+  classical GHZ loop singular values: [1. 0. 0.]
+  coherent GHZ loop singular values: [1. 0. 0.]
+
+Corrected theorem:
+  Pure generalized-W states: reflection spectrum {-1,+1,+1}.
+  Regularized states: reflection or identity, determined by the
+  product of the three population-covariance signs.
+  Sign changes occur only through an edge-rank-loss surface.
+
+Transition example p=(0.8,0.1,0.1):
+  epsilon* = 0.062500000000
+  below threshold eigenvalues: [-1.+0.j  1.+0.j  1.+0.j]
+  at threshold loop singular values: [1. 1. 0.]
+  above threshold eigenvalues: [1.+0.j 1.+0.j 1.+0.j]
