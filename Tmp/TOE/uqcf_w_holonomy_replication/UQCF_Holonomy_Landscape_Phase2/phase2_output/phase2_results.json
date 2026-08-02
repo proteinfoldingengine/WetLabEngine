@@ -1,0 +1,85 @@
+{
+  "seed": 20260802,
+  "samples_per_ensemble": 500,
+  "w_control": {
+    "full_rank": true,
+    "edge_ranks": [
+      3,
+      3,
+      3
+    ],
+    "edge_covariance_determinants": [
+      -0.35283600000000004,
+      -0.08433215999999999,
+      -0.156816
+    ],
+    "loop_determinant": -1.0,
+    "loop_trace": 1.0,
+    "loop_singular_values": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "loop_eigenvalues": [
+      [
+        1.0,
+        1.7403171283395929e-16
+      ],
+      [
+        1.0,
+        -1.7403171283395929e-16
+      ],
+      [
+        -1.0,
+        0.0
+      ]
+    ],
+    "orthogonality_error": 4.686405342768913e-17,
+    "parity": -1,
+    "parity_formula": -1,
+    "angle_radians": 0.0
+  },
+  "pure": {
+    "full_rank_count": 500,
+    "parity_counts": {
+      "-1": 500,
+      "+1": 0
+    },
+    "angle_min": 0.0,
+    "angle_median": 5.1624628040505e-06,
+    "angle_mean": 6.436340793127701e-05,
+    "angle_max": 0.0017669676000066732,
+    "maximum_orthogonality_error": 3.774758283725532e-15
+  },
+  "mixed": {
+    "full_rank_count": 500,
+    "parity_counts": {
+      "-1": 251,
+      "+1": 249
+    },
+    "negative_angle_min": 0.0007771780995819212,
+    "negative_angle_max": 2.2267622676822465,
+    "positive_angle_min": 0.1737764999140812,
+    "positive_angle_max": 3.1346639788816253,
+    "maximum_orthogonality_error": 4.551914400963142e-15
+  },
+  "transition": {
+    "edge": [
+      1,
+      2
+    ],
+    "root": 0.21133239339381635,
+    "left_parity": -1,
+    "at_edge_ranks": [
+      3,
+      2,
+      3
+    ],
+    "at_loop_singular_values": [
+      1.0,
+      1.0,
+      1.4586486343934294e-17
+    ],
+    "right_parity": 1
+  }
+}
