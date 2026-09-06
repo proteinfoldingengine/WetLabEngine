@@ -1,0 +1,168 @@
+{
+  "model": "v9.167 matched four-weight family; v9.170 fixed slice; NOT v9.156",
+  "physical_system": "Three five-level systems A,B1,B2; state matrices 125x125; pair matrices 25x25",
+  "static_parameter": "t labels density matrices; animation is not physical time",
+  "fixed_t": 0.5121951219512195,
+  "fixed_t_rational": "21/41",
+  "phase": [
+    0.47368421052631576,
+    0.5454545454545454
+  ],
+  "phase_boundaries": [
+    0.33333333333333337,
+    0.4736842105263158,
+    0.5454545454545454,
+    0.5833333333333333,
+    0.6666666666666667,
+    0.736842105263158,
+    0.7916666666666666
+  ],
+  "sampled_target_parameters": 171,
+  "computed_primal_dual_pairs": 342,
+  "maximum_curve_difference": 1.1102230246251565e-16,
+  "fixed_distance": 0.012373971021950517,
+  "fixed_optimal_pair_purity": {
+    "A": 0.26414115608335464,
+    "B": 0.26414115608335464
+  },
+  "matrix_checks": {
+    "A": {
+      "target_trace": 2.220446049250313e-16,
+      "target_psd": 1.3022095776269541e-16,
+      "effect_psd": 3.3306690738904235e-16,
+      "effect_upper_bound": 8.881784197001252e-16,
+      "trace": 2.0650148258027912e-14,
+      "hermiticity": 5.594315114139762e-17,
+      "psd": 8.638687404188041e-17,
+      "equal_marginals": 0,
+      "local_marginals": 9.036475468791098e-15,
+      "primal_dual_gap": 5.162537064506978e-15,
+      "formula_gap": 9.880984919163893e-15,
+      "support_gap": 4.218847493575595e-15,
+      "frame_orthonormality": 7.447602459741819e-16
+    },
+    "B": {
+      "target_trace": 2.220446049250313e-16,
+      "target_psd": 1.3022095776269541e-16,
+      "effect_psd": 2.498001805406602e-16,
+      "effect_upper_bound": 8.881784197001252e-16,
+      "trace": 2.0650148258027912e-14,
+      "hermiticity": 5.594315114139762e-17,
+      "psd": 1.1043770590364286e-16,
+      "equal_marginals": 0,
+      "local_marginals": 9.036475468791098e-15,
+      "primal_dual_gap": 5.164271787982955e-15,
+      "formula_gap": 9.936496070395151e-15,
+      "support_gap": 3.552713678800501e-15,
+      "frame_orthonormality": 7.447602459741819e-16
+    }
+  },
+  "dimensions": {
+    "A": {
+      "support_dimension": 25,
+      "numeric_map_rank": 310,
+      "real_hidden_dimension": 315,
+      "smallest_kept_singular": 0.13595401815951721,
+      "largest_discarded_singular": 1.1943857651338678e-15,
+      "maximum_marginal_null_residual": 5.647010047465628e-16,
+      "basis_orthonormality": 1.3322676295501878e-15
+    },
+    "B": {
+      "support_dimension": 25,
+      "numeric_map_rank": 314,
+      "real_hidden_dimension": 311,
+      "smallest_kept_singular": 0.135387669094978,
+      "largest_discarded_singular": 9.81397324244425e-16,
+      "maximum_marginal_null_residual": 6.950806392407139e-15,
+      "basis_orthonormality": 2.55351295663786e-15
+    }
+  },
+  "hidden_sampling": {
+    "A": {
+      "frame_count": 144,
+      "seed": 917001,
+      "slice_directions": 3,
+      "max_pair_marginal_change": 6.938893903907228e-18,
+      "max_distance_change": 5.204170427930421e-18,
+      "minimum_supported_eigenvalue": 0.0003913775983943416,
+      "purity_range": [
+        0.16363257854143484,
+        0.16364694724907547
+      ],
+      "global_trace_distance_from_center_range": [
+        0.006292599796508015,
+        0.009807719767920314
+      ],
+      "max_purification_error": 2.6645352591003757e-15,
+      "max_observable_coordinate_error": 6.5052130349130266e-18,
+      "max_boundary_zero_eigenvalue_error": 6.082358725995635e-17
+    },
+    "B": {
+      "frame_count": 144,
+      "seed": 917002,
+      "slice_directions": 3,
+      "max_pair_marginal_change": 6.938893903907228e-18,
+      "max_distance_change": 6.938893903907228e-18,
+      "minimum_supported_eigenvalue": 0.0003884390026838913,
+      "purity_range": [
+        0.16363254033027613,
+        0.1636434511895202
+      ],
+      "global_trace_distance_from_center_range": [
+        0.005815394731721759,
+        0.007934170551426494
+      ],
+      "max_purification_error": 2.886579864025407e-15,
+      "max_observable_coordinate_error": 6.5052130349130266e-18,
+      "max_boundary_zero_eigenvalue_error": 7.728150128562752e-17
+    }
+  },
+  "operational_measurement": {
+    "A": {
+      "frames": [
+        0,
+        72
+      ],
+      "collective_measurement_probabilities": [
+        0.48026947213333065,
+        0.4655332021236789
+      ],
+      "probability_difference": 0.014736270009651775,
+      "global_trace_distance": 0.01473627000965182,
+      "helstrom_identity_error": 4.5102810375396984e-17,
+      "AB1_trace_distance": 3.065414077276794e-18,
+      "AB2_trace_distance": 2.939479098207941e-18,
+      "statement": "One collective yes/no measurement distinguishes these global states; no AB1-only or AB2-only measurement can distinguish them exactly."
+    },
+    "B": {
+      "frames": [
+        0,
+        72
+      ],
+      "collective_measurement_probabilities": [
+        0.6168863192461427,
+        0.6016062211951129
+      ],
+      "probability_difference": 0.015280098051029811,
+      "global_trace_distance": 0.015280098051029785,
+      "helstrom_identity_error": 2.6020852139652106e-17,
+      "AB1_trace_distance": 8.323996882304936e-18,
+      "AB2_trace_distance": 6.021199192010577e-18,
+      "statement": "One collective yes/no measurement distinguishes these global states; no AB1-only or AB2-only measurement can distinguish them exactly."
+    }
+  },
+  "local_unitary_covariance_error": 1.4635779479139343e-16,
+  "scientific_status": "Numerical reproduction of supplied finite-model theorems; not a new theorem, empirical test, dynamics or gravity derivation",
+  "section_warning": "A chosen 3D affine SECTION of each convex fiber, not a full 315D/311D rendering, not a topology or spatial-curvature claim; the two section bases differ",
+  "selection_warning": "Trace-distance objective, equal-partner obligations and source paths are stipulated; no physical minimization or source rule is derived",
+  "exact_dimension_check": {
+    "A": {
+      "exact_map_rank": 310,
+      "real_affine_dimension": 315
+    },
+    "B": {
+      "exact_map_rank": 314,
+      "real_affine_dimension": 311
+    }
+  }
+}
