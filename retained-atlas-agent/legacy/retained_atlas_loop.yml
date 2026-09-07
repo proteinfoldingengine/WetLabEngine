@@ -1,0 +1,87 @@
+name: Retained Atlas Loop
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to run"
+        required: true
+        default: "V312_LAB_CONTEXT_TEST"
+
+jobs:
+  run-loop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          cd retained-atlas-agent
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build lab context
+        run: |
+          cd retained-atlas-agent
+          python src/build_lab_context.py
+
+      - name: Run retained-atlas execution agent
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd retained-atlas-agent
+          python src/autoloop.py --version ${{ github.event.inputs.version }}
+
+      - name: Validate execution outputs
+        run: |
+          cd retained-atlas-agent
+          python src/execution_validator.py --version ${{ github.event.inputs.version }}
+
+      - name: Write retained-atlas report
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd retained-atlas-agent
+          python src/report_agent.py --version ${{ github.event.inputs.version }}
+
+      - name: Audit retained-atlas loop
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd retained-atlas-agent
+          python src/audit_agent.py --version ${{ github.event.inputs.version }}
+
+      - name: Supervise next loop
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd retained-atlas-agent
+          python src/supervisor_agent.py --version ${{ github.event.inputs.version }}
+
+      - name: Rebuild lab context after run
+        run: |
+          cd retained-atlas-agent
+          python src/build_lab_context.py
+
+      - name: Commit generated outputs
+        run: |
+          git config user.name "retained-atlas-agent"
+          git config user.email "retained-atlas-agent@users.noreply.github.com"
+
+          git add retained-atlas-agent/runs retained-atlas-agent/reports retained-atlas-agent/src retained-atlas-agent/prompts retained-atlas-agent/state
+
+          git commit -m "Run retained atlas loop ${{ github.event.inputs.version }}" || echo "No changes to commit"
+
+          git pull --rebase origin main
+
+          git push origin HEAD:main
