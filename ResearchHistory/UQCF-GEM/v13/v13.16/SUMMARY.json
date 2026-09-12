@@ -1,0 +1,98 @@
+{
+  "version": "v13.16",
+  "gate": "Quantum Markov / Conditional-Mutual-Information Selection Gate",
+  "classification": "V1316_EXACT_QUANTUM_MARKOVITY_IS_NOT_SELECTED_BY_THE_EXISTING_ONTOLOGY_AS_ALREADY_CERTIFIED_BY_V941_ZERO_OF_13104_EXACT_NATIVE_PETZ_GLUINGS__EXACT_MARKOVITY_IS_STABLE_UNDER_COMMUTING_CLIQUE_COMPATIBLE_ETL_SOURCES_BUT_BROKEN_BY_NONCLIQUE_SOURCES__SMALL_CMI_DOES_PROVIDE_A_CERTIFIED_APPROXIMATE_LOCALITY_ROUTE_VIA_RECOVERABILITY_AND_TRACE_DISTANCE_RESPONSE_BOUNDS__AN_EXACT_PARITY_HIDDEN_FAMILY_SHOWS_LOCAL_SOURCE_RESPONSE_ERROR_SCALES_AS_SQRT_CMI_NOT_CMI_SO_ANY_LINEAR_IN_CMI_LOCALITY_ERROR_BOUND_IS_IMPOSSIBLE_NEAR_MARKOVITY__RECOVERABILITY_THUS_GIVES_A_CONTROLLED_APPROXIMATE_THEOREM_BUT_DOES_NOT_DERIVE_MARKOV_SELECTION_OR_CANONICAL_PETZ_CLOSURE_FOR_GENERIC_QMAR",
+  "ontology_selection_audit": {
+    "prior_gate": "v9.41 Exact Overlap-Recovery Algebra Canary",
+    "ordered_native_triples": 13104,
+    "exact_Petz_gluing_count": 0,
+    "nontrivial_recovery_algebra_count": 0,
+    "statement": "Existing native global-coherence/provenance architecture did not select exact three-factor quantum Markovity in the audited ensemble.",
+    "relevance": "v13.16 therefore treats exact Markovity as a restricted sector, not an ontology-derived universal law."
+  },
+  "exact_markov_source_stability": {
+    "initial_CMI": 4.440892098500626e-16,
+    "clique_source_rows": [
+      {"source":"A","max_abs_CMI":6.661338147750939e-16,"max_Petz_trace_distance":8.673617379884035e-17},
+      {"source":"B","max_abs_CMI":4.440892098500626e-16,"max_Petz_trace_distance":5.898059818321144e-17},
+      {"source":"C","max_abs_CMI":4.440892098500626e-16,"max_Petz_trace_distance":5.2909066017292616e-17},
+      {"source":"AB","max_abs_CMI":4.440892098500626e-16,"max_Petz_trace_distance":8.326672684688674e-17},
+      {"source":"BC","max_abs_CMI":4.440892098500626e-16,"max_Petz_trace_distance":5.551115123125783e-17}
+    ],
+    "nonclique_source_rows": [
+      {"s":0.05,"CMI":0.0009932115160680155,"Petz_trace_distance":0.019906383564194646},
+      {"s":0.1,"CMI":0.003973161391303659,"Petz_trace_distance":0.039926542086994005},
+      {"s":0.2,"CMI":0.015785008696052705,"Petz_trace_distance":0.07990628366590281},
+      {"s":0.4,"CMI":0.060630964009391164,"Petz_trace_distance":0.15690650599159214}
+    ],
+    "theorem": "For a commuting Markov exponential family on A-B-C, ETL tilts by clique-supported potentials preserve the Markov factorization exactly. Non-clique potentials need not.",
+    "status": "CLOSED_EXACT_CONDITIONAL"
+  },
+  "parity_hidden_family": {
+    "definition": "p_eps(a,b,c)=1/8(1+eps*a*b*c), with AB and BC marginals uniform and identical to the Petz/Markov reconstruction",
+    "rows": [
+      {"eps":0.0001,"CMI":4.999999969612645e-09,"CMI_formula_error":3.871279382131054e-17,"petz_root_fidelity":0.9999999987499999,"FR_existence_fidelity_lower_bound":0.9999999975,"trace_distance_to_petz":4.999999999999449e-05,"true_response_d_Oab_under_Pc":9.999999999998899e-05,"petz_response":0.0,"response_error":9.999999999998899e-05,"sqrt2CMI_ratio":1.0000000030386254,"generic_FR_trace_bound":7.07106779037837e-05,"generic_covariance_response_bound":0.00042426406742270223},
+      {"eps":0.0003,"CMI":4.5000000614692226e-08,"CMI_formula_error":6.030874584450618e-17,"petz_root_fidelity":0.9999999887499997,"FR_existence_fidelity_lower_bound":0.9999999774999999,"trace_distance_to_petz":0.00014999999999998348,"true_response_d_Oab_under_Pc":0.00029999999999996696,"petz_response":0.0,"response_error":0.00029999999999996696,"sqrt2CMI_ratio":0.9999999931699763,"generic_FR_trace_bound":0.00021213203344966903,"generic_covariance_response_bound":0.0012727922006980142},
+      {"eps":0.001,"CMI":5.000000831145712e-07,"CMI_formula_error":1.6328084717631697e-16,"petz_root_fidelity":0.999999874999961,"FR_existence_fidelity_lower_bound":0.9999997499999896,"trace_distance_to_petz":0.0004999999999999727,"true_response_d_Oab_under_Pc":0.0009999999999999176,"petz_response":0.0,"response_error":0.0009999999999999176,"sqrt2CMI_ratio":0.9999999168853567,"generic_FR_trace_bound":0.000707106751639723,"generic_covariance_response_bound":0.004242640509838338},
+      {"eps":0.003,"CMI":4.500006749896812e-06,"CMI_formula_error":7.19910242530375e-17,"petz_root_fidelity":0.9999988749968358,"FR_existence_fidelity_lower_bound":0.9999977499991564,"trace_distance_to_petz":0.0014999999999999736,"true_response_d_Oab_under_Pc":0.002999999999999947,"petz_response":0.0,"response_error":0.002999999999999947,"sqrt2CMI_ratio":0.9999992500122915,"generic_FR_trace_bound":0.0021213195480110606,"generic_covariance_response_bound":0.012727917288066364},
+      {"eps":0.01,"CMI":5.0000833366592445e-05,"CMI_formula_error":7.546047120499111e-17,"petz_root_fidelity":0.9999874996093545,"FR_existence_fidelity_lower_bound":0.9999749998958245,"trace_distance_to_petz":0.0050000000000000044,"true_response_d_Oab_under_Pc":0.010000000000000009,"petz_response":0.0,"response_error":0.010000000000000009,"sqrt2CMI_ratio":0.99999166643825,"generic_FR_trace_bound":0.007071038349905824,"generic_covariance_response_bound":0.04242623009943494},
+      {"eps":0.03,"CMI":0.0004500675243117591,"CMI_formula_error":3.469446951953614e-17,"petz_root_fidelity":0.9998874683444162,"FR_existence_fidelity_lower_bound":0.999774991556042,"trace_distance_to_petz":0.015000000000000013,"true_response_d_Oab_under_Pc":0.030000000000000027,"petz_response":0.0,"response_error":0.030000000000000027,"sqrt2CMI_ratio":0.9999249814294586,"generic_FR_trace_bound":0.021212408140430374,"generic_covariance_response_bound":0.12727444884258224},
+      {"eps":0.1,"CMI":0.005008366846356527,"CMI_formula_error":3.608224830031759e-16,"petz_root_fidelity":0.9987460731103327,"FR_existence_fidelity_lower_bound":0.9974989494285061,"trace_distance_to_petz":0.05000000000000002,"true_response_d_Oab_under_Pc":0.10000000000000006,"petz_response":0.0,"response_error":0.10000000000000006,"sqrt2CMI_ratio":0.9991643639639738,"generic_FR_trace_bound":0.07068129801458498,"generic_covariance_response_bound":0.42408778808750985},
+      {"eps":0.2,"CMI":0.020135513550688877,"CMI_formula_error":1.3877787807814457e-17,"petz_root_fidelity":0.994936153005124,"FR_existence_fidelity_lower_bound":0.9899827534376013,"trace_distance_to_petz":0.09999999999999998,"true_response_d_Oab_under_Pc":0.19999999999999996,"petz_response":0.0,"response_error":0.19999999999999996,"sqrt2CMI_ratio":0.9966292807734932,"generic_FR_trace_bound":0.14118834192703547,"generic_covariance_response_bound":0.8471300515622129},
+      {"eps":0.4,"CMI":0.08228287850505156,"CMI_formula_error":2.220446049250313e-16,"petz_root_fidelity":0.9789063129307033,"FR_existence_fidelity_lower_bound":0.9596933820333747,"trace_distance_to_petz":0.19999999999999998,"true_response_d_Oab_under_Pc":0.3999999999999999,"petz_response":0.0,"response_error":0.3999999999999999,"sqrt2CMI_ratio":0.9860302879193819,"generic_FR_trace_bound":0.2810491282344477,"generic_covariance_response_bound":1.6862947694066863},
+      {"eps":0.6,"CMI":0.19274475702175708,"CMI_formula_error":4.440892098500626e-16,"petz_root_fidelity":0.9486832980505138,"FR_existence_fidelity_lower_bound":0.9081257865698227,"trace_distance_to_petz":0.30000000000000004,"true_response_d_Oab_under_Pc":0.6000000000000001,"petz_response":0.0,"response_error":0.6000000000000001,"sqrt2CMI_ratio":0.9663733969902965,"generic_FR_trace_bound":0.4186974513499466,"generic_covariance_response_bound":2.5121847080996798}
+    ],
+    "exact_CMI_formula": "I(A:C|B)=0.5[(1+eps)ln(1+eps)+(1-eps)ln(1-eps)]",
+    "exact_response": "for O=AB and source P=C, d_s<E[AB]>|0 = eps while the recovered Markov state predicts 0",
+    "small_eps_asymptotics": "CMI=eps^2/2+O(eps^4), response_error=eps=sqrt(2 CMI)+O(CMI^(3/2))",
+    "small_eps_mean_response_over_sqrt2CMI": 0.9999859684956598,
+    "no_go": "No universal response error bound proportional to CMI can hold near exact Markovity. The natural certified scaling is square-root in CMI/recovery distance."
+  },
+  "recoverability_locality_bound": {
+    "standard_recoverability_input": "Fawzi-Renner-type recovery theorem: for CMI I there exists a recovery channel with root fidelity F >= exp(-I/2).",
+    "trace_distance_consequence": "T(rho,recovered) <= sqrt(1-exp(-I)).",
+    "commuting_ETL_response_lemma": "For ||O||inf,||P||inf finite, |Cov_rho(O,P)-Cov_sigma(O,P)| <= 6 T(rho,sigma)||O||inf||P||inf.",
+    "combined_bound": "response_error <= 6 ||O||inf||P||inf sqrt(1-exp(-I(A:C|B))).",
+    "small_I_scaling": "O(sqrt(I))",
+    "random_lemma_max_error_to_bound_ratio": 0.15223527877740917,
+    "boundary": "The recovery theorem is existential in general; it does not make the canonical Petz map a universally optimal QMAR closure."
+  },
+  "approximate_source_stability": {
+    "rows": [
+      {"eps":0.01,"source":"C","base_CMI":5.0000833366592445e-05,"max_CMI":4.805298125054591e-05,"max_CMI_ratio":0.9610436069781995,"min_CMI_ratio":0.5590592764324944},
+      {"eps":0.01,"source":"AC","base_CMI":5.0000833366592445e-05,"max_CMI":0.2405038093156091,"max_CMI_ratio":4809.996016512383,"min_CMI_ratio":393.09435189046616},
+      {"eps":0.03,"source":"C","base_CMI":0.0004500675243117591,"max_CMI":0.0004325367642041833,"max_CMI_ratio":0.961048600130872,"min_CMI_ratio":0.5590921582466202},
+      {"eps":0.03,"source":"AC","base_CMI":0.0004500675243117591,"max_CMI":0.2407274851094099,"max_CMI_ratio":534.8697075567252,"min_CMI_ratio":44.52560535182322},
+      {"eps":0.1,"source":"C","base_CMI":0.005008366846356527,"max_CMI":0.004813569112140037,"max_CMI_ratio":0.9611055379543133,"min_CMI_ratio":0.5594677141006204},
+      {"eps":0.1,"source":"AC","base_CMI":0.005008366846356527,"max_CMI":0.24327787543679413,"max_CMI_ratio":48.574292359149624,"min_CMI_ratio":4.875952993514902},
+      {"eps":0.2,"source":"C","base_CMI":0.020135513550688877,"max_CMI":0.0193561707305534,"max_CMI_ratio":0.9612951108411728,"min_CMI_ratio":0.560726098084676},
+      {"eps":0.2,"source":"AC","base_CMI":0.020135513550688877,"max_CMI":0.2517663638320946,"max_CMI_ratio":12.503597844589425,"min_CMI_ratio":1.9350468930152367}
+    ],
+    "interpretation": "Small initial CMI is not itself invariant under arbitrary source deformation. Stability depends on source compatibility with the Markov/clique structure."
+  },
+  "adjudication": {
+    "ontology_forces_exact_Markovity": false,
+    "exact_Markov_sector_exists": true,
+    "exact_Markov_sector_stable_under_clique_ETL": true,
+    "exact_Markov_sector_stable_under_arbitrary_ETL": false,
+    "small_CMI_gives_certified_approximate_locality": true,
+    "linear_in_CMI_response_error_bound": false,
+    "square_root_CMI_response_scaling_sharp_in_commuting_control": true,
+    "canonical_Petz_is_generic_exact_QMAR_closure": false
+  },
+  "status": {
+    "EXACT_MARKOV_SELECTION": "NO_GO_FROM_EXISTING_ONTOLOGY",
+    "EXACT_MARKOV_LOCALITY": "CLOSED_CONDITIONAL",
+    "APPROXIMATE_RECOVERABILITY_LOCALITY": "CERTIFIED_CONDITIONAL_BOUND",
+    "SOURCE_STABILITY": "ONLY_FOR_MARKOV_COMPATIBLE_SOURCE_CLASS",
+    "QMAR_LOCALITY": "APPROXIMATE_WITH_RECOVERY_ERROR_BAR_WHEN_CMI_SMALL",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_APPROXIMATE_LOCALITY_THEOREM_PLUS_MARKOV_SELECTION_NO_GO"
+  },
+  "next_gate": {
+    "version": "v13.17",
+    "name": "Recoverability-to-QMAR Geometric Error Propagation Gate",
+    "question": "Lift the state-level O(sqrt(CMI)) recovery bound through the actual BKM metric and polar-transport maps. Derive explicit regularity constants on faithful, singular-value-gapped strata so that separator CMI bounds quantitative errors in K_i, O_ij, nonmetricity, and holonomy response. This would turn approximate recoverability into a certified approximate geometric locality theorem."
+  }
+}
