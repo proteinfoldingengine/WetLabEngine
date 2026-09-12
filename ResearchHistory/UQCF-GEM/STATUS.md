@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.18 — Source-Conditioned Recoverability / QMAR Jet Locality Gate  
-**Next gate:** v13.19 — Approximate Local Metric-Affine Evolution / Patch Composition Gate
+**Latest completed gate:** v13.19 — Approximate Local Metric-Affine Evolution / Patch Composition Gate  
+**Next gate:** v13.20 — Refinement Error Scaling / Continuum Atlas Stability Gate
 
 ## Current scientific picture
 
@@ -21,9 +21,10 @@ full quantum completion
 → metric-affine nonmetricity / connection / holonomy
 → exact locality only in restricted Markov sectors
 → certified approximate geometry + jet locality on recoverable regular strata
+→ controlled finite patch composition
 ```
 
-v13.11 derived the conditional first-order QMAR map from the full faithful state and closed exact trace/Weyl integrability of BKM/polar nonmetricity.
+v13.11 derived the conditional first-order QMAR map and exact trace/Weyl integrability.
 
 v13.12 separated shear-nonmetricity and curvature response channels.
 
@@ -33,63 +34,89 @@ v13.14 showed symmetry compression survives only for symmetry-compatible source 
 
 v13.15 proved graph sparsity/treewidth alone is insufficient, while commuting Markov graphical states with clique-compatible sources admit exact separator-message closure.
 
-v13.16 showed exact Markovity is not selected by the existing ontology, but small separator CMI gives certified recoverability with natural `O(sqrt(CMI))` error scaling.
+v13.16 showed exact Markovity is not selected by the existing ontology, but small separator CMI gives certified recoverability with natural `O(sqrt(CMI))` scaling.
 
 v13.17 propagated recoverability into explicit BKM metric, polar transport, nonmetricity, and holonomy error bars on faithful, polar-gapped strata.
 
-v13.18 now closes the infinitesimal/source-response extension conditionally. On faithful finite-dimensional strata, the ETL/PGRL state tangent is Lipschitz in the recovered state with an explicit constant. BKM and polar jet maps are locally Lipschitz on compact regular strata, giving QMAR jet error scaling `O(||P|| sqrt(CMI))`. The polar jet conditioning scales as `O(gamma^-1)` at first derivative and `O(gamma^-2)` for differential stability.
+v13.18 extended the same control to the source-response jet, with conditional `O(||P|| sqrt(CMI))` QMAR-jet locality.
 
-## Latest new result — v13.18
+v13.19 now closes finite-scale patch composition. Orthogonal transport errors telescope additively, so path transport, cocycle, holonomy, and transported-metric errors accumulate at most linearly with path length. QMAR holonomy-jet errors obey a double-sum bound and can genuinely scale quadratically with path length. Pairwise local validity still does not imply global cocycle closure unless patches share a common global reference/gauge or an explicit cocycle law.
 
-For
+## Latest new result — v13.19
 
-```text
-rho_s = exp(log rho + sP)/Z_s,
-```
-
-the source tangent is
+For exact and recovered polar transports on a path,
 
 ```text
-dot rho = integral_0^1 rho^t P rho^(1-t) dt - rho Tr(rho P).
+||Ohat_1...Ohat_m - O_1...O_m||_F
+<= sum_i ||Ohat_i-O_i||_F.
 ```
 
-If `rho,sigma >= mu I` in dimension `d`, then
+Thus uniform edge error `epsilon` gives
 
 ```text
-||dotrho_rho(P)-dotrho_sigma(P)||_F
-<= B_ETL(mu,d) ||P||op ||rho-sigma||_F
-<= 2 B_ETL(mu,d) ||P||op T(rho,sigma),
+path error <= m epsilon,
 ```
 
-where
+with no exponential amplification. The aligned same-axis control saturates the **linear scaling** to numerical precision.
+
+For triple overlaps, if the true atlas satisfies
 
 ```text
-B_ETL(mu,d)=2[1+mu(ln mu-1)]/[mu(ln mu)^2] + 1 + sqrt(d).
+T_ki T_jk T_ij = I,
 ```
 
-Combining with recoverability gives
+then recovered transitions obey
 
 ```text
-||Delta dotrho||_F
-<= 2 B_ETL ||P||op sqrt(1-exp[-I(A:C|B)]).
+||That_ki That_jk That_ij-I||
+<= epsilon_ki+epsilon_jk+epsilon_ij.
 ```
 
-On compact strata with local faithfulness floor `mu`, pair polar singular floor `gamma`, bounded source norm `||P||<=p`, and fixed local dimension, the QMAR geometric jet map `(rho,P)->(dot K,dot O,dot M,dot H)` is Lipschitz in `rho`.
-
-Therefore
+For the transported metric defect
 
 ```text
-jet error = O(p sqrt(CMI)).
+M_path = K_end - H^T K_start H,
 ```
 
-Fresh controls:
+we have
 
-- ETL tangent analytic-bound max ratio: `0.1001`;
-- conditioned BKM jet gap / trace distance: `0.2930` max observed;
-- polar jet gap / trace distance: `42.47` max observed;
-- holonomy jet gap / trace distance: `39.74` max observed.
+```text
+||Delta M_path||_F
+<= eK_end+eK_start+2||K_start||op eH.
+```
 
-CMI alone cannot control a jet: with fixed state/CMI, scaling `P -> lambda P` scales the source-response error linearly. Source norm and regularity floors are essential inputs.
+So value-level geometry and nonmetricity gluing remain at most linear in path length.
+
+For source-response jets,
+
+```text
+dotH = sum_i O_1...dotO_i...O_m.
+```
+
+With edge value errors `epsilon_i`, edge jet errors `eta_i`, and jet sizes `Lambda_i`,
+
+```text
+||Delta dotH||
+<= sum_i eta_i
+ + sum_i Lambda_i sum_(j!=i) epsilon_j.
+```
+
+Uniformly,
+
+```text
+<= m eta + Lambda m(m-1) epsilon.
+```
+
+An explicit same-axis family shows `path_jet_error/(m^2 delta)` is constant across `m=2..64`, so the quadratic scaling is genuinely attainable.
+
+v13.17 and v13.18 can now be inserted edgewise:
+
+```text
+epsilon_e <= (18/gamma_e) sqrt(1-exp(-I_e))
+eta_e <= C_Ojet(mu_e,gamma_e,d,p_e) sqrt(1-exp(-I_e)).
+```
+
+This yields an explicit finite-horizon atlas certificate.
 
 ## Open boundaries
 
@@ -101,20 +128,23 @@ CMI alone cannot control a jet: with fixed state/CMI, scaling `P -> lambda P` sc
 - Exact Markovity is not ontology-selected generically.
 - Approximate locality is certified only on recoverable, faithful, polar-gapped strata.
 - Support and polar singular boundaries prevent uniform jet locality.
+- Independent locally valid patches do not imply global cocycle closure.
+- Value-level patch errors grow linearly; jet-level worst-case errors can grow quadratically.
+- Scale-independent continuum atlas stability is not derived.
 - Geometry-only autonomous evolution remains obstructed by hidden completion.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
 - Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.19
+## Next gate — v13.20
 
-Test **Approximate Local Metric-Affine Evolution / Patch Composition**.
+Test **Refinement Error Scaling / Continuum Atlas Stability**.
+
+Let patch scale be `h` and a fixed physical path have `m(h) ~ L/h`.
 
 Targets:
 
-- compose overlapping recovered local patches;
-- derive error accumulation along relational paths;
-- derive loop/holonomy error accumulation under patch gluing;
-- test whether atlas errors remain controlled by separator/recoverability structure or grow uncontrollably with path length.
-
-A controlled patch-composition theorem would be the first route from local recoverability toward an approximate global metric-affine response atlas.
+- derive the exponent required for `CMI(h)` so linear value-level errors vanish or remain finite;
+- include possible polar-gap scaling `gamma(h)`;
+- derive the stricter exponent required by the quadratic QMAR-jet accumulation;
+- compare those thresholds against archived refinement evidence only, without fitting the archive to the desired continuum behavior.
