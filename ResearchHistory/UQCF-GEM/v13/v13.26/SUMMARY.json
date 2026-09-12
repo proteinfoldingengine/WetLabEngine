@@ -1,0 +1,76 @@
+{
+  "version": "v13.26",
+  "gate": "RSCL Origin / Absolute Source Calibration Gate",
+  "classification": "V1326_RSCL_IRREDUCIBLE_RELATIVE_TO_CURRENT_FROZEN_ONTOLOGY__PROTECTED_SOURCE_GRADING_FIXES_RETAINED_AMOUNT_BUT_NOT_OBSERVER_UNIT_CONVERSION__PGRL_HAS_AN_EXACT_SOURCE_AMPLITUDE_REPARAMETERIZATION_GAUGE_P_TO_A_P_AND_T_TO_T_OVER_A__GENESIS_SOURCE_ORIGIN_AND_FLOW_CLOSURE_ARE_HOMOGENEOUS_UNDER_COMMON_SOURCE_RESCALING__RECOVERABILITY_RESPONSE_RANK_AND_STABILITY_SELECT_CURRENT_INSIDE_A_DECLARED_MEASUREMENT_CONVENTION_BUT_RESPONSE_UNIT_RESCALING_LEAVES_THE_INFERRED_CURRENT_UNCHANGED_WHILE_SCALING_SINGULAR_VALUES__NO_CURRENT_RETAINED_DATUM_CONTAINS_AN_INDEPENDENT_OBSERVER_CALIBRATED_SOURCE_STANDARD__RSCL_ORIGIN_SEARCH_STOPS",
+  "candidate_audit": {
+    "protected_source_grading": {
+      "status": "NO_RSCL",
+      "reason": "Fixes source amount/extensivity in retained units but does not provide the multiplicative conversion into observer stress-energy units."
+    },
+    "PGRL_exponential_family_amplitude": {
+      "status": "NO_RSCL",
+      "exact_gauge": "(t,P)->(t/a,aP) leaves exp(log(rho)+tP)/Z unchanged",
+      "scales": [0.2, 0.5, 1.0, 2.0, 5.0, 11.0],
+      "max_state_mismatch": 1.7338559410605957e-16,
+      "max_chain_rule_tangent_mismatch": 8.209551033969693e-11
+    },
+    "Genesis_source_origin": {
+      "status": "NO_RSCL",
+      "reason": "Genesis Pin/source provenance supplies origin identity and source-flow compatibility; BJ=s is homogeneous under (s,J)->(a s,a J), and no frozen Genesis artifact supplies an observer-calibrated energy/momentum standard."
+    },
+    "recoverability_response_normalization": {
+      "status": "NO_RSCL",
+      "response_unit_gauge": "(R,y)->(cR,cy) leaves reconstructed J unchanged while singular values scale by c",
+      "response_scales": [0.1, 0.3, 1.0, 3.0, 10.0],
+      "baseline_sigma_min": 0.14960198670375238,
+      "max_reconstructed_current_change": 2.7555098187088443e-15,
+      "max_sigma_scaling_identity_error": 1.887379141862766e-15
+    }
+  },
+  "common_scale_control": {
+    "source_scales": [0.2, 0.5, 1.0, 2.0, 5.0, 11.0],
+    "map": "(s,J,kappa)->(a s,a J,kappa/a)",
+    "max_source_balance_residual": 8.426000324584083e-15,
+    "max_coupled_product_error": 5.20740757162067e-16,
+    "max_normalized_source_direction_change": 1.4033044459902308e-16,
+    "meaning": "Balance, projective source direction, and the coupled product kappa*T are invariant under the unresolved common positive source normalization."
+  },
+  "irreducibility_theorem": {
+    "statement": "Let D_ret contain every currently frozen retained datum before observer source normalization. If D_ret determines a retained source package F(D_ret) but contains no independently observer-calibrated scalar, then T_obs(a)=a F(D_ret) with kappa_obs(a)=kappa0/a is equally compatible for every a>0. Hence D_ret cannot select the absolute retained-to-observer source conversion factor.",
+    "scope": "CURRENT_FROZEN_ONTOLOGY_ONLY",
+    "does_not_claim": "No deeper ontology or explicit new calibration axiom can ever generate an absolute source scale."
+  },
+  "preserved_identifiable_content": [
+    "Genesis/source provenance",
+    "source-current balance",
+    "conditional response-selected retained current shape/support",
+    "PGRL/QMAR source direction and first-order response",
+    "frame covariance",
+    "projective source class under positive scaling",
+    "potentially the coupled object Sigma_obs=kappa_obs*T_obs if derived target-blind"
+  ],
+  "adjudication": {
+    "protected_grading_derives_RSCL": false,
+    "PGRL_amplitude_derives_RSCL": false,
+    "Genesis_derives_RSCL": false,
+    "recoverability_response_derives_RSCL": false,
+    "RSCL": "IRREDUCIBLE_RELATIVE_TO_CURRENT_FROZEN_ONTOLOGY",
+    "RSCL_origin_search": "STOP",
+    "absolute_physical_stress_energy_normalization": "OPEN",
+    "Einstein_or_ADM_residual_may_be_used_as_calibration_selector": false
+  },
+  "status": {
+    "RESPONSE_SELECTED_CURRENT": "PRESERVED_CONDITIONAL",
+    "PROJECTIVE_SOURCE_CLASS": "IDENTIFIABLE_IN_PRINCIPLE",
+    "ABSOLUTE_STRESS_ENERGY_NORMALIZATION": "OPEN",
+    "RSCL": "NOT_DERIVED_AND_IRREDUCIBLE_RELATIVE_TO_CURRENT_FROZEN_ONTOLOGY",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_ABSOLUTE_SOURCE_CALIBRATION_NO_GO_AND_BRANCH_STOP"
+  },
+  "next_gate": {
+    "version": "v13.27",
+    "name": "Projective Coupled-Source / Direct kappa T Bridge Gate",
+    "question": "Can actual retained/PGRL/source-current observables determine the scale-invariant coupled source Sigma_obs=kappa_obs*T_obs directly and target-blind, without separately identifying kappa_obs and T_obs or consulting an ADM/Einstein residual?"
+  }
+}
