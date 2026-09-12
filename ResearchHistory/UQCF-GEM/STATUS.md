@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.19 — Approximate Local Metric-Affine Evolution / Patch Composition Gate  
-**Next gate:** v13.20 — Refinement Error Scaling / Continuum Atlas Stability Gate
+**Latest completed gate:** v13.20 — Refinement Error Scaling / Continuum Atlas Stability Gate  
+**Next gate:** v13.21 — Recoverability Atlas Telemetry / Blind Refinement Protocol Gate
 
 ## Current scientific picture
 
@@ -21,7 +21,8 @@ full quantum completion
 → metric-affine nonmetricity / connection / holonomy
 → exact locality only in restricted Markov sectors
 → certified approximate geometry + jet locality on recoverable regular strata
-→ controlled finite patch composition
+→ finite patch composition with linear value / quadratic worst-case jet accumulation
+→ explicit refinement thresholds for continuum stability
 ```
 
 v13.11 derived the conditional first-order QMAR map and exact trace/Weyl integrability.
@@ -40,83 +41,86 @@ v13.17 propagated recoverability into explicit BKM metric, polar transport, nonm
 
 v13.18 extended the same control to the source-response jet, with conditional `O(||P|| sqrt(CMI))` QMAR-jet locality.
 
-v13.19 now closes finite-scale patch composition. Orthogonal transport errors telescope additively, so path transport, cocycle, holonomy, and transported-metric errors accumulate at most linearly with path length. QMAR holonomy-jet errors obey a double-sum bound and can genuinely scale quadratically with path length. Pairwise local validity still does not imply global cocycle closure unless patches share a common global reference/gauge or an explicit cocycle law.
+v13.19 closed finite-scale patch composition: value-level transport/cocycle/nonmetricity errors accumulate at most linearly in path length, while holonomy-jet error can genuinely scale quadratically.
 
-## Latest new result — v13.19
+v13.20 now converts those path-length bounds into exact continuum threshold exponents.
 
-For exact and recovered polar transports on a path,
+## Latest new result — v13.20
 
-```text
-||Ohat_1...Ohat_m - O_1...O_m||_F
-<= sum_i ||Ohat_i-O_i||_F.
-```
-
-Thus uniform edge error `epsilon` gives
+Let
 
 ```text
-path error <= m epsilon,
+I(h) ~ h^alpha
+gamma(h) ~ h^beta
+||P(h)|| ~ h^sigma
+Lambda(h)=||dot O_e|| ~ h^lambda
+m(h) ~ L/h.
 ```
 
-with no exponential amplification. The aligned same-axis control saturates the **linear scaling** to numerical precision.
-
-For triple overlaps, if the true atlas satisfies
+Then the recovered edge transport error scales as
 
 ```text
-T_ki T_jk T_ij = I,
+epsilon(h) = O(h^(alpha/2-beta))
 ```
 
-then recovered transitions obey
+and the edge QMAR-jet error as
 
 ```text
-||That_ki That_jk That_ij-I||
-<= epsilon_ki+epsilon_jk+epsilon_ij.
+eta(h) = O(h^(alpha/2+sigma-2beta)).
 ```
 
-For the transported metric defect
+Therefore the macroscopic value-level atlas error scales as
 
 ```text
-M_path = K_end - H^T K_start H,
+E_value(h) = O(h^(alpha/2-beta-1)),
 ```
 
-we have
+so boundedness requires
 
 ```text
-||Delta M_path||_F
-<= eK_end+eK_start+2||K_start||op eH.
+alpha >= 2 beta + 2,
 ```
 
-So value-level geometry and nonmetricity gluing remain at most linear in path length.
+and vanishing requires strict inequality.
 
-For source-response jets,
+The two macroscopic jet terms scale as
 
 ```text
-dotH = sum_i O_1...dotO_i...O_m.
+h^(alpha/2+sigma-2beta-1)
+h^(alpha/2-beta+lambda-2).
 ```
 
-With edge value errors `epsilon_i`, edge jet errors `eta_i`, and jet sizes `Lambda_i`,
+Thus a bounded QMAR response atlas requires
 
 ```text
-||Delta dotH||
-<= sum_i eta_i
- + sum_i Lambda_i sum_(j!=i) epsilon_j.
+alpha >= max(
+  4 beta + 2 - 2 sigma,
+  2 beta + 4 - 2 lambda
+).
 ```
 
-Uniformly,
+For the conservative stable-gap, bounded-source, O(1)-edge-jet case
 
 ```text
-<= m eta + Lambda m(m-1) epsilon.
+beta=0, sigma=0, lambda=0,
 ```
 
-An explicit same-axis family shows `path_jet_error/(m^2 delta)` is constant across `m=2..64`, so the quadratic scaling is genuinely attainable.
-
-v13.17 and v13.18 can now be inserted edgewise:
+we obtain:
 
 ```text
-epsilon_e <= (18/gamma_e) sqrt(1-exp(-I_e))
-eta_e <= C_Ojet(mu_e,gamma_e,d,p_e) sqrt(1-exp(-I_e)).
+value atlas bounded: alpha >= 2
+value atlas vanishes: alpha > 2
+QMAR jet atlas bounded: alpha >= 4
+QMAR jet atlas vanishes: alpha > 4.
 ```
 
-This yields an explicit finite-horizon atlas certificate.
+If the true edge connection jet itself scales as `O(h)` (`lambda=1`), the stable-gap jet threshold can fall to `alpha>=2`, but that smooth-edge scaling is not assumed and must be measured or derived.
+
+## Archived refinement comparison
+
+The controlled v12.70 smooth Hodge family showed an approximately `h^1.967` decay for a different Hodge-ambiguity observable. It is not a CMI exponent.
+
+The later frozen ADM-7 refinement at `N=7,14,28,56` failed its own predeclared ACR gate (`p_H=-0.1975`, `p_R=0.7197`, N56 high-band fraction `0.9604`). Those are important negative continuum controls but do not measure `alpha` or `beta` in the recoverability atlas.
 
 ## Open boundaries
 
@@ -127,24 +131,26 @@ This yields an explicit finite-horizon atlas certificate.
 - QMAR is autonomous on the full quantum state, not on fixed finite local moments.
 - Exact Markovity is not ontology-selected generically.
 - Approximate locality is certified only on recoverable, faithful, polar-gapped strata.
-- Support and polar singular boundaries prevent uniform jet locality.
-- Independent locally valid patches do not imply global cocycle closure.
-- Value-level patch errors grow linearly; jet-level worst-case errors can grow quadratically.
-- Scale-independent continuum atlas stability is not derived.
+- Support and polar singular boundaries prevent uniform locality.
+- Pairwise local validity does not imply global cocycle closure.
+- The continuum threshold theorem is derived, but the required refinement exponents `alpha`, `beta`, `sigma`, and `lambda` have not been measured on a genuine nested recoverability family.
+- Continuum recoverability-atlas stability is therefore not certified.
 - Geometry-only autonomous evolution remains obstructed by hidden completion.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
 - Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.20
+## Next gate — v13.21
 
-Test **Refinement Error Scaling / Continuum Atlas Stability**.
+Freeze **RATS — Recoverability Atlas Telemetry Scaling** as a blind refinement protocol.
 
-Let patch scale be `h` and a fixed physical path have `m(h) ~ L/h`.
+Required matched telemetry:
 
-Targets:
+- separator `I(h)`;
+- polar singular floor `gamma(h)`;
+- faithfulness floor `mu(h)`;
+- recovered edge transport error `epsilon(h)`;
+- recovered edge QMAR-jet error `eta(h)`;
+- true edge response scale `Lambda(h)`.
 
-- derive the exponent required for `CMI(h)` so linear value-level errors vanish or remain finite;
-- include possible polar-gap scaling `gamma(h)`;
-- derive the stricter exponent required by the quadratic QMAR-jet accumulation;
-- compare those thresholds against archived refinement evidence only, without fitting the archive to the desired continuum behavior.
+The physical patch/source geometry, restriction maps, and v13.20 exponent thresholds must be fixed before generating or scoring the refinement data.
