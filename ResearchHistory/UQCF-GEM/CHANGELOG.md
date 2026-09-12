@@ -4,6 +4,15 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.10 — Hidden-Completion Source Rigidity / Holonomy-Phase Preservation
+
+- Proved a **Frozen-Ledger HCPR Non-Factorization Theorem** for the executed rigid/drifting completion pair.
+- The two positive completions have identical initial one/two-body data, BKM metrics, polar transport, Gamma_R, F2/F3, W1/W2/W3, J_R, and atlas schema projection.
+- Their source-response jets differ immediately; the hidden completion generates polar, holonomy/F3, and solder-closure response while the rigid completion does not.
+- W2/W3 are certificates rather than hidden-completion selectors; SGOD-F3 diagnoses post-source connection divergence but cannot select the rigid initial completion.
+- **HCPR is frozen as IRREDUCIBLE RELATIVE TO THE CURRENT FROZEN LEDGER.**
+- HCPR origin search: **STOP**. Next branch returns to the generic metric-affine parent.
+
 ### v13.09 — Symmetry-Origin / Einstein-Sector Source Selection
 
 - Proved/verified that common visible axial `U(1)` stabilizer structure protects BKM metric compatibility (`Q=0`).
