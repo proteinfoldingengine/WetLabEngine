@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.21 — Recoverability Atlas Telemetry / Blind Refinement Protocol Gate  
-**Next gate:** v13.22 — Quantum Refinement Naturality / Nested-State Law Gate
+**Latest completed gate:** v13.22 — Quantum Refinement Naturality / Nested-State Law Gate  
+**Next gate:** v13.23 — QRSL Origin / Canonical Refinement Selector Gate
 
 ## Current scientific picture
 
@@ -19,75 +19,84 @@ full quantum completion
 → PGRL/ETL source response
 → BKM metric + polar transport (QMAR)
 → metric-affine nonmetricity / connection / holonomy
-→ exact locality only in restricted Markov sectors
-→ certified approximate geometry + jet locality on recoverable regular strata
-→ finite patch composition with linear value / quadratic worst-case jet accumulation
-→ explicit continuum refinement thresholds
-→ frozen blind telemetry protocol
-→ quantum refinement law still missing
+→ certified approximate locality on recoverable regular strata
+→ finite patch composition + continuum threshold theorem
+→ RATS blind telemetry protocol frozen
+→ quantum refinement naturality satisfiable but nonunique
+→ QRSL selection law missing
 ```
 
-v13.20 derived the continuum threshold exponents required for recoverability-atlas stability.
+## Latest result — v13.22
 
-v13.21 freezes **RATS — Recoverability Atlas Telemetry Scaling** before any refinement data are generated.
+A target-independent refinement can satisfy every currently frozen naturality requirement without being unique.
 
-## Latest result — v13.21
-
-The primary blind telemetry streams are:
+For any fixed faithful ancillary state `tau`, define
 
 ```text
-I(h)
-gamma(h)
-mu(h)
-epsilon(h)
-eta(h)
-Lambda(h)
-||P_h||
+R_tau(rho) = rho tensor tau
+C = Tr_anc.
 ```
 
-Primary recovery is the faithful-state Petz map fixed before data. The same source is applied to the true and recovered states. No rotated-Petz optimization, separator retuning, source rescaling, or target-dependent refinement continuation is allowed.
-
-The preserved v13.20 information-theoretic thresholds are:
+Then exactly:
 
 ```text
-value bounded:
-alpha_min >= 2 beta_max + 2
-
-jet bounded:
-alpha_min >= 4 beta_max + 2 - 2 sigma_min
-alpha_min >= 2 beta_max + 4 - 2 lambda_min
+C o R_tau = id
+Tr[R_tau(rho)(A tensor I)] = Tr[rho A]
+tilts(R_tau(rho), P tensor I) = R_tau(tilts(rho,P))
+R_tau2 o R_tau1 = tensor-composed refinement
 ```
 
-An independent direct-error score is also frozen:
+So positivity, normalization, CPTP restriction, retained-observable naturality, ETL/PGRL source naturality, and repeated composition do not select a unique fine completion.
+
+A sharper counterexample uses
 
 ```text
-p_epsilon_min >= 1
-p_eta_min >= 1
-p_epsilon_min + lambda_min >= 2
+tau_0 = I/8
+tau_eps = (I + eps ZZZ)/8, eps=0.4.
 ```
 
-Protocol SHA-256:
+These states have identical one- and two-body marginals but different hidden three-body CMI:
 
 ```text
-b46bec9868fd8c71a2789801d4d9eca733e187608b8f364b99721cfafd24227b
+CMI(tau_0) = 0
+CMI(tau_eps) = 0.0822828785
 ```
 
-## Execution boundary
+while the corresponding fine states remain exact refinements of the same coarse state.
 
-Repository audit found no pre-existing genuine ancestry-linked nested quantum-state family `rho_h` with a target-independent coarse-graining/restriction law and source continuation suitable for RATS.
+## RATS anti-circularity result
 
-Therefore:
+If the hidden completion is chosen as
 
 ```text
-RATS protocol: FROZEN / HASHED
-RATS execution: BLOCKED
-refinement telemetry generated: NO
-continuum recoverability atlas: NOT CERTIFIED
+tau_h = (I + epsilon(h) ZZZ)/8
+epsilon(h) = h^r,
 ```
 
-This is a trust-preserving stop. Inventing a quantum refinement continuation after seeing the v13.20 thresholds would confound the continuum test with the desired outcome.
+then
 
-The older ADM-7 refinement family does not solve this problem: it is a current/carrier refinement experiment rather than a nested quantum-state family, and its frozen continuation failed its own ACR gate.
+```text
+CMI(tau_h) = Theta(h^(2r)).
+```
+
+Executed controls reproduced exponents approximately `1,2,4,6` for chosen `r=0.5,1,2,3`.
+
+Therefore an unconstrained refinement selector can manufacture the RATS CMI exponent while preserving exact coarse restriction and ETL source naturality.
+
+This proves that RATS must remain sealed until refinement completion is selected independently of the desired continuum result.
+
+## Current missing object
+
+**QRSL — Quantum Refinement Selection Law**
+
+QRSL must select the hidden fine completion without reference to:
+
+- RATS/CMI exponents;
+- polar-gap behavior;
+- desired continuum smoothness;
+- Einstein/GR targets.
+
+Repository search found no already-frozen refinement/coarse-graining law that removes this ambiguity.
 
 ## Open boundaries
 
@@ -97,27 +106,24 @@ The older ADM-7 refinement family does not solve this problem: it is a current/c
 - HCPR remains irreducible relative to the frozen ledger.
 - QMAR is autonomous on the full quantum state, not on fixed finite local moments.
 - Exact Markovity is not ontology-selected generically.
-- Approximate locality is certified only on recoverable, faithful, polar-gapped strata.
-- Support and polar singular boundaries prevent uniform locality.
-- Pairwise local validity does not imply global cocycle closure.
-- The continuum threshold theorem is derived, but the required nested quantum refinement law is not.
-- RATS is sealed but cannot yet be executed without circularly inventing that law.
+- Approximate locality remains conditional on recoverability and regular conditioning.
+- RATS is frozen and remains unexecuted.
+- Quantum refinement naturality is nonunique.
+- QRSL is missing.
+- Continuum recoverability-atlas stability is not certified.
 - Geometry-only autonomous evolution remains obstructed by hidden completion.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
 - Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.22
+## Next gate — v13.23
 
-Derive or recover **Quantum Refinement Naturality / Nested-State Law**.
+Test only ontology-native candidates for QRSL:
 
-The law must provide a target-blind relation between `rho_h` and `rho_(h/2)` that:
+1. Genesis Pin provenance;
+2. recoverability order;
+3. retained higher-incidence / filling data already frozen upstream.
 
-1. supplies explicit ancestry;
-2. preserves the declared physical source geometry;
-3. commutes appropriately with retained-observable restriction;
-4. preserves positivity and normalization;
-5. composes consistently across repeated refinement;
-6. contains no RATS/CMI/pass-fail target in its derivation.
+The test is whether any existing structure distinguishes admissible `tau` completions without introducing a new continuum-targeted rule.
 
-Only after that law closes may the already-frozen v13.21 RATS protocol be executed.
+If every candidate factors through data shared by the `tau` family, QRSL will be certified **irreducible relative to the current frozen ontology**, and the refinement/RATS branch should stop until one explicit new axiom is introduced.
