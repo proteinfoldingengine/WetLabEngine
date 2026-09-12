@@ -23,8 +23,13 @@ assert s["projective_sigma_status"] == "RAY_ONLY__MAGNITUDE_NOT_DERIVED"
 assert s["RGCL"] == "MISSING"
 assert s["physical_Einstein_closure"] == "OPEN"
 
-print("executed_summary", json.dumps(s, sort_keys=True))
-print("telemetry_hash", data["telemetry_hash"])
-assert data["telemetry_hash"] == expected["telemetry_hash"], (data["telemetry_hash"], expected["telemetry_hash"])
+assert data["scientific_fingerprint"] == expected["scientific_fingerprint"], (
+    data["scientific_fingerprint"],
+    expected["scientific_fingerprint"],
+)
 
 print("V13_27_GRAVITY_PROGRESS_CHECKER_PASS")
+print("scientific_fingerprint", data["scientific_fingerprint"])
+print("telemetry_hash", data["telemetry_hash"])
+print("reference_raw_telemetry_hash", expected["reference_raw_telemetry_hash"])
+print("note", "raw telemetry hash is diagnostic; scientific fingerprint is the portable certification key")
