@@ -25,8 +25,9 @@ pre-time quantum relations / global compatibility
     -> special Q=0, T=0 Levi-Civita sector (conditional, not generically source-invariant)
     -> represented Path-A q,pi,constraint/ADM structure
     -> retained source/current bridge
-       absolute normalization blocked by RSCL
-       projective coupled source Sigma = kappa T remains the active target
+       absolute (T_obs,kappa_obs) split blocked by RSCL
+       projective source ray preserved
+       direct coupled source Sigma_obs=kappa_obs T_obs blocked by missing RGCL
 ```
 
 ## Current Pillar status
@@ -71,9 +72,10 @@ Tracked gates:
 - [v13.24](v13/v13.24/) — post-QRSL dependency reassessment; finite/QMAR/Path-A stack preserved.
 - [v13.25](v13/v13.25/) — retained source-ledger bridge blocked by exact common source-normalization degeneracy; RSCL isolated.
 - [v13.26](v13/v13.26/) — RSCL irreducible relative to the frozen ontology; absolute-source-calibration branch stop.
+- [v13.27](v13/v13.27/) — direct `Sigma_obs=kappa_obs T_obs` not derived; projective source ray survives but geometric coupling magnitude/tensor completion require RGCL.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the append-only gate ledger.
 
 ## Validation
 
-Each tracked gate directory carries its own `CHECKER.py` and machine-readable `SUMMARY.json`. The active frontier is v13.26; the next research target is v13.27, the scale-invariant coupled-source bridge `Sigma_obs = kappa_obs T_obs`.
+Each tracked gate directory carries its own `CHECKER.py` and machine-readable `SUMMARY.json`. The active frontier is v13.27; the next research target is v13.28, the RGCL Origin / Source-to-Coframe Variational Pairing Gate.
