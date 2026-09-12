@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.20 — Refinement Error Scaling / Continuum Atlas Stability Gate  
-**Next gate:** v13.21 — Recoverability Atlas Telemetry / Blind Refinement Protocol Gate
+**Latest completed gate:** v13.21 — Recoverability Atlas Telemetry / Blind Refinement Protocol Gate  
+**Next gate:** v13.22 — Quantum Refinement Naturality / Nested-State Law Gate
 
 ## Current scientific picture
 
@@ -22,105 +22,72 @@ full quantum completion
 → exact locality only in restricted Markov sectors
 → certified approximate geometry + jet locality on recoverable regular strata
 → finite patch composition with linear value / quadratic worst-case jet accumulation
-→ explicit refinement thresholds for continuum stability
+→ explicit continuum refinement thresholds
+→ frozen blind telemetry protocol
+→ quantum refinement law still missing
 ```
 
-v13.11 derived the conditional first-order QMAR map and exact trace/Weyl integrability.
+v13.20 derived the continuum threshold exponents required for recoverability-atlas stability.
 
-v13.12 separated shear-nonmetricity and curvature response channels.
+v13.21 freezes **RATS — Recoverability Atlas Telemetry Scaling** before any refinement data are generated.
 
-v13.13 proved no fixed finite body-order moment truncation gives exact ETL/PGRL response autonomy uniformly in system size.
+## Latest result — v13.21
 
-v13.14 showed symmetry compression survives only for symmetry-compatible source sectors; site-resolved QMAR restores the full operator algebra.
-
-v13.15 proved graph sparsity/treewidth alone is insufficient, while commuting Markov graphical states with clique-compatible sources admit exact separator-message closure.
-
-v13.16 showed exact Markovity is not selected by the existing ontology, but small separator CMI gives certified recoverability with natural `O(sqrt(CMI))` scaling.
-
-v13.17 propagated recoverability into explicit BKM metric, polar transport, nonmetricity, and holonomy error bars on faithful, polar-gapped strata.
-
-v13.18 extended the same control to the source-response jet, with conditional `O(||P|| sqrt(CMI))` QMAR-jet locality.
-
-v13.19 closed finite-scale patch composition: value-level transport/cocycle/nonmetricity errors accumulate at most linearly in path length, while holonomy-jet error can genuinely scale quadratically.
-
-v13.20 now converts those path-length bounds into exact continuum threshold exponents.
-
-## Latest new result — v13.20
-
-Let
+The primary blind telemetry streams are:
 
 ```text
-I(h) ~ h^alpha
-gamma(h) ~ h^beta
-||P(h)|| ~ h^sigma
-Lambda(h)=||dot O_e|| ~ h^lambda
-m(h) ~ L/h.
+I(h)
+gamma(h)
+mu(h)
+epsilon(h)
+eta(h)
+Lambda(h)
+||P_h||
 ```
 
-Then the recovered edge transport error scales as
+Primary recovery is the faithful-state Petz map fixed before data. The same source is applied to the true and recovered states. No rotated-Petz optimization, separator retuning, source rescaling, or target-dependent refinement continuation is allowed.
+
+The preserved v13.20 information-theoretic thresholds are:
 
 ```text
-epsilon(h) = O(h^(alpha/2-beta))
+value bounded:
+alpha_min >= 2 beta_max + 2
+
+jet bounded:
+alpha_min >= 4 beta_max + 2 - 2 sigma_min
+alpha_min >= 2 beta_max + 4 - 2 lambda_min
 ```
 
-and the edge QMAR-jet error as
+An independent direct-error score is also frozen:
 
 ```text
-eta(h) = O(h^(alpha/2+sigma-2beta)).
+p_epsilon_min >= 1
+p_eta_min >= 1
+p_epsilon_min + lambda_min >= 2
 ```
 
-Therefore the macroscopic value-level atlas error scales as
+Protocol SHA-256:
 
 ```text
-E_value(h) = O(h^(alpha/2-beta-1)),
+b46bec9868fd8c71a2789801d4d9eca733e187608b8f364b99721cfafd24227b
 ```
 
-so boundedness requires
+## Execution boundary
+
+Repository audit found no pre-existing genuine ancestry-linked nested quantum-state family `rho_h` with a target-independent coarse-graining/restriction law and source continuation suitable for RATS.
+
+Therefore:
 
 ```text
-alpha >= 2 beta + 2,
+RATS protocol: FROZEN / HASHED
+RATS execution: BLOCKED
+refinement telemetry generated: NO
+continuum recoverability atlas: NOT CERTIFIED
 ```
 
-and vanishing requires strict inequality.
+This is a trust-preserving stop. Inventing a quantum refinement continuation after seeing the v13.20 thresholds would confound the continuum test with the desired outcome.
 
-The two macroscopic jet terms scale as
-
-```text
-h^(alpha/2+sigma-2beta-1)
-h^(alpha/2-beta+lambda-2).
-```
-
-Thus a bounded QMAR response atlas requires
-
-```text
-alpha >= max(
-  4 beta + 2 - 2 sigma,
-  2 beta + 4 - 2 lambda
-).
-```
-
-For the conservative stable-gap, bounded-source, O(1)-edge-jet case
-
-```text
-beta=0, sigma=0, lambda=0,
-```
-
-we obtain:
-
-```text
-value atlas bounded: alpha >= 2
-value atlas vanishes: alpha > 2
-QMAR jet atlas bounded: alpha >= 4
-QMAR jet atlas vanishes: alpha > 4.
-```
-
-If the true edge connection jet itself scales as `O(h)` (`lambda=1`), the stable-gap jet threshold can fall to `alpha>=2`, but that smooth-edge scaling is not assumed and must be measured or derived.
-
-## Archived refinement comparison
-
-The controlled v12.70 smooth Hodge family showed an approximately `h^1.967` decay for a different Hodge-ambiguity observable. It is not a CMI exponent.
-
-The later frozen ADM-7 refinement at `N=7,14,28,56` failed its own predeclared ACR gate (`p_H=-0.1975`, `p_R=0.7197`, N56 high-band fraction `0.9604`). Those are important negative continuum controls but do not measure `alpha` or `beta` in the recoverability atlas.
+The older ADM-7 refinement family does not solve this problem: it is a current/carrier refinement experiment rather than a nested quantum-state family, and its frozen continuation failed its own ACR gate.
 
 ## Open boundaries
 
@@ -133,24 +100,24 @@ The later frozen ADM-7 refinement at `N=7,14,28,56` failed its own predeclared A
 - Approximate locality is certified only on recoverable, faithful, polar-gapped strata.
 - Support and polar singular boundaries prevent uniform locality.
 - Pairwise local validity does not imply global cocycle closure.
-- The continuum threshold theorem is derived, but the required refinement exponents `alpha`, `beta`, `sigma`, and `lambda` have not been measured on a genuine nested recoverability family.
-- Continuum recoverability-atlas stability is therefore not certified.
+- The continuum threshold theorem is derived, but the required nested quantum refinement law is not.
+- RATS is sealed but cannot yet be executed without circularly inventing that law.
 - Geometry-only autonomous evolution remains obstructed by hidden completion.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
 - Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.21
+## Next gate — v13.22
 
-Freeze **RATS — Recoverability Atlas Telemetry Scaling** as a blind refinement protocol.
+Derive or recover **Quantum Refinement Naturality / Nested-State Law**.
 
-Required matched telemetry:
+The law must provide a target-blind relation between `rho_h` and `rho_(h/2)` that:
 
-- separator `I(h)`;
-- polar singular floor `gamma(h)`;
-- faithfulness floor `mu(h)`;
-- recovered edge transport error `epsilon(h)`;
-- recovered edge QMAR-jet error `eta(h)`;
-- true edge response scale `Lambda(h)`.
+1. supplies explicit ancestry;
+2. preserves the declared physical source geometry;
+3. commutes appropriately with retained-observable restriction;
+4. preserves positivity and normalization;
+5. composes consistently across repeated refinement;
+6. contains no RATS/CMI/pass-fail target in its derivation.
 
-The physical patch/source geometry, restriction maps, and v13.20 exponent thresholds must be fixed before generating or scoring the refinement data.
+Only after that law closes may the already-frozen v13.21 RATS protocol be executed.
