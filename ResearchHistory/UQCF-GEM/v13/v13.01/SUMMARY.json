@@ -1,0 +1,89 @@
+{
+  "version": "v13.01",
+  "gate": "Metric-Origin Branch Stop / Minimal Ensemble Axiom and HLCB Dependency Gate",
+  "classification": "V1301_METRIC_ORIGIN_BRANCH_STOPPED__LOCAL_SMI_CLOSES_CONDITIONALLY_ON_THE_MINIMAL_SCORE_ENSEMBLE_INPUT_BECAUSE_q_IS_GENERATED_ON_THE_SAME_SCORE_SOLDER_FIBER__UNKNOWN_UNIVERSAL_METRIC_SCALE_DOES_NOT_BLOCK_LEVI_CIVITA_OR_TORSION_TESTS__BUT_EDGEWISE_q_TRANSPORT_COMPATIBILITY_WITH_THE_RETAINED_OIJ_IS_AN_INDEPENDENT_MISSING_BRIDGE__ONCE_QTC_HOLDS_THE_CARTAN_TORSION_TEST_IS_COFRAME_GAUGE_INVARIANT_AND_HLCB_REDUCES_EXACTLY_TO_TFHC",
+  "metric_origin_freeze": {
+    "CSEL_origin": "EXHAUSTED_IN_CURRENT_BKM_NATURALITY_STACK",
+    "minimal_explicit_metric_input": {
+      "name": "MEA — Minimal Ensemble Axiom",
+      "shape_clause": "BIFL: physical score second moment is isotropic under the full BKM isometry group, so q_i is proportional to K_i^-1",
+      "normalization_clause": "one universal positive per-protected-source second-moment constant c_*",
+      "formula": "q_i=c_* K_i^-1"
+    },
+    "status": "EXPLICIT_CONDITIONAL_INPUT_NOT_DERIVED"
+  },
+  "local_SMI": {
+    "statement": "Because v12.99 SSQRT constructs q directly as a quadratic form on the same RESA solder fiber, MEA-selected q is already on the matched retained germ. Choosing e with e^T e=q is then a coframe representation, not an independent identification ansatz.",
+    "symmetric_sqrt_error": 6.981396299351345e-15,
+    "rotated_coframe_same_q_error": 7.331465994732192e-15,
+    "status": "CLOSED_CONDITIONAL_ON_MEA_AT_LOCAL_GERM_LEVEL"
+  },
+  "QTC": {
+    "name": "QTC — Quadratic Transport Compatibility",
+    "orientation_convention": "O_ij maps V_j to V_i; metric compatibility is q_j=O_ij^T q_i O_ij",
+    "positive_control": {
+      "qtc_error": 0.0,
+      "BKM_K_transport_error": 3.610934318158584e-16,
+      "q_orthonormal_transport_error": 1.139339632589015e-15,
+      "coframe_gauge_relation_error": 2.37549462997806e-16,
+      "coframe_gauge_orthogonality_error": 1.0076996588596933e-15
+    },
+    "negative_control": {
+      "relative_qtc_error": 0.17705817366657267,
+      "normalized_spectral_shape_gap": 0.05581975898826141,
+      "induced_transport_orthogonality_defect": 0.35960716344126387
+    },
+    "theorem": "Local MEA/BIFL selection at each vertex does not imply that neighboring score metrics are related by the retained O_ij. If QTC holds, the induced transport S_i O_ij S_j^-1 is orthogonal in q-orthonormal frames; if QTC fails, no coframe gauge can repair generic spectral-shape mismatch.",
+    "status": "NOT_DERIVED"
+  },
+  "normalization_role": {
+    "universal_constant_scale": {
+      "induced_transport_error": 2.607399605677454e-16,
+      "Levi_Civita_Gamma_error": 1.5700924586837752e-16,
+      "meaning": "A global/universal positive constant c_* cancels from q-orthonormal transport and leaves the Levi-Civita connection unchanged."
+    },
+    "state_or_node_dependent_scale": {
+      "Gamma_defect": 0.5844860752789096,
+      "discrete_transport_orthogonality_defect": 2.721794126179663,
+      "meaning": "A varying normalization is geometric: it changes the connection and generically creates a Weyl/non-metric contribution."
+    },
+    "HLCB_dependency": "The numerical value of a universal c_* is not needed to test connection equality/torsion zero. Universality/constancy is needed; absolute scale remains needed for physical distance and dimensional curvature normalization."
+  },
+  "coframe_gauge_theorem": {
+    "LC_torsion_norm": 0.0,
+    "x_dependent_gauge_torsion_norm": 1.5706469587626117e-16,
+    "torsion_covariance_error": 1.5706469587626117e-16,
+    "contorsion_torsion_norm": 0.35053505140856417,
+    "contorsion_torsion_norm_after_gauge": 0.35053505140856417,
+    "contorsion_covariance_error": 1.5706469587626117e-16,
+    "theorem": "For e'=R e and omega'=R omega R^-1-dR R^-1, Cartan torsion transforms as T'=R T. Hence TFHC T=0 is independent of square-root/coframe gauge; nonzero contorsion cannot be hidden by choosing a different q-orthonormal frame."
+  },
+  "HLCB_dependency_reduction": {
+    "local_metric_selection": "MEA/BIFL (absolute c_* value optional for connection test if universal)",
+    "edge_metric_connection_identification": "QTC",
+    "final_connection_test": "TFHC: T=de+omega_R wedge e=0",
+    "theorem": "MEA + QTC makes the relational connection a genuine O(3) connection on the selected q-orthonormal frame bundle. HLCB then reduces exactly to TFHC. If TFHC passes, omega_R=omega_LC(q); if it fails, the surviving antisymmetric defect is contorsion.",
+    "status": "HLCB_CAN_PROCEED_CONDITIONALLY_WITHOUT_REOPENING_METRIC_ORIGIN"
+  },
+  "branch_stop": {
+    "metric_origin_search": "STOP",
+    "do_not_reopen_without": "new ensemble/source-statistics primitive or external evidence",
+    "reason": "v13.00 exhausted current BKM/naturality selection and v13.01 isolates the only downstream metric requirement relevant to the connection bridge as QTC, not further ensemble searching."
+  },
+  "status": {
+    "MEA": "EXPLICIT_CONDITIONAL_INPUT_NOT_DERIVED",
+    "local_SMI": "CLOSED_CONDITIONAL_ON_MEA",
+    "QTC": "NOT_DERIVED",
+    "TFHC": "NOT_DERIVED",
+    "HLCB": "OPEN_BUT_NOW_REDUCED_TO_QTC_PLUS_TFHC_AFTER_MEA",
+    "absolute_metric_scale_for_HLCB": "NOT_REQUIRED_IF_UNIVERSAL_CONSTANT",
+    "absolute_metric_scale_for_physical_observables": "OPEN_REQUIRED",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false
+  },
+  "next_gate": {
+    "version": "v13.02",
+    "name": "Quadratic Transport Compatibility Origin / BKM-Holonomy Naturality Gate",
+    "question": "Does the retained pair transport O_ij naturally intertwine the local BKM score metrics K_i,K_j so that K_j=O_ij^T K_i O_ij (equivalently q_j=O_ij^T q_i O_ij under universal MEA scale)? If not, measure the induced non-metricity defect and stop any Levi-Civita identification before TFHC."
+  }
+}
