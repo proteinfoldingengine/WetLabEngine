@@ -60,6 +60,7 @@ def main():
         written.update(save_animation(data, args.output_dir, fps=args.fps, make_gif=True, make_mp4=not args.gif_only))
 
     print("V13.27 GRAVITY PROGRESS SIMULATION")
+    print("scientific_fingerprint:", data["scientific_fingerprint"])
     print("telemetry_hash:", data["telemetry_hash"])
     print("min_state_eigenvalue:", f"{data['summary']['min_state_eigenvalue']:.6e}")
     print("min_bkm_eigenvalue:", f"{data['summary']['min_bkm_eigenvalue']:.6e}")
