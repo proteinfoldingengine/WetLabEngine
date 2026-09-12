@@ -1,0 +1,111 @@
+{
+  "version": "v13.10",
+  "gate": "Hidden-Completion Source Rigidity / Holonomy-Phase Preservation Gate",
+  "classification": "V1310_FROZEN_LEDGER_HCPR_NONFACTORIZATION_THEOREM__RIGID_AND_PHASE_DRIFTING_POSITIVE_COMPLETIONS_HAVE_IDENTICAL_INITIAL_ONE_TWO_BODY_DATA_IDENTICAL_BKM_METRICS_POLAR_TRANSPORT_GAMMA_R_F2_F3_W1_W2_W3_JR_AND_ATLAS_SCHEMA_PROJECTION_BUT_DIFFERENT_SOURCE_RESPONSE_JETS_AND_HCPR_VERDICTS__W2_W3_ARE_CERTIFICATES_NOT_SELECTORS__SGOD_F3_DIAGNOSES_CONNECTION_DIVERGENCE_AFTER_IT_OCCURS_BUT_CANNOT_SELECT_THE_RIGID_INITIAL_COMPLETION__HCPR_IS_IRREDUCIBLE_RELATIVE_TO_THE_CURRENT_FROZEN_LEDGER",
+  "initial_equivalence": {
+    "min_eigenvalue_rigid": 0.07175000000000002,
+    "min_eigenvalue_hidden": 0.07175000000000002,
+    "max_one_body_difference": 0.0,
+    "max_two_body_difference": 0.0,
+    "max_BKM_metric_difference": 0.0,
+    "max_connected_pair_difference": 0.0,
+    "max_polar_transport_difference": 0.0,
+    "initial_F3_difference": 0.0,
+    "frozen_ledger_digest": "7238ccc20a0a74f563a60f82fccd35427053c7046b92271a1cafc2c44de26c81",
+    "schema_complete_projection_identical": true
+  },
+  "hidden_discriminator": {
+    "Ghidden_expectation_rigid": 0.0,
+    "Ghidden_expectation_hidden": 0.017999999999999995,
+    "difference": 0.017999999999999995,
+    "meaning": "A genuine three-body completion observable distinguishes the states, but it is absent from the frozen local/pair provenance ledger."
+  },
+  "source_response_jet": {
+    "epsilon": 0.0001,
+    "rigid": {
+      "max_edge_transport_jet_norm": 1.513707591911805e-11,
+      "holonomy_jet_norm": 2.4794470495769483e-11,
+      "F3_jet_norm": 2.4794470495769483e-11,
+      "fixed_RESA_closure_jet_norm": 7.142680465120771e-12
+    },
+    "hidden": {
+      "max_edge_transport_jet_norm": 0.0907979585529481,
+      "holonomy_jet_norm": 0.27239387564109757,
+      "F3_jet_norm": 0.2196569180411253,
+      "fixed_RESA_closure_jet_norm": 0.13359956206388054
+    },
+    "minimal_missing_datum": "source-conditioned hidden completion response jet J_P = d Gamma_R[E_s^P(rho)]/ds at s=0, or an equivalent higher-order completion law"
+  },
+  "future_diagnostic": {
+    "flow_rows": [
+      {
+        "s": 0.1,
+        "holonomy_matrix_difference": 0.027256745014962037,
+        "F3_difference": 0.022087913424284907,
+        "fixed_RESA_closure_rigid": 1.3943026601793246e-14,
+        "fixed_RESA_closure_hidden": 0.013385643665251426
+      },
+      {
+        "s": 0.4,
+        "holonomy_matrix_difference": 0.10776464586410708,
+        "F3_difference": 0.0885816780198357,
+        "fixed_RESA_closure_rigid": 1.3505191148789334e-14,
+        "fixed_RESA_closure_hidden": 0.05312866248434053
+      },
+      {
+        "s": 0.8,
+        "holonomy_matrix_difference": 0.20603242726230786,
+        "F3_difference": 0.172233833208372,
+        "fixed_RESA_closure_rigid": 1.3336200274452876e-14,
+        "fixed_RESA_closure_hidden": 0.1020778957318542
+      }
+    ],
+    "theorem": "SGOD-F3 becomes different after the source makes the boundary connection different. It is therefore a valid diagnostic of the resulting geometry, not a selector of the initially hidden completion."
+  },
+  "W2_W3_audit": {
+    "role": "admissibility/provenance certificates",
+    "selector_role": false,
+    "reason": "Their frozen signatures compose source/support/order/generated-algebra/edge-witness data and do not include a source-conditioned hidden-completion response jet or future rigidity predicate.",
+    "conclusion": "W2/W3 may certify either supplied admissible completion/history; they do not choose the one with future phase rigidity."
+  },
+  "atlas_audit": {
+    "initial_atlas_same": true,
+    "reason": "The initial local generated-algebra signatures and Gamma_R edge transitions are identical in the executed pair, so all atlas/cocycle data built from them agree.",
+    "conclusion": "Atlas closure is a consistency property, not hidden-completion source-response selection."
+  },
+  "nonfactorization": {
+    "ledger_digest_rigid": "7238ccc20a0a74f563a60f82fccd35427053c7046b92271a1cafc2c44de26c81",
+    "ledger_digest_hidden": "7238ccc20a0a74f563a60f82fccd35427053c7046b92271a1cafc2c44de26c81",
+    "ledger_identical": true,
+    "HCPR_rigid_verdict": "RIGID_IN_EXECUTED_SOURCE_SECTOR",
+    "HCPR_hidden_verdict": "PHASE_DRIFTING",
+    "logic": "If a selector/verdict factors only through the initial frozen ledger L, then L(rho_rigid)=L(rho_hidden) forces equal verdicts. Executed verdicts differ. Therefore HCPR does not factor through the initial frozen ledger."
+  },
+  "law_freeze": {
+    "name": "HCPR — Hidden-Completion Phase Rigidity",
+    "status": "IRREDUCIBLE_RELATIVE_TO_CURRENT_FROZEN_LEDGER",
+    "required_new_content": "A source-conditioned higher-order completion law or observable that determines/constraints the hidden response jet so polar phase, holonomy, and solder relations are preserved when the LC sector is intended.",
+    "branch_stop": "Do not continue searching W2/W3, SGOD-F3, or atlas closure for HCPR selection unless the ontology is extended with a hidden-completion-sensitive field."
+  },
+  "adjudication": {
+    "W2_W3_select_rigid_completion": false,
+    "SGOD_F3_selects_rigid_completion": false,
+    "atlas_closure_selects_rigid_completion": false,
+    "frozen_ledger_diagnoses_post_source_drift": true,
+    "HCPR_derivable_from_current_frozen_ledger": false,
+    "HCPR": "IRREDUCIBLE_RELATIVE_TO_CURRENT_ARCHITECTURE"
+  },
+  "status": {
+    "HCPR_origin_search": "STOP",
+    "LCSP": "PARTIAL_CONDITIONAL_ONLY",
+    "generic_metric_affine_parent": "REMAINS",
+    "Levi_Civita_source_sector": "REQUIRES_NEW_HIDDEN_COMPLETION_LAW",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false
+  },
+  "next_gate": {
+    "version": "v13.11",
+    "name": "Metric-Affine Source Response / Nonmetricity-Torsion Dynamics Gate",
+    "question": "Return to the generic metric-affine parent. Without forcing Q=T=0, determine whether the already-derived BKM source response, polar transport, solder closure defect, and curvature provide a canonical atemporal response system for the source-induced evolution of nonmetricity and torsion-like structure. Identify any field-equation or conservation law that is derived rather than imposed."
+  }
+}
