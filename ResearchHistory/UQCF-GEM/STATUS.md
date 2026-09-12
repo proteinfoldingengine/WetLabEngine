@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.13 — Hidden-Completion Response State / Minimal Markov Closure Gate  
-**Next gate:** v13.14 — Symmetry-Reduced Sufficient State / Schur-Weyl ETL Closure Gate
+**Latest completed gate:** v13.14 — Symmetry-Reduced Sufficient State / Schur-Weyl ETL Closure Gate  
+**Next gate:** v13.15 — Relational Locality / Sparse Source Closure Gate
 
 ## Current scientific picture
 
@@ -16,25 +16,37 @@ v13.11 derived a conditional first-order Quantum Metric-Affine Response operator
 
 v13.12 showed that shear nonmetricity response and retained holonomy/curvature response are independent first-order channels.
 
-v13.13 now identifies how much hidden quantum state is required to make those response channels autonomous.
+v13.13 proved that no fixed finite body-order moment truncation gives exact ETL/PGRL response autonomy uniformly in system size.
 
-## Latest new result — v13.13
+v13.14 now closes the global-symmetry compression question for the current source classes.
 
-The v13.10 chiral three-body scalar is **not** a sufficient hidden response coordinate. Two positive three-qubit states were constructed with identical one-body data, identical two-body data, and identical chiral scalar, yet the same radial PGRL source produced QMAR response-vector gap `0.147782874952`.
+## Latest new result — v13.14
 
-At a generic faithful three-qubit point, the sensitivity map from the 27-dimensional weight-three Pauli hidden sector into the complete nine-local-source QMAR response had rank **27/27**. Thus every independent three-body hidden direction is locally visible to source response even though all one/two-body geometry is held fixed.
+Schur-Weyl compression remains exact only when the state and source both respect the corresponding symmetry algebra.
 
-For fixed `N=3`, adding all 27 weight-three moments reconstructs the full density matrix; exact QMAR closure is therefore recovered only as **full-state tomography**, not as a lower-dimensional geometric closure.
-
-An exact ETL/PGRL hierarchy no-go was also proved. For arbitrary finite `k`, the commuting positive states
+The exchange/permutation commutant is an exact ETL-invariant sector, but it has Catalan dimension and remains exponential. Adding collective frame generators enlarges the exact invariant algebra to the total-spin block algebra
 
 ```text
-rho_± = 2^-N (I ± epsilon Z_1...Z_N),  N=k+1
+direct_sum_J End(V_J tensor M_J)
 ```
 
-agree on every Pauli moment through weight `k`, but under the one-body source `P=Z_N` the retained observable `O=Z_1...Z_k` has source derivative `±epsilon`. Therefore no fixed finite body-order Pauli-moment truncation is autonomous uniformly in system size.
+with exact dimension
 
-Product/factorized closure also fails: a generic two-body ETL source produces a connected-correlation derivative norm `1.01215490054` from an initially product state with connected-correlation norm at machine zero.
+```text
+D_N = binom(2N,N) * (3N-1)/(2N-1)
+```
+
+and asymptotic scaling
+
+```text
+D_N ~ (3/(2 sqrt(pi))) * 4^N / sqrt(N).
+```
+
+This remains exponential.
+
+More decisively, total-J block data are not sufficient for the actual site-resolved QMAR source class. At `N=3`, two positive states with identical total-J block projection have projected ETL response gap `0.0533333334` under the same site-local source.
+
+A single site-local Pauli also couples total-J sectors and collapses the commutant center to scalars for every tested `N=2..8`. By finite-dimensional double-commutant/Burnside reasoning, the generated unital *-algebra is then the full operator algebra. Thus exact Schur-Weyl compression disappears once the retained source/geometry class includes site-resolved frame observables.
 
 ## Open boundaries
 
@@ -44,13 +56,17 @@ Product/factorized closure also fails: a generic two-body ETL source produces a 
 - HCPR remains irreducible relative to the frozen ledger.
 - Shear and curvature response remain independent channels.
 - QMAR is autonomous on the full quantum state, not on a fixed finite local-moment truncation.
+- Exchange/collective symmetry gives exact restricted-sector closures but not a polynomial or fixed-size state.
+- Generic site-local QMAR destroys exact Schur-Weyl compression.
 - RCCL or an equivalent exact correlation lifting/closure law remains not derived.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
 - Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.14
+## Next gate — v13.15
 
-Test whether permutation / collective-SU(2) structure can compress the full hidden completion into an exact **symmetry-reduced sufficient state** for the relevant ETL/PGRL source class.
+Test whether **relational locality**, rather than global symmetry, can provide the missing exact compression.
 
-Audit Schur-Weyl block data, collective-spin irreps, and permutation-algebra coordinates. If exact closure requires symmetry blocks whose dimension still grows with system size, quantify the scaling rather than calling it a finite geometric closure.
+Audit bounded-degree and sparse source graphs, tree/chordal structures, separator width, and whether an edge-local QMAR response depends only on a finite relational neighborhood or on hidden completion arbitrarily far away.
+
+If exact closure scales with graph separator/treewidth instead of total system size, that is the first remaining route to a nontrivial exact geometric sufficient state.
