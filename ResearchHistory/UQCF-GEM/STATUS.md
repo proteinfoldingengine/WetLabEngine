@@ -1,49 +1,53 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.09 — Symmetry-Origin / Einstein-Sector Source Selection Gate  
-**Next gate:** v13.10 — Hidden-Completion Source Rigidity / Holonomy-Phase Preservation Gate
+**Latest completed gate:** v13.10 — Hidden-Completion Source Rigidity / Holonomy-Phase Preservation Gate  
+**Next gate:** v13.11 — Metric-Affine Source Response / Nonmetricity-Torsion Dynamics Gate
 
 ## Current scientific picture
 
-The generic retained geometry is most honestly organized as a **metric-affine parent** once a selected metric and retained connection are supplied:
+The generic retained geometry remains most honestly organized as a **metric-affine parent** once a selected metric and retained connection are supplied:
 
 ```text
 Gamma = Gamma_LC + K(T) + L(Q)
 ```
 
-The Levi-Civita / Einstein-compatible geometric sector is the special sector `Q=0, T=0`. This sector is nonempty and can retain nonzero holonomy/curvature; however it is not invariant under all currently admitted retained operations.
+The Levi-Civita / Einstein-compatible geometric sector is the special sector `Q=0, T=0`. It is nonempty and can retain nonzero holonomy/curvature, but it is not generically invariant under source deformation or unconstrained refinement.
 
-## Latest new result — v13.09
+## Latest new result — v13.10
 
-Visible cyclic + axial `U(1)` symmetry is sufficient to preserve BKM metric compatibility (`Q=0`) under the tested radial source flow, but it is **not sufficient for full LCSP**.
+The HCPR origin search is closed negatively relative to the current frozen ledger.
 
-An explicit positive, cyclic, `U(1)`-invariant three-body hidden completion was constructed with **identical initial one- and two-body data** to the source-flow-rigid completion. Under the same source flow:
+The source-flow-rigid v13.08 completion and the phase-drifting v13.09 completion were shown to have:
 
-- QTC remained exact;
-- the polar phase shifted;
-- retained holonomy shifted;
-- fixed-RESA solder closure failed.
+- identical one-body marginals;
+- identical two-body marginals;
+- identical BKM metrics;
+- identical connected pair correlations;
+- identical polar transports and initial Gamma_R;
+- identical initial F2/F3;
+- identical schema-level W1/W2/W3, J_R, and atlas projections.
 
-Therefore the remaining full-source-preservation condition must constrain the hidden global completion, not merely visible pair geometry.
+Yet their source-response geometry differs immediately:
 
-### New missing law
+- rigid transport/holonomy/solder response jet is numerically zero;
+- hidden completion has nonzero transport, F3/holonomy, and solder-closure response jets.
+
+Therefore no HCPR selector can factor only through the current initial frozen ledger.
+
+### Frozen law boundary
 
 **HCPR — Hidden-Completion Phase Rigidity**
 
-A full curved LC source sector requires either:
+Status:
 
-1. hidden-completion source evolution that preserves the polar-phase relations needed by solder/holonomy geometry; or
-2. an independently derived source-to-solder / source-to-connection lift compensating the phase evolution.
+**IRREDUCIBLE RELATIVE TO THE CURRENT FROZEN LEDGER.**
 
-HCPR is currently **NOT DERIVED**.
+W2/W3 are provenance/admissibility certificates, not completion selectors. SGOD-F3 diagnoses the boundary connection after it changes but cannot predict future rigidity from identical initial Gamma_R. Atlas closure likewise certifies consistency rather than selecting a hidden source-response law.
 
-## Stabilizer results
+A future LC-preserving source theory would require new source-conditioned higher-order completion content, such as a law constraining the hidden completion response jet.
 
-- Fixed nonidentity `SO(3)` holonomy has a one-dimensional connected pointwise stabilizer (`U(1)` / holonomy-axis generator).
-- The v13.08 1D abelian source line saturates that fixed-curved-holonomy stabilizer bound.
-- In a flat isotropic control (`H=I`), the stabilizer enlarges to three dimensions and a collective non-Abelian `su(2)`-type source algebra can preserve the tested LC conditions.
-- This is a retained-architecture stabilizer result, not a claim that physical gravity breaks an SU(2) symmetry.
+The HCPR origin search is therefore **STOPPED**.
 
 ## Open boundaries
 
@@ -52,18 +56,23 @@ HCPR is currently **NOT DERIVED**.
 - Continuum nonmetricity regularity requires SMRRL/SMAVT; `Q -> 0` requires QZL or equivalent.
 - Continuum torsion closure remains conditional; discrete solder nonclosure is only a torsion-like precursor.
 - Generic LCSP / SCLL is not derived.
-- HCPR is not derived.
+- HCPR is irreducible relative to the present frozen ledger.
 - Physical stress-energy identification is open.
 - Full Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.10
+## Next gate — v13.11
 
-Audit whether retained higher-order information already distinguishes the source-flow-rigid and phase-drifting hidden completions despite identical initial one/two-body data:
+Return to the **generic metric-affine parent** rather than continuing to force the Levi-Civita sector.
 
-- W2/W3 provenance/history,
-- SGOD-F3 boundary observables,
-- global atlas/history structure,
-- other already-retained higher-order invariants.
+Use the already-derived:
 
-If those objects select the rigid completion without target fitting, HCPR may be derivable. If not, freeze HCPR as a new irreducible source-to-hidden-geometry law.
+- PGRL/BKM source response;
+- discrete and continuum nonmetricity channel;
+- polar retained connection;
+- solder closure / torsion-like channel;
+- retained holonomy / curvature.
+
+Test whether source-induced `Q` and torsion-like structure obey any canonical atemporal response or conservation equation that follows from the current architecture.
+
+Success requires a derived metric-affine response law, not a fitted projection back to GR.
