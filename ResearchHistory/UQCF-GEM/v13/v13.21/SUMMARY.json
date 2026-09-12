@@ -1,0 +1,53 @@
+{
+  "version": "v13.21",
+  "gate": "Recoverability Atlas Telemetry / Blind Refinement Protocol Gate",
+  "protocol_sha256": "b46bec9868fd8c71a2789801d4d9eca733e187608b8f364b99721cfafd24227b",
+  "principal_result": "RATS is frozen as a blind, target-independent refinement experiment. The primary score uses canonical faithful-state Petz recovery, six matched telemetry streams I(h), gamma(h), mu(h), epsilon(h), eta(h), Lambda(h), source norm telemetry, and the exact v13.20 thresholds. A second direct-error score independently requires p_epsilon>=1, p_eta>=1, and p_epsilon+lambda>=2 for bounded macroscopic value/jet composition. The current repository does not contain a genuine ancestry-linked nested quantum-state family with a pre-existing coarse-graining/source-continuation law, so no refinement data are generated. Execution is blocked rather than inventing a continuation inside the scoring gate.",
+  "execution": {
+    "protocol_frozen": true,
+    "protocol_hashed_before_data": true,
+    "refinement_telemetry_generated": false,
+    "reason": "BLOCKED_BY_MISSING_PREEXISTING_NESTED_QUANTUM_STATE_AND_COARSE_GRAINING_FAMILY"
+  },
+  "frozen_primary_thresholds": {
+    "information_value_bounded": "alpha_min >= 2 beta_max + 2",
+    "information_jet_bounded": "alpha_min >= max(4 beta_max + 2 - 2 sigma_min, 2 beta_max + 4 - 2 lambda_min)",
+    "direct_value_bounded": "p_epsilon_min >= 1",
+    "direct_jet_bounded": "p_eta_min >= 1 and p_epsilon_min + lambda_min >= 2"
+  },
+  "architecture_audit": {
+    "version": "v13.21",
+    "repository": "proteinfoldingengine/WetLabEngine",
+    "audit_result": "NO_GENUINE_MATCHED_RATS_REFINEMENT_FAMILY_FOUND_IN_CURRENT_V13_ARCHITECTURE",
+    "evidence": [
+      "v13.15-v13.20 provide exact theorems, finite-dimensional controls, and synthetic scaling checks, but no ancestry-linked rho_h family with a pre-existing coarse-graining CPTP/restriction map.",
+      "Repository code search for a nested Petz/recoverability refinement generator, ancestry map, or fixed source continuation returned no matching implementation.",
+      "v12.73 supplies a matched ADM-7 current refinement family, but its objects are currents/carriers and Hodge/restriction diagnostics, not the v13 RATS quantum telemetry I(h), gamma(h), mu(h), epsilon(h), eta(h), Lambda(h).",
+      "The v12.73 frozen carrier continuation failed its own ACR gate, so it cannot be silently repurposed as a positive quantum-state refinement bridge."
+    ],
+    "forbidden_substitutions": [
+      "independent random quantum states at each h",
+      "copying or tensoring a coarse state by hand solely to create a desired exponent",
+      "choosing separator width after inspecting CMI",
+      "choosing a rotated/optimized recovery map after inspecting epsilon or eta",
+      "reusing ADM-7 current exponents as CMI/polar-gap exponents"
+    ],
+    "execution_status": "BLOCKED_BY_MISSING_PREEXISTING_NESTED_QUANTUM_STATE_AND_COARSE_GRAINING_FAMILY",
+    "scientific_meaning": "The protocol is executable once a target-blind nested quantum refinement law exists. Inventing that law inside the scoring gate would confound the continuum test with the desired outcome."
+  },
+  "adjudication": "PROTOCOL_FROZEN_EXECUTION_BLOCKED",
+  "status": {
+    "RATS_PROTOCOL": "FROZEN_HASHED",
+    "RATS_EXECUTION": "BLOCKED_MISSING_GENUINE_NESTED_QUANTUM_REFINEMENT_FAMILY",
+    "V13_20_THRESHOLDS": "PRESERVED_UNCHANGED",
+    "CONTINUUM_RECOVERABILITY_ATLAS": "NOT_CERTIFIED",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "TRUST_PRESERVING_PROTOCOL_FREEZE_AND_EXECUTION_BOUNDARY"
+  },
+  "next_gate": {
+    "version": "v13.22",
+    "name": "Quantum Refinement Naturality / Nested-State Law Gate",
+    "question": "Derive or recover a target-blind refinement/coarse-graining law for the pre-time quantum state itself. It must supply ancestry-linked rho_h, commute appropriately with restriction on retained observables, preserve source geometry, and be defined without reference to RATS pass/fail outcomes. Only after that law closes may the frozen v13.21 RATS protocol be executed."
+  }
+}
