@@ -1,0 +1,111 @@
+{
+  "version": "v13.14",
+  "gate": "Symmetry-Reduced Sufficient State / Schur-Weyl ETL Closure Gate",
+  "classification": "V1314_SCHUR_WEYL_COMPRESSION_CLOSES_ETL_EXACTLY_ONLY_ON_SYMMETRY_INVARIANT_SOURCE_STATE_ALGEBRAS__THE_SCALAR_EXCHANGE_TWIRL_IS_NOT_SUFFICIENT_FOR_FRAME_ORIENTED_SITE_LOCAL_ETL_RESPONSE__ADDING_COLLECTIVE_FRAME_SOURCES_ENLARGES_THE_EXACT_INVARIANT_ALGEBRA_TO_TOTAL_SPIN_J_BLOCKS_WITH_DIMENSION_BINOM_2N_N_TIMES_3N_MINUS1_OVER_2N_MINUS1_ASYMPTOTIC_3_OVER_2SQRTPI_4N_OVERSQRTN__STILL_EXPONENTIAL__ONE_SITE_RESOLVED_PAULI_MIXES_ADJACENT_J_SECTORS_AND_COLLAPSES_THE_CENTER_COMMUTANT_TO_SCALARS_N2_THROUGH_N8_SO_BY_DOUBLE_COMMUTANT_THE_GENERATED_STAR_ALGEBRA_IS_FULL_END_H__THEREFORE_THE_SITE_RESOLVED_QMAR_GEOMETRY_SOURCE_CLASS_ELIMINATES_EXACT_SCHUR_WEYL_STATE_COMPRESSION",
+  "exchange_twirl_ETL_test": {
+    "N": 3,
+    "same_exchange_twirl_state_error": 1.1606777975696705e-16,
+    "fixed_site_source_projected_response_gap": 0.01867073883596875,
+    "covariantly_rotated_source_response_error": 8.813156620987925e-11,
+    "conclusion": "The v12.47 scalar Schur-Weyl exchange state identifies collective rotations. It is therefore insufficient for a fixed frame-oriented local ETL source, although covariance is restored if the source is rotated with the state."
+  },
+  "exchange_invariant_ETL_sector": {
+    "flow_rows": [
+      {"s": -0.4, "projection_error": 3.638162537158717e-16, "min_eig": 0.07832155774479853},
+      {"s": -0.1, "projection_error": 3.513631359352958e-16, "min_eig": 0.09411276129452449},
+      {"s": 0.2, "projection_error": 4.1657279337321575e-16, "min_eig": 0.08192293443100648},
+      {"s": 0.5, "projection_error": 4.0288382177331647e-16, "min_eig": 0.04993600046787578}
+    ],
+    "theorem": "Because the exchange commutant is a unital *-algebra closed under functional calculus, states rho and sources P both inside it remain inside it under rho_s proportional to exp(log rho+sP).",
+    "dimension": "Catalan C_N",
+    "scaling": "exponential ~ 4^N/(sqrt(pi) N^(3/2))",
+    "status": "CLOSED_EXACT_BUT_RESTRICTED_SOURCE_STATE_SECTOR"
+  },
+  "collective_plus_exchange_block_sector": {
+    "structure": "Schur-Weyl direct sum over total spin J of End(V_J tensor M_J); equivalently all operators block diagonal in total J.",
+    "dimension_rows": [
+      {"N": 2, "exchange_commutant_dim": 2, "collective_plus_exchange_block_dim": 10, "closed_form": 10, "full_operator_dim": 16, "fraction_full": 0.625},
+      {"N": 3, "exchange_commutant_dim": 5, "collective_plus_exchange_block_dim": 32, "closed_form": 32, "full_operator_dim": 64, "fraction_full": 0.5},
+      {"N": 4, "exchange_commutant_dim": 14, "collective_plus_exchange_block_dim": 110, "closed_form": 110, "full_operator_dim": 256, "fraction_full": 0.4296875},
+      {"N": 5, "exchange_commutant_dim": 42, "collective_plus_exchange_block_dim": 392, "closed_form": 392, "full_operator_dim": 1024, "fraction_full": 0.3828125},
+      {"N": 6, "exchange_commutant_dim": 132, "collective_plus_exchange_block_dim": 1428, "closed_form": 1428, "full_operator_dim": 4096, "fraction_full": 0.3486328125},
+      {"N": 7, "exchange_commutant_dim": 429, "collective_plus_exchange_block_dim": 5280, "closed_form": 5280, "full_operator_dim": 16384, "fraction_full": 0.322265625},
+      {"N": 8, "exchange_commutant_dim": 1430, "collective_plus_exchange_block_dim": 19734, "closed_form": 19734, "full_operator_dim": 65536, "fraction_full": 0.301116943359375},
+      {"N": 9, "exchange_commutant_dim": 4862, "collective_plus_exchange_block_dim": 74360, "closed_form": 74360, "full_operator_dim": 262144, "fraction_full": 0.283660888671875},
+      {"N": 10, "exchange_commutant_dim": 16796, "collective_plus_exchange_block_dim": 281996, "closed_form": 281996, "full_operator_dim": 1048576, "fraction_full": 0.2689323425292969},
+      {"N": 11, "exchange_commutant_dim": 58786, "collective_plus_exchange_block_dim": 1074944, "closed_form": 1074944, "full_operator_dim": 4194304, "fraction_full": 0.25628662109375},
+      {"N": 12, "exchange_commutant_dim": 208012, "collective_plus_exchange_block_dim": 4115020, "closed_form": 4115020, "full_operator_dim": 16777216, "fraction_full": 0.24527430534362793}
+    ],
+    "closed_form": "D_N = binom(2N,N)*(3N-1)/(2N-1)",
+    "asymptotic": "D_N ~ (3/(2 sqrt(pi))) * 4^N / sqrt(N)",
+    "asymptotic_target_scaled_fraction": 0.8462843753216345,
+    "asymptotic_rows": [
+      {"N": 20, "scaled_fraction_sqrtN": 0.8482002776560493},
+      {"N": 50, "scaled_fraction_sqrtN": 0.847013669739905},
+      {"N": 100, "scaled_fraction_sqrtN": 0.8466429760687272},
+      {"N": 200, "scaled_fraction_sqrtN": 0.8464621761445362}
+    ],
+    "N4_ETL_flow_rows": [
+      {"s": -0.3, "block_projection_error": 5.990938803229696e-16, "min_eig": 0.015271536206999413},
+      {"s": 0.1, "block_projection_error": 5.903902434621092e-16, "min_eig": 0.017617511729735084},
+      {"s": 0.4, "block_projection_error": 5.585564343964494e-16, "min_eig": 0.014388442065451805}
+    ],
+    "theorem": "This algebra contains both exchange/permutation observables and collective frame generators J_x,J_y,J_z and is closed exactly under ETL whenever both state and source lie in it.",
+    "status": "CLOSED_EXACT_STILL_EXPONENTIAL"
+  },
+  "generic_local_source_obstruction": {
+    "N3_same_J_block_projection_error": 5.0515910130503314e-17,
+    "N3_site_source_projected_response_gap": 0.05333333340250416,
+    "theorem": "Two positive states with identical total-J block projection but opposite hidden inter-J coherence have different projected ETL response under the same site-local source. Hence total-J block data are not sufficient for generic site-resolved PGRL/QMAR response."
+  },
+  "local_geometry_full_algebra_collapse": {
+    "rows": [
+      {"N": 2, "J_sector_count": 2, "center_commutant_dimension_after_local_source": 1, "cross_J_edges": [[0,1,0.9999999999999996]], "generated_algebra_dimension_by_double_commutant": 16},
+      {"N": 3, "J_sector_count": 2, "center_commutant_dimension_after_local_source": 1, "cross_J_edges": [[0,1,1.3333333333333324]], "generated_algebra_dimension_by_double_commutant": 64},
+      {"N": 4, "J_sector_count": 3, "center_commutant_dimension_after_local_source": 1, "cross_J_edges": [[0,1,1.4142135623730947],[1,2,1.5811388300841902]], "generated_algebra_dimension_by_double_commutant": 256},
+      {"N": 5, "J_sector_count": 3, "center_commutant_dimension_after_local_source": 1, "cross_J_edges": [[0,1,2.309401076758505],[1,2,1.7888543819998306]], "generated_algebra_dimension_by_double_commutant": 1024},
+      {"N": 6, "J_sector_count": 4, "center_commutant_dimension_after_local_source": 1, "cross_J_edges": [[0,1,2.2360679774997907],[1,2,3.162277660168387],[2,3,1.972026594366539]], "generated_algebra_dimension_by_double_commutant": 4096},
+      {"N": 7, "J_sector_count": 4, "center_commutant_dimension_after_local_source": 1, "cross_J_edges": [[0,1,4.0],[1,2,4.000000000000001],[2,3,2.138089935299395]], "generated_algebra_dimension_by_double_commutant": 16384},
+      {"N": 8, "J_sector_count": 5, "center_commutant_dimension_after_local_source": 1, "cross_J_edges": [[0,1,3.741657386773931],[1,2,5.916079783099634],[2,3,4.830458915396468],[3,4,2.291287847477918]], "generated_algebra_dimension_by_double_commutant": 65536}
+    ],
+    "total_J_commutator_controls": [
+      {"N": 2, "commutator_norm_sigma1z_J2": 2.8284271247461903},
+      {"N": 3, "commutator_norm_sigma1z_J2": 5.656854249492381},
+      {"N": 4, "commutator_norm_sigma1z_J2": 9.797958971132712},
+      {"N": 5, "commutator_norm_sigma1z_J2": 16.0},
+      {"N": 6, "commutator_norm_sigma1z_J2": 25.298221281347036},
+      {"N": 7, "commutator_norm_sigma1z_J2": 39.191835884530846},
+      {"N": 8, "commutator_norm_sigma1z_J2": 59.86651818838306}
+    ],
+    "theorem": "Exchange+collective generators leave total-J sectors invariant, so their commutant is the center spanned by J-sector projectors. A single site-local Pauli couples the J sectors; the only center element commuting with it is the identity. The resulting unital *-algebra therefore has scalar commutant and, by finite-dimensional double-commutant/Burnside reasoning, is full End((C^2)^tensor N) in the tested N=2..8 chain.",
+    "meaning": "Exact symmetry reduction disappears once the retained source/geometry class includes site-resolved frame observables."
+  },
+  "relationship_to_v12_47_v12_48": {
+    "v12_47": "Exchange-only Schur-Weyl sufficient state remains valid and exact.",
+    "v12_48": "Exchange-derived solder observable module preserves frame data but remains exponential.",
+    "v13_14": "ETL/PGRL sharpens the boundary: collective sources admit an exact J-block sufficient algebra, but generic site-local sources plus frame-resolved geometry generate the full operator algebra."
+  },
+  "adjudication": {
+    "exchange_twirl_sufficient_for_fixed_site_local_ETL_sources": false,
+    "exchange_commutant_ETL_closure_exact": true,
+    "collective_plus_exchange_ETL_closure_exact": true,
+    "collective_plus_exchange_scaling_polynomial": false,
+    "total_J_block_state_sufficient_for_generic_site_local_ETL": false,
+    "site_local_QMAR_exact_symmetry_compression": "COLLAPSES_TO_FULL_OPERATOR_ALGEBRA_IN_TESTED_N2_TO_N8",
+    "system_size_independent_finite_symmetry_reduced_state": false
+  },
+  "status": {
+    "RCCL_EXCHANGE": "CLOSED_EXACT_FROM_V12_47",
+    "ETL_COLLECTIVE_SYMMETRY_SECTOR": "CLOSED_EXACT_EXPONENTIAL",
+    "ETL_SITE_LOCAL_GEOMETRY_SECTOR": "NO_EXACT_SCHUR_WEYL_COMPRESSION",
+    "QMAR_GENERIC": "FULL_STATE_REQUIRED_ABSENT_NEW_CLOSURE",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_SYMMETRY_BOUNDARY_AND_FULL_ALGEBRA_NO_GO"
+  },
+  "next_gate": {
+    "version": "v13.15",
+    "name": "Relational Locality / Sparse Source Closure Gate",
+    "question": "The obstruction comes from allowing arbitrary site-resolved local sources across the whole system. Test whether the actual relational locality/support structure of the retained ontology restricts source incidence enough to yield an exact sparse/local sufficient state with complexity controlled by graph degree or separator width rather than total N. Audit tree/chordal graphs, bounded-degree source neighborhoods, and whether QMAR response at an edge depends only on a finite relational lightcone in the atemporal source graph."
+  }
+}
