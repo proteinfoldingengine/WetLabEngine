@@ -11,7 +11,6 @@ s = data["summary"]
 t = expected["structural_thresholds"]
 
 assert data["version"] == expected["version"]
-assert data["telemetry_hash"] == expected["telemetry_hash"], (data["telemetry_hash"], expected["telemetry_hash"])
 assert s["min_state_eigenvalue"] > t["min_state_eigenvalue_gt"]
 assert s["min_bkm_eigenvalue"] > t["min_bkm_eigenvalue_gt"]
 assert s["max_source_balance_residual"] < t["max_source_balance_residual_lt"]
@@ -24,5 +23,8 @@ assert s["projective_sigma_status"] == "RAY_ONLY__MAGNITUDE_NOT_DERIVED"
 assert s["RGCL"] == "MISSING"
 assert s["physical_Einstein_closure"] == "OPEN"
 
-print("V13_27_GRAVITY_PROGRESS_CHECKER_PASS")
+print("executed_summary", json.dumps(s, sort_keys=True))
 print("telemetry_hash", data["telemetry_hash"])
+assert data["telemetry_hash"] == expected["telemetry_hash"], (data["telemetry_hash"], expected["telemetry_hash"])
+
+print("V13_27_GRAVITY_PROGRESS_CHECKER_PASS")
