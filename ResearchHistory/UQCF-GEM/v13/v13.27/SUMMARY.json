@@ -1,0 +1,78 @@
+{
+  "version": "v13.27",
+  "gate": "Projective Coupled-Source / Direct kappa T Bridge Gate",
+  "classification": "V1327_DIRECT_KAPPA_T_BRIDGE_NOT_DERIVED__QUOTIENTING_THE_RSCL_T_VS_KAPPA_UNIT_GAUGE_DOES_NOT_FIX_THE_MAGNITUDE_OF_SIGMA_OBS__ALL_CURRENT_RETAINED_ONLY_STRUCTURAL_CONSTRAINTS_ARE_HOMOGENEOUS_UNDER_SIGMA_TO_C_SIGMA__QMAR_SOURCE_LINEARITY_AND_THE_PGRL_PARAMETERIZATION_GAUGE_PRESERVE_RESPONSE_DIRECTION_AND_REPARAMETERIZED_PATH_INCREMENT_WITHOUT_SELECTING_A_UNIVERSAL_SOURCE_TO_GEOMETRY_COUPLING__SCALAR_CURRENT_DATA_DO_NOT_COMPLETE_THE_FULL_SPATIAL_STRESS_BLOCK__THEREFORE_ONLY_A_PROJECTIVE_SOURCE_RAY_IS_PRESERVED_AND_A_TARGET_BLIND_RETAINED_GEOMETRIC_COUPLING_LAW_IS_MISSING",
+  "projective_nonuniqueness_theorem": {
+    "statement": "If a nonzero target-blind coupled source Sigma_1 constructed from the frozen retained data satisfies source balance, support, frame covariance, null behavior and linear first-order source-response compatibility, then Sigma_c=c Sigma_1 satisfies the same retained-only structural gates for every c>0. Without an independently calibrated geometric scalar, those conditions select at most the ray [Sigma], not its magnitude.",
+    "scope": "CURRENT_FROZEN_ONTOLOGY_ONLY",
+    "distinct_from_RSCL": "RSCL rescales T and kappa inversely while holding Sigma fixed. v13.27 exposes a second ambiguity that rescales Sigma itself and therefore represents the still-missing retained-to-geometry coupling strength.",
+    "does_not_claim": "No deeper law, source-to-coframe action, or independently calibrated observable can ever fix the coupling magnitude."
+  },
+  "fresh_projective_source_controls": {
+    "architecture": "connected 5-node / 7-edge incidence graph",
+    "generic_current_trials": 64,
+    "positive_scales": [0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0],
+    "max_source_balance_residual": 8.747542958250513e-15,
+    "max_normalized_source_ray_direction_change": 3.759830553602424e-16,
+    "support_pattern_preserved": true,
+    "meaning": "Balance, support, and normalized source direction are invariant under positive common scaling and therefore cannot select the coupled-source magnitude."
+  },
+  "QMAR_parameterization_control": {
+    "basis": "v13.11 QMAR first-order source linearity plus v13.26 PGRL gauge (P,t)->(aP,t/a)",
+    "generic_linear_response_trials": 64,
+    "source_scales": [0.2, 0.5, 1.0, 2.0, 5.0, 11.0],
+    "max_reparameterized_increment_mismatch": 3.59796202233893e-15,
+    "max_response_scaling_identity_error": 3.64802459847497e-14,
+    "max_normalized_response_direction_change": 3.6515002048796167e-16,
+    "adjudication": "QMAR fixes source-response direction/path response conditional on a declared source parameterization; it does not supply an absolute universal Sigma coupling magnitude."
+  },
+  "tensor_completion_control": {
+    "observer_split": "Sigma=[[sigma_rho,sigma_j^T],[sigma_j,Sigma_S]]",
+    "same_coupled_rho_j_projection_mismatch": 0.0,
+    "different_full_tensor_frobenius_distance": 0.7706723448211357,
+    "meaning": "Identical coupled energy/momentum constraint projections do not determine the spatial stress block and therefore do not determine the full coupled stress tensor."
+  },
+  "independent_geometric_calibration_positive_control": {
+    "calibration_equation": "z=q^T Sigma with predeclared calibrated q",
+    "true_coupling_scale": 2.7,
+    "recovered_coupling_scale": 2.6999999999999993,
+    "absolute_error": 8.881784197001252e-16,
+    "meaning": "One independent target-blind geometric calibration is sufficient in the linear ray control to fix the otherwise free coupling magnitude."
+  },
+  "archive_boundary": {
+    "QMAR": "first-order source response and covariance preserved",
+    "source_to_solder_or_coframe_response": "NOT_DERIVED",
+    "metric_affine_action": "NOT_DERIVED",
+    "stress_energy_constitutive_law": "NOT_DERIVED",
+    "controlled_source_coupled_ADM_Einstein_correspondence": "PRESERVED_AS_HELDOUT_CORRESPONDENCE_FOR_A_SUPPLIED_SOURCE_PACKAGE"
+  },
+  "missing_law": {
+    "name": "RGCL — Retained Geometric Coupling Law",
+    "statement": "Provide a target-blind map from retained/PGRL/source-current data to Sigma_obs that fixes the declared observer/geometric source type, source-to-coframe embedding, and nonzero coupling magnitude before any ADM/Einstein residual is evaluated.",
+    "status": "NOT_DERIVED"
+  },
+  "adjudication": {
+    "RSCL_no_go_preserved": true,
+    "projective_source_ray_preserved": true,
+    "unique_nonzero_Sigma_obs_derived": false,
+    "QMAR_fixes_absolute_Sigma_magnitude": false,
+    "full_kappa_T_tensor_derived_from_retained_scalar_current": false,
+    "Einstein_or_ADM_residual_may_select_coupling": false,
+    "RGCL": "MISSING"
+  },
+  "status": {
+    "PROJECTIVE_SOURCE_RAY": "PRESERVED_IDENTIFIABLE_IN_DECLARED_RETAINED_SOURCE_SPACE",
+    "DIRECT_SIGMA_OBS": "NOT_DERIVED",
+    "FULL_COUPLED_STRESS_TENSOR": "NOT_DERIVED",
+    "PHYSICAL_STRESS_ENERGY_COUPLING": "OPEN",
+    "RGCL": "NOT_DERIVED",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_PROJECTIVE_COUPLED_SOURCE_NONUNIQUENESS_THEOREM_AND_GEOMETRIC_COUPLING_BOUNDARY"
+  },
+  "next_gate": {
+    "version": "v13.28",
+    "name": "RGCL Origin / Source-to-Coframe Variational Pairing Gate",
+    "question": "Does the frozen retained ontology already contain a canonical target-blind source-to-RESA/coframe/solder pairing or equivalent intrinsic construction that fixes the coupled source type and magnitude before any ADM/Einstein residual is consulted?"
+  }
+}
