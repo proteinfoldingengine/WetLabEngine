@@ -3,7 +3,9 @@ name: UQCF v13.27 Gravity Progress Simulation
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
+      - research/v13.27-gravity-progress-demo
     paths:
       - 'ResearchHistory/UQCF-GEM/demos/v13.27-gravity-progress/**'
       - '.github/workflows/uqcf-v1327-gravity-progress.yml'
