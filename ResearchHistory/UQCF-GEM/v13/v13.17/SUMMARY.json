@@ -1,0 +1,67 @@
+{
+  "version": "v13.17",
+  "gate": "Recoverability-to-QMAR Geometric Error Propagation Gate",
+  "classification": "V1317_CERTIFIED_APPROXIMATE_GEOMETRIC_LOCALITY_ON_CONDITIONED_STRATA__GLOBAL_RECOVERY_TRACE_ERROR_CONTRACTS_TO_LOCAL_MARGINALS_AND_PROPAGATES_WITH_EXPLICIT_CONSTANTS_TO_QUBIT_BKM_METRICS_PAIR_POLAR_TRANSPORT_LINEAR_NONMETRICITY_DEFECT_AND_LOOP_HOLONOMY__ERROR_IS_O_SQRT_CMI_WITH_CONSTANTS_CONTROLLED_BY_LOCAL_FAITHFULNESS_MU_AND_PAIR_CORRELATION_SINGULAR_FLOOR_GAMMA__THE_CONSTANTS_DIVERGE_AT_SUPPORT_AND_POLAR_SINGULAR_BOUNDARIES__STATIC_SMALL_CMI_ALONE_DOES_NOT_CERTIFY_AN_ENTIRE_ARBITRARY_SOURCE_TRAJECTORY_BECAUSE_CMI_CAN_BE_AMPLIFIED_BY_NONMARKOV_COMPATIBLE_SOURCES__UNIFORM_CMI_AND_CONDITIONING_ALONG_THE_SOURCE_PATH_ARE_REQUIRED",
+  "analytic_BKM_regularities": {
+    "qubit_formula": "K(r)=a(r) I + [b(r)-a(r)] n n^T, a(r)=r/atanh(r), b(r)=1-r^2",
+    "faithfulness": "lambda_min(rho)>=mu implies |r|<=1-2mu and lambda_min(K)>=kappa=4mu(1-mu)",
+    "Lipschitz_constant_definition": "L_K(mu)=sup_{0<=r<=1-2mu}[sqrt(3)|a'(r)|+r^2|c'(r)|+2r|c(r)|], c(r)=[b(r)-a(r)]/r^2",
+    "evaluated_controls": [
+      {"mu":0.02,"Rmax":0.96,"K_eigen_floor_kappa":0.0784,"BKM_Frobenius_Lipschitz_LK":7.239763950504676},
+      {"mu":0.05,"Rmax":0.9,"K_eigen_floor_kappa":0.19,"BKM_Frobenius_Lipschitz_LK":4.187606081395928},
+      {"mu":0.1,"Rmax":0.8,"K_eigen_floor_kappa":0.36,"BKM_Frobenius_Lipschitz_LK":2.7843614132664447},
+      {"mu":0.15,"Rmax":0.7,"K_eigen_floor_kappa":0.51,"BKM_Frobenius_Lipschitz_LK":2.13280397781791},
+      {"mu":0.2,"Rmax":0.6,"K_eigen_floor_kappa":0.64,"BKM_Frobenius_Lipschitz_LK":1.6936027879202387}
+    ],
+    "random_bound_max_ratio": 0.6143241805269639
+  },
+  "polar_regularities": {
+    "connected_correlation_bound": "||C(rho)-C(sigma)||_F <= 18 T(rho,sigma)",
+    "polar_bound": "||O(C)-O(C')||_F <= 2||C-C'||_F/[sigma_min(C)+sigma_min(C')]",
+    "conditioned_result": "if both sigma_min>=gamma, ||Delta O||_F <= (18/gamma) T",
+    "random_bound_max_ratio": 0.8738147292054695
+  },
+  "geometric_error_theorem": {
+    "trace_recovery": "T(rho,recovered)<=tau(I)=sqrt(1-exp(-I(A:C|B)))",
+    "K_bound": "||Delta K_i||_F <= 2 L_K(mu) tau(I)",
+    "O_bound": "||Delta O_ij||_F <= (18/gamma) tau(I)",
+    "M_bound": "||Delta M_ij||_F <= [4 L_K(mu)+36/gamma] tau(I)",
+    "loop_holonomy_bound": "for an m-edge loop, ||Delta H||_F <= (18m/gamma) tau(I)",
+    "holonomy_product_bound_max_ratio": 0.9916465138680803,
+    "small_CMI": "all bounds scale as O(sqrt(I))"
+  },
+  "source_trajectory_boundary": {
+    "rows": [
+      {"eps":0.005,"initial_CMI":1.2500052083641577e-05,"max_amplification":32535.89400076964},
+      {"eps":0.01,"initial_CMI":5.0000833366592445e-05,"max_amplification":8134.100591271162},
+      {"eps":0.03,"initial_CMI":0.0004500675243117591,"max_amplification":903.93958407651},
+      {"eps":0.1,"initial_CMI":0.005008366846356527,"max_amplification":81.50880316151066}
+    ],
+    "theorem": "A one-slice CMI bound controls geometry at that slice but not an arbitrary source trajectory.",
+    "trajectory_certificate": "If I_s<=I_*, mu_s>=mu_*, gamma_s>=gamma_* uniformly, the explicit geometric bounds hold uniformly."
+  },
+  "adjudication": {
+    "state_recoverability_propagates_to_BKM_metric": true,
+    "state_recoverability_propagates_to_polar_transport": true,
+    "state_recoverability_propagates_to_linear_nonmetricity": true,
+    "state_recoverability_propagates_to_loop_holonomy": true,
+    "approximate_geometric_locality_O_sqrt_CMI": true,
+    "uniform_source_trajectory_from_static_CMI_only": false,
+    "uniform_source_trajectory_with_uniform_CMI_and_conditioning": true,
+    "generic_infinitesimal_QMAR_jet_bound_from_static_CMI_only": false
+  },
+  "status": {
+    "APPROXIMATE_GEOMETRIC_LOCALITY": "CLOSED_CONDITIONAL_THEOREM",
+    "ERROR_SCALING": "O_SQRT_CMI",
+    "CONDITIONING_PARAMETERS": "MU_AND_GAMMA",
+    "SOURCE_TRAJECTORY": "CERTIFIED_IF_CMI_AND_CONDITIONING_ARE_UNIFORM_ALONG_PATH",
+    "INFINITESIMAL_QMAR_JET": "OPEN_ADDITIONAL_REGULARITY",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_CERTIFIED_APPROXIMATE_GEOMETRIC_LOCALITY_THEOREM"
+  },
+  "next_gate": {
+    "version": "v13.18",
+    "name": "Source-Conditioned Recoverability / QMAR Jet Locality Gate"
+  }
+}
