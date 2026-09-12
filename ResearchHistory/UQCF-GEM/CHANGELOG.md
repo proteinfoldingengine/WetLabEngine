@@ -4,6 +4,16 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.11 — Metric-Affine Source Response / Nonmetricity-Torsion Dynamics
+
+- Derived a conditional first-order **Quantum Metric-Affine Response operator (QMAR)** from PGRL/ETL through BKM metric and polar transport differentials.
+- Verified source linearity and independent local-frame covariance of the response stack.
+- Proved the **BKM Trace-Exactness Theorem**: `tr log G_ij = log det K_i - log det K_j`, hence closed-cycle trace/Weyl nonmetricity circulation vanishes exactly and under source response.
+- Random generic 24-channel response audit found rank 23/24; the sole constant-linear null aligned exactly with the trace-cycle identity.
+- Demonstrated torsion-like response is not canonical without a source-to-solder/coframe lift.
+- Proved geometric source-response non-autonomy: identical instantaneous visible geometry can have different connection/holonomy response jets because of hidden completion.
+- No autonomous metric-affine field equation, action, stress-energy law, or Einstein equation is derived.
+
 ### v13.10 — Hidden-Completion Source Rigidity / Holonomy-Phase Preservation
 
 - Proved a **Frozen-Ledger HCPR Non-Factorization Theorem** for the executed rigid/drifting completion pair.
