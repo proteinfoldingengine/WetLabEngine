@@ -1,0 +1,82 @@
+{
+  "version": "v13.13",
+  "gate": "Hidden-Completion Response State / Minimal Markov Closure Gate",
+  "classification": "V1313_SINGLE_CHIRAL_THREE_BODY_SCALAR_INSUFFICIENT__AT_GENERIC_FIXED_N3_THE_FULL_27_DIMENSIONAL_WEIGHT3_PAULI_HIDDEN_SECTOR_IS_LOCALLY_INJECTED_INTO_ALL_LOCAL_SOURCE_QMAR_RESPONSE_JETS_RANK27_OF27_WHILE_ALL_ONE_TWO_BODY_DATA_STAY_FIXED__MOMENTS_THROUGH_WEIGHT3_RECONSTRUCT_THE_FULL_THREE_QUBIT_STATE_AND_THEREFORE_CLOSE_QMAR_EXACTLY__BUT_ETL_PGRL_HAS_AN_EXACT_COMMUTING_HIERARCHY_NO_GO_FOR_ARBITRARY_N_ANY_FIXED_K_BODY_MOMENT_TRUNCATION_CAN_BE_DEFEATED_BY_HIDDEN_KPLUS1_BODY_PARITY__PRODUCT_FACTORIZATION_IS_NOT_INVARIANT__THEREFORE_NO_SYSTEM_SIZE_INDEPENDENT_FINITE_BODY_ORDER_MARKOV_CLOSURE_EXISTS_WITHOUT_RCCL_OR_EQUIVALENT",
+  "single_chiral_scalar_test": {
+    "max_one_body_difference": 0.0,
+    "max_two_body_difference": 0.0,
+    "chiral_value_plus": -1.734723475976807e-18,
+    "chiral_value_minus": 1.734723475976807e-18,
+    "chiral_value_difference": 3.469446951953614e-18,
+    "response_gap_same_low_data_same_chiral": 0.1477828749519852,
+    "orthogonal_hidden_direction_chiral_overlap": 3.877409121342317e-26,
+    "orthogonal_hidden_direction_response_sensitivity": 24.63044140104613,
+    "result": "The v13.10 chiral scalar is a useful discriminator for one hidden direction but is not a sufficient response state."
+  },
+  "fixed_N3_hidden_rank": {
+    "hidden_weight3_dimension": 27,
+    "all_local_source_QMAR_output_dimension": 243,
+    "sensitivity_rank": 27,
+    "singular_values": [61.54037602412023,48.40546409943612,48.28235408936206,46.119587024215015,45.41397244784972,44.45901851881222,42.586849086618805,41.953733145434455,41.53968431288115,41.18764373722456,40.8082967097263,40.08548598770275,39.86600975221863,38.464140110175585,37.86046420973448,36.86023880355514,36.57811512454701,5.249947449538586,5.234357563770238,4.374392489103422,2.546760320250701,2.465176463300998,2.36096154250408,2.351526783743499,1.1820196968726782,0.07952522912337973,0.0762507593250557],
+    "condition_number": 807.0788614940166,
+    "max_low_order_difference_under_weight3_perturbations": 1.2412670766236366e-16,
+    "theorem": "At this generic faithful N=3 point, all 27 independent weight-3 Pauli hidden directions affect the complete nine-local-source QMAR response to first order. Thus no proper linear projection of the weight-3 moment sector can be generically sufficient for all these response jets near this point."
+  },
+  "fixed_N3_exact_closure": {
+    "moments_through_weight3": "complete Pauli tomography / full density state",
+    "reconstruction_error": 1.0573156040323581e-16,
+    "QMAR_response_reconstruction_error": 7.774066271635106e-10,
+    "status": "EXACT_BUT_TRIVIAL_FULL_STATE_CLOSURE",
+    "meaning": "For fixed N=3, augmenting one/two-body data by all 27 weight-3 moments reconstructs rho and makes QMAR autonomous because nothing is hidden."
+  },
+  "ETL_hierarchy_no_go": {
+    "construction": "rho_±=2^-N(I ± epsilon Z_1...Z_N), N=k+1; retained all moments through weight k; source P=Z_N; observable O=Z_1...Z_k",
+    "epsilon": 0.2,
+    "rows": [
+      {"N":2,"retained_moment_order":1,"max_low_order_Z_moment_difference":0.0,"derivative_plus":0.19999999999999996,"derivative_minus":-0.19999999999999996,"derivative_gap":0.3999999999999999},
+      {"N":3,"retained_moment_order":2,"max_low_order_Z_moment_difference":0.0,"derivative_plus":0.19999999999999996,"derivative_minus":-0.19999999999999996,"derivative_gap":0.3999999999999999},
+      {"N":4,"retained_moment_order":3,"max_low_order_Z_moment_difference":0.0,"derivative_plus":0.19999999999999996,"derivative_minus":-0.19999999999999996,"derivative_gap":0.3999999999999999},
+      {"N":5,"retained_moment_order":4,"max_low_order_Z_moment_difference":0.0,"derivative_plus":0.19999999999999996,"derivative_minus":-0.19999999999999996,"derivative_gap":0.3999999999999999},
+      {"N":6,"retained_moment_order":5,"max_low_order_Z_moment_difference":0.0,"derivative_plus":0.19999999999999996,"derivative_minus":-0.19999999999999996,"derivative_gap":0.3999999999999999},
+      {"N":7,"retained_moment_order":6,"max_low_order_Z_moment_difference":0.0,"derivative_plus":0.19999999999999996,"derivative_minus":-0.19999999999999996,"derivative_gap":0.3999999999999999}
+    ],
+    "analytic_derivative": "d_s <O>|_0 = Cov_rho(O,P) = <Z_1...Z_N> = ±epsilon",
+    "minimum_derivative_gap": 0.3999999999999999,
+    "theorem": "For every fixed finite k, there exist N=k+1 positive commuting states identical on all Pauli moments through weight k but with different ETL/PGRL derivatives of a retained k-body observable under a one-body source. Therefore no fixed finite body-order moment truncation is autonomous uniformly in system size.",
+    "scope": "Exact ETL/PGRL no-go; does not rely on exchange dynamics or noncommutativity."
+  },
+  "factorization_control": {
+    "initial_connected_pair_norm": 1.6952429291668876e-17,
+    "connected_pair_derivative_norm": 1.0121549005421469,
+    "result": "The product/factorized manifold is not invariant under generic ETL two-body source deformation, so factorization is a constitutive approximation rather than an exact closure."
+  },
+  "relation_to_prior_RCCL": {
+    "prior": "v12.46 found the analogous no-fixed-order hierarchy under overlapping exchange and introduced RCCL.",
+    "new": "v13.13 proves the same architectural obstruction directly for ETL/PGRL source deformation in a commuting control, while quantifying the full hidden rank for the current N=3 QMAR problem.",
+    "RCCL": "still the correct missing object: enlarge the retained state to the full needed higher-incidence data or derive a canonical lifting/closure."
+  },
+  "adjudication": {
+    "single_chiral_scalar_closes_QMAR": false,
+    "proper_linear_subset_of_N3_weight3_sector_generically_closes_all_local_source_QMAR_at_test_point": false,
+    "full_N3_state_closes_QMAR": true,
+    "fixed_finite_body_order_closure_uniform_in_N": false,
+    "product_factorization_exact_closure": false,
+    "minimal_system_size_independent_hidden_state": "NOT_FINITE_BODY_ORDER",
+    "RCCL_or_equivalent_required": true
+  },
+  "status": {
+    "N3_MINIMAL_LINEAR_HIDDEN_RESPONSE_SECTOR": "FULL_WEIGHT3_RANK_27_AT_GENERIC_POINT",
+    "N3_FULL_STATE_MARKOV_CLOSURE": "CLOSED_TRIVIALLY",
+    "ETL_FINITE_MOMENT_ORDER_CLOSURE": "EXACT_NO_GO_UNIFORMLY_IN_N",
+    "RCCL": "NOT_DERIVED",
+    "QMAR": "AUTONOMOUS_ONLY_ON_FULL_STATE_OR_ADDITIONAL_CLOSURE",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_EXACT_HIERARCHY_NO_GO_AND_MINIMAL_STATE_RESULT"
+  },
+  "next_gate": {
+    "version": "v13.14",
+    "name": "Symmetry-Reduced Sufficient State / Schur-Weyl ETL Closure Gate",
+    "question": "The full moment hierarchy is too large. Test whether the already-present permutation/collective symmetry can compress the full hidden state into a finite symmetry-reduced sufficient state for the physically relevant source class. Audit Schur-Weyl block data, collective-spin irreps, and permutation-algebra coordinates under ETL/PGRL. If exact closure exists only with block size growing with N, quantify that scaling."
+  }
+}
