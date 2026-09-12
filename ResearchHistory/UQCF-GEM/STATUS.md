@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.14 — Symmetry-Reduced Sufficient State / Schur-Weyl ETL Closure Gate  
-**Next gate:** v13.15 — Relational Locality / Sparse Source Closure Gate
+**Latest completed gate:** v13.15 — Relational Locality / Sparse Source Closure Gate  
+**Next gate:** v13.16 — Quantum Markov / Conditional-Mutual-Information Selection Gate
 
 ## Current scientific picture
 
@@ -18,35 +18,31 @@ v13.12 showed that shear nonmetricity response and retained holonomy/curvature r
 
 v13.13 proved that no fixed finite body-order moment truncation gives exact ETL/PGRL response autonomy uniformly in system size.
 
-v13.14 now closes the global-symmetry compression question for the current source classes.
+v13.14 showed that Schur-Weyl symmetry compresses only symmetry-compatible source sectors; generic site-resolved QMAR restores the full operator algebra.
 
-## Latest new result — v13.14
+v13.15 now separates **graph sparsity** from **conditional independence**. Generic bounded-neighborhood closure fails even on a treewidth-1 path, but exact separator-message closure exists conditionally for commuting Markov graphical states with clique-compatible ETL sources.
 
-Schur-Weyl compression remains exact only when the state and source both respect the corresponding symmetry algebra.
+## Latest new result — v13.15
 
-The exchange/permutation commutant is an exact ETL-invariant sector, but it has Catalan dimension and remains exponential. Adding collective frame generators enlarges the exact invariant algebra to the total-spin block algebra
+Two positive four-qubit states on a path were constructed with identical **every proper subsystem marginal** (maximum difference `8.674e-19`) yet different first-edge QMAR response under the same site-local `sigma_x` source. The response gap is `0.0019475968`. Thus graph sparsity or treewidth alone does not make generic QMAR local.
 
-```text
-direct_sum_J End(V_J tensor M_J)
-```
-
-with exact dimension
+A restricted positive sector does close exactly. For strictly positive commuting Gibbs/Markov networks
 
 ```text
-D_N = binom(2N,N) * (3N-1)/(2N-1)
+rho ∝ exp(sum_C Phi_C)
 ```
 
-and asymptotic scaling
+with mutually commuting clique potentials and ETL source `P` in the same clique algebra, the tilted state
 
 ```text
-D_N ~ (3/(2 sqrt(pi))) * 4^N / sqrt(N).
+rho_s ∝ exp(log rho + sP)
 ```
 
-This remains exponential.
+remains in the same graphical exponential family. Junction-tree/separator messages therefore compute local marginals and source derivatives exactly.
 
-More decisively, total-J block data are not sufficient for the actual site-resolved QMAR source class. At `N=3`, two positive states with identical total-J block projection have projected ETL response gap `0.0533333334` under the same site-local source.
+Executed Ising-chain controls for `N=4,6,8,10,12` gave maximum finite-flow pair-marginal error `1.302e-16` and maximum response-derivative error `8.151e-12`. For a binary graph of treewidth `w`, separator-message size scales as `2^w` and exact inference as `O(N 2^(w+1))`.
 
-A single site-local Pauli also couples total-J sectors and collapses the commutant center to scalars for every tested `N=2..8`. By finite-dimensional double-commutant/Burnside reasoning, the generated unital *-algebra is then the full operator algebra. Thus exact Schur-Weyl compression disappears once the retained source/geometry class includes site-resolved frame observables.
+The positive result is conditional: a local noncommuting `sigma_x` source immediately leaves the commuting graphical algebra (`0.0494983` off-diagonal norm in the control).
 
 ## Open boundaries
 
@@ -56,17 +52,23 @@ A single site-local Pauli also couples total-J sectors and collapses the commuta
 - HCPR remains irreducible relative to the frozen ledger.
 - Shear and curvature response remain independent channels.
 - QMAR is autonomous on the full quantum state, not on a fixed finite local-moment truncation.
-- Exchange/collective symmetry gives exact restricted-sector closures but not a polynomial or fixed-size state.
-- Generic site-local QMAR destroys exact Schur-Weyl compression.
-- RCCL or an equivalent exact correlation lifting/closure law remains not derived.
+- Exchange/collective symmetry gives exact restricted-sector closures but not generic site-local closure.
+- Graph sparsity/treewidth alone does not give generic bounded-neighborhood QMAR closure.
+- Exact separator closure is available only in a commuting/Markov source-compatible sector whose origin is not derived.
+- RCCL or an equivalent exact correlation lifting/closure law remains not derived generically.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
 - Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.15
+## Next gate — v13.16
 
-Test whether **relational locality**, rather than global symmetry, can provide the missing exact compression.
+Test whether the ontology itself selects **quantum Markov / recoverability structure** across graph separators.
 
-Audit bounded-degree and sparse source graphs, tree/chordal structures, separator width, and whether an edge-local QMAR response depends only on a finite relational neighborhood or on hidden completion arbitrarily far away.
+Audit:
 
-If exact closure scales with graph separator/treewidth instead of total system size, that is the first remaining route to a nontrivial exact geometric sufficient state.
+- conditional mutual information `I(A:C|B)`;
+- exact and approximate quantum Markovity;
+- Petz recovery / recoverability error;
+- stability of recoverability under allowed PGRL/ETL sources.
+
+If exact Markovity is not forced, test whether an ontology-native recoverability bound supplies a certified approximate locality theorem without inserting a heuristic truncation.
