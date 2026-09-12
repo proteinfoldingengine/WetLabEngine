@@ -4,6 +4,28 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.25 — Retained Source-Ledger / Observer Stress-Energy Identification
+
+- Audited the actual retained/PGRL source-current side against the controlled Path-A observer source package `(rho_obs,j_obs,kappa_obs)` at fixed scale, without consulting an Einstein residual as a selector.
+- Preserved the conditional response-selected current theorem: a 5-node/7-edge control with cycle dimension 3 had `rank(RZ)=3`, `sigma_min(RZ)=1.0602`, and selected-current error `2.136e-17`.
+- Confirmed the Phase 53.1u-A source-coupling code is explicitly a **controlled synthetic harness**: its source-response channels are prescribed convergence/error laws and its source aperture rank/nullity is assigned as `4/0`, rather than reconstructed from the actual retained source ledger.
+- Proved an exact common-scale degeneracy: `(varrho_obs,j_obs,kappa_obs) -> (a varrho_obs,a j_obs,kappa_obs/a)` preserves source-current balance, frame covariance, and the coupled product `kappa_obs T_obs` for linear source tensors.
+- Across `a={0.2,0.5,1,2,5,11}`, maximum source-balance residual was `4.774e-15`, maximum `kappa*T` invariance error `6.616e-16`, covariance error `2.559e-16`, and heldout residual spread `1.960e-16`.
+- Therefore neither source-current compatibility, covariance, nor the downstream Einstein/ADM residual can determine absolute observer stress-energy normalization or `kappa_obs` separately; using the Einstein residual to choose them would be circular.
+- A target-independent calibrated scalar source measurement fixes the scale exactly in the positive control.
+- Isolated **RSCL — Retained Source Calibration Law**. RSLB remains **NOT CLOSED**; physical stress-energy identification remains open.
+- Next: v13.26 RSCL Origin / Absolute Source Calibration Gate.
+
+### v13.24 — Post-QRSL Branch Reassessment / Metric-Affine Continuum Evidence
+
+- Performed a QRSL deletion/dependency audit across 24 major claims: `21` are QRSL-independent and `3` require an ontology-native coarse-to-fine quantum selector.
+- Preserved the finite-state QMAR stack, exact BKM trace/Weyl result, metric-affine kinematics, LC-sector results, response-selected current/Pillar-2 chain, and the internal represented Path-A ADM-like assembly.
+- Reclassified represented-continuum/graph-to-Ricci and observer weak ADM/Einstein resolution ladders as **external analytical correspondence/discretization tests**, not ontology-native physical refinement histories.
+- RATS remains sealed and ontology-native quantum continuum refinement remains blocked by QRSL nonuniqueness.
+- Preserved the controlled source-coupled observer correspondence: `rho` response `p=2.219`, `j` response `p=2.146`, `kappa` response `p=2.255`, combined source weak residual `p=1.980`, and finest combined residual `8.388e-06`.
+- Identified the highest-leverage QRSL-independent bridge as **RSLB — Retained Source-Ledger Bridge**: derive `(rho_obs,j_obs,kappa_obs)` from actual retained/PGRL/source-current observables before any Einstein/ADM residual is consulted.
+- Next: v13.25 Retained Source-Ledger / Observer Stress-Energy Identification Gate.
+
 ### v13.23 — QRSL Origin / Canonical Refinement Selector
 
 - Audited the frozen ontology-native QRSL candidates: Genesis Pin/provenance, recoverability order, W1/W2/W3 incidence/filling certificates, positivity/support, and coarse quotient naturality.
