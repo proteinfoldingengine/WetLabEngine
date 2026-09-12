@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.12 — Shear Nonmetricity / Curvature Response Coupling Gate  
-**Next gate:** v13.13 — Hidden-Completion Response State / Minimal Markov Closure Gate
+**Latest completed gate:** v13.13 — Hidden-Completion Response State / Minimal Markov Closure Gate  
+**Next gate:** v13.14 — Symmetry-Reduced Sufficient State / Schur-Weyl ETL Closure Gate
 
 ## Current scientific picture
 
@@ -12,49 +12,45 @@ The generic retained geometry remains most honestly organized as a **metric-affi
 Gamma = Gamma_LC + K(T) + L(Q)
 ```
 
-v13.11 established a conditional first-order Quantum Metric-Affine Response operator (QMAR) from the full faithful quantum state and proved exact trace/Weyl integrability of the BKM/polar nonmetricity channel.
+v13.11 derived a conditional first-order Quantum Metric-Affine Response operator (QMAR) from the full faithful quantum state and proved exact trace/Weyl integrability of the BKM/polar nonmetricity channel.
 
-v13.12 now separates the remaining traceless/shear nonmetricity response from retained holonomy/curvature response.
+v13.12 showed that shear nonmetricity response and retained holonomy/curvature response are independent first-order channels.
 
-## Latest new result — v13.12
+v13.13 now identifies how much hidden quantum state is required to make those response channels autonomous.
 
-Define the gauge-covariant shear observable
+## Latest new result — v13.13
+
+The v13.10 chiral three-body scalar is **not** a sufficient hidden response coordinate. Two positive three-qubit states were constructed with identical one-body data, identical two-body data, and identical chiral scalar, yet the same radial PGRL source produced QMAR response-vector gap `0.147782874952`.
+
+At a generic faithful three-qubit point, the sensitivity map from the 27-dimensional weight-three Pauli hidden sector into the complete nine-local-source QMAR response had rank **27/27**. Thus every independent three-body hidden direction is locally visible to source response even though all one/two-body geometry is held fixed.
+
+For fixed `N=3`, adding all 27 weight-three moments reconstructs the full density matrix; exact QMAR closure is therefore recovered only as **full-state tomography**, not as a lower-dimensional geometric closure.
+
+An exact ETL/PGRL hierarchy no-go was also proved. For arbitrary finite `k`, the commuting positive states
 
 ```text
-Sigma_ij = dev(log G_ij)
-G_ij = K_j^-1/2 O_ij^T K_i O_ij K_j^-1/2.
+rho_± = 2^-N (I ± epsilon Z_1...Z_N),  N=k+1
 ```
 
-Two complementary exact controls establish structural independence:
+agree on every Pauli moment through weight `k`, but under the one-body source `P=Z_N` the retained observable `O=Z_1...Z_k` has source derivative `±epsilon`. Therefore no fixed finite body-order Pauli-moment truncation is autonomous uniformly in system size.
 
-1. **Zero shear / nonzero holonomy response.**  
-   The v13.09/10 hidden-completion axial source flow keeps every edge exactly metric-compatible, so `Sigma_ij=0`, while the hidden completion has holonomy response norm `0.19261155662`.
-
-2. **Nonzero shear / zero holonomy response.**  
-   A faithful state tangent was constructed with connected pair correlations and polar transports fixed while one local BKM metric changes. The corresponding PGRL source gives shear-response norm `0.0149148854933` with holonomy-response norm at machine zero.
-
-Therefore shear nonmetricity and curvature/holonomy response are independent first-order channels of the current metric-affine parent. Neither determines the other, and no zero-intercept norm bound can universally tie them together.
-
-A constant linear shear-to-holonomy candidate was used only as a falsification test. It achieved holdout `R^2=-0.0488` and does not provide generic closure.
-
-The older Retained Bridge result `Q_shear ~ g -> R ~ g^2` remains a separate-connection precedent and is not imported into the BKM/polar branch without a typed bridge.
+Product/factorized closure also fails: a generic two-body ETL source produces a connected-correlation derivative norm `1.01215490054` from an initially product state with connected-correlation norm at machine zero.
 
 ## Open boundaries
 
 - MEA/BIFL metric selection remains explicit/conditional.
 - Continuum nonmetricity regularity still requires SMRRL/SMAVT.
 - Source-to-solder/coframe response is not derived.
-- HCPR remains irreducible relative to the current frozen ledger.
-- Geometry plus shear is not an autonomous source-response state.
-- No derived shear-curvature field law exists in the BKM/polar branch.
+- HCPR remains irreducible relative to the frozen ledger.
+- Shear and curvature response remain independent channels.
+- QMAR is autonomous on the full quantum state, not on a fixed finite local-moment truncation.
+- RCCL or an equivalent exact correlation lifting/closure law remains not derived.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
 - Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.13
+## Next gate — v13.14
 
-Identify the **minimal hidden-completion response state** needed to make QMAR autonomous under source deformation.
+Test whether permutation / collective-SU(2) structure can compress the full hidden completion into an exact **symmetry-reduced sufficient state** for the relevant ETL/PGRL source class.
 
-Start with the v13.10 chiral three-body observable and test whether a finite set of higher-order correlators closes the response state, or whether differentiation opens a continuing higher-order hierarchy.
-
-Success requires an actual finite closure theorem, not a fitted surrogate or a GR projection.
+Audit Schur-Weyl block data, collective-spin irreps, and permutation-algebra coordinates. If exact closure requires symmetry blocks whose dimension still grows with system size, quantify the scaling rather than calling it a finite geometric closure.
