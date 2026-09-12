@@ -1,0 +1,121 @@
+{
+  "version": "v13.20",
+  "gate": "Refinement Error Scaling / Continuum Atlas Stability Gate",
+  "classification": "V1320_CONTINUUM_ATLAS_THRESHOLD_EXPONENTS_DERIVED__WITH_I_H_ASYMPTOTIC_H_ALPHA_GAMMA_H_ASYMPTOTIC_H_BETA_SOURCE_NORM_H_SIGMA_AND_TRUE_EDGE_CONNECTION_JET_H_LAMBDA_THE_V1319_VALUE_ATLAS_ERROR_SCALES_H_ALPHA_OVER2_MINUS_BETA_MINUS1_AND_THE_TWO_QMAR_JET_TERMS_SCALE_H_ALPHA_OVER2_PLUS_SIGMA_MINUS2BETA_MINUS1_AND_H_ALPHA_OVER2_MINUSBETA_PLUSLAMBDA_MINUS2__VALUE_ATLAS_BOUNDED_REQUIRES_ALPHA_GEQ_2BETA_PLUS2_AND_VANISHING_REQUIRES_STRICT__FULL_JET_BOUNDED_REQUIRES_ALPHA_GEQ_MAX_4BETA_PLUS2_MINUS2SIGMA_COMMA_2BETA_PLUS4_MINUS2LAMBDA__FOR_STABLE_GAP_BOUNDED_SOURCE_AND_O1_EDGE_JET_THIS_IS_ALPHA_GEQ4__ARCHIVED_ADM7_REFINEMENT_DOES_NOT_MEASURE_THE_REQUIRED_CMI_OR_POLAR_GAP_EXPONENTS_AND_ITS_FROZEN_CONTINUATION_FAILED_ITS_OWN_PREDECLARED_CONTINUUM_GATE__CONTINUUM_RECOVERABILITY_ATLAS_REMAINS_CONDITIONAL_PENDING_DIRECT_REFINEMENT_TELEMETRY",
+  "scaling_ansatz": {
+    "CMI": "I(h) ~ h^alpha",
+    "polar_singular_floor": "gamma(h) ~ h^beta",
+    "source_norm": "||P(h)|| ~ h^sigma",
+    "true_edge_connection_jet": "Lambda(h)=||dot O_e|| ~ h^lambda",
+    "fixed_macroscopic_path": "m(h) ~ L/h"
+  },
+  "derived_edge_scaling": {
+    "tau_recovery": "sqrt(1-exp(-I)) ~ h^(alpha/2)",
+    "transport_error": "epsilon(h)=O(h^(alpha/2-beta))",
+    "edge_QMAR_jet_error": "eta(h)=O(h^(alpha/2+sigma-2beta))",
+    "source": "v13.17 transport conditioning O(gamma^-1) and v13.18 jet conditioning O(gamma^-2)"
+  },
+  "continuum_path_scaling": {
+    "value_error_exponent": "q_value=alpha/2-beta-1",
+    "jet_local_exponent": "q_jet_local=alpha/2+sigma-2beta-1",
+    "jet_context_exponent": "q_jet_context=alpha/2-beta+lambda-2",
+    "bounded_rule": "q>=0",
+    "vanishing_rule": "q>0"
+  },
+  "threshold_theorem": {
+    "value_atlas_bounded": "alpha >= 2 beta + 2",
+    "value_atlas_vanishes": "alpha > 2 beta + 2",
+    "jet_local_bounded": "alpha >= 4 beta + 2 - 2 sigma",
+    "jet_context_bounded": "alpha >= 2 beta + 4 - 2 lambda",
+    "full_QMAR_jet_bounded": "alpha >= max(4 beta + 2 - 2 sigma, 2 beta + 4 - 2 lambda)",
+    "full_QMAR_jet_vanishes": "strict inequality against both jet thresholds",
+    "full_value_plus_jet_atlas_bounded": "alpha >= max(2 beta + 2, 4 beta + 2 - 2 sigma, 2 beta + 4 - 2 lambda)"
+  },
+  "important_special_cases": {
+    "stable_gap_bounded_source_O1_edge_jet": {
+      "beta": 0,
+      "sigma": 0,
+      "lambda": 0,
+      "value_bounded_alpha_min": 2,
+      "value_vanish_alpha": "alpha>2",
+      "jet_bounded_alpha_min": 4,
+      "jet_vanish_alpha": "alpha>4",
+      "interpretation": "CMI must fall at least quadratically for bounded finite geometry, but quartically for a bounded worst-case macroscopic QMAR jet atlas."
+    },
+    "stable_gap_bounded_source_smooth_edge_jet": {
+      "beta": 0,
+      "sigma": 0,
+      "lambda": 1,
+      "value_bounded_alpha_min": 2,
+      "jet_bounded_alpha_min": 2,
+      "interpretation": "If the true per-edge connection jet itself scales geometrically as O(h), the m^2 context term loses one power and the stable-gap threshold can fall to alpha>=2; this still requires direct certification of lambda=1."
+    },
+    "closing_polar_gap": {
+      "interpretation": "beta>0 raises the required CMI exponent. Polar degeneration can destroy continuum locality even when CMI decreases."
+    }
+  },
+  "threshold_tables": {
+    "O1_edge_jet": [
+      {"beta":0,"bounded_source_sigma":0,"edge_true_jet_lambda":0,"alpha_value_bounded":2,"alpha_value_vanish_strictly_greater_than":2,"alpha_jet_local_bounded":2,"alpha_jet_context_bounded":4,"alpha_full_jet_bounded":4,"alpha_full_atlas_bounded":4,"vanishing_rule":"strictly greater than the corresponding bounded threshold"},
+      {"beta":0.25,"bounded_source_sigma":0,"edge_true_jet_lambda":0,"alpha_value_bounded":2.5,"alpha_value_vanish_strictly_greater_than":2.5,"alpha_jet_local_bounded":3.0,"alpha_jet_context_bounded":4.5,"alpha_full_jet_bounded":4.5,"alpha_full_atlas_bounded":4.5,"vanishing_rule":"strictly greater than the corresponding bounded threshold"},
+      {"beta":0.5,"bounded_source_sigma":0,"edge_true_jet_lambda":0,"alpha_value_bounded":3.0,"alpha_value_vanish_strictly_greater_than":3.0,"alpha_jet_local_bounded":4.0,"alpha_jet_context_bounded":5.0,"alpha_full_jet_bounded":5.0,"alpha_full_atlas_bounded":5.0,"vanishing_rule":"strictly greater than the corresponding bounded threshold"},
+      {"beta":1.0,"bounded_source_sigma":0,"edge_true_jet_lambda":0,"alpha_value_bounded":4.0,"alpha_value_vanish_strictly_greater_than":4.0,"alpha_jet_local_bounded":6.0,"alpha_jet_context_bounded":6.0,"alpha_full_jet_bounded":6.0,"alpha_full_atlas_bounded":6.0,"vanishing_rule":"strictly greater than the corresponding bounded threshold"},
+      {"beta":1.5,"bounded_source_sigma":0,"edge_true_jet_lambda":0,"alpha_value_bounded":5.0,"alpha_value_vanish_strictly_greater_than":5.0,"alpha_jet_local_bounded":8.0,"alpha_jet_context_bounded":7.0,"alpha_full_jet_bounded":8.0,"alpha_full_atlas_bounded":8.0,"vanishing_rule":"strictly greater than the corresponding bounded threshold"}
+    ],
+    "smooth_edge_jet_lambda1": [
+      {"beta":0,"source_sigma":0,"edge_true_jet_lambda":1,"alpha_value_bounded":2,"alpha_value_vanish_strictly_greater_than":2,"alpha_jet_local_bounded":2,"alpha_jet_context_bounded":2,"alpha_full_jet_bounded":2,"alpha_full_atlas_bounded":2,"vanishing_rule":"strictly greater than the corresponding bounded threshold"},
+      {"beta":0.25,"source_sigma":0,"edge_true_jet_lambda":1,"alpha_value_bounded":2.5,"alpha_value_vanish_strictly_greater_than":2.5,"alpha_jet_local_bounded":3.0,"alpha_jet_context_bounded":2.5,"alpha_full_jet_bounded":3.0,"alpha_full_atlas_bounded":3.0,"vanishing_rule":"strictly greater than the corresponding bounded threshold"},
+      {"beta":0.5,"source_sigma":0,"edge_true_jet_lambda":1,"alpha_value_bounded":3.0,"alpha_value_vanish_strictly_greater_than":3.0,"alpha_jet_local_bounded":4.0,"alpha_jet_context_bounded":3.0,"alpha_full_jet_bounded":4.0,"alpha_full_atlas_bounded":4.0,"vanishing_rule":"strictly greater than the corresponding bounded threshold"},
+      {"beta":1.0,"source_sigma":0,"edge_true_jet_lambda":1,"alpha_value_bounded":4.0,"alpha_value_vanish_strictly_greater_than":4.0,"alpha_jet_local_bounded":6.0,"alpha_jet_context_bounded":4.0,"alpha_full_jet_bounded":6.0,"alpha_full_atlas_bounded":6.0,"vanishing_rule":"strictly greater than the corresponding bounded threshold"}
+    ],
+    "synthetic_powerlaw_controls": [
+      {"name":"value_fail_alpha1_beta0","alpha":1,"beta":0,"sigma":0,"lambda":0,"predicted":{"edge_transport":0.5,"path_value":-0.5,"edge_jet":0.5,"path_jet_local":-0.5,"path_jet_context":-1.5},"measured_slopes":{"path_value":-0.5,"path_jet_local":-0.5,"path_jet_context":-1.5}},
+      {"name":"value_boundary_alpha2_beta0","alpha":2,"beta":0,"sigma":0,"lambda":0,"predicted":{"edge_transport":1.0,"path_value":0.0,"edge_jet":1.0,"path_jet_local":0.0,"path_jet_context":-1.0},"measured_slopes":{"path_value":0.0,"path_jet_local":0.0,"path_jet_context":-1.0}},
+      {"name":"value_vanish_alpha3_beta0","alpha":3,"beta":0,"sigma":0,"lambda":0,"predicted":{"edge_transport":1.5,"path_value":0.5,"edge_jet":1.5,"path_jet_local":0.5,"path_jet_context":-0.5},"measured_slopes":{"path_value":0.5,"path_jet_local":0.5,"path_jet_context":-0.5}},
+      {"name":"jet_fail_alpha3_beta0","alpha":3,"beta":0,"sigma":0,"lambda":0,"predicted":{"edge_transport":1.5,"path_value":0.5,"edge_jet":1.5,"path_jet_local":0.5,"path_jet_context":-0.5},"measured_slopes":{"path_value":0.5,"path_jet_local":0.5,"path_jet_context":-0.5}},
+      {"name":"jet_boundary_alpha4_beta0","alpha":4,"beta":0,"sigma":0,"lambda":0,"predicted":{"edge_transport":2.0,"path_value":1.0,"edge_jet":2.0,"path_jet_local":1.0,"path_jet_context":0.0},"measured_slopes":{"path_value":1.0,"path_jet_local":1.0,"path_jet_context":0.0}},
+      {"name":"jet_vanish_alpha5_beta0","alpha":5,"beta":0,"sigma":0,"lambda":0,"predicted":{"edge_transport":2.5,"path_value":1.5,"edge_jet":2.5,"path_jet_local":1.5,"path_jet_context":0.5},"measured_slopes":{"path_value":1.5,"path_jet_local":1.5,"path_jet_context":0.5}},
+      {"name":"gap_closing_boundary_beta05_alpha5","alpha":5,"beta":0.5,"sigma":0,"lambda":0,"predicted":{"edge_transport":2.0,"path_value":1.0,"edge_jet":1.5,"path_jet_local":0.5,"path_jet_context":0.0},"measured_slopes":{"path_value":1.0,"path_jet_local":0.5,"path_jet_context":0.0}}
+    ]
+  },
+  "archive_comparison": {
+    "v12_70_controlled_smooth_Hodge": {"observable":"relative Hodge-image ambiguity in a controlled smooth coexact current family","measured_exponent":1.967,"meaning":"approximately O(h^2) for this controlled Hodge ambiguity, not a CMI or polar-gap exponent"},
+    "v12_72_predeclared_ADM7_acceptance": {"Hodge_decay_required_min":1.5,"restriction_decay_required_min":0.75,"meaning":"predeclared gates for the frozen ADM-7 replication protocol; different observables from v13.20"},
+    "v12_73_frozen_ADM7_result": {"grids":[7,14,28,56],"Hodge_exponent":-0.19749364232029154,"restriction_exponent":0.7197338246181576,"N56_high_band_fraction":0.9604442772747696,"ACR_under_frozen_protocol":"FAILED","meaning":"negative comparator for that archive-defined carrier continuation; it does not measure alpha_CMI or beta_gamma"}
+  },
+  "archive_adjudication": {
+    "v12_70_supports_CMI_exponent": false,
+    "v12_73_supports_CMI_exponent": false,
+    "v12_73_supports_polar_gap_exponent": false,
+    "reason":"The archived exponents concern Hodge ambiguity/restriction of a different ADM-7 carrier/current experiment, not separator CMI or pair-correlation singular floors.",
+    "negative_context":"The v12.73 frozen carrier continuation failed its own predeclared ACR gate, so it cannot be used as positive continuum evidence for v13 recoverability geometry."
+  },
+  "missing_refinement_telemetry": {
+    "required":["separator CMI I(h) for matched nested patches","pair-correlation singular floor gamma(h)","same-source edge transport error epsilon(h)","same-source edge QMAR-jet error eta(h)","true edge jet scale Lambda(h)","faithfulness floor mu(h)"],
+    "protocol":"measure on a predeclared nested refinement family with fixed physical source/patch geometry and restriction maps; fit exponents only after raw telemetry is frozen",
+    "name":"RATS — Recoverability Atlas Telemetry Scaling"
+  },
+  "adjudication": {
+    "continuum_threshold_exponents_derived": true,
+    "value_level_continuum_requirement_closed": true,
+    "jet_level_continuum_requirement_closed": true,
+    "archived_data_certify_required_exponents": false,
+    "recoverability_continuum_atlas_certified": false,
+    "stable_gap_O1_jet_requires_alpha_at_least_4_for_bounded_jet": true
+  },
+  "status": {
+    "REFINEMENT_THRESHOLD_THEOREM":"CLOSED",
+    "VALUE_ATLAS_THRESHOLD":"CLOSED",
+    "QMAR_JET_THRESHOLD":"CLOSED",
+    "ARCHIVED_CMI_GAMMA_REFINEMENT_EVIDENCE":"MISSING",
+    "CONTINUUM_RECOVERABILITY_ATLAS":"NOT_CERTIFIED",
+    "Pillar_3":"OPEN",
+    "scientific_breakthrough":false,
+    "progress_classification":"MAJOR_CONTINUUM_THRESHOLD_THEOREM_AND_MEASUREMENT_SPECIFICATION"
+  },
+  "next_gate": {
+    "version":"v13.21",
+    "name":"Recoverability Atlas Telemetry / Blind Refinement Protocol Gate",
+    "question":"Freeze a target-blind nested-patch experiment that measures I(h), gamma(h), epsilon(h), eta(h), Lambda(h), and mu(h) on the same physical relational configuration. Predeclare the v13.20 exponent thresholds before generation. Then run only if an existing engine/state generator can supply a genuine matched refinement family without introducing a new target-dependent continuation law."
+  }
+}
