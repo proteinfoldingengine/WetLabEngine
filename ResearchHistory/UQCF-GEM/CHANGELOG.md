@@ -4,6 +4,16 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.13 — Hidden-Completion Response State / Minimal Markov Closure
+
+- Proved the v13.10 chiral three-body scalar is not a sufficient hidden response coordinate: identical one/two-body data plus identical chiral scalar can still yield different QMAR source-response jets.
+- At a generic faithful three-qubit point, the complete 27-dimensional weight-three Pauli hidden sector maps into the all-local-source QMAR response with rank **27/27** while every one/two-body marginal remains unchanged.
+- Therefore fixed `N=3` exact response closure requires the full three-body moment sector, which is equivalent to complete state tomography.
+- Proved an exact **ETL/PGRL finite-moment hierarchy no-go**: for every finite `k`, positive commuting states identical on all moments through weight `k` can have different source derivatives of a retained `k`-body observable because of hidden `(k+1)`-body parity.
+- Product/factorization closure fails exactly under generic two-body ETL source deformation.
+- RCCL remains the correct missing architecture: retain the required higher-incidence state or derive a canonical exact lifting/closure.
+- Next: v13.14 Symmetry-Reduced Sufficient State / Schur-Weyl ETL Closure.
+
 ### v13.12 — Shear Nonmetricity / Curvature Response Coupling
 
 - Defined the gauge-covariant traceless shear observable `Sigma_ij = dev(log G_ij)` after removing the exact trace/Weyl sector.
