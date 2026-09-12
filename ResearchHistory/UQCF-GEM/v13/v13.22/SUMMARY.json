@@ -1,0 +1,81 @@
+{
+  "version": "v13.22",
+  "gate": "Quantum Refinement Naturality / Nested-State Law Gate",
+  "classification": "V1322_REFINEMENT_NATURALITY_IS_UNDERDETERMINED_BY_THE_CURRENT_ONTOLOGY__FOR_ANY_FIXED_FAITHFUL_ANCILLA_STATE_TAU_THE_LIFT_R_TAU_RHO_EQUALS_RHO_TENSOR_TAU_WITH_COARSE_MAP_PARTIAL_TRACE_IS_CPTP_POSITIVE_NORMALIZED_EXACT_RIGHT_INVERSE_OBSERVABLE_NATURAL_ETL_PGRL_SOURCE_NATURAL_AND_COMPOSITIONAL__DISTINCT_TAU_GIVE_INEQUIVALENT_FINE_STATES_WITH_IDENTICAL_COARSE_STATE_AND_CAN_EVEN_SHARE_ALL_ONE_TWO_BODY_ANCILLA_MARGINALS_WHILE_DIFFERING_IN_HIDDEN_THREE_BODY_CMI__BY_CHOOSING_TAU_H_ACROSS_REFINEMENT_ONE_CAN_MANUFACTURE_ARBITRARY_RATS_CMI_SCALING_EXPONENTS_WITHOUT_CHANGING_COARSE_PHYSICS__THEREFORE_NO_CANONICAL_TARGET_BLIND_QUANTUM_REFINEMENT_LAW_IS_DERIVED_AND_RATS_MUST_REMAIN_SEALED",
+  "general_refinement_family": {
+    "lift": "R_tau(rho)=rho tensor tau",
+    "coarse_map": "C=Tr_anc",
+    "properties": [
+      "CPTP",
+      "positive and normalized",
+      "C o R_tau = identity exactly",
+      "retained observable naturality: Tr[R_tau(rho)(A tensor I)]=Tr[rho A]",
+      "ETL/PGRL naturality for source P->P tensor I",
+      "two-step refinement composition by tensor associativity"
+    ],
+    "theorem": "All currently frozen refinement desiderata admit an infinite family parameterized by tau; hence they do not select a unique lift."
+  },
+  "executed_controls": {
+    "coarse_restriction_error": 1.1285039546789633e-16,
+    "retained_observable_error": 2.220446049250313e-16,
+    "ETL_naturality_error": 5.425668263490067e-16,
+    "composition_error": 3.291406376790657e-17,
+    "fine_trace_distance_between_two_admissible_lifts": 0.2,
+    "ancilla_trace_distance": 0.19999999999999998,
+    "max_one_two_body_ancilla_marginal_difference": 0.0,
+    "tau0_CMI": 0.0,
+    "tau_epsilon_CMI": 0.08228287850505156
+  },
+  "hidden_completion_counterexample": {
+    "tau0": "I/8",
+    "tau_epsilon": "(I+epsilon Z tensor Z tensor Z)/8 with epsilon=0.4",
+    "same_low_order_data": "all one/two-body ancilla marginals used in the control are identical",
+    "different_hidden_data": "three-body parity and CMI differ",
+    "meaning": "Even adding low-order marginal preservation does not remove refinement ambiguity."
+  },
+  "RATS_circularity_theorem": {
+    "construction": "Choose an admissible hidden refinement completion tau_h=(I+epsilon(h) ZZZ)/8 with epsilon(h)=h^r.",
+    "result": "CMI(tau_h)=Theta(h^(2r)) for small h.",
+    "executed_scaling_rows": [
+      {"chosen_hidden_amplitude_exponent_r": 0.5, "measured_CMI_exponent": 1.0070444141163044, "asymptotic_expected": 1.0},
+      {"chosen_hidden_amplitude_exponent_r": 1.0, "measured_CMI_exponent": 2.0008403864501925, "asymptotic_expected": 2.0},
+      {"chosen_hidden_amplitude_exponent_r": 2.0, "measured_CMI_exponent": 4.000012177281737, "asymptotic_expected": 4.0},
+      {"chosen_hidden_amplitude_exponent_r": 3.0, "measured_CMI_exponent": 6.000000183403315, "asymptotic_expected": 6.0}
+    ],
+    "consequence": "Without an independent law selecting tau_h, the RATS alpha exponent can be dialed by the refinement completion itself while exact coarse restriction and ETL source naturality remain unchanged.",
+    "adjudication": "Executing RATS before closing refinement selection would be scientifically circular."
+  },
+  "repository_audit": {
+    "search_result": "No pre-existing refinement/coarse-graining/CPTP ancestry law found by repository search.",
+    "interpretation": "No frozen ontology axiom in the tracked history removes the tau ambiguity."
+  },
+  "irreducible_missing_object": {
+    "name": "QRSL — Quantum Refinement Selection Law",
+    "required_role": "Select the hidden fine completion/refinement channel independently of continuum/RATS targets.",
+    "must_not_depend_on": ["CMI exponent", "polar-gap exponent", "RATS pass/fail result", "Einstein/GR target", "desired continuum smoothness"]
+  },
+  "adjudication": {
+    "canonical_refinement_derived": false,
+    "refinement_family_exists": true,
+    "current_axioms_select_unique_member": false,
+    "low_order_marginal_preservation_selects_unique_member": false,
+    "ETL_source_naturality_selects_unique_member": false,
+    "composition_selects_unique_member": false,
+    "RATS_execution_permitted": false
+  },
+  "status": {
+    "QUANTUM_REFINEMENT_NATURALITY": "SATISFIABLE_NONUNIQUELY",
+    "QUANTUM_REFINEMENT_SELECTION": "OBSTRUCTED",
+    "QRSL": "MISSING",
+    "RATS": "REMAINS_SEALED",
+    "CONTINUUM_RECOVERABILITY_ATLAS": "NOT_CERTIFIED",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_REFINEMENT_NONUNIQUENESS_THEOREM_AND_ANTI_CIRCULARITY_RESULT"
+  },
+  "next_gate": {
+    "version": "v13.23",
+    "name": "QRSL Origin / Canonical Refinement Selector Gate",
+    "question": "Test whether Genesis Pin provenance, recoverability order, or another already-existing pre-time structure canonically selects the ancillary/fine completion. If every ontology-native candidate is invariant under the tau family, prove QRSL irreducible relative to the frozen ontology and stop the continuum-refinement branch until a new axiom is explicitly introduced."
+  }
+}
