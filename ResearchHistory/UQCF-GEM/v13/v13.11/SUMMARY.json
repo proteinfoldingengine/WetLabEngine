@@ -1,0 +1,141 @@
+{
+  "version": "v13.11",
+  "gate": "Metric-Affine Source Response / Nonmetricity-Torsion Dynamics Gate",
+  "classification": "V1311_QUANTUM_TO_METRIC_AFFINE_SOURCE_JET_DERIVED_CONDITIONAL_ON_FULL_FAITHFUL_STATE_AND_NONSINGULAR_POLAR_STRATUM__RESPONSE_IS_LINEAR_IN_SOURCE_AND_GAUGE_COVARIANT__BKM_LOG_NONMETRICITY_TRACE_IS_AN_EXACT_NODE_POTENTIAL_DIFFERENCE_SO_CLOSED_CYCLE_WEYL_TRACE_CIRCULATION_VANISHES_IDENTICALLY_AND_UNDER_ALL_SOURCE_RESPONSES__TORSIONLIKE_RESPONSE_IS_NOT_CANONICAL_WITHOUT_A_SOURCE_SOLDER_LIFT__CURRENT_GEOMETRIC_DATA_ARE_NOT_AN_AUTONOMOUS_STATE_VARIABLE_BECAUSE_HIDDEN_COMPLETIONS_WITH_IDENTICAL_GEOMETRY_HAVE_DIFFERENT_CONNECTION_HOLONOMY_RESPONSE_JETS__NO_ADDITIONAL_STATE_INDEPENDENT_CONSTANT_LINEAR_CONSERVATION_FOUND_IN_THE_TESTED_24_CHANNEL_CLASS",
+  "baseline": {
+    "min_global_state_eigenvalue": 0.068811677914465,
+    "metric_response_formula_error": 6.28698276093973e-10,
+    "holonomy_response_formula_error": 2.4515594577216712e-11,
+    "solder_response_formula_error": 2.4024485782610014e-11
+  },
+  "quantum_to_geometry_response_operator": {
+    "name": "QMAR — Quantum Metric-Affine Response operator",
+    "input": "faithful full state rho plus centered ETL/PGRL source generator P",
+    "state_tangent": "dot rho = Kubo-Mori_rho(P-<P>_rho I)",
+    "outputs": [
+      "dot K_i from the BKM metric differential",
+      "dot O_ij / Omega_ij from the polar-correlation differential on a nonsingular polar stratum",
+      "dot M_ij for M_ij=K_j-O_ij^T K_i O_ij",
+      "dot H_C from differentiated loop transport"
+    ],
+    "metric_defect_response_formula": "dot M_ij = dot K_j - O^T dot K_i O + [Omega_ij, O^T K_i O], Omega_ij=O^T dot O",
+    "holonomy_response_formula": "dot H = sum over edges of the product with dot O inserted once",
+    "source_linearity_error": 2.1361415056391323e-09,
+    "source_linearity_relative_error": 7.050699944581498e-09,
+    "status": "DERIVED_FIRST_ORDER_KINEMATIC_RESPONSE_CONDITIONAL_ON_FULL_STATE"
+  },
+  "gauge_covariance": {
+    "independent_local_frame_errors": {
+      "K": 2.4397811099417077e-15,
+      "O": 2.160125706819257e-15,
+      "dK": 6.600549555726514e-10,
+      "dO": 5.84742736724267e-09,
+      "dM": 1.0699961884921455e-09,
+      "dH": 1.8540778975290928e-09,
+      "dC_fixed": 2.3842334903474603e-09
+    },
+    "max_error": 5.84742736724267e-09,
+    "status": "PASS"
+  },
+  "BKM_trace_exactness_theorem": {
+    "edge_object": "G_ij=K_j^-1/2 O_ij^T K_i O_ij K_j^-1/2",
+    "identity": "tr log G_ij = log det K_i - log det K_j",
+    "closed_cycle": "sum_C tr log G_ij = 0",
+    "source_response": "sum_C tr d/ds(log G_ij) = 0 for every ETL/PGRL source",
+    "edge_potential_error": 2.525757381022231e-15,
+    "baseline_cycle_error": 2.8657631823136853e-15,
+    "raw_trace_cycle_error": 2.9976021664879227e-15,
+    "finite_source_max_cycle_error": 7.211245489635587e-15,
+    "finite_source_max_edge_potential_error": 3.878841692284141e-15,
+    "max_source_response_cycle_error": 1.5139794973251242e-10,
+    "continuum_interpretation": "If the logarithmic BKM nonmetricity admits a smooth continuum limit, its trace/Weyl 1-form is locally exact (up to orientation/sign convention), so its closed-loop circulation vanishes. Nontrivial nonmetricity circulation must live in the traceless/shear sector.",
+    "status": "CLOSED_EXACT_THEOREM"
+  },
+  "torsionlike_response": {
+    "fixed_RESA_response_norm": 0.03485377404971823,
+    "same_quantum_response_with_canceling_solder_lift_norm": 0.0,
+    "conclusion": "PGRL plus polar transport does not determine dot xi/e. Torsion-like dynamics are not canonical until a source-solder/coframe lift is supplied.",
+    "status": "NOT_CLOSED"
+  },
+  "geometric_nonautonomy": {
+    "current_geometry_error": 0.0,
+    "edge_transport_jet_difference": 0.09079795855391411,
+    "holonomy_jet_difference": 0.2723938756562164,
+    "fixed_solder_jet_difference": 0.13359956206962706,
+    "theorem": "There is no autonomous first-order source law dot G = F(G,P) on the current visible metric/connection/holonomy variables alone, because two positive hidden completions with the same current G and same source P have different connection/holonomy response jets.",
+    "required_state_extension": "retain the full quantum/hidden completion state or add a new hidden-response constitutive law",
+    "status": "CLOSED_COUNTEREXAMPLE"
+  },
+  "linear_conservation_audit": {
+    "output_dimension": 24,
+    "generic_state_count": 20,
+    "source_count_per_state": 9,
+    "response_sample_count": 180,
+    "minimum_state_eigenvalue": 0.06599187783083006,
+    "response_span_rank": 23,
+    "singular_values": [
+      2.33980591104257,
+      2.1564544924098263,
+      1.5701896035324894,
+      1.2002617684518613,
+      1.1527006174936305,
+      0.9638182113352555,
+      0.9113532177024097,
+      0.8520913330896016,
+      0.8183459424881717,
+      0.8065570165709883,
+      0.7954243885866159,
+      0.6953009391630465,
+      0.6703296738158449,
+      0.624198557080597,
+      0.5954475315696097,
+      0.5516850110285303,
+      0.5364124767077214,
+      0.5081664252014675,
+      0.24566745678112886,
+      0.20487449972132024,
+      0.15951847768520439,
+      0.15330622579178377,
+      0.13821168262437053,
+      5.832264425524635e-16
+    ],
+    "left_null_alignment_with_trace_cycle_identity": 1.0,
+    "left_null_residual": 7.116333425733886e-16,
+    "theory_trace_null_residual": 6.179406510595006e-16,
+    "max_direct_trace_cycle_response_residual": 6.659169743405968e-16,
+    "adjudication": "The sole constant-coefficient linear null in this tested 24-channel class is the exact cycle trace/nonmetricity identity. No second independent state-independent linear conservation relation was found. This does not exclude nonlinear, state-dependent, higher-order, or continuum identities."
+  },
+  "field_equation_boundary": {
+    "derived": "source-to-geometric first-order response operator plus exact trace/Weyl cycle identity",
+    "not_derived": [
+      "autonomous metric-affine field equation on geometric variables alone",
+      "canonical torsion evolution",
+      "metric-affine action",
+      "stress-energy/source constitutive map",
+      "Einstein equations"
+    ]
+  },
+  "adjudication": {
+    "canonical_nonmetricity_response_given_full_state": true,
+    "canonical_curvature_holonomy_response_given_full_state": true,
+    "canonical_torsionlike_response_from_PGRL_alone": false,
+    "autonomous_geometry_only_dynamics": false,
+    "exact_Weyl_trace_conservation": true,
+    "metric_affine_field_equation_derived": false
+  },
+  "status": {
+    "QMAR": "DERIVED_FIRST_ORDER_CONDITIONAL",
+    "BKM_TRACE_EXACTNESS": "CLOSED_THEOREM",
+    "TORSION_SOURCE_LIFT": "MISSING",
+    "GEOMETRIC_AUTONOMY": "OBSTRUCTED_BY_HIDDEN_COMPLETION",
+    "generic_metric_affine_parent": "STRENGTHENED_BUT_NOT_DYNAMICAL_CLOSURE",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_STRUCTURAL_THEOREM"
+  },
+  "next_gate": {
+    "version": "v13.12",
+    "name": "Shear Nonmetricity / Curvature Response Coupling Gate",
+    "question": "Because the logarithmic trace/Weyl nonmetricity is exact and carries zero closed-cycle circulation, isolate the traceless/shear nonmetricity sector. Test whether its source response determines, constrains, or remains independent of retained holonomy/curvature response across generic faithful states and hidden-completion controls. Look for a covariant derived coupling before introducing any action or field equation."
+  }
+}

@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.10 — Hidden-Completion Source Rigidity / Holonomy-Phase Preservation Gate  
-**Next gate:** v13.11 — Metric-Affine Source Response / Nonmetricity-Torsion Dynamics Gate
+**Latest completed gate:** v13.11 — Metric-Affine Source Response / Nonmetricity-Torsion Dynamics Gate  
+**Next gate:** v13.12 — Shear Nonmetricity / Curvature Response Coupling Gate
 
 ## Current scientific picture
 
@@ -12,67 +12,74 @@ The generic retained geometry remains most honestly organized as a **metric-affi
 Gamma = Gamma_LC + K(T) + L(Q)
 ```
 
-The Levi-Civita / Einstein-compatible geometric sector is the special sector `Q=0, T=0`. It is nonempty and can retain nonzero holonomy/curvature, but it is not generically invariant under source deformation or unconstrained refinement.
+The Levi-Civita / Einstein-compatible geometric sector is the special sector `Q=0, T=0`, but the generic parent is now better characterized directly rather than by forcing projection into that sector.
 
-## Latest new result — v13.10
+## Latest new result — v13.11
 
-The HCPR origin search is closed negatively relative to the current frozen ledger.
+A first-order **Quantum Metric-Affine Response operator (QMAR)** is derived conditionally on the full faithful quantum state and a nonsingular polar-correlation stratum.
 
-The source-flow-rigid v13.08 completion and the phase-drifting v13.09 completion were shown to have:
+PGRL/ETL determines `dot rho`; differentiation then determines:
 
-- identical one-body marginals;
-- identical two-body marginals;
-- identical BKM metrics;
-- identical connected pair correlations;
-- identical polar transports and initial Gamma_R;
-- identical initial F2/F3;
-- identical schema-level W1/W2/W3, J_R, and atlas projections.
+- local BKM metric response `dot K_i`;
+- polar transport response `dot O_ij`;
+- discrete nonmetricity-defect response `dot M_ij`;
+- loop holonomy response `dot H`.
 
-Yet their source-response geometry differs immediately:
+The response is source-linear at fixed state and locally frame-covariant.
 
-- rigid transport/holonomy/solder response jet is numerically zero;
-- hidden completion has nonzero transport, F3/holonomy, and solder-closure response jets.
+### Exact BKM Trace-Exactness Theorem
 
-Therefore no HCPR selector can factor only through the current initial frozen ledger.
+For
 
-### Frozen law boundary
+```text
+G_ij = K_j^-1/2 O_ij^T K_i O_ij K_j^-1/2
+```
 
-**HCPR — Hidden-Completion Phase Rigidity**
+orthogonality of `O_ij` gives
 
-Status:
+```text
+tr log G_ij = log det K_i - log det K_j.
+```
 
-**IRREDUCIBLE RELATIVE TO THE CURRENT FROZEN LEDGER.**
+Therefore on every closed relational cycle,
 
-W2/W3 are provenance/admissibility certificates, not completion selectors. SGOD-F3 diagnoses the boundary connection after it changes but cannot predict future rigidity from identical initial Gamma_R. Atlas closure likewise certifies consistency rather than selecting a hidden source-response law.
+```text
+sum_C tr log G_ij = 0
+```
 
-A future LC-preserving source theory would require new source-conditioned higher-order completion content, such as a law constraining the hidden completion response jet.
+exactly, and the same identity holds under every PGRL source response.
 
-The HCPR origin search is therefore **STOPPED**.
+Conditional on a smooth continuum limit, the trace/Weyl part of BKM nonmetricity is locally exact. Nontrivial nonmetricity circulation must therefore live in the traceless/shear sector.
+
+### Remaining obstruction
+
+Torsion-like source response is still not canonical because PGRL does not determine the solder/coframe tangent `dot xi` / `dot e`.
+
+Also, geometry is not an autonomous source-response state variable: the v13.10 rigid and hidden completions have the same instantaneous BKM metric, polar transport, and holonomy but different transport/holonomy response jets under the same source.
+
+Thus the full quantum/hidden completion state or a new hidden-response law remains necessary for geometric source response.
 
 ## Open boundaries
 
 - MEA/BIFL metric selection remains explicit/conditional.
 - Absolute physical metric normalization remains open.
-- Continuum nonmetricity regularity requires SMRRL/SMAVT; `Q -> 0` requires QZL or equivalent.
+- Continuum nonmetricity regularity requires SMRRL/SMAVT.
 - Continuum torsion closure remains conditional; discrete solder nonclosure is only a torsion-like precursor.
-- Generic LCSP / SCLL is not derived.
-- HCPR is irreducible relative to the present frozen ledger.
-- Physical stress-energy identification is open.
+- Source-to-solder/coframe response is not derived.
+- Geometry-only autonomous metric-affine dynamics is obstructed by hidden completion.
+- HCPR is irreducible relative to the present frozen ledger; its origin search remains stopped.
+- No metric-affine action or physical stress-energy constitutive law has been derived.
 - Full Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.11
+## Next gate — v13.12
 
-Return to the **generic metric-affine parent** rather than continuing to force the Levi-Civita sector.
+Isolate the **traceless/shear nonmetricity response** after removing the exact trace/Weyl sector.
 
-Use the already-derived:
+Test whether source-induced shear nonmetricity:
 
-- PGRL/BKM source response;
-- discrete and continuum nonmetricity channel;
-- polar retained connection;
-- solder closure / torsion-like channel;
-- retained holonomy / curvature.
+- determines retained holonomy/curvature response;
+- constrains it through a covariant identity;
+- or remains independent because of hidden completion / connection degrees of freedom.
 
-Test whether source-induced `Q` and torsion-like structure obey any canonical atemporal response or conservation equation that follows from the current architecture.
-
-Success requires a derived metric-affine response law, not a fitted projection back to GR.
+Success requires a derived covariant coupling from the retained response structure, not a fitted action or imposed GR equation.
