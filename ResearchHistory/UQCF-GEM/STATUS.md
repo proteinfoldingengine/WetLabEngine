@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.22 — Quantum Refinement Naturality / Nested-State Law Gate  
-**Next gate:** v13.23 — QRSL Origin / Canonical Refinement Selector Gate
+**Latest completed gate:** v13.23 — QRSL Origin / Canonical Refinement Selector Gate  
+**Next gate:** v13.24 — Post-QRSL Branch Reassessment / Metric-Affine Continuum Evidence Gate
 
 ## Current scientific picture
 
@@ -23,80 +23,66 @@ full quantum completion
 → finite patch composition + continuum threshold theorem
 → RATS blind telemetry protocol frozen
 → quantum refinement naturality satisfiable but nonunique
-→ QRSL selection law missing
+→ QRSL origin exhausted in current frozen ontology
+→ RATS remains sealed
 ```
 
-## Latest result — v13.22
+## Latest result — v13.23
 
-A target-independent refinement can satisfy every currently frozen naturality requirement without being unique.
-
-For any fixed faithful ancillary state `tau`, define
+v13.22 showed that the lawful family
 
 ```text
 R_tau(rho) = rho tensor tau
-C = Tr_anc.
+C = Tr_anc
 ```
 
-Then exactly:
+satisfies coarse recovery, positivity, retained-observable naturality, ETL/PGRL source naturality, and nested composition for every faithful `tau`, so refinement naturality does not select a unique hidden completion.
+
+v13.23 audited the only frozen ontology-native selector candidates:
+
+1. Genesis Pin / provenance;
+2. recoverability order;
+3. W1/W2/W3 retained incidence/filling certificates;
+4. global positivity/support;
+5. coarse quotient naturality.
+
+None supplies QRSL.
+
+The executed `tau_0=I/8` and `tau_eps=(I+0.4 ZZZ)/8` pair has:
 
 ```text
-C o R_tau = id
-Tr[R_tau(rho)(A tensor I)] = Tr[rho A]
-tilts(R_tau(rho), P tensor I) = R_tau(tilts(rho,P))
-R_tau2 o R_tau1 = tensor-composed refinement
-```
-
-So positivity, normalization, CPTP restriction, retained-observable naturality, ETL/PGRL source naturality, and repeated composition do not select a unique fine completion.
-
-A sharper counterexample uses
-
-```text
-tau_0 = I/8
-tau_eps = (I + eps ZZZ)/8, eps=0.4.
-```
-
-These states have identical one- and two-body marginals but different hidden three-body CMI:
-
-```text
+coarse recovery error = 1.261e-16
+fine-state trace distance = 0.2
+support ranks = 8,8
 CMI(tau_0) = 0
-CMI(tau_eps) = 0.0822828785
+CMI(tau_eps) = 0.08228287850505
 ```
 
-while the corresponding fine states remain exact refinements of the same coarse state.
+The full pre-selection coarse descriptor is identical for both candidates (SHA-256 `5a90c20204e61bfa9182aac6ca18e4b5bf169d0fefe4904a4caf86be1a8edc0e`), while fine-only hidden descriptors differ.
 
-## RATS anti-circularity result
+Therefore any selector derived only from currently frozen pre-selection data has no input distinction from which to choose one fine completion; a selector that first consults fine CMI/provenance/incidence is circular because the fine realization must already exist.
 
-If the hidden completion is chosen as
+**QRSL — Quantum Refinement Selection Law** is therefore:
 
 ```text
-tau_h = (I + epsilon(h) ZZZ)/8
-epsilon(h) = h^r,
+IRREDUCIBLE RELATIVE TO THE CURRENT FROZEN ONTOLOGY
 ```
 
-then
+The QRSL origin search is stopped. RATS is not authorized for execution.
 
-```text
-CMI(tau_h) = Theta(h^(2r)).
-```
+## Preserved results
 
-Executed controls reproduced exponents approximately `1,2,4,6` for chosen `r=0.5,1,2,3`.
+The branch stop does **not** retract the finite-scale v13 results:
 
-Therefore an unconstrained refinement selector can manufacture the RATS CMI exponent while preserving exact coarse restriction and ETL source naturality.
+- QMAR first-order source response remains derived conditional on the full state.
+- BKM trace/Weyl nonmetricity integrability remains exact.
+- shear and curvature response remain distinct channels.
+- exact Markov separator locality remains valid in its restricted sector.
+- recoverability gives certified approximate geometry and QMAR-jet locality on faithful/polar-gapped strata.
+- finite patch composition remains controlled: linear value-level and quadratic worst-case jet accumulation.
+- v13.20 continuum threshold exponents remain mathematically valid as conditional external-refinement criteria.
 
-This proves that RATS must remain sealed until refinement completion is selected independently of the desired continuum result.
-
-## Current missing object
-
-**QRSL — Quantum Refinement Selection Law**
-
-QRSL must select the hidden fine completion without reference to:
-
-- RATS/CMI exponents;
-- polar-gap behavior;
-- desired continuum smoothness;
-- Einstein/GR targets.
-
-Repository search found no already-frozen refinement/coarse-graining law that removes this ambiguity.
+What is blocked is interpreting an arbitrarily selected coarse-to-fine quantum section as ontology-native physics.
 
 ## Open boundaries
 
@@ -104,26 +90,20 @@ Repository search found no already-frozen refinement/coarse-graining law that re
 - Continuum nonmetricity regularity still requires SMRRL/SMAVT.
 - Source-to-solder/coframe response is not derived.
 - HCPR remains irreducible relative to the frozen ledger.
-- QMAR is autonomous on the full quantum state, not on fixed finite local moments.
+- QMAR is autonomous on the full quantum state, not fixed finite local moments.
 - Exact Markovity is not ontology-selected generically.
 - Approximate locality remains conditional on recoverability and regular conditioning.
 - RATS is frozen and remains unexecuted.
-- Quantum refinement naturality is nonunique.
-- QRSL is missing.
+- QRSL is irreducible relative to the current frozen ontology.
+- Ontology-native quantum refinement remains unavailable.
 - Continuum recoverability-atlas stability is not certified.
 - Geometry-only autonomous evolution remains obstructed by hidden completion.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
 - Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.23
+## Next gate — v13.24
 
-Test only ontology-native candidates for QRSL:
+**Post-QRSL Branch Reassessment / Metric-Affine Continuum Evidence Gate**
 
-1. Genesis Pin provenance;
-2. recoverability order;
-3. retained higher-incidence / filling data already frozen upstream.
-
-The test is whether any existing structure distinguishes admissible `tau` completions without introducing a new continuum-targeted rule.
-
-If every candidate factors through data shared by the `tau` family, QRSL will be certified **irreducible relative to the current frozen ontology**, and the refinement/RATS branch should stop until one explicit new axiom is introduced.
+Do not add a refinement axiom merely to unlock RATS. Reassess which Pillar-3 claims and bridges remain valid without an ontology-native coarse-to-fine quantum section, and identify the highest-leverage independent route toward ADM/GR correspondence that does not depend on QRSL.
