@@ -1,0 +1,127 @@
+{
+  "version": "v13.18",
+  "gate": "Source-Conditioned Recoverability / QMAR Jet Locality Gate",
+  "classification": "V1318_SOURCE_CONDITIONED_RECOVERABILITY_CONTROLS_THE_ETL_PGRL_STATE_TANGENT_ON_FAITHFUL_STRATA_WITH_AN_EXPLICIT_O_SQRT_CMI_BOUND_LINEAR_IN_SOURCE_NORM__QMAR_GEOMETRIC_JETS_ARE_LOCALLY_LIPSCHITZ_ON_COMPACT_FAITHFUL_POLAR_GAPPED_STRATA_BUT_REQUIRE_SECOND_ORDER_BKM_AND_POLAR_DIFFERENTIAL_CONDITIONING_CONSTANTS__POLAR_JET_CONDITIONING_DIVERGES_AS_GAMMA_MINUS2_AND_BKM_JET_CONDITIONING_DETERIORATES_NEAR_SUPPORT_BOUNDARIES__STATIC_CMI_WITHOUT_A_SOURCE_NORM_BOUND_CANNOT_CONTROL_JETS__THEREFORE_APPROXIMATE_QMAR_JET_LOCALITY_IS_CLOSED_AS_A_CONDITIONAL_REGULARITY_THEOREM_NOT_AS_A_UNIVERSAL_CMI_ONLY_FIELD_LAW",
+  "ETL_tangent_theorem": {
+    "formula": "dot rho = int_0^1 rho^t P rho^(1-t) dt - rho Tr(rho P)",
+    "faithful_stratum": "rho,sigma >= mu I in dimension d",
+    "constant": "B_ETL(mu,d)=2[1+mu(ln mu-1)]/[mu(ln mu)^2] + 1 + sqrt(d)",
+    "bound": "||dotrho_rho(P)-dotrho_sigma(P)||_F <= B_ETL ||P||op ||rho-sigma||_F <= 2 B_ETL ||P||op T(rho,sigma)",
+    "recoverability_bound": "<= 2 B_ETL ||P||op sqrt(1-exp(-CMI))",
+    "evaluated_constants": [
+      {"d": 2, "mu": 0.01, "B_ETL": 11.316198082544734},
+      {"d": 2, "mu": 0.02, "B_ETL": 8.306555553787254},
+      {"d": 2, "mu": 0.05, "B_ETL": 5.98085792533777},
+      {"d": 2, "mu": 0.1, "B_ETL": 4.9406351447756425},
+      {"d": 4, "mu": 0.01, "B_ETL": 11.901984520171638},
+      {"d": 4, "mu": 0.02, "B_ETL": 8.89234199141416},
+      {"d": 4, "mu": 0.05, "B_ETL": 6.566644362964675},
+      {"d": 4, "mu": 0.1, "B_ETL": 5.5264215824025475},
+      {"d": 8, "mu": 0.01, "B_ETL": 12.730411644917828},
+      {"d": 8, "mu": 0.02, "B_ETL": 9.72076911616035},
+      {"d": 8, "mu": 0.05, "B_ETL": 7.395071487710865},
+      {"d": 8, "mu": 0.1, "B_ETL": 6.354848707148738},
+      {"d": 16, "mu": 0.01, "B_ETL": 13.901984520171638},
+      {"d": 16, "mu": 0.02, "B_ETL": 10.89234199141416},
+      {"d": 16, "mu": 0.05, "B_ETL": 8.566644362964675}
+    ],
+    "random_bound_max_ratio": 0.10009361078950912,
+    "random_sample_count": 540,
+    "examples": [
+      {"CMI": 1e-06, "d": 2, "mu": 0.05, "unit_source_tangent_F_bound": 0.011961712860152338},
+      {"CMI": 1e-06, "d": 4, "mu": 0.02, "unit_source_tangent_F_bound": 0.017784679536517207},
+      {"CMI": 1e-06, "d": 8, "mu": 0.01, "unit_source_tangent_F_bound": 0.02546081692442924},
+      {"CMI": 0.0001, "d": 2, "mu": 0.05, "unit_source_tangent_F_bound": 0.11961416814009322},
+      {"CMI": 0.0001, "d": 4, "mu": 0.02, "unit_source_tangent_F_bound": 0.17784239374991587},
+      {"CMI": 0.0001, "d": 8, "mu": 0.01, "unit_source_tangent_F_bound": 0.25460186782514227},
+      {"CMI": 0.001, "d": 2, "mu": 0.05, "unit_source_tangent_F_bound": 0.37816812214992307},
+      {"CMI": 0.001, "d": 4, "mu": 0.02, "unit_source_tangent_F_bound": 0.5622605175357154},
+      {"CMI": 0.001, "d": 8, "mu": 0.01, "unit_source_tangent_F_bound": 0.8049406834358471},
+      {"CMI": 0.01, "d": 2, "mu": 0.05, "unit_source_tangent_F_bound": 1.1931873768303751},
+      {"CMI": 0.01, "d": 4, "mu": 0.02, "unit_source_tangent_F_bound": 1.7740314762643088},
+      {"CMI": 0.01, "d": 8, "mu": 0.01, "unit_source_tangent_F_bound": 2.5397303641371014},
+      {"CMI": 0.05, "d": 2, "mu": 0.05, "unit_source_tangent_F_bound": 2.6416326379499204},
+      {"CMI": 0.05, "d": 4, "mu": 0.02, "unit_source_tangent_F_bound": 3.9275804785156496},
+      {"CMI": 0.05, "d": 8, "mu": 0.01, "unit_source_tangent_F_bound": 5.6227837737599256}
+    ],
+    "status": "CLOSED_EXPLICIT_CONDITIONAL"
+  },
+  "BKM_jet_regularity": {
+    "statement": "On |r|<=1-2mu, K(r) is C-infinity. Therefore DK is Lipschitz with finite H_K(mu)=sup||D2K||. For state/tangent pairs (r,v),(r',v'), ||DK_r[v]-DK_r'[v']|| <= L_K(mu)||v-v'|| + H_K(mu)||r-r'|| max(||v||,||v'||).",
+    "evaluated_controls": [
+      {"mu": 0.05, "evaluated_Jacobian_norm_sup": 2.547103488034119, "evaluated_Hessian_direction_sup": 10.154621359202197},
+      {"mu": 0.1, "evaluated_Jacobian_norm_sup": 1.996858363427868, "evaluated_Hessian_direction_sup": 4.656106421601527},
+      {"mu": 0.2, "evaluated_Jacobian_norm_sup": 1.36657357633139, "evaluated_Hessian_direction_sup": 2.7259850203425637}
+    ],
+    "boundary": "H_K grows as the faithfulness floor is weakened; no uniform support-boundary jet theorem."
+  },
+  "polar_jet_regularity": {
+    "statement": "On matrices with sigma_min(C)>=gamma, the polar map is smooth. D polar scales as O(1/gamma), and its differential is locally Lipschitz with second-order conditioning O(1/gamma^2).",
+    "evaluated_scaling_controls": [
+      {"gamma": 0.02, "max_Dpolar_norm_unit_direction": 31.93553488620866, "gamma_times_first": 0.6387106977241732, "max_Dpolar_variation_per_matrix_distance": 718.0736509419902, "gamma2_times_second": 0.2872294603767961},
+      {"gamma": 0.04, "max_Dpolar_norm_unit_direction": 15.119861472057618, "gamma_times_first": 0.6047944588823048, "max_Dpolar_variation_per_matrix_distance": 129.28951766666017, "gamma2_times_second": 0.2068632282666563},
+      {"gamma": 0.08, "max_Dpolar_norm_unit_direction": 8.578063315898882, "gamma_times_first": 0.6862450652719106, "max_Dpolar_variation_per_matrix_distance": 34.581388120081684, "gamma2_times_second": 0.22132088396852279},
+      {"gamma": 0.16, "max_Dpolar_norm_unit_direction": 4.064483606222923, "gamma_times_first": 0.6503173769956676, "max_Dpolar_variation_per_matrix_distance": 8.235170911699969, "gamma2_times_second": 0.21082037533951922}
+    ],
+    "boundary": "As gamma->0, dot O locality constants necessarily diverge and the polar jet may cease to be unique."
+  },
+  "QMAR_jet_theorem": {
+    "conditional_statement": "On any compact stratum with full-state/local faithfulness floors, pair polar singular floor gamma, bounded source norm ||P||<=p, and fixed finite subsystem dimension, the map (rho,P)->(dot K,dot O,dot M,dot H) is Lipschitz in rho. Combining with recoverability gives O(p sqrt(CMI)) jet-locality bounds with constants depending on mu,gamma,dimension and loop length.",
+    "proof_structure": [
+      "ETL tangent Lipschitz theorem controls delta dotrho",
+      "partial trace contracts state and tangent errors",
+      "C2 regularity of qubit BKM controls delta dotK",
+      "C2 regularity of polar decomposition controls delta dotO",
+      "product/Leibniz bounds propagate to dotM and dotH"
+    ],
+    "numerical_conditioned_controls": {
+      "sample_count": 40,
+      "max_state_tangent_gap_per_trace_distance": 0.5039521250226283,
+      "max_Kjet_gap_per_trace_distance": 0.29303681438686346,
+      "max_Ojet_gap_per_trace_distance": 42.4704674385294,
+      "max_Hjet_gap_per_trace_distance": 39.743467439497536
+    },
+    "status": "CLOSED_EXISTENCE_AND_SCALING_CONDITIONAL__EXPLICIT_STATE_TANGENT_CONSTANT__GEOMETRIC_CONSTANTS_DEFINED_BY_REGULARITY_SUPREMA"
+  },
+  "CMI_only_no_go": {
+    "fixed_CMI": 5.0000833366592445e-05,
+    "rows": [
+      {"lambda": 1, "CMI": 5.0000833366592445e-05, "source_norm": 1.0, "response_error": 0.010000000000000009, "error_over_source_norm": 0.010000000000000009},
+      {"lambda": 2, "CMI": 5.0000833366592445e-05, "source_norm": 2.0, "response_error": 0.020000000000000018, "error_over_source_norm": 0.010000000000000009},
+      {"lambda": 5, "CMI": 5.0000833366592445e-05, "source_norm": 5.0, "response_error": 0.04999999999999996, "error_over_source_norm": 0.009999999999999992},
+      {"lambda": 10, "CMI": 5.0000833366592445e-05, "source_norm": 10.0, "response_error": 0.09999999999999992, "error_over_source_norm": 0.009999999999999992},
+      {"lambda": 20, "CMI": 5.0000833366592445e-05, "source_norm": 20.0, "response_error": 0.19999999999999984, "error_over_source_norm": 0.009999999999999992},
+      {"lambda": 50, "CMI": 5.0000833366592445e-05, "source_norm": 50.0, "response_error": 0.5, "error_over_source_norm": 0.01}
+    ],
+    "theorem": "No source-independent jet-error bound can depend on CMI alone: scaling P->lambda P scales the ETL/QMAR tangent error by lambda while leaving the state CMI unchanged.",
+    "required_inputs": "At minimum a bounded source norm plus conditioning floors are necessary."
+  },
+  "relation_to_v1317": {
+    "v1317": "finite geometry at each recovered source slice is O(sqrt(CMI)) close on mu/gamma-conditioned strata",
+    "v1318": "the infinitesimal source-response jet is also approximately local when the same bounded source is applied to true and recovered states and the BKM/polar differential maps remain uniformly regular",
+    "important_boundary": "This does not make geometry autonomous: the recovered full/local state remains part of the response input, consistent with v13.10-v13.13."
+  },
+  "adjudication": {
+    "static_CMI_controls_ETL_state_tangent_with_bounded_source": true,
+    "QMAR_jet_locality_on_conditioned_compact_strata": true,
+    "QMAR_jet_error_scales_O_source_norm_sqrt_CMI": true,
+    "CMI_alone_without_source_bound_controls_jet": false,
+    "uniform_jet_locality_across_support_or_polar_singularities": false,
+    "geometry_only_autonomous_field_law": false
+  },
+  "status": {
+    "SOURCE_CONDITIONED_ETL_TANGENT_LOCALITY": "CLOSED_EXPLICIT_CONDITIONAL",
+    "QMAR_JET_LOCALITY": "CLOSED_CONDITIONAL_REGULARITY_THEOREM",
+    "JET_ERROR_SCALING": "O(||P|| sqrt(CMI))",
+    "POLAR_CONDITIONING": "O(gamma^-1)_FIRST_DERIVATIVE__O(gamma^-2)_JET_STABILITY",
+    "GEOMETRIC_AUTONOMY": "STILL_OBSTRUCTED",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_APPROXIMATE_LOCAL_SOURCE_RESPONSE_THEOREM"
+  },
+  "next_gate": {
+    "version": "v13.19",
+    "name": "Approximate Local Metric-Affine Evolution / Patch Composition Gate",
+    "question": "Given v13.17 finite-geometry locality and v13.18 jet locality, test whether overlapping recovered patches can be composed into a globally consistent approximate metric-affine response atlas. Derive error accumulation under patch gluing/loop composition and determine whether locality errors remain controlled or grow uncontrollably with path length."
+  }
+}
