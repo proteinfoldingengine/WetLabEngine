@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.26 — RSCL Origin / Absolute Source Calibration Gate  
-**Next gate:** v13.27 — Projective Coupled-Source / Direct `kappa T` Bridge Gate
+**Latest completed gate:** v13.27 — Projective Coupled-Source / Direct `kappa T` Bridge Gate  
+**Next gate:** v13.28 — RGCL Origin / Source-to-Coframe Variational Pairing Gate
 
 ## Current scientific picture
 
@@ -12,150 +12,164 @@ The generic retained geometry remains most honestly organized as a **metric-affi
 Gamma = Gamma_LC + K(T) + L(Q)
 ```
 
-The post-QRSL / post-RSCL program now separates five layers:
+The post-QRSL / post-RSCL program now separates the source-to-GR bridge into three distinct questions:
 
 ```text
-fixed-state / finite-scale quantum geometry
-→ QMAR + metric-affine response
-→ internal represented Path-A q,pi,constraint/ADM structure
+retained source/current
+→ source origin, balance, support, current selection
 
-response-selected retained source/current
-→ conserved current support J_R conditionally selected by rank/stability
+absolute observer source split
+→ (T_obs,kappa_obs)
+→ blocked by RSCL common-scale gauge
 
-retained-to-observer source normalization
-→ absolute split (T_obs, kappa_obs) blocked by RSCL no-go
-→ projective source class and coupled product Sigma_obs = kappa_obs T_obs remain viable targets
-
-controlled observer source package
-→ weak source-coupled ADM/Einstein correspondence
-
-ontology-native coarse-to-fine quantum refinement
-→ blocked by QRSL non-uniqueness
+coupled geometric source
+→ Sigma_obs = kappa_obs T_obs
+→ projective source ray survives
+→ absolute coupled-source magnitude and full tensor completion blocked by missing RGCL
 ```
 
-## Latest result — v13.26
+The controlled observer ADM/Einstein correspondence remains a heldout correspondence harness for a supplied source package. It is not permitted to select the missing source coupling.
 
-**RSCL — Retained Source Calibration Law is irreducible relative to the current frozen ontology.**
+## Latest result — v13.27
 
-v13.25 proved the common positive scale degeneracy
+**A direct target-blind `Sigma_obs = kappa_obs T_obs` bridge is not derived from the current frozen ontology.**
+
+v13.25-v13.26 removed one false requirement: the theory does not need to separate `T_obs` and `kappa_obs` if the field equation only uses their product.
+
+But quotienting that unit gauge exposes a second ambiguity:
 
 ```text
-(varrho_obs, j_obs, kappa_obs)
+Sigma_obs -> c Sigma_obs,  c>0.
+```
+
+This rescales the coupled source itself and is therefore a missing retained-to-geometry coupling strength, not merely a choice of stress-energy units.
+
+### Projective nonuniqueness theorem
+
+Every currently frozen retained-only structural condition on the coupled-source side is homogeneous:
+
+- source-current balance;
+- frame covariance;
+- support under positive scaling;
+- null-source behavior;
+- first-order QMAR source linearity.
+
+Therefore, if one nonzero candidate `Sigma_1` passes those gates, then
+
+```text
+Sigma_c = c Sigma_1
+```
+
+passes the same gates for every positive `c` unless an additional target-independent geometric calibration fixes `c`.
+
+v13.26 established that the frozen ontology contains no such calibration.
+
+Thus the frozen structure can select at most a ray `[Sigma_obs]`, not a unique coupled-source magnitude.
+
+### Fresh projective source controls
+
+Across 64 generic current realizations on a fixed connected 5-node / 7-edge incidence architecture and positive scales
+
+```text
+c = {0.1,0.2,0.5,1,2,5,10},
+```
+
+fresh controls gave:
+
+```text
+max source-balance residual              = 8.748e-15
+max normalized source-ray direction drift= 3.760e-16
+support pattern                           = preserved exactly
+```
+
+So balance, support, and source direction do not determine the magnitude of the coupled source.
+
+### QMAR does not calibrate `Sigma_obs`
+
+QMAR is first-order linear in the source generator. Combined with the exact PGRL gauge
+
+```text
+P -> a P
+t -> t/a,
+```
+
+one has
+
+```text
+(dt/a) QMAR(aP) = dt QMAR(P).
+```
+
+Fresh 64-trial generic linear-response controls gave:
+
+```text
+max reparameterized increment mismatch   = 3.598e-15
+max response scaling identity error       = 3.648e-14
+max normalized response-direction drift  = 3.652e-16
+```
+
+QMAR therefore supplies source-response direction and a response path conditional on the source parameterization. It does not fix the universal retained-to-geometric coupling amplitude.
+
+Equating a QMAR norm with `|Sigma_obs|` would add a new constitutive law.
+
+### Full stress-tensor completion remains open
+
+Even if coupled energy and momentum projections were known, a full observer stress tensor has a spatial stress block:
+
+```text
+Sigma = [[sigma_rho, sigma_j^T],
+         [sigma_j,   Sigma_S  ]].
+```
+
+A fresh control produced two symmetric tensors with identical coupled `rho,j` projections but:
+
+```text
+projection mismatch             = 0
+full tensor Frobenius distance  = 0.770672344821
+```
+
+Therefore scalar/current source data do not determine the full `kappa T` tensor.
+
+This does not invalidate a deliberately limited Hamiltonian/momentum-constraint correspondence that uses only the scalar/vector projections. It blocks promotion of that limited package to full physical stress-energy.
+
+### Positive calibration control
+
+One independent target-blind calibrated equation
+
+```text
+z = q^T Sigma_obs
+```
+
+fixes the ray magnitude immediately.
+
+For a synthetic true coupling `c=2.7`, the positive control recovered
+
+```text
+c = 2.6999999999999993
+absolute error = 8.882e-16.
+```
+
+The missing content is therefore precise: one lawful cross-domain geometric calibration or an independently derived source-to-coframe coupling law is sufficient.
+
+## New missing law
+
+**RGCL — Retained Geometric Coupling Law**
+
+RGCL must derive, before any ADM/Einstein residual is consulted:
+
+```text
+retained / PGRL / source-current data
 ->
-(a varrho_obs, a j_obs, kappa_obs/a),
+Sigma_obs
 ```
 
-which leaves source-current balance, covariance, and `kappa_obs T_obs` unchanged.
+including:
 
-v13.26 tested every currently identified ontology-native normalization candidate that might have removed that freedom.
+1. the declared observer/geometric source tensor or constraint-source type;
+2. source-to-coframe/directional embedding;
+3. nonzero universal coupling magnitude;
+4. covariance and source/null behavior.
 
-### Protected source grading
-
-Protected grading fixes source amount/extensivity **inside retained units**. It does not provide the multiplicative conversion from retained units to observer stress-energy units.
-
-Status: **NO RSCL**.
-
-### PGRL source amplitude
-
-For
-
-```text
-rho_t = exp(log rho + t P)/Z_t,
-```
-
-the transformation
-
-```text
-P -> a P,
-t -> t/a
-```
-
-leaves `tP` and therefore the state exactly unchanged.
-
-Fresh generic faithful-state control over `a={0.2,0.5,1,2,5,11}`:
-
-```text
-max state mismatch                 = 1.734e-16
-max chain-rule tangent mismatch    = 8.210e-11
-```
-
-Thus PGRL fixes a source direction/response family but does not supply an intrinsic absolute source unit.
-
-Status: **NO RSCL**.
-
-### Genesis Pin / source origin
-
-Genesis provenance certifies source-origin identity, retained-sequence identity, and source-flow closure. The source-current law remains homogeneous:
-
-```text
-B J = s
-=>
-B(aJ) = a s.
-```
-
-No frozen Genesis artifact supplies an independently calibrated observer energy/momentum standard.
-
-Status: **NO RSCL**.
-
-### Recoverability-response normalization
-
-For measured response
-
-```text
-y = R J,
-```
-
-changing response units by
-
-```text
-(R,y) -> (cR,cy)
-```
-
-leaves reconstructed `J` unchanged while singular values scale by `c`.
-
-Fresh controls over `c={0.1,0.3,1,3,10}`:
-
-```text
-max reconstructed-current change  = 2.756e-15
-max sigma scaling identity error   = 1.887e-15
-```
-
-Therefore response rank and conditioning certify identifiability/stability inside a measurement convention; they are not an absolute observer calibration.
-
-Status: **NO RSCL**.
-
-### Common-scale control
-
-Across `a={0.2,0.5,1,2,5,11}`:
-
-```text
-max source-balance residual        = 8.426e-15
-max kappa*T product error          = 5.207e-16
-max normalized-direction change    = 1.403e-16
-```
-
-So the exact unresolved degree of freedom is a common positive source normalization.
-
-## RSCL irreducibility theorem
-
-Let `D_ret` contain all frozen retained data before observer stress-energy normalization is declared. If `D_ret` determines a retained source package `F(D_ret)` but contains no independently observer-calibrated scalar, then
-
-```text
-T_obs(a) = a F(D_ret)
-kappa_obs(a) = kappa0/a
-```
-
-is equally compatible for every `a>0` and preserves
-
-```text
-kappa_obs(a) T_obs(a) = kappa0 F(D_ret).
-```
-
-The frozen archive contains no independent observer-calibrated scalar.
-
-Therefore **RSCL cannot be derived from the current certified primitives alone**.
-
-This is a branch stop for RSCL origin, not a theorem that a deeper ontology or explicit new calibration axiom can never produce an absolute source scale.
+A source-to-coframe variational pairing could supply RGCL if it is already forced by the retained ontology. An independently calibrated physical source observable could also supply it. Fitting the coupling against an Einstein residual cannot.
 
 ## Preserved results
 
@@ -163,11 +177,12 @@ This is a branch stop for RSCL origin, not a theorem that a deeper ontology or e
 - exact BKM trace/Weyl integrability: **PRESERVED**;
 - metric-affine parent kinematics: **PRESERVED**;
 - response-selected retained current/Pillar 2: **PRESERVED CONDITIONAL**;
-- PGRL/QMAR source direction and response: **PRESERVED**;
-- projective source class `[T_obs]`: **PRESERVED / SCALE-FREE**;
+- PGRL/QMAR source-response direction: **PRESERVED**;
+- QRSL no-go and RATS seal: **PRESERVED**;
+- RSCL no-go: **PRESERVED**;
+- projective retained source/coupled-source ray: **PRESERVED**;
 - internal represented Path-A ADM-like assembly: **PRESERVED**;
-- controlled vacuum and source-coupled weak ADM/Einstein correspondence: **PRESERVED AS CONTROLLED EXTERNAL CORRESPONDENCE**;
-- QRSL no-go and RATS seal: **PRESERVED**.
+- controlled vacuum and source-coupled weak ADM/Einstein correspondence: **PRESERVED AS CONTROLLED EXTERNAL CORRESPONDENCE**.
 
 ## Open boundaries
 
@@ -179,30 +194,27 @@ This is a branch stop for RSCL origin, not a theorem that a deeper ontology or e
 - RATS remains sealed.
 - Ontology-native quantum continuum refinement remains unavailable.
 - RSCL is irreducible relative to the current frozen ontology.
-- Absolute physical stress-energy normalization remains open.
-- `kappa_obs` and `T_obs` are not separately derived from the actual retained ledger.
+- Direct target-blind `Sigma_obs` is not derived.
+- Full coupled stress-tensor completion is not derived.
+- RGCL is missing.
+- Physical stress-energy coupling remains open.
 - True third-party validation remains open.
 - Full physical Einstein equations are not derived.
 - Pillar 3 remains **OPEN**.
 
-## Next gate — v13.27
+## Next gate — v13.28
 
-**Projective Coupled-Source / Direct `kappa T` Bridge Gate**
+**RGCL Origin / Source-to-Coframe Variational Pairing Gate**
 
-Do not try to separate `kappa_obs` and `T_obs`.
+Audit only structures already frozen upstream:
 
-Define the invariant coupled source
+- Genesis/source grade paired with retained measure/support;
+- PGRL/BKM source-response pairing;
+- RESA solder/coframe structure;
+- QMAR metric-affine response and exact covariance identities.
 
-```text
-Sigma_obs = kappa_obs T_obs.
-```
+Ask whether any of them already forces a canonical target-blind source-to-coframe pairing or equivalent intrinsic construction that fixes both the coupled-source type and magnitude.
 
-Test whether actual retained/PGRL/source-current observables determine `Sigma_obs` directly and target-blind, before any ADM/Einstein residual is consulted.
+Do not introduce an Einstein-targeted action or fit a coupling constant to the ADM/Einstein residual.
 
-Required gates:
-
-1. retained-data-only construction;
-2. invariance under common source rescaling;
-3. observer/frame covariance;
-4. source/null controls;
-5. only after lock, heldout comparison with the existing controlled source-coupled ADM/Einstein correspondence.
+If no frozen candidate selects RGCL, freeze RGCL as irreducible relative to the current ontology and stop this source-to-GR coupling branch until one explicit new axiom or independently calibrated physical observable is introduced.
