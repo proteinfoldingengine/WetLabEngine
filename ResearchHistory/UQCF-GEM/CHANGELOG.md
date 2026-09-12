@@ -4,6 +4,16 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.14 — Symmetry-Reduced Sufficient State / Schur-Weyl ETL Closure
+
+- Re-tested the v12.47 Schur-Weyl compression against the actual ETL/PGRL source-response problem rather than exchange dynamics alone.
+- Exchange/permutation commutant remains an exact ETL-invariant sector when both state and source lie inside it, but the state dimension remains Catalan and exponential.
+- Adding collective frame sources enlarges the exact invariant algebra to total-spin `J` blocks with exact dimension `D_N = binom(2N,N)(3N-1)/(2N-1)` and asymptotic scaling `(3/(2 sqrt(pi))) 4^N/sqrt(N)`.
+- Two positive `N=3` states with identical total-J block projection have different projected ETL response under the same site-local source (`0.0533333334` gap), so block data are not sufficient for generic local QMAR.
+- A single site-local Pauli couples adjacent total-J sectors and reduces the remaining center commutant to scalars for every tested `N=2..8`; by double-commutant/Burnside reasoning the generated unital *-algebra is the full operator algebra.
+- Therefore exact Schur-Weyl compression survives only in symmetry-compatible restricted source sectors; it collapses for the site-resolved geometry/source class used by QMAR.
+- Next: v13.15 Relational Locality / Sparse Source Closure.
+
 ### v13.13 — Hidden-Completion Response State / Minimal Markov Closure
 
 - Proved the v13.10 chiral three-body scalar is not a sufficient hidden response coordinate: identical one/two-body data plus identical chiral scalar can still yield different QMAR source-response jets.
