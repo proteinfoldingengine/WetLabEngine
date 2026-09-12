@@ -59,7 +59,8 @@ Generated binary outputs are intentionally not required for source control; the 
 The canonical 25-frame run produced:
 
 ```text
-telemetry_hash                       cdd8e93bb6d25e55b655d04132846de643e1eb6ee9cb0c79a243984f9a5788f3
+scientific_fingerprint               6f2830c47a877676f6ff4ad028769bb285d00f9194f33035c85dd785b3e9f5b6
+reference raw telemetry hash         e994538f3e04a06270b17b66c21ee29dc07730c5ceaf0805ba412f754624f945
 min global-state eigenvalue          3.7185106924494124e-05
 min local BKM eigenvalue             0.5673128649814877
 max source-balance residual          4.611102534756203e-16
@@ -68,8 +69,8 @@ PGRL reparameterization error        9.55170005517049e-16
 DeWitt pure-trace control            -4.5
 DeWitt traceless control             1.9999999999999982
 cycle response-rank deficit          0
-RGCL                                  MISSING
-physical Einstein closure             OPEN
+RGCL                                 MISSING
+physical Einstein closure            OPEN
 ```
 
 The video generated locally as 25 frames, 1920×1080, H.264, 6 fps.
@@ -87,11 +88,11 @@ The video generated locally as 25 frames, 1920×1080, H.264, 6 fps.
 ## Verification
 
 ```bash
-pytest -q
+PYTHONPATH=. pytest -q
 python CHECKER.py
 ```
 
-`CHECKER.py` reruns the canonical 25-frame telemetry and checks the frozen telemetry hash plus structural tolerances. Video encoding is deliberately excluded from scientific verification.
+`CHECKER.py` reruns the canonical 25-frame telemetry and checks structural tolerances plus a **portable scientific fingerprint** built from rounded invariant observables and gate outcomes. The full raw telemetry hash is still emitted as an archival numerical diagnostic, but it is not used as the cross-machine certification key because LAPACK/SVD representatives can drift at machine epsilon. Video encoding is deliberately excluded from scientific verification.
 
 ## Read next
 
