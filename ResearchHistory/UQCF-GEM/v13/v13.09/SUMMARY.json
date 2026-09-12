@@ -1,0 +1,121 @@
+{
+  "version": "v13.09",
+  "gate": "Symmetry-Origin / Einstein-Sector Source Selection Gate",
+  "classification": "V1309_VISIBLE_U1_CYCLIC_STABILIZER_PROTECTS_BKM_METRIC_COMPATIBILITY_TO_ALL_ORDERS_BUT_DOES_NOT_PROTECT_FULL_LCSP__AN_EXPLICIT_POSITIVE_CYCLIC_U1_INVARIANT_THREE_BODY_HIDDEN_COMPLETION_WITH_IDENTICAL_INITIAL_ONE_AND_TWO_BODY_DATA_CAUSES_POLAR_PHASE_HOLONOMY_AND_FIXED_RESA_CLOSURE_DRIFT_UNDER_THE_SAME_RADIAL_SOURCE_WHILE_QTC_REMAINS_EXACT__THEREFORE_THE_V1308_EXACT_LC_SOURCE_SECTOR_REQUIRES_HIDDEN_COMPLETION_PHASE_RIGIDITY_NOT_DERIVED_BY_GLOBAL_POSITIVITY_RELATIONAL_IDENTITY_OR_PROVENANCE_COVARIANCE__AT_A_FIXED_NONTRIVIAL_SO3_HOLONOMY_THE_CONTINUOUS_GEOMETRIC_STABILIZER_LIE_ALGEBRA_IS_ONE_DIMENSIONAL_AND_V1308_SATURATES_IT__A_THREE_DIMENSIONAL_NONABELIAN_COLLECTIVE_SU2_SOURCE_ALGEBRA_EXISTS_IN_AN_EXACT_FLAT_ISOTROPIC_CONTROL",
+  "visible_sector": {
+    "min_state_eigenvalue": 0.07175000000000002,
+    "state_J_commutator": 0.0,
+    "cyclic_invariance_error": 0.0,
+    "initial_QTC": 1.371649520800515e-16,
+    "initial_solder_closure": 4.710277376051325e-16,
+    "holonomy_angle": 0.8099999999999999,
+    "pair_singular_values": [0.026, 0.025999999999999995, 0.018]
+  },
+  "stabilizer_protected_QTC_theorem": {
+    "statement": "For equal local faithful marginals invariant under a common U(1)_n and cyclically equivalent pair data, local BKM metrics have axial form k_perp P_perp+k_parallel P_parallel. Any polar transport in the same U(1)_n commutes with that metric, so QTC is exact even if the polar angle changes under the source flow.",
+    "executed_rows": [
+      {"state": "visible", "s": 0.0, "max_axial_K_residual": 0.0, "max_U1_transport_residual": 0.0, "max_QTC": 1.371649520800515e-16},
+      {"state": "visible", "s": 0.4, "max_axial_K_residual": 1.6594320252033047e-32, "max_U1_transport_residual": 1.930754375952656e-15, "max_QTC": 1.0081459015554136e-15},
+      {"state": "visible", "s": 0.8, "max_axial_K_residual": 5.167812330662699e-33, "max_U1_transport_residual": 1.51337218996067e-15, "max_QTC": 7.76002933642851e-16},
+      {"state": "hidden", "s": 0.0, "max_axial_K_residual": 0.0, "max_U1_transport_residual": 0.0, "max_QTC": 1.371649520800515e-16},
+      {"state": "hidden", "s": 0.4, "max_axial_K_residual": 7.803421772295773e-33, "max_U1_transport_residual": 2.1531848247688558e-15, "max_QTC": 8.642785657127088e-16},
+      {"state": "hidden", "s": 0.8, "max_axial_K_residual": 9.513392143540235e-33, "max_U1_transport_residual": 1.937441052492067e-15, "max_QTC": 6.999647549127743e-16}
+    ],
+    "status": "CLOSED_CONDITIONAL_REPRESENTATION_THEOREM"
+  },
+  "hidden_completion_counterexample": {
+    "eta": 0.003,
+    "hidden_generator_J_commutator": 0.0,
+    "hidden_generator_cyclic_error": 0.0,
+    "hidden_state_min_eigenvalue": 0.07175000000000002,
+    "max_initial_one_two_body_difference": 0.0,
+    "initial_QTC": 1.371649520800515e-16,
+    "initial_solder_closure": 4.710277376051325e-16,
+    "flow_rows": [
+      {"s": 0.1, "min_state_eigenvalue": 0.05799802611693576, "max_QTC": 5.619211697402301e-16, "polar_angles": [0.26357542414860474, 0.2635754241486064, 0.2635754241486089], "max_polar_shift": 0.00908570667593021, "fixed_RESA_closure": 0.013385643665251426, "holonomy_angle": 0.7907262724458204, "holonomy_angle_shift": 0.019273727554179554},
+      {"s": 0.4, "min_state_eigenvalue": 0.028949888030039842, "max_QTC": 8.642785657127088e-16, "polar_angles": [0.24459347994318098, 0.24459347994318295, 0.24459347994318661], "max_polar_shift": 0.03592927888404967, "fixed_RESA_closure": 0.05312866248434053, "holonomy_angle": 0.7337804398295505, "holonomy_angle_shift": 0.0762195601704494},
+      {"s": 0.8, "min_state_eigenvalue": 0.010202189997372876, "max_QTC": 6.999647549127743e-16, "polar_angles": [0.2213946416619839, 0.22139464166198594, 0.22139464166199146], "max_polar_shift": 0.0687315907882491, "fixed_RESA_closure": 0.1020778957318542, "holonomy_angle": 0.6641839249859612, "holonomy_angle_shift": 0.1458160750140387}
+    ],
+    "theorem": "Two globally positive states with identical initial one- and two-body data, identical U(1) and cyclic visible symmetry, and the same radial source can have different finite source evolution of polar phase/holonomy because of hidden three-body completion data.",
+    "consequence": "Visible stabilizer symmetry protects Q=0 but not fixed-RESA torsion-like closure or holonomy rigidity."
+  },
+  "strong_full_LC_preservation_condition": {
+    "requirements": [
+      "visible common stabilizer keeps local BKM metrics in a shared axial commutant",
+      "pair polar transports remain in that stabilizer so QTC holds",
+      "hidden completion must be phase-rigid under the source so polar edge phases satisfy the solder/holonomy preservation relations, or an independently derived source-solder lift must compensate them"
+    ],
+    "name": "HCPR — Hidden-Completion Phase Rigidity",
+    "status": "NOT_DERIVED"
+  },
+  "holonomy_stabilizer_maximality": {
+    "curved_holonomy_angle": 0.8099999999999999,
+    "curved_centralizer_singular_values": [1.1144533494915845, 1.1144533494915843, 3.1401849173675503e-16],
+    "curved_centralizer_dimension": 1,
+    "centralizer_axis_alignment_with_holonomy": 1.0,
+    "flat_centralizer_dimension": 3,
+    "theorem": "For a fixed nonidentity SO(3) holonomy, the connected pointwise stabilizer Lie algebra in so(3) is one-dimensional, generated by the holonomy axis. Thus any continuous symmetry-based source algebra that preserves the actual curved holonomy pointwise has at most one faithful geometric generator.",
+    "boundary": "This does not rule out a larger group that moves the holonomy axis by conjugation, nor non-symmetry-based state-dependent source lifts."
+  },
+  "flat_nonabelian_control": {
+    "min_state_eigenvalue": 0.10249999999999998,
+    "initial_QTC": 0.0,
+    "initial_transport_identity_error": 0.0,
+    "flow_rows": [
+      {"source": "x", "s": 0.1, "max_QTC": 4.262287837749822e-16, "max_transport_shift": 2.3245838840953143e-15, "solder_closure": 2.6367796834847468e-15, "min_state_eigenvalue": 0.09620988017509433},
+      {"source": "x", "s": 0.4, "max_QTC": 3.067554077618295e-16, "max_transport_shift": 3.744866241386503e-15, "solder_closure": 4.972820174300706e-16, "min_state_eigenvalue": 0.06752399382778349},
+      {"source": "x", "s": 0.8, "max_QTC": 7.308599405198288e-16, "max_transport_shift": 4.924220187607872e-15, "solder_closure": 2.9205407954182373e-15, "min_state_eigenvalue": 0.026205640494748852},
+      {"source": "y", "s": 0.1, "max_QTC": 6.285129625666129e-16, "max_transport_shift": 1.9935612519773605e-15, "solder_closure": 2.2399626539560043e-15, "min_state_eigenvalue": 0.0962098801750943},
+      {"source": "y", "s": 0.4, "max_QTC": 5.487503721325824e-16, "max_transport_shift": 2.6844266277730823e-15, "solder_closure": 8.95090418262362e-16, "min_state_eigenvalue": 0.06752399382778346},
+      {"source": "y", "s": 0.8, "max_QTC": 1.3545977953490238e-15, "max_transport_shift": 3.731532981099722e-15, "solder_closure": 2.7194799110210365e-16, "min_state_eigenvalue": 0.02620564049474889},
+      {"source": "z", "s": 0.1, "max_QTC": 7.654222146425924e-16, "max_transport_shift": 1.9682396565236614e-15, "solder_closure": 1.8906416838689214e-15, "min_state_eigenvalue": 0.09620988017509437},
+      {"source": "z", "s": 0.4, "max_QTC": 3.9126530879330664e-16, "max_transport_shift": 2.1441665345723444e-15, "solder_closure": 1.589839758910881e-15, "min_state_eigenvalue": 0.06752399382778343},
+      {"source": "z", "s": 0.8, "max_QTC": 7.135783769832956e-16, "max_transport_shift": 2.248281449469924e-15, "solder_closure": 1.617461973727859e-15, "min_state_eigenvalue": 0.026205640494748893},
+      {"source": "xy", "s": 0.1, "max_QTC": 4.693042328653772e-16, "max_transport_shift": 1.7666279116155643e-15, "solder_closure": 1.7772239894833365e-16, "min_state_eigenvalue": 0.0962098801750944},
+      {"source": "xy", "s": 0.4, "max_QTC": 1.1354024572590726e-15, "max_transport_shift": 4.44589563274377e-15, "solder_closure": 9.757969893912614e-16, "min_state_eigenvalue": 0.06752399382778344},
+      {"source": "xy", "s": 0.8, "max_QTC": 1.3642523804867708e-15, "max_transport_shift": 6.739428756791744e-15, "solder_closure": 5.073427689515889e-15, "min_state_eigenvalue": 0.02620564049474883}
+    ],
+    "operator_commutator_coefficients": {"xy_to_z": -1.1547005383792517, "yz_to_x": -1.1547005383792517, "zx_to_y": -1.1547005383792517},
+    "commutator_residuals": [2.0411388342580106e-17, 3.8459253727671276e-16, 3.8459253727671276e-16],
+    "noncommuting_ETL_additivity_error": 9.203348501299485e-16,
+    "theorem": "At flat isotropic holonomy, the stabilizer enlarges to SO(3), and the three collective spin sources form a non-Abelian su(2)-type operator algebra while finite ETL flows remain LC-compatible."
+  },
+  "symmetry_origin_audit": {
+    "positive_symmetry_broken_state_min_eigenvalue": 0.07172764607849262,
+    "symmetry_broken_initial_QTC": 1.4686311452070556e-16,
+    "visible_transverse_singular_gap": 3.469446951953614e-18,
+    "broken_transverse_singular_gap": 0.010000000000000002,
+    "global_positivity": "does not force axial degeneracy or hidden-completion phase rigidity; explicit positive perturbations survive",
+    "relational_identity": "selects the polar map for generic as well as degenerate pair correlations; it does not select the enhanced-stabilizer stratum",
+    "provenance_symmetry": "covariant action on a compatible realization fiber does not imply each hidden completion is symmetry-fixed",
+    "protected_grading": "fixes source amount/extensivity, not directional stabilizer degeneracy or hidden phase response",
+    "adjudication": "SUCCESSFUL_V1308_STABILIZER_NOT_DERIVED_FROM_CURRENT_ONTOLOGY"
+  },
+  "scientific_interpretation": {
+    "new_structure": "curved retained holonomy reduces the pointwise continuous geometric stabilizer from SO(3) in the flat isotropic control to U(1) in the curved axial sector",
+    "do_not_overclaim": "This is a symmetry/stabilizer theorem inside the retained quantum-geometric architecture, not evidence that physical gravity breaks an SU(2) source symmetry.",
+    "gravity_connection": "open"
+  },
+  "adjudication": {
+    "visible_symmetry_sufficient_for_Q_zero": "YES_CONDITIONAL",
+    "visible_symmetry_sufficient_for_full_LCSP": "NO",
+    "hidden_completion_matters_for_source_holonomy": "YES_EXACT_COUNTEREXAMPLE",
+    "HCPR": "NOT_DERIVED",
+    "v1308_one_dimensional_algebra_maximal_for_fixed_curved_holonomy_stabilizer": "YES",
+    "larger_nonabelian_LC_source_algebra_possible": "YES_IN_FLAT_ISOTROPIC_CONTROL",
+    "symmetry_origin_from_current_ontology": "NOT_DERIVED"
+  },
+  "status": {
+    "generic_metric_affine_parent": "REMAINS",
+    "visible_U1_Q_sector": "CONDITIONALLY_PROTECTED",
+    "full_curved_LC_source_sector": "REQUIRES_HCPR_OR_SOURCE_SOLDER_LIFT",
+    "LCSP": "PARTIAL_CONDITIONAL_NOT_DERIVED",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false
+  },
+  "next_gate": {
+    "version": "v13.10",
+    "name": "Hidden-Completion Source Rigidity / Holonomy-Phase Preservation Gate",
+    "question": "Do W2/W3 provenance, SGOD-F3 boundary observables, global atlas history, or another already-retained higher-order object distinguish source-flow-rigid hidden completions from the explicit phase-drifting completion while their initial one/two-body data agree? If not, freeze HCPR as a new irreducible source-to-hidden-geometry law."
+  }
+}

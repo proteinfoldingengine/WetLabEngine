@@ -1,0 +1,131 @@
+{
+  "version": "v13.02",
+  "gate": "Quadratic Transport Compatibility Origin / BKM-Holonomy Naturality Gate",
+  "classification": "V1302_QTC_NOT_DERIVED__POLAR_CORRELATION_TRANSPORT_DEPENDS_ON_CONNECTED_PAIR_CORRELATION_WHILE_LOCAL_BKM_SCORE_METRICS_DEPEND_ON_LOCAL_MARGINAL_STATES__THE_SAME_FIXED_FULL_RANK_CONNECTED_C_AND_IDENTICAL_POLAR_O_CAN_COEXIST_WITH_QTC_PASS_OR_FAIL_AS_MARGINALS_VARY__FOR_FAITHFUL_NONMAXIMALLY_MIXED_QUBITS_QTC_IFF_MARGINAL_BLOCH_RADII_MATCH_AND_POLAR_TRANSPORT_ALIGNs_THE_UNIQUE_BKM_RADIAL_AXES_UP_TO_SIGN__GENERIC_FULL_RANK_PAIR_STATES_SHOW_NONZERO_GAUGE_COVARIANT_NONMETRICITY",
+  "exact_local_BKM_score_metric": {
+    "definition": "K_ab(rho)=integral_0^1 Tr[rho^t (sigma_a-<sigma_a>) rho^(1-t) (sigma_b-<sigma_b>)] dt",
+    "qubit_formula": "K(r)=k_perp(r)(I-nn^T)+k_parallel(r)nn^T, k_perp=r/atanh(r)=2r/log((1+r)/(1-r)), k_parallel=1-r^2",
+    "distinct_eigenspaces": "for 0<r<1, k_perp>k_parallel because atanh(r)<r/(1-r^2)",
+    "minimum_tested_gap": 6.666577773117854e-05
+  },
+  "same_C_countermodels": {
+    "fixed_connected_C": [
+      [0.11520961736999305,-0.023701577842296123,-0.011884682292224915],
+      [0.023106071174361455,0.09452090105540666,-0.021090918683704635],
+      [0.024348583949485463,0.02245071204794194,0.0762491145908609]
+    ],
+    "fixed_polar_O": [
+      [0.9600801447499421,-0.2370157784229612,-0.14855852865281144],
+      [0.1925505931196788,0.9452090105540665,-0.2636364835463079],
+      [0.2029048662457122,0.2245071204794194,0.9531139323857611]
+    ],
+    "cases": {
+      "matched": {
+        "min_rho_eigenvalue": 0.1725000000000001,
+        "connected_C_error_to_fixed": 1.993045536433795e-17,
+        "polar_O_error_to_fixed_R": 3.713442931002523e-16,
+        "C_singular_values": [0.12000000000000002,0.09999999999999998,0.08],
+        "bloch_radius_i": 0.10000000000000003,
+        "bloch_radius_j": 0.10000000000000002,
+        "radial_axis_alignment_abs": 0.9999999999999998,
+        "BKM_formula_error": 1.4130832128153975e-15,
+        "K_i": [[0.9966577309127946,0.0,0.0],[0.0,0.9966577309127946,0.0],[0.0,0.0,0.99]],
+        "K_j": [[0.996383629569578,-0.0003032835260369862,-0.0012875482680083997],[-0.0003032835260369862,0.9963221583246193,-0.0014246270159868],[-0.0012875482680083997,-0.0014246270159868,0.9906096739313918]],
+        "QTC_relative_residual": 4.515858473942089e-16,
+        "dimensionless_nonmetricity_norm": 1.1713262315548826e-15,
+        "trace_part_norm": 3.2049378106392735e-16,
+        "shear_part_norm": 1.1266272129803674e-15
+      },
+      "spectral_mismatch": {
+        "min_rho_eigenvalue": 0.10639364944737857,
+        "connected_C_error_to_fixed": 3.1031676915590914e-17,
+        "polar_O_error_to_fixed_R": 4.815412394636862e-16,
+        "C_singular_values": [0.12000000000000002,0.09999999999999998,0.08000000000000003],
+        "bloch_radius_i": 0.44999999999999996,
+        "bloch_radius_j": 0.020000000000000018,
+        "radial_axis_alignment_abs": 0.953113932385761,
+        "BKM_formula_error": 1.88411095042053e-15,
+        "K_i": [[0.9284087917285602,0.0,0.0],[0.0,0.9284087917285602,0.0],[0.0,0.0,0.7975]],
+        "K_j": [[0.9998666524414649,0.0,0.0],[0.0,0.9998666524414649,0.0],[0.0,0.0,0.9996]],
+        "QTC_relative_residual": 0.13049387902225107,
+        "dimensionless_nonmetricity_norm": 0.22604629434670634,
+        "trace_part_norm": 0.19925076907892264,
+        "shear_part_norm": 0.10675232179833676
+      },
+      "axis_mismatch": {
+        "min_rho_eigenvalue": 0.1096416483215822,
+        "connected_C_error_to_fixed": 2.0816681711721685e-17,
+        "polar_O_error_to_fixed_R": 3.002224531865041e-16,
+        "C_singular_values": [0.12000000000000002,0.09999999999999999,0.07999999999999999],
+        "bloch_radius_i": 0.30000000000000004,
+        "bloch_radius_j": 0.3,
+        "radial_axis_alignment_abs": 0.20290486624571202,
+        "BKM_formula_error": 4.586249538679534e-16,
+        "K_i": [[0.9692439377866843,0.0,0.0],[0.0,0.9692439377866843,0.0],[0.0,0.0,0.9099999999999999]],
+        "K_j": [[0.9099999999999997,0.0,-8.983475455265076e-18],[0.0,0.9692439377866838,0.0],[-8.983475455265076e-18,0.0,0.9692439377866838]],
+        "QTC_relative_residual": 0.049864113707434536,
+        "dimensionless_nonmetricity_norm": 0.08743921764570302,
+        "trace_part_norm": 0.0022028968450630367,
+        "shear_part_norm": 0.08741146393913464
+      }
+    },
+    "theorem": "Connected pair correlation C and its polar factor O do not determine QTC. Keeping C exactly fixed leaves O exactly fixed while physically valid local marginals can be varied to produce either compatible or incompatible BKM score metrics."
+  },
+  "qubit_QTC_theorem": {
+    "statement": "For faithful qubits with nonzero Bloch radii and universal MEA scale, K_j=O_ij^T K_i O_ij iff |r_i|=|r_j| and O_ij n_j=± n_i. At maximally mixed marginals K=I and the axis condition disappears.",
+    "max_positive_control_error": 3.658621925456099e-15,
+    "min_radius_mismatch_error": 0.004840086437180358,
+    "min_axis_mismatch_error": 0.0006243215831659952,
+    "meaning": "Equal marginal spectra are necessary but not sufficient; the retained correlation transport must also align the BKM radial eigendirections."
+  },
+  "nonmetricity": {
+    "definition": "Delta_ij=K_j-O_ij^T K_i O_ij; N_ij=K_j^-1/2(O_ij^T K_i O_ij)K_j^-1/2-I",
+    "gauge_rule": "Delta_ij -> R_j Delta_ij R_j^T under independent local frames",
+    "gauge_Delta_error": 6.779132550267638e-16,
+    "gauge_dimensionless_norm_error": 3.608224830031759e-16,
+    "gauge_trace_norm_error": 6.661338147750939e-16,
+    "gauge_shear_norm_error": 4.579669976578771e-16,
+    "interpretation": "N_ij is a dimensionless discrete BKM non-metricity observable. Its trace and traceless/shear norms are gauge invariant, but no universal shear dominance is claimed."
+  },
+  "random_pair_survey": {
+    "accepted": 1000,
+    "qtc_relative_min": 0.006680836868379668,
+    "qtc_relative_median": 0.10778116988701307,
+    "qtc_relative_p90": 0.22753503530455937,
+    "qtc_relative_max": 0.6202301640881155,
+    "count_below_1e_3": 0,
+    "dimensionless_nonmetricity_median": 0.19382063159327456,
+    "shear_over_trace_median": 1.0550910861780027,
+    "fraction_shear_norm_gt_trace_norm": 0.532
+  },
+  "origin_audit": {
+    "polar_transport_input": "connected pair correlation C=T-ab^T",
+    "BKM_metric_input": "local marginal rho_i or equivalently its Bloch vector/spectrum",
+    "independence": "the Fano decomposition permits C to remain fixed while a,b vary inside a positive-state neighborhood",
+    "archive_support": "v10.12 derives O from C as an HS/Euclidean observable-space isometry; v12.11 only proves local score frame covariance and uses O to compare scores, not BKM-metric preservation",
+    "conclusion": "Neither pair-state positivity, global compatibility, polar maximal-correlation selection, nor local score covariance supplies the missing marginal-metric intertwining law."
+  },
+  "adjudication": {
+    "QTC": "NOT_DERIVED",
+    "QTC_generic_status": "GENERALLY_FALSE_FOR_POLAR_CORRELATION_TRANSPORT",
+    "special_QTC_sector": "EXISTS_WHEN_MARGINAL_BKM_SPECTRA_AND_RADIAL_AXES_MATCH_UNDER_O",
+    "metric_compatibility_before_TFHC": "FAILS_GENERICALLY",
+    "TFHC_permission": "DO_NOT_RUN_AS_LEVI_CIVITA_GATE_UNTIL_QTC_OR_AN_EQUIVALENT_METRIC_COMPATIBLE_TRANSPORT_IS_SUPPLIED"
+  },
+  "status": {
+    "MEA": "EXPLICIT_CONDITIONAL_INPUT_NOT_DERIVED",
+    "local_SMI": "CLOSED_CONDITIONAL_ON_MEA",
+    "QTC_origin": "EXHAUSTED_FOR_CURRENT_POLAR_CORRELATION_TRANSPORT",
+    "QTC": "NOT_DERIVED",
+    "BKM_nonmetricity_channel": "DERIVED_AS_DEFECT_OBSERVABLE",
+    "HLCB": "GENERICALLY_BLOCKED_AT_METRIC_COMPATIBILITY_FOR_CURRENT_POLAR_TRANSPORT",
+    "TFHC": "REMAINS_CONDITIONAL_SPECIAL_SECTOR_TEST",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false
+  },
+  "next_gate": {
+    "version": "v13.03",
+    "name": "Non-Metricity Continuum Fate / Metric-Compatible Projection No-Go Gate",
+    "question": "Does the discrete BKM non-metricity defect N_ij decay under the already-admissible refinement/continuum sector, persist at finite order, or require a new metric-compatible transport law? Test refinement scaling without projecting O_ij to Levi-Civita by hand. If N survives, Pillar 3 should branch to a metric-affine/contorsion correspondence rather than pure ADM."
+  }
+}
