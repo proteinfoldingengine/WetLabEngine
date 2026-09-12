@@ -1,4 +1,11 @@
-from uqcf_demo.simulation import run_telemetry, telemetry_hash, default_config
+import copy
+
+from uqcf_demo.simulation import (
+    run_telemetry,
+    telemetry_hash,
+    scientific_fingerprint,
+    default_config,
+)
 from uqcf_demo.ledger import claim_ledger
 
 
@@ -22,6 +29,23 @@ def test_telemetry_structural_controls_pass():
     assert summary["min_bkm_eigenvalue"] > -1e-9
     assert summary["dewitt_pure_trace_control"] < 0
     assert summary["dewitt_traceless_control"] >= -1e-10
+
+
+def test_scientific_fingerprint_ignores_machine_epsilon_drift_but_not_physics():
+    data = run_telemetry(default_config(frames=5))
+    baseline = scientific_fingerprint(data)
+
+    drifted = copy.deepcopy(data)
+    drifted["summary"]["max_source_balance_residual"] += 3e-16
+    drifted["summary"]["max_projective_direction_change"] += 2e-16
+    drifted["summary"]["pgrl_reparameterization_error"] += 4e-16
+    drifted["summary"]["min_bkm_eigenvalue"] += 8e-16
+    drifted["summary"]["max_qmar_jet_norm"] -= 5e-14
+    assert scientific_fingerprint(drifted) == baseline
+
+    changed = copy.deepcopy(data)
+    changed["summary"]["max_qmar_jet_norm"] += 0.1
+    assert scientific_fingerprint(changed) != baseline
 
 
 def test_claim_ledger_keeps_gravity_boundary_open():
