@@ -4,6 +4,27 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.17 — Recoverability-to-QMAR Geometric Error Propagation
+
+- Propagated the v13.16 state-level recoverability bound into explicit retained-geometric error bars on faithful, polar-gapped strata.
+- Derived the exact qubit BKM form `K(r)=a(r)I+[b(r)-a(r)]nn^T`, with faithfulness floor `lambda_min(rho)>=mu` implying `lambda_min(K)>=4mu(1-mu)` and a finite analytic Lipschitz constant `L_K(mu)`.
+- Combined trace-distance contractivity with a polar-decomposition perturbation theorem to obtain `||Delta O||_F <= (18/gamma)T` when pair connected-correlation singular values are bounded below by `gamma`.
+- Closed explicit conditional bounds for BKM metric, linear nonmetricity defect, and loop holonomy; all scale as `O(sqrt(CMI))` through `T <= sqrt(1-exp(-I))`.
+- Fresh inequality controls stayed within the analytic bounds: BKM ratio `0.6143`, polar ratio `0.8738`, holonomy-product ratio `0.9916`.
+- Showed a static small-CMI certificate does not control an arbitrary ETL/PGRL source trajectory: a non-clique source amplified CMI by up to `3.25e4` in the parity-hidden control.
+- Finite trajectories are certified only with uniform CMI plus `mu/gamma` conditioning along the path; infinitesimal QMAR-jet locality remains open.
+- Next: v13.18 Source-Conditioned Recoverability / QMAR Jet Locality Gate.
+
+### v13.16 — Quantum Markov / Conditional-Mutual-Information Selection
+
+- Preserved the upstream v9.41 no-go: exact quantum Markov/Petz gluing is not selected by the current ontology (`0/13,104` exact native Petz reconstructions).
+- Proved exact Markovity is stable under commuting clique-compatible ETL tilts, but a non-clique source breaks it.
+- Constructed the parity-hidden family `p_eps(a,b,c)=1/8(1+eps abc)` and showed exact local source-response error `eps` while `CMI~eps^2/2`, giving sharp `O(sqrt(CMI))` response scaling.
+- Ruled out any universal response-error law linear in CMI near exact Markovity.
+- Combined recoverability fidelity/trace-distance control with a covariance response lemma to obtain a certified approximate locality bound of order `sqrt(CMI)` for bounded commuting observables/sources.
+- Established that small CMI is not source-invariant under arbitrary ETL/PGRL operations; source compatibility remains necessary.
+- Next: v13.17 Recoverability-to-QMAR Geometric Error Propagation Gate.
+
 ### v13.15 — Relational Locality / Sparse Source Closure
 
 - Proved graph sparsity/treewidth alone does not make generic QMAR local: two positive four-qubit path states with identical every proper subsystem marginal (`8.674e-19` max difference) have different first-edge QMAR response under the same site-local source (`0.0019475968` gap).
