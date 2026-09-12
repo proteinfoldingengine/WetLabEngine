@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.17 — Recoverability-to-QMAR Geometric Error Propagation Gate  
-**Next gate:** v13.18 — Source-Conditioned Recoverability / QMAR Jet Locality Gate
+**Latest completed gate:** v13.18 — Source-Conditioned Recoverability / QMAR Jet Locality Gate  
+**Next gate:** v13.19 — Approximate Local Metric-Affine Evolution / Patch Composition Gate
 
 ## Current scientific picture
 
@@ -19,7 +19,8 @@ full quantum completion
 → PGRL/ETL source response
 → BKM metric + polar transport (QMAR)
 → metric-affine nonmetricity / connection / holonomy
-→ conditional locality only when recoverability is controlled
+→ exact locality only in restricted Markov sectors
+→ certified approximate geometry + jet locality on recoverable regular strata
 ```
 
 v13.11 derived the conditional first-order QMAR map from the full faithful state and closed exact trace/Weyl integrability of BKM/polar nonmetricity.
@@ -32,50 +33,63 @@ v13.14 showed symmetry compression survives only for symmetry-compatible source 
 
 v13.15 proved graph sparsity/treewidth alone is insufficient, while commuting Markov graphical states with clique-compatible sources admit exact separator-message closure.
 
-v13.16 closed the next boundary: exact Markovity is **not** selected by the existing ontology (consistent with v9.41's 0/13,104 exact native Petz gluings), but small separator CMI provides a certified recoverability/local-response route with natural `O(sqrt(CMI))` error scaling. Exact Markovity is stable only under compatible clique ETL sources.
+v13.16 showed exact Markovity is not selected by the existing ontology, but small separator CMI gives certified recoverability with natural `O(sqrt(CMI))` error scaling.
 
-v13.17 now propagates recoverability into explicit geometric error bars on faithful, polar-gapped strata. If local qubit eigenvalues satisfy `lambda_min >= mu` and pair connected-correlation singular values satisfy `sigma_min >= gamma`, then the recovered-state trace error controls the BKM metric, polar transport, linear nonmetricity defect, and loop holonomy with explicit constants. All resulting errors scale as `O(sqrt(CMI))`.
+v13.17 propagated recoverability into explicit BKM metric, polar transport, nonmetricity, and holonomy error bars on faithful, polar-gapped strata.
 
-## Latest new result — v13.17
+v13.18 now closes the infinitesimal/source-response extension conditionally. On faithful finite-dimensional strata, the ETL/PGRL state tangent is Lipschitz in the recovered state with an explicit constant. BKM and polar jet maps are locally Lipschitz on compact regular strata, giving QMAR jet error scaling `O(||P|| sqrt(CMI))`. The polar jet conditioning scales as `O(gamma^-1)` at first derivative and `O(gamma^-2)` for differential stability.
 
-For qubit BKM geometry,
+## Latest new result — v13.18
 
-```text
-K(r)=a(r)I+[b(r)-a(r)]nn^T,
-a(r)=r/atanh(r),
-b(r)=1-r^2.
-```
-
-Faithfulness `lambda_min(rho)>=mu` implies a BKM eigenvalue floor `4mu(1-mu)` and a finite analytic Lipschitz constant `L_K(mu)`.
-
-For the pair polar map, the perturbation theorem gives
+For
 
 ```text
-||Delta O||_F <= (18/gamma) T
+rho_s = exp(log rho + sP)/Z_s,
 ```
 
-on a singular-value-gapped stratum.
-
-Combining these with recoverability
+the source tangent is
 
 ```text
-T(rho,rho_rec) <= sqrt(1-exp[-I(A:C|B)])
+dot rho = integral_0^1 rho^t P rho^(1-t) dt - rho Tr(rho P).
 ```
 
-gives explicit geometric bounds:
+If `rho,sigma >= mu I` in dimension `d`, then
 
 ```text
-||Delta K_i||_F <= 2 L_K(mu) tau(I)
-||Delta O_ij||_F <= (18/gamma) tau(I)
-||Delta M_ij||_F <= [4L_K(mu)+36/gamma] tau(I)
-||Delta H||_F <= (18m/gamma) tau(I)
+||dotrho_rho(P)-dotrho_sigma(P)||_F
+<= B_ETL(mu,d) ||P||op ||rho-sigma||_F
+<= 2 B_ETL(mu,d) ||P||op T(rho,sigma),
 ```
 
-with `tau(I)=sqrt(1-exp(-I))` and an `m`-edge loop.
+where
 
-Fresh numerical inequality controls stayed within the analytic bounds: BKM ratio `0.6143`, polar ratio `0.8738`, holonomy product ratio `0.9916`.
+```text
+B_ETL(mu,d)=2[1+mu(ln mu-1)]/[mu(ln mu)^2] + 1 + sqrt(d).
+```
 
-A static CMI certificate does **not** control an arbitrary source trajectory. In the non-clique parity-hidden control, initially tiny CMI was amplified by as much as `3.25e4`. A finite source trajectory is certified only when CMI and the `mu/gamma` conditioning floors remain uniformly controlled along the source path.
+Combining with recoverability gives
+
+```text
+||Delta dotrho||_F
+<= 2 B_ETL ||P||op sqrt(1-exp[-I(A:C|B)]).
+```
+
+On compact strata with local faithfulness floor `mu`, pair polar singular floor `gamma`, bounded source norm `||P||<=p`, and fixed local dimension, the QMAR geometric jet map `(rho,P)->(dot K,dot O,dot M,dot H)` is Lipschitz in `rho`.
+
+Therefore
+
+```text
+jet error = O(p sqrt(CMI)).
+```
+
+Fresh controls:
+
+- ETL tangent analytic-bound max ratio: `0.1001`;
+- conditioned BKM jet gap / trace distance: `0.2930` max observed;
+- polar jet gap / trace distance: `42.47` max observed;
+- holonomy jet gap / trace distance: `39.74` max observed.
+
+CMI alone cannot control a jet: with fixed state/CMI, scaling `P -> lambda P` scales the source-response error linearly. Source norm and regularity floors are essential inputs.
 
 ## Open boundaries
 
@@ -85,22 +99,22 @@ A static CMI certificate does **not** control an arbitrary source trajectory. In
 - HCPR remains irreducible relative to the frozen ledger.
 - QMAR is autonomous on the full quantum state, not on fixed finite local moments.
 - Exact Markovity is not ontology-selected generically.
-- Approximate locality is now certified only on recoverable, faithful, polar-gapped strata.
-- Static CMI does not by itself certify arbitrary source evolution.
-- Infinitesimal QMAR-jet locality remains open.
+- Approximate locality is certified only on recoverable, faithful, polar-gapped strata.
+- Support and polar singular boundaries prevent uniform jet locality.
+- Geometry-only autonomous evolution remains obstructed by hidden completion.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
 - Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.18
+## Next gate — v13.19
 
-Derive or falsify **source-conditioned recoverability at the tangent level**.
+Test **Approximate Local Metric-Affine Evolution / Patch Composition**.
 
-Target explicit bounds on:
+Targets:
 
-- `dot K`;
-- `dot O`;
-- `dot M`;
-- `dot H`.
+- compose overlapping recovered local patches;
+- derive error accumulation along relational paths;
+- derive loop/holonomy error accumulation under patch gluing;
+- test whether atlas errors remain controlled by separator/recoverability structure or grow uncontrollably with path length.
 
-Test whether separator CMI plus its source derivative, or an explicitly recovered tangent state, is sufficient. If not, freeze recoverability locality as a finite-trajectory theorem rather than an infinitesimal local field-law closure.
+A controlled patch-composition theorem would be the first route from local recoverability toward an approximate global metric-affine response atlas.
