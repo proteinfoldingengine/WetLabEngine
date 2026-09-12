@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 root=Path(__file__).resolve().parent
-s=json.loads((root/'UQCF_GEM_v13_01_SUMMARY.json').read_text())
+s=json.loads((root/'SUMMARY.json').read_text())
 assert s['version']=='v13.01'
 assert s['status']['local_SMI']=='CLOSED_CONDITIONAL_ON_MEA'
 assert s['status']['QTC']=='NOT_DERIVED'
