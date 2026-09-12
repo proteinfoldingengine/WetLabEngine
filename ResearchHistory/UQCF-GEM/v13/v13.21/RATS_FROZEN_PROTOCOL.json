@@ -1,0 +1,111 @@
+{
+  "adjudication_states": [
+    "PROTOCOL_FROZEN_EXECUTION_BLOCKED",
+    "EXECUTED_INFORMATION_AND_DIRECT_PASS",
+    "EXECUTED_INFORMATION_PASS_DIRECT_FAIL",
+    "EXECUTED_INFORMATION_FAIL_DIRECT_PASS",
+    "EXECUTED_BOTH_FAIL",
+    "EXECUTED_INCONCLUSIVE_CONDITIONING_OR_NUMERICS"
+  ],
+  "canonical_recovery": {
+    "formula": "R_B->BC(X)=rho_BC^(1/2) rho_B^(-1/2) X rho_B^(-1/2) rho_BC^(1/2)",
+    "map": "faithful-state Petz map fixed before data",
+    "optimization": "No rotated-Petz, variational, or best-of recovery search is allowed in the primary score.",
+    "recovered_state": "rho_rec_ABC = (id_A tensor R_B->BC)(rho_AB)",
+    "support_rule": "No pseudoinverse threshold may be tuned. Full-rank/faithfulness is required on the scored stratum; otherwise the level is CONDITIONING_FAIL."
+  },
+  "conditioning_gates": {
+    "cmi": "I_h >= 0 up to numerical tolerance; negative numerical values are clipped only for display, never for exponent scoring",
+    "gamma": "gamma_h > 0 at every scored level; beta is measured rather than assumed",
+    "mu": "mu_h > 0 at every scored level and no decreasing-to-zero claim may be hidden by clipping",
+    "state_identity": "all state/source/restriction hashes frozen before score calculation"
+  },
+  "date": "2026-09-12",
+  "direct_telemetry_score": {
+    "full_jet_bounded": "jet_local_bounded and jet_context_bounded",
+    "jet_context_bounded": "p_epsilon_min + lambda_min >= 2",
+    "jet_local_bounded": "p_eta_min >= 1",
+    "purpose": "Independent cross-check that bypasses looseness in the information-theoretic constants.",
+    "value_bounded": "p_epsilon_min >= 1",
+    "value_vanishing_compatible": "p_epsilon_min > 1"
+  },
+  "exponent_estimator": {
+    "conservative_summary": {
+      "alpha_min": "minimum adjacent CMI exponent, with global alpha also reported",
+      "beta_max": "maximum adjacent gamma exponent (worst polar-gap closing rate), with global beta reported",
+      "lambda_min": "minimum adjacent Lambda exponent",
+      "p_epsilon_min": "minimum adjacent direct edge-transport-error exponent",
+      "p_eta_min": "minimum adjacent direct edge-jet-error exponent",
+      "sigma_min": "minimum adjacent source-norm exponent"
+    },
+    "definition": "For positive telemetry y_h, adjacent exponent p_r = log(y_(h/2)/y_h)/log((h/2)/h); global exponent is ordinary least-squares slope of log y vs log h.",
+    "zero_floor_rule": "Numerical underflow/floor hits do not become infinite exponents. Exact zero is admissible only if established analytically or by exact algebraic identity across the family; otherwise exponent score is INCONCLUSIVE."
+  },
+  "governance": {
+    "blind_rule": "All geometry, recovery, source, telemetry, exponent, and scoring rules are frozen before any refinement telemetry is generated.",
+    "hard_stop": "If any required preexisting object is absent, v13.21 freezes the protocol and execution is BLOCKED rather than inventing a continuation.",
+    "minimum_nested_levels": 4,
+    "no_target_dependent_continuation": true,
+    "refinement_ratio": 2,
+    "required_preexisting_objects": [
+      "a genuine nested family of retained quantum states rho_h describing the same physical relational configuration",
+      "an ancestry/coarse-graining map fixed independently of v13.20 outcomes",
+      "a source continuation rule fixed independently of RATS scores",
+      "a restriction/coarse identification for the target edge/patch"
+    ]
+  },
+  "jet_rule": {
+    "finite_difference_fallback": "Allowed only if frozen before telemetry: symmetric central difference with fixed dimensionless step schedule and Richardson consistency check. Failed Richardson consistency is JET_NUMERICS_FAIL, never retuned.",
+    "primary": "Use the analytic/Frechet ETL and polar/BKM differentials already defined by QMAR."
+  },
+  "nested_family_contract": {
+    "ancestry": "Every fine retained degree of freedom used by the target patch must carry a declared parent under the frozen coarse map.",
+    "raw_archive": [
+      "rho_ABC or an exact sufficient representation from which all required marginals are reproducible",
+      "rho_AB, rho_BC, rho_B",
+      "target one-body and pair marginals",
+      "source operator P_h",
+      "coarse ancestry/restriction metadata",
+      "all hashes before scoring"
+    ],
+    "same_physical_configuration": "The refined state must be a continuation/refinement of one fixed relational configuration, not independent random states at each h.",
+    "scales": "h_r = h_0 / 2^r for r=0,...,R-1 with R>=4",
+    "target_patch": {
+      "A_and_C": "the two complementary retained regions on the declared separator cut, propagated by ancestry without relabeling after scoring",
+      "core": "one ancestry-tracked target edge e_h=(i_h,j_h)",
+      "separator_B": "the minimal frozen separator subalgebra containing the target edge variables needed to compute rho_i, rho_j, and rho_ij"
+    }
+  },
+  "object": "RATS — Recoverability Atlas Telemetry Scaling / Blind Refinement Protocol",
+  "phase": "v13.21",
+  "source_contract": {
+    "no_rescaling_after_results": true,
+    "normalization": "The source family and its physical normalization are fixed by the nested generator before scoring.",
+    "same_source": "The true and recovered states receive exactly the same P_h at each h.",
+    "source_norm_telemetry": "p_h = ||P_h||_op is recorded at every level."
+  },
+  "telemetry": {
+    "I_h": "I(A:C|B)_rho in nats",
+    "Lambda_h": "max(||dot O_true(h)||_F, ||dot O_rec(h)||_F)",
+    "epsilon_h": "||O_true(h)-O_rec(h)||_F on the ancestry-matched target edge",
+    "eta_h": "||dot O_true(h)-dot O_rec(h)||_F under the same source P_h",
+    "gamma_h": "minimum singular value of the target connected-correlation matrices needed by the true/recovered polar maps; score uses the smaller true/recovered floor",
+    "mu_h": "minimum eigenvalue over all true/recovered local density matrices entering BKM/recovery conditioning",
+    "p_h": "||P_h||_op",
+    "required_auxiliary": [
+      "Petz trace distance",
+      "BKM metric error",
+      "holonomy/value error on predeclared local loop if present",
+      "QMAR-jet holonomy error on that same loop if present"
+    ]
+  },
+  "v13_20_information_score": {
+    "claim_boundary": "Finite-level exponent compatibility is evidence for the derived asymptotic condition, not proof of an asymptotic law.",
+    "full_atlas_bounded": "value_bounded and full_jet_bounded",
+    "full_jet_bounded": "both jet inequalities pass",
+    "jet_context_bounded": "alpha_min >= 2*beta_max + 4 - 2*lambda_min",
+    "jet_local_bounded": "alpha_min >= 4*beta_max + 2 - 2*sigma_min",
+    "value_bounded": "alpha_min >= 2*beta_max + 2",
+    "value_vanishing_compatible": "alpha_min > 2*beta_max + 2"
+  }
+}
