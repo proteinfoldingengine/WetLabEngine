@@ -15,13 +15,14 @@ This directory is the canonical Git-tracked history for the active UQCF-GEM / Re
 
 ```text
 pre-time quantum relations / global compatibility
+    -> hidden global completion / source-response structure
     -> relational identity / polar transport
     -> RESA soldered geometry
     -> retained holonomy / curvature
     -> BKM score-solder metric channel (conditional metric selection)
     -> generic metric-affine parent geometry
        Gamma = Gamma_LC + K(T) + L(Q)
-    -> special Q=0, T=0 Levi-Civita sector
+    -> special Q=0, T=0 Levi-Civita sector (conditional, not generically source-invariant)
     -> conditional Path-A Ricci / ADM correspondence
 ```
 
@@ -39,7 +40,7 @@ Each gate directory contains:
 - `SUMMARY.json` — machine-readable adjudication and status.
 - `CHECKER.py` — executable gate verifier used for the packaged result.
 
-Current backfill:
+Tracked gates:
 
 - [v13.01](v13/v13.01/) — metric-origin branch stop / HLCB dependency reduction.
 - [v13.02](v13/v13.02/) — BKM/polar QTC generically false; discrete nonmetricity derived.
@@ -50,9 +51,10 @@ Current backfill:
 - [v13.07](v13/v13.07/) — exact LC source-tangent equations; PGRL does not imply LCSP.
 - [v13.08](v13/v13.08/) — exact finite 1D abelian LC-preserving source algebra in a symmetry-selected sector.
 - [v13.09](v13/v13.09/) — visible U(1) symmetry protects Q=0 but hidden completion can drift holonomy / solder closure.
+- [v13.10](v13/v13.10/) — frozen-ledger HCPR non-factorization; HCPR frozen as irreducible relative to current ledger.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the append-only gate ledger.
 
 ## Validation
 
-All v13.01-v13.09 checkers were re-run successfully immediately before this GitHub backfill.
+All v13.01-v13.10 gate checkers have passed in their canonical layouts. v13.10 additionally passed extracted-package verification and ZIP integrity validation before publication.
