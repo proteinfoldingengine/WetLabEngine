@@ -1,0 +1,68 @@
+{
+  "version": "v13.15",
+  "gate": "Relational Locality / Sparse Source Closure Gate",
+  "classification": "V1315_GRAPH_SPARSITY_ALONE_DOES_NOT_GIVE_EXACT_LOCAL_QMAR_CLOSURE_EVEN_ON_TREEWIDTH1_PATHS__TWO_POSITIVE_STATES_WITH_IDENTICAL_EVERY_PROPER_MARGINAL_CAN_HAVE_DIFFERENT_TARGET_EDGE_QMAR_RESPONSE_UNDER_THE_SAME_SITE_LOCAL_SOURCE__HOWEVER_COMMUTING_MARKOV_GRAPHICAL_STATES_WITH_CLIQUE_COMPATIBLE_ETL_SOURCES_HAVE_EXACT_SEPARATOR_MESSAGE_CLOSURE_WITH_COMPLEXITY_EXPONENTIAL_IN_TREEWIDTH_NOT_TOTAL_N__THIS_IS_A_CONDITIONAL_POSITIVE_LOCALITY_THEOREM_NOT_DERIVED_FOR_GENERIC_UQCF_GEM_STATES",
+  "generic_path_counterexample": {
+    "graph": "4-node path, treewidth 1",
+    "min_state_eigenvalue": 0.0062531536852514676,
+    "max_difference_over_all_proper_marginals": 8.673617379884035e-19,
+    "source": "site-local sigma_x on node 1",
+    "target": "edge (1,2) BKM metrics + polar transport response",
+    "QMAR_edge_response_gap": 0.0019475967748381333,
+    "theorem": "No exact bounded-neighborhood state descriptor built only from proper-subsystem marginals can determine generic local ETL/QMAR response, because the hidden full-body completion can change the response while every proper marginal agrees."
+  },
+  "prior_exchange_locality_boundary": {
+    "result": "v12.49 already proved that sparse connected exchange incidence alone saturates the complete exchange algebra; paths/cycles/stars do not reduce the exact solder module.",
+    "relation": "v13.15 is stronger/different for QMAR: even a site-local source on a tree can have a local geometric response that depends on hidden global completion data."
+  },
+  "commuting_markov_positive_sector": {
+    "state_class": "strictly positive commuting Gibbs/Markov network with log rho equal to a sum of mutually commuting clique potentials",
+    "source_class": "ETL/PGRL source P contained in the same commuting clique algebra",
+    "closure_theorem": "log rho_s = log rho + sP - log Z_s remains in the same graphical exponential family exactly; junction-tree messages are an exact sufficient state for local marginals and their source derivatives.",
+    "path_controls": [
+      {"N":4,"target_edge":[1,2],"source_site":3,"finite_flow_max_pair_error":1.2177709378935645e-16,"response_derivative_error":8.151354677681474e-12,"separator_message_dimension":2},
+      {"N":6,"target_edge":[2,3],"source_site":5,"finite_flow_max_pair_error":1.0385185452638061e-16,"response_derivative_error":4.80740671595891e-12,"separator_message_dimension":2},
+      {"N":8,"target_edge":[3,4],"source_site":7,"finite_flow_max_pair_error":9.614813431917819e-17,"response_derivative_error":5.887846720064156e-12,"separator_message_dimension":2},
+      {"N":10,"target_edge":[4,5],"source_site":9,"finite_flow_max_pair_error":1.3018518929051675e-16,"response_derivative_error":2.7755575615628914e-12,"separator_message_dimension":2},
+      {"N":12,"target_edge":[5,6],"source_site":11,"finite_flow_max_pair_error":1.2719202621569003e-16,"response_derivative_error":5.003707553108401e-12,"separator_message_dimension":2}
+    ],
+    "max_finite_flow_pair_error": 1.3018518929051675e-16,
+    "max_response_derivative_error": 8.151354677681474e-12,
+    "treewidth_scaling": [
+      {"treewidth":1,"binary_separator_message_dimension":2,"max_clique_table_dimension":4,"asymptotic_exact_inference_cost":"O(N * 2^(w+1))"},
+      {"treewidth":2,"binary_separator_message_dimension":4,"max_clique_table_dimension":8,"asymptotic_exact_inference_cost":"O(N * 2^(w+1))"},
+      {"treewidth":3,"binary_separator_message_dimension":8,"max_clique_table_dimension":16,"asymptotic_exact_inference_cost":"O(N * 2^(w+1))"},
+      {"treewidth":4,"binary_separator_message_dimension":16,"max_clique_table_dimension":32,"asymptotic_exact_inference_cost":"O(N * 2^(w+1))"},
+      {"treewidth":5,"binary_separator_message_dimension":32,"max_clique_table_dimension":64,"asymptotic_exact_inference_cost":"O(N * 2^(w+1))"}
+    ],
+    "binary_complexity": "message state per separator O(2^w); exact inference O(N 2^(w+1)) for treewidth w",
+    "status": "CLOSED_EXACT_CONDITIONAL"
+  },
+  "noncommuting_source_boundary": {
+    "offdiagonal_norm_after_local_sigma_x_tilt": 0.04949830803990969,
+    "result": "A local source outside the commuting clique algebra immediately leaves the classical/commuting Markov representation, so separator-message closure is not generic ETL closure."
+  },
+  "adjudication": {
+    "bounded_radius_marginals_generic_exact_closure": false,
+    "treewidth1_generic_QMAR_exact_closure": false,
+    "commuting_markov_separator_closure": true,
+    "separator_state_dimension_independent_of_N_at_fixed_treewidth": true,
+    "generic_quantum_markov_or_commuting_structure_derived_from_ontology": false,
+    "exact_local_compression_for_current_full_QMAR_branch": "CONDITIONAL_ONLY"
+  },
+  "status": {
+    "GRAPH_SPARSITY_ALONE": "NO_GO",
+    "GENERIC_BOUNDED_NEIGHBORHOOD_QMAR": "NO_GO",
+    "COMMUTING_MARKOV_TREEWIDTH_CLOSURE": "CLOSED_CONDITIONAL",
+    "MARKOV_STRUCTURE_ORIGIN": "NOT_DERIVED",
+    "QMAR": "FULL_STATE_GENERIC__SEPARATOR_MESSAGES_IN_RESTRICTED_COMMUTING_MARKOV_SECTOR",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_NO_GO_PLUS_FIRST_TREEWIDTH_CONTROLLED_EXACT_LOCAL_CLOSURE"
+  },
+  "next_gate": {
+    "version": "v13.16",
+    "name": "Quantum Markov / Conditional-Mutual-Information Selection Gate",
+    "question": "Can the retained global-consistency/provenance ontology force or naturally select the commuting/quantum-Markov condition needed for separator closure? Test conditional mutual information across graph separators, Petz recoverability, and source stability. If exact Markovity is not selected, quantify whether an ontology-native recoverability bound can provide a certified approximate locality theorem without introducing heuristics."
+  }
+}
