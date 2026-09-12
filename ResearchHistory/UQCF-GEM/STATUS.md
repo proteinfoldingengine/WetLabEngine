@@ -1,85 +1,60 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.11 — Metric-Affine Source Response / Nonmetricity-Torsion Dynamics Gate  
-**Next gate:** v13.12 — Shear Nonmetricity / Curvature Response Coupling Gate
+**Latest completed gate:** v13.12 — Shear Nonmetricity / Curvature Response Coupling Gate  
+**Next gate:** v13.13 — Hidden-Completion Response State / Minimal Markov Closure Gate
 
 ## Current scientific picture
 
-The generic retained geometry remains most honestly organized as a **metric-affine parent** once a selected metric and retained connection are supplied:
+The generic retained geometry remains most honestly organized as a **metric-affine parent**:
 
 ```text
 Gamma = Gamma_LC + K(T) + L(Q)
 ```
 
-The Levi-Civita / Einstein-compatible geometric sector is the special sector `Q=0, T=0`, but the generic parent is now better characterized directly rather than by forcing projection into that sector.
+v13.11 established a conditional first-order Quantum Metric-Affine Response operator (QMAR) from the full faithful quantum state and proved exact trace/Weyl integrability of the BKM/polar nonmetricity channel.
 
-## Latest new result — v13.11
+v13.12 now separates the remaining traceless/shear nonmetricity response from retained holonomy/curvature response.
 
-A first-order **Quantum Metric-Affine Response operator (QMAR)** is derived conditionally on the full faithful quantum state and a nonsingular polar-correlation stratum.
+## Latest new result — v13.12
 
-PGRL/ETL determines `dot rho`; differentiation then determines:
-
-- local BKM metric response `dot K_i`;
-- polar transport response `dot O_ij`;
-- discrete nonmetricity-defect response `dot M_ij`;
-- loop holonomy response `dot H`.
-
-The response is source-linear at fixed state and locally frame-covariant.
-
-### Exact BKM Trace-Exactness Theorem
-
-For
+Define the gauge-covariant shear observable
 
 ```text
-G_ij = K_j^-1/2 O_ij^T K_i O_ij K_j^-1/2
+Sigma_ij = dev(log G_ij)
+G_ij = K_j^-1/2 O_ij^T K_i O_ij K_j^-1/2.
 ```
 
-orthogonality of `O_ij` gives
+Two complementary exact controls establish structural independence:
 
-```text
-tr log G_ij = log det K_i - log det K_j.
-```
+1. **Zero shear / nonzero holonomy response.**  
+   The v13.09/10 hidden-completion axial source flow keeps every edge exactly metric-compatible, so `Sigma_ij=0`, while the hidden completion has holonomy response norm `0.19261155662`.
 
-Therefore on every closed relational cycle,
+2. **Nonzero shear / zero holonomy response.**  
+   A faithful state tangent was constructed with connected pair correlations and polar transports fixed while one local BKM metric changes. The corresponding PGRL source gives shear-response norm `0.0149148854933` with holonomy-response norm at machine zero.
 
-```text
-sum_C tr log G_ij = 0
-```
+Therefore shear nonmetricity and curvature/holonomy response are independent first-order channels of the current metric-affine parent. Neither determines the other, and no zero-intercept norm bound can universally tie them together.
 
-exactly, and the same identity holds under every PGRL source response.
+A constant linear shear-to-holonomy candidate was used only as a falsification test. It achieved holdout `R^2=-0.0488` and does not provide generic closure.
 
-Conditional on a smooth continuum limit, the trace/Weyl part of BKM nonmetricity is locally exact. Nontrivial nonmetricity circulation must therefore live in the traceless/shear sector.
-
-### Remaining obstruction
-
-Torsion-like source response is still not canonical because PGRL does not determine the solder/coframe tangent `dot xi` / `dot e`.
-
-Also, geometry is not an autonomous source-response state variable: the v13.10 rigid and hidden completions have the same instantaneous BKM metric, polar transport, and holonomy but different transport/holonomy response jets under the same source.
-
-Thus the full quantum/hidden completion state or a new hidden-response law remains necessary for geometric source response.
+The older Retained Bridge result `Q_shear ~ g -> R ~ g^2` remains a separate-connection precedent and is not imported into the BKM/polar branch without a typed bridge.
 
 ## Open boundaries
 
 - MEA/BIFL metric selection remains explicit/conditional.
-- Absolute physical metric normalization remains open.
-- Continuum nonmetricity regularity requires SMRRL/SMAVT.
-- Continuum torsion closure remains conditional; discrete solder nonclosure is only a torsion-like precursor.
+- Continuum nonmetricity regularity still requires SMRRL/SMAVT.
 - Source-to-solder/coframe response is not derived.
-- Geometry-only autonomous metric-affine dynamics is obstructed by hidden completion.
-- HCPR is irreducible relative to the present frozen ledger; its origin search remains stopped.
+- HCPR remains irreducible relative to the current frozen ledger.
+- Geometry plus shear is not an autonomous source-response state.
+- No derived shear-curvature field law exists in the BKM/polar branch.
 - No metric-affine action or physical stress-energy constitutive law has been derived.
-- Full Einstein equations are not derived.
+- Einstein equations are not derived.
 - Pillar 3 remains OPEN.
 
-## Next gate — v13.12
+## Next gate — v13.13
 
-Isolate the **traceless/shear nonmetricity response** after removing the exact trace/Weyl sector.
+Identify the **minimal hidden-completion response state** needed to make QMAR autonomous under source deformation.
 
-Test whether source-induced shear nonmetricity:
+Start with the v13.10 chiral three-body observable and test whether a finite set of higher-order correlators closes the response state, or whether differentiation opens a continuing higher-order hierarchy.
 
-- determines retained holonomy/curvature response;
-- constrains it through a covariant identity;
-- or remains independent because of hidden completion / connection degrees of freedom.
-
-Success requires a derived covariant coupling from the retained response structure, not a fitted action or imposed GR equation.
+Success requires an actual finite closure theorem, not a fitted surrogate or a GR projection.

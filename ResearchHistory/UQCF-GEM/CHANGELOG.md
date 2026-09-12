@@ -4,6 +4,15 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.12 — Shear Nonmetricity / Curvature Response Coupling
+
+- Defined the gauge-covariant traceless shear observable `Sigma_ij = dev(log G_ij)` after removing the exact trace/Weyl sector.
+- Closed a two-way structural independence result: one exact control has zero shear response with nonzero holonomy response; a complementary PGRL control has nonzero shear response with zero holonomy response.
+- Therefore shear nonmetricity does not determine curvature/holonomy response, curvature does not determine shear, and no universal zero-intercept norm bound connects them in the current kinematics.
+- A constant-linear shear-to-holonomy candidate failed generic holdout (`R^2=-0.0488`); this was used only as a falsification test, not as a fitted field equation.
+- Preserved the claim boundary that the older shear-dominated `Q~g -> R~g^2` Retained Bridge result belongs to a different connection and cannot be imported without a typed bridge.
+- Next: v13.13 Hidden-Completion Response State / Minimal Markov Closure.
+
 ### v13.11 — Metric-Affine Source Response / Nonmetricity-Torsion Dynamics
 
 - Derived a conditional first-order **Quantum Metric-Affine Response operator (QMAR)** from PGRL/ETL through BKM metric and polar transport differentials.

@@ -1,0 +1,107 @@
+{
+  "version": "v13.12",
+  "gate": "Shear Nonmetricity / Curvature Response Coupling Gate",
+  "classification": "V1312_SHEAR_NONMETRICITY_AND_CURVATURE_RESPONSE_ARE_STRUCTURALLY_INDEPENDENT_IN_THE_BKM_POLAR_PARENT__EXACT_COUNTERCONTROL_ONE_HAS_ZERO_SHEAR_RESPONSE_WITH_NONZERO_HOLONOMY_RESPONSE_VIA_HIDDEN_AXIAL_POLAR_PHASE_DRIFT__EXACT_COUNTERCONTROL_TWO_HAS_NONZERO_SHEAR_RESPONSE_WITH_ZERO_HOLONOMY_RESPONSE_VIA_FIXED_CONNECTED_CORRELATION_AND_METRIC_ONLY_PGRL_TANGENT__THEREFORE_NO_DETERMINISTIC_SHEAR_TO_CURVATURE_OR_CURVATURE_TO_SHEAR_LAW_FOLLOWS_FROM_CURRENT_KINEMATICS__NO_UNIVERSAL_CONSTANT_LINEAR_SHEAR_TO_HOLONOMY_MAP_SURVIVES_GENERIC_HOLDOUT__OLD_SHEAR_PRIMARY_CURVATURE_SECONDARY_RESULT_REMAINS_A_SEPARATE_CONNECTION_PRECEDENT_ONLY",
+  "shear_object": {
+    "definition": "Sigma_ij = dev(log G_ij), G_ij=K_j^-1/2 O_ij^T K_i O_ij K_j^-1/2",
+    "trace": "exactly zero by construction",
+    "gauge_rule": "Sigma_ij -> R_j Sigma_ij R_j^T",
+    "source_response": "dot Sigma_ij from the Frechet/finite differential along ETL/PGRL source deformation",
+    "gauge_covariance_error": 6.227719311512595e-10
+  },
+  "counterexample_zero_shear_nonzero_curvature": {
+    "origin": "v13.09/10 hidden completion axial U(1) source flow",
+    "rigid_shear_response_norm": 7.80675632956682e-12,
+    "hidden_shear_response_norm": 8.540160107441872e-12,
+    "rigid_holonomy_response_norm": 1.7354092552340222e-11,
+    "hidden_holonomy_response_norm": 0.1926115566195052,
+    "finite_flow_rows": [
+      {
+        "s": 0.1,
+        "rigid_shear_norm": 1.6049796795732731e-15,
+        "hidden_shear_norm": 1.4909808633223966e-15,
+        "holonomy_difference": 0.027256745014962037
+      },
+      {
+        "s": 0.4,
+        "rigid_shear_norm": 1.0744502165435597e-15,
+        "hidden_shear_norm": 1.7856144422925637e-15,
+        "holonomy_difference": 0.10776464586410708
+      },
+      {
+        "s": 0.8,
+        "rigid_shear_norm": 1.6854897529411667e-15,
+        "hidden_shear_norm": 2.048448983524972e-15,
+        "holonomy_difference": 0.20603242726230786
+      }
+    ],
+    "theorem": "The hidden completion can change polar phase and loop holonomy while every edge remains exactly metric compatible, so shear nonmetricity is identically zero. Hence curvature response is not determined or bounded by shear response."
+  },
+  "counterexample_nonzero_shear_zero_curvature": {
+    "construction": "faithful three-qubit path with connected pair tensors C_ij held fixed and one local BKM metric varied; its traceless state tangent is inverted through the faithful Kubo-Mori map to a legitimate PGRL source generator",
+    "ETL_tangent_reconstruction_error": 9.271687066308013e-11,
+    "connected_correlation_jet_norm": 8.212958482582808e-11,
+    "polar_transport_jet_norm": 6.48600410889908e-16,
+    "shear_response_norm": 0.014914885493322299,
+    "holonomy_response_norm": 8.203369471941046e-16,
+    "theorem": "Metric/BKM response can generate nonzero shear nonmetricity while polar transport and loop holonomy remain fixed. Hence shear response is not determined by curvature response."
+  },
+  "first_order_independence_theorem": {
+    "metric_defect_formula": "At QTC compatibility: dot M_ij = dot K_j - O^T dot K_i O + [Omega_ij,K_j].",
+    "curvature_formula": "dot H depends only on the edge transport jets dot O/Omega through the product rule.",
+    "logic": "Endpoint metric jets provide directions that change shear without changing curvature; stabilizer connection jets commuting with K provide directions that change curvature without changing shear.",
+    "executed_controls": {
+      "zero_shear_nonzero_curvature": {
+        "shear_response_norm": 8.540160107441872e-12,
+        "holonomy_response_norm": 0.1926115566195052
+      },
+      "nonzero_shear_zero_curvature": {
+        "shear_response_norm": 0.014914885493322299,
+        "holonomy_response_norm": 8.203369471941046e-16
+      }
+    },
+    "status": "CLOSED_STRUCTURAL_INDEPENDENCE"
+  },
+  "constant_linear_coupling_audit": {
+    "generic_state_count": 28,
+    "samples": 252,
+    "shear_dimension": 15,
+    "holonomy_response_dimension": 3,
+    "train_state_count": 18,
+    "holdout_state_count": 10,
+    "train_R2": 0.10843996840313808,
+    "holdout_R2": -0.04883438175527499,
+    "holdout_relative_error": 1.022546830448255,
+    "permuted_train_output_holdout_R2": -0.1629912072560309,
+    "nearest_normalized_shear_distance": 0.7323632877943231,
+    "corresponding_holonomy_response_gap": 0.2832376188171016,
+    "adjudication": "A constant coefficient linear map was used only as a falsification candidate, not as a fitted physical law. It does not provide reliable generic holdout closure."
+  },
+  "relationship_to_old_retained_bridge": {
+    "old_result": "A separate recombination connection had shear-dominated nonmetricity Q~g and secondary scalar curvature R~g^2, with an RG-stable shear/Weyl shape.",
+    "current_result": "The BKM/polar connection has exact trace integrability but no derived shear-curvature response law.",
+    "boundary": "Do not identify the two connections or import the old Q->R hierarchy into the new branch without a typed bridge."
+  },
+  "adjudication": {
+    "shear_determines_curvature_response": false,
+    "curvature_determines_shear_response": false,
+    "universal_zero_intercept_norm_bound_curvature_by_shear": false,
+    "universal_zero_intercept_norm_bound_shear_by_curvature": false,
+    "constant_linear_shear_to_curvature_map": "FAIL_GENERIC_HOLDOUT",
+    "derived_covariant_shear_curvature_coupling": "NOT_FOUND"
+  },
+  "status": {
+    "SHEAR_CURVATURE_COUPLING": "OBSTRUCTED_AT_CURRENT_KINEMATIC_LEVEL",
+    "QMAR": "REMAINS_DERIVED_GIVEN_FULL_STATE",
+    "BKM_TRACE_EXACTNESS": "REMAINS_CLOSED",
+    "generic_metric_affine_parent": "HAS_INDEPENDENT_METRIC_AND_CONNECTION_RESPONSE_CHANNELS",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_NO_GO_AND_CHANNEL_SEPARATION"
+  },
+  "next_gate": {
+    "version": "v13.13",
+    "name": "Hidden-Completion Response State / Minimal Markov Closure Gate",
+    "question": "Since instantaneous geometry plus shear does not determine curvature response, identify the minimal additional hidden-completion variable needed to make QMAR response autonomous under source deformation. Test whether a finite set of higher-order correlators (beginning with the v13.10 three-body chiral observable) closes the source-response state, or whether an open hierarchy persists."
+  }
+}
