@@ -74,6 +74,12 @@ Tracked gates:
 - [v13.26](v13/v13.26/) — RSCL irreducible relative to the frozen ontology; absolute-source-calibration branch stop.
 - [v13.27](v13/v13.27/) — direct `Sigma_obs=kappa_obs T_obs` not derived; projective source ray survives but geometric coupling magnitude/tensor completion require RGCL.
 
+## Companion full-stack simulation
+
+- [v13.27 Gravity Progress Simulation](demos/v13.27-gravity-progress/) — deterministic six-qubit integration harness covering the exact finite PGRL source family, BKM metrics, polar transport, nonmetricity, loop holonomy, balanced source currents, QMAR response, represented DeWitt-sign diagnostics, the projective `Sigma` boundary, and the explicit RGCL / physical-Einstein-closure stop.
+- Canonical 25-frame telemetry hash: `cdd8e93bb6d25e55b655d04132846de643e1eb6ee9cb0c79a243984f9a5788f3`.
+- CI workflow `.github/workflows/uqcf-v1327-gravity-progress.yml` verifies the tests/checker and regenerates the PNG/GIF/MP4/CSV/JSON artifact on relevant pushes to `main`.
+
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the append-only gate ledger.
 
 ## Validation
