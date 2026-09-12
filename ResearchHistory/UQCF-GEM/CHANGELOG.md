@@ -4,6 +4,17 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.18 — Source-Conditioned Recoverability / QMAR Jet Locality
+
+- Closed an explicit faithful-stratum ETL/PGRL tangent bound: `||Delta dotrho||_F <= 2 B_ETL(mu,d) ||P||op sqrt(1-exp(-CMI))`.
+- Established conditional QMAR jet locality on compact faithful/polar-gapped strata: `dot K`, `dot O`, `dot M`, and `dot H` are locally Lipschitz in the recovered state.
+- Jet error scales as `O(||P|| sqrt(CMI))`; a bounded source norm is essential.
+- Verified polar first-derivative conditioning scales as `O(gamma^-1)` and polar differential stability as `O(gamma^-2)`.
+- Fresh conditioned controls showed linear trace-distance scaling of state, BKM, polar, and holonomy jets.
+- Proved CMI alone cannot bound a source jet: scaling `P -> lambda P` scales response error linearly while state CMI stays fixed.
+- Geometry-only autonomous evolution remains obstructed; the recovered quantum state is still part of the sufficient response data.
+- Next: v13.19 Approximate Local Metric-Affine Evolution / Patch Composition Gate.
+
 ### v13.17 — Recoverability-to-QMAR Geometric Error Propagation
 
 - Propagated the v13.16 state-level recoverability bound into explicit retained-geometric error bars on faithful, polar-gapped strata.
