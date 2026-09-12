@@ -156,7 +156,8 @@ That reproduces the negative trace direction characteristic of the represented D
 
 Default 25-frame run:
 
-- telemetry SHA-256: `cdd8e93bb6d25e55b655d04132846de643e1eb6ee9cb0c79a243984f9a5788f3`;
+- portable scientific fingerprint: `6f2830c47a877676f6ff4ad028769bb285d00f9194f33035c85dd785b3e9f5b6`;
+- reference raw telemetry SHA-256: `e994538f3e04a06270b17b66c21ee29dc07730c5ceaf0805ba412f754624f945` (diagnostic only; machine-epsilon LAPACK/SVD drift is intentionally excluded from portable certification);
 - minimum global-state eigenvalue: `3.7185106924494124e-05`;
 - minimum local BKM eigenvalue: `0.5673128649814877`;
 - maximum source-balance residual: `4.611102534756203e-16`;
