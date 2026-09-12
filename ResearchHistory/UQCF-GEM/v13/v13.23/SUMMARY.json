@@ -1,0 +1,83 @@
+{
+  "version": "v13.23",
+  "gate": "QRSL Origin / Canonical Refinement Selector Gate",
+  "classification": "V1323_QRSL_NOT_DERIVED_FROM_CURRENT_FROZEN_ONTOLOGY__GENESIS_PIN_PROVENANCE_RECOVERABILITY_ORDER_AND_RETAINED_INCIDENCE_FILLING_CERTIFICATES_EITHER_FACTOR_THROUGH_PRESELECTION_COARSE_DATA_SHARED_BY_THE_ADMISSIBLE_TAU_REFINEMENT_FAMILY_OR_REQUIRE_FINE_DATA_THAT_EXIST_ONLY_AFTER_A_REFINEMENT_HAS_ALREADY_BEEN_SELECTED__THEREFORE_NONE_CAN_SELECT_TAU0_VS_TAUEPS_WITHOUT_CIRCULARITY__QRSL_IRREDUCIBLE_RELATIVE_TO_CURRENT_FROZEN_ONTOLOGY__RATS_REMAINS_SEALED_AND_THE_REFINEMENT_SELECTOR_ORIGIN_BRANCH_STOPS",
+  "executed_pair": {
+    "coarse_recovery_error": 1.2605126751125787e-16,
+    "fine_state_trace_distance": 0.19999999999999996,
+    "ancilla_support_ranks": [8, 8],
+    "CMI_tau0": 0.0,
+    "CMI_taueps": 0.08228287850505156,
+    "preselection_coarse_descriptor_digest_tau0": "5a90c20204e61bfa9182aac6ca18e4b5bf169d0fefe4904a4caf86be1a8edc0e",
+    "preselection_coarse_descriptor_digest_taueps": "5a90c20204e61bfa9182aac6ca18e4b5bf169d0fefe4904a4caf86be1a8edc0e",
+    "preselection_descriptor_identical": true,
+    "fine_only_descriptor_different": true
+  },
+  "candidate_audit": {
+    "Genesis_Pin_provenance": {
+      "type": "legitimacy/provenance structure on supplied retained histories plus coarse root/source/support/order data",
+      "result": "NO_SELECTOR",
+      "reason": "The certified provenance stack is an extractor/certificate once fine identities/history exist; FPRL/native fine-edge birth is not derived. Pre-selection coarse Genesis data are identical for the tau family."
+    },
+    "recoverability_order": {
+      "type": "ordering/admissibility structure on supplied retained events/states",
+      "result": "NO_SELECTOR",
+      "reason": "No certified order functional ranks alternative hidden fine completions. The two tau lifts share the same coarse recoverability/order input. Choosing maximal entropy, minimum hidden information, or minimum CMI would add a new objective and would be target-sensitive."
+    },
+    "W1_W2_W3_incidence_filling": {
+      "type": "predicate/certificate for supplied edge/face/cell realizations",
+      "result": "NO_SELECTOR",
+      "reason": "Certificates can accept/reject a supplied fine realization but contain no preference order or canonical section. Fine witness differences cannot select the fine state before that state exists."
+    },
+    "global_positivity_support": {
+      "type": "feasibility condition",
+      "result": "NO_SELECTOR",
+      "reason": "Both tau0 and taueps are faithful, positive, full support, and exact refinements of the same coarse state."
+    },
+    "coarse_quotient_naturality": {
+      "type": "fine-to-coarse restriction",
+      "result": "NO_SELECTOR",
+      "reason": "Restriction is natural; its inverse requires a section on a nontrivial fiber. Existing quotient semantics do not choose that section."
+    }
+  },
+  "factorization_theorem": {
+    "statement": "Let D_coarse be all currently frozen data available before a fine completion is selected. For the v13.22 admissible tau family, D_coarse is identical while the fine states are distinct. Any selector derived solely as a function of D_coarse therefore has no input distinction from which to select one hidden completion. Any candidate that uses tau-dependent fine provenance, CMI, or incidence first requires the fine realization and is circular as an origin law.",
+    "scope": "Irreducibility relative to the current frozen ontology/data types; not a theorem that no future axiom or deeper ontology can select refinement."
+  },
+  "independent_archive_support": {
+    "v11_13": "global admissibility is feasibility, not a refinement section; W1/W2/W3 certify rather than select.",
+    "v12_75": "fine provenance ledger is a supplied-fine-world extractor; FPRL missing.",
+    "v12_76": "fine-to-coarse quotient natural, reverse coarse-to-fine section noncanonical.",
+    "v12_95": "existing incidence-preserving operations cannot generate new connected refinement incidence; R2RG irreducible.",
+    "v9_87": "even broad covariance does not guarantee a pure-completion selector from edge data alone."
+  },
+  "QRSL": {
+    "name": "Quantum Refinement Selection Law",
+    "status": "IRREDUCIBLE_RELATIVE_TO_CURRENT_FROZEN_ONTOLOGY",
+    "required_new_content": "one explicit target-independent primitive or derivation that selects hidden fine quantum completion before RATS/continuum scoring; it must not be entropy/CMI/GR success chosen post hoc"
+  },
+  "adjudication": {
+    "Genesis_Pin_derives_QRSL": false,
+    "recoverability_order_derives_QRSL": false,
+    "W1_W2_W3_derives_QRSL": false,
+    "global_positivity_derives_QRSL": false,
+    "coarse_quotient_derives_QRSL": false,
+    "QRSL_from_current_frozen_ontology": false,
+    "RATS_execution_authorized": false
+  },
+  "status": {
+    "QRSL_ORIGIN_SEARCH": "STOP",
+    "QRSL": "IRREDUCIBLE_RELATIVE_TO_CURRENT_FROZEN_ONTOLOGY",
+    "RATS": "REMAINS_SEALED",
+    "QUANTUM_REFINEMENT_BRANCH": "STOP_UNTIL_NEW_AXIOM_OR_DEEPER_DERIVATION",
+    "CONTINUUM_RECOVERABILITY_ATLAS": "NOT_CERTIFIED",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_TYPE_LEVEL_NO_GO_AND_BRANCH_STOP"
+  },
+  "next_gate": {
+    "version": "v13.24",
+    "name": "Post-QRSL Branch Reassessment / Metric-Affine Continuum Evidence Gate",
+    "question": "Do not add a refinement selector merely to run RATS. Reassess which Pillar-3 claims can advance without a physical coarse-to-fine quantum section; preserve finite-scale QMAR/locality theorems, label external continuum probes honestly, and identify the highest-leverage independent bridge to ADM/GR that does not depend on QRSL."
+  }
+}
