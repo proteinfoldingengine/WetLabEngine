@@ -4,6 +4,16 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.15 — Relational Locality / Sparse Source Closure
+
+- Proved graph sparsity/treewidth alone does not make generic QMAR local: two positive four-qubit path states with identical every proper subsystem marginal (`8.674e-19` max difference) have different first-edge QMAR response under the same site-local source (`0.0019475968` gap).
+- Distinguished the new QMAR locality obstruction from v12.49's exchange-algebra saturation theorem: the new failure is hidden global completion affecting local source susceptibility.
+- Identified an exact positive sector: commuting Gibbs/Markov graphical states with clique-compatible ETL/PGRL sources remain in the same graphical exponential family under tilt.
+- Verified exact separator-message closure on Ising chains `N=4,6,8,10,12`; maximum finite-flow pair-marginal error `1.302e-16`, maximum response-derivative error `8.151e-12`.
+- At binary treewidth `w`, exact separator state scales as `2^w` and junction-tree inference as `O(N 2^(w+1))`, so the exact local state size is controlled by separator width rather than total Hilbert dimension.
+- A noncommuting local source immediately exits the commuting graphical algebra (`0.0494983` off-diagonal norm), so this closure is conditional rather than generic.
+- Next: v13.16 Quantum Markov / Conditional-Mutual-Information Selection Gate.
+
 ### v13.14 — Symmetry-Reduced Sufficient State / Schur-Weyl ETL Closure
 
 - Re-tested the v12.47 Schur-Weyl compression against the actual ETL/PGRL source-response problem rather than exchange dynamics alone.
