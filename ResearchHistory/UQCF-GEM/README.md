@@ -77,11 +77,12 @@ Tracked gates:
 ## Companion full-stack simulation
 
 - [v13.27 Gravity Progress Simulation](demos/v13.27-gravity-progress/) — deterministic six-qubit integration harness covering the exact finite PGRL source family, BKM metrics, polar transport, nonmetricity, loop holonomy, balanced source currents, QMAR response, represented DeWitt-sign diagnostics, the projective `Sigma` boundary, and the explicit RGCL / physical-Einstein-closure stop.
-- Canonical 25-frame telemetry hash: `cdd8e93bb6d25e55b655d04132846de643e1eb6ee9cb0c79a243984f9a5788f3`.
+- Canonical portable scientific fingerprint: `6f2830c47a877676f6ff4ad028769bb285d00f9194f33035c85dd785b3e9f5b6`.
+- The raw all-floats telemetry SHA is retained only as an archival numerical diagnostic because machine-epsilon LAPACK/SVD differences can change it without changing the scientific invariants.
 - CI workflow `.github/workflows/uqcf-v1327-gravity-progress.yml` verifies the tests/checker and regenerates the PNG/GIF/MP4/CSV/JSON artifact on relevant pushes to `main`.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the append-only gate ledger.
 
 ## Validation
 
-Each tracked gate directory carries its own `CHECKER.py` and machine-readable `SUMMARY.json`. The active frontier is v13.27; the next research target is v13.28, the RGCL Origin / Source-to-Coframe Variational Pairing Gate.
+Each tracked gate directory carries its own `CHECKER.py` and machine-readable `SUMMMARY.json`. The active frontier is v13.27; the next research target is v13.28, the RGCL Origin / Source-to-Coframe Variational Pairing Gate.
