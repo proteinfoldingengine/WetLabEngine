@@ -1,0 +1,137 @@
+{
+  "version": "v13.19",
+  "gate": "Approximate Local Metric-Affine Evolution / Patch Composition Gate",
+  "classification": "V1319_APPROXIMATE_RECOVERED_PATCHES_COMPOSE_STABLY_AT_FINITE_GEOMETRY_LEVEL_WHEN_GAUGE_ALIGNED_AND_TIED_TO_ONE_GLOBAL_REFERENCE__SO3_TRANSPORT_ERRORS_TELESCOPE_ADDITIVELY_PATH_HOLONOMY_COCYCLE_AND_TRANSPORTED_METRIC_ERRORS_GROW_AT_MOST_LINEARLY_NOT_EXPONENTIALLY__QMAR_HOLONOMY_JET_COMPOSITION_HAS_A_SECOND_CONTEXT_SUM_AND_HAS_GENUINE_QUADRATIC_M2_WORST_CASE_SCALING__PAIRWISE_LOCAL_VALIDITY_WITHOUT_COMMON_GLOBAL_REFERENCE_DOES_NOT_IMPLY_COCYCLE_CLOSURE__FINITE_LOCALITY_HORIZON_CLOSED_CONTINUUM_SCALE_INDEPENDENCE_OPEN",
+  "finite_transport_composition": {
+    "theorem": "For O_e,Ohat_e in SO(3), ||prod Ohat_e-prod O_e||_F <= sum ||Ohat_e-O_e||_F.",
+    "random_controls": [
+      {"m": 2, "max_error_over_sum_edge_errors": 0.9970334860686177},
+      {"m": 3, "max_error_over_sum_edge_errors": 0.9940261270902145},
+      {"m": 5, "max_error_over_sum_edge_errors": 0.8479375550256888},
+      {"m": 10, "max_error_over_sum_edge_errors": 0.6245434056859422},
+      {"m": 20, "max_error_over_sum_edge_errors": 0.5285632038828713},
+      {"m": 40, "max_error_over_sum_edge_errors": 0.33722539173856014}
+    ],
+    "aligned_linear_sharpness": [
+      {"m": 2, "edge_error": 0.0002828427120032145, "path_error": 0.0005656854211780019, "path_error_over_m_edge_error": 0.9999999949999999},
+      {"m": 4, "edge_error": 0.0002828427120032145, "path_error": 0.0011313708197285871, "path_error_over_m_edge_error": 0.9999999750000002},
+      {"m": 8, "edge_error": 0.0002828427120032145, "path_error": 0.0022627414584378454, "path_error_over_m_edge_error": 0.9999998950000032},
+      {"m": 16, "edge_error": 0.0002828427120032145, "path_error": 0.004525481468721236, "path_error_over_m_edge_error": 0.9999995750000542},
+      {"m": 32, "edge_error": 0.0002828427120032145, "path_error": 0.00905095135221239, "path_error_over_m_edge_error": 0.9999982950008719},
+      {"m": 64, "edge_error": 0.0002828427120032145, "path_error": 0.01810181002276204, "path_error_over_m_edge_error": 0.9999931750139717}
+    ],
+    "consequence": "Uniform edge error epsilon gives path error <=m epsilon, capped by SO(3) diameter 2sqrt(2); no exponential amplification."
+  },
+  "overlap_and_cocycle": {
+    "overlap_theorem": "Gauge-aligned estimates of one true transition differ by at most the sum of their individual errors.",
+    "triple_cocycle_theorem": "If true transitions close, recovered cocycle residual is <=sum of three transition errors.",
+    "max_overlap_ratio": 0.9998722708016848,
+    "max_cocycle_ratio": 0.9710669909339364,
+    "global_reference_requirement": "Each patch must approximate the same underlying global state/atlas in compatible overlap gauges."
+  },
+  "transported_metric_error": {
+    "path_defect": "M_path=K_end-H_path^T K_start H_path",
+    "bound": "||Delta M_path||_F <= eK_end+eK_start+2||K_start||op eH_path.",
+    "max_random_error_over_bound": 0.7726746277210473,
+    "consequence": "BKM transported-metric/nonmetricity gluing error inherits linear path control."
+  },
+  "jet_composition": {
+    "theorem": "epsilon_i=||Delta O_i||, eta_i=||Delta dotO_i||, Lambda_i=max(||dotO_i||,||dothatO_i||): ||Delta dotH|| <= sum eta_i + sum_i Lambda_i sum_(j!=i) epsilon_j.",
+    "uniform_bound": "<=m eta+Lambda m(m-1) epsilon",
+    "random_controls": [
+      {"m": 2, "max_error_over_jet_bound": 0.7854993141397322},
+      {"m": 3, "max_error_over_jet_bound": 0.6867469675626728},
+      {"m": 5, "max_error_over_jet_bound": 0.32951827092393604},
+      {"m": 10, "max_error_over_jet_bound": 0.21995947008456004},
+      {"m": 20, "max_error_over_jet_bound": 0.08119547778358305}
+    ],
+    "quadratic_scaling_control": [
+      {"m": 2, "path_jet_error": 7.919595896492028e-05, "uniform_bound": 9.559797958711672e-05, "error_over_bound": 0.8284271206040544, "error_over_m2_delta": 0.09899494870615035},
+      {"m": 4, "path_jet_error": 0.0003167838295240044, "uniform_bound": 0.0004151959588009002, "error_over_bound": 0.7629742602478278, "error_over_m2_delta": 0.09899494672625136},
+      {"m": 8, "path_jet_error": 0.0012671352167251937, "uniform_bound": 0.0017263919161084672, "error_over_bound": 0.7339788867764724, "error_over_m2_delta": 0.09899493880665576},
+      {"m": 16, "path_jet_error": 0.005068539244967785, "uniform_bound": 0.007036783826243602, "error_over_bound": 0.720292021202176, "error_over_m2_delta": 0.09899490712827705},
+      {"m": 32, "path_jet_error": 0.02027413102895576, "uniform_bound": 0.02840956762859387, "error_over_bound": 0.7136374370073165, "error_over_m2_delta": 0.09899478041482304},
+      {"m": 64, "path_jet_error": 0.08109610890197394, "uniform_bound": 0.11416313516161443, "error_over_bound": 0.7103528541605894, "error_over_m2_delta": 0.0989942735619799}
+    ],
+    "scaling_sharpness": "The same-axis family has path-jet error/m^2/delta constant to better than 2e-5 relative across m=2..64. Thus O(m^2) scaling is genuinely attainable, though the conservative coefficient bound is not saturated."
+  },
+  "recoverability_substitution": {
+    "edge_value_error_from_v1317": "epsilon_e <= (18/gamma_e) sqrt(1-exp(-I_e))",
+    "edge_jet_error_from_v1318": "eta_e <= C_Ojet(mu_e,gamma_e,d,p_e) sqrt(1-exp(-I_e))",
+    "path_value_certificate": "sum_e (18/gamma_e) sqrt(1-exp(-I_e))",
+    "path_jet_certificate": "sum eta_e + sum_i Lambda_i sum_(j!=i) epsilon_j",
+    "example_value_budgets": [
+      {"CMI_per_separator": 1e-08, "gamma": 0.05, "path_edges": 3, "edge_transport_bound": 0.03599999989060552, "path_transport_bound_raw": 0.10799999967181656, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": true},
+      {"CMI_per_separator": 1e-08, "gamma": 0.05, "path_edges": 10, "edge_transport_bound": 0.03599999989060552, "path_transport_bound_raw": 0.35999999890605516, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": true},
+      {"CMI_per_separator": 1e-08, "gamma": 0.05, "path_edges": 30, "edge_transport_bound": 0.03599999989060552, "path_transport_bound_raw": 1.0799999967181655, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": true},
+      {"CMI_per_separator": 1e-08, "gamma": 0.05, "path_edges": 100, "edge_transport_bound": 0.03599999989060552, "path_transport_bound_raw": 3.5999999890605516, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false},
+      {"CMI_per_separator": 1e-07, "gamma": 0.05, "path_edges": 3, "edge_transport_bound": 0.11384199289232581, "path_transport_bound_raw": 0.3415259786769774, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": true},
+      {"CMI_per_separator": 1e-07, "gamma": 0.05, "path_edges": 10, "edge_transport_bound": 0.11384199289232581, "path_transport_bound_raw": 1.1384199289232582, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": true},
+      {"CMI_per_separator": 1e-07, "gamma": 0.05, "path_edges": 30, "edge_transport_bound": 0.11384199289232581, "path_transport_bound_raw": 3.4152597867697745, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false},
+      {"CMI_per_separator": 1e-07, "gamma": 0.05, "path_edges": 100, "edge_transport_bound": 0.11384199289232581, "path_transport_bound_raw": 11.384199289232582, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false},
+      {"CMI_per_separator": 1e-06, "gamma": 0.05, "path_edges": 3, "edge_transport_bound": 0.35999990999716375, "path_transport_bound_raw": 1.0799997299914912, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": true},
+      {"CMI_per_separator": 1e-06, "gamma": 0.05, "path_edges": 10, "edge_transport_bound": 0.35999990999716375, "path_transport_bound_raw": 3.5999990999716376, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false},
+      {"CMI_per_separator": 1e-06, "gamma": 0.05, "path_edges": 30, "edge_transport_bound": 0.35999990999716375, "path_transport_bound_raw": 10.799997299914912, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false},
+      {"CMI_per_separator": 1e-06, "gamma": 0.05, "path_edges": 100, "edge_transport_bound": 0.35999990999716375, "path_transport_bound_raw": 35.999990999716374, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false},
+      {"CMI_per_separator": 1e-05, "gamma": 0.05, "path_edges": 3, "edge_transport_bound": 1.138417111616978, "path_transport_bound_raw": 3.4152513348509337, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false},
+      {"CMI_per_separator": 1e-05, "gamma": 0.05, "path_edges": 10, "edge_transport_bound": 1.138417111616978, "path_transport_bound_raw": 11.384171116169778, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false},
+      {"CMI_per_separator": 1e-05, "gamma": 0.05, "path_edges": 30, "edge_transport_bound": 1.138417111616978, "path_transport_bound_raw": 34.15251334850934, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false},
+      {"CMI_per_separator": 1e-05, "gamma": 0.05, "path_edges": 100, "edge_transport_bound": 1.138417111616978, "path_transport_bound_raw": 113.84171116169779, "SO3_max_distance_cap": 2.8284271247461903, "useful_nontrivial": false}
+    ],
+    "locality_horizons": [
+      {"CMI_per_separator": 1e-10, "gamma": 0.05, "target_path_error": 0.01, "max_edges_by_linear_certificate": 2},
+      {"CMI_per_separator": 1e-10, "gamma": 0.05, "target_path_error": 0.1, "max_edges_by_linear_certificate": 27},
+      {"CMI_per_separator": 1e-10, "gamma": 0.05, "target_path_error": 0.5, "max_edges_by_linear_certificate": 138},
+      {"CMI_per_separator": 1e-09, "gamma": 0.05, "target_path_error": 0.01, "max_edges_by_linear_certificate": 0},
+      {"CMI_per_separator": 1e-09, "gamma": 0.05, "target_path_error": 0.1, "max_edges_by_linear_certificate": 8},
+      {"CMI_per_separator": 1e-09, "gamma": 0.05, "target_path_error": 0.5, "max_edges_by_linear_certificate": 43},
+      {"CMI_per_separator": 1e-08, "gamma": 0.05, "target_path_error": 0.01, "max_edges_by_linear_certificate": 0},
+      {"CMI_per_separator": 1e-08, "gamma": 0.05, "target_path_error": 0.1, "max_edges_by_linear_certificate": 2},
+      {"CMI_per_separator": 1e-08, "gamma": 0.05, "target_path_error": 0.5, "max_edges_by_linear_certificate": 13},
+      {"CMI_per_separator": 1e-07, "gamma": 0.05, "target_path_error": 0.01, "max_edges_by_linear_certificate": 0},
+      {"CMI_per_separator": 1e-07, "gamma": 0.05, "target_path_error": 0.1, "max_edges_by_linear_certificate": 0},
+      {"CMI_per_separator": 1e-07, "gamma": 0.05, "target_path_error": 0.5, "max_edges_by_linear_certificate": 4},
+      {"CMI_per_separator": 1e-06, "gamma": 0.05, "target_path_error": 0.01, "max_edges_by_linear_certificate": 0},
+      {"CMI_per_separator": 1e-06, "gamma": 0.05, "target_path_error": 0.1, "max_edges_by_linear_certificate": 0},
+      {"CMI_per_separator": 1e-06, "gamma": 0.05, "target_path_error": 0.5, "max_edges_by_linear_certificate": 1}
+    ]
+  },
+  "cocycle_without_global_reference_no_go": {
+    "pair_inverse_residual": 1.7406040486451894e-17,
+    "triple_cocycle_residual": 0.042424815898833707,
+    "theorem": "Pairwise-valid local transitions do not imply triple-overlap closure. A common global reference/recovery target or independent cocycle law is required.",
+    "relation_to_V1698": "V1698 exact atlas closure used coherent chart-basis transitions T_ij=B_j^-1 B_i; v13.19 is the approximate perturbative counterpart."
+  },
+  "continuum_boundary": {
+    "finite_geometry": "Controlled on finite paths/loops within the recoverability locality horizon.",
+    "source_response": "Quadratic worst-case path growth makes fixed microscopic jet error insufficient for arbitrarily long/refined paths.",
+    "needed_for_scale_independent_limit": ["CMI/edge error decay under refinement", "renormalized patch composition", "decorrelation/cancellation theorem", "stronger approximate cocycle/connection law"],
+    "status": "FINITE_LOCALITY_HORIZON_CLOSED__SCALE_INDEPENDENT_CONTINUUM_ATLAS_OPEN"
+  },
+  "adjudication": {
+    "finite_transport_errors_exponential_in_path_length": false,
+    "finite_transport_errors_at_most_linear": true,
+    "finite_transport_linear_scaling_sharp": true,
+    "metric_nonmetricity_patch_error_at_most_linear": true,
+    "QMAR_holonomy_jet_error_at_most_quadratic_under_uniform_bounds": true,
+    "QMAR_holonomy_jet_quadratic_scaling_attainable": true,
+    "pairwise_local_consistency_implies_global_cocycle": false,
+    "approximate_global_atlas_on_finite_horizon": "YES_CONDITIONAL",
+    "scale_independent_continuum_response_atlas": "NOT_DERIVED"
+  },
+  "status": {
+    "PATCH_VALUE_GLUE": "CLOSED_CONDITIONAL_LINEAR_ERROR",
+    "PATCH_JET_GLUE": "CLOSED_CONDITIONAL_QUADRATIC_WORST_CASE",
+    "APPROXIMATE_COCYCLE": "CONTROLLED_WITH_COMMON_REFERENCE",
+    "GLOBAL_REFERENCE_OR_COCYCLE_LAW": "REQUIRED",
+    "CONTINUUM_SCALE_INDEPENDENCE": "OPEN",
+    "Pillar_3": "OPEN",
+    "scientific_breakthrough": false,
+    "progress_classification": "MAJOR_PATCH_COMPOSITION_THEOREM_AND_CONTINUUM_SCALING_BOUNDARY"
+  },
+  "next_gate": {
+    "version": "v13.20",
+    "name": "Refinement Error Scaling / Continuum Atlas Stability Gate",
+    "question": "With patch scale h and m~L/h, derive threshold scaling exponents for CMI(h), polar gap gamma(h), edge transport error and edge QMAR-jet error so the v13.19 linear value and quadratic jet accumulation remain finite or vanish as h->0. Compare only to archived refinement evidence, without fitting."
+  }
+}
