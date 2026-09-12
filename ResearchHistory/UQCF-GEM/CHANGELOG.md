@@ -4,6 +4,20 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.20 — Refinement Error Scaling / Continuum Atlas Stability
+
+- Derived the continuum scaling ansatz `I(h)~h^alpha`, `gamma(h)~h^beta`, `||P(h)||~h^sigma`, `Lambda(h)~h^lambda`, with `m(h)~L/h` for a fixed macroscopic path.
+- From v13.17/v13.18 conditioning, obtained edge transport error `epsilon=O(h^(alpha/2-beta))` and edge QMAR-jet error `eta=O(h^(alpha/2+sigma-2beta))`.
+- Proved value-level atlas error scales as `O(h^(alpha/2-beta-1))`; boundedness requires `alpha>=2 beta+2`, while vanishing requires strict inequality.
+- Proved the two macroscopic QMAR-jet terms scale as `h^(alpha/2+sigma-2beta-1)` and `h^(alpha/2-beta+lambda-2)`.
+- Therefore bounded QMAR-jet closure requires `alpha>=max(4 beta+2-2 sigma, 2 beta+4-2 lambda)`; strict inequalities are required for vanishing error.
+- In the conservative stable-gap / bounded-source / O(1)-edge-jet sector (`beta=sigma=lambda=0`), value closure needs `alpha>=2` while worst-case response-atlas closure needs `alpha>=4`.
+- Identified the smoother `lambda=1` edge-jet sector as a possible reduction back to a quadratic CMI threshold, but this scaling is not assumed and must be measured or derived.
+- Audited archived refinement evidence: v12.70's `~h^1.967` Hodge result is a different observable; v12.73's frozen ADM-7 continuation failed its own ACR gate (`p_H=-0.1975`, `p_R=0.7197`, N56 high-band `0.9604`) and does not measure the new CMI/polar-gap exponents.
+- Defined **RATS — Recoverability Atlas Telemetry Scaling** as the next required matched refinement object.
+- Continuum recoverability-atlas stability remains **NOT CERTIFIED** pending direct nested telemetry.
+- Next: v13.21 Recoverability Atlas Telemetry / Blind Refinement Protocol Gate.
+
 ### v13.19 — Approximate Local Metric-Affine Evolution / Patch Composition
 
 - Proved finite SO(3) transport errors telescope additively: `||Π Ohat_e-Π O_e||_F <= Σ ||Ohat_e-O_e||_F`; there is no exponential amplification from transport norms.
