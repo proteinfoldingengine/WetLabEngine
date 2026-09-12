@@ -23,7 +23,10 @@ pre-time quantum relations / global compatibility
     -> generic metric-affine parent geometry
        Gamma = Gamma_LC + K(T) + L(Q)
     -> special Q=0, T=0 Levi-Civita sector (conditional, not generically source-invariant)
-    -> conditional Path-A Ricci / ADM correspondence
+    -> represented Path-A q,pi,constraint/ADM structure
+    -> retained source/current bridge
+       absolute normalization blocked by RSCL
+       projective coupled source Sigma = kappa T remains the active target
 ```
 
 ## Current Pillar status
@@ -52,9 +55,25 @@ Tracked gates:
 - [v13.08](v13/v13.08/) — exact finite 1D abelian LC-preserving source algebra in a symmetry-selected sector.
 - [v13.09](v13/v13.09/) — visible U(1) symmetry protects Q=0 but hidden completion can drift holonomy / solder closure.
 - [v13.10](v13/v13.10/) — frozen-ledger HCPR non-factorization; HCPR frozen as irreducible relative to current ledger.
+- [v13.11](v13/v13.11/) — QMAR first-order source response; exact BKM trace/Weyl integrability theorem.
+- [v13.12](v13/v13.12/) — shear nonmetricity and curvature response independence boundary.
+- [v13.13](v13/v13.13/) — exact no-fixed-body-order ETL/PGRL closure theorem.
+- [v13.14](v13/v13.14/) — symmetry-reduced sufficient-state / Schur-Weyl ETL closure boundary.
+- [v13.15](v13/v13.15/) — generic sparse locality no-go and exact commuting-Markov closure sector.
+- [v13.16](v13/v13.16/) — CMI / recoverability selection and sharp square-root response bound.
+- [v13.17](v13/v13.17/) — recoverability-to-QMAR geometric error propagation.
+- [v13.18](v13/v13.18/) — source-conditioned recoverability and QMAR-jet locality.
+- [v13.19](v13/v13.19/) — finite patch composition and quadratic jet-accumulation boundary.
+- [v13.20](v13/v13.20/) — refinement scaling criteria for continuum atlas stability.
+- [v13.21](v13/v13.21/) — blind RATS protocol frozen; execution blocked without lawful nested states.
+- [v13.22](v13/v13.22/) — quantum refinement naturality satisfiable but nonunique; QRSL isolated.
+- [v13.23](v13/v13.23/) — QRSL irreducible relative to the frozen ontology; refinement-origin branch stop.
+- [v13.24](v13/v13.24/) — post-QRSL dependency reassessment; finite/QMAR/Path-A stack preserved.
+- [v13.25](v13/v13.25/) — retained source-ledger bridge blocked by exact common source-normalization degeneracy; RSCL isolated.
+- [v13.26](v13/v13.26/) — RSCL irreducible relative to the frozen ontology; absolute-source-calibration branch stop.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the append-only gate ledger.
 
 ## Validation
 
-All v13.01-v13.10 gate checkers have passed in their canonical layouts. v13.10 additionally passed extracted-package verification and ZIP integrity validation before publication.
+Each tracked gate directory carries its own `CHECKER.py` and machine-readable `SUMMARY.json`. The active frontier is v13.26; the next research target is v13.27, the scale-invariant coupled-source bridge `Sigma_obs = kappa_obs T_obs`.
