@@ -1,0 +1,32 @@
+{
+  "version": "v13.27-gravity-progress-demo",
+  "default_frames": 25,
+  "telemetry_hash": "cdd8e93bb6d25e55b655d04132846de643e1eb6ee9cb0c79a243984f9a5788f3",
+  "executed_summary": {
+    "min_state_eigenvalue": 3.7185106924494124e-05,
+    "min_bkm_eigenvalue": 0.5673128649814877,
+    "max_source_balance_residual": 4.611102534756203e-16,
+    "max_projective_direction_change": 3.380886602644082e-16,
+    "max_cycle_rank_deficit": 0,
+    "max_cycle_angle": 3.141592653589793,
+    "max_qmar_jet_norm": 15.999881388707493,
+    "mean_dewitt_diagnostic": -0.12897342849761173,
+    "dewitt_pure_trace_control": -4.5,
+    "dewitt_traceless_control": 1.9999999999999982,
+    "pgrl_reparameterization_error": 9.55170005517049e-16,
+    "tensor_completion_spatial_stress_distance": 0.4135214625627066,
+    "projective_sigma_status": "RAY_ONLY__MAGNITUDE_NOT_DERIVED",
+    "RGCL": "MISSING",
+    "physical_Einstein_closure": "OPEN"
+  },
+  "structural_thresholds": {
+    "min_state_eigenvalue_gt": 0.0,
+    "min_bkm_eigenvalue_gt": -1e-09,
+    "max_source_balance_residual_lt": 1e-10,
+    "max_projective_direction_change_lt": 1e-10,
+    "pgrl_reparameterization_error_lt": 1e-10,
+    "dewitt_pure_trace_control_lt": 0.0,
+    "dewitt_traceless_control_gt": -1e-10,
+    "max_cycle_rank_deficit_eq": 0
+  }
+}
