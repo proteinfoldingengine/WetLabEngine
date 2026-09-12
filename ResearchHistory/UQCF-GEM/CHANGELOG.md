@@ -4,6 +4,19 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.19 — Approximate Local Metric-Affine Evolution / Patch Composition
+
+- Proved finite SO(3) transport errors telescope additively: `||Π Ohat_e-Π O_e||_F <= Σ ||Ohat_e-O_e||_F`; there is no exponential amplification from transport norms.
+- Aligned same-axis controls saturate the **linear path-length scaling** to numerical precision.
+- Closed approximate overlap/cocycle bounds when patches are gauge-aligned and approximate one common global reference; triple-cocycle residual is bounded by the sum of transition errors.
+- Propagated the same control to transported BKM metric/nonmetricity defects; value-level atlas errors remain at most linear in path length.
+- Derived the QMAR holonomy-jet composition bound `||Delta dotH|| <= Σ eta_i + Σ_i Lambda_i Σ_(j!=i) epsilon_j`, giving uniform worst-case `m eta + Lambda m(m-1) epsilon`.
+- Constructed an explicit same-axis family with `path_jet_error ∝ m^2`, proving the quadratic jet scaling is genuinely attainable rather than a loose inequality artifact.
+- Proved pairwise local validity/invertibility does not imply global cocycle closure; a common global reference/recovery target or explicit cocycle law remains necessary.
+- Inserted v13.17/v13.18 edgewise recoverability bounds to obtain finite-horizon path/loop certificates.
+- Scale-independent continuum atlas stability remains open because fixed microscopic value errors accumulate linearly and jet errors can accumulate quadratically.
+- Next: v13.20 Refinement Error Scaling / Continuum Atlas Stability Gate.
+
 ### v13.18 — Source-Conditioned Recoverability / QMAR Jet Locality
 
 - Closed an explicit faithful-stratum ETL/PGRL tangent bound: `||Delta dotrho||_F <= 2 B_ETL(mu,d) ||P||op sqrt(1-exp(-CMI))`.
