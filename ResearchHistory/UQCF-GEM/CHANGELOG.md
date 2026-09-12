@@ -4,6 +4,38 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 
 ## 2026-09-12
 
+### v13.23 — QRSL Origin / Canonical Refinement Selector
+
+- Audited the frozen ontology-native QRSL candidates: Genesis Pin/provenance, recoverability order, W1/W2/W3 incidence/filling certificates, positivity/support, and coarse quotient naturality.
+- Executed the lawful `tau_0=I/8` versus `tau_eps=(I+0.4 ZZZ)/8` refinement pair: coarse recovery error `1.261e-16`, fine-state trace distance `0.2`, support ranks `8,8`, and CMI `0` versus `0.08228287850505`.
+- The pre-selection coarse ontology descriptor is identical for both candidates (SHA-256 `5a90c20204e61bfa9182aac6ca18e4b5bf169d0fefe4904a4caf86be1a8edc0e`), while fine-only hidden descriptors differ.
+- Genesis/provenance does not generate the fine world; recoverability order supplies no preference functional; W1/W2/W3 certify supplied realizations rather than select a section; positivity is only feasibility; fine-to-coarse quotient naturality has no canonical inverse.
+- Closed the QRSL factorization no-go: a selector using only pre-selection coarse data has no input distinction between lawful hidden completions, while a selector using fine CMI/provenance/incidence is circular because the fine realization already has to exist.
+- **QRSL is IRREDUCIBLE RELATIVE TO THE CURRENT FROZEN ONTOLOGY.** QRSL origin search: **STOP**.
+- RATS remains sealed; no entropy/minimum-CMI/smoothness/GR-compatible ancilla may be inserted merely to unlock it.
+- Next: v13.24 Post-QRSL Branch Reassessment / Metric-Affine Continuum Evidence Gate.
+
+### v13.22 — Quantum Refinement Naturality / Nested-State Law
+
+- Proved refinement naturality is satisfiable but nonunique through the infinite lawful family `R_tau(rho)=rho tensor tau` with coarse map `Tr_anc`.
+- Every faithful `tau` preserves positivity, normalization, CPTP coarse recovery, retained-observable naturality, ETL/PGRL source naturality under `P -> P tensor I`, and nested composition.
+- Fresh controls: coarse restriction `~1e-16`, ETL source naturality `~1e-15`, two-step composition `~1e-17`.
+- `tau_0=I/8` and `tau_eps=(I+0.4 ZZZ)/8` have identical one/two-body marginals yet CMI `0` versus `0.0822828785`; corresponding fine states remain exact refinements of the same coarse state and differ by trace distance `0.2`.
+- Constructed `tau_h=(I+h^r ZZZ)/8`; measured CMI exponents approximately `1,2,4,6` for `r=0.5,1,2,3`, showing an unconstrained hidden refinement selector can manufacture the sealed RATS exponent while preserving all frozen naturality requirements.
+- Isolated **QRSL — Quantum Refinement Selection Law** as the missing selector; RATS remains sealed.
+- Next: v13.23 QRSL Origin / Canonical Refinement Selector Gate.
+
+### v13.21 — Recoverability Atlas Telemetry / Blind Refinement Protocol
+
+- Froze and hashed **RATS — Recoverability Atlas Telemetry Scaling** before generating any refinement data; protocol SHA-256 `b46bec9868fd8c71a2789801d4d9eca733e187608b8f364b99721cfafd24227b`.
+- Required at least four dyadically nested levels representing one physical relational configuration with explicit ancestry, fixed target edge/separator, predeclared source continuation, and reproducible state/marginal hashes.
+- Froze faithful-state Petz recovery as the primary recovery; prohibited rotated/optimized recovery, post-result separator changes, source rescaling, and target-dependent continuation choices.
+- Froze matched telemetry `I(h), gamma(h), mu(h), epsilon(h), eta(h), Lambda(h), ||P_h||` and preserved v13.20 information-theoretic thresholds unchanged.
+- Added an independent direct-error score: bounded value composition requires `p_epsilon>=1`; bounded jet composition requires `p_eta>=1` and `p_epsilon+lambda>=2`.
+- Repository audit found no pre-existing ancestry-linked nested quantum-state family with a target-independent coarse-graining/source-continuation law. No telemetry was generated.
+- **RATS execution BLOCKED** rather than inventing a refinement law after seeing the desired exponents.
+- Next: v13.22 Quantum Refinement Naturality / Nested-State Law Gate.
+
 ### v13.20 — Refinement Error Scaling / Continuum Atlas Stability
 
 - Derived the continuum scaling ansatz `I(h)~h^alpha`, `gamma(h)~h^beta`, `||P(h)||~h^sigma`, `Lambda(h)~h^lambda`, with `m(h)~L/h` for a fixed macroscopic path.
