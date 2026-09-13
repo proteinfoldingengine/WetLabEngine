@@ -1,9 +1,9 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-13  
-**Latest completed gate:** v15.04 — Equivariant Source-Law Classification / Spectral Freedom Gate  
-**v15.04 adjudication:** `COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM`  
-**Secondary:** `COVARIANCE_FIXES_EIGENSPACES_NOT_SPECTRAL_RESPONSE_VALUES`; `DIRECTION_ONLY_NOT_RESPONSE_LAW`; `NO_UNIQUE_A_OF_R`; `V15_03_NUMERICS_ARE_ILLUSTRATIONS_OF_V15_04_THEOREM`  
+**Latest completed gate:** v15.05 — Frozen Composition-Law Audit / Monoidal Non-Selection and Log-Selector Boundary  
+**v15.05 primary adjudication:** `FROZEN_COMPOSITION_LAWS_DO_NOT_SELECT_SPECTRAL_RESPONSE`  
+**Secondary:** `LOG_SHAPE_REQUIRES_NEW_FUNCTIONAL_CALCULUS_ASSUMPTION`  
 **Major structural result:** `true`  
 **Scientific breakthrough:** `false`  
 **Pillar 3:** `OPEN`  
@@ -11,7 +11,7 @@
 
 ## Current scientific picture
 
-The upstream source/admissibility problem is now localized more sharply than “missing representation.”
+The upstream source/admissibility problem is now localized beyond representation and local covariance to the exact kind of extra law that would be required to select a state-dependent source response.
 
 ```text
 Genesis / frozen provenance
@@ -25,29 +25,41 @@ compatibility parent/support
     -> exact projective/covariant compression A -> L^dagger A L
     -> frozen provenance supplies no source class/tangent on that parent (v15.01)
 
-shared-label candidate
-    -> retained source graph has five nodes
-    -> compatibility factors have five internal labels
-    -> all 120 node<->label identifications remain inequivalent under earned gauge
-    -> NO_CERTIFIED_SHARED_LABEL_CARRIER (v15.02)
-
-graph-site candidate
-    -> graph-indexed quantum models exist in the archive
-    -> exact retained five-node graph -> five quantum subsystems is NOT certified
+shared-label / graph-site candidates
+    -> five graph nodes do not canonically identify the five internal labels (v15.02)
+    -> exact retained five-node graph -> five quantum subsystems remains underived (v15.03)
     -> state-independent scalar/current lift + independent local gauge -> center -> PGRL-null
     -> supplied quantum-state context permits noncentral covariant lifts
-    -> five nontrivial quantum sites cannot literally equal C^125
     -> no natural graph-site -> compatibility-parent map is certified
-    -> NO_CERTIFIED_GRAPH_SITE_FACTORIZATION (v15.03)
 
 state-dependent local source law
-    -> require only F(U rho U^dagger)=U F(rho) U^dagger
-    -> stabilizer theorem forces F(rho) to be spectral in rho
-    -> qubit traceless law is exactly a(r)(rho-I/2)
-    -> covariance fixes eigenspaces/direction but leaves a(r) free
-    -> existing source extensivity/linearity, null-source behavior,
-       positive projective scaling, and local-frame covariance all preserve that freedom
+    -> F(U rho U^dagger)=U F(rho) U^dagger
+    -> full stabilizer forces F(rho) scalar on every rho spectral block
+    -> for qubits: F_traceless(rho)=a(r)(rho-I/2)
+    -> covariance fixes direction / spectral blocks but leaves a(r) free
+    -> frozen source linearity, null-source behavior, positive scaling, and local-frame covariance preserve the freedom
     -> COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM (v15.04)
+
+composition-law selector audit
+    -> v13.22 refinement source rule is supplied P -> P tensor I
+       NOT a state-to-source equation P=F(rho)
+    -> for any already-chosen local a(r), the labeled local-source sum
+       M_a = sum_i I tensor ... tensor F_a(rho_i) tensor ... tensor I
+       is associative, permutation-natural, and locally covariant
+    -> linear / log / (1+r^2) remain projectively distinct while all satisfy those laws
+    -> generic monoidal composition therefore does NOT select a(r)
+    -> FROZEN_COMPOSITION_LAWS_DO_NOT_SELECT_SPECTRAL_RESPONSE (v15.05)
+
+stronger conditional selector theorem
+    -> assume one dimension-independent continuous scalar f acts by functional calculus
+    -> center F_d(rho)=f(rho)-Tr[f(rho)]I/d
+    -> impose F(rho tensor sigma)=F(rho) tensor I + I tensor F(sigma)
+    -> pairwise spectral differences imply f(xy)-f(zy)=f(x)-f(z)
+    -> multiplicative Cauchy equation + continuity
+    -> f(x)=alpha log(x)+beta
+    -> noncentral projective shape [log rho] for alpha>0
+    -> premise is NOT frozen ontology
+    -> LOG_SHAPE_REQUIRES_NEW_FUNCTIONAL_CALCULUS_ASSUMPTION (v15.05)
 
 supplied positive projective support source [P]
     -> exact PGRL tangent
@@ -62,209 +74,121 @@ retained/downstream source-geometry bridge
     -> v13.28 REQUIRES_NEW_AXIOM remains in force
 ```
 
-The unresolved upstream package therefore contains at least three distinct missing pieces:
+## Latest result — v15.05
 
-1. an earned retained-node-to-quantum-site carrier identification;
-2. an earned natural map from that carrier into the existing `C^125 -> C^25` compatibility stack; and
-3. if quantum-state context is used, an upstream principle selecting the spectral response law `a(r)` rather than choosing it from downstream performance.
+### A. Frozen archive contains tensor structure, but not the required selector
 
-## Latest result — v15.04
-
-### A. Exact local-unitary equivariance theorem
-
-Let `F(rho)` be Hermitian and satisfy
+The important archive fact is v13.22:
 
 ```text
-F(U rho U^dagger) = U F(rho) U^dagger
+R_tau(rho) = rho tensor tau
+P -> P tensor I
 ```
 
-for every local unitary `U`.
-
-For every unitary in the stabilizer of `rho`, equivariance forces the same unitary to stabilize `F(rho)`. Writing
+with exact two-step composition and ETL/PGRL naturality. This does not define `P=F(rho)`. It transports an already-supplied source. The exact identity
 
 ```text
-rho = sum_alpha lambda_alpha Pi_alpha,
+log(rho tensor tau) = log(rho) tensor I + I tensor log(tau)
 ```
 
-the stabilizer contains the full unitary group on every eigenspace. Its commutant is scalar on each eigenspace, so
+therefore proves naturality of the PGRL exponential family; it does not prove that the source generator must itself be `log(rho)`.
+
+The frozen dependency classification is
 
 ```text
-F(rho) = sum_alpha mu_alpha(spec rho) Pi_alpha.
+NO_FROZEN_STATE_TO_SOURCE_COMPOSITION_SELECTOR
 ```
 
-Hence
+### B. Labeled monoidal composition preserves arbitrary local spectral response
+
+For any local covariant law `F_a`, define
 
 ```text
-[F(rho), rho] = 0
-LOCAL_UNITARY_EQUIVARIANCE_IMPLIES_SPECTRAL_SOURCE_LAW
-COVARIANCE_FIXES_EIGENSPACES_NOT_SPECTRAL_RESPONSE_VALUES
+M_a(rho_1 tensor ... tensor rho_n)
+  = sum_i I tensor ... tensor F_a(rho_i) tensor ... tensor I.
 ```
 
-For degenerate spectra, the full stabilizer statement is stronger than the commutator alone: `F(rho)` must be scalar across each degenerate eigenspace.
+This construction is associative, permutation/swap-natural, and independently local-unitary covariant for every already-chosen `a(r)`.
 
-The converse also holds for every well-defined real permutation-equivariant spectral assignment that treats equal eigenvalues equally. No differentiability, entropy, pruning, dynamics, or time primitive is needed for this classification.
-
-### B. Exact qubit classification
-
-For
+Executed witnesses:
 
 ```text
-rho = 1/2 (I + r_vec . sigma),   r = |r_vec| < 1,
+witnesses                                  = linear, log, 1+r^2
+max local covariance error                 = 8.588717521894646e-16
+max associativity error                    = 2.3551386880256624e-16
+max swap-naturality error                  = 0.0
+linear vs log projective separation        = 0.04038732286659571
+linear vs polynomial separation            = 0.06600014410325687
+log vs polynomial separation               = 0.025621359948040462
 ```
 
-any conjugation-equivariant local map has the form
+Thus all three laws compose correctly while remaining physically different projective source rays on the test product state.
 
 ```text
-F(rho) = c(r) I + a(r) (rho - I/2).
+LABELED_MONOIDAL_COMPOSITION_PRESERVES_ARBITRARY_LOCAL_SPECTRAL_RESPONSE
 ```
 
-After traceless/projective centering,
+This is an algebraic theorem; the numerics validate the implementation.
+
+### C. A stronger law selects the logarithmic shape
+
+If one additionally assumes one dimension-independent continuous scalar function `f` acts by functional calculus on every faithful finite-dimensional state and the centered **state-derived** source obeys
 
 ```text
-F_traceless(rho) = a(r) (rho - I/2).
+F(rho tensor sigma) = F(rho) tensor I + I tensor F(sigma),
 ```
 
-Therefore
+then diagonal spectral differences give
 
 ```text
-QUBIT_EQUIVARIANT_TRACELESS_MAP_IS_RADIAL
-DIRECTION_ONLY_NOT_RESPONSE_LAW
+f(xy)-f(zy) = f(x)-f(z),
+f(xy)-f(x)  = c(y),
+c(yz)       = c(y)+c(z).
 ```
 
-The unresolved local freedom is one scalar response function `a(r)`.
-
-### C. v15.03 linear/square collapse is exact
-
-For every qubit density matrix,
+Continuity yields
 
 ```text
-rho^2 - Tr(rho^2) I / 2 = rho - I/2.
+f(x) = alpha log(x) + beta.
 ```
 
-The executed maximum identity error was
+The central `beta` drops out after centering; positive-projective orientation corresponds to `alpha>0`.
+
+Executed controls:
 
 ```text
-7.850462293418876e-17
+centered log tensor error    = 1.6421465606029517e-15
+centered linear tensor error = 0.3716732435890426
+centered cubic tensor error  = 0.5553605272997411
 ```
 
-so the v15.03 near-zero linear/square projective residuals are now illustrations of an exact identity, not evidence for an empirical coincidence.
-
-### D. Logarithmic law gives an exact nonconstant response
-
-For faithful qubits,
+But the premise is stronger than v15.04 conjugation-equivariance and is not derived anywhere in the frozen archive.
 
 ```text
-log(rho) - Tr(log(rho)) I / 2
-  = artanh(r) rhat.sigma
-  = [2 artanh(r)/r] (rho-I/2).
+CONTINUOUS_UNIVERSAL_SCALAR_FUNCTIONAL_CALCULUS_PLUS_CENTERED_TENSOR_DERIVATION_SELECTS_LOG_SHAPE
+status = NEW_ASSUMPTION_NOT_FROZEN
 ```
 
-Thus
+### D. Scientific meaning
 
-```text
-a_log(r) = 2 artanh(r)/r.
-```
+v15.05 changes the target from a vague search for “some composition law” to a sharply typed problem.
 
-The executed maximum formula error was
+Generic tensor consistency is insufficient. The missing principle must constrain the **state-to-source map itself**, not merely specify how already-chosen local source operators are assembled across labeled subsystems.
 
-```text
-1.2412670766236366e-16
-```
+The logarithmic source shape is therefore mathematically special under a clean stronger law, but it is not yet ontologically earned.
 
-and `a_log(r)` is nonconstant and strictly increasing on `0<r<1`.
-
-### E. Exact projective-ray split criterion
-
-For the supplied graph-site carrier,
-
-```text
-P_a(s,rho) = sum_i s_i iota_i[a(r_i)(rho_i-I/2)].
-```
-
-Distinct embedded single-site traceless terms are Hilbert-Schmidt orthogonal. Therefore two such sources define the same positive projective ray exactly when their response coefficients on all nonzero source-support sites differ by one common positive factor.
-
-For the frozen source `(-1,0,0,+1,0)`, only sites `0` and `3` contribute.
-
-```text
-Control A support radii = [0.15, 0.63]
-a_log(A support)        = [2.015205812486224, 2.353702044702441]
-linear vs log residual  = 0.032643436536906496
-
-Control B support radii = [0.52, 0.47]
-a_log(B support)        = [2.2166913652661258, 2.1705120706949246]
-linear vs log residual  = 0.010460821683241906
-```
-
-Because the radii differ and `a_log` is not constant, the linear and logarithmic global projective source rays are exactly distinct.
-
-A third witness `a(r)=1+r^2` also gives different rays:
-
-```text
-A: linear vs (1+r^2) = 0.061186205628391485
-B: linear vs (1+r^2) = 0.01972566676052767
-```
-
-### F. Frozen source axioms do not select `a(r)`
-
-The audited source-law constraints carried by v13.26, v14.03, and v15.03 were:
-
-- retained source amount/extensivity and homogeneous source-current scaling;
-- positive projective source rescaling;
-- independent local-unitary/frame covariance;
-- additivity/linearity in retained scalar source coefficients;
-- null-source compatibility.
-
-The linear, logarithmic, and `1+r^2` witness laws all satisfy them simultaneously.
-
-```text
-max local-unitary covariance error       = 3.434312402059545e-16
-max null-source norm                     = 0.0
-max positive-scale projective residual   = 2.603703785810335e-16
-max source-additivity error              = 3.510833468576701e-16
-max source-homogeneity error             = 1.7763568394002505e-15
-```
-
-Therefore
-
-```text
-FROZEN_SOURCE_AXIOMS_DO_NOT_SELECT_SPECTRAL_RESPONSE_FUNCTION
-NO_UNIQUE_A_OF_R
-COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM
-```
-
-The distinction is structural: source extensivity constrains dependence on scalar source coefficients `s_i`; it does not impose a functional equation on the spectrum dependence `a(r)`.
-
-The audited dependencies contain no certified tensor-state composition functional equation for this operator-valued source law. Such a composition/monoidal law could reduce the freedom, but unless independently recovered from frozen structure it would be a **NEW ASSUMPTION**.
-
-### G. Exact reconciliation with v15.03
-
-The v15.04 theorem reproduces the frozen v15.03 controls:
-
-```text
-A: frozen linear/log residual  = 0.03264343653690659
-A: theorem linear/log residual = 0.032643436536906496
-absolute difference            = 9.020562075079397e-17
-
-B: frozen linear/log residual  = 0.010460821683241842
-B: theorem linear/log residual = 0.010460821683241906
-absolute difference            = 6.418476861114186e-17
-```
-
-and the exact theorem predicts zero linear/square residual, matching the frozen machine-level values.
-
-```text
-V15_03_NUMERICS_ARE_ILLUSTRATIONS_OF_V15_04_THEOREM
-```
+No downstream gravity/ADM/Einstein/cosmology target was used to choose the law. No entropy, pruning, or physical time was used as a pre-pruning selector.
 
 ## Relation to earlier gates
 
-- **v15.03:** preserved and analytically strengthened. State-context nonuniqueness is now classified exactly rather than inferred from candidate disagreement.
-- **v15.02:** preserved. Matching five-element cardinality still does not supply a node-to-basis-label functor.
-- **v15.01:** preserved. The `C^125 -> C^25` parent/support relation and compression law remain exact.
-- **v14.04:** preserved/strengthened. Even once state context supplies a lawful local quantum direction, the upstream representation link and spectral response selector remain underived.
-- **v14.03:** preserved conditional. Given a supplied positive projective support source `[P]_+`, hidden-tangent first contact and the local dual ray remain canonical.
-- **v14.02:** preserved. A specified smooth compatibility boundary has its intrinsic objective-independent local dual ray.
-- **v13.28:** preserved. Absolute downstream source-to-geometry coupling remains blocked in the frozen candidate classes.
+- **v15.04:** preserved and strengthened. The arbitrary qubit response `a(r)` survives generic monoidal composition.
+- **v15.03:** preserved. State context can provide a covariant noncentral direction, but neither the exact carrier identification nor the spectral response is canonically selected.
+- **v15.02:** preserved. Equal cardinality still does not create a node↔quantum-label identification.
+- **v15.01:** preserved. The exact `C^125 -> C^25` parent/support relation remains available once a lawful parent source exists.
+- **v14.04:** preserved. The provenance-to-source representation link remains missing.
+- **v14.03:** preserved conditional. A supplied positive projective support source still selects the hidden first-contact/dual-ray chain.
+- **v13.22:** clarified, not contradicted. Its source naturality is `P -> P tensor I` for an independently supplied source.
+- **v13.28:** preserved. Absolute downstream source-to-geometry coupling remains underived.
 
 ## Preserved stack
 
@@ -273,23 +197,24 @@ V15_03_NUMERICS_ARE_ILLUSTRATIONS_OF_V15_04_THEOREM
 - finite global quantum compatibility / hidden-completion structure: **PRESERVED**.
 - QMAR and BKM trace/Weyl theorem: **PRESERVED**.
 - source-current balance and conditional current selection: **PRESERVED**.
-- v14.01 source-law nonuniqueness: **PRESERVED**.
 - v14.02 canonical local dual ray: **PRESERVED**.
 - v14.03 supplied-projective-source selection chain: **PRESERVED CONDITIONAL**.
-- v14.04 representation-link obstruction: **PRESERVED / STRENGTHENED**.
-- v15.01 exact compatibility parent/support compression: **PRESERVED**.
-- v15.02 exact finite-label no-go: **PRESERVED**.
-- v15.03 graph-site/local-gauge audit: **PRESERVED / ANALYTICALLY STRENGTHENED**.
-- v15.04 equivariant source-law classification: **CLOSED — SPECTRAL FREEDOM REMAINS**.
+- v14.04 representation-link obstruction: **PRESERVED**.
+- v15.01 compatibility parent/support compression: **PRESERVED**.
+- v15.02 finite-label no-go: **PRESERVED**.
+- v15.03 graph-site/local-gauge audit: **PRESERVED**.
+- v15.04 equivariant source-law classification: **PRESERVED / STRENGTHENED**.
+- v15.05 composition selector boundary: **CLOSED — FROZEN LAWS DO NOT SELECT `a(r)`**.
 - projective coupled-source ray `[Sigma]`: **PRESERVED**.
 - controlled ADM/Einstein comparisons: **EXTERNAL HELDOUT CORRESPONDENCE ONLY**.
 
 ## Still not derived
 
-- a unique operator-valued spectral source law `a(r)`;
+- an ontology-native principle selecting `a(r)`;
+- the universal scalar-functional-calculus premise used in the conditional log theorem;
+- `log(rho)` as the Genesis/provenance source law;
 - a certified exact retained-node-to-quantum-site factorization;
 - a natural graph-site-to-`C^125` compatibility-parent map;
-- Genesis/provenance selection of `a(r)`;
 - Genesis/provenance -> `[A_prov]_+` on `C^125`;
 - Genesis/provenance -> v14.03 projective support source `[P]_+`;
 - absolute source magnitude or observer calibration;
@@ -304,13 +229,15 @@ V15_03_NUMERICS_ARE_ILLUSTRATIONS_OF_V15_04_THEOREM
 
 ## Stop rule / next lawful frontier
 
-Do **not** choose `log(rho)`, linear `rho`, `rho^2`, `1+r^2`, or any other spectral response because it produces a better downstream PGRL/ADM/Einstein/gravity result. Do not invent a tensor-site identity, tie local frames, pad/reshape into `C^125`, invent an isometry, or promote a minimum-norm current.
+Do **not** adopt `log(rho)` merely because v15.05 found a clean theorem under a stronger tensor-functional premise. That would convert a sufficient characterization into an invented ontology.
 
-The next lawful question is upstream and architectural:
+Do not select any state-to-source law using downstream PGRL/ADM/Einstein/gravity performance.
 
-> Does the already-frozen ontology independently contain a state-composition / monoidal / spectral functional law strong enough to constrain `a(r)`?
+The next lawful question is:
 
-If such a law exists, it must be identified and hash-bound before consulting downstream gravity targets. If no such frozen law exists, the source-law branch stops with `a(r)` irreducible relative to the current frozen source axioms; any selected response law then enters explicitly as **NEW ASSUMPTION**.
+> Does the already-earned ontology independently justify why a state-derived source should be one universal dimension-independent scalar functional calculus obeying the centered tensor derivation, or does it contain another equally strong source-law principle that selects the spectral response without downstream fitting?
+
+Candidate origins must be audited upstream against the frozen structures themselves: Genesis/provenance composition, independent-system/disjoint-union structure, recoverability/compatibility functoriality, and any already-certified source grading or naturality law. If none supplies the premise, this branch stops with the spectral response irreducible relative to the frozen ontology and any chosen `a(r)` must be declared **NEW ASSUMPTION**.
 
 Until then:
 
@@ -318,9 +245,10 @@ Until then:
 retained graph -> exact quantum-site carrier       : STOPPED / UNDERIVED
 state-independent scalar/current -> noncentral P   : NO-GO UNDER INDEPENDENT LOCAL GAUGE
 state + supplied carrier -> covariant local P      : LAWFUL
-local covariance -> source eigenspaces/direction   : EXACTLY CLASSIFIED
+local covariance -> spectral blocks/direction      : EXACTLY CLASSIFIED
 local covariance -> spectral response a(r)         : NONUNIQUE
-frozen source axioms -> unique a(r)                 : NO
+frozen generic composition -> unique a(r)           : NO
+strong universal scalar tensor law -> log shape    : YES, CONDITIONAL / NEW ASSUMPTION
 natural graph-site -> C^125/C^25 map               : NOT CERTIFIED
 [A]_+ -> [P]_+                                      : EXACT CANONICAL COMPRESSION
 [P] -> X* -> [g]                                    : CERTIFIED CONDITIONAL
