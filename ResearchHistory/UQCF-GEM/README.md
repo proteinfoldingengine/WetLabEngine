@@ -20,7 +20,15 @@ pre-time quantum relations / global compatibility
     -> canonical incidence source map gives no cycle defect
     -> relationally weighted source->higher-incidence maps can be nonzero
        but are NONUNIQUE under current covariance/composition/positivity rules
-    -> canonical source-dependent admissibility law not derived
+    -> canonical global source-dependent admissibility law not derived
+
+fixed global compatibility fiber
+    -> faithful interior: no boundary selector
+    -> specified smooth PSD boundary point
+       -> intrinsic hidden-fiber normal cone
+       -> v14.02: nonzero rank-1 local dual ray on 128/128 frozen samples
+       -> boundary-local dual direction derived
+       -> source->boundary/source->hidden lift still underived
 
 retained geometry / source-current bridge
     -> metric-affine finite kinematics
@@ -77,8 +85,11 @@ Tracked gates:
 ## v14 history — upstream global-admissibility origin
 
 - [v14.01](v14/v14.01/) — canonical incidence gives zero cycle defect; three covariant state-weighted source→cycle-defect maps are nonzero and span rank 3; source linearity, relabel/orientation covariance, strict disjoint composition, and audited PSD positivity do not select one; outcome `NONUNIQUE`.
+- [v14.02](v14/v14.02/) — objective-free convex-dual audit of the archived full hidden compatibility fibers. All `128/128` frozen radial boundary samples (`64` each for `V_A`,`V_B`) are smooth/simple and have nonzero projected intrinsic normal-cone rank `1`; outcome `CANONICAL_DUAL_RAY`. This derives a **boundary-local dual direction at a specified smooth compatibility boundary point**, not a global source law or source lift.
 
-v14.01 is an upstream canonicality audit, not a reopening of v13.28. It asks whether global relational consistency itself already contains the missing source-dependent admissibility law. In the audited class, it does not select a unique one.
+v14.02 is compatible with the v14.01 stop. v14.01 shows that the frozen architecture does not canonically choose a global source→admissibility deformation. v14.02 shows that **conditional on a specified smooth compatibility boundary point**, the local convex geometry of that fixed fiber does canonically choose one supporting dual ray.
+
+The next lawful question is therefore not to choose another weighting function. It is whether already-earned provenance/source structure can canonically select a compatibility-boundary point or hidden tangent that can be paired with the v14.02 dual ray, without inserting that lift by hand.
 
 ## Companion finite-model path / obstruction artifact
 
@@ -89,16 +100,18 @@ v14.01 is an upstream canonicality audit, not a reopening of v13.28. It asks whe
 - Canonical portable scientific fingerprint: `f632e656cc2ea1fc5d61b395080d7259ecfed21c9bd8379626da49f44d6c38fc`.
 - Reference raw telemetry SHA (diagnostic only): `0056223006f943b596e20509c4e77f0020eee3de4064ac83cd9a5ab6a3010f91`.
 
-## Current branch-stop boundaries
+## Current branch-stop and positive boundaries
 
-v13.28 established that the frozen downstream source→geometry candidates do not supply an absolute coupling; its outcome is `REQUIRES_NEW_AXIOM`.
+v13.28 remains in force: the frozen downstream source→geometry candidates do not supply an absolute coupling; outcome `REQUIRES_NEW_AXIOM`.
 
-v14.01 moved upstream. The exact incidence map satisfies `P_cyc B^T = 0`; nonzero state-weighted source→cycle defects exist only after choosing additional functional structure. Three such witnesses are mutually inequivalent while satisfying the audited covariance, source-linearity and strict-disjoint-composition requirements. Positivity does not select one in the faithful-interior and simple-boundary controls. Its outcome is `NONUNIQUE`.
+v14.01 remains in force: incidence, state weighting, covariance, source linearity, strict disjoint composition and positivity do not select a unique global source→higher-incidence deformation; outcome `NONUNIQUE`.
 
-Neither result is a claim that no deeper theory can generate gravity or a universal source law. They identify where the current frozen architecture stops.
+v14.02 adds a distinct positive boundary fact: at every one of the `128` audited smooth radial boundary points of the two frozen archived compatibility spectrahedra, the intrinsic hidden-fiber normal cone is one nonzero ray. Maximum support-identity error is `3.0357660829594124e-18`, maximum hidden-basis invariance error is `5.911755884943795e-17`, and no primary boundary is numerically unresolved or degenerate under the frozen tolerances.
+
+This local ray does **not** choose a physical boundary point, source tangent, ray magnitude, stress-energy tensor, gravitational coupling, or Einstein dynamics.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only gate ledger.
 
 ## Validation
 
-Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v14.01. The current source-dependent admissibility branch may restart only with an independently motivated new source→higher-incidence/admissibility selector or an independently calibrated physical cross-domain observable.
+Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v14.02. The canonical local dual ray is now an earned object that may be tested against source/provenance structure; the source lift itself remains underived and must not be stipulated.
