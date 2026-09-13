@@ -1,238 +1,219 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-13  
-**Latest completed gate:** v15.09 — Quantum Carrier Origin / Tensor-Factorization Blindness Gate  
-**Primary adjudication:** `CANONICAL_NEUTRAL_STRUCTURE_DOES_NOT_DERIVE_RETAINED_QUANTUM_CARRIER`  
-**Secondary:** `FRAME_NEUTRAL_REFERENCE_IS_TENSOR_FACTORIZATION_BLIND`  
-**Tertiary:** `SUPPLIED_SITE_FINGERPRINTS_DO_NOT_DEFINE_CROSS_DOMAIN_NODE_SITE_FUNCTOR`  
+**Latest completed gate:** v15.10 — Pruning-Order / Emergent-Time Bridge Reassessment  
+**Primary adjudication:** `FROZEN_PRUNING_DOES_NOT_YET_DERIVE_INTRINSIC_TIME_ORDER`  
+**Secondary:** `V1153_REWEIGHTING_IS_SUPPORT_PRESERVING_AND_INVERTIBLE_ON_SIMPLEX_INTERIOR`  
+**Tertiary:** `PROVENANCE_LEDGER_HAS_INTRINSIC_ANCESTRY_ORDER_BUT_NO_FROZEN_IDENTIFICATION_WITH_PRUNING_TIME`  
 **Major structural result:** `true`  
 **Scientific breakthrough:** `false`  
 **Pillar 3:** `OPEN`
 
 ## Current scientific picture
 
-The recent v15 sequence has separated three problems that previously risked being conflated:
+The recent program has now separated four questions that must not be conflated:
 
 ```text
-A. local quantum information structure
+A. canonical local quantum information structure
 B. physical source semantics
 C. retained-relation -> quantum-carrier representation
+D. pruning -> intrinsic order / emergent-time bridge
 ```
 
-They now have distinct statuses.
+Their current statuses are:
 
 ```text
-local covariance (v15.04)
-    -> qubit traceless source family a(r)(rho-I/2)
-    -> covariance alone leaves a(r) free
-
-composition (v15.05)
-    -> arbitrary already-selected local a(r) composes naturally
-    -> generic composition does not select a(r)
-    -> stronger functional-calculus tensor law would select log shape
-
-recoverability multiplicativity (v15.06)
-    -> root fidelity multiplicative
-    -> -log fidelity additive
-    -> scalar comparison generator does not select local Hermitian source
-
-frame-neutral quantum structure (v15.07)
-    -> tau_d=I_d/d uniquely selected by full local-frame invariance
-    -> Q_d(rho)=d rho canonical and multiplicative
+canonical local quantum structure (v15.07)
+    -> full local-frame invariance selects tau_d=I_d/d
+    -> Q_d(rho)=d rho is canonical and multiplicative
     -> centered log rho is the canonical additive Hermitian information generator
+    -> POSITIVE mathematical result
 
 source semantics (v15.08)
-    -> Genesis Pin = history legitimacy boundary, not quantum reference state
-    -> ternary source role = legitimacy information, not Hermitian generator
-    -> same frozen provenance permits multiple inequivalent lawful source rays
-    -> physical-source identification is irreducible relative to frozen ontology
+    -> Genesis Pin and source-role provenance do not identify that generator as physical source
+    -> same frozen provenance supports multiple inequivalent lawful source rays
+    -> SOURCE SEMANTICS IRREDUCIBLE relative to frozen ontology
 
 carrier origin (v15.09)
-    -> tau_D=I_D/D factorizes under every supplied tensor decomposition
-    -> neutral structure therefore cannot select subsystem decomposition
-    -> supplied five-qubit neutral reference preserves all 120 site permutations
-    -> even rigid graph nodes + rigid quantum-site spectra leave 120 cross-domain bijections
-    -> C125 still has no five-nontrivial-factor decomposition
-    -> v15.07 does not reopen v15.02-v15.03 representation shortcuts
+    -> I_D/D is tensor-factorization blind
+    -> supplied five-qubit neutral state preserves all 120 site permutations
+    -> rigid retained graph + rigid quantum-site spectra still leave 120 cross-domain bijections
+    -> C125 has no five-nontrivial-factor decomposition
+    -> retained graph -> quantum carrier remains underived
+
+pruning / order (v15.10)
+    -> V1153 has real recoverability-weighted selection pressure
+    -> its declared weight-pruning map preserves positive support
+    -> the weight map is invertible on the simplex interior when U is known
+    -> its 160-step succession is supplied by an external ordered loop
+    -> V995/V997 independently supply a rooted append-only provenance ancestry order
+    -> no frozen law identifies pruning events with that ancestry order
+    -> noninjective recoverability maps WOULD conditionally generate an intrinsic information-loss arrow
+    -> the frozen stack does not yet realize that noninjective pruning structure
 ```
 
-The present upstream chain is therefore
+The present time bridge is therefore
 
 ```text
-retained relational/provenance carrier
-    -X-> canonical retained-node -> quantum-site functor
-quantum Hilbert carrier (once supplied)
-    -> unique frame-neutral state tau_d=I/d
-    -> canonical relative-density operator Q_d=d rho
-    -> centered-log information generator
-    -X-> physical-source semantics under frozen ontology
-    -X-> natural five-site -> C125 compatibility-parent map
+primitive relational / recoverability structure
+    -> recoverability-weighted pressure                  [YES]
+    -X-> ontology-native noninjective pruning event      [NOT DERIVED]
+    -> intrinsic loss orientation                        [CONDITIONAL THEOREM]
+
+Genesis / append-only provenance
+    -> rooted ancestry / before-after order              [YES]
+    -X-> pruning-event -> provenance-successor law       [NOT DERIVED]
+
+intrinsic pruning-generated order
+    -X-> metric duration / spacetime correspondence      [NOT YET LAWFUL TO ASK AS CLOSED BRIDGE]
 ```
 
-The positive quantum mathematics is preserved. The missing arrows are now typed representation/semantics primitives rather than unspecified numerical fits.
+This does **not** reject the working ontology that time emerges with pruning. It localizes the missing law required to turn that ontology into a derived mathematical statement.
 
-## Latest result — v15.09
+## Latest result — v15.10
 
-### A. Tensor-factorization blindness
+### A. V1153 pruning is soft selection, not support deletion
 
-For every factorization
+V1153 uses
 
 ```text
-D = product_i d_i
+w_i <- w_i * exp(-beta U_i)
+normalize weights
 ```
 
-the frame-neutral state satisfies
+with no hard accept/reject filter driving the dynamics.
+
+For strictly positive weights and finite `U_i`, every updated weight remains strictly positive.
+
+v15.10 deterministic controls give
 
 ```text
-tau_D = I_D/D = tensor_i(I_di/d_i).
+support cardinality before = 7
+support cardinality after  = 7
+invalid final weight sum   = 1.467017487634064e-10
 ```
 
-Therefore `tau_D` is compatible with every supplied tensor decomposition and cannot select one.
-
-For `D=32`, the full unordered nontrivial factorization list is
+Classification:
 
 ```text
-[32]
-[2,16]
-[4,8]
-[2,2,8]
-[2,4,4]
-[2,2,2,4]
-[2,2,2,2,2]
+SELECTION_PRESSURE_WITHOUT_IRREVERSIBLE_SUPPORT_PRUNING
+```
+
+### B. The V1153 weight map is invertible on the simplex interior
+
+For known potential `U`, the reweighting map is inverted by the opposite exponential tilt and renormalization.
+
+Executed controls:
+
+```text
+max inverse error     = 8.554842949272357e-17
+max composition error = 1.468815065250206e-16
+```
+
+Therefore the declared weight-pruning map itself does not provide an intrinsic irreversible arrow.
+
+Classification:
+
+```text
+V1153_REWEIGHTING_IS_SUPPORT_PRESERVING_AND_INVERTIBLE_ON_SIMPLEX_INTERIOR
+```
+
+### C. V1153's order is computationally supplied
+
+The frozen engine contains
+
+```python
+for ordered_update in range(N_ORDERED_UPDATES):
 ```
 
 with
 
 ```text
-unordered factorization count      = 7
-max neutral factorization error    = 0.0
-five-factor decomposition count    = 1
-five-factor decomposition          = [2,2,2,2,2]
+N_ORDERED_UPDATES = 160.
 ```
 
-The last line is conditional on first supplying the requirement “five factors.” It is not selected by the neutral state.
+Thus V1153 demonstrates pruning pressure **along an imposed sequence**. It does not yet derive that sequence from pruning itself.
 
-Classification:
+This preserves the V997 guardrail that the update index is not physical time.
 
-```text
-FRAME_NEUTRAL_REFERENCE_IS_TENSOR_FACTORIZATION_BLIND
-```
+### D. The provenance stack already has an intrinsic order
 
-### B. Neutral five-qubit state does not label sites
+V995/V997 contain pinned Genesis roots and append-only successor/ledger continuity.
 
-On a supplied five-qubit carrier,
+A rooted append-only ancestry relation is composable and antisymmetric.
 
-```text
-tau_32 = (I_2/2)^tensor5.
-```
-
-All `5! = 120` site permutations were enumerated.
+v15.10 control:
 
 ```text
-permutations tested                 = 120
-permutations preserving neutral tau = 120
-max permutation error               = 0.0
+direct edges                  = 4
+transitive ancestry relations = 10
+rooted orientation            = true
+antisymmetric                 = true
+composable                     = true
 ```
 
 Classification:
 
 ```text
-NEUTRAL_FIVE_QUBIT_REFERENCE_HAS_FULL_S5_SITE_PERMUTATION_SYMMETRY
+INTRINSIC_PROVENANCE_ORDER_EXISTS_BUT_IS_NOT_DERIVED_FROM_PRUNING
 ```
 
-### C. Rigid graph + rigid quantum sites still do not define a cross-domain map
+So the archive already contains an intrinsic before/after relation, but its type is provenance legitimacy—not yet emergent physical time.
 
-The retained directed graph has exact automorphism order
+### E. Conditional noninjective-pruning theorem
+
+A sequence of composable many-to-one recoverability maps
 
 ```text
-1.
+8 -> 4 -> 2 -> 1
 ```
 
-Using the frozen v15.03 control-A local spectra, all five quantum sites are spectrally distinct under independent local-unitary gauge, so the site spectral stabilizer also has order
+has an intrinsic information-loss orientation because the forward maps compose while no two-sided inverse exists on the retained description.
+
+Executed theorem control:
 
 ```text
-1.
-```
-
-Nevertheless there is no frozen relation connecting the graph sort to the quantum-site sort.
-
-Every bijection
-
-```text
-phi : retained nodes -> quantum sites
-```
-
-is therefore an additional expansion of the same two-sort reduct.
-
-```text
-node-site bijections       = 120
-inequivalent bijections    = 120
-certified cross-domain map = NONE
+map count               = 3
+all maps noninjective   = true
+composition noninjective= true
+two-sided inverse       = false
 ```
 
 Classification:
 
 ```text
-TWO_SORT_REDUCT_DOES_NOT_DEFINE_NODE_SITE_BIJECTION
+NONINJECTIVE_RECOVERABILITY_UPDATE_INDUCES_ORIENTED_INFORMATION_ORDER_CONDITIONALLY
 ```
 
-This rules out the argument that individual rigidity on both sides somehow creates a canonical correspondence between them.
+This is an order/arrow theorem, not a duration or spacetime theorem.
 
-### D. `C^125` parent mismatch remains exact
+## Exact missing bridge
 
-The certified compatibility parent has dimension 125.
-
-Its complete unordered nontrivial multiplicative decompositions are
+The unresolved law is now sharply typed:
 
 ```text
-[125]
-[5,25]
-[5,5,5].
+actual pruning event
+    -> irreversible / noninjective recoverability loss
+    -> certified provenance successor
+    -> intrinsic pruning-generated ancestry order
 ```
 
-Therefore
-
-```text
-five nontrivial factor decomposition count = 0.
-```
-
-A supplied five-qubit carrier has dimension 32, and no frozen natural `H32 -> C125` carrier map is certified.
+The audited frozen dependency set contains no such identification law.
 
 Classification:
 
 ```text
-V15_07_NEUTRAL_STRUCTURE_DOES_NOT_REPAIR_C125_PARENT_TYPE_MISMATCH
+ORDER_AND_PRUNING_EXIST_AS_SEPARATE_FROZEN_STRUCTURES_WITHOUT_AN_IDENTIFICATION_LAW
 ```
-
-## What v15.09 changes
-
-v15.09 answers the strongest native reassessment after v15.07:
-
-```text
-Could the new canonical neutral/reference structure itself provide the missing carrier origin?
-```
-
-No.
-
-The reason is structural rather than numerical:
-
-1. `I_D/D` is deliberately blind to tensor decomposition;
-2. distinct local state spectra exist only after a site factorization is already supplied;
-3. within-sort rigidity does not create a cross-sort relation;
-4. the existing compatibility parent has the wrong factor arithmetic for five nontrivial sites.
-
-Thus the new canonical quantum structure is **intrasort**. It is canonical once a Hilbert carrier is specified, but it does not originate that carrier from retained provenance.
 
 ## Relation to earlier gates
 
-- **v15.08:** preserved. The source-semantics branch remains stopped and is not reused as a representation selector.
-- **v15.07:** preserved positively. `tau_d=I/d`, `Q_d=d rho`, and centered `log rho` remain canonical quantum information objects.
-- **v15.03:** not reopened. Exact retained graph -> five-site quantum factorization remains underived; five nontrivial sites still cannot equal `C^125`.
-- **v15.02:** not reopened. The node↔quantum-label correspondence remains extra cross-domain information.
-- **v15.01:** preserved. `C^125 -> C^25` compression is exact once a lawful parent object exists, but provenance does not supply that parent representation.
-- **v14.04:** preserved. A representation/intertwiner from richer provenance into the compatibility source carrier remains missing.
-- **v14.03:** preserved conditional. A supplied positive projective support source still selects hidden first contact and the intrinsic dual ray.
-- **v13.25-v13.28:** preserved. Absolute source calibration and absolute source-to-geometry coupling remain underived.
+- **v15.09:** preserved. No time-order result supplies the missing graph→quantum carrier functor.
+- **v15.08:** preserved. No time-order result supplies the missing source-semantics axiom.
+- **v15.07:** preserved. The canonical centered-log information generator remains an intrasort quantum result.
+- **V1153:** preserved positively as a first-principles recoverability-weighted selection assay; v15.10 only narrows the claim that can be made about emergent time.
+- **V995/V997:** strengthened as evidence for ontology-native provenance ancestry, while still not identified with pruning-generated physical time.
+- **v13.28 / v14.03:** unchanged. Absolute source→geometry coupling remains underived; supplied projective source→dual-ray chain remains conditional.
 
 ## Preserved pillar status
 
@@ -242,37 +223,37 @@ Thus the new canonical quantum structure is **intrasort**. It is canonical once 
 
 ## Still not derived
 
+- an ontology-native noninjective pruning/state-reduction event in the audited frozen stack;
+- a frozen pruning-event -> append-only provenance-successor law;
+- intrinsic pruning-generated emergent-time order;
+- metric duration or clock calibration;
+- Lorentzian causal structure or spacetime foliation from pruning;
+- ADM lapse/shift from emergent pruning order;
 - a retained-node-to-quantum-site functor;
 - a five-site quantum carrier from retained provenance;
-- a natural graph/site -> `C^125/C^25` compatibility map;
-- a physical rule matching graph invariants to quantum spectral invariants;
 - physical-source semantics for centered `log rho`;
-- Genesis/provenance -> v14.03 projective support source `[P]_+`;
 - absolute source magnitude / observer calibration;
 - physical stress-energy;
-- source-to-solder/coframe law;
 - absolute source-to-geometry coupling;
-- physical metric/coframe/spacetime;
-- ontology-native quantum continuum refinement;
 - Einstein equations;
-- a physical time primitive;
 - Pillar 3 closure.
 
 ## Stop rule / next lawful frontier
 
-Do **not** continue the carrier-origin branch by:
+Do **not**:
 
 ```text
-reading subsystem labels out of I/d;
-choosing five qubits because 32 happens to admit 2^5;
-matching graph nodes to distinct site spectra by sorted rank;
-choosing a favorite one of the 120 bijections;
-reusing the stopped v15.08 source semantics as a representation law;
-padding or reshaping H32 into C125;
-inventing an SVD/PCA/random embedding;
-selecting a carrier map by downstream gravity/ADM/Einstein performance.
+rename the V1153 loop counter as emergent time;
+treat tiny positive weights as deleted alternatives;
+call reversible exponential reweighting irreversible collapse;
+use incidental simulator noninvertibility as the pruning event;
+identify append-only provenance order with physical time by shared terminology;
+use entropy, gravity, ADM, Einstein, or cosmology to choose the arrow.
 ```
 
-A continuation of this branch requires an independently motivated **NEW CROSS-DOMAIN CARRIER/FUNCTOR PRINCIPLE**.
+The next lawful search is narrow:
 
-Under current governance, the default is to preserve the canonical quantum information structure and redirect to a genuinely independent unresolved bridge rather than invent that principle.
+1. look for a **frozen support-reducing/noninjective recoverability operation** elsewhere in the archive; and
+2. look for a **frozen typed rule connecting an actual pruning event to the provenance successor relation**.
+
+If neither exists, the time bridge requires one explicit **NEW PRUNING-EVENT / ORDER-IDENTIFICATION LAW** before proceeding to duration or spacetime correspondence.
