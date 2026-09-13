@@ -29,6 +29,8 @@ def test_telemetry_structural_controls_pass():
     assert summary["min_bkm_eigenvalue"] > -1e-9
     assert summary["dewitt_pure_trace_control"] < 0
     assert summary["dewitt_traceless_control"] >= -1e-10
+    assert "toy_block_underdetermination_distance" in summary
+    assert "tensor_completion_spatial_stress_distance" not in summary
 
 
 def test_scientific_fingerprint_ignores_machine_epsilon_drift_but_not_physics():
@@ -48,10 +50,13 @@ def test_scientific_fingerprint_ignores_machine_epsilon_drift_but_not_physics():
     assert scientific_fingerprint(changed) != baseline
 
 
-def test_claim_ledger_keeps_gravity_boundary_open():
+def test_claim_ledger_uses_rescoped_labels_and_keeps_gravity_boundary_open():
     ledger = claim_ledger()
     states = {x["name"]: x["status"] for x in ledger}
-    assert states["finite BKM/polar metric-affine geometry"] == "DERIVED"
+    assert states["finite BKM/polar relational geometry"] == "DERIVED"
     assert states["response-selected current witness"] == "CONDITIONAL"
+    assert states["represented q=A^-1 DeWitt-like sign diagnostic"] == "CONDITIONAL"
     assert states["RGCL source-to-coframe coupling magnitude"] == "MISSING_LAW"
     assert states["physical Einstein closure"] == "MISSING_LAW"
+    assert "represented q=A^-1 ADM-like sector" not in states
+    assert "full spatial-stress completion" not in states
