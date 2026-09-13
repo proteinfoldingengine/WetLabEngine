@@ -6,6 +6,8 @@ on:
       - research/v15.08-genesis-source-semantics
     paths:
       - 'ResearchHistory/UQCF-GEM/v15/v15.08/**'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
+      - 'ResearchHistory/UQCF-GEM/README.md'
       - '.github/workflows/uqcf-v1508-genesis-source-semantics.yml'
   workflow_dispatch:
 
