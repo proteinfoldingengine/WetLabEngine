@@ -1,0 +1,118 @@
+{
+  "version": "v15.17",
+  "status": "EXECUTED_CONDITIONAL_RETAINED_MOTION_COMPARISON",
+  "classification_counts": {
+    "CLOSED_FIXED_RECORDS": 17,
+    "CLOSED_RECORD_PERMUTATION": 0,
+    "NOT_CLOSED_ON_FIXED_ALGEBRA": 79
+  },
+  "max_transport_error": 7.134627805845448e-15,
+  "controls": {
+    "within_state_change": 0.36161543196496104,
+    "classifications": {
+      "within": {
+        "mask": "1000",
+        "closed": true,
+        "status": "CLOSED_FIXED_RECORDS",
+        "discarded_to_retained_leakage": 1.9316423044589965e-14,
+        "retained_to_discarded_leakage": 1.931642304458996e-14,
+        "normalizer_error": 4.2226386848796756e-15,
+        "fixed_record_error": 4.2226386848796756e-15,
+        "block_permutation": [
+          0,
+          1
+        ]
+      },
+      "mix": {
+        "mask": "1000",
+        "closed": false,
+        "status": "NOT_CLOSED_ON_FIXED_ALGEBRA",
+        "discarded_to_retained_leakage": 7.999999999999952,
+        "retained_to_discarded_leakage": 7.999999999999953,
+        "normalizer_error": 2.8284271247461774,
+        "fixed_record_error": 2.8284271247461774,
+        "block_permutation": null
+      },
+      "swap": {
+        "mask": "1000",
+        "closed": true,
+        "status": "CLOSED_RECORD_PERMUTATION",
+        "discarded_to_retained_leakage": 2.2289140829571226e-14,
+        "retained_to_discarded_leakage": 2.228914082957123e-14,
+        "normalizer_error": 1.730476168647165e-14,
+        "fixed_record_error": 3.999999999999979,
+        "block_permutation": [
+          1,
+          0
+        ]
+      },
+      "center": {
+        "mask": "1000",
+        "closed": true,
+        "status": "CLOSED_FIXED_RECORDS",
+        "discarded_to_retained_leakage": 1.6182439499685818e-14,
+        "retained_to_discarded_leakage": 1.6182439499685828e-14,
+        "normalizer_error": 4.448717454209388e-15,
+        "fixed_record_error": 4.448717454209388e-15,
+        "block_permutation": [
+          0,
+          1
+        ]
+      }
+    },
+    "witness": {
+      "same_retained_input_distance": 1.6022999441213198e-15,
+      "move_then_retain_distance": 0.9999999999999937,
+      "retain_then_move_then_retain_distance": 8.359594349095933e-16
+    },
+    "projection_cadence_distance": 0.49999999999999767,
+    "meaning": "Projection cadence changes the operation, not merely its display resolution. No recovery of discarded phase occurs."
+  },
+  "effective_motion_dimension_chain": [
+    {
+      "mask": "0000",
+      "generator_dimension_including_center": 256,
+      "central_generators_with_no_retained_action": 1,
+      "effective_continuous_motion_dimension": 255,
+      "scope": "Inner automorphism action on this fixed full-block algebra; not a clock or physical degree-of-freedom count."
+    },
+    {
+      "mask": "1000",
+      "generator_dimension_including_center": 128,
+      "central_generators_with_no_retained_action": 2,
+      "effective_continuous_motion_dimension": 126,
+      "scope": "Inner automorphism action on this fixed full-block algebra; not a clock or physical degree-of-freedom count."
+    },
+    {
+      "mask": "1100",
+      "generator_dimension_including_center": 64,
+      "central_generators_with_no_retained_action": 4,
+      "effective_continuous_motion_dimension": 60,
+      "scope": "Inner automorphism action on this fixed full-block algebra; not a clock or physical degree-of-freedom count."
+    },
+    {
+      "mask": "1110",
+      "generator_dimension_including_center": 32,
+      "central_generators_with_no_retained_action": 8,
+      "effective_continuous_motion_dimension": 24,
+      "scope": "Inner automorphism action on this fixed full-block algebra; not a clock or physical degree-of-freedom count."
+    },
+    {
+      "mask": "1111",
+      "generator_dimension_including_center": 16,
+      "central_generators_with_no_retained_action": 16,
+      "effective_continuous_motion_dimension": 0,
+      "scope": "Inner automorphism action on this fixed full-block algebra; not a clock or physical degree-of-freedom count."
+    }
+  ],
+  "physical_duration": null,
+  "actual_record_selected": null,
+  "new_physical_axioms": [],
+  "new_physical_motion_law_derived": false,
+  "physical_entropy_law_derived": false,
+  "Pillar_3": "OPEN",
+  "scientific_breakthrough": false,
+  "scope": "Fixed versus transported retained algebras, for supplied finite motions. Nonclosure is not invalid physics or recovered information; it blocks exact descent of UNPRUNED motion to a fixed quotient.",
+  "case_count": 96,
+  "full_case_ledger": "generated outputs/verification.json"
+}
