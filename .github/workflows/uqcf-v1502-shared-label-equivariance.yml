@@ -1,0 +1,47 @@
+name: UQCF v15.02 Shared-Label Equivariance Audit
+
+on:
+  push:
+    branches:
+      - main
+      - research/v15.02-shared-label-equivariance
+    paths:
+      - 'ResearchHistory/UQCF-GEM/v15/v15.02/**'
+      - 'Tmp/TOE/ThePhysicsParadox/Physics101/phi lab.py'
+      - 'Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py'
+      - 'ResearchHistory/UQCF-GEM/v13/v13.25/**'
+      - 'ResearchHistory/UQCF-GEM/v14/v14.03/source_ray_audit.py'
+      - 'ResearchHistory/UQCF-GEM/v15/v15.01/**'
+      - 'ResearchHistory/UQCF-GEM/README.md'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
+      - 'docs/superpowers/specs/2026-09-13-v1502-shared-label-equivariance-design.md'
+      - 'docs/superpowers/plans/2026-09-13-v1502-shared-label-equivariance.md'
+      - '.github/workflows/uqcf-v1502-shared-label-equivariance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/v15/v15.02
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install scientific dependencies
+        run: python -m pip install numpy==2.4.6 scipy==1.17.1
+      - name: Run v15.02 checker
+        run: python CHECKER.py
