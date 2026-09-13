@@ -5,7 +5,8 @@
 **v15.03 adjudication:** `NO_CERTIFIED_GRAPH_SITE_FACTORIZATION`  
 **Secondary:** `CENTRAL_PGRL_NULL`; `STATE_DEPENDENT_COVARIANT_SOURCE_LIFT_NONUNIQUE`; `FIVE_NONTRIVIAL_SITE_CARRIER_CANNOT_EQUAL_C125_PARENT`  
 **Scientific breakthrough:** `false`  
-**Pillar 3:** `OPEN`
+**Pillar 3:** `OPEN`  
+**Reproducibility maintenance:** v15.01 floating archive bindings now use a tight mixed tolerance rather than an absolute `1e-15`; all v15.01 scientific thresholds, classifications, archive hashes, and frozen scientific values remain unchanged.
 
 ## Current scientific picture
 
