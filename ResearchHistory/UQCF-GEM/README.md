@@ -72,7 +72,15 @@ canonical neutral-reference operator
     -> log Q_d = log rho + log(d) I is additive
     -> centered generator = centered log rho
     -> neutral-to-state PGRL endpoint fixes [centered log rho]_+ conditionally
-    -> frozen ontology does NOT yet define sourcehood as this preparation generator (v15.07)
+    -> canonical local information generator EARNED (v15.07)
+
+Genesis source-semantics boundary
+    -> Genesis Pin certifies recoverable-history legitimacy, not a quantum reference state
+    -> ternary source role certifies source-legitimacy information, not a Hermitian generator
+    -> V995 causal generator compatibility has no frozen typed identification with PGRL P
+    -> identical relevant provenance/source-role facts admit multiple inequivalent lawful source rays
+    -> frozen ontology does not entail sourcehood = neutral-preparation generator
+    -> SOURCE_SEMANTICS_IRREDUCIBLE_RELATIVE_TO_FROZEN_ONTOLOGY (v15.08)
 
 retained geometry / source-current bridge
     -> metric-affine finite kinematics
@@ -142,8 +150,9 @@ Each completed gate normally contains:
 - [v15.05](v15/v15.05/) — generic labeled monoidal composition preserves arbitrary already-selected `a(r)`. A stronger universal scalar-functional-calculus tensor law uniquely selects logarithmic shape, but is not frozen. `FROZEN_COMPOSITION_LAWS_DO_NOT_SELECT_SPECTRAL_RESPONSE`.
 - [v15.06](v15/v15.06/) — root fidelity supplies exact multiplicative recoverability and additive `-log` scalar, but exact-recovery families prove the scalar does not select the local operator source. `MULTIPLICATIVE_RECOVERABILITY_SCALAR_DOES_NOT_SELECT_LOCAL_SOURCE_LAW`.
 - [v15.07](v15/v15.07/) — full local-frame neutrality uniquely selects `tau_d=I/d`; the canonical relative-density operator `Q_d(rho)=d rho` is multiplicative and its centered additive Hermitian generator is centered `log rho`. A neutral-to-state PGRL endpoint therefore fixes the positive projective log-generator ray, but the frozen provenance/source ontology does not identify physical sourcehood with that preparation generator. `CANONICAL_NEUTRAL_RELATIVE_GENERATOR_EXISTS_SOURCE_IDENTIFICATION_UNDERIVED`.
+- [v15.08](v15/v15.08/) — Genesis/source-semantics independence gate. V923 source role and V997 Genesis Pin certify legitimacy information, not the local Hermitian PGRL generator; explicit countermodels keep the relevant frozen provenance/source-role signature fixed while assigning three distinct lawful source rays. `GENESIS_PROVENANCE_DOES_NOT_IDENTIFY_NEUTRAL_PREPARATION_SOURCE`; source semantics are irreducible relative to the frozen ontology and continuing the log-source branch requires a `NEW SOURCE-SEMANTICS AXIOM`.
 
-The v15 sequence progressively removes arbitrary choices. v15.01-v15.03 block representation shortcuts; v15.04 classifies the exact local covariance freedom; v15.05 shows generic composition cannot select that freedom; v15.06 finds multiplicativity but only in a scalar recovery object; v15.07 finally derives a canonical local multiplicative operator and its centered logarithmic generator. The remaining gap is no longer the mathematical form of the generator, but whether the frozen ontology gives it **source semantics**.
+The v15 sequence progressively removes arbitrary choices. v15.01-v15.03 block representation shortcuts; v15.04 classifies the exact local covariance freedom; v15.05 shows generic composition cannot select that freedom; v15.06 finds multiplicativity but only in a scalar recovery object; v15.07 derives a canonical local multiplicative operator and centered logarithmic generator; v15.08 proves that the remaining physical-source identification is not entailed by the frozen Genesis/provenance/source-role ontology. The log-source-origin branch therefore stops unless one new source-semantic principle is explicitly introduced.
 
 ## Companion finite-model path / obstruction artifact
 
@@ -159,22 +168,24 @@ The v15 sequence progressively removes arbitrary choices. v15.01-v15.03 block re
 - v15.04: local covariance alone leaves spectral response freedom.
 - v15.05: generic source composition does not remove that freedom.
 - v15.06: multiplicative scalar recoverability does not select an operator source.
-- v15.07: local-frame symmetry *does* supply a canonical multiplicative operator and centered-log generator, but source semantics remain underived.
+- v15.07: local-frame symmetry supplies a canonical multiplicative operator and centered-log generator.
+- v15.08: frozen Genesis Pin/source-role/provenance semantics do not identify that canonical generator as the physical source; explicit countermodels prove non-entailment.
 
 ## Stop rule
 
 Do not continue by inventing a node↔quantum-site identification, choosing a preferred internal axis, tying local frames, padding/reshaping a carrier into `C^125`, promoting a minimum-norm current, or selecting any option from downstream gravity performance.
 
-In particular, v15.07 does **not** authorize the statement that the physical source is `centered log(rho)` merely because that operator is now canonical.
+In particular, do **not** identify Genesis Pin with `I/d`, the V923 ternary source-role primitive with a Hermitian source operator, or V995 causal generator compatibility with the PGRL source generator merely because the terminology overlaps.
 
-A lawful continuation requires an upstream answer to:
+The logarithmic source-origin branch is now stopped relative to the frozen ontology. A lawful continuation requires either:
 
-> Does Genesis/provenance independently define sourcehood as the generator preparing a local state from the unique frame-neutral reference `I/d`?
+1. one explicit, independently motivated **NEW SOURCE-SEMANTICS AXIOM**, approved before downstream testing; or
+2. preserving centered `log(rho)` as a canonical local information generator without physical-source status and moving to another independent unresolved bridge.
 
-If the frozen ontology does not supply that meaning, the source-law-selection branch stops and `SOURCEHOOD_IS_NEUTRAL_PREPARATION_GENERATOR` must be declared **NEW ASSUMPTION** before use.
+Under current governance, the second option is the default.
 
 See [STATUS.md](STATUS.md) for the live frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only ledger.
 
 ## Validation
 
-Completed gates carry executable checkers and machine-readable summaries. v15.04-v15.07 separate scientific thresholds from floating archive-reproducibility tolerances. v15.07 additionally hash-binds the source-origin semantics in v13.04, v13.25, and v13.26. Final exact-head branch verification and post-merge regression are required before a gate is called merged/certified. Pillar 3 remains open.
+Completed gates carry executable checkers and machine-readable summaries. v15.04-v15.08 separate scientific thresholds from floating archive-reproducibility tolerances. v15.08 hash-binds V923, V995, V997, v13.26, v14.04, and v15.07 and includes an explicit countermodel-independence control. Final exact-head branch verification and post-merge regression are required before a gate is called merged/certified. Pillar 3 remains open.
