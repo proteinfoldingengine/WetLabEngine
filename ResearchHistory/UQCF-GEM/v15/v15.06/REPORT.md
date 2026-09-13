@@ -1,6 +1,6 @@
 # v15.06 — Recoverability Multiplicativity / Scalar-to-Operator Source Boundary
 
-**Status:** CLOSED / measured on branch; full archive binding and final exact-SHA certification pending  
+**Status:** CLOSED / measured and archive-bound on branch; merge/post-merge verification pending  
 **Primary outcome:** `MULTIPLICATIVE_RECOVERABILITY_SCALAR_DOES_NOT_SELECT_LOCAL_SOURCE_LAW`  
 **Secondary outcome:** `LEGACY_ACCESSIBILITY_MULTIPLICATIVITY_WAS_ASSUMED_OR_DEFINED_NOT_DERIVED`  
 **Tertiary outcome:** `NEGATIVE_LOG_ROOT_FIDELITY_IS_ADDITIVE_ON_INDEPENDENT_RECOVERY_PAIRS`  
@@ -10,19 +10,22 @@
 
 ## Question
 
-v15.05 isolated the precise extra structure that would select a logarithmic state-to-source shape: a genuinely state-derived multiplicative/additive composition law, not merely composition of an already-chosen source operator.
+v15.05 showed that ordinary tensor composition of an already-chosen source law does not select the qubit spectral response
 
-The next question is therefore upstream:
+\[
+F_{\rm tr}(\rho)=a(r)\left(\rho-\frac12I\right).
+\]
 
-> Does the frozen recoverability ontology already supply a multiplicative quantity whose logarithmic additive generator can canonically become the local Hermitian source law?
+It also showed that a stronger universal scalar-functional-calculus tensor law would select a logarithmic shape, but that stronger premise is not frozen ontology.
 
-The answer separates into two parts.
+v15.06 therefore asks whether the existing recoverability stack already supplies the missing multiplicative structure in an ontology-native way.
 
-First, there **is** an exact multiplicative pre-time quantum recoverability scalar: root fidelity of independent supplied state/recovery pairs. Its negative logarithm is additive.
+The answer is two-sided:
 
-Second, that scalar does **not** select the local operator-valued source response. It is a scalar on a pair of states / recovery context, whereas v15.04 requires a Hermitian source direction and a spectral response function. The exact-recovery sector makes this obstruction decisive: the recoverability scalar can remain exactly constant while the local state spectrum, and therefore the admissible source response, varies over the full faithful qubit interval.
+1. **Yes:** root fidelity supplies an exact multiplicative quantum recoverability scalar, and its negative logarithm is additive on independent supplied recovery pairs.
+2. **No:** this scalar is not a local Hermitian source law and cannot select `a(r)` by itself.
 
-Thus
+Hence
 
 \[
 \boxed{\texttt{MULTIPLICATIVE\_RECOVERABILITY\_SCALAR\_DOES\_NOT\_SELECT\_LOCAL\_SOURCE\_LAW}}.
@@ -30,44 +33,44 @@ Thus
 
 ---
 
-# I. LEGACY ACCESSIBILITY CLAIM AUDIT
+## 1. Legacy accessibility audit
 
-The older V818/V824 accessibility branch contains a suggestive logarithmic story, but it does not provide the missing upstream derivation.
-
-V818 states, conditionally:
+The older V818 accessibility note says, conditionally:
 
 > If accessible futures combine multiplicatively, then the natural potential is `log A`.
 
-That is a mathematically valid implication, but the multiplicative premise is not derived there.
-
-The V824 executable then explicitly declares
+The V824 executable subsequently defines
 
 ```text
 A = exp(C - mu + eta * repair)
 ```
 
-and tests curvature-like consequences of `Delta log(A)`. The executable therefore validates consequences of that chosen accessibility construction; it does not independently prove that ontology-native recoverability options must compose multiplicatively.
+and tests consequences of `Delta log(A)`.
 
-The correct archival classification is
+Thus the legacy branch contains a valid conditional motivation for a logarithm, but it does **not** derive the multiplicative premise from the frozen pre-time ontology. The executable declares the exponential accessibility form rather than independently deriving it.
 
-\[
-\boxed{\texttt{LEGACY\_ACCESSIBILITY\_MULTIPLICATIVITY\_NOT\_FROZEN\_DERIVATION}}.
-\]
+Therefore
 
-Nothing in v15.06 identifies the legacy accessibility field `A` with quantum root fidelity, CMI, or any other recoverability scalar.
+```text
+LEGACY_ACCESSIBILITY_MULTIPLICATIVITY_NOT_FROZEN_DERIVATION
+```
+
+remains the correct classification.
+
+Nothing in this gate identifies legacy accessibility `A` with root fidelity, CMI, or another quantum recoverability scalar.
 
 ---
 
-# II. EXACT QUANTUM RECOVERY MULTIPLICATIVITY
+## 2. Exact multiplicative recoverability scalar
 
-For normalized positive states, root fidelity
+For normalized positive states define root fidelity
 
 \[
 F_{\rm root}(\rho,\sigma)
-=\operatorname{Tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}
+=\operatorname{Tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}.
 \]
 
-obeys the exact tensor-product law
+For independent pairs,
 
 \[
 \boxed{
@@ -78,90 +81,76 @@ F_{\rm root}(\rho_2,\sigma_2)
 }.
 \]
 
-Therefore, where the fidelity is nonzero,
+Therefore, wherever fidelity is nonzero,
 
 \[
 \boxed{
 -\log F_{\rm root}(12)
 =
--\log F_{\rm root}(1)
--
-\log F_{\rm root}(2)
-}.
+-\log F_{\rm root}(1)-\log F_{\rm root}(2).
+}
 \]
 
-This is exactly the multiplicative-to-additive structure sought in v15.05, but on a **scalar comparison object**.
-
-Sixteen deterministic independent controls using faithful 2D and 3D states gave
+The theorem is exact. Sixteen deterministic numerical controls using faithful 2D and 3D states gave
 
 ```text
 max root-fidelity product error = 3.219646771412954e-15
 max -log additivity error       = 4.163336342344337e-15
 ```
 
-The theorem itself is exact; these numerical controls validate the implementation.
+This is a genuine pre-time multiplicative-to-additive law. No gravity target, entropy objective, pruning, or physical-time assumption is used to obtain it.
 
-No entropy, pruning, physical time, ADM, Einstein, gravity, cosmology, or empirical target enters this result.
-
-The relationship to frozen v13.16 is direct but limited. v13.16 uses the recoverability bound
+Frozen v13.16 already uses root fidelity as a recoverability quantity through
 
 \[
 F_{\rm root}(\rho_{ABC},\mathcal R(\rho_{AB}))
 \ge e^{-I(A:C|B)/2}
 \]
 
-for some recovery channel. That supplies a principled scalar certification of recovery quality. It does not select a canonical generic recovery map and it does not itself return a Hermitian source operator.
+for some recovery channel. That relation supplies a scalar certification of recovery quality; it does not select a canonical generic recovery map and does not return a Hermitian source operator.
 
 ---
 
-# III. EXACT-RECOVERY NON-SELECTION THEOREM
-
-The scalar/operator distinction can be made exact rather than rhetorical.
+## 3. Exact-recovery non-selection theorem
 
 For every faithful qubit state
 
 \[
-\rho_A(r)=\frac12(I+\mathbf r\cdot\boldsymbol\sigma),
-\qquad 0\le r<1,
+\rho_A(r)=\frac12(I+\mathbf r\cdot\boldsymbol\sigma),\qquad 0\le r<1,
 \]
 
-choose arbitrary faithful states \(\rho_B\) and \(\rho_C\), and form the product state
+choose faithful \(\rho_B,\rho_C\) and form
 
 \[
-\rho_{ABC}(r)
-=\rho_A(r)\otimes\rho_B\otimes\rho_C.
+\rho_{ABC}(r)=\rho_A(r)\otimes\rho_B\otimes\rho_C.
 \]
 
-The channel that appends \(\rho_C\) to \(AB\) recovers this state exactly. Hence
+The channel that appends \(\rho_C\) to \(AB\) recovers this product state exactly, so
 
 \[
-F_{\rm root}
-\bigl(
-\rho_{ABC}(r),
-\mathcal R(\rho_{AB}(r))
-\bigr)=1
+F_{\rm root}\bigl(\rho_{ABC}(r),\mathcal R(\rho_{AB}(r))\bigr)=1
 \]
 
-for **every** faithful local Bloch radius \(r\).
+for every faithful local radius \(r\).
 
-So the exact-recovery scalar is constant across the entire faithful local qubit spectrum.
+Thus the exact-recovery scalar is constant across the full faithful local qubit spectrum.
 
-The executed controls sampled
+Executed radii:
 
 ```text
-r = 0.05, 0.20, 0.40, 0.60, 0.80, 0.95
+0.05, 0.20, 0.40, 0.60, 0.80, 0.95
 ```
 
-and gave
+with
 
 ```text
 max exact-recovery infidelity = 8.881784197001252e-16
 max product-state CMI         = 4.440892098500626e-16
 ```
 
-CMI here is only an independent consistency diagnostic for the product/exact-recovery family; it is not being used as a source selector.
+CMI is used only as a consistency diagnostic for this product/exact-recovery family, not as a source selector.
 
-Across the same radius range, the logarithmic qubit response coefficient from v15.04 changes from
+Across the same radius range, the v15.04 logarithmic qubit response coefficient changes from
 
 ```text
 2.0016691711396506
@@ -179,33 +168,27 @@ for a span of
 1.8547115089968185.
 ```
 
-Therefore a scalar recovery value of exactly `1` is compatible with strongly different local spectral responses.
+Therefore the same exact recovery scalar is compatible with substantially different local spectral responses.
 
-This proves
+```text
+EXACT_RECOVERY_SCALAR_IS_CONSTANT_ACROSS_ALL_FAITHFUL_LOCAL_QUBIT_SPECTRA
+```
 
-\[
-\boxed{\texttt{EXACT\_RECOVERY\_SCALAR\_IS\_CONSTANT\_ACROSS\_ALL\_FAITHFUL\_LOCAL\_QUBIT\_SPECTRA}}.
-\]
-
-The statement is a non-selection theorem, not a claim that exact recovery is generic. v13.16 already establishes that exact Markovity is not selected by the ontology.
+This is a non-selection theorem, not a claim that exact recovery is generic.
 
 ---
 
-# IV. SAME RECOVERY SCALAR, DIFFERENT SOURCE RAYS
+## 4. Same recovery scalar, different source rays
 
-The obstruction survives at the actual projective-source level.
-
-Use two local qubit states with radii `0.20` and `0.80`, both inside an exactly recoverable product construction. The recovery scalar is the same: `F_root = 1`.
-
-Construct the labeled two-site source from three lawful local response functions:
+At the same exact-recovery value `F_root=1`, take local qubit radii `0.20` and `0.80` and build two-site sources from three lawful local responses:
 
 ```text
-linear:      a(r) = 1
-logarithmic: a(r) = 2 atanh(r) / r
-polynomial:  a(r) = 1 + r^2
+linear:      a(r)=1
+logarithmic: a(r)=2 atanh(r)/r
+polynomial:  a(r)=1+r^2
 ```
 
-The projective-ray separations are
+Their projective separations are
 
 ```text
 linear vs log        = 0.06248625684944287
@@ -213,32 +196,23 @@ linear vs polynomial = 0.08772246091732869
 log vs polynomial    = 0.025253513918714623
 ```
 
-Thus one and the same exact recoverability scalar is compatible with at least three distinct lawful operator-valued source rays.
-
-This is the decisive bridge failure for this candidate selector.
+So one and the same recovery scalar supports multiple distinct lawful source rays.
 
 ---
 
-# V. SCALAR-TO-OPERATOR TYPE BOUNDARY
+## 5. Scalar-to-operator type boundary
 
-Once a scalar recovery context \(A\) is admitted, local unitary covariance does not remove the v15.04 freedom. For a qubit the most general traceless form becomes
+If a scalar recovery context `A` is admitted, local unitary covariance permits the qubit source family
 
 \[
 \boxed{
-F_{\rm tr}(\rho,A)
-=a(r,A)\left(\rho-\frac12 I\right).
+F_{\rm tr}(\rho,A)=a(r,A)\left(\rho-\frac12I\right).
 }
 \]
 
-The recovery scalar can therefore parameterize the response, but it does not select the response function by itself.
+Multiplicativity of `A` does not by itself impose a functional equation on `a`.
 
-The exact-recovery family sets
-
-\[
-A=1
-\]
-
-for every faithful \(r\). Consequently the entire function
+The exact-recovery family makes this decisive: `A=1` for every faithful `r`, so the complete function
 
 \[
 a(r,1)
@@ -246,29 +220,25 @@ a(r,1)
 
 remains free.
 
-So even after earning multiplicativity of the scalar, one still needs a new natural law
+Therefore
 
-\[
-(\rho,\text{recovery context})
-\longrightarrow
-P(\rho)
-\]
+```text
+MULTIPLICATIVE_SCALAR_NEEDS_NEW_MAP_TO_BECOME_OPERATOR_SOURCE
+```
 
-that is typed directly in the Hermitian source space.
-
-Hence
-
-\[
-\boxed{\texttt{MULTIPLICATIVE\_SCALAR\_NEEDS\_NEW\_MAP\_TO\_BECOME\_OPERATOR\_SOURCE}}.
-\]
+and the missing object is now sharply typed: an ontology-native natural map from local quantum/recovery structure into the local Hermitian source space.
 
 ---
 
-# VI. WHAT v15.06 CHANGES
+## 6. What changed
 
-v15.06 does not merely repeat v15.05's statement that composition is insufficient.
+The source branch has advanced from
 
-It identifies a genuine ontology-compatible multiplicative quantity and follows it as far as it can lawfully go:
+```text
+maybe recoverability lacks the right multiplicative law
+```
+
+to
 
 ```text
 independent state/recovery pairs
@@ -278,64 +248,57 @@ independent state/recovery pairs
     -X-> unique local Hermitian source response
 ```
 
-The obstruction is now localized **after multiplicativity**.
+The obstruction now lies **after multiplicativity**.
 
-This is useful because it eliminates a tempting argument:
+This rules out the tempting inference
 
 ```text
-recoverability is multiplicative
+recoverability multiplies
 therefore log is natural
-therefore the source must be log(rho)
+therefore P must be log(rho).
 ```
 
-The first implication can be made exact for root fidelity. The second produces an additive scalar. The third does not follow.
-
-An additive scalar generator and an additive operator generator are different typed objects.
+The first step is exact for root fidelity. The second gives an additive scalar. The third does not follow because the scalar and operator generator are different typed objects.
 
 ---
 
-# VII. CLAIM BOUNDARY
+## Claim boundary
 
-### Derived / reproduced
+### Derived / reproducibly executed
 
-- root fidelity is multiplicative on independent supplied state/recovery pairs;
-- `-log F_root` is additive on those pairs;
-- the legacy V818 accessibility multiplicativity statement is conditional;
-- the V824 executable declares its accessibility field exponentially rather than deriving multiplicativity;
-- an exact-recovery product family spans the full faithful local qubit spectrum while keeping the recovery scalar fixed at one;
-- distinct lawful source rays coexist at that same recovery scalar;
-- a scalar recoverability context does not remove the qubit freedom `a(r,A)`.
+- root fidelity multiplicativity on independent supplied state/recovery pairs;
+- additivity of `-log F_root`;
+- conditional—not derived—status of legacy accessibility multiplicativity;
+- exact-recovery scalar constancy across the faithful local qubit spectrum;
+- coexistence of multiple source rays at the same recovery scalar;
+- survival of the qubit response freedom as `a(r,A)` when a scalar recovery context is added.
 
 ### Not derived
 
-- an identification of legacy accessibility `A` with root fidelity or CMI;
+- legacy accessibility `A = F_root` or `A = f(CMI)`;
 - a canonical generic recovery map;
-- a natural scalar-recoverability-to-Hermitian-source map;
+- a natural scalar-recovery-to-Hermitian-source map;
 - a unique `a(r)` or `a(r,A)`;
-- `P = log rho` from recoverability alone;
-- the retained-node-to-quantum-site carrier;
-- the graph-site-to-`C^125/C^25` map;
-- absolute source calibration;
-- physical stress-energy;
+- `P=log(rho)` from recoverability alone;
+- the retained-node-to-quantum-site carrier or graph-site-to-`C^125/C^25` map;
+- absolute source normalization or physical stress-energy;
 - source-to-solder/coframe law;
-- physical spacetime or Einstein equations;
-- a physical time primitive;
-- Pillar 3 closure.
+- spacetime, Einstein equations, or Pillar 3 closure.
 
-The pre-pruning source-selector question remains atemporal. Entropy/CMI is not used as a selection objective in this gate.
+The primitive/pre-pruning ontology remains atemporal. No physical time is introduced as a source selector.
 
 ---
 
-# Stop rule / next lawful frontier
+## Stop rule / next lawful frontier
 
-Do **not** identify the legacy accessibility field with root fidelity, CMI, or another recoverability scalar merely because each admits logarithmic notation.
+Do **not** identify legacy accessibility with root fidelity, CMI, or another recoverability scalar merely because each admits logarithmic notation.
 
-Do **not** infer `log rho` from the existence of `-log F_root`.
+Do **not** infer `log(rho)` from the existence of `-log F_root`.
 
-Do **not** choose a scalar-to-operator map because it improves downstream gravitational behavior.
+Do **not** choose a scalar-to-operator bridge from downstream gravity/ADM/Einstein performance.
 
-The lawful next question is:
+The next lawful question is:
 
 > Does the frozen ontology contain a canonical **local quantum object** whose independent composition is multiplicative and whose logarithmic/additive generator is already typed in the local Hermitian source space?
 
-If no such object exists without introducing a reference state, representation map, or source rule by hand, the logarithmic source branch should stop as irreducible relative to the current ontology.
+If every candidate requires an arbitrary reference state, representation map, normalization, or source rule, the logarithmic-source origin branch should stop as irreducible relative to the current frozen ontology.
