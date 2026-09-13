@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 from quantum_carrier_origin_audit import adjudicate_gate, run_audit
 
 assert adjudicate_gate(True, False) == "CANONICAL_NEUTRAL_STRUCTURE_DOES_NOT_DERIVE_RETAINED_QUANTUM_CARRIER"
@@ -71,4 +72,4 @@ assert claim["downstream_gravity_used_as_selector"] is False
 assert claim["entropy_or_time_used_as_selector"] is False
 assert claim["Pillar_3_closed"] is False
 
-print("v15.09 checker passed")
+print(json.dumps(s, indent=2, sort_keys=True))
