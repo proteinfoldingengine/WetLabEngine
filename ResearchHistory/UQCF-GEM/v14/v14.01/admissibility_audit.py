@@ -54,6 +54,19 @@ def _signed_permutation(size: int, rng: np.random.Generator) -> np.ndarray:
     return np.diag(signs) @ Q
 
 
+def _edge_defect_to_symmetric(defect: np.ndarray) -> np.ndarray:
+    """Fixed injective 7 -> Sym(4) control embedding; not a physical tensor map."""
+    d = np.asarray(defect, dtype=float)
+    if d.shape != (7,):
+        raise ValueError("expected seven edge components")
+    X = np.zeros((4, 4), dtype=float)
+    diag = d[:4] - np.mean(d[:4])
+    X[np.diag_indices(4)] = diag
+    for value, (i, j) in zip(d[4:], [(0, 1), (1, 2), (2, 3)]):
+        X[i, j] = X[j, i] = value / np.sqrt(2.0)
+    return X
+
+
 def run_audit() -> dict:
     B = incidence_matrix(N, EDGES)
     C = centered_projector(N)
@@ -75,6 +88,7 @@ def run_audit() -> dict:
     max_covariance_error = 0.0
     max_direction_separation = 0.0
     nonzero_trial_count = 0
+    positivity_perturbations: list[np.ndarray] = []
 
     for _ in range(TRIALS):
         raw = rng.standard_normal(N)
@@ -84,6 +98,7 @@ def run_audit() -> dict:
         for name, out in outputs.items():
             if np.linalg.norm(out) > 1e-10:
                 nonzero_trial_count += 1
+            positivity_perturbations.append(_edge_defect_to_symmetric(out))
             A = operators[name]
             for scale in SCALES:
                 scaled = A @ (scale * source)
@@ -109,6 +124,27 @@ def run_audit() -> dict:
             target = Eop @ operators[name] @ V.T
             max_covariance_error = max(max_covariance_error, _relative_error(Ap, target))
 
+    # Faithful-interior positivity theorem control. A positive-definite center has an open
+    # neighborhood, so finitely many distinct bounded directions all remain feasible for
+    # one sufficiently small common epsilon. Positivity therefore cannot select one of them.
+    max_delta_opnorm = max(
+        float(np.max(np.abs(np.linalg.eigvalsh(D)))) for D in positivity_perturbations
+    )
+    faithful_epsilon = 0.25 / max(max_delta_opnorm, 1e-15)
+    X0 = np.eye(4)
+    minimum_faithful_margin = min(
+        float(np.min(np.linalg.eigvalsh(X0 + faithful_epsilon * D)))
+        for D in positivity_perturbations
+    )
+
+    # Boundary loophole audit. At Xb=diag(0,1,1,1) with one-dimensional kernel e0,
+    # first-order PSD feasibility requires only e0^T Delta e0 >= 0. In Sym(4), the
+    # lineality subspace e0^T Delta e0 = 0 has dimension 10-1=9. Thus the positivity
+    # boundary supplies an inequality/normal but does not generate a unique deformation.
+    boundary_matrix_dimension = 4
+    symmetric_dimension = boundary_matrix_dimension * (boundary_matrix_dimension + 1) // 2
+    boundary_lineality_dimension = symmetric_dimension - 1
+
     # Added-law positive control: once both functional and coefficient are explicitly supplied,
     # the map is unique by construction. This is a sensitivity control, not a derivation.
     selected_name = "exponential_positive"
@@ -117,6 +153,12 @@ def run_audit() -> dict:
     reconstructed = selected_scale * candidate_operator(Pcyc, weights[selected_name], B, C)
     positive_control_error = _relative_error(reconstructed, eta_star)
 
+    positivity_does_not_select = (
+        faithful_epsilon > 0.0
+        and minimum_faithful_margin > 0.0
+        and boundary_lineality_dimension > 0
+    )
+
     if (
         incidence_leakage < 1e-12
         and minimum_weighted_operator_norm > 1e-8
@@ -124,6 +166,7 @@ def run_audit() -> dict:
         and max_direction_separation > 1e-3
         and max_scaling_error < 2e-12
         and max_covariance_error < 2e-12
+        and positivity_does_not_select
     ):
         gate_outcome = "NONUNIQUE"
         branch_status = "STOPPED_PENDING_NEW_SOURCE_TO_HIGHER_INCIDENCE_AXIOM_OR_CALIBRATION"
@@ -160,6 +203,14 @@ def run_audit() -> dict:
             "exponential_positive": "f(x)=exp(x)",
             "quadratic_positive": "f(x)=1+x^2",
         },
+        "positivity_audit": {
+            "faithful_interior_common_epsilon": float(faithful_epsilon),
+            "minimum_faithful_interior_margin": float(minimum_faithful_margin),
+            "boundary_matrix_dimension": boundary_matrix_dimension,
+            "boundary_tangent_lineality_dimension": boundary_lineality_dimension,
+            "boundary_selector_classification": "INEQUALITY_FILTER_NOT_CANONICAL_SOURCE_MAP",
+            "interpretation": "faithful positivity admits all bounded candidate directions locally; a simple PSD boundary imposes a half-space condition with a 9-dimensional lineality space, not a unique source deformation",
+        },
         "positive_control": {
             "status": "ADDED_LAW_POSITIVE_CONTROL",
             "selected_candidate": selected_name,
@@ -170,7 +221,7 @@ def run_audit() -> dict:
         "weighted_family_interpretation": "state/relational weighting can create nonzero cycle defects, but covariance and source linearity permit multiple inequivalent weighting functionals",
         "gate_outcome": gate_outcome,
         "branch_status": branch_status,
-        "claim_scope": "current frozen architecture plus the audited incidence/state-weighted construction class; not all conceivable deeper nonlinear laws",
+        "claim_scope": "current frozen architecture plus the audited incidence/state-weighted and PSD-positivity construction class; not all conceivable deeper nonlinear laws",
         "Pillar_3": "OPEN",
     }
 
