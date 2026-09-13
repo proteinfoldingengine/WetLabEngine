@@ -33,7 +33,7 @@ The gate asks three logically separate questions:
 
 A fourth compatibility check is mandatory:
 
-4. Is any graph-site quantum carrier the **same certified parent representation** consumed by v14.03/v15.01, or connected to it by an already-earned natural map?
+4. Is any graph-site quantum carrier naturally related to the certified `C^125` compatibility parent consumed by v14.03/v15.01?
 
 A positive graph-site source representation on a disconnected quantum carrier is not closure of the v14.03 chain.
 
@@ -142,9 +142,15 @@ A Hermitian parent source must transform as
 P\mapsto U_G P U_G^\dagger.
 \]
 
+For a **genuine five-site quantum carrier**, every retained node must correspond to a nontrivial quantum subsystem:
+
+\[
+d_i=\dim\mathcal H_i\ge2\qquad(i=1,\ldots,5).
+\]
+
 ### 3.3 Certified compatibility carrier
 
-The already-certified v15.01 parent is instead
+The already-certified v15.01 parent is
 
 \[
 \mathcal H_Q
@@ -160,6 +166,40 @@ C_L(A)=L^\dagger A L.
 
 This is a three-factor parent with five-dimensional **internal basis labels**. It must not be silently reinterpreted as a five-site graph.
 
+### 3.4 Exact five-site / `C^125` factorization obstruction
+
+A genuine five-site carrier that were literally equal to the certified parent would require integers
+
+\[
+d_1,d_2,d_3,d_4,d_5\ge2
+\]
+
+with
+
+\[
+\prod_{i=1}^5 d_i=125=5^3.
+\]
+
+This is impossible. The integer `125` contains only three prime factors counting multiplicity. Any five-factor decomposition of `125` therefore contains at least two factors of dimension `1`, e.g.
+
+\[
+125=5\cdot5\cdot5\cdot1\cdot1,
+\]
+
+which does **not** represent all five retained nodes as nontrivial quantum sites.
+
+Hence:
+
+\[
+\boxed{
+\text{five nontrivial graph-site factors cannot literally equal the certified }\mathbb C^{125}\text{ parent}.
+}
+\]
+
+This is an exact arithmetic/type obstruction, not a numerical result.
+
+Therefore any genuine five-site source carrier must be a distinct representation and must have an independently earned natural map into the certified compatibility parent/support before it can close the v14.03 upstream source problem.
+
 ---
 
 ## 4. Gate A — Archive graph-site factorization audit
@@ -168,25 +208,25 @@ The executable audit must answer:
 
 1. Does any frozen artifact identify the exact retained graph
    `[(0,1),(1,3),(0,2),(2,4),(4,3),(1,2),(0,4)]`
-   with quantum tensor factors carrying the same node identities?
+   with five nontrivial quantum tensor factors carrying the same node identities?
 2. Does that identification survive as a typed structural statement rather than a plotting convention or demonstration choice?
 3. If a graph-indexed quantum model exists on a different graph or different node count, record it as evidence that graph-site quantum modeling is available in the ontology, but **not** as the required exact identification.
-4. If the exact graph-site carrier exists, determine whether it is literally the v15.01 `C^125` compatibility parent or whether a frozen natural map to that parent is certified.
+4. If an exact five-site carrier exists, determine whether a frozen natural map from that carrier into the certified `C^125` compatibility parent is already present.
 
-Required statuses:
+Required factorization statuses:
 
 - `EXACT_GRAPH_SITE_FACTORIZATION_CERTIFIED`
 - `GRAPH_INDEXED_QUANTUM_MODELS_EXIST_BUT_EXACT_FACTOR_IDENTIFICATION_UNDERIVED`
 - `NO_GRAPH_INDEXED_QUANTUM_CARRIER_FOUND`
 
-Carrier relation:
+Required carrier statuses:
 
-- `SAME_AS_COMPATIBILITY_PARENT`
+- `FIVE_NONTRIVIAL_SITE_CARRIER_CANNOT_EQUAL_C125_PARENT`
 - `NATURAL_MAP_TO_COMPATIBILITY_PARENT_CERTIFIED`
 - `GRAPH_SITE_CARRIER_DISTINCT_FROM_COMPATIBILITY_PARENT`
 - `NO_EXACT_GRAPH_SITE_CARRIER`
 
-No dimensional padding or reshaping may turn one status into another.
+The exact dimension theorem forces the first status whenever the proposed exact graph-site carrier has five nontrivial factors and is compared with the certified `C^125` parent. No dimensional padding, trivial-site insertion, reshaping, or hidden factor suppression may turn one status into another.
 
 ---
 
@@ -249,7 +289,7 @@ This is precisely the kind of missing representation data v14.04 isolated.
 
 ### 5.2 Deterministic controls
 
-Use small exact product-unitary controls to verify:
+Use exact or deterministic product-unitary controls to verify:
 
 - central operators remain invariant;
 - predeclared noncentral local operators fail invariance under independent local rotations;
@@ -306,9 +346,45 @@ Also include:
 - positive source scaling controls;
 - independent local-unitary covariance controls.
 
-No candidate may be chosen after observing downstream v14.03 behavior.
+No candidate may be chosen after observing any downstream boundary/dual behavior.
 
-### 6.2 Canonicality question
+### 6.2 Deterministic supplied five-site state controls
+
+To prevent tuning after execution, use exactly two predeclared faithful five-qubit product-state controls. These are **sufficiency/covariance fixtures only**, not provenance physics.
+
+For control `A`, use signed Bloch radii
+
+```text
+r_A = [ 0.15, -0.31,  0.42,  0.63, -0.22 ]
+```
+
+For control `B`, use
+
+```text
+r_B = [ 0.52, -0.18,  0.27, -0.47,  0.36 ]
+```
+
+The reproducible coordinate representative is
+
+\[
+\rho_i^{(c)}=\frac12(I+r_i^{(c)}Z),
+\]
+
+so each local spectrum is
+
+\[
+\left(\frac{1+r_i^{(c)}}2,\frac{1-r_i^{(c)}}2\right)
+\]
+
+with `|r_i|<1`, hence every local state is faithful. The `Z` basis is only a supplied coordinate representative. Independent deterministic local unitaries must be applied to verify covariance; no physical axis is inferred.
+
+Both controls are labeled:
+
+`SUPPLIED_GRAPH_SITE_FACTORIZATION_NOT_PROVENANCE_DERIVATION`.
+
+The controls are frozen before execution and may not be changed because of projective-residual outcomes.
+
+### 6.3 Canonicality question
 
 For the same supplied graph-site factorization, same state, and same retained source vector, compute the projective residuals between the centered rays
 
@@ -329,21 +405,44 @@ That result is
 }
 \]
 
-### 6.3 Special degeneracy handling
+### 6.4 Qubit functional redundancy control
 
-For qubit sites, functional calculus can collapse each single-site centered `f(rho_i)` onto the same Bloch direction. This does **not** imply global projective equivalence, because the site-dependent proportionality factors can differ across sites.
+For a single qubit, any analytic functional calculus `f(rho_i)` is diagonal in the same eigenbasis as `rho_i`; after trace-centering it therefore lies on the same local Bloch direction.
 
-The audit must therefore compare the **full embedded source rays**, not local operator directions independently.
+In particular, `f(x)=x^2` is included partly as a redundancy/control. This local collinearity does **not** imply the full embedded sources are projectively equivalent, because the proportionality coefficient can depend on the local spectrum and therefore vary by site.
 
-If all predeclared families happen to be projectively equivalent on a particular supplied state, the audit must add a second target-blind faithful-state control fixed before execution. It may not tune a state to force inequivalence.
+The audit must compare the **full embedded source rays**. The most informative predeclared contrast is expected to be `x` versus `log x` on controls with unequal local spectra, but that expectation is not an adjudication rule.
+
+No candidate may be dropped because it proves redundant, and no new candidate may be added because the frozen candidates happen to coincide.
+
+### 6.5 Current-based pair lift boundary
+
+A pair-state/current construction such as
+
+\[
+P_f^{(J)}
+=
+\sum_{e=(i,j)}J_e\,\iota_{ij}\!\left[
+ f(\rho_{ij})-
+ \frac{\operatorname{Tr}f(\rho_{ij})}{d_id_j}I_{ij}
+\right]
+\]
+
+may be included only as structural/control evidence.
+
+It may participate in scientific adjudication **only if** the current being used is a previously certified selected current for the exact same retained realization and carrier. The Gate-A minimum-norm current is a control, not a provenance-selected current. v13.25 current selection remains conditional on the response rank/stability gate.
+
+Therefore no min-norm/Hodge/current convenience choice may be promoted into a source law in v15.03.
 
 ---
 
 ## 7. Gate D — Compatibility-parent relevance
 
-Even a successful graph-site source representation does not yet feed v14.03 unless the carrier relation to the certified compatibility parent is earned.
+Even a successful graph-site source representation does not feed v14.03 unless the carrier relation to the certified compatibility parent is earned.
 
-The gate must distinguish:
+The exact dimension theorem already proves that a genuine five-nontrivial-site tensor product cannot literally be the current `C^125` parent.
+
+The gate must therefore distinguish:
 
 ```text
 retained graph source
@@ -359,7 +458,7 @@ retained graph source
     -> [P]_+ consumed by v14.03.
 ```
 
-If `H_G` and `H_Q` are distinct and no frozen natural map exists, record a carrier mismatch and stop. Do not create an intertwiner to make the test succeed.
+For a genuine five-site carrier, the only lawful route to the second chain is an already-earned natural cross-carrier representation map. If no such map exists, record a carrier mismatch and stop. Do not create an intertwiner to make the test succeed.
 
 ---
 
@@ -369,13 +468,13 @@ Positive controls are sufficiency tests only and cannot adjudicate provenance de
 
 ### 8.1 Supplied graph-site factorization control
 
-A deterministic five-site finite quantum fixture may be supplied solely to test the local-gauge theorems and state-dependent family behavior.
+The two deterministic five-qubit product-state controls from §6.2 are the only primary supplied graph-site fixtures for the state-dependent family audit.
 
-It must be labeled:
+They are labeled:
 
 `SUPPLIED_GRAPH_SITE_FACTORIZATION_NOT_PROVENANCE_DERIVATION`.
 
-No output from this fixture can establish that the archive earns the factorization.
+No output from these fixtures can establish that the archive earns the factorization.
 
 ### 8.2 Supplied carrier map control
 
@@ -400,30 +499,32 @@ The gate uses a hierarchical outcome.
 Requires all of:
 
 1. exact retained-node -> quantum-site factorization is already certified;
-2. the graph-site carrier is the certified compatibility parent or has an already-certified natural map to it;
+2. an already-certified natural map from that genuine five-site carrier into the certified `C^125` compatibility parent/support exists;
 3. the source lift is noncentral;
 4. independent local-gauge covariance holds;
 5. no inequivalent equally lawful source-lift family survives.
 
-This would be an architectural breakthrough.
+The literal-same-parent route is excluded by the five-site/125D dimension theorem.
+
+This positive outcome would be an architectural breakthrough.
 
 ### 9.2 Archive factorization failure
 
 `NO_CERTIFIED_GRAPH_SITE_FACTORIZATION`
 
-The archive contains graph-indexed quantum models, but not a certified identity between the exact retained source graph and the quantum tensor factors required for this branch.
+The archive contains graph-indexed quantum models, but not a certified identity between the exact retained source graph and the five quantum tensor factors required for this branch.
 
 ### 9.3 Carrier mismatch
 
 `GRAPH_SITE_CARRIER_NOT_COMPATIBILITY_PARENT`
 
-A lawful graph-site quantum source carrier exists, but it is distinct from the certified v14.03/v15.01 parent and no natural cross-carrier map is earned.
+A lawful graph-site quantum source carrier exists, but the exact theorem shows it cannot literally be the certified `C^125` parent, and no natural cross-carrier map is earned.
 
 ### 9.4 Gauge centrality stop
 
 `STATE_INDEPENDENT_GRAPH_SOURCE_CENTRAL_PGRL_NULL`
 
-A graph-site identification is available, but retained scalar/current data alone carry no internal quantum direction; independent local-frame covariance forces the source lift into the center.
+A graph-site identification is available or supplied, but retained scalar/current data alone carry no internal quantum direction; independent local-frame covariance forces the state-independent source lift into the center.
 
 ### 9.5 State-dependent nonuniqueness
 
@@ -447,16 +548,17 @@ The likely hierarchy, to be tested rather than assumed, is:
 retained graph nodes
     -> graph-site identification may be more natural than basis-label identification
     -> BUT exact retained graph -> quantum factor identity may still be underived
+    -> any genuine five-site carrier is provably distinct from the C^125 compatibility parent
     -> scalar/current data alone have no internal quantum direction
-       -> independent local gauge forces central/null lift
+       -> independent local gauge forces central/null state-independent lift
     -> adding state context creates lawful noncentral covariant lifts
        -> multiple functional-calculus lifts may remain inequivalent
-    -> even a graph-site source carrier must still connect naturally to the certified C^125 compatibility parent
+    -> a separately earned natural cross-carrier map is still required to reach v14.03
 ```
 
 A negative result would localize the missing principle more sharply as an
 
-**operator-valued source representation law with both quantum-frame content and carrier compatibility**, not merely a node-label correspondence.
+**operator-valued source representation law with quantum-frame content plus a natural cross-carrier map into the certified compatibility parent**, not merely a node-label correspondence.
 
 ---
 
@@ -466,9 +568,9 @@ Set
 
 `scientific_breakthrough = true`
 
-only if the frozen archive itself supplies a target-blind, local-gauge-covariant, noncentral source representation that reaches the certified compatibility parent/support uniquely up to the already-earned projective equivalence.
+only if the frozen archive itself supplies a target-blind, local-gauge-covariant, noncentral source representation on an earned exact graph-site carrier **and** an earned natural map into the certified compatibility parent/support, uniquely up to the already-earned projective equivalence.
 
-A new no-go, centrality theorem, carrier mismatch, or nonuniqueness localization is scientifically important but not a broad breakthrough.
+A new no-go, centrality theorem, carrier mismatch, arithmetic factorization obstruction, or nonuniqueness localization is scientifically important but not a broad breakthrough.
 
 ---
 
@@ -500,7 +602,9 @@ Do not continue by:
 - selecting the candidate with the best v14.03 boundary/dual behavior;
 - tying local frames together to enlarge the commutant unless such tying is independently earned;
 - declaring a graph-site control carrier to be the compatibility parent;
+- padding with one-dimensional sites to evade the `125=5^3` obstruction;
 - inventing a cross-carrier isometry;
+- using a min-norm/Hodge current as though it were provenance-selected;
 - importing pruning/entropy/lineage ordering as a pre-pruning source selector;
 - using ADM/Einstein/gravity residuals.
 
