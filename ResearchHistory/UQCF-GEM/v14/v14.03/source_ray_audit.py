@@ -9,7 +9,7 @@ from types import ModuleType
 from typing import Any
 
 import numpy as np
-from scipy.linalg import expm
+from scipy.linalg import expm, expm_frechet
 
 
 SEED = 1403
@@ -80,19 +80,21 @@ def _log_mean_matrix(p: np.ndarray) -> np.ndarray:
 
 
 def pgrl_tangent(X0: np.ndarray, P: np.ndarray) -> np.ndarray:
+    """Exact PGRL tangent via a numerically stable exponential Frechet derivative.
+
+    This is analytically equivalent to the logarithmic-mean spectral formula.
+    The Frechet form avoids divided-difference loss of covariance when faithful
+    X0 has repeated or near-repeated eigenvalues.
+    """
     X0 = _herm(np.asarray(X0, dtype=complex))
     P = _herm(np.asarray(P, dtype=complex))
     p, U = np.linalg.eigh(X0)
     if p[0] <= 0:
         raise ArithmeticError("PGRL tangent requires faithful X0")
-    Phat = U.conj().T @ P @ U
-    lm = _log_mean_matrix(p)
-    raw = lm * Phat
+    logX0 = _herm(U @ np.diag(np.log(p)) @ U.conj().T)
+    raw = expm_frechet(logX0, P, compute_expm=False)
     mean = float(np.real(np.trace(X0 @ P)))
-    idx = np.diag_indices(len(p))
-    raw[idx] -= p * mean
-    dotX = _herm(U @ raw @ U.conj().T)
-    return dotX
+    return _herm(raw - X0 * mean)
 
 
 def pgrl_state(X0: np.ndarray, P: np.ndarray, s: float) -> np.ndarray:
