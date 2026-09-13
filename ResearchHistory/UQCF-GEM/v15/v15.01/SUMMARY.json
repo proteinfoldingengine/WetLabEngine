@@ -1,0 +1,143 @@
+{
+  "version": "v15.01",
+  "date": "2026-09-13",
+  "seed": 1501,
+  "title": "Common-Parent Representation Audit",
+  "gate_outcome": "NO_COMMON_PARENT_REPRESENTATION",
+  "secondary_status": "COMPATIBILITY_PARENT_SUPPORT_VERIFIED",
+  "scientific_breakthrough": false,
+  "Pillar_3": "OPEN",
+  "parent_dimension": 125,
+  "support_dimension": 25,
+  "claim_scope": "common-parent representation audit from frozen Genesis/provenance/source structures to the C^125 compatibility parent and its canonical C^25 support compression",
+  "theorems": {
+    "projective_descent": "For C_L(A)=L^dagger A L with L^dagger L=I_25, C_L(aA+bI_125)=a C_L(A)+bI_25 for a>0.",
+    "parent_support_covariance": "For L'=U L V^dagger and A'=U A U^dagger, C_L'(A')=V C_L(A) V^dagger.",
+    "interpretive_boundary": "These exact compression theorems establish sufficiency of a lawful parent source class; they do not establish that Genesis/provenance supplies such a class."
+  },
+  "parent_support": {
+    "status": "COMPATIBILITY_PARENT_SUPPORT_VERIFIED",
+    "max_isometry_error": 4.965068306494546e-16,
+    "max_reconstruction_error": 1.4513737894400392e-17,
+    "max_projector_hermiticity_error": 0.0,
+    "max_projector_idempotence_error": 4.197887443839247e-16,
+    "max_compression_covariance_error": 1.817139633354745e-14,
+    "max_projective_descent_error": 1.138948992321253e-16,
+    "records": {
+      "V_A": {
+        "isometry_error": 4.965068306494546e-16,
+        "reconstruction_error": 1.4513737894400392e-17,
+        "projector_hermiticity_error": 0.0,
+        "projector_idempotence_error": 4.197887443839247e-16,
+        "compression_covariance_error": 1.6052042827943555e-14
+      },
+      "V_B": {
+        "isometry_error": 4.965068306494546e-16,
+        "reconstruction_error": 1.4513737894400392e-17,
+        "projector_hermiticity_error": 0.0,
+        "projector_idempotence_error": 3.964289135040461e-16,
+        "compression_covariance_error": 1.817139633354745e-14
+      }
+    }
+  },
+  "archive_inventory": {
+    "core_candidate_count": 5,
+    "extended_candidate_count": 2,
+    "missing_artifact_count": 0,
+    "same_parent_source_class_count": 0,
+    "support_preserving_parent_tangent_count": 0,
+    "support_changing_parent_tangent_count": 0,
+    "core_candidates": [
+      {
+        "name": "compatibility_tripartite_parent",
+        "path": "Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py",
+        "sha256": "efcc451de4c94e20f3a9acde60f541f2d1e638dfb96689c11771f331f724c57d",
+        "carrier_dimension": 125,
+        "source_status": "NO_PROVENANCE_SOURCE_COVECTOR_CERTIFIED",
+        "parent_map_status": "PARENT_SUPPORT_MAP_L_CERTIFIED",
+        "same_parent_source_class": false
+      },
+      {
+        "name": "v1404_representation_audit",
+        "path": "ResearchHistory/UQCF-GEM/v14/v14.04/SUMMARY.json",
+        "sha256": "7ff0e749711cf6c6dd5918970b48b9b886cccf572622188312cef8b105a85056",
+        "source_status": "REQUIRES_NEW_REPRESENTATION_LINK",
+        "parent_map_status": "NO_CERTIFIED_NATURAL_SUPPORT_LINK",
+        "same_parent_source_class": false
+      },
+      {
+        "name": "genesis_6d_field_and_ledger",
+        "path": "Tmp/TOE/Einstein 6/v1172_full_stack_package/v1172_6d_gpu_full_stack_genesis_provenance_engine.py",
+        "sha256": "659a1489b9c2a46a56440808a0ac19e3f1be8bd44ffb70cfbab575ea1bd95e93",
+        "carrier_dimension": "8^6 real grid",
+        "source_status": "PROVENANCE_AND_FIELD_CARRIER_NOT_PARENT_HERMITIAN_SOURCE",
+        "parent_map_status": "NO_FROZEN_MAP_TO_HERM_C125",
+        "same_parent_source_class": false
+      },
+      {
+        "name": "retained_source_current",
+        "path": "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md",
+        "sha256": "3677e07ab0ea9c40b5f9615673736027834d93260d149419605535aa14996858",
+        "source_status": "SOURCE_DIRECTION_AND_BALANCE_NOT_PARENT_COVECTOR",
+        "parent_map_status": "NO_FROZEN_MAP_TO_HERM_C125",
+        "same_parent_source_class": false
+      },
+      {
+        "name": "v1327_six_qubit_source_demo",
+        "path": "ResearchHistory/UQCF-GEM/demos/v13.27-gravity-progress/uqcf_demo/quantum.py",
+        "sha256": "f73efe78cceba06760b90b946868896fec245f3f31a4eaf09924e7b5bba80021",
+        "carrier_dimension": 64,
+        "source_status": "EXPLICIT_DEMO_SOURCE_NOT_GENESIS_PROVENANCE_DERIVATION",
+        "parent_map_status": "DIFFERENT_PARENT_NO_FROZEN_NATURAL_FUNCTOR_TO_C125",
+        "same_parent_source_class": false
+      }
+    ],
+    "extended_candidates": [
+      {
+        "name": "v13.08 symmetry-selected PGRL source line",
+        "path": "ResearchHistory/UQCF-GEM/v13/v13.08/REPORT.md",
+        "git_blob_sha": "e7c51951e2e9f8235fcf90dae6ebf2d011784c1d",
+        "status": "DIFFERENT_RETAINED_SOURCE_SECTOR_NO_FROZEN_MAP_TO_COMPATIBILITY_C125_PARENT",
+        "same_parent_source_class": false
+      },
+      {
+        "name": "v13.11 QMAR first-order source response",
+        "path": "ResearchHistory/UQCF-GEM/v13/v13.11/REPORT.md",
+        "git_blob_sha": "b18b3582060cb6b6527059987d6635e120ee7fb0",
+        "status": "CONDITIONAL_ON_SUPPLIED_P_WITH_NO_FROZEN_IDENTIFICATION_TO_COMPATIBILITY_C125_PARENT",
+        "same_parent_source_class": false
+      }
+    ],
+    "statement": "The C^25 compatibility support has an explicit C^125 quantum parent, but the audited frozen provenance/source structures supply neither a provenance-certified Hermitian source class on that same parent nor a provenance-certified support-preserving parent tangent."
+  },
+  "positive_control": {
+    "classification": "SUPPLIED_PARENT_SOURCE_NOT_PROVENANCE_DERIVATION",
+    "selected_configuration": "V_A",
+    "selected_control": "diagonal_ramp",
+    "noncentral_compressed_source": true,
+    "compressed_noncentral_norm": 2.4706051707102032,
+    "nonzero_hidden_component": true,
+    "hidden_norm": 0.0034965359627519986,
+    "boundary_simple": true,
+    "boundary_radius": 0.004424188361033129,
+    "normal_classification": "RAY",
+    "max_parent_support_covariance_error": 8.748117835478196e-14,
+    "max_projective_descent_error": 1.1773822987591587e-16,
+    "support_preserving_tangent_leakage": 8.916036787918597e-18,
+    "tangent_roundtrip_projective_residual": 2.24314194087589e-15,
+    "meaning": "If a lawful parent source class is supplied, canonical compression through the frozen L is sufficient to feed the certified v14.03 source/contact/dual chain. This control is not provenance evidence and does not participate in gate adjudication."
+  },
+  "interpretation": "The v14.04 missing representation link is not merely an artifact of forgetting that the compatibility support has a parent quantum space. The parent/support relation is explicit and compression is exact, projective, and covariant, but no audited frozen Genesis/provenance/source artifact supplies the required source class or support-preserving source tangent on that same C^125 parent.",
+  "stop_rule": "Do not construct a v15.02 by inventing a parent source operator, lifting a desired support P through L, reshaping the Genesis field, padding another model into C^125, or fitting any downstream gravity/ADM target. Continuation requires a genuinely new independently motivated representation principle, an explicitly labeled new assumption, or newly discovered frozen evidence that provenance supplies a source class/tangent on the compatibility parent.",
+  "not_derived": [
+    "Genesis/provenance to a Hermitian source class on the C^125 compatibility parent",
+    "Genesis/provenance to the v14.03 projective support-source ray",
+    "absolute source magnitude or observer calibration",
+    "source-to-solder/coframe law",
+    "stress-energy",
+    "absolute source-to-geometry coupling",
+    "physical metric or spacetime",
+    "Einstein equations",
+    "Pillar 3 closure"
+  ]
+}
