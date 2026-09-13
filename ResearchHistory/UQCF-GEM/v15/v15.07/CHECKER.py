@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 from canonical_neutral_reference_audit import adjudicate_gate, run_audit
 
 # Adjudication must not infer an opposite result merely because verification fails.
@@ -60,4 +61,4 @@ assert claim["downstream_gravity_used_as_selector"] is False
 assert claim["entropy_or_time_used_as_selector"] is False
 assert claim["Pillar_3_closed"] is False
 
-print("v15.07 checker passed")
+print(json.dumps(s, indent=2, sort_keys=True))
