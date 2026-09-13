@@ -4,8 +4,16 @@ on:
   push:
     branches:
       - research/v15.06-recoverability-multiplicativity-boundary
+      - main
     paths:
       - 'ResearchHistory/UQCF-GEM/v15/v15.06/**'
+      - 'ResearchHistory/UQCF-GEM/v15/v15.05/**'
+      - 'ResearchHistory/UQCF-GEM/v13/v13.16/**'
+      - 'ResearchHistory/UQCF-GEM/v13/v13.22/**'
+      - 'Tmp/TOE/Einstein Phase 1/V822_peer_review_packet/V818_THEOREM_SHAPE_ACCESSIBILITY_LAW.md'
+      - 'Tmp/TOE/Einstein Phase 1/V824_accessibility_curvature_paper_python_proof/accessibility_curvature_proof.py'
+      - 'ResearchHistory/UQCF-GEM/README.md'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
       - '.github/workflows/uqcf-v1506-recoverability-multiplicativity.yml'
   workflow_dispatch:
 
