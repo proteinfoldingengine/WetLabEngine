@@ -16,23 +16,23 @@ v14.04 localized the upstream missing structure to a representation/intertwiner 
 \to[g].
 \]
 
-v15.01 asks whether this apparent cross-space map is actually unnecessary because the provenance/source carrier and the v14 compatibility support are already descendants of one frozen common quantum parent.
+v15.01 asks whether this apparent cross-space map is unnecessary because the provenance/source carrier and the v14 compatibility support are already descendants of one frozen common quantum parent.
 
-The gate does **not** invent a new intertwiner. It audits whether an already-earned parent object, source operator/covector, and support inclusion together induce the projective source ray consumed by v14.03.
+The gate does **not** invent a new intertwiner. It audits whether an already-earned parent object, source operator/covector or source tangent, and the already-earned compatibility support together induce the positive projective source ray consumed by v14.03.
 
 The target question is:
 
 \[
 \boxed{
-\text{Does frozen provenance/source structure already define a parent-space source class whose compression to the archived compatibility support is canonical?}
+\text{Does frozen provenance/source structure already define a parent-space source class whose descent to the archived compatibility support is canonical?}
 }
 \]
 
-If yes, the v14.04 missing \(J\) is replaced by a common-parent compression already present in the ontology. If no, the v14.04 stop remains irreducible relative to the current frozen stack.
+If yes, the v14.04 missing \(J\) is replaced by a common-parent descent already present in the ontology. If no, the v14.04 stop remains irreducible relative to the current frozen stack.
 
 ## 2. Frozen compatibility parent and support
 
-The archived quantum compatibility laboratory constructs a global tripartite Hilbert space
+The archived quantum compatibility laboratory constructs the tripartite parent Hilbert space
 
 \[
 \mathcal H_Q
@@ -54,19 +54,21 @@ with
 k=25.
 \]
 
-Coefficient-space density operators \(X\in\mathrm{Herm}(25)\) represent global parent-space states by
+Coefficient-space density operators \(X\in\mathrm{Herm}(25)\) represent parent-space states by
 
 \[
 T=LXL^\dagger.
 \]
 
-Thus the v14.02/v14.03 support space is not a free-standing abstract carrier. It is a concrete orthonormal support of an explicit \(125\)-dimensional quantum parent.
+The v14.02/v14.03 support is therefore a concrete orthonormal support of an explicit \(125\)-dimensional quantum parent, not a free-standing abstract carrier.
 
-This earned map is frozen and may be reused; it may not be replaced by another support embedding.
+This earned \(L\) is frozen and may be reused. It may not be replaced by another support embedding.
 
-## 3. Exact compression map
+The parent state \(T\) is rank-25 inside the 125-D parent; the faithful state used by v14.03 is the coefficient/support state \(X_0\succ0\). v15.01 must not silently treat \(T\) as faithful on all of \(\mathcal H_Q\).
 
-For any Hermitian parent-space operator/covector
+## 3. Exact parent-to-support descent
+
+For a Hermitian parent-space source/log-density covector
 
 \[
 A=A^\dagger\in\mathrm{Herm}(\mathcal H_Q),
@@ -78,31 +80,25 @@ define its support compression
 C_L(A)=L^\dagger A L\in\mathrm{Herm}(25).
 \]
 
-This map is linear and needs no fitted parameter.
+This map is linear, typed, and parameter-free.
 
-### 3.1 Projective descent theorem
+### 3.1 Positive-projective descent theorem
 
-v14.03 works with the positive projective equivalence
+v14.03 uses the support equivalence
 
 \[
 P\sim aP+bI_{25},
 \qquad a>0.
 \]
 
-Because \(L^\dagger L=I_{25}\), parent positive-projective equivalence descends exactly:
+Because \(L^\dagger L=I_{25}\), the corresponding parent equivalence descends exactly:
 
 \[
 C_L(aA+bI_{125})
 =aC_L(A)+bI_{25}.
 \]
 
-Therefore a parent-space class
-
-\[
-[A]_+
-\]
-
-canonically determines a support-space class
+Therefore a parent-space positive-projective class \([A]_+\) canonically determines
 
 \[
 [C_L(A)]_+.
@@ -112,10 +108,10 @@ No absolute parent source normalization is required for this step.
 
 ### 3.2 Parent/support gauge covariance theorem
 
-Let \(U\in U(125)\) be a parent-space coordinate change and \(V\in U(25)\) a support-coordinate change with
+Let \(U\in U(125)\) be a parent-coordinate change and \(V\in U(25)\) a support-coordinate change, with
 
 \[
-L' = U L V^\dagger,
+L'=ULV^\dagger,
 \qquad A'=UAU^\dagger.
 \]
 
@@ -126,76 +122,139 @@ C_{L'}(A')
 =VC_L(A)V^\dagger.
 \]
 
-So common-parent compression has exactly the support-coordinate covariance required by v14.03.
+Thus common-parent compression has exactly the support-coordinate covariance required by v14.03.
 
-This is an analytic theorem. Numerical checks are implementation regressions only.
+This is analytic. Numerical tests are regression controls only.
 
-## 4. What counts as a provenance/source parent object
+### 3.3 The relevant parent equivalence is weaker than full parent-operator uniqueness
 
-A candidate common-parent source is acceptable only if the frozen archive already supplies a typed object that is one of:
+v14.03 needs only the compressed projective support class. Define
 
-1. a Hermitian source/log-density covector \(A_{\rm prov}\in\mathrm{Herm}(125)\);
-2. a parent-space source tangent from which a unique positive-projective covector class is already certified by frozen PGRL/QMAR structure;
-3. a more primitive frozen parent object together with an already-earned natural map into \(\mathrm{Herm}(125)\) whose source meaning is independently established.
+\[
+A_1\sim_L A_2
+\iff
+C_L(A_2)=aC_L(A_1)+bI_{25}
+\quad\text{for some }a>0,b\in\mathbb R.
+\]
 
-Merely sharing the word “quantum,” “Genesis,” “source,” or “provenance” does not establish a common parent.
+Any addition \(B\) satisfying
 
-A state \(T\), a field, a graph current, or a lineage ledger is not automatically a source covector. The map from that object to a parent Hermitian source must itself be frozen and independently motivated.
+\[
+L^\dagger B L=0
+\]
+
+is invisible to the v14.03 consumer.
+
+Therefore a positive result does **not** require a unique \(125\times125\) source operator. It requires a unique noncentral class in the quotient actually seen through \(L\).
+
+### 3.4 Alternate route: support-preserving parent tangent descent
+
+A frozen provenance object may supply a parent-state tangent rather than a covector.
+
+If a Hermitian trace-zero tangent \(\delta T\) is certified and is support-preserving to first order,
+
+\[
+\delta T=\Pi\,\delta T\,\Pi,
+\qquad
+\Pi=LL^\dagger,
+\]
+
+then it has a unique coefficient tangent
+
+\[
+\delta X=L^\dagger\delta T L.
+\]
+
+Because \(X_0\succ0\), the frozen PGRL/BKM tangent map on the support is invertible modulo identity: a support tangent determines a unique projective source class \([P]_+\) whenever it lies in the trace-zero tangent space of normalized states.
+
+Thus an already-earned support-preserving parent source tangent may also close
+
+\[
+\delta T\to\delta X\to[P]_+.
+\]
+
+This route is admissible only if the source meaning of \(\delta T\) is independently frozen. It may not be reconstructed from the desired v14.03 boundary or dual ray.
+
+If a candidate tangent has a first-order component outside \(\mathrm{ran}(L)\), record
+
+`SUPPORT_CHANGING_PARENT_TANGENT_NOT_V1403_COMPATIBLE`
+
+rather than projecting away that component and pretending the existing fixed-support v14.03 pipeline is complete.
+
+## 4. What counts as a genuine common parent
+
+A candidate common-parent source is acceptable only if the frozen archive already supplies one of:
+
+1. a Hermitian provenance/source covector \(A_{\rm prov}\in\mathrm{Herm}(125)\);
+2. a certified support-preserving parent source tangent from which the frozen faithful-support PGRL map determines \([P]_+\);
+3. a more primitive frozen parent object together with an already-earned natural map into one of the preceding types.
+
+A common parent is a **typed representation relationship**, not a semantic resemblance.
+
+The following are insufficient by themselves:
+
+- both objects being called “quantum”;
+- both being called “Genesis” or “source”;
+- equal vector-space dimension;
+- existence of a state \(T\) without a source object;
+- a field, graph current, ledger, or scalar grade without a frozen map into the parent quantum representation.
+
+If two candidate parents have equal dimension but different certified factorization, symmetry action, or ontology role, they are not identified merely by dimension.
 
 ## 5. Candidate classes to audit
 
-v15.01 will audit the following frozen classes.
+### Class A — Archived compatibility parent
 
-### Class A — Compatibility parent itself
-
-Audit the actual archived objects in
+Audit
 
 `Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py`.
 
-Record:
+Record for both `V_A` and `V_B`:
 
-- parent Hilbert-space dimension;
-- support dimension;
+- parent factorization \(A\otimes B_1\otimes B_2\);
+- parent dimension 125;
+- support dimension 25;
 - support isometry \(L\);
-- parent global state \(T=LX_0L^\dagger\);
-- target/marginal objects;
-- whether any archived object is explicitly certified as a provenance/source covector on \(\mathcal H_Q\).
+- support projector \(\Pi=LL^\dagger\);
+- parent state \(T=LX_0L^\dagger\);
+- whether any archived object in the lab is explicitly certified as a provenance/source covector or provenance/source tangent on \(\mathcal H_Q\).
 
-The existence of \(T\) and \(L\) alone establishes a parent/support relationship, but it does **not** establish a provenance source.
+The existence of \(T\) and \(L\) verifies the compatibility parent/support relation but does **not** establish provenance sourcehood.
 
 ### Class B — Frozen Genesis/provenance carriers
 
-Audit the v14.04 provenance inventory, including:
+Audit the v14.04 inventory and exact archive matches, including:
 
 - Genesis root / append-only ledger / source-origin identity;
 - protected retained source grade;
 - retained graph source/current package satisfying \(BJ=s\);
 - archived 6-D Genesis/pruning field carrier;
-- other frozen nontrivial provenance carriers discovered by exact archive search.
+- any additional nontrivial provenance carrier found by the frozen search protocol.
 
 For each candidate record:
 
-1. carrier type;
-2. dimension / factorization if defined;
+1. path and content hash;
+2. carrier type and dimension/factorization if defined;
 3. certified transformation law;
-4. whether it already lives on \(\mathcal H_Q\);
-5. whether an already-frozen map into \(\mathrm{Herm}(\mathcal H_Q)\) exists;
-6. whether that map is source-sensitive and natural;
-7. whether compression through the **existing** \(L\) produces a noncentral projective support source class.
+4. whether it already lives on the exact \(A\otimes B_1\otimes B_2\) parent;
+5. whether an already-frozen natural map into \(\mathrm{Herm}(125)\) exists;
+6. whether an already-frozen support-preserving parent tangent exists;
+7. whether the object is source-sensitive rather than merely provenance-validating;
+8. whether its descent through the **existing** \(L\) yields a unique noncentral positive-projective support class.
 
 ### Class C — Existing finite quantum source demonstrations
 
-Audit frozen quantum source examples such as the v13.27 six-qubit finite demonstration.
+Audit frozen quantum-source examples such as the v13.27 six-qubit demonstration.
 
-These may provide genuine same-space PGRL source operators **inside their own declared model**, but they count for v15.01 only if the archive already certifies the same parent representation as the compatibility parent or a natural functor between the parent objects.
+These may contain genuine PGRL source operators inside their declared model, but they count for v15.01 only if the archive already certifies the same parent representation or an independently earned natural functor into the compatibility parent.
 
-A six-qubit \(64\)-dimensional operator cannot be padded, reshaped, truncated, randomly embedded, or dimension-matched into \(\mathbb C^{125}\).
+The v13.27 six-qubit carrier is \(\mathbb C^{64}\), whereas the compatibility parent is \(\mathbb C^{125}\). No padding, reshaping, truncation, random embedding, or arbitrary isometry is permitted.
 
-An explicitly chosen demo source operator is a positive control for PGRL mathematics, not provenance evidence.
+An explicitly chosen demo source operator is a PGRL positive control, not provenance evidence.
 
-### Class D — Common-parent compression positive control
+### Class D — Common-parent sufficiency controls
 
-As an implementation control only, supply a deterministic noncentral
+As implementation controls only, supply deterministic noncentral
 
 \[
 A_{\rm ctrl}\in\mathrm{Herm}(125)
@@ -207,135 +266,124 @@ and verify
 P_{\rm ctrl}=L^\dagger A_{\rm ctrl}L
 \]
 
-is a valid noncentral support source and can be fed through the frozen v14.03 pipeline.
+is a valid noncentral support source and closes through the frozen v14.03 pipeline.
 
-The control should also verify parent/support gauge covariance and positive-projective descent.
-
-This control proves that **if** provenance supplies an appropriate parent-space class, the common-parent mechanism is sufficient. It does not claim Genesis selects \(A_{\rm ctrl}\).
-
-## 6. The key distinction: parent existence vs source selection
-
-The gate must not conflate these statements:
+Also construct a support-preserving parent tangent control
 
 \[
-\text{compatibility support has a parent quantum space}
+\delta T_{\rm ctrl}=L\,\delta X_{\rm ctrl}L^\dagger
 \]
 
-and
+and verify recovery of its projective support source class using the existing faithful-support PGRL tangent inverse.
 
-\[
-\text{provenance selects a source covector on that parent}.
-\]
+Both controls must be labeled
 
-The first statement is already true for the archived compatibility laboratory.
+`SUPPLIED_COMMON_PARENT_CONTROL_NOT_PROVENANCE_DERIVATION`.
 
-The second is the scientific question.
+They prove sufficiency of the common-parent mechanism, not that Genesis selects either control.
 
-Therefore the gate must separately report:
+## 6. Parent existence and source selection are separate statuses
+
+The gate must separately report:
 
 - `compatibility_parent_exists`;
+- `compatibility_parent_support_verified`;
 - `provenance_same_parent_candidate_count`;
-- `certified_parent_source_class_count`;
+- `certified_parent_source_covector_count`;
+- `certified_support_preserving_parent_tangent_count`;
+- `support_changing_parent_tangent_count`;
 - `unique_compressed_projective_class`.
 
-## 7. Compression equivalence is weaker than full parent-operator uniqueness
+This prevents the already-earned compatibility parent from being confused with the still-open provenance/source selection problem.
 
-v15.01 must not demand more than v14.03 needs.
+## 7. Cross-family requirement
 
-Two parent operators \(A_1,A_2\) may differ outside the archived support while satisfying
+The audit must run on both archived compatibility families `V_A` and `V_B`.
 
-\[
-L^\dagger A_1L
-\sim
-L^\dagger A_2L.
-\]
+A parent-source candidate may compress differently because the frozen supports differ, but its **construction rule and parent transformation law** must be the same frozen law. It may not use the downstream result of one family to choose the source for the other.
 
-Such operators are equivalent for the v14.03 consumer.
+A claimed common-parent derivation must either:
 
-Therefore a positive result requires uniqueness only of the **compressed positive-projective support class**, not uniqueness of the full \(125\times125\) parent operator.
-
-Conversely, if frozen provenance admits two lawful parent source constructions with
-
-\[
-[L^\dagger A_1L]_+
-\neq
-[L^\dagger A_2L]_+,
-\]
-
-then the source representation remains nonunique even though both constructions share the same parent.
+- apply lawfully to both frozen families; or
+- state an independently frozen family-conditioning variable that explains why the source object differs.
 
 ## 8. Prohibited constructions / anti-circularity rules
 
-The following are forbidden as scientific selectors:
+Forbidden scientific selectors include:
 
 - defining \(A_{\rm prov}=LP_{\rm desired}L^\dagger\) from the desired v14.03 source;
-- choosing \(A\) to maximize alignment with the v14.02/v14.03 dual ray;
-- using the first-contact boundary or dual normal to reconstruct the parent source;
+- choosing a parent source to maximize alignment with a v14.02/v14.03 dual ray;
+- reconstructing the parent source from first-contact geometry;
+- discarding a support-changing parent tangent without a frozen reason;
 - padding or reshaping the six-qubit demo into the 125-D compatibility parent;
 - vectorizing the 6-D Genesis field and declaring its coordinates to be quantum amplitudes;
-- SVD/PCA/random-isometry alignment between provenance and parent spaces;
-- selecting an embedding by ADM/Einstein residual, gravitational target, galaxy data, or any downstream physical fit;
+- SVD/PCA/random-isometry or arbitrary basis alignment between provenance and parent spaces;
+- treating equal dimension as identification;
+- selecting a parent map from ADM/Einstein residuals, gravitational targets, galaxy data, or any downstream physical fit;
 - using physical time or entropy as a primitive selector;
-- treating semantic labels (“Genesis,” “source,” “quantum”) as a typed map.
+- treating semantic labels as a typed map.
 
 The gate is target-blind.
 
-## 9. Primary adjudication outcomes
+## 9. Primary adjudication hierarchy
 
 ### Outcome 1 — `COMMON_PARENT_INDUCES_SOURCE_RAY`
 
-Use only if frozen structure supplies a provenance/source parent class whose compression through the already-earned support is projectively unique and nontrivial:
+Use only if frozen provenance/source structure supplies, on the same compatibility parent, either:
 
-\[
-\text{provenance}
-\to[A_{\rm prov}]_+
-\xrightarrow{C_L}
-[P]_+.
-\]
+- a parent source class whose compression is projectively unique and noncentral; or
+- a certified support-preserving parent source tangent whose faithful-support PGRL inverse is projectively unique and nontrivial.
 
 Required conditions:
 
-- compatibility parent and \(L\) are verified;
-- provenance/source object lives on the same parent or reaches it through an already-frozen natural map;
-- no arbitrary new identification is introduced;
-- compressed support class is noncentral / PGRL-active;
-- compressed class is unique up to \(P\sim aP+bI\);
+- the compatibility parent/support is verified;
+- sourcehood is independently frozen;
+- no arbitrary representation link is introduced;
+- the descended \([P]_+\) is noncentral/PGRL-active;
+- the descended class is unique up to \(P\sim aP+bI\);
 - parent/support covariance closes;
+- the construction works lawfully across the frozen family audit;
 - no target fitting is used.
-
-A result here would connect provenance to the already-certified v14.03 chain.
 
 ### Outcome 2 — `COMMON_PARENT_SOURCE_OPERATOR_NONUNIQUE`
 
-Use if provenance and the compatibility support genuinely share an already-earned parent representation, but frozen source/provenance structure allows multiple inequivalent compressed support source classes.
+Use if provenance and compatibility genuinely share an already-earned parent representation, but multiple lawful frozen parent-source constructions descend to inequivalent support projective classes.
 
-This localizes the missing principle to **parent-source selection**, not to a cross-space intertwiner.
+This localizes the missing principle to **parent-source selection**, not cross-space representation.
 
 ### Outcome 3 — `NO_COMMON_PARENT_REPRESENTATION`
 
-Use if the audited frozen provenance carriers do not share the archived \(125\)-D compatibility parent and no already-earned natural parent map connects them to it.
+Use if the audited frozen provenance carriers do not share the exact archived compatibility parent and no already-earned natural parent map connects them to it.
 
-This preserves v14.04's representation-link obstruction.
+This preserves the v14.04 representation-link obstruction.
 
 ### Verification stop — `UNRESOLVED_COMMON_PARENT_AUDIT`
 
-Use only if a required archive artifact is missing, malformed, or the implementation cannot adjudicate a declared frozen test. It is not a scientific result.
+Use only for missing/malformed required artifacts or an implementation inability to adjudicate a frozen test. It is not a scientific result.
 
-## 10. Secondary typed status
+## 10. Secondary typed statuses
 
-Even if the primary outcome is `NO_COMMON_PARENT_REPRESENTATION`, report separately whether the compatibility parent itself is verified:
+Always report the compatibility-side fact independently:
 
 `COMPATIBILITY_PARENT_SUPPORT_VERIFIED`
 
-with
+if
 
 \[
 T=LXL^\dagger,
 \qquad
-L^\dagger L=I.
+L^\dagger L=I,
+\qquad
+\Pi^2=\Pi=\Pi^\dagger
 \]
 
-This prevents a negative provenance result from obscuring the fact that the 25-D support already has a real parent quantum representation.
+close under the frozen tolerances.
+
+Other allowed secondary statuses include:
+
+- `NO_PROVENANCE_SOURCE_OBJECT_ON_PARENT`;
+- `SUPPORT_CHANGING_PARENT_TANGENT_NOT_V1403_COMPATIBLE`;
+- `SUPPLIED_COMMON_PARENT_CONTROL_NOT_PROVENANCE_DERIVATION`.
 
 ## 11. Planned executable controls
 
@@ -344,14 +392,15 @@ This prevents a negative provenance result from obscuring the fact that the 25-D
 For `V_A` and `V_B` at frozen `FIXED_T`:
 
 - load \(L,X_0,T\);
+- verify dimensions \(125\leftarrow25\);
 - verify \(L^\dagger L=I_{25}\);
 - verify \(T=LX_0L^\dagger\);
-- verify dimensions \(125\leftarrow25\);
-- verify support projector \(\Pi=LL^\dagger\) is Hermitian/idempotent.
+- verify \(\Pi=LL^\dagger\) is Hermitian and idempotent;
+- verify \(\Pi T\Pi=T\).
 
-### 11.2 Compression covariance control
+### 11.2 Compression covariance
 
-Generate deterministic parent unitary \(U\) and support unitary \(V\), set
+For deterministic parent unitary \(U\) and support unitary \(V\), set
 
 \[
 L'=ULV^\dagger,
@@ -364,9 +413,9 @@ and verify
 L'^\dagger A'L'=V(L^\dagger A L)V^\dagger.
 \]
 
-### 11.3 Positive-projective descent control
+### 11.3 Positive-projective descent
 
-For frozen positive scales and identity shifts verify
+For frozen positive scales and scalar shifts verify
 
 \[
 C_L(aA+bI_{125})
@@ -377,32 +426,40 @@ at machine precision.
 
 ### 11.4 Parent-source positive control
 
-Construct deterministic noncentral parent controls without using downstream target objects. Compress each through the frozen \(L\), verify noncentrality, and pass the result through v14.03.
+Construct deterministic noncentral parent controls without downstream target objects, compress through frozen \(L\), and pass through the frozen v14.03 pipeline.
 
-Require at least one control to produce:
+Require at least one control per archived family to produce:
 
 - nonzero hidden PGRL tangent;
 - simple radial first contact;
 - rank-1 v14.02 dual ray.
 
-The control is labeled `SUPPLIED_PARENT_SOURCE_NOT_PROVENANCE_DERIVATION`.
+### 11.5 Parent-tangent positive control
 
-### 11.5 Archive parent inventory
+Construct a deterministic support trace-zero tangent \(\delta X\), lift it by
 
-Machine-readable inventory should include at least:
+\[
+\delta T=L\delta X L^\dagger,
+\]
+
+then recover \(\delta X\) and its projective PGRL source class. Check reconstruction and projective invariance.
+
+### 11.6 Archive parent inventory
+
+Machine-readable inventory must include at least:
 
 - compatibility tripartite parent;
 - Genesis ledger/scalar provenance;
 - 6-D Genesis/pruning field;
 - retained graph source/current;
-- v13.27 six-qubit source demonstration;
-- any additional exact-match parent candidates discovered before implementation freeze.
+- v13.27 six-qubit quantum-source demonstration;
+- any additional exact-match parent candidate discovered before implementation freeze.
 
-For each record: path, hash, carrier dimension/type, source status, parent-map status, and scientific adjudication.
+For each record: path, hash, carrier type/dimension/factorization, transformation law, source status, common-parent status, parent-map status, tangent status, and adjudication.
 
 ## 12. Strongest allowed positive interpretation
 
-If `COMMON_PARENT_INDUCES_SOURCE_RAY` is certified, the earned upstream chain becomes
+If `COMMON_PARENT_INDUCES_SOURCE_RAY` is certified, the earned chain becomes either
 
 \[
 \boxed{
@@ -415,27 +472,36 @@ If `COMMON_PARENT_INDUCES_SOURCE_RAY` is certified, the earned upstream chain be
 }
 \]
 
-with the middle compression map exact, target-blind, projective, and covariant.
-
-This would be a major architectural breakthrough because the missing v14.04 cross-space representation link would be replaced by a common-parent descent already present in the frozen quantum structure.
-
-It would still **not** derive gravity, stress-energy, a source-to-coframe law, spacetime, Einstein equations, or Pillar 3 closure.
-
-## 13. Strongest allowed negative interpretation
-
-If `NO_COMMON_PARENT_REPRESENTATION` is certified, the result is:
+or, for a frozen support-preserving source tangent,
 
 \[
 \boxed{
-\text{the archived compatibility support has an explicit quantum parent,}
-\quad
-\text{but frozen provenance/source carriers are not represented on that same parent.}
+\text{provenance}
+\to\delta T_{\rm prov}
+\to\delta X
+\to[P]_+
+\to X_*
+\to[g].
 }
 \]
 
-Then v14.04's missing representation link is not an artifact of forgetting the support parent. A genuinely new principle or newly discovered frozen map would still be required.
+This would be a major architectural breakthrough because the v14.04 direct representation gap would be replaced by common-parent descent already present in the frozen quantum structure.
 
-If `COMMON_PARENT_SOURCE_OPERATOR_NONUNIQUE` is certified instead, the missing structure is narrower:
+It would still **not** derive gravity, stress-energy, a source-to-coframe law, spacetime, Einstein equations, or Pillar 3 closure.
+
+## 13. Strongest allowed negative interpretations
+
+If `NO_COMMON_PARENT_REPRESENTATION` is certified:
+
+\[
+\boxed{
+\text{the compatibility support has an explicit quantum parent, but frozen provenance/source carriers are not represented on that same parent.}
+}
+\]
+
+Then v14.04's missing representation link is not an artifact of forgetting the support parent.
+
+If `COMMON_PARENT_SOURCE_OPERATOR_NONUNIQUE` is certified:
 
 \[
 \boxed{
@@ -443,54 +509,46 @@ If `COMMON_PARENT_SOURCE_OPERATOR_NONUNIQUE` is certified instead, the missing s
 }
 \]
 
+That is narrower and would identify parent-source selection as the remaining missing law.
+
 ## 14. Relationship to prior gates
 
-### v14.04
+- **v14.04 preserved:** v15.01 tests a possible common-parent escape from an arbitrary direct intertwiner; it does not assume success.
+- **v14.03 preserved:** once \([P]_+\) is supplied, hidden tangent, radial first contact, and local dual ray remain certified.
+- **v14.02 preserved:** specified smooth boundary points carry objective-independent intrinsic dual rays.
+- **v14.01 preserved:** arbitrary weighted source-to-defect maps remain nonunique.
+- **v13.26 preserved:** absolute source normalization remains underived.
+- **v13.28 preserved:** absolute source-to-geometry coupling remains underived.
 
-Preserved. v15.01 tests a possible way to eliminate the need for an arbitrary direct intertwiner; it does not assume that elimination succeeds.
-
-### v14.03
-
-Preserved. Once a positive projective support source \([P]_+\) is supplied, the hidden tangent, radial first contact and local dual ray remain certified.
-
-### v14.02
-
-Preserved. The specified smooth boundary point still has its objective-independent intrinsic local dual ray.
-
-### v14.01
-
-Preserved. Arbitrary weighted source-to-defect maps remain nonunique.
-
-### v13.26 / v13.28
-
-Preserved. Absolute source normalization and absolute source-to-geometry coupling remain underived. Common-parent compression is projective and does not attempt to fix either magnitude.
+Common-parent descent is projective and cannot be used to reopen absolute-coupling claims.
 
 ## 15. Stop rule
 
-If the archive contains no certified provenance/source class on the compatibility parent and no frozen natural map into that parent, stop with
+If no frozen provenance/source class or lawful support-preserving provenance source tangent exists on the compatibility parent, and no already-earned natural map connects a provenance carrier to that parent, stop with
 
 `NO_COMMON_PARENT_REPRESENTATION`.
 
 Do not manufacture a parent source by lifting the desired \([P]\) through \(L\).
 
-If the parent is shared but multiple inequivalent compressed source classes survive, stop with
+If a common parent is certified but multiple inequivalent descended source classes survive, stop with
 
 `COMMON_PARENT_SOURCE_OPERATOR_NONUNIQUE`.
 
-A subsequent gate may proceed only if:
+Continuation then requires one of:
 
-1. a previously unexamined frozen artifact supplies the missing parent-source selection;
-2. a genuinely new representation/source principle is explicitly introduced as **NEW ASSUMPTION**; or
-3. an independently motivated information-theoretic construction canonically generates the parent source without using the desired downstream result.
+1. a previously unexamined frozen artifact that supplies the missing parent-source selection;
+2. an explicitly labeled **NEW ASSUMPTION** introducing a representation/source principle; or
+3. an independently motivated information-theoretic construction that canonically generates the parent source without consulting downstream gravity/geometry targets.
 
 ## 16. Breakthrough criterion
 
 Declare a scientific breakthrough only if all of the following are certified:
 
 1. provenance/source structure is genuinely represented on the same frozen quantum parent as the compatibility support;
-2. the parent source class is independently earned rather than supplied for the control;
-3. compression through frozen \(L\) gives a unique noncentral positive-projective support source ray;
-4. the resulting \([P]\) closes through the already-certified v14.03 chain;
-5. all prior claim boundaries remain intact.
+2. the parent source class or parent source tangent is independently earned rather than supplied for a control;
+3. descent through the frozen support gives a unique noncentral positive-projective \([P]_+\);
+4. that \([P]_+\) closes through the already-certified v14.03 chain;
+5. covariance/projective controls close for both archived families;
+6. all previous claim boundaries remain intact.
 
 Anything weaker is a structural localization result, not a gravity derivation.
