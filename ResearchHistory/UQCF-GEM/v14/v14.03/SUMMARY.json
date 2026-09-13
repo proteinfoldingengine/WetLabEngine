@@ -1,0 +1,79 @@
+{
+  "version": "v14.03",
+  "date": "2026-09-12",
+  "title": "Projective Source-Ray / Hidden First-Contact Selection Gate",
+  "gate_outcome": "PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY",
+  "scientific_breakthrough": false,
+  "Pillar_3": "OPEN",
+  "claim_scope": "supplied projective support-space PGRL source rays mapped through their full-state hidden tangent component to radial compatibility-boundary contacts and v14.02 local dual rays",
+  "construction": {
+    "archived_lab_path": "Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py",
+    "v1402_dependency": "ResearchHistory/UQCF-GEM/v14/v14.02/dual_normal_audit.py",
+    "uses_full_support_state": true,
+    "uses_full_hidden_kernel": true,
+    "uses_visualization_section": false,
+    "boundary_is_hidden_tangent_radial_contact_not_pgrl_crossing": true,
+    "pgrl_tangent_implementation": "scipy.linalg.expm_frechet"
+  },
+  "primary_sample_count": 128,
+  "zero_hidden_source_count": 0,
+  "nonzero_hidden_contact_count": 128,
+  "simple_ray_contact_count": 128,
+  "unresolved_numerical_count": 0,
+  "nonunique_contact_count": 0,
+  "survey": {
+    "V_A": {
+      "sample_count": 64,
+      "support_dimension": 25,
+      "hidden_dimension": 315,
+      "zero_hidden_source_count": 0,
+      "nonzero_hidden_contact_count": 64,
+      "simple_ray_contact_count": 64,
+      "source_sha256": "60d17efc41ee4416313771b1539e45502dd3230f272329a5a8ab36d816a5421b"
+    },
+    "V_B": {
+      "sample_count": 64,
+      "support_dimension": 25,
+      "hidden_dimension": 311,
+      "zero_hidden_source_count": 0,
+      "nonzero_hidden_contact_count": 64,
+      "simple_ray_contact_count": 64,
+      "source_sha256": "5e1aadeca68ad69350500416e99fe3ee06f42c827eb07ee41ebbe74ffe6571eb"
+    }
+  },
+  "telemetry": {
+    "max_tangent_hermiticity_residual": 0.0,
+    "max_tangent_trace_abs": 9.64939933512099e-18,
+    "max_finite_difference_relative_error": 1.6582477388778675e-10,
+    "max_base_boundary_formula_relative_error": 4.5102810375396984e-17,
+    "max_projective_tangent_scaling_error": 4.789125308265857e-16,
+    "max_projective_hidden_direction_drift": 6.163108690215363e-14,
+    "max_projective_boundary_relative_drift": 2.0131832593298626e-15,
+    "max_projective_dual_ray_drift": 6.661338147750939e-16,
+    "max_support_coordinate_covariance_error": 3.8799143876726434e-13,
+    "max_boundary_psd_residual": 8.164027539109826e-17,
+    "max_hidden_projection_idempotence_error": 1.547796903571955e-17
+  },
+  "controls": {
+    "identity_source_control": {
+      "classification": "ZERO_PGRL_TANGENT",
+      "tangent_norm": 3.210776456982245e-17
+    },
+    "hidden_active_control": {
+      "classification": "NONZERO_HIDDEN_COMPONENT",
+      "hidden_norm": 0.9999999999999994,
+      "tangent_target_error": 2.370471896426677e-15
+    },
+    "visible_only_tangent_control": {
+      "classification": "ZERO_HIDDEN_SOURCE_COMPONENT",
+      "hidden_norm": 1.499385732841713e-19,
+      "tangent_target_error": 3.145923743132135e-16
+    }
+  },
+  "provenance_source_ray_status": "PROVENANCE_SOURCE_TYPE_MISMATCH",
+  "provenance_audit": {
+    "random_survey_is_provenance_evidence": false,
+    "reason": "Frozen Genesis/provenance/source-grading objects certify origin, retained amount/flow, and compatibility but do not return the 25-dimensional support-coefficient Hermitian operator ray required by this archived compatibility fiber; no certified natural map between those typed spaces is present."
+  },
+  "interpretation": "For the two frozen archived compatibility families and the 128 predeclared supplied source rays, the positive projective source class selects a unique hidden first-order tangent ray, its hidden-tangent radial first-contact point, and the v14.02 objective-independent local dual ray. This is conditional on supplying the support-space source ray and does not derive its provenance origin, an absolute source magnitude, gravitational coupling, spacetime, stress-energy, or Einstein equations."
+}
