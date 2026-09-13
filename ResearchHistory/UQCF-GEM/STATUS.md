@@ -1,8 +1,8 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.27 — Projective Coupled-Source / Direct `kappa T` Bridge Gate  
-**Next gate:** v13.28 — RGCL Origin / Source-to-Coframe Variational Pairing Gate
+**Latest completed gate:** v13.28 — RGCL Origin / Source-to-Coframe Variational Pairing Gate  
+**Source-to-GR coupling branch:** STOPPED PENDING NEW AXIOM OR INDEPENDENT CALIBRATION
 
 ## Current scientific picture
 
@@ -12,209 +12,123 @@ The generic retained geometry remains most honestly organized as a **metric-affi
 Gamma = Gamma_LC + K(T) + L(Q)
 ```
 
-The post-QRSL / post-RSCL program now separates the source-to-GR bridge into three distinct questions:
+The source bridge is now separated into three closed/open layers:
 
 ```text
 retained source/current
-→ source origin, balance, support, current selection
+→ source origin, balance, support, conditional current selection
+→ PRESERVED
 
 absolute observer source split
 → (T_obs,kappa_obs)
 → blocked by RSCL common-scale gauge
 
 coupled geometric source
-→ Sigma_obs = kappa_obs T_obs
-→ projective source ray survives
-→ absolute coupled-source magnitude and full tensor completion blocked by missing RGCL
+→ projective ray [Sigma_obs] survives
+→ v13.28 audits the frozen source→geometry pairing candidates
+→ all four named candidates OBSTRUCTED
+→ absolute coupling requires new axiom or independent calibration
 ```
 
-The controlled observer ADM/Einstein correspondence remains a heldout correspondence harness for a supplied source package. It is not permitted to select the missing source coupling.
+The controlled observer ADM/Einstein correspondence remains a heldout external correspondence harness for a supplied source package. It is not permitted to select the missing coupling.
 
-## Latest result — v13.27
+## Latest result — v13.28
 
-**A direct target-blind `Sigma_obs = kappa_obs T_obs` bridge is not derived from the current frozen ontology.**
+**The four frozen ontology-native source→geometry pairing classes do not determine a nonzero absolute coupled-source magnitude.**
 
-v13.25-v13.26 removed one false requirement: the theory does not need to separate `T_obs` and `kappa_obs` if the field equation only uses their product.
-
-But quotienting that unit gauge exposes a second ambiguity:
+Audited candidates:
 
 ```text
-Sigma_obs -> c Sigma_obs,  c>0.
+Genesis/source grade + retained measure/support    OBSTRUCTED
+PGRL/BKM source-response pairing                   OBSTRUCTED
+RESA solder/coframe structure                      OBSTRUCTED
+QMAR response/covariance identities                OBSTRUCTED
 ```
 
-This rescales the coupled source itself and is therefore a missing retained-to-geometry coupling strength, not merely a choice of stress-energy units.
+### Scale-weight pairing obstruction
 
-### Projective nonuniqueness theorem
-
-Every currently frozen retained-only structural condition on the coupled-source side is homogeneous:
-
-- source-current balance;
-- frame covariance;
-- support under positive scaling;
-- null-source behavior;
-- first-order QMAR source linearity.
-
-Therefore, if one nonzero candidate `Sigma_1` passes those gates, then
-
-```text
-Sigma_c = c Sigma_1
-```
-
-passes the same gates for every positive `c` unless an additional target-independent geometric calibration fixes `c`.
-
-v13.26 established that the frozen ontology contains no such calibration.
-
-Thus the frozen structure can select at most a ray `[Sigma_obs]`, not a unique coupled-source magnitude.
-
-### Fresh projective source controls
-
-Across 64 generic current realizations on a fixed connected 5-node / 7-edge incidence architecture and positive scales
-
-```text
-c = {0.1,0.2,0.5,1,2,5,10},
-```
-
-fresh controls gave:
-
-```text
-max source-balance residual              = 8.748e-15
-max normalized source-ray direction drift= 3.760e-16
-support pattern                           = preserved exactly
-```
-
-So balance, support, and source direction do not determine the magnitude of the coupled source.
-
-### QMAR does not calibrate `Sigma_obs`
-
-QMAR is first-order linear in the source generator. Combined with the exact PGRL gauge
+The exact PGRL reparameterization
 
 ```text
 P -> a P
-t -> t/a,
+lambda -> lambda/a
 ```
 
-one has
+leaves the finite state path unchanged.
+
+At one fixed state/tangent point, the audited geometry-side objects have source-scale weight zero while first-order source/current/QMAR objects have weight one.
+
+Therefore every source-linear pairing in the audited closure class satisfies
 
 ```text
-(dt/a) QMAR(aP) = dt QMAR(P).
+F(G0,aS) = a F(G0,S).
 ```
 
-Fresh 64-trial generic linear-response controls gave:
+It remains source-extensive but inherits the arbitrary positive source normalization.
+
+Normalizing or taking equal-weight ratios removes the scale but then leaves only projective/ray information. A nonzero source-extensive and source-parameterization-independent absolute coupling requires a compensating calibrated weight `-1` object or an equivalent new law.
+
+No such object is present in the four frozen candidate classes.
+
+### Fresh certified controls
+
+Deterministic audit: 256 trials, source scales `{0.2,0.5,2,5,11}`.
 
 ```text
-max reparameterized increment mismatch   = 3.598e-15
-max response scaling identity error       = 3.648e-14
-max normalized response-direction drift  = 3.652e-16
+max relative linear-scaling error                = 1.297966683051917e-15
+max normalized direction drift                   = 1.009936878496612e-15
+max relative BKM quadratic scaling error         = 9.652568951447787e-16
+max inverse-weight positive-control error         = 1.2662957816923526e-15
+minimum baseline candidate norm                  = 0.27598617345303345
 ```
 
-QMAR therefore supplies source-response direction and a response path conditional on the source parameterization. It does not fix the universal retained-to-geometric coupling amplitude.
+The positive control explicitly supplies a weight `-1` calibration and cancels the source scale to machine precision. This shows the mathematical repair is precise, but that repair is added structure rather than something currently derived.
 
-Equating a QMAR norm with `|Sigma_obs|` would add a new constitutive law.
+## Program consequence
 
-### Full stress-tensor completion remains open
-
-Even if coupled energy and momentum projections were known, a full observer stress tensor has a spatial stress block:
+The v13.28 gate outcome is:
 
 ```text
-Sigma = [[sigma_rho, sigma_j^T],
-         [sigma_j,   Sigma_S  ]].
+REQUIRES_NEW_AXIOM
 ```
 
-A fresh control produced two symmetric tensors with identical coupled `rho,j` projections but:
+This is stronger than leaving another unnamed bridge open. The frozen candidate search is closed.
 
-```text
-projection mismatch             = 0
-full tensor Frobenius distance  = 0.770672344821
-```
+The source-to-GR coupling branch may restart only after one of the following is explicitly supplied and independently justified:
 
-Therefore scalar/current source data do not determine the full `kappa T` tensor.
+1. a new source→geometry/coframe axiom; or
+2. an independently calibrated physical cross-domain observable.
 
-This does not invalidate a deliberately limited Hamiltonian/momentum-constraint correspondence that uses only the scalar/vector projections. It blocks promotion of that limited package to full physical stress-energy.
-
-### Positive calibration control
-
-One independent target-blind calibrated equation
-
-```text
-z = q^T Sigma_obs
-```
-
-fixes the ray magnitude immediately.
-
-For a synthetic true coupling `c=2.7`, the positive control recovered
-
-```text
-c = 2.6999999999999993
-absolute error = 8.882e-16.
-```
-
-The missing content is therefore precise: one lawful cross-domain geometric calibration or an independently derived source-to-coframe coupling law is sufficient.
-
-## New missing law
-
-**RGCL — Retained Geometric Coupling Law**
-
-RGCL must derive, before any ADM/Einstein residual is consulted:
-
-```text
-retained / PGRL / source-current data
-->
-Sigma_obs
-```
-
-including:
-
-1. the declared observer/geometric source tensor or constraint-source type;
-2. source-to-coframe/directional embedding;
-3. nonzero universal coupling magnitude;
-4. covariance and source/null behavior.
-
-A source-to-coframe variational pairing could supply RGCL if it is already forced by the retained ontology. An independently calibrated physical source observable could also supply it. Fitting the coupling against an Einstein residual cannot.
+A freely chosen dimensionful multiplier counts as inserted calibration, not derivation. Fitting it to an Einstein/ADM residual remains forbidden.
 
 ## Preserved results
 
-- finite-state QMAR: **PRESERVED**;
-- exact BKM trace/Weyl integrability: **PRESERVED**;
-- metric-affine parent kinematics: **PRESERVED**;
-- response-selected retained current/Pillar 2: **PRESERVED CONDITIONAL**;
-- PGRL/QMAR source-response direction: **PRESERVED**;
-- QRSL no-go and RATS seal: **PRESERVED**;
-- RSCL no-go: **PRESERVED**;
-- projective retained source/coupled-source ray: **PRESERVED**;
-- internal represented Path-A ADM-like assembly: **PRESERVED**;
-- controlled vacuum and source-coupled weak ADM/Einstein correspondence: **PRESERVED AS CONTROLLED EXTERNAL CORRESPONDENCE**.
+- Pillar 1 — Global Atlas Closure: **COMPLETE**.
+- Pillar 2 — Retained Curvature / Source-Current Compatibility: **CLOSED CONDITIONAL**.
+- finite-state QMAR: **PRESERVED**.
+- exact BKM trace/Weyl integrability: **PRESERVED**.
+- metric-affine parent kinematics: **PRESERVED**.
+- response-selected retained current: **PRESERVED CONDITIONAL**.
+- QRSL no-go and RATS seal: **PRESERVED**.
+- RSCL no-go: **PRESERVED**.
+- projective retained/coupled-source ray `[Sigma]`: **PRESERVED**.
+- controlled weak ADM/Einstein correspondence: **PRESERVED AS EXTERNAL CORRESPONDENCE ONLY**.
 
 ## Open boundaries
 
-- MEA/BIFL metric selection remains explicit/conditional.
-- Source-to-solder/coframe response is not derived.
-- HCPR remains irreducible relative to the frozen ledger.
-- Geometry-only autonomous evolution remains obstructed by hidden completion.
-- QRSL is irreducible relative to the current frozen ontology.
-- RATS remains sealed.
-- Ontology-native quantum continuum refinement remains unavailable.
-- RSCL is irreducible relative to the current frozen ontology.
-- Direct target-blind `Sigma_obs` is not derived.
-- Full coupled stress-tensor completion is not derived.
-- RGCL is missing.
-- Physical stress-energy coupling remains open.
-- True third-party validation remains open.
-- Full physical Einstein equations are not derived.
+- source-to-solder/coframe response is not derived;
+- HCPR remains irreducible relative to the frozen ledger;
+- geometry-only autonomous response remains obstructed by hidden completion;
+- ontology-native quantum continuum refinement remains unavailable;
+- physical stress-energy coupling remains open;
+- true third-party physical validation remains open;
+- full physical Einstein equations are not derived;
 - Pillar 3 remains **OPEN**.
 
-## Next gate — v13.28
+## Next lawful move
 
-**RGCL Origin / Source-to-Coframe Variational Pairing Gate**
+There is **no automatic v13.29 continuation of this source-to-GR coupling branch**.
 
-Audit only structures already frozen upstream:
+A new gate is lawful only if it begins from one explicitly introduced and independently motivated new axiom, or from an independently calibrated physical observable. Otherwise the branch remains stopped.
 
-- Genesis/source grade paired with retained measure/support;
-- PGRL/BKM source-response pairing;
-- RESA solder/coframe structure;
-- QMAR metric-affine response and exact covariance identities.
-
-Ask whether any of them already forces a canonical target-blind source-to-coframe pairing or equivalent intrinsic construction that fixes both the coupled-source type and magnitude.
-
-Do not introduce an Einstein-targeted action or fit a coupling constant to the ADM/Einstein residual.
-
-If no frozen candidate selects RGCL, freeze RGCL as irreducible relative to the current ontology and stop this source-to-GR coupling branch until one explicit new axiom or independently calibrated physical observable is introduced.
+Other UQCF-GEM research branches may continue independently; this stop applies specifically to deriving the missing absolute source→geometry coupling from the current frozen ontology.
