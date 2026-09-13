@@ -99,15 +99,19 @@ python CHECKER.py
 - `MATH_AND_PHYSICS.md` — equations and executed values.
 - `CLAIM_BOUNDARIES.md` — what the demo does and does not establish.
 - `REVIEW.md` — archived methods/claims peer review recommending revision and rescoping.
-- `AUTHOR_RESPONSE.md` — author response, homogeneity lemma, answers to all 24 reviewer questions, and revision commitments.
+- `AUTHOR_RESPONSE.md` — first author response, homogeneity lemma, answers to all 24 reviewer questions, and revision commitments.
+- `REVIEW_2.md` — second referee round evaluating whether the first response has actually been executed in the public artifact.
+- `AUTHOR_RESPONSE_2.md` — second author response clarifying the fixed-state obstruction, stronger failure criterion, and binding minimum revision patch.
 - `X_UPDATE.md` — public update copy with the original demo claim boundary.
 - `EXPECTED_RESULTS.json` — frozen executed result used by the checker.
 
 ## Peer-review status
 
-The archived review accepts the artifact as a reproducible finite-model laboratory but recommends that any journal-facing version be rescoped around the **projective source-coupling obstruction**, not presented as a gravity derivation. The author response accepts that rescoping, treats the DeWitt controls as implementation identities rather than emergent ADM evidence, and freezes explicit failure criteria for the next source-to-geometry coupling gate.
+The first review accepts the artifact as a reproducible finite-model laboratory but recommends that any journal-facing version be rescoped around the **projective source-coupling obstruction**, not presented as a gravity derivation. The first author response accepts that rescoping, treats the DeWitt controls as implementation identities rather than emergent ADM evidence, and freezes explicit failure criteria for the next source-to-geometry coupling gate.
 
-No executable scientific result or fingerprint is changed by archiving the review and response.
+The second review accepts the response letter but explicitly **does not yet accept the artifact as revised**. It identifies the current README/dashboard language as stale relative to the author response and requires a minimum public rescope plus two inexpensive audits (raw unconstrained polar determinant and pre-clip holonomy) before the demo should be treated as a journal-facing methods note. `AUTHOR_RESPONSE_2.md` accepts that disposition and makes the minimum patch binding.
+
+No executable scientific result or fingerprint is changed by archiving either review round or response.
 
 ## Research conclusion
 
