@@ -1,0 +1,62 @@
+{
+  "version": "v13.28",
+  "title": "RGCL Origin / Source-to-Coframe Variational Pairing Gate",
+  "date": "2026-09-12",
+  "adjudication": "REQUIRES_NEW_AXIOM",
+  "classification": "MAJOR_SCALE_WEIGHT_PAIRING_NO_GO_AND_SOURCE_TO_GR_BRANCH_STOP",
+  "scientific_breakthrough": false,
+  "scope": "current frozen ontology and the four named candidate pairing classes only",
+  "theorem": {
+    "name": "Scale-Weight Pairing Obstruction",
+    "statement": "Within the audited frozen candidate class, weight-zero geometry objects paired with nonzero weight-one source objects remain weight one. Making the result invariant under the exact positive source reparameterization removes amplitude and leaves only projective information. A nonzero source-extensive, parameterization-independent absolute coupling therefore requires an independently calibrated negative-weight object or equivalent new law.",
+    "not_claimed": "This is not a theorem that no deeper nonlinear ontology can generate a coupling."
+  },
+  "candidate_verdicts": {
+    "genesis_measure_support": "OBSTRUCTED",
+    "pgrl_bkm": "OBSTRUCTED",
+    "resa_solder_coframe": "OBSTRUCTED",
+    "qmar_response_covariance": "OBSTRUCTED"
+  },
+  "candidate_reasons": {
+    "genesis_measure_support": "Retained grade and measure/support can localize or weight source amount but do not supply a unique coframe/tensor embedding or a calibrated retained-to-geometry conversion factor.",
+    "pgrl_bkm": "At fixed state BKM is source-scale weight zero while tangent duals/norms inherit source amplitude; normalization removes amplitude and leaves only projective data.",
+    "resa_solder_coframe": "A supplied solder can conditionally provide a type map but does not fix magnitude, and v13.11 already proves the same quantum response admits nonunique solder/coframe lifts.",
+    "qmar_response_covariance": "QMAR is covariant but source-linear; covariance and exact trace identities constrain form, not the absolute coefficient, and visible geometry is not an autonomous source state."
+  },
+  "fresh_controls": {
+    "seed": 1328,
+    "trials": 256,
+    "scales": [0.2, 0.5, 2.0, 5.0, 11.0],
+    "candidate_count": 4,
+    "max_relative_linear_scaling_error": 1.297966683051917e-15,
+    "max_normalized_direction_drift": 1.009936878496612e-15,
+    "max_relative_bkm_quadratic_scaling_error": 9.652568951447787e-16,
+    "max_relative_inverse_weight_positive_control_error": 1.2662957816923526e-15,
+    "minimum_baseline_candidate_norm": 0.27598617345303345
+  },
+  "positive_control": {
+    "construction": "Supply an explicit inverse-weight calibration g(a)=g0/a.",
+    "result": "The weight-one candidate becomes invariant to machine precision.",
+    "interpretation": "A compensating calibration is sufficient, but it is not present in the frozen ontology and therefore would be added structure."
+  },
+  "preserved": [
+    "finite-state QMAR",
+    "BKM trace/Weyl exactness",
+    "projective coupled-source ray",
+    "source-current balance and conditional current selection",
+    "metric-affine finite kinematics",
+    "controlled external ADM/Einstein correspondence as a heldout harness"
+  ],
+  "not_derived": [
+    "canonical source-to-solder/coframe law",
+    "absolute coupled-source magnitude",
+    "physical stress-energy coupling",
+    "physical Einstein equations"
+  ],
+  "branch_status": "STOPPED_PENDING_NEW_AXIOM_OR_INDEPENDENT_CALIBRATION",
+  "allowed_restart_conditions": [
+    "one explicit new source-to-geometry axiom with independent motivation",
+    "one independently calibrated physical cross-domain observable"
+  ],
+  "Pillar_3": "OPEN"
+}
