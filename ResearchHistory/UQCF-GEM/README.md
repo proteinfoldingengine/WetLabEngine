@@ -9,7 +9,7 @@ This directory is the canonical Git-tracked history for the active UQCF-GEM / Re
 - Do not force Einstein/ADM structure into the pre-time theory.
 - Preserve exact claim boundaries: theorem, executed computation, interpretation, and unresolved physical claim are distinct.
 - Do not replace failed native bridges with fitted/projection laws unless explicitly marked as new assumptions.
-- Pillar 3 remains open until a lawful Einstein/ADM correspondence is established.
+- Pillar 3 remains open until a lawful physical correspondence is established.
 
 ## Current high-level stack
 
@@ -22,12 +22,12 @@ pre-time quantum relations / global compatibility
     -> BKM score-solder metric channel (conditional metric selection)
     -> generic metric-affine parent geometry
        Gamma = Gamma_LC + K(T) + L(Q)
-    -> special Q=0, T=0 Levi-Civita sector (conditional, not generically source-invariant)
-    -> represented Path-A q,pi,constraint correspondence program
     -> retained source/current bridge
        absolute (T_obs,kappa_obs) split blocked by RSCL
-       projective source ray preserved
-       direct coupled source Sigma_obs=kappa_obs T_obs blocked by missing target-blind coupling law
+       projective source ray [Sigma] preserved
+       frozen source->geometry pairing classes audited in v13.28
+       all four named candidates obstructed for absolute coupling
+       source-to-GR coupling branch stopped pending new axiom or independent calibration
 ```
 
 ## Current Pillar status
@@ -72,7 +72,8 @@ Tracked gates:
 - [v13.24](v13/v13.24/) — post-QRSL dependency reassessment; finite/QMAR/Path-A stack preserved.
 - [v13.25](v13/v13.25/) — retained source-ledger bridge blocked by exact common source-normalization degeneracy; RSCL isolated.
 - [v13.26](v13/v13.26/) — RSCL irreducible relative to the frozen ontology; absolute-source-calibration branch stop.
-- [v13.27](v13/v13.27/) — direct `Sigma_obs=kappa_obs T_obs` not derived; projective source ray survives but geometric coupling magnitude/tensor completion require additional structure.
+- [v13.27](v13/v13.27/) — direct `Sigma_obs=kappa_obs T_obs` not derived; projective source ray survives but absolute coupled-source magnitude remains undetermined.
+- [v13.28](v13/v13.28/) — all four frozen source→geometry pairing classes obstructed for an absolute coupling; scale-weight pairing no-go closed for the audited candidate class; outcome `REQUIRES_NEW_AXIOM` and branch stop.
 
 ## Companion finite-model path / obstruction artifact
 
@@ -82,10 +83,28 @@ Tracked gates:
 - The canonical loop audit finds `9` pi-angle events with no clip event above `1e-12`; maximum clip excess is `4.440892098500626e-16`.
 - Canonical portable scientific fingerprint: `f632e656cc2ea1fc5d61b395080d7259ecfed21c9bd8379626da49f44d6c38fc`.
 - Reference raw telemetry SHA (diagnostic only): `0056223006f943b596e20509c4e77f0020eee3de4064ac83cd9a5ab6a3010f91`.
-- CI workflow `.github/workflows/uqcf-v1327-gravity-progress.yml` verifies the test suite, checker, full rendering pipeline and reproducibility artifacts.
+
+## v13.28 branch-stop result
+
+The v13.28 audit tested only upstream-frozen candidates:
+
+- Genesis/source grade + retained measure/support;
+- PGRL/BKM source-response pairing;
+- RESA solder/coframe structure;
+- QMAR response/covariance identities.
+
+All four are `OBSTRUCTED` as a derivation of a canonical nonzero absolute source→geometry coupling.
+
+The exact structural reason is the **scale-weight pairing obstruction**: weight-zero geometry data contracted with weight-one source data remain weight one and inherit the arbitrary source normalization; normalizing away that scale leaves only projective information. A compensating calibrated weight `-1` object is sufficient in a positive control, but no such object exists in the frozen candidate set.
+
+The overall v13.28 outcome is:
+
+`REQUIRES_NEW_AXIOM`
+
+The source-to-GR coupling branch is therefore stopped until an explicitly new and independently motivated axiom or independently calibrated physical observable is supplied.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the append-only gate ledger.
 
 ## Validation
 
-Each tracked gate directory carries its own `CHECKER.py` and machine-readable summary. The active frontier is v13.27. The next research target is a controlled audit of named candidate source→geometry pairings, with only three allowed outcomes: `DERIVED`, `OBSTRUCTED`, or `REQUIRES_NEW_AXIOM`.
+Each tracked gate directory carries its own `CHECKER.py` and machine-readable summary. The latest completed gate is v13.28. There is no automatic next gate on the stopped source-to-GR coupling branch.
