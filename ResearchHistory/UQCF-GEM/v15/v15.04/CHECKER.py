@@ -2,7 +2,26 @@
 import json
 from pathlib import Path
 
-from equivariant_source_law_audit import run_audit
+from equivariant_source_law_audit import adjudicate_gate, run_audit
+
+# Adjudication semantics: failed verification is unresolved, not evidence for
+# the opposite scientific conclusion. A uniqueness outcome requires its own
+# positive certificate.
+assert adjudicate_gate(freedom_certified=True, unique_selection_certified=False) == (
+    "COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM"
+)
+assert adjudicate_gate(freedom_certified=False, unique_selection_certified=True) == (
+    "FROZEN_AXIOMS_SELECT_UNIQUE_SPECTRAL_LAW"
+)
+assert adjudicate_gate(freedom_certified=False, unique_selection_certified=False) == (
+    "V15_04_GATE_UNRESOLVED"
+)
+try:
+    adjudicate_gate(freedom_certified=True, unique_selection_certified=True)
+except ValueError:
+    pass
+else:
+    raise AssertionError("mutually exclusive v15.04 outcomes cannot both be certified")
 
 r = run_audit()
 
