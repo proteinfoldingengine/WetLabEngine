@@ -253,4 +253,4 @@ Do not invent a new provenance→source operator law merely to continue. A next 
 
 ## Certification
 
-The v14.03 checker is bound to the frozen machine-readable summary, source hashes, controls, adjudication, and telemetry while independently enforcing the scientific thresholds.
+The v14.03 checker is bound to the frozen machine-readable summary, source hashes, controls, adjudication, and telemetry while independently enforcing the scientific thresholds. The final branch certification is required on the exact release SHA before integration.
