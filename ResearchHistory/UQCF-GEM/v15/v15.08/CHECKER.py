@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 from genesis_source_semantics_audit import adjudicate_gate, run_audit
 
 assert adjudicate_gate(True, False) == "GENESIS_PROVENANCE_DOES_NOT_IDENTIFY_NEUTRAL_PREPARATION_SOURCE"
@@ -50,4 +51,4 @@ assert c["downstream_gravity_used_as_selector"] is False
 assert c["entropy_or_time_used_as_selector"] is False
 assert c["Pillar_3_closed"] is False
 
-print("v15.08 checker passed")
+print(json.dumps(s, indent=2, sort_keys=True))
