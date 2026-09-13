@@ -1,0 +1,43 @@
+name: UQCF v14.02 Convex Dual Normal Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - research/v14.02-convex-dual-normal
+    paths:
+      - 'ResearchHistory/UQCF-GEM/v14/v14.02/**'
+      - 'Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py'
+      - 'ResearchHistory/UQCF-GEM/README.md'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
+      - 'docs/superpowers/specs/2026-09-12-v1402-convex-dual-normal-design.md'
+      - 'docs/superpowers/plans/2026-09-12-v1402-convex-dual-normal.md'
+      - '.github/workflows/uqcf-v1402-convex-dual-normal.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/v14/v14.02
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install scientific dependencies
+        run: python -m pip install numpy==2.4.6 scipy==1.17.1
+
+      - name: Run v14.02 checker
+        run: python CHECKER.py
