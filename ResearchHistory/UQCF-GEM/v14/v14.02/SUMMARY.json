@@ -1,0 +1,99 @@
+{
+  "version": "v14.02",
+  "title": "Convex-Dual Boundary Normal / Canonical Admissibility Response Gate",
+  "date": "2026-09-12",
+  "adjudication": "CANONICAL_DUAL_RAY",
+  "classification": "MAJOR_POSITIVE_LOCAL_DUAL_GEOMETRY_RESULT_WITH_SOURCE_LIFT_OPEN",
+  "scientific_breakthrough": false,
+  "scope": "objective-free local dual geometry of the two frozen archived compatibility spectrahedra only",
+  "construction": {
+    "archived_lab_path": "Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py",
+    "fixed_t": 0.5121951219512195,
+    "uses_full_hidden_kernel": true,
+    "uses_visualization_section": false,
+    "max_hidden_basis_hermiticity_residual": 0.0,
+    "max_hidden_marginal_null_residual": 3.662557973690462e-15
+  },
+  "survey": {
+    "seed": 1402,
+    "primary_sample_count": 128,
+    "V_A": {
+      "sample_count": 64,
+      "hidden_dimension": 315,
+      "support_dimension": 25,
+      "direction_sha256": "1a29b944ab2f27fee11df06b024290df8fb4d18f118d358171f17dede9865020",
+      "minimum_center_eigenvalue": 0.0012195121951219488,
+      "hidden_marginal_residual": 7.302358320227591e-16,
+      "simple_boundary_count": 64,
+      "near_degenerate_boundary_count": 0,
+      "nonunique_normal_count": 0,
+      "zero_projected_normal_count": 0,
+      "unresolved_numerical_count": 0,
+      "normal_cone_rank_histogram": {"1": 64}
+    },
+    "V_B": {
+      "sample_count": 64,
+      "hidden_dimension": 311,
+      "support_dimension": 25,
+      "direction_sha256": "7e2cfe4ee64d0728525c3367c2b0e13fddcbf81b928aac87e67f8f5a9ef885e2",
+      "minimum_center_eigenvalue": 0.0012195121951219488,
+      "hidden_marginal_residual": 3.662557973690462e-15,
+      "simple_boundary_count": 64,
+      "near_degenerate_boundary_count": 0,
+      "nonunique_normal_count": 0,
+      "zero_projected_normal_count": 0,
+      "unresolved_numerical_count": 0,
+      "normal_cone_rank_histogram": {"1": 64}
+    }
+  },
+  "aggregate": {
+    "simple_boundary_count": 128,
+    "near_degenerate_boundary_count": 0,
+    "nonunique_normal_count": 0,
+    "zero_projected_normal_count": 0,
+    "unresolved_numerical_count": 0,
+    "normal_cone_rank_histogram": {"1": 128},
+    "minimum_simple_boundary_spectral_gap": 0.00010703895853823464,
+    "max_boundary_psd_residual": 1.1172250523029427e-16,
+    "max_support_identity_relative_error": 3.0357660829594124e-18,
+    "max_basis_invariance_relative_error": 5.911755884943795e-17
+  },
+  "objective_independence_control": {
+    "tested_boundary_count": 128,
+    "non_supporting_orthogonal_objective_count": 128,
+    "all_tested_orthogonal_objectives_rejected": true
+  },
+  "typed_dual_control": "VISIBLE_OBJECTIVE_DUAL_WITNESS_DIFFERENT_DUAL_SPACE",
+  "interior_control": {
+    "classification": "NO_BOUNDARY_SELECTOR",
+    "minimum_center_eigenvalue": 0.0012195121951219488,
+    "relative_normal_cone_rank": 0
+  },
+  "synthetic_degenerate_control": {
+    "fixture": "diag(x1,x2,1)_at_origin",
+    "kernel_dimension": 2,
+    "projected_normal_span_rank": 2,
+    "classification": "NONUNIQUE_NORMAL_CONE",
+    "scientific_evidence": false
+  },
+  "derived": [
+    "At each of the 128 audited smooth boundary points, the intrinsic relative normal cone of the full hidden compatibility fiber is a nonzero rank-1 ray.",
+    "The local supporting ray is computed directly from the PSD boundary kernel and is objective-independent within the audited construction.",
+    "The local ray is invariant under tested hidden-coordinate basis changes and satisfies the supporting-hyperplane identity to numerical precision."
+  ],
+  "not_derived": [
+    "which boundary point a physical source selects",
+    "source-to-hidden-completion tangent or lift",
+    "canonical global source-to-admissibility law",
+    "magnitude along the local dual ray",
+    "absolute gravitational coupling",
+    "physical stress-energy coupling",
+    "physical metric or coframe",
+    "time or spacetime",
+    "Riemann curvature",
+    "physical Einstein equations"
+  ],
+  "source_lift_status": "CANONICAL_DUAL_DIRECTION_BUT_SOURCE_LIFT_UNDERIVED",
+  "source_to_GR_absolute_coupling_branch": "STILL_STOPPED",
+  "Pillar_3": "OPEN"
+}
