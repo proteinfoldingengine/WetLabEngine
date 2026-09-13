@@ -3,6 +3,7 @@ import numpy as np
 from uqcf_demo.linalg import raw_orthogonal_polar, proper_orthogonal_polar, so3_angle_audit
 from uqcf_demo.quantum import build_default_model, state_at_lambda
 from uqcf_demo.geometry import geometry_snapshot
+from uqcf_demo.simulation import default_config, run_telemetry
 
 
 def test_raw_orthogonal_polar_reports_reflection_before_so3_projection():
@@ -38,3 +39,18 @@ def test_geometry_snapshot_records_raw_polar_determinant_and_preclip_holonomy():
     assert all("raw_polar_det" in edge for edge in snap["edges"])
     assert all("raw_cos_argument" in cyc for cyc in snap["cycles"])
     assert all("clip_excess" in cyc for cyc in snap["cycles"])
+
+
+def test_canonical_telemetry_reports_transport_and_holonomy_audits():
+    data = run_telemetry(default_config(frames=5))
+    summary = data["summary"]
+    assert 0 <= summary["raw_polar_reflection_count"] <= 5 * len(data["graph"]["edges"])
+    assert 0.0 <= summary["raw_polar_reflection_fraction"] <= 1.0
+    assert summary["min_holonomy_raw_cos_argument"] <= summary["max_holonomy_raw_cos_argument"]
+    assert summary["holonomy_clip_event_count"] >= 0
+    assert summary["max_holonomy_clip_excess"] >= 0.0
+    assert summary["pi_holonomy_adjudication"] in {
+        "NO_PI_EVENT",
+        "GENUINE_PI_WITHIN_TOLERANCE_NO_CLIP",
+        "CLIP_SATURATION_PRESENT",
+    }
