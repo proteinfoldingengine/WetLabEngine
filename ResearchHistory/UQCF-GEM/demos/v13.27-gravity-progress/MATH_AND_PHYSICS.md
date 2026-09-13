@@ -92,7 +92,7 @@ For a closed graph cycle `C`,
 H_C=\prod_{(ij)\in C}O_{ij}.
 \]
 
-Before clipping, the code now records
+Before clipping, the code records
 
 \[
 x_C=\frac{\operatorname{Tr}H_C-1}{2}.
@@ -106,10 +106,16 @@ The plotted group angle is
 
 ### Pre-clip audit
 
-The canonical run contains eight `theta_C=pi` events. The maximum excess outside `[-1,1]` is approximately
+The authoritative pinned GitHub run contains nine `theta_C=pi` events. The raw cosine argument spans approximately
 
 \[
-2.22\times10^{-16},
+-1.0000000000000004\le x_C\le 1.0,
+\]
+
+and the maximum excess outside `[-1,1]` is
+
+\[
+4.440892098500626\times10^{-16},
 \]
 
 well below the declared `10^{-12}` audit threshold. The pi events are therefore adjudicated as genuine within numerical tolerance of the chosen SO(3) construction, not as meaningful clipping artifacts.
@@ -236,13 +242,19 @@ For the canonical 25-frame scan, the stable headline results include:
 - source-balance residual: machine precision;
 - declared cycle-response aperture: full rank on cycle space;
 - raw polar reflections: `200 / 200` samples;
-- pi holonomy events: `8`;
+- pi holonomy events: `9`;
 - holonomy clip events above `1e-12`: `0`;
-- maximum clip excess: `~2.22e-16`;
+- maximum clip excess: `4.440892098500626e-16`;
 - projective coupled-source status: `RAY_ONLY__MAGNITUDE_NOT_DERIVED`;
 - physical Einstein closure: `OPEN`.
 
-The authoritative portable fingerprint and archival raw telemetry hash are frozen in `EXPECTED_RESULTS.json` after cross-run certification.
+Portable scientific fingerprint:
+
+`f632e656cc2ea1fc5d61b395080d7259ecfed21c9bd8379626da49f44d6c38fc`
+
+Reference raw telemetry hash (diagnostic only):
+
+`0056223006f943b596e20509c4e77f0020eee3de4064ac83cd9a5ab6a3010f91`
 
 ## 11. What the path establishes — and what it does not
 
