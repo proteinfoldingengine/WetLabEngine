@@ -2,55 +2,39 @@
 
 ## Goal
 
-Test whether an already-supplied **projective PGRL source ray** on the full support state canonically determines:
-
-1. a hidden-completion tangent direction;
-2. a radial first-contact point on the fixed-visible-data compatibility spectrahedron; and
-3. the canonical local dual ray established by v14.02 at that boundary point.
-
-The gate does **not** claim that the finite PGRL exponential trajectory itself reaches the PSD boundary. For a faithful finite-dimensional state it remains positive for every finite source parameter. The boundary point in this gate is instead the first PSD contact of the **Hilbert–Schmidt hidden component of the first-order PGRL tangent** under linear radial continuation inside the hidden affine fiber.
-
-The scientific question is therefore:
+Test whether an already-supplied **projective PGRL source ray** on the full support state canonically determines
 
 \[
-[P]_+ \longrightarrow [\Pi_{\rm hid}\dot X_P] \longrightarrow X_*(P) \longrightarrow [g(P)]
+[P]_+ \longrightarrow [\Pi_{\rm hid}\dot X_P]
+\longrightarrow X_*(P)
+\longrightarrow [g(P)].
 \]
 
-where \([P]_+\) means positive rescaling and identity shifts are quotiented out.
+Here \([P]_+\) quotients positive rescaling and identity shifts only.
 
-A positive result would establish a canonical map from a **supplied projective source direction** to a hidden-fiber dual ray. It would not derive the provenance-to-source map, source magnitude, stress-energy, gravity, spacetime, or Einstein equations.
+The gate does **not** claim that a finite PGRL trajectory reaches the PSD boundary. For faithful finite-dimensional states, the normalized exponential family remains positive for every finite source parameter. The boundary object in v14.03 is instead the first PSD contact of the **hidden component of the first-order PGRL tangent** under linear radial continuation inside the fixed-visible-data hidden affine fiber.
+
+A positive result would therefore be a theorem about a supplied projective source direction and the frozen compatibility geometry—not a source-origin law, dynamics law, coupling law, or gravity derivation.
 
 ---
 
-## Why this gate is lawful after v14.02
+## Prior results that constrain this gate
 
-v14.02 established, on the frozen archived `V_A` and `V_B` compatibility families, that every one of the 128 audited full-hidden-space radial boundary samples was smooth/simple and carried a nonzero objective-independent rank-1 intrinsic hidden-fiber supporting cone.
+v14.03 must preserve the following results.
 
-Thus, once a boundary point \(X_*\) is specified,
+- **v13.10:** the frozen retained ledger does not determine hidden completion response; W1/W2/W3, F2/F3, atlas closure and related certificates cannot be promoted into a hidden selector without a new rule.
+- **v13.13:** exact source response generically depends on the full higher-order quantum completion, not on a fixed low-body-order geometric summary.
+- **v13.26:** absolute source normalization is not derived; however \(P\to aP\), \(s\to s/a\) with \(a>0\) leaves the PGRL state family unchanged.
+- **v14.01:** arbitrary weighted source→higher-incidence maps remain nonunique.
+- **v14.02:** at every one of the 128 audited smooth full-hidden-space boundary points of the frozen `V_A`/`V_B` compatibility families, the intrinsic relative normal cone is a nonzero rank-1 ray.
 
-\[
-X_* \mapsto [g(X_*)]
-\]
-
-is already available in the frozen program for the audited smooth boundary stratum.
-
-The remaining question is whether an existing source direction can lawfully specify the hidden radial direction that reaches such a boundary.
-
-This gate must respect earlier no-go results:
-
-- v13.10: the frozen retained ledger does not determine hidden completion response;
-- v13.13: exact source response generically depends on the full higher-order quantum completion, not a fixed low-order truncation;
-- v13.26: absolute source normalization is not derived, but positive rescaling of the source generator can be absorbed into inverse source-parameter rescaling;
-- v14.01: arbitrary state-weighted source-to-defect maps are nonunique;
-- v14.02: smooth hidden-fiber boundary points possess canonical local dual rays, but no source lift was derived.
-
-Therefore v14.03 uses the full support state and an explicitly supplied projective PGRL source ray. It does not ask W1/W2/W3, atlas data, or the retained geometry to reconstruct hidden source response.
+Thus v14.03 may use the full support state and a supplied PGRL source ray, but it may not ask the retained ledger to reconstruct hidden response and may not invent another arbitrary source-weighting functional.
 
 ---
 
-## Primary executable object
+## Primary archived construction
 
-Reuse the archived compatibility construction:
+Reuse without replacement:
 
 `Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py`
 
@@ -62,416 +46,425 @@ with:
 - `build_completion`;
 - `hidden_basis`.
 
-For each configuration the archived state provides an isometry
+For either configuration, the archived construction supplies
 
 \[
-L:\mathbb C^k\to\mathcal H_{AB_1B_2}
-\]
-
-with
-
-\[
+T=LX_0L^\dagger,
+\qquad
 L^\dagger L=I_k,
 \qquad
-T=LX_0L^\dagger,
+X_0\succ0,
+\qquad
+\operatorname{Tr}X_0=1.
 \]
 
-and a faithful coefficient-space density matrix \(X_0\succ0\), \(\mathrm{Tr}X_0=1\).
+The full hidden Hermitian kernel of the visible marginal map is spanned by Hilbert–Schmidt-orthonormal matrices \(Q_a\) returned by `hidden_basis(L)`.
 
-The full hidden Hermitian kernel is spanned by the Hilbert–Schmidt-orthonormal modes \(Q_a\) returned by `hidden_basis(L)`.
-
-The scientific audit uses the full hidden kernel only. The old 3D visualization section remains excluded.
+The 3D visualization section is excluded from scientific adjudication.
 
 ---
 
-## Typed support-space PGRL source
+## Typed support-space source
 
-Let \(P=P^\dagger\) be a Hermitian source/log-density covector on the support coefficient space \(\mathbb C^k\).
-
-Its physical support lift is
+Let \(P=P^\dagger\) be a Hermitian log-density/source covector on the coefficient support \(\mathbb C^k\). Its physical support lift is
 
 \[
-\widetilde P = LPL^\dagger
+\widetilde P=LPL^\dagger.
 \]
 
-on `ran(L)`.
-
-Because `L` is an isometry, the normalized exponential family in coefficient space
+Because \(L\) is an isometry, the coefficient-space PGRL family
 
 \[
-X_s(P)=\frac{\exp(\log X_0+sP)}{\operatorname{Tr}\exp(\log X_0+sP)}
+X_s(P)=
+\frac{\exp(\log X_0+sP)}
+{\operatorname{Tr}\exp(\log X_0+sP)}
 \]
 
-is equivalent, on the fixed support, to the corresponding support-space exponential family of \(T\) generated by \(\widetilde P\).
+is the support-coordinate representation of the corresponding exponential family on `ran(L)`.
 
-This provides type consistency: v14.03 is not introducing an unrelated source object.
-
-The gate nevertheless treats \([P]_+\) as **supplied**. The current frozen provenance/Genesis layer has not been shown to select this same-space operator ray.
+This gate therefore does not introduce a second unrelated source type. But \([P]_+\) is still **supplied**: the current Genesis/provenance stack has not been shown to select this same-space operator ray.
 
 ---
 
-## Exact first-order PGRL tangent
+## Exact PGRL tangent
 
 Define
 
 \[
-\dot X_P = \left.\frac{dX_s(P)}{ds}\right|_{s=0}.
+\dot X_P=
+\left.\frac{dX_s(P)}{ds}\right|_{s=0}.
 \]
 
-For faithful \(X_0\), use the Fréchet derivative of the matrix exponential. In an eigenbasis
+If
 
 \[
-X_0=U\,\mathrm{diag}(p_i)\,U^\dagger,
+X_0=U\operatorname{diag}(p_i)U^\dagger,
+\qquad
+\widehat P=U^\dagger P U,
 \]
 
-let \(\widehat P=U^\dagger P U\) and define the logarithmic mean
+then use the logarithmic mean
 
 \[
-L(p_i,p_j)=
+\mathcal L(p_i,p_j)=
 \begin{cases}
-\dfrac{p_i-p_j}{\log p_i-\log p_j}, & p_i\ne p_j,\\[6pt]
-p_i,& p_i=p_j.
+\dfrac{p_i-p_j}{\log p_i-\log p_j}, &p_i\ne p_j,\\[5pt]
+p_i,&p_i=p_j,
 \end{cases}
-\]
-
-Then
-
-\[
-\widehat{\dot X}_{ij}=L(p_i,p_j)\widehat P_{ij}
--\delta_{ij}p_i\,\mathrm{Tr}(X_0P).
-\]
-
-Transform back by \(U\).
-
-Equivalent numerical implementations using a matrix-exponential Fréchet derivative are allowed only if they agree with this formula to the frozen tolerance.
-
-Required controls:
-
-- Hermiticity of \(\dot X_P\);
-- \(\mathrm{Tr}\dot X_P=0\);
-- centered-source identity-shift invariance;
-- finite-difference agreement with `X_{+eps}` and `X_{-eps}`.
-
----
-
-## Projective-source theorem target
-
-For any \(a>0\), \(b\in\mathbb R\),
-
-\[
-X_s(aP+bI)=X_{as}(P),
-\]
-
-because the scalar `bI` cancels under normalization.
-
-Therefore
-
-\[
-\dot X_{aP+bI}=a\dot X_P.
-\]
-
-This is exact.
-
-The gate will test whether all downstream projective objects inherit the same invariance:
-
-\[
-[\Pi_{\rm hid}\dot X_{aP+bI}]
-=[\Pi_{\rm hid}\dot X_P],
-\]
-
-\[
-X_*(aP+bI)=X_*(P),
 \]
 
 and
 
 \[
-[g(aP+bI)]=[g(P)].
+\widehat{\dot X}_{ij}
+=
+\mathcal L(p_i,p_j)\widehat P_{ij}
+-
+\delta_{ij}p_i\operatorname{Tr}(X_0P).
 \]
 
-The sign is not quotiented: `a` must be positive. Reversing source sign generally selects the opposite hidden radial direction and may reach a different boundary point.
+Transform back with \(U\).
+
+Required controls:
+
+- tangent Hermiticity;
+- \(\operatorname{Tr}\dot X_P=0\);
+- agreement with symmetric finite differences of the normalized exponential family;
+- equivalence with a matrix-exponential Fréchet derivative if that is used computationally.
 
 ---
 
-## Canonical hidden projection
+## Exact projective-source identity
 
-The hidden tangent space is the real Hilbert space
+For all \(a>0\) and real \(b\),
+
+\[
+X_s(aP+bI)=X_{as}(P),
+\]
+
+so
+
+\[
+\dot X_{aP+bI}=a\dot X_P.
+\]
+
+This identity is analytic and must not be manufactured by preprocessing.
+
+### Critical testing rule
+
+For the projective invariance controls, begin with each frozen stored base source `P` and form
+
+\[
+P' = aP+bI
+\]
+
+directly.
+
+**Do not re-center or re-normalize `P'` before evaluating its tangent.**
+
+Otherwise positive-scale/identity invariance would be partly enforced by the test harness rather than tested as a consequence of the normalized exponential family.
+
+The downstream target is
+
+\[
+[\Pi_{\rm hid}\dot X_{P'}]
+=
+[\Pi_{\rm hid}\dot X_P],
+\]
+
+\[
+X_*(P')=X_*(P),
+\]
+
+\[
+[g(P')]=[g(P)].
+\]
+
+Negative source scaling is not quotiented. `-P` may select the opposite hidden radial direction and a different boundary point.
+
+---
+
+## Canonical hidden tangent component
+
+The full hidden tangent space is
 
 \[
 \mathcal H_{\rm hid}=\operatorname{span}_{\mathbb R}\{Q_a\}
 \]
 
-with the inherited physical trace inner product
+with the inherited trace inner product
 
 \[
-\langle A,B\rangle_{\rm HS}=\operatorname{ReTr}(A^\dagger B).
+\langle A,B\rangle_{HS}
+=
+\operatorname{ReTr}(A^\dagger B).
 \]
 
-Because the `Q_a` are Hilbert–Schmidt orthonormal, the orthogonal projection is
+Because the archived hidden basis is Hilbert–Schmidt orthonormal,
 
 \[
-V_P=\Pi_{\rm hid}\dot X_P
-=\sum_a \operatorname{ReTr}(Q_a^\dagger\dot X_P)Q_a.
+V_P
+=
+\Pi_{\rm hid}\dot X_P
+=
+\sum_a
+\operatorname{ReTr}(Q_a^\dagger\dot X_P)Q_a.
 \]
 
-This is a coordinate-independent orthogonal projection onto the exact hidden kernel of the visible marginal map.
+This is the orthogonal projection of the full source tangent onto the exact kernel of the visible marginal map.
 
-If \(\|V_P\|_{\rm HS}>\tau_{\rm hidden}\), define
+If
 
 \[
-u_P=V_P/\|V_P\|_{\rm HS}.
+\|V_P\|_{HS}>	au_{\rm hidden},
 \]
 
-If the hidden component is below threshold, classify that source as `ZERO_HIDDEN_SOURCE_COMPONENT`; do not normalize noise.
+define
 
-Important claim boundary: `V_P` is the hidden component of the source tangent. The actual PGRL tangent may also change visible data. v14.03 does not claim the physical source evolution remains on the fixed-visible-data fiber.
+\[
+u_P=V_P/\|V_P\|_{HS}.
+\]
+
+Otherwise record `ZERO_HIDDEN_SOURCE_COMPONENT` and do not normalize numerical noise.
+
+Important boundary: the actual source tangent may also contain visible components. v14.03 does not claim that the PGRL physical trajectory remains inside the fixed-visible-data fiber.
 
 ---
 
-## Radial first-contact boundary
+## Hidden-tangent radial first contact
 
-For a nonzero hidden unit direction \(u_P\), reuse the v14.02 radial PSD construction:
+For nonzero \(u_P\), reuse the v14.02 radial construction:
 
 \[
 r_*(u_P)
-=-\frac{1}{\lambda_{\min}\left(X_0^{-1/2}u_PX_0^{-1/2}\right)}.
+=-\frac{1}
+{\lambda_{\min}(X_0^{-1/2}u_PX_0^{-1/2})},
 \]
 
-Then
+and
 
 \[
 X_*(P)=X_0+r_*(u_P)u_P.
 \]
 
-This is the unique outward radial first-contact point along the projected hidden tangent ray, provided the nonzero trace-zero hidden direction has a negative generalized eigenvalue as expected.
+Because a nonzero hidden perturbation is Hermitian and trace-zero, it must have both positive and negative spectrum; the outward radial PSD contact is therefore well defined for the audited faithful centers.
 
-This is **not** the finite PGRL state at some source parameter. The report must use the phrase `hidden-tangent radial first contact` or equivalent, not `PGRL boundary crossing`.
+The report must call this object a **hidden-tangent radial first contact**. It must not be called a PGRL boundary crossing or a finite source endpoint.
 
-At `X_*(P)`, invoke the same intrinsic normal construction as v14.02:
-
-\[
-X_*(P)\mapsto[g_P].
-\]
-
-The v14.03 scientific object is therefore the composite map
+At `X_*(P)`, reuse the v14.02 intrinsic relative normal construction to obtain the inward Hilbert–Schmidt dual ray
 
 \[
-[P]_+\mapsto u_P\mapsto X_*(P)\mapsto[g_P].
+[g_P].
 \]
 
 ---
 
-## Source sampling
+## Source survey
 
-For each actual archived configuration (`V_A`, `V_B`):
+For each of `V_A` and `V_B`:
 
-- deterministic RNG seed: `1403`;
-- exactly `64` primary Hermitian source covectors;
-- generate a complex Gaussian matrix `A` and set `P=(A+A†)/2`;
-- subtract the state-weighted mean `Tr(X0 P) I` before normalization;
-- normalize by Hilbert–Schmidt norm;
-- record SHA-256 of the frozen source tensor bytes.
+- RNG seed: `1403`;
+- exactly 64 primary Hermitian source covectors;
+- generate complex Gaussian `A` and set `P=(A+A†)/2`;
+- for the **base frozen source only**, remove `Tr(X0 P) I` and normalize its Hilbert–Schmidt norm;
+- store that base `P` unchanged for all downstream projective tests;
+- record SHA-256 of the source-array bytes.
 
-The random source survey tests generic well-definedness of the map. It is not a claim that the RNG distribution is physical source provenance.
+The source distribution is a deterministic generic survey, not a physical provenance model.
 
-Add separately labeled engineered controls:
+Required separately labeled controls:
 
-1. `IDENTITY_SOURCE_CONTROL`: `P=I`, which must produce zero normalized PGRL tangent;
-2. `VISIBLE_ONLY_TANGENT_CONTROL`: if constructible from the orthogonal complement of the hidden kernel, choose a source whose PGRL tangent has hidden norm below threshold;
-3. `HIDDEN_ACTIVE_CONTROL`: construct or select a source with certified nonzero hidden projection.
+1. `IDENTITY_SOURCE_CONTROL`: `P=I`, which must give zero normalized PGRL tangent;
+2. `HIDDEN_ACTIVE_CONTROL`: at least one predeclared source with nonzero hidden projection;
+3. `VISIBLE_ONLY_TANGENT_CONTROL`: construct only if an exact, non-tuned source can be obtained from the frozen linear algebra. Otherwise record `NOT_CONSTRUCTED` rather than optimizing a post-hoc example.
 
-If an exact visible-only source is not constructible without solving a new inverse problem, record that control as `NOT_CONSTRUCTED`; do not tune one post hoc.
+Primary zero-hidden sources must remain in the sample and must not be resampled.
 
 ---
 
 ## Frozen numerical conventions
 
-Freeze before execution:
-
 - Python `3.11`;
 - NumPy `2.4.6`;
 - SciPy `1.17.1`;
-- deterministic source RNG seed `1403`;
-- 64 primary sources for `V_A` and 64 for `V_B`;
-- finite-difference epsilon `1e-6`;
+- seed `1403`;
+- 64 sources for `V_A` and 64 for `V_B`;
+- symmetric finite-difference epsilon `1e-6`;
 - source Hermiticity tolerance `1e-12`;
 - tangent Hermiticity tolerance `2e-11`;
 - tangent trace tolerance `2e-11`;
-- finite-difference relative tolerance `2e-7`;
-- hidden-component threshold
+- finite-difference relative error tolerance `2e-7`;
+- hidden threshold
   \[
-  \tau_{\rm hidden}=10^{-10}\max(1,\|\dot X_P\|_{\rm HS});
+  \tau_{\rm hidden}=10^{-10}\max(1,\|\dot X_P\|_{HS});
   \]
-- boundary PSD tolerance `2e-9`;
-- v14.02 simple-boundary nullity threshold
+- boundary PSD residual tolerance `2e-9`;
+- nullity threshold
   \[
   \tau_{\rm null}=10^{-9}\max(1,\|X_*\|_2);
   \]
 - projective hidden-direction drift tolerance `2e-9`;
 - boundary-point relative drift tolerance `2e-9`;
-- dual-ray angular drift tolerance `2e-9` measured as `1-abs(dot(g1_hat,g2_hat))` after sign/orientation convention is fixed consistently;
+- inward dual-ray drift tolerance `2e-9` using
+  \[
+  1-\widehat N_1\!:\!\widehat N_2,
+  \]
+  **without an absolute value after the inward orientation has been fixed**;
 - support-coordinate covariance tolerance `2e-9`.
 
-For positive-scale tests use
+Positive scales:
 
-`a = [0.2, 0.5, 2.0, 5.0, 11.0]`.
+`[0.2, 0.5, 2.0, 5.0, 11.0]`.
 
-For identity shifts use
+Identity shifts:
 
-`b = [-3.0, -0.7, 0.4, 2.5]`.
+`[-3.0, -0.7, 0.4, 2.5]`.
 
-Do not change tolerances after inspecting results.
+Do not revise thresholds after inspecting execution results.
 
 ---
 
 ## Support-coordinate gauge covariance
 
-The coefficient basis on `ran(L)` is not physical.
-
-For a deterministic unitary \(U\in U(k)\), transform
+The coefficient basis on `ran(L)` is not physical. For a unitary support-coordinate change \(U\), use
 
 \[
-L' = LU^\dagger,
-\qquad
+L'=LU^\dagger,
+\quad
 X_0'=UX_0U^\dagger,
-\qquad
+\quad
 P'=UPU^\dagger,
-\qquad
+\quad
 Q_a'=UQ_aU^\dagger.
 \]
 
-Then the physical full state and physical lifted source are unchanged:
+Then
 
 \[
 L'X_0'L'^\dagger=LX_0L^\dagger,
-\]
-
-\[
+\qquad
 L'P'L'^\dagger=LPL^\dagger.
 \]
 
-Required covariance checks:
+Required checks:
 
 \[
-\dot X' = U\dot XU^\dagger,
+\dot X'=U\dot XU^\dagger,
 \]
 
 \[
-V'_P=UV_PU^\dagger,
+V_P'=UV_PU^\dagger,
 \]
 
 \[
 X_*'=UX_*U^\dagger,
 \]
 
-and the Hilbert–Schmidt representative of the dual ray must transform by conjugation.
+and the normalized inward Hilbert–Schmidt dual representative transforms by the same conjugation.
 
-Use eight deterministic unitary support-coordinate changes per configuration.
+Use eight deterministic unitary coordinate changes for each configuration.
+
+Additionally, for at least one coordinate change per configuration, recompute `hidden_basis(L')` and verify that its hidden-space orthogonal projector agrees with the conjugated original hidden-space projector. This ensures covariance is a property of the hidden subspace, not only of a manually rotated basis.
 
 ---
 
 ## Dual-ray orientation and comparison
 
-At each simple boundary, v14.02 supplies an inward supporting covector ray from the unique boundary null vector `v`:
+At a simple radial boundary, let `v` be the unique null vector and define
 
 \[
 g_a=\operatorname{Re}\langle v,Q_av\rangle.
 \]
 
-For comparisons across source rescaling and support-coordinate gauge transformations:
+Construct the Hilbert–Schmidt representative
 
-- construct the Hilbert–Schmidt representative `N_H = sum_a g_a Q_a`;
-- orient inward by requiring the center displacement to have positive support pairing;
-- normalize `N_H` by Frobenius norm;
-- compare normalized Hilbert–Schmidt representatives rather than raw hidden coordinates.
+\[
+N_H=\sum_a g_aQ_a.
+\]
 
-This prevents hidden-basis coordinate choices from masquerading as physical dual-ray drift.
+Orient it inward by requiring positive pairing with the center displacement `X0-X*`, then normalize by Frobenius norm.
 
----
-
-## Provenance/source-ray audit
-
-v14.03 has two logically distinct questions.
-
-### A. Supplied-source map
-
-Does a supplied projective PGRL source ray \([P]_+\) determine a unique hidden-tangent radial contact and canonical dual ray?
-
-This is the primary executable gate.
-
-### B. Provenance origin
-
-Do the currently frozen Genesis/provenance/source-grading objects canonically determine the same typed support-space operator ray \([P]_+\)?
-
-Audit the existing archive only. Do not invent a map.
-
-The expected possibilities are:
-
-- `PROVENANCE_TO_SOURCE_RAY_DERIVED` only if an already-certified construction actually returns the required same-space projective operator;
-- `PROVENANCE_TO_SOURCE_RAY_UNDERIVED` if source identity/grading/provenance constrain origin or amount but not the required operator ray;
-- `PROVENANCE_SOURCE_TYPE_MISMATCH` if the frozen provenance data live in a different typed space and no certified natural map connects them.
-
-This provenance sub-audit may not be upgraded by the random source survey.
+All projective-source and support-coordinate comparisons use this normalized, inward-oriented Hilbert–Schmidt representative. Once this orientation is fixed, opposite sign is a failure, not an equivalent ray for the numerical invariance test.
 
 ---
 
-## Gate outcomes
-
-The supplied-source primary gate permits exactly these outcomes.
+## Outcome logic
 
 ### `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`
 
 For every primary source with nonzero hidden component:
 
 - analytic and finite-difference PGRL tangents agree;
-- positive rescaling and identity shifts preserve the normalized hidden direction;
-- the hidden-tangent radial first-contact point is unique and numerically stable;
-- the boundary is simple/ray-valued under the frozen v14.02 rules;
-- the normalized intrinsic dual representative is invariant under positive rescaling, identity shifts, and support-coordinate gauge changes;
-- no same-ray ambiguity survives.
+- raw transformed sources `aP+bI` produce the exact expected tangent scaling without harness re-normalization;
+- normalized hidden tangent direction is invariant under positive source scaling and identity shifts;
+- the hidden-tangent radial first-contact point is unique and stable;
+- the first contact is simple/ray-valued under the frozen v14.02 rules;
+- the inward dual representative is invariant under projective source transformations;
+- the entire construction is support-coordinate covariant;
+- no same-projective-source ambiguity survives.
 
-Interpretation: a **supplied projective source ray** canonically selects a hidden radial boundary ray and its local canonical dual ray in the frozen compatibility construction.
+Interpretation: a **supplied projective PGRL source ray** selects a canonical hidden radial contact and its v14.02 local dual ray in the frozen compatibility model.
 
 ### `SOURCE_TO_BOUNDARY_NONUNIQUE`
 
-At least one nonzero-hidden primary source admits inequivalent boundary/dual outcomes under transformations that should represent the same supplied projective source ray, or the supposedly canonical construction depends on hidden/support coordinates after all frozen gauge checks.
-
-Interpretation: the supplied source ray does not canonically select the boundary/dual object.
+At least one nonzero-hidden primary source produces inequivalent hidden directions, boundary contacts, or inward dual rays under transformations that represent the same projective source or the same support-coordinate gauge orbit.
 
 ### `NO_HIDDEN_SOURCE_CONTACT`
 
-All primary supplied sources have hidden tangent norm below the frozen threshold, so the source class does not engage the hidden compatibility fiber in the audited construction.
-
-Interpretation: v14.02's hidden boundary dual geometry is not reached even projectively by this supplied source class.
+All 128 primary supplied sources have hidden tangent norm below the frozen threshold.
 
 ### `UNRESOLVED_NUMERICAL_SOURCE_LIFT`
 
-Numerical sensitivity prevents stable classification under the frozen tolerances. This is a verification-stop state, not a scientific fourth outcome.
+Numerical sensitivity prevents stable adjudication under the frozen tolerances. This is a verification-stop state, not a scientific result.
+
+A mixed zero/nonzero-hidden survey is allowed. Record zero-hidden and nonzero-hidden counts; do not discard null cases.
 
 ---
 
-## Required reporting of zero-hidden sources
+## Required telemetry
 
-Some supplied sources may have zero hidden component while others do not.
+For each configuration record:
 
-Record:
-
+- support dimension;
+- hidden dimension;
+- source-array SHA-256;
 - zero-hidden count;
 - nonzero-hidden count;
-- distribution of hidden-fraction
+- hidden-fraction distribution
   \[
   \|V_P\|_{HS}/\|\dot X_P\|_{HS};
   \]
 - minimum nonzero hidden fraction;
-- maximum projective drift under all positive rescalings and identity shifts.
+- maximum analytic-vs-finite-difference tangent error;
+- maximum tangent Hermiticity and trace residuals;
+- maximum raw projective tangent-scaling error;
+- maximum hidden-direction drift under all `a,b` controls;
+- maximum first-contact boundary drift;
+- maximum inward dual-ray drift;
+- maximum support-coordinate covariance error;
+- number of simple, degenerate and unresolved first-contact boundaries.
 
-A mixed survey does not force `NO_HIDDEN_SOURCE_CONTACT`; that outcome requires all 128 primary sources to be zero-hidden.
-
-Zero-hidden sources are lawful null cases and must not be discarded or resampled.
+Global output must include the same aggregates across all 128 primary sources.
 
 ---
 
-## Claim boundaries
+## Provenance/source-ray sub-audit
+
+This is logically separate from the supplied-source gate.
+
+Audit the frozen archive for whether Genesis/provenance/source grading already returns the required support-space projective operator \([P]_+\).
+
+Allowed statuses:
+
+- `PROVENANCE_TO_SOURCE_RAY_DERIVED` — only if an already-certified natural construction actually returns the required same-space projective operator;
+- `PROVENANCE_TO_SOURCE_RAY_UNDERIVED` — provenance identifies source origin/amount/compatibility but not the operator ray;
+- `PROVENANCE_SOURCE_TYPE_MISMATCH` — existing provenance data live in a different typed space with no certified natural map to the required operator ray.
+
+The random source survey cannot upgrade this status.
+
+---
+
+## Claim boundary
 
 Even a successful primary outcome means only:
 
@@ -479,17 +472,14 @@ Even a successful primary outcome means only:
 
 It does **not** establish:
 
-- that the PGRL physical trajectory reaches the PSD boundary;
+- that the physical PGRL trajectory reaches that boundary;
 - that nature follows linear radial continuation of the hidden tangent;
 - that Genesis/provenance selects the source operator ray;
-- that source magnitude is derived;
-- a source→coframe or stress-energy law;
-- an absolute coupling;
-- gravity, spacetime, curvature, or Einstein equations.
+- an absolute source magnitude;
+- stress-energy, source→coframe dynamics, or absolute coupling;
+- gravity, physical curvature, spacetime, or Einstein equations.
 
-The linear radial continuation is a geometric construction on the hidden tangent ray, not a dynamical law.
-
-If the provenance sub-audit remains underived, the architecture after a positive primary gate is
+If provenance remains underived, the architecture after a positive primary result is
 
 \[
 \text{provenance}
@@ -497,25 +487,22 @@ If the provenance sub-audit remains underived, the architecture after a positive
 \longrightarrow [P]_+
 \longrightarrow u_P
 \longrightarrow X_*(P)
-\longrightarrow [g_P].
+\longrightarrow[g_P].
 \]
 
-That would localize the remaining upstream ambiguity to the provenance→source-ray step.
+The linear radial continuation is a geometric construction on the hidden tangent ray, not a dynamical law.
 
 ---
 
-## Implementation / verification requirements
+## Implementation and verification requirements
 
-- Work on branch `research/v14.03-projective-source-ray`.
-- Use TDD: RED checker before the audit implementation exists.
-- Reuse the archived compatibility lab and v14.02 mathematics; do not silently replace either with a toy model.
-- The source survey is deterministic and frozen before execution.
-- The actual PGRL exponential path must remain clearly distinguished from the hidden-tangent radial continuation.
-- Bind the final checker to `SUMMARY.json`.
+- Work on `research/v14.03-projective-source-ray`.
+- Use TDD: checker/CI RED before implementation.
+- Reuse the archived compatibility lab and v14.02 normal-cone mathematics rather than replacing either with a toy primary model.
 - Pin Python/NumPy/SciPy versions in CI.
-- Run exact-SHA branch CI before merge.
-- Require branch to be 0 commits behind `main` before integration.
-- Fast-forward `main` only after exact-SHA CI succeeds.
-- Require post-merge v14.03 CI plus preserved v14.02/v14.01/v13.28 regressions when their path filters trigger.
+- Bind the final checker to `SUMMARY.json`.
+- Exact-SHA branch certification is required before integration.
+- Branch must be 0 commits behind `main` before fast-forward integration.
+- Post-merge v14.03 certification is required, with v14.02/v14.01/v13.28 regression checks where path filters trigger.
 - Pillar 3 remains OPEN regardless of v14.03 outcome.
-- `scientific_breakthrough` defaults to `false`; upgrade only if the executed result genuinely warrants it under the research governance rules.
+- `scientific_breakthrough` defaults to `false`; upgrade only if the executed evidence genuinely warrants it under project governance.
