@@ -1,70 +1,50 @@
-# X Update Content
+# X Update Content — peer-review-rescoped
 
 ## Default post
 
-We built the full simulation.
+We revised UQCF-GEM v13.27 after peer review.
 
-Starting with a 6-qubit pre-time relational state, the code derives—without inserting Newton or Einstein as dynamics—BKM information geometry, polar transport, nonmetricity, loop holonomy, balanced source currents, QMAR response, and an ADM-like DeWitt negative-trace sector.
+The claim is not “gravity derived.” The interesting result is a concrete executable path:
 
-The most important result may be where it **stops**:
+finite quantum relations → BKM information geometry → state-dependent relational transport → metric mismatch + loop holonomy → balanced graph source/current structure → an exact positive-scale coupling obstruction.
 
-Σ = κT is only fixed projectively.
-Σ → cΣ still satisfies the retained structural constraints.
+No Newtonian force law is inserted. No Einstein equation or residual selects the result.
 
-So the missing object is now sharp: a target-blind source→geometry coupling law (RGCL).
+At a fixed state/tangent point, the source-selection rules are positively homogeneous:
 
-Gravity connection: increasingly structured.
-Physical Einstein closure: still open.
+`(s,y) -> c(s,y)` implies `J -> cJ` and therefore `Sigma -> c Sigma`.
 
-## More provocative version
+So the frozen construction selects at most a projective source class `[Sigma]`; it does not determine an absolute coupling magnitude.
 
-Astra's current gravity experiment is now executable end-to-end.
+Peer review also exposed an important transport boundary: in the canonical 25-frame scan, all 200 unconstrained O(3) polar factors have determinant -1. The SO(3) transports used for loop holonomy are therefore an explicit orientation-preserving projection, not something uniquely forced by the raw polar decomposition.
 
-Quantum relations → information metric → relational connection → nonmetricity → holonomy → conserved source flow → ADM-like DeWitt structure.
+The eight observed `theta = pi` loop events are not meaningful clip artifacts (`max clip excess ~2.22e-16`).
 
-No 1/r² law inserted. No Einstein equation used as the generator.
-
-And the code exposes the obstruction instead of hiding it:
-
-Σ = κT
-Σ → cΣ
-
-The existing quantum/retained laws fix the source **ray**, not the gravitational coupling magnitude.
-
-If gravity is inherited from global relational consistency, the next missing law has to explain that coupling—not fit it.
+Novel path: still interesting.
+Gravity / Einstein closure: not claimed and still open.
 
 ## Short thread
 
-**1/** We finally put the current UQCF-GEM / Retained Atlas gravity stack into one deterministic Python simulation: exact 6-qubit states, source perturbations, reduced quantum data, information geometry, transport, curvature proxies, source flow, and ADM-like diagnostics.
+**1/** UQCF-GEM v13.27 has been rescoped after peer review. We do **not** claim gravity is derived. We do claim an executable quantum-relational route that can be tested step by step without inserting Newton or Einstein as the generator.
 
-**2/** The geometry is not assumed. From exact reduced states we compute the BKM response metric `K_i`, connected correlation tensors `C_ij`, their proper polar transports `O_ij`, and
+**2/** From an exact six-qubit thermal family the code computes one-site BKM information metrics, connected pair correlations, an explicitly chosen orientation-preserving transport, metric mismatch, finite loop holonomy, and balanced graph currents.
 
-`M_ij = K_j - O_ij^T K_i O_ij`.
+The graph itself and its plotting coordinates are assumed—not emergent spacetime.
 
-Closed relational loops then carry finite holonomy.
+**3/** The theorem-level result is the projective obstruction. At a fixed state/tangent point, the selection rules are degree-one homogeneous in the source tangent:
 
-**3/** The source side obeys
+`(s,y) -> c(s,y)`
+`J -> cJ`
+`Sigma -> c Sigma`.
 
-`B J = s`.
+Therefore the construction determines at most `[Sigma]`, not its nonzero magnitude.
 
-Cycle freedom is explicit. A full-rank response aperture can conditionally select a current, but we label that honestly: it is not yet physical stress-energy.
+**4/** The DeWitt-like quadratic form is retained only as a sign diagnostic on represented `q=(K+eps I)^-1`. Its `-4.5` pure-trace and `2` traceless controls are algebraic identities, not emergent ADM dynamics. There is no lapse, shift, Hamiltonian constraint, diffeomorphism constraint, or ADM closure in this artifact.
 
-**4/** The represented Path-A metric variable uses
+**5/** Peer review forced a useful new audit. Across 25 frames × 8 edges = 200 samples, every unconstrained polar factor has `det=-1`. So the code’s `SO(3)` edge transport is a declared proper-rotation projection. That choice is now explicit and outside the obstruction theorem.
 
-`q = A^-1`,
+**6/** The loop-angle audit also resolves the `theta=pi` question: 8 pi-events occur, while the largest pre-clip excess is only about `2.22e-16`. Within the chosen SO(3) construction, the pi events are not caused by numerical clipping at the declared `1e-12` threshold.
 
-and the simulation reproduces the DeWitt signature split: pure trace negative, traceless positive. That's ADM-like structure—not a claim that physical GR is already derived.
+**7/** What remains open is exactly the physically important part: an independently derived, target-blind source→geometry coupling with a non-arbitrary magnitude and appropriate tensor/coframe meaning.
 
-**5/** The strongest boundary is now visible in the animation:
-
-`Σ_obs = κ_obs T_obs`.
-
-v13.25/26 killed the separate absolute normalization of `T` and `κ`. v13.27 shows something stronger: even `Σ` retains
-
-`Σ → cΣ`.
-
-The source ray survives; its coupling magnitude does not emerge yet.
-
-**6/** That isolates the next object: **RGCL**, a target-blind retained source→coframe/geometric coupling law. If it can be derived before looking at an Einstein residual, then the gravity claim becomes much more serious.
-
-Until then: substantial quantum→geometry→ADM-like progress; physical Einstein closure remains open.
+If the frozen ontology yields a no-go **or** every successful repair requires a freely inserted scale, the target-blind derivation fails at that point.
