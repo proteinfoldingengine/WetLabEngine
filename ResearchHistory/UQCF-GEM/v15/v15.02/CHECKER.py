@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 from shared_label_audit import run_audit
 
 r = run_audit()
@@ -30,3 +31,4 @@ assert r["gate_outcome"] in {
     "UNRESOLVED_EQUIVARIANCE_AUDIT",
 }
 print("V15_02_SHARED_LABEL_EQUIVARIANCE_CHECKER_PASS")
+print(json.dumps(r, indent=2, sort_keys=True))
