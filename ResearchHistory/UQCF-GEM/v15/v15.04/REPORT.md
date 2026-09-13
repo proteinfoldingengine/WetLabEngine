@@ -1,6 +1,6 @@
 # v15.04 — Equivariant Source-Law Classification / Spectral Freedom Gate
 
-**Status:** CLOSED / measured on branch; final exact-SHA certification pending archival binding  
+**Status:** CLOSED / measured and archive-bound; final exact-SHA certification pending  
 **Primary outcome:** `COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM`  
 **Major structural result:** `true`  
 **Scientific breakthrough:** `false`  
@@ -77,7 +77,7 @@ F(\rho)=\sum_\alpha \mu_\alpha(\operatorname{spec}\rho)\Pi_\alpha
 }.
 \]
 
-Thus \(F(\rho)\) has the same spectral projectors as \(\rho\). In particular,
+Thus \(F(\rho)\) is scalar on, and therefore preserves, every spectral eigenspace of \(\rho\). Its maximal eigenspaces may be coarser if distinct \(\rho\)-blocks receive the same output value. In particular,
 
 \[
 \boxed{[F(\rho),\rho]=0}.
