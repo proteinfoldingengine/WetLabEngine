@@ -9,6 +9,7 @@ This directory is the canonical Git-tracked history for the active UQCF-GEM / Re
 - Do not force Einstein/ADM structure into the pre-time theory.
 - Preserve exact claim boundaries: theorem, executed computation, interpretation, and unresolved physical claim are distinct.
 - Do not replace failed native bridges with fitted/projection laws unless explicitly marked as new assumptions.
+- Do not select upstream source laws from downstream gravity/ADM/Einstein/cosmology performance.
 - Pillar 3 remains open until a lawful physical correspondence is established.
 
 ## Current high-level stack
@@ -22,63 +23,56 @@ pre-time quantum relations / global compatibility
 
 fixed global compatibility fiber
     -> specified smooth PSD boundary point
-       -> objective-independent intrinsic local dual ray on 128/128 samples (v14.02)
+       -> objective-independent intrinsic local dual ray (v14.02)
     -> supplied positive projective support source [P]
        -> exact PGRL tangent
        -> hidden projection
        -> hidden-tangent radial first contact
        -> intrinsic local dual ray
-       -> 128/128 conditional source chains close (v14.03)
+       -> PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY conditional (v14.03)
 
 Genesis / frozen provenance
-    -> gauge-trivial provenance maps naturally only to central support class
-       -> central class is PGRL-null (v14.04)
-    -> richer provenance carriers exist
-       -> no frozen natural intertwiner into fixed C^25 support certified (v14.04)
+    -> source-origin / grading / source-current compatibility exists
+    -> gauge-trivial provenance maps only to central/PGRL-null support class
+    -> richer carriers have no frozen natural support intertwiner (v14.04)
 
 compatibility parent/support
     -> H_Q = C^125
     -> support isometry L : C^25 -> C^125
-    -> A -> L^dagger A L is exact, projective and covariant
-    -> frozen provenance supplies no source class/tangent on this parent (v15.01)
+    -> A -> L^dagger A L exact/projective/covariant
+    -> no frozen provenance source class/tangent on parent (v15.01)
 
-shared-label shortcut
-    -> retained graph has five nodes
-    -> compatibility factors have five internal labels
-    -> all 120 node<->label bijections remain inequivalent under earned gauge
-    -> NO_CERTIFIED_SHARED_LABEL_CARRIER (v15.02)
+representation shortcuts
+    -> matching five graph nodes / five quantum labels is not a canonical identification (v15.02)
+    -> exact retained graph -> five quantum sites remains underived (v15.03)
+    -> state-independent scalar/current lift + independent local gauge -> center -> PGRL-null
+    -> supplied state context permits noncentral covariant lifts, but they are nonunique
 
-graph-site shortcut
-    -> graph-indexed quantum models exist in frozen archive
-    -> exact retained five-node graph -> five nontrivial quantum factors is UNDERIVED
-    -> scalar/current-only lift + independent local gauge -> center -> PGRL-null
-    -> supplied quantum-state context permits lawful noncentral covariant source lifts
-    -> predeclared state-functional lifts are projectively NONUNIQUE
-    -> five nontrivial sites cannot literally equal C^125 because 125=5^3
-    -> no natural graph-site -> compatibility-parent map certified
-    -> NO_CERTIFIED_GRAPH_SITE_FACTORIZATION (v15.03)
-
-state-dependent local source law
+local source-law classification
     -> F(U rho U^dagger)=U F(rho) U^dagger
-    -> full stabilizer forces F(rho) scalar on each rho spectral block
-    -> qubit traceless law is exactly a(r)(rho-I/2)
-    -> covariance fixes quantum direction, not scalar response a(r)
-    -> linear and square centered qubit laws coincide exactly
-    -> log law has a_log(r)=2 artanh(r)/r and splits the global ray for unequal source-support spectra
-    -> frozen source linearity / null control / positive scaling / local covariance admit multiple inequivalent a(r)
-    -> COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM (v15.04)
+    -> F(rho) scalar on each rho spectral block
+    -> qubit traceless law = a(r)(rho-I/2)
+    -> covariance does not select a(r) (v15.04)
 
-composition-law selector audit
-    -> v13.22 source naturality embeds an already-supplied P as P tensor I
-       and does NOT define P=F(rho)
-    -> labeled monoidal local-source sum is associative / swap-natural / covariant
-       for arbitrary already-chosen a(r)
-    -> tensor composition therefore composes a local law but does not select one
-    -> a stronger universal scalar functional calculus + centered tensor derivation
-       + continuity implies f(x)=alpha log(x)+beta
-    -> those stronger premises are NOT frozen ontology
-    -> FROZEN_COMPOSITION_LAWS_DO_NOT_SELECT_SPECTRAL_RESPONSE (v15.05)
-    -> LOG_SHAPE_REQUIRES_NEW_FUNCTIONAL_CALCULUS_ASSUMPTION (v15.05)
+composition selector
+    -> already-selected local sources compose monoidally for arbitrary a(r)
+    -> generic composition does not select a(r)
+    -> stronger universal scalar functional calculus + centered tensor derivation selects log shape
+    -> stronger premise not frozen (v15.05)
+
+recoverability multiplicativity
+    -> root fidelity multiplicative on independent recovery pairs
+    -> -log root fidelity additive
+    -> scalar comparison generator does not select local operator source (v15.06)
+
+canonical neutral-reference operator
+    -> full local-frame invariance uniquely selects tau_d=I_d/d
+    -> tau_{d1*d2}=tau_d1 tensor tau_d2
+    -> Q_d(rho)=d rho is a canonical multiplicative local operator
+    -> log Q_d = log rho + log(d) I is additive
+    -> centered generator = centered log rho
+    -> neutral-to-state PGRL endpoint fixes [centered log rho]_+ conditionally
+    -> frozen ontology does NOT yet define sourcehood as this preparation generator (v15.07)
 
 retained geometry / source-current bridge
     -> metric-affine finite kinematics
@@ -89,17 +83,17 @@ retained geometry / source-current bridge
 
 ## Current Pillar status
 
-- Pillar 1 — Global Atlas Closure: COMPLETE.
-- Pillar 2 — Retained Curvature / Source-Current Compatibility: CLOSED CONDITIONAL (response-selected Phi); bare Genesis-only Phi obstructed.
-- Pillar 3 — GR/ADM Correspondence: OPEN.
+- Pillar 1 — Global Atlas Closure: **COMPLETE**.
+- Pillar 2 — Retained Curvature / Source-Current Compatibility: **CLOSED CONDITIONAL** (response-selected Phi); bare Genesis-only Phi obstructed.
+- Pillar 3 — GR/ADM Correspondence: **OPEN**.
 
 ## Gate package convention
 
-Each gate directory contains the reproducible scientific archive, normally including:
+Each completed gate normally contains:
 
-- `REPORT.md` — human-readable theorem/computation/interpretation/claim-boundary report.
-- `SUMMARY.json` — machine-readable measured adjudication.
-- `CHECKER.py` — executable verifier bound to the frozen result.
+- `REPORT.md` — theorem/computation/interpretation/claim-boundary report;
+- `SUMMARY.json` — machine-readable frozen adjudication;
+- `CHECKER.py` — executable verifier with scientific thresholds and archive binding.
 
 ## v13 history
 
@@ -135,21 +129,21 @@ Each gate directory contains the reproducible scientific archive, normally inclu
 ## v14 history — upstream global-admissibility origin
 
 - [v14.01](v14/v14.01/) — canonical incidence gives zero cycle defect; lawful nonzero weighted maps exist but remain nonunique; `NONUNIQUE`.
-- [v14.02](v14/v14.02/) — `128/128` full-hidden radial boundary samples are smooth/simple with intrinsic normal-cone rank 1; `CANONICAL_DUAL_RAY`.
-- [v14.03](v14/v14.03/) — supplied positive projective support-source rays canonically select hidden tangent, radial first contact, and local dual ray on `128/128`; `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`; provenance origin still open.
+- [v14.02](v14/v14.02/) — audited smooth full-hidden radial boundaries have intrinsic rank-one local normal/dual ray; `CANONICAL_DUAL_RAY`.
+- [v14.03](v14/v14.03/) — supplied positive projective support-source rays canonically select hidden tangent, radial first contact, and local dual ray; `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`; provenance origin still open.
 - [v14.04](v14/v14.04/) — gauge-trivial provenance is central/PGRL-null; richer carriers have no certified natural support link; `REQUIRES_NEW_REPRESENTATION_LINK`.
-
-The v14 results are compatible. v14.01 blocks arbitrary source weighting as a canonical global law. v14.02 derives the local dual direction once a smooth boundary is supplied. v14.03 supplies the conditional source-ray→boundary chain. v14.04 localizes the unresolved upstream problem to representation of provenance as the typed source consumed by v14.03.
 
 ## v15 history — representation and source-law audits
 
-- [v15.01](v15/v15.01/) — compatibility support has explicit parent `C^125`; compression to `C^25` is exact/projective/covariant, but the frozen archive supplies no provenance source class/tangent on that parent. `NO_COMMON_PARENT_REPRESENTATION`; secondary `COMPATIBILITY_PARENT_SUPPORT_VERIFIED`.
-- [v15.02](v15/v15.02/) — retained five-node graph and five-level quantum labels do not share an earned label carrier. Exact double-coset audit leaves `120` inequivalent node↔label identifications; factor placement is independently consequential. `NO_CERTIFIED_SHARED_LABEL_CARRIER`.
-- [v15.03](v15/v15.03/) — graph-site factorization/local-gauge audit. Graph-indexed quantum models exist, but no frozen artifact certifies the exact retained five-node graph as five quantum factors. State-independent scalar/current lifts are central and PGRL-null under full independent local gauge. Supplied quantum-state context permits covariant noncentral lifts, but the frozen `linear` and `log` families are projectively inequivalent (`0.0326434` on control A; `0.0104608` on B). Independently, five nontrivial quantum factors cannot literally equal the existing `C^125` parent. Primary outcome `NO_CERTIFIED_GRAPH_SITE_FACTORIZATION`; scientific breakthrough `false`.
-- [v15.04](v15/v15.04/) — exact equivariant source-law classification. Any finite-dimensional local conjugation-equivariant Hermitian map is scalar on each spectral block of `rho`; for qubits its traceless part is exactly `a(r)(rho-I/2)`. The frozen source linearity, null-source, positive-scaling, and local-frame covariance constraints admit multiple inequivalent `a(r)`, including linear, logarithmic, and `1+r^2` witnesses. `COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM`; major structural result `true`; scientific breakthrough `false`.
-- [v15.05](v15/v15.05/) — frozen composition-law audit. v13.22 embeds an already-supplied `P` and does not define `P=F(rho)`. More strongly, labeled monoidal composition is associative, permutation-natural, and locally covariant for arbitrary already-chosen local `a(r)`; linear, log, and `1+r^2` remain projectively distinct while all satisfy the composition controls. A stronger continuous dimension-independent scalar functional calculus plus centered tensor derivation implies `f(x)=alpha log(x)+beta`, but those premises are not frozen and are classified `NEW_ASSUMPTION_NOT_FROZEN`. Primary outcome `FROZEN_COMPOSITION_LAWS_DO_NOT_SELECT_SPECTRAL_RESPONSE`; secondary `LOG_SHAPE_REQUIRES_NEW_FUNCTIONAL_CALCULUS_ASSUMPTION`; scientific breakthrough `false`.
+- [v15.01](v15/v15.01/) — compatibility support has explicit parent `C^125`; compression to `C^25` is exact/projective/covariant, but frozen provenance supplies no source class/tangent on that parent. `NO_COMMON_PARENT_REPRESENTATION`.
+- [v15.02](v15/v15.02/) — five graph nodes and five internal quantum labels do not share an earned label carrier; `120` node↔label identifications remain inequivalent. `NO_CERTIFIED_SHARED_LABEL_CARRIER`.
+- [v15.03](v15/v15.03/) — graph-site factorization/local-gauge audit. State-independent scalar/current lifts are central/PGRL-null; supplied state context permits noncentral covariant lifts but does not select one. `NO_CERTIFIED_GRAPH_SITE_FACTORIZATION`.
+- [v15.04](v15/v15.04/) — exact equivariant source-law classification. Qubit traceless family is `a(r)(rho-I/2)` and frozen covariance/source axioms leave `a(r)` free. `COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM`.
+- [v15.05](v15/v15.05/) — generic labeled monoidal composition preserves arbitrary already-selected `a(r)`. A stronger universal scalar-functional-calculus tensor law uniquely selects logarithmic shape, but is not frozen. `FROZEN_COMPOSITION_LAWS_DO_NOT_SELECT_SPECTRAL_RESPONSE`.
+- [v15.06](v15/v15.06/) — root fidelity supplies exact multiplicative recoverability and additive `-log` scalar, but exact-recovery families prove the scalar does not select the local operator source. `MULTIPLICATIVE_RECOVERABILITY_SCALAR_DOES_NOT_SELECT_LOCAL_SOURCE_LAW`.
+- [v15.07](v15/v15.07/) — full local-frame neutrality uniquely selects `tau_d=I/d`; the canonical relative-density operator `Q_d(rho)=d rho` is multiplicative and its centered additive Hermitian generator is centered `log rho`. A neutral-to-state PGRL endpoint therefore fixes the positive projective log-generator ray, but the frozen provenance/source ontology does not identify physical sourcehood with that preparation generator. `CANONICAL_NEUTRAL_RELATIVE_GENERATOR_EXISTS_SOURCE_IDENTIFICATION_UNDERIVED`.
 
-v15.01 rules out a common-parent shortcut. v15.02 rules out a shared-basis-label shortcut. v15.03 rules out silently promoting the retained graph to the current compatibility representation and proves that scalar/current data alone cannot select a noncentral source under independent local gauge. v15.04 classifies the remaining local covariance freedom exactly. v15.05 shows that generic tensor composition still does not select that freedom and isolates the stronger premise that would be sufficient to select the logarithmic shape.
+The v15 sequence progressively removes arbitrary choices. v15.01-v15.03 block representation shortcuts; v15.04 classifies the exact local covariance freedom; v15.05 shows generic composition cannot select that freedom; v15.06 finds multiplicativity but only in a scalar recovery object; v15.07 finally derives a canonical local multiplicative operator and its centered logarithmic generator. The remaining gap is no longer the mathematical form of the generator, but whether the frozen ontology gives it **source semantics**.
 
 ## Companion finite-model path / obstruction artifact
 
@@ -159,47 +153,28 @@ v15.01 rules out a common-parent shortcut. v15.02 rules out a shared-basis-label
 
 ## Current branch-stop and positive boundaries
 
-- v13.28 remains in force: absolute source→geometry coupling is not supplied by the frozen candidate classes.
-- v14.01 remains in force: source→higher-incidence deformation is not uniquely selected by the frozen rules.
-- v14.02 remains in force: every audited smooth radial compatibility boundary has one intrinsic local dual ray.
-- v14.03 remains in force conditionally: supplied `[P] -> hidden tangent -> X* -> [g]`.
-- v14.04 remains in force: provenance requires a nontrivial representation link.
-- v15.01 verifies the compatibility parent/support relation but finds no provenance source class/tangent on that parent.
-- v15.02 shows matching five-element cardinality does not supply the missing representation.
-- v15.03 shows the graph-site shortcut is underived; five nontrivial sites cannot literally be `C^125`; scalar/current-only local-gauge lifts are central/PGRL-null; state-context lifts are lawful but nonunique.
-- v15.04 proves that all local-unitary-equivariant state-dependent source maps are spectral and that the audited frozen source axioms leave the spectral response function unfixed.
-- v15.05 proves that labeled monoidal composition of already-selected local sources still leaves the response function unfixed; logarithmic shape becomes unique only under a stronger universal scalar-functional-calculus tensor law that is not currently frozen.
-
-v15.05 decisive controls:
-
-```text
-max labeled-monoidal local covariance error    = 8.588717521894646e-16
-max labeled-monoidal associativity error       = 2.3551386880256624e-16
-max swap-naturality error                      = 0.0
-linear vs log source-ray separation            = 0.04038732286659571
-linear vs polynomial source-ray separation     = 0.06600014410325687
-log vs polynomial source-ray separation        = 0.025621359948040462
-centered log tensor-law error                  = 1.6421465606029517e-15
-centered linear tensor-law error               = 0.3716732435890426
-centered cubic tensor-law error                = 0.5553605272997411
-frozen state-to-source composition selector    = NO
-log-shape sufficient premise                   = NEW_ASSUMPTION_NOT_FROZEN
-```
+- v13.28: absolute source→geometry coupling is not supplied by the frozen candidate classes.
+- v14.03: supplied `[P] -> hidden tangent -> X* -> [g]` remains certified conditional.
+- v14.04-v15.03: provenance/source representation into the quantum compatibility source space remains underived.
+- v15.04: local covariance alone leaves spectral response freedom.
+- v15.05: generic source composition does not remove that freedom.
+- v15.06: multiplicative scalar recoverability does not select an operator source.
+- v15.07: local-frame symmetry *does* supply a canonical multiplicative operator and centered-log generator, but source semantics remain underived.
 
 ## Stop rule
 
-Do not continue by inventing a node↔quantum-site identification, choosing a preferred internal axis, privileging `log rho`, tying local frames, vectorizing/reshaping/padding a carrier into `C^125`, using PCA/SVD/random isometries, promoting a minimum-norm current, or selecting the option that gives the most gravity-like downstream response.
+Do not continue by inventing a node↔quantum-site identification, choosing a preferred internal axis, tying local frames, padding/reshaping a carrier into `C^125`, promoting a minimum-norm current, or selecting any option from downstream gravity performance.
 
-In particular, do **not** adopt the centered tensor-derivation equation merely because it uniquely selects the logarithmic shape.
+In particular, v15.07 does **not** authorize the statement that the physical source is `centered log(rho)` merely because that operator is now canonical.
 
-A lawful continuation requires either:
+A lawful continuation requires an upstream answer to:
 
-1. newly discovered frozen structure certifying the exact retained graph-site carrier and its natural map into the compatibility parent/support;
-2. an independently justified ontology-native reason that the state-to-source map must be one universal scalar functional calculus obeying the centered tensor derivation, or another comparably strong source-law principle; or
-3. a genuinely new operator-valued source/representation principle explicitly labeled **NEW ASSUMPTION**, independently motivated and user-approved before downstream testing.
+> Does Genesis/provenance independently define sourcehood as the generator preparing a local state from the unique frame-neutral reference `I/d`?
 
-See [STATUS.md](STATUS.md) for the current frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only gate ledger.
+If the frozen ontology does not supply that meaning, the source-law-selection branch stops and `SOURCEHOOD_IS_NEUTRAL_PREPARATION_GENERATOR` must be declared **NEW ASSUMPTION** before use.
+
+See [STATUS.md](STATUS.md) for the live frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only ledger.
 
 ## Validation
 
-Each completed gate carries an executable checker and machine-readable summary. v15.04 and v15.05 are bound to their full frozen `SUMMARY.json` outputs in addition to independent theorem/numerical thresholds; archive binding uses a tight mixed floating tolerance while scientific tolerances are enforced separately. Final exact-SHA branch certification and post-merge regressions are required before a gate is called merged/certified. Pillar 3 remains open.
+Completed gates carry executable checkers and machine-readable summaries. v15.04-v15.07 separate scientific thresholds from floating archive-reproducibility tolerances. v15.07 additionally hash-binds the source-origin semantics in v13.04, v13.25, and v13.26. Final exact-head branch verification and post-merge regression are required before a gate is called merged/certified. Pillar 3 remains open.
