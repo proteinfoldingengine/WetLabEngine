@@ -1,4 +1,4 @@
-name: UQCF v13.27 Gravity Progress Simulation
+name: UQCF v13.27 Methods and Obstruction Simulation
 
 on:
   workflow_dispatch:
@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - research/v13.27-gravity-progress-demo
+      - research/v13.27-rescope-revision
     paths:
       - 'ResearchHistory/UQCF-GEM/demos/v13.27-gravity-progress/**'
       - '.github/workflows/uqcf-v1327-gravity-progress.yml'
@@ -55,7 +56,7 @@ jobs:
       - name: Upload reproducibility artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: uqcf-v1327-gravity-progress
+          name: uqcf-v1327-methods-obstruction
           path: |
             ResearchHistory/UQCF-GEM/demos/v13.27-gravity-progress/outputs/summary.json
             ResearchHistory/UQCF-GEM/demos/v13.27-gravity-progress/outputs/telemetry.csv
