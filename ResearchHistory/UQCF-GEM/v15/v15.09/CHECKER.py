@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+from pathlib import Path
 from quantum_carrier_origin_audit import adjudicate_gate, run_audit
 
 assert adjudicate_gate(True, False) == "CANONICAL_NEUTRAL_STRUCTURE_DOES_NOT_DERIVE_RETAINED_QUANTUM_CARRIER"
@@ -71,5 +72,8 @@ assert claim["new_representation_principle_required"] is True
 assert claim["downstream_gravity_used_as_selector"] is False
 assert claim["entropy_or_time_used_as_selector"] is False
 assert claim["Pillar_3_closed"] is False
+
+frozen = json.loads(Path("SUMMARY.json").read_text())
+assert s == frozen, "live v15.09 audit differs from frozen SUMMARY.json"
 
 print(json.dumps(s, indent=2, sort_keys=True))
