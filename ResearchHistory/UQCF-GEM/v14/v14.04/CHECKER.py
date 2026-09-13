@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import json
+
 from provenance_representation_audit import run_audit
 
 r = run_audit()
@@ -25,3 +27,4 @@ assert r["gate_outcome"] in {
     "UNRESOLVED_REPRESENTATION_AUDIT",
 }
 print("V14_04_PROVENANCE_REPRESENTATION_CHECKER_PASS")
+print(json.dumps(r, indent=2, sort_keys=True))
