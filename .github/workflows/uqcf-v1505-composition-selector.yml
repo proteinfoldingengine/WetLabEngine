@@ -1,0 +1,45 @@
+name: UQCF v15.05 Composition Selector Boundary
+
+on:
+  push:
+    branches:
+      - research/v15.05-composition-selector-boundary
+      - main
+    paths:
+      - 'ResearchHistory/UQCF-GEM/v15/v15.05/**'
+      - 'ResearchHistory/UQCF-GEM/v15/v15.04/**'
+      - 'ResearchHistory/UQCF-GEM/v15/v15.03/**'
+      - 'ResearchHistory/UQCF-GEM/v14/v14.03/**'
+      - 'ResearchHistory/UQCF-GEM/v13/v13.26/**'
+      - 'ResearchHistory/UQCF-GEM/v13/v13.23/**'
+      - 'ResearchHistory/UQCF-GEM/v13/v13.22/**'
+      - 'ResearchHistory/UQCF-GEM/v13/v13.04/**'
+      - '.github/workflows/uqcf-v1505-composition-selector.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/v15/v15.05
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: python -m pip install numpy==2.4.6
+      - name: Run v15.05 checker
+        run: python CHECKER.py
