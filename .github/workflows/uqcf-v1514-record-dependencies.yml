@@ -1,0 +1,58 @@
+name: UQCF v15.14 Record Dependencies
+
+on:
+  push:
+    branches:
+      - main
+      - research/v15.14-record-dependencies
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies/**'
+      - '.github/workflows/uqcf-v1514-record-dependencies.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned numerical dependency
+        run: python -m pip install numpy==2.4.6
+      - name: Record exact checked head
+        run: git rev-parse HEAD
+      - name: Thirty record-dependent model and replay tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies
+        run: python -m unittest -v test_adaptive.py test_replay.py
+      - name: Twenty-seven preserved v15.13 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.13-independent-events
+        run: python -m unittest -v test_model.py test_replay.py
+      - name: Thirty preserved v15.12 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.12-pretime-to-history
+        run: python -m unittest -v test_simulation.py test_presentation.py
+      - name: Twenty preserved v15.11 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.12-pretime-to-history/vendor
+        run: python -m unittest -v test_continuity.py
+      - name: Generate 80 valid runs and standalone replay
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies
+        run: python replay.py --out outputs
+      - name: Compile extension
+        run: python -m compileall -q ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies
+      - name: Upload computed replay and verification
+        uses: actions/upload-artifact@v4
+        with:
+          name: v15.14-record-dependencies-replay
+          path: ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies/outputs/
+          if-no-files-found: error
