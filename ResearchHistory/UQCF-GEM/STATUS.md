@@ -1,29 +1,38 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v14.03 — Projective Source-Ray / Hidden First-Contact Selection Gate  
-**v14.03 supplied-source adjudication:** `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`  
-**v14.03 provenance adjudication:** `PROVENANCE_SOURCE_TYPE_MISMATCH`  
+**Latest completed gate:** v14.04 — Provenance Representation / Intertwiner Gate  
+**v14.04 adjudication:** `REQUIRES_NEW_REPRESENTATION_LINK`  
+**v14.04 exact sub-theorem:** `SUPPORT_GAUGE_PROJECTIVE_CENTRALITY`  
 **Scientific breakthrough:** `false`  
 **Pillar 3:** `OPEN`
 
 ## Current scientific picture
 
-The upstream source/admissibility chain is now sharply localized:
+The upstream source/admissibility stack is now localized to a representation problem:
 
 ```text
-Genesis / frozen provenance / source grading
-    -> source origin / retained amount / flow compatibility
-    -> NO CERTIFIED NATURAL MAP to the archived support-space source operator ray
-    -> PROVENANCE_SOURCE_TYPE_MISMATCH (v14.03)
+Genesis / frozen provenance
+    -> source-origin identity / retained-sequence identity / source-flow compatibility
+    -> gauge-trivial provenance under the fixed 25D support gauge
+       -> projective naturality forces central support source class
+       -> central source is PGRL-null
+       -> exact v14.04 theorem
+
+richer frozen provenance carriers
+    -> 6D Genesis/pruning field carrier
+    -> retained graph source/current carrier
+    -> no certified natural map/intertwiner into the fixed 25D compatibility support
+    -> different supplied isometries produce inequivalent projective [P]
+       and inequivalent hidden/contact/dual selections
+    -> REQUIRES_NEW_REPRESENTATION_LINK (v14.04)
 
 supplied positive projective support-space PGRL source ray [P]
-    -> exact full-state PGRL tangent dot X_P
-    -> canonical Hilbert-Schmidt projection into full hidden kernel
-    -> hidden tangent ray [Pi_hid dot X_P]
-    -> unique hidden-tangent radial first PSD contact X*(P)
-    -> objective-independent local dual ray [g(P)] from v14.02
-    -> PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY (v14.03)
+    -> exact full-state PGRL tangent
+    -> canonical hidden projection
+    -> hidden-tangent radial first PSD contact X*(P)
+    -> objective-independent local dual ray [g(P)]
+    -> PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY remains certified (v14.03)
 
 retained / downstream source-geometry bridge
     -> projective coupled-source ray [Sigma] survives
@@ -31,183 +40,187 @@ retained / downstream source-geometry bridge
     -> v13.28 REQUIRES_NEW_AXIOM remains in force
 ```
 
-The new result is therefore conditional on supplying `[P]`. It does not derive the missing provenance→source operator map and does not reopen the stopped absolute-coupling branch.
+The new v14.04 result does not invalidate the positive conditional v14.03 chain. It identifies the missing upstream information required to supply its `[P]` input.
 
-## Latest result — v14.03
+## Latest result — v14.04
 
-v14.03 asked whether an already-supplied **positive projective PGRL source ray** in the full archived support state canonically determines the hidden first-order response direction, the corresponding radial first-contact point of the fixed-visible-data compatibility fiber, and the v14.02 intrinsic local dual ray.
-
-The frozen answer is:
+v14.04 asked whether the frozen Genesis/provenance/source-grading machinery naturally represents sourcehood as the positive projective Hermitian operator ray consumed by v14.03:
 
 ```text
-PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY
+Genesis / provenance ? -> [P]
 ```
 
-with independent provenance status:
+The answer for the audited frozen ontology is:
 
 ```text
-PROVENANCE_SOURCE_TYPE_MISMATCH
+REQUIRES_NEW_REPRESENTATION_LINK
 ```
 
-### 1. Exact supplied-source chain
+### 1. Support-gauge projective centrality theorem
 
-For faithful coefficient-space state `X0` and Hermitian support-space source `P`,
+Let frozen provenance data carry no certified action of the v14.03 support-coordinate group `U(25)`. A natural projective support representation must obey
 
 ```text
-X_s(P) = exp(log X0 + sP) / Tr exp(log X0 + sP)
+[U P U^dagger]_+ = [P]_+
 ```
 
-has exact first tangent `dot X_P`. Its hidden component is the Hilbert-Schmidt orthogonal projection into the full hidden kernel of the visible marginal map.
-
-For nonzero hidden component,
+for every support-coordinate unitary `U`, with the already-earned v14.03 equivalence
 
 ```text
-u_P = Pi_hid(dot X_P) / ||Pi_hid(dot X_P)||
+P ~ a P + b I,  a > 0.
 ```
 
-and the fixed-visible-data radial first contact is
+Thus every conjugate would have to lie in the real affine span of `P` and `I`, and therefore commute with `P`.
+
+Any noncentral Hermitian `P` has distinct eigenspaces that can be mixed by a unitary so that
 
 ```text
-X*(P) = X0 + r*(u_P) u_P,
-r*(u) = -1 / lambda_min(X0^(-1/2) u X0^(-1/2)).
+[P, U P U^dagger] != 0.
 ```
 
-At that boundary point, v14.02 supplies the objective-independent intrinsic dual ray `[g(P)]`.
-
-Important: `X*(P)` is a **hidden-tangent radial first contact**, not a claim that the finite PGRL exponential path physically reaches a PSD boundary.
-
-### 2. Frozen 128-source survey
-
-The audit used seed `1403` and exactly 64 predeclared Hermitian support-space sources for each archived configuration.
+Therefore the only fully support-gauge-natural projective class available to gauge-trivial provenance is central:
 
 ```text
-primary sources                 = 128
-nonzero hidden source components = 128
-simple/ray-valued contacts       = 128
-zero-hidden primary sources      = 0
-nonunique contacts               = 0
-unresolved numerical contacts    = 0
+P = lambda I.
 ```
 
-Source hashes:
+For normalized PGRL,
 
 ```text
-V_A = 60d17efc41ee4416313771b1539e45502dd3230f272329a5a8ab36d816a5421b
-V_B = 5e1aadeca68ad69350500416e99fe3ee06f42c827eb07ee41ebbe74ffe6571eb
+X_s(lambda I) = X0,
 ```
 
-Support dimensions are 25 for both archived families; hidden dimensions remain 315 for `V_A` and 311 for `V_B`.
-
-### 3. Positive-projective invariance
-
-For `a>0` and scalar `b`,
+so
 
 ```text
-X_s(aP+bI) = X_(as)(P)
+dot X_(lambda I) = 0.
 ```
 
-so exactly
+The executable central-source control gives
 
 ```text
-dot X_(aP+bI) = a dot X_P.
+max central-source PGRL tangent norm = 5.900100316503041e-16.
 ```
 
-The transformed sources were tested directly, without re-centering or re-normalizing them.
+This theorem is analytic; numerical controls do not define it.
 
-Fresh maxima:
+### 2. Exact deterministic centrality regression
+
+The audit uses the complete 25-dimensional Heisenberg-Weyl unitary 1-design:
 
 ```text
-tangent scaling error        = 4.789125308265857e-16
-hidden-direction drift       = 6.163108690215363e-14
-first-contact boundary drift = 2.0131832593298626e-15
-oriented dual-ray drift      = 6.661338147750939e-16
+25^2 = 625 unitary conjugations.
 ```
 
-Thus the audited selector depends on the positive projective source class rather than an absolute source magnitude.
-
-This does not contradict v13.26: absolute observer calibration remains underived; v14.03 shows only that absolute source scale is unnecessary for this upstream direction-selection step.
-
-### 4. Support-coordinate covariance
-
-Eight deterministic support-coordinate unitaries per archived configuration were used to transform `X0`, `P`, the hidden basis, the boundary point, and the dual representative.
-
-Maximum complete-pipeline covariance error:
+For deterministic noncentral Hermitian probes:
 
 ```text
-3.8799143876726434e-13
+max Weyl-twirl error                    = 2.0899933776153146e-14
+min noncentral projective orbit residual = 0.02773234285516979
+max central invariance error             = 4.26351937961921e-15
 ```
 
-The initial divided-difference implementation exposed a `V_A` covariance defect near repeated eigenvalues. It was replaced by the analytically equivalent matrix-exponential Fréchet derivative after a direct hypothesis test restored covariance to machine precision while preserving finite-difference agreement. No scientific tolerance or adjudication rule was relaxed.
+The exact twirl collapses to the scalar center as required.
 
-Production controls:
+### 3. Frozen provenance-carrier inventory
+
+Four frozen candidate classes were audited against concrete archived artifacts:
 
 ```text
-max tangent Hermiticity residual = 0.0
-max |Tr(dot X)|                  = 9.64939933512099e-18
-max finite-difference error      = 1.6582477388778675e-10
-max base boundary formula error  = 4.5102810375396984e-17
-max boundary PSD residual        = 8.164027539109826e-17
+candidate classes                         = 4
+missing artifacts                          = 0
+nontrivial provenance carriers             = 2
+certified natural links into v14.03 Herm(25) = 0
 ```
 
-### 5. Engineered controls
+Nontrivial carriers found:
 
-The checker does not force every possible source to be hidden-active.
+- the archived real 6D Genesis/pruning field;
+- the retained graph source/current structure satisfying `B J = s`.
+
+Gauge-trivial provenance candidates include ledger/source-origin identity and scalar retained source grading.
+
+The audited artifacts do not certify a natural representation/intertwiner from either nontrivial carrier into the fixed 25-dimensional support coefficient space used by v14.03.
+
+### 4. Supplied-intertwiner ambiguity control
+
+A 3D Hermitian provenance-carrier fixture was embedded into the fixed 25D support with three explicitly supplied deterministic isometries using seeds
 
 ```text
-identity source -> ZERO_PGRL_TANGENT
-hidden-active constructed control -> NONZERO_HIDDEN_COMPONENT
-visible-only constructed control -> ZERO_HIDDEN_SOURCE_COMPONENT
+14041, 14042, 14043.
 ```
 
-The visible-only control has hidden norm `1.499385732841713e-19`.
+These are controls only, not derived Genesis physics.
 
-### 6. Provenance/source-ray boundary
-
-The frozen Genesis/provenance/source-grading stack supplies source identity, retained source amount/grading, provenance consistency, and source-flow/balance compatibility.
-
-It does not currently return the same typed object used by v14.03: a Hermitian projective source/log-density covector on the 25-dimensional support coefficient space of the archived compatibility construction.
-
-No certified natural map between those spaces is present.
-
-Therefore:
+All three:
 
 ```text
-PROVENANCE_SOURCE_TYPE_MISMATCH
+satisfy J^dagger J = I
+produce NONZERO_HIDDEN_COMPONENT
+reach simple first contacts
+produce rank-1 / RAY local duals
 ```
 
-The random source survey is not provenance evidence.
+Maximum isometry error:
+
+```text
+4.621011054697887e-16
+```
+
+But the results strongly disagree when only the supplied relative embedding changes:
+
+```text
+min pair projective source residual = 0.99873115934039
+max hidden-direction separation     = 1.2767684478604349
+max first-contact separation        = 0.023756216192420524
+max dual-ray separation             = 1.036259217478033
+```
+
+Therefore an intertwiner is sufficient to make v14.03 operative, but an **unfixed** intertwiner is not harmless gauge bookkeeping. It changes the relative placement of provenance inside the fixed compatibility support and materially changes the downstream selection.
+
+## Architectural consequence
+
+The upstream chain is now
+
+```text
+Genesis / provenance
+    -> nontrivial provenance carrier
+    -> MISSING NATURAL REPRESENTATION / INTERTWINER J
+    -> positive projective support source ray [P]
+    -> hidden tangent
+    -> first-contact boundary X*
+    -> canonical local dual ray [g]
+```
+
+The missing object is no longer generically described as a source lift. It is specifically a **representation/intertwiner law** between already-existing provenance-side and compatibility-support-side structures.
 
 ## Relation to earlier gates
 
+### v14.03 remains valid
+
+Conditional on a supplied `[P]`, the chain
+
+```text
+[P] -> hidden tangent -> X* -> [g]
+```
+
+remains certified on the frozen 128-source survey.
+
 ### v14.02 remains valid
 
-v14.02 established
-
-```text
-specified smooth boundary X* -> canonical local dual ray [g(X*)].
-```
-
-v14.03 adds, conditional on a supplied source ray,
-
-```text
-supplied [P] -> hidden tangent -> X*(P) -> [g(P)].
-```
+A specified smooth first-contact compatibility boundary carries one objective-independent intrinsic local dual ray in the audited fibers.
 
 ### v14.01 remains valid
 
-v14.01 showed arbitrary state-weighted source→higher-incidence maps are nonunique. v14.03 does not choose one of those weight functions; it uses the already-earned full-state PGRL tangent and the exact hidden orthogonal projector.
-
-### v13.28 remains valid
-
-The frozen downstream source→geometry classes still do not fix an absolute coupling. v14.03 derives an upstream projective direction/dual selection, not a coupling magnitude.
+Arbitrary state-weighted source→higher-incidence laws remain nonunique; v14.04 does not repair them by choosing another weighting function.
 
 ### v13.26 remains valid
 
-Absolute retained-to-observer source calibration remains underived.
+Absolute retained-to-observer source calibration is underived. v14.04 works only with projective source classes.
 
-### v13.10 / v13.13 remain valid
+### v13.28 remains valid
 
-The low-order retained ledger does not determine hidden response autonomously, and exact source response generically depends on full higher-order state information. v14.03 works directly in the full support state for that reason.
+Absolute downstream source→geometry coupling remains blocked for the frozen candidate classes.
 
 ## Preserved results
 
@@ -218,15 +231,17 @@ The low-order retained ledger does not determine hidden response autonomously, a
 - source-current balance and conditional current selection: **PRESERVED**.
 - v13.28 absolute coupling obstruction: **PRESERVED**.
 - v14.01 source-law nonuniqueness: **PRESERVED**.
-- v14.02 canonical local dual ray: **PRESERVED / NOW SOURCE-CONDITIONALLY SELECTED**.
+- v14.02 canonical local dual ray: **PRESERVED**.
+- v14.03 supplied-projective-source selection chain: **PRESERVED CONDITIONAL**.
 - projective coupled-source ray `[Sigma]`: **PRESERVED**.
 - controlled ADM/Einstein comparisons: **EXTERNAL HELDOUT CORRESPONDENCE ONLY**.
 
 ## Still not derived
 
-- Genesis/provenance → typed support-space source ray `[P]`;
+- Genesis/provenance → natural typed v14.03 support-source ray `[P]`;
+- the missing provenance/support intertwiner `J`;
 - physical/observer absolute source magnitude;
-- physical claim that PGRL evolution reaches the audited boundary;
+- a physical statement that PGRL evolution reaches the audited radial boundary;
 - source-to-solder/coframe law;
 - absolute source→geometry coupling;
 - stress-energy tensor;
@@ -235,18 +250,22 @@ The low-order retained ledger does not determine hidden response autonomously, a
 - Einstein equations;
 - Pillar 3 closure.
 
-## Next lawful frontier
+## Stop rule / next lawful frontier
 
-The missing upstream arrow is now isolated to
+The current representation branch stops here.
+
+Do **not** continue by trying another arbitrary embedding, reshape, Fourier identification, PCA/SVD alignment, random isometry, or target-fitted map.
+
+A new representation gate is lawful only if one of these occurs:
+
+1. a newly discovered frozen artifact already defines the required natural intertwiner;
+2. an independently motivated information-theoretic/quantum structure canonically relates the two representation spaces; or
+3. a genuinely new representation axiom is proposed, explicitly labeled **NEW ASSUMPTION**, justified independently of the desired gravity/ADM result, and user-approved.
+
+Until then:
 
 ```text
-Genesis / provenance  ?  ->  [P]
+provenance -> [P] : STOPPED PENDING REPRESENTATION PRINCIPLE
+[P] -> X* -> [g]  : CERTIFIED CONDITIONAL
+Pillar 3          : OPEN
 ```
-
-because, once `[P]` is supplied, the frozen model now has the certified conditional chain
-
-```text
-[P] -> hidden tangent -> X* -> [g].
-```
-
-Do not invent a new provenance→source operator law merely to continue. A next gate is lawful only if the existing archive contains an independently motivated typed map candidate, or if a genuinely new axiom is explicitly proposed as such.
