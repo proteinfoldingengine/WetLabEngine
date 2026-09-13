@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 from pruning_order_emergent_time_audit import adjudicate_gate, run_audit
 
 assert adjudicate_gate(True, False) == "FROZEN_PRUNING_DOES_NOT_YET_DERIVE_INTRINSIC_TIME_ORDER"
@@ -70,4 +71,4 @@ assert b["entropy_used_as_selector"] is False
 assert b["adm_or_spacetime_time_used_as_selector"] is False
 assert b["Pillar_3_closed"] is False
 
-print("v15.10 checker passed")
+print(json.dumps(s, indent=2, sort_keys=True))
