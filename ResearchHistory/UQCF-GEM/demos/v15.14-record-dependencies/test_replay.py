@@ -41,6 +41,8 @@ class ReplayTests(unittest.TestCase):
         story=r.movie_story('1001')
         self.assertTrue(any(x['blocked_attempt']=='B2' and x['snapshot'].done==('B1',) for x in story))
         self.assertEqual(story[-1]['snapshot'].done,m.EVENTS)
+        other=r.movie_story('0000')
+        self.assertIn('A1=0',next(row['message'] for row in other if row['snapshot'].event=='B2'))
 
     def test_fps_guard(self):
         with self.assertRaises(ValueError): r.movie(Path('unused.mp4'),fps=0)
