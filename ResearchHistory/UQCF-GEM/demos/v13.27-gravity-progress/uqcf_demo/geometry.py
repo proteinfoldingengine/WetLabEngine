@@ -1,5 +1,5 @@
 import numpy as np
-from .linalg import paulis, proper_orthogonal_polar, so3_angle
+from .linalg import paulis, raw_orthogonal_polar, proper_orthogonal_polar, so3_angle_audit
 from .quantum import (
     one_site_reductions,
     pair_reduction,
@@ -27,6 +27,7 @@ def geometry_snapshot(model, rho, cycles=None):
     for idx, (i, j) in enumerate(model["edges"]):
         pair = pair_reduction(rho, i, j, n)
         C = connected_correlation(pair, singles[i], singles[j])
+        Q_raw = raw_orthogonal_polar(C)
         O = proper_orthogonal_polar(C)
         M = metrics[j] - O.T @ metrics[i] @ O
         M = (M + M.T) / 2
@@ -37,6 +38,7 @@ def geometry_snapshot(model, rho, cycles=None):
             "C": C,
             "O": O,
             "M": M,
+            "raw_polar_det": float(np.linalg.det(Q_raw)),
             "corr_norm": float(np.linalg.norm(C, ord="fro")),
             "nonmetricity_norm": float(np.linalg.norm(M, ord="fro")),
         }
@@ -53,10 +55,14 @@ def geometry_snapshot(model, rho, cycles=None):
                 break
             H = H @ lookup[(a, b)]
         if valid:
+            audit = so3_angle_audit(H)
             cycle_records.append({
                 "nodes": tuple(cyc),
                 "H": H,
-                "angle": so3_angle(H),
+                "angle": audit["angle"],
+                "raw_cos_argument": audit["raw_cos_argument"],
+                "clipped_cos_argument": audit["clipped_cos_argument"],
+                "clip_excess": audit["clip_excess"],
             })
     return {
         "metrics": metrics,
