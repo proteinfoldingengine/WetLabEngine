@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import json
+import math
+from pathlib import Path
 
 from composition_selector_audit import adjudicate_gate, run_audit
 
@@ -28,6 +30,7 @@ else:
 
 s = run_audit()
 
+# Scientific gates are enforced independently of archive-value reproducibility.
 assert s["version"] == "v15.05"
 assert s["gate"] == "Frozen Composition-Law Audit / Monoidal Non-Selection and Log-Selector Boundary"
 assert s["primary_outcome"] == "FROZEN_COMPOSITION_LAWS_DO_NOT_SELECT_SPECTRAL_RESPONSE"
@@ -77,5 +80,36 @@ assert boundary["log_source_law_derived_from_frozen_ontology"] is False
 assert boundary["downstream_gravity_used_as_selector"] is False
 assert boundary["entropy_or_time_used_as_selector"] is False
 assert boundary["new_assumption_needed_for_log_selector"] is True
+
+# Freeze the complete live result.  This tolerance binds harmless floating-point
+# variation only; the scientific pass/fail limits above remain separate.
+def assert_archive_equal(actual, expected, path="$"):
+    if isinstance(expected, dict):
+        assert isinstance(actual, dict), f"{path}: expected dict"
+        assert set(actual) == set(expected), f"{path}: key mismatch"
+        for key in expected:
+            assert_archive_equal(actual[key], expected[key], f"{path}.{key}")
+        return
+    if isinstance(expected, list):
+        assert isinstance(actual, list), f"{path}: expected list"
+        assert len(actual) == len(expected), f"{path}: length mismatch"
+        for idx, (a_item, e_item) in enumerate(zip(actual, expected)):
+            assert_archive_equal(a_item, e_item, f"{path}[{idx}]")
+        return
+    if isinstance(expected, bool) or expected is None or isinstance(expected, (str, int)):
+        assert actual == expected, f"{path}: {actual!r} != {expected!r}"
+        return
+    if isinstance(expected, float):
+        assert isinstance(actual, (int, float)) and not isinstance(actual, bool), f"{path}: expected numeric"
+        assert math.isfinite(float(actual)) and math.isfinite(expected), f"{path}: non-finite value"
+        tolerance = 1e-12 + 1e-9 * max(1.0, abs(float(actual)), abs(expected))
+        assert abs(float(actual) - expected) <= tolerance, (
+            f"{path}: numeric mismatch {actual!r} vs {expected!r}, tol={tolerance}"
+        )
+        return
+    raise TypeError(f"{path}: unsupported archive type {type(expected)!r}")
+
+frozen_summary = json.loads(Path("SUMMARY.json").read_text())
+assert_archive_equal(s, frozen_summary)
 
 print(json.dumps(s, indent=2, sort_keys=True))
