@@ -20,6 +20,7 @@ def _draw(fig, data, frame_index):
     fig.clf()
     rec = data["records"][frame_index]
     graph = data["graph"]
+    summary = data["summary"]
     positions = np.asarray(graph["positions"], dtype=float)
     edges = [tuple(e) for e in graph["edges"]]
 
@@ -38,11 +39,11 @@ def _draw(fig, data, frame_index):
     ax1.scatter(positions[:, 0], positions[:, 1], s=sizes, zorder=3)
     for i, (x, y) in enumerate(positions):
         ax1.text(x, y, str(i), ha="center", va="center", fontsize=8)
-    ax1.set_title("Pre-time quantum relations")
+    ax1.set_title("Fixed quantum-relational model")
     ax1.set_aspect("equal")
     ax1.set_xticks([])
     ax1.set_yticks([])
-    ax1.text(0.02, 0.02, "abstract embedding — not physical space", transform=ax1.transAxes, fontsize=8)
+    ax1.text(0.02, 0.02, "fixed abstract graph — not derived physical space", transform=ax1.transAxes, fontsize=8)
 
     z = np.asarray(rec["node_geometry_score"], dtype=float)
     zplot = 0.15 + 1.8 * _norm01(z)
@@ -58,14 +59,19 @@ def _draw(fig, data, frame_index):
     ax2.scatter(positions[:, 0], positions[:, 1], zplot, s=80 + 280 * _norm01(z))
     for i in range(len(positions)):
         ax2.text(positions[i, 0], positions[i, 1], zplot[i], str(i), fontsize=7)
-    ax2.set_title("Retained metric-affine geometry")
+    ax2.set_title("BKM metrics + polar transport diagnostics")
     ax2.set_xlabel("abstract x")
     ax2.set_ylabel("abstract y")
-    ax2.set_zlabel("retained geometry score")
+    ax2.set_zlabel("BKM mismatch score")
     ax2.text2D(
         0.02,
         0.02,
-        f"mean loop angle={rec['mean_cycle_angle']:.3f} rad\nfinite holonomy proxy, not spacetime curvature",
+        (
+            f"mean SO(3) loop angle={rec['mean_cycle_angle']:.3f} rad\n"
+            f"raw O(3) reflections={summary['raw_polar_reflection_fraction']:.0%}\n"
+            f"π audit: {summary['pi_holonomy_adjudication']}\n"
+            "group diagnostics only — not spacetime curvature"
+        ),
         transform=ax2.transAxes,
         fontsize=8,
     )
@@ -85,14 +91,19 @@ def _draw(fig, data, frame_index):
     ax3.scatter(positions[:, 0], positions[:, 1], s=80 + 500 * _norm01(np.abs(src)))
     for i, (x, y) in enumerate(positions):
         ax3.text(x, y, f"{i}\n{safefmt(src[i])}", ha="center", va="center", fontsize=7)
-    ax3.set_title("Source/current + projective coupling")
+    ax3.set_title("Balanced graph current + projective source ray")
     ax3.set_aspect("equal")
     ax3.set_xticks([])
     ax3.set_yticks([])
     ax3.text(
         0.02,
         0.02,
-        f"||BJ-s||={rec['balance_residual']:.2e}\n[Σ] ray stable: Δdir={rec['projective_direction_change']:.2e}\n|Σ| not derived → RGCL missing",
+        (
+            f"||BJ-s||={rec['balance_residual']:.2e}\n"
+            f"[Σ] direction check={rec['projective_direction_change']:.2e}\n"
+            "weighted current witness — not stress-energy\n"
+            "absolute coupling magnitude not derived"
+        ),
         transform=ax3.transAxes,
         fontsize=8,
     )
@@ -100,16 +111,16 @@ def _draw(fig, data, frame_index):
     xs = np.array([r["lambda_source"] for r in data["records"][: frame_index + 1]])
     qmar = np.array([r["qmar_jet_norm"] for r in data["records"][: frame_index + 1]])
     dew = np.array([r["dewitt_diagnostic"] for r in data["records"][: frame_index + 1]])
-    ax4.plot(xs, _norm01(qmar), label="QMAR jet (normalized)")
-    ax4.plot(xs, dew / max(np.max(np.abs(dew)), 1e-12), label="DeWitt diagnostic (scaled)")
+    ax4.plot(xs, _norm01(qmar), label="response jet (normalized)")
+    ax4.plot(xs, dew / max(np.max(np.abs(dew)), 1e-12), label="DeWitt-like quadratic form (scaled)")
     ax4.axhline(0.0, linewidth=0.8)
-    ax4.set_title("ADM-like diagnostics + claim ledger")
+    ax4.set_title("Response + DeWitt-like quadratic-form diagnostics")
     ax4.set_xlabel("source-family parameter λ")
     ax4.set_ylabel("normalized diagnostic")
     ax4.legend(loc="upper left", fontsize=7)
     ledger = data["claim_ledger"]
     status_lines = []
-    for status in ("DERIVED", "CONDITIONAL", "CONTROLLED_CORRESPONDENCE", "MISSING_LAW"):
+    for status in ("DERIVED", "CONDITIONAL", "CONTROL", "CONTROLLED_CORRESPONDENCE", "MISSING_LAW"):
         names = [x["name"] for x in ledger if x["status"] == status]
         if names:
             status_lines.append(f"{status}: {len(names)}")
@@ -118,13 +129,13 @@ def _draw(fig, data, frame_index):
 
     lam = rec["lambda_source"]
     fig.suptitle(
-        f"UQCF-GEM v13.27 — full-stack gravity-progress simulation | source-family λ={lam:+.3f} (not physical time)",
+        f"UQCF-GEM v13.27 — finite quantum-relational methods model | source-family λ={lam:+.3f} (not physical time)",
         fontsize=14,
     )
     fig.text(
         0.5,
         0.01,
-        "Derived finite quantum/metric-affine structure → conditional ADM-like diagnostics → RGCL coupling magnitude + physical Einstein closure remain open",
+        "State-dependent graph tensors + conditional current witness → projective homogeneity obstruction; no spacetime, constraint-algebra, or Einstein derivation",
         ha="center",
         fontsize=9,
     )
