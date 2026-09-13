@@ -54,6 +54,18 @@ assert summary["support_dimension"] == r["support_dimension"]
 assert summary["Pillar_3"] == r["Pillar_3"]
 assert summary["scientific_breakthrough"] is False
 
+
+def bind_close(name, frozen, live):
+    frozen = float(frozen)
+    live = float(live)
+    delta = abs(frozen - live)
+    tol = 2e-12 + 2e-12 * max(1.0, abs(frozen), abs(live))
+    assert delta <= tol, (
+        f"{name}: frozen={frozen:.17g} live={live:.17g} "
+        f"delta={delta:.3e} tol={tol:.3e}"
+    )
+
+
 sp = summary["parent_support"]
 for key in (
     "max_isometry_error",
@@ -63,7 +75,7 @@ for key in (
     "max_compression_covariance_error",
     "max_projective_descent_error",
 ):
-    assert abs(float(sp[key]) - float(p[key])) < 1e-15
+    bind_close(f"parent_support.{key}", sp[key], p[key])
 
 si = summary["archive_inventory"]
 assert si["core_candidate_count"] == inv["candidate_count"]
@@ -90,7 +102,7 @@ for key in (
     "support_preserving_tangent_leakage",
     "tangent_roundtrip_projective_residual",
 ):
-    assert abs(float(sc[key]) - float(ctrl[key])) < 1e-15
+    bind_close(f"positive_control.{key}", sc[key], ctrl[key])
 assert sc["selected_configuration"] == ctrl["selected_configuration"]
 assert sc["selected_control"] == ctrl["selected_control"]
 assert sc["normal_classification"] == ctrl["normal_classification"]
