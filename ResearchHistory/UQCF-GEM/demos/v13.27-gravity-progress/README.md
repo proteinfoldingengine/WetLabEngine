@@ -98,8 +98,16 @@ python CHECKER.py
 
 - `MATH_AND_PHYSICS.md` — equations and executed values.
 - `CLAIM_BOUNDARIES.md` — what the demo does and does not establish.
-- `X_UPDATE.md` — public update copy with the same claim boundary.
+- `REVIEW.md` — archived methods/claims peer review recommending revision and rescoping.
+- `AUTHOR_RESPONSE.md` — author response, homogeneity lemma, answers to all 24 reviewer questions, and revision commitments.
+- `X_UPDATE.md` — public update copy with the original demo claim boundary.
 - `EXPECTED_RESULTS.json` — frozen executed result used by the checker.
+
+## Peer-review status
+
+The archived review accepts the artifact as a reproducible finite-model laboratory but recommends that any journal-facing version be rescoped around the **projective source-coupling obstruction**, not presented as a gravity derivation. The author response accepts that rescoping, treats the DeWitt controls as implementation identities rather than emergent ADM evidence, and freezes explicit failure criteria for the next source-to-geometry coupling gate.
+
+No executable scientific result or fingerprint is changed by archiving the review and response.
 
 ## Research conclusion
 
