@@ -43,11 +43,18 @@ Genesis / frozen provenance
 compatibility support representation
     -> explicit quantum parent H_Q = C^125
     -> orthonormal support isometry L : C^25 -> C^125
-    -> T = L X L^dagger and L^dagger L = I_25
     -> parent-source compression C_L(A)=L^dagger A L is exact, projective and covariant
     -> supplied parent source successfully feeds the certified v14.03 chain
     -> BUT frozen provenance supplies neither a source class nor a support-preserving tangent on this same parent
     -> NO_COMMON_PARENT_REPRESENTATION (v15.01)
+
+shared-label / finite-representation audit
+    -> retained finite source carrier has five nodes but graph automorphism order 1
+    -> compatibility V_A has a C5 label gauge, V_B has identity only
+    -> common V_A/V_B fixed-label gauge = identity only
+    -> all 5! = 120 node<->quantum-label bijections remain distinct double-coset classes
+    -> supplied label mapping works downstream, but mapping is not derived
+    -> NO_CERTIFIED_SHARED_LABEL_CARRIER (v15.02)
 
 retained geometry / source-current bridge
     -> metric-affine finite kinematics
@@ -106,15 +113,16 @@ Tracked gates:
 - [v14.01](v14/v14.01/) — canonical incidence gives zero cycle defect; covariant state-weighted source→cycle-defect maps can be nonzero but remain nonunique under the frozen rules; outcome `NONUNIQUE`.
 - [v14.02](v14/v14.02/) — all `128/128` frozen full-hidden radial boundary samples are smooth/simple and have nonzero projected intrinsic normal-cone rank `1`; outcome `CANONICAL_DUAL_RAY`.
 - [v14.03](v14/v14.03/) — supplied positive projective support-space PGRL source rays canonically select the hidden tangent ray, radial first contact, and v14.02 intrinsic local dual ray. All `128/128` frozen sources close the conditional chain; outcome `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`, with provenance status `PROVENANCE_SOURCE_TYPE_MISMATCH`.
-- [v14.04](v14/v14.04/) — provenance representation/intertwiner audit. Exact sub-theorem: if frozen provenance is trivial under the full `U(25)` support-coordinate action, projective naturality forces the support source to be central, hence PGRL-null. The audited archive contains nontrivial provenance carriers but zero certified natural links into the fixed 25D support. Supplied isometries produce valid v14.03 chains but inequivalent projective/downstream results. Outcome `REQUIRES_NEW_REPRESENTATION_LINK`; branch stopped pending an earned or explicitly new representation principle.
+- [v14.04](v14/v14.04/) — provenance representation/intertwiner audit. If frozen provenance is trivial under the full `U(25)` support-coordinate action, projective naturality forces the support source to be central, hence PGRL-null. Richer provenance carriers exist but no certified natural links into the fixed 25D support were found. Outcome `REQUIRES_NEW_REPRESENTATION_LINK`.
 
 The v14 results are compatible rather than replacements. v14.01 blocks arbitrary source weighting as a canonical global law. v14.02 derives a local dual direction once a smooth boundary point is specified. v14.03 shows that a supplied projective source ray canonically selects the hidden direction and boundary needed to reach that dual ray. v14.04 localizes the remaining upstream obstruction to the missing representation of provenance as the typed source object consumed by v14.03.
 
-## v15 history — representation unification audit
+## v15 history — representation unification audits
 
-- [v15.01](v15/v15.01/) — common-parent representation audit. The fixed 25D compatibility support is verified as an orthonormal support of an explicit 125D tripartite quantum parent. Parent compression `C_L(A)=L^dagger A L` is exactly positive-projective and covariant, and a target-blind supplied parent source successfully enters the frozen v14.03 chain. However, the executable core archive plus the extended v13.08/v13.11 source sweep contain zero provenance-certified source classes and zero provenance-certified support-preserving tangents on this same 125D parent. Outcome `NO_COMMON_PARENT_REPRESENTATION`; secondary status `COMPATIBILITY_PARENT_SUPPORT_VERIFIED`.
+- [v15.01](v15/v15.01/) — common-parent representation audit. The fixed 25D compatibility support is an orthonormal support of an explicit 125D tripartite quantum parent. Parent compression `C_L(A)=L^dagger A L` is exactly positive-projective and covariant, and a supplied parent source successfully enters the v14.03 chain. However, the frozen archive contains zero provenance-certified source classes and zero provenance-certified support-preserving tangents on this same parent. Outcome `NO_COMMON_PARENT_REPRESENTATION`; secondary `COMPATIBILITY_PARENT_SUPPORT_VERIFIED`.
+- [v15.02](v15/v15.02/) — shared-label equivariance audit. The retained five-node directed source graph is rigid (`|G_src|=1`). `V_A` has an exact cyclic five-label fixed gauge (`|G_A|=5`), while `V_B` has identity only (`|G_B|=1`), so the common frozen compatibility gauge is identity. The exact quotient `G_comp \ S_5 / G_src` therefore has `120` classes of size `1`: every node↔quantum-label bijection remains inequivalent. Alternative supplied identifications and parent-factor placements produce inequivalent projective support source rays, while an explicitly supplied identity mapping successfully feeds v14.03. Outcome `NO_CERTIFIED_SHARED_LABEL_CARRIER`.
 
-v15.01 rules out a major shortcut: the v14.04 missing representation link is not merely an artifact of overlooking the parent of the compatibility support. The support parent is real and its compression law is clean, but frozen Genesis/provenance is not yet represented as source structure on that parent.
+v15.01 rules out a major common-parent shortcut: the parent/support relation is real and clean, but provenance is not represented as source structure on that parent. v15.02 rules out the next shortcut: the matching five-element cardinalities do not canonically identify the retained source carrier with the five-level quantum labels.
 
 ## Companion finite-model path / obstruction artifact
 
@@ -130,41 +138,41 @@ v15.01 rules out a major shortcut: the v14.04 missing representation link is not
 - v14.02 remains in force: every audited smooth radial compatibility boundary has one intrinsic local dual ray.
 - v14.03 remains in force conditionally: supplied `[P] -> hidden tangent -> X* -> [g]`.
 - v14.04 remains in force: gauge-trivial provenance is central/PGRL-null, while richer provenance carriers require a representation link not present in the frozen ontology.
-- v15.01 verifies the compatibility common parent and exact parent→support compression, but finds no provenance source class/tangent on that parent. The common-parent shortcut therefore does not close the missing upstream representation law.
+- v15.01 verifies the compatibility common parent and exact parent→support compression, but finds no provenance source class/tangent on that parent.
+- v15.02 shows that the finite five-node/five-level cardinality match does not repair that missing representation: common fixed gauge is identity, all `120/120` label bijections remain distinct, and factor placement is also projectively consequential.
 
-v15.01 controls:
+v15.02 controls:
 
 ```text
-parent dimension                           = 125
-support dimension                          = 25
-max ||L^dagger L-I||                       = 4.965068306494546e-16
-max ||T-L X0 L^dagger||                    = 1.4513737894400392e-17
-max support-projector idempotence error    = 4.197887443839247e-16
-max compression covariance error           = 1.817139633354745e-14
-max projective descent error               = 1.138948992321253e-16
-core frozen source candidates              = 5
-extended source candidates                 = 2
-same-parent provenance source classes      = 0
-support-preserving provenance tangents     = 0
-supplied parent control hidden norm         = 0.0034965359627519986
-supplied parent control contact             = SIMPLE / RAY
-parent-control tangent roundtrip residual  = 2.24314194087589e-15
+S5 permutations / label bijections             = 120
+source graph automorphism order                 = 1
+source-state stabilizer order                   = 1
+V_A fixed-label gauge order                     = 5
+V_B fixed-label gauge order                     = 1
+common V_A/V_B fixed-label gauge order          = 1
+double-coset identification classes             = 120
+all double-coset class sizes                    = 1
+max identification projective residual          = 1.0
+max factor-placement projective residual        = 1.0
+supplied archived-source hidden norm (V_A)       = 0.0034493013716416963
+supplied archived-source boundary radius (V_A)  = 0.0034493013716416702
+supplied control contact                         = SIMPLE / RAY
 ```
 
-The supplied parent operator is a sufficiency control only; it is not Genesis/provenance physics.
+The supplied node↔quantum-label identification and factor action are controls only; they are not provenance physics.
 
 ## Stop rule
 
-Do not continue by inventing a parent source operator, lifting a desired support `P` through `L`, vectorizing/reshaping the Genesis field, padding another model into the 125D parent, or choosing a representation by PCA/SVD/random isometry/downstream target fitting.
+Do not continue by inventing a node↔quantum-label bijection, choosing a favorite parent factor, lifting a desired support `P`, vectorizing/reshaping the Genesis field, padding another representation into the 125D parent, using PCA/SVD/random isometries, or selecting the option that gives the most gravity-like downstream response.
 
 A lawful continuation requires either:
 
-1. newly discovered frozen evidence that provenance already supplies a source class or support-preserving tangent on the compatibility parent;
-2. an independently motivated information-theoretic/quantum representation principle, tested target-blind; or
-3. a genuinely new representation axiom explicitly labeled **NEW ASSUMPTION** and approved before use.
+1. newly discovered frozen cross-model label/functor structure that identifies the retained relational carrier with the compatibility labels and factor role;
+2. newly discovered frozen evidence that provenance already supplies a source class or support-preserving tangent on the compatibility parent; or
+3. a genuinely new representation principle explicitly labeled **NEW ASSUMPTION**, independently motivated and user-approved before testing.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only gate ledger.
 
 ## Validation
 
-Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v15.01. Its checker independently enforces the parent/support and common-parent controls and is bound to the frozen `NO_COMMON_PARENT_REPRESENTATION` outcome, archive fingerprints, extended source sweep, and telemetry. Pillar 3 remains open.
+Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v15.02. Its checker independently enforces the finite-group/source/compatibility controls and is bound to the frozen `NO_CERTIFIED_SHARED_LABEL_CARRIER` outcome, artifact hashes, exact group hashes, `120`-class partition, representation diagnostics, and positive/negative controls. Pillar 3 remains open.
