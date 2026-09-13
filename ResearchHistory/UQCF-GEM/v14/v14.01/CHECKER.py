@@ -21,6 +21,8 @@ assert result["incidence_only_cycle_leakage_norm"] < 1e-12
 assert result["minimum_weighted_operator_norm"] > 1e-8
 assert result["max_relative_source_scaling_error"] < 2e-12
 assert result["max_covariance_error"] < 2e-12
+assert result["max_disjoint_composition_error"] < 2e-12
+assert result["composition_selector_classification"] == "PRESERVED_BY_ALL_CANDIDATES_NOT_SELECTOR"
 assert result["max_normalized_candidate_direction_separation"] > 1e-3
 assert result["candidate_operator_span_rank"] >= 2
 assert result["positive_control_reconstruction_error"] < 2e-12
@@ -33,6 +35,7 @@ def close(a, b, atol=2e-12, rtol=2e-12):
 assert close(result["incidence_only_cycle_leakage_norm"], frozen["incidence_only_cycle_leakage_norm"])
 assert close(result["max_relative_source_scaling_error"], frozen["max_relative_source_scaling_error"])
 assert close(result["max_covariance_error"], frozen["max_covariance_error"])
+assert close(result["max_disjoint_composition_error"], frozen["max_disjoint_composition_error"])
 assert close(result["max_normalized_candidate_direction_separation"], frozen["max_normalized_candidate_direction_separation"])
 assert result["candidate_operator_span_rank"] == frozen["candidate_operator_span_rank"]
 assert result["nonzero_trial_outputs"] == frozen["nonzero_trial_outputs"]
