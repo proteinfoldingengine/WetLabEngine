@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import json
+
 from graph_site_source_audit import run_audit
 
 r = run_audit()
@@ -22,3 +24,4 @@ assert r["gate_outcome"] in {
     "UNRESOLVED_GRAPH_SITE_SOURCE_LIFT_AUDIT",
 }
 print("V15_03_GRAPH_SITE_SOURCE_LIFT_CHECKER_PASS")
+print(json.dumps(r, indent=2, sort_keys=True))
