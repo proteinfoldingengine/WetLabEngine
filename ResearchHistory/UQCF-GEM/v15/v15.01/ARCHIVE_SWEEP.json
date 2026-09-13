@@ -1,0 +1,25 @@
+{
+  "version": "v15.01",
+  "purpose": "Extended frozen-source archive sweep beyond the executable core candidate inventory",
+  "candidates": [
+    {
+      "name": "v13.08 symmetry-selected PGRL source line",
+      "path": "ResearchHistory/UQCF-GEM/v13/v13.08/REPORT.md",
+      "git_blob_sha": "e7c51951e2e9f8235fcf90dae6ebf2d011784c1d",
+      "source_structure": "P_n=(1/sqrt(3)) sum_i n.sigma_i in a symmetry-selected retained finite-source sector",
+      "common_parent_status": "DIFFERENT_RETAINED_SOURCE_SECTOR_NO_FROZEN_MAP_TO_COMPATIBILITY_C125_PARENT",
+      "provenance_selection_status": "SYMMETRY_CONDITIONAL_SOURCE_NOT_DERIVED_FROM_GENESIS_PROVENANCE",
+      "same_parent_source_class": false
+    },
+    {
+      "name": "v13.11 QMAR first-order source response",
+      "path": "ResearchHistory/UQCF-GEM/v13/v13.11/REPORT.md",
+      "git_blob_sha": "b18b3582060cb6b6527059987d6635e120ee7fb0",
+      "source_structure": "rho_s=exp(log rho+sP)/Z_s with QMAR linear response downstream from supplied centered P",
+      "common_parent_status": "GENERIC_RETAINED_QUANTUM_RESPONSE_WITH_NO_FROZEN_IDENTIFICATION_TO_COMPATIBILITY_C125_PARENT",
+      "provenance_selection_status": "CONDITIONAL_ON_SUPPLIED_P_NOT_A_PROVENANCE_TO_PARENT_SOURCE_RULE",
+      "same_parent_source_class": false
+    }
+  ],
+  "search_conclusion": "The extended source artifacts add genuine PGRL/QMAR source structure but do not supply a provenance-certified Hermitian source class or support-preserving parent tangent on the archived 125-dimensional compatibility parent."
+}
