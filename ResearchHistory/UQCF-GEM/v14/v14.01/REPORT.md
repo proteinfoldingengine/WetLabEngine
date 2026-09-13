@@ -17,7 +17,7 @@ and this source→higher-incidence/admissibility branch is stopped pending eithe
 
 No Newtonian law, Einstein/ADM residual, physical time/entropy primitive, fitted coupling, or downstream gravity target was used.
 
-This is not a theorem that no deeper nonlinear global law can generate source-dependent admissibility. It is a canonicality obstruction for the present frozen architecture and the audited incidence/state-weighted/PSD-positivity class.
+This is not a theorem that no deeper nonlinear global law can generate source-dependent admissibility. It is a canonicality obstruction for the present frozen architecture and the audited incidence/state-weighted/strict-disjoint-composition/PSD-positivity class.
 
 ## 1. Source action is not law deformation
 
@@ -147,11 +147,31 @@ the maximum relative source-linearity error was
 
 So relabeling covariance and degree-one source behavior are compatible with the entire inequivalent family. They do not select one member.
 
-## 5. Global positivity does not rescue uniqueness
+## 5. Strict disjoint composition does not select a functional
+
+The frozen archive also preserves strict disjoint composition as a lawful structural operation.
+
+For two independent copies of the relational complex, incidence, source centering, cycle projection and every pointwise edge weighting become block diagonal. Therefore every candidate functional obeys
+
+\[
+\eta_f^{G\sqcup G}=\eta_f^G\oplus\eta_f^G.
+\]
+
+The executed maximum disjoint-composition error across the three candidate maps was
+
+`0.0`.
+
+Thus strict disjoint composition is a consistency condition shared by all three candidates. It does not select the linear, exponential, or quadratic functional.
+
+Frozen classification:
+
+`PRESERVED_BY_ALL_CANDIDATES_NOT_SELECTOR`.
+
+## 6. Global positivity does not rescue uniqueness
 
 A possible loophole is that the positive cone might itself select one deformation.
 
-### 5.1 Faithful interior
+### 6.1 Faithful interior
 
 A positive-definite center lies in the interior of the PSD cone. Therefore every finite collection of bounded Hermitian directions remains positive for a sufficiently small common perturbation radius.
 
@@ -167,7 +187,7 @@ The 7→`Sym(4)` embedding used for this test is only an injective control repre
 
 The result establishes the relevant geometric fact: faithful positivity is a feasibility condition with an open neighborhood and cannot distinguish among these bounded directions locally.
 
-### 5.2 Boundary
+### 6.2 Boundary
 
 At the simple boundary point
 
@@ -199,9 +219,9 @@ The frozen classification is therefore:
 
 Positivity can reject directions. It does not, by itself in this audited construction, generate the unique source→higher-incidence law that is missing.
 
-## 6. State-Weighted Admissibility Canonicality Obstruction
+## 7. State-Weighted Admissibility Canonicality Obstruction
 
-Combine the previous results.
+Combine the results.
 
 1. The purely canonical incidence construction gives zero global cycle defect:
 
@@ -213,7 +233,9 @@ P_{\rm cyc}B^T=0.
 
 3. Covariance and source linearity permit multiple inequivalent \(W_f\) constructions.
 
-4. Faithful positivity accepts all sufficiently small bounded candidates; a representative PSD boundary supplies an inequality cone rather than a unique source direction.
+4. Strict disjoint composition is obeyed by all tested pointwise weighting functionals and therefore does not choose among them.
+
+5. Faithful positivity accepts all sufficiently small bounded candidates; a representative PSD boundary supplies an inequality cone rather than a unique source direction.
 
 Therefore, within the audited class,
 
@@ -227,7 +249,7 @@ This is why the correct adjudication is `NONUNIQUE`, not `NO_NATIVE_DEFORMATION`
 
 The missing content is now upstream and precise: some additional principle must select the source→higher-incidence / admissibility coupling, rather than merely act on a state inside the already-fixed admissible arena.
 
-## 7. Additional coefficient ambiguity
+## 8. Additional coefficient ambiguity
 
 Even after choosing one functional \(f\), the family
 
@@ -236,13 +258,13 @@ Even after choosing one functional \(f\), the family
 \qquad c>0,
 \]
 
-preserves source linearity and covariance.
+preserves source linearity, covariance and strict disjoint composition.
 
 No frozen rule in this gate selects that coefficient either.
 
 This resembles the scale issue found downstream in v13, but it is a logically different question: here the ambiguity is already present at the upstream source→global-defect law itself.
 
-## 8. Added-law positive control
+## 9. Added-law positive control
 
 To prove the gate can recognize uniqueness when it is actually supplied, the positive control explicitly declares
 
@@ -259,7 +281,7 @@ This is labeled
 
 It demonstrates sufficiency of an explicit selector. It is not evidence that the frozen ontology derives that selector.
 
-## 9. Relation to the v13 branch stop
+## 10. Relation to the v13 branch stop
 
 v14.01 does not reopen the downstream v13.28 source→geometry coupling branch.
 
@@ -275,6 +297,7 @@ What survives is the finite quantum/global-compatibility architecture, hidden-co
 - incidence-only source→cycle defect: **ZERO EXACTLY**
 - nonzero relationally weighted source→cycle defects: **EXIST**
 - covariance/source linearity as selector: **NO**
+- strict disjoint composition as selector: **NO**
 - positivity as selector: **NO IN THE AUDITED INTERIOR/BOUNDARY CONTROLS**
 - canonical nonzero source→higher-incidence map: **NOT DERIVED**
 - v14.01 adjudication: **NONUNIQUE**
@@ -284,4 +307,4 @@ What survives is the finite quantum/global-compatibility architecture, hidden-co
 
 No broad scientific breakthrough is declared.
 
-This is a **major source→higher-incidence canonicality obstruction**. It sharpens the research frontier: if the program is to obtain universal source-dependent global admissibility, the selecting principle is not supplied by incidence, covariance, source linearity, or positivity alone in the class audited here.
+This is a **major source→higher-incidence canonicality obstruction**. It sharpens the research frontier: if the program is to obtain universal source-dependent global admissibility, the selecting principle is not supplied by incidence, covariance, source linearity, strict disjoint composition, or positivity alone in the class audited here.
