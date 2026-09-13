@@ -9,7 +9,7 @@ This directory is the canonical Git-tracked history for the active UQCF-GEM / Re
 - Do not force Einstein/ADM structure into the pre-time theory.
 - Preserve exact claim boundaries: theorem, executed computation, interpretation, and unresolved physical claim are distinct.
 - Do not replace failed native bridges with fitted/projection laws unless explicitly marked as new assumptions.
-- Do not select upstream source or representation laws from downstream gravity/ADM/Einstein/cosmology performance.
+- Do not select upstream source, representation, or ordering laws from downstream gravity/ADM/Einstein/cosmology performance.
 - Pillar 3 remains open until a lawful physical correspondence is established.
 
 ## Current high-level stack
@@ -86,6 +86,15 @@ carrier-origin reassessment
     -> C125 has no five-nontrivial-factor decomposition
     -> CANONICAL_NEUTRAL_STRUCTURE_DOES_NOT_DERIVE_RETAINED_QUANTUM_CARRIER (v15.09)
 
+pruning/order reassessment
+    -> V1153 recoverability-weighted soft pruning preserves positive support
+    -> declared weight reweighting is invertible on simplex interior when U is known
+    -> V1153 external ordered-update loop supplies succession
+    -> V995/V997 append-only provenance supplies intrinsic rooted ancestry order
+    -> no frozen pruning-event -> provenance-successor identification
+    -> noninjective recoverability maps conditionally induce an intrinsic information-loss arrow
+    -> FROZEN_PRUNING_DOES_NOT_YET_DERIVE_INTRINSIC_TIME_ORDER (v15.10)
+
 retained geometry / source-current bridge
     -> metric-affine finite kinematics
     -> source/current balance + conditional current selection
@@ -145,7 +154,7 @@ Each completed gate normally contains:
 - [v14.03](v14/v14.03/) — supplied positive projective support-source rays canonically select hidden tangent, radial first contact, and local dual ray; `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`; provenance origin still open.
 - [v14.04](v14/v14.04/) — gauge-trivial provenance is central/PGRL-null; richer carriers have no certified natural support link; `REQUIRES_NEW_REPRESENTATION_LINK`.
 
-## v15 history — representation and source-law audits
+## v15 history — representation, source-law, and emergent-order audits
 
 - [v15.01](v15/v15.01/) — compatibility support has explicit parent `C^125`; compression to `C^25` is exact/projective/covariant, but frozen provenance supplies no source class/tangent on that parent. `NO_COMMON_PARENT_REPRESENTATION`.
 - [v15.02](v15/v15.02/) — five graph nodes and five internal quantum labels do not share an earned label carrier; `120` node↔label identifications remain inequivalent. `NO_CERTIFIED_SHARED_LABEL_CARRIER`.
@@ -156,8 +165,9 @@ Each completed gate normally contains:
 - [v15.07](v15/v15.07/) — full local-frame neutrality uniquely selects `tau_d=I/d`; `Q_d(rho)=d rho` is multiplicative and its centered additive Hermitian generator is centered `log rho`. `CANONICAL_NEUTRAL_RELATIVE_GENERATOR_EXISTS_SOURCE_IDENTIFICATION_UNDERIVED`.
 - [v15.08](v15/v15.08/) — Genesis/source-semantics independence gate. Identical relevant provenance/source-role facts admit three distinct lawful source rays; physical-source semantics are not entailed. `GENESIS_PROVENANCE_DOES_NOT_IDENTIFY_NEUTRAL_PREPARATION_SOURCE`; continuing that branch requires a `NEW SOURCE-SEMANTICS AXIOM`.
 - [v15.09](v15/v15.09/) — canonical-neutral carrier-origin reassessment. `I_D/D` is tensor-factorization blind; the supplied five-qubit neutral state preserves all 120 site permutations; even rigid graph nodes and rigid quantum-site spectra leave 120 cross-domain bijections; `C^125` still admits no five-nontrivial-factor decomposition. `CANONICAL_NEUTRAL_STRUCTURE_DOES_NOT_DERIVE_RETAINED_QUANTUM_CARRIER`.
+- [v15.10](v15/v15.10/) — pruning/order reassessment. V1153 soft weight pruning preserves support and is invertible on the simplex interior; its ordered-update sequence is supplied externally. V995/V997 independently supply an intrinsic rooted append-only provenance order, but no frozen law identifies pruning events with ledger successors. Noninjective recoverability maps conditionally induce an intrinsic information-loss arrow. `FROZEN_PRUNING_DOES_NOT_YET_DERIVE_INTRINSIC_TIME_ORDER`.
 
-The v15 sequence now has two explicit branch stops. v15.08 closes the physical-source semantic route relative to the frozen ontology. v15.09 closes the attempt to obtain the missing graph→quantum carrier from the later frame-neutral quantum structure. The canonical centered-log information generator remains a positive intrasort result, but neither physical sourcehood nor retained-carrier origin may be inferred from it.
+The v15 sequence now isolates three explicit missing principles while preserving the positive mathematics that led to them. v15.08 closes the physical-source semantic route relative to the frozen ontology. v15.09 closes the attempt to obtain the missing graph→quantum carrier from the frame-neutral quantum structure. v15.10 shows that recoverability-weighted pruning pressure and intrinsic provenance ancestry both exist, but the frozen stack does not yet identify a genuine irreversible pruning event as the generator of that ancestry. The canonical centered-log information generator and the conditional noninjective-pruning arrow theorem remain positive results; neither may be promoted past its claim boundary.
 
 ## Companion finite-model path / obstruction artifact
 
@@ -175,23 +185,25 @@ The v15 sequence now has two explicit branch stops. v15.08 closes the physical-s
 - v15.06: multiplicative scalar recoverability does not select an operator source.
 - v15.07: local-frame symmetry supplies a canonical multiplicative operator and centered-log generator.
 - v15.08: frozen Genesis/source-role semantics do not identify that canonical generator as the physical source.
-- v15.09: the canonical neutral/reference structure does not derive tensor factorization, node↔site identification, or a five-site→`C^125` parent map.
+- v15.09: canonical neutral/reference structure does not derive tensor factorization, node↔site identification, or a five-site→`C^125` parent map.
+- v15.10: V1153 selection pressure does not itself yield irreversible pruning order; rooted append-only provenance order exists separately; noninjective recoverability updates provide the correct conditional arrow structure.
 
 ## Stop rule
 
-Do not continue by inventing a node↔quantum-site identification, reading subsystem labels out of `I/d`, sorting graph and quantum invariants into a correspondence, choosing a preferred internal axis, tying local frames, padding/reshaping a carrier into `C^125`, or selecting any option from downstream gravity performance.
+Do not continue by inventing a node↔quantum-site identification, reading subsystem labels out of `I/d`, sorting graph and quantum invariants into a correspondence, promoting centered `log(rho)` to physical sourcehood, renaming an external update counter as time, treating tiny positive weights as deleted alternatives, or selecting any missing law from downstream gravity performance.
 
-Two missing principles are now explicitly isolated and must not be silently merged:
+Three missing principles are now explicitly isolated and must not be silently merged:
 
 ```text
 NEW SOURCE-SEMANTICS AXIOM
 NEW CROSS-DOMAIN CARRIER/FUNCTOR PRINCIPLE
+NEW PRUNING-EVENT / ORDER-IDENTIFICATION LAW
 ```
 
-Either may be studied only if independently motivated and explicitly introduced as a new assumption before downstream testing. Under current governance, the default is to preserve the certified positive structures and redirect to an independent unresolved bridge.
+Any one may be studied only if independently motivated and explicitly introduced as a new assumption before downstream testing. For the time bridge specifically, first search the frozen archive for a support-reducing/noninjective recoverability operation or a typed pruning-event→provenance-successor law. Only after an intrinsic pruning-generated order is earned should metric duration or spacetime/ADM correspondence be pursued.
 
 See [STATUS.md](STATUS.md) for the live frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only ledger.
 
 ## Validation
 
-Completed gates carry executable checkers and machine-readable summaries. v15.09 hash-binds v14.04, v15.01, v15.02, v15.03, v15.07, and v15.08 and adds exact factorization/permutation/two-sort independence controls. Final exact-head branch verification and post-merge regression are required before a gate is called merged/certified. Pillar 3 remains open.
+Completed gates carry executable checkers and machine-readable summaries. v15.10 hash-binds the V1153 engine/report/summary, V995 provenance closure, V997 Genesis/recoverability report, and v15.09 frontier. It adds exact reweighting inverse/composition controls, an append-only ancestry control, and a conditional noninjective-pruning arrow theorem. Final exact-head branch verification and post-merge regression are required before a gate is called merged/certified. Pillar 3 remains open.
