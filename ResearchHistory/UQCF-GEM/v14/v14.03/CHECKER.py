@@ -5,6 +5,26 @@ from source_ray_audit import run_audit
 
 result = run_audit()
 
+print("V14_03_PREASSERT_TELEMETRY")
+print(json.dumps({
+    "gate_outcome": result.get("gate_outcome"),
+    "unresolved_numerical_count": result.get("unresolved_numerical_count"),
+    "nonunique_contact_count": result.get("nonunique_contact_count"),
+    "zero_hidden_source_count": result.get("zero_hidden_source_count"),
+    "nonzero_hidden_contact_count": result.get("nonzero_hidden_contact_count"),
+    "simple_ray_contact_count": result.get("simple_ray_contact_count"),
+    "max_tangent_hermiticity_residual": result.get("max_tangent_hermiticity_residual"),
+    "max_tangent_trace_abs": result.get("max_tangent_trace_abs"),
+    "max_finite_difference_relative_error": result.get("max_finite_difference_relative_error"),
+    "max_base_boundary_formula_relative_error": result.get("max_base_boundary_formula_relative_error"),
+    "max_projective_tangent_scaling_error": result.get("max_projective_tangent_scaling_error"),
+    "max_projective_hidden_direction_drift": result.get("max_projective_hidden_direction_drift"),
+    "max_projective_boundary_relative_drift": result.get("max_projective_boundary_relative_drift"),
+    "max_projective_dual_ray_drift": result.get("max_projective_dual_ray_drift"),
+    "max_support_coordinate_covariance_error": result.get("max_support_coordinate_covariance_error"),
+    "max_boundary_psd_residual": result.get("max_boundary_psd_residual"),
+}, sort_keys=True))
+
 assert result["version"] == "v14.03"
 assert result["seed"] == 1403
 assert result["primary_sample_count"] == 128
