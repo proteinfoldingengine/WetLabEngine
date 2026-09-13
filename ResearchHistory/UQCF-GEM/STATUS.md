@@ -1,158 +1,212 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v14.01 — Canonical Source-Dependent Global Admissibility Gate  
-**v14.01 adjudication:** `NONUNIQUE`  
+**Latest completed gate:** v14.02 — Convex-Dual Boundary Normal / Canonical Admissibility Response Gate  
+**v14.02 adjudication:** `CANONICAL_DUAL_RAY`  
 **Downstream source→GR absolute-coupling branch:** STOPPED by v13.28  
-**Upstream source→higher-incidence/admissibility branch:** STOPPED for the v14.01 audited class pending new axiom or independent calibration
+**Global source→higher-incidence law:** NOT DERIVED by v14.01  
+**New earned object:** objective-independent local dual ray at a specified smooth compatibility boundary point
 
 ## Current scientific picture
 
-The program now has two distinct source-coupling obstructions.
+The current source/admissibility stack has one new positive layer between the earlier obstructions:
 
 ```text
 pre-time quantum / global compatibility
-    -> fixed admissibility architecture
-    -> canonical graph incidence source map
-       -> exact/cut 1-cochain only
-       -> zero cycle-space defect
-    -> relationally weighted source maps
-       -> nonzero global cycle defects exist
-       -> multiple inequivalent covariant/compositional choices survive
-       -> positivity does not select one
-    -> canonical source-dependent admissibility law NOT DERIVED
+    -> fixed visible-data compatibility fiber
+    -> source action under fixed admissibility architecture
+    -> canonical incidence source map
+       -> zero cycle-space defect exactly
+    -> state/relational weighting
+       -> nonzero source->defect maps exist
+       -> global map is NONUNIQUE under frozen rules (v14.01)
+
+specified smooth boundary point of the fixed compatibility fiber
+    -> PSD kernel / intrinsic relative normal cone
+    -> objective-free projected hidden-fiber dual geometry
+    -> one nonzero local supporting ray on 128/128 audited boundaries (v14.02)
+    -> source lift / physical boundary selection still UNDERIVED
 
 retained geometry / source-current bridge
-    -> source origin, balance, support, conditional current selection
     -> projective coupled-source ray [Sigma] survives
-    -> absolute source→geometry coupling NOT DERIVED
+    -> absolute source->geometry coupling NOT DERIVED
     -> v13.28 requires new axiom or independent calibration
 ```
 
-These are related but logically distinct. v14.01 is upstream of the v13.28 geometric-coupling obstruction.
+These statements are logically distinct. v14.02 does not erase either the v14.01 global source-law nonuniqueness or the v13.28 downstream absolute-coupling obstruction.
 
-## Latest result — v14.01
+## Latest result — v14.02
 
-The gate asked whether the frozen pre-pruning/global-consistency structure canonically produces
+v14.02 asked whether the **intrinsic convex dual geometry of the already-existing global compatibility fiber** supplies a local selector at its positivity boundary without importing an optimization objective.
 
-```text
-A_G -> A_G(s)
-```
-
-or a nonzero source→global-defect / higher-incidence map `eta` without introducing a new source law.
-
-The answer in the audited class is:
+The answer for the frozen audit is:
 
 ```text
-NONUNIQUE
+CANONICAL_DUAL_RAY
 ```
 
-### 1. Source action is not automatically law deformation
+### 1. Full hidden compatibility fibers were used
 
-Moving a state or visible datum while the compatibility map, hidden-completion kernel and positivity rule remain fixed is source action inside one admissibility architecture. A law-level source dependence requires the source to enter the defining higher-incidence/constraint structure.
-
-### 2. Incidence-only source defect is zero exactly
-
-For graph incidence `B` and cycle projector
+The gate reused the archived executable compatibility construction:
 
 ```text
-P_cyc = I - B^T (B B^T)^+ B,
+Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py
 ```
 
-one has exactly
+at `FIXED_T=21/41` for both archived configurations.
 
 ```text
-P_cyc B^T = 0.
+V_A hidden dimension = 315
+V_B hidden dimension = 311
+coefficient/support dimension = 25 for both
+max hidden marginal-null residual = 3.662557973690462e-15
+minimum faithful-center eigenvalue = 0.0012195121951219488
 ```
 
-So the canonical incidence coboundary cannot itself generate a nonzero cycle-space source defect.
+The old 3D visualization section was not used as scientific evidence.
 
-Executed 5-node / 7-edge leakage:
+### 2. Intrinsic relative normal cone
+
+For hidden coordinates
 
 ```text
-1.245468636882555e-15
+X(x)=X0 + sum_a x_a Q_a,
 ```
 
-which is only a numerical check of the exact identity.
-
-### 3. Nonzero weighted deformations exist but are not unique
-
-The audited class used
+the fixed-visible-data fiber is
 
 ```text
-eta_f = P_cyc W_f B^T C
+F = {x : X(x) >= 0}.
 ```
 
-with the same edge scalar data and three positive scalar functionals:
+At a boundary point `X*`, PSD normals supported on `ker(X*)` are projected into the dual of the hidden affine fiber by
 
 ```text
-f(x)=1+x
-f(x)=exp(x)
-f(x)=1+x^2
+g_a(Y)=Re Tr(Q_a^dagger Y).
 ```
 
-All three candidate operators are nonzero and their flattened span has rank `3`.
+For a simple one-dimensional kernel, every positive kernel-supported normal is a positive multiple of one projector `vv^dagger`; if its hidden projection is nonzero, the intrinsic relative normal cone is one ray.
+
+### 3. Frozen 128-boundary survey
+
+The primary audit used seed `1402` and exactly `64` predeclared full-hidden-space radial directions for each archived configuration.
 
 ```text
-linear operator norm       = 0.9317680326490423
-exponential operator norm  = 1.1006383303926504
-quadratic operator norm    = 0.3273241321687114
-max normalized direction separation = 0.9960669843187823
+primary samples                 = 128
+simple boundaries               = 128
+near-degenerate boundaries      = 0
+zero projected hidden normals   = 0
+nonunique primary normal cones  = 0
+unresolved numerical boundaries = 0
+normal-cone rank histogram      = {1: 128}
 ```
 
-Across 256 source trials all `768` candidate outputs were nonzero.
-
-### 4. Frozen structural rules do not select among them
+Direction hashes:
 
 ```text
-max source-scaling error       = 7.993866358511362e-16
-max relabel/orientation covariance error = 1.3482796731097804e-14
-max strict-disjoint-composition error    = 0.0
+V_A = 1a29b944ab2f27fee11df06b024290df8fb4d18f118d358171f17dede9865020
+V_B = 7e2cfe4ee64d0728525c3367c2b0e13fddcbf81b928aac87e67f8f5a9ef885e2
 ```
 
-Strict disjoint composition is therefore preserved by every tested pointwise weighting functional and is not a selector.
+Minimum simple-boundary second-eigenvalue gap:
 
-### 5. Positivity is not a selector in the audited controls
+`0.00010703895853823464`.
 
-At a faithful positive-definite center, all 768 bounded candidate perturbations remain positive inside one common neighborhood:
+Maximum boundary PSD residual:
+
+`1.1172250523029427e-16`.
+
+### 4. Supporting identity and hidden-basis invariance
+
+The intrinsic normal satisfies the supporting identity
 
 ```text
-common epsilon              = 0.1443693458628246
-minimum positive margin     = 0.75
+g . (x-x*) = Tr(Y X(x)) >= 0
 ```
 
-At `diag(0,1,1,1)`, the first-order PSD boundary condition supplies a half-space with a `9`-dimensional equality lineality subspace in `Sym(4)`.
+for feasible points of the same hidden compatibility fiber.
 
-Classification:
+Executed controls:
 
 ```text
-INEQUALITY_FILTER_NOT_CANONICAL_SOURCE_MAP
+max support-identity relative error = 3.0357660829594124e-18
+max hidden-basis invariance error    = 5.911755884943795e-17
 ```
 
-### v14.01 conclusion
+So the detected local ray is not defined by the old trace-distance optimization or by one arbitrary hidden-coordinate basis.
 
-Within the audited frozen class:
+### 5. Objective-independence control
+
+The gate tested one deterministic dual direction orthogonal to the intrinsic ray at every primary boundary and found that it was not a supporting normal of the same compatibility set.
 
 ```text
-canonical incidence                  -> zero defect
-state/relational weighting           -> nonzero defects
-covariance                            -> does not select
-source linearity                      -> does not select
-strict disjoint composition           -> does not select
-positivity                             -> does not select
+tested boundaries                  = 128
+orthogonal objectives rejected     = 128
+all tested rejected                = true
 ```
 
-Therefore nonzero source-dependent admissibility deformations exist conditionally on choosing additional constitutive structure, but the frozen rules tested here do not select one canonically.
+The archived trace-distance dual effect remains a separate typed object:
 
-## Relation to v13.28
+`VISIBLE_OBJECTIVE_DUAL_WITNESS_DIFFERENT_DUAL_SPACE`.
 
-v13.28 remains fully in force. It showed that the four frozen downstream source→geometry pairing classes cannot supply the missing absolute coupling and adjudicated:
+### 6. Checker controls
+
+Faithful archived centers are interior points and correctly classify as
+
+`NO_BOUNDARY_SELECTOR`.
+
+A synthetic two-kernel test fixture correctly produces projected normal rank `2` and
+
+`NONUNIQUE_NORMAL_CONE`.
+
+Thus the positive primary result is not hard-coded by the checker.
+
+## What v14.02 adds
+
+Within the frozen two-family audit:
 
 ```text
-REQUIRES_NEW_AXIOM
+specified smooth compatibility boundary point
+-> objective-independent intrinsic hidden-fiber supporting ray
 ```
 
-v14.01 does not reopen that branch. Instead it shows that moving upstream into global admissibility does not currently supply a unique replacement source law either.
+is now an earned structure.
+
+This is a **local dual direction**, not a global source law.
+
+The correct source status is:
+
+`CANONICAL_DUAL_DIRECTION_BUT_SOURCE_LIFT_UNDERIVED`.
+
+## What remains underived
+
+- which boundary point a physical source selects: **UNDERIVED**;
+- source→hidden-completion tangent/lift: **UNDERIVED**;
+- canonical global source-dependent `A_G(s)`: **UNDERIVED**;
+- magnitude along the dual ray: **UNDERIVED**;
+- source-to-solder/coframe law: **UNDERIVED**;
+- absolute physical source→geometry coupling: **UNDERIVED**;
+- physical stress-energy: **UNDERIVED**;
+- physical metric/coframe: **UNDERIVED**;
+- ontology-native quantum continuum refinement: **UNAVAILABLE**;
+- physical time/spacetime: **NOT DERIVED**;
+- Riemann curvature from this dual ray: **NOT DERIVED**;
+- physical Einstein equations: **NOT DERIVED**;
+- Pillar 3: **OPEN**.
+
+## Relation to earlier stops
+
+### v14.01 remains valid
+
+v14.01 established that the frozen incidence/state-weighted/covariant/compositional/positivity machinery does not select one global source→higher-incidence deformation.
+
+v14.02 does not supply that missing global map. It says that **once a smooth boundary point is specified**, local convex geometry supplies one dual ray there.
+
+### v13.28 remains valid
+
+v13.28 established that the frozen downstream source→geometry pairing candidates do not fix an absolute coupling magnitude.
+
+v14.02 does not supply a magnitude or physical source identification, so that branch remains stopped.
 
 ## Preserved results
 
@@ -163,27 +217,20 @@ v14.01 does not reopen that branch. Instead it shows that moving upstream into g
 - finite-state QMAR and BKM trace/Weyl theorem: **PRESERVED**.
 - source-current balance and conditional current selection: **PRESERVED**.
 - projective coupled-source ray `[Sigma]`: **PRESERVED**.
-- v13.28 downstream coupling no-go/branch stop: **PRESERVED**.
+- v13.28 downstream coupling obstruction: **PRESERVED**.
+- v14.01 global source-law canonicality obstruction: **PRESERVED**.
 - controlled ADM/Einstein comparisons: **EXTERNAL HELDOUT CORRESPONDENCE ONLY**.
-
-## Open boundaries
-
-- canonical nonzero source→higher-incidence/admissibility law: **NOT DERIVED**;
-- canonical source-dependent `A_G(s)`: **NOT DERIVED**;
-- source-to-solder/coframe law: **NOT DERIVED**;
-- absolute physical source→geometry coupling: **NOT DERIVED**;
-- ontology-native quantum continuum refinement: **UNAVAILABLE**;
-- true third-party physical validation: **OPEN**;
-- physical Einstein equations: **NOT DERIVED**;
-- Pillar 3: **OPEN**.
 
 ## Next lawful move
 
-There is no automatic continuation that may simply choose one of the surviving `eta_f` maps.
+v14.02 has produced a new native object, so the next gate may lawfully ask:
 
-This audited branch may restart only with either:
+```text
+Does already-earned source/provenance structure canonically select
+(a) a compatibility-boundary point, or
+(b) a hidden tangent whose pairing with the v14.02 intrinsic dual ray is fixed?
+```
 
-1. an explicitly new and independently motivated source→higher-incidence/admissibility axiom or selector; or
-2. an independently calibrated physical cross-domain observable capable of selecting the deformation.
+That next gate must not define the source lift by optimizing against the ray, by choosing another arbitrary weighting functional, or by consulting an Einstein/ADM residual.
 
-Other UQCF-GEM branches may continue independently. The v14.01 stop is scoped to deriving a canonical source-dependent global-admissibility deformation from the frozen incidence/state-weighted/disjoint-composition/positivity class audited here.
+The highest-value target is therefore a **source/provenance → compatibility-boundary selection audit**. A positive result would connect an upstream source structure to the newly earned local dual direction; a negative/nonunique result would preserve the current stop without inventing a repair.
