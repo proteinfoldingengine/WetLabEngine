@@ -1,16 +1,17 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-13  
-**Latest completed gate:** v15.03 — Graph-Site Factorization / Local-Gauge Source Lift Gate  
-**v15.03 adjudication:** `NO_CERTIFIED_GRAPH_SITE_FACTORIZATION`  
-**Secondary:** `CENTRAL_PGRL_NULL`; `STATE_DEPENDENT_COVARIANT_SOURCE_LIFT_NONUNIQUE`; `FIVE_NONTRIVIAL_SITE_CARRIER_CANNOT_EQUAL_C125_PARENT`  
+**Latest completed gate:** v15.04 — Equivariant Source-Law Classification / Spectral Freedom Gate  
+**v15.04 adjudication:** `COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM`  
+**Secondary:** `COVARIANCE_FIXES_EIGENSPACES_NOT_SPECTRAL_RESPONSE_VALUES`; `DIRECTION_ONLY_NOT_RESPONSE_LAW`; `NO_UNIQUE_A_OF_R`; `V15_03_NUMERICS_ARE_ILLUSTRATIONS_OF_V15_04_THEOREM`  
+**Major structural result:** `true`  
 **Scientific breakthrough:** `false`  
 **Pillar 3:** `OPEN`  
-**Reproducibility maintenance:** v15.01 floating archive bindings now use a tight mixed tolerance rather than an absolute `1e-15`; all v15.01 scientific thresholds, classifications, archive hashes, and frozen scientific values remain unchanged.
+**Reproducibility policy:** scientific tolerances are enforced independently; frozen floating telemetry uses a tight mixed archive-binding tolerance rather than bitwise/absolute `1e-15` identity.
 
 ## Current scientific picture
 
-The upstream source/admissibility problem has now survived four increasingly specific representation tests without an illicit repair:
+The upstream source/admissibility problem is now localized more sharply than “missing representation.”
 
 ```text
 Genesis / frozen provenance
@@ -28,17 +29,25 @@ shared-label candidate
     -> retained source graph has five nodes
     -> compatibility factors have five internal labels
     -> all 120 node<->label identifications remain inequivalent under earned gauge
-    -> no canonical label/factor identification (v15.02)
+    -> NO_CERTIFIED_SHARED_LABEL_CARRIER (v15.02)
 
 graph-site candidate
     -> graph-indexed quantum models exist in the archive
-    -> exact retained 5-node graph -> five quantum subsystems is NOT certified
+    -> exact retained five-node graph -> five quantum subsystems is NOT certified
     -> state-independent scalar/current lift + independent local gauge -> center -> PGRL-null
-    -> supplied state context permits noncentral covariant lifts
-    -> but predeclared lawful state functions give inequivalent projective rays
+    -> supplied quantum-state context permits noncentral covariant lifts
     -> five nontrivial quantum sites cannot literally equal C^125
     -> no natural graph-site -> compatibility-parent map is certified
     -> NO_CERTIFIED_GRAPH_SITE_FACTORIZATION (v15.03)
+
+state-dependent local source law
+    -> require only F(U rho U^dagger)=U F(rho) U^dagger
+    -> stabilizer theorem forces F(rho) to be spectral in rho
+    -> qubit traceless law is exactly a(r)(rho-I/2)
+    -> covariance fixes eigenspaces/direction but leaves a(r) free
+    -> existing source extensivity/linearity, null-source behavior,
+       positive projective scaling, and local-frame covariance all preserve that freedom
+    -> COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM (v15.04)
 
 supplied positive projective support source [P]
     -> exact PGRL tangent
@@ -53,143 +62,207 @@ retained/downstream source-geometry bridge
     -> v13.28 REQUIRES_NEW_AXIOM remains in force
 ```
 
-The missing upstream object is now sharper than “some representation link.” A lawful completion would need to supply, without target fitting:
+The unresolved upstream package therefore contains at least three distinct missing pieces:
 
-1. the exact retained-node-to-quantum-site carrier identification;
-2. an operator-valued source representation law compatible with independent local gauge;
-3. a canonical choice within the state-dependent covariant family if state context is used; and
-4. an earned natural map from that graph-site carrier into the existing `C^125 -> C^25` compatibility stack.
+1. an earned retained-node-to-quantum-site carrier identification;
+2. an earned natural map from that carrier into the existing `C^125 -> C^25` compatibility stack; and
+3. if quantum-state context is used, an upstream principle selecting the spectral response law `a(r)` rather than choosing it from downstream performance.
 
-## Latest result — v15.03
+## Latest result — v15.04
 
-### A. Archive/type result
+### A. Exact local-unitary equivariance theorem
 
-The frozen stack contains graph-indexed quantum models, but the audited examples do not identify the exact retained five-node/seven-edge source graph with five nontrivial quantum tensor factors.
-
-Result:
+Let `F(rho)` be Hermitian and satisfy
 
 ```text
-factorization status = GRAPH_INDEXED_QUANTUM_MODELS_EXIST_BUT_EXACT_FACTOR_IDENTIFICATION_UNDERIVED
-carrier status       = NO_EXACT_GRAPH_SITE_CARRIER
-primary outcome      = NO_CERTIFIED_GRAPH_SITE_FACTORIZATION
+F(U rho U^dagger) = U F(rho) U^dagger
 ```
 
-The exact retained fixture remains:
+for every local unitary `U`.
+
+For every unitary in the stabilizer of `rho`, equivariance forces the same unitary to stabilize `F(rho)`. Writing
 
 ```text
-nodes  = [0,1,2,3,4]
-edges  = [(0,1),(1,3),(0,2),(2,4),(4,3),(1,2),(0,4)]
-source = [-1,0,0,+1,0]
-rank(B) = 4
-cycle dimension = 3
-fixture SHA256 = 94ca2cbc711167afa22bef2ff5876c0fda9def43fc15c4318377fa629511ca4b
+rho = sum_alpha lambda_alpha Pi_alpha,
 ```
 
-### B. Exact five-site / C^125 theorem
-
-A genuine five-site carrier requires five dimensions `d_i >= 2`. Literal equality with the compatibility parent would require
+the stabilizer contains the full unitary group on every eigenspace. Its commutant is scalar on each eigenspace, so
 
 ```text
-d1*d2*d3*d4*d5 = 125 = 5^3.
+F(rho) = sum_alpha mu_alpha(spec rho) Pi_alpha.
 ```
 
-The executable integer-factor audit finds zero solutions.
+Hence
 
 ```text
-FIVE_NONTRIVIAL_SITE_CARRIER_CANNOT_EQUAL_C125_PARENT
+[F(rho), rho] = 0
+LOCAL_UNITARY_EQUIVARIANCE_IMPLIES_SPECTRAL_SOURCE_LAW
+COVARIANCE_FIXES_EIGENSPACES_NOT_SPECTRAL_RESPONSE_VALUES
 ```
 
-Therefore the current `C^125` parent cannot be reinterpreted as five nontrivial retained graph sites by relabeling, padding, or reshaping.
+For degenerate spectra, the full stabilizer statement is stronger than the commutator alone: `F(rho)` must be scalar across each degenerate eigenspace.
 
-### C. Independent-local-gauge centrality theorem
+The converse also holds for every well-defined real permutation-equivariant spectral assignment that treats equal eigenvalues equally. No differentiability, entropy, pruning, dynamics, or time primitive is needed for this classification.
 
-For graph scalar/current inputs that carry no internal quantum-frame action, a deterministic state-independent Hermitian source lift natural under every independent local unitary must lie in the commutant of the full product action. That commutant is the scalar center.
+### B. Exact qubit classification
+
+For
 
 ```text
-FULL_PRODUCT_LOCAL_UNITARY_COMMUTANT_IS_CENTER
-CENTRAL_ONLY
-CENTRAL_PGRL_NULL
+rho = 1/2 (I + r_vec . sigma),   r = |r_vec| < 1,
 ```
 
-Deterministic controls:
+any conjugation-equivariant local map has the form
 
 ```text
-identity invariance error             = 2.57310042329926e-15
-noncentral local-operator violation   = 7.999999999999999
-SWAP independent-frame violation      = 7.806681235326519
-SWAP tied-frame error                 = 2.5121479338940403e-15
+F(rho) = c(r) I + a(r) (rho - I/2).
 ```
 
-The tied-frame success is a weaker gauge and is not an admissible repair.
-
-### D. State context opens noncentral lifts but does not make them canonical
-
-Two faithful five-qubit product-state controls were frozen before execution. Only the predeclared functions
+After traceless/projective centering,
 
 ```text
-1, x, x^2, log x
+F_traceless(rho) = a(r) (rho - I/2).
 ```
 
-were tested.
-
-Maximum independent-local-gauge covariance error:
+Therefore
 
 ```text
-2.9707140272854356e-16
+QUBIT_EQUIVARIANT_TRACELESS_MAP_IS_RADIAL
+DIRECTION_ONLY_NOT_RESPONSE_LAW
 ```
 
-Maximum positive source-scaling projective residual:
+The unresolved local freedom is one scalar response function `a(r)`.
+
+### C. v15.03 linear/square collapse is exact
+
+For every qubit density matrix,
 
 ```text
-4.3624070492076246e-16
+rho^2 - Tr(rho^2) I / 2 = rho - I/2.
 ```
 
-The constant family is exactly null after centering.
-
-Projective residuals:
+The executed maximum identity error was
 
 ```text
-Control A:
-linear vs square = 3.597533769998862e-16
-linear vs log    = 0.03264343653690659
-square vs log    = 0.032643436536906593
-
-Control B:
-linear vs square = 9.437916079723832e-17
-linear vs log    = 0.010460821683241842
-square vs log    = 0.010460821683241812
+7.850462293418876e-17
 ```
 
-The `x` / `x^2` collapse is the expected qubit functional redundancy. `log x` is nevertheless a second lawful covariant noncentral ray.
+so the v15.03 near-zero linear/square projective residuals are now illustrations of an exact identity, not evidence for an empirical coincidence.
+
+### D. Logarithmic law gives an exact nonconstant response
+
+For faithful qubits,
 
 ```text
-STATE_DEPENDENT_COVARIANT_SOURCE_LIFT_NONUNIQUE
+log(rho) - Tr(log(rho)) I / 2
+  = artanh(r) rhat.sigma
+  = [2 artanh(r)/r] (rho-I/2).
 ```
 
-This is a supplied-carrier sufficiency result, not provenance evidence.
-
-### E. Current control remains nonphysical
-
-The minimum-norm current balances the source to
+Thus
 
 ```text
-7.325053464011603e-16
+a_log(r) = 2 artanh(r)/r.
 ```
 
-but remains
+The executed maximum formula error was
 
 ```text
-MIN_NORM_CURRENT_CONTROL_NOT_PROVENANCE_SELECTED
+1.2412670766236366e-16
 ```
 
-and is not used to select a source law.
+and `a_log(r)` is nonconstant and strictly increasing on `0<r<1`.
+
+### E. Exact projective-ray split criterion
+
+For the supplied graph-site carrier,
+
+```text
+P_a(s,rho) = sum_i s_i iota_i[a(r_i)(rho_i-I/2)].
+```
+
+Distinct embedded single-site traceless terms are Hilbert-Schmidt orthogonal. Therefore two such sources define the same positive projective ray exactly when their response coefficients on all nonzero source-support sites differ by one common positive factor.
+
+For the frozen source `(-1,0,0,+1,0)`, only sites `0` and `3` contribute.
+
+```text
+Control A support radii = [0.15, 0.63]
+a_log(A support)        = [2.015205812486224, 2.353702044702441]
+linear vs log residual  = 0.032643436536906496
+
+Control B support radii = [0.52, 0.47]
+a_log(B support)        = [2.2166913652661258, 2.1705120706949246]
+linear vs log residual  = 0.010460821683241906
+```
+
+Because the radii differ and `a_log` is not constant, the linear and logarithmic global projective source rays are exactly distinct.
+
+A third witness `a(r)=1+r^2` also gives different rays:
+
+```text
+A: linear vs (1+r^2) = 0.061186205628391485
+B: linear vs (1+r^2) = 0.01972566676052767
+```
+
+### F. Frozen source axioms do not select `a(r)`
+
+The audited source-law constraints carried by v13.26, v14.03, and v15.03 were:
+
+- retained source amount/extensivity and homogeneous source-current scaling;
+- positive projective source rescaling;
+- independent local-unitary/frame covariance;
+- additivity/linearity in retained scalar source coefficients;
+- null-source compatibility.
+
+The linear, logarithmic, and `1+r^2` witness laws all satisfy them simultaneously.
+
+```text
+max local-unitary covariance error       = 3.434312402059545e-16
+max null-source norm                     = 0.0
+max positive-scale projective residual   = 2.603703785810335e-16
+max source-additivity error              = 3.510833468576701e-16
+max source-homogeneity error             = 1.7763568394002505e-15
+```
+
+Therefore
+
+```text
+FROZEN_SOURCE_AXIOMS_DO_NOT_SELECT_SPECTRAL_RESPONSE_FUNCTION
+NO_UNIQUE_A_OF_R
+COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM
+```
+
+The distinction is structural: source extensivity constrains dependence on scalar source coefficients `s_i`; it does not impose a functional equation on the spectrum dependence `a(r)`.
+
+The audited dependencies contain no certified tensor-state composition functional equation for this operator-valued source law. Such a composition/monoidal law could reduce the freedom, but unless independently recovered from frozen structure it would be a **NEW ASSUMPTION**.
+
+### G. Exact reconciliation with v15.03
+
+The v15.04 theorem reproduces the frozen v15.03 controls:
+
+```text
+A: frozen linear/log residual  = 0.03264343653690659
+A: theorem linear/log residual = 0.032643436536906496
+absolute difference            = 9.020562075079397e-17
+
+B: frozen linear/log residual  = 0.010460821683241842
+B: theorem linear/log residual = 0.010460821683241906
+absolute difference            = 6.418476861114186e-17
+```
+
+and the exact theorem predicts zero linear/square residual, matching the frozen machine-level values.
+
+```text
+V15_03_NUMERICS_ARE_ILLUSTRATIONS_OF_V15_04_THEOREM
+```
 
 ## Relation to earlier gates
 
-- **v15.02:** preserved. Matching five-element cardinality does not supply a node-to-basis-label functor.
+- **v15.03:** preserved and analytically strengthened. State-context nonuniqueness is now classified exactly rather than inferred from candidate disagreement.
+- **v15.02:** preserved. Matching five-element cardinality still does not supply a node-to-basis-label functor.
 - **v15.01:** preserved. The `C^125 -> C^25` parent/support relation and compression law remain exact.
-- **v14.04:** preserved/strengthened. The missing representation link cannot be evaded merely by graph-site reinterpretation.
-- **v14.03:** preserved conditional. Given a supplied positive projective support source `[P]_+`, the hidden-tangent first contact and local dual ray remain canonical.
+- **v14.04:** preserved/strengthened. Even once state context supplies a lawful local quantum direction, the upstream representation link and spectral response selector remain underived.
+- **v14.03:** preserved conditional. Given a supplied positive projective support source `[P]_+`, hidden-tangent first contact and the local dual ray remain canonical.
 - **v14.02:** preserved. A specified smooth compatibility boundary has its intrinsic objective-independent local dual ray.
 - **v13.28:** preserved. Absolute downstream source-to-geometry coupling remains blocked in the frozen candidate classes.
 
@@ -206,15 +279,17 @@ and is not used to select a source law.
 - v14.04 representation-link obstruction: **PRESERVED / STRENGTHENED**.
 - v15.01 exact compatibility parent/support compression: **PRESERVED**.
 - v15.02 exact finite-label no-go: **PRESERVED**.
-- v15.03 graph-site/local-gauge audit: **PRIMARY NEGATIVE + TWO EXACT STRUCTURAL THEOREMS + STATE-DEPENDENT NONUNIQUENESS**.
+- v15.03 graph-site/local-gauge audit: **PRESERVED / ANALYTICALLY STRENGTHENED**.
+- v15.04 equivariant source-law classification: **CLOSED — SPECTRAL FREEDOM REMAINS**.
 - projective coupled-source ray `[Sigma]`: **PRESERVED**.
 - controlled ADM/Einstein comparisons: **EXTERNAL HELDOUT CORRESPONDENCE ONLY**.
 
 ## Still not derived
 
+- a unique operator-valued spectral source law `a(r)`;
 - a certified exact retained-node-to-quantum-site factorization;
 - a natural graph-site-to-`C^125` compatibility-parent map;
-- a canonical operator-valued source law from frozen provenance;
+- Genesis/provenance selection of `a(r)`;
 - Genesis/provenance -> `[A_prov]_+` on `C^125`;
 - Genesis/provenance -> v14.03 projective support source `[P]_+`;
 - absolute source magnitude or observer calibration;
@@ -229,25 +304,25 @@ and is not used to select a source law.
 
 ## Stop rule / next lawful frontier
 
-The graph-site shortcut stops here.
+Do **not** choose `log(rho)`, linear `rho`, `rho^2`, `1+r^2`, or any other spectral response because it produces a better downstream PGRL/ADM/Einstein/gravity result. Do not invent a tensor-site identity, tie local frames, pad/reshape into `C^125`, invent an isometry, or promote a minimum-norm current.
 
-Do **not** repair it by choosing a Pauli axis, privileging `log rho`, tying local frames, padding/reshaping the carrier into `C^125`, inventing an isometry, promoting the minimum-norm current, or selecting by ADM/Einstein/gravity behavior.
+The next lawful question is upstream and architectural:
 
-A continuation is lawful only if one of these occurs:
+> Does the already-frozen ontology independently contain a state-composition / monoidal / spectral functional law strong enough to constrain `a(r)`?
 
-1. newly discovered frozen structure certifies the exact retained graph as a quantum-site carrier and supplies its representation law;
-2. newly discovered frozen structure supplies a natural map from such a carrier into the current compatibility parent/support; or
-3. an independently motivated operator-valued source/representation principle is proposed, explicitly labeled **NEW ASSUMPTION**, justified before seeing downstream gravity behavior, and approved before testing.
+If such a law exists, it must be identified and hash-bound before consulting downstream gravity targets. If no such frozen law exists, the source-law branch stops with `a(r)` irreducible relative to the current frozen source axioms; any selected response law then enters explicitly as **NEW ASSUMPTION**.
 
 Until then:
 
 ```text
 retained graph -> exact quantum-site carrier       : STOPPED / UNDERIVED
 state-independent scalar/current -> noncentral P   : NO-GO UNDER INDEPENDENT LOCAL GAUGE
-state + supplied graph-site carrier -> P_f         : LAWFUL BUT NONUNIQUE
-five nontrivial graph sites == C^125 parent        : IMPOSSIBLE
+state + supplied carrier -> covariant local P      : LAWFUL
+local covariance -> source eigenspaces/direction   : EXACTLY CLASSIFIED
+local covariance -> spectral response a(r)         : NONUNIQUE
+frozen source axioms -> unique a(r)                 : NO
 natural graph-site -> C^125/C^25 map               : NOT CERTIFIED
-[A]_+ -> [P]_+                                     : EXACT CANONICAL COMPRESSION
-[P] -> X* -> [g]                                   : CERTIFIED CONDITIONAL
-Pillar 3                                           : OPEN
+[A]_+ -> [P]_+                                      : EXACT CANONICAL COMPRESSION
+[P] -> X* -> [g]                                    : CERTIFIED CONDITIONAL
+Pillar 3                                            : OPEN
 ```
