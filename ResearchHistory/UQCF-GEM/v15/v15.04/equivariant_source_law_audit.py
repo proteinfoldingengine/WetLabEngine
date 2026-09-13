@@ -416,6 +416,22 @@ def v1503_binding(v1503: dict[str, Any], rays: dict[str, Any]) -> dict[str, Any]
     }
 
 
+def adjudicate_gate(*, freedom_certified: bool, unique_selection_certified: bool) -> str:
+    """Return only positively certified scientific outcomes.
+
+    Verification failure is not evidence for the opposite hypothesis. The two
+    decisive scientific outcomes are mutually exclusive and each requires its
+    own positive certificate; otherwise the gate remains unresolved.
+    """
+    if freedom_certified and unique_selection_certified:
+        raise ValueError("mutually exclusive v15.04 outcomes cannot both be certified")
+    if freedom_certified:
+        return "COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM"
+    if unique_selection_certified:
+        return "FROZEN_AXIOMS_SELECT_UNIQUE_SPECTRAL_LAW"
+    return "V15_04_GATE_UNRESOLVED"
+
+
 def run_audit() -> dict[str, Any]:
     v1326 = _load_json(V1326)
     v1403 = _load_json(V1403)
@@ -455,10 +471,11 @@ def run_audit() -> dict[str, Any]:
         and binding["linear_log_residuals_match_theorem"]
     )
 
-    if theorem_controls_ok and qubit_ok and rays_ok and axioms_ok and binding_ok:
-        outcome = "COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM"
-    else:
-        outcome = "FROZEN_AXIOMS_SELECT_UNIQUE_SPECTRAL_LAW"
+    freedom_certified = theorem_controls_ok and qubit_ok and rays_ok and axioms_ok and binding_ok
+    outcome = adjudicate_gate(
+        freedom_certified=freedom_certified,
+        unique_selection_certified=False,
+    )
 
     return {
         "version": "v15.04",
