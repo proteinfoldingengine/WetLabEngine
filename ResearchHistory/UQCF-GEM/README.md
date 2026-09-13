@@ -38,8 +38,16 @@ Genesis / frozen provenance
        -> central support class is PGRL-null (v14.04 theorem)
     -> nontrivial provenance carriers exist
        -> NO frozen natural intertwiner into the fixed 25D v14.03 support found
-       -> different supplied intertwiners produce inequivalent [P], first-contact, and dual rays
        -> REQUIRES_NEW_REPRESENTATION_LINK (v14.04)
+
+compatibility support representation
+    -> explicit quantum parent H_Q = C^125
+    -> orthonormal support isometry L : C^25 -> C^125
+    -> T = L X L^dagger and L^dagger L = I_25
+    -> parent-source compression C_L(A)=L^dagger A L is exact, projective and covariant
+    -> supplied parent source successfully feeds the certified v14.03 chain
+    -> BUT frozen provenance supplies neither a source class nor a support-preserving tangent on this same parent
+    -> NO_COMMON_PARENT_REPRESENTATION (v15.01)
 
 retained geometry / source-current bridge
     -> metric-affine finite kinematics
@@ -98,9 +106,15 @@ Tracked gates:
 - [v14.01](v14/v14.01/) — canonical incidence gives zero cycle defect; covariant state-weighted source→cycle-defect maps can be nonzero but remain nonunique under the frozen rules; outcome `NONUNIQUE`.
 - [v14.02](v14/v14.02/) — all `128/128` frozen full-hidden radial boundary samples are smooth/simple and have nonzero projected intrinsic normal-cone rank `1`; outcome `CANONICAL_DUAL_RAY`.
 - [v14.03](v14/v14.03/) — supplied positive projective support-space PGRL source rays canonically select the hidden tangent ray, radial first contact, and v14.02 intrinsic local dual ray. All `128/128` frozen sources close the conditional chain; outcome `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`, with provenance status `PROVENANCE_SOURCE_TYPE_MISMATCH`.
-- [v14.04](v14/v14.04/) — provenance representation/intertwiner audit. Exact sub-theorem: if frozen provenance is trivial under the full `U(25)` support-coordinate action, projective naturality forces the support source to be central, hence PGRL-null. The audited archive contains two nontrivial provenance carriers but zero certified natural links into the fixed 25D support. Three supplied isometries produce valid v14.03 chains yet pairwise projective residuals near `0.999` and large downstream separations. Outcome `REQUIRES_NEW_REPRESENTATION_LINK`; branch stopped pending an earned or explicitly new representation principle.
+- [v14.04](v14/v14.04/) — provenance representation/intertwiner audit. Exact sub-theorem: if frozen provenance is trivial under the full `U(25)` support-coordinate action, projective naturality forces the support source to be central, hence PGRL-null. The audited archive contains nontrivial provenance carriers but zero certified natural links into the fixed 25D support. Supplied isometries produce valid v14.03 chains but inequivalent projective/downstream results. Outcome `REQUIRES_NEW_REPRESENTATION_LINK`; branch stopped pending an earned or explicitly new representation principle.
 
-The v14 results are compatible rather than replacements. v14.01 blocks arbitrary source weighting as a canonical global law. v14.02 derives a local dual direction once a smooth boundary point is specified. v14.03 shows that a supplied projective source ray canonically selects the hidden direction and boundary needed to reach that dual ray. v14.04 then localizes the remaining upstream obstruction: the frozen ontology does not naturally identify the provenance carrier with the 25-dimensional support representation required to produce `[P]`.
+The v14 results are compatible rather than replacements. v14.01 blocks arbitrary source weighting as a canonical global law. v14.02 derives a local dual direction once a smooth boundary point is specified. v14.03 shows that a supplied projective source ray canonically selects the hidden direction and boundary needed to reach that dual ray. v14.04 localizes the remaining upstream obstruction to the missing representation of provenance as the typed source object consumed by v14.03.
+
+## v15 history — representation unification audit
+
+- [v15.01](v15/v15.01/) — common-parent representation audit. The fixed 25D compatibility support is verified as an orthonormal support of an explicit 125D tripartite quantum parent. Parent compression `C_L(A)=L^dagger A L` is exactly positive-projective and covariant, and a target-blind supplied parent source successfully enters the frozen v14.03 chain. However, the executable core archive plus the extended v13.08/v13.11 source sweep contain zero provenance-certified source classes and zero provenance-certified support-preserving tangents on this same 125D parent. Outcome `NO_COMMON_PARENT_REPRESENTATION`; secondary status `COMPATIBILITY_PARENT_SUPPORT_VERIFIED`.
+
+v15.01 rules out a major shortcut: the v14.04 missing representation link is not merely an artifact of overlooking the parent of the compatibility support. The support parent is real and its compression law is clean, but frozen Genesis/provenance is not yet represented as source structure on that parent.
 
 ## Companion finite-model path / obstruction artifact
 
@@ -115,31 +129,42 @@ The v14 results are compatible rather than replacements. v14.01 blocks arbitrary
 - v14.01 remains in force: the audited frozen source→higher-incidence architecture is nonunique.
 - v14.02 remains in force: every audited smooth radial compatibility boundary has one intrinsic local dual ray.
 - v14.03 remains in force conditionally: supplied `[P] -> hidden tangent -> X* -> [g]`.
-- v14.04 adds the upstream branch stop: gauge-trivial provenance is central/PGRL-null, and richer frozen provenance carriers require a representation link not present in the audited ontology.
+- v14.04 remains in force: gauge-trivial provenance is central/PGRL-null, while richer provenance carriers require a representation link not present in the frozen ontology.
+- v15.01 verifies the compatibility common parent and exact parent→support compression, but finds no provenance source class/tangent on that parent. The common-parent shortcut therefore does not close the missing upstream representation law.
 
-v14.04 controls:
+v15.01 controls:
 
 ```text
-exact Weyl 1-design size                      = 625
-max Weyl-twirl error                          = 2.0899933776153146e-14
-max central-source PGRL tangent norm          = 5.900100316503041e-16
-nontrivial frozen provenance carriers         = 2
-certified natural provenance->support links   = 0
-supplied intertwiner controls                 = 3
-min pair projective source residual           = 0.99873115934039
-max hidden-direction separation               = 1.2767684478604349
-max first-contact separation                  = 0.023756216192420524
-max dual-ray separation                       = 1.036259217478033
+parent dimension                           = 125
+support dimension                          = 25
+max ||L^dagger L-I||                       = 4.965068306494546e-16
+max ||T-L X0 L^dagger||                    = 1.4513737894400392e-17
+max support-projector idempotence error    = 4.197887443839247e-16
+max compression covariance error           = 1.817139633354745e-14
+max projective descent error               = 1.138948992321253e-16
+core frozen source candidates              = 5
+extended source candidates                 = 2
+same-parent provenance source classes      = 0
+support-preserving provenance tangents     = 0
+supplied parent control hidden norm         = 0.0034965359627519986
+supplied parent control contact             = SIMPLE / RAY
+parent-control tangent roundtrip residual  = 2.24314194087589e-15
 ```
 
-The supplied intertwiners are controls only; they are not provenance physics.
+The supplied parent operator is a sufficiency control only; it is not Genesis/provenance physics.
 
 ## Stop rule
 
-Do not continue this branch by inventing a reshape, Fourier identification, PCA/SVD frame, random isometry, or target-fitted embedding. A continuation requires either an explicitly new representation axiom, a newly discovered frozen natural intertwiner, or an independently motivated structure that canonically identifies the provenance and compatibility-support representations without consulting the desired downstream result.
+Do not continue by inventing a parent source operator, lifting a desired support `P` through `L`, vectorizing/reshaping the Genesis field, padding another model into the 125D parent, or choosing a representation by PCA/SVD/random isometry/downstream target fitting.
+
+A lawful continuation requires either:
+
+1. newly discovered frozen evidence that provenance already supplies a source class or support-preserving tangent on the compatibility parent;
+2. an independently motivated information-theoretic/quantum representation principle, tested target-blind; or
+3. a genuinely new representation axiom explicitly labeled **NEW ASSUMPTION** and approved before use.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only gate ledger.
 
 ## Validation
 
-Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v14.04. Its checker independently enforces scientific thresholds and is bound to the frozen outcome, artifact hashes, and telemetry. Pillar 3 remains open.
+Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v15.01. Its checker independently enforces the parent/support and common-parent controls and is bound to the frozen `NO_COMMON_PARENT_REPRESENTATION` outcome, archive fingerprints, extended source sweep, and telemetry. Pillar 3 remains open.
