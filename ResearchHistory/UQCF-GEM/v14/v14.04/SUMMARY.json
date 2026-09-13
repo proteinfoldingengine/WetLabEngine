@@ -1,0 +1,118 @@
+{
+  "version": "v14.04",
+  "date": "2026-09-12",
+  "seed": 1404,
+  "title": "Provenance Representation / Intertwiner Gate",
+  "gate_outcome": "REQUIRES_NEW_REPRESENTATION_LINK",
+  "scientific_breakthrough": false,
+  "Pillar_3": "OPEN",
+  "support_dimension": 25,
+  "claim_scope": "representation/naturality audit from frozen Genesis/provenance carriers to the positive projective Hermitian source ray consumed by v14.03",
+  "class_a": {
+    "analytic_theorem": "SUPPORT_GAUGE_PROJECTIVE_CENTRALITY",
+    "central_only": true,
+    "identity_pgrl_null": true,
+    "weyl_design_size": 625,
+    "noncentral_probe_count": 2,
+    "unitary_orbit_control_count": 4,
+    "max_central_invariance_error": 4.26351937961921e-15,
+    "max_identity_tangent_norm": 5.900100316503041e-16,
+    "max_weyl_twirl_error": 2.0899933776153146e-14,
+    "min_noncentral_orbit_projective_residual": 0.02773234285516979,
+    "theorem_statement": "If provenance is trivial under the full U(25) support-coordinate action and [U P U^dagger]_+=[P]_+ for every U, then every conjugate must lie in the real affine span of P and I and therefore commute with P. A noncentral Hermitian P admits a unitary mixing distinct eigenspaces for which U P U^dagger does not commute with P. Hence P is central; central representatives are PGRL-null."
+  },
+  "class_b": {
+    "candidate_count": 4,
+    "missing_artifact_count": 0,
+    "nontrivial_carrier_count": 2,
+    "certified_natural_support_link_count": 0,
+    "archive_statement": "The frozen provenance stack contains nontrivial carriers, but the audited artifacts do not certify a natural representation/intertwiner from those carriers into the fixed 25-dimensional v14.03 support.",
+    "inventory": [
+      {
+        "name": "genesis_ledger_identity",
+        "path": "Tmp/TOE/Einstein 6/v1172_full_stack_package/v1172_6d_gpu_full_stack_genesis_provenance_engine.py",
+        "domain_type": "hash/root/event/witness append-only ledger",
+        "carrier_class": "gauge_trivial_identity_data",
+        "transformation_law": "source-origin and ordered-lineage identity; no certified U(25) support action",
+        "support_map_status": "NONE_CERTIFIED",
+        "sha256": "659a1489b9c2a46a56440808a0ac19e3f1be8bd44ffb70cfbab575ea1bd95e93"
+      },
+      {
+        "name": "genesis_6d_field",
+        "path": "Tmp/TOE/Einstein 6/v1172_full_stack_package/v1172_6d_gpu_full_stack_genesis_provenance_engine.py",
+        "domain_type": "real 6D Genesis/pruning field on RES^6 grid",
+        "carrier_class": "nontrivial_carrier",
+        "transformation_law": "model-specific 6D grid/roll/pruning transformations",
+        "support_map_status": "NONE_CERTIFIED",
+        "sha256": "659a1489b9c2a46a56440808a0ac19e3f1be8bd44ffb70cfbab575ea1bd95e93"
+      },
+      {
+        "name": "retained_source_grade",
+        "path": "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md",
+        "domain_type": "retained scalar/extensive source grade",
+        "carrier_class": "gauge_trivial_scalar_data",
+        "transformation_law": "positive retained-source scaling",
+        "support_map_status": "NONE_CERTIFIED",
+        "sha256": "3677e07ab0ea9c40b5f9615673736027834d93260d149419605535aa14996858"
+      },
+      {
+        "name": "retained_source_current",
+        "path": "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md",
+        "domain_type": "retained graph source/current package satisfying B J = s",
+        "carrier_class": "nontrivial_carrier",
+        "transformation_law": "graph balance/covariance inside the retained measurement convention",
+        "support_map_status": "NONE_CERTIFIED",
+        "sha256": "3677e07ab0ea9c40b5f9615673736027834d93260d149419605535aa14996858"
+      }
+    ]
+  },
+  "class_c": {
+    "fixture_status": "SUPPLIED_INTERTWINER_CONTROL_NOT_DERIVED_PROVENANCE",
+    "attempted_seeds": [14041, 14042, 14043],
+    "declared_intertwiner_count": 3,
+    "genuine_projective_ambiguity": true,
+    "max_isometry_error": 4.621011054697887e-16,
+    "min_pair_projective_residual": 0.99873115934039,
+    "max_hidden_direction_separation": 1.2767684478604349,
+    "max_boundary_separation": 0.023756216192420524,
+    "max_dual_ray_separation": 1.036259217478033,
+    "pair_records": [
+      {
+        "seed_i": 14041,
+        "seed_j": 14042,
+        "projective_residual": 0.9990295589466225,
+        "hidden_direction_separation": 1.2767684478604349,
+        "boundary_separation": 0.023756216192420524,
+        "dual_ray_separation": 1.0001584873919889
+      },
+      {
+        "seed_i": 14041,
+        "seed_j": 14043,
+        "projective_residual": 0.99873115934039,
+        "hidden_direction_separation": 1.0319608247920389,
+        "boundary_separation": 0.01699612972933345,
+        "dual_ray_separation": 1.036259217478033
+      },
+      {
+        "seed_i": 14042,
+        "seed_j": 14043,
+        "projective_residual": 0.9987603452271447,
+        "hidden_direction_separation": 1.1872546201546992,
+        "boundary_separation": 0.021272160805405275,
+        "dual_ray_separation": 0.9822467325272016
+      }
+    ]
+  },
+  "interpretation": "Gauge-trivial provenance cannot naturally select a noncentral v14.03 support-source class; richer frozen provenance carriers exist, but the audited archive contains no certified natural intertwiner into the 25-dimensional compatibility support. Explicitly supplied isometries are sufficient to produce valid noncentral v14.03 source/contact/dual chains, but different admissible supplied isometries give inequivalent projective source rays and inequivalent downstream selections. The missing upstream object is therefore a provenance-to-support representation/intertwiner law.",
+  "stop_rule": "Do not open another embedding-search gate by inventing a reshape, projection, Fourier map, PCA/SVD alignment, random isometry, or target-fitted support identification. Continuation requires an explicitly new representation axiom, a newly discovered frozen natural intertwiner, or an independently motivated structure that canonically identifies the provenance and support representation spaces.",
+  "not_derived": [
+    "Genesis/provenance to v14.03 projective support-source ray",
+    "absolute source magnitude or observer calibration",
+    "source-to-solder/coframe law",
+    "stress-energy",
+    "absolute source-to-geometry coupling",
+    "physical metric or spacetime",
+    "Einstein equations",
+    "Pillar 3 closure"
+  ]
+}
