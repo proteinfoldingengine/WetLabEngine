@@ -1,0 +1,45 @@
+{
+  "version": "v15.16",
+  "status": "EXECUTED_CONDITIONAL_RECOVERABLE_OBSERVABLE_MAP",
+  "schedule_mask_cases": 80,
+  "phase_witness_cases": 3840,
+  "union_composition_cases": 256,
+  "max_basis_unitarity_error": 1.2430454583271524e-14,
+  "max_intertwining_error": 1.2515794564985702e-14,
+  "max_joint_route_error": 5.7176243586280605e-15,
+  "max_decoder_error": 2.0029155490827524e-16,
+  "max_shared_projector_error": 2.492663693954032e-15,
+  "max_record_probability_error": 2.1649348980190553e-15,
+  "max_phase_witness_error": 1.0658141036401503e-14,
+  "max_union_composition_error": 5.717965559833866e-15,
+  "dimension_chain": [
+    256,
+    128,
+    64,
+    32,
+    16
+  ],
+  "phase_pair_chain": [
+    120,
+    56,
+    24,
+    8,
+    0
+  ],
+  "negative_control": {
+    "status": "REJECTED_GENERALIZATION_TO_UNSHARP_INSTRUMENT",
+    "intertwining_error": 0.565685424949238,
+    "naive_compressed_output_error": 0.466476151587624,
+    "compression_idempotence_error": 0.2176,
+    "note": "The formula requires the certified sharp, range-invariant encoding; no new physical channel is adopted."
+  },
+  "actual_record_selected": null,
+  "physical_duration": null,
+  "new_physical_axioms": [],
+  "physical_entropy_law_derived": false,
+  "physical_collapse_law_derived": false,
+  "Pillar_3": "OPEN",
+  "scientific_breakthrough": false,
+  "scope": "Exact for the supplied sharp completed instrument and declared partial record pinching. Observable dimensions are not entropy, elapsed time or a law selecting pinching.",
+  "mask_count": 16
+}
