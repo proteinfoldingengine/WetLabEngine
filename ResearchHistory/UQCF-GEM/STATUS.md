@@ -1,134 +1,189 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v13.28 — RGCL Origin / Source-to-Coframe Variational Pairing Gate  
-**Source-to-GR coupling branch:** STOPPED PENDING NEW AXIOM OR INDEPENDENT CALIBRATION
+**Latest completed gate:** v14.01 — Canonical Source-Dependent Global Admissibility Gate  
+**v14.01 adjudication:** `NONUNIQUE`  
+**Downstream source→GR absolute-coupling branch:** STOPPED by v13.28  
+**Upstream source→higher-incidence/admissibility branch:** STOPPED for the v14.01 audited class pending new axiom or independent calibration
 
 ## Current scientific picture
 
-The generic retained geometry remains most honestly organized as a **metric-affine parent**:
+The program now has two distinct source-coupling obstructions.
 
 ```text
-Gamma = Gamma_LC + K(T) + L(Q)
+pre-time quantum / global compatibility
+    -> fixed admissibility architecture
+    -> canonical graph incidence source map
+       -> exact/cut 1-cochain only
+       -> zero cycle-space defect
+    -> relationally weighted source maps
+       -> nonzero global cycle defects exist
+       -> multiple inequivalent covariant/compositional choices survive
+       -> positivity does not select one
+    -> canonical source-dependent admissibility law NOT DERIVED
+
+retained geometry / source-current bridge
+    -> source origin, balance, support, conditional current selection
+    -> projective coupled-source ray [Sigma] survives
+    -> absolute source→geometry coupling NOT DERIVED
+    -> v13.28 requires new axiom or independent calibration
 ```
 
-The source bridge is now separated into three closed/open layers:
+These are related but logically distinct. v14.01 is upstream of the v13.28 geometric-coupling obstruction.
+
+## Latest result — v14.01
+
+The gate asked whether the frozen pre-pruning/global-consistency structure canonically produces
 
 ```text
-retained source/current
-→ source origin, balance, support, conditional current selection
-→ PRESERVED
-
-absolute observer source split
-→ (T_obs,kappa_obs)
-→ blocked by RSCL common-scale gauge
-
-coupled geometric source
-→ projective ray [Sigma_obs] survives
-→ v13.28 audits the frozen source→geometry pairing candidates
-→ all four named candidates OBSTRUCTED
-→ absolute coupling requires new axiom or independent calibration
+A_G -> A_G(s)
 ```
 
-The controlled observer ADM/Einstein correspondence remains a heldout external correspondence harness for a supplied source package. It is not permitted to select the missing coupling.
+or a nonzero source→global-defect / higher-incidence map `eta` without introducing a new source law.
 
-## Latest result — v13.28
-
-**The four frozen ontology-native source→geometry pairing classes do not determine a nonzero absolute coupled-source magnitude.**
-
-Audited candidates:
+The answer in the audited class is:
 
 ```text
-Genesis/source grade + retained measure/support    OBSTRUCTED
-PGRL/BKM source-response pairing                   OBSTRUCTED
-RESA solder/coframe structure                      OBSTRUCTED
-QMAR response/covariance identities                OBSTRUCTED
+NONUNIQUE
 ```
 
-### Scale-weight pairing obstruction
+### 1. Source action is not automatically law deformation
 
-The exact PGRL reparameterization
+Moving a state or visible datum while the compatibility map, hidden-completion kernel and positivity rule remain fixed is source action inside one admissibility architecture. A law-level source dependence requires the source to enter the defining higher-incidence/constraint structure.
+
+### 2. Incidence-only source defect is zero exactly
+
+For graph incidence `B` and cycle projector
 
 ```text
-P -> a P
-lambda -> lambda/a
+P_cyc = I - B^T (B B^T)^+ B,
 ```
 
-leaves the finite state path unchanged.
-
-At one fixed state/tangent point, the audited geometry-side objects have source-scale weight zero while first-order source/current/QMAR objects have weight one.
-
-Therefore every source-linear pairing in the audited closure class satisfies
+one has exactly
 
 ```text
-F(G0,aS) = a F(G0,S).
+P_cyc B^T = 0.
 ```
 
-It remains source-extensive but inherits the arbitrary positive source normalization.
+So the canonical incidence coboundary cannot itself generate a nonzero cycle-space source defect.
 
-Normalizing or taking equal-weight ratios removes the scale but then leaves only projective/ray information. A nonzero source-extensive and source-parameterization-independent absolute coupling requires a compensating calibrated weight `-1` object or an equivalent new law.
-
-No such object is present in the four frozen candidate classes.
-
-### Fresh certified controls
-
-Deterministic audit: 256 trials, source scales `{0.2,0.5,2,5,11}`.
+Executed 5-node / 7-edge leakage:
 
 ```text
-max relative linear-scaling error                = 1.297966683051917e-15
-max normalized direction drift                   = 1.009936878496612e-15
-max relative BKM quadratic scaling error         = 9.652568951447787e-16
-max inverse-weight positive-control error         = 1.2662957816923526e-15
-minimum baseline candidate norm                  = 0.27598617345303345
+1.245468636882555e-15
 ```
 
-The positive control explicitly supplies a weight `-1` calibration and cancels the source scale to machine precision. This shows the mathematical repair is precise, but that repair is added structure rather than something currently derived.
+which is only a numerical check of the exact identity.
 
-## Program consequence
+### 3. Nonzero weighted deformations exist but are not unique
 
-The v13.28 gate outcome is:
+The audited class used
+
+```text
+eta_f = P_cyc W_f B^T C
+```
+
+with the same edge scalar data and three positive scalar functionals:
+
+```text
+f(x)=1+x
+f(x)=exp(x)
+f(x)=1+x^2
+```
+
+All three candidate operators are nonzero and their flattened span has rank `3`.
+
+```text
+linear operator norm       = 0.9317680326490423
+exponential operator norm  = 1.1006383303926504
+quadratic operator norm    = 0.3273241321687114
+max normalized direction separation = 0.9960669843187823
+```
+
+Across 256 source trials all `768` candidate outputs were nonzero.
+
+### 4. Frozen structural rules do not select among them
+
+```text
+max source-scaling error       = 7.993866358511362e-16
+max relabel/orientation covariance error = 1.3482796731097804e-14
+max strict-disjoint-composition error    = 0.0
+```
+
+Strict disjoint composition is therefore preserved by every tested pointwise weighting functional and is not a selector.
+
+### 5. Positivity is not a selector in the audited controls
+
+At a faithful positive-definite center, all 768 bounded candidate perturbations remain positive inside one common neighborhood:
+
+```text
+common epsilon              = 0.1443693458628246
+minimum positive margin     = 0.75
+```
+
+At `diag(0,1,1,1)`, the first-order PSD boundary condition supplies a half-space with a `9`-dimensional equality lineality subspace in `Sym(4)`.
+
+Classification:
+
+```text
+INEQUALITY_FILTER_NOT_CANONICAL_SOURCE_MAP
+```
+
+### v14.01 conclusion
+
+Within the audited frozen class:
+
+```text
+canonical incidence                  -> zero defect
+state/relational weighting           -> nonzero defects
+covariance                            -> does not select
+source linearity                      -> does not select
+strict disjoint composition           -> does not select
+positivity                             -> does not select
+```
+
+Therefore nonzero source-dependent admissibility deformations exist conditionally on choosing additional constitutive structure, but the frozen rules tested here do not select one canonically.
+
+## Relation to v13.28
+
+v13.28 remains fully in force. It showed that the four frozen downstream source→geometry pairing classes cannot supply the missing absolute coupling and adjudicated:
 
 ```text
 REQUIRES_NEW_AXIOM
 ```
 
-This is stronger than leaving another unnamed bridge open. The frozen candidate search is closed.
-
-The source-to-GR coupling branch may restart only after one of the following is explicitly supplied and independently justified:
-
-1. a new source→geometry/coframe axiom; or
-2. an independently calibrated physical cross-domain observable.
-
-A freely chosen dimensionful multiplier counts as inserted calibration, not derivation. Fitting it to an Einstein/ADM residual remains forbidden.
+v14.01 does not reopen that branch. Instead it shows that moving upstream into global admissibility does not currently supply a unique replacement source law either.
 
 ## Preserved results
 
 - Pillar 1 — Global Atlas Closure: **COMPLETE**.
 - Pillar 2 — Retained Curvature / Source-Current Compatibility: **CLOSED CONDITIONAL**.
-- finite-state QMAR: **PRESERVED**.
-- exact BKM trace/Weyl integrability: **PRESERVED**.
-- metric-affine parent kinematics: **PRESERVED**.
-- response-selected retained current: **PRESERVED CONDITIONAL**.
-- QRSL no-go and RATS seal: **PRESERVED**.
-- RSCL no-go: **PRESERVED**.
-- projective retained/coupled-source ray `[Sigma]`: **PRESERVED**.
-- controlled weak ADM/Einstein correspondence: **PRESERVED AS EXTERNAL CORRESPONDENCE ONLY**.
+- finite quantum/global compatibility laboratory: **PRESERVED**.
+- hidden-completion and global positivity structure: **PRESERVED**.
+- finite-state QMAR and BKM trace/Weyl theorem: **PRESERVED**.
+- source-current balance and conditional current selection: **PRESERVED**.
+- projective coupled-source ray `[Sigma]`: **PRESERVED**.
+- v13.28 downstream coupling no-go/branch stop: **PRESERVED**.
+- controlled ADM/Einstein comparisons: **EXTERNAL HELDOUT CORRESPONDENCE ONLY**.
 
 ## Open boundaries
 
-- source-to-solder/coframe response is not derived;
-- HCPR remains irreducible relative to the frozen ledger;
-- geometry-only autonomous response remains obstructed by hidden completion;
-- ontology-native quantum continuum refinement remains unavailable;
-- physical stress-energy coupling remains open;
-- true third-party physical validation remains open;
-- full physical Einstein equations are not derived;
-- Pillar 3 remains **OPEN**.
+- canonical nonzero source→higher-incidence/admissibility law: **NOT DERIVED**;
+- canonical source-dependent `A_G(s)`: **NOT DERIVED**;
+- source-to-solder/coframe law: **NOT DERIVED**;
+- absolute physical source→geometry coupling: **NOT DERIVED**;
+- ontology-native quantum continuum refinement: **UNAVAILABLE**;
+- true third-party physical validation: **OPEN**;
+- physical Einstein equations: **NOT DERIVED**;
+- Pillar 3: **OPEN**.
 
 ## Next lawful move
 
-There is **no automatic v13.29 continuation of this source-to-GR coupling branch**.
+There is no automatic continuation that may simply choose one of the surviving `eta_f` maps.
 
-A new gate is lawful only if it begins from one explicitly introduced and independently motivated new axiom, or from an independently calibrated physical observable. Otherwise the branch remains stopped.
+This audited branch may restart only with either:
 
-Other UQCF-GEM research branches may continue independently; this stop applies specifically to deriving the missing absolute source→geometry coupling from the current frozen ontology.
+1. an explicitly new and independently motivated source→higher-incidence/admissibility axiom or selector; or
+2. an independently calibrated physical cross-domain observable capable of selecting the deformation.
+
+Other UQCF-GEM branches may continue independently. The v14.01 stop is scoped to deriving a canonical source-dependent global-admissibility deformation from the frozen incidence/state-weighted/disjoint-composition/positivity class audited here.
