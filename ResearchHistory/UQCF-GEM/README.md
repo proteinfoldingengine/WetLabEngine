@@ -18,43 +18,45 @@ pre-time quantum relations / global compatibility
     -> hidden global completion / positivity
     -> source action under fixed admissibility architecture
     -> canonical incidence source map gives no cycle defect
-    -> relationally weighted source->higher-incidence maps can be nonzero
-       but are NONUNIQUE under current covariance/composition/positivity rules (v14.01)
+    -> covariant nonzero source->higher-incidence maps exist but are NONUNIQUE (v14.01)
 
 fixed global compatibility fiber
     -> specified smooth PSD boundary point
-       -> intrinsic hidden-fiber normal cone
-       -> objective-independent rank-1 local dual ray on 128/128 frozen samples (v14.02)
-    -> supplied positive projective support-space PGRL source ray [P]
-       -> exact full-state PGRL tangent
-       -> canonical orthogonal projection into the full hidden kernel
-       -> hidden-tangent radial first-contact point
-       -> v14.02 intrinsic local dual ray
-       -> 128/128 frozen source samples close this conditional chain (v14.03)
+       -> objective-independent intrinsic local dual ray on 128/128 samples (v14.02)
+    -> supplied positive projective support source [P]
+       -> exact PGRL tangent
+       -> hidden projection
+       -> hidden-tangent radial first contact
+       -> intrinsic local dual ray
+       -> 128/128 conditional source chains close (v14.03)
 
 Genesis / frozen provenance
-    -> source-origin / retained-sequence identity and source-flow compatibility
-    -> gauge-trivial provenance alone can map naturally only to the central support class
-       -> central support class is PGRL-null (v14.04 theorem)
-    -> nontrivial provenance carriers exist
-       -> NO frozen natural intertwiner into the fixed 25D v14.03 support found
-       -> REQUIRES_NEW_REPRESENTATION_LINK (v14.04)
+    -> gauge-trivial provenance maps naturally only to central support class
+       -> central class is PGRL-null (v14.04)
+    -> richer provenance carriers exist
+       -> no frozen natural intertwiner into fixed C^25 support certified (v14.04)
 
-compatibility support representation
-    -> explicit quantum parent H_Q = C^125
-    -> orthonormal support isometry L : C^25 -> C^125
-    -> parent-source compression C_L(A)=L^dagger A L is exact, projective and covariant
-    -> supplied parent source successfully feeds the certified v14.03 chain
-    -> BUT frozen provenance supplies neither a source class nor a support-preserving tangent on this same parent
-    -> NO_COMMON_PARENT_REPRESENTATION (v15.01)
+compatibility parent/support
+    -> H_Q = C^125
+    -> support isometry L : C^25 -> C^125
+    -> A -> L^dagger A L is exact, projective and covariant
+    -> frozen provenance supplies no source class/tangent on this parent (v15.01)
 
-shared-label / finite-representation audit
-    -> retained finite source carrier has five nodes but graph automorphism order 1
-    -> compatibility V_A has a C5 label gauge, V_B has identity only
-    -> common V_A/V_B fixed-label gauge = identity only
-    -> all 5! = 120 node<->quantum-label bijections remain distinct double-coset classes
-    -> supplied label mapping works downstream, but mapping is not derived
+shared-label shortcut
+    -> retained graph has five nodes
+    -> compatibility factors have five internal labels
+    -> all 120 node<->label bijections remain inequivalent under earned gauge
     -> NO_CERTIFIED_SHARED_LABEL_CARRIER (v15.02)
+
+graph-site shortcut
+    -> graph-indexed quantum models exist in frozen archive
+    -> exact retained five-node graph -> five nontrivial quantum factors is UNDERIVED
+    -> scalar/current-only lift + independent local gauge -> center -> PGRL-null
+    -> supplied quantum-state context permits lawful noncentral covariant source lifts
+    -> predeclared state-functional lifts are projectively NONUNIQUE
+    -> five nontrivial sites cannot literally equal C^125 because 125=5^3
+    -> no natural graph-site -> compatibility-parent map certified
+    -> NO_CERTIFIED_GRAPH_SITE_FACTORIZATION (v15.03)
 
 retained geometry / source-current bridge
     -> metric-affine finite kinematics
@@ -69,15 +71,15 @@ retained geometry / source-current bridge
 - Pillar 2 — Retained Curvature / Source-Current Compatibility: CLOSED CONDITIONAL (response-selected Phi); bare Genesis-only Phi obstructed.
 - Pillar 3 — GR/ADM Correspondence: OPEN.
 
+## Gate package convention
+
+Each gate directory contains the reproducible scientific archive, normally including:
+
+- `REPORT.md` — human-readable theorem/computation/interpretation/claim-boundary report.
+- `SUMMARY.json` — machine-readable measured adjudication.
+- `CHECKER.py` — executable verifier bound to the frozen result.
+
 ## v13 history
-
-Each gate directory contains:
-
-- `REPORT.md` — human-readable scientific report.
-- `SUMMARY.json` — machine-readable adjudication and status.
-- `CHECKER.py` — executable gate verifier used for the packaged result.
-
-Tracked gates:
 
 - [v13.01](v13/v13.01/) — metric-origin branch stop / HLCB dependency reduction.
 - [v13.02](v13/v13.02/) — BKM/polar QTC generically false; discrete nonmetricity derived.
@@ -88,7 +90,7 @@ Tracked gates:
 - [v13.07](v13/v13.07/) — exact LC source-tangent equations; PGRL does not imply LCSP.
 - [v13.08](v13/v13.08/) — exact finite 1D abelian LC-preserving source algebra in a symmetry-selected sector.
 - [v13.09](v13/v13.09/) — visible U(1) symmetry protects Q=0 but hidden completion can drift holonomy / solder closure.
-- [v13.10](v13/v13.10/) — frozen-ledger HCPR non-factorization; HCPR frozen as irreducible relative to current ledger.
+- [v13.10](v13/v13.10/) — frozen-ledger HCPR non-factorization; HCPR irreducible relative to current ledger.
 - [v13.11](v13/v13.11/) — QMAR first-order source response; exact BKM trace/Weyl integrability theorem.
 - [v13.12](v13/v13.12/) — shear nonmetricity and curvature response independence boundary.
 - [v13.13](v13/v13.13/) — exact no-fixed-body-order ETL/PGRL closure theorem.
@@ -105,74 +107,72 @@ Tracked gates:
 - [v13.24](v13/v13.24/) — post-QRSL dependency reassessment; finite/QMAR/Path-A stack preserved.
 - [v13.25](v13/v13.25/) — retained source-ledger bridge blocked by exact common source-normalization degeneracy; RSCL isolated.
 - [v13.26](v13/v13.26/) — RSCL irreducible relative to the frozen ontology; absolute-source-calibration branch stop.
-- [v13.27](v13/v13.27/) — direct `Sigma_obs=kappa_obs T_obs` not derived; projective source ray survives but absolute coupled-source magnitude remains undetermined.
-- [v13.28](v13/v13.28/) — all four frozen source→geometry pairing classes obstructed for an absolute coupling; outcome `REQUIRES_NEW_AXIOM` and branch stop.
+- [v13.27](v13/v13.27/) — direct coupled-source magnitude not derived; projective source ray survives.
+- [v13.28](v13/v13.28/) — all four frozen source→geometry pairing classes obstructed for absolute coupling; `REQUIRES_NEW_AXIOM`.
 
 ## v14 history — upstream global-admissibility origin
 
-- [v14.01](v14/v14.01/) — canonical incidence gives zero cycle defect; covariant state-weighted source→cycle-defect maps can be nonzero but remain nonunique under the frozen rules; outcome `NONUNIQUE`.
-- [v14.02](v14/v14.02/) — all `128/128` frozen full-hidden radial boundary samples are smooth/simple and have nonzero projected intrinsic normal-cone rank `1`; outcome `CANONICAL_DUAL_RAY`.
-- [v14.03](v14/v14.03/) — supplied positive projective support-space PGRL source rays canonically select the hidden tangent ray, radial first contact, and v14.02 intrinsic local dual ray. All `128/128` frozen sources close the conditional chain; outcome `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`, with provenance status `PROVENANCE_SOURCE_TYPE_MISMATCH`.
-- [v14.04](v14/v14.04/) — provenance representation/intertwiner audit. If frozen provenance is trivial under the full `U(25)` support-coordinate action, projective naturality forces the support source to be central, hence PGRL-null. Richer provenance carriers exist but no certified natural links into the fixed 25D support were found. Outcome `REQUIRES_NEW_REPRESENTATION_LINK`.
+- [v14.01](v14/v14.01/) — canonical incidence gives zero cycle defect; lawful nonzero weighted maps exist but remain nonunique; `NONUNIQUE`.
+- [v14.02](v14/v14.02/) — `128/128` full-hidden radial boundary samples are smooth/simple with intrinsic normal-cone rank 1; `CANONICAL_DUAL_RAY`.
+- [v14.03](v14/v14.03/) — supplied positive projective support-source rays canonically select hidden tangent, radial first contact, and local dual ray on `128/128`; `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`; provenance origin still open.
+- [v14.04](v14/v14.04/) — gauge-trivial provenance is central/PGRL-null; richer carriers have no certified natural support link; `REQUIRES_NEW_REPRESENTATION_LINK`.
 
-The v14 results are compatible rather than replacements. v14.01 blocks arbitrary source weighting as a canonical global law. v14.02 derives a local dual direction once a smooth boundary point is specified. v14.03 shows that a supplied projective source ray canonically selects the hidden direction and boundary needed to reach that dual ray. v14.04 localizes the remaining upstream obstruction to the missing representation of provenance as the typed source object consumed by v14.03.
+The v14 results are compatible. v14.01 blocks arbitrary source weighting as a canonical global law. v14.02 derives the local dual direction once a smooth boundary is supplied. v14.03 supplies the conditional source-ray→boundary chain. v14.04 localizes the unresolved upstream problem to representation of provenance as the typed source consumed by v14.03.
 
 ## v15 history — representation unification audits
 
-- [v15.01](v15/v15.01/) — common-parent representation audit. The fixed 25D compatibility support is an orthonormal support of an explicit 125D tripartite quantum parent. Parent compression `C_L(A)=L^dagger A L` is exactly positive-projective and covariant, and a supplied parent source successfully enters the v14.03 chain. However, the frozen archive contains zero provenance-certified source classes and zero provenance-certified support-preserving tangents on this same parent. Outcome `NO_COMMON_PARENT_REPRESENTATION`; secondary `COMPATIBILITY_PARENT_SUPPORT_VERIFIED`.
-- [v15.02](v15/v15.02/) — shared-label equivariance audit. The retained five-node directed source graph is rigid (`|G_src|=1`). `V_A` has an exact cyclic five-label fixed gauge (`|G_A|=5`), while `V_B` has identity only (`|G_B|=1`), so the common frozen compatibility gauge is identity. The exact quotient `G_comp \ S_5 / G_src` therefore has `120` classes of size `1`: every node↔quantum-label bijection remains inequivalent. Alternative supplied identifications and parent-factor placements produce inequivalent projective support source rays, while an explicitly supplied identity mapping successfully feeds v14.03. Outcome `NO_CERTIFIED_SHARED_LABEL_CARRIER`.
+- [v15.01](v15/v15.01/) — compatibility support has explicit parent `C^125`; compression to `C^25` is exact/projective/covariant, but the frozen archive supplies no provenance source class/tangent on that parent. `NO_COMMON_PARENT_REPRESENTATION`; secondary `COMPATIBILITY_PARENT_SUPPORT_VERIFIED`.
+- [v15.02](v15/v15.02/) — retained five-node graph and five-level quantum labels do not share an earned label carrier. Exact double-coset audit leaves `120` inequivalent node↔label identifications; factor placement is independently consequential. `NO_CERTIFIED_SHARED_LABEL_CARRIER`.
+- [v15.03](v15/v15.03/) — graph-site factorization/local-gauge audit. Graph-indexed quantum models exist, but no frozen artifact certifies the exact retained five-node graph as five quantum factors. State-independent scalar/current lifts are central and PGRL-null under full independent local gauge. Supplied quantum-state context permits covariant noncentral lifts, but the frozen `linear` and `log` families are projectively inequivalent (`0.0326434` on control A; `0.0104608` on B). Independently, five nontrivial quantum factors cannot literally equal the existing `C^125` parent. Primary outcome `NO_CERTIFIED_GRAPH_SITE_FACTORIZATION`; scientific breakthrough `false`.
 
-v15.01 rules out a major common-parent shortcut: the parent/support relation is real and clean, but provenance is not represented as source structure on that parent. v15.02 rules out the next shortcut: the matching five-element cardinalities do not canonically identify the retained source carrier with the five-level quantum labels.
+v15.01 rules out a common-parent shortcut. v15.02 rules out a shared-basis-label shortcut. v15.03 rules out silently promoting the retained graph to the current compatibility representation and also proves that scalar/current data alone cannot select a noncentral source under independent local gauge. State context solves existence, not canonicality.
 
 ## Companion finite-model path / obstruction artifact
 
 - [v13.27 Finite Quantum-Relational Path and Projective Coupling Obstruction](demos/v13.27-gravity-progress/) — deterministic six-qubit integration harness with BKM metrics, pair correlations, audited transport, loop diagnostics, balanced currents, and the fixed-state projective homogeneity obstruction.
 - The artifact does **not** derive physical space, time, stress-energy, ADM constraints, an absolute gravitational coupling, or Einstein equations.
 - Canonical portable scientific fingerprint: `f632e656cc2ea1fc5d61b395080d7259ecfed21c9bd8379626da49f44d6c38fc`.
-- Reference raw telemetry SHA (diagnostic only): `0056223006f943b596e20509c4e77f0020eee3de4064ac83cd9a5ab6a3010f91`.
 
 ## Current branch-stop and positive boundaries
 
-- v13.28 remains in force: absolute source→geometry coupling is not supplied by the frozen candidate classes; `REQUIRES_NEW_AXIOM`.
-- v14.01 remains in force: the audited frozen source→higher-incidence architecture is nonunique.
+- v13.28 remains in force: absolute source→geometry coupling is not supplied by the frozen candidate classes.
+- v14.01 remains in force: source→higher-incidence deformation is not uniquely selected by the frozen rules.
 - v14.02 remains in force: every audited smooth radial compatibility boundary has one intrinsic local dual ray.
 - v14.03 remains in force conditionally: supplied `[P] -> hidden tangent -> X* -> [g]`.
-- v14.04 remains in force: gauge-trivial provenance is central/PGRL-null, while richer provenance carriers require a representation link not present in the frozen ontology.
-- v15.01 verifies the compatibility common parent and exact parent→support compression, but finds no provenance source class/tangent on that parent.
-- v15.02 shows that the finite five-node/five-level cardinality match does not repair that missing representation: common fixed gauge is identity, all `120/120` label bijections remain distinct, and factor placement is also projectively consequential.
+- v14.04 remains in force: provenance requires a nontrivial representation link.
+- v15.01 verifies the compatibility parent/support relation but finds no provenance source class/tangent on that parent.
+- v15.02 shows matching five-element cardinality does not supply the missing representation.
+- v15.03 shows the graph-site shortcut is also underived; five nontrivial sites cannot literally be `C^125`; scalar/current-only local-gauge lifts are central/PGRL-null; state-context lifts are lawful but nonunique.
 
-v15.02 controls:
+v15.03 measured controls:
 
 ```text
-S5 permutations / label bijections             = 120
-source graph automorphism order                 = 1
-source-state stabilizer order                   = 1
-V_A fixed-label gauge order                     = 5
-V_B fixed-label gauge order                     = 1
-common V_A/V_B fixed-label gauge order          = 1
-double-coset identification classes             = 120
-all double-coset class sizes                    = 1
-max identification projective residual          = 1.0
-max factor-placement projective residual        = 1.0
-supplied archived-source hidden norm (V_A)       = 0.0034493013716416963
-supplied archived-source boundary radius (V_A)  = 0.0034493013716416702
-supplied control contact                         = SIMPLE / RAY
+retained graph nodes / edges                 = 5 / 7
+rank(B) / cycle dimension                    = 4 / 3
+five-nontrivial-site factorizations of 125   = 0
+identity gauge invariance error              = 2.57310042329926e-15
+noncentral independent-frame violation       = 7.999999999999999
+SWAP independent-frame violation             = 7.806681235326519
+SWAP tied-frame error                        = 2.5121479338940403e-15
+max state-family covariance error            = 2.9707140272854356e-16
+max source-scale projective residual         = 4.3624070492076246e-16
+A: linear vs log projective residual         = 0.03264343653690659
+B: linear vs log projective residual         = 0.010460821683241842
+state-dependent family classification        = NONUNIQUE
 ```
-
-The supplied node↔quantum-label identification and factor action are controls only; they are not provenance physics.
 
 ## Stop rule
 
-Do not continue by inventing a node↔quantum-label bijection, choosing a favorite parent factor, lifting a desired support `P`, vectorizing/reshaping the Genesis field, padding another representation into the 125D parent, using PCA/SVD/random isometries, or selecting the option that gives the most gravity-like downstream response.
+Do not continue by inventing a node↔quantum-site identification, choosing a preferred internal axis, privileging `log rho`, tying local frames, vectorizing/reshaping/padding a carrier into `C^125`, using PCA/SVD/random isometries, promoting a minimum-norm current, or selecting the option that gives the most gravity-like downstream response.
 
 A lawful continuation requires either:
 
-1. newly discovered frozen cross-model label/functor structure that identifies the retained relational carrier with the compatibility labels and factor role;
-2. newly discovered frozen evidence that provenance already supplies a source class or support-preserving tangent on the compatibility parent; or
-3. a genuinely new representation principle explicitly labeled **NEW ASSUMPTION**, independently motivated and user-approved before testing.
+1. newly discovered frozen structure certifying the exact retained graph-site carrier and its representation law;
+2. newly discovered frozen structure giving a natural map from that carrier into the compatibility parent/support; or
+3. a genuinely new operator-valued source/representation principle explicitly labeled **NEW ASSUMPTION**, independently motivated and user-approved before testing.
 
-See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only gate ledger.
+See [STATUS.md](STATUS.md) for the current frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only gate ledger.
 
 ## Validation
 
-Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v15.02. Its checker independently enforces the finite-group/source/compatibility controls and is bound to the frozen `NO_CERTIFIED_SHARED_LABEL_CARRIER` outcome, artifact hashes, exact group hashes, `120`-class partition, representation diagnostics, and positive/negative controls. Pillar 3 remains open.
+Each completed gate carries an executable checker and machine-readable summary. v15.03 is bound to the full frozen `SUMMARY.json` in addition to independent theorem/numerical thresholds. Final exact-SHA branch certification and post-merge regressions are required before the gate is called merged/certified. Pillar 3 remains open.
