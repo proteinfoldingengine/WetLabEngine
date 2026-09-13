@@ -62,9 +62,8 @@ def scientific_fingerprint(data):
 
     The full telemetry hash remains useful as a byte-level numerical diagnostic, but
     eigensolver/SVD implementations may differ at machine epsilon across BLAS/LAPACK
-    runs.  This fingerprint intentionally hashes rounded invariant observables plus
-    structural gate outcomes, not epsilon-scale residuals or gauge-sensitive matrix
-    representatives.
+    runs. This fingerprint hashes rounded invariant observables, the two explicit
+    transport/holonomy audits, and structural gate outcomes.
     """
     s = data["summary"]
     cfg = data["config"]
@@ -91,10 +90,17 @@ def scientific_fingerprint(data):
             "mean_dewitt_diagnostic": round(float(s["mean_dewitt_diagnostic"]), 10),
             "dewitt_pure_trace_control": round(float(s["dewitt_pure_trace_control"]), 10),
             "dewitt_traceless_control": round(float(s["dewitt_traceless_control"]), 10),
-            "tensor_completion_spatial_stress_distance": round(
-                float(s["tensor_completion_spatial_stress_distance"]), 10
+            "toy_block_underdetermination_distance": round(
+                float(s["toy_block_underdetermination_distance"]), 10
             ),
             "max_cycle_rank_deficit": int(s["max_cycle_rank_deficit"]),
+            "raw_polar_reflection_count": int(s["raw_polar_reflection_count"]),
+            "raw_polar_reflection_fraction": round(float(s["raw_polar_reflection_fraction"]), 10),
+            "min_holonomy_raw_cos_argument": round(float(s["min_holonomy_raw_cos_argument"]), 10),
+            "max_holonomy_raw_cos_argument": round(float(s["max_holonomy_raw_cos_argument"]), 10),
+            "holonomy_clip_event_count": int(s["holonomy_clip_event_count"]),
+            "max_holonomy_clip_excess": round(float(s["max_holonomy_clip_excess"]), 12),
+            "pi_holonomy_adjudication": s["pi_holonomy_adjudication"],
         },
         "structural_gates": {
             "source_balance_machine_zero": bool(s["max_source_balance_residual"] < 1e-10),
@@ -134,10 +140,13 @@ def run_telemetry(config=None):
     local_z = np.zeros((frames, n), dtype=float)
     edge_corr = np.zeros((frames, E), dtype=float)
     edge_nonmetricity = np.zeros((frames, E), dtype=float)
+    edge_raw_polar_det = np.zeros((frames, E), dtype=float)
     edge_M = np.zeros((frames, E, 3, 3), dtype=float)
     edge_O = np.zeros((frames, E, 3, 3), dtype=float)
     q = np.zeros((frames, n, 3, 3), dtype=float)
     cycle_angles = []
+    cycle_raw_cos_arguments = []
+    cycle_clip_excesses = []
     node_geometry_score = np.zeros((frames, n), dtype=float)
 
     for f, lam in enumerate(lambdas):
@@ -150,9 +159,12 @@ def run_telemetry(config=None):
         for e, record in enumerate(snap["edges"]):
             edge_corr[f, e] = record["corr_norm"]
             edge_nonmetricity[f, e] = record["nonmetricity_norm"]
+            edge_raw_polar_det[f, e] = record["raw_polar_det"]
             edge_M[f, e] = record["M"]
             edge_O[f, e] = record["O"]
         cycle_angles.append([float(c["angle"]) for c in snap["cycles"]])
+        cycle_raw_cos_arguments.append([float(c["raw_cos_argument"]) for c in snap["cycles"]])
+        cycle_clip_excesses.append([float(c["clip_excess"]) for c in snap["cycles"]])
         node_geometry_score[f] = _node_incident_scores(n, edges, edge_nonmetricity[f])
         for i, K in enumerate(snap["metrics"]):
             q[f, i] = represented_q(K, regularizer=float(cfg["q_regularizer"]))
@@ -202,10 +214,24 @@ def run_telemetry(config=None):
     pgrl_b = state_from_logtilt(log_rho0, lam_probe / a, a * model["P"])
     pgrl_reparam_error = float(np.linalg.norm(pgrl_a - pgrl_b, ord="fro"))
 
-    # Tensor-completion witness: same coupled rho/j projection, different spatial stress block.
-    stress_a = np.diag([0.25, -0.10, 0.05])
-    stress_b = np.array([[0.55, 0.12, 0.0], [0.12, -0.25, 0.08], [0.0, 0.08, 0.18]])
-    tensor_completion_distance = float(np.linalg.norm(stress_a - stress_b, ord="fro"))
+    # Toy block-underdetermination control. These two blocks are hand-declared and
+    # are not a derived stress-energy decomposition.
+    toy_block_a = np.diag([0.25, -0.10, 0.05])
+    toy_block_b = np.array([[0.55, 0.12, 0.0], [0.12, -0.25, 0.08], [0.0, 0.08, 0.18]])
+    toy_block_distance = float(np.linalg.norm(toy_block_a - toy_block_b, ord="fro"))
+
+    flat_cycle_angles = np.array([x for row in cycle_angles for x in row], dtype=float)
+    flat_raw_cos = np.array([x for row in cycle_raw_cos_arguments for x in row], dtype=float)
+    flat_clip_excess = np.array([x for row in cycle_clip_excesses for x in row], dtype=float)
+    clip_tol = 1e-12
+    pi_tol = 1e-10
+    pi_mask = np.isclose(flat_cycle_angles, np.pi, atol=pi_tol, rtol=0.0)
+    if not np.any(pi_mask):
+        pi_adjudication = "NO_PI_EVENT"
+    elif np.any(flat_clip_excess[pi_mask] > clip_tol):
+        pi_adjudication = "CLIP_SATURATION_PRESENT"
+    else:
+        pi_adjudication = "GENUINE_PI_WITHIN_TOLERANCE_NO_CLIP"
 
     records = []
     for f, lam in enumerate(lambdas):
@@ -232,23 +258,35 @@ def run_telemetry(config=None):
             "edge_current": _float_list(current[f]),
             "edge_correlation": _float_list(edge_corr[f]),
             "edge_nonmetricity": _float_list(edge_nonmetricity[f]),
+            "raw_polar_determinants": _float_list(edge_raw_polar_det[f]),
             "node_geometry_score": _float_list(node_geometry_score[f]),
             "cycle_angles": [float(x) for x in cycle_angles[f]],
+            "cycle_raw_cos_arguments": [float(x) for x in cycle_raw_cos_arguments[f]],
+            "cycle_clip_excesses": [float(x) for x in cycle_clip_excesses[f]],
         })
 
+    raw_polar_reflection_count = int(np.sum(edge_raw_polar_det < 0.0))
     summary = {
         "min_state_eigenvalue": float(np.min(state_min_eig)),
         "min_bkm_eigenvalue": float(np.min(bkm_min_eig)),
         "max_source_balance_residual": float(np.max(balance_residual)),
         "max_projective_direction_change": float(np.max(projective_error)),
         "max_cycle_rank_deficit": int(np.max(cycle_dim - cycle_rank)),
-        "max_cycle_angle": float(np.max(cycle_angles)) if cycle_angles else 0.0,
+        "max_cycle_angle": float(np.max(flat_cycle_angles)) if flat_cycle_angles.size else 0.0,
         "max_qmar_jet_norm": float(np.max(qmar_jet)),
         "mean_dewitt_diagnostic": float(np.mean(dewitt)),
         "dewitt_pure_trace_control": float(controls["pure_trace"]),
         "dewitt_traceless_control": float(controls["traceless"]),
         "pgrl_reparameterization_error": pgrl_reparam_error,
-        "tensor_completion_spatial_stress_distance": tensor_completion_distance,
+        "toy_block_underdetermination_distance": toy_block_distance,
+        "raw_polar_reflection_count": raw_polar_reflection_count,
+        "raw_polar_reflection_fraction": float(raw_polar_reflection_count / edge_raw_polar_det.size),
+        "min_holonomy_raw_cos_argument": float(np.min(flat_raw_cos)) if flat_raw_cos.size else 0.0,
+        "max_holonomy_raw_cos_argument": float(np.max(flat_raw_cos)) if flat_raw_cos.size else 0.0,
+        "holonomy_clip_event_count": int(np.sum(flat_clip_excess > clip_tol)),
+        "max_holonomy_clip_excess": float(np.max(flat_clip_excess)) if flat_clip_excess.size else 0.0,
+        "pi_holonomy_event_count": int(np.sum(pi_mask)),
+        "pi_holonomy_adjudication": pi_adjudication,
         "projective_sigma_status": "RAY_ONLY__MAGNITUDE_NOT_DERIVED",
         "RGCL": "MISSING",
         "physical_Einstein_closure": "OPEN",
