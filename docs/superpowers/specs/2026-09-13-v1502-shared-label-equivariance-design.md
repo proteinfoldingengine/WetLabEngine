@@ -95,7 +95,7 @@ A literal semantic statement such as “source node 2 is quantum basis state 2�
 
 Instead, v15.02 asks for an equivariant common carrier.
 
-Let \(\mathcal N\) be the five-element retained-node set and let \(\mathcal L\) be a five-element quantum label set for one factor. A candidate identification \(\phi:\mathcal N\to\mathcal L\) is admissible only if changes of identification are pure gauge under an already-earned permutation action.
+Let \(\mathcal N\) be the five-element retained-node set and let \(\mathcal L\) be a five-element quantum label set for one factor. A candidate identification \(\phi:\mathcal N\to\mathcal L\) is admissible only if changes of identification are pure gauge under already-earned source-side and compatibility-side actions.
 
 For a permutation \(\pi\in S_5\), let \(R_\pi\) act on node data and let \(U_\pi\) be the corresponding permutation unitary on \(\mathbb C^5\).
 
@@ -107,12 +107,13 @@ F(R_\pi d)=U_\pi F(d)U_\pi^\dagger.
 
 A change of node↔basis bijection counts as harmless gauge only when the *entire relevant compatibility construction* transforms covariantly with the same action. It is not enough that \(U_\pi\) exists abstractly on \(\mathbb C^5\).
 
-The audit therefore has two logically separate questions:
+The audit therefore has three logically separate questions:
 
-1. **Label-action question:** Is there an archived common permutation action on the retained source carrier and the relevant compatibility-label carrier?
-2. **Factor-action question:** If yes, does that common carrier select a unique parent action on \(A\otimes B_1\otimes B_2\), up to already-earned gauge/projective equivalence?
+1. **Label-action question:** What permutation actions are actually earned on the retained source carrier and the relevant compatibility-label carrier?
+2. **Identification-orbit question:** Do those actions make all admissible node↔quantum-label bijections gauge-equivalent, or do multiple inequivalent identification classes remain?
+3. **Factor-action question:** If a common identification class exists, does that carrier select a unique parent action on \(A\otimes B_1\otimes B_2\), up to already-earned gauge/projective equivalence?
 
-The gate cannot close positively unless both questions close.
+The gate cannot close positively unless all three questions close.
 
 ## 5. Natural source operators permitted by the gate
 
@@ -255,23 +256,25 @@ V_\pi(L^\dagger A L)V_\pi^\dagger.
 
 The audit may not assume the existence of \(V_\pi\). It must derive or solve for the support action from the transformed support projector/subspace and classify whether the transformed compatibility support is genuinely the same representation.
 
-A permutation that changes the compatibility model to an inequivalent arrangement rather than a gauge-equivalent copy is not part of the common gauge group.
+A permutation that changes the compatibility model to an inequivalent arrangement rather than a gauge-equivalent copy is not part of the compatibility gauge group.
 
-## 8. Automorphism/equivariance groups to audit
+## 8. Automorphism, identification-orbit, and equivariance audit
 
 The implementation must compute, not presume, the relevant finite groups.
 
 ### 8.1 Source-side group
 
-For the retained five-node finite control, enumerate node permutations and identify:
+For the retained five-node finite control, enumerate all \(5!=120\) node permutations and identify:
 
 - permutations preserving the directed graph incidence structure;
 - permutations preserving the particular source/current realization when required;
 - the distinction between graph automorphism covariance and source-state stabilizer symmetry.
 
+Call the structural source-side automorphism group \(G_{\rm src}\le S_5\).
+
 ### 8.2 Compatibility-side group
 
-For each frozen compatibility arrangement `V_A` and `V_B`, enumerate label permutations and determine which transformations preserve the stipulated compatibility construction up to a unitary relabeling/gauge transformation.
+For each frozen compatibility arrangement `V_A` and `V_B`, enumerate all \(120\) label permutations and determine which transformations preserve the stipulated compatibility construction up to a unitary relabeling/gauge transformation.
 
 The audit must explicitly separate:
 
@@ -280,11 +283,40 @@ The audit must explicitly separate:
 - arrangement-value relabeling;
 - simultaneous relabelings required by the actual formulas.
 
-### 8.3 Common group
+Call the certified compatibility label-gauge group \(G_{\rm comp}\le S_5\) for each correctly typed role/action.
 
-The candidate common equivariance group is the intersection after typing the actions correctly. A cardinality match is insufficient.
+### 8.3 Identification-orbit / double-coset test
 
-A useful common group need not be all of \(S_5\), but it must be nontrivial and sufficient to make the node↔quantum-label identification natural up to gauge. If the intersection is trivial and there is no separate archived semantic/functorial identification, the gate cannot claim a shared label carrier.
+There are \(120\) possible bijections \(\phi:\mathcal N\to\mathcal L\). Two bijections are gauge-equivalent only when related by earned source and compatibility actions:
+
+\[
+\phi' = g_{\rm comp}\,\phi\,g_{\rm src}^{-1},
+\qquad
+ g_{\rm comp}\in G_{\rm comp},\;g_{\rm src}\in G_{\rm src}.
+\]
+
+Therefore inequivalent node↔quantum-label identifications are classified by the finite double-coset space
+
+\[
+G_{\rm comp}\backslash S_5/G_{\rm src}.
+\]
+
+The implementation must enumerate this quotient exactly.
+
+A shared-label identification is canonical up to gauge only if either:
+
+1. the double-coset count is exactly one; or
+2. multiple double-coset classes exist, but every class induces the same positive projective compressed source class for every audited lawful source fixture, making the ambiguity downstream-inert within the frozen model.
+
+If multiple double-coset classes induce inequivalent projective source classes, the label identification is structurally nonunique even though both sides have five elements.
+
+A merely nontrivial intersection \(G_{\rm src}\cap G_{\rm comp}\) is **not** sufficient for a positive result.
+
+### 8.4 Common covariance group
+
+After an identification class is fixed or shown downstream-inert, record the common covariance group under which source data, parent operators, support subspaces, and compressed source classes transform consistently.
+
+A useful common group need not be all of \(S_5\), but all claimed gauge identifications must be generated by the explicitly certified actions above.
 
 ## 9. Compression to the v14.03 support source
 
@@ -308,7 +340,7 @@ If a candidate compresses to a central class only, it is PGRL-null and cannot co
 
 ## 10. Factor-action uniqueness test
 
-For each source object that survives the common-label audit, compare the compressed projective rays from
+For each source object that survives the identification-orbit audit, compare the compressed projective rays from
 
 \[
 A_A(Q),\quad A_B(Q),\quad A_{\rm all}(Q).
@@ -340,7 +372,7 @@ X_*(P)
 
 This downstream run is a **sufficiency/control layer only**. It cannot choose:
 
-- the shared-label identification;
+- the node↔quantum-label identification class;
 - the common permutation group;
 - the scalar/current representation;
 - the parent factor placement;
@@ -382,6 +414,7 @@ These controls demonstrate sensitivity of the gate; neither may affect adjudicat
 All of the following must hold:
 
 - an archived nontrivial common label/equivariance carrier is certified;
+- the identification-orbit ambiguity is absent or proven projectively inert across all audited lawful source fixtures;
 - the source representation \(D(s)\) and/or \(iK(J)\) is type-correct under that carrier;
 - factor placement is uniquely selected by frozen structure or all surviving placements are projectively equivalent after compression;
 - the compressed source is noncentral/nonzero for at least one actual frozen source/current fixture;
@@ -390,31 +423,41 @@ All of the following must hold:
 
 This would be a major architectural breakthrough candidate and must be reported explicitly as such, while still not claiming gravity, stress-energy, spacetime, or Einstein equations.
 
-### 13.2 `SHARED_LABEL_BUT_FACTOR_ACTION_NONUNIQUE`
+### 13.2 `SHARED_LABEL_IDENTIFICATION_NONUNIQUE`
 
 Use when:
 
-- a common nontrivial label/equivariance carrier is certified;
+- source-side and compatibility-side permutation actions are both certified;
+- the double-coset space contains multiple inequivalent identification classes;
+- at least two such classes induce inequivalent positive projective compressed source classes.
+
+This localizes the missing representation principle to the identification between the two five-element carriers, before factor placement is considered.
+
+### 13.3 `SHARED_LABEL_BUT_FACTOR_ACTION_NONUNIQUE`
+
+Use when:
+
+- the label identification closes up to gauge/projective equivalence;
 - at least two factor placements remain equally lawful under the frozen ontology;
 - their compressed projective source classes are inequivalent.
 
 This localizes the missing principle to factor action/representation placement.
 
-### 13.3 `NO_CERTIFIED_SHARED_LABEL_CARRIER`
+### 13.4 `NO_CERTIFIED_SHARED_LABEL_CARRIER`
 
 Use when:
 
 - the apparent five-element correspondence is only cardinality coincidence;
-- no nontrivial common equivariance/functorial identification is certified;
-- or a node↔basis bijection changes the compatibility construction in a way not accounted for by gauge covariance.
+- no correctly typed source-side and compatibility-side equivariance/functorial structures can be certified;
+- or the compatibility labels involved do not support the same kind of carrier action as the retained nodes.
 
 This leaves v15.01's representation stop intact.
 
-### 13.4 `CENTRAL_ONLY_OR_PGRL_NULL`
+### 13.5 `CENTRAL_ONLY_OR_PGRL_NULL`
 
 Use as a secondary/diagnostic classification when an otherwise lawful shared carrier yields only central compressed sources.
 
-### 13.5 `UNRESOLVED_EQUIVARIANCE_AUDIT`
+### 13.6 `UNRESOLVED_EQUIVARIANCE_AUDIT`
 
 Reserved strictly for numerical/implementation failure. It must not be used to hide structural nonuniqueness or a negative theorem.
 
@@ -453,7 +496,8 @@ v13.26 and v13.28 absolute-scale/coupling obstructions remain intact regardless 
 
 The gate must be deterministic and exact wherever feasible:
 
-- enumerate finite permutations rather than sample them randomly;
+- enumerate all finite permutations and all 120 label bijections rather than sample them randomly;
+- compute identification classes exactly as finite orbits/double cosets;
 - hash all archived source artifacts used in adjudication;
 - pin Python/NumPy/SciPy as in the current certified research workflows;
 - avoid any adjudication statistic that depends on an arbitrary SVD/null-basis orientation;
@@ -487,7 +531,7 @@ TDD sequence:
 
 ## 17. Stop rule
 
-If v15.02 does not certify a shared label carrier or leaves inequivalent factor placements, stop.
+If v15.02 does not certify a shared label carrier, leaves inequivalent identification classes, or leaves inequivalent factor placements, stop.
 
 Do not continue by choosing a favorite factor, a convenient label bijection, a fitted scalar/current mixture, or the placement that gives the most gravity-like downstream result.
 
