@@ -1,363 +1,252 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-13  
-**Latest completed gate:** v15.02 — Shared-Label Equivariance / Natural Source Representation Gate  
-**v15.02 adjudication:** `NO_CERTIFIED_SHARED_LABEL_CARRIER`  
-**v15.02 secondary status:** `NONCENTRAL_CONTROL_SOURCES_EXIST`  
+**Latest completed gate:** v15.03 — Graph-Site Factorization / Local-Gauge Source Lift Gate  
+**v15.03 adjudication:** `NO_CERTIFIED_GRAPH_SITE_FACTORIZATION`  
+**Secondary:** `CENTRAL_PGRL_NULL`; `STATE_DEPENDENT_COVARIANT_SOURCE_LIFT_NONUNIQUE`; `FIVE_NONTRIVIAL_SITE_CARRIER_CANNOT_EQUAL_C125_PARENT`  
 **Scientific breakthrough:** `false`  
 **Pillar 3:** `OPEN`
 
 ## Current scientific picture
 
-The upstream source/admissibility problem has now been localized past three successive representation shortcuts:
+The upstream source/admissibility problem has now survived four increasingly specific representation tests without an illicit repair:
 
 ```text
 Genesis / frozen provenance
-    -> source-origin identity / retained-sequence identity / source-flow compatibility
-    -> gauge-trivial provenance cannot naturally select a noncentral support source (v14.04)
-    -> richer provenance carriers exist but no frozen natural support representation is certified (v14.04)
+    -> retained source-origin / source-current structure
+    -> gauge-trivial provenance cannot select a noncentral C^25 source (v14.04)
+    -> richer provenance carriers exist, but no frozen natural support intertwiner is certified (v14.04)
 
 compatibility parent/support
-    -> explicit parent H_Q = C^125
-    -> orthonormal support L : C^25 -> C^125
-    -> exact projective/covariant compression A -> P = L^dagger A L
-    -> supplied parent source activates v14.03
-    -> BUT frozen provenance supplies no parent source class/tangent (v15.01)
+    -> exact parent H_Q = C^125
+    -> exact support isometry L : C^25 -> C^125
+    -> exact projective/covariant compression A -> L^dagger A L
+    -> frozen provenance supplies no source class/tangent on that parent (v15.01)
 
 shared-label candidate
-    -> retained source control has five graph nodes
-    -> compatibility parent has three five-level factors
-    -> source graph automorphism group = identity
-    -> V_A fixed-label gauge = cyclic order 5
-    -> V_B fixed-label gauge = identity
-    -> common compatibility fixed-label gauge = identity
-    -> G_comp \ S5 / G_src has 120 classes, each size 1
-    -> supplied node<->quantum-label mapping works downstream
-    -> BUT no mapping is canonically selected by frozen structure
-    -> NO_CERTIFIED_SHARED_LABEL_CARRIER (v15.02)
+    -> retained source graph has five nodes
+    -> compatibility factors have five internal labels
+    -> all 120 node<->label identifications remain inequivalent under earned gauge
+    -> no canonical label/factor identification (v15.02)
+
+graph-site candidate
+    -> graph-indexed quantum models exist in the archive
+    -> exact retained 5-node graph -> five quantum subsystems is NOT certified
+    -> state-independent scalar/current lift + independent local gauge -> center -> PGRL-null
+    -> supplied state context permits noncentral covariant lifts
+    -> but predeclared lawful state functions give inequivalent projective rays
+    -> five nontrivial quantum sites cannot literally equal C^125
+    -> no natural graph-site -> compatibility-parent map is certified
+    -> NO_CERTIFIED_GRAPH_SITE_FACTORIZATION (v15.03)
 
 supplied positive projective support source [P]
     -> exact PGRL tangent
     -> canonical hidden projection
     -> hidden-tangent radial first contact X*(P)
     -> objective-independent local dual ray [g(P)]
-    -> PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY remains certified (v14.03)
+    -> PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY remains certified conditional (v14.03)
 
-retained / downstream source-geometry bridge
+retained/downstream source-geometry bridge
     -> projective coupled-source ray [Sigma] survives
     -> absolute source->geometry coupling remains NOT DERIVED
     -> v13.28 REQUIRES_NEW_AXIOM remains in force
 ```
 
-The representation problem is therefore not solved by common dimension, common parent, or matching finite cardinality. The missing information is an actual cross-model representation/functor principle connecting retained provenance/source roles to the quantum parent/source representation.
+The missing upstream object is now sharper than “some representation link.” A lawful completion would need to supply, without target fitting:
 
-## Latest result — v15.02
+1. the exact retained-node-to-quantum-site carrier identification;
+2. an operator-valued source representation law compatible with independent local gauge;
+3. a canonical choice within the state-dependent covariant family if state context is used; and
+4. an earned natural map from that graph-site carrier into the existing `C^125 -> C^25` compatibility stack.
 
-v15.02 asked whether the frozen five-node retained source carrier and the frozen five-level quantum compatibility factors already share a common permutation/label representation strong enough to induce the projective source ray consumed by v14.03.
+## Latest result — v15.03
 
-The answer is:
+### A. Archive/type result
+
+The frozen stack contains graph-indexed quantum models, but the audited examples do not identify the exact retained five-node/seven-edge source graph with five nontrivial quantum tensor factors.
+
+Result:
 
 ```text
-NO_CERTIFIED_SHARED_LABEL_CARRIER
+factorization status = GRAPH_INDEXED_QUANTUM_MODELS_EXIST_BUT_EXACT_FACTOR_IDENTIFICATION_UNDERIVED
+carrier status       = NO_EXACT_GRAPH_SITE_CARRIER
+primary outcome      = NO_CERTIFIED_GRAPH_SITE_FACTORIZATION
 ```
 
-### 1. Frozen source carrier is relationally rigid
-
-The audited source fixture is parsed directly from:
-
-`Tmp/TOE/ThePhysicsParadox/Physics101/phi lab.py`
-
-with:
+The exact retained fixture remains:
 
 ```text
 nodes  = [0,1,2,3,4]
 edges  = [(0,1),(1,3),(0,2),(2,4),(4,3),(1,2),(0,4)]
 source = [-1,0,0,+1,0]
-```
-
-The reconstructed incidence matrix has:
-
-```text
-rank            = 4
+rank(B) = 4
 cycle dimension = 3
+fixture SHA256 = 94ca2cbc711167afa22bef2ff5876c0fda9def43fc15c4318377fa629511ca4b
 ```
 
-All `5! = 120` node permutations were tested exactly. Only the identity preserves the directed graph:
+### B. Exact five-site / C^125 theorem
+
+A genuine five-site carrier requires five dimensions `d_i >= 2`. Literal equality with the compatibility parent would require
 
 ```text
-source graph automorphism order = 1
-source-state stabilizer order   = 1
+d1*d2*d3*d4*d5 = 125 = 5^3.
 ```
 
-So the five source nodes are not interchangeable anonymous labels in the frozen control.
-
-### 2. Compatibility label gauge differs across the two frozen families
-
-For the frozen quantum compatibility parent:
+The executable integer-factor audit finds zero solutions.
 
 ```text
-H_parent = C^5 tensor C^5 tensor C^5 = C^125
-H_support = C^25
+FIVE_NONTRIVIAL_SITE_CARRIER_CANNOT_EQUAL_C125_PARENT
 ```
 
-The audit relabeled all three five-level factors simultaneously and compared the full frozen arrangement, parent state, and support projector—not arbitrary hidden/SVD basis vectors.
+Therefore the current `C^125` parent cannot be reinterpreted as five nontrivial retained graph sites by relabeling, padding, or reshaping.
 
-Results:
+### C. Independent-local-gauge centrality theorem
+
+For graph scalar/current inputs that carry no internal quantum-frame action, a deterministic state-independent Hermitian source lift natural under every independent local unitary must lie in the commutant of the full product action. That commutant is the scalar center.
 
 ```text
-V_A fixed-label gauge order = 5
-V_B fixed-label gauge order = 1
+FULL_PRODUCT_LOCAL_UNITARY_COMMUTANT_IS_CENTER
+CENTRAL_ONLY
+CENTRAL_PGRL_NULL
 ```
 
-`V_A` has the exact cyclic label translations:
+Deterministic controls:
 
 ```text
-[0,1,2,3,4]
-[1,2,3,4,0]
-[2,3,4,0,1]
-[3,4,0,1,2]
-[4,0,1,2,3]
+identity invariance error             = 2.57310042329926e-15
+noncentral local-operator violation   = 7.999999999999999
+SWAP independent-frame violation      = 7.806681235326519
+SWAP tied-frame error                 = 2.5121479338940403e-15
 ```
 
-`V_B` retains only identity.
+The tied-frame success is a weaker gauge and is not an admissible repair.
 
-Therefore the common frozen compatibility gauge is:
+### D. State context opens noncentral lifts but does not make them canonical
+
+Two faithful five-qubit product-state controls were frozen before execution. Only the predeclared functions
 
 ```text
-G_comp = {identity}
-|G_comp| = 1
+1, x, x^2, log x
 ```
 
-### 3. Exact 120-class identification result
+were tested.
 
-Represent a source-node→quantum-label bijection by `phi in S5`.
-
-Gauge-equivalent identifications are double cosets:
+Maximum independent-local-gauge covariance error:
 
 ```text
-G_comp \ S5 / G_src.
+2.9707140272854356e-16
 ```
 
-Because both adjudicative groups are identity-only:
+Maximum positive source-scaling projective residual:
 
 ```text
-G_comp \ S5 / G_src = S5
+4.3624070492076246e-16
 ```
 
-and therefore:
+The constant family is exactly null after centering.
+
+Projective residuals:
 
 ```text
-permutations / bijections = 120
-double-coset classes      = 120
-class size                 = 1 for every class
-canonical up to gauge      = false
+Control A:
+linear vs square = 3.597533769998862e-16
+linear vs log    = 0.03264343653690659
+square vs log    = 0.032643436536906593
+
+Control B:
+linear vs square = 9.437916079723832e-17
+linear vs log    = 0.010460821683241842
+square vs log    = 0.010460821683241812
 ```
 
-Every node↔quantum-label mapping remains distinct under the earned frozen symmetries.
-
-### 4. The ambiguity is materially consequential
-
-Once a mapping is supplied, the scalar source has a natural centered representation:
+The `x` / `x^2` collapse is the expected qubit functional redundancy. `log x` is nevertheless a second lawful covariant noncentral ray.
 
 ```text
-D(s) = diag(s) - mean(s) I.
+STATE_DEPENDENT_COVARIANT_SOURCE_LIFT_NONUNIQUE
 ```
 
-That map itself behaves perfectly:
+This is a supplied-carrier sufficiency result, not provenance evidence.
+
+### E. Current control remains nonphysical
+
+The minimum-norm current balances the source to
 
 ```text
-constant-source norm                       = 0.0
-max permutation covariance error           = 0.0
-max positive-rescaling projective residual = 0.0
+7.325053464011603e-16
 ```
 
-But changing the supplied node↔quantum-label identification changes the compressed support source:
+but remains
 
 ```text
-max identification projective residual = 1.0
+MIN_NORM_CURRENT_CONTROL_NOT_PROVENANCE_SELECTED
 ```
 
-So the 120-way ambiguity cannot be normalized away as harmless gauge.
-
-### 5. Factor action is independently nonunique
-
-Even after supplying a label map, the same five-level source operator can act on the tripartite parent as:
-
-```text
-A_A   = Q tensor I tensor I
-A_B   = 1/2 (I tensor Q tensor I + I tensor I tensor Q)
-A_all = 1/3 (Q tensor I tensor I + I tensor Q tensor I + I tensor I tensor Q)
-```
-
-All three allowed placements are permutation-equivariant, but their compressed projective source classes disagree.
-
-Executed maximum factor-placement projective residual:
-
-```text
-1.0
-```
-
-Therefore factor placement would remain a second missing representation choice even if the label correspondence were supplied.
-
-### 6. Directed-current operator is control-only
-
-The finite graph current naturally permits an antisymmetric/Hermitian representation `P_J=iK(J)`, but the frozen v13.25 package does not archive the actual response-selected current vector used in its conditional theorem.
-
-v15.02 therefore does **not** promote an invented or educational current into provenance physics.
-
-The minimum-norm balanced-current control gives:
-
-```text
-balance residual           = 5.907440274120147e-16
-Hermiticity error          = 0.0
-operator norm              = 1.322875655532295
-scientific evidence        = false
-```
-
-### 7. Supplied mapping positive control
-
-An explicit identity node↔quantum-label map and central-factor action were supplied only as a sensitivity/control layer.
-
-Using the actual archived source in `V_A`:
-
-```text
-compressed noncentral norm = 2.8425957540408664
-hidden norm                = 0.0034493013716416963
-boundary radius            = 0.0034493013716416702
-boundary simple            = true
-normal classification      = RAY
-```
-
-So the downstream mechanism works:
-
-```text
-supplied map -> A_parent -> P=L^dagger A_parent L -> X* -> [g]
-```
-
-The control classification is:
-
-```text
-SUPPLIED_SHARED_LABEL_AND_FACTOR_ACTION_NOT_PROVENANCE_DERIVATION
-```
-
-This proves that the negative v15.02 result is a **canonicality/selection obstruction**, not a failure of the downstream v14.03 machinery.
-
-### 8. Incompatible-label negative control
-
-The permutation `[0,1,2,4,3]` is correctly rejected as a frozen-model gauge transformation:
-
-```text
-V_A projector error = 4.279538476224083
-V_A state error     = 0.1050318170112461
-V_B projector error = 4.938048201230478
-V_B state error     = 0.11662864097113289
-```
-
-### 9. No independent semantic/functor bridge was found
-
-The source-current and quantum-compatibility archive artifacts were hash-bound and inspected separately. Neither defines a cross-model node↔quantum-label functor or semantic identification.
-
-Therefore there is no independent frozen rule that removes the exact 120-class ambiguity.
-
-## Architectural consequence
-
-The strongest current representation chain is:
-
-```text
-Genesis / retained source-current structure
-    -> rigid source carrier
-    -> MISSING cross-model label/functor identification
-    -> MISSING canonical parent factor action
-    -> [A_prov]_+ on C^125
-    -> exact compression [P]_+ = [L^dagger A_prov L]_+
-    -> hidden tangent
-    -> first-contact boundary X*
-    -> canonical local dual ray [g]
-```
-
-The missing object is now more specific than in v14.04:
-
-- not merely “some intertwiner”;
-- not merely a common parent;
-- not merely a matching five-element carrier;
-- but an earned **cross-model representation/functor law**, including factor role.
+and is not used to select a source law.
 
 ## Relation to earlier gates
 
-### v15.01 remains valid
+- **v15.02:** preserved. Matching five-element cardinality does not supply a node-to-basis-label functor.
+- **v15.01:** preserved. The `C^125 -> C^25` parent/support relation and compression law remain exact.
+- **v14.04:** preserved/strengthened. The missing representation link cannot be evaded merely by graph-site reinterpretation.
+- **v14.03:** preserved conditional. Given a supplied positive projective support source `[P]_+`, the hidden-tangent first contact and local dual ray remain canonical.
+- **v14.02:** preserved. A specified smooth compatibility boundary has its intrinsic objective-independent local dual ray.
+- **v13.28:** preserved. Absolute downstream source-to-geometry coupling remains blocked in the frozen candidate classes.
 
-The compatibility parent/support relation and exact compression law remain verified. v15.02 shows that matching finite labels do not supply the missing parent source.
-
-### v14.04 remains valid
-
-A representation/intertwiner carries real structure. v15.02 independently demonstrates this again through 120 inequivalent label identifications and inequivalent factor placements.
-
-### v14.03 remains valid
-
-Conditional on a supplied `[P]`, the source→hidden-tangent→first-contact→dual-ray chain remains certified.
-
-### v14.02 remains valid
-
-A specified smooth compatibility boundary has one intrinsic objective-independent local dual ray in every audited frozen sample.
-
-### v13.26 remains valid
-
-Absolute retained-to-observer source calibration remains underived.
-
-### v13.28 remains valid
-
-Absolute downstream source→geometry coupling remains blocked for the frozen candidate classes.
-
-## Preserved results
+## Preserved stack
 
 - Pillar 1 — Global Atlas Closure: **COMPLETE**.
 - Pillar 2 — Retained Curvature / Source-Current Compatibility: **CLOSED CONDITIONAL**.
 - finite global quantum compatibility / hidden-completion structure: **PRESERVED**.
 - QMAR and BKM trace/Weyl theorem: **PRESERVED**.
 - source-current balance and conditional current selection: **PRESERVED**.
-- v13.28 absolute coupling obstruction: **PRESERVED**.
 - v14.01 source-law nonuniqueness: **PRESERVED**.
 - v14.02 canonical local dual ray: **PRESERVED**.
 - v14.03 supplied-projective-source selection chain: **PRESERVED CONDITIONAL**.
 - v14.04 representation-link obstruction: **PRESERVED / STRENGTHENED**.
-- v15.01 parent/support representation and canonical compression: **PRESERVED**.
-- v15.02 exact finite-label no-go: **NEW / CERTIFIED PENDING MERGE**.
+- v15.01 exact compatibility parent/support compression: **PRESERVED**.
+- v15.02 exact finite-label no-go: **PRESERVED**.
+- v15.03 graph-site/local-gauge audit: **PRIMARY NEGATIVE + TWO EXACT STRUCTURAL THEOREMS + STATE-DEPENDENT NONUNIQUENESS**.
 - projective coupled-source ray `[Sigma]`: **PRESERVED**.
 - controlled ADM/Einstein comparisons: **EXTERNAL HELDOUT CORRESPONDENCE ONLY**.
 
 ## Still not derived
 
-- a natural retained-node→quantum-label functor;
-- a canonical parent factor action;
-- Genesis/provenance → Hermitian source class `[A_prov]_+` on `C^125`;
-- Genesis/provenance → v14.03 projective support source `[P]`;
-- physical/observer absolute source magnitude;
+- a certified exact retained-node-to-quantum-site factorization;
+- a natural graph-site-to-`C^125` compatibility-parent map;
+- a canonical operator-valued source law from frozen provenance;
+- Genesis/provenance -> `[A_prov]_+` on `C^125`;
+- Genesis/provenance -> v14.03 projective support source `[P]_+`;
+- absolute source magnitude or observer calibration;
 - physical stress-energy;
 - source-to-solder/coframe law;
-- absolute source→geometry coupling;
+- absolute source-to-geometry coupling;
 - physical metric/coframe/spacetime;
 - ontology-native quantum continuum refinement;
 - Einstein equations;
+- a physical time primitive;
 - Pillar 3 closure.
 
 ## Stop rule / next lawful frontier
 
-The shared-label branch stops on this negative result.
+The graph-site shortcut stops here.
 
-Do **not** continue by choosing a preferred node↔quantum-label bijection, a favorite parent factor, an arbitrary scalar/current mixing coefficient, or the candidate producing the most gravity-like downstream response.
+Do **not** repair it by choosing a Pauli axis, privileging `log rho`, tying local frames, padding/reshaping the carrier into `C^125`, inventing an isometry, promoting the minimum-norm current, or selecting by ADM/Einstein/gravity behavior.
 
 A continuation is lawful only if one of these occurs:
 
-1. newly discovered frozen structure explicitly/functorially identifies the retained relational carrier with the compatibility labels and factor role;
-2. newly discovered frozen evidence already supplies a provenance source class or support-preserving tangent on the compatibility parent; or
-3. a genuinely new representation principle is proposed, explicitly labeled **NEW ASSUMPTION**, justified independently of desired gravity/ADM behavior, and user-approved before testing.
+1. newly discovered frozen structure certifies the exact retained graph as a quantum-site carrier and supplies its representation law;
+2. newly discovered frozen structure supplies a natural map from such a carrier into the current compatibility parent/support; or
+3. an independently motivated operator-valued source/representation principle is proposed, explicitly labeled **NEW ASSUMPTION**, justified before seeing downstream gravity behavior, and approved before testing.
 
 Until then:
 
 ```text
-retained source -> quantum label/factor representation : STOPPED
-provenance -> [A_prov]_+ on C^125                   : STOPPED
-[A]_+ -> [P]_+                                      : EXACT CANONICAL COMPRESSION
-[P] -> X* -> [g]                                    : CERTIFIED CONDITIONAL
-Pillar 3                                            : OPEN
+retained graph -> exact quantum-site carrier       : STOPPED / UNDERIVED
+state-independent scalar/current -> noncentral P   : NO-GO UNDER INDEPENDENT LOCAL GAUGE
+state + supplied graph-site carrier -> P_f         : LAWFUL BUT NONUNIQUE
+five nontrivial graph sites == C^125 parent        : IMPOSSIBLE
+natural graph-site -> C^125/C^25 map               : NOT CERTIFIED
+[A]_+ -> [P]_+                                     : EXACT CANONICAL COMPRESSION
+[P] -> X* -> [g]                                   : CERTIFIED CONDITIONAL
+Pillar 3                                           : OPEN
 ```
