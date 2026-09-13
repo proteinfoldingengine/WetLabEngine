@@ -1,6 +1,6 @@
-# Mathematics and Physics Notes
+# Mathematics and Physics Notes — peer-review-rescoped v13.27
 
-## 1. Finite pre-time quantum model
+## 1. Finite quantum-relational model
 
 For six qubits on a fixed relational graph,
 
@@ -11,28 +11,28 @@ H_0=\sum_{(ij)\in E}\left(J_x X_iX_j+J_yY_iY_j+J_zZ_iZ_j\right)+\sum_i h_iZ_i,
 with deterministic weak edge modulation. The faithful base state is
 
 \[
-\rho_0=\frac{e^{-\beta H_0}}{\mathrm{Tr}\,e^{-\beta H_0}}.
+\rho_0=\frac{e^{-\beta H_0}}{\operatorname{Tr}e^{-\beta H_0}}.
 \]
 
-A source generator `P` defines the PGRL/ETL family
+A source generator `P` defines
 
 \[
 \rho_\lambda=\frac{\exp(\log\rho_0+\lambda P)}{Z(\lambda)}.
 \]
 
-`lambda` indexes a family of admissible source perturbations. It is not physical time.
+`lambda` indexes a source family. It is not physical time. The graph, edge set, couplings, source support and plotting embedding are inputs of the example, not derived spacetime.
 
-The code explicitly checks the parameterization gauge
+The code also checks the exact reparameterization
 
 \[
 (\lambda,P)\mapsto(\lambda/a,aP),
 \]
 
-under which `lambda P` and therefore `rho_lambda` are unchanged.
+which leaves `lambda P` and therefore `rho_lambda` unchanged.
 
 ## 2. BKM information-response metric
 
-For a faithful one-node state with eigenvalues `p_m` and Pauli generators `A_a`, the implementation uses the logarithmic mean
+For a faithful one-site state with eigenvalues `p_m` and Pauli generators `A_a`, the implementation uses the logarithmic mean
 
 \[
 L(p_m,p_n)=\frac{p_m-p_n}{\log p_m-\log p_n},\qquad L(p,p)=p,
@@ -45,7 +45,7 @@ K_{ab}=\Re\sum_{mn}L(p_m,p_n)(A_a)_{mn}(A_b)_{nm}
 -\langle A_a\rangle\langle A_b\rangle.
 \]
 
-This produces a positive local information-response metric `K_i` on the finite faithful stratum.
+This gives a positive local information-response metric `K_i` on the sampled faithful stratum. BKM is a declared information-geometric choice, not a uniqueness result; downstream objects depending on `K` are metric-dependent.
 
 ## 3. Pair correlation and polar transport
 
@@ -56,37 +56,67 @@ C_{ij}^{ab}=\langle\sigma_a\otimes\sigma_b\rangle_{ij}
 -\langle\sigma_a\rangle_i\langle\sigma_b\rangle_j.
 \]
 
-The nearest proper orthogonal factor from the SVD of `C_ij` defines
+The raw nearest orthogonal factor from the SVD is
+
+\[
+Q_{ij}=UV^T\in O(3).
+\]
+
+The executable model then imposes a proper-rotation convention: if `det(Q_ij)<0`, the last singular vector is flipped before constructing
 
 \[
 O_{ij}\in SO(3).
 \]
 
-This is the finite relational transport used by the visualization.
+### Polar-determinant audit
 
-## 4. Nonmetricity and retained holonomy
+The canonical 25-frame scan contains `25 x 8 = 200` edge/frame factors. All 200 unconstrained raw polar factors have
 
-The discrete metric-compatibility defect is
+\[
+\det Q_{ij}=-1.
+\]
+
+Thus the `SO(3)` transport is an explicit orientation-preserving projection in this example, not a rare numerical repair and not a uniquely derived consequence of the raw polar decomposition. All loop-holonomy statements below are conditional on this declared projection.
+
+## 4. Metric mismatch and SO(3) loop holonomy
+
+The finite state-dependent metric mismatch is
 
 \[
 M_{ij}=K_j-O_{ij}^{T}K_iO_{ij}.
 \]
 
-For a closed relational cycle `C`,
+For a closed graph cycle `C`,
 
 \[
-H_C=\prod_{(ij)\in C}O_{ij},
+H_C=\prod_{(ij)\in C}O_{ij}.
 \]
 
-and the plotted holonomy angle is
+Before clipping, the code now records
 
 \[
-\theta_C=\cos^{-1}\!\left[\mathrm{clip}\left(\frac{\mathrm{Tr}H_C-1}{2},-1,1\right)\right].
+x_C=\frac{\operatorname{Tr}H_C-1}{2}.
 \]
 
-This is a finite SO(3) holonomy proxy. The script never equates it with continuum spacetime curvature.
+The plotted group angle is
 
-## 5. QMAR response diagnostic
+\[
+\theta_C=\cos^{-1}[\operatorname{clip}(x_C,-1,1)].
+\]
+
+### Pre-clip audit
+
+The canonical run contains eight `theta_C=pi` events. The maximum excess outside `[-1,1]` is approximately
+
+\[
+2.22\times10^{-16},
+\]
+
+well below the declared `10^{-12}` audit threshold. The pi events are therefore adjudicated as genuine within numerical tolerance of the chosen SO(3) construction, not as meaningful clipping artifacts.
+
+These are finite group-angle diagnostics. The code does not identify them with Riemann curvature, sectional curvature, a Regge deficit angle, or a continuum curvature density.
+
+## 5. Source-family response diagnostics
 
 Finite differences across the source family estimate
 
@@ -94,9 +124,9 @@ Finite differences across the source family estimate
 \partial_\lambda M_{ij},\qquad \partial_\lambda O_{ij}.
 \]
 
-The telemetry reports a combined norm of these retained response jets. Because the derivative is with respect to `lambda_source`, it is a source-response derivative and not a time derivative.
+The combined response-jet norm is a diagnostic with respect to `lambda_source`; it is not a time derivative and presently has no universal physical normalization.
 
-## 6. Retained source/current
+## 6. Balanced graph source/current witness
 
 An oriented graph incidence matrix `B` gives
 
@@ -104,70 +134,131 @@ An oriented graph incidence matrix `B` gives
 BJ=s,\qquad \sum_i s_i=0.
 \]
 
-The minimum-norm solution is not unique when the graph has cycles:
+With cycle basis `Z_cyc`,
 
 \[
-J=J_0+Za,\qquad BZ=0.
+J=J_0+Z_{\rm cyc}a,\qquad BZ_{\rm cyc}=0.
 \]
 
-The demo includes a conditional response-selection witness that resolves the cycle coefficients relative to a declared edge-response aperture. This is intentionally labeled **CONDITIONAL** because the aperture is not yet a physical stress-energy law.
+The demo resolves cycle coefficients relative to a declared weighted response aperture. This is a conditional graph-current witness. It is not a derived `T_{\mu\nu}` and no Lorentzian coframe is derived in this artifact.
 
-## 7. Projective coupled-source boundary
+## 7. Central homogeneity lemma / projective obstruction
 
-Positive scaling preserves the retained structural constraints:
+At a fixed state/tangent point, hold the graph, incidence matrix, cycle basis and state-point geometry fixed. The selection rule uses
 
 \[
-(s,J)\mapsto(c s,cJ).
+J_0=B^+s,
 \]
 
-Normalized source/current direction therefore remains fixed while magnitude changes. This illustrates the v13.27 theorem that the frozen retained stack selects at most a projective coupled-source ray `[Sigma]`, not its nonzero magnitude.
-
-## 8. Represented ADM-like variable and DeWitt sign
-
-The demo declares the finite information metric as a directional-access proxy
+and, schematically,
 
 \[
-A_i=K_i+\epsilon I,
-\qquad q_i=A_i^{-1}.
+a_* = \arg\min_a\left\|R(J_0+Z_{\rm cyc}a)-y\right\|.
 \]
 
-For a symmetric source-response tensor `X`, with
+Under positive rescaling
 
 \[
-\mathrm{tr}_qX=\mathrm{Tr}(q^{-1}X),\qquad
-X_{TF}=X-\frac{\mathrm{tr}_qX}{3}q,
+(s,y)\mapsto(c s,c y),\qquad c>0,
 \]
 
-the diagnostic is
+linearity and homogeneity give
 
 \[
-D(X;q)=\mathrm{Tr}(q^{-1}X_{TF}q^{-1}X_{TF})
--\frac12(\mathrm{tr}_qX)^2.
+J_0\mapsto cJ_0,\qquad a_*\mapsto ca_*,\qquad J\mapsto cJ.
 \]
 
-The executed controls give
+Thus any coupled-source representative constructed from these degree-one quantities obeys
 
-- pure trace: `D=-4.5`;
-- traceless control: `D=2.0`.
+\[
+\Sigma\mapsto c\Sigma.
+\]
 
-That reproduces the negative trace direction characteristic of the represented DeWitt sector. It is a structural correspondence result, not a physical ADM evolution equation.
+The frozen selection rules therefore determine at most the ray
 
-## 9. Executed numerical envelope
+\[
+[\Sigma]=\{c\Sigma:c>0\},
+\]
 
-Default 25-frame run:
+not its nonzero magnitude.
 
-- portable scientific fingerprint: `6f2830c47a877676f6ff4ad028769bb285d00f9194f33035c85dd785b3e9f5b6`;
-- reference raw telemetry SHA-256: `e994538f3e04a06270b17b66c21ee29dc07730c5ceaf0805ba412f754624f945` (diagnostic only; machine-epsilon LAPACK/SVD drift is intentionally excluded from portable certification);
-- minimum global-state eigenvalue: `3.7185106924494124e-05`;
-- minimum local BKM eigenvalue: `0.5673128649814877`;
-- maximum source-balance residual: `4.611102534756203e-16`;
-- maximum positive-scale projective-ray drift: `3.380886602644082e-16`;
-- PGRL reparameterization error: `9.55170005517049e-16`;
-- cycle-space response rank deficit: `0` in the declared witness;
-- spatial-stress completion witness distance: `0.4135214625627066`.
+This is the theorem-level result of v13.27. The machine-level direction-drift number is only an implementation check of the algebra.
 
-The last item demonstrates that fixed energy/current projections need not determine the full spatial-stress block.
+The lemma does **not** claim that changing `P` at fixed `lambda` leaves `rho_lambda`, `K`, `O`, or `M` invariant. It concerns homogeneity of the source-selection rules at a fixed state/tangent point.
 
-## 10. What would move the simulation closer to physical gravity?
+## 8. Represented q and DeWitt-like quadratic-form diagnostic
 
-The next lawful bridge is not to tune these diagnostics until an Einstein residual looks small. It is to derive RGCL independently: a source-to-coframe or equivalent variational pairing that fixes the tensor type and coupling magnitude from retained data alone. Only then should an Einstein/ADM residual be evaluated as a heldout consequence.
+The demo defines
+
+\[
+A_i=K_i+\epsilon I,\qquad q_i=A_i^{-1}.
+\]
+
+For symmetric `X`,
+
+\[
+\operatorname{tr}_qX=\operatorname{Tr}(q^{-1}X),\qquad
+X_{TF}=X-\frac{\operatorname{tr}_qX}{3}q,
+\]
+
+and evaluates
+
+\[
+D(X;q)=\operatorname{Tr}(q^{-1}X_{TF}q^{-1}X_{TF})
+-\frac12(\operatorname{tr}_qX)^2.
+\]
+
+For the declared controls in three dimensions,
+
+- `X=q` gives `D=-4.5`;
+- `X=sqrt(q) diag(1,-1,0) sqrt(q)` gives `D=2`.
+
+These values are algebraic identities / implementation controls for the chosen quadratic form. They are not emergent dynamics. The model contains no map from the six `q_i` to a spatial three-metric, no lapse, no shift, no Hamiltonian constraint, no diffeomorphism constraint, and no ADM constraint algebra.
+
+The path-dependent scalar `D(q,dq/dlambda)` is retained only as a finite diagnostic on represented variables.
+
+## 9. Toy block-underdetermination control
+
+The code compares two hand-declared `3 x 3` matrix blocks and records their Frobenius separation. The canonical distance is approximately
+
+\[
+0.4135214626.
+\]
+
+This is deliberately a **toy block-underdetermination control**. It demonstrates an algebraic possibility of differing unobserved blocks; it is not a reconstruction or nonuniqueness theorem for physical stress-energy.
+
+## 10. Executed canonical envelope
+
+For the canonical 25-frame scan, the stable headline results include:
+
+- minimum global-state eigenvalue: `~3.7185e-05`;
+- minimum local BKM eigenvalue: `~0.567313`;
+- source-balance residual: machine precision;
+- declared cycle-response aperture: full rank on cycle space;
+- raw polar reflections: `200 / 200` samples;
+- pi holonomy events: `8`;
+- holonomy clip events above `1e-12`: `0`;
+- maximum clip excess: `~2.22e-16`;
+- projective coupled-source status: `RAY_ONLY__MAGNITUDE_NOT_DERIVED`;
+- physical Einstein closure: `OPEN`.
+
+The authoritative portable fingerprint and archival raw telemetry hash are frozen in `EXPECTED_RESULTS.json` after cross-run certification.
+
+## 11. What the path establishes — and what it does not
+
+The scientifically interesting object is the **path architecture**:
+
+\[
+\text{finite quantum states}
+\to \text{information geometry}
+\to \text{declared relational transport}
+\to \text{metric mismatch / loop diagnostics}
+\to \text{balanced source-current structure}
+\to \text{projective coupling obstruction}.
+\]
+
+No Newtonian kernel and no Einstein equation is used as a selector.
+
+That makes the construction a concrete, falsifiable route worth investigating. It does not make it a gravity derivation.
+
+The next lawful question is whether an existing ontology-native pairing can fix the source-to-geometry map and magnitude without target fitting. The allowed outcomes are `DERIVED`, `OBSTRUCTED`, or `REQUIRES_NEW_AXIOM`. A no-go **or** a repair that succeeds only by inserting a freely chosen dimensionful scale counts as failure of the target-blind derivation at that point.
