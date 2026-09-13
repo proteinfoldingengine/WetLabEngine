@@ -8,6 +8,11 @@ on:
       - research/v13.28-rgcl-pairing-audit
     paths:
       - 'ResearchHistory/UQCF-GEM/v13/v13.28/**'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
+      - 'ResearchHistory/UQCF-GEM/README.md'
+      - 'ResearchHistory/UQCF-GEM/CHANGELOG.md'
+      - 'docs/superpowers/specs/2026-09-12-v1328-rgcl-pairing-audit-design.md'
+      - 'docs/superpowers/plans/2026-09-12-v1328-rgcl-pairing-audit.md'
       - '.github/workflows/uqcf-v1328-rgcl-pairing-audit.yml'
 
 jobs:
