@@ -31,7 +31,7 @@ retained / downstream source-geometry bridge
     -> v13.28 REQUIRES_NEW_AXIOM remains in force
 ```
 
-The new result is therefore conditional on supplying `[P]`. It does not derive the missing provenance→source operator map and does not reopen the stopped absolute-coupling branch.
+The new result is conditional on supplying `[P]`. It does not derive the missing provenance→source operator map and does not reopen the stopped absolute-coupling branch.
 
 ## Latest result — v14.03
 
@@ -81,12 +81,12 @@ Important: `X*(P)` is a **hidden-tangent radial first contact**, not a claim tha
 The audit used seed `1403` and exactly 64 predeclared Hermitian support-space sources for each archived configuration.
 
 ```text
-primary sources                 = 128
+primary sources                  = 128
 nonzero hidden source components = 128
-simple/ray-valued contacts       = 128
-zero-hidden primary sources      = 0
-nonunique contacts               = 0
-unresolved numerical contacts    = 0
+simple/ray-valued contacts        = 128
+zero-hidden primary sources       = 0
+nonunique contacts                = 0
+unresolved numerical contacts     = 0
 ```
 
 Source hashes:
@@ -250,3 +250,7 @@ because, once `[P]` is supplied, the frozen model now has the certified conditio
 ```
 
 Do not invent a new provenance→source operator law merely to continue. A next gate is lawful only if the existing archive contains an independently motivated typed map candidate, or if a genuinely new axiom is explicitly proposed as such.
+
+## Certification
+
+The v14.03 checker is bound to the frozen machine-readable summary, source hashes, controls, adjudication, and telemetry while independently enforcing the scientific thresholds.
