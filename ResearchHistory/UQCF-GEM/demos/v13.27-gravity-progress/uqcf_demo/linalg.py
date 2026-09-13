@@ -77,6 +77,11 @@ def partial_trace(rho, keep, dims):
     return arr.reshape((d, d))
 
 
+def raw_orthogonal_polar(c):
+    u, _, vh = np.linalg.svd(np.asarray(c, dtype=float), full_matrices=False)
+    return u @ vh
+
+
 def proper_orthogonal_polar(c):
     u, _, vh = np.linalg.svd(np.asarray(c, dtype=float), full_matrices=False)
     o = u @ vh
@@ -86,9 +91,19 @@ def proper_orthogonal_polar(c):
     return o
 
 
+def so3_angle_audit(o):
+    raw = float((np.trace(o) - 1.0) / 2.0)
+    clipped = float(np.clip(raw, -1.0, 1.0))
+    return {
+        "raw_cos_argument": raw,
+        "clipped_cos_argument": clipped,
+        "clip_excess": float(abs(raw - clipped)),
+        "angle": float(np.arccos(clipped)),
+    }
+
+
 def so3_angle(o):
-    x = (np.trace(o) - 1.0) / 2.0
-    return float(np.arccos(np.clip(x, -1.0, 1.0)))
+    return so3_angle_audit(o)["angle"]
 
 
 def symmetric_sqrt(a):
