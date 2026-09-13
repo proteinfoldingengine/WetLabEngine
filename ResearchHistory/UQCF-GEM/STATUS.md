@@ -1,237 +1,252 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-12  
-**Latest completed gate:** v14.02 — Convex-Dual Boundary Normal / Canonical Admissibility Response Gate  
-**v14.02 adjudication:** `CANONICAL_DUAL_RAY`  
-**Downstream source→GR absolute-coupling branch:** STOPPED by v13.28  
-**Global source→higher-incidence law:** NOT DERIVED by v14.01  
-**New earned object:** objective-independent local dual ray at a specified smooth compatibility boundary point  
-**Certification note:** the executable v14.02 checker is bound to the frozen machine-readable summary.
+**Latest completed gate:** v14.03 — Projective Source-Ray / Hidden First-Contact Selection Gate  
+**v14.03 supplied-source adjudication:** `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`  
+**v14.03 provenance adjudication:** `PROVENANCE_SOURCE_TYPE_MISMATCH`  
+**Scientific breakthrough:** `false`  
+**Pillar 3:** `OPEN`
 
 ## Current scientific picture
 
-The current source/admissibility stack has one new positive layer between the earlier obstructions:
+The upstream source/admissibility chain is now sharply localized:
 
 ```text
-pre-time quantum / global compatibility
-    -> fixed visible-data compatibility fiber
-    -> source action under fixed admissibility architecture
-    -> canonical incidence source map
-       -> zero cycle-space defect exactly
-    -> state/relational weighting
-       -> nonzero source->defect maps exist
-       -> global map is NONUNIQUE under frozen rules (v14.01)
+Genesis / frozen provenance / source grading
+    -> source origin / retained amount / flow compatibility
+    -> NO CERTIFIED NATURAL MAP to the archived support-space source operator ray
+    -> PROVENANCE_SOURCE_TYPE_MISMATCH (v14.03)
 
-specified smooth boundary point of the fixed compatibility fiber
-    -> PSD kernel / intrinsic relative normal cone
-    -> objective-free projected hidden-fiber dual geometry
-    -> one nonzero local supporting ray on 128/128 audited boundaries (v14.02)
-    -> source lift / physical boundary selection still UNDERIVED
+supplied positive projective support-space PGRL source ray [P]
+    -> exact full-state PGRL tangent dot X_P
+    -> canonical Hilbert-Schmidt projection into full hidden kernel
+    -> hidden tangent ray [Pi_hid dot X_P]
+    -> unique hidden-tangent radial first PSD contact X*(P)
+    -> objective-independent local dual ray [g(P)] from v14.02
+    -> PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY (v14.03)
 
-retained geometry / source-current bridge
+retained / downstream source-geometry bridge
     -> projective coupled-source ray [Sigma] survives
-    -> absolute source->geometry coupling NOT DERIVED
-    -> v13.28 requires new axiom or independent calibration
+    -> absolute source->geometry coupling remains NOT DERIVED
+    -> v13.28 REQUIRES_NEW_AXIOM remains in force
 ```
 
-These statements are logically distinct. v14.02 does not erase either the v14.01 global source-law nonuniqueness or the v13.28 downstream absolute-coupling obstruction.
+The new result is therefore conditional on supplying `[P]`. It does not derive the missing provenance→source operator map and does not reopen the stopped absolute-coupling branch.
 
-## Latest result — v14.02
+## Latest result — v14.03
 
-v14.02 asked whether the **intrinsic convex dual geometry of the already-existing global compatibility fiber** supplies a local selector at its positivity boundary without importing an optimization objective.
+v14.03 asked whether an already-supplied **positive projective PGRL source ray** in the full archived support state canonically determines the hidden first-order response direction, the corresponding radial first-contact point of the fixed-visible-data compatibility fiber, and the v14.02 intrinsic local dual ray.
 
-The answer for the frozen audit is:
+The frozen answer is:
 
 ```text
-CANONICAL_DUAL_RAY
+PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY
 ```
 
-### 1. Full hidden compatibility fibers were used
-
-The gate reused the archived executable compatibility construction:
+with independent provenance status:
 
 ```text
-Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py
+PROVENANCE_SOURCE_TYPE_MISMATCH
 ```
 
-at `FIXED_T=21/41` for both archived configurations.
+### 1. Exact supplied-source chain
+
+For faithful coefficient-space state `X0` and Hermitian support-space source `P`,
 
 ```text
-V_A hidden dimension = 315
-V_B hidden dimension = 311
-coefficient/support dimension = 25 for both
-max hidden marginal-null residual = 3.662557973690462e-15
-minimum faithful-center eigenvalue = 0.0012195121951219488
+X_s(P) = exp(log X0 + sP) / Tr exp(log X0 + sP)
 ```
 
-The old 3D visualization section was not used as scientific evidence.
+has exact first tangent `dot X_P`. Its hidden component is the Hilbert-Schmidt orthogonal projection into the full hidden kernel of the visible marginal map.
 
-### 2. Intrinsic relative normal cone
-
-For hidden coordinates
+For nonzero hidden component,
 
 ```text
-X(x)=X0 + sum_a x_a Q_a,
+u_P = Pi_hid(dot X_P) / ||Pi_hid(dot X_P)||
 ```
 
-the fixed-visible-data fiber is
+and the fixed-visible-data radial first contact is
 
 ```text
-F = {x : X(x) >= 0}.
+X*(P) = X0 + r*(u_P) u_P,
+r*(u) = -1 / lambda_min(X0^(-1/2) u X0^(-1/2)).
 ```
 
-At a boundary point `X*`, PSD normals supported on `ker(X*)` are projected into the dual of the hidden affine fiber by
+At that boundary point, v14.02 supplies the objective-independent intrinsic dual ray `[g(P)]`.
+
+Important: `X*(P)` is a **hidden-tangent radial first contact**, not a claim that the finite PGRL exponential path physically reaches a PSD boundary.
+
+### 2. Frozen 128-source survey
+
+The audit used seed `1403` and exactly 64 predeclared Hermitian support-space sources for each archived configuration.
 
 ```text
-g_a(Y)=Re Tr(Q_a^dagger Y).
+primary sources                 = 128
+nonzero hidden source components = 128
+simple/ray-valued contacts       = 128
+zero-hidden primary sources      = 0
+nonunique contacts               = 0
+unresolved numerical contacts    = 0
 ```
 
-For a simple one-dimensional kernel, every positive kernel-supported normal is a positive multiple of one projector `vv^dagger`; if its hidden projection is nonzero, the intrinsic relative normal cone is one ray.
-
-### 3. Frozen 128-boundary survey
-
-The primary audit used seed `1402` and exactly `64` predeclared full-hidden-space radial directions for each archived configuration.
+Source hashes:
 
 ```text
-primary samples                 = 128
-simple boundaries               = 128
-near-degenerate boundaries      = 0
-zero projected hidden normals   = 0
-nonunique primary normal cones  = 0
-unresolved numerical boundaries = 0
-normal-cone rank histogram      = {1: 128}
+V_A = 60d17efc41ee4416313771b1539e45502dd3230f272329a5a8ab36d816a5421b
+V_B = 5e1aadeca68ad69350500416e99fe3ee06f42c827eb07ee41ebbe74ffe6571eb
 ```
 
-Direction hashes:
+Support dimensions are 25 for both archived families; hidden dimensions remain 315 for `V_A` and 311 for `V_B`.
+
+### 3. Positive-projective invariance
+
+For `a>0` and scalar `b`,
 
 ```text
-V_A = 1a29b944ab2f27fee11df06b024290df8fb4d18f118d358171f17dede9865020
-V_B = 7e2cfe4ee64d0728525c3367c2b0e13fddcbf81b928aac87e67f8f5a9ef885e2
+X_s(aP+bI) = X_(as)(P)
 ```
 
-Minimum simple-boundary second-eigenvalue gap:
-
-`0.00010703895853823464`.
-
-Maximum boundary PSD residual:
-
-`1.1172250523029427e-16`.
-
-### 4. Supporting identity and hidden-basis invariance
-
-The intrinsic normal satisfies the supporting identity
+so exactly
 
 ```text
-g . (x-x*) = Tr(Y X(x)) >= 0
+dot X_(aP+bI) = a dot X_P.
 ```
 
-for feasible points of the same hidden compatibility fiber.
+The transformed sources were tested directly, without re-centering or re-normalizing them.
 
-Executed controls:
+Fresh maxima:
 
 ```text
-max support-identity relative error = 3.0357660829594124e-18
-max hidden-basis invariance error    = 5.911755884943795e-17
+tangent scaling error        = 4.789125308265857e-16
+hidden-direction drift       = 6.163108690215363e-14
+first-contact boundary drift = 2.0131832593298626e-15
+oriented dual-ray drift      = 6.661338147750939e-16
 ```
 
-So the detected local ray is not defined by the old trace-distance optimization or by one arbitrary hidden-coordinate basis.
+Thus the audited selector depends on the positive projective source class rather than an absolute source magnitude.
 
-### 5. Objective-independence control
+This does not contradict v13.26: absolute observer calibration remains underived; v14.03 shows only that absolute source scale is unnecessary for this upstream direction-selection step.
 
-The gate tested one deterministic dual direction orthogonal to the intrinsic ray at every primary boundary and found that it was not a supporting normal of the same compatibility set.
+### 4. Support-coordinate covariance
+
+Eight deterministic support-coordinate unitaries per archived configuration were used to transform `X0`, `P`, the hidden basis, the boundary point, and the dual representative.
+
+Maximum complete-pipeline covariance error:
 
 ```text
-tested boundaries                  = 128
-orthogonal objectives rejected     = 128
-all tested rejected                = true
+3.8799143876726434e-13
 ```
 
-The archived trace-distance dual effect remains a separate typed object:
+The initial divided-difference implementation exposed a `V_A` covariance defect near repeated eigenvalues. It was replaced by the analytically equivalent matrix-exponential Fréchet derivative after a direct hypothesis test restored covariance to machine precision while preserving finite-difference agreement. No scientific tolerance or adjudication rule was relaxed.
 
-`VISIBLE_OBJECTIVE_DUAL_WITNESS_DIFFERENT_DUAL_SPACE`.
-
-### 6. Checker controls
-
-Faithful archived centers are interior points and correctly classify as
-
-`NO_BOUNDARY_SELECTOR`.
-
-A synthetic two-kernel test fixture correctly produces projected normal rank `2` and
-
-`NONUNIQUE_NORMAL_CONE`.
-
-Thus the positive primary result is not hard-coded by the checker.
-
-## What v14.02 adds
-
-Within the frozen two-family audit:
+Production controls:
 
 ```text
-specified smooth compatibility boundary point
--> objective-independent intrinsic hidden-fiber supporting ray
+max tangent Hermiticity residual = 0.0
+max |Tr(dot X)|                  = 9.64939933512099e-18
+max finite-difference error      = 1.6582477388778675e-10
+max base boundary formula error  = 4.5102810375396984e-17
+max boundary PSD residual        = 8.164027539109826e-17
 ```
 
-is now an earned structure.
+### 5. Engineered controls
 
-This is a **local dual direction**, not a global source law.
+The checker does not force every possible source to be hidden-active.
 
-The correct source status is:
+```text
+identity source -> ZERO_PGRL_TANGENT
+hidden-active constructed control -> NONZERO_HIDDEN_COMPONENT
+visible-only constructed control -> ZERO_HIDDEN_SOURCE_COMPONENT
+```
 
-`CANONICAL_DUAL_DIRECTION_BUT_SOURCE_LIFT_UNDERIVED`.
+The visible-only control has hidden norm `1.499385732841713e-19`.
 
-## What remains underived
+### 6. Provenance/source-ray boundary
 
-- which boundary point a physical source selects: **UNDERIVED**;
-- source→hidden-completion tangent/lift: **UNDERIVED**;
-- canonical global source-dependent `A_G(s)`: **UNDERIVED**;
-- magnitude along the dual ray: **UNDERIVED**;
-- source-to-solder/coframe law: **UNDERIVED**;
-- absolute physical source→geometry coupling: **UNDERIVED**;
-- physical stress-energy: **UNDERIVED**;
-- physical metric/coframe: **UNDERIVED**;
-- ontology-native quantum continuum refinement: **UNAVAILABLE**;
-- physical time/spacetime: **NOT DERIVED**;
-- Riemann curvature from this dual ray: **NOT DERIVED**;
-- physical Einstein equations: **NOT DERIVED**;
-- Pillar 3: **OPEN**.
+The frozen Genesis/provenance/source-grading stack supplies source identity, retained source amount/grading, provenance consistency, and source-flow/balance compatibility.
 
-## Relation to earlier stops
+It does not currently return the same typed object used by v14.03: a Hermitian projective source/log-density covector on the 25-dimensional support coefficient space of the archived compatibility construction.
+
+No certified natural map between those spaces is present.
+
+Therefore:
+
+```text
+PROVENANCE_SOURCE_TYPE_MISMATCH
+```
+
+The random source survey is not provenance evidence.
+
+## Relation to earlier gates
+
+### v14.02 remains valid
+
+v14.02 established
+
+```text
+specified smooth boundary X* -> canonical local dual ray [g(X*)].
+```
+
+v14.03 adds, conditional on a supplied source ray,
+
+```text
+supplied [P] -> hidden tangent -> X*(P) -> [g(P)].
+```
 
 ### v14.01 remains valid
 
-v14.01 established that the frozen incidence/state-weighted/covariant/compositional/positivity machinery does not select one global source→higher-incidence deformation.
-
-v14.02 does not supply that missing global map. It says that **once a smooth boundary point is specified**, local convex geometry supplies one dual ray there.
+v14.01 showed arbitrary state-weighted source→higher-incidence maps are nonunique. v14.03 does not choose one of those weight functions; it uses the already-earned full-state PGRL tangent and the exact hidden orthogonal projector.
 
 ### v13.28 remains valid
 
-v13.28 established that the frozen downstream source→geometry pairing candidates do not fix an absolute coupling magnitude.
+The frozen downstream source→geometry classes still do not fix an absolute coupling. v14.03 derives an upstream projective direction/dual selection, not a coupling magnitude.
 
-v14.02 does not supply a magnitude or physical source identification, so that branch remains stopped.
+### v13.26 remains valid
+
+Absolute retained-to-observer source calibration remains underived.
+
+### v13.10 / v13.13 remain valid
+
+The low-order retained ledger does not determine hidden response autonomously, and exact source response generically depends on full higher-order state information. v14.03 works directly in the full support state for that reason.
 
 ## Preserved results
 
 - Pillar 1 — Global Atlas Closure: **COMPLETE**.
 - Pillar 2 — Retained Curvature / Source-Current Compatibility: **CLOSED CONDITIONAL**.
-- finite quantum/global compatibility laboratory: **PRESERVED**.
-- hidden-completion and global positivity structure: **PRESERVED**.
-- finite-state QMAR and BKM trace/Weyl theorem: **PRESERVED**.
+- finite global quantum compatibility / hidden-completion structure: **PRESERVED**.
+- QMAR and BKM trace/Weyl theorem: **PRESERVED**.
 - source-current balance and conditional current selection: **PRESERVED**.
+- v13.28 absolute coupling obstruction: **PRESERVED**.
+- v14.01 source-law nonuniqueness: **PRESERVED**.
+- v14.02 canonical local dual ray: **PRESERVED / NOW SOURCE-CONDITIONALLY SELECTED**.
 - projective coupled-source ray `[Sigma]`: **PRESERVED**.
-- v13.28 downstream coupling obstruction: **PRESERVED**.
-- v14.01 global source-law canonicality obstruction: **PRESERVED**.
 - controlled ADM/Einstein comparisons: **EXTERNAL HELDOUT CORRESPONDENCE ONLY**.
 
-## Next lawful move
+## Still not derived
 
-v14.02 has produced a new native object, so the next gate may lawfully ask:
+- Genesis/provenance → typed support-space source ray `[P]`;
+- physical/observer absolute source magnitude;
+- physical claim that PGRL evolution reaches the audited boundary;
+- source-to-solder/coframe law;
+- absolute source→geometry coupling;
+- stress-energy tensor;
+- physical metric/coframe/spacetime;
+- ontology-native quantum continuum refinement;
+- Einstein equations;
+- Pillar 3 closure.
+
+## Next lawful frontier
+
+The missing upstream arrow is now isolated to
 
 ```text
-Does already-earned source/provenance structure canonically select
-(a) a compatibility-boundary point, or
-(b) a hidden tangent whose pairing with the v14.02 intrinsic dual ray is fixed?
+Genesis / provenance  ?  ->  [P]
 ```
 
-That next gate must not define the source lift by optimizing against the ray, by choosing another arbitrary weighting functional, or by consulting an Einstein/ADM residual.
+because, once `[P]` is supplied, the frozen model now has the certified conditional chain
 
-The highest-value target is therefore a **source/provenance → compatibility-boundary selection audit**. A positive result would connect an upstream source structure to the newly earned local dual direction; a negative/nonunique result would preserve the current stop without inventing a repair.
+```text
+[P] -> hidden tangent -> X* -> [g].
+```
+
+Do not invent a new provenance→source operator law merely to continue. A next gate is lawful only if the existing archive contains an independently motivated typed map candidate, or if a genuinely new axiom is explicitly proposed as such.
