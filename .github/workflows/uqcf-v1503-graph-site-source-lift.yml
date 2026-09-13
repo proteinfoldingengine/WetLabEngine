@@ -1,0 +1,52 @@
+name: UQCF v15.03 Graph-Site Source Lift Audit
+
+on:
+  push:
+    branches:
+      - main
+      - research/v15.03-graph-site-source-lift
+    paths:
+      - 'ResearchHistory/UQCF-GEM/v15/v15.03/**'
+      - 'Tmp/TOE/ThePhysicsParadox/Physics101/phi lab.py'
+      - 'Tmp/TOE/ThePhysicsParadox/uqcf_gate_a_small_network_phi_simulation_package 2/**'
+      - 'ResearchHistory/UQCF-GEM/v13/v13.11/**'
+      - 'ResearchHistory/UQCF-GEM/v13/v13.15/**'
+      - 'ResearchHistory/UQCF-GEM/demos/v13.27-gravity-progress/**'
+      - 'Tmp/TOE/UQCF_Quantum_Compatibility_Lab/**'
+      - 'ResearchHistory/UQCF-GEM/v14/v14.03/**'
+      - 'ResearchHistory/UQCF-GEM/v14/v14.04/**'
+      - 'ResearchHistory/UQCF-GEM/v15/v15.01/**'
+      - 'ResearchHistory/UQCF-GEM/v15/v15.02/**'
+      - 'ResearchHistory/UQCF-GEM/README.md'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
+      - 'docs/superpowers/specs/2026-09-13-v1503-graph-site-source-lift-design.md'
+      - 'docs/superpowers/plans/2026-09-13-v1503-graph-site-source-lift.md'
+      - '.github/workflows/uqcf-v1503-graph-site-source-lift.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/v15/v15.03
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install scientific dependencies
+        run: python -m pip install numpy==2.4.6 scipy==1.17.1
+      - name: Run v15.03 checker
+        run: python CHECKER.py
