@@ -37,5 +37,7 @@ jobs:
           python-version: '3.11'
       - name: Install scientific dependencies
         run: python -m pip install numpy==2.4.6 scipy==1.17.1
+      - name: Diagnose covariance layers
+        run: python DEBUG_COVARIANCE.py
       - name: Run v14.03 checker
         run: python CHECKER.py
