@@ -1,0 +1,96 @@
+{
+  "Pillar_3": "OPEN",
+  "claim_boundary": {
+    "Pillar_3_closed": false,
+    "adm_or_spacetime_time_used_as_selector": false,
+    "emergent_time_order_derived": false,
+    "entropy_used_as_selector": false,
+    "intrinsic_provenance_order_derived": true,
+    "irreversible_information_loss_update_derived": false,
+    "metric_duration_derived": false,
+    "physical_time_primitive_used": false,
+    "pruning_derived_order_derived": false,
+    "pruning_pressure_derived": true
+  },
+  "conditional_irreversible_pruning_theorem": {
+    "all_maps_noninjective": true,
+    "classification": "NONINJECTIVE_RECOVERABILITY_UPDATE_INDUCES_ORIENTED_INFORMATION_ORDER_CONDITIONALLY",
+    "codomain_sizes": [4, 2, 1],
+    "composition_noninjective": true,
+    "domain_sizes": [8, 4, 2],
+    "final_class_count": 1,
+    "frozen_pruning_realizes_this_structure": false,
+    "map_count": 3,
+    "orientation_intrinsic_to_information_loss": true,
+    "theorem": "A directed sequence of composable noninjective recoverability maps has an intrinsic information-loss orientation: the forward maps compose, while no two-sided inverse exists on the retained state description. This supplies an order/arrow candidate, not a metric duration or spacetime time coordinate.",
+    "two_sided_inverse_exists": false
+  },
+  "frozen_dependency_audit": {
+    "archive_bindings": {
+      "ResearchHistory/UQCF-GEM/v15/v15.09/REPORT.md": "ec73ef9240dcef062c95a82c511a874d0d2923ef",
+      "Tmp/TOE/Einstein 4/V997_FULL_STACK_GENESIS_PIN_BRIDGE_REPORT.md": "8f4ee48cbaf6c822b87dd5e30a5dfee4d596e26e",
+      "Tmp/TOE/Einstein 4/v995_pre_report_closure_synthesis_packet/V995_PRE_REPORT_CLOSURE_SYNTHESIS.md": "a0cb9a17344800ebfee1cbe3f724da2ac418e164",
+      "Tmp/TOE/Einstein 6/v1153_first_principles_recoverable_pruning/v1153_first_principles_outputs/V1153_FIRST_PRINCIPLES_RECOVERABLE_PRUNING_REPORT.md": "1fe4248b71fd9e6628b7aee52eacbab96830bfde",
+      "Tmp/TOE/Einstein 6/v1153_first_principles_recoverable_pruning/v1153_first_principles_outputs/v1153_summary.json": "9c6ba1cc26031c2b4063e7e06e1fcd205a903dc4",
+      "Tmp/TOE/Einstein 6/v1153_first_principles_recoverable_pruning/v1153_first_principles_recoverable_pruning_engine.py": "c473e6f750577a5e63d2481c1d702031edfb99b6"
+    },
+    "archive_bindings_match_expected": true,
+    "audit_scope": [
+      "V1153 first-principles recoverable pruning engine/report/summary",
+      "V995 append-only provenance closure synthesis",
+      "V997 ordered-update guardrail / Genesis legitimacy report",
+      "v15.09 current upstream representation frontier"
+    ],
+    "classification": "ORDER_AND_PRUNING_EXIST_AS_SEPARATE_FROZEN_STRUCTURES_WITHOUT_AN_IDENTIFICATION_LAW",
+    "frozen_pruning_to_provenance_order_identification_found": false,
+    "v1153_external_order_loop_found": true,
+    "v1153_hard_filter_explicitly_absent": true,
+    "v1153_support_reduction_rule_found": false,
+    "v1153_weight_reweighting_rule_found": true,
+    "v995_append_only_order_found": true,
+    "v997_warns_update_index_is_not_physical_time": true
+  },
+  "gate": "Pruning-Order / Emergent-Time Bridge Reassessment",
+  "major_structural_result": true,
+  "minimum_emergent_order_requirements": {
+    "composable_order": "successive updates must compose into a consistent reachability/ancestry relation",
+    "intrinsic_orientation": "order must be readable from relational/information structure rather than supplied by an external loop counter",
+    "irrecoverability_asymmetry": "forward update must lose recoverable distinctions so no two-sided inverse exists on the retained description",
+    "metric_duration_required_here": false
+  },
+  "next_lawful_frontier": "Search only for a frozen support-reducing/noninjective recoverability operation or a frozen law tying pruning events to append-only provenance ancestry. If neither exists, the emergent-time bridge requires a new pruning-event law; metric duration and spacetime correspondence remain later questions.",
+  "primary_outcome": "FROZEN_PRUNING_DOES_NOT_YET_DERIVE_INTRINSIC_TIME_ORDER",
+  "provenance_order": {
+    "ancestry_relation_antisymmetric": true,
+    "append_only_order_composable": true,
+    "classification": "INTRINSIC_PROVENANCE_ORDER_EXISTS_BUT_IS_NOT_DERIVED_FROM_PRUNING",
+    "direct_edge_count": 4,
+    "interpretation": "The pinned-root append-only ledger supplies an intrinsic before/after ancestry relation for provenance. The audited archive does not derive that ancestry relation from the V1153 reweighting operation or identify it with physical time.",
+    "physical_time_identified": false,
+    "pruning_generates_ledger_order": false,
+    "rooted_orientation": true,
+    "transitive_relation_count": 10
+  },
+  "scientific_breakthrough": false,
+  "secondary_outcome": "V1153_REWEIGHTING_IS_SUPPORT_PRESERVING_AND_INVERTIBLE_ON_SIMPLEX_INTERIOR",
+  "stop_rule": "Do not rename the V1153 ordered-update loop as emergent time and do not treat smooth positive reweighting as irreversible pruning. A lawful time bridge requires an ontology-native noninvertible recoverability update whose own relational structure generates the order, or one explicit new law identifying certified pruning events with the existing provenance ancestry order.",
+  "tertiary_outcome": "PROVENANCE_LEDGER_HAS_INTRINSIC_ANCESTRY_ORDER_BUT_NO_FROZEN_IDENTIFICATION_WITH_PRUNING_TIME",
+  "v1153_reweighting": {
+    "beta": 2.2,
+    "classification": "SELECTION_PRESSURE_WITHOUT_IRREVERSIBLE_SUPPORT_PRUNING",
+    "exact_reason": "For strictly positive weights and finite potentials, multiplication by exp(-beta U) followed by normalization keeps every support element positive. Given U, the map is inverted by multiplication by exp(+beta U) and renormalization.",
+    "hard_accept_reject_filter_drives_dynamics": false,
+    "history_count": 7,
+    "intrinsic_arrow_from_weight_map": false,
+    "invalid_final_weight_sum": 1.467017487634064e-10,
+    "max_composition_error": 1.468815065250206e-16,
+    "max_inverse_error": 8.554842949272357e-17,
+    "ordered_update_count": 160,
+    "ordered_update_loop_is_exogenous": true,
+    "positive_support_preserved": true,
+    "reweighting_bijective_on_simplex_interior": true,
+    "support_cardinality_after": 7,
+    "support_cardinality_before": 7
+  },
+  "version": "v15.10"
+}
