@@ -1,243 +1,238 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-13  
-**Latest completed gate:** v15.08 — Genesis Source-Semantics / Neutral-Preparation Identification Gate  
-**Primary adjudication:** `GENESIS_PROVENANCE_DOES_NOT_IDENTIFY_NEUTRAL_PREPARATION_SOURCE`  
-**Secondary:** `SOURCE_SEMANTICS_IRREDUCIBLE_RELATIVE_TO_FROZEN_ONTOLOGY`  
-**Tertiary:** `LOG_PROJECTIVE_SOURCE_REQUIRES_NEW_SOURCE_SEMANTICS_AXIOM`  
+**Latest completed gate:** v15.09 — Quantum Carrier Origin / Tensor-Factorization Blindness Gate  
+**Primary adjudication:** `CANONICAL_NEUTRAL_STRUCTURE_DOES_NOT_DERIVE_RETAINED_QUANTUM_CARRIER`  
+**Secondary:** `FRAME_NEUTRAL_REFERENCE_IS_TENSOR_FACTORIZATION_BLIND`  
+**Tertiary:** `SUPPLIED_SITE_FINGERPRINTS_DO_NOT_DEFINE_CROSS_DOMAIN_NODE_SITE_FUNCTOR`  
 **Major structural result:** `true`  
 **Scientific breakthrough:** `false`  
-**Pillar 3:** `OPEN`  
-**Reproducibility policy:** scientific thresholds are enforced independently; frozen floating telemetry uses a tight mixed archive-binding tolerance.
+**Pillar 3:** `OPEN`
 
 ## Current scientific picture
 
-The operator-source origin problem is now sharply separated into mathematics and semantics.
+The recent v15 sequence has separated three problems that previously risked being conflated:
 
 ```text
-Genesis / frozen provenance
-    -> source-origin identity
-    -> retained-sequence / append-only legitimacy
-    -> source-role classification
-    -> source grading / source-current compatibility
-    -> does NOT by itself return a local noncentral Hermitian source operator
+A. local quantum information structure
+B. physical source semantics
+C. retained-relation -> quantum-carrier representation
+```
 
-local source covariance (v15.04)
-    -> F(U rho U^dagger)=U F(rho) U^dagger
-    -> F(rho) scalar on each spectral block
-    -> qubit traceless family = a(r)(rho-I/2)
-    -> covariance fixes direction, not a(r)
+They now have distinct statuses.
 
-generic composition (v15.05)
-    -> arbitrary already-chosen a(r) composes associatively / naturally
-    -> frozen tensor composition does not select a(r)
-    -> stronger universal functional-calculus tensor law would select log
-    -> stronger premise was not frozen
+```text
+local covariance (v15.04)
+    -> qubit traceless source family a(r)(rho-I/2)
+    -> covariance alone leaves a(r) free
+
+composition (v15.05)
+    -> arbitrary already-selected local a(r) composes naturally
+    -> generic composition does not select a(r)
+    -> stronger functional-calculus tensor law would select log shape
 
 recoverability multiplicativity (v15.06)
-    -> root fidelity is multiplicative on independent recovery pairs
-    -> -log root fidelity is additive
-    -> this is a scalar comparison generator
-    -> scalar recoverability does not select a local Hermitian source
+    -> root fidelity multiplicative
+    -> -log fidelity additive
+    -> scalar comparison generator does not select local Hermitian source
 
-frame-neutral quantum reference (v15.07)
-    -> unique normalized state invariant under every local frame: tau_d=I_d/d
-    -> Q_d(rho)=tau_d^-1/2 rho tau_d^-1/2=d rho
-    -> Q is multiplicative on product states
-    -> log Q is additive
-    -> centered generator = centered log rho
-    -> canonical local logarithmic information generator EARNED
+frame-neutral quantum structure (v15.07)
+    -> tau_d=I_d/d uniquely selected by full local-frame invariance
+    -> Q_d(rho)=d rho canonical and multiplicative
+    -> centered log rho is the canonical additive Hermitian information generator
 
-Genesis source-semantics audit (v15.08)
-    -> Genesis Pin certifies recoverable-history legitimacy, not a quantum reference state
-    -> ternary source role certifies finite source-legitimacy information, not a Hermitian generator
-    -> V995 generator compatibility is a model-level event/dynamics compatibility layer; no typed PGRL-source map is frozen
-    -> identical relevant Genesis/source-role/provenance facts admit multiple inequivalent lawful Hermitian source rays
-    -> therefore frozen ontology does NOT entail source = neutral-preparation generator
-    -> SOURCE SEMANTICS IRREDUCIBLE RELATIVE TO FROZEN ONTOLOGY
+source semantics (v15.08)
+    -> Genesis Pin = history legitimacy boundary, not quantum reference state
+    -> ternary source role = legitimacy information, not Hermitian generator
+    -> same frozen provenance permits multiple inequivalent lawful source rays
+    -> physical-source identification is irreducible relative to frozen ontology
 
-supplied positive projective support source [P]
-    -> exact PGRL tangent
-    -> canonical hidden projection
-    -> hidden-tangent radial first contact X*(P)
-    -> intrinsic local dual ray [g(P)]
-    -> PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY remains certified conditional (v14.03)
-
-retained/downstream source-geometry bridge
-    -> projective coupled-source ray [Sigma] survives
-    -> absolute source calibration remains underived
-    -> absolute source->geometry coupling remains underived
-    -> Pillar 3 remains OPEN
+carrier origin (v15.09)
+    -> tau_D=I_D/D factorizes under every supplied tensor decomposition
+    -> neutral structure therefore cannot select subsystem decomposition
+    -> supplied five-qubit neutral reference preserves all 120 site permutations
+    -> even rigid graph nodes + rigid quantum-site spectra leave 120 cross-domain bijections
+    -> C125 still has no five-nontrivial-factor decomposition
+    -> v15.07 does not reopen v15.02-v15.03 representation shortcuts
 ```
 
-## Latest result — v15.08
-
-### A. Genesis Pin is a history-legitimacy object
-
-The frozen V997 Genesis Pin requires a pinned witness registry/root, quorum, append-only continuity, and non-circular origin. It distinguishes legitimate recoverable histories even when visible states coincide.
-
-Its type is therefore
+The present upstream chain is therefore
 
 ```text
-history / registry / root / witness legitimacy boundary
+retained relational/provenance carrier
+    -X-> canonical retained-node -> quantum-site functor
+quantum Hilbert carrier (once supplied)
+    -> unique frame-neutral state tau_d=I/d
+    -> canonical relative-density operator Q_d=d rho
+    -> centered-log information generator
+    -X-> physical-source semantics under frozen ontology
+    -X-> natural five-site -> C125 compatibility-parent map
 ```
 
-not
+The positive quantum mathematics is preserved. The missing arrows are now typed representation/semantics primitives rather than unspecified numerical fits.
+
+## Latest result — v15.09
+
+### A. Tensor-factorization blindness
+
+For every factorization
 
 ```text
-quantum density operator
+D = product_i d_i
 ```
 
-and not
+the frame-neutral state satisfies
 
 ```text
-Hermitian neutral-to-state preparation generator.
+tau_D = I_D/D = tensor_i(I_di/d_i).
 ```
 
-No frozen equation identifies the Genesis Pin with
+Therefore `tau_D` is compatible with every supplied tensor decomposition and cannot select one.
+
+For `D=32`, the full unordered nontrivial factorization list is
 
 ```text
-tau_d = I_d/d.
+[32]
+[2,16]
+[4,8]
+[2,2,8]
+[2,4,4]
+[2,2,2,4]
+[2,2,2,2,2]
+```
+
+with
+
+```text
+unordered factorization count      = 7
+max neutral factorization error    = 0.0
+five-factor decomposition count    = 1
+five-factor decomposition          = [2,2,2,2,2]
+```
+
+The last line is conditional on first supplying the requirement “five factors.” It is not selected by the neutral state.
+
+Classification:
+
+```text
+FRAME_NEUTRAL_REFERENCE_IS_TENSOR_FACTORIZATION_BLIND
+```
+
+### B. Neutral five-qubit state does not label sites
+
+On a supplied five-qubit carrier,
+
+```text
+tau_32 = (I_2/2)^tensor5.
+```
+
+All `5! = 120` site permutations were enumerated.
+
+```text
+permutations tested                 = 120
+permutations preserving neutral tau = 120
+max permutation error               = 0.0
 ```
 
 Classification:
 
 ```text
-GENESIS_PIN_CERTIFIES_HISTORY_LEGITIMACY_NOT_QUANTUM_REFERENCE_STATE
+NEUTRAL_FIVE_QUBIT_REFERENCE_HAS_FULL_S5_SITE_PERMUTATION_SYMMETRY
 ```
 
-### B. Ternary source role is not the quantum source operator
+### C. Rigid graph + rigid quantum sites still do not define a cross-domain map
 
-V923's exact source-legitimacy result uses three role symbols:
+The retained directed graph has exact automorphism order
 
 ```text
-source_active_role
-source_basin_eligible_nonactive_role
-source_rejected_or_broken_role
+1.
 ```
 
-This discrete primitive carries information that endpoint/path observables do not.
-
-But no frozen artifact defines either
+Using the frozen v15.03 control-A local spectra, all five quantum sites are spectrally distinct under independent local-unitary gauge, so the site spectral stabilizer also has order
 
 ```text
-source role -> Hermitian P
+1.
 ```
 
-or
+Nevertheless there is no frozen relation connecting the graph sort to the quantum-site sort.
+
+Every bijection
 
 ```text
-source role -> spectral response a(r).
+phi : retained nodes -> quantum sites
+```
+
+is therefore an additional expansion of the same two-sort reduct.
+
+```text
+node-site bijections       = 120
+inequivalent bijections    = 120
+certified cross-domain map = NONE
 ```
 
 Classification:
 
 ```text
-TERNARY_SOURCE_ROLE_IS_LEGITIMACY_INFORMATION_NOT_OPERATOR_GENERATOR
+TWO_SORT_REDUCT_DOES_NOT_DEFINE_NODE_SITE_BIJECTION
 ```
 
-### C. Countermodel independence theorem
+This rules out the argument that individual rigidity on both sides somehow creates a canonical correspondence between them.
 
-Fix the same faithful two-site quantum state and the same audited provenance signature:
+### D. `C^125` parent mismatch remains exact
+
+The certified compatibility parent has dimension 125.
+
+Its complete unordered nontrivial multiplicative decompositions are
 
 ```text
-pinned_genesis_pass
-source_active_role
-append_only_valid
-quorum_valid
-same_retained_source_grade
+[125]
+[5,25]
+[5,5,5].
 ```
 
-Three already-lawful local source responses were applied:
+Therefore
 
 ```text
-linear       a(r)=1
-log          a(r)=2 atanh(r)/r
-polynomial   a(r)=1+r^2
+five nontrivial factor decomposition count = 0.
 ```
 
-All three produce valid centered Hermitian PGRL source deformations while preserving the same declared provenance/source-role data.
-
-Their projective source rays remain distinct:
-
-```text
-linear vs log        = 0.06248625684944288
-linear vs polynomial = 0.08772246091732862
-log vs polynomial    = 0.025253513918714537
-```
-
-Additional controls:
-
-```text
-minimum pairwise ray separation = 0.025253513918714537
-max finite-PGRL trace error     = 0.0
-minimum output eigenvalue       = 0.027251058487541124
-```
-
-Therefore the frozen provenance/source-role data do not entail any one of these operator source rays.
+A supplied five-qubit carrier has dimension 32, and no frozen natural `H32 -> C125` carrier map is certified.
 
 Classification:
 
 ```text
-COUNTERMODEL_INDEPENDENCE_PROVES_SOURCE_SEMANTICS_NOT_ENTAILED
+V15_07_NEUTRAL_STRUCTURE_DOES_NOT_REPAIR_C125_PARENT_TYPE_MISMATCH
 ```
 
-### D. v15.07 remains a positive result
+## What v15.09 changes
 
-The canonical v15.07 centered relative-density generator still agrees with the logarithmic candidate ray to
+v15.09 answers the strongest native reassessment after v15.07:
 
 ```text
-9.460671693549492e-16.
+Could the new canonical neutral/reference structure itself provide the missing carrier origin?
 ```
 
-Thus the correct distinction is
+No.
 
-```text
-canonical centered-log information generator : DERIVED
-centered-log generator as physical source    : NOT DERIVED
-```
+The reason is structural rather than numerical:
 
-v15.08 blocks only the semantic promotion, not the mathematical construction.
+1. `I_D/D` is deliberately blind to tensor decomposition;
+2. distinct local state spectra exist only after a site factorization is already supplied;
+3. within-sort rigidity does not create a cross-sort relation;
+4. the existing compatibility parent has the wrong factor arithmetic for five nontrivial sites.
 
-### E. Exact branch stop
-
-Because explicit countermodels preserve the relevant frozen provenance/source-role certificates while changing `[P]`, further search inside the same frozen dependency set cannot select the source law.
-
-The source-semantic branch is therefore
-
-```text
-IRREDUCIBLE RELATIVE TO THE CURRENT FROZEN ONTOLOGY.
-```
-
-To continue this particular branch requires one explicit **NEW SOURCE-SEMANTICS AXIOM**, independently motivated before any downstream gravity test.
-
-A sufficient form would be conceptually equivalent to:
-
-```text
-physical source = admissible generator preparing the local state
-                  relative to the unique frame-neutral reference.
-```
-
-If that axiom were independently earned or explicitly adopted, v15.07 would imply
-
-```text
-[P]_+ = [centered log rho]_+.
-```
-
-It would still not fix absolute source magnitude because the PGRL parameterization gauge remains.
+Thus the new canonical quantum structure is **intrasort**. It is canonical once a Hilbert carrier is specified, but it does not originate that carrier from retained provenance.
 
 ## Relation to earlier gates
 
-- **v15.07:** preserved and bounded. The neutral reference, multiplicative relative-density operator, and centered-log generator remain canonical; physical-source semantics are not supplied.
-- **v15.06:** preserved. Scalar recoverability multiplicativity remains real but is not the missing operator-source selector.
-- **v15.05:** preserved. Generic tensor composition does not select the response; the earlier conditional logarithmic characterization is now realized mathematically by v15.07, not physically identified as source.
-- **v15.04:** preserved. `a(r)` is the full qubit covariance freedom unless extra source semantics are supplied.
-- **v15.03:** preserved. State context permits noncentral source directions, but the graph-site carrier and source law remain noncanonical without added structure.
-- **v15.01-v15.02:** preserved. Common-parent/shared-label shortcuts remain blocked.
-- **v14.04:** strengthened. Provenance typing/representation mismatch is consistent with the v15.08 source-semantic independence result.
-- **v14.03:** preserved conditional. A supplied positive projective support source still canonically selects hidden first contact and dual ray.
-- **v13.25-v13.26:** preserved. Absolute source calibration remains irreducible relative to the frozen ontology.
-- **v13.28:** preserved. Absolute source-to-geometry coupling remains underived.
+- **v15.08:** preserved. The source-semantics branch remains stopped and is not reused as a representation selector.
+- **v15.07:** preserved positively. `tau_d=I/d`, `Q_d=d rho`, and centered `log rho` remain canonical quantum information objects.
+- **v15.03:** not reopened. Exact retained graph -> five-site quantum factorization remains underived; five nontrivial sites still cannot equal `C^125`.
+- **v15.02:** not reopened. The node↔quantum-label correspondence remains extra cross-domain information.
+- **v15.01:** preserved. `C^125 -> C^25` compression is exact once a lawful parent object exists, but provenance does not supply that parent representation.
+- **v14.04:** preserved. A representation/intertwiner from richer provenance into the compatibility source carrier remains missing.
+- **v14.03:** preserved conditional. A supplied positive projective support source still selects hidden first contact and the intrinsic dual ray.
+- **v13.25-v13.28:** preserved. Absolute source calibration and absolute source-to-geometry coupling remain underived.
 
 ## Preserved pillar status
 
@@ -247,11 +242,11 @@ It would still not fix absolute source magnitude because the PGRL parameterizati
 
 ## Still not derived
 
-- `sourcehood = neutral-reference-to-state preparation generator`;
-- identification of Genesis Pin with `I/d`, physical vacuum, or source-free state;
-- a typed V923/V995 provenance-role object -> local Hermitian PGRL generator map;
-- a certified retained-node-to-quantum-site factorization;
-- a natural graph-site-to-`C^125/C^25` compatibility map;
+- a retained-node-to-quantum-site functor;
+- a five-site quantum carrier from retained provenance;
+- a natural graph/site -> `C^125/C^25` compatibility map;
+- a physical rule matching graph invariants to quantum spectral invariants;
+- physical-source semantics for centered `log rho`;
 - Genesis/provenance -> v14.03 projective support source `[P]_+`;
 - absolute source magnitude / observer calibration;
 - physical stress-energy;
@@ -265,15 +260,19 @@ It would still not fix absolute source magnitude because the PGRL parameterizati
 
 ## Stop rule / next lawful frontier
 
-Do **not** continue the logarithmic source-origin search inside the same frozen ontology. The countermodel theorem has closed that route.
+Do **not** continue the carrier-origin branch by:
 
-Do **not** identify Genesis Pin with `I/d`, the ternary source role with a Hermitian source generator, or V995 causal-generator compatibility with the PGRL operator source by shared terminology.
+```text
+reading subsystem labels out of I/d;
+choosing five qubits because 32 happens to admit 2^5;
+matching graph nodes to distinct site spectra by sorted rank;
+choosing a favorite one of the 120 bijections;
+reusing the stopped v15.08 source semantics as a representation law;
+padding or reshaping H32 into C125;
+inventing an SVD/PCA/random embedding;
+selecting a carrier map by downstream gravity/ADM/Einstein performance.
+```
 
-Do **not** select the missing semantic axiom using downstream gravity/ADM/Einstein performance.
+A continuation of this branch requires an independently motivated **NEW CROSS-DOMAIN CARRIER/FUNCTOR PRINCIPLE**.
 
-The lawful choices are now:
-
-1. explicitly introduce and independently motivate one **NEW SOURCE-SEMANTICS AXIOM**, then test it without downstream tuning; or
-2. retain centered `log(rho)` as a canonical local information generator without physical-source status and redirect research to another independent unresolved bridge.
-
-Under current governance, option 2 is the default until a new axiom is explicitly approved.
+Under current governance, the default is to preserve the canonical quantum information structure and redirect to a genuinely independent unresolved bridge rather than invent that principle.
