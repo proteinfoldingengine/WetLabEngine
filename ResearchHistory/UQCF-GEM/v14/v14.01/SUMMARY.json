@@ -1,0 +1,81 @@
+{
+  "version": "v14.01",
+  "title": "Canonical Source-Dependent Global Admissibility Gate",
+  "date": "2026-09-12",
+  "adjudication": "NONUNIQUE",
+  "classification": "MAJOR_SOURCE_TO_HIGHER_INCIDENCE_CANONICALITY_OBSTRUCTION",
+  "scientific_breakthrough": false,
+  "scope": "current frozen architecture plus the audited incidence/state-weighted and PSD-positivity construction class; not all conceivable deeper nonlinear laws",
+  "core_distinction": "Source action on a state or visible datum under a fixed compatibility/positivity rule is not by itself a source-dependent deformation of the admissibility law.",
+  "theorems": {
+    "incidence_only": {
+      "name": "Incidence-Only Cycle-Defect No-Go",
+      "statement": "For graph incidence B and the orthogonal cycle projector P_cyc = I - B^T(BB^T)^+B, P_cyc B^T = 0. A canonical incidence-exact node-source 1-cochain has no cycle-space component."
+    },
+    "canonicality": {
+      "name": "State-Weighted Admissibility Canonicality Obstruction",
+      "statement": "Within the audited covariant weighted-incidence class eta_f = P_cyc W_f B^T C, multiple positive scalar functionals of the same edge invariant produce nonzero, source-linear, relabeling-covariant but inequivalent source-to-cycle-defect maps. The frozen structural rules tested here do not select one functional or coefficient."
+    },
+    "positivity": {
+      "name": "Positivity Non-Selection Result",
+      "statement": "At a faithful positive-definite center, positivity admits a common open neighborhood containing all audited bounded candidate directions. At a simple PSD boundary, first-order positivity supplies a half-space condition with a 9-dimensional lineality subspace in Sym(4), not a unique source direction. Positivity is therefore a feasibility filter, not a canonical source-map generator in this audit."
+    }
+  },
+  "fresh_controls": {
+    "seed": 1401,
+    "trials": 256,
+    "scales": [0.2, 0.5, 2.0, 5.0, 11.0],
+    "graph_n": 5,
+    "edge_count": 7,
+    "cycle_dimension": 3,
+    "incidence_only_cycle_leakage_norm": 1.245468636882555e-15,
+    "candidate_operator_norms": {
+      "linear_positive": 0.9317680326490423,
+      "exponential_positive": 1.1006383303926504,
+      "quadratic_positive": 0.3273241321687114
+    },
+    "candidate_operator_span_rank": 3,
+    "max_relative_source_scaling_error": 7.993866358511362e-16,
+    "max_covariance_error": 1.3482796731097804e-14,
+    "max_normalized_candidate_direction_separation": 0.9960669843187823,
+    "nonzero_trial_outputs": 768,
+    "faithful_interior_common_epsilon": 0.1443693458628246,
+    "minimum_faithful_interior_margin": 0.75,
+    "boundary_matrix_dimension": 4,
+    "boundary_tangent_lineality_dimension": 9,
+    "positive_control_reconstruction_error": 0.0
+  },
+  "candidate_functionals": {
+    "linear_positive": "f(x)=1+x",
+    "exponential_positive": "f(x)=exp(x)",
+    "quadratic_positive": "f(x)=1+x^2"
+  },
+  "positivity_selector_classification": "INEQUALITY_FILTER_NOT_CANONICAL_SOURCE_MAP",
+  "positive_control": {
+    "status": "ADDED_LAW_POSITIVE_CONTROL",
+    "selected_candidate": "exponential_positive",
+    "declared_coefficient": 2.7,
+    "interpretation": "Once a weighting functional and coefficient are explicitly declared, the map is unique by construction. This proves gate sensitivity but is added structure, not a derivation."
+  },
+  "preserved": [
+    "finite quantum/global compatibility laboratory",
+    "hidden-completion and global positivity structure",
+    "source-current balance",
+    "projective coupled-source result from v13.27",
+    "v13.28 downstream coupling branch stop",
+    "Pillar 3 remains open"
+  ],
+  "not_derived": [
+    "canonical nonzero source-to-higher-incidence map eta",
+    "canonical source-dependent admissibility law A_G(s)",
+    "absolute gravitational coupling",
+    "physical stress-energy coupling",
+    "physical Einstein equations"
+  ],
+  "branch_status": "STOPPED_PENDING_NEW_SOURCE_TO_HIGHER_INCIDENCE_AXIOM_OR_CALIBRATION",
+  "allowed_restart_conditions": [
+    "one explicit independently motivated source-to-higher-incidence/admissibility axiom",
+    "one independently calibrated physical cross-domain observable that selects the deformation"
+  ],
+  "Pillar_3": "OPEN"
+}
