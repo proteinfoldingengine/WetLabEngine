@@ -1,6 +1,6 @@
 # v15.05 — Frozen Composition-Law Audit / Monoidal Non-Selection and Log-Selector Boundary
 
-**Status:** CLOSED / measured on branch; archive binding and final exact-SHA certification pending  
+**Status:** CLOSED / measured and archive-bound on branch; merge/post-merge verification pending  
 **Primary outcome:** `FROZEN_COMPOSITION_LAWS_DO_NOT_SELECT_SPECTRAL_RESPONSE`  
 **Secondary outcome:** `LOG_SHAPE_REQUIRES_NEW_FUNCTIONAL_CALCULUS_ASSUMPTION`  
 **Major structural result:** `true`  
@@ -422,7 +422,7 @@ The next lawful question is:
 
 If no such origin exists, the spectral source response remains irreducible relative to the current frozen ontology and any selected law must be declared **NEW ASSUMPTION**.
 
-## CI evidence before final archive binding
+## CI evidence
 
 TDD RED:
 
@@ -439,4 +439,11 @@ First GREEN:
 - job `103744080214`
 - SUCCESS
 
-Final exact-SHA certification follows frozen-summary binding and frontier updates.
+Frozen-summary binding GREEN:
+
+- SHA `7eac2c518d3e066f9d74b42df70682ed307c521d`
+- run `34765065974`
+- job `103744460479`
+- SUCCESS
+
+The workflow also covers the v15.05 frontier index/status files, so the branch head can be certified without placing a self-referential final SHA inside this report. Merge and post-merge verification remain separate integration steps.
