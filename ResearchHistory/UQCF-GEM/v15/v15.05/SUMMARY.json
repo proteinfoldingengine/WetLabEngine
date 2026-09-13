@@ -1,0 +1,141 @@
+{
+  "Pillar_3": "OPEN",
+  "claim_boundary": {
+    "Pillar_3_closed": false,
+    "downstream_gravity_used_as_selector": false,
+    "entropy_or_time_used_as_selector": false,
+    "frozen_monoidal_selector_found": false,
+    "log_source_law_derived_from_frozen_ontology": false,
+    "new_assumption_needed_for_log_selector": true,
+    "physical_stress_energy_derived": false,
+    "spacetime_or_einstein_equations_derived": false
+  },
+  "frozen_dependency_audit": {
+    "archive_bindings": {
+      "ResearchHistory/UQCF-GEM/v13/v13.04/REPORT.md": "e857d81f58a540833a7672fe769b2a301bad4459",
+      "ResearchHistory/UQCF-GEM/v13/v13.22/REPORT.md": "e6920facaa4d133e2767951612c608d0e514806c",
+      "ResearchHistory/UQCF-GEM/v13/v13.23/REPORT.md": "1162d8f8378cb5292d6c2f8526dd5bd53198d2c4",
+      "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md": "9917085b211ca0e1f4737082227f55097cc72b66",
+      "ResearchHistory/UQCF-GEM/v14/v14.03/REPORT.md": "03d5e8df43d1f163901d33b1182fbfd3f21b626a",
+      "ResearchHistory/UQCF-GEM/v15/v15.03/REPORT.md": "6c3aed73c63c9c7554107d163e15b8fae7549c1c",
+      "ResearchHistory/UQCF-GEM/v15/v15.04/REPORT.md": "9a6a289cc5471def4c4d4f86756c3183802d1cc4",
+      "ResearchHistory/UQCF-GEM/v15/v15.04/SUMMARY.json": "a2c4cf211e625dfb3a7673fd7d6c008e382e3d8d"
+    },
+    "archive_bindings_match_expected": true,
+    "classification": "NO_FROZEN_STATE_TO_SOURCE_COMPOSITION_SELECTOR",
+    "typed_distinction": "composition of already-chosen source operators is not a state-to-source selector; a selector must constrain the map from state spectrum to source response before composition",
+    "v13_04_polar_tensor_naturality": {
+      "frozen_fact": "polar(C1 tensor C2)=polar(C1) tensor polar(C2)",
+      "selects_state_to_source_response": false,
+      "typed_object": "polar transport"
+    },
+    "v13_22_refinement_naturality": {
+      "frozen_refinement": "R_tau(rho)=rho tensor tau",
+      "reason": "P is an independent supplied source variable. The frozen naturality rule tells how that already-supplied P embeds under refinement; it does not define P=F(rho) or compare F(rho tensor tau) with F(rho).",
+      "selects_a_of_r": false,
+      "source_rule": "SUPPLIED_P_TO_P_TENSOR_I",
+      "state_to_source_functional_equation": false,
+      "two_step_composition": "tensor associativity"
+    },
+    "v13_23_qrsl": {
+      "relevance": "no canonical hidden refinement selector supplies the missing stronger state-composition law",
+      "status": "IRREDUCIBLE_RELATIVE_TO_CURRENT_FROZEN_ONTOLOGY"
+    },
+    "v13_26_source_scale": {
+      "absolute_source_scale_selected": false,
+      "relevance": "PGRL has P->aP, t->t/a parameterization freedom"
+    },
+    "v14_03_projective_source": {
+      "relevance": "the positive projective source ray selects a downstream dual ray conditionally but its origin remains upstream",
+      "source_ray_is_supplied": true
+    },
+    "v15_03_log_warning": {
+      "frozen_stop_rule": "do not privilege log(rho) merely because PGRL uses log coordinates",
+      "pgrl_log_coordinate_selects_log_source_law": false
+    },
+    "v15_04_spectral_freedom": {
+      "qubit_family": "F_traceless(rho)=a(r)(rho-I/2)",
+      "unique_a_of_r": false
+    }
+  },
+  "gate": "Frozen Composition-Law Audit / Monoidal Non-Selection and Log-Selector Boundary",
+  "labeled_monoidal_nonselection": {
+    "all_three_monoidal": true,
+    "all_three_projectively_distinct": true,
+    "classification": "LABELED_MONOIDAL_COMPOSITION_PRESERVES_ARBITRARY_LOCAL_SPECTRAL_RESPONSE",
+    "max_associativity_error": 2.3551386880256624e-16,
+    "max_local_covariance_error": 8.588717521894646e-16,
+    "max_swap_naturality_error": 0.0,
+    "min_pairwise_projective_ray_separation": 0.025621359948040462,
+    "pairwise_projective_ray_separations": {
+      "linear_vs_log": 0.04038732286659571,
+      "linear_vs_polynomial": 0.06600014410325687,
+      "log_vs_polynomial": 0.025621359948040462
+    },
+    "theorem": "For any already-chosen family of local covariant sources F_a on labeled factors, M_a(rho_1 tensor ... tensor rho_n)=sum_i I tensor ... tensor F_a(rho_i) tensor ... tensor I is associative, permutation-natural, and locally covariant. Therefore tensor composition composes a local law but does not select the local spectral response a(r).",
+    "theorem_scope": "LABELED_PRODUCT_STATES_WITH_FIXED_TENSOR_FACTORS",
+    "witness_metrics": {
+      "linear": {
+        "associativity_error": 0.0,
+        "local_covariance_error": 2.708103509688467e-16,
+        "rho_radius": 0.14999999999999997,
+        "rho_response_coefficient": 1.0,
+        "sigma_radius": 0.7199999999999999,
+        "sigma_response_coefficient": 1.0,
+        "swap_naturality_error": 0.0
+      },
+      "log": {
+        "associativity_error": 2.3551386880256624e-16,
+        "local_covariance_error": 8.588717521894646e-16,
+        "rho_radius": 0.14999999999999997,
+        "rho_response_coefficient": 2.0152058124862244,
+        "sigma_radius": 0.7199999999999999,
+        "sigma_response_coefficient": 2.5212360647753456,
+        "swap_naturality_error": 0.0
+      },
+      "polynomial": {
+        "associativity_error": 1.5700924586837752e-16,
+        "local_covariance_error": 5.023814003794133e-16,
+        "rho_radius": 0.14999999999999997,
+        "rho_response_coefficient": 1.0225,
+        "sigma_radius": 0.7199999999999999,
+        "sigma_response_coefficient": 1.5183999999999997,
+        "swap_naturality_error": 0.0
+      }
+    },
+    "witnesses": [
+      "linear",
+      "log",
+      "polynomial"
+    ]
+  },
+  "major_structural_result": true,
+  "next_lawful_question": "Is there an independently justified ontology-native reason to promote the source map to a universal scalar functional calculus, or another equally strong state-to-source law, without selecting it from downstream gravity behavior?",
+  "primary_outcome": "FROZEN_COMPOSITION_LAWS_DO_NOT_SELECT_SPECTRAL_RESPONSE",
+  "scientific_breakthrough": false,
+  "secondary_outcome": "LOG_SHAPE_REQUIRES_NEW_FUNCTIONAL_CALCULUS_ASSUMPTION",
+  "stronger_selector_boundary": {
+    "assumptions": [
+      "one dimension-independent continuous scalar function f acts by functional calculus on every faithful finite-dimensional state",
+      "the centered response obeys F(rho tensor sigma)=F(rho) tensor I + I tensor F(sigma)",
+      "the response is nontrivial; central shifts are projectively irrelevant"
+    ],
+    "boundary": "This theorem does not follow from v15.04 covariance. The universal coordinatewise scalar functional-calculus assumption is strictly stronger than the general permutation-equivariant spectral assignment allowed there.",
+    "classification": "CONTINUOUS_UNIVERSAL_SCALAR_FUNCTIONAL_CALCULUS_PLUS_CENTERED_TENSOR_DERIVATION_SELECTS_LOG_SHAPE",
+    "cubic_centered_tensor_error": 0.5553605272997411,
+    "linear_centered_tensor_error": 0.3716732435890426,
+    "log_centered_tensor_error": 1.6421465606029517e-15,
+    "proof": {
+      "centered_tensor_law_implies_scale_independent_pairwise_differences": true,
+      "consequence": "f(x*y)-f(x)=c(y) independent of x",
+      "continuity_reduces_multiplicative_cauchy_to_log": true,
+      "difference_identity": "f(x*y)-f(z*y)=f(x)-f(z)",
+      "multiplicative_cauchy": "c(y*z)=c(y)+c(z)",
+      "orientation_note": "alpha sign is not fixed by the tensor equation alone; positive-projective orientation requires alpha>0",
+      "projective_shape": "[log(rho)]",
+      "result": "f(x)=alpha*log(x)+beta"
+    },
+    "status": "NEW_ASSUMPTION_NOT_FROZEN"
+  },
+  "version": "v15.05"
+}
