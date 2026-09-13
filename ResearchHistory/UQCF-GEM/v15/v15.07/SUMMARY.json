@@ -10,7 +10,10 @@
   "frozen_dependency_audit": {
     "archive_bindings": {
       "ResearchHistory/UQCF-GEM/v13/v13.02/REPORT.md": "f560c85c73e3167e034d09ab0fab081e33cd3895",
+      "ResearchHistory/UQCF-GEM/v13/v13.04/REPORT.md": "e857d81f58a540833a7672fe769b2a301bad4459",
       "ResearchHistory/UQCF-GEM/v13/v13.11/REPORT.md": "b18b3582060cb6b6527059987d6635e120ee7fb0",
+      "ResearchHistory/UQCF-GEM/v13/v13.25/REPORT.md": "65847800d6c079803e7c18537ef57cdc7f87da25",
+      "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md": "9917085b211ca0e1f4737082227f55097cc72b66",
       "ResearchHistory/UQCF-GEM/v15/v15.04/REPORT.md": "9a6a289cc5471def4c4d4f86756c3183802d1cc4",
       "ResearchHistory/UQCF-GEM/v15/v15.05/REPORT.md": "b191c08c22ded0439cc4c2c125fbccfdb677dcbc",
       "ResearchHistory/UQCF-GEM/v15/v15.06/REPORT.md": "bdeac09b2b162f07baa874ef1c1d6415fdd5e236",
@@ -19,7 +22,10 @@
     "archive_bindings_match_expected": true,
     "classification": "CANONICAL_OPERATOR_OBJECT_EARNED_SOURCE_SEMANTICS_NOT_EARNED",
     "source_semantics_rule_found": false,
+    "v13_04_supplied_state_semantics": "PGRL acts at each supplied faithful state and does not prescribe the baseline-state origin",
     "v13_11_forces_P_equal_centered_log_rho": false,
+    "v13_25_source_origin_scope": "Genesis/source anchoring plus source-current compatibility; no state-preparation source semantics",
+    "v13_26_genesis_semantics": "Genesis anchoring is source-origin identity/compatibility and does not make origin an absolute source strength",
     "v15_04_a_of_r_selected": false,
     "v15_05_log_selector_premise_frozen": false,
     "v15_06_canonical_local_operator_question_answered": "Q_d(rho)=d*rho"
