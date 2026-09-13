@@ -13,7 +13,13 @@
     "dewitt_pure_trace_control": -4.5,
     "dewitt_traceless_control": 1.9999999999999982,
     "pgrl_reparameterization_error": 9.55170005517049e-16,
-    "tensor_completion_spatial_stress_distance": 0.4135214625627066,
+    "toy_block_underdetermination_distance": 0.4135214625627066,
+    "raw_polar_reflection_count": 200,
+    "raw_polar_reflection_fraction": 1.0,
+    "holonomy_clip_event_count": 0,
+    "max_holonomy_clip_excess": 2.220446049250313e-16,
+    "pi_holonomy_event_count": 8,
+    "pi_holonomy_adjudication": "GENUINE_PI_WITHIN_TOLERANCE_NO_CLIP",
     "projective_sigma_status": "RAY_ONLY__MAGNITUDE_NOT_DERIVED",
     "RGCL": "MISSING",
     "physical_Einstein_closure": "OPEN"
@@ -26,7 +32,12 @@
     "pgrl_reparameterization_error_lt": 1e-10,
     "dewitt_pure_trace_control_lt": 0.0,
     "dewitt_traceless_control_gt": -1e-10,
-    "max_cycle_rank_deficit_eq": 0
+    "max_cycle_rank_deficit_eq": 0,
+    "raw_polar_reflection_count_eq": 200,
+    "raw_polar_reflection_fraction_eq": 1.0,
+    "holonomy_clip_event_count_eq": 0,
+    "max_holonomy_clip_excess_lt": 1e-12,
+    "pi_holonomy_event_count_eq": 8
   },
   "scientific_fingerprint": "6f2830c47a877676f6ff4ad028769bb285d00f9194f33035c85dd785b3e9f5b6",
   "reference_raw_telemetry_hash": "e994538f3e04a06270b17b66c21ee29dc07730c5ceaf0805ba412f754624f945"
