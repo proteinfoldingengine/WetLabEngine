@@ -4,7 +4,7 @@
 
 **Goal:** Test whether a supplied positive projective PGRL source ray canonically determines a hidden tangent direction, a radial hidden-fiber first-contact point, and the v14.02 canonical local dual ray.
 
-**Architecture:** Reuse the certified v14.02 full-hidden-fiber boundary and normal-cone machinery by loading `ResearchHistory/UQCF-GEM/v14/v14.02/dual_normal_audit.py` dynamically. Add a focused v14.03 audit that computes the exact PGRL tangent in the archived coefficient-space support, projects that tangent into the exact hidden kernel, maps the normalized hidden component to radial first contact, and audits invariance under positive source rescaling, identity shifts, and support-coordinate unitary changes. Keep the provenance-to-source-ray origin as a separate archive audit so a positive supplied-source result cannot be mistaken for a derived Genesis/provenance source law.
+**Architecture:** Reuse the certified v14.02 full-hidden-fiber construction and normal-cone machinery by loading `ResearchHistory/UQCF-GEM/v14/v14.02/dual_normal_audit.py` dynamically. Add a focused v14.03 audit that computes the exact PGRL tangent in the archived coefficient-space support, projects that tangent into the exact hidden kernel, maps the normalized hidden component to radial first contact, and audits invariance under positive source rescaling, identity shifts, and support-coordinate unitary changes. For the archived diagonal coordinates, certify agreement with v14.02 `radial_boundary`; for arbitrary support-coordinate unitaries, use the same generalized-eigenvalue boundary formula with a full matrix `X0^{-1/2}`, because v14.02's implementation intentionally assumes diagonal `X0`. Keep the provenance-to-source-ray origin as a separate archive audit so a positive supplied-source result cannot be mistaken for a derived Genesis/provenance source law.
 
 **Tech Stack:** Python 3.11, NumPy 2.4.6, SciPy 1.17.1, GitHub Actions.
 
@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - Work only on branch `research/v14.03-projective-source-ray` until exact-SHA certification succeeds.
-- Reuse the archived compatibility construction and certified v14.02 boundary/dual machinery; do not replace either with a new primary toy model.
+- Reuse the archived compatibility construction and certified v14.02 boundary/dual mathematics; do not replace either with a new primary toy model.
 - Use the full support coefficient state `X0`, the full Hilbert–Schmidt hidden kernel, and supplied Hermitian support-space source covectors.
 - Deterministic RNG seed: `1403`.
 - Survey exactly `64` primary sources for `V_A` and exactly `64` for `V_B`.
@@ -61,6 +61,7 @@ result["survey"]["V_B"]["sample_count"] == 64
 result["max_tangent_hermiticity_residual"] < 2e-11
 result["max_tangent_trace_abs"] < 2e-11
 result["max_finite_difference_relative_error"] < 2e-7
+result["max_base_boundary_formula_relative_error"] < 2e-9
 result["max_projective_hidden_direction_drift"] < 2e-9
 result["max_projective_boundary_relative_drift"] < 2e-9
 result["max_projective_dual_ray_drift"] < 2e-9
@@ -126,7 +127,7 @@ Diagonalize faithful `X0`; transform `P`; form the logarithmic-mean matrix stabl
 
 - [ ] **Step 4: Implement finite PGRL state only for tangent verification**
 
-Use `scipy.linalg.logm/expm` or an eigen-decomposition equivalent to evaluate
+Use an eigen-decomposition or `scipy.linalg.expm` to evaluate
 
 `exp(log(X0)+sP)/Tr(exp(...))`.
 
@@ -142,7 +143,7 @@ Commit message: `feat: implement exact v14.03 PGRL source tangents`.
 
 ---
 
-### Task 3: Implement hidden projection, radial first contact, and canonical dual representative
+### Task 3: Implement hidden projection, coordinate-covariant radial first contact, and canonical dual representative
 
 **Files:**
 - Modify: `ResearchHistory/UQCF-GEM/v14/v14.03/source_ray_audit.py`
@@ -150,6 +151,7 @@ Commit message: `feat: implement exact v14.03 PGRL source tangents`.
 **Interfaces:**
 - Produces:
   - `project_hidden(modes, dotX) -> dict`
+  - `coordinate_covariant_radial_boundary(X0, D) -> dict`
   - `source_contact(cfg, P) -> dict`
   - `oriented_dual_representative(cfg, boundary, normal) -> ndarray`
 
@@ -168,11 +170,24 @@ and verify projection reconstruction/idempotence to numerical precision.
 
 If `||V|| <= 1e-10*max(1,||dotX||)`, classify `ZERO_HIDDEN_SOURCE_COMPONENT`; do not normalize it.
 
-- [ ] **Step 3: For nonzero hidden response, compute radial first contact with v14.02**
+- [ ] **Step 3: Implement the coordinate-covariant radial formula**
 
-Set `u=V/||V||`, use HS coordinates `coords/||coords||`, and call the certified v14.02 `radial_boundary(X0,modes,u_coords)` followed by `normal_cone_audit`.
+For a Hermitian unit hidden direction `D`, diagonalize faithful `X0=U diag(p) U†`, build
 
-- [ ] **Step 4: Construct a coordinate-free inward dual representative**
+```python
+X0_inv_sqrt = U @ diag(1/sqrt(p)) @ U.conj().T
+G = herm(X0_inv_sqrt @ D @ X0_inv_sqrt)
+r = -1/eigvalsh(G)[0]
+Xstar = herm(X0 + r*D)
+```
+
+then apply the same nullity/simple-boundary conventions as v14.02. On the original archived diagonal coordinates, also call certified v14.02 `radial_boundary(X0,modes,coords/||coords||)` and require the two boundary matrices/radii to agree below `2e-9`. Record the maximum agreement error as `max_base_boundary_formula_relative_error`.
+
+- [ ] **Step 4: For nonzero hidden response, compute first contact and v14.02 normal**
+
+Set `D=V/||V||`, use `coordinate_covariant_radial_boundary`, and pass the resulting `Xstar/evals/evecs/tau_null/...` record to certified v14.02 `normal_cone_audit`.
+
+- [ ] **Step 5: Construct a coordinate-free inward dual representative**
 
 From `representative_g`, reconstruct
 
@@ -182,7 +197,7 @@ NH = np.einsum("a,aij->ij", g, modes, optimize=True)
 
 orient it so the center displacement has positive support pairing, normalize by Frobenius norm, and return the representative. Reject zero or non-ray normal results as unresolved/nonunique according to the frozen gate logic.
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 6: Commit**
 
 Commit message: `feat: map supplied source rays to hidden first contact`.
 
@@ -221,7 +236,7 @@ Construct eight deterministic unitary matrices by QR decomposition of complex Ga
 
 `L'=L U†`, `X0'=U X0 U†`, `P'=U P U†`, `Q'_a=U Q_a U†`.
 
-Recompute the complete source-contact pipeline in transformed coordinates and verify conjugation covariance of `dotX`, hidden projection, boundary, and dual representative.
+Recompute the complete source-contact pipeline with the coordinate-covariant radial wrapper and verify conjugation covariance of `dotX`, hidden projection, boundary, and dual representative. Do not call v14.02 `radial_boundary` on the non-diagonal transformed `X0`.
 
 - [ ] **Step 4: Commit**
 
@@ -272,7 +287,7 @@ Commit message: `test: add v14.03 source controls and provenance audit`.
 
 - [ ] **Step 1: Aggregate the frozen survey**
 
-For each configuration record sample count, source hash, support/hidden dimensions, zero-hidden count, nonzero-contact count, simple/ray boundary count, projective/gauge maxima, tangent finite-difference maxima, and sample-level records sufficient for audit.
+For each configuration record sample count, source hash, support/hidden dimensions, zero-hidden count, nonzero-contact count, simple/ray boundary count, projective/gauge maxima, tangent finite-difference maxima, base-formula agreement, and sample-level records sufficient for audit.
 
 - [ ] **Step 2: Adjudicate mechanically**
 
