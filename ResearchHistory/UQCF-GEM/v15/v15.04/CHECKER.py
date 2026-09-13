@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import json
+
 from equivariant_source_law_audit import run_audit
 
 r = run_audit()
@@ -26,3 +28,4 @@ assert r["scientific_breakthrough"] is False
 assert r["Pillar_3"] == "OPEN"
 
 print("V15_04_EQUIVARIANT_SOURCE_LAW_CHECKER_PASS")
+print(json.dumps(r, indent=2, sort_keys=True))
