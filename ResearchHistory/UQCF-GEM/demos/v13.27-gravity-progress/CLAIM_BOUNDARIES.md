@@ -28,7 +28,7 @@ This is a homogeneity theorem about the **selection rules at a fixed state/tange
 
 ## What the executable model computes
 
-- an exact faithful six-qubit thermal state and exponential source family;
+- an exact faithful six-qubit thermal state and exact exponential source family;
 - exact one- and two-qubit reduced states;
 - local BKM information-response metrics;
 - connected pair-correlation tensors;
@@ -66,7 +66,7 @@ x_C=\frac{\operatorname{Tr}H_C-1}{2}
 
 before clipping and records any clip excess.
 
-The canonical scan contains eight `theta_C = pi` events. The maximum clip excess is approximately `2.22e-16`, below the declared `1e-12` audit threshold. Thus the observed pi events are not adjudicated as clipping artifacts. They remain finite group-angle diagnostics, not Riemann curvature, deficit angles of a derived metric simplex, or continuum curvature density.
+The canonical scan contains nine `theta_C = pi` events. The maximum clip excess is `4.440892098500626e-16`, below the declared `1e-12` audit threshold. Thus the observed pi events are not adjudicated as clipping artifacts. They remain finite group-angle diagnostics, not Riemann curvature, deficit angles of a derived metric simplex, or continuum curvature density.
 
 ## Source/current boundary
 
