@@ -40,6 +40,13 @@ def _relative_error(a: np.ndarray, b: np.ndarray) -> float:
     return float(np.linalg.norm(a - b) / denom)
 
 
+def _block_diag(a: np.ndarray, b: np.ndarray) -> np.ndarray:
+    out = np.zeros((a.shape[0] + b.shape[0], a.shape[1] + b.shape[1]), dtype=float)
+    out[: a.shape[0], : a.shape[1]] = a
+    out[a.shape[0] :, a.shape[1] :] = b
+    return out
+
+
 def _candidate_weights() -> dict[str, np.ndarray]:
     return {
         "linear_positive": np.diag(1.0 + CHI),
@@ -124,6 +131,21 @@ def run_audit() -> dict:
             target = Eop @ operators[name] @ V.T
             max_covariance_error = max(max_covariance_error, _relative_error(Ap, target))
 
+    # Strict disjoint composition is inherited by every pointwise scalar weighting.
+    # Therefore the frozen disjoint-composition law is a consistency condition but not
+    # a selector among f(chi). Each candidate is checked against its direct-sum operator.
+    B2 = _block_diag(B, B)
+    C2 = _block_diag(C, C)
+    P2 = cycle_projector(B2)
+    max_disjoint_composition_error = 0.0
+    for name, W in weights.items():
+        W2 = _block_diag(W, W)
+        A2 = candidate_operator(P2, W2, B2, C2)
+        target = _block_diag(operators[name], operators[name])
+        max_disjoint_composition_error = max(
+            max_disjoint_composition_error, _relative_error(A2, target)
+        )
+
     # Faithful-interior positivity theorem control. A positive-definite center has an open
     # neighborhood, so finitely many distinct bounded directions all remain feasible for
     # one sufficiently small common epsilon. Positivity therefore cannot select one of them.
@@ -166,6 +188,7 @@ def run_audit() -> dict:
         and max_direction_separation > 1e-3
         and max_scaling_error < 2e-12
         and max_covariance_error < 2e-12
+        and max_disjoint_composition_error < 2e-12
         and positivity_does_not_select
     ):
         gate_outcome = "NONUNIQUE"
@@ -195,6 +218,8 @@ def run_audit() -> dict:
         "candidate_operator_span_rank": candidate_operator_span_rank,
         "max_relative_source_scaling_error": max_scaling_error,
         "max_covariance_error": max_covariance_error,
+        "max_disjoint_composition_error": max_disjoint_composition_error,
+        "composition_selector_classification": "PRESERVED_BY_ALL_CANDIDATES_NOT_SELECTOR",
         "max_normalized_candidate_direction_separation": max_direction_separation,
         "nonzero_trial_outputs": nonzero_trial_count,
         "candidate_count": len(operators),
@@ -218,10 +243,10 @@ def run_audit() -> dict:
         },
         "positive_control_reconstruction_error": positive_control_error,
         "incidence_theorem": "P_cyc B^T = 0: an incidence-exact source 1-cochain has zero cycle-space component",
-        "weighted_family_interpretation": "state/relational weighting can create nonzero cycle defects, but covariance and source linearity permit multiple inequivalent weighting functionals",
+        "weighted_family_interpretation": "state/relational weighting can create nonzero cycle defects, but covariance, source linearity, strict disjoint composition, and positivity do not select one weighting functional",
         "gate_outcome": gate_outcome,
         "branch_status": branch_status,
-        "claim_scope": "current frozen architecture plus the audited incidence/state-weighted and PSD-positivity construction class; not all conceivable deeper nonlinear laws",
+        "claim_scope": "current frozen architecture plus the audited incidence/state-weighted, strict-disjoint-composition, and PSD-positivity construction class; not all conceivable deeper nonlinear laws",
         "Pillar_3": "OPEN",
     }
 
