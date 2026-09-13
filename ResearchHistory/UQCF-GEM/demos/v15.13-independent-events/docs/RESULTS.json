@@ -1,0 +1,35 @@
+{
+  "version": "v15.13",
+  "status": "EXECUTED_CONDITIONAL_PARTIAL_ORDER_DEMONSTRATOR",
+  "record_assignments": 16,
+  "schedules_per_assignment": 6,
+  "runs_checked": 96,
+  "ideals_per_assignment": 9,
+  "max_state_error": 1.019305133709777e-15,
+  "max_mass_error": 1.3877787807814457e-16,
+  "max_subnormalized_error": 4.087692006453702e-16,
+  "max_contextual_weight_change": 0.19168128140768237,
+  "joint_distribution_normalization_error": 3.219646771412954e-15,
+  "cross_stream_kraus_commutator": 1.7441804986280772e-15,
+  "pretime": {
+    "state_change": 0.3916792346722228,
+    "inverse_error": 8.092285138607935e-16,
+    "product_state_residual": 0.53773517307128,
+    "partial_transpose_min_eigenvalue": -0.2631133500869276,
+    "extent_semantics": "FINITE_TRANSFORMATION_COORDINATE_NOT_TIME"
+  },
+  "negative_control": {
+    "classification": "DELIBERATELY_COUPLED_CONTROL_NOT_A_PHYSICAL_ADDITION",
+    "cross_commutator": 1.2809558539916996,
+    "shared_ideal_state_error": 0.3528341300637464,
+    "joint_mass_difference": 0.005340039820930065,
+    "final_normalized_state_error": 0.32093378105150966
+  },
+  "physical_duration": null,
+  "new_physical_axioms": [],
+  "source_law_derived": false,
+  "entropy_production_derived": false,
+  "Pillar_3": "OPEN",
+  "scientific_breakthrough": false,
+  "scope": "Carrier, instruments, local dependencies, and actual records supplied; only their computational interleaving is varied."
+}
