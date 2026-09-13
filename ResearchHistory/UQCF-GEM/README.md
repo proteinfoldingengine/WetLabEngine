@@ -16,18 +16,18 @@ This directory is the canonical Git-tracked history for the active UQCF-GEM / Re
 ```text
 pre-time quantum relations / global compatibility
     -> hidden global completion / source-response structure
-    -> relational identity / polar transport
+    -> relational identity / polar transport candidates
     -> RESA soldered geometry
-    -> retained holonomy / curvature
+    -> retained holonomy / curvature program
     -> BKM score-solder metric channel (conditional metric selection)
     -> generic metric-affine parent geometry
        Gamma = Gamma_LC + K(T) + L(Q)
     -> special Q=0, T=0 Levi-Civita sector (conditional, not generically source-invariant)
-    -> represented Path-A q,pi,constraint/ADM structure
+    -> represented Path-A q,pi,constraint correspondence program
     -> retained source/current bridge
        absolute (T_obs,kappa_obs) split blocked by RSCL
        projective source ray preserved
-       direct coupled source Sigma_obs=kappa_obs T_obs blocked by missing RGCL
+       direct coupled source Sigma_obs=kappa_obs T_obs blocked by missing target-blind coupling law
 ```
 
 ## Current Pillar status
@@ -72,17 +72,20 @@ Tracked gates:
 - [v13.24](v13/v13.24/) — post-QRSL dependency reassessment; finite/QMAR/Path-A stack preserved.
 - [v13.25](v13/v13.25/) — retained source-ledger bridge blocked by exact common source-normalization degeneracy; RSCL isolated.
 - [v13.26](v13/v13.26/) — RSCL irreducible relative to the frozen ontology; absolute-source-calibration branch stop.
-- [v13.27](v13/v13.27/) — direct `Sigma_obs=kappa_obs T_obs` not derived; projective source ray survives but geometric coupling magnitude/tensor completion require RGCL.
+- [v13.27](v13/v13.27/) — direct `Sigma_obs=kappa_obs T_obs` not derived; projective source ray survives but geometric coupling magnitude/tensor completion require additional structure.
 
-## Companion full-stack simulation
+## Companion finite-model path / obstruction artifact
 
-- [v13.27 Gravity Progress Simulation](demos/v13.27-gravity-progress/) — deterministic six-qubit integration harness covering the exact finite PGRL source family, BKM metrics, polar transport, nonmetricity, loop holonomy, balanced source currents, QMAR response, represented DeWitt-sign diagnostics, the projective `Sigma` boundary, and the explicit RGCL / physical-Einstein-closure stop.
-- Canonical portable scientific fingerprint: `6f2830c47a877676f6ff4ad028769bb285d00f9194f33035c85dd785b3e9f5b6`.
-- The raw all-floats telemetry SHA is retained only as an archival numerical diagnostic because machine-epsilon LAPACK/SVD differences can change it without changing the scientific invariants.
-- CI workflow `.github/workflows/uqcf-v1327-gravity-progress.yml` verifies the tests/checker and regenerates the PNG/GIF/MP4/CSV/JSON artifact on relevant pushes to `main`.
+- [v13.27 Finite Quantum-Relational Path and Projective Coupling Obstruction](demos/v13.27-gravity-progress/) — peer-review-rescoped deterministic six-qubit integration harness. It computes BKM information metrics, connected pair correlations, audited O(3) polar factors, an explicit SO(3) orientation-preserving projection, metric mismatch, finite loop diagnostics, balanced graph currents, response diagnostics, and the fixed-state projective homogeneity obstruction.
+- The artifact does **not** derive physical space, time, stress-energy, ADM constraints, an absolute gravitational coupling, or Einstein equations.
+- The canonical transport audit finds raw reflections in `200/200` edge/frame samples; the SO(3) transport is therefore an explicit modeling choice in this example.
+- The canonical loop audit finds `9` pi-angle events with no clip event above `1e-12`; maximum clip excess is `4.440892098500626e-16`.
+- Canonical portable scientific fingerprint: `f632e656cc2ea1fc5d61b395080d7259ecfed21c9bd8379626da49f44d6c38fc`.
+- Reference raw telemetry SHA (diagnostic only): `0056223006f943b596e20509c4e77f0020eee3de4064ac83cd9a5ab6a3010f91`.
+- CI workflow `.github/workflows/uqcf-v1327-gravity-progress.yml` verifies the test suite, checker, full rendering pipeline and reproducibility artifacts.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the append-only gate ledger.
 
 ## Validation
 
-Each tracked gate directory carries its own `CHECKER.py` and machine-readable `SUMMMARY.json`. The active frontier is v13.27; the next research target is v13.28, the RGCL Origin / Source-to-Coframe Variational Pairing Gate.
+Each tracked gate directory carries its own `CHECKER.py` and machine-readable summary. The active frontier is v13.27. The next research target is a controlled audit of named candidate source→geometry pairings, with only three allowed outcomes: `DERIVED`, `OBSTRUCTED`, or `REQUIRES_NEW_AXIOM`.
