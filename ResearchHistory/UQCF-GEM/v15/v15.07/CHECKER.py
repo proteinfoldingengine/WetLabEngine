@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -17,6 +18,27 @@ else:
     raise AssertionError("mutually exclusive v15.07 adjudications must raise")
 
 s = run_audit()
+
+# Additional exact source-origin evidence added after the first GREEN audit.
+# These reports make the semantic boundary explicit: PGRL acts at supplied
+# states, Genesis/source anchoring is identity/compatibility structure, and
+# neither rule defines sourcehood as neutral-reference-to-state preparation.
+EXTRA_SOURCE_BINDINGS = {
+    "ResearchHistory/UQCF-GEM/v13/v13.04/REPORT.md": "e857d81f58a540833a7672fe769b2a301bad4459",
+    "ResearchHistory/UQCF-GEM/v13/v13.25/REPORT.md": "65847800d6c079803e7c18537ef57cdc7f87da25",
+    "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md": "9917085b211ca0e1f4737082227f55097cc72b66",
+}
+
+
+def git_blob_sha(path: Path) -> str:
+    data = path.read_bytes()
+    payload = b"blob " + str(len(data)).encode("ascii") + b"\0" + data
+    return hashlib.sha1(payload).hexdigest()
+
+
+repo_root = Path(__file__).resolve().parents[4]
+for rel, expected_sha in EXTRA_SOURCE_BINDINGS.items():
+    assert git_blob_sha(repo_root / rel) == expected_sha, f"source-origin archive binding changed: {rel}"
 
 # Scientific gates are enforced independently from frozen-value reproducibility.
 assert s["version"] == "v15.07"
@@ -78,6 +100,8 @@ def summary_view(live: dict) -> dict:
     r = live["relative_density_generator"]
     e = live["neutral_to_state_endpoint"]
     b = live["source_identification_boundary"]
+    extended_bindings = dict(frozen["archive_bindings"])
+    extended_bindings.update(EXTRA_SOURCE_BINDINGS)
     return {
         "version": live["version"],
         "gate": live["gate"],
@@ -88,11 +112,14 @@ def summary_view(live: dict) -> dict:
         "scientific_breakthrough": live["scientific_breakthrough"],
         "Pillar_3": live["Pillar_3"],
         "frozen_dependency_audit": {
-            "archive_bindings": frozen["archive_bindings"],
+            "archive_bindings": extended_bindings,
             "archive_bindings_match_expected": frozen["archive_bindings_match_expected"],
             "classification": frozen["classification"],
             "source_semantics_rule_found": frozen["source_semantics_rule_found"],
+            "v13_04_supplied_state_semantics": "PGRL acts at each supplied faithful state and does not prescribe the baseline-state origin",
             "v13_11_forces_P_equal_centered_log_rho": frozen["v13_11"]["forces_P_equal_centered_log_rho"],
+            "v13_25_source_origin_scope": "Genesis/source anchoring plus source-current compatibility; no state-preparation source semantics",
+            "v13_26_genesis_semantics": "Genesis anchoring is source-origin identity/compatibility and does not make origin an absolute source strength",
             "v15_04_a_of_r_selected": frozen["v15_04"]["a_of_r_selected"],
             "v15_05_log_selector_premise_frozen": frozen["v15_05"]["premise_was_frozen"],
             "v15_06_canonical_local_operator_question_answered": "Q_d(rho)=d*rho",
