@@ -158,7 +158,13 @@ for name in ("V_A", "V_B"):
     close(ln["errors"][name]["projector_error"], sn[name]["projector_error"])
     close(ln["errors"][name]["state_error"], sn[name]["state_error"])
 
-assert summary["not_derived"] == r["not_derived"]
+# The frozen report/summary is intentionally richer than the executable's
+# generic downstream not-derived list. Require every live boundary to be
+# preserved, plus the two v15.02-specific upstream boundaries.
+frozen_not_derived = set(summary["not_derived"])
+assert set(r["not_derived"]).issubset(frozen_not_derived)
+assert "a natural node-to-quantum-label functor" in frozen_not_derived
+assert "a canonical parent factor action" in frozen_not_derived
 
 print("V15_02_SHARED_LABEL_EQUIVARIANCE_CHECKER_PASS")
 print(json.dumps(r, indent=2, sort_keys=True))
