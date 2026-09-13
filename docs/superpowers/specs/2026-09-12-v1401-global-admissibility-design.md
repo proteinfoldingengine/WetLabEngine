@@ -49,7 +49,7 @@ Exactly one of:
 - `NONUNIQUE`: nonzero lawful deformations exist, but the frozen ontology admits two or more inequivalent choices and does not select among them.
 - `NO_NATIVE_DEFORMATION`: the frozen operations generate no nonzero deformation at all.
 
-If the outcome is `NONUNIQUE` or `NO_NATIVE_DEFORMATION`, the branch stops. A later restart requires an explicit new source→higher-incidence axiom or independently calibrated cross-domain observable.
+If the outcome is `NONUNIQUE` or `NO_NATIVE_DEFORMATION`, this audited branch stops. A later restart requires an explicit new source→higher-incidence axiom or independently calibrated cross-domain observable.
 
 ## Candidate audit
 
@@ -101,13 +101,11 @@ Then
 
 can be nonzero because \(W_f\) need not preserve the cut/cycle orthogonal split.
 
-Test at least three positive functions, e.g.
+Test three positive functions:
 
 \[
-f_1(x)=1+x,\qquad f_2(x)=e^x,\qquad f_3(x)=1+x^2,
+f_1(x)=1+x,\qquad f_2(x)=e^x,\qquad f_3(x)=1+x^2.
 \]
-
-on a deterministic connected graph with cycle dimension at least two.
 
 Required tests:
 
@@ -118,13 +116,37 @@ Required tests:
 
 If multiple such maps satisfy the same structural rules, covariance/naturality has not selected a unique \(\eta\).
 
-### D. Scale family
+### D. Global-positivity selector audit
+
+Positivity must not be silently treated as a selector.
+
+**Faithful interior.** For a positive-definite center \(X_0\succ0\), the PSD cone is open relative to the Hermitian space: every finite family of bounded Hermitian perturbations \(\Delta_a\) remains feasible for one sufficiently small common \(\epsilon>0\). Therefore interior positivity can certify multiple candidate directions simultaneously and cannot select one.
+
+Use a fixed injective control embedding of the seven edge-defect coordinates into `Sym(4)` only to test this geometric fact; it is not a physical stress tensor or coframe map. Require a common positive \(\epsilon\) for all candidate/trial perturbations and a strictly positive minimum eigenvalue margin.
+
+**Boundary.** For the simple PSD boundary point
+
+\[
+X_b=\operatorname{diag}(0,1,1,1),
+\]
+
+with kernel vector \(e_0\), first-order PSD feasibility requires
+
+\[
+e_0^T\Delta e_0\ge0.
+\]
+
+`Sym(4)` has dimension 10 and the equality lineality subspace \(e_0^T\Delta e_0=0\) has dimension 9. Thus the boundary supplies an inequality/normal cone, not a unique source→defect direction. Record this as `INEQUALITY_FILTER_NOT_CANONICAL_SOURCE_MAP`.
+
+This closes the loophole that global positivity by itself might secretly pick one deformation at a compatibility boundary.
+
+### E. Scale family
 
 For any lawful nonzero \(\eta\), positive scalar multiples \(c\eta\) preserve linearity and covariance. Unless a normalization already exists upstream, this remains an additional nonuniqueness.
 
 This is logically separate from the v13.28 downstream coupling scale, but mathematically analogous: structural covariance alone does not select a nonzero coefficient.
 
-### E. Positive control
+### F. Positive control
 
 Supply an explicit new law by declaring both the weighting functional \(f_*\) and normalization \(c_*\). Verify that the deformation then becomes unique by construction. This demonstrates gate sensitivity and must be labeled `ADDED_LAW_POSITIVE_CONTROL`, not a derivation.
 
@@ -139,16 +161,18 @@ Use source scales
 Record:
 
 - incidence-only cycle leakage norm;
-- minimum weighted defect norm;
+- minimum weighted operator norm;
 - max source-linearity error;
 - max covariance error under signed edge / vertex permutations;
 - maximum normalized direction separation between candidate weighted maps;
 - rank of the span of candidate defect operators;
+- faithful-interior common positivity radius and minimum margin;
+- boundary tangent-cone lineality dimension;
 - positive-control reconstruction error.
 
 ## Claim boundary
 
-A `NONUNIQUE` result means only that the current frozen ontology does not select a canonical source-dependent admissibility deformation from the audited native construction class. It does not prove that no deeper nonlinear/global law can do so.
+A `NONUNIQUE` result means only that the current frozen ontology does not select a canonical source-dependent admissibility deformation from the audited incidence/state-weighted/PSD-positivity construction class. It does not prove that no deeper nonlinear/global law can do so.
 
 A `NO_NATIVE_DEFORMATION` result is even narrower: it means the audited frozen operations fail to generate a nonzero law-level deformation.
 
