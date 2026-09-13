@@ -4,6 +4,7 @@ from pathlib import Path
 
 from common_parent_audit import run_audit
 
+HERE = Path(__file__).resolve().parent
 r = run_audit()
 assert r["version"] == "v15.01"
 assert r["seed"] == 1501
@@ -22,10 +23,10 @@ assert p["max_projective_descent_error"] < 2e-11
 inv = r["archive_inventory"]
 assert inv["candidate_count"] >= 5
 assert inv["missing_artifact_count"] == 0
-assert inv["same_parent_source_class_count"] >= 0
-assert inv["support_preserving_parent_tangent_count"] >= 0
+assert inv["same_parent_source_class_count"] == 0
+assert inv["support_preserving_parent_tangent_count"] == 0
 
-extended = json.loads((Path(__file__).with_name("ARCHIVE_SWEEP.json")).read_text())
+extended = json.loads((HERE / "ARCHIVE_SWEEP.json").read_text())
 assert extended["version"] == "v15.01"
 assert len(extended["candidates"]) >= 2
 assert all(c["same_parent_source_class"] is False for c in extended["candidates"])
@@ -41,11 +42,58 @@ assert ctrl["max_projective_descent_error"] < 2e-11
 assert ctrl["support_preserving_tangent_leakage"] < 2e-11
 assert ctrl["tangent_roundtrip_projective_residual"] < 2e-9
 
-assert r["gate_outcome"] in {
-    "COMMON_PARENT_INDUCES_SOURCE_RAY",
-    "COMMON_PARENT_SOURCE_OPERATOR_NONUNIQUE",
-    "NO_COMMON_PARENT_REPRESENTATION",
-    "UNRESOLVED_COMMON_PARENT_AUDIT",
-}
+assert r["gate_outcome"] == "NO_COMMON_PARENT_REPRESENTATION"
+
+summary = json.loads((HERE / "SUMMARY.json").read_text())
+assert summary["version"] == r["version"]
+assert summary["seed"] == r["seed"]
+assert summary["gate_outcome"] == r["gate_outcome"]
+assert summary["secondary_status"] == p["status"]
+assert summary["parent_dimension"] == r["parent_dimension"]
+assert summary["support_dimension"] == r["support_dimension"]
+assert summary["Pillar_3"] == r["Pillar_3"]
+assert summary["scientific_breakthrough"] is False
+
+sp = summary["parent_support"]
+for key in (
+    "max_isometry_error",
+    "max_reconstruction_error",
+    "max_projector_hermiticity_error",
+    "max_projector_idempotence_error",
+    "max_compression_covariance_error",
+    "max_projective_descent_error",
+):
+    assert abs(float(sp[key]) - float(p[key])) < 1e-15
+
+si = summary["archive_inventory"]
+assert si["core_candidate_count"] == inv["candidate_count"]
+assert si["extended_candidate_count"] == len(extended["candidates"])
+assert si["missing_artifact_count"] == inv["missing_artifact_count"]
+assert si["same_parent_source_class_count"] == inv["same_parent_source_class_count"]
+assert si["support_preserving_parent_tangent_count"] == inv["support_preserving_parent_tangent_count"]
+
+live_hashes = {x["name"]: x["sha256"] for x in inv["inventory"]}
+frozen_hashes = {x["name"]: x["sha256"] for x in si["core_candidates"]}
+assert frozen_hashes == live_hashes
+
+frozen_ext = {x["name"]: x["git_blob_sha"] for x in si["extended_candidates"]}
+live_ext = {x["name"]: x["git_blob_sha"] for x in extended["candidates"]}
+assert frozen_ext == live_ext
+
+sc = summary["positive_control"]
+for key in (
+    "compressed_noncentral_norm",
+    "hidden_norm",
+    "boundary_radius",
+    "max_parent_support_covariance_error",
+    "max_projective_descent_error",
+    "support_preserving_tangent_leakage",
+    "tangent_roundtrip_projective_residual",
+):
+    assert abs(float(sc[key]) - float(ctrl[key])) < 1e-15
+assert sc["selected_configuration"] == ctrl["selected_configuration"]
+assert sc["selected_control"] == ctrl["selected_control"]
+assert sc["normal_classification"] == ctrl["normal_classification"]
+
 print("V15_01_COMMON_PARENT_REPRESENTATION_CHECKER_PASS")
 print(json.dumps(r, indent=2, sort_keys=True))
