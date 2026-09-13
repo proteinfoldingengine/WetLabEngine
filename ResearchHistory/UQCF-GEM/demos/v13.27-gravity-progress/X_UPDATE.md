@@ -18,7 +18,7 @@ So the frozen construction selects at most a projective source class `[Sigma]`; 
 
 Peer review also exposed an important transport boundary: in the canonical 25-frame scan, all 200 unconstrained O(3) polar factors have determinant -1. The SO(3) transports used for loop holonomy are therefore an explicit orientation-preserving projection, not something uniquely forced by the raw polar decomposition.
 
-The eight observed `theta = pi` loop events are not meaningful clip artifacts (`max clip excess ~2.22e-16`).
+The nine observed `theta = pi` loop events are not meaningful clip artifacts (`max clip excess ~4.44e-16`).
 
 Novel path: still interesting.
 Gravity / Einstein closure: not claimed and still open.
@@ -43,7 +43,7 @@ Therefore the construction determines at most `[Sigma]`, not its nonzero magnitu
 
 **5/** Peer review forced a useful new audit. Across 25 frames × 8 edges = 200 samples, every unconstrained polar factor has `det=-1`. So the code’s `SO(3)` edge transport is a declared proper-rotation projection. That choice is now explicit and outside the obstruction theorem.
 
-**6/** The loop-angle audit also resolves the `theta=pi` question: 8 pi-events occur, while the largest pre-clip excess is only about `2.22e-16`. Within the chosen SO(3) construction, the pi events are not caused by numerical clipping at the declared `1e-12` threshold.
+**6/** The loop-angle audit also resolves the `theta=pi` question: 9 pi-events occur, while the largest pre-clip excess is only about `4.44e-16`. Within the chosen SO(3) construction, the pi events are not caused by numerical clipping at the declared `1e-12` threshold.
 
 **7/** What remains open is exactly the physically important part: an independently derived, target-blind source→geometry coupling with a non-arbitrary magnitude and appropriate tensor/coframe meaning.
 
