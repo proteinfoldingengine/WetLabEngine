@@ -5,7 +5,8 @@
 **v14.02 adjudication:** `CANONICAL_DUAL_RAY`  
 **Downstream source→GR absolute-coupling branch:** STOPPED by v13.28  
 **Global source→higher-incidence law:** NOT DERIVED by v14.01  
-**New earned object:** objective-independent local dual ray at a specified smooth compatibility boundary point
+**New earned object:** objective-independent local dual ray at a specified smooth compatibility boundary point  
+**Certification note:** the executable v14.02 checker is bound to the frozen machine-readable summary.
 
 ## Current scientific picture
 
