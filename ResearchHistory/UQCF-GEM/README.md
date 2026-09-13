@@ -19,16 +19,20 @@ pre-time quantum relations / global compatibility
     -> source action under fixed admissibility architecture
     -> canonical incidence source map gives no cycle defect
     -> relationally weighted source->higher-incidence maps can be nonzero
-       but are NONUNIQUE under current covariance/composition/positivity rules
+       but are NONUNIQUE under current covariance/composition/positivity rules (v14.01)
     -> canonical global source-dependent admissibility law not derived
 
 fixed global compatibility fiber
-    -> faithful interior: no boundary selector
     -> specified smooth PSD boundary point
        -> intrinsic hidden-fiber normal cone
-       -> v14.02: nonzero rank-1 local dual ray on 128/128 frozen samples
-       -> boundary-local dual direction derived
-       -> source->boundary/source->hidden lift still underived
+       -> objective-independent rank-1 local dual ray on 128/128 frozen samples (v14.02)
+    -> supplied positive projective support-space PGRL source ray [P]
+       -> exact full-state PGRL tangent
+       -> canonical orthogonal projection into the full hidden kernel
+       -> hidden-tangent radial first-contact point
+       -> v14.02 intrinsic local dual ray
+       -> 128/128 frozen source samples close this conditional chain (v14.03)
+    -> Genesis/provenance -> typed support-space [P] remains underived / type-mismatched
 
 retained geometry / source-current bridge
     -> metric-affine finite kinematics
@@ -85,11 +89,12 @@ Tracked gates:
 ## v14 history — upstream global-admissibility origin
 
 - [v14.01](v14/v14.01/) — canonical incidence gives zero cycle defect; three covariant state-weighted source→cycle-defect maps are nonzero and span rank 3; source linearity, relabel/orientation covariance, strict disjoint composition, and audited PSD positivity do not select one; outcome `NONUNIQUE`.
-- [v14.02](v14/v14.02/) — objective-free convex-dual audit of the archived full hidden compatibility fibers. All `128/128` frozen radial boundary samples (`64` each for `V_A`,`V_B`) are smooth/simple and have nonzero projected intrinsic normal-cone rank `1`; outcome `CANONICAL_DUAL_RAY`. This derives a **boundary-local dual direction at a specified smooth compatibility boundary point**, not a global source law or source lift.
+- [v14.02](v14/v14.02/) — objective-free convex-dual audit of the archived full hidden compatibility fibers. All `128/128` frozen radial boundary samples (`64` each for `V_A`,`V_B`) are smooth/simple and have nonzero projected intrinsic normal-cone rank `1`; outcome `CANONICAL_DUAL_RAY`. This derives a boundary-local dual direction at a specified smooth compatibility boundary point, not a global source law.
+- [v14.03](v14/v14.03/) — supplied positive projective support-space PGRL source rays are mapped through the exact full-state tangent, canonical hidden projection, hidden-tangent radial first contact, and the v14.02 intrinsic local dual ray. All `128/128` frozen sources have nonzero hidden components and simple ray-valued contacts; projective and support-coordinate covariance close under the frozen tolerances. Outcome `PROJECTIVE_SOURCE_RAY_SELECTS_DUAL_RAY`, with separate provenance status `PROVENANCE_SOURCE_TYPE_MISMATCH`.
 
-v14.02 is compatible with the v14.01 stop. v14.01 shows that the frozen architecture does not canonically choose a global source→admissibility deformation. v14.02 shows that **conditional on a specified smooth compatibility boundary point**, the local convex geometry of that fixed fiber does canonically choose one supporting dual ray.
+The v14 results are mutually compatible rather than replacements for one another. v14.01 says the frozen architecture does not canonically choose a global source→admissibility deformation by arbitrary weighting. v14.02 says that, once a smooth compatibility boundary point is specified, the local convex geometry of that fixed fiber supplies one intrinsic dual ray. v14.03 shows that a **supplied** positive projective PGRL source ray canonically supplies the hidden tangent direction and radial boundary point needed to reach that local dual ray.
 
-The next lawful question is therefore not to choose another weighting function. It is whether already-earned provenance/source structure can canonically select a compatibility-boundary point or hidden tangent that can be paired with the v14.02 dual ray, without inserting that lift by hand.
+The unresolved upstream type boundary is now narrower: the frozen Genesis/provenance/source-grading stack does not yet return the required Hermitian projective source/log-density covector on the 25-dimensional support coefficient space, and no certified natural map from provenance data to that typed `[P]` is present.
 
 ## Companion finite-model path / obstruction artifact
 
@@ -104,14 +109,26 @@ The next lawful question is therefore not to choose another weighting function. 
 
 v13.28 remains in force: the frozen downstream source→geometry candidates do not supply an absolute coupling; outcome `REQUIRES_NEW_AXIOM`.
 
-v14.01 remains in force: incidence, state weighting, covariance, source linearity, strict disjoint composition and positivity do not select a unique global source→higher-incidence deformation; outcome `NONUNIQUE`.
+v14.01 remains in force: incidence, arbitrary state weighting, covariance, source linearity, strict disjoint composition and positivity do not select a unique global source→higher-incidence deformation; outcome `NONUNIQUE`.
 
-v14.02 adds a distinct positive boundary fact: at every one of the `128` audited smooth radial boundary points of the two frozen archived compatibility spectrahedra, the intrinsic hidden-fiber normal cone is one nonzero ray. Maximum support-identity error is `3.0357660829594124e-18`, maximum hidden-basis invariance error is `5.911755884943795e-17`, and no primary boundary is numerically unresolved or degenerate under the frozen tolerances.
+v14.02 remains in force: at every one of the `128` audited smooth radial boundary points of the two frozen archived compatibility spectrahedra, the intrinsic hidden-fiber normal cone is one nonzero ray.
 
-This local ray does **not** choose a physical boundary point, source tangent, ray magnitude, stress-energy tensor, gravitational coupling, or Einstein dynamics.
+v14.03 adds a new conditional positive map:
+
+```text
+supplied positive projective support-space [P]
+    -> exact PGRL tangent
+    -> canonical hidden tangent ray
+    -> hidden-tangent radial first-contact point
+    -> canonical v14.02 local dual ray
+```
+
+The frozen survey closes this map on `128/128` sources, with zero nonunique or unresolved cases. Maximum projective hidden-direction drift is `6.163108690215363e-14`, maximum projective boundary drift is `2.0131832593298626e-15`, maximum projective dual-ray drift is `6.661338147750939e-16`, and maximum support-coordinate covariance error is `3.8799143876726434e-13`.
+
+This does **not** derive the provenance origin of `[P]`, an absolute source magnitude, a physical PGRL boundary crossing, stress-energy, gravitational coupling, spacetime, or Einstein equations.
 
 See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only gate ledger.
 
 ## Validation
 
-Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v14.02. The canonical local dual ray is now an earned object that may be tested against source/provenance structure; the source lift itself remains underived and must not be stipulated.
+Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v14.03. Its checker is bound to the frozen machine-readable summary and independently enforces the scientific thresholds. The next lawful upstream target is the typed provenance→projective-source representation problem; it must not be solved by simply declaring a source operator.
