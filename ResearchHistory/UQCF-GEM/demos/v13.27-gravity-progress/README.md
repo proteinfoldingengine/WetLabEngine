@@ -82,13 +82,14 @@ x_C=(\operatorname{Tr}H_C-1)/2
 
 before clipping to `[-1,1]`.
 
-The canonical scan gives:
+The authoritative pinned GitHub scan gives:
 
 ```text
-pi holonomy events:                  8
-clip events above 1e-12:             0
-maximum clip excess:                 ~2.22e-16
-adjudication:                         GENUINE_PI_WITHIN_TOLERANCE_NO_CLIP
+raw cosine range:                     -1.0000000000000004 to 1.0
+pi holonomy events:                   9
+clip events above 1e-12:              0
+maximum clip excess:                  4.440892098500626e-16
+adjudication:                          GENUINE_PI_WITHIN_TOLERANCE_NO_CLIP
 ```
 
 So the observed `theta=pi` events are not meaningful clipping artifacts at the declared threshold. They remain finite group-angle diagnostics conditional on the chosen `SO(3)` projection—not Riemann curvature or a continuum curvature density.
@@ -130,6 +131,18 @@ So the observed `theta=pi` events are not meaningful clipping artifacts at the d
 - an ADM constraint algebra;
 - an absolute gravitational coupling;
 - Einstein equations.
+
+## Frozen certification
+
+Authoritative portable scientific fingerprint:
+
+`f632e656cc2ea1fc5d61b395080d7259ecfed21c9bd8379626da49f44d6c38fc`
+
+Reference raw telemetry hash (diagnostic only):
+
+`0056223006f943b596e20509c4e77f0020eee3de4064ac83cd9a5ab6a3010f91`
+
+The fingerprint includes rounded invariant observables, structural gates, the raw-polar reflection audit, the pre-clip holonomy audit and the claim boundary.
 
 ## The next scientific question
 
@@ -198,7 +211,7 @@ Authoritative frozen values are recorded in `EXPECTED_RESULTS.json`.
 
 ## Journal-facing abstract
 
-> We implement a reproducible six-qubit thermal family and extract local BKM information metrics, audited polar-factor transports, state-dependent metric mismatch, finite SO(3) loop holonomy diagnostics, and a balanced graph current without using Newtonian or Einstein equations as selectors. At a fixed state/tangent point, the retained source-selection rules are positively homogeneous, so the coupled source is determined only up to positive scale. A new audit shows that all 200 sampled unconstrained polar factors are reflections, making the subsequent SO(3) projection an explicit modeling choice; the observed pi loop angles are not attributable to clipping at the declared tolerance. Absolute gravitational coupling, spacetime emergence, and physical Einstein closure are not obtained.
+> We implement a reproducible six-qubit thermal family and extract local BKM information metrics, audited polar-factor transports, state-dependent metric mismatch, finite SO(3) loop holonomy diagnostics, and a balanced graph current without using Newtonian or Einstein equations as selectors. At a fixed state/tangent point, the retained source-selection rules are positively homogeneous, so the coupled source is determined only up to positive scale. A new audit shows that all 200 sampled unconstrained polar factors are reflections, making the subsequent SO(3) projection an explicit modeling choice; nine observed pi loop angles are not attributable to clipping at the declared tolerance. Absolute gravitational coupling, spacetime emergence, and physical Einstein closure are not obtained.
 
 ## Bottom line
 
