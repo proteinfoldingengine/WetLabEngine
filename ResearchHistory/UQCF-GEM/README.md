@@ -15,19 +15,18 @@ This directory is the canonical Git-tracked history for the active UQCF-GEM / Re
 
 ```text
 pre-time quantum relations / global compatibility
-    -> hidden global completion / source-response structure
-    -> relational identity / polar transport candidates
-    -> RESA soldered geometry
-    -> retained holonomy / curvature program
-    -> BKM score-solder metric channel (conditional metric selection)
-    -> generic metric-affine parent geometry
-       Gamma = Gamma_LC + K(T) + L(Q)
-    -> retained source/current bridge
-       absolute (T_obs,kappa_obs) split blocked by RSCL
-       projective source ray [Sigma] preserved
-       frozen source->geometry pairing classes audited in v13.28
-       all four named candidates obstructed for absolute coupling
-       source-to-GR coupling branch stopped pending new axiom or independent calibration
+    -> hidden global completion / positivity
+    -> source action under fixed admissibility architecture
+    -> canonical incidence source map gives no cycle defect
+    -> relationally weighted source->higher-incidence maps can be nonzero
+       but are NONUNIQUE under current covariance/composition/positivity rules
+    -> canonical source-dependent admissibility law not derived
+
+retained geometry / source-current bridge
+    -> metric-affine finite kinematics
+    -> source/current balance + conditional current selection
+    -> projective coupled-source ray [Sigma] preserved
+    -> absolute source->geometry coupling blocked by v13.28
 ```
 
 ## Current Pillar status
@@ -75,6 +74,12 @@ Tracked gates:
 - [v13.27](v13/v13.27/) — direct `Sigma_obs=kappa_obs T_obs` not derived; projective source ray survives but absolute coupled-source magnitude remains undetermined.
 - [v13.28](v13/v13.28/) — all four frozen source→geometry pairing classes obstructed for an absolute coupling; scale-weight pairing no-go closed for the audited candidate class; outcome `REQUIRES_NEW_AXIOM` and branch stop.
 
+## v14 history — upstream global-admissibility origin
+
+- [v14.01](v14/v14.01/) — canonical incidence gives zero cycle defect; three covariant state-weighted source→cycle-defect maps are nonzero and span rank 3; source linearity, relabel/orientation covariance, strict disjoint composition, and audited PSD positivity do not select one; outcome `NONUNIQUE`.
+
+v14.01 is an upstream canonicality audit, not a reopening of v13.28. It asks whether global relational consistency itself already contains the missing source-dependent admissibility law. In the audited class, it does not select a unique one.
+
 ## Companion finite-model path / obstruction artifact
 
 - [v13.27 Finite Quantum-Relational Path and Projective Coupling Obstruction](demos/v13.27-gravity-progress/) — peer-review-rescoped deterministic six-qubit integration harness. It computes BKM information metrics, connected pair correlations, audited O(3) polar factors, an explicit SO(3) orientation-preserving projection, metric mismatch, finite loop diagnostics, balanced graph currents, response diagnostics, and the fixed-state projective homogeneity obstruction.
@@ -84,27 +89,16 @@ Tracked gates:
 - Canonical portable scientific fingerprint: `f632e656cc2ea1fc5d61b395080d7259ecfed21c9bd8379626da49f44d6c38fc`.
 - Reference raw telemetry SHA (diagnostic only): `0056223006f943b596e20509c4e77f0020eee3de4064ac83cd9a5ab6a3010f91`.
 
-## v13.28 branch-stop result
+## Current branch-stop boundaries
 
-The v13.28 audit tested only upstream-frozen candidates:
+v13.28 established that the frozen downstream source→geometry candidates do not supply an absolute coupling; its outcome is `REQUIRES_NEW_AXIOM`.
 
-- Genesis/source grade + retained measure/support;
-- PGRL/BKM source-response pairing;
-- RESA solder/coframe structure;
-- QMAR response/covariance identities.
+v14.01 moved upstream. The exact incidence map satisfies `P_cyc B^T = 0`; nonzero state-weighted source→cycle defects exist only after choosing additional functional structure. Three such witnesses are mutually inequivalent while satisfying the audited covariance, source-linearity and strict-disjoint-composition requirements. Positivity does not select one in the faithful-interior and simple-boundary controls. Its outcome is `NONUNIQUE`.
 
-All four are `OBSTRUCTED` as a derivation of a canonical nonzero absolute source→geometry coupling.
+Neither result is a claim that no deeper theory can generate gravity or a universal source law. They identify where the current frozen architecture stops.
 
-The exact structural reason is the **scale-weight pairing obstruction**: weight-zero geometry data contracted with weight-one source data remain weight one and inherit the arbitrary source normalization; normalizing away that scale leaves only projective information. A compensating calibrated weight `-1` object is sufficient in a positive control, but no such object exists in the frozen candidate set.
-
-The overall v13.28 outcome is:
-
-`REQUIRES_NEW_AXIOM`
-
-The source-to-GR coupling branch is therefore stopped until an explicitly new and independently motivated axiom or independently calibrated physical observable is supplied.
-
-See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the append-only gate ledger.
+See [STATUS.md](STATUS.md) for the current research frontier and [CHANGELOG.md](CHANGELOG.md) for the older append-only gate ledger.
 
 ## Validation
 
-Each tracked gate directory carries its own `CHECKER.py` and machine-readable summary. The latest completed gate is v13.28. There is no automatic next gate on the stopped source-to-GR coupling branch.
+Each completed gate carries an executable checker and machine-readable summary. The latest completed gate is v14.01. The current source-dependent admissibility branch may restart only with an independently motivated new source→higher-incidence/admissibility selector or an independently calibrated physical cross-domain observable.
