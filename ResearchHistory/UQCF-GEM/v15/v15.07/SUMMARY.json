@@ -1,0 +1,94 @@
+{
+  "version": "v15.07",
+  "gate": "Canonical Neutral Reference / Relative-Density Generator Gate",
+  "primary_outcome": "CANONICAL_NEUTRAL_RELATIVE_GENERATOR_EXISTS_SOURCE_IDENTIFICATION_UNDERIVED",
+  "secondary_outcome": "UNIQUE_FRAME_INVARIANT_REFERENCE_IS_MAXIMALLY_MIXED",
+  "tertiary_outcome": "NEUTRAL_TO_STATE_PGRL_ENDPOINT_SELECTS_LOG_PROJECTIVE_RAY_CONDITIONALLY",
+  "major_structural_result": true,
+  "scientific_breakthrough": false,
+  "Pillar_3": "OPEN",
+  "frozen_dependency_audit": {
+    "archive_bindings": {
+      "ResearchHistory/UQCF-GEM/v13/v13.02/REPORT.md": "f560c85c73e3167e034d09ab0fab081e33cd3895",
+      "ResearchHistory/UQCF-GEM/v13/v13.11/REPORT.md": "b18b3582060cb6b6527059987d6635e120ee7fb0",
+      "ResearchHistory/UQCF-GEM/v15/v15.04/REPORT.md": "9a6a289cc5471def4c4d4f86756c3183802d1cc4",
+      "ResearchHistory/UQCF-GEM/v15/v15.05/REPORT.md": "b191c08c22ded0439cc4c2c125fbccfdb677dcbc",
+      "ResearchHistory/UQCF-GEM/v15/v15.06/REPORT.md": "bdeac09b2b162f07baa874ef1c1d6415fdd5e236",
+      "ResearchHistory/UQCF-GEM/v15/v15.06/SUMMARY.json": "0eeff65e80ea26090206b0907119a25a3b7bef45"
+    },
+    "archive_bindings_match_expected": true,
+    "classification": "CANONICAL_OPERATOR_OBJECT_EARNED_SOURCE_SEMANTICS_NOT_EARNED",
+    "source_semantics_rule_found": false,
+    "v13_11_forces_P_equal_centered_log_rho": false,
+    "v15_04_a_of_r_selected": false,
+    "v15_05_log_selector_premise_frozen": false,
+    "v15_06_canonical_local_operator_question_answered": "Q_d(rho)=d*rho"
+  },
+  "canonical_neutral_reference": {
+    "classification": "UNIQUE_FRAME_INVARIANT_REFERENCE_IS_MAXIMALLY_MIXED",
+    "reference_formula": "tau_d=I_d/d",
+    "tested_dimensions": [2, 3, 4, 5],
+    "commutant_nullities": {"2": 1, "3": 1, "4": 1, "5": 1},
+    "all_commutant_nullities_one": true,
+    "max_commutant_residual": 0.0,
+    "max_unitary_invariance_error": 1.9272741954495747e-16,
+    "max_reference_tensor_error": 0.0,
+    "requires_basis_choice": false,
+    "uses_entropy_or_time": false
+  },
+  "relative_density_generator": {
+    "classification": "CANONICAL_RELATIVE_DENSITY_OPERATOR_IS_MULTIPLICATIVE",
+    "relative_operator": "Q_d(rho)=tau_d^{-1/2} rho tau_d^{-1/2}=d*rho",
+    "multiplicative_law": "Q_{d1*d2}(rho tensor sigma)=Q_d1(rho) tensor Q_d2(sigma)",
+    "additive_generator": "K_d(rho)=log Q_d(rho)=log rho + log(d) I",
+    "centered_generator": "K_d^0(rho)=log rho - Tr(log rho) I/d",
+    "generator_shape": "centered_log_rho",
+    "max_relative_operator_tensor_error": 6.675060769998483e-16,
+    "max_log_tensor_additivity_error": 2.896658855432451e-14,
+    "max_centered_log_identity_error": 2.8379538820721116e-15,
+    "max_local_frame_covariance_error": 1.1729620862932955e-14,
+    "uses_reference_beyond_frame_symmetry": false
+  },
+  "neutral_to_state_endpoint": {
+    "classification": "NEUTRAL_TO_STATE_PGRL_ENDPOINT_SELECTS_LOG_PROJECTIVE_RAY_CONDITIONALLY",
+    "status": "CONDITIONAL_ON_SOURCE_AS_NEUTRAL_TO_STATE_PREPARATION_GENERATOR",
+    "max_endpoint_reconstruction_error": 6.123282208614186e-16,
+    "max_generator_identity_error": 3.5046408488399772e-15,
+    "product_endpoint_error": 8.309111647037891e-16,
+    "absolute_generator_scale_selected": false,
+    "projective_generator_ray_selected": true,
+    "premise_frozen_as_source_semantics": false
+  },
+  "source_identification_boundary": {
+    "classification": "CANONICAL_OPERATOR_GENERATOR_DOES_NOT_BY_ITSELF_DEFINE_THE_SOURCE",
+    "frozen_source_equals_neutral_relative_generator_axiom_found": false,
+    "same_state_multiple_valid_pgrl_generators": true,
+    "candidate_generators": ["linear", "log", "polynomial"],
+    "pairwise_global_source_ray_separations": {
+      "linear_vs_log": 0.06248625684944288,
+      "linear_vs_polynomial": 0.08772246091732862,
+      "log_vs_polynomial": 0.025253513918714537
+    },
+    "min_pairwise_global_source_ray_separation": 0.025253513918714537,
+    "min_finite_pgrl_output_eigenvalue": 0.027251058487541124,
+    "max_finite_pgrl_trace_error": 0.0,
+    "canonical_generator_vs_v15_04_log_source_ray_residual": 5.77851202639302e-16
+  },
+  "claim_boundary": {
+    "canonical_neutral_reference_derived": true,
+    "canonical_multiplicative_local_operator_derived": true,
+    "centered_log_generator_derived": true,
+    "neutral_to_state_log_projective_ray_theorem": true,
+    "log_generator_identified_as_physical_source": false,
+    "new_source_semantics_needed": true,
+    "absolute_source_scale_derived": false,
+    "retained_node_to_quantum_site_carrier_derived": false,
+    "graph_site_to_compatibility_parent_map_derived": false,
+    "physical_stress_energy_derived": false,
+    "spacetime_or_einstein_equations_derived": false,
+    "downstream_gravity_used_as_selector": false,
+    "entropy_or_time_used_as_selector": false,
+    "Pillar_3_closed": false
+  },
+  "next_lawful_question": "Does sourcehood in the frozen provenance/Genesis ontology have an independently earned meaning as a neutral-reference-to-state preparation generator? If yes, the positive projective log source ray becomes canonical without downstream fitting; if no, stop and label that semantic identification a NEW ASSUMPTION."
+}
