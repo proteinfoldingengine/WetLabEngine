@@ -1,31 +1,149 @@
-# UQCF-GEM v13.27 Full-Stack Gravity Progress Simulation
+# UQCF-GEM v13.27 — A Finite Quantum-Relational Path and a Projective Coupling Obstruction
 
-This package turns the current retained Path-A research stack into one deterministic executable simulation and one visual narrative.
+This repository artifact implements a reproducible six-qubit laboratory for testing a possible route from finite quantum relations toward geometric and source-coupling structure.
 
-It is designed to answer a narrow question:
+It does **not** claim that gravity, spacetime, ADM dynamics, or the Einstein equations have been derived. Its scientific value is narrower and testable: it exhibits a concrete executable path, identifies which structures arise inside that model, audits the modeling choices, and proves where the frozen source-selection rules become underdetermined.
 
-> How far can the current finite quantum-relational machinery be pushed toward gravity-like geometric structure **without inserting a gravitational force law or using an Einstein residual as a selector?**
+## Central result: fixed-state projective homogeneity obstruction
 
-## What it simulates
+At a fixed state/tangent point, hold the graph, incidence matrix, cycle basis and state-point geometry fixed. The source/current selection uses a minimum-norm solution and a cycle-space response fit. Under positive source-tangent rescaling
+
+\[
+(s,y)\mapsto(c s,c y),\qquad c>0,
+\]
+
+the selected quantities scale as
+
+\[
+J_0\mapsto cJ_0,\qquad a_*\mapsto ca_*,\qquad J\mapsto cJ.
+\]
+
+Therefore any coupled-source representative produced by these degree-one rules obeys
+
+\[
+\Sigma\mapsto c\Sigma.
+\]
+
+The frozen construction determines at most the ray
+
+\[
+[\Sigma]=\{c\Sigma:c>0\},
+\]
+
+not its nonzero magnitude.
+
+This is a theorem about the **selection rules at a fixed state/tangent point**. It is not a claim that rescaling the source generator `P` at fixed `lambda` leaves the full state family or its geometry invariant.
+
+## Why the path remains interesting
+
+The executable chain is:
 
 ```text
-exact 6-qubit relational state
--> PGRL/ETL source family
--> exact local and pair reductions
--> BKM information metrics
+exact six-qubit thermal/source family
+-> exact one- and two-site reductions
+-> local BKM information metrics
 -> connected pair correlations
--> SO(3) polar transports
--> discrete nonmetricity
--> loop holonomy / curvature proxy
--> balanced source/current flow
--> conditional cycle-current selection witness
--> represented q=A^-1
--> DeWitt-sign ADM-like diagnostic
--> projective Sigma = kappa T boundary
--> RGCL missing / physical Einstein closure open
+-> audited O(3) polar factors
+-> declared orientation-preserving SO(3) projection
+-> state-dependent metric mismatch
+-> finite SO(3) loop holonomy diagnostics
+-> balanced graph source/current equation
+-> conditional cycle-current witness
+-> represented q and DeWitt-like quadratic-form diagnostic
+-> projective source-coupling obstruction
 ```
 
-The animation parameter is a **source-family coordinate, not physical time**. The graph embedding is abstract and is **not physical space**.
+No Newtonian inverse-square law is inserted. No Einstein equation or Einstein residual is used to generate, tune, or select the construction.
+
+The novelty claim is therefore about the **integrated, executable route and the obstruction it exposes**, not about novelty of BKM metrics, polar decomposition, incidence currents, holonomy, or DeWitt-type forms individually.
+
+## Peer-review audit results
+
+### Raw polar determinant
+
+For every edge, the code now records the unconstrained closest orthogonal polar factor before forcing proper orientation.
+
+The canonical 25-frame run contains `25 x 8 = 200` edge/frame samples.
+
+```text
+raw O(3) polar factors with det < 0: 200 / 200
+reflection fraction:                 1.0
+```
+
+This is an important boundary: the `SO(3)` transports used in the loop calculation are an **explicit orientation-preserving projection choice**. They are not uniquely forced by the raw polar decomposition in this example.
+
+### Pre-clip holonomy
+
+For each chosen `SO(3)` loop product `H_C`, the code records
+
+\[
+x_C=(\operatorname{Tr}H_C-1)/2
+\]
+
+before clipping to `[-1,1]`.
+
+The canonical scan gives:
+
+```text
+pi holonomy events:                  8
+clip events above 1e-12:             0
+maximum clip excess:                 ~2.22e-16
+adjudication:                         GENUINE_PI_WITHIN_TOLERANCE_NO_CLIP
+```
+
+So the observed `theta=pi` events are not meaningful clipping artifacts at the declared threshold. They remain finite group-angle diagnostics conditional on the chosen `SO(3)` projection—not Riemann curvature or a continuum curvature density.
+
+## What is derived, conditional, controlled, or missing
+
+**Derived inside the finite model**
+
+- faithful finite source family;
+- one-site BKM information metrics;
+- connected pair-correlation tensors;
+- raw O(3) polar-factor audit;
+- state-dependent metric mismatch after the declared SO(3) projection;
+- finite loop group diagnostics;
+- balanced graph source/current relation;
+- the fixed-state projective homogeneity obstruction.
+
+**Conditional / modeling choices**
+
+- the graph, couplings, beta and source support are fixed inputs;
+- BKM is a declared information metric rather than a uniqueness theorem;
+- the proper-rotation `SO(3)` transport is explicitly imposed after the raw-polar audit;
+- cycle-current selection uses a declared response aperture;
+- the resulting graph current is not physical stress-energy.
+
+**Controls, not emergent physics**
+
+- the `D=-4.5` pure-trace and `D=2` traceless DeWitt-like sign values are algebraic identities / implementation controls;
+- the matrix-block distance is a toy underdetermination control, not a `T_{mu nu}` reconstruction;
+- the four-panel animation is a dashboard of the construction, not evidence by itself.
+
+**Not derived**
+
+- physical space or spacetime;
+- physical time (`lambda_source` is not time);
+- a Lorentzian coframe;
+- physical stress-energy;
+- lapse, shift, Hamiltonian or diffeomorphism constraints;
+- an ADM constraint algebra;
+- an absolute gravitational coupling;
+- Einstein equations.
+
+## The next scientific question
+
+`RGCL` is shorthand for the still-missing requirement: an independently motivated, target-blind source→geometry pairing that fixes the appropriate source type and a non-arbitrary coupling magnitude before any Einstein/Newton comparison is consulted.
+
+The next gate is **not** “write RGCL.” It is to audit named candidate pairings already motivated by the frozen ontology. Only three outcomes are allowed:
+
+```text
+DERIVED
+OBSTRUCTED
+REQUIRES_NEW_AXIOM
+```
+
+A no-go in the frozen ontology **or** a repair that succeeds only by inserting a freely chosen dimensionful multiplier counts as failure of the target-blind derivation at that point.
 
 ## Quick start
 
@@ -34,56 +152,27 @@ python -m pip install -r requirements.txt
 python run_simulation.py --quick --no-video
 ```
 
-Full static telemetry:
+Canonical static telemetry:
 
 ```bash
 python run_simulation.py --frames 25 --no-video
 ```
 
-Full animation:
+Canonical animation:
 
 ```bash
 python run_simulation.py --frames 25 --fps 6
 ```
 
-When `ffmpeg` is installed this writes both H.264 MP4 and GIF. Without ffmpeg the GIF still works through Pillow.
-
 ## Outputs
 
-`outputs/summary.json` contains the complete machine-readable telemetry and claim ledger. `outputs/telemetry.csv` contains one row per source-family frame. `outputs/final_frame.png` is the 1920×1080 summary view. Video mode additionally writes `gravity_progress.gif` and, when possible, `gravity_progress.mp4`.
+- `outputs/summary.json` — complete machine-readable telemetry, audit results and claim ledger;
+- `outputs/telemetry.csv` — per-frame scalar and audit telemetry;
+- `outputs/final_frame.png` — 1920x1080 summary dashboard;
+- `outputs/gravity_progress.gif` — historical filename retained for provenance;
+- `outputs/gravity_progress.mp4` — historical filename retained for provenance.
 
-Generated binary outputs are intentionally not required for source control; the deterministic code regenerates them.
-
-## Executed default result
-
-The canonical 25-frame run produced:
-
-```text
-scientific_fingerprint               6f2830c47a877676f6ff4ad028769bb285d00f9194f33035c85dd785b3e9f5b6
-reference raw telemetry hash         e994538f3e04a06270b17b66c21ee29dc07730c5ceaf0805ba412f754624f945
-min global-state eigenvalue          3.7185106924494124e-05
-min local BKM eigenvalue             0.5673128649814877
-max source-balance residual          4.611102534756203e-16
-max projective direction drift       3.380886602644082e-16
-PGRL reparameterization error        9.55170005517049e-16
-DeWitt pure-trace control            -4.5
-DeWitt traceless control             1.9999999999999982
-cycle response-rank deficit          0
-RGCL                                 MISSING
-physical Einstein closure            OPEN
-```
-
-The video generated locally as 25 frames, 1920×1080, H.264, 6 fps.
-
-## Scientific status shown by the four panels
-
-**Pre-time quantum relations.** The network is an abstract layout of quantum factors and relation edges. Node/edge changes come from the exact finite quantum source family.
-
-**Retained metric-affine geometry.** Local BKM metrics and polar relational transports produce nonmetricity defects and finite loop holonomy. The vertical lift is visualization only.
-
-**Source/current + projective coupling.** The graph source is balanced and the selected witness current satisfies `BJ=s` to machine precision. Positive common scaling preserves the ray, directly visualizing the v13.27 coupling-magnitude obstruction.
-
-**ADM-like diagnostics + claim ledger.** The finite `q=A^-1` representation and DeWitt-sign diagnostic are plotted alongside the live scientific ledger so derived results cannot be confused with conditional or missing steps.
+Generated binary outputs are reproducibility artifacts, not source-of-truth inputs. The code regenerates them.
 
 ## Verification
 
@@ -92,35 +181,36 @@ PYTHONPATH=. pytest -q
 python CHECKER.py
 ```
 
-`CHECKER.py` reruns the canonical 25-frame telemetry and checks structural tolerances plus a **portable scientific fingerprint** built from rounded invariant observables and gate outcomes. The full raw telemetry hash is still emitted as an archival numerical diagnostic, but it is not used as the cross-machine certification key because LAPACK/SVD representatives can drift at machine epsilon. Video encoding is deliberately excluded from scientific verification.
+`CHECKER.py` reruns the canonical 25-frame calculation and checks the structural gates, the new polar/holonomy audits, and the portable scientific fingerprint. The full raw telemetry hash remains an archival numerical diagnostic because machine-epsilon LAPACK/SVD differences can alter raw floating-point representatives without changing the audited scientific invariants.
 
-## Read next
+Authoritative frozen values are recorded in `EXPECTED_RESULTS.json`.
 
-- `MATH_AND_PHYSICS.md` — equations and executed values.
-- `CLAIM_BOUNDARIES.md` — what the demo does and does not establish.
-- `REVIEW.md` — archived methods/claims peer review recommending revision and rescoping.
-- `AUTHOR_RESPONSE.md` — first author response, homogeneity lemma, answers to all 24 reviewer questions, and revision commitments.
-- `REVIEW_2.md` — second referee round evaluating whether the first response has actually been executed in the public artifact.
-- `AUTHOR_RESPONSE_2.md` — second author response clarifying the fixed-state obstruction, stronger failure criterion, and binding minimum revision patch.
-- `X_UPDATE.md` — public update copy with the original demo claim boundary.
-- `EXPECTED_RESULTS.json` — frozen executed result used by the checker.
+## Review history and supporting notes
 
-## Peer-review status
+- `MATH_AND_PHYSICS.md` — equations, theorem statement, transport audit and claim boundaries;
+- `CLAIM_BOUNDARIES.md` — concise derived/assumed/conditional/missing classification;
+- `REVIEW.md` — first methods/claims peer review;
+- `AUTHOR_RESPONSE.md` — response to Review 1;
+- `REVIEW_2.md` — second referee round checking whether the response was actually executed;
+- `AUTHOR_RESPONSE_2.md` — response making the five-item minimum revision binding;
+- `X_UPDATE.md` — public language aligned with this rescope;
+- `EXPECTED_RESULTS.json` — frozen certified result.
 
-The first review accepts the artifact as a reproducible finite-model laboratory but recommends that any journal-facing version be rescoped around the **projective source-coupling obstruction**, not presented as a gravity derivation. The first author response accepts that rescoping, treats the DeWitt controls as implementation identities rather than emergent ADM evidence, and freezes explicit failure criteria for the next source-to-geometry coupling gate.
+## Journal-facing abstract
 
-The second review accepts the response letter but explicitly **does not yet accept the artifact as revised**. It identifies the current README/dashboard language as stale relative to the author response and requires a minimum public rescope plus two inexpensive audits (raw unconstrained polar determinant and pre-clip holonomy) before the demo should be treated as a journal-facing methods note. `AUTHOR_RESPONSE_2.md` accepts that disposition and makes the minimum patch binding.
+> We implement a reproducible six-qubit thermal family and extract local BKM information metrics, audited polar-factor transports, state-dependent metric mismatch, finite SO(3) loop holonomy diagnostics, and a balanced graph current without using Newtonian or Einstein equations as selectors. At a fixed state/tangent point, the retained source-selection rules are positively homogeneous, so the coupled source is determined only up to positive scale. A new audit shows that all 200 sampled unconstrained polar factors are reflections, making the subsequent SO(3) projection an explicit modeling choice; the observed pi loop angles are not attributable to clipping at the declared tolerance. Absolute gravitational coupling, spacetime emergence, and physical Einstein closure are not obtained.
 
-No executable scientific result or fingerprint is changed by archiving either review round or response.
+## Bottom line
 
-## Research conclusion
+The artifact supports a **novel and falsifiable path worth investigating**:
 
-The package demonstrates substantial finite **quantum → information geometry → relational transport → metric-affine/ADM-like structure** in one reproducible model. It does not derive a physical gravitational field equation.
+\[
+\text{quantum relations}
+\to\text{information geometry}
+\to\text{declared relational transport}
+\to\text{group/metric diagnostics}
+\to\text{balanced source structure}
+\to\text{projective coupling obstruction}.
+\]
 
-The simulation makes the current missing law explicit:
-
-```text
-RGCL — Retained Geometric Coupling Law
-```
-
-RGCL must fix the target-blind source-to-coframe/geometric coupling magnitude and tensor type before any physical Einstein closure can be claimed.
+It does not claim the destination has already been reached.
