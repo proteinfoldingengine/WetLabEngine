@@ -1,10 +1,10 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-13  
-**Latest completed gate:** v15.07 — Canonical Neutral Reference / Relative-Density Generator Gate  
-**Primary adjudication:** `CANONICAL_NEUTRAL_RELATIVE_GENERATOR_EXISTS_SOURCE_IDENTIFICATION_UNDERIVED`  
-**Secondary:** `UNIQUE_FRAME_INVARIANT_REFERENCE_IS_MAXIMALLY_MIXED`  
-**Tertiary:** `NEUTRAL_TO_STATE_PGRL_ENDPOINT_SELECTS_LOG_PROJECTIVE_RAY_CONDITIONALLY`  
+**Latest completed gate:** v15.08 — Genesis Source-Semantics / Neutral-Preparation Identification Gate  
+**Primary adjudication:** `GENESIS_PROVENANCE_DOES_NOT_IDENTIFY_NEUTRAL_PREPARATION_SOURCE`  
+**Secondary:** `SOURCE_SEMANTICS_IRREDUCIBLE_RELATIVE_TO_FROZEN_ONTOLOGY`  
+**Tertiary:** `LOG_PROJECTIVE_SOURCE_REQUIRES_NEW_SOURCE_SEMANTICS_AXIOM`  
 **Major structural result:** `true`  
 **Scientific breakthrough:** `false`  
 **Pillar 3:** `OPEN`  
@@ -12,54 +12,49 @@
 
 ## Current scientific picture
 
-The upstream source problem has narrowed substantially.
+The operator-source origin problem is now sharply separated into mathematics and semantics.
 
 ```text
 Genesis / frozen provenance
-    -> source origin / grading / source-current structure
-    -> source-current balance and conditional current selection
-    -> no certified natural noncentral support-source representation (v14.04-v15.03)
+    -> source-origin identity
+    -> retained-sequence / append-only legitimacy
+    -> source-role classification
+    -> source grading / source-current compatibility
+    -> does NOT by itself return a local noncentral Hermitian source operator
 
-state-dependent local source law
+local source covariance (v15.04)
     -> F(U rho U^dagger)=U F(rho) U^dagger
-    -> F(rho) is scalar on every rho spectral block
-    -> qubit traceless law = a(r)(rho-I/2)
-    -> covariance fixes direction, not response a(r) (v15.04)
+    -> F(rho) scalar on each spectral block
+    -> qubit traceless family = a(r)(rho-I/2)
+    -> covariance fixes direction, not a(r)
 
-generic composition
-    -> already-supplied local source operators compose naturally
-    -> arbitrary already-chosen a(r) survives associative / swap-natural composition
-    -> frozen composition does not select a(r) (v15.05)
+generic composition (v15.05)
+    -> arbitrary already-chosen a(r) composes associatively / naturally
+    -> frozen tensor composition does not select a(r)
+    -> stronger universal functional-calculus tensor law would select log
+    -> stronger premise was not frozen
 
-conditional log-selector theorem
-    -> universal scalar functional calculus + centered tensor derivation
-    -> f(x)=alpha log x+beta
-    -> log projective shape selected
-    -> premise was not frozen (v15.05)
-
-recoverability multiplicativity
+recoverability multiplicativity (v15.06)
     -> root fidelity is multiplicative on independent recovery pairs
-    -> -log F_root is additive
-    -> this remains a scalar comparison generator
-    -> exact recovery can stay F_root=1 while local spectra/source rays vary
-    -> scalar recoverability does not select the operator source (v15.06)
+    -> -log root fidelity is additive
+    -> this is a scalar comparison generator
+    -> scalar recoverability does not select a local Hermitian source
 
-canonical local operator
-    -> require a normalized state with no preferred local quantum frame
-    -> unique reference tau_d = I_d/d
-    -> tau_{d1*d2}=tau_d1 tensor tau_d2
-    -> Q_d(rho)=tau_d^{-1/2} rho tau_d^{-1/2}=d rho
-    -> Q is multiplicative on independent product states
-    -> K_d(rho)=log Q_d(rho)=log rho + log(d) I
-    -> centered K = centered log rho
-    -> canonical local multiplicative operator and additive Hermitian generator EARNED (v15.07)
+frame-neutral quantum reference (v15.07)
+    -> unique normalized state invariant under every local frame: tau_d=I_d/d
+    -> Q_d(rho)=tau_d^-1/2 rho tau_d^-1/2=d rho
+    -> Q is multiplicative on product states
+    -> log Q is additive
+    -> centered generator = centered log rho
+    -> canonical local logarithmic information generator EARNED
 
-neutral-to-state PGRL endpoint
-    -> if sourcehood is defined as the generator preparing rho from tau_d
-    -> [P]_+ = [centered log rho]_+
-    -> positive projective log-generator ray selected exactly
-    -> absolute source scale remains free
-    -> sourcehood = neutral-preparation-generator is NOT a frozen source semantic (v15.07)
+Genesis source-semantics audit (v15.08)
+    -> Genesis Pin certifies recoverable-history legitimacy, not a quantum reference state
+    -> ternary source role certifies finite source-legitimacy information, not a Hermitian generator
+    -> V995 generator compatibility is a model-level event/dynamics compatibility layer; no typed PGRL-source map is frozen
+    -> identical relevant Genesis/source-role/provenance facts admit multiple inequivalent lawful Hermitian source rays
+    -> therefore frozen ontology does NOT entail source = neutral-preparation generator
+    -> SOURCE SEMANTICS IRREDUCIBLE RELATIVE TO FROZEN ONTOLOGY
 
 supplied positive projective support source [P]
     -> exact PGRL tangent
@@ -70,140 +65,100 @@ supplied positive projective support source [P]
 
 retained/downstream source-geometry bridge
     -> projective coupled-source ray [Sigma] survives
-    -> absolute source->geometry coupling remains NOT DERIVED
-    -> v13.28 REQUIRES_NEW_AXIOM remains in force
+    -> absolute source calibration remains underived
+    -> absolute source->geometry coupling remains underived
+    -> Pillar 3 remains OPEN
 ```
 
-## Latest result — v15.07
+## Latest result — v15.08
 
-### A. Unique frame-neutral local state
+### A. Genesis Pin is a history-legitimacy object
 
-For a normalized density operator `tau_d`, full local-frame invariance
+The frozen V997 Genesis Pin requires a pinned witness registry/root, quorum, append-only continuity, and non-circular origin. It distinguishes legitimate recoverable histories even when visible states coincide.
+
+Its type is therefore
 
 ```text
-U tau_d U^dagger = tau_d  for every U in U(d)
+history / registry / root / witness legitimacy boundary
 ```
 
-forces `tau_d` into the full-unitary commutant. Therefore
+not
+
+```text
+quantum density operator
+```
+
+and not
+
+```text
+Hermitian neutral-to-state preparation generator.
+```
+
+No frozen equation identifies the Genesis Pin with
 
 ```text
 tau_d = I_d/d.
 ```
 
-It also obeys
+Classification:
 
 ```text
-tau_{d1*d2} = tau_d1 tensor tau_d2.
+GENESIS_PIN_CERTIFIES_HISTORY_LEGITIMACY_NOT_QUANTUM_REFERENCE_STATE
 ```
 
-Executed dimensions and controls:
+### B. Ternary source role is not the quantum source operator
+
+V923's exact source-legitimacy result uses three role symbols:
 
 ```text
-dimensions                       = 2,3,4,5
-commutant nullity                = 1 in every dimension
-max commutant residual           = 0.0
-max unitary-invariance error     = 1.9272741954495747e-16
-max neutral-reference tensor err = 0.0
+source_active_role
+source_basin_eligible_nonactive_role
+source_rejected_or_broken_role
 ```
 
-This is an exact symmetry theorem. “Neutral” means only **no preferred local quantum frame**. It does not mean Genesis Pin, physical vacuum, source-free state, equilibrium, pruning state, or time origin.
+This discrete primitive carries information that endpoint/path observables do not.
 
-### B. Canonical multiplicative operator
-
-Relative to `tau_d`, define
+But no frozen artifact defines either
 
 ```text
-Q_d(rho) = tau_d^(-1/2) rho tau_d^(-1/2) = d rho.
+source role -> Hermitian P
 ```
 
-Then
+or
 
 ```text
-Q_{d1*d2}(rho tensor sigma)
-  = Q_d1(rho) tensor Q_d2(sigma).
+source role -> spectral response a(r).
 ```
 
-Executed maximum tensor error:
+Classification:
 
 ```text
-6.675060769998483e-16
+TERNARY_SOURCE_ROLE_IS_LEGITIMACY_INFORMATION_NOT_OPERATOR_GENERATOR
 ```
 
-Thus the missing multiplicative object from v15.06 can be operator-valued and canonical without a basis choice or external reference state.
+### C. Countermodel independence theorem
 
-### C. Canonical additive Hermitian generator
-
-For faithful `rho`,
+Fix the same faithful two-site quantum state and the same audited provenance signature:
 
 ```text
-K_d(rho) = log Q_d(rho)
-         = log rho + log(d) I.
+pinned_genesis_pass
+source_active_role
+append_only_valid
+quorum_valid
+same_retained_source_grade
 ```
 
-After centering,
+Three already-lawful local source responses were applied:
 
 ```text
-K_d^0(rho)
-  = log rho - Tr(log rho) I/d.
+linear       a(r)=1
+log          a(r)=2 atanh(r)/r
+polynomial   a(r)=1+r^2
 ```
 
-This is exactly the logarithmic projective shape isolated in v15.04-v15.05.
+All three produce valid centered Hermitian PGRL source deformations while preserving the same declared provenance/source-role data.
 
-Executed controls:
-
-```text
-max log tensor-additivity error  = 2.896658855432451e-14
-max centered-log identity error  = 2.8379538820721116e-15
-max local-frame covariance error = 1.1729620862932955e-14
-```
-
-The logarithmic generator is therefore no longer merely a convenient candidate or a consequence of an independently postulated functional equation. It is the additive generator of the canonical relative-density operator determined by local-frame neutrality.
-
-### D. Conditional neutral-to-state source-ray theorem
-
-If one declares a PGRL preparation problem
-
-```text
-rho = exp(log tau_d + s P)/Z,
-s > 0,
-```
-
-then modulo the central normalization,
-
-```text
-s P^0 = centered log rho.
-```
-
-Hence
-
-```text
-[P]_+ = [centered log rho]_+.
-```
-
-Executed controls:
-
-```text
-max endpoint reconstruction error = 6.123282208614186e-16
-max generator identity error       = 3.5046408488399772e-15
-product endpoint error             = 8.309111647037891e-16
-```
-
-Only the projective ray is selected. Absolute magnitude remains degenerate with the source parameter `s`, consistent with the v13.25-v13.26 source-normalization obstruction.
-
-### E. Why physical source identification remains open
-
-The audited frozen source semantics say:
-
-```text
-v13.04: PGRL acts at a supplied faithful state; it does not prescribe baseline-state origin.
-v13.11: P is an independently supplied Hermitian source generator.
-v13.25: Genesis/source anchoring and source-current compatibility exist, but do not define state-preparation sourcehood.
-v13.26: Genesis anchoring is identity/compatibility structure; calling the origin itself source strength would add an axiom.
-```
-
-The v15.07 checker hash-binds these source-origin reports in addition to the prior v15 dependencies.
-
-At one fixed state, finite PGRL deformations from linear, logarithmic, and polynomial generators all remain valid while their rays differ:
+Their projective source rays remain distinct:
 
 ```text
 linear vs log        = 0.06248625684944288
@@ -211,24 +166,76 @@ linear vs polynomial = 0.08772246091732862
 log vs polynomial    = 0.025253513918714537
 ```
 
-The canonical neutral-relative generator matches the logarithmic ray to
+Additional controls:
 
 ```text
-5.77851202639302e-16.
+minimum pairwise ray separation = 0.025253513918714537
+max finite-PGRL trace error     = 0.0
+minimum output eigenvalue       = 0.027251058487541124
 ```
 
-So the mathematics selects a canonical log generator, while the frozen ontology has not yet declared that generator to be the source.
+Therefore the frozen provenance/source-role data do not entail any one of these operator source rays.
+
+Classification:
+
+```text
+COUNTERMODEL_INDEPENDENCE_PROVES_SOURCE_SEMANTICS_NOT_ENTAILED
+```
+
+### D. v15.07 remains a positive result
+
+The canonical v15.07 centered relative-density generator still agrees with the logarithmic candidate ray to
+
+```text
+9.460671693549492e-16.
+```
+
+Thus the correct distinction is
+
+```text
+canonical centered-log information generator : DERIVED
+centered-log generator as physical source    : NOT DERIVED
+```
+
+v15.08 blocks only the semantic promotion, not the mathematical construction.
+
+### E. Exact branch stop
+
+Because explicit countermodels preserve the relevant frozen provenance/source-role certificates while changing `[P]`, further search inside the same frozen dependency set cannot select the source law.
+
+The source-semantic branch is therefore
+
+```text
+IRREDUCIBLE RELATIVE TO THE CURRENT FROZEN ONTOLOGY.
+```
+
+To continue this particular branch requires one explicit **NEW SOURCE-SEMANTICS AXIOM**, independently motivated before any downstream gravity test.
+
+A sufficient form would be conceptually equivalent to:
+
+```text
+physical source = admissible generator preparing the local state
+                  relative to the unique frame-neutral reference.
+```
+
+If that axiom were independently earned or explicitly adopted, v15.07 would imply
+
+```text
+[P]_+ = [centered log rho]_+.
+```
+
+It would still not fix absolute source magnitude because the PGRL parameterization gauge remains.
 
 ## Relation to earlier gates
 
-- **v15.06:** materially advanced. The missing multiplicative object is no longer confined to a scalar recovery quantity; a canonical local operator-valued one now exists.
-- **v15.05:** strengthened. Its conditional logarithmic shape is realized by an independently derived canonical relative-density construction, but the source-semantic premise remains open.
-- **v15.04:** strengthened. The arbitrary qubit response family remains the full covariance classification, but frame-neutral relative-density structure supplies one canonical distinguished log generator.
-- **v15.03:** preserved. State context is lawful, while the exact retained-node-to-quantum-site carrier remains underived.
-- **v15.02:** preserved. Equal cardinality is still not an identification.
-- **v15.01:** preserved. Compatibility parent/support compression remains exact once a lawful source on the parent/support is available.
-- **v14.04:** preserved. Provenance-to-source representation remains open.
-- **v14.03:** preserved conditional. A supplied positive projective support source selects the hidden first-contact/dual-ray chain.
+- **v15.07:** preserved and bounded. The neutral reference, multiplicative relative-density operator, and centered-log generator remain canonical; physical-source semantics are not supplied.
+- **v15.06:** preserved. Scalar recoverability multiplicativity remains real but is not the missing operator-source selector.
+- **v15.05:** preserved. Generic tensor composition does not select the response; the earlier conditional logarithmic characterization is now realized mathematically by v15.07, not physically identified as source.
+- **v15.04:** preserved. `a(r)` is the full qubit covariance freedom unless extra source semantics are supplied.
+- **v15.03:** preserved. State context permits noncentral source directions, but the graph-site carrier and source law remain noncanonical without added structure.
+- **v15.01-v15.02:** preserved. Common-parent/shared-label shortcuts remain blocked.
+- **v14.04:** strengthened. Provenance typing/representation mismatch is consistent with the v15.08 source-semantic independence result.
+- **v14.03:** preserved conditional. A supplied positive projective support source still canonically selects hidden first contact and dual ray.
 - **v13.25-v13.26:** preserved. Absolute source calibration remains irreducible relative to the frozen ontology.
 - **v13.28:** preserved. Absolute source-to-geometry coupling remains underived.
 
@@ -241,7 +248,8 @@ So the mathematics selects a canonical log generator, while the frozen ontology 
 ## Still not derived
 
 - `sourcehood = neutral-reference-to-state preparation generator`;
-- identification of `I/d` with Genesis Pin or physical vacuum;
+- identification of Genesis Pin with `I/d`, physical vacuum, or source-free state;
+- a typed V923/V995 provenance-role object -> local Hermitian PGRL generator map;
 - a certified retained-node-to-quantum-site factorization;
 - a natural graph-site-to-`C^125/C^25` compatibility map;
 - Genesis/provenance -> v14.03 projective support source `[P]_+`;
@@ -257,22 +265,15 @@ So the mathematics selects a canonical log generator, while the frozen ontology 
 
 ## Stop rule / next lawful frontier
 
-Do **not** promote `centered log(rho)` to the physical source merely because the generator is now canonical.
+Do **not** continue the logarithmic source-origin search inside the same frozen ontology. The countermodel theorem has closed that route.
 
-Do **not** identify `I/d` with Genesis, vacuum, or a source-free physical state without an independently earned law.
+Do **not** identify Genesis Pin with `I/d`, the ternary source role with a Hermitian source generator, or V995 causal-generator compatibility with the PGRL operator source by shared terminology.
 
-Do **not** use downstream gravity/ADM/Einstein performance to supply the missing semantic identification.
+Do **not** select the missing semantic axiom using downstream gravity/ADM/Einstein performance.
 
-The next lawful question is:
+The lawful choices are now:
 
-> Does the frozen Genesis/provenance ontology independently imply that **sourcehood is the generator that prepares a local quantum state from the unique frame-neutral reference**?
+1. explicitly introduce and independently motivate one **NEW SOURCE-SEMANTICS AXIOM**, then test it without downstream tuning; or
+2. retain centered `log(rho)` as a canonical local information generator without physical-source status and redirect research to another independent unresolved bridge.
 
-If yes, then the positive projective logarithmic source ray becomes canonically selected without downstream fitting.
-
-If no, the source-law-selection branch stops here. The statement
-
-```text
-SOURCEHOOD_IS_NEUTRAL_PREPARATION_GENERATOR
-```
-
-must then be marked **NEW ASSUMPTION** before any downstream use.
+Under current governance, option 2 is the default until a new axiom is explicitly approved.

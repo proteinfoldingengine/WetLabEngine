@@ -1,0 +1,39 @@
+name: UQCF v15.08 Genesis Source Semantics
+
+on:
+  push:
+    branches:
+      - research/v15.08-genesis-source-semantics
+    paths:
+      - 'ResearchHistory/UQCF-GEM/v15/v15.08/**'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
+      - 'ResearchHistory/UQCF-GEM/README.md'
+      - '.github/workflows/uqcf-v1508-genesis-source-semantics.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/v15/v15.08
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: python -m pip install numpy==2.4.6
+      - name: Run v15.08 checker
+        run: python CHECKER.py
