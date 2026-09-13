@@ -1,0 +1,77 @@
+{
+  "version": "v15.08",
+  "gate": "Genesis Source-Semantics / Neutral-Preparation Identification Gate",
+  "primary_outcome": "GENESIS_PROVENANCE_DOES_NOT_IDENTIFY_NEUTRAL_PREPARATION_SOURCE",
+  "secondary_outcome": "SOURCE_SEMANTICS_IRREDUCIBLE_RELATIVE_TO_FROZEN_ONTOLOGY",
+  "tertiary_outcome": "LOG_PROJECTIVE_SOURCE_REQUIRES_NEW_SOURCE_SEMANTICS_AXIOM",
+  "major_structural_result": true,
+  "scientific_breakthrough": false,
+  "Pillar_3": "OPEN",
+  "frozen_dependency_audit": {
+    "archive_bindings": {
+      "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md": "9917085b211ca0e1f4737082227f55097cc72b66",
+      "ResearchHistory/UQCF-GEM/v14/v14.04/REPORT.md": "e5d9566bfc86c801d2933e63453d1800f60a675b",
+      "ResearchHistory/UQCF-GEM/v15/v15.07/REPORT.md": "c3abb3af5b5c7210fc717392d4e2cc6fc4648284",
+      "Tmp/TOE/Einstein 3/v923_full_stack_source_role_closure_proof/FULL_REPORT_AND_PROOF.md": "9a1523c08d2b9b2c5ba2d298dfed3d563a750bec",
+      "Tmp/TOE/Einstein 4/V997_FULL_STACK_GENESIS_PIN_BRIDGE_REPORT.md": "8f4ee48cbaf6c822b87dd5e30a5dfee4d596e26e",
+      "Tmp/TOE/Einstein 4/v995_pre_report_closure_synthesis_packet/V995_PRE_REPORT_CLOSURE_SYNTHESIS.md": "a0cb9a17344800ebfee1cbe3f724da2ac418e164"
+    },
+    "archive_bindings_match_expected": true,
+    "classification": "NO_FROZEN_GENESIS_TO_NEUTRAL_PREPARATION_SOURCE_SEMANTICS",
+    "genesis_equals_maximally_mixed_state_axiom_found": false,
+    "source_equals_neutral_preparation_axiom_found": false
+  },
+  "genesis_pin_semantics": {
+    "classification": "GENESIS_PIN_CERTIFIES_HISTORY_LEGITIMACY_NOT_QUANTUM_REFERENCE_STATE",
+    "history_legitimacy_certified": true,
+    "quantum_neutral_reference_identified": false,
+    "neutral_preparation_generator_identified": false
+  },
+  "source_role_semantics": {
+    "classification": "TERNARY_SOURCE_ROLE_IS_LEGITIMACY_INFORMATION_NOT_OPERATOR_GENERATOR",
+    "ternary_role_count": 3,
+    "role_to_hermitian_generator_map_found": false,
+    "role_to_spectral_response_law_found": false,
+    "generator_compatibility_is_identity_selection": false
+  },
+  "independence_no_go": {
+    "classification": "COUNTERMODEL_INDEPENDENCE_PROVES_SOURCE_SEMANTICS_NOT_ENTAILED",
+    "same_frozen_provenance_supports_multiple_source_laws": true,
+    "common_provenance_signature": [
+      "pinned_genesis_pass",
+      "source_active_role",
+      "append_only_valid",
+      "quorum_valid",
+      "same_retained_source_grade"
+    ],
+    "candidate_source_laws": ["linear", "log", "polynomial"],
+    "pairwise_source_ray_separations": {
+      "linear_vs_log": 0.06248625684944288,
+      "linear_vs_polynomial": 0.08772246091732862,
+      "log_vs_polynomial": 0.025253513918714537
+    },
+    "min_pairwise_source_ray_separation": 0.025253513918714537,
+    "canonical_log_ray_matches_v15_07_generator": 9.460671693549492e-16,
+    "max_trace_error": 0.0,
+    "min_output_eigenvalue": 0.027251058487541124,
+    "provenance_only_noncentral_map_blocked_by_v14_04": true
+  },
+  "claim_boundary": {
+    "canonical_neutral_reference_preserved": true,
+    "canonical_multiplicative_operator_preserved": true,
+    "canonical_log_generator_preserved": true,
+    "canonical_log_generator_identified_as_source": false,
+    "genesis_pin_is_quantum_neutral_state": false,
+    "source_role_is_hermitian_generator": false,
+    "new_source_semantics_axiom_required": true,
+    "branch_stop_relative_to_frozen_ontology": true,
+    "absolute_source_scale_derived": false,
+    "retained_node_to_quantum_site_carrier_derived": false,
+    "physical_stress_energy_derived": false,
+    "spacetime_or_einstein_equations_derived": false,
+    "downstream_gravity_used_as_selector": false,
+    "entropy_or_time_used_as_selector": false,
+    "Pillar_3_closed": false
+  },
+  "stop_rule": "Do not identify Genesis with tau_d=I/d and do not identify sourcehood with the neutral-to-state preparation generator without one explicit new source-semantics axiom. The logarithmic projective source branch stops here relative to the frozen ontology."
+}
