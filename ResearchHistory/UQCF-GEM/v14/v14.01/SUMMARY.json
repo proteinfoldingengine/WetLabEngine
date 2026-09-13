@@ -5,7 +5,7 @@
   "adjudication": "NONUNIQUE",
   "classification": "MAJOR_SOURCE_TO_HIGHER_INCIDENCE_CANONICALITY_OBSTRUCTION",
   "scientific_breakthrough": false,
-  "scope": "current frozen architecture plus the audited incidence/state-weighted and PSD-positivity construction class; not all conceivable deeper nonlinear laws",
+  "scope": "current frozen architecture plus the audited incidence/state-weighted, strict-disjoint-composition, and PSD-positivity construction class; not all conceivable deeper nonlinear laws",
   "core_distinction": "Source action on a state or visible datum under a fixed compatibility/positivity rule is not by itself a source-dependent deformation of the admissibility law.",
   "theorems": {
     "incidence_only": {
@@ -14,7 +14,7 @@
     },
     "canonicality": {
       "name": "State-Weighted Admissibility Canonicality Obstruction",
-      "statement": "Within the audited covariant weighted-incidence class eta_f = P_cyc W_f B^T C, multiple positive scalar functionals of the same edge invariant produce nonzero, source-linear, relabeling-covariant but inequivalent source-to-cycle-defect maps. The frozen structural rules tested here do not select one functional or coefficient."
+      "statement": "Within the audited covariant weighted-incidence class eta_f = P_cyc W_f B^T C, multiple positive scalar functionals of the same edge invariant produce nonzero, source-linear, relabeling-covariant and strict-disjoint-composition-compatible but inequivalent source-to-cycle-defect maps. The frozen structural rules tested here do not select one functional or coefficient."
     },
     "positivity": {
       "name": "Positivity Non-Selection Result",
@@ -37,6 +37,7 @@
     "candidate_operator_span_rank": 3,
     "max_relative_source_scaling_error": 7.993866358511362e-16,
     "max_covariance_error": 1.3482796731097804e-14,
+    "max_disjoint_composition_error": 0.0,
     "max_normalized_candidate_direction_separation": 0.9960669843187823,
     "nonzero_trial_outputs": 768,
     "faithful_interior_common_epsilon": 0.1443693458628246,
@@ -50,6 +51,7 @@
     "exponential_positive": "f(x)=exp(x)",
     "quadratic_positive": "f(x)=1+x^2"
   },
+  "composition_selector_classification": "PRESERVED_BY_ALL_CANDIDATES_NOT_SELECTOR",
   "positivity_selector_classification": "INEQUALITY_FILTER_NOT_CANONICAL_SOURCE_MAP",
   "positive_control": {
     "status": "ADDED_LAW_POSITIVE_CONTROL",
@@ -61,6 +63,7 @@
     "finite quantum/global compatibility laboratory",
     "hidden-completion and global positivity structure",
     "source-current balance",
+    "strict disjoint composition",
     "projective coupled-source result from v13.27",
     "v13.28 downstream coupling branch stop",
     "Pillar 3 remains open"
