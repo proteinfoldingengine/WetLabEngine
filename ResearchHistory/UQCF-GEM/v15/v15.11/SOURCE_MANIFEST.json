@@ -9,63 +9,84 @@
       "origin": "USER_LIBRARY_SNAPSHOT",
       "original_sha256": "a0b5bad45cdd6c26c14acaf1ca8deafde5218a7f7c1702ed4b032603113b1baa",
       "original_size_bytes": 10645,
-      "original_lines_inclusive": [34, 99],
-      "excerpt": "No physical time parameter is used.\n\nThe central ontology is\n\n\\[\n\\boxed{\n\\text{motion}\\neq\\text{pruning}\\neq\\text{entropy}\\neq\\text{time}.\n}\n\\]\n\nMotion is represented as a reversible relation between physical relational configurations.\n\nA finite transformation\n\n\\[\nx\\longmapsto g\\cdot x\n\\]\n\ncan change the physical quantum state, can compose with other transformations, and has an\ninverse, without introducing a temporal arrow or elapsed-time interpretation.\n\nThe main theorem is that global quantum consistency imposes a synchronization law on such\nmotion.\n\nEven if every individual relational edge undergoes a perfectly valid reversible quantum\ntransformation preserving its local spectrum, the transformed edge family may fail to be one\npossible global quantum state if the motions assigned to shared subsystems disagree.\n\nThis gives a genuinely pre-time global motion constraint.\n\nIt is not yet gravity.\n\n## 1. Motion without time\n\nLet \\(\\mathcal A_G\\) denote the globally admissible relational atlas.\n\nA reversible motion is represented by an invertible group action\n\n\\[\ng:\\mathcal A_G\\to\\mathcal A_G.\n\\]\n\nFor a state \\(x\\),\n\n\\[\nx'=g\\cdot x\n\\]\n\nmeans that \\(x\\) and \\(x'\\) are physically distinct configurations related by an allowed\nreversible transformation.\n\nNo assertion is made that \\(x'\\) is temporally later than \\(x\\).\n\nThe group properties are\n\n\\[\ng_2(g_1x)=(g_2g_1)x\n\\]\n\nand\n\n\\[\ng^{-1}(gx)=x.\n\\]\n\nThese give transformation composition and reversibility, not temporal order.\n",
-      "excerpt_sha256": "0978d3c9332eacf0b0455304c05b3e00e817eb8efaa3ed40e8d6086c4d67ee06"
+      "original_lines_inclusive": [
+        44,
+        44
+      ],
+      "excerpt": "Motion is represented as a reversible relation between physical relational configurations.\n",
+      "excerpt_sha256": "71209f0b29fea9e4689f0594d11eda5a16b9ef93f063eb66de198e0192e65462"
     },
     {
       "name": "UQCF_GEM_v10_21_Pre_Time_Closure_Audit_Pruning_Readiness_Gate.md",
       "origin": "USER_LIBRARY_SNAPSHOT",
       "original_sha256": "ecca912e1ffb310d7df28b0867eb50dce17eb0ed4afe89783827745fb3694e6d",
       "original_size_bytes": 11554,
-      "original_lines_inclusive": [349, 389],
-      "excerpt": "## 7. Non-repair rule\n\nOnce pruning begins, the following are forbidden.\n\n### No tuning \\(g_\\star\\)\n\nPruning cannot choose \\(g_\\star\\) to make later geometry fit observations.\n\n### No retroactive UPSF derivation\n\nA successful pruning/geometry limit cannot be used to claim UPSF was already derived pre-time.\n\n### No temporal reinterpretation\n\nThe pre-time transformation parameter \\(\\lambda\\) cannot be redefined retroactively as\nfundamental physical time.\n\n### No added attraction law\n\nIf attraction appears later, it must be derived from pruning/post-pruning structure rather than\ninserted into the frozen pre-time generator.\n\n### No connection replacement\n\nPruning cannot change the v10.14 transport rule merely because another transport produces a\npreferred geometry.\n\n### No source-composition rewrite\n\nThe order-free additive generator law remains frozen.\n\n### No entropy back-propagation\n\nEntropy or irreversible information loss cannot be invoked to explain any theorem already\nclassified as pre-time.\n\nThis rule is essential for scientific hygiene.\n\n---\n\n## 8. Claim ledger\n",
-      "excerpt_sha256": "088ffa9f9d4593dec666c7b19e79488c9da6712b074547fa265a4bcd896ed384"
+      "original_lines_inclusive": [
+        382,
+        383
+      ],
+      "excerpt": "Entropy or irreversible information loss cannot be invoked to explain any theorem already\nclassified as pre-time.\n",
+      "excerpt_sha256": "c57e8f17722e299bb9042cfde850ef7b4caf729b2a5bfb3cf51e421c7a39d771"
     },
     {
       "name": "UQCF_GEM_v11_1_Minimal_Pruning_Primitive_Recoverability_Order_Gate.md",
       "origin": "USER_LIBRARY_SNAPSHOT",
       "original_sha256": "903d8813daf730beba68fa0e44690eaf808836df145e39af90efb4a9585bfde2",
       "original_size_bytes": 11467,
-      "original_lines_inclusive": [22, 71],
-      "excerpt": "\nv11.0 established that recoverability gives an atemporal partial order but does not select one\nactual strict descent.\n\nv11.1 asks what the weakest new physical datum is that can select such a descent without\nintroducing time, entropy, geometry, or an arbitrary CPTP map.\n\nThe answer is a retained observable algebra.\n\nWe call the primitive:\n\n\\[\n\\boxed{\n\\textbf{Retained Algebra Selection (RAS)}\n}\n\\]\n\nA pruning event specifies a proper unital observable subalgebra\n\n\\[\n\\boxed{\n\\mathcal R_{\\rm next}\n\\subsetneq\n\\mathcal R_{\\rm current}\n}\n\\]\n\nwhose observables remain recoverable.\n\nOnce \\(\\mathcal R_{\\rm next}\\) is selected, the pruning map itself is not another free object.\n\nIn finite-dimensional tracial quantum theory it is the unique trace-preserving conditional\nexpectation\n\n\\[\n\\boxed{\nE_{\\mathcal R_{\\rm next}}\n:\n\\mathcal R_{\\rm current}\n\\rightarrow\n\\mathcal R_{\\rm next}.\n}\n\\]\n\nThus the irreducible physical choice is the retained algebra, not an arbitrary channel.\n\nThis closes the minimal **nonselective** pruning primitive conditionally on accepting RAS.\n\nIt does not yet select one measurement outcome or branch.\n\n",
-      "excerpt_sha256": "178322906829495f0a19bc306a24d08e42745ab6c50608139fd6084c9e807814"
+      "original_lines_inclusive": [
+        68,
+        70
+      ],
+      "excerpt": "This closes the minimal **nonselective** pruning primitive conditionally on accepting RAS.\n\nIt does not yet select one measurement outcome or branch.\n",
+      "excerpt_sha256": "a1a878ff1c1a391cb6be35b01680d2e1c42015d0ce44bc5f62d85c317e444d13"
     },
     {
       "name": "UQCF_GEM_v11_2_Pruning_Event_Ordered_History_Gate.md",
       "origin": "USER_LIBRARY_SNAPSHOT",
-      "original_sha256": "c0d9acd0430518f473c7158d80cf032572342342a1a93f041fc754f4afe255669b5",
+      "original_sha256": "c0d9acd0430518f473c7158d80cf032572342a1a93f041fc754f4afe255669b5",
       "original_size_bytes": 10699,
-      "original_lines_inclusive": [250, 296],
-      "excerpt": "\n\\[\n\\boxed{\n\\textbf{RCR: choose one nonzero central record projection }z\\in Z(\\mathcal R)\n}\n\\]\n\nas actual.\n\nFor a fully resolved classical event, take \\(z\\) minimal central.\n\nThe selective state is\n\n\\[\n\\boxed{\n\\rho_z\n=\n\\frac{\nzE_\\mathcal R(\\rho)z\n}{\n\\operatorname{Tr}[zE_\\mathcal R(\\rho)]\n}.\n}\n\\]\n\nRAS supplies:\n\n- \\(\\mathcal R\\);\n- its center;\n- the set of central alternatives.\n\nRCR adds only:\n\n\\[\n\\boxed{\n\\textbf{actuality of one alternative.}\n}\n\\]\n\nIt does not add:\n\n- a clock;\n- entropy;\n- a new basis;\n- an arbitrary instrument;\n- geometry;\n- or a change to pre-time gravity.\n",
-      "excerpt_sha256": "236b8f353468d27dd8bb5ab5d54216a84248f71b3dd9410c080f6b0b35e36d9f"
+      "original_lines_inclusive": [
+        64,
+        69
+      ],
+      "excerpt": "Conditional on RAS + RCR, compatible central-record refinement gives an intrinsic event-order\nrelation with no time parameter.\n\nA realized branch is locally totally ordered, while alternative branches remain incomparable.\n\nThis gives an atemporal ordinal event history.\n",
+      "excerpt_sha256": "a467d2816ac4c1549050d6e990eacd66874dd988c260b32f4d885cb679db8c6b"
     },
     {
       "name": "UQCF_GEM_v11_3_Ordinal_Event_Time_Reparameterization_Gate.md",
       "origin": "USER_LIBRARY_SNAPSHOT",
       "original_sha256": "2d9d41565a4e1f23ea4386b76468225d9e49570d8a2c41b57c50876c9077bfba",
       "original_size_bytes": 9782,
-      "original_lines_inclusive": [1, 53],
-      "excerpt": "# UQCF–GEM v11.3 — Ordinal Event Time / Reparameterization Gate\n\n## Adjudication\n\n\\[\n\\boxed{\n\\texttt{ORDINAL\\ EVENT\\ TIME:\\ DERIVED\\ CONDITIONAL\\ ON\\ RAS+RCR}\n}\n\\]\n\n\\[\n\\boxed{\n\\texttt{GLOBAL\\ EVENT\\ ORDER:\\ PARTIAL,\\ NOT\\ TOTAL}\n}\n\\]\n\n\\[\n\\boxed{\n\\texttt{METRIC/CLOCK\\ TIME:\\ NOT\\ DERIVED}\n}\n\\]\n\nv11.2 established that RAS supplies possible classical records through the center of the retained\nalgebra, while RCR supplies actuality of one record.\n\nOnce actual records refine one another,\n\n\\[\nz_{k+1}\\le z_k,\n\\]\n\nthe realized history acquires an intrinsic order.\n\nv11.3 asks whether that order justifies an emergent notion of time.\n\nThe answer is:\n\n\\[\n\\boxed{\n\\textbf{yes for ordinal event time, no for metric/clock time.}\n}\n\\]\n\nA finite realized branch has an intrinsic order type and therefore an intrinsic ordinal event\nposition.\n\nHowever, every strictly increasing real-valued labeling of that chain represents the same event\norder. The theory does not select interval lengths, duration ratios, clock rate, or global\nsimultaneity.\n\nNo entropy, geometry, or external time coordinate is assumed.\n\n---\n",
-      "excerpt_sha256": "757ffeaf1d6b055a8071bb9da00d49426ae942250c241e26ca7360418d91dd25"
+      "original_lines_inclusive": [
+        44,
+        49
+      ],
+      "excerpt": "A finite realized branch has an intrinsic order type and therefore an intrinsic ordinal event\nposition.\n\nHowever, every strictly increasing real-valued labeling of that chain represents the same event\norder. The theory does not select interval lengths, duration ratios, clock rate, or global\nsimultaneity.\n",
+      "excerpt_sha256": "c6db934c6238d149e0cde301862ab0d22e9fe6894a1298a7bccb4bebd9f0e262"
     },
     {
       "name": "UQCF_GEM_v11_4_Intrinsic_Duration_Clock_Candidate_Gate.md",
       "origin": "USER_LIBRARY_SNAPSHOT",
       "original_sha256": "6ea5709fb2c6adcea2d21bae40df0a78924c2ac5e53dcae2b2ef7f9dabf94951",
       "original_size_bytes": 11581,
-      "original_lines_inclusive": [1, 53],
-      "excerpt": "# UQCF–GEM v11.4 — Intrinsic Duration / Clock-Candidate Gate\n\n## Adjudication\n\n\\[\n\\boxed{\n\\texttt{ORDINAL\\ TIME:\\ RETAINED}\n}\n\\]\n\n\\[\n\\boxed{\n\\texttt{WELL\\!-\\!BEHAVED\\ STATE\\!-\\!INDEPENDENT\\ DURATION\\ FUNCTIONALS:\\ EXIST}\n}\n\\]\n\nbut\n\n\\[\n\\boxed{\n\\texttt{UNIQUE\\ METRIC\\ DURATION:\\ NOT\\ DERIVED}\n}\n\\]\n\nand more strongly,\n\n\\[\n\\boxed{\n\\texttt{THE\\ REMAINING\\ FREEDOM\\ IS\\ NOT\\ MERELY\\ CLOCK\\ UNITS.}\n}\n\\]\n\nv11.3 established an intrinsic ordinal event time, conditional on RAS + RCR.\n\nv11.4 asks whether the retained-algebra / recoverability structure also selects a scalar measure\nof **how much** pruning occurred, strong enough to function as physical duration.\n\nThe answer is negative.\n\nThere is an infinite family of state-independent pruning intervals satisfying all of the\nstructural requirements tested here:\n\n- positivity on every strict retained-algebra inclusion;\n- additivity under nested pruning;\n- additivity under independent tensor-product pruning;\n- covariance / algebra-isomorphism invariance;\n- spectator neutrality.\n\nThese candidates remain inequivalent even after fixing one common clock unit.\n\nTherefore metric duration is underdetermined by the current pruning architecture.\n\nNo entropy, geometry, or background time is assumed.\n",
-      "excerpt_sha256": "a812460d09dd2e739274e91ce02e896aaf62bff0e113c513f2ca52f505b139db"
+      "original_lines_inclusive": [
+        49,
+        51
+      ],
+      "excerpt": "These candidates remain inequivalent even after fixing one common clock unit.\n\nTherefore metric duration is underdetermined by the current pruning architecture.\n",
+      "excerpt_sha256": "c02724cb8629c18122c6a298dae319a62f9c835bc1ece228fe46e3c9167b2355"
     },
     {
       "name": "UQCF_GEM_v11_5_Clock_Selection_Primitive_Dynamics_Coupling_Gate.md",
       "origin": "USER_LIBRARY_SNAPSHOT",
       "original_sha256": "d2a45661e33cb6c0161f7bd63f97192dc43f17af1994a88682d5dca96a2e0952",
       "original_size_bytes": 8896,
-      "original_lines_inclusive": [1, 51],
-      "excerpt": "# UQCF–GEM v11.5 — Clock-Selection Primitive / Dynamics Coupling Gate\n\n## Adjudication\n\n\\[\n\\boxed{\n\\texttt{P2\\ IS\\ MATHEMATICALLY\\ PRIVILEGED\\ BY\\ THE\\ ACTUAL\\ REVERSIBLE\\ MOTION\\ SPACE}\n}\n\\]\n\nbut\n\n\\[\n\\boxed{\n\\texttt{P2\\ IS\\ NOT\\ DERIVED\\ FROM\\ FROZEN\\ DYNAMICS\\ ALONE}\n}\n\\]\n\nThe missing bridge is isolated as:\n\n\\[\n\\boxed{\n\\textbf{Motion-Capacity Clock Calibration (MCCC)}\n}\n\\]\n\nwith\n\n\\[\n\\boxed{\n\\Delta\\tau\n=\n\\kappa\n\\log\n\\frac{\n\\dim_{\\mathbb R}\\mathfrak u(\\mathcal R_{\\rm before})\n}{\n\\dim_{\\mathbb R}\\mathfrak u(\\mathcal R_{\\rm after})\n}\n=\n\\kappa D_2.\n}\n\\]\n\nUnder MCCC, \\(p=2\\) is selected and only one overall unit scale \\(\\kappa>0\\) remains.\n\nHowever, MCCC is a new physical bridge. It is not already implied by the frozen pre-time motion law.\n\nTherefore metric time remains **conditional** rather than derived unconditionally.\n\nNo entropy, geometry, or background clock is introduced.\n",
-      "excerpt_sha256": "bc96334009463a26a9f4a6766c81c120ff07dd9e47452783b496d572e399e4ff"
+      "original_lines_inclusive": [
+        47,
+        49
+      ],
+      "excerpt": "However, MCCC is a new physical bridge. It is not already implied by the frozen pre-time motion law.\n\nTherefore metric time remains **conditional** rather than derived unconditionally.\n",
+      "excerpt_sha256": "1bf7c2a52b5e6401bca9fb068ae8ed0786c370f2a3035dd99538609ee7e2d902"
     }
   ]
 }
