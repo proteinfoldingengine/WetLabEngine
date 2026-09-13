@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import json
+import math
+from pathlib import Path
 from pruning_order_emergent_time_audit import adjudicate_gate, run_audit
 
 assert adjudicate_gate(True, False) == "FROZEN_PRUNING_DOES_NOT_YET_DERIVE_INTRINSIC_TIME_ORDER"
@@ -71,4 +73,27 @@ assert b["entropy_used_as_selector"] is False
 assert b["adm_or_spacetime_time_used_as_selector"] is False
 assert b["Pillar_3_closed"] is False
 
+
+def compare_archive(actual, frozen, path="$"):
+    if type(actual) is bool or type(frozen) is bool:
+        assert actual is frozen, f"{path}: boolean mismatch"
+        return
+    if isinstance(actual, dict) and isinstance(frozen, dict):
+        assert set(actual) == set(frozen), f"{path}: key mismatch"
+        for key in sorted(actual):
+            compare_archive(actual[key], frozen[key], f"{path}.{key}")
+        return
+    if isinstance(actual, list) and isinstance(frozen, list):
+        assert len(actual) == len(frozen), f"{path}: length mismatch"
+        for idx, (a, b_) in enumerate(zip(actual, frozen)):
+            compare_archive(a, b_, f"{path}[{idx}]")
+        return
+    if isinstance(actual, float) or isinstance(frozen, float):
+        assert math.isclose(float(actual), float(frozen), rel_tol=1e-12, abs_tol=1e-14), f"{path}: float mismatch"
+        return
+    assert actual == frozen, f"{path}: value mismatch"
+
+
+frozen = json.loads((Path(__file__).with_name("SUMMARY.json")).read_text())
+compare_archive(s, frozen)
 print(json.dumps(s, indent=2, sort_keys=True))
