@@ -1,0 +1,38 @@
+name: UQCF v13.28 RGCL Pairing Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - research/v13.28-rgcl-pairing-audit
+    paths:
+      - 'ResearchHistory/UQCF-GEM/v13/v13.28/**'
+      - '.github/workflows/uqcf-v1328-rgcl-pairing-audit.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/v13/v13.28
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install NumPy
+        run: python -m pip install numpy==2.4.6
+
+      - name: Run v13.28 checker
+        run: python CHECKER.py
