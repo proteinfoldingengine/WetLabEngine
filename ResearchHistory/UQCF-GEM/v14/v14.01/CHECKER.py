@@ -18,6 +18,14 @@ assert result["max_covariance_error"] < 2e-12
 assert result["max_normalized_candidate_direction_separation"] > 1e-3
 assert result["candidate_operator_span_rank"] >= 2
 assert result["positive_control_reconstruction_error"] < 2e-12
+
+# Global positivity must not silently act as an untested selector.
+assert result["positivity_audit"]["faithful_interior_common_epsilon"] > 0.0
+assert result["positivity_audit"]["minimum_faithful_interior_margin"] > 0.0
+assert result["positivity_audit"]["boundary_matrix_dimension"] == 4
+assert result["positivity_audit"]["boundary_tangent_lineality_dimension"] == 9
+assert result["positivity_audit"]["boundary_selector_classification"] == "INEQUALITY_FILTER_NOT_CANONICAL_SOURCE_MAP"
+
 assert result["gate_outcome"] in {"DERIVED", "NONUNIQUE", "NO_NATIVE_DEFORMATION"}
 if result["gate_outcome"] != "DERIVED":
     assert result["branch_status"] == "STOPPED_PENDING_NEW_SOURCE_TO_HIGHER_INCIDENCE_AXIOM_OR_CALIBRATION"
