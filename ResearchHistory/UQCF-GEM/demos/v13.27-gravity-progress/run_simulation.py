@@ -25,7 +25,8 @@ def write_outputs(data, output_dir):
     ]
     list_keys = [
         "local_z", "node_source", "edge_current", "edge_correlation",
-        "edge_nonmetricity", "node_geometry_score", "cycle_angles",
+        "edge_nonmetricity", "raw_polar_determinants", "node_geometry_score", "cycle_angles",
+        "cycle_raw_cos_arguments", "cycle_clip_excesses",
     ]
     with csv_path.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=scalar_keys + list_keys)
@@ -41,7 +42,7 @@ def write_outputs(data, output_dir):
 
 
 def main():
-    p = argparse.ArgumentParser(description="UQCF-GEM v13.27 full-stack gravity-progress simulation")
+    p = argparse.ArgumentParser(description="UQCF-GEM v13.27 finite quantum-relational methods / obstruction simulation")
     p.add_argument("--frames", type=int, default=25)
     p.add_argument("--quick", action="store_true", help="use 9 frames")
     p.add_argument("--source-scale", type=float, default=1.0)
@@ -59,15 +60,22 @@ def main():
     if not args.no_video:
         written.update(save_animation(data, args.output_dir, fps=args.fps, make_gif=True, make_mp4=not args.gif_only))
 
-    print("V13.27 GRAVITY PROGRESS SIMULATION")
+    s = data["summary"]
+    print("V13.27 FINITE QUANTUM-RELATIONAL METHODS / OBSTRUCTION SIMULATION")
     print("scientific_fingerprint:", data["scientific_fingerprint"])
     print("telemetry_hash:", data["telemetry_hash"])
-    print("min_state_eigenvalue:", f"{data['summary']['min_state_eigenvalue']:.6e}")
-    print("min_bkm_eigenvalue:", f"{data['summary']['min_bkm_eigenvalue']:.6e}")
-    print("max_source_balance_residual:", f"{data['summary']['max_source_balance_residual']:.6e}")
-    print("max_projective_direction_change:", f"{data['summary']['max_projective_direction_change']:.6e}")
-    print("RGCL:", data["summary"]["RGCL"])
-    print("physical_Einstein_closure:", data["summary"]["physical_Einstein_closure"])
+    print("min_state_eigenvalue:", f"{s['min_state_eigenvalue']:.6e}")
+    print("min_bkm_eigenvalue:", f"{s['min_bkm_eigenvalue']:.6e}")
+    print("max_source_balance_residual:", f"{s['max_source_balance_residual']:.6e}")
+    print("max_projective_direction_change:", f"{s['max_projective_direction_change']:.6e}")
+    print("raw_polar_reflection_count:", s["raw_polar_reflection_count"])
+    print("raw_polar_reflection_fraction:", s["raw_polar_reflection_fraction"])
+    print("pi_holonomy_event_count:", s["pi_holonomy_event_count"])
+    print("max_holonomy_clip_excess:", s["max_holonomy_clip_excess"])
+    print("pi_holonomy_adjudication:", s["pi_holonomy_adjudication"])
+    print("projective_sigma_status:", s["projective_sigma_status"])
+    print("RGCL:", s["RGCL"])
+    print("physical_Einstein_closure:", s["physical_Einstein_closure"])
     for k, v in written.items():
         print(f"{k}: {v}")
 
