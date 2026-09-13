@@ -1,0 +1,49 @@
+{
+  "version": "v15.15",
+  "status": "EXECUTED_CONDITIONAL_COHERENT_RECORD_COMPARISON",
+  "schedules": 5,
+  "record_assignments": 16,
+  "final_branch_maps_compared": 80,
+  "prefix_branch_maps_compared": 155,
+  "common_ideals": 8,
+  "max_branch_operator_error": 0.0,
+  "max_labeled_choi_error": 0.0,
+  "max_shared_encoding_error": 1.5100436044247833e-15,
+  "max_prior_state_error": 5.551115123125785e-17,
+  "max_prior_mass_error": 1.1102230246251565e-16,
+  "max_deferred_pinching_error": 1.4487854119051544e-16,
+  "max_record_probability_error": 0.0,
+  "max_distribution_normalization_error": 3.552713678800501e-15,
+  "max_isometry_error": 1.2462321378202964e-14,
+  "echo": {
+    "coherent_inverse_error": 5.7294675858524905e-15,
+    "pinched_inverse_distance": 0.7768207276739258,
+    "joint_record_offdiagonal_norm": 0.831074930531531,
+    "memory_marginal_offdiagonal_norm": 0.0,
+    "scope": "same declared inverse; global no-recovery conclusion uses a distinct-input witness, not this inverse attempt alone"
+  },
+  "distinguishability_witness": {
+    "input_distance": 0.9999999999999987,
+    "coherent_output_distance": 0.9999999999999997,
+    "pinched_output_distance": 3.791997098268052e-16,
+    "pinched_record_probability_error": 1.3877787807814457e-16,
+    "scope": "the declared full system plus classical record description loses this distinction; no common inverse on both inputs exists"
+  },
+  "phase_control": {
+    "labeled_channel_error": 1.599326934592422e-17,
+    "coherent_state_distance": 0.780956484366873,
+    "scope": "record-sector phases are unobservable after record pinching; coherent dilations are not unique"
+  },
+  "wrong_controller_control": {
+    "max_labeled_choi_error": 0.08238139475229204,
+    "status": "REJECTED_SWAPPED_CONTROLLER_COMPARISON"
+  },
+  "actual_record_selected": null,
+  "physical_duration": null,
+  "new_physical_axioms": [],
+  "objective_collapse_derived": false,
+  "physical_entropy_production_derived": false,
+  "Pillar_3": "OPEN",
+  "scientific_breakthrough": false,
+  "scope": "Equality of the supplied labeled instruments does not identify a physical collapse. Irreversibility is relative to explicitly pinched retained record blocks."
+}
