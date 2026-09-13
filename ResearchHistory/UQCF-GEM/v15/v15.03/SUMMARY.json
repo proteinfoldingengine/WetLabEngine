@@ -1,0 +1,252 @@
+{
+  "Pillar_3": "OPEN",
+  "archive_graph_site_audit": {
+    "carrier_status": "NO_EXACT_GRAPH_SITE_CARRIER",
+    "compatibility_parent_relation": "FIVE_NONTRIVIAL_SITE_CARRIER_CANNOT_EQUAL_C125_PARENT",
+    "exact_graph_site_factorization_certified": false,
+    "factorization_status": "GRAPH_INDEXED_QUANTUM_MODELS_EXIST_BUT_EXACT_FACTOR_IDENTIFICATION_UNDERIVED",
+    "graph_indexed_quantum_models_exist": true,
+    "natural_map_to_compatibility_parent_certified": false,
+    "records": [
+      {
+        "classification": "GRAPH_INDEXED_QUANTUM_MODEL_CONTROL_ONLY",
+        "decisive_facts": [
+          "quantum graph example is a 4-node path, not the retained 5-node/7-edge graph",
+          "site-local quantum source and graph-local response are explicit"
+        ],
+        "path": "ResearchHistory/UQCF-GEM/v13/v13.15/SUMMARY.json",
+        "sha256": "f30eb465f31877672eede4acb03dc9c3066ba814ae4e8d92f28921713577ddc2"
+      },
+      {
+        "classification": "LOCAL_FRAME_COVARIANCE_ONLY",
+        "decisive_facts": [
+          "independent local-frame covariance is certified",
+          "no exact retained graph-to-quantum-site identity is certified"
+        ],
+        "path": "ResearchHistory/UQCF-GEM/v13/v13.11/SUMMARY.json",
+        "sha256": "03d818f2a223b04c4491f4efcb3560c0e098ccf4660f4226af1cbafad89a4a75"
+      },
+      {
+        "classification": "GRAPH_INDEXED_QUANTUM_MODEL_CONTROL_ONLY",
+        "decisive_facts": [
+          "artifact is an explicit six-qubit laboratory",
+          "graph/source support are declared model inputs, not provenance derivation"
+        ],
+        "path": "ResearchHistory/UQCF-GEM/demos/v13.27-gravity-progress/README.md",
+        "sha256": "00f8782d44d876c4515408fcc63bb4172891dd459d8b459ba35fd6a34a2aea14"
+      },
+      {
+        "classification": "NO_GRAPH_SITE_IDENTITY_STATEMENT",
+        "decisive_facts": [
+          "AST parsing recovers the exact retained five-node/seven-edge/source fixture",
+          "artifact is graph source-current identifiability, not quantum factor identity"
+        ],
+        "path": "Tmp/TOE/ThePhysicsParadox/uqcf_gate_a_small_network_phi_simulation_package 2/uqcf_gate_a_small_network_phi_simulation.py",
+        "sha256": "128035c6a2d0b5fe6b6266836779f33f1343eba5119cdff4a4b54e09758510be"
+      },
+      {
+        "classification": "NO_GRAPH_SITE_IDENTITY_STATEMENT",
+        "decisive_facts": [
+          "certified natural support-link count is zero"
+        ],
+        "path": "ResearchHistory/UQCF-GEM/v14/v14.04/SUMMARY.json",
+        "sha256": "7ff0e749711cf6c6dd5918970b48b9b886cccf572622188312cef8b105a85056"
+      },
+      {
+        "classification": "NO_GRAPH_SITE_IDENTITY_STATEMENT",
+        "decisive_facts": [
+          "compatibility parent is C^125 with C^25 support",
+          "same-parent provenance/source class count is zero",
+          "six-qubit demo is a different parent with no frozen natural functor to C^125"
+        ],
+        "path": "ResearchHistory/UQCF-GEM/v15/v15.01/SUMMARY.json",
+        "sha256": "a18df65441f789e202a66341c23cd67befb72067e062b56aee81ace9e3da4e09"
+      },
+      {
+        "classification": "NO_GRAPH_SITE_IDENTITY_STATEMENT",
+        "decisive_facts": [
+          "five-node to five-level basis-label shortcut is not certified"
+        ],
+        "path": "ResearchHistory/UQCF-GEM/v15/v15.02/SUMMARY.json",
+        "sha256": "58270884f17c09ffd7469bea00dbd0f92e62f393ada544a24475c193ded4a751"
+      }
+    ],
+    "records_sha256": "7c8bbf5199505687ee15ba745f73033af4a72c8adfa83db9ee7d8075acc82322",
+    "small_network_fixture": {
+      "edges": [[0, 1], [1, 3], [0, 2], [2, 4], [4, 3], [1, 2], [0, 4]],
+      "fixture_sha256": "94ca2cbc711167afa22bef2ff5876c0fda9def43fc15c4318377fa629511ca4b",
+      "nodes": [0, 1, 2, 3, 4],
+      "source": [-1.0, 0.0, 0.0, 1.0, 0.0]
+    }
+  },
+  "centrality_controls": {
+    "fixture": "SUPPLIED_FIVE_QUBIT_CARRIER_CONTROL_NOT_PROVENANCE_DERIVATION",
+    "identity_invariance_error": 2.57310042329926e-15,
+    "noncentral_independent_frame_violation": 7.999999999999999,
+    "swap_independent_frame_violation": 7.806681235326519,
+    "swap_tied_frame_error": 2.5121479338940403e-15,
+    "tied_frame_classification": "WEAKER_TIED_FRAME_GAUGE_NOT_ADJUDICATION_GAUGE"
+  },
+  "centrality_theorem": {
+    "analytic_classification": "FULL_PRODUCT_LOCAL_UNITARY_COMMUTANT_IS_CENTER",
+    "pgrl_classification": "CENTRAL_PGRL_NULL",
+    "state_independent_source_classification": "CENTRAL_ONLY",
+    "statement": "A deterministic state-independent Hermitian lift of gauge-trivial graph scalar/current data invariant under all independent local unitaries lies in the scalar center; central P is PGRL-null."
+  },
+  "claim_scope": "graph-site factorization, independent local-gauge source-lift naturality, state-dependent source-family canonicality, and carrier relevance to the certified C^125 parent",
+  "dimension_theorem": {
+    "classification": "FIVE_NONTRIVIAL_SITE_CARRIER_CANNOT_EQUAL_C125_PARENT",
+    "compatibility_parent_dimension": 125,
+    "five_nontrivial_factorization_possible": false,
+    "minimum_site_dimension": 2,
+    "prime_factorization": [5, 5, 5],
+    "required_site_count": 5,
+    "solution_count": 0
+  },
+  "gate_outcome": "NO_CERTIFIED_GRAPH_SITE_FACTORIZATION",
+  "interpretation": "Graph-indexed quantum modeling and independent local-frame covariance exist in the frozen stack, but the audited archive does not certify the exact retained five-node source graph as five quantum tensor factors. Independently, scalar/current data alone are central/PGRL-null under full independent local gauge. Supplied state context can produce lawful noncentral covariant source families, whose projective canonicality is audited separately. Any genuine five-site carrier is arithmetically distinct from C^125 and still requires an earned natural cross-carrier map.",
+  "not_derived": [
+    "a certified exact retained-node-to-quantum-site factorization",
+    "a natural graph-site-to-C125 compatibility-parent map",
+    "Genesis/provenance to the v14.03 projective support-source ray",
+    "absolute source magnitude",
+    "observer source calibration",
+    "physical stress-energy",
+    "source-to-coframe/solder law",
+    "physical metric or spacetime",
+    "absolute gravitational coupling",
+    "Einstein equations",
+    "physical time primitive",
+    "Pillar 3 closure"
+  ],
+  "scientific_breakthrough": false,
+  "secondary_statuses": [
+    "CENTRAL_PGRL_NULL",
+    "STATE_DEPENDENT_COVARIANT_SOURCE_LIFT_NONUNIQUE",
+    "FIVE_NONTRIVIAL_SITE_CARRIER_CANNOT_EQUAL_C125_PARENT",
+    "NO_EXACT_GRAPH_SITE_CARRIER"
+  ],
+  "source_fixture": {
+    "cycle_dimension": 3,
+    "edge_count": 7,
+    "edges": [[0, 1], [1, 3], [0, 2], [2, 4], [4, 3], [1, 2], [0, 4]],
+    "fixture_sha256": "94ca2cbc711167afa22bef2ff5876c0fda9def43fc15c4318377fa629511ca4b",
+    "incidence_rank": 4,
+    "node_count": 5,
+    "nodes": [0, 1, 2, 3, 4],
+    "path": "Tmp/TOE/ThePhysicsParadox/Physics101/phi lab.py",
+    "sha256": "cab807ac5e07f3232f4d09e88cf639e7faaa46ee08efaec39b4f3c64d3fb3ba1",
+    "source": [-1.0, 0.0, 0.0, 1.0, 0.0],
+    "source_sum_abs": 0.0
+  },
+  "state_dependent_controls": {
+    "candidate_functions": ["identity", "linear", "square", "log"],
+    "classification": "SUPPLIED_GRAPH_SITE_FACTORIZATION_NOT_PROVENANCE_DERIVATION",
+    "constant_family_max_norm": 0.0,
+    "controls": {
+      "A": {
+        "bloch_radii": [0.15, -0.31, 0.42, 0.63, -0.22],
+        "families": {
+          "identity": {
+            "centered_norm": 0.0,
+            "covariance_error": 1.7896914536605905e-16,
+            "hermiticity_error": 0.0,
+            "max_positive_scale_projective_residual": 0.0,
+            "norm": 0.0,
+            "trace_abs": 0.0
+          },
+          "linear": {
+            "centered_norm": 1.8317205026968493,
+            "covariance_error": 1.8948821616182078e-16,
+            "hermiticity_error": 0.0,
+            "max_positive_scale_projective_residual": 1.9229626863835638e-16,
+            "norm": 1.8317205026968497,
+            "trace_abs": 8.881784197001252e-16
+          },
+          "log": {
+            "centered_norm": 4.280341407240883,
+            "covariance_error": 2.9347495354660263e-16,
+            "hermiticity_error": 0.0,
+            "max_positive_scale_projective_residual": 2.0770370905276122e-16,
+            "norm": 4.280341407240883,
+            "trace_abs": 0.0
+          },
+          "square": {
+            "centered_norm": 1.8317205026968497,
+            "covariance_error": 2.9707140272854356e-16,
+            "hermiticity_error": 0.0,
+            "max_positive_scale_projective_residual": 3.510833468576701e-16,
+            "norm": 1.8317205026968493,
+            "trace_abs": 2.6645352591003757e-15
+          }
+        },
+        "minimum_local_eigenvalue": 0.185,
+        "pairwise_projective_residuals": {
+          "linear__log": 0.03264343653690659,
+          "linear__square": 3.597533769998862e-16,
+          "square__log": 0.032643436536906593
+        }
+      },
+      "B": {
+        "bloch_radii": [0.52, -0.18, 0.27, -0.47, 0.36],
+        "families": {
+          "identity": {
+            "centered_norm": 0.0,
+            "covariance_error": 1.7896914536605905e-16,
+            "hermiticity_error": 0.0,
+            "max_positive_scale_projective_residual": 0.0,
+            "norm": 0.0,
+            "trace_abs": 0.0
+          },
+          "linear": {
+            "centered_norm": 1.9825236442474024,
+            "covariance_error": 2.649030760103024e-16,
+            "hermiticity_error": 0.0,
+            "max_positive_scale_projective_residual": 2.2312617296590296e-16,
+            "norm": 1.9825236442474024,
+            "trace_abs": 8.881784197001252e-16
+          },
+          "log": {
+            "centered_norm": 4.353717534064926,
+            "covariance_error": 1.824459342776023e-16,
+            "hermiticity_error": 0.0,
+            "max_positive_scale_projective_residual": 4.3624070492076246e-16,
+            "norm": 4.353717534064925,
+            "trace_abs": 5.329070518200751e-15
+          },
+          "square": {
+            "centered_norm": 1.9825236442474024,
+            "covariance_error": 1.9181039154758847e-16,
+            "hermiticity_error": 0.0,
+            "max_positive_scale_projective_residual": 2.229642722265061e-16,
+            "norm": 1.9825236442474024,
+            "trace_abs": 8.881784197001252e-16
+          }
+        },
+        "minimum_local_eigenvalue": 0.24,
+        "pairwise_projective_residuals": {
+          "linear__log": 0.010460821683241842,
+          "linear__square": 9.437916079723832e-17,
+          "square__log": 0.010460821683241812
+        }
+      }
+    },
+    "current_control": {
+      "balance_residual": 7.325053464011603e-16,
+      "classification": "MIN_NORM_CURRENT_CONTROL_NOT_PROVENANCE_SELECTED",
+      "current": [0.3750000000000004, 0.49999999999999983, 0.25000000000000006, 0.12500000000000006, 0.49999999999999994, -0.12499999999999993, 0.3750000000000001],
+      "scientific_evidence": false
+    },
+    "family_status": "STATE_DEPENDENT_COVARIANT_SOURCE_LIFT_NONUNIQUE",
+    "max_covariance_error": 2.9707140272854356e-16,
+    "max_hermiticity_error": 0.0,
+    "max_pairwise_projective_residual": 0.032643436536906593,
+    "max_positive_scale_projective_residual": 4.3624070492076246e-16,
+    "max_trace_abs": 5.329070518200751e-15,
+    "min_pairwise_projective_residual": 9.437916079723832e-17,
+    "scientific_evidence_for_factorization": false
+  },
+  "stop_rule": "Do not choose a Pauli axis, privilege log(rho), tie local frames, invent a cross-carrier isometry, promote a min-norm current, import pruning/entropy as a pre-pruning selector, or use ADM/Einstein/gravity residuals.",
+  "title": "Graph-Site Factorization / Local-Gauge Source Lift Gate",
+  "version": "v15.03"
+}
