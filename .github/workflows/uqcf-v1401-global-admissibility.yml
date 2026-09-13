@@ -1,0 +1,42 @@
+name: UQCF v14.01 Global Admissibility Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - research/v14.01-global-admissibility
+    paths:
+      - 'ResearchHistory/UQCF-GEM/v14/v14.01/**'
+      - 'ResearchHistory/UQCF-GEM/README.md'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
+      - 'docs/superpowers/specs/2026-09-12-v1401-global-admissibility-design.md'
+      - 'docs/superpowers/plans/2026-09-12-v1401-global-admissibility.md'
+      - '.github/workflows/uqcf-v1401-global-admissibility.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/v14/v14.01
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install NumPy
+        run: python -m pip install numpy==2.4.6
+
+      - name: Run v14.01 checker
+        run: python CHECKER.py
