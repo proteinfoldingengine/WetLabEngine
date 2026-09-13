@@ -1,0 +1,40 @@
+name: UQCF v15.01 Common-Parent Representation Audit
+
+on:
+  push:
+    branches:
+      - main
+      - research/v15.01-common-parent-representation
+    paths:
+      - 'ResearchHistory/UQCF-GEM/v15/v15.01/**'
+      - 'ResearchHistory/UQCF-GEM/README.md'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
+      - 'docs/superpowers/specs/2026-09-13-v1501-common-parent-representation-design.md'
+      - 'docs/superpowers/plans/2026-09-13-v1501-common-parent-representation.md'
+      - '.github/workflows/uqcf-v1501-common-parent-representation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  PYTHONHASHSEED: '0'
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install scientific dependencies
+        run: python -m pip install numpy==2.4.6 scipy==1.17.1
+      - name: Run v15.01 checker
+        working-directory: ResearchHistory/UQCF-GEM/v15/v15.01
+        run: python CHECKER.py
