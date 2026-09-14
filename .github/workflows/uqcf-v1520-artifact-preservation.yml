@@ -1,0 +1,91 @@
+name: UQCF v15.20 Artifact Preservation
+
+on:
+  push:
+    branches:
+      - research/v15.20-artifact-preservation
+    paths:
+      - 'ResearchHistory/UQCF-GEM/archive/archive_release.py'
+      - 'ResearchHistory/UQCF-GEM/archive/test_archive.py'
+      - 'ResearchHistory/UQCF-GEM/archive/ORIGINAL_DELIVERY_MANIFEST.json'
+      - '.github/workflows/uqcf-v1520-artifact-preservation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned numerical and rendering packages
+        run: python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
+      - name: Ensure video renderer is available
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          ffmpeg -version
+      - name: Test archive integrity controls
+        working-directory: ResearchHistory/UQCF-GEM/archive
+        run: python -m unittest -v test_archive.py
+      - name: Run 310 selected research tests and reproduce all deliverables
+        run: python ResearchHistory/UQCF-GEM/archive/archive_release.py build --root . --out _uqcf_archive
+      - name: Pass verified assets to publication job
+        uses: actions/upload-artifact@v4
+        with:
+          name: uqcf-v1520-preservation-build
+          path: |
+            _uqcf_archive/assets/
+            _uqcf_archive/RELEASE_NOTES.md
+          if-no-files-found: error
+      - name: Preserve failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uqcf-v1520-preservation-failure-logs
+          path: _uqcf_archive/work/**/fresh_run_logs/
+          if-no-files-found: ignore
+  publish:
+    needs: reproduce
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - uses: actions/download-artifact@v4
+        with:
+          name: uqcf-v1520-preservation-build
+          path: _uqcf_archive
+      - name: Publish release only after every uploaded digest matches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python ResearchHistory/UQCF-GEM/archive/archive_release.py publish --out _uqcf_archive
+      - name: Preserve publication receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: uqcf-v1520-publication-receipt
+          path: _uqcf_archive/PUBLISH_RECEIPT.json
+          if-no-files-found: error
