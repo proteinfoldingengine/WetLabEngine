@@ -1,0 +1,20 @@
+{
+  "version": "v15.23",
+  "status": "SUFFICIENT_CHANNELS_CLASSIFIED_BINARY_IDEMPOTENCE_SELECTS_PINCHING",
+  "event_channel_cases": 1188,
+  "branch_map_checks": 2376,
+  "max_branch_choi_error": 1.959876491462178e-15,
+  "max_kraus_fit_error": 5.561098153691632e-15,
+  "max_tp_error": 1.447448019124461e-14,
+  "max_distance_formula_error": 2.5085520835620467e-15,
+  "max_other_event_formula_error": 1.7488973509990598e-15,
+  "open_alternative_checks": 231,
+  "common_identity_cases": 7,
+  "batch_partition_cases": 105,
+  "batch_branch_checks": 420,
+  "max_batch_choi_error": 1.1178729384292955e-15,
+  "partitions": {"boolean_candidates":64,"psd_partitions":15,"partitions_by_blocks":{"1":1,"2":7,"3":6,"4":1},"local_bit_masks":4,"additional_partitions":11},
+  "negative_control": {"probability_error":1.1102374428065986e-15,"branch_state_distance":1.0000000000000004,"central_kraus_residual":1.8708286933869727,"status":"REJECTED_PROBABILITY_ONLY_PRESERVATION"},
+  "integration": {"histories":400,"branch_steps":1600,"max_state_error":2.0922741223890246e-15,"max_mass_error":1.887379141862766e-15,"max_conditional_error":2.7755575615628914e-15},
+  "actual_record_selected":null,"physical_duration":null,"new_physical_axioms":[],"physical_pruning_law_derived":false,"scientific_breakthrough":false,"Pillar_3":"OPEN"
+}
