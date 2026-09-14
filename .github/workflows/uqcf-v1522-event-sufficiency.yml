@@ -1,0 +1,153 @@
+name: UQCF v15.22 Event Sufficiency and GitHub Delivery
+on:
+  push:
+    branches: [research/v15.22-event-sufficiency]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.22-event-sufficient-retention/**'
+      - '.github/workflows/uqcf-v1522-event-sufficiency.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned environment
+        run: |
+          python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
+          if ! command -v ffmpeg >/dev/null; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
+      - name: Verify additive scope and all 374 selected tests
+        run: |
+          python - <<'PY'
+          import json,os,re,subprocess,sys
+          from pathlib import Path
+          base='9999fb7fc55abfd53a1b5a5ef02f15bf09a13a9c'
+          root=Path('ResearchHistory/UQCF-GEM');demo=root/'demos/v15.22-event-sufficient-retention'
+          changed=subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines()
+          for line in changed:
+              status,name=line.split('\t',1)
+              assert status=='A' and (name.startswith(str(demo)+'/') or name=='.github/workflows/uqcf-v1522-event-sufficiency.yml'),line
+          suites=[('v15/v15.11',['test_continuity.py'],20),('demos/v15.12-pretime-to-history',['test_simulation.py','test_presentation.py'],30),('demos/v15.13-independent-events',['test_model.py','test_replay.py'],27),('demos/v15.14-record-dependencies',['test_adaptive.py','test_replay.py'],30),('demos/v15.15-coherent-records',['test_coherent.py','test_replay.py'],30),('demos/v15.16-partial-pruning',['test_recoverability.py','test_replay.py'],33),('demos/v15.17-retained-motion',['test_motion.py','test_replay.py'],32),('demos/v15.18-invariant-completion',['test_completion.py','test_replay.py'],34),('demos/v15.19-linear-prediction',['test_linear.py','test_replay.py'],36),('demos/v15.20-physical-predictor',['test_channel.py','test_replay.py'],38),('demos/v15.21-record-readout',['test_record_readout.py','test_readout_presentation.py'],32),('demos/v15.22-event-sufficient-retention',['test_event_sufficiency.py','test_sufficiency_presentation.py'],32)]
+          logs=demo/'evidence/ci';logs.mkdir(parents=True);total=0
+          for folder,files,count in suites:
+              r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=root/folder,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,timeout=180)
+              (logs/(Path(folder).name+'.log')).write_text(r.stdout)
+              print(folder,r.stdout[-250:],flush=True)
+              assert r.returncode==0,(folder,r.stdout)
+              assert re.search(rf'Ran {count} tests? in',r.stdout),folder
+              total+=count
+          assert total==374
+          (logs/'SUMMARY.json').write_text(json.dumps({'selected_tests_passed':total,'source_sha':os.environ['GITHUB_SHA'],'scope':'selected research regressions, not the entire repository suite'},indent=2))
+          PY
+      - name: Generate ledger, inspector and decoded video
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.22-event-sufficient-retention
+        run: |
+          python event_sufficiency.py --out outputs > evidence/ci/model.log
+          python replay.py --out outputs --video > evidence/ci/render.log
+          ffmpeg -v error -i outputs/event_sufficiency.mp4 -f null - 2> evidence/ci/video_decode.log
+          ffprobe -v error -show_entries stream=codec_name,width,height -show_entries format=duration -of json outputs/event_sufficiency.mp4 > evidence/ci/video_info.json
+          python -m compileall -q event_sufficiency.py replay.py test_event_sufficiency.py test_sufficiency_presentation.py
+      - name: Package source, numerical outputs and actual CI evidence
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,shutil,subprocess,sys,zipfile
+          source=Path('ResearchHistory/UQCF-GEM/demos/v15.22-event-sufficient-retention');dist=Path('delivery/assets');dist.mkdir(parents=True)
+          info=json.loads((source/'evidence/ci/video_info.json').read_text())
+          assert any(s.get('codec_name')=='h264' and s.get('width')==1280 and s.get('height')==720 for s in info['streams'])
+          assert abs(float(info['format']['duration'])-24)<0.1
+          for name in ['event_sufficiency.mp4','event_sufficiency.html','verification.json','replay_data.json']:
+              shutil.copyfile(source/'outputs'/name,dist/name)
+          shutil.copyfile(source/'README.md',dist/'REPORT.md')
+          provenance={'source_sha':os.environ['GITHUB_SHA'],'base_research_sha':'9999fb7fc55abfd53a1b5a5ef02f15bf09a13a9c','run_id':os.environ['GITHUB_RUN_ID'],'selected_tests_passed':374,'python':sys.version,'packages':subprocess.check_output([sys.executable,'-m','pip','freeze'],text=True).splitlines(),'scope':'Fresh CI outputs; earlier science and main remain unchanged. Browser verification was local, not part of this workflow.'}
+          (dist/'PROVENANCE.json').write_text(json.dumps(provenance,indent=2)+'\n')
+          files=[]
+          for p in sorted(source.rglob('*')):
+              if p.is_symlink():raise ValueError('symlink is not accepted')
+              if not p.is_file() or '__pycache__' in p.parts or p.suffix=='.pyc':continue
+              files.append(p)
+          members=[{'name':p.relative_to(source).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]
+          bundle=dist/'UQCF_GEM_v15_22_bundle.zip'
+          with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
+              for p in files:z.write(p,p.relative_to(source).as_posix())
+              z.writestr('PACKAGE_MANIFEST.json',json.dumps({'files':members,'provenance':provenance},indent=2))
+          with zipfile.ZipFile(bundle) as z:
+              assert z.testzip() is None
+              for row in members:
+                  raw=z.read(row['name']);assert len(raw)==row['bytes'] and hashlib.sha256(raw).hexdigest()==row['sha256']
+          (dist/'SHA256SUMS.txt').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n' for p in sorted(dist.iterdir())))
+          Path('delivery/RELEASE_NOTES.md').write_text('# v15.22 — Event-sufficient retention\n\nExact source: `'+os.environ['GITHUB_SHA']+'`. All 374 selected tests passed before packaging.\n\nContains the generated movie, offline HTML, numerical ledger, report, source/CI-evidence bundle, provenance and SHA-256 checksums. All release assets are verified by size and digest before publication. No live website or main-branch merge.\n\nRetention derived from a specified next sharp instrument preserves its full branch maps. At the seven two-ready contexts, preserving either full instrument with one common CPTP preprocessor forces identity on the current sector. This is conditional on the supplied instrument and output contract, not a physical pruning or actuality law. No physical time or entropy-production law is derived.\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.22-verified-delivery
+          path: delivery/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: v15.22-failure-evidence
+          path: ResearchHistory/UQCF-GEM/demos/v15.22-event-sufficient-retention/evidence/ci/
+          if-no-files-found: ignore
+  publish:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: v15.22-verified-delivery
+          path: delivery
+      - name: Upload unique draft, check every digest, then publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test "$GH_REPO" = 'proteinfoldingengine/WetLabEngine'
+          TAG="uqcf-gem-v15.22-${GITHUB_RUN_ID}-a${GITHUB_RUN_ATTEMPT}"
+          gh release create "$TAG" delivery/assets/* --repo "$GH_REPO" --target "$GITHUB_SHA" --title 'UQCF-GEM v15.22 — event-sufficient retention' --notes-file delivery/RELEASE_NOTES.md --draft --prerelease --latest=false
+          RELEASE_ID="$(gh api --paginate "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.tag_name == \"$TAG\") | .id")"
+          [[ "$RELEASE_ID" =~ ^[0-9]+$ ]]
+          gh api "repos/$GH_REPO/releases/$RELEASE_ID" > delivery/RELEASE_METADATA.json
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          r=json.loads(Path('delivery/RELEASE_METADATA.json').read_text())
+          local=list(Path('delivery/assets').iterdir());remote={a['name']:a for a in r['assets']}
+          assert len(local)==len(remote)==8,(len(local),len(remote))
+          for p in local:
+              a=remote[p.name]
+              assert a['state']=='uploaded' and a['size']==p.stat().st_size
+              assert a['digest']=='sha256:'+hashlib.sha256(p.read_bytes()).hexdigest()
+          print('All 8 release assets matched their expected size and SHA-256.')
+          PY
+          gh api --method PATCH "repos/$GH_REPO/releases/$RELEASE_ID" -F draft=false -f make_latest=false > delivery/PUBLICATION_RECEIPT.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('delivery/PUBLICATION_RECEIPT.json').read_text());assert r['draft'] is False
+          print(r['html_url'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.22-publication-receipt
+          path: delivery/PUBLICATION_RECEIPT.json
+          if-no-files-found: error
