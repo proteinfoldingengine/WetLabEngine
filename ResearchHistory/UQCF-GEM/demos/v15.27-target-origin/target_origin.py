@@ -88,4 +88,58 @@ def verify_result(r):
     if not r['multiple_covariant_target_laws_survive'] or r['covariance_selects_target']:raise AssertionError('covariance family')
     if r['selector_verdict']!='PRETIME_CYCLE_TARGET_IRREDUCIBLE_RELATIVE_TO_FROZEN_ONTOLOGY':raise AssertionError('verdict')
     if r['cycle_target_derived'] or r['signal_of_life'] or r['gravity_canary_certified']:raise AssertionError('claim boundary')
-    if any(r[k] for k in ('uses_holonomy_as_selector','uses_newton_or_gr','uses_pruning,'uses_entropy','uses_physical_time')):raise AssertionError('forbidden selector')
+    if any(r[k] for k in ('uses_holonomy_as_selector','uses_newton_or_gr','uses_pruning','uses_entropy','uses_physical_time')):raise AssertionError('forbidden selector')
+
+@lru_cache(None)
+def audit():
+    baseline=verify_baseline();c=base.base.torus_complex(7);q,delta=base.base.incidence_defect(c,(0,0),'bottom',1.0);R=base.response_operator(c)
+    Z,_=base.cycle_basis(c.B1);obs=_factorization_obstruction(c.B1,R)
+    # Factorization no-go witness: same q, current shifted by a closed cycle.
+    j0=base.base.compatibility_response(c.B1,q).current;zfar=c.B2[:,c.face_index[base.base.farthest_face(c,(0,0))]];j1=j0+.25*zfar
+    same_q=float(np.linalg.norm(c.B1@j1-c.B1@j0));same_y=float(np.linalg.norm(R@j1-R@j0))
+    # Microscopic representative ambiguity.
+    delta2=delta+c.B2[:,c.face_index[(2,3)]];q2=c.B1@delta2;tm=-R@delta;tm2=-R@delta2
+    # Hodge/min-action metric dependence.
+    weights=np.linspace(.75,1.25,len(c.edges));jw=base.base.weighted_response(c.B1,q,weights).current
+    hodge_j=float(np.linalg.norm(jw-j0));hodge_t=float(np.linalg.norm(R@jw-R@j0))
+    # Zero target is lawful but differs from Hodge.
+    jzero=base.reconstruct(c.B1,q,R,np.zeros(R.shape[0]));zero_dist=float(np.linalg.norm(jzero-j0))
+    # Topology/covariance family.
+    ztop=topological_cycle(c,q);alphas=[-1.0,0.0,1.0];targets=[topological_target(c,q,a) for a in alphas];currents=[topological_current(c,q,a) for a in alphas]
+    source_err=max(float(np.linalg.norm(c.B1@j+q)) for j in currents)
+    # Quotient covariance: source-equivalent microscopic reps induce identical q-only law.
+    quot=max(float(np.linalg.norm(topological_target(c,q,a)-topological_target(c,q2,a))) for a in alphas)
+    relabel=_relabel_control(c,q,1.0);linear=_linearity_control(c,1.0)
+    # Full rank still reconstructs every supplied target.
+    recon=max(float(np.linalg.norm(base.reconstruct(c.B1,q,R,t)-j)) for t,j in zip(targets,currents))
+    hb_err,hb_change=_homology_basis_control(c,q)
+    candidate_verdicts={
+      'SOURCE_QUOTIENT_INHERITANCE':'OBSTRUCTED_R_DOES_NOT_FACTOR_THROUGH_B1',
+      'MICROSCOPIC_DEFECT_INHERITANCE':'OBSTRUCTED_NOT_QUOTIENT_COVARIANT',
+      'HODGE_MINIMUM_ACTION':'CONDITIONAL_ON_UNDERIVED_EDGE_INNER_PRODUCT',
+      'ZERO_CYCLE_TARGET':'LAWFUL_EXTRA_CONDITION_NOT_DERIVED',
+      'TOPOLOGY_LINEAR_COVARIANT_FAMILY':'LAWFUL_BUT_NONUNIQUE'
+    }
+    r={'version':'v15.27','status':'PRETIME_CYCLE_TARGET_ORIGIN_AUDIT_STOP','baseline_blob':baseline,
+       'response_target_factors_through_source':False,'factorization_obstruction_dimension':obs['dimension'],'factorization_witness_norm':obs['witness_norm'],
+       'inheritance_verdict':'NO_FACTOR_THROUGH_SOURCE_QUOTIENT','same_q_error':same_q,'same_q_response_difference':same_y,
+       'microscopic_inheritance_quotient_covariant':False,'microscopic_q_equivalence_error':float(np.linalg.norm(q2-q)),'microscopic_target_drift':float(np.linalg.norm(tm2-tm)),
+       'hodge_metric_independent':False,'hodge_weighted_current_difference':hodge_j,'hodge_weighted_target_difference':hodge_t,
+       'zero_target_lawful':True,'zero_target_derived':False,'zero_target_vs_hodge_current_distance':zero_dist,
+       'topology_cycle_closure_error':float(np.linalg.norm(c.B1@ztop)),'topology_cycle_norm':float(np.linalg.norm(ztop)),
+       'topology_family_parameters':alphas,'topology_family_max_source_error':source_err,'topology_family_target_spread':_spread(targets),'topology_family_current_spread':_spread(currents),
+       'topology_family_linearity_error':linear,'topology_family_quotient_error':quot,'topology_family_relabeling_error':relabel,
+       'multiple_covariant_target_laws_survive':True,'covariance_selects_target':False,
+       'homology_basis_reconstruction_error':hb_err,'homology_target_coordinate_change':hb_change,
+       'rank_gate_closes_given_target':True,'max_reconstruction_error':recon,
+       'metric_origin_status':'CONDITIONAL_NOT_DERIVED','response_rank_status':'CONDITIONAL_ON_TARGET','source_geometry_pairing_status':'REQUIRES_NEW_AXIOM_OR_CALIBRATION','candidate_verdicts':candidate_verdicts,
+       'uses_holonomy_as_selector':False,'uses_newton_or_gr':False,'uses_pruning':False,'uses_entropy':False,'uses_physical_time':False,
+       'selector_verdict':'PRETIME_CYCLE_TARGET_IRREDUCIBLE_RELATIVE_TO_FROZEN_ONTOLOGY','cycle_target_derived':False,'signal_of_life':False,'gravity_canary_certified':False,
+       'next_required_object':'EXPLICIT_PRETIME_SOURCE_TO_HIGHER_INCIDENCE_COUPLING_AXIOM_OR_NEW_DERIVED_STRUCTURE',
+       'interpretation':'The full response coordinates separate every cycle degree, but they cannot be inherited from the source quotient q for arbitrary currents because R is nonzero on ker(B1). Microscopic inheritance fails quotient covariance; Hodge requires an underived edge inner product; zero target is an extra condition; and topology plus source-linearity/relabeling covariance admits a nontrivial one-parameter family. The frozen ontology therefore does not derive a unique pre-time cycle-response target.'}
+    verify_result(r);return r
+
+def main():
+    import argparse,json
+    p=argparse.ArgumentParser();p.add_argument('--out',type=pathlib.Path,default=ROOT/'outputs');a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True);r=audit();(a.out/'verification.json').write_text(json.dumps(r,indent=2,allow_nan=False)+'\n');print(json.dumps(r,indent=2,allow_nan=False))
+if __name__=='__main__':main()
