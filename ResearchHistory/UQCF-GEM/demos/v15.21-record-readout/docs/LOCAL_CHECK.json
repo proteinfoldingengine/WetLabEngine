@@ -1,0 +1,13 @@
+{
+  "scope": "Local execution before GitHub publication; not a CI certificate or independent review",
+  "model_red": {"tests":26,"expected_failures":26,"reason":"new implementation absent"},
+  "presentation_red": {"tests":6,"expected_failures":6,"reason":"new presentation absent after correcting inherited import resolution"},
+  "new_tests_passed":32,
+  "selected_prior_tests_passed":310,
+  "total_selected_tests_passed":342,
+  "browser": {"engine":"system Chromium via Playwright set_content","input_schedule_views":90,"presets":3,"widths":[1280,820,390],"javascript_errors":0,"external_requests":0,"horizontal_overflow":false,"native_ipad_safari_tested":false},
+  "video": {"seconds":24,"width":1280,"height":720,"codec":"h264","visually_inspected":true,"fully_decoded":true},
+  "review_corrections": ["Load the local renderer by explicit path instead of inheriting baseline replay.py", "Use unique test_readout_presentation.py so combined unittest execution cannot select baseline/test_replay.py", "Separate sidebar annotations in the movie"],
+  "misrouted_test_runs_counted_as_new_verification":false,
+  "scientific_tolerances_changed":false
+}

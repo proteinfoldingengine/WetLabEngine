@@ -1,0 +1,46 @@
+{
+  "version": "v15.21",
+  "status": "ENSEMBLE_READOUT_PRESERVED_SINGLE_COPY_RECORD_INSTRUMENT_OBSTRUCTED",
+  "baseline": {"predictor_git_blob": "e48f19de7c74d9c7dcf917a66bf7b06138fd36eb", "inherited_baseline_verified": true},
+  "input_fixtures": 18,
+  "schedules": 5,
+  "full_history_probabilities_checked": 1440,
+  "fixture_conditional_checks": 320,
+  "max_decoded_joint_error": 4.440892098500626e-16,
+  "max_direct_joint_error": 0.468749999999999,
+  "max_joint_noise_formula_error": 3.3306690738754696e-16,
+  "max_branch_parity_output_norm": 2.211364171463999e-15,
+  "max_schedule_probability_error": 6.661338147750939e-16,
+  "max_decoded_conditional_error": 2.220446049250313e-15,
+  "max_naive_conditional_error": 0.1440792954058434,
+  "worst_naive_conditional_example": {
+    "schedule": ["B1", "A1", "A2", "B2"], "records": "0001", "event": "B2", "prefix": ["B1", "A1", "A2", "B2"],
+    "ideal_mass": 0.03166365473435417, "raw_mass": 0.04708182736717699, "decoded_mass": 0.03166365473435412,
+    "effect_trace": 0.9999999999999978, "ideal_conditional": 0.7821137359148398, "raw_conditional": 0.5690172202544982,
+    "decoded_conditional": 0.7821137359148393, "naive_local_rescaling": 0.6380344405089964
+  },
+  "obstruction": {
+    "input_distance": 0.9999999999999992, "encoded_distance": 0.49999999999999967,
+    "encoded_pair_minimum_eigenvalue": 0.031249999999999948,
+    "native_encoded_probabilities": [0.7499999999999987, 0.25000000000000044],
+    "minimax_binary_probability_error": 0.25000000000000017,
+    "decoded_effect_eigenvalue_range": [-0.5000000000000004, 1.5000000000000004],
+    "all_extension_spectrum": "1/2 +/- sqrt(1+c^2), c real; no valid POVM effect exists",
+    "contract": "All-input reproduction of the first binary record probability from one encoded copy; arbitrary POVM allowed."
+  },
+  "formal_control": {
+    "branch_updates_checked": 320, "max_on_image_branch_error": 6.993297317223908e-17,
+    "minimum_on_image_output_eigenvalue": 0.0, "outside_image_negative_branch_weight_magnitude": 0.4999999999999982,
+    "scope": "Exact signed computation on encoded inputs only; no positive all-state instrument extension."
+  },
+  "joint_decode_formula": "p_r=2 q_r-1/16; q_r=p_r/2+1/32",
+  "finite_copy_pair_error": [
+    {"copies": 1, "equal_prior_error": 0.25}, {"copies": 2, "equal_prior_error": 0.25},
+    {"copies": 3, "equal_prior_error": 0.15625}, {"copies": 5, "equal_prior_error": 0.103515625},
+    {"copies": 9, "equal_prior_error": 0.04892730712890625}, {"copies": 15, "equal_prior_error": 0.017299838364124298}
+  ],
+  "actual_record_selected": null, "physical_duration": null, "new_physical_axioms": [],
+  "physical_pruning_law_derived": false, "single_copy_event_channel_derived": false,
+  "Pillar_3": "OPEN", "scientific_breakthrough": false,
+  "scope": "Frozen same-carrier noisy predictor. Ensemble statistics and formal signed updates are not a universally valid single-copy quantum instrument or physical actuality selector."
+}
