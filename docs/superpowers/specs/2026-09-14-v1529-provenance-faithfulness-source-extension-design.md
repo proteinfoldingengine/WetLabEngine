@@ -131,6 +131,13 @@ This exact-sequence notation is descriptive: `K_prov` means provenance distincti
 
 The gate must **not** assume this extension is split, vector-linear, quantum, metric, or isomorphic to `ker(B1)`.
 
+A positive extension therefore has two levels:
+
+1. **typed extension certified** — a genuine nontrivial provenance carrier and projection to `Q` exist;
+2. **representation-ready extension certified** — the frozen structure additionally supplies a finite linear representation, or a canonical functor to one, suitable for the exact equivariant coupling solver.
+
+Only level 2 may reopen the v15.28 solver directly.
+
 ---
 
 ## 4. Primary scientific questions
@@ -167,9 +174,14 @@ whose fibers are provenance-distinguished in a mathematically stable way?
 
 ### Q5. Representation bridge readiness
 
-If a nontrivial `S_prov` is certified, does it now possess the typed, covariant label relationship required to become an eligible input for the v15.28 exact coupling-space solver?
+If a nontrivial `S_prov` is certified, does it possess either:
 
-The gate stops before solving any downstream gravity response unless this answer is yes.
+- a certified finite linear representation compatible with the v15.28 exact solver; or
+- a canonical, already-earned functor to such a representation?
+
+A merely covariant set-valued/nonlinear carrier is scientifically interesting but does not yet become a coupling-solver input.
+
+The gate stops before solving any downstream gravity response.
 
 ---
 
@@ -197,6 +209,8 @@ CERTIFIED_PROVENANCE_RELATION
 CERTIFIED_GAUGE_OR_EQUIVALENCE
 CERTIFIED_ACTION
 CERTIFIED_PROJECTION_TO_Q
+CERTIFIED_LINEAR_REPRESENTATION
+CERTIFIED_CANONICAL_LINEARIZATION
 ARCHIVE_EVIDENCE_ONLY
 NO_TYPED_RELATION
 CONDITIONAL_ON_SUPPLIED_MAP
@@ -312,7 +326,7 @@ All provenance information certified as source-relevant is constant on each test
 
 ### B. `PROVENANCE_RELATION_TO_Q_FIBERS_NOT_ENTAILED`
 
-Frozen provenance evidence does not determine whether `q`-equivalent representatives are physically/provenance-equivalent. Countermodels survive. No extension is earned.
+Frozen provenance evidence does not determine whether `q`-equivalent representatives are physical/provenance-equivalent. Countermodels survive. No extension is earned.
 
 ### C. `PROVENANCE_DISTINGUISHES_REPRESENTATIVES_BUT_NO_NATURAL_ACTION`
 
@@ -320,7 +334,11 @@ A certified nontrivial distinction exists inside `q` fibers, but there is no cer
 
 ### D. `PROVENANCE_ENHANCED_SOURCE_CARRIER_CERTIFIED`
 
-A nontrivial typed carrier `S_prov`, projection `pi:S_prov->Q`, and certified natural transformation law are all earned without downstream tuning. This is the only outcome that reopens the exact coupling-space solver as a **new gate**.
+A nontrivial typed carrier `S_prov`, projection `pi:S_prov->Q`, and certified natural transformation law are all earned without downstream tuning. This is an upstream structural result, but it does **not** by itself authorize the v15.28 coupling solver unless representation readiness is also certified.
+
+### D2. `PROVENANCE_SOURCE_REPRESENTATION_READY`
+
+Outcome D holds and, in addition, the carrier has a certified finite linear representation or a canonical frozen-theory functor into one. This is the only outcome that directly reopens the exact v15.28 coupling-space solver as a subsequent gate.
 
 ### E. `PROVENANCE_EXTENSION_REQUIRES_NEW_SOURCE_SEMANTICS_AXIOM`
 
@@ -330,7 +348,7 @@ The desired distinction can be obtained only by explicitly declaring new physica
 
 ## 11. Breakthrough rule
 
-v15.29 may issue an **upstream structural breakthrough alert** only for outcome D and only if all of the following are true:
+v15.29 may issue an **upstream structural breakthrough alert** for outcome D or D2 only if all of the following are true:
 
 - nontrivial provenance distinctions survive certified gauge;
 - the projection to `q` is exact;
@@ -339,7 +357,9 @@ v15.29 may issue an **upstream structural breakthrough alert** only for outcome 
 - no gravity observable or response target is used in selection;
 - the result survives explicit countermodels.
 
-Even then:
+D2 is stronger than D because it additionally certifies representation readiness.
+
+Even for D2:
 
 ```text
 signal_of_life = false
@@ -348,7 +368,7 @@ physical_gravity_derived = false
 Pillar_3 = OPEN
 ```
 
-A certified source carrier is not a gravity signal. It merely supplies the missing typed input required to resume constitutive-coupling classification.
+A certified source representation is not a gravity signal. It merely supplies the missing typed input required to resume constitutive-coupling classification.
 
 ---
 
@@ -385,7 +405,7 @@ The words may appear only in explicit false claim-boundary flags or historical c
 
 ### Positive synthetic control
 
-Construct a toy provenance extension with a declared nontrivial fiber label and an exact relabeling action. The gate must certify it as an enhanced carrier.
+Construct a toy provenance extension with a declared nontrivial fiber label and an exact finite linear relabeling action. The gate must certify it as representation-ready.
 
 This proves the machinery can recognize a valid extension. It is never admitted as UQCF physical evidence.
 
@@ -400,6 +420,10 @@ Use raw `delta_b` labels with no provenance certificate. The gate must reject th
 ### Negative supplied-map control
 
 Reuse v14.04-style supplied intertwiners/maps. The gate must retain conditional status and refuse physical promotion.
+
+### Nonlinear-but-covariant control
+
+Construct a toy provenance carrier with a natural relabeling action but no canonical linearization. The gate may certify a typed extension but must not mark it representation-ready.
 
 ---
 
@@ -429,6 +453,7 @@ Tests must be written before implementation and must include:
 - countermodel non-entailment tests;
 - relabeling/action covariance tests;
 - projection-to-q tests;
+- representation-readiness tests;
 - fail-closed source-semantics tests;
 - synthetic positive/negative extension controls;
 - claim-boundary tests;
@@ -448,6 +473,7 @@ q-fiber representative
 → gauge survival
 → action status
 → extension status
+→ representation-readiness status
 ```
 
 It must not plot a gravitational field, spatial falloff, remote holonomy, or preferred coupling.
@@ -458,7 +484,7 @@ Suggested six-scene replay:
 2. multiple microscopic representatives in one fiber;
 3. provenance identity versus distinction;
 4. gauge/relabeling controls;
-5. extension/countermodel adjudication;
+5. extension/countermodel/representation-readiness adjudication;
 6. final status and gravity boundary.
 
 Playback remains explicitly nonphysical time.
@@ -490,7 +516,8 @@ Stop immediately if any of the following occurs:
 3. a natural action requires choosing a node/site/provenance correspondence by hand;
 4. a source extension is selected because it improves a gravity observable;
 5. the conclusion requires identifying provenance legitimacy with quantum/operator source semantics;
-6. countermodels show the frozen ontology permits both collapsed and noncollapsed provenance assignments.
+6. countermodels show the frozen ontology permits both collapsed and noncollapsed provenance assignments;
+7. a typed/covariant extension exists but no certified linear representation or canonical linearization exists — in this case stop at D, do not promote it to D2.
 
 Do not continue searching the same frozen dependency set after an irreducibility/non-entailment result.
 
@@ -501,7 +528,7 @@ Do not continue searching the same frozen dependency set after an irreducibility
 Only outcome
 
 ```text
-PROVENANCE_ENHANCED_SOURCE_CARRIER_CERTIFIED
+PROVENANCE_SOURCE_REPRESENTATION_READY
 ```
 
 permits a subsequent gate to feed the newly certified carrier into the exact v15.28 coupling solver and compute
@@ -512,7 +539,9 @@ d_\eta(\mathcal S_{\rm prov}\to \mathcal Y_{\rm cyc}).
 
 That later gate must again freeze any one-dimensional form before exposing it to a gravity canary.
 
-If v15.29 instead ends in A, B, C, or E, no gravity canary is reopened.
+Outcome `PROVENANCE_ENHANCED_SOURCE_CARRIER_CERTIFIED` without representation readiness requires a separate representation-origin gate first.
+
+If v15.29 instead ends in A, B, C, D-without-D2, or E, no gravity canary is reopened.
 
 ---
 
@@ -524,7 +553,7 @@ If v15.29 instead ends in A, B, C, or E, no gravity canary is reopened.
 - whether certified provenance distinctions survive gauge;
 - whether a nontrivial typed source extension is entailed;
 - whether a certified natural action exists;
-- whether the extension is ready for future coupling-space classification.
+- whether that extension is representation-ready for future coupling-space classification.
 
 ### Explicitly not derived in v15.29
 
