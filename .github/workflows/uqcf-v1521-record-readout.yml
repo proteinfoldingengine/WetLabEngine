@@ -118,7 +118,9 @@ jobs:
           TAG="uqcf-gem-v15.21-${GITHUB_RUN_ID}-a${GITHUB_RUN_ATTEMPT}"
           echo "TAG=$TAG" >> "$GITHUB_ENV"
           gh release create "$TAG" delivery/assets/* --repo "$GH_REPO" --target "$GITHUB_SHA" --title 'UQCF-GEM v15.21 — record-readout comparison' --notes-file delivery/RELEASE_NOTES.md --draft --prerelease --latest=false
-          gh api "repos/$GH_REPO/releases/tags/$TAG" > delivery/RELEASE_METADATA.json
+          RELEASE_ID="$(gh api --paginate "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.tag_name == \"$TAG\") | .id")"
+          [[ "$RELEASE_ID" =~ ^[0-9]+$ ]]
+          gh api "repos/$GH_REPO/releases/$RELEASE_ID" > delivery/RELEASE_METADATA.json
           python - <<'PY'
           import hashlib,json
           from pathlib import Path
@@ -131,8 +133,7 @@ jobs:
               assert a['digest']=='sha256:'+hashlib.sha256(p.read_bytes()).hexdigest()
           print('All 8 release assets passed size and SHA-256 checks.')
           PY
-          gh release edit "$TAG" --repo "$GH_REPO" --draft=false --latest=false
-          gh api "repos/$GH_REPO/releases/tags/$TAG" > delivery/PUBLICATION_RECEIPT.json
+          gh api --method PATCH "repos/$GH_REPO/releases/$RELEASE_ID" -F draft=false -f make_latest=false > delivery/PUBLICATION_RECEIPT.json
           python - <<'PY'
           import json
           from pathlib import Path
