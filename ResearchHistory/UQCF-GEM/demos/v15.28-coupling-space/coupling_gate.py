@@ -139,3 +139,52 @@ def _q_baseline_from_complex(c, verify_response=False):
 @lru_cache(None)
 def q_baseline_audit():
     return _q_baseline_from_complex(actions.load_frozen_complex(7), verify_response=True)
+
+
+def _verify_v1404_ambiguity(record, repo_root=None):
+    root = REPO_ROOT if repo_root is None else Path(repo_root)
+    path = root / record.artifact_path
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    text = path.read_text()
+    required = (
+        '14041', '14042', '14043',
+        'Minimum pairwise support-source projective residual',
+        'Maximum hidden-direction separation',
+    )
+    missing = [item for item in required if item not in text]
+    if missing:
+        raise AssertionError('v14.04 ambiguity evidence missing: ' + ','.join(missing))
+    return {'supplied_link_count': 3, 'inequivalent_supplied_links': True}
+
+
+def audit_candidate(record):
+    if record.key == 'source-quotient-q-control':
+        return q_baseline_audit()
+    if record.eligibility == 'NO_CERTIFIED_SOURCE_TARGET_REPRESENTATION_LINK':
+        return CandidateAudit(record.key, record.role, record.eligibility,
+                              record.eligibility, None,
+                              stop_reason=record.label_link_status)
+    if record.eligibility == 'CONDITIONAL_ON_SUPPLIED_INTERTWINER':
+        meta = _verify_v1404_ambiguity(record)
+        return CandidateAudit(record.key, record.role, record.eligibility,
+                              record.eligibility, None,
+                              stop_reason=record.label_link_status,
+                              metadata=meta)
+    if record.eligibility == 'ARCHIVE_EVIDENCE_ONLY':
+        return CandidateAudit(record.key, record.role, record.eligibility,
+                              'ARCHIVE_EVIDENCE_ONLY', None,
+                              stop_reason='NOT_A_COUPLING_CANDIDATE')
+    if not record.action_status.startswith('CERTIFIED'):
+        raise AssertionError('eligible record lacks certified action')
+    if not record.label_link_status.startswith('CERTIFIED'):
+        raise AssertionError('eligible record lacks certified target link')
+    raise NotImplementedError(
+        'new eligible physical carrier requires an approved representation-specific solver')
+
+
+def audit_all_candidates(records=None):
+    import representation_inventory as inv
+    rows = inv.frozen_inventory(inv.REPO_ROOT) if records is None else records
+    roles = {'PROVENANCE_CANDIDATE', 'NEGATIVE_CONTROL', 'PHYSICAL_CANDIDATE'}
+    return tuple(audit_candidate(row) for row in rows if row.role in roles)
