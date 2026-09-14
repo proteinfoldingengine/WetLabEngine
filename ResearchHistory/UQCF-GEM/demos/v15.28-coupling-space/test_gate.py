@@ -1,6 +1,7 @@
 import json
 import unittest
 import coupling_gate as gate
+import representation_inventory as inv
 
 
 class GateTests(unittest.TestCase):
@@ -19,6 +20,25 @@ class GateTests(unittest.TestCase):
         text = json.dumps(gate.q_baseline_audit().as_dict()).lower()
         for forbidden in ('holonomy','newton','einstein','inverse_square','distance_score'):
             self.assertNotIn(forbidden, text)
+
+    def test_genesis_field_does_not_get_arbitrary_embedding(self):
+        r = gate.audit_candidate(inv.by_key('genesis-6d-field'))
+        self.assertEqual(r.status, 'NO_CERTIFIED_SOURCE_TARGET_REPRESENTATION_LINK')
+        self.assertIsNone(r.dimension)
+
+    def test_retained_graph_source_current_stays_blocked_without_label_bridge(self):
+        r = gate.audit_candidate(inv.by_key('retained-graph-source-current'))
+        self.assertEqual(r.status, 'NO_CERTIFIED_SOURCE_TARGET_REPRESENTATION_LINK')
+        self.assertIsNone(r.dimension)
+
+    def test_v1404_supplied_intertwiner_remains_conditional(self):
+        r = gate.audit_candidate(inv.by_key('v14.04-supplied-intertwiner-control'))
+        self.assertEqual(r.status, 'CONDITIONAL_ON_SUPPLIED_INTERTWINER')
+        self.assertIsNone(r.dimension)
+
+    def test_only_q_control_is_currently_solver_eligible(self):
+        rows = inv.frozen_inventory(inv.REPO_ROOT)
+        self.assertEqual([r.key for r in inv.eligible_records(rows)], ['source-quotient-q-control'])
 
 
 if __name__ == '__main__':
