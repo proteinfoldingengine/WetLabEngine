@@ -78,7 +78,7 @@ class InventoryTests(unittest.TestCase):
     def test_v1527_and_v1404_hashes_are_frozen(self):
         rows = {r.key: r for r in inv.frozen_inventory(Path(inv.REPO_ROOT))}
         self.assertEqual(rows['v15.27-target-origin'].git_blob,
-                         '4ec7b9ce73186eda9ce50b553abd3042a54a5342')
+                         '1c33232050567bf3b2bf77b19570ec2b8a1fb5e0')
         self.assertEqual(rows['v14.04-provenance-report'].git_blob,
                          'e5d9566bfc86c801d2933e63453d1800f60a675b')
 
