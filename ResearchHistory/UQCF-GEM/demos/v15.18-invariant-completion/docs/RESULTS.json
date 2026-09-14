@@ -1,0 +1,75 @@
+{
+  "version": "v15.18",
+  "status": "EXECUTED_CONDITIONAL_MINIMAL_INVARIANT_ALGEBRA_COMPLETION",
+  "scope_type": "MINIMAL_INVARIANT_UNITAL_STAR_ALGEBRA_FOR_SUPPLIED_MOTIONS",
+  "classification_by_family": {
+    "pretime": {
+      "UNCHANGED": 1,
+      "STRICT_PARTIAL_ENLARGEMENT": 0,
+      "FULL_ALGEBRA_REQUIRED": 15
+    },
+    "A1": {
+      "UNCHANGED": 2,
+      "STRICT_PARTIAL_ENLARGEMENT": 7,
+      "FULL_ALGEBRA_REQUIRED": 7
+    },
+    "A2": {
+      "UNCHANGED": 2,
+      "STRICT_PARTIAL_ENLARGEMENT": 7,
+      "FULL_ALGEBRA_REQUIRED": 7
+    },
+    "B1": {
+      "UNCHANGED": 4,
+      "STRICT_PARTIAL_ENLARGEMENT": 9,
+      "FULL_ALGEBRA_REQUIRED": 3
+    },
+    "B2_given_0": {
+      "UNCHANGED": 4,
+      "STRICT_PARTIAL_ENLARGEMENT": 9,
+      "FULL_ALGEBRA_REQUIRED": 3
+    },
+    "B2_given_1": {
+      "UNCHANGED": 4,
+      "STRICT_PARTIAL_ENLARGEMENT": 9,
+      "FULL_ALGEBRA_REQUIRED": 3
+    },
+    "all_six": {
+      "UNCHANGED": 1,
+      "STRICT_PARTIAL_ENLARGEMENT": 0,
+      "FULL_ALGEBRA_REQUIRED": 15
+    }
+  },
+  "max_closure_error": 3.1278629601099395e-14,
+  "controls": {
+    "mixing_completion_dimensions": [
+      128,
+      256
+    ],
+    "already_pruned_then_enlarged_distance": 1.6110374611890787e-15,
+    "kept_in_completed_algebra_distance": 0.9999999999999933,
+    "linear_orbit_dimension": 3,
+    "multiplicative_algebra_dimension": 4,
+    "linear_space_product_residual": 1.4142135623730951,
+    "scope": "Linear span {I,X,Z} is sufficient for a rotated Z expectation, but not closed under multiplication. Algebra minimality is a stronger requirement."
+  },
+  "full_algebra_certificate": {
+    "motion_index": 0,
+    "row_label": 13,
+    "minimum_row_amplitude": 0.0031552850321018293,
+    "minimum_projector_entry": 9.955823633805844e-06,
+    "matrix_units_generated": 256,
+    "matrix_unit_reconstruction_error": 1.1248911395025433e-16,
+    "proof": "E_ii Q E_jj / Q_ij = E_ij for every i,j; all Q_ij are nonzero."
+  },
+  "physical_duration": null,
+  "actual_record_selected": null,
+  "new_physical_axioms": [],
+  "physical_pruning_law_derived": false,
+  "GOSM_derived": false,
+  "Pillar_3": "OPEN",
+  "scientific_breakthrough": false,
+  "numerical_scope": "Support gaps and operator residuals validate the computed partition; exact minimality follows for that support pattern. No symbolic proof of the input floating-point zeros is claimed.",
+  "interpretation": "Information required BEFORE pruning to reproduce the supplied unpruned motions. No recovered information, new physical carrier, or replacement dynamics.",
+  "case_count": 112,
+  "full_case_ledger": "generated outputs/verification.json"
+}

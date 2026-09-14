@@ -1,0 +1,171 @@
+{
+  "version": "v15.20",
+  "status": "EXECUTED_CONDITIONAL_CPTP_PREDICTOR_WITH_READOUT_COST",
+  "baseline": {
+    "linear_dimension": 255,
+    "projector_error": 9.093788302481231e-14,
+    "motion_commutator": 4.549374593004147e-15,
+    "scope": "same frozen all-six fully-pinched target module; no rank tolerance changed"
+  },
+  "rigidity": {
+    "fixed_visible_generators": 8,
+    "pauli_words_generated": 256,
+    "two_visible_unitaries_product_error": 0.0,
+    "minimum_output_hilbert_dimension_with_common_cptp_recovery": 16,
+    "theorem": "A UCP adjoint fixing visible unitary generators fixes their generated M16. Hence a CPTP encode/decode composition preserving the whole module exactly is identity.",
+    "boundary": "Does not prohibit ensemble-level signed readout, state restrictions, or a non-quantum coordinate representation."
+  },
+  "family": "Phi_(lambda,t)(rho)=lambda*rho+(1-lambda)*Tr(rho)*I/16+(t-lambda)*Tr(Gamma*rho)*Gamma/16",
+  "cp_region_in_unit_square": "lambda <= (1+t)/2",
+  "raw_projection": {
+    "lambda": 1.0,
+    "t": 0.0,
+    "min_state_eigenvalue": -0.06249999999999999,
+    "min_normalized_choi_eigenvalue": -0.00390625,
+    "negative_choi_directions": 127
+  },
+  "boundary_channel": {
+    "lambda": 0.5,
+    "t": 0.0,
+    "kraus_count": 129,
+    "min_choi_eigenvalue": -7.19910242530375e-17,
+    "tp_error": 0.0,
+    "parity_twin_output_distance": 0.0,
+    "visible_pair_output_distance": 0.5,
+    "readout_gain": 2.0,
+    "output_hilbert_dimension": 16,
+    "linear_image_dimension": 255,
+    "normalized_output_coordinate_dimension": 254,
+    "not_idempotent": true,
+    "direct_probability_error_for_balanced_pauli_effect": 0.25
+  },
+  "minimax": {
+    "objective": "max over visible Pauli P of operator_norm(Phi*(P)-P)",
+    "parity_coefficient": "t=Tr(Gamma*Phi(Gamma))/16",
+    "bound": "delta >= (1-t)/2; tight in the displayed family",
+    "exact_parity_erasure_bound": 0.5,
+    "commuting_visible_paulis": 126,
+    "scope": "All CPTP maps on the same M16 carrier; t=0 follows if Phi(Gamma)=0. No bound on arbitrary re-encoded observables or classical estimation gain."
+  },
+  "twirl_certificates": [
+    {
+      "t": 1.1102230246251565e-16,
+      "mean_commuting_visible_gain": 0.5000000000000001,
+      "bound": 0.5,
+      "lower_bound_max_direct_feature_error": 0.49999999999999994,
+      "character_bound_slack": -1.1102230246251565e-16,
+      "max_diagonal_transfer_error": 4.440892098500626e-16,
+      "q_sum_error": 4.440892098500626e-16,
+      "unital_error": 0.0,
+      "scope": "Worst-input direct expectation error over all 254 visible Pauli observables; not necessarily the error for one chosen record probability."
+    },
+    {
+      "t": 0.25000000000000006,
+      "mean_commuting_visible_gain": 0.6250000000000001,
+      "bound": 0.625,
+      "lower_bound_max_direct_feature_error": 0.375,
+      "character_bound_slack": -1.1102230246251565e-16,
+      "max_diagonal_transfer_error": 3.3306690738754696e-16,
+      "q_sum_error": 2.220446049250313e-16,
+      "unital_error": 0.0,
+      "scope": "Worst-input direct expectation error over all 254 visible Pauli observables; not necessarily the error for one chosen record probability."
+    },
+    {
+      "t": 0.49999999999999994,
+      "mean_commuting_visible_gain": 0.7499999999999999,
+      "bound": 0.75,
+      "lower_bound_max_direct_feature_error": 0.25,
+      "character_bound_slack": 1.1102230246251565e-16,
+      "max_diagonal_transfer_error": 5.551115123125783e-16,
+      "q_sum_error": 4.440892098500626e-16,
+      "unital_error": 4.440892098500626e-16,
+      "scope": "Worst-input direct expectation error over all 254 visible Pauli observables; not necessarily the error for one chosen record probability."
+    },
+    {
+      "t": 0.75,
+      "mean_commuting_visible_gain": 0.875,
+      "bound": 0.875,
+      "lower_bound_max_direct_feature_error": 0.125,
+      "character_bound_slack": 0.0,
+      "max_diagonal_transfer_error": 5.551115123125783e-16,
+      "q_sum_error": 0.0,
+      "unital_error": 0.0,
+      "scope": "Worst-input direct expectation error over all 254 visible Pauli observables; not necessarily the error for one chosen record probability."
+    },
+    {
+      "t": 1.0,
+      "mean_commuting_visible_gain": 1.0,
+      "bound": 1.0,
+      "lower_bound_max_direct_feature_error": 0.0,
+      "character_bound_slack": 0.0,
+      "max_diagonal_transfer_error": 0.0,
+      "q_sum_error": 0.0,
+      "unital_error": 0.0,
+      "scope": "Worst-input direct expectation error over all 254 visible Pauli observables; not necessarily the error for one chosen record probability."
+    },
+    {
+      "t": 0.7937253933193772,
+      "mean_commuting_visible_gain": 0.8028944426914345,
+      "bound": 0.8968626966596887,
+      "lower_bound_max_direct_feature_error": 0.1031373033403114,
+      "character_bound_slack": 0.09396825396825415,
+      "max_diagonal_transfer_error": 1.1102230246251565e-16,
+      "q_sum_error": 2.220446049250313e-16,
+      "unital_error": 1.4799999999999998,
+      "scope": "Worst-input direct expectation error over all 254 visible Pauli observables; not necessarily the error for one chosen record probability."
+    },
+    {
+      "t": 0.9999999999999999,
+      "mean_commuting_visible_gain": 0.8075953779365318,
+      "bound": 1.0,
+      "lower_bound_max_direct_feature_error": 5.551115123125783e-17,
+      "character_bound_slack": 0.1924046220634682,
+      "max_diagonal_transfer_error": 5.551115123125783e-16,
+      "q_sum_error": 1.1102230246251565e-16,
+      "unital_error": 1.5702917741768846e-15,
+      "scope": "Worst-input direct expectation error over all 254 visible Pauli observables; not necessarily the error for one chosen record probability."
+    }
+  ],
+  "prediction": {
+    "mask_count": 14,
+    "word_checkpoints": 13,
+    "input_states": 2,
+    "targets_per_checkpoint": 912,
+    "observable_predictions_checked": 23712,
+    "max_decoded_error": 6.591949208711867e-16,
+    "max_direct_readout_error": 0.13377729868937857,
+    "max_channel_motion_covariance_error": 4.650370270965911e-16,
+    "max_target_parity_component": 9.932261479733525e-16,
+    "scope": "Finite controls plus the exact all-input identity; no motion word is a physical clock."
+  },
+  "readout_variance_examples": [
+    {
+      "input_expectation": 0.0,
+      "readout_gain": 2.0,
+      "decoded_single_shot_variance": 4.0,
+      "ideal_single_shot_variance": 1,
+      "interpretation": "Ensemble estimation, not quantum state recovery. No random outcomes are sampled here."
+    },
+    {
+      "input_expectation": 1.0,
+      "readout_gain": 2.0,
+      "decoded_single_shot_variance": 3.0,
+      "ideal_single_shot_variance": 0,
+      "interpretation": "Ensemble estimation, not quantum state recovery. No random outcomes are sampled here."
+    }
+  ],
+  "max_kraus_formula_error": 5.498881884527729e-16,
+  "max_choi_spectrum_error": 4.440892098500626e-16,
+  "max_decoded_prediction_error": 6.591949208711867e-16,
+  "max_channel_motion_covariance_error": 4.650370270965911e-16,
+  "max_twirl_formula_error": 5.551115123125783e-16,
+  "actual_record_selected": null,
+  "physical_duration": null,
+  "new_physical_axioms": [],
+  "physical_collapse_law_derived": false,
+  "physical_entropy_production_derived": false,
+  "smaller_quantum_carrier_derived": false,
+  "Pillar_3": "OPEN",
+  "scientific_breakthrough": false,
+  "scope": "Explicit diagnostic noisy CPTP representation on the same carrier. Direct predictions attenuate; ensemble readout can be rescaled. This is not a common CPTP inverse, a physical pruning selector, or a clock."
+}
