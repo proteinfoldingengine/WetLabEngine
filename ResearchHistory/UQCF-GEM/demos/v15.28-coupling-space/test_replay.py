@@ -6,12 +6,14 @@ import replay
 
 
 class ReplayTests(unittest.TestCase):
-    def test_payload_has_dimensions_not_gravity_scores(self):
-        text = json.dumps(replay.payload()).lower()
+    def test_payload_has_dimensions_not_gravity_score_values(self):
+        p = replay.payload()
+        text = json.dumps(p).lower()
         self.assertIn('candidates', text)
-        self.assertNotIn('holonomy', text)
-        self.assertNotIn('newton', text)
-        self.assertNotIn('einstein', text)
+        for forbidden in ('holonomy_value','newton_residual','einstein_residual','inverse_square_score','distance_score'):
+            self.assertNotIn(forbidden, text)
+        self.assertFalse(p['audit']['uses_newton_or_gr'])
+        self.assertFalse(p['audit']['uses_holonomy_selector'])
 
     def test_html_is_offline_and_explicit(self):
         with tempfile.TemporaryDirectory() as d:
