@@ -1,0 +1,18 @@
+{
+  "kind": "local verification, not CI or independent review",
+  "model_red": {"tests":26,"expected_absent_implementation_failures":26},
+  "presentation_red": {"tests":6,"expected_absent_implementation_failures":6},
+  "new_tests_passed":32,
+  "selected_prior_tests_passed":342,
+  "total_selected_tests_passed":374,
+  "browser": {
+    "engine":"Chromium via Playwright set_content",
+    "comparison_points_checked":41,
+    "record_contexts_checked":29,
+    "presets_checked":3,
+    "widths":[{"width":1280,"scroll":1280},{"width":820,"scroll":820},{"width":390,"scroll":390}],
+    "javascript_errors":[],"external_requests":[],"native_ipad_safari_tested":false
+  },
+  "video":{"seconds":24,"codec":"h264","width":1280,"height":720,"visually_inspected":true,"fully_decoded":true},
+  "baseline_files_unchanged":true
+}
