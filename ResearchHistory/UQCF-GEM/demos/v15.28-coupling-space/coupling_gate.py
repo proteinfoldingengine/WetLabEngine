@@ -1,18 +1,22 @@
 from __future__ import annotations
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from functools import lru_cache
 from fractions import Fraction
 from pathlib import Path
+import argparse
 import hashlib
 import importlib.util
+import json
 import sys
 import numpy as np
 import representation_actions as actions
 import coupling_solver as solver
 
 REPO_ROOT = Path(__file__).resolve().parents[4]
+BASE_SHA = '700a4639010100a12b73882d530ac2c2bbf1f71e'
 SELECTOR_BLOB = '623defd0d8284e5d9cba6d8f8679de698e5202bc'
 SELECTOR_REL = Path('ResearchHistory/UQCF-GEM/demos/v15.27-target-origin/baseline/selector_rank.py')
+INVENTORY_REL = Path('ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space/docs/REPRESENTATION_INVENTORY.json')
 
 @dataclass(frozen=True)
 class CandidateAudit:
@@ -39,6 +43,14 @@ class CandidateAudit:
                 'character_dimension': self.character_dimension,
                 'basis_hashes': list(self.basis_hashes), 'stop_reason': self.stop_reason,
                 'metadata': self.metadata}
+
+@dataclass(frozen=True)
+class FrozenCouplingForm:
+    candidate_key: str
+    projective_basis_hash: str
+    ambient_shape: tuple[int, int]
+    exact_nonzero_entries: tuple[tuple[int, int, int, int], ...]
+    scale_status: str = 'UNRESOLVED_NONPHYSICAL_IN_V15_28'
 
 
 def _signed_trace(a):
@@ -188,3 +200,123 @@ def audit_all_candidates(records=None):
     rows = inv.frozen_inventory(inv.REPO_ROOT) if records is None else records
     roles = {'PROVENANCE_CANDIDATE', 'NEGATIVE_CONTROL', 'PHYSICAL_CANDIDATE'}
     return tuple(audit_candidate(row) for row in rows if row.role in roles)
+
+
+def adjudicate(candidates):
+    eligible = [c for c in candidates if c.eligible_physical_candidate]
+    ones = [c for c in eligible if c.dimension == 1]
+    if not eligible:
+        return 'PRETIME_COUPLING_BLOCKED_BY_REPRESENTATION_LINK'
+    if not ones and all(c.dimension == 0 for c in eligible):
+        return 'PRETIME_COUPLING_SPACE_ZERO'
+    if len(ones) == 1 and len(eligible) == 1:
+        return 'PRETIME_COUPLING_FORM_UNIQUE_UP_TO_SCALE'
+    return 'PRETIME_COUPLING_REMAINS_UNDERDETERMINED'
+
+
+def freeze_unique_form(candidate: CandidateAudit) -> FrozenCouplingForm:
+    if not candidate.eligible_physical_candidate or candidate.dimension != 1 or len(candidate.ambient_basis) != 1:
+        raise ValueError('unique form requires one-dimensional eligible physical candidate')
+    canon = solver.canonical_projective_matrix(candidate.ambient_basis[0])
+    entries = tuple((i, j, int(x), 1)
+                    for i, row in enumerate(canon) for j, x in enumerate(row) if x)
+    return FrozenCouplingForm(candidate.key, solver.projective_hash(candidate.ambient_basis[0]),
+                              (len(canon), len(canon[0]) if canon else 0), entries)
+
+
+def _inventory_hash():
+    import representation_inventory as inv
+    path = REPO_ROOT / INVENTORY_REL
+    actual = inv.git_blob_hash(path)
+    expected = '28dd212b422a4f41d835ccbec79a35116e268ba1'
+    if actual != expected:
+        raise ValueError(f'committed representation inventory drift: {actual}')
+    return actual
+
+
+def _verify_result(r):
+    required = {
+        'version','status','base_sha','inventory_hash','q_control','candidates',
+        'eligible_candidate_count','one_dimensional_candidate_count',
+        'multi_dimensional_candidate_count','zero_dimensional_candidate_count',
+        'blocked_candidate_count','unique_form_frozen','frozen_form','scale_resolved',
+        'gravity_observables_evaluated','uses_holonomy_selector','uses_newton_or_gr',
+        'uses_metric_selector','uses_pruning','uses_entropy','uses_physical_time',
+        'scientific_breakthrough','signal_of_life','gravity_canary_certified',
+        'Pillar_3','next_required_object'
+    }
+    if set(r) != required:
+        raise AssertionError('ledger schema mismatch')
+    if r['q_control']['dimension'] != 3:
+        raise AssertionError('q control dimension changed')
+    if r['eligible_candidate_count'] == 0 and r['status'] != 'PRETIME_COUPLING_BLOCKED_BY_REPRESENTATION_LINK':
+        raise AssertionError('blocked verdict mismatch')
+    for key in ('gravity_observables_evaluated','uses_holonomy_selector','uses_newton_or_gr',
+                'uses_metric_selector','uses_pruning','uses_entropy','uses_physical_time',
+                'signal_of_life','gravity_canary_certified'):
+        if r[key]:
+            raise AssertionError(f'forbidden claim/selector: {key}')
+    if r['status'] != 'PRETIME_COUPLING_FORM_UNIQUE_UP_TO_SCALE' and r['scientific_breakthrough']:
+        raise AssertionError('breakthrough without unique coupling form')
+
+
+@lru_cache(None)
+def audit():
+    q_control = q_baseline_audit()
+    candidates = audit_all_candidates()
+    status = adjudicate(candidates)
+    eligible = [c for c in candidates if c.eligible_physical_candidate]
+    ones = [c for c in eligible if c.dimension == 1]
+    multis = [c for c in eligible if c.dimension is not None and c.dimension > 1]
+    zeros = [c for c in eligible if c.dimension == 0]
+    blocked = [c for c in candidates if c.dimension is None]
+    frozen = freeze_unique_form(ones[0]) if status == 'PRETIME_COUPLING_FORM_UNIQUE_UP_TO_SCALE' else None
+    gravity_observables_evaluated = False
+    scientific_breakthrough = bool(status == 'PRETIME_COUPLING_FORM_UNIQUE_UP_TO_SCALE' and frozen is not None and not gravity_observables_evaluated)
+    result = {
+        'version': 'v15.28',
+        'status': status,
+        'base_sha': BASE_SHA,
+        'inventory_hash': _inventory_hash(),
+        'q_control': q_control.as_dict(),
+        'candidates': [c.as_dict() for c in candidates],
+        'eligible_candidate_count': len(eligible),
+        'one_dimensional_candidate_count': len(ones),
+        'multi_dimensional_candidate_count': len(multis),
+        'zero_dimensional_candidate_count': len(zeros),
+        'blocked_candidate_count': len(blocked),
+        'unique_form_frozen': frozen is not None,
+        'frozen_form': asdict(frozen) if frozen is not None else None,
+        'scale_resolved': False,
+        'gravity_observables_evaluated': gravity_observables_evaluated,
+        'uses_holonomy_selector': False,
+        'uses_newton_or_gr': False,
+        'uses_metric_selector': False,
+        'uses_pruning': False,
+        'uses_entropy': False,
+        'uses_physical_time': False,
+        'scientific_breakthrough': scientific_breakthrough,
+        'signal_of_life': False,
+        'gravity_canary_certified': False,
+        'Pillar_3': 'OPEN',
+        'next_required_object': 'CERTIFIED_PRETIME_PROVENANCE_TO_CYCLE_REPRESENTATION_LINK_OR_NEW_DERIVED_STRUCTURE',
+    }
+    _verify_result(result)
+    return result
+
+
+def write_results(path: Path, result=None):
+    result = audit() if result is None else result
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(result, indent=2, sort_keys=True, allow_nan=False) + '\n')
+
+
+def main():
+    parser = argparse.ArgumentParser(description='v15.28 gravity-blind coupling-space gate')
+    parser.add_argument('--out', type=Path, default=Path(__file__).resolve().parent / 'outputs')
+    args = parser.parse_args(); args.out.mkdir(parents=True, exist_ok=True)
+    result = audit(); write_results(args.out / 'verification.json', result)
+    print(json.dumps(result, indent=2, sort_keys=True, allow_nan=False))
+
+if __name__ == '__main__':
+    main()
