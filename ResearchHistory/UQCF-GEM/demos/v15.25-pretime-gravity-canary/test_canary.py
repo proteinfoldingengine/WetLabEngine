@@ -108,6 +108,7 @@ class CanaryTests(unittest.TestCase):
         j=m.compatibility_response(B,qq).current
         self.assertLess(np.linalg.norm(j[c.B1.shape[1]:]),1e-11)
 
+
     def test_remote_shell_signal_survives_all_four_incidence_orientations(self):
         c=m.torus_complex(7)
         for slot in ('bottom','right','top','left'):
@@ -144,6 +145,24 @@ class CanaryTests(unittest.TestCase):
         self.assertFalse(a['physical_gravity_derived'])
         self.assertEqual(a['candidate_law_status'],'SUPPLIED_PRETIME_HIGHER_INCIDENCE_CANARY')
 
+
+    def test_bare_compatibility_admits_exact_local_cancellation(self):
+        c=m.torus_complex(7);q,delta=m.incidence_defect(c,(0,0),'bottom',1.0)
+        local=-delta
+        self.assertEqual(np.count_nonzero(np.abs(local)>1e-12),1)
+        self.assertLess(np.linalg.norm(c.B1@local+q),1e-12)
+        far=m.farthest_face(c,(0,0))
+        self.assertLess(m.holonomy_defect(m.face_holonomy(c,local,far,.2,False)),1e-12)
+
+    def test_apparent_global_signal_is_not_forced_by_bare_compatibility(self):
+        a=m.audit()
+        self.assertTrue(a['diagnostic_global_representative'])
+        self.assertTrue(a['local_cancellation_exists'])
+        self.assertFalse(a['global_compatibility_signal'])
+        self.assertFalse(a['signal_of_life'])
+        self.assertFalse(a['gravity_canary_certified'])
+        self.assertEqual(a['canary_verdict'],'KILLED_BARE_COMPATIBILITY_DOES_NOT_FORCE_GLOBAL_RESPONSE')
+
     def test_cycle_freedom_changes_remote_holonomy_without_changing_closure(self):
         c=m.torus_complex(7);q,_=m.incidence_defect(c,(0,0),'bottom',1.0)
         r=m.compatibility_response(c.B1,q);face=m.farthest_face(c,(0,0))
@@ -163,7 +182,7 @@ class CanaryTests(unittest.TestCase):
 
     def test_canary_reports_signal_but_refuses_physical_gravity_certification(self):
         a=m.audit()
-        self.assertTrue(a['global_compatibility_signal'])
+        self.assertFalse(a['global_compatibility_signal'])
         self.assertFalse(a['gravity_canary_certified'])
         self.assertFalse(a['canary_positive'])
         self.assertGreater(a['response_nonuniqueness_dimension'],0)
