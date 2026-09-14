@@ -1,6 +1,6 @@
 # v15.29 — Pre-Time Provenance Faithfulness / Source Extension Gate
 
-**Design status:** approved direction; design-only specification. No scientific implementation is authorized by this file.
+**Design status:** approved and frozen. No scientific implementation is authorized by this file alone.
 
 **Base scientific head:** `42244310b065f473c8bd459a6f065a61afbd2292` (certified v15.28 exact head).
 
@@ -131,13 +131,6 @@ This exact-sequence notation is descriptive: `K_prov` means provenance distincti
 
 The gate must **not** assume this extension is split, vector-linear, quantum, metric, or isomorphic to `ker(B1)`.
 
-A positive extension therefore has two levels:
-
-1. **typed extension certified** — a genuine nontrivial provenance carrier and projection to `Q` exist;
-2. **representation-ready extension certified** — the frozen structure additionally supplies a finite linear representation, or a canonical functor to one, suitable for the exact equivariant coupling solver.
-
-Only level 2 may reopen the v15.28 solver directly.
-
 ---
 
 ## 4. Primary scientific questions
@@ -174,14 +167,16 @@ whose fibers are provenance-distinguished in a mathematically stable way?
 
 ### Q5. Representation bridge readiness
 
-If a nontrivial `S_prov` is certified, does it possess either:
+If a nontrivial `S_prov` is certified, does it now possess the typed, covariant label relationship required to become an eligible input for the v15.28 exact coupling-space problem?
 
-- a certified finite linear representation compatible with the v15.28 exact solver; or
-- a canonical, already-earned functor to such a representation?
+A positive answer requires more than covariance. The source carrier must also supply either:
 
-A merely covariant set-valued/nonlinear carrier is scientifically interesting but does not yet become a coupling-solver input.
+- a finite-dimensional linear representation with exact action matrices; or
+- a canonical linearization already determined by the frozen ontology.
 
-The gate stops before solving any downstream gravity response.
+Without that structure, the carrier may be typed/covariant but is **not representation-ready** for the coupling solver.
+
+The gate stops before solving any downstream gravity response. A representation-ready source carrier merely authorizes a separate later coupling-space gate.
 
 ---
 
@@ -209,8 +204,6 @@ CERTIFIED_PROVENANCE_RELATION
 CERTIFIED_GAUGE_OR_EQUIVALENCE
 CERTIFIED_ACTION
 CERTIFIED_PROJECTION_TO_Q
-CERTIFIED_LINEAR_REPRESENTATION
-CERTIFIED_CANONICAL_LINEARIZATION
 ARCHIVE_EVIDENCE_ONLY
 NO_TYPED_RELATION
 CONDITIONAL_ON_SUPPLIED_MAP
@@ -290,7 +283,13 @@ A candidate without a certified action is classified:
 PROVENANCE_DISTINCTION_EXISTS_BUT_ACTION_NOT_CERTIFIED
 ```
 
-and does not reach the coupling solver.
+and does not reach representation-readiness.
+
+### 8.1 Representation-readiness requirement
+
+A certified action is necessary but not sufficient to reopen the coupling solver. A candidate must additionally carry a finite linear representation or a canonical frozen-theory linearization whose equivariance and projection to `Q` can be checked exactly.
+
+If the provenance carrier is only a set/groupoid/discrete-label object with no canonical linearization, v15.29 may certify the carrier itself but must classify it as not representation-ready. An arbitrary free-vector-space construction is not automatically physical and must not be introduced merely to feed the solver.
 
 ---
 
@@ -326,7 +325,7 @@ All provenance information certified as source-relevant is constant on each test
 
 ### B. `PROVENANCE_RELATION_TO_Q_FIBERS_NOT_ENTAILED`
 
-Frozen provenance evidence does not determine whether `q`-equivalent representatives are physical/provenance-equivalent. Countermodels survive. No extension is earned.
+Frozen provenance evidence does not determine whether `q`-equivalent representatives are physically/provenance-equivalent. Countermodels survive. No extension is earned.
 
 ### C. `PROVENANCE_DISTINGUISHES_REPRESENTATIVES_BUT_NO_NATURAL_ACTION`
 
@@ -334,13 +333,13 @@ A certified nontrivial distinction exists inside `q` fibers, but there is no cer
 
 ### D. `PROVENANCE_ENHANCED_SOURCE_CARRIER_CERTIFIED`
 
-A nontrivial typed carrier `S_prov`, projection `pi:S_prov->Q`, and certified natural transformation law are all earned without downstream tuning. This is an upstream structural result, but it does **not** by itself authorize the v15.28 coupling solver unless representation readiness is also certified.
+A nontrivial typed carrier `S_prov`, projection `pi:S_prov->Q`, and certified natural transformation law are all earned without downstream tuning. The carrier itself is certified, but this status does **not** imply a linear representation suitable for the v15.28 coupling solver.
 
-### D2. `PROVENANCE_SOURCE_REPRESENTATION_READY`
+### E. `PROVENANCE_SOURCE_REPRESENTATION_READY`
 
-Outcome D holds and, in addition, the carrier has a certified finite linear representation or a canonical frozen-theory functor into one. This is the only outcome that directly reopens the exact v15.28 coupling-space solver as a subsequent gate.
+Outcome D holds and, in addition, the carrier has a certified finite linear representation or canonical frozen-theory linearization with exact action and projection equivariance. This is the only outcome that may open a **separate future coupling-space gate** for `S_prov`.
 
-### E. `PROVENANCE_EXTENSION_REQUIRES_NEW_SOURCE_SEMANTICS_AXIOM`
+### F. `PROVENANCE_EXTENSION_REQUIRES_NEW_SOURCE_SEMANTICS_AXIOM`
 
 The desired distinction can be obtained only by explicitly declaring new physical source semantics. v15.29 must stop and request separate approval rather than adopt it.
 
@@ -348,18 +347,19 @@ The desired distinction can be obtained only by explicitly declaring new physica
 
 ## 11. Breakthrough rule
 
-v15.29 may issue an **upstream structural breakthrough alert** for outcome D or D2 only if all of the following are true:
+v15.29 may issue an **upstream structural breakthrough alert** only for outcome E and only if all of the following are true:
 
 - nontrivial provenance distinctions survive certified gauge;
 - the projection to `q` is exact;
 - the carrier/action are natural under the frozen relabeling structure;
-- no arbitrary cross-domain embedding is inserted;
+- a finite linear representation or canonical frozen-theory linearization is certified;
+- no arbitrary cross-domain embedding or free-vector-space convenience construction is inserted;
 - no gravity observable or response target is used in selection;
 - the result survives explicit countermodels.
 
-D2 is stronger than D because it additionally certifies representation readiness.
+Outcome D without representation-readiness is progress but not the preregistered breakthrough threshold.
 
-Even for D2:
+Even for E:
 
 ```text
 signal_of_life = false
@@ -368,7 +368,7 @@ physical_gravity_derived = false
 Pillar_3 = OPEN
 ```
 
-A certified source representation is not a gravity signal. It merely supplies the missing typed input required to resume constitutive-coupling classification.
+A representation-ready source carrier is not a gravity signal. It merely supplies the missing typed input required to resume constitutive-coupling classification in a separate gate.
 
 ---
 
@@ -405,9 +405,11 @@ The words may appear only in explicit false claim-boundary flags or historical c
 
 ### Positive synthetic control
 
-Construct a toy provenance extension with a declared nontrivial fiber label and an exact finite linear relabeling action. The gate must certify it as representation-ready.
+Construct a toy provenance extension with a declared nontrivial fiber label and an exact relabeling action. The gate must certify it as an enhanced carrier.
 
-This proves the machinery can recognize a valid extension. It is never admitted as UQCF physical evidence.
+Add a second synthetic variant with an explicit finite linear representation to prove the machinery distinguishes `PROVENANCE_ENHANCED_SOURCE_CARRIER_CERTIFIED` from `PROVENANCE_SOURCE_REPRESENTATION_READY`.
+
+These controls are never admitted as UQCF physical evidence.
 
 ### Negative collapsed control
 
@@ -420,10 +422,6 @@ Use raw `delta_b` labels with no provenance certificate. The gate must reject th
 ### Negative supplied-map control
 
 Reuse v14.04-style supplied intertwiners/maps. The gate must retain conditional status and refuse physical promotion.
-
-### Nonlinear-but-covariant control
-
-Construct a toy provenance carrier with a natural relabeling action but no canonical linearization. The gate may certify a typed extension but must not mark it representation-ready.
 
 ---
 
@@ -453,7 +451,7 @@ Tests must be written before implementation and must include:
 - countermodel non-entailment tests;
 - relabeling/action covariance tests;
 - projection-to-q tests;
-- representation-readiness tests;
+- representation-readiness/linearization tests;
 - fail-closed source-semantics tests;
 - synthetic positive/negative extension controls;
 - claim-boundary tests;
@@ -472,7 +470,7 @@ q-fiber representative
 → provenance certificate/equivalence class
 → gauge survival
 → action status
-→ extension status
+→ carrier status
 → representation-readiness status
 ```
 
@@ -498,94 +496,31 @@ v15.29 must preserve, not reinterpret away:
 - v15.08: source semantics irreducible relative to frozen ontology;
 - v15.09: canonical neutral quantum structure does not derive a retained quantum carrier or cross-sort functor;
 - v14.04: nontrivial provenance-to-support mapping requires representation data not automatically supplied;
-- v15.25: bare compatibility does not force long-range response;
-- v15.26: response target uniquely determines response only conditionally;
-- v15.27: cycle-response target does not factor through q alone;
-- v15.28: q-only coupling space is three-dimensional, while physical provenance carriers are blocked by missing representation links.
+- v15.27: the desired cycle response does not factor through coarse `q` alone;
+- v15.28: q-only symmetry leaves a 3-dimensional coupling space, while no archived provenance-enhanced physical carrier was representation-eligible.
 
-A positive v15.29 result may reopen representation/coupling classification, but it does not retroactively convert any supplied map into a derived law.
+A positive v15.29 result would not contradict those statements. It would require genuinely new information already present in provenance that was not part of the coarse `q` quotient, with its own certified action and, for representation-readiness, linear structure.
 
 ---
 
-## 17. Exact stop rule
+## 17. Stop rule
 
-Stop immediately if any of the following occurs:
+Stop immediately if any proposed positive result depends on:
 
-1. the only way to distinguish `q`-equivalent representatives is raw microscopic labeling with no frozen provenance certificate;
-2. a distinction exists but its action under relabeling is unspecified;
-3. a natural action requires choosing a node/site/provenance correspondence by hand;
-4. a source extension is selected because it improves a gravity observable;
-5. the conclusion requires identifying provenance legitimacy with quantum/operator source semantics;
-6. countermodels show the frozen ontology permits both collapsed and noncollapsed provenance assignments;
-7. a typed/covariant extension exists but no certified linear representation or canonical linearization exists — in this case stop at D, do not promote it to D2.
+- declaring raw microscopic incidence physical by fiat;
+- choosing among q-fiber representatives using a response/geometry score;
+- identifying provenance and torus/quantum labels by matching counts or dimensions;
+- using an arbitrary supplied intertwiner;
+- freely linearizing a discrete provenance object merely to make the coupling solver applicable;
+- interpreting Genesis/history legitimacy as operator source semantics;
+- using pruning, entropy or physical time upstream.
 
-Do not continue searching the same frozen dependency set after an irreducibility/non-entailment result.
-
----
-
-## 18. What a positive result would permit next
-
-Only outcome
-
-```text
-PROVENANCE_SOURCE_REPRESENTATION_READY
-```
-
-permits a subsequent gate to feed the newly certified carrier into the exact v15.28 coupling solver and compute
-
-\[
-d_\eta(\mathcal S_{\rm prov}\to \mathcal Y_{\rm cyc}).
-\]
-
-That later gate must again freeze any one-dimensional form before exposing it to a gravity canary.
-
-Outcome `PROVENANCE_ENHANCED_SOURCE_CARRIER_CERTIFIED` without representation readiness requires a separate representation-origin gate first.
-
-If v15.29 instead ends in A, B, C, D-without-D2, or E, no gravity canary is reopened.
+If the archive does not entail the provenance relation on q fibers, report the non-entailment result and stop. Do not continue searching the same frozen dependency set for a relation ruled out by explicit countermodels.
 
 ---
 
-## 19. Claim boundary
+## 18. Delivery discipline
 
-### May be derived in v15.29
+Implementation, if approved later, uses tests-first commits, exact-head GitHub Actions, all inherited selected regressions, a draft/unmerged PR, and a digest-verified prerelease containing source/report/numerical evidence plus gravity-blind HTML/video.
 
-- whether frozen provenance is constant on q-fibers;
-- whether certified provenance distinctions survive gauge;
-- whether a nontrivial typed source extension is entailed;
-- whether a certified natural action exists;
-- whether that extension is representation-ready for future coupling-space classification.
-
-### Explicitly not derived in v15.29
-
-- a constitutive response law;
-- a unique coupling form;
-- coupling scale;
-- long-range gravity;
-- spacetime/coframe;
-- stress-energy;
-- Newton/Einstein equations;
-- entropy production;
-- pruning;
-- physical time;
-- actual outcome selection;
-- Pillar 3 closure.
-
----
-
-## 20. Governance summary
-
-v15.29 asks whether the frozen provenance ontology contains **more source information than q**, not whether retaining more information helps gravity.
-
-The central discipline is:
-
-\[
-\boxed{
-\text{provenance distinction}
-\neq
-\text{physical source distinction}
-}
-\]
-
-unless the frozen theory supplies the typed, gauge-stable, covariant relationship required to make that inference.
-
-The gate is successful scientifically whether it certifies an extension or proves that the extension is not entailed. A negative result is preferable to manufacturing the missing bridge.
+`main` remains unchanged unless the user explicitly approves a later merge.
