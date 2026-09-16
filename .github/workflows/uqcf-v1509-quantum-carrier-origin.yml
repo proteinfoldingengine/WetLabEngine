@@ -1,0 +1,39 @@
+name: UQCF v15.09 Quantum Carrier Origin
+
+on:
+  push:
+    branches:
+      - research/v15.09-quantum-carrier-origin
+    paths:
+      - 'ResearchHistory/UQCF-GEM/v15/v15.09/**'
+      - 'ResearchHistory/UQCF-GEM/README.md'
+      - 'ResearchHistory/UQCF-GEM/STATUS.md'
+      - '.github/workflows/uqcf-v1509-quantum-carrier-origin.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/v15/v15.09
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: python -m pip install numpy==2.4.6
+      - name: Run v15.09 checker
+        run: python CHECKER.py

@@ -1,0 +1,100 @@
+{
+  "version": "v15.09",
+  "gate": "Quantum Carrier Origin / Tensor-Factorization Blindness Gate",
+  "primary_outcome": "CANONICAL_NEUTRAL_STRUCTURE_DOES_NOT_DERIVE_RETAINED_QUANTUM_CARRIER",
+  "secondary_outcome": "FRAME_NEUTRAL_REFERENCE_IS_TENSOR_FACTORIZATION_BLIND",
+  "tertiary_outcome": "SUPPLIED_SITE_FINGERPRINTS_DO_NOT_DEFINE_CROSS_DOMAIN_NODE_SITE_FUNCTOR",
+  "major_structural_result": true,
+  "scientific_breakthrough": false,
+  "Pillar_3": "OPEN",
+  "frozen_dependency_audit": {
+    "archive_bindings": {
+      "ResearchHistory/UQCF-GEM/v14/v14.04/REPORT.md": "e5d9566bfc86c801d2933e63453d1800f60a675b",
+      "ResearchHistory/UQCF-GEM/v15/v15.01/REPORT.md": "1afbb7aebe384a1fb761f99fd2b040e595be1fa5",
+      "ResearchHistory/UQCF-GEM/v15/v15.02/REPORT.md": "be1281621b0e2872e555223b2c1cdb98fe9d8011",
+      "ResearchHistory/UQCF-GEM/v15/v15.03/REPORT.md": "6c3aed73c63c9c7554107d163e15b8fae7549c1c",
+      "ResearchHistory/UQCF-GEM/v15/v15.07/REPORT.md": "c3abb3af5b5c7210fc717392d4e2cc6fc4648284",
+      "ResearchHistory/UQCF-GEM/v15/v15.08/REPORT.md": "23bbeaecdb81adfe1a39b3140569d23c367b8b55"
+    },
+    "archive_bindings_match_expected": true,
+    "v14_04": "provenance-to-support representation link remains missing",
+    "v15_01": "C125 parent/support is verified but provenance supplies no same-parent source/carrier representation",
+    "v15_02": "120 inequivalent node-to-quantum-label identifications; shared cardinality is insufficient",
+    "v15_03": "exact retained graph-to-five-site factorization remains underived and five nontrivial sites cannot equal C125",
+    "v15_07": "tau_d=I/d and Q_d=d*rho are canonical only after the Hilbert carrier is specified; tau factorizes for every supplied tensor decomposition",
+    "v15_08": "source-semantics branch is stopped and is not reused as a carrier selector",
+    "new_v15_07_structure_reopens_v15_02": false,
+    "new_v15_07_structure_reopens_v15_03": false,
+    "v15_08_source_semantics_branch_stop_preserved": true,
+    "classification": "CANONICAL_QUANTUM_INTRASORT_STRUCTURE_DOES_NOT_SUPPLY_CROSS_DOMAIN_CARRIER_ORIGIN"
+  },
+  "factorization_blindness": {
+    "classification": "FRAME_NEUTRAL_REFERENCE_IS_TENSOR_FACTORIZATION_BLIND",
+    "dimension": 32,
+    "unordered_factorizations": [[32], [2, 16], [4, 8], [2, 2, 8], [2, 4, 4], [2, 2, 2, 4], [2, 2, 2, 2, 2]],
+    "unordered_factorization_count": 7,
+    "five_nontrivial_factor_decompositions": [[2, 2, 2, 2, 2]],
+    "five_nontrivial_factor_decomposition_count": 1,
+    "factorization_errors": {
+      "32": 0.0,
+      "2x16": 0.0,
+      "4x8": 0.0,
+      "2x2x8": 0.0,
+      "2x4x4": 0.0,
+      "2x2x2x4": 0.0,
+      "2x2x2x2x2": 0.0
+    },
+    "max_neutral_factorization_error": 0.0,
+    "factorization_selected_by_tau": false,
+    "factorization_selected_by_Q_definition": false,
+    "theorem": "For every tensor decomposition D=product_i d_i, I_D/D equals tensor_i(I_di/d_i). Therefore the unique frame-neutral state is compatible with every supplied tensor decomposition and cannot select one. Likewise Q_D(rho)=D*rho is defined without a tensor decomposition; its product factorization property applies only after a product structure is supplied."
+  },
+  "five_site_permutation_control": {
+    "classification": "NEUTRAL_FIVE_QUBIT_REFERENCE_HAS_FULL_S5_SITE_PERMUTATION_SYMMETRY",
+    "permutation_count": 120,
+    "accepted_permutation_count": 120,
+    "max_neutral_permutation_error": 0.0,
+    "site_label_selected_by_neutral_reference": false
+  },
+  "cross_domain_independence": {
+    "classification": "TWO_SORT_REDUCT_DOES_NOT_DEFINE_NODE_SITE_BIJECTION",
+    "graph_automorphism_order": 1,
+    "graph_automorphisms": [[0, 1, 2, 3, 4]],
+    "quantum_site_spectral_fingerprints": [[0.425, 0.575], [0.345, 0.655], [0.29, 0.71], [0.185, 0.815], [0.39, 0.61]],
+    "all_site_spectral_fingerprints_distinct": true,
+    "quantum_site_spectral_stabilizer_order": 1,
+    "node_site_bijection_count": 120,
+    "inequivalent_bijection_count": 120,
+    "certified_cross_domain_relation_found": false,
+    "same_reduct_supports_all_bijections": true,
+    "supplied_five_qubit_factorization_required_before_site_fingerprints_exist": true,
+    "theorem": "Treat retained nodes and quantum sites as distinct sorts. If the frozen reduct contains only within-sort relations and no cross-sort relation, then adjoining any node-to-site bijection yields an expansion with the same reduct. Hence the reduct cannot entail one bijection. The v15.07 neutral/reference operators live entirely on the quantum sort and do not add a cross-sort relation."
+  },
+  "compatibility_parent_boundary": {
+    "parent_dimension": 125,
+    "parent_unordered_factorizations": [[125], [5, 25], [5, 5, 5]],
+    "five_nontrivial_factor_decompositions": [],
+    "five_nontrivial_factor_decomposition_count": 0,
+    "five_site_carrier_can_equal_parent": false,
+    "supplied_five_qubit_dimension": 32,
+    "dimension_match_with_supplied_five_qubit_carrier": false,
+    "natural_supplied_five_qubit_to_C125_map_found": false,
+    "classification": "V15_07_NEUTRAL_STRUCTURE_DOES_NOT_REPAIR_C125_PARENT_TYPE_MISMATCH"
+  },
+  "claim_boundary": {
+    "canonical_neutral_reference_preserved": true,
+    "canonical_log_generator_preserved": true,
+    "five_site_quantum_carrier_derived": false,
+    "retained_node_to_quantum_site_functor_derived": false,
+    "graph_site_to_C125_parent_map_derived": false,
+    "source_semantics_reopened": false,
+    "new_representation_principle_required": true,
+    "physical_stress_energy_derived": false,
+    "spacetime_or_einstein_equations_derived": false,
+    "downstream_gravity_used_as_selector": false,
+    "entropy_or_time_used_as_selector": false,
+    "Pillar_3_closed": false
+  },
+  "stop_rule": "Do not infer a five-site carrier from tau_d=I/d, do not match rigid graph nodes to distinct quantum-site spectra by sorting or analogy, and do not invent an H32-to-C125 embedding. The carrier-origin branch requires a new cross-domain representation/functor principle.",
+  "next_lawful_frontier": "Preserve the canonical quantum information generator as an intrasort result and redirect to a genuinely independent bridge, unless an independently motivated cross-domain carrier/functor principle is proposed explicitly as a NEW ASSUMPTION."
+}
