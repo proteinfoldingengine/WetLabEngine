@@ -1,0 +1,92 @@
+{
+  "version": "v15.11",
+  "scope": "Seven original Library reports inspected and hashed locally. CI without --sources validates excerpts only, not unavailable original bytes. Full original copies accompany the local bundle.",
+  "baseline_git_commit": "669b5db9b5a95c6f6be09058a2a1fb31aea1c5b4",
+  "baseline_v15_10_module_git_blob": "0a738db9089379d862fe4c3ebbe17b9c1732993a",
+  "sources": [
+    {
+      "name": "UQCF_GEM_v10_8_Pre_Time_Motion_Consistency_Gate.md",
+      "origin": "USER_LIBRARY_SNAPSHOT",
+      "original_sha256": "a0b5bad45cdd6c26c14acaf1ca8deafde5218a7f7c1702ed4b032603113b1baa",
+      "original_size_bytes": 10645,
+      "original_lines_inclusive": [
+        44,
+        44
+      ],
+      "excerpt": "Motion is represented as a reversible relation between physical relational configurations.\n",
+      "excerpt_sha256": "71209f0b29fea9e4689f0594d11eda5a16b9ef93f063eb66de198e0192e65462"
+    },
+    {
+      "name": "UQCF_GEM_v10_21_Pre_Time_Closure_Audit_Pruning_Readiness_Gate.md",
+      "origin": "USER_LIBRARY_SNAPSHOT",
+      "original_sha256": "ecca912e1ffb310d7df28b0867eb50dce17eb0ed4afe89783827745fb3694e6d",
+      "original_size_bytes": 11554,
+      "original_lines_inclusive": [
+        382,
+        383
+      ],
+      "excerpt": "Entropy or irreversible information loss cannot be invoked to explain any theorem already\nclassified as pre-time.\n",
+      "excerpt_sha256": "c57e8f17722e299bb9042cfde850ef7b4caf729b2a5bfb3cf51e421c7a39d771"
+    },
+    {
+      "name": "UQCF_GEM_v11_1_Minimal_Pruning_Primitive_Recoverability_Order_Gate.md",
+      "origin": "USER_LIBRARY_SNAPSHOT",
+      "original_sha256": "903d8813daf730beba68fa0e44690eaf808836df145e39af90efb4a9585bfde2",
+      "original_size_bytes": 11467,
+      "original_lines_inclusive": [
+        68,
+        70
+      ],
+      "excerpt": "This closes the minimal **nonselective** pruning primitive conditionally on accepting RAS.\n\nIt does not yet select one measurement outcome or branch.\n",
+      "excerpt_sha256": "a1a878ff1c1a391cb6be35b01680d2e1c42015d0ce44bc5f62d85c317e444d13"
+    },
+    {
+      "name": "UQCF_GEM_v11_2_Pruning_Event_Ordered_History_Gate.md",
+      "origin": "USER_LIBRARY_SNAPSHOT",
+      "original_sha256": "c0d9acd0430518f473c7158d80cf032572342a1a93f041fc754f4afe255669b5",
+      "original_size_bytes": 10699,
+      "original_lines_inclusive": [
+        64,
+        69
+      ],
+      "excerpt": "Conditional on RAS + RCR, compatible central-record refinement gives an intrinsic event-order\nrelation with no time parameter.\n\nA realized branch is locally totally ordered, while alternative branches remain incomparable.\n\nThis gives an atemporal ordinal event history.\n",
+      "excerpt_sha256": "a467d2816ac4c1549050d6e990eacd66874dd988c260b32f4d885cb679db8c6b"
+    },
+    {
+      "name": "UQCF_GEM_v11_3_Ordinal_Event_Time_Reparameterization_Gate.md",
+      "origin": "USER_LIBRARY_SNAPSHOT",
+      "original_sha256": "2d9d41565a4e1f23ea4386b76468225d9e49570d8a2c41b57c50876c9077bfba",
+      "original_size_bytes": 9782,
+      "original_lines_inclusive": [
+        44,
+        49
+      ],
+      "excerpt": "A finite realized branch has an intrinsic order type and therefore an intrinsic ordinal event\nposition.\n\nHowever, every strictly increasing real-valued labeling of that chain represents the same event\norder. The theory does not select interval lengths, duration ratios, clock rate, or global\nsimultaneity.\n",
+      "excerpt_sha256": "c6db934c6238d149e0cde301862ab0d22e9fe6894a1298a7bccb4bebd9f0e262"
+    },
+    {
+      "name": "UQCF_GEM_v11_4_Intrinsic_Duration_Clock_Candidate_Gate.md",
+      "origin": "USER_LIBRARY_SNAPSHOT",
+      "original_sha256": "6ea5709fb2c6adcea2d21bae40df0a78924c2ac5e53dcae2b2ef7f9dabf94951",
+      "original_size_bytes": 11581,
+      "original_lines_inclusive": [
+        49,
+        51
+      ],
+      "excerpt": "These candidates remain inequivalent even after fixing one common clock unit.\n\nTherefore metric duration is underdetermined by the current pruning architecture.\n",
+      "excerpt_sha256": "c02724cb8629c18122c6a298dae319a62f9c835bc1ece228fe46e3c9167b2355"
+    },
+    {
+      "name": "UQCF_GEM_v11_5_Clock_Selection_Primitive_Dynamics_Coupling_Gate.md",
+      "origin": "USER_LIBRARY_SNAPSHOT",
+      "original_sha256": "d2a45661e33cb6c0161f7bd63f97192dc43f17af1994a88682d5dca96a2e0952",
+      "original_size_bytes": 8896,
+      "original_lines_inclusive": [
+        47,
+        49
+      ],
+      "excerpt": "However, MCCC is a new physical bridge. It is not already implied by the frozen pre-time motion law.\n\nTherefore metric time remains **conditional** rather than derived unconditionally.\n",
+      "excerpt_sha256": "1bf7c2a52b5e6401bca9fb068ae8ed0786c370f2a3035dd99538609ee7e2d902"
+    }
+  ]
+}

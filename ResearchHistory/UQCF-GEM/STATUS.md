@@ -1,259 +1,69 @@
 # UQCF-GEM Current Status
 
 **As of:** 2026-09-13  
-**Latest completed gate:** v15.10 — Pruning-Order / Emergent-Time Bridge Reassessment  
-**Primary adjudication:** `FROZEN_PRUNING_DOES_NOT_YET_DERIVE_INTRINSIC_TIME_ORDER`  
-**Secondary:** `V1153_REWEIGHTING_IS_SUPPORT_PRESERVING_AND_INVERTIBLE_ON_SIMPLEX_INTERIOR`  
-**Tertiary:** `PROVENANCE_LEDGER_HAS_INTRINSIC_ANCESTRY_ORDER_BUT_NO_FROZEN_IDENTIFICATION_WITH_PRUNING_TIME`  
-**Major structural result:** `true`  
-**Scientific breakthrough:** `false`  
-**Pillar 3:** `OPEN`
+**Latest reconciliation:** [v15.11 — Ontology Continuity](v15/v15.11/REPORT.md)  
+**Result:** `CONTINUITY_RESTORED_CONDITIONAL_ORDINAL_ORDER_PRESERVED`  
+**New physical axioms adopted by this reconciliation:** none.  
+**Scientific breakthrough:** false. **Pillar 3:** OPEN.  
+**Integration:** research branches remain separate from main; exact-head verification is recorded on the corresponding draft PR.
 
-## Current scientific picture
+## The corrected ontology boundary
 
-The recent program has now separated four questions that must not be conflated:
+Pre-time motion is reversible relational transformation. Transformation composition is not an imported physical clock or an irreversible history. Physical entropy/time onset at irreversible observational choice remains the proposed interpretation to be tested, not a numerical selector or a theorem supplied by terminology.
 
 ```text
-A. canonical local quantum information structure
-B. physical source semantics
-C. retained-relation -> quantum-carrier representation
-D. pruning -> intrinsic order / emergent-time bridge
+pre-time reversible relational motion (v10.8)
+    -> no clock, entropy-production primitive, or irreversible actuality assumed
+frozen pre-time non-repair boundary (v10.21)
+    -> later pruning may not retroactively tune or derive earlier physical inputs
+supplied Retained Algebra Selection, RAS (v11.1)
+    -> canonical trace-preserving conditional expectation
+    -> loss of distinguishability in the declared retained algebra
+supplied Realized Central Record, RCR (v11.2)
+    -> an actual positive-weight classical record
+compatible strict record refinement (v11.2-v11.3)
+    -> conditional ordinal event order; independent events remain partially ordered
+metric duration (v11.4)
+    -> inequivalent additive interval functionals remain, even after fixing a unit
+Motion-Capacity Clock Calibration (v11.5)
+    -> an additional conditional physical bridge, not derived from frozen motion
 ```
 
-Their current statuses are:
+RAS and RCR remain explicit physical input in the archived conditional branch. Merely restoring those reports does not derive their selection from deeper ontology. The proposed first-collapse semantics, physical entropy production, and unconditional metric-clock law are not established by v15.11.
 
-```text
-canonical local quantum structure (v15.07)
-    -> full local-frame invariance selects tau_d=I_d/d
-    -> Q_d(rho)=d rho is canonical and multiplicative
-    -> centered log rho is the canonical additive Hermitian information generator
-    -> POSITIVE mathematical result
+## Scope correction to v15.10
 
-source semantics (v15.08)
-    -> Genesis Pin and source-role provenance do not identify that generator as physical source
-    -> same frozen provenance supports multiple inequivalent lawful source rays
-    -> SOURCE SEMANTICS IRREDUCIBLE relative to frozen ontology
+The earlier v10.8/v10.21/v11.1-v11.5 Library reports were absent from v15.10's manifest. Thus its results cannot establish archive-wide absence of a noninjective pruning operation or conditional ordinal time.
 
-carrier origin (v15.09)
-    -> I_D/D is tensor-factorization blind
-    -> supplied five-qubit neutral state preserves all 120 site permutations
-    -> rigid retained graph + rigid quantum-site spectra still leave 120 cross-domain bijections
-    -> C125 has no five-nontrivial-factor decomposition
-    -> retained graph -> quantum carrier remains underived
+The fixed-known-potential exponential-reweighting lemma remains valid. It proves neither reversibility of the full coupled V1153 engine nor impossibility of pre-time motion. The presence of a calculation loop is not a physical-time derivation and is not by itself an ontology violation.
 
-pruning / order (v15.10)
-    -> V1153 has real recoverability-weighted selection pressure
-    -> its declared weight-pruning map preserves positive support
-    -> the weight map is invertible on the simplex interior when U is known
-    -> its 160-step succession is supplied by an external ordered loop
-    -> V995/V997 independently supply a rooted append-only provenance ancestry order
-    -> no frozen law identifies pruning events with that ancestry order
-    -> noninjective recoverability maps WOULD conditionally generate an intrinsic information-loss arrow
-    -> the frozen stack does not yet realize that noninjective pruning structure
-```
+The frozen v15.10 report, module, and summary are unchanged; see its appended [continuity notice](v15/v15.10/CONTINUITY_NOTICE.md).
 
-The present time bridge is therefore
+## New verification safeguards
 
-```text
-primitive relational / recoverability structure
-    -> recoverability-weighted pressure                  [YES]
-    -X-> ontology-native noninjective pruning event      [NOT DERIVED]
-    -> intrinsic loss orientation                        [CONDITIONAL THEOREM]
+v15.11 independently reconstructs twenty finite controls. They distinguish:
 
-Genesis / append-only provenance
-    -> rooted ancestry / before-after order              [YES]
-    -X-> pruning-event -> provenance-successor law       [NOT DERIVED]
+- lost input distinguishability from a decrease in density-matrix rank;
+- nonselective channel, instrument records, and supplied actual record;
+- algebra nesting from preservation of earlier central records;
+- strict record refinement from arbitrary noninjective maps, which can still have cycles;
+- retained-description loss from preservation in a coherent enlarged description;
+- mathematical entropy diagnostics from a physical entropy-production or clock law.
 
-intrinsic pruning-generated order
-    -X-> metric duration / spacetime correspondence      [NOT YET LAWFUL TO ASK AS CLOSED BRIDGE]
-```
+A sufficient record-retention condition is `Z(A) subset B subset A`, which implies `Z(A) subset Z(B)`. This makes the earlier record-compatible premise explicit; it does not select B physically.
 
-This does **not** reject the working ontology that time emerges with pruning. It localizes the missing law required to turn that ontology into a derived mathematical statement.
+## Evidence coverage
 
-## Latest result — v15.10
+[The source manifest](v15/v15.11/SOURCE_MANIFEST.json) identifies seven original Library reports with full-byte SHA-256 digests and exact excerpt ranges. Full original digests and ranges were verified locally. Repository CI without `--sources` verifies only the committed excerpts. The downloadable companion bundle contains the original reports and local RED/GREEN evidence. No exhaustive rerun or formal verification of the full historical research stack is claimed.
 
-### A. V1153 pruning is soft selection, not support deletion
+## Preserved independent boundaries
 
-V1153 uses
+The v14.03 source-ray/contact/dual chain remains conditional on its supplied source. The v14.04-v15.09 representation and source-semantics results remain scoped to their audited premises; this reconciliation supplies no source law or retained-node-to-quantum-site functor. Source grading, UPSF, and absolute scale assumptions are not retroactively derived by pruning.
 
-```text
-w_i <- w_i * exp(-beta U_i)
-normalize weights
-```
+Pillar 1 — Global Atlas Closure: COMPLETE.  
+Pillar 2 — Retained Curvature / Source-Current Compatibility: CLOSED CONDITIONAL.  
+Pillar 3 — GR/ADM Correspondence: OPEN.
 
-with no hard accept/reject filter driving the dynamics.
+## Next-step constraint
 
-For strictly positive weights and finite `U_i`, every updated weight remains strictly positive.
-
-v15.10 deterministic controls give
-
-```text
-support cardinality before = 7
-support cardinality after  = 7
-invalid final weight sum   = 1.467017487634064e-10
-```
-
-Classification:
-
-```text
-SELECTION_PRESSURE_WITHOUT_IRREVERSIBLE_SUPPORT_PRUNING
-```
-
-### B. The V1153 weight map is invertible on the simplex interior
-
-For known potential `U`, the reweighting map is inverted by the opposite exponential tilt and renormalization.
-
-Executed controls:
-
-```text
-max inverse error     = 8.554842949272357e-17
-max composition error = 1.468815065250206e-16
-```
-
-Therefore the declared weight-pruning map itself does not provide an intrinsic irreversible arrow.
-
-Classification:
-
-```text
-V1153_REWEIGHTING_IS_SUPPORT_PRESERVING_AND_INVERTIBLE_ON_SIMPLEX_INTERIOR
-```
-
-### C. V1153's order is computationally supplied
-
-The frozen engine contains
-
-```python
-for ordered_update in range(N_ORDERED_UPDATES):
-```
-
-with
-
-```text
-N_ORDERED_UPDATES = 160.
-```
-
-Thus V1153 demonstrates pruning pressure **along an imposed sequence**. It does not yet derive that sequence from pruning itself.
-
-This preserves the V997 guardrail that the update index is not physical time.
-
-### D. The provenance stack already has an intrinsic order
-
-V995/V997 contain pinned Genesis roots and append-only successor/ledger continuity.
-
-A rooted append-only ancestry relation is composable and antisymmetric.
-
-v15.10 control:
-
-```text
-direct edges                  = 4
-transitive ancestry relations = 10
-rooted orientation            = true
-antisymmetric                 = true
-composable                     = true
-```
-
-Classification:
-
-```text
-INTRINSIC_PROVENANCE_ORDER_EXISTS_BUT_IS_NOT_DERIVED_FROM_PRUNING
-```
-
-So the archive already contains an intrinsic before/after relation, but its type is provenance legitimacy—not yet emergent physical time.
-
-### E. Conditional noninjective-pruning theorem
-
-A sequence of composable many-to-one recoverability maps
-
-```text
-8 -> 4 -> 2 -> 1
-```
-
-has an intrinsic information-loss orientation because the forward maps compose while no two-sided inverse exists on the retained description.
-
-Executed theorem control:
-
-```text
-map count               = 3
-all maps noninjective   = true
-composition noninjective= true
-two-sided inverse       = false
-```
-
-Classification:
-
-```text
-NONINJECTIVE_RECOVERABILITY_UPDATE_INDUCES_ORIENTED_INFORMATION_ORDER_CONDITIONALLY
-```
-
-This is an order/arrow theorem, not a duration or spacetime theorem.
-
-## Exact missing bridge
-
-The unresolved law is now sharply typed:
-
-```text
-actual pruning event
-    -> irreversible / noninjective recoverability loss
-    -> certified provenance successor
-    -> intrinsic pruning-generated ancestry order
-```
-
-The audited frozen dependency set contains no such identification law.
-
-Classification:
-
-```text
-ORDER_AND_PRUNING_EXIST_AS_SEPARATE_FROZEN_STRUCTURES_WITHOUT_AN_IDENTIFICATION_LAW
-```
-
-## Relation to earlier gates
-
-- **v15.09:** preserved. No time-order result supplies the missing graph→quantum carrier functor.
-- **v15.08:** preserved. No time-order result supplies the missing source-semantics axiom.
-- **v15.07:** preserved. The canonical centered-log information generator remains an intrasort quantum result.
-- **V1153:** preserved positively as a first-principles recoverability-weighted selection assay; v15.10 only narrows the claim that can be made about emergent time.
-- **V995/V997:** strengthened as evidence for ontology-native provenance ancestry, while still not identified with pruning-generated physical time.
-- **v13.28 / v14.03:** unchanged. Absolute source→geometry coupling remains underived; supplied projective source→dual-ray chain remains conditional.
-
-## Preserved pillar status
-
-- Pillar 1 — Global Atlas Closure: **COMPLETE**.
-- Pillar 2 — Retained Curvature / Source-Current Compatibility: **CLOSED CONDITIONAL**.
-- Pillar 3 — GR/ADM Correspondence: **OPEN**.
-
-## Still not derived
-
-- an ontology-native noninjective pruning/state-reduction event in the audited frozen stack;
-- a frozen pruning-event -> append-only provenance-successor law;
-- intrinsic pruning-generated emergent-time order;
-- metric duration or clock calibration;
-- Lorentzian causal structure or spacetime foliation from pruning;
-- ADM lapse/shift from emergent pruning order;
-- a retained-node-to-quantum-site functor;
-- a five-site quantum carrier from retained provenance;
-- physical-source semantics for centered `log rho`;
-- absolute source magnitude / observer calibration;
-- physical stress-energy;
-- absolute source-to-geometry coupling;
-- Einstein equations;
-- Pillar 3 closure.
-
-## Stop rule / next lawful frontier
-
-Do **not**:
-
-```text
-rename the V1153 loop counter as emergent time;
-treat tiny positive weights as deleted alternatives;
-call reversible exponential reweighting irreversible collapse;
-use incidental simulator noninvertibility as the pruning event;
-identify append-only provenance order with physical time by shared terminology;
-use entropy, gravity, ADM, Einstein, or cosmology to choose the arrow.
-```
-
-The next lawful search is narrow:
-
-1. look for a **frozen support-reducing/noninjective recoverability operation** elsewhere in the archive; and
-2. look for a **frozen typed rule connecting an actual pruning event to the provenance successor relation**.
-
-If neither exists, the time bridge requires one explicit **NEW PRUNING-EVENT / ORDER-IDENTIFICATION LAW** before proceeding to duration or spacetime correspondence.
+Do not restart already-closed conditional pruning or ordinal-time searches. Locate the next unresolved dependency against the restored historical ledger. Do not choose RAS/RCR, a clock, or an entropy law from downstream gravitational quality. No new physical primitive has been authorized or inserted by this correction.
