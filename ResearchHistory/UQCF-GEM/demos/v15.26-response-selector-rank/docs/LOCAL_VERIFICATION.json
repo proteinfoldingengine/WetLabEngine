@@ -1,0 +1,10 @@
+{
+  "kind": "local development evidence; GitHub CI is authoritative for publication",
+  "model_red": {"tests": 19, "expected_failures": 19, "reason": "selector_rank implementation absent"},
+  "presentation_red": {"tests": 6, "expected_failures": 6, "reason": "replay implementation absent"},
+  "new_tests_passed": 26,
+  "fresh_final_command": "python -m unittest -v test_selector.py test_replay.py",
+  "video": {"duration_seconds": 24, "codec": "h264", "width": 1280, "height": 720, "fully_decoded": true},
+  "scientific_tolerances_changed": false,
+  "selector_verdict": "CYCLE_RESPONSE_TARGET_NOT_DERIVED"
+}
