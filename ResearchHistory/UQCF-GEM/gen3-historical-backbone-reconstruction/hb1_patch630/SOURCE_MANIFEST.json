@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "assessment_date": "2026-09-16",
+  "track": "Gen3-HB1",
+  "status": "SOURCE_RECOVERED_RAW_RUN_OUTPUTS_NOT_FOUND",
+  "source_folder_id": "1BEuYZb-E7Fb8T3TC4AKrN4nOUq9MqZG1",
+  "historical_target": "1VII",
+  "historical_patch_id": "Patch_630_Full_Backbone_1VII",
+  "files": [
+    {"path":"main.py","drive_file_id":"1ZjFCOPYQ0n7-B-0_1FgiK8faTDZL9VXT","created_time":"2025-08-05T13:48:43.897Z","modified_time":"2025-08-05T13:49:31.997Z","bytes":10125,"sha256":"b95fc80a85c6e05c51653175abcd3eac6d3cac8616ae2bf8d3a6d9cf219aa5b2"},
+    {"path":"generic_physics.yaml","drive_file_id":"1SbMlTXwth79VBI6y1CNCJWOTCs4NDz42","created_time":"2025-08-05T13:47:34.571Z","modified_time":"2025-08-05T13:47:34.571Z","bytes":1407,"sha256":"59fde3cf2bdf3548d52983b3dca169795d2fad71b1a46a92e2662444c7f464a5"},
+    {"path":"force_field.py","drive_file_id":"1C4usCwGRWO2jBFc6oVnpLc7lv5PoHlbS","created_time":"2025-08-05T13:47:51.420Z","modified_time":"2025-08-05T13:47:51.420Z","bytes":10979,"sha256":"4ba1b26f8ffa2c49bddcc25859c609c1e6bfa1ea5431c3f5fdec4b8751444e9a"},
+    {"path":"dag_engine.py","drive_file_id":"16g5zVCh2kwKGGAOGwsXJgJgHuM4rKDjg","created_time":"2025-08-05T13:47:42.682Z","modified_time":"2025-08-05T13:47:42.682Z","bytes":4058,"sha256":"1eccbcdd4367db5ee63459e631657e634788387208d113eb7713880b2c08b43f"},
+    {"path":"protein_model.py","drive_file_id":"1ie6tsz9CKsdAGsdToB_CBOogcdUbJRMn","created_time":"2025-08-05T13:47:47.905Z","modified_time":"2025-08-05T13:47:47.905Z","bytes":5786,"sha256":"ea64bd43dae438288e2ee463f7c46523c9d2413a72e2326e6423ddcb1d021e0a"},
+    {"path":"physics_metrics.py","drive_file_id":"1xIZ_rW3KCWt7zfqXgLdQFjoxzNVN_lxg","created_time":"2025-08-05T13:47:40.999Z","modified_time":"2025-08-05T13:47:40.999Z","bytes":3420,"sha256":"57ffc4ca1055d74368b1e41a771f3509bd0af67485a80b1263edb6eef6fbbd60"},
+    {"path":"physics_constants.py","drive_file_id":"1FpoCRjrsQZzj6aw5m8DKNMa4_Gdp6hwk","created_time":"2025-08-05T13:47:36.264Z","modified_time":"2025-08-05T13:47:36.264Z","bytes":1801,"sha256":"6af00a27a0f65bc5d415f338e041b584f778f8e13512f3c35826e0c74e18e861"},
+    {"path":"config_loader.py","drive_file_id":"1ru7eZ7kPDNkGs-eBvzDSv5O_t_O0xiUH","created_time":"2025-08-05T13:47:37.734Z","modified_time":"2025-08-05T13:47:37.734Z","bytes":1977,"sha256":"bb0abe0c79f6e68a64e0424b7cd0ae1eed412b027ab104ed2d09dc0f756eb100"},
+    {"path":"diagnostics_registry.py","drive_file_id":"1LZpLXtUoXuncV-d5wNj7nOBhLzCzRGwu","created_time":"2025-08-05T13:47:39.423Z","modified_time":"2025-08-07T01:33:03.369Z","bytes":2045,"sha256":"862f296233cac9c1b25c195f369b8c38917c06a2767dfab383b4eff30a2adf57"}
+  ],
+  "expected_outputs_searched": [
+    {"name":"forces_log_Patch_630_Full_Backbone_1VII.txt","found":false},
+    {"name":"diagnostics_timeseries_Patch_630_Full_Backbone_1VII.csv","found":false},
+    {"name":"plots/Patch_630_Full_Backbone_1VII/","found":false,"note":"No exact folder/file hit found in Drive search; absence is not proof of deletion."}
+  ],
+  "historical_claims_not_promoted": {
+    "phi_rms_final": 0.2215,
+    "rmsd_final_angstrom": 10.19,
+    "authority": "contemporaneous narrative report only until raw outputs or independent reproduction are obtained"
+  },
+  "reproduction_policy": [
+    "Do not modify recovered source in place.",
+    "Run exact-source replay first.",
+    "Record environment and dependency versions.",
+    "Treat any compatibility edits as a separate adapter layer.",
+    "Do not use historical outcome values as optimization targets."
+  ]
+}
