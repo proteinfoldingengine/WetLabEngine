@@ -1,0 +1,168 @@
+name: UQCF v15.28 Coupling Space and GitHub Delivery
+on:
+  push:
+    branches: [research/v15.28-coupling-space]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space/**'
+      - 'docs/superpowers/specs/2026-09-14-v1528-pretime-coupling-space-design.md'
+      - 'docs/superpowers/plans/2026-09-14-v1528-pretime-coupling-space.md'
+      - '.github/workflows/uqcf-v1528-coupling-space.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned environment
+        run: |
+          python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
+          if ! command -v ffmpeg >/dev/null; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
+      - name: Verify additive scope and run inherited plus v15.28 tests
+        run: |
+          python - <<'PY'
+          import json,os,re,subprocess,sys
+          from pathlib import Path
+          base='700a4639010100a12b73882d530ac2c2bbf1f71e'
+          root=Path('ResearchHistory/UQCF-GEM');demo=root/'demos/v15.28-coupling-space'
+          allowed_docs={
+            'docs/superpowers/specs/2026-09-14-v1528-pretime-coupling-space-design.md',
+            'docs/superpowers/plans/2026-09-14-v1528-pretime-coupling-space.md',
+            '.github/workflows/uqcf-v1528-coupling-space.yml',
+          }
+          for line in subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines():
+              status,name=line.split('\t',1)
+              assert status=='A',line
+              assert name.startswith(str(demo)+'/') or name in allowed_docs,name
+          logs=demo/'evidence/ci';logs.mkdir(parents=True,exist_ok=True)
+          suites=[('v15/v15.11',['test_continuity.py'],20),('demos/v15.12-pretime-to-history',['test_simulation.py','test_presentation.py'],30),('demos/v15.13-independent-events',['test_model.py','test_replay.py'],27),('demos/v15.14-record-dependencies',['test_adaptive.py','test_replay.py'],30),('demos/v15.15-coherent-records',['test_coherent.py','test_replay.py'],30),('demos/v15.16-partial-pruning',['test_recoverability.py','test_replay.py'],33),('demos/v15.17-retained-motion',['test_motion.py','test_replay.py'],32),('demos/v15.18-invariant-completion',['test_completion.py','test_replay.py'],34),('demos/v15.19-linear-prediction',['test_linear.py','test_replay.py'],36),('demos/v15.20-physical-predictor',['test_channel.py','test_replay.py'],38),('demos/v15.21-record-readout',['test_record_readout.py','test_readout_presentation.py'],32),('demos/v15.22-event-sufficient-retention',['test_event_sufficiency.py','test_sufficiency_presentation.py'],32),('demos/v15.23-sufficient-channel-family',['test_family.py','test_family_view.py'],32),('demos/v15.24-composition-gate',['test_composition.py','test_composition_view.py'],30),('demos/v15.25-pretime-gravity-canary',['test_canary.py','test_replay.py'],28),('demos/v15.26-response-selector-rank',['test_selector.py','test_replay.py'],26),('demos/v15.27-target-origin',['test_origin.py','test_replay.py'],27)]
+          prior=0
+          for folder,files,count in suites:
+              r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=root/folder,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=180)
+              (logs/(Path(folder).name+'.log')).write_text(r.stdout)
+              print(folder,r.stdout[-250:],flush=True)
+              assert r.returncode==0 and re.search(rf'Ran {count} tests? in',r.stdout) and re.search(r'^OK\s*$',r.stdout,re.M),(folder,r.stdout)
+              prior+=count
+          assert prior==517
+          new_files=['test_inventory.py','test_exact_linear.py','test_actions.py','test_solver.py','test_gate.py','test_replay.py']
+          r=subprocess.run([sys.executable,'-m','unittest','-v',*new_files],cwd=demo,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
+          (logs/'v15.28-coupling-space.log').write_text(r.stdout)
+          print('v15.28',r.stdout[-500:],flush=True)
+          match=re.search(r'Ran (\d+) tests? in',r.stdout)
+          assert r.returncode==0 and match and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+          new_count=int(match.group(1)); total=prior+new_count
+          (logs/'SUMMARY.json').write_text(json.dumps({'source_sha':os.environ['GITHUB_SHA'],'base_sha':base,'prior_selected_tests_passed':prior,'v15_28_tests_passed':new_count,'selected_tests_passed':total,'scope':'selected research regressions and v15.28 exact gate; not full-repository or independent scientific certification'},indent=2)+'\n')
+          PY
+      - name: Reproduce coupling audit, inspector and movie
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space
+        run: |
+          python coupling_gate.py --out outputs > evidence/ci/model.log
+          python replay.py --out outputs --video > evidence/ci/render.log
+          ffmpeg -v error -i outputs/coupling_space.mp4 -f null - 2> evidence/ci/video_decode.log
+          ffprobe -v error -show_entries stream=codec_name,width,height -show_entries format=duration -of json outputs/coupling_space.mp4 > evidence/ci/video_info.json
+          python -m compileall -q representation_inventory.py exact_linear.py representation_actions.py coupling_solver.py coupling_gate.py replay.py test_*.py
+          python - <<'PY'
+          import json
+          r=json.load(open('outputs/verification.json'))
+          assert r['status']=='PRETIME_COUPLING_BLOCKED_BY_REPRESENTATION_LINK'
+          assert r['q_control']['dimension']==3
+          assert r['q_control']['orbit_dimension']==3 and r['q_control']['character_dimension']==3
+          assert r['eligible_candidate_count']==0 and r['unique_form_frozen'] is False
+          assert r['scientific_breakthrough'] is False and r['signal_of_life'] is False and r['gravity_canary_certified'] is False
+          assert not any(r[k] for k in ('gravity_observables_evaluated','uses_holonomy_selector','uses_newton_or_gr','uses_metric_selector','uses_pruning','uses_entropy','uses_physical_time'))
+          PY
+      - name: Package source, data and fresh CI evidence
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,shutil,subprocess,sys,zipfile
+          source=Path('ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space');dist=Path('delivery/assets');dist.mkdir(parents=True)
+          info=json.loads((source/'evidence/ci/video_info.json').read_text())
+          assert any(s.get('codec_name')=='h264' and s.get('width')==1280 and s.get('height')==720 for s in info['streams'])
+          assert abs(float(info['format']['duration'])-24)<0.1
+          for name in ['coupling_space.mp4','coupling_space.html','verification.json','replay_data.json']:
+              shutil.copyfile(source/'outputs'/name,dist/name)
+          shutil.copyfile(source/'README.md',dist/'REPORT.md')
+          summary=json.loads((source/'evidence/ci/SUMMARY.json').read_text())
+          provenance={'source_sha':os.environ['GITHUB_SHA'],'base_sha':'700a4639010100a12b73882d530ac2c2bbf1f71e','run_id':os.environ['GITHUB_RUN_ID'],'selected_tests_passed':summary['selected_tests_passed'],'v15_28_tests_passed':summary['v15_28_tests_passed'],'python':sys.version,'packages':subprocess.check_output([sys.executable,'-m','pip','freeze'],text=True).splitlines(),'scope':'Fresh CI gravity-blind coupling-space classification; no gravity canary, full-repository regression, or independent peer review.'}
+          (dist/'PROVENANCE.json').write_text(json.dumps(provenance,indent=2)+'\n')
+          files=[]
+          for p in sorted(source.rglob('*')):
+              if p.is_symlink():raise ValueError('symlink rejected')
+              if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc':files.append(p)
+          extra=[Path('docs/superpowers/specs/2026-09-14-v1528-pretime-coupling-space-design.md'),Path('docs/superpowers/plans/2026-09-14-v1528-pretime-coupling-space.md')]
+          members=[{'name':p.relative_to(source).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]
+          bundle=dist/'UQCF_GEM_v15_28_bundle.zip'
+          with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
+              for p in files:z.write(p,p.relative_to(source).as_posix())
+              for p in extra:z.write(p,p.as_posix())
+              z.writestr('PACKAGE_MANIFEST.json',json.dumps({'files':members,'extra_docs':[p.as_posix() for p in extra],'provenance':provenance},indent=2))
+          with zipfile.ZipFile(bundle) as z: assert z.testzip() is None
+          (dist/'SHA256SUMS.txt').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n' for p in sorted(dist.iterdir())))
+          Path('delivery/RELEASE_NOTES.md').write_text('# v15.28 — Pre-time constitutive coupling-space gate\n\nExact source: `'+os.environ['GITHUB_SHA']+'`. All '+str(summary['selected_tests_passed'])+' selected tests passed before packaging.\n\nExact q-only control: d_eta=3. No archived provenance-enhanced physical carrier has a certified natural representation link into the cycle-response target, so the preregistered verdict is PRETIME_COUPLING_BLOCKED_BY_REPRESENTATION_LINK. No coupling member was selected, no gravity observable was evaluated, and no gravity canary is certified.\n\nIncludes report, MP4/offline HTML, exact ledger, replay data, source/fresh-CI evidence bundle, design/plan, provenance and checksums. All eight assets are verified by size and SHA-256 before publication. No merge to main.\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.28-verified-delivery
+          path: delivery/
+          if-no-files-found: error
+  publish:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: v15.28-verified-delivery
+          path: delivery
+      - name: Upload unique draft, verify digests, then publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test "$GH_REPO" = 'proteinfoldingengine/WetLabEngine'
+          TAG="uqcf-gem-v15.28-${GITHUB_RUN_ID}-a${GITHUB_RUN_ATTEMPT}"
+          gh release create "$TAG" delivery/assets/* --repo "$GH_REPO" --target "$GITHUB_SHA" --title 'UQCF-GEM v15.28 — coupling-space gate' --notes-file delivery/RELEASE_NOTES.md --draft --prerelease --latest=false
+          RELEASE_ID="$(gh api --paginate "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.tag_name == \"$TAG\") | .id")"
+          [[ "$RELEASE_ID" =~ ^[0-9]+$ ]]
+          gh api "repos/$GH_REPO/releases/$RELEASE_ID" > delivery/RELEASE_METADATA.json
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          data=json.loads(Path('delivery/RELEASE_METADATA.json').read_text());local=list(Path('delivery/assets').iterdir());remote={a['name']:a for a in data['assets']}
+          assert len(local)==len(remote)==8
+          for path in local:
+              asset=remote[path.name]
+              assert asset['state']=='uploaded' and asset['size']==path.stat().st_size
+              assert asset['digest']=='sha256:'+hashlib.sha256(path.read_bytes()).hexdigest()
+          print('All eight release assets match SHA-256 and size.')
+          PY
+          gh api --method PATCH "repos/$GH_REPO/releases/$RELEASE_ID" -F draft=false -f make_latest=false > delivery/PUBLICATION_RECEIPT.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('delivery/PUBLICATION_RECEIPT.json').read_text());assert data['draft'] is False;print(data['html_url'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.28-publication-receipt
+          path: delivery/PUBLICATION_RECEIPT.json
+          if-no-files-found: error
