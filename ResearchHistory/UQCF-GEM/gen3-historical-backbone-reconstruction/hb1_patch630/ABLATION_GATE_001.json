@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-16",
+  "gate": "Gen3-HB1-ABLATION-001",
+  "target": "1VII",
+  "seed": 42,
+  "steps": 5000,
+  "input_projection_sha256": "774243f304cb7e0b95b69ea24a7bfbae6d24ab92419b74fc8db8bbfdf4c32200",
+  "baseline": {
+    "rmsd_angstrom": 10.1912841796875,
+    "phi_rms": 0.2226139158010482,
+    "gamma_bar": 3.0015645027160645,
+    "betti1_count": 544,
+    "betti1_lifetime": 120,
+    "phase": "LockIn",
+    "phase_transition_step": 99,
+    "diagnostics_sha256": "3b25ff8e3630943319408db96ffbdd31df6204a69b1cf90ef4a0500e0dc17118",
+    "summary_sha256": "4bfc53adf53463d163c7c263331dcdcced655f36047c59a2da8f8adbe51325df"
+  },
+  "ablations": [
+    {
+      "name": "ramachandran_off",
+      "change": "k_rama: 2.5 -> 0.0",
+      "config_sha256": "329dc07ee415f6dbb06b928698bf5b2d195e835a8c40b6ecb02a642ec7b7479c",
+      "rmsd_angstrom": 10.1912841796875,
+      "phi_rms": 0.2226139158010482,
+      "gamma_bar": 3.0015645027160645,
+      "betti1_count": 544,
+      "betti1_lifetime": 120,
+      "phase": "LockIn",
+      "diagnostics_sha256": "9f14b24bfd17ac07b229d67c27fee7108d250d2494d95b8729af9205a1beb4d5",
+      "summary_sha256": "4bfc53adf53463d163c7c263331dcdcced655f36047c59a2da8f8adbe51325df",
+      "baseline_component_nonzero_steps": 0
+    },
+    {
+      "name": "torsional_incoherence_off",
+      "change": "k_torsion_penalty: 2.0 -> 0.0",
+      "config_sha256": "1d5bf407946b2f4cc01d2408ae6b798c79d5316dd8e3fec1631fda0faa69098e",
+      "rmsd_angstrom": 10.1912841796875,
+      "phi_rms": 0.2226139158010482,
+      "gamma_bar": 3.0015645027160645,
+      "betti1_count": 544,
+      "betti1_lifetime": 120,
+      "phase": "LockIn",
+      "diagnostics_sha256": "a3e96c7b14b733a547b86be0fe59094ea2a2a5773851c3b0eb495cea6832754d",
+      "summary_sha256": "4bfc53adf53463d163c7c263331dcdcced655f36047c59a2da8f8adbe51325df",
+      "baseline_component_nonzero_steps": 0
+    },
+    {
+      "name": "dag_lockin_transition_off",
+      "change": "quarantined adapter suppresses Compaction -> LockIn transition",
+      "adapter_dag_sha256": "204c9d4b0a5c30fa410c3050d38c7edb5bcdcc9d98457d4d93ebe21cccb43ec9",
+      "baseline_dag_sha256": "1eccbcdd4367db5ee63459e631657e634788387208d113eb7713880b2c08b43f",
+      "rmsd_angstrom": 10.266111373901367,
+      "phi_rms": 0.4285641610622406,
+      "gamma_bar": 3.0015645027160645,
+      "betti1_count": 546,
+      "betti1_lifetime": 120,
+      "phase": "Compaction",
+      "diagnostics_sha256": "b379ffcb139eaff3d81ea3687d639f069779d476207734715fd8e138989d732b",
+      "summary_sha256": "3501ba69ba250f96ec411790e469c70275ae5bc91c917413be7a71f1a9c53d2e"
+    }
+  ],
+  "baseline_force_activation": {
+    "ramachandran_potential_loss_nonzero_steps": 0,
+    "torsional_incoherence_penalty_loss_nonzero_steps": 0,
+    "contact_springs_loss_first_nonzero_step": 99,
+    "screened_electrostatics_loss_first_nonzero_step": 99
+  },
+  "conclusion": "Ramachandran and torsional-incoherence terms are inactive in this reproduced run. Suppressing the topology-triggered LockIn transition nearly doubles final phi_RMS while only modestly changing RMSD. The next causal target is the LockIn-added contact-spring and screened-electrostatic mechanics."
+}
