@@ -1,0 +1,25 @@
+name: Withdraw retired lab history
+on:
+  push:
+    branches: [maintenance/withdrawn-lab-history-cleanup]
+    paths: [.github/workflows/withdrawn-lab-history-cleanup.yml]
+permissions:
+  contents: write
+concurrency:
+  group: withdrawn-lab-history-cleanup
+  cancel-in-progress: false
+jobs:
+  rewrite:
+    if: contains(github.event.head_commit.message, 'execute-approved-history-cleanup-20260916')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned filter tool
+        run: python -m pip install --target filter-deps git-filter-repo==2.47.0
+      - name: Verify and publish approved cleanup
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python .github/history-cleanup/publish_cleanup.py
