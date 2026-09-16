@@ -1,0 +1,69 @@
+name: UQCF v15.17 Retained Motion
+
+on:
+  push:
+    branches:
+      - main
+      - research/v15.17-retained-motion
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.17-retained-motion/**'
+      - '.github/workflows/uqcf-v1517-retained-motion.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned numerical dependency
+        run: python -m pip install numpy==2.4.6
+      - name: Record exact checked head
+        run: git rev-parse HEAD
+      - name: Thirty-two retained-motion tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.17-retained-motion
+        run: python -m unittest -v test_motion.py test_replay.py
+      - name: Thirty-three preserved v15.16 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.16-partial-pruning
+        run: python -m unittest -v test_recoverability.py test_replay.py
+      - name: Thirty preserved v15.15 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.15-coherent-records
+        run: python -m unittest -v test_coherent.py test_replay.py
+      - name: Thirty preserved v15.14 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies
+        run: python -m unittest -v test_adaptive.py test_replay.py
+      - name: Twenty-seven preserved v15.13 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.13-independent-events
+        run: python -m unittest -v test_model.py test_replay.py
+      - name: Thirty preserved v15.12 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.12-pretime-to-history
+        run: python -m unittest -v test_simulation.py test_presentation.py
+      - name: Twenty preserved v15.11 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.12-pretime-to-history/vendor
+        run: python -m unittest -v test_continuity.py
+      - name: Generate motion comparisons and replay
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.17-retained-motion
+        run: |
+          python retained_motion.py --out outputs
+          python replay.py --out outputs
+      - name: Compile extension
+        run: python -m compileall -q ResearchHistory/UQCF-GEM/demos/v15.17-retained-motion
+      - name: Upload computed replay and verification
+        uses: actions/upload-artifact@v4
+        with:
+          name: v15.17-retained-motion-replay
+          path: ResearchHistory/UQCF-GEM/demos/v15.17-retained-motion/outputs/
+          if-no-files-found: error
