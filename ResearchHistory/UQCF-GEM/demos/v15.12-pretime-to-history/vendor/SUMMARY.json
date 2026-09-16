@@ -1,0 +1,134 @@
+{
+  "MCCC": "EARLIER_CONDITIONAL_CLOCK_BRIDGE_NOT_ADOPTED_OR_REDERIVED_HERE",
+  "Pillar_3": "OPEN",
+  "RAS": "EXISTING_EXPLICIT_PRIMITIVE_NOT_DERIVED",
+  "RCR": "EXISTING_EXPLICIT_PRIMITIVE_NOT_DERIVED",
+  "duration": {
+    "D2_normalized": [
+      1.0,
+      0.4150374992788437,
+      0.5849625007211562
+    ],
+    "D3_normalized": [
+      1.0,
+      0.3390359525563189,
+      0.6609640474436812
+    ],
+    "algebra_block_sizes": [
+      [
+        4
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "clock_selected": false,
+    "normalized_interval_separation": 0.10748241813632717
+  },
+  "history": {
+    "antisymmetric": true,
+    "commuting_pruning_error": 0.0,
+    "incomparable_coarse_pair": [
+      "A",
+      "B"
+    ],
+    "independent_two_chain_linear_extensions": 6,
+    "maximal_record_chains": 4,
+    "selective_composition_error": 0.0,
+    "strict_order_derived_from": "PROPER_PROJECTOR_INCLUSION__NOT_LOOP_COUNTER",
+    "strict_record_rank_chain": [
+      4,
+      2,
+      1
+    ],
+    "transitive": true
+  },
+  "information_scope": {
+    "classical_record_output_distance": 0.0,
+    "interpretation": "A dilation is a mathematical control, not an added physical environment or a collapse law",
+    "joint_inverse_error": 0.0,
+    "joint_output_distance": 1.0,
+    "neutral_state_entropy": 0.6931471805599453,
+    "nonselective_entropy": 0.6931471805599453,
+    "retained_output_distance": 0.0,
+    "selected_entropy": -0.0
+  },
+  "motion": {
+    "composition_error": 1.1647141697484404e-16,
+    "inverse_error": 1.1917255200862407e-16,
+    "parameter_semantics": "FINITE_TRANSFORMATION_EXTENT_NOT_TIME",
+    "state_change": 0.20573868447327082
+  },
+  "new_physical_axioms_adopted": [],
+  "noninjectivity_boundary": {
+    "injective": false,
+    "map": [
+      1,
+      0,
+      0
+    ],
+    "scope": "Noninjectivity of a map on a nominal domain alone does not imply acyclic state succession",
+    "two_cycle_exists": true
+  },
+  "numerical_controls_passed": true,
+  "ordinal_time": "PRESERVED_CONDITIONAL_ON_RAS_RCR_AND_COMPATIBLE_STRICT_RECORD_REFINEMENT",
+  "outcome": "CONTINUITY_RESTORED_CONDITIONAL_ORDINAL_ORDER_PRESERVED",
+  "physical_entropy_law_derived": false,
+  "pruning": {
+    "channel_kernel_dimension": 2,
+    "covariance_error": 1.2186511021375889e-16,
+    "fixed_point_change": 0.0,
+    "idempotence_error": 0.0,
+    "input_ranks": [
+      1,
+      1
+    ],
+    "input_trace_distance": 1.0,
+    "loss_scope": "DISTINGUISHABILITY_ON_SUPPLIED_RETAINED_ALGEBRA",
+    "minimum_choi_eigenvalue": 0.0,
+    "output_ranks": [
+      2,
+      2
+    ],
+    "output_trace_distance": 0.0,
+    "repeat_change": 0.0,
+    "trace_error": 0.0
+  },
+  "record_persistence": {
+    "nested_expectation_error": 0.0,
+    "new_center_dimension": 1,
+    "old_center_dimension": 2,
+    "old_record_erasure_norm": 1.0,
+    "record_compatibility_condition": "Z(A) subset B implies Z(A) subset Z(B); algebra inclusion alone is insufficient"
+  },
+  "records": {
+    "actuality_selector": "NONE__RECORD_MUST_BE_SUPPLIED",
+    "instrument_channel_error": 0.0,
+    "projective_weights": [
+      0.6,
+      0.4
+    ],
+    "random_unitary_weights": [
+      0.5,
+      0.5
+    ]
+  },
+  "scientific_breakthrough": false,
+  "source_semantics_and_carrier_obstructions": "UNCHANGED_WITHIN_THEIR_AUDITED_PREMISES",
+  "title": "Ontology Continuity / Retained-Algebra and Actual-Record Reconciliation",
+  "unconditional_metric_time_derived": false,
+  "v15_10_correction": "FIXED_KNOWN_POTENTIAL_WEIGHT_MAP_RESULT_RETAINED__ARCHIVE_WIDE_ABSENCE_CLAIM_WITHDRAWN",
+  "version": "v15.11"
+}

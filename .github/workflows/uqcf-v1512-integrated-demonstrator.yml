@@ -1,0 +1,52 @@
+name: UQCF v15.12 Integrated Demonstrator
+
+on:
+  push:
+    branches:
+      - main
+      - research/v15.12-integrated-pretime-history
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.12-pretime-to-history/**'
+      - '.github/workflows/uqcf-v1512-integrated-demonstrator.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.12-pretime-to-history
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned numerical dependency
+        run: python -m pip install numpy==2.4.6
+      - name: Record exact checked head
+        run: git rev-parse HEAD
+      - name: Thirty model and presentation tests
+        run: python -m unittest -v test_simulation.py test_presentation.py
+      - name: Twenty preserved v15.11 tests
+        run: cd vendor && python -m unittest -v test_continuity.py
+      - name: Generate all eight supplied histories and offline replay
+        run: python render.py --cadence 20 --out outputs
+      - name: Compile source and tests
+        run: python -m compileall -q .
+      - name: Upload computed replay and numerical data
+        uses: actions/upload-artifact@v4
+        with:
+          name: v15.12-computed-replay
+          path: ResearchHistory/UQCF-GEM/demos/v15.12-pretime-to-history/outputs/
+          if-no-files-found: error
