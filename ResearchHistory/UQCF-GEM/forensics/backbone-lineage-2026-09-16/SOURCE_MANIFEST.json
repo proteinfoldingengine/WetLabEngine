@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-16T08:15:00-07:00",
+  "purpose": "Provenance manifest for the early UQCF-GEM protein-backbone lineage forensic reconstruction.",
+  "authority_levels": {
+    "A": "Executed/raw artifact directly recording a run or campaign.",
+    "B": "Executable source or exact Git/blob provenance establishing that mechanics existed and were wired/callable.",
+    "C": "Contemporaneous scientific narrative or report; useful for historical intent and claimed results but subordinate to source and raw artifacts.",
+    "D": "Later forensic interpretation combining evidence from A/B/C; not an experimental result by itself."
+  },
+  "repositories": [
+    {
+      "name": "proteinfoldingengine/UQCF-GEM",
+      "role": "Primary historical protein-folding source lineage"
+    },
+    {
+      "name": "proteinfoldingengine/PharmaApp",
+      "role": "Recovered QIS lineage and production provenance"
+    },
+    {
+      "name": "proteinfoldingengine/WetLabEngine",
+      "role": "Current canonical research-history host for this forensic record"
+    }
+  ],
+  "git_sources": [
+    {
+      "id": "uqcf_initial_snapshot",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "type": "commit",
+      "sha": "9e8172268b1feadc1fdbecfa6ca61239dccf21d7",
+      "authority": "B",
+      "notes": "Initial surviving snapshot containing Phase-I/DAG, Patch-630, QIS-probe and related components together; not one-commit-per-milestone chronology."
+    },
+    {
+      "id": "remove_qis_transition",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "type": "commit",
+      "sha": "1dea70ca8864f80a909ee8a23d379608692e80b6",
+      "message": "RemoveQISEngine",
+      "authority": "B",
+      "notes": "Explicit destructive transition removing QIS schedule, QIS entropy/coherence/topology blocks, QIS metrics, and earlier DAG source from the then-current path."
+    },
+    {
+      "id": "phase1_dag",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "9e8172268b1feadc1fdbecfa6ca61239dccf21d7",
+      "path": "dag_engine.py",
+      "blob_sha": "4694cab56217202b8732cd2800f1bc3c60c589dc",
+      "authority": "B",
+      "features": [
+        "Compaction phase",
+        "LockIn phase",
+        "Betti1 count threshold",
+        "Betti1 lifetime threshold",
+        "state-dependent active force set"
+      ]
+    },
+    {
+      "id": "physics_only_controller",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "9e8172268b1feadc1fdbecfa6ca61239dccf21d7",
+      "path": "physics_only_controller.py",
+      "blob_sha": "e576f9a66eada6ba8fa00ad4a99b15ce56757c7e",
+      "authority": "B",
+      "features": [
+        "online autocorrelation-time estimates",
+        "Rg and phi-RMS slopes",
+        "Betti1-lifetime slope",
+        "RAMP_CONTACTS",
+        "BOOST_HYDROPHOBIC",
+        "RELAX_RAMA",
+        "ENFORCE_RG_WINDOW"
+      ]
+    },
+    {
+      "id": "metrics_history",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "9e8172268b1feadc1fdbecfa6ca61239dccf21d7",
+      "path": "metrics_history.py",
+      "blob_sha": "fe3f02f7f4d7aad97027fa9258ab8eab3d5469ea",
+      "authority": "B"
+    },
+    {
+      "id": "online_metrics_utils",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "9e8172268b1feadc1fdbecfa6ca61239dccf21d7",
+      "path": "online_metrics_utils.py",
+      "blob_sha": "b9aabbfb7a9f683296d519cdd09ec56075927e02",
+      "authority": "B"
+    },
+    {
+      "id": "patch630_protein_model",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "9e8172268b1feadc1fdbecfa6ca61239dccf21d7",
+      "path": "protein_model.py",
+      "blob_sha": "6bc1a564cff022cf533ad2b8de2c03a1aee21afe",
+      "authority": "B",
+      "features": [
+        "Patch 630 label",
+        "independent learnable N coordinates",
+        "independent learnable CA coordinates",
+        "independent learnable C coordinates",
+        "idealized full-backbone random-coil construction"
+      ]
+    },
+    {
+      "id": "patch630_same_blob_in_pharma_qis",
+      "repository": "proteinfoldingengine/PharmaApp",
+      "ref": "3770a917da47f358d8e60377a68567b8af16c97d",
+      "path": "QISEngine/protein_model.py",
+      "blob_sha": "6bc1a564cff022cf533ad2b8de2c03a1aee21afe",
+      "authority": "B",
+      "notes": "Exact blob identity establishes direct preservation of the Patch-630 protein_model component into the recovered QIS folder."
+    },
+    {
+      "id": "qis_combined_probe_main",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "9e8172268b1feadc1fdbecfa6ca61239dccf21d7",
+      "path": "Main.py",
+      "blob_sha": "c6032f6f6affaff0a4071e852dd85bb0e21ca7db",
+      "authority": "B",
+      "features": [
+        "full N/CA/C ProteinModel",
+        "true phi/psi calculation",
+        "Betti1 logging",
+        "annealed QIS scale",
+        "Adam coordinate optimization"
+      ]
+    },
+    {
+      "id": "qis_combined_probe_script",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "9e8172268b1feadc1fdbecfa6ca61239dccf21d7",
+      "path": "qis_combined_probe.py",
+      "blob_sha": "d02644917a788d7033d433a5acfa92b5b8476951",
+      "authority": "B"
+    },
+    {
+      "id": "qis_pre_remove_force_field",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "9e8172268b1feadc1fdbecfa6ca61239dccf21d7",
+      "path": "force_field.py",
+      "blob_sha": "5b5728f61a0572f9118f03b257eecf333342a51a",
+      "authority": "B",
+      "features": [
+        "steric repulsion",
+        "Debye-Huckel electrostatics",
+        "directional backbone H-bond term",
+        "Ramachandran potential",
+        "contact springs",
+        "torsion penalty",
+        "QIS entropy",
+        "QIS neighbor coherence",
+        "QIS soft topology"
+      ]
+    },
+    {
+      "id": "tpo_metrics_commit",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "type": "commit",
+      "sha": "b11552a6c932b20f028ece5e5ff806862077bfde",
+      "authority": "B",
+      "notes": "Introduces the surviving torsional-preorganization metrics module."
+    },
+    {
+      "id": "tpo_metrics_module",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "b11552a6c932b20f028ece5e5ff806862077bfde",
+      "path": "torsional_metrics.py",
+      "blob_sha": "0aee35076a59805aa4f99897d7c662b943051ebe",
+      "authority": "B",
+      "features": [
+        "2-D phi/psi entropy",
+        "periodic RMS angular distance to canonical basins"
+      ]
+    },
+    {
+      "id": "tpo_discovery_commit",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "type": "commit",
+      "sha": "d019fe0fef858a4b73d3baaf3406df0447142cbe",
+      "authority": "B",
+      "notes": "Moves torsional-preorganization from measurement into a differentiable optimization term."
+    },
+    {
+      "id": "tpo_stage1_discovery",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "ref": "d019fe0fef858a4b73d3baaf3406df0447142cbe",
+      "path": "stage1_discovery_engine.py",
+      "blob_sha": "c580a15c75e68816e1143d2a28f4485174cf4925",
+      "authority": "B",
+      "features": [
+        "differentiable soft phi/psi histogram",
+        "torsion entropy potential",
+        "Rg target potential",
+        "Adam optimization of full N/CA/C ProteinModel"
+      ]
+    },
+    {
+      "id": "pharma_qis_provenance",
+      "repository": "proteinfoldingengine/PharmaApp",
+      "ref": "3770a917da47f358d8e60377a68567b8af16c97d",
+      "path": "QISEngine/PROVENANCE.json",
+      "blob_sha": "5affdaa095d3b2c084e7710220d06bff781967b6",
+      "authority": "B",
+      "notes": "Separates the historical combined probe from the executed production lineage."
+    },
+    {
+      "id": "qis_production_source_commit",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "type": "commit",
+      "sha": "1e88c1b5778e98eb2f5c1b0c0f019ba0801e1c38",
+      "authority": "B"
+    },
+    {
+      "id": "qis_production_engine_blob",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "source_path": "qis_engine_production.py",
+      "recovered_repository": "proteinfoldingengine/PharmaApp",
+      "recovered_path": "QISEngine/production_recovery/qis_engine_production.py",
+      "blob_sha": "2cb51ffc7b2edacee0e867a16a511b30847adbae",
+      "authority": "B",
+      "features": [
+        "CA-only representation",
+        "OpenMM relaxation",
+        "fragment_bridge proposal",
+        "torsion_tweak proposal",
+        "jitter proposal",
+        "FI topology/information score",
+        "native RMSD objective",
+        "Metropolis acceptance",
+        "cooling/reheat logic"
+      ]
+    },
+    {
+      "id": "qis_production_campaign_driver",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "source_path": "run_campaign.py",
+      "recovered_repository": "proteinfoldingengine/PharmaApp",
+      "recovered_path": "QISEngine/production_recovery/run_campaign.py",
+      "blob_sha": "b7e7afa665ad2f29b6287403dfae9478f7e945ca",
+      "authority": "B"
+    },
+    {
+      "id": "qis_production_corrob_run",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "artifact_commit": "4d61823a0ce4dcc71f596893514b29d151fed435",
+      "source_path": "QIS_CAMPAIGN_1TEN_FINAL/run_seed0_frag0.35/stdout.log",
+      "recovered_repository": "proteinfoldingengine/PharmaApp",
+      "recovered_path": "QISEngine/production_recovery/evidence/run_seed0_frag0.35.stdout.log",
+      "blob_sha": "ba779a7e54d9ee0167f8ab6c664d04050384e4d5",
+      "authority": "A",
+      "observed_move_classes": [
+        "fragment_bridge",
+        "torsion_tweak",
+        "jitter"
+      ]
+    }
+  ],
+  "drive_sources": [
+    {
+      "id": "phase1_scientific_summary",
+      "drive_file_id": "14V4iV-f3kSyVDmU6v-mC3-nwxOGAeD3MbMEEKWRO19w",
+      "title": "Scientific summary",
+      "revision_id_at_forensic_read": "ANLCKQlBBZCzRwj0aVR-7xWfBsSfh3_Ef05F2t8TUFBsIvVJ8aZ1ODJNoylBMPKprF5an-oRTI1zEk0GeBdCmA",
+      "authority": "C",
+      "historical_claims": [
+        "Patch 510.1 molten-globule behavior in 1UBQ",
+        "Patch 622.2 topology-triggered DAG phase change",
+        "Patch 624.x stable molten-globule behavior in 1UBQ and 1VII",
+        "Patch 627 Top7/1QYS generalization",
+        "Patch 629 CA-only phi/psi degeneracy",
+        "Patch 630 full-backbone angular physics"
+      ]
+    },
+    {
+      "id": "patch630_scientific_record",
+      "drive_file_id": "13nzDwcZktYPZwsRzd6YcfektGA_4-c1-tNiTTgpmnpI",
+      "title": "PhysicsBasedStructureEmergence",
+      "revision_id_at_forensic_read": "ANLCKQlKj93Lj6GAkKMEl4S6xOpf6FGqg-4k5gWpBn4f5SwxzSHKkbu_WSZgzwsMaZH2Hbc1qN2wsns801aGmA",
+      "authority": "C",
+      "historical_claims": [
+        "final phi_RMS 0.2215",
+        "reported RMSD 10.19 A",
+        "loss of phi approximately equals psi degeneracy",
+        "alpha-helical Ramachandran clustering"
+      ]
+    },
+    {
+      "id": "golden_coil_theory_record",
+      "drive_file_id": "1KGakmnwTW_gXvtuBa8Rk4kIcICcLHt4Lx4Jw1qU3KAg",
+      "title": "TheTheoryOfTheBeginning",
+      "revision_id_at_forensic_read": "ANLCKQkcw9BndAai6OST0712jVaY96Swe9XuxUDeLasfSZJyiRVNzPesgV13N3pQ7_1HD6DrMVAHsc_wm8EaDg",
+      "authority": "C",
+      "historical_claims": [
+        "1VII Seed 965 composite TPO Index 0.69",
+        "pre-run final-RMSD prediction 6.5-8.5 A",
+        "pre-run final-Rg prediction 9.0-10.0 A",
+        "reported actual final RMSD 8.90 A",
+        "reported actual final Rg 7.27 A"
+      ],
+      "forensic_warning": "Exact raw Seed-965 config/trajectory/log is not pinned in this manifest yet. Treat the numerical outcome as Class C pending artifact recovery."
+    },
+    {
+      "id": "hierarchical_coherence_record",
+      "drive_file_id": "1KoUQEo_dXoM2oomnWh7RaOFTteo-04_Dt1t4UzrKf1k",
+      "title": "HierachicalCoherence",
+      "revision_id_at_forensic_read": "ANLCKQmUeTmEI68dA5dxD17-mTjCKKI2MPA1y8B7sTf22DecVK7XspCNnQ91mNzISx9XuDiYXQxWJ9rUWAv3_Q",
+      "authority": "C",
+      "historical_claims": [
+        "1VII Seed 965 described as high-TPO Golden Coil",
+        "1PGB classical TPO plateau near 0.06",
+        "CSC grid-search claim of mean TPO 0.0932 for 1PGB",
+        "CSC non-regression failure claim on 1VII"
+      ],
+      "forensic_warning": "Contains theory-building and later interpretations; do not use as raw execution evidence."
+    },
+    {
+      "id": "qis_off_1uao_seed3",
+      "drive_file_id": "1cQoWOAMIqSnQ8VgNRGcCZ7Aroz7-DY4j",
+      "title": "summary_log_T2_QIS_OFF_s3.txt",
+      "created_time": "2025-08-30T16:06:12.384Z",
+      "authority": "A",
+      "run_summary": {
+        "pdb": "1UAO",
+        "seed": 3,
+        "steps": 1200,
+        "qis": "OFF",
+        "final_rmsd_A": 3.982,
+        "final_rg_A": 3.395
+      }
+    },
+    {
+      "id": "qis_on_1uao_seed3",
+      "drive_file_id": "1cNVH5SCRnAwdraWI7ekZbIgQcdQtmt-p",
+      "title": "summary_log_T2_QIS_ON_s3.txt",
+      "created_time": "2025-08-30T16:05:53.502Z",
+      "authority": "A",
+      "run_summary": {
+        "pdb": "1UAO",
+        "seed": 3,
+        "steps": 1200,
+        "qis": "ON",
+        "final_rmsd_A": 3.982,
+        "final_rg_A": 3.395
+      }
+    }
+  ],
+  "adjudications": [
+    {
+      "claim": "The Patch-630 full-backbone representation survived into the historical QIS combined-probe lineage.",
+      "status": "SUPPORTED",
+      "authority": "B",
+      "basis": [
+        "patch630_protein_model",
+        "patch630_same_blob_in_pharma_qis",
+        "qis_combined_probe_main"
+      ]
+    },
+    {
+      "claim": "Executed production QIS is a complete successor containing all earlier backbone mechanics.",
+      "status": "REFUTED_BY_SOURCE_COMPARISON",
+      "authority": "B",
+      "basis": [
+        "phase1_dag",
+        "patch630_protein_model",
+        "qis_production_engine_blob"
+      ]
+    },
+    {
+      "claim": "The 1UAO seed-3 3.982-A outcome was caused by QIS terms.",
+      "status": "NOT_SUPPORTED_CONTROL_IDENTICAL",
+      "authority": "A",
+      "basis": [
+        "qis_off_1uao_seed3",
+        "qis_on_1uao_seed3"
+      ]
+    },
+    {
+      "claim": "1VII Seed 965 completed at RMSD 8.90 A and Rg 7.27 A under the claimed preregistered test.",
+      "status": "HISTORICALLY_RECORDED_RAW_ARTIFACT_NOT_YET_PINNED",
+      "authority": "C",
+      "basis": [
+        "golden_coil_theory_record"
+      ]
+    },
+    {
+      "claim": "Patch 630 produced phi_RMS 0.2215 and RMSD 10.19 A.",
+      "status": "HISTORICALLY_RECORDED_RAW_ARTIFACT_NOT_YET_PINNED",
+      "authority": "C",
+      "basis": [
+        "patch630_scientific_record"
+      ]
+    }
+  ],
+  "recovery_priority": [
+    "Exact raw Patch-630 run/config/trajectory supporting phi_RMS 0.2215 and RMSD 10.19 A",
+    "Exact raw 1VII Seed-965 TPO selection table, preregistration record, Phase-B config, trajectory and summary log",
+    "Raw 1UBQ and 1VII Phase-I molten-globule logs and force/controller configuration",
+    "Raw Top7/1QYS Patch-627 generalization artifacts",
+    "Exact calling-path proof for which Phase-I controller (DAG vs physics-only controller) was active in each historical result"
+  ]
+}
