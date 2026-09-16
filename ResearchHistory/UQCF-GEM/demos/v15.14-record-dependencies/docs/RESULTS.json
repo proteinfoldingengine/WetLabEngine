@@ -1,0 +1,57 @@
+{
+  "version": "v15.14",
+  "status": "EXECUTED_CONDITIONAL_RECORD_DEPENDENT_DEMONSTRATOR",
+  "record_rule_status": "SUPPLIED_ILLUSTRATIVE_FEED_FORWARD",
+  "extra_record_read": [
+    "A1",
+    "B2"
+  ],
+  "local_schedules_before_read": 6,
+  "valid_schedules_after_read": 5,
+  "record_assignments": 16,
+  "runs_checked": 80,
+  "ideals_per_assignment": 8,
+  "premature_permutations_rejected": 19,
+  "max_state_distance": 6.248896807423819e-16,
+  "max_mass_error": 1.1102230246251565e-16,
+  "max_subnormalized_error": 1.2526389188957788e-16,
+  "max_trace_error": 7.287921361191648e-16,
+  "min_state_eigenvalue": -1.1102230246251564e-16,
+  "joint_distribution_normalization_error": 3.4416913763379853e-15,
+  "max_incomparable_commutator": 6.053709498356111e-16,
+  "control_channel_choi_distance": 14.912625375475583,
+  "guessed_record_controls": [
+    {
+      "status": "REJECTED_RECORD_GUESS_CONTROL",
+      "guessed_A1": 0,
+      "max_joint_mass_error": 0.2610601173590552,
+      "total_variation": 0.5004556799819938,
+      "max_final_state_distance": 6.669954312022972e-16,
+      "guessed_distribution_normalization_error": 3.6637359812630166e-15
+    },
+    {
+      "status": "REJECTED_RECORD_GUESS_CONTROL",
+      "guessed_A1": 1,
+      "max_joint_mass_error": 0.044063552083250065,
+      "total_variation": 0.11122277919535266,
+      "max_final_state_distance": 8.899311691359287e-16,
+      "guessed_distribution_normalization_error": 3.4416913763379853e-15
+    }
+  ],
+  "pretime_control": {
+    "state_change": 0.3916792346722228,
+    "inverse_error": 8.092285138607935e-16,
+    "product_state_residual": 0.53773517307128,
+    "partial_transpose_min_eigenvalue": -0.2631133500869276,
+    "extent_semantics": "FINITE_TRANSFORMATION_COORDINATE_NOT_TIME"
+  },
+  "physical_duration": null,
+  "physical_causality_derived": false,
+  "physical_entropy_law_derived": false,
+  "collapse_outcome_derived": false,
+  "new_physical_axioms": [],
+  "Pillar_3": "OPEN",
+  "scientific_breakthrough": false,
+  "vendor_git_blob": "95d0303d617422d74e61ae017f0354233ec9454b",
+  "scope": "The record wire, finite controller values, carrier, RAS and RCR remain supplied. Readiness follows that declaration, not an externally imposed clock."
+}
