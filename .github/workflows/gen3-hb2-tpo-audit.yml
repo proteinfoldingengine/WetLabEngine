@@ -21,8 +21,11 @@ jobs:
         run: pip install --quiet numpy pandas scipy
       - name: Fetch frozen historical dataset
         run: |
-          git clone --quiet https://github.com/proteinfoldingengine/UQCF-GEM.git /tmp/UQCF-GEM
-          git -C /tmp/UQCF-GEM checkout --quiet f37669d0695554d051c4754c837b4ba1a8161276
+          mkdir -p /tmp/UQCF-GEM/deep_scan_results/1QYS
+          curl --fail --location --silent --show-error \
+            'https://raw.githubusercontent.com/proteinfoldingengine/UQCF-GEM/f37669d0695554d051c4754c837b4ba1a8161276/deep_scan_results/1QYS/deep_scan_results_1QYS_v3_ranked.csv' \
+            --output /tmp/UQCF-GEM/deep_scan_results/1QYS/deep_scan_results_1QYS_v3_ranked.csv
+          sha256sum /tmp/UQCF-GEM/deep_scan_results/1QYS/deep_scan_results_1QYS_v3_ranked.csv
       - name: Run preregistered predictive audit
         run: |
           python - <<'PY'
