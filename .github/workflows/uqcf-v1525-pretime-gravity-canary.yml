@@ -1,0 +1,159 @@
+name: UQCF v15.25 Pre-Time Gravity Canary and GitHub Delivery
+on:
+  push:
+    branches: [research/v15.25-pretime-gravity-canary]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.25-pretime-gravity-canary/**'
+      - '.github/workflows/uqcf-v1525-pretime-gravity-canary.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned environment
+        run: |
+          python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
+          if ! command -v ffmpeg >/dev/null; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
+      - name: Verify additive scope and run all 464 selected tests
+        run: |
+          python - <<'PY'
+          import json,os,re,subprocess,sys
+          from pathlib import Path
+          base='4c29601f79128d354de14d564f4c17a26a414fb8'
+          root=Path('ResearchHistory/UQCF-GEM');demo=root/'demos/v15.25-pretime-gravity-canary'
+          changed=subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines()
+          for line in changed:
+              status,name=line.split('\t',1)
+              assert status=='A' and (name.startswith(str(demo)+'/') or name=='.github/workflows/uqcf-v1525-pretime-gravity-canary.yml'),line
+          suites=[('v15/v15.11',['test_continuity.py'],20),('demos/v15.12-pretime-to-history',['test_simulation.py','test_presentation.py'],30),('demos/v15.13-independent-events',['test_model.py','test_replay.py'],27),('demos/v15.14-record-dependencies',['test_adaptive.py','test_replay.py'],30),('demos/v15.15-coherent-records',['test_coherent.py','test_replay.py'],30),('demos/v15.16-partial-pruning',['test_recoverability.py','test_replay.py'],33),('demos/v15.17-retained-motion',['test_motion.py','test_replay.py'],32),('demos/v15.18-invariant-completion',['test_completion.py','test_replay.py'],34),('demos/v15.19-linear-prediction',['test_linear.py','test_replay.py'],36),('demos/v15.20-physical-predictor',['test_channel.py','test_replay.py'],38),('demos/v15.21-record-readout',['test_record_readout.py','test_readout_presentation.py'],32),('demos/v15.22-event-sufficient-retention',['test_event_sufficiency.py','test_sufficiency_presentation.py'],32),('demos/v15.23-sufficient-channel-family',['test_family.py','test_family_view.py'],32),('demos/v15.24-composition-gate',['test_composition.py','test_composition_view.py'],30),('demos/v15.25-pretime-gravity-canary',['test_canary.py','test_replay.py'],28)]
+          logs=demo/'evidence/ci';logs.mkdir(parents=True);total=0
+          for folder,files,count in suites:
+              result=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=root/folder,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=180)
+              (logs/(Path(folder).name+'.log')).write_text(result.stdout)
+              print(folder,result.stdout[-250:],flush=True)
+              assert result.returncode==0 and re.search(rf'Ran {count} tests? in',result.stdout) and re.search(r'^OK\s*$',result.stdout,re.M),(folder,result.stdout)
+              total+=count
+          assert total==464
+          (logs/'SUMMARY.json').write_text(json.dumps({'source_sha':os.environ['GITHUB_SHA'],'base_sha':base,'selected_tests_passed':total,'scope':'selected research regressions; no full-repository or independent scientific certification'},indent=2)+'\n')
+          PY
+      - name: Reproduce killed-canary ledger, inspector and movie
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.25-pretime-gravity-canary
+        run: |
+          python pretime_gravity_canary.py --out outputs > evidence/ci/model.log
+          python replay.py --out outputs --video > evidence/ci/render.log
+          ffmpeg -v error -i outputs/pretime_gravity_canary.mp4 -f null - 2> evidence/ci/video_decode.log
+          ffprobe -v error -show_entries stream=codec_name,width,height -show_entries format=duration -of json outputs/pretime_gravity_canary.mp4 > evidence/ci/video_info.json
+          python -m compileall -q pretime_gravity_canary.py replay.py test_canary.py test_replay.py
+          python - <<'PY'
+          import json
+          r=json.load(open('outputs/verification.json'))
+          assert r['canary_verdict']=='KILLED_BARE_COMPATIBILITY_DOES_NOT_FORCE_GLOBAL_RESPONSE'
+          assert r['local_cancellation_exists'] is True and r['local_cancellation_support']==1
+          assert r['local_cancellation_remote_holonomy']<1e-12
+          assert r['response_nonuniqueness_dimension']>0 and r['cycle_shift_holonomy_change']>1e-4
+          assert r['signal_of_life'] is False and r['gravity_canary_certified'] is False
+          assert not any(r[k] for k in ('uses_pruning','uses_entropy','uses_physical_time','fits_newton_or_gr','physical_gravity_derived'))
+          PY
+      - name: Package source, fresh evidence and completed assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,shutil,subprocess,sys,zipfile
+          source=Path('ResearchHistory/UQCF-GEM/demos/v15.25-pretime-gravity-canary');dist=Path('delivery/assets');dist.mkdir(parents=True)
+          info=json.loads((source/'evidence/ci/video_info.json').read_text())
+          assert any(s.get('codec_name')=='h264' and s.get('width')==1280 and s.get('height')==720 for s in info['streams'])
+          assert abs(float(info['format']['duration'])-24)<0.1
+          for name in ['pretime_gravity_canary.mp4','pretime_gravity_canary.html','verification.json','replay_data.json']:
+              shutil.copyfile(source/'outputs'/name,dist/name)
+          shutil.copyfile(source/'README.md',dist/'REPORT.md')
+          provenance={'source_sha':os.environ['GITHUB_SHA'],'base_sha':'4c29601f79128d354de14d564f4c17a26a414fb8','run_id':os.environ['GITHUB_RUN_ID'],'selected_tests_passed':464,'python':sys.version,'packages':subprocess.check_output([sys.executable,'-m','pip','freeze'],text=True).splitlines(),'scope':'Fresh GitHub CI reproduction of a killed pre-time gravity canary; no physical gravity certification, full-repository regression, or independent peer review.'}
+          (dist/'PROVENANCE.json').write_text(json.dumps(provenance,indent=2)+'\n')
+          files=[]
+          for p in sorted(source.rglob('*')):
+              if p.is_symlink():raise ValueError('symlink rejected')
+              if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc':files.append(p)
+          members=[{'name':p.relative_to(source).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]
+          bundle=dist/'UQCF_GEM_v15_25_bundle.zip'
+          with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
+              for p in files:z.write(p,p.relative_to(source).as_posix())
+              z.writestr('PACKAGE_MANIFEST.json',json.dumps({'files':members,'provenance':provenance},indent=2))
+          with zipfile.ZipFile(bundle) as z:
+              assert z.testzip() is None
+              for row in members:
+                  raw=z.read(row['name']);assert len(raw)==row['bytes'] and hashlib.sha256(raw).hexdigest()==row['sha256']
+          (dist/'SHA256SUMS.txt').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n' for p in sorted(dist.iterdir())))
+          Path('delivery/RELEASE_NOTES.md').write_text('# v15.25 — Pre-time gravity canary killed\n\nExact source: `'+os.environ['GITHUB_SHA']+'`. All 464 selected tests passed before packaging.\n\nA supplied equal-edge Hodge representative is global and develops remote noncommuting holonomy before pruning or physical time. But bare compatibility also admits exact one-edge cancellation and arbitrary cycle/edge-inner-product freedom. Therefore the canary is **killed**: no global response or physical gravity field is forced by the candidate law.\n\nIncludes report, finished video/offline HTML, numerical ledger, replay data, source/fresh-CI evidence bundle, provenance and checksums. All eight assets are verified by size and SHA-256 before publication. No merge to main.\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.25-verified-delivery
+          path: delivery/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: v15.25-failure-evidence
+          path: ResearchHistory/UQCF-GEM/demos/v15.25-pretime-gravity-canary/evidence/ci/
+          if-no-files-found: ignore
+  publish:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: v15.25-verified-delivery
+          path: delivery
+      - name: Upload unique draft, verify digests, then publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test "$GH_REPO" = 'proteinfoldingengine/WetLabEngine'
+          TAG="uqcf-gem-v15.25-${GITHUB_RUN_ID}-a${GITHUB_RUN_ATTEMPT}"
+          gh release create "$TAG" delivery/assets/* --repo "$GH_REPO" --target "$GITHUB_SHA" --title 'UQCF-GEM v15.25 — pre-time gravity canary killed' --notes-file delivery/RELEASE_NOTES.md --draft --prerelease --latest=false
+          RELEASE_ID="$(gh api --paginate "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.tag_name == \"$TAG\") | .id")"
+          [[ "$RELEASE_ID" =~ ^[0-9]+$ ]]
+          gh api "repos/$GH_REPO/releases/$RELEASE_ID" > delivery/RELEASE_METADATA.json
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          data=json.loads(Path('delivery/RELEASE_METADATA.json').read_text());local=list(Path('delivery/assets').iterdir());remote={a['name']:a for a in data['assets']}
+          assert len(local)==len(remote)==8
+          for path in local:
+              asset=remote[path.name]
+              assert asset['state']=='uploaded' and asset['size']==path.stat().st_size
+              assert asset['digest']=='sha256:'+hashlib.sha256(path.read_bytes()).hexdigest()
+          print('All eight release assets match SHA-256 and size.')
+          PY
+          gh api --method PATCH "repos/$GH_REPO/releases/$RELEASE_ID" -F draft=false -f make_latest=false > delivery/PUBLICATION_RECEIPT.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('delivery/PUBLICATION_RECEIPT.json').read_text());assert data['draft'] is False;print(data['html_url'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.25-publication-receipt
+          path: delivery/PUBLICATION_RECEIPT.json
+          if-no-files-found: error
