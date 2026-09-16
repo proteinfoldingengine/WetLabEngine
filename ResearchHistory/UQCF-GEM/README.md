@@ -11,6 +11,21 @@ This directory is the canonical Git-tracked history for the active UQCF-GEM / Re
 - Do not replace failed native bridges with fitted/projection laws unless explicitly marked as new assumptions.
 - Pillar 3 remains open until a lawful physical correspondence is established.
 
+## Historical protein-backbone forensics
+
+The current retained-atlas/quantum-gravity program has a much earlier protein-folding lineage that must not be conflated with the later PharmaApp/QIS rescue-engine work or with the current v13-v15 ontology gates.
+
+A provenance-first reconstruction of that early lineage is archived here:
+
+- [Early Protein-Backbone Engine Forensic Reconstruction](forensics/backbone-lineage-2026-09-16/)
+- [Machine-readable source manifest](forensics/backbone-lineage-2026-09-16/SOURCE_MANIFEST.json)
+- [AI reproduction and extension guide](forensics/backbone-lineage-2026-09-16/AI_REPRODUCTION_GUIDE.md)
+- [Claim-to-source evidence index](forensics/backbone-lineage-2026-09-16/EVIDENCE_INDEX.md)
+
+The forensic record separates four major historical code states: Phase-I topology/DAG control, Patch 630 full N-CA-C backbone physics, torsional-preorganization/Goldilocks-coil discovery, and QIS. It also distinguishes the full-backbone historical QIS combined probe from the mechanically different executed CA-only production-QIS search engine. Historical success claims are graded by evidence authority; raw artifacts and exact Git/blob identity outrank narrative documents.
+
+This package is a historical-source reconstruction, **not** a certification that the early engine solved protein folding or that the historical QIS theory was physically validated.
+
 ## Current high-level stack
 
 ```text
