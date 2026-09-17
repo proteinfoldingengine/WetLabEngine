@@ -1,0 +1,68 @@
+{
+  "Pillar_3": "OPEN",
+  "base_sha": "6535ea69214f6661e340fe201813dfd17ddbb7e1",
+  "candidate_count": 4,
+  "candidate_results": [
+    {
+      "gate_a_common_carrier": false,
+      "gate_b_exact_fiber": null,
+      "gate_c_natural": null,
+      "gate_d_unique": null,
+      "gate_e_no_choice": null,
+      "key": "genesis-6d-carrier",
+      "relation_signatures": [],
+      "stop_reason": "GATE_A_NO_CERTIFIED_TYPED_COMMON_CARRIER"
+    },
+    {
+      "gate_a_common_carrier": false,
+      "gate_b_exact_fiber": null,
+      "gate_c_natural": null,
+      "gate_d_unique": null,
+      "gate_e_no_choice": null,
+      "key": "genesis-history-lineage",
+      "relation_signatures": [],
+      "stop_reason": "GATE_A_NO_CERTIFIED_TYPED_COMMON_CARRIER"
+    },
+    {
+      "gate_a_common_carrier": false,
+      "gate_b_exact_fiber": null,
+      "gate_c_natural": null,
+      "gate_d_unique": null,
+      "gate_e_no_choice": null,
+      "key": "retained-source-current",
+      "relation_signatures": [],
+      "stop_reason": "GATE_A_NO_CERTIFIED_TYPED_COMMON_CARRIER"
+    },
+    {
+      "gate_a_common_carrier": false,
+      "gate_b_exact_fiber": null,
+      "gate_c_natural": null,
+      "gate_d_unique": null,
+      "gate_e_no_choice": null,
+      "key": "ternary-source-role",
+      "relation_signatures": [],
+      "stop_reason": "GATE_A_NO_CERTIFIED_TYPED_COMMON_CARRIER"
+    }
+  ],
+  "canonical_relation_certified": false,
+  "common_carrier_count": 0,
+  "countermodels_survive": false,
+  "coupling_solver_reopened": false,
+  "exact_fiber_relation_count": 0,
+  "gravity_canary_certified": false,
+  "gravity_observables_evaluated": false,
+  "natural_relation_count": 0,
+  "new_source_semantics_axiom_added": false,
+  "next_required_object": "GENUINELY_TYPED_COMMON_CARRIER_OR_EXPLICIT_NEW_AXIOM",
+  "physical_gravity_derived": false,
+  "scientific_breakthrough": false,
+  "signal_of_life": false,
+  "status": "NO_TYPED_COMMON_CARRIER",
+  "uses_entropy_as_selector": false,
+  "uses_holonomy_selector": false,
+  "uses_metric_selector": false,
+  "uses_newton_or_gr": false,
+  "uses_physical_time": false,
+  "uses_pruning_as_selector": false,
+  "version": "v15.30"
+}

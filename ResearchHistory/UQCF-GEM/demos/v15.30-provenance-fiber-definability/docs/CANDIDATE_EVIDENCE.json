@@ -1,0 +1,123 @@
+[
+  {
+    "artifact_pins": [
+      [
+        "Tmp/TOE/Einstein 6/v1172_full_stack_package/v1172_6d_gpu_full_stack_genesis_provenance_engine.py",
+        "78d57450ac6a2b7fe3ab4ad42cf2f707c3e61f8d"
+      ],
+      [
+        "ResearchHistory/UQCF-GEM/v14/v14.04/REPORT.md",
+        "e5d9566bfc86c801d2933e63453d1800f60a675b"
+      ],
+      [
+        "ResearchHistory/UQCF-GEM/v14/v14.04/provenance_representation_audit.py",
+        "1e75767a59a54b4fb7840ca355eb00845cf119e3"
+      ],
+      [
+        "ResearchHistory/UQCF-GEM/v15/v15.01/REPORT.md",
+        "1afbb7aebe384a1fb761f99fd2b040e595be1fa5"
+      ],
+      [
+        "ResearchHistory/UQCF-GEM/v15/v15.01/common_parent_audit.py",
+        "b8b6ef14b323659eb730b33bd3d36c99e7f03957"
+      ]
+    ],
+    "certified_relation_claims": [
+      "NONTRIVIAL_6D_CARRIER"
+    ],
+    "claim_boundary": "nontrivial Genesis carrier has no frozen certified map to the torus q-fiber",
+    "domain": "GENESIS_6D_PROVENANCE_CARRIER",
+    "evidence_keys": [
+      "v14.04-provenance-representation",
+      "v15.01-common-parent"
+    ],
+    "key": "genesis-6d-carrier",
+    "transformation_source": "V1172 model-specific 6-D grid/roll/pruning transformations audited by v14.04/v15.01"
+  },
+  {
+    "artifact_pins": [
+      [
+        "Tmp/TOE/Einstein 4/V997_FULL_STACK_GENESIS_PIN_BRIDGE_REPORT.md",
+        "8f4ee48cbaf6c822b87dd5e30a5dfee4d596e26e"
+      ],
+      [
+        "Tmp/TOE/Einstein 6/v1172_full_stack_package/v1172_6d_gpu_full_stack_genesis_provenance_engine.py",
+        "78d57450ac6a2b7fe3ab4ad42cf2f707c3e61f8d"
+      ]
+    ],
+    "certified_relation_claims": [
+      "PINNED_REGISTRY",
+      "GENESIS_ROOT",
+      "WITNESS_QUORUM",
+      "APPEND_ONLY_CONTINUITY"
+    ],
+    "claim_boundary": "history legitimacy is not microscopic torus incidence",
+    "domain": "HISTORY_PROVENANCE",
+    "evidence_keys": [
+      "v997-genesis-pin"
+    ],
+    "key": "genesis-history-lineage",
+    "transformation_source": "V997/V1172 ordered-lineage and append-only provenance certification"
+  },
+  {
+    "artifact_pins": [
+      [
+        "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md",
+        "9917085b211ca0e1f4737082227f55097cc72b66"
+      ],
+      [
+        "ResearchHistory/UQCF-GEM/v14/v14.04/REPORT.md",
+        "e5d9566bfc86c801d2933e63453d1800f60a675b"
+      ],
+      [
+        "ResearchHistory/UQCF-GEM/v14/v14.04/provenance_representation_audit.py",
+        "1e75767a59a54b4fb7840ca355eb00845cf119e3"
+      ],
+      [
+        "ResearchHistory/UQCF-GEM/v15/v15.01/REPORT.md",
+        "1afbb7aebe384a1fb761f99fd2b040e595be1fa5"
+      ],
+      [
+        "ResearchHistory/UQCF-GEM/v15/v15.01/common_parent_audit.py",
+        "b8b6ef14b323659eb730b33bd3d36c99e7f03957"
+      ]
+    ],
+    "certified_relation_claims": [
+      "RETAINED_SOURCE_GRADE",
+      "GRAPH_BALANCE_BJ_EQUALS_S_RET"
+    ],
+    "claim_boundary": "retained graph source/current is a distinct carrier with no frozen certified torus-fiber relation",
+    "domain": "RETAINED_SOURCE_CURRENT",
+    "evidence_keys": [
+      "v13.26-source-calibration",
+      "v14.04-provenance-representation",
+      "v15.01-common-parent"
+    ],
+    "key": "retained-source-current",
+    "transformation_source": "v13.26 retained graph balance/covariance and positive source/current scaling audited by v14.04/v15.01"
+  },
+  {
+    "artifact_pins": [
+      [
+        "Tmp/TOE/Einstein 3/v923_full_stack_source_role_closure_proof/FULL_REPORT_AND_PROOF.md",
+        "9a1523c08d2b9b2c5ba2d298dfed3d563a750bec"
+      ],
+      [
+        "Tmp/TOE/Einstein 3/v923_full_stack_source_role_closure_proof/v923_full_stack_source_role_closure_proof.py",
+        "90f69d5101e0ab14488d8d25da326e7b94341375"
+      ]
+    ],
+    "certified_relation_claims": [
+      "SOURCE_ACTIVE_ROLE",
+      "SOURCE_BASIN_ELIGIBLE_NONACTIVE_ROLE",
+      "SOURCE_REJECTED_OR_BROKEN_ROLE"
+    ],
+    "claim_boundary": "ternary source legitimacy is not a torus edge label or q-fiber partition",
+    "domain": "RECOVERABILITY_SOURCE_LEGITIMACY",
+    "evidence_keys": [
+      "v923-source-role"
+    ],
+    "key": "ternary-source-role",
+    "transformation_source": "V923 exact finite source-family partition into the minimal ternary legitimacy role"
+  }
+]
