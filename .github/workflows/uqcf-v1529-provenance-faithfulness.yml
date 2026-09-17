@@ -22,10 +22,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13.5'
+      - name: Install pinned development dependency
+        run: python -m pip install numpy==2.3.5
       - name: Verify current v15.29 TDD surface
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.29-provenance-faithfulness
         run: |
-          python -m unittest -v test_inventory.py
+          python -m unittest -v test_inventory.py test_fiber_model.py
           python provenance_inventory.py --out /tmp/PROVENANCE_EVIDENCE.json
           cmp docs/PROVENANCE_EVIDENCE.json /tmp/PROVENANCE_EVIDENCE.json
-          python -m compileall -q provenance_inventory.py test_inventory.py
+          python -m compileall -q provenance_inventory.py test_inventory.py test_fiber_model.py
