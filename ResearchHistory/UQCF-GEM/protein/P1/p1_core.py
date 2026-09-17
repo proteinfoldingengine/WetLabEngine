@@ -9,9 +9,15 @@ CONTROL_MODES = (
     "angle_only",
     "dihedral_only",
     "soft_contact_only",
-    "ungated_full",
+    "static_combo",
+    "fixed_gate",
     "v9",
 )
+
+# Frozen from the recovered 1VII fixed-gate ablation packet. These are
+# historical constants, not values fit or tuned on the prospective P1 run.
+FIXED_GATE_SIGMA = 0.1955639719963073
+FIXED_GATE_CLOSURE = 0.0393431633710861
 
 
 def seed_all(seed: int) -> None:
@@ -205,6 +211,16 @@ def energy_for_mode(X: torch.Tensor, ctx: FoldContext, mode: str):
         return E0 + 0.18 * obs["dihed_smooth"], obs
     if mode == "soft_contact_only":
         return E0 - 0.8 * obs["soft_contacts"], obs
-    if mode == "ungated_full":
+    if mode == "static_combo":
+        # Same v9 ingredients and coefficients, but no live sigma/closure
+        # compression: both dynamic gates are held fully open.
         return v9_energy_from_observables(obs, gate_sigma=1.0, gate_closure=1.0), obs
+    if mode == "fixed_gate":
+        # Same v9 ingredients with historically frozen gate values. This
+        # preserves information content while removing state-dependent gating.
+        return v9_energy_from_observables(
+            obs,
+            gate_sigma=FIXED_GATE_SIGMA,
+            gate_closure=FIXED_GATE_CLOSURE,
+        ), obs
     return v9_energy_from_observables(obs), obs
