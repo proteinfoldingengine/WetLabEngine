@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
+from pathlib import Path
+import argparse
+import json
 
 import exact_fiber as ef
 import frozen_inputs as fi
@@ -14,6 +17,19 @@ ALLOWED_STATUSES = {
     'MULTIPLE_NATURAL_RELATIONS_REMAIN',
     'CANONICAL_PROVENANCE_FIBER_RELATION_CERTIFIED',
 }
+
+NEXT = {
+    'NO_TYPED_COMMON_CARRIER':
+        'GENUINELY_TYPED_COMMON_CARRIER_OR_EXPLICIT_NEW_AXIOM',
+    'PROVENANCE_FIBER_RELATION_NOT_DEFINABLE':
+        'LOCALIZED_SYMMETRY_OR_DEFINABILITY_OBSTRUCTION',
+    'MULTIPLE_NATURAL_RELATIONS_REMAIN':
+        'ADDITIONAL_PRIMITIVE_SELECTING_AMONG_NATURAL_RELATIONS',
+    'CANONICAL_PROVENANCE_FIBER_RELATION_CERTIFIED':
+        'SEPARATE_PROVENANCE_ACTION_REPRESENTATION_READINESS_GATE',
+}
+
+BASE_SHA = '6535ea69214f6661e340fe201813dfd17ddbb7e1'
 
 
 @dataclass(frozen=True)
@@ -147,10 +163,6 @@ def audit_candidate(
             stop_reason='GATE_A_NO_CERTIFIED_TYPED_COMMON_CARRIER',
         )
 
-    # Gate B requires more than graph connectivity. A frozen record must
-    # actually certify a q-fiber relation, and that relation must include an
-    # exact representative-level witness/evaluator. The current frozen
-    # evidence model exposes no such evaluator for any of the four candidates.
     relation_records = _real_q_fiber_relation_records(candidate)
     if not relation_records:
         return CandidateAudit(
@@ -164,9 +176,6 @@ def audit_candidate(
             stop_reason='GATE_B_NO_CERTIFIED_Q_FIBER_RELATION_WITNESS',
         )
 
-    # Fail closed if future metadata claims a q-fiber relation but does not
-    # carry an executable exact labeling law. v15.30 may not reconstruct one
-    # from prose, dimensions, names, or downstream behavior.
     return CandidateAudit(
         key=candidate.key,
         gate_a_common_carrier=True,
@@ -253,8 +262,6 @@ def synthetic_no_common_carrier_control() -> DefinabilityAudit:
 
 
 def synthetic_supplied_embedding_control() -> DefinabilityAudit:
-    # A supplied embedding may make a relation operative, but it is not real
-    # frozen evidence and therefore fails Gate A under the real-only rule.
     graph = tc.synthetic_supplied_embedding_graph()
     connection = tc.find_typed_connection(
         graph,
@@ -320,9 +327,6 @@ def synthetic_automorphism_rejection_control() -> DefinabilityAudit:
 
 
 def synthetic_unique_natural_control() -> DefinabilityAudit:
-    # The synthetic carrier declares the typed relation and matching Z2 action
-    # explicitly. This proves the gate can recognize a positive case; it does
-    # not add anything to the real frozen archive.
     relation, action = nat.synthetic_equivariant_control()
     naturality = nat.audit_relation_naturality(relation, action)
     uniqueness = uq.classify_relation_family((('A', 'B'), ('X', 'Y')))
@@ -373,3 +377,73 @@ def audit_synthetic_controls() -> tuple[DefinabilityAudit, ...]:
         synthetic_automorphism_rejection_control(),
         synthetic_unique_natural_control(),
     )
+
+
+def audit() -> dict:
+    result = audit_real_archive()
+    candidates = tuple(result.candidates)
+    natural_signatures = {
+        signature
+        for candidate in candidates
+        if candidate.gate_c_natural is True
+        for signature in candidate.relation_signatures
+    }
+    status = result.status
+    return {
+        'version': 'v15.30',
+        'base_sha': BASE_SHA,
+        'status': status,
+        'candidate_count': len(candidates),
+        'candidate_results': [asdict(candidate) for candidate in candidates],
+        'common_carrier_count': sum(
+            candidate.gate_a_common_carrier for candidate in candidates
+        ),
+        'exact_fiber_relation_count': sum(
+            candidate.gate_b_exact_fiber is True for candidate in candidates
+        ),
+        'natural_relation_count': len(natural_signatures),
+        'countermodels_survive': result.countermodels_survive,
+        'canonical_relation_certified': result.canonical_relation_certified,
+        'new_source_semantics_axiom_added': False,
+        'coupling_solver_reopened': False,
+        'gravity_observables_evaluated': False,
+        'uses_holonomy_selector': False,
+        'uses_newton_or_gr': False,
+        'uses_metric_selector': False,
+        'uses_pruning_as_selector': False,
+        'uses_entropy_as_selector': False,
+        'uses_physical_time': False,
+        'scientific_breakthrough': (
+            status == 'CANONICAL_PROVENANCE_FIBER_RELATION_CERTIFIED'
+        ),
+        'signal_of_life': False,
+        'gravity_canary_certified': False,
+        'physical_gravity_derived': False,
+        'Pillar_3': 'OPEN',
+        'next_required_object': NEXT[status],
+    }
+
+
+def write_audit(out_dir: Path) -> Path:
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / 'verification.json'
+    path.write_text(json.dumps(audit(), indent=2, sort_keys=True) + '\n')
+    return path
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description='Run the gravity-blind v15.30 provenance-fiber definability gate.'
+    )
+    parser.add_argument(
+        '--out', type=Path, default=Path(__file__).with_name('outputs')
+    )
+    args = parser.parse_args()
+    path = write_audit(args.out)
+    print(path)
+    print(json.dumps(audit(), sort_keys=True))
+
+
+if __name__ == '__main__':
+    main()
