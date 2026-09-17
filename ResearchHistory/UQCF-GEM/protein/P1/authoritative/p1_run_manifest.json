@@ -1,0 +1,42 @@
+{
+  "common_random_numbers": true,
+  "fixed_gate_closure": 0.0393,
+  "fixed_gate_sigma": 0.1956,
+  "learning_rate": 0.05,
+  "modes": [
+    "baseline",
+    "angle_only",
+    "dihedral_only",
+    "soft_contact_only",
+    "static_combo",
+    "fixed_gate",
+    "v9"
+  ],
+  "noise_scale": 0.013,
+  "optimizer": "Adam",
+  "optimizer_reset_at_handoff": true,
+  "post_steps": 240,
+  "pre_steps": 180,
+  "schema": "protein-p1-measurement-v1",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "targets": {
+    "1L2Y": {
+      "ca_count": 20,
+      "path": "inputs/1L2Y.ca_chainA_model1.pdb",
+      "sha256": "84179b355a043df03e98f432dd2b2fbba4035b4f7df2e4928feabec8baed4378"
+    },
+    "1UAO": {
+      "ca_count": 10,
+      "path": "inputs/1UAO.ca_chainA_model1.pdb",
+      "sha256": "b7cb0808f7dc0f4ed40bee9ca332696f50c2cc25d34ba53cabd7ba1ed03f468f"
+    }
+  },
+  "torch_deterministic_algorithms": true
+}
