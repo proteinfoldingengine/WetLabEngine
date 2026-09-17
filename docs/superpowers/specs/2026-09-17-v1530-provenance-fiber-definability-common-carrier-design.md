@@ -1,6 +1,6 @@
 # UQCF-GEM v15.30 — Provenance–Fiber Definability / Common-Carrier Gate
 
-**Design status:** APPROVED / FROZEN FOR REVIEW  
+**Design status:** CONCEPT APPROVED / WRITTEN SPEC REVIEW PENDING  
 **Date:** 2026-09-17  
 **Stacked base:** v15.29 certified source head `6535ea69214f6661e340fe201813dfd17ddbb7e1`  
 **v15.29 adjudication:** `PROVENANCE_RELATION_TO_Q_FIBERS_NOT_ENTAILED`  
@@ -11,7 +11,7 @@
 
 v15.29 established two facts simultaneously:
 
-1. exact microscopic source representatives can differ while sharing the same coarse source quotient `q = B1 s`;
+1. exact microscopic source representatives can differ while sharing the same coarse source quotient `q = B1 x`;
 2. the frozen archive does not entail whether such representatives are provenance-identical or provenance-distinct.
 
 The unresolved object is therefore not another q-fiber construction. It is a typed, ontology-native relation connecting already-certified provenance/source objects to the exact microscopic q-fiber.
@@ -71,7 +71,7 @@ Known boundary: the primitive closes source legitimacy in its tested branch. It 
 
 ### 3.3 Retained graph source/current
 
-Primary frozen evidence: v13.26 retained source/current structure, including balance form `B J = s` and protected retained source grade.
+Primary frozen evidence: v13.26 retained source/current structure, including balance form `B J = s_ret` and protected retained source grade.
 
 Known boundary: retained source/current information has its own graph representation and retains positive scaling freedom relative to observer normalization.
 
@@ -88,16 +88,18 @@ No fifth candidate class may be added in v15.30 without reopening the design.
 Let `C1` denote the inherited exact oriented edge-chain carrier and let
 
 ```text
-q = B1 s
+q = B1 x
 ```
 
-for an integral representative `s in C1`.
+for an integral microscopic representative `x in C1`.
 
 For a fixed coarse source `q0`, define the exact microscopic fiber
 
 ```text
-F(q0) = { s in C1 : B1 s = q0 }.
+F(q0) = { x in C1 : B1 x = q0 }.
 ```
+
+The symbol `x` is reserved in v15.30 for the torus microscopic representative. Older retained-graph source variables are written `s_ret` to prevent cross-carrier type confusion.
 
 A provenance-fiber relation is an equivalence or typed labeling law on `F(q0)` whose values come from one of the frozen provenance-side candidate carriers.
 
@@ -109,8 +111,9 @@ For each candidate origin `P`, search only the frozen archive for one of the fol
 
 1. a typed map `phi: F(q0) -> P`;
 2. a typed map `psi: P -> F(q0)`;
-3. a common parent carrier `K` with certified maps to both sides;
-4. a certified equivalence, quotient, incidence, functorial, or representation relation that determines the comparison without a supplied embedding.
+3. a typed map involving the full edge carrier `C1` whose restriction to `F(q0)` canonically determines the provenance relation;
+4. a common parent carrier `K` with certified maps to both sides;
+5. a certified equivalence, quotient, incidence, functorial, or representation relation that determines the comparison without a supplied embedding.
 
 Passing Gate A requires concrete frozen evidence of the map/relation and its transformation law.
 
@@ -129,10 +132,10 @@ If no candidate passes, v15.30 closes immediately as:
 
 ## 6. Gate B — Exact q-fiber compatibility
 
-Any candidate relation surviving Gate A must be evaluated on at least two distinct exact representatives `s1 != s2` satisfying
+Any candidate relation surviving Gate A must be evaluated on at least two distinct exact representatives `x1 != x2` satisfying
 
 ```text
-B1 s1 = B1 s2 = q0
+B1 x1 = B1 x2 = q0
 ```
 
 with equality checked exactly over integers/rationals.
@@ -160,7 +163,7 @@ This gate is theorem-first. Finite exhaustive controls may accompany the proof w
 
 ## 8. Gate D — Uniqueness / countermodel test
 
-For every relation surviving Gates A–C, construct all materially distinct admissible relations that satisfy the same frozen typed constraints, or prove uniqueness.
+For every relation surviving Gates A–C, either prove uniqueness from the frozen typed constraints or construct explicit inequivalent admissible countermodels. If the admissible relation family is infinite, two inequivalent surviving relations are sufficient to disprove uniqueness; exhaustive enumeration is not required.
 
 If two inequivalent provenance-fiber relations:
 
