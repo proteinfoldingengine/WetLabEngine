@@ -26,6 +26,14 @@ The forensic record separates four major historical code states: Phase-I topolog
 
 This package is a historical-source reconstruction, **not** a certification that the early engine solved protein folding or that the historical QIS theory was physically validated.
 
+## Unified protein research thesis
+
+The current protein evidence, historical backbone/TPO lineage, 2026 TSP-derived frozen v9 bridge, bridge-to-classical handoff work, retained-information program, and v15.29-v15.30 correspondence limits are synthesized in:
+
+- [Multiscale Realizability Thesis — Protein folding as a cross-domain falsifier for UQCF-GEM](MULTISCALE_REALIZABILITY_THESIS.md)
+
+The thesis records the current bounded GO / NO-GO position: frozen v9 has earned continued mechanism testing as a reproducible small-protein structural-ordering/handoff effect; v13-v16-style contact micro-variants should remain stopped; full folding and a fundamental UQCF derivation are not established; the next protein work should prioritize information-matched regularizer reduction, frozen new-topology transfer, bridge-to-classical handoff replication, retained-history/state-completeness tests, and a separate bounded replay of the historical full-backbone/TPO lineage.
+
 ## Current high-level stack
 
 ```text
