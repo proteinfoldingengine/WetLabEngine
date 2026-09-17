@@ -35,8 +35,10 @@ The seven modes are:
 
 `fixed_gate` uses the same v9 ingredients with the historical fixed-gate constants recovered before P1:
 
-- sigma = 0.1955639719963073
-- closure = 0.0393431633710861
+- sigma = 0.1956
+- closure = 0.0393
+
+These values are frozen at exactly the precision present in the recovered fixed-gate ablation note. No additional digits are inferred from telemetry or refit on the prospective targets.
 
 The fixed values may not be refit on 1UAO or 1L2Y.
 
