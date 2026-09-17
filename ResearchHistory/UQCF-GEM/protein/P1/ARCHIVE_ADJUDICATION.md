@@ -1,4 +1,4 @@
-# Protein P1 — Regularizer-Reduction Adjudication
+> **P1 status correction (2026-09-17): ARCHIVE EVIDENCE ONLY.** The recovered CSVs below are retained as historical context, not as the prospective P1 acceptance measurement. Their exact historical generator is not source-certified, so any GO/NO-GO wording below is restricted to that archive packet and must not be promoted to the current P1 result. The prospective P1 result requires the frozen source identity, deterministic implementation, matched seven-control matrix, and bound inputs in this branch.\n\n# Protein P1 — Regularizer-Reduction Adjudication
 
 **Date:** 2026-09-17  
 **Branch:** `research/protein-p1-v9-regularizer-reduction`  
