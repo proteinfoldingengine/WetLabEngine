@@ -1,0 +1,25 @@
+{
+  "schema": "protein-p1-source-freeze-v1",
+  "status": "FROZEN",
+  "p0_verified_base": "6a2362287305a93e4fa63f308dfc19caaf8c1835",
+  "recovered_source": {
+    "name": "uqcf_bridge_to_classical_handoff_repro.py",
+    "library_file_id": "file_00000000ec7c71f590699bcfde9fcb4b",
+    "library_version": "1",
+    "size_bytes": 20403,
+    "sha256": "697d773a8dec951dafbac9132a04da22e342dee52c2b70d62732c4be16778e51",
+    "python_compile": "PASS"
+  },
+  "audit_findings": {
+    "native_geometry_in_energy_or_gradient_path": false,
+    "native_geometry_used_for_evaluation_metrics": true,
+    "python_rng_seeded_in_recovered_source": true,
+    "numpy_rng_seeded_in_recovered_source": true,
+    "torch_rng_seeded_in_recovered_source": false,
+    "nondeterministic_sites": [
+      "run_handoff_for_target: torch.randn((ctx.N, 3))",
+      "optimize_stage: torch.randn_like(X)"
+    ]
+  },
+  "claim_boundary": "This binds the recovered artifact identity. It does not establish that the recovered script was the original historical generator."
+}
