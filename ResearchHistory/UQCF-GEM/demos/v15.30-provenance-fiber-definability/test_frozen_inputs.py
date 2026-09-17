@@ -19,8 +19,8 @@ class FrozenInputTests(unittest.TestCase):
     def test_exact_four_candidate_origins(self):
         rows = fi.candidate_inventory(fi.REPO_ROOT)
         self.assertEqual(tuple(row.key for row in rows), (
-            'genesis-history-lineage',
             'genesis-6d-carrier',
+            'genesis-history-lineage',
             'retained-source-current',
             'ternary-source-role',
         ))
