@@ -1,0 +1,79 @@
+{
+  "audit_base_sha": "f596583615a823a33170588dcbf998bf13f10453",
+  "audit_scope": {
+    "primary_repository": "proteinfoldingengine/WetLabEngine",
+    "secondary_repository_searched": "proteinfoldingengine/UQCF-GEM",
+    "search_classes": [
+      "default-branch code search",
+      "distinctive-symbol search",
+      "commit-message provenance search",
+      "canonical packet inspection"
+    ],
+    "distinctive_terms": [
+      "sigma_bridge",
+      "bridge_observables",
+      "closure_ready",
+      "false_closure",
+      "compat_field",
+      "productive_contact",
+      "dihed_smooth",
+      "uqcf_bridge_patch_v9",
+      "2.6 closure compat_field"
+    ]
+  },
+  "canonical_evidence": [
+    {
+      "blob_sha": "918e41cbd5447a28acf10f0ec4e9daa89148cc68",
+      "path": "Tmp/TOE/uqcf_bridge_v9_update_bundle/uqcf_bridge_update_v9.md",
+      "role": "v9 cross-target update memo"
+    },
+    {
+      "blob_sha": "1008952990c9e657bad632600d76e741e1e4856a",
+      "path": "Tmp/TOE/uqcf_bridge_v9_update_bundle/uqcf_bridge_patch_v9_1uao_summary.csv",
+      "role": "1UAO v9 summary"
+    },
+    {
+      "blob_sha": "e31be24535296a9bb1b894fae75f33e879eab3b1",
+      "path": "Tmp/TOE/uqcf_bridge_v9_update_bundle/uqcf_bridge_patch_v9_1l2y_confirm_summary.csv",
+      "role": "1L2Y frozen-v9 transfer summary"
+    },
+    {
+      "blob_sha": "69a35ee8cd8320e76f7322b79d34ab2dfa961667",
+      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_bridge_verification_dossier.md",
+      "role": "formula-level operator and final bounded verification dossier"
+    },
+    {
+      "blob_sha": "0654246e7f88da3f6f810dafa7d6db681aa690f4",
+      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_bridge_v9_trajectory_packet.md",
+      "role": "trajectory artifact inventory"
+    },
+    {
+      "blob_sha": "5badf2bf24e93ff989c4f54718240f54d1777c0e",
+      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_publication_closeout_plan.md",
+      "role": "publication plan; contains unchecked requirement to freeze v9 and record commit hash/code snapshot"
+    },
+    {
+      "blob_sha": "d5644f577670248b5976ab317acd9b30fb595fc7",
+      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_branch_family_stop_memo_v13_v16.md",
+      "role": "negative branch-family narrowing; v9 retained as mainline"
+    },
+    {
+      "blob_sha": "7a453a5c72ff46d40a02800f0efeb8387e2b3fd0",
+      "path": "ResearchHistory/UQCF-GEM/MULTISCALE_REALIZABILITY_THESIS.md",
+      "role": "unified thesis and P0-P5 protein research program"
+    }
+  ],
+  "missing_required_evidence": [
+    "exact executable frozen-v9 source file set",
+    "immutable source commit/archive identity for the generating implementation",
+    "exact v9 configuration and parameter set bound to canonical runs",
+    "source definitions and data flow for compat_field",
+    "source definitions and data flow for productive_contact",
+    "source definitions and data flow for dihedral_preserve",
+    "source definitions and data flow for loop_compat",
+    "source definitions and data flow for false_closure",
+    "source definitions and data flow for sigma_bridge and closure_ready",
+    "analysis/source binding proving the documented equations match the canonical generating path"
+  ],
+  "result": "EXECUTABLE_V9_SOURCE_NOT_PINNED"
+}
