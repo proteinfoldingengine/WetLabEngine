@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UQCF–GEM v15.30 Provenance–Fiber Definability</title>
+<style>
+*{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:#f6f7f8;color:#18232c;font-family:system-ui,-apple-system,sans-serif}main{max-width:1080px;margin:auto;padding:28px}h1{font-size:clamp(28px,4vw,46px);letter-spacing:-.03em;line-height:1.12}.tag{font-size:11px;font-weight:750;letter-spacing:.12em}.lead,details{line-height:1.7}.card{background:white;border:1px solid #d4dce2;border-radius:12px;padding:20px;margin:22px 0;min-width:0}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.stat{min-width:0;overflow-wrap:anywhere}.stat strong{display:block;font-size:22px;overflow-wrap:anywhere}.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0}.controls label{font-weight:700}select{font:inherit;padding:10px;max-width:100%;min-width:0}.status{padding:16px;border:1px solid #ccd4da;border-radius:8px;line-height:1.7;overflow-wrap:anywhere}.small{font-size:12px;line-height:1.7}.notice{font-weight:750}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}summary{font-weight:750;cursor:pointer}@media(max-width:700px){main{padding:20px 15px}.stats{grid-template-columns:1fr}.controls{align-items:stretch;flex-direction:column}select{width:100%}}
+</style>
+</head>
+<body>
+<main>
+<div class="tag">UQCF–GEM / v15.30 / PROVENANCE–FIBER DEFINABILITY</div>
+<h1>First establish a typed bridge. Only then ask what it does inside a q-fiber.</h1>
+<p class="lead">This gate audits four frozen provenance/source candidates against the exact microscopic torus representative. It asks whether the archive itself supplies a typed common carrier before any representative-level source meaning is assigned.</p>
+<section class="card stats">
+<div class="stat">gate status<strong id="gateStatus"></strong></div>
+<div class="stat">typed common carriers<strong id="carrierCount"></strong></div>
+<div class="stat">canonical relation<strong id="canonical"></strong></div>
+</section>
+<div class="controls">
+<label for="candidate">Inspect candidate</label>
+<select id="candidate"></select>
+<label for="view">Inspect layer</label>
+<select id="view">
+<option value="candidate">candidate boundary</option>
+<option value="graph">typed graph</option>
+<option value="fiber">exact q-fiber</option>
+<option value="gate">gate adjudication</option>
+</select>
+</div>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+<section class="card"><div class="mono" id="exact"></div></section>
+<details open><summary>Why Gate A comes first</summary><p>Genesis history, ternary source role, retained source/current, and the Genesis 6-D field are real frozen structures. A shared word such as “source” is not a typed map. Without a certified map, common parent, common quotient, incidence relation, equivalence, or representation law connecting a candidate to the torus edge representative, later q-fiber semantics are not reached.</p></details>
+<details><summary>What remains true about the q-fiber</summary><p>The inherited exact incidence model still has distinct face-boundary and cycle-shift representatives with the same coarse q. That algebraic fact does not by itself assign provenance meaning to those representatives.</p></details>
+<details><summary>What the controls establish</summary><p>Synthetic controls show that the audit can reject supplied embeddings and non-invariant distinctions, recognize exact equivariance, quotient label renaming, detect global nonuniqueness, and certify a unique nontrivial relation when the needed typed structure is explicitly supplied. Synthetic structure is never promoted into frozen evidence.</p></details>
+<details><summary>Claim boundary</summary><p>No new source-semantics axiom is added. No coupling member or gravity observable is evaluated. No holonomy, Newton/GR, metric, entropy, pruning-performance, recoverability-performance, or physical-time criterion selects the result.</p></details>
+<p class="notice">Microscopic difference is not automatically provenance difference.</p>
+<p class="notice">Playback is not physical time.</p>
+<p class="notice">No coupling member or gravity observable is evaluated.</p>
+<p class="small">This file is self-contained and makes no network requests. Selectors change the inspection view only; they are not physical events.</p>
+</main>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+'use strict';
+const D=JSON.parse(document.getElementById('data').textContent),A=D.audit,$=x=>document.getElementById(x);
+$('gateStatus').textContent=A.status;
+$('carrierCount').textContent=String(A.common_carrier_count);
+$('canonical').textContent=String(A.canonical_relation_certified);
+for(const r of D.candidates){const o=document.createElement('option');o.value=r.key;o.textContent=r.key;$('candidate').appendChild(o)}
+function current(){return D.candidates.find(x=>x.key===$('candidate').value)||D.candidates[0]}
+function candidateAudit(){const r=current();return A.candidate_results.find(x=>x.key===r.key)}
+function show(){const r=current(),a=candidateAudit(),v=$('view').value;if(v==='candidate'){$('status').textContent=r.key+' — '+r.domain+' — Gate A common carrier: '+a.gate_a_common_carrier;$('exact').textContent='transformation source = '+r.transformation_source+'\nclaim boundary = '+r.claim_boundary+'\nstop reason = '+a.stop_reason}else if(v==='graph'){$('status').textContent='certified typed edges are shown without untyped prose matches';$('exact').textContent=JSON.stringify(D.typed_graph,null,2)}else if(v==='fiber'){$('status').textContent='exact q-fiber examples remain algebraically valid independent of provenance';$('exact').textContent=JSON.stringify(D.fibers,null,2)}else{$('status').textContent=A.status+' — next: '+A.next_required_object;$('exact').textContent='common carrier count = '+A.common_carrier_count+'\nexact fiber relation count = '+A.exact_fiber_relation_count+'\nnatural relation count = '+A.natural_relation_count+'\ncoupling solver reopened = '+A.coupling_solver_reopened+'\ngravity observables evaluated = '+A.gravity_observables_evaluated}}
+$('candidate').onchange=show;$('view').onchange=show;
+window.__demo={chooseCandidate:k=>{if(!D.candidates.some(r=>r.key===k))throw Error('unknown candidate');$('candidate').value=k;show()},chooseView:k=>{if(!['candidate','graph','fiber','gate'].includes(k))throw Error('unknown view');$('view').value=k;show()},data:D};
+show();
+</script>
+</body>
+</html>
