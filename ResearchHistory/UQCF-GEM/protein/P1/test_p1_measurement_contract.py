@@ -35,6 +35,24 @@ class TestP1MeasurementContract(unittest.TestCase):
         self.assertAlmostEqual(adjusted["static_combo"], 0.02)
         self.assertAlmostEqual(adjusted["fixed_gate"], 0.04)
 
+    def test_csv_writer_accepts_trace_rows_with_optional_energy(self):
+        import csv
+        import tempfile
+
+        rows = [
+            {"phase": "precondition", "phase_step": 0, "rmsd": 4.2},
+            {"phase": "precondition", "phase_step": 60, "rmsd": 3.8, "energy": 1.25},
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "trace.csv"
+            m.write_csv(path, rows)
+            with path.open(newline="") as handle:
+                loaded = list(csv.DictReader(handle))
+            self.assertEqual(len(loaded), 2)
+            self.assertIn("energy", loaded[0])
+            self.assertEqual(loaded[0]["energy"], "")
+            self.assertEqual(loaded[1]["energy"], "1.25")
+
     def test_short_stage_is_deterministic_with_frozen_noise(self):
         base = Path(__file__).resolve().parent
         target = m.load_ca_coords(base / "inputs/1UAO.ca_chainA_model1.pdb")
