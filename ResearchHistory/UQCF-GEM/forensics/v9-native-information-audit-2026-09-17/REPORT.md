@@ -102,6 +102,76 @@ The strongest internal evidence that the source snapshot remained unfinished is 
 
 That is consistent with the present audit result: the result packet was preserved, but the exact generating implementation was not frozen into the currently audited source record.
 
+## Historical recovery sweep
+
+A second recovery pass traced the canonical v9 packet back to its exact Git creation point rather than relying on present-day code search alone.
+
+### Exact packet commit
+
+The canonical v9 update bundle was added by:
+
+```text
+8269075e2e66c4fc335c38074900488f20b4cf8c
+message: v9 protein folding
+date:    2026-04-12T05:17:31Z
+parent:  8ed8a291bdb4ee4b9f3b86bd5243d8e0cc35502a
+tree:    28d28b6259e62c0528877074ac96df3a5ec1af2c
+```
+
+That commit added exactly the v9 memo plus the two 1UAO / 1L2Y summary CSVs. It did **not** add an executable generator.
+
+### Complete exact-v9 repository tree
+
+The recursive Git tree at `28d28b6259e62c0528877074ac96df3a5ec1af2c` was returned complete (`truncated:false`). It contains the v9 packet and the pre-existing repository source, but no executable protein folding / v9 generator implementing the required bridge symbols.
+
+This is stronger than a present-day filename search: at the exact versioned state where the canonical v9 packet first appears, the generator is not in the committed tree.
+
+### Follow-on telemetry
+
+The immediate follow-on protein commit:
+
+```text
+4feac2650ceca1b439adb74381849f1e61862d4e
+message: Protein folding work
+```
+
+adds result/trajectory material, including the full v9 observable columns, but no executable generator source.
+
+### Closeout dossier
+
+The later closeout commit:
+
+```text
+e2bc578b5e486d99881aed948b036653a1d7c4a0
+message: Protein TOE Bridge closeout
+```
+
+preserves the formula-level operator and minimal Python-like pseudocode such as calls to `bridge_observables`, `sigma_bridge`, and `closure_ready`. It still does not define those functions or expose the exact optimizer/dynamics implementation that generated the canonical packet.
+
+Pseudocode therefore cannot substitute for the missing source audit.
+
+### Other recovery surfaces
+
+The recovery pass additionally checked:
+
+- current default-branch symbol search;
+- nearby April 2026 upload commits;
+- selected historical branches, including older assembly branches;
+- accessible repository releases;
+- the connected Google Drive scope searched during this P0 session.
+
+No exact executable v9 generator was recovered from those surfaces.
+
+Machine-readable details are frozen in `RECOVERY_SEARCH.json`.
+
+Recovery substatus:
+
+```text
+EXACT_V9_GENERATOR_NOT_RECOVERED_IN_AUDITED_REPOSITORY_SCOPE
+```
+
+This is deliberately narrower than saying the source never existed. The source may have lived in an uncommitted workstation state, private/removed repository, or external archive that is not present in the audited connected evidence.
+
 ## What remains valid
 
 This P0 result does **not** invalidate the empirical artifacts.
@@ -137,6 +207,8 @@ To clear P0, recover and pin all of the following:
 6. definitions of every bridge observable and every target-dependent mask/list;
 7. analysis code used for summary/statistics outputs.
 
+The remaining plausible recovery locations are now outside the audited public repository surface: an original local/workstation snapshot, a private or removed source repository, or another immutable backup/archive.
+
 Then rerun this audit and assign explicit booleans to native coordinates, RMSD, native contacts, and target-specific fitting.
 
 ## Stop rule
@@ -157,16 +229,17 @@ Do:
 
 ## Scientific conclusion
 
-The immediate protein program has produced a useful negative result:
+The immediate protein program has produced a useful bounded result:
 
 ```text
 v9 empirical signal:              PRESERVED_BOUNDED
 v9 executable provenance:         INCOMPLETE
+historical source recovery:       NOT_RECOVERED_IN_AUDITED_REPOSITORY_SCOPE
 native-information non-leakage:   NOT_CERTIFIED
 mechanism-reduction testability:  BLOCKED
 ```
 
-The next protein task is no longer another folding run. It is source recovery:
+The next protein task is not another folding run. It remains source recovery:
 
 ```text
 PINNED_EXECUTABLE_FROZEN_V9_IMPLEMENTATION
