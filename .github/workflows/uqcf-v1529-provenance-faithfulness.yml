@@ -30,4 +30,6 @@ jobs:
           python -m unittest -v test_inventory.py test_fiber_model.py test_equivalence.py test_countermodels.py test_action_audit.py test_gate.py
           python provenance_inventory.py --out /tmp/PROVENANCE_EVIDENCE.json
           cmp docs/PROVENANCE_EVIDENCE.json /tmp/PROVENANCE_EVIDENCE.json
-          python -m compileall -q provenance_inventory.py fiber_model.py provenance_equivalence.py countermodels.py action_audit.py test_inventory.py test_fiber_model.py test_equivalence.py test_countermodels.py test_action_audit.py test_gate.py
+          python source_extension_gate.py --out /tmp/v1529_outputs
+          cmp docs/RESULTS.json /tmp/v1529_outputs/verification.json
+          python -m compileall -q provenance_inventory.py fiber_model.py provenance_equivalence.py countermodels.py action_audit.py source_extension_gate.py test_inventory.py test_fiber_model.py test_equivalence.py test_countermodels.py test_action_audit.py test_gate.py
