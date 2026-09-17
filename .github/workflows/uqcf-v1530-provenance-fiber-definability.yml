@@ -30,4 +30,6 @@ jobs:
           python -m unittest -v test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py test_gate.py
           python frozen_inputs.py --out /tmp/CANDIDATE_EVIDENCE.json
           cmp docs/CANDIDATE_EVIDENCE.json /tmp/CANDIDATE_EVIDENCE.json
-          python -m compileall -q frozen_inputs.py typed_carrier_graph.py exact_fiber.py naturality.py uniqueness.py test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py test_gate.py
+          python definability_gate.py --out /tmp/v1530_audit
+          cmp docs/RESULTS.json /tmp/v1530_audit/verification.json
+          python -m compileall -q frozen_inputs.py typed_carrier_graph.py exact_fiber.py naturality.py uniqueness.py definability_gate.py test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py test_gate.py
