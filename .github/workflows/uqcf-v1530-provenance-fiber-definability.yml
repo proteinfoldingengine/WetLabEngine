@@ -27,7 +27,7 @@ jobs:
       - name: Verify current v15.30 TDD surface
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability
         run: |
-          python -m unittest -v test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py
+          python -m unittest -v test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py
           python frozen_inputs.py --out /tmp/CANDIDATE_EVIDENCE.json
           cmp docs/CANDIDATE_EVIDENCE.json /tmp/CANDIDATE_EVIDENCE.json
-          python -m compileall -q frozen_inputs.py typed_carrier_graph.py exact_fiber.py test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py
+          python -m compileall -q frozen_inputs.py typed_carrier_graph.py exact_fiber.py naturality.py test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py
