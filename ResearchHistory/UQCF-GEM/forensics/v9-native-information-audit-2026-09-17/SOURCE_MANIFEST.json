@@ -7,7 +7,13 @@
       "default-branch code search",
       "distinctive-symbol search",
       "commit-message provenance search",
-      "canonical packet inspection"
+      "canonical packet inspection",
+      "exact v9 commit inspection",
+      "complete exact-v9 Git-tree inspection",
+      "immediate follow-on and closeout commit inspection",
+      "selected historical branch survey",
+      "repository release search",
+      "connected Google Drive recovery search"
     ],
     "distinctive_terms": [
       "sigma_bridge",
@@ -40,7 +46,7 @@
     {
       "blob_sha": "69a35ee8cd8320e76f7322b79d34ab2dfa961667",
       "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_bridge_verification_dossier.md",
-      "role": "formula-level operator and final bounded verification dossier"
+      "role": "formula-level operator, minimal pseudocode, and final bounded verification dossier"
     },
     {
       "blob_sha": "0654246e7f88da3f6f810dafa7d6db681aa690f4",
@@ -63,6 +69,17 @@
       "role": "unified thesis and P0-P5 protein research program"
     }
   ],
+  "historical_recovery_evidence": {
+    "closeout_commit_sha": "e2bc578b5e486d99881aed948b036653a1d7c4a0",
+    "exact_v9_packet_commit_sha": "8269075e2e66c4fc335c38074900488f20b4cf8c",
+    "exact_v9_packet_parent_sha": "8ed8a291bdb4ee4b9f3b86bd5243d8e0cc35502a",
+    "exact_v9_tree_generator_source_found": false,
+    "exact_v9_tree_response_truncated": false,
+    "exact_v9_tree_sha": "28d28b6259e62c0528877074ac96df3a5ec1af2c",
+    "followon_telemetry_commit_sha": "4feac2650ceca1b439adb74381849f1e61862d4e",
+    "recovery_record": "ResearchHistory/UQCF-GEM/forensics/v9-native-information-audit-2026-09-17/RECOVERY_SEARCH.json",
+    "status": "EXACT_V9_GENERATOR_NOT_RECOVERED_IN_AUDITED_REPOSITORY_SCOPE"
+  },
   "missing_required_evidence": [
     "exact executable frozen-v9 source file set",
     "immutable source commit/archive identity for the generating implementation",
