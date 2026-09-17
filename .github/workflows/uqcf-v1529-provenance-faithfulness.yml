@@ -1,0 +1,31 @@
+name: UQCF v15.29 Provenance Faithfulness Development CI
+on:
+  push:
+    branches: [research/v15.29-provenance-faithfulness]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.29-provenance-faithfulness/**'
+      - '.github/workflows/uqcf-v1529-provenance-faithfulness.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  development-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Verify current v15.29 TDD surface
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.29-provenance-faithfulness
+        run: |
+          python -m unittest -v test_inventory.py
+          python provenance_inventory.py --out /tmp/PROVENANCE_EVIDENCE.json
+          cmp docs/PROVENANCE_EVIDENCE.json /tmp/PROVENANCE_EVIDENCE.json
+          python -m compileall -q provenance_inventory.py test_inventory.py
