@@ -411,8 +411,20 @@ def decide(
 def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
     if not rows:
         raise ValueError(f"No rows for {path}")
+
+    # Trace rows intentionally have a sparse schema: the initial checkpoint
+    # has no energy value while later checkpoints do. Preserve the union of
+    # fields in first-seen order rather than assuming row 0 is exhaustive.
+    fieldnames: list[str] = []
+    seen: set[str] = set()
+    for row in rows:
+        for key in row:
+            if key not in seen:
+                seen.add(key)
+                fieldnames.append(key)
+
     with path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
 
