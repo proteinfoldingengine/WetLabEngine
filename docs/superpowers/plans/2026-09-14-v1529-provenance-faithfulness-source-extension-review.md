@@ -124,6 +124,35 @@ PROVENANCE_SOURCE_REPRESENTATION_READY
 
 v15.29 itself never calls the v15.28 coupling solver and never evaluates a gravity observable.
 
+## Execution-time delivery ancestry correction
+
+GitHub ancestry inspection during Task 8 found that the certified v15.28 scientific commit
+
+```text
+42244310b065f473c8bd459a6f065a61afbd2292
+```
+
+is not an ancestor of the v15.29 branch. The v15.29 pull request instead descends from the parallel v15.28 certification commit
+
+```text
+192421c6744d3e322eaaca068e6a368cd1340aaa
+```
+
+The two v15.28 commits have the same certification message/timestamp but occur on different histories. Therefore Task 9 must not use an impossible `git diff 42244310...HEAD` as its additive-delivery check.
+
+The corrected fail-closed delivery rule is:
+
+```text
+scientific_source_sha = 42244310b065f473c8bd459a6f065a61afbd2292
+  -> retained in the scientific ledger and enforced through the exact frozen
+     artifact/module Git-blob pins defined by Tasks 1-2.
+
+delivery_base_sha = 192421c6744d3e322eaaca068e6a368cd1340aaa
+  -> exact ancestor / PR base used only for additive-scope diff enforcement.
+```
+
+The delivery diff from `192421c...` must contain additions only under the v15.29 demo directory plus the approved v15.29 design/plan/review documents and the v15.29 workflow. The final provenance receipt must record both SHAs distinctly. This correction changes no scientific result, evidence pin, adjudication, or claim boundary.
+
 ## Plan review status
 
 ```text
@@ -131,5 +160,5 @@ spec coverage       : COMPLETE
 placeholder scan    : CLEAN
 interface consistency: CLEAN
 inherited module pins: COMPLETE IN THIS COMPANION FILE
-implementation begun : NO
+implementation begun : NO   (historical pre-execution status at time of self-review)
 ```
