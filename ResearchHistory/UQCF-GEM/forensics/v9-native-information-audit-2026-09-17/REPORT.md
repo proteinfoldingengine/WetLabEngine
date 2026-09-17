@@ -3,246 +3,186 @@
 **Audit date:** 2026-09-17  
 **Audit base:** `f596583615a823a33170588dcbf998bf13f10453`  
 **Branch:** `research/protein-p0-v9-native-information-audit`  
-**Primary status:** `EXECUTABLE_V9_SOURCE_NOT_PINNED`
+**Primary status:** `CANONICAL_V9_GENERATOR_PROVENANCE_UNRESOLVED`
 
 ## Executive finding
 
-The frozen v9 empirical result remains a bounded, documented protein result, but the current Git-tracked evidence does **not** pin the executable frozen-v9 implementation strongly enough to complete a source-level native-information audit.
+P0 now has two distinct provenance results that must not be conflated.
 
-The repository preserves:
+1. The exact April 2026 generator that produced the canonical frozen-v9 packet is still not present in the audited Git repository history and has not been bound to an immutable historical source snapshot.
+2. A later executable file, `uqcf_bridge_to_classical_handoff_repro.py`, was recovered from the ChatGPT Library and source-audited. It implements the documented v9 bridge observables, coefficients and handoff protocol, and its energy/gradient path is native-geometry blind at fixed chain length.
 
-- the v9 operator at equation / pseudocode level;
-- 1UAO and 1L2Y summary/results/statistics/trajectory artifacts;
-- trajectory columns for `compat_field`, `dihedral_preserve`, `productive_contact`, `sigma_bridge`, `closure_ready`, `false_closure`, `dir_pen`, `angle_var`, `dihed_smooth`, `soft_contacts`, `density_var`, `rg`, and `loop_compat`;
-- the bridge-to-classical handoff packet;
-- the final verification dossier and negative branch-family narrowing.
-
-However, the accessible source record does not identify a pinned executable source file / commit implementing the frozen v9 definitions and data flow for the key observables and energy terms. In particular, the audit could not locate an executable definition for the v9 `bridge_observables` path or the internal construction of `compat_field`, `productive_contact`, `dihedral_preserve`, `loop_compat`, `false_closure`, and the exact v9 gating/energy wiring.
-
-Therefore this audit **cannot certify** that frozen v9 is free of native-coordinate, native-RMSD, native-contact-map, or target-specific fitted information.
-
-This is a **provenance failure**, not a falsification of the observed v9 effect.
-
-## Adjudication
+Therefore the old broad statement `EXECUTABLE_V9_SOURCE_NOT_PINNED` is superseded by the narrower result:
 
 ```text
-formula-level operator documented              YES
-cross-target empirical packet preserved        YES
-trajectory-level bridge observables preserved  YES
-bridge-to-classical handoff preserved           YES
-exact executable frozen-v9 source pinned       NO
-source-level native-information audit possible NO
-native-information non-leakage certified       NO
-P1 regularizer-reduction gate ready            NO
+CANONICAL_V9_GENERATOR_PROVENANCE_UNRESOLVED
 ```
 
-Primary result:
+while the recovered implementation receives the separate result:
 
 ```text
-EXECUTABLE_V9_SOURCE_NOT_PINNED
+V9_REPRODUCTION_SOURCE_RECOVERED_AND_AUDITED
 ```
 
-Next required object:
+The empirical v9 packet remains `PRESERVED_BOUNDED`.
+
+## Historical repository provenance
+
+The canonical v9 update packet first appears at:
 
 ```text
-PINNED_EXECUTABLE_FROZEN_V9_IMPLEMENTATION
+commit  8269075e2e66c4fc335c38074900488f20b4cf8c
+message v9 protein folding
+date    2026-04-12T05:17:31Z
+parent  8ed8a291bdb4ee4b9f3b86bd5243d8e0cc35502a
+tree    28d28b6259e62c0528877074ac96df3a5ec1af2c
 ```
 
-## Why fail closed
+That commit adds the v9 memo and two summary CSVs, not executable generator source. The recursive Git tree at the exact packet state was complete (`truncated:false`) and did not contain an executable v9 protein generator. The immediate follow-on `4feac2650ceca1b439adb74381849f1e61862d4e` adds telemetry/results but no generator. The closeout commit `e2bc578b5e486d99881aed948b036653a1d7c4a0` preserves equations and pseudocode but not the function definitions used by the original run.
 
-The scientific question is not whether the published equations *look* native-free. The question is whether the executable implementation that generated the frozen v9 trajectories used only the documented current-conformation quantities.
+Current/default-branch search, connected GitHub-wide symbol search, selected historical branches, releases and connected Drive did not recover the exact April generator. This remains an archive-relative provenance boundary, not evidence that the source never existed.
 
-A source-level certification requires tracing every path that contributes to at least:
+## Recovered executable reproduction
 
-- `compat_field`;
-- `productive_contact`;
-- `dihedral_preserve`;
-- `loop_compat`;
-- `soft_contacts`;
-- `compactness` / `rg`;
-- `false_closure`;
-- `sigma_bridge`;
-- `closure_ready`;
-- the final v9 energy and optimizer / dynamics loop.
-
-Without the exact implementation, the following questions are undecidable from the preserved CSVs and prose alone:
-
-1. Did any term read native coordinates directly?
-2. Did any term read native RMSD or an RMSD-derived quantity?
-3. Did any term read a native contact map or target-specific contact list?
-4. Were any masks, sequence-pair lists, cutoffs, weights, or target-specific constants derived from the native structure?
-5. Were v9 parameters fitted using 1UAO, 1L2Y, or other target outcomes in a way that should change the model class?
-6. Were the documented equations exactly the executable path used to produce the canonical packet?
-
-The audit therefore refuses to infer `false` for any leakage flag from absence of evidence.
-
-## Search and provenance work performed
-
-The audit searched the connected GitHub evidence for distinctive executable v9 identifiers, including:
-
-- `sigma_bridge`;
-- `bridge_observables`;
-- `closure_ready`;
-- `false_closure`;
-- `compat_field`;
-- `productive_contact`;
-- `dihed_smooth`;
-- `uqcf_bridge_patch_v9`;
-- the characteristic v9 coefficient structure around `closure` and `compat_field`.
-
-Within `proteinfoldingengine/WetLabEngine`, results resolve to the bridge reports, pseudocode, trajectory packets, CSV artifacts, figures, and publication material rather than an executable frozen-v9 source implementation. The accessible `proteinfoldingengine/UQCF-GEM` code search likewise did not return a `sigma_bridge` implementation.
-
-A commit-history search for v9 / bridge implementation provenance also did not identify a frozen implementation commit.
-
-The strongest internal evidence that the source snapshot remained unfinished is the publication closeout plan itself. Its submission checklist still contains:
+Recovered Library object:
 
 ```text
-[ ] freeze v9 and record commit hash / code snapshot
+name       uqcf_bridge_to_classical_handoff_repro.py
+file id    file_00000000ec7c71f590699bcfde9fcb4b
+version    1
+bytes      20403
+sha256     697d773a8dec951dafbac9132a04da22e342dee52c2b70d62732c4be16778e51
 ```
 
-That is consistent with the present audit result: the result packet was preserved, but the exact generating implementation was not frozen into the currently audited source record.
+The file identifies itself as a "UQCF-GEM bridge-to-classical handoff reproduction script" and as a compact auditable reproduction of the bridge-layer result. That wording is why this audit does not silently relabel it as the original April generator.
 
-## Historical recovery sweep
+Python compilation and AST parsing pass.
 
-A second recovery pass traced the canonical v9 packet back to its exact Git creation point rather than relying on present-day code search alone.
+## Source-level native-information audit
 
-### Exact packet commit
+### Energy path
 
-The canonical v9 update bundle was added by:
+`baseline_energy(X, ctx)` uses current-conformation bond geometry, steric repulsion and radius of gyration. Its only `ctx` dependency is chain length `N`.
+
+`bridge_observables(X, ctx)` constructs the v9 quantities from the current conformation plus index pairs derived from `N`:
+
+- `dir_pen`
+- `angle_var`
+- `dihed_smooth`
+- `R_micro`
+- `soft_contacts`
+- `density_var`
+- `rg` / compactness
+- `C_meso`
+- `loop_compat`
+- `sigma_bridge`
+- `closure_ready`
+- `false_closure`
+- `compat_field`
+- `dihedral_preserve`
+- `productive_contact`
+
+It does not read `ctx.target`, target angles, target dihedrals or native-contact identities.
+
+`bridge_v9_energy` reproduces the documented v9 coefficient structure and does not directly read any target field.
+
+Source adjudication for the recovered reproduction:
 
 ```text
-8269075e2e66c4fc335c38074900488f20b4cf8c
-message: v9 protein folding
-date:    2026-04-12T05:17:31Z
-parent:  8ed8a291bdb4ee4b9f3b86bd5243d8e0cc35502a
-tree:    28d28b6259e62c0528877074ac96df3a5ec1af2c
+native coordinates in energy/gradient path       NO
+native RMSD in energy/gradient path              NO
+native contact map in energy/gradient path       NO
+native target angles/dihedrals in energy path    NO
+target identity in energy path                   NO
+target-derived chain length N                    YES
+current candidate geometry X                     YES
 ```
 
-That commit added exactly the v9 memo plus the two 1UAO / 1L2Y summary CSVs. It did **not** add an executable generator.
+### Independent substitution control
 
-### Complete exact-v9 repository tree
+A direct dynamic control held candidate conformation `X` and `N=12` fixed while replacing the native target with an unrelated same-length geometry.
 
-The recursive Git tree at `28d28b6259e62c0528877074ac96df3a5ec1af2c` was returned complete (`truncated:false`). It contains the v9 packet and the pre-existing repository source, but no executable protein folding / v9 generator implementing the required bridge symbols.
-
-This is stronger than a present-day filename search: at the exact versioned state where the canonical v9 packet first appears, the generator is not in the committed tree.
-
-### Follow-on telemetry
-
-The immediate follow-on protein commit:
+Result:
 
 ```text
-4feac2650ceca1b439adb74381849f1e61862d4e
-message: Protein folding work
+energy 1                 37.74882507324219
+energy 2                 37.74882507324219
+energy exact equal       YES
+energy abs difference    0.0
+gradient exact equal     YES
+gradient max abs diff    0.0
 ```
 
-adds result/trajectory material, including the full v9 observable columns, but no executable generator source.
+At the same time, native-relative evaluation quantities such as angle RMS, dihedral RMS and native-contact count changed. The control therefore discriminates the mechanism path from the evaluation path rather than merely failing to perturb the program.
 
-### Closeout dossier
-
-The later closeout commit:
+Result:
 
 ```text
-e2bc578b5e486d99881aed948b036653a1d7c4a0
-message: Protein TOE Bridge closeout
+REPRODUCED_V9_ENERGY_AND_GRADIENT_NATIVE_GEOMETRY_INVARIANT_AT_FIXED_N
 ```
 
-preserves the formula-level operator and minimal Python-like pseudocode such as calls to `bridge_observables`, `sigma_bridge`, and `closure_ready`. It still does not define those functions or expose the exact optimizer/dynamics implementation that generated the canonical packet.
+## Where native structure is used
 
-Pseudocode therefore cannot substitute for the missing source audit.
+`FoldContext` stores the native target, target angles, target dihedrals and a native-contact set. These are used for evaluation/reporting.
 
-### Other recovery surfaces
+During optimization, RMSD to `ctx.target` is evaluated at trace points and is used to retain a `best_X` for reported summary metrics. It does not enter the energy, gradient or state update.
 
-The recovery pass additionally checked:
+For the bridge-to-classical handoff, the state passed from v9 preconditioning to the classical relaxer is the final `bridge_end`, not the native-RMSD-selected best-v9 state. Therefore native RMSD does not select the handoff state.
 
-- current default-branch symbol search;
-- nearby April 2026 upload commits;
-- selected historical branches, including older assembly branches;
-- accessible repository releases;
-- the connected Google Drive scope searched during this P0 session.
-
-No exact executable v9 generator was recovered from those surfaces.
-
-Machine-readable details are frozen in `RECOVERY_SEARCH.json`.
-
-Recovery substatus:
+The distinction is:
 
 ```text
-EXACT_V9_GENERATOR_NOT_RECOVERED_IN_AUDITED_REPOSITORY_SCOPE
+reproduced dynamics / gradient: native-geometry blind at fixed N
+native-relative scoring:        explicitly uses the native target
 ```
 
-This is deliberately narrower than saying the source never existed. The source may have lived in an uncommitted workstation state, private/removed repository, or external archive that is not present in the audited connected evidence.
+That is acceptable for an evaluation harness, but it must be stated when interpreting "best RMSD" results.
 
-## What remains valid
+## Reproducibility defect found
 
-This P0 result does **not** invalidate the empirical artifacts.
+The recovered script seeds Python `random` and NumPy for each displayed seed, but it does not call `torch.manual_seed(seed)` even though it uses `torch.randn` in initialization and `torch.randn_like` during optimization.
 
-The following bounded statements remain supported by their existing packets:
+Thus the displayed seed does not fully determine a fresh-process run. This is a reproducibility defect, not evidence of native leakage.
 
-- frozen-v9-labelled runs on 1UAO and 1L2Y show the previously documented backbone/angle ordering and favorable RMSD movement;
-- the final packet records a bridge-to-classical handoff advantage under its reported protocol;
-- the v13–v16 contact/routing branch family did not earn promotion over v9;
-- v9 remains the historical acceptance baseline for the reduced bridge research program.
+A new frozen reproduction lineage must explicitly control the PyTorch RNG before any new P1 measurement is treated as authoritative.
 
-What changes is the claim boundary:
+## Historical regularizer-reduction evidence
 
-> Until the exact generating source is recovered and pinned, v9 should be described as a **reproducible frozen empirical packet with a documented formula-level operator**, not as a source-audited native-free mechanism.
+The Library also contains a historical `uqcf_v9_control_matrix` packet comparing:
 
-## Consequence for the unified thesis
+- baseline
+- v9
+- angle-only
+- dihedral-only
+- soft-contact-only
+- `static_combo`, which uses the ingredients without `sigma_bridge` / closure compression.
 
-The Multiscale Realizability Thesis remains a legitimate **hypothesis** because it explicitly separates empirical effect from mechanism distinctness and fundamental derivation.
+Its stated question is whether frozen v9 can outperform simpler controls without the compressed multiscale bridge state. Results and traces are preserved. However, the generating Python/source has not yet been recovered, so this packet is historical evidence only; it is not yet a source-certified P1 gate.
 
-But Gate P1 — regularizer reduction — should not begin from a reconstructed approximation of v9. A faithful reduction test requires the exact executable v9 implementation so that the controls differ only in the intended hierarchy/gating structure.
-
-Starting P1 from a rewritten implementation would create a new model and would not answer whether the original frozen v9 hierarchy was irreducible.
-
-## Required recovery package
-
-To clear P0, recover and pin all of the following:
-
-1. exact source file(s) that generated the canonical v9 1UAO and 1L2Y packets;
-2. exact commit / archive hash or immutable blob identities;
-3. exact configuration and parameter set;
-4. target input files and sequence / geometry preprocessing;
-5. seed protocol and optimizer / dynamics settings;
-6. definitions of every bridge observable and every target-dependent mask/list;
-7. analysis code used for summary/statistics outputs.
-
-The remaining plausible recovery locations are now outside the audited public repository surface: an original local/workstation snapshot, a private or removed source repository, or another immutable backup/archive.
-
-Then rerun this audit and assign explicit booleans to native coordinates, RMSD, native contacts, and target-specific fitting.
-
-## Stop rule
-
-Do not:
-
-- infer non-leakage from the published equations alone;
-- recreate v9 from the memo and call it the frozen implementation;
-- begin mechanism novelty testing against a guessed implementation;
-- use the observed transfer result to waive provenance requirements.
-
-Do:
-
-- preserve the existing v9 empirical evidence;
-- recover the exact generator source;
-- rerun P0 at source level;
-- only then proceed to P1 reduction controls.
-
-## Scientific conclusion
-
-The immediate protein program has produced a useful bounded result:
+## Current adjudication
 
 ```text
-v9 empirical signal:              PRESERVED_BOUNDED
-v9 executable provenance:         INCOMPLETE
-historical source recovery:       NOT_RECOVERED_IN_AUDITED_REPOSITORY_SCOPE
-native-information non-leakage:   NOT_CERTIFIED
-mechanism-reduction testability:  BLOCKED
+v9 empirical packet                         PRESERVED_BOUNDED
+exact April generator in Git history        NOT RECOVERED
+canonical generator provenance              UNRESOLVED
+reproduction executable                     RECOVERED + HASHED
+reproduction energy native leakage          NOT FOUND / SOURCE-CERTIFIED NEGATIVE
+reproduction evaluation native dependence   YES
+reproduction full RNG determinism            FAILS CURRENTLY
+historical control-matrix packet             FOUND
+historical control-matrix source             NOT FOUND
+historical P1 gate                           NOT CERTIFIED
 ```
 
-The next protein task is not another folding run. It remains source recovery:
+The machine-readable source audit is `REPRO_SOURCE_AUDIT.json`.
 
-```text
-PINNED_EXECUTABLE_FROZEN_V9_IMPLEMENTATION
-```
+## Next scientific move
 
-That is the minimum evidence needed to turn the existing v9 result into an auditable mechanistic object.
+Do not discard v9, and do not rerun broad protein development.
+
+The next work should proceed on two tracks:
+
+1. continue provenance recovery for an original v9/control-matrix generator if one exists;
+2. separately freeze the recovered reproduction as a **new explicitly identified lineage**, repair only the RNG determinism defect, and then run a preregistered P1 reduction test against angle-only, dihedral-only, soft-contact-only and static-combination controls.
+
+That P1 result would test the recovered v9 mechanism on its own merits. It must not be retroactively presented as proof that the unrecovered April generator was identical.
