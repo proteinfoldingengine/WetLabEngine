@@ -14,10 +14,11 @@ CONTROL_MODES = (
     "v9",
 )
 
-# Frozen from the recovered 1VII fixed-gate ablation packet. These are
-# historical constants, not values fit or tuned on the prospective P1 run.
-FIXED_GATE_SIGMA = 0.1955639719963073
-FIXED_GATE_CLOSURE = 0.0393431633710861
+# Frozen at exactly the precision documented by the recovered 1VII
+# fixed-gate ablation packet. Extra digits from telemetry are deliberately
+# not inferred or promoted into the prospective P1 contract.
+FIXED_GATE_SIGMA = 0.1956
+FIXED_GATE_CLOSURE = 0.0393
 
 
 def seed_all(seed: int) -> None:
