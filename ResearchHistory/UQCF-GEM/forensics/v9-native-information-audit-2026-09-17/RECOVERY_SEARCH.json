@@ -1,0 +1,86 @@
+{
+  "audit_date": "2026-09-17",
+  "branch": "research/protein-p0-v9-native-information-audit",
+  "canonical_parent_status": "EXECUTABLE_V9_SOURCE_NOT_PINNED",
+  "closeout_commit": {
+    "executable_generator_added": false,
+    "notes": "The closeout dossier contains formula-level material and minimal Python-like pseudocode naming bridge_observables, sigma_bridge, and closure_ready, but no executable source definition for those functions or the generating optimizer/dynamics path.",
+    "sha": "e2bc578b5e486d99881aed948b036653a1d7c4a0",
+    "title": "Protein TOE Bridge closeout"
+  },
+  "current_default_branch_symbol_search": {
+    "result": "REPORTS_PSEUDOCODE_AND_TELEMETRY_ONLY",
+    "terms": [
+      "sigma_bridge",
+      "bridge_observables",
+      "closure_ready",
+      "false_closure",
+      "compat_field",
+      "productive_contact"
+    ]
+  },
+  "exact_v9_packet_commit": {
+    "date": "2026-04-12T05:17:31Z",
+    "files_added": [
+      "Tmp/TOE/uqcf_bridge_v9_update_bundle/uqcf_bridge_patch_v9_1l2y_confirm_summary.csv",
+      "Tmp/TOE/uqcf_bridge_v9_update_bundle/uqcf_bridge_patch_v9_1uao_summary.csv",
+      "Tmp/TOE/uqcf_bridge_v9_update_bundle/uqcf_bridge_update_v9.md"
+    ],
+    "generator_source_added": false,
+    "parent_sha": "8ed8a291bdb4ee4b9f3b86bd5243d8e0cc35502a",
+    "sha": "8269075e2e66c4fc335c38074900488f20b4cf8c",
+    "title": "v9 protein folding",
+    "tree_sha": "28d28b6259e62c0528877074ac96df3a5ec1af2c"
+  },
+  "exact_v9_tree": {
+    "generator_source_found": false,
+    "required_v9_symbol_implementations_found": false,
+    "tree_response_truncated": false,
+    "tree_sha": "28d28b6259e62c0528877074ac96df3a5ec1af2c"
+  },
+  "followon_telemetry_commit": {
+    "contains_v9_observable_trajectory": true,
+    "executable_generator_added": false,
+    "sha": "4feac2650ceca1b439adb74381849f1e61862d4e",
+    "title": "Protein folding work"
+  },
+  "nearby_history_checks": [
+    {
+      "sha": "9b3ead995c95a4bf8887240e8192e8c830d015b1",
+      "result": "UQCF_GEM_COSMOLOGY_MEMO_ONLY"
+    },
+    {
+      "sha": "fbb7349ea5f2e3e18e0bee4ffb1cebdade48bc00",
+      "result": "UQCF_GEM_AI_REVIEW_MEMORANDUM_ONLY"
+    }
+  ],
+  "release_search": {
+    "protein_or_v9_release_found": false,
+    "scope": "accessible repository releases queried; no v9 match in returned release set"
+  },
+  "scope_boundary": [
+    "exact v9 packet creation commit",
+    "complete exact-v9 Git tree",
+    "immediate follow-on protein telemetry commit",
+    "protein bridge closeout commit",
+    "nearby April 2026 upload commits",
+    "current default-branch code search",
+    "selected historical branch survey",
+    "accessible repository releases",
+    "connected Google Drive search performed in the P0 recovery session"
+  ],
+  "status": "EXACT_V9_GENERATOR_NOT_RECOVERED_IN_AUDITED_REPOSITORY_SCOPE",
+  "scientific_interpretation": {
+    "empirical_v9_packet_invalidated": false,
+    "native_information_leakage_proven": false,
+    "native_information_nonleakage_certified": false,
+    "source_never_existed_proven": false
+  },
+  "next_required_object": "PINNED_EXECUTABLE_FROZEN_V9_IMPLEMENTATION",
+  "remaining_recovery_locations": [
+    "original local/workstation source snapshot used for the April 2026 runs",
+    "private or removed repository/archive containing the generator",
+    "external immutable archive or backup with source plus exact configuration"
+  ],
+  "version": "protein-P0-recovery-1"
+}
