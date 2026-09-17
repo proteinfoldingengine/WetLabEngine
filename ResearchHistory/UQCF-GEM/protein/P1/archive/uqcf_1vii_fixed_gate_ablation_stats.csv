@@ -1,0 +1,9 @@
+comparison,metric,v9_minus_control,p_value
+v9_vs_classical_only,best_rmsd,-2.174,0.025439
+v9_vs_classical_only,angle_rms,0.0454,0.048286
+v9_vs_classical_only,dihedral_rms,0.0547,0.287835
+v9_vs_classical_only,contact_recovery,0.4032,0.002012
+v9_vs_fixed_gate_preconditioning,best_rmsd,0.0202,0.693795
+v9_vs_fixed_gate_preconditioning,angle_rms,-0.0009,0.946963
+v9_vs_fixed_gate_preconditioning,dihedral_rms,0.0729,0.013337
+v9_vs_fixed_gate_preconditioning,contact_recovery,0.0158,0.109867
