@@ -1,0 +1,33 @@
+name: UQCF v15.30 Provenance Fiber Definability Development CI
+on:
+  push:
+    branches: [research/v15.30-provenance-fiber-definability]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability/**'
+      - '.github/workflows/uqcf-v1530-provenance-fiber-definability.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  development-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned development dependency
+        run: python -m pip install numpy==2.3.5
+      - name: Verify current v15.30 TDD surface
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability
+        run: |
+          python -m unittest -v test_frozen_inputs.py
+          python frozen_inputs.py --out /tmp/CANDIDATE_EVIDENCE.json
+          cmp docs/CANDIDATE_EVIDENCE.json /tmp/CANDIDATE_EVIDENCE.json
+          python -m compileall -q frozen_inputs.py test_frozen_inputs.py
