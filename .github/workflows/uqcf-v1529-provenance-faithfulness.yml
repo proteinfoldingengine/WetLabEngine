@@ -11,9 +11,10 @@ permissions:
 jobs:
   development-test:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     env:
       PYTHONHASHSEED: '0'
+      MPLBACKEND: Agg
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,8 +23,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13.5'
-      - name: Install pinned development dependency
-        run: python -m pip install numpy==2.3.5
+      - name: Install pinned replay environment
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.29-provenance-faithfulness
+        run: |
+          python -m pip install -r requirements.txt
+          if ! command -v ffmpeg >/dev/null; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
       - name: Verify current v15.29 TDD surface
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.29-provenance-faithfulness
         run: |
@@ -32,4 +36,27 @@ jobs:
           cmp docs/PROVENANCE_EVIDENCE.json /tmp/PROVENANCE_EVIDENCE.json
           python source_extension_gate.py --out /tmp/v1529_outputs
           cmp docs/RESULTS.json /tmp/v1529_outputs/verification.json
-          python -m compileall -q provenance_inventory.py fiber_model.py provenance_equivalence.py countermodels.py action_audit.py source_extension_gate.py test_inventory.py test_fiber_model.py test_equivalence.py test_countermodels.py test_action_audit.py test_gate.py test_replay.py
+          python -m compileall -q provenance_inventory.py fiber_model.py provenance_equivalence.py countermodels.py action_audit.py source_extension_gate.py replay.py test_inventory.py test_fiber_model.py test_equivalence.py test_countermodels.py test_action_audit.py test_gate.py test_replay.py
+      - name: Generate and decode gravity-blind replay
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.29-provenance-faithfulness
+        run: |
+          rm -rf /tmp/v1529_replay
+          python replay.py --out /tmp/v1529_replay --video
+          test -s /tmp/v1529_replay/provenance_faithfulness.html
+          test -s /tmp/v1529_replay/replay_data.json
+          test -s /tmp/v1529_replay/verification.json
+          test -s /tmp/v1529_replay/provenance_faithfulness.mp4
+          ffmpeg -v error -i /tmp/v1529_replay/provenance_faithfulness.mp4 -f null - 2> /tmp/v1529_video_decode.log
+          ffprobe -v error -show_entries stream=codec_name,width,height -show_entries format=duration -of json /tmp/v1529_replay/provenance_faithfulness.mp4 > /tmp/v1529_video_info.json
+          python - <<'PY'
+          import json
+          info=json.load(open('/tmp/v1529_video_info.json'))
+          streams=info['streams']
+          assert any(s.get('codec_name')=='h264' and s.get('width')==1280 and s.get('height')==720 for s in streams), info
+          assert abs(float(info['format']['duration'])-24.0) < 0.1, info
+          data=json.load(open('/tmp/v1529_replay/replay_data.json'))
+          assert data['audit']['status']=='PROVENANCE_RELATION_TO_Q_FIBERS_NOT_ENTAILED'
+          assert data['audit']['gravity_observables_evaluated'] is False
+          assert len(data['fibers'])==3
+          assert all(x['same_q_as_root'] for x in data['fibers'])
+          PY
