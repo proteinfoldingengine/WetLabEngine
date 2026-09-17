@@ -1,19 +1,26 @@
-name: UQCF v15.30 Provenance Fiber Definability Development CI
+name: UQCF v15.30 Provenance Fiber Definability and GitHub Delivery
 on:
   push:
     branches: [research/v15.30-provenance-fiber-definability]
     paths:
       - 'ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability/**'
+      - 'docs/superpowers/specs/2026-09-17-v1530-provenance-fiber-definability-common-carrier-design.md'
+      - 'docs/superpowers/plans/2026-09-17-v1530-provenance-fiber-definability-common-carrier-implementation.md'
+      - 'docs/superpowers/plans/2026-09-17-v1530-provenance-fiber-definability-common-carrier-review.md'
       - '.github/workflows/uqcf-v1530-provenance-fiber-definability.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  development-test:
+  verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 40
     env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
       PYTHONHASHSEED: '0'
+      MPLBACKEND: Agg
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,50 +29,441 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13.5'
-      - name: Install pinned replay dependencies
-        working-directory: ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability
+      - name: Install pinned environment
         run: |
-          python -m pip install -r requirements.txt
+          python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
           if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then
             sudo apt-get update
             sudo apt-get install -y ffmpeg
           fi
-          ffmpeg -version | head -n 1
-      - name: Verify Task 8 scientific and replay surface
+      - name: Verify additive scope and run 604 selected tests
+        run: |
+          python - <<'PY'
+          import json,os,re,shutil,subprocess,sys
+          from pathlib import Path
+
+          scientific='42244310b065f473c8bd459a6f065a61afbd2292'
+          delivery='6535ea69214f6661e340fe201813dfd17ddbb7e1'
+          v1529_tag='uqcf-gem-v15.29-35251080495-a2'
+          root=Path('ResearchHistory/UQCF-GEM')
+          demo=root/'demos/v15.30-provenance-fiber-definability'
+          allowed_docs={
+            'docs/superpowers/specs/2026-09-17-v1530-provenance-fiber-definability-common-carrier-design.md',
+            'docs/superpowers/plans/2026-09-17-v1530-provenance-fiber-definability-common-carrier-implementation.md',
+            'docs/superpowers/plans/2026-09-17-v1530-provenance-fiber-definability-common-carrier-review.md',
+            '.github/workflows/uqcf-v1530-provenance-fiber-definability.yml',
+          }
+          head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          assert head==os.environ['GITHUB_SHA'],(head,os.environ['GITHUB_SHA'])
+          subprocess.run(['git','merge-base','--is-ancestor',delivery,'HEAD'],check=True)
+          assert subprocess.check_output(['git','rev-parse',v1529_tag+'^{commit}'],text=True).strip()==delivery
+          subprocess.run(['git','cat-file','-e',scientific+'^{commit}'],check=True)
+          for line in subprocess.check_output(['git','diff','--name-status',delivery,'HEAD'],text=True).splitlines():
+              status,name=line.split('\t',1)
+              assert status=='A',line
+              assert name.startswith(str(demo)+'/') or name in allowed_docs,name
+
+          logs=demo/'evidence/ci'
+          if logs.exists(): shutil.rmtree(logs)
+          logs.mkdir(parents=True,exist_ok=True)
+          suites=[
+            ('v15/v15.11',['test_continuity.py'],20),
+            ('demos/v15.12-pretime-to-history',['test_simulation.py','test_presentation.py'],30),
+            ('demos/v15.13-independent-events',['test_model.py','test_replay.py'],27),
+            ('demos/v15.14-record-dependencies',['test_adaptive.py','test_replay.py'],30),
+            ('demos/v15.15-coherent-records',['test_coherent.py','test_replay.py'],30),
+            ('demos/v15.16-partial-pruning',['test_recoverability.py','test_replay.py'],33),
+            ('demos/v15.17-retained-motion',['test_motion.py','test_replay.py'],32),
+            ('demos/v15.18-invariant-completion',['test_completion.py','test_replay.py'],34),
+            ('demos/v15.19-linear-prediction',['test_linear.py','test_replay.py'],36),
+            ('demos/v15.20-physical-predictor',['test_channel.py','test_replay.py'],38),
+            ('demos/v15.21-record-readout',['test_record_readout.py','test_readout_presentation.py'],32),
+            ('demos/v15.22-event-sufficient-retention',['test_event_sufficiency.py','test_sufficiency_presentation.py'],32),
+            ('demos/v15.23-sufficient-channel-family',['test_family.py','test_family_view.py'],32),
+            ('demos/v15.24-composition-gate',['test_composition.py','test_composition_view.py'],30),
+            ('demos/v15.25-pretime-gravity-canary',['test_canary.py','test_replay.py'],28),
+            ('demos/v15.26-response-selector-rank',['test_selector.py','test_replay.py'],26),
+            ('demos/v15.27-target-origin',['test_origin.py','test_replay.py'],27),
+          ]
+          prior=0
+          for folder,files,count in suites:
+              r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=root/folder,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=180)
+              (logs/(Path(folder).name+'.log')).write_text(r.stdout)
+              print(folder,r.stdout[-220:],flush=True)
+              assert r.returncode==0 and re.search(rf'Ran {count} tests? in',r.stdout) and re.search(r'^OK\s*$',r.stdout,re.M),(folder,r.stdout)
+              prior+=count
+          assert prior==517
+
+          v1528=root/'demos/v15.28-coupling-space'
+          files1528=['test_inventory.py','test_exact_linear.py','test_actions.py','test_solver.py','test_gate.py','test_replay.py']
+          r=subprocess.run([sys.executable,'-m','unittest','-v',*files1528],cwd=v1528,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
+          (logs/'v15.28-coupling-space.log').write_text(r.stdout)
+          match=re.search(r'Ran (\d+) tests? in',r.stdout)
+          assert r.returncode==0 and match and int(match.group(1))==35 and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+
+          v1529=root/'demos/v15.29-provenance-faithfulness'
+          files1529=['test_inventory.py','test_fiber_model.py','test_equivalence.py','test_countermodels.py','test_action_audit.py','test_gate.py','test_replay.py']
+          r=subprocess.run([sys.executable,'-m','unittest','-v',*files1529],cwd=v1529,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
+          (logs/'v15.29-provenance-faithfulness.log').write_text(r.stdout)
+          match=re.search(r'Ran (\d+) tests? in',r.stdout)
+          assert r.returncode==0 and match and int(match.group(1))==22 and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+
+          inherited=prior+35+22
+          assert inherited==574
+          files1530=['test_frozen_inputs.py','test_common_carrier.py','test_exact_fiber.py','test_naturality.py','test_uniqueness.py','test_gate.py','test_replay.py']
+          r=subprocess.run([sys.executable,'-m','unittest','-v',*files1530],cwd=demo,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
+          (logs/'v15.30-provenance-fiber-definability.log').write_text(r.stdout)
+          match=re.search(r'Ran (\d+) tests? in',r.stdout)
+          assert r.returncode==0 and match and int(match.group(1))==30 and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+          total=inherited+30
+          assert total==604
+
+          main_sha=subprocess.check_output(['git','rev-parse','origin/main'],text=True).strip()
+          summary={
+            'source_sha':os.environ['GITHUB_SHA'],
+            'scientific_source_sha':scientific,
+            'delivery_base_sha':delivery,
+            'main_sha_at_verify':main_sha,
+            'v15_11_to_v15_27_tests_passed':prior,
+            'v15_28_tests_passed':35,
+            'v15_29_tests_passed':22,
+            'inherited_selected_tests_passed':inherited,
+            'v15_30_tests_passed':30,
+            'selected_tests_passed':total,
+            'scope':'Selected v15.11-v15.30 research regressions and exact v15.30 typed common-carrier/definability gate; no coupling solver or gravity canary is executed by v15.30.'
+          }
+          (logs/'SUMMARY.json').write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(summary,indent=2),flush=True)
+          PY
+      - name: Regenerate v15.30 evidence, audit, inspector and movie
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability
         run: |
-          python -m unittest -v test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py test_gate.py test_replay.py
-          python frozen_inputs.py --out /tmp/CANDIDATE_EVIDENCE.json
+          rm -rf outputs
+          python frozen_inputs.py --out /tmp/CANDIDATE_EVIDENCE.json > evidence/ci/inventory.log
           cmp docs/CANDIDATE_EVIDENCE.json /tmp/CANDIDATE_EVIDENCE.json
-          python definability_gate.py --out /tmp/v1530_audit
-          cmp docs/RESULTS.json /tmp/v1530_audit/verification.json
-          python replay.py --out /tmp/v1530_replay --video
-          test -s /tmp/v1530_replay/provenance_fiber_definability.html
-          test -s /tmp/v1530_replay/replay_data.json
-          test -s /tmp/v1530_replay/verification.json
-          test -s /tmp/v1530_replay/provenance_fiber_definability.mp4
-          cmp docs/RESULTS.json /tmp/v1530_replay/verification.json
-          python -m compileall -q frozen_inputs.py typed_carrier_graph.py exact_fiber.py naturality.py uniqueness.py definability_gate.py replay.py test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py test_gate.py test_replay.py
-      - name: Verify Task 8 H.264 delivery contract
-        working-directory: ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability
+          python definability_gate.py --out outputs > evidence/ci/model.log
+          cmp docs/RESULTS.json outputs/verification.json
+          python replay.py --out outputs --video > evidence/ci/render.log
+          ffmpeg -v error -i outputs/provenance_fiber_definability.mp4 -f null - 2> evidence/ci/video_decode.log
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,pix_fmt -show_entries format=duration -of json outputs/provenance_fiber_definability.mp4 > evidence/ci/video_info.json
+          python -m compileall -q frozen_inputs.py typed_carrier_graph.py exact_fiber.py naturality.py uniqueness.py definability_gate.py replay.py test_*.py
+          python - <<'PY'
+          import json
+          r=json.load(open('outputs/verification.json'))
+          assert r['status']=='NO_TYPED_COMMON_CARRIER'
+          assert r['candidate_count']==4
+          assert r['common_carrier_count']==0
+          assert r['exact_fiber_relation_count']==0
+          assert r['natural_relation_count']==0
+          assert r['canonical_relation_certified'] is False
+          assert r['countermodels_survive'] is False
+          assert all(x['gate_a_common_carrier'] is False for x in r['candidate_results'])
+          assert all(x['gate_b_exact_fiber'] is None and x['gate_c_natural'] is None and x['gate_d_unique'] is None and x['gate_e_no_choice'] is None for x in r['candidate_results'])
+          assert all(x['stop_reason']=='GATE_A_NO_CERTIFIED_TYPED_COMMON_CARRIER' for x in r['candidate_results'])
+          assert r['new_source_semantics_axiom_added'] is False
+          assert r['coupling_solver_reopened'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['uses_holonomy_selector'] is False
+          assert r['uses_newton_or_gr'] is False
+          assert r['uses_metric_selector'] is False
+          assert r['uses_pruning_as_selector'] is False
+          assert r['uses_entropy_as_selector'] is False
+          assert r['uses_physical_time'] is False
+          assert r['scientific_breakthrough'] is False
+          assert r['signal_of_life'] is False
+          assert r['gravity_canary_certified'] is False
+          assert r['physical_gravity_derived'] is False
+          assert r['Pillar_3']=='OPEN'
+          assert r['next_required_object']=='GENUINELY_TYPED_COMMON_CARRIER_OR_EXPLICIT_NEW_AXIOM'
+          d=json.load(open('outputs/replay_data.json'))
+          assert d['version']=='v15.30' and len(d['candidates'])==4
+          assert d['audit']['status']=='NO_TYPED_COMMON_CARRIER'
+          info=json.load(open('evidence/ci/video_info.json'))
+          stream=info['streams'][0]
+          assert stream.get('codec_name')=='h264' and stream.get('width')==1280 and stream.get('height')==720 and stream.get('pix_fmt')=='yuv420p'
+          assert abs(float(info['format']['duration'])-24.0)<=0.1
+          PY
+      - name: Package exact source data and fresh CI evidence
         run: |
-          VIDEO=/tmp/v1530_replay/provenance_fiber_definability.mp4
-          ffprobe -v error -select_streams v:0 \
-            -show_entries stream=codec_name,width,height,pix_fmt \
-            -show_entries format=duration \
-            -of json "$VIDEO" > /tmp/v1530_probe.json
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,shutil,subprocess,sys,zipfile
+
+          source=Path('ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability')
+          dist=Path('delivery/assets')
+          if dist.exists(): shutil.rmtree(dist)
+          dist.mkdir(parents=True,exist_ok=True)
+          for name in ['provenance_fiber_definability.mp4','provenance_fiber_definability.html','verification.json','replay_data.json']:
+              shutil.copyfile(source/'outputs'/name,dist/name)
+          shutil.copyfile(source/'README.md',dist/'REPORT.md')
+          summary=json.loads((source/'evidence/ci/SUMMARY.json').read_text())
+          verification=json.loads((source/'outputs/verification.json').read_text())
+          candidate_bytes=(source/'docs/CANDIDATE_EVIDENCE.json').read_bytes()
+          provenance={
+            'source_sha':os.environ['GITHUB_SHA'],
+            'scientific_source_sha':summary['scientific_source_sha'],
+            'delivery_base_sha':summary['delivery_base_sha'],
+            'main_sha_at_verify':summary['main_sha_at_verify'],
+            'run_id':os.environ['GITHUB_RUN_ID'],
+            'inherited_selected_tests_passed':summary['inherited_selected_tests_passed'],
+            'v15_30_tests_passed':summary['v15_30_tests_passed'],
+            'selected_tests_passed':summary['selected_tests_passed'],
+            'status':verification['status'],
+            'candidate_count':verification['candidate_count'],
+            'candidate_evidence_sha256':hashlib.sha256(candidate_bytes).hexdigest(),
+            'python':sys.version,
+            'packages':subprocess.check_output([sys.executable,'-m','pip','freeze'],text=True).splitlines(),
+            'scope':'Fresh CI typed common-carrier/definability classification. v15.30 adds no source-semantics axiom, does not reopen the coupling solver, and evaluates no gravity canary or gravity observable.'
+          }
+          (dist/'PROVENANCE.json').write_text(json.dumps(provenance,indent=2,sort_keys=True)+'\n')
+
+          files=[]
+          for p in sorted(source.rglob('*')):
+              if p.is_symlink(): raise ValueError('symlink rejected')
+              if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc': files.append(p)
+          extra=[
+            Path('docs/superpowers/specs/2026-09-17-v1530-provenance-fiber-definability-common-carrier-design.md'),
+            Path('docs/superpowers/plans/2026-09-17-v1530-provenance-fiber-definability-common-carrier-implementation.md'),
+            Path('docs/superpowers/plans/2026-09-17-v1530-provenance-fiber-definability-common-carrier-review.md'),
+            Path('.github/workflows/uqcf-v1530-provenance-fiber-definability.yml'),
+          ]
+          archive=[];entries=[]
+          for p in files:
+              arc=p.relative_to(source).as_posix();archive.append((p,arc))
+              entries.append({'archive':arc,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+          for p in extra:
+              arc=p.as_posix();archive.append((p,arc))
+              entries.append({'archive':arc,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+          assert len({e['archive'] for e in entries})==len(entries)
+          manifest={'files':entries,'provenance':provenance}
+          bundle=dist/'UQCF_GEM_v15_30_bundle.zip'
+          with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
+              for p,arc in archive: z.write(p,arc)
+              z.writestr('PACKAGE_MANIFEST.json',json.dumps(manifest,indent=2,sort_keys=True))
+          with zipfile.ZipFile(bundle) as z:
+              assert z.testzip() is None
+              assert json.loads(z.read('PACKAGE_MANIFEST.json'))==manifest
+              for e in entries:
+                  raw=z.read(e['archive'])
+                  assert len(raw)==e['bytes']
+                  assert hashlib.sha256(raw).hexdigest()==e['sha256']
+
+          sums=''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n' for p in sorted(dist.iterdir()))
+          (dist/'SHA256SUMS.txt').write_text(sums)
+          expected={'provenance_fiber_definability.mp4','provenance_fiber_definability.html','verification.json','replay_data.json','REPORT.md','PROVENANCE.json','UQCF_GEM_v15_30_bundle.zip','SHA256SUMS.txt'}
+          assert {p.name for p in dist.iterdir()}==expected
+
+          notes=(
+            '# v15.30 — Provenance–fiber definability / common-carrier gate\n\n'
+            f"Exact source: `{os.environ['GITHUB_SHA']}`. All {summary['selected_tests_passed']} selected tests passed before packaging.\n\n"
+            'Verdict: NO_TYPED_COMMON_CARRIER. Each of the four frozen provenance/source candidate origins fails Gate A because the frozen archive supplies no certified typed path, common parent, common quotient, incidence relation, equivalence, or representation law connecting that candidate to the torus edge representative. Later representative-level definability gates are therefore not reached for the real candidates.\n\n'
+            'No source-semantics axiom was added. The v15.28 coupling solver was not reopened, no coupling member was selected, and no gravity canary or gravity observable was evaluated. Pillar 3 remains OPEN. The next required object is a genuinely typed common carrier or an explicit new axiom.\n\n'
+            'Includes report, MP4/offline HTML, exact ledger, replay data, source/fresh-CI evidence bundle, provenance and checksums. All eight release assets are verified by size and SHA-256 before publication. No merge to main.\n'
+          )
+          Path('delivery/RELEASE_NOTES.md').write_text(notes)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.30-verified-delivery
+          path: delivery/
+          if-no-files-found: error
+  publish:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: v15.30-verified-delivery
+          path: delivery
+      - name: Upload unique draft, verify remote digests, then publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test "$GH_REPO" = 'proteinfoldingengine/WetLabEngine'
+          TAG="uqcf-gem-v15.30-${GITHUB_RUN_ID}-a${GITHUB_RUN_ATTEMPT}"
+          gh release create "$TAG" delivery/assets/* --repo "$GH_REPO" --target "$GITHUB_SHA" --title 'UQCF-GEM v15.30 — provenance-fiber definability gate' --notes-file delivery/RELEASE_NOTES.md --draft --prerelease --latest=false
+          RELEASE_ID="$(gh api --paginate "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.tag_name == \"$TAG\") | .id")"
+          [[ "$RELEASE_ID" =~ ^[0-9]+$ ]]
+          gh api "repos/$GH_REPO/releases/$RELEASE_ID" > delivery/RELEASE_METADATA.json
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          data=json.loads(Path('delivery/RELEASE_METADATA.json').read_text())
+          local=list(Path('delivery/assets').iterdir());remote={a['name']:a for a in data['assets']}
+          assert len(local)==len(remote)==8
+          for path in local:
+              asset=remote[path.name]
+              assert asset['state']=='uploaded' and asset['size']==path.stat().st_size
+              assert asset['digest']=='sha256:'+hashlib.sha256(path.read_bytes()).hexdigest()
+          PY
+          gh api --method PATCH "repos/$GH_REPO/releases/$RELEASE_ID" -F draft=false -f make_latest=false > delivery/PUBLICATION_RECEIPT.json
           python - <<'PY'
           import json
           from pathlib import Path
-
-          probe = json.loads(Path('/tmp/v1530_probe.json').read_text())
-          stream = probe['streams'][0]
-          duration = float(probe['format']['duration'])
-          assert stream['codec_name'] == 'h264', stream
-          assert stream['width'] == 1280, stream
-          assert stream['height'] == 720, stream
-          assert stream['pix_fmt'] == 'yuv420p', stream
-          assert abs(duration - 24.0) <= 0.1, duration
-          print({'codec': stream['codec_name'], 'width': stream['width'], 'height': stream['height'], 'pix_fmt': stream['pix_fmt'], 'duration': duration})
+          data=json.loads(Path('delivery/PUBLICATION_RECEIPT.json').read_text())
+          assert data['draft'] is False and len(data['assets'])==8
+          print(data['html_url'])
           PY
-          ffmpeg -v error -i "$VIDEO" -f null -
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.30-publication-receipt
+          path: delivery/PUBLICATION_RECEIPT.json
+          if-no-files-found: error
+  post-publication-verify:
+    needs: publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: v15.30-verified-delivery
+          path: delivery
+      - uses: actions/download-artifact@v4
+        with:
+          name: v15.30-publication-receipt
+          path: receipt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install browser verifier
+        run: |
+          python -m pip install playwright==1.55.0
+          if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
+          command -v google-chrome >/dev/null || command -v chromium >/dev/null
+      - name: Download published HTML/MP4 and exercise inspector
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          mkdir -p published evidence
+          TAG="$(python - <<'PY'
+          import json
+          print(json.load(open('receipt/PUBLICATION_RECEIPT.json'))['tag_name'])
+          PY
+          )"
+          gh release download "$TAG" --repo "$GH_REPO" --pattern provenance_fiber_definability.html --pattern provenance_fiber_definability.mp4 --dir published
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,shutil
+          from playwright.sync_api import sync_playwright
+
+          assets=Path('delivery/assets');published=Path('published')
+          sums={}
+          for line in (assets/'SHA256SUMS.txt').read_text().splitlines():
+              digest,name=line.split('  ',1);sums[name]=digest
+          for name in ('provenance_fiber_definability.html','provenance_fiber_definability.mp4'):
+              assert hashlib.sha256((published/name).read_bytes()).hexdigest()==sums[name]
+          browser_path=shutil.which('google-chrome') or shutil.which('chromium')
+          assert browser_path
+          uri=(published/'provenance_fiber_definability.html').resolve().as_uri()
+          page_errors=[];console_errors=[];external=[];results={}
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,executable_path=browser_path)
+              page=browser.new_page()
+              page.on('pageerror',lambda exc: page_errors.append(str(exc)))
+              page.on('console',lambda msg: console_errors.append(msg.text) if msg.type=='error' else None)
+              page.on('request',lambda req: external.append(req.url) if req.url.startswith(('http://','https://')) else None)
+              for width in (1280,820,390):
+                  page.set_viewport_size({'width':width,'height':900})
+                  page.goto(uri,wait_until='load')
+                  assert page.locator('#gateStatus').inner_text().strip()=='NO_TYPED_COMMON_CARRIER'
+                  candidates=page.evaluate('window.__demo.data.candidates.map(x=>x.key)')
+                  assert len(candidates)==4
+                  exercised=[]
+                  for candidate in candidates:
+                      page.evaluate('(k)=>window.__demo.chooseCandidate(k)',candidate)
+                      for view in ('candidate','graph','fiber','gate'):
+                          page.evaluate('(k)=>window.__demo.chooseView(k)',view)
+                          assert page.locator('#status').inner_text().strip()
+                          exercised.append([candidate,view])
+                  overflow=page.evaluate('document.documentElement.scrollWidth > document.documentElement.clientWidth')
+                  assert not overflow
+                  results[str(width)]={'candidates':candidates,'exercised':exercised,'horizontal_overflow':overflow}
+              browser.close()
+          assert not page_errors,page_errors
+          assert not console_errors,console_errors
+          assert not external,external
+          receipt=json.loads(Path('receipt/PUBLICATION_RECEIPT.json').read_text())
+          assert receipt['draft'] is False and len(receipt['assets'])==8
+          out={'passed':True,'widths':[1280,820,390],'results':results,'page_errors':page_errors,'console_errors':console_errors,'external_requests':external,'native_ipad_safari_tested':False,'release_url':receipt['html_url']}
+          Path('evidence/browser_evidence.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          PY
+          ffmpeg -v error -i published/provenance_fiber_definability.mp4 -f null - 2> evidence/video_decode.log
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,pix_fmt -show_entries format=duration -of json published/provenance_fiber_definability.mp4 > evidence/video_info.json
+          python - <<'PY'
+          import json
+          info=json.load(open('evidence/video_info.json'));stream=info['streams'][0]
+          assert stream.get('codec_name')=='h264' and stream.get('width')==1280 and stream.get('height')==720 and stream.get('pix_fmt')=='yuv420p'
+          assert abs(float(info['format']['duration'])-24.0)<=0.1
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.30-browser-video-evidence
+          path: evidence/
+          if-no-files-found: error
+  final-receipt:
+    needs: post-publication-verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: v15.30-verified-delivery
+          path: delivery
+      - uses: actions/download-artifact@v4
+        with:
+          name: v15.30-publication-receipt
+          path: receipt
+      - uses: actions/download-artifact@v4
+        with:
+          name: v15.30-browser-video-evidence
+          path: evidence
+      - name: Verify PR and main boundary then record receipt
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test "$GH_REPO" = 'proteinfoldingengine/WetLabEngine'
+          gh api "repos/$GH_REPO/pulls/26" > delivery/PR_STATE.json
+          gh api "repos/$GH_REPO/branches/main" > delivery/MAIN_STATE.json
+          python - <<'PY'
+          from pathlib import Path
+          import json,os
+          provenance=json.loads(Path('delivery/assets/PROVENANCE.json').read_text())
+          pr=json.loads(Path('delivery/PR_STATE.json').read_text())
+          main=json.loads(Path('delivery/MAIN_STATE.json').read_text())
+          pub=json.loads(Path('receipt/PUBLICATION_RECEIPT.json').read_text())
+          browser=json.loads(Path('evidence/browser_evidence.json').read_text())
+          assert pr['state']=='open' and pr['draft'] is True and pr['merged_at'] is None
+          assert pr['head']['sha']==os.environ['GITHUB_SHA']
+          assert pr['base']['sha']==provenance['delivery_base_sha']
+          assert main['commit']['sha']==provenance['main_sha_at_verify']
+          assert pub['draft'] is False and len(pub['assets'])==8
+          assert browser['passed'] is True and browser['external_requests']==[] and browser['native_ipad_safari_tested'] is False
+          body=f'''v15.30 exact-head certification receipt\n\n- Source SHA: `{os.environ['GITHUB_SHA']}`\n- Run ID: `{os.environ['GITHUB_RUN_ID']}`\n- Scientific source pin: `{provenance['scientific_source_sha']}`\n- Delivery base: `{provenance['delivery_base_sha']}`\n- Tests: {provenance['inherited_selected_tests_passed']} inherited + {provenance['v15_30_tests_passed']} v15.30 = {provenance['selected_tests_passed']} selected tests passed\n- Verdict: `NO_TYPED_COMMON_CARRIER`\n- Release: {pub['html_url']}\n- Release assets: 8/8 size and SHA-256 matched before publication; published HTML/MP4 matched local digests after download\n- Offline browser verification: PASS at widths 1280, 820, and 390; all four candidates × four inspection layers exercised; zero JS errors; zero external requests; zero horizontal overflow\n- MP4: published-byte full decode PASS; H.264 1280x720 yuv420p, 24 seconds\n- PR #26: open / draft / unmerged; main unchanged during certification\n- Claim boundary: v15.30 found no certified typed common carrier for the four frozen candidate origins. It added no source-semantics axiom, did not reopen the v15.28 coupling solver, did not select a coupling member, and evaluated no gravity canary or gravity observable. Pillar 3 remains OPEN.\n- Next required object: `GENUINELY_TYPED_COMMON_CARRIER_OR_EXPLICIT_NEW_AXIOM`\n- Native iPad/Safari: not exercised by this CI receipt.\n'''
+          Path('delivery/PR_COMMENT.md').write_text(body)
+          PY
+          gh pr comment 26 --repo "$GH_REPO" --body-file delivery/PR_COMMENT.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v15.30-final-receipt
+          path: |
+            delivery/PR_STATE.json
+            delivery/MAIN_STATE.json
+            delivery/PR_COMMENT.md
+          if-no-files-found: error
