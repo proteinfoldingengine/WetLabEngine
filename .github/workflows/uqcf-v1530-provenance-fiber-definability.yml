@@ -11,7 +11,7 @@ permissions:
 jobs:
   development-test:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     env:
       PYTHONHASHSEED: '0'
     steps:
@@ -22,9 +22,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13.5'
-      - name: Install pinned development dependency
-        run: python -m pip install numpy==2.3.5
-      - name: Verify current v15.30 TDD surface
+      - name: Install pinned replay dependencies
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability
+        run: |
+          python -m pip install -r requirements.txt
+          if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          ffmpeg -version | head -n 1
+      - name: Verify Task 8 scientific and replay surface
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability
         run: |
           python -m unittest -v test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py test_gate.py test_replay.py
@@ -32,4 +39,33 @@ jobs:
           cmp docs/CANDIDATE_EVIDENCE.json /tmp/CANDIDATE_EVIDENCE.json
           python definability_gate.py --out /tmp/v1530_audit
           cmp docs/RESULTS.json /tmp/v1530_audit/verification.json
-          python -m compileall -q frozen_inputs.py typed_carrier_graph.py exact_fiber.py naturality.py uniqueness.py definability_gate.py test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py test_gate.py test_replay.py
+          python replay.py --out /tmp/v1530_replay --video
+          test -s /tmp/v1530_replay/provenance_fiber_definability.html
+          test -s /tmp/v1530_replay/replay_data.json
+          test -s /tmp/v1530_replay/verification.json
+          test -s /tmp/v1530_replay/provenance_fiber_definability.mp4
+          cmp docs/RESULTS.json /tmp/v1530_replay/verification.json
+          python -m compileall -q frozen_inputs.py typed_carrier_graph.py exact_fiber.py naturality.py uniqueness.py definability_gate.py replay.py test_frozen_inputs.py test_common_carrier.py test_exact_fiber.py test_naturality.py test_uniqueness.py test_gate.py test_replay.py
+      - name: Verify Task 8 H.264 delivery contract
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.30-provenance-fiber-definability
+        run: |
+          VIDEO=/tmp/v1530_replay/provenance_fiber_definability.mp4
+          ffprobe -v error -select_streams v:0 \
+            -show_entries stream=codec_name,width,height,pix_fmt \
+            -show_entries format=duration \
+            -of json "$VIDEO" > /tmp/v1530_probe.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          probe = json.loads(Path('/tmp/v1530_probe.json').read_text())
+          stream = probe['streams'][0]
+          duration = float(probe['format']['duration'])
+          assert stream['codec_name'] == 'h264', stream
+          assert stream['width'] == 1280, stream
+          assert stream['height'] == 720, stream
+          assert stream['pix_fmt'] == 'yuv420p', stream
+          assert abs(duration - 24.0) <= 0.1, duration
+          print({'codec': stream['codec_name'], 'width': stream['width'], 'height': stream['height'], 'pix_fmt': stream['pix_fmt'], 'duration': duration})
+          PY
+          ffmpeg -v error -i "$VIDEO" -f null -
