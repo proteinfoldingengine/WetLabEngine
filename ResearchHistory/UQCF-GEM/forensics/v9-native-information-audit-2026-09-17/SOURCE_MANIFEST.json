@@ -1,96 +1,72 @@
 {
   "audit_base_sha": "f596583615a823a33170588dcbf998bf13f10453",
-  "audit_scope": {
-    "primary_repository": "proteinfoldingengine/WetLabEngine",
-    "secondary_repository_searched": "proteinfoldingengine/UQCF-GEM",
-    "search_classes": [
-      "default-branch code search",
-      "distinctive-symbol search",
-      "commit-message provenance search",
-      "canonical packet inspection",
-      "exact v9 commit inspection",
-      "complete exact-v9 Git-tree inspection",
-      "immediate follow-on and closeout commit inspection",
-      "selected historical branch survey",
-      "repository release search",
-      "connected Google Drive recovery search"
-    ],
-    "distinctive_terms": [
-      "sigma_bridge",
-      "bridge_observables",
-      "closure_ready",
-      "false_closure",
-      "compat_field",
-      "productive_contact",
-      "dihed_smooth",
-      "uqcf_bridge_patch_v9",
-      "2.6 closure compat_field"
-    ]
+  "result": "CANONICAL_V9_GENERATOR_PROVENANCE_UNRESOLVED",
+  "canonical_packet": {
+    "commit_sha": "8269075e2e66c4fc335c38074900488f20b4cf8c",
+    "parent_sha": "8ed8a291bdb4ee4b9f3b86bd5243d8e0cc35502a",
+    "tree_sha": "28d28b6259e62c0528877074ac96df3a5ec1af2c",
+    "tree_response_truncated": false,
+    "generator_source_present_in_tree": false
   },
   "canonical_evidence": [
     {
-      "blob_sha": "918e41cbd5447a28acf10f0ec4e9daa89148cc68",
       "path": "Tmp/TOE/uqcf_bridge_v9_update_bundle/uqcf_bridge_update_v9.md",
-      "role": "v9 cross-target update memo"
+      "blob_sha": "918e41cbd5447a28acf10f0ec4e9daa89148cc68"
     },
     {
-      "blob_sha": "1008952990c9e657bad632600d76e741e1e4856a",
       "path": "Tmp/TOE/uqcf_bridge_v9_update_bundle/uqcf_bridge_patch_v9_1uao_summary.csv",
-      "role": "1UAO v9 summary"
+      "blob_sha": "1008952990c9e657bad632600d76e741e1e4856a"
     },
     {
-      "blob_sha": "e31be24535296a9bb1b894fae75f33e879eab3b1",
       "path": "Tmp/TOE/uqcf_bridge_v9_update_bundle/uqcf_bridge_patch_v9_1l2y_confirm_summary.csv",
-      "role": "1L2Y frozen-v9 transfer summary"
+      "blob_sha": "e31be24535296a9bb1b894fae75f33e879eab3b1"
     },
     {
-      "blob_sha": "69a35ee8cd8320e76f7322b79d34ab2dfa961667",
       "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_bridge_verification_dossier.md",
-      "role": "formula-level operator, minimal pseudocode, and final bounded verification dossier"
+      "blob_sha": "69a35ee8cd8320e76f7322b79d34ab2dfa961667"
     },
     {
-      "blob_sha": "0654246e7f88da3f6f810dafa7d6db681aa690f4",
-      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_bridge_v9_trajectory_packet.md",
-      "role": "trajectory artifact inventory"
-    },
-    {
-      "blob_sha": "5badf2bf24e93ff989c4f54718240f54d1777c0e",
       "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_publication_closeout_plan.md",
-      "role": "publication plan; contains unchecked requirement to freeze v9 and record commit hash/code snapshot"
-    },
-    {
-      "blob_sha": "d5644f577670248b5976ab317acd9b30fb595fc7",
-      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_branch_family_stop_memo_v13_v16.md",
-      "role": "negative branch-family narrowing; v9 retained as mainline"
-    },
-    {
-      "blob_sha": "7a453a5c72ff46d40a02800f0efeb8387e2b3fd0",
-      "path": "ResearchHistory/UQCF-GEM/MULTISCALE_REALIZABILITY_THESIS.md",
-      "role": "unified thesis and P0-P5 protein research program"
+      "blob_sha": "5badf2bf24e93ff989c4f54718240f54d1777c0e"
     }
   ],
-  "historical_recovery_evidence": {
-    "closeout_commit_sha": "e2bc578b5e486d99881aed948b036653a1d7c4a0",
-    "exact_v9_packet_commit_sha": "8269075e2e66c4fc335c38074900488f20b4cf8c",
-    "exact_v9_packet_parent_sha": "8ed8a291bdb4ee4b9f3b86bd5243d8e0cc35502a",
-    "exact_v9_tree_generator_source_found": false,
-    "exact_v9_tree_response_truncated": false,
-    "exact_v9_tree_sha": "28d28b6259e62c0528877074ac96df3a5ec1af2c",
+  "repository_recovery": {
     "followon_telemetry_commit_sha": "4feac2650ceca1b439adb74381849f1e61862d4e",
-    "recovery_record": "ResearchHistory/UQCF-GEM/forensics/v9-native-information-audit-2026-09-17/RECOVERY_SEARCH.json",
-    "status": "EXACT_V9_GENERATOR_NOT_RECOVERED_IN_AUDITED_REPOSITORY_SCOPE"
+    "closeout_commit_sha": "e2bc578b5e486d99881aed948b036653a1d7c4a0",
+    "status": "EXACT_V9_GENERATOR_NOT_RECOVERED_IN_AUDITED_REPOSITORY_SCOPE",
+    "record": "ResearchHistory/UQCF-GEM/forensics/v9-native-information-audit-2026-09-17/RECOVERY_SEARCH.json"
   },
-  "missing_required_evidence": [
-    "exact executable frozen-v9 source file set",
-    "immutable source commit/archive identity for the generating implementation",
-    "exact v9 configuration and parameter set bound to canonical runs",
-    "source definitions and data flow for compat_field",
-    "source definitions and data flow for productive_contact",
-    "source definitions and data flow for dihedral_preserve",
-    "source definitions and data flow for loop_compat",
-    "source definitions and data flow for false_closure",
-    "source definitions and data flow for sigma_bridge and closure_ready",
-    "analysis/source binding proving the documented equations match the canonical generating path"
-  ],
-  "result": "EXECUTABLE_V9_SOURCE_NOT_PINNED"
+  "recovered_reproduction_source": {
+    "name": "uqcf_bridge_to_classical_handoff_repro.py",
+    "origin": "ChatGPT Library",
+    "library_file_id": "file_00000000ec7c71f590699bcfde9fcb4b",
+    "library_version_id": "1",
+    "size_bytes": 20403,
+    "sha256": "697d773a8dec951dafbac9132a04da22e342dee52c2b70d62732c4be16778e51",
+    "python_compile": "PASS",
+    "source_audit_record": "ResearchHistory/UQCF-GEM/forensics/v9-native-information-audit-2026-09-17/REPRO_SOURCE_AUDIT.json",
+    "canonical_generator_identity_proven": false,
+    "implements_documented_v9_coefficients": true,
+    "implements_bridge_to_classical_handoff_protocol": true
+  },
+  "historical_control_matrix": {
+    "packet_found": true,
+    "models": [
+      "baseline",
+      "v9",
+      "angle_only",
+      "dihedral_only",
+      "soft_contact_only",
+      "static_combo"
+    ],
+    "generating_source_found": false,
+    "status": "PRESERVED_BUT_NOT_SOURCE_CERTIFIED"
+  },
+  "still_missing_for_historical_certification": [
+    "provenance binding from recovered reproduction to the canonical April-v9 generator",
+    "exact original generator source or immutable source snapshot",
+    "exact original configuration and RNG state/protocol",
+    "source/provenance for the historical v9 control matrix",
+    "evidence resolving whether coefficients were target-specifically fitted"
+  ]
 }
