@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
+from pathlib import Path
+import argparse
+import json
 
 import action_audit as aa
 import countermodels as cm
@@ -16,6 +19,21 @@ ALLOWED_STATUSES = {
     'PROVENANCE_ENHANCED_SOURCE_CARRIER_CERTIFIED',
     'PROVENANCE_SOURCE_REPRESENTATION_READY',
     'PROVENANCE_EXTENSION_REQUIRES_NEW_SOURCE_SEMANTICS_AXIOM',
+}
+
+NEXT = {
+    'PROVENANCE_COLLAPSES_TO_Q_EQUIVALENCE':
+        'NEW_SOURCE_SEMANTICS_OR_INDEPENDENT_CARRIER_PRIMITIVE',
+    'PROVENANCE_RELATION_TO_Q_FIBERS_NOT_ENTAILED':
+        'INDEPENDENTLY_MOTIVATED_PROVENANCE_FIBER_RELATION',
+    'PROVENANCE_DISTINGUISHES_REPRESENTATIVES_BUT_NO_NATURAL_ACTION':
+        'CERTIFIED_PROVENANCE_RELABELING_ACTION',
+    'PROVENANCE_ENHANCED_SOURCE_CARRIER_CERTIFIED':
+        'CANONICAL_LINEARIZATION_OR_FINITE_REPRESENTATION',
+    'PROVENANCE_SOURCE_REPRESENTATION_READY':
+        'SEPARATE_COUPLING_SPACE_GATE_FOR_S_PROV',
+    'PROVENANCE_EXTENSION_REQUIRES_NEW_SOURCE_SEMANTICS_AXIOM':
+        'EXPLICIT_AXIOM_APPROVAL_REQUIRED',
 }
 
 
@@ -189,3 +207,68 @@ def audit_raw_representative_control() -> ExtensionAudit:
         gravity_observables_evaluated=False,
         stop_reason='RAW_REPRESENTATIVE_IDENTITY_REQUIRES_NEW_SOURCE_SEMANTICS_AXIOM',
     )
+
+
+def audit() -> dict:
+    result = audit_real_archive()
+    evidence = inv.frozen_inventory(inv.REPO_ROOT)
+    scientific_breakthrough = (
+        result.status == 'PROVENANCE_SOURCE_REPRESENTATION_READY'
+    )
+    extension_kernel_status = (
+        'CERTIFIED_NONTRIVIAL'
+        if result.nontrivial_kernel_certified
+        else 'NOT_CERTIFIED'
+    )
+
+    return {
+        'version': 'v15.29',
+        'status': result.status,
+        'base_sha': inv.BASE_SCIENTIFIC_HEAD,
+        'inventory_hash': inv.inventory_digest(evidence),
+        'fiber_fixture_count': 2,
+        'fiber_relation_counts': {result.fiber_relation_status: 1},
+        'countermodels_survive': result.countermodels_survive,
+        'extension_kernel_status': extension_kernel_status,
+        'projection_to_q_certified': result.projection_to_q_certified,
+        'natural_action_certified': result.natural_action_certified,
+        'representation_ready': result.representation_ready,
+        'coupling_solver_reopened': False,
+        'new_source_semantics_axiom_added': False,
+        'gravity_observables_evaluated': False,
+        'uses_holonomy_selector': False,
+        'uses_newton_or_gr': False,
+        'uses_metric_selector': False,
+        'uses_pruning': False,
+        'uses_entropy': False,
+        'uses_physical_time': False,
+        'scientific_breakthrough': scientific_breakthrough,
+        'signal_of_life': False,
+        'gravity_canary_certified': False,
+        'physical_gravity_derived': False,
+        'Pillar_3': 'OPEN',
+        'next_required_object': NEXT[result.status],
+    }
+
+
+def write_audit(out_dir: Path) -> Path:
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / 'verification.json'
+    path.write_text(json.dumps(audit(), indent=2, sort_keys=True) + '\n')
+    return path
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description='Run the gravity-blind v15.29 provenance source-extension gate.'
+    )
+    parser.add_argument('--out', type=Path, default=Path(__file__).with_name('outputs'))
+    args = parser.parse_args()
+    path = write_audit(args.out)
+    print(path)
+    print(json.dumps(audit(), sort_keys=True))
+
+
+if __name__ == '__main__':
+    main()
