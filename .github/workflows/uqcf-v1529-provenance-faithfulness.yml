@@ -50,7 +50,15 @@ jobs:
             '.github/workflows/uqcf-v1529-provenance-faithfulness.yml',
           }
           subprocess.run(['git','merge-base','--is-ancestor',delivery,'HEAD'],check=True)
-          assert subprocess.check_output(['git','rev-parse',v1528_tag],text=True).strip()==scientific
+          assert subprocess.check_output(['git','rev-parse',v1528_tag+'^{commit}'],text=True).strip()==delivery
+          scientific_pins={
+            'ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space/README.md':'1ea6c653dd45b2c01da1bb5a09f629bd2d12e67d',
+            'ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space/docs/RESULTS.json':'6d1ed9766d89c2f66d072978a8fa4b60bedccb39',
+            'ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space/exact_linear.py':'05cc1b8cfec70d501408377b5e44190b259a4514',
+            'ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space/representation_actions.py':'7260147cd6ca47ec21634172b44b98de726904af',
+          }
+          for path,blob in scientific_pins.items():
+              assert subprocess.check_output(['git','rev-parse',f'{scientific}:{path}'],text=True).strip()==blob,(path,blob)
           for line in subprocess.check_output(['git','diff','--name-status',delivery,'HEAD'],text=True).splitlines():
               status,name=line.split('\t',1)
               assert status=='A',line
