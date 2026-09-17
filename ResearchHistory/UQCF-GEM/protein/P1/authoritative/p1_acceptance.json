@@ -1,0 +1,45 @@
+{
+  "conditions": {
+    "v9_lower_pooled_mean_than_every_control": false,
+    "v9_lower_than_fixed_on_1L2Y": false,
+    "v9_lower_than_fixed_on_1UAO": false,
+    "v9_lower_than_static_on_1L2Y": true,
+    "v9_lower_than_static_on_1UAO": true,
+    "v9_vs_fixed_holm_p_lt_0_05": false,
+    "v9_vs_static_holm_p_lt_0_05": false
+  },
+  "decision": "NO_GO_HIERARCHICAL_ADVANTAGE",
+  "pooled_post_best_rmsd_mean": {
+    "angle_only": 4.349091649055481,
+    "baseline": 4.352175613244374,
+    "dihedral_only": 4.422507186730702,
+    "fixed_gate": 4.3722229997317,
+    "soft_contact_only": 4.377922137578328,
+    "static_combo": 4.440147002538045,
+    "v9": 4.376291036605835
+  },
+  "primary_comparisons": [
+    {
+      "1L2Y_mean_delta": -0.015191793441772461,
+      "1UAO_mean_delta": -0.11252013842264812,
+      "comparison": "v9_vs_static_combo",
+      "holm_adjusted_p": 0.23828125,
+      "n_pairs": 12,
+      "raw_exact_sign_flip_p": 0.119140625,
+      "v9_minus_control_mean": -0.06385596593221028,
+      "v9_minus_control_median": -0.0669853687286377,
+      "v9_wins": 9
+    },
+    {
+      "1L2Y_mean_delta": 0.0015382766723632812,
+      "1UAO_mean_delta": 0.00659779707590739,
+      "comparison": "v9_vs_fixed_gate",
+      "holm_adjusted_p": 0.60693359375,
+      "n_pairs": 12,
+      "raw_exact_sign_flip_p": 0.60693359375,
+      "v9_minus_control_mean": 0.004068036874135335,
+      "v9_minus_control_median": 0.0010859966278076172,
+      "v9_wins": 5
+    }
+  ]
+}
