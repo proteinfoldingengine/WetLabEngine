@@ -8,6 +8,7 @@ This directory contains provenance-first audits and historical reconstructions t
 - [Protein P0 — Frozen v9 Native-Information / Source-Provenance Audit](v9-native-information-audit-2026-09-17/REPORT.md) — tests whether the canonical frozen-v9 bridge can be source-audited for native-coordinate / RMSD / contact-map / target-specific information use. Current result: `EXECUTABLE_V9_SOURCE_NOT_PINNED`.
   - [Machine-readable P0 summary](v9-native-information-audit-2026-09-17/SUMMARY.json)
   - [P0 source manifest](v9-native-information-audit-2026-09-17/SOURCE_MANIFEST.json)
+  - [Historical source-recovery record](v9-native-information-audit-2026-09-17/RECOVERY_SEARCH.json) — exact v9 packet commit/tree plus bounded repository/Drive recovery sweep; result `EXACT_V9_GENERATOR_NOT_RECOVERED_IN_AUDITED_REPOSITORY_SCOPE`.
 
 ## Claim discipline
 
