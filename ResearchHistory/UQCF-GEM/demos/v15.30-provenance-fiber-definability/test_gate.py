@@ -8,12 +8,38 @@ ALLOWED = {
     'CANONICAL_PROVENANCE_FIBER_RELATION_CERTIFIED',
 }
 
+REQUIRED = {
+    'version', 'base_sha', 'status', 'candidate_count', 'candidate_results',
+    'common_carrier_count', 'exact_fiber_relation_count', 'natural_relation_count',
+    'countermodels_survive', 'canonical_relation_certified',
+    'new_source_semantics_axiom_added', 'coupling_solver_reopened',
+    'gravity_observables_evaluated', 'uses_holonomy_selector', 'uses_newton_or_gr',
+    'uses_metric_selector', 'uses_pruning_as_selector', 'uses_entropy_as_selector',
+    'uses_physical_time', 'scientific_breakthrough', 'signal_of_life',
+    'gravity_canary_certified', 'physical_gravity_derived', 'Pillar_3',
+    'next_required_object',
+}
+
 
 class GateTests(unittest.TestCase):
-    def test_real_status_is_preregistered_and_candidate_count_is_four(self):
-        result = gate.audit_real_archive()
-        self.assertIn(result.status, ALLOWED)
-        self.assertEqual(len(result.candidates), 4)
+    def test_ledger_schema_and_claim_boundary(self):
+        result = gate.audit()
+        self.assertEqual(set(result), REQUIRED)
+        self.assertIn(result['status'], ALLOWED)
+        self.assertEqual(result['candidate_count'], 4)
+        for key in (
+            'new_source_semantics_axiom_added', 'coupling_solver_reopened',
+            'gravity_observables_evaluated', 'uses_holonomy_selector',
+            'uses_newton_or_gr', 'uses_metric_selector', 'uses_pruning_as_selector',
+            'uses_entropy_as_selector', 'uses_physical_time', 'signal_of_life',
+            'gravity_canary_certified', 'physical_gravity_derived',
+        ):
+            self.assertFalse(result[key])
+        self.assertEqual(result['Pillar_3'], 'OPEN')
+        self.assertEqual(
+            result['scientific_breakthrough'],
+            result['status'] == 'CANONICAL_PROVENANCE_FIBER_RELATION_CERTIFIED',
+        )
 
     def test_no_common_carrier_has_highest_precedence(self):
         result = gate.synthetic_no_common_carrier_control()
