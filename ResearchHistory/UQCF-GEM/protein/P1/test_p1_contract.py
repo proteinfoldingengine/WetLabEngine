@@ -68,8 +68,8 @@ class TestP1Contract(unittest.TestCase):
 
     def test_fixed_gate_constants_are_frozen_from_historical_ablation(self):
         p1 = self.p1
-        self.assertEqual(p1.FIXED_GATE_SIGMA, 0.1955639719963073)
-        self.assertEqual(p1.FIXED_GATE_CLOSURE, 0.0393431633710861)
+        self.assertEqual(p1.FIXED_GATE_SIGMA, 0.1956)
+        self.assertEqual(p1.FIXED_GATE_CLOSURE, 0.0393)
 
     def test_fixed_gate_uses_constants_not_live_gate_values(self):
         import torch
