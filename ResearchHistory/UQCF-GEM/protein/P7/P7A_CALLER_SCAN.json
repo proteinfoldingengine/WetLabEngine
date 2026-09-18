@@ -91,5 +91,29 @@
     }
   ],
   "adjudication": "ACTIVE_CONTROLLER_CALLING_PATH_NOT_PROVEN_IN_SURVIVING_SNAPSHOT",
-  "consequence": "Do not call a prospective controller experiment a historical replay. Continue forensic recovery of an earlier runner/config/raw artifact before P7B."
+  "consequence": "Do not call a prospective controller experiment a historical replay. Continue forensic recovery of an earlier runner/config/raw artifact before P7B.",
+  "superseded_by_drive_recovery": true,
+  "current_adjudication": "DAG_ACTIVE_CALLING_PATH_RECOVERED_SOURCE_LEVEL",
+  "drive_recovery": {
+    "primary_folder": {
+      "name": "StableDAGPhysics",
+      "id": "1alYQEh5KnVcZa3CBcRIuRb-OV3NmhT8D",
+      "date": "2025-08-03"
+    },
+    "primary_runner": {
+      "id": "1QwVl_edsXIKMRyV-apbROE7eykPRjpJ3",
+      "sha256": "71500484969c5e67db0f106f1417be57274c9a5eb71e886df98e55a4b918c6be",
+      "patch_id": "Patch 602.4"
+    },
+    "primary_dag": {
+      "id": "1R_DEUaADHyENA4DQO-NqvutEHlL_NdMJ",
+      "sha256": "32dd940a4d81d1b718f040cb9944e13586792928fbc869260b8120e0fb69d92d"
+    },
+    "primary_force_field": {
+      "id": "1TmTA8WR_GtGuMAsyI6ecZvdloHkUdVKM",
+      "sha256": "2d13e3b00dada665724a41ce3a9acc1eb69f2389cbdf465bd9eefa53936ba44e"
+    },
+    "raw_patch622_624_dag_log_recovered": false,
+    "physics_only_controller_caller_recovered": false
+  }
 }
