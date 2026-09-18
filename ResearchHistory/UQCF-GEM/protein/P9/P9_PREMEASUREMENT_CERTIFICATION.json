@@ -1,0 +1,45 @@
+{
+  "schema": "protein-p9-premeasurement-certification-v1",
+  "preregistration_commit": "f194ad2eabfb722983bf2aac84df4da51f49712c",
+  "source_manifest": {
+    "commit": "0f723410c39ba4fe03471720ec59d5acfc0c1fc3",
+    "git_blob": "16ab23c9405b371af6886cf034e79370c54359bc"
+  },
+  "core_contract": {
+    "red_tests_commit": "08e9a4f04563cf5f07c89352c94587215cd686dc",
+    "red_workflow_commit": "cc5ab22456ca4baef5e407b726bd2fece4da19ea",
+    "red_run_id": 35383675093,
+    "red_job_id": 105725497187,
+    "red_expected_failure": "ModuleNotFoundError: No module named 'p9_core'",
+    "green_implementation_head": "b4573dd46436adc36fd7b957b4f546bdf0f00079",
+    "green_run_id": 35383868978,
+    "green_job_id": 105726089975,
+    "green_tests": "8 passed",
+    "p9_core_git_blob": "c421e210b8f14fe2639c92be7635621651ae0187"
+  },
+  "measurement_contract": {
+    "red_tests_commit": "22472841d5d12afe6d3d73e8639e2702a0baf637",
+    "red_workflow_commit": "86091a8c6dee9ab69c0ab4edfe6591e99e9545c2",
+    "red_run_id": 35384177378,
+    "red_job_id": 105727066161,
+    "red_expected_failure": "ModuleNotFoundError: No module named 'p9_measurement'",
+    "green_implementation_head": "9b1cffb92deb74ae09aa73a018ba9f2405d45e45",
+    "green_run_id": 35384332131,
+    "green_job_id": 105727569880,
+    "green_tests": "5 passed",
+    "p9_measurement_git_blob": "c4247d98db9944709176ee305ddda452cb8b533a",
+    "p9_measurement_test_git_blob": "b938c7bebe092de6faed9797ebd8f5afaed78cf3",
+    "p9_measurement_workflow_git_blob": "9c2801742f76fc8fc5f478bc4401ec078986a242"
+  },
+  "frozen_scientific_files": {
+    "p9_acceptance_git_blob": "d6251c7a58bb98c5ecd97825a6d01e57b62a4e7c",
+    "p9_core_git_blob": "c421e210b8f14fe2639c92be7635621651ae0187",
+    "p9_measurement_git_blob": "c4247d98db9944709176ee305ddda452cb8b533a",
+    "p1_core_git_blob": "511f57dabceb895a77a2d0d258d4fda83baac8a1",
+    "p5_core_git_blob": "3eb97d04b793588cf1f54ca7bfd9cc15be8dcff2",
+    "p6_core_git_blob": "e517164834636ffc5e52ea118f9d43624edebdad"
+  },
+  "prospective_measurement_authorized": true,
+  "native_result_exposed": false,
+  "boundary": "No P9 96-state native-evaluation/handoff measurement has been executed or exposed at this certification point."
+}
