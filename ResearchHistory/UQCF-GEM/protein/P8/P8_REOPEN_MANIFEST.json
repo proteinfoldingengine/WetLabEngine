@@ -1,0 +1,87 @@
+{
+  "schema": "protein-p8-reopen-freeze-v1",
+  "p7": {
+    "closeout_commit": "0e156790b961abdebcd288b333b44c2e6df05d61",
+    "certified_source_audit_head": "72c6d464cad50183fd17ac932b40745438576331",
+    "workflow_run": 35298063514,
+    "artifact_id": 10528821674,
+    "artifact_sha256": "c34e49c1ce9f23eae00afa2e0f15b25f15509acc275d4372d5e47726ad33f02d"
+  },
+  "snapshots": {
+    "globular_fold_qis": {
+      "folder_id": "1kYk-we-NgI_Fbg_BG8IY1InFXnzEkxRU",
+      "exact_named_patch_release": false,
+      "files": {
+        "main.py": {
+          "drive_id": "1zibfebFh0-iQMkXZyDoBmdjLNYqUsbNG",
+          "sha256": "7c461d6cb91531caf71b78c92e90244ba41b87323748e37c507670fb54ef94b3",
+          "label": "Patch 622.2 (Contact Activation Fix)"
+        },
+        "dag_engine.py": {
+          "drive_id": "1ojCa7wWaqzt9u3etrA8_YLkiVFbxpz8d",
+          "sha256": "ee2d2f3148105815e0670b83d7dc62427e4637f732539343943506fe29b9b91e",
+          "label": "Patch 622.1 (Configurable Topology)"
+        },
+        "force_field.py": {
+          "drive_id": "1D82b07r8qjV923QsLpYP8CF-m1Pr10WP",
+          "sha256": "69dde0b4a4de06798963c7bc489b13143cb2c5bf70b500fa1b420347f52230ce",
+          "label": "Patch 623.0 (Torsional Incoherence Penalty)"
+        },
+        "1ubq_baseline.yaml": {
+          "drive_id": "18IgG-0Xci-kC3uTP-_bQTmV99pdA_qpr",
+          "sha256": "2d1860bf586a5cb36d67f688aca032b2db262f8f77be4da92dc2aa45a2fe8638",
+          "label": "Patch_623.0_Torsional_Incoherence_Penalty"
+        },
+        "config_loader.py": {
+          "drive_id": "1lkuryf4fBe6q6rTuAOGapZLJuactYVcV",
+          "sha256": "bb0abe0c79f6e68a64e0424b7cd0ae1eed412b027ab104ed2d09dc0f756eb100"
+        },
+        "metrics_history.py": {
+          "drive_id": "1cdpUU8ZD-ZM0plQzjHna1DawkGRomKs9",
+          "sha256": "bb5883f08721e2cf0394a3218fe890369eba47d3899ba8704010b886520b0bd6",
+          "label": "Patch 622.0 (Betti-Driven Activation)"
+        }
+      }
+    },
+    "stable_globular_qis_best": {
+      "folder_id": "1xW0FbrtXCR048VfdS7Hi01QvjTezDljk",
+      "exact_named_patch_release": false,
+      "files": {
+        "main.py": {
+          "drive_id": "1lvqWS0m2C2mJ7KhN5PKajurvNXLP6R7-",
+          "sha256": "a78b3c638682e206178e6022748d75cab2937de3b737e3c53b3fa9be1dfb0760",
+          "label": "Patch 622.2 header; runtime PATCH_ID Patch_625"
+        },
+        "dag_engine.py": {
+          "drive_id": "1soTZT-k6-xIw56JZ-e-guxzvT-Uwoo93",
+          "sha256": "1eccbcdd4367db5ee63459e631657e634788387208d113eb7713880b2c08b43f",
+          "label": "Patch 624.1 (Force Activation Fix)"
+        },
+        "force_field.py": {
+          "drive_id": "1CEi0STjaoBYloTn58FfhMduZkm8rBtLg",
+          "sha256": "1aa99c3e681c1c9a8c9e591e2c514e3762ed568b2fc5d2725313aa3b97578935",
+          "label": "Patch 624.1 (Logging Fix)"
+        },
+        "1ubq_baseline.yaml": {
+          "drive_id": "1uvMq1A3YheUTJ1FNt8jDIGtDuqLssA01",
+          "sha256": "57d3ff93e1762b54e3495bbd401f29bf9bb236e836af238f0d56544625d0da91",
+          "label": "Patch_625_Torsional_Resolution"
+        }
+      }
+    }
+  },
+  "local_tdd": {
+    "red": "6/6 failed with recovered source tree absent",
+    "green": "6/6 passed with exact hashed snapshots",
+    "fractal_coordinate_gradient_norm": 0.4999999403953552,
+    "electrostatic_coordinate_gradient_norm": 0.09621811658143997
+  },
+  "classification": {
+    "p7_stabledagphysics_source_reduction_valid": true,
+    "p7_program_level_contact_only_generalization_reopened": true,
+    "materially_distinct_colocated_historical_mechanism": true,
+    "exact_named_patch_622_or_624_release_established": false,
+    "historical_execution_trace_recovered": false,
+    "useful_native_blind_preorganization_established": false
+  }
+}
