@@ -252,7 +252,7 @@ def audit() -> dict:
 
 
 def canonical_json(result: dict) -> str:
-    return json.dumps(result, indent=2, sort_keys=True) + '\\n'
+    return json.dumps(result, indent=2, sort_keys=True) + '\n'
 
 
 def main():
