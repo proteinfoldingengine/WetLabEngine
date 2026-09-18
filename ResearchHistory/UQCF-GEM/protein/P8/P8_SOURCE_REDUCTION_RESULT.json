@@ -1,0 +1,105 @@
+{
+  "schema": "protein-p8-source-reduction-v1",
+  "branch": "research/protein-p8-patch622-624-reopen-certification",
+  "source_freeze_head": "f8138646d280f53612c66fbc2d163a10468ff0ee",
+  "p7_reference": {
+    "closeout_commit": "0e156790b961abdebcd288b333b44c2e6df05d61",
+    "certified_source_audit_head": "72c6d464cad50183fd17ac932b40745438576331",
+    "workflow_run": 35298063514,
+    "artifact_id": 10528821674,
+    "artifact_sha256": "c34e49c1ce9f23eae00afa2e0f15b25f15509acc275d4372d5e47726ad33f02d"
+  },
+  "globular_fold_qis": {
+    "hashes_match_freeze": true,
+    "phase0": "Compaction",
+    "phase1": "LockIn",
+    "config": {
+      "betti_threshold": 8,
+      "dag_transition_lifetime": 100,
+      "force_activation_lifetime": 50
+    },
+    "step0": {
+      "transitioned": false,
+      "phase": "Compaction"
+    },
+    "step99": {
+      "transitioned": false,
+      "phase": "Compaction"
+    },
+    "step100": {
+      "transitioned": true,
+      "phase": "LockIn"
+    },
+    "phase1_minus_phase0": [
+      "contact_springs",
+      "screened_electrostatics"
+    ],
+    "fractal_loads_coords": true,
+    "electrostatics_loads_coords": true,
+    "main_order": {
+      "history_before_dag": true,
+      "dag_before_force_loss": true,
+      "force_loss_before_backward": true
+    },
+    "mixed_patch_snapshot": true
+  },
+  "stable_globular_qis_best": {
+    "hashes_match_freeze": true,
+    "phase0": "Compaction",
+    "phase1": "LockIn",
+    "config": {
+      "betti_threshold": 8,
+      "dag_transition_lifetime": 100,
+      "force_activation_lifetime": 50
+    },
+    "step0": {
+      "transitioned": false,
+      "phase": "Compaction"
+    },
+    "step99": {
+      "transitioned": false,
+      "phase": "Compaction"
+    },
+    "step100": {
+      "transitioned": true,
+      "phase": "LockIn"
+    },
+    "phase1_minus_phase0": [
+      "contact_springs",
+      "screened_electrostatics",
+      "torsional_incoherence_penalty"
+    ],
+    "fractal_loads_coords": true,
+    "electrostatics_loads_coords": true,
+    "torsional_phi_metric_rewrapped_as_tensor": true,
+    "main_order": {
+      "history_before_dag": true,
+      "dag_before_force_loss": true,
+      "force_loss_before_backward": true
+    },
+    "mixed_patch_snapshot": true
+  },
+  "local_validation": {
+    "red": "6/6 tests failed before recovered source tree was supplied",
+    "green_autograd": "6/6 tests passed after exact hashed snapshots were supplied",
+    "green_standard_library_audit": "5/5 tests passed",
+    "fractal_coordinate_gradient_norm": 0.4999999403953552,
+    "electrostatic_coordinate_gradient_norm": 0.09621811658143997
+  },
+  "classification": {
+    "p7_stabledagphysics_exact_source_reduction": "VALID",
+    "p7_program_level_contact_only_generalization": "REOPENED",
+    "materially_distinct_historical_colocated_mechanism": "YES_SOURCE_LEVEL",
+    "exact_named_patch_622_release": "NOT_ESTABLISHED",
+    "exact_named_patch_624_release": "NOT_ESTABLISHED",
+    "historical_raw_execution_trace": "NOT_RECOVERED",
+    "useful_native_blind_preorganization": "UNTESTED"
+  },
+  "remote_ci": {
+    "workflow_file": ".github/workflows/protein-p8-source-certification.yml",
+    "workflow_head": "f8138646d280f53612c66fbc2d163a10468ff0ee",
+    "draft_pr": 33,
+    "run_id": null,
+    "status": "NOT_VERIFIED_THROUGH_CONNECTOR"
+  }
+}
