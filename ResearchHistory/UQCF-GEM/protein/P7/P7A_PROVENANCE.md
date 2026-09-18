@@ -1,89 +1,160 @@
 # Protein P7A — Early-backbone controller provenance / active-path gate
 
-**Status:** `ACTIVE_CONTROLLER_CALLING_PATH_NOT_PROVEN_IN_SURVIVING_SNAPSHOT`
+**Current status:** `DAG_ACTIVE_CALLING_PATH_RECOVERED_SOURCE_LEVEL`  
+**Raw Patch-622/624 execution log:** not recovered  
+**Physics-only controller active path:** not established
 
-## Question
+## Supersession note
 
-Before prospectively testing the remaining Phase-I observable/controller idea, can the surviving source establish which controller actually drove the strongest historical protein runs?
+The first P7A pass inspected only the surviving public Git snapshot and correctly found no live controller caller there. Historical Google Drive recovery has now located multiple earlier source bundles in which the DAG is explicitly on the execution path. This report supersedes the earlier public-snapshot-only stop while preserving it as a provenance fact about the later Git snapshot.
 
-At the current source snapshot, **no**.
+## Primary recovered controller authority — StableDAGPhysics
 
-## Frozen source snapshot
+Historical Drive parent:
 
-Repository: `proteinfoldingengine/UQCF-GEM`  
-Commit: `9e8172268b1feadc1fdbecfa6ca61239dccf21d7`
+- folder: `StableDAGPhysics`
+- Drive ID: `1alYQEh5KnVcZa3CBcRIuRb-OV3NmhT8D`
+- created: 2025-08-03
 
-Controller source exists:
+The folder preserves a coherent ten-file source bundle. All ten Python files compile.
 
-- `dag_engine.py` blob `4694cab56217202b8732cd2800f1bc3c60c589dc`;
-- `physics_only_controller.py` blob `e576f9a66eada6ba8fa00ad4a99b15ce56757c7e`;
-- separate `state_evaluator.py` blob `c444f067b94e32c1a5b3bfeeec90410b320a7901`.
+| File | Drive ID | SHA-256 |
+|---|---|---|
+| main.py | `1QwVl_edsXIKMRyV-apbROE7eykPRjpJ3` | `71500484969c5e67db0f106f1417be57274c9a5eb71e886df98e55a4b918c6be` |
+| dag_engine.py | `1R_DEUaADHyENA4DQO-NqvutEHlL_NdMJ` | `32dd940a4d81d1b718f040cb9944e13586792928fbc869260b8120e0fb69d92d` |
+| force_field.py | `1TmTA8WR_GtGuMAsyI6ecZvdloHkUdVKM` | `2d13e3b00dada665724a41ce3a9acc1eb69f2389cbdf465bd9eefa53936ba44e` |
+| physics_metrics.py | `1kpaDHStaawxOJo71_e9f7VnkgG8dCUM4` | `fc5df19386b8db3dad73cf0574b13062138e0f4e2175583da46d23e27923826d` |
+| protein_model.py | `15Ds1ghA22bpZFSEcsmDkjFzoZYK0RT-T` | `f4fbf4f66d97ffd864e0c42d20934d4a599570c9e0319938b4694e7cae1e93bf` |
+| physics_constants.py | `1GTLnE1USuKgn696CTODLagW3j_c69lCo` | `1a5aa4ecea48e755f190e797d5c625053dde1dd8627bb52ebf9d088634c858ee` |
+| fractal_dimension_utils.py | `1aQBkvbT5DqVhevSYDqjMbIOl0K03SBuv` | `06641d4dff2b86ba1093e2e626130cbab0dfe1691e007dbf5d43e0d795025fca` |
+| physics_purity_auditor.py | `1jkvhCBhdXTrt7QYaAuoiaOX34I7-zg-J` | `c35895598f48e6757b0f155e02e3d2f4c53f69c36dd8936b1d2eaa468f406764` |
+| metrics_history.py | `1GPNszRRXslwj7YsGTMg1HHYfBaWcJMMZ` | `74fcf97044ddb3217a240277f5fdce0f4ce60d884683e65e8a83b15a6312792e` |
+| chart_utils.py | `1K2bii5FC25nIZPQ9faS44owmLaeu6spA` | `d1dbcec0a144a0ef330ba92d42bf27c95d8a2910c8098e938b89de62f4086b18` |
 
-The DAG source implements the Compaction -> LockIn transition based on Betti1 count and persistence, and changes the active force set after transition.
+The runner identifies itself as `Patch 602.4`, target 1UBQ, seed 42, 2000 steps.
 
-The physics-only source defines direct observable/timescale-driven actions such as contact ramping, hydrophobic boost, Rama relaxation and Rg-window enforcement.
+## Active calling path — established
 
-## Snapshot-wide caller scan
+The recovered `main.py`:
 
-Every surviving Python file in the snapshot was scanned for:
+1. imports `DagEngine, DAG_SCHEMA, _dag_force_mapping`;
+2. instantiates `DagEngine(DAG_SCHEMA, GLOBAL_CONSTANTS, _dag_force_mapping)`;
+3. calculates state observables each step;
+4. calls `dag_engine.update_phase(metrics_for_physics, step)`;
+5. copies `dag_engine.active_params`;
+6. passes those active parameters directly into `ForceField.calculate_total_force_loss(...)`;
+7. logs the current phase and whether contact/entropy terms are active.
 
-- `dag_engine`;
-- `DagEngine`;
-- `physics_only_controller`;
-- `PhysicsOnlyController`;
-- `update_and_get_params`;
-- `evaluate_step(`.
+This is not dead controller source. The DAG sits on the coordinate-update path.
 
-The only matches were the controller/evaluator definitions themselves.
+## Recovered three-stage DAG
 
-No surviving runner imports or calls `DagEngine` or `PhysicsOnlyController`.
+### Phase 0 — Initial_Relaxation
 
-## Surviving execution path
+Active:
 
-The snapshot's `Main.py` blob `c6032f6f6affaff0a4071e852dd85bb0e21ca7db` identifies itself as a **minimal, gate-free physics probe**.
+- angular torque locking;
+- Lennard-Jones repulsion;
+- gamma surge.
 
-It does not instantiate either controller.
+Exit is state-driven from coherence/torsional dynamics or thermodynamic stall.
 
-The surviving orchestration drivers likewise launch `Main.py`:
+### Phase 1 — Coherence_Growth_and_Compaction
 
-- `experimental_suite_driver.py` -> `Main.py`;
-- `invariant_calibration_driver.py` -> `Main.py`;
-- `sweep_driver.py` -> `Main.py`.
+Adds:
 
-The adjacent `qis_combined_probe.py` is also gate-free.
+- fractal compaction funnel;
+- entropy pulse.
 
-Therefore the public snapshot proves that the controller code **existed**, but not that it was on the active calling path of the surviving runs.
+The transition logic uses topological stability, torsional flatness and entropy curvature.
 
-## Historical record boundary
+### Phase 2 — Contact_Lock_In
 
-Contemporaneous Phase-I documentation records topology-triggered phase changes and later milestones. That is useful evidence of historical intent and claimed execution, but it does not replace a source/config/raw-run calling path.
+Adds:
 
-Accordingly:
+- contact springs.
+
+The final-state criterion combines coherence, Betti stability, fractal dimension and thermodynamic freeze-out.
+
+Thus the historically distinctive mechanism is broader than the Patch-630 contact graph alone:
 
 ```text
-CONTROLLER SOFTWARE EXISTED:                YES
-DAG MECHANIC IS SPECIFIED IN SOURCE:        YES
-PHYSICS-ONLY CONTROLLER EXISTS:             YES
-SURVIVING RUNNER CALLS DAG:                 NO
-SURVIVING RUNNER CALLS PHYSICS-ONLY:        NO
-HISTORICAL ACTIVE PATH CERTIFIED:           NO
+state observables
+ -> phase transition
+ -> change active force family
+ -> new structure
+ -> new observables
 ```
 
-## P7A decision
+## Native-blindness of the recovered force/controller path
 
-`ACTIVE_CONTROLLER_CALLING_PATH_NOT_PROVEN_IN_SURVIVING_SNAPSHOT`
+The runner calculates native-aligned RMSD for diagnostics. However:
 
-This is **not** a NO-GO on the controller idea.
+- `dag_engine.py` contains no RMSD/native reference;
+- `force_field.py` contains no RMSD/native reference;
+- native coordinates are not passed into either module;
+- the diagnostic `NATIVE_CONTACT_DISTANCE_THRESHOLD` is only a scalar threshold used to report current-state contact density, not a native contact map.
 
-It is a provenance stop: P7B must not be presented as a replay until an earlier active runner/config or raw execution artifact establishes which mechanic was actually used.
+Therefore the recovered DAG/force path is native-blind even though RMSD is logged.
 
-## Next forensic target
+## Source caveats relevant to P7B
 
-Search the historical Drive/source archive for an earlier runner or raw log that provides at least one of:
+P7B must preserve these facts rather than silently fixing them:
 
-1. an import/instantiation/call of `DagEngine` or the physics-only controller;
-2. a force-policy trace showing the controller's emitted active parameters/actions;
-3. a phase-transition log tied to exact source/config identity;
-4. a historical config plus runner pair sufficient to reproduce the calling path.
+1. the historical state is C-alpha only and its phi/psi are pseudo-dihedrals; this representation is not acceptable for the prospective physical test;
+2. the historical fractal-dimension term receives a detached scalar Df value, so that term does not by itself create a coordinate gradient in this source;
+3. gamma is a separate optimized scalar and participates in phase/control logic;
+4. the entropy pulse, angular torque, LJ term and contact springs do have coordinate-gradient paths;
+5. contact springs use a current-state contact graph, not a native contact map.
 
-If none can be recovered, a later constrained-backbone controller experiment may still be scientifically legitimate, but it must be labeled **new prospective architecture testing**, not recovery of a demonstrated historical mechanism.
+A prospective constrained-backbone port must test the controller architecture without falsely claiming that representation repair was part of the historical run.
+
+## Additional historical corroboration
+
+### FoldSuccess — July 24
+
+Drive `MainSimulation` ID `10Wmc2UjuXBWGsasDay9CNnlvm2rZszqQzwFh5mS4Pew` explicitly imports and instantiates a DAG and logs current phase. Its matching DAG source is preserved in the same folder. This establishes an earlier DAG-wired lineage.
+
+### StableFold Patch 505 — July 31
+
+Drive folder `1fEoE4ew0CYC5KSf9Bq62cGV0sikyFMtu` preserves a complete, compilable source bundle with a DAG-wired `Main.py`.
+
+The contemporaneous `StableFold` document reports decreasing RMSD, improving Df/contact behavior, increasing Betti1 and states that the DAG was intact. That is Class-C contemporaneous execution evidence; the referenced raw trajectory/report files have not been recovered.
+
+### Phase-I scientific summary — August 5
+
+Drive document `14V4iV-f3kSyVDmU6v-mC3-nwxOGAeD3MbMEEKWRO19w` records Patch 622.2 as a topology-triggered DAG phase change with evidence described as a “DAG log,” and Patch 624.x as stable molten-globule behavior with logs.
+
+The underlying Patch-622/624 DAG log has not yet been recovered, so those outcome claims remain historical rather than Class-A evidence.
+
+## Patch606 archive anomaly
+
+Drive folder `StablePatch606LogsRMSD` contains a later DAG/force bundle, but its archived `main.py` materializes byte-identically to its `force_field.py` in the recovered copy and contains force-field code rather than the expected runner. P7A therefore does not use that file as calling-path authority.
+
+This archival defect is preserved rather than repaired by inference.
+
+## Physics-only controller boundary
+
+The later `physics_only_controller.py` remains a separate source candidate. P7A has not recovered a historical runner that invokes it. It must not be folded into the recovered DAG mechanism.
+
+## P7A adjudication
+
+```text
+DAG SOFTWARE EXISTED:                         YES
+DAG ACTIVE RUNNER RECOVERED:                  YES
+DAG ACTIVE PARAMS FEED FORCE LOSS:            YES
+RECOVERED DAG/FORCE PATH NATIVE-BLIND:        YES
+CONTEMPORANEOUS EXECUTION NARRATIVE:           YES
+EXACT PATCH-622/624 RAW DAG LOG RECOVERED:     NO
+PHYSICS-ONLY CONTROLLER ACTIVE PATH:           NOT PROVEN
+```
+
+**P7A result:** `DAG_ACTIVE_CALLING_PATH_RECOVERED_SOURCE_LEVEL`
+
+## Consequence
+
+P7B is scientifically legitimate as a **prospective survival test of the recovered historical DAG architecture** on the certified kinematic peptide representation.
+
+P7B must not be described as reproducing the exact Patch-622/624 result unless the raw run/config/log is later recovered.
+
+The prospective test must isolate whether state-responsive multi-force switching contributes information beyond matched static/nonadaptive controls. It must not reopen v9, TPO entropy, or the already-failed Patch-630 contact graph as standalone rescue mechanisms.
