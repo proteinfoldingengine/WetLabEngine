@@ -66,5 +66,20 @@ jobs:
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.33-sector-weight-constraint-audit
         run: |
           python -m unittest -v test_gate.py
-          python sector_weight_constraint_gate.py > /tmp/v1533-results.json
+          python sector_weight_constraint_gate.py --check docs/RESULTS.json > /tmp/v1533-results.json
           python -m compileall -q sector_weight_constraint_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='FROZEN_CONSTRAINTS_LEAVE_ALL_9_RELATIVE_WEIGHTS_FREE'
+          assert r['sector_count']==10
+          assert r['frozen_constraint_rank']==0
+          assert r['surviving_projective_weight_dimension']==9
+          assert r['projectively_distinct_witness_count']==5
+          assert r['idempotent_total_choice_count']==1024
+          assert r['idempotent_nonzero_choice_count']==1023
+          assert r['new_sector_weight_selector_added'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['physical_gravity_derived'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY

@@ -1,6 +1,8 @@
+import json
+from pathlib import Path
 import unittest
 
-from sector_weight_constraint_gate import audit
+from sector_weight_constraint_gate import audit, canonical_json
 
 
 class SectorWeightConstraintGateTests(unittest.TestCase):
@@ -22,7 +24,7 @@ class SectorWeightConstraintGateTests(unittest.TestCase):
         self.assertEqual(self.r['frozen_constraint_rank'], 0)
 
     def test_distinct_witnesses_survive(self):
-        self.assertGreaterEqual(self.r['projectively_distinct_witness_count'], 4)
+        self.assertEqual(self.r['projectively_distinct_witness_count'], 5)
         self.assertTrue(self.r['all_witnesses_pass_automatic_constraints'])
         self.assertEqual(self.r['surviving_projective_weight_dimension'], 9)
 
@@ -43,6 +45,11 @@ class SectorWeightConstraintGateTests(unittest.TestCase):
             self.r['next_required_object'],
             'NEW_TYPED_PRETIME_INVARIANT_OR_EXPLICIT_SECTOR_WEIGHT_AXIOM',
         )
+
+    def test_committed_ledger_is_exact(self):
+        committed = Path('docs/RESULTS.json').read_text()
+        self.assertEqual(committed, canonical_json(self.r))
+        self.assertEqual(json.loads(committed), self.r)
 
     def test_firewall(self):
         for key in (
