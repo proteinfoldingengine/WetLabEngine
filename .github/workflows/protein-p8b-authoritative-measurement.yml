@@ -1,0 +1,133 @@
+name: Protein P8B Authoritative Measurement
+
+on:
+  pull_request:
+    branches:
+      - research/protein-p8b-measurement-layer
+    paths:
+      - '.github/workflows/protein-p8b-authoritative-measurement.yml'
+      - 'ResearchHistory/UQCF-GEM/protein/P8B/P8B_AUTHORITATIVE_LAUNCH.md'
+
+permissions:
+  contents: read
+
+jobs:
+  measurement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      FROZEN_PREMEASUREMENT_HEAD: 'a85a50c9f9ccdc95871afb653a5200da3ce01007'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/protein/P8B
+
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Verify frozen premeasurement packet
+        working-directory: .
+        run: |
+          git cat-file -e "${FROZEN_PREMEASUREMENT_HEAD}^{commit}"
+          changed="$(git diff --name-only "${FROZEN_PREMEASUREMENT_HEAD}"..HEAD | sort)"
+          expected="$(printf '%s\n'             '.github/workflows/protein-p8b-authoritative-measurement.yml'             'ResearchHistory/UQCF-GEM/protein/P8B/P8B_AUTHORITATIVE_LAUNCH.md' | sort)"
+          test "$changed" = "$expected"
+          test ! -d ResearchHistory/UQCF-GEM/protein/P8B/measurement_output
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install NumPy
+        run: python -m pip install numpy==1.26.4
+
+      - name: Install CPU PyTorch
+        run: python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Re-certify frozen core and measurement contracts
+        run: |
+          python -m unittest -v             test_p8b_contract.py             test_p8b_measurement_contract.py
+
+      - name: Verify premeasurement certification boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          packet = json.loads(Path("P8B_PREMEASUREMENT_CERTIFICATION.json").read_text())
+          assert packet["prospective_measurement_authorized"] is True
+          assert packet["native_result_exposed"] is False
+          assert packet["measurement_contract"]["green_implementation_head"] == "a6732ac7a41c0a825006724f57f1e5075bf36c90"
+          PY
+
+      - name: Run authoritative P8B measurement
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          GITHUB_SHA="$HEAD_SHA" python p8b_measurement.py
+
+      - name: Validate authoritative packet shape and hashes
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python - <<'PY'
+          import csv
+          import json
+          import os
+          from pathlib import Path
+
+          out = Path("measurement_output")
+          required = {
+              "p8b_results.csv",
+              "p8b_controller_traces.csv",
+              "p8b_checkpoint_traces.csv",
+              "p8b_summary.csv",
+              "p8b_primary_comparisons.csv",
+              "p8b_acceptance.json",
+              "p8b_run_manifest.json",
+              "SHA256SUMS.txt",
+          }
+          assert {p.name for p in out.iterdir()} == required
+
+          rows = list(csv.DictReader((out / "p8b_results.csv").open()))
+          assert len(rows) == 72, len(rows)
+          keys = {(r["target"], int(r["seed"]), r["mode"]) for r in rows}
+          assert len(keys) == 72
+          assert {r["target"] for r in rows} == {"1VII", "1L2Y", "1UAO"}
+          assert {int(r["seed"]) for r in rows} == set(range(6))
+          assert {r["mode"] for r in rows} == {
+              "recovered_state_gate",
+              "fixed_step99_lockin",
+              "static_lockin",
+              "compaction_only",
+          }
+
+          acceptance = json.loads((out / "p8b_acceptance.json").read_text())
+          assert acceptance["decision"] in {
+              "GO_RECOVERED_TOPOLOGY_GATED_PREORGANIZATION",
+              "NO_GO_RECOVERED_TOPOLOGY_GATED_PREORGANIZATION",
+          }
+
+          manifest = json.loads((out / "p8b_run_manifest.json").read_text())
+          assert manifest["git_head"] == os.environ["HEAD_SHA"]
+          assert manifest["native_information_used_in_objective"] is False
+          assert manifest["native_information_used_in_controller"] is False
+          assert manifest["common_random_initial_torsions"] is True
+          assert manifest["steps"] == 2000
+          print(json.dumps(acceptance, indent=2, sort_keys=True))
+          PY
+          (cd measurement_output && sha256sum -c SHA256SUMS.txt)
+
+      - name: Upload authoritative P8B packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: protein-p8b-authoritative-measurement
+          path: ResearchHistory/UQCF-GEM/protein/P8B/measurement_output/
+          if-no-files-found: error
+          retention-days: 90
