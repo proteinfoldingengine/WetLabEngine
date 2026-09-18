@@ -18,9 +18,15 @@ def angles(a,b,c):
     u=a-b; v=c-b
     u=u/np.linalg.norm(u,axis=1,keepdims=True); v=v/np.linalg.norm(v,axis=1,keepdims=True)
     return np.arccos(np.clip((u*v).sum(1),-1,1))
-def load_pm():
-    spec=importlib.util.spec_from_file_location("p4_pm",SRC/"protein_model.py")
-    m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
+def load_generate_ideal_backbone():
+    text=(SRC/"protein_model.py").read_text()
+    tree=ast.parse(text)
+    fn=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=="_generate_ideal_backbone")
+    mod=ast.Module(body=[fn],type_ignores=[])
+    ast.fix_missing_locations(mod)
+    ns={"np":np}
+    exec(compile(mod,str(SRC/"protein_model.py"),"exec"),ns)
+    return ns["_generate_ideal_backbone"]
 def contract():
     ft=(SRC/"force_field.py").read_text(); mt=(SRC/"main.py").read_text(); pt=(SRC/"protein_model.py").read_text()
     tree=ast.parse(ft); calc=next(n for c in tree.body if isinstance(c,ast.ClassDef) and c.name=="ForceField"
@@ -46,7 +52,7 @@ def contract():
 def audit():
     got={k:sha(SRC/k) for k in EXPECTED}; match={k:got[k]==EXPECTED[k] for k in EXPECTED}
     if not all(match.values()): raise RuntimeError("source hash mismatch")
-    pm=load_pm(); n,ca,c=pm._generate_ideal_backbone(36,42)
+    generate=load_generate_ideal_backbone(); n,ca,c=generate(36,42)
     nca=np.linalg.norm(n-ca,axis=1); cac=np.linalg.norm(ca-c,axis=1); cn=np.linalg.norm(c[:-1]-n[1:],axis=1)
     cnang=angles(ca[:-1],c[:-1],n[1:]); ct=contract()
     bad_cn=bool(np.all(np.abs(cn-1.33)>1.0))
