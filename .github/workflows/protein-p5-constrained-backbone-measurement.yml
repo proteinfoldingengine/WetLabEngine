@@ -1,0 +1,98 @@
+# First authoritative P5 prospective measurement after contract certification run 35294941990.
+name: Protein P5 Constrained Backbone Measurement
+
+on:
+  push:
+    branches:
+      - research/protein-p5-constrained-backbone-survival
+    paths:
+      - '.github/workflows/protein-p5-constrained-backbone-measurement.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  measurement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/protein/P5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install NumPy
+        run: python -m pip install numpy==1.26.4
+
+      - name: Install CPU PyTorch
+        run: python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Re-certify frozen P5 contract
+        run: python -m unittest -v test_p5_contract.py
+
+      - name: Run first authoritative P5 measurement
+        run: python p5_measurement.py
+
+      - name: Validate authoritative packet shape
+        run: |
+          python - <<'PY'
+          import csv
+          import json
+          from pathlib import Path
+
+          out = Path("measurement_output")
+          required = [
+              "p5_results.csv",
+              "p5_traces.csv",
+              "p5_summary.csv",
+              "p5_primary_comparisons.csv",
+              "p5_acceptance.json",
+              "p5_run_manifest.json",
+          ]
+          for name in required:
+              p = out / name
+              assert p.is_file() and p.stat().st_size > 0, name
+
+          rows = list(csv.DictReader((out / "p5_results.csv").open()))
+          assert len(rows) == 96, len(rows)
+          assert {r["target"] for r in rows} == {"1VII", "1CRN"}
+          assert {int(r["seed"]) for r in rows} == set(range(8))
+          assert {r["mode"] for r in rows} == {
+              "baseline", "rama", "variance", "entropy",
+              "rama_entropy", "entropy_historical_0p02"
+          }
+
+          acceptance = json.loads((out / "p5_acceptance.json").read_text())
+          assert acceptance["decision"] in {
+              "GO_TPO_ENTROPY_SURVIVES_CONSTRAINED_BACKBONE",
+              "NO_GO_TPO_ENTROPY_INCREMENT",
+          }
+          manifest = json.loads((out / "p5_run_manifest.json").read_text())
+          assert manifest["git_head"] == __import__("os").environ["GITHUB_SHA"]
+          assert manifest["native_geometry_used_in_objective"] is False
+          assert manifest["common_random_initial_torsions"] is True
+          print(json.dumps(acceptance, indent=2, sort_keys=True))
+          PY
+
+      - name: Hash measurement outputs
+        run: sha256sum measurement_output/* | tee measurement_output/SHA256SUMS.txt
+
+      - name: Upload authoritative P5 packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: protein-p5-authoritative-measurement
+          path: ResearchHistory/UQCF-GEM/protein/P5/measurement_output/
+          if-no-files-found: error
+          retention-days: 90
