@@ -171,5 +171,25 @@
       "1L2Y": "NKPPLIGSQRDSWPSPLGGY",
       "1UAO": "TGYWEPGTGD"
     }
+  },
+  "premeasurement_core_certification": {
+    "head": "2c86b64236095d07406d905add0bcd0ab364d12a",
+    "workflow_run_id": 35299284007,
+    "conclusion": "success",
+    "boundary": "Core physics/control implementation passed frozen contract before measurement-layer authorization."
+  },
+  "secondary_diagnostics": {
+    "checkpoints": [
+      0,
+      50,
+      100,
+      200,
+      300
+    ],
+    "evaluation_timing": "native-derived metrics computed only after each optimization trajectory completes",
+    "hbond_count": "DSSP-like raw pair energy < -0.5 kcal/mol; diagnostic only",
+    "hydrophobic_contact_count": "positive Eisenberg hydropathy labels with CA distance < 8.0 A and sequence separation >=3; diagnostic only",
+    "native_torsion_rmse": "interior phi/psi circular RMSE from evaluator N/CA/C coordinates; diagnostic only",
+    "rescue_authority": false
   }
 }
