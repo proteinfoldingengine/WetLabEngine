@@ -76,3 +76,19 @@ USEFUL NATIVE-BLIND PREORGANIZATION            NOT YET ESTABLISHED
 ```
 
 No folding GO is inherited from historical performance claims. The next scientific gate is a prospective constrained-backbone reproduction with matched ablations.
+
+
+## Authoritative GitHub certification
+
+The frozen source-reduction predicates were independently rerun in GitHub Actions after vendoring the recovered bytes.
+
+- certified head: `2a8a23a91b00a052f56bcd176afbecded6d40cf2`
+- workflow run: `35358832587`
+- workflow run number: `26`
+- job: `105644748977` (`source-certification`)
+- result: `5 passed in 0.26s`
+- artifact: `10553705794`, `protein-p8-source-certification`
+- artifact size: `5841` bytes
+- artifact SHA-256: `bbc2e54e6231e57a0f500fc610ecad9eee2a1901a59e491dc20085bdc260fcca`
+
+The CI result certifies the source-level reopen only. It does not establish useful folding or preorganization.
