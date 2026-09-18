@@ -1,0 +1,27 @@
+name: Protein P8B Independent Verifier
+
+on:
+  pull_request:
+    branches:
+      - research/protein-p8b-measurement-layer
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P8B/p8b_verify_artifact.py'
+      - 'ResearchHistory/UQCF-GEM/protein/P8B/test_p8b_verify_artifact.py'
+      - '.github/workflows/protein-p8b-independent-verifier.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/protein/P8B
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run independent verifier contract
+        run: python -m unittest -v test_p8b_verify_artifact.py
