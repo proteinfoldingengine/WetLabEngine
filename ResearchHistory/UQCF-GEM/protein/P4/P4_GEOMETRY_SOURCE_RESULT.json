@@ -1,0 +1,32 @@
+{
+  "certification": {
+    "workflow_run_id": 35292391335,
+    "workflow_run_number": 14,
+    "certified_head": "cd14868c6bb7865a4d6c13c0579a07b72581d60c",
+    "artifact_id": 10526897177,
+    "artifact_name": "protein-p4-patch630-geometry-source-gate",
+    "artifact_sha256": "5ef741f80df8ad64d764a2db19177f7998d1c7199e38e10c35fde8ad676e6187"
+  },
+  "claim_boundary": "Rejects only the historical physical-backbone interpretation; constrained/kinematic prospective work remains open.",
+  "gate_conditions": {
+    "all_35_peptide_C_N_links_more_than_1A_from_declared_1p33A": true,
+    "historical_force_objective_has_no_covalent_N_CA_C_enforcement": true
+  },
+  "historical_initializer": {
+    "N_CA_interior": {"n":34,"mean":1.4600000065915726,"min":1.4599995613098145,"max":1.4600003957748413,"rmse_to_declared":1.9038568117545179e-7,"within_0p1A":34},
+    "CA_C_interior": {"n":34,"mean":1.5299999538589926,"min":1.5299996137619019,"max":1.5300003290176392,"rmse_to_declared":1.4933858788979733e-7,"within_0p1A":34},
+    "C_N_peptide": {"n":35,"mean":3.5475697313036236,"min":2.387298822402954,"max":7.250115871429443,"rmse_to_declared":2.403797076423384,"min_abs_error_to_declared":1.057298822402954,"within_0p1A":0},
+    "CA_C_Nnext_rad": {"n":35,"mean":1.4089623325529308,"min":0.0003452669770922512,"max":2.19094181060791,"rmse_to_declared":0.709560149936181,"within_0p1A":1}
+  },
+  "source_contract": {
+    "generator_declares_C_N_dist_1p33": true,
+    "generator_uses_C_N_dist_after_declaration": false,
+    "forcefield_receives_N_coords": false,
+    "forcefield_receives_C_coords": false,
+    "main_passes_CA_as_force_coordinates": true,
+    "main_computes_phi_psi_from_N_CA_C": true,
+    "explicit_covalent_bond_force_function_present": false
+  },
+  "source_hashes_all_match": true,
+  "verdict": "NO_GO_HISTORICAL_PHYSICAL_BACKBONE_INTERPRETATION"
+}
