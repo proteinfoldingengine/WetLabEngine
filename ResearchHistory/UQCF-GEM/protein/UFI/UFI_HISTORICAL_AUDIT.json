@@ -1,0 +1,47 @@
+{
+  "schema": "protein-ufi-historical-audit-v1",
+  "audit_date": "2026-09-17",
+  "decision": "NO_GO_HISTORICAL_UFI_FOLDABILITY_CLAIM",
+  "surviving_observation": "PRESERVE_ENGINE_SPECIFIC_INITIAL_COMPACTION_CORRELATION",
+  "source_repository": "proteinfoldingengine/UQCF-GEM",
+  "generating_commit": "919c3a439001ce785992dc6b24850571c5858098",
+  "source_blobs": {
+    "pgb_csv": "63680cbde41a230f458651c99effe8305731516c",
+    "run_discovery_protocol": "c5e4d4385e3e76b3107fb16b3049d277adc81643",
+    "main_engine_wrapper": "2cdeec5d69341f24266b289da5dd68f668b8ef1f",
+    "physics_metrics": "087d90e1727b1dbddec33e7e7b6538be89989136",
+    "historical_ufi_validator": "77019bfad2cc50230d3e3df532f50c6eec0b5912"
+  },
+  "pgb": {
+    "n": 1000,
+    "ufi_r": -0.6913947078788837,
+    "initial_rg_r": 0.7547364336639091,
+    "abs_rg_minus_8p3_r": 0.7491307053238248,
+    "historical_betti_like_r": -0.5355635808908835,
+    "rg_betti_like_r": -0.774215524413451,
+    "partial_betti_like_vs_endpoint_given_rg": 0.11744547109925359,
+    "tenfold_out_of_fold_normalized_ufi_r": -0.6916102095603668
+  },
+  "qys": {
+    "n": 1000,
+    "frozen_pgb_ufi_r": -0.6328744770789148,
+    "initial_rg_r": 0.7385254453557458,
+    "abs_rg_minus_8p3_r": 0.7394522983257432,
+    "historical_betti_like_r": -0.48297812927321676,
+    "rg_betti_like_r": -0.6932165215655033,
+    "partial_betti_like_vs_endpoint_given_rg": 0.05963751982285358
+  },
+  "historical_betti_like_definition": {
+    "cutoff_A": 8,
+    "expression": "max(0, total_contacts - (N_residues - 1))",
+    "connected_component_assumption": 1,
+    "interpretation": "excess contact-count / compaction proxy; not a general persistent-homology Betti1 calculation"
+  },
+  "endpoint_defect": {
+    "endpoint": "final_RMSD",
+    "source_function": "physics_metrics.compute_rmsd",
+    "defect": "column-vector Kabsch rotation formula applied as a row-vector transform; fails rigid-rotation invariance",
+    "final_coordinates_archived_in_deep_scan_csv": false,
+    "scalar_csv_repairable_without_rerun": false
+  }
+}
