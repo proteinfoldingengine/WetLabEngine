@@ -1,0 +1,13 @@
+comparison,metric,v9_minus_control,p_value
+v9_vs_classical_only,best_rmsd,-2.3906,0.023266
+v9_vs_classical_only,angle_rms,0.0539,0.074564
+v9_vs_classical_only,dihedral_rms,0.0216,0.769522
+v9_vs_classical_only,contact_recovery,0.3559,0.000406
+v9_vs_dihedral_preconditioning,best_rmsd,0.0856,0.188543
+v9_vs_dihedral_preconditioning,angle_rms,-0.0153,0.57289
+v9_vs_dihedral_preconditioning,dihedral_rms,0.0625,0.417212
+v9_vs_dihedral_preconditioning,contact_recovery,0.0045,0.771111
+v9_vs_static_combo_preconditioning,best_rmsd,0.069,0.02961
+v9_vs_static_combo_preconditioning,angle_rms,0.0248,0.252655
+v9_vs_static_combo_preconditioning,dihedral_rms,0.0487,0.562102
+v9_vs_static_combo_preconditioning,contact_recovery,0.0068,0.562313

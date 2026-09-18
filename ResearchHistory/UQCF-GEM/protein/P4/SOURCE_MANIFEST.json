@@ -1,0 +1,21 @@
+{
+  "schema":"protein-p4-patch630-source-manifest-v1",
+  "source_folder_drive_id":"1BEuYZb-E7Fb8T3TC4AKrN4nOUq9MqZG1",
+  "historical_target":"1VII",
+  "historical_seed":42,
+  "historical_steps":5000,
+  "source_sha256":{
+    "main.py":"b95fc80a85c6e05c51653175abcd3eac6d3cac8616ae2bf8d3a6d9cf219aa5b2",
+    "generic_physics.yaml":"59fde3cf2bdf3548d52983b3dca169795d2fad71b1a46a92e2662444c7f464a5",
+    "force_field.py":"4ba1b26f8ffa2c49bddcc25859c609c1e6bfa1ea5431c3f5fdec4b8751444e9a",
+    "dag_engine.py":"1eccbcdd4367db5ee63459e631657e634788387208d113eb7713880b2c08b43f",
+    "protein_model.py":"ea64bd43dae438288e2ee463f7c46523c9d2413a72e2326e6423ddcb1d021e0a",
+    "physics_metrics.py":"57ffc4ca1055d74368b1e41a771f3509bd0af67485a80b1263edb6eef6fbbd60",
+    "physics_constants.py":"6af00a27a0f65bc5d415f338e041b584f778f8e13512f3c35826e0c74e18e861",
+    "config_loader.py":"bb0abe0c79f6e68a64e0424b7cd0ae1eed412b027ab104ed2d09dc0f756eb100",
+    "diagnostics_registry.py":"862f296233cac9c1b25c195f369b8c38917c06a2767dfab383b4eff30a2adf57",
+    "chart_utils.py":"e8660353436c9e289c73e2bda07284cbc35c6600dbe33b327ef626020a0f4937",
+    "metrics_history.py":"bb5883f08721e2cf0394a3218fe890369eba47d3899ba8704010b886520b0bd6"
+  },
+  "prior_hb1":{"status":"HISTORICAL_PATCH630_REPRODUCED","final_rmsd_A":10.1912841796875,"final_phi_rms_field":0.22261391580104828}
+}

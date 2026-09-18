@@ -1,0 +1,46 @@
+{
+  "schema": "protein-p5-source-manifest-v1",
+  "kinematic_representation": {
+    "repository": "proteinfoldingengine/PharmaApp",
+    "branch": "gen3-backbone-representation-comparison-v1",
+    "backbone_kinematics_blob": "a32c1d26fc8b8f4aac625973e0f43bdeb233293b",
+    "residue_identity_blob": "6f27ac9aa928e26ee630d3547e422a67c893d4ad",
+    "certified_head": "5fbde07b03bf7690e020dd6e8b7722b6ed9c29a8",
+    "certification_run_id": 34305080955,
+    "representation": "kinematic_pdb"
+  },
+  "historical_tpo": {
+    "repository": "proteinfoldingengine/UQCF-GEM",
+    "source_commit": "d019fe0fef858a4b73d3baaf3406df0447142cbe",
+    "stage1_discovery_engine_blob": "c580a15c75e68816e1143d2a28f4485174cf4925",
+    "torsional_metrics_blob": "0aee35076a59805aa4f99897d7c662b943051ebe",
+    "torsion_entropy_penalty_blob": "5e41c11c3fc442abc71bbcddbf2788e3c319e198",
+    "torsion_basin_bias_blob": "1a0121799e1462eb4b3340e5751071a675897d7d",
+    "deep_scan_config_blob": "8336e47eaacd6c059fc169bb1f047d4c4b386dc8",
+    "recovered_k_torsion_entropy": 0.02,
+    "recovered_k_ramachandran_bias": 0.05,
+    "physics_metrics_blob": "087d90e1727b1dbddec33e7e7b6538be89989136",
+    "histogram_min": -3.14159,
+    "histogram_max": 3.14159,
+    "histogram_normalization_epsilon": 1e-8,
+    "projection": "historical compute_true_phi_psi interior residues; P5 phi[1:-1], psi[1:]"
+  },
+  "targets": {
+    "1VII": {
+      "repository": "openmm/pdbfixer",
+      "commit": "5e658a4fb8d2b90d65ca8408c845cbf104ce7099",
+      "path": "pdbfixer/tests/data/test.pdb",
+      "git_blob": "dc55a7f18ce79b6db592240bdb7dcee96a4c1b8b",
+      "chain": "A",
+      "expected_residues": 36
+    },
+    "1CRN": {
+      "repository": "microsoft/foldingdiff",
+      "commit": "8be5f8fb9b461011d80522e587fc93bdc04a12d7",
+      "path": "data/1CRN.pdb",
+      "git_blob": "b576b182fbfd775a8a2d09544269aeca1522eb1a",
+      "chain": "A",
+      "expected_residues": 46
+    }
+  }
+}

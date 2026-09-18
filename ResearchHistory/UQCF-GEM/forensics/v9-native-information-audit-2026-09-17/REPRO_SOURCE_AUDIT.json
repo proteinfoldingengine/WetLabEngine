@@ -1,0 +1,78 @@
+{
+  "audit_date": "2026-09-17",
+  "status": "V9_REPRODUCTION_SOURCE_RECOVERED_AND_AUDITED",
+  "source_identity": {
+    "name": "uqcf_bridge_to_classical_handoff_repro.py",
+    "library_file_id": "file_00000000ec7c71f590699bcfde9fcb4b",
+    "library_version_id": "1",
+    "size_bytes": 20403,
+    "sha256": "697d773a8dec951dafbac9132a04da22e342dee52c2b70d62732c4be16778e51",
+    "source_self_description": "UQCF-GEM bridge-to-classical handoff reproduction script",
+    "canonical_april_generator_identity_proven": false
+  },
+  "source_validation": {
+    "python_compile": "PASS",
+    "ast_parse": "PASS",
+    "torch_manual_seed_present": false
+  },
+  "static_dependency_audit": {
+    "baseline_energy_ctx_attributes": ["N"],
+    "bridge_observables_ctx_attributes": ["N", "pi", "pj"],
+    "bridge_v9_energy_direct_ctx_attributes": [],
+    "optimize_stage_ctx_attributes": ["name", "target"],
+    "run_handoff_for_target_ctx_attributes": ["N", "angle_rms", "contact_recovery", "dihedral_rms", "name", "target"],
+    "interpretation": "The reproduced energy path depends on current conformation X and target-derived chain length/pair indexing, not target geometry, target RMSD, target angles/dihedrals, or native-contact identities. Native target data enter evaluation/reporting outside the energy/gradient path."
+  },
+  "mechanism_information_audit": {
+    "energy_native_coordinates_consumed": false,
+    "energy_native_rmsd_consumed": false,
+    "energy_native_contact_map_consumed": false,
+    "energy_native_angles_or_dihedrals_consumed": false,
+    "energy_target_identity_consumed": false,
+    "energy_target_derived_chain_length_consumed": true,
+    "energy_current_conformation_geometry_consumed": true,
+    "evaluation_native_coordinates_consumed": true,
+    "evaluation_native_rmsd_consumed": true,
+    "evaluation_native_contact_map_consumed": true,
+    "best_state_reporting_selected_by_native_rmsd": true,
+    "best_state_reporting_feeds_back_into_stage_dynamics": false,
+    "handoff_uses_final_v9_state_not_best_rmsd_v9_state": true,
+    "target_specific_parameter_fit_status": "UNKNOWN_FROM_RECOVERED_SOURCE"
+  },
+  "same_length_target_substitution_control": {
+    "purpose": "Hold candidate conformation X and N fixed while replacing FoldContext native target geometry with an unrelated same-length geometry.",
+    "N": 12,
+    "energy_1": 37.74882507324219,
+    "energy_2": 37.74882507324219,
+    "energy_exact_equal": true,
+    "energy_abs_diff": 0.0,
+    "gradient_exact_equal": true,
+    "gradient_max_abs_diff": 0.0,
+    "evaluation_angle_rms_changed": true,
+    "evaluation_dihedral_rms_changed": true,
+    "native_contact_count_changed": true,
+    "result": "REPRODUCED_V9_ENERGY_AND_GRADIENT_NATIVE_GEOMETRY_INVARIANT_AT_FIXED_N"
+  },
+  "reproducibility_audit": {
+    "python_random_seeded_per_seed": true,
+    "numpy_random_seeded_per_seed": true,
+    "torch_rng_seeded_per_seed": false,
+    "torch_randomness_used_in_initialization": true,
+    "torch_randomness_used_during_optimization": true,
+    "exact_fresh_process_reproduction_guaranteed_by_displayed_seed": false,
+    "issue": "The script labels runs by seed but does not call torch.manual_seed(seed); torch.randn and torch.randn_like therefore depend on ambient PyTorch RNG state."
+  },
+  "claim_boundary": {
+    "canonical_v9_mainline_generator_source_proven": false,
+    "canonical_v9_mainline_native_nonleakage_certified": false,
+    "recovered_reproduction_energy_native_nonleakage_certified": true,
+    "historical_handoff_generator_identity_proven": false,
+    "historical_p1_source_certified": false
+  },
+  "next_required_objects": [
+    "PROVENANCE_BINDING_BETWEEN_RECOVERED_REPRODUCTION_AND_CANONICAL_APRIL_V9_GENERATOR",
+    "SOURCE_OR_PROVENANCE_FOR_HISTORICAL_V9_CONTROL_MATRIX",
+    "EXPLICIT_TORCH_RNG_SEEDING_PROTOCOL_FOR_NEW_REPRODUCTION_LINEAGE"
+  ],
+  "version": "protein-P0-repro-source-audit-1"
+}

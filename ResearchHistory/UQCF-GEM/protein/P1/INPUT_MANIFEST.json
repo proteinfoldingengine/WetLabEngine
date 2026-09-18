@@ -1,0 +1,42 @@
+{
+  "schema": "protein-p1-input-manifest-v1",
+  "status": "BOUND",
+  "loader_contract": "chain A CA coordinates from first MODEL if present; center coordinates after float32 parse",
+  "targets": {
+    "1UAO": {
+      "historical_bundle": {
+        "library_file_id": "file_00000000a87c722fa02e7aa27b2be4f3",
+        "name": "uqcf_bridge_patch_v9_1uao_bundle.zip",
+        "sha256": "7d33fff5450f29525b694c038c2a43225912b3973cf0f9c7894b222c18d652de"
+      },
+      "full_pdb": {
+        "member": "1UAO.pdb",
+        "size_bytes": 217080,
+        "sha256": "e827fae677f8e96d1320688694b3db96bcc73050f81c6f842efc2e0ce9937e1e"
+      },
+      "pinned_loader_equivalent": {
+        "path": "inputs/1UAO.ca_chainA_model1.pdb",
+        "ca_count": 10,
+        "sha256": "b7cb0808f7dc0f4ed40bee9ca332696f50c2cc25d34ba53cabd7ba1ed03f468f"
+      }
+    },
+    "1L2Y": {
+      "historical_bundle": {
+        "library_file_id": "file_000000008648722fbb2dfa3c142e8417",
+        "name": "uqcf_bridge_patch_v9_1l2y_confirm_bundle.zip",
+        "sha256": "dc7f1da1e57e1a286cf91958cc59ad8e0eeb6bfacb4fca2c9475714cb811d3b5"
+      },
+      "full_pdb": {
+        "member": "1L2Y.pdb",
+        "size_bytes": 959202,
+        "sha256": "5d1bbb545a312dfff1ae1e64b6d8addecb2f561ddc4011aeb5bee9d1dfcd4438"
+      },
+      "pinned_loader_equivalent": {
+        "path": "inputs/1L2Y.ca_chainA_model1.pdb",
+        "ca_count": 20,
+        "sha256": "84179b355a043df03e98f432dd2b2fbba4035b4f7df2e4928feabec8baed4378"
+      }
+    }
+  },
+  "scientific_boundary": "The pinned files contain exactly the PDB records consumed by the recovered loader. Full historical PDB byte hashes and parent bundle hashes are retained so equivalence remains auditable. No fresh PDB download is permitted for P1 acceptance."
+}
