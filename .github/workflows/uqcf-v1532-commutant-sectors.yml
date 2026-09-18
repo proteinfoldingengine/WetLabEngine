@@ -1,0 +1,31 @@
+name: UQCF v15.32 Commutant Sector Decomposition
+on:
+  push:
+    branches: [research/v15.32-commutant-sector-decomposition]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.32-commutant-sector-decomposition/**'
+      - 'docs/superpowers/specs/2026-09-18-v1532-commutant-sector-decomposition-design.md'
+      - 'docs/superpowers/plans/2026-09-18-v1532-commutant-sector-decomposition-implementation.md'
+      - '.github/workflows/uqcf-v1532-commutant-sectors.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned environment
+        run: python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
+      - name: Run v15.32 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.32-commutant-sector-decomposition
+        run: python -m unittest -v test_gate.py
