@@ -1,6 +1,8 @@
+import json
+from pathlib import Path
 import unittest
 
-from sector_decomposition_gate import audit
+from sector_decomposition_gate import audit, canonical_json
 
 
 class SectorDecompositionGateTests(unittest.TestCase):
@@ -57,6 +59,11 @@ class SectorDecompositionGateTests(unittest.TestCase):
         self.assertEqual(self.r["projective_relative_weight_dimension"], 9)
         self.assertEqual(self.r["mixing_freedom_dimension"], 0)
         self.assertFalse(self.r["unique_canonical_source_sector"])
+
+    def test_committed_ledger_is_exact(self):
+        committed = Path("docs/RESULTS.json").read_text()
+        self.assertEqual(committed, canonical_json(self.r))
+        self.assertEqual(json.loads(committed), self.r)
 
     def test_firewall(self):
         for key in (

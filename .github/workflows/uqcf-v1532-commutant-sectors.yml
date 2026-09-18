@@ -73,5 +73,24 @@ jobs:
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.32-commutant-sector-decomposition
         run: |
           python -m unittest -v test_gate.py
-          python sector_decomposition_gate.py > /tmp/v1532-results.json
+          python sector_decomposition_gate.py --check docs/RESULTS.json > /tmp/v1532-results.json
           python -m compileall -q sector_decomposition_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='MULTIPLICITY_FREE_SECTORS_BUT_WEIGHT_NONUNIQUENESS'
+          assert r['rational_macro_sector_dimensions']=={'axis':12,'diagonal':12,'generic':24,'homology':2}
+          assert r['sector_self_end_dimensions']=={'axis':3,'diagonal':3,'generic':3,'homology':1}
+          assert r['cross_sector_hom_zero'] is True
+          assert r['recovered_total_commutant_dimension']==10
+          assert r['nonzero_momentum_orbit_count']==9
+          assert r['splitting_field_sector_count']==10
+          assert r['multiplicity_free_over_splitting_field'] is True
+          assert r['mixing_freedom_dimension']==0
+          assert r['projective_relative_weight_dimension']==9
+          assert r['new_source_semantics_axiom_added'] is False
+          assert r['coupling_solver_reopened'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['physical_gravity_derived'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY
