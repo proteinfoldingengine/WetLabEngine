@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UQCF–GEM v15.29 Provenance Faithfulness</title>
+<style>
+*{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:#f6f7f8;color:#18232c;font-family:system-ui,-apple-system,sans-serif}main{max-width:1080px;margin:auto;padding:28px}h1{font-size:clamp(28px,4vw,46px);letter-spacing:-.03em;line-height:1.12}.tag{font-size:11px;font-weight:750;letter-spacing:.12em}.lead,details{line-height:1.7}.card{background:white;border:1px solid #d4dce2;border-radius:12px;padding:20px;margin:22px 0;min-width:0}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.stat{min-width:0;overflow-wrap:anywhere}.stat strong{display:block;font-size:22px;overflow-wrap:anywhere}.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0}.controls label{font-weight:700}select{font:inherit;padding:10px;max-width:100%;min-width:0}.status{padding:16px;border:1px solid #ccd4da;border-radius:8px;line-height:1.7;overflow-wrap:anywhere}.small{font-size:12px;line-height:1.7}.notice{font-weight:750}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}summary{font-weight:750;cursor:pointer}@media(max-width:700px){main{padding:20px 15px}.stats{grid-template-columns:1fr}.controls{align-items:stretch;flex-direction:column}select{width:100%}}
+</style>
+</head>
+<body>
+<main>
+<div class="tag">UQCF–GEM / v15.29 / PROVENANCE FAITHFULNESS</div>
+<h1>Do not promote a microscopic difference into source physics without evidence.</h1>
+<p class="lead">This gate inspects exact representatives inside one coarse <strong>q</strong>-fiber and asks only what the frozen provenance stack actually certifies. <strong>Microscopic difference is not automatically physical source difference.</strong></p>
+<section class="card stats">
+<div class="stat">gate status<strong id="gateStatus"></strong></div>
+<div class="stat">countermodels survive<strong id="countermodels"></strong></div>
+<div class="stat">representation ready<strong id="ready"></strong></div>
+</section>
+<div class="controls">
+<label for="fiber">Inspect q-fiber example</label>
+<select id="fiber"></select>
+<label for="view">Inspect status layer</label>
+<select id="view">
+<option value="fiber">fiber relation</option>
+<option value="action">action boundary</option>
+<option value="gate">gate adjudication</option>
+</select>
+</div>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+<section class="card">
+<div class="mono" id="exact"></div>
+</section>
+<details open><summary>Why multiple representatives do not yet define a richer source carrier</summary><p>Face-boundary and cycle shifts can preserve the same coarse source exactly. That proves a nontrivial algebraic fiber, not a physical provenance distinction. The frozen evidence contains no typed relation assigning those torus representatives distinct provenance classes.</p></details>
+<details><summary>Why the countermodels matter</summary><p>A collapsed provenance expansion and a distinguishing provenance expansion can preserve the same frozen q, source-role, Genesis-legitimacy, and retained-grade data. Because both are compatible with the frozen reduct, that reduct does not entail either fiber relation.</p></details>
+<details><summary>Why the synthetic action control does not rescue the real branch</summary><p>The inherited torus machinery can support an exact group action and exact B1 projection equivariance when the missing structure is supplied explicitly. That validates the machinery. It does not turn a synthetic relation into frozen scientific evidence.</p></details>
+<details><summary>Claim boundary</summary><p>No coupling member, holonomy selector, Newton/GR criterion, metric selector, pruning rule, entropy rule, or physical-time observable is used here. The next required object is an independently motivated provenance–q-fiber relation.</p></details>
+<p class="notice">Playback is not physical time.</p>
+<p class="small">This file is self-contained and makes no network requests. Selectors change the inspection view only; they are not physical events.</p>
+</main>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+'use strict';
+const D=JSON.parse(document.getElementById('data').textContent),A=D.audit,$=x=>document.getElementById(x);
+$('gateStatus').textContent=A.status;
+$('countermodels').textContent=String(A.countermodels_survive);
+$('ready').textContent=String(A.representation_ready);
+for(const r of D.fibers){const o=document.createElement('option');o.value=r.key;o.textContent=r.key;$('fiber').appendChild(o)}
+function current(){return D.fibers.find(x=>x.key===$('fiber').value)||D.fibers[0]}
+function show(){const r=current(),v=$('view').value;if(v==='fiber'){$('status').textContent=r.key+' — same q as root: '+r.same_q_as_root+' — provenance relation: '+r.provenance_relation_to_root;$('exact').textContent='q nonzero = '+JSON.stringify(r.q_nonzero)+'\nedge nonzero = '+JSON.stringify(r.edge_nonzero)+'\ndifference from root = '+JSON.stringify(r.difference_from_root_nonzero)}else if(v==='action'){$('status').textContent='natural action certified: '+A.natural_action_certified+' — projection to q certified: '+A.projection_to_q_certified+' — representation ready: '+A.representation_ready;$('exact').textContent='The real archive supplies no certified torus provenance action. The synthetic control is not promoted to frozen evidence.'}else{$('status').textContent=A.status+' — next: '+A.next_required_object;$('exact').textContent='countermodels survive = '+A.countermodels_survive+'\nextension kernel status = '+A.extension_kernel_status+'\ncoupling solver reopened = '+A.coupling_solver_reopened+'\ngravity observables evaluated = '+A.gravity_observables_evaluated}}
+$('fiber').onchange=show;$('view').onchange=show;
+window.__demo={chooseFiber:k=>{if(!D.fibers.some(r=>r.key===k))throw Error('unknown fiber');$('fiber').value=k;show()},chooseView:k=>{if(!['fiber','action','gate'].includes(k))throw Error('unknown view');$('view').value=k;show()},data:D};
+show();
+</script>
+</body>
+</html>

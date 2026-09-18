@@ -1,0 +1,222 @@
+[
+  {
+    "blob": "9917085b211ca0e1f4737082227f55097cc72b66",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "ABSOLUTE_SOURCE_CALIBRATION_NOT_DERIVED",
+    "codomains": [
+      "OBSERVER_SOURCE_CALIBRATION",
+      "RETAINED_SOURCE_GRADE"
+    ],
+    "domain": "RETAINED_SOURCE_CURRENT",
+    "key": "v13.26-source-calibration",
+    "path": "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md",
+    "relation_class": "ARCHIVE_EVIDENCE_ONLY",
+    "value_type": "SOURCE_CALIBRATION_ORIGIN_BOUNDARY"
+  },
+  {
+    "blob": "e5d9566bfc86c801d2933e63453d1800f60a675b",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "REQUIRES_NEW_REPRESENTATION_LINK",
+    "codomains": [
+      "HERMITIAN_25_SUPPORT_SOURCE"
+    ],
+    "domain": "PROVENANCE_CARRIER",
+    "key": "v14.04-provenance-representation",
+    "path": "ResearchHistory/UQCF-GEM/v14/v14.04/REPORT.md",
+    "relation_class": "CONDITIONAL_ON_SUPPLIED_MAP",
+    "value_type": "PROVENANCE_REPRESENTATION_AUDIT"
+  },
+  {
+    "blob": "1afbb7aebe384a1fb761f99fd2b040e595be1fa5",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "NO_COMMON_PARENT_REPRESENTATION_FROM_PROVENANCE",
+    "codomains": [
+      "COMPATIBILITY_SUPPORT"
+    ],
+    "domain": "COMPATIBILITY_PARENT",
+    "key": "v15.01-common-parent",
+    "path": "ResearchHistory/UQCF-GEM/v15/v15.01/REPORT.md",
+    "relation_class": "ARCHIVE_EVIDENCE_ONLY",
+    "value_type": "COMMON_PARENT_REPRESENTATION_AUDIT"
+  },
+  {
+    "blob": "be1281621b0e2872e555223b2c1cdb98fe9d8011",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "NO_CERTIFIED_SHARED_LABEL_CARRIER",
+    "codomains": [
+      "QUANTUM_SITE_LABELS"
+    ],
+    "domain": "RETAINED_GRAPH_LABELS",
+    "key": "v15.02-shared-label",
+    "path": "ResearchHistory/UQCF-GEM/v15/v15.02/REPORT.md",
+    "relation_class": "NO_TYPED_RELATION",
+    "value_type": "SHARED_LABEL_EQUIVARIANCE_AUDIT"
+  },
+  {
+    "blob": "6c3aed73c63c9c7554107d163e15b8fae7549c1c",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "NO_CERTIFIED_GRAPH_SITE_FACTORIZATION",
+    "codomains": [
+      "QUANTUM_SITE_CARRIER"
+    ],
+    "domain": "RETAINED_GRAPH_CARRIER",
+    "key": "v15.03-graph-site-source-lift",
+    "path": "ResearchHistory/UQCF-GEM/v15/v15.03/REPORT.md",
+    "relation_class": "NO_TYPED_RELATION",
+    "value_type": "GRAPH_SITE_SOURCE_LIFT_AUDIT"
+  },
+  {
+    "blob": "c3abb3af5b5c7210fc717392d4e2cc6fc4648284",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "CANONICAL_INTRA_QUANTUM_STRUCTURE_NOT_SOURCE_SEMANTICS",
+    "codomains": [
+      "FRAME_NEUTRAL_REFERENCE",
+      "CENTERED_LOG_INFORMATION_GENERATOR"
+    ],
+    "domain": "QUANTUM_STATE_CARRIER",
+    "key": "v15.07-neutral-reference",
+    "path": "ResearchHistory/UQCF-GEM/v15/v15.07/REPORT.md",
+    "relation_class": "ARCHIVE_EVIDENCE_ONLY",
+    "value_type": "CANONICAL_QUANTUM_INFORMATION_STRUCTURE"
+  },
+  {
+    "blob": "23bbeaecdb81adfe1a39b3140569d23c367b8b55",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "SOURCE_SEMANTICS_IRREDUCIBLE_RELATIVE_TO_FROZEN_ONTOLOGY",
+    "codomains": [
+      "PHYSICAL_SOURCE_SEMANTICS",
+      "HERMITIAN_SOURCE_GENERATOR"
+    ],
+    "domain": "FROZEN_PROVENANCE_SOURCE_ONTOLOGY",
+    "key": "v15.08-source-semantics",
+    "path": "ResearchHistory/UQCF-GEM/v15/v15.08/REPORT.md",
+    "relation_class": "NO_TYPED_RELATION",
+    "value_type": "SOURCE_SEMANTICS_IRREDUCIBILITY"
+  },
+  {
+    "blob": "ec73ef9240dcef062c95a82c511a874d0d2923ef",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "CANONICAL_NEUTRAL_STRUCTURE_DOES_NOT_DERIVE_RETAINED_QUANTUM_CARRIER",
+    "codomains": [
+      "QUANTUM_SUBSYSTEM_CARRIER",
+      "COMPATIBILITY_PARENT"
+    ],
+    "domain": "RETAINED_RELATIONAL_CARRIER",
+    "key": "v15.09-carrier-origin",
+    "path": "ResearchHistory/UQCF-GEM/v15/v15.09/REPORT.md",
+    "relation_class": "NO_TYPED_RELATION",
+    "value_type": "CROSS_DOMAIN_CARRIER_ORIGIN_AUDIT"
+  },
+  {
+    "blob": "99110f943550751645539c0c8a7339024d7fefd3",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "FIXTURE_ONLY_NO_PROVENANCE_FIBER_SEMANTICS",
+    "codomains": [
+      "Q_SOURCE_QUOTIENT"
+    ],
+    "domain": "TORUS_CHAIN_CANARY_FIXTURE",
+    "key": "v15.25-pretime-canary",
+    "path": "ResearchHistory/UQCF-GEM/demos/v15.27-target-origin/baseline/baseline/pretime_gravity_canary.py",
+    "relation_class": "ARCHIVE_EVIDENCE_ONLY",
+    "value_type": "PRETIME_CANARY_FIXTURE"
+  },
+  {
+    "blob": "623defd0d8284e5d9cba6d8f8679de698e5202bc",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "TARGET_SELECTOR_CONDITIONAL_NOT_SOURCE_PROVENANCE",
+    "codomains": [
+      "CYCLE_RESPONSE_TARGET"
+    ],
+    "domain": "TORUS_CHAIN_RESPONSE_COORDINATES",
+    "key": "v15.26-selector-rank",
+    "path": "ResearchHistory/UQCF-GEM/demos/v15.27-target-origin/baseline/selector_rank.py",
+    "relation_class": "ARCHIVE_EVIDENCE_ONLY",
+    "value_type": "METRIC_FREE_CYCLE_RESPONSE_COORDINATES"
+  },
+  {
+    "blob": "1c33232050567bf3b2bf77b19570ec2b8a1fb5e0",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "CYCLE_RESPONSE_TARGET_DOES_NOT_FACTOR_THROUGH_Q",
+    "codomains": [
+      "Q_SOURCE_QUOTIENT",
+      "CYCLE_RESPONSE_TARGET"
+    ],
+    "domain": "TORUS_CHAIN_SOURCE_RESPONSE_AUDIT",
+    "key": "v15.27-target-origin",
+    "path": "ResearchHistory/UQCF-GEM/demos/v15.27-target-origin/target_origin.py",
+    "relation_class": "ARCHIVE_EVIDENCE_ONLY",
+    "value_type": "TARGET_ORIGIN_AUDIT"
+  },
+  {
+    "blob": "6d1ed9766d89c2f66d072978a8fa4b60bedccb39",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "PRETIME_COUPLING_BLOCKED_BY_REPRESENTATION_LINK",
+    "codomains": [
+      "Q_SOURCE_QUOTIENT",
+      "CYCLE_RESPONSE_TARGET"
+    ],
+    "domain": "Q_ONLY_COUPLING_AUDIT",
+    "key": "v15.28-ledger",
+    "path": "ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space/docs/RESULTS.json",
+    "relation_class": "ARCHIVE_EVIDENCE_ONLY",
+    "value_type": "V15_28_COUPLING_LEDGER"
+  },
+  {
+    "blob": "1ea6c653dd45b2c01da1bb5a09f629bd2d12e67d",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "Q_ONLY_COUPLING_SPACE_DIMENSION_3_AND_PROVENANCE_LINK_BLOCK",
+    "codomains": [
+      "Q_SOURCE_QUOTIENT",
+      "CYCLE_RESPONSE_TARGET"
+    ],
+    "domain": "Q_ONLY_COUPLING_AUDIT",
+    "key": "v15.28-report",
+    "path": "ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space/README.md",
+    "relation_class": "ARCHIVE_EVIDENCE_ONLY",
+    "value_type": "V15_28_COUPLING_REPORT"
+  },
+  {
+    "blob": "9a1523c08d2b9b2c5ba2d298dfed3d563a750bec",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "DISCRETE_SOURCE_LEGITIMACY_NOT_TORUS_EDGE_LABEL",
+    "codomains": [
+      "SOURCE_ROLE_CLASS"
+    ],
+    "domain": "RECOVERABILITY_SOURCE_LEGITIMACY",
+    "key": "v923-source-role",
+    "path": "Tmp/TOE/Einstein 3/v923_full_stack_source_role_closure_proof/FULL_REPORT_AND_PROOF.md",
+    "relation_class": "CERTIFIED_PROVENANCE_RELATION",
+    "value_type": "TERNARY_SOURCE_ROLE"
+  },
+  {
+    "blob": "8f4ee48cbaf6c822b87dd5e30a5dfee4d596e26e",
+    "certifies_action": false,
+    "certifies_q_fiber_relation": false,
+    "claim_boundary": "HISTORY_LEGITIMACY_NOT_MICROSCOPIC_INCIDENCE",
+    "codomains": [
+      "PINNED_REGISTRY",
+      "GENESIS_ROOT",
+      "WITNESS_QUORUM",
+      "APPEND_ONLY_CONTINUITY"
+    ],
+    "domain": "HISTORY_PROVENANCE",
+    "key": "v997-genesis-pin",
+    "path": "Tmp/TOE/Einstein 4/V997_FULL_STACK_GENESIS_PIN_BRIDGE_REPORT.md",
+    "relation_class": "CERTIFIED_PROVENANCE_RELATION",
+    "value_type": "GENESIS_HISTORY_LEGITIMACY"
+  }
+]
