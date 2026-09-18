@@ -73,7 +73,10 @@
     "distance_floor_A": 1.5,
     "favorable_energy_cap_kcal_per_mol": -3,
     "positive_energy_contribution": 0,
-    "virtual_atom_rule": "O and H placed opposite the in-plane bisectors of their two reconstructed heavy-atom bonds"
+    "virtual_atom_rule": "O and H placed opposite the in-plane bisectors of their two reconstructed heavy-atom bonds",
+    "applies_to_all_arms": true,
+    "donor_eligibility_uses_real_target_sequence": true,
+    "control_boundary": "Backbone hydrogen bonding is common physics; sequence shuffling affects only side-chain hydropathy/electrostatic labels."
   },
   "hydropathy_model": {
     "source": "Eisenberg et al. normalized consensus hydrophobicity scale, J Mol Biol 179:125-142 (1984)",
@@ -127,7 +130,7 @@
   "generic_collapse_control": {
     "contact_midpoint_A": 8,
     "contact_width_A": 0.5,
-    "initial_gradient_match_to": "real-sequence nonlocal hydropathy + electrostatics + hydrogen-bond contribution",
+    "initial_gradient_match_to": "real-sequence side-chain hydropathy + electrostatics contribution",
     "scale_once_at_initial_state": true,
     "live_renormalization": false
   },
@@ -158,5 +161,15 @@
       0.75,
       1.25
     ]
+  },
+  "shuffled_sequence_control": {
+    "scope": "composition-preserving shuffle of nonlocal side-chain hydropathy/electrostatic labels only",
+    "backbone_geometry": "identical canonical geometry in every arm",
+    "backbone_hbond_donor_eligibility": "real target sequence retained so proline backbone chemistry is common across arms",
+    "fixed_sequences": {
+      "1VII": "LRSFKMAKELKSKMTAFLEKAFGWGDPFLQQLNDVN",
+      "1L2Y": "NKPPLIGSQRDSWPSPLGGY",
+      "1UAO": "TGYWEPGTGD"
+    }
   }
 }
