@@ -1,0 +1,42 @@
+{
+  "schema": "protein-p9-retained-coherence-result-record-v1",
+  "decision": "NO_GO_RETAINED_COHERENCE_TRANSFER_SIGNAL",
+  "scientific_head": "8f4e320b291d6fba7c43cd716e4af3f348ef27d4",
+  "measured_head": "234ab6f8357000f75c322803992a05cbbe528a02",
+  "workflow_run_id": 35385155331,
+  "job_id": 105730229017,
+  "artifact_id": 10563980479,
+  "artifact_sha256": "0267103d8ad7e7884912183bb1525d45eed48862e6e0778ece922b743884f804",
+  "source_integrity_passed": true,
+  "cardinality_passed": true,
+  "native_information_firewall_passed": true,
+  "instance_counts": {
+    "1UAO": 24,
+    "1L2Y": 40
+  },
+  "directions": {
+    "1UAO_to_1L2Y": {
+      "rmse_m0": 0.2631784996373341,
+      "rmse_m1": 0.2518526868941333,
+      "rmse_m2": 0.2452414162325747,
+      "corr_m0": 0.8426198776119275,
+      "corr_m1": 0.851994308518099,
+      "corr_m2": 0.8553844134290115,
+      "delta": 0.006611270661558616,
+      "relative_rmse_reduction": 0.026250546472580117,
+      "p_value": 0.463768115942029
+    },
+    "1L2Y_to_1UAO": {
+      "rmse_m0": 0.10178729703981682,
+      "rmse_m1": 0.09738890035894479,
+      "rmse_m2": 0.10286130359310486,
+      "corr_m0": 0.7575750257881022,
+      "corr_m1": 0.6956623013732478,
+      "corr_m2": 0.6872517583549025,
+      "delta": -0.005472403234160067,
+      "relative_rmse_reduction": -0.05619124165064513,
+      "p_value": 0.4877561219390305
+    }
+  },
+  "p9b_authorized": false
+}
