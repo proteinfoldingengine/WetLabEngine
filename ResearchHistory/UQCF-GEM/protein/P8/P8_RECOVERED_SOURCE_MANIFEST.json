@@ -1,0 +1,123 @@
+{
+  "schema": "protein-p8-recovered-source-manifest-v1",
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "branch": "research/protein-p8-patch622-624-reopen",
+  "p7_base_commit": "0e156790b961abdebcd288b333b44c2e6df05d61",
+  "p7_certified_source_head": "72c6d464cad50183fd17ac932b40745438576331",
+  "p7_workflow_run": 35298063514,
+  "p7_artifact": {
+    "id": 10528821674,
+    "name": "protein-p7-source-reduction",
+    "sha256": "c34e49c1ce9f23eae00afa2e0f15b25f15509acc275d4372d5e47726ad33f02d"
+  },
+  "provenance_note": "Recovered folders are mixed historical snapshots. Patch labels below are the exact labels present in each file; no pure-release claim is made.",
+  "bundles": {
+    "patch622_623": {
+      "drive_folder_id": "1kYk-we-NgI_Fbg_BG8IY1InFXnzEkxRU",
+      "label": "Patch-622/623 recovered bundle",
+      "files": [
+        {
+          "path": "recovered_patch622/main.py",
+          "drive_id": "1zibfebFh0-iQMkXZyDoBmdjLNYqUsbNG",
+          "sha256": "7c461d6cb91531caf71b78c92e90244ba41b87323748e37c507670fb54ef94b3",
+          "git_blob_sha": "7a3c943cf260df0cbb07727ea6e3d16ef7a60753",
+          "source_label": "header 622.2; runtime PATCH_ID Patch_623_Contact_Activation_Fix"
+        },
+        {
+          "path": "recovered_patch622/dag_engine.py",
+          "drive_id": "1ojCa7wWaqzt9u3etrA8_YLkiVFbxpz8d",
+          "sha256": "ee2d2f3148105815e0670b83d7dc62427e4637f732539343943506fe29b9b91e",
+          "git_blob_sha": "0a3f945c1dea2268caeea951027986839ba40f3d",
+          "source_label": "622.1 Configurable Topology"
+        },
+        {
+          "path": "recovered_patch622/force_field.py",
+          "drive_id": "1D82b07r8qjV923QsLpYP8CF-m1Pr10WP",
+          "sha256": "69dde0b4a4de06798963c7bc489b13143cb2c5bf70b500fa1b420347f52230ce",
+          "git_blob_sha": "bed2222431863265fa7f71badfdb3165526d88cf",
+          "source_label": "623.0 Torsional Incoherence Penalty"
+        },
+        {
+          "path": "recovered_patch622/config_loader.py",
+          "drive_id": "1lkuryf4fBe6q6rTuAOGapZLJuactYVcV",
+          "sha256": "bb0abe0c79f6e68a64e0424b7cd0ae1eed412b027ab104ed2d09dc0f756eb100",
+          "git_blob_sha": "49d36bc0f3c074dcbcbc3f21e2f558f61f293404"
+        },
+        {
+          "path": "recovered_patch622/metrics_history.py",
+          "drive_id": "1cdpUU8ZD-ZM0plQzjHna1DawkGRomKs9",
+          "sha256": "bb5883f08721e2cf0394a3218fe890369eba47d3899ba8704010b886520b0bd6",
+          "git_blob_sha": "fe3f02f7f4d7aad97027fa9258ab8eab3d5469ea",
+          "source_label": "622.0 Betti-Driven Activation"
+        },
+        {
+          "path": "recovered_patch622/physics_constants.py",
+          "drive_id": "19IbBmvxnC2u5J4PfK0r8tzq4gxMQ-8uc",
+          "sha256": "2018c8335aa366be4598eb55df1dc6d5b7a5fe08b313ef12defaedc6e31ce708",
+          "git_blob_sha": "36e6d50e297fc2363b0312d913558989414ad90c",
+          "source_label": "620"
+        },
+        {
+          "path": "recovered_patch622/1ubq_baseline.yaml",
+          "drive_id": "18IgG-0Xci-kC3uTP-_bQTmV99pdA_qpr",
+          "sha256": "2d1860bf586a5cb36d67f688aca032b2db262f8f77be4da92dc2aa45a2fe8638",
+          "git_blob_sha": "c0ce626cb6d9b2426c6359a1d0d7941cf5ad0eab",
+          "source_label": "Patch_623.0_Torsional_Incoherence_Penalty"
+        }
+      ]
+    },
+    "patch624_625": {
+      "drive_folder_id": "1xW0FbrtXCR048VfdS7Hi01QvjTezDljk",
+      "label": "Patch-624/625 recovered bundle",
+      "files": [
+        {
+          "path": "recovered_patch624/main.py",
+          "drive_id": "1lvqWS0m2C2mJ7KhN5PKajurvNXLP6R7-",
+          "sha256": "a78b3c638682e206178e6022748d75cab2937de3b737e3c53b3fa9be1dfb0760",
+          "git_blob_sha": "cbb4e7be5d84c2a83c915f7bdacba23d8a6fdc64",
+          "source_label": "header 622.2; runtime PATCH_ID Patch_625"
+        },
+        {
+          "path": "recovered_patch624/dag_engine.py",
+          "drive_id": "1soTZT-k6-xIw56JZ-e-guxzvT-Uwoo93",
+          "sha256": "1eccbcdd4367db5ee63459e631657e634788387208d113eb7713880b2c08b43f",
+          "git_blob_sha": "4694cab56217202b8732cd2800f1bc3c60c589dc",
+          "source_label": "624.1 Force Activation Fix"
+        },
+        {
+          "path": "recovered_patch624/force_field.py",
+          "drive_id": "1CEi0STjaoBYloTn58FfhMduZkm8rBtLg",
+          "sha256": "1aa99c3e681c1c9a8c9e591e2c514e3762ed568b2fc5d2725313aa3b97578935",
+          "git_blob_sha": "749a9f4203969e05d33228cc699dcb3f3c968e37",
+          "source_label": "624.1 Logging Fix"
+        },
+        {
+          "path": "recovered_patch624/config_loader.py",
+          "drive_id": "1E9S7j5CC62GDAkuYxcHO0BeArdW3XcLF",
+          "sha256": "bb0abe0c79f6e68a64e0424b7cd0ae1eed412b027ab104ed2d09dc0f756eb100",
+          "git_blob_sha": "49d36bc0f3c074dcbcbc3f21e2f558f61f293404"
+        },
+        {
+          "path": "recovered_patch624/metrics_history.py",
+          "drive_id": "1WW8zMyciwhsYUkHhI5rg_vTvS3Iu2Jza",
+          "sha256": "bb5883f08721e2cf0394a3218fe890369eba47d3899ba8704010b886520b0bd6",
+          "git_blob_sha": "fe3f02f7f4d7aad97027fa9258ab8eab3d5469ea"
+        },
+        {
+          "path": "recovered_patch624/physics_constants.py",
+          "drive_id": "1-9Dw0gmO4uM1qHkiPVFrlMwpC4SEFHph",
+          "sha256": "2018c8335aa366be4598eb55df1dc6d5b7a5fe08b313ef12defaedc6e31ce708",
+          "git_blob_sha": "36e6d50e297fc2363b0312d913558989414ad90c"
+        },
+        {
+          "path": "recovered_patch624/1ubq_baseline.yaml",
+          "drive_id": "1uvMq1A3YheUTJ1FNt8jDIGtDuqLssA01",
+          "sha256": "57d3ff93e1762b54e3495bbd401f29bf9bb236e836af238f0d56544625d0da91",
+          "git_blob_sha": "3cc0f9d5e808e8edd0fd12603e9ea13a04eb1b97",
+          "source_label": "Patch_625_Torsional_Resolution"
+        }
+      ]
+    }
+  },
+  "raw_historical_execution_log_recovered": false
+}
