@@ -2,7 +2,8 @@
 
 **Decision date:** 2026-09-17  
 **Repository:** `proteinfoldingengine/WetLabEngine`  
-**Evidence archive merge:** `fae90c62ea4edee9df1c552c170dc8261dda2bb2`
+**Historical evidence archive merge:** `fae90c62ea4edee9df1c552c170dc8261dda2bb2`  
+**Current evidence baseline:** `ca3f0e062c5f28ff048fa01de5915f0990b16007`
 
 ## Program decision
 
@@ -68,6 +69,39 @@ The constrained representation remained physically valid, but the TPO entropy ca
 
 This closes TPO-entropy-specific continuation on the present evidence.
 
+
+### P6 — native-blind physical preorganization
+
+**Decision:** `NO_GO_SEQUENCE_SPECIFIC_PHYSICAL_PREORGANIZATION`
+
+- certified scientific head: `bc00fa3af135219fdf498ed0d271b6a8a649496a`
+- authoritative launch head: `4866bee47ddecdf9e15daa71d2048854fcf24d80`
+- authoritative measurement run: `35299722526`
+- authoritative artifact: `10530595637`
+- artifact SHA-256: `d0545fb6b70e28b2cfc26799ddc0b308febd69ebfafc0c05dd87e1013c2594ef`
+- result-record head: `d1e159e226fb755e8d017564a9ca1f396eb8de9a`
+- post-result certification run: `35303421027`
+- archive merge: `ca3f0e062c5f28ff048fa01de5915f0990b16007`
+
+P6 was deliberately independent of the failed historical mechanisms. It tested a target-independent canonical peptide backbone with ordinary native-blind sterics, local Ramachandran preference, directional backbone hydrogen bonding, sequence-dependent hydropathy and screened electrostatics against a composition-preserving shuffled-sequence control and a gradient-matched generic-collapse null.
+
+The result contains a bounded partial signal:
+
+- the real-sequence arm had the highest pooled fixed-budget native-contact precision;
+- the real sequence beat generic collapse in the pooled matched comparison after Holm correction;
+- 1UAO showed a strong favorable real-sequence effect.
+
+But the preregistered transfer claim failed because:
+
+- 1VII did not beat generic collapse;
+- the real sequence did not beat the shuffled-sequence control on every target;
+- the real-versus-shuffle comparison was not statistically significant;
+- 1VII and 1L2Y failed the anti-collapse Rg gate.
+
+The larger targets also lost native-contact precision relative to their matched randomized starting ensembles, whereas 1UAO improved. This is not transferable physical preorganization.
+
+P6 therefore closes the tested minimal conventional-physics model. The result does not justify post-exposure coefficient tuning or adding familiar force-field terms merely to rescue the endpoint.
+
 ## What is closed
 
 Do not continue, on the current evidence, with:
@@ -77,7 +111,9 @@ Do not continue, on the current evidence, with:
 - post-exposure retuning of the recovered TPO entropy term;
 - seed removal, target substitution, alternate-endpoint rescue, or coefficient search intended to reverse a frozen NO-GO;
 - broad force-field expansion whose purpose is primarily to keep one of the failed custom mechanisms alive;
-- another historical replay whose only purpose is to restate an already-bounded historical result.
+- another historical replay whose only purpose is to restate an already-bounded historical result;
+- post-exposure tuning or endpoint rescue of the P6 minimal conventional-physics model;
+- open-ended addition of standard solvation, side-chain packing, or many-body terms merely to convert P6 into an existing-style coarse-grained force field.
 
 ## What survives
 
@@ -90,7 +126,10 @@ The following remain useful scientific and engineering assets:
 5. source- and artifact-hash certification;
 6. physically constrained differentiable peptide-backbone kinematics;
 7. native-blind optimization/evaluation separation;
-8. CI-backed RED/GREEN and authoritative-measurement workflow patterns.
+8. CI-backed RED/GREEN and authoritative-measurement workflow patterns;
+9. target-independent canonical peptide geometry;
+10. composition-preserving sequence-shuffle and gradient-matched collapse controls;
+11. fixed-budget topology metrics designed to resist over-collapse artifacts.
 
 These assets can support future protein work, but they do not themselves establish a novel folding mechanism.
 
@@ -110,7 +149,7 @@ Any reopened program should begin with a fresh preregistration and should not in
 
 ## Decision-path consequence
 
-The protein GO/NO-GO program has done what it was designed to do: distinguish preserved historical observations from mechanisms that survive controlled prospective testing.
+The protein GO/NO-GO program has done what it was designed to do: distinguish preserved historical observations from mechanisms that survive controlled prospective testing. P6 extended that discipline beyond the historical mechanisms and showed that the retained backbone infrastructure can support a clean native-blind physics benchmark, but the tested minimal model still did not earn a transferable sequence-specific preorganization claim.
 
 The current decision is therefore:
 
@@ -119,4 +158,5 @@ STOP mechanism-specific open-ended development.
 PRESERVE the evidence.
 RETAIN the validated constrained-backbone and measurement infrastructure.
 REOPEN only on materially new, prospectively testable evidence.
+Do not launch P7 merely to tune P6 or recreate an established coarse-grained force field.
 ```
