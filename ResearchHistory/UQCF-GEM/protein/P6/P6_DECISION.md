@@ -1,186 +1,156 @@
-# Protein P6 — Scientific continuation decision
+# Protein P6 — Corrected scientific continuation decision
 
 **Assessment date:** 2026-09-17  
-**Program decision:** `NO_GO_CONTINUE_HISTORICAL_CUSTOM_PROTEIN_MECHANISM_DEVELOPMENT`  
-**Retention decision:** `GO_RETAIN_KINEMATIC_BACKBONE_AND_VALIDATION_INFRASTRUCTURE`
+**Program status:** `NO_GO_TESTED_MECHANISMS_BROADER_EARLY_BACKBONE_LINE_OPEN`  
+**Retention status:** `GO_RETAIN_KINEMATIC_BACKBONE_AND_VALIDATION_INFRASTRUCTURE`
 
-## Decision question
+## Corrected decision
 
-After reconstructing, auditing, reducing and prospectively retesting the original protein-backbone/TPO work, is there enough surviving evidence of a distinct, physically valid and transferable mechanism to justify continued custom-engine development?
+P6 closes the specific historical mechanisms that have actually been subjected to certified falsification. It does **not** close every distinct mechanism in the earlier backbone program.
 
-**No, on the present evidence.**
+The correct conclusion is:
 
-This is a cost-benefit and scientific-evidence decision about the historical mechanism line. It is not a theorem that custom protein physics can never be useful.
+> The v9 hierarchy, Patch-630 physical-backbone interpretation, Patch-630 contact-graph generalization, and recovered TPO-entropy mechanism have not earned further mechanism-specific development. The earlier Phase-I observable-driven controller architecture remains a distinct, incompletely tested scientific line.
 
-## Evidence chain
+The prior P6 wording was too broad because it treated failure of those tested mechanisms as if it exhausted the earlier Phase-I topology/DAG controller.
 
-### 1. v9 did not earn mechanism-specific continuation
+## Mechanisms now closed on present evidence
 
-P1 returned:
+### v9 live hierarchy
 
-`NO_GO_HIERARCHICAL_ADVANTAGE`.
+P1: `NO_GO_HIERARCHICAL_ADVANTAGE`.
 
-The live v9 hierarchy was not the best pooled method, was slightly worse than the frozen gate on both targets, and failed both preregistered significance comparisons. The result supports geometry-based regularization as a phenomenon but not the live v9 gate as a distinct mechanism.
+The live state-dependent hierarchy was not required to obtain the observed compact-model behavior and did not beat the simpler frozen/information-matched controls under the preregistered gate.
 
-### 2. The Patch-630 contact-graph effect did not transfer
+### Patch-630 physical interpretation
 
-The first held-out 1CRN gate completed 40/40 runs without target-specific retuning.
+P4: `NO_GO_HISTORICAL_PHYSICAL_BACKBONE_INTERPRETATION`.
 
-The primary final-phi-RMS means were:
+The recovered representation did not preserve peptide C-N connectivity and had no covalent enforcement capable of repairing it. Its reproduced low phi dispersion therefore remains a numerical result, not evidence of physical peptide-backbone organization.
 
-- contacts OFF: 0.436367;
-- generic compaction: 0.443913;
-- randomized graph: 0.483164;
-- frozen graph: 0.491758;
-- dynamic contacts: 0.513597.
+### Patch-630 contact-graph transfer
 
-The frozen graph was worse than contacts OFF in **8/8** matched seeds.
+Held-out 1CRN Gate 005: `NO TRANSFER`.
 
-Verdict:
+The frozen Villin contact graph was worse than contacts OFF in 8/8 held-out matched seeds. The dynamic contact condition was also worse on average.
 
-`NO TRANSFER`.
+### TPO as an independent predictor
 
-This blocks promotion of the Villin contact-graph effect as a general protein-backbone mechanism.
+The certified 1QYS audit found no independent torsional-preorganization signal after controlling for initial geometry/topology:
 
-### 3. Historical TPO was not an independent predictor in the recovered 1QYS population
+- adjusted torsion entropy rho = +0.02387, p = 0.45086;
+- adjusted torsion basin-distance rho = +0.00471, p = 0.88184.
 
-The certified HB2 audit used 1000 rows.
+### TPO entropy on a physically valid backbone
 
-Raw torsional correlations with final RMSD were small. After residualizing against initial radius of gyration and Betti1:
+P5: `NO_GO_TPO_ENTROPY_INCREMENT`.
 
-- torsion entropy: rho = **+0.02387**, p = **0.45086**;
-- torsion basin-distance metric: rho = **+0.00471**, p = **0.88184**.
+On the certified kinematic peptide backbone, the preregistered Rama+entropy candidate was worse than both Rama and simple torsion-variance controls on both 1VII and held-out 1CRN. Covalent and numerical controls passed, so the negative result is not an artifact of broken peptide geometry.
 
-The adjusted evidence does not support an independent TPO signal beyond the stronger initial geometry/topology variables in that recovered dataset.
+## What remains scientifically open
 
-### 4. Patch 630 was not a physically connected peptide backbone
+The forensic reconstruction shows a mechanically distinct earlier Phase-I architecture:
 
-P4 returned:
+```text
+structure observables
+    -> controller state/action
+    -> physical-force policy
+    -> new structure
+    -> new observables
+```
 
-`NO_GO_HISTORICAL_PHYSICAL_BACKBONE_INTERPRETATION`.
+The strongest surviving source-level candidates are:
 
-The exact recovered source declares a 1.33-A peptide C-N distance, but the seed-42 initializer produced:
+1. **topology/DAG phase control** — state-driven Compaction -> LockIn switching based on Betti1 threshold and persistence;
+2. **observable-driven force activation** — topology changes which physical terms are active rather than merely being logged;
+3. **adjacent physics-only feedback controller** — online Rg, phi dispersion, coherence and Betti-lifetime behavior can emit force-policy actions such as contact ramps, hydrophobic boosts, Rama relaxation and Rg-window enforcement.
 
-- 0/35 peptide C-N links within 0.1 A of 1.33 A;
-- minimum peptide C-N distance 2.3873 A;
-- mean peptide C-N distance 3.5476 A;
-- maximum 7.2501 A.
+These mechanics are not equivalent to TPO entropy and are not equivalent to the later CA-only QIS production solver.
 
-The historical objective had no covalent N/CA/C enforcement capable of repairing that representation.
+They have **not yet received the same prospective constrained-backbone survival test as P5**.
 
-Therefore the reproduced historical phi-dispersion collapse remains a valid computation but cannot be promoted as physical peptide-backbone organization.
+## Important execution uncertainty
 
-### 5. The TPO idea did not survive a valid constrained backbone
+The surviving source proves that the Phase-I DAG/controller mechanics existed. It does not yet prove which exact controller path was active in each strongest historical protein result.
 
-P5 replaced the invalid representation with the certified kinematic peptide backbone, froze source bond lengths/angles/omega, optimized only phi/psi, used native-blind objectives, matched starts and force scales, and included held-out 1CRN.
+That calling-path question must be resolved before a prospective mechanism test.
 
-P5 returned:
+The adjacent `physics_only_controller.py` must not be silently treated as historically active merely because it exists in the same source snapshot.
 
-`NO_GO_TPO_ENTROPY_INCREMENT`.
-
-Pooled mean best C-alpha RMSD:
-
-| mode | mean best RMSD (A) |
-|---|---:|
-| variance | 7.958500 |
-| rama | 8.122549 |
-| baseline | 8.178262 |
-| rama_entropy | 8.229326 |
-| entropy | 8.324414 |
-
-The preregistered Rama+entropy candidate was worse than both controls on **both** targets:
-
-- versus Rama: +0.203474 A on 1VII, +0.010080 A on 1CRN;
-- versus variance: +0.165338 A on 1VII, +0.376314 A on 1CRN.
-
-Neither Holm-adjusted comparison approached the frozen p<0.05 requirement.
-
-All covalent-geometry and numerical-health controls passed, so the negative result is not explained by backbone failure.
-
-## Evidence deliberately not used to rescue the program
+## Evidence deliberately excluded from promotion
 
 ### Gate 004
 
-The historical 1VII multi-seed table is not used as acceptance evidence because the later preregistration explicitly records its raw run artifacts as absent/unverified.
-
-The held-out 1CRN failure is independently sufficient to block promotion of the contact-graph mechanism.
+The historical 1VII multi-seed table remains excluded from acceptance-grade evidence because a later preregistration records the corresponding raw artifacts as absent/unverified.
 
 ### Seed 965
 
-The historical narrative records:
+The historical 1VII Seed-965 TPO narrative remains Class C until its raw candidate table, exact preregistration artifact, Phase-B trajectory and summary log are recovered and pinned.
 
-- 1VII Seed 965 TPO Index 0.69;
-- predicted final RMSD 6.5-8.5 A;
-- reported final RMSD 8.90 A;
-- reported final Rg 7.27 A.
+Those claims cannot override P5 and do not certify a separate Phase-I controller effect.
 
-The forensic evidence index classifies these as authority **C** because the raw candidate table, exact timestamped preregistration artifact, Phase-B trajectory and summary log were not recovered/pinned.
+## What P6 therefore authorizes
 
-Those claims remain historically interesting, but they are not allowed to override the prospective P5 result.
+P6 authorizes **one more bounded mechanism-discrimination program** directed only at the genuinely distinct Phase-I observable/controller line.
 
-Recovery of the raw Seed-965 packet would still be valuable for historical reconstruction. By itself it would not justify a rescue campaign unless it exposed a genuinely different mechanism that P5 did not test.
+It does **not** authorize:
 
-## Overall adjudication
+- v9 coefficient tuning;
+- Patch-630 contact-graph rescue;
+- TPO entropy variants;
+- Seed-965 rescue by parameter search;
+- broad custom-force expansion;
+- combining all historical features into a synthetic engine and calling it a replay.
 
-The original backbone work **did contain real executable ideas worth auditing**:
+## Next gate
 
-- full N/CA/C representation;
-- true phi/psi measurement;
-- topology-triggered contact logic;
-- torsional-organization observables;
-- target-blind seeded experiments;
-- a useful instinct to separate initial-state foldability from downstream relaxation.
+`P7 — EARLY_BACKBONE_CONTROLLER_SURVIVAL`
 
-That historical value is now documented.
+P7 should proceed in two stages.
 
-But the load-bearing mechanism claims did not survive the sequence of falsifiers:
+### P7A — controller provenance / active-path gate
 
-1. hierarchy reduction;
-2. held-out transfer;
-3. geometry/topology adjustment;
-4. physical peptide-integrity audit;
-5. prospective constrained-backbone comparison against ordinary controls.
+Before running science:
 
-There is therefore no current scientific basis for further spending on historical-engine-specific coefficient tuning, contact-graph rescue, TPO entropy variants, v9 gate refinements, or broad custom force-field expansion.
+1. identify the exact Phase-I controller source and configuration for the strongest historical cases;
+2. determine whether DAG phase switching, the physics-only controller, or another path was actually invoked;
+3. freeze source/config/calling-path provenance;
+4. stop rather than guess if active-path provenance cannot be established.
 
-## What should be retained
+### P7B — physically constrained survival test
 
-Keep and maintain:
+Only for a controller mechanic that passes P7A:
 
-- the certified `kinematic_pdb` representation;
-- canonical residue identity handling;
-- corrected Kabsch RMSD;
-- native-blind matched-seed measurement harnesses;
-- provenance/source manifests;
-- exact RED/GREEN and CI certification patterns;
-- recovered historical source and evidence ledgers;
-- negative results and raw artifacts.
+1. transplant the controller's **meaning**, not its broken Cartesian representation, onto the certified kinematic peptide backbone;
+2. preserve the same native-blind force/controller inputs;
+3. compare dynamic observable-driven switching against matched static and schedule controls;
+4. use matched seeds and at least one held-out protein;
+5. freeze the endpoint/statistics before exposure;
+6. prohibit target-specific rescue or post-exposure retuning.
 
-These are useful research infrastructure even though the historical mechanism line is closed.
+A GO would establish only that the controller architecture contributes reproducible information beyond matched static scheduling under the tested constrained protocol. Novelty would remain a separate question.
 
-## Reopen rule
+A NO-GO would justify closing the remaining historical mechanism line.
 
-Do **not** reopen the historical mechanism line because a new coefficient, seed or target looks promising.
-
-A scientifically legitimate restart requires at least one of:
-
-1. recovery of new raw historical evidence that exposes a materially different, previously untested mechanism;
-2. a new independently motivated physical hypothesis with a preregistered held-out consequence;
-3. external evidence that identifies a specific missing mechanism not represented in the frozen controls.
-
-Any restart must begin as a new hypothesis branch, not as post-hoc tuning of Patch 630, TPO, v9, or the failed contact graph.
-
-## Final program verdict
+## Current program ledger
 
 ```text
-HISTORICAL NUMERICAL WORK:          PRESERVE
-KINEMATIC / VALIDATION TOOLING:     RETAIN
-V9-SPECIFIC MECHANISM:              NO-GO
-PATCH-630 PHYSICAL INTERPRETATION:  NO-GO
-PATCH-630 CONTACT-GRAPH TRANSFER:    NO-GO
-TPO INDEPENDENT PREDICTOR CLAIM:    NOT SUPPORTED
-TPO CONSTRAINED-BACKBONE INCREMENT: NO-GO
-OPEN-ENDED HISTORICAL ENGINE WORK:  NO-GO
+HISTORICAL NUMERICAL WORK:              PRESERVE
+KINEMATIC / VALIDATION TOOLING:         RETAIN
+
+V9-SPECIFIC MECHANISM:                  NO-GO
+PATCH-630 PHYSICAL INTERPRETATION:      NO-GO
+PATCH-630 CONTACT-GRAPH TRANSFER:        NO-GO
+TPO INDEPENDENT PREDICTOR CLAIM:        NOT SUPPORTED
+TPO CONSTRAINED-BACKBONE INCREMENT:     NO-GO
+
+PHASE-I OBSERVABLE/DAG CONTROLLER:       OPEN — NOT YET PROSPECTIVELY TESTED
+PHYSICS-ONLY FEEDBACK CONTROLLER:        OPEN SOURCE CANDIDATE; ACTIVE PATH UNPROVEN
+BROADER EARLY-BACKBONE LINE:             OPEN PENDING P7
 ```
 
-The scientifically efficient next action is preservation and closeout, not another rescue experiment.
+## Decision boundary
+
+The scientifically efficient next action is **not** another rescue of a failed mechanism.
+
+It is a final bounded test of the genuinely distinct early observable/controller architecture. If that surviving mechanism also fails physical representation and held-out discrimination, the historical custom protein-mechanism program can then be closed on substantially stronger grounds.
