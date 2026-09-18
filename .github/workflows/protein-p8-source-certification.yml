@@ -1,0 +1,38 @@
+name: Protein P8 Patch 622-624 Source Certification
+
+on:
+  push:
+    branches:
+      - research/protein-p8-patch622-624-reopen-certification
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P8/**'
+      - '.github/workflows/protein-p8-source-certification.yml'
+  workflow_dispatch:
+
+jobs:
+  source-certification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install test runner
+        run: python -m pip install --disable-pip-version-check pytest
+
+      - name: Verify exact recovered bytes and source reduction
+        run: |
+          python -m pytest -q ResearchHistory/UQCF-GEM/protein/P8/test_p8_source_reduction.py
+          python ResearchHistory/UQCF-GEM/protein/P8/p8_source_reduction.py > ResearchHistory/UQCF-GEM/protein/P8/P8_CI_SOURCE_REDUCTION_RESULT.json
+
+      - name: Upload certification evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: protein-p8-source-certification
+          path: |
+            ResearchHistory/UQCF-GEM/protein/P8/P8_CI_SOURCE_REDUCTION_RESULT.json
+            ResearchHistory/UQCF-GEM/protein/P8/P8_REOPEN_MANIFEST.json
+            ResearchHistory/UQCF-GEM/protein/P8/P8_REOPEN_PROVENANCE.md
+          if-no-files-found: error
