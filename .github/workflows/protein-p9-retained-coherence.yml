@@ -1,0 +1,27 @@
+name: Protein P9 Retained-Coherence Contract
+
+on:
+  pull_request:
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P9/**'
+      - '.github/workflows/protein-p9-retained-coherence.yml'
+  push:
+    branches:
+      - research/protein-p9-retained-coherence-falsifier
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P9/**'
+      - '.github/workflows/protein-p9-retained-coherence.yml'
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: python -m pip install --upgrade pip numpy
+      - name: Run P9 contract tests
+        working-directory: ResearchHistory/UQCF-GEM/protein/P9
+        run: python -m unittest -v test_p9_retained_coherence.py
