@@ -1,5 +1,6 @@
 import hashlib
-import math
+import json
+import subprocess
 import unittest
 from dataclasses import replace
 from pathlib import Path
@@ -23,15 +24,35 @@ class P6ContractTests(unittest.TestCase):
         self.assertAlmostEqual(8.0, p6.NATIVE_CONTACT_CUTOFF_A)
         self.assertEqual((0.75, 1.25), p6.RG_RATIO_GATE)
 
-    def test_exact_historical_input_hashes_are_bound(self):
-        expected = {
+    def test_exact_historical_input_provenance_is_bound(self):
+        manifest = json.loads(Path("P6_SOURCE_MANIFEST.json").read_text())
+        expected_full = {
             "1L2Y": "5d1bbb545a312dfff1ae1e64b6d8addecb2f561ddc4011aeb5bee9d1dfcd4438",
             "1UAO": "e827fae677f8e96d1320688694b3db96bcc73050f81c6f842efc2e0ce9937e1e",
         }
-        for name, digest in expected.items():
-            path = Path("inputs") / f"{name}.pdb"
+        expected_excerpt = {
+            "1L2Y": (
+                "inputs/1L2Y.chainA_model1_NCAC.pdb",
+                "3bcf838a433d65723afd175836fd727779e872d27d1b2d20eefbd729ad009e18",
+            ),
+            "1UAO": (
+                "inputs/1UAO.chainA_model1_NCAC.pdb",
+                "2c582e51deb46bae17bc02219550c98c29aa69fab6647d828481983e8406ed3e",
+            ),
+        }
+        for name, full_digest in expected_full.items():
+            self.assertEqual(full_digest, manifest["targets"][name]["full_pdb_sha256"])
+            path_text, digest = expected_excerpt[name]
+            path = Path(path_text)
             self.assertTrue(path.is_file(), path)
             self.assertEqual(digest, hashlib.sha256(path.read_bytes()).hexdigest())
+            self.assertEqual(digest, manifest["targets"][name]["evaluator_excerpt_sha256"])
+
+        p5_1vii = Path("../P5/inputs/1VII.pdb")
+        self.assertTrue(p5_1vii.is_file())
+        actual_blob = subprocess.check_output(["git", "hash-object", str(p5_1vii)], text=True).strip()
+        self.assertEqual("dc55a7f18ce79b6db592240bdb7dcee96a4c1b8b", actual_blob)
+        self.assertEqual(actual_blob, manifest["targets"]["1VII"]["git_blob"])
 
     def test_canonical_geometry_is_target_independent(self):
         a = p6.canonical_geometry(20)
@@ -100,7 +121,6 @@ class P6ContractTests(unittest.TestCase):
         self.assertAlmostEqual(gp, gg, places=9)
 
     def test_topk_precision_uses_fixed_contact_budget(self):
-        # Five residues -> K=max(1,floor(5/2))=2.
         native = torch.tensor(
             [[0.,0.,0.],[3.8,0.,0.],[7.6,0.,0.],[0.,4.,0.],[3.8,4.,0.]],
             dtype=torch.float64,
