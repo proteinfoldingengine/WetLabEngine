@@ -1,0 +1,86 @@
+{
+  "schema": "protein-p6-continuation-evidence-v1",
+  "decision_scope": "continuation status after P1/P4/P5 and held-out/TPO audits; closes only mechanisms directly tested",
+  "included_evidence": [
+    {
+      "id": "P1_v9_reduction",
+      "repository": "proteinfoldingengine/WetLabEngine",
+      "branch": "research/protein-p1-v9-regularizer-reduction",
+      "result_blob": "f2e994e3fe13001072aee622e18a4467a5150958",
+      "scientific_head": "f38cce040c98b78f4300ace06f28c350e4e4c313",
+      "workflow_run": 35288146185,
+      "artifact_sha256": "424a11c975ec7c7d662d027294f3034a5d42d93e2c2b8d17e416f4373d54a9d2",
+      "verdict": "NO_GO_HIERARCHICAL_ADVANTAGE"
+    },
+    {
+      "id": "HB1_gate005_heldout_1CRN",
+      "repository": "proteinfoldingengine/WetLabEngine",
+      "branch": "gen3-historical-backbone-reconstruction-v1",
+      "branch_head": "ca88a9d074bfb52c5205ecafb8a703b05dbb342a",
+      "result_blob": "ecd2926a831b156c717316442c3d95b026d6a62e",
+      "verdict": "NO_TRANSFER"
+    },
+    {
+      "id": "HB2_TPO_1QYS_adjusted_audit",
+      "repository": "proteinfoldingengine/UQCF-GEM",
+      "branch": "hb2-tpo-audit-2026-09-16",
+      "scientific_head": "79df16335a523096e4d9ce0655bf3fc6acf5c0a9",
+      "workflow_run": 35153801193,
+      "artifact_id": 10469619878,
+      "artifact_sha256": "cc5a73ebe95c7b8e877616cd9ec4753b5ff1313a310d32bc964a4e9837fe849a",
+      "dataset_rows": 1000,
+      "adjusted_torsion_entropy_spearman_rho": 0.02386958386958387,
+      "adjusted_torsion_entropy_p": 0.45085770573696,
+      "adjusted_torsion_rms_dist_spearman_rho": 0.004706140706140707,
+      "adjusted_torsion_rms_dist_p": 0.8818409233100257,
+      "verdict": "NO_INDEPENDENT_TPO_SIGNAL_AFTER_GEOMETRY_TOPOLOGY_CONTROLS"
+    },
+    {
+      "id": "P4_physical_backbone_validity",
+      "repository": "proteinfoldingengine/WetLabEngine",
+      "result_blob": "e1ff453388a1e0fbc8308cf3d002d0c0120c6e22",
+      "scientific_head": "cd14868c6bb7865a4d6c13c0579a07b72581d60c",
+      "workflow_run": 35292391335,
+      "artifact_sha256": "5ef741f80df8ad64d764a2db19177f7998d1c7199e38e10c35fde8ad676e6187",
+      "verdict": "NO_GO_HISTORICAL_PHYSICAL_BACKBONE_INTERPRETATION"
+    },
+    {
+      "id": "P5_constrained_backbone_TPO",
+      "repository": "proteinfoldingengine/WetLabEngine",
+      "result_blob": "6a5dddcdcff29b5b0a3ffb9e7c5ec6d41d698187",
+      "scientific_head": "8adfdc161645c32a8ae7f2bcacbdb3fd78b32780",
+      "workflow_run": 35295009294,
+      "artifact_id": 10528211747,
+      "artifact_sha256": "cf64c0ea1e7356c72898b60c76e6910639bf6c70cb35ee041d5ded8951663e6b",
+      "verdict": "NO_GO_TPO_ENTROPY_INCREMENT"
+    }
+  ],
+  "excluded_from_decision": [
+    {
+      "id": "HB1_gate004_multiseed_table",
+      "reason": "prior preregistration explicitly records the table as unverified because corresponding raw run artifacts were absent"
+    },
+    {
+      "id": "1VII_seed965_historical_claim",
+      "evidence_index_blob": "4a989bcbc6fc9c4080a529fcfb5c9d44dcf1ae10",
+      "authority": "C",
+      "reason": "raw candidate table, exact preregistration artifact, Phase-B trajectory and summary log were not recovered/pinned; historical narrative is not acceptance evidence"
+    }
+  ],
+  "program_status": "NO_GO_TESTED_MECHANISMS_BROADER_EARLY_BACKBONE_LINE_OPEN",
+  "remaining_open_line": {
+    "name": "Phase-I observable-driven backbone control",
+    "source_authority": "B — executable source / Git provenance",
+    "surviving_distinct_mechanics": [
+      "topology-triggered Compaction -> LockIn force switching",
+      "observable-driven force policy",
+      "adjacent intrinsic-timescale/physics-only feedback controller"
+    ],
+    "not_yet_established": [
+      "which controller path was active in each strongest historical run",
+      "whether the controller effect survives a physically constrained peptide representation",
+      "whether any effect transfers to held-out proteins beyond ordinary/static schedules"
+    ],
+    "prohibition": "Do not combine all historical components into a synthetic engine and call it a historical replay."
+  }
+}
