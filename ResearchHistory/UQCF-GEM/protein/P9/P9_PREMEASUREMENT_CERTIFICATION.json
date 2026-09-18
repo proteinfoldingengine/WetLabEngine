@@ -1,0 +1,21 @@
+{
+  "schema": "protein-p9-premeasurement-certification-v1",
+  "frozen_scientific_head": "8f4e320b291d6fba7c43cd716e4af3f348ef27d4",
+  "contract": {
+    "red_run_id": 35384788866,
+    "red_job_id": 105729043104,
+    "red_expected_failure": "ModuleNotFoundError: No module named 'p9_retained_coherence'",
+    "green_run_id": 35384918289,
+    "green_job_id": 105729462144,
+    "green_tests": "6 passed"
+  },
+  "frozen_git_blobs": {
+    "acceptance": "a8d1cb99d2b94cb8cdb8e736b98b3bd14ca04ddf",
+    "source_manifest": "c1739cdbd5066e17ae443c8bbbc054a71823db33",
+    "tests": "a94613a5e8f8b3aefa393d8b55da4132bade531c",
+    "implementation": "fb975840317e6fd5b0ed145997855589f4284e7f"
+  },
+  "prospective_measurement_authorized": true,
+  "result_exposed": false,
+  "boundary": "No P9A retained-coherence transfer measurement has been run or exposed at this certification point."
+}
