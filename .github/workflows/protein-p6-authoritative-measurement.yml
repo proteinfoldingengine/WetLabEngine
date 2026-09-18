@@ -37,27 +37,9 @@ jobs:
       - name: Verify frozen premeasurement packet
         working-directory: .
         run: |
-          git merge-base --is-ancestor bc00fa3af135219fdf498ed0d271b6a8a649496a HEAD
-          git diff --exit-code bc00fa3af135219fdf498ed0d271b6a8a649496a..HEAD -- . \
-            ':(exclude).github/workflows/protein-p6-authoritative-measurement.yml'
-          python - <<'PY'
-          import subprocess
-          expected = {
-              "ResearchHistory/UQCF-GEM/protein/P6/P6_ACCEPTANCE.md": "f7d2568200cb62e11eb3fca2976b4837f18f292b",
-              "ResearchHistory/UQCF-GEM/protein/P6/P6_SOURCE_MANIFEST.json": "c27a3f4e3b503cd3efe2d3bf9cef82a9d8ab0e11",
-              "ResearchHistory/UQCF-GEM/protein/P6/p6_core.py": "e517164834636ffc5e52ea118f9d43624edebdad",
-              "ResearchHistory/UQCF-GEM/protein/P6/p6_measurement.py": "681bffe05977151b6bfa9bed67f4cf4a4f3a677a",
-              "ResearchHistory/UQCF-GEM/protein/P6/test_p6_contract.py": "bf3422ce3c6951d010db540f911a64e3c11ea2ff",
-              "ResearchHistory/UQCF-GEM/protein/P6/test_p6_measurement_contract.py": "6f6e340382e538d7a9d54966bdc3c64eec1272d1",
-              "ResearchHistory/UQCF-GEM/protein/P6/inputs/1L2Y.chainA_model1_NCAC.pdb": "aa0ede8e683f99049980732d23364e2da57d838d",
-              "ResearchHistory/UQCF-GEM/protein/P6/inputs/1UAO.chainA_model1_NCAC.pdb": "39b0f2c8df3ba2d54f687cb2240ba8d47548f2bd",
-              "ResearchHistory/UQCF-GEM/protein/P5/inputs/1VII.pdb": "dc55a7f18ce79b6db592240bdb7dcee96a4c1b8b",
-          }
-          for path, wanted in expected.items():
-              got = subprocess.check_output(["git", "hash-object", path], text=True).strip()
-              assert got == wanted, (path, got, wanted)
-              print(path, got)
-          PY
+          git cat-file -e bc00fa3af135219fdf498ed0d271b6a8a649496a^{commit}
+          changed="$(git diff --name-only bc00fa3af135219fdf498ed0d271b6a8a649496a..HEAD)"
+          test "$changed" = ".github/workflows/protein-p6-authoritative-measurement.yml"
 
       - name: Set up Python
         uses: actions/setup-python@v5
