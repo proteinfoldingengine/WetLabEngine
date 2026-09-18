@@ -1,0 +1,67 @@
+name: Protein P5 Constrained Backbone Contract
+
+on:
+  push:
+    branches:
+      - research/protein-p5-constrained-backbone-survival
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P5/**'
+      - '.github/workflows/protein-p5-constrained-backbone-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/protein/P5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install NumPy
+        run: python -m pip install numpy==1.26.4
+
+      - name: Install CPU PyTorch
+        run: python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Verify committed source and input blob pins
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          m = json.loads(Path("SOURCE_MANIFEST.json").read_text())
+          checks = {
+              "vendor/backbone_kinematics.py": m["kinematic_representation"]["backbone_kinematics_blob"],
+              "vendor/residue_identity.py": m["kinematic_representation"]["residue_identity_blob"],
+              "inputs/1VII.pdb": m["targets"]["1VII"]["git_blob"],
+              "inputs/1CRN.pdb": m["targets"]["1CRN"]["git_blob"],
+          }
+          for path, expected in checks.items():
+              actual = subprocess.check_output(["git", "hash-object", path], text=True).strip()
+              assert actual == expected, (path, actual, expected)
+              print(path, actual)
+          assert m["historical_tpo"]["physics_metrics_blob"] == "087d90e1727b1dbddec33e7e7b6538be89989136"
+          assert m["historical_tpo"]["histogram_min"] == -3.14159
+          assert m["historical_tpo"]["histogram_max"] == 3.14159
+          assert m["historical_tpo"]["histogram_normalization_epsilon"] == 1e-8
+          PY
+
+      - name: Run frozen P5 contract tests
+        run: python -m unittest -v test_p5_contract.py
