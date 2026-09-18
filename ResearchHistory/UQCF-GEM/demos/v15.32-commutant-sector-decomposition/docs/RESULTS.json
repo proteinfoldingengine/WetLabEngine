@@ -1,0 +1,245 @@
+{
+  "Pillar_3": "OPEN",
+  "base_sha": "d2b767c88a4bdb3d750d7bb696b29b4fbd34dca1",
+  "boundary_image_ranks": {
+    "axis": 12,
+    "diagonal": 12,
+    "generic": 24
+  },
+  "coupling_solver_reopened": false,
+  "cross_sector_hom_zero": true,
+  "dim_Z": 50,
+  "direct_sum_verified": true,
+  "galois_groups_by_type": {
+    "axis": 1,
+    "diagonal": 1,
+    "generic": 1
+  },
+  "gravity_observables_evaluated": false,
+  "group_order": 392,
+  "mixing_freedom_dimension": 0,
+  "momentum_orbits": [
+    {
+      "orbit_size": 4,
+      "representative": [
+        0,
+        1
+      ],
+      "stabilizer_size": 2,
+      "type": "axis"
+    },
+    {
+      "orbit_size": 4,
+      "representative": [
+        0,
+        2
+      ],
+      "stabilizer_size": 2,
+      "type": "axis"
+    },
+    {
+      "orbit_size": 4,
+      "representative": [
+        0,
+        3
+      ],
+      "stabilizer_size": 2,
+      "type": "axis"
+    },
+    {
+      "orbit_size": 4,
+      "representative": [
+        1,
+        1
+      ],
+      "stabilizer_size": 2,
+      "type": "diagonal"
+    },
+    {
+      "orbit_size": 4,
+      "representative": [
+        2,
+        2
+      ],
+      "stabilizer_size": 2,
+      "type": "diagonal"
+    },
+    {
+      "orbit_size": 4,
+      "representative": [
+        3,
+        3
+      ],
+      "stabilizer_size": 2,
+      "type": "diagonal"
+    },
+    {
+      "orbit_size": 8,
+      "representative": [
+        1,
+        2
+      ],
+      "stabilizer_size": 1,
+      "type": "generic"
+    },
+    {
+      "orbit_size": 8,
+      "representative": [
+        1,
+        3
+      ],
+      "stabilizer_size": 1,
+      "type": "generic"
+    },
+    {
+      "orbit_size": 8,
+      "representative": [
+        2,
+        3
+      ],
+      "stabilizer_size": 1,
+      "type": "generic"
+    }
+  ],
+  "momentum_orbits_by_type": {
+    "axis": {
+      "count": 3,
+      "orbit_sizes": [
+        4,
+        4,
+        4
+      ]
+    },
+    "diagonal": {
+      "count": 3,
+      "orbit_sizes": [
+        4,
+        4,
+        4
+      ]
+    },
+    "generic": {
+      "count": 3,
+      "orbit_sizes": [
+        8,
+        8,
+        8
+      ]
+    }
+  },
+  "multiplicity_free_basis": "ONE_TRANSLATION_CHARACTER_PER_FACE_MODE_PLUS_D4_ORBIT_LITTLE_GROUP_CLASSIFICATION",
+  "multiplicity_free_over_splitting_field": true,
+  "new_source_semantics_axiom_added": false,
+  "next_required_object": "INDEPENDENT_PRETIME_PRINCIPLE_FIXING_RELATIVE_WEIGHTS_OR_RELATIONS_AMONG_THE_10_MULTIPLICITY_FREE_SECTORS",
+  "nonzero_momentum_orbit_count": 9,
+  "physical_gravity_derived": false,
+  "projective_relative_weight_dimension": 9,
+  "projector_checks_exact": true,
+  "projector_ranks": {
+    "axis": 12,
+    "diagonal": 12,
+    "generic": 24
+  },
+  "rational_boundary_macro_sector_count": 3,
+  "rational_macro_sector_count": 4,
+  "rational_macro_sector_dimensions": {
+    "axis": 12,
+    "diagonal": 12,
+    "generic": 24,
+    "homology": 2
+  },
+  "recovered_total_commutant_dimension": 10,
+  "residual_weight_dimension": 10,
+  "scientific_breakthrough": false,
+  "sector_character_histograms": {
+    "axis": {
+      "-2": 36,
+      "-6": 14,
+      "0": 245,
+      "1": 84,
+      "12": 1,
+      "5": 12
+    },
+    "diagonal": {
+      "-2": 36,
+      "-6": 14,
+      "0": 245,
+      "1": 84,
+      "12": 1,
+      "5": 12
+    },
+    "generic": {
+      "-4": 24,
+      "0": 343,
+      "24": 1,
+      "3": 24
+    },
+    "homology": {
+      "-2": 49,
+      "0": 294,
+      "2": 49
+    }
+  },
+  "sector_hom_dimension_matrix": {
+    "axis": {
+      "axis": 3,
+      "diagonal": 0,
+      "generic": 0,
+      "homology": 0
+    },
+    "diagonal": {
+      "axis": 0,
+      "diagonal": 3,
+      "generic": 0,
+      "homology": 0
+    },
+    "generic": {
+      "axis": 0,
+      "diagonal": 0,
+      "generic": 3,
+      "homology": 0
+    },
+    "homology": {
+      "axis": 0,
+      "diagonal": 0,
+      "generic": 0,
+      "homology": 1
+    }
+  },
+  "sector_self_end_dimensions": {
+    "axis": 3,
+    "diagonal": 3,
+    "generic": 3,
+    "homology": 1
+  },
+  "signal_of_life": false,
+  "splitting_field_sector_count": 10,
+  "splitting_field_sector_dimensions": [
+    2,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    8,
+    8,
+    8
+  ],
+  "status": "MULTIPLICITY_FREE_SECTORS_BUT_WEIGHT_NONUNIQUENESS",
+  "translation_fixed_homology_dimension": 2,
+  "unique_canonical_source_sector": false,
+  "upstream_pins": {
+    "v15.28/exact_linear.py": "05cc1b8cfec70d501408377b5e44190b259a4514",
+    "v15.28/representation_actions.py": "7260147cd6ca47ec21634172b44b98de726904af",
+    "v15.31/RESULTS.json": "bec3ffbe08eb29e9e22738eec8104cd35bfbdb47",
+    "v15.31/source_extension_gate.py": "4a5be8970bad772eb0902a9f34f3499253a08bc9"
+  },
+  "uses_entropy_as_selector": false,
+  "uses_holonomy_selector": false,
+  "uses_metric_selector": false,
+  "uses_newton_or_gr": false,
+  "uses_physical_time": false,
+  "uses_pruning_as_selector": false,
+  "version": "v15.32"
+}

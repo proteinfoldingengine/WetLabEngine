@@ -1,0 +1,96 @@
+name: UQCF v15.32 Commutant Sector Decomposition
+on:
+  push:
+    branches: [research/v15.32-commutant-sector-decomposition]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.32-commutant-sector-decomposition/**'
+      - 'docs/superpowers/specs/2026-09-18-v1532-commutant-sector-decomposition-design.md'
+      - 'docs/superpowers/plans/2026-09-18-v1532-commutant-sector-decomposition-implementation.md'
+      - '.github/workflows/uqcf-v1532-commutant-sectors.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned environment
+        run: python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+          base='d2b767c88a4bdb3d750d7bb696b29b4fbd34dca1'
+          demo='ResearchHistory/UQCF-GEM/demos/v15.32-commutant-sector-decomposition/'
+          allowed={
+            'docs/superpowers/specs/2026-09-18-v1532-commutant-sector-decomposition-design.md',
+            'docs/superpowers/plans/2026-09-18-v1532-commutant-sector-decomposition-implementation.md',
+            '.github/workflows/uqcf-v1532-commutant-sectors.yml',
+          }
+          subprocess.run(['git','merge-base','--is-ancestor',base,'HEAD'],check=True)
+          for line in subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines():
+              status,name=line.split('\t',1)
+              assert status=='A',line
+              assert name.startswith(demo) or name in allowed,name
+          PY
+      - name: Run inherited representation regressions
+        run: |
+          python - <<'PY'
+          import re,subprocess,sys
+          from pathlib import Path
+          root=Path('ResearchHistory/UQCF-GEM')
+          suites=[
+            (root/'demos/v15.28-coupling-space',
+             ['test_inventory.py','test_exact_linear.py','test_actions.py','test_solver.py','test_gate.py','test_replay.py'],35),
+            (root/'demos/v15.30-provenance-fiber-definability',
+             ['test_frozen_inputs.py','test_common_carrier.py','test_exact_fiber.py','test_naturality.py','test_uniqueness.py','test_gate.py','test_replay.py'],30),
+            (root/'demos/v15.31-source-extension-minimality',
+             ['test_gate.py'],6),
+          ]
+          total=0
+          for cwd,files,count in suites:
+              r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=cwd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
+              print(r.stdout[-700:],flush=True)
+              m=re.search(r'Ran (\d+) tests? in',r.stdout)
+              assert r.returncode==0 and m and int(m.group(1))==count and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+              total+=count
+          assert total==71
+          PY
+      - name: Run v15.32 exact gate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.32-commutant-sector-decomposition
+        run: |
+          python -m unittest -v test_gate.py
+          python sector_decomposition_gate.py --check docs/RESULTS.json > /tmp/v1532-results.json
+          python -m compileall -q sector_decomposition_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='MULTIPLICITY_FREE_SECTORS_BUT_WEIGHT_NONUNIQUENESS'
+          assert r['rational_macro_sector_dimensions']=={'axis':12,'diagonal':12,'generic':24,'homology':2}
+          assert r['sector_self_end_dimensions']=={'axis':3,'diagonal':3,'generic':3,'homology':1}
+          assert r['cross_sector_hom_zero'] is True
+          assert r['recovered_total_commutant_dimension']==10
+          assert r['nonzero_momentum_orbit_count']==9
+          assert r['splitting_field_sector_count']==10
+          assert r['multiplicity_free_over_splitting_field'] is True
+          assert r['mixing_freedom_dimension']==0
+          assert r['projective_relative_weight_dimension']==9
+          assert r['new_source_semantics_axiom_added'] is False
+          assert r['coupling_solver_reopened'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['physical_gravity_derived'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY
