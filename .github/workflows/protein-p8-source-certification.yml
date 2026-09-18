@@ -5,13 +5,13 @@ on:
     branches:
       - research/protein-p8-patch622-624-reopen
     paths:
-      - 'ResearchHistory/UQCF-GEM/protein/P8/**'
+      - 'ResearchHistory/UQCF-GEM/protein/P8/recovered_patch622/**'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/recovered_patch624/**'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/P8_RECOVERED_SOURCE_MANIFEST.json'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/P8A_SOURCE_CERTIFICATION_CONTRACT.md'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/p8_source_certification.py'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/test_p8_source_certification.py'
       - '.github/workflows/protein-p8-source-certification.yml'
   pull_request:
     branches:
       - research/protein-p7-early-backbone-controller-survival
     paths:
-      - 'ResearchHistory/UQCF-GEM/protein/P8/**'
+      - 'ResearchHistory/UQCF-GEM/protein/P8/recovered_patch622/**'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/recovered_patch624/**'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/P8_RECOVERED_SOURCE_MANIFEST.json'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/P8A_SOURCE_CERTIFICATION_CONTRACT.md'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/p8_source_certification.py'\n      - 'ResearchHistory/UQCF-GEM/protein/P8/test_p8_source_certification.py'
       - '.github/workflows/protein-p8-source-certification.yml'
   workflow_dispatch:
 
