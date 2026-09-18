@@ -1,0 +1,93 @@
+name: UQCF v15.31 Source Extension Gate
+on:
+  push:
+    branches: [research/v15.31-source-extension-minimality]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.31-source-extension-minimality/**'
+      - 'docs/superpowers/specs/2026-09-18-v1531-source-extension-minimality-design.md'
+      - 'docs/superpowers/plans/2026-09-18-v1531-source-extension-minimality-implementation.md'
+      - '.github/workflows/uqcf-v1531-source-extension.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned environment
+        run: python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+          base='2d9eb636d9d216ef0c7f9029e32832b7c435f0d8'
+          demo='ResearchHistory/UQCF-GEM/demos/v15.31-source-extension-minimality/'
+          allowed={
+            'docs/superpowers/specs/2026-09-18-v1531-source-extension-minimality-design.md',
+            'docs/superpowers/plans/2026-09-18-v1531-source-extension-minimality-implementation.md',
+            '.github/workflows/uqcf-v1531-source-extension.yml',
+          }
+          subprocess.run(['git','merge-base','--is-ancestor',base,'HEAD'],check=True)
+          for line in subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines():
+              status,name=line.split('\t',1)
+              assert status=='A',line
+              assert name.startswith(demo) or name in allowed,name
+          PY
+      - name: Run targeted inherited regressions
+        run: |
+          python - <<'PY'
+          import re,subprocess,sys
+          from pathlib import Path
+          root=Path('ResearchHistory/UQCF-GEM')
+          suites=[
+            (root/'demos/v15.28-coupling-space',
+             ['test_inventory.py','test_exact_linear.py','test_actions.py','test_solver.py','test_gate.py','test_replay.py'],35),
+            (root/'demos/v15.30-provenance-fiber-definability',
+             ['test_frozen_inputs.py','test_common_carrier.py','test_exact_fiber.py','test_naturality.py','test_uniqueness.py','test_gate.py','test_replay.py'],30),
+          ]
+          total=0
+          for cwd,files,count in suites:
+              r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=cwd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
+              print(r.stdout[-800:],flush=True)
+              m=re.search(r'Ran (\d+) tests? in',r.stdout)
+              assert r.returncode==0 and m and int(m.group(1))==count and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+              total+=count
+          assert total==65
+          PY
+      - name: Run v15.31 exact gate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.31-source-extension-minimality
+        run: |
+          python -m unittest -v test_gate.py
+          python source_extension_gate.py --check docs/RESULTS.json > /tmp/v1531-results.json
+          python -m compileall -q source_extension_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='FIBER_EXTENSION_CHANNELS_EXIST_BUT_NONUNIQUE'
+          assert r['dim_Hom_Z_to_Y']==10
+          assert r['character_square_sum']==3920
+          assert r['group_order']==392
+          assert r['rational_extension_splits'] is True
+          assert r['rational_splitting_canonical'] is False
+          assert r['new_source_semantics_axiom_added'] is False
+          assert r['coupling_solver_reopened'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['physical_gravity_derived'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY
