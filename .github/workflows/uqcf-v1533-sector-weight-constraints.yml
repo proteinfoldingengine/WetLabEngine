@@ -24,6 +24,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13.5'
+      - name: Install pinned inherited environment
+        run: python -m pip install numpy==2.3.5
       - name: Verify additive scope
         run: |
           python - <<'PY'
