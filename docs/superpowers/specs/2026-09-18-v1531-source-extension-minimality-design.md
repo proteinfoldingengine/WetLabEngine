@@ -167,29 +167,38 @@ Determine exactly:
 
 This is not permission to identify Z itself with physical provenance.
 
-## 8. Gate D — minimal kernel types
+## 8. Gate D — conditional minimal-kernel characterization
 
-Define an admissible **kernel type** K only from representation content already present in Z.
+Gate D is deliberately conditional.
 
-A kernel type is minimal if:
+If
 
-1. there is a nonzero G-equivariant map `Z -> K`;
-2. there is a nonzero G-equivariant map `K -> Y_cyc`;
-3. no proper nonzero G-invariant subrepresentation of K satisfies both conditions.
+```text
+dim Hom_G(Z,Y_cyc) > 1
+```
 
-Enumerate minimal kernel types up to exact G-module equivalence.
+then representation-level nonuniqueness is already proved and the primary gate may stop as
+`FIBER_EXTENSION_CHANNELS_EXIST_BUT_NONUNIQUE`. A complete irreducible decomposition is **not** required merely to strengthen an already decisive nonuniqueness result. Record any inexpensive rank/character diagnostics, but do not spend the gate reconstructing representation theory that cannot change the adjudication.
 
-For each type record:
+If
 
-- dimension;
-- multiplicity in Z;
-- multiplicity in Y_cyc;
-- dimension of `Hom_G(Z,K)`;
-- dimension of `Hom_G(K,Y_cyc)`;
-- whether the composite channel is unique up to scale;
-- whether multiple inequivalent embeddings survive.
+```text
+dim Hom_G(Z,Y_cyc) = 1
+```
 
-No semantic meaning is attached to an abstract kernel type.
+then characterize the unique nonzero intertwiner exactly. Let K be its image representation. Verify:
+
+1. K is G-invariant;
+2. the map `Z -> K` is nonzero and exact;
+3. the inclusion/map `K -> Y_cyc` is exact;
+4. the projective channel is basis invariant;
+5. no second inequivalent projective channel appears after admissible basis changes or quotient conventions.
+
+Record the dimension of K, kernel dimension, image rank, exact projective hash, and character/orbit cross-checks.
+
+If `dim Hom_G(Z,Y_cyc)=0`, Gate D is skipped.
+
+This early-stop rule keeps v15.31 focused on the minimum fact needed to adjudicate the source-extension interface. No semantic meaning is attached to K.
 
 ## 9. Gate E — source-semantics information contract
 
@@ -285,8 +294,9 @@ rational_semisimplicity_verified
 rational_extension_splits
 integral_extension_status
 dim_Hom_Z_to_Y
-minimal_kernel_type_count
-minimal_kernel_types
+minimal_kernel_type_count_or_null
+minimal_kernel_types_or_null
+early_stop_reason_or_null
 unique_projective_fiber_channel
 new_source_semantics_axiom_added = false
 coupling_solver_reopened = false
