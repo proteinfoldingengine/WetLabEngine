@@ -1,7 +1,7 @@
 {
   "schema": "protein-p8-source-reduction-v1",
   "branch": "research/protein-p8-patch622-624-reopen-certification",
-  "source_freeze_head": "f8138646d280f53612c66fbc2d163a10468ff0ee",
+  "source_freeze_head": "2a8a23a91b00a052f56bcd176afbecded6d40cf2",
   "p7_reference": {
     "closeout_commit": "0e156790b961abdebcd288b333b44c2e6df05d61",
     "certified_source_audit_head": "72c6d464cad50183fd17ac932b40745438576331",
@@ -97,9 +97,17 @@
   },
   "remote_ci": {
     "workflow_file": ".github/workflows/protein-p8-source-certification.yml",
-    "workflow_head": "f8138646d280f53612c66fbc2d163a10468ff0ee",
+    "certified_head": "2a8a23a91b00a052f56bcd176afbecded6d40cf2",
     "draft_pr": 33,
-    "run_id": null,
-    "status": "NOT_VERIFIED_THROUGH_CONNECTOR"
+    "run_id": 35358832587,
+    "run_number": 26,
+    "job_id": 105644748977,
+    "job_name": "source-certification",
+    "tests": "5 passed in 0.26s",
+    "artifact_id": 10553705794,
+    "artifact_name": "protein-p8-source-certification",
+    "artifact_size_bytes": 5841,
+    "artifact_sha256": "bbc2e54e6231e57a0f500fc610ecad9eee2a1901a59e491dc20085bdc260fcca",
+    "conclusion": "SUCCESS"
   }
 }
