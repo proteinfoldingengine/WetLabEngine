@@ -1,0 +1,244 @@
+{
+  "Pillar_3": "OPEN",
+  "claim_scope": "classification of local conjugation-equivariant Hermitian source maps and whether the already-frozen source-law constraints select the remaining spectral response function",
+  "frozen_axiom_audit": {
+    "all_tested_response_functions_preserve_local_unitary_covariance": true,
+    "all_tested_response_functions_preserve_positive_projective_source_scaling": true,
+    "all_tested_response_functions_preserve_source_linearity": true,
+    "archive_bindings": {
+      "v13.26": {
+        "path": "ResearchHistory/UQCF-GEM/v13/v13.26/SUMMARY.json",
+        "sha256": "91c4bb43af645c072c1f2139e0d587d94838b970955e33ce53c13123d894425c"
+      },
+      "v14.03": {
+        "path": "ResearchHistory/UQCF-GEM/v14/v14.03/SUMMARY.json",
+        "sha256": "ec2753b23ba5d0094c76d29d342b10d736336b90e8f8e92e78e9332b605bc4e5"
+      },
+      "v15.03": {
+        "path": "ResearchHistory/UQCF-GEM/v15/v15.03/SUMMARY.json",
+        "sha256": "025db300f4977d3cd3c387ad2c46053fb56d0c574e2157235089a98f364aa1e2"
+      }
+    },
+    "boundary": "A new tensor-composition or other spectral functional equation could reduce the freedom, but it would be a new assumption unless independently recovered from frozen structure.",
+    "classification": "FROZEN_SOURCE_AXIOMS_DO_NOT_SELECT_SPECTRAL_RESPONSE_FUNCTION",
+    "frozen_constraints_tested": [
+      "retained source amount/extensivity and homogeneous source-current scaling",
+      "positive projective source rescaling",
+      "independent local-unitary/frame covariance",
+      "source additivity/linearity in the retained scalar source coefficients",
+      "null-source compatibility"
+    ],
+    "max_local_unitary_covariance_error": 3.434312402059545e-16,
+    "max_null_source_norm": 0.0,
+    "max_positive_scale_projective_residual": 2.603703785810335e-16,
+    "max_source_additivity_error": 3.510833468576701e-16,
+    "max_source_homogeneity_error": 1.7763568394002505e-15,
+    "scope": "audited frozen source-law constraints carried by v13.26, v14.03, and v15.03",
+    "selection_result": "NO_UNIQUE_A_OF_R",
+    "telemetry": {
+      "linear": {
+        "A": {
+          "local_unitary_covariance_error": 3.434312402059545e-16,
+          "null_source_norm": 0.0,
+          "positive_scale_projective_residual": 7.850462293418876e-17,
+          "source_additivity_error": 1.7095609642851672e-16,
+          "source_homogeneity_error": 4.440892098500626e-16
+        },
+        "B": {
+          "local_unitary_covariance_error": 2.9118668774031194e-16,
+          "null_source_norm": 0.0,
+          "positive_scale_projective_residual": 6.378500613402836e-17,
+          "source_additivity_error": 1.0292042894454821e-16,
+          "source_homogeneity_error": 2.220446049250313e-16
+        }
+      },
+      "log": {
+        "A": {
+          "local_unitary_covariance_error": 1.364745135510052e-16,
+          "null_source_norm": 0.0,
+          "positive_scale_projective_residual": 1.9229626863835638e-16,
+          "source_additivity_error": 2.823712090451708e-16,
+          "source_homogeneity_error": 1.7763568394002505e-15
+        },
+        "B": {
+          "local_unitary_covariance_error": 2.802481187020369e-16,
+          "null_source_norm": 0.0,
+          "positive_scale_projective_residual": 1.2499642664429032e-16,
+          "source_additivity_error": 3.510833468576701e-16,
+          "source_homogeneity_error": 2.220446049250313e-16
+        }
+      },
+      "polynomial_witness": {
+        "A": {
+          "local_unitary_covariance_error": 1.605979758581195e-16,
+          "null_source_norm": 0.0,
+          "positive_scale_projective_residual": 2.603703785810335e-16,
+          "source_additivity_error": 2.540052226568824e-16,
+          "source_homogeneity_error": 6.280369834735101e-16
+        },
+        "B": {
+          "local_unitary_covariance_error": 2.8003374041655554e-16,
+          "null_source_norm": 0.0,
+          "positive_scale_projective_residual": 1.2177709378935645e-16,
+          "source_additivity_error": 1.442222014787673e-16,
+          "source_homogeneity_error": 3.3306690738754696e-16
+        }
+      }
+    },
+    "tensor_state_functional_equation_status": "NO_CERTIFIED_TENSOR_COMPOSITION_FUNCTIONAL_EQUATION_IN_AUDITED_SOURCE_LAW_DEPENDENCIES",
+    "witness_laws": [
+      "linear",
+      "log",
+      "polynomial_witness"
+    ]
+  },
+  "gate_outcome": "COVARIANCE_LEAVES_SPECTRAL_SOURCE_FREEDOM",
+  "global_ray_controls": {
+    "A": {
+      "a_log_on_source_support": [
+        2.015205812486224,
+        2.353702044702441
+      ],
+      "linear_log_projective_residual": 0.032643436536906496,
+      "linear_polynomial_projective_residual": 0.061186205628391485,
+      "log_polynomial_projective_residual": 0.02854989828373698,
+      "source_support_radii": [
+        0.15,
+        0.63
+      ],
+      "source_support_sites": [
+        0,
+        3
+      ],
+      "source_support_spectra_unequal": true
+    },
+    "B": {
+      "a_log_on_source_support": [
+        2.2166913652661258,
+        2.1705120706949246
+      ],
+      "linear_log_projective_residual": 0.010460821683241906,
+      "linear_polynomial_projective_residual": 0.01972566676052767,
+      "log_polynomial_projective_residual": 0.009265084059069957,
+      "source_support_radii": [
+        0.52,
+        0.47
+      ],
+      "source_support_sites": [
+        0,
+        3
+      ],
+      "source_support_spectra_unequal": true
+    },
+    "analytic_condition": "for Hilbert-Schmidt-orthogonal embedded nonzero site terms, [P_a]=[P_b] iff their response coefficients on source-support sites are related by one common positive factor; unequal radii plus nonconstant a(r)/b(r) therefore split the ray",
+    "classification": "UNEQUAL_LOCAL_SPECTRA_GENERICALLY_SPLIT_PROJECTIVE_SOURCE_RAYS",
+    "log_monotonicity": "2*artanh(r)/r is strictly increasing for 0<r<1"
+  },
+  "interpretation": "Local-unitary covariance fixes the eigenspaces/direction of a state-dependent operator source but not its spectral response values. For qubits the entire traceless freedom is one scalar function a(r). The frozen retained source linearity, positive projective scaling, and local-frame covariance constraints remain satisfied by inequivalent a(r), so v15.03 nonuniqueness is an illustration of an exact classification theorem rather than evidence for it.",
+  "major_structural_result": true,
+  "not_derived": [
+    "a unique operator-valued source response law a(r)",
+    "a certified exact retained-node-to-quantum-site factorization",
+    "a natural graph-site-to-C125 compatibility-parent map",
+    "Genesis/provenance selection of a spectral response law",
+    "absolute source magnitude or observer source calibration",
+    "physical stress-energy",
+    "source-to-coframe/solder law",
+    "physical metric or spacetime",
+    "absolute gravitational coupling",
+    "Einstein equations",
+    "physical time primitive",
+    "Pillar 3 closure"
+  ],
+  "qubit_corollary": {
+    "a_log_values": {
+      "0.15": 2.015205812486224,
+      "0.18": 2.0220298733411757,
+      "0.22": 2.033237354743931,
+      "0.27": 2.050843130778519,
+      "0.31": 2.068034898722233,
+      "0.36": 2.093810562156612,
+      "0.42": 2.1318667787020034,
+      "0.47": 2.1705120706949246,
+      "0.52": 2.2166913652661258,
+      "0.63": 2.353702044702441
+    },
+    "classification": "QUBIT_EQUIVARIANT_TRACELESS_MAP_IS_RADIAL",
+    "covariance_selection": "DIRECTION_ONLY_NOT_RESPONSE_LAW",
+    "general_form": "F(rho)=c(r) I + a(r)(rho-I/2) for r=|Bloch(rho)|; covariance alone leaves c and a arbitrary real scalar functions (with traceless part zero at r=0)",
+    "linear_response": "a_linear(r)=1",
+    "log_identity": "log(rho)-Tr(log(rho))I/2 = artanh(r) rhat.sigma = [2 artanh(r)/r](rho-I/2)",
+    "log_response_nonconstant": true,
+    "max_linear_square_identity_error": 7.850462293418876e-17,
+    "max_log_formula_error": 1.2412670766236366e-16,
+    "projective_relevance": "the central c(r) I term is irrelevant after traceless/projective centering, but a(r) remains",
+    "square_identity": "rho^2-Tr(rho^2)I/2 = rho-I/2 exactly for every qubit density matrix"
+  },
+  "scientific_breakthrough": false,
+  "secondary_statuses": [
+    "COVARIANCE_FIXES_EIGENSPACES_NOT_SPECTRAL_RESPONSE_VALUES",
+    "DIRECTION_ONLY_NOT_RESPONSE_LAW",
+    "NO_UNIQUE_A_OF_R",
+    "V15_03_NUMERICS_ARE_ILLUSTRATIONS_OF_V15_04_THEOREM"
+  ],
+  "stop_rule": "Do not privilege log(rho), linear rho, or any other a(r) using downstream gravity/ADM/Einstein quality. A further selector must be independently frozen structure or an explicit NEW ASSUMPTION; no entropy, pruning, or physical time enters this pre-pruning gate.",
+  "theorem": {
+    "classification": "LOCAL_UNITARY_EQUIVARIANCE_IMPLIES_SPECTRAL_SOURCE_LAW",
+    "codomain": "Hermitian operators on the same local Hilbert space",
+    "commutator_consequence": "[F(rho),rho]=0",
+    "converse": "Every well-defined real permutation-equivariant spectral assignment with equal outputs on equal eigenvalues defines a conjugation-equivariant Hermitian map.",
+    "converse_certified": true,
+    "covariance": "F(U rho U^dagger)=U F(rho) U^dagger for every unitary U",
+    "degenerate_eigenspace_consequence": "F(rho) is scalar on each degenerate eigenspace of rho",
+    "domain": "faithful finite-dimensional density operators",
+    "regularity_assumption_required": false,
+    "selection_result": "COVARIANCE_FIXES_EIGENSPACES_NOT_SPECTRAL_RESPONSE_VALUES",
+    "spectral_assignment_constraint": "Phi is permutation-equivariant and equal eigenvalues receive equal outputs",
+    "spectral_form": "rho=V diag(lambda) V^dagger => F(rho)=V diag(Phi(lambda)) V^dagger",
+    "stabilizer_implication": "U rho U^dagger=rho => U F(rho) U^dagger=F(rho)"
+  },
+  "theorem_controls": {
+    "classification": "DETERMINISTIC_CONTROLS_CORROBORATE_ANALYTIC_THEOREM",
+    "fixture_spectrum": [
+      0.57,
+      0.29,
+      0.14
+    ],
+    "max_commutator_norm": 0.0,
+    "max_covariance_error": 2.1526233869852127e-15,
+    "max_stabilizer_invariance_error": 1.1102230246251565e-16,
+    "nonspectral_stabilizer_violation": 1.4506982284775858,
+    "scientific_foundation": false,
+    "tested_spectral_laws": [
+      "linear",
+      "square",
+      "log",
+      "spectrum_coupled"
+    ]
+  },
+  "title": "Equivariant Source-Law Classification / Spectral Freedom Gate",
+  "v1503_binding": {
+    "classification": "V15_03_NUMERICS_ARE_ILLUSTRATIONS_OF_V15_04_THEOREM",
+    "controls": {
+      "A": {
+        "frozen_linear_log_residual": 0.03264343653690659,
+        "frozen_linear_square_residual": 3.597533769998862e-16,
+        "linear_log_absolute_difference": 9.020562075079397e-17,
+        "linear_square_absolute_difference": 3.597533769998862e-16,
+        "theorem_linear_log_residual": 0.032643436536906496,
+        "theorem_linear_square_residual": 0.0
+      },
+      "B": {
+        "frozen_linear_log_residual": 0.010460821683241842,
+        "frozen_linear_square_residual": 9.437916079723832e-17,
+        "linear_log_absolute_difference": 6.418476861114186e-17,
+        "linear_square_absolute_difference": 9.437916079723832e-17,
+        "theorem_linear_log_residual": 0.010460821683241906,
+        "theorem_linear_square_residual": 0.0
+      }
+    },
+    "linear_log_residuals_match_theorem": true,
+    "linear_square_residuals_match_theorem": true
+  },
+  "version": "v15.04"
+}
