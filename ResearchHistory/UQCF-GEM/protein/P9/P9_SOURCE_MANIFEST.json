@@ -1,0 +1,38 @@
+{
+  "schema": "protein-p9-retained-coherence-source-manifest-v1",
+  "parent_head": "1908dad8cb7b0e4512298842bc44636a470fb35b",
+  "sources": {
+    "1UAO_traces": {
+      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_bridge_patch_v9_1uao_traces.csv",
+      "git_blob": "95bf84ad9d19ee84533190787889bb1d1420c330"
+    },
+    "1UAO_results": {
+      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_bridge_patch_v9_1uao_results.csv",
+      "git_blob": "2768ccbad6c694282a689bba799d14d65c0bb0d7"
+    },
+    "1L2Y_traces": {
+      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_bridge_patch_v9_1l2y_confirm_traces.csv",
+      "git_blob": "819e8cecda27ba4248b64288de88d672c7b705bc"
+    },
+    "1L2Y_results": {
+      "path": "Tmp/TOE/uqcf_bridge_final_verification_pack/uqcf_bridge_patch_v9_1l2y_confirm_results.csv",
+      "git_blob": "aa3565a2a597ef93ba81d3d9d078cf452f29edbb"
+    }
+  },
+  "eligible_mode": "bridge_patch_v9",
+  "current_steps": [
+    100,
+    200,
+    300,
+    400
+  ],
+  "future_step_map": {
+    "100": 200,
+    "200": 300,
+    "300": 400,
+    "400": 499
+  },
+  "ridge_alpha": 1,
+  "permutation_seed": 20260918,
+  "permutation_replicates": 2000
+}
