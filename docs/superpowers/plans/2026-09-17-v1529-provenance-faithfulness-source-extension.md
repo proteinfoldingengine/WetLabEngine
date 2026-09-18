@@ -797,5 +797,5 @@ Before execution begins, verify:
 6. **Countermodels take priority:** surviving collapsed/distinguished models force non-entailment even if a convenient implementation exists.
 7. **Synthetic controls stay synthetic:** they validate the machinery but can never count as UQCF physical evidence.
 8. **Type consistency:** the exact status strings and dataclass field names are identical across tasks.
-9. **No placeholders:** no TODO/TBD/future implementation language remains.
+9. **No placeholders:** no placeholder markers or deferred implementation language remain.
 10. **Delivery boundary:** exact-head GitHub CI is required before completion or publication claims.
