@@ -18,7 +18,12 @@
     "torsion_basin_bias_blob": "1a0121799e1462eb4b3340e5751071a675897d7d",
     "deep_scan_config_blob": "8336e47eaacd6c059fc169bb1f047d4c4b386dc8",
     "recovered_k_torsion_entropy": 0.02,
-    "recovered_k_ramachandran_bias": 0.05
+    "recovered_k_ramachandran_bias": 0.05,
+    "physics_metrics_blob": "087d90e1727b1dbddec33e7e7b6538be89989136",
+    "histogram_min": -3.14159,
+    "histogram_max": 3.14159,
+    "histogram_normalization_epsilon": 1e-8,
+    "projection": "historical compute_true_phi_psi interior residues; P5 phi[1:-1], psi[1:]"
   },
   "targets": {
     "1VII": {
