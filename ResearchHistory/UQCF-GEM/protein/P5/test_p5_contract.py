@@ -77,6 +77,52 @@ class P5ContractTests(unittest.TestCase):
             g = p5._gradient_norm(energy, (pf, ps), retain_graph=True)
             self.assertAlmostEqual(target_norm, g, places=9)
 
+    def test_historical_tpo_literal_constants(self):
+        self.assertEqual(-3.14159, p5.HISTORICAL_TPO_MIN_VAL)
+        self.assertEqual(3.14159, p5.HISTORICAL_TPO_MAX_VAL)
+        self.assertEqual(1e-8, p5.HISTORICAL_TPO_EPS)
+
+        target = self.villin
+        pf, ps = p5.initial_torsions(target, 4)
+        phi = torch.cat([target.geometry.phi[:1], pf])
+        p, q = p5.common_torsions(phi, ps)
+
+        bins = 18
+        min_val = -3.14159
+        max_val = 3.14159
+        width = (max_val - min_val) / bins
+        centers = torch.linspace(
+            min_val + width / 2.0,
+            max_val - width / 2.0,
+            bins,
+            dtype=p.dtype,
+            device=p.device,
+        )
+        weights = (
+            torch.relu(width - torch.abs(p[:, None, None] - centers[None, :, None]))
+            * torch.relu(width - torch.abs(q[:, None, None] - centers[None, None, :]))
+        )
+        hist = weights.sum(dim=0) / (width * width)
+        probs = hist / (hist.sum() + 1e-8)
+        positive = probs[probs > 0]
+        literal = -(positive * torch.log(positive)).sum()
+        actual = p5.tpo_entropy_energy(phi, ps)
+        torch.testing.assert_close(actual, literal, rtol=0.0, atol=0.0)
+
+    def test_historical_phi_psi_projection_is_interior_only(self):
+        target = self.villin
+        pf, ps = p5.initial_torsions(target, 3)
+        phi = torch.cat([target.geometry.phi[:1], pf])
+        n, ca, c = p5.bk.reconstruct_chain_backbone(target.geometry, phi, ps)
+        p, q = p5.common_torsions(phi, ps)
+
+        expected_phi = p5.bk.dihedral(c[:-2], n[1:-1], ca[1:-1], c[1:-1])
+        expected_psi = p5.bk.dihedral(n[1:-1], ca[1:-1], c[1:-1], n[2:])
+        self.assertEqual(target.native_ca.shape[0] - 2, p.numel())
+        self.assertEqual(target.native_ca.shape[0] - 2, q.numel())
+        torch.testing.assert_close(p, expected_phi, rtol=0.0, atol=1e-10)
+        torch.testing.assert_close(q, expected_psi, rtol=0.0, atol=1e-10)
+
     def test_kabsch_rmsd_is_rigid_transform_invariant(self):
         x = self.villin.native_ca[:10]
         theta = 0.713
