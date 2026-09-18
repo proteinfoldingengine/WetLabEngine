@@ -662,10 +662,8 @@ def _generic_contact_raw(
     )
 
 
-def _physical_nonlocal(
-    n: torch.Tensor,
+def _sidechain_nonlocal(
     ca: torch.Tensor,
-    c: torch.Tensor,
     sequence: str,
 ) -> tuple[
     torch.Tensor,
@@ -676,18 +674,11 @@ def _physical_nonlocal(
         ca,
         sequence,
     )
-    hbond = _hbond_energy(
-        n,
-        ca,
-        c,
-        sequence,
-    )
     return (
-        hydropathy + electrostatics + hbond,
+        hydropathy + electrostatics,
         {
             "hydropathy": hydropathy,
             "electrostatics": electrostatics,
-            "hbond": hbond,
         },
     )
 
@@ -733,22 +724,20 @@ def generic_collapse_scale(
     phi = torch.cat(
         [geometry.phi[:1], phi_free]
     )
-    n, ca, c = reconstruct_backbone(
+    _, ca, _ = reconstruct_backbone(
         geometry,
         phi,
         psi,
     )
 
-    physical, _ = _physical_nonlocal(
-        n,
+    sidechain, _ = _sidechain_nonlocal(
         ca,
-        c,
         sequence,
     )
     generic = _generic_contact_raw(ca)
 
     physical_gradient = _gradient_norm(
-        physical,
+        sidechain,
         (phi_free, psi),
         retain_graph=True,
     )
@@ -793,17 +782,15 @@ def initial_nonlocal_gradient_norm(
     phi = torch.cat(
         [geometry.phi[:1], phi_free]
     )
-    n, ca, c = reconstruct_backbone(
+    _, ca, _ = reconstruct_backbone(
         geometry,
         phi,
         psi,
     )
 
     if mode == "physical_real_sequence":
-        energy, _ = _physical_nonlocal(
-            n,
+        energy, _ = _sidechain_nonlocal(
             ca,
-            c,
             sequence,
         )
     elif mode == "generic_collapse":
@@ -857,15 +844,18 @@ def objective(
 
     hydropathy = ca.new_tensor(0.0)
     electrostatics = ca.new_tensor(0.0)
-    hbond = ca.new_tensor(0.0)
+    hbond = _hbond_energy(
+        n,
+        ca,
+        c,
+        target.sequence,
+    )
     generic = ca.new_tensor(0.0)
 
     if mode == "physical_real_sequence":
         nonlocal_energy, components = (
-            _physical_nonlocal(
-                n,
+            _sidechain_nonlocal(
                 ca,
-                c,
                 target.sequence,
             )
         )
@@ -873,16 +863,13 @@ def objective(
         electrostatics = components[
             "electrostatics"
         ]
-        hbond = components["hbond"]
     elif mode == "physical_shuffled_sequence":
         sequence = shuffled_sequence(
             target.name
         )
         nonlocal_energy, components = (
-            _physical_nonlocal(
-                n,
+            _sidechain_nonlocal(
                 ca,
-                c,
                 sequence,
             )
         )
@@ -890,7 +877,6 @@ def objective(
         electrostatics = components[
             "electrostatics"
         ]
-        hbond = components["hbond"]
     else:
         generic = (
             generic_scale
@@ -901,6 +887,7 @@ def objective(
     total = (
         steric
         + rama
+        + hbond
         + nonlocal_energy
     )
 
