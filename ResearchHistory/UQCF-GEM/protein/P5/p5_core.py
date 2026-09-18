@@ -34,6 +34,9 @@ STEPS = 120
 LEARNING_RATE = 0.03
 GRADIENT_MATCH_RATIO = 0.5
 HISTORICAL_ENTROPY_K = 0.02
+HISTORICAL_TPO_MIN_VAL = -3.14159
+HISTORICAL_TPO_MAX_VAL = 3.14159
+HISTORICAL_TPO_EPS = 1e-8
 
 CONTACT_K = 0.05
 CONTACT_CUTOFF_A = 8.0
@@ -172,8 +175,8 @@ def _soft_histogram_2d(
     psi: torch.Tensor,
     *,
     bins: int = 18,
-    min_val: float = -math.pi,
-    max_val: float = math.pi,
+    min_val: float = HISTORICAL_TPO_MIN_VAL,
+    max_val: float = HISTORICAL_TPO_MAX_VAL,
 ) -> torch.Tensor:
     width = (max_val - min_val) / bins
     centers = torch.linspace(
@@ -195,7 +198,7 @@ def _soft_histogram_2d(
 def tpo_entropy_energy(phi: torch.Tensor, psi: torch.Tensor) -> torch.Tensor:
     p, q = common_torsions(phi, psi)
     hist = _soft_histogram_2d(p, q)
-    probs = hist / (hist.sum() + 1e-12)
+    probs = hist / (hist.sum() + HISTORICAL_TPO_EPS)
     positive = probs[probs > 0]
     return -(positive * torch.log(positive)).sum()
 
