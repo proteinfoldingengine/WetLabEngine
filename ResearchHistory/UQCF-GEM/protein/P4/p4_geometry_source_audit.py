@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import ast, hashlib, importlib.util, json
+import ast, hashlib, importlib.util, json, contextlib, io
 from pathlib import Path
 import numpy as np
 
@@ -52,7 +52,9 @@ def contract():
 def audit():
     got={k:sha(SRC/k) for k in EXPECTED}; match={k:got[k]==EXPECTED[k] for k in EXPECTED}
     if not all(match.values()): raise RuntimeError("source hash mismatch")
-    generate=load_generate_ideal_backbone(); n,ca,c=generate(36,42)
+    generate=load_generate_ideal_backbone()
+    with contextlib.redirect_stdout(io.StringIO()):
+        n,ca,c=generate(36,42)
     nca=np.linalg.norm(n-ca,axis=1); cac=np.linalg.norm(ca-c,axis=1); cn=np.linalg.norm(c[:-1]-n[1:],axis=1)
     cnang=angles(ca[:-1],c[:-1],n[1:]); ct=contract()
     bad_cn=bool(np.all(np.abs(cn-1.33)>1.0))
