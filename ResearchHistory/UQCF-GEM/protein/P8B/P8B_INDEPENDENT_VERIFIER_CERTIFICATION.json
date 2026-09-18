@@ -1,0 +1,17 @@
+{
+  "schema": "protein-p8b-independent-verifier-certification-v1",
+  "frozen_before_authoritative_result_exposure": true,
+  "verifier_branch": "research/protein-p8b-independent-verifier",
+  "test_freeze_commit": "1c04499c33cee2aa8bfcb333dce9bd0895e91ded",
+  "implementation_commit": "7f04a23ad5c3ac15b4909d9fb40b426ff92584df",
+  "workflow_commit": "a760e1455a4f01441e213875e053536ebbba0ca0",
+  "pull_request": 37,
+  "workflow_run": 35366692881,
+  "job_id": 105670770520,
+  "tests": "4 passed",
+  "test_runtime_seconds": 2.645,
+  "conclusion": "success",
+  "authoritative_measurement_run_under_review": 35361130812,
+  "authoritative_result_exposed_at_verifier_freeze": false,
+  "boundary": "This verifier independently recomputes outcome-sensitive acceptance predicates from the raw P8B artifact. Premeasurement native-firewall and historical-source-integrity prerequisites remain certified by the frozen premeasurement packet rather than inferred from outcome CSVs."
+}
