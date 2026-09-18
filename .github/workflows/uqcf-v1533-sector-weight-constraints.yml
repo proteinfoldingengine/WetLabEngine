@@ -37,7 +37,7 @@ jobs:
           }
           subprocess.run(['git','merge-base','--is-ancestor',base,'HEAD'],check=True)
           for line in subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines():
-              status,name=line.split('\\t',1)
+              status,name=line.split('\t',1)
               assert status=='A',line
               assert name.startswith(demo) or name in allowed,name
           PY
@@ -55,8 +55,8 @@ jobs:
           for cwd,files,count in suites:
               r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=cwd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=180)
               print(r.stdout[-700:],flush=True)
-              m=re.search(r'Ran (\\d+) tests? in',r.stdout)
-              assert r.returncode==0 and m and int(m.group(1))==count and re.search(r'^OK\\s*$',r.stdout,re.M),r.stdout
+              m=re.search(r'Ran (\d+) tests? in',r.stdout)
+              assert r.returncode==0 and m and int(m.group(1))==count and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
               total+=count
           assert total==12
           PY
