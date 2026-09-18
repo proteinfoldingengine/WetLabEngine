@@ -1,0 +1,107 @@
+{
+  "Pillar_3": "OPEN",
+  "affine_weight_dimension": 10,
+  "all_witnesses_pass_automatic_constraints": true,
+  "automatic_constraint_count": 5,
+  "base_sha": "ff4707b3a09bc7cd091e89986c8cc3dcaf758798",
+  "constraint_ledger": [
+    {
+      "class": "AUTOMATIC_FOR_ALL_WEIGHTS",
+      "equation_rank": 0,
+      "key": "linearity_source_additivity"
+    },
+    {
+      "class": "AUTOMATIC_FOR_ALL_WEIGHTS",
+      "equation_rank": 0,
+      "key": "source_reversal_oddness"
+    },
+    {
+      "class": "AUTOMATIC_FOR_ALL_WEIGHTS",
+      "equation_rank": 0,
+      "key": "G_covariance"
+    },
+    {
+      "class": "AUTOMATIC_FOR_ALL_WEIGHTS",
+      "equation_rank": 0,
+      "key": "same_carrier_composition_closure"
+    },
+    {
+      "class": "AUTOMATIC_FOR_ALL_WEIGHTS",
+      "equation_rank": 0,
+      "key": "identity_availability"
+    },
+    {
+      "class": "TYPE_BLOCKED_NO_CERTIFIED_MAP_TO_WEIGHT_SPACE",
+      "equation_rank": 0,
+      "key": "v13.22_refinement_naturality"
+    },
+    {
+      "class": "TYPE_BLOCKED_NO_CERTIFIED_MAP_TO_WEIGHT_SPACE",
+      "equation_rank": 0,
+      "key": "v13.23_QRSL"
+    },
+    {
+      "class": "TYPE_BLOCKED_NO_CERTIFIED_MAP_TO_WEIGHT_SPACE",
+      "equation_rank": 0,
+      "key": "v15.05_labeled_monoidal_composition"
+    },
+    {
+      "class": "TYPE_BLOCKED_NO_CERTIFIED_MAP_TO_WEIGHT_SPACE",
+      "equation_rank": 0,
+      "key": "v15.06_recoverability_multiplicativity"
+    },
+    {
+      "class": "TYPE_BLOCKED_NO_CERTIFIED_MAP_TO_WEIGHT_SPACE",
+      "equation_rank": 0,
+      "key": "v15.24_no_signalling_product_composition"
+    },
+    {
+      "class": "PROJECTIVE_GAUGE_ONLY",
+      "equation_rank": 0,
+      "key": "v13.26_common_source_scale"
+    }
+  ],
+  "coupling_solver_reopened": false,
+  "equal_weight_control_is_frozen": false,
+  "equal_weight_control_projective_dimension": 0,
+  "evidence_pins": {
+    "v13.22-refinement": "e6920facaa4d133e2767951612c608d0e514806c",
+    "v13.23-qrsl": "1162d8f8378cb5292d6c2f8526dd5bd53198d2c4",
+    "v13.26-source-scale": "9917085b211ca0e1f4737082227f55097cc72b66",
+    "v15.05-composition": "b191c08c22ded0439cc4c2c125fbccfdb677dcbc",
+    "v15.06-recoverability": "bdeac09b2b162f07baa874ef1c1d6415fdd5e236",
+    "v15.23-idempotence": "1e0a276a7aca9c5bf474dd9917c44ecfe99a262e",
+    "v15.24-composition": "8f7dcf085fc1cbaf167297191ad1a7416f0efa42",
+    "v15.32-results": "a6018895d996bb01d76918994ebd0519260a958d"
+  },
+  "frozen_actual_weight_equation_count": 0,
+  "frozen_constraint_rank": 0,
+  "gravity_observables_evaluated": false,
+  "idempotence_is_frozen_source_law": false,
+  "idempotent_nonzero_choice_count": 1023,
+  "idempotent_total_choice_count": 1024,
+  "inherited_projective_relative_weight_dimension": 9,
+  "new_sector_weight_selector_added": false,
+  "new_source_semantics_axiom_added": false,
+  "next_required_object": "NEW_TYPED_PRETIME_INVARIANT_OR_EXPLICIT_SECTOR_WEIGHT_AXIOM",
+  "physical_gravity_derived": false,
+  "positive_cone_is_frozen_selector": false,
+  "positive_cone_projective_dimension": 9,
+  "projective_gauge_count": 1,
+  "projectively_distinct_witness_count": 5,
+  "scientific_breakthrough": false,
+  "sector_count": 10,
+  "signal_of_life": false,
+  "status": "FROZEN_CONSTRAINTS_LEAVE_ALL_9_RELATIVE_WEIGHTS_FREE",
+  "surviving_projective_weight_dimension": 9,
+  "type_blocked_constraint_count": 5,
+  "unresolved_constraint_count": 0,
+  "uses_entropy_as_selector": false,
+  "uses_holonomy_selector": false,
+  "uses_metric_selector": false,
+  "uses_newton_or_gr": false,
+  "uses_physical_time": false,
+  "uses_pruning_as_selector": false,
+  "version": "v15.33",
+  "witness_count": 5
+}

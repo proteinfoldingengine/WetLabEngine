@@ -1,0 +1,85 @@
+name: UQCF v15.33 Sector Weight Constraint Audit
+on:
+  push:
+    branches: [research/v15.33-sector-weight-constraint-audit]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.33-sector-weight-constraint-audit/**'
+      - 'docs/superpowers/specs/2026-09-18-v1533-sector-weight-constraint-audit-design.md'
+      - 'docs/superpowers/plans/2026-09-18-v1533-sector-weight-constraint-audit-implementation.md'
+      - '.github/workflows/uqcf-v1533-sector-weight-constraints.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned inherited environment
+        run: python -m pip install numpy==2.3.5
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+          base='ff4707b3a09bc7cd091e89986c8cc3dcaf758798'
+          demo='ResearchHistory/UQCF-GEM/demos/v15.33-sector-weight-constraint-audit/'
+          allowed={
+            'docs/superpowers/specs/2026-09-18-v1533-sector-weight-constraint-audit-design.md',
+            'docs/superpowers/plans/2026-09-18-v1533-sector-weight-constraint-audit-implementation.md',
+            '.github/workflows/uqcf-v1533-sector-weight-constraints.yml',
+          }
+          subprocess.run(['git','merge-base','--is-ancestor',base,'HEAD'],check=True)
+          for line in subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines():
+              status,name=line.split('\t',1)
+              assert status=='A',line
+              assert name.startswith(demo) or name in allowed,name
+          PY
+      - name: Run inherited frontier regressions
+        run: |
+          python - <<'PY'
+          import re,subprocess,sys
+          from pathlib import Path
+          root=Path('ResearchHistory/UQCF-GEM/demos')
+          suites=[
+            (root/'v15.31-source-extension-minimality',['test_gate.py'],6),
+            (root/'v15.32-commutant-sector-decomposition',['test_gate.py'],6),
+          ]
+          total=0
+          for cwd,files,count in suites:
+              r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=cwd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=180)
+              print(r.stdout[-700:],flush=True)
+              m=re.search(r'Ran (\d+) tests? in',r.stdout)
+              assert r.returncode==0 and m and int(m.group(1))==count and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+              total+=count
+          assert total==12
+          PY
+      - name: Run v15.33 exact gate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.33-sector-weight-constraint-audit
+        run: |
+          python -m unittest -v test_gate.py
+          python sector_weight_constraint_gate.py --check docs/RESULTS.json > /tmp/v1533-results.json
+          python -m compileall -q sector_weight_constraint_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='FROZEN_CONSTRAINTS_LEAVE_ALL_9_RELATIVE_WEIGHTS_FREE'
+          assert r['sector_count']==10
+          assert r['frozen_constraint_rank']==0
+          assert r['surviving_projective_weight_dimension']==9
+          assert r['projectively_distinct_witness_count']==5
+          assert r['idempotent_total_choice_count']==1024
+          assert r['idempotent_nonzero_choice_count']==1023
+          assert r['new_sector_weight_selector_added'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['physical_gravity_derived'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY
