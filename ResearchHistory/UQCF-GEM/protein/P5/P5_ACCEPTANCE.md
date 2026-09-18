@@ -52,9 +52,13 @@ Every mode receives the same:
 
 No native contact map, native RMSD, native torsion target or native-derived force is permitted.
 
+The common base is a frozen **P5 control scaffold** shared identically by every arm; it is not claimed to reproduce the historical Patch-630 force field. Its role is to provide the same native-blind nonbonded background while the torsional regularizers are compared.
+
 ## Torsional terms
 
 Historical TPO entropy is the recovered differentiable 18x18 soft φ/ψ histogram Shannon entropy used by `stage1_discovery_engine.py`.
+
+**Pre-exposure source-fidelity freeze:** use the literal Stage-1 histogram bounds `[-3.14159, +3.14159]`, normalization epsilon `1e-8`, and the historical `compute_true_phi_psi` interior-residue projection. Under the kinematic representation this corresponds to `phi[1:-1]` and `psi[1:]`, yielding `N-2` paired torsions. These constants/indexing rules are recovered source details, not tuned parameters.
 
 The conventional Ramachandran control is periodic squared distance to the nearer of canonical alpha and beta basin centers.
 
