@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import ast
+import contextlib
 import hashlib
+import io
 import json
 import sys
 from pathlib import Path
@@ -77,7 +79,9 @@ def main() -> None:
         dag_engine.DAG_SCHEMA, constants, dag_engine._dag_force_mapping
     )
     phase_before = d.get_current_phase_name()
-    d.update_phase(zero_history_metrics, 0)
+    historical_console = io.StringIO()
+    with contextlib.redirect_stdout(historical_console):
+        d.update_phase(zero_history_metrics, 0)
     phase_after = d.get_current_phase_name()
 
     phases = dag_engine.DAG_SCHEMA["phases"]
@@ -108,6 +112,7 @@ def main() -> None:
         "initial_exit_reason": exit_reason,
         "phase_before_step0_update": phase_before,
         "phase_after_step0_update": phase_after,
+        "historical_step0_console": historical_console.getvalue().strip(),
         "main_calls_update_before_active_param_copy": update_pos < copy_pos,
         "main_calls_update_before_force_loss": update_pos < loss_pos,
         "phase0_effective_optimizer_steps": 0 if exit_value and update_pos < loss_pos else None,
