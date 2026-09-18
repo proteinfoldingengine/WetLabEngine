@@ -1,0 +1,130 @@
+name: Protein P9 Authoritative Measurement
+
+on:
+  push:
+    branches:
+      - research/protein-p9-retained-coherence-falsifier
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P9/P9_AUTHORITATIVE_LAUNCH.md'
+
+jobs:
+  measurement:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify frozen scientific packet
+        shell: bash
+        run: |
+          set -euo pipefail
+          FROZEN=8f4e320b291d6fba7c43cd716e4af3f348ef27d4
+          allowed='ResearchHistory/UQCF-GEM/protein/P9/P9_PREMEASUREMENT_CERTIFICATION.json
+          .github/workflows/protein-p9-authoritative-measurement.yml
+          ResearchHistory/UQCF-GEM/protein/P9/P9_AUTHORITATIVE_LAUNCH.md'
+          changed="$(git diff --name-only "$FROZEN"..HEAD)"
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            if ! grep -Fxq "$path" <<< "$allowed"; then
+              echo "Unauthorized post-freeze change: $path" >&2
+              exit 1
+            fi
+          done <<< "$changed"
+          test "$(git hash-object ResearchHistory/UQCF-GEM/protein/P9/P9_ACCEPTANCE.md)" = a8d1cb99d2b94cb8cdb8e736b98b3bd14ca04ddf
+          test "$(git hash-object ResearchHistory/UQCF-GEM/protein/P9/P9_SOURCE_MANIFEST.json)" = c1739cdbd5066e17ae443c8bbbc054a71823db33
+          test "$(git hash-object ResearchHistory/UQCF-GEM/protein/P9/test_p9_retained_coherence.py)" = a94613a5e8f8b3aefa393d8b55da4132bade531c
+          test "$(git hash-object ResearchHistory/UQCF-GEM/protein/P9/p9_retained_coherence.py)" = fb975840317e6fd5b0ed145997855589f4284e7f
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install frozen dependencies
+        run: python -m pip install --upgrade pip numpy
+
+      - name: Re-certify P9 contract
+        working-directory: ResearchHistory/UQCF-GEM/protein/P9
+        run: python -m unittest -v test_p9_retained_coherence.py
+
+      - name: Verify premeasurement boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("ResearchHistory/UQCF-GEM/protein/P9/P9_PREMEASUREMENT_CERTIFICATION.json")
+          d = json.loads(p.read_text())
+          assert d["frozen_scientific_head"] == "8f4e320b291d6fba7c43cd716e4af3f348ef27d4"
+          assert d["prospective_measurement_authorized"] is True
+          assert d["result_exposed"] is False
+          PY
+
+      - name: Run authoritative P9A measurement
+        working-directory: ResearchHistory/UQCF-GEM/protein/P9
+        run: python p9_retained_coherence.py
+
+      - name: Validate and package authoritative result
+        env:
+          RUN_ID: ${{ github.run_id }}
+          JOB_SHA: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+
+          root = Path("ResearchHistory/UQCF-GEM/protein/P9")
+          result = json.loads((root / "p9_result.json").read_text())
+          assert result["decision"] in {
+              "GO_RETAINED_COHERENCE_TRANSFER_SIGNAL",
+              "NO_GO_RETAINED_COHERENCE_TRANSFER_SIGNAL",
+          }
+          assert set(result["directions"]) == {"1UAO_to_1L2Y", "1L2Y_to_1UAO"}
+          assert result["instance_counts"] == {"1UAO": 24, "1L2Y": 40}
+          assert result["source_integrity_passed"] is True
+          assert result["cardinality_passed"] is True
+          assert result["native_information_firewall_passed"] is True
+
+          manifest = {
+              "schema": "protein-p9-authoritative-run-v1",
+              "git_head": os.environ["JOB_SHA"],
+              "workflow_run_id": int(os.environ["RUN_ID"]),
+              "frozen_scientific_head": "8f4e320b291d6fba7c43cd716e4af3f348ef27d4",
+              "result_file": "p9_result.json",
+              "decision": result["decision"],
+          }
+          (root / "p9_run_manifest.json").write_text(
+              json.dumps(manifest, indent=2, sort_keys=True) + "\n"
+          )
+          names = [
+              "P9_ACCEPTANCE.md",
+              "P9_SOURCE_MANIFEST.json",
+              "P9_PREMEASUREMENT_CERTIFICATION.json",
+              "P9_AUTHORITATIVE_LAUNCH.md",
+              "p9_retained_coherence.py",
+              "test_p9_retained_coherence.py",
+              "p9_result.json",
+              "p9_run_manifest.json",
+          ]
+          lines = []
+          for name in names:
+              data = (root / name).read_bytes()
+              lines.append(f"{hashlib.sha256(data).hexdigest()}  {name}")
+          (root / "SHA256SUMS.txt").write_text("\n".join(lines) + "\n")
+          PY
+
+      - name: Upload authoritative P9A packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: protein-p9-authoritative-measurement
+          path: |
+            ResearchHistory/UQCF-GEM/protein/P9/P9_ACCEPTANCE.md
+            ResearchHistory/UQCF-GEM/protein/P9/P9_SOURCE_MANIFEST.json
+            ResearchHistory/UQCF-GEM/protein/P9/P9_PREMEASUREMENT_CERTIFICATION.json
+            ResearchHistory/UQCF-GEM/protein/P9/P9_AUTHORITATIVE_LAUNCH.md
+            ResearchHistory/UQCF-GEM/protein/P9/p9_retained_coherence.py
+            ResearchHistory/UQCF-GEM/protein/P9/test_p9_retained_coherence.py
+            ResearchHistory/UQCF-GEM/protein/P9/p9_result.json
+            ResearchHistory/UQCF-GEM/protein/P9/p9_run_manifest.json
+            ResearchHistory/UQCF-GEM/protein/P9/SHA256SUMS.txt
+          if-no-files-found: error
