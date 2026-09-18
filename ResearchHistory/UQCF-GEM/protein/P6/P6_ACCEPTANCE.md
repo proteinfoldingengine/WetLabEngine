@@ -30,12 +30,12 @@ Primary target set:
 
 1VII must use the already pinned P5 source artifact.
 
-1L2Y and 1UAO must use the exact historical full-PDB objects already bound in the P1 provenance record:
+1L2Y and 1UAO use the exact historical full-PDB objects already bound in the P1 provenance record as provenance parents:
 
 - 1L2Y full PDB SHA-256: `5d1bbb545a312dfff1ae1e64b6d8addecb2f561ddc4011aeb5bee9d1dfcd4438`
 - 1UAO full PDB SHA-256: `e827fae677f8e96d1320688694b3db96bcc73050f81c6f842efc2e0ce9937e1e`
 
-No fresh PDB substitution is permitted after implementation begins. If either exact historical full-PDB object cannot be recovered, P6 stops at the input-binding gate and must be explicitly redesigned before any result exposure.
+Those exact historical objects were recovered before implementation. P6 commits deterministic first-model/chain-A N–Cα–C evaluator excerpts derived from them, with both the full-parent SHA-256 and excerpt SHA-256 frozen in `P6_SOURCE_MANIFEST.json`. No fresh PDB substitution is permitted.
 
 1CRN is excluded from the primary family because its disulfide topology would make a minimal non-disulfide model an avoidable confound.
 
@@ -81,7 +81,7 @@ Every arm receives the same:
 3. a residue-independent local Ramachandran prior;
 4. a native-blind directional backbone hydrogen-bond term built only from reconstructed backbone/virtual peptide atoms.
 
-These terms are identical across all experimental arms.
+These terms are identical across all experimental arms. The real target sequence is used only for chemically required backbone donor eligibility (proline is not an amide-H donor); that donor map is held fixed across the three arms and is not part of the side-chain shuffle.
 
 ## Sequence-dependent physical terms
 
@@ -104,7 +104,7 @@ Common scaffold + sequence-dependent hydrophobic and electrostatic terms using t
 
 ### 2. `physical_shuffled_sequence`
 
-Identical physics, but amino-acid order is replaced by one deterministic composition-preserving shuffle frozen per target before any outcome is exposed.
+Identical canonical backbone, sterics, Ramachandran prior, and backbone hydrogen-bond physics, but the **nonlocal side-chain hydropathy/electrostatic labels** are replaced by one deterministic composition-preserving sequence shuffle frozen per target before any outcome is exposed.
 
 The shuffle must:
 
@@ -112,6 +112,8 @@ The shuffle must:
 - differ from the real sequence;
 - be reused for every seed of that target;
 - be committed in the source manifest before measurement.
+
+The actual target sequence remains the backbone-chemistry identity map for proline donor eligibility in every arm. This makes the shuffle a control for nonlocal side-chain ordering rather than a different covalent polymer.
 
 ### 3. `generic_collapse`
 
@@ -129,13 +131,14 @@ For each target/seed:
 
 - deterministic CPU float64 PyTorch;
 - identical initial phi/psi for all three arms;
-- fixed optimizer and learning rate;
-- fixed step budget;
+- optimizer: Adam;
+- learning rate: 0.02;
+- fixed step budget: 300 steps;
 - no early stopping using native information;
 - no target-specific hyperparameters;
 - no seed removal after exposure.
 
-The implementation commit must freeze optimizer, learning rate, and step count before the authoritative measurement workflow is enabled.
+Optimizer, learning rate, and step count are frozen before contract GREEN and may not change after result exposure.
 
 ## Primary endpoint
 
