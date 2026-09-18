@@ -122,12 +122,12 @@ class P6ContractTests(unittest.TestCase):
 
     def test_topk_precision_uses_fixed_contact_budget(self):
         native = torch.tensor(
-            [[0.,0.,0.],[3.8,0.,0.],[7.6,0.,0.],[0.,4.,0.],[3.8,4.,0.]],
+            [[0.,0.,0.],[3.8,0.,0.],[7.6,0.,0.],[11.4,0.,0.],[0.,4.,0.],[3.8,4.,0.]],
             dtype=torch.float64,
         )
         model = native.clone()
         precision, k = p6.topk_native_contact_precision(model, native)
-        self.assertEqual(2, k)
+        self.assertEqual(3, k)
         self.assertGreaterEqual(precision, 0.0)
         self.assertLessEqual(precision, 1.0)
 
