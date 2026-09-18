@@ -1,0 +1,26 @@
+name: UQCF v15.33 Sector Weight Constraint Audit
+on:
+  push:
+    branches: [research/v15.33-sector-weight-constraint-audit]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.33-sector-weight-constraint-audit/**'
+      - 'docs/superpowers/specs/2026-09-18-v1533-sector-weight-constraint-audit-design.md'
+      - 'docs/superpowers/plans/2026-09-18-v1533-sector-weight-constraint-audit-implementation.md'
+      - '.github/workflows/uqcf-v1533-sector-weight-constraints.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Run v15.33 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.33-sector-weight-constraint-audit
+        run: python -m unittest -v test_gate.py
