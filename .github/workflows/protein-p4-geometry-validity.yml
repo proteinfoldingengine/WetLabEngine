@@ -1,0 +1,43 @@
+name: Protein P4 Patch630 Geometry Validity
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/protein-p4-backbone-tpo-replay]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P4/**'
+      - '.github/workflows/protein-p4-geometry-validity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install bounded audit dependencies
+        run: python -m pip install --quiet numpy==1.26.4 requests==2.32.5
+      - name: Verify exact source and physical-backbone gate
+        working-directory: ResearchHistory/UQCF-GEM/protein/P4
+        run: |
+          python -m unittest -v test_p4_geometry_source_audit.py
+          python p4_geometry_source_audit.py > P4_GEOMETRY_SOURCE_RESULT.json
+          python - <<'PY'
+          import json
+          d=json.load(open('P4_GEOMETRY_SOURCE_RESULT.json'))
+          assert d['verdict']=='NO_GO_HISTORICAL_PHYSICAL_BACKBONE_INTERPRETATION'
+          assert d['historical_initializer']['C_N_peptide']['n']==35
+          assert d['historical_initializer']['C_N_peptide']['within_0p1A']==0
+          assert d['historical_initializer']['C_N_peptide']['min_abs_error_to_declared']>1.0
+          assert d['gate_conditions']['historical_force_objective_has_no_covalent_N_CA_C_enforcement'] is True
+          print(json.dumps(d,indent=2,sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: protein-p4-patch630-geometry-source-gate
+          path: ResearchHistory/UQCF-GEM/protein/P4/P4_GEOMETRY_SOURCE_RESULT.json
+          retention-days: 90
