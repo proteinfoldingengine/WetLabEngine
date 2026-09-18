@@ -1,0 +1,115 @@
+# Retry after shallow-checkout provenance-guard repair; scientific packet unchanged.
+# First authoritative P6 prospective measurement.
+# Frozen premeasurement packet: bc00fa3af135219fdf498ed0d271b6a8a649496a
+# Premeasurement certification: Actions run 35299497564 — SUCCESS.
+name: Protein P6 Authoritative Measurement
+
+on:
+  push:
+    branches:
+      - research/protein-p6-native-blind-preorganization
+    paths:
+      - '.github/workflows/protein-p6-authoritative-measurement.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  measurement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/protein/P6
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify frozen premeasurement packet
+        working-directory: .
+        run: |
+          git cat-file -e bc00fa3af135219fdf498ed0d271b6a8a649496a^{commit}
+          changed="$(git diff --name-only bc00fa3af135219fdf498ed0d271b6a8a649496a..HEAD)"
+          test "$changed" = ".github/workflows/protein-p6-authoritative-measurement.yml"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install NumPy
+        run: python -m pip install numpy==1.26.4
+
+      - name: Install CPU PyTorch
+        run: python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Re-certify frozen P6 packet
+        run: python -m unittest -v test_p6_contract.py test_p6_measurement_contract.py
+
+      - name: Run authoritative P6 measurement
+        run: python p6_measurement.py
+
+      - name: Validate authoritative packet shape
+        run: |
+          python - <<'PY'
+          import csv
+          import json
+          import os
+          from pathlib import Path
+
+          out = Path("measurement_output")
+          required = [
+              "p6_results.csv",
+              "p6_traces.csv",
+              "p6_summary.csv",
+              "p6_primary_comparisons.csv",
+              "p6_acceptance.json",
+              "p6_run_manifest.json",
+          ]
+          for name in required:
+              path = out / name
+              assert path.is_file() and path.stat().st_size > 0, name
+
+          rows = list(csv.DictReader((out / "p6_results.csv").open()))
+          assert len(rows) == 54, len(rows)
+          assert {r["target"] for r in rows} == {"1VII", "1L2Y", "1UAO"}
+          assert {int(r["seed"]) for r in rows} == set(range(6))
+          assert {r["mode"] for r in rows} == {
+              "physical_real_sequence",
+              "physical_shuffled_sequence",
+              "generic_collapse",
+          }
+
+          acceptance = json.loads((out / "p6_acceptance.json").read_text())
+          assert acceptance["decision"] in {
+              "GO_SEQUENCE_SPECIFIC_PHYSICAL_PREORGANIZATION",
+              "NO_GO_SEQUENCE_SPECIFIC_PHYSICAL_PREORGANIZATION",
+          }
+
+          manifest = json.loads((out / "p6_run_manifest.json").read_text())
+          assert manifest["git_head"] == os.environ["GITHUB_SHA"]
+          assert manifest["native_information_used_in_objective"] is False
+          assert manifest["native_evaluation_timing"] == "post-trajectory only"
+          assert manifest["common_random_initial_torsions"] is True
+          print(json.dumps(acceptance, indent=2, sort_keys=True))
+          PY
+
+      - name: Hash authoritative outputs
+        run: sha256sum measurement_output/* | tee measurement_output/SHA256SUMS.txt
+
+      - name: Upload authoritative P6 packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: protein-p6-authoritative-measurement
+          path: ResearchHistory/UQCF-GEM/protein/P6/measurement_output/
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,195 @@
+{
+  "schema": "protein-p6-source-manifest-v1",
+  "preregistration_commit": "f083173336043944c34a62c08427a50f34a85a50",
+  "red_contract_run_id": 35298510377,
+  "targets": {
+    "1VII": {
+      "evaluator_source": "ResearchHistory/UQCF-GEM/protein/P5/inputs/1VII.pdb",
+      "git_blob": "dc55a7f18ce79b6db592240bdb7dcee96a4c1b8b",
+      "sequence": "MLSDEDFKAVFGMTRSAFANLPLWKQQNLKKEKGLF",
+      "shuffled_sequence": "LRSFKMAKELKSKMTAFLEKAFGWGDPFLQQLNDVN",
+      "source_boundary": "P5-pinned evaluator; native coordinates evaluation-only"
+    },
+    "1L2Y": {
+      "historical_bundle_file_id": "file_000000008648722fbb2dfa3c142e8417",
+      "historical_bundle_sha256": "dc7f1da1e57e1a286cf91958cc59ad8e0eeb6bfacb4fca2c9475714cb811d3b5",
+      "full_pdb_member": "1L2Y.pdb",
+      "full_pdb_sha256": "5d1bbb545a312dfff1ae1e64b6d8addecb2f561ddc4011aeb5bee9d1dfcd4438",
+      "evaluator_excerpt": "inputs/1L2Y.chainA_model1_NCAC.pdb",
+      "evaluator_excerpt_sha256": "3bcf838a433d65723afd175836fd727779e872d27d1b2d20eefbd729ad009e18",
+      "evaluator_excerpt_git_blob": "aa0ede8e683f99049980732d23364e2da57d838d",
+      "sequence": "NLYIQWLKDGGPSSGRPPPS",
+      "shuffled_sequence": "NKPPLIGSQRDSWPSPLGGY",
+      "extraction": "first MODEL; chain A; altloc blank/A; ATOM N/CA/C only; preserve source line bytes except final newline"
+    },
+    "1UAO": {
+      "historical_bundle_file_id": "file_00000000a87c722fa02e7aa27b2be4f3",
+      "historical_bundle_sha256": "7d33fff5450f29525b694c038c2a43225912b3973cf0f9c7894b222c18d652de",
+      "full_pdb_member": "1UAO.pdb",
+      "full_pdb_sha256": "e827fae677f8e96d1320688694b3db96bcc73050f81c6f842efc2e0ce9937e1e",
+      "evaluator_excerpt": "inputs/1UAO.chainA_model1_NCAC.pdb",
+      "evaluator_excerpt_sha256": "2c582e51deb46bae17bc02219550c98c29aa69fab6647d828481983e8406ed3e",
+      "evaluator_excerpt_git_blob": "39b0f2c8df3ba2d54f687cb2240ba8d47548f2bd",
+      "sequence": "GYDPETGTWG",
+      "shuffled_sequence": "TGYWEPGTGD",
+      "extraction": "first MODEL; chain A; altloc blank/A; ATOM N/CA/C only; preserve source line bytes except final newline"
+    }
+  },
+  "canonical_backbone": {
+    "source": "Tien et al., PeptideBuilder, PeerJ 2013, doi:10.7717/peerj.80; target-independent rounded defaults",
+    "n_ca_A": 1.46,
+    "ca_c_A": 1.52,
+    "c_n_A": 1.33,
+    "n_ca_c_deg": 110.8914,
+    "ca_c_n_deg": 116.642992978,
+    "c_n_ca_deg": 121.38221582,
+    "omega_deg": 180,
+    "anchor": "fixed target-independent N/CA/C frame",
+    "target_pdb_local_geometry_used": false
+  },
+  "common_model": {
+    "ca_steric_cutoff_A": 3.6,
+    "ca_steric_k_kcal_per_mol_A2": 2,
+    "steric_min_sequence_separation": 2,
+    "rama_centers_deg": [
+      [
+        -60,
+        -45
+      ],
+      [
+        -135,
+        135
+      ]
+    ],
+    "rama_k_kcal_per_mol_rad2": 0.2
+  },
+  "hydrogen_bond_model": {
+    "source": "Kabsch & Sander 1983 DSSP electrostatic hydrogen-bond form, doi:10.1002/bip.360221211",
+    "coefficient_kcal_A_per_mol": 27.888,
+    "carbonyl_O_bond_A": 1.231,
+    "amide_H_bond_A": 1,
+    "min_sequence_separation": 3,
+    "proline_is_not_donor": true,
+    "distance_floor_A": 1.5,
+    "favorable_energy_cap_kcal_per_mol": -3,
+    "positive_energy_contribution": 0,
+    "virtual_atom_rule": "O and H placed opposite the in-plane bisectors of their two reconstructed heavy-atom bonds",
+    "applies_to_all_arms": true,
+    "donor_eligibility_uses_real_target_sequence": true,
+    "control_boundary": "Backbone hydrogen bonding is common physics; sequence shuffling affects only side-chain hydropathy/electrostatic labels."
+  },
+  "hydropathy_model": {
+    "source": "Eisenberg et al. normalized consensus hydrophobicity scale, J Mol Biol 179:125-142 (1984)",
+    "scale": {
+      "A": 0.62,
+      "R": -2.53,
+      "N": -0.78,
+      "D": -0.9,
+      "C": 0.29,
+      "Q": -0.85,
+      "E": -0.74,
+      "G": 0.48,
+      "H": -0.4,
+      "I": 1.38,
+      "L": 1.06,
+      "K": -1.5,
+      "M": 0.64,
+      "F": 1.19,
+      "P": 0.12,
+      "S": -0.18,
+      "T": -0.05,
+      "W": 0.81,
+      "Y": 0.26,
+      "V": 1.08
+    },
+    "pair_weight": "max(h_i,0)/1.38 * max(h_j,0)/1.38",
+    "contact_midpoint_A": 8,
+    "contact_width_A": 0.5,
+    "coefficient_kcal_per_mol": 0.593
+  },
+  "electrostatics": {
+    "model": "screened Debye-Huckel at C-alpha pseudocharge sites",
+    "pH": 7,
+    "ionic_strength_M": 0.15,
+    "water_relative_dielectric": 80,
+    "coulomb_kcal_A_per_mol_e2": 332.06371,
+    "debye_numerator_A_sqrt_M": 3.04,
+    "histidine_pKa": 6,
+    "sidechain_charges": {
+      "D": -1,
+      "E": -1,
+      "K": 1,
+      "R": 1
+    },
+    "histidine_charge_rule": "1/(1+10**(pH-pKa))",
+    "termini": {
+      "N": 1,
+      "C": -1
+    }
+  },
+  "generic_collapse_control": {
+    "contact_midpoint_A": 8,
+    "contact_width_A": 0.5,
+    "initial_gradient_match_to": "real-sequence side-chain hydropathy + electrostatics contribution",
+    "scale_once_at_initial_state": true,
+    "live_renormalization": false
+  },
+  "protocol": {
+    "modes": [
+      "physical_real_sequence",
+      "physical_shuffled_sequence",
+      "generic_collapse"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "optimizer": "Adam",
+    "learning_rate": 0.02,
+    "steps": 300,
+    "dtype": "float64",
+    "device": "CPU",
+    "deterministic_algorithms": true,
+    "primary_contact_sequence_separation": 4,
+    "primary_native_contact_cutoff_A": 8,
+    "primary_top_k": "max(1,floor(N/2))",
+    "rg_ratio_gate": [
+      0.75,
+      1.25
+    ]
+  },
+  "shuffled_sequence_control": {
+    "scope": "composition-preserving shuffle of nonlocal side-chain hydropathy/electrostatic labels only",
+    "backbone_geometry": "identical canonical geometry in every arm",
+    "backbone_hbond_donor_eligibility": "real target sequence retained so proline backbone chemistry is common across arms",
+    "fixed_sequences": {
+      "1VII": "LRSFKMAKELKSKMTAFLEKAFGWGDPFLQQLNDVN",
+      "1L2Y": "NKPPLIGSQRDSWPSPLGGY",
+      "1UAO": "TGYWEPGTGD"
+    }
+  },
+  "premeasurement_core_certification": {
+    "head": "2c86b64236095d07406d905add0bcd0ab364d12a",
+    "workflow_run_id": 35299284007,
+    "conclusion": "success",
+    "boundary": "Core physics/control implementation passed frozen contract before measurement-layer authorization."
+  },
+  "secondary_diagnostics": {
+    "checkpoints": [
+      0,
+      50,
+      100,
+      200,
+      300
+    ],
+    "evaluation_timing": "native-derived metrics computed only after each optimization trajectory completes",
+    "hbond_count": "DSSP-like raw pair energy < -0.5 kcal/mol; diagnostic only",
+    "hydrophobic_contact_count": "positive Eisenberg hydropathy labels with CA distance < 8.0 A and sequence separation >=3; diagnostic only",
+    "native_torsion_rmse": "interior phi/psi circular RMSE from evaluator N/CA/C coordinates; diagnostic only",
+    "rescue_authority": false
+  }
+}
