@@ -1,0 +1,33 @@
+{
+  "schema": "protein-p8b-measurement-contract-certification-v1",
+  "scientific_preregistration_commit": "02683349f5c0d7c961b06401e8b6e5bdda9d2592",
+  "source_protocol_manifest_commit": "d0cca9658631cf3527e53d7948a08920f7417b18",
+  "core_contract": {
+    "red_head": "aebd57f9660392f835c33bd762285203b7698133",
+    "red_run_id": 35359790594,
+    "green_implementation_head": "aff558482ca1bf4763aceeaf620884c12222ae11",
+    "green_run_id": 35360068820,
+    "green_job_id": 105648856978,
+    "green_tests": "8 passed"
+  },
+  "measurement_contract": {
+    "red_head": "20e010f4783544a3cd5d9ae92d4b32f6f98e1372",
+    "red_run_id": 35360601418,
+    "red_job_id": 105650627542,
+    "red_expected_failure": "ModuleNotFoundError: No module named 'p8b_measurement'",
+    "green_implementation_head": "a6732ac7a41c0a825006724f57f1e5075bf36c90",
+    "green_run_id": 35360883897,
+    "green_job_id": 105651560260,
+    "green_conclusion": "success",
+    "green_tests": "8 tests passed",
+    "green_test_runtime_seconds": 5.589
+  },
+  "p8_source_certification": {
+    "run_id": 35358832587,
+    "artifact_id": 10553705794,
+    "artifact_sha256": "bbc2e54e6231e57a0f500fc610ecad9eee2a1901a59e491dc20085bdc260fcca"
+  },
+  "prospective_measurement_authorized": true,
+  "native_result_exposed": false,
+  "boundary": "No 72-trajectory prospective native-evaluation measurement has been run or exposed at this certification point."
+}
