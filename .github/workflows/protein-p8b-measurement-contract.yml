@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - research/protein-p8-patch622-624-reopen-certification
+      - research/protein-p8b-valid-backbone-controller-gate
     paths:
       - 'ResearchHistory/UQCF-GEM/protein/P8B/**'
       - '.github/workflows/protein-p8b-measurement-contract.yml'
