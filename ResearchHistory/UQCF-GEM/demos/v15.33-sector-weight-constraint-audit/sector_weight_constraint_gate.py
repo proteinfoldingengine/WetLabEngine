@@ -57,7 +57,8 @@ EVIDENCE = {
 
 def git_blob(path: Path) -> str:
     raw = path.read_bytes()
-    return hashlib.sha1(f'blob {len(raw)}\\0'.encode() + raw).hexdigest()
+    header = f'blob {len(raw)}'.encode() + bytes([0])
+    return hashlib.sha1(header + raw).hexdigest()
 
 
 def verify_evidence() -> dict[str, str]:
