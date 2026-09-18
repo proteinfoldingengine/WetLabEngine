@@ -1,0 +1,35 @@
+name: Protein P8B Constrained Controller Contract
+
+on:
+  push:
+    branches:
+      - research/protein-p8-patch622-624-reopen
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P8/p8b_*.py'
+      - 'ResearchHistory/UQCF-GEM/protein/P8/test_p8b_contract.py'
+      - 'ResearchHistory/UQCF-GEM/protein/P8/P8B_ACCEPTANCE.md'
+      - 'ResearchHistory/UQCF-GEM/protein/P6/p6_core.py'
+      - '.github/workflows/protein-p8b-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/protein/P8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install bounded contract dependencies
+        run: |
+          python -m pip install --quiet numpy==1.26.4
+          python -m pip install --quiet torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+      - name: Run P8B contract
+        run: python -m unittest -v test_p8b_contract.py

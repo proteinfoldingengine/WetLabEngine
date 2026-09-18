@@ -1,0 +1,33 @@
+name: Protein P8B Measurement Contract
+
+on:
+  push:
+    branches:
+      - research/protein-p8-patch622-624-reopen
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P8/p8b_measurement.py'
+      - 'ResearchHistory/UQCF-GEM/protein/P8/test_p8b_measurement_contract.py'
+      - '.github/workflows/protein-p8b-measurement-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  measurement-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/protein/P8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install bounded measurement-contract dependencies
+        run: |
+          python -m pip install --quiet numpy==1.26.4
+          python -m pip install --quiet torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+      - name: Run P8B measurement contract
+        run: python -m unittest -v test_p8b_measurement_contract.py
