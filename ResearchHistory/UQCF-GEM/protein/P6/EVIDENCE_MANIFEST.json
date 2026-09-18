@@ -1,6 +1,6 @@
 {
   "schema": "protein-p6-continuation-evidence-v1",
-  "decision_scope": "prospective scientific value of continuing the historical custom protein mechanism line",
+  "decision_scope": "continuation status after P1/P4/P5 and held-out/TPO audits; closes only mechanisms directly tested",
   "included_evidence": [
     {
       "id": "P1_v9_reduction",
@@ -66,5 +66,21 @@
       "authority": "C",
       "reason": "raw candidate table, exact preregistration artifact, Phase-B trajectory and summary log were not recovered/pinned; historical narrative is not acceptance evidence"
     }
-  ]
+  ],
+  "program_status": "NO_GO_TESTED_MECHANISMS_BROADER_EARLY_BACKBONE_LINE_OPEN",
+  "remaining_open_line": {
+    "name": "Phase-I observable-driven backbone control",
+    "source_authority": "B — executable source / Git provenance",
+    "surviving_distinct_mechanics": [
+      "topology-triggered Compaction -> LockIn force switching",
+      "observable-driven force policy",
+      "adjacent intrinsic-timescale/physics-only feedback controller"
+    ],
+    "not_yet_established": [
+      "which controller path was active in each strongest historical run",
+      "whether the controller effect survives a physically constrained peptide representation",
+      "whether any effect transfers to held-out proteins beyond ordinary/static schedules"
+    ],
+    "prohibition": "Do not combine all historical components into a synthetic engine and call it a historical replay."
+  }
 }
