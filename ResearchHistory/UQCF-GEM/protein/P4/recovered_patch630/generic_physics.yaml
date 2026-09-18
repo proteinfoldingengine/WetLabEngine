@@ -1,0 +1,58 @@
+# generic_physics.yaml
+#
+# Configuration for Patch 629: Multi-Well Ramachandran Potential
+
+# --- Simulation Setup ---
+num_steps: 5000
+log_interval: 50
+random_seed: 42
+force_random_coil_init: True
+
+# --- Tunable Hyperparameters ---
+learning_rates:
+  coords: 0.001
+  gamma: 0.1
+
+# --- Tunable Force Constants ---
+tunable_forces:
+  k_contact_spring_base: 1.5
+  k_df_funnel: 6000.0
+  k_gamma_surge: 2.0
+  k_phi_torque_base: 1.0
+  k_lj_repulsion_base: 1.25
+  k_hydro_base: 0.75
+  k_electrostatic_base: 1.0
+  # ✅ This now controls the overall strength of the multi-well potential
+  k_rama: 2.5 
+  K_ENTROPY_BURST: 2.0
+  k_torsion_penalty: 2.0
+
+# --- Physics-Based Gating Parameters ---
+topological_gating:
+  betti_threshold: 8
+  dag_transition_lifetime: 100
+  force_activation_lifetime: 50
+
+# --- ✅ Patch 629: Multi-Well Ramachandran Potential Parameters ---
+ramachandran_params:
+  # Physics-based basin centers (in radians)
+  alpha_phi: -1.0
+  alpha_psi: -0.5
+  beta_phi: -2.2
+  beta_psi: 2.0
+  # Width of the Gaussian wells
+  well_sigma: 0.5
+  # Gating conditions for activation
+  activation_betti_min: 500
+  activation_gamma_min: 2.5
+  activation_phirms_min: 1.4
+
+# --- Coherence Potential Well Parameters ---
+coherence_well:
+  gamma_target: 3.0
+  phi_max: 2.0
+
+# --- Torsional Incoherence Penalty Parameters ---
+torsional_penalty_params:
+  gamma_coherence_threshold: 2.5
+  phi_rms_disorder_threshold: 1.2
