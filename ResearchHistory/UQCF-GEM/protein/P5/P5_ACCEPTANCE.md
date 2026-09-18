@@ -76,6 +76,10 @@ The scale is frozen for the full trajectory. No live renormalization is allowed.
 4. `entropy` — common base + gradient-matched historical TPO entropy.
 5. `rama_entropy` — common base + equal-information Rama/TPO combination, total initial torsional-gradient matched to the same target norm.
 
+Secondary diagnostic only:
+
+6. `entropy_historical_0p02` — common base + the recovered Stage-1 entropy coefficient `k_torsion_entropy=0.02`. This arm is reported for historical scale context but is excluded from every GO/NO-GO condition and multiplicity family because its force scale is not information-matched.
+
 ## Optimization
 
 - optimizer: Adam;
