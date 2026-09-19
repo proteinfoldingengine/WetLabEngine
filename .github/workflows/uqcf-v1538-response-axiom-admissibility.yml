@@ -1,0 +1,85 @@
+name: UQCF v15.38 Response Axiom Admissibility
+on:
+  push:
+    branches: [research/v15.38-response-axiom-admissibility]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.38-response-axiom-admissibility/**'
+      - 'docs/superpowers/specs/2026-09-18-v1538-response-axiom-admissibility-design.md'
+      - 'docs/superpowers/plans/2026-09-18-v1538-response-axiom-admissibility-implementation.md'
+      - '.github/workflows/uqcf-v1538-response-axiom-admissibility.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install inherited environment
+        run: python -m pip install numpy==2.3.5
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+          base='2d7950d7c151a386654e044af6d092bf68317c59'
+          demo='ResearchHistory/UQCF-GEM/demos/v15.38-response-axiom-admissibility/'
+          allowed={
+            'docs/superpowers/specs/2026-09-18-v1538-response-axiom-admissibility-design.md',
+            'docs/superpowers/plans/2026-09-18-v1538-response-axiom-admissibility-implementation.md',
+            '.github/workflows/uqcf-v1538-response-axiom-admissibility.yml',
+          }
+          subprocess.run(['git','merge-base','--is-ancestor',base,'HEAD'],check=True)
+          for line in subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines():
+              status,name=line.split('\t',1)
+              assert status=='A',line
+              assert name.startswith(demo) or name in allowed,name
+          PY
+      - name: Run inherited frontier regressions
+        run: |
+          python - <<'PY'
+          import re,subprocess,sys
+          from pathlib import Path
+          root=Path('ResearchHistory/UQCF-GEM/demos')
+          suites=[
+            (root/'v15.36-order-semigroup-constraint',['test_gate.py'],6),
+            (root/'v15.37-response-selector-irreducibility',['test_gate.py'],7),
+          ]
+          total=0
+          for cwd,files,count in suites:
+              r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=cwd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
+              print(r.stdout[-700:],flush=True)
+              m=re.search(r'Ran (\d+) tests? in',r.stdout)
+              assert r.returncode==0 and m and int(m.group(1))==count and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+              total+=count
+          assert total==13
+          PY
+      - name: Run v15.38 exact gate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.38-response-axiom-admissibility
+        run: |
+          python -m unittest -v test_gate.py
+          python response_axiom_admissibility_gate.py --check docs/RESULTS.json > /tmp/v1538-results.json
+          python -m compileall -q response_axiom_admissibility_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='PRETIME_RESPONSE_AXIOM_ADMISSIBILITY_CONTRACT_CERTIFIED_NONSELECTIVE'
+          assert r['finite_size_controls']==[5,7,9]
+          assert r['cycle_dimensions']=={'5':26,'7':50,'9':82}
+          assert r['admissible_target_blind_control_count']==3
+          assert r['projectively_distinct_admissible_control_count']==3
+          assert r['accepted_candidate_spectrum_queries']==0
+          assert r['accepted_candidate_spectral_edge_parameters']==0
+          assert r['rejected_control_count']==5
+          assert r['response_function_selected'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY

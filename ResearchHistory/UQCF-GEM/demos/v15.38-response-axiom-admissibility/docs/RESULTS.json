@@ -1,0 +1,245 @@
+{
+  "Pillar_3": "OPEN",
+  "absolute_response_scale_derived": false,
+  "accepted_candidate_manifest": [
+    {
+      "classification": "NEW_AXIOM_CANDIDATE_CONTROL_ONLY",
+      "coefficients_low_to_high": [
+        "0",
+        "1"
+      ],
+      "family_natural_across_L": true,
+      "hidden_metric_used": false,
+      "key": "LINEAR_A",
+      "locked_future_test": "COMMON_ADVERSARIAL_PRETIME_GRAVITY_CANARY_AFTER_AXIOM_FREEZE",
+      "pretime_violation": false,
+      "spectral_edge_parameters": 0,
+      "spectrum_queries": 0,
+      "structural_falsifier": "FAIL_IF_MULTISIZE_COVARIANCE_OR_CARRIER_PRESERVATION_FAILS",
+      "target_independent": true
+    },
+    {
+      "classification": "NEW_AXIOM_CANDIDATE_CONTROL_ONLY",
+      "coefficients_low_to_high": [
+        "1",
+        "0",
+        "1"
+      ],
+      "family_natural_across_L": true,
+      "hidden_metric_used": false,
+      "key": "QUADRATIC_I_PLUS_A2",
+      "locked_future_test": "COMMON_ADVERSARIAL_PRETIME_GRAVITY_CANARY_AFTER_AXIOM_FREEZE",
+      "pretime_violation": false,
+      "spectral_edge_parameters": 0,
+      "spectrum_queries": 0,
+      "structural_falsifier": "FAIL_IF_MULTISIZE_COVARIANCE_OR_CARRIER_PRESERVATION_FAILS",
+      "target_independent": true
+    },
+    {
+      "classification": "NEW_AXIOM_CANDIDATE_CONTROL_ONLY",
+      "coefficients_low_to_high": [
+        "0",
+        "1",
+        "0",
+        "-1/16"
+      ],
+      "family_natural_across_L": true,
+      "hidden_metric_used": false,
+      "key": "CUBIC_ODD",
+      "locked_future_test": "COMMON_ADVERSARIAL_PRETIME_GRAVITY_CANARY_AFTER_AXIOM_FREEZE",
+      "pretime_violation": false,
+      "spectral_edge_parameters": 0,
+      "spectrum_queries": 0,
+      "structural_falsifier": "FAIL_IF_MULTISIZE_COVARIANCE_OR_CARRIER_PRESERVATION_FAILS",
+      "target_independent": true
+    }
+  ],
+  "accepted_candidate_spectral_edge_parameters": 0,
+  "accepted_candidate_spectrum_queries": 0,
+  "admissibility_contract_is_nonselective": true,
+  "admissibility_requirement_count": 10,
+  "admissible_target_blind_control_count": 3,
+  "all_accepted_candidates_have_locked_future_test": true,
+  "all_accepted_candidates_have_structural_falsifier": true,
+  "bad_control_primary_reasons": {
+    "GR_FITTED_POLYNOMIAL": "DOWNSTREAM_TARGET_CIRCULARITY",
+    "L7_SECTOR_LOOKUP": "FINITE_SIZE_FAMILY_NATURALITY_FAILURE",
+    "MINIMUM_NORM_HODGE_RESPONSE": "HIDDEN_METRIC_OR_MINIMUM_NORM_SELECTOR",
+    "PRUNING_OR_TIME_RATE_RESPONSE": "PRETIME_ONTOLOGY_VIOLATION",
+    "SPECTRAL_EDGE_TUNED": "SPECTRAL_EDGE_TUNING"
+  },
+  "base_sha": "2d7950d7c151a386654e044af6d092bf68317c59",
+  "candidate_tested_against_gravity": false,
+  "cycle_dimensions": {
+    "5": 26,
+    "7": 50,
+    "9": 82
+  },
+  "evidence_pins": {
+    "exact_linear.py": "05cc1b8cfec70d501408377b5e44190b259a4514",
+    "representation_actions.py": "7260147cd6ca47ec21634172b44b98de726904af",
+    "v15.25-canary": "e5d50358dce92b0691da78b7bf1681fb6c32b847",
+    "v15.26-target-origin": "cc31665dd6aae023aefa0d2de7eae7c10215aae1",
+    "v15.37-irreducibility": "86d37f18cee2fc2708d049b40bffe367c20f59a6"
+  },
+  "exact_multisize_structural_checks_pass": true,
+  "finite_size_controls": [
+    5,
+    7,
+    9
+  ],
+  "gravity_observables_evaluated": false,
+  "new_metric_axiom_added": false,
+  "new_response_function_axiom_adopted": false,
+  "new_time_axiom_added": false,
+  "next_required_object": "PREREGISTERED_SMALL_SET_OF_NEW_PRETIME_RESPONSE_AXIOM_CANDIDATES_FOR_COMMON_ADVERSARIAL_CANARY",
+  "physical_gravity_derived": false,
+  "projective_scale_discipline_enforced": true,
+  "projectively_distinct_admissible_control_count": 3,
+  "rejected_control_count": 5,
+  "response_function_selected": false,
+  "scientific_breakthrough": false,
+  "signal_of_life": false,
+  "size_audits": [
+    {
+      "L": 5,
+      "adjacency_covariant": true,
+      "candidates": [
+        {
+          "coefficients_low_to_high": [
+            "0",
+            "1"
+          ],
+          "cycle_carrier_preserved": true,
+          "exact_covariance": true,
+          "key": "LINEAR_A",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0
+        },
+        {
+          "coefficients_low_to_high": [
+            "1",
+            "0",
+            "1"
+          ],
+          "cycle_carrier_preserved": true,
+          "exact_covariance": true,
+          "key": "QUADRATIC_I_PLUS_A2",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0
+        },
+        {
+          "coefficients_low_to_high": [
+            "0",
+            "1",
+            "0",
+            "-1/16"
+          ],
+          "cycle_carrier_preserved": true,
+          "exact_covariance": true,
+          "key": "CUBIC_ODD",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0
+        }
+      ],
+      "cycle_dimension": 26,
+      "primitive_translation_sum_D4_invariant": true
+    },
+    {
+      "L": 7,
+      "adjacency_covariant": true,
+      "candidates": [
+        {
+          "coefficients_low_to_high": [
+            "0",
+            "1"
+          ],
+          "cycle_carrier_preserved": true,
+          "exact_covariance": true,
+          "key": "LINEAR_A",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0
+        },
+        {
+          "coefficients_low_to_high": [
+            "1",
+            "0",
+            "1"
+          ],
+          "cycle_carrier_preserved": true,
+          "exact_covariance": true,
+          "key": "QUADRATIC_I_PLUS_A2",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0
+        },
+        {
+          "coefficients_low_to_high": [
+            "0",
+            "1",
+            "0",
+            "-1/16"
+          ],
+          "cycle_carrier_preserved": true,
+          "exact_covariance": true,
+          "key": "CUBIC_ODD",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0
+        }
+      ],
+      "cycle_dimension": 50,
+      "primitive_translation_sum_D4_invariant": true
+    },
+    {
+      "L": 9,
+      "adjacency_covariant": true,
+      "candidates": [
+        {
+          "coefficients_low_to_high": [
+            "0",
+            "1"
+          ],
+          "cycle_carrier_preserved": true,
+          "exact_covariance": true,
+          "key": "LINEAR_A",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0
+        },
+        {
+          "coefficients_low_to_high": [
+            "1",
+            "0",
+            "1"
+          ],
+          "cycle_carrier_preserved": true,
+          "exact_covariance": true,
+          "key": "QUADRATIC_I_PLUS_A2",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0
+        },
+        {
+          "coefficients_low_to_high": [
+            "0",
+            "1",
+            "0",
+            "-1/16"
+          ],
+          "cycle_carrier_preserved": true,
+          "exact_covariance": true,
+          "key": "CUBIC_ODD",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0
+        }
+      ],
+      "cycle_dimension": 82,
+      "primitive_translation_sum_D4_invariant": true
+    }
+  ],
+  "status": "PRETIME_RESPONSE_AXIOM_ADMISSIBILITY_CONTRACT_CERTIFIED_NONSELECTIVE",
+  "unresolved_check_count": 0,
+  "uses_entropy_as_selector": false,
+  "uses_holonomy_selector": false,
+  "uses_newton_or_gr_selector": false,
+  "uses_physical_time": false,
+  "uses_pruning_as_selector": false,
+  "version": "v15.38"
+}
