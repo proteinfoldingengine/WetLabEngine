@@ -1,6 +1,8 @@
+import json
+from pathlib import Path
 import unittest
 
-from support_radius_locality_gate import audit
+from support_radius_locality_gate import audit, canonical_json
 
 
 class SupportRadiusLocalityGateTests(unittest.TestCase):
@@ -14,6 +16,10 @@ class SupportRadiusLocalityGateTests(unittest.TestCase):
         self.assertEqual(self.r["orbit_basis_rank"], 10)
         self.assertTrue(self.r["orbit_polynomial_reconstruction_exact"])
         self.assertEqual(self.r["orbit_to_power_change_rank"], 10)
+        self.assertEqual(
+            [row["polynomial_degree"] for row in self.r["orbit_table"]],
+            [0,1,9,9,9,9,9,9,9,9],
+        )
 
     def test_support_radius_filtration(self):
         self.assertEqual(
@@ -49,6 +55,11 @@ class SupportRadiusLocalityGateTests(unittest.TestCase):
             self.r["next_required_object"],
             "TARGET_BLIND_TYPED_CONSTRAINT_ON_ADJACENCY_RESPONSE_FUNCTION_OR_EXPLICIT_PRETIME_RESPONSE_FUNCTION_AXIOM",
         )
+
+    def test_committed_ledger_is_exact(self):
+        committed=Path("docs/RESULTS.json").read_text()
+        self.assertEqual(committed, canonical_json(self.r))
+        self.assertEqual(json.loads(committed), self.r)
 
     def test_firewall(self):
         for key in (

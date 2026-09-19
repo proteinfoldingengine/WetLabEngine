@@ -1,0 +1,355 @@
+{
+  "Pillar_3": "OPEN",
+  "adjacency_function_selected": false,
+  "base_sha": "e24b94fb1a0ca4c8eda33379f5a4ab3f4c360487",
+  "commutant_dimension": 10,
+  "coupling_solver_reopened": false,
+  "dim_Z": 50,
+  "displacement_orbit_count": 10,
+  "displacement_orbit_size_sum": 49,
+  "evidence_pins": {
+    "exact_linear.py": "05cc1b8cfec70d501408377b5e44190b259a4514",
+    "representation_actions.py": "7260147cd6ca47ec21634172b44b98de726904af",
+    "v13.15-locality": "f232b345e0bf3ab1ff03fdac354f504869b4be73",
+    "v13.18-locality": "bd1989fe36f3936a0065a9cd11291245917dbc03",
+    "v15.03-source-locality": "d7e7a081f1913a10cf545fbed5d5e0f6aade20fa",
+    "v15.34-results": "105cf29c5288d5dd7ffc8ebaa8c67ff8b1de88fd"
+  },
+  "first_radius_degree_mismatch": 2,
+  "frozen_hard_radius_constraint_count": 0,
+  "frozen_hard_radius_selected": null,
+  "gravity_observables_evaluated": false,
+  "hard_radius_control_table": [
+    {
+      "projective_dimension": 0,
+      "radius": 0,
+      "response_dimension": 1,
+      "status": "NEW_HARD_RADIUS_ASSUMPTION_CONTROL_ONLY"
+    },
+    {
+      "projective_dimension": 1,
+      "radius": 1,
+      "response_dimension": 2,
+      "status": "NEW_HARD_RADIUS_ASSUMPTION_CONTROL_ONLY"
+    },
+    {
+      "projective_dimension": 3,
+      "radius": 2,
+      "response_dimension": 4,
+      "status": "NEW_HARD_RADIUS_ASSUMPTION_CONTROL_ONLY"
+    },
+    {
+      "projective_dimension": 5,
+      "radius": 3,
+      "response_dimension": 6,
+      "status": "NEW_HARD_RADIUS_ASSUMPTION_CONTROL_ONLY"
+    },
+    {
+      "projective_dimension": 7,
+      "radius": 4,
+      "response_dimension": 8,
+      "status": "NEW_HARD_RADIUS_ASSUMPTION_CONTROL_ONLY"
+    },
+    {
+      "projective_dimension": 8,
+      "radius": 5,
+      "response_dimension": 9,
+      "status": "NEW_HARD_RADIUS_ASSUMPTION_CONTROL_ONLY"
+    },
+    {
+      "projective_dimension": 9,
+      "radius": 6,
+      "response_dimension": 10,
+      "status": "FULL_FINITE_TORUS_SUPPORT"
+    }
+  ],
+  "hard_radius_selected": false,
+  "locality_evidence_ledger": [
+    {
+      "classification": "GENERIC_HARD_RADIUS_NOT_DERIVED",
+      "hard_radius_equation_count": 0,
+      "source": "v13.15 generic bounded-neighborhood QMAR"
+    },
+    {
+      "classification": "CONDITIONAL_LOCALITY_NOT_TYPED_TO_CURRENT_WEIGHT_ALGEBRA",
+      "hard_radius_equation_count": 0,
+      "source": "v13.15 commuting-Markov separator closure"
+    },
+    {
+      "classification": "APPROXIMATE_ERROR_LOCALITY_NOT_HARD_SUPPORT_CUTOFF",
+      "hard_radius_equation_count": 0,
+      "source": "v13.18 CMI/source-conditioned jet locality"
+    },
+    {
+      "classification": "SOURCE_LOCALITY_DOES_NOT_ENTAIL_RESPONSE_RADIUS",
+      "hard_radius_equation_count": 0,
+      "source": "v15.03 site-local source covariance"
+    }
+  ],
+  "max_torus_graph_radius": 6,
+  "new_locality_axiom_added": false,
+  "new_source_semantics_axiom_added": false,
+  "next_required_object": "TARGET_BLIND_TYPED_CONSTRAINT_ON_ADJACENCY_RESPONSE_FUNCTION_OR_EXPLICIT_PRETIME_RESPONSE_FUNCTION_AXIOM",
+  "orbit_basis_rank": 10,
+  "orbit_polynomial_reconstruction_exact": true,
+  "orbit_table": [
+    {
+      "polynomial_coefficients_low_to_high": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "polynomial_degree": 0,
+      "radius": 0,
+      "representative": [
+        0,
+        0
+      ],
+      "size": 1
+    },
+    {
+      "polynomial_coefficients_low_to_high": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "polynomial_degree": 1,
+      "radius": 1,
+      "representative": [
+        0,
+        1
+      ],
+      "size": 4
+    },
+    {
+      "polynomial_coefficients_low_to_high": [
+        "2700/637",
+        "-1440/637",
+        "-19395/1274",
+        "480/91",
+        "60/7",
+        "-18/7",
+        "-135/91",
+        "270/637",
+        "45/637",
+        "-25/1274"
+      ],
+      "polynomial_degree": 9,
+      "radius": 2,
+      "representative": [
+        0,
+        2
+      ],
+      "size": 4
+    },
+    {
+      "polynomial_coefficients_low_to_high": [
+        "-2624/637",
+        "720/637",
+        "20669/2548",
+        "-240/91",
+        "-30/7",
+        "9/7",
+        "135/182",
+        "-135/637",
+        "-45/1274",
+        "25/2548"
+      ],
+      "polynomial_degree": 9,
+      "radius": 2,
+      "representative": [
+        1,
+        1
+      ],
+      "size": 4
+    },
+    {
+      "polynomial_coefficients_low_to_high": [
+        "600/637",
+        "3411/637",
+        "-930/91",
+        "-3287/364",
+        "435/28",
+        "-15/28",
+        "-1329/364",
+        "1605/2548",
+        "495/2548",
+        "-15/364"
+      ],
+      "polynomial_degree": 9,
+      "radius": 3,
+      "representative": [
+        0,
+        3
+      ],
+      "size": 4
+    },
+    {
+      "polynomial_coefficients_low_to_high": [
+        "-200/637",
+        "-3048/637",
+        "310/91",
+        "1217/364",
+        "-145/28",
+        "5/28",
+        "443/364",
+        "-535/2548",
+        "-165/2548",
+        "5/364"
+      ],
+      "polynomial_degree": 9,
+      "radius": 3,
+      "representative": [
+        1,
+        2
+      ],
+      "size": 8
+    },
+    {
+      "polynomial_coefficients_low_to_high": [
+        "-2460/637",
+        "-4941/637",
+        "27057/1274",
+        "4937/364",
+        "-629/28",
+        "-3/28",
+        "1779/364",
+        "-1803/2548",
+        "-645/2548",
+        "125/2548"
+      ],
+      "polynomial_degree": 9,
+      "radius": 4,
+      "representative": [
+        1,
+        3
+      ],
+      "size": 8
+    },
+    {
+      "polynomial_coefficients_low_to_high": [
+        "78/49",
+        "81/14",
+        "-211/49",
+        "-619/56",
+        "383/56",
+        "15/8",
+        "-93/56",
+        "33/392",
+        "5/56",
+        "-5/392"
+      ],
+      "polynomial_degree": 9,
+      "radius": 4,
+      "representative": [
+        2,
+        2
+      ],
+      "size": 4
+    },
+    {
+      "polynomial_coefficients_low_to_high": [
+        "460/637",
+        "2957/637",
+        "-739/1274",
+        "-132/91",
+        "-18/7",
+        "6/7",
+        "68/91",
+        "-136/637",
+        "-27/637",
+        "15/1274"
+      ],
+      "polynomial_degree": 9,
+      "radius": 5,
+      "representative": [
+        2,
+        3
+      ],
+      "size": 8
+    },
+    {
+      "polynomial_coefficients_low_to_high": [
+        "-134/637",
+        "-3907/1274",
+        "-1488/637",
+        "24/13",
+        "24/7",
+        "-6/7",
+        "-10/13",
+        "114/637",
+        "51/1274",
+        "-6/637"
+      ],
+      "polynomial_degree": 9,
+      "radius": 6,
+      "representative": [
+        3,
+        3
+      ],
+      "size": 4
+    }
+  ],
+  "orbit_to_power_change_rank": 10,
+  "physical_gravity_derived": false,
+  "polynomial_degree_filtration_dimensions": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 5,
+    "5": 6,
+    "6": 7,
+    "7": 8,
+    "8": 9,
+    "9": 10
+  },
+  "polynomial_degree_selected": false,
+  "power_basis_rank": 10,
+  "scientific_breakthrough": false,
+  "signal_of_life": false,
+  "status": "CANONICAL_LOCALITY_FILTRATION_EXISTS_BUT_RADIUS_UNDERIVED",
+  "support_radius_dimensions": {
+    "0": 1,
+    "1": 2,
+    "2": 4,
+    "3": 6,
+    "4": 8,
+    "5": 9,
+    "6": 10
+  },
+  "support_radius_equals_polynomial_degree_filtration": false,
+  "support_radius_projective_dimensions": {
+    "0": 0,
+    "1": 1,
+    "2": 3,
+    "3": 5,
+    "4": 7,
+    "5": 8,
+    "6": 9
+  },
+  "surviving_projective_response_dimension": 9,
+  "surviving_response_dimension": 10,
+  "unresolved_locality_typing_count": 0,
+  "uses_entropy_as_selector": false,
+  "uses_holonomy_selector": false,
+  "uses_metric_selector": false,
+  "uses_newton_or_gr": false,
+  "uses_physical_time": false,
+  "uses_pruning_as_selector": false,
+  "version": "v15.35"
+}

@@ -66,5 +66,19 @@ jobs:
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.35-support-radius-locality
         run: |
           python -m unittest -v test_gate.py
-          python support_radius_locality_gate.py > /tmp/v1535-results.json
+          python support_radius_locality_gate.py --check docs/RESULTS.json > /tmp/v1535-results.json
           python -m compileall -q support_radius_locality_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='CANONICAL_LOCALITY_FILTRATION_EXISTS_BUT_RADIUS_UNDERIVED'
+          assert r['orbit_basis_rank']==10
+          assert r['orbit_polynomial_reconstruction_exact'] is True
+          assert r['support_radius_dimensions']=={'0':1,'1':2,'2':4,'3':6,'4':8,'5':9,'6':10}
+          assert r['frozen_hard_radius_selected'] is None
+          assert r['frozen_hard_radius_constraint_count']==0
+          assert r['surviving_projective_response_dimension']==9
+          assert r['hard_radius_selected'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY
