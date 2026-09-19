@@ -583,3 +583,6 @@ No candidate formula or canary criterion may change after the preregistration co
 - Task 1 RED receipt: run `35452558930`, job `105922134054`, exact head `f5548eb73991705d36349ebe1afa550c4eb207d1`; additive scope and 14 inherited tests passed; v15.39 failed with the intended `ModuleNotFoundError: No module named 'source_axiom_canary'`.
 - Task 1: complete (commits `39e174a..f5548eb`; RED contract and workflow frozen before production code).
 - Ruling: The final test fixture computes one cached full audit, so Tasks 2–4 will expose progressively larger audit schemas: source tests first, then candidate tests, then canary tests. The full workflow may remain red between these task commits. Cost if wrong: per-task evidence comes from named test outcomes in Actions rather than an all-green suite until Task 5.
+
+- Task 2 evidence: run `35452749802`, job `105922643474`, exact head `777198e991fbfb8a730f1482e1df3408b7d2518f`; 14 inherited tests passed; `test_source_lift_typing_covariance_and_composition` and `test_closed_face_q_null_is_fiber_nonnull` passed; the six not-yet-implemented candidate/canary/ledger tests failed on their missing fields.
+- Task 2: complete (commit `777198e`; source tests 2/2 pass on all four sizes).
