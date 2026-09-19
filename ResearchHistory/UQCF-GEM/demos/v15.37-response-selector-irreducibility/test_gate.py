@@ -1,6 +1,8 @@
+import json
+from pathlib import Path
 import unittest
 
-from response_selector_irreducibility_gate import audit
+from response_selector_irreducibility_gate import audit, canonical_json
 
 
 class ResponseSelectorIrreducibilityGateTests(unittest.TestCase):
@@ -44,27 +46,23 @@ class ResponseSelectorIrreducibilityGateTests(unittest.TestCase):
             "EXPLICIT_NEW_PRETIME_RESPONSE_FUNCTION_AXIOM_OR_NEWLY_DISCOVERED_TYPED_FROZEN_STRUCTURE",
         )
 
+    def test_committed_ledger_is_exact(self):
+        committed=Path("docs/RESULTS.json").read_text()
+        self.assertEqual(committed,canonical_json(self.r))
+        self.assertEqual(json.loads(committed),self.r)
+
     def test_firewall(self):
         for key in (
-            "new_source_semantics_axiom_added",
-            "new_response_function_axiom_added",
-            "new_representation_link_added",
-            "response_function_selected",
-            "coupling_solver_reopened",
-            "gravity_observables_evaluated",
-            "uses_holonomy_selector",
-            "uses_newton_or_gr",
-            "uses_metric_selector",
-            "uses_pruning_as_selector",
-            "uses_entropy_as_selector",
-            "uses_physical_time",
-            "physical_gravity_derived",
-            "scientific_breakthrough",
-            "signal_of_life",
+            "new_source_semantics_axiom_added","new_response_function_axiom_added",
+            "new_representation_link_added","response_function_selected",
+            "coupling_solver_reopened","gravity_observables_evaluated",
+            "uses_holonomy_selector","uses_newton_or_gr","uses_metric_selector",
+            "uses_pruning_as_selector","uses_entropy_as_selector","uses_physical_time",
+            "physical_gravity_derived","scientific_breakthrough","signal_of_life",
         ):
-            self.assertFalse(self.r[key], key)
-        self.assertEqual(self.r["Pillar_3"], "OPEN")
+            self.assertFalse(self.r[key],key)
+        self.assertEqual(self.r["Pillar_3"],"OPEN")
 
 
-if __name__ == "__main__":
+if __name__=="__main__":
     unittest.main()

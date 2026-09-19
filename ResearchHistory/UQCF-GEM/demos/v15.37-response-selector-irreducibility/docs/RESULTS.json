@@ -1,0 +1,209 @@
+{
+  "Pillar_3": "OPEN",
+  "absolute_no_future_principle_claimed": false,
+  "base_sha": "e495157b969a73dcc453a71d9f0710797ec26a28",
+  "branch_stop_relative_to_audited_frozen_ontology": true,
+  "candidate_class_count": 14,
+  "candidate_manifest": [
+    {
+      "class": "TYPE_BLOCKED",
+      "evidence": [
+        "v13.23-qrsl",
+        "v14.04-representation-link",
+        "v15.30-common-carrier"
+      ],
+      "function_equation_rank": 0,
+      "key": "genesis_provenance_lineage",
+      "reason": "no certified natural map from provenance identity/carriers into current response-function law",
+      "typed_role": "origin_identity_and_provenance_certificate"
+    },
+    {
+      "class": "FEASIBILITY_NOT_SELECTOR",
+      "evidence": [
+        "v13.10-hidden-completion",
+        "v13.23-qrsl"
+      ],
+      "function_equation_rank": 0,
+      "key": "incidence_filling_atlas",
+      "reason": "W1/W2/W3 and atlas consistency certify supplied realizations but carry no preference functional",
+      "typed_role": "admissibility_and_consistency_certificate"
+    },
+    {
+      "class": "IRREDUCIBLE_UPSTREAM_BRANCH",
+      "evidence": [
+        "v13.10-hidden-completion"
+      ],
+      "function_equation_rank": 0,
+      "key": "hidden_completion_higher_order_response",
+      "reason": "same frozen ledger can produce different response jets",
+      "typed_role": "source_conditioned_hidden_completion_response"
+    },
+    {
+      "class": "TYPE_BLOCKED",
+      "evidence": [
+        "v13.23-qrsl",
+        "v15.36-order-semigroup"
+      ],
+      "function_equation_rank": 0,
+      "key": "recoverability_order_cmi_fidelity",
+      "reason": "no certified scalar/order-to-cycle-response-function map",
+      "typed_role": "ordering_error_and_scalar_recovery_structure"
+    },
+    {
+      "class": "IRREDUCIBLE_UPSTREAM_BRANCH",
+      "evidence": [
+        "v13.23-qrsl"
+      ],
+      "function_equation_rank": 0,
+      "key": "refinement_coarse_quotient_naturality",
+      "reason": "QRSL reverse section is noncanonical relative to frozen ontology",
+      "typed_role": "fine_to_coarse_restriction_without_canonical_section"
+    },
+    {
+      "class": "FEASIBILITY_NOT_SELECTOR",
+      "evidence": [
+        "v13.23-qrsl",
+        "v15.36-order-semigroup"
+      ],
+      "function_equation_rank": 0,
+      "key": "positivity_support_compatibility",
+      "reason": "positivity/support/compatibility admit alternatives but do not rank them",
+      "typed_role": "feasibility_of_supplied_realizations"
+    },
+    {
+      "class": "TYPE_BLOCKED",
+      "evidence": [
+        "v14.04-representation-link",
+        "v15.30-common-carrier"
+      ],
+      "function_equation_rank": 0,
+      "key": "representation_links_common_carrier",
+      "reason": "required natural representation/common-carrier link is not certified",
+      "typed_role": "cross_carrier_intertwiner_or_common_parent"
+    },
+    {
+      "class": "TYPED_NONSELECTIVE",
+      "evidence": [
+        "v15.33-weight-constraints"
+      ],
+      "function_equation_rank": 0,
+      "key": "symmetry_covariance_commutant",
+      "reason": "symmetry fixes the commutant/sector algebra but not its response function",
+      "typed_role": "current_response_algebra_structure"
+    },
+    {
+      "class": "GAUGE_ONLY",
+      "evidence": [
+        "v13.26-source-scale",
+        "v15.33-weight-constraints"
+      ],
+      "function_equation_rank": 0,
+      "key": "source_scale_projective_normalization",
+      "reason": "absolute scale is gauge/irreducible and leaves relative response freedom",
+      "typed_role": "positive_common_scale_gauge"
+    },
+    {
+      "class": "TYPED_NONSELECTIVE",
+      "evidence": [
+        "v15.36-order-semigroup"
+      ],
+      "function_equation_rank": 0,
+      "key": "composition_monoidal_semigroup",
+      "reason": "composition/semigroup laws preserve arbitrary already-chosen generator/function",
+      "typed_role": "closure_of_already_chosen_response_family"
+    },
+    {
+      "class": "TYPED_NONSELECTIVE",
+      "evidence": [
+        "v15.35-locality"
+      ],
+      "function_equation_rank": 0,
+      "key": "locality_support_radius",
+      "reason": "exact filtration exists but frozen hard-radius constraint count is zero",
+      "typed_role": "canonical_support_filtration_without_selected_radius"
+    },
+    {
+      "class": "TYPE_BLOCKED",
+      "evidence": [
+        "v15.36-order-semigroup"
+      ],
+      "function_equation_rank": 0,
+      "key": "quantum_channel_cptp_no_signalling",
+      "reason": "no certified Choi/CPTP/order identification of current cycle carrier",
+      "typed_role": "operator_channel_order_structure_on_other_carrier"
+    },
+    {
+      "class": "DOWNSTREAM_CIRCULAR_SELECTOR_PROHIBITED",
+      "evidence": [
+        "v15.03-firewall"
+      ],
+      "function_equation_rank": 0,
+      "key": "downstream_geometry_metric_curvature_holonomy_gr",
+      "reason": "using downstream geometry/gravity quality to choose upstream f reverses derivational direction",
+      "typed_role": "downstream_response_or_correspondence_observables"
+    },
+    {
+      "class": "ONTOLOGY_ORDER_PROHIBITED",
+      "evidence": [
+        "v15.03-firewall"
+      ],
+      "function_equation_rank": 0,
+      "key": "entropy_pruning_physical_time",
+      "reason": "frozen pre-time ontology forbids entropy/pruning/physical-time insertion as upstream selector",
+      "typed_role": "prohibited_prepruning_selector_family"
+    }
+  ],
+  "combination_closure_certified": true,
+  "combined_frozen_selector_rank": 0,
+  "coupling_solver_reopened": false,
+  "downstream_circular_prohibited_count": 1,
+  "evidence_pins": {
+    "v13.10-hidden-completion": "d5f0c12a881b707f098caa81e406a4d4610e35ef",
+    "v13.23-qrsl": "71f36888a8515aa703cd253e4550dff751c94441",
+    "v13.26-source-scale": "9917085b211ca0e1f4737082227f55097cc72b66",
+    "v14.04-representation-link": "e5d9566bfc86c801d2933e63453d1800f60a675b",
+    "v15.03-firewall": "d7e7a081f1913a10cf545fbed5d5e0f6aade20fa",
+    "v15.30-common-carrier": "24179161a88428fac936dec933d59b97c9655037",
+    "v15.33-weight-constraints": "5ff397efbb66851f4a9a602c417cafdf50e62757",
+    "v15.35-locality": "17a99eed9d9a36635b2fc47b79f8decf1e0ab52d",
+    "v15.36-order-semigroup": "04835086df04423eaf51d1ea9344a2f4a117a46b"
+  },
+  "exhaustiveness_scope": "AUDITED_FROZEN_CANDIDATE_FAMILIES_AND_CERTIFIED_TYPE_LINKS_ONLY",
+  "feasibility_not_selector_count": 2,
+  "frozen_actual_function_equation_count": 0,
+  "gauge_only_count": 1,
+  "gravity_observables_evaluated": false,
+  "inherited_projective_function_dimension": 9,
+  "irreducible_upstream_count": 2,
+  "new_representation_link_added": false,
+  "new_response_function_axiom_added": false,
+  "new_source_semantics_axiom_added": false,
+  "next_required_object": "EXPLICIT_NEW_PRETIME_RESPONSE_FUNCTION_AXIOM_OR_NEWLY_DISCOVERED_TYPED_FROZEN_STRUCTURE",
+  "ontology_order_prohibited_count": 1,
+  "physical_gravity_derived": false,
+  "prior_zero_rank_checks": {
+    "v15.33_frozen_constraint_rank": 0,
+    "v15.35_frozen_hard_radius_constraint_count": 0,
+    "v15.36_frozen_function_constraint_rank": 0
+  },
+  "reopen_if_new_frozen_typed_structure_discovered": true,
+  "resolved_candidate_class_count": 14,
+  "response_function_selected": false,
+  "scientific_breakthrough": false,
+  "signal_of_life": false,
+  "status": "RESPONSE_FUNCTION_IRREDUCIBLE_RELATIVE_TO_AUDITED_FROZEN_ONTOLOGY",
+  "surviving_projective_function_dimension": 9,
+  "synthetic_control_is_frozen": false,
+  "synthetic_control_projective_dimension": 0,
+  "synthetic_new_axiom_control": "F_PROPORTIONAL_TO_A",
+  "type_blocked_count": 4,
+  "typed_nonselective_count": 3,
+  "unresolved_candidate_count": 0,
+  "uses_entropy_as_selector": false,
+  "uses_holonomy_selector": false,
+  "uses_metric_selector": false,
+  "uses_newton_or_gr": false,
+  "uses_physical_time": false,
+  "uses_pruning_as_selector": false,
+  "version": "v15.37"
+}

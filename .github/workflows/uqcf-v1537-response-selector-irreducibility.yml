@@ -66,5 +66,20 @@ jobs:
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.37-response-selector-irreducibility
         run: |
           python -m unittest -v test_gate.py
-          python response_selector_irreducibility_gate.py > /tmp/v1537-results.json
+          python response_selector_irreducibility_gate.py --check docs/RESULTS.json > /tmp/v1537-results.json
           python -m compileall -q response_selector_irreducibility_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='RESPONSE_FUNCTION_IRREDUCIBLE_RELATIVE_TO_AUDITED_FROZEN_ONTOLOGY'
+          assert r['candidate_class_count']==14
+          assert r['resolved_candidate_class_count']==14
+          assert r['unresolved_candidate_count']==0
+          assert r['combined_frozen_selector_rank']==0
+          assert r['surviving_projective_function_dimension']==9
+          assert r['synthetic_control_projective_dimension']==0
+          assert r['branch_stop_relative_to_audited_frozen_ontology'] is True
+          assert r['response_function_selected'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY
