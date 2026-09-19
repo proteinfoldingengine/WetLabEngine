@@ -1,0 +1,128 @@
+name: UQCF v15.39 Higher-Incidence Source Axioms
+
+on:
+  push:
+    branches: [research/v15.39-higher-incidence-source-axioms]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/**'
+      - 'docs/superpowers/specs/2026-09-19-v1539-higher-incidence-source-axioms-design.md'
+      - 'docs/superpowers/plans/2026-09-19-v1539-higher-incidence-source-axioms-implementation.md'
+      - '.github/workflows/uqcf-v1539-higher-incidence-source-axioms.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+
+      - name: Install inherited environment
+        run: python -m pip install numpy==2.3.5
+
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+
+          base = '825b47b276c6a17df35e6620f6de6630a1d729e2'
+          demo = 'ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/'
+          allowed = {
+              'docs/superpowers/specs/2026-09-19-v1539-higher-incidence-source-axioms-design.md',
+              'docs/superpowers/plans/2026-09-19-v1539-higher-incidence-source-axioms-implementation.md',
+              '.github/workflows/uqcf-v1539-higher-incidence-source-axioms.yml',
+          }
+          subprocess.run(['git', 'merge-base', '--is-ancestor', base, 'HEAD'], check=True)
+          for line in subprocess.check_output(
+              ['git', 'diff', '--name-status', base, 'HEAD'], text=True
+          ).splitlines():
+              status, name = line.split('\t', 1)
+              assert status == 'A', line
+              assert name.startswith(demo) or name in allowed, name
+          PY
+
+      - name: Run inherited frontier regressions
+        run: |
+          python - <<'PY'
+          import re
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          root = Path('ResearchHistory/UQCF-GEM/demos')
+          suites = [
+              (root / 'v15.37-response-selector-irreducibility', ['test_gate.py'], 7),
+              (root / 'v15.38-response-axiom-admissibility', ['test_gate.py'], 7),
+          ]
+          total = 0
+          for cwd, files, count in suites:
+              result = subprocess.run(
+                  [sys.executable, '-m', 'unittest', '-v', *files],
+                  cwd=cwd,
+                  text=True,
+                  stdout=subprocess.PIPE,
+                  stderr=subprocess.STDOUT,
+                  timeout=900,
+              )
+              print(result.stdout[-1200:], flush=True)
+              match = re.search(r'Ran (\d+) tests? in', result.stdout)
+              assert result.returncode == 0, result.stdout
+              assert match and int(match.group(1)) == count, result.stdout
+              assert re.search(r'^OK\s*$', result.stdout, re.M), result.stdout
+              total += count
+          assert total == 14
+          PY
+
+      - name: Generate deterministic result candidate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms
+        run: |
+          python source_axiom_canary.py --out /tmp/v1539-results.json > /dev/null
+          python - <<'PY'
+          import json
+
+          result = json.load(open('/tmp/v1539-results.json'))
+          print('status:', result['status'])
+          print('candidate_verdicts:', result['candidate_verdicts'])
+          print('global_survivor_count:', result['global_survivor_count'])
+          PY
+
+      - name: Upload deterministic result candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: v1539-results-${{ github.sha }}
+          path: /tmp/v1539-results.json
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Run v15.39 exact gate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms
+        run: |
+          python -m unittest -v test_gate.py
+          python source_axiom_canary.py --check docs/RESULTS.json > /tmp/v1539-results.json
+          python -m compileall -q source_axiom_canary.py test_gate.py
+          python - <<'PY'
+          import json
+
+          result = json.load(open('docs/RESULTS.json'))
+          assert result['finite_size_controls'] == [5, 7, 9, 11]
+          assert result['holdout_size'] == 11
+          assert result['candidate_specific_thresholds'] == 0
+          assert result['accepted_candidate_spectrum_queries'] == 0
+          assert result['accepted_candidate_spectral_edge_parameters'] == 0
+          assert result['source_axiom_derived_from_frozen_ontology'] is False
+          assert result['physical_gravity_derived'] is False
+          assert result['gravity_canary_certified'] is False
+          assert result['Pillar_3'] == 'OPEN'
+          PY
