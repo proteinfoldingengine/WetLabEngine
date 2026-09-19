@@ -85,6 +85,27 @@ jobs:
           assert total == 14
           PY
 
+      - name: Generate deterministic result candidate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms
+        run: |
+          python source_axiom_canary.py --out /tmp/v1539-results.json > /dev/null
+          python - <<'PY'
+          import json
+
+          result = json.load(open('/tmp/v1539-results.json'))
+          print('status:', result['status'])
+          print('candidate_verdicts:', result['candidate_verdicts'])
+          print('global_survivor_count:', result['global_survivor_count'])
+          PY
+
+      - name: Upload deterministic result candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: v1539-results-${{ github.sha }}
+          path: /tmp/v1539-results.json
+          if-no-files-found: error
+          retention-days: 7
+
       - name: Run v15.39 exact gate
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms
         run: |
