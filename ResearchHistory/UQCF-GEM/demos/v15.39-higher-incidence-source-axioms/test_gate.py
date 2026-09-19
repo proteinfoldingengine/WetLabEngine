@@ -51,6 +51,20 @@ class HigherIncidenceSourceAxiomTests(unittest.TestCase):
         self.assertEqual(protocol["closed_face_kappa_multiple"], 4)
         self.assertTrue(self.result["closed_face_null_reinterpreted_by_new_axiom"])
 
+    def test_exact_chain_sector_and_adjacency_contract(self):
+        protocol = self.result["source_protocol"]
+        self.assertTrue(protocol["all_B1_B2_zero"])
+        self.assertTrue(protocol["canonical_cycle_boundary_homology_split_exact"])
+        self.assertTrue(protocol["adjacency_preserves_boundary_sector_exact"])
+        for row in self.result["size_audits"]:
+            L = row["L"]
+            self.assertTrue(row["B1_B2_zero"])
+            self.assertEqual(row["cycle_dimension"], L * L + 1)
+            self.assertEqual(row["boundary_dimension"], L * L - 1)
+            self.assertEqual(row["homology_dimension"], 2)
+            self.assertTrue(row["canonical_cycle_boundary_homology_split_exact"])
+            self.assertTrue(row["adjacency_preserves_boundary_sector_exact"])
+
     def test_candidate_formulas_and_balance_uniqueness(self):
         self.assertEqual(tuple(self.result["candidate_keys"]), CANDIDATE_KEYS)
         formulas = self.result["candidate_formula_manifest"]
@@ -88,6 +102,38 @@ class HigherIncidenceSourceAxiomTests(unittest.TestCase):
             self.result["pretime_global_organization_signal"],
             survivor_count > 0,
         )
+        for size_row in self.result["size_audits"]:
+            for row in size_row["candidate_rows"]:
+                orientation_structural = all(
+                    orientation["response_nonzero"]
+                    and orientation["boundary_sector"]
+                    and orientation["B1_response_zero"]
+                    and orientation["unique_response_ray"]
+                    and orientation["candidate_equation_exact"]
+                    and orientation["lambda_closure_exact"]
+                    and orientation["projective_scale_predicates_exact"]
+                    for orientation in row["orientation_rows"]
+                )
+                expected_structural = all((
+                    size_row["B1_B2_zero"],
+                    size_row["canonical_cycle_boundary_homology_split_exact"],
+                    size_row["adjacency_preserves_boundary_sector_exact"],
+                    row["response_covariance_exact"],
+                    row["response_reversal_exact"],
+                    row["response_additivity_exact"],
+                    row["translation_remote_metrics_exact"],
+                    orientation_structural,
+                ))
+                self.assertEqual(row["structural_checks_pass"], expected_structural)
+                expected_verdict = (
+                    "STRUCTURALLY_REJECTED"
+                    if not expected_structural
+                    else "PRETIME_GLOBAL_ORGANIZATION_SURVIVES"
+                    if row["remote_support_all_orientations"]
+                    and row["remote_commutator_all_orientations"]
+                    else "STRUCTURAL_ONLY_LOCAL"
+                )
+                self.assertEqual(row["size_verdict"], expected_verdict)
 
     def test_projective_scale_and_hostile_controls(self):
         self.assertTrue(self.result["projective_scale_discipline_enforced"])
