@@ -82,9 +82,12 @@
   "signal_of_life": true,
   "size_audits": [
     {
+      "B1_B2_zero": true,
       "L": 5,
+      "adjacency_preserves_boundary_sector_exact": true,
       "all_outputs_cycle_closed": true,
       "all_outputs_in_boundary_sector": true,
+      "boundary_dimension": 24,
       "candidate_additivity_exact": true,
       "candidate_reversal_exact": true,
       "candidate_rows": [
@@ -95,7 +98,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -103,11 +108,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -115,11 +123,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -127,11 +138,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -139,7 +153,8 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": false,
@@ -160,7 +175,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -168,11 +185,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -180,11 +200,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -192,11 +215,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -204,7 +230,8 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": false,
@@ -225,7 +252,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -233,11 +262,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/625",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -245,11 +277,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/625",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -257,11 +292,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/625",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -269,7 +307,8 @@
               "remote_support_positive": true,
               "remote_support_square": "2/625",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": true,
@@ -284,8 +323,12 @@
           "translation_remote_metrics_exact": true
         }
       ],
+      "canonical_cycle_boundary_homology_split_exact": true,
+      "canonical_homology_rank": 2,
+      "cycle_dimension": 26,
       "dim_B": 24,
       "global_balance_boundary_inverse_exact": true,
+      "homology_dimension": 2,
       "hostile_controls": {
         "bare_local_cancellation_closure_zero": true,
         "bare_local_cancellation_remote_support_zero": true,
@@ -303,9 +346,12 @@
       "translation_remote_metrics_exact": true
     },
     {
+      "B1_B2_zero": true,
       "L": 7,
+      "adjacency_preserves_boundary_sector_exact": true,
       "all_outputs_cycle_closed": true,
       "all_outputs_in_boundary_sector": true,
+      "boundary_dimension": 48,
       "candidate_additivity_exact": true,
       "candidate_reversal_exact": true,
       "candidate_rows": [
@@ -316,7 +362,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -324,11 +372,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -336,11 +387,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -348,11 +402,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -360,7 +417,8 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": false,
@@ -381,7 +439,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -389,11 +449,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -401,11 +464,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -413,11 +479,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -425,7 +494,8 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": false,
@@ -446,7 +516,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -454,11 +526,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/2401",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -466,11 +541,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/2401",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -478,11 +556,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/2401",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -490,7 +571,8 @@
               "remote_support_positive": true,
               "remote_support_square": "2/2401",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": true,
@@ -505,8 +587,12 @@
           "translation_remote_metrics_exact": true
         }
       ],
+      "canonical_cycle_boundary_homology_split_exact": true,
+      "canonical_homology_rank": 2,
+      "cycle_dimension": 50,
       "dim_B": 48,
       "global_balance_boundary_inverse_exact": true,
+      "homology_dimension": 2,
       "hostile_controls": {
         "bare_local_cancellation_closure_zero": true,
         "bare_local_cancellation_remote_support_zero": true,
@@ -524,9 +610,12 @@
       "translation_remote_metrics_exact": true
     },
     {
+      "B1_B2_zero": true,
       "L": 9,
+      "adjacency_preserves_boundary_sector_exact": true,
       "all_outputs_cycle_closed": true,
       "all_outputs_in_boundary_sector": true,
+      "boundary_dimension": 80,
       "candidate_additivity_exact": true,
       "candidate_reversal_exact": true,
       "candidate_rows": [
@@ -537,7 +626,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -545,11 +636,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -557,11 +651,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -569,11 +666,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -581,7 +681,8 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": false,
@@ -602,7 +703,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -610,11 +713,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -622,11 +728,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -634,11 +743,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -646,7 +758,8 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": false,
@@ -667,7 +780,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -675,11 +790,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/6561",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -687,11 +805,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/6561",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -699,11 +820,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/6561",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -711,7 +835,8 @@
               "remote_support_positive": true,
               "remote_support_square": "2/6561",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": true,
@@ -726,8 +851,12 @@
           "translation_remote_metrics_exact": true
         }
       ],
+      "canonical_cycle_boundary_homology_split_exact": true,
+      "canonical_homology_rank": 2,
+      "cycle_dimension": 82,
       "dim_B": 80,
       "global_balance_boundary_inverse_exact": true,
+      "homology_dimension": 2,
       "hostile_controls": {
         "bare_local_cancellation_closure_zero": true,
         "bare_local_cancellation_remote_support_zero": true,
@@ -745,9 +874,12 @@
       "translation_remote_metrics_exact": true
     },
     {
+      "B1_B2_zero": true,
       "L": 11,
+      "adjacency_preserves_boundary_sector_exact": true,
       "all_outputs_cycle_closed": true,
       "all_outputs_in_boundary_sector": true,
+      "boundary_dimension": 120,
       "candidate_additivity_exact": true,
       "candidate_reversal_exact": true,
       "candidate_rows": [
@@ -758,7 +890,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -766,11 +900,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -778,11 +915,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -790,11 +930,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -802,7 +945,8 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": false,
@@ -823,7 +967,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -831,11 +977,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -843,11 +992,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -855,11 +1007,14 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": false,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": false,
@@ -867,7 +1022,8 @@
               "remote_support_positive": false,
               "remote_support_square": "0",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": false,
@@ -888,7 +1044,9 @@
           "orientation_rows": [
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -896,11 +1054,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/14641",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -908,11 +1069,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/14641",
               "response_nonzero": true,
-              "slot_sign": 1
+              "slot_sign": 1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -920,11 +1084,14 @@
               "remote_support_positive": true,
               "remote_support_square": "2/14641",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             },
             {
               "B1_response_zero": true,
+              "balance_equation_exact": true,
               "boundary_sector": true,
+              "candidate_equation_exact": true,
               "lambda_closure_exact": true,
               "projective_scale_predicates_exact": true,
               "remote_commutator_positive": true,
@@ -932,7 +1099,8 @@
               "remote_support_positive": true,
               "remote_support_square": "2/14641",
               "response_nonzero": true,
-              "slot_sign": -1
+              "slot_sign": -1,
+              "unique_response_ray": true
             }
           ],
           "remote_commutator_all_orientations": true,
@@ -947,8 +1115,12 @@
           "translation_remote_metrics_exact": true
         }
       ],
+      "canonical_cycle_boundary_homology_split_exact": true,
+      "canonical_homology_rank": 2,
+      "cycle_dimension": 122,
       "dim_B": 120,
       "global_balance_boundary_inverse_exact": true,
+      "homology_dimension": 2,
       "hostile_controls": {
         "bare_local_cancellation_closure_zero": true,
         "bare_local_cancellation_remote_support_zero": true,
@@ -969,7 +1141,10 @@
   "source_axiom_derived_from_frozen_ontology": false,
   "source_axiom_user_approved_before_execution": true,
   "source_protocol": {
+    "adjacency_preserves_boundary_sector_exact": true,
+    "all_B1_B2_zero": true,
     "all_B1_kappa_zero": true,
+    "canonical_cycle_boundary_homology_split_exact": true,
     "closed_face_coarse_q_null": true,
     "closed_face_higher_incidence_source_nonnull": true,
     "closed_face_kappa_multiple": 4,
