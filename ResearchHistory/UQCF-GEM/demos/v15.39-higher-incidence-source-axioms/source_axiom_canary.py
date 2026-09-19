@@ -717,6 +717,16 @@ def audit() -> dict:
         key: all(row["hostile_controls"][key] for row in size_rows)
         for key in hostile_keys
     }
+    if status == "AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL":
+        next_required_object = (
+            "INDEPENDENT_GEOMETRY_AND_CORRESPONDENCE_TESTS_FOR_FROZEN_AXIOM_SURVIVOR"
+        )
+    elif status == "ADMISSIBLE_CANDIDATES_NO_GLOBAL_SIGNAL":
+        next_required_object = (
+            "REVISE_OR_REJECT_EXPLICIT_SOURCE_RESPONSE_AXIOMS_WITHOUT_TUNING"
+        )
+    else:
+        next_required_object = "REPAIR_TYPED_SOURCE_PROTOCOL_BEFORE_ANY_CANARY"
 
     return {
         "version": "v15.39",
@@ -761,6 +771,38 @@ def audit() -> dict:
             row["projective_scale_predicates_exact"] for row in size_rows
         ),
         "hostile_controls": hostile,
+        "new_source_semantics_axiom_added": True,
+        "new_response_axiom_candidates_tested": True,
+        "source_axiom_derived_from_frozen_ontology": False,
+        "source_axiom_user_approved_before_execution": True,
+        "axiom_preregistration_commit": "c71d16ead84620a9d3ac8762c3feb59e5be5c487",
+        "red_run_receipt": {
+            "run_id": 35452558930,
+            "job_id": 105922134054,
+            "head_sha": "f5548eb73991705d36349ebe1afa550c4eb207d1",
+            "expected_failure": "ModuleNotFoundError: No module named 'source_axiom_canary'",
+        },
+        "gravity_facing_canary_evaluated": True,
+        "finite_holonomy_precursor_evaluated": True,
+        "full_SU2_holonomy_evaluated": False,
+        "signal_of_life": survivor_count > 0,
+        "conditional_signal_of_life": survivor_count > 0,
+        "signal_is_axiom_dependent": survivor_count > 0,
+        "response_axiom_selected_by_canary": False,
+        "physical_gravity_derived": False,
+        "gravity_canary_certified": False,
+        "einstein_equations_derived": False,
+        "continuum_limit_derived": False,
+        "uses_pruning": False,
+        "uses_entropy": False,
+        "uses_physical_time": False,
+        "uses_metric_selector": False,
+        "uses_holonomy_selector": False,
+        "uses_newton_or_gr_selector": False,
+        "gravity_fit_parameters": 0,
+        "scientific_breakthrough": False,
+        "Pillar_3": "OPEN",
+        "next_required_object": next_required_object,
         "evidence_pins": verify_evidence(),
     }
 
