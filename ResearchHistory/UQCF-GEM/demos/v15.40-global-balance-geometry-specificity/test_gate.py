@@ -40,6 +40,13 @@ class GlobalBalanceGeometrySpecificityTests(unittest.TestCase):
         self.assertTrue(bad.separated); self.assertFalse(bad.triangle)
         self.assertFalse(construct_response_geometry((0,1,2), sources, ((0,0,0),)*3).separated)
         with self.assertRaises(TypeError): construct_response_geometry((0,1), ((True,),(0,)), ((1,),(0,)))
+        class Hostile:
+            labels = (0,1); sources = ((1,0),(0,1)); responses = ((1,0),(0,1))
+            def __getattr__(self, name):
+                if name in {"B1","B2","A","D","translations","D4","coordinates","distances","spectrum","candidate_key"}: raise AssertionError(name)
+                raise AttributeError(name)
+        hostile = Hostile()
+        self.assertTrue(metric_passes(construct_response_geometry(hostile.labels, hostile.sources, hostile.responses)))
 
     def test_incidence_target_is_blind_four_regular_and_connected(self):
         self.assertTrue(self.result["input_separation"]["target_constructor_blind"])
@@ -48,6 +55,14 @@ class GlobalBalanceGeometrySpecificityTests(unittest.TestCase):
         path = construct_incidence_target(((1,-1,0),(0,1,-1)))
         disconnected = construct_incidence_target(((1,-1,0,0),(0,0,1,-1)))
         self.assertEqual(path.distances[0], (0,1,2)); self.assertFalse(disconnected.connected); self.assertIsNone(disconnected.distances[0][2])
+        class HostileSupport:
+            rows = ((1,-1,0),(0,1,-1))
+            def __len__(self): return len(self.rows)
+            def __getitem__(self, index): return self.rows[index]
+            def __getattr__(self, name):
+                if name in {"A","D","responses","response_pairings","translations","D4","coordinates","precomputed_distances"}: raise AssertionError(name)
+                raise AttributeError(name)
+        self.assertTrue(construct_incidence_target(HostileSupport()).connected)
         for size in self.result["size_audits"]: self.assertEqual(size["target_edge_count"], 2*size["L"]*size["L"])
 
     def test_orientation_additivity_covariance_and_relabeling(self):

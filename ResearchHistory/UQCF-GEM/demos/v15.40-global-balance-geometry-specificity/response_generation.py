@@ -243,19 +243,31 @@ def generation_audit(L):
     rank = ql.rank(matrix); nullspace = ql.nullspace(matrix)
     isomorphism = rank == L*L-1 and len(nullspace) == 1 and all(x == nullspace[0][0] for x in nullspace[0]) and all(boundary_from_face_vector(L, centered_source(L, face)) == B2_column(L, face) for face in range(L*L))
     structural = {key: structural_audit(L, key) for key in GENERATORS}
-    covariance = True
+    covariance = True; additivity = True; orientation = True
+    first, second = 0, complex_.face_index[(1 % L, 2 % L)]
     for key in FAMILY_KEYS:
         family = response_family(L, key)
-        for matrix_d4 in actions.D4:
-            image = actions.face_action(complex_, actions.CellAutomorphism(matrix_d4, (0, 0), L)).image
+        combined_source = _add(_scale(Fraction(2, 3), family.sources[first]), _scale(Fraction(-5, 7), family.sources[second]))
+        combined_response = _unit_response(L, key, combined_source)
+        additivity &= combined_response == _add(_scale(Fraction(2, 3), family.responses[first]), _scale(Fraction(-5, 7), family.responses[second]))
+        for face in range(L * L):
+            loop = complex_.face_loops[complex_.faces[face]]
+            orientation &= len(loop) == 4 and all(support[edge][face] in (-1, 1) and support[edge][face] * support[edge][face] == 1 for edge, _sign in loop)
+        automorphisms = (
+            actions.CellAutomorphism(actions.D4[0], (1, 0), L),
+            actions.CellAutomorphism(actions.D4[0], (0, 1), L),
+            *(actions.CellAutomorphism(matrix_d4, (0, 0), L) for matrix_d4 in actions.D4),
+        )
+        for automorphism in automorphisms:
+            image = actions.face_action(complex_, automorphism).image
             covariance &= all(relabel_vector(family.responses[label], image) == family.responses[image[label]] for label in range(L*L))
     return {
         "L": L, "evidence_verified": bool(verify_evidence()), "B2_rank": rank,
         "B2_kernel_constant_line": len(nullspace)==1 and all(x == nullspace[0][0] for x in nullspace[0]),
         "canonical_augmentation_isomorphism_exact": isomorphism,
         "all_response_equations_exact": all(item.response_equations_exact for item in structural.values()),
-        "all_orientation_rays_exact": all(len(complex_.face_loops[complex_.faces[face]]) == 4 for face in range(L*L)),
-        "all_additivity_exact": True,
+        "all_orientation_rays_exact": orientation,
+        "all_additivity_exact": additivity,
         "all_translation_D4_covariance_exact": covariance and all(item.translation_D4_covariant for item in structural.values()),
         "matched_controls_structurally_admissible": all(all((structural[key].connected, structural[key].invertible_on_augmentation, structural[key].translation_D4_covariant, structural[key].valence_four, structural[key].response_equations_exact)) for key in ("MATCHED_DIAGONAL_BALANCE", "MATCHED_STEP2_BALANCE")),
         "structural_audits": {key: item.__dict__ for key, item in structural.items()},
