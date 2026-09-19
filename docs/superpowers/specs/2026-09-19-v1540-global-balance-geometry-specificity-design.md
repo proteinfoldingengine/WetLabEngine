@@ -121,7 +121,7 @@ receive or query:
 
 ```text
 A, D, response vectors, response pairings,
-translations, D4 matrices, face coordinates (x,y), or graph distances.
+translations, D4 matrices, face coordinates (x,y), or precomputed graph distances.
 ```
 
 ### 4.3 Adjudicator
@@ -323,7 +323,8 @@ If the canonical response passes, classify specificity:
 GENERIC_GREEN_OPERATOR_GEOMETRY_ONLY
 ```
 
-if any historical or matched control also satisfies `N_R=N_B2` at every required size.
+if any historical or matched control passes the complete metric protocol and also satisfies
+`N_R=N_B2` at every required size.
 
 Only return
 
@@ -337,8 +338,10 @@ if all of the following hold:
 - `N_R=N_B2` at `L=5,7,9,11`;
 - both constructor outputs are equivariant under the frozen relabeling;
 - both projective scales give identical verdicts;
-- all historical and matched controls are structurally valid where required;
-- no control satisfies the complete canonical correspondence rule;
+- both matched global-balance controls are structurally admissible;
+- each historical control is evaluated without requiring it to pass the metric protocol;
+- no historical or matched control passes both the complete metric protocol and the canonical
+  correspondence rule;
 - the locked `L=11` result uses unchanged formulas and criteria;
 - every construction-firewall counter remains zero.
 
