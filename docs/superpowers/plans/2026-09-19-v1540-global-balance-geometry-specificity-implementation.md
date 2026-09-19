@@ -687,5 +687,8 @@ Explicitly flag a positive specificity result as scientifically important but ax
 - Plan identity: `docs/superpowers/plans/2026-09-19-v1540-global-balance-geometry-specificity-implementation.md`.
 - Execution base: `0f3e10602929dd0a148b195f32406efa52082070`.
 - Reviewed design head: `940e77adf346ad8defc01f94b3f6e7c39ff18880`.
-- RED receipt: append after Task 1's intended missing-module run.
+- RED receipt: Actions run `35464098454`, job `105953033212`, exact head
+  `b0b8116b7dc9455cef98ce8578c5c3c5afe37e57`; additive scope passed, all `7+8=15`
+  inherited tests passed, and the v15.40 gate then failed exactly with
+  `ModuleNotFoundError: No module named 'geometry_specificity_gate'`.
 - Final exact-head receipt: record in draft PR #51 after Task 7; do not create an infinite receipt-only commit chain.
