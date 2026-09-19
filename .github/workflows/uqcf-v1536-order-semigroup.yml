@@ -1,0 +1,84 @@
+name: UQCF v15.36 Order Semigroup Constraint
+on:
+  push:
+    branches: [research/v15.36-order-semigroup-constraint]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.36-order-semigroup-constraint/**'
+      - 'docs/superpowers/specs/2026-09-19-v1536-order-semigroup-constraint-design.md'
+      - 'docs/superpowers/plans/2026-09-19-v1536-order-semigroup-constraint-implementation.md'
+      - '.github/workflows/uqcf-v1536-order-semigroup.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install inherited environment
+        run: python -m pip install numpy==2.3.5
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+          base='c549e093be355ca93fff5ac1c63d0c3a4452b6f7'
+          demo='ResearchHistory/UQCF-GEM/demos/v15.36-order-semigroup-constraint/'
+          allowed={
+            'docs/superpowers/specs/2026-09-19-v1536-order-semigroup-constraint-design.md',
+            'docs/superpowers/plans/2026-09-19-v1536-order-semigroup-constraint-implementation.md',
+            '.github/workflows/uqcf-v1536-order-semigroup.yml',
+          }
+          subprocess.run(['git','merge-base','--is-ancestor',base,'HEAD'],check=True)
+          for line in subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines():
+              status,name=line.split('\t',1)
+              assert status=='A',line
+              assert name.startswith(demo) or name in allowed,name
+          PY
+      - name: Run inherited frontier regressions
+        run: |
+          python - <<'PY'
+          import re,subprocess,sys
+          from pathlib import Path
+          root=Path('ResearchHistory/UQCF-GEM/demos')
+          suites=[
+            (root/'v15.34-canonical-adjacency-commutant',['test_gate.py'],6),
+            (root/'v15.35-support-radius-locality',['test_gate.py'],7),
+          ]
+          total=0
+          for cwd,files,count in suites:
+              r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=cwd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
+              print(r.stdout[-700:],flush=True)
+              m=re.search(r'Ran (\d+) tests? in',r.stdout)
+              assert r.returncode==0 and m and int(m.group(1))==count and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+              total+=count
+          assert total==13
+          PY
+      - name: Run v15.36 exact gate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.36-order-semigroup-constraint
+        run: |
+          python -m unittest -v test_gate.py
+          python order_semigroup_gate.py --check docs/RESULTS.json > /tmp/v1536-results.json
+          python -m compileall -q order_semigroup_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='FROZEN_ORDER_SEMIGROUP_CONSTRAINTS_LEAVE_FUNCTION_UNSELECTED'
+          assert r['continuous_semigroup_generator_dimension']==10
+          assert r['projective_relative_generator_dimension']==9
+          assert r['positive_cone_affine_dimension']==10
+          assert r['nonpositive_generator_cone_affine_dimension']==10
+          assert r['frozen_function_constraint_rank']==0
+          assert r['surviving_projective_function_dimension']==9
+          assert r['response_generator_selected'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY
