@@ -66,5 +66,20 @@ jobs:
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.38-response-axiom-admissibility
         run: |
           python -m unittest -v test_gate.py
-          python response_axiom_admissibility_gate.py > /tmp/v1538-results.json
+          python response_axiom_admissibility_gate.py --check docs/RESULTS.json > /tmp/v1538-results.json
           python -m compileall -q response_axiom_admissibility_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='PRETIME_RESPONSE_AXIOM_ADMISSIBILITY_CONTRACT_CERTIFIED_NONSELECTIVE'
+          assert r['finite_size_controls']==[5,7,9]
+          assert r['cycle_dimensions']=={'5':26,'7':50,'9':82}
+          assert r['admissible_target_blind_control_count']==3
+          assert r['projectively_distinct_admissible_control_count']==3
+          assert r['accepted_candidate_spectrum_queries']==0
+          assert r['accepted_candidate_spectral_edge_parameters']==0
+          assert r['rejected_control_count']==5
+          assert r['response_function_selected'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY
