@@ -579,3 +579,7 @@ No candidate formula or canary criterion may change after the preregistration co
 - Pre-flight Task 4 -> Task 5: `exact_size_audit(L)` produces the per-size rows consumed by overall adjudication; types match.
 - Pre-flight Task 5 -> Task 6: canonical ledger, README, test count, and workflow assertions match the certification task.
 - Pre-flight result: no interface conflicts found.
+
+- Task 1 RED receipt: run `35452558930`, job `105922134054`, exact head `f5548eb73991705d36349ebe1afa550c4eb207d1`; additive scope and 14 inherited tests passed; v15.39 failed with the intended `ModuleNotFoundError: No module named 'source_axiom_canary'`.
+- Task 1: complete (commits `39e174a..f5548eb`; RED contract and workflow frozen before production code).
+- Ruling: The final test fixture computes one cached full audit, so Tasks 2–4 will expose progressively larger audit schemas: source tests first, then candidate tests, then canary tests. The full workflow may remain red between these task commits. Cost if wrong: per-task evidence comes from named test outcomes in Actions rather than an all-green suite until Task 5.
