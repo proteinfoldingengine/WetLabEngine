@@ -1,0 +1,109 @@
+name: UQCF v15.40 Global-Balance Geometry Specificity
+
+on:
+  push:
+    branches: [research/v15.40-global-balance-geometry-specificity]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/**'
+      - 'docs/superpowers/specs/2026-09-19-v1540-global-balance-geometry-specificity-design.md'
+      - 'docs/superpowers/plans/2026-09-19-v1540-global-balance-geometry-specificity-implementation.md'
+      - '.github/workflows/uqcf-v1540-global-balance-geometry-specificity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+
+      - name: Install inherited environment
+        run: python -m pip install numpy==2.3.5
+
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+
+          base = '0f3e10602929dd0a148b195f32406efa52082070'
+          demo = 'ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/'
+          allowed = {
+              'docs/superpowers/specs/2026-09-19-v1540-global-balance-geometry-specificity-design.md',
+              'docs/superpowers/plans/2026-09-19-v1540-global-balance-geometry-specificity-implementation.md',
+              '.github/workflows/uqcf-v1540-global-balance-geometry-specificity.yml',
+          }
+          subprocess.run(['git', 'merge-base', '--is-ancestor', base, 'HEAD'], check=True)
+          for line in subprocess.check_output(
+              ['git', 'diff', '--name-status', base, 'HEAD'], text=True
+          ).splitlines():
+              status, name = line.split('\t', 1)
+              assert status == 'A', line
+              assert name.startswith(demo) or name in allowed, name
+          PY
+
+      - name: Run inherited frontier regressions
+        run: |
+          python - <<'PY'
+          import re
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          root = Path('ResearchHistory/UQCF-GEM/demos')
+          suites = [
+              (root / 'v15.38-response-axiom-admissibility', ['test_gate.py'], 7),
+              (root / 'v15.39-higher-incidence-source-axioms', ['test_gate.py'], 8),
+          ]
+          total = 0
+          for cwd, files, count in suites:
+              result = subprocess.run(
+                  [sys.executable, '-m', 'unittest', '-v', *files],
+                  cwd=cwd,
+                  text=True,
+                  stdout=subprocess.PIPE,
+                  stderr=subprocess.STDOUT,
+                  timeout=900,
+              )
+              print(result.stdout[-1600:], flush=True)
+              match = re.search(r'Ran (\d+) tests? in', result.stdout)
+              assert result.returncode == 0, result.stdout
+              assert match and int(match.group(1)) == count, result.stdout
+              assert re.search(r'^OK\s*$', result.stdout, re.M), result.stdout
+              total += count
+          assert total == 15
+          PY
+
+      - name: Run v15.40 exact gate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity
+        run: |
+          python -m unittest -v test_gate.py
+          python geometry_specificity_gate.py --check docs/RESULTS.json > /tmp/v1540-results.json
+          cmp docs/RESULTS.json /tmp/v1540-results.json
+          python -m compileall -q response_generation.py response_geometry.py incidence_target.py geometry_specificity_gate.py test_gate.py
+          python - <<'PY'
+          import json
+
+          result = json.load(open('docs/RESULTS.json'))
+          assert result['finite_size_controls'] == [5, 7, 9, 11]
+          assert result['holdout_size'] == 11
+          assert all(value == 0 for value in result['construction_firewall'].values())
+          assert result['physical_metric_derived'] is False
+          assert result['spacetime_derived'] is False
+          assert result['physical_gravity_derived'] is False
+          assert result['continuum_limit_derived'] is False
+          assert result['einstein_equations_derived'] is False
+          assert result['scientific_breakthrough'] is False
+          assert result['Pillar_3'] == 'OPEN'
+          PY
