@@ -4,7 +4,12 @@ import json
 from pathlib import Path
 import unittest
 
-from source_axiom_canary import CANDIDATE_KEYS, audit, canonical_json
+from source_axiom_canary import (
+    CANDIDATE_KEYS,
+    audit,
+    canonical_json,
+    next_required_object_for_status,
+)
 
 
 ALLOWED_CANDIDATE_VERDICTS = {
@@ -51,7 +56,7 @@ class HigherIncidenceSourceAxiomTests(unittest.TestCase):
         self.assertEqual(protocol["closed_face_kappa_multiple"], 4)
         self.assertTrue(self.result["closed_face_null_reinterpreted_by_new_axiom"])
 
-    def test_exact_chain_sector_and_adjacency_contract(self):
+    def test_candidate_formulas_and_balance_uniqueness(self):
         protocol = self.result["source_protocol"]
         self.assertTrue(protocol["all_B1_B2_zero"])
         self.assertTrue(protocol["canonical_cycle_boundary_homology_split_exact"])
@@ -65,7 +70,6 @@ class HigherIncidenceSourceAxiomTests(unittest.TestCase):
             self.assertTrue(row["canonical_cycle_boundary_homology_split_exact"])
             self.assertTrue(row["adjacency_preserves_boundary_sector_exact"])
 
-    def test_candidate_formulas_and_balance_uniqueness(self):
         self.assertEqual(tuple(self.result["candidate_keys"]), CANDIDATE_KEYS)
         formulas = self.result["candidate_formula_manifest"]
         self.assertEqual(formulas, {
@@ -134,6 +138,41 @@ class HigherIncidenceSourceAxiomTests(unittest.TestCase):
                     else "STRUCTURAL_ONLY_LOCAL"
                 )
                 self.assertEqual(row["size_verdict"], expected_verdict)
+
+        for key in CANDIDATE_KEYS:
+            rows = [
+                next(row for row in size_row["candidate_rows"] if row["key"] == key)
+                for size_row in self.result["size_audits"]
+            ]
+            expected_overall = (
+                "STRUCTURALLY_REJECTED"
+                if not all(row["structural_checks_pass"] for row in rows)
+                else "PRETIME_GLOBAL_ORGANIZATION_SURVIVES"
+                if all(
+                    row["remote_support_all_orientations"]
+                    and row["remote_commutator_all_orientations"]
+                    for row in rows
+                )
+                else "STRUCTURAL_ONLY_LOCAL"
+            )
+            self.assertEqual(self.result["candidate_verdicts"][key], expected_overall)
+
+        expected_next_objects = {
+            "SOURCE_AXIOM_PROTOCOL_INVALID":
+                "REPAIR_TYPED_SOURCE_PROTOCOL_BEFORE_ANY_CANARY",
+            "NO_ADMISSIBLE_RESPONSE_CANDIDATE":
+                "REVISE_OR_REJECT_EXPLICIT_SOURCE_RESPONSE_AXIOMS_WITHOUT_TUNING",
+            "ADMISSIBLE_CANDIDATES_NO_GLOBAL_SIGNAL":
+                "REVISE_OR_REJECT_EXPLICIT_SOURCE_RESPONSE_AXIOMS_WITHOUT_TUNING",
+            "AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL":
+                "INDEPENDENT_GEOMETRY_AND_CORRESPONDENCE_TESTS_FOR_FROZEN_AXIOM_SURVIVOR",
+        }
+        for status, expected in expected_next_objects.items():
+            self.assertEqual(next_required_object_for_status(status), expected)
+        self.assertEqual(
+            self.result["next_required_object"],
+            expected_next_objects[self.result["status"]],
+        )
 
     def test_projective_scale_and_hostile_controls(self):
         self.assertTrue(self.result["projective_scale_discipline_enforced"])
