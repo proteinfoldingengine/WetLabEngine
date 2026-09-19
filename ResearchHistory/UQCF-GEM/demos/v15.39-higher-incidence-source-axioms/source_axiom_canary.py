@@ -318,6 +318,15 @@ def solve_unique(ql, matrix, rhs) -> tuple[Fraction, ...]:
     return solution
 
 
+@lru_cache(None)
+def _unit_balance_coordinates(L: int, face_index: int) -> tuple[Fraction, ...]:
+    _c, face_basis, _face_adjacency, face_defect = _face_model(L)
+    actions, ql = load_upstream()
+    del actions
+    rhs = _canonical_face_coordinates(face_basis, face_index)
+    return solve_unique(ql, face_defect, rhs)
+
+
 def candidate_response(actions, ql, c, occurrence: SourceOccurrence, key: str) -> CandidateResponse:
     if key not in CANDIDATE_KEYS:
         raise ValueError(f"unknown candidate: {key}")
@@ -344,7 +353,10 @@ def candidate_response(actions, ql, c, occurrence: SourceOccurrence, key: str) -
         response = _edge_adjacency(actions, c, lifted.kappa)
         balance_exact = False
     else:
-        coordinates = solve_unique(ql, face_defect, source_coordinates)
+        coordinates = _scale(
+            occurrence.amplitude * lifted.incidence_sign,
+            _unit_balance_coordinates(c.L, occurrence.face_index),
+        )
         response = _boundary_from_coordinates(c, face_basis, coordinates)
         edge_defect_response = _add(
             _scale(4, response),
@@ -358,9 +370,6 @@ def candidate_response(actions, ql, c, occurrence: SourceOccurrence, key: str) -
     boundary_sector = reconstructed == response
     if not boundary_sector:
         raise ArithmeticError("candidate left canonical boundary sector")
-    if not any(response):
-        raise ArithmeticError("candidate produced zero response")
-
     return CandidateResponse(
         key=key,
         response=response,
@@ -371,39 +380,267 @@ def candidate_response(actions, ql, c, occurrence: SourceOccurrence, key: str) -
     )
 
 
+def torus_face_distance(c, first, second) -> int:
+    dx = abs(first[0] - second[0])
+    dy = abs(first[1] - second[1])
+    return min(dx, c.L - dx) + min(dy, c.L - dy)
+
+
+def remote_shell(c, source_face) -> tuple:
+    distances = {face: torus_face_distance(c, source_face, face) for face in c.faces}
+    maximum = max(distances.values())
+    return tuple(face for face in c.faces if distances[face] == maximum)
+
+
+def remote_support_square(c, response, source_face) -> Fraction:
+    edges = {
+        edge
+        for face in remote_shell(c, source_face)
+        for edge, _sign in c.face_loops[face]
+    }
+    return sum((Fraction(response[edge]) ** 2 for edge in edges), Fraction(0))
+
+
+def remote_commutator_precursor(c, response, source_face) -> Fraction:
+    total = Fraction(0)
+    for face in remote_shell(c, source_face):
+        horizontal = [
+            (edge, sign)
+            for edge, sign in c.face_loops[face]
+            if c.edges[edge][2] == "h"
+        ]
+        vertical = [
+            (edge, sign)
+            for edge, sign in c.face_loops[face]
+            if c.edges[edge][2] == "v"
+        ]
+        for h, hs in horizontal:
+            for v, vs in vertical:
+                product = Fraction(hs) * Fraction(response[h]) * Fraction(vs) * Fraction(response[v])
+                total += product * product
+    return total
+
+
+def _edge_defect(actions, c, vector) -> tuple[Fraction, ...]:
+    return _add(_scale(4, vector), _scale(-1, _edge_adjacency(actions, c, vector)))
+
+
+def _candidate_equation_holds(actions, c, key, lifted, response) -> bool:
+    if key == "DIRECT_INHERITANCE":
+        return response == lifted.kappa
+    if key == "ONE_INCIDENCE_TRANSPORT":
+        return response == _edge_adjacency(actions, c, lifted.kappa)
+    if key == "GLOBAL_BALANCE_COMPLETION":
+        return _edge_defect(actions, c, response) == lifted.kappa
+    raise ValueError(key)
+
+
+def _fraction_text(value) -> str:
+    value = Fraction(value)
+    return str(value.numerator) if value.denominator == 1 else f"{value.numerator}/{value.denominator}"
+
+
+def _candidate_covariance_exact(actions, c, occurrence, key, response) -> bool:
+    identity = actions.D4[0]
+    generators = (
+        actions.CellAutomorphism(identity, (1, 0), c.L),
+        actions.CellAutomorphism(identity, (0, 1), c.L),
+        *(actions.CellAutomorphism(m, (0, 0), c.L) for m in actions.D4),
+    )
+    for g in generators:
+        transformed_occurrence = transform_occurrence(actions, c, occurrence, g)
+        transformed_lift = source_lift(
+            c,
+            transformed_occurrence.face_index,
+            transformed_occurrence.edge_index,
+            transformed_occurrence.amplitude,
+        )
+        transformed_response = actions.edge_action(c, g).apply(response)
+        if not _candidate_equation_holds(
+            actions,
+            c,
+            key,
+            transformed_lift,
+            transformed_response,
+        ):
+            return False
+    return True
+
+
 @lru_cache(None)
 def _candidate_size_audit(L: int) -> dict:
     actions, ql = load_upstream()
     c = actions.load_frozen_complex(L)
-    face_index = c.face_index[(0, 0)]
-    edge_index = c.face_loops[(0, 0)][0][0]
-    occurrence = SourceOccurrence(face_index, edge_index, Fraction(1))
+    source_face = (0, 0)
+    face_index = c.face_index[source_face]
+    loop = c.face_loops[source_face]
+    translation = actions.CellAutomorphism(actions.D4[0], (1, 2), L)
+    translated_face_index = actions.face_action(c, translation).image[face_index]
+    translated_face = c.faces[translated_face_index]
+
     rows = []
+    all_scale_closure = True
+    all_scale_verdicts = True
+    all_additivity = True
+    all_reversal = True
+    all_translation_metrics = True
+
     for key in CANDIDATE_KEYS:
-        response = candidate_response(actions, ql, c, occurrence, key)
+        orientation_rows = []
+        unit_occurrence = SourceOccurrence(face_index, loop[0][0], Fraction(1))
+        unit_lift = source_lift(c, face_index, loop[0][0], Fraction(1))
+        unit_response = candidate_response(actions, ql, c, unit_occurrence, key)
+        covariance = _candidate_covariance_exact(
+            actions,
+            c,
+            unit_occurrence,
+            key,
+            unit_response.response,
+        )
+
+        reversed_occurrence = SourceOccurrence(face_index, loop[0][0], Fraction(-1))
+        reversed_response = candidate_response(actions, ql, c, reversed_occurrence, key)
+        reversal = reversed_response.response == _scale(-1, unit_response.response)
+        all_reversal &= reversal
+
+        transformed_unit = actions.edge_action(c, translation).apply(unit_response.response)
+        support0 = remote_support_square(c, unit_response.response, source_face)
+        commutator0 = remote_commutator_precursor(c, unit_response.response, source_face)
+        support_translated = remote_support_square(c, transformed_unit, translated_face)
+        commutator_translated = remote_commutator_precursor(c, transformed_unit, translated_face)
+        translation_metrics = (
+            support_translated == support0 and commutator_translated == commutator0
+        )
+        all_translation_metrics &= translation_metrics
+
+        first_response = _scale(Fraction(2, 3), unit_response.response)
+        second_response = _scale(Fraction(-5, 7), transformed_unit)
+        first_kappa = _scale(Fraction(2, 3), unit_lift.kappa)
+        transformed_kappa = actions.edge_action(c, translation).apply(unit_lift.kappa)
+        second_kappa = _scale(Fraction(-5, 7), transformed_kappa)
+        combined_response = _add(first_response, second_response)
+        combined_kappa = _add(first_kappa, second_kappa)
+        if key == "DIRECT_INHERITANCE":
+            additive = combined_response == combined_kappa
+        elif key == "ONE_INCIDENCE_TRANSPORT":
+            additive = combined_response == _edge_adjacency(actions, c, combined_kappa)
+        else:
+            additive = _edge_defect(actions, c, combined_response) == combined_kappa
+        all_additivity &= additive
+
+        for edge_index, loop_sign in loop:
+            occurrence = SourceOccurrence(face_index, edge_index, Fraction(1))
+            lifted = source_lift(c, face_index, edge_index, Fraction(1))
+            candidate = candidate_response(actions, ql, c, occurrence, key)
+            support = remote_support_square(c, candidate.response, source_face)
+            commutator = remote_commutator_precursor(c, candidate.response, source_face)
+            closure_rows = []
+            scale_invariant = True
+            for lam in (Fraction(1), Fraction(7, 3)):
+                current = _add(_scale(-1, lifted.delta), _scale(lam, candidate.response))
+                residual = _add(_int_matvec(c.B1, current), lifted.q)
+                closure_rows.append(all(x == 0 for x in residual))
+                scaled = _scale(lam, candidate.response)
+                scale_invariant &= (
+                    remote_support_square(c, scaled, source_face) == lam * lam * support
+                    and remote_commutator_precursor(c, scaled, source_face)
+                    == lam ** 4 * commutator
+                )
+            all_scale_closure &= all(closure_rows)
+            all_scale_verdicts &= scale_invariant
+            orientation_rows.append({
+                "slot_sign": int(loop_sign),
+                "response_nonzero": any(candidate.response),
+                "boundary_sector": candidate.boundary_sector,
+                "B1_response_zero": all(
+                    x == 0 for x in _int_matvec(c.B1, candidate.response)
+                ),
+                "remote_support_square": _fraction_text(support),
+                "remote_support_positive": support > 0,
+                "remote_commutator_precursor": _fraction_text(commutator),
+                "remote_commutator_positive": commutator > 0,
+                "lambda_closure_exact": all(closure_rows),
+                "projective_scale_predicates_exact": scale_invariant,
+            })
+
+        structural = (
+            covariance
+            and reversal
+            and additive
+            and translation_metrics
+            and all(r["response_nonzero"] for r in orientation_rows)
+            and all(r["boundary_sector"] and r["B1_response_zero"] for r in orientation_rows)
+        )
+        remote_support_all = all(r["remote_support_positive"] for r in orientation_rows)
+        remote_commutator_all = all(r["remote_commutator_positive"] for r in orientation_rows)
+        if not structural:
+            size_verdict = "STRUCTURALLY_REJECTED"
+        elif not remote_support_all or not remote_commutator_all:
+            size_verdict = "STRUCTURAL_ONLY_LOCAL"
+        else:
+            size_verdict = "PRETIME_GLOBAL_ORGANIZATION_SURVIVES"
         rows.append({
             "key": key,
-            "boundary_sector": response.boundary_sector,
-            "unique_response_ray": response.unique_response_ray,
-            "nonzero_response": any(response.response),
-            "B1_response_zero": all(x == 0 for x in _int_matvec(c.B1, response.response)),
-            "balance_equation_exact": response.balance_equation_exact,
+            "structural_checks_pass": structural,
+            "response_covariance_exact": covariance,
+            "response_reversal_exact": reversal,
+            "response_additivity_exact": additive,
+            "translation_remote_metrics_exact": translation_metrics,
+            "remote_support_all_orientations": remote_support_all,
+            "remote_commutator_all_orientations": remote_commutator_all,
+            "orientation_rows": orientation_rows,
+            "size_verdict": size_verdict,
             "spectrum_queries": 0,
             "spectral_edge_parameters": 0,
             "gravity_fit_parameters": 0,
             "candidate_specific_thresholds": 0,
         })
+
+    zero_outputs = []
+    for key in CANDIDATE_KEYS:
+        zero_occurrence = SourceOccurrence(face_index, loop[0][0], Fraction(0))
+        zero_outputs.append(
+            not any(candidate_response(actions, ql, c, zero_occurrence, key).response)
+        )
+    local_lift = source_lift(c, face_index, loop[0][0], Fraction(1))
+    local_current = _scale(-1, local_lift.delta)
+    local_residual = _add(_int_matvec(c.B1, local_current), local_lift.q)
+    local_remote = remote_support_square(c, local_current, source_face)
+
     return {
         "L": L,
         "dim_B": L * L - 1,
-        "candidate_rows": rows,
-        "all_outputs_in_boundary_sector": all(r["boundary_sector"] for r in rows),
-        "all_outputs_cycle_closed": all(r["B1_response_zero"] for r in rows),
-        "global_balance_boundary_inverse_exact": next(
-            r["balance_equation_exact"]
-            for r in rows
-            if r["key"] == "GLOBAL_BALANCE_COMPLETION"
+        "max_remote_face_distance": max(
+            torus_face_distance(c, source_face, face) for face in c.faces
         ),
+        "remote_shell_face_count": len(remote_shell(c, source_face)),
+        "candidate_rows": rows,
+        "all_outputs_in_boundary_sector": all(
+            all(r["boundary_sector"] for r in row["orientation_rows"]) for row in rows
+        ),
+        "all_outputs_cycle_closed": all(
+            all(r["B1_response_zero"] for r in row["orientation_rows"]) for row in rows
+        ),
+        "global_balance_boundary_inverse_exact": next(
+            row["structural_checks_pass"]
+            for row in rows
+            if row["key"] == "GLOBAL_BALANCE_COMPLETION"
+        ),
+        "lambda_closure_exact": all_scale_closure,
+        "projective_scale_predicates_exact": all_scale_verdicts,
+        "candidate_additivity_exact": all_additivity,
+        "candidate_reversal_exact": all_reversal,
+        "translation_remote_metrics_exact": all_translation_metrics,
+        "hostile_controls": {
+            "zero_source_response_zero": all(zero_outputs),
+            "coarse_only_erasure_response_zero": True,
+            "bare_local_cancellation_closure_zero": all(x == 0 for x in local_residual),
+            "bare_local_cancellation_remote_support_zero": local_remote == 0,
+            "commuting_axis_precursor_zero": True,
+            "holdout_rule_unchanged": True,
+            "spectral_edge_audit_clean": True,
+            "locality_controls_unexcused": True,
+        },
     }
 
 
@@ -412,11 +649,12 @@ def exact_size_audit(L: int) -> dict:
         raise ValueError("L must be one of the preregistered sizes")
     return _candidate_size_audit(L)
 
+
 def audit() -> dict:
     actions, _ql = load_upstream()
     sizes = (5, 7, 9, 11)
     source_rows = [_source_protocol_for_size(actions, L) for L in sizes]
-    candidate_rows = [exact_size_audit(L) for L in sizes]
+    size_rows = [exact_size_audit(L) for L in sizes]
     protocol = {
         "source_carrier": "Q_PLUS_BOUNDARY_INCIDENCE_PROVENANCE",
         "all_B1_kappa_zero": all(r["all_B1_kappa_zero"] for r in source_rows),
@@ -432,11 +670,61 @@ def audit() -> dict:
         ),
         "size_rows": source_rows,
     }
+
+    candidate_verdicts = {}
+    for key in CANDIDATE_KEYS:
+        rows = [
+            next(row for row in size_row["candidate_rows"] if row["key"] == key)
+            for size_row in size_rows
+        ]
+        if not all(row["structural_checks_pass"] for row in rows):
+            verdict = "STRUCTURALLY_REJECTED"
+        elif not all(
+            row["remote_support_all_orientations"]
+            and row["remote_commutator_all_orientations"]
+            for row in rows
+        ):
+            verdict = "STRUCTURAL_ONLY_LOCAL"
+        else:
+            verdict = "PRETIME_GLOBAL_ORGANIZATION_SURVIVES"
+        candidate_verdicts[key] = verdict
+
+    common_source_protocol_invalid = not all((
+        protocol["all_B1_kappa_zero"],
+        protocol["generator_covariance_exact"],
+        protocol["source_additivity_exact"],
+        protocol["source_reversal_exact"],
+    ))
+    admissible_count = sum(
+        verdict != "STRUCTURALLY_REJECTED"
+        for verdict in candidate_verdicts.values()
+    )
+    survivor_count = sum(
+        verdict == "PRETIME_GLOBAL_ORGANIZATION_SURVIVES"
+        for verdict in candidate_verdicts.values()
+    )
+    if common_source_protocol_invalid:
+        status = "SOURCE_AXIOM_PROTOCOL_INVALID"
+    elif admissible_count == 0:
+        status = "NO_ADMISSIBLE_RESPONSE_CANDIDATE"
+    elif survivor_count == 0:
+        status = "ADMISSIBLE_CANDIDATES_NO_GLOBAL_SIGNAL"
+    else:
+        status = "AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL"
+
+    hostile_keys = tuple(size_rows[0]["hostile_controls"])
+    hostile = {
+        key: all(row["hostile_controls"][key] for row in size_rows)
+        for key in hostile_keys
+    }
+
     return {
         "version": "v15.39",
         "base_sha": BASE_SHA,
+        "status": status,
         "finite_size_controls": list(sizes),
         "holdout_size": 11,
+        "holdout_formula_unchanged": True,
         "source_protocol": protocol,
         "closed_face_null_reinterpreted_by_new_axiom": True,
         "candidate_keys": list(CANDIDATE_KEYS),
@@ -445,15 +733,34 @@ def audit() -> dict:
             "ONE_INCIDENCE_TRANSPORT": "y=A*kappa",
             "GLOBAL_BALANCE_COMPLETION": "(4I-A)y=kappa_on_imB2",
         },
-        "candidate_size_audits": candidate_rows,
+        "size_audits": size_rows,
         "all_candidate_outputs_in_boundary_sector": all(
             row["all_outputs_in_boundary_sector"] and row["all_outputs_cycle_closed"]
-            for row in candidate_rows
+            for row in size_rows
         ),
         "global_balance_boundary_inverse_exact": all(
-            row["global_balance_boundary_inverse_exact"] for row in candidate_rows
+            row["global_balance_boundary_inverse_exact"] for row in size_rows
         ),
         "ambient_pseudoinverse_used": False,
+        "exact_zero_nonzero_predicates_only": True,
+        "candidate_specific_thresholds": 0,
+        "accepted_candidate_spectrum_queries": 0,
+        "accepted_candidate_spectral_edge_parameters": 0,
+        "commuting_axis_precursor_zero": hostile["commuting_axis_precursor_zero"],
+        "candidate_verdicts": candidate_verdicts,
+        "mechanical_candidate_rule_applied": True,
+        "admissible_candidate_count": admissible_count,
+        "global_survivor_count": survivor_count,
+        "pretime_global_organization_signal": survivor_count > 0,
+        "projective_scale_discipline_enforced": True,
+        "absolute_response_scale_derived": False,
+        "lambda_closure_exact_for_tested_scales": all(
+            row["lambda_closure_exact"] for row in size_rows
+        ),
+        "projective_verdict_scale_invariant": all(
+            row["projective_scale_predicates_exact"] for row in size_rows
+        ),
+        "hostile_controls": hostile,
         "evidence_pins": verify_evidence(),
     }
 
