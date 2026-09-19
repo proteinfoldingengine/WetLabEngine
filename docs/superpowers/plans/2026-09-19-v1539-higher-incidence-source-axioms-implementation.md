@@ -1,6 +1,6 @@
 # v15.39 Higher-Incidence Source Axioms Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Implement and certify the preregistered v15.39 typed higher-incidence source lift, three response axioms, and their common exact adversarial canary without changing any inherited theory artifact.
 
@@ -51,7 +51,7 @@
 - Consumes: the approved v15.39 spec and inherited v15.38 branch.
 - Produces: failing tests importing `source_axiom_canary`; CI that records the intended missing-module failure and later certifies the same suite.
 
-- [ ] **Step 1: Add the failing test skeleton**
+- [x] **Step 1: Add the failing test skeleton**
 
 Create `test_gate.py` with these imports and test names:
 
@@ -118,7 +118,7 @@ class HigherIncidenceSourceAxiomTests(unittest.TestCase):
 
 Commit this complete RED file without adding the implementation module.
 
-- [ ] **Step 2: Add the branch workflow**
+- [x] **Step 2: Add the branch workflow**
 
 Create a workflow triggered on `research/v15.39-higher-incidence-source-axioms`. It must:
 
@@ -153,7 +153,7 @@ demo = "ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/"
 
 Require every diff entry to have status `A` and to be inside `demo` or `allowed`.
 
-- [ ] **Step 3: Run RED in GitHub Actions**
+- [x] **Step 3: Run RED in GitHub Actions**
 
 Expected failure:
 
@@ -163,11 +163,11 @@ ModuleNotFoundError: No module named 'source_axiom_canary'
 
 Confirm inherited v15.37/v15.38 suites ran before the intended failure or split the workflow so their success is visible.
 
-- [ ] **Step 4: Record the RED receipt**
+- [x] **Step 4: Record the RED receipt**
 
 Append the run ID, job ID, exact head SHA, and intended missing-module error to this plan under a `RED receipt` heading using a normal GitHub file update.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 Commit message:
 
@@ -190,7 +190,7 @@ test: preregister v15.39 source-axiom canary
   - `compose_sources(sources) -> LiftedSource`
   - `transform_occurrence(actions, c, occurrence, g) -> SourceOccurrence`
 
-- [ ] **Step 1: Pin and load inherited evidence**
+- [x] **Step 1: Pin and load inherited evidence**
 
 Define:
 
@@ -207,7 +207,7 @@ EVIDENCE = {
 `verify_evidence()` must compute git-blob hashes and require the v15.38 status
 `PRETIME_RESPONSE_AXIOM_ADMISSIBILITY_CONTRACT_CERTIFIED_NONSELECTIVE`.
 
-- [ ] **Step 2: Write exact lift tests**
+- [x] **Step 2: Write exact lift tests**
 
 Use one face and each of its four loop entries. Assert:
 
@@ -219,7 +219,7 @@ self.assertIn(lifted.incidence_sign, (-1, 1))
 
 For translation, quarter-turn, and reflection generators, assert transformed `delta`, `q`, and `kappa` equal the signed-permutation actions exactly.
 
-- [ ] **Step 3: Implement `source_lift`**
+- [x] **Step 3: Implement `source_lift`**
 
 Use edge-amplitude convention exactly:
 
@@ -232,7 +232,7 @@ kappa = Fraction(amplitude) * sigma * B2[:, f]
 
 Reject an edge not incident on the face and reject non-rational/non-finite inputs rather than coercing floats.
 
-- [ ] **Step 4: Implement composition and the closed-face concession**
+- [x] **Step 4: Implement composition and the closed-face concession**
 
 Compose four occurrences on one face with edge amplitudes equal to their boundary signs. Assert:
 
@@ -245,7 +245,7 @@ kappa_total == 4 * B2[:, f]
 Record `closed_face_coarse_q_null=true` and
 `closed_face_higher_incidence_source_nonnull=true`.
 
-- [ ] **Step 5: Run the source tests**
+- [x] **Step 5: Run the source tests**
 
 Run:
 
@@ -255,7 +255,7 @@ python -m unittest -v   test_gate.HigherIncidenceSourceAxiomTests.test_source_li
 
 Expected: PASS.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 Commit message:
 
@@ -277,7 +277,7 @@ feat: add typed higher-incidence source lift
   - `solve_unique(ql, matrix, rhs) -> tuple[Fraction, ...]`
   - `candidate_response(actions, ql, c, lifted, key) -> CandidateResponse`
 
-- [ ] **Step 1: Build primitive adjacency without a dense ambient matrix**
+- [x] **Step 1: Build primitive adjacency without a dense ambient matrix**
 
 Define the four translations from `L`:
 
@@ -287,7 +287,7 @@ Define the four translations from `L`:
 
 For an edge vector, sum the four exact signed-permutation actions. For face augmentation, sum their restricted face representations.
 
-- [ ] **Step 2: Build canonical boundary coordinates**
+- [x] **Step 2: Build canonical boundary coordinates**
 
 Use `actions.augmentation_basis(L*L)` for sum-zero face coefficients. For face `f`, use the canonical lift
 
@@ -297,7 +297,7 @@ phi_f = e_f - (1 / L**2) * 1
 
 so `B2 phi_f = B2 e_f`. Map augmentation coordinates back to an edge boundary with exact multiplication by integer `B2`.
 
-- [ ] **Step 3: Add failing candidate tests**
+- [x] **Step 3: Add failing candidate tests**
 
 For every `L in (5,7,9,11)` and every candidate, assert:
 
@@ -309,11 +309,11 @@ For every `L in (5,7,9,11)` and every candidate, assert:
 - `D_face` has a unique solution in all `L**2-1` augmentation coordinates;
 - no function named `pinv`, `lstsq`, `eig`, or `eigh` occurs in the module source.
 
-- [ ] **Step 4: Implement exact unique solving**
+- [x] **Step 4: Implement exact unique solving**
 
 Construct the augmented matrix `[D_face | rhs]`, call inherited `ql.rref`, require coefficient pivots `0..n-1`, extract the final column, and verify `D_face @ x == rhs`. Do not invert on ambient `Z` and do not project with a metric.
 
-- [ ] **Step 5: Implement C0, C1, and C2**
+- [x] **Step 5: Implement C0, C1, and C2**
 
 C0 returns `kappa`. C1 applies edge adjacency once. C2 solves on face augmentation, maps back through `B2`, and verifies the ambient balance equation exactly.
 
@@ -331,12 +331,12 @@ candidate_specific_thresholds = 0
 classification = "NEW_RESPONSE_AXIOM_CANDIDATE"
 ```
 
-- [ ] **Step 6: Run candidate tests**
+- [x] **Step 6: Run candidate tests**
 
 Expected: PASS for all four sizes. If C2 is singular on any boundary sector, record
 `STRUCTURALLY_REJECTED`; do not regularize it.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 Commit message:
 
@@ -358,15 +358,15 @@ feat: implement preregistered response candidates
   - `remote_commutator_precursor(c, y, source_face) -> Fraction`
   - `exact_size_audit(L: int) -> dict`
 
-- [ ] **Step 1: Add exact remote-shell tests**
+- [x] **Step 1: Add exact remote-shell tests**
 
 Use cyclic Manhattan face distance and require the shell distance to be `L-1` for odd `L`. Translate the source from `(0,0)` to `(1,2)` and require identical candidate metrics.
 
-- [ ] **Step 2: Implement exact support**
+- [x] **Step 2: Implement exact support**
 
 Collect every oriented edge incident on maximally distant faces and sum `y_e**2` in `Fraction` arithmetic. Duplicates must be removed with a set before summing support.
 
-- [ ] **Step 3: Implement exact commutator precursor**
+- [x] **Step 3: Implement exact commutator precursor**
 
 For each remote face, separate loop edges by inherited edge kind `h` or `v`. Sum
 
@@ -376,7 +376,7 @@ For each remote face, separate loop edges by inherited edge kind `h` or `v`. Sum
 
 over all horizontal/vertical pairs. The commuting-axis control is represented by a separate exact `0`, because its Lie bracket vanishes identically.
 
-- [ ] **Step 4: Test orientation, reversal, additivity, and scale**
+- [x] **Step 4: Test orientation, reversal, additivity, and scale**
 
 For all four source slots, require the same projective verdict. For rational amplitudes
 `2/3` and `-5/7`, require response linearity. For `lambda=1` and `lambda=7/3`, require exact closure of
@@ -387,7 +387,7 @@ j_lambda = -delta + lambda * y
 
 and unchanged zero/nonzero support and commutator verdicts. Require the commutator precursor to scale as `lambda**4` because it is a sum of squared quadratic products.
 
-- [ ] **Step 5: Add hostile-control assertions**
+- [x] **Step 5: Add hostile-control assertions**
 
 Require:
 
@@ -401,7 +401,7 @@ accepted_candidate_spectrum_queries == 0
 accepted_candidate_specific_thresholds == 0
 ```
 
-- [ ] **Step 6: Implement mechanical candidate verdicts**
+- [x] **Step 6: Implement mechanical candidate verdicts**
 
 Use only:
 
@@ -416,11 +416,11 @@ else:
 
 Apply the all-sizes/all-orientations conjunction after individual size audits. Do not special-case a candidate.
 
-- [ ] **Step 7: Run the common canary tests**
+- [x] **Step 7: Run the common canary tests**
 
 Expected: every exact identity passes. The scientific candidate verdicts are data, not prewritten expectations; tests require only that they follow the frozen decision rule.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 Commit message:
 
@@ -440,7 +440,7 @@ feat: run exact common source-axiom canary
 - Consumes: all four exact size audits.
 - Produces: `audit() -> dict`, `canonical_json(dict) -> str`, authoritative ledger and human-readable interpretation.
 
-- [ ] **Step 1: Implement overall adjudication**
+- [x] **Step 1: Implement overall adjudication**
 
 Use:
 
@@ -459,7 +459,7 @@ Set `pretime_global_organization_signal = (global_survivor_count > 0)`. Keep
 `gravity_canary_certified=false`, `physical_gravity_derived=false`, and
 `scientific_breakthrough=false`; interpretation may separately identify an important negative or conditional result.
 
-- [ ] **Step 2: Add mandatory ledger fields**
+- [x] **Step 2: Add mandatory ledger fields**
 
 Include exact source/candidate manifests, size/orientation metrics serialized as integers or `"numerator/denominator"`, evidence pins, RED receipt, construction-query counts, closed-face concession fields, projective-scale fields, candidate verdicts, hostile controls, and the complete claim firewall.
 
@@ -469,7 +469,7 @@ Set the next object mechanically:
 - no global signal: `REVISE_OR_REJECT_EXPLICIT_SOURCE_RESPONSE_AXIOMS_WITHOUT_TUNING`;
 - protocol invalid: `REPAIR_TYPED_SOURCE_PROTOCOL_BEFORE_ANY_CANARY`.
 
-- [ ] **Step 3: Generate and lock the ledger**
+- [x] **Step 3: Generate and lock the ledger**
 
 Run:
 
@@ -480,7 +480,7 @@ python source_axiom_canary.py --check docs/RESULTS.json
 
 Then rerun the command and require byte-identical output.
 
-- [ ] **Step 4: Write the README**
+- [x] **Step 4: Write the README**
 
 Report four separate layers:
 
@@ -491,7 +491,7 @@ Report four separate layers:
 
 State prominently that the closed-face `q)-null was promoted to a nonnull higher-incidence source only by the approved new axiom.
 
-- [ ] **Step 5: Complete the tests**
+- [x] **Step 5: Complete the tests**
 
 Require exactly eight v15.39 tests. The committed-ledger test is:
 
@@ -504,7 +504,7 @@ self.assertEqual(json.loads(committed), self.result)
 The firewall test must assert every prohibited physical claim remains false and
 `Pillar_3 == "OPEN"`.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 Commit message:
 
@@ -522,7 +522,7 @@ docs: freeze v15.39 source-axiom result
 - Consumes: complete exact-head branch.
 - Produces: successful Actions run and immutable certification receipt.
 
-- [ ] **Step 1: Run full local-equivalent commands in Actions**
+- [x] **Step 1: Run full local-equivalent commands in Actions**
 
 The final workflow must run:
 
@@ -534,15 +534,15 @@ python -m compileall -q source_axiom_canary.py test_gate.py
 
 and inherited v15.37/v15.38 suites for a total of `7 + 7 + 8 = 22` selected tests.
 
-- [ ] **Step 2: Verify additive scope**
+- [x] **Step 2: Verify additive scope**
 
 Require the exact v15.38 head to be an ancestor and every changed file to be newly added in the preregistered allowlist.
 
-- [ ] **Step 3: Inspect the final run**
+- [x] **Step 3: Inspect the final run**
 
 Fetch job steps/logs. Confirm the exact head SHA, test counts, replay, compilation, ledger status, holdout presence, and claim-firewall assertions.
 
-- [ ] **Step 4: Update draft PR #50**
+- [x] **Step 4: Update draft PR #50**
 
 Replace the design-only “implementation not started” note with:
 
@@ -557,7 +557,7 @@ Replace the design-only “implementation not started” note with:
 
 Leave the PR draft/open/unmerged.
 
-- [ ] **Step 5: Final verification commit only if required**
+- [x] **Step 5: Final verification commit only if required**
 
 If a workflow/checker defect is found, fix only that defect, rerun the complete exact-head suite, and use:
 
@@ -592,3 +592,17 @@ No candidate formula or canary criterion may change after the preregistration co
 
 - Task 4 evidence: run `35453225390`, job `105923895337`, exact head `1db00b56df6cd8dbb6f46326615bca5be18d4e68`; 14 inherited tests passed; the first six v15.39 tests passed; only the deliberately absent claim-firewall fields and committed ledger remained red. Exact common canary completed in 27.024 s.
 - Task 4: complete (commit `1db00b5`; source, candidate, remote, holdout, scale, and hostile-control tests 6/6 pass).
+
+
+- Task 5 evidence: result artifact from run `35453488826` was committed byte-for-byte, then strengthened after whole-branch review; final ledger status is `AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL`. Candidate verdicts are direct/local, one-incidence/local, and global-balance/survives. The claim firewall keeps physical gravity, continuum, Einstein dynamics, and breakthrough false; Pillar 3 remains OPEN.
+- Task 5: complete (commits `50faa76..1102b1e`; deterministic ledger, README, and complete firewall committed).
+- Ruling: The user chose native execution, and the active multi-agent constraint does not authorize a reviewer subagent. Perform a read-only whole-branch self-review against the frozen spec and reviewer checklist instead. Cost if wrong: the review lacks a second independent model context; compensate with behavior-first review tests and exact Actions receipts.
+- Whole-branch review finding 1 (Important): the initial implementation did not directly certify fresh `B1 B2=0`, `Z=H direct_sum B`, or `A(B) subset B` at every required size, and scale checks were not members of `structural_checks_pass`. Review RED run `35453901526`, job `105925709686`, head `041913b4bf4d3c32b1ccb373504b72dcd830a3cd` exposed the missing fields. Fixed without changing a candidate formula or canary criterion; run `35454159289`, job `105926388383`, proved the new checks and failed only because the old ledger had not yet been regenerated.
+- Whole-branch review finding 2 (Important): `NO_ADMISSIBLE_RESPONSE_CANDIDATE` incorrectly mapped to source-protocol repair rather than axiom revision/rejection. Review RED run `35454415938`, job `105927058494`, head `848e1afe512f07c9943e6e81c02fa43973bbdd49` exposed the absent complete mapping. Fixed in `ef8ae146ee296622417863dd17369e9291412524`.
+- Whole-branch review result: no Critical or remaining Important findings. Minor operational note: the deterministic artifact and replay intentionally recompute the exact audit, trading CI time for an independent byte-replay check.
+- Declined to judge: merging/integration, because the user requires the PR to remain draft/open/unmerged.
+- Declined to judge: continuum, Newton/GR, and independent geometry correspondence, because the ledger names those as the next research object rather than v15.39 claims.
+- Declined to judge: protein work, because the user explicitly excluded it.
+- Reviewed GREEN receipt before the final ledger-only commit: run `35454591149`, job `105927530602`, exact head `ef8ae146ee296622417863dd17369e9291412524`; additive scope passed; inherited suites passed `7+7`; v15.39 passed exactly `8`; deterministic result replay and compilation passed; status and all candidate verdicts matched the frozen rules.
+- Task 6 PR receipt: draft PR #50 updated with the RED/GREEN receipts, exact adjudication, claim boundary, and next required object; PR remains open, draft, and unmerged.
+- Task 6 final-write rule: this execution-ledger update is the sole remaining branch-content write. Its exact-head Actions receipt is recorded in PR #50 after the run completes, avoiding an infinite sequence of receipt-only commits.
