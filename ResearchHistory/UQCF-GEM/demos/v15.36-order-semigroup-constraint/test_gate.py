@@ -1,6 +1,8 @@
+import json
+from pathlib import Path
 import unittest
 
-from order_semigroup_gate import audit
+from order_semigroup_gate import audit, canonical_json
 
 
 class OrderSemigroupGateTests(unittest.TestCase):
@@ -12,7 +14,7 @@ class OrderSemigroupGateTests(unittest.TestCase):
         self.assertEqual(self.r["sector_count"], 10)
         self.assertEqual(self.r["continuous_semigroup_generator_dimension"], 10)
         self.assertEqual(self.r["projective_relative_generator_dimension"], 9)
-        self.assertGreaterEqual(self.r["exact_rational_semigroup_witness_count"], 5)
+        self.assertEqual(self.r["exact_rational_semigroup_witness_count"], 5)
         self.assertEqual(self.r["projectively_distinct_semigroup_witness_count"], 5)
         self.assertTrue(self.r["all_exact_semigroup_composition_checks_pass"])
 
@@ -32,37 +34,25 @@ class OrderSemigroupGateTests(unittest.TestCase):
         self.assertEqual(self.r["surviving_projective_function_dimension"], 9)
 
     def test_adjudication(self):
-        self.assertEqual(
-            self.r["status"],
-            "FROZEN_ORDER_SEMIGROUP_CONSTRAINTS_LEAVE_FUNCTION_UNSELECTED",
-        )
-        self.assertEqual(
-            self.r["next_required_object"],
-            "NEW_TYPED_PRETIME_RESPONSE_PRINCIPLE_OR_EXPLICIT_RESPONSE_FUNCTION_AXIOM",
-        )
+        self.assertEqual(self.r["status"],"FROZEN_ORDER_SEMIGROUP_CONSTRAINTS_LEAVE_FUNCTION_UNSELECTED")
+        self.assertEqual(self.r["next_required_object"],"NEW_TYPED_PRETIME_RESPONSE_PRINCIPLE_OR_EXPLICIT_RESPONSE_FUNCTION_AXIOM")
+
+    def test_committed_ledger_is_exact(self):
+        committed=Path("docs/RESULTS.json").read_text()
+        self.assertEqual(committed,canonical_json(self.r))
+        self.assertEqual(json.loads(committed),self.r)
 
     def test_firewall(self):
         for key in (
-            "new_source_semantics_axiom_added",
-            "new_order_axiom_added",
-            "new_semigroup_axiom_added",
-            "response_generator_selected",
-            "adjacency_function_selected",
-            "coupling_solver_reopened",
-            "gravity_observables_evaluated",
-            "uses_holonomy_selector",
-            "uses_newton_or_gr",
-            "uses_metric_selector",
-            "uses_pruning_as_selector",
-            "uses_entropy_as_selector",
-            "uses_physical_time",
-            "physical_gravity_derived",
-            "scientific_breakthrough",
-            "signal_of_life",
+            "new_source_semantics_axiom_added","new_order_axiom_added","new_semigroup_axiom_added",
+            "response_generator_selected","adjacency_function_selected","coupling_solver_reopened",
+            "gravity_observables_evaluated","uses_holonomy_selector","uses_newton_or_gr",
+            "uses_metric_selector","uses_pruning_as_selector","uses_entropy_as_selector",
+            "uses_physical_time","physical_gravity_derived","scientific_breakthrough","signal_of_life",
         ):
-            self.assertFalse(self.r[key], key)
-        self.assertEqual(self.r["Pillar_3"], "OPEN")
+            self.assertFalse(self.r[key],key)
+        self.assertEqual(self.r["Pillar_3"],"OPEN")
 
 
-if __name__ == "__main__":
+if __name__=="__main__":
     unittest.main()

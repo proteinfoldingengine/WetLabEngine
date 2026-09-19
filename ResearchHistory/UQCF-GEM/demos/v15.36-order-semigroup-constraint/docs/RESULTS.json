@@ -1,0 +1,82 @@
+{
+  "Pillar_3": "OPEN",
+  "adjacency_function_selected": false,
+  "all_exact_semigroup_composition_checks_pass": true,
+  "base_sha": "c549e093be355ca93fff5ac1c63d0c3a4452b6f7",
+  "continuous_semigroup_classification": "T_t=exp(t*g(A))_OVER_REAL_SPLITTING_FIELD",
+  "continuous_semigroup_control_is_frozen": false,
+  "continuous_semigroup_generator_dimension": 10,
+  "contractive_semigroup_is_frozen_physical_law": false,
+  "coupling_solver_reopened": false,
+  "evidence_pins": {
+    "exact_linear.py": "05cc1b8cfec70d501408377b5e44190b259a4514",
+    "v13.16-markov": "cf2420b2545f801869a617092f4955b7a57ddc60",
+    "v15.05-composition": "b191c08c22ded0439cc4c2c125fbccfdb677dcbc",
+    "v15.06-recoverability": "bdeac09b2b162f07baa874ef1c1d6415fdd5e236",
+    "v15.24-channels": "8f7dcf085fc1cbaf167297191ad1a7416f0efa42",
+    "v15.35-results": "17a99eed9d9a36635b2fc47b79f8decf1e0ab52d"
+  },
+  "exact_rational_semigroup_witness_count": 5,
+  "frozen_actual_function_equation_count": 0,
+  "frozen_constraint_ledger": [
+    {
+      "class": "NONSELECTIVE_FAMILY_CLOSURE",
+      "function_equation_rank": 0,
+      "reason": "composition preserves arbitrary already-chosen response law",
+      "source": "v15.05 frozen composition"
+    },
+    {
+      "class": "TYPE_BLOCKED",
+      "function_equation_rank": 0,
+      "reason": "multiplicative scalar has no certified map to current cycle-response function",
+      "source": "v15.06 recoverability multiplicativity"
+    },
+    {
+      "class": "TYPE_BLOCKED",
+      "function_equation_rank": 0,
+      "reason": "exact Markovity is not selected and recoverability acts on quantum state/channel data",
+      "source": "v13.16 Markov/recoverability"
+    },
+    {
+      "class": "TYPE_BLOCKED",
+      "function_equation_rank": 0,
+      "reason": "quantum-channel operator algebra is not the certified cycle carrier",
+      "source": "v15.24 CPTP/no-signalling/product composition"
+    },
+    {
+      "class": "TYPE_BLOCKED",
+      "function_equation_rank": 0,
+      "reason": "no frozen pointed cone, order unit, Choi structure or probability simplex is certified on Z",
+      "source": "physical positivity/order on Z"
+    }
+  ],
+  "frozen_function_constraint_rank": 0,
+  "gravity_observables_evaluated": false,
+  "new_order_axiom_added": false,
+  "new_semigroup_axiom_added": false,
+  "new_source_semantics_axiom_added": false,
+  "next_required_object": "NEW_TYPED_PRETIME_RESPONSE_PRINCIPLE_OR_EXPLICIT_RESPONSE_FUNCTION_AXIOM",
+  "nonpositive_generator_cone_affine_dimension": 10,
+  "nonselective_frozen_family_closure_count": 1,
+  "physical_gravity_derived": false,
+  "positive_cone_affine_dimension": 10,
+  "positive_projective_dimension": 9,
+  "projective_relative_generator_dimension": 9,
+  "projectively_distinct_semigroup_witness_count": 5,
+  "response_generator_selected": false,
+  "scientific_breakthrough": false,
+  "sector_count": 10,
+  "sectorwise_positivity_is_frozen_physical_order_law": false,
+  "signal_of_life": false,
+  "status": "FROZEN_ORDER_SEMIGROUP_CONSTRAINTS_LEAVE_FUNCTION_UNSELECTED",
+  "surviving_projective_function_dimension": 9,
+  "type_blocked_frozen_candidate_count": 4,
+  "unresolved_typing_count": 0,
+  "uses_entropy_as_selector": false,
+  "uses_holonomy_selector": false,
+  "uses_metric_selector": false,
+  "uses_newton_or_gr": false,
+  "uses_physical_time": false,
+  "uses_pruning_as_selector": false,
+  "version": "v15.36"
+}

@@ -66,5 +66,19 @@ jobs:
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.36-order-semigroup-constraint
         run: |
           python -m unittest -v test_gate.py
-          python order_semigroup_gate.py > /tmp/v1536-results.json
+          python order_semigroup_gate.py --check docs/RESULTS.json > /tmp/v1536-results.json
           python -m compileall -q order_semigroup_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='FROZEN_ORDER_SEMIGROUP_CONSTRAINTS_LEAVE_FUNCTION_UNSELECTED'
+          assert r['continuous_semigroup_generator_dimension']==10
+          assert r['projective_relative_generator_dimension']==9
+          assert r['positive_cone_affine_dimension']==10
+          assert r['nonpositive_generator_cone_affine_dimension']==10
+          assert r['frozen_function_constraint_rank']==0
+          assert r['surviving_projective_function_dimension']==9
+          assert r['response_generator_selected'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY
