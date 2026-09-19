@@ -1,0 +1,91 @@
+name: UQCF v15.41 Formal Connection Curvature Source Gate
+
+on:
+  push:
+    branches: [research/v15.41-formal-connection-curvature-source-correspondence]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence/**'
+      - 'docs/superpowers/specs/2026-09-19-v1541-formal-connection-curvature-source-correspondence-design.md'
+      - 'docs/superpowers/plans/2026-09-19-v1541-formal-connection-curvature-source-correspondence-implementation.md'
+      - '.github/workflows/uqcf-v1541-formal-connection-curvature-source-correspondence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+
+      - name: Install inherited environment
+        run: python -m pip install numpy==2.3.5
+
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+
+          base = '84aa1c81fd86ac4d7a06015482f98572f3afc05f'
+          demo = 'ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence/'
+          allowed = {
+              'docs/superpowers/specs/2026-09-19-v1541-formal-connection-curvature-source-correspondence-design.md',
+              'docs/superpowers/plans/2026-09-19-v1541-formal-connection-curvature-source-correspondence-implementation.md',
+              '.github/workflows/uqcf-v1541-formal-connection-curvature-source-correspondence.yml',
+          }
+          subprocess.run(['git', 'merge-base', '--is-ancestor', base, 'HEAD'], check=True)
+          for line in subprocess.check_output(
+              ['git', 'diff', '--name-status', base, 'HEAD'], text=True
+          ).splitlines():
+              status, name = line.split('\t', 1)
+              assert status == 'A', line
+              assert name.startswith(demo) or name in allowed, name
+          PY
+
+      - name: Run inherited frontier regressions
+        run: |
+          python - <<'PY'
+          import re
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          root = Path('ResearchHistory/UQCF-GEM/demos')
+          suites = [
+              (root / 'v15.39-higher-incidence-source-axioms', ['test_gate.py'], 8),
+              (root / 'v15.40-global-balance-geometry-specificity', ['test_gate.py'], 9),
+          ]
+          total = 0
+          for cwd, files, count in suites:
+              result = subprocess.run(
+                  [sys.executable, '-m', 'unittest', '-v', *files],
+                  cwd=cwd,
+                  text=True,
+                  stdout=subprocess.PIPE,
+                  stderr=subprocess.STDOUT,
+                  timeout=1200,
+              )
+              print(result.stdout[-2000:], flush=True)
+              match = re.search(r'Ran (\d+) tests? in', result.stdout)
+              assert result.returncode == 0, result.stdout
+              assert match and int(match.group(1)) == count, result.stdout
+              assert re.search(r'^OK\s*$', result.stdout, re.M), result.stdout
+              total += count
+          assert total == 17
+          PY
+
+      - name: Run v15.41 exact gate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence
+        run: |
+          python -m unittest -v test_operational_complex.py test_linearized_connection.py test_gate.py
