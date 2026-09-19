@@ -57,35 +57,66 @@ Create `test_gate.py` with these imports and test names:
 
 ```python
 import json
-from fractions import Fraction
 from pathlib import Path
 import unittest
 
-from source_axiom_canary import (
-    CANDIDATE_KEYS,
-    audit,
-    canonical_json,
-    exact_size_audit,
-    load_upstream,
-    source_lift,
-)
+from source_axiom_canary import CANDIDATE_KEYS, audit, canonical_json
 
 class HigherIncidenceSourceAxiomTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.result = audit()
 
-    def test_source_lift_typing_covariance_and_composition(self): ...
-    def test_closed_face_q_null_is_fiber_nonnull(self): ...
-    def test_candidate_formulas_and_balance_uniqueness(self): ...
-    def test_exact_remote_and_commutator_predicates(self): ...
-    def test_multisize_holdout_and_mechanical_verdicts(self): ...
-    def test_projective_scale_and_hostile_controls(self): ...
-    def test_axiom_and_claim_firewall(self): ...
-    def test_committed_ledger_is_exact(self): ...
+    def test_source_lift_typing_covariance_and_composition(self):
+        p = self.result["source_protocol"]
+        self.assertTrue(p["all_B1_kappa_zero"])
+        self.assertTrue(p["generator_covariance_exact"])
+        self.assertTrue(p["source_additivity_exact"])
+        self.assertTrue(p["source_reversal_exact"])
+
+    def test_closed_face_q_null_is_fiber_nonnull(self):
+        p = self.result["source_protocol"]
+        self.assertTrue(p["closed_face_coarse_q_null"])
+        self.assertTrue(p["closed_face_higher_incidence_source_nonnull"])
+
+    def test_candidate_formulas_and_balance_uniqueness(self):
+        self.assertEqual(tuple(self.result["candidate_keys"]), CANDIDATE_KEYS)
+        self.assertTrue(self.result["all_candidate_outputs_in_boundary_sector"])
+        self.assertTrue(self.result["global_balance_boundary_inverse_exact"])
+
+    def test_exact_remote_and_commutator_predicates(self):
+        self.assertTrue(self.result["exact_zero_nonzero_predicates_only"])
+        self.assertEqual(self.result["candidate_specific_thresholds"], 0)
+        self.assertTrue(self.result["commuting_axis_precursor_zero"])
+
+    def test_multisize_holdout_and_mechanical_verdicts(self):
+        self.assertEqual(self.result["finite_size_controls"], [5, 7, 9, 11])
+        self.assertTrue(self.result["holdout_formula_unchanged"])
+        self.assertTrue(self.result["mechanical_candidate_rule_applied"])
+
+    def test_projective_scale_and_hostile_controls(self):
+        self.assertTrue(self.result["projective_scale_discipline_enforced"])
+        self.assertFalse(self.result["absolute_response_scale_derived"])
+        self.assertTrue(all(self.result["hostile_controls"].values()))
+
+    def test_axiom_and_claim_firewall(self):
+        self.assertTrue(self.result["new_source_semantics_axiom_added"])
+        self.assertFalse(self.result["source_axiom_derived_from_frozen_ontology"])
+        for key in (
+            "physical_gravity_derived", "einstein_equations_derived",
+            "continuum_limit_derived", "uses_pruning", "uses_entropy",
+            "uses_physical_time", "scientific_breakthrough",
+        ):
+            self.assertFalse(self.result[key], key)
+        self.assertEqual(self.result["Pillar_3"], "OPEN")
+
+    def test_committed_ledger_is_exact(self):
+        committed = Path("docs/RESULTS.json").read_text()
+        self.assertEqual(committed, canonical_json(self.result))
+        self.assertEqual(json.loads(committed), self.result)
 ```
 
-Replace each ellipsis with the concrete assertions specified in Tasks 2–5 before committing the RED file; do not add the implementation module.
+Commit this complete RED file without adding the implementation module.
 
 - [ ] **Step 2: Add the branch workflow**
 
