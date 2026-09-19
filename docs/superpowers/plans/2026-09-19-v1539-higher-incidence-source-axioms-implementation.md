@@ -586,3 +586,6 @@ No candidate formula or canary criterion may change after the preregistration co
 
 - Task 2 evidence: run `35452749802`, job `105922643474`, exact head `777198e991fbfb8a730f1482e1df3408b7d2518f`; 14 inherited tests passed; `test_source_lift_typing_covariance_and_composition` and `test_closed_face_q_null_is_fiber_nonnull` passed; the six not-yet-implemented candidate/canary/ledger tests failed on their missing fields.
 - Task 2: complete (commit `777198e`; source tests 2/2 pass on all four sizes).
+
+- Task 3 evidence: run `35452940966`, job `105923147292`, exact head `630813fce408a7d48724adb532e329ee5ddf37e0`; 14 inherited tests passed; the source tests and `test_candidate_formulas_and_balance_uniqueness` passed; five not-yet-implemented canary/ledger tests remained red. Exact four-size candidate audit completed in 22.560 s.
+- Task 3: complete (commit `630813f`; candidate tests 1/1 plus source regressions 2/2 pass).
