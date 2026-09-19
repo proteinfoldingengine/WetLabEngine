@@ -566,3 +566,16 @@ ci: certify v15.39 source-axiom canary
 ```
 
 No candidate formula or canary criterion may change after the preregistration commit.
+
+
+## Execution ledger
+
+- Plan identity: `docs/superpowers/plans/2026-09-19-v1539-higher-incidence-source-axioms-implementation.md`
+- Execution base: `e4cf11c03d4a510ea1f709755843d903ec4040ef`
+- Ruling: The connector-only workspace contains no local git checkout, so the packaged SDD workspace/brief scripts cannot run. Use this plan section as the progress ledger, GitHub branch commits as task boundaries, and GitHub Actions as the executable test runner. Cost if wrong: recovery relies on Git history and PR receipts rather than a local ignored workspace.
+- Pre-flight Task 1 -> Tasks 2-5: the RED test schema and workflow consume the exact public ledger keys later tasks produce; names match.
+- Pre-flight Task 2 -> Task 3: `LiftedSource.kappa` is the boundary-sector input consumed by every candidate; types match.
+- Pre-flight Task 3 -> Task 4: `CandidateResponse.response` is the exact edge vector consumed by the canary observables; types match.
+- Pre-flight Task 4 -> Task 5: `exact_size_audit(L)` produces the per-size rows consumed by overall adjudication; types match.
+- Pre-flight Task 5 -> Task 6: canonical ledger, README, test count, and workflow assertions match the certification task.
+- Pre-flight result: no interface conflicts found.
