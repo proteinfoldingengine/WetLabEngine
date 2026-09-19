@@ -589,3 +589,6 @@ No candidate formula or canary criterion may change after the preregistration co
 
 - Task 3 evidence: run `35452940966`, job `105923147292`, exact head `630813fce408a7d48724adb532e329ee5ddf37e0`; 14 inherited tests passed; the source tests and `test_candidate_formulas_and_balance_uniqueness` passed; five not-yet-implemented canary/ledger tests remained red. Exact four-size candidate audit completed in 22.560 s.
 - Task 3: complete (commit `630813f`; candidate tests 1/1 plus source regressions 2/2 pass).
+
+- Task 4 evidence: run `35453225390`, job `105923895337`, exact head `1db00b56df6cd8dbb6f46326615bca5be18d4e68`; 14 inherited tests passed; the first six v15.39 tests passed; only the deliberately absent claim-firewall fields and committed ledger remained red. Exact common canary completed in 27.024 s.
+- Task 4: complete (commit `1db00b5`; source, candidate, remote, holdout, scale, and hostile-control tests 6/6 pass).
