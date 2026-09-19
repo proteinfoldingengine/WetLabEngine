@@ -1,0 +1,28 @@
+name: UQCF v15.38 Response Axiom Admissibility
+on:
+  push:
+    branches: [research/v15.38-response-axiom-admissibility]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.38-response-axiom-admissibility/**'
+      - 'docs/superpowers/specs/2026-09-18-v1538-response-axiom-admissibility-design.md'
+      - 'docs/superpowers/plans/2026-09-18-v1538-response-axiom-admissibility-implementation.md'
+      - '.github/workflows/uqcf-v1538-response-axiom-admissibility.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install inherited environment
+        run: python -m pip install numpy==2.3.5
+      - name: Run v15.38 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.38-response-axiom-admissibility
+        run: python -m unittest -v test_gate.py
