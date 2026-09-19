@@ -764,7 +764,7 @@ def _candidate_size_audit(L: int) -> dict:
         "translation_remote_metrics_exact": all_translation_metrics,
         "hostile_controls": {
             "zero_source_response_zero": all(zero_outputs),
-            "coarse_only_erasure_response_zero": True,
+            "coarse_only_erasure_response_zero": all(zero_outputs),
             "bare_local_cancellation_closure_zero": all(x == 0 for x in local_residual),
             "bare_local_cancellation_remote_support_zero": local_remote == 0,
             "commuting_axis_precursor_zero": all_commuting_controls_zero,
@@ -779,6 +779,22 @@ def exact_size_audit(L: int) -> dict:
     if type(L) is not int or L not in (5, 7, 9, 11):
         raise ValueError("L must be one of the preregistered sizes")
     return _candidate_size_audit(L)
+
+
+def next_required_object_for_status(status: str) -> str:
+    mapping = {
+        "SOURCE_AXIOM_PROTOCOL_INVALID":
+            "REPAIR_TYPED_SOURCE_PROTOCOL_BEFORE_ANY_CANARY",
+        "NO_ADMISSIBLE_RESPONSE_CANDIDATE":
+            "REVISE_OR_REJECT_EXPLICIT_SOURCE_RESPONSE_AXIOMS_WITHOUT_TUNING",
+        "ADMISSIBLE_CANDIDATES_NO_GLOBAL_SIGNAL":
+            "REVISE_OR_REJECT_EXPLICIT_SOURCE_RESPONSE_AXIOMS_WITHOUT_TUNING",
+        "AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL":
+            "INDEPENDENT_GEOMETRY_AND_CORRESPONDENCE_TESTS_FOR_FROZEN_AXIOM_SURVIVOR",
+    }
+    if status not in mapping:
+        raise ValueError(f"unknown gate status: {status}")
+    return mapping[status]
 
 
 def audit() -> dict:
@@ -860,16 +876,7 @@ def audit() -> dict:
         key: all(row["hostile_controls"][key] for row in size_rows)
         for key in hostile_keys
     }
-    if status == "AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL":
-        next_required_object = (
-            "INDEPENDENT_GEOMETRY_AND_CORRESPONDENCE_TESTS_FOR_FROZEN_AXIOM_SURVIVOR"
-        )
-    elif status == "ADMISSIBLE_CANDIDATES_NO_GLOBAL_SIGNAL":
-        next_required_object = (
-            "REVISE_OR_REJECT_EXPLICIT_SOURCE_RESPONSE_AXIOMS_WITHOUT_TUNING"
-        )
-    else:
-        next_required_object = "REPAIR_TYPED_SOURCE_PROTOCOL_BEFORE_ANY_CANARY"
+    next_required_object = next_required_object_for_status(status)
 
     return {
         "version": "v15.39",
