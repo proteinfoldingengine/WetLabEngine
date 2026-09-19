@@ -301,6 +301,93 @@ def _boundary_from_coordinates(c, basis, coordinates) -> tuple[Fraction, ...]:
     return _int_matvec(c.B2, basis.combine(coordinates))
 
 
+def _rank_of_columns(ql, columns) -> int:
+    columns = tuple(tuple(Fraction(x) for x in column) for column in columns)
+    if not columns:
+        return 0
+    ambient_dimension = len(columns[0])
+    if any(len(column) != ambient_dimension for column in columns):
+        raise ValueError("column dimension mismatch")
+    rows = tuple(
+        tuple(column[i] for column in columns)
+        for i in range(ambient_dimension)
+    )
+    return ql.rank(rows)
+
+
+def _exact_complex_structure(actions, ql, c) -> dict:
+    boundary_columns = tuple(
+        tuple(Fraction(int(c.B2[e, f])) for e in range(c.B2.shape[0]))
+        for f in range(c.B2.shape[1])
+    )
+    B1_B2_zero = all(
+        all(x == 0 for x in _int_matvec(c.B1, column))
+        for column in boundary_columns
+    )
+
+    cycle_basis = actions.cycle_basis_exact(c.B1.astype(int))
+    boundary_dimension = _rank_of_columns(ql, boundary_columns)
+    horizontal_cycle = tuple(
+        Fraction(1) if kind == "h" and u[1] == 0 else Fraction(0)
+        for u, _v, kind in c.edges
+    )
+    vertical_cycle = tuple(
+        Fraction(1) if kind == "v" and u[0] == 0 else Fraction(0)
+        for u, _v, kind in c.edges
+    )
+    canonical_homology = (horizontal_cycle, vertical_cycle)
+    homology_cycles_closed = all(
+        all(x == 0 for x in _int_matvec(c.B1, cycle))
+        for cycle in canonical_homology
+    )
+    canonical_homology_rank = _rank_of_columns(ql, canonical_homology)
+    combined_rank = _rank_of_columns(
+        ql,
+        boundary_columns + canonical_homology,
+    )
+    homology_dimension = cycle_basis.dimension - boundary_dimension
+    canonical_split = all((
+        B1_B2_zero,
+        homology_cycles_closed,
+        cycle_basis.dimension == c.L * c.L + 1,
+        boundary_dimension == c.L * c.L - 1,
+        homology_dimension == 2,
+        canonical_homology_rank == 2,
+        combined_rank == cycle_basis.dimension,
+        combined_rank == boundary_dimension + canonical_homology_rank,
+    ))
+
+    model_c, face_basis, face_adjacency, _face_defect = _face_model(c.L)
+    if model_c.B2.shape != c.B2.shape:
+        raise ArithmeticError("face model/complex mismatch")
+    adjacency_preserves_boundary = True
+    for i in range(face_basis.dimension):
+        coordinates = tuple(
+            Fraction(1) if j == i else Fraction(0)
+            for j in range(face_basis.dimension)
+        )
+        boundary = _boundary_from_coordinates(c, face_basis, coordinates)
+        transported = _edge_adjacency(actions, c, boundary)
+        expected = _boundary_from_coordinates(
+            c,
+            face_basis,
+            ql.matvec(face_adjacency, coordinates),
+        )
+        if transported != expected:
+            adjacency_preserves_boundary = False
+            break
+
+    return {
+        "B1_B2_zero": B1_B2_zero,
+        "cycle_dimension": cycle_basis.dimension,
+        "boundary_dimension": boundary_dimension,
+        "homology_dimension": homology_dimension,
+        "canonical_homology_rank": canonical_homology_rank,
+        "canonical_cycle_boundary_homology_split_exact": canonical_split,
+        "adjacency_preserves_boundary_sector_exact": adjacency_preserves_boundary,
+    }
+
+
 def solve_unique(ql, matrix, rhs) -> tuple[Fraction, ...]:
     matrix = ql.matrix(matrix)
     rhs = tuple(Fraction(x) for x in rhs)
@@ -401,7 +488,15 @@ def remote_support_square(c, response, source_face) -> Fraction:
     return sum((Fraction(response[edge]) ** 2 for edge in edges), Fraction(0))
 
 
-def remote_commutator_precursor(c, response, source_face) -> Fraction:
+def remote_commutator_precursor(
+    c,
+    response,
+    source_face,
+    axis_commutator_square=Fraction(1),
+) -> Fraction:
+    axis_commutator_square = _fraction(axis_commutator_square)
+    if axis_commutator_square < 0:
+        raise ValueError("squared commutator coefficient must be nonnegative")
     total = Fraction(0)
     for face in remote_shell(c, source_face):
         horizontal = [
@@ -417,7 +512,7 @@ def remote_commutator_precursor(c, response, source_face) -> Fraction:
         for h, hs in horizontal:
             for v, vs in vertical:
                 product = Fraction(hs) * Fraction(response[h]) * Fraction(vs) * Fraction(response[v])
-                total += product * product
+                total += axis_commutator_square * product * product
     return total
 
 
@@ -471,6 +566,7 @@ def _candidate_covariance_exact(actions, c, occurrence, key, response) -> bool:
 def _candidate_size_audit(L: int) -> dict:
     actions, ql = load_upstream()
     c = actions.load_frozen_complex(L)
+    structure = _exact_complex_structure(actions, ql, c)
     source_face = (0, 0)
     face_index = c.face_index[source_face]
     loop = c.face_loops[source_face]
@@ -484,6 +580,7 @@ def _candidate_size_audit(L: int) -> dict:
     all_additivity = True
     all_reversal = True
     all_translation_metrics = True
+    all_commuting_controls_zero = True
 
     for key in CANDIDATE_KEYS:
         orientation_rows = []
@@ -506,6 +603,13 @@ def _candidate_size_audit(L: int) -> dict:
         transformed_unit = actions.edge_action(c, translation).apply(unit_response.response)
         support0 = remote_support_square(c, unit_response.response, source_face)
         commutator0 = remote_commutator_precursor(c, unit_response.response, source_face)
+        commuting0 = remote_commutator_precursor(
+            c,
+            unit_response.response,
+            source_face,
+            axis_commutator_square=Fraction(0),
+        )
+        all_commuting_controls_zero &= commuting0 == 0
         support_translated = remote_support_square(c, transformed_unit, translated_face)
         commutator_translated = remote_commutator_precursor(c, transformed_unit, translated_face)
         translation_metrics = (
@@ -532,6 +636,13 @@ def _candidate_size_audit(L: int) -> dict:
             occurrence = SourceOccurrence(face_index, edge_index, Fraction(1))
             lifted = source_lift(c, face_index, edge_index, Fraction(1))
             candidate = candidate_response(actions, ql, c, occurrence, key)
+            candidate_equation_exact = _candidate_equation_holds(
+                actions,
+                c,
+                key,
+                lifted,
+                candidate.response,
+            )
             support = remote_support_square(c, candidate.response, source_face)
             commutator = remote_commutator_precursor(c, candidate.response, source_face)
             closure_rows = []
@@ -552,6 +663,9 @@ def _candidate_size_audit(L: int) -> dict:
                 "slot_sign": int(loop_sign),
                 "response_nonzero": any(candidate.response),
                 "boundary_sector": candidate.boundary_sector,
+                "unique_response_ray": candidate.unique_response_ray,
+                "candidate_equation_exact": candidate_equation_exact,
+                "balance_equation_exact": candidate.balance_equation_exact,
                 "B1_response_zero": all(
                     x == 0 for x in _int_matvec(c.B1, candidate.response)
                 ),
@@ -563,14 +677,26 @@ def _candidate_size_audit(L: int) -> dict:
                 "projective_scale_predicates_exact": scale_invariant,
             })
 
-        structural = (
-            covariance
-            and reversal
-            and additive
-            and translation_metrics
-            and all(r["response_nonzero"] for r in orientation_rows)
-            and all(r["boundary_sector"] and r["B1_response_zero"] for r in orientation_rows)
+        orientation_structural = all(
+            r["response_nonzero"]
+            and r["boundary_sector"]
+            and r["B1_response_zero"]
+            and r["unique_response_ray"]
+            and r["candidate_equation_exact"]
+            and r["lambda_closure_exact"]
+            and r["projective_scale_predicates_exact"]
+            for r in orientation_rows
         )
+        structural = all((
+            structure["B1_B2_zero"],
+            structure["canonical_cycle_boundary_homology_split_exact"],
+            structure["adjacency_preserves_boundary_sector_exact"],
+            covariance,
+            reversal,
+            additive,
+            translation_metrics,
+            orientation_structural,
+        ))
         remote_support_all = all(r["remote_support_positive"] for r in orientation_rows)
         remote_commutator_all = all(r["remote_commutator_positive"] for r in orientation_rows)
         if not structural:
@@ -609,6 +735,7 @@ def _candidate_size_audit(L: int) -> dict:
 
     return {
         "L": L,
+        **structure,
         "dim_B": L * L - 1,
         "max_remote_face_distance": max(
             torus_face_distance(c, source_face, face) for face in c.faces
@@ -622,7 +749,11 @@ def _candidate_size_audit(L: int) -> dict:
             all(r["B1_response_zero"] for r in row["orientation_rows"]) for row in rows
         ),
         "global_balance_boundary_inverse_exact": next(
-            row["structural_checks_pass"]
+            all(
+                orientation["unique_response_ray"]
+                and orientation["balance_equation_exact"]
+                for orientation in row["orientation_rows"]
+            )
             for row in rows
             if row["key"] == "GLOBAL_BALANCE_COMPLETION"
         ),
@@ -636,7 +767,7 @@ def _candidate_size_audit(L: int) -> dict:
             "coarse_only_erasure_response_zero": True,
             "bare_local_cancellation_closure_zero": all(x == 0 for x in local_residual),
             "bare_local_cancellation_remote_support_zero": local_remote == 0,
-            "commuting_axis_precursor_zero": True,
+            "commuting_axis_precursor_zero": all_commuting_controls_zero,
             "holdout_rule_unchanged": True,
             "spectral_edge_audit_clean": True,
             "locality_controls_unexcused": True,
@@ -657,6 +788,13 @@ def audit() -> dict:
     size_rows = [exact_size_audit(L) for L in sizes]
     protocol = {
         "source_carrier": "Q_PLUS_BOUNDARY_INCIDENCE_PROVENANCE",
+        "all_B1_B2_zero": all(r["B1_B2_zero"] for r in size_rows),
+        "canonical_cycle_boundary_homology_split_exact": all(
+            r["canonical_cycle_boundary_homology_split_exact"] for r in size_rows
+        ),
+        "adjacency_preserves_boundary_sector_exact": all(
+            r["adjacency_preserves_boundary_sector_exact"] for r in size_rows
+        ),
         "all_B1_kappa_zero": all(r["all_B1_kappa_zero"] for r in source_rows),
         "generator_covariance_exact": all(r["generator_covariance_exact"] for r in source_rows),
         "source_additivity_exact": all(r["source_additivity_exact"] for r in source_rows),
@@ -690,10 +828,15 @@ def audit() -> dict:
         candidate_verdicts[key] = verdict
 
     common_source_protocol_invalid = not all((
+        protocol["all_B1_B2_zero"],
+        protocol["canonical_cycle_boundary_homology_split_exact"],
+        protocol["adjacency_preserves_boundary_sector_exact"],
         protocol["all_B1_kappa_zero"],
         protocol["generator_covariance_exact"],
         protocol["source_additivity_exact"],
         protocol["source_reversal_exact"],
+        protocol["closed_face_coarse_q_null"],
+        protocol["closed_face_higher_incidence_source_nonnull"],
     ))
     admissible_count = sum(
         verdict != "STRUCTURALLY_REJECTED"
