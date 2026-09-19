@@ -13,7 +13,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 35
     env:
       PYTHONHASHSEED: '0'
     steps:
@@ -26,6 +26,45 @@ jobs:
           python-version: '3.13.5'
       - name: Install pinned inherited environment
         run: python -m pip install numpy==2.3.5
-      - name: Run v15.35 tests
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+          base='e24b94fb1a0ca4c8eda33379f5a4ab3f4c360487'
+          demo='ResearchHistory/UQCF-GEM/demos/v15.35-support-radius-locality/'
+          allowed={
+            'docs/superpowers/specs/2026-09-19-v1535-support-radius-locality-design.md',
+            'docs/superpowers/plans/2026-09-19-v1535-support-radius-locality-implementation.md',
+            '.github/workflows/uqcf-v1535-support-radius.yml',
+          }
+          subprocess.run(['git','merge-base','--is-ancestor',base,'HEAD'],check=True)
+          for line in subprocess.check_output(['git','diff','--name-status',base,'HEAD'],text=True).splitlines():
+              status,name=line.split('\t',1)
+              assert status=='A',line
+              assert name.startswith(demo) or name in allowed,name
+          PY
+      - name: Run inherited frontier regressions
+        run: |
+          python - <<'PY'
+          import re,subprocess,sys
+          from pathlib import Path
+          root=Path('ResearchHistory/UQCF-GEM/demos')
+          suites=[
+            (root/'v15.33-sector-weight-constraint-audit',['test_gate.py'],7),
+            (root/'v15.34-canonical-adjacency-commutant',['test_gate.py'],6),
+          ]
+          total=0
+          for cwd,files,count in suites:
+              r=subprocess.run([sys.executable,'-m','unittest','-v',*files],cwd=cwd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=240)
+              print(r.stdout[-700:],flush=True)
+              m=re.search(r'Ran (\d+) tests? in',r.stdout)
+              assert r.returncode==0 and m and int(m.group(1))==count and re.search(r'^OK\s*$',r.stdout,re.M),r.stdout
+              total+=count
+          assert total==13
+          PY
+      - name: Run v15.35 exact gate
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.35-support-radius-locality
-        run: python -m unittest -v test_gate.py
+        run: |
+          python -m unittest -v test_gate.py
+          python support_radius_locality_gate.py > /tmp/v1535-results.json
+          python -m compileall -q support_radius_locality_gate.py test_gate.py
