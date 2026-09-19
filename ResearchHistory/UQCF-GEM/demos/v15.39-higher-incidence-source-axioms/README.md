@@ -69,7 +69,10 @@ or gravity target fit is used.
 
 Within the frozen finite model and the two explicit new axiomatic layers, the exact audit verifies:
 
+- `B1 B2 = 0` and the fresh exact split `Z = H direct_sum B` at every required size,
+  with `dim(H)=2`;
 - source typing, `B1 kappa = 0`, translation/D4 covariance, sign reversal, and additivity;
+- exact preservation of the canonical boundary sector by `A`;
 - a unique exact global-balance response on the canonical boundary sector;
 - exact compatibility for projective scales `lambda = 1` and `7/3`;
 - positive far-shell support and positive noncommuting-axis precursor for global balance at
