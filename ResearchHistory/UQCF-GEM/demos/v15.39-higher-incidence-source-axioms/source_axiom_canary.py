@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
+from functools import lru_cache
 from pathlib import Path
 import argparse
 import hashlib
@@ -54,6 +55,16 @@ class LiftedSource:
     q: tuple[Fraction, ...]
     kappa: tuple[Fraction, ...]
     incidence_sign: int
+
+
+@dataclass(frozen=True)
+class CandidateResponse:
+    key: str
+    response: tuple[Fraction, ...]
+    boundary_coordinates: tuple[Fraction, ...]
+    boundary_sector: bool
+    unique_response_ray: bool
+    balance_equation_exact: bool
 
 
 def git_blob(path: Path) -> str:
@@ -234,30 +245,215 @@ def _source_protocol_for_size(actions, L: int) -> dict:
     }
 
 
+
+def _primitive_translations(actions, L: int):
+    identity = actions.D4[0]
+    return tuple(
+        actions.CellAutomorphism(identity, displacement, L)
+        for displacement in ((1, 0), (L - 1, 0), (0, 1), (0, L - 1))
+    )
+
+
+def _edge_adjacency(actions, c, vector) -> tuple[Fraction, ...]:
+    return _add(*(
+        actions.edge_action(c, g).apply(vector)
+        for g in _primitive_translations(actions, c.L)
+    ))
+
+
+def _matrix_sum(ql, matrices):
+    matrices = tuple(matrices)
+    if not matrices:
+        raise ValueError("at least one matrix required")
+    out = matrices[0]
+    for matrix in matrices[1:]:
+        out = ql.add(out, matrix)
+    return out
+
+
+@lru_cache(None)
+def _face_model(L: int):
+    actions, ql = load_upstream()
+    c = actions.load_frozen_complex(L)
+    basis = actions.augmentation_basis(len(c.faces))
+    representations = tuple(
+        actions.restricted_representation(basis, actions.face_action(c, g))
+        for g in _primitive_translations(actions, L)
+    )
+    adjacency = _matrix_sum(ql, representations)
+    defect = ql.add(
+        ql.scale(4, ql.identity(basis.dimension)),
+        ql.scale(-1, adjacency),
+    )
+    return c, basis, adjacency, defect
+
+
+def _canonical_face_coordinates(basis, face_index: int) -> tuple[Fraction, ...]:
+    count = basis.ambient_dimension
+    if type(face_index) is not int or not 0 <= face_index < count:
+        raise ValueError("invalid face index")
+    full = [Fraction(-1, count) for _ in range(count)]
+    full[face_index] += 1
+    return basis.coordinates(tuple(full))
+
+
+def _boundary_from_coordinates(c, basis, coordinates) -> tuple[Fraction, ...]:
+    return _int_matvec(c.B2, basis.combine(coordinates))
+
+
+def solve_unique(ql, matrix, rhs) -> tuple[Fraction, ...]:
+    matrix = ql.matrix(matrix)
+    rhs = tuple(Fraction(x) for x in rhs)
+    n, m = ql.shape(matrix)
+    if n != m or len(rhs) != n:
+        raise ValueError("square system with matching right side required")
+    augmented = tuple(tuple(matrix[i]) + (rhs[i],) for i in range(n))
+    reduced, pivots = ql.rref(augmented, ncols=n + 1)
+    coefficient_pivots = tuple(p for p in pivots if p < n)
+    if coefficient_pivots != tuple(range(n)):
+        raise ValueError("boundary defect operator is not invertible")
+    solution = tuple(reduced[i][n] for i in range(n))
+    if ql.matvec(matrix, solution) != rhs:
+        raise ArithmeticError("exact solve verification failed")
+    return solution
+
+
+def candidate_response(actions, ql, c, occurrence: SourceOccurrence, key: str) -> CandidateResponse:
+    if key not in CANDIDATE_KEYS:
+        raise ValueError(f"unknown candidate: {key}")
+    lifted = source_lift(
+        c,
+        occurrence.face_index,
+        occurrence.edge_index,
+        occurrence.amplitude,
+    )
+    model_c, face_basis, face_adjacency, face_defect = _face_model(c.L)
+    if model_c.B2.shape != c.B2.shape:
+        raise ArithmeticError("face model/complex mismatch")
+    source_coordinates = _scale(
+        occurrence.amplitude * lifted.incidence_sign,
+        _canonical_face_coordinates(face_basis, occurrence.face_index),
+    )
+
+    if key == "DIRECT_INHERITANCE":
+        coordinates = source_coordinates
+        response = lifted.kappa
+        balance_exact = False
+    elif key == "ONE_INCIDENCE_TRANSPORT":
+        coordinates = ql.matvec(face_adjacency, source_coordinates)
+        response = _edge_adjacency(actions, c, lifted.kappa)
+        balance_exact = False
+    else:
+        coordinates = solve_unique(ql, face_defect, source_coordinates)
+        response = _boundary_from_coordinates(c, face_basis, coordinates)
+        edge_defect_response = _add(
+            _scale(4, response),
+            _scale(-1, _edge_adjacency(actions, c, response)),
+        )
+        balance_exact = edge_defect_response == lifted.kappa
+        if not balance_exact:
+            raise ArithmeticError("ambient global-balance equation failed")
+
+    reconstructed = _boundary_from_coordinates(c, face_basis, coordinates)
+    boundary_sector = reconstructed == response
+    if not boundary_sector:
+        raise ArithmeticError("candidate left canonical boundary sector")
+    if not any(response):
+        raise ArithmeticError("candidate produced zero response")
+
+    return CandidateResponse(
+        key=key,
+        response=response,
+        boundary_coordinates=coordinates,
+        boundary_sector=True,
+        unique_response_ray=True,
+        balance_equation_exact=balance_exact,
+    )
+
+
+@lru_cache(None)
+def _candidate_size_audit(L: int) -> dict:
+    actions, ql = load_upstream()
+    c = actions.load_frozen_complex(L)
+    face_index = c.face_index[(0, 0)]
+    edge_index = c.face_loops[(0, 0)][0][0]
+    occurrence = SourceOccurrence(face_index, edge_index, Fraction(1))
+    rows = []
+    for key in CANDIDATE_KEYS:
+        response = candidate_response(actions, ql, c, occurrence, key)
+        rows.append({
+            "key": key,
+            "boundary_sector": response.boundary_sector,
+            "unique_response_ray": response.unique_response_ray,
+            "nonzero_response": any(response.response),
+            "B1_response_zero": all(x == 0 for x in _int_matvec(c.B1, response.response)),
+            "balance_equation_exact": response.balance_equation_exact,
+            "spectrum_queries": 0,
+            "spectral_edge_parameters": 0,
+            "gravity_fit_parameters": 0,
+            "candidate_specific_thresholds": 0,
+        })
+    return {
+        "L": L,
+        "dim_B": L * L - 1,
+        "candidate_rows": rows,
+        "all_outputs_in_boundary_sector": all(r["boundary_sector"] for r in rows),
+        "all_outputs_cycle_closed": all(r["B1_response_zero"] for r in rows),
+        "global_balance_boundary_inverse_exact": next(
+            r["balance_equation_exact"]
+            for r in rows
+            if r["key"] == "GLOBAL_BALANCE_COMPLETION"
+        ),
+    }
+
+
+def exact_size_audit(L: int) -> dict:
+    if type(L) is not int or L not in (5, 7, 9, 11):
+        raise ValueError("L must be one of the preregistered sizes")
+    return _candidate_size_audit(L)
+
 def audit() -> dict:
     actions, _ql = load_upstream()
     sizes = (5, 7, 9, 11)
-    rows = [_source_protocol_for_size(actions, L) for L in sizes]
+    source_rows = [_source_protocol_for_size(actions, L) for L in sizes]
+    candidate_rows = [exact_size_audit(L) for L in sizes]
     protocol = {
         "source_carrier": "Q_PLUS_BOUNDARY_INCIDENCE_PROVENANCE",
-        "all_B1_kappa_zero": all(r["all_B1_kappa_zero"] for r in rows),
-        "generator_covariance_exact": all(r["generator_covariance_exact"] for r in rows),
-        "source_additivity_exact": all(r["source_additivity_exact"] for r in rows),
-        "source_reversal_exact": all(r["source_reversal_exact"] for r in rows),
-        "closed_face_coarse_q_null": all(r["closed_face_coarse_q_null"] for r in rows),
+        "all_B1_kappa_zero": all(r["all_B1_kappa_zero"] for r in source_rows),
+        "generator_covariance_exact": all(r["generator_covariance_exact"] for r in source_rows),
+        "source_additivity_exact": all(r["source_additivity_exact"] for r in source_rows),
+        "source_reversal_exact": all(r["source_reversal_exact"] for r in source_rows),
+        "closed_face_coarse_q_null": all(r["closed_face_coarse_q_null"] for r in source_rows),
         "closed_face_higher_incidence_source_nonnull": all(
-            r["closed_face_higher_incidence_source_nonnull"] for r in rows
+            r["closed_face_higher_incidence_source_nonnull"] for r in source_rows
         ),
         "closed_face_kappa_multiple": (
-            4 if all(r["closed_face_kappa_multiple"] == 4 for r in rows) else None
+            4 if all(r["closed_face_kappa_multiple"] == 4 for r in source_rows) else None
         ),
-        "size_rows": rows,
+        "size_rows": source_rows,
     }
     return {
         "version": "v15.39",
         "base_sha": BASE_SHA,
+        "finite_size_controls": list(sizes),
+        "holdout_size": 11,
         "source_protocol": protocol,
         "closed_face_null_reinterpreted_by_new_axiom": True,
+        "candidate_keys": list(CANDIDATE_KEYS),
+        "candidate_formula_manifest": {
+            "DIRECT_INHERITANCE": "y=kappa",
+            "ONE_INCIDENCE_TRANSPORT": "y=A*kappa",
+            "GLOBAL_BALANCE_COMPLETION": "(4I-A)y=kappa_on_imB2",
+        },
+        "candidate_size_audits": candidate_rows,
+        "all_candidate_outputs_in_boundary_sector": all(
+            row["all_outputs_in_boundary_sector"] and row["all_outputs_cycle_closed"]
+            for row in candidate_rows
+        ),
+        "global_balance_boundary_inverse_exact": all(
+            row["global_balance_boundary_inverse_exact"] for row in candidate_rows
+        ),
+        "ambient_pseudoinverse_used": False,
         "evidence_pins": verify_evidence(),
     }
 
