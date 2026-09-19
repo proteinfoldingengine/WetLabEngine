@@ -1,0 +1,26 @@
+name: UQCF v15.37 Response Selector Irreducibility
+on:
+  push:
+    branches: [research/v15.37-response-selector-irreducibility]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.37-response-selector-irreducibility/**'
+      - 'docs/superpowers/specs/2026-09-19-v1537-response-selector-irreducibility-design.md'
+      - 'docs/superpowers/plans/2026-09-19-v1537-response-selector-irreducibility-implementation.md'
+      - '.github/workflows/uqcf-v1537-response-selector-irreducibility.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Run v15.37 tests
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.37-response-selector-irreducibility
+        run: python -m unittest -v test_gate.py
