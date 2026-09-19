@@ -1,6 +1,8 @@
+import json
+from pathlib import Path
 import unittest
 
-from canonical_adjacency_gate import audit
+from canonical_adjacency_gate import audit, canonical_json
 
 
 class CanonicalAdjacencyGateTests(unittest.TestCase):
@@ -20,12 +22,11 @@ class CanonicalAdjacencyGateTests(unittest.TestCase):
         self.assertEqual(self.r["minimal_polynomial_degree"], 10)
         self.assertEqual(
             self.r["minimal_polynomial_factors"],
-            [
-                [1, -4],
-                [1, -5, 6, -1],
-                [1, 2, -8, -8],
-                [1, 2, -1, -1],
-            ],
+            [[1,-4],[1,-5,6,-1],[1,2,-8,-8],[1,2,-1,-1]],
+        )
+        self.assertEqual(
+            self.r["minimal_polynomial_coefficients"],
+            [1,-5,-15,97,7,-455,259,486,-232,-136,32],
         )
         self.assertTrue(self.r["minimal_polynomial_annihilates_Z"])
         self.assertTrue(self.r["all_proper_factor_omissions_fail"])
@@ -33,7 +34,7 @@ class CanonicalAdjacencyGateTests(unittest.TestCase):
     def test_commutant_generation(self):
         self.assertEqual(self.r["power_span_rank"], 10)
         self.assertTrue(self.r["full_commutant_generated_by_adjacency"])
-        self.assertEqual(self.r["rational_factor_degrees"], [1, 3, 3, 3])
+        self.assertEqual(self.r["rational_factor_degrees"], [1,3,3,3])
         self.assertEqual(self.r["splitting_field_sector_count"], 10)
 
     def test_adjudication(self):
@@ -46,6 +47,11 @@ class CanonicalAdjacencyGateTests(unittest.TestCase):
             self.r["next_required_object"],
             "TARGET_BLIND_PRINCIPLE_SELECTING_FUNCTION_OF_CANONICAL_ADJACENCY_OR_EXPLICIT_NEW_AXIOM",
         )
+
+    def test_committed_ledger_is_exact(self):
+        committed=Path("docs/RESULTS.json").read_text()
+        self.assertEqual(committed, canonical_json(self.r))
+        self.assertEqual(json.loads(committed), self.r)
 
     def test_firewall(self):
         for key in (

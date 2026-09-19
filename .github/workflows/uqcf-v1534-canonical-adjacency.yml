@@ -66,5 +66,17 @@ jobs:
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.34-canonical-adjacency-commutant
         run: |
           python -m unittest -v test_gate.py
-          python canonical_adjacency_gate.py > /tmp/v1534-results.json
+          python canonical_adjacency_gate.py --check docs/RESULTS.json > /tmp/v1534-results.json
           python -m compileall -q canonical_adjacency_gate.py test_gate.py
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/RESULTS.json'))
+          assert r['status']=='FULL_COMMUTANT_GENERATED_BY_CANONICAL_ADJACENCY_FUNCTION_UNSELECTED'
+          assert r['minimal_polynomial_degree']==10
+          assert r['power_span_rank']==10
+          assert r['full_commutant_generated_by_adjacency'] is True
+          assert r['rational_factor_degrees']==[1,3,3,3]
+          assert r['adjacency_function_selected'] is False
+          assert r['gravity_observables_evaluated'] is False
+          assert r['Pillar_3']=='OPEN'
+          PY

@@ -1,0 +1,99 @@
+{
+  "Pillar_3": "OPEN",
+  "adjacency_function_selected": false,
+  "adjacency_preserves_Z": true,
+  "all_group_commutators_zero": true,
+  "all_proper_factor_omissions_fail": true,
+  "base_sha": "04ad5d3cf24b7f051d714d61d2fe6d8da4fd8eec",
+  "commutant_dimension": 10,
+  "coupling_solver_reopened": false,
+  "cubic_factors_irreducible_over_Q": true,
+  "dim_Z": 50,
+  "factors_pairwise_coprime": true,
+  "full_commutant_generated_by_adjacency": true,
+  "gravity_observables_evaluated": false,
+  "group_order": 392,
+  "inherited_projective_weight_dimension": 9,
+  "low_degree_locality_assumed": false,
+  "minimal_polynomial_annihilates_Z": true,
+  "minimal_polynomial_coefficients": [
+    1,
+    -5,
+    -15,
+    97,
+    7,
+    -455,
+    259,
+    486,
+    -232,
+    -136,
+    32
+  ],
+  "minimal_polynomial_degree": 10,
+  "minimal_polynomial_factors": [
+    [
+      1,
+      -4
+    ],
+    [
+      1,
+      -5,
+      6,
+      -1
+    ],
+    [
+      1,
+      2,
+      -8,
+      -8
+    ],
+    [
+      1,
+      2,
+      -1,
+      -1
+    ]
+  ],
+  "new_sector_weight_selector_added": false,
+  "new_source_semantics_axiom_added": false,
+  "next_required_object": "TARGET_BLIND_PRINCIPLE_SELECTING_FUNCTION_OF_CANONICAL_ADJACENCY_OR_EXPLICIT_NEW_AXIOM",
+  "physical_gravity_derived": false,
+  "power_span_rank": 10,
+  "primitive_translation_count": 4,
+  "primitive_translation_sum_D4_invariant": true,
+  "proper_factor_omission_nonzero": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "rational_commutant_decomposition": [
+    "Q",
+    "Q[x]/(x^3-5x^2+6x-1)",
+    "Q[x]/(x^3+2x^2-8x-8)",
+    "Q[x]/(x^3+2x^2-x-1)"
+  ],
+  "rational_factor_degrees": [
+    1,
+    3,
+    3,
+    3
+  ],
+  "scientific_breakthrough": false,
+  "signal_of_life": false,
+  "splitting_field_sector_count": 10,
+  "status": "FULL_COMMUTANT_GENERATED_BY_CANONICAL_ADJACENCY_FUNCTION_UNSELECTED",
+  "upstream_pins": {
+    "exact_linear.py": "05cc1b8cfec70d501408377b5e44190b259a4514",
+    "representation_actions.py": "7260147cd6ca47ec21634172b44b98de726904af",
+    "v15.32-results": "a6018895d996bb01d76918994ebd0519260a958d",
+    "v15.33-results": "5ff397efbb66851f4a9a602c417cafdf50e62757"
+  },
+  "uses_entropy_as_selector": false,
+  "uses_holonomy_selector": false,
+  "uses_metric_selector": false,
+  "uses_newton_or_gr": false,
+  "uses_physical_time": false,
+  "uses_pruning_as_selector": false,
+  "version": "v15.34"
+}
