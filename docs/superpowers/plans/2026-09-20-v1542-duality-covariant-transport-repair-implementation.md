@@ -762,14 +762,22 @@ class ControlExecutors:
     covariance: Callable[[], ControlStage]
     constant_null: Callable[[], ControlStage]
     l5_nonflat: Callable[[], ControlStage]
+    every_root_equivalent: Callable[[], ControlStage]
     l7_holdout_nonflat: Callable[[], ControlStage]
     scale_exact: Callable[[], ControlStage]
     superposition_exact: Callable[[], ControlStage]
 
     @classmethod
     def default(cls):
-        # Bind the six production stage functions in certified order.
-        ...
+        return cls(
+            covariance_control,
+            constant_null_control,
+            l5_nonflat_control,
+            every_root_equivalence_control,
+            l7_holdout_control,
+            scale_control,
+            superposition_control,
+        )
 
 @dataclass(frozen=True)
 class ControlFamily:
@@ -796,7 +804,7 @@ Serialize Counters as sorted tuples to preserve deterministic JSON order.
 
 - [ ] **Step 4: Implement the controls without source terminology**
 
-The impulse field helper accepts only a carrier and a marked control vertex. Names, docstrings, ledger keys, and imports must use control_root or marked_vertex, never source, mass, stress, or target. Carry the marked vertex through relabeling. run_control_family() invokes ControlExecutors stages strictly in this order: covariance, constant-null, L5 nonflat/every-root, held-out L7, scale, superposition. It returns immediately on the first failed stage; later status fields are None and later callables are never invoked. A successful default run stores results in this exact order: constant L5 at 7/3, constant L7 at 7/3, all 25 unit L5 roots in label order, the unit L7 root 0 holdout, and the L5 root 0 amplitude-7/3 scale case. The tuple therefore contains exactly 29 records.
+The impulse field helper accepts only a carrier and a marked control vertex. Names, docstrings, ledger keys, and imports must use control_root or marked_vertex, never source, mass, stress, or target. Carry the marked vertex through relabeling. run_control_family() invokes ControlExecutors stages strictly in this order: covariance, constant-null, L5 nonflat, every-root equivalence, held-out L7, scale, superposition. It returns immediately on the first failed stage; later status fields are None and later callables are never invoked. A successful default run stores results in this exact order: constant L5 at 7/3, constant L7 at 7/3, all 25 unit L5 roots in label order, the unit L7 root 0 holdout, and the L5 root 0 amplitude-7/3 scale case. The tuple therefore contains exactly 29 records.
 
 - [ ] **Step 5: Run GREEN and the complete mathematical suite**
 
@@ -871,6 +879,7 @@ class GateTests(unittest.TestCase):
             covariance=stage("covariance", True),
             constant_null=stage("constant-null", True),
             l5_nonflat=stage("L5", False),
+            every_root_equivalent=forbidden("every-root"),
             l7_holdout_nonflat=forbidden("L7"),
             scale_exact=forbidden("scale"),
             superposition_exact=forbidden("superposition"),
@@ -958,7 +967,7 @@ def _audit(evidence_verifier=verify_evidence,
     return certified_ledger(evidence, manifest, selection, controls)
 ~~~
 
-`run_control_family` is the only control entrypoint used by the gate. It must enforce covariance, constant-null, L5, L7, scale, and superposition order internally and expose the first failed stage; `_audit` must not reconstruct, reorder, or continue those stages. Do not define or import a response-application or scientific-adjudication function in this stage.
+`run_control_family` is the only control entrypoint used by the gate. It must enforce covariance, constant-null, L5 nonflat, every-root equivalence, L7, scale, and superposition order internally and expose the first failed stage; `_audit` must not reconstruct, reorder, or continue those stages. Do not define or import a response-application or scientific-adjudication function in this stage.
 
 - [ ] **Step 4: Freeze the ledger schema**
 
