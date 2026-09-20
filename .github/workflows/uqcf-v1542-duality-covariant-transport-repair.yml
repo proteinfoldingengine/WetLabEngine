@@ -76,6 +76,14 @@ jobs:
           print('V1542_TESTS_OK count=48')
           PY
 
+      - name: Verify v15.42 canonical replay and compilation
+        run: |
+          v1542='ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair'
+          python "$v1542/protocol_gate.py" --check "$v1542/docs/RESULTS.json" > /tmp/v1542-results.json
+          cmp "$v1542/docs/RESULTS.json" /tmp/v1542-results.json
+          python -m compileall -q "$v1542"
+          printf 'V1542_REPLAY_COMPILE_OK head=%s replay=byte-identical compile=0\n' "$(git rev-parse HEAD)"
+
       - name: Install inherited v15.40 dependency
         run: python -m pip install numpy==2.3.5
 
@@ -112,16 +120,12 @@ jobs:
           print('INHERITED_TESTS_OK count=43')
           PY
 
-      - name: Verify both canonical replays and compile v15.42
+      - name: Verify unchanged v15.41 canonical replay
         run: |
-          v1542='ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair'
           v1541='ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence'
-          python "$v1542/protocol_gate.py" --check "$v1542/docs/RESULTS.json" > /tmp/v1542-results.json
-          cmp "$v1542/docs/RESULTS.json" /tmp/v1542-results.json
           python "$v1541/connection_curvature_gate.py" --check "$v1541/docs/RESULTS.json" > /tmp/v1541-results.json
           cmp "$v1541/docs/RESULTS.json" /tmp/v1541-results.json
-          python -m compileall -q "$v1542"
-          printf 'REPLAY_COMPILE_OK head=%s v1542=byte-identical v1541=byte-identical compile=0\n' "$(git rev-parse HEAD)"
+          printf 'V1541_REPLAY_OK head=%s replay=byte-identical\n' "$(git rev-parse HEAD)"
 
       - name: Print certified test summary
         run: |
