@@ -1,0 +1,195 @@
+{
+  "Pillar_3": "OPEN",
+  "all_relabeling_checks_complete": null,
+  "all_required_cells_evaluated": null,
+  "all_scale_checks_complete": null,
+  "all_superposition_checks_complete": null,
+  "base_sha": "84aa1c81fd86ac4d7a06015482f98572f3afc05f",
+  "canonical_correspondence": null,
+  "cell_audits": null,
+  "connection_identifiable": null,
+  "construction_firewall": {
+    "B2_queries_in_connection_constructor": 0,
+    "coordinate_queries": 0,
+    "fitted_connection_parameters": 0,
+    "fitted_curvature_parameters": 0,
+    "floating_tolerances": 0,
+    "historical_connection_queries": 0,
+    "newton_or_einstein_targets": 0,
+    "post_output_tie_breakers": 0,
+    "source_specific_normalizations": 0,
+    "spectrum_queries": 0,
+    "supplied_orientation_queries": 0
+  },
+  "continuum_limit_derived": false,
+  "control_all_sizes": null,
+  "curvature_contraction_dimension": null,
+  "curvature_source_map_identifiable": null,
+  "cycle_scramble_fails": null,
+  "einstein_equations_derived": false,
+  "evidence_pins": {
+    "v15.40-design": "5f75f9a7ba1df5b21715f775d26bedbedc07297f",
+    "v15.40-gate": "2e75867e6aedb82ebe3d9c1f04733e2c0d33018a",
+    "v15.40-incidence-target": "03c1f62279865aac396ea4b85f75a8d38c1629cf",
+    "v15.40-response-generation": "afd5a68ce74f7f80f49b6fd6307ebb0681182bf5",
+    "v15.40-response-geometry": "9128c24b695c1b539ac60dc93aeaf0bd4795c57b",
+    "v15.40-results": "c56ca48110b3341e2d68289be717bf1e5308a20a",
+    "v15.40-tests": "349d500bd97178ac0e341e65699d0ce5f581b7cf",
+    "v15.41-design": "6d35aae0ccb6c2584d26d5a83d522b3cc7036728",
+    "v15.41-transport-erratum": "d40d03d9d2498ce54839b15dad00c1505c1a586a"
+  },
+  "evidence_verified": true,
+  "family_keys": [
+    "GLOBAL_BALANCE_COMPLETION",
+    "DIRECT_INHERITANCE",
+    "ONE_INCIDENCE_TRANSPORT",
+    "MATCHED_DIAGONAL_BALANCE",
+    "MATCHED_STEP2_BALANCE"
+  ],
+  "finite_size_controls": [
+    5,
+    7,
+    9,
+    11
+  ],
+  "formal_connection_class_new": true,
+  "formal_curvature_contraction_class_new": true,
+  "formal_isotropic_lift_class_new": true,
+  "formal_tangent_carrier_new": true,
+  "historical_connection_used_for_adjudication": false,
+  "holdout_size": 11,
+  "input_separation": {
+    "operational_constructor_blind": true,
+    "operational_constructor_signature": [
+      "labels",
+      "work",
+      "neighbors"
+    ],
+    "source_target_blind": true,
+    "source_target_signature": [
+      "centered_sources",
+      "signed_support"
+    ]
+  },
+  "next_required_object": "REPAIR_ONLY_THE_PROTOCOL_DEFECT_BEFORE_ADJUDICATION",
+  "non_adjudicating_protocol_diagnostics": {
+    "all_tested_curvatures_zero": true,
+    "executed_convention": "forward_direct_positive_variation",
+    "independent_nonconstant_fields_zero": true,
+    "label": "NON_ADJUDICATING_PROTOCOL_DIAGNOSTIC",
+    "local_circulation_in_closure_rowspace": true,
+    "local_closure_rank": 3,
+    "parity_witnesses": [
+      {
+        "L": 5,
+        "all_face_curvatures_zero": true,
+        "nullity": 0,
+        "rank": 50,
+        "unknowns": 50
+      },
+      {
+        "L": 6,
+        "all_face_curvatures_zero": true,
+        "nullity": 1,
+        "rank": 71,
+        "unknowns": 72
+      },
+      {
+        "L": 7,
+        "all_face_curvatures_zero": true,
+        "nullity": 0,
+        "rank": 98,
+        "unknowns": 98
+      },
+      {
+        "L": 8,
+        "all_face_curvatures_zero": true,
+        "nullity": 1,
+        "rank": 127,
+        "unknowns": 128
+      },
+      {
+        "L": 9,
+        "all_face_curvatures_zero": true,
+        "nullity": 0,
+        "rank": 162,
+        "unknowns": 162
+      }
+    ],
+    "standard_basis_L5_zero": true
+  },
+  "pairing_scramble_fails": null,
+  "physical_connection_derived": false,
+  "physical_curvature_derived": false,
+  "projective_scales": [
+    "1",
+    "7/3"
+  ],
+  "protocol_audits": [
+    {
+      "L": 5,
+      "augmented_rank": 51,
+      "coefficient_rank": 50,
+      "field": "manufactured_nonconstant_exact",
+      "protocol_valid": false,
+      "reason": "literal_frozen_rank_inconsistency",
+      "unknowns": 50
+    },
+    {
+      "L": 7,
+      "augmented_rank": 99,
+      "coefficient_rank": 98,
+      "field": "manufactured_nonconstant_exact",
+      "protocol_valid": false,
+      "reason": "literal_frozen_rank_inconsistency",
+      "unknowns": 98
+    }
+  ],
+  "protocol_valid": false,
+  "scientific_breakthrough": false,
+  "size_audits": null,
+  "source_target_frozen_before_adjudication": null,
+  "spacetime_derived": false,
+  "status": "PROTOCOL_INVALID",
+  "stress_energy_derived": false,
+  "superseded_execution_receipt": {
+    "authoritative": false,
+    "prior_exact_head_receipts": [
+      {
+        "conclusion": "success",
+        "head_sha": "2763a07e053595d92a849c5dba3591e5f9d485c0",
+        "inherited_tests": 17,
+        "job_id": 105992231428,
+        "run_id": 35478634883,
+        "v1541_tests": 15
+      },
+      {
+        "conclusion": "success",
+        "head_sha": "aa1efd1e32e84178b95f243b31d4cc5d613bb79d",
+        "inherited_tests": 17,
+        "job_id": 105993295165,
+        "run_id": 35479026637,
+        "v1541_tests": 15
+      }
+    ],
+    "reason_superseded": "transport_protocol_not_typed_precisely_enough",
+    "result_blob": "5228c2754c7ea1b1da6966adcfd34135250132cb",
+    "status": "CONNECTION_IDENTIFIABLE_NO_CURVATURE_SOURCE_CORRESPONDENCE"
+  },
+  "transport_manifest": {
+    "basepoint_rule": "transport_later_edges_back_to_x0",
+    "carrier": "tangent_vector",
+    "dualized": false,
+    "edge_direction": "reverse",
+    "factor_codomain": "T_x",
+    "factor_domain": "T_y",
+    "matrix_action": "direct",
+    "orientation_rule": "both_cycle_orientations",
+    "variation_sign": 1
+  },
+  "transport_manifest_matches_implementation": true,
+  "v1539_global_balance_response_axiom_inherited": true,
+  "v1539_source_axiom_inherited": true,
+  "v1540_operational_metric_inherited": true,
+  "version": "v15.41"
+}
