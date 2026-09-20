@@ -728,3 +728,8 @@ Append the final run ID, job ID, exact head SHA, test counts, replay result, sta
   in 65.896 seconds; inherited v15.40 passed 9/9 in 368.191 seconds; canonical replay was
   byte-identical; compilation, diff check, and additive-scope inspection passed. Frozen status:
   `CONNECTION_IDENTIFIABLE_NO_CURVATURE_SOURCE_CORRESPONDENCE`.
+- Task 6 freeze-head certification — GitHub Actions run `35478634883`, job `105992231428`,
+  exact remote head `2763a07e053595d92a849c5dba3591e5f9d485c0`: additive scope passed;
+  inherited v15.39 and v15.40 passed 17/17; v15.41 passed 15/15; canonical replay and
+  compilation passed; PR 52 remained draft, open, unmerged, and mergeable. Because this receipt
+  changes the head, its commit requires the final exact-head certification described above.
