@@ -57,6 +57,11 @@ jobs:
               assert name.startswith(demo) or name in allowed, name
           PY
 
+      - name: Run v15.41 exact gate
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence
+        run: |
+          python -m unittest -v test_operational_complex.py test_linearized_connection.py test_gate.py
+
       - name: Run inherited frontier regressions
         run: |
           python - <<'PY'
@@ -88,11 +93,6 @@ jobs:
               total += count
           assert total == 17
           PY
-
-      - name: Run v15.41 exact gate
-        working-directory: ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence
-        run: |
-          python -m unittest -v test_operational_complex.py test_linearized_connection.py test_gate.py
 
       - name: Verify canonical replay and compilation
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence
