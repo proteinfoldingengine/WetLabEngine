@@ -70,6 +70,13 @@ class SelectionTests(unittest.TestCase):
             with self.subTest(change=change), self.assertRaises(ValueError):
                 replace(manifest, **change).validate()
 
+    def test_manifest_rejects_subclass_even_when_values_are_certified(self):
+        class ManifestSubclass(TransportManifest):
+            pass
+
+        with self.assertRaises(ValueError):
+            ManifestSubclass.certified().validate()
+
     def test_centered_stencil_is_uniquely_selected(self):
         audit = audit_centered_stencil()
         self.assertTrue(audit.identifiable)
@@ -88,6 +95,30 @@ class SelectionTests(unittest.TestCase):
     def test_missing_affine_or_normalization_axiom_is_not_identifiable(self):
         self.assertFalse(audit_centered_stencil(drop="affine_exact").identifiable)
         self.assertFalse(audit_endpoint_average(drop="constant_exact").identifiable)
+
+    def test_centered_drop_verdicts_follow_exact_remaining_rank(self):
+        expected = {
+            "constant_exact": (3, True),
+            "odd_center": (3, True),
+            "odd_endpoints": (3, True),
+            "affine_exact": (2, False),
+        }
+        for axiom, verdict in expected.items():
+            with self.subTest(axiom=axiom):
+                audit = audit_centered_stencil(drop=axiom)
+                self.assertEqual((audit.rank, audit.identifiable), verdict)
+
+    def test_endpoint_drop_verdicts_follow_exact_remaining_rank(self):
+        for axiom in ("constant_exact", "endpoint_symmetry"):
+            with self.subTest(axiom=axiom):
+                audit = audit_endpoint_average(drop=axiom)
+                self.assertEqual((audit.rank, audit.identifiable), (1, False))
+
+    def test_unknown_axiom_names_are_rejected(self):
+        with self.assertRaises(ValueError):
+            audit_centered_stencil(drop="unknown")
+        with self.assertRaises(ValueError):
+            audit_endpoint_average(drop="unknown")
 
     def test_aggregate_preserves_component_audits_and_verdict(self):
         audit = audit_selection()
