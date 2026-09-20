@@ -326,20 +326,80 @@ git commit -m "feat(uqcf): freeze v15.42 transport selection"
 
 **Interfaces:**
 - Consumes: OperationalComplex, BaselineConnection, exact field tuple, TransportManifest, and optional FramePresentation.
-- Produces: FramePresentation.identity(complex_), centered_derivatives(complex_, baseline, field, presentation), construct_transport(...) -> LinearizedTransport, and cotangent_pullback_delta(matrix).
+- Produces: FramePresentation.identity(complex_), centered_derivatives(complex_: OperationalComplex, baseline: BaselineConnection, field: tuple[Fraction, ...], presentation: FramePresentation) -> tuple[tuple[int, Vector2], ...], construct_transport(complex_: OperationalComplex, baseline: BaselineConnection, field: tuple[Fraction, ...], manifest: TransportManifest | None = None, presentation: FramePresentation | None = None) -> LinearizedTransport, and cotangent_pullback_delta(matrix: Matrix2) -> Matrix2.
 
 - [ ] **Step 1: Write seven failing transport tests**
 
 Tests must cover:
 
 ~~~python
-def test_constant_field_has_zero_edge_variation(): ...
-def test_field_validation_rejects_float_bool_and_wrong_dimension(): ...
-def test_metric_compatibility_is_exact_on_every_directed_edge(): ...
-def test_reverse_edge_is_derivative_of_inverse_transport(): ...
-def test_frame_and_coframe_signs_are_derived_not_arguments(): ...
-def test_every_local_d4_frame_change_is_covariant(): ...
-def test_relabeling_commutes_with_transport_construction(): ...
+class TransportTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.complex = construct_operational_complex(*periodic_square_input(5)).complex
+        cls.baseline = enumerate_baseline_connection(cls.complex).connection
+        cls.impulse = tuple(Fraction(index == 0) for index in range(25))
+
+    def test_constant_field_has_zero_edge_variation(self):
+        result = construct_transport(
+            self.complex, self.baseline, (Fraction(7, 3),) * 25
+        )
+        zero = ((Fraction(0), Fraction(0)), (Fraction(0), Fraction(0)))
+        self.assertTrue(all(value == zero for _edge, value in result.tangent_deltas))
+
+    def test_field_validation_rejects_float_bool_and_wrong_dimension(self):
+        for field in ((Fraction(0),) * 24, (0.0,) * 25, (False,) * 25):
+            with self.subTest(field=field), self.assertRaises((TypeError, ValueError)):
+                construct_transport(self.complex, self.baseline, field)
+
+    def test_metric_compatibility_is_exact_on_every_directed_edge(self):
+        result = construct_transport(self.complex, self.baseline, self.impulse)
+        self.assertTrue(result.metric_compatibility_exact)
+        self.assertEqual(len(result.tangent_deltas), len(self.complex.directed_edges))
+
+    def test_reverse_edge_is_derivative_of_inverse_transport(self):
+        result = construct_transport(self.complex, self.baseline, self.impulse)
+        self.assertTrue(result.reversal_exact)
+        by_edge = dict(result.source_endomorphisms)
+        p = dict(result.baseline)
+        for x, y in self.complex.directed_edges:
+            self.assertEqual(by_edge[(y, x)],
+                             scale(-1, matmul(p[(x, y)],
+                                              matmul(by_edge[(x, y)], p[(y, x)]))))
+
+    def test_frame_and_coframe_signs_are_derived_not_arguments(self):
+        parameters = inspect.signature(construct_transport).parameters
+        self.assertNotIn("frame_variation_sign", parameters)
+        self.assertNotIn("coframe_variation_sign", parameters)
+        self.assertEqual(TransportManifest.certified().frame_variation_sign, -1)
+        self.assertEqual(TransportManifest.certified().coframe_variation_sign, 1)
+
+    def test_every_local_d4_frame_change_is_covariant(self):
+        identity_result = construct_transport(self.complex, self.baseline, self.impulse)
+        presentations = [deterministic_mixed_presentation(self.complex)]
+        presentations.extend(
+            one_site_presentations(self.complex, label=0)
+        )
+        for presentation in presentations:
+            actual = construct_transport(
+                self.complex, self.baseline, self.impulse,
+                presentation=presentation,
+            )
+            self.assertEqual(actual, gauge_transform(identity_result, presentation))
+
+    def test_relabeling_commutes_with_transport_construction(self):
+        permutation = tuple((7 * index + 3) % 25 for index in range(25))
+        relabeled_complex, relabeled_baseline, relabeled_field = relabeled_problem(
+            self.complex, self.baseline, self.impulse, permutation
+        )
+        actual = construct_transport(
+            relabeled_complex, relabeled_baseline, relabeled_field
+        )
+        expected = relabel_transport(
+            construct_transport(self.complex, self.baseline, self.impulse),
+            permutation,
+        )
+        self.assertEqual(actual, expected)
 ~~~
 
 Use literal expected matrices on a hand-checked L5 impulse edge. For root 0 with the standard fixture, assert the full 2x2 Fraction matrix rather than recomputing the expectation through construct_transport.
@@ -430,17 +490,88 @@ git commit -m "feat(uqcf): construct duality-covariant transport"
 
 **Interfaces:**
 - Consumes: BaselineConnection, LinearizedTransport, and an oriented four-cycle.
-- Produces: linearized_holonomy(...), reverse_cycle(cycle), rotate_cycle(cycle, steps), cotangent_holonomy(...), curvature_invariant(matrix) -> Fraction, and CurvatureRecord.
+- Produces: linearized_holonomy(baseline: BaselineConnection, transport: LinearizedTransport, cycle: tuple[int, int, int, int]) -> Matrix2, reverse_cycle(cycle) -> tuple[int, int, int, int], rotate_cycle(cycle, steps: int) -> tuple[int, int, int, int], cotangent_holonomy(baseline, transport, cycle) -> Matrix2, curvature_invariant(matrix: Matrix2) -> Fraction, and CurvatureRecord.
 
 - [ ] **Step 1: Write six failing holonomy tests**
 
 ~~~python
-def test_product_derivative_matches_independent_four_term_expansion(): ...
-def test_cyclic_basepoints_are_baseline_conjugate(): ...
-def test_reversal_is_negative_at_flat_baseline(): ...
-def test_local_d4_gauge_conjugates_based_curvature(): ...
-def test_tangent_and_cotangent_paths_preserve_pairing(): ...
-def test_curvature_invariant_is_exact_and_presentation_independent(): ...
+class HolonomyTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.complex, cls.baseline, cls.transport = impulse_problem(5, root=0)
+        cls.cycle = cls.complex.cycles[0]
+
+    def test_product_derivative_matches_independent_four_term_expansion(self):
+        p, d = dict(self.baseline.transports), dict(self.transport.tangent_deltas)
+        edges = tuple((self.cycle[i], self.cycle[(i + 1) % 4]) for i in range(4))
+        p0, p1, p2, p3 = (p[edge] for edge in edges)
+        d0, d1, d2, d3 = (d[edge] for edge in edges)
+        expected = add(
+            add(matmul(d3, matmul(p2, matmul(p1, p0))),
+                matmul(p3, matmul(d2, matmul(p1, p0)))),
+            add(matmul(p3, matmul(p2, matmul(d1, p0))),
+                matmul(p3, matmul(p2, matmul(p1, d0)))),
+        )
+        self.assertEqual(
+            linearized_holonomy(self.baseline, self.transport, self.cycle),
+            expected,
+        )
+
+    def test_cyclic_basepoints_are_baseline_conjugate(self):
+        first = linearized_holonomy(self.baseline, self.transport, self.cycle)
+        p = dict(self.baseline.transports)
+        for steps in (1, 2, 3):
+            changed = rotate_cycle(self.cycle, steps)
+            bridge = path_transport(p, self.cycle, steps)
+            self.assertEqual(
+                linearized_holonomy(self.baseline, self.transport, changed),
+                matmul(bridge, matmul(first, transpose(bridge))),
+            )
+
+    def test_reversal_is_negative_at_flat_baseline(self):
+        forward = linearized_holonomy(self.baseline, self.transport, self.cycle)
+        reverse = linearized_holonomy(
+            self.baseline, self.transport, reverse_cycle(self.cycle)
+        )
+        self.assertEqual(reverse, scale(-1, forward))
+
+    def test_local_d4_gauge_conjugates_based_curvature(self):
+        presentation = deterministic_mixed_presentation(self.complex)
+        changed = construct_transport(
+            self.complex, self.baseline, impulse_field(5, 0),
+            presentation=presentation,
+        )
+        gauge = dict(presentation.gauges)[self.cycle[0]]
+        expected = matmul(
+            gauge,
+            matmul(
+                linearized_holonomy(self.baseline, self.transport, self.cycle),
+                transpose(gauge),
+            ),
+        )
+        self.assertEqual(
+            linearized_holonomy(presented_baseline(self.baseline, presentation),
+                                changed, self.cycle),
+            expected,
+        )
+
+    def test_tangent_and_cotangent_paths_preserve_pairing(self):
+        tangent = linearized_holonomy(self.baseline, self.transport, self.cycle)
+        cotangent = cotangent_holonomy(
+            self.baseline, self.transport, self.cycle
+        )
+        for vector in ((Fraction(1), Fraction(0)), (Fraction(2), Fraction(-3))):
+            for covector in ((Fraction(0), Fraction(1)), (Fraction(5), Fraction(7))):
+                self.assertEqual(pair(matvec(tangent, vector), covector),
+                                 pair(vector, matvec(cotangent, covector)))
+
+    def test_curvature_invariant_is_exact_and_presentation_independent(self):
+        value = ((Fraction(0), Fraction(-1, 4)),
+                 (Fraction(1, 4), Fraction(0)))
+        self.assertEqual(curvature_invariant(value), Fraction(1, 16))
+        for action in self.complex.d4_actions:
+            changed = matmul(action, matmul(value, transpose(action)))
+            self.assertEqual(curvature_invariant(changed), Fraction(1, 16))
 ~~~
 
 The first test must build the four terms directly in the test from literal baseline/delta dictionaries. It must not call a helper from holonomy.py to compute the expected value.
@@ -508,18 +639,67 @@ git commit -m "feat(uqcf): certify typed linearized holonomy"
 
 **Interfaces:**
 - Consumes: source-blind fixtures, construct_transport, linearized_holonomy, and curvature_invariant.
-- Produces: constant_control(L, value), impulse_control(L, root, amplitude, presentation=None), superposition_control(...), run_control_family() -> ControlFamily.
+- Produces: constant_control(L: int, value: Fraction) -> ControlResult, impulse_control(L: int, root: int, amplitude: Fraction, presentation: FramePresentation | None = None) -> ControlResult, superposition_control(L: int, left: tuple[Fraction, ...], right: tuple[Fraction, ...], a: Fraction, b: Fraction) -> bool, and run_control_family() -> ControlFamily.
 
 - [ ] **Step 1: Write seven failing control tests**
 
 ~~~python
-def test_constant_fields_are_flat_at_l5_and_l7(): ...
-def test_l5_impulse_has_frozen_nonflat_multiset(): ...
-def test_l7_holdout_has_frozen_nonflat_multiset(): ...
-def test_every_l5_marked_vertex_has_the_same_multiset(): ...
-def test_exact_scale_law_at_one_and_seven_thirds(): ...
-def test_transport_and_curvature_are_linear_under_superposition(): ...
-def test_relabel_gauge_basepoint_orientation_and_dual_controls_all_pass(): ...
+class ControlTests(unittest.TestCase):
+    def test_constant_fields_are_flat_at_l5_and_l7(self):
+        for L in (5, 7):
+            for value in (Fraction(0), Fraction(7, 3)):
+                result = constant_control(L, value)
+                self.assertEqual(result.invariant_counts,
+                                 ((Fraction(0), L * L),))
+                self.assertTrue(all(matrix == ZERO for matrix in result.curvatures))
+
+    def test_l5_impulse_has_frozen_nonflat_multiset(self):
+        result = impulse_control(5, root=0, amplitude=Fraction(1))
+        self.assertEqual(dict(result.invariant_counts), {
+            Fraction(1, 16): 4, Fraction(1, 64): 8, Fraction(0): 13,
+        })
+        self.assertEqual(sum(matrix != ZERO for matrix in result.curvatures), 12)
+
+    def test_l7_holdout_has_frozen_nonflat_multiset(self):
+        result = impulse_control(7, root=0, amplitude=Fraction(1))
+        self.assertEqual(dict(result.invariant_counts), {
+            Fraction(1, 16): 4, Fraction(1, 64): 8, Fraction(0): 37,
+        })
+        self.assertEqual(sum(matrix != ZERO for matrix in result.curvatures), 12)
+
+    def test_every_l5_marked_vertex_has_the_same_multiset(self):
+        expected = impulse_control(5, 0, Fraction(1)).invariant_counts
+        self.assertEqual(
+            {impulse_control(5, root, Fraction(1)).invariant_counts
+             for root in range(25)},
+            {expected},
+        )
+
+    def test_exact_scale_law_at_one_and_seven_thirds(self):
+        unit = impulse_control(5, 0, Fraction(1))
+        scaled = impulse_control(5, 0, Fraction(7, 3))
+        self.assertEqual(
+            scaled.curvatures,
+            tuple(scale(Fraction(7, 3), value) for value in unit.curvatures),
+        )
+        self.assertEqual(
+            dict(scaled.invariant_counts),
+            {key * Fraction(49, 9): count
+             for key, count in unit.invariant_counts},
+        )
+
+    def test_transport_and_curvature_are_linear_under_superposition(self):
+        left = impulse_field(5, 0)
+        right = impulse_field(5, 7)
+        self.assertTrue(superposition_control(
+            5, left, right, Fraction(2, 3), Fraction(-5, 7)
+        ))
+
+    def test_relabel_gauge_basepoint_orientation_and_dual_controls_all_pass(self):
+        family = run_control_family()
+        self.assertTrue(family.covariance_exact)
+        self.assertTrue(family.every_root_equivalent)
+        self.assertEqual(len(family.results), 29)
 ~~~
 
 Use exact expected Counters:
@@ -601,18 +781,68 @@ git commit -m "test(uqcf): add exact nonflat transport canary"
 
 **Interfaces:**
 - Consumes: verify_evidence, manifest validation, selection audits, transport identities, and ControlFamily.
-- Produces: audit() -> dict, _audit(selection_auditor=..., control_runner=...), write_result(path), and CLI flags --out and --check.
+- Produces: audit() -> dict, _audit(evidence_verifier: Callable = verify_evidence, selection_auditor: Callable = audit_selection, control_runner: Callable = run_control_family) -> dict, write_result(path: Path) -> None, and CLI flags --out and --check.
 
 - [ ] **Step 1: Write seven failing gate tests**
 
 ~~~python
-def test_all_exact_gates_produce_protocol_certified(): ...
-def test_type_or_covariance_failure_returns_protocol_invalid(): ...
-def test_nonunique_selection_returns_protocol_not_identifiable(): ...
-def test_failed_nonflat_canary_stops_before_later_stages(): ...
-def test_import_and_name_firewall_excludes_response_source_and_physics(): ...
-def test_evidence_failure_stops_before_protocol_construction(): ...
-def test_committed_ledger_is_exact_float_free_and_byte_stable(): ...
+class GateTests(unittest.TestCase):
+    def test_all_exact_gates_produce_protocol_certified(self):
+        result = audit()
+        self.assertEqual(result["status"], "TRANSPORT_PROTOCOL_CERTIFIED")
+        self.assertEqual(
+            result["next_required_object"],
+            "APPLY_CERTIFIED_TRANSPORT_TO_RESPONSE_GEOMETRY_WITHOUT_SOURCE_ADJUDICATION",
+        )
+
+    def test_type_or_covariance_failure_returns_protocol_invalid(self):
+        failed = replace(run_control_family(), covariance_exact=False)
+        result = _audit(control_runner=lambda: failed)
+        self.assertEqual(result["status"], "PROTOCOL_INVALID")
+        self.assertEqual(result["next_required_object"],
+                         "REPAIR_PROTOCOL_BEFORE_ANY_APPLICATION")
+
+    def test_nonunique_selection_returns_protocol_not_identifiable(self):
+        ambiguous = replace(audit_selection(), identifiable=False)
+        result = _audit(
+            selection_auditor=lambda: ambiguous,
+            control_runner=lambda: self.fail("controls ran after ambiguity"),
+        )
+        self.assertEqual(result["status"], "PROTOCOL_NOT_IDENTIFIABLE")
+
+    def test_failed_nonflat_canary_stops_before_later_stages(self):
+        failed = replace(run_control_family(), l5_nonflat=False)
+        result = _audit(control_runner=lambda: failed)
+        self.assertFalse(result["response_geometry_applied"])
+        self.assertFalse(result["source_target_constructed"])
+        self.assertFalse(result["source_correspondence_evaluated"])
+
+    def test_import_and_name_firewall_excludes_response_source_and_physics(self):
+        forbidden = {
+            "response_inputs", "response_generation", "source_target",
+            "coordinates", "spectrum", "numpy", "newton", "einstein",
+            "observational", "fit", "svd", "eig", "pinv",
+        }
+        observed = production_imports_and_names(PRODUCTION_FILES)
+        self.assertTrue(observed.isdisjoint(forbidden), observed)
+
+    def test_evidence_failure_stops_before_protocol_construction(self):
+        def bad_evidence():
+            raise ValueError("evidence mismatch")
+        with self.assertRaisesRegex(ValueError, "evidence mismatch"):
+            _audit(
+                evidence_verifier=bad_evidence,
+                selection_auditor=lambda: self.fail("selection ran"),
+                control_runner=lambda: self.fail("controls ran"),
+            )
+
+    def test_committed_ledger_is_exact_float_free_and_byte_stable(self):
+        expected = json.loads(Path("docs/RESULTS.json").read_text())
+        actual = audit()
+        self.assertEqual(actual, expected)
+        self.assertFalse(contains_float(actual))
+        rendered = render_result(actual)
+        self.assertEqual(rendered, Path("docs/RESULTS.json").read_text())
 ~~~
 
 For fail-fast tests, inject callables that raise AssertionError if a later stage is reached. Recursively reject float values. Parse evidence.py, protocol_types.py, selection.py, transport.py, holonomy.py, controls.py, and protocol_gate.py with ast and reject imports/names containing response_inputs, response_generation, source_target, coordinates, spectrum, numpy, newton, einstein, observational, fit, svd, eig, or pinv.
