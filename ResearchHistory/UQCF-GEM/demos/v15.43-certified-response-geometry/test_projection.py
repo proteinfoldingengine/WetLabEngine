@@ -83,6 +83,13 @@ class ProjectionCodecTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "duplicate_labels"):
             encode_projection(replace(value, payloads=(bad_payload,) + value.payloads[1:]))
 
+    def test_encode_rejects_list_backed_projection_payloads(self):
+        from dataclasses import replace
+        from projection import decode_projection, encode_projection
+        value = decode_projection(valid_projection_bytes())
+        with self.assertRaisesRegex(ValueError, "tuple_backing"):
+            encode_projection(replace(value, payloads=list(value.payloads)))
+
     def test_duplicate_json_key_rejected(self):
         from projection import decode_projection
         raw = valid_projection_bytes().replace(b'"schema": ', b'"schema": "wrong",\n  "schema": ', 1)

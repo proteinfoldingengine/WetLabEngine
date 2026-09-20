@@ -152,12 +152,25 @@ def _parse_payload(raw):
 
 
 def _validate_projection(value: Projection) -> None:
+    if (type(value.dependencies) is not tuple or type(value.payloads) is not tuple or
+            type(value.payload_hashes) is not tuple or
+            any(type(item) is not tuple for item in value.dependencies)):
+        raise ValueError("tuple_backing")
+    for payload in value.payloads:
+        if (type(payload) is not Payload or type(payload.labels) is not tuple or
+                type(payload.work) is not tuple or type(payload.neighbors) is not tuple or
+                type(payload.fields) is not tuple or
+                any(type(row) is not tuple for row in payload.work) or
+                any(type(edge) is not tuple for edge in payload.neighbors) or
+                any(type(field) is not Field or type(field.values) is not tuple
+                    for field in payload.fields)):
+            raise ValueError("tuple_backing")
     if value.parent != PARENT:
         raise ValueError("parent")
     if value.dependencies != DEPENDENCIES:
         raise ValueError("dependency_list")
     for payload in value.payloads:
-        if type(payload) is not Payload or _parse_payload(_payload_wire(payload)) != payload:
+        if _parse_payload(_payload_wire(payload)) != payload:
             raise ValueError("invalid_payload")
     cases = tuple((payload.L, payload.scale) for payload in value.payloads)
     expected = ((5, Fraction(1)), (5, Fraction(7, 3)), (7, Fraction(1)), (7, Fraction(7, 3)))
