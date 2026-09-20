@@ -56,6 +56,24 @@ class ConnectionCurvatureGateTests(unittest.TestCase):
             diagnostics["label"], "NON_ADJUDICATING_PROTOCOL_DIAGNOSTIC"
         )
         self.assertTrue(diagnostics["all_tested_curvatures_zero"])
+        without_diagnostics = dict(self.result)
+        without_diagnostics.pop("non_adjudicating_protocol_diagnostics")
+        self.assertEqual(
+            classify_gate(
+                without_diagnostics["protocol_valid"],
+                without_diagnostics["connection_identifiable"],
+                without_diagnostics["curvature_source_map_identifiable"],
+                without_diagnostics["canonical_correspondence"],
+                without_diagnostics["control_all_sizes"],
+            ),
+            "PROTOCOL_INVALID",
+        )
+        self.assertEqual(
+            canonical_json(self.result).count(
+                "CONNECTION_IDENTIFIABLE_NO_CURVATURE_SOURCE_CORRESPONDENCE"
+            ),
+            1,
+        )
 
     def test_evidence_and_input_separation(self):
         self.assertTrue(self.result["evidence_verified"])
