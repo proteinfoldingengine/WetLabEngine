@@ -77,6 +77,10 @@ class ConnectionCurvatureGateTests(unittest.TestCase):
 
     def test_evidence_and_input_separation(self):
         self.assertTrue(self.result["evidence_verified"])
+        self.assertEqual(
+            self.result["evidence_pins"]["v15.41-transport-erratum"],
+            "d40d03d9d2498ce54839b15dad00c1505c1a586a",
+        )
         self.assertTrue(
             self.result["input_separation"]["operational_constructor_blind"]
         )
