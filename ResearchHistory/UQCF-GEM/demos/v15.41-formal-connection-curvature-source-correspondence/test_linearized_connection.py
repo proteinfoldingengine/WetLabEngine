@@ -4,6 +4,7 @@ from fractions import Fraction
 from pathlib import Path
 import unittest
 
+import linearized_connection as lc
 from linearized_connection import (
     CarrierKind,
     MatrixAction,
@@ -106,18 +107,25 @@ class LinearizedConnectionTests(unittest.TestCase):
             )
             self.assertEqual(result.reason, "literal_frozen_rank_inconsistency")
 
-    def test_transport_manifest_rejects_implicit_repair(self):
+    def test_transport_manifest_rejects_every_implicit_repair(self):
         manifest = TransportManifest.literal_frozen()
-        with self.assertRaises(ValueError):
-            replace(
-                manifest, edge_direction=TransportDirection.FORWARD
-            ).validate_literal_frozen()
-        with self.assertRaises(ValueError):
-            replace(
-                manifest, matrix_action=MatrixAction.TRANSPOSE
-            ).validate_literal_frozen()
-        with self.assertRaises(ValueError):
-            replace(manifest, variation_sign=-1).validate_literal_frozen()
+        substitutions = (
+            {"carrier": CarrierKind.COVECTOR},
+            {"edge_direction": TransportDirection.FORWARD},
+            {"matrix_action": MatrixAction.INVERSE},
+            {"matrix_action": MatrixAction.TRANSPOSE},
+            {"matrix_action": MatrixAction.INVERSE_TRANSPOSE},
+            {"dualized": True},
+            {"variation_sign": -1},
+            {"factor_domain": "T_x"},
+            {"factor_codomain": "T_y"},
+            {"basepoint_rule": "transport_to_x1"},
+            {"orientation_rule": "forward_cycle_only"},
+        )
+        for substitution in substitutions:
+            with self.subTest(substitution=substitution):
+                with self.assertRaises(ValueError):
+                    replace(manifest, **substitution).validate_literal_frozen()
 
     def test_local_closure_implies_zero_face_circulation(self):
         witness = local_circulation_rowspace_witness()
@@ -125,6 +133,24 @@ class LinearizedConnectionTests(unittest.TestCase):
             witness["closure_rank"],
             witness["augmented_with_circulation_rank"],
         )
+
+    def test_global_closure_rows_imply_every_face_circulation(self):
+        self.assertTrue(
+            hasattr(lc, "global_circulation_rowspace_witness"),
+            "global witness must be assembled from the operational complex",
+        )
+        for L, expected_rank in ((5, 50), (6, 71), (8, 127)):
+            complex_ = construct_operational_complex(*periodic_square_input(L)).complex
+            witness = lc.global_circulation_rowspace_witness(complex_)
+            self.assertEqual(witness["closure_rank"], expected_rank)
+            self.assertEqual(
+                witness["augmented_with_face_circulations_rank"],
+                expected_rank,
+            )
+            self.assertEqual(
+                witness["face_circulation_count"],
+                len(complex_.cycles),
+            )
 
     def test_executed_diagnostic_is_flat_for_arbitrary_exact_fields(self):
         fields = (
