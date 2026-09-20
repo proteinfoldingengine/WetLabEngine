@@ -23,6 +23,9 @@ from evidence import git_blob, verify_origins
 from presentation_checks import check_presentations
 from projection import FAMILY_KEYS, decode_projection
 
+MODE_STAGE = {"carriers": "carriers", "controls": "actual_carrier_controls",
+              "cases": "response_cases"}
+
 
 def _wire(value):
     if isinstance(value, Fraction):
@@ -91,11 +94,11 @@ def _evaluate_mode(projection, mode):
                               **dict(carrier.receipt)} for carrier in carriers)
     if mode == "carriers":
         return {"carrier_receipts": carrier_receipts}
-    try:
-        carrier_controls = tuple(check_carrier_controls(carrier) for carrier in carriers)
-    except Exception as error:
-        raise ProgressError("actual_carrier_controls", None, 0, 0, error) from error
     if mode == "controls":
+        try:
+            carrier_controls = tuple(check_carrier_controls(carrier) for carrier in carriers)
+        except Exception as error:
+            raise ProgressError("actual_carrier_controls", None, 0, 0, error) from error
         return {"control_receipts": carrier_controls}
     cases = []
     completed_faces = 0
@@ -167,7 +170,7 @@ def main(argv=None):
     except Exception as error:
         traceback.print_exc(file=sys.stderr)
         message = str(error).splitlines()
-        failure = {"stage": error.stage if isinstance(error, ProgressError) else args.mode,
+        failure = {"stage": error.stage if isinstance(error, ProgressError) else MODE_STAGE[args.mode],
                    "case": _wire(error.case) if isinstance(error, ProgressError) else None,
                    "completed_cases": error.completed_cases if isinstance(error, ProgressError) else 0,
                    "completed_faces": error.completed_faces if isinstance(error, ProgressError) else 0,

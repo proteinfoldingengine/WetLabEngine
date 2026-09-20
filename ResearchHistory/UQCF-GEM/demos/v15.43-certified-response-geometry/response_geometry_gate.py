@@ -28,6 +28,8 @@ STAGES = ("evidence", "parent_replay", "acquisition_projection", "carriers",
 VALID_STATUSES = frozenset(("CANONICAL_RESPONSE_CURVATURE_NULL",
                             "CANONICAL_RESPONSE_CURVATURE_NONZERO",
                             "CANONICAL_RESPONSE_CURVATURE_MIXED"))
+MODE_STAGE = {"carriers": "carriers", "controls": "actual_carrier_controls",
+              "cases": "response_cases"}
 
 
 class StageFailure(RuntimeError):
@@ -115,6 +117,18 @@ def _fraction(value, name):
     return parsed
 
 
+def _expected_cycles(L):
+    def canonical(vertices):
+        vertices = tuple(vertices)
+        reversed_vertices = tuple(reversed(vertices))
+        return min(tuple(vertices[i:] + vertices[:i] for i in range(4)) +
+                   tuple(reversed_vertices[i:] + reversed_vertices[:i] for i in range(4)))
+    return tuple(sorted(canonical((x + L * y, (x + 1) % L + L * y,
+                                    (x + 1) % L + L * ((y + 1) % L),
+                                    x + L * ((y + 1) % L)))
+                        for y in range(L) for x in range(L)))
+
+
 def _validate_case(case):
     expected = {"key", "L", "family", "scale", "response_index", "carrier_family",
                 "face_count", "zero_count", "nonzero_count", "histogram",
@@ -136,10 +150,7 @@ def _validate_case(case):
         raise ValueError("face_coverage")
     observed_cycles, invariants, nonzero = set(), [], 0
     L = key[0]
-    expected_faces = {frozenset((x + L * y, (x + 1) % L + L * y,
-                                   (x + 1) % L + L * ((y + 1) % L),
-                                   x + L * ((y + 1) % L)))
-                      for y in range(L) for x in range(L)}
+    expected_faces = _expected_cycles(L)
     zero_matrix = ((Fraction(0), Fraction(0)), (Fraction(0), Fraction(0)))
     for face in faces:
         if type(face) is not dict or set(face) != {"cycle", "matrix", "invariant", "nonzero"}:
@@ -166,7 +177,7 @@ def _validate_case(case):
             raise ValueError("face_value")
         invariants.append(invariant)
         nonzero += int(face["nonzero"])
-    if {frozenset(cycle) for cycle in observed_cycles} != expected_faces:
+    if tuple(tuple(face["cycle"]) for face in faces) != expected_faces:
         raise ValueError("face_coverage")
     if nonzero != counts[2]:
         raise ValueError("nonzero_count")
@@ -181,8 +192,25 @@ def _validate_case(case):
         raise ValueError("summary_mismatch")
     receipt = case["presentation_receipt"]
     _exact_tree(receipt)
+    receipt_keys = {"L", "scale", "faces", "oriented_faces", "gauge_presentations", "gauge_keys",
+                    "gradient_checks", "edge_checks", "gauge_face_checks", "relabelings",
+                    "relabel_cycle_rotations", "relabel_cycle_reversals", "transformation_names",
+                    "all_exact", "oriented_face_scope", "executed_oriented_face_checks",
+                    "executed_oriented_face_scope"}
+    gauge_count = 8 * counts[0] + 1
     if (type(receipt) is not dict or receipt.get("all_exact") is not True or
+            set(receipt) != receipt_keys or receipt.get("L") != key[0] or receipt.get("scale") != str(key[2]) or
             receipt.get("faces") != counts[0] or receipt.get("oriented_faces") != 8 * counts[0] or
+            receipt.get("gauge_presentations") != gauge_count or
+            type(receipt.get("gauge_keys")) is not list or len(receipt["gauge_keys"]) != gauge_count or
+            receipt.get("gradient_checks") != gauge_count * counts[0] or
+            receipt.get("edge_checks") != gauge_count * 4 * counts[0] or
+            receipt.get("gauge_face_checks") != gauge_count * counts[0] or
+            receipt.get("relabelings") != 2 or
+            type(receipt.get("relabel_cycle_rotations")) is not int or receipt["relabel_cycle_rotations"] < 0 or
+            type(receipt.get("relabel_cycle_reversals")) is not int or receipt["relabel_cycle_reversals"] < 0 or
+            receipt.get("transformation_names") != ["four_basepoints", "both_orientations", "duality",
+                "independent_four_terms", "single_site_D4", "fixed_mixed_D4", "label_component_permutation"] or
             receipt.get("executed_oriented_face_checks") != 16 * counts[0] or
             receipt.get("oriented_face_scope") != "distinct_four_basepoints_times_two_orientations" or
             receipt.get("executed_oriented_face_scope") != "identity_plus_fixed_mixed_presentations"):
@@ -208,6 +236,67 @@ def _exact_tree(value):
             _exact_tree(item)
         return
     raise ValueError("nonexact_child_value")
+
+
+def _validate_origins(receipt, process):
+    acquisition = {"pretime_gravity_canary.py", "exact_linear.py", "representation_actions.py",
+                   "response_generation.py", "response_geometry.py", "acquire.py", "evidence.py",
+                   "projection.py"}
+    evaluator = {"exact_algebra", "operational_complex", "protocol_types", "transport", "holonomy",
+                 "evaluate.py", "evidence.py", "projection.py", "carriers.py", "application.py",
+                 "presentation_checks.py", "application_controls.py"}
+    expected = acquisition if process == "acquisition" else evaluator
+    if type(receipt) is not dict or set(receipt) != expected:
+        raise ValueError(f"{process}_origin_coverage")
+    for item in receipt.values():
+        if (type(item) is not dict or set(item) != {"blob"} or type(item["blob"]) is not str or
+                len(item["blob"]) != 40 or any(char not in "0123456789abcdef" for char in item["blob"])):
+            raise ValueError(f"{process}_origin_receipt")
+
+
+def _validate_carrier_control(receipt, L, scale):
+    keys = {"L", "scale", "constants", "constant_keys", "impulses", "impulse_keys",
+            "impulse_histogram", "basis_core_comparisons", "identity_core_comparisons",
+            "algebraically_certified_gauge_comparisons", "local_linear_certificate",
+            "edge_checks", "face_checks", "all_exact"}
+    if type(receipt) is not dict or set(receipt) != keys:
+        raise ValueError("control_receipt_schema")
+    _exact_tree(receipt)
+    n = L * L
+    if (receipt["L"] != L or receipt["scale"] != scale or receipt["constants"] != 2 or
+            receipt["constant_keys"] != ["0", "7/3"] or receipt["impulses"] != n or
+            receipt["impulse_keys"] != list(range(n)) or receipt["identity_core_comparisons"] != n + 2 or
+            receipt["all_exact"] is not True):
+        raise ValueError("control_receipt_coverage")
+    histogram = [["0", n - 12], ["1/64", 8], ["1/16", 4]]
+    if receipt["impulse_histogram"] != histogram:
+        raise ValueError("control_histogram")
+    certificate = receipt["local_linear_certificate"]
+    cert_keys = {"edge_types", "endpoint_frame_pairs", "linear_basis_dimension",
+                 "local_basis_comparisons", "gradient_basis_comparisons", "all_exact"}
+    if (type(certificate) is not dict or set(certificate) != cert_keys or
+            certificate["endpoint_frame_pairs"] != 64 or certificate["linear_basis_dimension"] != 5 or
+            certificate["all_exact"] is not True):
+        raise ValueError("control_certificate")
+    for name in ("basis_core_comparisons", "algebraically_certified_gauge_comparisons",
+                 "edge_checks", "face_checks"):
+        if type(receipt[name]) is not int or receipt[name] <= 0:
+            raise ValueError("control_count")
+
+
+def _validate_response_control(receipt, L):
+    keys = {"L", "scale_pairs", "scale_keys", "shift_cases", "shift_keys", "superpositions",
+            "superposition_keys", "transformation_names", "all_exact"}
+    if type(receipt) is not dict or set(receipt) != keys:
+        raise ValueError("response_control_schema")
+    _exact_tree(receipt)
+    n = L * L
+    if (receipt["L"] != L or receipt["scale_pairs"] != 5 * n or len(receipt["scale_keys"]) != 5 * n or
+            receipt["shift_cases"] != 10 * n or len(receipt["shift_keys"]) != 10 * n or
+            receipt["superpositions"] != 10 or len(receipt["superposition_keys"]) != 10 or
+            receipt["transformation_names"] != ["scale_7/3", "shift_7/3", "superposition_2/3_-5/7"] or
+            receipt["all_exact"] is not True):
+        raise ValueError("response_control_coverage")
 
 
 def classify(cases, coverage_complete):
@@ -275,6 +364,7 @@ def _audit(executors):
                 draft["carrier_receipts"] = values["carriers"]
                 draft["control_receipts"] = list(values["actual_carrier_controls"]) + list(payload.get("response_control_receipts", ()))
                 draft["completed_counts"] = {"cases": len(cases), "faces": sum(case["face_count"] for case in cases)}
+                result["completed_counts"] = dict(draft["completed_counts"])
                 families = {}
                 for family in FAMILY_KEYS:
                     selected = [case for case in cases if case["family"] == family]
@@ -303,6 +393,8 @@ def _audit(executors):
             if isinstance(error, StageFailure):
                 result["failure"].update(category=error.category, case=error.case)
                 result["completed_counts"] = {"cases": error.cases, "faces": error.faces}
+                if failed_stage in result["gate_receipts"]:
+                    result["gate_receipts"][failed_stage] = {"passed": False}
             result["gate_receipts"][stage] = {"passed": False}
             return result
     return result
@@ -353,8 +445,7 @@ def _acquire():
     raw = path.read_bytes()
     projection = decode_projection(raw)
     origins = _unique_json(receipt_path.read_text())
-    if type(origins) is not dict or not origins:
-        raise ValueError("acquisition_origin_receipt")
+    _validate_origins(origins, "acquisition")
     docs = HERE / "docs"
     docs.mkdir(exist_ok=True)
     published = docs / "INPUTS.json"
@@ -367,6 +458,9 @@ def _acquire():
 
 def _carriers(acquired):
     value = _run_evaluator(acquired, "carriers")
+    if set(value) != {"carrier_receipts", "origin_receipts"}:
+        raise ValueError("carrier_output_schema")
+    _validate_origins(value["origin_receipts"], "evaluator")
     receipts = value.get("carrier_receipts")
     if type(receipts) is not list or len(receipts) != 4:
         raise ValueError("carrier_receipt_coverage")
@@ -387,11 +481,15 @@ def _controls(acquired, carriers):
     if len(carriers) != 4:
         raise ValueError("carrier_coverage")
     value = _run_evaluator(acquired, "controls")
+    if set(value) != {"control_receipts", "origin_receipts"}:
+        raise ValueError("control_output_schema")
+    _validate_origins(value["origin_receipts"], "evaluator")
     receipts = value.get("control_receipts")
     if (type(receipts) is not list or len(receipts) != 4 or
             any(type(item) is not dict or item.get("all_exact") is not True for item in receipts)):
         raise ValueError("control_receipt_coverage")
-    _exact_tree(receipts)
+    for receipt, (L, scale) in zip(receipts, ((5, "1"), (5, "7/3"), (7, "1"), (7, "7/3"))):
+        _validate_carrier_control(receipt, L, scale)
     return tuple(receipts)
 
 
@@ -415,15 +513,38 @@ def _run_evaluator(acquired, mode):
     if completed.stderr:
         sys.stderr.buffer.write(completed.stderr)
     if not output.exists():
-        raise StageFailure(mode, "ChildProcessError", f"evaluator exit {completed.returncode}")
+        raise StageFailure(MODE_STAGE[mode], "ChildProcessError", f"evaluator exit {completed.returncode}")
     value = _unique_json(output.read_text())
     if completed.returncode:
         failure = value.get("failure") if type(value) is dict else None
-        if type(failure) is not dict:
-            raise StageFailure(mode, "ChildProcessError", f"evaluator exit {completed.returncode}")
-        raise StageFailure(failure.get("stage", mode), failure.get("error_category", "ChildProcessError"),
-                           failure.get("message", "evaluator failed"), failure.get("case"),
-                           failure.get("completed_cases", 0), failure.get("completed_faces", 0))
+        failure_keys = {"stage", "case", "completed_cases", "completed_faces", "error_category", "message"}
+        if type(value) is not dict or set(value) != {"failure"} or type(failure) is not dict or set(failure) != failure_keys:
+            raise StageFailure(MODE_STAGE[mode], "ChildProcessError", f"evaluator exit {completed.returncode}")
+        stage = failure.get("stage")
+        allowed_stages = {"carriers"} if mode == "carriers" else (
+            {"carriers", "actual_carrier_controls"} if mode == "controls" else
+            {"carriers", "response_cases"})
+        category, message = failure.get("error_category"), failure.get("message")
+        cases, faces, case = failure.get("completed_cases"), failure.get("completed_faces"), failure.get("case")
+        if (stage not in allowed_stages or type(category) is not str or not category or
+                type(message) is not str or type(cases) is not int or isinstance(cases, bool) or cases < 0 or
+                type(faces) is not int or isinstance(faces, bool) or faces < 0):
+            raise StageFailure(MODE_STAGE[mode], "MalformedChildFailure", "invalid evaluator failure receipt")
+        expected_faces = sum(key[0] * key[0] for key in tuple(
+            (L, family, scale, index) for L in (5, 7) for scale in (Fraction(1), Fraction(7, 3))
+            for family in FAMILY_KEYS for index in range(L * L))[:cases])
+        case_valid = case is None
+        if type(case) is list and len(case) == 4:
+            try:
+                scale_valid = type(case[2]) is str and str(Fraction(case[2])) == case[2]
+            except (ValueError, ZeroDivisionError):
+                scale_valid = False
+            case_valid = (type(case[0]) is int and case[0] in (5, 7) and
+                          case[1] in FAMILY_KEYS and scale_valid and type(case[3]) is int and
+                          0 <= case[3] < case[0] ** 2)
+        if cases > 740 or faces != expected_faces or not case_valid or (stage != "response_cases" and case is not None):
+            raise StageFailure(MODE_STAGE[mode], "MalformedChildFailure", "invalid evaluator progress")
+        raise StageFailure(stage, category, message, case, cases, faces)
     if type(value) is not dict or "origin_receipts" not in value or type(value["origin_receipts"]) is not dict:
         raise ValueError("malformed_evaluator_output")
     return value
@@ -433,12 +554,14 @@ def _cases(acquired, carriers, controls):
     value = _run_evaluator(acquired, "cases")
     if set(value) != {"cases", "response_control_receipts", "origin_receipts"}:
         raise ValueError("malformed_evaluator_output")
+    _validate_origins(value["origin_receipts"], "evaluator")
     _validate_cases(value["cases"])
     receipts = value["response_control_receipts"]
     if (type(receipts) is not list or len(receipts) != 2 or
             any(type(item) is not dict or item.get("all_exact") is not True for item in receipts)):
         raise ValueError("response_control_receipts")
-    _exact_tree(value)
+    for receipt, L in zip(receipts, (5, 7)):
+        _validate_response_control(receipt, L)
     return value
 
 

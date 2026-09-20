@@ -79,8 +79,8 @@ def _verify_loaded_closure(receipt):
             pins[module.__name__] = expected[path]
     if {Path(module.__file__).resolve() for module in loaded} != set(expected):
         raise ValueError("incomplete acquisition module closure")
-    inherited = verify_origins(tuple(loaded), pins, "acquisition")
-    return {**{name: {"blob": item["blob"]} for name, item in inherited.items()},
+    verify_origins(tuple(loaded), pins, "acquisition")
+    return {**{path.name: {"blob": blob} for path, blob in expected.items()},
             **{path.name: {"blob": git_blob(path.read_bytes())} for path in sorted(local)}}
 
 

@@ -19,6 +19,13 @@ STAGES = ("evidence", "parent_replay", "acquisition_projection", "carriers",
           "actual_carrier_controls", "response_cases", "ledger")
 
 
+def evaluator_origins():
+    names = {"exact_algebra", "operational_complex", "protocol_types", "transport", "holonomy",
+             "evaluate.py", "evidence.py", "projection.py", "carriers.py", "application.py",
+             "presentation_checks.py", "application_controls.py"}
+    return {name: {"blob": "a" * 40} for name in names}
+
+
 def complete_cases(nonflat):
     records = []
     for L in (5, 7):
@@ -26,11 +33,16 @@ def complete_cases(nonflat):
             for family in FAMILY_KEYS:
                 for index in range(L * L):
                     flag = nonflat(L, scale, family, index)
-                    cycles = [[x + L * y, (x + 1) % L + L * y,
-                               (x + 1) % L + L * ((y + 1) % L),
-                               x + L * ((y + 1) % L)]
-                              for y in range(L) for x in range(L)]
-                    faces = [{"cycle": cycle,
+                    def canonical(vertices):
+                        vertices = tuple(vertices)
+                        reverse = tuple(reversed(vertices))
+                        return min(tuple(vertices[i:] + vertices[:i] for i in range(4)) +
+                                   tuple(reverse[i:] + reverse[:i] for i in range(4)))
+                    cycles = sorted(canonical((x + L * y, (x + 1) % L + L * y,
+                                               (x + 1) % L + L * ((y + 1) % L),
+                                               x + L * ((y + 1) % L)))
+                                    for y in range(L) for x in range(L))
+                    faces = [{"cycle": list(cycle),
                               "matrix": [["0", "1"], ["-1", "0"]] if flag and face == 0 else [["0", "0"], ["0", "0"]],
                               "invariant": "1" if flag and face == 0 else "0",
                               "nonzero": bool(flag and face == 0)} for face, cycle in enumerate(cycles)]
@@ -45,8 +57,18 @@ def complete_cases(nonflat):
                                     "invariant_sum": "1" if flag else "0", "faces": faces,
                                     "carrier_family": "GLOBAL_BALANCE_COMPLETION",
                                     "presentation_receipt": {
-                                        "all_exact": True, "faces": L * L,
+                                        "all_exact": True, "L": L, "scale": scale, "faces": L * L,
                                         "oriented_faces": 8 * L * L,
+                                        "gauge_presentations": 8 * L * L + 1,
+                                        "gauge_keys": [["gauge", j] for j in range(8 * L * L + 1)],
+                                        "gradient_checks": (8 * L * L + 1) * L * L,
+                                        "edge_checks": (8 * L * L + 1) * 4 * L * L,
+                                        "gauge_face_checks": (8 * L * L + 1) * L * L,
+                                        "relabelings": 2, "relabel_cycle_rotations": 0,
+                                        "relabel_cycle_reversals": 0,
+                                        "transformation_names": ["four_basepoints", "both_orientations", "duality",
+                                            "independent_four_terms", "single_site_D4", "fixed_mixed_D4",
+                                            "label_component_permutation"],
                                         "executed_oriented_face_checks": 16 * L * L,
                                         "oriented_face_scope": "distinct_four_basepoints_times_two_orientations",
                                         "executed_oriented_face_scope": "identity_plus_fixed_mixed_presentations"}})
@@ -131,6 +153,22 @@ class GateTests(unittest.TestCase):
                 self.assertEqual(result["status"], "RESPONSE_APPLICATION_INVALID")
                 self.assertEqual(result["first_failed_gate"], "response_cases")
 
+    def test_noncyclic_face_and_face_array_reorder_are_invalid(self):
+        for mutation in ("noncyclic", "reordered"):
+            cases = list(complete_cases(lambda *args: False))
+            changed = dict(cases[0])
+            faces = [dict(face) for face in changed["faces"]]
+            if mutation == "noncyclic":
+                cycle = list(faces[0]["cycle"])
+                cycle[1], cycle[2] = cycle[2], cycle[1]
+                faces[0] = {**faces[0], "cycle": cycle}
+            else:
+                faces[0], faces[1] = faces[1], faces[0]
+            changed["faces"] = faces
+            cases[0] = changed
+            with self.subTest(mutation=mutation):
+                self.assertEqual(classify(tuple(cases), True)[0], "RESPONSE_APPLICATION_INVALID")
+
     def test_malformed_evaluator_payload_is_invalid(self):
         result, _ = run_test_gate(response_cases=lambda *_: {"cases": "not-a-list"})
         self.assertEqual(result["first_failed_gate"], "response_cases")
@@ -162,7 +200,7 @@ class GateTests(unittest.TestCase):
                 output = Path(command[command.index("--out") + 1])
                 output.write_text(json.dumps({"failure": {
                     "stage": "response_cases", "case": [7, FAMILY_KEYS[0], "1", 3],
-                    "completed_cases": 371, "completed_faces": 9500,
+                    "completed_cases": 250, "completed_faces": 6250,
                     "error_category": "ArithmeticError", "message": "exact failure"}}))
                 return SimpleNamespace(returncode=1, stderr=b"traceback evidence\n")
             with patch("response_geometry_gate.subprocess.run", side_effect=failed), \
@@ -170,7 +208,24 @@ class GateTests(unittest.TestCase):
                 with self.assertRaises(gate.StageFailure) as caught:
                     gate._run_evaluator({"path": inputs}, "cases")
             self.assertEqual(caught.exception.stage, "response_cases")
-            self.assertEqual((caught.exception.cases, caught.exception.faces), (371, 9500))
+            self.assertEqual((caught.exception.cases, caught.exception.faces), (250, 6250))
+
+    def test_child_fallback_uses_public_stage_and_validates_progress(self):
+        import response_geometry_gate as gate
+        with tempfile.TemporaryDirectory() as temporary:
+            inputs = Path(temporary) / "INPUTS.json"
+            inputs.write_text("{}")
+            with patch("response_geometry_gate.subprocess.run",
+                       return_value=SimpleNamespace(returncode=1, stderr=b"")):
+                with self.assertRaises(gate.StageFailure) as caught:
+                    gate._run_evaluator({"path": inputs}, "controls")
+            self.assertEqual(caught.exception.stage, "actual_carrier_controls")
+
+    def test_ledger_failure_retains_completed_counts_but_no_partial_cases(self):
+        result, _ = run_test_gate(ledger=lambda _: (_ for _ in ()).throw(ValueError("ledger stop")))
+        self.assertEqual(result["first_failed_gate"], "ledger")
+        self.assertEqual(result["completed_counts"], {"cases": 740, "faces": 30260})
+        self.assertIsNone(result["cases"])
 
     def test_production_cases_adapter_rejects_malformed_nested_record(self):
         import response_geometry_gate as gate
@@ -178,9 +233,17 @@ class GateTests(unittest.TestCase):
         cases[0] = {**cases[0], "faces": []}
         with patch("response_geometry_gate._run_evaluator", return_value={
                 "cases": cases, "response_control_receipts": [{"all_exact": True}] * 2,
-                "origin_receipts": {"ok": {"blob": "a" * 40}}}):
+                "origin_receipts": evaluator_origins()}):
             with self.assertRaisesRegex(ValueError, "face_coverage"):
                 gate._cases({"path": Path("unused")}, (), ())
+
+    def test_production_adapter_rejects_incomplete_control_receipt(self):
+        import response_geometry_gate as gate
+        with patch("response_geometry_gate._run_evaluator", return_value={
+                "control_receipts": [{"all_exact": True}] * 4,
+                "origin_receipts": evaluator_origins()}):
+            with self.assertRaisesRegex(ValueError, "control_receipt_schema"):
+                gate._controls({"path": Path("unused")}, ({},) * 4)
 
     def test_public_audit_has_no_executor_override(self):
         import inspect
