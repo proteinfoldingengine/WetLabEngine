@@ -385,6 +385,13 @@ def superposition_stage():
                                                   Fraction(2,3),Fraction(-5,7)) for L in (5,7)))
 
 
+class ControlExecutionError(Exception):
+    """Preserve the first failed executor and its original exception cause."""
+    def __init__(self, stage, error):
+        self.stage = stage
+        super().__init__(f"{stage}: {type(error).__name__}: {error}")
+
+
 def run_control_family(executors: ControlExecutors | None = None) -> ControlFamily:
     executors = ControlExecutors.default() if executors is None else executors
     stages = ('covariance','constant_null','l5_nonflat','every_root_equivalent',
@@ -393,9 +400,12 @@ def run_control_family(executors: ControlExecutors | None = None) -> ControlFami
     results = []
     failed = None
     for name in stages:
-        stage = getattr(executors,name)()
-        if not isinstance(stage,ControlStage) or type(stage.passed) is not bool:
-            raise TypeError('executors must return ControlStage with a boolean verdict')
+        try:
+            stage = getattr(executors,name)()
+            if not isinstance(stage,ControlStage) or type(stage.passed) is not bool:
+                raise TypeError('executors must return ControlStage with a boolean verdict')
+        except Exception as error:
+            raise ControlExecutionError(name, error) from error
         values['covariance_exact' if name == 'covariance' else name] = stage.passed
         results.extend(stage.results)
         if not stage.passed:

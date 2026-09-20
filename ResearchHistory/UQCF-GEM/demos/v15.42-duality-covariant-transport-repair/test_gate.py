@@ -51,7 +51,13 @@ def render_result(value):
 class GateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.result = audit()
+        def guarded_controls():
+            def denied(*args, **kwargs):
+                raise AssertionError('scientific controls attempted external I/O')
+            with patch('builtins.open',side_effect=denied), patch('io.open',side_effect=denied), \
+                 patch('subprocess.run',side_effect=denied):
+                return run_control_family()
+        cls.result = _audit(control_runner=guarded_controls)
 
     def test_all_exact_gates_produce_protocol_certified(self):
         self.assertEqual(self.result['status'], 'TRANSPORT_PROTOCOL_CERTIFIED')
@@ -101,7 +107,8 @@ class GateTests(unittest.TestCase):
                         return ControlStage(stage != name)
                     return invoke
                 executors=ControlExecutors(**{s:callback(s) for s in stages})
-                result=_audit(control_runner=lambda:run_control_family(executors))
+                result=_audit(operational_verifier=lambda:self.result['operational'],
+                              control_runner=lambda:run_control_family(executors))
                 self.assertEqual(result['status'],'PROTOCOL_INVALID')
                 self.assertEqual(result['failed_gate'],name)
                 self.assertEqual(calls,list(stages[:index+1]))
@@ -118,6 +125,7 @@ class GateTests(unittest.TestCase):
         for source in ('import response_inputs', 'from numpy.linalg import norm',
                        'def f(source_target): return source_target',
                        'x = __import__("os")', 'import importlib',
+                       'from dataclasses import sys', 'x = f.__globals__',
                        'x = open("secret")', 'import unreviewed_module'):
             with self.subTest(source=source), tempfile.TemporaryDirectory() as tmp:
                 path=Path(tmp)/'transport.py'
