@@ -5,6 +5,7 @@ from dataclasses import replace
 from unittest.mock import patch
 from exact_algebra import scale
 from holonomy import ZERO
+import controls
 from controls import (constant_control, impulse_control, impulse_field,
                       superposition_control, run_control_family, ControlExecutors,
                       ControlStage)
@@ -69,6 +70,17 @@ class ControlTests(unittest.TestCase):
             self.assertEqual([getattr(result,name) for name in flags],
                              [True]*failed+[False]+[None]*(6-failed))
             self.assertFalse(result.all_required_pass)
+
+    def test_covariance_checks_detect_broken_product_dual_and_edge_pairing(self):
+        complex_, baseline = controls._carrier(5)
+        transport = controls.construct_transport(complex_,baseline,impulse_field(5,0))
+        for name in ('_expanded','cotangent_holonomy'):
+            with self.subTest(name=name), patch.object(controls,name,return_value=ZERO):
+                self.assertFalse(controls._curvatures_and_checks(complex_,baseline,transport)[1])
+        broken = replace(transport,cotangent_pullback_deltas=tuple((edge,ZERO) for edge,_ in transport.cotangent_pullback_deltas))
+        self.assertFalse(controls._pairing_exact(broken))
+        with patch.object(controls,'_gauge_matches',return_value=False):
+            self.assertFalse(controls.covariance_control().passed)
 
     def test_invalid_exact_inputs_are_rejected(self):
         for value in (False, 1.0):
