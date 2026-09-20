@@ -97,15 +97,40 @@ class ConnectionCurvatureGateTests(unittest.TestCase):
             imports <= {"dataclasses", "fractions", "itertools", "__future__"}
         )
 
-    def test_unique_contraction_and_independent_source_target(self):
-        self.assertIn(self.result["curvature_contraction_dimension"], (None, 1))
-        self.assertTrue(self.result["source_target_frozen_before_adjudication"])
+    def test_downstream_scientific_stages_are_not_evaluated(self):
+        self.assertIsNone(self.result["curvature_contraction_dimension"])
+        self.assertIsNone(
+            self.result["source_target_frozen_before_adjudication"]
+        )
+        self.assertIsNone(self.result["all_required_cells_evaluated"])
+        self.assertIsNone(self.result["size_audits"])
+        self.assertIsNone(self.result["cell_audits"])
 
-    def test_controls_relabeling_scale_superposition_and_holdout(self):
+    def test_frozen_metadata_survives_without_downstream_adjudication(self):
         self.assertEqual(self.result["projective_scales"], ["1", "7/3"])
-        self.assertTrue(self.result["all_relabeling_checks_complete"])
-        self.assertTrue(self.result["all_superposition_checks_complete"])
+        self.assertIsNone(self.result["all_relabeling_checks_complete"])
+        self.assertIsNone(self.result["all_superposition_checks_complete"])
         self.assertEqual(self.result["holdout_size"], 11)
+
+    def test_exact_protocol_witnesses_and_manifest(self):
+        self.assertEqual(
+            [
+                (
+                    row["L"],
+                    row["coefficient_rank"],
+                    row["augmented_rank"],
+                )
+                for row in self.result["protocol_audits"]
+            ],
+            [(5, 50, 51), (7, 98, 99)],
+        )
+        manifest = self.result["transport_manifest"]
+        self.assertEqual(manifest["carrier"], "tangent_vector")
+        self.assertEqual(manifest["edge_direction"], "reverse")
+        self.assertEqual(manifest["matrix_action"], "direct")
+        self.assertEqual(manifest["factor_domain"], "T_y")
+        self.assertEqual(manifest["factor_codomain"], "T_x")
+        self.assertEqual(manifest["variation_sign"], 1)
 
     def test_status_firewalls_and_claim_boundary(self):
         self.assertIn(self.result["status"], ALLOWED_GATE_STATUSES)
