@@ -1093,3 +1093,63 @@ Implementation is complete only when:
 - compilation succeeds;
 - exact-head CI and fresh review are recorded;
 - PR #53 remains draft, open, unmerged, and mergeable.
+
+---
+
+## Execution receipts (append-only; pre-CI state)
+
+Recorded after Tasks 1–6 and before the first v15.42 workflow run. Local and published commits below have identical trees; the published SHA is the GitHub identity. GitHub CI evidence and the final whole-branch review are pending and must be appended after they actually occur. This receipt changes the branch head, so its published commit requires the final exact-head workflow run.
+
+### Frozen evidence and result pins
+
+- Required base: `b9c5f29d8687a7dbc2af0595430aa73fbc5b8553` (verified ancestor by Task 1 and Task 6 evidence gates).
+- v15.41 design: `6d35aae0ccb6c2584d26d5a83d522b3cc7036728`.
+- v15.41 erratum: `d40d03d9d2498ce54839b15dad00c1505c1a586a`.
+- v15.41 corrected result ledger: `46cae26d91c709fdde4c5cc39cd3cf3908980e97`.
+- approved v15.42 design: `91f2c66bea982b3180a07c61ccc4bef76e9c031d`.
+- vendored exact algebra: `c67ea42b61321469f7735ce589f2e729b241666a`.
+- vendored operational complex: `8163beba8e52bc2a3a6d0c8cf59dd1257222f65c`.
+- canonical v15.42 result ledger: `f8f85ab8c8b4599e31bebf3d2fcb668e84ffb5df`.
+
+### Task boundary receipts
+
+| Task | Witnessed RED (local → published) | RED command/result | Implementation/fix (local → published) | Verified result |
+|---|---|---|---|---|
+| 1 | `3e85f47763e794100a3bfbc3472d597aa81a4da9` → `d9cd22d21389f2641e2cffb3cd59933b7b18f172` | `python -m unittest -v test_evidence.py`; exit 1, missing `evidence` | `0ff84fc046f22f02c6e23bb88ef54ebfe0fa363d` → `520a7167aa2de96f5546b437110052d114e81156` | new 4/4; inherited operational 5/5 |
+| 2 | `86ca614a91b92bf41c54bf1e5880dc3e91718ef6` → `a3b095c3395574d42f864278d35ec9d1bddffb0e` | `python -m unittest -v test_selection.py`; exit 1, missing `protocol_types` | `208d6699e3233755fe13e965b8383d80bbd5232d` → `1ece86edd19412490f1fab8cdddc3873205872ba` | focused 7/7; cumulative 11/11 |
+| 2 review fix | `968526d1bd998db159f958c303ba76f0dd9afc65` → `75b9b2e3d11158e74dbacf0d363e48999847ac08` | `python -m unittest -v test_selection.py`; exit 1, subclass acceptance test failed | `0896224bcb60c62809daa15bf102661faf13f4c2` → `a4929123b3286120e099d29b79ccd02c9bd8fa68` | focused 11/11 |
+| 3 | `699967587fef3905c7a37b0ef6e597e727b842b9` → `18ceb67eff67517343a7794764ea1c96dfeb84c4` | `python -m unittest -v test_transport.py`; exit 1, missing `transport` | `e12e904069a51d8357aa05c2b65ecb0a3e8b27b0` → `12b4adc30d2ed55079caace57f6e8b59edd28248` | focused 7/7; cumulative 22/22; three mutations detected |
+| 4 | `74e25ec9b4681c5f733199837f95c0c2e8d34a20` → `b3cab8eaa54dacf143c281c5202716eeb95122e6` | `python -m unittest -v test_holonomy.py`; exit 1, missing `holonomy` | `bd2d6a9c74c9989c9b506d544206f89349e01918` → `024245ec5830455e5e12816ad926e834e7ed30f7` | cumulative 28/28 |
+| 5 | `4ecfb58630af78420a2a3a351b300659eb30895e` → `9c138674c17ecf5a79ff96a53d277b899f903889` | `python -m unittest -v test_controls.py`; exit 1, missing `controls` | `09f533fda466ae2ed7767f809a2753a395fb3f02` → `e3ffed0bb5427871009f52d3012364247ec5c5cd` | focused 10/10; cumulative 38/38; all 74 roots and 29 retained records |
+| 6 | `5ee9e9526c7d58315a969434b806cd569183245d` → `0a67fa51a9dd12b5da3a4cb8546cccc1b0ac6333` | `python -m unittest -v test_gate.py`; exit 1, missing `protocol_gate` | `26e0a8a3b09f309b363b95ab45afdc61a15d1650` → `b19bee452b1a5d71c87ee80899dea9f8021bb5fb` | focused 10/10; complete suite 48/48; final firewall 2/2; v15.42 replay/cmp 0; compile 0 |
+
+Task-boundary GitHub Actions job identifiers do not exist because Tasks 1–6 were verified locally before publication. The authoritative CI job is the dedicated exact-head `certify` job introduced by Task 7; its URL, run ID, job ID, tested SHA, and conclusion remain pending rather than inferred from local evidence.
+
+### Inherited and deterministic verification already witnessed locally
+
+- v15.39: 8/8, exit 0, standalone `OK` (`64.14s`).
+- v15.40: 9/9, exit 0, standalone `OK` (`313.10s`) with NumPy required only for this inherited environment.
+- v15.41: 26/26, exit 0, standalone `OK` (`136.58s`).
+- Inherited total: 43/43.
+- Unchanged v15.41 `connection_curvature_gate.py --check docs/RESULTS.json` plus byte comparison: exit 0.
+- v15.42 final local suite: 48/48, replacing the original 36-test estimate after concrete uncovered risks required added tests.
+- v15.42 `protocol_gate.py --check docs/RESULTS.json` plus byte comparison: exit 0; exact ledger blob `f8f85ab8c8b4599e31bebf3d2fcb668e84ffb5df`.
+- v15.42 compilation: exit 0.
+
+### Rulings carried from execution
+
+- Ruling: Adapt sketch API access to frozen substrate and convert gradient pairs to a label dictionary; preserve frozen mathematics — code snippets are incomplete sketches — cost if wrong: interface rework.
+- Ruling: Store frame/transport records in `transport.py` as Task 3 specifies; keep manifest/selection records in `protocol_types.py` — reconciles file map ambiguity — cost if wrong: module relocation.
+- Ruling: Use independent truncated-polynomial product differentiation for production holonomy while tests expand four terms — avoids mirrored oracle — cost if wrong: small holonomy refactor.
+- Ruling: Run all L7 roots but retain the specified 29 representative result records; use a distinct no-argument superposition-stage wrapper — fulfills spec and plan contract — cost if wrong: extra exact-control runtime.
+- Ruling: Treat forbidden AST names as complete identifiers/import components, not arbitrary substrings; scan fixtures and vendored modules too, and verify actual import closure — avoids rejecting weights while enforcing forbidden inputs — cost if wrong: firewall refinement.
+- Ruling: Add operational/baseline verification after evidence and before manifest, and verify parent Git ancestry plus vendored blobs — spec sections 9 and 10 outrank the omitted gate sketch — cost if wrong: additional validation work.
+- Ruling: Preserve 36 named planned tests where subtests suffice; add tests only for concrete uncovered risk and reflect actual counts in CI — correctness outranks fixed test budget — cost if wrong: CI count update. The resulting authoritative count is 48.
+- Ruling: Dropping a redundant stencil row may leave exact uniqueness intact; report actual rank/identifiability and add tests documenting redundancy rather than forcing a mathematically false nonunique verdict — spec demands exact uniqueness and the plan's blanket named-drop sentence is too broad — cost if wrong: audit diagnostic semantics revision. Removing affine normalization remains nonidentifiable.
+
+### Pending publication receipts
+
+- First Task 7 GitHub CI run: pending publication by the root executor; no URL, run ID, job ID, conclusion, or tested SHA recorded yet.
+- Receipt-commit final exact-head GitHub CI run: pending; required because this appendix changes the head.
+- Fresh whole-branch review: pending with the approved focus on the Koszul sign, local D4 covariance, tangent/cotangent duality, nonflat oracle independence, evidence firewall, and claim boundary.
+- PR #53: its prior requirement remains draft, open, mergeable, and unmerged; live GitHub state and the final description update are pending root verification after CI and review.

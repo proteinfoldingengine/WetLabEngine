@@ -1,0 +1,128 @@
+name: UQCF v15.42 Duality-Covariant Transport Repair
+
+on:
+  push:
+    branches: [research/v15.42-duality-covariant-transport-repair]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/**'
+      - 'docs/superpowers/specs/2026-09-20-v1542-duality-covariant-transport-repair-design.md'
+      - 'docs/superpowers/plans/2026-09-20-v1542-duality-covariant-transport-repair-implementation.md'
+      - '.github/workflows/uqcf-v1542-duality-covariant-transport-repair.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - name: Check out triggering commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+
+      - name: Verify additive scope
+        run: |
+          python - <<'PY'
+          import subprocess
+
+          base = 'b9c5f29d8687a7dbc2af0595430aa73fbc5b8553'
+          demo = 'ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/'
+          allowed = {
+              'docs/superpowers/specs/2026-09-20-v1542-duality-covariant-transport-repair-design.md',
+              'docs/superpowers/plans/2026-09-20-v1542-duality-covariant-transport-repair-implementation.md',
+              '.github/workflows/uqcf-v1542-duality-covariant-transport-repair.yml',
+          }
+          subprocess.run(['git', 'merge-base', '--is-ancestor', base, 'HEAD'], check=True)
+          for line in subprocess.check_output(
+              ['git', 'diff', '--name-status', base, 'HEAD'], text=True
+          ).splitlines():
+              status, name = line.split('\t', 1)
+              assert status == 'A', line
+              assert name.startswith(demo) or name in allowed, name
+          print(f'ADDITIVE_SCOPE_OK head={subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()}')
+          PY
+
+      - name: Run v15.42 certification suite
+        run: |
+          python - <<'PY'
+          import re
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          cwd = Path('ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair')
+          files = ['test_evidence.py', 'test_selection.py', 'test_transport.py',
+                   'test_holonomy.py', 'test_controls.py', 'test_gate.py']
+          result = subprocess.run(
+              [sys.executable, '-m', 'unittest', '-v', *files], cwd=cwd,
+              text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+              timeout=3600,
+          )
+          print(result.stdout[-6000:], flush=True)
+          match = re.search(r'Ran (\d+) tests? in', result.stdout)
+          assert result.returncode == 0, result.stdout
+          assert match and int(match.group(1)) == 48, result.stdout
+          assert re.search(r'^OK\s*$', result.stdout, re.M), result.stdout
+          print('V1542_TESTS_OK count=48')
+          PY
+
+      - name: Install inherited v15.40 dependency
+        run: python -m pip install numpy==2.3.5
+
+      - name: Run inherited frontier regressions
+        run: |
+          python - <<'PY'
+          import re
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          root = Path('ResearchHistory/UQCF-GEM/demos')
+          suites = [
+              (root / 'v15.39-higher-incidence-source-axioms', ['test_gate.py'], 8),
+              (root / 'v15.40-global-balance-geometry-specificity', ['test_gate.py'], 9),
+              (root / 'v15.41-formal-connection-curvature-source-correspondence',
+               ['test_operational_complex.py', 'test_linearized_connection.py', 'test_gate.py'], 26),
+          ]
+          total = 0
+          for cwd, files, expected in suites:
+              result = subprocess.run(
+                  [sys.executable, '-m', 'unittest', '-v', *files], cwd=cwd,
+                  text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                  timeout=1200,
+              )
+              print(result.stdout[-4000:], flush=True)
+              match = re.search(r'Ran (\d+) tests? in', result.stdout)
+              assert result.returncode == 0, result.stdout
+              assert match and int(match.group(1)) == expected, result.stdout
+              assert re.search(r'^OK\s*$', result.stdout, re.M), result.stdout
+              print(f'INHERITED_SUITE_OK suite={cwd.name} count={expected}')
+              total += expected
+          assert total == 43
+          print('INHERITED_TESTS_OK count=43')
+          PY
+
+      - name: Verify both canonical replays and compile v15.42
+        run: |
+          v1542='ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair'
+          v1541='ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence'
+          python "$v1542/protocol_gate.py" --check "$v1542/docs/RESULTS.json" > /tmp/v1542-results.json
+          cmp "$v1542/docs/RESULTS.json" /tmp/v1542-results.json
+          python "$v1541/connection_curvature_gate.py" --check "$v1541/docs/RESULTS.json" > /tmp/v1541-results.json
+          cmp "$v1541/docs/RESULTS.json" /tmp/v1541-results.json
+          python -m compileall -q "$v1542"
+          printf 'REPLAY_COMPILE_OK head=%s v1542=byte-identical v1541=byte-identical compile=0\n' "$(git rev-parse HEAD)"
+
+      - name: Print certified test summary
+        run: |
+          printf 'CERTIFICATION_OK head=%s v1542=48 inherited=43 total=91\n' "$(git rev-parse HEAD)"
