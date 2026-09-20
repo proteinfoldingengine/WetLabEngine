@@ -89,3 +89,13 @@ jobs:
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence
         run: |
           python -m unittest -v test_operational_complex.py test_linearized_connection.py test_gate.py
+
+      - name: Verify canonical replay and compilation
+        working-directory: ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence
+        run: |
+          python connection_curvature_gate.py --check docs/RESULTS.json > /tmp/v1541-results.json
+          cmp docs/RESULTS.json /tmp/v1541-results.json
+          python -m compileall -q \
+            exact_algebra.py response_inputs.py operational_complex.py \
+            linearized_connection.py source_target.py connection_curvature_gate.py \
+            test_operational_complex.py test_linearized_connection.py test_gate.py

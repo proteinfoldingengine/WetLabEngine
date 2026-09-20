@@ -719,4 +719,12 @@ Append the final run ID, job ID, exact head SHA, test counts, replay result, sta
 
 ## Execution receipts
 
-No implementation run has been executed. This section is append-only after plan approval.
+- Task 1 RED — GitHub Actions run `35476741150`, job `105987164303`, exact remote head
+  `73459b307f06f09af2322f8add5b47bf12964cb4`: additive scope passed; inherited v15.39
+  passed 8/8; inherited v15.40 passed 9/9; v15.41 failed as preregistered with
+  `ModuleNotFoundError: No module named 'operational_complex'` first, followed by the absent
+  `linearized_connection` and `connection_curvature_gate` modules.
+- Task 6 local freeze — v15.41 passed 15/15 in 106.589 seconds; inherited v15.39 passed 8/8
+  in 65.896 seconds; inherited v15.40 passed 9/9 in 368.191 seconds; canonical replay was
+  byte-identical; compilation, diff check, and additive-scope inspection passed. Frozen status:
+  `CONNECTION_IDENTIFIABLE_NO_CURVATURE_SOURCE_CORRESPONDENCE`.

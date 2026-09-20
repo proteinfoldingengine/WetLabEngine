@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import ast
 import unittest
 
 from connection_curvature_gate import (
@@ -9,6 +10,8 @@ from connection_curvature_gate import (
     classify_gate,
     next_required_object_for_status,
 )
+from response_inputs import family_input, source_target_input
+from source_target import construct_source_target
 
 
 class ConnectionCurvatureGateTests(unittest.TestCase):
@@ -22,6 +25,39 @@ class ConnectionCurvatureGateTests(unittest.TestCase):
             self.result["input_separation"]["operational_constructor_blind"]
         )
         self.assertTrue(self.result["input_separation"]["source_target_blind"])
+        sources, support = source_target_input(5)
+
+        class HostileSequence:
+            def __init__(self, permitted):
+                self.permitted = permitted
+
+            def __iter__(self):
+                return iter(self.permitted)
+
+            def __getattr__(self, name):
+                raise AssertionError(f"forbidden source-target access: {name}")
+
+        target = construct_source_target(
+            HostileSequence(sources), HostileSequence(support)
+        )
+        self.assertEqual(
+            target.neighbors,
+            family_input(5, "GLOBAL_BALANCE_COMPLETION").neighbors,
+        )
+        tree = ast.parse(Path("source_target.py").read_text())
+        imports = {
+            alias.name
+            for node in ast.walk(tree)
+            if isinstance(node, ast.Import)
+            for alias in node.names
+        } | {
+            node.module or ""
+            for node in ast.walk(tree)
+            if isinstance(node, ast.ImportFrom)
+        }
+        self.assertTrue(
+            imports <= {"dataclasses", "fractions", "itertools", "__future__"}
+        )
 
     def test_unique_contraction_and_independent_source_target(self):
         self.assertIn(self.result["curvature_contraction_dimension"], (None, 1))
@@ -59,6 +95,39 @@ class ConnectionCurvatureGateTests(unittest.TestCase):
         committed = Path("docs/RESULTS.json").read_text()
         self.assertEqual(committed, canonical_json(self.result))
         self.assertEqual(json.loads(committed), self.result)
+
+        def contains_float(value):
+            if isinstance(value, float):
+                return True
+            if isinstance(value, dict):
+                return any(contains_float(item) for item in value.values())
+            if isinstance(value, list):
+                return any(contains_float(item) for item in value)
+            return False
+
+        self.assertFalse(contains_float(self.result))
+        self.assertTrue(
+            all(value == 0 for value in self.result["construction_firewall"].values())
+        )
+        expected = {
+            "formal_tangent_carrier_new": True,
+            "formal_connection_class_new": True,
+            "formal_isotropic_lift_class_new": True,
+            "formal_curvature_contraction_class_new": True,
+            "historical_connection_used_for_adjudication": False,
+            "physical_connection_derived": False,
+            "physical_curvature_derived": False,
+            "stress_energy_derived": False,
+            "spacetime_derived": False,
+            "continuum_limit_derived": False,
+            "einstein_equations_derived": False,
+            "scientific_breakthrough": False,
+            "Pillar_3": "OPEN",
+        }
+        self.assertEqual(
+            {key: self.result[key] for key in expected},
+            expected,
+        )
 
 
 if __name__ == "__main__":
