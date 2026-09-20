@@ -152,6 +152,43 @@ class LinearizedConnectionTests(unittest.TestCase):
                 len(complex_.cycles),
             )
 
+    def test_face_circulation_rows_match_differentiated_holonomy(self):
+        complex_ = construct_operational_complex(*periodic_square_input(6)).complex
+        baseline = enumerate_baseline_connection(complex_).connection
+        edges = tuple(sorted(tuple(sorted(edge)) for edge in complex_.neighbors))
+        edge_index = {edge: index for index, edge in enumerate(edges)}
+        coefficients = tuple(Fraction(index + 1) for index in range(len(edges)))
+        perturbation = []
+        for edge in complex_.directed_edges:
+            canonical = tuple(sorted(edge))
+            direction = Fraction(1) if edge == canonical else Fraction(-1)
+            coefficient = coefficients[edge_index[canonical]]
+            perturbation.append(
+                (
+                    edge,
+                    (
+                        (Fraction(0), -direction * coefficient),
+                        (direction * coefficient, Fraction(0)),
+                    ),
+                )
+            )
+        rows = lc._face_circulation_rows(complex_, edges)
+        for cycle, row in zip(complex_.cycles, rows):
+            self.assertEqual(sum(value != 0 for value in row), 4)
+            coefficient = sum(
+                (value * edge_coefficient for value, edge_coefficient in zip(
+                    row, coefficients
+                )),
+                Fraction(0),
+            )
+            self.assertEqual(
+                differentiate_holonomy(baseline, perturbation, cycle),
+                (
+                    (Fraction(0), -coefficient),
+                    (coefficient, Fraction(0)),
+                ),
+            )
+
     def test_executed_diagnostic_is_flat_for_arbitrary_exact_fields(self):
         fields = (
             self.field,
