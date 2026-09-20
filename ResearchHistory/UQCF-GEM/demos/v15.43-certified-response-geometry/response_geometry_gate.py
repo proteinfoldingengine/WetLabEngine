@@ -478,7 +478,12 @@ def _evidence():
 
 
 def _parent_replay():
-    stdout = _run([sys.executable, "-I", "protocol_gate.py", "--check", "docs/RESULTS.json"],
+    bootstrap = ("import runpy, sys; "
+                 "sys.path.insert(0, sys.argv[1]); "
+                 "sys.argv = sys.argv[2:]; "
+                 "runpy.run_path(sys.argv[0], run_name='__main__')")
+    stdout = _run([sys.executable, "-I", "-c", bootstrap, str(PARENT_DIR),
+                   str(PARENT_DIR / "protocol_gate.py"), "--check", "docs/RESULTS.json"],
                   PARENT_DIR, 900)
     expected = (PARENT_DIR / "docs/RESULTS.json").read_bytes()
     if stdout != expected:

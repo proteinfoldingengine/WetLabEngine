@@ -144,6 +144,45 @@ class GateTests(unittest.TestCase):
                     capture_output=True, text=True, timeout=10)
                 self.assertEqual(completed.returncode, 0, completed.stderr)
 
+    def test_parent_replay_bootstrap_imports_siblings_with_fixed_isolated_arguments(self):
+        import response_geometry_gate as gate
+        with tempfile.TemporaryDirectory(prefix="parent ' path ; ") as temporary:
+            parent = Path(temporary)
+            (parent / "docs").mkdir()
+            expected = canonical_bytes({"status": "TRANSPORT_PROTOCOL_CERTIFIED"})
+            (parent / "docs/RESULTS.json").write_bytes(expected)
+            (parent / "controls.py").write_text("VALUE = 'local parent controls'\n")
+            (parent / "protocol_gate.py").write_text(
+                "import controls, pathlib, sys\n"
+                "assert controls.VALUE == 'local parent controls'\n"
+                "assert pathlib.Path(controls.__file__).parent == pathlib.Path.cwd()\n"
+                "assert sys.flags.isolated == 1\n"
+                "assert __name__ == '__main__'\n"
+                "assert pathlib.Path(sys.argv[0]).resolve() == pathlib.Path(__file__).resolve()\n"
+                "assert sys.argv[1:] == ['--check', 'docs/RESULTS.json']\n"
+                "sys.stdout.buffer.write(pathlib.Path(sys.argv[2]).read_bytes())\n")
+            with patch.object(gate, "PARENT_DIR", parent):
+                try:
+                    receipt = gate._parent_replay()
+                except RuntimeError as error:
+                    self.fail(f"isolated parent launch failed: {error}")
+            self.assertEqual(receipt["status"], "TRANSPORT_PROTOCOL_CERTIFIED")
+
+    def test_parent_replay_bootstrap_starts_unchanged_parent_help(self):
+        import response_geometry_gate as gate
+        real_run = gate._run
+        expected = (gate.PARENT_DIR / "docs/RESULTS.json").read_bytes()
+        def help_only(command, cwd, timeout):
+            try:
+                output = real_run(command[:-2] + ["--help"], cwd, 10)
+            except RuntimeError as error:
+                self.fail(f"unchanged parent isolated imports failed: {error}")
+            self.assertIn(b"--check", output)
+            return expected
+        with patch.object(gate, "_run", side_effect=help_only):
+            receipt = gate._parent_replay()
+        self.assertEqual(receipt["status"], "TRANSPORT_PROTOCOL_CERTIFIED")
+
     def test_declared_suite_modules_resolve_to_new_demo(self):
         expected = ("test_evidence", "test_projection", "test_carriers",
                     "test_application", "test_controls", "test_gate")
