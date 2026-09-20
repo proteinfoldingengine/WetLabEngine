@@ -1153,3 +1153,17 @@ Task-boundary GitHub Actions job identifiers do not exist because Tasks 1–6 we
 - Receipt-commit final exact-head GitHub CI run: pending; required because this appendix changes the head.
 - Fresh whole-branch review: pending with the approved focus on the Koszul sign, local D4 covariance, tangent/cotangent duality, nonflat oracle independence, evidence firewall, and claim boundary.
 - PR #53: its prior requirement remains draft, open, mergeable, and unmerged; live GitHub state and the final description update are pending root verification after CI and review.
+
+### First official Task 7 CI and source-review receipt
+
+- Task 7 workflow/initial receipt commit: local `5166abd30ac92688fc27fbdc114e9a44547f406e`, published with the identical source tree as `46cd2d86ad96f06cbd4899944f83ac420ef925fa`.
+- Task 7 dependency-isolation review fix: local `5f495159b20abe5e60039cccac205d4414ec87c3`, published with the identical source tree as `3112b2c8a9b0986c196f6fa28ab30fadba24c003`. The fix places the dependency-free v15.42 suite, canonical replay, and compilation before the sole NumPy 2.3.5 installation; inherited regressions and the unchanged v15.41 replay follow that installation.
+- First official workflow: run `35517915188`, job `106096864758` (`certify`), conclusion `success`, URL <https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/35517915188>.
+- Exact tested head: `3112b2c8a9b0986c196f6fa28ab30fadba24c003`; checkout used that triggering SHA with full history and persisted credentials disabled.
+- Additive-scope gate: passed at the tested head against base `b9c5f29d8687a7dbc2af0595430aa73fbc5b8553`.
+- v15.42 suite: 48/48, standalone `OK`; v15.39: 8/8, standalone `OK`; v15.40: 9/9, standalone `OK`; v15.41: 26/26, standalone `OK`; total: 91/91, including exactly 43 inherited tests.
+- v15.42 canonical replay: byte-identical; v15.42 compilation: exit 0; unchanged v15.41 canonical replay: byte-identical.
+- Canonical v15.42 result ledger remains blob `f8f85ab8c8b4599e31bebf3d2fcb668e84ffb5df`; all parent, design, corrected-ledger, and vendored-substrate pins listed above remain preserved.
+- Fresh whole-branch source review of base `b9c5f29d8687a7dbc2af0595430aa73fbc5b8553` through tested head `3112b2c8a9b0986c196f6fa28ab30fadba24c003`: **PASS**, with no Critical, Important, or Minor findings. The review covered the Koszul/conformal sign, arbitrary local D4 covariance argument, mechanically derived tangent/cotangent duality, independent nonflat oracle, evidence firewall, deterministic ledger, workflow, and scientific claim boundary.
+- Final receipt/CI evidence review: pending. This append-only receipt is the final planned mutation of the implementation plan. Its published SHA must receive one final successful exact-head workflow run and receipt-evidence review.
+- To avoid a self-referential receipt loop, the final run URL/run/job/head/conclusion and the verified PR #53 draft/open/mergeable/unmerged state will be recorded in the PR description and final external execution record after this receipt commit is published; they will not trigger another plan edit.
