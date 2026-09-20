@@ -537,7 +537,7 @@ def _periodic_square_complex(size):
         second_x, second_y = second % size, second // size
         dx = min((first_x - second_x) % size, (second_x - first_x) % size)
         dy = min((first_y - second_y) % size, (second_y - first_y) % size)
-        return Fraction(dx + dy)
+        return Fraction(dx * dx + dy * dy)
 
     work = tuple(
         tuple(distance(first, second) for second in labels)
