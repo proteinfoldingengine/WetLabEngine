@@ -310,6 +310,40 @@ def local_circulation_rowspace_witness():
     }
 
 
+def _face_circulation_rows(complex_, edges):
+    edge_index = {edge: index for index, edge in enumerate(edges)}
+    rows = []
+    for cycle in complex_.cycles:
+        row = [Fraction(0) for _edge in edges]
+        for index in range(4):
+            edge = (cycle[index], cycle[(index + 1) % 4])
+            canonical = tuple(sorted(edge))
+            direction = Fraction(1) if edge == canonical else Fraction(-1)
+            row[edge_index[canonical]] += direction
+        rows.append(tuple(row))
+    return tuple(rows)
+
+
+def global_circulation_rowspace_witness(complex_):
+    if not isinstance(complex_, OperationalComplex):
+        raise TypeError("OperationalComplex required")
+    zero_field = tuple(Fraction(0) for _label in complex_.labels)
+    lift = construct_isotropic_lift(complex_, zero_field)
+    edges = tuple(sorted(tuple(sorted(edge)) for edge in complex_.neighbors))
+    closure_rows, _rhs = _closure_system(complex_, lift, edges)
+    circulation_rows = _face_circulation_rows(complex_, edges)
+    closure_rank = rank(closure_rows, ncols=len(edges))
+    return {
+        "closure_rank": closure_rank,
+        "augmented_with_face_circulations_rank": rank(
+            closure_rows + circulation_rows,
+            ncols=len(edges),
+        ),
+        "face_circulation_count": len(circulation_rows),
+        "unknowns": len(edges),
+    }
+
+
 def executed_flatness_diagnostic(complex_, field):
     lift = construct_isotropic_lift(complex_, field)
     edges = tuple(sorted(tuple(sorted(edge)) for edge in complex_.neighbors))
@@ -337,18 +371,15 @@ def executed_flatness_diagnostic(complex_, field):
 
 
 def parity_witness(complex_):
-    zero_field = tuple(Fraction(0) for _label in complex_.labels)
-    lift = construct_isotropic_lift(complex_, zero_field)
-    edges = tuple(sorted(tuple(sorted(edge)) for edge in complex_.neighbors))
-    rows, _rhs = _closure_system(complex_, lift, edges)
-    coefficient_rank = rank(rows, ncols=len(edges))
-    unknowns = len(edges)
-    local = local_circulation_rowspace_witness()
+    global_witness = global_circulation_rowspace_witness(complex_)
+    coefficient_rank = global_witness["closure_rank"]
+    unknowns = global_witness["unknowns"]
     return ParityWitness(
         coefficient_rank,
         unknowns,
         unknowns - coefficient_rank,
-        local["closure_rank"] == local["augmented_with_circulation_rank"],
+        coefficient_rank
+        == global_witness["augmented_with_face_circulations_rank"],
     )
 
 
