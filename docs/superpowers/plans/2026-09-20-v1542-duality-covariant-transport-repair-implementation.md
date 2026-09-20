@@ -418,7 +418,7 @@ class TransportTests(unittest.TestCase):
         self.assertEqual(actual, expected)
 ~~~
 
-Use literal expected matrices on a hand-checked L5 impulse edge. For root 0 with the standard fixture, assert the full 2x2 Fraction matrix rather than recomputing the expectation through construct_transport.
+Use literal expected matrices on a hand-checked L5 impulse edge. For root 0 with the standard fixture, assert the full 2x2 Fraction matrix rather than recomputing the expectation through construct_transport. Implement deterministic_mixed_presentation, one_site_presentations, gauge_transform, relabeled_problem, and relabel_transport as test-only helpers in test_transport.py. Each helper must transform frozen inputs or an already-computed record directly; none may call construct_transport to manufacture its expected value.
 
 - [ ] **Step 2: Run RED**
 
@@ -590,7 +590,7 @@ class HolonomyTests(unittest.TestCase):
             self.assertEqual(curvature_invariant(changed), Fraction(1, 16))
 ~~~
 
-The first test must build the four terms directly in the test from literal baseline/delta dictionaries. It must not call a helper from holonomy.py to compute the expected value.
+The first test must build the four terms directly in the test from literal baseline/delta dictionaries. It must not call a helper from holonomy.py to compute the expected value. Implement impulse_problem, path_transport, pair, and the presentation helper imports explicitly in test_holonomy.py. path_transport must multiply the literal baseline edge matrices along the stated segment, and pair must be the direct two-component bilinear pairing; neither may call production holonomy or covariance helpers.
 
 - [ ] **Step 2: Run RED**
 
@@ -923,7 +923,7 @@ class GateTests(unittest.TestCase):
         self.assertEqual(rendered, Path("docs/RESULTS.json").read_text())
 ~~~
 
-For fail-fast tests, inject callables that raise AssertionError if a later stage is reached. Recursively reject float values. Parse evidence.py, protocol_types.py, selection.py, transport.py, holonomy.py, controls.py, and protocol_gate.py with ast and reject imports/names containing response_inputs, response_generation, source_target, coordinates, spectrum, numpy, newton, einstein, observational, fit, svd, eig, or pinv.
+For fail-fast tests, inject callables that raise AssertionError if a later stage is reached. Implement production_imports_and_names, contains_float, and render_result locally in test_gate.py: walk the named production ASTs, recursively traverse dict/list/tuple ledger values, and serialize with the same documented sorted/indented JSON rule. These test-only helpers must not import protocol_gate serialization internals. Parse evidence.py, protocol_types.py, selection.py, transport.py, holonomy.py, controls.py, and protocol_gate.py with ast and reject imports/names containing response_inputs, response_generation, source_target, coordinates, spectrum, numpy, newton, einstein, observational, fit, svd, eig, or pinv.
 
 - [ ] **Step 2: Run RED**
 
