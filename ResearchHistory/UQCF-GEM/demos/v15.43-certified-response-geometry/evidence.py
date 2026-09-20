@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import subprocess
 from hashlib import sha1
+from importlib import metadata
 from pathlib import Path
 
 
@@ -20,12 +21,21 @@ def _demo(root: Path) -> Path:
 
 
 def _manifest(root: Path) -> dict:
-    manifest = json.loads((_demo(root) / "dependencies.json").read_text())
+    def unique_object(pairs):
+        value = {}
+        for key, item in pairs:
+            if key in value:
+                raise ValueError(f"duplicate JSON key: {key}")
+            value[key] = item
+        return value
+
+    manifest = json.loads((_demo(root) / "dependencies.json").read_text(), object_pairs_hook=unique_object)
     if type(manifest) is not dict or set(manifest) != MANIFEST_KEYS or manifest["schema"] != SCHEMA:
         raise ValueError("invalid dependency manifest schema")
     if type(manifest["parent"]) is not str or len(manifest["parent"]) != 40:
         raise ValueError("invalid scientific parent")
-    if type(manifest["external"]) is not dict:
+    if (type(manifest["external"]) is not dict or set(manifest["external"]) != {"numpy"} or
+            type(manifest["external"]["numpy"]) is not str or not manifest["external"]["numpy"]):
         raise ValueError("invalid external dependency inventory")
     for role in ROLES:
         if type(manifest[role]) is not dict:
@@ -49,7 +59,7 @@ def _verified_item(root: Path, name: str, item: object) -> dict[str, str]:
     return {"path": str(path), "blob": actual}
 
 
-def verify_evidence(root: Path) -> dict:
+def verify_repository_evidence(root: Path) -> dict:
     root = Path(root).resolve(strict=True)
     manifest = _manifest(root)
     ancestry = subprocess.run(
@@ -58,10 +68,24 @@ def verify_evidence(root: Path) -> dict:
     )
     if ancestry.returncode:
         raise ValueError("scientific parent is not an ancestor")
-    receipt = {"schema": SCHEMA, "parent": manifest["parent"], "external": dict(manifest["external"])}
+    receipt = {"schema": SCHEMA, "parent": manifest["parent"]}
     receipt["spec"] = _verified_item(root, "spec", manifest["spec"])
     for role in ROLES:
         receipt[role] = {name: _verified_item(root, name, item) for name, item in manifest[role].items()}
+    return receipt
+
+
+def verify_evidence(root: Path) -> dict:
+    root = Path(root).resolve(strict=True)
+    receipt = verify_repository_evidence(root)
+    expected = _manifest(root)["external"]["numpy"]
+    try:
+        actual = metadata.version("numpy")
+    except metadata.PackageNotFoundError as error:
+        raise ValueError("external dependency missing: numpy") from error
+    if actual != expected:
+        raise ValueError(f"external dependency mismatch: numpy: {actual}")
+    receipt["external"] = {"numpy": actual}
     return receipt
 
 

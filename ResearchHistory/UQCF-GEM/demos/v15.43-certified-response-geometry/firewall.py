@@ -13,6 +13,14 @@ STDLIB_PURE = frozenset({"__future__", "collections", "dataclasses", "fractions"
 STDLIB_ENTRY = STDLIB_PURE | frozenset({"argparse", "ast", "hashlib", "json", "pathlib", "subprocess", "sys", "tempfile", "importlib"})
 STDLIB_ACQUISITION = STDLIB_ENTRY | frozenset({"numpy"})
 FORBIDDEN_CALLS = frozenset({"eval", "exec", "compile", "open", "input", "getattr", "setattr", "delattr", "globals", "locals", "vars", "__import__"})
+FORBIDDEN_ATTRIBUTES = frozenset({"import_module", "reload", "eval", "exec", "__class__", "__dict__", "__bases__", "__subclasses__", "__getattribute__", "__getattr__", "__setattr__", "__delattr__", "mro"})
+ENTRYPOINT_IMPORTS = {
+    "evaluate.py": STDLIB_PURE | frozenset({"argparse", "hashlib", "json", "pathlib", "sys"}) | PURE_LOCAL | {"evidence", "firewall"},
+    "response_geometry_gate.py": STDLIB_ENTRY | PURE_LOCAL | {"evidence", "firewall", "acquire", "application"},
+    "ci_verify.py": STDLIB_ENTRY | {"evidence", "firewall"},
+    "evidence.py": STDLIB_PURE | frozenset({"hashlib", "importlib", "json", "pathlib", "subprocess"}),
+    "firewall.py": STDLIB_PURE | frozenset({"ast", "pathlib"}),
+}
 PURE_SYMBOLS = {
     "__future__": frozenset({"annotations"}),
     "collections": frozenset({"Counter", "defaultdict", "deque"}),
@@ -52,7 +60,7 @@ def verify_firewall(paths: tuple[Path, ...]) -> dict:
         path = supplied.resolve(strict=True)
         role = _role(path)
         allowed = (STDLIB_ACQUISITION | ACQUISITION_LOCAL if role == "acquisition" else
-                   STDLIB_ENTRY | PURE_LOCAL | {"evidence", "firewall"} if role == "entrypoint" else
+                   ENTRYPOINT_IMPORTS[path.name] if role == "entrypoint" else
                    STDLIB_ENTRY | PURE_LOCAL if role == "serialization" else
                    STDLIB_PURE | PURE_LOCAL)
         tree = ast.parse(path.read_text(), filename=str(path))
@@ -73,6 +81,8 @@ def verify_firewall(paths: tuple[Path, ...]) -> dict:
             elif (isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and
                   node.func.id in FORBIDDEN_CALLS and not (path.name == "evidence.py" and node.func.id == "getattr")):
                 raise ValueError(f"forbidden capability {node.func.id} in {path.name}")
+            elif isinstance(node, ast.Attribute) and node.attr in FORBIDDEN_ATTRIBUTES:
+                raise ValueError(f"forbidden dynamic or reflection capability {node.attr} in {path.name}")
         forbidden = sorted(set(imports) - allowed)
         if forbidden:
             raise ValueError(f"forbidden import in {path.name}: {', '.join(forbidden)}")
