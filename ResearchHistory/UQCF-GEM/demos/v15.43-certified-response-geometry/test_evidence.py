@@ -111,6 +111,11 @@ class EvidenceTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     verify_firewall((path,))
 
+    def test_boundary_modules_pass_their_declared_entrypoint_policy(self):
+        from firewall import verify_firewall
+        receipt = verify_firewall((HERE / "evidence.py", HERE / "firewall.py"))
+        self.assertEqual({entry["role"] for entry in receipt.values()}, {"entrypoint"})
+
 
 if __name__ == "__main__":
     unittest.main()
