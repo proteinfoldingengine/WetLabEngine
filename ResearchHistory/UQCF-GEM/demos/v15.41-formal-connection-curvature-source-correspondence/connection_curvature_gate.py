@@ -11,8 +11,13 @@ from pathlib import Path
 import sys
 
 from linearized_connection import (
+    TransportManifest,
+    audit_transport_protocol,
     construct_isotropic_lift,
     differentiate_holonomy,
+    executed_flatness_diagnostic,
+    local_circulation_rowspace_witness,
+    parity_witness,
     solve_linearized_connection,
 )
 from operational_complex import (
@@ -406,8 +411,7 @@ def _cell_rows(inherited, size_audits):
     return rows
 
 
-@lru_cache(None)
-def audit():
+def _run_scientific_adjudication():
     evidence = verify_evidence()
     inherited = json.loads((V1540 / "docs/RESULTS.json").read_text())
     interfaces = _constructor_interfaces()
@@ -513,6 +517,241 @@ def audit():
         "scientific_breakthrough": False,
         "Pillar_3": "OPEN",
     }
+
+
+def _periodic_square_complex(size):
+    labels = tuple(range(size * size))
+
+    def label(x, y):
+        return (x % size) + size * (y % size)
+
+    neighbors = frozenset(
+        frozenset((label(x, y), label(x + dx, y + dy)))
+        for x in range(size)
+        for y in range(size)
+        for dx, dy in ((1, 0), (0, 1))
+    )
+
+    def distance(first, second):
+        first_x, first_y = first % size, first // size
+        second_x, second_y = second % size, second // size
+        dx = min((first_x - second_x) % size, (second_x - first_x) % size)
+        dy = min((first_y - second_y) % size, (second_y - first_y) % size)
+        return Fraction(dx + dy)
+
+    work = tuple(
+        tuple(distance(first, second) for second in labels)
+        for first in labels
+    )
+    result = construct_operational_complex(labels, work, neighbors)
+    if result.status != ConnectionStatus.IDENTIFIABLE:
+        raise AssertionError("periodic square diagnostic complex drift")
+    return result.complex
+
+
+def _canonical_response_complex(size):
+    family = family_input(size, "GLOBAL_BALANCE_COMPLETION", Fraction(1))
+    result = construct_operational_complex(
+        family.labels, family.work, family.neighbors
+    )
+    if result.status != ConnectionStatus.IDENTIFIABLE:
+        raise AssertionError("canonical response complex drift")
+    return result.complex
+
+
+def _manufactured_field(size):
+    return tuple(
+        Fraction((index * index + 3 * index) % 11 - 5)
+        for index in range(size * size)
+    )
+
+
+def _manifest_record(manifest):
+    return {
+        "carrier": manifest.carrier.value,
+        "edge_direction": manifest.edge_direction.value,
+        "matrix_action": manifest.matrix_action.value,
+        "dualized": manifest.dualized,
+        "variation_sign": manifest.variation_sign,
+        "factor_domain": manifest.factor_domain,
+        "factor_codomain": manifest.factor_codomain,
+        "basepoint_rule": manifest.basepoint_rule,
+        "orientation_rule": manifest.orientation_rule,
+    }
+
+
+def _diagnostic_record():
+    complex_5 = _periodic_square_complex(5)
+    fields = [
+        _manufactured_field(5),
+        tuple(Fraction((7 * index + 2) % 13 - 6) for index in range(25)),
+    ]
+    fields.extend(
+        tuple(Fraction(index == selected) for index in range(25))
+        for selected in range(25)
+    )
+    flatness = tuple(
+        executed_flatness_diagnostic(complex_5, field) for field in fields
+    )
+    local = local_circulation_rowspace_witness()
+    parity = tuple(
+        (size, parity_witness(_periodic_square_complex(size)))
+        for size in (5, 6, 7, 8, 9)
+    )
+    return {
+        "label": "NON_ADJUDICATING_PROTOCOL_DIAGNOSTIC",
+        "executed_convention": "forward_direct_positive_variation",
+        "all_tested_curvatures_zero": all(
+            item.all_face_curvatures_zero for item in flatness
+        ),
+        "standard_basis_L5_zero": all(
+            item.all_face_curvatures_zero for item in flatness[2:]
+        ),
+        "independent_nonconstant_fields_zero": all(
+            item.all_face_curvatures_zero for item in flatness[:2]
+        ),
+        "local_circulation_in_closure_rowspace": (
+            local["closure_rank"]
+            == local["augmented_with_circulation_rank"]
+        ),
+        "local_closure_rank": local["closure_rank"],
+        "parity_witnesses": [
+            {
+                "L": size,
+                "rank": witness.rank,
+                "unknowns": witness.unknowns,
+                "nullity": witness.nullity,
+                "all_face_curvatures_zero": (
+                    witness.all_face_curvatures_zero
+                ),
+            }
+            for size, witness in parity
+        ],
+    }
+
+
+def _protocol_invalid_ledger(evidence, manifest, protocol_audits):
+    interfaces = _constructor_interfaces()
+    diagnostics = _diagnostic_record()
+    return {
+        "version": "v15.41",
+        "base_sha": "84aa1c81fd86ac4d7a06015482f98572f3afc05f",
+        "evidence_pins": dict(evidence),
+        "evidence_verified": bool(evidence),
+        "finite_size_controls": list(SIZES),
+        "holdout_size": 11,
+        "projective_scales": [_fraction_text(value) for value in SCALES],
+        "family_keys": list(FAMILY_KEYS),
+        "input_separation": interfaces,
+        "transport_manifest": _manifest_record(manifest),
+        "transport_manifest_matches_implementation": True,
+        "protocol_audits": [
+            {
+                "L": size,
+                "field": "manufactured_nonconstant_exact",
+                "unknowns": audit.coefficient_rank,
+                "coefficient_rank": audit.coefficient_rank,
+                "augmented_rank": audit.augmented_rank,
+                "protocol_valid": audit.protocol_valid,
+                "reason": audit.reason,
+            }
+            for size, audit in protocol_audits
+        ],
+        "source_target_frozen_before_adjudication": None,
+        "all_required_cells_evaluated": None,
+        "all_relabeling_checks_complete": None,
+        "all_scale_checks_complete": None,
+        "all_superposition_checks_complete": None,
+        "pairing_scramble_fails": None,
+        "cycle_scramble_fails": None,
+        "size_audits": None,
+        "cell_audits": None,
+        "curvature_contraction_dimension": None,
+        "protocol_valid": False,
+        "connection_identifiable": None,
+        "curvature_source_map_identifiable": None,
+        "canonical_correspondence": None,
+        "control_all_sizes": None,
+        "construction_firewall": dict(CONSTRUCTION_FIREWALL),
+        "status": "PROTOCOL_INVALID",
+        "next_required_object": (
+            "REPAIR_ONLY_THE_PROTOCOL_DEFECT_BEFORE_ADJUDICATION"
+        ),
+        "superseded_execution_receipt": {
+            "authoritative": False,
+            "status": (
+                "CONNECTION_IDENTIFIABLE_NO_CURVATURE_SOURCE_CORRESPONDENCE"
+            ),
+            "result_blob": "5228c2754c7ea1b1da6966adcfd34135250132cb",
+            "reason_superseded": (
+                "transport_protocol_not_typed_precisely_enough"
+            ),
+            "prior_exact_head_receipts": [
+                {
+                    "run_id": 35478634883,
+                    "job_id": 105992231428,
+                    "head_sha": (
+                        "2763a07e053595d92a849c5dba3591e5f9d485c0"
+                    ),
+                    "v1541_tests": 15,
+                    "inherited_tests": 17,
+                    "conclusion": "success",
+                },
+                {
+                    "run_id": 35479026637,
+                    "job_id": 105993295165,
+                    "head_sha": (
+                        "aa1efd1e32e84178b95f243b31d4cc5d613bb79d"
+                    ),
+                    "v1541_tests": 15,
+                    "inherited_tests": 17,
+                    "conclusion": "success",
+                },
+            ],
+        },
+        "non_adjudicating_protocol_diagnostics": diagnostics,
+        "v1539_source_axiom_inherited": True,
+        "v1539_global_balance_response_axiom_inherited": True,
+        "v1540_operational_metric_inherited": True,
+        "formal_tangent_carrier_new": True,
+        "formal_connection_class_new": True,
+        "formal_isotropic_lift_class_new": True,
+        "formal_curvature_contraction_class_new": True,
+        "historical_connection_used_for_adjudication": False,
+        "physical_connection_derived": False,
+        "physical_curvature_derived": False,
+        "stress_energy_derived": False,
+        "spacetime_derived": False,
+        "continuum_limit_derived": False,
+        "einstein_equations_derived": False,
+        "scientific_breakthrough": False,
+        "Pillar_3": "OPEN",
+    }
+
+
+def _audit(adjudicator=_run_scientific_adjudication):
+    evidence = verify_evidence()
+    manifest = TransportManifest.literal_frozen()
+    manifest.validate_literal_frozen()
+    protocol_audits = tuple(
+        (
+            size,
+            audit_transport_protocol(
+                _canonical_response_complex(size),
+                _manufactured_field(size),
+                manifest,
+            ),
+        )
+        for size in (5, 7)
+    )
+    if any(not result.protocol_valid for _size, result in protocol_audits):
+        return _protocol_invalid_ledger(evidence, manifest, protocol_audits)
+    return adjudicator()
+
+
+@lru_cache(None)
+def audit():
+    return _audit()
 
 
 def canonical_json(value):
