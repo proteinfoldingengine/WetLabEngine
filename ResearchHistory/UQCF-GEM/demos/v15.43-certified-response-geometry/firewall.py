@@ -35,10 +35,10 @@ PURE_SYMBOLS = {
     "transport": frozenset({"FramePresentation", "LinearizedTransport", "validate_exact_field", "centered_derivatives", "cotangent_pullback_delta", "construct_transport"}),
     "holonomy": frozenset({"CurvatureRecord", "reverse_cycle", "rotate_cycle", "linearized_holonomy", "cotangent_holonomy", "curvature_invariant"}),
     "projection": frozenset({"CaseKey", "Field", "Payload", "Projection", "canonical_bytes", "decode_projection", "encode_projection"}),
-    "carriers": frozenset({"Carrier", "FieldResult", "build_carrier", "evaluate_field"}),
+    "carriers": frozenset({"Carrier", "build_carrier"}),
     "presentation_checks": frozenset({"check_presentations"}),
     "application_controls": frozenset({"check_carrier_controls", "check_response_controls"}),
-    "application": frozenset({"evaluate_projection", "classify"}),
+    "application": frozenset({"FieldResult", "evaluate_field", "evaluate_projection", "classify"}),
 }
 
 
