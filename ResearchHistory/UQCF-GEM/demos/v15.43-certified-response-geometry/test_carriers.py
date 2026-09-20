@@ -14,7 +14,8 @@ for location in (str(HERE), str(CORE)):
         sys.path.insert(0, location)
 
 from fixtures import periodic_square_input
-from operational_complex import ConnectionStatus, OperationalComplexAudit
+from operational_complex import (BaselineConnectionAudit, ConnectionStatus,
+                                 OperationalComplexAudit)
 from projection import Payload
 
 
@@ -55,6 +56,15 @@ class CarrierTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "manufactured_stop"):
                 build_carrier(manufactured_payload(5))
         baseline.assert_not_called()
+
+    def test_baseline_nonidentification_retains_reason(self):
+        from carriers import build_carrier
+
+        stopped = BaselineConnectionAudit(ConnectionStatus.NOT_IDENTIFIABLE,
+                                          "baseline_manufactured_stop", None)
+        with patch("carriers.enumerate_baseline_connection", return_value=stopped):
+            with self.assertRaisesRegex(ValueError, "baseline_manufactured_stop"):
+                build_carrier(manufactured_payload(5))
 
     def test_rejects_invalid_work_before_identification(self):
         from carriers import build_carrier
