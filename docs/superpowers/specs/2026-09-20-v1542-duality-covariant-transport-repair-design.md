@@ -68,7 +68,7 @@ floating tolerances are forbidden.
 
 ## 3. Frozen mathematical types
 
-For each vertex (x):
+For each vertex $x$:
 
 ```text
 T_x                 tangent carrier
@@ -80,24 +80,24 @@ u_x                 exact scalar conformal perturbation
 
 The perturbed metric is
 
-[
+$$
 g_x(\varepsilon)=e^{\varepsilon u_x}g_x^0.
-]
+$$
 
 The forward tangent transport is factored relative to the baseline:
 
-[
+$$
 P_{xy}(\varepsilon)
  =P_{xy}^0\bigl(I+\varepsilon B_{xy}\bigr)+O(\varepsilon^2),
 \qquad B_{xy}\in\operatorname{End}(T_x).
-]
+$$
 
-The reverse tangent transport is the inverse (P_{yx}(\varepsilon)=P_{xy}(\varepsilon)^{-1}).
-The transport of a covector at (y) back to (x) is the pullback
+The reverse tangent transport is the inverse $P_{yx}(\varepsilon)=P_{xy}(\varepsilon)^{-1}$.
+The transport of a covector at $y$ back to $x$ is the pullback
 
-[
+$$
 P_{xy}(\varepsilon)^*:T_y^*\rightarrow T_x^*.
-]
+$$
 
 No code path may infer one of these actions from matrix shape. Domain, codomain, direction, action,
 carrier, dualization, base point, cycle orientation, and conformal sign must all be explicit.
@@ -106,73 +106,73 @@ carrier, dualization, base point, cycle orientation, and conformal sign must all
 
 Metric compatibility is
 
-[
+$$
 P_{xy}(\varepsilon)^Tg_y(\varepsilon)P_{xy}(\varepsilon)
  =g_x(\varepsilon).
-]
+$$
 
 Differentiation at the certified flat baseline gives
 
-[
+$$
 B_{xy}+B_{xy}^{\dagger}=(u_x-u_y)I.
-]
+$$
 
 Therefore
 
-[
+$$
 \operatorname{sym}B_{xy}=\frac{u_x-u_y}{2}I.
-]
+$$
 
 The signs of frame and coframe variation follow from duality:
 
-[
+$$
 \delta e_a(x)=-\frac{u_x}{2}e_a(x),\qquad
 \delta\theta^a(x)=+\frac{u_x}{2}\theta^a(x).
-]
+$$
 
 These are not configurable manifest fields. A tangent implementation using the positive frame sign,
 or a cotangent implementation using the negative coframe sign, is invalid.
 
 ## 5. Canonical operational derivative
 
-At each (x), the operational complex supplies one neighbor in each of the four direction classes
-({\pm d_1,\pm d_2}). Define the exact centered derivative (q_x\in T_x) by
+At each $x$, the operational complex supplies one neighbor in each of the four direction classes
+$\{\pm d_1,\pm d_2\}$. Define the exact centered derivative $q_x\in T_x$ by
 
-[
+$$
 g_x^0(q_x,d_i)
  =\frac{u(x+d_i)-u(x-d_i)}{2},
 \qquad i=1,2.
-]
+$$
 
 This definition is basis-free once the operational metric and opposite direction pairs are fixed.
 It is the unique radius-one linear stencil satisfying all of the following:
 
 1. annihilates constants;
-2. changes sign when (d_i) is reversed;
+2. changes sign when $d_i$ is reversed;
 3. is exact on an affine field on the lifted square patch;
-4. is equivariant under the full local (D_4) action;
+4. is equivariant under the full local $D_4$ action;
 5. gives equal weight to the two opposite samples.
 
-For an oriented edge (x\to y), let (d_{xy}\in T_x) be its certified unit direction and transport
+For an oriented edge $x\to y$, let $d_{xy}\in T_x$ be its certified unit direction and transport
 the endpoint derivative back before averaging:
 
-[
+$$
 \bar q_{xy}
  =\frac12\left(q_x+P_{yx}^0q_y\right)\in T_x.
-]
+$$
 
 ## 6. Frozen linearized transport rule
 
 The source-space endomorphism in the baseline factorization is
 
-[
+$$
 B_{xy}
  =\frac{u_x-u_y}{2}I
  +\frac12\left(
    \bar q_{xy}\otimes d_{xy}^{\flat}
    -d_{xy}\otimes\bar q_{xy}^{\flat}
   \right).
-]
+$$
 
 The first term is forced by exact metric compatibility. The second is the orientation-free skew part
 of the linearized Koszul connection. It is fixed by the centered derivative and the unique
@@ -180,17 +180,18 @@ endpoint-symmetric linear average. No free coefficient remains.
 
 Required identities include:
 
-[
+$$
 B_{yx}
  =-P_{xy}^0B_{xy}P_{yx}^0,
-]
+$$
 
-and, for any local frame change (G_x\in D_4),
+and, for any local frame change $G_x\in D_4$,
 
-[
+$$
+B_{xy}\mapsto G_xB_{xy}G_x^{-1},\qquad
 P_{xy}^0\mapsto G_yP_{xy}^0G_x^{-1},\qquad
 P_{xy}(\varepsilon)\mapsto G_yP_{xy}(\varepsilon)G_x^{-1}.
-]
+$$
 
 The cotangent implementation is generated mechanically by pullback from the tangent transport. It
 is forbidden to maintain an independently adjustable cotangent constructor.
@@ -198,28 +199,28 @@ is forbidden to maintain an independently adjustable cotangent constructor.
 ## 7. Holonomy and presentation covariance
 
 For an oriented square
-(C=(x_0,x_1,x_2,x_3)), column-vector composition is frozen as
+$C=(x_0,x_1,x_2,x_3)$, column-vector composition is frozen as
 
-[
+$$
 H_C(\varepsilon)
  =P_{x_3x_0}(\varepsilon)
   P_{x_2x_3}(\varepsilon)
   P_{x_1x_2}(\varepsilon)
   P_{x_0x_1}(\varepsilon)
  :T_{x_0}\rightarrow T_{x_0}.
-]
+$$
 
-The linearized curvature carrier is (K_C=\delta H_C|_{\varepsilon=0}). It remains an
+The linearized curvature carrier is $K_C=\delta H_C|_{\varepsilon=0}$. It remains an
 endomorphism; no supplied orientation may turn it into a signed scalar.
 
 The implementation must prove exactly:
 
-- cyclic base-point changes conjugate (K_C) by the intervening baseline transport;
-- reversal gives the derivative of inverse holonomy, and at flat baseline (K_{C^{-1}}=-K_C);
-- local (D_4) frame changes conjugate the based curvature;
+- cyclic base-point changes conjugate $K_C$ by the intervening baseline transport;
+- reversal gives the derivative of inverse holonomy, and at flat baseline $K_{C^{-1}}=-K_C$;
+- local $D_4$ frame changes conjugate the based curvature;
 - tangent holonomy and cotangent pullback holonomy are exact duals;
 - the zero/nonzero classification and
-  (kappa_C^2=-\tfrac12\operatorname{tr}(K_C^2)) are presentation invariant.
+  $\kappa_C^2=-\tfrac12\operatorname{tr}(K_C^2)$ are presentation invariant.
 
 ## 8. Mandatory source-blind controls
 
@@ -227,22 +228,22 @@ All controls use `Fraction` arithmetic and run before any response artifact is i
 
 ### 8.1 Constant-field null
 
-For every tested carrier size and every exact constant (c),
+For every tested carrier size and every exact constant $c$,
 
-[
-u_x=c\quad\Longrightarrow\quad B_{xy}=0,quad K_C=0.
-]
+$$
+u_x=c\quad\Longrightarrow\quad B_{xy}=0,\quad K_C=0.
+$$
 
 ### 8.2 Manufactured nonflat vertex impulse
 
-On the periodic operational square carrier, mark a vertex (r) and define
+On the periodic operational square carrier, mark a vertex $r$ and define
 
-[
-u_r=1,qquad u_x=0\quad(x\ne r).
-]
+$$
+u_r=1,\qquad u_x=0\quad(x\ne r).
+$$
 
 The mark is control metadata, not a physical source, and must be carried under every relabeling.
-For (L=5), the exact multiset of the invariant (kappa_C^2) over all 25 faces is frozen as
+For $L=5$, the exact multiset of the invariant $\kappa_C^2$ over all 25 faces is frozen as
 
 | Exact value | Face count |
 |---:|---:|
@@ -250,7 +251,7 @@ For (L=5), the exact multiset of the invariant (kappa_C^2) over all 25 faces is 
 | (1/64) | 8 |
 | (0) | 13 |
 
-The held-out (L=7) result is frozen as
+The held-out $L=7$ result is frozen as
 
 | Exact value | Face count |
 |---:|---:|
@@ -258,18 +259,18 @@ The held-out (L=7) result is frozen as
 | (1/64) | 8 |
 | (0) | 37 |
 
-Every choice of marked vertex must produce the same multiset. At least one (K_C) must be nonzero.
+Every choice of marked vertex must produce the same multiset. At least one $K_C$ must be nonzero.
 This is the mandatory nonflat canary.
 
 ### 8.3 Scale and superposition
 
 For exact amplitudes (lambda\in\{1,7/3}),
 
-[
+$$
 B[\lambda u]=\lambda B[u],\qquad
 K[\lambda u]=\lambda K[u],\qquad
 \kappa^2[\lambda u]=\lambda^2\kappa^2[u].
-]
+$$
 
 For two independently chosen exact fields and exact coefficients, transport and curvature must obey
 linear superposition.
