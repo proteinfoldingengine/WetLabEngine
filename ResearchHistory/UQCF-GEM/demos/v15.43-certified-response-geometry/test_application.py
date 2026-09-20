@@ -10,8 +10,9 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 CORE = HERE.parent / "v15.42-duality-covariant-transport-repair"
 for location in (str(HERE), str(CORE)):
-    if location not in sys.path:
-        sys.path.insert(0, location)
+    while location in sys.path:
+        sys.path.remove(location)
+sys.path[:0] = [str(HERE), str(CORE)]
 
 from protocol_types import TransportManifest
 from test_carriers import manufactured_payload

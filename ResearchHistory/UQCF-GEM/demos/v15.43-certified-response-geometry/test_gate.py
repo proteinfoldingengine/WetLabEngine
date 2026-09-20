@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import importlib
 import tempfile
 import unittest
 from fractions import Fraction
@@ -58,6 +59,16 @@ def run_test_gate(**changes):
 
 
 class GateTests(unittest.TestCase):
+    def test_declared_suite_modules_resolve_to_new_demo(self):
+        expected = ("test_evidence", "test_projection", "test_carriers",
+                    "test_application", "test_controls", "test_gate")
+        observed = {name: Path(importlib.import_module(name).__file__).resolve().parent
+                    for name in expected}
+        self.assertEqual(set(observed.values()), {Path(__file__).resolve().parent})
+        controls = importlib.import_module("test_controls")
+        self.assertTrue(hasattr(controls, "ControlsTests"))
+        self.assertFalse(hasattr(controls, "ControlTests"))
+
     def test_each_failure_stops_before_every_later_stage(self):
         for index, stage in enumerate(STAGES):
             with self.subTest(stage=stage):

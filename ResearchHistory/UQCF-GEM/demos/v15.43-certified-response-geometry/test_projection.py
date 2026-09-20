@@ -186,7 +186,8 @@ class AcquisitionTests(unittest.TestCase):
         generation, geometry = self.modules("source")
         generation.audit = lambda *args: (_ for _ in ()).throw(AssertionError("prohibited audit"))
         geometry.metric_passes = lambda *args: (_ for _ in ()).throw(AssertionError("prohibited audit"))
-        with patch.object(acquire, "_verified_modules", return_value=(generation, geometry, PARENT, _dependencies())):
+        with patch.object(acquire, "_verified_modules", return_value=(generation, geometry, PARENT, _dependencies())), \
+             patch.object(acquire, "_verify_loaded_closure", return_value={}):
             projection = acquire.acquire_projection()
         self.assertEqual(len(projection.payloads), 4)
 
@@ -194,7 +195,8 @@ class AcquisitionTests(unittest.TestCase):
         import acquire
         generation, geometry = self.modules("source")
         with tempfile.TemporaryDirectory() as directory, patch.object(
-                acquire, "_verified_modules", return_value=(generation, geometry, PARENT, _dependencies())):
+                acquire, "_verified_modules", return_value=(generation, geometry, PARENT, _dependencies())), \
+             patch.object(acquire, "_verify_loaded_closure", return_value={}):
             target = Path(directory) / "inputs.json"
             acquire.write_projection(target)
             from projection import decode_projection, encode_projection

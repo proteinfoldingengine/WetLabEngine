@@ -58,9 +58,27 @@ def _project_modules(generation, geometry_module, parent, dependencies):
     return encode_projection(Projection(parent, tuple(dependencies), tuple(payloads), hashes))
 
 
+def _verify_loaded_closure(receipt):
+    expected = {Path(item["path"]).resolve(): item["blob"]
+                for item in receipt["acquisition"].values()}
+    loaded = []
+    pins = {}
+    for module in tuple(sys.modules.values()):
+        origin = module.__file__ if hasattr(module, "__file__") else None
+        if type(origin) is str and Path(origin).resolve() in expected:
+            loaded.append(module)
+            pins[module.__name__] = expected[Path(origin).resolve()]
+    if {Path(module.__file__).resolve() for module in loaded} != set(expected):
+        raise ValueError("incomplete acquisition module closure")
+    return verify_origins(tuple(loaded), pins)
+
+
 def acquire_projection() -> Projection:
     generation, geometry, parent, dependencies = _verified_modules()
-    return decode_projection(_project_modules(generation, geometry, parent, dependencies))
+    raw = _project_modules(generation, geometry, parent, dependencies)
+    receipt = verify_evidence(Path(__file__).resolve().parents[4])
+    _verify_loaded_closure(receipt)
+    return decode_projection(raw)
 
 
 def write_projection(path: Path) -> None:

@@ -10,8 +10,13 @@ from unittest.mock import patch
 HERE = Path(__file__).resolve().parent
 CORE = HERE.parent / "v15.42-duality-covariant-transport-repair"
 for location in (str(HERE), str(CORE)):
-    if location not in sys.path:
-        sys.path.insert(0, location)
+    while location in sys.path:
+        sys.path.remove(location)
+sys.path[:0] = [str(HERE), str(CORE)]
+
+# Keep the v15.43 entrypoint module stable when unittest imports every test
+# module before executing the explicitly ordered suite.
+import evidence
 
 from fixtures import periodic_square_input
 from operational_complex import (BaselineConnectionAudit, ConnectionStatus,

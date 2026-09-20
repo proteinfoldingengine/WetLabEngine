@@ -108,7 +108,7 @@ def verify_origins(modules: tuple[object, ...], allowed: dict[str, str]) -> dict
             raise ValueError(f"module origin mismatch: {name}") from error
         expected = allowed[name]
         candidates = {(root / item["path"]).resolve() for item in inventory
-                      if item["blob"] == expected and Path(item["path"]).stem == name.rsplit(".", 1)[-1]}
+                      if item["blob"] == expected}
         if path not in candidates or git_blob(path.read_bytes()) != expected:
             raise ValueError(f"module origin mismatch: {name}")
         receipt[name] = {"path": str(path), "blob": expected}
