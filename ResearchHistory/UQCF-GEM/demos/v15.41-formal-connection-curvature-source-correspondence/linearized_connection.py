@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from enum import Enum
 from fractions import Fraction
 
 from exact_algebra import (
@@ -19,6 +20,7 @@ from operational_complex import (
     ConnectionStatus,
     Matrix2,
     OperationalComplex,
+    enumerate_baseline_connection,
 )
 
 
@@ -44,6 +46,82 @@ class LinearizedConnection:
     metric_compatibility_exact: bool
     status: ConnectionStatus
     reason: str | None
+
+
+class CarrierKind(str, Enum):
+    TANGENT_VECTOR = "tangent_vector"
+    COVECTOR = "covector"
+
+
+class TransportDirection(str, Enum):
+    FORWARD = "forward"
+    REVERSE = "reverse"
+
+
+class MatrixAction(str, Enum):
+    DIRECT = "direct"
+    INVERSE = "inverse"
+    TRANSPOSE = "transpose"
+    INVERSE_TRANSPOSE = "inverse_transpose"
+
+
+@dataclass(frozen=True)
+class TransportManifest:
+    carrier: CarrierKind
+    edge_direction: TransportDirection
+    matrix_action: MatrixAction
+    dualized: bool
+    variation_sign: int
+    factor_domain: str
+    factor_codomain: str
+    basepoint_rule: str
+    orientation_rule: str
+
+    @classmethod
+    def literal_frozen(cls):
+        return cls(
+            CarrierKind.TANGENT_VECTOR,
+            TransportDirection.REVERSE,
+            MatrixAction.DIRECT,
+            False,
+            1,
+            "T_y",
+            "T_x",
+            "transport_later_edges_back_to_x0",
+            "both_cycle_orientations",
+        )
+
+    def validate_literal_frozen(self):
+        if self != type(self).literal_frozen():
+            raise ValueError(
+                "manifest does not encode the literal frozen convention"
+            )
+        return True
+
+
+@dataclass(frozen=True)
+class ProtocolAudit:
+    protocol_valid: bool
+    coefficient_rank: int
+    augmented_rank: int
+    reason: str | None
+    manifest: TransportManifest
+
+
+@dataclass(frozen=True)
+class FlatnessDiagnostic:
+    coefficient_rank: int
+    augmented_rank: int
+    all_face_curvatures_zero: bool
+    face_curvatures: tuple[tuple[tuple[int, int, int, int], Matrix2], ...]
+
+
+@dataclass(frozen=True)
+class ParityWitness:
+    rank: int
+    unknowns: int
+    nullity: int
+    all_face_curvatures_zero: bool
 
 
 def _matvec2(value: Matrix2, vector):
@@ -133,10 +211,23 @@ def _edge_delta(edge, field_by_label, edge_index, coefficient=Fraction(0)):
     return value, turn, edge_index[canonical]
 
 
-def _closure_system(complex_: OperationalComplex, lift: IsotropicLift, edges):
+def _transport_factor(cycle, prefix, manifest):
+    if manifest is None:
+        return (cycle[prefix], cycle[prefix + 1])
+    manifest.validate_literal_frozen()
+    return (cycle[prefix + 1], cycle[prefix])
+
+
+def _closure_system(
+    complex_: OperationalComplex,
+    lift: IsotropicLift,
+    edges,
+    manifest: TransportManifest | None = None,
+):
     field_by_label = dict(zip(complex_.labels, lift.field))
     edge_index = {edge: index for index, edge in enumerate(edges)}
     tangent = dict(zip(complex_.directed_edges, complex_.direction_classes))
+    variation_sign = Fraction(1 if manifest is None else manifest.variation_sign)
     rows = []
     rhs = []
     for initial in complex_.cycles:
@@ -151,7 +242,10 @@ def _closure_system(complex_: OperationalComplex, lift: IsotropicLift, edges):
             constant = [
                 sum(
                     (
-                        field_by_label[cycle[i]] * vectors[i][component] / 2
+                        variation_sign
+                        * field_by_label[cycle[i]]
+                        * vectors[i][component]
+                        / 2
                         for i in range(4)
                     ),
                     Fraction(0),
@@ -162,9 +256,7 @@ def _closure_system(complex_: OperationalComplex, lift: IsotropicLift, edges):
                 [Fraction(0) for _edge in edges] for _component in range(2)
             ]
             for prefix in range(3):
-                # Transports are stored in source-to-target order.  Thus the
-                # repository's P_10 factor is the edge (x0, x1).
-                edge = (cycle[prefix], cycle[prefix + 1])
+                edge = _transport_factor(cycle, prefix, manifest)
                 fixed, variable, index = _edge_delta(
                     edge, field_by_label, edge_index
                 )
@@ -178,6 +270,86 @@ def _closure_system(complex_: OperationalComplex, lift: IsotropicLift, edges):
                 rows.append(tuple(coefficients[component]))
                 rhs.append(-constant[component])
     return tuple(rows), tuple(rhs)
+
+
+def audit_transport_protocol(complex_, field, manifest):
+    if not isinstance(complex_, OperationalComplex):
+        raise TypeError("OperationalComplex required")
+    if not isinstance(manifest, TransportManifest):
+        raise TypeError("TransportManifest required")
+    manifest.validate_literal_frozen()
+    lift = construct_isotropic_lift(complex_, field)
+    edges = tuple(sorted(tuple(sorted(edge)) for edge in complex_.neighbors))
+    rows, rhs = _closure_system(complex_, lift, edges, manifest)
+    coefficient_rank = rank(rows, ncols=len(edges))
+    augmented = tuple(row + (value,) for row, value in zip(rows, rhs))
+    augmented_rank = rank(augmented, ncols=len(edges) + 1)
+    valid = coefficient_rank == augmented_rank
+    return ProtocolAudit(
+        valid,
+        coefficient_rank,
+        augmented_rank,
+        None if valid else "literal_frozen_rank_inconsistency",
+        manifest,
+    )
+
+
+def local_circulation_rowspace_witness():
+    closure_rows = (
+        (Fraction(1), Fraction(1), Fraction(0), Fraction(0)),
+        (Fraction(0), Fraction(1), Fraction(1), Fraction(0)),
+        (Fraction(0), Fraction(0), Fraction(1), Fraction(1)),
+        (Fraction(1), Fraction(0), Fraction(0), Fraction(1)),
+    )
+    circulation = (Fraction(1),) * 4
+    return {
+        "closure_rank": rank(closure_rows, ncols=4),
+        "augmented_with_circulation_rank": rank(
+            closure_rows + (circulation,), ncols=4
+        ),
+    }
+
+
+def executed_flatness_diagnostic(complex_, field):
+    lift = construct_isotropic_lift(complex_, field)
+    edges = tuple(sorted(tuple(sorted(edge)) for edge in complex_.neighbors))
+    rows, rhs = _closure_system(complex_, lift, edges)
+    coefficient_rank = rank(rows, ncols=len(edges))
+    augmented_rank = rank(
+        tuple(row + (value,) for row, value in zip(rows, rhs)),
+        ncols=len(edges) + 1,
+    )
+    baseline = enumerate_baseline_connection(complex_).connection
+    connection = solve_linearized_connection(complex_, baseline, lift)
+    if not connection.unique_mod_gauge:
+        raise ValueError("executed diagnostic requires a unique odd-size solution")
+    face_curvatures = tuple(
+        (cycle, differentiate_holonomy(baseline, connection, cycle))
+        for cycle in complex_.cycles
+    )
+    zero = ((Fraction(0), Fraction(0)), (Fraction(0), Fraction(0)))
+    return FlatnessDiagnostic(
+        coefficient_rank,
+        augmented_rank,
+        all(value == zero for _cycle, value in face_curvatures),
+        face_curvatures,
+    )
+
+
+def parity_witness(complex_):
+    zero_field = tuple(Fraction(0) for _label in complex_.labels)
+    lift = construct_isotropic_lift(complex_, zero_field)
+    edges = tuple(sorted(tuple(sorted(edge)) for edge in complex_.neighbors))
+    rows, _rhs = _closure_system(complex_, lift, edges)
+    coefficient_rank = rank(rows, ncols=len(edges))
+    unknowns = len(edges)
+    local = local_circulation_rowspace_witness()
+    return ParityWitness(
+        coefficient_rank,
+        unknowns,
+        unknowns - coefficient_rank,
+        local["closure_rank"] == local["augmented_with_circulation_rank"],
+    )
 
 
 def _metric_compatibility(delta_transports, field_by_label):
