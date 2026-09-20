@@ -15,6 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[4]
 V1540 = REPO_ROOT / "ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity"
 V1540_SPEC = REPO_ROOT / "docs/superpowers/specs/2026-09-19-v1540-global-balance-geometry-specificity-design.md"
 V1541_SPEC = REPO_ROOT / "docs/superpowers/specs/2026-09-19-v1541-formal-connection-curvature-source-correspondence-design.md"
+V1541_ERRATUM = REPO_ROOT / "docs/superpowers/specs/2026-09-20-v1541-transport-protocol-erratum-design.md"
 BASE_SHA = "84aa1c81fd86ac4d7a06015482f98572f3afc05f"
 EVIDENCE = {
     "v15.40-response-generation": (V1540 / "response_generation.py", "afd5a68ce74f7f80f49b6fd6307ebb0681182bf5"),
@@ -25,6 +26,10 @@ EVIDENCE = {
     "v15.40-results": (V1540 / "docs/RESULTS.json", "c56ca48110b3341e2d68289be717bf1e5308a20a"),
     "v15.40-design": (V1540_SPEC, "5f75f9a7ba1df5b21715f775d26bedbedc07297f"),
     "v15.41-design": (V1541_SPEC, "6d35aae0ccb6c2584d26d5a83d522b3cc7036728"),
+    "v15.41-transport-erratum": (
+        V1541_ERRATUM,
+        "d40d03d9d2498ce54839b15dad00c1505c1a586a",
+    ),
 }
 
 
