@@ -40,6 +40,9 @@ def _audit(
 
 def audit_centered_stencil(drop: str | None = None) -> ComponentSelectionAudit:
     zero = Fraction(0)
+    # constant_exact = odd_center + odd_endpoints.  Thus removing any one of
+    # those three redundant rows retains rank three; removing affine_exact,
+    # the normalization row, reduces the exact system to rank two.
     return _audit(
         (
             ("constant_exact", (Fraction(1), Fraction(1), Fraction(1)), zero),
@@ -53,6 +56,7 @@ def audit_centered_stencil(drop: str | None = None) -> ComponentSelectionAudit:
 
 
 def audit_endpoint_average(drop: str | None = None) -> ComponentSelectionAudit:
+    # Both endpoint equations are independent, so either removal leaves rank one.
     return _audit(
         (
             ("constant_exact", (Fraction(1), Fraction(1)), Fraction(1)),

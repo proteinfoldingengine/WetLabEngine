@@ -72,6 +72,10 @@ class TransportManifest:
             and type(self.basepoint_rule) is str
             and type(self.orientation_rule) is str
         )
-        if not types_are_exact or self != type(self).certified():
+        if (
+            type(self) is not TransportManifest
+            or not types_are_exact
+            or self != TransportManifest.certified()
+        ):
             raise ValueError("manifest differs from the approved v15.42 protocol")
         return True
