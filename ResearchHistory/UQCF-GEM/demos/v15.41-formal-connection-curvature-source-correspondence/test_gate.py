@@ -5,6 +5,7 @@ import unittest
 
 from connection_curvature_gate import (
     ALLOWED_GATE_STATUSES,
+    _audit,
     audit,
     canonical_json,
     classify_gate,
@@ -18,6 +19,43 @@ class ConnectionCurvatureGateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.result = audit()
+
+    def test_erratum_stops_before_scientific_adjudication(self):
+        self.assertFalse(self.result["protocol_valid"])
+        self.assertEqual(self.result["status"], "PROTOCOL_INVALID")
+        self.assertEqual(
+            self.result["next_required_object"],
+            "REPAIR_ONLY_THE_PROTOCOL_DEFECT_BEFORE_ADJUDICATION",
+        )
+        for key in (
+            "connection_identifiable",
+            "curvature_source_map_identifiable",
+            "canonical_correspondence",
+            "control_all_sizes",
+        ):
+            self.assertIsNone(self.result[key])
+
+    def test_failed_protocol_never_calls_scientific_adjudicator(self):
+        def forbidden(*_args, **_kwargs):
+            raise AssertionError(
+                "scientific adjudicator called after protocol failure"
+            )
+
+        result = _audit(adjudicator=forbidden)
+        self.assertEqual(result["status"], "PROTOCOL_INVALID")
+
+    def test_prior_result_and_diagnostics_are_non_authoritative(self):
+        receipt = self.result["superseded_execution_receipt"]
+        self.assertEqual(
+            receipt["status"],
+            "CONNECTION_IDENTIFIABLE_NO_CURVATURE_SOURCE_CORRESPONDENCE",
+        )
+        self.assertFalse(receipt["authoritative"])
+        diagnostics = self.result["non_adjudicating_protocol_diagnostics"]
+        self.assertEqual(
+            diagnostics["label"], "NON_ADJUDICATING_PROTOCOL_DIAGNOSTIC"
+        )
+        self.assertTrue(diagnostics["all_tested_curvatures_zero"])
 
     def test_evidence_and_input_separation(self):
         self.assertTrue(self.result["evidence_verified"])
