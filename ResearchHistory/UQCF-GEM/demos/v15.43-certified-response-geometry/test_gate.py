@@ -26,6 +26,42 @@ def evaluator_origins():
     return {name: {"blob": "a" * 40} for name in names}
 
 
+def response_control(L):
+    n = L * L
+    return {"L": L, "scale_pairs": 5 * n,
+            "scale_keys": [[L, family, index] for family in FAMILY_KEYS for index in range(n)],
+            "shift_cases": 10 * n,
+            "shift_keys": [[L, family, scale, index] for family in FAMILY_KEYS for index in range(n)
+                           for scale in ("1", "7/3")],
+            "superpositions": 10,
+            "superposition_keys": [[L, family, scale, 0, 1]
+                                   for scale in ("1", "7/3") for family in FAMILY_KEYS],
+            "transformation_names": ["scale_7/3", "shift_7/3", "superposition_2/3_-5/7"],
+            "all_exact": True}
+
+
+def carrier_control(L, scale):
+    n, gauges = L * L, 8 * L * L + 1
+    certified = (n + 2) * gauges
+    identity = [["1", "0"], ["0", "1"]]
+    directions = [["-1", "0"], ["0", "-1"], ["0", "1"], ["1", "0"]]
+    return {"L": L, "scale": scale, "constants": 2, "constant_keys": ["0", "7/3"],
+            "impulses": n, "impulse_keys": list(range(n)),
+            "impulse_histogram": [["0", n - 12], ["1/64", 8], ["1/16", 4]],
+            "basis_core_comparisons": 9 * n + 2, "identity_core_comparisons": n + 2,
+            "algebraically_certified_gauge_comparisons": certified,
+            "local_linear_certificate": {"edge_types": [[identity, direction] for direction in directions],
+                "endpoint_frame_pairs": 64, "linear_basis_dimension": 5,
+                "local_basis_comparisons": 1280, "gradient_basis_comparisons": 32, "all_exact": True},
+            "edge_checks": certified * 4 * n, "face_checks": certified * n, "all_exact": True}
+
+
+def carrier_receipt(L, scale):
+    return {"L": L, "scale": scale, "status": "IDENTIFIABLE", "complex_reason": None,
+            "baseline_status": "IDENTIFIABLE", "baseline_reason": None, "tangent_rank": 2,
+            "gauge_orbit_count": 1, "flat": True}
+
+
 def complete_cases(nonflat):
     records = []
     for L in (5, 7):
@@ -60,7 +96,8 @@ def complete_cases(nonflat):
                                         "all_exact": True, "L": L, "scale": scale, "faces": L * L,
                                         "oriented_faces": 8 * L * L,
                                         "gauge_presentations": 8 * L * L + 1,
-                                        "gauge_keys": [["gauge", j] for j in range(8 * L * L + 1)],
+                                        "gauge_keys": [["site", label, action]
+                                                       for label in range(L * L) for action in range(8)] + [["mixed"]],
                                         "gradient_checks": (8 * L * L + 1) * L * L,
                                         "edge_checks": (8 * L * L + 1) * 4 * L * L,
                                         "gauge_face_checks": (8 * L * L + 1) * L * L,
@@ -199,7 +236,7 @@ class GateTests(unittest.TestCase):
             def failed(command, **kwargs):
                 output = Path(command[command.index("--out") + 1])
                 output.write_text(json.dumps({"failure": {
-                    "stage": "response_cases", "case": [7, FAMILY_KEYS[0], "1", 3],
+                    "stage": "response_cases", "case": [7, FAMILY_KEYS[0], "1", 0],
                     "completed_cases": 250, "completed_faces": 6250,
                     "error_category": "ArithmeticError", "message": "exact failure"}}))
                 return SimpleNamespace(returncode=1, stderr=b"traceback evidence\n")
@@ -244,6 +281,63 @@ class GateTests(unittest.TestCase):
                 "origin_receipts": evaluator_origins()}):
             with self.assertRaisesRegex(ValueError, "control_receipt_schema"):
                 gate._controls({"path": Path("unused")}, ({},) * 4)
+
+    def test_nested_receipts_require_exact_ordered_keys_and_certificate_counts(self):
+        import response_geometry_gate as gate
+        valid_response = response_control(5)
+        gate._validate_response_control(valid_response, 5)
+        for changed in ({**valid_response, "scale_keys": "x" * 125},
+                        {**valid_response, "scale_keys": [valid_response["scale_keys"][0]] * 125}):
+            with self.assertRaises(ValueError):
+                gate._validate_response_control(changed, 5)
+        valid_carrier = carrier_control(5, "1")
+        gate._validate_carrier_control(valid_carrier, 5, "1")
+        changed_certificate = dict(valid_carrier["local_linear_certificate"])
+        changed_certificate["local_basis_comparisons"] = 1279
+        with self.assertRaises(ValueError):
+            gate._validate_carrier_control({**valid_carrier,
+                "local_linear_certificate": changed_certificate}, 5, "1")
+        keys = list(valid_carrier["impulse_keys"])
+        keys[1] = True
+        with self.assertRaises(ValueError):
+            gate._validate_carrier_control({**valid_carrier, "impulse_keys": keys}, 5, "1")
+
+    def test_carrier_receipt_rejects_boolean_numeric_field(self):
+        import response_geometry_gate as gate
+        receipts = [carrier_receipt(L, scale) for L, scale in
+                    ((5, "1"), (5, "7/3"), (7, "1"), (7, "7/3"))]
+        receipts[0]["gauge_orbit_count"] = True
+        with patch("response_geometry_gate._run_evaluator", return_value={
+                "carrier_receipts": receipts, "origin_receipts": evaluator_origins()}):
+            with self.assertRaisesRegex(ValueError, "carrier_receipt"):
+                gate._carriers({"path": Path("unused")})
+
+    def test_presentation_gauge_keys_must_be_complete_unique_ordered(self):
+        cases = list(complete_cases(lambda *args: False))
+        first = dict(cases[0])
+        receipt = dict(first["presentation_receipt"])
+        keys = list(receipt["gauge_keys"])
+        keys[1] = keys[0]
+        receipt["gauge_keys"] = keys
+        first["presentation_receipt"] = receipt
+        cases[0] = first
+        self.assertEqual(classify(tuple(cases), True)[0], "RESPONSE_APPLICATION_INVALID")
+
+    def test_failure_case_must_equal_next_ordered_prefix(self):
+        import response_geometry_gate as gate
+        with tempfile.TemporaryDirectory() as temporary:
+            inputs = Path(temporary) / "INPUTS.json"
+            inputs.write_text("{}")
+            def failed(command, **kwargs):
+                Path(command[command.index("--out") + 1]).write_text(json.dumps({"failure": {
+                    "stage": "response_cases", "case": [7, FAMILY_KEYS[0], "1", 3],
+                    "completed_cases": 250, "completed_faces": 6250,
+                    "error_category": "ValueError", "message": "bad"}}))
+                return SimpleNamespace(returncode=1, stderr=b"")
+            with patch("response_geometry_gate.subprocess.run", side_effect=failed):
+                with self.assertRaises(gate.StageFailure) as caught:
+                    gate._run_evaluator({"path": inputs}, "cases")
+            self.assertEqual(caught.exception.category, "MalformedChildFailure")
 
     def test_public_audit_has_no_executor_override(self):
         import inspect
