@@ -655,7 +655,7 @@ git commit -m "feat(uqcf): certify typed linearized holonomy"
 
 **Interfaces:**
 - Consumes: source-blind fixtures, construct_transport, linearized_holonomy, and curvature_invariant.
-- Produces: constant_control(L: int, value: Fraction) -> ControlResult, impulse_control(L: int, root: int, amplitude: Fraction, presentation: FramePresentation | None = None) -> ControlResult, superposition_control(L: int, left: tuple[Fraction, ...], right: tuple[Fraction, ...], a: Fraction, b: Fraction) -> bool, and run_control_family() -> ControlFamily.
+- Produces: constant_control(L: int, value: Fraction) -> ControlResult, impulse_control(L: int, root: int, amplitude: Fraction, presentation: FramePresentation | None = None) -> ControlResult, superposition_control(L: int, left: tuple[Fraction, ...], right: tuple[Fraction, ...], a: Fraction, b: Fraction) -> bool, ControlStage, ControlExecutors.default(), and run_control_family(executors: ControlExecutors | None = None) -> ControlFamily.
 
 - [ ] **Step 1: Write seven failing control tests**
 
@@ -753,22 +753,42 @@ class ControlResult:
     all_covariances_exact: bool
 
 @dataclass(frozen=True)
+class ControlStage:
+    passed: bool
+    results: tuple[ControlResult, ...] = ()
+
+@dataclass(frozen=True)
+class ControlExecutors:
+    covariance: Callable[[], ControlStage]
+    constant_null: Callable[[], ControlStage]
+    l5_nonflat: Callable[[], ControlStage]
+    l7_holdout_nonflat: Callable[[], ControlStage]
+    scale_exact: Callable[[], ControlStage]
+    superposition_exact: Callable[[], ControlStage]
+
+    @classmethod
+    def default(cls):
+        # Bind the six production stage functions in certified order.
+        ...
+
+@dataclass(frozen=True)
 class ControlFamily:
-    constant_null: bool
-    l5_nonflat: bool
-    l7_holdout_nonflat: bool
-    every_root_equivalent: bool
-    scale_exact: bool
-    superposition_exact: bool
-    covariance_exact: bool
+    covariance_exact: bool | None
+    constant_null: bool | None
+    l5_nonflat: bool | None
+    l7_holdout_nonflat: bool | None
+    every_root_equivalent: bool | None
+    scale_exact: bool | None
+    superposition_exact: bool | None
     results: tuple[ControlResult, ...]
+    failed_stage: str | None
 
     @property
     def all_required_pass(self):
-        return all((
-            self.constant_null, self.l5_nonflat, self.l7_holdout_nonflat,
-            self.every_root_equivalent, self.scale_exact,
-            self.superposition_exact, self.covariance_exact,
+        return all(value is True for value in (
+            self.covariance_exact, self.constant_null, self.l5_nonflat,
+            self.l7_holdout_nonflat, self.every_root_equivalent,
+            self.scale_exact, self.superposition_exact,
         ))
 ~~~
 
@@ -776,7 +796,7 @@ Serialize Counters as sorted tuples to preserve deterministic JSON order.
 
 - [ ] **Step 4: Implement the controls without source terminology**
 
-The impulse field helper accepts only a carrier and a marked control vertex. Names, docstrings, ledger keys, and imports must use control_root or marked_vertex, never source, mass, stress, or target. Carry the marked vertex through relabeling. run_control_family() stores results in this exact order: constant L5 at 7/3, constant L7 at 7/3, all 25 unit L5 roots in label order, the unit L7 root 0 holdout, and the L5 root 0 amplitude-7/3 scale case. The tuple therefore contains exactly 29 records.
+The impulse field helper accepts only a carrier and a marked control vertex. Names, docstrings, ledger keys, and imports must use control_root or marked_vertex, never source, mass, stress, or target. Carry the marked vertex through relabeling. run_control_family() invokes ControlExecutors stages strictly in this order: covariance, constant-null, L5 nonflat/every-root, held-out L7, scale, superposition. It returns immediately on the first failed stage; later status fields are None and later callables are never invoked. A successful default run stores results in this exact order: constant L5 at 7/3, constant L7 at 7/3, all 25 unit L5 roots in label order, the unit L7 root 0 holdout, and the L5 root 0 amplitude-7/3 scale case. The tuple therefore contains exactly 29 records.
 
 - [ ] **Step 5: Run GREEN and the complete mathematical suite**
 
@@ -842,8 +862,24 @@ class GateTests(unittest.TestCase):
         self.assertEqual(result["status"], "PROTOCOL_NOT_IDENTIFIABLE")
 
     def test_failed_nonflat_canary_stops_before_later_stages(self):
-        failed = replace(run_control_family(), l5_nonflat=False)
-        result = _audit(control_runner=lambda: failed)
+        calls = []
+        def stage(name, passed):
+            return lambda: (calls.append(name) or ControlStage(passed))
+        def forbidden(name):
+            return lambda: self.fail(f"{name} ran after L5 failure")
+        executors = ControlExecutors(
+            covariance=stage("covariance", True),
+            constant_null=stage("constant-null", True),
+            l5_nonflat=stage("L5", False),
+            l7_holdout_nonflat=forbidden("L7"),
+            scale_exact=forbidden("scale"),
+            superposition_exact=forbidden("superposition"),
+        )
+        result = _audit(
+            control_runner=lambda: run_control_family(executors=executors)
+        )
+        self.assertEqual(calls, ["covariance", "constant-null", "L5"])
+        self.assertEqual(result["failed_gate"], "l5_nonflat")
         self.assertFalse(result["response_geometry_applied"])
         self.assertFalse(result["source_target_constructed"])
         self.assertFalse(result["source_correspondence_evaluated"])
@@ -917,11 +953,12 @@ def _audit(evidence_verifier=verify_evidence,
             "PROTOCOL_INVALID",
             "REPAIR_PROTOCOL_BEFORE_ANY_APPLICATION",
             evidence, selection, controls,
+            failed_gate=controls.failed_stage,
         )
     return certified_ledger(evidence, manifest, selection, controls)
 ~~~
 
-Do not define or import a response-application or scientific-adjudication function in this stage.
+`run_control_family` is the only control entrypoint used by the gate. It must enforce covariance, constant-null, L5, L7, scale, and superposition order internally and expose the first failed stage; `_audit` must not reconstruct, reorder, or continue those stages. Do not define or import a response-application or scientific-adjudication function in this stage.
 
 - [ ] **Step 4: Freeze the ledger schema**
 
