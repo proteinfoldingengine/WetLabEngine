@@ -28,7 +28,7 @@
 
 ## Review Focus
 
-1. **Local frame changes:** a different D4 frame at every vertex must transform baseline and perturbed transports covariantly, not merely pass a global-frame test. Task 3 adds an exhaustive local-frame test on every edge.
+1. **Local frame changes:** a different D4 frame at every vertex must transform baseline and perturbed transports covariantly, not merely pass a global-frame test. Task 3 tests every D4 action as a one-site change, plus a deterministic mixed local presentation, on every affected edge.
 2. **Dual path independence:** cotangent results must be derived from tangent pullback and agree through the pairing identity; a second adjustable constructor would reintroduce the v15.41 ambiguity. Task 4 tests the pairing edge by edge and around every face.
 3. **Zero-row false positive:** rank or multiset tests could pass with empty curvature data. Tasks 4 and 5 assert the exact number of faces, explicit nonzero matrices, four nonzero 1/16 faces, eight nonzero 1/64 faces, and independently expanded product derivatives.
 4. **Relabeling of the marked control:** the impulse mark must move with the carrier permutation; leaving it on the old integer label would create label-dependent results. Task 5 tests every L5 root and deterministic nontrivial permutations at L5 and L7.
@@ -67,7 +67,7 @@ All demo-relative paths below are under ResearchHistory/UQCF-GEM/demos/v15.42-du
 
 **Interfaces:**
 - Consumes: repository files at the four frozen evidence paths and the certified v15.41 exact/operational modules.
-- Produces: verify_evidence() -> dict[str, str], periodic_square_input(L: int, labels: tuple[int, ...] | None = None), relabel_input(data, permutation), and byte-identical exact_algebra/operational_complex modules.
+- Produces: verify_evidence() -> dict[str, str], periodic_square_input(L: int, labels: tuple[int, ...] | None = None), relabel_input(data, permutation), relabeled_edges(data, permutation), and byte-identical exact_algebra/operational_complex modules.
 
 - [ ] **Step 1: Write four failing evidence/substrate tests**
 
@@ -101,7 +101,7 @@ class EvidenceTests(unittest.TestCase):
         original = periodic_square_input(5)
         permutation = tuple(reversed(range(25)))
         changed = relabel_input(original, permutation)
-        self.assertEqual(set(changed[0]), set(permutation))
+        self.assertEqual(changed[0], permutation)
         self.assertEqual(sorted(map(sorted, changed[2])),
                          sorted(map(sorted, relabeled_edges(original, permutation))))
 ~~~
@@ -197,7 +197,7 @@ git commit -m "test(uqcf): freeze v15.42 transport substrate"
 
 **Interfaces:**
 - Consumes: exact Fraction rank/solve functions.
-- Produces: CarrierKind, MatrixAction, TypedMap, TransportManifest.certified(), SelectionAudit, audit_centered_stencil(), and audit_endpoint_average().
+- Produces: CarrierKind, MatrixAction, TypedMap, TransportManifest.certified(), SelectionAudit, audit_centered_stencil(), audit_endpoint_average(), and audit_selection() -> SelectionAudit.
 
 - [ ] **Step 1: Write five failing tests**
 
@@ -210,6 +210,8 @@ def test_certified_manifest_types_every_map_and_sign():
                      TypedMap("T_y", "T_x", MatrixAction.INVERSE))
     self.assertEqual(manifest.cotangent_pullback,
                      TypedMap("T_y*", "T_x*", MatrixAction.TRANSPOSE))
+    self.assertEqual(manifest.cotangent_reverse,
+                     TypedMap("T_x*", "T_y*", MatrixAction.INVERSE_TRANSPOSE))
     self.assertEqual(manifest.frame_variation_sign, -1)
     self.assertEqual(manifest.coframe_variation_sign, 1)
 
@@ -222,6 +224,7 @@ def test_every_manifest_substitution_is_rejected():
         {"basepoint_rule": "output_selected"},
         {"orientation_rule": "forward_only"},
         {"cotangent_pullback": TypedMap("T_y*", "T_x*", MatrixAction.INVERSE_TRANSPOSE)},
+        {"cotangent_reverse": TypedMap("T_x*", "T_y*", MatrixAction.TRANSPOSE)},
     )
     for change in changes:
         with self.subTest(change=change), self.assertRaises(ValueError):
@@ -263,6 +266,7 @@ class MatrixAction(str, Enum):
     DIRECT = "direct"
     INVERSE = "inverse"
     TRANSPOSE = "transpose"
+    INVERSE_TRANSPOSE = "inverse_transpose"
 
 @dataclass(frozen=True)
 class TypedMap:
@@ -276,6 +280,7 @@ class TransportManifest:
     tangent_forward: TypedMap
     tangent_reverse: TypedMap
     cotangent_pullback: TypedMap
+    cotangent_reverse: TypedMap
     frame_variation_sign: int
     coframe_variation_sign: int
     basepoint_rule: str
@@ -288,6 +293,7 @@ class TransportManifest:
             TypedMap("T_x", "T_y", MatrixAction.DIRECT),
             TypedMap("T_y", "T_x", MatrixAction.INVERSE),
             TypedMap("T_y*", "T_x*", MatrixAction.TRANSPOSE),
+            TypedMap("T_x*", "T_y*", MatrixAction.INVERSE_TRANSPOSE),
             -1, 1, "based_holonomy_conjugacy", "both_orientations",
         )
 
@@ -299,7 +305,7 @@ class TransportManifest:
 
 - [ ] **Step 4: Implement exact symbolic selection audits**
 
-Represent derivative weights as (w_plus, w_center, w_minus). Use exact equations constant: w_plus+w_center+w_minus=0, oddness: w_center=0 and w_plus+w_minus=0, affine exactness: w_plus-w_minus=1. Represent edge weights as (a,b) with a+b=1 and a-b=0. Use exact rank and solve_unique; when a named axiom is dropped, return identifiable=False rather than selecting a free parameter.
+Represent derivative weights as (w_plus, w_center, w_minus). Use exact equations constant: w_plus+w_center+w_minus=0, oddness: w_center=0 and w_plus+w_minus=0, affine exactness: w_plus-w_minus=1. Represent edge weights as (a,b) with a+b=1 and a-b=0. Use exact rank and solve_unique; when a named axiom is dropped, return identifiable=False rather than selecting a free parameter. audit_selection() must contain the two component audits and set identifiable to their conjunction; no later task may recompute or override that verdict.
 
 - [ ] **Step 5: Run GREEN**
 
@@ -356,6 +362,16 @@ class TransportTests(unittest.TestCase):
         result = construct_transport(self.complex, self.baseline, self.impulse)
         self.assertTrue(result.metric_compatibility_exact)
         self.assertEqual(len(result.tangent_deltas), len(self.complex.directed_edges))
+        directions = dict(zip(self.complex.directed_edges,
+                              self.complex.direction_classes))
+        edge = next(edge for edge in self.complex.directed_edges
+                    if edge[0] == 0
+                    and directions[edge] == (Fraction(1), Fraction(0)))
+        self.assertEqual(
+            dict(result.source_endomorphisms)[edge],
+            ((Fraction(1, 2), Fraction(0)),
+             (Fraction(0), Fraction(1, 2))),
+        )
 
     def test_reverse_edge_is_derivative_of_inverse_transport(self):
         result = construct_transport(self.complex, self.baseline, self.impulse)
@@ -746,13 +762,21 @@ class ControlFamily:
     superposition_exact: bool
     covariance_exact: bool
     results: tuple[ControlResult, ...]
+
+    @property
+    def all_required_pass(self):
+        return all((
+            self.constant_null, self.l5_nonflat, self.l7_holdout_nonflat,
+            self.every_root_equivalent, self.scale_exact,
+            self.superposition_exact, self.covariance_exact,
+        ))
 ~~~
 
 Serialize Counters as sorted tuples to preserve deterministic JSON order.
 
 - [ ] **Step 4: Implement the controls without source terminology**
 
-The impulse field helper accepts only a carrier and a marked control vertex. Names, docstrings, ledger keys, and imports must use control_root or marked_vertex, never source, mass, stress, or target. Carry the marked vertex through relabeling.
+The impulse field helper accepts only a carrier and a marked control vertex. Names, docstrings, ledger keys, and imports must use control_root or marked_vertex, never source, mass, stress, or target. Carry the marked vertex through relabeling. run_control_family() stores results in this exact order: constant L5 at 7/3, constant L7 at 7/3, all 25 unit L5 roots in label order, the unit L7 root 0 holdout, and the L5 root 0 amplitude-7/3 scale case. The tuple therefore contains exactly 29 records.
 
 - [ ] **Step 5: Run GREEN and the complete mathematical suite**
 
@@ -781,7 +805,7 @@ git commit -m "test(uqcf): add exact nonflat transport canary"
 
 **Interfaces:**
 - Consumes: verify_evidence, manifest validation, selection audits, transport identities, and ControlFamily.
-- Produces: audit() -> dict, _audit(evidence_verifier: Callable = verify_evidence, selection_auditor: Callable = audit_selection, control_runner: Callable = run_control_family) -> dict, write_result(path: Path) -> None, and CLI flags --out and --check.
+- Produces: audit() -> dict, _audit(evidence_verifier: Callable = verify_evidence, manifest_factory: Callable = TransportManifest.certified, selection_auditor: Callable = audit_selection, control_runner: Callable = run_control_family) -> dict, write_result(path: Path) -> None, and CLI flags --out and --check.
 
 - [ ] **Step 1: Write seven failing gate tests**
 
@@ -796,11 +820,18 @@ class GateTests(unittest.TestCase):
         )
 
     def test_type_or_covariance_failure_returns_protocol_invalid(self):
+        def bad_manifest():
+            raise ValueError("manifest mismatch")
         failed = replace(run_control_family(), covariance_exact=False)
-        result = _audit(control_runner=lambda: failed)
-        self.assertEqual(result["status"], "PROTOCOL_INVALID")
-        self.assertEqual(result["next_required_object"],
-                         "REPAIR_PROTOCOL_BEFORE_ANY_APPLICATION")
+        for arguments in (
+            {"manifest_factory": bad_manifest},
+            {"control_runner": lambda: failed},
+        ):
+            with self.subTest(arguments=tuple(arguments)):
+                result = _audit(**arguments)
+                self.assertEqual(result["status"], "PROTOCOL_INVALID")
+                self.assertEqual(result["next_required_object"],
+                                 "REPAIR_PROTOCOL_BEFORE_ANY_APPLICATION")
 
     def test_nonunique_selection_returns_protocol_not_identifiable(self):
         ambiguous = replace(audit_selection(), identifiable=False)
@@ -829,12 +860,14 @@ class GateTests(unittest.TestCase):
     def test_evidence_failure_stops_before_protocol_construction(self):
         def bad_evidence():
             raise ValueError("evidence mismatch")
-        with self.assertRaisesRegex(ValueError, "evidence mismatch"):
-            _audit(
-                evidence_verifier=bad_evidence,
-                selection_auditor=lambda: self.fail("selection ran"),
-                control_runner=lambda: self.fail("controls ran"),
-            )
+        result = _audit(
+            evidence_verifier=bad_evidence,
+            manifest_factory=lambda: self.fail("manifest ran"),
+            selection_auditor=lambda: self.fail("selection ran"),
+            control_runner=lambda: self.fail("controls ran"),
+        )
+        self.assertEqual(result["status"], "PROTOCOL_INVALID")
+        self.assertEqual(result["failed_gate"], "evidence")
 
     def test_committed_ledger_is_exact_float_free_and_byte_stable(self):
         expected = json.loads(Path("docs/RESULTS.json").read_text())
@@ -859,11 +892,18 @@ Expected: import failure for protocol_gate.
 
 ~~~python
 def _audit(evidence_verifier=verify_evidence,
+           manifest_factory=TransportManifest.certified,
            selection_auditor=audit_selection,
            control_runner=run_control_family):
-    evidence = evidence_verifier()
-    manifest = TransportManifest.certified()
-    manifest.validate()
+    try:
+        evidence = evidence_verifier()
+    except (OSError, ValueError) as error:
+        return invalid_ledger("evidence", str(error))
+    try:
+        manifest = manifest_factory()
+        manifest.validate()
+    except (TypeError, ValueError) as error:
+        return invalid_ledger("manifest", str(error), evidence=evidence)
     selection = selection_auditor()
     if not selection.identifiable:
         return stopped_ledger(
