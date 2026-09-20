@@ -69,6 +69,20 @@ class ProjectionCodecTests(unittest.TestCase):
         self.assertEqual(encode_projection(value), raw)
         self.assertIsInstance(value.payloads, tuple)
 
+    def test_valid_but_noncanonical_json_rejected(self):
+        from projection import decode_projection
+        raw = json.dumps(json.loads(valid_projection_bytes())).encode()
+        with self.assertRaisesRegex(ValueError, "noncanonical_json"):
+            decode_projection(raw)
+
+    def test_encode_revalidates_dataclass_contents(self):
+        from dataclasses import replace
+        from projection import encode_projection, decode_projection
+        value = decode_projection(valid_projection_bytes())
+        bad_payload = replace(value.payloads[0], labels=(1,) + value.payloads[0].labels[1:])
+        with self.assertRaisesRegex(ValueError, "duplicate_labels"):
+            encode_projection(replace(value, payloads=(bad_payload,) + value.payloads[1:]))
+
     def test_duplicate_json_key_rejected(self):
         from projection import decode_projection
         raw = valid_projection_bytes().replace(b'"schema": ', b'"schema": "wrong",\n  "schema": ', 1)
