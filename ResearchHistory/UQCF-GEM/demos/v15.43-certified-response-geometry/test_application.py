@@ -38,6 +38,15 @@ class ApplicationTests(unittest.TestCase):
                              {Q(0): 13, Q(1, 64): 8, Q(1, 16): 4})
             self.assertEqual(len(impulse.records), 25)
 
+    def test_independent_product_on_mixed_field(self):
+        from application import evaluate_field
+        from presentation_checks import expanded
+        values = tuple(Q((i*i+3*i)%17,7) for i in range(25))
+        result = evaluate_field(self.carrier, values)
+        for cycle, matrix, _ in result.records:
+            self.assertEqual(matrix, expanded(dict(result.transport.baseline),
+                                             dict(result.transport.tangent_deltas), cycle))
+
     def test_rejects_field_length_and_type(self):
         from application import evaluate_field
 

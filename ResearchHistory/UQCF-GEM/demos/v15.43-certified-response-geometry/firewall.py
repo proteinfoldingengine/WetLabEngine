@@ -34,9 +34,9 @@ PURE_SYMBOLS = {
     "protocol_types": frozenset({"CarrierKind", "MatrixAction", "TypedMap", "TransportManifest"}),
     "transport": frozenset({"FramePresentation", "LinearizedTransport", "validate_exact_field", "centered_derivatives", "cotangent_pullback_delta", "construct_transport"}),
     "holonomy": frozenset({"CurvatureRecord", "reverse_cycle", "rotate_cycle", "linearized_holonomy", "cotangent_holonomy", "curvature_invariant"}),
-    "projection": frozenset({"CaseKey", "Field", "Payload", "Projection", "canonical_bytes", "decode_projection", "encode_projection"}),
+    "projection": frozenset({"CaseKey", "Field", "Payload", "Projection", "FAMILY_KEYS", "canonical_bytes", "decode_projection", "encode_projection"}),
     "carriers": frozenset({"Carrier", "build_carrier"}),
-    "presentation_checks": frozenset({"check_presentations"}),
+    "presentation_checks": frozenset({"check_presentations", "check_gauges", "compare_aligned", "require", "local_linear_certificate"}),
     "application_controls": frozenset({"check_carrier_controls", "check_response_controls"}),
     "application": frozenset({"FieldResult", "evaluate_field", "evaluate_projection", "classify"}),
 }

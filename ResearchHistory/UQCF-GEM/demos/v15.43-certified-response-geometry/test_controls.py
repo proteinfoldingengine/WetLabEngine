@@ -43,6 +43,8 @@ class ControlsTests(unittest.TestCase):
                 receipt = checks.check_presentations(carrier, values)
                 self.assertEqual(receipt['oriented_faces'], 8*L*L)
                 self.assertEqual(receipt['gauge_presentations'], 8*L*L+1)
+                self.assertGreater(receipt['relabel_cycle_rotations'], 0)
+                self.assertGreater(receipt['relabel_cycle_reversals'], 0)
             good = evaluate_field(carrier, mixed)
             edge, matrix = good.transport.tangent_deltas[0]
             damaged = replace(good.transport, tangent_deltas=((edge, ((matrix[0][0]+1,matrix[0][1]), matrix[1])),)+good.transport.tangent_deltas[1:])
@@ -60,6 +62,8 @@ class ControlsTests(unittest.TestCase):
             for carrier in (unit, scaled):
                 receipt = check_carrier_controls(carrier)
                 self.assertEqual(receipt['impulses'],L*L)
-                self.assertEqual(receipt['basis_core_comparisons'],(L*L+2)*(8*L*L+1))
+                self.assertEqual(receipt['basis_core_comparisons'],9*L*L+2)
+                self.assertEqual(receipt['algebraically_certified_gauge_comparisons'],(L*L+2)*(8*L*L+1))
+                self.assertEqual(receipt['local_linear_certificate']['gradient_basis_comparisons'],32)
 
 if __name__ == '__main__': unittest.main()
