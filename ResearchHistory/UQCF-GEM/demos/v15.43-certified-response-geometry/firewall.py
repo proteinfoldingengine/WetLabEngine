@@ -10,12 +10,12 @@ SERIALIZATION_FILES = frozenset({"projection.py"})
 ACQUISITION_LOCAL = frozenset({"response_generation", "response_geometry", "representation_actions", "exact_linear", "pretime_gravity_canary", "projection", "evidence"})
 PURE_LOCAL = frozenset({"projection", "carriers", "application", "presentation_checks", "application_controls", "exact_algebra", "operational_complex", "protocol_types", "transport", "holonomy"})
 STDLIB_PURE = frozenset({"__future__", "collections", "dataclasses", "fractions", "functools", "itertools", "math", "operator", "typing"})
-STDLIB_ENTRY = STDLIB_PURE | frozenset({"argparse", "ast", "hashlib", "json", "pathlib", "subprocess", "sys", "tempfile", "importlib"})
+STDLIB_ENTRY = STDLIB_PURE | frozenset({"argparse", "ast", "hashlib", "json", "pathlib", "subprocess", "sys", "tempfile", "importlib", "traceback"})
 STDLIB_ACQUISITION = STDLIB_ENTRY | frozenset({"numpy"})
 FORBIDDEN_CALLS = frozenset({"eval", "exec", "compile", "open", "input", "getattr", "setattr", "delattr", "globals", "locals", "vars", "__import__"})
 FORBIDDEN_ATTRIBUTES = frozenset({"import_module", "reload", "eval", "exec", "__class__", "__dict__", "__bases__", "__subclasses__", "__getattribute__", "__getattr__", "__setattr__", "__delattr__", "mro"})
 ENTRYPOINT_IMPORTS = {
-    "evaluate.py": STDLIB_PURE | frozenset({"argparse", "hashlib", "json", "pathlib", "sys"}) | PURE_LOCAL | {"evidence", "firewall"},
+    "evaluate.py": STDLIB_PURE | frozenset({"argparse", "hashlib", "json", "pathlib", "sys", "traceback"}) | PURE_LOCAL | {"evidence", "firewall"},
     "response_geometry_gate.py": STDLIB_ENTRY | PURE_LOCAL | {"evidence", "firewall", "acquire", "application"},
     "ci_verify.py": STDLIB_ENTRY | {"evidence", "firewall"},
     "evidence.py": STDLIB_PURE | frozenset({"hashlib", "importlib", "json", "pathlib", "subprocess"}),

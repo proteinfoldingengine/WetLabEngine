@@ -89,13 +89,15 @@ def verify_evidence(root: Path) -> dict:
     return receipt
 
 
-def verify_origins(modules: tuple[object, ...], allowed: dict[str, str]) -> dict:
+def verify_origins(modules: tuple[object, ...], allowed: dict[str, str], role: str | None = None) -> dict:
     if type(modules) is not tuple or type(allowed) is not dict:
         raise TypeError("explicit modules and origin pins required")
     root = Path(__file__).resolve().parents[4]
     manifest = _manifest(root)
-    inventory = [item for role in ("acquisition", "evaluator", "parent_replay", "regression")
-                 for item in manifest[role].values()]
+    if role is not None and role not in ROLES:
+        raise ValueError("unknown origin role")
+    selected_roles = (role,) if role is not None else ("acquisition", "evaluator", "parent_replay", "regression")
+    inventory = [item for selected in selected_roles for item in manifest[selected].values()]
     receipt = {}
     for module in modules:
         name = getattr(module, "__name__", None)

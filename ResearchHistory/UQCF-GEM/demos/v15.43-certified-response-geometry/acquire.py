@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 import tempfile
 from fractions import Fraction
@@ -11,7 +12,7 @@ LOCAL = str(Path(__file__).resolve().parent)
 if LOCAL not in sys.path:
     sys.path.insert(0, LOCAL)
 
-from evidence import verify_evidence, verify_origins
+from evidence import git_blob, verify_evidence, verify_origins
 from projection import DEPENDENCIES, FAMILY_KEYS, Field, Payload, Projection, canonical_bytes, decode_projection, encode_projection
 
 
@@ -29,7 +30,7 @@ def _verified_modules():
     import response_geometry as geometry
     pins = dict((Path(path).stem, blob) for path, blob in DEPENDENCIES
                 if Path(path).stem in ("response_generation", "response_geometry"))
-    verify_origins((generation, geometry), pins)
+    verify_origins((generation, geometry), pins, "acquisition")
     return generation, geometry, receipt["parent"], DEPENDENCIES
 
 
@@ -61,24 +62,38 @@ def _project_modules(generation, geometry_module, parent, dependencies):
 def _verify_loaded_closure(receipt):
     expected = {Path(item["path"]).resolve(): item["blob"]
                 for item in receipt["acquisition"].values()}
+    local = {Path(__file__).resolve(), (Path(__file__).parent / "evidence.py").resolve(),
+             (Path(__file__).parent / "projection.py").resolve()}
+    permitted = set(expected) | local
     loaded = []
     pins = {}
     for module in tuple(sys.modules.values()):
         origin = module.__file__ if hasattr(module, "__file__") else None
-        if type(origin) is str and Path(origin).resolve() in expected:
+        if type(origin) is not str:
+            continue
+        path = Path(origin).resolve()
+        if Path(__file__).resolve().parents[4] in path.parents and path not in permitted:
+            raise ValueError(f"unexpected acquisition repository module: {path.name}")
+        if path in expected:
             loaded.append(module)
-            pins[module.__name__] = expected[Path(origin).resolve()]
+            pins[module.__name__] = expected[path]
     if {Path(module.__file__).resolve() for module in loaded} != set(expected):
         raise ValueError("incomplete acquisition module closure")
-    return verify_origins(tuple(loaded), pins)
+    inherited = verify_origins(tuple(loaded), pins, "acquisition")
+    return {**{name: {"blob": item["blob"]} for name, item in inherited.items()},
+            **{path.name: {"blob": git_blob(path.read_bytes())} for path in sorted(local)}}
 
 
-def acquire_projection() -> Projection:
+def _acquire_with_receipt():
     generation, geometry, parent, dependencies = _verified_modules()
     raw = _project_modules(generation, geometry, parent, dependencies)
     receipt = verify_evidence(Path(__file__).resolve().parents[4])
-    _verify_loaded_closure(receipt)
-    return decode_projection(raw)
+    origins = _verify_loaded_closure(receipt)
+    return decode_projection(raw), origins
+
+
+def acquire_projection() -> Projection:
+    return _acquire_with_receipt()[0]
 
 
 def write_projection(path: Path) -> None:
@@ -95,8 +110,14 @@ def write_projection(path: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", required=True, type=Path)
+    parser.add_argument("--receipt", type=Path)
     args = parser.parse_args()
-    write_projection(args.out)
+    projection, origins = _acquire_with_receipt()
+    raw = encode_projection(projection)
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_bytes(raw)
+    if args.receipt:
+        args.receipt.write_text(json.dumps(origins, sort_keys=True, indent=2) + "\n")
 
 
 if __name__ == "__main__":
