@@ -57,7 +57,7 @@ jobs:
               assert name.startswith(demo) or name in allowed, name
           PY
 
-      - name: Run v15.41 exact gate
+      - name: Run corrected v15.41 transport erratum gate
         working-directory: ResearchHistory/UQCF-GEM/demos/v15.41-formal-connection-curvature-source-correspondence
         run: |
           python -m unittest -v test_operational_complex.py test_linearized_connection.py test_gate.py

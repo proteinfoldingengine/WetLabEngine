@@ -733,3 +733,11 @@ Append the final run ID, job ID, exact head SHA, test counts, replay result, sta
   inherited v15.39 and v15.40 passed 17/17; v15.41 passed 15/15; canonical replay and
   compilation passed; PR 52 remained draft, open, unmerged, and mergeable. Because this receipt
   changes the head, its commit requires the final exact-head certification described above.
+
+
+## v15.41 Transport-Protocol Erratum Receipt
+
+- Approved erratum design: `docs/superpowers/specs/2026-09-20-v1541-transport-protocol-erratum-design.md`, blob `d40d03d9d2498ce54839b15dad00c1505c1a586a`.
+- Approved erratum implementation plan: `docs/superpowers/plans/2026-09-20-v1541-transport-protocol-erratum-implementation.md`.
+- The former status `CONNECTION_IDENTIFIABLE_NO_CURVATURE_SOURCE_CORRESPONDENCE` is superseded as an adjudicating result and preserved only as an execution receipt.
+- Corrected freeze-head run `35483758786`, job `106006176542`, head `b06a3b9dd249844936bdcb4d5bc44bc84510aec6`: corrected v15.41 passed 24/24; inherited v15.39/v15.40 passed 17/17; canonical replay and compilation passed; authoritative status `PROTOCOL_INVALID`.

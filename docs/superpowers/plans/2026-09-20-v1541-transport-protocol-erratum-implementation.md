@@ -347,4 +347,16 @@ Link both approved erratum documents; report `PROTOCOL_INVALID`; distinguish the
 
 Implementation is complete only when both design blobs are unchanged; exact rank witnesses are `50/51` and `98/99`; adjudication is unreachable after failure; authoritative status is `PROTOCOL_INVALID`; downstream verdicts are `null`; prior result and diagnostics are non-authoritative; JSON has no floats and replays byte-for-byte; inherited and corrected tests pass at exact head; and PR #52 remains draft, open, unmerged, and mergeable.
 
-No implementation work begins until this plan is reviewed and approved.
+Implementation approval was received on 2026-09-20; the receipts below record execution.
+
+
+## Execution Receipts
+
+- Ruling: the local execution environment was unavailable, so the existing isolated PR branch and GitHub Actions were used as the execution workspace. This preserves branch isolation and exact RED/GREEN evidence; cost if wrong: no local-only timing receipt exists.
+- Ruling: workflow allowlisting and v15.41-before-inherited ordering moved ahead of the planned final CI task because the approved erratum documents otherwise stopped additive-scope validation before RED tests could execute. No scientific logic changed; cost if wrong: workflow step order differs from the original plan narrative.
+- RED contract: run `35482646646`, job `106003101668`, head `66965a933b92a64d0577a2f81fae769da4249284` failed at the intended absent `CarrierKind` and `_audit` interfaces.
+- Typed audit and diagnostics: run `35482753661`, job `106003385954`, head `1f0aec5b152a94390b0eb6f0fb8595edc764ce5f` passed all 15 operational/linearized tests, including exact `50/51`, `98/99`, local row-space, arbitrary-field flatness, and odd/even parity witnesses; it remained RED only at the absent gate interface.
+- Gate and ledger RED: run `35483025083`, job `106004131712` passed the corrected protocol path after the diagnostic fixture metric was corrected from Manhattan to the established squared-work metric; the remaining failure was the intentionally stale committed ledger.
+- Erratum evidence-pin RED: run `35483597162`, job `106005722172` passed 23/24 and failed only because the approved erratum blob was not yet in the runtime evidence registry.
+- Corrected freeze-head certification: run `35483758786`, job `106006176542`, exact head `b06a3b9dd249844936bdcb4d5bc44bc84510aec6`: v15.41 passed 24/24 in 105.636 seconds; inherited v15.39 passed 8/8; inherited v15.40 passed 9/9; canonical replay and compilation passed.
+- Frozen authority: `protocol_valid=false`; `status=PROTOCOL_INVALID`; downstream scientific verdicts are `null`; prior status is non-authoritative provenance; flatness/parity is `NON_ADJUDICATING_PROTOCOL_DIAGNOSTIC`; `Pillar_3=OPEN`; `scientific_breakthrough=false`.
