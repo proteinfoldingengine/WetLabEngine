@@ -494,7 +494,7 @@ def _parent_replay():
     return {"status": verdict["status"], "ledger_sha256": sha256(stdout).hexdigest()}
 
 
-def _acquire():
+def _acquire(output_path=None):
     temporary = tempfile.TemporaryDirectory()
     path = Path(temporary.name) / "INPUTS.json"
     receipt_path = Path(temporary.name) / "ORIGINS.json"
@@ -504,9 +504,8 @@ def _acquire():
     projection = decode_projection(raw)
     origins = _unique_json(receipt_path.read_text())
     _validate_origins(origins, "acquisition")
-    docs = HERE / "docs"
-    docs.mkdir(exist_ok=True)
-    published = docs / "INPUTS.json"
+    published = HERE / "docs/INPUTS.json" if output_path is None else output_path
+    published.parent.mkdir(parents=True, exist_ok=True)
     published.write_bytes(raw)
     temporary.cleanup()
     return {"path": published, "raw": raw, "projection": projection,
@@ -629,7 +628,12 @@ def _ledger(value):
 
 
 def audit():
-    executors = Executors(_evidence, _parent_replay, _acquire, _carriers, _controls, _cases, _ledger)
+    return _audit_to(HERE / "docs/INPUTS.json")
+
+
+def _audit_to(input_path):
+    executors = Executors(_evidence, _parent_replay, lambda: _acquire(input_path),
+                          _carriers, _controls, _cases, _ledger)
     return _audit(executors)
 
 
@@ -643,15 +647,26 @@ def main(argv=None):
     group.add_argument("--out", type=Path)
     group.add_argument("--check", type=Path)
     args = parser.parse_args(argv)
-    result = audit()
+    matches = True
+    if args.check:
+        with tempfile.TemporaryDirectory() as temporary:
+            input_path = Path(temporary) / "INPUTS.json"
+            result = _audit_to(input_path)
+            try:
+                matches = input_path.read_bytes() == (HERE / "docs/INPUTS.json").read_bytes()
+            except OSError:
+                matches = False
+            if not matches:
+                print("canonical inputs mismatch", file=sys.stderr)
+    else:
+        result = audit()
     rendered = render_result(result)
     if args.out:
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_bytes(rendered)
-    matches = True
     if args.check:
         try:
-            matches = args.check.read_bytes() == rendered
+            matches = (args.check.read_bytes() == rendered) and matches
         except OSError:
             matches = False
         if not matches:

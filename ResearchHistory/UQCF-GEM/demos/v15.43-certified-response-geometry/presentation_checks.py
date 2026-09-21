@@ -76,7 +76,7 @@ def gauge_presentations(complex_):
     for label in complex_.labels:
         for index, action in enumerate(actions):
             yield ('site',label,index), FramePresentation(tuple((x,action if x==label else UNIT) for x in complex_.labels))
-    yield ('mixed',), FramePresentation(tuple((x,actions[(3*i+1)%8]) for i,x in enumerate(complex_.labels)))
+    yield ('mixed',), FramePresentation(tuple((x,actions[i%8]) for i,x in enumerate(sorted(complex_.labels))))
 
 
 @lru_cache(maxsize=32768)
@@ -248,7 +248,7 @@ def check_presentations(carrier, values):
     keys, _ = check_gauges(carrier,values,result.transport)
     labels = carrier.complex.labels
     n = len(labels)
-    permutations = (tuple((2*i+3)%n for i in range(n)),tuple(n-1-i for i in range(n)))
+    permutations = (tuple((2*i+1)%n for i in range(n)),tuple(n-1-i for i in range(n)))
     relabel_counts = []
     for permutation in permutations:
         names = dict(zip(labels,permutation))

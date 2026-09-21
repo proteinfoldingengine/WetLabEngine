@@ -384,11 +384,19 @@ class GateTests(unittest.TestCase):
         self.assertEqual(tuple(inspect.signature(audit).parameters), ())
 
     def test_cli_check_compares_exact_bytes_and_rejects_invalid_outcome(self):
+        import response_geometry_gate as gate
         result, _ = run_test_gate()
         with tempfile.TemporaryDirectory() as temporary, patch(
                 "response_geometry_gate.audit", return_value=result):
             path = Path(temporary) / "result.json"
-            with patch("sys.stdout"):
+            docs = Path(temporary) / 'docs'
+            docs.mkdir()
+            (docs / 'INPUTS.json').write_bytes(b'projection')
+            def replay(input_path):
+                input_path.write_bytes(b'projection')
+                return result
+            with patch("sys.stdout"), patch.object(gate, 'HERE', Path(temporary)), \
+                 patch.object(gate, '_audit_to', side_effect=replay):
                 self.assertEqual(main(["--out", str(path)]), 0)
                 self.assertEqual(main(["--check", str(path)]), 0)
                 path.write_bytes(canonical_bytes({}))
@@ -483,6 +491,13 @@ class GateTests(unittest.TestCase):
                               '    def test_one(self):\n        self.fail("expected")\n')
             with self.assertRaises(RuntimeError):
                 ci.run_suite(directory, ('test_sample',), 1, timeout=10)
+
+    def test_ci_stage_failure_and_timeout_fail_closed(self):
+        import ci_verify as ci
+        with self.assertRaises(RuntimeError):
+            ci.run_stage('failure probe', [sys.executable, '-c', 'raise SystemExit(7)'], Path.cwd(), 10)
+        with self.assertRaises(subprocess.TimeoutExpired):
+            ci.run_stage('timeout probe', [sys.executable, '-c', 'while True: pass'], Path.cwd(), 0.1)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,32 @@
+name: UQCF v15.43 certified response geometry
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/v15.43-certified-response-geometry
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/**'
+      - 'docs/superpowers/plans/2026-09-20-v1543-certified-response-geometry-implementation.md'
+      - 'docs/superpowers/specs/2026-09-20-v1543-certified-response-geometry-design.md'
+      - '.github/workflows/uqcf-v1543-certified-response-geometry.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - run: python ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/ci_verify.py
