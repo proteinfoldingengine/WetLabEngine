@@ -17,6 +17,30 @@ def control_inputs(L=5):
 
 
 class ControlsTests(unittest.TestCase):
+    def test_preregistered_affine_relabeling_at_both_sizes(self):
+        import presentation_checks as checks
+        for L in (5, 7):
+            carrier = build_carrier(manufactured_payload(L))
+            # A spy retains the real reconstruction and every mathematical check.
+            with patch.object(checks, 'relabeled_carrier', wraps=checks.relabeled_carrier) as relabel:
+                checks.check_presentations(carrier, tuple(Q(i == 0) for i in range(L * L)))
+            expected = tuple((2 * label + 1) % (L * L) for label in range(L * L))
+            with self.subTest(L=L):
+                self.assertEqual(relabel.call_args_list[0].args[1], expected)
+                self.assertEqual(relabel.call_args_list[1].args[1], tuple(reversed(range(L * L))))
+
+    def test_preregistered_mixed_action_uses_sorted_label_position(self):
+        import presentation_checks as checks
+        for L in (5, 7):
+            complex_ = build_carrier(manufactured_payload(L)).complex
+            actions = tuple(sorted(complex_.d4_actions))
+            for labels in (complex_.labels, tuple(reversed(complex_.labels))):
+                presented = replace(complex_, labels=labels)
+                mixed = dict(dict(checks.gauge_presentations(presented))[('mixed',)].gauges)
+                for position, label in enumerate(sorted(labels)):
+                    with self.subTest(L=L, label=label, reversed=labels != complex_.labels):
+                        self.assertEqual(mixed[label], actions[position % 8])
+
     def test_wrong_scale_is_rejected(self):
         from application_controls import check_response_controls
         unit, scaled, fields, _ = control_inputs()

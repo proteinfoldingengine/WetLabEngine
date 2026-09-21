@@ -397,6 +397,93 @@ class GateTests(unittest.TestCase):
         with patch("response_geometry_gate.audit", return_value=invalid), patch("sys.stdout"):
             self.assertNotEqual(main([]), 0)
 
+    def test_check_uses_temporary_inputs_and_never_rewrites_committed_files(self):
+        import response_geometry_gate as gate
+        result = {'status': 'CANONICAL_RESPONSE_CURVATURE_NULL'}
+        with tempfile.TemporaryDirectory() as temporary:
+            checkout = Path(temporary)
+            docs = checkout / 'docs'
+            docs.mkdir()
+            inputs = docs / 'INPUTS.json'
+            inputs.write_bytes(b'committed projection\n')
+            ledger = docs / 'RESULTS.json'
+            ledger.write_bytes(canonical_bytes(result))
+            original_stat = inputs.stat()
+            def fake_audit(path):
+                self.assertNotEqual(path, inputs)
+                self.assertFalse(path.is_relative_to(checkout))
+                path.write_bytes(b'committed projection\n')
+                return result
+            self.assertTrue(hasattr(gate, '_audit_to'), 'private output-path adapter is missing')
+            with patch.object(gate, 'HERE', checkout), patch.object(gate, '_audit_to', side_effect=fake_audit), \
+                 patch.object(gate, 'audit', side_effect=AssertionError('public audit would publish')), patch('sys.stdout'):
+                self.assertEqual(main(['--check', str(ledger)]), 0)
+                self.assertEqual(inputs.stat().st_mtime_ns, original_stat.st_mtime_ns)
+                inputs.write_bytes(b'mismatched projection\n')
+                self.assertEqual(main(['--check', str(ledger)]), 1)
+                self.assertEqual(inputs.read_bytes(), b'mismatched projection\n')
+                inputs.unlink()
+                self.assertEqual(main(['--check', str(ledger)]), 1)
+
+    def test_acquisition_output_adapter_preserves_default_and_explicit_destinations(self):
+        import response_geometry_gate as gate
+        from test_projection import valid_projection_bytes
+        raw = valid_projection_bytes()
+        origins = {name: {'blob': 'a' * 40} for name in (
+            'pretime_gravity_canary.py', 'exact_linear.py', 'representation_actions.py',
+            'response_generation.py', 'response_geometry.py', 'acquire.py', 'evidence.py', 'projection.py')}
+        def produce(command, cwd, timeout):
+            Path(command[command.index('--out') + 1]).write_bytes(raw)
+            Path(command[command.index('--receipt') + 1]).write_bytes(canonical_bytes(origins))
+            return b''
+        with tempfile.TemporaryDirectory() as temporary:
+            checkout = Path(temporary) / 'checkout'
+            checkout.mkdir()
+            destination = Path(temporary) / 'elsewhere/INPUTS.json'
+            self.assertTrue(hasattr(gate, '_audit_to'), 'private output-path adapter is missing')
+            with patch.object(gate, 'HERE', checkout), patch.object(gate, '_run', side_effect=produce):
+                for supplied, expected in ((None, checkout / 'docs/INPUTS.json'), (destination, destination)):
+                    with patch.object(gate, '_audit', side_effect=lambda executors: executors.acquisition_projection()):
+                        acquired = gate.audit() if supplied is None else gate._audit_to(supplied)
+                    self.assertEqual(acquired['path'], expected)
+                    self.assertEqual(expected.read_bytes(), raw)
+
+    def test_ci_scope_rejects_changes_outside_additive_allowlist_and_plan_prefix_drift(self):
+        self.assertIsNotNone(importlib.util.find_spec('ci_verify'), 'Task 6 runner is missing')
+        import ci_verify as ci
+        ci.validate_scope(['A\t' + ci.DEMO + '/application.py', 'A\t' + ci.PLAN])
+        for line in ('M\t' + ci.DEMO + '/application.py', 'A\tREADME.md',
+                     'R100\told\t' + ci.DEMO + '/new.py', 'A\t' + ci.DEMO + '-other/file'):
+            with self.subTest(line=line), self.assertRaisesRegex(ValueError, 'nonadditive_scope'):
+                ci.validate_scope([line])
+        approved = (ci.ROOT / ci.PLAN).read_bytes()[:ci.PLAN_PREFIX_BYTES]
+        ci.verify_plan_prefix(approved + b'\nExecution appendix\n')
+        with self.assertRaisesRegex(ValueError, 'plan_prefix'):
+            ci.verify_plan_prefix(b'!' + approved[1:])
+
+    def test_ci_suite_rejects_wrong_counts_skips_expected_failures_and_test_failures(self):
+        self.assertIsNotNone(importlib.util.find_spec('ci_verify'), 'Task 6 runner is missing')
+        import ci_verify as ci
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            module = directory / 'test_sample.py'
+            cases = ('pass', 'self.skipTest("skip")', 'self.fail("failure")')
+            for body in cases:
+                module.write_text('import unittest\nclass Sample(unittest.TestCase):\n'
+                                  '    def test_one(self):\n        ' + body + '\n')
+                if body == 'pass':
+                    ci.run_suite(directory, ('test_sample',), 1, timeout=10)
+                    with self.assertRaises(RuntimeError):
+                        ci.run_suite(directory, ('test_sample',), 2, timeout=10)
+                else:
+                    with self.assertRaises(RuntimeError):
+                        ci.run_suite(directory, ('test_sample',), 1, timeout=10)
+            module.write_text('import unittest\nclass Sample(unittest.TestCase):\n'
+                              '    @unittest.expectedFailure\n'
+                              '    def test_one(self):\n        self.fail("expected")\n')
+            with self.assertRaises(RuntimeError):
+                ci.run_suite(directory, ('test_sample',), 1, timeout=10)
+
 
 if __name__ == "__main__":
     unittest.main()

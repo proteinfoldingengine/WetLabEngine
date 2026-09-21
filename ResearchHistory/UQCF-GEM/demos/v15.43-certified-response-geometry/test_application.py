@@ -19,6 +19,43 @@ from test_carriers import manufactured_payload
 
 
 class ApplicationTests(unittest.TestCase):
+    def test_post_bootstrap_math_with_file_and_process_entrypoints_denied(self):
+        import builtins
+        import io
+        import os
+        import subprocess
+        from contextlib import ExitStack
+        from unittest.mock import patch
+        from carriers import build_carrier
+        from application import evaluate_field
+        from presentation_checks import check_presentations
+
+        # Materialize inputs and imports before denial, but not the carrier or results.
+        payload = manufactured_payload(5)
+        values = tuple(Q(i == 0) for i in range(25))
+        targets = ((builtins, 'open'), (io, 'open'), (os, 'open'),
+                   (os, 'system'), (os, 'popen'), (subprocess, 'Popen'),
+                   (subprocess, 'run'), (subprocess, 'call'),
+                   (subprocess, 'check_call'), (subprocess, 'check_output'),
+                   (Path, 'open'), (Path, 'read_bytes'), (Path, 'read_text'),
+                   (Path, 'write_bytes'), (Path, 'write_text'))
+        def denied(*args, **kwargs):
+            raise RuntimeError('post_bootstrap_forbidden_operation')
+        with ExitStack() as stack:
+            for owner, name in targets:
+                stack.enter_context(patch.object(owner, name, denied))
+            carrier = build_carrier(payload)
+            result = evaluate_field(carrier, values)
+            receipt = check_presentations(carrier, values)
+            self.assertEqual(dict(result.histogram), {Q(0): 13, Q(1, 64): 8, Q(1, 16): 4})
+            self.assertTrue(receipt['all_exact'])
+            self.assertEqual(receipt['gauge_presentations'], 201)
+            # Positive sensitivity: every installed entrypoint really rejects a call.
+            for owner, name in targets:
+                with self.subTest(entrypoint=name), self.assertRaisesRegex(
+                        RuntimeError, 'post_bootstrap_forbidden_operation'):
+                    getattr(owner, name)('deliberately forbidden')
+
     @classmethod
     def setUpClass(cls):
         from carriers import build_carrier
