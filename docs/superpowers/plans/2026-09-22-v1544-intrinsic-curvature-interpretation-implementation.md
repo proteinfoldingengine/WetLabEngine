@@ -192,7 +192,7 @@ def test_column_permutation_required(self):
 ```
 The test-only false switch belongs to a helper wrapper; production verify_alignment always permutes columns. relabel_geometry reconstructs work/neighbors and calls inherited identification, then returns Carrier and the old->new label map.
 - [ ] Run `python -m unittest -v test_presentations`; observe RED.
-- [ ] Implement transformations from geometry: P'_xy=g_y P_xy g_x^T and d'_xy=g_x d_xy. Re-derive the coefficient map from those presented arrays; do not generate the transformed map by conjugating the expected answer. Compare against transformed columns of A after recomputation. Validate full frozen-core reference columns under these presentations.
+- [ ] Implement transformations from geometry: P'_xy=g_y P_xy g_x^T and d'_xy=g_x d_xy. Re-derive the coefficient map from those presented arrays; do not generate the transformed map by conjugating the expected answer. Compare against transformed columns of A after recomputation. Validate full frozen-core reference columns under these presentations. For the oracle's holonomy call, use dataclasses.replace on the baseline with transports=presented_transport.baseline; the inherited holonomy validator requires baseline and transport presentations to agree. Never pass the original baseline to a presented transport.
 - [ ] Enumerate all eight uniform D4 assignments and 8N single-site assignments per carrier. For each, check every column and every face. Deduplication of identical mathematics may cache immutable values but must not remove declared receipts. Baseline carrier sum N=148 implies 1,216 declared gauge assignments; record observed assignment, column and face counts, not only pass booleans.
 - [ ] Check all four cycle rotations and both orientations with baseline path conjugation on every basis column. Label reversal j->N-1-j moves field/work/neighbors together. Establish unique frame alignment from direction classes alone. Match faces by vertex sets, then explicitly align canonical cycle orientation/basepoint before comparing matrices. Fail on nonunique face matches or alignment.
 - [ ] Align scale carriers through the same geometry rules; verify unit-scale A against aligned 7/3 carrier A on the same abstract field, then verify every archived response pair's scalar factor 7/3 and squared-invariant factor 49/9 in Task 5. Check constants, all impulses, kernel vectors and the fixed mixed field u_j=j+1 through the core. No additional all-pairs core calls are needed: exact linearity and complete basis equality certify sums of all unit-field pairs.
@@ -271,8 +271,9 @@ Expected: audit/replay exit zero, deterministic bytes identical, complete covera
 **Files:** ci_verify.py; repository-root .github/workflows/uqcf-v1544-intrinsic-curvature-interpretation.yml; test_ci.py.
 
 - [ ] Write RED tests for additive-scope rejection, moved parent head, approved-spec drift, incomplete ledger, false physical claims, wrong runtime, skipped/expected-failure tests, and wrong final head. Test CI functions with injected subprocess records, never mock a scientific successful audit.
+- [ ] Run `python -m unittest -v test_ci`; observe RED before implementing the runner.
 - [ ] Implement the CI runner in this order: exact HEAD and clean tracked tree; parent ancestry and frozen tree/spec/dependency checks; focused suite with actual recorded test count and no skips; one complete --check replay; complete coverage/certificate/claim checks; compilation; unchanged tracked tree and final HEAD; print V1544_CERTIFIED_HEAD plus SHA.
-- [ ] Run `python -m unittest -v test_ci` RED then GREEN. Workflow configuration:
+- [ ] Re-run `python -m unittest -v test_ci` GREEN. Workflow configuration:
 ```yaml
 name: UQCF v15.44 intrinsic curvature interpretation
 on:
