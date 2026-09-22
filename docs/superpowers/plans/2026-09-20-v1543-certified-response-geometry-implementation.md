@@ -451,3 +451,24 @@ Define both helpers in ci_verify.py: git_diff_name_status invokes Git with an ar
 Coverage: spec 1–3 -> global constraints/Task 1; spec 4 -> Tasks 1–2; spec 5 -> Task 3 and scale checks in Task 4; spec 6–7 -> Tasks 3–5; spec 8–9 -> Tasks 4–5; spec 10 -> Tasks 1–6; spec 11 -> Tasks 5–6. Each of the five Review Focus items has an owning task and failure test. No primary case or family is selected after output. No numerical response-curvature result is assumed.
 
 This plan is the deliverable of written-spec approval. It contains no executed response-curvature result and authorizes no merge. The previously selected subagent-driven method is preserved; written-plan review is the next gate before implementation. Approval of this concrete plan permits its six tasks to be executed without repeated between-task confirmation, within the existing publication and claim boundaries.
+
+## Execution receipt — 2026-09-22
+
+Published application commit `4741959e812f541f954b4d5f3f3cf97456b2f6c2` passed [GitHub Actions run 35685635987](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/35685635987), attempt 1, job `106611723946` (`certify`). GitHub reports the run and every job step completed successfully. Run creation: 2026-09-22T04:06:52Z; final run update: 2026-09-22T05:49:30Z.
+
+The successful fail-closed `ci_verify.py` invocation enforces 170 tests (48 v15.42, 79 v15.43, 8 v15.39, 9 v15.40, 26 v15.41), unchanged v15.41 replay, full v15.43 replay including its v15.42 parent replay, byte-identical projected INPUTS and RESULTS, scope/pins, compilation, complete coverage, claim boundaries, and unchanged tracked tree/head. These checks are established by the successful runner and its reviewed mandatory assertions. The full job log exceeded the connector response limit; its final printed marker was not separately retrieved for this receipt.
+
+Published artifact blobs:
+- INPUTS: `f6435267950cde0985889056a67d5427f60f637f`.
+- RESULTS: `937024b3f90570c9b177bfb2eee7cdab25a13985` (29,996,672 bytes).
+- Outcome: `CANONICAL_RESPONSE_CURVATURE_NONZERO`.
+- Coverage: 740 cases, 148 canonical cases, 30,260 faces; no failed audit gate.
+- The recovery audit exited zero in 4,140 seconds and reproduced both previously reviewed artifact blobs exactly.
+
+Prior scoped rereview and final review were recorded in execution history as reporting no outstanding findings. This receipt does not claim a new review or recreate the lost transient review files.
+
+Ruling: retain the reviewed scientific source and exact recovered artifacts; restore the missing README as documentation only — the transient checkout was lost, while recovered JSON blobs match exactly — the remaining documentation provenance difference is recorded and does not change the mathematical computation.
+
+This is reproducible progress in the UQCF-GEM information-to-geometry construction under its frozen assumptions. Uniqueness from foundational axioms and literature novelty remain unestablished. All five response families are nonflat on the common carrier; canonical specificity remains unresolved. Source correspondence stays NOT_EVALUATED; physical claims and scientific breakthrough stay false; Pillar 3 stays OPEN.
+
+This append preserves the approved plan prefix byte-for-byte and requires final certification of the resulting commit. Record that final run in PR metadata without another plan append. PR #54 remains draft/open/unmerged; PR #53 is untouched. The next scientific object after closeout is PREREGISTER_INTRINSIC_CURVATURE_INTERPRETATION_WITHOUT_SOURCE_FITTING; no subsequent scientific stage is executed by this receipt.
