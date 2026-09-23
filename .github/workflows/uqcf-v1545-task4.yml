@@ -1,0 +1,30 @@
+name: UQCF v15.45 task4 dependency audit
+on:
+  push:
+    branches:
+      - research/v15.45-curvature-factorization-spectral-boundary
+permissions:
+  contents: read
+jobs:
+  task4:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Task 4 focused tests
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
+          python -m unittest -v test_dependency_audit
+          python -m compileall -q dependency_audit.py test_dependency_audit.py
+          git diff --exit-code HEAD
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          echo "TASK4_VERIFIED_HEAD $GITHUB_SHA"

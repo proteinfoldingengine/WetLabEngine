@@ -1,0 +1,21 @@
+name: UQCF v15.45 development
+on:
+  push:
+    branches:
+      - research/v15.45-curvature-factorization-spectral-boundary
+permissions:
+  contents: read
+jobs:
+  development:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Completed task regressions
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
+          python -m unittest -v test_factorization test_presentations
