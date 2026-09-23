@@ -28,3 +28,5 @@ jobs:
         with:
           python-version: '3.13.5'
       - run: python ResearchHistory/UQCF-GEM/demos/v15.44-intrinsic-curvature-interpretation/ci_verify.py
+
+# Exact-head certification; scientific artifacts are immutable during this run.
