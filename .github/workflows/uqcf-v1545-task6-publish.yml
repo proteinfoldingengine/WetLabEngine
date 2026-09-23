@@ -1,0 +1,42 @@
+name: UQCF v15.45 task6 publish ledger
+on:
+  push:
+    branches:
+      - research/v15.45-curvature-factorization-spectral-boundary
+permissions:
+  contents: write
+jobs:
+  publish-ledger:
+    if: github.event.head_commit.message != 'docs(uqcf): publish v15.45 canonical ledger'
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Generate and replay canonical ledger
+        run: |
+          set -euo pipefail
+          cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
+          mkdir -p docs
+          python gate.py --out docs/RESULTS.json
+          python gate.py --check docs/RESULTS.json
+          cp docs/RESULTS.json /tmp/RESULTS.json
+          python gate.py --out /tmp/RESULTS.replay.json
+          cmp /tmp/RESULTS.json /tmp/RESULTS.replay.json
+      - name: Commit canonical ledger
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/docs/RESULTS.json
+          if git diff --cached --quiet; then
+            echo "ledger already canonical"
+            exit 0
+          fi
+          git commit -m "docs(uqcf): publish v15.45 canonical ledger"
+          git push origin HEAD:research/v15.45-curvature-factorization-spectral-boundary
