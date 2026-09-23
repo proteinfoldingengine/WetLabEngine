@@ -11,7 +11,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 V1540 = HERE.parent / "v15.40-global-balance-geometry-specificity"
 GENERATION = V1540 / "response_generation.py"
-GENERATION_BLOB = "d9c2547c5e1b04f99c7b6d0d793842eef383ce39"
+GENERATION_BLOB = "afd5a68ce74f7f80f49b6fd6307ebb0681182bf5"
 
 FAMILIES = (
     "GLOBAL_BALANCE_COMPLETION",
