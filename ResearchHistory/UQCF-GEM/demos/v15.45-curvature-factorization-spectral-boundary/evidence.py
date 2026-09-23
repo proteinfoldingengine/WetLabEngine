@@ -26,14 +26,14 @@ PINS = {
 }
 
 
-def _git_blob(raw: bytes) -> str:
+def git_blob(raw: bytes) -> str:
     return sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
 
 
 def verify_evidence():
     receipt = {}
     for path, expected in PINS.items():
-        actual = _git_blob(path.read_bytes())
+        actual = git_blob(path.read_bytes())
         if actual != expected:
             raise ValueError("evidence_drift:" + str(path.relative_to(ROOT)))
         receipt[str(path.relative_to(ROOT))] = actual
@@ -48,7 +48,6 @@ for path in (V1542, V1543, V1544):
     if value not in sys.path:
         sys.path.append(value)
 
-# Load the exact frozen closure under the module names used by the certified code.
 for name in ("exact_algebra", "operational_complex", "protocol_types", "transport",
              "holonomy", "projection", "carriers", "operator_types", "exact_matrix"):
     importlib.import_module(name)
@@ -68,7 +67,7 @@ def actual_carriers():
     return tuple(_carriers.build_carrier(payload) for payload in projection.payloads)
 
 
-def reference_operator(carrier):
+def reference_operator(carrier, presentation=None):
     """Independent frozen v15.44 coefficient oracle for tests only."""
     verify_evidence()
-    return _derive.derive_operator(carrier)
+    return _derive.derive_operator(carrier, presentation)
