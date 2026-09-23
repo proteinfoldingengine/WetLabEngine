@@ -1,0 +1,25 @@
+name: UQCF v15.45 final certification
+on:
+  push:
+    branches:
+      - research/v15.45-curvature-factorization-spectral-boundary
+permissions:
+  contents: read
+jobs:
+  certify:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Exact-head certification
+        run: |
+          set -euo pipefail
+          cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
+          python -m unittest -v test_ci
