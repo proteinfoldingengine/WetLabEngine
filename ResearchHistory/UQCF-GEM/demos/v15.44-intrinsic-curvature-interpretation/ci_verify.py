@@ -91,7 +91,7 @@ def suite_command():
         'r=unittest.TextTestRunner(verbosity=2).run(suite); '
         'ok=origins and r.wasSuccessful() and r.testsRun==int(sys.argv[2]) and not r.skipped '
         'and not r.expectedFailures and not r.unexpectedSuccesses; '
-        'print("SUITE_COUNT",r.testsRun,"EXPECTED",sys.argv[2],"SKIPS",len(r.skipped),'
+        'print();print("SUITE_COUNT",r.testsRun,"EXPECTED",sys.argv[2],"SKIPS",len(r.skipped),'
         '"EXPECTED_FAILURES",len(r.expectedFailures),"UNEXPECTED_SUCCESSES",len(r.unexpectedSuccesses),'
         '"ACCEPTED",ok);sys.exit(0 if ok else 1)')
     return [sys.executable,'-I','-B','-c',bootstrap,str(HERE),str(V1544_TEST_COUNT),*MODULES]
