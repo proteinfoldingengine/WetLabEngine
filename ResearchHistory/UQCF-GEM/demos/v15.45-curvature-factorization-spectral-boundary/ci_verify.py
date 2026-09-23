@@ -14,8 +14,8 @@ PARENT="9085e4fa0bec3dbd700f759a8a9629b230d226ff"
 SPEC=ROOT/"docs/superpowers/specs/2026-09-23-v1545-curvature-factorization-spectral-boundary-design.md"
 PLAN=ROOT/"docs/superpowers/plans/2026-09-23-v1545-curvature-factorization-spectral-boundary-implementation.md"
 LEDGER=HERE/"docs/RESULTS.json"
-SPEC_BLOB="dc3f87ecf25d64e410e72c52e6a6a604349f5a92"
-PLAN_BLOB="991dba75caa477dbd0a28df5e693dd01c70d5e4e"
+SPEC_BLOB="f183f9b340570f2ffdd2dbb5f03962afc4da70ed"
+PLAN_BLOB="fe26a48a2a1e288d9d44de1d966e22c688dad5ed"
 
 
 def _blob(path):
