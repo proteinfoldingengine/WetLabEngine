@@ -1,0 +1,30 @@
+name: UQCF v15.44 intrinsic curvature interpretation
+
+on:
+  push:
+    branches: [research/v15.44-intrinsic-curvature-interpretation]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.44-intrinsic-curvature-interpretation/**'
+      - 'docs/superpowers/specs/2026-09-22-v1544-intrinsic-curvature-interpretation-design.md'
+      - 'docs/superpowers/plans/2026-09-22-v1544-intrinsic-curvature-interpretation-implementation.md'
+      - '.github/workflows/uqcf-v1544-intrinsic-curvature-interpretation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    env:
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - run: python ResearchHistory/UQCF-GEM/demos/v15.44-intrinsic-curvature-interpretation/ci_verify.py
