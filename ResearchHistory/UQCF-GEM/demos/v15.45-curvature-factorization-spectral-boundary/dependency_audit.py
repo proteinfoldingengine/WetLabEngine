@@ -6,8 +6,7 @@ They expose no threshold, regularizer, admissibility selector, or tuning input.
 from __future__ import annotations
 
 from fractions import Fraction as Q
-from math import cos, pi, sin, sqrt
-from pathlib import Path
+from math import cos, pi, sin
 import sys
 
 from evidence import V1543, actual_carriers
@@ -53,7 +52,7 @@ def classify_pair_dependency(*, centered_injective, canonical_centered,
     if eligible and not input_proportional and not output_proportional:
         classification = "DEPENDENT_ON_CENTERED_INJECTIVITY"
     elif eligible and input_proportional and output_proportional:
-        classification = "CONSISTENT_WITH_LINEarity_AND_INJECTIVITY"
+        classification = "CONSISTENT_WITH_LINEARITY_AND_INJECTIVITY"
     else:
         classification = "NOT_FORCED_BY_INJECTIVITY"
     return {
@@ -174,6 +173,15 @@ def archived_pair_dependency_audit():
 
     if total != 592:
         raise ValueError("pair_coverage")
+
+    claim_dependency = {
+        "response_nonproportionality": "DEPENDENT_ON_CENTERED_INJECTIVITY",
+        "matrix_inequality": "DEPENDENT_ON_CENTERED_INJECTIVITY",
+        "normalized_profile_inequality": "NOT_FORCED_BY_INJECTIVITY",
+        "energy_difference": "NOT_FORCED_BY_INJECTIVITY",
+        "face_invariant_differences": "NOT_FORCED_BY_INJECTIVITY",
+        "norm_and_ratio_differences": "NOT_FORCED_BY_INJECTIVITY",
+    }
     conditioning = tuple(conditioning_diagnostic(L) for L in (5, 7))
     return {
         "schema": "uqcf-v1545-task4-dependency-v1",
@@ -184,6 +192,7 @@ def archived_pair_dependency_audit():
         "dependent_on_injectivity_count": dependent,
         "not_forced_count": not_forced,
         "normalized_profile_claims_not_forced_count": profile_claims_not_forced,
+        "claim_dependency": claim_dependency,
         "by_carrier": tuple(by_carrier),
         "conditioning": conditioning,
         "source_correspondence": "NOT_EVALUATED",
