@@ -6,7 +6,7 @@ name: UQCF v15.45 task6 publish ledger
 permissions:
   contents: write
 jobs:
-  publish-ledger:
+  publish_ledger:
     if: github.event.head_commit.message != 'docs(uqcf): publish v15.45 canonical ledger'
     runs-on: ubuntu-24.04
     env:
