@@ -22,4 +22,10 @@ jobs:
         run: |
           set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
-          python -m unittest -v test_ci
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          python -m unittest discover -v -p 'test_*.py'
+          python gate.py --check docs/RESULTS.json
+          python -m compileall -q .
+          git diff --exit-code HEAD
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          echo "V1545_CERTIFIED_HEAD $GITHUB_SHA"
