@@ -50,6 +50,14 @@ class DependencyAuditTests(unittest.TestCase):
         after = spectral_certificate(7)
         self.assertEqual(before, after)
 
+    def test_conditioning_values_are_frozen_descriptions(self):
+        five = conditioning_diagnostic(5)
+        seven = conditioning_diagnostic(7)
+        self.assertAlmostEqual(five["min_nonzero_response_scale"], 0.34549150281252616, places=14)
+        self.assertAlmostEqual(five["condition_number"], 2.6180339887498967, places=14)
+        self.assertAlmostEqual(seven["min_nonzero_response_scale"], 0.18825509907063312, places=14)
+        self.assertAlmostEqual(seven["condition_number"], 5.048917339522309, places=14)
+
     def test_archive_audit_covers_all_592_pairs(self):
         audit = archived_pair_dependency_audit()
         self.assertEqual(audit["pair_count"], 592)
@@ -57,6 +65,18 @@ class DependencyAuditTests(unittest.TestCase):
         self.assertEqual(audit["output_nonproportional_count"], 592)
         self.assertEqual(audit["dependent_on_injectivity_count"], 592)
         self.assertEqual(audit["not_forced_count"], 0)
+
+    def test_claim_dependency_map_separates_forced_from_independent_diagnostics(self):
+        audit = archived_pair_dependency_audit()
+        expected = {
+            "response_nonproportionality": "DEPENDENT_ON_CENTERED_INJECTIVITY",
+            "matrix_inequality": "DEPENDENT_ON_CENTERED_INJECTIVITY",
+            "normalized_profile_inequality": "NOT_FORCED_BY_INJECTIVITY",
+            "energy_difference": "NOT_FORCED_BY_INJECTIVITY",
+            "face_invariant_differences": "NOT_FORCED_BY_INJECTIVITY",
+            "norm_and_ratio_differences": "NOT_FORCED_BY_INJECTIVITY",
+        }
+        self.assertEqual(audit["claim_dependency"], expected)
 
     def test_archive_audit_reports_both_odd_carrier_conditioning_records(self):
         audit = archived_pair_dependency_audit()
