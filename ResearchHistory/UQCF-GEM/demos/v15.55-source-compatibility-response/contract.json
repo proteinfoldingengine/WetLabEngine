@@ -1,0 +1,21 @@
+{
+  "schema": "uqcf-v1555-contract-v1",
+  "input_basis": "V1554_INDEPENDENT_REALIZATION_REDUCTION_DATA",
+  "response_target": "RETAINED_COMPATIBILITY_HIGHER_INCIDENCE_DELTA",
+  "axioms": [
+    "COVARIANCE",
+    "NEUTRALITY",
+    "REDUCTION_CONSISTENCY",
+    "COMPOSITION",
+    "CONTROL_SEPARATION",
+    "NO_SPECTRAL_EDGE_SELECTION"
+  ],
+  "allowed_verdicts": [
+    "UNIQUE_CANONICAL_RESPONSE",
+    "RESPONSE_NONUNIQUE",
+    "NO_ADMISSIBLE_RESPONSE",
+    "ILL_TYPED_RESPONSE_PROBLEM"
+  ],
+  "exact_arithmetic_required": true,
+  "post_result_selection_forbidden": true
+}
