@@ -1,0 +1,25 @@
+name: UQCF v15.46 Stage B2 native record search
+on:
+  push:
+    branches:
+      - research/v15.46-primitive-joint-source-admissibility
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility/**'
+      - '.github/workflows/uqcf-v1546-stage-b2-native-search.yml'
+permissions:
+  contents: read
+jobs:
+  bounded-search:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - run: |
+          set -euo pipefail
+          cd ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility
+          python -m unittest -v test_native_record_search
