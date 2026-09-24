@@ -366,7 +366,7 @@ Commit message:
 ## Plan Self-Review
 
 - Spec coverage: all realization, admissibility, reduction, equivalence, witness, independence, TDD, CI, and claim-firewall requirements are assigned to tasks.
-- Placeholder scan: no TBD/TODO/implicit implementation steps remain.
+- Placeholder scan: no placeholder markers or implicit implementation steps remain.
 - Type consistency: producer and verifier interfaces use contract + exact realization dicts; no target labels enter reduction.
 - Review Focus items are each covered by Tasks 2, 4, or 6.
 - Scientific asymmetry avoided: both certified-witness and no-witness outcomes are valid endpoints.
