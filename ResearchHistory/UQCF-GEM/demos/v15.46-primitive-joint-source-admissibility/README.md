@@ -24,6 +24,18 @@ python "$D/evidence_preflight.py" --root . --check /tmp/v1546-stage-a.json
 
 The source research checkout is needed because the inventory includes historical files not copied into the selective main publication. No archived pin is relaxed to accommodate a different checkout.
 
+## Implemented continuation: Stage-B native record trace
+
+Stage B selected the strongest scoped existing joint-state candidate, the frozen v13.27 six-qubit thermal demo, because it supplies an explicit joint state, graph, source operator and source-node labels. The trace verifies the exact source blob and stops at the first unearned native interface rather than inventing missing types.
+
+The machine result is:
+
+`SUPPLIED_JOINT_STATE_PRESENT_NATIVE_PROVENANCE_UNESTABLISHED`
+
+The first unmet interface is `B1_NATIVE_JOINT_STATE_PROVENANCE`: the file constructs a supplied demo state with normalized `exp(-beta H)`, but does not derive that state from primitive retained records. Consequently overlap inclusions, support treatment, occurrence addressing and coupling are marked `NOT_EXECUTED_AFTER_FIRST_FAILURE`.
+
+[Stage-B result](docs/STAGE_B_RESULTS.json) and [CI receipt](docs/STAGE_B_CI_RECEIPT.md) record the exact RED→GREEN evidence. Complete run `35946791128` passed 35/35 current v15.46 tests and replayed the prior exact controls on executed head `1211968aa97fd9b52476dfebbae419fb74df8ff4`.
+
 ## Remaining work
 
-A substantive state/support/provenance/occurrence/coupling witness must be provided and validated before source admission. Stages B–E of the full design are not completed by Stage A. No geometry-facing experiment, physical stress-energy, Einstein equation or continuum claim follows from a passed preflight. **Source correspondence remains NOT_EVALUATED; Pillar 3 remains OPEN.**
+The next research problem is upstream of geometry: either identify a genuinely primitive-derived joint record, or prove within a bounded declared archive scope that no candidate in that scope supplies the required native provenance. Only after native provenance is earned should overlap/support/occurrence/coupling stages execute. No geometry-facing experiment, physical stress-energy, Einstein equation or continuum claim follows from Stage A or B. **Source correspondence remains NOT_EVALUATED; Pillar 3 remains OPEN.**
