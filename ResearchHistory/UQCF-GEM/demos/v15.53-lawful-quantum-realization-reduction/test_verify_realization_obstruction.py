@@ -90,6 +90,17 @@ class IndependentVerifierTests(unittest.TestCase):
             vr.independent_class_key(self.c,self.family[1]),
         )
 
+    def test_element_order_spectrum_independently_distinguishes_c4_v4(self):
+        self.assertEqual(vr.independent_order_spectrum(self.c,self.family[0]),(1,2,4,4))
+        self.assertEqual(vr.independent_order_spectrum(self.c,self.family[1]),(1,2,2,2))
+
+    def test_positive_witness_records_distinct_order_spectra(self):
+        r=vr.verify_realization_obstruction(self.c)
+        if r["primary_verdict"]=="CERTIFIED_FAMILY_OBSTRUCTION_WITNESS":
+            self.assertEqual(r["witness"]["left_order_spectrum"],[1,2,4,4])
+            self.assertEqual(r["witness"]["right_order_spectrum"],[1,2,2,2])
+            self.assertNotEqual(r["witness"]["left_order_spectrum"],r["witness"]["right_order_spectrum"])
+
     def test_omitted_allowed_isomorphism_packet_detected(self):
         r=self.family[0]
         expected=vr.independent_isomorphisms(self.c,r,r)
