@@ -18,4 +18,4 @@ jobs:
       - name: Task 1 contract gate
         run: |
           cd ResearchHistory/UQCF-GEM/demos/v15.55-source-compatibility-response
-          python -m unittest -v test_contract test_defect_datum test_response_space
+          python -m unittest -v test_contract test_defect_datum test_response_space test_response_naturality
