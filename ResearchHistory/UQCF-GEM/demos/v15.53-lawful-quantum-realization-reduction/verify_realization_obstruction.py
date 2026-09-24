@@ -154,6 +154,26 @@ def independent_reduce(contract, realization):
         "disjoint_partition": _orbits(realization),
     }
 
+def independent_order_spectrum(contract, realization):
+    """Return sorted element orders as an algebraic invariant, independent of isomorphism search."""
+    status=independent_admissibility(contract,realization)["status"]
+    if status!="ADMISSIBLE":
+        raise ValueError("inadmissible_realization:"+status)
+    ops=realization["operations"]; mul=realization["multiplication"]; e=realization["identity"]
+    orders=[]
+    for g in ops:
+        value=e
+        found=None
+        for k in range(1,len(ops)+1):
+            value=mul[value][g]
+            if value==e:
+                found=k
+                break
+        if found is None:
+            raise ValueError("operation_without_finite_order")
+        orders.append(found)
+    return tuple(sorted(orders))
+
 def _mapping_parts(mapping,n):
     if not isinstance(mapping,(tuple,list)) or len(mapping)!=2*n:
         return None
@@ -333,12 +353,16 @@ def verify_realization_obstruction(contract,family=None):
         for i,left in enumerate(fiber):
             for right in fiber[i+1:]:
                 if left["class_key"]!=right["class_key"]:
+                    left_model=next(r for r in family if r.get("id")==left["id"])
+                    right_model=next(r for r in family if r.get("id")==right["id"])
                     witness={
                         "left_id":left["id"],
                         "right_id":right["id"],
                         "retained_readout":left["readout"],
                         "left_class_key":_jsonable(left["class_key"]),
                         "right_class_key":_jsonable(right["class_key"]),
+                        "left_order_spectrum":list(independent_order_spectrum(contract,left_model)),
+                        "right_order_spectrum":list(independent_order_spectrum(contract,right_model)),
                     }
                     break
             if witness is not None: break
