@@ -21,8 +21,8 @@ jobs:
           python-version: '3.13.5'
       - name: Exact checkout
         run: test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
-      - name: Task 1 contract tests
+      - name: Current v15.53 discovered tests
         run: |
           set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.53-lawful-quantum-realization-reduction
-          python -m unittest -v test_realization_contract
+          python -m unittest discover -v
