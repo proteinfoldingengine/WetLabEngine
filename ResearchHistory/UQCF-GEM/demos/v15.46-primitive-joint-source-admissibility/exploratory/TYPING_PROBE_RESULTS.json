@@ -1,0 +1,50 @@
+{
+  "Pillar_3": "OPEN",
+  "addressed_control": "NONZERO_WITH_EXPLICITLY_SUPPLIED_FACE_RELATION",
+  "linear_operator_only_gauge_map": "TRACE_CHANNEL_ONLY_UNDER_STATED_ASSUMPTIONS",
+  "new_native_joint_state_derived": false,
+  "physical_source_law_adopted": false,
+  "schema": "uqcf-v1546-exploratory-typing-v1",
+  "scope": "EXPLORATORY_TYPING_LEMMAS_NOT_FULL_V1546_CERTIFICATION",
+  "source_correspondence": "NOT_EVALUATED",
+  "translation_certificates": [
+    {
+      "L": 5,
+      "arithmetic": "EXACT_RATIONAL",
+      "boundary_rank": 24,
+      "fixed_boundary_dimension": 0,
+      "fixed_constraint_rank": 24,
+      "source_domain": "UNADDRESSED_INPUT_TRIVIAL_UNDER_CELL_TRANSLATIONS",
+      "target": "IM_B2_NOT_ENTIRE_CYCLE_SPACE"
+    },
+    {
+      "L": 6,
+      "arithmetic": "EXACT_RATIONAL",
+      "boundary_rank": 35,
+      "fixed_boundary_dimension": 0,
+      "fixed_constraint_rank": 35,
+      "source_domain": "UNADDRESSED_INPUT_TRIVIAL_UNDER_CELL_TRANSLATIONS",
+      "target": "IM_B2_NOT_ENTIRE_CYCLE_SPACE"
+    },
+    {
+      "L": 7,
+      "arithmetic": "EXACT_RATIONAL",
+      "boundary_rank": 48,
+      "fixed_boundary_dimension": 0,
+      "fixed_constraint_rank": 48,
+      "source_domain": "UNADDRESSED_INPUT_TRIVIAL_UNDER_CELL_TRANSLATIONS",
+      "target": "IM_B2_NOT_ENTIRE_CYCLE_SPACE"
+    },
+    {
+      "L": 8,
+      "arithmetic": "EXACT_RATIONAL",
+      "boundary_rank": 63,
+      "fixed_boundary_dimension": 0,
+      "fixed_constraint_rank": 63,
+      "source_domain": "UNADDRESSED_INPUT_TRIVIAL_UNDER_CELL_TRANSLATIONS",
+      "target": "IM_B2_NOT_ENTIRE_CYCLE_SPACE"
+    }
+  ],
+  "twirl_matrix_units_checked": 84,
+  "unaddressed_boundary_source": "ZERO_UNDER_INDEPENDENT_CELL_TRANSLATIONS"
+}
