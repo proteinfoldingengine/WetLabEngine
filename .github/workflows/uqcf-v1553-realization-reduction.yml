@@ -71,11 +71,11 @@ jobs:
           python "$d/verify_realization_obstruction.py" --output "$RUNNER_TEMP/v1553-1.json"
           python "$d/verify_realization_obstruction.py" --output "$RUNNER_TEMP/v1553-2.json"
           cmp "$RUNNER_TEMP/v1553-1.json" "$RUNNER_TEMP/v1553-2.json"
+          sha256sum "$RUNNER_TEMP/v1553-1.json"
+          cat "$RUNNER_TEMP/v1553-1.json"
           if test -f "$d/docs/RESULTS.json"; then
             cmp "$d/docs/RESULTS.json" "$RUNNER_TEMP/v1553-1.json"
           fi
-          sha256sum "$RUNNER_TEMP/v1553-1.json"
-          cat "$RUNNER_TEMP/v1553-1.json"
       - name: Compile and preserve predecessor scientific bytes
         run: |
           set -euo pipefail
