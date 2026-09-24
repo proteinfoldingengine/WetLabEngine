@@ -17,4 +17,4 @@ jobs:
       - run: |
           set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.51-minimal-quantum-origin-primitive
-          python -m unittest -v test_primitive_contract test_primitive_realizations test_quantum_origin test_minimality
+          python -m unittest -v test_primitive_contract test_primitive_realizations test_quantum_origin test_minimality test_gate
