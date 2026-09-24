@@ -1,0 +1,23 @@
+name: UQCF v15.54 operational nonclassicality
+on:
+  push:
+    branches: [research/v15.46-primitive-joint-source-admissibility]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.54-operational-nonclassicality-gate/**'
+      - '.github/workflows/uqcf-v1554-nonclassicality.yml'
+permissions: {contents: read}
+jobs:
+  v1554:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.13.5'}
+      - name: Exact checkout
+        run: test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: Task 1 contract tests
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.54-operational-nonclassicality-gate
+          python -m unittest -v test_nonclassicality_contract
