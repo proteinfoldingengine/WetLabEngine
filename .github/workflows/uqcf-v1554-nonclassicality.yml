@@ -17,7 +17,47 @@ jobs:
         with: {python-version: '3.13.5'}
       - name: Exact checkout
         run: test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
-      - name: Task 1 contract tests
+      - name: Complete v15.54 suite
         run: |
+          set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.54-operational-nonclassicality-gate
-          python -m unittest -v test_nonclassicality_contract test_operational_family test_operational_witness test_classical_comparator test_reduction_equivalence test_nonclassicality_search test_verify_nonclassicality
+          python - <<'PY'
+          import unittest
+          s=unittest.defaultTestLoader.discover('.')
+          r=unittest.TextTestRunner(verbosity=2).run(s)
+          assert r.testsRun >= 61, r.testsRun
+          assert r.wasSuccessful() and not r.skipped and not r.expectedFailures
+          PY
+      - name: Inherited v15.46 through v15.53 regressions
+        run: |
+          set -euo pipefail
+          for version in 46 47 48 49 50 51 52 53; do
+            matches=(ResearchHistory/UQCF-GEM/demos/v15.$version-*)
+            test "${#matches[@]}" -eq 1
+            (cd "${matches[0]}" && python - <<'PY'
+          import unittest
+          s=unittest.defaultTestLoader.discover('.')
+          r=unittest.TextTestRunner(verbosity=1).run(s)
+          assert r.testsRun > 0 and r.wasSuccessful() and not r.skipped and not r.expectedFailures
+          PY
+            )
+          done
+      - name: Independent replay twice
+        run: |
+          set -euo pipefail
+          cd ResearchHistory/UQCF-GEM/demos/v15.54-operational-nonclassicality-gate
+          python - <<'PY'
+          import json
+          import nonclassicality_contract as nc, operational_family as of, verify_nonclassicality as vn
+          from pathlib import Path
+          root=Path.cwd().parents[3]
+          c=nc.load_contract(root); raw=of.enumerate_raw_candidates(c)
+          a=json.dumps(vn.verify(c,raw),sort_keys=True,separators=(',',':'))+'\n'
+          b=json.dumps(vn.verify(c,raw),sort_keys=True,separators=(',',':'))+'\n'
+          assert a==b
+          open('/tmp/v1554.json','w').write(a)
+          print(a,end='')
+          PY
+          if test -f docs/RESULTS.json; then cmp docs/RESULTS.json /tmp/v1554.json; fi
+      - name: Compile
+        run: python -m compileall -q ResearchHistory/UQCF-GEM/demos/v15.54-operational-nonclassicality-gate
