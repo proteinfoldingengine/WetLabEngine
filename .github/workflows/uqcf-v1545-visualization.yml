@@ -1,0 +1,32 @@
+name: UQCF v15.45 scientific visualization
+on:
+  push:
+    branches: [research/v15.46-primitive-joint-source-admissibility]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/visualize_v1545.py'
+      - 'ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/test_visualize_v1545.py'
+      - 'ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/VISUALIZATION.md'
+      - '.github/workflows/uqcf-v1545-visualization.yml'
+permissions: {contents: read}
+jobs:
+  visualization:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.13.5'}
+      - run: pip install numpy matplotlib pillow
+      - name: Verify mathematics
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
+          python -m unittest -v test_visualize_v1545
+      - name: Render figures and animations
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
+          python visualize_v1545.py --frames 80
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: v1545-scientific-visualization
+          path: ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/artifacts/
