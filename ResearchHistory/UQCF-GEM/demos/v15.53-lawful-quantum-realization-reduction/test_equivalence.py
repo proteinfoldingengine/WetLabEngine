@@ -67,7 +67,7 @@ class EquivalenceTests(unittest.TestCase):
     def test_symmetry_and_transitivity(self):
         c4r2=relabel(self.c4,(2,3,0,1),(1,3,0,2))
         self.assertTrue(eq.are_equivalent(self.c,self.c4r,self.c4))
-        self.assertTrue(eq.are_equivalent(self.c,self.c4,self.c4r2))
+        self.assertTrue(eq.are_equivalent(self.c,self.c4,c4r2))
         self.assertTrue(eq.are_equivalent(self.c,self.c4r,self.c4r2))
 
     def test_id_swap_does_not_change_class(self):
