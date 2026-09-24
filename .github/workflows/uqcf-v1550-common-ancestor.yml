@@ -17,4 +17,4 @@ jobs:
       - run: |
           set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.50-common-ancestor-universal-object
-          python -m unittest -v test_common_contract test_common_candidates test_common_factorizations test_verify_common_ancestor
+          python -m unittest -v test_common_contract test_common_candidates test_common_factorizations test_verify_common_ancestor test_gate
