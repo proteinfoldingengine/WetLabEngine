@@ -9,12 +9,57 @@ permissions: {contents: read}
 jobs:
   obstruction:
     runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with: {fetch-depth: 0, persist-credentials: false}
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with: {python-version: '3.13.5'}
-      - run: |
+      - name: Exact checkout
+        run: test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: All v15.52 tests, including independent audit
+        run: |
           set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.52-quantum-origin-invariance-obstruction
-          python -m unittest -v test_obstruction_contract test_source_automorphisms test_obstruction_witness
+          python - <<'PY'
+          import unittest
+          suite = unittest.defaultTestLoader.discover('.')
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          assert result.testsRun >= 50, result.testsRun
+          assert result.wasSuccessful() and not result.skipped and not result.expectedFailures
+          PY
+      - name: Inherited v15.46 through v15.51 regressions
+        run: |
+          set -euo pipefail
+          for version in 46 47 48 49 50 51; do
+            matches=(ResearchHistory/UQCF-GEM/demos/v15.$version-*)
+            test "${#matches[@]}" -eq 1
+            test -d "${matches[0]}"
+            (cd "${matches[0]}" && python - <<'PY'
+          import unittest
+          suite = unittest.defaultTestLoader.discover('.')
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          assert result.testsRun > 0
+          assert result.wasSuccessful() and not result.skipped and not result.expectedFailures
+          PY
+            )
+          done
+      - name: Canonical independent audit replay
+        run: |
+          set -euo pipefail
+          cd ResearchHistory/UQCF-GEM/demos/v15.52-quantum-origin-invariance-obstruction
+          python verify_obstruction.py --output "$RUNNER_TEMP/verification-1.json"
+          python verify_obstruction.py --output "$RUNNER_TEMP/verification-2.json"
+          cmp "$RUNNER_TEMP/verification-1.json" "$RUNNER_TEMP/verification-2.json"
+          if test -f docs/VERIFICATION.json; then cmp docs/VERIFICATION.json "$RUNNER_TEMP/verification-1.json"; fi
+          cat "$RUNNER_TEMP/verification-1.json"
+      - name: Compile and preserve prior scientific bytes
+        run: |
+          set -euo pipefail
+          d=ResearchHistory/UQCF-GEM/demos/v15.52-quantum-origin-invariance-obstruction
+          python -m compileall -q "$d"
+          git diff --exit-code 9623fcefdef304ed9e22a64625e170a622094b8f -- "$d/obstruction_contract.py" "$d/source_automorphisms.py" "$d/obstruction_witness.py" "$d/test_obstruction_contract.py" "$d/test_source_automorphisms.py" "$d/test_obstruction_witness.py"
+          changed=$(git diff --name-only 9623fcefdef304ed9e22a64625e170a622094b8f -- ResearchHistory/UQCF-GEM | grep -v '^ResearchHistory/UQCF-GEM/demos/v15.52-quantum-origin-invariance-obstruction/' || true)
+          test -z "$changed"
+          git diff --exit-code
+          test -z "$(git status --porcelain --untracked-files=no)"
