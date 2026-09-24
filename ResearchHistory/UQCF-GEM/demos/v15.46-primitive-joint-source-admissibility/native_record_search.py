@@ -20,7 +20,7 @@ SOURCES = (
     ("independent_events","ResearchHistory/UQCF-GEM/demos/v15.13-independent-events/README.md",
      "0d65ef13285a51ba3dcd2cd023e53bdf3d578e2d",
      "SUPPLIED_JOINT_EVENT_STATE","SUPPLIED_EVENT_RECORD_MODEL",
-     ("on a supplied four-qubit carrier","sixteen supplied four-bit outcome assignments")),
+     ("supplied four-qubit carrier","sixteen supplied\nfour-bit outcome assignments")),
     ("record_dependencies","ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies/README.md",
      "3877378a375a72c70587c98e8ff1c82d900774c5",
      "SUPPLIED_JOINT_EVENT_STATE","SUPPLIED_EVENT_RECORD_MODEL",
