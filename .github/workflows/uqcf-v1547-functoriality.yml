@@ -33,7 +33,7 @@ jobs:
           print('V1547_TEST_COUNT',r.testsRun)
           PY
           cd ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility
-          python -m unittest -q test_evidence_preflight test_native_record_trace test_native_record_search test_stage_c_contract test_stage_c_representations test_stage_c_nonuniqueness test_stage_c_verify test_stage_c_gate test_typing_probe
+          PYTHONPATH="$PWD/exploratory:$PYTHONPATH" python -m unittest -q test_evidence_preflight test_native_record_trace test_native_record_search test_stage_c_contract test_stage_c_representations test_stage_c_nonuniqueness test_stage_c_verify test_stage_c_gate test_typing_probe
       - name: Replay v15.47 result
         run: |
           set -euo pipefail
