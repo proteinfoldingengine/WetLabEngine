@@ -17,4 +17,4 @@ jobs:
       - run: |
           set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.52-quantum-origin-invariance-obstruction
-          python -m unittest -v test_obstruction_contract
+          python -m unittest -v test_obstruction_contract test_source_automorphisms
