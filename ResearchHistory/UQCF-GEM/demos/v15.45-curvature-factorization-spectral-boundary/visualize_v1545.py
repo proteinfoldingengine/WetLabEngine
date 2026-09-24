@@ -96,9 +96,23 @@ def draw_mode(ax,L,field,title):
     ax.set_title(title,color="white",fontsize=10)
 
 def centered_finite_condition(L):
-    A=scalar_operator(L); w=np.linalg.eigvalsh(A); nz=np.abs(w)>1e-10
-    vals=np.abs(w[nz])
-    return float(vals.max()/vals.min())
+    """Published descriptive singular-scale diagnostic from exact Fourier modes."""
+    zeros={(0,0)}
+    if L%2==0:
+        zeros |= {(L//2,j) for j in range(L)}
+        zeros |= {(i,L//2) for i in range(L)}
+    values=[]
+    for k in range(L):
+        for ell in range(L):
+            if (k,ell) in zeros:
+                continue
+            ck=np.cos(np.pi*k/L); cl=np.cos(np.pi*ell/L)
+            sk=np.sin(np.pi*k/L); sl=np.sin(np.pi*ell/L)
+            sigma=abs(2.0*ck*cl*(sk*sk+sl*sl))
+            if sigma<=0.0:
+                raise ValueError("visible_mode_nonpositive")
+            values.append(sigma)
+    return float(max(values)/min(values))
 
 def plot_spectrum():
     fig,axes=plt.subplots(2,2,figsize=(9,6.8),facecolor="#0b0d10")
