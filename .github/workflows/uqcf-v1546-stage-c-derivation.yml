@@ -20,4 +20,4 @@ jobs:
       - run: |
           set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility
-          python -m unittest -v test_stage_c_contract test_stage_c_representations test_stage_c_nonuniqueness test_stage_c_verify
+          python -m unittest -v test_stage_c_contract test_stage_c_representations test_stage_c_nonuniqueness test_stage_c_verify test_stage_c_gate
