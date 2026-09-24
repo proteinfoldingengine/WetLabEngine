@@ -7,27 +7,37 @@ on:
       - 'ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/test_visualize_v1545.py'
       - 'ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/VISUALIZATION.md'
       - '.github/workflows/uqcf-v1545-visualization.yml'
-permissions: {contents: read}
+permissions:
+  contents: write
 jobs:
   visualization:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with: {persist-credentials: false}
+        with: {persist-credentials: true}
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with: {python-version: '3.13.5'}
-      - run: pip install numpy matplotlib pillow
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          pip install numpy matplotlib pillow
       - name: Verify mathematics
         run: |
           cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
           python -m unittest -v test_visualize_v1545
-      - name: Render figures and animations
+      - name: Render permanent demo media
         run: |
           cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
+          rm -rf artifacts
           python visualize_v1545.py --frames 80
+          test -s artifacts/v1545_L5_largest_eigenmode.mp4
+          test -s artifacts/v1545_L7_largest_eigenmode.mp4
           ls -lh artifacts/
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: v1545-scientific-visualization
-          path: ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/artifacts/
+      - name: Commit rendered media into demo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/artifacts/
+          git commit -m "docs(uqcf): publish rendered v15.45 demo media"
+          git push
