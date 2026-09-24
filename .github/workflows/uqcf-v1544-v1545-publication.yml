@@ -1,0 +1,68 @@
+name: UQCF v15.44-v15.45 publication integrity
+
+'on':
+  pull_request:
+    branches: [main]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/publications/v15.44-v15.45/**'
+      - 'ResearchHistory/UQCF-GEM/demos/v15.44-intrinsic-curvature-interpretation/**'
+      - 'ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary/**'
+      - '.github/workflows/uqcf-v1544-v1545-publication.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uqcf-publication-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  publication-integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONHASHSEED: '0'
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Publication checker and exact object verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -c 'import sys; assert sys.version_info[:3] == (3, 13, 5)'
+          python -m unittest discover -v -s ResearchHistory/UQCF-GEM/publications/v15.44-v15.45 -p 'test_*.py'
+          python ResearchHistory/UQCF-GEM/publications/v15.44-v15.45/verify_publication.py --root . --expected-head "$EXPECTED_HEAD"
+      - name: Copied scientific modules and canonical ledger replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
+          python - <<'PY'
+          import unittest
+          names = ['test_factorization', 'test_spectral', 'test_spectral_archives',
+                   'test_dependency_audit', 'test_source_firewall', 'test_gate']
+          suite = unittest.defaultTestLoader.loadTestsFromNames(names)
+          count = suite.countTestCases()
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          if (count <= 0 or result.testsRun != count or not result.wasSuccessful()
+                  or result.skipped or result.expectedFailures or result.unexpectedSuccesses):
+              raise SystemExit('publication regression incomplete or failed')
+          print('PUBLICATION_REGRESSION_COUNT', result.testsRun)
+          PY
+          python gate.py --check docs/RESULTS.json
+          python -m compileall -q .
+      - name: Verify unchanged files and exact checkout after tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python ResearchHistory/UQCF-GEM/publications/v15.44-v15.45/verify_publication.py --root . --expected-head "$EXPECTED_HEAD"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          git diff --exit-code HEAD
+          echo "UQCF_PUBLICATION_VERIFIED_HEAD $EXPECTED_HEAD"
