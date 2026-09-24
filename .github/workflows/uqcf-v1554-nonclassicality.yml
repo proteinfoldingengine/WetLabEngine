@@ -20,4 +20,4 @@ jobs:
       - name: Task 1 contract tests
         run: |
           cd ResearchHistory/UQCF-GEM/demos/v15.54-operational-nonclassicality-gate
-          python -m unittest -v test_nonclassicality_contract test_operational_family test_operational_witness
+          python -m unittest -v test_nonclassicality_contract test_operational_family test_operational_witness test_classical_comparator
