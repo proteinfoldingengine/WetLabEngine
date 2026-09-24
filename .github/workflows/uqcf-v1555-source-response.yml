@@ -19,3 +19,16 @@ jobs:
         run: |
           cd ResearchHistory/UQCF-GEM/demos/v15.55-source-compatibility-response
           python -m unittest -v test_contract test_defect_datum test_response_space test_response_naturality test_response_controls test_verify_response
+      - name: Freeze/replay result
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.55-source-compatibility-response
+          python - <<'PY'
+          import json, verify_response as v
+          c=json.load(open("contract.json"))
+          a=v.verify(c); b=v.verify(c)
+          assert a==b
+          frozen=json.load(open("RESULTS.json"))
+          assert a["primary_verdict"]==frozen["primary_verdict"]
+          assert a["solution_dimension"]==frozen["refined_solution_dimension"]
+          assert a["constraint_rank"]==frozen["branch_swap_constraint_rank"]
+          PY

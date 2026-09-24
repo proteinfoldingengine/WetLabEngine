@@ -1,0 +1,28 @@
+{
+  "schema": "uqcf-v1555-results-v1",
+  "primary_verdict": "RESPONSE_NONUNIQUE",
+  "defect_basis": "EXACT_OPERATIONAL_EXCESS_ONLY",
+  "candidate_defect": [
+    2,
+    1
+  ],
+  "classical_control_defect": [
+    0,
+    1
+  ],
+  "variable_count": 7,
+  "branch_swap_constraint_rank": 3,
+  "initial_solution_dimension": 4,
+  "composition_additional_rank": 0,
+  "naturality_additional_rank": 0,
+  "refined_solution_dimension": 4,
+  "surviving_parameters": [
+    "branch_lineage",
+    "branch_dependency",
+    "branch_recoverability",
+    "composition"
+  ],
+  "extra_principles_added": [],
+  "scientific_conclusion": "The earned v15.54 defect constrains but does not uniquely determine a retained compatibility response. Four exact rational response degrees of freedom survive the frozen covariance, neutrality, reduction-consistency, composition, control-separation, and spectral-edge constraints.",
+  "next_missing_object": "ADDITIONAL_FIRST_PRINCIPLES_SELECTOR_OR_RICHER_DEFECT_STRUCTURE"
+}
