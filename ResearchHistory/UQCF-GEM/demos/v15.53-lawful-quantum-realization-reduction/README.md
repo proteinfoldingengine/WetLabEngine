@@ -22,7 +22,7 @@ e	au(V_4).
 
 Here (O) is the registered target-blind retained reduction and (	au) is the frozen structural-isomorphism class.
 
-Both realizations reduce independently to the same four-object pair-groupoid readout: the same lineage/reachability, dependency, recoverability, composition, refinement and orbit partition. Exhaustive operation-label × basis-label bijection checks nevertheless show the C4 and V4 realizations are not structurally isomorphic.
+Both realizations reduce independently to the same four-object pair-groupoid readout: the same lineage/reachability, dependency, recoverability, composition, refinement and orbit partition. Exhaustive operation-label × basis-label bijection checks nevertheless show the C4 and V4 realizations are not structurally isomorphic. A separate algebraic cross-check reaches the same conclusion without the isomorphism search: the element-order spectra are `(1,2,4,4)` for C4 and `(1,2,2,2)` for V4.
 
 By the general factorization theorem proved in v15.52, no exact decoder from this retained readout can recover the registered target class for both realizations. This is now a genuine lawful-family witness rather than a label-only construction.
 
@@ -41,7 +41,7 @@ It also does not establish a physical source law or gravity. `source_corresponde
 - Frozen design: `docs/superpowers/specs/2026-09-24-v1553-lawful-quantum-realization-reduction.md`.
 - Implementation plan: `docs/superpowers/plans/2026-09-24-v1553-lawful-quantum-realization-reduction.md`.
 
-Authoritative code-head execution: GitHub Actions run `36018084784`, job `107695671129`, on `92a6f35812e8b7ec1601a3e61f0581812575f48c`: 59 v15.53 tests plus 231 inherited v15.46-v15.52 tests passed, independent replay was byte-identical, and predecessor scientific bytes were preserved.
+Authoritative code-head execution: GitHub Actions run `36018084784`, job `107695671129`, on `92a6f35812e8b7ec1601a3e61f0581812575f48c`: 61 v15.53 tests plus 231 inherited v15.46-v15.52 tests passed, independent replay was byte-identical, and predecessor scientific bytes were preserved.
 
 ## Reproduce
 
