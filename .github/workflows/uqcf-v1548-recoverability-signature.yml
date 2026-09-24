@@ -17,4 +17,4 @@ jobs:
       - run: |
           set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.48-recoverability-signature-completeness
-          python -m unittest -v test_signature_contract test_verify_type_obstruction
+          python -m unittest -v test_signature_contract test_verify_type_obstruction test_gate
