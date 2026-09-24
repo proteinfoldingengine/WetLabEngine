@@ -9,12 +9,48 @@ permissions: {contents: read}
 jobs:
   origin:
     runs-on: ubuntu-24.04
+    env: {PYTHONHASHSEED: '0'}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with: {fetch-depth: 0, persist-credentials: false}
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with: {python-version: '3.13.5'}
-      - run: |
+      - name: Complete v15.51 and inherited regressions
+        run: |
           set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
           cd ResearchHistory/UQCF-GEM/demos/v15.51-minimal-quantum-origin-primitive
           python -m unittest -v test_primitive_contract test_primitive_realizations test_quantum_origin test_minimality test_gate
+          cd ../v15.50-common-ancestor-universal-object
+          python -m unittest -q test_common_contract test_common_candidates test_common_factorizations test_verify_common_ancestor test_gate
+          cd ../v15.49-cross-domain-recoverability-bridge-classification
+          python -m unittest -q test_bridge_contract test_verify_bridge_typing test_gate
+          cd ../v15.48-recoverability-signature-completeness
+          python -m unittest -q test_signature_contract test_verify_type_obstruction test_gate
+          cd ../v15.47-cross-domain-representation-functoriality
+          python -m unittest -q test_functor_contract test_functor_candidates test_functor_classes test_verify_functoriality test_gate
+          cd ../v15.46-primitive-joint-source-admissibility
+          export PYTHONPATH="$PWD/exploratory"
+          python -m unittest -q test_evidence_preflight test_native_record_trace test_native_record_search test_stage_c_contract test_stage_c_representations test_stage_c_nonuniqueness test_stage_c_verify test_stage_c_gate test_typing_probe
+      - name: Replay v15.51 result
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import sys
+          d=Path('ResearchHistory/UQCF-GEM/demos/v15.51-minimal-quantum-origin-primitive').resolve(); sys.path.insert(0,str(d))
+          import primitive_contract as pc,primitive_realizations as pr,quantum_origin as qo,minimality as mn,verify_quantum_origin as vq,gate
+          root=d.parents[3]; c=pc.load_contract(root); rs={p:pr.enumerate_realizations(c,p) for p in c['packages']}
+          os={p:qo.derive_outputs(c,p,rs[p]) for p in c['packages']}; m=mn.minimal_packages(c,os); v=vq.verify(c,rs,os,m); r=gate.adjudicate(c,v)
+          assert gate.canonical_bytes(r)==(d/'docs/RESULTS.json').read_bytes()
+          print('V1551_RESULT_REPLAY_PASS')
+          PY
+          python -m compileall -q ResearchHistory/UQCF-GEM/demos/v15.51-minimal-quantum-origin-primitive
+      - name: Exact-head preservation
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/demos/v15.44-intrinsic-curvature-interpretation)" = d37f88b98d38aad864e22146ad7dcd2d00f89cd4
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary)" = 775e5549303c1276d3458ec34b553a604436bf0f
+          git diff --exit-code HEAD
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          echo "V1551_VERIFIED_HEAD $GITHUB_SHA"
