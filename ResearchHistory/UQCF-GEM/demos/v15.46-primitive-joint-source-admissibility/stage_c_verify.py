@@ -7,8 +7,11 @@ def verify_witness(contract,witness):
  if left.get("frozen_reduct")!=right.get("frozen_reduct"):
   raise ValueError("reduct_mismatch")
  reduct=left["frozen_reduct"]
- if reduct.get("cross_domain_relations")!=contract["cross_domain_relations"]:
-  raise ValueError("reduct_contract_mismatch")
+ expected_reduct={"retained_sort":contract["retained_sort"]["status"],
+                  "quantum_carrier_origin":contract["quantum_sort"]["carrier_origin"],
+                  "cross_domain_relations":contract["cross_domain_relations"]}
+ if reduct!=expected_reduct:
+  raise ValueError("reduct_mismatch")
  if witness.get("gauge_test",{}).get("earned_node_site_gauge") != contract["earned_gauge"]["node_site"]:
   raise ValueError("gauge_mismatch")
  if left.get("added_selector") is not None or right.get("added_selector") is not None:
