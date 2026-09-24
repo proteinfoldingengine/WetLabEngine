@@ -24,7 +24,7 @@ SOURCES = (
     ("record_dependencies","ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies/README.md",
      "3877378a375a72c70587c98e8ff1c82d900774c5",
      "SUPPLIED_JOINT_EVENT_STATE","SUPPLIED_EVENT_RECORD_MODEL",
-     ("sixteen supplied record assignments","carrier, RAS, RCR, motion generators and classical record wire remain supplied")),
+     ("sixteen supplied record assignments","carrier,\nRAS, RCR, motion generators and classical record wire remain supplied")),
     ("carrier_origin","ResearchHistory/UQCF-GEM/v15/v15.09/REPORT.md",
      "ec73ef9240dcef062c95a82c511a874d0d2923ef",
      "NO_NATIVE_CARRIER_DERIVATION","FROZEN_NEGATIVE_GATE",
