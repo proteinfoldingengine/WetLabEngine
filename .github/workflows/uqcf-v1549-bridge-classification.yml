@@ -17,4 +17,4 @@ jobs:
       - run: |
           set -euo pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.49-cross-domain-recoverability-bridge-classification
-          python -m unittest -v test_bridge_contract
+          python -m unittest -v test_bridge_contract test_verify_bridge_typing
