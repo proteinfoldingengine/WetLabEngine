@@ -1,0 +1,82 @@
+name: UQCF v15.46 Stage A evidence preflight
+'on':
+  push:
+    branches: [research/v15.46-primitive-joint-source-admissibility]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility/evidence_preflight.py'
+      - 'ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility/test_evidence_preflight.py'
+      - 'ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility/docs/INPUT_TYPE_INVENTORY.json'
+      - 'ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility/docs/SOURCE_INTERFACE_SUBMISSIONS.json'
+      - 'ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility/exploratory/**'
+      - '.github/workflows/uqcf-v1546-evidence-preflight.yml'
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  evidence-preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONHASHSEED: '0'
+      EXPECTED_HEAD: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Complete v15.46 preflight and exploratory test set
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          python - <<'PY'
+          from pathlib import Path
+          import sys, unittest
+          assert sys.version_info[:3] == (3, 13, 5)
+          d = Path('ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility').resolve()
+          sys.path[:0] = [str(d), str(d/'exploratory')]
+          suite = unittest.defaultTestLoader.loadTestsFromNames(['test_evidence_preflight','test_typing_probe'])
+          assert suite.countTestCases() == 28
+          r = unittest.TextTestRunner(verbosity=2).run(suite)
+          if (r.testsRun != 28 or not r.wasSuccessful() or r.skipped or r.expectedFailures or r.unexpectedSuccesses):
+              raise SystemExit('v1546_test_failure_or_incomplete_coverage')
+          print('V1546_STAGE_A_TEST_COUNT', r.testsRun)
+          PY
+      - name: Actual ten-source pin audit and canonical replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          D=ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility
+          python "$D/evidence_preflight.py" --root . --out "$RUNNER_TEMP/v1546-stage-a.json"
+          python "$D/evidence_preflight.py" --root . --check "$RUNNER_TEMP/v1546-stage-a.json"
+          sha256sum "$RUNNER_TEMP/v1546-stage-a.json"
+          python - <<'PY'
+          from pathlib import Path
+          import gzip, json, runpy
+          d = Path('ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility')
+          module = runpy.run_path(str(d/'exploratory/proof_checks.py'))
+          result = module['run']()
+          raw = (json.dumps(result,sort_keys=True,indent=2)+'\n').encode('ascii')
+          assert result['checks_passed'] == 195
+          assert raw == gzip.decompress((d/'exploratory/EXPLORATORY_CHECKS.json.gz').read_bytes())
+          module = runpy.run_path(str(d/'exploratory/typing_probe.py'))
+          raw = (json.dumps(module['run'](),sort_keys=True,indent=2)+'\n').encode('ascii')
+          assert raw == (d/'exploratory/TYPING_PROBE_RESULTS.json').read_bytes()
+          print('V1546_PRIOR_PROOF_195_AND_TYPING_REPLAYS_PASS')
+          PY
+          python -m compileall -q "$D"
+      - name: Preserve scientific snapshots and exact checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/demos/v15.44-intrinsic-curvature-interpretation)" = d37f88b98d38aad864e22146ad7dcd2d00f89cd4
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary)" = 775e5549303c1276d3458ec34b553a604436bf0f
+          git diff --exit-code 80f6ec8b8b2de882232c061a5c9d1f4aac6d86d1 HEAD -- ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility/exploratory
+          git diff --exit-code HEAD
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "V1546_STAGE_A_VERIFIED_HEAD $EXPECTED_HEAD"
