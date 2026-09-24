@@ -3,7 +3,7 @@ from pathlib import Path
 import copy, unittest
 import functor_contract as fc
 import functor_candidates as cand
-import functor_classes as cls
+import functor_classes as cls_module
 import verify_functoriality as vf
 
 class VerifyFunctorialityTests(unittest.TestCase):
@@ -11,7 +11,7 @@ class VerifyFunctorialityTests(unittest.TestCase):
     def setUpClass(cls):
         root=Path(__file__).resolve().parents[4]
         cls.c=fc.load_contract(root); cls.cs=cand.enumerate_candidates(cls.c)
-        cls.ledger=cls.surviving_classes(cls.c,cls.cs)
+        cls.ledger=cls_module.surviving_classes(cls.c,cls.cs)
 
     def test_valid_ledgers_verify(self):
         r=vf.verify(self.c,self.cs,self.ledger)
