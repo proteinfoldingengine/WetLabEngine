@@ -1,0 +1,87 @@
+name: UQCF v15.53 lawful realization reduction
+on:
+  push:
+    branches: [research/v15.46-primitive-joint-source-admissibility]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v15.53-lawful-quantum-realization-reduction/**'
+      - '.github/workflows/uqcf-v1553-realization-reduction.yml'
+permissions:
+  contents: read
+jobs:
+  v1553:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Exact checkout
+        run: test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: Complete v15.53 test suite
+        run: |
+          set -euo pipefail
+          cd ResearchHistory/UQCF-GEM/demos/v15.53-lawful-quantum-realization-reduction
+          python - <<'PY'
+          import unittest
+          suite=unittest.defaultTestLoader.discover('.')
+          result=unittest.TextTestRunner(verbosity=2).run(suite)
+          assert result.testsRun >= 59, result.testsRun
+          assert result.wasSuccessful()
+          assert not result.skipped
+          assert not result.expectedFailures
+          assert not result.unexpectedSuccesses
+          print("V1553_TEST_COUNT", result.testsRun)
+          PY
+      - name: Inherited v15.46 through v15.52 regressions
+        run: |
+          set -euo pipefail
+          total=0
+          for version in 46 47 48 49 50 51 52; do
+            matches=(ResearchHistory/UQCF-GEM/demos/v15.$version-*)
+            test "${#matches[@]}" -eq 1
+            test -d "${matches[0]}"
+            count=$(
+              cd "${matches[0]}"
+              python - <<'PY'
+          import unittest
+          suite=unittest.defaultTestLoader.discover('.')
+          result=unittest.TextTestRunner(verbosity=2).run(suite)
+          assert result.testsRun > 0
+          assert result.wasSuccessful()
+          assert not result.skipped
+          assert not result.expectedFailures
+          assert not result.unexpectedSuccesses
+          print(result.testsRun)
+          PY
+            )
+            count=$(printf '%s\n' "$count" | tail -n 1)
+            echo "V15.$version TEST_COUNT $count"
+            total=$((total + count))
+          done
+          echo "INHERITED_TEST_COUNT $total"
+          test "$total" -ge 231
+      - name: Independent semantic replay twice
+        run: |
+          set -euo pipefail
+          d=ResearchHistory/UQCF-GEM/demos/v15.53-lawful-quantum-realization-reduction
+          python "$d/verify_realization_obstruction.py" --output "$RUNNER_TEMP/v1553-1.json"
+          python "$d/verify_realization_obstruction.py" --output "$RUNNER_TEMP/v1553-2.json"
+          cmp "$RUNNER_TEMP/v1553-1.json" "$RUNNER_TEMP/v1553-2.json"
+          sha256sum "$RUNNER_TEMP/v1553-1.json"
+          cat "$RUNNER_TEMP/v1553-1.json"
+          if test -f "$d/docs/RESULTS.json"; then
+            cmp "$d/docs/RESULTS.json" "$RUNNER_TEMP/v1553-1.json"
+          fi
+      - name: Compile and preserve predecessor scientific bytes
+        run: |
+          set -euo pipefail
+          d=ResearchHistory/UQCF-GEM/demos/v15.53-lawful-quantum-realization-reduction
+          python -m compileall -q "$d"
+          changed=$(git diff --name-only a6e444797084e75055ff3d1c34bd1aeb406f3e51 -- ResearchHistory/UQCF-GEM | grep -v '^ResearchHistory/UQCF-GEM/demos/v15.53-lawful-quantum-realization-reduction/' || true)
+          test -z "$changed"
+          git diff --exit-code
+          test -z "$(git status --porcelain --untracked-files=no)"

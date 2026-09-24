@@ -1,0 +1,84 @@
+{
+  "Pillar_3": "OPEN",
+  "authorship": "AUTHOR_REVIEW_NOT_INDEPENDENT_REVIEW",
+  "coupling_status": "SOURCE_OPERATOR_DEFINED_BUT_INCIDENCE_COUPLING_UNSPECIFIED",
+  "joint_states_present": true,
+  "native_input_status": "NATIVE_JOINT_INPUT_NOT_CERTIFIED_IN_SCOPED_INVENTORY",
+  "physical_source_law_adopted": false,
+  "repository_head": "20650af8d9583383925efc570026666b47d12788",
+  "schema": "uqcf-v1546-scoped-input-inventory-v1",
+  "scope": "DECLARED_PINNED_SOURCE_REVIEW_NOT_EXHAUSTIVE_ARCHIVE_ABSENCE_PROOF",
+  "source_correspondence": "NOT_EVALUATED",
+  "sources": [
+    {
+      "git_blob_sha": "e841c87f43982f811643e0a1bbaaa1996210a26f",
+      "inspection": "FROZEN_GOVERNANCE_AND_HISTORY",
+      "interpretation": "No downstream target may select an upstream source or representation law.",
+      "key": "governance",
+      "path": "ResearchHistory/UQCF-GEM/README.md"
+    },
+    {
+      "git_blob_sha": "b5adc5fe1873cab28a491a287b0746eb26589917",
+      "inspection": "SOURCE_CODE_LINES_1_140",
+      "interpretation": "Tripartite dimensions and pair reductions are supplied; build_completion explicitly calls its representative a mathematical selection, not a physical rule.",
+      "key": "compatibility_lab",
+      "path": "Tmp/TOE/UQCF_Quantum_Compatibility_Lab/uqcf_quantum_lab.py"
+    },
+    {
+      "git_blob_sha": "60b4b50e14e8dca1c15a0072d831f5f901bacf83",
+      "inspection": "FROZEN_AUDIT_REPORT_NOT_FULL_ENGINE_REAUDIT",
+      "interpretation": "Parent dimension125/support25; no provenance source covector certified on that same parent.",
+      "key": "compatibility_parent_audit",
+      "path": "ResearchHistory/UQCF-GEM/v15/v15.01/SUMMARY.json"
+    },
+    {
+      "git_blob_sha": "bf0b84e3b3e627d7916a5fb1b46ab9bd5eba03e6",
+      "inspection": "SOURCE_CODE",
+      "interpretation": "Supplied n6 thermal joint state, graph, beta, couplings, fields and source P.",
+      "key": "six_qubit_demo",
+      "path": "ResearchHistory/UQCF-GEM/demos/v13.27-gravity-progress/uqcf_demo/quantum.py"
+    },
+    {
+      "git_blob_sha": "a6b806406c0ac0edc8c42b44405f538f84129af6",
+      "inspection": "EXECUTED_SIMULATOR_REPORT",
+      "interpretation": "Four system qubits plus four supplied blank diagnostic record registers; coherent dilation not uniquely determined by classical instrument.",
+      "key": "coherent_records",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.15-coherent-records/README.md"
+    },
+    {
+      "git_blob_sha": "ec73ef9240dcef062c95a82c511a874d0d2923ef",
+      "inspection": "FROZEN_MATHEMATICAL_AUDIT",
+      "interpretation": "Neutral reference does not identify tensor factors or cross-domain node/site map.",
+      "key": "carrier_origin",
+      "path": "ResearchHistory/UQCF-GEM/v15/v15.09/REPORT.md"
+    },
+    {
+      "git_blob_sha": "79642ebd5a47c81f1ed08394d46a551725cd0554",
+      "inspection": "FROZEN_AXIOM_DECLARATION",
+      "interpretation": "Explicit new addressed source (f,e,a); no reviewed joint-state-to-occurrence link is supplied by this source declaration.",
+      "key": "incidence_source",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/README.md"
+    },
+    {
+      "git_blob_sha": "5cee545f4dda5ee683e58de6e82a7be705ac9abc",
+      "inspection": "FROZEN_MATHEMATICAL_AUDIT",
+      "interpretation": "Covariant cycle-carrier intertwiners exist but remain nonunique; no source axiom added.",
+      "key": "channel_nonuniqueness",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.31-source-extension-minimality/README.md"
+    },
+    {
+      "git_blob_sha": "87cce2de487700de8503d520a4e56d3c5a1e83b6",
+      "inspection": "FROZEN_SCOPE_CLOSURE",
+      "interpretation": "Existing CMI/recoverability route remains type-blocked; continuation requires genuinely new typed structure or explicit new assumption.",
+      "key": "selector_stop",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.37-response-selector-irreducibility/README.md"
+    },
+    {
+      "git_blob_sha": "77df665e59e01c8d1085c6a5a0ed0079d8d50f53",
+      "inspection": "RESTORED_EXACT_SOURCE_AND_LOCAL_REPLAY",
+      "interpretation": "195-check candidate proof replayed from attached package; restored Git blob matches source inspected through GitHub.",
+      "key": "candidate_proof",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.46-primitive-joint-source-admissibility/exploratory/proof_checks.py"
+    }
+  ]
+}
