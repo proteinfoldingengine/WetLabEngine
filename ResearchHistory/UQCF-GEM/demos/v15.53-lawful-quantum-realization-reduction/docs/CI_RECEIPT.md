@@ -2,20 +2,30 @@
 
 Date: 2026-09-24
 
-## Authoritative code-head execution
+## Initial code-head certification
 
-Executed head: `92a6f35812e8b7ec1601a3e61f0581812575f48c`
+Executed head: `92a6f35812e8b7ec1601a3e61f0581812575f48c`.
 
-GitHub Actions: run [36018084784](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36018084784), job `107695671129`, completed **SUCCESS**.
+GitHub Actions run [36018084784](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36018084784), job `107695671129`, completed **SUCCESS**.
 
-- v15.53: 61/61 discovered tests passed after the final self-review strengthening.
+- v15.53: 59/59 discovered tests passed.
+- Inherited v15.46-v15.52: 231/231 discovered tests passed.
+- Combined scoped total: 290 tests.
+- Independent verifier replayed twice byte-for-byte.
+- Initial canonical result SHA256: `3e0d6cfa5aa18639079789ab00517cbe13a5bc245b4314492a038a5b70e46362`.
+- Compilation, exact checkout, and predecessor scientific-byte preservation passed.
+
+## Strengthened exact-head certification
+
+After the author self-review added the independent element-order-spectrum cross-check, head `77ff64d809c067a7c18b189869d5a210306f9684` was executed by GitHub Actions run [36019086168](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36019086168), job `107699074609`, completed **SUCCESS**.
+
+- v15.53: 61/61 discovered tests passed.
 - Inherited v15.46-v15.52: 231/231 discovered tests passed.
 - Combined scoped total: 292 tests.
 - Independent verifier replayed twice byte-for-byte.
-- Canonical strengthened result SHA256: `efcd90529b2aaf2e1a97977b997f8d7450e0c03714bddf8619ece922508c1ac9`.
-- Compilation passed.
-- No UQCF-GEM scientific file outside the new v15.53 directory changed relative to pre-execution head `a6e444797084e75055ff3d1c34bd1aeb406f3e51`.
-- Exact checkout passed.
+- Stored `docs/RESULTS.json` matched the fresh verifier output byte-for-byte.
+- Strengthened canonical result SHA256: `efcd90529b2aaf2e1a97977b997f8d7450e0c03714bddf8619ece922508c1ac9`.
+- Compilation, exact checkout, and predecessor scientific-byte preservation passed.
 
 ## Scientific verdict
 
@@ -49,7 +59,7 @@ The two target realizations are exact permutation-unitary representations, so th
 
 `source_correspondence=NOT_EVALUATED`; `Pillar_3=OPEN`. No physical source law, gravity, Einstein equation, geometry/curvature, continuum limit, empirical fit, fundamental physical time, or dark-matter primitive is certified by v15.53.
 
-The result and receipt are evidence additions after the code-head execution. A subsequent documentation-head run must reproduce `docs/RESULTS.json` byte-for-byte before this receipt is treated as final branch-head evidence.
+The strengthened exact-head run reproduced `docs/RESULTS.json` byte-for-byte. This receipt is a documentation-only correction after that run; the branch workflow is rerun on every v15.53 documentation change.
 
 
 ## Final self-review strengthening
@@ -61,4 +71,8 @@ Author self-review identified a possible shared-concept risk: producer and verif
 - Strengthened run `36018725255`: all 61 v15.53 tests and all 231 inherited tests passed; the workflow then failed only because the pre-strengthening stored `RESULTS.json` no longer matched the stronger witness packet.
 - Diagnostic run `36018873089` printed the new canonical output before that expected stale-result comparison; SHA256 `efcd90529b2aaf2e1a97977b997f8d7450e0c03714bddf8619ece922508c1ac9`.
 
-This receipt is updated with those exact stronger bytes. A subsequent exact-head replay must pass the stored-result comparison before final completion is claimed.
+This receipt is updated with those exact stronger bytes. Run `36019086168` subsequently passed the stored-result comparison and all other certification gates.
+
+## Review status
+
+Final whole-branch review was performed by the author because no independent subagent reviewer is available in this harness. That review found and fixed the shared-concept equivalence risk by adding the independent element-order-spectrum invariant, and then found and corrected the documentation inconsistencies recorded above. This is weaker than independent human or proof-assistant review and is not represented as either.

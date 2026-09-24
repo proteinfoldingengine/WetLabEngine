@@ -13,14 +13,11 @@ Each candidate is independently checked for finite carrier consistency, identity
 
 ## Result
 
-The independent verifier finds:
+The independent verifier finds the exact finite relation:
 
-[
-O(C_4)=O(V_4),qquad 	au(C_4)
-e	au(V_4).
-]
+`O(C4) = O(V4)`, while `tau(C4) != tau(V4)`.
 
-Here (O) is the registered target-blind retained reduction and (	au) is the frozen structural-isomorphism class.
+Here `O` is the registered target-blind retained reduction and `tau` is the frozen structural-isomorphism class.
 
 Both realizations reduce independently to the same four-object pair-groupoid readout: the same lineage/reachability, dependency, recoverability, composition, refinement and orbit partition. Exhaustive operation-label × basis-label bijection checks nevertheless show the C4 and V4 realizations are not structurally isomorphic. A separate algebraic cross-check reaches the same conclusion without the isomorphism search: the element-order spectra are `(1,2,4,4)` for C4 and `(1,2,2,2)` for V4.
 
@@ -41,7 +38,7 @@ It also does not establish a physical source law or gravity. `source_corresponde
 - Frozen design: `docs/superpowers/specs/2026-09-24-v1553-lawful-quantum-realization-reduction.md`.
 - Implementation plan: `docs/superpowers/plans/2026-09-24-v1553-lawful-quantum-realization-reduction.md`.
 
-Authoritative code-head execution: GitHub Actions run `36018084784`, job `107695671129`, on `92a6f35812e8b7ec1601a3e61f0581812575f48c`: 61 v15.53 tests plus 231 inherited v15.46-v15.52 tests passed, independent replay was byte-identical, and predecessor scientific bytes were preserved.
+Strengthened certification execution: GitHub Actions run `36019086168`, job `107699074609`, on `77ff64d809c067a7c18b189869d5a210306f9684`: 61 v15.53 tests plus 231 inherited v15.46-v15.52 tests passed; the stored strengthened result matched byte-for-byte, compilation passed, and predecessor scientific bytes were preserved.
 
 ## Reproduce
 
