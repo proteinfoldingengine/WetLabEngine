@@ -15,7 +15,7 @@ def _table(rows): return {c:deepcopy(r) for c,r in zip(CONTEXTS,rows)}
 
 _RAW=(
  {"id":"V1553_CLASSICAL","control_role":"V1553_PERMUTATION_CLASSICAL","carrier":[0,1,2,3],"operations":[[0,1,2,3],[1,0,3,2]],"operational_table":_table([_corr(),_corr(),_corr(),_corr()])},
- {"id":"S3_NONCOMMUTING_CONTROL","control_role":"NONCOMMUTING_PERMUTATION_CLASSICAL","carrier":[0,1,2],"operations":[[1,0,2],[0,2,1]],"operational_table":_table([_corr(),_corr(),_corr(),_anticorr()])},
+ {"id":"S3_NONCOMMUTING_CONTROL","control_role":"NONCOMMUTING_PERMUTATION_CLASSICAL","carrier":[0,1,2],"operations":[[1,0,2],[0,2,1]],"operational_table":_table([_corr(),_corr(),_corr(),_corr()])},
  {"id":"CHSH_PREREGISTERED","control_role":"OPERATIONAL_CANDIDATE","carrier":[0,1],"operations":[[0,1],[1,0]],"operational_table":_table([_corr(),_corr(),_corr(),_anticorr()])},
 )
 
