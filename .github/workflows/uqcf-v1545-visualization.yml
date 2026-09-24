@@ -25,7 +25,7 @@ jobs:
       - name: Render figures and animations
         run: |
           cd ResearchHistory/UQCF-GEM/demos/v15.45-curvature-factorization-spectral-boundary
-          python visualize_v1545.py --frames 80
+          python visualize_v1545.py --frames 80\n          ls -lh artifacts/
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: v1545-scientific-visualization
