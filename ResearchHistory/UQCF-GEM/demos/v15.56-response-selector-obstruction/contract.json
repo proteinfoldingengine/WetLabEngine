@@ -1,0 +1,33 @@
+{
+  "schema": "uqcf-v1556-contract-v1",
+  "response_basis": [
+    "branch_lineage",
+    "branch_dependency",
+    "branch_recoverability",
+    "composition"
+  ],
+  "structures_checked": [
+    "RETAINED_INCIDENCE_REFINEMENT",
+    "COMPOSITION_COMPATIBILITY",
+    "AUTOMORPHISM_NATURALITY",
+    "V1545_RESPONSE_FACTORIZATION",
+    "GENESIS_PIN_PROVENANCE_REPAIR"
+  ],
+  "allowed_verdicts": [
+    "CANONICAL_SELECTOR_FOUND",
+    "SELECTOR_NONUNIQUE",
+    "NO_EARNED_SELECTOR",
+    "ILL_TYPED_SELECTOR_PROBLEM"
+  ],
+  "exact_arithmetic_required": true,
+  "earned_normalization_required_for_canonical": true,
+  "forbidden_inputs": [
+    "GRAVITY_FIT",
+    "CURVATURE_MAGNITUDE",
+    "CURVATURE_SIGN",
+    "SPECTRAL_EDGE",
+    "EIGENMODE_SELECTION",
+    "EXTERNAL_PHENOMENOLOGY",
+    "POST_RESULT_NORMALIZATION"
+  ]
+}
