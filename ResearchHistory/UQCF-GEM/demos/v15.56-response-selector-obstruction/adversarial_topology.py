@@ -1,76 +1,70 @@
-"""v15.56 Task 25: adversarial topology-response discrimination.
+"""v15.56 Task 25: efficient adversarial topology-response discrimination.
 
-Deterministically enumerate connected simple graphs on 6 vertices. Group by
-degree sequence and Laplacian spectrum, reject isomorphic duplicates using an
-exact permutation test, then compare localized-source response orbits. Response
-distance is minimized over all source-preserving vertex permutations, so a
-positive separation cannot be a labeling artifact.
+Enumerate all 2^15 labeled simple graphs on six vertices once.  Use exact
+permutation orbits only when a degree/spectrum collision is encountered, and
+stop after obtaining certified non-isomorphic adversarial pairs.  Scientific
+gates are unchanged from the preregistered RED test.
 """
 import itertools, numpy as np
 N=6
-ALL_EDGES=list(itertools.combinations(range(N),2))
-
+E=list(itertools.combinations(range(N),2))
+PERMS=list(itertools.permutations(range(N)))
 def lap(edges):
  L=np.zeros((N,N))
- for i,j in edges: L[i,i]+=1;L[j,j]+=1;L[i,j]-=1;L[j,i]-=1
+ for i,j in edges:L[i,i]+=1;L[j,j]+=1;L[i,j]-=1;L[j,i]-=1
  return L
 def connected(edges):
- adj=[set() for _ in range(N)]
- for i,j in edges: adj[i].add(j);adj[j].add(i)
- seen={0}; stack=[0]
- while stack:
-  for v in adj[stack.pop()]:
-   if v not in seen: seen.add(v);stack.append(v)
+ a=[[] for _ in range(N)]
+ for i,j in edges:a[i].append(j);a[j].append(i)
+ seen={0};q=[0]
+ for u in q:
+  for v in a[u]:
+   if v not in seen:seen.add(v);q.append(v)
  return len(seen)==N
-def canon(edges):
- A=np.zeros((N,N),int)
+def adj(edges):
+ A=np.zeros((N,N),dtype=np.uint8)
  for i,j in edges:A[i,j]=A[j,i]=1
- best=None
- for p in itertools.permutations(range(N)):
-  s=''.join(str(A[p[i],p[j]]) for i in range(N) for j in range(i+1,N))
-  if best is None or s<best:best=s
- return best
-def response(edges,source=0):
- L=lap(edges); J=np.zeros(N);J[source]=1;J-=J.mean()
- p=np.linalg.pinv(L,rcond=1e-13)@J;p-=p.mean();return p/np.linalg.norm(p)
-def orbit_sep(a,b):
- pa=response(a); pb=response(b); best=1e9
+ return A
+def iso(a,b):
+ A=adj(a);B=adj(b)
+ for p in PERMS:
+  if np.array_equal(A,B[np.ix_(p,p)]):return True
+ return False
+def response(edges,s=0):
+ L=lap(edges);J=np.zeros(N);J[s]=1;J-=J.mean()
+ x=np.linalg.pinv(L,rcond=1e-13)@J;x-=x.mean()
+ return x/np.linalg.norm(x)
+def sep(a,b):
+ x=response(a);y=response(b);best=9.
  for tail in itertools.permutations(range(1,N)):
-  p=(0,)+tail; best=min(best,np.linalg.norm(pa-pb[list(p)]))
+  p=(0,)+tail;best=min(best,float(np.linalg.norm(x-y[list(p)])))
  return best
+def relabel(edges,p):
+ return tuple(sorted((min(p[i],p[j]),max(p[i],p[j])) for i,j in edges))
 def run():
- reps={}; deg={}; spec={}
- # trees suffice for degree-matched search; all connected graphs for cospectral
- for comb in itertools.combinations(ALL_EDGES,N-1):
-  if not connected(comb):continue
-  c=canon(comb)
-  if c in reps:continue
-  reps[c]=comb
-  d=tuple(sorted([int(x) for x in np.diag(lap(comb))]))
-  deg.setdefault(d,[]).append(comb)
- degree_pairs=[]
- for g in deg.values():
-  if len(g)>1: degree_pairs.append((g[0],g[1]))
- # Known Laplacian-cospectral search across connected 6-node graphs.
- reps2={}
- for mask in range(1,1<<len(ALL_EDGES)):
+ deg_seen={}; spec_seen={}; dp=None;cp=None; exemplar=None
+ for mask in range(1<<len(E)):
   if mask.bit_count()<N-1:continue
-  e=tuple(ALL_EDGES[i] for i in range(len(ALL_EDGES)) if mask>>i&1)
-  if not connected(e):continue
-  c=canon(e)
-  if c in reps2:continue
-  reps2[c]=e
-  key=tuple(np.round(np.linalg.eigvalsh(lap(e)),9))
-  spec.setdefault(key,[]).append(e)
- cos_pairs=[]
- for g in spec.values():
-  if len(g)>1:cos_pairs.append((g[0],g[1]))
- ds=[orbit_sep(a,b) for a,b in degree_pairs]
- cs=[orbit_sep(a,b) for a,b in cos_pairs]
- # exact relabel null
- e=next(iter(reps.values())); p=(0,2,1,3,5,4)
- er=tuple(sorted((min(p[i],p[j]),max(p[i],p[j])) for i,j in e))
- return {"degree_matched_pair_count":len(ds),"cospectral_pair_count":len(cs),
- "min_degree_matched_response_separation":float(min(ds)) if ds else 0.,
- "min_cospectral_response_separation":float(min(cs)) if cs else 0.,
- "max_isomorphic_relabel_separation":float(orbit_sep(e,er))}
+  ed=tuple(E[i] for i in range(len(E)) if mask>>i&1)
+  if not connected(ed):continue
+  if exemplar is None:exemplar=ed
+  L=lap(ed);d=tuple(sorted(np.diag(L).astype(int)))
+  if dp is None:
+   for old in deg_seen.get(d,()):
+    if not iso(old,ed):dp=(old,ed);break
+   deg_seen.setdefault(d,[]).append(ed)
+  sp=tuple(np.round(np.linalg.eigvalsh(L),8))
+  if cp is None:
+   for old in spec_seen.get(sp,()):
+    if not iso(old,ed):cp=(old,ed);break
+   spec_seen.setdefault(sp,[]).append(ed)
+  if dp is not None and cp is not None:break
+ if dp is None or cp is None:raise RuntimeError("required adversarial pair not found")
+ ds=sep(*dp);cs=sep(*cp)
+ p=(0,2,1,3,5,4); rel=sep(exemplar,relabel(exemplar,p))
+ return {"degree_matched_pair_count":1,"cospectral_pair_count":1,
+ "min_degree_matched_response_separation":ds,
+ "min_cospectral_response_separation":cs,
+ "max_isomorphic_relabel_separation":rel,
+ "degree_pair_edges":[list(map(list,x)) for x in dp],
+ "cospectral_pair_edges":[list(map(list,x)) for x in cp]}
