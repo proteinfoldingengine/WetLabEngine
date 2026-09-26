@@ -57,3 +57,9 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_completion_selector_boundary
           python completion_selector_boundary.py
+
+      - name: Branch reassessment
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_branch_reassessment
+          python branch_reassessment.py
