@@ -67,7 +67,7 @@ def audit():
  rho,Y,z64,zmp=frozen();zmp64=mp_to_complex(zmp)
  state_diff=float(np.max(np.abs(z64-zmp64)))
  state_imag=float(np.max(np.abs(z64.imag)))
- trace64=complex(np.trace(z64));tracemp=float(mp.trace(zmp))
+ trace64=complex(np.trace(z64));tracemp=float(mp.fsum([zmp[i,i] for i in range(zmp.rows)]))
  eigmin=float(np.linalg.eigvalsh(z64).min())
  o64,t64=moments64(z64);omp,tmp=moments_mp(zmp)
  one_diff=float(np.max(np.abs(o64-omp)));two_diff=float(np.max(np.abs(t64-tmp)))
