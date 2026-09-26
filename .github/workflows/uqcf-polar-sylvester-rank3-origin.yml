@@ -17,3 +17,11 @@ jobs:
         run: |
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_polar_sylvester_rank3_origin
+          python polar_sylvester_rank3_origin.py | tee polar_sylvester_rank3_origin_result.json
+
+      - name: Upload origin result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: polar-sylvester-rank3-origin-result
+          path: ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/polar_sylvester_rank3_origin_result.json
