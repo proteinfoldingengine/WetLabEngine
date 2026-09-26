@@ -112,3 +112,8 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_closed_form_hidden_response
           python closed_form_hidden_response.py
+
+      - name: Response quotient rank RED gate
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_response_quotient_rank
