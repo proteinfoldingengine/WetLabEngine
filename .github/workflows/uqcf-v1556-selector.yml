@@ -140,3 +140,8 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_rank3_image_decomposition
           python rank3_image_decomposition.py
+
+      - name: Corrected skew quotient theorem RED gate
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_corrected_skew_quotient
