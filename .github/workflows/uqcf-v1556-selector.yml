@@ -34,3 +34,8 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_matched_completion_response
           python matched_completion_response.py
+      - name: Exact completion-to-connection response bridge
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_completion_connection_bridge
+          python completion_connection_bridge.py

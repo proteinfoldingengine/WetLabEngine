@@ -1,0 +1,32 @@
+{
+  "baseline": "8cf281ab1eb9cba2e2912abb5c12b043f215328d",
+  "full_historical_suite": "GitHub CI required; not claimed locally",
+  "local_baseline_tests": 15,
+  "local_green_new_tests": 20,
+  "local_red": {
+    "failed": 1,
+    "reason": "implementation absent",
+    "skipped": 19
+  },
+  "mutations": [
+    {
+      "caught": true,
+      "exit_code": 1,
+      "mutation": "hidden_term_removed",
+      "summary": "FAILED (failures=3, errors=10)"
+    },
+    {
+      "caught": true,
+      "exit_code": 1,
+      "mutation": "covariance_centering_removed",
+      "summary": "FAILED (failures=1)"
+    },
+    {
+      "caught": true,
+      "exit_code": 1,
+      "mutation": "polar_skew_projection_removed",
+      "summary": "FAILED (failures=4)"
+    }
+  ],
+  "source_sha256": "baf20fb915bc9d81e48ebab4765f21206798c816841708257b1d084efc1080ea"
+}
