@@ -87,6 +87,7 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_independent_hidden_fixture
           python independent_hidden_fixture.py
+          python -m unittest -v test_independent_hidden_fixture_frozen
 
       - name: Independent hidden-completion geometry RED gate
         run: |
