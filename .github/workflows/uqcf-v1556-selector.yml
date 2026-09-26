@@ -51,3 +51,9 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_curvature_dependency_audit
           python curvature_dependency_audit.py
+
+      - name: Hidden-completion selector boundary
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_completion_selector_boundary
+          python completion_selector_boundary.py
