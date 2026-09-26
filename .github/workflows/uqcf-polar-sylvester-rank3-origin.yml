@@ -18,6 +18,7 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_polar_sylvester_rank3_origin
           python polar_sylvester_rank3_origin.py | tee polar_sylvester_rank3_origin_result.json
+          python polar_sylvester_rank3_origin.py | tee polar_sylvester_rank3_origin_result.json
 
       - name: Upload origin result
         if: always()
