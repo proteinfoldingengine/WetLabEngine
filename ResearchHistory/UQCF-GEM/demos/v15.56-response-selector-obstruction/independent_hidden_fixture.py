@@ -13,12 +13,16 @@ def ptrace(rho,keep):
        if all(ba[q]==bb[q] for q in range(3) if q not in keep):
         ia=sum(ba[q]<<(len(keep)-1-j) for j,q in enumerate(keep)); ib=sum(bb[q]<<(len(keep)-1-j) for j,q in enumerate(keep)); out[ia,ib]+=rho[a,b]
     return out
+def expect(rho,site_ops):
+    ids=[0,0,0]
+    for q,k in site_ops.items(): ids[q]=k
+    return np.trace(rho@op(*ids))
 def corr(rho,i,j):
-    ri=ptrace(rho,[i]); rj=ptrace(rho,[j]); rij=ptrace(rho,[i,j])
+    # Preserve requested oriented edge (i,j), including wrap edge (2,0).
     C=np.zeros((3,3))
-    for a,A in enumerate(P[1:]):
-      for b,B in enumerate(P[1:]):
-       C[a,b]=(np.trace(rij@np.kron(A,B))-np.trace(ri@A)*np.trace(rj@B)).real
+    for a in range(1,4):
+      for b in range(1,4):
+       C[a-1,b-1]=(expect(rho,{i:a,j:b})-expect(rho,{i:a})*expect(rho,{j:b})).real
     return C
 def polar(C):
     u,s,vh=np.linalg.svd(C); O=u@vh
@@ -42,17 +46,20 @@ def select():
     for a in [0.04,0.08,0.12]:
      r=state(m,d,a); mine=float(np.linalg.eigvalsh(r).min())
      if mine<0.03: continue
-     Cs=[corr(r,*e) for e in [(0,1),(1,2),(2,0)]]; ps=[polar(c) for c in Cs]
+     Cs=[corr(r,*e) for e in [(0,1),(1,2),(2,0)]]
+     cyc=float(max(np.linalg.norm(Cs[i]-Cs[0]) for i in range(1,3)))
+     if cyc>1e-12: continue
+     ps=[polar(c) for c in Cs]
      if min(x[1].min() for x in ps)<0.02: continue
      H=ps[0][0]@ps[1][0]@ps[2][0]; h=angle(H)
      if h<0.20: continue
      return dict(m=m,d=d,a=a,dz=d/2,min_eigenvalue=mine,holonomy_angle=h,
        pair_singular_min=float(min(x[1].min() for x in ps)),
-       cyclic_pair_difference=float(max(np.linalg.norm(Cs[i]-Cs[0]) for i in range(1,3))))
+       cyclic_pair_difference=cyc)
   raise RuntimeError("no admissible fixture")
 def run():
   f=select(); return {"stage":"BASE_FIXTURE_FROZEN_NO_HIDDEN_RESPONSE","fixture":f,
     "parameter_grid_order":"m=[.10,.15,.20],d=[.08,.12,.16],a=[.04,.08,.12],lexicographic_first_admissible",
-    "admissibility":{"min_eigenvalue":0.03,"min_pair_singular":0.02,"min_holonomy_angle":0.20},
+    "admissibility":{"min_eigenvalue":0.03,"min_pair_singular":0.02,"min_holonomy_angle":0.20,"max_cyclic_pair_difference":1e-12},
     "hidden_response_evaluated":False,"parameters_fit_to_response":0}
 if __name__=="__main__": print(json.dumps(run(),indent=2,sort_keys=True))
