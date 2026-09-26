@@ -1,0 +1,30 @@
+{
+  "baseline_code_blob": "94d946dfc5fb5aa150834a807eb35c29b3133604",
+  "baseline_commit": "72a3e4bec8c0ad906a6a01819543602529e106d4",
+  "combined_local_tests": 37,
+  "existing_exact_baseline_tests": 15,
+  "full_historical_suite": "NOT_RUN_LOCALLY; USE_GITHUB_CI",
+  "initial_red": {
+    "cause": "new checker absent",
+    "failures": 1,
+    "skipped": 18
+  },
+  "mutations_caught": [
+    {
+      "caught_by": "test_general_covariance_really_subtracts_both_means",
+      "expected_failures": 1,
+      "mutation": "missing_covariance_centering"
+    },
+    {
+      "caught_by": "test_fixed_source_fixed_observables_response",
+      "expected_failures": 1,
+      "mutation": "hidden_sign_ignored"
+    },
+    {
+      "caught_by": "test_lawful_pruning_orders_and_final_operator_agree",
+      "expected_failures": 1,
+      "mutation": "raw_source_reset_reintroduced"
+    }
+  ],
+  "new_tests_after_review": 22
+}

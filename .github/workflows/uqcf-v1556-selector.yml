@@ -29,3 +29,8 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_pruning_consistency_audit
           python pruning_consistency_audit.py
+      - name: Matched completion response and pruning-order null
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_matched_completion_response
+          python matched_completion_response.py
