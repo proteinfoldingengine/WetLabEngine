@@ -1,3 +1,5 @@
+> **Interpretation corrected by the [exact pruning consistency audit](PRUNING_CONSISTENCY_AUDIT.md).** The historical calculations below are preserved. Task 31 has two distinct normalized averaging operators, not three. Task 32's raw-source equation contains a centering mismatch. On consistently transported zero-sum sources, retained-vertex restriction satisfies `C_c S G_f = G_c P C_f` exactly. Task 33's full-fine-response information-loss theorem must not be equated with failure of retained-boundary naturality. See the linked proof, exact Python checks, and [results](PRUNING_CONSISTENCY_RESULTS.json) before citing this milestone.
+
 # v15.56 Milestone Freeze — Pruning–Response Obstruction
 
 ## Certified status
