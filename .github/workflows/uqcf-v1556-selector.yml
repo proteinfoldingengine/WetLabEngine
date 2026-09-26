@@ -93,3 +93,4 @@ jobs:
         run: |
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_independent_hidden_geometry
+          python independent_hidden_geometry.py
