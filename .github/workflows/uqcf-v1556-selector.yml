@@ -106,3 +106,8 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_hidden_response_theorem
           python hidden_response_theorem.py
+
+      - name: Closed-form mixed-response RED gate
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_closed_form_hidden_response
