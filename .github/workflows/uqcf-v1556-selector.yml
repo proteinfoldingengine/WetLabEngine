@@ -145,3 +145,4 @@ jobs:
         run: |
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_corrected_skew_quotient
+          python corrected_skew_quotient.py
