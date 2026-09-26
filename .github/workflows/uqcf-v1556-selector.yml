@@ -75,3 +75,9 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_cross_domain_intertwiner_audit
           python cross_domain_intertwiner_audit.py
+
+      - name: Cross-domain Hom-set origin audit
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_cross_domain_homset_origin_audit
+          python cross_domain_homset_origin_audit.py
