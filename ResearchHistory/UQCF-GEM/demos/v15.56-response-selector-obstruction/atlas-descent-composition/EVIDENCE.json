@@ -1,0 +1,28 @@
+{
+  "parent_sha": "5d079ca4bef6d51a38111f2312af87aa03e753c7",
+  "preregistration_sha": "d093f5008f701fc4d0cf76cbc735fa6252981194",
+  "initial_implementation_sha": "e27a3e330de54f7b6cf41b894d6fe1615bc54766",
+  "tested_implementation_sha": "834f49aa8fee20c3e3eff7b28af80e73703e29cb",
+  "red_run": 36277749232,
+  "red_job": 108503640126,
+  "initial_green_run": 36277822967,
+  "initial_green_job": 108503848595,
+  "hardening_red_sha": "58b57d1def405b680c6113ff29a9c325e8dad0f4",
+  "hardening_red_run": 36277880145,
+  "hardening_red_job": 108504006777,
+  "green_run": 36277918302,
+  "green_job": 108504116448,
+  "artifact_id": 10916664976,
+  "artifact_sha256": "e91c45af909d859d022c8198c9d303bdcbecf22113863a9c0581322503314687",
+  "file_sha256": {
+    "PREREGISTRATION.md": "6d8bb1fe3807581598db26597995080ae7b3f1d1897d5f655209634bef945625",
+    "DERIVATION.md": "6fdda8fb6b14498f558a03561a2a6699c1dfe015488a3b230e0157695434dd08",
+    "test_gate.py": "5413b0b856e2fa8cb5518acfe4b53bc76c4f08c30fac8274d657ee17b3263dda",
+    "gate.py": "abe5653996aa49566be9e987ecd1a692ff6b3a858184d9062d866cd127232450",
+    "result.json": "2e5d4a6d6030648fd7ca3d68e772313e3c54d2280d2742628fd01d4f7d0fef4b"
+  },
+  "initial_and_final_result_bytes_identical": true,
+  "checksums_verified": true,
+  "verdict": "ATLAS_NATURAL_NULL_OBSTRUCTED",
+  "composition_verdict": "FIXED_BASE_NULL_COMPOSITION_CONFIRMED"
+}
