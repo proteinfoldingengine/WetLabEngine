@@ -4,7 +4,11 @@ HERE=pathlib.Path(__file__).resolve().parent;PARENT=HERE.parent
 def load(path,name):
  s=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 ASYM=load(PARENT/'asymmetric-heldout-ensemble'/'gate.py','asym63')
-EXPECTED=[13,16,22,25,27,29,37,39,46,50,66,77];EDGES=ASYM.EDGES\ndef states():\n z=ASYM.select_states()\n if [x['candidate_index'] for x in z]!=EXPECTED: raise RuntimeError('state identity mismatch')\n return z
+EXPECTED=[13,16,22,25,27,29,37,39,46,50,66,77];EDGES=ASYM.EDGES
+def states():
+ z=ASYM.select_states()
+ if [x['candidate_index'] for x in z]!=EXPECTED: raise RuntimeError('state identity mismatch')
+ return z
 # HS-normalized nonidentity Pauli strings.
 BASIS=[]
 LABELS=[]
