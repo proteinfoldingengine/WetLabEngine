@@ -69,3 +69,9 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_operational_defect_response_classification
           python operational_defect_response_classification.py
+
+      - name: Cross-domain intertwiner audit
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_cross_domain_intertwiner_audit
+          python cross_domain_intertwiner_audit.py
