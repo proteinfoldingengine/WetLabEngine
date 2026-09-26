@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-26",
+  "branch": "research/v15.57-source-law-specificity",
+  "red_head": "e8cda72cf09624647a2697d53a761df8991b500d",
+  "implementation_head": "5ca626b8aec6f87b5da0befb618604d7cb8cee0e",
+  "tested_head": "9a63fa173964d472334e9499d3c145150bc051b8",
+  "red_run_id": 36272352778,
+  "green_run_id": 36272614253,
+  "green_job_id": 108489302483,
+  "artifact_id": 10916167589,
+  "artifact_zip_sha256": "aa1dffcd3238812cf8f12c143cbb896ede5ebe06e333aadecb827982a8d4178c",
+  "report_json_sha256": "a0f7f240c38482a20198472c2e9360943afd7d5efdf91b6ee8610f75bc0be62a",
+  "fixture_count": 11,
+  "columns_per_fixture": 243,
+  "evaluated_hidden_source_pairs": 2673,
+  "all_controls_pass": true,
+  "contrast_pass": true,
+  "verdict": "SOURCE_LAW_SPECIFICITY_CONFIRMED",
+  "exponential_edge_ranks": [
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9
+  ],
+  "local_unitary_edge_ranks": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "active_local_unitary_source_count_per_fixture": [
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9
+  ],
+  "max_unitary_to_exponential_frobenius_ratio": 1.233979125448394e-14,
+  "max_proper_marginal_closure_residual": 1.249000902703301e-16,
+  "unitary_source_change_range": [
+    0.2737857708503469,
+    0.2737857708503472
+  ],
+  "exponential_edge_map_frobenius_norm_range": [
+    337.63324524049176,
+    637.5981182701858
+  ],
+  "local_unitary_mixed_map_frobenius_norm_range": [
+    1.944915357733686e-12,
+    6.355623359335722e-12
+  ],
+  "frozen_eta": 0.001,
+  "frozen_unitary_source_amplitude": 0.137,
+  "interpretation": "The hidden/source response is specific to the selected source update: it is nonzero for normalized exponential tilt and null, to frozen numerical resolution, for an active marginally closed local-unitary law using the same nine one-body generators.",
+  "limitations": [
+    "This does not establish that exponential tilt is physical, unique, gravitational, or universal.",
+    "The state ensemble remains the frozen axial/cyclic 11-state ensemble.",
+    "The next independent discriminator is a conditioning-selected symmetry-breaking state ensemble."
+  ]
+}
