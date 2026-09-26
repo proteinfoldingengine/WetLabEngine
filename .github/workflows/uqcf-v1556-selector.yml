@@ -63,3 +63,9 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_branch_reassessment
           python branch_reassessment.py
+
+      - name: Operational defect response classification
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_operational_defect_response_classification
+          python operational_defect_response_classification.py
