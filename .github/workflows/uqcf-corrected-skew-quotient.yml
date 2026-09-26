@@ -1,0 +1,25 @@
+name: UQCF corrected skew quotient theorem
+on:
+  push:
+    branches: [research/v15.56-response-selector-obstruction]
+  workflow_dispatch:
+jobs:
+  theorem:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - name: Corrected skew quotient theorem
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_corrected_skew_quotient
+          python corrected_skew_quotient.py | tee corrected_skew_quotient_result.json
+      - name: Upload theorem result
+        uses: actions/upload-artifact@v4
+        with:
+          name: corrected-skew-quotient-result
+          path: ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/corrected_skew_quotient_result.json
