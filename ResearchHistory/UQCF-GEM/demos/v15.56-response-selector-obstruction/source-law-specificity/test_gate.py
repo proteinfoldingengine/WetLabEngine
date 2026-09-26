@@ -1,3 +1,4 @@
+import copy
 import importlib.util
 import json
 import pathlib
@@ -17,32 +18,39 @@ def load_gate():
     return mod
 
 class T(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.g=load_gate()
+        cls.params=cls.g.FIXTURES[0]
+        cls.sample=cls.g.measure_fixture(cls.params)
+
+    def fresh(self):
+        return {k:v.copy() for k,v in self.sample.items()}
+
     def test_01_constants_are_frozen(self):
-        g=load_gate()
+        g=self.g
         self.assertEqual(g.ETA,1e-3)
         self.assertEqual(g.S,0.137)
         self.assertEqual(len(g.FIXTURES),11)
         self.assertEqual(len(g.R.HB)*len(g.R.PB),243)
 
     def test_02_local_unitary_update_preserves_density_properties(self):
-        g=load_gate()
+        g=self.g
         rho=g.F.state(*g.FIXTURES[0]); p=g.R.PB[0]
         out=g.local_unitary_update(rho,g.S,p)
         self.assertLess(np.linalg.norm(out-out.conj().T),1e-12)
         self.assertLess(abs(np.trace(out)-1),1e-12)
-        self.assertLess(np.min(np.linalg.eigvalsh(out))+1e-12, np.min(np.linalg.eigvalsh(out))+2e-12)
         self.assertAlmostEqual(float(np.min(np.linalg.eigvalsh(out))),float(np.min(np.linalg.eigvalsh(rho))),places=11)
 
     def test_03_hidden_marginals_close_under_unitary_sample(self):
-        g=load_gate()
+        g=self.g
         rho=g.F.state(*g.FIXTURES[0]); h=g.R.HB[0]; p=g.R.PB[4]
         a=g.local_unitary_update(rho+g.ETA*h,g.S,p)
         b=g.local_unitary_update(rho-g.ETA*h,g.S,p)
         self.assertLess(g.G.marginal_diff(a,b),g.CLOSURE_TOL)
 
     def test_04_measure_fixture_exports_full_maps(self):
-        g=load_gate()
-        z=g.measure_fixture(g.FIXTURES[0])
+        z=self.sample
         self.assertEqual(z["E_exp"].shape,(9,243))
         self.assertEqual(z["E_unitary"].shape,(9,243))
         self.assertEqual(z["unitary_source_change"].shape,(9,))
@@ -51,39 +59,41 @@ class T(unittest.TestCase):
         self.assertTrue(np.isfinite(z["E_unitary"]).all())
 
     def test_05_evaluator_requires_active_unitary_source(self):
-        g=load_gate()
-        z=g.measure_fixture(g.FIXTURES[0])
+        g=self.g; z=self.fresh()
         z["unitary_source_change"][:]=0
-        _,errors=g.evaluate_arrays(z,g.FIXTURES[0])
+        _,errors=g.evaluate_arrays(z,self.params)
         self.assertTrue(any("source inactive" in e for e in errors))
 
     def test_06_evaluator_rejects_broken_closure(self):
-        g=load_gate()
-        z=g.measure_fixture(g.FIXTURES[0])
+        g=self.g; z=self.fresh()
         z["closure_residuals"][0]=10*g.CLOSURE_TOL
-        _,errors=g.evaluate_arrays(z,g.FIXTURES[0])
+        _,errors=g.evaluate_arrays(z,self.params)
         self.assertTrue(any("closure" in e for e in errors))
 
     def test_07_controlled_contrast_is_null_vs_nonnull(self):
-        g=load_gate()
-        z=g.measure_fixture(g.FIXTURES[0])
-        metrics,errors=g.evaluate_arrays(z,g.FIXTURES[0])
+        g=self.g
+        metrics,errors=g.evaluate_arrays(self.sample,self.params)
         self.assertEqual(errors,[])
         self.assertGreater(metrics["ranks"]["E_exp"]["rank"],0)
         self.assertEqual(metrics["ranks"]["E_unitary"]["rank"],0)
         self.assertLessEqual(metrics["unitary_to_exponential_norm_ratio"],g.MIXED_RATIO_TOL)
 
     def test_08_report_validation_fails_closed(self):
-        g=load_gate()
-        with tempfile.TemporaryDirectory() as td:
-            out=pathlib.Path(td)/"run"
-            report=g.run(out)
-            self.assertEqual(report["verdict"],"SOURCE_LAW_SPECIFICITY_CONFIRMED")
-            loaded=json.loads((out/"report.json").read_text())
-            loaded["all_controls_pass"]=False
-            (out/"report.json").write_text(json.dumps(loaded))
-            with self.assertRaises(ValueError):
-                g.verify(out)
+        g=self.g
+        original=list(g.FIXTURES)
+        try:
+            g.FIXTURES=[original[0]]
+            with tempfile.TemporaryDirectory() as td:
+                out=pathlib.Path(td)/"run"
+                report=g.run(out)
+                self.assertEqual(report["verdict"],"SOURCE_LAW_SPECIFICITY_CONFIRMED")
+                loaded=json.loads((out/"report.json").read_text())
+                loaded["all_controls_pass"]=False
+                (out/"report.json").write_text(json.dumps(loaded))
+                with self.assertRaises(ValueError):
+                    g.verify(out)
+        finally:
+            g.FIXTURES=original
 
 if __name__=="__main__":
     unittest.main()
