@@ -124,3 +124,8 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_so3_tangent_image
           python so3_tangent_image.py
+
+      - name: Rank-three image decomposition RED gate
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_rank3_image_decomposition
