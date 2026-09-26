@@ -232,7 +232,29 @@ def run_measurement():
         return {'verdict': 'INVALID', 'all_valid': False, 'error': repr(exc), 'rows': rows}
 
 
+def finalize_report(report):
+    """Keep INVALID evidence serializable without representing NaN as a result."""
+    nonfinite = []
+
+    def clean(value, path):
+        if isinstance(value, dict):
+            return {key: clean(item, path+'.'+key) for key, item in value.items()}
+        if isinstance(value, list):
+            return [clean(item, path+'['+str(i)+']') for i, item in enumerate(value)]
+        if isinstance(value, float) and not np.isfinite(value):
+            nonfinite.append(path)
+            return None
+        return value
+
+    result = clean(report, 'report')
+    if nonfinite:
+        result.update(verdict='INVALID', all_valid=False, composition_verdict='INVALID',
+                      nonfinite_diagnostic_paths=nonfinite,
+                      serialization_error='nonfinite diagnostics replaced by null')
+    return result
+
+
 if __name__ == '__main__':
-    report = run_measurement()
+    report = finalize_report(run_measurement())
     print(json.dumps(report, indent=2, sort_keys=True, allow_nan=False))
     raise SystemExit(2 if report['verdict'] == 'INVALID' else 0)
