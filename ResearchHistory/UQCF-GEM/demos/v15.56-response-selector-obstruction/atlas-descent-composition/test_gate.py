@@ -1,5 +1,6 @@
 """Frozen tests: partial trace, complex fidelity, composition, and adjudication."""
 import importlib.util
+import json
 import pathlib
 import unittest
 import numpy as np
@@ -55,6 +56,20 @@ class GateTests(unittest.TestCase):
         self.assertEqual(self.g.adjudicate(False, [.5]), 'INVALID')
         self.assertEqual(self.g.adjudicate(True, [float('nan')]), 'INVALID')
         self.assertEqual(self.g.adjudicate(True, []), 'INVALID')
+
+    def test_nonfinite_diagnostics_emit_invalid_json_instead_of_crashing(self):
+        # Catches nonfinite diagnostics surviving into strict JSON serialization.
+        report = {'verdict': 'ATLAS_NATURAL_NULL_OBSTRUCTED', 'all_valid': True,
+                  'composition_verdict': 'FIXED_BASE_NULL_COMPOSITION_CONFIRMED',
+                  'rows': [{'lift_relative_residual': float('nan')} ]}
+        cleaned = self.g.finalize_report(report)
+        parsed = json.loads(json.dumps(cleaned, allow_nan=False))
+        self.assertEqual(parsed['verdict'], 'INVALID')
+        self.assertFalse(parsed['all_valid'])
+        self.assertEqual(parsed['composition_verdict'], 'INVALID')
+        self.assertIsNone(parsed['rows'][0]['lift_relative_residual'])
+        negative = {'verdict': 'ATLAS_NATURAL_NULL_OBSTRUCTED', 'rows': []}
+        self.assertEqual(self.g.finalize_report(negative), negative)
 
     def test_frozen_measurement_schema_controls_and_independent_norm_prediction(self):
         # Catches empty/skipped states, wrong normalization and invalid controls.
