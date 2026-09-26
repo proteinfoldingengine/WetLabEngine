@@ -118,6 +118,16 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_response_quotient_rank
           python response_quotient_rank.py
+          pip install matplotlib
+          python plot_response_quotient.py
+
+      - name: Upload response quotient visualization artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uqcf-response-quotient-9x243
+          path: ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/artifacts_response_quotient/
+          if-no-files-found: warn
 
       - name: SO3 tangent-image RED gate
         run: |
