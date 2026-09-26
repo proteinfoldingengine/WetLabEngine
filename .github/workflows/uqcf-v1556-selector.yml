@@ -45,3 +45,9 @@ jobs:
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
           python -m unittest -v test_holonomy_curvature_gate
           python holonomy_curvature_gate.py
+
+      - name: Curvature-limit dependency audit
+        run: |
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+          python -m unittest -v test_curvature_dependency_audit
+          python curvature_dependency_audit.py
