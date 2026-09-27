@@ -1,0 +1,104 @@
+{
+  "kind": "post-run analysis of unchanged certified artifact; no additional simulation",
+  "case": {
+    "candidate_index": 46,
+    "lambda": -1.0,
+    "edge": [
+      0,
+      1
+    ]
+  },
+  "frozen_depth_diagnostics": [
+    {
+      "depth": 1,
+      "strength": 0.1,
+      "minimum_singular": 0.03303664495738975,
+      "polar_determinant": 1.0000000000000009,
+      "connected_determinant_from_SVD": 0.0005235784978797999,
+      "min_density_eigenvalue": 0.05041045702578285,
+      "finite_pass": true,
+      "retained_ranks": [
+        12,
+        12,
+        12
+      ],
+      "Q_ranks": [
+        6,
+        6,
+        6
+      ],
+      "E_ranks": [
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "depth": 2,
+      "strength": 0.2,
+      "minimum_singular": 0.024990697984964103,
+      "polar_determinant": 0.9999999999999994,
+      "connected_determinant_from_SVD": 0.00034358532343818307,
+      "min_density_eigenvalue": 0.05556729575512347,
+      "finite_pass": true,
+      "retained_ranks": [
+        12,
+        12,
+        12
+      ],
+      "Q_ranks": [
+        6,
+        6,
+        6
+      ],
+      "E_ranks": [
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "depth": 4,
+      "strength": 0.4,
+      "minimum_singular": 0.012689943813070915,
+      "polar_determinant": 0.9999999999999993,
+      "connected_determinant_from_SVD": 0.0001370178660882414,
+      "min_density_eigenvalue": 0.06199441738344475,
+      "finite_pass": true,
+      "retained_ranks": [
+        12,
+        12,
+        12
+      ],
+      "Q_ranks": [
+        6,
+        6,
+        6
+      ],
+      "E_ranks": [
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "depth": 8,
+      "strength": 0.8,
+      "minimum_singular": 0.0009280840229219159,
+      "polar_determinant": -1.0000000000000002,
+      "connected_determinant_from_SVD": -7.210837793739763e-06,
+      "min_density_eigenvalue": 0.06686080805167409,
+      "finite_pass": false,
+      "retained_ranks": [
+        12,
+        12,
+        12
+      ],
+      "Q_ranks": null,
+      "E_ranks": null
+    }
+  ],
+  "matrix_unit_channel_exponential_max_error": 5.293854512710323e-16,
+  "retained_formula_max_error": 1.3877787807814457e-16,
+  "interpretation": "Orientation changes between strengths .4 and .8; the failed endpoint is nonsingular but improper. The frozen secondary NO stands. No crossing location was estimated and no thresholds or strengths were changed."
+}

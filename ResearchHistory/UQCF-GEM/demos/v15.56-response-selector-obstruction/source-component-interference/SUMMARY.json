@@ -1,0 +1,382 @@
+{
+  "version": "15.81",
+  "candidate_indices": [
+    13,
+    16,
+    22,
+    25,
+    27,
+    29,
+    37,
+    39,
+    46,
+    50,
+    66,
+    77
+  ],
+  "lambdas": [
+    -1.0,
+    -0.5,
+    0.0,
+    0.5,
+    1.0
+  ],
+  "depths": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "strength": 0.1,
+  "eta": 0.0001,
+  "all_valid": true,
+  "verdict": "MATCHED_COMPONENT_INTERFERENCE_RESPONSE_CONFIRMED",
+  "finite_verdict": "FINITE_COMPONENT_INTERFERENCE_WINDOW_NOT_CONFIRMED",
+  "controls": {
+    "source_hermiticity": 0.0,
+    "source_unitarity": 6.312164422641715e-16,
+    "anticommutation": 0.0,
+    "adjoint_commutation": 4.475959515315043e-17,
+    "component_active_norm": 2.220446049250313e-16,
+    "component_retained": 9.614813431917819e-17,
+    "generator_decomposition": 4.440892098500626e-16,
+    "generator_PTM_imaginary": 5.551115123125783e-17,
+    "generator_PTM_symmetry": 2.220446049250313e-16,
+    "generator_Choi_hermiticity": 0.0,
+    "generator_trace_annihilation": 0.0,
+    "conditional_Choi_trace": 0.0,
+    "generator_retained_formula": 2.7755575615628914e-17,
+    "channel_PTM_imaginary": 2.7755575615628914e-17,
+    "channel_exponential": 5.293854512710323e-16,
+    "finite_retained_formula": 1.3877787807814457e-16,
+    "composition": 6.661338147750938e-16,
+    "sylvester": 1.8382713661528122e-14,
+    "geometry_Q_reconstruction": 1.3322676295501878e-15,
+    "geometry_E_reconstruction": 1.7763568394002505e-14,
+    "Gamma_valid": true,
+    "CP_valid": true,
+    "component_activity_valid": true,
+    "cross_control_valid": true,
+    "finite_density_valid": true
+  },
+  "reference_domain": {
+    "min_density_eigenvalue": 0.03833820542599381,
+    "trace_error": 1.1102230246251565e-16,
+    "hermiticity_error": 0.0,
+    "min_edge_singular": 0.02086104354176698,
+    "min_positive_polar": 0.020861043541766978,
+    "valid": true
+  },
+  "input_positivity": {
+    "min_eigenvalue": 0.038316212665944815,
+    "trace_error": 1.1102230246251565e-16,
+    "hermiticity_error": 0.0,
+    "valid": true
+  },
+  "domain_exits": [
+    {
+      "candidate_index": 46,
+      "lambda": -1.0,
+      "depth": 8
+    }
+  ],
+  "generator_rows": 60,
+  "finite_rows": 240,
+  "finite_passes": 239,
+  "regular_finite_failures": [],
+  "exit_details": [
+    {
+      "candidate_index": 46,
+      "lambda": -1.0,
+      "depth": 8,
+      "density": {
+        "min_eigenvalue": 0.06686080805167409,
+        "trace_error": 0.0,
+        "hermiticity_error": 1.3920658235607184e-17,
+        "valid": true
+      },
+      "polar_domain": {
+        "valid": false,
+        "edges": [
+          {
+            "singular_values": [
+              0.15243878617451448,
+              0.05096862857141161,
+              0.0009280840229219159
+            ],
+            "polar_determinant": -1.0000000000000002,
+            "valid": false
+          },
+          {
+            "singular_values": [
+              0.20973992138659667,
+              0.0896333289844532,
+              0.03382638862291937
+            ],
+            "polar_determinant": 0.9999999999999993,
+            "valid": true
+          },
+          {
+            "singular_values": [
+              0.12200210753966716,
+              0.025862266113164306,
+              0.02489258424801788
+            ],
+            "polar_determinant": 0.9999999999999997,
+            "valid": true
+          }
+        ]
+      },
+      "retained": {
+        "norm": 1.3823557805308893,
+        "reference": 0.3990517410026722,
+        "singular_values": [
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          0.3990517410026721,
+          7.534873374499785e-34,
+          7.534873374499785e-34,
+          7.534873374499785e-34,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ranks": [
+          12,
+          12,
+          12
+        ]
+      }
+    }
+  ],
+  "min_finite_density_eigenvalue": 0.04182518541298883,
+  "min_channel_Choi_eigenvalue": -2.2632960848746155e-15,
+  "channels_checked": 35,
+  "generator_summary": {
+    "-1.0": {
+      "retained": {
+        "norm_range": [
+          3.4641016151377544,
+          3.4641016151377544
+        ],
+        "ranks": [
+          [
+            12,
+            12,
+            12
+          ]
+        ]
+      },
+      "Q": {
+        "norm_range": [
+          11.313708498984756,
+          11.313708498984763
+        ],
+        "ranks": [
+          [
+            6,
+            6,
+            6
+          ]
+        ]
+      },
+      "E": {
+        "norm_range": [
+          45.299135357082925,
+          70.30859057527289
+        ],
+        "ranks": [
+          [
+            6,
+            6,
+            6
+          ]
+        ]
+      }
+    },
+    "-0.5": {
+      "retained": {
+        "norm_range": [
+          1.7320508075688772,
+          1.7320508075688772
+        ],
+        "ranks": [
+          [
+            12,
+            12,
+            12
+          ]
+        ]
+      },
+      "Q": {
+        "norm_range": [
+          5.656854249492378,
+          5.6568542494923815
+        ],
+        "ranks": [
+          [
+            6,
+            6,
+            6
+          ]
+        ]
+      },
+      "E": {
+        "norm_range": [
+          22.649567678541462,
+          35.154295287636444
+        ],
+        "ranks": [
+          [
+            6,
+            6,
+            6
+          ]
+        ]
+      }
+    },
+    "0.0": {
+      "retained": {
+        "norm_range": [
+          4.8074067159589095e-17,
+          4.8074067159589095e-17
+        ],
+        "ranks": [
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "Q": {
+        "norm_range": [
+          0.0,
+          0.0
+        ],
+        "ranks": [
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "E": {
+        "norm_range": [
+          0.0,
+          0.0
+        ],
+        "ranks": [
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "0.5": {
+      "retained": {
+        "norm_range": [
+          1.7320508075688772,
+          1.7320508075688772
+        ],
+        "ranks": [
+          [
+            12,
+            12,
+            12
+          ]
+        ]
+      },
+      "Q": {
+        "norm_range": [
+          5.656854249492378,
+          5.6568542494923815
+        ],
+        "ranks": [
+          [
+            6,
+            6,
+            6
+          ]
+        ]
+      },
+      "E": {
+        "norm_range": [
+          22.649567678541462,
+          35.154295287636444
+        ],
+        "ranks": [
+          [
+            6,
+            6,
+            6
+          ]
+        ]
+      }
+    },
+    "1.0": {
+      "retained": {
+        "norm_range": [
+          3.4641016151377544,
+          3.4641016151377544
+        ],
+        "ranks": [
+          [
+            12,
+            12,
+            12
+          ]
+        ]
+      },
+      "Q": {
+        "norm_range": [
+          11.313708498984756,
+          11.313708498984763
+        ],
+        "ranks": [
+          [
+            6,
+            6,
+            6
+          ]
+        ]
+      },
+      "E": {
+        "norm_range": [
+          45.299135357082925,
+          70.30859057527289
+        ],
+        "ranks": [
+          [
+            6,
+            6,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  "max_Q_scaling_error": 0.0,
+  "max_E_scaling_error": 0.0
+}
