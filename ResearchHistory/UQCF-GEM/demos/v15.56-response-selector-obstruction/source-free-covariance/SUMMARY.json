@@ -1,0 +1,322 @@
+{
+  "version": "15.78",
+  "candidate_indices": [
+    13,
+    16,
+    22,
+    25,
+    27,
+    29,
+    37,
+    39,
+    46,
+    50,
+    66,
+    77
+  ],
+  "all_valid": true,
+  "verdict": "SOURCE_FREE_COVARIANCE_FORCES_RETAINED_CLOSURE",
+  "erasure_verdict": "COVARIANTIZATION_ERASES_POSITIVE_AND_NULL_LEAKAGE",
+  "hidden_probes_per_row": 27,
+  "controls": {
+    "basis_orthogonality": 9.155133597044475e-16,
+    "rotation_orthogonality": 0.0,
+    "adjoint_orthogonality": 0.0,
+    "character_matrix_error": 0.0,
+    "finite_twirl_projection_error": 2.6342951193091652e-15,
+    "projection_idempotence": 0.0,
+    "generic_rotation_commutator": 0.0,
+    "PTM_imaginary": 3.925231146709437e-17,
+    "PTM_reconstruction": 4.602741507868935e-16,
+    "sylvester": 4.2101477873605026e-15,
+    "null_channel_depolarization_error": 3.3306690738754696e-16,
+    "group_valid": true,
+    "CP_valid": true,
+    "before_controls_valid": true
+  },
+  "domain": {
+    "min_density_eigenvalue": 0.038338205425993845,
+    "trace_error": 1.1102230246251565e-16,
+    "hermiticity_error": 0.0,
+    "min_edge_singular": 0.02086104354176698,
+    "min_positive_polar": 0.02086104354176697,
+    "valid": true
+  },
+  "classification": {
+    "distinct_characters": 64,
+    "Pauli_commutant_dimension": 64,
+    "hidden_retained_constraint_rank": 972,
+    "hidden_retained_nullity": 0,
+    "orbit_sizes": [
+      1,
+      3,
+      3,
+      3,
+      9,
+      9,
+      9,
+      27
+    ],
+    "Gram_range": [
+      4,
+      24
+    ]
+  },
+  "rows": 72,
+  "channels": {
+    "active_symmetric": {
+      "original": {
+        "retained": {
+          "norm_range": [
+            0.017320508075688763,
+            0.01732050807568877
+          ],
+          "ranks": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        "Q": {
+          "norm_range": [
+            5.368229242960377e-18,
+            1.6124310437691256e-17
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "E": {
+          "norm_range": [
+            2.3827624599719678e-17,
+            7.582626627094795e-17
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "projected": {
+        "retained": {
+          "norm_range": [
+            8.326672684688674e-17,
+            8.326672684688674e-17
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "Q": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "E": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "unitary_XXI": {
+      "original": {
+        "retained": {
+          "norm_range": [
+            2.449489742783176,
+            2.449489742783176
+          ],
+          "ranks": [
+            [
+              12,
+              12,
+              12
+            ]
+          ]
+        },
+        "Q": {
+          "norm_range": [
+            7.99999999999999,
+            7.999999999999995
+          ],
+          "ranks": [
+            [
+              6,
+              6,
+              6
+            ]
+          ]
+        },
+        "E": {
+          "norm_range": [
+            29.888121640281515,
+            49.0872478676822
+          ],
+          "ranks": [
+            [
+              6,
+              6,
+              6
+            ]
+          ]
+        }
+      },
+      "projected": {
+        "retained": {
+          "norm_range": [
+            2.0816681711721685e-17,
+            2.0816681711721685e-17
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "Q": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "E": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "identity": {
+      "original": {
+        "retained": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "Q": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "E": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "projected": {
+        "retained": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "Q": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "E": {
+          "norm_range": [
+            0.0,
+            0.0
+          ],
+          "ranks": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "min_Choi_eigenvalue": -1.4114768701622058e-15,
+  "max_Choi_TP_error": 1.7728839976828627e-15
+}
