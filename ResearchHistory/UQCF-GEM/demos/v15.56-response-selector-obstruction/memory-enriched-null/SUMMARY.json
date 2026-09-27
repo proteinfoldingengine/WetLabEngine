@@ -1,0 +1,117 @@
+{
+  "verdict": "MEMORY_ENRICHED_NULL_CONFIRMED",
+  "jacobian_verdict": "FROZEN_FULL_JACOBIAN_OBSTRUCTED",
+  "all_valid": true,
+  "n_cases": 972,
+  "n_edge_restrictions": 2916,
+  "candidate_indices": [
+    13,
+    16,
+    22,
+    25,
+    27,
+    29,
+    37,
+    39,
+    46,
+    50,
+    66,
+    77
+  ],
+  "hidden_free_memory_max": 3.469446951953614e-17,
+  "numpy_version": "2.3.5",
+  "python_version": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "maxima": {
+    "hidden_derivative_relative_error": 1.6967986475455047e-12,
+    "Y_recomputed_relative_change": 9.404082902416718e-16,
+    "memory_change": 2.0816681711721685e-17,
+    "rotation_change": 2.1094237467877974e-15,
+    "order_residual": 9.583083854271089e-21,
+    "combined_residual": 9.583083854271089e-21,
+    "same_source_additive_residual": 5.675133333246605e-17,
+    "enriched_restriction_residual": 1.6900879266351857e-16,
+    "overlap_source_residual": 0.0,
+    "historical_lift_relative_error": 5.896782287845015e-16,
+    "DY_verification_errors": 7.240808700250343e-08,
+    "visible_completion_errors": 7.240777257246537e-08,
+    "frozen_jacobian_curl_errors": 7.240808700250343e-08
+  },
+  "curl_rank_sweeps": [
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ],
+    [
+      9,
+      9,
+      9
+    ]
+  ],
+  "curl_norm_range": [
+    0.18919275401138633,
+    7.762799156799393
+  ],
+  "min_ninth_curl_singular_value": 2.7058329755734807,
+  "max_tenth_curl_singular_value": 1.7202430965742502e-15,
+  "omitted_memory_discrepancy_range": [
+    4.9999999999987554e-05,
+    5.0000000000011854e-05
+  ],
+  "visible_correction_norm_range": [
+    1.8919275401138634e-05,
+    0.0007762799156799394
+  ],
+  "min_density_eigenvalue": 0.03829829620495415,
+  "min_edge_singular": 0.020843099194109576
+}
