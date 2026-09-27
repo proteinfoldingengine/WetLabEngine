@@ -1,0 +1,252 @@
+{
+  "verdict": "TWO_BODY_UNITARY_HIDDEN_ROTATION_CONFIRMED",
+  "all_valid": true,
+  "scientific_pass": true,
+  "candidate_indices": [
+    13,
+    16,
+    22,
+    25,
+    27,
+    29,
+    37,
+    39,
+    46,
+    50,
+    66,
+    77
+  ],
+  "probe_cases": 11664,
+  "controls": {
+    "unitarity": 6.280369838047253e-16,
+    "mixture_affinity": 9.856691834228504e-17,
+    "centered_identity": 1.998899812222513e-17,
+    "centered_truncation": 1.666666583314181e-07,
+    "sylvester": 1.4941919998528006e-14,
+    "exterior_invariance": 1.570447882860392e-16,
+    "trace_error": 4.440892098972106e-16,
+    "hermiticity_error": 2.796527168920943e-17,
+    "min_activity": 0.06997263019470394,
+    "min_density_eigenvalue": 0.03831621266594473,
+    "min_edge_singular": 0.02083908843655896,
+    "min_positive_polar": 0.020839088436558958
+  },
+  "s": 0.001,
+  "eta": 0.0001,
+  "mixture_weight": 0.37,
+  "rank_thresholds": [
+    1e-09,
+    1e-10,
+    1e-11
+  ],
+  "aggregate_rank_sweeps": [
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "leakage": [
+        27,
+        27,
+        27
+      ],
+      "Q": [
+        9,
+        9,
+        9
+      ],
+      "E": [
+        9,
+        9,
+        9
+      ]
+    }
+  ],
+  "all_324_sources_pass": true,
+  "all_local_maps_zero": true,
+  "min_aggregate_Q_ninth_singular": 19.595917942265405,
+  "min_per_source_Q_sixth_singular": 3.9999999999999956
+}
