@@ -1,0 +1,198 @@
+{
+  "verdict": "ACTIVE_RETAINED_BASELINE_COMPOSITION_NULL_CONFIRMED",
+  "skew_verdict": "EQUAL_NORM_SKEW_BASELINE_VISIBLE_CONFIRMED",
+  "all_valid": true,
+  "candidate_indices": [
+    13,
+    16,
+    22,
+    25,
+    27,
+    29,
+    37,
+    39,
+    46,
+    50,
+    66,
+    77
+  ],
+  "finite_cases": 3888,
+  "depths": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "s": 0.1,
+  "eta": 0.0001,
+  "kappa": 0.01,
+  "delta": 0.02,
+  "controls": {
+    "lift_identity_error": 7.863986749672218e-17,
+    "lift_norm_error": 3.3306690738754696e-16,
+    "lift_pair_error": 5.095246377785861e-16,
+    "A_moment_error": 0.0,
+    "baseline_field_error": 7.74912299265372e-17,
+    "sylvester": 1.5580545255622203e-16,
+    "baseline_null_error": 2.5951398294154016e-16,
+    "phi_square_error": 8.561945654461301e-17,
+    "power_closed_error": 3.6239275968435467e-16,
+    "composition_error": 4.531513127874894e-16,
+    "center_closed_error": 1.7691477981779512e-16,
+    "hidden_closed_error": 1.5701504220669404e-16,
+    "retained_closed_error": 8.328049259619489e-17,
+    "active_leakage_error": 1.734723475976807e-18,
+    "inactive_retained_norm": 8.326672684688674e-17,
+    "correlation_formula_error": 2.0408083536618157e-16,
+    "skew_control_Q_error": 2.6645352591003757e-15,
+    "skew_control_min_E": 5.074483305942512,
+    "closed_Q_error": 3.8460629861821554e-16,
+    "closed_E_error": 2.667068294191058e-15,
+    "baseline_norm_error": 3.2959746043559335e-17,
+    "skew_baseline_Q_error": 6.938893903907228e-17,
+    "skew_baseline_min_E": 0.18191822569865038,
+    "fixed_control_pass": true
+  },
+  "arms": {
+    "fixed": {
+      "rows": 48,
+      "ranges": {
+        "baseline_norm": [
+          0.0,
+          6.589603847638368e-17
+        ],
+        "baseline_retained_norm": [
+          0.0,
+          3.123509122483442e-17
+        ],
+        "retained_norm": [
+          0.0017320508075688767,
+          0.006627476255221528
+        ],
+        "Q_norm": [
+          1.069561398532425e-18,
+          3.8460059859271225e-16
+        ],
+        "E_norm": [
+          5.364987711878506e-18,
+          2.667063399769394e-15
+        ],
+        "Q_ratio": [
+          3.2825048135923384e-16,
+          2.2204925912799361e-13
+        ],
+        "E_ratio": [
+          1.6231163848018343e-15,
+          1.5398297718026581e-12
+        ],
+        "center_displacement": [
+          0.0,
+          5.299431161395102e-17
+        ],
+        "center_polar_drift": [
+          0.0,
+          1.970612273426395e-15
+        ],
+        "max_endpoint_polar_shift_from_anchor": [
+          1.3205838109354494e-15,
+          2.2845511272003064e-15
+        ]
+      }
+    },
+    "active_symmetric": {
+      "rows": 48,
+      "ranges": {
+        "baseline_norm": [
+          0.01224744871391586,
+          0.012247448713915896
+        ],
+        "baseline_retained_norm": [
+          0.012247448713915856,
+          0.012247448713915896
+        ],
+        "retained_norm": [
+          0.0017320508075688767,
+          0.006627476255221528
+        ],
+        "Q_norm": [
+          2.9606022880224176e-18,
+          3.8464187905591694e-16
+        ],
+        "E_norm": [
+          1.0700611010597287e-17,
+          2.615176290231351e-15
+        ],
+        "Q_ratio": [
+          8.224662507848095e-16,
+          2.220730924145371e-13
+        ],
+        "E_ratio": [
+          3.432222581923232e-15,
+          1.5098727351433976e-12
+        ],
+        "center_displacement": [
+          0.001224744871391584,
+          0.006975323636418492
+        ],
+        "center_polar_drift": [
+          8.397799751432123e-16,
+          5.1246350528761684e-15
+        ],
+        "max_endpoint_polar_shift_from_anchor": [
+          1.2944524710724242e-15,
+          5.863050957829448e-15
+        ]
+      }
+    },
+    "active_skew": {
+      "rows": 48,
+      "ranges": {
+        "baseline_norm": [
+          0.012247448713915884,
+          0.012247448713915896
+        ],
+        "baseline_retained_norm": [
+          0.012247448713915882,
+          0.012247448713915893
+        ],
+        "retained_norm": [
+          0.0017320508075688767,
+          0.006627476255221528
+        ],
+        "Q_norm": [
+          5.940930948709625e-05,
+          0.003145313788449967
+        ],
+        "E_norm": [
+          0.00015846503602237515,
+          0.02573427920379124
+        ],
+        "Q_ratio": [
+          0.03429998082474481,
+          0.47458695698410064
+        ],
+        "E_ratio": [
+          0.09148983120466204,
+          3.882968148473746
+        ],
+        "center_displacement": [
+          0.0012247448713915848,
+          0.006975323636418433
+        ],
+        "center_polar_drift": [
+          0.018190687988149726,
+          0.2526982878319916
+        ],
+        "max_endpoint_polar_shift_from_anchor": [
+          0.01819070375344813,
+          0.2527003982918897
+        ]
+      }
+    }
+  },
+  "min_Choi_eigenvalue": 0.0029750641143257415,
+  "max_Choi_TP_error": 1.2609709600486848e-15,
+  "min_prepared_eigenvalue": 0.02975064114325797,
+  "min_probe_eigenvalue": 0.0350990887448251,
+  "min_edge_singular": 0.020860418697313383
+}
