@@ -1,0 +1,36 @@
+{
+  "parent_sha": "38c675b1af1c9df6b926adc5d243d0a889d00f93",
+  "preregistration_sha": "0273837380318b8e8c5a14c302f35bb894b262b4",
+  "initial_implementation_sha": "d1ec89f8d8fb68761220cee94ea1bf141106cd58",
+  "tested_sha": "1f4e3b51b3a9bda35b5f0fb4177a004c09cedf0f",
+  "red": {
+    "run": 36356769061,
+    "job": 108725943801,
+    "artifact": 10944501750,
+    "zip_sha256": "6816d0be4753d40eb5a3f9ba279f9f52e00de54bfcfe3502d00cf52e56caa50c"
+  },
+  "implementation_error": {
+    "run": 36357008287,
+    "job": 108726645061,
+    "artifact": 10944531988,
+    "zip_sha256": "9771620c8bbe0161f4257ea5ec71db3fc53f901e4f0bb1d2649193303a184dd4",
+    "cause": "SymPy immutable matrix copy cannot be assigned to",
+    "scientific_verdict_produced": false
+  },
+  "green": {
+    "run": 36357109323,
+    "job": 108726936941,
+    "artifact": 10944293246,
+    "zip_sha256": "d8e2e989a656d93329edb7e18bae0870c0bc615e0560896bfc999707155f1af6"
+  },
+  "result_sha256": "06295e1705c9c38567ee8dc1bee10a737b0d9a8b260200867a68d01fc10130ab",
+  "verified": [
+    "exact_job_logs",
+    "downloaded_zip_digests",
+    "execution_heads",
+    "frozen_source_bytes",
+    "one_line_implementation_fix",
+    "green_sha256sums",
+    "scientific_json_verdicts"
+  ]
+}
