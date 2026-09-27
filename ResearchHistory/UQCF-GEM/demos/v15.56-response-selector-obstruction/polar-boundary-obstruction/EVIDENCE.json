@@ -1,0 +1,33 @@
+{
+  "parent_documentation_sha": "8ef3c4388dffcd0b799578600246808e5aa14c2e",
+  "preregistration_sha": "c1aa2dcace27d4c1eb11dc68442935b6361eff5a",
+  "scientific_implementation_sha": "2a7fcdf5694561526901473f43c42af9e01c82ee",
+  "branch": "research/v15.82-polar-boundary-obstruction",
+  "red": {
+    "run_id": 36348949021,
+    "job_id": 108703701101,
+    "artifact_id": 10941133419,
+    "artifact_sha256": "e3c456f9537d47d3594828f0c971c35c4356f099a7738d8083565a3e5767486a",
+    "reason": "Expected missing gate.py assertion; setup succeeded"
+  },
+  "green": {
+    "run_id": 36349171264,
+    "job_id": 108704332891,
+    "artifact_id": 10940904024,
+    "artifact_sha256": "a5156ca25c784eb23f6708aeb49ac154adf8c1c583508a28f183367c225edb14",
+    "tests": 3,
+    "verdict": "POLAR_CONTINUATION_OBSTRUCTION_CONFIRMED",
+    "all_valid": true
+  },
+  "result_sha256": "a60feb6ab4506e8049d72c6a4e85627ae6f9137e3509aa9da44e14f6f151df56",
+  "verification": [
+    "Exact job logs inspected",
+    "Both artifact ZIP SHA256 values verified against GitHub",
+    "Execution SHAs verified inside downloaded artifacts",
+    "Frozen preregistration, derivation and tests match both artifacts",
+    "Scientific implementation matches GREEN artifact",
+    "All artifact SHA256SUMS entries verified"
+  ],
+  "scientific_repairs": [],
+  "historical_verdict_preserved": "v15.81 FINITE_COMPONENT_INTERFERENCE_WINDOW_NOT_CONFIRMED"
+}
