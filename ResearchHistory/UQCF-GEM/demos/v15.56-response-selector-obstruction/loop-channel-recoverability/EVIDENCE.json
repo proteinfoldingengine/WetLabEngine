@@ -1,0 +1,36 @@
+{
+  "parent_documentation_sha": "782ed08968e19da829e9b041d5af047af94ba588",
+  "preregistration_sha": "af9a92f89ee59065b2ba6316592250bf60cd9778",
+  "scientific_implementation_sha": "9fc5bfa34fc0624b8f57c2520f2d008aef65b743",
+  "branch": "research/v15.84-loop-channel-recoverability",
+  "red": {
+    "run_id": 36352418004,
+    "job_id": 108713505081,
+    "artifact_id": 10942134777,
+    "artifact_sha256": "49c99ed3112969525d4a0bed62975950c7947ce62a623f08f9fc3f9bfbba0c3b",
+    "reason": "Expected missing gate.py assertion; setup succeeded"
+  },
+  "green": {
+    "run_id": 36352664122,
+    "job_id": 108714190665,
+    "artifact_id": 10942199904,
+    "artifact_sha256": "791154df4e28a2a21346e51955e798f2a542764007e62b4f6a6be5437a9ba6f1",
+    "tests": 3,
+    "all_valid": true,
+    "verdict": "LATE_CPTP_LOOP_POWER_CONFIRMED",
+    "recovery_verdict": "CPTP_LOOP_RECOVERY_OBSTRUCTED"
+  },
+  "parent_result_sha256": "bb2299a633e857beeabce7b05208b9c924d88b3bbceb1f033f772657457c7166",
+  "result_sha256": "2b51d58a3d5b93c494904a179942feb3e574b8bcec53dbe80c6a6cf5b5ced9f4",
+  "verification": [
+    "Exact job logs inspected",
+    "Both artifact ZIP SHA256 values verified against GitHub",
+    "Execution SHAs verified inside downloaded artifacts",
+    "Frozen preregistration, derivation and tests match both artifacts",
+    "Scientific implementation matches GREEN artifact",
+    "All artifact SHA256SUMS entries verified"
+  ],
+  "implementation_repairs": [],
+  "historical_verdicts_preserved": true,
+  "interpretation": "Conditional unital qubit extension of retained geometric loop; not original source channel or source-law selection."
+}
