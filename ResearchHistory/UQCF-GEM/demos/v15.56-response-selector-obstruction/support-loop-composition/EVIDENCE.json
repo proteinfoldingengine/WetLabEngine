@@ -1,0 +1,39 @@
+{
+  "parent_documentation_sha": "b7e472378b907c7ff95a44cd8611d11c7fdaa2f5",
+  "preregistration_sha": "83adad316a7af388956d4f5e545f767aae341f86",
+  "scientific_implementation_sha": "0e29f68556255869472c7bf86b998550927d108a",
+  "branch": "research/v15.83-support-loop-composition",
+  "red": {
+    "run_id": 36350282733,
+    "job_id": 108707518365,
+    "artifact_id": 10941498489,
+    "artifact_sha256": "c89d418416336ff592050f82c1fed01d3ff39350b60da714f2359a0c46866ac0",
+    "reason": "Expected missing gate.py assertion; all setup steps succeeded"
+  },
+  "green": {
+    "run_id": 36350562203,
+    "job_id": 108708305465,
+    "artifact_id": 10941972741,
+    "artifact_sha256": "08a994bf9701c24a66070f598050b13e0bad85e358eb7dcbb4221370958e76c2",
+    "tests": 3,
+    "all_valid": true,
+    "crossing_verdict": "SUPPORT_RESTRICTED_CROSSING_CONFIRMED",
+    "composition_verdict": "SUPPORT_LOOP_COMPOSITION_OBSTRUCTED",
+    "core_verdict": "LOSSLESS_LOOP_CORE_TRIVIAL"
+  },
+  "parent_result_sha256": "a60feb6ab4506e8049d72c6a4e85627ae6f9137e3509aa9da44e14f6f151df56",
+  "result_sha256": "bb2299a633e857beeabce7b05208b9c924d88b3bbceb1f033f772657457c7166",
+  "verification": [
+    "Exact job logs inspected",
+    "Both artifact ZIP SHA256 values verified against GitHub",
+    "Execution SHAs verified inside downloaded artifacts",
+    "Frozen preregistration, derivation and tests match both artifacts",
+    "Scientific implementation matches GREEN artifact",
+    "All artifact SHA256SUMS entries verified"
+  ],
+  "implementation_repairs": [],
+  "historical_verdicts_preserved": [
+    "v15.81 FINITE_COMPONENT_INTERFERENCE_WINDOW_NOT_CONFIRMED",
+    "v15.82 POLAR_CONTINUATION_OBSTRUCTION_CONFIRMED"
+  ]
+}
