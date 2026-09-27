@@ -1,0 +1,236 @@
+{
+  "verdict": "FROZEN_CHANNEL_FINITE_NULL_OBSTRUCTED",
+  "anchored_verdict": "ANCHOR_FIXED_CPTP_COMPOSITION_NULL_CONFIRMED",
+  "all_valid": true,
+  "anchor_candidate": 13,
+  "depths": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "finite_cases": 216,
+  "first_tested_visible_depth": 1,
+  "controls": {
+    "identity_error": 1.1102230246251565e-16,
+    "Y_norm_error": 1.1102230246251565e-16,
+    "phi_square_error": 6.589603847638368e-17,
+    "power_closed_error": 3.3594539675478776e-16,
+    "composition_error": 3.3594539675478776e-16,
+    "center_closed_error": 1.0939308449856294e-16,
+    "hidden_closed_error": 1.5701504221583284e-16,
+    "retained_closed_error": 8.328048306208544e-17,
+    "active_leakage_error": 1.3010426069826053e-18,
+    "inactive_retained_norm": 8.326672684688674e-17,
+    "correlation_formula_error": 2.431168653522475e-16,
+    "closed_Q_error": 3.845966630001374e-16,
+    "closed_E_error": 2.021674357339068e-15,
+    "sylvester": 5.1800756783721856e-20,
+    "skew_control_error": 2.220446049250313e-15,
+    "skew_control_min_E": 5.709657331899219
+  },
+  "prepared_states": [
+    {
+      "channel": "original",
+      "min_eigenvalue": 0.12199117994021899,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "valid": true
+    },
+    {
+      "channel": "anchored",
+      "min_eigenvalue": 0.045892049687911274,
+      "trace_error": 1.1102230246251565e-16,
+      "hermiticity_error": 0.0,
+      "valid": true
+    }
+  ],
+  "rows": [
+    {
+      "channel": "original",
+      "depth": 1,
+      "alpha": 0.9,
+      "beta": 0.1,
+      "retained_norm": 0.0017320508075688772,
+      "Q_norm": 6.58074884534673e-06,
+      "E_norm": 4.413592523444146e-05,
+      "Q_ratio": 0.003799397117330254,
+      "E_ratio": 0.025481888315037976,
+      "center_displacement": 0.014689749731719236,
+      "center_polar_drift": 0.002014934908603451,
+      "max_endpoint_polar_shift_from_anchor": 0.002014939295674491,
+      "max_endpoint_polar_shift_from_output_center": 4.413602248197679e-09,
+      "domain": {
+        "min_eigenvalue": 0.04863614328712127,
+        "trace_error": 1.1102230246251565e-16,
+        "hermiticity_error": 0.0,
+        "valid": true,
+        "min_edge_singular": 0.029248205914379505,
+        "min_positive_polar": 0.029248205914379495
+      }
+    },
+    {
+      "channel": "original",
+      "depth": 2,
+      "alpha": 0.81,
+      "beta": 0.18000000000000002,
+      "retained_norm": 0.003117691453623979,
+      "Q_norm": 2.25131110087497e-05,
+      "E_norm": 0.00016783082501610803,
+      "Q_ratio": 0.007221083722887538,
+      "E_ratio": 0.053831762222981645,
+      "center_displacement": 0.027910524490266552,
+      "center_polar_drift": 0.003829560073619177,
+      "max_endpoint_polar_shift_from_anchor": 0.0038295767556790093,
+      "max_endpoint_polar_shift_from_output_center": 1.6783156718195688e-08,
+      "domain": {
+        "min_eigenvalue": 0.04863614328712127,
+        "trace_error": 1.1102230246251565e-16,
+        "hermiticity_error": 0.0,
+        "valid": true,
+        "min_edge_singular": 0.02632272195909555,
+        "min_positive_polar": 0.02632272195909554
+      }
+    },
+    {
+      "channel": "original",
+      "depth": 4,
+      "alpha": 0.6561,
+      "beta": 0.2916,
+      "retained_norm": 0.005050660154870846,
+      "Q_norm": 6.604769966472413e-05,
+      "E_norm": 0.0006082541394661344,
+      "Q_ratio": 0.013077042928938283,
+      "E_ratio": 0.1204306211099029,
+      "center_displacement": 0.05051804932738245,
+      "center_polar_drift": 0.006935161916195729,
+      "max_endpoint_polar_shift_from_anchor": 0.006935222374412937,
+      "max_endpoint_polar_shift_from_output_center": 6.082595533185106e-08,
+      "domain": {
+        "min_eigenvalue": 0.04863614328712127,
+        "trace_error": 1.1102230246251565e-16,
+        "hermiticity_error": 0.0,
+        "valid": true,
+        "min_edge_singular": 0.021320439933177247,
+        "min_positive_polar": 0.021320439933177254
+      }
+    },
+    {
+      "channel": "original",
+      "depth": 8,
+      "alpha": 0.4304672100000001,
+      "beta": 0.38263752000000006,
+      "retained_norm": 0.006627476255221526,
+      "Q_norm": 0.00014364080118795103,
+      "E_norm": 0.0020180823251319427,
+      "Q_ratio": 0.021673529358144757,
+      "E_ratio": 0.3045023848319299,
+      "center_displacement": 0.08366294149107809,
+      "center_polar_drift": 0.01149418219022828,
+      "max_endpoint_polar_shift_from_anchor": 0.01149438277511788,
+      "max_endpoint_polar_shift_from_output_center": 2.0181183004321427e-07,
+      "domain": {
+        "min_eigenvalue": 0.04863614328712127,
+        "trace_error": 2.220446049250313e-16,
+        "hermiticity_error": 0.0,
+        "valid": true,
+        "min_edge_singular": 0.013987311967654613,
+        "min_positive_polar": 0.013987311967654606
+      }
+    },
+    {
+      "channel": "anchored",
+      "depth": 1,
+      "alpha": 0.9,
+      "beta": 0.1,
+      "retained_norm": 0.0017320508075688772,
+      "Q_norm": 3.845938874353962e-16,
+      "E_norm": 1.7092854277409696e-15,
+      "Q_ratio": 2.2204538443951063e-13,
+      "E_ratio": 9.868564018281536e-13,
+      "center_displacement": 1.3877787807814457e-17,
+      "center_polar_drift": 1.158926417549768e-15,
+      "max_endpoint_polar_shift_from_anchor": 1.4275625407370095e-15,
+      "max_endpoint_polar_shift_from_output_center": 1.8478713841648984e-15,
+      "domain": {
+        "min_eigenvalue": 0.04863614328712127,
+        "trace_error": 1.1102230246251565e-16,
+        "hermiticity_error": 0.0,
+        "valid": true,
+        "min_edge_singular": 0.03249872418055188,
+        "min_positive_polar": 0.03249872418055186
+      }
+    },
+    {
+      "channel": "anchored",
+      "depth": 2,
+      "alpha": 0.81,
+      "beta": 0.18000000000000002,
+      "retained_norm": 0.003117691453623979,
+      "Q_norm": 1.6520874529549273e-18,
+      "E_norm": 6.934399959545559e-18,
+      "Q_ratio": 5.299072976046281e-16,
+      "E_ratio": 2.2242098240623106e-15,
+      "center_displacement": 1.3877787807814457e-17,
+      "center_polar_drift": 1.158926417549768e-15,
+      "max_endpoint_polar_shift_from_anchor": 1.496105219459693e-15,
+      "max_endpoint_polar_shift_from_output_center": 1.9684579252199652e-15,
+      "domain": {
+        "min_eigenvalue": 0.04863614328712127,
+        "trace_error": 1.1102230246251565e-16,
+        "hermiticity_error": 0.0,
+        "valid": true,
+        "min_edge_singular": 0.032498593541098915,
+        "min_positive_polar": 0.032498593541098915
+      }
+    },
+    {
+      "channel": "anchored",
+      "depth": 4,
+      "alpha": 0.6561,
+      "beta": 0.2916,
+      "retained_norm": 0.005050660154870846,
+      "Q_norm": 2.4862631376165025e-18,
+      "E_norm": 1.2262753433068067e-17,
+      "Q_ratio": 4.922649834633509e-16,
+      "E_ratio": 2.4279506157708696e-15,
+      "center_displacement": 1.3877787807814457e-17,
+      "center_polar_drift": 1.158926417549768e-15,
+      "max_endpoint_polar_shift_from_anchor": 1.5920046067240293e-15,
+      "max_endpoint_polar_shift_from_output_center": 1.663425246622505e-15,
+      "domain": {
+        "min_eigenvalue": 0.04863614328712127,
+        "trace_error": 1.1102230246251565e-16,
+        "hermiticity_error": 0.0,
+        "valid": true,
+        "min_edge_singular": 0.03249841129906202,
+        "min_positive_polar": 0.03249841129906204
+      }
+    },
+    {
+      "channel": "anchored",
+      "depth": 8,
+      "alpha": 0.4304672100000001,
+      "beta": 0.38263752000000006,
+      "retained_norm": 0.006627476255221526,
+      "Q_norm": 1.9234910772789356e-16,
+      "E_norm": 8.54819003875445e-16,
+      "Q_ratio": 2.902297953558857e-14,
+      "E_ratio": 1.2898107378385051e-13,
+      "center_displacement": 1.3877787807814457e-17,
+      "center_polar_drift": 1.158926417549768e-15,
+      "max_endpoint_polar_shift_from_anchor": 1.5920046067240293e-15,
+      "max_endpoint_polar_shift_from_output_center": 1.6720583760847793e-15,
+      "domain": {
+        "min_eigenvalue": 0.04863614328712127,
+        "trace_error": 1.1102230246251565e-16,
+        "hermiticity_error": 0.0,
+        "valid": true,
+        "min_edge_singular": 0.0324982626354144,
+        "min_positive_polar": 0.032498262635414395
+      }
+    }
+  ],
+  "min_Choi_eigenvalue": 0.004589204968791062,
+  "max_Choi_TP_error": 9.155135651400898e-16
+}
