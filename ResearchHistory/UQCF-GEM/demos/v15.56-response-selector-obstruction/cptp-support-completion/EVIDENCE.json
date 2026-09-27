@@ -1,0 +1,26 @@
+{
+  "parent_sha": "c0adc88d4ef2b955a07d567b4cf2c3ab3d1fa24d",
+  "preregistration_sha": "cb99eb7b79044be8afbd7ce35a7abd27aaef3988",
+  "tested_sha": "6711b3f2b2ba89a66d8de811f7a705581ccf9073",
+  "red": {
+    "run": 36354920501,
+    "job": 108720633832,
+    "artifact": 10944035055,
+    "zip_sha256": "3fc60650da4ca8d006eb9e4d498d04f546e23e891938a1cf6540dee8580d8e4e"
+  },
+  "green": {
+    "run": 36355131725,
+    "job": 108721247570,
+    "artifact": 10942774856,
+    "zip_sha256": "f61ccd8a89039a5c366f07c001551231e115eb3270e242d1786d607b60660bd4"
+  },
+  "result_sha256": "7e0df41086ed226c90a22e09270f305e3de68abfe5d1d6a9e5811598c324090d",
+  "verified": [
+    "exact_job_logs",
+    "downloaded_zip_digests",
+    "execution_heads",
+    "frozen_source_bytes",
+    "green_sha256sums",
+    "scientific_json_verdicts"
+  ]
+}
