@@ -1,0 +1,32 @@
+name: UQCF v15.71 minimal extension memory
+on:
+  push:
+    branches: [research/v15.71-minimal-extension-memory]
+  workflow_dispatch:
+jobs:
+  adjudicate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python -m pip install numpy==2.3.5
+      - run: git rev-parse HEAD | tee execution_head.txt
+      - name: Frozen tests and measurement
+        run: |
+          set -o pipefail
+          cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/minimal-extension-memory
+          OPENBLAS_NUM_THREADS=1 python -m unittest -v test_gate 2>&1 | tee test.log
+          OPENBLAS_NUM_THREADS=1 python gate.py 2>&1 | tee result.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: minimal-extension-memory-${{ github.sha }}
+          path: |
+            execution_head.txt
+            ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/minimal-extension-memory/PREREGISTRATION.md
+            ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/minimal-extension-memory/DERIVATION.md
+            ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/minimal-extension-memory/test.log
+            ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/minimal-extension-memory/result.json
