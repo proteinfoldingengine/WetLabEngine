@@ -1,0 +1,19 @@
+# Fixed affine sources: open-state nullity equals retained closure
+
+Let X(rho)=L(rho)+b be a fixed affine vector field tangent to normalized Hermitian states. For every trace-zero hidden h, DX_rho[h]=L(h) is a fixed trace-zero Hermitian Y_h. No Hamiltonian representation is assumed.
+
+For a fixed h let u_i be the one-body moments of Y_h and V_ij its raw pair moments. At state rho with Bloch vectors a_i, the connected-correlation derivative is D_ij=V_ij-u_i a_j^T-a_i u_j^T. On a full-dimensional open set of full-rank physical states with regular positive-polar correlations, a_i and polar factors O_ij can be varied independently by sufficiently small changes in Pauli moments, holding positive polar factors P_ij fixed.
+
+If the rotation is null for every state in that open set, O^T D is symmetric for an open set of O. At O0 write S=O0^T D. Varying O=O0 exp(tK) yields KS+SK=0 for every skew K. Since S is symmetric, its eigenvalues obey lambda_i+lambda_j=0 for all i!=j. In three dimensions this forces S=0. Thus D=0. Independent variation of a_j and a_i forces u_i=u_j=0, then V_ij=0. Repeating over all edges proves that Y_h has no retained one-body or pair component. Conversely, retained closure makes D and every rotation derivative zero.
+
+Therefore a fixed affine source is universally rotationally null on such an open set iff L maps the hidden tangent sector into itself. The affine constant b does not enter this hidden derivative. State-affinity alone does not prohibit a pointwise symmetric null; the open-state quantifier is essential. The theorem needs no complete positivity assumption. It applies to fixed affine operational families when their derivative exists (one-sided at an endpoint is sufficient), but it does not classify which hidden-preserving L satisfy CP constraints.
+
+## Finite witness and dimensions
+Let F_rho map the 36 retained output coefficients of Y_h to nine skew coordinates. If its twelve-state stack has rank 36, these states suffice to rule out any common nonzero retained null tangent. Appending 27 invisible full-support output directions yields a 63-column map of rank 36 and nullity 27. For each of the 27 hidden input directions, an arbitrary linear hidden-response operator supplies an independent output column. Tensoring with the 27-dimensional identity multiplies rank and nullity, yielding 972 and 729 respectively when the finite gate passes. These are dimensions in the unrestricted real linear operator space, not physical channel parameter counts, and do not enlarge the nine-dimensional edge rotation observable.
+
+## Explicit physical pointwise counterexample
+Freeze Y_ref from the existing symmetric lift at the reference state. It has trace zero and HS norm sqrt(3/8). With kappa=.01, tau_±=I/8±kappa Y_ref are positive because their minimum eigenvalues are at least 1/8-kappa sqrt(3/8)>0. They are normalized. For A=XXX, M_±=(I±A)/2 are positive and sum to I. Thus Phi(z)=Tr(M_+z)tau_+ +Tr(M_-z)tau_-=Tr(z)I/8+kappa Tr(Az)Y_ref is measure-and-prepare and CPTP on all states.
+
+Its unnormalized input-first Choi matrix is I tensor I/8+kappa A^T tensor Y_ref, with output partial trace I. For h=XXX/sqrt(8), Phi(h)-h=kappa sqrt(8)Y_ref-h. Its retained component is nonzero and polar-symmetric at the frozen anchor. At another state it uses the SAME Y_ref; visibility there is measured, not assumed. The channel's construction intentionally uses anchor geometry to demonstrate existence; it is not a natural physical source selection rule.
+
+For every CPTP Phi, T_s=(1-s)id+sPhi is CPTP for 0<=s<=1, and X=Phi-id is its affine derivative. We use only positive s=.1 for finite checks. Hidden-centered differences at that fixed positive s recover Lh without calling a negative-s extension a physical channel. Pointwise derivative nullity is not claimed to imply finite-strength rotational invariance.
