@@ -96,7 +96,7 @@ def run_measurement():
             rows.append({'candidate_index':state['candidate_index'],'aggregate':aggregate,'local':local,'sources':details,'aggregate_Q':maps[2][1].tolist(),'aggregate_E':maps[2][2].tolist()})
         valid=domain_ok and cases==11664 and len(rows)==12 and controls['min_activity']>1e-8
         valid=valid and all(controls[k]<=t for k,t in [('unitarity',1e-12),('mixture_affinity',1e-12),('centered_identity',1e-10),('centered_truncation',1e-6),('sylvester',1e-10),('exterior_invariance',1e-12)])
-        report={'candidate_indices':indices,'probe_cases':cases,'states':rows,'controls':controls,'all_valid':bool(valid),'scientific_pass':bool(scientific),'verdict':adjudicate(valid,scientific),'s':S,'eta':ETA,'mixture_weight':P_MIX,'rank_thresholds':THRESHOLDS,'source_labels':SOURCE_LABELS,'hidden_labels':M.LABELS}
+        report={'candidate_indices':indices,'probe_cases':cases,'states':rows,'controls':controls,'all_valid':bool(valid),'scientific_pass':bool(scientific),'verdict':adjudicate(valid,scientific),'s':S,'eta':ETA,'mixture_weight':P_MIX,'rank_thresholds':THRESHOLDS,'source_labels':{str(k):v for k,v in SOURCE_LABELS.items()},'hidden_labels':M.LABELS}
         return M.V70.finalize_report(report)
     except (ValueError,np.linalg.LinAlgError,FloatingPointError) as exc:
         return M.V70.finalize_report({'verdict':'INVALID','all_valid':False,'error':str(exc),'controls':controls,'states':rows,'probe_cases':cases})
