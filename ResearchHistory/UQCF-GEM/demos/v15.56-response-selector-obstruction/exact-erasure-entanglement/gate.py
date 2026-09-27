@@ -23,7 +23,7 @@ num=V84.number;mat=V84.matrix;maximum=V84.maximum
 
 
 def partial_input(z):
-    out=z.copy()
+    out=sp.MutableDenseMatrix(z) if isinstance(z,sp.MatrixBase) else z.copy()
     for a in range(2):
         for b in range(2):
             for i in range(2):
