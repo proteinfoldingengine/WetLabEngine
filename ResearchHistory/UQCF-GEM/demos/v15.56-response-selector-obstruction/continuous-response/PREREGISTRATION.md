@@ -1,0 +1,20 @@
+# 16.12 — Continuous magnitude-weighted response and information loss
+
+Frozen before ensemble measurement. Parent publication: `75a9a64223880a2c39e1f54e5e544688e28f92c8`. Executed 16.11 parent: `12e477696c361f919c9c947db24503e9ac64153d`.
+
+Question: does retaining singular-value magnitude provide a continuous sixth-edge response while preserving signed source and ordering information that the normalized polar limit does not retain? What does the smooth Gram matrix discard?
+
+This explicitly audits different observables; it does not repair or relabel the failed baseline-only polar extension. No source-selection law, SO transport or geometry is inferred merely by choosing a matrix observable.
+
+Use all 144 physical path families from the exact 16.11 archive: 12 candidates, 3 archived binary middle-channel parameters a, both preparation arms and both orders. The source family and normalized states remain frozen. C(s,λ)=C+s(V0+λV1)+s²(W0+λW1+λ²W2), −1≤λ≤1, 0≤s≤1.
+
+1. Weighted polar reconstruction: U(C)|C|=C with |C|=(CᵀC)^(1/2). This algebraic identity is not a novel dynamical law. Establish a uniform continuity bound ||C(s,λ)−C||F≤s Bv+s² Bw, using exact entrywise absolute-sum bounds Bv=||V0||entry1+||V1||entry1 and Bw=sum||Wi||entry1. No fitted power, regularization scale, singular-value threshold or orientation correction.
+2. Signed normal response: freeze P,Q as exact baseline support projectors and define K(s,λ)=(I−P)C(s,λ)(I−Q). Certify K=s λ N+ +s² M(λ), including the entire quadratic polynomial M. Projectors remain fixed at the baseline. K/s tends to λ N+, so a nonzero signed normal response can survive while K tends to zero. Record exact ranks and Frobenius norms squared. Parent normal identities and coefficient matrices must match.
+3. Ordering: compare after/before at a common baseline. Test N_before=a N_after, hence the first-order normal contrast is λ(1−a)N_after. Identity-middle contrasts must vanish. Scientific nonzero ordering responses are counted only for a≠1; report all 48 nonidentity and 24 identity pairs.
+4. Information-loss control: the derivative of H=CᵀC is CᵀV+VᵀC. Check it is unchanged on replacing V by V−N, for each exact polynomial normal N=λN+. H is first-order blind to this normal component, not necessarily to every coherence or ordering response. Also archive the coefficients of KᵀK=s² λ² NᵀN+s³ λ(NᵀM+MᵀN)+s⁴MᵀM. Its leading energy is even in λ; do not claim the full finite energy is always even. A synthetic diagonal control demonstrates exact sign loss for pure normal paths.
+
+Numerical audit: λ∈{−1,0,+1}, s∈{2^-8,2^-64}, 80/120 digits, both inherited frames: 3,456 rows. Each row records C(s,λ), the SVD weighted-polar reconstruction, K/s and KᵀK/s², plus their deviations from the analytic leading terms. Exact finite polynomial ranks select support; no numerical rank cutoff. Controls: SVD reconstruction, fixed-projector normal identity, full quadratic energy identity, frame covariance, uniform-bound compliance ≤1e-35 and cross-precision ≤1e-30. Finite deviations are descriptive; no convergence fit or numerical asymptotic gate.
+
+Exact records:144 families and72 order pairs. Verdict CONTINUOUS_SIGNED_NORMAL_RESPONSE_CERTIFIED requires exact continuity-bound construction, all signed-normal identities and Gram blindness controls, all48 nonidentity contrasts nonzero, all24 identity contrasts zero, and numerical/provenance controls. A valid negative scientific outcome is CONTINUOUS_RESPONSE_CRITERIA_NOT_CONFIRMED. INVALID is reserved for provenance, identity-of-input, completeness or implementation/control failure. Publish every result.
+
+Implementation plan: freeze this protocol and source hashes with failing tests; implement symbolic checks and finite numerical controls; independently review; run only the targeted GitHub workflow; verify artifact digest, source head, file hashes and raw-record completeness; publish the full report/raw archive/logs and a draft PR. No local ensemble measurement before GitHub execution. Time is pruning / ordered recoverability update; s is mixture strength, not fundamental time.

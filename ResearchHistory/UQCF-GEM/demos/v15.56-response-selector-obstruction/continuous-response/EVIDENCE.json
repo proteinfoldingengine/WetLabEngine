@@ -1,0 +1,35 @@
+{
+  "version": "16.12",
+  "base": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response",
+  "branch": "research/v16.12-continuous-response",
+  "parentPublication": "75a9a64223880a2c39e1f54e5e544688e28f92c8",
+  "redCommit": "d4615a4a5364b6a3fba5a7422deb82998dea55e8",
+  "redRun": 36496625063,
+  "redJob": 109177584381,
+  "greenCommit": "88109eeb3e7f60f73f433f5e0ed33938c943e205",
+  "greenTree": "0dbafa3e07086480e7b18417f2509887911ff618",
+  "greenRun": 36496955303,
+  "greenJob": 109178656444,
+  "artifact_id": 11003164399,
+  "artifact_zip_sha256": "bf4b52d51479233f6a8c4e2c990c30e847518cb642dc62e404fe4409feb95ffa",
+  "raw_sha256": "9bd60096705dd405f825abb9a50e1d4545b8fbdda7e1a6d3a6391e5ca7416529",
+  "raw_xz_sha256": "5d556bb06b939b8e85028ed908d534ccc8e18e4db1d73000bd0a8331c880231c",
+  "all_valid": true,
+  "verdict": "CONTINUOUS_SIGNED_NORMAL_RESPONSE_CERTIFIED",
+  "metrics": {
+    "weighted_reconstruction": "3.01017315949558227344897541527655805492014086083640468820526e-84",
+    "polar": "3.35347781585518912959936015313054579521773696584488214247884e-80",
+    "normal_identity": "1.29408682386142206958932174943661186549274565108283731673598e-66",
+    "energy_identity": "4.16688870735522478200463239860271701588353504547399818738625e-69",
+    "gram_blindness": "2.62237732155986853991974622882262330976878755584242984340474e-88",
+    "covariance": "1.28146551975673113426059516095026071577514368275493441060605e-66",
+    "uniform_bound": "0.0",
+    "precision": "1.29408682386142206851665091072873650158505411560937716371721e-66"
+  },
+  "array_counts": {
+    "exact": 144,
+    "pairs": 72,
+    "rows": 3456,
+    "density_certificates": 12
+  }
+}

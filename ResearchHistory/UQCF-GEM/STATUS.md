@@ -1,6 +1,10 @@
 # UQCF-GEM Current Status
 
-## Latest completed research: 16.09–16.11 (2026-09-28)
+## Latest completed research: 16.12 (2026-09-28)
+
+[Read the 16.12 final report](V16_12_REPORT.md). Continuous magnitude-weighted sixth-edge matrices retain signed normal response in all 144 families and nonzero contrast coefficients in all 48 nonidentity order pairs. The Gram derivative is blind to the normal component. Full raw results, code, tests, logs and checksums are published on the unmerged research branch. This does not derive a source law or repair the old polar transport.
+
+## Prior completed research: 16.09–16.11 (2026-09-28)
 
 [Read the combined final report](V16_09-11_REPORT.md). All three targeted audits passed: fixed-source order agreement, source-coherence dependence, and three full-family boundary classes. Complete raw results, execution logs and checksums are committed with the reports; the initial INVALID 16.11 attempt is preserved. Work is published on the research branch and is not merged into main. Source selection and gravity correspondence remain open.
 

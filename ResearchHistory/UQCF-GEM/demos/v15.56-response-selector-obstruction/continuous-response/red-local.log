@@ -1,0 +1,70 @@
+test_gram_normal_blindness_and_sign_loss (test_gate.Tests.test_gram_normal_blindness_and_sign_loss) ... FAIL
+test_normal_energy_coefficients (test_gate.Tests.test_normal_energy_coefficients) ... FAIL
+test_uniform_coefficient_bound (test_gate.Tests.test_uniform_coefficient_bound) ... FAIL
+test_verdict_negative (test_gate.Tests.test_verdict_negative) ... FAIL
+test_weighted_polar_tiny_rank_and_orientation (test_gate.Tests.test_weighted_polar_tiny_rank_and_orientation) ... FAIL
+
+======================================================================
+FAIL: test_gram_normal_blindness_and_sign_loss (test_gate.Tests.test_gram_normal_blindness_and_sign_loss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 9, in test_gram_normal_blindness_and_sign_loss
+    g=self.gate();c=s.diag(2,0,0);n=s.diag(0,3,0);self.assertEqual(g.gram_derivative(c,n),s.zeros(3));self.assertEqual((c+n).T*(c+n),(c-n).T*(c-n));self.assertNotEqual(c+n,c-n)
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: continuous-response audit absent
+
+======================================================================
+FAIL: test_normal_energy_coefficients (test_gate.Tests.test_normal_energy_coefficients)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 11, in test_normal_energy_coefficients
+    g=self.gate();n=s.diag(0,2,0);m=s.diag(0,3,0);t=s.Symbol('t');co=g.energy_coefficients(n,m);self.assertEqual(sum((t**(i+2)*z for i,z in enumerate(co)),s.zeros(3)),(t*n+t*t*m).T*(t*n+t*t*m))
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: continuous-response audit absent
+
+======================================================================
+FAIL: test_uniform_coefficient_bound (test_gate.Tests.test_uniform_coefficient_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 7, in test_uniform_coefficient_bound
+    g=self.gate();self.assertEqual(g.entry_bound([s.diag(-2,3,0),s.diag(1,0,0)]),6)
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: continuous-response audit absent
+
+======================================================================
+FAIL: test_verdict_negative (test_gate.Tests.test_verdict_negative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 17, in test_verdict_negative
+    g=self.gate();self.assertEqual(g.classify(False,True),'INVALID');self.assertEqual(g.classify(True,False),'CONTINUOUS_RESPONSE_CRITERIA_NOT_CONFIRMED')
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: continuous-response audit absent
+
+======================================================================
+FAIL: test_weighted_polar_tiny_rank_and_orientation (test_gate.Tests.test_weighted_polar_tiny_rank_and_orientation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 13, in test_weighted_polar_tiny_rank_and_orientation
+    g=self.gate()
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: continuous-response audit absent
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (failures=5)
