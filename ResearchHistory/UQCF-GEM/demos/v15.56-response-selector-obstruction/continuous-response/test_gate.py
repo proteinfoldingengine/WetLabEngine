@@ -8,7 +8,7 @@ class Tests(unittest.TestCase):
  def test_gram_normal_blindness_and_sign_loss(self):
   g=self.gate();c=s.diag(2,0,0);n=s.diag(0,3,0);self.assertEqual(g.gram_derivative(c,n),s.zeros(3));self.assertEqual((c+n).T*(c+n),(c-n).T*(c-n));self.assertNotEqual(c+n,c-n)
  def test_normal_energy_coefficients(self):
-  g=self.gate();n=s.diag(0,2,0);m=s.diag(0,3,0);t=s.Symbol('t');co=g.energy_coefficients(n,m);self.assertEqual(sum((t**(i+2)*z for i,z in enumerate(co)),s.zeros(3)),(t*n+t*t*m).T*(t*n+t*t*m))
+  g=self.gate();n=s.diag(0,2,0);m=s.diag(0,3,0);t=s.Symbol('t');co=g.energy_coefficients(n,m);self.assertEqual(sum((t**(i+2)*z for i,z in enumerate(co)),s.zeros(3)),((t*n+t*t*m).T*(t*n+t*t*m)).applyfunc(s.expand))
  def test_weighted_polar_tiny_rank_and_orientation(self):
   g=self.gate()
   with g.mp.workdps(80):

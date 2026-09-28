@@ -1,0 +1,344 @@
+﻿2026-09-28T23:11:09.1829947Z Current runner version: '2.337.0'
+2026-09-28T23:11:09.1865186Z ##[group]Runner Image Provisioner
+2026-09-28T23:11:09.1866698Z Hosted Compute Agent
+2026-09-28T23:11:09.1867767Z Version: 20260828.587
+2026-09-28T23:11:09.1869087Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-28T23:11:09.1870740Z Build Date: 2026-08-28T16:44:25Z
+2026-09-28T23:11:09.1872213Z Worker ID: {e19b35a2-4c2b-49a4-804f-04a80666d412}
+2026-09-28T23:11:09.1873607Z Azure Region: centralus
+2026-09-28T23:11:09.1874714Z ##[endgroup]
+2026-09-28T23:11:09.1877212Z ##[group]Operating System
+2026-09-28T23:11:09.1878322Z Ubuntu
+2026-09-28T23:11:09.1879274Z 24.04.5
+2026-09-28T23:11:09.1880656Z LTS
+2026-09-28T23:11:09.1881657Z ##[endgroup]
+2026-09-28T23:11:09.1882855Z ##[group]Runner Image
+2026-09-28T23:11:09.1884036Z Image: ubuntu-24.04
+2026-09-28T23:11:09.1885077Z Version: 20260920.314.1
+2026-09-28T23:11:09.1887404Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-28T23:11:09.1891098Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-28T23:11:09.1893089Z ##[endgroup]
+2026-09-28T23:11:09.1895078Z ##[group]GITHUB_TOKEN Permissions
+2026-09-28T23:11:09.1898061Z Contents: read
+2026-09-28T23:11:09.1899064Z Metadata: read
+2026-09-28T23:11:09.1900414Z ##[endgroup]
+2026-09-28T23:11:09.1903453Z Secret source: Actions
+2026-09-28T23:11:09.1905210Z Cache mode: write
+2026-09-28T23:11:09.1906732Z Prepare workflow directory
+2026-09-28T23:11:09.2265204Z Prepare all required actions
+2026-09-28T23:11:09.2339326Z Getting action download info
+2026-09-28T23:11:09.5088050Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-28T23:11:09.6020400Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-09-28T23:11:09.6803423Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-09-28T23:11:09.8938077Z Complete job name: audit
+2026-09-28T23:11:09.9694275Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-09-28T23:11:09.9695326Z with:
+2026-09-28T23:11:09.9695833Z   repository: proteinfoldingengine/WetLabEngine
+2026-09-28T23:11:09.9699633Z   token: ***
+2026-09-28T23:11:09.9700266Z   ssh-strict: true
+2026-09-28T23:11:09.9700725Z   ssh-user: git
+2026-09-28T23:11:09.9701174Z   persist-credentials: true
+2026-09-28T23:11:09.9701706Z   clean: true
+2026-09-28T23:11:09.9702156Z   sparse-checkout-cone-mode: true
+2026-09-28T23:11:09.9702671Z   fetch-depth: 1
+2026-09-28T23:11:09.9703100Z   fetch-tags: false
+2026-09-28T23:11:09.9703528Z   show-progress: true
+2026-09-28T23:11:09.9703969Z   lfs: false
+2026-09-28T23:11:09.9704375Z   submodules: false
+2026-09-28T23:11:09.9704824Z   set-safe-directory: true
+2026-09-28T23:11:09.9705313Z   allow-unsafe-pr-checkout: false
+2026-09-28T23:11:09.9706103Z ##[endgroup]
+2026-09-28T23:11:10.0720624Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-09-28T23:11:10.0723343Z ##[group]Getting Git version info
+2026-09-28T23:11:10.0724616Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-28T23:11:10.0726373Z [command]/usr/bin/git version
+2026-09-28T23:11:10.0796106Z git version 2.55.0
+2026-09-28T23:11:10.0818355Z ##[endgroup]
+2026-09-28T23:11:10.0836596Z Temporarily overriding HOME='/home/runner/work/_temp/08613b4f-dbd2-4445-9cd8-04c3aa36b776' before making global git config changes
+2026-09-28T23:11:10.0851262Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-28T23:11:10.0853362Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-28T23:11:10.0896534Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-28T23:11:10.0901517Z ##[group]Initializing the repository
+2026-09-28T23:11:10.0905374Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-28T23:11:10.1030604Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-28T23:11:10.1032455Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-28T23:11:10.1033897Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-28T23:11:10.1035022Z hint: call:
+2026-09-28T23:11:10.1035894Z hint:
+2026-09-28T23:11:10.1036642Z hint: 	git config --global init.defaultBranch <name>
+2026-09-28T23:11:10.1037571Z hint:
+2026-09-28T23:11:10.1038303Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-28T23:11:10.1039466Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-28T23:11:10.1040659Z hint:
+2026-09-28T23:11:10.1041177Z hint: 	git branch -m <name>
+2026-09-28T23:11:10.1041766Z hint:
+2026-09-28T23:11:10.1042540Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-28T23:11:10.1048677Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-09-28T23:11:10.1058722Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-28T23:11:10.1114944Z ##[endgroup]
+2026-09-28T23:11:10.1115937Z ##[group]Disabling automatic garbage collection
+2026-09-28T23:11:10.1119071Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-28T23:11:10.1152587Z ##[endgroup]
+2026-09-28T23:11:10.1153413Z ##[group]Setting up auth
+2026-09-28T23:11:10.1160919Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T23:11:10.1195702Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T23:11:10.1626542Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T23:11:10.1668699Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T23:11:10.1895568Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T23:11:10.1959746Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T23:11:10.2209861Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-28T23:11:10.2255664Z ##[endgroup]
+2026-09-28T23:11:10.2256533Z ##[group]Fetching the repository
+2026-09-28T23:11:10.2269226Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d4615a4a5364b6a3fba5a7422deb82998dea55e8:refs/remotes/origin/research/v16.12-continuous-response
+2026-09-28T23:11:21.3869178Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-28T23:11:21.3872058Z  * [new ref]         d4615a4a5364b6a3fba5a7422deb82998dea55e8 -> origin/research/v16.12-continuous-response
+2026-09-28T23:11:21.3876319Z ##[endgroup]
+2026-09-28T23:11:21.3877923Z ##[group]Determining the checkout info
+2026-09-28T23:11:21.3879888Z ##[endgroup]
+2026-09-28T23:11:21.3884277Z [command]/usr/bin/git sparse-checkout disable
+2026-09-28T23:11:21.3943526Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-28T23:11:21.3976732Z ##[group]Checking out the ref
+2026-09-28T23:11:21.3981181Z [command]/usr/bin/git checkout --progress --force -B research/v16.12-continuous-response refs/remotes/origin/research/v16.12-continuous-response
+2026-09-28T23:11:22.4092130Z Updating files:  45% (2110/4637)
+2026-09-28T23:11:22.4129043Z Updating files:  46% (2134/4637)
+2026-09-28T23:11:22.4173138Z Updating files:  47% (2180/4637)
+2026-09-28T23:11:22.4202444Z Updating files:  48% (2226/4637)
+2026-09-28T23:11:22.4226368Z Updating files:  49% (2273/4637)
+2026-09-28T23:11:22.4259957Z Updating files:  50% (2319/4637)
+2026-09-28T23:11:22.4589465Z Updating files:  51% (2365/4637)
+2026-09-28T23:11:22.4995288Z Updating files:  52% (2412/4637)
+2026-09-28T23:11:22.5018203Z Updating files:  53% (2458/4637)
+2026-09-28T23:11:22.5037995Z Updating files:  54% (2504/4637)
+2026-09-28T23:11:22.5121926Z Updating files:  55% (2551/4637)
+2026-09-28T23:11:22.5203208Z Updating files:  56% (2597/4637)
+2026-09-28T23:11:22.5321180Z Updating files:  57% (2644/4637)
+2026-09-28T23:11:22.5460611Z Updating files:  58% (2690/4637)
+2026-09-28T23:11:22.5531452Z Updating files:  59% (2736/4637)
+2026-09-28T23:11:22.5557128Z Updating files:  60% (2783/4637)
+2026-09-28T23:11:22.5953206Z Updating files:  61% (2829/4637)
+2026-09-28T23:11:22.6865410Z Updating files:  62% (2875/4637)
+2026-09-28T23:11:22.9024884Z Updating files:  63% (2922/4637)
+2026-09-28T23:11:22.9049116Z Updating files:  64% (2968/4637)
+2026-09-28T23:11:22.9598250Z Updating files:  65% (3015/4637)
+2026-09-28T23:11:23.0994736Z Updating files:  66% (3061/4637)
+2026-09-28T23:11:23.1421554Z Updating files:  67% (3107/4637)
+2026-09-28T23:11:23.2320177Z Updating files:  68% (3154/4637)
+2026-09-28T23:11:23.2755393Z Updating files:  69% (3200/4637)
+2026-09-28T23:11:23.2913477Z Updating files:  70% (3246/4637)
+2026-09-28T23:11:23.2989471Z Updating files:  71% (3293/4637)
+2026-09-28T23:11:23.3038732Z Updating files:  72% (3339/4637)
+2026-09-28T23:11:23.3502646Z Updating files:  73% (3386/4637)
+2026-09-28T23:11:23.3527557Z Updating files:  74% (3432/4637)
+2026-09-28T23:11:23.3557722Z Updating files:  75% (3478/4637)
+2026-09-28T23:11:23.3587159Z Updating files:  76% (3525/4637)
+2026-09-28T23:11:23.3628949Z Updating files:  77% (3571/4637)
+2026-09-28T23:11:23.3668894Z Updating files:  78% (3617/4637)
+2026-09-28T23:11:23.3708410Z Updating files:  79% (3664/4637)
+2026-09-28T23:11:23.3747871Z Updating files:  80% (3710/4637)
+2026-09-28T23:11:23.3771392Z Updating files:  81% (3756/4637)
+2026-09-28T23:11:23.3791178Z Updating files:  82% (3803/4637)
+2026-09-28T23:11:23.3943279Z Updating files:  83% (3849/4637)
+2026-09-28T23:11:23.3970917Z Updating files:  84% (3896/4637)
+2026-09-28T23:11:23.4602144Z Updating files:  85% (3942/4637)
+2026-09-28T23:11:23.7626592Z Updating files:  85% (3947/4637)
+2026-09-28T23:11:23.7689324Z Updating files:  86% (3988/4637)
+2026-09-28T23:11:23.7944605Z Updating files:  87% (4035/4637)
+2026-09-28T23:11:23.8087376Z Updating files:  88% (4081/4637)
+2026-09-28T23:11:23.8285163Z Updating files:  89% (4127/4637)
+2026-09-28T23:11:23.8517006Z Updating files:  90% (4174/4637)
+2026-09-28T23:11:23.8957867Z Updating files:  91% (4220/4637)
+2026-09-28T23:11:23.9094929Z Updating files:  92% (4267/4637)
+2026-09-28T23:11:23.9135459Z Updating files:  93% (4313/4637)
+2026-09-28T23:11:23.9174649Z Updating files:  94% (4359/4637)
+2026-09-28T23:11:23.9261038Z Updating files:  95% (4406/4637)
+2026-09-28T23:11:23.9303947Z Updating files:  96% (4452/4637)
+2026-09-28T23:11:23.9345396Z Updating files:  97% (4498/4637)
+2026-09-28T23:11:23.9479982Z Updating files:  98% (4545/4637)
+2026-09-28T23:11:23.9519502Z Updating files:  99% (4591/4637)
+2026-09-28T23:11:23.9520381Z Updating files: 100% (4637/4637)
+2026-09-28T23:11:23.9520850Z Updating files: 100% (4637/4637), done.
+2026-09-28T23:11:23.9583480Z Switched to a new branch 'research/v16.12-continuous-response'
+2026-09-28T23:11:23.9587160Z branch 'research/v16.12-continuous-response' set up to track 'origin/research/v16.12-continuous-response'.
+2026-09-28T23:11:23.9678528Z ##[endgroup]
+2026-09-28T23:11:23.9726422Z [command]/usr/bin/git log -1 --format=%H
+2026-09-28T23:11:23.9757738Z d4615a4a5364b6a3fba5a7422deb82998dea55e8
+2026-09-28T23:11:24.0112440Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-09-28T23:11:24.0112857Z with:
+2026-09-28T23:11:24.0113086Z   python-version: 3.11
+2026-09-28T23:11:24.0113326Z   check-latest: false
+2026-09-28T23:11:24.0115586Z   token: ***
+2026-09-28T23:11:24.0115806Z   update-environment: true
+2026-09-28T23:11:24.0116056Z   allow-prereleases: false
+2026-09-28T23:11:24.0116535Z   freethreaded: false
+2026-09-28T23:11:24.0116755Z ##[endgroup]
+2026-09-28T23:11:24.1452119Z ##[group]Installed versions
+2026-09-28T23:11:24.1566423Z (node:2265) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-28T23:11:24.1569483Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-28T23:11:24.1570324Z Successfully set up CPython (3.11.16)
+2026-09-28T23:11:24.1571562Z ##[endgroup]
+2026-09-28T23:11:24.1754179Z ##[group]Run python -m pip install numpy==2.3.5 sympy==1.13.3 mpmath==1.3.0
+2026-09-28T23:11:24.1754856Z [36;1mpython -m pip install numpy==2.3.5 sympy==1.13.3 mpmath==1.3.0[0m
+2026-09-28T23:11:24.2091637Z shell: /usr/bin/bash -e {0}
+2026-09-28T23:11:24.2092073Z env:
+2026-09-28T23:11:24.2092512Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:24.2093231Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-28T23:11:24.2093940Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:24.2094562Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:24.2095123Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:24.2095686Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-28T23:11:24.2096157Z ##[endgroup]
+2026-09-28T23:11:25.3539275Z Collecting numpy==2.3.5
+2026-09-28T23:11:25.4605524Z   Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-09-28T23:11:25.5084078Z Collecting sympy==1.13.3
+2026-09-28T23:11:25.5196535Z   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
+2026-09-28T23:11:25.5405595Z Collecting mpmath==1.3.0
+2026-09-28T23:11:25.5515541Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-09-28T23:11:25.5678857Z Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+2026-09-28T23:11:26.0733158Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 35.4 MB/s  0:00:00
+2026-09-28T23:11:26.0860214Z Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+2026-09-28T23:11:26.1477261Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 100.3 MB/s  0:00:00
+2026-09-28T23:11:26.1588879Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-09-28T23:11:26.1644663Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 83.7 MB/s  0:00:00
+2026-09-28T23:11:26.2677173Z Installing collected packages: mpmath, sympy, numpy
+2026-09-28T23:11:33.3308194Z 
+2026-09-28T23:11:33.3317176Z Successfully installed mpmath-1.3.0 numpy-2.3.5 sympy-1.13.3
+2026-09-28T23:11:33.3859347Z ##[group]Run set -o pipefail
+2026-09-28T23:11:33.3859721Z [36;1mset -o pipefail[0m
+2026-09-28T23:11:33.3860049Z [36;1mgit rev-parse HEAD > execution_head.txt[0m
+2026-09-28T23:11:33.3860989Z [36;1mcd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response[0m
+2026-09-28T23:11:33.3861675Z [36;1mpython -m unittest -v 2>&1 | tee test.log[0m
+2026-09-28T23:11:33.3862232Z [36;1m(cd ../coherence-family && python -m unittest -v) 2>&1 | tee parent-test.log[0m
+2026-09-28T23:11:33.3862763Z [36;1mpython gate.py 2>&1 | tee audit.log[0m
+2026-09-28T23:11:33.3928959Z shell: /usr/bin/bash -e {0}
+2026-09-28T23:11:33.3929282Z env:
+2026-09-28T23:11:33.3929622Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:33.3930539Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-28T23:11:33.3931131Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:33.3931677Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:33.3932179Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:33.3932696Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-28T23:11:33.3933136Z   OPENBLAS_NUM_THREADS: 1
+2026-09-28T23:11:33.3933428Z ##[endgroup]
+2026-09-28T23:11:33.7096965Z test_gram_normal_blindness_and_sign_loss (test_gate.Tests.test_gram_normal_blindness_and_sign_loss) ... FAIL
+2026-09-28T23:11:33.7099043Z test_normal_energy_coefficients (test_gate.Tests.test_normal_energy_coefficients) ... FAIL
+2026-09-28T23:11:33.7103768Z test_uniform_coefficient_bound (test_gate.Tests.test_uniform_coefficient_bound) ... FAIL
+2026-09-28T23:11:33.7106089Z test_verdict_negative (test_gate.Tests.test_verdict_negative) ... FAIL
+2026-09-28T23:11:33.7141816Z test_weighted_polar_tiny_rank_and_orientation (test_gate.Tests.test_weighted_polar_tiny_rank_and_orientation) ... FAIL
+2026-09-28T23:11:33.7142966Z 
+2026-09-28T23:11:33.7143299Z ======================================================================
+2026-09-28T23:11:33.7144510Z FAIL: test_gram_normal_blindness_and_sign_loss (test_gate.Tests.test_gram_normal_blindness_and_sign_loss)
+2026-09-28T23:11:33.7145710Z ----------------------------------------------------------------------
+2026-09-28T23:11:33.7146471Z Traceback (most recent call last):
+2026-09-28T23:11:33.7154554Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 9, in test_gram_normal_blindness_and_sign_loss
+2026-09-28T23:11:33.7156608Z     g=self.gate();c=s.diag(2,0,0);n=s.diag(0,3,0);self.assertEqual(g.gram_derivative(c,n),s.zeros(3));self.assertEqual((c+n).T*(c+n),(c-n).T*(c-n));self.assertNotEqual(c+n,c-n)
+2026-09-28T23:11:33.7157614Z       ^^^^^^^^^^^
+2026-09-28T23:11:33.7158750Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+2026-09-28T23:11:33.7161218Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T23:11:33.7162854Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T23:11:33.7163624Z AssertionError: False is not true : expected RED: continuous-response audit absent
+2026-09-28T23:11:33.7164124Z 
+2026-09-28T23:11:33.7164283Z ======================================================================
+2026-09-28T23:11:33.7164894Z FAIL: test_normal_energy_coefficients (test_gate.Tests.test_normal_energy_coefficients)
+2026-09-28T23:11:33.7165544Z ----------------------------------------------------------------------
+2026-09-28T23:11:33.7165997Z Traceback (most recent call last):
+2026-09-28T23:11:33.7167463Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 11, in test_normal_energy_coefficients
+2026-09-28T23:11:33.7169235Z     g=self.gate();n=s.diag(0,2,0);m=s.diag(0,3,0);t=s.Symbol('t');co=g.energy_coefficients(n,m);self.assertEqual(sum((t**(i+2)*z for i,z in enumerate(co)),s.zeros(3)),(t*n+t*t*m).T*(t*n+t*t*m))
+2026-09-28T23:11:33.7170288Z       ^^^^^^^^^^^
+2026-09-28T23:11:33.7171301Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+2026-09-28T23:11:33.7173293Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T23:11:33.7174648Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T23:11:33.7175274Z AssertionError: False is not true : expected RED: continuous-response audit absent
+2026-09-28T23:11:33.7175683Z 
+2026-09-28T23:11:33.7175814Z ======================================================================
+2026-09-28T23:11:33.7176360Z FAIL: test_uniform_coefficient_bound (test_gate.Tests.test_uniform_coefficient_bound)
+2026-09-28T23:11:33.7177125Z ----------------------------------------------------------------------
+2026-09-28T23:11:33.7177537Z Traceback (most recent call last):
+2026-09-28T23:11:33.7178643Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 7, in test_uniform_coefficient_bound
+2026-09-28T23:11:33.7179864Z     g=self.gate();self.assertEqual(g.entry_bound([s.diag(-2,3,0),s.diag(1,0,0)]),6)
+2026-09-28T23:11:33.7180464Z       ^^^^^^^^^^^
+2026-09-28T23:11:33.7181372Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+2026-09-28T23:11:33.7183208Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T23:11:33.7184491Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T23:11:33.7185070Z AssertionError: False is not true : expected RED: continuous-response audit absent
+2026-09-28T23:11:33.7185459Z 
+2026-09-28T23:11:33.7185581Z ======================================================================
+2026-09-28T23:11:33.7186019Z FAIL: test_verdict_negative (test_gate.Tests.test_verdict_negative)
+2026-09-28T23:11:33.7186482Z ----------------------------------------------------------------------
+2026-09-28T23:11:33.7186871Z Traceback (most recent call last):
+2026-09-28T23:11:33.7187846Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 17, in test_verdict_negative
+2026-09-28T23:11:33.7189253Z     g=self.gate();self.assertEqual(g.classify(False,True),'INVALID');self.assertEqual(g.classify(True,False),'CONTINUOUS_RESPONSE_CRITERIA_NOT_CONFIRMED')
+2026-09-28T23:11:33.7190004Z       ^^^^^^^^^^^
+2026-09-28T23:11:33.7190947Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+2026-09-28T23:11:33.7192642Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T23:11:33.7194050Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T23:11:33.7194606Z AssertionError: False is not true : expected RED: continuous-response audit absent
+2026-09-28T23:11:33.7194955Z 
+2026-09-28T23:11:33.7195076Z ======================================================================
+2026-09-28T23:11:33.7195661Z FAIL: test_weighted_polar_tiny_rank_and_orientation (test_gate.Tests.test_weighted_polar_tiny_rank_and_orientation)
+2026-09-28T23:11:33.7196288Z ----------------------------------------------------------------------
+2026-09-28T23:11:33.7196643Z Traceback (most recent call last):
+2026-09-28T23:11:33.7197690Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 13, in test_weighted_polar_tiny_rank_and_orientation
+2026-09-28T23:11:33.7198662Z     g=self.gate()
+2026-09-28T23:11:33.7198867Z       ^^^^^^^^^^^
+2026-09-28T23:11:33.7199642Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/test_gate.py", line 5, in gate
+2026-09-28T23:11:33.7201393Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: continuous-response audit absent');q=importlib.util.spec_from_file_location('r1612',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T23:11:33.7202681Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T23:11:33.7203224Z AssertionError: False is not true : expected RED: continuous-response audit absent
+2026-09-28T23:11:33.7203573Z 
+2026-09-28T23:11:33.7203724Z ----------------------------------------------------------------------
+2026-09-28T23:11:33.7204056Z Ran 5 tests in 0.002s
+2026-09-28T23:11:33.7204195Z 
+2026-09-28T23:11:33.7204277Z FAILED (failures=5)
+2026-09-28T23:11:33.7474172Z ##[error]Process completed with exit code 1.
+2026-09-28T23:11:33.7579618Z ##[group]Run actions/upload-artifact@v4
+2026-09-28T23:11:33.7579973Z with:
+2026-09-28T23:11:33.7580753Z   name: continuous-response-d4615a4a5364b6a3fba5a7422deb82998dea55e8
+2026-09-28T23:11:33.7582546Z   path: execution_head.txt
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/*.log
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/result.json
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/continuous-response/SHA256SUMS
+
+2026-09-28T23:11:33.7584222Z   if-no-files-found: warn
+2026-09-28T23:11:33.7584506Z   compression-level: 6
+2026-09-28T23:11:33.7584768Z   overwrite: false
+2026-09-28T23:11:33.7585024Z   include-hidden-files: false
+2026-09-28T23:11:33.7585304Z env:
+2026-09-28T23:11:33.7585608Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:33.7586132Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-28T23:11:33.7586680Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:33.7587145Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:33.7587622Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T23:11:33.7588095Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-28T23:11:33.7588487Z ##[endgroup]
+2026-09-28T23:11:33.9267771Z (node:2306) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-28T23:11:33.9269122Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-28T23:11:33.9341703Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-09-28T23:11:33.9344725Z The least common ancestor is /home/runner/work/WetLabEngine/WetLabEngine. This will be the root directory of the artifact
+2026-09-28T23:11:33.9345941Z With the provided path, there will be 3 files uploaded
+2026-09-28T23:11:33.9351873Z Artifact name is valid!
+2026-09-28T23:11:33.9352933Z Root directory input is valid!
+2026-09-28T23:11:34.2222784Z Beginning upload of artifact content to blob storage
+2026-09-28T23:11:34.2453377Z (node:2306) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-28T23:11:34.3849352Z Uploaded bytes 2591
+2026-09-28T23:11:34.4283654Z Finished uploading artifact content to blob storage!
+2026-09-28T23:11:34.4285816Z SHA256 digest of uploaded artifact zip is b7f8748840235a22050bd7d4171750a20697932ac766778eb10c2985c89dc2f3
+2026-09-28T23:11:34.4287749Z Finalizing artifact upload
+2026-09-28T23:11:34.6362249Z Artifact continuous-response-d4615a4a5364b6a3fba5a7422deb82998dea55e8.zip successfully finalized. Artifact ID 11003463016
+2026-09-28T23:11:34.6364050Z Artifact continuous-response-d4615a4a5364b6a3fba5a7422deb82998dea55e8 has been successfully uploaded! Final size is 2591 bytes. Artifact ID is 11003463016
+2026-09-28T23:11:34.6368524Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36496625063/artifacts/11003463016
+2026-09-28T23:11:34.6557478Z Post job cleanup.
+2026-09-28T23:11:34.7438877Z [command]/usr/bin/git version
+2026-09-28T23:11:34.7482596Z git version 2.55.0
+2026-09-28T23:11:34.7523153Z Temporarily overriding HOME='/home/runner/work/_temp/ea21786c-388b-4439-a49e-4d93dfaa5e5b' before making global git config changes
+2026-09-28T23:11:34.7524797Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-28T23:11:34.7529731Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-28T23:11:34.7569899Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T23:11:34.7606130Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T23:11:34.7865383Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T23:11:34.7911400Z http.https://github.com/.extraheader
+2026-09-28T23:11:34.7912716Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-28T23:11:34.7948828Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T23:11:34.8206226Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T23:11:34.8244162Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T23:11:34.8674786Z Cleaning up orphan processes
+2026-09-28T23:11:34.8962636Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
