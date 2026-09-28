@@ -1,0 +1,27 @@
+{
+  "version": "16.01",
+  "branch": "research/v16.01-global-input-precision",
+  "parent_documentation_head": "be25cd28806bea11de0b57da1a342b03c57cf28a",
+  "preregistration_head": "7a89d1d9781ef2ffbe705044c73304c2497a5620",
+  "tested_head": "633e5016456a953be77c159680d8073ce4c4bf84",
+  "red": {
+    "run_id": 36435920620,
+    "job_id": 108973692026,
+    "artifact_id": 10975965417,
+    "artifact_sha256": "6a17af65b510a045229ce8752ec3148c0a4753125c4663c56ab394e6443707b5"
+  },
+  "measurement": {
+    "run_id": 36436733683,
+    "job_id": 108976481377,
+    "artifact_id": 10975264654,
+    "artifact_sha256": "ed194e86f0d80f971e30e8f060ef8678b768ee0cec900bebd664c2f5bc135407"
+  },
+  "verdict": "GLOBAL_INPUT_PRECISION_RECOVERY_CONFIRMED",
+  "all_valid": true,
+  "result_sha256": "8308d457346e42755697228c4877db2b28eeedb93f6f3c9a16d551aa4449b7ba",
+  "gzip_sha256": "fb34a2a3ae5197983d41e66fd44505b59c500f063d1e80cf6417059537f075ff",
+  "gzip_git_blob": "d52e33b60235a04a3cb4bef4353b65cddb2594ae",
+  "result_bytes": 11492280,
+  "gzip_bytes": 1881757,
+  "verification": "Both archives downloaded and SHA256 checked; execution heads and frozen source bytes checked; every measurement manifest entry checked against archive bytes and exact job log."
+}
