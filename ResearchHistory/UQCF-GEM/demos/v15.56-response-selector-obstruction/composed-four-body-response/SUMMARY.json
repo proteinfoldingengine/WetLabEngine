@@ -1,0 +1,351 @@
+{
+  "version": "15.98",
+  "all_valid": true,
+  "verdict": "COMPOSITION_ORDER_GEOMETRY_CONFIRMED",
+  "commuting_verdict": "COMMUTING_COMPOSITION_ACTIVATION_CONFIRMED",
+  "order_predicate": true,
+  "commuting_predicate": true,
+  "controls": {
+    "gram": 0.0,
+    "trace": 0.0,
+    "hermiticity": 0.0,
+    "hidden_pair_null": 0.0,
+    "individual_pair_null": 5.551115123125783e-17,
+    "one_body_null": 5.551115123125783e-17,
+    "incoherent_pair_null": 1.1102230246251565e-16,
+    "source_unitarity": 1.7853497068857698e-15,
+    "weight_sum": 0.0,
+    "exact_coefficient_error": 4.440892098500626e-16,
+    "centering": 1.7927873834788322e-18,
+    "geometry": 1.317618776498784e-14,
+    "derivative_identity": 1.0586975950405484e-13,
+    "overlap_first_loop": 7.425474180053579e-14,
+    "commuting_order_null": 1.32572096968145e-13,
+    "linear_contrast": 1.5354079400326221e-13,
+    "covariance": 7.714884556435152e-12,
+    "finite_channel_error": 1.2557378287627656e-10,
+    "affine_K_error": 1.2513132766560372e-09,
+    "affine_J_error": 4.53337585769691e-09,
+    "parents_valid": true,
+    "symbolic_certificate": {
+      "check_count": 8,
+      "checks": {
+        "local_reconstruction": true,
+        "single_source_pair_null": true,
+        "double_one_body_null": true,
+        "overlap_witness": true,
+        "disjoint_full_commutation": true,
+        "disjoint_activation_witness": true,
+        "incoherent_pair_null": true,
+        "finite_polynomial_identity": true
+      },
+      "valid": true
+    },
+    "inherited_certificates": [
+      {
+        "check_count": 8,
+        "checks": {
+          "pauli_source_algebra": true,
+          "source_unitaries": true,
+          "weight_derivative": true,
+          "generator_split": true,
+          "cross_leakage_table": true,
+          "incoherent_null": true,
+          "local_hamiltonian_null": true,
+          "spectator_trace_and_TP": true
+        },
+        "valid": true
+      },
+      {
+        "check_count": 13,
+        "checks": {
+          "basis_orthonormal": true,
+          "representation_product": true,
+          "planar_fixed_tensor": true,
+          "shared_line_rank": true,
+          "flip_commutator": true,
+          "no_common_line_rank": true,
+          "representation_covariance": true,
+          "swap_unitary_involution": true,
+          "spectator_connected_identity": true,
+          "frame_0": true,
+          "frame_1": true,
+          "frame_2": true,
+          "frame_3": true
+        },
+        "valid": true
+      },
+      {
+        "check_count": 45,
+        "checks": {
+          "isotropic_unit00": true,
+          "isotropic_unit01": true,
+          "isotropic_unit10": true,
+          "isotropic_unit11": true,
+          "isotropic_effects": true,
+          "isotropic_trace": true,
+          "isotropic_positive": true,
+          "isotropic_span": true,
+          "isotropic_commutator": true,
+          "plane_unit00": true,
+          "plane_unit01": true,
+          "plane_unit10": true,
+          "plane_unit11": true,
+          "plane_effects": true,
+          "plane_trace": true,
+          "plane_positive": true,
+          "plane_span": true,
+          "plane_commutator": true,
+          "line_unit00": true,
+          "line_unit01": true,
+          "line_unit10": true,
+          "line_unit11": true,
+          "line_effects": true,
+          "line_trace": true,
+          "line_positive": true,
+          "line_span": true,
+          "line_commutator": true,
+          "point_unit00": true,
+          "point_unit01": true,
+          "point_unit10": true,
+          "point_unit11": true,
+          "point_effects": true,
+          "point_trace": true,
+          "point_positive": true,
+          "point_span": true,
+          "point_commutator": true,
+          "connected_00": true,
+          "connected_01": true,
+          "connected_02": true,
+          "connected_10": true,
+          "connected_11": true,
+          "connected_12": true,
+          "connected_20": true,
+          "connected_21": true,
+          "connected_22": true
+        },
+        "valid": true
+      }
+    ],
+    "physicality": {
+      "min_eigenvalue": 0.023220735045541896,
+      "trace_error": 4.440892098500626e-16,
+      "hermiticity_error": 7.084579703514581e-18,
+      "count": 79704,
+      "valid": true
+    },
+    "minimum_weight": 0.0,
+    "rank_covariance_valid": true,
+    "commuting_ranks_null": true,
+    "limits": {
+      "gram": 1e-12,
+      "trace": 1e-12,
+      "hermiticity": 1e-12,
+      "hidden_pair_null": 1e-12,
+      "individual_pair_null": 1e-12,
+      "one_body_null": 1e-12,
+      "incoherent_pair_null": 1e-12,
+      "source_unitarity": 1e-12,
+      "weight_sum": 1e-12,
+      "exact_coefficient_error": 1e-12,
+      "centering": 1e-12,
+      "geometry": 1e-09,
+      "derivative_identity": 1e-09,
+      "overlap_first_loop": 1e-09,
+      "commuting_order_null": 1e-09,
+      "linear_contrast": 1e-09,
+      "covariance": 1e-09,
+      "finite_channel_error": 1e-07,
+      "affine_K_error": 1e-05,
+      "affine_J_error": 1e-05
+    }
+  },
+  "result_sha256": "044fa85ad44c2edf5e1d8e0fa4c2410f44498d5edc2456c99633706b4c251b0e",
+  "gzip_sha256": "20a117760c6f5a9ecac86e45c871411ab3ed64c59f48c42d79641202b6656c6d",
+  "result_bytes": 8680602,
+  "gzip_bytes": 1462362,
+  "row_count": 48,
+  "ranks": {
+    "overlap": {
+      "plane": {
+        "forward": [
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "reverse": [
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "contrast": [
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        ]
+      },
+      "isotropic": {
+        "forward": [
+          [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ]
+        ],
+        "reverse": [
+          [
+            [
+              3,
+              3,
+              3
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ]
+        ],
+        "contrast": [
+          [
+            [
+              3,
+              3,
+              3
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ]
+        ]
+      }
+    },
+    "disjoint": {
+      "plane": {
+        "forward": [
+          [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ]
+        ],
+        "reverse": [
+          [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ]
+        ],
+        "contrast": [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ]
+      },
+      "isotropic": {
+        "forward": [
+          [
+            [
+              6,
+              6,
+              6
+            ],
+            [
+              3,
+              3,
+              3
+            ]
+          ]
+        ],
+        "reverse": [
+          [
+            [
+              6,
+              6,
+              6
+            ],
+            [
+              3,
+              3,
+              3
+            ]
+          ]
+        ],
+        "contrast": [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  "domain_exits": []
+}

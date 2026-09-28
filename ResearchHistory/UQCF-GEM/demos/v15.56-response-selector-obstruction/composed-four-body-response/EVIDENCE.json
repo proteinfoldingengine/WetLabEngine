@@ -1,0 +1,37 @@
+{
+  "version": "15.98",
+  "branch": "research/v15.98-composed-four-body-response",
+  "parent": "903b72bc35f86533eab08e3de55b36b50fc96a70",
+  "preregistration_commit": "03f9aafca328f4dc92155d50b654e5c27ab988ea",
+  "tested_commit": "0262836849e2bf1f34b4790b172e7bf29311a9c1",
+  "red": {
+    "run": 36373498001,
+    "job": 108774508235,
+    "artifact": 10949993221,
+    "zip_sha256": "d21e6ced1a3e589991a084977bf194e6e4c02e0bc5b51531414bc32e4de23f3a",
+    "expected_missing_implementation_verified": true
+  },
+  "green": {
+    "run": 36373801764,
+    "job": 108775402939,
+    "artifact": 10950207970,
+    "zip_sha256": "317f68a1e7f4adb52044d7ba5a3505e28ef970f3cc487d2988a030fc6f44e085"
+  },
+  "gate_sha256": "ddc0e59aee1db514e77728dd7788d43545f03cde40cb7a19b221e2e8b1733239",
+  "raw_json_sha256": "044fa85ad44c2edf5e1d8e0fa4c2410f44498d5edc2456c99633706b4c251b0e",
+  "gzip_sha256": "20a117760c6f5a9ecac86e45c871411ab3ed64c59f48c42d79641202b6656c6d",
+  "raw_bytes": 8680602,
+  "gzip_bytes": 1462362,
+  "verdict": "COMPOSITION_ORDER_GEOMETRY_CONFIRMED",
+  "commuting_verdict": "COMMUTING_COMPOSITION_ACTIVATION_CONFIRMED",
+  "all_valid": true,
+  "rows": 48,
+  "verification": {
+    "red_and_green_archive_digests": true,
+    "execution_heads": true,
+    "frozen_files_byte_identity": true,
+    "all_green_manifest_checksums": true,
+    "job_log_json_matches_artifact": true
+  },
+  "main_merged": false
+}
