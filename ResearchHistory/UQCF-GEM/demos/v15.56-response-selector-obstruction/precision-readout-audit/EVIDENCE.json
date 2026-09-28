@@ -1,0 +1,49 @@
+{
+  "version": "16.00",
+  "branch": "research/v16.00-precision-readout-audit",
+  "parent": "64a294845b36877d08c0ef90c87bdec1e1800e58",
+  "preregistration_commit": "ab94d0ebc5ac1247cd30d385a6f67ede41e755a9",
+  "clean_red_commit": "8f92f9272124f93a243a5aa39dac88cf85527116",
+  "tested_commit": "7ed1b65c86700b6b4fd17bd366262c48cdae38d8",
+  "initial_red": {
+    "run": 36430646746,
+    "job": 108955642285,
+    "artifact": 10972964828,
+    "zip_sha256": "f9098c06e7830ac34abbc186b7d4f247dea6e396cea444b76b42f718b3c23dfe",
+    "note": "Expected missing implementation plus downstream empty-JSON capture error; workflow guard repaired before implementation."
+  },
+  "red": {
+    "run": 36430853798,
+    "job": 108956342728,
+    "artifact": 10973735786,
+    "zip_sha256": "e7173cb8fe7ff1b4e19f6af9af7bb412931838e8cb3a1c1e19457efcdecdbea1",
+    "expected_missing_implementation_verified": true
+  },
+  "green": {
+    "run": 36431426627,
+    "job": 108958306641,
+    "artifact": 10974221343,
+    "zip_sha256": "b93d2d24334ce903524abd22c9d96dc2108c5a54b864ebb50bb126fdf3ac0018"
+  },
+  "gate_sha256": "7eeead6262372ac6e57fc1a39d90775bd883227c017285997079c8fd70261fab",
+  "raw_json_sha256": "7d2fcc55c51474f12ac596ca5321d6a8e22265560066d64ded61e945ffd0fd24",
+  "gzip_sha256": "ccebbb43faf27b7c5d8825e9b53571067ca40011c575618119f059550effa4a2",
+  "raw_bytes": 5935776,
+  "gzip_bytes": 957761,
+  "verdict": "FROZEN_INPUT_RANK_RESIDUAL_PERSISTS",
+  "all_valid": true,
+  "recovery_predicate": false,
+  "case_count": 8,
+  "recovered_count": 0,
+  "historical_v15_99_verdict": "INVALID",
+  "verification": {
+    "all_three_archive_digests": true,
+    "execution_heads": true,
+    "frozen_source_files_byte_identity": true,
+    "all_measurement_manifest_checksums": true,
+    "job_log_manifest_matches_artifact": true,
+    "job_log_verdict_matches_artifact": true,
+    "retained_input_hashes": true
+  },
+  "main_merged": false
+}
