@@ -1,0 +1,15 @@
+# v16.07 support-stratum stability
+
+Parent publication e339e6bea0de00065d321d74999435acc02fcf30. User approved the next support-transport stability audit on 2026-09-28. This protocol is frozen before ensemble measurement.
+
+Question: does the archived sixth-edge D direction force the canonical polar support transport to be discontinuous, or is the direction compatible with a constant-rank path?
+
+Use unchanged 12 candidates, preparations plane/isotropic, archived binary a=1,1/3,1/6. Reconstruct exact rational C=C23 and V=DC23[Q[L_D,M_a]rho], with every binary residue preserved. Compute exact Moore-Penrose inverse C+, support projectors P=C C+, Q=C+ C, normal block N=(I-P)V(I-Q), ranks r=rank(C), k=rank(N), squared Frobenius norm of N, and exact identities for pseudoinverse/projectors/decomposition. Record C,V,C+,P,Q,N in every one of 72 cases. Distinguish exact nonzero N from its numerical magnitude.
+
+If k>0 label FORCED_RANK_CHANGE: for every differentiable curve C(t)=C+tV+o(t), the Schur complement forces rank(C(t))>=r+k for sufficiently small nonzero t. The canonical support polar partial isometry then differs from its baseline by at least sqrt(k) in Frobenius norm. Thus no continuous support-polar extension, and no derivative, exists along such a curve. If k=0 label TANGENT_COMPATIBLE_NOT_PATH_CERTIFIED: no actual finite physical path or readout has been certified. At a=1 require V=N=0. An affine pencil rank increase alone is explicitly not enough: its rank may rise at order t² even for a direction tangent to a rotating rank-one path.
+
+Compare reconstructed C and V to full archived 16.05 matrices and the exact 16.06 baseline ranks/matrices. Use the exact projectors, evaluated at 50/80 digits, in native and transformed frames. Check projector identities, N covariance, C/V archive agreement and cross-precision N agreement. Within-precision tolerance 1e-35; cross-precision 1e-30. Never infer support ranks using a numerical cutoff. Preserve all 288 numerical frame configurations. No finite step sweep, null-space completion, threshold relaxation or new loop observable.
+
+Validity: pinned source hashes and parent execution identities/completeness, all exact identities, numerical residual gates, transfer reconstruction, identity-middle control. Failure gives INVALID. Otherwise all 48 nonidentity (EB) cases forced gives SUPPORT_POLAR_DISCONTINUITY_FORCED; none forced gives NO_FIRST_ORDER_RANK_OBSTRUCTION; mixed gives MIXED_SUPPORT_STABILITY. Valid scientific nulls must not be discarded.
+
+Run absent-implementation RED, implement, independently review proof/code, pass new and parent tests, run targeted GitHub audit, verify raw artifact and publish final report/full evidence. This is a local matrix-path obstruction for the specified D direction; existence of a physical path realizing that direction is not asserted. It is not an obstruction for every alternative scalar observable. Time is pruning / ordered recoverability update; no source-law or gravity claim.
