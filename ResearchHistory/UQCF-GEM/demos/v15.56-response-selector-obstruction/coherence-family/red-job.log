@@ -1,0 +1,343 @@
+﻿2026-09-28T22:46:01.6807583Z Current runner version: '2.337.0'
+2026-09-28T22:46:01.6842917Z ##[group]Runner Image Provisioner
+2026-09-28T22:46:01.6844309Z Hosted Compute Agent
+2026-09-28T22:46:01.6845281Z Version: 20260828.587
+2026-09-28T22:46:01.6846389Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-28T22:46:01.6847712Z Build Date: 2026-08-28T16:44:25Z
+2026-09-28T22:46:01.6848872Z Worker ID: {5440fbd5-b224-4026-b408-0c743d20b688}
+2026-09-28T22:46:01.6850096Z Azure Region: eastus
+2026-09-28T22:46:01.6851373Z ##[endgroup]
+2026-09-28T22:46:01.6853876Z ##[group]Operating System
+2026-09-28T22:46:01.6855029Z Ubuntu
+2026-09-28T22:46:01.6855995Z 24.04.5
+2026-09-28T22:46:01.6856989Z LTS
+2026-09-28T22:46:01.6857885Z ##[endgroup]
+2026-09-28T22:46:01.6858786Z ##[group]Runner Image
+2026-09-28T22:46:01.6859924Z Image: ubuntu-24.04
+2026-09-28T22:46:01.6860936Z Version: 20260920.314.1
+2026-09-28T22:46:01.6863897Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-28T22:46:01.6866654Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-28T22:46:01.6868450Z ##[endgroup]
+2026-09-28T22:46:01.6870343Z ##[group]GITHUB_TOKEN Permissions
+2026-09-28T22:46:01.6873608Z Contents: read
+2026-09-28T22:46:01.6874570Z Metadata: read
+2026-09-28T22:46:01.6875577Z ##[endgroup]
+2026-09-28T22:46:01.6878635Z Secret source: Actions
+2026-09-28T22:46:01.6880365Z Cache mode: write
+2026-09-28T22:46:01.6882016Z Prepare workflow directory
+2026-09-28T22:46:01.7357352Z Prepare all required actions
+2026-09-28T22:46:01.7427804Z Getting action download info
+2026-09-28T22:46:01.9615176Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-28T22:46:02.0554904Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-09-28T22:46:02.1319154Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-09-28T22:46:02.3477624Z Complete job name: audit
+2026-09-28T22:46:02.4242413Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-09-28T22:46:02.4243571Z with:
+2026-09-28T22:46:02.4244081Z   repository: proteinfoldingengine/WetLabEngine
+2026-09-28T22:46:02.4248160Z   token: ***
+2026-09-28T22:46:02.4248590Z   ssh-strict: true
+2026-09-28T22:46:02.4249035Z   ssh-user: git
+2026-09-28T22:46:02.4249514Z   persist-credentials: true
+2026-09-28T22:46:02.4250008Z   clean: true
+2026-09-28T22:46:02.4250469Z   sparse-checkout-cone-mode: true
+2026-09-28T22:46:02.4250995Z   fetch-depth: 1
+2026-09-28T22:46:02.4251624Z   fetch-tags: false
+2026-09-28T22:46:02.4252121Z   show-progress: true
+2026-09-28T22:46:02.4252576Z   lfs: false
+2026-09-28T22:46:02.4252992Z   submodules: false
+2026-09-28T22:46:02.4253444Z   set-safe-directory: true
+2026-09-28T22:46:02.4253957Z   allow-unsafe-pr-checkout: false
+2026-09-28T22:46:02.4254737Z ##[endgroup]
+2026-09-28T22:46:02.5273562Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-09-28T22:46:02.5276374Z ##[group]Getting Git version info
+2026-09-28T22:46:02.5277753Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-28T22:46:02.5279543Z [command]/usr/bin/git version
+2026-09-28T22:46:02.5346462Z git version 2.55.0
+2026-09-28T22:46:02.5368444Z ##[endgroup]
+2026-09-28T22:46:02.5384722Z Temporarily overriding HOME='/home/runner/work/_temp/b2dc9549-d4c5-425b-8416-fde4da4bdf12' before making global git config changes
+2026-09-28T22:46:02.5387216Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-28T22:46:02.5389965Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-28T22:46:02.5450172Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-28T22:46:02.5454439Z ##[group]Initializing the repository
+2026-09-28T22:46:02.5458607Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-28T22:46:02.5583813Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-28T22:46:02.5584946Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-28T22:46:02.5586527Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-28T22:46:02.5587844Z hint: call:
+2026-09-28T22:46:02.5588901Z hint:
+2026-09-28T22:46:02.5589778Z hint: 	git config --global init.defaultBranch <name>
+2026-09-28T22:46:02.5590906Z hint:
+2026-09-28T22:46:02.5592283Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-28T22:46:02.5594007Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-28T22:46:02.5595366Z hint:
+2026-09-28T22:46:02.5596133Z hint: 	git branch -m <name>
+2026-09-28T22:46:02.5597012Z hint:
+2026-09-28T22:46:02.5598117Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-28T22:46:02.5599951Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-09-28T22:46:02.5606196Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-28T22:46:02.5662627Z ##[endgroup]
+2026-09-28T22:46:02.5664104Z ##[group]Disabling automatic garbage collection
+2026-09-28T22:46:02.5667064Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-28T22:46:02.5703847Z ##[endgroup]
+2026-09-28T22:46:02.5705216Z ##[group]Setting up auth
+2026-09-28T22:46:02.5711054Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T22:46:02.5755178Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T22:46:02.6159447Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T22:46:02.6213785Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T22:46:02.6433087Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T22:46:02.6473555Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T22:46:02.6721370Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-28T22:46:02.6768422Z ##[endgroup]
+2026-09-28T22:46:02.6782962Z ##[group]Fetching the repository
+2026-09-28T22:46:02.6784702Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +da2c1a90708c2376bd8be58420df3e131bda7855:refs/remotes/origin/research/v16.11-coherence-family
+2026-09-28T22:46:14.0769132Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-28T22:46:14.0772754Z  * [new ref]         da2c1a90708c2376bd8be58420df3e131bda7855 -> origin/research/v16.11-coherence-family
+2026-09-28T22:46:14.0776903Z ##[endgroup]
+2026-09-28T22:46:14.0778163Z ##[group]Determining the checkout info
+2026-09-28T22:46:14.0779621Z ##[endgroup]
+2026-09-28T22:46:14.0782225Z [command]/usr/bin/git sparse-checkout disable
+2026-09-28T22:46:14.1923071Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-28T22:46:14.2361359Z ##[group]Checking out the ref
+2026-09-28T22:46:14.2365827Z [command]/usr/bin/git checkout --progress --force -B research/v16.11-coherence-family refs/remotes/origin/research/v16.11-coherence-family
+2026-09-28T22:46:15.2969137Z Updating files:  45% (2073/4600)
+2026-09-28T22:46:15.3013074Z Updating files:  46% (2116/4600)
+2026-09-28T22:46:15.3048487Z Updating files:  47% (2162/4600)
+2026-09-28T22:46:15.3074039Z Updating files:  48% (2208/4600)
+2026-09-28T22:46:15.3099130Z Updating files:  49% (2254/4600)
+2026-09-28T22:46:15.3143551Z Updating files:  50% (2300/4600)
+2026-09-28T22:46:15.3845880Z Updating files:  51% (2346/4600)
+2026-09-28T22:46:15.3867286Z Updating files:  52% (2392/4600)
+2026-09-28T22:46:15.3887436Z Updating files:  53% (2438/4600)
+2026-09-28T22:46:15.3906532Z Updating files:  54% (2484/4600)
+2026-09-28T22:46:15.4042314Z Updating files:  55% (2530/4600)
+2026-09-28T22:46:15.4088449Z Updating files:  56% (2576/4600)
+2026-09-28T22:46:15.4237964Z Updating files:  57% (2622/4600)
+2026-09-28T22:46:15.4369988Z Updating files:  58% (2668/4600)
+2026-09-28T22:46:15.4415031Z Updating files:  59% (2714/4600)
+2026-09-28T22:46:15.4437898Z Updating files:  60% (2760/4600)
+2026-09-28T22:46:15.4839725Z Updating files:  61% (2806/4600)
+2026-09-28T22:46:15.6108151Z Updating files:  62% (2852/4600)
+2026-09-28T22:46:15.7919589Z Updating files:  63% (2898/4600)
+2026-09-28T22:46:15.7940695Z Updating files:  64% (2944/4600)
+2026-09-28T22:46:15.8932059Z Updating files:  65% (2990/4600)
+2026-09-28T22:46:16.0270570Z Updating files:  66% (3036/4600)
+2026-09-28T22:46:16.0784965Z Updating files:  67% (3082/4600)
+2026-09-28T22:46:16.1257454Z Updating files:  68% (3128/4600)
+2026-09-28T22:46:16.1745384Z Updating files:  69% (3174/4600)
+2026-09-28T22:46:16.1860852Z Updating files:  70% (3220/4600)
+2026-09-28T22:46:16.1896698Z Updating files:  71% (3266/4600)
+2026-09-28T22:46:16.1950148Z Updating files:  72% (3312/4600)
+2026-09-28T22:46:16.2410415Z Updating files:  73% (3358/4600)
+2026-09-28T22:46:16.2436740Z Updating files:  74% (3404/4600)
+2026-09-28T22:46:16.2466254Z Updating files:  75% (3450/4600)
+2026-09-28T22:46:16.2493403Z Updating files:  76% (3496/4600)
+2026-09-28T22:46:16.2521807Z Updating files:  77% (3542/4600)
+2026-09-28T22:46:16.2550308Z Updating files:  78% (3588/4600)
+2026-09-28T22:46:16.2578062Z Updating files:  79% (3634/4600)
+2026-09-28T22:46:16.2612387Z Updating files:  80% (3680/4600)
+2026-09-28T22:46:16.2648207Z Updating files:  81% (3726/4600)
+2026-09-28T22:46:16.2676749Z Updating files:  82% (3772/4600)
+2026-09-28T22:46:16.2846369Z Updating files:  83% (3818/4600)
+2026-09-28T22:46:16.3504278Z Updating files:  84% (3864/4600)
+2026-09-28T22:46:16.6535418Z Updating files:  85% (3910/4600)
+2026-09-28T22:46:16.6587107Z Updating files:  86% (3956/4600)
+2026-09-28T22:46:16.6844402Z Updating files:  87% (4002/4600)
+2026-09-28T22:46:16.7046112Z Updating files:  88% (4048/4600)
+2026-09-28T22:46:16.7184825Z Updating files:  89% (4094/4600)
+2026-09-28T22:46:16.7438809Z Updating files:  90% (4140/4600)
+2026-09-28T22:46:16.7871018Z Updating files:  91% (4186/4600)
+2026-09-28T22:46:16.8013060Z Updating files:  92% (4232/4600)
+2026-09-28T22:46:16.8049777Z Updating files:  93% (4278/4600)
+2026-09-28T22:46:16.8089021Z Updating files:  94% (4324/4600)
+2026-09-28T22:46:16.8175220Z Updating files:  95% (4370/4600)
+2026-09-28T22:46:16.8218582Z Updating files:  96% (4416/4600)
+2026-09-28T22:46:16.8258615Z Updating files:  97% (4462/4600)
+2026-09-28T22:46:16.8392841Z Updating files:  98% (4508/4600)
+2026-09-28T22:46:16.8432532Z Updating files:  99% (4554/4600)
+2026-09-28T22:46:16.8433305Z Updating files: 100% (4600/4600)
+2026-09-28T22:46:16.8433803Z Updating files: 100% (4600/4600), done.
+2026-09-28T22:46:16.8500909Z Switched to a new branch 'research/v16.11-coherence-family'
+2026-09-28T22:46:16.8507513Z branch 'research/v16.11-coherence-family' set up to track 'origin/research/v16.11-coherence-family'.
+2026-09-28T22:46:16.8598605Z ##[endgroup]
+2026-09-28T22:46:16.8650726Z [command]/usr/bin/git log -1 --format=%H
+2026-09-28T22:46:16.8679912Z da2c1a90708c2376bd8be58420df3e131bda7855
+2026-09-28T22:46:16.9026244Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-09-28T22:46:16.9026689Z with:
+2026-09-28T22:46:16.9026902Z   python-version: 3.11
+2026-09-28T22:46:16.9027156Z   check-latest: false
+2026-09-28T22:46:16.9029878Z   token: ***
+2026-09-28T22:46:16.9030100Z   update-environment: true
+2026-09-28T22:46:16.9030367Z   allow-prereleases: false
+2026-09-28T22:46:16.9030607Z   freethreaded: false
+2026-09-28T22:46:16.9030833Z ##[endgroup]
+2026-09-28T22:46:17.0378148Z ##[group]Installed versions
+2026-09-28T22:46:17.0520776Z (node:2258) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-28T22:46:17.0521879Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-28T22:46:17.0522701Z Successfully set up CPython (3.11.16)
+2026-09-28T22:46:17.0523456Z ##[endgroup]
+2026-09-28T22:46:17.0675205Z ##[group]Run python -m pip install numpy==2.3.5 sympy==1.13.3 mpmath==1.3.0
+2026-09-28T22:46:17.0675849Z [36;1mpython -m pip install numpy==2.3.5 sympy==1.13.3 mpmath==1.3.0[0m
+2026-09-28T22:46:17.1049452Z shell: /usr/bin/bash -e {0}
+2026-09-28T22:46:17.1049830Z env:
+2026-09-28T22:46:17.1050193Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:17.1050799Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-28T22:46:17.1051615Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:17.1052136Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:17.1052704Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:17.1053242Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-28T22:46:17.1053681Z ##[endgroup]
+2026-09-28T22:46:18.2089400Z Collecting numpy==2.3.5
+2026-09-28T22:46:18.2739800Z   Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-09-28T22:46:18.3150335Z Collecting sympy==1.13.3
+2026-09-28T22:46:18.3198071Z   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
+2026-09-28T22:46:18.3346290Z Collecting mpmath==1.3.0
+2026-09-28T22:46:18.3399141Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-09-28T22:46:18.3542356Z Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+2026-09-28T22:46:18.5334910Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 97.4 MB/s  0:00:00
+2026-09-28T22:46:18.5381002Z Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+2026-09-28T22:46:18.7388089Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 30.2 MB/s  0:00:00
+2026-09-28T22:46:18.7454095Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-09-28T22:46:19.2273262Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 571.8 kB/s  0:00:00
+2026-09-28T22:46:19.3331309Z Installing collected packages: mpmath, sympy, numpy
+2026-09-28T22:46:26.9108039Z 
+2026-09-28T22:46:26.9116972Z Successfully installed mpmath-1.3.0 numpy-2.3.5 sympy-1.13.3
+2026-09-28T22:46:26.9664581Z ##[group]Run set -o pipefail
+2026-09-28T22:46:26.9664940Z [36;1mset -o pipefail[0m
+2026-09-28T22:46:26.9665234Z [36;1mgit rev-parse HEAD > execution_head.txt[0m
+2026-09-28T22:46:26.9665764Z [36;1mcd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family[0m
+2026-09-28T22:46:26.9666301Z [36;1mpython -m unittest -v 2>&1 | tee test.log[0m
+2026-09-28T22:46:26.9666751Z [36;1m(cd ../source-reversal && python -m unittest -v) 2>&1 | tee parent-test.log[0m
+2026-09-28T22:46:26.9667215Z [36;1mpython gate.py 2>&1 | tee audit.log[0m
+2026-09-28T22:46:26.9733024Z shell: /usr/bin/bash -e {0}
+2026-09-28T22:46:26.9733285Z env:
+2026-09-28T22:46:26.9733564Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:26.9734028Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-28T22:46:26.9734482Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:26.9734920Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:26.9735326Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:26.9735722Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-28T22:46:26.9736059Z   OPENBLAS_NUM_THREADS: 1
+2026-09-28T22:46:26.9736287Z ##[endgroup]
+2026-09-28T22:46:27.3572426Z test_affine_source_endpoints (test_gate.Tests.test_affine_source_endpoints) ... FAIL
+2026-09-28T22:46:27.3575288Z test_continuum_bound (test_gate.Tests.test_continuum_bound) ... FAIL
+2026-09-28T22:46:27.3578230Z test_convex_channel_domain (test_gate.Tests.test_convex_channel_domain) ... FAIL
+2026-09-28T22:46:27.3581234Z test_verdict_negative_cases (test_gate.Tests.test_verdict_negative_cases) ... FAIL
+2026-09-28T22:46:27.3584335Z test_zero_normal_not_enough (test_gate.Tests.test_zero_normal_not_enough) ... FAIL
+2026-09-28T22:46:27.3585029Z 
+2026-09-28T22:46:27.3585257Z ======================================================================
+2026-09-28T22:46:27.3586166Z FAIL: test_affine_source_endpoints (test_gate.Tests.test_affine_source_endpoints)
+2026-09-28T22:46:27.3586772Z ----------------------------------------------------------------------
+2026-09-28T22:46:27.3587221Z Traceback (most recent call last):
+2026-09-28T22:46:27.3593992Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 16, in test_affine_source_endpoints
+2026-09-28T22:46:27.3595085Z     g=self.gate();d={(0,0,1,0):s.Integer(1)};lam=s.Symbol('lam',real=True);x=g.family_action(d,lam)
+2026-09-28T22:46:27.3595531Z       ^^^^^^^^^^^
+2026-09-28T22:46:27.3596303Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+2026-09-28T22:46:27.3597783Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T22:46:27.3598848Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T22:46:27.3599359Z AssertionError: False is not true : expected RED: coherence-family audit absent
+2026-09-28T22:46:27.3599692Z 
+2026-09-28T22:46:27.3599815Z ======================================================================
+2026-09-28T22:46:27.3600208Z FAIL: test_continuum_bound (test_gate.Tests.test_continuum_bound)
+2026-09-28T22:46:27.3600624Z ----------------------------------------------------------------------
+2026-09-28T22:46:27.3600970Z Traceback (most recent call last):
+2026-09-28T22:46:27.3602044Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 14, in test_continuum_bound
+2026-09-28T22:46:27.3603664Z     g=self.gate();m=s.diag(1,0,0);self.assertTrue(g.continuum_bound([m,s.diag(0,1,0)],1,1)['certified']);self.assertFalse(g.continuum_bound([m,s.diag(0,0,1)],1,1)['certified']);self.assertTrue(g.continuum_bound([m],1,2)['certified'])
+2026-09-28T22:46:27.3604501Z       ^^^^^^^^^^^
+2026-09-28T22:46:27.3605207Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+2026-09-28T22:46:27.3606620Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T22:46:27.3607678Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T22:46:27.3608175Z AssertionError: False is not true : expected RED: coherence-family audit absent
+2026-09-28T22:46:27.3608494Z 
+2026-09-28T22:46:27.3608620Z ======================================================================
+2026-09-28T22:46:27.3609048Z FAIL: test_convex_channel_domain (test_gate.Tests.test_convex_channel_domain)
+2026-09-28T22:46:27.3609516Z ----------------------------------------------------------------------
+2026-09-28T22:46:27.3609865Z Traceback (most recent call last):
+2026-09-28T22:46:27.3610710Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 7, in test_convex_channel_domain
+2026-09-28T22:46:27.3611830Z     g=self.gate()
+2026-09-28T22:46:27.3612030Z       ^^^^^^^^^^^
+2026-09-28T22:46:27.3612752Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+2026-09-28T22:46:27.3614161Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T22:46:27.3615192Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T22:46:27.3615684Z AssertionError: False is not true : expected RED: coherence-family audit absent
+2026-09-28T22:46:27.3616003Z 
+2026-09-28T22:46:27.3616113Z ======================================================================
+2026-09-28T22:46:27.3616538Z FAIL: test_verdict_negative_cases (test_gate.Tests.test_verdict_negative_cases)
+2026-09-28T22:46:27.3616981Z ----------------------------------------------------------------------
+2026-09-28T22:46:27.3617311Z Traceback (most recent call last):
+2026-09-28T22:46:27.3618154Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 19, in test_verdict_negative_cases
+2026-09-28T22:46:27.3619943Z     g=self.gate();self.assertEqual(g.classify(True,False,False,False),'FAMILY_IDENTITIES_NOT_CONFIRMED');self.assertEqual(g.classify(True,True,False,True),'ZERO_COHERENCE_RANK_CHANGE');self.assertEqual(g.classify(True,True,True,False),'CONTINUUM_LIMIT_NOT_CERTIFIED');self.assertEqual(g.classify(False,True,True,True),'INVALID')
+2026-09-28T22:46:27.3621338Z       ^^^^^^^^^^^
+2026-09-28T22:46:27.3622024Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+2026-09-28T22:46:27.3623440Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T22:46:27.3624455Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T22:46:27.3625083Z AssertionError: False is not true : expected RED: coherence-family audit absent
+2026-09-28T22:46:27.3625426Z 
+2026-09-28T22:46:27.3625552Z ======================================================================
+2026-09-28T22:46:27.3625989Z FAIL: test_zero_normal_not_enough (test_gate.Tests.test_zero_normal_not_enough)
+2026-09-28T22:46:27.3626460Z ----------------------------------------------------------------------
+2026-09-28T22:46:27.3626807Z Traceback (most recent call last):
+2026-09-28T22:46:27.3627705Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 12, in test_zero_normal_not_enough
+2026-09-28T22:46:27.3629008Z     g=self.gate();self.assertFalse(g.zero_certificate(s.diag(1,0,0),s.zeros(3),s.diag(0,1,0))['certified']);self.assertTrue(g.zero_certificate(s.diag(1,0,0),s.diag(1,0,0),s.zeros(3))['certified'])
+2026-09-28T22:46:27.3629736Z       ^^^^^^^^^^^
+2026-09-28T22:46:27.3630446Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+2026-09-28T22:46:27.3632001Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-28T22:46:27.3633041Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-28T22:46:27.3633669Z AssertionError: False is not true : expected RED: coherence-family audit absent
+2026-09-28T22:46:27.3633990Z 
+2026-09-28T22:46:27.3634140Z ----------------------------------------------------------------------
+2026-09-28T22:46:27.3634471Z Ran 5 tests in 0.002s
+2026-09-28T22:46:27.3634609Z 
+2026-09-28T22:46:27.3634699Z FAILED (failures=5)
+2026-09-28T22:46:27.3947240Z ##[error]Process completed with exit code 1.
+2026-09-28T22:46:27.4049245Z ##[group]Run actions/upload-artifact@v4
+2026-09-28T22:46:27.4049572Z with:
+2026-09-28T22:46:27.4049903Z   name: coherence-family-da2c1a90708c2376bd8be58420df3e131bda7855
+2026-09-28T22:46:27.4051615Z   path: execution_head.txt
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/*.log
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/result.json
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/SHA256SUMS
+
+2026-09-28T22:46:27.4052943Z   if-no-files-found: warn
+2026-09-28T22:46:27.4053192Z   compression-level: 6
+2026-09-28T22:46:27.4053414Z   overwrite: false
+2026-09-28T22:46:27.4053634Z   include-hidden-files: false
+2026-09-28T22:46:27.4053870Z env:
+2026-09-28T22:46:27.4054129Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:27.4054568Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-28T22:46:27.4055039Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:27.4055436Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:27.4055849Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-28T22:46:27.4056247Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-28T22:46:27.4056570Z ##[endgroup]
+2026-09-28T22:46:27.5728066Z (node:2299) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-28T22:46:27.5729024Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-28T22:46:27.5814016Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-09-28T22:46:27.5815973Z The least common ancestor is /home/runner/work/WetLabEngine/WetLabEngine. This will be the root directory of the artifact
+2026-09-28T22:46:27.5817129Z With the provided path, there will be 3 files uploaded
+2026-09-28T22:46:27.5841923Z Artifact name is valid!
+2026-09-28T22:46:27.5842706Z Root directory input is valid!
+2026-09-28T22:46:27.7958294Z Beginning upload of artifact content to blob storage
+2026-09-28T22:46:27.8186371Z (node:2299) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-28T22:46:27.8624374Z Uploaded bytes 2613
+2026-09-28T22:46:27.8788375Z Finished uploading artifact content to blob storage!
+2026-09-28T22:46:27.8789695Z SHA256 digest of uploaded artifact zip is f5cd8e3b453d8d07ed3cf7414c9ebbea3d830264ebcf5bf4c947c0c03cd8530b
+2026-09-28T22:46:27.8791474Z Finalizing artifact upload
+2026-09-28T22:46:28.0823519Z Artifact coherence-family-da2c1a90708c2376bd8be58420df3e131bda7855.zip successfully finalized. Artifact ID 11002473781
+2026-09-28T22:46:28.0825068Z Artifact coherence-family-da2c1a90708c2376bd8be58420df3e131bda7855 has been successfully uploaded! Final size is 2613 bytes. Artifact ID is 11002473781
+2026-09-28T22:46:28.0831456Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36494298208/artifacts/11002473781
+2026-09-28T22:46:28.1018367Z Post job cleanup.
+2026-09-28T22:46:28.1889449Z [command]/usr/bin/git version
+2026-09-28T22:46:28.1934942Z git version 2.55.0
+2026-09-28T22:46:28.1978786Z Temporarily overriding HOME='/home/runner/work/_temp/5ab219d0-b716-4bef-98cc-e1e793e19320' before making global git config changes
+2026-09-28T22:46:28.1980259Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-28T22:46:28.1984304Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-28T22:46:28.2024176Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T22:46:28.2058482Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T22:46:28.2318683Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T22:46:28.2355800Z http.https://github.com/.extraheader
+2026-09-28T22:46:28.2367280Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-28T22:46:28.2406071Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T22:46:28.2664568Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T22:46:28.2715669Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T22:46:28.3152332Z Cleaning up orphan processes
+2026-09-28T22:46:28.3449055Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
