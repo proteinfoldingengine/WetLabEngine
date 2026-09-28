@@ -5,3 +5,7 @@ Preregistration commit c10168fd844f68a891fa63bbd041dcd9105d3b81. Expected RED ru
 Independent review approved the exact Pauli normalization, binary-rational conversion, preparation scales, commutator sign and connected-product terms. It confirmed that the 112-word support certificate is conditional, actual excluded-state terms are not projected away, and direct archived-state polynomials remain authoritative. Covariance, precision, parent comparisons and inherited polar controls cover the declared scope. No critical or important findings remained. An explicit INVALID guard also enforces the exact identity-middle polynomial null.
 
 Six new targeted tests pass locally. The workflow additionally runs the eleven v16.04 and nine v16.03 tests. No candidate or ensemble measurement was executed before review. Review is not numerical evidence.
+
+## Publication validator review
+
+Independent review found missing validation of support coverage/reconstruction and excluded-sector zero metadata. Added checks and a regression test; observed meaningful RED then all six reporter tests GREEN. Full ensemble passes the strengthened validator. Scientific execution files are unchanged.

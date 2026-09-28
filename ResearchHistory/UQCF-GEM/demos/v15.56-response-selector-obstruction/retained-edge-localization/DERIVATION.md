@@ -1,6 +1,6 @@
 # v16.05 — Conditional omitted-edge localization
 
-Status: premeasurement argument; archived-state conditions have not yet been measured.
+Status: the preregistered sufficient conditions and direct exact polynomials were confirmed for all 12 archived states; see RESULTS.md.
 
 Let S be the span of four-site Pauli words with at least one identity on sites 2,3. The ideal historical construction rho=(rho_012 tensor I_3/2 + rho_013 tensor I_2/2)/2 lies in S. The actual archived binary state must be checked separately.
 
@@ -12,4 +12,4 @@ More generally, the same conclusion applies to a state decomposed as rho_S+rho_e
 
 This is a conditional statement about the frozen source locality, state support, preparation and selected five-edge readout. It is not a universal D-null theorem for arbitrary four-qubit states or other loop choices. In particular, a two-body input on (2,3) outside the stated support may yield a one-body commutator, whose connected subtraction can reach other edges when the baseline has nonzero one-body moments.
 
-The preregistered computation will test the entire sufficient basis class, inspect the archived support remainder, compute exact six-edge polynomials, and compare them against independent high-precision numerical directions and the published T_D matrices. No new geometry or source is chosen.
+The preregistered computation tested the entire sufficient basis class, inspected the archived support remainder, computed exact six-edge polynomials, and compared them against independent high-precision numerical directions and the published T_D matrices. No new geometry or source is chosen.

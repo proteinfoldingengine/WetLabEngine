@@ -1,0 +1,16 @@
+test_affine_readout_common_tangent_null (test_gate.AuditTests.test_affine_readout_common_tangent_null) ... ok
+test_commutator_sign_and_weight_preserving_null (test_gate.AuditTests.test_commutator_sign_and_weight_preserving_null) ... ok
+test_connected_derivative_includes_both_products (test_gate.AuditTests.test_connected_derivative_includes_both_products) ... ok
+test_domain_and_nonfinite_fail_closed (test_gate.AuditTests.test_domain_and_nonfinite_fail_closed) ... ok
+test_lift_respects_site_order_and_spectator (test_gate.AuditTests.test_lift_respects_site_order_and_spectator) ... ok
+test_provenance_rejects_modified_and_missing_file (test_gate.AuditTests.test_provenance_rejects_modified_and_missing_file) ... ok
+test_cli_invalid_result_returns_failure (test_summary.SummaryTests.test_cli_invalid_result_returns_failure) ... ok
+test_missing_candidate_or_duplicate_configuration_rejected (test_summary.SummaryTests.test_missing_candidate_or_duplicate_configuration_rejected) ... ok
+test_null_is_valid_but_control_failure_overrides (test_summary.SummaryTests.test_null_is_valid_but_control_failure_overrides) ... ok
+test_rank_metadata_and_frame_disagreement_rejected (test_summary.SummaryTests.test_rank_metadata_and_frame_disagreement_rejected) ... ok
+test_wrong_head_and_nonfinite_rejected (test_summary.SummaryTests.test_wrong_head_and_nonfinite_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.636s
+
+OK
