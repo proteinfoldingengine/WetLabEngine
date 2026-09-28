@@ -43,6 +43,21 @@ class GateTests(unittest.TestCase):
         self.assertEqual(g.adjudicate(False,['active'],True),('INVALID','INVALID'))
         self.assertEqual(g.adjudicate(True,['null'],False),('DISJOINT_CUBIC_NUMERICAL_NULL','FINITE_GRID_OVERLAP_RESPONSE_NOT_CONFIRMED'))
         self.assertEqual(g.adjudicate(True,['unresolved'],True)[0],'DISJOINT_CUBIC_UNRESOLVED')
+    def test_classification_agreement_and_domain_mismatch(self):
+        g=self.need()
+        with mp.workdps(50):
+            zero=mp.zeros(3,1);near=mp.matrix([['2e-35'],[0],[0]])
+            self.assertFalse(g.agreement([zero,zero],[near,near],classification=True)[0])
+            self.assertFalse(g.agreement([zero,zero],[None,None])[0])
+            self.assertFalse(g.agreement([None,zero],[None,None])[0])
+    def test_nonfinite_is_not_a_domain_exit(self):
+        g=self.need()
+        with mp.workdps(50):
+            cs=[mp.eye(3) for _ in range(5)];cs[0][0,0]=mp.nan
+            try:g.response(cs,[mp.eye(3)]*5,[[mp.zeros(3)]*5],'isotropic')
+            except g.DomainError:self.fail('nonfinite arithmetic was a domain exit')
+            except ValueError:pass
+            else:self.fail('nonfinite input was accepted')
     def test_fail_closed_classification(self):
         g=self.need()
         with mp.workdps(50):
