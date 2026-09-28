@@ -1,0 +1,38 @@
+{
+  "version": "15.95",
+  "branch": "research/v15.95-compatible-holonomy-reduction",
+  "parent": "22f93cd9483eacca8d09e89e8a1b4aa8aa47a77b",
+  "preregistration": "3fa73e0238ad0fd19c3aa743c8e1446cb6ca6fdb",
+  "implementation": "baa8860653d0b00eb20f9ec60c3fcefcd3619534",
+  "red": {
+    "run": 36368093376,
+    "job": 108758435903,
+    "artifact": 10947937693,
+    "archive_sha256": "cd1619e2c310885ee6570b64af28fef767fcc82570e0c624d9120819089f8896",
+    "expected_missing_implementation": true
+  },
+  "green": {
+    "run": 36368371453,
+    "job": 108759246129,
+    "artifact": 10948471545,
+    "archive_sha256": "09fda636ef0de677f3eaf56689663e6f67d1f2405f05431fa09f9743fb6d204d",
+    "tests": 4,
+    "exact_checks": 13,
+    "cases": 36,
+    "loop_direction_derivatives": 972
+  },
+  "all_valid": true,
+  "verdict": "FIXED_SUPPORT_HOLONOMY_REDUCTION_CONFIRMED",
+  "response_verdict": "PLANAR_LOOP_RESPONSE_CONFIRMED",
+  "result_sha256": "ee9b13d07c3856357b157fdcf58854957fe56767ee55eeba61266b34ee40e607",
+  "gzip_sha256": "f05a0ebc7d41128d8b2be4fd46161d7827f623d6107da8b3dd2c4585cb95561f",
+  "gzip_blob": "e6a09f4f0fa66e3f44b635f7e0550e7195c6347c",
+  "verification": {
+    "artifact_heads": true,
+    "frozen_sources": true,
+    "implementation_bytes": true,
+    "artifact_checksums": true,
+    "log_json_matches_artifact": true
+  },
+  "scope": "Predicted aggregation at fixed compatible supports on one triangle; O(2) stabilizer, SO(2) identity component. No moving-support bound or measured global gauge group."
+}

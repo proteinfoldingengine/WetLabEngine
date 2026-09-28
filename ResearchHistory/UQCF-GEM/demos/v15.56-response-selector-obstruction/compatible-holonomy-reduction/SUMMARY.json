@@ -1,0 +1,84 @@
+{
+  "version": "15.95",
+  "all_valid": true,
+  "verdict": "FIXED_SUPPORT_HOLONOMY_REDUCTION_CONFIRMED",
+  "response_verdict": "PLANAR_LOOP_RESPONSE_CONFIRMED",
+  "reduction_predicate": true,
+  "response_predicate": true,
+  "controls": {
+    "archived_R": 0.0,
+    "archived_W": 0.0,
+    "archived_edge_map": 0.0,
+    "support": 2.249282079202031e-15,
+    "normal_sector": 1.1118609998646817e-15,
+    "parent_triple": 1.828605908730779e-15,
+    "product_rule": 1.223406398996942e-15,
+    "skew": 3.287160894347909e-15,
+    "confinement": 1.627173020939757e-15,
+    "sum_aggregation": 1.2747484502619122e-15,
+    "covariance": 1.5365508518495276e-14,
+    "finite_difference_final": 1.7861292880138705e-08,
+    "parent_hashes_valid": true,
+    "parent_verdicts_valid": true,
+    "candidate_indices_valid": true,
+    "input_domain_valid": true,
+    "symbolic_certificate": {
+      "check_count": 13,
+      "checks": {
+        "embedded_O2_proper": true,
+        "normal_sign_actions": true,
+        "plane_parallel": true,
+        "flip_conjugation": true,
+        "flip_noncommutation": true,
+        "fixed_plane_lie_kernel": true,
+        "continuous_rotations_commute": true,
+        "loop_derivative_sum": true,
+        "fixed_plane_response_rank": true,
+        "unrestricted_response_rank": true,
+        "frame_0": true,
+        "frame_1": true,
+        "frame_2": true
+      },
+      "valid": true
+    }
+  },
+  "numerical_controls": {
+    "unrestricted_error": 0.0,
+    "unrestricted_ranks": [
+      3,
+      3,
+      3
+    ],
+    "flip_commutator_squared": 5.120000000000002,
+    "plane_preservation": 3.7682219008410604e-17,
+    "valid": true
+  },
+  "result_sha256": "ee9b13d07c3856357b157fdcf58854957fe56767ee55eeba61266b34ee40e607",
+  "gzip_sha256": "f05a0ebc7d41128d8b2be4fd46161d7827f623d6107da8b3dd2c4585cb95561f",
+  "result_bytes": 926458,
+  "gzip_bytes": 83596,
+  "row_count": 36,
+  "K_ranks": {
+    "-1": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "0": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "1": [
+      [
+        1,
+        1,
+        1
+      ]
+    ]
+  }
+}
