@@ -1,0 +1,31 @@
+{
+  "parent_sha": "5e4c27c47dbfbc922fdfcf903f0f9dd95d139fdd",
+  "preregistration_sha": "54e9dfc47143407028fb77465fe00ac01559a400",
+  "tested_sha": "8ee6415db853196e5ea0867c2ec13dafa5d37f6d",
+  "red": {
+    "run": 36360938558,
+    "job": 108737869563,
+    "artifact": 10945457367,
+    "zip_sha256": "1c47bfa957684bced7e1ef28438f0bb7247a886bc807895810409a1f5de2f5a2"
+  },
+  "green": {
+    "run": 36361210766,
+    "job": 108738641813,
+    "artifact": 10945577420,
+    "zip_sha256": "1fa8578b3a08d1f7b346a044ee85c0e4e36f32cae0624aa632e366fc3a260a24"
+  },
+  "result_sha256": "9c848c70134adbb62e70c988dc35001834bccf3c78a0539b294e6ce60167bca9",
+  "gzip_sha256": "1e38de1e7e1474e4d14546f722c3ab5013bf347fb02f72ab91bb43115a6da984",
+  "gzip_git_blob": "c9320f49d517a9ba9e8ca8f267a6c56a9d1f5de5",
+  "gzip_bytes": 291139,
+  "verified": [
+    "exact_job_logs",
+    "downloaded_zip_digests",
+    "execution_heads",
+    "frozen_source_bytes",
+    "green_sha256sums",
+    "log_and_artifact_JSON_bytes_after_timestamp_BOM_header_removal",
+    "gzip_git_blob_identity",
+    "read_only_math_and_protocol_review"
+  ]
+}

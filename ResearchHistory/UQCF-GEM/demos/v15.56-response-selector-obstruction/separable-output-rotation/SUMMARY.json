@@ -1,0 +1,175 @@
+{
+  "version": "15.91",
+  "candidate_indices": [
+    13,
+    16,
+    22,
+    25,
+    27,
+    29,
+    37,
+    39,
+    46,
+    50,
+    66,
+    77
+  ],
+  "all_valid": true,
+  "verdict": "SEPARABLE_OUTPUT_ROTATIONAL_RESPONSE_CONFIRMED",
+  "zero_verdict": "ZERO_ATTENUATION_POLAR_UNDEFINED_CONFIRMED",
+  "response_predicate": true,
+  "zero_predicate": true,
+  "controls": {
+    "effect_completeness": 1.1102230246251565e-15,
+    "matrix_unit_reconstruction": 1.6653345369377348e-16,
+    "sylvester": 7.002178863876905e-16,
+    "parent_metric_error": 2.3666389778753466e-15,
+    "probability_sum": 3.3306808130986375e-16,
+    "tangent_probability_sum": 7.047314121155779e-19,
+    "moment_scaling": 1.7585759237714882e-16,
+    "center_tangent_reconstruction": 1.6653345377887156e-16,
+    "parents_valid": true,
+    "archive_ranks_match": true,
+    "symbolic_certificate": {
+      "check_count": 19,
+      "checks": {
+        "povm_sum": true,
+        "matrix_unit_00": true,
+        "matrix_unit_01": true,
+        "matrix_unit_10": true,
+        "matrix_unit_11": true,
+        "trace_0": true,
+        "det_0": true,
+        "trace_1": true,
+        "det_1": true,
+        "trace_2": true,
+        "det_2": true,
+        "trace_3": true,
+        "det_3": true,
+        "trace_4": true,
+        "det_4": true,
+        "trace_5": true,
+        "det_5": true,
+        "connected_scaling": true,
+        "tangent_scaling": true
+      },
+      "valid": true
+    },
+    "minimum_effect_eigenvalue": -9.17227536137367e-18,
+    "minimum_probability": 0.0026013646149226745,
+    "max_probability_imaginary": 4.376310941176642e-19,
+    "prepared_states": [
+      {
+        "a": 0.3333333333333333,
+        "min_eigenvalue": -1.812752413218676e-16,
+        "trace_error": 0.0,
+        "hermiticity_error": 0.0,
+        "valid": true
+      },
+      {
+        "a": 0.16666666666666666,
+        "min_eigenvalue": 0.015624999999999946,
+        "trace_error": 0.0,
+        "hermiticity_error": 0.0,
+        "valid": true
+      },
+      {
+        "a": 0.0,
+        "min_eigenvalue": 0.125,
+        "trace_error": 0.0,
+        "hermiticity_error": 0.0,
+        "valid": true
+      }
+    ],
+    "input_physicality": {
+      "min_eigenvalue": 0.03831621266594478,
+      "trace_error": 1.1102230246251565e-16,
+      "hermiticity_error": 0.0,
+      "valid": true
+    },
+    "source_output_physicality": {
+      "min_eigenvalue": 0.04182518541298879,
+      "trace_error": 5.551115123125783e-16,
+      "hermiticity_error": 2.552648835551024e-17,
+      "valid": true
+    }
+  },
+  "result_sha256": "9c848c70134adbb62e70c988dc35001834bccf3c78a0539b294e6ce60167bca9",
+  "gzip_sha256": "1e38de1e7e1474e4d14546f722c3ab5013bf347fb02f72ab91bb43115a6da984",
+  "result_bytes": 2034848,
+  "gzip_bytes": 291139,
+  "row_count": 144,
+  "regular_count": 108,
+  "zero_count": 36,
+  "coherent_count": 72,
+  "null_count": 36,
+  "regular_status_counts": {
+    "REGULAR": 108
+  },
+  "worst_errors": {
+    "C_scaling_error": 1.2417704178567759e-14,
+    "Q_scaling_error": 7.887715269881106e-15,
+    "E_invariance_error": 1.577644575103591e-14,
+    "polar_factor_error": 2.2800867501151418e-14
+  },
+  "coherent_ranks": {
+    "Q": [
+      [
+        6,
+        6,
+        6
+      ]
+    ],
+    "E": [
+      [
+        6,
+        6,
+        6
+      ]
+    ]
+  },
+  "null_ranks": {
+    "Q": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "E": [
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "by_attenuation": [
+    {
+      "a": 1,
+      "coherent_Q_norm_min": 1.0254137097531024,
+      "coherent_Q_norm_max": 1.0254137097531029,
+      "coherent_E_norm_min": 4.537666616960241,
+      "coherent_E_norm_max": 7.005278867844215,
+      "min_edge_singular": 0.018943768011733576
+    },
+    {
+      "a": 0.3333333333333333,
+      "coherent_Q_norm_min": 0.11393485663923351,
+      "coherent_Q_norm_max": 0.11393485663923358,
+      "coherent_E_norm_min": 4.537666616960245,
+      "coherent_E_norm_max": 7.005278867844223,
+      "min_edge_singular": 0.002104863112414856
+    },
+    {
+      "a": 0.16666666666666666,
+      "coherent_Q_norm_min": 0.028483714159808382,
+      "coherent_Q_norm_max": 0.028483714159808396,
+      "coherent_E_norm_min": 4.537666616960223,
+      "coherent_E_norm_max": 7.00527886784427,
+      "min_edge_singular": 0.0005262157781037354
+    }
+  ],
+  "max_zero_error": 1.5700924586837752e-16,
+  "minimum_composite_choi_eigenvalue": -1.7962762216055204e-15
+}
