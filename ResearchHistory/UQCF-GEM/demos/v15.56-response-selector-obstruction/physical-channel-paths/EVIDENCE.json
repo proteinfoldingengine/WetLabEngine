@@ -1,0 +1,94 @@
+{
+  "redCommit": "575cb5d0b9a4fed16b2cc10c737a267f3f571ee7",
+  "redRun": 36488890335,
+  "redJob": 109152431197,
+  "greenCommit": "8739e9db7ce1cb2c4ae0a91600e20fb4a2e953f5",
+  "greenTree": "bc9a9107294463306f5bbbb9227d796763ebe465",
+  "failedAttempt": {
+    "commit": "bcbe869c385940a0dcbf029cb58a1c94f9123548",
+    "tree": "c1475f24c4b35a756f93add4b2b182f6f8bdf5ea",
+    "run": 36489262513,
+    "job": 109153636490,
+    "artifact": {
+      "id": 11001235903,
+      "name": "physical-channel-paths-bcbe869c385940a0dcbf029cb58a1c94f9123548",
+      "size_in_bytes": 3157,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11001235903",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11001235903/zip",
+      "expired": false,
+      "created_at": "2026-09-28T21:56:12Z",
+      "expires_at": "2026-12-27T21:55:34Z",
+      "updated_at": "2026-09-28T21:56:12Z",
+      "digest": "sha256:9b6032f572b972f350c85884e00919c64f1e4b4697a38422a1b9760eb10f37f7",
+      "workflow_run": {
+        "id": 36489262513,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/v16.08-physical-channel-paths",
+        "head_sha": "bcbe869c385940a0dcbf029cb58a1c94f9123548"
+      }
+    }
+  },
+  "greenRun": 36489802902,
+  "greenJob": 109155404450,
+  "all_valid": true,
+  "verdict": "PHYSICAL_PATH_SUPPORT_DISCONTINUITY_FORCED",
+  "physical_EB_forced_count": 96,
+  "physical_EB_case_count": 96,
+  "rank_and_normal_rank_counts": {
+    "('RAW', 'identity', 'plane', 'after', 1, 1)": 12,
+    "('RAW', 'identity', 'plane', 'before', 1, 1)": 12,
+    "('RAW', 'identity', 'isotropic', 'after', 2, 1)": 9,
+    "('RAW', 'identity', 'isotropic', 'before', 2, 1)": 9,
+    "('RAW', 'EB', 'plane', 'after', 1, 1)": 24,
+    "('RAW', 'EB', 'plane', 'before', 1, 1)": 24,
+    "('RAW', 'EB', 'isotropic', 'after', 2, 1)": 18,
+    "('RAW', 'EB', 'isotropic', 'before', 2, 1)": 18,
+    "('NORMALIZED', 'identity', 'plane', 'after', 1, 1)": 12,
+    "('NORMALIZED', 'identity', 'plane', 'before', 1, 1)": 12,
+    "('NORMALIZED', 'identity', 'isotropic', 'after', 2, 1)": 9,
+    "('NORMALIZED', 'identity', 'isotropic', 'before', 2, 1)": 9,
+    "('NORMALIZED', 'EB', 'plane', 'after', 1, 1)": 24,
+    "('NORMALIZED', 'EB', 'plane', 'before', 1, 1)": 24,
+    "('NORMALIZED', 'EB', 'isotropic', 'after', 2, 1)": 18,
+    "('NORMALIZED', 'EB', 'isotropic', 'before', 2, 1)": 18,
+    "('RAW', 'identity', 'isotropic', 'after', 1, 2)": 3,
+    "('RAW', 'identity', 'isotropic', 'before', 1, 2)": 3,
+    "('RAW', 'EB', 'isotropic', 'after', 1, 2)": 6,
+    "('RAW', 'EB', 'isotropic', 'before', 1, 2)": 6,
+    "('NORMALIZED', 'identity', 'isotropic', 'after', 1, 2)": 3,
+    "('NORMALIZED', 'identity', 'isotropic', 'before', 1, 2)": 3,
+    "('NORMALIZED', 'EB', 'isotropic', 'after', 1, 2)": 6,
+    "('NORMALIZED', 'EB', 'isotropic', 'before', 1, 2)": 6
+  },
+  "physical_normal_norm_ranges": {
+    "('plane', 'after')": [
+      "1.448080354566508e-5",
+      "0.001259422575453768"
+    ],
+    "('plane', 'before')": [
+      "2.413467257610846e-6",
+      "0.0004198075251512560"
+    ],
+    "('isotropic', 'after')": [
+      "1.595930959481299e-5",
+      "0.0007252111297050950"
+    ],
+    "('isotropic', 'before')": [
+      "2.659884932468832e-6",
+      "0.0002417370432350316"
+    ]
+  },
+  "metrics": {
+    "global_C": "3.7499457751717092007817754235564051456235876202839e-54",
+    "global_V": "3.5767895598832886287446173868723758438660627515901e-52",
+    "normal": "2.9778782204651585439880945607676126985940895477602e-52",
+    "covariance": "2.9739316151189421982736436640690104578285842269769e-52",
+    "projector": "3.2434814681170888481785589888795383299749426388261e-51",
+    "precision": "3.5976314589972369854566199277331875705858914610599e-52"
+  },
+  "artifact_id": 11000347519,
+  "artifact_zip_sha256": "d38e411f1972c77f27d491e03f54bc0bb6f52467df3a529f9fbd27c1cd05e891",
+  "raw_sha256": "3d36abfa774bad09e754f825a71e7f2e8f5cc9297c0a0e1ca00e926e0b634cce",
+  "raw_xz_sha256": "fcab04397dedb258ae5baf254e5832a738a4a6a4f07afdc24f9e1ba8f5444ed8"
+}
