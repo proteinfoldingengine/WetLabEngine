@@ -1,0 +1,39 @@
+{
+  "version": "15.93",
+  "branch": "research/v15.93-oriented-rank-two-response",
+  "parent": "59b40b60802b70b9cc57c3091e3d6deb9dc04cfb",
+  "preregistration": "c52c287c6208345611c058d11ba6e05f01757326",
+  "implementation": "53e48385f863b5cc02444773ab8249764f537fb7",
+  "red": {
+    "run": 36365607262,
+    "job": 108751285280,
+    "artifact": 10947191947,
+    "archive_sha256": "a9d5deff6cdfe12beb7149d4b61d43f9101131b3614e6e0840bb435c74dca676",
+    "expected_missing_implementation": true
+  },
+  "green": {
+    "run": 36365855854,
+    "job": 108751998058,
+    "artifact": 10947308100,
+    "archive_sha256": "7eab2076d6e556e9c5aff4662ac1689b7a95efc6317f14e7583a3a97251b5d41",
+    "tests": 4,
+    "exact_checks": 14,
+    "cases": 36,
+    "edges": 108,
+    "edge_direction_derivatives": 2916
+  },
+  "all_valid": true,
+  "verdict": "ORIENTED_RANK_TWO_READOUT_CONFIRMED",
+  "response_verdict": "PLANAR_ORIENTED_RESPONSE_CONFIRMED",
+  "result_sha256": "540f46f32bf8f74ad2c4283870d14f36427b16d0155444546e7113cedd26cd2a",
+  "gzip_sha256": "4c3e4d893c69f1a72a5409f905a1eafa81d4a0295b10439a0643ed21ba1dcc09",
+  "gzip_blob": "d2e1d95fbc59e8377cd027698008979c3a49b74e",
+  "verification": {
+    "artifact_heads": true,
+    "frozen_sources": true,
+    "implementation_bytes": true,
+    "artifact_checksums": true,
+    "log_json_matches_artifact": true
+  },
+  "scope": "Conditional SO(3)-oriented rank-two readout; not recovery of erased information or source composition. Prior verdicts unchanged."
+}
