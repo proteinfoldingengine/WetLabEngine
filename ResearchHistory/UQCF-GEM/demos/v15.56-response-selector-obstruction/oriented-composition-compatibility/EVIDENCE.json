@@ -1,0 +1,40 @@
+{
+  "version": "15.94",
+  "branch": "research/v15.94-oriented-composition-compatibility",
+  "parent": "aee440c43996f9a14cc4973473aa403ed9eeb01e",
+  "preregistration": "d412b999134d598086bbeb639bd0cc75caaa6a49",
+  "implementation": "9513de533d442d07400b3e6827f8a424cd4392ab",
+  "red": {
+    "run": 36366677105,
+    "job": 108754359100,
+    "artifact": 10946913966,
+    "archive_sha256": "799ced164677876b4b4d5e68455d92d0385aefc339a2abe2689d4309941fb4db",
+    "expected_missing_implementation": true
+  },
+  "green": {
+    "run": 36367019577,
+    "job": 108755342941,
+    "artifact": 10947633397,
+    "archive_sha256": "f0eae55735875d371637a39b515294a58dc635505a7120d11268fb6a3d44067f",
+    "tests": 4,
+    "exact_checks": 12,
+    "fixtures": 3,
+    "planar_pairs": 108,
+    "planar_triples": 36,
+    "native_pairs": 1
+  },
+  "all_valid": true,
+  "verdict": "ORIENTED_COMPOSITION_OBSTRUCTED",
+  "matched_verdict": "MATCHED_SUPPORT_COMPOSITION_CONFIRMED",
+  "result_sha256": "7c9fc2bf42316e366d059e7b45d2aa8ebdeb11947a5b7593c4808de608a8e6b4",
+  "gzip_sha256": "627e9ac50b1ead13f76036965f020db19c85f5287f669e9a23f1a589118cc04a",
+  "gzip_blob": "9f190177080b1193b24fb775fdda4086bfa89861",
+  "verification": {
+    "artifact_heads": true,
+    "frozen_sources": true,
+    "implementation_bytes": true,
+    "artifact_checksums": true,
+    "log_json_matches_artifact": true
+  },
+  "scope": "Partial-isometry factors and raw retained-map composition at one slice; no quantum source-update composition or recovery claim."
+}
