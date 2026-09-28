@@ -1,0 +1,19 @@
+# 16.13 — Local gauge content of the normal response
+
+Frozen before measurement. Parent complete publication: `646839883827924356c2d98956491e8f563e5606`; executed 16.12 head: `88109eeb3e7f60f73f433f5e0ed33938c943e205`.
+
+Question: which amplitude/sign information in the normal response is invariant under independent physical endpoint frames? This is the gauge-content gate before a network invariant. It classifies the sign orbit of the pair (C,N), not the complete physical source path or global state.
+
+Gauge: SO(3)×SO(3), inherited from unitary changes of local Pauli frames. C→G C Hᵀ and N→G N Hᵀ with G,H proper. O(3) is examined as an explicitly larger comparison group, not substituted for the physical gauge.
+
+Use all 144 exact normalized physical path families from 16.12, plus all72 order pairs. Baseline C, projected normal N=N+ and V(λ),W(λ) remain frozen. No source/input change, alignment, spectral truncation or state repair.
+
+1. Exact stabilizer: with P=CC⁺, test J=2P−I. Check JᵀJ=I, JC=C, JN=−N, determinant J, and invariance of norm(N). At rank1, J is proper and proves (C,N) and (C,−N) belong to the same SO(3)×SO(3) orbit. Any invariant of this local pair must then be sign-even. At rank2, J is improper; this only certifies equivalence in the larger O(3) comparison.
+2. Orientation witness: compute d(t)=det(C+tN) exactly. A nonzero odd coefficient certifies different SO orbits for the two signs. Record every coefficient, alpha=cof(C):N and beta=coefficient(t²). Do not infer sign equivalence merely because alpha vanishes; equivalence requires the explicit proper stabilizer.
+3. Physical derivative check: independently compute the first two s-coefficients of det(C+sV(λ)+s²W(λ)). Check the first coefficient equals λ alpha. At rank1 check the second equals λ² beta. This preserves the distinction between the diagnostic normal pencil and the full physical path.
+4. Amplitude: ||N||F² is invariant for every rank. Verify before=a after gives norm²_before=a² norm²_after; all48 nonidentity pairs must differ in the coefficient, all24 identity pairs coincide. The actual normal response λN vanishes at λ=0.
+5. Spectral-edge control: record unnormalized alpha, ||C||F, ||N||F, ||cof(C)||F and the bound |alpha|≤||cof(C)||F ||N||F. Report the scale-free sensitivity |alpha|/(||C||F²||N||F). For rank2, compare ||cof(C)||F with sigma1 sigma2 and report sigma2/sigma1. The orientation witness must be described as collapsing at the rank1 boundary; never divide out the small cofactor and call the result robust. No tolerance determines exact rank and no claim of physical measurement precision is made.
+
+Numerical controls at80/120 digits in both inherited proper frames:576 rows. Check stabilizer identities, properness of the given frames, determinant-coefficient and amplitude invariance, exact-to-numerical agreement, Cauchy bound, cofactor/singular-product identity, and cross-precision. Thresholds1e-35 within precision and1e-30 across. No fit or selected candidate. Scientific verdict LOCAL_NORMAL_SIGN_GAUGE_CLASSIFIED requires each case to have either a proper sign-flip witness or a nonzero odd determinant invariant, all physical coefficient checks, and all amplitude-order identities. Valid negative result GAUGE_SIGN_CLASSIFICATION_INCOMPLETE; INVALID reserved for provenance, completeness or numerical/implementation controls.
+
+Deliver: code, RED/GREEN evidence, exact/numerical raw records, complete report/logs/checksums, independent review and publication verification, and a draft research PR. Execute only the targeted GitHub workflow, no local ensemble. A subsequent closed-network test must supply its references intrinsically from neighboring edges, not external alignment. Time is pruning / ordered recoverability update. No source law or gravity interpretation is asserted.
