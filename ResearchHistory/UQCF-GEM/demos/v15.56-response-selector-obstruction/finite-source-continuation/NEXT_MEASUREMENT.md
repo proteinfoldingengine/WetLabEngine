@@ -1,3 +1,5 @@
+> Completion update: this preimplementation design was superseded by PREREGISTRATION.md and executed. See RESULTS.md for the completed 16.03 results.
+
 # v16.03 next measurement design — finite-source order response
 
 Status: concrete design for the next implementation. No finite-source measurement has been run. This is not yet an executable preregistration or a claim of a nonzero cubic coefficient.
