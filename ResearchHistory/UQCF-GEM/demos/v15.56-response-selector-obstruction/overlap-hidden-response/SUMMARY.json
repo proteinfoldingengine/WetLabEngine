@@ -1,0 +1,245 @@
+{
+  "version": "15.97",
+  "all_valid": true,
+  "verdict": "OVERLAP_HIDDEN_RESPONSE_CONFIRMED",
+  "planar_verdict": "PLANAR_TWO_LOOP_RESPONSE_CONFIRMED",
+  "full_predicate": true,
+  "plane_predicate": true,
+  "controls": {
+    "input_reconstruction": 0.0,
+    "hidden_gram": 0.0,
+    "hidden_trace": 0.0,
+    "hidden_hermiticity": 0.0,
+    "hidden_one": 0.0,
+    "hidden_pair": 0.0,
+    "generator_one": 5.551115123125783e-17,
+    "weight_four_null": 5.551115123125783e-17,
+    "hamiltonian_null": 0.0,
+    "source_unitarity": 1.7853497068857698e-15,
+    "weight_sum": 0.0,
+    "mixed_connected": 1.6653345369377348e-16,
+    "cross_leakage": 0.0,
+    "geometry": 1.1108972186452185e-14,
+    "derivative_identity": 1.5826894870868467e-13,
+    "cross_loop": 0.0,
+    "baseline_hidden": 5.6307061135791055e-11,
+    "covariance": 6.077676116077465e-12,
+    "incoherent_norm": 4.832612554610857e-14,
+    "fd_K_final": 9.378195712519803e-07,
+    "fd_J_final": 1.914680115670492e-06,
+    "parents_valid": true,
+    "symbolic_certificate": {
+      "check_count": 8,
+      "checks": {
+        "pauli_source_algebra": true,
+        "source_unitaries": true,
+        "weight_derivative": true,
+        "generator_split": true,
+        "cross_leakage_table": true,
+        "incoherent_null": true,
+        "local_hamiltonian_null": true,
+        "spectator_trace_and_TP": true
+      },
+      "valid": true
+    },
+    "frame_certificate": {
+      "check_count": 13,
+      "checks": {
+        "basis_orthonormal": true,
+        "representation_product": true,
+        "planar_fixed_tensor": true,
+        "shared_line_rank": true,
+        "flip_commutator": true,
+        "no_common_line_rank": true,
+        "representation_covariance": true,
+        "swap_unitary_involution": true,
+        "spectator_connected_identity": true,
+        "frame_0": true,
+        "frame_1": true,
+        "frame_2": true,
+        "frame_3": true
+      },
+      "valid": true
+    },
+    "preparation_certificate": {
+      "check_count": 45,
+      "checks": {
+        "isotropic_unit00": true,
+        "isotropic_unit01": true,
+        "isotropic_unit10": true,
+        "isotropic_unit11": true,
+        "isotropic_effects": true,
+        "isotropic_trace": true,
+        "isotropic_positive": true,
+        "isotropic_span": true,
+        "isotropic_commutator": true,
+        "plane_unit00": true,
+        "plane_unit01": true,
+        "plane_unit10": true,
+        "plane_unit11": true,
+        "plane_effects": true,
+        "plane_trace": true,
+        "plane_positive": true,
+        "plane_span": true,
+        "plane_commutator": true,
+        "line_unit00": true,
+        "line_unit01": true,
+        "line_unit10": true,
+        "line_unit11": true,
+        "line_effects": true,
+        "line_trace": true,
+        "line_positive": true,
+        "line_span": true,
+        "line_commutator": true,
+        "point_unit00": true,
+        "point_unit01": true,
+        "point_unit10": true,
+        "point_unit11": true,
+        "point_effects": true,
+        "point_trace": true,
+        "point_positive": true,
+        "point_span": true,
+        "point_commutator": true,
+        "connected_00": true,
+        "connected_01": true,
+        "connected_02": true,
+        "connected_10": true,
+        "connected_11": true,
+        "connected_12": true,
+        "connected_20": true,
+        "connected_21": true,
+        "connected_22": true
+      },
+      "valid": true
+    },
+    "physicality": {
+      "min_eigenvalue": 0.023230389831364853,
+      "trace_error": 4.440892098500626e-16,
+      "hermiticity_error": 5.860711981579306e-18,
+      "count": 110160,
+      "valid": true
+    },
+    "minimum_weight": 0.0,
+    "incoherent_ranks_valid": true,
+    "rank_covariance_valid": true,
+    "limits": {
+      "input_reconstruction": 1e-15,
+      "hidden_gram": 1e-12,
+      "hidden_trace": 1e-12,
+      "hidden_hermiticity": 1e-12,
+      "hidden_one": 1e-12,
+      "hidden_pair": 1e-12,
+      "generator_one": 1e-12,
+      "weight_four_null": 1e-12,
+      "hamiltonian_null": 1e-12,
+      "source_unitarity": 1e-12,
+      "weight_sum": 1e-12,
+      "mixed_connected": 1e-12,
+      "cross_leakage": 1e-12,
+      "geometry": 1e-09,
+      "derivative_identity": 1e-09,
+      "cross_loop": 1e-09,
+      "baseline_hidden": 1e-09,
+      "covariance": 1e-09,
+      "incoherent_norm": 1e-09,
+      "fd_K_final": 0.0001,
+      "fd_J_final": 0.0001
+    }
+  },
+  "result_sha256": "a16af3868ed4a0d959dda97eaea9c79f02f2beb0aa996b175a233463b9381891",
+  "gzip_sha256": "5d211fb43db6ddd101be6d31391554b4e6720f09626255e85cc01da76d3179bc",
+  "result_bytes": 3858159,
+  "gzip_bytes": 680588,
+  "row_count": 72,
+  "ranks": {
+    "plane": {
+      "-1.0": [
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "0.0": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "1.0": [
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    "isotropic": {
+      "-1.0": [
+        [
+          [
+            6,
+            6,
+            6
+          ],
+          [
+            3,
+            3,
+            3
+          ]
+        ]
+      ],
+      "0.0": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "1.0": [
+        [
+          [
+            6,
+            6,
+            6
+          ],
+          [
+            3,
+            3,
+            3
+          ]
+        ]
+      ]
+    }
+  },
+  "domain_exits": []
+}

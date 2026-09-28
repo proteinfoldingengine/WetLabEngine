@@ -1,0 +1,37 @@
+{
+  "version": "15.97",
+  "branch": "research/v15.97-overlap-hidden-response",
+  "parent": "c61de02241acac20c02b50a76469ba63224a7b3e",
+  "preregistration_commit": "93c8321af2b5c482ffc7f52cb30581c8a6abfab5",
+  "tested_commit": "8e515756902647b6f2ae9e577ab146f0c2d1703e",
+  "red": {
+    "run": 36370883538,
+    "job": 108766794220,
+    "artifact": 10949375911,
+    "zip_sha256": "c091296a2602796990f0127c0a47683299cf7449cc9d918b4d4f4b7fc91c4a33",
+    "expected_missing_implementation_verified": true
+  },
+  "green": {
+    "run": 36371243514,
+    "job": 108767890096,
+    "artifact": 10949361749,
+    "zip_sha256": "f00c82961760338fa3717c3b5555b66fdc2dcafcde270f200746e1b27d7426fe"
+  },
+  "gate_sha256": "a27a98a29c5dce4f286bd445072297228af903a348ee274a9c6bb7d15c986439",
+  "raw_json_sha256": "a16af3868ed4a0d959dda97eaea9c79f02f2beb0aa996b175a233463b9381891",
+  "gzip_sha256": "5d211fb43db6ddd101be6d31391554b4e6720f09626255e85cc01da76d3179bc",
+  "raw_bytes": 3858159,
+  "gzip_bytes": 680588,
+  "verdict": "OVERLAP_HIDDEN_RESPONSE_CONFIRMED",
+  "planar_verdict": "PLANAR_TWO_LOOP_RESPONSE_CONFIRMED",
+  "all_valid": true,
+  "rows": 72,
+  "verification": {
+    "red_and_green_archive_digests": true,
+    "execution_heads": true,
+    "frozen_files_byte_identity": true,
+    "all_green_manifest_checksums": true,
+    "job_log_json_matches_artifact": true
+  },
+  "main_merged": false
+}
