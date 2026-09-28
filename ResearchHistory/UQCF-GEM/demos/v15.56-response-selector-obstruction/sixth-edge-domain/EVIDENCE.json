@@ -1,0 +1,34 @@
+{
+  "execution_head": "dd7a023ac95de9a984b791a0de736f7f30174824",
+  "verdict": "SIXTH_EDGE_OUTSIDE_FROZEN_DOMAIN",
+  "all_valid": true,
+  "frame_counts": {
+    "plane:False": 144,
+    "isotropic:False": 144
+  },
+  "exact_rank_counts": {
+    "('plane', 1)": 36,
+    "('isotropic', 2)": 27,
+    "('isotropic', 1)": 9
+  },
+  "maximum_second_relative_singular_value": {
+    "plane": "2.91613482324e-51",
+    "isotropic": "1.66041762949e-15"
+  },
+  "metrics": {
+    "archive_native": "5.27365750410621e-54",
+    "archive_transformed": "7.00324537749079e-54",
+    "precision": "6.86391460990549e-54"
+  },
+  "artifact_id": 10998173180,
+  "artifact_zip_sha256": "7dd6150f9bd2c25c767a2d9a78087abe5a523f288da653ba720b158acb2d912e",
+  "raw_sha256": "35b02f3dde9405a02e78c69f43a4f740889b68e16bbb2c93de6041ab29a28f74",
+  "redCommit": "e9ad01c913d78abbf2abcaa4286105796f97d104",
+  "redRun": 36484851333,
+  "redJob": 109139154981,
+  "greenCommit": "dd7a023ac95de9a984b791a0de736f7f30174824",
+  "greenTree": "74e4bd982395f16b618f1b704af6c3722bbabba4",
+  "greenRun": 36485049321,
+  "greenJob": 109139801413,
+  "raw_gzip_sha256": "bb50f5329bfe467a8185e743aa8f6c781012098cd39f5ed443eaa085b7e9c033"
+}
