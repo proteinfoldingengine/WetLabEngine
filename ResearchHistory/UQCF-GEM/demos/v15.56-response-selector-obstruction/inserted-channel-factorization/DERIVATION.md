@@ -1,6 +1,6 @@
 # v16.04 — Inserted-channel factorization of the cubic response
 
-Status: analytic result completed; numerical audit not implemented or run. This is not a new ensemble measurement.
+Status: analytic result completed; the subsequent numerical audit is now complete in [RESULTS.md](RESULTS.md). The derivation below was published before that audit.
 
 Parent: [v16.03 final report](../finite-source-continuation/RESULTS.md), publication commit a451398b307f89a380736186f387cf61f80718c1. The measured 48 active EB cubic cases remain the v16.03 result.
 

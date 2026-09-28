@@ -1,6 +1,6 @@
 # v16.04 numerical audit — proposed scope
 
-Status: design only. No preregistration freeze, implementation, workflow run or measurement is claimed.
+Status: historical premeasurement design. The finalized protocol is [PREREGISTRATION.md](PREREGISTRATION.md), and the completed audit is [RESULTS.md](RESULTS.md).
 
 ## Objective
 
