@@ -2,7 +2,11 @@
 
 This directory is the canonical Git-tracked history for the active UQCF-GEM / Retained Atlas research program in this repository.
 
-## Latest completed research: 16.12 (2026-09-28)
+## Latest completed research: 16.13 (2026-09-28)
+
+[Read the 16.13 final report](V16_13_REPORT.md). The local normal sign is gauge-equivalent in 90 cases; 54 rank-two cases have an exact but spectrally fragile SO(3) orientation witness. Invariant amplitude differences remain in all 48 nonidentity order pairs. Full reports, raw results and execution evidence are published. [The revised 16.13–16.15 brief](V16_13-15_BRIEF.md) keeps the network and physical-interpretation gates explicit; 16.14/16.15 are not yet measured.
+
+## Prior completed research: 16.12 (2026-09-28)
 
 [Read the 16.12 final report](V16_12_REPORT.md). Continuous magnitude-weighted sixth-edge matrices retain signed normal response in all 144 families and nonzero contrast coefficients in all 48 nonidentity order pairs. The Gram derivative is blind to the normal component. Full raw results, code, tests, logs and checksums are published on the unmerged research branch. This does not derive a source law or repair the old polar transport.
 
