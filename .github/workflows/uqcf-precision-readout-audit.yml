@@ -26,6 +26,7 @@ jobs:
           set +e
           python -m unittest -v test_gate 2>&1 | tee test.log
           test_status=$?
+          if [ ! -f gate.py ]; then exit "$test_status"; fi
           python gate.py > result.json
           gate_status=$?
           set -e
