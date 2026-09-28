@@ -6,6 +6,9 @@ on:
       - 'ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/full-ensemble-precision/**'
       - '.github/workflows/uqcf-full-ensemble-precision.yml'
   workflow_dispatch:
+concurrency:
+  group: uqcf-v1602-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:

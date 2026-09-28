@@ -179,7 +179,7 @@ def run_measurement():
                     result={'responses':{},'finite_checks':{},'scaling':{},'all_domains':True};ins={}
                     if a0==0:
                         target=mp.zeros(256,1);target[0]=mp.mpf(1)/4
-                        err=max(*(norm(v-target) for v in bases[0]+centers[0,arm]),*(norm(v) for order in ORDERS for v in prepared[0,pair,arm,order]))
+                        err=max(*(norm(v-target) for v in bases[0]+centers[0,arm]),*(norm(v) for order in ORDERS for v in prepared[0,pair,arm,order]),*(norm(v) for order in ORDERS for v in ys[0,pair,order]))
                         erase_error=max(erase_error,err);passed=err<=mp.mpf('1e-12')
                         result={'responses':None,'polar_readout':'undefined','maximum_erasure_error':ns(err),'scientific_pass':bool(passed)}
                         erasure=erasure and passed;row['precision_results'][str(dps)]=result;continue
