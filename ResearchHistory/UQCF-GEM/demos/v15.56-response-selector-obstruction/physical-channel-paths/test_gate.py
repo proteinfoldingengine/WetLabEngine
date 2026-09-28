@@ -7,6 +7,12 @@ class Tests(unittest.TestCase):
   g=self.gate();r=s.eye(4)*s.Rational(1,3);c=g.density_certificate(r);self.assertEqual(c['trace'],s.Rational(4,3));self.assertTrue(c['valid']);self.assertEqual(c['normalized_trace'],1)
   with self.assertRaises(ValueError):g.density_certificate(s.diag(1,1,-1,1))
   with self.assertRaises(ValueError):g.density_certificate(s.Matrix([[1,1],[0,1]]))
+ def test_canonical_complex_ldl_regression(self):
+  import json
+  g=self.gate();h=json.loads(pathlib.Path(__file__).with_name('complex-density-regression.json').read_text());rho=s.Matrix([[s.Rational(x)+s.I*s.Rational(y) for x,y in row] for row in h])
+  bound=min(s.re(rho[i,i])-sum(abs(s.re(rho[i,j]))+abs(s.im(rho[i,j])) for j in range(4) if j!=i) for i in range(4))
+  self.assertGreater(bound,0)
+  self.assertTrue(g.density_certificate(rho)['valid'])
  def test_connected_path_quadratic(self):
   g=self.gate();z={(0,0,0,0):s.Rational(1,4)};x={(0,0,1,0):s.Rational(1,8),(0,0,0,2):s.Rational(1,12)};c,v,w,poly=g.connected_path(z,x);self.assertEqual(c,s.zeros(3));self.assertEqual(v,s.zeros(3));self.assertEqual(w[0,1],-s.Rational(1,6));self.assertEqual(poly[0,1],-g.PARAM**2/6)
  def test_normalization_is_not_connected_rescaling(self):

@@ -12,9 +12,13 @@ def density_certificate(rho):
  if rho.rows!=rho.cols or rho!=rho.H:raise ValueError('input must be exactly Hermitian')
  tr=sp.trace(rho)
  if tr.is_positive is not True:raise ValueError('nonpositive trace')
- try:lower,diag=rho.LDLdecomposition(hermitian=True)
- except Exception as exc:raise ValueError('exact positive-definite LDL failed') from exc
- if any(diag[i,i].is_positive is not True for i in range(rho.rows)):raise ValueError('nonpositive LDL pivot')
+ lower=sp.eye(rho.rows);diag=sp.zeros(rho.rows)
+ for i in range(rho.rows):
+  for j in range(i):
+   lower[i,j]=sp.expand((rho[i,j]-sum(lower[i,k]*sp.conjugate(lower[j,k])*diag[k,k] for k in range(j)))/diag[j,j])
+  pivot=sp.expand(rho[i,i]-sum(lower[i,k]*sp.conjugate(lower[i,k])*diag[k,k] for k in range(i)))
+  if pivot.is_Rational is not True or pivot<=0:raise ValueError('nonpositive or nonrational exact LDL pivot')
+  diag[i,i]=pivot
  valid=all(sp.expand(x)==0 for x in lower*diag*lower.H-rho)
  if not valid:raise ValueError('LDL reconstruction failed')
  return {'trace':tr,'trace_defect':tr-1,'normalized_trace':sp.trace(rho/tr),'pivots':[diag[i,i] for i in range(rho.rows)],'valid':valid}
