@@ -2,6 +2,10 @@
 
 This directory is the canonical Git-tracked history for the active UQCF-GEM / Retained Atlas research program in this repository.
 
+## Latest completed research: 16.09–16.11 (2026-09-28)
+
+[Read the combined final report](V16_09-11_REPORT.md). All three targeted audits passed: fixed-source order agreement, source-coherence dependence, and three full-family boundary classes. Complete raw results, execution logs and checksums are committed with the reports; the initial INVALID 16.11 attempt is preserved. Work is published on the research branch and is not merged into main. Source selection and gravity correspondence remain open.
+
 ## Governance
 
 - Primitive/pre-pruning reality is treated as atemporal.

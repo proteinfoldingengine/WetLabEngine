@@ -1,0 +1,20 @@
+test_affine_source_endpoints (test_gate.Tests.test_affine_source_endpoints) ... ok
+test_continuum_bound (test_gate.Tests.test_continuum_bound) ... ok
+test_convex_channel_domain (test_gate.Tests.test_convex_channel_domain) ... ok
+test_rank_one_determinant_regression (test_gate.Tests.test_rank_one_determinant_regression) ... FAIL
+test_verdict_negative_cases (test_gate.Tests.test_verdict_negative_cases) ... ok
+test_zero_normal_not_enough (test_gate.Tests.test_zero_normal_not_enough) ... ok
+
+======================================================================
+FAIL: test_rank_one_determinant_regression (test_gate.Tests.test_rank_one_determinant_regression)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 21, in test_rank_one_determinant_regression
+    g=self.gate();self.assertTrue(hasattr(g,'det3'),'division-free determinant absent')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : division-free determinant absent
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.189s
+
+FAILED (failures=1)

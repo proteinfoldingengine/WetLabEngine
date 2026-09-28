@@ -1,0 +1,70 @@
+test_affine_source_endpoints (test_gate.Tests.test_affine_source_endpoints) ... FAIL
+test_continuum_bound (test_gate.Tests.test_continuum_bound) ... FAIL
+test_convex_channel_domain (test_gate.Tests.test_convex_channel_domain) ... FAIL
+test_verdict_negative_cases (test_gate.Tests.test_verdict_negative_cases) ... FAIL
+test_zero_normal_not_enough (test_gate.Tests.test_zero_normal_not_enough) ... FAIL
+
+======================================================================
+FAIL: test_affine_source_endpoints (test_gate.Tests.test_affine_source_endpoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 16, in test_affine_source_endpoints
+    g=self.gate();d={(0,0,1,0):s.Integer(1)};lam=s.Symbol('lam',real=True);x=g.family_action(d,lam)
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: coherence-family audit absent
+
+======================================================================
+FAIL: test_continuum_bound (test_gate.Tests.test_continuum_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 14, in test_continuum_bound
+    g=self.gate();m=s.diag(1,0,0);self.assertTrue(g.continuum_bound([m,s.diag(0,1,0)],1,1)['certified']);self.assertFalse(g.continuum_bound([m,s.diag(0,0,1)],1,1)['certified']);self.assertTrue(g.continuum_bound([m],1,2)['certified'])
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: coherence-family audit absent
+
+======================================================================
+FAIL: test_convex_channel_domain (test_gate.Tests.test_convex_channel_domain)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 7, in test_convex_channel_domain
+    g=self.gate()
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: coherence-family audit absent
+
+======================================================================
+FAIL: test_verdict_negative_cases (test_gate.Tests.test_verdict_negative_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 19, in test_verdict_negative_cases
+    g=self.gate();self.assertEqual(g.classify(True,False,False,False),'FAMILY_IDENTITIES_NOT_CONFIRMED');self.assertEqual(g.classify(True,True,False,True),'ZERO_COHERENCE_RANK_CHANGE');self.assertEqual(g.classify(True,True,True,False),'CONTINUUM_LIMIT_NOT_CERTIFIED');self.assertEqual(g.classify(False,True,True,True),'INVALID')
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: coherence-family audit absent
+
+======================================================================
+FAIL: test_zero_normal_not_enough (test_gate.Tests.test_zero_normal_not_enough)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 12, in test_zero_normal_not_enough
+    g=self.gate();self.assertFalse(g.zero_certificate(s.diag(1,0,0),s.zeros(3),s.diag(0,1,0))['certified']);self.assertTrue(g.zero_certificate(s.diag(1,0,0),s.diag(1,0,0),s.zeros(3))['certified'])
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: coherence-family audit absent');q=importlib.util.spec_from_file_location('f1611',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: coherence-family audit absent
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (failures=5)

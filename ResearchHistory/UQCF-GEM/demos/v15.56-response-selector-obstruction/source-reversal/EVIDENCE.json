@@ -1,0 +1,34 @@
+{
+  "version": "16.10",
+  "base": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source-reversal",
+  "branch": "research/v16.10-source-reversal",
+  "parentPublication": "232da98ab29ac93d3c3b190e21f3cfa715984aec",
+  "redCommit": "7d4c116694571fc1d501d4609d60b4bb06f594ae",
+  "redRun": 36493546753,
+  "redJob": 109167692267,
+  "greenCommit": "1e9a5e8029e53b09998f99b122a9df3324178b1b",
+  "greenTree": "fcd61e66936df6145d8d2d347d6b3ce4b2fb3986",
+  "greenRun": 36493793738,
+  "greenJob": 109168486420,
+  "artifact_id": 11002697900,
+  "artifact_zip_sha256": "8bd88354e852950574cc272efc071f13cb233f098445bd7b02405873caf26907",
+  "raw_sha256": "e5e34bc841eade6c60ab3ed30a2d8262fc10032385d53539dac829b4bb9e8a66",
+  "raw_xz_sha256": "436c636fa6eee854ff05ff3d966eeb503454fcd324eec1d4b5c3d1eb43167332",
+  "all_valid": true,
+  "verdict": "SOURCE_DEPENDENT_BOUNDARY_LIMIT_CERTIFIED",
+  "metrics": {
+    "polar": "1.64571630412654278795479440518615708243229086160765029300467e-80",
+    "limit_identity": "2.44284661827757055629239803198025640583586770259480397138866e-67",
+    "gap": "8.43375835458441857947885924101601520616796910589480604006221e-80",
+    "covariance": "1.57582734083294284590805931160444463747782152095582508723512e-67",
+    "precision": "1.52869177744694780451460851590139314482308558391931039177346e-67",
+    "finite_polar": "2.24281725723445987091045895723624463343439898741082488348273e-120",
+    "finite_covariance": "5.20721346795842203200676162333484300790310692431620596465712e-64"
+  },
+  "array_counts": {
+    "density_certificates": 12,
+    "exact": 144,
+    "rows": 576,
+    "finite": 1728
+  }
+}

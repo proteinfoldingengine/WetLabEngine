@@ -1,5 +1,11 @@
 # UQCF-GEM Current Status
 
+## Latest completed research: 16.09–16.11 (2026-09-28)
+
+[Read the combined final report](V16_09-11_REPORT.md). All three targeted audits passed: fixed-source order agreement, source-coherence dependence, and three full-family boundary classes. Complete raw results, execution logs and checksums are committed with the reports; the initial INVALID 16.11 attempt is preserved. Work is published on the research branch and is not merged into main. Source selection and gravity correspondence remain open.
+
+## Earlier ontology reconciliation (preserved)
+
 **As of:** 2026-09-13  
 **Latest reconciliation:** [v15.11 — Ontology Continuity](v15/v15.11/REPORT.md)  
 **Result:** `CONTINUITY_RESTORED_CONDITIONAL_ORDINAL_ORDER_PRESERVED`  

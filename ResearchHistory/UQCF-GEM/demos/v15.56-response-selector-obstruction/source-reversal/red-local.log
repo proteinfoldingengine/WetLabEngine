@@ -1,0 +1,57 @@
+test_exact_reversal_requires_nonzero (test_gate.Tests.test_exact_reversal_requires_nonzero) ... FAIL
+test_gap_theorem (test_gate.Tests.test_gap_theorem) ... FAIL
+test_ordered_paths_share_baseline (test_gate.Tests.test_ordered_paths_share_baseline) ... FAIL
+test_source_transfer_and_cptp (test_gate.Tests.test_source_transfer_and_cptp) ... FAIL
+
+======================================================================
+FAIL: test_exact_reversal_requires_nonzero (test_gate.Tests.test_exact_reversal_requires_nonzero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source-reversal/test_gate.py", line 9, in test_exact_reversal_requires_nonzero
+    g=self.gate();n=s.diag(0,2,0);self.assertTrue(g.reversal(n,-n));self.assertFalse(g.reversal(n,n));self.assertFalse(g.reversal(s.zeros(3),s.zeros(3)))
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source-reversal/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: reversal audit absent');q=importlib.util.spec_from_file_location('r1610',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: reversal audit absent
+
+======================================================================
+FAIL: test_gap_theorem (test_gate.Tests.test_gap_theorem)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source-reversal/test_gate.py", line 11, in test_gap_theorem
+    g=self.gate()
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source-reversal/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: reversal audit absent');q=importlib.util.spec_from_file_location('r1610',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: reversal audit absent
+
+======================================================================
+FAIL: test_ordered_paths_share_baseline (test_gate.Tests.test_ordered_paths_share_baseline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source-reversal/test_gate.py", line 15, in test_ordered_paths_share_baseline
+    g=self.gate();d={(0,0,0,0):s.Rational(1,4),(0,0,1,0):s.Rational(1,16)};a=s.Rational(1,3)
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source-reversal/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: reversal audit absent');q=importlib.util.spec_from_file_location('r1610',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: reversal audit absent
+
+======================================================================
+FAIL: test_source_transfer_and_cptp (test_gate.Tests.test_source_transfer_and_cptp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source-reversal/test_gate.py", line 7, in test_source_transfer_and_cptp
+    g=self.gate();self.assertTrue(g.source_certificate()['valid'])
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source-reversal/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: reversal audit absent');q=importlib.util.spec_from_file_location('r1610',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: reversal audit absent
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+FAILED (failures=4)

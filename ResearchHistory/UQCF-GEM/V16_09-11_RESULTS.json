@@ -1,0 +1,58 @@
+{
+  "loops": [
+    {
+      "version": "16.09",
+      "scientific_head": "b8bfa7cd3abf99884b6627ab2a42d0fa035154be",
+      "run_id": 36492791730,
+      "all_valid": true,
+      "verdict": "COMMON_ORDER_BOUNDARY_LIMIT_CERTIFIED",
+      "report": "demos/v15.56-response-selector-obstruction/boundary-polar-limits/RESULTS.md",
+      "raw_file": "demos/v15.56-response-selector-obstruction/boundary-polar-limits/result.json.xz",
+      "raw_sha256": "493e44368c6eda7944ec4ddfa2a3e544107def36f8114327f2ed1544637654a2",
+      "raw_xz_sha256": "0cf31feb951b438db9b2eff04ba2e26288bbf0dc9c65862dde7943af7345dab7",
+      "counts": {
+        "exact": 144,
+        "pairs": 72,
+        "rows": 576,
+        "finite": 1440
+      }
+    },
+    {
+      "version": "16.10",
+      "scientific_head": "1e9a5e8029e53b09998f99b122a9df3324178b1b",
+      "run_id": 36493793738,
+      "all_valid": true,
+      "verdict": "SOURCE_DEPENDENT_BOUNDARY_LIMIT_CERTIFIED",
+      "report": "demos/v15.56-response-selector-obstruction/source-reversal/RESULTS.md",
+      "raw_file": "demos/v15.56-response-selector-obstruction/source-reversal/result.json.xz",
+      "raw_sha256": "e5e34bc841eade6c60ab3ed30a2d8262fc10032385d53539dac829b4bb9e8a66",
+      "raw_xz_sha256": "436c636fa6eee854ff05ff3d966eeb503454fcd324eec1d4b5c3d1eb43167332",
+      "counts": {
+        "density_certificates": 12,
+        "exact": 144,
+        "rows": 576,
+        "finite": 1728
+      }
+    },
+    {
+      "version": "16.11",
+      "scientific_head": "12e477696c361f919c9c947db24503e9ac64153d",
+      "run_id": 36495025125,
+      "all_valid": true,
+      "verdict": "THREE_COHERENCE_BOUNDARY_CLASSES_CERTIFIED",
+      "report": "demos/v15.56-response-selector-obstruction/coherence-family/RESULTS.md",
+      "raw_file": "demos/v15.56-response-selector-obstruction/coherence-family/result.json.xz",
+      "raw_sha256": "e4c96f680c7c962d1fbe6127f918283d5ec599c28c83464a48cc8b186c0ba76b",
+      "raw_xz_sha256": "185d4e93e80ea98e479ab05d4ef5d6a4ae559ce2af12a8ecaf1b1d6208a9adb7",
+      "counts": {
+        "density_certificates": 12,
+        "exact": 144,
+        "pairs": 72,
+        "rows": 1728,
+        "finite": 2592
+      }
+    }
+  ],
+  "merge_status": "unmerged research branch",
+  "scope": "Fixed-source order agreement does not imply source independence; no source-selection or gravity law."
+}
