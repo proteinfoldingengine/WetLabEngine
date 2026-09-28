@@ -1,0 +1,31 @@
+{
+  "version": "16.02",
+  "tested_commit": "ccc65c5569e904be3c98ec61e3d231f8e693eb92",
+  "run_id": 36440529651,
+  "job_id": 108989510349,
+  "artifact_id": 10978763246,
+  "artifact_sha256": "6fbcd695d037956e980f9a4fcd6a1f64c97120a2e5aee5208e140479950c0e7e",
+  "result_sha256": "6b0e8e5a143df5c7ece910e1b3d9fe7204d916ea2cdce7f181ccc1f12ebe9eb9",
+  "all_valid": true,
+  "verdict": "FULL_ENSEMBLE_EB_RESPONSE_SCALING_CONFIRMED",
+  "erasure_verdict": "FULL_ENSEMBLE_ERASURE_POLAR_UNDEFINED_CONFIRMED",
+  "rows": 192,
+  "positive_rows": 144,
+  "erasure_rows": 48,
+  "tests_passed": 5,
+  "precision_digits": [
+    50,
+    80
+  ],
+  "verification": {
+    "downloaded_zip_digest": true,
+    "six_sha256sums_entries": true,
+    "execution_head": true,
+    "four_source_git_blob_hashes": true,
+    "legacy_decompressed_hash": true,
+    "result_json_inspected": true
+  },
+  "raw_results_location": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36440529651/artifacts/10978763246",
+  "artifact_expires_at": "2026-12-27T15:02:22Z",
+  "scope": "Conditional on frozen source/preparation laws. Historical INVALID preserved. No gravity derivation."
+}
