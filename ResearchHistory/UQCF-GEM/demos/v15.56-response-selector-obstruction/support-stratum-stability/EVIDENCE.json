@@ -1,0 +1,40 @@
+{
+  "redCommit": "025343f057d56dd6f048e1ade9443548827a05d1",
+  "redRun": 36486688604,
+  "redJob": 109145191441,
+  "greenCommit": "fc08e122cd6b1949ba71b2582500c0724bb3ff1c",
+  "greenTree": "55f410db90b5745bf2f7fa84ad12ab77c876e086",
+  "greenRun": 36486973238,
+  "greenJob": 109146119823,
+  "all_valid": true,
+  "verdict": "SUPPORT_POLAR_DISCONTINUITY_FORCED",
+  "EB_forced_count": 48,
+  "EB_case_count": 48,
+  "rank_and_normal_rank_counts": {
+    "('plane', 1, 1)": 24,
+    "('isotropic', 2, 1)": 18,
+    "('isotropic', 1, 2)": 6
+  },
+  "normal_norm_ranges": {
+    "plane": [
+      "1.206733628805423e-5",
+      "0.0008396150503025122"
+    ],
+    "isotropic": [
+      "1.329942466234416e-5",
+      "0.0004834740864700634"
+    ]
+  },
+  "metrics": {
+    "archive_C": "7.0032453774907874201746253333736806832337665254307e-54",
+    "archive_V": "3.0687738631333935469894252439950490766777128410967e-52",
+    "normal_covariance": "2.879710095191511713362518686068003253035536396906e-54",
+    "projector_identity": "3.2434814681170888481785589888795383299749426388261e-51",
+    "normal_identity": "2.1826608502925378704122849423925730908444664531525e-54",
+    "precision": "2.5722311665924979165047488320605605306408631618041e-54"
+  },
+  "artifact_id": 10998913566,
+  "artifact_zip_sha256": "3724cbf6675f3e45509bc273cd8383cd16bdee1efb18b811ce7fb74062dd77b7",
+  "raw_sha256": "f903a28fc3ebd5a0f64d10cd511075917c06e8042032dd48b3a70ed809cae748",
+  "raw_gzip_sha256": "e9f98f6bafb00ff17758a696ff188126e198b47c1ae911369518380033f7e2b5"
+}
