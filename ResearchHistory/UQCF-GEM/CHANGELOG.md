@@ -254,3 +254,11 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 - The Gram derivative is first-order blind to the normal component; the leading normal energy loses its sign. Full higher-order terms remain explicit.
 - Targeted run 36496955303 passed five new tests, six parent tests and 3,456 numerical records. Full raw results and logs are committed; source and gravity laws remain underived.
 - [Final report](V16_12_REPORT.md). Published on a research branch, not merged into main.
+
+### v16.13 — Local gauge content and spectral-edge qualification
+
+- Classified all 144 local baseline-normal pairs under SO(3)×SO(3): 90 admit a proper sign flip, while 54 rank-two cases have a nonzero odd determinant witness. All signs are equivalent under the larger O(3) comparison.
+- Rank-two normalized orientation sensitivity spans 5.3194e-15 to 1.4944e-14 and collapses at the rank-one boundary; it is not promoted as a robust physical signal.
+- Invariant normal-amplitude coefficients distinguish all 48 nonidentity order pairs; 24 identity pairs coincide.
+- Run 36499944642 passed five new tests, five parent tests and 576 numerical rows. Full raw data, reports, logs and independent verification are published.
+- [Final report](V16_13_REPORT.md); [revised 16.13–16.15 brief](V16_13-15_BRIEF.md). Network/interpretation measurements remain pending. No source or gravity law, and no merge into main.

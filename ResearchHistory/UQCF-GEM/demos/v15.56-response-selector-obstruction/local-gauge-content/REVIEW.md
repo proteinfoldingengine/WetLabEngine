@@ -5,3 +5,7 @@ Independent reviewer review1607 found no blockers and independently passed all f
 The review emphasized that this is a classification of the local pair (C,N), not of all derivatives, full physical paths, neighboring edges or sources. Small exact rank-two orientation witnesses must not be reported as robust physical signals; actual normal response vanishes at zero coherence.
 
 Preregistered GitHub RED and local RED both produced five expected absent-implementation failures. A local unmatched-parenthesis syntax error was corrected before any ensemble execution; all tests then passed locally and independently. No scientific input, hypothesis or threshold changed. The GREEN ensemble runs only on the dedicated GitHub workflow.
+
+## Final report review
+
+The independent reviewer checked the complete raw result against the final report: all classifications, counts, orientation ranges, residuals, file sizes and verification statements matched. The revised 16.13–16.15 brief was also reviewed; 16.14/16.15 are clearly prospective and require frozen protocols before measurement. No substantive corrections were needed.
