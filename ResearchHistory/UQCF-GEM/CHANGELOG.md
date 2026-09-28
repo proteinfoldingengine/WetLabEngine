@@ -246,3 +246,11 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 - v16.11 certified three fixed-coherence boundary classes across the whole interval, including144 independent zero-coherence rank checks.
 - All full reports, raw .xz results, code, tests, checksums and execution logs are published additively on the research branch. The initial INVALID 16.11 determinant failure and corrected regression remain explicit.
 - [Combined final report](V16_09-11_REPORT.md). No source-emergence or gravity claim; no merge into main.
+
+### v16.12 — Continuous signed normal response
+
+- All 144 frozen physical families satisfy a uniform continuity bound for the magnitude-weighted matrix and retain a signed normal derivative λN+.
+- All 48 nonidentity pairs have nonzero contrast coefficients; the first-order contrast vanishes at λ=0. All 24 identity-middle pairs have zero contrast.
+- The Gram derivative is first-order blind to the normal component; the leading normal energy loses its sign. Full higher-order terms remain explicit.
+- Targeted run 36496955303 passed five new tests, six parent tests and 3,456 numerical records. Full raw results and logs are committed; source and gravity laws remain underived.
+- [Final report](V16_12_REPORT.md). Published on a research branch, not merged into main.

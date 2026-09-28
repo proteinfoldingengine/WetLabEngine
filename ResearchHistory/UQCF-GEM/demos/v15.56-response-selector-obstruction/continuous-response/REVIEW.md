@@ -7,3 +7,7 @@ The numerical algebra controls use the actual projected normal; the hypothesis N
 Both local and preregistered GitHub RED failed the five expected absent-implementation tests. During local test development, the energy-coefficient test compared an expanded polynomial with an equal factored polynomial using structural equality. Expanding the expected polynomial corrected this test-expression issue; no scientific criterion changed and no ensemble had been measured. All five tests then passed locally and independently.
 
 Only the dedicated continuous-response GitHub workflow executes the ensemble. Protocol, source hashes, input coefficients, precision, grid, tolerances and physical interpretation remain frozen before that run.
+
+## Final evidence review
+
+The independent reviewer checked the full raw archive against RESULTS.md after the successful GitHub run. Counts, ranks, all reported metrics and maxima, file sizes and interpretation boundaries matched. No substantive corrections were required. The Gram subsection explicitly defines its normal N=λN+. No extra measurement was performed by the reviewer.
