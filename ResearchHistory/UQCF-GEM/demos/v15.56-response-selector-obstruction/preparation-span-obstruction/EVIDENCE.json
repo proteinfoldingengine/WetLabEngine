@@ -1,0 +1,36 @@
+{
+  "version": "15.92",
+  "branch": "research/v15.92-preparation-span-obstruction",
+  "parent": "eef0d852b2e696675d938244a8ef1ff5d648a24e",
+  "preregistration": "2632c2b73a8d7212762ea203248c0bd873cc0249",
+  "implementation": "0586cc077c77abe8caad3a8411fbf6c4939e0260",
+  "red": {
+    "run": 36362494141,
+    "job": 108742299600,
+    "artifact": 10945848148,
+    "archive_sha256": "1bd8c63687891f76f4487afa42ba3a6da5c2e5d235f22c2160cb3f7d130b215d",
+    "expected_missing_implementation": true
+  },
+  "green": {
+    "run": 36362753558,
+    "job": 108743051837,
+    "artifact": 10946605591,
+    "archive_sha256": "5589fd27caa1466b6b50153614da706b354318bf284589dfc6cd5478cb21d5fb",
+    "all_valid": true,
+    "tests": 3,
+    "exact_checks": 45,
+    "cases": 144
+  },
+  "verdict": "PREPARATION_SPAN_GEOMETRY_OBSTRUCTION_CONFIRMED",
+  "noncommuting_verdict": "NONCOMMUTING_PREPARATIONS_INSUFFICIENT_CONFIRMED",
+  "result_sha256": "bd2749b7f7b1afd836074890bf66f49ba96faa20353615b741fb2bd6cac1b30a",
+  "gzip_sha256": "ea33a8cd3dbbea12bffd13e5af1a5eecd61e235ee7617d056058b95cf4f72a7f",
+  "gzip_blob": "b2627af6114570825e5dd9923a1e3e984018cebc",
+  "verification": {
+    "artifact_heads": true,
+    "frozen_source_bytes": true,
+    "artifact_checksums": true,
+    "log_json_matches_artifact": true
+  },
+  "interpretation": "Full preparation span is necessary for full-rank correlations and the frozen nonsingular readout. Rank-two skew Sylvester invertibility and an added SO(3) completion remain possible."
+}

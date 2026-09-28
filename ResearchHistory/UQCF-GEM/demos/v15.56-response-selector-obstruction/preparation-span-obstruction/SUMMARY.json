@@ -1,0 +1,289 @@
+{
+  "version": "15.92",
+  "all_valid": true,
+  "verdict": "PREPARATION_SPAN_GEOMETRY_OBSTRUCTION_CONFIRMED",
+  "noncommuting_verdict": "NONCOMMUTING_PREPARATIONS_INSUFFICIENT_CONFIRMED",
+  "span_predicate": true,
+  "noncommuting_predicate": true,
+  "controls": {
+    "effect_completeness": 1.1102230246251565e-15,
+    "effect_hermiticity": 0.0,
+    "matrix_unit_reconstruction": 1.1102230246251565e-16,
+    "center_tangent_reconstruction": 1.2490009034432798e-16,
+    "probability_imaginary": 1.734723475976807e-18,
+    "probability_sum": 3.3306808130986375e-16,
+    "tangent_probability_sum": 6.938893903907228e-18,
+    "affine_one_body": 1.6653345369377348e-16,
+    "connected_identity": 1.6653345369377348e-16,
+    "support_residual": 2.3074892175185616e-15,
+    "sylvester": 6.631170520942725e-17,
+    "parent_geometry_match": 2.319376436768335e-15,
+    "parents_valid": true,
+    "symbolic_certificate": {
+      "check_count": 45,
+      "checks": {
+        "isotropic_unit00": true,
+        "isotropic_unit01": true,
+        "isotropic_unit10": true,
+        "isotropic_unit11": true,
+        "isotropic_effects": true,
+        "isotropic_trace": true,
+        "isotropic_positive": true,
+        "isotropic_span": true,
+        "isotropic_commutator": true,
+        "plane_unit00": true,
+        "plane_unit01": true,
+        "plane_unit10": true,
+        "plane_unit11": true,
+        "plane_effects": true,
+        "plane_trace": true,
+        "plane_positive": true,
+        "plane_span": true,
+        "plane_commutator": true,
+        "line_unit00": true,
+        "line_unit01": true,
+        "line_unit10": true,
+        "line_unit11": true,
+        "line_effects": true,
+        "line_trace": true,
+        "line_positive": true,
+        "line_span": true,
+        "line_commutator": true,
+        "point_unit00": true,
+        "point_unit01": true,
+        "point_unit10": true,
+        "point_unit11": true,
+        "point_effects": true,
+        "point_trace": true,
+        "point_positive": true,
+        "point_span": true,
+        "point_commutator": true,
+        "connected_00": true,
+        "connected_01": true,
+        "connected_02": true,
+        "connected_10": true,
+        "connected_11": true,
+        "connected_12": true,
+        "connected_20": true,
+        "connected_21": true,
+        "connected_22": true
+      },
+      "valid": true
+    },
+    "input_physicality": {
+      "min_eigenvalue": 0.03831621266594478,
+      "trace_error": 1.1102230246251565e-16,
+      "hermiticity_error": 0.0,
+      "valid": true
+    },
+    "source_output_physicality": {
+      "min_eigenvalue": 0.015624999999999946,
+      "trace_error": 5.551115123125783e-16,
+      "hermiticity_error": 1.1931124954476498e-17,
+      "valid": true
+    },
+    "minimum_effect_eigenvalue": -2.265940516523345e-17,
+    "minimum_probability": 0.0026013646149226745
+  },
+  "local_channels": [
+    {
+      "arm": "isotropic",
+      "T": [
+        [
+          0.3333333333333333,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.3333333333333333,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.3333333333333333
+        ]
+      ],
+      "t": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "preparation_affine_dimension": 3,
+      "max_squared_commutator_norm": 0.5000000000000001,
+      "outcomes": 216,
+      "prepared_states": {
+        "min_eigenvalue": -1.812752413218676e-16,
+        "trace_error": 0.0,
+        "hermiticity_error": 0.0,
+        "valid": true
+      }
+    },
+    {
+      "arm": "plane",
+      "T": [
+        [
+          0.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "t": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "preparation_affine_dimension": 2,
+      "max_squared_commutator_norm": 0.5000000000000001,
+      "outcomes": 64,
+      "prepared_states": {
+        "min_eigenvalue": -1.812752413218676e-16,
+        "trace_error": 0.0,
+        "hermiticity_error": 0.0,
+        "valid": true
+      }
+    },
+    {
+      "arm": "line",
+      "T": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "t": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "preparation_affine_dimension": 1,
+      "max_squared_commutator_norm": 0.0,
+      "outcomes": 8,
+      "prepared_states": {
+        "min_eigenvalue": 0.0,
+        "trace_error": 0.0,
+        "hermiticity_error": 0.0,
+        "valid": true
+      }
+    },
+    {
+      "arm": "point",
+      "T": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "t": [
+        0.0,
+        0.5,
+        0.0
+      ],
+      "preparation_affine_dimension": 0,
+      "max_squared_commutator_norm": 0.0,
+      "outcomes": 1,
+      "prepared_states": {
+        "min_eigenvalue": 0.015624999999999946,
+        "trace_error": 0.0,
+        "hermiticity_error": 0.0,
+        "valid": true
+      }
+    }
+  ],
+  "result_sha256": "bd2749b7f7b1afd836074890bf66f49ba96faa20353615b741fb2bd6cac1b30a",
+  "gzip_sha256": "ea33a8cd3dbbea12bffd13e5af1a5eecd61e235ee7617d056058b95cf4f72a7f",
+  "result_bytes": 1595642,
+  "gzip_bytes": 180077,
+  "row_count": 144,
+  "arm_ranks": {
+    "isotropic": [
+      [
+        3,
+        3,
+        3
+      ]
+    ],
+    "plane": [
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "line": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "point": [
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "status_counts": {
+    "REGULAR": 36,
+    "SINGULAR_PREPARATION_SPAN": 108
+  },
+  "isotropic_E_ranks": {
+    "-1": [
+      [
+        6,
+        6,
+        6
+      ]
+    ],
+    "0": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "1": [
+      [
+        6,
+        6,
+        6
+      ]
+    ]
+  },
+  "minimum_composite_choi_eigenvalue": -1.4947813046755865e-16
+}
