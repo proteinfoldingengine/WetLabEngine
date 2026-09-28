@@ -21,10 +21,22 @@ class GateTests(unittest.TestCase):
             with self.assertRaises(ValueError):g.edge(g.mp.diag([3,2,-1]),c,'isotropic')
             with self.assertRaises(ValueError):g.edge(g.mp.diag([3,0,0]),c,'plane')
 
+    def test_readout_and_finite_tensor_layout(self):
+        g=self.g
+        with g.mp.workdps(50):
+            c=g.mp.diag([3,2,1]);zero=g.mp.zeros(3)
+            inp={'cs':[c]*6,'sc':[c]*6,'ds':[[zero]*6]}
+            rr,k,j=g.readout(inp,'isotropic')
+            self.assertEqual(rr['K_ranks'],[0,0,0])
+            self.assertEqual(rr['J_ranks'],[0,0,0])
+            probe={'dc':g.np.zeros((1,6,3,3)),'dh':None,'J':None,'domain':False}
+            self.assertEqual(g.finite_errors(probe,inp,None)['finite_channel_error'],0.)
+
     def test_isotropic_channel(self):
         g=self.g
         with g.mp.workdps(50):
             law=g.laws(50)
+            self.assertTrue(law['isotropic_controls']['valid'])
             want=g.mp.diag([1,g.mp.mpf(1)/3,g.mp.mpf(1)/3,g.mp.mpf(1)/3])
             for frame in [0,1]:
                 for t in law['preparation']['isotropic'][frame]:
