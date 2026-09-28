@@ -165,7 +165,7 @@ def run_measurement():
                         if rr is not None and tr is not None:
                             cr=max(np.linalg.norm(np.array(tr['K'])-g6@np.array(rr['K'])),np.linalg.norm(np.array(tr['J'])-rr['J']));mx('covariance',cr)
                             same=all(rr[k]==tr[k] for k in ['K_ranks','J_ranks']);rank_cov=rank_cov and same
-                            transformed[order]={'K_ranks':tr['K_ranks'],'J_ranks':tr['J_ranks'],'covariance_residual':float(cr),'ranks_match':bool(same)}
+                            transformed[order]={'K_ranks':tr['K_ranks'],'J_ranks':tr['J_ranks'],'K_singular_values':tr['K_singular_values'],'J_singular_values':tr['J_singular_values'],'covariance_residual':float(cr),'ranks_match':bool(same)}
                     if a>0:
                         for records in [responses,rotresponses]:
                             if all(r is not None for r in records.values()):

@@ -23,10 +23,16 @@ jobs:
         run: |
           set -o pipefail
           cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/intermediate-eb-retention
+          set +e
           python -m unittest -v test_gate 2>&1 | tee test.log
+          test_status=$?
           python gate.py > result.json
+          gate_status=$?
+          set -e
           python -c 'import json; r=json.load(open("result.json")); print(json.dumps({k:r[k] for k in ["version","all_valid","verdict","erasure_verdict","scaling_predicate","erasure_predicate"]},indent=2))'
           sha256sum PREREGISTRATION.md DERIVATION.md test_gate.py gate.py result.json | tee SHA256SUMS
+          test "$test_status" -eq 0
+          test "$gate_status" -eq 0
       - uses: actions/upload-artifact@v4
         if: always()
         with:
