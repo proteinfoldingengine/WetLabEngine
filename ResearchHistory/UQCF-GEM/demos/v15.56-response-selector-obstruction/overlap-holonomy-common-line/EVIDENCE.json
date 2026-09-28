@@ -1,0 +1,37 @@
+{
+  "version": "15.96",
+  "branch": "research/v15.96-overlap-holonomy-common-line",
+  "parent": "0bb9d708f1a793dc0020000426ede5391b8e76f9",
+  "preregistration_commit": "0e60d6b867e3b54898746983925e325513f9fbb4",
+  "tested_commit": "d296c43f7ae7c807b092e2d2e0eee36b1ee44e3f",
+  "red": {
+    "run": 36369357144,
+    "job": 108762175925,
+    "artifact": 10948498099,
+    "zip_sha256": "73f602d63c54b4840fe108b1c0e7bd128e73e709b1329f956582007cb90e4f21",
+    "expected_missing_implementation_verified": true
+  },
+  "green": {
+    "run": 36369815339,
+    "job": 108763557485,
+    "artifact": 10948054942,
+    "zip_sha256": "cf02f6d9758212f9b8c702dfc87bcc64524c1a89de49413e7564b64ea3e84b5b"
+  },
+  "gate_sha256": "56feb3fb08c135f060895160aa7fb9955f2c887da5469694c61523aa562a0f52",
+  "raw_json_sha256": "99d55b90eee2f05fa979401aaedcfb05af71e35f958efeef1b30ed43affb1d9e",
+  "gzip_sha256": "1102dd9da14f82cc44d958de15effe9b0553e3b6cf396deb1791f98a88527550",
+  "raw_bytes": 3160359,
+  "gzip_bytes": 783390,
+  "verdict": "OVERLAP_COMMON_LINE_OBSTRUCTION_CONFIRMED",
+  "planar_verdict": "PLANAR_COMMON_LINE_PRESERVED",
+  "all_valid": true,
+  "rows": 72,
+  "checks": {
+    "downloaded_archive_digest": true,
+    "execution_head": true,
+    "frozen_files_byte_identity": true,
+    "all_manifest_checksums": true,
+    "job_log_json_sha256_matches_artifact": true
+  },
+  "main_merged": false
+}

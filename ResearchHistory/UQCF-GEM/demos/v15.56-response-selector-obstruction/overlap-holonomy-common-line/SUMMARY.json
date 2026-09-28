@@ -1,0 +1,414 @@
+{
+  "version": "15.96",
+  "all_valid": true,
+  "verdict": "OVERLAP_COMMON_LINE_OBSTRUCTION_CONFIRMED",
+  "planar_verdict": "PLANAR_COMMON_LINE_PRESERVED",
+  "fullspan_predicate": true,
+  "planar_predicate": true,
+  "controls": {
+    "effect_completeness": 1.7767904673426062e-15,
+    "effect_hermiticity": 0.0,
+    "unit_reconstruction": 1.942890293094024e-16,
+    "center_reconstruction": 8.326672687696894e-17,
+    "probability_imaginary": 1.8295911660692887e-19,
+    "probability_sum": 2.2204681271242457e-16,
+    "overlap": 8.326758711027992e-17,
+    "regional_correlation": 9.71445146547012e-17,
+    "spectator_marginal": 8.787791353441489e-17,
+    "spectator_formula": 5.65170366985209e-17,
+    "connected_affine": 1.4354836763708079e-16,
+    "geometry": 1.519393075441413e-14,
+    "covariance": 4.8533006107844434e-14,
+    "planar_normal": 3.0432134437411643e-14,
+    "parents_valid": true,
+    "symbolic_certificate": {
+      "check_count": 13,
+      "checks": {
+        "basis_orthonormal": true,
+        "representation_product": true,
+        "planar_fixed_tensor": true,
+        "shared_line_rank": true,
+        "flip_commutator": true,
+        "no_common_line_rank": true,
+        "representation_covariance": true,
+        "swap_unitary_involution": true,
+        "spectator_connected_identity": true,
+        "frame_0": true,
+        "frame_1": true,
+        "frame_2": true,
+        "frame_3": true
+      },
+      "valid": true
+    },
+    "inherited_certificate": {
+      "check_count": 45,
+      "checks": {
+        "isotropic_unit00": true,
+        "isotropic_unit01": true,
+        "isotropic_unit10": true,
+        "isotropic_unit11": true,
+        "isotropic_effects": true,
+        "isotropic_trace": true,
+        "isotropic_positive": true,
+        "isotropic_span": true,
+        "isotropic_commutator": true,
+        "plane_unit00": true,
+        "plane_unit01": true,
+        "plane_unit10": true,
+        "plane_unit11": true,
+        "plane_effects": true,
+        "plane_trace": true,
+        "plane_positive": true,
+        "plane_span": true,
+        "plane_commutator": true,
+        "line_unit00": true,
+        "line_unit01": true,
+        "line_unit10": true,
+        "line_unit11": true,
+        "line_effects": true,
+        "line_trace": true,
+        "line_positive": true,
+        "line_span": true,
+        "line_commutator": true,
+        "point_unit00": true,
+        "point_unit01": true,
+        "point_unit10": true,
+        "point_unit11": true,
+        "point_effects": true,
+        "point_trace": true,
+        "point_positive": true,
+        "point_span": true,
+        "point_commutator": true,
+        "connected_00": true,
+        "connected_01": true,
+        "connected_02": true,
+        "connected_10": true,
+        "connected_11": true,
+        "connected_12": true,
+        "connected_20": true,
+        "connected_21": true,
+        "connected_22": true
+      },
+      "valid": true
+    },
+    "preparations": [
+      {
+        "arm": "plane",
+        "outcomes": 256,
+        "min_eigenvalue": -5.162787502444267e-17,
+        "trace_error": 0.0,
+        "hermiticity_error": 0.0,
+        "valid": true
+      },
+      {
+        "arm": "isotropic",
+        "outcomes": 1296,
+        "min_eigenvalue": -1.7729306578954885e-16,
+        "trace_error": 0.0,
+        "hermiticity_error": 0.0,
+        "valid": true
+      }
+    ],
+    "minimum_effect_eigenvalue": -3.226742189027667e-18,
+    "minimum_probability": 0.0004936400691188626,
+    "input_physicality": {
+      "min_eigenvalue": 0.023238820210108396,
+      "trace_error": 1.1102230246251565e-16,
+      "hermiticity_error": 0.0,
+      "valid": true
+    },
+    "source_physicality": {
+      "min_eigenvalue": 0.02688447081995684,
+      "trace_error": 2.220446049250313e-16,
+      "hermiticity_error": 1.016452185651802e-17,
+      "valid": true
+    },
+    "output_physicality": {
+      "min_eigenvalue": 0.054413329035132914,
+      "trace_error": 2.220446049250313e-16,
+      "hermiticity_error": 3.0260702227320536e-18,
+      "valid": true
+    },
+    "numerical_controls_valid": true
+  },
+  "numerical_controls": {
+    "shared_line_noncommuting": {
+      "H1": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      ],
+      "H2": [
+        [
+          0.6,
+          -0.8,
+          0.0
+        ],
+        [
+          0.8,
+          0.6,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "B": [
+        [
+          2.220446049250313e-16,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -2.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -2.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.220446049250313e-16
+        ],
+        [
+          -1.2800000000000002,
+          0.0,
+          -0.9600000000000001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.9600000000000001,
+          5.286512044907458e-18,
+          -1.2800000000000002,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -0.3999999999999999,
+          -0.8000000000000002
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.8000000000000002,
+          -0.3999999999999999
+        ]
+      ],
+      "B_singular_values": [
+        2.5612496949731396,
+        2.1908902300206643,
+        1.6000000000000003,
+        0.8944271909999159,
+        3.468031858960686e-17
+      ],
+      "B_ranks": [
+        4,
+        4,
+        4
+      ],
+      "kernel_dimensions": [
+        1,
+        1,
+        1
+      ],
+      "commutator_norm": 2.2627416997969525,
+      "group_commutator_distance": 2.2627416997969525,
+      "identity_residual": 8.881784197001252e-16
+    },
+    "no_common_line": {
+      "H1": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "H2": [
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "B": [
+        [
+          -0.4999999999999999,
+          0.8660254037844388,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.8660254037844388,
+          -1.5,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -1.0000000000000002,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0000000000000002,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.0
+        ],
+        [
+          -2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -2.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          -1.0000000000000002
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0000000000000002,
+          -1.0
+        ]
+      ],
+      "B_singular_values": [
+        2.4494897427831783,
+        2.449489742783178,
+        2.449489742783178,
+        2.0000000000000004,
+        1.4142135623730954
+      ],
+      "B_ranks": [
+        5,
+        5,
+        5
+      ],
+      "kernel_dimensions": [
+        0,
+        0,
+        0
+      ],
+      "commutator_norm": 2.449489742783178,
+      "group_commutator_distance": 2.449489742783178,
+      "identity_residual": 1.0053497077208614e-15
+    }
+  },
+  "result_sha256": "99d55b90eee2f05fa979401aaedcfb05af71e35f958efeef1b30ed43affb1d9e",
+  "gzip_sha256": "1102dd9da14f82cc44d958de15effe9b0553e3b6cf396deb1791f98a88527550",
+  "result_bytes": 3160359,
+  "gzip_bytes": 783390,
+  "row_count": 72,
+  "B_ranks": {
+    "plane": [
+      [
+        4,
+        4,
+        4
+      ]
+    ],
+    "isotropic": [
+      [
+        5,
+        5,
+        5
+      ]
+    ]
+  },
+  "domain_exits": []
+}
