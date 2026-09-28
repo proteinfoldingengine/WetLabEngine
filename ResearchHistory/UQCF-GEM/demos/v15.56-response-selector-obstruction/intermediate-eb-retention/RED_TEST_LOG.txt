@@ -1,0 +1,15 @@
+setUpClass (test_gate.GateTests) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_gate.GateTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/intermediate-eb-retention/test_gate.py", line 10, in setUpClass
+    assert p.exists(), 'v15.99 scientific implementation absent: expected RED'
+           ^^^^^^^^^^
+AssertionError: v15.99 scientific implementation absent: expected RED
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+FAILED (errors=1)

@@ -1,0 +1,57 @@
+{
+  "version": "15.99",
+  "branch": "research/v15.99-intermediate-eb-retention",
+  "parent": "3a3655a5c5bd263b8986a651b9c9ef23bda0c306",
+  "preregistration_commit": "fad2d16aae746ed70e505a6902939591a9519922",
+  "initial_implementation_commit": "64e7ad9852d7c4fb3efe6acba19c29cdc76d839b",
+  "tested_diagnostic_commit": "00b1ba5c2dfdb47539c96004ded850c950dd7e0e",
+  "red": {
+    "run": 36375520791,
+    "job": 108780443501,
+    "artifact": 10950658108,
+    "zip_sha256": "1096caaa16054e42b001ae303e38028209e5e5a28f268c962736cbec65e77df1",
+    "expected_missing_implementation_verified": true
+  },
+  "initial_measurement": {
+    "run": 36375832861,
+    "job": 108781359058,
+    "artifact": 10950982206,
+    "zip_sha256": "e998847cd1b26466200dcecd0026143d618cf45052f16e85d3837db9c6a5b832",
+    "conclusion": "failure",
+    "all_valid": false,
+    "full_result_json_emitted": false,
+    "failed_control": "rank_covariance_valid"
+  },
+  "diagnostic_measurement": {
+    "run": 36376165703,
+    "job": 108782334443,
+    "artifact": 10951660106,
+    "zip_sha256": "040b467bd1fb04f7ddf75dfc89e7ff78e7404bbc0a815291385bd5a8fdf5013f",
+    "conclusion": "failure",
+    "scientific_arithmetic_and_criteria_unchanged": true
+  },
+  "gate_sha256": "ba44a36fbef8923baf0b2c274fadc1dcc6b65c4f6bff848ff6c8ce0f6d32a56c",
+  "initial_gate_sha256": "231efd7eaf76948f5cd05050abb389bead51d57ef53e90b2ce2be4dfcffcb10b",
+  "raw_json_sha256": "8107f3f6ac83b08ba9ff9490d56518a10ca823f9bd92a290adf418cc79d9ebbb",
+  "gzip_sha256": "84865667bf0a1987d919450eddf41751feb27ace640c99815592ebb65122eac9",
+  "raw_bytes": 18789502,
+  "gzip_bytes": 2376079,
+  "verdict": "INVALID",
+  "erasure_verdict": "INVALID",
+  "all_valid": false,
+  "scaling_predicate": true,
+  "erasure_predicate": true,
+  "rows": 192,
+  "rank_covariance_response_mismatches": 8,
+  "affected_rows": 4,
+  "green_run": null,
+  "verification": {
+    "all_three_archive_digests": true,
+    "execution_heads": true,
+    "frozen_files_byte_identity": true,
+    "diagnostic_manifest_checksums": true,
+    "diagnostic_job_log_manifest_matches_artifact": true,
+    "diagnostic_job_log_verdict_matches_artifact": true
+  },
+  "main_merged": false
+}
