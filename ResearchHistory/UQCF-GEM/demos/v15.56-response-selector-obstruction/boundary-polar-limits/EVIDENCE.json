@@ -1,0 +1,33 @@
+{
+  "version": "16.09",
+  "branch": "research/v16.09-boundary-polar-limits",
+  "base": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/boundary-polar-limits",
+  "redCommit": "ef3b558b678a0f5a8da0c6ca8adc8a5f54e587f2",
+  "redRun": 36492432951,
+  "redJob": 109163938894,
+  "greenCommit": "b8bfa7cd3abf99884b6627ab2a42d0fa035154be",
+  "greenTree": "b56c5fdba4a2080b0e3741dc84fb3ab7ca3923d2",
+  "greenRun": 36492791730,
+  "greenJob": 109165094308,
+  "artifact_id": 11002636573,
+  "artifact_zip_sha256": "bfb2e8009b2a6f07a074cd174e9eddb5526a7b43c3eb01fcb281f56e57bb0338",
+  "raw_sha256": "493e44368c6eda7944ec4ddfa2a3e544107def36f8114327f2ed1544637654a2",
+  "raw_xz_sha256": "0cf31feb951b438db9b2eff04ba2e26288bbf0dc9c65862dde7943af7345dab7",
+  "all_valid": true,
+  "verdict": "COMMON_ORDER_BOUNDARY_LIMIT_CERTIFIED",
+  "metrics": {
+    "polar": "1.64571630412654278795479440518615708243229086160765029300467e-80",
+    "support": "5.58156651026021135816417521392948882971694190616571992105996e-68",
+    "limit_identity": "2.44284661827757055629239803198025640583586770259480397138866e-67",
+    "covariance": "1.57582734083294284590805931160444463747782152095582508723512e-67",
+    "precision": "1.52869177744694780451460851590139314482308558391931039177346e-67",
+    "finite_polar": "2.38193064527956813245713209226434898530403784985983483174969e-120",
+    "finite_covariance": "5.20721346795842203200676162333484300790310692431620596465712e-64"
+  },
+  "array_counts": {
+    "exact": 144,
+    "pairs": 72,
+    "rows": 576,
+    "finite": 1440
+  }
+}
