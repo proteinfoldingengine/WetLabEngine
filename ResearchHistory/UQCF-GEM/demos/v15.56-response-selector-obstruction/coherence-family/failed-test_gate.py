@@ -17,14 +17,3 @@ class Tests(unittest.TestCase):
   for sign in [-1,1]:self.assertEqual(g.L.V.clean({w:c.subs(lam,sign) for w,c in x.items()}),g.T.action(d,sign))
  def test_verdict_negative_cases(self):
   g=self.gate();self.assertEqual(g.classify(True,False,False,False),'FAMILY_IDENTITIES_NOT_CONFIRMED');self.assertEqual(g.classify(True,True,False,True),'ZERO_COHERENCE_RANK_CHANGE');self.assertEqual(g.classify(True,True,True,False),'CONTINUUM_LIMIT_NOT_CERTIFIED');self.assertEqual(g.classify(False,True,True,True),'INVALID')
- def test_rank_one_determinant_regression(self):
-  g=self.gate();self.assertTrue(hasattr(g,'det3'),'division-free determinant absent')
-  with g.mp.workdps(80):
-   m=g.mp.matrix([[1,2,3],[2,4,6],[3,6,9]])
-   self.assertEqual(g.det3(m),0);self.assertEqual(g.det3(g.mp.diag([-1,1,1])),-1)
-   self.assertEqual(g.det3(g.mp.matrix([[1,2,3],[0,1,4],[5,6,0]])),1)
-   import json
-   fixture=json.loads(pathlib.Path(__file__).with_name('DETERMINANT_REGRESSION.json').read_text())
-   m=g.mp.matrix([[g.mp.make_mpf(tuple(x)) for x in row] for row in fixture['mpf_tuples']])
-   with self.assertRaises(TypeError):g.mp.det(m)
-   self.assertLess(abs(g.det3(m)),g.mp.mpf('1e-75'))

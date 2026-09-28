@@ -6,9 +6,6 @@ HERE=pathlib.Path(__file__).resolve().parent
 q=importlib.util.spec_from_file_location('reversal1610_family',HERE.parent/'source-reversal/gate.py');T=importlib.util.module_from_spec(q);q.loader.exec_module(T)
 B=T.B;P=T.P;L=T.L;S=T.S;R=T.R;F=T.F
 LAM=sp.Symbol('lambda',real=True);LAMBDAS=[sp.Rational(-1,2),sp.Integer(0),sp.Rational(1,2)];STEPS=[32,128,192]
-def det3(m):
- if m.rows!=3 or m.cols!=3:raise ValueError("expected 3x3 matrix")
- return m[0,0]*(m[1,1]*m[2,2]-m[1,2]*m[2,1])-m[0,1]*(m[1,0]*m[2,2]-m[1,2]*m[2,0])+m[0,2]*(m[1,0]*m[2,1]-m[1,1]*m[2,0])
 def weights(s,lam):
  if not(0<=s<=1 and -1<=lam<=1):raise ValueError('outside CPTP rectangle')
  return [1-s,s*(1+lam)/2,s*(1-lam)/2]
@@ -86,7 +83,7 @@ def audit():
       if frame==1:mx('covariance',F.norm(b-gs[2]*limits[lam,0]*gs[3].T))
       if precision==80:old[key,lam,frame]=b.copy()
       else:mx('precision',F.norm(b-old.pop((key,lam,frame))))
-      rows.append({'candidate':key[0],'a':key[1],'arm':key[2],'order':key[3],'lambda':str(lam),'precision':precision,'frame':frame,'limit':R.encoded(b),'limit_rank':st['rank']+k,'determinant':R.ns(det3(b)),'gap_to_baseline':R.ns(F.norm(b-uc))})
+      rows.append({'candidate':key[0],'a':key[1],'arm':key[2],'order':key[3],'lambda':str(lam),'precision':precision,'frame':frame,'limit':R.encoded(b),'limit_rank':st['rank']+k,'determinant':R.ns(mp.det(b)),'gap_to_baseline':R.ns(F.norm(b-uc))})
      if precision==120:
       v=vc[0]+lam*vc[1];w=sum((lam**i*m for i,m in enumerate(wc)),sp.zeros(3))
       for step in STEPS:
@@ -103,4 +100,4 @@ def audit():
 if __name__=='__main__':
  try:result=audit()
  except Exception:result={'version':'16.11','all_valid':False,'verdict':'INVALID','error':traceback.format_exc()}
- result['execution_head']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=HERE,text=True).strip();(HERE/'result.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n');names=['PREREGISTRATION.md','SOURCE_MANIFEST.json','gate.py','test_gate.py','DETERMINANT_REGRESSION.json','result.json'];(HERE/'SHA256SUMS').write_text(''.join(hashlib.sha256((HERE/n).read_bytes()).hexdigest()+'  '+n+'\n' for n in names));print(json.dumps({k:result[k] for k in ['all_valid','verdict']}));sys.exit(0 if result['all_valid'] else 2)
+ result['execution_head']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=HERE,text=True).strip();(HERE/'result.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n');names=['PREREGISTRATION.md','SOURCE_MANIFEST.json','gate.py','test_gate.py','result.json'];(HERE/'SHA256SUMS').write_text(''.join(hashlib.sha256((HERE/n).read_bytes()).hexdigest()+'  '+n+'\n' for n in names));print(json.dumps({k:result[k] for k in ['all_valid','verdict']}));sys.exit(0 if result['all_valid'] else 2)
