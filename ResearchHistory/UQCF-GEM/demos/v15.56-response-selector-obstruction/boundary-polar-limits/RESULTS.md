@@ -16,9 +16,9 @@ The polar is the canonical partial isometry, zero on the kernel; no determinant 
 
 There are 144 exact records, 72 order comparisons, 576 limit evaluations (80/120 digits, two frames), and 1,440 finite-path evaluations. The 288 isotropic limit evaluations split into determinant +1 (168) and −1 (120); the 288 plane limits have determinant zero. Thus this is not an automatic proper-rotation readout.
 
-The largest numerical order difference was 1.579e-80. Maximum cross-precision discrepancy was 1.529e-67, support residual 5.582e-68, and finite-frame covariance residual 5.208e-64. All frozen controls passed. Independent publication checks reconstructed every normal using column-basis projectors, without the audit pseudoinverse routine, and checked all 72 exact order identities.
+The largest numerical order difference was 1.579e-80. Maximum cross-precision discrepancy was 1.529e-67, support residual 5.582e-68, and finite-frame covariance residual 5.207e-64. All frozen controls passed. Independent publication checks reconstructed every normal using column-basis projectors, without the audit pseudoinverse routine, and checked all 72 exact order identities.
 
-Finite s matters: maximum error to the limit at s=2^-8, 2^-32, 2^-64, 2^-128, 2^-192 was respectively 2.2268, 2.0000, 0.0022621, 1.2271e-22, 6.6521e-42. The tiny inherited nonzero singular values produce a very small asymptotic neighborhood. No fit or finite-step convergence threshold was used.
+Finite s matters: maximum error to the limit at s=2^-8, 2^-32, 2^-64, 2^-128, 2^-192 was respectively 2.2268, 2.0000, 0.0022620, 1.2271e-22, 6.6520e-42. The tiny inherited nonzero singular values produce a very small asymptotic neighborhood. No fit or finite-step convergence threshold was used.
 
 ## Provenance and complete evidence
 

@@ -238,3 +238,11 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 - Local SMI closed conditional on MEA.
 - Isolated QTC as independent metric-transport compatibility condition and TFHC as the subsequent torsion condition.
 - Showed one universal overall metric scale does not affect the HLCB connection test.
+
+## 2026-09-28 — v16.09–v16.11
+
+- v16.09 certified all 144 one-sided physical-path limits and exact agreement in 72 order comparisons.
+- v16.10 certified distinct limits under source-coherence reversal in all 144 paired cases, gap 2√k at a common baseline.
+- v16.11 certified three fixed-coherence boundary classes across the whole interval, including144 independent zero-coherence rank checks.
+- All full reports, raw .xz results, code, tests, checksums and execution logs are published additively on the research branch. The initial INVALID 16.11 determinant failure and corrected regression remain explicit.
+- [Combined final report](V16_09-11_REPORT.md). No source-emergence or gravity claim; no merge into main.

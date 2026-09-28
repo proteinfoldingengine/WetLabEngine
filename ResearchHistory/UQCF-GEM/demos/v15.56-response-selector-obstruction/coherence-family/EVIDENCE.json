@@ -1,0 +1,37 @@
+{
+  "version": "16.11",
+  "base": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/coherence-family",
+  "branch": "research/v16.11-coherence-family",
+  "parentPublication": "3bc9218b9e0fff1cd13722deca4419c5b3fcdb8b",
+  "redCommit": "da2c1a90708c2376bd8be58420df3e131bda7855",
+  "redRun": 36494298208,
+  "redJob": 109170123085,
+  "greenCommit": "12e477696c361f919c9c947db24503e9ac64153d",
+  "greenTree": "932e12826882cc9d92523f36a5f9c4628d4671b5",
+  "greenRun": 36495025125,
+  "failedCommit": "2122ebd4972223d66504520003e5e4ae7f8453e5",
+  "failedRun": 36494592601,
+  "greenJob": 109172476086,
+  "artifact_id": 11001914399,
+  "artifact_zip_sha256": "fb675974ec0fdd21779533bc655a35ef970a5b734529f9ab4948a723862f83c0",
+  "raw_sha256": "e4c96f680c7c962d1fbe6127f918283d5ec599c28c83464a48cc8b186c0ba76b",
+  "raw_xz_sha256": "185d4e93e80ea98e479ab05d4ef5d6a4ae559ce2af12a8ecaf1b1d6208a9adb7",
+  "all_valid": true,
+  "verdict": "THREE_COHERENCE_BOUNDARY_CLASSES_CERTIFIED",
+  "metrics": {
+    "polar": "1.64571630412654278795479440518615708243229086160765029300467e-80",
+    "limit_identity": "2.44284661827757055629239803198025640583586770259480397138866e-67",
+    "class_gap": "8.43375835458441857947885924101601520616796910589480604006221e-80",
+    "covariance": "1.57582734083294284590805931160444463747782152095582508723512e-67",
+    "precision": "1.52869177744694780451460851590139314482308558391931039177346e-67",
+    "finite_polar": "2.32443740795482968049737201489019510303820552980907555955289e-120",
+    "finite_covariance": "1.28670216139730083916089625340880782798280781936397338638146e-63"
+  },
+  "array_counts": {
+    "density_certificates": 12,
+    "exact": 144,
+    "pairs": 72,
+    "rows": 1728,
+    "finite": 2592
+  }
+}

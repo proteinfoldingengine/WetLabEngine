@@ -14,9 +14,9 @@ For every case, N−=−N+≠0 exactly. Both physical path ranks saturate at r+k
 
 These counts include both orders and all three middle-channel parameters, including the identity. The obstruction therefore survives when there is no ordering contrast. It is source-choice dependence of this boundary readout, not an ordering-specific gravity signal.
 
-All 144 exact paired records, 576 paired limit evaluations (80/120 digits and two frames), and 1,728 finite-polar evaluations are archived. Maximum squared-gap residual was 8.434e-80, cross-precision discrepancy 1.529e-67, limit partial-isometry residual 2.443e-67, and finite-frame covariance residual 5.208e-64. All frozen controls passed. Independent publication verification reconstructed the 288 normal blocks with column-basis projectors and checked all 144 exact nonzero reversals and gap predictions.
+All 144 exact paired records, 576 paired limit evaluations (80/120 digits and two frames), and 1,728 finite-polar evaluations are archived. Maximum squared-gap residual was 8.434e-80, cross-precision discrepancy 1.529e-67, limit partial-isometry residual 2.443e-67, and finite-frame covariance residual 5.207e-64. All frozen controls passed. Independent publication verification reconstructed the 288 normal blocks with column-basis projectors and checked all 144 exact nonzero reversals and gap predictions.
 
-The finite-grid maximum errors at s=2^-32, 2^-128 and 2^-192 were 2.0000, 1.9495e-22 and 1.0568e-41. The early grid point is not treated as asymptotic evidence; exact rank saturation is the proof. Tiny inherited singular values remain explicit. No fitting, threshold rank, determinant correction or arbitrary null-space choice was introduced.
+The finite-grid maximum errors at s=2^-32, 2^-128 and 2^-192 were 2.0000, 1.9494e-22 and 1.0568e-41. The early grid point is not treated as asymptotic evidence; exact rank saturation is the proof. Tiny inherited singular values remain explicit. No fitting, threshold rank, determinant correction or arbitrary null-space choice was introduced.
 
 ## Complete publication and provenance
 
