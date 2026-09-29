@@ -1,0 +1,46 @@
+[
+  {
+    "role": "wiring-red",
+    "run": 36583580004,
+    "sha": "1335532db55062af83fbe2bfd875c18eecb7d490",
+    "artifact": 11040492589,
+    "bytes": 13771,
+    "digest": "0dd183b6cba84cfbdd6f78de037f82df749db77788c7dc8108c600bd163ed78b",
+    "conclusion": "failure",
+    "job": 109457839265,
+    "attempt": 1
+  },
+  {
+    "role": "initial-green",
+    "run": 36584333728,
+    "sha": "f838bd86596db5884a9d3b33f245b127c55f56c8",
+    "artifact": 11040383829,
+    "bytes": 111322,
+    "digest": "e46b9fb761e058cbfe7fe7d88b4499c2bb55b157e1db26d4dccde44b51f05081",
+    "conclusion": "success",
+    "job": 109460481069,
+    "attempt": 1
+  },
+  {
+    "role": "validation-red",
+    "run": 36584604280,
+    "sha": "3e50f0fb4930502214bc43ed91ee1fc96596a7aa",
+    "artifact": 11040853393,
+    "bytes": 22121,
+    "digest": "0ee1d66982c09e6769954bdde898a102660e113490ef611c2cafc155080e3d6c",
+    "conclusion": "failure",
+    "job": 109461444418,
+    "attempt": 1
+  },
+  {
+    "role": "final-green",
+    "run": 36585110111,
+    "sha": "19c7069bad79ff361d612f742ad5e79dbfef1dc6",
+    "artifact": 11041500838,
+    "bytes": 113076,
+    "digest": "a878d78b351b27547ba67c23db6f824fab8691bc38cbe6cb5f2ee873a79e2211",
+    "conclusion": "success",
+    "job": 109463214802,
+    "attempt": 1
+  }
+]

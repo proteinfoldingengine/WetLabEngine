@@ -1,0 +1,207 @@
+{
+  "cover_order_histogram": {
+    "1": 1681,
+    "2": 1720,
+    "3": 120,
+    "4": 1
+  },
+  "coverage": {
+    "covers": 3522,
+    "execution_status": "COMPLETED",
+    "input_validity": "VALID",
+    "metamorphic_copies": 3522,
+    "original": {
+      "covers": 3522,
+      "sample_order_0": 72626,
+      "sample_order_2": 21411,
+      "sample_order_3": 148,
+      "samples": 94185,
+      "sharp_witnesses": 1841,
+      "subfamilies": 44004
+    },
+    "proof_status": "bounded independently reconstructed certificates; general arguments H0-H6 in TYPE_AND_PROOF.md",
+    "raw_sha256": "d5354333bab67ee84bcd8e1a108d93ff6767d6f37e0fa8842af139a0cf60ee6b",
+    "scientific_verdict": "SHARP_COVER_CONSISTENCY_ORDER_CERTIFIED_ON_DECLARED_UNIVERSE",
+    "scope": "formal nonnegative rational retained sources; no physical-law inference",
+    "shapes": 17,
+    "version": "16.24"
+  },
+  "fresh_commands": [
+    {
+      "command": [
+        "python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "tests",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "test_validation.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "validation",
+      "tests": [
+        2
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "test_schema.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623-schema",
+      "tests": [
+        3
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure",
+      "exit_code": 0,
+      "name": "v1622",
+      "tests": [
+        20
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "tests/test_fcv.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "name": "v1621",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pruning_consistency_audit"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction",
+      "exit_code": 0,
+      "name": "exact-parent",
+      "tests": [
+        15
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "engine.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "producer"
+    },
+    {
+      "command": [
+        "python",
+        "verify.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "verifier"
+    }
+  ],
+  "fresh_scientific_bytes_equal": true,
+  "initial_and_final_scientific_bytes_equal": true,
+  "original_runs": [
+    {
+      "artifact": 11040492589,
+      "attempt": 1,
+      "bytes": 13771,
+      "conclusion": "failure",
+      "digest": "0dd183b6cba84cfbdd6f78de037f82df749db77788c7dc8108c600bd163ed78b",
+      "job": 109457839265,
+      "role": "wiring-red",
+      "run": 36583580004,
+      "sha": "1335532db55062af83fbe2bfd875c18eecb7d490"
+    },
+    {
+      "artifact": 11040383829,
+      "attempt": 1,
+      "bytes": 111322,
+      "conclusion": "success",
+      "digest": "e46b9fb761e058cbfe7fe7d88b4499c2bb55b157e1db26d4dccde44b51f05081",
+      "job": 109460481069,
+      "role": "initial-green",
+      "run": 36584333728,
+      "sha": "f838bd86596db5884a9d3b33f245b127c55f56c8"
+    },
+    {
+      "artifact": 11040853393,
+      "attempt": 1,
+      "bytes": 22121,
+      "conclusion": "failure",
+      "digest": "0ee1d66982c09e6769954bdde898a102660e113490ef611c2cafc155080e3d6c",
+      "job": 109461444418,
+      "role": "validation-red",
+      "run": 36584604280,
+      "sha": "3e50f0fb4930502214bc43ed91ee1fc96596a7aa"
+    },
+    {
+      "artifact": 11041500838,
+      "attempt": 1,
+      "bytes": 113076,
+      "conclusion": "success",
+      "digest": "a878d78b351b27547ba67c23db6f824fab8691bc38cbe6cb5f2ee873a79e2211",
+      "job": 109463214802,
+      "role": "final-green",
+      "run": 36585110111,
+      "sha": "19c7069bad79ff361d612f742ad5e79dbfef1dc6"
+    }
+  ],
+  "publication_attempt": "1",
+  "publication_run": "36586143978",
+  "publication_workflow_head": "940dd7a2733436249f453531bde14aab6cca0691",
+  "raw_certificate_bytes": 6426004,
+  "raw_certificate_sha256": "d5354333bab67ee84bcd8e1a108d93ff6767d6f37e0fa8842af139a0cf60ee6b",
+  "review": "self-reviewed; algorithmically independent verifier; no separate reviewer",
+  "scientific_attempt": 1,
+  "scientific_execution_sha": "19c7069bad79ff361d612f742ad5e79dbfef1dc6",
+  "scientific_job": 109463214802,
+  "scientific_run": 36585110111,
+  "scope": "formal nonnegative rational retained sources; research/v16.24-consistency-order; no main merge",
+  "source_snapshot_matched": true,
+  "test_counts": {
+    "inherited": 82,
+    "new": 30,
+    "total": 112
+  },
+  "verification_sha256": "379e0d777867d07f78f271c254e9418e5d88550ec33cef4555eac53147e5bcad",
+  "version": "16.24",
+  "xz_certificate_sha256": "9a2e3f05705682b9f20028b793c36a8c6c39636c6125d18d356555cce5d93ade"
+}

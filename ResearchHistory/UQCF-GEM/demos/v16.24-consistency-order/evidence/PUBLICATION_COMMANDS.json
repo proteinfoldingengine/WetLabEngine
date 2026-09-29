@@ -1,0 +1,110 @@
+[
+  {
+    "name": "tests",
+    "command": [
+      "python",
+      "test_gate.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+    "exit_code": 0,
+    "tests": [
+      28
+    ]
+  },
+  {
+    "name": "validation",
+    "command": [
+      "python",
+      "test_validation.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+    "exit_code": 0,
+    "tests": [
+      2
+    ]
+  },
+  {
+    "name": "v1623",
+    "command": [
+      "python",
+      "test_gate.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+    "exit_code": 0,
+    "tests": [
+      22
+    ]
+  },
+  {
+    "name": "v1623-schema",
+    "command": [
+      "python",
+      "test_schema.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+    "exit_code": 0,
+    "tests": [
+      3
+    ]
+  },
+  {
+    "name": "v1622",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-v"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure",
+    "exit_code": 0,
+    "tests": [
+      20
+    ]
+  },
+  {
+    "name": "v1621",
+    "command": [
+      "python",
+      "tests/test_fcv.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0,
+    "tests": [
+      22
+    ]
+  },
+  {
+    "name": "exact-parent",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "-v",
+      "test_pruning_consistency_audit"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction",
+    "exit_code": 0,
+    "tests": [
+      15
+    ]
+  },
+  {
+    "name": "producer",
+    "command": [
+      "python",
+      "engine.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+    "exit_code": 0
+  },
+  {
+    "name": "verifier",
+    "command": [
+      "python",
+      "verify.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+    "exit_code": 0
+  }
+]
