@@ -1,0 +1,63 @@
+{
+  "tests_run": 28,
+  "failures": 0,
+  "errors": 0,
+  "rejections": [
+    {
+      "defect": "boolean-state-value",
+      "reason": "exact integer sequence"
+    },
+    {
+      "defect": "changed-union",
+      "reason": "changed union"
+    },
+    {
+      "defect": "false-state-value",
+      "reason": "incorrect or incomplete reachable states"
+    },
+    {
+      "defect": "false-independence",
+      "reason": "false independent verdict"
+    },
+    {
+      "defect": "false-mixed-difference",
+      "reason": "incorrect or incomplete diamond certificate"
+    },
+    {
+      "defect": "wrong-witness-height",
+      "reason": "false witness heights"
+    },
+    {
+      "defect": "fitted-weights",
+      "reason": "invalid additive allocation"
+    },
+    {
+      "defect": "foreign-origin",
+      "reason": "version/origin"
+    },
+    {
+      "defect": "missing-diamond",
+      "reason": "incorrect or incomplete diamond certificate"
+    },
+    {
+      "defect": "missing-predecessors",
+      "reason": "missing required fields"
+    },
+    {
+      "defect": "missing-state",
+      "reason": "incorrect or incomplete reachable states"
+    },
+    {
+      "defect": "missing-witness",
+      "reason": "missing required fields"
+    },
+    {
+      "defect": "wrong-event",
+      "reason": "incorrect event identities"
+    },
+    {
+      "defect": "wrong-witness-path",
+      "reason": "illegal witness path"
+    }
+  ]
+}

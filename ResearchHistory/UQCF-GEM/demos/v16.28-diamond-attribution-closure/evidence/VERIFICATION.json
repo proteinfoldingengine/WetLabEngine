@@ -1,0 +1,79 @@
+{
+  "examples": {
+    "chain": {
+      "dependent": 0,
+      "diamonds": 0,
+      "endpoints": 1,
+      "independent": 1,
+      "modular_pairs": 3,
+      "negative": 0,
+      "paths": 1,
+      "positive": 0,
+      "positive_weight_endpoints": 1,
+      "states": 3,
+      "zero": 0
+    },
+    "negative": {
+      "dependent": 1,
+      "diamonds": 1,
+      "endpoints": 1,
+      "independent": 0,
+      "modular_pairs": 6,
+      "negative": 1,
+      "paths": 2,
+      "positive": 0,
+      "positive_weight_endpoints": 0,
+      "states": 4,
+      "zero": 0
+    },
+    "positive": {
+      "dependent": 1,
+      "diamonds": 1,
+      "endpoints": 1,
+      "independent": 0,
+      "modular_pairs": 6,
+      "negative": 0,
+      "paths": 2,
+      "positive": 1,
+      "positive_weight_endpoints": 0,
+      "states": 4,
+      "zero": 0
+    }
+  },
+  "execution_status": "COMPLETED",
+  "input_validity": "VALID",
+  "original": {
+    "dependent": 1091,
+    "diamonds": 45488,
+    "endpoints": 3486,
+    "independent": 2395,
+    "modular_pairs": 250666,
+    "negative": 3344,
+    "paths": 56498,
+    "positive": 1868,
+    "positive_weight_endpoints": 1302,
+    "states": 34562,
+    "zero": 40276
+  },
+  "parent_raw_sha256": "1397e6d798c73126fc547afffb4bb7f681645bd83665af9b7ae6a66e472c866d",
+  "proof_status": "general written D1-D7; independently reconstructed bounded certificate",
+  "raw_sha256": "daedbb1ac332aa8c8058700b9f3a6b0eaa2a9d0a3341918b42a6b0495ba94df4",
+  "relabeled": {
+    "dependent": 1091,
+    "diamonds": 45488,
+    "endpoints": 3486,
+    "independent": 2395,
+    "modular_pairs": 250666,
+    "negative": 3344,
+    "paths": 56498,
+    "positive": 1868,
+    "positive_weight_endpoints": 1302,
+    "states": 34562,
+    "zero": 40276
+  },
+  "scientific_verdict": "EXACT_DIAMOND_ADDITIVITY_ATTRIBUTION_EQUIVALENCE",
+  "scope": "actual retained h on fixed finite endpoint intervals; no geometry or physical law",
+  "shapes": 8,
+  "transported_endpoints": 3486,
+  "version": "16.28"
+}
