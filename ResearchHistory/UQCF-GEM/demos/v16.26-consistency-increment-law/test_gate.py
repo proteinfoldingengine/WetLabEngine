@@ -2,7 +2,7 @@ import importlib,unittest
 class Tests(unittest.TestCase):
  def m(self):return importlib.import_module('engine'),importlib.import_module('verify')
  def test_atomic_strict_one(self):
-  e,v=self.m();p=(-1,0,0,0);before=[(0,1,2),(0,2,3),(0,1,3)];d=e.atomic(p,before,0,2);self.assertEqual(d['delta_h'],1);self.assertTrue(d['trigger']);v.verify_atomic(d)
+  e,v=self.m();p=(-1,0,0,0);before=[(0,1,2),(0,2),(0,3)];d=e.atomic(p,before,0,2);self.assertEqual(d['delta_h'],1);self.assertTrue(d['trigger']);v.verify_atomic(d)
  def test_atomic_zero(self):
   e,v=self.m();p=(-1,0,0);before=[(0,1,2),(0,1,2)];d=e.atomic(p,before,0,2);self.assertEqual(d['delta_h'],0);self.assertFalse(d['trigger']);v.verify_atomic(d)
  def test_changed_union_rejected(self):
@@ -12,7 +12,7 @@ class Tests(unittest.TestCase):
   e,_=self.m()
   with self.assertRaises(ValueError):e.atomic((-1,0,1),[(0,1,2),(0,1,2)],0,1)
  def test_false_jump_rejected(self):
-  e,v=self.m();d=e.atomic((-1,0,0,0),[(0,1,2),(0,2,3),(0,1,3)],0,2);d['delta_h']=2
+  e,v=self.m();d=e.atomic((-1,0,0,0),[(0,1,2),(0,2),(0,3)],0,2);d['delta_h']=2
   with self.assertRaises(ValueError):v.verify_atomic(d)
  def test_false_trigger_rejected(self):
   e,v=self.m();d=e.atomic((-1,0,0),[(0,1,2),(0,1,2)],0,2);d['trigger']=True
