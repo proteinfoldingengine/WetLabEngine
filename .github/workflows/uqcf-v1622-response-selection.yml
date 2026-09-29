@@ -25,7 +25,7 @@ jobs:
           mkdir -p "$P/evidence"
           python -m pip freeze > "$P/evidence/dependencies.txt"
           set +e
-          (cd "$P" && python -m unittest -v test_gate) > "$P/evidence/test.log" 2>&1
+          (cd "$P" && python -m unittest discover -v) > "$P/evidence/test.log" 2>&1
           rc=$?
           cat "$P/evidence/test.log"
           printf 'new_tests\t%s\n' "$rc" >> "$P/evidence/exit_codes.tsv"
