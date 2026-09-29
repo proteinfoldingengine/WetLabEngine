@@ -1,0 +1,44 @@
+{
+  "target": "verifier",
+  "tests": 11,
+  "failures": 0,
+  "errors": 0,
+  "rejections": [
+    {
+      "defect": "endpoint-mismatch",
+      "reason": "union changed"
+    },
+    {
+      "defect": "boolean-delta",
+      "reason": "false/exact-type step delta_h"
+    },
+    {
+      "defect": "false-delta",
+      "reason": "false/exact-type step delta_h"
+    },
+    {
+      "defect": "false-h-before",
+      "reason": "false/exact-type step h_before"
+    },
+    {
+      "defect": "false-local-trigger",
+      "reason": "false step trigger"
+    },
+    {
+      "defect": "false-after",
+      "reason": "indexed endpoint count"
+    },
+    {
+      "defect": "foreign-step-carrier",
+      "reason": "foreign step parent carrier"
+    },
+    {
+      "defect": "foreign-step-origin",
+      "reason": "foreign step origin"
+    },
+    {
+      "defect": "missing-after",
+      "reason": "missing required fields: ('version', 'genesis', 'parents', 'before', 'after', 'index', 'leaf', 'parent', 'tau_before', 'tau_after', 'h_before', 'h_after', 'delta_h', 'trigger')"
+    }
+  ]
+}

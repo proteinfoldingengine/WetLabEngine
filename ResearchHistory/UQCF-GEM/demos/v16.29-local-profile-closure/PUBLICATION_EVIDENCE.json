@@ -1,0 +1,341 @@
+{
+  "compared_scientific_files": [
+    "FULL_CERTIFICATES.json.xz",
+    "PRODUCTION.json",
+    "VERIFICATION.json",
+    "EXAMPLES.json",
+    "TESTS.json"
+  ],
+  "compressed_certificate_bytes": 1731596,
+  "dependencies": {
+    "mpmath": "1.3.0",
+    "sympy": "1.13.3"
+  },
+  "fresh_commands": [
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.29-local-profile-closure",
+      "exit_code": 0,
+      "name": "v1629-tests",
+      "tests": [
+        30
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "producer.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.29-local-profile-closure",
+      "exit_code": 0,
+      "name": "producer",
+      "tests": []
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "verifier.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.29-local-profile-closure",
+      "exit_code": 0,
+      "name": "verifier",
+      "tests": []
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure",
+      "exit_code": 0,
+      "name": "v1628-tests",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_contract.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "v1627-contract",
+      "tests": [
+        11
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_complete.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "v1627-complete",
+      "tests": [
+        23
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure",
+      "exit_code": 0,
+      "name": "v1627-original",
+      "tests": [
+        5
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law",
+      "exit_code": 0,
+      "name": "v1626",
+      "tests": [
+        8
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.25-pruning-refinement-closure",
+      "exit_code": 0,
+      "name": "v1625",
+      "tests": [
+        11
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "v1624",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_validation.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "v1624-validation",
+      "tests": [
+        2
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_schema.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623-schema",
+      "tests": [
+        3
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure",
+      "exit_code": 0,
+      "name": "v1622",
+      "tests": [
+        20
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "tests/test_fcv.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "name": "v1621",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pruning_consistency_audit"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction",
+      "exit_code": 0,
+      "name": "exact-parent",
+      "tests": [
+        15
+      ]
+    }
+  ],
+  "fresh_scientific_bytes_equal": true,
+  "numbered_report_sha256": "7839b0379b4eb78462c84972f59a5128ad20beddd1cc72280b7dcba75a2dae87",
+  "preserved_original_runs": [
+    {
+      "artifact": 11064352835,
+      "artifact_sha256": "4d49259f88be60cea38a143ecc166b512ba1b255ffd5cb46d0c316dd316b4170",
+      "attempts": 1,
+      "run": 36636868485,
+      "sha": "107f68a87b6813dff75679e3ee701359dfbd195f"
+    },
+    {
+      "artifact": 11065511674,
+      "artifact_sha256": "f7d838b76750f2dc6319955147f56c5eea7016b3deb5132a833c718f847f4f30",
+      "attempts": 1,
+      "run": 36637296991,
+      "sha": "5d09e6c28827f70412c5f8b05fd98af75d3b7e5f"
+    }
+  ],
+  "publication_attempt": "1",
+  "publication_job": 109643579692,
+  "publication_run": "36638095498",
+  "publication_workflow_head": "b4b9ac4f6b4cc3362ca6631db89baf1b8e900784",
+  "python": "3.11.16",
+  "raw_certificate_bytes": 97275232,
+  "raw_certificate_sha256": "19d291e2f51286051a1e1c2840ab2d5994b9f8fe52f88f574ad2460b7ba7e69b",
+  "review": "self-review with algorithmically independent verifier, not independent authorship",
+  "scientific_artifact": 11065511674,
+  "scientific_artifact_sha256": "f7d838b76750f2dc6319955147f56c5eea7016b3deb5132a833c718f847f4f30",
+  "scientific_attempt": 1,
+  "scientific_job": 109640956245,
+  "scientific_run": 36637296991,
+  "scientific_sha": "5d09e6c28827f70412c5f8b05fd98af75d3b7e5f",
+  "scope": "actual retained local minima versus fixed scalar maximum; no physical or geometric inference",
+  "source_snapshot_verified": 8,
+  "tests_passed": 228,
+  "verification": {
+    "examples": {
+      "masked": {
+        "LOCAL_MASKED": 1,
+        "diamonds": 1,
+        "global_0": 1,
+        "same_parent": 1
+      },
+      "max_negative": {
+        "MAX_ONLY": 1,
+        "diamonds": 1,
+        "different_parent": 1,
+        "global_-1": 1
+      },
+      "max_positive": {
+        "MAX_ONLY": 1,
+        "diamonds": 1,
+        "global_1": 1,
+        "same_parent": 1
+      },
+      "transmitted_negative": {
+        "LOCAL_TRANSMITTED": 1,
+        "diamonds": 1,
+        "global_-1": 1,
+        "same_parent": 1
+      },
+      "transmitted_positive": {
+        "LOCAL_TRANSMITTED": 1,
+        "diamonds": 1,
+        "global_1": 1,
+        "same_parent": 1
+      },
+      "zero": {
+        "ZERO": 1,
+        "diamonds": 1,
+        "global_0": 1,
+        "same_parent": 1
+      }
+    },
+    "execution_status": "COMPLETED",
+    "extension": {
+      "original": {
+        "LOCAL_MASKED": 19,
+        "LOCAL_TRANSMITTED": 5755,
+        "MAX_ONLY": 32,
+        "ZERO": 49036,
+        "diamonds": 54842,
+        "different_parent": 4709,
+        "global_-1": 3163,
+        "global_0": 49055,
+        "global_1": 2624,
+        "same_parent": 50133
+      },
+      "relabeled": {
+        "LOCAL_MASKED": 19,
+        "LOCAL_TRANSMITTED": 5755,
+        "MAX_ONLY": 32,
+        "ZERO": 49036,
+        "diamonds": 54842,
+        "different_parent": 4709,
+        "global_-1": 3163,
+        "global_0": 49055,
+        "global_1": 2624,
+        "same_parent": 50133
+      }
+    },
+    "extension_shapes": 17,
+    "input_validity": "VALID",
+    "parent": {
+      "original": {
+        "LOCAL_TRANSMITTED": 5212,
+        "ZERO": 40276,
+        "diamonds": 45488,
+        "different_parent": 702,
+        "global_-1": 3344,
+        "global_0": 40276,
+        "global_1": 1868,
+        "same_parent": 44786
+      },
+      "relabeled": {
+        "LOCAL_TRANSMITTED": 5212,
+        "ZERO": 40276,
+        "diamonds": 45488,
+        "different_parent": 702,
+        "global_-1": 3344,
+        "global_0": 40276,
+        "global_1": 1868,
+        "same_parent": 44786
+      }
+    },
+    "proof_status": "written L1-L7 plus independently reconstructed exact finite cases",
+    "raw_sha256": "19d291e2f51286051a1e1c2840ab2d5994b9f8fe52f88f574ad2460b7ba7e69b",
+    "scope": "existing local counts and fixed global maximum; not a physical interaction law",
+    "version": "16.29"
+  },
+  "version": "16.29"
+}
