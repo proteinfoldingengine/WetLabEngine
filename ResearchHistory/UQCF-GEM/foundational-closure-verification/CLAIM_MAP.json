@@ -1,0 +1,18 @@
+{
+  "schema":"fcv-claim-map-v1",
+  "proof_document":"PROOFS.md",
+  "universal_claim_basis":"Explicit arguments P0-P7 and TYPE_LEDGER.md assumptions; finite enumeration does not prove universality.",
+  "claims":[
+    {"id":"P0","assumptions":"Specified Q/R-valued signed measures, not a general positive monoid","implementation":"lineage.py:Pruning.aggregate","tests":["test_exact_input_no_float_or_truncation","test_direct_fiber_sum_and_section"],"certificates":"prunings.fiber_input/fiber_output"},
+    {"id":"P1","assumptions":"Common Genesis and actual nested prefix-closed retained subsets","implementation":"lineage.py; enumerate_cases.py","tests":["test_invalid_carriers_are_not_repaired","test_illegal_target_and_origin_rejected","test_incompatible_composition_rejected"],"certificates":"prunings, chains"},
+    {"id":"P2","assumptions":"Actual retained inclusion with induced zero-extension source section","implementation":"produce_certificates.py:pruning_data, build_instance","tests":["test_mutated_section_rejected","test_relabel_and_storage_naturality","test_response_quotient_and_supplied_complement"],"certificates":"prunings.I; chains.steps.section/E/D"},
+    {"id":"P3","assumptions":"Bare filtered Q/R-vector spaces and all filtration-preserving linear maps, not the full retained category","implementation":"verify_certificates.py:check_naturality","tests":["test_bare_filtration_scaling_and_shear","test_linear_right_inverse_can_fail_retained_naturality"],"certificates":"TEST_RECEIPT.json and VERIFICATION.json.deliberate_defects"},
+    {"id":"P4","assumptions":"Inherited unweighted finite connected tree incidence response","implementation":"exact_algebra.py; verify_certificates.py:model","tests":["test_mutated_green_rejected","test_identity_and_root_zero_dimensional_cases"],"certificates":"carriers.L/Z/G"},
+    {"id":"P5","assumptions":"Actual cumulative linear response on nested source kernels with fixed W_X0 codomain","implementation":"verify_certificates.py:linear_descent, _verify_instance","tests":["test_constructive_and_negative_linear_descent","test_actual_old_kernel_witness","test_false_descent_rejected","test_corrupted_witness_rejected","test_nonlinear_boundary_is_not_linear_test"],"certificates":"chains.steps.witness/representatives/rank_old"},
+    {"id":"P6","assumptions":"Actual prefix-tree retraction, retained inclusion and distinct quotient-response types","implementation":"verify_certificates.py:_verify_instance, check_basis_changes, check_instance_naturality","tests":["test_nonpermutation_coordinate_change","test_relabel_and_storage_naturality","test_foreign_domain_identity_rejected"],"certificates":"prunings.S/h/P/I and carrier models"},
+    {"id":"P7","assumptions":"P2 and proved response intertwiners P6; cumulative obstruction not redefined","implementation":"verify_certificates.py:_verify_instance","tests":["test_response_quotient_and_supplied_complement","test_missing_check_and_coverage_rejected"],"certificates":"chains.steps.cumulative_images/old_images/new_images and composition checks"}
+  ],
+  "test_file":"tests/test_fcv.py",
+  "scientific_certificates":"evidence/certificates.json.xz",
+  "status_at_commit":"claim links published; full CI verification receipt pending"
+}
