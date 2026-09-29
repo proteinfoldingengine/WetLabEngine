@@ -1,0 +1,42 @@
+name: UQCF v16.27 completion evidence
+on:
+  push:
+    branches: [research/v16.27-increment-attribution-closure]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/**'
+      - '.github/workflows/uqcf-v1627-completion.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      P: ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - name: Strict mathematical contract RED against historical verifier
+        env: {V27_VERIFIER: verify}
+        run: |
+          set -euo pipefail
+          cd "$P"
+          mkdir -p evidence
+          python test_contract.py 2>&1 | tee evidence/contract.log
+      - name: Preserve actual RED metadata
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,os,pathlib,platform,hashlib,subprocess
+          p=pathlib.Path(os.environ['P']);e=p/'evidence';e.mkdir(exist_ok=True)
+          files=[p/'test_contract.py',p/'test_complete.py',p.parent/'verify.py',p.parent/'engine.py',p/'PREREGISTRATION.md']
+          r={'sha':os.environ['GITHUB_SHA'],'run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'python':platform.python_version(),'sources':{str(f):hashlib.sha256(f.read_bytes()).hexdigest() for f in files}}
+          (e/'EXECUTION.json').write_text(json.dumps(r,indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1627-completion-${{ github.sha }}
+          if-no-files-found: error
+          path: ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence
