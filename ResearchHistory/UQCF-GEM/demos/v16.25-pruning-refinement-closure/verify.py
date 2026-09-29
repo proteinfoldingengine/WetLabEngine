@@ -35,7 +35,7 @@ def verify_case(d):
  hb,ha=hcalc(p,ys),hcalc(p,zs);need(type(d['h_before'])is int and d['h_before']==hb,'before h');need(type(d['h_after'])is int and d['h_after']==ha,'after h');need(ha>=hb,'monotonicity');need(type(d['strict'])is bool and d['strict']==(ha>hb),'strict flag')
  need(isinstance(d['composition'],list) and len(d['composition'])==sum(map(len,ys)),'composition coverage');seen=set()
  for r in d['composition']:
-  need({'view','basis','fine','mid','coarse','direct','staged'}<=r.keys(),'composition schema');i,j=r['view'],r['basis'];need(type(i)is int and type(j)is int and 0<=i<len(ys) and 0<=j<len(ys[i]),'composition id');need((i,j) not in seen,'duplicate composition');seen.add((i,j));y,m,z=tuple(r['fine']),tuple(r['mid']),tuple(r['coarse']);need(y==ys[i] and z==zs[i] and set(z)<=set(m)<=set(y),'composition endpoints')
+  need({'view','basis','fine','mid','coarse','direct','staged'}<=r.keys(),'composition schema');i,j=r['view'],r['basis'];need(type(i)is int and type(j)is int and 0<=i<len(ys) and 0<=j<len(ys[i]),'composition id');need((i,j) not in seen,'duplicate composition');seen.add((i,j));y,m,z=tuple(r['fine']),tuple(r['mid']),tuple(r['coarse']);_,midcheck=valid(p,[m]);m=midcheck[0];need(y==ys[i] and z==zs[i] and set(z)<=set(m)<=set(y),'composition endpoints')
   x=[0]*len(y);x[j]=1;direct=mv(fibers(p,y,z),x);staged=mv(fibers(p,m,z),mv(fibers(p,y,m),x));need(direct==staged,'fiber composition');need(tuple(map(Fraction,r['direct']))==direct and tuple(map(Fraction,r['staged']))==staged,'false composition certificate')
  return {'h_before':hb,'h_after':ha,'strict':ha>hb}
 def code(p):
