@@ -1,0 +1,68 @@
+{
+  "all_scientific_command_exit_codes_zero": true,
+  "coverage": {
+    "basis_changed_prunings": 1028,
+    "instances": 21,
+    "naturality_prunings": 1028,
+    "original": {
+      "carriers": 197,
+      "chains": 5049,
+      "composition_triples": 8676,
+      "descending_steps": 6471,
+      "distinct_stage_certificates": 1028,
+      "non_descending_steps": 7254,
+      "nonempty_old_kernel_steps": 7254,
+      "old_kernel_rank_sum": 16357,
+      "prunings": 1028,
+      "steps": 13725,
+      "vertices": 97
+    },
+    "relabeled": {
+      "carriers": 197,
+      "chains": 5049,
+      "composition_triples": 8676,
+      "descending_steps": 6471,
+      "distinct_stage_certificates": 1028,
+      "non_descending_steps": 7254,
+      "nonempty_old_kernel_steps": 7254,
+      "old_kernel_rank_sum": 16357,
+      "prunings": 1028,
+      "steps": 13725,
+      "vertices": 97
+    },
+    "shape_counts": {
+      "1": 1,
+      "2": 1,
+      "3": 2,
+      "4": 4,
+      "5": 9
+    }
+  },
+  "documents_after_execution": "Added type/claim JSON, self-review, report, reproduction instructions, local re-verification receipt and Markdown table escaping; scientific modules/tests/proofs/preregistration matched original source.",
+  "fresh_production_and_verification_byte_equal": true,
+  "green_artifact_id": 11010802108,
+  "green_artifact_sha256": "d72c4fb864efe462df0ef2d2b10cfd89752683477ec21d3529cc4ef6df868cac",
+  "publication_attempt": "1",
+  "publication_run_id": "36516346243",
+  "publication_workflow_head": "be1e3e13af2460aef289342bbfc1679e80dc23ad",
+  "raw_certificate_sha256": "21357bdc79429f9d4214024b125e75693609a2538a08a57037978b191ab432c6",
+  "red_artifact_id": 11010264525,
+  "red_artifact_sha256": "c54f66008ee88f406905bf67370cf09c7e86ed71d5abec08db4d38804ed9176f",
+  "red_attempt": 1,
+  "red_job_id": 109233875043,
+  "red_run_id": 36514563803,
+  "red_sha": "10872d3d7d334a9fd44636788048061884de03db",
+  "review": "self-reviewed; algorithmically independent certificate verifier; no separate reviewer",
+  "scientific_attempt": 1,
+  "scientific_execution_sha": "b1858ca92c3eff57c25fd655f75fa9b91d6d4788",
+  "scientific_job_id": 109236854409,
+  "scientific_run_id": 36515537475,
+  "scope": "research/foundational-closure-verification; not merged to main",
+  "test_counts": {
+    "campaign": 22,
+    "historical_regression": 2,
+    "inherited_exact": 15
+  },
+  "verification_sha256": "3bd2f5892e861a227172319cb13ab7ea9471e425151c68215c3e80adf5665052",
+  "xz_certificate_sha256": "b035e14709825657a485bddd1e495471f4f15147ffa78b0e6d79a512e6301ac4"
+}

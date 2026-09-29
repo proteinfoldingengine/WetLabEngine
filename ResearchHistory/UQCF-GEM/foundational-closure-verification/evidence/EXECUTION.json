@@ -1,0 +1,41 @@
+{
+  "execution_sha": "b1858ca92c3eff57c25fd655f75fa9b91d6d4788",
+  "run_id": "36515537475",
+  "attempt": "1",
+  "python": "3.11.16",
+  "commands": [
+    "python tests/test_fcv.py",
+    "python -m unittest -v test_pruning_consistency_audit",
+    "python produce_certificates.py",
+    "python verify_certificates.py"
+  ],
+  "review": "self-reviewed; independent verifier is algorithmic, not a separate reviewer",
+  "executed_exit_codes": [
+    {
+      "stage": "tests",
+      "command_exit": 0,
+      "tee_exit": 0
+    },
+    {
+      "stage": "parent-tests",
+      "command_exit": 0,
+      "tee_exit": 0
+    },
+    {
+      "stage": "historical-reproduction",
+      "command_exit": 0,
+      "tee_exit": 0
+    },
+    {
+      "stage": "producer",
+      "command_exit": 0,
+      "tee_exit": 0
+    },
+    {
+      "stage": "independent-verifier",
+      "command_exit": 0,
+      "tee_exit": 0
+    }
+  ],
+  "unrecorded_stage_status": "not certified as executed; inspect workflow step status"
+}

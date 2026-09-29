@@ -1,0 +1,13 @@
+{
+  "execution_sha": "10872d3d7d334a9fd44636788048061884de03db",
+  "run_id": "36514563803",
+  "attempt": "1",
+  "python": "3.11.16",
+  "commands": [
+    "python tests/test_fcv.py",
+    "python -m unittest -v test_pruning_consistency_audit",
+    "python produce_certificates.py",
+    "python verify_certificates.py"
+  ],
+  "review": "self-reviewed; independent verifier is algorithmic, not a separate reviewer"
+}

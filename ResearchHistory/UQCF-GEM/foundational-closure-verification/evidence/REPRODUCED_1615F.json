@@ -1,0 +1,146 @@
+{
+  "version": "16.15F",
+  "all_valid": true,
+  "verdict": "OBSTRUCTION_RETAINS_PRIOR_GRADE_HISTORY",
+  "metrics": {
+    "stages": 12,
+    "descending_stages": 4,
+    "history_retaining_stages": 8
+  },
+  "records": [
+    {
+      "fixture": 1,
+      "stage": 1,
+      "fine_count": 7,
+      "retained_count": 6,
+      "kernel_dim": 1,
+      "previous_kernel_dim": 0,
+      "obstruction_rank_on_kernel": 1,
+      "obstruction_rank_on_previous_kernel": 0,
+      "descends_to_new_grade": true
+    },
+    {
+      "fixture": 1,
+      "stage": 2,
+      "fine_count": 7,
+      "retained_count": 5,
+      "kernel_dim": 2,
+      "previous_kernel_dim": 1,
+      "obstruction_rank_on_kernel": 2,
+      "obstruction_rank_on_previous_kernel": 1,
+      "descends_to_new_grade": false
+    },
+    {
+      "fixture": 1,
+      "stage": 3,
+      "fine_count": 7,
+      "retained_count": 4,
+      "kernel_dim": 3,
+      "previous_kernel_dim": 2,
+      "obstruction_rank_on_kernel": 3,
+      "obstruction_rank_on_previous_kernel": 2,
+      "descends_to_new_grade": false
+    },
+    {
+      "fixture": 1,
+      "stage": 4,
+      "fine_count": 7,
+      "retained_count": 3,
+      "kernel_dim": 4,
+      "previous_kernel_dim": 3,
+      "obstruction_rank_on_kernel": 4,
+      "obstruction_rank_on_previous_kernel": 3,
+      "descends_to_new_grade": false
+    },
+    {
+      "fixture": 2,
+      "stage": 1,
+      "fine_count": 6,
+      "retained_count": 5,
+      "kernel_dim": 1,
+      "previous_kernel_dim": 0,
+      "obstruction_rank_on_kernel": 1,
+      "obstruction_rank_on_previous_kernel": 0,
+      "descends_to_new_grade": true
+    },
+    {
+      "fixture": 2,
+      "stage": 2,
+      "fine_count": 6,
+      "retained_count": 4,
+      "kernel_dim": 2,
+      "previous_kernel_dim": 1,
+      "obstruction_rank_on_kernel": 2,
+      "obstruction_rank_on_previous_kernel": 1,
+      "descends_to_new_grade": false
+    },
+    {
+      "fixture": 2,
+      "stage": 3,
+      "fine_count": 6,
+      "retained_count": 3,
+      "kernel_dim": 3,
+      "previous_kernel_dim": 2,
+      "obstruction_rank_on_kernel": 3,
+      "obstruction_rank_on_previous_kernel": 2,
+      "descends_to_new_grade": false
+    },
+    {
+      "fixture": 3,
+      "stage": 1,
+      "fine_count": 7,
+      "retained_count": 6,
+      "kernel_dim": 1,
+      "previous_kernel_dim": 0,
+      "obstruction_rank_on_kernel": 1,
+      "obstruction_rank_on_previous_kernel": 0,
+      "descends_to_new_grade": true
+    },
+    {
+      "fixture": 3,
+      "stage": 2,
+      "fine_count": 7,
+      "retained_count": 5,
+      "kernel_dim": 2,
+      "previous_kernel_dim": 1,
+      "obstruction_rank_on_kernel": 2,
+      "obstruction_rank_on_previous_kernel": 1,
+      "descends_to_new_grade": false
+    },
+    {
+      "fixture": 3,
+      "stage": 3,
+      "fine_count": 7,
+      "retained_count": 4,
+      "kernel_dim": 3,
+      "previous_kernel_dim": 2,
+      "obstruction_rank_on_kernel": 3,
+      "obstruction_rank_on_previous_kernel": 2,
+      "descends_to_new_grade": false
+    },
+    {
+      "fixture": 4,
+      "stage": 1,
+      "fine_count": 7,
+      "retained_count": 6,
+      "kernel_dim": 1,
+      "previous_kernel_dim": 0,
+      "obstruction_rank_on_kernel": 1,
+      "obstruction_rank_on_previous_kernel": 0,
+      "descends_to_new_grade": true
+    },
+    {
+      "fixture": 4,
+      "stage": 2,
+      "fine_count": 7,
+      "retained_count": 5,
+      "kernel_dim": 2,
+      "previous_kernel_dim": 1,
+      "obstruction_rank_on_kernel": 2,
+      "obstruction_rank_on_previous_kernel": 1,
+      "descends_to_new_grade": false
+    }
+  ],
+  "scope": "Intrinsic full-fine obstruction QG_f on nested pruning kernels; retained-boundary theorem unchanged.",
+  "execution_head": "b1858ca92c3eff57c25fd655f75fa9b91d6d4788"
+}
