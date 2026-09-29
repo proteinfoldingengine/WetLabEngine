@@ -1,0 +1,13 @@
+{
+  "version": "16.29",
+  "parent_publication": "d732a772b5c9244896e481c77658b78d7cdb9efc",
+  "claims": {
+    "L1": {"assumptions": "actual enabled pair, common union", "proof": "PROOFS.md L1", "implementation": "producer.certify profiles", "verification": "verifier.verify_case atomic support checks"},
+    "L2": {"assumptions": "L1 and distinct parents", "proof": "PROOFS.md L2", "implementation": "producer.certify prediction", "verification": "verifier.verify_case plus test_negative_max_only"},
+    "L3": {"assumptions": "L1 and same parent", "proof": "PROOFS.md L3", "implementation": "producer.certify threshold cases", "verification": "all actual four-state certificates; test_positive_max_only and test_local_masked"},
+    "L4": {"assumptions": "L1-L3", "proof": "PROOFS.md L4", "implementation": "computed mechanism", "verification": "wrong local/scalar/profile/class/prediction rejecting tests"},
+    "L5": {"assumptions": "listed actual retained controls", "proof": "PROOFS.md L5", "implementation": "producer.examples", "verification": "verifier pinned raw control reconstruction"},
+    "L6": {"assumptions": "at most four union vertices", "proof": "PROOFS.md L6", "implementation": "hash-bound .28 audit", "verification": "all old diamond states recomputed without old adjudicator imports"},
+    "L7": {"assumptions": "actual lineage/view/storage bijections", "proof": "PROOFS.md L7", "implementation": "producer.transported", "verification": "full independent transported input coverage and false-relabel rejection"}
+  }
+}
