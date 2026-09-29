@@ -1,0 +1,62 @@
+[
+  {
+    "defect": "false-nullity",
+    "reason": "forged constraint rank or counts",
+    "rejected": true
+  },
+  {
+    "defect": "corrupt-kernel-generator",
+    "reason": "generator violates a comparison constraint",
+    "rejected": true
+  },
+  {
+    "defect": "incomplete-basis",
+    "reason": "incomplete solution basis",
+    "rejected": true
+  },
+  {
+    "defect": "missing-embedding",
+    "reason": "incomplete or illegal embedding coverage",
+    "rejected": true
+  },
+  {
+    "defect": "missing-constraint",
+    "reason": "incomplete or corrupted constraint coverage",
+    "rejected": true
+  },
+  {
+    "defect": "Boolean-parent-identifier",
+    "reason": "parent identifiers must be exact integers, not Boolean or floating values",
+    "rejected": true
+  },
+  {
+    "defect": "floating-parent-identifier",
+    "reason": "parent identifiers must be exact integers, not Boolean or floating values",
+    "rejected": true
+  },
+  {
+    "defect": "changed-fixed-inverse",
+    "reason": "incorrect inverse of fixed original Laplacian",
+    "rejected": true
+  },
+  {
+    "defect": "foreign-genesis",
+    "reason": "foreign Genesis domain",
+    "rejected": true
+  },
+  {
+    "defect": "float-in-exact-certificate",
+    "reason": "invalid exact rational representation",
+    "rejected": true
+  },
+  {
+    "defect": "missing-required-field",
+    "reason": "missing or extra certificate field",
+    "rejected": true
+  },
+  {
+    "defect": "linear-but-nonnatural-sibling-selection",
+    "reason": "restriction comparison diagram failed",
+    "rejected": true
+  }
+]
