@@ -172,10 +172,45 @@ def pair_expected(p,Y,Z,U,J):
     pyj,_,ryj,_=raw_maps(p,Y,J);pzj,_,rzj,_=raw_maps(p,Z,J)
     return pY.col_join(pZ),pyj.row_join(-pzj),rY.col_join(rZ),ryj.row_join(-rzj)
 
+def check_declared_variant(d,p,ks):
+    """Verify the actual coordinate experiment, not only a variant label."""
+    tag=d['tag']
+    if not (tag.startswith('U1:') or tag.startswith('U2:')):
+        return
+    require(d.get('variant') in ('original','relabeled'),'missing declared variant')
+    if tag.startswith('U1:'):
+        code=tag[3:];stack=[];reference=[]
+        require(code and set(code)<=set('()'),'invalid declared shape code')
+        for i,t in enumerate(code):
+            if t=='(':
+                require(bool(stack) or i==0,'multiple declared roots')
+                reference.append(stack[-1] if stack else -1);stack.append(len(reference)-1)
+            else:
+                require(bool(stack),'unbalanced declared shape code');stack.pop()
+        require(not stack,'unbalanced declared shape code')
+        reference=parents(reference)
+        require(shape_code(reference)==code,'noncanonical declared shape code')
+    else:
+        historical=((-1,0,0,1,1,2,2),(-1,0,1,1,2,2),(-1,0,0,0,2,2,3),(-1,0,0,1,3,2,5))
+        require(tag[3:] in ('1','2','3','4'),'invalid historical identity')
+        reference=historical[int(tag[3:])-1]
+    transformed=d['variant']=='relabeled'
+    expected=reference
+    if transformed:
+        permutation=(0,)+tuple(reversed(range(1,len(reference))))
+        expected=[-1]*len(reference)
+        for v in range(1,len(reference)):
+            expected[permutation[v]]=permutation[reference[v]]
+        expected=tuple(expected)
+    require(p==expected,'declared relabel does not match actual parent identities')
+    for V in ks:
+        require(V==(0,)+tuple(sorted((v for v in V if v),reverse=transformed)),
+                'declared storage reversal does not match actual array order')
+
 def _verify_case(d,parent_family=None):
     require(type(d) is dict and all(k in d for k in ['parents','keeps','pairs','triples','genesis','tag']),'missing instance fields')
     require(d['genesis']==GENESIS and type(d['tag']) is str,'foreign instance identity')
-    p=parents(d['parents']);ks=[keep(p,V) for V in d['keeps']];key={frozenset(V):i for i,V in enumerate(ks)}
+    p=parents(d['parents']);ks=[keep(p,V) for V in d['keeps']];check_declared_variant(d,p,ks);key={frozenset(V):i for i,V in enumerate(ks)}
     expected=[]
     for choices in product((False,True),repeat=len(p)-1):
         V=(0,)+tuple(i+1 for i,b in enumerate(choices) if b)
