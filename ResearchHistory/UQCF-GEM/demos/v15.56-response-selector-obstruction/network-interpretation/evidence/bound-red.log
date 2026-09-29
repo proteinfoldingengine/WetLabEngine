@@ -1,0 +1,20 @@
+test_exact_projected_bounds (test_gate.Tests.test_exact_projected_bounds) ... ERROR
+test_identity_order_and_zero_direction (test_gate.Tests.test_identity_order_and_zero_direction) ... ok
+test_independent_gradient (test_gate.Tests.test_independent_gradient) ... ok
+test_local_scalar_derivatives (test_gate.Tests.test_local_scalar_derivatives) ... ok
+test_normal_gram_blindness_and_orientation (test_gate.Tests.test_normal_gram_blindness_and_orientation) ... ok
+test_structural_and_directional_blindness (test_gate.Tests.test_structural_and_directional_blindness) ... ok
+
+======================================================================
+ERROR: test_exact_projected_bounds (test_gate.Tests.test_exact_projected_bounds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 21, in test_exact_projected_bounds
+    g=self.gate();h=s.diag(0,2,0);n=s.diag(0,3,4);r=g.projected_bounds([h],n);self.assertEqual(r['reference_norm_squared'],[4]);self.assertEqual(r['bound_squared'],[100]);self.assertEqual(r['response_squared'],[36]);self.assertTrue(r['valid'])
+                                                    ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'g1615' has no attribute 'projected_bounds'
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.426s
+
+FAILED (errors=1)

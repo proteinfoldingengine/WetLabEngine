@@ -1,0 +1,3 @@
+# Independent review
+
+Reviewer review1607 independently passed five initial tests and checked the complementary-chain gradient, both edge orientations, local Gram/determinant derivatives, rank classification, all 504 contrast checks and restricted information claims. Before measurement the reviewer requested explicit projected bound values (rather than only matrices from which they can be reconstructed). Added exact squared bound and inequality output with a test observed RED then GREEN. Six tests now required. No physical inputs or observables changed. Source manifest inherits the binding of the 16.13 alpha data and additionally binds the full 16.14 results.

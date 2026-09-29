@@ -1,0 +1,42 @@
+{
+  "checks": [
+    "original ZIP SHA256 and all CRCs",
+    "embedded source SHA",
+    "all six scientific SHA256SUMS",
+    "complete record identity sets",
+    "1008 exact projected bounds",
+    "1728 local contrast arithmetic checks",
+    "72 pair classification reconciliations",
+    "all scientific JSON fields reproduced exactly; only execution_head excluded",
+    "lossless XZ round trip"
+  ],
+  "original_artifact_bytes": 1058147,
+  "original_artifact_id": 11006352186,
+  "original_artifact_members": 9,
+  "original_artifact_sha256": "39256371aa5a0e1e17200e66b51cf1b1a18c7b0837d017776fcac7ee0297f74b",
+  "original_job_id": 109201934269,
+  "original_run_id": 36504243196,
+  "parent_binding": {
+    "execution_head": "abb057ad4044377b4f41e7b2a08a53b3e007b14d",
+    "result_xz_sha256": "49737c633d253abd2311da7349817ccb64ed5ed8f0c01a819a56b4d496b08b09",
+    "version": "16.14"
+  },
+  "publication_scope": "research/v16.15-network-interpretation; not merged to main",
+  "raw_result_bytes": 5012751,
+  "raw_result_sha256": "fd271a45a90bcb54bce30804d5321aa129914f62b6fc6563a1c3fd4d96e66ffc",
+  "reproduction_exact_scientific_equality": true,
+  "reproduction_execution_head": "cb951fd19681b10a5ea6b6c3c8aa983a540e3dc6",
+  "reproduction_run_id": "36507118295",
+  "result_xz_bytes": 667536,
+  "result_xz_sha256": "3b3f5e075ef129640f135b76780544ea268bd22bbc2efb17cd4d3b3dbebe2b81",
+  "scientific_execution_head": "9934cb1f05795694febf1f35b07580dc5c864e31",
+  "scientific_sha256sums": {
+    "PARENT_BINDING.json": "185dd62f15546c8d40f9cf435505e14cb88241bcac74320f887fb5c4f1658a66",
+    "PREREGISTRATION.md": "b6c1e67ef0267f8528c08f21686b7ba74174c77d281ec8a8f5cf00d39a700baf",
+    "SOURCE_MANIFEST.json": "54f9e5dfaf53b395a6931a1c56db9eea20d7e7831a30fcddc4ca37bf46e50b5a",
+    "gate.py": "12c7f149af6abda08415233794feafb68f2b157a0c4fae1cc7f7bc48f51dfa23",
+    "result.json": "fd271a45a90bcb54bce30804d5321aa129914f62b6fc6563a1c3fd4d96e66ffc",
+    "test_gate.py": "02d4601a912d467dc91884a7c19366152ab6349f5717cb7c3031d6cca059dad5"
+  },
+  "version": "16.15"
+}

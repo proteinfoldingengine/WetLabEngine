@@ -1,0 +1,70 @@
+test_identity_order_and_zero_direction (test_gate.Tests.test_identity_order_and_zero_direction) ... FAIL
+test_independent_gradient (test_gate.Tests.test_independent_gradient) ... FAIL
+test_local_scalar_derivatives (test_gate.Tests.test_local_scalar_derivatives) ... FAIL
+test_normal_gram_blindness_and_orientation (test_gate.Tests.test_normal_gram_blindness_and_orientation) ... FAIL
+test_structural_and_directional_blindness (test_gate.Tests.test_structural_and_directional_blindness) ... FAIL
+
+======================================================================
+FAIL: test_identity_order_and_zero_direction (test_gate.Tests.test_identity_order_and_zero_direction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 19, in test_identity_order_and_zero_direction
+    g=self.gate();c=s.eye(3);self.assertEqual(g.local_derivatives(c,s.zeros(3)),[0]*4)
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: interpretation gate absent');q=importlib.util.spec_from_file_location('g1615',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: interpretation gate absent
+
+======================================================================
+FAIL: test_independent_gradient (test_gate.Tests.test_independent_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 7, in test_independent_gradient
+    g=self.gate();c=[s.Matrix(3,3,lambda i,j:1+e+2*i-j+(i==j)) for e in range(6)];t=s.Symbol('t');v=s.Matrix([[2,3,1],[4,0,5],[1,2,6]])
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: interpretation gate absent');q=importlib.util.spec_from_file_location('g1615',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: interpretation gate absent
+
+======================================================================
+FAIL: test_local_scalar_derivatives (test_gate.Tests.test_local_scalar_derivatives)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 14, in test_local_scalar_derivatives
+    g=self.gate();c=s.Matrix([[1,2,0],[0,3,1],[2,0,4]]);v=s.eye(3);t=s.Symbol('t');m=c+t*v
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: interpretation gate absent');q=importlib.util.spec_from_file_location('g1615',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: interpretation gate absent
+
+======================================================================
+FAIL: test_normal_gram_blindness_and_orientation (test_gate.Tests.test_normal_gram_blindness_and_orientation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 17, in test_normal_gram_blindness_and_orientation
+    g=self.gate();e=s.Symbol('e',positive=True);c=s.diag(1,e,0);n=s.diag(0,0,2);self.assertEqual(g.local_derivatives(c,n),[0,0,0,2*e]);self.assertEqual(g.local_derivatives(c.subs(e,0),n),[0,0,0,0])
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: interpretation gate absent');q=importlib.util.spec_from_file_location('g1615',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: interpretation gate absent
+
+======================================================================
+FAIL: test_structural_and_directional_blindness (test_gate.Tests.test_structural_and_directional_blindness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 12, in test_structural_and_directional_blindness
+    g=self.gate();z=s.zeros(3);n=s.diag(0,1,0);self.assertEqual(g.classify_references([z]*7,n)['classification'],'STRUCTURAL_NORMAL_BLINDNESS');h=s.diag(0,0,1);self.assertEqual(g.classify_references([h]+[z]*6,n)['classification'],'DIRECTION_SPECIFIC_KERNEL');self.assertEqual(g.classify_references([h]+[z]*6,h)['classification'],'NORMAL_COUPLED')
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: interpretation gate absent');q=importlib.util.spec_from_file_location('g1615',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: interpretation gate absent
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (failures=5)

@@ -1,0 +1,65 @@
+test_changed_reproduction_rejected (publication_tests.PublicationTests.test_changed_reproduction_rejected) ... FAIL
+test_invalid_verdict_rejected (publication_tests.PublicationTests.test_invalid_verdict_rejected) ... FAIL
+test_missing_record_rejected (publication_tests.PublicationTests.test_missing_record_rejected) ... FAIL
+test_original_archive_and_all_counts (publication_tests.PublicationTests.test_original_archive_and_all_counts) ... FAIL
+test_tampered_archive_rejected (publication_tests.PublicationTests.test_tampered_archive_rejected) ... FAIL
+
+======================================================================
+FAIL: test_changed_reproduction_rejected (publication_tests.PublicationTests.test_changed_reproduction_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 48, in test_changed_reproduction_rejected
+    m = self.module()
+        ^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 11, in module
+    self.assertTrue(path.is_file(), 'publication verifier absent: expected RED')
+AssertionError: False is not true : publication verifier absent: expected RED
+
+======================================================================
+FAIL: test_invalid_verdict_rejected (publication_tests.PublicationTests.test_invalid_verdict_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 41, in test_invalid_verdict_rejected
+    m = self.module()
+        ^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 11, in module
+    self.assertTrue(path.is_file(), 'publication verifier absent: expected RED')
+AssertionError: False is not true : publication verifier absent: expected RED
+
+======================================================================
+FAIL: test_missing_record_rejected (publication_tests.PublicationTests.test_missing_record_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 34, in test_missing_record_rejected
+    m = self.module()
+        ^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 11, in module
+    self.assertTrue(path.is_file(), 'publication verifier absent: expected RED')
+AssertionError: False is not true : publication verifier absent: expected RED
+
+======================================================================
+FAIL: test_original_archive_and_all_counts (publication_tests.PublicationTests.test_original_archive_and_all_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 21, in test_original_archive_and_all_counts
+    m = self.module()
+        ^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 11, in module
+    self.assertTrue(path.is_file(), 'publication verifier absent: expected RED')
+AssertionError: False is not true : publication verifier absent: expected RED
+
+======================================================================
+FAIL: test_tampered_archive_rejected (publication_tests.PublicationTests.test_tampered_archive_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 29, in test_tampered_archive_rejected
+    m = self.module()
+        ^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/network-interpretation/publication_tests.py", line 11, in module
+    self.assertTrue(path.is_file(), 'publication verifier absent: expected RED')
+AssertionError: False is not true : publication verifier absent: expected RED
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=5)
