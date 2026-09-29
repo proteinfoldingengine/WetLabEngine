@@ -1,0 +1,149 @@
+name: UQCF v16.28 durable publication
+on:
+  push:
+    branches: [research/v16.28-diamond-attribution-closure]
+    paths: ['.github/workflows/uqcf-v1628-publication.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions: {contents: write, actions: read}
+    env:
+      P: ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure
+      TARGET_BRANCH: research/v16.28-diamond-attribution-closure
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ github.sha }}'}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: Preserve originals, bind source, rerun full scientific campaign
+        run: |
+          python - <<'PY'
+          from pathlib import Path, PurePosixPath
+          import hashlib,io,json,lzma,os,platform,shutil,subprocess,sys,zipfile
+          p=Path(os.environ['P']);e=p/'evidence';e.mkdir(exist_ok=True)
+          repo='proteinfoldingengine/WetLabEngine'
+          def need(ok,msg):
+              if not ok:raise RuntimeError(msg)
+          def api(s):return subprocess.check_output(['gh','api','repos/'+repo+'/'+s])
+          def writejson(path,data):path.write_text(json.dumps(data,indent=2,sort_keys=True)+'\n')
+          def sha(data):return hashlib.sha256(data).hexdigest()
+          registry=json.loads((p/'RUN_REGISTRY.json').read_text())
+          green=None;preserved=[]
+          for item in registry['runs']:
+              rid=item['run'];folder=e/'history'/str(rid);folder.mkdir(parents=True,exist_ok=True)
+              raw=api(f'actions/runs/{rid}');(folder/'run.json').write_bytes(raw);run=json.loads(raw)
+              need(run['head_sha']==item['sha'] and run['status']=='completed' and run['conclusion']==item['conclusion'],'run identity/status mismatch')
+              for attempt in range(1,run['run_attempt']+1):
+                  ad=folder/f'attempt-{attempt}';ad.mkdir(exist_ok=True)
+                  jr=api(f'actions/runs/{rid}/attempts/{attempt}/jobs?per_page=100');(ad/'jobs.json').write_bytes(jr)
+                  jobs=json.loads(jr);need(jobs['total_count']==len(jobs['jobs']),'incomplete job list')
+                  for job in jobs['jobs']:(ad/(str(job['id'])+'.log')).write_bytes(api(f"actions/jobs/{job['id']}/logs"))
+              ar=api(f'actions/runs/{rid}/artifacts?per_page=100');(folder/'artifacts.json').write_bytes(ar)
+              listing=json.loads(ar);need(listing['total_count']==len(listing['artifacts']),'incomplete artifact page')
+              artifact=next(a for a in listing['artifacts'] if a['id']==item['artifact'])
+              need(not artifact['expired'],'original artifact expired')
+              data=api(f"actions/artifacts/{item['artifact']}/zip")
+              need(len(data)==item['artifact_bytes'] and sha(data)==item['artifact_sha256'],'original ZIP SHA/size mismatch')
+              (folder/(str(item['artifact'])+'.zip')).write_bytes(data)
+              z=zipfile.ZipFile(io.BytesIO(data));need(z.testzip() is None,'original ZIP CRC')
+              for name in z.namelist():
+                  path=PurePosixPath(name);need(not path.is_absolute() and '..' not in path.parts,'unsafe ZIP path')
+              if item['role']=='scientific-green':green=z
+              preserved.append({'run':rid,'sha':run['head_sha'],'attempts':run['run_attempt'],'artifact':item['artifact'],'zip_sha256':sha(data)})
+          need(green is not None,'missing original GREEN')
+          for line in green.read('SHA256SUMS').decode().splitlines():
+              expected,name=line.split('  ',1);need(sha(green.read(name))==expected,'GREEN member checksum '+name)
+          original=e/'original-green';original.mkdir(exist_ok=True)
+          for name in green.namelist():
+              if name.endswith('/'):continue
+              target=original/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(green.read(name))
+          meta=json.loads(green.read('EXECUTION.json'))
+          need(meta['sha']=='02954512b3e84e62a978dfe56f6007c501ef3b7f' and meta['execution_status']=='COMPLETED' and meta['tests_passed']==198,'GREEN execution receipt')
+          documentary=[];checked=[]
+          for path,expected in meta['sources'].items():
+              actual=sha(Path(path).read_bytes())
+              if actual!=expected:
+                  need(Path(path).name=='EXECUTION_LEDGER.md','changed frozen executed source '+path)
+                  documentary.append(path)
+              else:checked.append(path)
+          need(len(checked)>=7,'missing source checks')
+          with Path('/tmp/v1628-publication-reproduction.log').open('wb') as log:
+              result=subprocess.run([sys.executable,str(p/'run_campaign.py')],stdout=log,stderr=subprocess.STDOUT)
+          shutil.copyfile('/tmp/v1628-publication-reproduction.log',e/'publication-reproduction.log')
+          if result.returncode:
+              print((e/'publication-reproduction.log').read_text()[-18000:]);raise RuntimeError('fresh campaign failed')
+          fresh=json.loads((e/'EXECUTION.json').read_text())
+          need(fresh['execution_status']=='COMPLETED' and fresh['tests_passed']==198,'fresh execution coverage')
+          need(len(fresh['commands'])==15 and all(c['exit_code']==0 for c in fresh['commands']),'fresh command coverage')
+          compared=['FULL_CERTIFICATES.json.xz','PRODUCTION.json','VERIFICATION.json','EXAMPLES.json','TESTS.json']
+          equality={name:(e/name).read_bytes()==green.read(name) for name in compared}
+          need(all(equality.values()),'fresh complete scientific bytes differ')
+          raw=lzma.decompress((e/'FULL_CERTIFICATES.json.xz').read_bytes())
+          verification=json.loads((e/'VERIFICATION.json').read_text())
+          need(sha(raw)==verification['raw_sha256']=='daedbb1ac332aa8c8058700b9f3a6b0eaa2a9d0a3341918b42a6b0495ba94df4','raw certificate identity')
+          current_jobs=json.loads(api(f"actions/runs/{os.environ['GITHUB_RUN_ID']}/jobs?per_page=100"))
+          this_job=next(j for j in current_jobs['jobs'] if j['name']=='publish')
+          record={'version':'16.28','scientific_run':36629091598,'scientific_job':109613462788,'scientific_attempt':1,
+              'scientific_sha':meta['sha'],'scientific_artifact':11061821105,'scientific_artifact_sha256':'31fe8aab386f318d4679962da638d4a01cb3f3d95f6772dfec13c0029e78997a',
+              'publication_run':os.environ['GITHUB_RUN_ID'],'publication_job':this_job['id'],'publication_attempt':os.environ['GITHUB_RUN_ATTEMPT'],
+              'publication_workflow_head':os.environ['GITHUB_SHA'],'fresh_scientific_bytes_equal':all(equality.values()),'compared_scientific_files':compared,
+              'source_snapshot_verified':len(checked),'documentation_only_changes_since_science':documentary,
+              'python':platform.python_version(),'dependencies':fresh['dependencies'],'fresh_commands':fresh['commands'],'tests_passed':fresh['tests_passed'],
+              'preserved_original_runs':preserved,'raw_certificate_bytes':len(raw),'compressed_certificate_bytes':(e/'FULL_CERTIFICATES.json.xz').stat().st_size,
+              'raw_certificate_sha256':sha(raw),'verification':verification,
+              'review':'self-review; algorithmically independent verifier, not independent authorship',
+              'scope':'actual finite same-union retained endpoint intervals; no physical/temporal/geometric inference'}
+          writejson(p/'PUBLICATION_EVIDENCE.json',record)
+          print(json.dumps({'fresh_tests':fresh['tests_passed'],'preserved_runs':len(preserved),'byte_equality':equality,'scientific':verification['original']}))
+          PY
+      - name: Scoped non-force publication and committed-file verification
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,subprocess
+          p=Path(os.environ['P']);branch=os.environ['TARGET_BRANCH'];old=os.environ['GITHUB_SHA']
+          def need(ok,msg):
+              if not ok:raise RuntimeError(msg)
+          def git(*args):return subprocess.check_output(['git',*args])
+          remote=git('ls-remote','origin','refs/heads/'+branch).decode().split()[0]
+          need(remote==old,'branch advanced; no force push permitted')
+          with (p/'EXECUTION_LEDGER.md').open('a') as f:
+              f.write('\nPublication verification: full fresh campaign and all 198 tests passed; five scientific files match the original GREEN byte-for-byte. Original RED, invalid-fixture and GREEN archives/logs preserved. Publication run '+os.environ['GITHUB_RUN_ID']+' performs the final commit, remote ref and committed-hash checks.\n')
+          files=sorted(f for f in p.rglob('*') if f.is_file() and '__pycache__' not in f.parts and f.name not in ('PUBLICATION_SHA256SUMS','PUBLICATION_RECEIPT.json'))
+          manifest=p/'PUBLICATION_SHA256SUMS'
+          manifest.write_text(''.join(hashlib.sha256(f.read_bytes()).hexdigest()+'  '+str(f.relative_to(p))+'\n' for f in files))
+          git('config','user.name','github-actions[bot]');git('config','user.email','41898282+github-actions[bot]@users.noreply.github.com')
+          git('add','-f','--',*[str(f) for f in files],str(manifest))
+          staged=git('diff','--cached','--name-only').decode().splitlines()
+          need(staged and all(x.startswith(str(p)+'/') for x in staged),'out-of-scope staged change')
+          git('commit','-m','v16.28 publish complete verified evidence and original attempts [skip ci]')
+          head=git('rev-parse','HEAD').decode().strip()
+          git('push','origin','HEAD:refs/heads/'+branch)
+          need(git('ls-remote','origin','refs/heads/'+branch).decode().split()[0]==head,'remote publication mismatch')
+          for line in manifest.read_text().splitlines():
+              expected,name=line.split('  ',1)
+              data=git('show',head+':'+str(p/name))
+              need(hashlib.sha256(data).hexdigest()==expected,'committed checksum '+name)
+          need(git('show',head+':'+str(manifest))==manifest.read_bytes(),'committed manifest mismatch')
+          report=git('show',head+':ResearchHistory/UQCF-GEM/V16_28_REPORT.md').decode()
+          need('v16.28' in report and '198 tests passed' in report,'numbered report missing')
+          receipt={'publication_commit':head,'remote_ref_verified':True,'committed_members_verified':len(files),
+              'publication_run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],
+              'note':'receipt is artifact-only to avoid self-referencing the commit being hashed'}
+          (p/'PUBLICATION_RECEIPT.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1628-publication-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure/PUBLICATION_EVIDENCE.json
+            ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure/PUBLICATION_SHA256SUMS
+            ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure/PUBLICATION_RECEIPT.json
+            ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure/evidence
