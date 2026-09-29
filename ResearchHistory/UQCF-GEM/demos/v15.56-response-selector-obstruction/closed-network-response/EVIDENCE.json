@@ -1,0 +1,33 @@
+{
+  "version": "16.14",
+  "base": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response",
+  "branch": "research/v16.14-closed-network-response",
+  "parentPublication": "18d49baad706b44abd57b1e2e1289c92b9bb2614",
+  "redCommit": "bf07ca7a3812a9840a54473f1c5b043b94774469",
+  "redRun": 36503053115,
+  "redJob": 109198134240,
+  "greenCommit": "abb057ad4044377b4f41e7b2a08a53b3e007b14d",
+  "greenTree": "0a20610cef26a935eaf3043a1cbb4d5f733b58eb",
+  "greenRun": 36503365312,
+  "greenJob": 109199125907,
+  "artifact_id": 11006320955,
+  "artifact_zip_sha256": "44eb7df0873b032b7b4288e70c7f529b1478b1727d4878e54d7e389c542c98f3",
+  "raw_sha256": "00cdb893d2464d364eef3b231dff02caddd4e212164691c3a587177d0b3dd988",
+  "raw_xz_sha256": "49737c633d253abd2311da7349817ccb64ed5ed8f0c01a819a56b4d496b08b09",
+  "all_valid": true,
+  "verdict": "CLOSED_NETWORK_NORMAL_RESPONSE",
+  "metrics": {
+    "exact_numeric": "9.65167048025255422151053532525941681614071171481491780097451e-86",
+    "frame": "9.65167048025255422151053532525941681614071171481491780097451e-86",
+    "moving_frame": "1.9303340960505108443021070650518833632281423429629835601949e-85",
+    "bound": "3.01614702507892319422204228914356775504397241087966181280454e-87",
+    "precision": "9.77030865598310333708687834537367276414279986760046639637645e-86"
+  },
+  "array_counts": {
+    "paths": 144,
+    "exact": 1008,
+    "pairs": 504,
+    "rows": 12096,
+    "density_certificates": 12
+  }
+}

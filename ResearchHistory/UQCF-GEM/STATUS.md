@@ -1,3 +1,7 @@
+## Latest completed loop: 16.14 — closed-network response
+
+All 48 nonidentity pairs retain a signed normal contribution and full order contrast in four intrinsic cycles, including rank-one plane cases. Controls pass; 16.15 interpretation pending. [Final report](V16_14_REPORT.md).
+
 # UQCF-GEM Current Status
 
 ## Latest completed research: 16.13 (2026-09-28)
