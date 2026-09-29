@@ -1,0 +1,146 @@
+name: UQCF FCV-1 durable publication and fresh verification
+on:
+  push:
+    branches: [research/foundational-closure-verification]
+    paths: ['.github/workflows/uqcf-fcv-publication.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: uqcf-fcv-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      actions: read
+    env:
+      P: ResearchHistory/UQCF-GEM/foundational-closure-verification
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: Retrieve and verify the immutable original evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$P/evidence/original-archives" "$P/evidence/red"
+          gh api --allow-escape-sequences repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11010802108/zip > "$P/evidence/original-archives/green.zip"
+          gh api --allow-escape-sequences repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11010264525/zip > "$P/evidence/original-archives/red.zip"
+          gh api --allow-escape-sequences repos/proteinfoldingengine/WetLabEngine/actions/jobs/109236854409/logs > "$P/evidence/green-job.log"
+          gh api --allow-escape-sequences repos/proteinfoldingengine/WetLabEngine/actions/jobs/109233875043/logs > "$P/evidence/red-job.log"
+          gh api repos/proteinfoldingengine/WetLabEngine/actions/runs/36515537475 > "$P/evidence/green-run.json"
+          gh api repos/proteinfoldingengine/WetLabEngine/actions/runs/36514563803 > "$P/evidence/red-run.json"
+          gh api repos/proteinfoldingengine/WetLabEngine/actions/runs/36515537475/jobs > "$P/evidence/green-jobs.json"
+          gh api repos/proteinfoldingengine/WetLabEngine/actions/runs/36514563803/jobs > "$P/evidence/red-jobs.json"
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,io,json,lzma,os,zipfile
+          p=Path(os.environ['P']);e=p/'evidence'
+          def require(ok,msg):
+              if not ok:raise ValueError(msg)
+          def sha(b):return hashlib.sha256(b).hexdigest()
+          pins={'green':('d72c4fb864efe462df0ef2d2b10cfd89752683477ec21d3529cc4ef6df868cac','b1858ca92c3eff57c25fd655f75fa9b91d6d4788',17),'red':('c54f66008ee88f406905bf67370cf09c7e86ed71d5abec08db4d38804ed9176f','10872d3d7d334a9fd44636788048061884de03db',8)}
+          for name,(digest,head,count) in pins.items():
+              raw=(e/'original-archives'/f'{name}.zip').read_bytes();require(sha(raw)==digest,name+' ZIP digest')
+              dest=e if name=='green' else e/'red'
+              with zipfile.ZipFile(io.BytesIO(raw)) as z:
+                  require(z.testzip() is None,name+' CRC')
+                  require(len(z.namelist())==count and len(set(z.namelist()))==count,name+' members')
+                  for n in z.namelist():
+                      require(Path(n).name==n and n not in ('.','..'),name+' unsafe member')
+                      (dest/n).write_bytes(z.read(n))
+              for line in (dest/'SHA256SUMS').read_text().splitlines():
+                  expected,n=line.split('  ',1);require(Path(n).name==n,'unsafe hash path')
+                  require(sha((dest/n).read_bytes())==expected,name+' file hash '+n)
+              require((dest/'execution-head.txt').read_text().strip()==head,name+' execution head')
+          green=json.loads((e/'green-run.json').read_text());require(green['conclusion']=='success' and green['head_sha']==pins['green'][1],'original GREEN status')
+          red=json.loads((e/'red-run.json').read_text());require(red['conclusion']=='failure' and red['head_sha']==pins['red'][1],'original RED status')
+          tests=json.loads((e/'TEST_RECEIPT.json').read_text());require(tests['passed'] and tests['tests_run']==22 and tests['failures']==tests['errors']==tests['skipped']==0,'test receipt')
+          require(len(tests['deliberate_defects'])==9 and all(x['rejected'] for x in tests['deliberate_defects']),'mutation tests')
+          redtests=json.loads((e/'red/TEST_RECEIPT.json').read_text());require(redtests['tests_run']==22 and redtests['failures']==22 and redtests['errors']==0,'wiring RED receipt')
+          require('expected wiring RED: missing lineage' in (e/'red/test.log').read_text(),'RED reason')
+          codes=json.loads((e/'EXECUTION.json').read_text())['executed_exit_codes'];require(len(codes)==5 and all(x['command_exit']==x['tee_exit']==0 for x in codes),'scientific exit codes')
+          with zipfile.ZipFile(e/'source-snapshot.zip') as z:
+              for name in ['lineage.py','enumerate_cases.py','exact_algebra.py','produce_certificates.py','verify_certificates.py','tests/test_fcv.py','PROOFS.md','PREREGISTRATION.md']:
+                  require((p/name).read_bytes()==z.read(str(p/name)),'executed source mismatch '+name)
+              wf='.github/workflows/uqcf-foundational-closure-verification.yml';require(Path(wf).read_bytes()==z.read(wf),'executed workflow mismatch')
+          raw=lzma.decompress((e/'certificates.json.xz').read_bytes());require(sha(raw)=='21357bdc79429f9d4214024b125e75693609a2538a08a57037978b191ab432c6','raw certificate digest')
+          require(sha((e/'VERIFICATION.json').read_bytes())=='3bd2f5892e861a227172319cb13ab7ea9471e425151c68215c3e80adf5665052','original verification digest')
+          (e/'original-verification.json').write_bytes((e/'VERIFICATION.json').read_bytes())
+          print('Original RED/GREEN archives, exact source, certificates, controls and execution metadata verified.')
+          PY
+      - name: Fresh verification of current published-source candidates
+        run: |
+          set -euo pipefail
+          (cd "$P" && python tests/test_fcv.py) 2>&1 | tee "$P/evidence/publication-test.log"
+          (cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction && python -m unittest -v test_pruning_consistency_audit) 2>&1 | tee "$P/evidence/publication-parent-test.log"
+          (cd "$P" && python produce_certificates.py) 2>&1 | tee "$P/evidence/publication-producer.log"
+          (cd "$P" && python verify_certificates.py) 2>&1 | tee "$P/evidence/publication-verifier.log"
+          python - <<'PY'
+          import hashlib,os,pathlib
+          e=pathlib.Path(os.environ['P'])/'evidence'
+          if hashlib.sha256((e/'certificates.json.xz').read_bytes()).hexdigest()!='b035e14709825657a485bddd1e495471f4f15147ffa78b0e6d79a512e6301ac4':raise ValueError('fresh complete certificates differ')
+          if (e/'VERIFICATION.json').read_bytes()!=(e/'original-verification.json').read_bytes():raise ValueError('fresh independent verification differs')
+          print('Complete scientific certificates and independent verification exactly reproduced.')
+          PY
+      - name: Bind durable publication metadata and commit only the research package
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,pathlib,re
+          p=pathlib.Path(os.environ['P']);e=p/'evidence'
+          # Table escaping only: no mathematical definition or scientific executable changes.
+          f=p/'TYPE_LEDGER.md';s=f.read_text()
+          for a,b in [('n=|X|','n=card(X)'),('q_X G_X|S_X','q_X G_X restricted to S_X'),('T_X|ker','T_X restricted to ker'),('T_X0|K_j','T_X0 restricted to K_j'),('[phi|Y]','[phi restricted to Y]')]:s=s.replace(a,b)
+          f.write_text(s)
+          for line in s.splitlines():
+              if line.startswith('| L') and len(line.strip('|').split('|'))!=5:raise ValueError('ledger table structure')
+          claim=json.loads((p/'CLAIM_MAP.json').read_text());claim['status_at_commit']='Scientific execution passed; original evidence and fresh exact reproduction are bound by PUBLICATION_EVIDENCE.json.'
+          (p/'CLAIM_MAP.json').write_text(json.dumps(claim,indent=2)+'\n')
+          for x in claim['claims']:
+              if not re.search(r'^## '+x['id']+r'\b',(p/'PROOFS.md').read_text(),re.M):raise ValueError('missing proof claim '+x['id'])
+              for test in x['tests']:
+                  if ('def '+test+'(') not in (p/'tests/test_fcv.py').read_text():raise ValueError('missing linked test '+test)
+          verification=json.loads((e/'VERIFICATION.json').read_text())
+          meta={'scientific_execution_sha':'b1858ca92c3eff57c25fd655f75fa9b91d6d4788','scientific_run_id':36515537475,'scientific_job_id':109236854409,'scientific_attempt':1,'green_artifact_id':11010802108,'green_artifact_sha256':'d72c4fb864efe462df0ef2d2b10cfd89752683477ec21d3529cc4ef6df868cac','red_sha':'10872d3d7d334a9fd44636788048061884de03db','red_run_id':36514563803,'red_job_id':109233875043,'red_attempt':1,'red_artifact_id':11010264525,'red_artifact_sha256':'c54f66008ee88f406905bf67370cf09c7e86ed71d5abec08db4d38804ed9176f','publication_workflow_head':os.environ['GITHUB_SHA'],'publication_run_id':os.environ['GITHUB_RUN_ID'],'publication_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'raw_certificate_sha256':'21357bdc79429f9d4214024b125e75693609a2538a08a57037978b191ab432c6','xz_certificate_sha256':'b035e14709825657a485bddd1e495471f4f15147ffa78b0e6d79a512e6301ac4','verification_sha256':'3bd2f5892e861a227172319cb13ab7ea9471e425151c68215c3e80adf5665052','fresh_production_and_verification_byte_equal':True,'test_counts':{'campaign':22,'inherited_exact':15,'historical_regression':2},'all_scientific_command_exit_codes_zero':True,'coverage':verification['coverage'],'review':'self-reviewed; algorithmically independent certificate verifier; no separate reviewer','scope':'research/foundational-closure-verification; not merged to main','documents_after_execution':'Added type/claim JSON, self-review, report, reproduction instructions, local re-verification receipt and Markdown table escaping; scientific modules/tests/proofs/preregistration matched original source.'}
+          (p/'PUBLICATION_EVIDENCE.json').write_text(json.dumps(meta,indent=2,sort_keys=True)+'\n')
+          files=[f for f in p.rglob('*') if f.is_file() and '__pycache__' not in f.parts and f.suffix!='.pyc' and f.name!='PUBLICATION_SHA256SUMS']
+          (p/'PUBLICATION_SHA256SUMS').write_text(''.join(hashlib.sha256(f.read_bytes()).hexdigest()+'  '+str(f.relative_to(p))+'\n' for f in sorted(files)))
+          PY
+          (cd "$P" && sha256sum -c PUBLICATION_SHA256SUMS)
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          find "$P" -type f -not -path '*/__pycache__/*' -not -name '*.pyc' -print0 | xargs -0 git add -f --
+          git diff --cached --check -- "$P/RESULTS.md" "$P/REPRODUCE.md" "$P/type_ledger.json" "$P/CLAIM_MAP.json" "$P/PUBLICATION_EVIDENCE.json"
+          git commit -m 'Publish complete FCV-1 proofs, immutable RED/GREEN evidence and fresh exact verification'
+          published=$(git rev-parse HEAD)
+          remote=$(git ls-remote origin refs/heads/research/foundational-closure-verification | cut -f1)
+          test "$remote" = "$GITHUB_SHA"
+          git push origin HEAD:refs/heads/research/foundational-closure-verification
+          test "$(git ls-remote origin refs/heads/research/foundational-closure-verification | cut -f1)" = "$published"
+          git diff HEAD --exit-code -- "$P"
+          (cd "$P" && sha256sum -c PUBLICATION_SHA256SUMS)
+          PUBLISHED_SHA="$published" python - <<'PY'
+          import json,os,pathlib
+          receipt={'published_commit':os.environ['PUBLISHED_SHA'],'workflow_head':os.environ['GITHUB_SHA'],'run_id':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'remote_ref_verified':True,'committed_hashes_verified':True,'complete_scientific_reproduction_verified':True,'scope':'research branch only; not main'}
+          pathlib.Path('fcv-publication-receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fcv-durable-publication-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            fcv-publication-receipt.json
+            ResearchHistory/UQCF-GEM/foundational-closure-verification/evidence
+            ResearchHistory/UQCF-GEM/foundational-closure-verification/PUBLICATION_EVIDENCE.json
+            ResearchHistory/UQCF-GEM/foundational-closure-verification/PUBLICATION_SHA256SUMS
+            ResearchHistory/UQCF-GEM/foundational-closure-verification/RESULTS.md

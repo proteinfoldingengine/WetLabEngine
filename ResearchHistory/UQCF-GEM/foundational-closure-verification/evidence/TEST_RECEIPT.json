@@ -1,0 +1,54 @@
+{
+  "tests_run": 22,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "deliberate_defects": [
+    {
+      "defect": "corrupt-nonzero-image",
+      "rejected": true,
+      "reason": "witness image"
+    },
+    {
+      "defect": "false-fixed-target-descent",
+      "rejected": true,
+      "reason": "false fixed-target descent claim"
+    },
+    {
+      "defect": "illegal-domain-identification",
+      "rejected": true,
+      "reason": "illegal domain identification"
+    },
+    {
+      "defect": "linear-but-nonnatural-section",
+      "rejected": true,
+      "reason": "retained naturality square fails"
+    },
+    {
+      "defect": "missing-chain",
+      "rejected": true,
+      "reason": "chain coverage count"
+    },
+    {
+      "defect": "missing-map-field",
+      "rejected": true,
+      "reason": "missing required field: {'I'}"
+    },
+    {
+      "defect": "wrong-green",
+      "rejected": true,
+      "reason": "wrong Green operator"
+    },
+    {
+      "defect": "wrong-pushforward-coefficient",
+      "rejected": true,
+      "reason": "wrong P defining map"
+    },
+    {
+      "defect": "wrong-section",
+      "rejected": true,
+      "reason": "wrong I defining map"
+    }
+  ]
+}

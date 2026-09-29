@@ -1,0 +1,13 @@
+{
+  "attempt": 2,
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "command": "python verify_certificates.py",
+  "exit_code": 0,
+  "source_execution_sha": "b1858ca92c3eff57c25fd655f75fa9b91d6d4788",
+  "artifact_sha256": "d72c4fb864efe462df0ef2d2b10cfd89752683477ec21d3529cc4ef6df868cac",
+  "verification_result_byte_equal_to_CI": true,
+  "verification_sha256": "3bd2f5892e861a227172319cb13ab7ea9471e425151c68215c3e80adf5665052",
+  "previous_attempt": {"status":"execution_timeout","budget_seconds":120,"conclusion":"no new scientific conclusion; source and certificates unchanged","log":"LOCAL_REVERIFICATION_ATTEMPT1.log"},
+  "scope":"Second-environment re-execution of the algorithmically independent verifier against the original downloaded complete certificate set. Self-reviewed, not a separate reviewer."
+}

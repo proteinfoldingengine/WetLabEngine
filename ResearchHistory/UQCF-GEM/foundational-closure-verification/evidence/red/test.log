@@ -1,0 +1,283 @@
+test_actual_old_kernel_witness (__main__.Tests.test_actual_old_kernel_witness) ... FAIL
+test_bare_filtration_scaling_and_shear (__main__.Tests.test_bare_filtration_scaling_and_shear) ... FAIL
+test_constructive_and_negative_linear_descent (__main__.Tests.test_constructive_and_negative_linear_descent) ... FAIL
+test_corrupted_witness_rejected (__main__.Tests.test_corrupted_witness_rejected) ... FAIL
+test_direct_fiber_sum_and_section (__main__.Tests.test_direct_fiber_sum_and_section) ... FAIL
+test_exact_input_no_float_or_truncation (__main__.Tests.test_exact_input_no_float_or_truncation) ... FAIL
+test_false_descent_rejected (__main__.Tests.test_false_descent_rejected) ... FAIL
+test_foreign_domain_identity_rejected (__main__.Tests.test_foreign_domain_identity_rejected) ... FAIL
+test_identity_and_root_zero_dimensional_cases (__main__.Tests.test_identity_and_root_zero_dimensional_cases) ... FAIL
+test_illegal_target_and_origin_rejected (__main__.Tests.test_illegal_target_and_origin_rejected) ... FAIL
+test_incompatible_composition_rejected (__main__.Tests.test_incompatible_composition_rejected) ... FAIL
+test_invalid_carriers_are_not_repaired (__main__.Tests.test_invalid_carriers_are_not_repaired) ... FAIL
+test_linear_right_inverse_can_fail_retained_naturality (__main__.Tests.test_linear_right_inverse_can_fail_retained_naturality) ... FAIL
+test_missing_check_and_coverage_rejected (__main__.Tests.test_missing_check_and_coverage_rejected) ... FAIL
+test_mutated_green_rejected (__main__.Tests.test_mutated_green_rejected) ... FAIL
+test_mutated_pushforward_rejected (__main__.Tests.test_mutated_pushforward_rejected) ... FAIL
+test_mutated_section_rejected (__main__.Tests.test_mutated_section_rejected) ... FAIL
+test_nonlinear_boundary_is_not_linear_test (__main__.Tests.test_nonlinear_boundary_is_not_linear_test) ... FAIL
+test_nonpermutation_coordinate_change (__main__.Tests.test_nonpermutation_coordinate_change) ... FAIL
+test_relabel_and_storage_naturality (__main__.Tests.test_relabel_and_storage_naturality) ... FAIL
+test_response_quotient_and_supplied_complement (__main__.Tests.test_response_quotient_and_supplied_complement) ... FAIL
+test_shape_enumerators_agree_without_shared_implementation (__main__.Tests.test_shape_enumerators_agree_without_shared_implementation) ... FAIL
+
+======================================================================
+FAIL: test_actual_old_kernel_witness (__main__.Tests.test_actual_old_kernel_witness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 85, in test_actual_old_kernel_witness
+    _, _, _, v = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_bare_filtration_scaling_and_shear (__main__.Tests.test_bare_filtration_scaling_and_shear)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 128, in test_bare_filtration_scaling_and_shear
+    s=self.modules()[3].sp
+      ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_constructive_and_negative_linear_descent (__main__.Tests.test_constructive_and_negative_linear_descent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 69, in test_constructive_and_negative_linear_descent
+    _, _, _, v = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_corrupted_witness_rejected (__main__.Tests.test_corrupted_witness_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 165, in test_corrupted_witness_rejected
+    self.rejected('corrupt-nonzero-image',change)
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 27, in rejected
+    v = self.modules()[3]
+        ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_direct_fiber_sum_and_section (__main__.Tests.test_direct_fiber_sum_and_section)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 35, in test_direct_fiber_sum_and_section
+    l, _, _, v = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_exact_input_no_float_or_truncation (__main__.Tests.test_exact_input_no_float_or_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 63, in test_exact_input_no_float_or_truncation
+    l, _, _, _ = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_false_descent_rejected (__main__.Tests.test_false_descent_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 159, in test_false_descent_rejected
+    self.rejected('false-fixed-target-descent',change)
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 27, in rejected
+    v = self.modules()[3]
+        ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_foreign_domain_identity_rejected (__main__.Tests.test_foreign_domain_identity_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 153, in test_foreign_domain_identity_rejected
+    self.rejected('illegal-domain-identification',lambda o:o['prunings'][0].__setitem__('genesis','foreign'))
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 27, in rejected
+    v = self.modules()[3]
+        ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_identity_and_root_zero_dimensional_cases (__main__.Tests.test_identity_and_root_zero_dimensional_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 98, in test_identity_and_root_zero_dimensional_cases
+    v = self.modules()[3]
+        ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_illegal_target_and_origin_rejected (__main__.Tests.test_illegal_target_and_origin_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 49, in test_illegal_target_and_origin_rejected
+    l, _, _, _ = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_incompatible_composition_rejected (__main__.Tests.test_incompatible_composition_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 55, in test_incompatible_composition_rejected
+    l, _, _, _ = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_invalid_carriers_are_not_repaired (__main__.Tests.test_invalid_carriers_are_not_repaired)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 43, in test_invalid_carriers_are_not_repaired
+    l, _, _, _ = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_linear_right_inverse_can_fail_retained_naturality (__main__.Tests.test_linear_right_inverse_can_fail_retained_naturality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 135, in test_linear_right_inverse_can_fail_retained_naturality
+    v=self.modules()[3];s=v.sp
+      ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_missing_check_and_coverage_rejected (__main__.Tests.test_missing_check_and_coverage_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 168, in test_missing_check_and_coverage_rejected
+    self.rejected('missing-chain',lambda o:o['chains'].pop())
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 27, in rejected
+    v = self.modules()[3]
+        ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_mutated_green_rejected (__main__.Tests.test_mutated_green_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 150, in test_mutated_green_rejected
+    self.rejected('wrong-green',lambda o:o['carriers'][0]['G'][0].__setitem__(0,'7'))
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 27, in rejected
+    v = self.modules()[3]
+        ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_mutated_pushforward_rejected (__main__.Tests.test_mutated_pushforward_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 144, in test_mutated_pushforward_rejected
+    self.rejected('wrong-pushforward-coefficient',lambda o:o['prunings'][0]['P'][0].__setitem__(0,'2'))
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 27, in rejected
+    v = self.modules()[3]
+        ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_mutated_section_rejected (__main__.Tests.test_mutated_section_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 147, in test_mutated_section_rejected
+    self.rejected('wrong-section',lambda o:o['prunings'][0]['I'][0].__setitem__(0,'2'))
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 27, in rejected
+    v = self.modules()[3]
+        ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_nonlinear_boundary_is_not_linear_test (__main__.Tests.test_nonlinear_boundary_is_not_linear_test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 77, in test_nonlinear_boundary_is_not_linear_test
+    _, _, _, v = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_nonpermutation_coordinate_change (__main__.Tests.test_nonpermutation_coordinate_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 124, in test_nonpermutation_coordinate_change
+    _, _, _, v = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_relabel_and_storage_naturality (__main__.Tests.test_relabel_and_storage_naturality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 114, in test_relabel_and_storage_naturality
+    l, _, p, v = self.modules()
+                 ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_response_quotient_and_supplied_complement (__main__.Tests.test_response_quotient_and_supplied_complement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 104, in test_response_quotient_and_supplied_complement
+    v = self.modules()[3]
+        ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+======================================================================
+FAIL: test_shape_enumerators_agree_without_shared_implementation (__main__.Tests.test_shape_enumerators_agree_without_shared_implementation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 172, in test_shape_enumerators_agree_without_shared_implementation
+    _, e, _, v=self.modules()
+               ^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py", line 20, in modules
+    self.assertTrue((HERE / (name + '.py')).is_file(), 'expected wiring RED: missing ' + name)
+AssertionError: False is not true : expected wiring RED: missing lineage
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.005s
+
+FAILED (failures=22)
