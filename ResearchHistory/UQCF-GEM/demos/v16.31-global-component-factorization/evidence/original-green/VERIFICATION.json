@@ -1,0 +1,758 @@
+{
+  "by_shape": [
+    {
+      "code": "()",
+      "counts": {
+        "cases": 1,
+        "components": 0,
+        "diamonds": 0,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 0,
+        "noncartesian_cases": 0,
+        "nonzero_components": 0,
+        "parent_cube_values": 0,
+        "paths": 1,
+        "states": 1
+      },
+      "variant": "original",
+      "vertices": 1
+    },
+    {
+      "code": "()",
+      "counts": {
+        "cases": 1,
+        "components": 0,
+        "diamonds": 0,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 0,
+        "noncartesian_cases": 0,
+        "nonzero_components": 0,
+        "parent_cube_values": 0,
+        "paths": 1,
+        "states": 1
+      },
+      "variant": "relabeled",
+      "vertices": 1
+    },
+    {
+      "code": "(())",
+      "counts": {
+        "cases": 2,
+        "components": 0,
+        "diamonds": 0,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 0,
+        "noncartesian_cases": 0,
+        "nonzero_components": 0,
+        "parent_cube_values": 0,
+        "paths": 2,
+        "states": 2
+      },
+      "variant": "original",
+      "vertices": 2
+    },
+    {
+      "code": "(())",
+      "counts": {
+        "cases": 2,
+        "components": 0,
+        "diamonds": 0,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 0,
+        "noncartesian_cases": 0,
+        "nonzero_components": 0,
+        "parent_cube_values": 0,
+        "paths": 2,
+        "states": 2
+      },
+      "variant": "relabeled",
+      "vertices": 2
+    },
+    {
+      "code": "((()))",
+      "counts": {
+        "cases": 6,
+        "components": 2,
+        "diamonds": 0,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 4,
+        "noncartesian_cases": 0,
+        "nonzero_components": 0,
+        "parent_cube_values": 4,
+        "paths": 6,
+        "states": 8
+      },
+      "variant": "original",
+      "vertices": 3
+    },
+    {
+      "code": "((()))",
+      "counts": {
+        "cases": 6,
+        "components": 2,
+        "diamonds": 0,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 4,
+        "noncartesian_cases": 0,
+        "nonzero_components": 0,
+        "parent_cube_values": 4,
+        "paths": 6,
+        "states": 8
+      },
+      "variant": "relabeled",
+      "vertices": 3
+    },
+    {
+      "code": "(()())",
+      "counts": {
+        "cases": 34,
+        "components": 30,
+        "diamonds": 8,
+        "graph_edges": 2,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 64,
+        "noncartesian_cases": 0,
+        "nonzero_components": 14,
+        "parent_cube_values": 64,
+        "paths": 42,
+        "states": 74
+      },
+      "variant": "original",
+      "vertices": 3
+    },
+    {
+      "code": "(()())",
+      "counts": {
+        "cases": 34,
+        "components": 30,
+        "diamonds": 8,
+        "graph_edges": 2,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 64,
+        "noncartesian_cases": 0,
+        "nonzero_components": 14,
+        "parent_cube_values": 64,
+        "paths": 42,
+        "states": 74
+      },
+      "variant": "relabeled",
+      "vertices": 3
+    },
+    {
+      "code": "(((())))",
+      "counts": {
+        "cases": 24,
+        "components": 26,
+        "diamonds": 6,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 52,
+        "noncartesian_cases": 6,
+        "nonzero_components": 0,
+        "parent_cube_values": 52,
+        "paths": 30,
+        "states": 56
+      },
+      "variant": "original",
+      "vertices": 4
+    },
+    {
+      "code": "(((())))",
+      "counts": {
+        "cases": 24,
+        "components": 26,
+        "diamonds": 6,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 52,
+        "noncartesian_cases": 6,
+        "nonzero_components": 0,
+        "parent_cube_values": 52,
+        "paths": 30,
+        "states": 56
+      },
+      "variant": "relabeled",
+      "vertices": 4
+    },
+    {
+      "code": "((()()))",
+      "counts": {
+        "cases": 128,
+        "components": 217,
+        "diamonds": 170,
+        "graph_edges": 8,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 452,
+        "noncartesian_cases": 44,
+        "nonzero_components": 44,
+        "parent_cube_values": 452,
+        "paths": 306,
+        "states": 489
+      },
+      "variant": "original",
+      "vertices": 4
+    },
+    {
+      "code": "((()()))",
+      "counts": {
+        "cases": 128,
+        "components": 217,
+        "diamonds": 170,
+        "graph_edges": 8,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 452,
+        "noncartesian_cases": 44,
+        "nonzero_components": 44,
+        "parent_cube_values": 452,
+        "paths": 306,
+        "states": 489
+      },
+      "variant": "relabeled",
+      "vertices": 4
+    },
+    {
+      "code": "((())())",
+      "counts": {
+        "cases": 438,
+        "components": 819,
+        "diamonds": 1672,
+        "graph_edges": 135,
+        "higher_order_cases": 22,
+        "higher_order_nonzero": 26,
+        "mobius_coefficients": 2104,
+        "noncartesian_cases": 112,
+        "nonzero_components": 142,
+        "parent_cube_values": 2104,
+        "paths": 2207,
+        "states": 2375
+      },
+      "variant": "original",
+      "vertices": 4
+    },
+    {
+      "code": "((())())",
+      "counts": {
+        "cases": 438,
+        "components": 819,
+        "diamonds": 1672,
+        "graph_edges": 135,
+        "higher_order_cases": 22,
+        "higher_order_nonzero": 26,
+        "mobius_coefficients": 2104,
+        "noncartesian_cases": 112,
+        "nonzero_components": 142,
+        "parent_cube_values": 2104,
+        "paths": 2207,
+        "states": 2375
+      },
+      "variant": "relabeled",
+      "vertices": 4
+    },
+    {
+      "code": "(()()())",
+      "counts": {
+        "cases": 3764,
+        "components": 8376,
+        "diamonds": 43632,
+        "graph_edges": 2466,
+        "higher_order_cases": 399,
+        "higher_order_nonzero": 543,
+        "mobius_coefficients": 33048,
+        "noncartesian_cases": 0,
+        "nonzero_components": 2409,
+        "parent_cube_values": 33048,
+        "paths": 54815,
+        "states": 33173
+      },
+      "variant": "original",
+      "vertices": 4
+    },
+    {
+      "code": "(()()())",
+      "counts": {
+        "cases": 3764,
+        "components": 8376,
+        "diamonds": 43632,
+        "graph_edges": 2466,
+        "higher_order_cases": 399,
+        "higher_order_nonzero": 543,
+        "mobius_coefficients": 33048,
+        "noncartesian_cases": 0,
+        "nonzero_components": 2409,
+        "parent_cube_values": 33048,
+        "paths": 54815,
+        "states": 33173
+      },
+      "variant": "relabeled",
+      "vertices": 4
+    },
+    {
+      "code": "((((()))))",
+      "counts": {
+        "cases": 46,
+        "components": 75,
+        "diamonds": 27,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 150,
+        "noncartesian_cases": 20,
+        "nonzero_components": 0,
+        "parent_cube_values": 150,
+        "paths": 77,
+        "states": 148
+      },
+      "variant": "original",
+      "vertices": 5
+    },
+    {
+      "code": "((((()))))",
+      "counts": {
+        "cases": 46,
+        "components": 75,
+        "diamonds": 27,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 150,
+        "noncartesian_cases": 20,
+        "nonzero_components": 0,
+        "parent_cube_values": 150,
+        "paths": 77,
+        "states": 148
+      },
+      "variant": "relabeled",
+      "vertices": 5
+    },
+    {
+      "code": "(((()())))",
+      "counts": {
+        "cases": 121,
+        "components": 227,
+        "diamonds": 101,
+        "graph_edges": 3,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 460,
+        "noncartesian_cases": 56,
+        "nonzero_components": 25,
+        "parent_cube_values": 460,
+        "paths": 237,
+        "states": 452
+      },
+      "variant": "original",
+      "vertices": 5
+    },
+    {
+      "code": "(((()())))",
+      "counts": {
+        "cases": 121,
+        "components": 227,
+        "diamonds": 101,
+        "graph_edges": 3,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 460,
+        "noncartesian_cases": 56,
+        "nonzero_components": 25,
+        "parent_cube_values": 460,
+        "paths": 237,
+        "states": 452
+      },
+      "variant": "relabeled",
+      "vertices": 5
+    },
+    {
+      "code": "(((())()))",
+      "counts": {
+        "cases": 259,
+        "components": 496,
+        "diamonds": 463,
+        "graph_edges": 40,
+        "higher_order_cases": 6,
+        "higher_order_nonzero": 6,
+        "mobius_coefficients": 1106,
+        "noncartesian_cases": 108,
+        "nonzero_components": 61,
+        "parent_cube_values": 1106,
+        "paths": 754,
+        "states": 1154
+      },
+      "variant": "original",
+      "vertices": 5
+    },
+    {
+      "code": "(((())()))",
+      "counts": {
+        "cases": 259,
+        "components": 496,
+        "diamonds": 463,
+        "graph_edges": 40,
+        "higher_order_cases": 6,
+        "higher_order_nonzero": 6,
+        "mobius_coefficients": 1106,
+        "noncartesian_cases": 108,
+        "nonzero_components": 61,
+        "parent_cube_values": 1106,
+        "paths": 754,
+        "states": 1154
+      },
+      "variant": "relabeled",
+      "vertices": 5
+    },
+    {
+      "code": "(((()))())",
+      "counts": {
+        "cases": 467,
+        "components": 962,
+        "diamonds": 1307,
+        "graph_edges": 86,
+        "higher_order_cases": 12,
+        "higher_order_nonzero": 16,
+        "mobius_coefficients": 2152,
+        "noncartesian_cases": 190,
+        "nonzero_components": 99,
+        "parent_cube_values": 2152,
+        "paths": 1885,
+        "states": 2409
+      },
+      "variant": "original",
+      "vertices": 5
+    },
+    {
+      "code": "(((()))())",
+      "counts": {
+        "cases": 467,
+        "components": 962,
+        "diamonds": 1307,
+        "graph_edges": 86,
+        "higher_order_cases": 12,
+        "higher_order_nonzero": 16,
+        "mobius_coefficients": 2152,
+        "noncartesian_cases": 190,
+        "nonzero_components": 99,
+        "parent_cube_values": 2152,
+        "paths": 1885,
+        "states": 2409
+      },
+      "variant": "relabeled",
+      "vertices": 5
+    },
+    {
+      "code": "((()()()))",
+      "counts": {
+        "cases": 1018,
+        "components": 2107,
+        "diamonds": 3975,
+        "graph_edges": 267,
+        "higher_order_cases": 47,
+        "higher_order_nonzero": 47,
+        "mobius_coefficients": 5624,
+        "noncartesian_cases": 276,
+        "nonzero_components": 485,
+        "parent_cube_values": 5624,
+        "paths": 5120,
+        "states": 5798
+      },
+      "variant": "original",
+      "vertices": 5
+    },
+    {
+      "code": "((()()()))",
+      "counts": {
+        "cases": 1018,
+        "components": 2107,
+        "diamonds": 3975,
+        "graph_edges": 267,
+        "higher_order_cases": 47,
+        "higher_order_nonzero": 47,
+        "mobius_coefficients": 5624,
+        "noncartesian_cases": 276,
+        "nonzero_components": 485,
+        "parent_cube_values": 5624,
+        "paths": 5120,
+        "states": 5798
+      },
+      "variant": "relabeled",
+      "vertices": 5
+    },
+    {
+      "code": "((()())())",
+      "counts": {
+        "cases": 1543,
+        "components": 3335,
+        "diamonds": 7541,
+        "graph_edges": 445,
+        "higher_order_cases": 66,
+        "higher_order_nonzero": 74,
+        "mobius_coefficients": 7888,
+        "noncartesian_cases": 499,
+        "nonzero_components": 670,
+        "parent_cube_values": 7888,
+        "paths": 9786,
+        "states": 9743
+      },
+      "variant": "original",
+      "vertices": 5
+    },
+    {
+      "code": "((()())())",
+      "counts": {
+        "cases": 1543,
+        "components": 3335,
+        "diamonds": 7541,
+        "graph_edges": 445,
+        "higher_order_cases": 66,
+        "higher_order_nonzero": 74,
+        "mobius_coefficients": 7888,
+        "noncartesian_cases": 499,
+        "nonzero_components": 670,
+        "parent_cube_values": 7888,
+        "paths": 9786,
+        "states": 9743
+      },
+      "variant": "relabeled",
+      "vertices": 5
+    },
+    {
+      "code": "((())(()))",
+      "counts": {
+        "cases": 785,
+        "components": 1673,
+        "diamonds": 2897,
+        "graph_edges": 162,
+        "higher_order_cases": 29,
+        "higher_order_nonzero": 35,
+        "mobius_coefficients": 3796,
+        "noncartesian_cases": 332,
+        "nonzero_components": 139,
+        "parent_cube_values": 3796,
+        "paths": 4031,
+        "states": 4465
+      },
+      "variant": "original",
+      "vertices": 5
+    },
+    {
+      "code": "((())(()))",
+      "counts": {
+        "cases": 785,
+        "components": 1673,
+        "diamonds": 2897,
+        "graph_edges": 162,
+        "higher_order_cases": 29,
+        "higher_order_nonzero": 35,
+        "mobius_coefficients": 3796,
+        "noncartesian_cases": 332,
+        "nonzero_components": 139,
+        "parent_cube_values": 3796,
+        "paths": 4031,
+        "states": 4465
+      },
+      "variant": "relabeled",
+      "vertices": 5
+    },
+    {
+      "code": "((())()())",
+      "counts": {
+        "cases": 3506,
+        "components": 7711,
+        "diamonds": 26267,
+        "graph_edges": 1792,
+        "higher_order_cases": 352,
+        "higher_order_nonzero": 550,
+        "mobius_coefficients": 22436,
+        "noncartesian_cases": 892,
+        "nonzero_components": 1793,
+        "parent_cube_values": 22436,
+        "paths": 33372,
+        "states": 26216
+      },
+      "variant": "original",
+      "vertices": 5
+    },
+    {
+      "code": "((())()())",
+      "counts": {
+        "cases": 3506,
+        "components": 7711,
+        "diamonds": 26267,
+        "graph_edges": 1792,
+        "higher_order_cases": 352,
+        "higher_order_nonzero": 550,
+        "mobius_coefficients": 22436,
+        "noncartesian_cases": 892,
+        "nonzero_components": 1793,
+        "parent_cube_values": 22436,
+        "paths": 33372,
+        "states": 26216
+      },
+      "variant": "relabeled",
+      "vertices": 5
+    },
+    {
+      "code": "(()()()())",
+      "counts": {
+        "cases": 15257,
+        "components": 34669,
+        "diamonds": 207744,
+        "graph_edges": 12552,
+        "higher_order_cases": 2083,
+        "higher_order_nonzero": 3395,
+        "mobius_coefficients": 147152,
+        "noncartesian_cases": 0,
+        "nonzero_components": 8993,
+        "parent_cube_values": 147152,
+        "paths": 263897,
+        "states": 147553
+      },
+      "variant": "original",
+      "vertices": 5
+    },
+    {
+      "code": "(()()()())",
+      "counts": {
+        "cases": 15257,
+        "components": 34669,
+        "diamonds": 207744,
+        "graph_edges": 12552,
+        "higher_order_cases": 2083,
+        "higher_order_nonzero": 3395,
+        "mobius_coefficients": 147152,
+        "noncartesian_cases": 0,
+        "nonzero_components": 8993,
+        "parent_cube_values": 147152,
+        "paths": 263897,
+        "states": 147553
+      },
+      "variant": "relabeled",
+      "vertices": 5
+    }
+  ],
+  "examples": {
+    "chain": {
+      "cases": 1,
+      "components": 2,
+      "diamonds": 0,
+      "graph_edges": 0,
+      "higher_order_cases": 0,
+      "higher_order_nonzero": 0,
+      "mobius_coefficients": 4,
+      "noncartesian_cases": 1,
+      "nonzero_components": 1,
+      "parent_cube_values": 4,
+      "paths": 1,
+      "states": 3
+    },
+    "identity": {
+      "cases": 1,
+      "components": 0,
+      "diamonds": 0,
+      "graph_edges": 0,
+      "higher_order_cases": 0,
+      "higher_order_nonzero": 0,
+      "mobius_coefficients": 0,
+      "noncartesian_cases": 0,
+      "nonzero_components": 0,
+      "parent_cube_values": 0,
+      "paths": 1,
+      "states": 1
+    },
+    "masked": {
+      "cases": 1,
+      "components": 1,
+      "diamonds": 1,
+      "graph_edges": 1,
+      "higher_order_cases": 0,
+      "higher_order_nonzero": 0,
+      "mobius_coefficients": 4,
+      "noncartesian_cases": 0,
+      "nonzero_components": 1,
+      "parent_cube_values": 4,
+      "paths": 2,
+      "states": 4
+    },
+    "max_only": {
+      "cases": 1,
+      "components": 2,
+      "diamonds": 1,
+      "graph_edges": 0,
+      "higher_order_cases": 0,
+      "higher_order_nonzero": 0,
+      "mobius_coefficients": 4,
+      "noncartesian_cases": 0,
+      "nonzero_components": 2,
+      "parent_cube_values": 4,
+      "paths": 2,
+      "states": 4
+    },
+    "third_order": {
+      "cases": 1,
+      "components": 1,
+      "diamonds": 6,
+      "graph_edges": 3,
+      "higher_order_cases": 1,
+      "higher_order_nonzero": 1,
+      "mobius_coefficients": 8,
+      "noncartesian_cases": 0,
+      "nonzero_components": 1,
+      "parent_cube_values": 8,
+      "paths": 6,
+      "states": 8
+    }
+  },
+  "execution_status": "COMPLETED",
+  "input_validity": "VALID",
+  "original": {
+    "cases": 27399,
+    "components": 60725,
+    "diamonds": 295810,
+    "graph_edges": 17958,
+    "higher_order_cases": 3016,
+    "higher_order_nonzero": 4692,
+    "mobius_coefficients": 226488,
+    "noncartesian_cases": 2535,
+    "nonzero_components": 14874,
+    "parent_cube_values": 226488,
+    "paths": 376568,
+    "states": 234116
+  },
+  "proof_status": "G1-G8 plus independently reconstructed finite certificates",
+  "raw_sha256": "e95f9a46ca009c8f2ecf57148ae545b1c2b0f579ff7d236d253161b56bdc40f5",
+  "relabeled": {
+    "cases": 27399,
+    "components": 60725,
+    "diamonds": 295810,
+    "graph_edges": 17958,
+    "higher_order_cases": 3016,
+    "higher_order_nonzero": 4692,
+    "mobius_coefficients": 226488,
+    "noncartesian_cases": 2535,
+    "nonzero_components": 14874,
+    "parent_cube_values": 226488,
+    "paths": 376568,
+    "states": 234116
+  },
+  "scope": "full retained local-profile factorization, not Cartesian state or physical independence",
+  "shapes": 17,
+  "transported_cases": 27399,
+  "version": "16.31"
+}

@@ -1,0 +1,11 @@
+# Additive evidence correction at v16.31 intake
+
+Pinned .30 head: 760debdf3b5bc93f8ec7d7640d01088308f37255. Historical .30 code, preregistration, reports and runs remain unchanged.
+
+1. .30's verifier.verify_document checks a version and optional c5 string, loops over d.get('cases',[]) and returns COMPLETED. Its producer's bulk document contains summary counts/digest rather than that cases field. Missing sections therefore default to success, and the bulk enumeration is not independently reconstructed by this verifier. The numerical result is a producer calculation, not a verified full endpoint/component campaign.
+2. Its implementation enumerates current two-event squares, not the full endpoint intervals and higher-order cubes promised in its initial preregistration. The five new tests include two actual square controls and a scalar top-Mobius control; they do not certify all connected components or their reconstructions. Preserve those actual checks without promoting them.
+3. The first supposedly cross-parent corrupted edge used root pseudo-events with equal parent -1. Converting list pairs to tuples changed no mathematical identity. Later fixing the fixture made the existing parent-equality test fail as intended. This is not evidence that the earlier tuple conversion repaired a cross-parent verifier bug; the preceding narrative overstated that repair.
+4. A pure three-way Boolean function cannot have all second differences zero at ALL backgrounds. It can have them zero at the empty background. .30 P5 correctly uses all backgrounds, while its preregistration/control description blurred the distinction. The new tests must expose this contrast.
+5. The .30 P5 cube argument is useful, but does not by itself prove a global product decomposition over prerequisite-constrained histories. v16.31 supplies the missing retained lifting argument and distinguishes factorized function values from the non-Cartesian state domain.
+
+The planned legacy contract RED demonstrates actual accepting behavior on malformed input before introducing the replacement. Old GREEN runs are not retroactively assigned new coverage. A separate author/reviewer has not been dispatched; review is self-review plus independent verifier implementation.

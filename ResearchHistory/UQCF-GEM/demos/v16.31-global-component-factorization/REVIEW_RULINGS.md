@@ -1,0 +1,7 @@
+# Self-review boundary rulings, before correcting implementation
+
+1. Actual retained subsets have no order on their storage arrays. The first verifier compared a path's final tuple literally to the supplied final tuple, which can reject a harmless independent reordering of final-view storage. Add a positive regression before correcting that comparison; do not change mathematical endpoints.
+2. Add a separate FIVE-vertex, SIX-view control with two nonzero same-parent components: initial child sets {1,2},{1},{2},{3,4},{3},{4}; prune the two pair views to the root. The local count is 2+OR(x1,x2)+OR(x3,x4). This is a control within the existing admitted category, not part of the exhaustive five-vertex domain with at most three initial views. It does not change that domain or supply a new physical source.
+3. The retained three-child example has zero pairwise differences at the initial background but nonzero ones after the third deletion. Require actual all-background edges and actual witnesses; a baseline-only graph must be rejected.
+4. The implementation's finite certificate resource limits are computational only: producer supports at most 12 events and exhaustive-permutation verifier at most 8; the complete published universe has at most FIVE. No theorem is restricted to these computational bounds, and no larger complete enumeration is claimed.
+5. Review is self-review. The verifier's algorithmic separation is not independent authorship. No separate reviewer has been launched.

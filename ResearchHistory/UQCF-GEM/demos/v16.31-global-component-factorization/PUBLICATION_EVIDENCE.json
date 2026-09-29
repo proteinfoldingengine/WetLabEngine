@@ -1,0 +1,1074 @@
+{
+  "compared_scientific_files": [
+    "FULL_CERTIFICATES.json.xz",
+    "PRODUCTION.json",
+    "VERIFICATION.json",
+    "EXAMPLES.json",
+    "TESTS.json",
+    "CONTRACT.json",
+    "REVIEW_TESTS.json",
+    "LEGACY_CONTRACT.json",
+    "LEGACY_REPLAY.json"
+  ],
+  "compressed_certificate_bytes": 467032,
+  "dependencies": {
+    "mpmath": "1.3.0",
+    "sympy": "1.13.3"
+  },
+  "fresh_commands": [
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_review.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "v1631-review",
+      "tests": [
+        4
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_contract.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "v1631-contract",
+      "tests": [
+        3
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "v1631-tests",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "producer.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "producer",
+      "tests": []
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "verifier.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "verifier",
+      "tests": []
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.30-interaction-component-closure",
+      "exit_code": 0,
+      "name": "v1630",
+      "tests": [
+        5
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.29-local-profile-closure",
+      "exit_code": 0,
+      "name": "v1629",
+      "tests": [
+        30
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure",
+      "exit_code": 0,
+      "name": "v1628",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_contract.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "v1627-contract",
+      "tests": [
+        11
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_complete.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "v1627-complete",
+      "tests": [
+        23
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure",
+      "exit_code": 0,
+      "name": "v1627-original",
+      "tests": [
+        5
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law",
+      "exit_code": 0,
+      "name": "v1626",
+      "tests": [
+        8
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.25-pruning-refinement-closure",
+      "exit_code": 0,
+      "name": "v1625",
+      "tests": [
+        11
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "v1624",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_validation.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "v1624-validation",
+      "tests": [
+        2
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_schema.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623-schema",
+      "tests": [
+        3
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure",
+      "exit_code": 0,
+      "name": "v1622",
+      "tests": [
+        20
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "tests/test_fcv.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "name": "v1621",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pruning_consistency_audit"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction",
+      "exit_code": 0,
+      "name": "exact-parent",
+      "tests": [
+        15
+      ]
+    }
+  ],
+  "fresh_scientific_bytes_equal": true,
+  "numbered_report_sha256": "8327ae22ed714ef627b40f3ea4034dcc983021a2f4076cd584ec45e94dbfa019",
+  "preserved_original_runs": [
+    {
+      "artifact": 11068277917,
+      "attempts": 1,
+      "role": "legacy-contract-and-wiring-red",
+      "run": 36645517234,
+      "sha": "fdeaf3294973e3fd8624795131b90433b54e5a6e",
+      "zip_sha256": "399dd51861c60f61bd460acdeabbd072420e39a8e667ac0273395e2d8cc9b4f2"
+    },
+    {
+      "artifact": 11067699023,
+      "attempts": 1,
+      "role": "provisional-green-before-review",
+      "run": 36645988251,
+      "sha": "d54387c24491e47f742b057a8b5740806a3131fb",
+      "zip_sha256": "94321a3de3a50c9cd3482cf759ec5f7f45426b26bc78293e96e1784b63363f87"
+    },
+    {
+      "artifact": 11068608195,
+      "attempts": 1,
+      "role": "storage-representation-review-red",
+      "run": 36646155826,
+      "sha": "61613616b8b7d78ffebfd3b75c3944662d18a2ba",
+      "zip_sha256": "f471e4621bffe4680fae8f4f13e37d0d914a3b4e8f42518c5c50d70c671df366"
+    },
+    {
+      "artifact": 11068762102,
+      "attempts": 1,
+      "role": "scientific-green",
+      "run": 36646349715,
+      "sha": "cba4eed8fa73340efb7e81dc522a62ae2c07d51d",
+      "zip_sha256": "d0ee376c6c2f7528cf4227e609fdfdf6a380d5e460fd773e0b6063e374c0b8cb"
+    }
+  ],
+  "publication_attempt": "1",
+  "publication_job": 109671791925,
+  "publication_run": "36646880680",
+  "publication_workflow_head": "6abcdd768c2ce059970b05d6a70839a0700edea7",
+  "python": "3.11.16",
+  "raw_certificate_bytes": 34246257,
+  "raw_certificate_sha256": "e95f9a46ca009c8f2ecf57148ae545b1c2b0f579ff7d236d253161b56bdc40f5",
+  "review": "self-review with algorithmically independent verifier; no independent authorship",
+  "scientific_artifact": 11068762102,
+  "scientific_artifact_sha256": "d0ee376c6c2f7528cf4227e609fdfdf6a380d5e460fd773e0b6063e374c0b8cb",
+  "scientific_attempt": 1,
+  "scientific_job": 109670115263,
+  "scientific_run": 36646349715,
+  "scientific_sha": "cba4eed8fa73340efb7e81dc522a62ae2c07d51d",
+  "scope": "full retained local-profile functional factorization; not Cartesian state or physical independence",
+  "source_snapshot_verified": 12,
+  "tests_passed": 268,
+  "verification": {
+    "by_shape": [
+      {
+        "code": "()",
+        "counts": {
+          "cases": 1,
+          "components": 0,
+          "diamonds": 0,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 0,
+          "noncartesian_cases": 0,
+          "nonzero_components": 0,
+          "parent_cube_values": 0,
+          "paths": 1,
+          "states": 1
+        },
+        "variant": "original",
+        "vertices": 1
+      },
+      {
+        "code": "()",
+        "counts": {
+          "cases": 1,
+          "components": 0,
+          "diamonds": 0,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 0,
+          "noncartesian_cases": 0,
+          "nonzero_components": 0,
+          "parent_cube_values": 0,
+          "paths": 1,
+          "states": 1
+        },
+        "variant": "relabeled",
+        "vertices": 1
+      },
+      {
+        "code": "(())",
+        "counts": {
+          "cases": 2,
+          "components": 0,
+          "diamonds": 0,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 0,
+          "noncartesian_cases": 0,
+          "nonzero_components": 0,
+          "parent_cube_values": 0,
+          "paths": 2,
+          "states": 2
+        },
+        "variant": "original",
+        "vertices": 2
+      },
+      {
+        "code": "(())",
+        "counts": {
+          "cases": 2,
+          "components": 0,
+          "diamonds": 0,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 0,
+          "noncartesian_cases": 0,
+          "nonzero_components": 0,
+          "parent_cube_values": 0,
+          "paths": 2,
+          "states": 2
+        },
+        "variant": "relabeled",
+        "vertices": 2
+      },
+      {
+        "code": "((()))",
+        "counts": {
+          "cases": 6,
+          "components": 2,
+          "diamonds": 0,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 4,
+          "noncartesian_cases": 0,
+          "nonzero_components": 0,
+          "parent_cube_values": 4,
+          "paths": 6,
+          "states": 8
+        },
+        "variant": "original",
+        "vertices": 3
+      },
+      {
+        "code": "((()))",
+        "counts": {
+          "cases": 6,
+          "components": 2,
+          "diamonds": 0,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 4,
+          "noncartesian_cases": 0,
+          "nonzero_components": 0,
+          "parent_cube_values": 4,
+          "paths": 6,
+          "states": 8
+        },
+        "variant": "relabeled",
+        "vertices": 3
+      },
+      {
+        "code": "(()())",
+        "counts": {
+          "cases": 34,
+          "components": 30,
+          "diamonds": 8,
+          "graph_edges": 2,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 64,
+          "noncartesian_cases": 0,
+          "nonzero_components": 14,
+          "parent_cube_values": 64,
+          "paths": 42,
+          "states": 74
+        },
+        "variant": "original",
+        "vertices": 3
+      },
+      {
+        "code": "(()())",
+        "counts": {
+          "cases": 34,
+          "components": 30,
+          "diamonds": 8,
+          "graph_edges": 2,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 64,
+          "noncartesian_cases": 0,
+          "nonzero_components": 14,
+          "parent_cube_values": 64,
+          "paths": 42,
+          "states": 74
+        },
+        "variant": "relabeled",
+        "vertices": 3
+      },
+      {
+        "code": "(((())))",
+        "counts": {
+          "cases": 24,
+          "components": 26,
+          "diamonds": 6,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 52,
+          "noncartesian_cases": 6,
+          "nonzero_components": 0,
+          "parent_cube_values": 52,
+          "paths": 30,
+          "states": 56
+        },
+        "variant": "original",
+        "vertices": 4
+      },
+      {
+        "code": "(((())))",
+        "counts": {
+          "cases": 24,
+          "components": 26,
+          "diamonds": 6,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 52,
+          "noncartesian_cases": 6,
+          "nonzero_components": 0,
+          "parent_cube_values": 52,
+          "paths": 30,
+          "states": 56
+        },
+        "variant": "relabeled",
+        "vertices": 4
+      },
+      {
+        "code": "((()()))",
+        "counts": {
+          "cases": 128,
+          "components": 217,
+          "diamonds": 170,
+          "graph_edges": 8,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 452,
+          "noncartesian_cases": 44,
+          "nonzero_components": 44,
+          "parent_cube_values": 452,
+          "paths": 306,
+          "states": 489
+        },
+        "variant": "original",
+        "vertices": 4
+      },
+      {
+        "code": "((()()))",
+        "counts": {
+          "cases": 128,
+          "components": 217,
+          "diamonds": 170,
+          "graph_edges": 8,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 452,
+          "noncartesian_cases": 44,
+          "nonzero_components": 44,
+          "parent_cube_values": 452,
+          "paths": 306,
+          "states": 489
+        },
+        "variant": "relabeled",
+        "vertices": 4
+      },
+      {
+        "code": "((())())",
+        "counts": {
+          "cases": 438,
+          "components": 819,
+          "diamonds": 1672,
+          "graph_edges": 135,
+          "higher_order_cases": 22,
+          "higher_order_nonzero": 26,
+          "mobius_coefficients": 2104,
+          "noncartesian_cases": 112,
+          "nonzero_components": 142,
+          "parent_cube_values": 2104,
+          "paths": 2207,
+          "states": 2375
+        },
+        "variant": "original",
+        "vertices": 4
+      },
+      {
+        "code": "((())())",
+        "counts": {
+          "cases": 438,
+          "components": 819,
+          "diamonds": 1672,
+          "graph_edges": 135,
+          "higher_order_cases": 22,
+          "higher_order_nonzero": 26,
+          "mobius_coefficients": 2104,
+          "noncartesian_cases": 112,
+          "nonzero_components": 142,
+          "parent_cube_values": 2104,
+          "paths": 2207,
+          "states": 2375
+        },
+        "variant": "relabeled",
+        "vertices": 4
+      },
+      {
+        "code": "(()()())",
+        "counts": {
+          "cases": 3764,
+          "components": 8376,
+          "diamonds": 43632,
+          "graph_edges": 2466,
+          "higher_order_cases": 399,
+          "higher_order_nonzero": 543,
+          "mobius_coefficients": 33048,
+          "noncartesian_cases": 0,
+          "nonzero_components": 2409,
+          "parent_cube_values": 33048,
+          "paths": 54815,
+          "states": 33173
+        },
+        "variant": "original",
+        "vertices": 4
+      },
+      {
+        "code": "(()()())",
+        "counts": {
+          "cases": 3764,
+          "components": 8376,
+          "diamonds": 43632,
+          "graph_edges": 2466,
+          "higher_order_cases": 399,
+          "higher_order_nonzero": 543,
+          "mobius_coefficients": 33048,
+          "noncartesian_cases": 0,
+          "nonzero_components": 2409,
+          "parent_cube_values": 33048,
+          "paths": 54815,
+          "states": 33173
+        },
+        "variant": "relabeled",
+        "vertices": 4
+      },
+      {
+        "code": "((((()))))",
+        "counts": {
+          "cases": 46,
+          "components": 75,
+          "diamonds": 27,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 150,
+          "noncartesian_cases": 20,
+          "nonzero_components": 0,
+          "parent_cube_values": 150,
+          "paths": 77,
+          "states": 148
+        },
+        "variant": "original",
+        "vertices": 5
+      },
+      {
+        "code": "((((()))))",
+        "counts": {
+          "cases": 46,
+          "components": 75,
+          "diamonds": 27,
+          "graph_edges": 0,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 150,
+          "noncartesian_cases": 20,
+          "nonzero_components": 0,
+          "parent_cube_values": 150,
+          "paths": 77,
+          "states": 148
+        },
+        "variant": "relabeled",
+        "vertices": 5
+      },
+      {
+        "code": "(((()())))",
+        "counts": {
+          "cases": 121,
+          "components": 227,
+          "diamonds": 101,
+          "graph_edges": 3,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 460,
+          "noncartesian_cases": 56,
+          "nonzero_components": 25,
+          "parent_cube_values": 460,
+          "paths": 237,
+          "states": 452
+        },
+        "variant": "original",
+        "vertices": 5
+      },
+      {
+        "code": "(((()())))",
+        "counts": {
+          "cases": 121,
+          "components": 227,
+          "diamonds": 101,
+          "graph_edges": 3,
+          "higher_order_cases": 0,
+          "higher_order_nonzero": 0,
+          "mobius_coefficients": 460,
+          "noncartesian_cases": 56,
+          "nonzero_components": 25,
+          "parent_cube_values": 460,
+          "paths": 237,
+          "states": 452
+        },
+        "variant": "relabeled",
+        "vertices": 5
+      },
+      {
+        "code": "(((())()))",
+        "counts": {
+          "cases": 259,
+          "components": 496,
+          "diamonds": 463,
+          "graph_edges": 40,
+          "higher_order_cases": 6,
+          "higher_order_nonzero": 6,
+          "mobius_coefficients": 1106,
+          "noncartesian_cases": 108,
+          "nonzero_components": 61,
+          "parent_cube_values": 1106,
+          "paths": 754,
+          "states": 1154
+        },
+        "variant": "original",
+        "vertices": 5
+      },
+      {
+        "code": "(((())()))",
+        "counts": {
+          "cases": 259,
+          "components": 496,
+          "diamonds": 463,
+          "graph_edges": 40,
+          "higher_order_cases": 6,
+          "higher_order_nonzero": 6,
+          "mobius_coefficients": 1106,
+          "noncartesian_cases": 108,
+          "nonzero_components": 61,
+          "parent_cube_values": 1106,
+          "paths": 754,
+          "states": 1154
+        },
+        "variant": "relabeled",
+        "vertices": 5
+      },
+      {
+        "code": "(((()))())",
+        "counts": {
+          "cases": 467,
+          "components": 962,
+          "diamonds": 1307,
+          "graph_edges": 86,
+          "higher_order_cases": 12,
+          "higher_order_nonzero": 16,
+          "mobius_coefficients": 2152,
+          "noncartesian_cases": 190,
+          "nonzero_components": 99,
+          "parent_cube_values": 2152,
+          "paths": 1885,
+          "states": 2409
+        },
+        "variant": "original",
+        "vertices": 5
+      },
+      {
+        "code": "(((()))())",
+        "counts": {
+          "cases": 467,
+          "components": 962,
+          "diamonds": 1307,
+          "graph_edges": 86,
+          "higher_order_cases": 12,
+          "higher_order_nonzero": 16,
+          "mobius_coefficients": 2152,
+          "noncartesian_cases": 190,
+          "nonzero_components": 99,
+          "parent_cube_values": 2152,
+          "paths": 1885,
+          "states": 2409
+        },
+        "variant": "relabeled",
+        "vertices": 5
+      },
+      {
+        "code": "((()()()))",
+        "counts": {
+          "cases": 1018,
+          "components": 2107,
+          "diamonds": 3975,
+          "graph_edges": 267,
+          "higher_order_cases": 47,
+          "higher_order_nonzero": 47,
+          "mobius_coefficients": 5624,
+          "noncartesian_cases": 276,
+          "nonzero_components": 485,
+          "parent_cube_values": 5624,
+          "paths": 5120,
+          "states": 5798
+        },
+        "variant": "original",
+        "vertices": 5
+      },
+      {
+        "code": "((()()()))",
+        "counts": {
+          "cases": 1018,
+          "components": 2107,
+          "diamonds": 3975,
+          "graph_edges": 267,
+          "higher_order_cases": 47,
+          "higher_order_nonzero": 47,
+          "mobius_coefficients": 5624,
+          "noncartesian_cases": 276,
+          "nonzero_components": 485,
+          "parent_cube_values": 5624,
+          "paths": 5120,
+          "states": 5798
+        },
+        "variant": "relabeled",
+        "vertices": 5
+      },
+      {
+        "code": "((()())())",
+        "counts": {
+          "cases": 1543,
+          "components": 3335,
+          "diamonds": 7541,
+          "graph_edges": 445,
+          "higher_order_cases": 66,
+          "higher_order_nonzero": 74,
+          "mobius_coefficients": 7888,
+          "noncartesian_cases": 499,
+          "nonzero_components": 670,
+          "parent_cube_values": 7888,
+          "paths": 9786,
+          "states": 9743
+        },
+        "variant": "original",
+        "vertices": 5
+      },
+      {
+        "code": "((()())())",
+        "counts": {
+          "cases": 1543,
+          "components": 3335,
+          "diamonds": 7541,
+          "graph_edges": 445,
+          "higher_order_cases": 66,
+          "higher_order_nonzero": 74,
+          "mobius_coefficients": 7888,
+          "noncartesian_cases": 499,
+          "nonzero_components": 670,
+          "parent_cube_values": 7888,
+          "paths": 9786,
+          "states": 9743
+        },
+        "variant": "relabeled",
+        "vertices": 5
+      },
+      {
+        "code": "((())(()))",
+        "counts": {
+          "cases": 785,
+          "components": 1673,
+          "diamonds": 2897,
+          "graph_edges": 162,
+          "higher_order_cases": 29,
+          "higher_order_nonzero": 35,
+          "mobius_coefficients": 3796,
+          "noncartesian_cases": 332,
+          "nonzero_components": 139,
+          "parent_cube_values": 3796,
+          "paths": 4031,
+          "states": 4465
+        },
+        "variant": "original",
+        "vertices": 5
+      },
+      {
+        "code": "((())(()))",
+        "counts": {
+          "cases": 785,
+          "components": 1673,
+          "diamonds": 2897,
+          "graph_edges": 162,
+          "higher_order_cases": 29,
+          "higher_order_nonzero": 35,
+          "mobius_coefficients": 3796,
+          "noncartesian_cases": 332,
+          "nonzero_components": 139,
+          "parent_cube_values": 3796,
+          "paths": 4031,
+          "states": 4465
+        },
+        "variant": "relabeled",
+        "vertices": 5
+      },
+      {
+        "code": "((())()())",
+        "counts": {
+          "cases": 3506,
+          "components": 7711,
+          "diamonds": 26267,
+          "graph_edges": 1792,
+          "higher_order_cases": 352,
+          "higher_order_nonzero": 550,
+          "mobius_coefficients": 22436,
+          "noncartesian_cases": 892,
+          "nonzero_components": 1793,
+          "parent_cube_values": 22436,
+          "paths": 33372,
+          "states": 26216
+        },
+        "variant": "original",
+        "vertices": 5
+      },
+      {
+        "code": "((())()())",
+        "counts": {
+          "cases": 3506,
+          "components": 7711,
+          "diamonds": 26267,
+          "graph_edges": 1792,
+          "higher_order_cases": 352,
+          "higher_order_nonzero": 550,
+          "mobius_coefficients": 22436,
+          "noncartesian_cases": 892,
+          "nonzero_components": 1793,
+          "parent_cube_values": 22436,
+          "paths": 33372,
+          "states": 26216
+        },
+        "variant": "relabeled",
+        "vertices": 5
+      },
+      {
+        "code": "(()()()())",
+        "counts": {
+          "cases": 15257,
+          "components": 34669,
+          "diamonds": 207744,
+          "graph_edges": 12552,
+          "higher_order_cases": 2083,
+          "higher_order_nonzero": 3395,
+          "mobius_coefficients": 147152,
+          "noncartesian_cases": 0,
+          "nonzero_components": 8993,
+          "parent_cube_values": 147152,
+          "paths": 263897,
+          "states": 147553
+        },
+        "variant": "original",
+        "vertices": 5
+      },
+      {
+        "code": "(()()()())",
+        "counts": {
+          "cases": 15257,
+          "components": 34669,
+          "diamonds": 207744,
+          "graph_edges": 12552,
+          "higher_order_cases": 2083,
+          "higher_order_nonzero": 3395,
+          "mobius_coefficients": 147152,
+          "noncartesian_cases": 0,
+          "nonzero_components": 8993,
+          "parent_cube_values": 147152,
+          "paths": 263897,
+          "states": 147553
+        },
+        "variant": "relabeled",
+        "vertices": 5
+      }
+    ],
+    "examples": {
+      "chain": {
+        "cases": 1,
+        "components": 2,
+        "diamonds": 0,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 4,
+        "noncartesian_cases": 1,
+        "nonzero_components": 1,
+        "parent_cube_values": 4,
+        "paths": 1,
+        "states": 3
+      },
+      "identity": {
+        "cases": 1,
+        "components": 0,
+        "diamonds": 0,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 0,
+        "noncartesian_cases": 0,
+        "nonzero_components": 0,
+        "parent_cube_values": 0,
+        "paths": 1,
+        "states": 1
+      },
+      "masked": {
+        "cases": 1,
+        "components": 1,
+        "diamonds": 1,
+        "graph_edges": 1,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 4,
+        "noncartesian_cases": 0,
+        "nonzero_components": 1,
+        "parent_cube_values": 4,
+        "paths": 2,
+        "states": 4
+      },
+      "max_only": {
+        "cases": 1,
+        "components": 2,
+        "diamonds": 1,
+        "graph_edges": 0,
+        "higher_order_cases": 0,
+        "higher_order_nonzero": 0,
+        "mobius_coefficients": 4,
+        "noncartesian_cases": 0,
+        "nonzero_components": 2,
+        "parent_cube_values": 4,
+        "paths": 2,
+        "states": 4
+      },
+      "third_order": {
+        "cases": 1,
+        "components": 1,
+        "diamonds": 6,
+        "graph_edges": 3,
+        "higher_order_cases": 1,
+        "higher_order_nonzero": 1,
+        "mobius_coefficients": 8,
+        "noncartesian_cases": 0,
+        "nonzero_components": 1,
+        "parent_cube_values": 8,
+        "paths": 6,
+        "states": 8
+      }
+    },
+    "execution_status": "COMPLETED",
+    "input_validity": "VALID",
+    "original": {
+      "cases": 27399,
+      "components": 60725,
+      "diamonds": 295810,
+      "graph_edges": 17958,
+      "higher_order_cases": 3016,
+      "higher_order_nonzero": 4692,
+      "mobius_coefficients": 226488,
+      "noncartesian_cases": 2535,
+      "nonzero_components": 14874,
+      "parent_cube_values": 226488,
+      "paths": 376568,
+      "states": 234116
+    },
+    "proof_status": "G1-G8 plus independently reconstructed finite certificates",
+    "raw_sha256": "e95f9a46ca009c8f2ecf57148ae545b1c2b0f579ff7d236d253161b56bdc40f5",
+    "relabeled": {
+      "cases": 27399,
+      "components": 60725,
+      "diamonds": 295810,
+      "graph_edges": 17958,
+      "higher_order_cases": 3016,
+      "higher_order_nonzero": 4692,
+      "mobius_coefficients": 226488,
+      "noncartesian_cases": 2535,
+      "nonzero_components": 14874,
+      "parent_cube_values": 226488,
+      "paths": 376568,
+      "states": 234116
+    },
+    "scope": "full retained local-profile factorization, not Cartesian state or physical independence",
+    "shapes": 17,
+    "transported_cases": 27399,
+    "version": "16.31"
+  },
+  "version": "16.31"
+}

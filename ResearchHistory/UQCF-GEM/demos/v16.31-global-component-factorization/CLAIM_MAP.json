@@ -1,0 +1,13 @@
+{
+  "version":"16.31",
+  "claims":[
+    {"id":"G1-G2","assumptions":"common-Genesis finite prefix endpoints; same union","argument":"PROOFS.md G1-G2","implementation":"producer.ancestry/certify","verification":"verifier.reconstruct/verify_case canonical prelude and every local lift","tests":["wrong_predecessor","wrong_parent_prelude","noncartesian_nonconstant_chain"]},
+    {"id":"G3","argument":"PROOFS.md G3","implementation":"producer.profile/certify","verification":"every actual ideal profile compared with its local projection representative"},
+    {"id":"G4-G5","argument":"PROOFS.md G4-G5","implementation":"producer.parts/certify","verification":"verifier.boolean_audit plus global diamonds, every coefficient and complete factor reconstruction","tests":["retained_third_order","synthetic_cubic_all_background_not_baseline","wrong_component_values","wrong_mobius","missing_actual_edge"]},
+    {"id":"G6","argument":"PROOFS.md G6","implementation":"product_states and all legal ideal masks","verification":"legal permutations versus candidate Cartesian count","tests":["noncartesian_nonconstant_chain","fabricated_cartesian_count"]},
+    {"id":"G7","argument":"PROOFS.md G7","verification":"verifier.check_transport for every original/transformed case","tests":["actual_relabeling_and_view_storage","false_relabeling","independently_reordered_final_storage"]},
+    {"id":"EVIDENCE-REPAIR","argument":"EVIDENCE_STATUS.md","verification":"test_contract.py identical contract on historical and new verifiers; explicit expected-failure replay","tests":["no_sections_is_not_complete","fabricated_summary_is_not_complete","untyped_empty_edges_are_not_a_certificate"]}
+  ],
+  "proof_status":"written general finite arguments; independent bounded reconstruction; not proof-assistant formalization",
+  "review":"self-review, not independently authored"
+}

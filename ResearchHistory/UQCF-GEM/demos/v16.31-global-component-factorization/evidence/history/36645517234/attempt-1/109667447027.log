@@ -1,0 +1,688 @@
+﻿2026-09-29T23:29:57.4550221Z Current runner version: '2.337.0'
+2026-09-29T23:29:57.4568449Z ##[group]Runner Image Provisioner
+2026-09-29T23:29:57.4568985Z Hosted Compute Agent
+2026-09-29T23:29:57.4569380Z Version: 20260828.587
+2026-09-29T23:29:57.4569789Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-29T23:29:57.4570208Z Build Date: 2026-08-28T16:44:25Z
+2026-09-29T23:29:57.4570631Z Worker ID: {dc120f2d-a106-4775-81af-5530958802ba}
+2026-09-29T23:29:57.4571031Z Azure Region: westus3
+2026-09-29T23:29:57.4571359Z ##[endgroup]
+2026-09-29T23:29:57.4572259Z ##[group]Operating System
+2026-09-29T23:29:57.4572636Z Ubuntu
+2026-09-29T23:29:57.4572974Z 24.04.5
+2026-09-29T23:29:57.4573276Z LTS
+2026-09-29T23:29:57.4573564Z ##[endgroup]
+2026-09-29T23:29:57.4573949Z ##[group]Runner Image
+2026-09-29T23:29:57.4574303Z Image: ubuntu-24.04
+2026-09-29T23:29:57.4574657Z Version: 20260920.314.1
+2026-09-29T23:29:57.4575397Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-29T23:29:57.4576795Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-29T23:29:57.4577353Z ##[endgroup]
+2026-09-29T23:29:57.4578013Z ##[group]GITHUB_TOKEN Permissions
+2026-09-29T23:29:57.4579392Z Contents: read
+2026-09-29T23:29:57.4579800Z Metadata: read
+2026-09-29T23:29:57.4580124Z ##[endgroup]
+2026-09-29T23:29:57.4581441Z Secret source: Actions
+2026-09-29T23:29:57.4582034Z Cache mode: write
+2026-09-29T23:29:57.4582580Z Prepare workflow directory
+2026-09-29T23:29:57.4823794Z Prepare all required actions
+2026-09-29T23:29:57.4854425Z Getting action download info
+2026-09-29T23:29:57.8465525Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-29T23:29:57.9227801Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-09-29T23:29:58.1283962Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-09-29T23:29:58.5769442Z Complete job name: certify
+2026-09-29T23:29:58.6265012Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-09-29T23:29:58.6265566Z with:
+2026-09-29T23:29:58.6265859Z   repository: proteinfoldingengine/WetLabEngine
+2026-09-29T23:29:58.6268371Z   token: ***
+2026-09-29T23:29:58.6268619Z   ssh-strict: true
+2026-09-29T23:29:58.6268872Z   ssh-user: git
+2026-09-29T23:29:58.6269129Z   persist-credentials: true
+2026-09-29T23:29:58.6269409Z   clean: true
+2026-09-29T23:29:58.6269666Z   sparse-checkout-cone-mode: true
+2026-09-29T23:29:58.6269967Z   fetch-depth: 1
+2026-09-29T23:29:58.6270223Z   fetch-tags: false
+2026-09-29T23:29:58.6270482Z   show-progress: true
+2026-09-29T23:29:58.6270742Z   lfs: false
+2026-09-29T23:29:58.6270992Z   submodules: false
+2026-09-29T23:29:58.6271264Z   set-safe-directory: true
+2026-09-29T23:29:58.6271557Z   allow-unsafe-pr-checkout: false
+2026-09-29T23:29:58.6271961Z env:
+2026-09-29T23:29:58.6272306Z   P: ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization
+2026-09-29T23:29:58.6272765Z ##[endgroup]
+2026-09-29T23:29:58.6975379Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-09-29T23:29:58.6977407Z ##[group]Getting Git version info
+2026-09-29T23:29:58.6978146Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-29T23:29:58.6979229Z [command]/usr/bin/git version
+2026-09-29T23:29:58.7041631Z git version 2.55.0
+2026-09-29T23:29:58.7057494Z ##[endgroup]
+2026-09-29T23:29:58.7066893Z Temporarily overriding HOME='/home/runner/work/_temp/c8d98865-b4a0-47a0-8564-b7155bf3f981' before making global git config changes
+2026-09-29T23:29:58.7068288Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-29T23:29:58.7071137Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-29T23:29:58.8034270Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-29T23:29:58.8037506Z ##[group]Initializing the repository
+2026-09-29T23:29:58.8041141Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-29T23:29:58.9134519Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-29T23:29:58.9135934Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-29T23:29:58.9137439Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-29T23:29:58.9138491Z hint: call:
+2026-09-29T23:29:58.9139045Z hint:
+2026-09-29T23:29:58.9139758Z hint: 	git config --global init.defaultBranch <name>
+2026-09-29T23:29:58.9140578Z hint:
+2026-09-29T23:29:58.9141374Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-29T23:29:58.9142749Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-29T23:29:58.9143837Z hint:
+2026-09-29T23:29:58.9144381Z hint: 	git branch -m <name>
+2026-09-29T23:29:58.9145099Z hint:
+2026-09-29T23:29:58.9146093Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-29T23:29:58.9147971Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-09-29T23:29:58.9150918Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-29T23:29:58.9230193Z ##[endgroup]
+2026-09-29T23:29:58.9231233Z ##[group]Disabling automatic garbage collection
+2026-09-29T23:29:58.9232013Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-29T23:29:58.9321718Z ##[endgroup]
+2026-09-29T23:29:58.9323004Z ##[group]Setting up auth
+2026-09-29T23:29:58.9327770Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-29T23:29:58.9357150Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-29T23:29:58.9649952Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-29T23:29:58.9679434Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-29T23:29:58.9859281Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-29T23:29:58.9889612Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-29T23:29:59.0062758Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-29T23:29:59.1811979Z ##[endgroup]
+2026-09-29T23:29:59.1814221Z ##[group]Fetching the repository
+2026-09-29T23:29:59.1822907Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fdeaf3294973e3fd8624795131b90433b54e5a6e:refs/remotes/origin/research/v16.31-global-component-factorization
+2026-09-29T23:30:14.1827098Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-29T23:30:14.1827691Z  * [new ref]         fdeaf3294973e3fd8624795131b90433b54e5a6e -> origin/research/v16.31-global-component-factorization
+2026-09-29T23:30:14.1837834Z ##[endgroup]
+2026-09-29T23:30:14.1838338Z ##[group]Determining the checkout info
+2026-09-29T23:30:14.1838788Z ##[endgroup]
+2026-09-29T23:30:14.1839160Z [command]/usr/bin/git sparse-checkout disable
+2026-09-29T23:30:14.2013400Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-29T23:30:14.2207256Z ##[group]Checking out the ref
+2026-09-29T23:30:14.2218094Z [command]/usr/bin/git checkout --progress --force -B research/v16.31-global-component-factorization refs/remotes/origin/research/v16.31-global-component-factorization
+2026-09-29T23:30:15.2513129Z Updating files:  67% (3589/5297)
+2026-09-29T23:30:15.3865791Z Updating files:  68% (3602/5297)
+2026-09-29T23:30:15.3877427Z Updating files:  69% (3655/5297)
+2026-09-29T23:30:15.5127541Z Updating files:  70% (3708/5297)
+2026-09-29T23:30:15.5633955Z Updating files:  71% (3761/5297)
+2026-09-29T23:30:15.6331243Z Updating files:  72% (3814/5297)
+2026-09-29T23:30:15.6719572Z Updating files:  73% (3867/5297)
+2026-09-29T23:30:15.6809238Z Updating files:  74% (3920/5297)
+2026-09-29T23:30:15.6852982Z Updating files:  75% (3973/5297)
+2026-09-29T23:30:15.7203320Z Updating files:  76% (4026/5297)
+2026-09-29T23:30:15.7227008Z Updating files:  77% (4079/5297)
+2026-09-29T23:30:15.7251668Z Updating files:  78% (4132/5297)
+2026-09-29T23:30:15.7274434Z Updating files:  79% (4185/5297)
+2026-09-29T23:30:15.7297738Z Updating files:  80% (4238/5297)
+2026-09-29T23:30:15.7321183Z Updating files:  81% (4291/5297)
+2026-09-29T23:30:15.7343714Z Updating files:  82% (4344/5297)
+2026-09-29T23:30:15.7367704Z Updating files:  83% (4397/5297)
+2026-09-29T23:30:15.7384372Z Updating files:  84% (4450/5297)
+2026-09-29T23:30:15.7510208Z Updating files:  85% (4503/5297)
+2026-09-29T23:30:15.8958447Z Updating files:  86% (4556/5297)
+2026-09-29T23:30:16.0369320Z Updating files:  87% (4609/5297)
+2026-09-29T23:30:16.0488026Z Updating files:  88% (4662/5297)
+2026-09-29T23:30:16.0650571Z Updating files:  89% (4715/5297)
+2026-09-29T23:30:16.0808551Z Updating files:  90% (4768/5297)
+2026-09-29T23:30:16.1007271Z Updating files:  91% (4821/5297)
+2026-09-29T23:30:16.1351052Z Updating files:  92% (4874/5297)
+2026-09-29T23:30:16.1460255Z Updating files:  93% (4927/5297)
+2026-09-29T23:30:16.1484079Z Updating files:  94% (4980/5297)
+2026-09-29T23:30:16.1516796Z Updating files:  95% (5033/5297)
+2026-09-29T23:30:16.1590206Z Updating files:  96% (5086/5297)
+2026-09-29T23:30:16.1627691Z Updating files:  97% (5139/5297)
+2026-09-29T23:30:16.1744436Z Updating files:  98% (5192/5297)
+2026-09-29T23:30:16.1775516Z Updating files:  99% (5245/5297)
+2026-09-29T23:30:16.1775762Z Updating files: 100% (5297/5297)
+2026-09-29T23:30:16.1775987Z Updating files: 100% (5297/5297), done.
+2026-09-29T23:30:16.1833241Z Switched to a new branch 'research/v16.31-global-component-factorization'
+2026-09-29T23:30:16.1836358Z branch 'research/v16.31-global-component-factorization' set up to track 'origin/research/v16.31-global-component-factorization'.
+2026-09-29T23:30:16.1966063Z ##[endgroup]
+2026-09-29T23:30:16.2007210Z [command]/usr/bin/git log -1 --format=%H
+2026-09-29T23:30:16.2035027Z fdeaf3294973e3fd8624795131b90433b54e5a6e
+2026-09-29T23:30:16.2312182Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-09-29T23:30:16.2312413Z with:
+2026-09-29T23:30:16.2312536Z   python-version: 3.11
+2026-09-29T23:30:16.2312666Z   check-latest: false
+2026-09-29T23:30:16.2314405Z   token: ***
+2026-09-29T23:30:16.2314641Z   update-environment: true
+2026-09-29T23:30:16.2314778Z   allow-prereleases: false
+2026-09-29T23:30:16.2314931Z   freethreaded: false
+2026-09-29T23:30:16.2315052Z env:
+2026-09-29T23:30:16.2315227Z   P: ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization
+2026-09-29T23:30:16.2315456Z ##[endgroup]
+2026-09-29T23:30:16.3226607Z ##[group]Installed versions
+2026-09-29T23:30:16.3468452Z (node:2040) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-29T23:30:16.3468975Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-29T23:30:16.3469364Z Successfully set up CPython (3.11.16)
+2026-09-29T23:30:16.3469916Z ##[endgroup]
+2026-09-29T23:30:16.3624876Z ##[group]Run set -euo pipefail
+2026-09-29T23:30:16.3625199Z [36;1mset -euo pipefail[0m
+2026-09-29T23:30:16.3625419Z [36;1mcd "$P"[0m
+2026-09-29T23:30:16.3625707Z [36;1mmkdir -p evidence[0m
+2026-09-29T23:30:16.3626287Z [36;1mV31_LEGACY=1 python test_contract.py 2>&1 | tee evidence/legacy-contract.log[0m
+2026-09-29T23:30:16.4110200Z shell: /usr/bin/bash -e {0}
+2026-09-29T23:30:16.4110387Z env:
+2026-09-29T23:30:16.4110612Z   P: ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization
+2026-09-29T23:30:16.4111080Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.4111330Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-29T23:30:16.4111562Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.4111778Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.4111992Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.4112269Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-29T23:30:16.4112453Z ##[endgroup]
+2026-09-29T23:30:16.5805534Z test_fabricated_summary_is_not_complete (__main__.Contract.test_fabricated_summary_is_not_complete) ... FAIL
+2026-09-29T23:30:16.5807592Z test_no_sections_is_not_complete (__main__.Contract.test_no_sections_is_not_complete) ... FAIL
+2026-09-29T23:30:16.5809847Z test_untyped_empty_edges_are_not_a_certificate (__main__.Contract.test_untyped_empty_edges_are_not_a_certificate) ... FAIL
+2026-09-29T23:30:16.5810495Z 
+2026-09-29T23:30:16.5810672Z ======================================================================
+2026-09-29T23:30:16.5811049Z FAIL: test_fabricated_summary_is_not_complete (__main__.Contract.test_fabricated_summary_is_not_complete)
+2026-09-29T23:30:16.5811346Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.5811556Z Traceback (most recent call last):
+2026-09-29T23:30:16.5817584Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_contract.py", line 20, in test_fabricated_summary_is_not_complete
+2026-09-29T23:30:16.5818222Z     with self.assertRaises(ValueError):m.verify_document({'version':VERSION,'pairs':-1,'local_edges':999,'cross_parent_edges':5,'cases':[]})
+2026-09-29T23:30:16.5818573Z AssertionError: ValueError not raised
+2026-09-29T23:30:16.5818678Z 
+2026-09-29T23:30:16.5818748Z ======================================================================
+2026-09-29T23:30:16.5819002Z FAIL: test_no_sections_is_not_complete (__main__.Contract.test_no_sections_is_not_complete)
+2026-09-29T23:30:16.5819273Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.5819460Z Traceback (most recent call last):
+2026-09-29T23:30:16.5819908Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_contract.py", line 17, in test_no_sections_is_not_complete
+2026-09-29T23:30:16.5820383Z     with self.assertRaises(ValueError):m.verify_document({'version':VERSION})
+2026-09-29T23:30:16.5820606Z AssertionError: ValueError not raised
+2026-09-29T23:30:16.5820707Z 
+2026-09-29T23:30:16.5820771Z ======================================================================
+2026-09-29T23:30:16.5821075Z FAIL: test_untyped_empty_edges_are_not_a_certificate (__main__.Contract.test_untyped_empty_edges_are_not_a_certificate)
+2026-09-29T23:30:16.5821388Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.5821583Z Traceback (most recent call last):
+2026-09-29T23:30:16.5822030Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_contract.py", line 23, in test_untyped_empty_edges_are_not_a_certificate
+2026-09-29T23:30:16.5822635Z     with self.assertRaises(ValueError):m.verify_document({'version':VERSION,'cases':[{'parents':[-1,0,0],'events':[[0,1]],'views':[[0]],'edges':[]}]})
+2026-09-29T23:30:16.5823216Z AssertionError: ValueError not raised
+2026-09-29T23:30:16.5823318Z 
+2026-09-29T23:30:16.5823397Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.5823753Z Ran 3 tests in 0.003s
+2026-09-29T23:30:16.5823882Z 
+2026-09-29T23:30:16.5823989Z FAILED (failures=3)
+2026-09-29T23:30:16.5898863Z ##[error]Process completed with exit code 1.
+2026-09-29T23:30:16.5937761Z ##[group]Run set -euo pipefail
+2026-09-29T23:30:16.5937962Z [36;1mset -euo pipefail[0m
+2026-09-29T23:30:16.5938095Z [36;1mcd "$P"[0m
+2026-09-29T23:30:16.5938372Z [36;1mpython test_gate.py 2>&1 | tee evidence/wiring.log[0m
+2026-09-29T23:30:16.5992084Z shell: /usr/bin/bash -e {0}
+2026-09-29T23:30:16.5992224Z env:
+2026-09-29T23:30:16.5992410Z   P: ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization
+2026-09-29T23:30:16.5992667Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.5992899Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-29T23:30:16.5993135Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.5993344Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.5993557Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.5993768Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-29T23:30:16.5993987Z ##[endgroup]
+2026-09-29T23:30:16.6325549Z test_actual_relabeling_and_view_storage (__main__.Tests.test_actual_relabeling_and_view_storage) ... FAIL
+2026-09-29T23:30:16.6326525Z test_boolean_profile (__main__.Tests.test_boolean_profile) ... FAIL
+2026-09-29T23:30:16.6328273Z test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... FAIL
+2026-09-29T23:30:16.6330246Z test_cross_parent_edge (__main__.Tests.test_cross_parent_edge) ... FAIL
+2026-09-29T23:30:16.6331494Z test_duplicate_endpoint (__main__.Tests.test_duplicate_endpoint) ... FAIL
+2026-09-29T23:30:16.6333038Z test_fabricated_cartesian_count (__main__.Tests.test_fabricated_cartesian_count) ... FAIL
+2026-09-29T23:30:16.6334159Z test_false_profile (__main__.Tests.test_false_profile) ... FAIL
+2026-09-29T23:30:16.6335527Z test_false_relabeling (__main__.Tests.test_false_relabeling) ... FAIL
+2026-09-29T23:30:16.6336957Z test_foreign_origin (__main__.Tests.test_foreign_origin) ... FAIL
+2026-09-29T23:30:16.6337918Z test_identity (__main__.Tests.test_identity) ... FAIL
+2026-09-29T23:30:16.6338839Z test_invalid_endpoint_inputs (__main__.Tests.test_invalid_endpoint_inputs) ... FAIL
+2026-09-29T23:30:16.6339743Z test_missing_actual_edge (__main__.Tests.test_missing_actual_edge) ... FAIL
+2026-09-29T23:30:16.6340702Z test_missing_document_sections (__main__.Tests.test_missing_document_sections) ... FAIL
+2026-09-29T23:30:16.6341533Z test_missing_endpoint (__main__.Tests.test_missing_endpoint) ... FAIL
+2026-09-29T23:30:16.6342756Z test_missing_local_table (__main__.Tests.test_missing_local_table) ... FAIL
+2026-09-29T23:30:16.6343779Z test_missing_shape (__main__.Tests.test_missing_shape) ... FAIL
+2026-09-29T23:30:16.6345185Z test_missing_state (__main__.Tests.test_missing_state) ... FAIL
+2026-09-29T23:30:16.6346059Z test_noncartesian_nonconstant_chain (__main__.Tests.test_noncartesian_nonconstant_chain) ... FAIL
+2026-09-29T23:30:16.6347046Z test_retained_third_order (__main__.Tests.test_retained_third_order) ... FAIL
+2026-09-29T23:30:16.6348006Z test_synthetic_cubic_all_background_not_baseline (__main__.Tests.test_synthetic_cubic_all_background_not_baseline) ... FAIL
+2026-09-29T23:30:16.6348747Z test_synthetic_separate_components (__main__.Tests.test_synthetic_separate_components) ... FAIL
+2026-09-29T23:30:16.6349573Z test_valid_reversed_records (__main__.Tests.test_valid_reversed_records) ... FAIL
+2026-09-29T23:30:16.6350450Z test_verifier_no_producer_import (__main__.Tests.test_verifier_no_producer_import) ... FAIL
+2026-09-29T23:30:16.6351659Z test_wrong_component_values (__main__.Tests.test_wrong_component_values) ... FAIL
+2026-09-29T23:30:16.6352401Z test_wrong_cube_shape (__main__.Tests.test_wrong_cube_shape) ... FAIL
+2026-09-29T23:30:16.6353610Z test_wrong_mobius (__main__.Tests.test_wrong_mobius) ... FAIL
+2026-09-29T23:30:16.6354949Z test_wrong_parent_prelude (__main__.Tests.test_wrong_parent_prelude) ... FAIL
+2026-09-29T23:30:16.6356380Z test_wrong_predecessor (__main__.Tests.test_wrong_predecessor) ... FAIL
+2026-09-29T23:30:16.6356654Z 
+2026-09-29T23:30:16.6357086Z ======================================================================
+2026-09-29T23:30:16.6357519Z FAIL: test_actual_relabeling_and_view_storage (__main__.Tests.test_actual_relabeling_and_view_storage)
+2026-09-29T23:30:16.6358116Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6358430Z Traceback (most recent call last):
+2026-09-29T23:30:16.6359319Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 45, in test_actual_relabeling_and_view_storage
+2026-09-29T23:30:16.6360094Z     p,v=self.modules();par,a,b=CHAIN;pi=[0,3,2,1];q=[-1]*4
+2026-09-29T23:30:16.6360370Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6360773Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6361242Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6361519Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6361756Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6361904Z 
+2026-09-29T23:30:16.6361970Z ======================================================================
+2026-09-29T23:30:16.6362173Z FAIL: test_boolean_profile (__main__.Tests.test_boolean_profile)
+2026-09-29T23:30:16.6362391Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6362582Z Traceback (most recent call last):
+2026-09-29T23:30:16.6362975Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 57, in test_boolean_profile
+2026-09-29T23:30:16.6363480Z     def test_boolean_profile(self):self.reject('boolean-profile',lambda c:c['states'][0][1].__setitem__(0,True))
+2026-09-29T23:30:16.6363787Z                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6364206Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6364583Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6364739Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6365079Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6365529Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6365798Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6366025Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6366344Z 
+2026-09-29T23:30:16.6366417Z ======================================================================
+2026-09-29T23:30:16.6366645Z FAIL: test_complete_small_universe (__main__.Tests.test_complete_small_universe)
+2026-09-29T23:30:16.6366897Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6367080Z Traceback (most recent call last):
+2026-09-29T23:30:16.6367507Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 73, in test_complete_small_universe
+2026-09-29T23:30:16.6368092Z     p,v=self.modules();r=v.verify_document(p.produce(3),3);self.assertEqual(r['execution_status'],'COMPLETED');self.assertGreater(r['original']['cases'],0)
+2026-09-29T23:30:16.6368425Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6368766Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6369330Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6369603Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6369933Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6370077Z 
+2026-09-29T23:30:16.6370139Z ======================================================================
+2026-09-29T23:30:16.6370345Z FAIL: test_cross_parent_edge (__main__.Tests.test_cross_parent_edge)
+2026-09-29T23:30:16.6370573Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6370754Z Traceback (most recent call last):
+2026-09-29T23:30:16.6371144Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 63, in test_cross_parent_edge
+2026-09-29T23:30:16.6371662Z     def test_cross_parent_edge(self):self.reject('cross-parent-edge',lambda c:c['edges'].append([0,1]))
+2026-09-29T23:30:16.6371945Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6372342Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6372711Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6372864Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6373201Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6373647Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6373914Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6374137Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6374279Z 
+2026-09-29T23:30:16.6374348Z ======================================================================
+2026-09-29T23:30:16.6374557Z FAIL: test_duplicate_endpoint (__main__.Tests.test_duplicate_endpoint)
+2026-09-29T23:30:16.6374790Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6374974Z Traceback (most recent call last):
+2026-09-29T23:30:16.6375398Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 81, in test_duplicate_endpoint
+2026-09-29T23:30:16.6375923Z     p,v=self.modules();d=p.produce(3);i=next(i for i in d['instances'] if i['cases']);i['cases'].append(copy.deepcopy(i['cases'][0]))
+2026-09-29T23:30:16.6376350Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6376831Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6377280Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6377549Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6377776Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6377918Z 
+2026-09-29T23:30:16.6377981Z ======================================================================
+2026-09-29T23:30:16.6378223Z FAIL: test_fabricated_cartesian_count (__main__.Tests.test_fabricated_cartesian_count)
+2026-09-29T23:30:16.6378480Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6378661Z Traceback (most recent call last):
+2026-09-29T23:30:16.6379068Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 67, in test_fabricated_cartesian_count
+2026-09-29T23:30:16.6379708Z     def test_fabricated_cartesian_count(self):self.reject('cartesian-confusion',lambda c:c.__setitem__('product_states',3))
+2026-09-29T23:30:16.6380042Z                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6380534Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6380903Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6381053Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6381387Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6381830Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6382101Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6382328Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6382468Z 
+2026-09-29T23:30:16.6382534Z ======================================================================
+2026-09-29T23:30:16.6382734Z FAIL: test_false_profile (__main__.Tests.test_false_profile)
+2026-09-29T23:30:16.6382945Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6383129Z Traceback (most recent call last):
+2026-09-29T23:30:16.6383508Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 56, in test_false_profile
+2026-09-29T23:30:16.6383997Z     def test_false_profile(self):self.reject('false-profile',lambda c:c['states'][0][1].__setitem__(0,99))
+2026-09-29T23:30:16.6384286Z                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6384689Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6385056Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6385206Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6385551Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6385996Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6386333Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6386555Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6386698Z 
+2026-09-29T23:30:16.6386760Z ======================================================================
+2026-09-29T23:30:16.6386962Z FAIL: test_false_relabeling (__main__.Tests.test_false_relabeling)
+2026-09-29T23:30:16.6387187Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6387372Z Traceback (most recent call last):
+2026-09-29T23:30:16.6387757Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 84, in test_false_relabeling
+2026-09-29T23:30:16.6388299Z     p,v=self.modules();d=p.produce(3);i=next(i for i in d['instances'] if i['variant']=='relabeled' and i['parents']==[-1,2,0]);i['parents']=[-1,0,1]
+2026-09-29T23:30:16.6388595Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6388933Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6389382Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6389647Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6389965Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6390103Z 
+2026-09-29T23:30:16.6390168Z ======================================================================
+2026-09-29T23:30:16.6390448Z FAIL: test_foreign_origin (__main__.Tests.test_foreign_origin)
+2026-09-29T23:30:16.6390661Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6390847Z Traceback (most recent call last):
+2026-09-29T23:30:16.6391231Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 68, in test_foreign_origin
+2026-09-29T23:30:16.6391721Z     def test_foreign_origin(self):self.reject('foreign-origin',lambda c:c.__setitem__('genesis','foreign'))
+2026-09-29T23:30:16.6392008Z                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6392410Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6392776Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6392928Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6393266Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6393710Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6393977Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6394214Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6394359Z 
+2026-09-29T23:30:16.6394426Z ======================================================================
+2026-09-29T23:30:16.6394607Z FAIL: test_identity (__main__.Tests.test_identity)
+2026-09-29T23:30:16.6394805Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6394986Z Traceback (most recent call last):
+2026-09-29T23:30:16.6395363Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 27, in test_identity
+2026-09-29T23:30:16.6395761Z     p,v=self.modules();c=p.certify((-1,),[(0,)],[(0,)])
+2026-09-29T23:30:16.6395924Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6396381Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6396866Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6397133Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6397359Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6397497Z 
+2026-09-29T23:30:16.6397565Z ======================================================================
+2026-09-29T23:30:16.6397795Z FAIL: test_invalid_endpoint_inputs (__main__.Tests.test_invalid_endpoint_inputs)
+2026-09-29T23:30:16.6398044Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6398225Z Traceback (most recent call last):
+2026-09-29T23:30:16.6398626Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 50, in test_invalid_endpoint_inputs
+2026-09-29T23:30:16.6399020Z     p,_=self.modules()
+2026-09-29T23:30:16.6399141Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6399475Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6399921Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6400287Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6400511Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6400739Z 
+2026-09-29T23:30:16.6400800Z ======================================================================
+2026-09-29T23:30:16.6401016Z FAIL: test_missing_actual_edge (__main__.Tests.test_missing_actual_edge)
+2026-09-29T23:30:16.6401244Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6401427Z Traceback (most recent call last):
+2026-09-29T23:30:16.6401821Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 65, in test_missing_actual_edge
+2026-09-29T23:30:16.6402239Z     _,v=self.modules();c=self.case(THREE);c['edges'].pop()
+2026-09-29T23:30:16.6402408Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6402746Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6403189Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6403462Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6403683Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6403824Z 
+2026-09-29T23:30:16.6403886Z ======================================================================
+2026-09-29T23:30:16.6404116Z FAIL: test_missing_document_sections (__main__.Tests.test_missing_document_sections)
+2026-09-29T23:30:16.6404368Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6404554Z Traceback (most recent call last):
+2026-09-29T23:30:16.6404957Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 70, in test_missing_document_sections
+2026-09-29T23:30:16.6405352Z     _,v=self.modules()
+2026-09-29T23:30:16.6405468Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6405801Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6406318Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6406589Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6406811Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6406949Z 
+2026-09-29T23:30:16.6407013Z ======================================================================
+2026-09-29T23:30:16.6407216Z FAIL: test_missing_endpoint (__main__.Tests.test_missing_endpoint)
+2026-09-29T23:30:16.6407434Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6407618Z Traceback (most recent call last):
+2026-09-29T23:30:16.6408007Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 78, in test_missing_endpoint
+2026-09-29T23:30:16.6408479Z     p,v=self.modules();d=p.produce(3);next(i for i in d['instances'] if i['cases'])['cases'].pop()
+2026-09-29T23:30:16.6408706Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6409042Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6409488Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6409754Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6409979Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6410118Z 
+2026-09-29T23:30:16.6410274Z ======================================================================
+2026-09-29T23:30:16.6410484Z FAIL: test_missing_local_table (__main__.Tests.test_missing_local_table)
+2026-09-29T23:30:16.6410842Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6411024Z Traceback (most recent call last):
+2026-09-29T23:30:16.6411421Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 62, in test_missing_local_table
+2026-09-29T23:30:16.6411897Z     def test_missing_local_table(self):self.reject('missing-local',lambda c:c['local'].pop())
+2026-09-29T23:30:16.6412159Z                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6412553Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6412920Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6413074Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6413461Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6414025Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6414292Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6414514Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6414742Z 
+2026-09-29T23:30:16.6414832Z ======================================================================
+2026-09-29T23:30:16.6415123Z FAIL: test_missing_shape (__main__.Tests.test_missing_shape)
+2026-09-29T23:30:16.6415449Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6415731Z Traceback (most recent call last):
+2026-09-29T23:30:16.6416450Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 75, in test_missing_shape
+2026-09-29T23:30:16.6417164Z     p,v=self.modules();d=p.produce(3);d['instances'].pop()
+2026-09-29T23:30:16.6417434Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6418072Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6418733Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6419006Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6419232Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6419372Z 
+2026-09-29T23:30:16.6419438Z ======================================================================
+2026-09-29T23:30:16.6419649Z FAIL: test_missing_state (__main__.Tests.test_missing_state)
+2026-09-29T23:30:16.6419860Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6420044Z Traceback (most recent call last):
+2026-09-29T23:30:16.6420429Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 55, in test_missing_state
+2026-09-29T23:30:16.6420883Z     def test_missing_state(self):self.reject('missing-state',lambda c:c['states'].pop())
+2026-09-29T23:30:16.6421129Z                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6421517Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6421884Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6422036Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6422477Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6422918Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6423268Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6423490Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6423631Z 
+2026-09-29T23:30:16.6423693Z ======================================================================
+2026-09-29T23:30:16.6423946Z FAIL: test_noncartesian_nonconstant_chain (__main__.Tests.test_noncartesian_nonconstant_chain)
+2026-09-29T23:30:16.6424219Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6424406Z Traceback (most recent call last):
+2026-09-29T23:30:16.6424825Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 23, in test_noncartesian_nonconstant_chain
+2026-09-29T23:30:16.6425255Z     _,v=self.modules();c=self.case();r=v.verify_case(c)
+2026-09-29T23:30:16.6425422Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6425756Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6426342Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6426609Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6426831Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6426969Z 
+2026-09-29T23:30:16.6427033Z ======================================================================
+2026-09-29T23:30:16.6427309Z FAIL: test_retained_third_order (__main__.Tests.test_retained_third_order)
+2026-09-29T23:30:16.6427677Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6427950Z Traceback (most recent call last):
+2026-09-29T23:30:16.6428543Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 30, in test_retained_third_order
+2026-09-29T23:30:16.6429158Z     _,v=self.modules();c=self.case(THREE);v.verify_case(c)
+2026-09-29T23:30:16.6429413Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6429907Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6430551Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6430935Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6431263Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6431465Z 
+2026-09-29T23:30:16.6431559Z ======================================================================
+2026-09-29T23:30:16.6432025Z FAIL: test_synthetic_cubic_all_background_not_baseline (__main__.Tests.test_synthetic_cubic_all_background_not_baseline)
+2026-09-29T23:30:16.6432538Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6432829Z Traceback (most recent call last):
+2026-09-29T23:30:16.6433558Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 33, in test_synthetic_cubic_all_background_not_baseline
+2026-09-29T23:30:16.6434317Z     _,v=self.modules();r=v.boolean_audit([0,0,0,0,0,0,0,1])
+2026-09-29T23:30:16.6434589Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6435153Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6436042Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6436650Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6437087Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6437310Z 
+2026-09-29T23:30:16.6437383Z ======================================================================
+2026-09-29T23:30:16.6437636Z FAIL: test_synthetic_separate_components (__main__.Tests.test_synthetic_separate_components)
+2026-09-29T23:30:16.6437907Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6438090Z Traceback (most recent call last):
+2026-09-29T23:30:16.6438510Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 36, in test_synthetic_separate_components
+2026-09-29T23:30:16.6439005Z     _,v=self.modules();vals=[1+int(bool(s&1))+int(bool(s&2) and bool(s&4)) for s in range(8)]
+2026-09-29T23:30:16.6439227Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6439568Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6440018Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6440284Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6440506Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6440648Z 
+2026-09-29T23:30:16.6440709Z ======================================================================
+2026-09-29T23:30:16.6440933Z FAIL: test_valid_reversed_records (__main__.Tests.test_valid_reversed_records)
+2026-09-29T23:30:16.6441173Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6441356Z Traceback (most recent call last):
+2026-09-29T23:30:16.6441756Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 43, in test_valid_reversed_records
+2026-09-29T23:30:16.6442245Z     _,v=self.modules();c=self.case(THREE);c['states'].reverse();c['local'].reverse();v.verify_case(c)
+2026-09-29T23:30:16.6442473Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6442811Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6443255Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6443520Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6443741Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6443882Z 
+2026-09-29T23:30:16.6443951Z ======================================================================
+2026-09-29T23:30:16.6444192Z FAIL: test_verifier_no_producer_import (__main__.Tests.test_verifier_no_producer_import)
+2026-09-29T23:30:16.6444455Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6444640Z Traceback (most recent call last):
+2026-09-29T23:30:16.6445050Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 87, in test_verifier_no_producer_import
+2026-09-29T23:30:16.6445503Z     self.modules();tree=ast.parse((P/'verifier.py').read_text());names=[]
+2026-09-29T23:30:16.6445697Z     ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6446029Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6446629Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6446990Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6447213Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6447433Z 
+2026-09-29T23:30:16.6447499Z ======================================================================
+2026-09-29T23:30:16.6447720Z FAIL: test_wrong_component_values (__main__.Tests.test_wrong_component_values)
+2026-09-29T23:30:16.6447963Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6448147Z Traceback (most recent call last):
+2026-09-29T23:30:16.6448549Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 60, in test_wrong_component_values
+2026-09-29T23:30:16.6449102Z     def test_wrong_component_values(self):self.reject('wrong-component',lambda c:c['local'][0]['components'][0]['values'].__setitem__(1,99))
+2026-09-29T23:30:16.6449467Z                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6449884Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6450253Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6450406Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6450740Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6451181Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6451447Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6451668Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6451808Z 
+2026-09-29T23:30:16.6451873Z ======================================================================
+2026-09-29T23:30:16.6452077Z FAIL: test_wrong_cube_shape (__main__.Tests.test_wrong_cube_shape)
+2026-09-29T23:30:16.6452300Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6452480Z Traceback (most recent call last):
+2026-09-29T23:30:16.6452864Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 39, in test_wrong_cube_shape
+2026-09-29T23:30:16.6453243Z     _,v=self.modules()
+2026-09-29T23:30:16.6453358Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6453695Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6454139Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6454408Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6454629Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6454775Z 
+2026-09-29T23:30:16.6454837Z ======================================================================
+2026-09-29T23:30:16.6455026Z FAIL: test_wrong_mobius (__main__.Tests.test_wrong_mobius)
+2026-09-29T23:30:16.6455229Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6455415Z Traceback (most recent call last):
+2026-09-29T23:30:16.6455790Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 61, in test_wrong_mobius
+2026-09-29T23:30:16.6456425Z     def test_wrong_mobius(self):self.reject('wrong-mobius',lambda c:c['local'][0]['mobius'].__setitem__(1,99))
+2026-09-29T23:30:16.6456719Z                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6457214Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6457663Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6457812Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6458144Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6458586Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6458851Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6459072Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6459213Z 
+2026-09-29T23:30:16.6459278Z ======================================================================
+2026-09-29T23:30:16.6459498Z FAIL: test_wrong_parent_prelude (__main__.Tests.test_wrong_parent_prelude)
+2026-09-29T23:30:16.6459731Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6459918Z Traceback (most recent call last):
+2026-09-29T23:30:16.6460314Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 59, in test_wrong_parent_prelude
+2026-09-29T23:30:16.6460826Z     def test_wrong_parent_prelude(self):self.reject('wrong-prelude',lambda c:c['local'][0].__setitem__('prelude',0))
+2026-09-29T23:30:16.6461140Z                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6461542Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6461907Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6462059Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6462392Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6462837Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6463106Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6463327Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6463464Z 
+2026-09-29T23:30:16.6463529Z ======================================================================
+2026-09-29T23:30:16.6463734Z FAIL: test_wrong_predecessor (__main__.Tests.test_wrong_predecessor)
+2026-09-29T23:30:16.6463955Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6464135Z Traceback (most recent call last):
+2026-09-29T23:30:16.6464529Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 58, in test_wrong_predecessor
+2026-09-29T23:30:16.6465036Z     def test_wrong_predecessor(self):self.reject('wrong-predecessor',lambda c:c['predecessors'].__setitem__(0,0))
+2026-09-29T23:30:16.6465347Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6465744Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 19, in reject
+2026-09-29T23:30:16.6466109Z     _,v=self.modules();c=self.case();change(c)
+2026-09-29T23:30:16.6466447Z         ^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6466863Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py", line 14, in modules
+2026-09-29T23:30:16.6467432Z     for n in ('producer','verifier'):self.assertTrue((P/(n+'.py')).is_file(),'wiring RED: missing '+n)
+2026-09-29T23:30:16.6467699Z                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T23:30:16.6468004Z AssertionError: False is not true : wiring RED: missing producer
+2026-09-29T23:30:16.6468145Z 
+2026-09-29T23:30:16.6468225Z ----------------------------------------------------------------------
+2026-09-29T23:30:16.6468400Z Ran 28 tests in 0.004s
+2026-09-29T23:30:16.6468477Z 
+2026-09-29T23:30:16.6468541Z FAILED (failures=28)
+2026-09-29T23:30:16.6484296Z ##[error]Process completed with exit code 1.
+2026-09-29T23:30:16.6506645Z ##[group]Run python - <<'PY'
+2026-09-29T23:30:16.6506841Z [36;1mpython - <<'PY'[0m
+2026-09-29T23:30:16.6506999Z [36;1mimport os,json,pathlib,hashlib,platform[0m
+2026-09-29T23:30:16.6507239Z [36;1mp=pathlib.Path(os.environ['P']);e=p/'evidence';e.mkdir(exist_ok=True)[0m
+2026-09-29T23:30:16.6507813Z [36;1mm={'sha':os.environ['GITHUB_SHA'],'run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'python':platform.python_version(),'sources':{str(f):hashlib.sha256(f.read_bytes()).hexdigest() for f in p.iterdir() if f.is_file()}}[0m
+2026-09-29T23:30:16.6508366Z [36;1m(e/'EXECUTION.json').write_text(json.dumps(m,indent=2)+'\n')[0m
+2026-09-29T23:30:16.6508557Z [36;1mPY[0m
+2026-09-29T23:30:16.6560554Z shell: /usr/bin/bash -e {0}
+2026-09-29T23:30:16.6560691Z env:
+2026-09-29T23:30:16.6560869Z   P: ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization
+2026-09-29T23:30:16.6561121Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.6561385Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-29T23:30:16.6561613Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.6561823Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.6562031Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.6562240Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-29T23:30:16.6562419Z ##[endgroup]
+2026-09-29T23:30:16.6920148Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-09-29T23:30:16.6920401Z with:
+2026-09-29T23:30:16.6920545Z   name: v1631-fdeaf3294973e3fd8624795131b90433b54e5a6e
+2026-09-29T23:30:16.6920724Z   if-no-files-found: error
+2026-09-29T23:30:16.6920939Z   path: ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/evidence
+2026-09-29T23:30:16.6921173Z   compression-level: 6
+2026-09-29T23:30:16.6921295Z   overwrite: false
+2026-09-29T23:30:16.6921419Z   include-hidden-files: false
+2026-09-29T23:30:16.6921552Z env:
+2026-09-29T23:30:16.6921744Z   P: ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization
+2026-09-29T23:30:16.6921993Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.6922226Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-29T23:30:16.6922454Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.6922697Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.6922905Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T23:30:16.6923120Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-29T23:30:16.6923296Z ##[endgroup]
+2026-09-29T23:30:16.8037820Z (node:2058) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-29T23:30:16.8038232Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-29T23:30:16.8087385Z With the provided path, there will be 5 files uploaded
+2026-09-29T23:30:16.8106931Z Artifact name is valid!
+2026-09-29T23:30:16.8117735Z Root directory input is valid!
+2026-09-29T23:30:17.1378927Z Beginning upload of artifact content to blob storage
+2026-09-29T23:30:17.1543441Z (node:2058) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-29T23:30:17.3949093Z Uploaded bytes 3879
+2026-09-29T23:30:17.4559077Z Finished uploading artifact content to blob storage!
+2026-09-29T23:30:17.4559760Z SHA256 digest of uploaded artifact zip is 399dd51861c60f61bd460acdeabbd072420e39a8e667ac0273395e2d8cc9b4f2
+2026-09-29T23:30:17.4561260Z Finalizing artifact upload
+2026-09-29T23:30:17.6943017Z Artifact v1631-fdeaf3294973e3fd8624795131b90433b54e5a6e.zip successfully finalized. Artifact ID 11068277917
+2026-09-29T23:30:17.6943796Z Artifact v1631-fdeaf3294973e3fd8624795131b90433b54e5a6e has been successfully uploaded! Final size is 3879 bytes. Artifact ID is 11068277917
+2026-09-29T23:30:17.6947909Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36645517234/artifacts/11068277917
+2026-09-29T23:30:17.7107988Z Post job cleanup.
+2026-09-29T23:30:17.7693607Z [command]/usr/bin/git version
+2026-09-29T23:30:17.7724633Z git version 2.55.0
+2026-09-29T23:30:17.7748916Z Temporarily overriding HOME='/home/runner/work/_temp/227a19a6-e7a5-4d14-8d79-64b315f607ea' before making global git config changes
+2026-09-29T23:30:17.7749614Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-29T23:30:17.7752793Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-29T23:30:17.7787148Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-29T23:30:17.7815303Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-29T23:30:17.8036886Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-29T23:30:17.8062732Z http.https://github.com/.extraheader
+2026-09-29T23:30:17.8070621Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-29T23:30:17.8119029Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-29T23:30:17.8356683Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-29T23:30:17.8404595Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-29T23:30:17.8759355Z Cleaning up orphan processes
+2026-09-29T23:30:17.8965458Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

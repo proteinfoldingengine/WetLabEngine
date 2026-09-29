@@ -1,0 +1,32 @@
+test_fabricated_summary_is_not_complete (__main__.Contract.test_fabricated_summary_is_not_complete) ... FAIL
+test_no_sections_is_not_complete (__main__.Contract.test_no_sections_is_not_complete) ... FAIL
+test_untyped_empty_edges_are_not_a_certificate (__main__.Contract.test_untyped_empty_edges_are_not_a_certificate) ... FAIL
+
+======================================================================
+FAIL: test_fabricated_summary_is_not_complete (__main__.Contract.test_fabricated_summary_is_not_complete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_contract.py", line 20, in test_fabricated_summary_is_not_complete
+    with self.assertRaises(ValueError):m.verify_document({'version':VERSION,'pairs':-1,'local_edges':999,'cross_parent_edges':5,'cases':[]})
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_no_sections_is_not_complete (__main__.Contract.test_no_sections_is_not_complete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_contract.py", line 17, in test_no_sections_is_not_complete
+    with self.assertRaises(ValueError):m.verify_document({'version':VERSION})
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_untyped_empty_edges_are_not_a_certificate (__main__.Contract.test_untyped_empty_edges_are_not_a_certificate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_contract.py", line 23, in test_untyped_empty_edges_are_not_a_certificate
+    with self.assertRaises(ValueError):m.verify_document({'version':VERSION,'cases':[{'parents':[-1,0,0],'events':[[0,1]],'views':[[0]],'edges':[]}]})
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+FAILED (failures=3)
