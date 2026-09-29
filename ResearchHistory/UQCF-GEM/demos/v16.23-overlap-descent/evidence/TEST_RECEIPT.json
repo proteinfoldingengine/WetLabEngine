@@ -1,0 +1,57 @@
+{
+  "tests_run": 22,
+  "failures": 0,
+  "errors": 0,
+  "rejections": [
+    {
+      "defect": "corrupt-negative-witness",
+      "rejected": true,
+      "reason": "corrupt negative witness image"
+    },
+    {
+      "defect": "false-nonnegative-feasibility",
+      "rejected": true,
+      "reason": "false cone gluable"
+    },
+    {
+      "defect": "foreign-origin",
+      "rejected": true,
+      "reason": "duplicate pair or foreign origin"
+    },
+    {
+      "defect": "missing-pair",
+      "rejected": true,
+      "reason": "missing pair coverage"
+    },
+    {
+      "defect": "missing-triple",
+      "rejected": true,
+      "reason": "missing triple coverage"
+    },
+    {
+      "defect": "missing-required-map",
+      "rejected": true,
+      "reason": "missing required map"
+    },
+    {
+      "defect": "inexact-coefficient",
+      "rejected": true,
+      "reason": "invalid exact rational"
+    },
+    {
+      "defect": "wrong-gluer",
+      "rejected": true,
+      "reason": "gluer fails reconstruction"
+    },
+    {
+      "defect": "wrong-pushforward",
+      "rejected": true,
+      "reason": "incorrect source defining map"
+    },
+    {
+      "defect": "wrong-overlap",
+      "rejected": true,
+      "reason": "wrong union or overlap"
+    }
+  ]
+}
