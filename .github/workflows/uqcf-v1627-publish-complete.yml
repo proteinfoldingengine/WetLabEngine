@@ -1,0 +1,174 @@
+name: UQCF v16.27 durable completion publication
+on:
+  push:
+    branches: [research/v16.27-increment-attribution-closure]
+    paths: ['.github/workflows/uqcf-v1627-publish-complete.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+concurrency:
+  group: uqcf-v1627-completion-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions: {contents: write, actions: read}
+    env:
+      P: ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ github.sha }}'}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: Bind original GREEN, rerun independently, preserve historical evidence
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path,PurePosixPath
+          import hashlib,io,json,lzma,os,re,subprocess,zipfile
+          root=Path.cwd();p=root/os.environ['P'];e=p/'evidence';e.mkdir(exist_ok=True)
+          repo='repos/proteinfoldingengine/WetLabEngine/'
+          green_run=36625099103;green_sha='a89f4cabc484612ed2924247245a0a8a2adab6d2'
+          def need(x,m):
+            if not x:raise ValueError(m)
+          def sha(b):return hashlib.sha256(b).hexdigest()
+          def api(path,logs=False):
+            need(path.startswith('actions/'),'unexpected endpoint')
+            return subprocess.check_output(['gh','api']+(['--allow-escape-sequences'] if logs else [])+[repo+path])
+          def unzip(b):
+            z=zipfile.ZipFile(io.BytesIO(b));names=z.namelist()
+            need(z.testzip() is None and len(names)==len(set(names)),'ZIP integrity')
+            need(all(not PurePosixPath(n).is_absolute() and '..' not in PurePosixPath(n).parts for n in names),'unsafe archive member')
+            return {n:z.read(n) for n in names if not n.endswith('/')}
+          green_blob=api('actions/artifacts/11060250742/zip')
+          need(len(green_blob)==244947 and sha(green_blob)=='1db9c67818ac0a4e5520b615e818bfaecc8ac0843ef23480fceb17d17a28909c','scientific artifact hash')
+          g=unzip(green_blob)
+          for line in g['SHA256SUMS'].decode().splitlines():
+            digest,name=line.split(maxsplit=1);need(name in g and sha(g[name])==digest,'scientific member '+name)
+          original=json.loads(g['EXECUTION.json'])
+          need(original['sha']==green_sha and original['run']==str(green_run) and original['attempt']=='1' and original['execution_status']=='COMPLETED','GREEN execution identity')
+          need(original['tests_passed']==170 and all(c['exit_code']==0 for c in original['commands']),'GREEN executed checks')
+          for name,digest in original['source_sha256'].items():need(sha((root/name).read_bytes())==digest,'executed source changed: '+name)
+          for name,blob in unzip(g['SOURCE.zip']).items():need((root/name).read_bytes()==blob,'source/archive changed: '+name)
+          meta=json.loads(api('actions/runs/'+str(green_run)))
+          need(meta['status']=='completed' and meta['conclusion']=='success' and meta['head_sha']==green_sha,'GREEN status')
+          subprocess.run(['python',str(p/'run_campaign.py')],check=True,cwd=root)
+          science=['FULL_CERTIFICATES.json.xz','PRODUCTION.json','VERIFICATION.json','WITNESS.json','CONTRACT_TESTS.json','COMPLETE_TESTS.json','HISTORICAL_COMPARISON.json']
+          for name in science:need((e/name).read_bytes()==g[name],'fresh scientific bytes differ: '+name)
+          fresh=json.loads((e/'EXECUTION.json').read_text())
+          need(fresh['sha']==os.environ['GITHUB_SHA'] and fresh['tests_passed']==170 and all(c['exit_code']==0 for c in fresh['commands']),'fresh execution identity/coverage')
+          raw=lzma.decompress(g['FULL_CERTIFICATES.json.xz'])
+          need(len(raw)==22500736 and sha(raw)=='1397e6d798c73126fc547afffb4bb7f681645bd83665af9b7ae6a66e472c866d','complete certificate hash')
+          archives=e/'archives';archives.mkdir(exist_ok=True)
+          (archives/'scientific-green.zip').write_bytes(green_blob)
+          dest=e/'original-green';dest.mkdir(exist_ok=True)
+          for name,b in g.items():
+            target=dest/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(b)
+          # Snapshot every completed v16.27 development run through the scientific GREEN start.
+          registry=[];runlist=[];page=1
+          while True:
+            listing=json.loads(api('actions/runs?branch=research%2Fv16.27-increment-attribution-closure&per_page=100&page='+str(page)))
+            rows=listing['workflow_runs'];runlist.extend(rows)
+            if len(rows)<100:break
+            page+=1
+          selected=[r for r in runlist if r['created_at']<=meta['created_at'] and r['path'] in ('.github/workflows/uqcf-v1627-increment-attribution.yml','.github/workflows/uqcf-v1627-completion.yml')]
+          need({36617707972,36617809895,36617998154,36618145414,36624403670,green_run}<=set(r['id'] for r in selected),'missing required historical runs')
+          history=e/'history';history.mkdir(exist_ok=True)
+          for old in sorted(selected,key=lambda r:r['id']):
+            rid=old['id'];runraw=api('actions/runs/'+str(rid));run=json.loads(runraw)
+            need(run['status']=='completed','historical run not finished')
+            folder=history/str(rid);folder.mkdir(exist_ok=True);(folder/'run.json').write_bytes(runraw)
+            attempts=[]
+            for attempt in range(1,run['run_attempt']+1):
+              aroot=folder/('attempt-'+str(attempt));aroot.mkdir(exist_ok=True)
+              jobraw=api('actions/runs/'+str(rid)+'/attempts/'+str(attempt)+'/jobs?per_page=100');jobs=json.loads(jobraw)
+              need(jobs['total_count']==len(jobs['jobs']),'job pagination incomplete');(aroot/'jobs.json').write_bytes(jobraw)
+              for job in jobs['jobs']:
+                log=api('actions/jobs/'+str(job['id'])+'/logs',logs=True);(aroot/(str(job['id'])+'.log')).write_bytes(log)
+                if rid==36618145414:
+                  for line in log.decode('utf-8-sig').splitlines():
+                    text=line[line.find('{'):]
+                    try:d=json.loads(text)
+                    except (ValueError,TypeError):continue
+                    if isinstance(d,dict) and d.get('version')=='16.27' and 'first_witness' in d:
+                      (e/'ORIGINAL_LOGGED_RESULT.json').write_text(text+'\n')
+              attempts.append({'attempt':attempt,'jobs':[{'id':j['id'],'conclusion':j['conclusion']} for j in jobs['jobs']]})
+            artsraw=api('actions/runs/'+str(rid)+'/artifacts?per_page=100');arts=json.loads(artsraw)
+            need(arts['total_count']==len(arts['artifacts']),'artifact pagination incomplete');(folder/'artifacts.json').write_bytes(artsraw)
+            saved=[]
+            for art in arts['artifacts']:
+              b=api('actions/artifacts/'+str(art['id'])+'/zip');digest=art.get('digest','')
+              need(digest=='sha256:'+sha(b) and len(b)==art['size_in_bytes'],'historical artifact binding')
+              unzip(b);(folder/(str(art['id'])+'.zip')).write_bytes(b)
+              saved.append({'id':art['id'],'bytes':len(b),'sha256':sha(b)})
+            registry.append({'run':rid,'sha':run['head_sha'],'workflow':run['path'],'conclusion':run['conclusion'],'attempts':attempts,'artifacts':saved,
+                             'archive_note':'no original Actions artifact; exact run/job logs preserved' if not saved else 'original ZIP bytes preserved'})
+          need((e/'ORIGINAL_LOGGED_RESULT.json').is_file(),'original result line missing from durable logs')
+          # The original raw JSON was extracted from its original log, not regenerated and called original.
+          import sys
+          sys.path.insert(0,str(p));import verifier
+          oldresult=json.loads((e/'ORIGINAL_LOGGED_RESULT.json').read_text())
+          oldcheck=verifier.verify_witness(oldresult['first_witness'])
+          verification=json.loads(g['VERIFICATION.json'])
+          for a,b in [('endpoints','endpoints'),('multi_path','multi_path'),('path_dependent','dependent'),('paths','paths')]:need(oldresult[a]==verification['original'][b],'original log counts differ')
+          (p/'RUN_REGISTRY.json').write_text(json.dumps(registry,indent=2,sort_keys=True)+'\n')
+          receipt={'version':'16.27','scientific_sha':green_sha,'scientific_run':green_run,'scientific_job':109599923952,'scientific_attempt':1,
+                   'substantive_red_run':36624403670,'substantive_red_sha':'1eefe98987e3a91eb2d402d280b5445c555649e4',
+                   'scientific_artifact':11060250742,'scientific_artifact_sha256':sha(green_blob),
+                   'publication_workflow_head':os.environ['GITHUB_SHA'],'publication_run':os.environ['GITHUB_RUN_ID'],'publication_attempt':os.environ['GITHUB_RUN_ATTEMPT'],
+                   'fresh_scientific_bytes_equal':True,'compared_scientific_files':science,'source_snapshot_verified':True,
+                   'tests_passed':fresh['tests_passed'],'fresh_commands':fresh['commands'],'dependencies':fresh['dependencies'],'python':fresh['python'],
+                   'verification':verification,'raw_certificate_bytes':len(raw),'raw_certificate_sha256':sha(raw),
+                   'preserved_development_runs':len(registry),'original_log_witness_verified':oldcheck,
+                   'review':'self-reviewed; algorithmically independent verifier; no separately authored review',
+                   'scope':'v16.27 completion on additive research branch; no main merge; original sources retained'}
+          (p/'PUBLICATION_EVIDENCE.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+          files=sorted(f for f in p.rglob('*') if f.is_file() and '__pycache__' not in f.parts and f.name!='PUBLICATION_SHA256SUMS')
+          extras=[root/'ResearchHistory/UQCF-GEM/V16_27_REPORT.md',root/'ResearchHistory/UQCF-GEM/V16_27_COMPLETION_REPORT.md',root/'.github/workflows/uqcf-v1627-completion.yml',root/'.github/workflows/uqcf-v1627-publish-complete.yml']
+          (p/'PUBLICATION_SHA256SUMS').write_text(''.join(sha(f.read_bytes())+'  '+os.path.relpath(f,p)+'\n' for f in files+extras))
+          print(json.dumps({k:receipt[k] for k in ('scientific_sha','scientific_run','publication_run','tests_passed','preserved_development_runs','raw_certificate_bytes','raw_certificate_sha256','fresh_scientific_bytes_equal')}))
+          PY
+      - name: Scoped non-force publication and read-back verification
+        run: |
+          set -euo pipefail
+          (cd "$P" && sha256sum -c PUBLICATION_SHA256SUMS)
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "$P/evidence" "$P/RUN_REGISTRY.json" "$P/PUBLICATION_EVIDENCE.json" "$P/PUBLICATION_SHA256SUMS"
+          python - <<'PY'
+          import os,subprocess
+          names=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
+          if not names or not all(n.startswith(os.environ['P']+'/') for n in names):raise ValueError('publication staging outside scope')
+          PY
+          ref=refs/heads/research/v16.27-increment-attribution-closure
+          test "$(git ls-remote origin "$ref" | cut -f1)" = "$GITHUB_SHA"
+          git commit -m 'v16.27 publish complete independently verified evidence [skip ci]'
+          published=$(git rev-parse HEAD)
+          for attempt in 1 2 3; do
+            remote=$(git ls-remote origin "$ref" | cut -f1)
+            if test "$remote" = "$published"; then break; fi
+            test "$remote" = "$GITHUB_SHA"
+            if git push origin "HEAD:$ref"; then break; fi
+            sleep 3
+          done
+          test "$(git ls-remote origin "$ref" | cut -f1)" = "$published"
+          git diff HEAD --exit-code -- "$P"
+          (cd "$P" && sha256sum -c PUBLICATION_SHA256SUMS)
+          PUBLISHED_SHA="$published" python - <<'PY'
+          import json,os,pathlib
+          r={'published_commit':os.environ['PUBLISHED_SHA'],'workflow_head':os.environ['GITHUB_SHA'],'run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'remote_ref_verified':True,'committed_hashes_verified':True}
+          pathlib.Path('v1627-publication-receipt.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps(r))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1627-complete-publication-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            v1627-publication-receipt.json
+            ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence
+            ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/PUBLICATION_EVIDENCE.json
+            ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/PUBLICATION_SHA256SUMS
+            ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/RUN_REGISTRY.json
