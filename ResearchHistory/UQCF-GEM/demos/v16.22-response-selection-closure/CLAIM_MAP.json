@@ -1,0 +1,13 @@
+{
+  "version": "16.22",
+  "parent": "6a9fe4450c4a711a4c0d3b2170e7e31eff550ee6",
+  "claims": [
+    {"id":"T1","assumptions":["A0","A1","A2","A3","A4"],"proof":"PROOFS.md#t1","implementation":"engine.maps; verify.arrows_maps; verify.edge_divergence","tests":["test_actual_source_and_potential_maps","test_invalid_parents_and_embeddings_rejected"]},
+    {"id":"T2-T3","assumptions":["A0","A1","A2","A3","A4","A6"],"proof":"PROOFS.md#t2 and #t3","implementation":"engine.constraint_rows/produce; verify.edge_solution_classes/verify","certificates":["evidence/certificates.json.xz:rows,basis,arrows","evidence/VERIFICATION.json"],"tests":["test_unrestricted_solver_and_complete_verification","test_false_nullity_rejected","test_corrupted_basis_rejected","test_incomplete_basis_rejected","test_missing_embedding_rejected","test_missing_constraint_rejected"]},
+    {"id":"T4","assumptions":["A5","A7"],"proof":"PROOFS.md#t4","implementation":"engine.root_laplacian; verify.verify inverse checks","tests":["test_wrong_original_inverse_rejected","test_arbitrary_overall_scale_is_not_fixed_inverse"]},
+    {"id":"T5","assumptions":["A6","T3"],"proof":"PROOFS.md#t5","implementation":"engine.candidate; verify.check_family and witness calculation","tests":["test_nonproportional_witness_is_not_new_inverse","test_linear_but_label_selected_response_rejected"]},
+    {"id":"T6","assumptions":["PREREGISTRATION.md finite category"],"proof":"PROOFS.md#t6","implementation":"independent tree/embedding enumeration; complete certificate checks","tests":["test_independent_enumeration","test_storage_order_and_nullspace_basis_change","test_nonpermutation_coordinates","ParentScalarTests"],"certificates":["evidence/rejections.json"]}
+  ],
+  "proof_status": "written mathematical arguments; self-reviewed, not formalized",
+  "scope": "conditional rational signed-source diagnostic; no physical response selection or geometry claim"
+}

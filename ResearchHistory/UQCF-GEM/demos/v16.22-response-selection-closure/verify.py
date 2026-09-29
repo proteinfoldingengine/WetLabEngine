@@ -199,6 +199,8 @@ def verify(c):
     require(type(c) is dict and set(c)==required,'missing or extra certificate field');checks=1
     require(c['version']=='16.22' and c['scalar']=='Q-formal-signed-diagnostic','version/scalar mismatch')
     require(c['genesis']=='v1622-fixed-genesis','foreign Genesis domain');checks+=2
+    require(type(c['parents']) is list and all(type(p) is list and p and all(type(v) is int for v in p) for p in c['parents']),
+            'parent identifiers must be exact integers, not Boolean or floating values');checks+=1
     trees=tuple(independent_shapes(c['max_vertices']))
     require(c['parents']==[list(p) for p in trees],'object coverage or parent-array mismatch');checks+=1
     expected=_arrows(trees);actual=[]
@@ -303,6 +305,8 @@ def rejecting_controls(c):
     attempt('missing-embedding',lambda z:z['arrows'].pop())
     attempt('missing-constraint',lambda z:z['rows'].pop())
     i=c['parents'].index([-1,0,1])
+    attempt('Boolean-parent-identifier',lambda z:z['parents'][i].__setitem__(2,True))
+    attempt('floating-parent-identifier',lambda z:z['parents'][i].__setitem__(2,1.0))
     attempt('changed-fixed-inverse',lambda z:z['green'].__setitem__(i,copy.deepcopy(z['families']['depth'][i])))
     attempt('foreign-genesis',lambda z:z.__setitem__('genesis','foreign'))
     attempt('float-in-exact-certificate',lambda z:z['basis'][0].__setitem__(0,0.25))
