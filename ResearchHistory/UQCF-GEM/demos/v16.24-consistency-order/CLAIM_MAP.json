@@ -1,0 +1,12 @@
+{
+  "version": "16.24",
+  "parent": "3dda0f9f0aa6882a9acacc39fd709f779460cfb2",
+  "claims": [
+    {"id":"H1","assumptions":"C1-C6, compatible nonnegative rational local sources","proof":"TYPE_AND_PROOF.md H1","implementation":"engine.py:_local,push; verify.py:inverse_zeta,fibers","evidence":"every sample and raw local marginal; exact left inverse"},
+    {"id":"H2","assumptions":"H1 and finite actual retained cover","proof":"TYPE_AND_PROOF.md H2","implementation":"engine.py:child_covers; verify.py:_verify_case","evidence":"independent minimum child covers, all grid subfamily failures have order <=h"},
+    {"id":"H3","assumptions":"H1,H2 and h>1","proof":"TYPE_AND_PROOF.md H3","implementation":"engine.py:sharp_witness; verify.py:_verify_case","evidence":"one admissible sharp witness per h>1 cover, every lower-order subfamily checked"},
+    {"id":"H4","assumptions":"same finite-tree category","proof":"TYPE_AND_PROOF.md H4","implementation":"threshold plus independently reconstructed child sets","evidence":"branch bound, binary control, m=2,3,4 sharp stars; arbitrary m is proved not enumerated"},
+    {"id":"H5","assumptions":"actual stacked marginal map and nonnegative source cone","proof":"TYPE_AND_PROOF.md H5","implementation":"verify.py:check_dual","evidence":"raw A^t lambda, strict negative pairing, positive scaling and changed-coordinate checks"},
+    {"id":"H6","assumptions":"admitted relabelings and stated cover refinement relation","proof":"TYPE_AND_PROOF.md H6","implementation":"verify.py:verify_document; test_gate.py redundancy/relabel controls","evidence":"complete declared metamorphic copies; general refinement monotonicity is a proof, not claimed exhaustively enumerated"}
+  ]
+}
