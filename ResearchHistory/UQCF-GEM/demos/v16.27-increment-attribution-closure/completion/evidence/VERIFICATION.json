@@ -1,0 +1,39 @@
+{
+  "execution_status": "COMPLETED",
+  "input_validity": "VALID",
+  "max_paths_per_endpoint": 120,
+  "original": {
+    "dependent": 1091,
+    "endpoints": 3486,
+    "multi_path": 3446,
+    "paths": 56498
+  },
+  "proof_status": "general counterexample/arguments C1-C7; complete bounded path reconstruction",
+  "raw_sha256": "1397e6d798c73126fc547afffb4bb7f681645bd83665af9b7ae6a66e472c866d",
+  "relabeled": {
+    "dependent": 1091,
+    "endpoints": 3486,
+    "multi_path": 3446,
+    "paths": 56498
+  },
+  "scientific_verdict": "EVENT_ATTRIBUTION_PATH_DEPENDENT",
+  "scope": "formal retained-view h; no physical/temporal/geometric inference",
+  "shapes": 8,
+  "verified_atomic_step_occurrences": 485872,
+  "version": "16.27",
+  "witness": {
+    "changed_events": [
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "input_validity": "VALID",
+    "scientific_verdict": "EVENT_ATTRIBUTION_PATH_DEPENDENT",
+    "total_delta": 1
+  }
+}

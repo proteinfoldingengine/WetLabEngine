@@ -1,0 +1,232 @@
+{
+  "attempt": "1",
+  "commands": [
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_contract.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "contract",
+      "tests": [
+        11
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_complete.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "completion",
+      "tests": [
+        23
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "producer.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "producer",
+      "tests": []
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "verifier.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "verifier",
+      "tests": []
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure",
+      "exit_code": 0,
+      "name": "historical-v1627",
+      "tests": [
+        5
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law",
+      "exit_code": 0,
+      "name": "v1626",
+      "tests": [
+        8
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.25-pruning-refinement-closure",
+      "exit_code": 0,
+      "name": "v1625",
+      "tests": [
+        11
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "v1624",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_validation.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "v1624-validation",
+      "tests": [
+        2
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_schema.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623-schema",
+      "tests": [
+        3
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure",
+      "exit_code": 0,
+      "name": "v1622",
+      "tests": [
+        20
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "tests/test_fcv.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "name": "v1621",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pruning_consistency_audit"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction",
+      "exit_code": 0,
+      "name": "exact-parent",
+      "tests": [
+        15
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "engine.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure",
+      "exit_code": 0,
+      "name": "historical-producer",
+      "tests": []
+    }
+  ],
+  "dependencies": {
+    "mpmath": "1.3.0",
+    "sympy": "1.13.3"
+  },
+  "execution_status": "COMPLETED",
+  "python": "3.11.16",
+  "run": "36625099103",
+  "scope": "v16.27 and stated retained-research regressions, not unrelated protein engine",
+  "sha": "a89f4cabc484612ed2924247245a0a8a2adab6d2",
+  "source_sha256": {
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py": "3cde04bc56c94f63373a94ca5ff5370e92bd97b9fc3f329849a19c1126dc82e9",
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/publish.py": "5324e84aab026c26a81a28302ebc04ae0252e4348d98160c088ca8ff042e2925",
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/test_gate.py": "d2c1dfe7f340b321d61de0f90c7d04b7d3bab4468c199d8597768dae7c47097d",
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/test_schema.py": "f807f0f9440b35a039e43eda8aa6356a796a97693822a7a82a550a3cec33ee7c",
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/verify.py": "b7201ff917a088dbe2c983ffbde4c3d1957d49b0fbda50a0ad887e70f4ec35b3",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py": "e8d777649a73d71f14f598a6b55a5e7b325cc86ac5e47130b5ed02b394a904ba",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/publish.py": "f6d37cd36dfef33cfae14754b051d870db301a06051e536f97758bbb32c63006",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/test_gate.py": "81b7ab48ddea1b23f9028516cea6f9f0f6b2d28963e4e14386c756fc255a6af5",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/test_publication.py": "59df910078255effa503933f122ca8ef91d87f72d1d87b6beb5af9f6e5212368",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/test_schema.py": "4f142869cb1a0d1177d393e25311eb9f2e3531ef97c91c34826360ae7354130e",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/verify.py": "2b80614e173b7f72b9d949e0afb10d0527750f0ad59415cb63218a33fd5859a7",
+    "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order/engine.py": "a4052e73308a76a3e57960edb0bea0cb56afe9ba8b300fd451e1a3fe5066d633",
+    "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order/test_gate.py": "da5a4b4b7a6fcb4fb86b021c93ad1d17afbcc6e8cdd457bd54e76e05d40ee62e",
+    "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order/test_validation.py": "a222d7b854776598d2604495df6d78159362155caf970e56cfbdcacefb2b405f",
+    "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order/verify.py": "a1c2e7829396c5f42e7c495cf5fe1c75d284ef03b53a6006a18c619e57650d42",
+    "ResearchHistory/UQCF-GEM/demos/v16.25-pruning-refinement-closure/engine.py": "6aaf8e7bc60642b468dba4d0e7d1f84f94d39084fb10f41c4d109507d077c652",
+    "ResearchHistory/UQCF-GEM/demos/v16.25-pruning-refinement-closure/test_gate.py": "5703cf2c6e575d8edaf42a2e95dea372776e4d4ee1b1432870bb5425fc712679",
+    "ResearchHistory/UQCF-GEM/demos/v16.25-pruning-refinement-closure/verify.py": "bb7f6f2a78c1d1b473e56eeaa4ed270b0cdc1f9f27056cc867b830db8f4ff82f",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "6502835186740c437b636cb08a63a446614b196df5dc1ca50a0c7ba07e4f6260",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/test_gate.py": "cfb87fadc9b6bfe437363e3e7ebc34c950b31e487999768164b280a2e0d6299b",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "8aa98fa05f473a10b81439e06aba4c20f5e97138262ae472dd191591d06fd670",
+    "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/producer.py": "16764ad4e34a783b11dab7b7f6ce15d1d4f506ab39756a1d77d789c471b1fdf0",
+    "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/run_campaign.py": "a8e6e0fb1f06b953fd0ef7fea699b1eb315bf91168f231383befe54430f0079d",
+    "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/test_complete.py": "ab591f962942a8443699bcedd33969004a417141e655c58c0708f3d33f2f0e6a",
+    "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/test_contract.py": "f3ee58b7030053e81c5fca92a1188e88ba845a5e7184c0476a7ec78ccb3c0ef4",
+    "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/verifier.py": "b13ce56609f72eac3513898a873c2116fab5338abe5a4932414e38b8298e5277",
+    "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/engine.py": "aad1feb53660c37c214162b3f50ea1611a140e39a77cd60a71482b657400ccc8",
+    "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/test_gate.py": "ab521470e034db5240aa1d4ab8788726a98b9d5c8987e46f3853adcb7244a27e",
+    "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/verify.py": "cd22f2874c1e0b6593190a51f9bc11774b47095602a61923a48e754478ec77fc",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/enumerate_cases.py": "775b2d884d0fb004a308a8a8c6aeade7d1e33ac4e7c2ad76648c13b269c7dc02",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/exact_algebra.py": "434a5b6c0189e4100c81b6125fb4895acdb64b981b9a88c5063bc9cbc45de144",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py": "872977a8ef8bd5bd0c3d438ccf2c5309a7fb0600868200a28398aa57b9f4623c",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/produce_certificates.py": "2af2a5170d22d64d7a11d38047a52044a96288b9831d8d672afc8dec601ffeee",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/tests/test_fcv.py": "5b0fc8e4c7ac9b1dbb3e3fd0b60dc1eebb4ac39fbff8638c434e36ea47a24b56",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/verify_certificates.py": "b41f7a7ca946ebb2d68948f8526f3a42f8ab8e1e8fe1078296211dfc23ed048d"
+  },
+  "tests_passed": 170
+}

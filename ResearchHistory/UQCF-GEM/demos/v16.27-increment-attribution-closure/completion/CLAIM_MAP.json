@@ -1,0 +1,13 @@
+{
+  "version":"16.27",
+  "scope":"completion verification; no new numbered scientific stage",
+  "claims":[
+    {"id":"C1","assumptions":["T1","T2","T3","T4"],"proof":"PROOFS.md#c1","producer":"producer.py:certify/endpoints","verifier":"verifier.py:legal_orders/expected_endpoints","evidence":"evidence/FULL_CERTIFICATES.json.xz","tests":["test_missing_path","test_missing_endpoint","test_ancestor_cannot_precede_descendant"]},
+    {"id":"C2","assumptions":["T1","T2","T4","T5"],"proof":"PROOFS.md#c2","producer":"producer.py:profile/trigger","verifier":"verifier.py:profile/local_trigger/verify_path","evidence":"evidence/FULL_CERTIFICATES.json.xz","tests":["test_false_delta","test_false_profile","test_false_trigger"]},
+    {"id":"C3","assumptions":["T3","T6","T7"],"proof":"PROOFS.md#c3","verifier":"verifier.py:verify_path/verify_witness","evidence":"evidence/WITNESS.json"},
+    {"id":"C4","assumptions":["T1","T2","T3","T4","T5","T7"],"proof":"PROOFS.md#c4","verifier":"verifier.py:verify_witness","evidence":"evidence/WITNESS.json","tests":["test_valid_admissible_witness","test_valid_dependent_case"]},
+    {"id":"C5","assumptions":["T5","T6","T7"],"proof":"PROOFS.md#c5","verifier":"verifier.py:verify_case","evidence":"evidence/FULL_CERTIFICATES.json.xz"},
+    {"id":"C6","assumptions":["T8"],"proof":"PROOFS.md#c6","verifier":"verifier.py:verify_document","evidence":"evidence/FULL_CERTIFICATES.json.xz","tests":["test_false_metamorphic_copy","test_relabeling_and_storage","test_reordered_path_records_accepted"]},
+    {"id":"C7","assumptions":["completion/PREREGISTRATION.md bounded universe"],"proof":"PROOFS.md#c7","verifier":"verifier.py:independent_shapes/expected_endpoints/legal_orders/verify_document","evidence":"evidence/VERIFICATION.json","tests":["test_missing_shape","test_missing_endpoint","test_missing_path"]}
+  ]
+}

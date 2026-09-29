@@ -1,0 +1,47 @@
+{
+  "tests": 23,
+  "failures": 0,
+  "errors": 0,
+  "rejections": [
+    {
+      "defect": "boolean-path-delta",
+      "reason": "exact integer required; Boolean/float disallowed"
+    },
+    {
+      "defect": "duplicate-path",
+      "reason": "duplicate path"
+    },
+    {
+      "defect": "false-path-delta",
+      "reason": "false atomic delta"
+    },
+    {
+      "defect": "false-profile",
+      "reason": "false initial state/profile"
+    },
+    {
+      "defect": "false-trigger",
+      "reason": "false local trigger"
+    },
+    {
+      "defect": "false-attribution",
+      "reason": "false attribution verdict"
+    },
+    {
+      "defect": "foreign-origin",
+      "reason": "case origin/schema"
+    },
+    {
+      "defect": "missing-event",
+      "reason": "missing/duplicate/foreign event"
+    },
+    {
+      "defect": "missing-path",
+      "reason": "incomplete legal path coverage"
+    },
+    {
+      "defect": "wrong-view-identity",
+      "reason": "missing/duplicate/foreign event"
+    }
+  ]
+}
