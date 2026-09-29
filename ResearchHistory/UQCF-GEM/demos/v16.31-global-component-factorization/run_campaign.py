@@ -4,7 +4,7 @@ import hashlib,importlib.metadata,json,os,platform,re,subprocess,sys,zipfile
 P=Path(__file__).resolve().parent
 ROOT=Path(subprocess.check_output(['git','rev-parse','--show-toplevel'],cwd=P,text=True).strip())
 U=ROOT/'ResearchHistory/UQCF-GEM';E=P/'evidence';E.mkdir(exist_ok=True)
-commands=[('v1631-contract',P,['test_contract.py'],3),('v1631-tests',P,['test_gate.py'],28),
+commands=[('v1631-review',P,['test_review.py'],4),('v1631-contract',P,['test_contract.py'],3),('v1631-tests',P,['test_gate.py'],28),
  ('producer',P,['producer.py'],None),('verifier',P,['verifier.py'],None),
  ('v1630',U/'demos/v16.30-interaction-component-closure',['test_gate.py'],5),
  ('v1629',U/'demos/v16.29-local-profile-closure',['test_gate.py'],30),
@@ -23,7 +23,6 @@ commands=[('v1631-contract',P,['test_contract.py'],3),('v1631-tests',P,['test_ga
  ('exact-parent',U/'demos/v15.56-response-selector-obstruction',['-m','unittest','-v','test_pruning_consistency_audit'],15)]
 records=[];status='INVALID_EXECUTION';env=dict(os.environ,V27_VERIFIER='verifier',V27_EVIDENCE=str(E/'inherited-v27'),V31_LEGACY='0')
 try:
- # Reproduce, do not relabel, the old verifier's accepting behavior on invalid data.
  with (E/'legacy-contract-replay.log').open('wb') as log:
   r=subprocess.run([sys.executable,'test_contract.py'],cwd=P,env=dict(env,V31_LEGACY='1'),stdout=log,stderr=subprocess.STDOUT)
  legacy=json.loads((E/'LEGACY_CONTRACT.json').read_text())
