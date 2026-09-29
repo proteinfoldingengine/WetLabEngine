@@ -1,0 +1,66 @@
+name: UQCF v16.22 response-selection closure
+on:
+  push:
+    branches: [research/v16.22-response-selection-closure]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/**'
+      - '.github/workflows/uqcf-v1622-response-selection.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      P: ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: Mathematical and rejecting controls
+        run: |
+          mkdir -p "$P/evidence"
+          python -m pip freeze > "$P/evidence/dependencies.txt"
+          set +e
+          (cd "$P" && python -m unittest -v test_gate) > "$P/evidence/test.log" 2>&1
+          rc=$?
+          cat "$P/evidence/test.log"
+          printf 'new_tests\t%s\n' "$rc" >> "$P/evidence/exit_codes.tsv"
+          exit "$rc"
+      - name: Inherited exact and v16.21 regressions
+        run: |
+          set +e
+          (cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction && python -m unittest -v test_pruning_consistency_audit) > "$P/evidence/parent.log" 2>&1
+          a=$?
+          (cd ResearchHistory/UQCF-GEM/foundational-closure-verification && python tests/test_fcv.py) > "$P/evidence/v1621.log" 2>&1
+          b=$?
+          cat "$P/evidence/parent.log" "$P/evidence/v1621.log"
+          printf 'inherited_exact\t%s\nv1621\t%s\n' "$a" "$b" >> "$P/evidence/exit_codes.tsv"
+          test "$a" -eq 0 && test "$b" -eq 0
+      - name: Unrestricted production and independent verification
+        run: |
+          set -euo pipefail
+          (cd "$P" && python engine.py) 2>&1 | tee "$P/evidence/producer.log"
+          printf 'producer\t0\n' >> "$P/evidence/exit_codes.tsv"
+          (cd "$P" && python verify.py) 2>&1 | tee "$P/evidence/verifier.log"
+          printf 'verifier\t0\n' >> "$P/evidence/exit_codes.tsv"
+      - name: Preserve exact source and attempt
+        if: always()
+        run: |
+          mkdir -p "$P/evidence"
+          git archive --format=zip HEAD "$P" .github/workflows/uqcf-v1622-response-selection.yml > "$P/evidence/source.zip"
+          python - <<'PY'
+          import os,json,pathlib,hashlib,platform
+          e=pathlib.Path(os.environ['P'])/'evidence'
+          (e/'execution.json').write_text(json.dumps({'sha':os.environ['GITHUB_SHA'],'run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'python':platform.python_version(),'review':'self-reviewed; no separate reviewer'},indent=2)+'\n')
+          (e/'SHA256SUMS').write_text(''.join(hashlib.sha256(f.read_bytes()).hexdigest()+'  '+f.name+'\n' for f in sorted(e.iterdir()) if f.is_file() and f.name!='SHA256SUMS'))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1622-${{ github.sha }}
+          path: ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/evidence
+          if-no-files-found: error
