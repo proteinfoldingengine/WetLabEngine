@@ -77,11 +77,14 @@ def refinements(p,ys):
 def produce(bound=5):
  need(type(bound)is int and 1<=bound<=5,'bound');inst=[];total=strict=0
  for code,p in shapes(bound):
-  cases=[]
+  count=inc=0;hist={};digest=hashlib.sha256()
   for ys in covers(p):
+   hb=threshold(p,ys)
    for zs in refinements(p,ys):
-    d=certify_refinement(p,ys,zs);cases.append(d);total+=1;strict+=d['strict']
-  inst.append({'code':code,'parents':list(p),'cases':cases})
+    ha=threshold(p,zs);count+=1;inc+=ha>hb
+    hist[f'{hb}->{ha}']=hist.get(f'{hb}->{ha}',0)+1
+    digest.update((repr((ys,zs,hb,ha))+'\n').encode())
+  total+=count;strict+=inc;inst.append({'code':code,'parents':list(p),'refinements':count,'strict':inc,'transitions':hist,'digest':digest.hexdigest()})
  return {'version':'16.25','genesis':GENESIS,'bound':bound,'refinements':total,'strict':strict,'instances':inst}
 if __name__=='__main__':
  doc=produce(5);raw=(json.dumps(doc,sort_keys=True,separators=(',',':'))+'\n').encode();out=HERE/'evidence';out.mkdir(exist_ok=True);(out/'certificates.json.xz').write_bytes(lzma.compress(raw));rec={'execution_status':'COMPLETED','refinements':doc['refinements'],'strict':doc['strict'],'raw_bytes':len(raw),'raw_sha256':hashlib.sha256(raw).hexdigest()};(out/'PRODUCTION.json').write_text(json.dumps(rec,indent=2)+'\n');print(json.dumps(rec))
