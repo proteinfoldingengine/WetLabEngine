@@ -40,7 +40,7 @@ class Tests(unittest.TestCase):
  def test_reordered_records_valid(self):
   _,v=self.modules();c=self.negative();c['states'].reverse();c['diamonds'].reverse();v.verify_case(c)
  def test_actual_lineage_and_storage_relabeling(self):
-  p,v=self.modules();c=p.certify((-1,2,0),[(1,2,0),(2,0)],[(2,0),(2,0)])
+  p,v=self.modules();c=p.certify((-1,2,0),[(1,2,0),(1,2,0)],[(2,0),(1,2,0)])
   self.assertTrue(c['independent']);v.verify_case(c)
  def test_illegal_inputs_rejected(self):
   p,v=self.modules()
