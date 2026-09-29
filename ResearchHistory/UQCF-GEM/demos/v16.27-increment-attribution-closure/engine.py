@@ -48,3 +48,6 @@ def produce(bound=4):
   if w:dependent+=1;first=first or w
   sig=sorted(tuple(sorted(event_map(x).items())) for x in ps);digest.update((repr((p,ys,zs,sig))+'\n').encode())
  return {'version':'16.27','bound':bound,'endpoints':endpoints,'multi_path':multi,'path_dependent':dependent,'paths':paths_total,'first_witness':first,'digest':digest.hexdigest()}
+
+if __name__=='__main__':
+ d=produce(4);print(json.dumps(d,sort_keys=True));
