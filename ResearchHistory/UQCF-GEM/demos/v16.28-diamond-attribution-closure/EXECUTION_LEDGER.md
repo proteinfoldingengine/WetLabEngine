@@ -1,13 +1,11 @@
 # v16.28 execution ledger
 
-Binding brief: the user's foundational closure and verification assignment, issue 64, and the completed .27 scientific boundary. Approved continuation is executed here, not delegated to an unstarted worker.
+Binding brief: user's foundational closure and verification assignment and completed .27 scope. Work is executed directly; no unstarted worker is implied.
 
-1. Recover parent provenance and definitions — complete; parent 134b3d6c3358d91df2e34a9bb57ac82a2f0406ce and its complete certificate are pinned.
-2. Preregister D1–D7, exact bounded coverage and rejecting tests — this commit.
-3. Observe RED, implement producer and independent verifier, run complete campaign — pending.
-4. Review proof and verifier; preserve any invalid attempts and rerun — pending.
-5. Commit complete evidence, reproduction and numbered report; fresh publication; draft PR — pending.
+1. Parent recovered — completed; exact lineage 134b3d6c3358d91df2e34a9bb57ac82a2f0406ce and raw archive SHA bound.
+2. Proof and rejecting tests preregistered — completed at 16f37f2e651ba90f37e8dc12d7596a45c1e9589f; wiring RED 36628336757.
+3. Independent producer/verifier and complete campaign — completed at 02954512b3e84e62a978dfe56f6007c501ef3b7f, run36629091598,198 tests and full certificate accepted.
+4. Self-review — completed; methods independently reconstruct all paths/ideals/classifications. One invalid positive fixture was corrected after a failed run; no validator/criterion/domain changes. Fourteen named corruptions and additional positive/coverage controls pass. Bibliographic attribution correction is explicitly recorded in REVIEW.md without rewriting frozen proofs.
+5. Reports and durable preservation/fresh-publication workflow — configured in this commit; successful execution and final evidence commit are to be established by PUBLICATION_EVIDENCE.json and remote read-back before a final completion claim.
 
-Ruling: this is an additive v16.28 endpoint-attribution classification, using .27's entire admitted primary universe. No new source family or geometric target. The four states of a diamond are actual retained covers, not extra primitives.
-
-Ruling: no separate reviewer tool is available; review must be labeled self-review. Algorithmically independent verification does not imply independent authorship.
+Ruling: initial invalid fixture is not a substantive math RED. Ruling: mixed diamond differences are not curvature or a nonzero closed-loop total. Ruling: self-review plus algorithmic independence must not be presented as a separately authored review. No physical claim or main merge.

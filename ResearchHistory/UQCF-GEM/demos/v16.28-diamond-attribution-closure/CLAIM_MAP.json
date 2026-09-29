@@ -1,0 +1,12 @@
+{
+  "version": "16.28",
+  "parent": "134b3d6c3358d91df2e34a9bb57ac82a2f0406ce",
+  "claims": [
+    {"id":"D1","assumptions":"T1-T3 finite prefix endpoints, equal union","proof":"PROOFS.md D1","producer":"predecessor_masks; certify state masks","verifier":"reconstruct complete event permutations; expected_endpoints","checks":"test_illegal_inputs_rejected; test_missing_state; complete raw states"},
+    {"id":"D2-D3","assumptions":"actual h on reachable ideals, enabled distinct events","proof":"PROOFS.md D2-D3","producer":"certify diamonds and witness","verifier":"_verify_case exact diamonds and witness paths/heights/attributions","checks":"test_parent_counterexample; test_positive_mixed_difference_control; test_wrong_witness_path; test_false_witness_heights; FULL_CERTIFICATES.json.xz"},
+    {"id":"D4-D5","assumptions":"fixed event poset and actual F, no chosen coefficients","proof":"PROOFS.md D4-D5","producer":"certify unique weights from predecessor ideals","verifier":"all-path attribution vs zero diamonds vs all ideal-pair modularity vs additive formula","checks":"test_chain_interval_is_not_a_no_go; test_same_total_wrong_coefficients_rejected; test_false_independence; test_fitted_weights_not_accepted; full independent endpoint classification"},
+    {"id":"D6","assumptions":"typed explicit retained control inputs","proof":"PROOFS.md D6","producer":"EXAMPLES.json","verifier":"verify_case for every example","checks":"negative/positive/chain controls; actual signed differences; no physical sign inference"},
+    {"id":"D7","assumptions":"actual parent and indexed-view bijections, no external alignment","proof":"PROOFS.md D7","producer":"hash-bound parent's transported endpoints","verifier":"independent_shapes; expected_endpoints; check_transport","checks":"test_false_metamorphic_copy; test_actual_lineage_and_storage_relabeling; each transported state/diamond/weight"}
+  ],
+  "scope": "General written finite endpoint classification plus declared bounded implementation verification; no physical or geometric law"
+}

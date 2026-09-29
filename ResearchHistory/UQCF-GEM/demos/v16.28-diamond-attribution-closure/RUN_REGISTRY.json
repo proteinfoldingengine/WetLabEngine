@@ -1,0 +1,10 @@
+{
+  "version":"16.28",
+  "branch":"research/v16.28-diamond-attribution-closure",
+  "runs":[
+    {"role":"wiring-red","run":36628336757,"job":109610939314,"attempt":1,"sha":"16f37f2e651ba90f37e8dc12d7596a45c1e9589f","conclusion":"failure","meaning":"28 missing-implementation assertions; no mathematical adjudication","artifact":11061575032,"artifact_bytes":2894,"artifact_sha256":"f16b206861509f1832a4e58123c1f12974e37634ec6efa40c6216de82a8afaba"},
+    {"role":"invalid-positive-fixture","run":36628829369,"job":109612585864,"attempt":1,"sha":"1cee24db0d120e685f8849e4ed5823281e63e6d5","conclusion":"failure","meaning":"27 tests passed; one supposed positive fixture changed union and was correctly rejected; corrected fixture only","artifact":11062290464,"artifact_bytes":23104,"artifact_sha256":"0de9b31af40949c72884dd2c78645f184468b077ceed0df1d696eb9191fa5398"},
+    {"role":"scientific-green","run":36629091598,"job":109613462788,"attempt":1,"sha":"02954512b3e84e62a978dfe56f6007c501ef3b7f","conclusion":"success","meaning":"198 tests; complete independent classification and full parent-path comparison","artifact":11061821105,"artifact_bytes":91794,"artifact_sha256":"31fe8aab386f318d4679962da638d4a01cb3f3d95f6772dfec13c0029e78997a"}
+  ],
+  "publication":"Exact new publication run/head/attempt and fresh equality recorded by PUBLICATION_EVIDENCE.json after execution"
+}
