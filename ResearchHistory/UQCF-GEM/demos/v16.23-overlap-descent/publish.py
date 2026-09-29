@@ -26,9 +26,12 @@ def need(ok,message):
 
 def digest(raw):return hashlib.sha256(raw).hexdigest()
 
+def api_path(endpoint):
+    need(type(endpoint) is str and re.fullmatch(r'(artifacts/[0-9]+/zip|runs/[0-9]+(/jobs)?|jobs/[0-9]+/logs)',endpoint) is not None,'unapproved API endpoint')
+    return 'repos/'+REPO+'/actions/'+endpoint
+
 def api(endpoint):
-    need(endpoint.startswith('actions/'),'unapproved API endpoint')
-    return subprocess.check_output(['gh','api','--allow-escape-sequences','repos/'+REPO+'/'+endpoint])
+    return subprocess.check_output(['gh','api','--allow-escape-sequences',api_path(endpoint)])
 
 def members(raw):
     with zipfile.ZipFile(io.BytesIO(raw)) as z:
@@ -82,6 +85,10 @@ def main():
         (e/'history'/(run['role']+'-jobs.json')).write_bytes(jobs)
         (e/'history'/(run['role']+'-job.log')).write_bytes(api('jobs/'+str(run['job'])+'/logs'))
         registry.append(dict(run,attempt=1,bytes=len(blob)))
+    failed_run=36571592480;failed_job=109416676142
+    for name,endpoint in [('run','runs/'+str(failed_run)),('jobs','runs/'+str(failed_run)+'/jobs'),('job','jobs/'+str(failed_job)+'/logs')]:
+        suffix='.log' if name=='job' else '.json'
+        (e/'history'/('publication-attempt1-'+name+suffix)).write_bytes(api(endpoint))
     final=original['final-green'];need(digest(final['VERIFICATION.json'])==VHASH,'final verifier receipt mismatch')
     for name,data in final.items():(e/('ORIGINAL_SHA256SUMS' if name=='SHA256SUMS' else name)).write_bytes(data)
     with zipfile.ZipFile(io.BytesIO(final['source.zip'])) as z:
@@ -98,7 +105,7 @@ def main():
         need((e/name).read_bytes()==final[name],'fresh scientific output differs: '+name)
     pubjobs=json.loads(api('runs/'+os.environ['GITHUB_RUN_ID']+'/jobs'))['jobs']
     own=[j for j in pubjobs if j['name']=='publish'];need(len(own)==1,'publication job identity unavailable')
-    v=json.loads(final['VERIFICATION.json']);receipt={'version':'16.23','scientific_execution_sha':RUNS[-1]['sha'],'publication_workflow_head':os.environ['GITHUB_SHA'],'publication_run':os.environ['GITHUB_RUN_ID'],'publication_job':own[0]['id'],'publication_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'original_runs':registry,'fresh_commands':fresh,'fresh_scientific_bytes_equal':True,'raw_certificate_sha256':RAW,'xz_certificate_sha256':digest(final['certificates.json.xz']),'verification_sha256':VHASH,'verification':v,'test_counts':{'new':25,'v1622':20,'v1621':22,'exact_parent':15},'review':'self-reviewed; algorithmically independent verifier, no separate reviewer','scope':BRANCH+'; not merged to main'}
+    v=json.loads(final['VERIFICATION.json']);receipt={'version':'16.23','scientific_execution_sha':RUNS[-1]['sha'],'publication_workflow_head':os.environ['GITHUB_SHA'],'publication_run':os.environ['GITHUB_RUN_ID'],'publication_job':own[0]['id'],'publication_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'original_runs':registry,'failed_publication_attempts':[{'run':36571592480,'job':109416676142,'sha':'f7043bfa7263e3454df6d23800c15583a1ab93d2','reason':'publisher action-endpoint prefix mismatch, before evidence or scientific reexecution','artifact':None}],'fresh_commands':fresh,'fresh_scientific_bytes_equal':True,'raw_certificate_sha256':RAW,'xz_certificate_sha256':digest(final['certificates.json.xz']),'verification_sha256':VHASH,'verification':v,'test_counts':{'new':25,'v1622':20,'v1621':22,'exact_parent':15},'review':'self-reviewed; algorithmically independent verifier, no separate reviewer','scope':BRANCH+'; not merged to main'}
     (P/'PUBLICATION_EVIDENCE.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
     (P/'RUN_REGISTRY.json').write_text(json.dumps(registry,indent=2)+'\n')
     files=[f for f in P.rglob('*') if f.is_file() and '__pycache__' not in f.parts and f.name!='PUBLICATION_SHA256SUMS']
