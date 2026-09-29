@@ -31,18 +31,36 @@ jobs:
           python -m pip freeze > "$P/evidence/dependencies.txt"
           python --version > "$P/evidence/python-version.txt"
           git rev-parse HEAD > "$P/evidence/execution-head.txt"
+          set +e
           (cd "$P" && python tests/test_fcv.py) 2>&1 | tee "$P/evidence/test.log"
+          statuses=("${PIPESTATUS[@]}")
+          printf 'tests\t%s\t%s\n' "${statuses[0]}" "${statuses[1]}" >> "$P/evidence/COMMAND_EXIT_CODES.tsv"
+          test "${statuses[0]}" -eq 0 && test "${statuses[1]}" -eq 0
       - name: Inherited exact regression and historical reproduction
         run: |
           set -euo pipefail
+          set +e
           (cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction && python -m unittest -v test_pruning_consistency_audit) 2>&1 | tee "$P/evidence/parent-test.log"
+          statuses=("${PIPESTATUS[@]}")
+          printf 'parent-tests\t%s\t%s\n' "${statuses[0]}" "${statuses[1]}" >> "$P/evidence/COMMAND_EXIT_CODES.tsv"
+          test "${statuses[0]}" -eq 0 && test "${statuses[1]}" -eq 0 || exit 1
           (cd ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent && python -m unittest -v && python gate.py) 2>&1 | tee "$P/evidence/historical-1615F.log"
+          statuses=("${PIPESTATUS[@]}")
+          printf 'historical-reproduction\t%s\t%s\n' "${statuses[0]}" "${statuses[1]}" >> "$P/evidence/COMMAND_EXIT_CODES.tsv"
+          test "${statuses[0]}" -eq 0 && test "${statuses[1]}" -eq 0 || exit 1
           cp ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent/result.json "$P/evidence/REPRODUCED_1615F.json"
       - name: Complete bounded production and independent certificate verification
         run: |
           set -euo pipefail
+          set +e
           (cd "$P" && python produce_certificates.py) 2>&1 | tee "$P/evidence/producer.log"
+          statuses=("${PIPESTATUS[@]}")
+          printf 'producer\t%s\t%s\n' "${statuses[0]}" "${statuses[1]}" >> "$P/evidence/COMMAND_EXIT_CODES.tsv"
+          test "${statuses[0]}" -eq 0 && test "${statuses[1]}" -eq 0 || exit 1
           (cd "$P" && python verify_certificates.py) 2>&1 | tee "$P/evidence/verifier.log"
+          statuses=("${PIPESTATUS[@]}")
+          printf 'independent-verifier\t%s\t%s\n' "${statuses[0]}" "${statuses[1]}" >> "$P/evidence/COMMAND_EXIT_CODES.tsv"
+          test "${statuses[0]}" -eq 0 && test "${statuses[1]}" -eq 0
       - name: Preserve exact source and execution metadata
         if: always()
         run: |
@@ -53,6 +71,9 @@ jobs:
           import hashlib,json,os,pathlib,platform
           p=pathlib.Path(os.environ['P']); e=p/'evidence'
           meta={'execution_sha':os.environ['GITHUB_SHA'],'run_id':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'python':platform.python_version(),'commands':['python tests/test_fcv.py','python -m unittest -v test_pruning_consistency_audit','python produce_certificates.py','python verify_certificates.py'],'review':'self-reviewed; independent verifier is algorithmic, not a separate reviewer'}
+          codes=e/'COMMAND_EXIT_CODES.tsv'
+          meta['executed_exit_codes']=[{'stage':a,'command_exit':int(b),'tee_exit':int(c)} for a,b,c in (line.split('\t') for line in codes.read_text().splitlines())] if codes.exists() else []
+          meta['unrecorded_stage_status']='not certified as executed; inspect workflow step status'
           (e/'EXECUTION.json').write_text(json.dumps(meta,indent=2)+'\n')
           (e/'SHA256SUMS').write_text(''.join(hashlib.sha256(f.read_bytes()).hexdigest()+'  '+f.name+'\n' for f in sorted(e.iterdir()) if f.is_file() and f.name!='SHA256SUMS'))
           PY
