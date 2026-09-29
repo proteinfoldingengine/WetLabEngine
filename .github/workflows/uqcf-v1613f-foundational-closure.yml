@@ -1,0 +1,16 @@
+name: UQCF v16.13F foundational closure
+on:
+  push:
+    branches: [research/v16.13F-foundational-closure]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v16.13F-foundational-closure/**'
+      - '.github/workflows/uqcf-v1613f-foundational-closure.yml'
+  workflow_dispatch:
+jobs:
+  closure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: cd ResearchHistory/UQCF-GEM/demos/v16.13F-foundational-closure && python -m unittest -v && if test -f gate.py; then python gate.py; fi
