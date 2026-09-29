@@ -43,6 +43,12 @@ class Tests(unittest.TestCase):
   e,v=self.modules();d=e.certify_refinement((-1,0,1),[(0,1,2)],[(0,1,2)])
   d['composition'][0]['direct'][0]='99'
   with self.assertRaises(ValueError):v.verify_case(d)
+ def test_verifier_rejects_nonprefix_intermediate(self):
+  e,v=self.modules();p=(-1,0,1);full=(0,1,2)
+  d=e.certify_refinement(p,[full,full],[(0,),full])
+  row=next(r for r in d['composition'] if r['view']==0)
+  row['mid']=[0,2]
+  with self.assertRaises(ValueError):v.verify_case(d)
  def test_complete_small_universe(self):
   e,v=self.modules();doc=e.produce(4);r=v.verify_document(doc,4)
   self.assertGreater(r['refinements'],0);self.assertGreater(r['strict'],0)
