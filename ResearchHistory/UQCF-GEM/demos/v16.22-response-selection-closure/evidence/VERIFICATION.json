@@ -1,0 +1,50 @@
+{
+  "checks_executed": 12890,
+  "comparison_dimension": 4,
+  "composition_pairs": 2813,
+  "coordinate_checks": 800,
+  "deliberate_defects_rejected": 12,
+  "edge_classes": [
+    28,
+    18,
+    6,
+    1
+  ],
+  "execution_status": "COMPLETED",
+  "first_edge_normalized_dimension": 3,
+  "forced_zero_edge_entries": 136,
+  "input_validity": "VALID",
+  "inverse_affine_dimension": 0,
+  "proof_status": "bounded certificate; general arguments in PROOFS.md",
+  "raw_sha256": "59c2c2f6d1091e7102e51932ed4ee7827668d12db7f1b08ffb0724791c8df713",
+  "scope": "formal signed diagnostic, retained comparison equations versus fixed inverse definition",
+  "stats": {
+    "arrows": 200,
+    "constraints": 998,
+    "nullity": 4,
+    "objects": 17,
+    "rank": 185,
+    "unknowns": 189
+  },
+  "version": "16.22",
+  "witness": {
+    "depth_root_zero": [
+      "0",
+      "2"
+    ],
+    "parents": [
+      -1,
+      0,
+      1
+    ],
+    "same_first_edge_unit": true,
+    "source_nonroot": [
+      "-1",
+      "1"
+    ],
+    "unit_root_zero": [
+      "0",
+      "1"
+    ]
+  }
+}

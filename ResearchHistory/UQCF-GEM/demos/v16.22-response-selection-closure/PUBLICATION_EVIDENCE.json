@@ -1,0 +1,163 @@
+{
+  "fresh_commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "exit_code": 0,
+      "name": "tests"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pruning_consistency_audit"
+      ],
+      "exit_code": 0,
+      "name": "parent"
+    },
+    {
+      "command": [
+        "python",
+        "tests/test_fcv.py"
+      ],
+      "exit_code": 0,
+      "name": "v1621"
+    },
+    {
+      "command": [
+        "python",
+        "engine.py"
+      ],
+      "exit_code": 0,
+      "name": "producer"
+    },
+    {
+      "command": [
+        "python",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "name": "verifier"
+    }
+  ],
+  "fresh_scientific_bytes_equal": true,
+  "original_runs": [
+    {
+      "artifact": 11011544480,
+      "attempt": 1,
+      "conclusion": "failure",
+      "digest": "89554715315bc6d30c0666eadc1db8fd97377bcac7c32d20f664d22a468cf4a0",
+      "job": 109248259200,
+      "name": "wiring-red",
+      "run": 36519238541,
+      "sha": "310ec851211f708950f847e5a49d938637c45faa",
+      "tests": 18
+    },
+    {
+      "artifact": 11012675056,
+      "attempt": 1,
+      "conclusion": "success",
+      "digest": "b102be12fe34905106dd97b671da8c94ee42b37e3867906eba45a6051dbdac34",
+      "job": 109249145883,
+      "name": "initial-green",
+      "run": 36519534901,
+      "sha": "db10a265da716d4b16e10e8db42df0c5947f4207",
+      "tests": 18
+    },
+    {
+      "artifact": 11012580390,
+      "attempt": 1,
+      "conclusion": "failure",
+      "digest": "b71764706bb1b005b79f6aa62df723ca6d4a8b2ed16204484547ea97cd1394e8",
+      "job": 109249750161,
+      "name": "schema-red",
+      "run": 36519735366,
+      "sha": "0111d84990e93c86936f31c8d72dfce25388b6e8",
+      "tests": 20
+    },
+    {
+      "artifact": 11011799814,
+      "attempt": 1,
+      "conclusion": "success",
+      "digest": "7c37c42cd0c7d2e9d96540d5a7bcd2dfabfa862888d3c3a6c3293d3957dbff1a",
+      "job": 109250411001,
+      "name": "final-green",
+      "run": 36519952931,
+      "sha": "1167e88ee38c332de27ed2d96795c036f7f521e8",
+      "tests": 20
+    }
+  ],
+  "publication_attempt": "1",
+  "publication_run": "36520338279",
+  "publication_workflow_head": "dd65b840607ff1327bdc5cc98fb1097503313c57",
+  "raw_certificate_bytes": 35763,
+  "raw_certificate_sha256": "59c2c2f6d1091e7102e51932ed4ee7827668d12db7f1b08ffb0724791c8df713",
+  "review": "self-reviewed; algorithmically independent verification, no separate reviewer",
+  "scientific_execution_sha": "1167e88ee38c332de27ed2d96795c036f7f521e8",
+  "scope": "research/v16.22-response-selection-closure; no main merge",
+  "test_counts": {
+    "inherited_exact": 15,
+    "new": 20,
+    "v1621": 22
+  },
+  "verification": {
+    "checks_executed": 12890,
+    "comparison_dimension": 4,
+    "composition_pairs": 2813,
+    "coordinate_checks": 800,
+    "deliberate_defects_rejected": 12,
+    "edge_classes": [
+      28,
+      18,
+      6,
+      1
+    ],
+    "execution_status": "COMPLETED",
+    "first_edge_normalized_dimension": 3,
+    "forced_zero_edge_entries": 136,
+    "input_validity": "VALID",
+    "inverse_affine_dimension": 0,
+    "proof_status": "bounded certificate; general arguments in PROOFS.md",
+    "raw_sha256": "59c2c2f6d1091e7102e51932ed4ee7827668d12db7f1b08ffb0724791c8df713",
+    "scope": "formal signed diagnostic, retained comparison equations versus fixed inverse definition",
+    "stats": {
+      "arrows": 200,
+      "constraints": 998,
+      "nullity": 4,
+      "objects": 17,
+      "rank": 185,
+      "unknowns": 189
+    },
+    "version": "16.22",
+    "witness": {
+      "depth_root_zero": [
+        "0",
+        "2"
+      ],
+      "parents": [
+        -1,
+        0,
+        1
+      ],
+      "same_first_edge_unit": true,
+      "source_nonroot": [
+        "-1",
+        "1"
+      ],
+      "unit_root_zero": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  "verification_sha256": "b4d2254cd9abedd38045bfa2c60d49ffc71b76e9e270f50e5d4eac69444f9f41",
+  "version": "16.22",
+  "xz_certificate_sha256": "9c7d48ba9013614567330555f3ce5bcbaf9aea93c3460d1afaf1e9e1c2ba5b3a"
+}
