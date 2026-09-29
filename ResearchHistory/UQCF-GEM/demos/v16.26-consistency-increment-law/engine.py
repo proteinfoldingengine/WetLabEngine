@@ -69,3 +69,7 @@ def produce(bound=5):
       cnt+=1;inc+=d['delta_h']==1;tg+=d['trigger'];k=f"{d['h_before']}->{d['h_after']}";hist[k]=hist.get(k,0)+1;dig.update((repr((ys,i,leaf,d['tau_before'],d['tau_after'],d['h_before'],d['h_after'],d['trigger']))+'\n').encode())
   total+=cnt;strict+=inc;trigs+=tg;inst.append({'code':sc,'parents':list(p),'atomic':cnt,'strict':inc,'triggers':tg,'transitions':hist,'digest':dig.hexdigest()})
  return {'version':'16.26','genesis':GENESIS,'bound':bound,'atomic':total,'strict':strict,'triggers':trigs,'instances':inst}
+
+if __name__=='__main__':
+ import pathlib
+ d=produce(5);p=pathlib.Path(__file__).resolve().parent/'evidence';p.mkdir(exist_ok=True);(p/'PRODUCTION.json').write_text(json.dumps(d,sort_keys=True,indent=2)+'\n');print(json.dumps({'atomic':d['atomic'],'strict':d['strict'],'triggers':d['triggers'],'shapes':len(d['instances'])}))
