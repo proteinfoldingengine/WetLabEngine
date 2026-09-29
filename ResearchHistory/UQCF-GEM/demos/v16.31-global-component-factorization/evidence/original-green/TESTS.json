@@ -1,0 +1,51 @@
+{
+  "tests": 28,
+  "failures": 0,
+  "errors": 0,
+  "rejections": [
+    {
+      "defect": "boolean-profile",
+      "reason": "profile scalar types"
+    },
+    {
+      "defect": "cross-parent-edge",
+      "reason": "complete full-history graph"
+    },
+    {
+      "defect": "cartesian-confusion",
+      "reason": "Cartesian candidate count"
+    },
+    {
+      "defect": "false-profile",
+      "reason": "complete actual state/profile coverage"
+    },
+    {
+      "defect": "foreign-origin",
+      "reason": "case provenance"
+    },
+    {
+      "defect": "missing-local",
+      "reason": "complete local table coverage"
+    },
+    {
+      "defect": "missing-state",
+      "reason": "complete actual state/profile coverage"
+    },
+    {
+      "defect": "wrong-component",
+      "reason": "normalized component factors"
+    },
+    {
+      "defect": "wrong-mobius",
+      "reason": "local Mobius coefficients"
+    },
+    {
+      "defect": "wrong-prelude",
+      "reason": "canonical prelude"
+    },
+    {
+      "defect": "wrong-predecessor",
+      "reason": "predecessors"
+    }
+  ]
+}

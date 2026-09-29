@@ -1,0 +1,271 @@
+{
+  "attempt": "1",
+  "commands": [
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_review.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "v1631-review",
+      "tests": [
+        4
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_contract.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "v1631-contract",
+      "tests": [
+        3
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "v1631-tests",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "producer.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "producer",
+      "tests": []
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "verifier.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization",
+      "exit_code": 0,
+      "name": "verifier",
+      "tests": []
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.30-interaction-component-closure",
+      "exit_code": 0,
+      "name": "v1630",
+      "tests": [
+        5
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.29-local-profile-closure",
+      "exit_code": 0,
+      "name": "v1629",
+      "tests": [
+        30
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure",
+      "exit_code": 0,
+      "name": "v1628",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_contract.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "v1627-contract",
+      "tests": [
+        11
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_complete.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion",
+      "exit_code": 0,
+      "name": "v1627-complete",
+      "tests": [
+        23
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure",
+      "exit_code": 0,
+      "name": "v1627-original",
+      "tests": [
+        5
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law",
+      "exit_code": 0,
+      "name": "v1626",
+      "tests": [
+        8
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.25-pruning-refinement-closure",
+      "exit_code": 0,
+      "name": "v1625",
+      "tests": [
+        11
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "v1624",
+      "tests": [
+        28
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_validation.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order",
+      "exit_code": 0,
+      "name": "v1624-validation",
+      "tests": [
+        2
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "test_schema.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent",
+      "exit_code": 0,
+      "name": "v1623-schema",
+      "tests": [
+        3
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure",
+      "exit_code": 0,
+      "name": "v1622",
+      "tests": [
+        20
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "tests/test_fcv.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "name": "v1621",
+      "tests": [
+        22
+      ]
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pruning_consistency_audit"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction",
+      "exit_code": 0,
+      "name": "exact-parent",
+      "tests": [
+        15
+      ]
+    }
+  ],
+  "dependencies": {
+    "mpmath": "1.3.0",
+    "sympy": "1.13.3"
+  },
+  "execution_status": "COMPLETED",
+  "python": "3.11.16",
+  "run": "36646349715",
+  "scope": "v16.31 and explicit inherited retained tests only; no unrelated files",
+  "sha": "cba4eed8fa73340efb7e81dc522a62ae2c07d51d",
+  "sources": {
+    "ResearchHistory/UQCF-GEM/demos/v16.30-interaction-component-closure/verifier.py": "d5c56c02daa5a7aac0745e74006e2a0d33014acb54f8d377e4c6bb8f48837a05",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/EVIDENCE_STATUS.md": "363a933c1f974113433128f0bccdb00d325d70697e432310320e0c0ea6f6ce0d",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/PLAN.md": "ca9ca416cff47d9bfdf8144eaa360459d4167317def90384ec6e1f7cdb8d7924",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/PREREGISTRATION.md": "c57e44918e56aae12d4f224815f09c2c2827ad50f6115cf5cef9bb40b8d431dc",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/PROOFS.md": "35a31e3804f8e586fea7cbb8be4dcea1d4a1e1c214b751ee9741fe42b06961e8",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/REVIEW_RULINGS.md": "64930861cefdf954633a8b4ef38303007182497fd461a86afd60eba87490e1e3",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/producer.py": "185663d6205ab6eb72c0a70e52c9551c603aebefb5d442fac03fd058969a187c",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/run_campaign.py": "1fe330f5426c7ed54e0c5b0643127342d17366f88521bb4adc26cecb5b4928fc",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_contract.py": "8619730ba8be0e26f3c139aedccc274b446710daeab8ab2ebdf70a2dd28aa68d",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py": "07dc7ad942c7090abb0525f0b2321c3b8327240d1e5e6533e5d0dfa4312113da",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_review.py": "933e101cac440ab0091a54bb6e971e738d6f357c78ce5847cefe881eea9b8c0b",
+    "ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/verifier.py": "0aea6d103dbb95af5f56629f5cc34f2adfacdc63641aeb8affbfe0158c2739f4"
+  },
+  "tests_passed": 268
+}
