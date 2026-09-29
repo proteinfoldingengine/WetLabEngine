@@ -22,3 +22,5 @@ class Tests(unittest.TestCase):
   self.assertEqual(g.inner(h,n),5);self.assertEqual(g.inner(h,s.zeros(3)),0);self.assertEqual(g.inner(h,-n),-5)
  def test_exact_cancellation(self):
   g=self.gate();c=[s.eye(3) for _ in range(6)];v=[s.zeros(3) for _ in c];v[0]=s.eye(3);v[1]=-s.eye(3);self.assertEqual(g.cycle_derivative(c,v,(0,1,2)),0)
+ def test_projected_reference_bound(self):
+  g=self.gate();mp=g.mp;p=mp.diag([1,0,0]);ref=mp.diag([100,2,0]);n=mp.diag([0,3,0]);self.assertEqual(g.normal_bound(ref,p,p,n),6)

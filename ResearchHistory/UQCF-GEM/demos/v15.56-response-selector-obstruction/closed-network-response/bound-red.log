@@ -1,0 +1,20 @@
+test_all_cycles_and_reversal (test_gate.Tests.test_all_cycles_and_reversal) ... ok
+test_exact_cancellation (test_gate.Tests.test_exact_cancellation) ... ok
+test_moving_frame_invariance (test_gate.Tests.test_moving_frame_invariance) ... ok
+test_normal_reference_and_zero_coherence (test_gate.Tests.test_normal_reference_and_zero_coherence) ... ok
+test_product_rule_and_gradient (test_gate.Tests.test_product_rule_and_gradient) ... ok
+test_projected_reference_bound (test_gate.Tests.test_projected_reference_bound) ... ERROR
+
+======================================================================
+ERROR: test_projected_reference_bound (test_gate.Tests.test_projected_reference_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 26, in test_projected_reference_bound
+    g=self.gate();mp=g.mp;p=mp.diag([1,0,0]);ref=mp.diag([100,2,0]);n=mp.diag([0,3,0]);self.assertEqual(g.normal_bound(ref,p,p,n),6)
+                                                                                                        ^^^^^^^^^^^^^^
+AttributeError: module 'g1614' has no attribute 'normal_bound'
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.050s
+
+FAILED (errors=1)
