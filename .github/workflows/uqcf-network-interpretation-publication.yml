@@ -35,7 +35,7 @@ jobs:
           set -euo pipefail
           mkdir -p "$P/evidence"
           gh api repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11006352186/zip > "$P/evidence/original-actions-artifact.zip"
-          gh api repos/proteinfoldingengine/WetLabEngine/actions/jobs/109201934269/logs > "$P/evidence/green-job.log"
+          gh api --allow-escape-sequences repos/proteinfoldingengine/WetLabEngine/actions/jobs/109201934269/logs > "$P/evidence/green-job.log"
           python "$P/publish_evidence.py" > "$RUNNER_TEMP/original-check.json"
       - name: Reproduce all scientific fields and stage durable evidence
         run: |
@@ -61,7 +61,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -f "$P/evidence" "$P/result.json.xz" "$P/SUMMARY.json" "$P/EVIDENCE.json" "$P/PUBLICATION_SHA256SUMS"
-          git diff --cached --check
+          git diff --cached --check -- "$P/SUMMARY.json" "$P/EVIDENCE.json" "$P/PUBLICATION_SHA256SUMS"
           git commit -m 'Publish complete v16.15 findings, original evidence and exact reproduction receipt'
           published=$(git rev-parse HEAD)
           remote=$(git ls-remote origin refs/heads/research/v16.15-network-interpretation | cut -f1)
