@@ -1,0 +1,311 @@
+{
+  "atomic": 19995,
+  "bound": 5,
+  "genesis": "v16.26-common-genesis",
+  "instances": [
+    {
+      "atomic": 0,
+      "code": "()",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parents": [
+        -1
+      ],
+      "strict": 0,
+      "transitions": {},
+      "triggers": 0
+    },
+    {
+      "atomic": 0,
+      "code": "(())",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parents": [
+        -1,
+        0
+      ],
+      "strict": 0,
+      "transitions": {},
+      "triggers": 0
+    },
+    {
+      "atomic": 2,
+      "code": "((()))",
+      "digest": "2ec5a38b9f057e43b9c770a9c345c2dec3512f772102bef8e43555723204f350",
+      "parents": [
+        -1,
+        0,
+        1
+      ],
+      "strict": 0,
+      "transitions": {
+        "1->1": 2
+      },
+      "triggers": 0
+    },
+    {
+      "atomic": 16,
+      "code": "(()())",
+      "digest": "7dfbe2558626ff59bec10ee71975c097de2b834a483d7cfbc096053290e65b75",
+      "parents": [
+        -1,
+        0,
+        0
+      ],
+      "strict": 8,
+      "transitions": {
+        "1->1": 8,
+        "1->2": 8
+      },
+      "triggers": 8
+    },
+    {
+      "atomic": 8,
+      "code": "(((())))",
+      "digest": "63ad682a6015e8384009181f49b9a5f16b5832a61e00ebfbfac344e709d0a490",
+      "parents": [
+        -1,
+        0,
+        1,
+        2
+      ],
+      "strict": 0,
+      "transitions": {
+        "1->1": 8
+      },
+      "triggers": 0
+    },
+    {
+      "atomic": 37,
+      "code": "((()()))",
+      "digest": "dfc93f9a93c74614781a8638576c36abec9bfabf95bd192c7a331eb985283466",
+      "parents": [
+        -1,
+        0,
+        1,
+        1
+      ],
+      "strict": 14,
+      "transitions": {
+        "1->1": 21,
+        "1->2": 14,
+        "2->2": 2
+      },
+      "triggers": 14
+    },
+    {
+      "atomic": 102,
+      "code": "((())())",
+      "digest": "634dabfbefaf63dadd6b1a182b4777151b66b6ed5ec9976d84f93414ea6b8a04",
+      "parents": [
+        -1,
+        0,
+        0,
+        1
+      ],
+      "strict": 17,
+      "transitions": {
+        "1->1": 83,
+        "1->2": 17,
+        "2->2": 2
+      },
+      "triggers": 17
+    },
+    {
+      "atomic": 540,
+      "code": "(()()())",
+      "digest": "c7fd74bd204b42ae125a72a3e7e5689a632a5ca69d26d54368a53202fd8daf72",
+      "parents": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "strict": 165,
+      "transitions": {
+        "1->1": 198,
+        "1->2": 147,
+        "2->2": 177,
+        "2->3": 18
+      },
+      "triggers": 165
+    },
+    {
+      "atomic": 21,
+      "code": "((((()))))",
+      "digest": "2dcc687c4cc00f0d3c2e2337bf9d127f44ac1498ce64922877801be897ee6f24",
+      "parents": [
+        -1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "strict": 0,
+      "transitions": {
+        "1->1": 21
+      },
+      "triggers": 0
+    },
+    {
+      "atomic": 72,
+      "code": "(((()())))",
+      "digest": "45bfbaf647f5cdac2c031b3f9c565850f38c47f67a0780682970353a534cb5dd",
+      "parents": [
+        -1,
+        0,
+        1,
+        2,
+        2
+      ],
+      "strict": 22,
+      "transitions": {
+        "1->1": 44,
+        "1->2": 22,
+        "2->2": 6
+      },
+      "triggers": 22
+    },
+    {
+      "atomic": 172,
+      "code": "(((())()))",
+      "digest": "dbf9ea8fac2fbfa088aac5fa430ef503aa94d380852b1e90bb75db099e44e6ab",
+      "parents": [
+        -1,
+        0,
+        1,
+        1,
+        2
+      ],
+      "strict": 26,
+      "transitions": {
+        "1->1": 140,
+        "1->2": 26,
+        "2->2": 6
+      },
+      "triggers": 26
+    },
+    {
+      "atomic": 330,
+      "code": "(((()))())",
+      "digest": "8b74a0a67a6c319ffc258a27db30b8d69c9add0e922294b7e446b56e4b2d8c4e",
+      "parents": [
+        -1,
+        0,
+        0,
+        1,
+        3
+      ],
+      "strict": 30,
+      "transitions": {
+        "1->1": 294,
+        "1->2": 30,
+        "2->2": 6
+      },
+      "triggers": 30
+    },
+    {
+      "atomic": 778,
+      "code": "((()()()))",
+      "digest": "917862c15e5646ce15c10652fad1aac29bc53e0d2308fcea7be7142bfdb06650",
+      "parents": [
+        -1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "strict": 225,
+      "transitions": {
+        "1->1": 290,
+        "1->2": 201,
+        "2->2": 262,
+        "2->3": 24,
+        "3->3": 1
+      },
+      "triggers": 225
+    },
+    {
+      "atomic": 1215,
+      "code": "((()())())",
+      "digest": "f69c6393f2728ff7a40ebe53503bd388607b7541438dbc7699fc395337c052fa",
+      "parents": [
+        -1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "strict": 229,
+      "transitions": {
+        "1->1": 788,
+        "1->2": 229,
+        "2->2": 198
+      },
+      "triggers": 250
+    },
+    {
+      "atomic": 592,
+      "code": "((())(()))",
+      "digest": "769f7a31950fe9efe564de0c8a056e4dfd3c988b6c391a1714a8efa04bc01c29",
+      "parents": [
+        -1,
+        0,
+        0,
+        1,
+        2
+      ],
+      "strict": 30,
+      "transitions": {
+        "1->1": 556,
+        "1->2": 30,
+        "2->2": 6
+      },
+      "triggers": 30
+    },
+    {
+      "atomic": 2910,
+      "code": "((())()())",
+      "digest": "0e5dbf8bbce709df0bb8864f370470b287b350794c3611bdf06ca6d8b31d906a",
+      "parents": [
+        -1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "strict": 576,
+      "transitions": {
+        "1->1": 1562,
+        "1->2": 550,
+        "2->2": 771,
+        "2->3": 26,
+        "3->3": 1
+      },
+      "triggers": 576
+    },
+    {
+      "atomic": 13200,
+      "code": "(()()()())",
+      "digest": "5c32ad578dcc8bfe40ef75f0076731b7a08fc0a3196636542d72e15270183fb4",
+      "parents": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "strict": 2748,
+      "transitions": {
+        "1->1": 2968,
+        "1->2": 1932,
+        "2->2": 7168,
+        "2->3": 804,
+        "3->3": 316,
+        "3->4": 12
+      },
+      "triggers": 2748
+    }
+  ],
+  "strict": 4090,
+  "triggers": 4111,
+  "version": "16.26"
+}
