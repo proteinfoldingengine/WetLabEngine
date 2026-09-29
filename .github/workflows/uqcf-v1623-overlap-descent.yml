@@ -26,7 +26,7 @@ jobs:
           import os,json,pathlib,subprocess,sys,platform
           p=pathlib.Path(os.environ['P']).resolve();e=p/'evidence';e.mkdir(exist_ok=True)
           root=pathlib.Path.cwd();records=[]
-          commands=[('tests',p,['python','test_gate.py']),('v1622',p.parent/'v16.22-response-selection-closure',['python','-m','unittest','discover','-v']),('v1621',root/'ResearchHistory/UQCF-GEM/foundational-closure-verification',['python','tests/test_fcv.py']),('parent',p.parent/'v15.56-response-selector-obstruction',['python','-m','unittest','-v','test_pruning_consistency_audit']),('producer',p,['python','engine.py']),('verifier',p,['python','verify.py'])]
+          commands=[('tests',p,['python','test_gate.py']),('schema',p,['python','test_schema.py']),('v1622',p.parent/'v16.22-response-selection-closure',['python','-m','unittest','discover','-v']),('v1621',root/'ResearchHistory/UQCF-GEM/foundational-closure-verification',['python','tests/test_fcv.py']),('parent',p.parent/'v15.56-response-selector-obstruction',['python','-m','unittest','-v','test_pruning_consistency_audit']),('producer',p,['python','engine.py']),('verifier',p,['python','verify.py'])]
           for name,cwd,cmd in commands:
               with (e/(name+'.log')).open('w') as log:r=subprocess.run(cmd,cwd=cwd,stdout=log,stderr=subprocess.STDOUT)
               records.append({'name':name,'command':cmd,'exit_code':r.returncode});print(name,r.returncode,flush=True)
