@@ -1,0 +1,51 @@
+{
+  "classifications": {
+    "NORMAL_COUPLED": 144
+  },
+  "local_nonzero_by_observable": {
+    "determinant": 18,
+    "gram1": 48,
+    "gram2": 48,
+    "gram3": 48
+  },
+  "network_beyond_chosen_local_scalars": 0,
+  "normal_determinant_nonzero_paths": 54,
+  "normal_dimensions": {
+    "1": 54,
+    "4": 90
+  },
+  "normal_kernel_dimensions": {
+    "0": 72,
+    "3": 72
+  },
+  "normal_nonzero_pair_cycles": 192,
+  "normal_nonzero_path_cycles": 576,
+  "pair_claims": {
+    "BOTH_DISTINGUISH_NO_ADDITIONALITY_PROOF": 48,
+    "CHOSEN_NETWORK_FIRST_ORDER_NULL": 24
+  },
+  "pair_flags": {
+    "first_order_network_beyond_chosen_local_scalars": 0,
+    "local_odd_coefficient_nonzero": 48,
+    "local_scalar_distinguishes": 48,
+    "local_zero_coherence_nonzero": 0,
+    "network_distinguishes": 48,
+    "network_normal_contribution": 48,
+    "normal_amplitude_distinguishes": 48
+  },
+  "projected_squared_inequalities_checked": 1008,
+  "records": {
+    "exact": 144,
+    "independent_loop_checks": 504,
+    "local_scalars": 1728,
+    "pairs": 72
+  },
+  "reference_ranks": {
+    "1": 126,
+    "4": 18
+  },
+  "total_nonzero_pair_cycles": 192,
+  "verdict": "NETWORK_NORMAL_COUPLING_CLASSIFIED",
+  "version": "16.15",
+  "zero_coherence_total_nonzero_pair_cycles": 0
+}
