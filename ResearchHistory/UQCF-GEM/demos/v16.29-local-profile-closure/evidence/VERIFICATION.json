@@ -1,0 +1,95 @@
+{
+  "examples": {
+    "masked": {
+      "LOCAL_MASKED": 1,
+      "diamonds": 1,
+      "global_0": 1,
+      "same_parent": 1
+    },
+    "max_negative": {
+      "MAX_ONLY": 1,
+      "diamonds": 1,
+      "different_parent": 1,
+      "global_-1": 1
+    },
+    "max_positive": {
+      "MAX_ONLY": 1,
+      "diamonds": 1,
+      "global_1": 1,
+      "same_parent": 1
+    },
+    "transmitted_negative": {
+      "LOCAL_TRANSMITTED": 1,
+      "diamonds": 1,
+      "global_-1": 1,
+      "same_parent": 1
+    },
+    "transmitted_positive": {
+      "LOCAL_TRANSMITTED": 1,
+      "diamonds": 1,
+      "global_1": 1,
+      "same_parent": 1
+    },
+    "zero": {
+      "ZERO": 1,
+      "diamonds": 1,
+      "global_0": 1,
+      "same_parent": 1
+    }
+  },
+  "execution_status": "COMPLETED",
+  "extension": {
+    "original": {
+      "LOCAL_MASKED": 19,
+      "LOCAL_TRANSMITTED": 5755,
+      "MAX_ONLY": 32,
+      "ZERO": 49036,
+      "diamonds": 54842,
+      "different_parent": 4709,
+      "global_-1": 3163,
+      "global_0": 49055,
+      "global_1": 2624,
+      "same_parent": 50133
+    },
+    "relabeled": {
+      "LOCAL_MASKED": 19,
+      "LOCAL_TRANSMITTED": 5755,
+      "MAX_ONLY": 32,
+      "ZERO": 49036,
+      "diamonds": 54842,
+      "different_parent": 4709,
+      "global_-1": 3163,
+      "global_0": 49055,
+      "global_1": 2624,
+      "same_parent": 50133
+    }
+  },
+  "extension_shapes": 17,
+  "input_validity": "VALID",
+  "parent": {
+    "original": {
+      "LOCAL_TRANSMITTED": 5212,
+      "ZERO": 40276,
+      "diamonds": 45488,
+      "different_parent": 702,
+      "global_-1": 3344,
+      "global_0": 40276,
+      "global_1": 1868,
+      "same_parent": 44786
+    },
+    "relabeled": {
+      "LOCAL_TRANSMITTED": 5212,
+      "ZERO": 40276,
+      "diamonds": 45488,
+      "different_parent": 702,
+      "global_-1": 3344,
+      "global_0": 40276,
+      "global_1": 1868,
+      "same_parent": 44786
+    }
+  },
+  "proof_status": "written L1-L7 plus independently reconstructed exact finite cases",
+  "raw_sha256": "19d291e2f51286051a1e1c2840ab2d5994b9f8fe52f88f574ad2460b7ba7e69b",
+  "scope": "existing local counts and fixed global maximum; not a physical interaction law",
+  "version": "16.29"
+}

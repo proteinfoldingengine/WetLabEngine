@@ -1,0 +1,63 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "rejections": [
+    {
+      "defect": "boolean-event",
+      "reason": "event type"
+    },
+    {
+      "defect": "boolean-height",
+      "reason": "false heights"
+    },
+    {
+      "defect": "foreign-origin",
+      "reason": "foreign origin"
+    },
+    {
+      "defect": "missing-profile",
+      "reason": "missing certificate field"
+    },
+    {
+      "defect": "missing-state",
+      "reason": "four stored states"
+    },
+    {
+      "defect": "wrong-background",
+      "reason": "false background"
+    },
+    {
+      "defect": "wrong-class",
+      "reason": "false mechanism"
+    },
+    {
+      "defect": "wrong-height",
+      "reason": "false heights"
+    },
+    {
+      "defect": "invented-local",
+      "reason": "false local_mixed"
+    },
+    {
+      "defect": "wrong-parent",
+      "reason": "false parent_pair"
+    },
+    {
+      "defect": "wrong-prediction",
+      "reason": "false prediction"
+    },
+    {
+      "defect": "wrong-profile",
+      "reason": "false profiles"
+    },
+    {
+      "defect": "wrong-scalar",
+      "reason": "false global_mixed"
+    },
+    {
+      "defect": "wrong-state",
+      "reason": "false stored state"
+    }
+  ],
+  "tests": 30
+}
