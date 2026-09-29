@@ -1,0 +1,139 @@
+name: UQCF v16.24 verified publication recovery
+on:
+  push:
+    branches: [research/v16.24-consistency-order]
+    paths: ['.github/workflows/uqcf-v1624-publication-resume.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: uqcf-v1624-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    env:
+      P: ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ github.sha }}'}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: Verify preserved evidence and rerun the unchanged complete campaign
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$P/evidence"
+          python - <<'PY'
+          from pathlib import Path,PurePosixPath
+          import subprocess,json,hashlib,zipfile,io,os,re
+          repo=Path.cwd().resolve();p=(repo/os.environ['P']).resolve();e=p/'evidence'
+          def need(ok,msg):
+            if not ok:raise ValueError(msg)
+          def digest(raw):return hashlib.sha256(raw).hexdigest()
+          def api(endpoint,logs=False):
+            need(endpoint.startswith('actions/'),'invalid endpoint')
+            return subprocess.check_output(['gh','api']+(['--allow-escape-sequences'] if logs else [])+['repos/proteinfoldingengine/WetLabEngine/'+endpoint])
+          raw=api('actions/artifacts/11041313392/zip')
+          need(len(raw)==440085 and digest(raw)=='720dbc055bd93579cf993e0ae0754a86a2944163e6eedb5e34c52a81b178c4cf','failed publication artifact binding')
+          z=zipfile.ZipFile(io.BytesIO(raw));names=z.namelist()
+          need(len(names)==len(set(names)) and z.testzip() is None,'archive integrity')
+          for name in names:
+            if name.endswith('/'):continue
+            need(name.startswith(os.environ['P']+'/') and '..' not in PurePosixPath(name).parts,'unapproved evidence path')
+            target=repo/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(z.read(name))
+          manifest=(p/'PUBLICATION_SHA256SUMS').read_bytes()
+          for line in manifest.decode().splitlines():
+            expected,name=line.split(maxsplit=1);target=(p/name).resolve()
+            need(target.is_relative_to(repo) and target.is_file() and digest(target.read_bytes())==expected,'original manifest mismatch: '+name)
+          old=(p/'PUBLICATION_EVIDENCE.json').read_bytes();meta=json.loads(old)
+          need(meta['publication_run']=='36586143978' and meta['publication_workflow_head']=='940dd7a2733436249f453531bde14aab6cca0691','prior publication identity')
+          (e/'failed-publication-MANIFEST.txt').write_bytes(manifest)
+          (e/'failed-publication-EVIDENCE.json').write_bytes(old)
+          (e/'archives/publication-transport-failure.zip').write_bytes(raw)
+          failrun=api('actions/runs/36586143978');failjobs=api('actions/runs/36586143978/jobs');faillog=api('actions/jobs/109466876778/logs',logs=True)
+          r=json.loads(failrun);j=json.loads(failjobs)['jobs']
+          need(r['run_attempt']==1 and r['conclusion']=='failure' and r['head_sha']==meta['publication_workflow_head'],'failed run identity')
+          need(len(j)==1 and j[0]['id']==109466876778 and j[0]['conclusion']=='failure','failed job identity')
+          need(b'Internal Server Error' in faillog,'missing observed remote failure')
+          for suffix,data in [('run.json',failrun),('jobs.json',failjobs),('job.log',faillog)]:
+            (e/'history'/('publication-transport-failure-'+suffix)).write_bytes(data)
+          scientific={name:(e/name).read_bytes() for name in ['certificates.json.xz','VERIFICATION.json','TEST_RECEIPT.json','PRODUCTION.json']}
+          fresh=[];total=0
+          for item in meta['fresh_commands']:
+            name=item['name'];args=item['command'];cwd=(repo/item['cwd']).resolve()
+            need(cwd.is_relative_to(repo) and args[0]=='python','unexpected command/domain')
+            log=e/('recovery-'+name+'.log')
+            with log.open('wb') as out:result=subprocess.run(args,cwd=cwd,stdout=out,stderr=subprocess.STDOUT)
+            record={'name':name,'command':args,'cwd':item['cwd'],'exit_code':result.returncode}
+            if 'tests' in item:
+              tests=[int(n) for n in re.findall(r'Ran (\d+) tests?',log.read_text())]
+              need(tests==item['tests'],'fresh test coverage mismatch: '+name);record['tests']=tests;total+=sum(tests)
+            fresh.append(record);(e/'RECOVERY_COMMANDS.json').write_text(json.dumps(fresh,indent=2)+'\n')
+            need(result.returncode==0,'fresh command failed: '+name)
+          need(len(fresh)==9 and total==112,'incomplete fresh campaign')
+          for name,data in scientific.items():need((e/name).read_bytes()==data,'scientific bytes changed: '+name)
+          # Also check original executed source, independently of generated logs.
+          src=zipfile.ZipFile(io.BytesIO((e/'source.zip').read_bytes()))
+          for name in src.namelist():
+            if name.endswith('/'):continue
+            need((repo/name).read_bytes()==src.read(name),'changed scientific source: '+name)
+          meta['failed_publications']=[{'run':36586143978,'job':109466876778,'attempt':1,'sha':'940dd7a2733436249f453531bde14aab6cca0691','artifact':11041313392,'digest':digest(raw),'reason':'GitHub remote Internal Server Error after successful fresh reproduction; push rejected'}]
+          meta['publication_workflow_head']=os.environ['GITHUB_SHA'];meta['publication_run']=os.environ['GITHUB_RUN_ID'];meta['publication_attempt']=os.environ['GITHUB_RUN_ATTEMPT']
+          meta['fresh_commands']=fresh;meta['fresh_scientific_bytes_equal']=True
+          (p/'PUBLICATION_EVIDENCE.json').write_text(json.dumps(meta,sort_keys=True,indent=2)+'\n')
+          files=sorted(x for x in p.rglob('*') if x.is_file() and '__pycache__' not in x.parts and x.name!='PUBLICATION_SHA256SUMS')
+          extra=[p.parents[1]/'V16_24_REPORT.md']+[repo/'.github/workflows'/n for n in ['uqcf-v1624-consistency-order.yml','uqcf-v1624-publication.yml','uqcf-v1624-publication-resume.yml']]
+          (p/'PUBLICATION_SHA256SUMS').write_text(''.join(digest(x.read_bytes())+'  '+os.path.relpath(x,p)+'\n' for x in files+extra))
+          print(json.dumps({'fresh_scientific_bytes_equal':True,'fresh_tests':total,'publication_run':os.environ['GITHUB_RUN_ID']}))
+          PY
+      - name: Publish with bounded non-force retries and verify the committed files
+        run: |
+          set -euo pipefail
+          (cd "$P" && sha256sum -c PUBLICATION_SHA256SUMS)
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "$P/evidence" "$P/PUBLICATION_EVIDENCE.json" "$P/RUN_REGISTRY.json" "$P/PUBLICATION_SHA256SUMS"
+          git diff --cached --check -- "$P/PUBLICATION_EVIDENCE.json" "$P/RUN_REGISTRY.json" "$P/PUBLICATION_SHA256SUMS"
+          python - <<'PY'
+          import subprocess,os
+          paths=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
+          assert paths and all(p.startswith(os.environ['P']+'/') for p in paths)
+          PY
+          remote=$(git ls-remote origin refs/heads/research/v16.24-consistency-order | cut -f1)
+          test "$remote" = "$GITHUB_SHA"
+          git commit -m 'v16.24 publish complete verified evidence after remote transport failure [skip ci]'
+          published=$(git rev-parse HEAD)
+          for attempt in 1 2 3; do
+            remote=$(git ls-remote origin refs/heads/research/v16.24-consistency-order | cut -f1)
+            if test "$remote" = "$published"; then break; fi
+            test "$remote" = "$GITHUB_SHA"
+            if git push origin HEAD:refs/heads/research/v16.24-consistency-order; then break; fi
+            sleep 3
+          done
+          remote=$(git ls-remote origin refs/heads/research/v16.24-consistency-order | cut -f1)
+          test "$remote" = "$published"
+          git diff HEAD --exit-code -- "$P" ResearchHistory/UQCF-GEM/V16_24_REPORT.md
+          (cd "$P" && sha256sum -c PUBLICATION_SHA256SUMS)
+          PUBLISHED_SHA="$published" python - <<'PY'
+          import os,json,pathlib
+          r={'published_commit':os.environ['PUBLISHED_SHA'],'publication_workflow_head':os.environ['GITHUB_SHA'],'publication_run':os.environ['GITHUB_RUN_ID'],'remote_ref_verified':True,'committed_hashes_verified':True,'scope':'research/v16.24-consistency-order; not main'}
+          pathlib.Path('v1624-publication-receipt.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps(r))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1624-publication-recovery-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            v1624-publication-receipt.json
+            ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order/evidence
+            ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order/PUBLICATION_EVIDENCE.json
+            ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order/RUN_REGISTRY.json
+            ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order/PUBLICATION_SHA256SUMS
