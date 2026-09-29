@@ -61,4 +61,4 @@ def produce(bound=5):
  return {'version':'16.30','bound':bound,'pairs':pair,'local_edges':edges,'cross_parent_edges':cross,'digest':digest.hexdigest(),'controls':controls,'c5':'PAIRWISE_GRAPH_COMPLETE'}
 
 if __name__=='__main__':
- d=produce(5);open('PRODUCTION.json','w').write(json.dumps(d,sort_keys=True,indent=2)+'\\n');print(json.dumps({k:d[k] for k in ('pairs','local_edges','cross_parent_edges','digest','c5')}))
+ d=produce(5);open('PRODUCTION.json','w').write(json.dumps(d,sort_keys=True,indent=2));print(json.dumps({k:d[k] for k in ('pairs','local_edges','cross_parent_edges','digest','c5')}))
