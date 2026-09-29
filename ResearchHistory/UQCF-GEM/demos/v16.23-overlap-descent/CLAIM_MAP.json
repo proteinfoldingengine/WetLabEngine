@@ -1,0 +1,12 @@
+{
+  "version": "16.23",
+  "claims": {
+    "O1": {"assumptions": ["common Genesis", "finite prefix tree", "ancestor-closed actual retained subsets"], "proof": "PROOFS.md O1", "producer": ["engine.maps"], "verifier": ["verify.raw_maps", "verify._verify_case lattice and joint-kernel identities"], "controls": ["test_wrong_overlap_rejected", "test_changed_lineage_storage"]},
+    "O2": {"assumptions": ["O1", "formal signed rational sources"], "proof": "PROOFS.md O2", "producer": ["engine.glue", "engine.case"], "verifier": ["verify.equalizer", "balanced equalizers"], "controls": ["test_wrong_gluer_on_compatible_data_rejected", "test_off_domain_gluer_change_is_harmless"]},
+    "O3": {"assumptions": ["O2", "finite compatible covers"], "proof": "PROOFS.md O3", "producer": ["engine.glue_many"], "verifier": ["verify._verify_case complete ordered triple basis checks"], "controls": ["test_missing_coverage_rejected", "test_identity_root_and_repeated_views"]},
+    "O4": {"assumptions": ["constant-potential quotient", "actual R/H", "complete v16.22 comparison family"], "proof": "PROOFS.md O4", "producer": ["engine.glue_response"], "verifier": ["verify.parent_families", "parent_basis_diagrams"], "controls": ["test_response_representative_independence"]},
+    "O5": {"assumptions": ["O2", "specified nonnegative rational cone"], "proof": "PROOFS.md O5", "producer": ["engine.cone_summary"], "verifier": ["verify.pos_check", "verify.witness_checks"], "controls": ["test_actual_signed_and_positive_pair_witness", "test_false_positive_feasibility_rejected", "test_corrupt_negative_witness_rejected"]},
+    "O6": {"assumptions": ["O3", "nonnegative cone"], "proof": "PROOFS.md O6", "producer": ["engine.glue_many"], "verifier": ["verify.witness_checks"], "controls": ["test_pairwise_positive_is_not_global"]},
+    "O7": {"proof": "PROOFS.md O7", "status": "scope and interpretation boundary, not a Boolean certification", "review": "REVIEW.md"}
+  }
+}
