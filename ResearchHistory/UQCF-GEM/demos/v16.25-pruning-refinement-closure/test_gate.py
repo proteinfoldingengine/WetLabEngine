@@ -6,7 +6,7 @@ class Tests(unittest.TestCase):
   return importlib.import_module('engine'),importlib.import_module('verify')
  def test_monotonic_refinement_and_strict_example(self):
   e,v=self.modules();p=(-1,0,0,0)
-  coarse=[(0,1,2),(0,2,3)]
+  coarse=[(0,1,2),(0,2,3),(0,1,3)]
   fine=[(0,1),(0,2),(0,3)]
   d=e.certify_refinement(p,coarse,fine)
   self.assertLessEqual(d['h_before'],d['h_after']);self.assertEqual((d['h_before'],d['h_after']),(2,3));v.verify_case(d)
@@ -36,7 +36,7 @@ class Tests(unittest.TestCase):
   e,_=self.modules()
   with self.assertRaises(ValueError):e.certify_refinement((-1,0,0),[(0,1),(0,2)],[(0,2),(0,1)])
  def test_verifier_rejects_false_lower_after(self):
-  e,v=self.modules();d=e.certify_refinement((-1,0,0,0),[(0,1,2),(0,2,3)],[(0,1),(0,2),(0,3)])
+  e,v=self.modules();d=e.certify_refinement((-1,0,0,0),[(0,1,2),(0,2,3),(0,1,3)],[(0,1),(0,2),(0,3)])
   d['h_after']=1
   with self.assertRaises(ValueError):v.verify_case(d)
  def test_verifier_rejects_corrupt_composition(self):
