@@ -15,8 +15,9 @@ def verify_case(c):
  need(c['profiles']==[list(x) for x in P] and c['h']==H and c['local_mixed']==list(lm) and c['global_mixed']==H[3]-H[1]-H[2]+H[0],'case');return True
 def verify_document(d):
  need(d['version']=='16.30','version')
+ need(d.get('c5','PAIRWISE_GRAPH_COMPLETE')=='PAIRWISE_GRAPH_COMPLETE','c5 outcome')
  for c in d.get('cases',[]):
   p=tuple(c['parents'])
   for e,f in c['edges']:
    e,f=tuple(e),tuple(f);need(p[e[1]]==p[f[1]],'cross-parent edge')
- return {'execution_status':'COMPLETED'}
+ return {'execution_status':'COMPLETED','input_validity':'VALID'}
