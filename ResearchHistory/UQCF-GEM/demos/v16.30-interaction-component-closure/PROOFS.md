@@ -27,3 +27,17 @@ Whether the special minimum-set-cover function tau_v forbids such higher-order c
 If two events are comparable in the deletion poset, they are never simultaneously enabled at a reachable state. Their ordering is inherited prefix legality, not evidence of a nonzero mixed difference. G_tau contains only incomparable, jointly enabled pairs.
 
 No physical subsystem, coupling, geometry or time variable is inferred from these mathematical components.
+
+## P5 — pairwise graph completeness on independently enabled cubes
+
+Let f be any integer-valued function on a finite Boolean cube of independently executable events, and partition the events into connected components of the graph joining a pair whenever some second mixed difference is nonzero at some background. If e and f lie in different components, then by definition Δ_eΔ_f f(S)=0 for every background S enabling both.
+
+Fix a component C. For any e in C, the first difference Δ_e f(S) is unchanged when any event outside C is toggled, because the corresponding second difference is zero. By successive toggles, Δ_e f depends only on S∩C. Choose a reference state and integrate these first differences within each component. This gives
+
+f(S)=f(∅)+Σ_C g_C(S∩C).
+
+Therefore every Möbius coefficient whose support crosses two graph components is zero. Conversely a nonzero cross-component Möbius coefficient would force some cross-component second difference at a suitable background. Thus the pairwise graph gives the exact additive factorization for independently executable events.
+
+For retained pruning, apply this to each reachable Boolean subcube. Comparable predecessor-constrained events do not form such a cube and are not interaction edges; they remain order constraints. Combining P2 with this result gives a two-level decomposition: exact parent locality first, then exact pairwise-component factorization inside each independently executable parent-local cube.
+
+This proves candidate C5 outcome **PAIRWISE_GRAPH_COMPLETE**. The executable Möbius search is a verifier of the implementation and includes a pure three-way checker control; universality rests on this finite-difference argument, not on bounded absence.
