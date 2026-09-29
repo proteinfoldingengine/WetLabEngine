@@ -17,5 +17,6 @@ def verify_document(d):
  need(d['version']=='16.30','version')
  for c in d.get('cases',[]):
   p=tuple(c['parents'])
-  for e,f in c['edges']:need(p[e[1]]==p[f[1]],'cross-parent edge')
+  for e,f in c['edges']:
+   e,f=tuple(e),tuple(f);need(p[e[1]]==p[f[1]],'cross-parent edge')
  return {'execution_status':'COMPLETED'}
