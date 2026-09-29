@@ -1,0 +1,70 @@
+test_all_cycles_and_reversal (test_gate.Tests.test_all_cycles_and_reversal) ... FAIL
+test_exact_cancellation (test_gate.Tests.test_exact_cancellation) ... FAIL
+test_moving_frame_invariance (test_gate.Tests.test_moving_frame_invariance) ... FAIL
+test_normal_reference_and_zero_coherence (test_gate.Tests.test_normal_reference_and_zero_coherence) ... FAIL
+test_product_rule_and_gradient (test_gate.Tests.test_product_rule_and_gradient) ... FAIL
+
+======================================================================
+FAIL: test_all_cycles_and_reversal (test_gate.Tests.test_all_cycles_and_reversal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 9, in test_all_cycles_and_reversal
+    g=self.gate();c=self.fixture();self.assertEqual(len(g.CYCLES),7);self.assertEqual(sorted(map(len,g.CYCLES)),[3]*4+[4]*3)
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: network audit absent
+
+======================================================================
+FAIL: test_exact_cancellation (test_gate.Tests.test_exact_cancellation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 24, in test_exact_cancellation
+    g=self.gate();c=[s.eye(3) for _ in range(6)];v=[s.zeros(3) for _ in c];v[0]=s.eye(3);v[1]=-s.eye(3);self.assertEqual(g.cycle_derivative(c,v,(0,1,2)),0)
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: network audit absent
+
+======================================================================
+FAIL: test_moving_frame_invariance (test_gate.Tests.test_moving_frame_invariance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 17, in test_moving_frame_invariance
+    g=self.gate();c=self.fixture();v=[s.eye(3) for _ in c];ks=[s.Matrix([[0,-i-1,2],[i+1,0,-3],[-2,3,0]]) for i in range(4)];gs=[s.eye(3),s.diag(-1,-1,1),s.diag(1,-1,-1),s.diag(-1,1,-1)]
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: network audit absent
+
+======================================================================
+FAIL: test_normal_reference_and_zero_coherence (test_gate.Tests.test_normal_reference_and_zero_coherence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 21, in test_normal_reference_and_zero_coherence
+    g=self.gate();c=[s.eye(3) for _ in range(6)];c[5]=s.diag(1,0,0);n=s.diag(0,2,3);p=s.diag(1,0,0);h=(s.eye(3)-p)*g.gradient(c,(0,2,3))*(s.eye(3)-p)
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: network audit absent
+
+======================================================================
+FAIL: test_product_rule_and_gradient (test_gate.Tests.test_product_rule_and_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 12, in test_product_rule_and_gradient
+    g=self.gate();c=self.fixture();v=[s.eye(3)*(e+1) for e in range(6)];t=s.Symbol('t')
+      ^^^^^^^^^^^
+  File "/workspace/scratch/418a20440ec2/repo/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+    p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : expected RED: network audit absent
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.003s
+
+FAILED (failures=5)

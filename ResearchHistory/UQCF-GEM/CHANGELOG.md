@@ -262,3 +262,7 @@ Append-only research ledger. Detailed evidence and executable controls live in e
 - Invariant normal-amplitude coefficients distinguish all 48 nonidentity order pairs; 24 identity pairs coincide.
 - Run 36499944642 passed five new tests, five parent tests and 576 numerical rows. Full raw data, reports, logs and independent verification are published.
 - [Final report](V16_13_REPORT.md); [revised 16.13–16.15 brief](V16_13-15_BRIEF.md). Network/interpretation measurements remain pending. No source or gravity law, and no merge into main.
+
+## 16.14 — Closed-network response
+
+Published complete six-edge simple-cycle audit, full raw results and final report. 48/48 nonidentity pairs respond in four edge23 cycles; exact nulls and independent attribution verified. See [report](V16_14_REPORT.md).

@@ -1,0 +1,343 @@
+﻿2026-09-29T00:25:54.6511686Z Current runner version: '2.337.0'
+2026-09-29T00:25:54.6539446Z ##[group]Runner Image Provisioner
+2026-09-29T00:25:54.6540518Z Hosted Compute Agent
+2026-09-29T00:25:54.6541164Z Version: 20260828.587
+2026-09-29T00:25:54.6541861Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-29T00:25:54.6542622Z Build Date: 2026-08-28T16:44:25Z
+2026-09-29T00:25:54.6543325Z Worker ID: {6dfc4f1c-6fc3-4e32-bf55-5e04e2134a76}
+2026-09-29T00:25:54.6544098Z Azure Region: eastus2
+2026-09-29T00:25:54.6544699Z ##[endgroup]
+2026-09-29T00:25:54.6546271Z ##[group]Operating System
+2026-09-29T00:25:54.6546935Z Ubuntu
+2026-09-29T00:25:54.6547462Z 24.04.5
+2026-09-29T00:25:54.6548028Z LTS
+2026-09-29T00:25:54.6548609Z ##[endgroup]
+2026-09-29T00:25:54.6549439Z ##[group]Runner Image
+2026-09-29T00:25:54.6550092Z Image: ubuntu-24.04
+2026-09-29T00:25:54.6550685Z Version: 20260920.314.1
+2026-09-29T00:25:54.6551989Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-29T00:25:54.6553984Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-29T00:25:54.6555079Z ##[endgroup]
+2026-09-29T00:25:54.6556357Z ##[group]GITHUB_TOKEN Permissions
+2026-09-29T00:25:54.6558538Z Contents: read
+2026-09-29T00:25:54.6559472Z Metadata: read
+2026-09-29T00:25:54.6560067Z ##[endgroup]
+2026-09-29T00:25:54.6562138Z Secret source: Actions
+2026-09-29T00:25:54.6563297Z Cache mode: write
+2026-09-29T00:25:54.6564026Z Prepare workflow directory
+2026-09-29T00:25:54.6894112Z Prepare all required actions
+2026-09-29T00:25:54.6941955Z Getting action download info
+2026-09-29T00:25:54.8954302Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-29T00:25:55.0269668Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-09-29T00:25:55.1055854Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-09-29T00:25:55.3451634Z Complete job name: audit
+2026-09-29T00:25:55.4210574Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-09-29T00:25:55.4211659Z with:
+2026-09-29T00:25:55.4212166Z   repository: proteinfoldingengine/WetLabEngine
+2026-09-29T00:25:55.4216273Z   token: ***
+2026-09-29T00:25:55.4216741Z   ssh-strict: true
+2026-09-29T00:25:55.4217179Z   ssh-user: git
+2026-09-29T00:25:55.4217632Z   persist-credentials: true
+2026-09-29T00:25:55.4218128Z   clean: true
+2026-09-29T00:25:55.4218573Z   sparse-checkout-cone-mode: true
+2026-09-29T00:25:55.4219307Z   fetch-depth: 1
+2026-09-29T00:25:55.4219739Z   fetch-tags: false
+2026-09-29T00:25:55.4220224Z   show-progress: true
+2026-09-29T00:25:55.4220704Z   lfs: false
+2026-09-29T00:25:55.4221122Z   submodules: false
+2026-09-29T00:25:55.4221572Z   set-safe-directory: true
+2026-09-29T00:25:55.4222081Z   allow-unsafe-pr-checkout: false
+2026-09-29T00:25:55.4222871Z ##[endgroup]
+2026-09-29T00:25:55.5197431Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-09-29T00:25:55.5199630Z ##[group]Getting Git version info
+2026-09-29T00:25:55.5200459Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-29T00:25:55.5201522Z [command]/usr/bin/git version
+2026-09-29T00:25:55.5392718Z git version 2.55.0
+2026-09-29T00:25:55.5415478Z ##[endgroup]
+2026-09-29T00:25:55.5433412Z Temporarily overriding HOME='/home/runner/work/_temp/bf2ba237-1984-437a-b472-4927887ab4d8' before making global git config changes
+2026-09-29T00:25:55.5435820Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-29T00:25:55.5439530Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-29T00:25:55.5496728Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-29T00:25:55.5501871Z ##[group]Initializing the repository
+2026-09-29T00:25:55.5506998Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-29T00:25:55.5647865Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-29T00:25:55.5649890Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-29T00:25:55.5651497Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-29T00:25:55.5652774Z hint: call:
+2026-09-29T00:25:55.5653908Z hint:
+2026-09-29T00:25:55.5654870Z hint: 	git config --global init.defaultBranch <name>
+2026-09-29T00:25:55.5656055Z hint:
+2026-09-29T00:25:55.5657283Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-29T00:25:55.5659227Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-29T00:25:55.5660603Z hint:
+2026-09-29T00:25:55.5661332Z hint: 	git branch -m <name>
+2026-09-29T00:25:55.5662156Z hint:
+2026-09-29T00:25:55.5663237Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-29T00:25:55.5665257Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-09-29T00:25:55.5668758Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-29T00:25:55.5733081Z ##[endgroup]
+2026-09-29T00:25:55.5734485Z ##[group]Disabling automatic garbage collection
+2026-09-29T00:25:55.5737981Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-29T00:25:55.5772109Z ##[endgroup]
+2026-09-29T00:25:55.5773467Z ##[group]Setting up auth
+2026-09-29T00:25:55.5779875Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-29T00:25:55.5827204Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-29T00:25:55.6232835Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-29T00:25:55.6275942Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-29T00:25:55.6505800Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-29T00:25:55.6545450Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-29T00:25:55.6794282Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-29T00:25:55.6841329Z ##[endgroup]
+2026-09-29T00:25:55.6842200Z ##[group]Fetching the repository
+2026-09-29T00:25:55.6855108Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bf07ca7a3812a9840a54473f1c5b043b94774469:refs/remotes/origin/research/v16.14-closed-network-response
+2026-09-29T00:26:06.4127344Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-29T00:26:06.4130446Z  * [new ref]         bf07ca7a3812a9840a54473f1c5b043b94774469 -> origin/research/v16.14-closed-network-response
+2026-09-29T00:26:06.4139759Z ##[endgroup]
+2026-09-29T00:26:06.4141361Z ##[group]Determining the checkout info
+2026-09-29T00:26:06.4150524Z ##[endgroup]
+2026-09-29T00:26:06.4151707Z [command]/usr/bin/git sparse-checkout disable
+2026-09-29T00:26:06.4264440Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-29T00:26:06.4298009Z ##[group]Checking out the ref
+2026-09-29T00:26:06.4303830Z [command]/usr/bin/git checkout --progress --force -B research/v16.14-closed-network-response refs/remotes/origin/research/v16.14-closed-network-response
+2026-09-29T00:26:07.4478092Z Updating files:  46% (2157/4684)
+2026-09-29T00:26:07.4522091Z Updating files:  47% (2202/4684)
+2026-09-29T00:26:07.4556266Z Updating files:  48% (2249/4684)
+2026-09-29T00:26:07.4582038Z Updating files:  49% (2296/4684)
+2026-09-29T00:26:07.4608364Z Updating files:  50% (2342/4684)
+2026-09-29T00:26:07.4911032Z Updating files:  51% (2389/4684)
+2026-09-29T00:26:07.5357244Z Updating files:  52% (2436/4684)
+2026-09-29T00:26:07.5378989Z Updating files:  53% (2483/4684)
+2026-09-29T00:26:07.5397560Z Updating files:  54% (2530/4684)
+2026-09-29T00:26:07.5439342Z Updating files:  55% (2577/4684)
+2026-09-29T00:26:07.5554859Z Updating files:  56% (2624/4684)
+2026-09-29T00:26:07.5655582Z Updating files:  57% (2670/4684)
+2026-09-29T00:26:07.5782838Z Updating files:  58% (2717/4684)
+2026-09-29T00:26:07.5890370Z Updating files:  59% (2764/4684)
+2026-09-29T00:26:07.5921051Z Updating files:  60% (2811/4684)
+2026-09-29T00:26:07.6304567Z Updating files:  61% (2858/4684)
+2026-09-29T00:26:07.6351702Z Updating files:  62% (2905/4684)
+2026-09-29T00:26:07.7980628Z Updating files:  63% (2951/4684)
+2026-09-29T00:26:07.9421090Z Updating files:  64% (2998/4684)
+2026-09-29T00:26:07.9449317Z Updating files:  65% (3045/4684)
+2026-09-29T00:26:08.0877158Z Updating files:  66% (3092/4684)
+2026-09-29T00:26:08.1778415Z Updating files:  67% (3139/4684)
+2026-09-29T00:26:08.2592031Z Updating files:  68% (3186/4684)
+2026-09-29T00:26:08.2846987Z Updating files:  69% (3232/4684)
+2026-09-29T00:26:08.3290056Z Updating files:  70% (3279/4684)
+2026-09-29T00:26:08.3369200Z Updating files:  71% (3326/4684)
+2026-09-29T00:26:08.3427808Z Updating files:  72% (3373/4684)
+2026-09-29T00:26:08.3886820Z Updating files:  73% (3420/4684)
+2026-09-29T00:26:08.3918725Z Updating files:  74% (3467/4684)
+2026-09-29T00:26:08.3949037Z Updating files:  75% (3513/4684)
+2026-09-29T00:26:08.3977221Z Updating files:  76% (3560/4684)
+2026-09-29T00:26:08.4004964Z Updating files:  77% (3607/4684)
+2026-09-29T00:26:08.4032870Z Updating files:  78% (3654/4684)
+2026-09-29T00:26:08.4060604Z Updating files:  79% (3701/4684)
+2026-09-29T00:26:08.4096133Z Updating files:  80% (3748/4684)
+2026-09-29T00:26:08.4118588Z Updating files:  81% (3795/4684)
+2026-09-29T00:26:08.4138189Z Updating files:  82% (3841/4684)
+2026-09-29T00:26:08.4220842Z Updating files:  83% (3888/4684)
+2026-09-29T00:26:08.4327452Z Updating files:  84% (3935/4684)
+2026-09-29T00:26:08.4959615Z Updating files:  85% (3982/4684)
+2026-09-29T00:26:08.8006283Z Updating files:  85% (3994/4684)
+2026-09-29T00:26:08.8068434Z Updating files:  86% (4029/4684)
+2026-09-29T00:26:08.8241839Z Updating files:  87% (4076/4684)
+2026-09-29T00:26:08.8452636Z Updating files:  88% (4122/4684)
+2026-09-29T00:26:08.8659443Z Updating files:  89% (4169/4684)
+2026-09-29T00:26:08.8891475Z Updating files:  90% (4216/4684)
+2026-09-29T00:26:08.9328718Z Updating files:  91% (4263/4684)
+2026-09-29T00:26:08.9469386Z Updating files:  92% (4310/4684)
+2026-09-29T00:26:08.9509983Z Updating files:  93% (4357/4684)
+2026-09-29T00:26:08.9550817Z Updating files:  94% (4403/4684)
+2026-09-29T00:26:08.9636379Z Updating files:  95% (4450/4684)
+2026-09-29T00:26:08.9679378Z Updating files:  96% (4497/4684)
+2026-09-29T00:26:08.9720915Z Updating files:  97% (4544/4684)
+2026-09-29T00:26:08.9855023Z Updating files:  98% (4591/4684)
+2026-09-29T00:26:08.9894226Z Updating files:  99% (4638/4684)
+2026-09-29T00:26:08.9894745Z Updating files: 100% (4684/4684)
+2026-09-29T00:26:08.9895281Z Updating files: 100% (4684/4684), done.
+2026-09-29T00:26:08.9960871Z Switched to a new branch 'research/v16.14-closed-network-response'
+2026-09-29T00:26:08.9967693Z branch 'research/v16.14-closed-network-response' set up to track 'origin/research/v16.14-closed-network-response'.
+2026-09-29T00:26:09.0059547Z ##[endgroup]
+2026-09-29T00:26:09.0109770Z [command]/usr/bin/git log -1 --format=%H
+2026-09-29T00:26:09.0139283Z bf07ca7a3812a9840a54473f1c5b043b94774469
+2026-09-29T00:26:09.0472740Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-09-29T00:26:09.0473165Z with:
+2026-09-29T00:26:09.0473373Z   python-version: 3.11
+2026-09-29T00:26:09.0473603Z   check-latest: false
+2026-09-29T00:26:09.0476157Z   token: ***
+2026-09-29T00:26:09.0476371Z   update-environment: true
+2026-09-29T00:26:09.0476619Z   allow-prereleases: false
+2026-09-29T00:26:09.0476847Z   freethreaded: false
+2026-09-29T00:26:09.0477274Z ##[endgroup]
+2026-09-29T00:26:09.1807614Z ##[group]Installed versions
+2026-09-29T00:26:09.1978502Z (node:2262) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-29T00:26:09.1979637Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-29T00:26:09.1980625Z Successfully set up CPython (3.11.16)
+2026-09-29T00:26:09.1981334Z ##[endgroup]
+2026-09-29T00:26:09.2179565Z ##[group]Run python -m pip install numpy==2.3.5 sympy==1.13.3 mpmath==1.3.0
+2026-09-29T00:26:09.2180203Z [36;1mpython -m pip install numpy==2.3.5 sympy==1.13.3 mpmath==1.3.0[0m
+2026-09-29T00:26:09.2563019Z shell: /usr/bin/bash -e {0}
+2026-09-29T00:26:09.2563319Z env:
+2026-09-29T00:26:09.2563621Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:09.2564118Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-29T00:26:09.2564609Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:09.2565052Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:09.2565476Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:09.2565902Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-29T00:26:09.2566272Z ##[endgroup]
+2026-09-29T00:26:10.4423796Z Collecting numpy==2.3.5
+2026-09-29T00:26:10.5179206Z   Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-09-29T00:26:10.5603655Z Collecting sympy==1.13.3
+2026-09-29T00:26:10.5699588Z   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
+2026-09-29T00:26:10.5923782Z Collecting mpmath==1.3.0
+2026-09-29T00:26:10.6039199Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-09-29T00:26:10.6194162Z Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+2026-09-29T00:26:10.9580015Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 53.5 MB/s  0:00:00
+2026-09-29T00:26:10.9666653Z Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+2026-09-29T00:26:11.1108410Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 43.6 MB/s  0:00:00
+2026-09-29T00:26:11.1191686Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-09-29T00:26:11.1276547Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 78.1 MB/s  0:00:00
+2026-09-29T00:26:11.2329765Z Installing collected packages: mpmath, sympy, numpy
+2026-09-29T00:26:18.3092139Z 
+2026-09-29T00:26:18.3100901Z Successfully installed mpmath-1.3.0 numpy-2.3.5 sympy-1.13.3
+2026-09-29T00:26:18.3699861Z ##[group]Run set -o pipefail
+2026-09-29T00:26:18.3700245Z [36;1mset -o pipefail[0m
+2026-09-29T00:26:18.3700536Z [36;1mgit rev-parse HEAD > execution_head.txt[0m
+2026-09-29T00:26:18.3701087Z [36;1mcd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response[0m
+2026-09-29T00:26:18.3701650Z [36;1mpython -m unittest -v 2>&1 | tee test.log[0m
+2026-09-29T00:26:18.3702097Z [36;1m(cd ../local-gauge-content && python -m unittest -v) 2>&1 | tee parent-test.log[0m
+2026-09-29T00:26:18.3702564Z [36;1mpython gate.py 2>&1 | tee audit.log[0m
+2026-09-29T00:26:18.3768390Z shell: /usr/bin/bash -e {0}
+2026-09-29T00:26:18.3768654Z env:
+2026-09-29T00:26:18.3769150Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:18.3769621Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-29T00:26:18.3770064Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:18.3770503Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:18.3770895Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:18.3771290Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-29T00:26:18.3771619Z   OPENBLAS_NUM_THREADS: 1
+2026-09-29T00:26:18.3771845Z ##[endgroup]
+2026-09-29T00:26:18.7974013Z test_all_cycles_and_reversal (test_gate.Tests.test_all_cycles_and_reversal) ... FAIL
+2026-09-29T00:26:18.7975976Z test_exact_cancellation (test_gate.Tests.test_exact_cancellation) ... FAIL
+2026-09-29T00:26:18.7978449Z test_moving_frame_invariance (test_gate.Tests.test_moving_frame_invariance) ... FAIL
+2026-09-29T00:26:18.7981880Z test_normal_reference_and_zero_coherence (test_gate.Tests.test_normal_reference_and_zero_coherence) ... FAIL
+2026-09-29T00:26:18.7984001Z test_product_rule_and_gradient (test_gate.Tests.test_product_rule_and_gradient) ... FAIL
+2026-09-29T00:26:18.7989715Z 
+2026-09-29T00:26:18.7990118Z ======================================================================
+2026-09-29T00:26:18.7990933Z FAIL: test_all_cycles_and_reversal (test_gate.Tests.test_all_cycles_and_reversal)
+2026-09-29T00:26:18.7991740Z ----------------------------------------------------------------------
+2026-09-29T00:26:18.7992155Z Traceback (most recent call last):
+2026-09-29T00:26:18.8003177Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 9, in test_all_cycles_and_reversal
+2026-09-29T00:26:18.8005081Z     g=self.gate();c=self.fixture();self.assertEqual(len(g.CYCLES),7);self.assertEqual(sorted(map(len,g.CYCLES)),[3]*4+[4]*3)
+2026-09-29T00:26:18.8005892Z       ^^^^^^^^^^^
+2026-09-29T00:26:18.8007135Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+2026-09-29T00:26:18.8009673Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-29T00:26:18.8011223Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T00:26:18.8011916Z AssertionError: False is not true : expected RED: network audit absent
+2026-09-29T00:26:18.8012362Z 
+2026-09-29T00:26:18.8012546Z ======================================================================
+2026-09-29T00:26:18.8013171Z FAIL: test_exact_cancellation (test_gate.Tests.test_exact_cancellation)
+2026-09-29T00:26:18.8013823Z ----------------------------------------------------------------------
+2026-09-29T00:26:18.8014343Z Traceback (most recent call last):
+2026-09-29T00:26:18.8016056Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 24, in test_exact_cancellation
+2026-09-29T00:26:18.8017811Z     g=self.gate();c=[s.eye(3) for _ in range(6)];v=[s.zeros(3) for _ in c];v[0]=s.eye(3);v[1]=-s.eye(3);self.assertEqual(g.cycle_derivative(c,v,(0,1,2)),0)
+2026-09-29T00:26:18.8018635Z       ^^^^^^^^^^^
+2026-09-29T00:26:18.8020240Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+2026-09-29T00:26:18.8022427Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-29T00:26:18.8023955Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T00:26:18.8024668Z AssertionError: False is not true : expected RED: network audit absent
+2026-09-29T00:26:18.8025109Z 
+2026-09-29T00:26:18.8025282Z ======================================================================
+2026-09-29T00:26:18.8025959Z FAIL: test_moving_frame_invariance (test_gate.Tests.test_moving_frame_invariance)
+2026-09-29T00:26:18.8026683Z ----------------------------------------------------------------------
+2026-09-29T00:26:18.8027207Z Traceback (most recent call last):
+2026-09-29T00:26:18.8028612Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 17, in test_moving_frame_invariance
+2026-09-29T00:26:18.8030933Z     g=self.gate();c=self.fixture();v=[s.eye(3) for _ in c];ks=[s.Matrix([[0,-i-1,2],[i+1,0,-3],[-2,3,0]]) for i in range(4)];gs=[s.eye(3),s.diag(-1,-1,1),s.diag(1,-1,-1),s.diag(-1,1,-1)]
+2026-09-29T00:26:18.8031871Z       ^^^^^^^^^^^
+2026-09-29T00:26:18.8032984Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+2026-09-29T00:26:18.8035076Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-29T00:26:18.8036551Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T00:26:18.8037240Z AssertionError: False is not true : expected RED: network audit absent
+2026-09-29T00:26:18.8037671Z 
+2026-09-29T00:26:18.8037835Z ======================================================================
+2026-09-29T00:26:18.8038584Z FAIL: test_normal_reference_and_zero_coherence (test_gate.Tests.test_normal_reference_and_zero_coherence)
+2026-09-29T00:26:18.8039593Z ----------------------------------------------------------------------
+2026-09-29T00:26:18.8040124Z Traceback (most recent call last):
+2026-09-29T00:26:18.8041548Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 21, in test_normal_reference_and_zero_coherence
+2026-09-29T00:26:18.8043287Z     g=self.gate();c=[s.eye(3) for _ in range(6)];c[5]=s.diag(1,0,0);n=s.diag(0,2,3);p=s.diag(1,0,0);h=(s.eye(3)-p)*g.gradient(c,(0,2,3))*(s.eye(3)-p)
+2026-09-29T00:26:18.8044066Z       ^^^^^^^^^^^
+2026-09-29T00:26:18.8045148Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+2026-09-29T00:26:18.8047299Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-29T00:26:18.8048779Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T00:26:18.8049959Z AssertionError: False is not true : expected RED: network audit absent
+2026-09-29T00:26:18.8050412Z 
+2026-09-29T00:26:18.8050574Z ======================================================================
+2026-09-29T00:26:18.8051236Z FAIL: test_product_rule_and_gradient (test_gate.Tests.test_product_rule_and_gradient)
+2026-09-29T00:26:18.8051949Z ----------------------------------------------------------------------
+2026-09-29T00:26:18.8052450Z Traceback (most recent call last):
+2026-09-29T00:26:18.8053834Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 12, in test_product_rule_and_gradient
+2026-09-29T00:26:18.8055343Z     g=self.gate();c=self.fixture();v=[s.eye(3)*(e+1) for e in range(6)];t=s.Symbol('t')
+2026-09-29T00:26:18.8055912Z       ^^^^^^^^^^^
+2026-09-29T00:26:18.8056993Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/test_gate.py", line 5, in gate
+2026-09-29T00:26:18.8059380Z     p=pathlib.Path(__file__).with_name('gate.py');self.assertTrue(p.exists(),'expected RED: network audit absent');q=importlib.util.spec_from_file_location('g1614',p);g=importlib.util.module_from_spec(q);q.loader.exec_module(g);return g
+2026-09-29T00:26:18.8060890Z                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-29T00:26:18.8061810Z AssertionError: False is not true : expected RED: network audit absent
+2026-09-29T00:26:18.8062272Z 
+2026-09-29T00:26:18.8062492Z ----------------------------------------------------------------------
+2026-09-29T00:26:18.8063023Z Ran 5 tests in 0.002s
+2026-09-29T00:26:18.8063246Z 
+2026-09-29T00:26:18.8063379Z FAILED (failures=5)
+2026-09-29T00:26:18.8462891Z ##[error]Process completed with exit code 1.
+2026-09-29T00:26:18.8567720Z ##[group]Run actions/upload-artifact@v4
+2026-09-29T00:26:18.8568083Z with:
+2026-09-29T00:26:18.8568445Z   name: closed-network-response-bf07ca7a3812a9840a54473f1c5b043b94774469
+2026-09-29T00:26:18.8570266Z   path: execution_head.txt
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/*.log
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/result.json
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/closed-network-response/SHA256SUMS
+
+2026-09-29T00:26:18.8571639Z   if-no-files-found: warn
+2026-09-29T00:26:18.8571881Z   compression-level: 6
+2026-09-29T00:26:18.8572092Z   overwrite: false
+2026-09-29T00:26:18.8572306Z   include-hidden-files: false
+2026-09-29T00:26:18.8572537Z env:
+2026-09-29T00:26:18.8572790Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:18.8573223Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-29T00:26:18.8573678Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:18.8574055Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:18.8574439Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-29T00:26:18.8574824Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-29T00:26:18.8575141Z ##[endgroup]
+2026-09-29T00:26:19.0345271Z (node:2306) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-29T00:26:19.0346086Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-29T00:26:19.0441111Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-09-29T00:26:19.0442944Z The least common ancestor is /home/runner/work/WetLabEngine/WetLabEngine. This will be the root directory of the artifact
+2026-09-29T00:26:19.0444015Z With the provided path, there will be 3 files uploaded
+2026-09-29T00:26:19.0445021Z Artifact name is valid!
+2026-09-29T00:26:19.0445426Z Root directory input is valid!
+2026-09-29T00:26:19.2447481Z Beginning upload of artifact content to blob storage
+2026-09-29T00:26:19.2688129Z (node:2306) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-29T00:26:19.3139020Z Uploaded bytes 2634
+2026-09-29T00:26:19.3374521Z Finished uploading artifact content to blob storage!
+2026-09-29T00:26:19.3375627Z SHA256 digest of uploaded artifact zip is 61d1a1327672be2a0cc0d3acc26746c993d016c40be7226c8177dce567a2705b
+2026-09-29T00:26:19.3377369Z Finalizing artifact upload
+2026-09-29T00:26:19.5806714Z Artifact closed-network-response-bf07ca7a3812a9840a54473f1c5b043b94774469.zip successfully finalized. Artifact ID 11006150557
+2026-09-29T00:26:19.5809314Z Artifact closed-network-response-bf07ca7a3812a9840a54473f1c5b043b94774469 has been successfully uploaded! Final size is 2634 bytes. Artifact ID is 11006150557
+2026-09-29T00:26:19.5814932Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36503053115/artifacts/11006150557
+2026-09-29T00:26:19.6032712Z Post job cleanup.
+2026-09-29T00:26:19.6907497Z [command]/usr/bin/git version
+2026-09-29T00:26:19.6951210Z git version 2.55.0
+2026-09-29T00:26:19.6993295Z Temporarily overriding HOME='/home/runner/work/_temp/851a33d0-64dd-4bdc-b3e1-6182dfd496cc' before making global git config changes
+2026-09-29T00:26:19.6994848Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-29T00:26:19.6999186Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-29T00:26:19.7042907Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-29T00:26:19.7081010Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-29T00:26:19.7340901Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-29T00:26:19.7370524Z http.https://github.com/.extraheader
+2026-09-29T00:26:19.7392205Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-29T00:26:19.7422592Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-29T00:26:19.7692377Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-29T00:26:19.7731798Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-29T00:26:19.8159762Z Cleaning up orphan processes
+2026-09-29T00:26:19.8455088Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
