@@ -21,8 +21,8 @@ def parents(raw):
     p = tuple(raw)
     need(all(type(x) is int for x in p), 'exact integer parent identifiers required')
     need(p[0] == -1, 'root identifier')
+    need(all(0 <= target < len(p) for target in p[1:]), 'parent outside carrier')
     for v in range(1, len(p)):
-        need(0 <= p[v] < len(p), 'parent outside carrier')
         seen = set()
         u = v
         while u != 0:
