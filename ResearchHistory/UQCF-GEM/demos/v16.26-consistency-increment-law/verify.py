@@ -53,3 +53,7 @@ def verify_document(doc,bound=5):
  for x in doc['instances']:
   p=tuple(x['parents']);need(code(p)==x['code'],'shape');s=summary(p);need((x['atomic'],x['strict'],x['triggers'],x['transitions'],x['digest'])==s,'summary');tot+=s[0];inc+=s[1];tg+=s[2]
  need((doc['atomic'],doc['strict'],doc['triggers'])==(tot,inc,tg),'totals');return {'atomic':tot,'strict':inc,'triggers':tg,'shapes':len(doc['instances'])}
+
+if __name__=='__main__':
+ import json,pathlib
+ p=pathlib.Path(__file__).resolve().parent/'evidence';d=json.loads((p/'PRODUCTION.json').read_text());r=verify_document(d,5);(p/'VERIFICATION.json').write_text(json.dumps(r,sort_keys=True,indent=2)+'\n');print(json.dumps(r))
