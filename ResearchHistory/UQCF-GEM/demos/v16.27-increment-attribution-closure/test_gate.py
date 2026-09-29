@@ -9,7 +9,7 @@ class Tests(unittest.TestCase):
   e,v=self.m();d=e.find_witness(4);d['path_a'][0]['delta_h']=9
   with self.assertRaises(ValueError):v.verify_witness(d)
  def test_endpoint_mismatch_rejected(self):
-  e,v=self.m();d=e.find_witness(4);d['after'][0]=d['before'][0]
+  e,v=self.m();d=e.find_witness(4);d['after'][0]=[0]
   with self.assertRaises(ValueError):v.verify_witness(d)
  def test_complete_bounded_search(self):
   e,v=self.m();doc=e.produce(4);r=v.verify_document(doc,4);self.assertGreater(r['endpoints'],0)
