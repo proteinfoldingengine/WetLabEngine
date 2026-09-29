@@ -9,3 +9,5 @@ Binding brief: user's foundational closure and verification assignment and compl
 5. Reports and durable preservation/fresh-publication workflow — configured in this commit; successful execution and final evidence commit are to be established by PUBLICATION_EVIDENCE.json and remote read-back before a final completion claim.
 
 Ruling: initial invalid fixture is not a substantive math RED. Ruling: mixed diamond differences are not curvature or a nonzero closed-loop total. Ruling: self-review plus algorithmic independence must not be presented as a separately authored review. No physical claim or main merge.
+
+Publication verification: full fresh campaign and all 198 tests passed; five scientific files match the original GREEN byte-for-byte. Original RED, invalid-fixture and GREEN archives/logs preserved. Publication run 36630551410 performs the final commit, remote ref and committed-hash checks.
