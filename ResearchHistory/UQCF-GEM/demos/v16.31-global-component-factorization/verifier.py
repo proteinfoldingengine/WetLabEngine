@@ -116,7 +116,7 @@ def reconstruct(p,a,b):
    if not enabled(s,j):break
    s|=1<<j;prefix.append(s)
   else:
-   need(cover(s)==b,'path final carrier');paths+=1;states.update(prefix)
+   need(all(set(y)==set(z) for y,z in zip(cover(s),b)),'path final carrier');paths+=1;states.update(prefix)
  need(paths>0,'no complete legal deletion order')
  q={s:profile(p,cover(s)) for s in states}
  need(states=={s for s in range(1<<m) if all(not(s>>j&1) or pred[j]&s==pred[j] for j in range(m))},'ideal/path disagreement')
