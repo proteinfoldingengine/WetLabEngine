@@ -1,0 +1,46 @@
+[
+  {
+    "role": "wiring-red",
+    "run": 36568025339,
+    "job": 109404706116,
+    "artifact": 11032433007,
+    "sha": "d75bb1d9c043634a6f60c66d1a0153f39c7192c8",
+    "digest": "d8d9084ad86358f3aa9184b043b0e30ada86fe76b334d370f85997f1ac2c47cd",
+    "conclusion": "failure",
+    "attempt": 1,
+    "bytes": 16989
+  },
+  {
+    "role": "initial-green",
+    "run": 36569139253,
+    "job": 109408436653,
+    "artifact": 11032659764,
+    "sha": "939293191fd5bdd13a086b1d86ac15af595a1b6d",
+    "digest": "1d1abd0de463042e3cd04b4f61ba07de4a662b3d8e4b702c0afbff43f6779af6",
+    "conclusion": "success",
+    "attempt": 1,
+    "bytes": 143684
+  },
+  {
+    "role": "schema-red",
+    "run": 36569553274,
+    "job": 109409840157,
+    "artifact": 11033676117,
+    "sha": "54a3a1c57be3d749e86c88969b1556452235d513",
+    "digest": "a1aa0a0b39accacb9ca4ae3665deecc97c2b94c13495814ef4bbb216858bdcc3",
+    "conclusion": "failure",
+    "attempt": 1,
+    "bytes": 27336
+  },
+  {
+    "role": "final-green",
+    "run": 36570394253,
+    "job": 109412645015,
+    "artifact": 11033358321,
+    "sha": "1a1a38db702b1da47a829f08ce2740e2d578ea27",
+    "digest": "5ced598cdb313dd1a9b3c932a858fac3ab4cbff8696c663289aed71556998b5a",
+    "conclusion": "success",
+    "attempt": 1,
+    "bytes": 146427
+  }
+]

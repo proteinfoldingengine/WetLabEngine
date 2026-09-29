@@ -1,0 +1,610 @@
+{
+  "failed_publication_attempts": [
+    {
+      "artifact": null,
+      "job": 109416676142,
+      "reason": "publisher action-endpoint prefix mismatch, before evidence or scientific reexecution",
+      "run": 36571592480,
+      "sha": "f7043bfa7263e3454df6d23800c15583a1ab93d2"
+    }
+  ],
+  "fresh_commands": [
+    {
+      "command": [
+        "python",
+        "test_gate.py"
+      ],
+      "exit_code": 0,
+      "name": "tests"
+    },
+    {
+      "command": [
+        "python",
+        "test_schema.py"
+      ],
+      "exit_code": 0,
+      "name": "schema"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "exit_code": 0,
+      "name": "v1622"
+    },
+    {
+      "command": [
+        "python",
+        "tests/test_fcv.py"
+      ],
+      "exit_code": 0,
+      "name": "v1621"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pruning_consistency_audit"
+      ],
+      "exit_code": 0,
+      "name": "parent"
+    },
+    {
+      "command": [
+        "python",
+        "engine.py"
+      ],
+      "exit_code": 0,
+      "name": "producer"
+    },
+    {
+      "command": [
+        "python",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "name": "verifier"
+    }
+  ],
+  "fresh_scientific_bytes_equal": true,
+  "original_runs": [
+    {
+      "artifact": 11032433007,
+      "attempt": 1,
+      "bytes": 16989,
+      "conclusion": "failure",
+      "digest": "d8d9084ad86358f3aa9184b043b0e30ada86fe76b334d370f85997f1ac2c47cd",
+      "job": 109404706116,
+      "role": "wiring-red",
+      "run": 36568025339,
+      "sha": "d75bb1d9c043634a6f60c66d1a0153f39c7192c8"
+    },
+    {
+      "artifact": 11032659764,
+      "attempt": 1,
+      "bytes": 143684,
+      "conclusion": "success",
+      "digest": "1d1abd0de463042e3cd04b4f61ba07de4a662b3d8e4b702c0afbff43f6779af6",
+      "job": 109408436653,
+      "role": "initial-green",
+      "run": 36569139253,
+      "sha": "939293191fd5bdd13a086b1d86ac15af595a1b6d"
+    },
+    {
+      "artifact": 11033676117,
+      "attempt": 1,
+      "bytes": 27336,
+      "conclusion": "failure",
+      "digest": "a1aa0a0b39accacb9ca4ae3665deecc97c2b94c13495814ef4bbb216858bdcc3",
+      "job": 109409840157,
+      "role": "schema-red",
+      "run": 36569553274,
+      "sha": "54a3a1c57be3d749e86c88969b1556452235d513"
+    },
+    {
+      "artifact": 11033358321,
+      "attempt": 1,
+      "bytes": 146427,
+      "conclusion": "success",
+      "digest": "5ced598cdb313dd1a9b3c932a858fac3ab4cbff8696c663289aed71556998b5a",
+      "job": 109412645015,
+      "role": "final-green",
+      "run": 36570394253,
+      "sha": "1a1a38db702b1da47a829f08ce2740e2d578ea27"
+    }
+  ],
+  "publication_attempt": "1",
+  "publication_job": 109418245276,
+  "publication_run": "36572063966",
+  "publication_workflow_head": "5ddad724b9b9ae7888d9f1e119fc6f7765d03c9c",
+  "raw_certificate_sha256": "a9b4d6c28dcb5ffbfcd5a997e2cb12668de37f4360846a45a6b8125985e8ff8a",
+  "review": "self-reviewed; algorithmically independent verifier, no separate reviewer",
+  "scientific_execution_sha": "1a1a38db702b1da47a829f08ce2740e2d578ea27",
+  "scope": "research/v16.23-overlap-descent; not merged to main",
+  "test_counts": {
+    "exact_parent": 15,
+    "new": 25,
+    "v1621": 22,
+    "v1622": 20
+  },
+  "verification": {
+    "by_instance": {
+      "U1:((((()))))|original": {
+        "balanced_equalizers": 25,
+        "coordinate_diagrams": 50,
+        "pairs": 25,
+        "parent_basis_diagrams": 100,
+        "positive_compatible": 365,
+        "positive_gluable": 365,
+        "positive_obstructed": 0,
+        "triples": 125
+      },
+      "U1:((((()))))|relabeled": {
+        "balanced_equalizers": 25,
+        "coordinate_diagrams": 50,
+        "pairs": 25,
+        "parent_basis_diagrams": 100,
+        "positive_compatible": 365,
+        "positive_gluable": 365,
+        "positive_obstructed": 0,
+        "triples": 125
+      },
+      "U1:(((()())))|original": {
+        "balanced_equalizers": 36,
+        "coordinate_diagrams": 72,
+        "pairs": 36,
+        "parent_basis_diagrams": 144,
+        "positive_compatible": 566,
+        "positive_gluable": 554,
+        "positive_obstructed": 12,
+        "triples": 216
+      },
+      "U1:(((()())))|relabeled": {
+        "balanced_equalizers": 36,
+        "coordinate_diagrams": 72,
+        "pairs": 36,
+        "parent_basis_diagrams": 144,
+        "positive_compatible": 566,
+        "positive_gluable": 554,
+        "positive_obstructed": 12,
+        "triples": 216
+      },
+      "U1:(((())()))|original": {
+        "balanced_equalizers": 49,
+        "coordinate_diagrams": 98,
+        "pairs": 49,
+        "parent_basis_diagrams": 196,
+        "positive_compatible": 782,
+        "positive_gluable": 748,
+        "positive_obstructed": 34,
+        "triples": 343
+      },
+      "U1:(((())()))|relabeled": {
+        "balanced_equalizers": 49,
+        "coordinate_diagrams": 98,
+        "pairs": 49,
+        "parent_basis_diagrams": 196,
+        "positive_compatible": 782,
+        "positive_gluable": 748,
+        "positive_obstructed": 34,
+        "triples": 343
+      },
+      "U1:(((()))())|original": {
+        "balanced_equalizers": 64,
+        "coordinate_diagrams": 128,
+        "pairs": 64,
+        "parent_basis_diagrams": 256,
+        "positive_compatible": 1014,
+        "positive_gluable": 950,
+        "positive_obstructed": 64,
+        "triples": 512
+      },
+      "U1:(((()))())|relabeled": {
+        "balanced_equalizers": 64,
+        "coordinate_diagrams": 128,
+        "pairs": 64,
+        "parent_basis_diagrams": 256,
+        "positive_compatible": 1014,
+        "positive_gluable": 950,
+        "positive_obstructed": 64,
+        "triples": 512
+      },
+      "U1:(((())))|original": {
+        "balanced_equalizers": 16,
+        "coordinate_diagrams": 32,
+        "pairs": 16,
+        "parent_basis_diagrams": 64,
+        "positive_compatible": 176,
+        "positive_gluable": 176,
+        "positive_obstructed": 0,
+        "triples": 64
+      },
+      "U1:(((())))|relabeled": {
+        "balanced_equalizers": 16,
+        "coordinate_diagrams": 32,
+        "pairs": 16,
+        "parent_basis_diagrams": 64,
+        "positive_compatible": 176,
+        "positive_gluable": 176,
+        "positive_obstructed": 0,
+        "triples": 64
+      },
+      "U1:((()()()))|original": {
+        "balanced_equalizers": 81,
+        "coordinate_diagrams": 162,
+        "pairs": 81,
+        "parent_basis_diagrams": 324,
+        "positive_compatible": 1413,
+        "positive_gluable": 1275,
+        "positive_obstructed": 138,
+        "triples": 729
+      },
+      "U1:((()()()))|relabeled": {
+        "balanced_equalizers": 81,
+        "coordinate_diagrams": 162,
+        "pairs": 81,
+        "parent_basis_diagrams": 324,
+        "positive_compatible": 1413,
+        "positive_gluable": 1275,
+        "positive_obstructed": 138,
+        "triples": 729
+      },
+      "U1:((()())())|original": {
+        "balanced_equalizers": 100,
+        "coordinate_diagrams": 200,
+        "pairs": 100,
+        "parent_basis_diagrams": 400,
+        "positive_compatible": 1667,
+        "positive_gluable": 1537,
+        "positive_obstructed": 130,
+        "triples": 1000
+      },
+      "U1:((()())())|relabeled": {
+        "balanced_equalizers": 100,
+        "coordinate_diagrams": 200,
+        "pairs": 100,
+        "parent_basis_diagrams": 400,
+        "positive_compatible": 1667,
+        "positive_gluable": 1537,
+        "positive_obstructed": 130,
+        "triples": 1000
+      },
+      "U1:((()()))|original": {
+        "balanced_equalizers": 25,
+        "coordinate_diagrams": 50,
+        "pairs": 25,
+        "parent_basis_diagrams": 100,
+        "positive_compatible": 296,
+        "positive_gluable": 286,
+        "positive_obstructed": 10,
+        "triples": 125
+      },
+      "U1:((()()))|relabeled": {
+        "balanced_equalizers": 25,
+        "coordinate_diagrams": 50,
+        "pairs": 25,
+        "parent_basis_diagrams": 100,
+        "positive_compatible": 296,
+        "positive_gluable": 286,
+        "positive_obstructed": 10,
+        "triples": 125
+      },
+      "U1:((())(()))|original": {
+        "balanced_equalizers": 81,
+        "coordinate_diagrams": 162,
+        "pairs": 81,
+        "parent_basis_diagrams": 324,
+        "positive_compatible": 1302,
+        "positive_gluable": 1204,
+        "positive_obstructed": 98,
+        "triples": 729
+      },
+      "U1:((())(()))|relabeled": {
+        "balanced_equalizers": 81,
+        "coordinate_diagrams": 162,
+        "pairs": 81,
+        "parent_basis_diagrams": 324,
+        "positive_compatible": 1302,
+        "positive_gluable": 1204,
+        "positive_obstructed": 98,
+        "triples": 729
+      },
+      "U1:((())()())|original": {
+        "balanced_equalizers": 144,
+        "coordinate_diagrams": 288,
+        "pairs": 144,
+        "parent_basis_diagrams": 576,
+        "positive_compatible": 2537,
+        "positive_gluable": 2177,
+        "positive_obstructed": 360,
+        "triples": 1728
+      },
+      "U1:((())()())|relabeled": {
+        "balanced_equalizers": 144,
+        "coordinate_diagrams": 288,
+        "pairs": 144,
+        "parent_basis_diagrams": 576,
+        "positive_compatible": 2537,
+        "positive_gluable": 2177,
+        "positive_obstructed": 360,
+        "triples": 1728
+      },
+      "U1:((())())|original": {
+        "balanced_equalizers": 36,
+        "coordinate_diagrams": 72,
+        "pairs": 36,
+        "parent_basis_diagrams": 144,
+        "positive_compatible": 432,
+        "positive_gluable": 404,
+        "positive_obstructed": 28,
+        "triples": 216
+      },
+      "U1:((())())|relabeled": {
+        "balanced_equalizers": 36,
+        "coordinate_diagrams": 72,
+        "pairs": 36,
+        "parent_basis_diagrams": 144,
+        "positive_compatible": 432,
+        "positive_gluable": 404,
+        "positive_obstructed": 28,
+        "triples": 216
+      },
+      "U1:((()))|original": {
+        "balanced_equalizers": 9,
+        "coordinate_diagrams": 18,
+        "pairs": 9,
+        "parent_basis_diagrams": 36,
+        "positive_compatible": 71,
+        "positive_gluable": 71,
+        "positive_obstructed": 0,
+        "triples": 27
+      },
+      "U1:((()))|relabeled": {
+        "balanced_equalizers": 9,
+        "coordinate_diagrams": 18,
+        "pairs": 9,
+        "parent_basis_diagrams": 36,
+        "positive_compatible": 71,
+        "positive_gluable": 71,
+        "positive_obstructed": 0,
+        "triples": 27
+      },
+      "U1:(()()()())|original": {
+        "balanced_equalizers": 256,
+        "coordinate_diagrams": 512,
+        "pairs": 256,
+        "parent_basis_diagrams": 1024,
+        "positive_compatible": 4998,
+        "positive_gluable": 3936,
+        "positive_obstructed": 1062,
+        "triples": 4096
+      },
+      "U1:(()()()())|relabeled": {
+        "balanced_equalizers": 256,
+        "coordinate_diagrams": 512,
+        "pairs": 256,
+        "parent_basis_diagrams": 1024,
+        "positive_compatible": 4998,
+        "positive_gluable": 3936,
+        "positive_obstructed": 1062,
+        "triples": 4096
+      },
+      "U1:(()()())|original": {
+        "balanced_equalizers": 64,
+        "coordinate_diagrams": 128,
+        "pairs": 64,
+        "parent_basis_diagrams": 256,
+        "positive_compatible": 846,
+        "positive_gluable": 732,
+        "positive_obstructed": 114,
+        "triples": 512
+      },
+      "U1:(()()())|relabeled": {
+        "balanced_equalizers": 64,
+        "coordinate_diagrams": 128,
+        "pairs": 64,
+        "parent_basis_diagrams": 256,
+        "positive_compatible": 846,
+        "positive_gluable": 732,
+        "positive_obstructed": 114,
+        "triples": 512
+      },
+      "U1:(()())|original": {
+        "balanced_equalizers": 16,
+        "coordinate_diagrams": 32,
+        "pairs": 16,
+        "parent_basis_diagrams": 64,
+        "positive_compatible": 137,
+        "positive_gluable": 129,
+        "positive_obstructed": 8,
+        "triples": 64
+      },
+      "U1:(()())|relabeled": {
+        "balanced_equalizers": 16,
+        "coordinate_diagrams": 32,
+        "pairs": 16,
+        "parent_basis_diagrams": 64,
+        "positive_compatible": 137,
+        "positive_gluable": 129,
+        "positive_obstructed": 8,
+        "triples": 64
+      },
+      "U1:(())|original": {
+        "balanced_equalizers": 4,
+        "coordinate_diagrams": 8,
+        "pairs": 4,
+        "parent_basis_diagrams": 16,
+        "positive_compatible": 21,
+        "positive_gluable": 21,
+        "positive_obstructed": 0,
+        "triples": 8
+      },
+      "U1:(())|relabeled": {
+        "balanced_equalizers": 4,
+        "coordinate_diagrams": 8,
+        "pairs": 4,
+        "parent_basis_diagrams": 16,
+        "positive_compatible": 21,
+        "positive_gluable": 21,
+        "positive_obstructed": 0,
+        "triples": 8
+      },
+      "U1:()|original": {
+        "balanced_equalizers": 1,
+        "coordinate_diagrams": 2,
+        "pairs": 1,
+        "parent_basis_diagrams": 4,
+        "positive_compatible": 3,
+        "positive_gluable": 3,
+        "positive_obstructed": 0,
+        "triples": 1
+      },
+      "U1:()|relabeled": {
+        "balanced_equalizers": 1,
+        "coordinate_diagrams": 2,
+        "pairs": 1,
+        "parent_basis_diagrams": 4,
+        "positive_compatible": 3,
+        "positive_gluable": 3,
+        "positive_obstructed": 0,
+        "triples": 1
+      },
+      "U2:1|original": {
+        "balanced_equalizers": 625,
+        "coordinate_diagrams": 1250,
+        "pairs": 625,
+        "parent_basis_diagrams": 0,
+        "positive_compatible": 17171,
+        "positive_gluable": 15561,
+        "positive_obstructed": 1610,
+        "triples": 15625
+      },
+      "U2:1|relabeled": {
+        "balanced_equalizers": 625,
+        "coordinate_diagrams": 1250,
+        "pairs": 625,
+        "parent_basis_diagrams": 0,
+        "positive_compatible": 17171,
+        "positive_gluable": 15561,
+        "positive_obstructed": 1610,
+        "triples": 15625
+      },
+      "U2:2|original": {
+        "balanced_equalizers": 121,
+        "coordinate_diagrams": 242,
+        "pairs": 121,
+        "parent_basis_diagrams": 0,
+        "positive_compatible": 2617,
+        "positive_gluable": 2463,
+        "positive_obstructed": 154,
+        "triples": 1331
+      },
+      "U2:2|relabeled": {
+        "balanced_equalizers": 121,
+        "coordinate_diagrams": 242,
+        "pairs": 121,
+        "parent_basis_diagrams": 0,
+        "positive_compatible": 2617,
+        "positive_gluable": 2463,
+        "positive_obstructed": 154,
+        "triples": 1331
+      },
+      "U2:3|original": {
+        "balanced_equalizers": 900,
+        "coordinate_diagrams": 1800,
+        "pairs": 900,
+        "parent_basis_diagrams": 0,
+        "positive_compatible": 26016,
+        "positive_gluable": 22120,
+        "positive_obstructed": 3896,
+        "triples": 27000
+      },
+      "U2:3|relabeled": {
+        "balanced_equalizers": 900,
+        "coordinate_diagrams": 1800,
+        "pairs": 900,
+        "parent_basis_diagrams": 0,
+        "positive_compatible": 26016,
+        "positive_gluable": 22120,
+        "positive_obstructed": 3896,
+        "triples": 27000
+      },
+      "U2:4|original": {
+        "balanced_equalizers": 256,
+        "coordinate_diagrams": 512,
+        "pairs": 256,
+        "parent_basis_diagrams": 0,
+        "positive_compatible": 6532,
+        "positive_gluable": 6020,
+        "positive_obstructed": 512,
+        "triples": 4096
+      },
+      "U2:4|relabeled": {
+        "balanced_equalizers": 256,
+        "coordinate_diagrams": 512,
+        "pairs": 256,
+        "parent_basis_diagrams": 0,
+        "positive_compatible": 6532,
+        "positive_gluable": 6020,
+        "positive_obstructed": 512,
+        "triples": 4096
+      }
+    },
+    "checks_executed": 3083939,
+    "execution_status": "COMPLETED",
+    "input_validity": "VALID",
+    "instances": 42,
+    "parent_comparison_dimension_preserved": 4,
+    "proof_status": "bounded exact certificates; general arguments O1-O7",
+    "raw_sha256": "a9b4d6c28dcb5ffbfcd5a997e2cb12668de37f4360846a45a6b8125985e8ff8a",
+    "scope": "shared finite prefix trees; formal signed and nonnegative rational diagnostics",
+    "shape_counts": {
+      "1": 1,
+      "2": 1,
+      "3": 2,
+      "4": 4,
+      "5": 9
+    },
+    "totals": {
+      "balanced_equalizers": 5818,
+      "coordinate_diagrams": 11636,
+      "pairs": 5818,
+      "parent_basis_diagrams": 8056,
+      "positive_compatible": 137924,
+      "positive_gluable": 121464,
+      "positive_obstructed": 16460,
+      "triples": 117094
+    },
+    "version": "16.23",
+    "witnesses": {
+      "pair": {
+        "all_pairs_positive_gluable": false,
+        "positive_global_exists": false,
+        "unique_signed_global": [
+          "-1",
+          "1",
+          "1"
+        ]
+      },
+      "triple": {
+        "all_pairs_positive_gluable": true,
+        "positive_global_exists": false,
+        "unique_signed_global": [
+          "-1",
+          "1",
+          "1",
+          "1"
+        ]
+      }
+    }
+  },
+  "verification_sha256": "76316091867ac1f6daf3cb8c9b5e8df3f67b23ded780afe79b853aa8568085bf",
+  "version": "16.23",
+  "xz_certificate_sha256": "6b27330c912ccb39f54a8e5c91d58b140d65036cf93a2e2b00c76836326b0a12"
+}

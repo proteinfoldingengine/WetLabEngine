@@ -1,0 +1,64 @@
+[
+  {
+    "name": "tests",
+    "command": [
+      "python",
+      "test_gate.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "schema",
+    "command": [
+      "python",
+      "test_schema.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "v1622",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-v"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "v1621",
+    "command": [
+      "python",
+      "tests/test_fcv.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "parent",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "-v",
+      "test_pruning_consistency_audit"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "producer",
+    "command": [
+      "python",
+      "engine.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "verifier",
+    "command": [
+      "python",
+      "verify.py"
+    ],
+    "exit_code": 0
+  }
+]
