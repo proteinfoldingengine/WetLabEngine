@@ -27,6 +27,7 @@ jobs:
           mkdir -p evidence
           run() { local name="$1"; shift; set +e; "$@" > "evidence/$name.log" 2>&1; local code=$?; set -e; cat "evidence/$name.log"; printf '%s\t%s\n' "$name" "$code" >> evidence/exit_codes.tsv; return "$code"; }
           run tests python test_gate.py
+          run validation python test_validation.py
           run v1623 bash -c 'cd ../v16.23-overlap-descent && python test_gate.py && python test_schema.py'
           run v1622 bash -c 'cd ../v16.22-response-selection-closure && python -m unittest discover -v'
           run v1621 bash -c 'cd ../../foundational-closure-verification && python tests/test_fcv.py'
