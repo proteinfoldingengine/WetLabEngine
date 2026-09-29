@@ -1,0 +1,51 @@
+{
+  "tests_run": 28,
+  "failures": 0,
+  "errors": 0,
+  "rejections": [
+    {
+      "defect": "corrupt-dual",
+      "reason": "false separating functional"
+    },
+    {
+      "defect": "corrupt-global-witness",
+      "reason": "false signed global reconstruction"
+    },
+    {
+      "defect": "corrupt-local-marginal",
+      "reason": "false local marginal"
+    },
+    {
+      "defect": "false-child-cover",
+      "reason": "false minimum-cover size"
+    },
+    {
+      "defect": "false-high-threshold",
+      "reason": "false consistency order"
+    },
+    {
+      "defect": "false-low-threshold",
+      "reason": "false consistency order"
+    },
+    {
+      "defect": "false-sample-feasibility",
+      "reason": "false sample feasibility/order"
+    },
+    {
+      "defect": "foreign-origin",
+      "reason": "version/origin mismatch"
+    },
+    {
+      "defect": "boolean-threshold",
+      "reason": "false consistency order"
+    },
+    {
+      "defect": "missing-child-ledger",
+      "reason": "missing required field"
+    },
+    {
+      "defect": "missing-sample",
+      "reason": "missing compatible sample"
+    }
+  ]
+}
