@@ -17,3 +17,5 @@ class Tests(unittest.TestCase):
   g=self.gate();e=s.Symbol('e',positive=True);c=s.diag(1,e,0);n=s.diag(0,0,2);self.assertEqual(g.local_derivatives(c,n),[0,0,0,2*e]);self.assertEqual(g.local_derivatives(c.subs(e,0),n),[0,0,0,0])
  def test_identity_order_and_zero_direction(self):
   g=self.gate();c=s.eye(3);self.assertEqual(g.local_derivatives(c,s.zeros(3)),[0]*4)
+ def test_exact_projected_bounds(self):
+  g=self.gate();h=s.diag(0,2,0);n=s.diag(0,3,4);r=g.projected_bounds([h],n);self.assertEqual(r['reference_norm_squared'],[4]);self.assertEqual(r['bound_squared'],[100]);self.assertEqual(r['response_squared'],[36]);self.assertTrue(r['valid'])
