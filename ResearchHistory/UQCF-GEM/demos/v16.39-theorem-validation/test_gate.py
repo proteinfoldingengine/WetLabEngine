@@ -76,6 +76,18 @@ class Certificate(unittest.TestCase):
   with self.assertRaises(ValueError):self.c.verify(self.obase,d)
  def test_obstruction_records_verified(self):self.assertEqual(self.c.verify(self.obase,self.odoc)['status'],'VERIFIED')
 class Provenance(unittest.TestCase):
+ def test_repeat_publication_replaces_reproduction(self):
+  import tempfile,subprocess,os
+  workflow=Path(__file__).resolve().parents[4]/'.github/workflows/uqcf-v1639-certification.yml'
+  commands=[line.strip() for line in workflow.read_text().splitlines() if line.strip() in ('rm -rf "$D/evidence/reproduction"','cp -a out/reproduction "$D/evidence/reproduction"')]
+  self.assertIn('cp -a out/reproduction "$D/evidence/reproduction"',commands)
+  with tempfile.TemporaryDirectory() as t:
+   root=Path(t);source=root/'out/reproduction';target=root/'stage/evidence/reproduction'
+   source.mkdir(parents=True);target.mkdir(parents=True)
+   (source/'METADATA.json').write_text('fresh');(target/'METADATA.json').write_text('old');(target/'stale').write_text('old')
+   subprocess.run(['bash','-euc','\n'.join(commands)],cwd=root,env={**os.environ,'D':str(root/'stage')},check=True)
+   self.assertEqual(sorted(p.name for p in target.iterdir()),['METADATA.json'])
+   self.assertEqual((target/'METADATA.json').read_text(),'fresh')
  def fixture(self):return ({'id':7,'head_sha':'abc','run_attempt':2},{'name':'v1639-science-abc','workflow_run':{'id':7,'head_sha':'abc'}},{'head':'abc','trigger_sha':'abc','workflow_sha':'abc','run_id':'7','run_attempt':'2','phase':'science'})
  def test_current_stage_provenance_accepts(self):
   import publication
