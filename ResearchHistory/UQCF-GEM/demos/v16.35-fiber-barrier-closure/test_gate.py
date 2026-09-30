@@ -41,4 +41,19 @@ class T(unittest.TestCase):
   p,v=self.m();d=p.produce(3)
   if d['barriers']:d['barriers'][0]['changed_coordinates']=[]
   with self.assertRaises(ValueError):v.verify_document(d)
+ def test_false_gate_e_classification_rejected(self):
+  p,v=self.m();d=p.produce(3);d['gate_e']='FIXED'
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_false_compulsory_coordinate_rejected(self):
+  p,v=self.m();d=p.produce(3)
+  if d['barriers']:d['barriers'][0]['compulsory_coordinates']=[999]
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_false_possible_coordinate_rejected(self):
+  p,v=self.m();d=p.produce(3)
+  if d['barriers']:d['barriers'][0]['possible_coordinates']=[]
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_bad_alternative_minimax_rejected(self):
+  p,v=self.m();d=p.produce(3)
+  if d['barriers']:d['barriers'][0]['alternative_path']=[d['barriers'][0]['a'],d['barriers'][0]['b']]
+  with self.assertRaises(ValueError):v.verify_document(d)
 if __name__=='__main__':unittest.main(verbosity=2)
