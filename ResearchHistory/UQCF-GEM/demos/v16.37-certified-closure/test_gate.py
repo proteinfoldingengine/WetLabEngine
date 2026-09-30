@@ -52,4 +52,18 @@ class Gates(unittest.TestCase):
   self.reject(lambda d:d['summary'].__setitem__('endpoint_pairs',0))
  def test_missing_required_field(self):
   self.reject(lambda d:d.pop('graphs'))
+class Provenance(unittest.TestCase):
+ def test_bound_provenance_accepts(self):
+  import publication as z
+  self.assertIsNone(z.validate_provenance({'id':7,'head_sha':'abc','run_attempt':2}, {'name':'v1637-science-abc','workflow_run':{'id':7,'head_sha':'abc'}}, {'head':'abc','trigger_sha':'abc','workflow_sha':'abc','run_id':'7','run_attempt':'2','phase':'science'},'abc','7','2'))
+ def test_false_provenance_rejected(self):
+  import publication as z
+  base={'head':'abc','trigger_sha':'abc','workflow_sha':'abc','run_id':'7','run_attempt':'2','phase':'science'}
+  for field in base:
+   meta=dict(base);meta[field]='wrong'
+   with self.subTest(field=field),self.assertRaises(ValueError):z.validate_provenance({'id':7,'head_sha':'abc','run_attempt':2},{'name':'v1637-science-abc','workflow_run':{'id':7,'head_sha':'abc'}},meta,'abc','7','2')
+ def test_changed_and_omitted_source_rejected(self):
+  import publication as z
+  for actual in ({'a.py':'ok'},{'a.py':'ok','input.json':'changed'}):
+   with self.assertRaises(ValueError):z.validate_source_map({'a.py':'ok','input.json':'right'},actual)
 if __name__=='__main__':unittest.main(verbosity=2)
