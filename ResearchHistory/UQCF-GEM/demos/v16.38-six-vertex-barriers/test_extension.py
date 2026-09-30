@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys,copy,unittest
 sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'v16.37-certified-closure'))
-import producer
+import producer,verifier
 sys.path.pop(0)
 import run_campaign
 
