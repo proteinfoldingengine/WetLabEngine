@@ -26,3 +26,4 @@ Exact parent e4de671b3e483cc82a2e240dbd6a8d4d83e6518f; n<=6,k1..3,111graphs,244c
 - [ ] Verify downloaded artifacts and publication/source bindings.
 - [ ] Ready/merge verified head; actual-merge science/tests/manifest audit and artifact.
 - [ ] Durable receipt and explicit finite/universal distinction; preserve exploratory PR85 history.
+
