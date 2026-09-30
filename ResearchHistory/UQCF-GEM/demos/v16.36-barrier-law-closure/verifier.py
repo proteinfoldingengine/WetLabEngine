@@ -42,6 +42,40 @@ def signature(p,A,a,b,z):
  L=[v for v in range(len(p)) if not avoid(v)]
  att=[[v,sorted({q(p,s)[v] for s in allowed})] for v in L]
  return {'q':list(q0),'compulsory':L,'attainable':att}
+def canonical_pairs(bound=4):
+ out=[]
+ # same rooted-unordered representative construction as frozen category, implemented independently here
+ dd={}
+ def code(p):
+  ch={v:[] for v in range(len(p))}
+  for w in range(1,len(p)):ch[p[w]].append(w)
+  def rr(v):return '('+''.join(sorted(rr(w) for w in ch[v]))+')'
+  return rr(0)
+ for n in range(1,bound+1):
+  for z in product(*(range(i) for i in range(1,n))):
+   p=(-1,)+z;dd.setdefault(code(p),p)
+ for p in sorted(dd.values(),key=lambda x:(len(x),x)):
+  for k in range(1,4):
+   S=covers(p,k);A=graph(S);G={}
+   for s in S:G.setdefault(q(p,s),[]).append(s)
+   for q0,mem in G.items():
+    un=set(mem);Cs=[]
+    while un:
+     s=un.pop();C={s};todo=deque([s])
+     while todo:
+      x=todo.popleft()
+      for y in A[x]:
+       if y in un and q(p,y)==q0:un.remove(y);C.add(y);todo.append(y)
+     Cs.append(C)
+    if len(Cs)<2:continue
+    cache={a:exact(p,A,a) for a in mem}
+    for i,j in combinations(range(len(Cs)),2):
+     for a in Cs[i]:
+      for b in Cs[j]:
+       z=cache[a][b]
+       if z[0]>0:
+        out.append((tuple(p),k,tuple(q0),tuple(map(tuple,a)),tuple(map(tuple,b)),z,signature(p,A,a,b,z)))
+ return out
 def verify_document(d):
  need(all(k in d for k in ('gate_a','gate_b','gate_c','gate_d','gate_e')),'missing gate')
  for r in d['pairs']:
@@ -53,6 +87,15 @@ def verify_document(d):
   groups.setdefault(json.dumps(r['candidate_signature'],sort_keys=True),set()).add((r['B1'],r['Binf'],r['Bs']))
  cols=[v for v in groups.values() if len(v)>1]
  need(d['gate_c']['groups']==len(groups),'group count');need(d['gate_c']['collisions']==[{'signature':__import__('json').loads(s),'barriers':[list(x) for x in sorted(v)]} for s,v in groups.items() if len(v)>1],'collision set')
+ # Exact completeness: independently enumerate canonical inherited records and require one-for-one equality.
+ canon=canonical_pairs(d.get('bound',4))
+ def key_raw(p,k,q0,a,b,z,sig):
+  import json
+  aa=tuple(map(tuple,a));bb=tuple(map(tuple,b));ends=tuple(sorted((aa,bb)))
+  return (tuple(p),k,tuple(q0),ends,tuple(z),json.dumps(sig,sort_keys=True))
+ expected=[key_raw(p,k,q0,a,b,z,sig) for p,k,q0,a,b,z,sig in canon]
+ supplied=[key_raw(r['parents'],r['view_count'],r['q'],r['a'],r['b'],(r['B1'],r['Binf'],r['Bs']),r['candidate_signature']) for r in d['pairs']]
+ need(len(supplied)==len(expected),'pair count mismatch');need(len(set(supplied))==len(supplied),'duplicate pair');need(set(supplied)==set(expected),'omitted extra or substituted pair')
  need(d['gate_d']==('FIBER_CONTEXT' if cols else 'UNRESOLVED'),'gate d')
  # Independently reconstruct Gate E five-vertex extension and resource exclusions.
  def shapes5():

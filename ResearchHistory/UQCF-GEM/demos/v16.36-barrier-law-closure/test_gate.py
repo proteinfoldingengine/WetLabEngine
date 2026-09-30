@@ -29,4 +29,22 @@ class T(unittest.TestCase):
  def test_hidden_exclusion_rejected(self):
   p,v=self.m();d=p.produce(3);d['gate_e']['excluded'].append({'parents':[-1],'view_count':1,'states':9999,'reason':'EXCLUDED_RESOURCE'})
   with self.assertRaises(ValueError):v.verify_document(d)
+ def test_omitted_valid_pair_rejected(self):
+  p,v=self.m();d=p.produce(3)
+  if d['pairs']:d['pairs'].pop()
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_extra_duplicate_pair_rejected(self):
+  import copy
+  p,v=self.m();d=p.produce(3)
+  if d['pairs']:d['pairs'].append(copy.deepcopy(d['pairs'][0]))
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_substituted_pair_rejected(self):
+  import copy
+  p,v=self.m();d=p.produce(4)
+  if len(d['pairs'])>1:
+   import json
+   def k(r):return (tuple(r['parents']),r['view_count'],tuple(r['q']))
+   j=next((j for j in range(1,len(d['pairs'])) if k(d['pairs'][j])!=k(d['pairs'][0])),None)
+   if j is not None:d['pairs'][0]=copy.deepcopy(d['pairs'][j])
+  with self.assertRaises(ValueError):v.verify_document(d)
 if __name__=='__main__':unittest.main(verbosity=2)
