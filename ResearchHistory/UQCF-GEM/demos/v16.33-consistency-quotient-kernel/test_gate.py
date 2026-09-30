@@ -11,4 +11,20 @@ class T(unittest.TestCase):
   with self.assertRaises(ValueError):v.verify_move(b,True)
  def test_complete_small(self):
   p,v=self.m();r=v.verify_document(p.produce(3));self.assertEqual(r['execution_status'],'COMPLETED')
+ def test_verifier_rejects_false_connectivity(self):
+  p,v=self.m();d=p.produce(3)
+  c=next(x for x in d['classes'] if len(x['members'])>1)
+  c['connected']=not c['connected']
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_verifier_rejects_omitted_member(self):
+  p,v=self.m();d=p.produce(3)
+  c=next(x for x in d['classes'] if len(x['members'])>2)
+  c['members'].pop()
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_verifier_rejects_false_bulk_counts(self):
+  p,v=self.m();d=p.produce(3);d['disconnected_classes']+=1
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_verifier_rejects_missing_class(self):
+  p,v=self.m();d=p.produce(3);d['classes'].pop()
+  with self.assertRaises(ValueError):v.verify_document(d)
 if __name__=='__main__':unittest.main(verbosity=2)
