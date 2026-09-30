@@ -42,5 +42,14 @@ class Gates(unittest.TestCase):
  def test_lex_label_loss_control(self):
   A=[[1,2],[0,3],[0,3],[1,2,4],[3,5],[4]];C=[(0,0,0),(2,2,1),(3,1,3),(0,0,0),(3,1,3),(0,0,0)]
   self.assertEqual(p.barriers(A,C,0,5)[1],[3,1,3])
- if False: pass
+ def test_float_certificate_rejected(self):
+  self.reject(lambda d:d['graphs'][0]['q'][0].__setitem__(0,0.0))
+ def test_false_lower_threshold_cut(self):
+  def f(d):
+   r=next(g for g in d['graphs'] if g['pairs'])['pairs'][0];r['lower_reachable'][0].append(r['representatives'][1])
+  self.reject(f)
+ def test_false_endpoint_count(self):
+  self.reject(lambda d:d['summary'].__setitem__('endpoint_pairs',0))
+ def test_missing_required_field(self):
+  self.reject(lambda d:d.pop('graphs'))
 if __name__=='__main__':unittest.main(verbosity=2)
