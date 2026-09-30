@@ -74,7 +74,7 @@ def analyze(p,k,cap=None):
     for b in Cs[j]:
      z=cache[a][b];vals.append(z)
      L,allowed=loc(p,A,a,b,z);ranges=[sorted({q(p,s)[v] for s in allowed}) for v in L]
-     pairs.append({'parents':list(p),'view_count':k,'q':list(q0),'components':[i,j],'B1':z[0],'Binf':z[1],'Bs':z[2],'candidate_signature':{'q':list(q0),'compulsory':L,'attainable':[ [v,r] for v,r in zip(L,ranges)]}})
+     pairs.append({'parents':list(p),'view_count':k,'q':list(q0),'components':[i,j],'a':[list(x) for x in a],'b':[list(x) for x in b],'B1':z[0],'Binf':z[1],'Bs':z[2],'candidate_signature':{'q':list(q0),'compulsory':L,'attainable':[ [v,r] for v,r in zip(L,ranges)]}})
    dist[i,j]=min(x[0] for x in vals)
   for i,j,l in combinations(range(len(Cs)),3):
    a=dist[min(i,j),max(i,j)];b=dist[min(j,l),max(j,l)];c=dist[min(i,l),max(i,l)]
