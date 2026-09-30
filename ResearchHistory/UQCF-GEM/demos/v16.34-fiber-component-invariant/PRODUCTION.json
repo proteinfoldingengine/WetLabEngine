@@ -1,0 +1,33 @@
+{
+  "bound": 4,
+  "component_count": 41,
+  "disconnected_fibers": 4,
+  "maxviews": 3,
+  "stats": {
+    "E": {
+      "collide": 0,
+      "vary": 19
+    },
+    "M": {
+      "collide": 17,
+      "vary": 18
+    },
+    "P": {
+      "collide": 17,
+      "vary": 18
+    }
+  },
+  "verdict": {
+    "E": "PARTIAL_INVARIANT",
+    "M": "PARTIAL_INVARIANT",
+    "P": "PARTIAL_INVARIANT"
+  },
+  "version": "16.34",
+  "witness_keys": [
+    "E_vary",
+    "M_collide",
+    "M_vary",
+    "P_collide",
+    "P_vary"
+  ]
+}
