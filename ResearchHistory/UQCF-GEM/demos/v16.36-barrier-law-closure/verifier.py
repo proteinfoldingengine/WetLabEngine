@@ -88,7 +88,7 @@ def verify_document(d):
  cols=[v for v in groups.values() if len(v)>1]
  need(d['gate_c']['groups']==len(groups),'group count');need(d['gate_c']['collisions']==[{'signature':__import__('json').loads(s),'barriers':[list(x) for x in sorted(v)]} for s,v in groups.items() if len(v)>1],'collision set')
  # Exact completeness: independently enumerate canonical inherited records and require one-for-one equality.
- canon=canonical_pairs(4)
+ canon=canonical_pairs(d.get('bound',4))
  def key_raw(p,k,q0,a,b,z,sig):
   import json
   aa=tuple(map(tuple,a));bb=tuple(map(tuple,b));ends=tuple(sorted((aa,bb)))
