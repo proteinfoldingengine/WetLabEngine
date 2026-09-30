@@ -1,0 +1,26 @@
+name: UQCF v16.36 proof-ledger publication
+on:
+  push:
+    branches: [research/v16.36-proof-ledger-closure]
+    paths: ['.github/workflows/uqcf-v1636-proof-publication.yml']
+permissions: {contents: read}
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.36-barrier-law-closure/verify_proof_ledger.py
+      - name: Commit proof closure provenance
+        run: |
+          P=ResearchHistory/UQCF-GEM/demos/v16.36-barrier-law-closure/
+          sha256sum "$P/PROOFS.md" "$P/verify_proof_ledger.py" ResearchHistory/UQCF-GEM/V16_36_REPORT.md > "$P/PROOF_CLOSURE_SHA256SUMS"
+          printf '{"version":"16.36","proof_ledger_closure":true,"verification_run":36720664654,"publication_run":"%s","publication_head":"%s"}\n' "$GITHUB_RUN_ID" "$GITHUB_SHA" > "$P/PROOF_CLOSURE_EVIDENCE.json"
+          git config user.name 'github-actions[bot]';git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$P/PROOF_CLOSURE_SHA256SUMS" "$P/PROOF_CLOSURE_EVIDENCE.json"
+          git commit -m 'v16.36 publish proof-ledger closure evidence [skip ci]'
+          git push origin HEAD:refs/heads/research/v16.36-proof-ledger-closure
+          (cd "$P" && sha256sum -c PROOF_CLOSURE_SHA256SUMS)
