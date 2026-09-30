@@ -53,6 +53,14 @@ class Certificate(unittest.TestCase):
  def test_duplicate_record(self):self.reject(lambda d:d['records'].append(d['records'][0]))
  def test_same_count_substitution(self):self.reject(lambda d:d['records'].__setitem__(0,d['records'][1]))
  def test_false_sc(self):self.reject(lambda d:d['records'][0]['classification'].__setitem__('sc',False))
+ def test_false_positive_sc(self):
+  d=copy.deepcopy(self.odoc);rec=next(r for r in d['records'] if r['static'])
+  self.assertFalse(rec['classification']['sc']);rec['classification']['sc']=True
+  with self.assertRaises(ValueError):self.c.verify(self.obase,d)
+ def test_false_positive_endpoint_full(self):
+  d=copy.deepcopy(self.odoc);rec=next(r for r in d['records'] if r['static'])
+  self.assertFalse(rec['classification']['endpoint_full']);rec['classification']['endpoint_full']=True
+  with self.assertRaises(ValueError):self.c.verify(self.obase,d)
  def test_false_summary(self):self.reject(lambda d:d['summary'].__setitem__('component_pairs',0))
  def test_false_verdict(self):self.reject(lambda d:d.__setitem__('outcome','UNIT_THEOREM'))
  def test_wrong_schema(self):self.reject(lambda d:d.__setitem__('campaign','16.38'))
