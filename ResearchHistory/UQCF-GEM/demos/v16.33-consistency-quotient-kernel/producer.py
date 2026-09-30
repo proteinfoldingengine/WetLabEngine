@@ -59,7 +59,7 @@ def produce(bound=4,maxviews=3):
     total+=1
     if len(mem)>1:
      nontriv+=1;mins,conn=class_info(p,mem);disc+=not conn;multi+=len(mins)>1
-     rec={'parents':list(p),'q':list(qq),'members':[[list(x) for x in y] for y in mem],'minima':[[list(x) for x in y] for y in mins],'unique_minimum':len(mins)==1,'connected':conn}
+     rec={'parents':list(p),'view_count':k,'q':list(qq),'members':[[list(x) for x in y] for y in mem],'minima':[[list(x) for x in y] for y in mins],'unique_minimum':len(mins)==1,'connected':conn}
      if first_multi is None and len(mins)>1:first_multi=rec
      if len(classes)<30:classes.append(rec)
     dig.update((repr((p,k,qq,mem))+'\n').encode())
