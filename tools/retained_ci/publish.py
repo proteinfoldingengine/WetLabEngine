@@ -1,7 +1,7 @@
 """Artifact-bound publication and automated receipt preparation."""
 from pathlib import Path
 import json,os,sys,urllib.request,urllib.error,shutil,subprocess
-from core import HERE,ROOT,STAGE,dump,sha,unpack_zip,verify_package,verify_manifest,write_manifest,replace_directory,scientific_equal,source_map
+from core import HERE,ROOT,STAGE,dump,sha,unpack_zip,verify_package,verify_manifest,write_manifest,replace_directory,scientific_equal,source_map,PARENT
 API='https://api.github.com/repos/'+os.environ.get('GITHUB_REPOSITORY','proteinfoldingengine/WetLabEngine')
 
 def get(url):
@@ -62,14 +62,29 @@ def verify_publication():
     verify_package(HERE/'evidence/science');verify_package(HERE/'evidence/reproduction')
     print(json.dumps({'publication':'VERIFIED','members':len(manifest)}))
 
-def receipt(run_id,out):
+def validate_merge(run,pr,commit,publication,head):
+    if run.get('head_sha')!=head or run.get('event')!='push' or run.get('head_branch')!='research/v16.34-fiber-component-invariant' or run.get('path')!='.github/workflows/retained-ci-optimization.yml':raise ValueError('merge workflow identity')
+    if not pr.get('merged') or pr.get('merge_commit_sha')!=head or pr.get('base',{}).get('ref')!='research/v16.34-fiber-component-invariant':raise ValueError('merged PR identity')
+    if [p.get('sha') for p in commit.get('parents',[])]!=[PARENT,pr.get('head',{}).get('sha')]:raise ValueError('actual merge parents')
+    if commit.get('sha')!=head or publication.get('sha')!=pr.get('head',{}).get('sha') or commit.get('tree',{}).get('sha')!=publication.get('tree',{}).get('sha'):raise ValueError('publication/merge tree')
+
+def receipt(run_id,out,pr_number):
     out=Path(out);download(run_id,out,'post_merge')
     meta=json.loads((out/'post_merge/METADATA.json').read_text())
     head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
     if meta['head']!=head:raise ValueError('receipt checkout must be actual merge')
+    run=json.loads((out/'RUN.json').read_text());pr=json.loads(get(API+'/pulls/'+str(pr_number)))
+    commit=json.loads(get(API+'/git/commits/'+head));publication_commit=json.loads(get(API+'/git/commits/'+pr['head']['sha']))
+    validate_merge(run,pr,commit,publication_commit,head)
+    dump(out/'MERGED_PR.json',pr);dump(out/'MERGE_COMMIT.json',commit);dump(out/'PUBLICATION_COMMIT.json',publication_commit)
     verify_publication();scientific_equal(out/'post_merge/scientific',HERE/'evidence/science/scientific')
     # Retain exact execution data; source and scientific bytes already have durable copies.
-    dump(out/'RECEIPT.json',{'status':'VERIFIED_ACTUAL_MERGE','merge':head,'run':int(run_id),'run_attempt':meta['run_attempt'],'integrity':json.loads((out/'INTEGRITY.json').read_text()),'scientific_bytes_identical':True,'source_map':source_map()})
+    dump(out/'RECEIPT.json',{'status':'VERIFIED_ACTUAL_MERGE','merge':head,'run':int(run_id),'run_attempt':meta['run_attempt'],'integrity':json.loads((out/'INTEGRITY.json').read_text()),'scientific_bytes_identical':True,'source_manifest_sha256':sha((out/'post_merge/SOURCE_MANIFEST.json').read_bytes()),'pr':int(pr_number),'binary_retention':'Post-merge source archive and scientific files exactly equal durable tools/retained_ci/evidence/science members; hashes retained in post-merge execution manifest.'})
+    for name in ('SOURCE.tar.gz','SOURCE_MANIFEST.json'):
+        if (out/'post_merge'/name).read_bytes()!=(HERE/'evidence/science'/name).read_bytes():raise ValueError('post-merge source bytes differ')
+    (out/'post_merge-artifact.zip').unlink()
+    (out/'post_merge/SOURCE.tar.gz').unlink()
+    (out/'post_merge/scientific/CERTIFICATE.json.gz').unlink()
     write_manifest(out)
 
 if __name__=='__main__':
@@ -77,5 +92,5 @@ if __name__=='__main__':
     if command=='download':download(sys.argv[2],sys.argv[3])
     elif command=='finalize':publication()
     elif command=='verify':verify_publication()
-    elif command=='receipt':receipt(sys.argv[2],sys.argv[3])
+    elif command=='receipt':receipt(sys.argv[2],sys.argv[3],sys.argv[4])
     else:raise ValueError(command)

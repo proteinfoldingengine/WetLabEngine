@@ -1,8 +1,10 @@
 import tempfile,unittest,sys
 from pathlib import Path
-from core import fixture_cache,replace_directory,run_commands,write_manifest,verify_manifest,compare_suites,unpack_zip,sha
+from core import fixture_cache,replace_directory,run_commands,write_manifest,verify_manifest,compare_suites,unpack_zip,sha,anchored_file
 import copy,io,zipfile
-from publish import provenance
+from publish import provenance,validate_merge
+from core import PARENT
+import subprocess
 
 class Infrastructure(unittest.TestCase):
     def test_fixture_generation_once_and_mutations_isolated(self):
@@ -73,5 +75,23 @@ class Infrastructure(unittest.TestCase):
         for key,value in [('id',8),('head_sha','bad'),('run_attempt',1)]:
             bad=dict(run);bad[key]=value
             with self.assertRaises(ValueError):provenance(bad,artifact,meta,'abc',7,2,'science')
+
+    def test_parent_anchor_rejects_coordinated_checkout_change(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);p=root/'reference.json';p.write_text('original')
+            def git(*args):return subprocess.check_output(['git','-C',td,*args],stderr=subprocess.DEVNULL,text=True).strip()
+            git('init');git('add','reference.json');git('-c','user.name=Test','-c','user.email=test@example.invalid','commit','-m','parent')
+            parent=git('rev-parse','HEAD');self.assertEqual(anchored_file(root,parent,'reference.json'),b'original')
+            p.write_text('changed');git('add','reference.json');git('-c','user.name=Test','-c','user.email=test@example.invalid','commit','-m','coordinated change')
+            with self.assertRaises(ValueError):anchored_file(root,parent,'reference.json')
+    def test_receipt_rejects_direct_push_and_wrong_merge_identity(self):
+        run={'head_sha':'merge','event':'push','head_branch':'research/v16.34-fiber-component-invariant','path':'.github/workflows/retained-ci-optimization.yml'}
+        pr={'merged':True,'merge_commit_sha':'merge','base':{'ref':'research/v16.34-fiber-component-invariant'},'head':{'sha':'pub'}}
+        commit={'sha':'merge','parents':[{'sha':PARENT},{'sha':'pub'}],'tree':{'sha':'tree'}}
+        publication={'sha':'pub','tree':{'sha':'tree'}}
+        validate_merge(run,pr,commit,publication,'merge')
+        for part,key,value in [(0,'event','workflow_dispatch'),(0,'path','wrong.yml'),(0,'head_branch','other'),(1,'merged',False),(1,'merge_commit_sha','other'),(2,'parents',[{'sha':PARENT}]),(3,'tree',{'sha':'changed'})]:
+            args=copy.deepcopy([run,pr,commit,publication]);args[part][key]=value
+            with self.assertRaises(ValueError):validate_merge(*args,'merge')
 
 if __name__=='__main__':unittest.main(verbosity=2)

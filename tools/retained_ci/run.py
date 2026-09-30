@@ -1,7 +1,7 @@
 """Fail-fast preflight, full parallel replay and measured inherited fixture reuse."""
 from pathlib import Path
 import subprocess,sys,time,json,re
-from core import STAGE,HERE,dump,run_commands,scientific_equal,compare_suites,package
+from core import STAGE,HERE,dump,run_commands,scientific_equal,compare_suites,package,frozen_inputs
 PY=sys.executable
 
 def logged(argv,path):
@@ -10,6 +10,7 @@ def logged(argv,path):
 
 def preflight(out):
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    frozen_inputs()
     logged([PY,str(HERE/'test_core.py')],out/'infrastructure.log')
     logged([PY,str(STAGE/'test_gate.py')],out/'current-controls.log')
     logged([PY,str(STAGE/'publication.py'),'verify'],out/'frozen-publication.log')

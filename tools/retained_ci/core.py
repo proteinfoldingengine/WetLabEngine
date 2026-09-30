@@ -61,7 +61,20 @@ def compare_suites(a,b):
     if a['fixture_hashes']!=b['fixture_hashes']:raise ValueError('fixture bytes changed')
     if a['verifier_calls']!=b['verifier_calls'] or not b['verifier_uncached']:raise ValueError('verifier coverage changed')
 
+def anchored_file(repo,commit,path):
+    repo=Path(repo)
+    expected=subprocess.check_output(['git','-C',str(repo),'show',commit+':'+path])
+    if (repo/path).read_bytes()!=expected:raise ValueError('immutable parent input changed: '+path)
+    return expected
+
+def frozen_inputs():
+    prefix=str(STAGE.relative_to(ROOT))+'/evidence/science/'
+    anchored_file(ROOT,PARENT,prefix+'SOURCE_MANIFEST.json')
+    for name in ('CERTIFICATE.json.gz','SUMMARY.json','VERIFY.json'):
+        anchored_file(ROOT,PARENT,prefix+'scientific/'+name)
+
 def source_paths():
+    frozen_inputs()
     frozen=json.loads((STAGE/'evidence/science/SOURCE_MANIFEST.json').read_text())
     for p,h in frozen.items():
         if sha((ROOT/p).read_bytes())!=h:raise ValueError('frozen scientific source changed: '+p)
