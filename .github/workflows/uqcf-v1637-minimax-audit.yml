@@ -1,0 +1,17 @@
+name: UQCF v16.37 structural minimax audit
+on:
+  push:
+    branches: [research/v16.37-minimax-structural-audit]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Abstract graph diagnostic and independent path oracle
+        run: python ResearchHistory/UQCF-GEM/demos/v16.37-minimax-structural-audit/test_abstract_control.py
