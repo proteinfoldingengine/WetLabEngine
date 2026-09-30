@@ -1,0 +1,45 @@
+name: UQCF v16.33 durable verification publication
+on:
+  push:
+    branches: [research/v16.33-consistency-quotient-kernel]
+    paths: ['.github/workflows/uqcf-v1633-publication.yml']
+permissions: {contents: read}
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions: {contents: write}
+    env: {P: ResearchHistory/UQCF-GEM/demos/v16.33-consistency-quotient-kernel}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ github.sha }}'}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - name: Fresh complete reproduction
+        run: |
+          set -euo pipefail
+          cd "$P"
+          python test_gate.py
+          python producer.py
+          python - <<'PY'
+          import json,verifier
+          d=json.load(open('PRODUCTION.json'));r=verifier.verify_document(d)
+          assert (r['classes_total'],r['nontrivial_classes'],r['disconnected_classes'],r['multiple_minima_classes'])==(33,23,4,23)
+          print(r)
+          PY
+          cd "$GITHUB_WORKSPACE"
+          python ResearchHistory/UQCF-GEM/demos/v16.32-retained-state-reconstruction/test_gate.py
+          python ResearchHistory/UQCF-GEM/demos/v16.31-global-component-factorization/test_gate.py
+          python ResearchHistory/UQCF-GEM/demos/v16.30-interaction-component-closure/test_gate.py
+      - name: Commit durable provenance
+        run: |
+          python - <<'PY'
+          import json,os,pathlib,hashlib
+          p=pathlib.Path(os.environ['P']);d=json.loads((p/'PRODUCTION.json').read_text())
+          e={'version':'16.33','scientific_run':36652867242,'scientific_sha':'a62c076bb27c880edecbd345b2f1e1c9a5e90df0','publication_run':os.environ['GITHUB_RUN_ID'],'publication_head':os.environ['GITHUB_SHA'],'fresh_reproduction':True,'classes_total':d['classes_total'],'nontrivial_classes':d['nontrivial_classes'],'disconnected_classes':d['disconnected_classes'],'multiple_minima_classes':d['multiple_minima_classes'],'digest':d['digest'],'verifier':'independently reconstructs complete declared universe; does not import producer'}
+          (p/'PUBLICATION_EVIDENCE.json').write_text(json.dumps(e,indent=2,sort_keys=True)+'\n')
+          PY
+          git config user.name 'github-actions[bot]';git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "$P/PRODUCTION.json" "$P/PUBLICATION_EVIDENCE.json"
+          git commit -m 'v16.33 publish independently verified evidence [skip ci]'
+          git push origin HEAD:refs/heads/research/v16.33-consistency-quotient-kernel
