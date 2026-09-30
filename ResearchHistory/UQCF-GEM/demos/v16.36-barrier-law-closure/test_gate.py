@@ -42,6 +42,6 @@ class T(unittest.TestCase):
   import copy
   p,v=self.m();d=p.produce(3)
   if len(d['pairs'])>1:
-   fake=copy.deepcopy(d['pairs'][0]);fake['a']=copy.deepcopy(d['pairs'][1]['a']);d['pairs'][0]=fake
+   d['pairs'][0]=copy.deepcopy(d['pairs'][1])
   with self.assertRaises(ValueError):v.verify_document(d)
 if __name__=='__main__':unittest.main(verbosity=2)
