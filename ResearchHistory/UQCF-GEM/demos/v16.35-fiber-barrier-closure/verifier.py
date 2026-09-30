@@ -103,4 +103,37 @@ def verify_document(d):
       if dil>max(dij,djl) or dij>max(dil,djl) or djl>max(dij,dil):ultra+=1
  gate_c='REPRESENTATIVE_INDEPENDENT' if all(x['B1_range'][0]==x['B1_range'][1] and x['Binf_range'][0]==x['Binf_range'][1] and x['Bs_range'][0]==x['Bs_range'][1] for x in ranges) else 'REPRESENTATIVE_DEPENDENT'
  need(d['component_ranges']==ranges,'false component ranges');need(d['gate_c']==gate_c,'gate c');need(d['gate_d']=={'triangle_violations':tri,'ultrametric_violations':ultra},'gate d')
+ def within(z,lim):return z[0]<=lim[0] and z[1]<=lim[1] and z[2]<=lim[2]
+ def loc(p,A,a,b,lim):
+  q0=q(p,a)
+  def dev(s):
+   x=tuple(abs(u-v) for u,v in zip(q(p,s),q0));return (sum(x),max(x,default=0),sum(t>0 for t in x))
+  allowed={s for s in A if within(dev(s),lim)}
+  def reach(forbid=None,require=None):
+   start=(a,False);todo=deque([start]);seen={start}
+   while todo:
+    x,used=todo.popleft()
+    if x==b and (require is None or used):return True
+    for y in A[x]:
+     if y not in allowed:continue
+     ch={i for i,(u,v) in enumerate(zip(q(p,y),q0)) if u!=v}
+     if forbid is not None and forbid in ch:continue
+     z=(y,used or (require is not None and require in ch))
+     if z not in seen:seen.add(z);todo.append(z)
+   return False
+  comp=[];poss=[]
+  for v in range(len(p)):
+   if not reach(forbid=v):comp.append(v)
+   if reach(require=v):poss.append(v)
+  return comp,poss
+ locs=[]
+ for recd in d['barriers']:
+  p=tuple(recd['parents']);A=graph(covers(p,recd['view_count']));a=tuple(map(tuple,recd['a']));b=tuple(map(tuple,recd['b']));cp,ps=loc(p,A,a,b,(recd['B1'],recd['Binf'],recd['Bs']))
+  need(recd['compulsory_coordinates']==cp,'false compulsory');need(recd['possible_coordinates']==ps,'false possible');lab='FIXED' if cp==ps else 'PATH_DEPENDENT';need(recd['localization']==lab,'false localization label')
+  if recd.get('alternative_path') is not None:
+   alt=[tuple(map(tuple,s)) for s in recd['alternative_path']];need(alt[0]==a and alt[-1]==b and all(edge(x,y) for x,y in zip(alt,alt[1:])),'bad alternative path')
+   q0=tuple(recd['q']);ds=[tuple(abs(u-v) for u,v in zip(q(p,s),q0)) for s in alt];need((max(sum(x) for x in ds),max(max(x,default=0) for x in ds),max(sum(t>0 for t in x) for x in ds))==(recd['B1'],recd['Binf'],recd['Bs']),'alternative not minimax')
+  locs.append(lab)
+ gate_e='FIXED' if locs and all(x=='FIXED' for x in locs) else ('PATH_DEPENDENT' if any(x=='PATH_DEPENDENT' for x in locs) else 'NO_POSITIVE_PAIRS')
+ need(d['gate_e']==gate_e,'gate e')
  return {'execution_status':'COMPLETED','input_validity':'VALID','states':statesN,'edges':edgesN,'positive_barriers':len(actual),'gate_a':d['gate_a'],'gate_b':d['gate_b'],'gate_c':gate_c,'gate_d':{'triangle_violations':tri,'ultrametric_violations':ultra},'gate_e':gate_e,'component_ranges':len(ranges)}
