@@ -1,7 +1,7 @@
 # UQCF-GEM v16.37 — Structural minimax audit
 
 Date: 2026-09-30. Parent: `ce4f0c0396fc4a763e5fac1826c180df599d9a00`.
-Status: mathematical/source audit, with a small executable algebra control. This is not a completed fresh certification of the retained campaign.
+Status: mathematical/source audit with GitHub-executed diagnostic controls and independent threshold recomputation of the supplied 18 endpoint records. This is not a completed fresh certification of the full retained campaign.
 
 ## Question and scope
 
@@ -77,12 +77,31 @@ If the intended B1, Binf and Bs are THREE INDEPENDENT scalar minima, each must i
 
 No replacement implementation or altered historical result is supplied by this audit.
 
+## T5 — The inherited target is constant, so no-collision is non-discriminating
+
+The independent threshold audit reconstructs legal views by subset/prefix validation, constructs one-incidence neighbors by direct toggles, recomputes child-cover profiles by exhaustive subfamilies, and solves each scalar objective separately as well as the lexicographic nested objective. It imports neither historical producer nor historical verifier.
+
+All 18 supplied endpoint records have:
+- published triple (1,1,1);
+- independently recomputed scalar-minimum triple (1,1,1);
+- independently recomputed lexicographic triple (1,1,1).
+
+There are zero published-value disagreements and zero objective distinctions in this corpus. Thus the general label-pruning limitation does not refute these 18 numerical values.
+
+Since the target triple is constant throughout this dataset, ANY signature, including a constant signature, satisfies its no-unequal-barrier-collision condition. The observed four candidate-signature groups do not provide discriminating evidence that compulsory-coordinate information selects the barrier. This is stronger than the earlier statement that finite no-collision does not prove universality: this particular corpus has no target variation to explain.
+
+This audit consumes the supplied 18 endpoint identities; it does not re-enumerate the full canonical endpoint universe. Completeness is inherited from the separate PR81 enumeration audit. Threshold values are independently reconstructed for each supplied endpoint.
+
 ## Verification and status
 
 The added GitHub Actions control checks the exact lexicographic reversal, enumerates both simple paths of the six-vertex abstract graph, reproduces the pinned producer and verifier failure on the controlled graph, and checks the nested-threshold answer against exhaustive paths. It is a diagnostic control, not a retained scientific run.
 
 The theorem above is a direct written proof, not proof-assistant formalization or independent authorship review. No literature novelty claim is made.
 
-Next concrete obligation: independently recompute the inherited 18 retained endpoint triples with threshold reachability, disambiguate independent-versus-lexicographic objectives, and preserve any differences and their smallest admitted witnesses. Only then generalize the barrier classifier without target-barrier-derived input.
+GitHub Actions run **36742357518**, execution SHA `45649dbd61c9ffbb14ad4bfa8709157e77a070d7`, succeeded. Its logs show five diagnostic tests passed, both historical routines returned (3,2,3) on the abstract graph versus the exhaustive (3,1,3), and all 18 retained-record numerical checks agreed. The first diagnostic-only successful run was 36742073514.
+
+No retained production code was modified and the full inherited stack was not rerun in this diagnostic stage. Historical completeness/closure receipts remain historical evidence.
+
+Next concrete obligation: prove a unit-barrier theorem in the retained category, or construct an admitted retained pair with a genuinely different barrier using objective-correct threshold reachability. Define a barrier-independent candidate only after determining whether there is target variation to explain. Resolve independent-versus-lexicographic scope explicitly before further generalized certification.
 
 Time is pruning / ordered recoverability update.
