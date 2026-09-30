@@ -31,7 +31,7 @@ def class_info(p,members):
  return mins,len(seen)==len(members)
 def controls():
  p=(-1,0,0);inv={'parents':list(p),'before':[[0,1],[0,1,2]],'after':[[0],[0,1,2]]}
- vis={'parents':list(p),'before':[[0,1],[0,2]],'after':[[0],[0,2]]}
+ vis={'parents':list(p),'before':[[0,1,2],[0,1],[0,2]],'after':[[0,1],[0,1],[0,2]]}
  return inv,vis
 def small_document():
  d=produce(2); 
