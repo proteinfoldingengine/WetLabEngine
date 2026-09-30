@@ -23,4 +23,4 @@ jobs:
           git add "$P/PROOF_CLOSURE_SHA256SUMS" "$P/PROOF_CLOSURE_EVIDENCE.json"
           git commit -m 'v16.36 publish proof-ledger closure evidence [skip ci]'
           git push origin HEAD:refs/heads/research/v16.36-proof-ledger-closure
-          (cd "$P" && sha256sum -c PROOF_CLOSURE_SHA256SUMS)
+          sha256sum -c "$P/PROOF_CLOSURE_SHA256SUMS"
