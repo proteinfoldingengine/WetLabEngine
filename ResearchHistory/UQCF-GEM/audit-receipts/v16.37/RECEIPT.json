@@ -1,0 +1,74 @@
+{
+  "stage": "v16.37",
+  "status": "CLOSED_BOUNDED_CERTIFICATION",
+  "scientific_outcome": "BOUNDED_UNIT_ONLY",
+  "universal_unit_law": "UNRESOLVED",
+  "integrated_parent": "8941af1e0b4e0ff1bf575aa163f557bcb35f3a4b",
+  "preregistration": "b5613ec948a4acdde3fcb5d8b1d5c00255170982",
+  "scientific_sha": "257958783fec742f1d6b9e7b9bca25548c3b2e01",
+  "publication_sha": "b32fde452fca1877c531616198e8e6b517567a4d",
+  "actual_merge_sha": "694ed90ca853da205f83afb0ee60865a47477289",
+  "merge_tree_equals_publication_tree": true,
+  "science_publication_run": 36747297164,
+  "post_merge_run": 36748415870,
+  "post_merge_job": 110000437987,
+  "tests_each_execution": {
+    "new": 26,
+    "inherited": 227,
+    "total": 253
+  },
+  "canonical_domain": {
+    "vertices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "indexed_views": [
+      1,
+      2,
+      3
+    ]
+  },
+  "summary": {
+    "graphs": 51,
+    "states": 6325,
+    "component_pairs": 69,
+    "endpoint_pairs": 77,
+    "nonunit_pairs": 0,
+    "objective_distinctions": 0
+  },
+  "verified": {
+    "post_merge_download_digest": true,
+    "zip_crc": true,
+    "artifact_member_hashes": true,
+    "source_file_hashes": 1270,
+    "exact_source_manifest_equality": true,
+    "scientific_bytes_identical": true,
+    "publication_manifest_members": 49,
+    "exact_historical18_identities_and_values": true
+  },
+  "artifact": {
+    "id": 11113323489,
+    "name": "v1637-post-merge-694ed90ca853da205f83afb0ee60865a47477289",
+    "size_in_bytes": 2753484,
+    "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11113323489",
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11113323489/zip",
+    "expired": false,
+    "created_at": "2026-09-30T17:05:11Z",
+    "expires_at": "2026-12-29T17:01:14Z",
+    "updated_at": "2026-09-30T17:05:11Z",
+    "digest": "sha256:510614b42ef809f98affe66c650fe4601389ca8aa6571e762349d840b6ff7055",
+    "workflow_run": {
+      "id": 36748415870,
+      "repository_id": 1148068528,
+      "head_repository_id": 1148068528,
+      "head_branch": "research/v16.34-fiber-component-invariant",
+      "head_sha": "694ed90ca853da205f83afb0ee60865a47477289"
+    }
+  },
+  "durable_evidence": "../demos/v16.37-certified-closure/evidence at actual_merge_sha; receipt stores post-merge metadata/logs separately. Scientific files and all 1270 source files are identical to durable science evidence; original post-merge ZIP is also uploaded as the artifact identified here.",
+  "receipt_branch": "research/v16.37-audit-receipt",
+  "scope": "Certification closes the preregistered finite campaign and execution chain. It does not resolve the universal unit-vs-nonunit question."
+}
