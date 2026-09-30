@@ -12,15 +12,20 @@ def covers(p,k):
  for y in product(legal(p),repeat=k):
   if set().union(*map(set,y))==set(range(len(p))):yield y
 def edge(a,b):return sum(len(set(x)^set(y)) for x,y in zip(a,b))==1
-def barrier(p,states,a,b):
+def graph(states):
+ A={x:[] for x in states}
+ for i,x in enumerate(states):
+  for y in states[i+1:]:
+   if edge(x,y):A[x].append(y);A[y].append(x)
+ return A
+def barriers_from(p,A,a):
  q0=q(p,a);best={a:(0,0,0)};dq=deque([a])
  while dq:
   x=dq.popleft();bx=best[x]
-  for y in states:
-   if not edge(x,y):continue
+  for y in A[x]:
    dy=tuple(abs(u-v) for u,v in zip(q(p,y),q0));cost=(max(bx[0],sum(dy)),max(bx[1],max(dy,default=0)),max(bx[2],sum(z>0 for z in dy)))
    if y not in best or cost<best[y]:best[y]=cost;dq.append(y)
- return best.get(b)
+ return best
 def shapes(bound):
  d={}
  def code(p):
@@ -36,15 +41,16 @@ def produce(bound=4,maxviews=3):
  bars=[];positive=0;pairs=0
  for p in shapes(bound):
   for k in range(1,maxviews+1):
-   states=list(covers(p,k));G={}
+   states=list(covers(p,k));A=graph(states);G={}
    for y in states:G.setdefault(q(p,y),[]).append(y)
    for q0,mem in G.items():
-    for a,b in combinations(mem,2):
-     # only record pairs disconnected at zero barrier
-     z=barrier(p,states,a,b)
-     if z and z[0]>0:
-      positive+=1;pairs+=1
-      if len(bars)<50:bars.append({'parents':list(p),'view_count':k,'a':[list(x) for x in a],'b':[list(x) for x in b],'q':list(q0),'B1':z[0],'Binf':z[1],'Bs':z[2]})
+    for ai,a in enumerate(mem):
+     best=barriers_from(p,A,a)
+     for b in mem[ai+1:]:
+      z=best.get(b)
+      if z and z[0]>0:
+       positive+=1;pairs+=1
+       if len(bars)<50:bars.append({'parents':list(p),'view_count':k,'a':[list(x) for x in a],'b':[list(x) for x in b],'q':list(q0),'B1':z[0],'Binf':z[1],'Bs':z[2]})
  return {'version':'16.35','bound':bound,'maxviews':maxviews,'positive_barriers':positive,'barrier_pairs':pairs,'barriers':bars}
 if __name__=='__main__':
  d=produce();open('PRODUCTION.json','w').write(json.dumps(d,indent=2));print(json.dumps({k:d[k] for k in ('positive_barriers','barrier_pairs')}))
