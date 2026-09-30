@@ -1,6 +1,6 @@
 """v16.40 execution bindings; immutable parent sources plus explicit new sources."""
 from pathlib import Path
-import importlib.util,json,os,subprocess,sys,tarfile,gzip,io
+import importlib.util,json,os,subprocess,sys,tarfile,gzip,io,re,hashlib
 ROOT=Path.cwd();HERE=ROOT/'ResearchHistory/UQCF-GEM/demos/v16.40-coordinate-obstruction'
 OLD=HERE.parent/'v16.39-theorem-validation';INFRA=ROOT/'tools/retained_ci'
 PARENT='09f3e608e70d8aa70f064ad70909961eaef21bad'
@@ -18,10 +18,19 @@ def source_map():
     for name,digest in frozen.items():
         if sha((ROOT/name).read_bytes())!=digest:raise ValueError('frozen parent source: '+name)
     sources=dict(frozen);sources[str(frozen_path.relative_to(ROOT))]=sha(frozen_path.read_bytes())
+    fixture_reference=INFRA/'evidence/science/inherited/optimized-fixtures.json'
+    sources[str(fixture_reference.relative_to(ROOT))]=sha(anchored(fixture_reference))
     for path in (OLD/'evidence/science/scientific').iterdir():
         if path.is_file():sources[str(path.relative_to(ROOT))]=sha(anchored(path))
     paths=list(HERE.glob('*.py'))+[p for p in HERE.glob('*.md') if p.name!='REPORT.md']+[ROOT/WORKFLOW]
     for path in paths:sources[str(path.relative_to(ROOT))]=sha(path.read_bytes())
+    tree={}
+    for row in subprocess.check_output(['git','ls-tree','-r','--full-tree','HEAD'],text=True).splitlines():
+        metadata,name=row.split('\t',1);mode,kind,oid=metadata.split()
+        if kind=='blob':tree[name]=oid
+    for name in sources:
+        data=(ROOT/name).read_bytes();oid=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+        if tree.get(name)!=oid:raise ValueError('source differs from execution commit: '+name)
     return dict(sorted(sources.items()))
 
 def scientific_equal(a,b):
@@ -67,6 +76,20 @@ def verify_package(out):
     legacy.scientific_equal(out/'scientific/parent39',OLD/'evidence/science/scientific')
     metrics=json.loads((out/'METRICS.json').read_text())
     if metrics.get('inherited_tests')!=300 or metrics.get('new_controls')!=39 or not metrics.get('all_commands_passed'):raise ValueError('execution coverage')
+    suites=json.loads((out/'inherited/SUITES.json').read_text())
+    expected_paths=[s for s in (OLD/'inherited.txt').read_text().splitlines() if s.strip()]
+    expected_counts=[8,26,12,16,4,8,5,28,3,5,30,28,11,28,2,22,3,22]
+    if [r['path'] for r in suites]!=expected_paths or [r['tests'] for r in suites]!=expected_counts:raise ValueError('retained suite membership')
+    logs={f'inherited/suite-{i:02}.log':c for i,c in enumerate(expected_counts)}
+    logs.update({'preflight/current-controls.log':25,'preflight/integrity-controls.log':14,'preflight/v39-controls.log':28,'preflight/inherited-infrastructure.log':11})
+    for name,count in logs.items():
+        content=(out/name).read_text()
+        if list(map(int,re.findall(r'Ran (\d+) tests? in',content)))!=[count] or not re.search(r'^OK$',content,re.M):raise ValueError('retained passing test log '+name)
+    commands=json.loads((out/'logs/COMMANDS.json').read_text())
+    if set(commands)!={'science','inherited'} or any(r['returncode']!=0 for r in commands.values()):raise ValueError('execution commands')
+    legacy.compare_suites(json.loads((INFRA/'evidence/science/inherited/optimized-fixtures.json').read_text()),json.loads((out/'inherited/optimized-fixtures.json').read_text()))
+    if 'AssertionError: ValueError not raised' not in (out/'preflight/mutation-red.log').read_text():raise ValueError('mutation RED missing')
+    if "AssertionError: ('HISTORICAL_LABEL_LOSS', (3, 2, 3), (3, 1, 3))" not in (out/'preflight/historical-red.log').read_text():raise ValueError('historical RED missing')
     if json.loads((out/'scientific/VERIFY.json').read_text()).get('status')!='VERIFIED':raise ValueError('science unverified')
     result=json.loads((out/'scientific/VERIFY.json').read_text())
     if result['outcome']=='MOVING_LOCATION_WITNESS_VALIDATED' and (not result['named']['candidate_valid'] or not result['named']['shortest_if_valid']):raise ValueError('named path closure incomplete')
