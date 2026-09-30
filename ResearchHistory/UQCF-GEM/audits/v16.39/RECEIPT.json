@@ -1,0 +1,142 @@
+{
+  "stage": "16.39",
+  "status": "CLOSED_CERTIFIED_WITHIN_PREREGISTERED_SCOPE",
+  "integrated_parent": "e4de671b3e483cc82a2e240dbd6a8d4d83e6518f",
+  "parent_audit_run": 36757689353,
+  "preregistration_commit": "068a7790409db6b12699b3b049d573371f07aca7",
+  "scientific_source": "3a8415ef1b6417973e1036e4555ba25e3b3b5f26",
+  "publication_commit": "fdc96ccc184b27a2565732c0ebdec4b7de50cf4c",
+  "merge_commit": "e789ce42bac28e084a4f0264180b738534d69923",
+  "science_publication_run": 36766757846,
+  "post_merge_run": 36768113676,
+  "run_attempt": 1,
+  "pr": 86,
+  "scientific": {
+    "campaign": "16.39",
+    "obstruction_outcome": "ALL_OBSTRUCTION_PAIRS_STATIC_SUFFICIENT",
+    "outcome": "THEOREM_CONSTRUCTION_VALIDATED_WITHIN_DOMAIN",
+    "raw_bytes": 4816609,
+    "raw_sha256": "8e0d939a2c82a119463d0101d2da9410e7ab91994e336fdafad4025c119cb952",
+    "summary": {
+      "component_pairs": 244,
+      "endpoint_only_pairs": 0,
+      "endpoint_pairs": 1497,
+      "graphs": 111,
+      "moving_required_pairs": 0,
+      "obstruction_pairs": 78,
+      "sc_pairs": 166,
+      "static_sufficient_pairs": 78
+    },
+    "universal_unit_law": "UNRESOLVED"
+  },
+  "tests_per_phase": {
+    "new_controls": 28,
+    "inherited": 261,
+    "total": 289
+  },
+  "phases_verified": [
+    "science",
+    "fresh_publication",
+    "actual_merge"
+  ],
+  "source_members": 1324,
+  "publication_manifest_members": 54,
+  "checks": {
+    "prospective_direct_parent": true,
+    "complete_canonical_reenumeration": true,
+    "exact_pair_identities": true,
+    "independent_constructive_path_checks": true,
+    "independent_static_paths_and_cuts": true,
+    "parent_scientific_bytes_identical": true,
+    "fresh_publication_scientific_bytes_identical": true,
+    "actual_merge_scientific_bytes_identical": true,
+    "all_phase_source_archives_identical": true,
+    "downloaded_api_sha256_and_zip_crc": true,
+    "complete_source_membership_reconstructed_from_remote_tree": true,
+    "all_source_bytes_match_remote_git_blobs": true,
+    "all_durable_publication_members_match_manifest_and_remote_git": true,
+    "merge_parents_exact": true,
+    "merge_publication_trees_identical": true,
+    "full_inherited_stack": true
+  },
+  "artifact_records": [
+    {
+      "id": 11121857078,
+      "name": "v1639-publication-3a8415ef1b6417973e1036e4555ba25e3b3b5f26",
+      "size_in_bytes": 5135130,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11121857078",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11121857078/zip",
+      "expired": false,
+      "created_at": "2026-09-30T19:44:45Z",
+      "expires_at": "2026-12-29T19:35:42Z",
+      "updated_at": "2026-09-30T19:44:45Z",
+      "digest": "sha256:3961f5e4660f76091fe95a1f62cdb97be87a01a2fff675f2c70d68236131cb52",
+      "workflow_run": {
+        "id": 36766757846,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/v16.39-theorem-validation",
+        "head_sha": "3a8415ef1b6417973e1036e4555ba25e3b3b5f26"
+      }
+    },
+    {
+      "id": 11121816433,
+      "name": "v1639-science-3a8415ef1b6417973e1036e4555ba25e3b3b5f26",
+      "size_in_bytes": 5131433,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11121816433",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11121816433/zip",
+      "expired": false,
+      "created_at": "2026-09-30T19:40:48Z",
+      "expires_at": "2026-12-29T19:35:42Z",
+      "updated_at": "2026-09-30T19:40:48Z",
+      "digest": "sha256:cbca228b1d45ddf5c3e9642f1368db8bb336bfa4894abdcd0e3c6f7534fcaca6",
+      "workflow_run": {
+        "id": 36766757846,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/v16.39-theorem-validation",
+        "head_sha": "3a8415ef1b6417973e1036e4555ba25e3b3b5f26"
+      }
+    },
+    {
+      "id": 11121688337,
+      "name": "v1639-post-merge-e789ce42bac28e084a4f0264180b738534d69923",
+      "size_in_bytes": 5131232,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11121688337",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11121688337/zip",
+      "expired": false,
+      "created_at": "2026-09-30T19:52:28Z",
+      "expires_at": "2026-12-29T19:47:33Z",
+      "updated_at": "2026-09-30T19:52:28Z",
+      "digest": "sha256:1b8af3a1b100694b24be56f282cac4ba2aa37006449895fa905f2c752ed7b9dd",
+      "workflow_run": {
+        "id": 36768113676,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/v16.34-fiber-component-invariant",
+        "head_sha": "e789ce42bac28e084a4f0264180b738534d69923"
+      }
+    }
+  ],
+  "failures_preserved": [
+    36762372243,
+    36764905346,
+    36766338312
+  ],
+  "review": {
+    "reviewed_source": "10e83b9a05de7a9700b97ad389f34dadfdf964c5",
+    "independent_reviewer": "v1639_final_review",
+    "verdict": "No Critical or Important findings; one Minor classification-control gap",
+    "minor_resolution": "Added direct false-positive SC and endpoint_full mutations on an obstruction fixture; both passed in science, fresh publication and actual-merge replay.",
+    "root_infrastructure_review": "Repeated publication copied into an existing directory and retained stale manifests. Regression run36766338312 reproduced the stale/nested-directory failure. Fix deletes only generated evidence/reproduction before copying the complete fresh directory; final publication succeeded.",
+    "scientific_methods_changed_after_review": false,
+    "review_limitations": "Reviewer did not judge runtime, GitHub ancestry, source/commit correspondence, artifact bytes, publication, or actual merge. Root independently checks these and records them here.",
+    "test_disclosure": "Initial missing-module failure was wiring RED only. Added classification mutations test an already-correct rejection mechanism. Repeat-publication failure is genuine infrastructure regression RED-to-GREEN, not mathematical evidence."
+  },
+  "limitations": [
+    "Finite experiment does not prove universal unit barriers.",
+    "All remaining pairs are static-coordinate sufficient in the frozen domain; no general coordinate-selection theorem is established.",
+    "Ordinary mathematical review, not proof-assistant verification."
+  ],
+  "retention": "Raw scientific outputs and complete source archives are committed in the merged stage. Post-merge scientific/source bytes equal those durable files; post-merge metadata, manifests and logs are retained in this audit receipt."
+}
