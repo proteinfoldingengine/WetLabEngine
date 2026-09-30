@@ -1,0 +1,43 @@
+import unittest,copy
+import producer,verifier
+SMALL=((0,3),(1,3))
+class Gate(unittest.TestCase):
+ @classmethod
+ def setUpClass(cls):cls.fixture=producer.produce(SMALL)
+ def setUp(self):self.doc=copy.deepcopy(self.fixture)
+ def check(self):return verifier.verify(self.doc,SMALL)
+ def reject(self):
+  with self.assertRaises(ValueError):self.check()
+ def graph(self):return self.doc['entries'][0]['graph']
+ def test_positive(self):self.assertEqual(self.check()['outcome'],'FAMILY_THEOREM_VALIDATED')
+ def test_missing_state(self):self.graph()['states'].pop();self.reject()
+ def test_duplicate_state(self):self.graph()['states'].append(self.graph()['states'][0]);self.reject()
+ def test_missing_graph(self):self.doc['entries'].pop();self.reject()
+ def test_duplicate_graph(self):self.doc['entries'].append(self.doc['entries'][0]);self.reject()
+ def test_wrong_domain(self):self.doc['domain'][0][1]=4;self.reject()
+ def test_wrong_tree(self):self.graph()['parents'][1]=1;self.reject()
+ def test_wrong_edge(self):self.graph()['forward_moves'][0]^=1;self.reject()
+ def test_wrong_profile(self):self.graph()['profile_ids'][0]=-1;self.reject()
+ def test_missing_profile(self):self.graph()['attained_profiles'].pop();self.reject()
+ def test_missing_component(self):self.graph()['profiles'][0]['zero_components'].pop();self.reject()
+ def test_wrong_component(self):self.graph()['profiles'][0]['zero_components'][0].pop();self.reject()
+ def test_wrong_unit_partition(self):self.graph()['profiles'][0]['unit_components'][0].pop();self.reject()
+ def test_missing_pair(self):self.doc['entries'][1]['graph']['profiles'][0]['pairs'].pop();self.reject()
+ def test_duplicate_pair(self):r=self.doc['entries'][1]['graph']['profiles'][0]['pairs'];r.append(r[0]);self.reject()
+ def test_wrong_pair_path(self):self.doc['entries'][1]['graph']['profiles'][0]['pairs'][0]['unit_path']=[];self.reject()
+ def test_wrong_objective(self):self.doc['entries'][1]['graph']['profiles'][0]['pairs'][0]['primary_bounds']['Bs']=[0,1];self.reject()
+ def test_missing_normalization(self):self.doc['entries'][0]['normalizations'].pop();self.reject()
+ def test_duplicate_normalization(self):r=self.doc['entries'][0]['normalizations'];r.append(r[0]);self.reject()
+ def test_wrong_normalization_identity(self):self.doc['entries'][0]['normalizations'][0]['state']=-1;self.reject()
+ def test_normalization_refuted(self):self.doc['entries'][0]['normalizations'][0]['path']=[];self.assertEqual(self.check()['outcome'],'CONSTRUCTION_REFUTED')
+ def test_missing_construction(self):self.doc['entries'][1]['constructions'].pop();self.reject()
+ def test_duplicate_construction(self):r=self.doc['entries'][1]['constructions'];r.append(r[0]);self.reject()
+ def test_construction_refuted(self):self.doc['entries'][1]['constructions'][0]['path']=[];self.assertEqual(self.check()['outcome'],'CONSTRUCTION_REFUTED')
+ def test_construction_illegal_index(self):self.doc['entries'][1]['constructions'][0]['path']=[-1];self.assertEqual(self.check()['outcome'],'CONSTRUCTION_REFUTED')
+ def test_m2_boundary(self):
+  g=producer.base.build('(()())',2,[2,0,0]);r=verifier.base.verify_graph(g,2,[2,0,0]);self.assertEqual((r['components'],r['pairs']),(2,1))
+ def test_single_component_not_barrier_evidence(self):self.assertEqual(self.check()['per_graph'][0]['pairs'],0)
+ def test_nonunit_priority(self):self.assertEqual(verifier.outcome(1,[{}]),'NONUNIT_WITNESS')
+ def test_unknown_document_field(self):self.doc['extra']=True;self.reject()
+ def test_unknown_entry_field(self):self.doc['entries'][0]['extra']=True;self.reject()
+if __name__=='__main__':unittest.main()
