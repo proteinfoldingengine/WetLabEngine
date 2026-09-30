@@ -1,0 +1,27 @@
+{
+  "artifact": 11074358182,
+  "artifact_sha256": "5a7c64109bde276a11c3d3354e3f205b8239f4d8ccad087a7d401e5077eb5098",
+  "closure": "FINAL_A_E",
+  "digest": "c5a15e82eac32e1f420888147fb99d4bfd95c349d0d7d335841f1d2d3c423454",
+  "edges": 2241,
+  "fresh_bytes_equal": true,
+  "gate_e_method": "all-minimax feasible subgraph via coordinate avoidability/use reachability",
+  "gates": {
+    "gate_a": "CONNECTED",
+    "gate_b": "POSITIVE",
+    "gate_c": "REPRESENTATIVE_INDEPENDENT",
+    "gate_d": {
+      "triangle_violations": 0,
+      "ultrametric_violations": 0
+    },
+    "gate_e": "FIXED"
+  },
+  "positive_barriers": 18,
+  "publication_head": "de3ad4a4ce5be375064ddecaa31925311470ebcd",
+  "publication_run": "36661240897",
+  "scientific_run": 36661135439,
+  "scientific_sha": "3fdd8b746a2ac56a652fc42bac3a561242d8572f",
+  "states": 754,
+  "verification": "independent full-universe reconstruction Gates A-E",
+  "version": "16.35"
+}

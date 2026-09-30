@@ -1,0 +1,31 @@
+name: UQCF v16.35 durable publication
+on:
+  push:
+    branches: [research/v16.35-fiber-barrier-closure]
+    paths: ['.github/workflows/uqcf-v1635-publication.yml']
+permissions: {contents: read}
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ github.sha }}'}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: |
+          cd ResearchHistory/UQCF-GEM/demos/v16.35-fiber-barrier-closure
+          python test_gate.py;python producer.py
+          python - <<'PY'
+          import json,verifier
+          d=json.load(open('PRODUCTION.json'));r=verifier.verify_document(d);assert d['positive_barriers']==18 and r['verified_records']==18;print(r)
+          PY
+          cd ../../../../
+          python ResearchHistory/UQCF-GEM/demos/v16.34-fiber-component-invariant/test_gate.py
+          python ResearchHistory/UQCF-GEM/demos/v16.33-consistency-quotient-kernel/test_gate.py
+          python ResearchHistory/UQCF-GEM/demos/v16.32-retained-state-reconstruction/test_gate.py
+      - run: |
+          P=ResearchHistory/UQCF-GEM/demos/v16.35-fiber-barrier-closure
+          printf '{"version":"16.35","scientific_run":36656856899,"fresh_reproduction":true,"publication_run":"%s"}\n' "$GITHUB_RUN_ID" > "$P/PUBLICATION_EVIDENCE.json"
+          git config user.name 'github-actions[bot]';git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "$P/PRODUCTION.json" "$P/PUBLICATION_EVIDENCE.json";git commit -m 'v16.35 publish verified evidence [skip ci]';git push origin HEAD:refs/heads/research/v16.35-fiber-barrier-closure
