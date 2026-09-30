@@ -98,6 +98,6 @@ def produce(bound=4):
    if m['excluded']:excluded.append({'parents':list(p),'view_count':k,'states':m['states'],'reason':'EXCLUDED_RESOURCE'})
    else:tested+=1;ext_ultra+=m['ultra']
  outcome='FIBER_CONTEXT' if collisions else 'UNRESOLVED'
- return {'version':'16.36','gate_a':'RECONSTRUCTED','gate_b':'REPRODUCED','gate_c':{'collisions':collisions,'groups':len(groups)},'gate_d':outcome,'gate_e':{'tested_cases':tested,'excluded':excluded,'ultrametric_violations':ext_ultra,'scope':'BOUNDED'},'pairs':pairs}
+ return {'version':'16.36','bound':bound,'gate_a':'RECONSTRUCTED','gate_b':'REPRODUCED','gate_c':{'collisions':collisions,'groups':len(groups)},'gate_d':outcome,'gate_e':{'tested_cases':tested,'excluded':excluded,'ultrametric_violations':ext_ultra,'scope':'BOUNDED'},'pairs':pairs}
 if __name__=='__main__':
  d=produce();open('PRODUCTION.json','w').write(json.dumps(d,indent=2,sort_keys=True));print(json.dumps({k:d[k] for k in ('gate_d','gate_e')}))
