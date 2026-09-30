@@ -76,4 +76,31 @@ def verify_document(d):
   if key not in actual:key=(p,c['view_count'],tuple(c['q']),b,a)
   need(key in actual,'foreign/omitted endpoint type');need(actual[key]==(c['B1'],c['Binf'],c['Bs']),'nonminimal barrier');verify_path(c);published[key]=actual[key]
  need(set(published)==set(actual),'omitted positive pair');need(d['positive_barriers']==len(actual),'false bulk count');need(d['gate_b']==('POSITIVE' if actual and all(z[0]>0 for z in actual.values()) else 'COUNTEREXAMPLE'),'gate b')
- return {'execution_status':'COMPLETED','input_validity':'VALID','states':statesN,'edges':edgesN,'positive_barriers':len(actual),'gate_a':d['gate_a'],'gate_b':d['gate_b'],'gate_c':d['gate_c'],'gate_d':d['gate_d'],'gate_e':d['gate_e']}
+ # independently derive Gates C-E
+ ranges=[];tri=ultra=0
+ for p in shapes(d['bound']):
+  for k in range(1,d['maxviews']+1):
+   states=covers(p,k);A=graph(states);G={}
+   for s in states:G.setdefault(q(p,s),[]).append(s)
+   for q0,mem in G.items():
+    un=set(mem);Cs=[]
+    while un:
+     s=un.pop();C={s};todo=deque([s])
+     while todo:
+      x=todo.popleft()
+      for y in A[x]:
+       if y in un and q(p,y)==q0:un.remove(y);C.add(y);todo.append(y)
+     Cs.append(C)
+    if len(Cs)<2:continue
+    cache={a:exact(p,A,a) for a in mem};dist={}
+    for i,j in combinations(range(len(Cs)),2):
+     vals=[cache[a][b] for a in Cs[i] for b in Cs[j]]
+     ranges.append({'parents':list(p),'view_count':k,'q':list(q0),'components':[i,j],'B1_range':[min(x[0] for x in vals),max(x[0] for x in vals)],'Binf_range':[min(x[1] for x in vals),max(x[1] for x in vals)],'Bs_range':[min(x[2] for x in vals),max(x[2] for x in vals)]});dist[i,j]=min(x[0] for x in vals)
+    if len(Cs)>=3:
+     for i,j,l in combinations(range(len(Cs)),3):
+      dij=dist[min(i,j),max(i,j)];djl=dist[min(j,l),max(j,l)];dil=dist[min(i,l),max(i,l)]
+      if dil>dij+djl or dij>dil+djl or djl>dij+dil:tri+=1
+      if dil>max(dij,djl) or dij>max(dil,djl) or djl>max(dij,dil):ultra+=1
+ gate_c='REPRESENTATIVE_INDEPENDENT' if all(x['B1_range'][0]==x['B1_range'][1] and x['Binf_range'][0]==x['Binf_range'][1] and x['Bs_range'][0]==x['Bs_range'][1] for x in ranges) else 'REPRESENTATIVE_DEPENDENT'
+ need(d['component_ranges']==ranges,'false component ranges');need(d['gate_c']==gate_c,'gate c');need(d['gate_d']=={'triangle_violations':tri,'ultrametric_violations':ultra},'gate d');need(d['gate_e']=='CERTIFIED_PER_PATH_NOT_UNIVERSAL','gate e')
+ return {'execution_status':'COMPLETED','input_validity':'VALID','states':statesN,'edges':edgesN,'positive_barriers':len(actual),'gate_a':d['gate_a'],'gate_b':d['gate_b'],'gate_c':gate_c,'gate_d':{'triangle_violations':tri,'ultrametric_violations':ultra},'gate_e':'CERTIFIED_PER_PATH_NOT_UNIVERSAL','component_ranges':len(ranges)}
