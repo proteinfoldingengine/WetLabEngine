@@ -1,0 +1,29 @@
+{
+  "commands": {
+    "inherited": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/tools/retained_ci/run.py",
+        "inherited",
+        "out/reproduction/inherited"
+      ],
+      "end_seconds": 72.57572065100001,
+      "returncode": 0,
+      "start_seconds": 0.00044232399999799554
+    },
+    "science": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.39-theorem-validation/run_campaign.py",
+        "out/reproduction/scientific"
+      ],
+      "end_seconds": 102.09833636000002,
+      "returncode": 0,
+      "start_seconds": 0.0002691620000021544
+    }
+  },
+  "current_controls": 28,
+  "inherited_tests": 261,
+  "parallel_phase_seconds": 102.09906855099999,
+  "scientific_bytes_identical": true
+}

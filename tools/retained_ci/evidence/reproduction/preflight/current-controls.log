@@ -1,0 +1,33 @@
+test_duplicate_record (__main__.Certificate.test_duplicate_record) ... ok
+test_false_failed_coordinate_cut (__main__.Certificate.test_false_failed_coordinate_cut) ... ok
+test_false_positive_endpoint_full (__main__.Certificate.test_false_positive_endpoint_full) ... ok
+test_false_positive_sc (__main__.Certificate.test_false_positive_sc) ... ok
+test_false_sc (__main__.Certificate.test_false_sc) ... ok
+test_false_successful_coordinate (__main__.Certificate.test_false_successful_coordinate) ... ok
+test_false_summary (__main__.Certificate.test_false_summary) ... ok
+test_false_verdict (__main__.Certificate.test_false_verdict) ... ok
+test_missing_field (__main__.Certificate.test_missing_field) ... ok
+test_missing_record (__main__.Certificate.test_missing_record) ... ok
+test_obstruction_records_verified (__main__.Certificate.test_obstruction_records_verified) ... ok
+test_same_count_substitution (__main__.Certificate.test_same_count_substitution) ... ok
+test_valid_complete_records (__main__.Certificate.test_valid_complete_records) ... ok
+test_wrong_schema (__main__.Certificate.test_wrong_schema) ... ok
+test_known_child_deficit_path (__main__.Construction.test_known_child_deficit_path) ... ok
+test_known_parent_deficit_path (__main__.Construction.test_known_parent_deficit_path) ... ok
+test_obstruction_classification (__main__.Construction.test_obstruction_classification) ... ok
+test_palette_change_and_shrink (__main__.Construction.test_palette_change_and_shrink) ... ok
+test_reject_false_zero_normalization (__main__.Construction.test_reject_false_zero_normalization) ... ok
+test_reject_illegal_jump (__main__.Construction.test_reject_illegal_jump) ... ok
+test_reject_two_simultaneous_deviations (__main__.Construction.test_reject_two_simultaneous_deviations) ... ok
+test_reject_wrong_endpoint (__main__.Construction.test_reject_wrong_endpoint) ... ok
+test_subtree_lifting (__main__.Construction.test_subtree_lifting) ... ok
+test_two_view_swap (__main__.Construction.test_two_view_swap) ... ok
+test_current_stage_provenance_accepts (__main__.Provenance.test_current_stage_provenance_accepts) ... ok
+test_repeat_publication_replaces_reproduction (__main__.Provenance.test_repeat_publication_replaces_reproduction) ... ok
+test_source_membership_and_hash_rejected (__main__.Provenance.test_source_membership_and_hash_rejected) ... ok
+test_stage_and_metadata_substitution_rejected (__main__.Provenance.test_stage_and_metadata_substitution_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.344s
+
+OK

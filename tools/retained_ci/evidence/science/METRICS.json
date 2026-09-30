@@ -1,0 +1,41 @@
+{
+  "commands": {
+    "inherited": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/tools/retained_ci/run.py",
+        "inherited",
+        "out/science/inherited"
+      ],
+      "end_seconds": 65.37431513399997,
+      "returncode": 0,
+      "start_seconds": 0.0004627649999804362
+    },
+    "science": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.39-theorem-validation/run_campaign.py",
+        "out/science/scientific"
+      ],
+      "end_seconds": 92.640885024,
+      "returncode": 0,
+      "start_seconds": 0.0003146059999892259
+    }
+  },
+  "current_controls": 28,
+  "fixture_benchmark": {
+    "baseline_generations": 12,
+    "baseline_producer_seconds": 118.84663738199995,
+    "baseline_seconds": 147.767101202,
+    "limitation": "single paired run; optimized suite shares CPU with concurrent science",
+    "optimized_generations": 2,
+    "optimized_producer_seconds": 20.639312572999984,
+    "optimized_seconds": 50.179030239999975,
+    "ratio": 2.944797866663596,
+    "same_runner": true,
+    "verifier_calls_each": 12
+  },
+  "inherited_tests": 261,
+  "parallel_phase_seconds": 92.64154860599999,
+  "scientific_bytes_identical": true
+}
