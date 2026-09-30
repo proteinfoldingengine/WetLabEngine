@@ -42,7 +42,7 @@ class T(unittest.TestCase):
   if d['barriers']:d['barriers'][0]['changed_coordinates']=[]
   with self.assertRaises(ValueError):v.verify_document(d)
  def test_false_gate_e_classification_rejected(self):
-  p,v=self.m();d=p.produce(3);d['gate_e']='FIXED'
+  p,v=self.m();d=p.produce(3);d['gate_e']='PATH_DEPENDENT' if d['gate_e']=='FIXED' else 'FIXED'
   with self.assertRaises(ValueError):v.verify_document(d)
  def test_false_compulsory_coordinate_rejected(self):
   p,v=self.m();d=p.produce(3)
