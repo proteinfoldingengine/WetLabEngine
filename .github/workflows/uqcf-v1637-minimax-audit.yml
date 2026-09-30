@@ -15,3 +15,5 @@ jobs:
           python-version: '3.11'
       - name: Abstract graph diagnostic and independent path oracle
         run: python ResearchHistory/UQCF-GEM/demos/v16.37-minimax-structural-audit/test_abstract_control.py
+      - name: Independent threshold audit of supplied inherited endpoint records
+        run: python ResearchHistory/UQCF-GEM/demos/v16.37-minimax-structural-audit/audit_inherited.py
