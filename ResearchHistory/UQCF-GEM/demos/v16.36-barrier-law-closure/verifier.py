@@ -52,5 +52,42 @@ def verify_document(d):
   import json
   groups.setdefault(json.dumps(r['candidate_signature'],sort_keys=True),set()).add((r['B1'],r['Binf'],r['Bs']))
  cols=[v for v in groups.values() if len(v)>1]
+ need(d['gate_c']['groups']==len(groups),'group count');need(d['gate_c']['collisions']==[{'signature':__import__('json').loads(s),'barriers':[list(x) for x in sorted(v)]} for s,v in groups.items() if len(v)>1],'collision set')
  need(d['gate_d']==('FIBER_CONTEXT' if cols else 'UNRESOLVED'),'gate d')
- return {'execution_status':'COMPLETED','verified_pairs':len(d['pairs']),'gate_d':d['gate_d']}
+ # Independently reconstruct Gate E five-vertex extension and resource exclusions.
+ def shapes5():
+  dd={}
+  def code(p):
+   ch={v:[] for v in range(len(p))}
+   for w in range(1,len(p)):ch[p[w]].append(w)
+   def rr(v):return '('+''.join(sorted(rr(w) for w in ch[v]))+')'
+   return rr(0)
+  for z in product(*(range(i) for i in range(1,5))):
+   p=(-1,)+z;dd.setdefault(code(p),p)
+  return sorted(dd.values())
+ tested=0;excluded=[];ultra=0
+ for p in shapes5():
+  for k in range(1,4):
+   S=covers(p,k)
+   if len(S)>5000:
+    excluded.append({'parents':list(p),'view_count':k,'states':len(S),'reason':'EXCLUDED_RESOURCE'});continue
+   tested+=1;A=graph(S);G={}
+   for s in S:G.setdefault(q(p,s),[]).append(s)
+   for q0,mem in G.items():
+    un=set(mem);Cs=[]
+    while un:
+     s=un.pop();C={s};todo=deque([s])
+     while todo:
+      x=todo.popleft()
+      for y in A[x]:
+       if y in un and q(p,y)==q0:un.remove(y);C.add(y);todo.append(y)
+     Cs.append(C)
+    if len(Cs)<3:continue
+    cache={a:exact(p,A,a) for a in mem};dist={}
+    for i,j in combinations(range(len(Cs)),2):dist[i,j]=min(cache[a][b][0] for a in Cs[i] for b in Cs[j])
+    for i,j,l in combinations(range(len(Cs)),3):
+     a=dist[i,j];b=dist[j,l];cc=dist[i,l]
+     ultra += cc>max(a,b) or a>max(b,cc) or b>max(a,cc)
+ expected={'tested_cases':tested,'excluded':excluded,'ultrametric_violations':ultra,'scope':'BOUNDED'}
+ need(d['gate_e']==expected,'gate e extension')
+ return {'execution_status':'COMPLETED','verified_pairs':len(d['pairs']),'gate_d':d['gate_d'],'gate_e':expected}
