@@ -1,6 +1,8 @@
 name: UQCF v16.36 merged-head final audit
 on:
-  workflow_dispatch:
+  push:
+    branches: [research/v16.34-fiber-component-invariant]
+    paths: ['.github/workflows/uqcf-v1636-merged-head-audit.yml']
 permissions: {contents: read}
 jobs:
   audit:
