@@ -40,7 +40,7 @@ class T(unittest.TestCase):
   with self.assertRaises(ValueError):v.verify_document(d)
  def test_substituted_pair_rejected(self):
   import copy
-  p,v=self.m();d=p.produce(3)
+  p,v=self.m();d=p.produce(4)
   if len(d['pairs'])>1:
    import json
    def k(r):return (tuple(r['parents']),r['view_count'],tuple(r['q']))
