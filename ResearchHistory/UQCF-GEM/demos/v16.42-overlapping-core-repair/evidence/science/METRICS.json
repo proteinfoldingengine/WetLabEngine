@@ -1,0 +1,30 @@
+{
+  "all_commands_passed": true,
+  "commands": {
+    "inherited": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/tools/retained_ci/run.py",
+        "inherited",
+        "out/science/inherited"
+      ],
+      "end_seconds": 81.90181813800007,
+      "returncode": 0,
+      "start_seconds": 0.00045881200003350386
+    },
+    "science": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.42-overlapping-core-repair/run_campaign.py",
+        "out/science/scientific"
+      ],
+      "end_seconds": 303.1815788980001,
+      "returncode": 0,
+      "start_seconds": 0.00027122100004817185
+    }
+  },
+  "independent_verifier_uncached": true,
+  "inherited_tests": 387,
+  "new_controls": 44,
+  "parallel_seconds": 303.18240748999995
+}
