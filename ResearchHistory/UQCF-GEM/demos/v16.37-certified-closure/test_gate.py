@@ -52,6 +52,18 @@ class Gates(unittest.TestCase):
   self.reject(lambda d:d['summary'].__setitem__('endpoint_pairs',0))
  def test_missing_required_field(self):
   self.reject(lambda d:d.pop('graphs'))
+ def test_wrong_representative(self):
+  self.reject(lambda d:next(g for g in d['graphs'] if g['pairs'])['pairs'][0].__setitem__('representatives',[0,0]))
+ def test_pair_order_accepted(self):
+  d=p.produce(4)
+  for g in d['graphs']:g['pairs'].reverse()
+  self.assertEqual(v.verify(d,4)['status'],'VERIFIED')
+ def test_changed_historical_value_rejected(self):
+  import run_campaign as c
+  d=p.produce(3);checked=v.verify(d,3)
+  key=checked['canonical_inherited_endpoint_pairs'][0];parents,k,q,a,b=key
+  old={'pairs':[{'parents':parents,'view_count':k,'q':q,'a':[[i for i in range(len(parents)) if m>>i&1] for m in a],'b':[[i for i in range(len(parents)) if m>>i&1] for m in b],'B1':99,'Binf':1,'Bs':1}]}
+  with self.assertRaises(ValueError):c.compare_historical(d,checked,old)
 class Provenance(unittest.TestCase):
  def test_bound_provenance_accepts(self):
   import publication as z

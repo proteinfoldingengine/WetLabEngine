@@ -15,9 +15,19 @@ def get(url,auth=True):
   if e.code not in (301,302,303,307,308):raise
   return urllib.request.urlopen(e.headers['Location']).read()
 
+def validate_provenance(run,a,m,head,run_id,attempt):
+ if run.get('id')!=int(run_id) or run.get('head_sha')!=head or run.get('run_attempt')!=int(attempt):raise ValueError('API run provenance')
+ if a.get('name')!='v1637-science-'+head or a.get('workflow_run',{}).get('id')!=int(run_id) or a.get('workflow_run',{}).get('head_sha')!=head:raise ValueError('API artifact provenance')
+ expected={'head':head,'trigger_sha':head,'workflow_sha':head,'run_id':str(run_id),'run_attempt':str(attempt),'phase':'science'}
+ if any(m.get(k)!=v for k,v in expected.items()):raise ValueError('embedded execution provenance')
+
+def validate_source_map(recorded,actual):
+ if recorded!=actual:raise ValueError('source membership or content drift')
+
 def download(run,out):
  out=Path(out);out.mkdir(parents=True,exist_ok=True)
  api='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']
+ run_meta=json.loads(get(api+'/actions/runs/'+run));dump(out/'SCIENCE_RUN.json',run_meta)
  artifacts=json.loads(get(api+'/actions/runs/'+run+'/artifacts'))['artifacts']
  wanted=[a for a in artifacts if a['name'].startswith('v1637-science-')]
  if len(wanted)!=1:raise ValueError('unique scientific artifact required')
@@ -29,10 +39,18 @@ def download(run,out):
   for name in z.namelist():
    if Path(name).is_absolute() or '..' in Path(name).parts:raise ValueError('artifact path')
   z.extractall(out/'science')
+ meta=json.loads((out/'science/METADATA.json').read_text())
+ validate_provenance(run_meta,a,meta,os.environ['GITHUB_SHA'],run,os.environ['GITHUB_RUN_ATTEMPT'])
  jobs=json.loads(get(api+'/actions/runs/'+run+'/jobs'))['jobs']
  science=[j for j in jobs if j['name']=='science']
  if len(science)!=1 or science[0]['conclusion']!='success':raise ValueError('science job success')
+ if science[0]['run_id']!=int(run) or science[0]['head_sha']!=os.environ['GITHUB_SHA']:raise ValueError('job provenance')
  dump(out/'SCIENCE_JOB.json',science[0]);(out/'SCIENCE_JOB.log').write_bytes(get(api+'/actions/jobs/'+str(science[0]['id'])+'/logs'))
+ for prior in (36745481792,36746624328,36746888761):
+  prior_meta=json.loads(get(api+'/actions/runs/'+str(prior)))
+  dump(out/('PRIOR_RUN_'+str(prior)+'.json'),prior_meta)
+  for job in json.loads(get(api+'/actions/runs/'+str(prior)+'/jobs'))['jobs']:
+   (out/('PRIOR_JOB_'+str(job['id'])+'.log')).write_bytes(get(api+'/actions/jobs/'+str(job['id'])+'/logs'))
  print(json.dumps({'artifact_id':a['id'],'zip_sha256':sha(archive),'digest_verified':True}))
 
 def scientific_equal(a,b):
@@ -62,8 +80,9 @@ def verify():
  # Bind source manifests to the current executed source; documentation may have been added later.
  for phase in ('science','reproduction'):
   src=json.loads((HERE/'evidence'/phase/'SOURCE_MANIFEST.json').read_text())
-  for p,h in src.items():
-   if p.endswith('.py') and sha(ROOT/p)!=h:raise ValueError('executed source drift '+p)
+  import evidence
+  actual={str(p.relative_to(ROOT)):sha(p) for p in evidence.source_paths()}
+  validate_source_map(src,actual)
  print(json.dumps({'publication_manifest':'VERIFIED','members':len(d)}))
 
 if __name__=='__main__':

@@ -96,7 +96,7 @@ def path_check(path,A,C,a,b,expected,objective):
 
 def pair_key(r):return (tuple(r['q']),tuple(r['components']))
 
-def verify(d,bound=5):
+def _verify(d,bound=5):
  need(d.get('version')=='16.37' and d.get('bound')==bound and d.get('view_counts')==[1,2,3],'domain')
  expected={(p,k) for p in shapes(bound) for k in (1,2,3)}
  keys=[(tuple(g['parents']),g['views']) for g in d['graphs']]
@@ -137,9 +137,26 @@ def verify(d,bound=5):
        ends=sorted([S[aa],S[bb]]);small.append([list(p),k,q,*ends])
     endpoint+=count;pair_count+=1;distinctions+=primary!=lex
     if primary!=[1,1,1]:nonunit.append({'parents':list(p),'views':k,'pair':r})
+ nonunit.sort(key=lambda w:(len(w['parents']),w['views'],w['parents'],w['pair']['q'],w['pair']['representatives']))
  need(d['nonunit']==nonunit,'nonunit witness set')
  need(d['outcome']==('NONUNIT_RETAINED_WITNESS' if nonunit else 'BOUNDED_UNIT_ONLY'),'verdict')
  need(d['universal_unit_law']=='UNRESOLVED','universal claim')
  summary={'graphs':len(ordered),'states':states_count,'component_pairs':pair_count,'endpoint_pairs':endpoint,'nonunit_pairs':len(nonunit),'objective_distinctions':distinctions}
  need(d['summary']==summary,'summary')
  return {'status':'VERIFIED','summary':summary,'canonical_inherited_endpoint_pairs':sorted(small),'outcome':d['outcome']}
+
+
+def verify(d,bound=5):
+ def schema(x):
+  if type(x) in (int,str):return
+  if type(x) is list:
+   for y in x:schema(y)
+   return
+  if type(x) is dict:
+   if any(type(k) is not str for k in x):raise ValueError('nonstring key')
+   for y in x.values():schema(y)
+   return
+  raise ValueError('certificate primitive type')
+ schema(d)
+ try:return _verify(d,bound)
+ except (KeyError,TypeError,IndexError) as e:raise ValueError('malformed certificate') from e

@@ -95,4 +95,5 @@ def produce(bound=5):
    graphs.append({'parents':list(p),'views':k,'states':[list(s) for s in S],'q':Q,'edges':[[i,j] for i,row in enumerate(A) for j in row if i<j],'groups':groups,'pairs':pairs})
  pairs=[r for g in graphs for r in g['pairs']]
  nonunit=[{'parents':g['parents'],'views':g['views'],'pair':r} for g in graphs for r in g['pairs'] if r['primary']!=[1,1,1]]
+ nonunit.sort(key=lambda w:(len(w['parents']),w['views'],w['parents'],w['pair']['q'],w['pair']['representatives']))
  return {'version':'16.37','bound':bound,'view_counts':[1,2,3],'graphs':graphs,'outcome':'NONUNIT_RETAINED_WITNESS' if nonunit else 'BOUNDED_UNIT_ONLY','nonunit':nonunit,'summary':{'graphs':len(graphs),'states':sum(len(g['states']) for g in graphs),'component_pairs':len(pairs),'endpoint_pairs':sum(r['endpoint_pairs'] for r in pairs),'nonunit_pairs':len(nonunit),'objective_distinctions':sum(r['primary']!=r['lex'] for r in pairs)},'universal_unit_law':'UNRESOLVED'}
