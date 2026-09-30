@@ -1,0 +1,341 @@
+{"outcome":"BOUNDED_UNIT_ONLY","raw_bytes":446574,"raw_sha256":"932b8a88a2fa1a15e5428f99564ae161cad9712468c929cb210e710820a715f0","summary":{"component_pairs":69,"endpoint_pairs":77,"graphs":51,"nonunit_pairs":0,"objective_distinctions":0,"states":6325},"universal_unit_law":"UNRESOLVED"}
+
+PARENT_SCIENTIFIC_BYTES_IDENTICAL
+test_changed_historical_value_rejected (__main__.Gates.test_changed_historical_value_rejected) ... ok
+test_constructive_small_universe (__main__.Gates.test_constructive_small_universe) ... ok
+test_duplicate_graph (__main__.Gates.test_duplicate_graph) ... ok
+test_duplicate_pair (__main__.Gates.test_duplicate_pair) ... ok
+test_false_endpoint_count (__main__.Gates.test_false_endpoint_count) ... ok
+test_false_lower_threshold_cut (__main__.Gates.test_false_lower_threshold_cut) ... ok
+test_float_certificate_rejected (__main__.Gates.test_float_certificate_rejected) ... ok
+test_illegal_path (__main__.Gates.test_illegal_path) ... ok
+test_lex_label_loss_control (__main__.Gates.test_lex_label_loss_control) ... ok
+test_missing_graph (__main__.Gates.test_missing_graph) ... ok
+test_missing_pair (__main__.Gates.test_missing_pair) ... ok
+test_missing_required_field (__main__.Gates.test_missing_required_field) ... ok
+test_missing_state (__main__.Gates.test_missing_state) ... ok
+test_pair_order_accepted (__main__.Gates.test_pair_order_accepted) ... ok
+test_same_count_substitution (__main__.Gates.test_same_count_substitution) ... ok
+test_scalar_versus_lex_objective (__main__.Gates.test_scalar_versus_lex_objective) ... ok
+test_shape_enumerators (__main__.Gates.test_shape_enumerators) ... ok
+test_valid_graph_order (__main__.Gates.test_valid_graph_order) ... ok
+test_wrong_barrier (__main__.Gates.test_wrong_barrier) ... ok
+test_wrong_domain (__main__.Gates.test_wrong_domain) ... ok
+test_wrong_q (__main__.Gates.test_wrong_q) ... ok
+test_wrong_representative (__main__.Gates.test_wrong_representative) ... ok
+test_wrong_verdict (__main__.Gates.test_wrong_verdict) ... ok
+test_bound_provenance_accepts (__main__.Provenance.test_bound_provenance_accepts) ... ok
+test_changed_and_omitted_source_rejected (__main__.Provenance.test_changed_and_omitted_source_rejected) ... ok
+test_false_provenance_rejected (__main__.Provenance.test_false_provenance_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.278s
+
+OK
+test_complete_small (__main__.T.test_complete_small) ... ok
+test_extra_duplicate_pair_rejected (__main__.T.test_extra_duplicate_pair_rejected) ... ok
+test_false_barrier_rejected (__main__.T.test_false_barrier_rejected) ... ok
+test_false_extension_count_rejected (__main__.T.test_false_extension_count_rejected) ... ok
+test_false_gate_d_rejected (__main__.T.test_false_gate_d_rejected) ... ok
+test_false_group_count_rejected (__main__.T.test_false_group_count_rejected) ... ok
+test_false_signature_rejected (__main__.T.test_false_signature_rejected) ... ok
+test_false_ultrametric_count_rejected (__main__.T.test_false_ultrametric_count_rejected) ... ok
+test_hidden_exclusion_rejected (__main__.T.test_hidden_exclusion_rejected) ... ok
+test_missing_gate_rejected (__main__.T.test_missing_gate_rejected) ... ok
+test_omitted_valid_pair_rejected (__main__.T.test_omitted_valid_pair_rejected) ... ok
+test_substituted_pair_rejected (__main__.T.test_substituted_pair_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 197.343s
+
+OK
+test_bad_alternative_minimax_rejected (__main__.T.test_bad_alternative_minimax_rejected) ... ok
+test_bad_path_certificate_rejected (__main__.T.test_bad_path_certificate_rejected) ... ok
+test_complete_small (__main__.T.test_complete_small) ... ok
+test_corrupt_component_range_rejected (__main__.T.test_corrupt_component_range_rejected) ... ok
+test_corrupt_localization_rejected (__main__.T.test_corrupt_localization_rejected) ... ok
+test_false_bulk_count_rejected (__main__.T.test_false_bulk_count_rejected) ... ok
+test_false_compulsory_coordinate_rejected (__main__.T.test_false_compulsory_coordinate_rejected) ... ok
+test_false_gate_c_rejected (__main__.T.test_false_gate_c_rejected) ... ok
+test_false_gate_d_rejected (__main__.T.test_false_gate_d_rejected) ... ok
+test_false_gate_e_classification_rejected (__main__.T.test_false_gate_e_classification_rejected) ... ok
+test_false_gate_e_rejected (__main__.T.test_false_gate_e_rejected) ... ok
+test_false_possible_coordinate_rejected (__main__.T.test_false_possible_coordinate_rejected) ... ok
+test_false_zero_rejected (__main__.T.test_false_zero_rejected) ... ok
+test_missing_gate_adjudication_rejected (__main__.T.test_missing_gate_adjudication_rejected) ... ok
+test_omitted_positive_pair_rejected (__main__.T.test_omitted_positive_pair_rejected) ... ok
+test_positive_witness (__main__.T.test_positive_witness) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.303s
+
+OK
+test_complete_small (__main__.T.test_complete_small) ... ok
+test_connectivity_not_trusted (__main__.T.test_connectivity_not_trusted) ... ok
+test_minimum_cover_exact_control (__main__.T.test_minimum_cover_exact_control) ... ok
+test_omitted_minimum_cover_rejected (__main__.T.test_omitted_minimum_cover_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.031s
+
+OK
+test_changed_tau_move_rejected_as_invisible (__main__.T.test_changed_tau_move_rejected_as_invisible) ... ok
+test_complete_small (__main__.T.test_complete_small) ... ok
+test_fake_unique_minimum_rejected (__main__.T.test_fake_unique_minimum_rejected) ... ok
+test_invisible_and_visible_controls (__main__.T.test_invisible_and_visible_controls) ... ok
+test_verifier_rejects_false_bulk_counts (__main__.T.test_verifier_rejects_false_bulk_counts) ... ok
+test_verifier_rejects_false_connectivity (__main__.T.test_verifier_rejects_false_connectivity) ... ok
+test_verifier_rejects_missing_class (__main__.T.test_verifier_rejects_missing_class) ... ok
+test_verifier_rejects_omitted_member (__main__.T.test_verifier_rejects_omitted_member) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.069s
+
+OK
+test_actual_collision_if_claimed (__main__.Tests.test_actual_collision_if_claimed) ... ok
+test_changed_interval_rejected (__main__.Tests.test_changed_interval_rejected) ... ok
+test_coarse_checker_collision (__main__.Tests.test_coarse_checker_collision) ... ok
+test_fabricated_collision_rejected (__main__.Tests.test_fabricated_collision_rejected) ... ok
+test_signature_must_not_contain_state_mask (__main__.Tests.test_signature_must_not_contain_state_mask) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.013s
+
+OK
+test_actual_relabeling_and_view_storage (__main__.Tests.test_actual_relabeling_and_view_storage) ... ok
+test_boolean_profile (__main__.Tests.test_boolean_profile) ... ok
+test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+test_cross_parent_edge (__main__.Tests.test_cross_parent_edge) ... ok
+test_duplicate_endpoint (__main__.Tests.test_duplicate_endpoint) ... ok
+test_fabricated_cartesian_count (__main__.Tests.test_fabricated_cartesian_count) ... ok
+test_false_profile (__main__.Tests.test_false_profile) ... ok
+test_false_relabeling (__main__.Tests.test_false_relabeling) ... ok
+test_foreign_origin (__main__.Tests.test_foreign_origin) ... ok
+test_identity (__main__.Tests.test_identity) ... ok
+test_invalid_endpoint_inputs (__main__.Tests.test_invalid_endpoint_inputs) ... ok
+test_missing_actual_edge (__main__.Tests.test_missing_actual_edge) ... ok
+test_missing_document_sections (__main__.Tests.test_missing_document_sections) ... ok
+test_missing_endpoint (__main__.Tests.test_missing_endpoint) ... ok
+test_missing_local_table (__main__.Tests.test_missing_local_table) ... ok
+test_missing_shape (__main__.Tests.test_missing_shape) ... ok
+test_missing_state (__main__.Tests.test_missing_state) ... ok
+test_noncartesian_nonconstant_chain (__main__.Tests.test_noncartesian_nonconstant_chain) ... ok
+test_retained_third_order (__main__.Tests.test_retained_third_order) ... ok
+test_synthetic_cubic_all_background_not_baseline (__main__.Tests.test_synthetic_cubic_all_background_not_baseline) ... ok
+test_synthetic_separate_components (__main__.Tests.test_synthetic_separate_components) ... ok
+test_valid_reversed_records (__main__.Tests.test_valid_reversed_records) ... ok
+test_verifier_no_producer_import (__main__.Tests.test_verifier_no_producer_import) ... ok
+test_wrong_component_values (__main__.Tests.test_wrong_component_values) ... ok
+test_wrong_cube_shape (__main__.Tests.test_wrong_cube_shape) ... ok
+test_wrong_mobius (__main__.Tests.test_wrong_mobius) ... ok
+test_wrong_parent_prelude (__main__.Tests.test_wrong_parent_prelude) ... ok
+test_wrong_predecessor (__main__.Tests.test_wrong_predecessor) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.076s
+
+OK
+test_fabricated_summary_is_not_complete (__main__.Contract.test_fabricated_summary_is_not_complete) ... ok
+test_no_sections_is_not_complete (__main__.Contract.test_no_sections_is_not_complete) ... ok
+test_untyped_empty_edges_are_not_a_certificate (__main__.Contract.test_untyped_empty_edges_are_not_a_certificate) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+OK
+test_complete_small (__main__.Tests.test_complete_small) ... ok
+test_cross_parent_edge_rejected (__main__.Tests.test_cross_parent_edge_rejected) ... ok
+test_masked_has_local_edge_with_zero_global (__main__.Tests.test_masked_has_local_edge_with_zero_global) ... ok
+test_max_only_cross_parent_has_no_local_edge (__main__.Tests.test_max_only_cross_parent_has_no_local_edge) ... ok
+test_pure_three_way_checker_detected (__main__.Tests.test_pure_three_way_checker_detected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.011s
+
+OK
+test_actual_relabeling (__main__.Tests.test_actual_relabeling) ... ok
+test_boolean_event (__main__.Tests.test_boolean_event) ... ok
+test_boolean_height (__main__.Tests.test_boolean_height) ... ok
+test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+test_extra_duplicate_case (__main__.Tests.test_extra_duplicate_case) ... ok
+test_false_relabeling (__main__.Tests.test_false_relabeling) ... ok
+test_foreign_origin (__main__.Tests.test_foreign_origin) ... ok
+test_invalid_inputs (__main__.Tests.test_invalid_inputs) ... ok
+test_local_masked (__main__.Tests.test_local_masked) ... ok
+test_missing_case (__main__.Tests.test_missing_case) ... ok
+test_missing_profile (__main__.Tests.test_missing_profile) ... ok
+test_missing_shape (__main__.Tests.test_missing_shape) ... ok
+test_missing_state (__main__.Tests.test_missing_state) ... ok
+test_negative_max_only (__main__.Tests.test_negative_max_only) ... ok
+test_positive_max_only (__main__.Tests.test_positive_max_only) ... ok
+test_reversed_events (__main__.Tests.test_reversed_events) ... ok
+test_reversed_storage (__main__.Tests.test_reversed_storage) ... ok
+test_transmitted_negative (__main__.Tests.test_transmitted_negative) ... ok
+test_transmitted_positive (__main__.Tests.test_transmitted_positive) ... ok
+test_verifier_no_producer_import (__main__.Tests.test_verifier_no_producer_import) ... ok
+test_wrong_background (__main__.Tests.test_wrong_background) ... ok
+test_wrong_class (__main__.Tests.test_wrong_class) ... ok
+test_wrong_height (__main__.Tests.test_wrong_height) ... ok
+test_wrong_local_interaction (__main__.Tests.test_wrong_local_interaction) ... ok
+test_wrong_parent_pair (__main__.Tests.test_wrong_parent_pair) ... ok
+test_wrong_prediction (__main__.Tests.test_wrong_prediction) ... ok
+test_wrong_profile (__main__.Tests.test_wrong_profile) ... ok
+test_wrong_scalar_sign (__main__.Tests.test_wrong_scalar_sign) ... ok
+test_wrong_state (__main__.Tests.test_wrong_state) ... ok
+test_zero_control (__main__.Tests.test_zero_control) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.048s
+
+OK
+test_actual_lineage_and_storage_relabeling (__main__.Tests.test_actual_lineage_and_storage_relabeling) ... ok
+test_boolean_h (__main__.Tests.test_boolean_h) ... ok
+test_chain_interval_is_not_a_no_go (__main__.Tests.test_chain_interval_is_not_a_no_go) ... ok
+test_changed_union_rejected_by_verifier (__main__.Tests.test_changed_union_rejected_by_verifier) ... ok
+test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+test_false_h (__main__.Tests.test_false_h) ... ok
+test_false_independence (__main__.Tests.test_false_independence) ... ok
+test_false_metamorphic_copy (__main__.Tests.test_false_metamorphic_copy) ... ok
+test_false_mixed_difference (__main__.Tests.test_false_mixed_difference) ... ok
+test_false_witness_heights (__main__.Tests.test_false_witness_heights) ... ok
+test_fitted_weights_not_accepted (__main__.Tests.test_fitted_weights_not_accepted) ... ok
+test_foreign_origin (__main__.Tests.test_foreign_origin) ... ok
+test_identity_control (__main__.Tests.test_identity_control) ... ok
+test_illegal_inputs_rejected (__main__.Tests.test_illegal_inputs_rejected) ... ok
+test_missing_diamond (__main__.Tests.test_missing_diamond) ... ok
+test_missing_endpoint (__main__.Tests.test_missing_endpoint) ... ok
+test_missing_predecessor_field (__main__.Tests.test_missing_predecessor_field) ... ok
+test_missing_shape (__main__.Tests.test_missing_shape) ... ok
+test_missing_state (__main__.Tests.test_missing_state) ... ok
+test_missing_witness (__main__.Tests.test_missing_witness) ... ok
+test_one_event_positive_weight (__main__.Tests.test_one_event_positive_weight) ... ok
+test_parent_counterexample (__main__.Tests.test_parent_counterexample) ... ok
+test_positive_mixed_difference_control (__main__.Tests.test_positive_mixed_difference_control) ... ok
+test_reordered_records_valid (__main__.Tests.test_reordered_records_valid) ... ok
+test_same_total_wrong_coefficients_rejected (__main__.Tests.test_same_total_wrong_coefficients_rejected) ... ok
+test_verifier_does_not_import_producer (__main__.Tests.test_verifier_does_not_import_producer) ... ok
+test_wrong_event_identity (__main__.Tests.test_wrong_event_identity) ... ok
+test_wrong_witness_path (__main__.Tests.test_wrong_witness_path) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 4.479s
+
+OK
+test_changed_union_not_comparable (__main__.Tests.test_changed_union_not_comparable) ... ok
+test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+test_direct_equals_staged_pushforward_exactly (__main__.Tests.test_direct_equals_staged_pushforward_exactly) ... ok
+test_identity_refinement (__main__.Tests.test_identity_refinement) ... ok
+test_illegal_nonprefix_refinement_rejected (__main__.Tests.test_illegal_nonprefix_refinement_rejected) ... ok
+test_monotonic_refinement_and_strict_example (__main__.Tests.test_monotonic_refinement_and_strict_example) ... ok
+test_not_componentwise_subview_rejected (__main__.Tests.test_not_componentwise_subview_rejected) ... ok
+test_two_factorizations_same_final (__main__.Tests.test_two_factorizations_same_final) ... ok
+test_verifier_rejects_corrupt_composition (__main__.Tests.test_verifier_rejects_corrupt_composition) ... ok
+test_verifier_rejects_false_lower_after (__main__.Tests.test_verifier_rejects_false_lower_after) ... ok
+test_verifier_rejects_nonprefix_intermediate (__main__.Tests.test_verifier_rejects_nonprefix_intermediate) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.298s
+
+OK
+test_binary_views_sufficiency (__main__.Tests.test_binary_views_sufficiency) ... ok
+test_branch_count_not_exact_cover_number (__main__.Tests.test_branch_count_not_exact_cover_number) ... ok
+test_changed_lineage_and_storage (__main__.Tests.test_changed_lineage_and_storage) ... ok
+test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+test_corrupt_dual (__main__.Tests.test_corrupt_dual) ... ok
+test_corrupt_global_witness (__main__.Tests.test_corrupt_global_witness) ... ok
+test_corrupt_local_marginal (__main__.Tests.test_corrupt_local_marginal) ... ok
+test_exact_rational_pushforward (__main__.Tests.test_exact_rational_pushforward) ... ok
+test_false_child_cover (__main__.Tests.test_false_child_cover) ... ok
+test_false_high_threshold (__main__.Tests.test_false_high_threshold) ... ok
+test_false_low_threshold (__main__.Tests.test_false_low_threshold) ... ok
+test_false_metamorphic_claim (__main__.Tests.test_false_metamorphic_claim) ... ok
+test_false_sample_verdict (__main__.Tests.test_false_sample_verdict) ... ok
+test_foreign_origin (__main__.Tests.test_foreign_origin) ... ok
+test_four_way_sharpness (__main__.Tests.test_four_way_sharpness) ... ok
+test_full_view_and_redundancy (__main__.Tests.test_full_view_and_redundancy) ... ok
+test_inexact_scalar_rejected (__main__.Tests.test_inexact_scalar_rejected) ... ok
+test_invalid_parent_types_cycles (__main__.Tests.test_invalid_parent_types_cycles) ... ok
+test_invalid_view_and_union (__main__.Tests.test_invalid_view_and_union) ... ok
+test_linear_but_nonnatural_control (__main__.Tests.test_linear_but_nonnatural_control) ... ok
+test_metadata_boolean_not_integer (__main__.Tests.test_metadata_boolean_not_integer) ... ok
+test_missing_cover_rejected (__main__.Tests.test_missing_cover_rejected) ... ok
+test_missing_required_field (__main__.Tests.test_missing_required_field) ... ok
+test_missing_sample (__main__.Tests.test_missing_sample) ... ok
+test_order_is_worst_case_not_every_input (__main__.Tests.test_order_is_worst_case_not_every_input) ... ok
+test_root_and_path (__main__.Tests.test_root_and_path) ... ok
+test_two_and_three_view_parent_witnesses (__main__.Tests.test_two_and_three_view_parent_witnesses) ... ok
+test_valid_dual_and_rescaling (__main__.Tests.test_valid_dual_and_rescaling) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.438s
+
+OK
+test_all_parent_targets_checked_before_traversal (__main__.Validation.test_all_parent_targets_checked_before_traversal) ... ok
+test_reordered_valid_lineage_remains_accepted (__main__.Validation.test_reordered_valid_lineage_remains_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+test_actual_signed_and_positive_pair_witness (__main__.Tests.test_actual_signed_and_positive_pair_witness) ... ok
+test_changed_lineage_storage (__main__.Tests.test_changed_lineage_storage) ... ok
+test_complete_small_certificate (__main__.Tests.test_complete_small_certificate) ... ok
+test_corrupt_negative_witness_rejected (__main__.Tests.test_corrupt_negative_witness_rejected) ... ok
+test_exact_scalars_and_lengths (__main__.Tests.test_exact_scalars_and_lengths) ... ok
+test_false_positive_feasibility_rejected (__main__.Tests.test_false_positive_feasibility_rejected) ... ok
+test_feasible_nonnegative_control (__main__.Tests.test_feasible_nonnegative_control) ... ok
+test_foreign_origin_rejected (__main__.Tests.test_foreign_origin_rejected) ... ok
+test_identity_root_and_repeated_views (__main__.Tests.test_identity_root_and_repeated_views) ... ok
+test_incompatible_overlap_rejected (__main__.Tests.test_incompatible_overlap_rejected) ... ok
+test_invalid_parent_and_retained_inputs (__main__.Tests.test_invalid_parent_and_retained_inputs) ... ok
+test_linear_but_nonnatural_section_rejected (__main__.Tests.test_linear_but_nonnatural_section_rejected) ... ok
+test_missing_coverage_rejected (__main__.Tests.test_missing_coverage_rejected) ... ok
+test_missing_field_and_inexact_matrix_rejected (__main__.Tests.test_missing_field_and_inexact_matrix_rejected) ... ok
+test_nonnegative_false_input_rejected (__main__.Tests.test_nonnegative_false_input_rejected) ... ok
+test_off_domain_gluer_change_is_harmless (__main__.Tests.test_off_domain_gluer_change_is_harmless) ... ok
+test_pairwise_positive_is_not_global (__main__.Tests.test_pairwise_positive_is_not_global) ... ok
+test_response_representative_independence (__main__.Tests.test_response_representative_independence) ... ok
+test_source_shift_is_not_potential_gauge (__main__.Tests.test_source_shift_is_not_potential_gauge) ... ok
+test_wrong_gluer_on_compatible_data_rejected (__main__.Tests.test_wrong_gluer_on_compatible_data_rejected) ... ok
+test_wrong_joint_readout_rejected (__main__.Tests.test_wrong_joint_readout_rejected) ... ok
+test_wrong_overlap_rejected (__main__.Tests.test_wrong_overlap_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.136s
+
+OK
+test_omitted_storage_reversal_rejected (__main__.SchemaTests.test_omitted_storage_reversal_rejected) ... ok
+test_original_cannot_masquerade_as_relabelled (__main__.SchemaTests.test_original_cannot_masquerade_as_relabelled) ... ok
+test_real_metamorphic_case_accepted (__main__.SchemaTests.test_real_metamorphic_case_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.170s
+
+OK
+test_actual_old_kernel_witness (__main__.Tests.test_actual_old_kernel_witness) ... ok
+test_bare_filtration_scaling_and_shear (__main__.Tests.test_bare_filtration_scaling_and_shear) ... ok
+test_constructive_and_negative_linear_descent (__main__.Tests.test_constructive_and_negative_linear_descent) ... ok
+test_corrupted_witness_rejected (__main__.Tests.test_corrupted_witness_rejected) ... ok
+test_direct_fiber_sum_and_section (__main__.Tests.test_direct_fiber_sum_and_section) ... ok
+test_exact_input_no_float_or_truncation (__main__.Tests.test_exact_input_no_float_or_truncation) ... ok
+test_false_descent_rejected (__main__.Tests.test_false_descent_rejected) ... ok
+test_foreign_domain_identity_rejected (__main__.Tests.test_foreign_domain_identity_rejected) ... ok
+test_identity_and_root_zero_dimensional_cases (__main__.Tests.test_identity_and_root_zero_dimensional_cases) ... ok
+test_illegal_target_and_origin_rejected (__main__.Tests.test_illegal_target_and_origin_rejected) ... ok
+test_incompatible_composition_rejected (__main__.Tests.test_incompatible_composition_rejected) ... ok
+test_invalid_carriers_are_not_repaired (__main__.Tests.test_invalid_carriers_are_not_repaired) ... ok
+test_linear_right_inverse_can_fail_retained_naturality (__main__.Tests.test_linear_right_inverse_can_fail_retained_naturality) ... ok
+test_missing_check_and_coverage_rejected (__main__.Tests.test_missing_check_and_coverage_rejected) ... ok
+test_mutated_green_rejected (__main__.Tests.test_mutated_green_rejected) ... ok
+test_mutated_pushforward_rejected (__main__.Tests.test_mutated_pushforward_rejected) ... ok
+test_mutated_section_rejected (__main__.Tests.test_mutated_section_rejected) ... ok
+test_nonlinear_boundary_is_not_linear_test (__main__.Tests.test_nonlinear_boundary_is_not_linear_test) ... ok
+test_nonpermutation_coordinate_change (__main__.Tests.test_nonpermutation_coordinate_change) ... ok
+test_relabel_and_storage_naturality (__main__.Tests.test_relabel_and_storage_naturality) ... ok
+test_response_quotient_and_supplied_complement (__main__.Tests.test_response_quotient_and_supplied_complement) ... ok
+test_shape_enumerators_agree_without_shared_implementation (__main__.Tests.test_shape_enumerators_agree_without_shared_implementation) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.613s
+
+OK
