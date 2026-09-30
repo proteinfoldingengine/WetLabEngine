@@ -1,0 +1,680 @@
+﻿2026-09-30T19:05:57.6731540Z Current runner version: '2.337.0'
+2026-09-30T19:05:57.6761252Z ##[group]Runner Image Provisioner
+2026-09-30T19:05:57.6762434Z Hosted Compute Agent
+2026-09-30T19:05:57.6763044Z Version: 20260828.587
+2026-09-30T19:05:57.6763797Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-30T19:05:57.6764574Z Build Date: 2026-08-28T16:44:25Z
+2026-09-30T19:05:57.6765380Z Worker ID: {1c19ce99-642c-44f0-a596-f7b56ab454ae}
+2026-09-30T19:05:57.6766188Z Azure Region: westus
+2026-09-30T19:05:57.6766787Z ##[endgroup]
+2026-09-30T19:05:57.6768504Z ##[group]Operating System
+2026-09-30T19:05:57.6769191Z Ubuntu
+2026-09-30T19:05:57.6769878Z 24.04.5
+2026-09-30T19:05:57.6770436Z LTS
+2026-09-30T19:05:57.6771264Z ##[endgroup]
+2026-09-30T19:05:57.6771918Z ##[group]Runner Image
+2026-09-30T19:05:57.6772567Z Image: ubuntu-24.04
+2026-09-30T19:05:57.6773606Z Version: 20260920.314.1
+2026-09-30T19:05:57.6775110Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-30T19:05:57.6776826Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-30T19:05:57.6777885Z ##[endgroup]
+2026-09-30T19:05:57.6779231Z ##[group]GITHUB_TOKEN Permissions
+2026-09-30T19:05:57.6782002Z Contents: read
+2026-09-30T19:05:57.6782622Z Metadata: read
+2026-09-30T19:05:57.6783340Z ##[endgroup]
+2026-09-30T19:05:57.6785784Z Secret source: Actions
+2026-09-30T19:05:57.6786895Z Cache mode: write
+2026-09-30T19:05:57.6787646Z Prepare workflow directory
+2026-09-30T19:05:57.7172461Z Prepare all required actions
+2026-09-30T19:05:57.7229346Z Getting action download info
+2026-09-30T19:05:58.1303056Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-30T19:05:58.5853156Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-09-30T19:05:58.7045776Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-09-30T19:05:59.0207660Z Complete job name: science
+2026-09-30T19:05:59.1248915Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-09-30T19:05:59.1251244Z with:
+2026-09-30T19:05:59.1252277Z   fetch-depth: 64
+2026-09-30T19:05:59.1253482Z   repository: proteinfoldingengine/WetLabEngine
+2026-09-30T19:05:59.1263276Z   token: ***
+2026-09-30T19:05:59.1264323Z   ssh-strict: true
+2026-09-30T19:05:59.1265386Z   ssh-user: git
+2026-09-30T19:05:59.1266463Z   persist-credentials: true
+2026-09-30T19:05:59.1267619Z   clean: true
+2026-09-30T19:05:59.1268685Z   sparse-checkout-cone-mode: true
+2026-09-30T19:05:59.1269959Z   fetch-tags: false
+2026-09-30T19:05:59.1271154Z   show-progress: true
+2026-09-30T19:05:59.1272253Z   lfs: false
+2026-09-30T19:05:59.1273261Z   submodules: false
+2026-09-30T19:05:59.1274354Z   set-safe-directory: true
+2026-09-30T19:05:59.1275544Z   allow-unsafe-pr-checkout: false
+2026-09-30T19:05:59.1277194Z ##[endgroup]
+2026-09-30T19:05:59.2432726Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-09-30T19:05:59.2437330Z ##[group]Getting Git version info
+2026-09-30T19:05:59.2439056Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-30T19:05:59.2441646Z [command]/usr/bin/git version
+2026-09-30T19:05:59.3883037Z git version 2.55.0
+2026-09-30T19:05:59.3903630Z ##[endgroup]
+2026-09-30T19:05:59.3920052Z Temporarily overriding HOME='/home/runner/work/_temp/7e65e62f-4526-4341-9a50-deb2f02b9e1d' before making global git config changes
+2026-09-30T19:05:59.3925475Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T19:05:59.3927872Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-30T19:05:59.4200748Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-09-30T19:05:59.4206105Z ##[group]Initializing the repository
+2026-09-30T19:05:59.4211397Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-30T19:05:59.4754084Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-30T19:05:59.4757704Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-30T19:05:59.4760390Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-30T19:05:59.4762462Z hint: call:
+2026-09-30T19:05:59.4763296Z hint:
+2026-09-30T19:05:59.4764350Z hint: 	git config --global init.defaultBranch <name>
+2026-09-30T19:05:59.4765766Z hint:
+2026-09-30T19:05:59.4767121Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-30T19:05:59.4769007Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-30T19:05:59.4770531Z hint:
+2026-09-30T19:05:59.4771564Z hint: 	git branch -m <name>
+2026-09-30T19:05:59.4772539Z hint:
+2026-09-30T19:05:59.4774065Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-30T19:05:59.4776534Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-09-30T19:05:59.4780717Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-30T19:05:59.5039624Z ##[endgroup]
+2026-09-30T19:05:59.5041507Z ##[group]Disabling automatic garbage collection
+2026-09-30T19:05:59.5043285Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-30T19:05:59.5090121Z ##[endgroup]
+2026-09-30T19:05:59.5091868Z ##[group]Setting up auth
+2026-09-30T19:05:59.5096945Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T19:05:59.5142609Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T19:05:59.7193207Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T19:05:59.7242004Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T19:05:59.7540734Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T19:05:59.7596111Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T19:05:59.7898204Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-30T19:05:59.7952789Z ##[endgroup]
+2026-09-30T19:05:59.7955065Z ##[group]Fetching the repository
+2026-09-30T19:05:59.7966787Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=64 origin +10e83b9a05de7a9700b97ad389f34dadfdf964c5:refs/remotes/origin/research/v16.39-theorem-validation
+2026-09-30T19:06:19.8369252Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-09-30T19:06:19.8370611Z  * [new ref]         10e83b9a05de7a9700b97ad389f34dadfdf964c5 -> origin/research/v16.39-theorem-validation
+2026-09-30T19:06:19.8375222Z ##[endgroup]
+2026-09-30T19:06:19.8389447Z ##[group]Determining the checkout info
+2026-09-30T19:06:19.8402362Z ##[endgroup]
+2026-09-30T19:06:19.8403132Z [command]/usr/bin/git sparse-checkout disable
+2026-09-30T19:06:19.8591780Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-30T19:06:19.8652756Z ##[group]Checking out the ref
+2026-09-30T19:06:19.8653618Z [command]/usr/bin/git checkout --progress --force -B research/v16.39-theorem-validation refs/remotes/origin/research/v16.39-theorem-validation
+2026-09-30T19:06:21.0877767Z Updating files:  54% (3019/5583)
+2026-09-30T19:06:21.0921378Z Updating files:  55% (3071/5583)
+2026-09-30T19:06:21.0976278Z Updating files:  56% (3127/5583)
+2026-09-30T19:06:21.1006496Z Updating files:  57% (3183/5583)
+2026-09-30T19:06:21.1043580Z Updating files:  58% (3239/5583)
+2026-09-30T19:06:21.1440454Z Updating files:  59% (3294/5583)
+2026-09-30T19:06:21.1881054Z Updating files:  60% (3350/5583)
+2026-09-30T19:06:21.1905509Z Updating files:  61% (3406/5583)
+2026-09-30T19:06:21.1952592Z Updating files:  62% (3462/5583)
+2026-09-30T19:06:21.2089382Z Updating files:  63% (3518/5583)
+2026-09-30T19:06:21.2211720Z Updating files:  64% (3574/5583)
+2026-09-30T19:06:21.2413971Z Updating files:  65% (3629/5583)
+2026-09-30T19:06:21.2474463Z Updating files:  66% (3685/5583)
+2026-09-30T19:06:21.2532650Z Updating files:  67% (3741/5583)
+2026-09-30T19:06:21.3579278Z Updating files:  68% (3797/5583)
+2026-09-30T19:06:21.5586297Z Updating files:  69% (3853/5583)
+2026-09-30T19:06:21.6348473Z Updating files:  70% (3909/5583)
+2026-09-30T19:06:21.7464761Z Updating files:  71% (3964/5583)
+2026-09-30T19:06:21.8928212Z Updating files:  72% (4020/5583)
+2026-09-30T19:06:21.8942873Z Updating files:  72% (4054/5583)
+2026-09-30T19:06:21.9866669Z Updating files:  73% (4076/5583)
+2026-09-30T19:06:22.0475764Z Updating files:  74% (4132/5583)
+2026-09-30T19:06:22.0714492Z Updating files:  75% (4188/5583)
+2026-09-30T19:06:22.0768332Z Updating files:  76% (4244/5583)
+2026-09-30T19:06:22.1286959Z Updating files:  77% (4299/5583)
+2026-09-30T19:06:22.1332184Z Updating files:  78% (4355/5583)
+2026-09-30T19:06:22.1368102Z Updating files:  79% (4411/5583)
+2026-09-30T19:06:22.1401302Z Updating files:  80% (4467/5583)
+2026-09-30T19:06:22.1435601Z Updating files:  81% (4523/5583)
+2026-09-30T19:06:22.1468700Z Updating files:  82% (4579/5583)
+2026-09-30T19:06:22.1509816Z Updating files:  83% (4634/5583)
+2026-09-30T19:06:22.1536193Z Updating files:  84% (4690/5583)
+2026-09-30T19:06:22.1559530Z Updating files:  85% (4746/5583)
+2026-09-30T19:06:22.1735888Z Updating files:  86% (4802/5583)
+2026-09-30T19:06:22.5715764Z Updating files:  87% (4858/5583)
+2026-09-30T19:06:22.5813006Z Updating files:  88% (4914/5583)
+2026-09-30T19:06:22.6100104Z Updating files:  89% (4969/5583)
+2026-09-30T19:06:22.6375834Z Updating files:  90% (5025/5583)
+2026-09-30T19:06:22.6532416Z Updating files:  91% (5081/5583)
+2026-09-30T19:06:22.6848276Z Updating files:  92% (5137/5583)
+2026-09-30T19:06:22.7346066Z Updating files:  93% (5193/5583)
+2026-09-30T19:06:22.7402915Z Updating files:  94% (5249/5583)
+2026-09-30T19:06:22.7447673Z Updating files:  95% (5304/5583)
+2026-09-30T19:06:22.7551372Z Updating files:  96% (5360/5583)
+2026-09-30T19:06:22.7605507Z Updating files:  97% (5416/5583)
+2026-09-30T19:06:22.7755486Z Updating files:  98% (5472/5583)
+2026-09-30T19:06:22.7801667Z Updating files:  99% (5528/5583)
+2026-09-30T19:06:22.7802437Z Updating files: 100% (5583/5583)
+2026-09-30T19:06:22.7802829Z Updating files: 100% (5583/5583), done.
+2026-09-30T19:06:22.7935074Z Switched to a new branch 'research/v16.39-theorem-validation'
+2026-09-30T19:06:22.8209569Z branch 'research/v16.39-theorem-validation' set up to track 'origin/research/v16.39-theorem-validation'.
+2026-09-30T19:06:22.8317202Z ##[endgroup]
+2026-09-30T19:06:22.8369291Z [command]/usr/bin/git log -1 --format=%H
+2026-09-30T19:06:22.8402835Z 10e83b9a05de7a9700b97ad389f34dadfdf964c5
+2026-09-30T19:06:22.8736999Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-09-30T19:06:22.8737401Z with:
+2026-09-30T19:06:22.8737628Z   python-version: 3.11
+2026-09-30T19:06:22.8737868Z   check-latest: false
+2026-09-30T19:06:22.8740376Z   token: ***
+2026-09-30T19:06:22.8740602Z   update-environment: true
+2026-09-30T19:06:22.8741138Z   allow-prereleases: false
+2026-09-30T19:06:22.8741380Z   freethreaded: false
+2026-09-30T19:06:22.8741611Z ##[endgroup]
+2026-09-30T19:06:23.0135441Z ##[group]Installed versions
+2026-09-30T19:06:23.0672583Z (node:2254) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T19:06:23.0673301Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T19:06:23.0674363Z Successfully set up CPython (3.11.16)
+2026-09-30T19:06:23.0675067Z ##[endgroup]
+2026-09-30T19:06:23.0856114Z ##[group]Run python -m pip install sympy==1.13.3 mpmath==1.3.0
+2026-09-30T19:06:23.0856849Z [36;1mpython -m pip install sympy==1.13.3 mpmath==1.3.0[0m
+2026-09-30T19:06:23.2295728Z shell: /usr/bin/bash -e {0}
+2026-09-30T19:06:23.2296040Z env:
+2026-09-30T19:06:23.2296346Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:23.2296843Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-30T19:06:23.2297283Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:23.2297663Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:23.2298045Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:23.2298426Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-30T19:06:23.2298778Z ##[endgroup]
+2026-09-30T19:06:26.4160541Z Collecting sympy==1.13.3
+2026-09-30T19:06:26.4737726Z   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
+2026-09-30T19:06:26.4892832Z Collecting mpmath==1.3.0
+2026-09-30T19:06:26.4927350Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-09-30T19:06:26.5054404Z Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+2026-09-30T19:06:26.5744866Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 147.7 MB/s  0:00:00
+2026-09-30T19:06:26.5788878Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-09-30T19:06:26.5845089Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 94.8 MB/s  0:00:00
+2026-09-30T19:06:26.7891332Z Installing collected packages: mpmath, sympy
+2026-09-30T19:06:32.8344153Z 
+2026-09-30T19:06:32.8353018Z Successfully installed mpmath-1.3.0 sympy-1.13.3
+2026-09-30T19:06:32.8941902Z ##[group]Run set -euo pipefail
+2026-09-30T19:06:32.8942310Z [36;1mset -euo pipefail[0m
+2026-09-30T19:06:32.8942576Z [36;1mmkdir -p out/v1639/logs[0m
+2026-09-30T19:06:32.8942939Z [36;1mD=ResearchHistory/UQCF-GEM/demos/v16.39-theorem-validation[0m
+2026-09-30T19:06:32.8943711Z [36;1mif python ResearchHistory/UQCF-GEM/demos/v16.37-certified-closure/test_historical_contract.py > out/v1639/logs/historical-red.log 2>&1; then exit 1; fi[0m
+2026-09-30T19:06:32.8944617Z [36;1mgrep -q "AssertionError: ('HISTORICAL_LABEL_LOSS', (3, 2, 3), (3, 1, 3))" out/v1639/logs/historical-red.log[0m
+2026-09-30T19:06:32.8945181Z [36;1mpython "$D/test_gate.py" 2>&1 | tee out/v1639/logs/tests.log[0m
+2026-09-30T19:06:32.9014761Z shell: /usr/bin/bash -e {0}
+2026-09-30T19:06:32.9015026Z env:
+2026-09-30T19:06:32.9015305Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:32.9015752Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-30T19:06:32.9016245Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:32.9016636Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:32.9017011Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:32.9017426Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-30T19:06:32.9017746Z ##[endgroup]
+2026-09-30T19:06:33.4176943Z test_duplicate_record (__main__.Certificate.test_duplicate_record) ... ok
+2026-09-30T19:06:33.4205860Z test_false_failed_coordinate_cut (__main__.Certificate.test_false_failed_coordinate_cut) ... ok
+2026-09-30T19:06:33.4210644Z test_false_sc (__main__.Certificate.test_false_sc) ... ok
+2026-09-30T19:06:33.4239941Z test_false_successful_coordinate (__main__.Certificate.test_false_successful_coordinate) ... ok
+2026-09-30T19:06:33.4298881Z test_false_summary (__main__.Certificate.test_false_summary) ... ok
+2026-09-30T19:06:33.4357778Z test_false_verdict (__main__.Certificate.test_false_verdict) ... ok
+2026-09-30T19:06:33.4361399Z test_missing_field (__main__.Certificate.test_missing_field) ... ok
+2026-09-30T19:06:33.4366013Z test_missing_record (__main__.Certificate.test_missing_record) ... ok
+2026-09-30T19:06:33.4818006Z test_obstruction_records_verified (__main__.Certificate.test_obstruction_records_verified) ... ok
+2026-09-30T19:06:33.4822022Z test_same_count_substitution (__main__.Certificate.test_same_count_substitution) ... ok
+2026-09-30T19:06:33.4879080Z test_valid_complete_records (__main__.Certificate.test_valid_complete_records) ... ok
+2026-09-30T19:06:33.4882768Z test_wrong_schema (__main__.Certificate.test_wrong_schema) ... ok
+2026-09-30T19:06:33.4885239Z test_known_child_deficit_path (__main__.Construction.test_known_child_deficit_path) ... ok
+2026-09-30T19:06:33.4888600Z test_known_parent_deficit_path (__main__.Construction.test_known_parent_deficit_path) ... ok
+2026-09-30T19:06:33.4889648Z test_obstruction_classification (__main__.Construction.test_obstruction_classification) ... ok
+2026-09-30T19:06:33.4894494Z test_palette_change_and_shrink (__main__.Construction.test_palette_change_and_shrink) ... ok
+2026-09-30T19:06:33.4895570Z test_reject_false_zero_normalization (__main__.Construction.test_reject_false_zero_normalization) ... ok
+2026-09-30T19:06:33.4896582Z test_reject_illegal_jump (__main__.Construction.test_reject_illegal_jump) ... ok
+2026-09-30T19:06:33.4898258Z test_reject_two_simultaneous_deviations (__main__.Construction.test_reject_two_simultaneous_deviations) ... ok
+2026-09-30T19:06:33.4901185Z test_reject_wrong_endpoint (__main__.Construction.test_reject_wrong_endpoint) ... ok
+2026-09-30T19:06:33.4902075Z test_subtree_lifting (__main__.Construction.test_subtree_lifting) ... ok
+2026-09-30T19:06:33.4903710Z test_two_view_swap (__main__.Construction.test_two_view_swap) ... ok
+2026-09-30T19:06:33.5155415Z test_current_stage_provenance_accepts (__main__.Provenance.test_current_stage_provenance_accepts) ... ok
+2026-09-30T19:06:33.5157209Z test_source_membership_and_hash_rejected (__main__.Provenance.test_source_membership_and_hash_rejected) ... ok
+2026-09-30T19:06:33.5160235Z test_stage_and_metadata_substitution_rejected (__main__.Provenance.test_stage_and_metadata_substitution_rejected) ... ok
+2026-09-30T19:06:33.5161233Z 
+2026-09-30T19:06:33.5161465Z ----------------------------------------------------------------------
+2026-09-30T19:06:33.5162001Z Ran 25 tests in 0.397s
+2026-09-30T19:06:33.5162239Z 
+2026-09-30T19:06:33.5162360Z OK
+2026-09-30T19:06:33.5338038Z ##[group]Run set -euo pipefail
+2026-09-30T19:06:33.5338375Z [36;1mset -euo pipefail[0m
+2026-09-30T19:06:33.5338995Z [36;1mpython ResearchHistory/UQCF-GEM/demos/v16.39-theorem-validation/run_campaign.py out/v1639/scientific 2>&1 | tee out/v1639/logs/science.log[0m
+2026-09-30T19:06:33.5408324Z shell: /usr/bin/bash -e {0}
+2026-09-30T19:06:33.5408594Z env:
+2026-09-30T19:06:33.5409060Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:33.5409539Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-30T19:06:33.5409971Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:33.5410360Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:33.5410740Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:06:33.5411378Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-30T19:06:33.5411723Z ##[endgroup]
+2026-09-30T19:06:35.7546984Z PRODUCTION_COMPLETE
+2026-09-30T19:08:40.3667461Z {"bound": 6, "campaign": "16.38", "certificate_schema": "inherited-v16.37", "outcome": "BOUNDED_UNIT_ONLY", "raw_bytes": 4730672, "raw_sha256": "6739fe31fe9e19de6a7e1ac52f7fdbc4b882db7cf2f6b5edd177305d18f7803e", "summary": {"component_pairs": 244, "endpoint_pairs": 1497, "graphs": 111, "nonunit_pairs": 0, "objective_distinctions": 0, "states": 52907}, "universal_unit_law": "UNRESOLVED"}
+2026-09-30T19:08:40.5739315Z PARENT_SCIENTIFIC_BYTES_IDENTICAL
+2026-09-30T19:08:43.4242435Z {"campaign": "16.39", "obstruction_outcome": "ALL_OBSTRUCTION_PAIRS_STATIC_SUFFICIENT", "outcome": "THEOREM_CONSTRUCTION_VALIDATED_WITHIN_DOMAIN", "raw_bytes": 4816609, "raw_sha256": "8e0d939a2c82a119463d0101d2da9410e7ab91994e336fdafad4025c119cb952", "summary": {"component_pairs": 244, "endpoint_only_pairs": 0, "endpoint_pairs": 1497, "graphs": 111, "moving_required_pairs": 0, "obstruction_pairs": 78, "sc_pairs": 166, "static_sufficient_pairs": 78}, "universal_unit_law": "UNRESOLVED"}
+2026-09-30T19:08:43.4543061Z ##[group]Run set -euo pipefail
+2026-09-30T19:08:43.4543400Z [36;1mset -euo pipefail[0m
+2026-09-30T19:08:43.4543960Z [36;1mpython ResearchHistory/UQCF-GEM/demos/v16.39-theorem-validation/run_inherited.py 2>&1 | tee out/v1639/logs/inherited.log[0m
+2026-09-30T19:08:43.4621885Z shell: /usr/bin/bash -e {0}
+2026-09-30T19:08:43.4622165Z env:
+2026-09-30T19:08:43.4622448Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:08:43.4622894Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-30T19:08:43.4623320Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:08:43.4623740Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:08:43.4624201Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:08:43.4624577Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-30T19:08:43.4624899Z ##[endgroup]
+2026-09-30T19:08:46.5945690Z {"outcome":"BOUNDED_UNIT_ONLY","raw_bytes":446574,"raw_sha256":"932b8a88a2fa1a15e5428f99564ae161cad9712468c929cb210e710820a715f0","summary":{"component_pairs":69,"endpoint_pairs":77,"graphs":51,"nonunit_pairs":0,"objective_distinctions":0,"states":6325},"universal_unit_law":"UNRESOLVED"}
+2026-09-30T19:08:46.5946718Z 
+2026-09-30T19:08:46.6019071Z PARENT_SCIENTIFIC_BYTES_IDENTICAL
+2026-09-30T19:08:46.6558965Z test_changed_edges_rejected (__main__.Extension.test_changed_edges_rejected) ... ok
+2026-09-30T19:08:46.6560254Z test_duplicate_graph_rejected (__main__.Extension.test_duplicate_graph_rejected) ... ok
+2026-09-30T19:08:46.6561374Z test_identical_parent_accepted (__main__.Extension.test_identical_parent_accepted) ... ok
+2026-09-30T19:08:46.6563095Z test_missing_graph_rejected (__main__.Extension.test_missing_graph_rejected) ... ok
+2026-09-30T19:08:46.6564874Z test_reordered_graphs_accepted (__main__.Extension.test_reordered_graphs_accepted) ... ok
+2026-09-30T19:08:46.6567179Z test_same_count_substitution_rejected (__main__.Extension.test_same_count_substitution_rejected) ... ok
+2026-09-30T19:08:46.6567920Z test_six_vertex_domain (__main__.Extension.test_six_vertex_domain) ... ok
+2026-09-30T19:08:46.6569279Z test_wrong_campaign_domain_rejected (__main__.Extension.test_wrong_campaign_domain_rejected) ... ok
+2026-09-30T19:08:46.6569924Z 
+2026-09-30T19:08:46.6570092Z ----------------------------------------------------------------------
+2026-09-30T19:08:46.6570449Z Ran 8 tests in 0.002s
+2026-09-30T19:08:46.6570594Z 
+2026-09-30T19:08:46.6570684Z OK
+2026-09-30T19:08:46.7182409Z test_changed_historical_value_rejected (__main__.Gates.test_changed_historical_value_rejected) ... ok
+2026-09-30T19:08:46.7206359Z test_constructive_small_universe (__main__.Gates.test_constructive_small_universe) ... ok
+2026-09-30T19:08:46.7217630Z test_duplicate_graph (__main__.Gates.test_duplicate_graph) ... ok
+2026-09-30T19:08:46.7232101Z test_duplicate_pair (__main__.Gates.test_duplicate_pair) ... ok
+2026-09-30T19:08:46.7263820Z test_false_endpoint_count (__main__.Gates.test_false_endpoint_count) ... ok
+2026-09-30T19:08:46.7278831Z test_false_lower_threshold_cut (__main__.Gates.test_false_lower_threshold_cut) ... ok
+2026-09-30T19:08:46.7286472Z test_float_certificate_rejected (__main__.Gates.test_float_certificate_rejected) ... ok
+2026-09-30T19:08:46.7302300Z test_illegal_path (__main__.Gates.test_illegal_path) ... ok
+2026-09-30T19:08:46.7303445Z test_lex_label_loss_control (__main__.Gates.test_lex_label_loss_control) ... ok
+2026-09-30T19:08:46.7313972Z test_missing_graph (__main__.Gates.test_missing_graph) ... ok
+2026-09-30T19:08:46.7327999Z test_missing_pair (__main__.Gates.test_missing_pair) ... ok
+2026-09-30T19:08:46.7336944Z test_missing_required_field (__main__.Gates.test_missing_required_field) ... ok
+2026-09-30T19:08:46.7371798Z test_missing_state (__main__.Gates.test_missing_state) ... ok
+2026-09-30T19:08:46.8813412Z test_pair_order_accepted (__main__.Gates.test_pair_order_accepted) ... ok
+2026-09-30T19:08:46.8824912Z test_same_count_substitution (__main__.Gates.test_same_count_substitution) ... ok
+2026-09-30T19:08:46.8825730Z test_scalar_versus_lex_objective (__main__.Gates.test_scalar_versus_lex_objective) ... ok
+2026-09-30T19:08:46.9333960Z test_shape_enumerators (__main__.Gates.test_shape_enumerators) ... ok
+2026-09-30T19:08:46.9365740Z test_valid_graph_order (__main__.Gates.test_valid_graph_order) ... ok
+2026-09-30T19:08:46.9381702Z test_wrong_barrier (__main__.Gates.test_wrong_barrier) ... ok
+2026-09-30T19:08:46.9391296Z test_wrong_domain (__main__.Gates.test_wrong_domain) ... ok
+2026-09-30T19:08:46.9402636Z test_wrong_q (__main__.Gates.test_wrong_q) ... ok
+2026-09-30T19:08:46.9417699Z test_wrong_representative (__main__.Gates.test_wrong_representative) ... ok
+2026-09-30T19:08:46.9449057Z test_wrong_verdict (__main__.Gates.test_wrong_verdict) ... ok
+2026-09-30T19:08:46.9687888Z test_bound_provenance_accepts (__main__.Provenance.test_bound_provenance_accepts) ... ok
+2026-09-30T19:08:46.9689094Z test_changed_and_omitted_source_rejected (__main__.Provenance.test_changed_and_omitted_source_rejected) ... ok
+2026-09-30T19:08:46.9690166Z test_false_provenance_rejected (__main__.Provenance.test_false_provenance_rejected) ... ok
+2026-09-30T19:08:46.9690764Z 
+2026-09-30T19:08:46.9711864Z ----------------------------------------------------------------------
+2026-09-30T19:08:46.9712471Z Ran 26 tests in 0.265s
+2026-09-30T19:08:46.9712700Z 
+2026-09-30T19:08:46.9712829Z OK
+2026-09-30T19:09:08.5902123Z test_complete_small (__main__.T.test_complete_small) ... ok
+2026-09-30T19:09:21.5517818Z test_extra_duplicate_pair_rejected (__main__.T.test_extra_duplicate_pair_rejected) ... ok
+2026-09-30T19:09:34.2782657Z test_false_barrier_rejected (__main__.T.test_false_barrier_rejected) ... ok
+2026-09-30T19:09:55.7493113Z test_false_extension_count_rejected (__main__.T.test_false_extension_count_rejected) ... ok
+2026-09-30T19:10:08.6382294Z test_false_gate_d_rejected (__main__.T.test_false_gate_d_rejected) ... ok
+2026-09-30T19:10:21.3450657Z test_false_group_count_rejected (__main__.T.test_false_group_count_rejected) ... ok
+2026-09-30T19:10:34.0965296Z test_false_signature_rejected (__main__.T.test_false_signature_rejected) ... ok
+2026-09-30T19:10:55.6664777Z test_false_ultrametric_count_rejected (__main__.T.test_false_ultrametric_count_rejected) ... ok
+2026-09-30T19:11:17.3281919Z test_hidden_exclusion_rejected (__main__.T.test_hidden_exclusion_rejected) ... ok
+2026-09-30T19:11:30.1050189Z test_missing_gate_rejected (__main__.T.test_missing_gate_rejected) ... ok
+2026-09-30T19:11:42.8564433Z test_omitted_valid_pair_rejected (__main__.T.test_omitted_valid_pair_rejected) ... ok
+2026-09-30T19:11:59.1492001Z test_substituted_pair_rejected (__main__.T.test_substituted_pair_rejected) ... ok
+2026-09-30T19:11:59.1492400Z 
+2026-09-30T19:11:59.1492569Z ----------------------------------------------------------------------
+2026-09-30T19:11:59.1492955Z Ran 12 tests in 192.131s
+2026-09-30T19:11:59.1493123Z 
+2026-09-30T19:11:59.1493208Z OK
+2026-09-30T19:11:59.2335008Z test_bad_alternative_minimax_rejected (__main__.T.test_bad_alternative_minimax_rejected) ... ok
+2026-09-30T19:11:59.2480043Z test_bad_path_certificate_rejected (__main__.T.test_bad_path_certificate_rejected) ... ok
+2026-09-30T19:11:59.2694948Z test_complete_small (__main__.T.test_complete_small) ... ok
+2026-09-30T19:11:59.2891710Z test_corrupt_component_range_rejected (__main__.T.test_corrupt_component_range_rejected) ... ok
+2026-09-30T19:11:59.3037237Z test_corrupt_localization_rejected (__main__.T.test_corrupt_localization_rejected) ... ok
+2026-09-30T19:11:59.3183154Z test_false_bulk_count_rejected (__main__.T.test_false_bulk_count_rejected) ... ok
+2026-09-30T19:11:59.3394162Z test_false_compulsory_coordinate_rejected (__main__.T.test_false_compulsory_coordinate_rejected) ... ok
+2026-09-30T19:11:59.3595262Z test_false_gate_c_rejected (__main__.T.test_false_gate_c_rejected) ... ok
+2026-09-30T19:11:59.3797129Z test_false_gate_d_rejected (__main__.T.test_false_gate_d_rejected) ... ok
+2026-09-30T19:11:59.4009157Z test_false_gate_e_classification_rejected (__main__.T.test_false_gate_e_classification_rejected) ... ok
+2026-09-30T19:11:59.4225136Z test_false_gate_e_rejected (__main__.T.test_false_gate_e_rejected) ... ok
+2026-09-30T19:11:59.4436480Z test_false_possible_coordinate_rejected (__main__.T.test_false_possible_coordinate_rejected) ... ok
+2026-09-30T19:11:59.4575834Z test_false_zero_rejected (__main__.T.test_false_zero_rejected) ... ok
+2026-09-30T19:11:59.4661721Z test_missing_gate_adjudication_rejected (__main__.T.test_missing_gate_adjudication_rejected) ... ok
+2026-09-30T19:11:59.4802327Z test_omitted_positive_pair_rejected (__main__.T.test_omitted_positive_pair_rejected) ... ok
+2026-09-30T19:11:59.5021870Z test_positive_witness (__main__.T.test_positive_witness) ... ok
+2026-09-30T19:11:59.5024133Z 
+2026-09-30T19:11:59.5024625Z ----------------------------------------------------------------------
+2026-09-30T19:11:59.5025183Z Ran 16 tests in 0.303s
+2026-09-30T19:11:59.5025396Z 
+2026-09-30T19:11:59.5025505Z OK
+2026-09-30T19:11:59.5714943Z test_complete_small (__main__.T.test_complete_small) ... ok
+2026-09-30T19:11:59.5835443Z test_connectivity_not_trusted (__main__.T.test_connectivity_not_trusted) ... ok
+2026-09-30T19:11:59.5837031Z test_minimum_cover_exact_control (__main__.T.test_minimum_cover_exact_control) ... ok
+2026-09-30T19:11:59.5838819Z test_omitted_minimum_cover_rejected (__main__.T.test_omitted_minimum_cover_rejected) ... ok
+2026-09-30T19:11:59.5839373Z 
+2026-09-30T19:11:59.5839579Z ----------------------------------------------------------------------
+2026-09-30T19:11:59.5840068Z Ran 4 tests in 0.031s
+2026-09-30T19:11:59.5840270Z 
+2026-09-30T19:11:59.5840394Z OK
+2026-09-30T19:11:59.6423043Z test_changed_tau_move_rejected_as_invisible (__main__.T.test_changed_tau_move_rejected_as_invisible) ... ok
+2026-09-30T19:11:59.6585362Z test_complete_small (__main__.T.test_complete_small) ... ok
+2026-09-30T19:11:59.6595614Z test_fake_unique_minimum_rejected (__main__.T.test_fake_unique_minimum_rejected) ... ok
+2026-09-30T19:11:59.6597384Z test_invisible_and_visible_controls (__main__.T.test_invisible_and_visible_controls) ... ok
+2026-09-30T19:11:59.6708404Z test_verifier_rejects_false_bulk_counts (__main__.T.test_verifier_rejects_false_bulk_counts) ... ok
+2026-09-30T19:11:59.6816823Z test_verifier_rejects_false_connectivity (__main__.T.test_verifier_rejects_false_connectivity) ... ok
+2026-09-30T19:11:59.6923522Z test_verifier_rejects_missing_class (__main__.T.test_verifier_rejects_missing_class) ... ok
+2026-09-30T19:11:59.7032351Z test_verifier_rejects_omitted_member (__main__.T.test_verifier_rejects_omitted_member) ... ok
+2026-09-30T19:11:59.7033016Z 
+2026-09-30T19:11:59.7033262Z ----------------------------------------------------------------------
+2026-09-30T19:11:59.7033805Z Ran 8 tests in 0.070s
+2026-09-30T19:11:59.7034012Z 
+2026-09-30T19:11:59.7034137Z OK
+2026-09-30T19:11:59.7653002Z test_actual_collision_if_claimed (__main__.Tests.test_actual_collision_if_claimed) ... ok
+2026-09-30T19:11:59.7655099Z test_changed_interval_rejected (__main__.Tests.test_changed_interval_rejected) ... ok
+2026-09-30T19:11:59.7656086Z test_coarse_checker_collision (__main__.Tests.test_coarse_checker_collision) ... ok
+2026-09-30T19:11:59.7658797Z test_fabricated_collision_rejected (__main__.Tests.test_fabricated_collision_rejected) ... ok
+2026-09-30T19:11:59.7660684Z test_signature_must_not_contain_state_mask (__main__.Tests.test_signature_must_not_contain_state_mask) ... ok
+2026-09-30T19:11:59.7661455Z 
+2026-09-30T19:11:59.7661685Z ----------------------------------------------------------------------
+2026-09-30T19:11:59.7662215Z Ran 5 tests in 0.014s
+2026-09-30T19:11:59.7662438Z 
+2026-09-30T19:11:59.7662565Z OK
+2026-09-30T19:11:59.8364237Z test_actual_relabeling_and_view_storage (__main__.Tests.test_actual_relabeling_and_view_storage) ... ok
+2026-09-30T19:11:59.8367872Z test_boolean_profile (__main__.Tests.test_boolean_profile) ... ok
+2026-09-30T19:11:59.8569116Z test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+2026-09-30T19:11:59.8572205Z test_cross_parent_edge (__main__.Tests.test_cross_parent_edge) ... ok
+2026-09-30T19:11:59.8616683Z test_duplicate_endpoint (__main__.Tests.test_duplicate_endpoint) ... ok
+2026-09-30T19:11:59.8619676Z test_fabricated_cartesian_count (__main__.Tests.test_fabricated_cartesian_count) ... ok
+2026-09-30T19:11:59.8622594Z test_false_profile (__main__.Tests.test_false_profile) ... ok
+2026-09-30T19:11:59.8677511Z test_false_relabeling (__main__.Tests.test_false_relabeling) ... ok
+2026-09-30T19:11:59.8679435Z test_foreign_origin (__main__.Tests.test_foreign_origin) ... ok
+2026-09-30T19:11:59.8681513Z test_identity (__main__.Tests.test_identity) ... ok
+2026-09-30T19:11:59.8684069Z test_invalid_endpoint_inputs (__main__.Tests.test_invalid_endpoint_inputs) ... ok
+2026-09-30T19:11:59.8691551Z test_missing_actual_edge (__main__.Tests.test_missing_actual_edge) ... ok
+2026-09-30T19:11:59.8692594Z test_missing_document_sections (__main__.Tests.test_missing_document_sections) ... ok
+2026-09-30T19:11:59.8736749Z test_missing_endpoint (__main__.Tests.test_missing_endpoint) ... ok
+2026-09-30T19:11:59.8739401Z test_missing_local_table (__main__.Tests.test_missing_local_table) ... ok
+2026-09-30T19:11:59.8779477Z test_missing_shape (__main__.Tests.test_missing_shape) ... ok
+2026-09-30T19:11:59.8782676Z test_missing_state (__main__.Tests.test_missing_state) ... ok
+2026-09-30T19:11:59.8786948Z test_noncartesian_nonconstant_chain (__main__.Tests.test_noncartesian_nonconstant_chain) ... ok
+2026-09-30T19:11:59.8793228Z test_retained_third_order (__main__.Tests.test_retained_third_order) ... ok
+2026-09-30T19:11:59.8794710Z test_synthetic_cubic_all_background_not_baseline (__main__.Tests.test_synthetic_cubic_all_background_not_baseline) ... ok
+2026-09-30T19:11:59.8795955Z test_synthetic_separate_components (__main__.Tests.test_synthetic_separate_components) ... ok
+2026-09-30T19:11:59.8801864Z test_valid_reversed_records (__main__.Tests.test_valid_reversed_records) ... ok
+2026-09-30T19:11:59.8937053Z test_verifier_no_producer_import (__main__.Tests.test_verifier_no_producer_import) ... ok
+2026-09-30T19:11:59.8941734Z test_wrong_component_values (__main__.Tests.test_wrong_component_values) ... ok
+2026-09-30T19:11:59.8942794Z test_wrong_cube_shape (__main__.Tests.test_wrong_cube_shape) ... ok
+2026-09-30T19:11:59.8946694Z test_wrong_mobius (__main__.Tests.test_wrong_mobius) ... ok
+2026-09-30T19:11:59.8949996Z test_wrong_parent_prelude (__main__.Tests.test_wrong_parent_prelude) ... ok
+2026-09-30T19:11:59.8953191Z test_wrong_predecessor (__main__.Tests.test_wrong_predecessor) ... ok
+2026-09-30T19:11:59.8956800Z 
+2026-09-30T19:11:59.8957132Z ----------------------------------------------------------------------
+2026-09-30T19:11:59.8957628Z Ran 28 tests in 0.076s
+2026-09-30T19:11:59.8957854Z 
+2026-09-30T19:11:59.8957971Z OK
+2026-09-30T19:11:59.9523844Z test_fabricated_summary_is_not_complete (__main__.Contract.test_fabricated_summary_is_not_complete) ... ok
+2026-09-30T19:11:59.9528813Z test_no_sections_is_not_complete (__main__.Contract.test_no_sections_is_not_complete) ... ok
+2026-09-30T19:11:59.9533519Z test_untyped_empty_edges_are_not_a_certificate (__main__.Contract.test_untyped_empty_edges_are_not_a_certificate) ... ok
+2026-09-30T19:11:59.9534267Z 
+2026-09-30T19:11:59.9534494Z ----------------------------------------------------------------------
+2026-09-30T19:11:59.9535020Z Ran 3 tests in 0.005s
+2026-09-30T19:11:59.9535181Z 
+2026-09-30T19:11:59.9535274Z OK
+2026-09-30T19:12:00.0143282Z test_complete_small (__main__.Tests.test_complete_small) ... ok
+2026-09-30T19:12:00.0147202Z test_cross_parent_edge_rejected (__main__.Tests.test_cross_parent_edge_rejected) ... ok
+2026-09-30T19:12:00.0153217Z test_masked_has_local_edge_with_zero_global (__main__.Tests.test_masked_has_local_edge_with_zero_global) ... ok
+2026-09-30T19:12:00.0158535Z test_max_only_cross_parent_has_no_local_edge (__main__.Tests.test_max_only_cross_parent_has_no_local_edge) ... ok
+2026-09-30T19:12:00.0159622Z test_pure_three_way_checker_detected (__main__.Tests.test_pure_three_way_checker_detected) ... ok
+2026-09-30T19:12:00.0160517Z 
+2026-09-30T19:12:00.0160689Z ----------------------------------------------------------------------
+2026-09-30T19:12:00.0161208Z Ran 5 tests in 0.012s
+2026-09-30T19:12:00.0161358Z 
+2026-09-30T19:12:00.0161451Z OK
+2026-09-30T19:12:00.0836527Z test_actual_relabeling (__main__.Tests.test_actual_relabeling) ... ok
+2026-09-30T19:12:00.0839054Z test_boolean_event (__main__.Tests.test_boolean_event) ... ok
+2026-09-30T19:12:00.0843457Z test_boolean_height (__main__.Tests.test_boolean_height) ... ok
+2026-09-30T19:12:00.0907049Z test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+2026-09-30T19:12:00.0938300Z test_extra_duplicate_case (__main__.Tests.test_extra_duplicate_case) ... ok
+2026-09-30T19:12:00.0953119Z test_false_relabeling (__main__.Tests.test_false_relabeling) ... ok
+2026-09-30T19:12:00.0955007Z test_foreign_origin (__main__.Tests.test_foreign_origin) ... ok
+2026-09-30T19:12:00.0957516Z test_invalid_inputs (__main__.Tests.test_invalid_inputs) ... ok
+2026-09-30T19:12:00.0961190Z test_local_masked (__main__.Tests.test_local_masked) ... ok
+2026-09-30T19:12:00.0993710Z test_missing_case (__main__.Tests.test_missing_case) ... ok
+2026-09-30T19:12:00.0995387Z test_missing_profile (__main__.Tests.test_missing_profile) ... ok
+2026-09-30T19:12:00.1008171Z test_missing_shape (__main__.Tests.test_missing_shape) ... ok
+2026-09-30T19:12:00.1010254Z test_missing_state (__main__.Tests.test_missing_state) ... ok
+2026-09-30T19:12:00.1013802Z test_negative_max_only (__main__.Tests.test_negative_max_only) ... ok
+2026-09-30T19:12:00.1017090Z test_positive_max_only (__main__.Tests.test_positive_max_only) ... ok
+2026-09-30T19:12:00.1020002Z test_reversed_events (__main__.Tests.test_reversed_events) ... ok
+2026-09-30T19:12:00.1024623Z test_reversed_storage (__main__.Tests.test_reversed_storage) ... ok
+2026-09-30T19:12:00.1027448Z test_transmitted_negative (__main__.Tests.test_transmitted_negative) ... ok
+2026-09-30T19:12:00.1030053Z test_transmitted_positive (__main__.Tests.test_transmitted_positive) ... ok
+2026-09-30T19:12:00.1127880Z test_verifier_no_producer_import (__main__.Tests.test_verifier_no_producer_import) ... ok
+2026-09-30T19:12:00.1132583Z test_wrong_background (__main__.Tests.test_wrong_background) ... ok
+2026-09-30T19:12:00.1135915Z test_wrong_class (__main__.Tests.test_wrong_class) ... ok
+2026-09-30T19:12:00.1138896Z test_wrong_height (__main__.Tests.test_wrong_height) ... ok
+2026-09-30T19:12:00.1142170Z test_wrong_local_interaction (__main__.Tests.test_wrong_local_interaction) ... ok
+2026-09-30T19:12:00.1144977Z test_wrong_parent_pair (__main__.Tests.test_wrong_parent_pair) ... ok
+2026-09-30T19:12:00.1147945Z test_wrong_prediction (__main__.Tests.test_wrong_prediction) ... ok
+2026-09-30T19:12:00.1150591Z test_wrong_profile (__main__.Tests.test_wrong_profile) ... ok
+2026-09-30T19:12:00.1153797Z test_wrong_scalar_sign (__main__.Tests.test_wrong_scalar_sign) ... ok
+2026-09-30T19:12:00.1155874Z test_wrong_state (__main__.Tests.test_wrong_state) ... ok
+2026-09-30T19:12:00.1158643Z test_zero_control (__main__.Tests.test_zero_control) ... ok
+2026-09-30T19:12:00.1159019Z 
+2026-09-30T19:12:00.1159246Z ----------------------------------------------------------------------
+2026-09-30T19:12:00.1159749Z Ran 30 tests in 0.047s
+2026-09-30T19:12:00.1159955Z 
+2026-09-30T19:12:00.1160076Z OK
+2026-09-30T19:12:00.1839925Z test_actual_lineage_and_storage_relabeling (__main__.Tests.test_actual_lineage_and_storage_relabeling) ... ok
+2026-09-30T19:12:00.1844287Z test_boolean_h (__main__.Tests.test_boolean_h) ... ok
+2026-09-30T19:12:00.1848185Z test_chain_interval_is_not_a_no_go (__main__.Tests.test_chain_interval_is_not_a_no_go) ... ok
+2026-09-30T19:12:00.1850711Z test_changed_union_rejected_by_verifier (__main__.Tests.test_changed_union_rejected_by_verifier) ... ok
+2026-09-30T19:12:05.5538356Z test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+2026-09-30T19:12:05.5541052Z test_false_h (__main__.Tests.test_false_h) ... ok
+2026-09-30T19:12:05.5544648Z test_false_independence (__main__.Tests.test_false_independence) ... ok
+2026-09-30T19:12:05.5557062Z test_false_metamorphic_copy (__main__.Tests.test_false_metamorphic_copy) ... ok
+2026-09-30T19:12:05.5560184Z test_false_mixed_difference (__main__.Tests.test_false_mixed_difference) ... ok
+2026-09-30T19:12:05.5563596Z test_false_witness_heights (__main__.Tests.test_false_witness_heights) ... ok
+2026-09-30T19:12:05.5566710Z test_fitted_weights_not_accepted (__main__.Tests.test_fitted_weights_not_accepted) ... ok
+2026-09-30T19:12:05.5568311Z test_foreign_origin (__main__.Tests.test_foreign_origin) ... ok
+2026-09-30T19:12:05.5570074Z test_identity_control (__main__.Tests.test_identity_control) ... ok
+2026-09-30T19:12:05.5572389Z test_illegal_inputs_rejected (__main__.Tests.test_illegal_inputs_rejected) ... ok
+2026-09-30T19:12:05.5575146Z test_missing_diamond (__main__.Tests.test_missing_diamond) ... ok
+2026-09-30T19:12:05.5596854Z test_missing_endpoint (__main__.Tests.test_missing_endpoint) ... ok
+2026-09-30T19:12:05.5598680Z test_missing_predecessor_field (__main__.Tests.test_missing_predecessor_field) ... ok
+2026-09-30T19:12:05.5610111Z test_missing_shape (__main__.Tests.test_missing_shape) ... ok
+2026-09-30T19:12:05.5613252Z test_missing_state (__main__.Tests.test_missing_state) ... ok
+2026-09-30T19:12:05.5616250Z test_missing_witness (__main__.Tests.test_missing_witness) ... ok
+2026-09-30T19:12:05.5619083Z test_one_event_positive_weight (__main__.Tests.test_one_event_positive_weight) ... ok
+2026-09-30T19:12:05.5622479Z test_parent_counterexample (__main__.Tests.test_parent_counterexample) ... ok
+2026-09-30T19:12:05.5625741Z test_positive_mixed_difference_control (__main__.Tests.test_positive_mixed_difference_control) ... ok
+2026-09-30T19:12:05.5628738Z test_reordered_records_valid (__main__.Tests.test_reordered_records_valid) ... ok
+2026-09-30T19:12:05.5631433Z test_same_total_wrong_coefficients_rejected (__main__.Tests.test_same_total_wrong_coefficients_rejected) ... ok
+2026-09-30T19:12:05.5746412Z test_verifier_does_not_import_producer (__main__.Tests.test_verifier_does_not_import_producer) ... ok
+2026-09-30T19:12:05.5750078Z test_wrong_event_identity (__main__.Tests.test_wrong_event_identity) ... ok
+2026-09-30T19:12:05.5753540Z test_wrong_witness_path (__main__.Tests.test_wrong_witness_path) ... ok
+2026-09-30T19:12:05.5757298Z 
+2026-09-30T19:12:05.5757755Z ----------------------------------------------------------------------
+2026-09-30T19:12:05.5758160Z Ran 28 tests in 5.406s
+2026-09-30T19:12:05.5758328Z 
+2026-09-30T19:12:05.5758418Z OK
+2026-09-30T19:12:10.4055713Z test_changed_union_not_comparable (__main__.Tests.test_changed_union_not_comparable) ... ok
+2026-09-30T19:12:10.6780422Z test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+2026-09-30T19:12:10.6782908Z test_direct_equals_staged_pushforward_exactly (__main__.Tests.test_direct_equals_staged_pushforward_exactly) ... ok
+2026-09-30T19:12:10.6792074Z test_identity_refinement (__main__.Tests.test_identity_refinement) ... ok
+2026-09-30T19:12:10.6809577Z test_illegal_nonprefix_refinement_rejected (__main__.Tests.test_illegal_nonprefix_refinement_rejected) ... ok
+2026-09-30T19:12:10.6811049Z test_monotonic_refinement_and_strict_example (__main__.Tests.test_monotonic_refinement_and_strict_example) ... ok
+2026-09-30T19:12:10.6812274Z test_not_componentwise_subview_rejected (__main__.Tests.test_not_componentwise_subview_rejected) ... ok
+2026-09-30T19:12:10.6813451Z test_two_factorizations_same_final (__main__.Tests.test_two_factorizations_same_final) ... ok
+2026-09-30T19:12:10.6817291Z test_verifier_rejects_corrupt_composition (__main__.Tests.test_verifier_rejects_corrupt_composition) ... ok
+2026-09-30T19:12:10.6823968Z test_verifier_rejects_false_lower_after (__main__.Tests.test_verifier_rejects_false_lower_after) ... ok
+2026-09-30T19:12:10.6829255Z test_verifier_rejects_nonprefix_intermediate (__main__.Tests.test_verifier_rejects_nonprefix_intermediate) ... ok
+2026-09-30T19:12:10.6831421Z 
+2026-09-30T19:12:10.6832137Z ----------------------------------------------------------------------
+2026-09-30T19:12:10.6832639Z Ran 11 tests in 0.291s
+2026-09-30T19:12:10.6832845Z 
+2026-09-30T19:12:10.6832956Z OK
+2026-09-30T19:12:10.9941357Z test_binary_views_sufficiency (__main__.Tests.test_binary_views_sufficiency) ... ok
+2026-09-30T19:12:11.0013885Z test_branch_count_not_exact_cover_number (__main__.Tests.test_branch_count_not_exact_cover_number) ... ok
+2026-09-30T19:12:11.0193783Z test_changed_lineage_and_storage (__main__.Tests.test_changed_lineage_and_storage) ... ok
+2026-09-30T19:12:11.0544380Z test_complete_small_universe (__main__.Tests.test_complete_small_universe) ... ok
+2026-09-30T19:12:11.0591413Z test_corrupt_dual (__main__.Tests.test_corrupt_dual) ... ok
+2026-09-30T19:12:11.0626440Z test_corrupt_global_witness (__main__.Tests.test_corrupt_global_witness) ... ok
+2026-09-30T19:12:11.0661450Z test_corrupt_local_marginal (__main__.Tests.test_corrupt_local_marginal) ... ok
+2026-09-30T19:12:11.0672369Z test_exact_rational_pushforward (__main__.Tests.test_exact_rational_pushforward) ... ok
+2026-09-30T19:12:11.0683414Z test_false_child_cover (__main__.Tests.test_false_child_cover) ... ok
+2026-09-30T19:12:11.0702366Z test_false_high_threshold (__main__.Tests.test_false_high_threshold) ... ok
+2026-09-30T19:12:11.0721152Z test_false_low_threshold (__main__.Tests.test_false_low_threshold) ... ok
+2026-09-30T19:12:11.0840251Z test_false_metamorphic_claim (__main__.Tests.test_false_metamorphic_claim) ... ok
+2026-09-30T19:12:11.0865773Z test_false_sample_verdict (__main__.Tests.test_false_sample_verdict) ... ok
+2026-09-30T19:12:11.0884101Z test_foreign_origin (__main__.Tests.test_foreign_origin) ... ok
+2026-09-30T19:12:11.1038829Z test_four_way_sharpness (__main__.Tests.test_four_way_sharpness) ... ok
+2026-09-30T19:12:11.1058853Z test_full_view_and_redundancy (__main__.Tests.test_full_view_and_redundancy) ... ok
+2026-09-30T19:12:11.1060670Z test_inexact_scalar_rejected (__main__.Tests.test_inexact_scalar_rejected) ... ok
+2026-09-30T19:12:11.1063259Z test_invalid_parent_types_cycles (__main__.Tests.test_invalid_parent_types_cycles) ... ok
+2026-09-30T19:12:11.1065293Z test_invalid_view_and_union (__main__.Tests.test_invalid_view_and_union) ... ok
+2026-09-30T19:12:11.1070049Z test_linear_but_nonnatural_control (__main__.Tests.test_linear_but_nonnatural_control) ... ok
+2026-09-30T19:12:11.1089038Z test_metadata_boolean_not_integer (__main__.Tests.test_metadata_boolean_not_integer) ... ok
+2026-09-30T19:12:11.1408012Z test_missing_cover_rejected (__main__.Tests.test_missing_cover_rejected) ... ok
+2026-09-30T19:12:11.1426665Z test_missing_required_field (__main__.Tests.test_missing_required_field) ... ok
+2026-09-30T19:12:11.1459673Z test_missing_sample (__main__.Tests.test_missing_sample) ... ok
+2026-09-30T19:12:11.1478423Z test_order_is_worst_case_not_every_input (__main__.Tests.test_order_is_worst_case_not_every_input) ... ok
+2026-09-30T19:12:11.1494121Z test_root_and_path (__main__.Tests.test_root_and_path) ... ok
+2026-09-30T19:12:11.1557525Z test_two_and_three_view_parent_witnesses (__main__.Tests.test_two_and_three_view_parent_witnesses) ... ok
+2026-09-30T19:12:11.1594210Z test_valid_dual_and_rescaling (__main__.Tests.test_valid_dual_and_rescaling) ... ok
+2026-09-30T19:12:11.1594778Z 
+2026-09-30T19:12:11.1595027Z ----------------------------------------------------------------------
+2026-09-30T19:12:11.1595735Z Ran 28 tests in 0.425s
+2026-09-30T19:12:11.1595927Z 
+2026-09-30T19:12:11.1596047Z OK
+2026-09-30T19:12:11.4754021Z test_all_parent_targets_checked_before_traversal (__main__.Validation.test_all_parent_targets_checked_before_traversal) ... ok
+2026-09-30T19:12:11.4762509Z test_reordered_valid_lineage_remains_accepted (__main__.Validation.test_reordered_valid_lineage_remains_accepted) ... ok
+2026-09-30T19:12:11.4763004Z 
+2026-09-30T19:12:11.4763169Z ----------------------------------------------------------------------
+2026-09-30T19:12:11.4763547Z Ran 2 tests in 0.000s
+2026-09-30T19:12:11.4763695Z 
+2026-09-30T19:12:11.4763786Z OK
+2026-09-30T19:12:11.8969012Z test_actual_signed_and_positive_pair_witness (__main__.Tests.test_actual_signed_and_positive_pair_witness) ... ok
+2026-09-30T19:12:12.2952102Z test_changed_lineage_storage (__main__.Tests.test_changed_lineage_storage) ... ok
+2026-09-30T19:12:12.3858077Z test_complete_small_certificate (__main__.Tests.test_complete_small_certificate) ... ok
+2026-09-30T19:12:12.4114234Z test_corrupt_negative_witness_rejected (__main__.Tests.test_corrupt_negative_witness_rejected) ... ok
+2026-09-30T19:12:12.4117174Z test_exact_scalars_and_lengths (__main__.Tests.test_exact_scalars_and_lengths) ... ok
+2026-09-30T19:12:12.4368910Z test_false_positive_feasibility_rejected (__main__.Tests.test_false_positive_feasibility_rejected) ... ok
+2026-09-30T19:12:12.4370441Z test_feasible_nonnegative_control (__main__.Tests.test_feasible_nonnegative_control) ... ok
+2026-09-30T19:12:12.4381675Z test_foreign_origin_rejected (__main__.Tests.test_foreign_origin_rejected) ... ok
+2026-09-30T19:12:12.4386653Z test_identity_root_and_repeated_views (__main__.Tests.test_identity_root_and_repeated_views) ... ok
+2026-09-30T19:12:12.4389339Z test_incompatible_overlap_rejected (__main__.Tests.test_incompatible_overlap_rejected) ... ok
+2026-09-30T19:12:12.4392857Z test_invalid_parent_and_retained_inputs (__main__.Tests.test_invalid_parent_and_retained_inputs) ... ok
+2026-09-30T19:12:12.4398886Z test_linear_but_nonnatural_section_rejected (__main__.Tests.test_linear_but_nonnatural_section_rejected) ... ok
+2026-09-30T19:12:12.5669465Z test_missing_coverage_rejected (__main__.Tests.test_missing_coverage_rejected) ... ok
+2026-09-30T19:12:12.5691308Z test_missing_field_and_inexact_matrix_rejected (__main__.Tests.test_missing_field_and_inexact_matrix_rejected) ... ok
+2026-09-30T19:12:12.5692571Z test_nonnegative_false_input_rejected (__main__.Tests.test_nonnegative_false_input_rejected) ... ok
+2026-09-30T19:12:12.6385550Z test_off_domain_gluer_change_is_harmless (__main__.Tests.test_off_domain_gluer_change_is_harmless) ... ok
+2026-09-30T19:12:12.6392721Z test_pairwise_positive_is_not_global (__main__.Tests.test_pairwise_positive_is_not_global) ... ok
+2026-09-30T19:12:12.6394533Z test_response_representative_independence (__main__.Tests.test_response_representative_independence) ... ok
+2026-09-30T19:12:12.6396850Z test_source_shift_is_not_potential_gauge (__main__.Tests.test_source_shift_is_not_potential_gauge) ... ok
+2026-09-30T19:12:12.6414358Z test_wrong_gluer_on_compatible_data_rejected (__main__.Tests.test_wrong_gluer_on_compatible_data_rejected) ... ok
+2026-09-30T19:12:12.6426814Z test_wrong_joint_readout_rejected (__main__.Tests.test_wrong_joint_readout_rejected) ... ok
+2026-09-30T19:12:12.7021792Z test_wrong_overlap_rejected (__main__.Tests.test_wrong_overlap_rejected) ... ok
+2026-09-30T19:12:12.7022385Z 
+2026-09-30T19:12:12.7022608Z ----------------------------------------------------------------------
+2026-09-30T19:12:12.7023093Z Ran 22 tests in 1.088s
+2026-09-30T19:12:12.7023302Z 
+2026-09-30T19:12:12.7023411Z OK
+2026-09-30T19:12:13.1039513Z test_omitted_storage_reversal_rejected (__main__.SchemaTests.test_omitted_storage_reversal_rejected) ... ok
+2026-09-30T19:12:13.1153764Z test_original_cannot_masquerade_as_relabelled (__main__.SchemaTests.test_original_cannot_masquerade_as_relabelled) ... ok
+2026-09-30T19:12:13.2328323Z test_real_metamorphic_case_accepted (__main__.SchemaTests.test_real_metamorphic_case_accepted) ... ok
+2026-09-30T19:12:13.2329013Z 
+2026-09-30T19:12:13.2329241Z ----------------------------------------------------------------------
+2026-09-30T19:12:13.2329754Z Ran 3 tests in 0.150s
+2026-09-30T19:12:13.2329957Z 
+2026-09-30T19:12:13.2330067Z OK
+2026-09-30T19:12:13.6205777Z test_actual_old_kernel_witness (__main__.Tests.test_actual_old_kernel_witness) ... ok
+2026-09-30T19:12:13.6274577Z test_bare_filtration_scaling_and_shear (__main__.Tests.test_bare_filtration_scaling_and_shear) ... ok
+2026-09-30T19:12:13.6278951Z test_constructive_and_negative_linear_descent (__main__.Tests.test_constructive_and_negative_linear_descent) ... ok
+2026-09-30T19:12:13.6441141Z test_corrupted_witness_rejected (__main__.Tests.test_corrupted_witness_rejected) ... ok
+2026-09-30T19:12:13.6747261Z test_direct_fiber_sum_and_section (__main__.Tests.test_direct_fiber_sum_and_section) ... ok
+2026-09-30T19:12:13.6748386Z test_exact_input_no_float_or_truncation (__main__.Tests.test_exact_input_no_float_or_truncation) ... ok
+2026-09-30T19:12:13.6895607Z test_false_descent_rejected (__main__.Tests.test_false_descent_rejected) ... ok
+2026-09-30T19:12:13.6960126Z test_foreign_domain_identity_rejected (__main__.Tests.test_foreign_domain_identity_rejected) ... ok
+2026-09-30T19:12:13.6984508Z test_identity_and_root_zero_dimensional_cases (__main__.Tests.test_identity_and_root_zero_dimensional_cases) ... ok
+2026-09-30T19:12:13.6985683Z test_illegal_target_and_origin_rejected (__main__.Tests.test_illegal_target_and_origin_rejected) ... ok
+2026-09-30T19:12:13.6986820Z test_incompatible_composition_rejected (__main__.Tests.test_incompatible_composition_rejected) ... ok
+2026-09-30T19:12:13.6988836Z test_invalid_carriers_are_not_repaired (__main__.Tests.test_invalid_carriers_are_not_repaired) ... ok
+2026-09-30T19:12:13.6993402Z test_linear_right_inverse_can_fail_retained_naturality (__main__.Tests.test_linear_right_inverse_can_fail_retained_naturality) ... ok
+2026-09-30T19:12:13.7170063Z test_missing_check_and_coverage_rejected (__main__.Tests.test_missing_check_and_coverage_rejected) ... ok
+2026-09-30T19:12:13.7225224Z test_mutated_green_rejected (__main__.Tests.test_mutated_green_rejected) ... ok
+2026-09-30T19:12:13.7291585Z test_mutated_pushforward_rejected (__main__.Tests.test_mutated_pushforward_rejected) ... ok
+2026-09-30T19:12:13.7357930Z test_mutated_section_rejected (__main__.Tests.test_mutated_section_rejected) ... ok
+2026-09-30T19:12:13.7359325Z test_nonlinear_boundary_is_not_linear_test (__main__.Tests.test_nonlinear_boundary_is_not_linear_test) ... ok
+2026-09-30T19:12:13.7502767Z test_nonpermutation_coordinate_change (__main__.Tests.test_nonpermutation_coordinate_change) ... ok
+2026-09-30T19:12:13.8579371Z test_relabel_and_storage_naturality (__main__.Tests.test_relabel_and_storage_naturality) ... ok
+2026-09-30T19:12:13.8929365Z test_response_quotient_and_supplied_complement (__main__.Tests.test_response_quotient_and_supplied_complement) ... ok
+2026-09-30T19:12:13.8966128Z test_shape_enumerators_agree_without_shared_implementation (__main__.Tests.test_shape_enumerators_agree_without_shared_implementation) ... ok
+2026-09-30T19:12:13.8967020Z 
+2026-09-30T19:12:13.8967259Z ----------------------------------------------------------------------
+2026-09-30T19:12:13.8967788Z Ran 22 tests in 0.569s
+2026-09-30T19:12:13.8967996Z 
+2026-09-30T19:12:13.8968116Z OK
+2026-09-30T19:12:13.9669682Z ##[group]Run python ResearchHistory/UQCF-GEM/demos/v16.39-theorem-validation/evidence.py package out/v1639
+2026-09-30T19:12:13.9670473Z [36;1mpython ResearchHistory/UQCF-GEM/demos/v16.39-theorem-validation/evidence.py package out/v1639[0m
+2026-09-30T19:12:13.9744845Z shell: /usr/bin/bash -e {0}
+2026-09-30T19:12:13.9745179Z env:
+2026-09-30T19:12:13.9745465Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:12:13.9745922Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-30T19:12:13.9746354Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:12:13.9746767Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:12:13.9747170Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:12:13.9747575Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-30T19:12:13.9747916Z ##[endgroup]
+2026-09-30T19:12:16.4632169Z {"manifest": "VERIFIED", "members": 10}
+2026-09-30T19:12:16.4786899Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-09-30T19:12:16.4787307Z with:
+2026-09-30T19:12:16.4787590Z   name: v1639-science-10e83b9a05de7a9700b97ad389f34dadfdf964c5
+2026-09-30T19:12:16.4787930Z   path: out/v1639
+2026-09-30T19:12:16.4788150Z   if-no-files-found: error
+2026-09-30T19:12:16.4788579Z   compression-level: 6
+2026-09-30T19:12:16.4788799Z   overwrite: false
+2026-09-30T19:12:16.4789024Z   include-hidden-files: false
+2026-09-30T19:12:16.4789262Z env:
+2026-09-30T19:12:16.4789527Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:12:16.4789953Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-09-30T19:12:16.4790370Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:12:16.4790744Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:12:16.4791436Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-09-30T19:12:16.4791850Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-09-30T19:12:16.4792176Z ##[endgroup]
+2026-09-30T19:12:16.6678296Z (node:2488) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T19:12:16.6679060Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T19:12:16.6852071Z With the provided path, there will be 11 files uploaded
+2026-09-30T19:12:16.6882274Z Artifact name is valid!
+2026-09-30T19:12:16.6882946Z Root directory input is valid!
+2026-09-30T19:12:17.0957356Z Beginning upload of artifact content to blob storage
+2026-09-30T19:12:17.3075456Z (node:2488) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-30T19:12:18.1954940Z Uploaded bytes 5124314
+2026-09-30T19:12:18.2736290Z Finished uploading artifact content to blob storage!
+2026-09-30T19:12:18.2737531Z SHA256 digest of uploaded artifact zip is 7bb7f935ba5170e0e5a5fff1b56725b615a3167fa3db3651a7abd079e33aa611
+2026-09-30T19:12:18.2739099Z Finalizing artifact upload
+2026-09-30T19:12:18.5551327Z Artifact v1639-science-10e83b9a05de7a9700b97ad389f34dadfdf964c5.zip successfully finalized. Artifact ID 11119408464
+2026-09-30T19:12:18.5553003Z Artifact v1639-science-10e83b9a05de7a9700b97ad389f34dadfdf964c5 has been successfully uploaded! Final size is 5124314 bytes. Artifact ID is 11119408464
+2026-09-30T19:12:18.5559524Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36763264028/artifacts/11119408464
+2026-09-30T19:12:18.5754965Z Post job cleanup.
+2026-09-30T19:12:18.6950220Z (node:2502) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T19:12:18.6951150Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T19:12:18.7155834Z Post job cleanup.
+2026-09-30T19:12:18.8033732Z [command]/usr/bin/git version
+2026-09-30T19:12:18.8077570Z git version 2.55.0
+2026-09-30T19:12:18.8114514Z Temporarily overriding HOME='/home/runner/work/_temp/41eeb5cc-fe91-44b8-8600-76c6a409ffb9' before making global git config changes
+2026-09-30T19:12:18.8115959Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T19:12:18.8119768Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-09-30T19:12:18.8160019Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T19:12:18.8195497Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T19:12:18.8475820Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T19:12:18.8511980Z http.https://github.com/.extraheader
+2026-09-30T19:12:18.8517078Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-30T19:12:18.8553632Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T19:12:18.8855724Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T19:12:18.8899801Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T19:12:18.9417014Z Cleaning up orphan processes
+2026-09-30T19:12:18.9714712Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
