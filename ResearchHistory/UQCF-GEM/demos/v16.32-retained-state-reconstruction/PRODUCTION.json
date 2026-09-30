@@ -1,0 +1,80 @@
+{
+  "bound": 4,
+  "closed_collisions": 28937,
+  "collisions": [
+    {
+      "final": [
+        [
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "initial": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "left": [
+        [
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "parents": [
+        -1,
+        0,
+        0
+      ],
+      "right": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "signature": {
+        "component_values": [
+          [
+            0,
+            1
+          ]
+        ],
+        "h": 1,
+        "tau": [
+          1,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "digest": "39b5e537a5e59e26cc4c77f65a93228c87ef03d52e5409d57f0631aa119afade",
+  "intervals": 4397,
+  "profile_collisions": 28937,
+  "signature_fields": [
+    "tau",
+    "h",
+    "component_values"
+  ],
+  "states": 36178,
+  "verdict": "NONINJECTIVE",
+  "version": "16.32"
+}
