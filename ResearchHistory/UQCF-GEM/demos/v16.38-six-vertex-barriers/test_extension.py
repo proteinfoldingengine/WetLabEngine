@@ -24,5 +24,11 @@ class Extension(unittest.TestCase):
  def test_reordered_graphs_accepted(self):
   bad=copy.deepcopy(self.old);bad['graphs'].reverse()
   run_campaign.compare_parent(bad,self.old,2)
+ def test_six_vertex_domain(self):
+  run_campaign.validate_domain({'version':'16.37','bound':6,'view_counts':[1,2,3]})
+ def test_wrong_campaign_domain_rejected(self):
+  for key,value in [('version','16.38'),('bound',5),('bound',6.0),('view_counts',[1,2])]:
+   d={'version':'16.37','bound':6,'view_counts':[1,2,3]};d[key]=value
+   with self.subTest(key=key,value=value),self.assertRaises(ValueError):run_campaign.validate_domain(d)
 
 if __name__=='__main__':unittest.main(verbosity=2)

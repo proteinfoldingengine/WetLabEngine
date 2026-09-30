@@ -32,3 +32,4 @@
 - [ ] Inspect downloaded artifacts, logs, source and manifest bindings.
 - [ ] Ready/merge exact verified head; actual merge replay and artifact.
 - [ ] Durable final receipt; bounded result separate from unresolved universal claim.
+

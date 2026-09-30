@@ -21,3 +21,4 @@ Retain all v16.37 rejection controls. Add campaign/domain/version rejection, com
 
 ## Closure chain
 Full inherited stack includes the 26 v16.37 controls, its full 227-test ancestor stack, and fresh v16.37 certificate reproduction. Upload complete six-vertex certificate, exact source/input snapshot, logs, environment/run/attempt/workflow/checkout SHA metadata and hashes. Independently inspect downloaded artifact digest and CRC. Fresh publication must repeat all science and tests and reproduce scientific bytes exactly. Commit durable evidence and manifest, get fresh whole-branch review, mark ready, merge verified publication head, then replay manifests/science/tests on actual merge SHA with an artifact. Only that completed bounded chain is certified; the universal question remains separate.
+
