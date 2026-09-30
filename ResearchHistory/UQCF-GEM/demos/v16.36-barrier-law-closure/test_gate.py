@@ -29,4 +29,19 @@ class T(unittest.TestCase):
  def test_hidden_exclusion_rejected(self):
   p,v=self.m();d=p.produce(3);d['gate_e']['excluded'].append({'parents':[-1],'view_count':1,'states':9999,'reason':'EXCLUDED_RESOURCE'})
   with self.assertRaises(ValueError):v.verify_document(d)
+ def test_omitted_valid_pair_rejected(self):
+  p,v=self.m();d=p.produce(3)
+  if d['pairs']:d['pairs'].pop()
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_extra_duplicate_pair_rejected(self):
+  import copy
+  p,v=self.m();d=p.produce(3)
+  if d['pairs']:d['pairs'].append(copy.deepcopy(d['pairs'][0]))
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_substituted_pair_rejected(self):
+  import copy
+  p,v=self.m();d=p.produce(3)
+  if len(d['pairs'])>1:
+   fake=copy.deepcopy(d['pairs'][0]);fake['a']=copy.deepcopy(d['pairs'][1]['a']);d['pairs'][0]=fake
+  with self.assertRaises(ValueError):v.verify_document(d)
 if __name__=='__main__':unittest.main(verbosity=2)
