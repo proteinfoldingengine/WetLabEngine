@@ -1,0 +1,14 @@
+name: Retained execution optimization
+on:
+  push:
+    branches: [ci/retained-execution-optimization]
+    paths: ['tools/retained_ci/**', '.github/workflows/retained-ci-optimization.yml']
+permissions: {contents: read}
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python tools/retained_ci/test_core.py
