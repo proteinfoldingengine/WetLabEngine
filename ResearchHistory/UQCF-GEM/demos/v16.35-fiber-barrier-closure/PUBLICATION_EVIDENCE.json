@@ -1,1 +1,26 @@
-{"version":"16.35","scientific_run":36656856899,"fresh_reproduction":true,"publication_run":"36657034801"}
+{
+  "digest": "c5a15e82eac32e1f420888147fb99d4bfd95c349d0d7d335841f1d2d3c423454",
+  "edges": 2241,
+  "fresh_bytes_equal": true,
+  "gates": {
+    "gate_a": "CONNECTED",
+    "gate_b": "POSITIVE",
+    "gate_c": "REPRESENTATIVE_INDEPENDENT",
+    "gate_d": {
+      "triangle_violations": 0,
+      "ultrametric_violations": 0
+    },
+    "gate_e": "CERTIFIED_PER_PATH_NOT_UNIVERSAL"
+  },
+  "positive_barriers": 18,
+  "publication_head": "6f9903102a813b59cce1f554c7a6846aebda5909",
+  "publication_run": "36658717629",
+  "repair": true,
+  "scientific_artifact": 11073550789,
+  "scientific_artifact_sha256": "b3d9d3c92648c502523f3d9d8c8c6eaef835bd7b3c19b0740c20e6ef52f34c45",
+  "scientific_run": 36658596979,
+  "scientific_sha": "e5a9dfb4dd73708a25fce1ffdd668f2dd39437fe",
+  "states": 754,
+  "verifier": "independent complete-universe reconstruction",
+  "version": "16.35"
+}
