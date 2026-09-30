@@ -1,0 +1,88 @@
+{
+  "stage": "v16.38",
+  "status": "CLOSED_BOUNDED_CERTIFICATION",
+  "scientific_outcome": "BOUNDED_UNIT_ONLY",
+  "universal_unit_law": "UNRESOLVED",
+  "integrated_parent": "694ed90ca853da205f83afb0ee60865a47477289",
+  "preregistration": "53b20c929ee07ce732c2f8e3889c4dea0a8749c8",
+  "scientific_sha": "99c8cd073ff0766dcffc11c92cf86efcafdd9a6c",
+  "publication_sha": "b50e972d61e99b42bdde9184129e439107a6d514",
+  "actual_merge_sha": "e4de671b3e483cc82a2e240dbd6a8d4d83e6518f",
+  "merge_tree_equals_publication_tree": true,
+  "science_publication_run": 36755966936,
+  "post_merge_run": 36757689353,
+  "post_merge_job": 110031991623,
+  "tests_each_execution": {
+    "new": 8,
+    "inherited": 253,
+    "total": 261
+  },
+  "canonical_domain": {
+    "vertices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "indexed_views": [
+      1,
+      2,
+      3
+    ]
+  },
+  "summary": {
+    "graphs": 111,
+    "states": 52907,
+    "component_pairs": 244,
+    "endpoint_pairs": 1497,
+    "nonunit_pairs": 0,
+    "objective_distinctions": 0
+  },
+  "verified": {
+    "post_merge_download_digest": true,
+    "zip_crc": true,
+    "artifact_member_hashes": true,
+    "source_file_hashes": 1295,
+    "exact_source_manifest_equality": true,
+    "scientific_bytes_identical": true,
+    "parent_scientific_bytes_identical": true,
+    "complete_parent_graph_equality": true,
+    "publication_manifest_members": 45,
+    "exact_historical18_identities_and_values": true
+  },
+  "artifact": {
+    "id": 11117857247,
+    "name": "v1638-post-merge-e4de671b3e483cc82a2e240dbd6a8d4d83e6518f",
+    "size_in_bytes": 3931240,
+    "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11117857247",
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11117857247/zip",
+    "expired": false,
+    "created_at": "2026-09-30T18:25:20Z",
+    "expires_at": "2026-12-29T18:18:56Z",
+    "updated_at": "2026-09-30T18:25:20Z",
+    "digest": "sha256:414ab992d67e810fb5b507c00bd71f5d161b7530cba73f48ef7bcc999968b273",
+    "workflow_run": {
+      "id": 36757689353,
+      "repository_id": 1148068528,
+      "head_repository_id": 1148068528,
+      "head_branch": "research/v16.34-fiber-component-invariant",
+      "head_sha": "e4de671b3e483cc82a2e240dbd6a8d4d83e6518f"
+    }
+  },
+  "durable_evidence": {
+    "path": "ResearchHistory/UQCF-GEM/demos/v16.38-six-vertex-barriers/evidence",
+    "ref": "e4de671b3e483cc82a2e240dbd6a8d4d83e6518f",
+    "note": "Post-merge metadata/logs retained here. Scientific files and 1295 source/input files equal durable science evidence; original post-merge ZIP is uploaded at the identified artifact."
+  },
+  "review": {
+    "source": "99c8cd073ff0766dcffc11c92cf86efcafdd9a6c",
+    "critical": 0,
+    "important": 0,
+    "deferred_minor": "Adapted v16.38 provenance helpers lack direct stage-specific rejecting regression tests; inherited helpers are tested, adaptation inspected, and actual artifact provenance directly verified.",
+    "details": "REVIEW.md"
+  },
+  "receipt_branch": "research/v16.38-audit-receipt",
+  "scope": "Closes the preregistered finite six-vertex campaign and full execution chain. Does not resolve the universal unit-vs-nonunit question."
+}
