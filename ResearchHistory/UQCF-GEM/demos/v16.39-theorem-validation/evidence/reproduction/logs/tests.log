@@ -1,5 +1,7 @@
 test_duplicate_record (__main__.Certificate.test_duplicate_record) ... ok
 test_false_failed_coordinate_cut (__main__.Certificate.test_false_failed_coordinate_cut) ... ok
+test_false_positive_endpoint_full (__main__.Certificate.test_false_positive_endpoint_full) ... ok
+test_false_positive_sc (__main__.Certificate.test_false_positive_sc) ... ok
 test_false_sc (__main__.Certificate.test_false_sc) ... ok
 test_false_successful_coordinate (__main__.Certificate.test_false_successful_coordinate) ... ok
 test_false_summary (__main__.Certificate.test_false_summary) ... ok
@@ -21,10 +23,11 @@ test_reject_wrong_endpoint (__main__.Construction.test_reject_wrong_endpoint) ..
 test_subtree_lifting (__main__.Construction.test_subtree_lifting) ... ok
 test_two_view_swap (__main__.Construction.test_two_view_swap) ... ok
 test_current_stage_provenance_accepts (__main__.Provenance.test_current_stage_provenance_accepts) ... ok
+test_repeat_publication_replaces_reproduction (__main__.Provenance.test_repeat_publication_replaces_reproduction) ... ok
 test_source_membership_and_hash_rejected (__main__.Provenance.test_source_membership_and_hash_rejected) ... ok
 test_stage_and_metadata_substitution_rejected (__main__.Provenance.test_stage_and_metadata_substitution_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 25 tests in 0.416s
+Ran 28 tests in 0.216s
 
 OK

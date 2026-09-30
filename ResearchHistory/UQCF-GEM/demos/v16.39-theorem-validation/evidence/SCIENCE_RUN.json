@@ -20,14 +20,14 @@
     "url": "https://api.github.com/users/proteinfoldingengine",
     "user_view_type": "public"
   },
-  "artifacts_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36763264028/artifacts",
-  "cancel_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36763264028/cancel",
-  "check_suite_id": 99570873386,
-  "check_suite_node_id": "CS_kwDORG4isM8AAAAXLuL0Kg",
-  "check_suite_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-suites/99570873386",
+  "artifacts_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36766757846/artifacts",
+  "cancel_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36766757846/cancel",
+  "check_suite_id": 99580867579,
+  "check_suite_node_id": "CS_kwDORG4isM8AAAAXL3tz-w",
+  "check_suite_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-suites/99580867579",
   "conclusion": null,
-  "created_at": "2026-09-30T19:05:52Z",
-  "display_title": "execute preregistered structural theorem construction and obstruction\u2026",
+  "created_at": "2026-09-30T19:35:42Z",
+  "display_title": "fix repeated publication replacement and preserve failed-run evidence",
   "event": "push",
   "head_branch": "research/v16.39-theorem-validation",
   "head_commit": {
@@ -39,10 +39,10 @@
       "email": "aspradaz@gmail.com",
       "name": "proteinfoldingengine"
     },
-    "id": "10e83b9a05de7a9700b97ad389f34dadfdf964c5",
-    "message": "execute preregistered structural theorem construction and obstruction validation",
-    "timestamp": "2026-09-30T19:05:48Z",
-    "tree_id": "f998aadda19a2badcaa377e876a8d8390b19d0dd"
+    "id": "3a8415ef1b6417973e1036e4555ba25e3b3b5f26",
+    "message": "fix repeated publication replacement and preserve failed-run evidence",
+    "timestamp": "2026-09-30T19:35:34Z",
+    "tree_id": "f8d7e26ebead8be4e1b58d5bfd8a2f89defb22de"
   },
   "head_repository": {
     "archive_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/{archive_format}{/ref}",
@@ -112,13 +112,13 @@
     "trees_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/trees{/sha}",
     "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine"
   },
-  "head_sha": "10e83b9a05de7a9700b97ad389f34dadfdf964c5",
-  "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36763264028",
-  "id": 36763264028,
-  "jobs_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36763264028/jobs",
-  "logs_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36763264028/logs",
+  "head_sha": "3a8415ef1b6417973e1036e4555ba25e3b3b5f26",
+  "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36766757846",
+  "id": 36766757846,
+  "jobs_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36766757846/jobs",
+  "logs_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36766757846/logs",
   "name": "UQCF v16.39 prospective certification",
-  "node_id": "WFR_kwLORG4isM8AAAAIj0LkHA",
+  "node_id": "WFR_kwLORG4isM8AAAAIj3gz1g",
   "path": ".github/workflows/uqcf-v1639-certification.yml",
   "previous_attempt_url": null,
   "pull_requests": [
@@ -139,7 +139,7 @@
           "name": "WetLabEngine",
           "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine"
         },
-        "sha": "10e83b9a05de7a9700b97ad389f34dadfdf964c5"
+        "sha": "3a8415ef1b6417973e1036e4555ba25e3b3b5f26"
       },
       "id": 4694824401,
       "number": 86,
@@ -215,10 +215,10 @@
     "trees_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/trees{/sha}",
     "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine"
   },
-  "rerun_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36763264028/rerun",
+  "rerun_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36766757846/rerun",
   "run_attempt": 1,
-  "run_number": 2,
-  "run_started_at": "2026-09-30T19:05:52Z",
+  "run_number": 5,
+  "run_started_at": "2026-09-30T19:35:42Z",
   "status": "in_progress",
   "triggering_actor": {
     "avatar_url": "https://avatars.githubusercontent.com/u/228542765?v=4",
@@ -241,8 +241,8 @@
     "url": "https://api.github.com/users/proteinfoldingengine",
     "user_view_type": "public"
   },
-  "updated_at": "2026-09-30T19:12:24Z",
-  "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36763264028",
+  "updated_at": "2026-09-30T19:40:53Z",
+  "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36766757846",
   "workflow_id": 371484194,
   "workflow_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/workflows/371484194"
 }
