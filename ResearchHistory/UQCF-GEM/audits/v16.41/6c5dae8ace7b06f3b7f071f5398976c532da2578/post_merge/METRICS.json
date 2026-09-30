@@ -1,0 +1,30 @@
+{
+  "all_commands_passed": true,
+  "commands": {
+    "inherited": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/tools/retained_ci/run.py",
+        "inherited",
+        "out/merge/inherited"
+      ],
+      "end_seconds": 64.92168955300001,
+      "returncode": 0,
+      "start_seconds": 0.00040579900000636826
+    },
+    "science": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.41-unit-barrier-dichotomy/run_campaign.py",
+        "out/merge/scientific"
+      ],
+      "end_seconds": 187.74014825899997,
+      "returncode": 0,
+      "start_seconds": 0.0002578610000085746
+    }
+  },
+  "independent_verifier_uncached": true,
+  "inherited_tests": 339,
+  "new_controls": 48,
+  "parallel_seconds": 187.740929466
+}
