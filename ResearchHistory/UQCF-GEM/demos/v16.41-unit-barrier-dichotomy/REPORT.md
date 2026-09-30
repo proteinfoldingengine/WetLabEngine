@@ -1,0 +1,123 @@
+# v16.41 unit-barrier dichotomy results
+
+{
+  "graphs": 6,
+  "intrinsic_indecomposability": "NOT_CLAIMED",
+  "outcome": "PARTITION_THEOREM_VALIDATED_BOUNDED_REMAINDER_UNIT",
+  "partition_theorem_scope": "all finite rooted no-unary trees with k=leaves and q=outdegree; see reviewed proof",
+  "per_graph": [
+    {
+      "adjacent_active_pairs": 276,
+      "campaign_role": "canonical_core",
+      "code": "(((()())())())",
+      "components": 31,
+      "construction_paths": 276,
+      "edges": 1029272,
+      "nonunit_pairs": 0,
+      "overlap_pairs": 0,
+      "pairs": 276,
+      "partition_pairs": 276,
+      "profiles": 8,
+      "states": 143985,
+      "target_states": 143985,
+      "vertices": 7
+    },
+    {
+      "adjacent_active_pairs": 276,
+      "campaign_role": "canonical_core",
+      "code": "((()()())())",
+      "components": 29,
+      "construction_paths": 276,
+      "edges": 530924,
+      "nonunit_pairs": 0,
+      "overlap_pairs": 0,
+      "pairs": 276,
+      "partition_pairs": 276,
+      "profiles": 6,
+      "states": 73695,
+      "target_states": 73695,
+      "vertices": 6
+    },
+    {
+      "adjacent_active_pairs": 276,
+      "campaign_role": "canonical_core",
+      "code": "((()())(()()))",
+      "components": 31,
+      "construction_paths": 276,
+      "edges": 1659256,
+      "nonunit_pairs": 0,
+      "overlap_pairs": 0,
+      "pairs": 276,
+      "partition_pairs": 276,
+      "profiles": 8,
+      "states": 229441,
+      "target_states": 229441,
+      "vertices": 7
+    },
+    {
+      "adjacent_active_pairs": 276,
+      "campaign_role": "canonical_core",
+      "code": "((()())()())",
+      "components": 29,
+      "construction_paths": 276,
+      "edges": 792060,
+      "nonunit_pairs": 0,
+      "overlap_pairs": 0,
+      "pairs": 276,
+      "partition_pairs": 276,
+      "profiles": 6,
+      "states": 107775,
+      "target_states": 107775,
+      "vertices": 6
+    },
+    {
+      "adjacent_active_pairs": 0,
+      "campaign_role": "canonical_core",
+      "code": "(()()()())",
+      "components": 27,
+      "construction_paths": 276,
+      "edges": 378000,
+      "nonunit_pairs": 0,
+      "overlap_pairs": 0,
+      "pairs": 276,
+      "partition_pairs": 276,
+      "profiles": 4,
+      "states": 50625,
+      "target_states": 50625,
+      "vertices": 5
+    },
+    {
+      "adjacent_active_pairs": 66,
+      "campaign_role": "directed_overlap",
+      "code": "(((()()())())())",
+      "components": 12,
+      "construction_paths": 0,
+      "edges": 11483156,
+      "nonunit_pairs": 0,
+      "overlap_pairs": 66,
+      "pairs": 66,
+      "partition_pairs": 0,
+      "profiles": 1,
+      "states": 1292655,
+      "target_states": 144,
+      "vertices": 8
+    }
+  ],
+  "status": "VERIFIED",
+  "totals": {
+    "adjacent_active_pairs": 1170,
+    "components": 159,
+    "construction_paths": 1380,
+    "edges": 15872668,
+    "nonunit_pairs": 0,
+    "overlap_pairs": 66,
+    "pairs": 1446,
+    "partition_pairs": 1380,
+    "profiles": 33,
+    "states": 1898176,
+    "target_states": 605665
+  },
+  "universal_unit_barrier": "UNRESOLVED"
+}
+
+All339 inherited checks and48 new controls pass in both scientific and fresh publication execution. The parent v16.40 science and nested v16.39 canonical universe was freshly reconstructed and matched byte-for-byte. Complete admission identities, unit edges, paths and cuts are independently verified. See THEOREM.md for the general partition-profile proof; no smallest-example or universal-unit theorem is claimed. Actual-merge audit and durable receipt remain required before stage closure.
