@@ -46,10 +46,11 @@ def download(run,out):
  if len(science)!=1 or science[0]['conclusion']!='success':raise ValueError('science job success')
  if science[0]['run_id']!=int(run) or science[0]['head_sha']!=os.environ['GITHUB_SHA']:raise ValueError('job provenance')
  dump(out/'SCIENCE_JOB.json',science[0]);(out/'SCIENCE_JOB.log').write_bytes(get(api+'/actions/jobs/'+str(science[0]['id'])+'/logs'))
- for prior in (36762372243,):
+ for prior in (36762372243,36764905346,36766338312):
   prior_meta=json.loads(get(api+'/actions/runs/'+str(prior)))
   dump(out/('PRIOR_RUN_'+str(prior)+'.json'),prior_meta)
   for job in json.loads(get(api+'/actions/runs/'+str(prior)+'/jobs'))['jobs']:
+   if job.get('conclusion')=='skipped':continue
    (out/('PRIOR_JOB_'+str(job['id'])+'.log')).write_bytes(get(api+'/actions/jobs/'+str(job['id'])+'/logs'))
  print(json.dumps({'artifact_id':a['id'],'zip_sha256':sha(archive),'digest_verified':True}))
 

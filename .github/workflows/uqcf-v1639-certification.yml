@@ -75,6 +75,7 @@ jobs:
           D=ResearchHistory/UQCF-GEM/demos/v16.39-theorem-validation
           mkdir -p "$D/evidence"
           cp -a out/download/. "$D/evidence/"
+          rm -rf "$D/evidence/reproduction"
           cp -a out/reproduction "$D/evidence/reproduction"
           python "$D/publication.py" finalize
           git config user.name 'github-actions[bot]'
