@@ -24,4 +24,21 @@ class T(unittest.TestCase):
   p,v=self.m();d=p.produce(3)
   if d['barriers'] and d['barriers'][0].get('path'): d['barriers'][0]['path']=[d['barriers'][0]['a'],d['barriers'][0]['b']]
   with self.assertRaises(ValueError):v.verify_document(d)
+ def test_false_gate_c_rejected(self):
+  p,v=self.m();d=p.produce(3);d['gate_c']='CORRUPTED'
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_false_gate_d_rejected(self):
+  p,v=self.m();d=p.produce(3);d['gate_d']['triangle_violations']+=1
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_false_gate_e_rejected(self):
+  p,v=self.m();d=p.produce(3);d['gate_e']='UNIVERSAL_LOCALIZATION'
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_corrupt_component_range_rejected(self):
+  p,v=self.m();d=p.produce(3)
+  if d['component_ranges']:d['component_ranges'][0]['B1_range'][1]+=1
+  with self.assertRaises(ValueError):v.verify_document(d)
+ def test_corrupt_localization_rejected(self):
+  p,v=self.m();d=p.produce(3)
+  if d['barriers']:d['barriers'][0]['changed_coordinates']=[]
+  with self.assertRaises(ValueError):v.verify_document(d)
 if __name__=='__main__':unittest.main(verbosity=2)
