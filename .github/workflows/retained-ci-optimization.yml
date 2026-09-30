@@ -1,14 +1,85 @@
 name: Retained execution optimization
 on:
   push:
-    branches: [ci/retained-execution-optimization]
+    branches: [ci/retained-execution-optimization, research/v16.34-fiber-component-invariant]
     paths: ['tools/retained_ci/**', '.github/workflows/retained-ci-optimization.yml']
 permissions: {contents: read}
+concurrency:
+  group: retained-ci-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   preflight:
     runs-on: ubuntu-24.04
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with: {python-version: '3.11'}
-      - run: python tools/retained_ci/test_core.py
+      - run: python tools/retained_ci/run.py preflight out/preflight
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'retained-ci-preflight-${{ github.sha }}', path: out/preflight, if-no-files-found: error}
+  science:
+    needs: preflight
+    if: github.ref_name == 'ci/retained-execution-optimization'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - run: python tools/retained_ci/run.py phase out/science --benchmark
+      - run: python tools/retained_ci/run.py package out/science science
+        if: always()
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'retained-ci-science-${{ github.sha }}', path: out/science, if-no-files-found: error}
+  publication:
+    needs: science
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions: {contents: write, actions: read}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - run: python tools/retained_ci/publish.py download "$GITHUB_RUN_ID" out/download
+        env: {GH_TOKEN: '${{ github.token }}'}
+      - run: python tools/retained_ci/run.py phase out/reproduction
+      - run: python tools/retained_ci/run.py package out/reproduction publication
+      - name: Publish verified evidence
+        run: |
+          set -euo pipefail
+          python tools/retained_ci/publish.py finalize
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/retained_ci
+          git commit -m 'publish measured retained execution optimization and fresh replay'
+          git push origin HEAD:ci/retained-execution-optimization
+          test "$(git rev-parse HEAD)" = "$(git ls-remote origin refs/heads/ci/retained-execution-optimization | cut -f1)"
+          python tools/retained_ci/publish.py verify
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'retained-ci-publication-${{ github.sha }}', path: out/reproduction, if-no-files-found: error}
+  post_merge:
+    needs: preflight
+    if: github.ref_name == 'research/v16.34-fiber-component-invariant'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - run: python tools/retained_ci/publish.py verify
+      - run: python tools/retained_ci/run.py phase out/merge
+      - run: python tools/retained_ci/run.py package out/merge post_merge
+        if: always()
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'retained-ci-post_merge-${{ github.sha }}', path: out/merge, if-no-files-found: error}
