@@ -47,7 +47,7 @@ def reconstruct(bound,maxviews):
     total+=1
     if len(mem)>1:
      non+=1;mins,conn=class_info(p,mem);disc+=not conn;multi+=len(mins)>1
-     allclasses.append((p,qv,mem,mins,conn))
+     allclasses.append((p,k,qv,mem,mins,conn))
  return total,non,disc,multi,allclasses
 def verify_class(c,expected=None):
  p=tuple(c['parents']);mem=[tuple(map(tuple,x)) for x in c['members']];need(len(mem)==len(set(mem)),'duplicate members');need(all(qq(p,x)==tuple(c['q']) for x in mem),'wrong q');mins,conn=class_info(p,mem);need([[list(x) for x in y] for y in mins]==c['minima'],'false minima');need(c['unique_minimum']==(len(mins)==1),'false unique');need(c['connected']==conn,'false connectivity')
@@ -56,10 +56,10 @@ def verify_class(c,expected=None):
 def verify_document(d):
  need(d['version']=='16.33','version');bound=d['bound'];mv=d['maxviews'];total,non,disc,multi,classes=reconstruct(bound,mv)
  need((d['classes_total'],d['nontrivial_classes'],d['disconnected_classes'],d['multiple_minima_classes'])==(total,non,disc,multi),'false bulk counts')
- lookup={(tuple(p),tuple(qv)):mem for p,qv,mem,mins,conn in classes}
+ lookup={(tuple(p),k,tuple(qv)):mem for p,k,qv,mem,mins,conn in classes}
  need(len(d['classes'])==min(30,len(classes)),'missing class records')
  for c in d['classes']:
-  key=(tuple(c['parents']),tuple(c['q']));need(key in lookup,'unknown class');verify_class(c,lookup[key])
+  key=(tuple(c['parents']),c['view_count'],tuple(c['q']));need(key in lookup,'unknown class');verify_class(c,lookup[key])
  if d['gate_b']=='COUNTEREXAMPLE':need(disc>0,'false gate b')
- if d['gate_c']=='MULTIPLE_MINIMA':need(multi>0 and d['first_multiple_minima'] is not None,'missing minima witness');verify_class(d['first_multiple_minima'],lookup[(tuple(d['first_multiple_minima']['parents']),tuple(d['first_multiple_minima']['q']))])
+ if d['gate_c']=='MULTIPLE_MINIMA':need(multi>0 and d['first_multiple_minima'] is not None,'missing minima witness');verify_class(d['first_multiple_minima'],lookup[(tuple(d['first_multiple_minima']['parents']),d['first_multiple_minima']['view_count'],tuple(d['first_multiple_minima']['q']))])
  return {'execution_status':'COMPLETED','input_validity':'VALID','classes_total':total,'nontrivial_classes':non,'disconnected_classes':disc,'multiple_minima_classes':multi,'gate_b':d['gate_b'],'gate_c':d['gate_c']}
