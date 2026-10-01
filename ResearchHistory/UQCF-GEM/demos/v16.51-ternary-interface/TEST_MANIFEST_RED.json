@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "phase": "prospective-red",
+  "tests": [
+    {
+      "identity": "test_prospective_red.Red.test_missing_ternary_interface",
+      "expected": "FAIL",
+      "assertion": "MISSING_TERNARY_INTERFACE; inherited binary producer lacks the required ternary interface"
+    },
+    {
+      "identity": "test_prospective_red.Red.test_verifier_reached_omission",
+      "expected": "FAIL",
+      "assertion": "EXACT_UNIVERSE_OMISSION_ACCEPTED; verifier reached on a valid identity fixture, accepts missing record"
+    }
+  ],
+  "count": 2,
+  "expected_failures": 2,
+  "expected_errors": 0,
+  "fixture_note": "Two otherwise-valid identity records exercise the exact coverage function that will be used by the scientific verifier. This is a coverage-unit fixture, not claimed scientific corpus evidence."
+}

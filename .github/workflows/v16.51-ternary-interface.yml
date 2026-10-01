@@ -1,0 +1,46 @@
+name: v16.51 ternary interface campaign
+on:
+  push:
+    branches: [research/v16.51-ternary-interface]
+    paths: ['ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/**', '.github/workflows/v16.51-ternary-interface.yml']
+permissions: {contents: read}
+jobs:
+  prospective_red:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - name: Verify both intended RED assertions
+        run: |
+          mkdir -p out/red
+          cd ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface
+          set +e
+          python -m unittest -v test_prospective_red > "$GITHUB_WORKSPACE/out/red/RED.log" 2>&1
+          code=$?
+          set -e
+          cat "$GITHUB_WORKSPACE/out/red/RED.log"
+          test "$code" -eq 1
+          python - <<'PYRED'
+          import json, os
+          from pathlib import Path
+          log=Path(os.environ['GITHUB_WORKSPACE'],'out/red/RED.log').read_text()
+          m=json.loads(Path('TEST_MANIFEST_RED.json').read_text())
+          assert m['count']==2 and 'Ran 2 tests' in log and 'FAILED (failures=2)' in log
+          assert 'MISSING_TERNARY_INTERFACE' in log and 'EXACT_UNIVERSE_OMISSION_ACCEPTED' in log
+          assert 'ERROR:' not in log
+          PYRED
+          cp PREREGISTRATION.md TEST_MANIFEST_RED.json test_prospective_red.py coverage.py "$GITHUB_WORKSPACE/out/red/"
+          sha256sum PREREGISTRATION.md > "$GITHUB_WORKSPACE/out/red/RED_PROTOCOL.sha256"
+          git rev-parse HEAD > "$GITHUB_WORKSPACE/out/red/RED_HEAD"
+          python - <<'PYRED'
+          import json,os
+          from pathlib import Path
+          keys=['GITHUB_SHA','GITHUB_RUN_ID','GITHUB_RUN_ATTEMPT','GITHUB_WORKFLOW_REF','GITHUB_WORKFLOW_SHA']
+          Path(os.environ['GITHUB_WORKSPACE'],'out/red/METADATA.json').write_text(json.dumps({k:os.environ.get(k) for k in keys},sort_keys=True,indent=2)+'\n')
+          PYRED
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'v1651-red-${{ github.sha }}', path: out/red, if-no-files-found: error}
