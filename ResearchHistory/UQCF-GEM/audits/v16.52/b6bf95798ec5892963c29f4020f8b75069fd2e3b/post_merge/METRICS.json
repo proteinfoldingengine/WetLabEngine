@@ -1,0 +1,31 @@
+{
+  "all_commands_passed": true,
+  "commands": {
+    "inherited": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/tools/retained_ci/run.py",
+        "inherited",
+        "out/merge/inherited"
+      ],
+      "end_seconds": 82.16265586700001,
+      "returncode": 0,
+      "start_seconds": 0.0005096669999886672
+    },
+    "science": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/run_campaign.py",
+        "out/merge/scientific"
+      ],
+      "end_seconds": 583.5311605059999,
+      "returncode": 0,
+      "start_seconds": 0.0002945549999822106
+    }
+  },
+  "independent_verifier_recomputed": true,
+  "inherited_tests": 1071,
+  "interface_feasibility_cache": "within-process complete width/root-target/palette keys, as preregistered",
+  "new_controls": 79,
+  "parallel_seconds": 583.532072176
+}
