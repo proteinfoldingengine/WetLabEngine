@@ -1,0 +1,30 @@
+{
+  "all_commands_passed": true,
+  "commands": {
+    "inherited": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/tools/retained_ci/run.py",
+        "inherited",
+        "out/reproduction/inherited"
+      ],
+      "end_seconds": 82.511135451,
+      "returncode": 0,
+      "start_seconds": 0.0006122799999985773
+    },
+    "science": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.45-binary-fork-unit-barrier/run_campaign.py",
+        "out/reproduction/scientific"
+      ],
+      "end_seconds": 456.92690551300007,
+      "returncode": 0,
+      "start_seconds": 0.00033922699999777706
+    }
+  },
+  "independent_verifier_uncached": true,
+  "inherited_tests": 531,
+  "new_controls": 69,
+  "parallel_seconds": 456.92777937899996
+}

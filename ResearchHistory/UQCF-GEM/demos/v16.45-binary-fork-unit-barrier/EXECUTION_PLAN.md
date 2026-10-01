@@ -1,0 +1,8 @@
+# Prospective execution and storage plan
+Recorded before new scientific execution, under the immutable PREREGISTRATION.md at377094a964a351d408af4ed869d708711c181fc0.
+
+The full science job and full fresh publication-reproduction job run independently on separate GitHub runners after preflight. Each checks out the same immutable execution SHA and reruns all inherited tests and fresh parent science. A separate publish_evidence job depends on successful completion of BOTH jobs, downloads their API-digest-bound artifacts, verifies provenance and complete byte equality, and only then commits publication. Parallelism changes wall-clock scheduling, not freshness, scope, coverage or acceptance. No result cache is substituted for either execution. Actual-merge replay remains a third full execution.
+
+Both execution artifacts are retained losslessly as24MiB chunks, including their API metadata and job logs. Publication verification reconstructs each original ZIP and compares every extracted byte with the retained execution package. The source snapshot stores unique byte strings under SHA256 object names; SOURCE_MANIFEST.json retains all original source/input path identities, and SOURCE_FORMAT.json declares the representation. This prevents repeated inherited inputs from exceeding Git's per-file limit without dropping any byte or computation.
+
+All gate failures block downstream publication or certification. Original prospective protocol bytes, direct verified parent and ancestry are checked before expensive execution; source files must match current Git blobs. The automatic receipt job follows actual-merge success, and the independent final audit consumes it immediately. No optional scientific expansion is part of this run.
