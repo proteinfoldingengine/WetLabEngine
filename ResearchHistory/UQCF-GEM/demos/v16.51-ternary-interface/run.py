@@ -35,7 +35,7 @@ def phase(out):
  out=Path(out);out.mkdir(parents=True,exist_ok=True);preflight(out/'preflight');tick=time.perf_counter()
  results=run_commands({'science':[PY,str(HERE/'run_campaign.py'),str(out/'scientific')],'inherited':[PY,str(INFRA/'run.py'),'inherited',str(out/'inherited')]},out/'logs')
  legacy.compare_suites(json.loads((INFRA/'evidence/science/inherited/optimized-fixtures.json').read_text()),json.loads((out/'inherited/optimized-fixtures.json').read_text()))
- dump(out/'METRICS.json',{'inherited_tests':994,'new_controls':77,'all_commands_passed':True,'independent_verifier_uncached':True,'parallel_seconds':time.perf_counter()-tick,'commands':results})
+ dump(out/'METRICS.json',{'inherited_tests':994,'new_controls':77,'all_commands_passed':True,'independent_verifier_recomputed':True,'interface_feasibility_cache':'within-process complete width/root-target/palette keys, as preregistered','parallel_seconds':time.perf_counter()-tick,'commands':results})
 if __name__=='__main__':
  cmd,out=sys.argv[1:3]
  if cmd=='preflight':preflight(out)

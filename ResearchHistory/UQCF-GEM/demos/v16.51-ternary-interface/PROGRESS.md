@@ -9,3 +9,5 @@ Task 1: genuine RED verified in run 36885588846 at db3a3e51f558a34bb9de38b9d3ba6
 Task 2-3: producer/verifier and substantive controls written; GitHub development verification pending. No numerical science executed locally.
 
 Independent source review: four findings accepted and corrected; prospective AMENDMENT_001 preserves original timing/env deviations. Review RED run36887031192 at752b0708c395405bd8b7bf00c7f48c373757cbe0 produced exactly four intended failures, zero errors. Raw artifact digest verified. Corrective green: 44 science/coverage/failure controls +33 integrity controls; 77 new, 1071 including inherited. Execution pending.
+
+Task 2-3: corrective GREEN run36887590636 atfcaea35b50a367e3b210560d6f327fe76d734a8f passed all44+33 controls; downloaded artifact11175531119 SHA2566690a5a5c77195fcbe0fbe679690dbcb36d19f4300c5ebef7081888bec4f396e audited with exact logged identities. Source review accepts corrected implementation and amended methodology. Definitive full inherited science/reproduction/publication pending.
