@@ -1,6 +1,5 @@
-"""Prospective supplied-only baseline; exact-universe rejection is not implemented."""
+"""Exact ordered specification coverage, independently invoked by verifier."""
 def verify_identities(records, expected):
-    for identity in records:
-        if identity not in expected:
-            raise ValueError('unknown identity')
+    if not isinstance(records,list) or records != expected:
+        raise ValueError('canonical case identities')
     return True

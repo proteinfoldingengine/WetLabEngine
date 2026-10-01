@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "phase": "development-green",
+  "count": 30,
+  "tests": [
+    {
+      "identity": "test_gate.Gate.test_all_shared_pairs",
+      "expected": "PASS",
+      "assertions": "def test_all_shared_pairs(self):\n  for pair in ((0,1),(0,2),(1,2)):\n   state=p.canonical(p.T,2,[2,1,1,1]);nodes=p.layout(p.T)\n   supports=[{0},{1},{1}]\n   for i in range(3):supports[i]={1} if i in pair else {0}\n   state=[1,1]\n   for i,c in enumerate(nodes[0]):\n    for vertex in p.vertices(nodes,c):\n     for label in supports[i]:state[label]|=1<<vertex\n   path,trace=self.check(p.T,2,[2,1,1,1],state)\n   anchor=next(e for e in trace if e['kind']=='anchor')\n   self.assertEqual(tuple(anchor['pair']),pair);self.assertEqual(anchor['label'],1)"
+    },
+    {
+      "identity": "test_gate.Gate.test_asymmetric",
+      "expected": "PASS",
+      "assertions": "def test_asymmetric(self):\n  self.check(p.U,6,[2,2,2,1,2,2,2],p.initial(p.U,6,[2,2,2,1,2,2,2],'cyclic','interface_and_binary_inflated'))"
+    },
+    {
+      "identity": "test_gate.Gate.test_bad_representation",
+      "expected": "PASS",
+      "assertions": "def test_bad_representation(self):self.bad(lambda path:path.append([True,0,0]))"
+    },
+    {
+      "identity": "test_gate.Gate.test_duplicate_identity",
+      "expected": "PASS",
+      "assertions": "def test_duplicate_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['a','a'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_empty_support",
+      "expected": "PASS",
+      "assertions": "def test_empty_support(self):self.bad(lambda path:path.append([1,1,1]))"
+    },
+    {
+      "identity": "test_gate.Gate.test_extra_identity",
+      "expected": "PASS",
+      "assertions": "def test_extra_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['a','b','c'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_independent_case_universe",
+      "expected": "PASS",
+      "assertions": "def test_independent_case_universe(self):self.assertEqual(p.specs(),v.expected_specs());self.assertEqual(len(v.expected_specs()),2592)"
+    },
+    {
+      "identity": "test_gate.Gate.test_independent_model",
+      "expected": "PASS",
+      "assertions": "def test_independent_model(self):\n  for s in v.expected_specs():\n   t=p.TREES[s['tree']];M,start,end=v.model(t,s['q'],s['k'],s['permutation'],s['mode'])\n   self.assertEqual(M,p.data(t,s['q'])[2][0]);self.assertEqual(start,p.initial(t,s['k'],s['q'],s['permutation'],s['mode']));self.assertEqual(end,p.canonical(t,s['k'],s['q']))"
+    },
+    {
+      "identity": "test_gate.Gate.test_invalid_profile",
+      "expected": "PASS",
+      "assertions": "def test_invalid_profile(self):\n  with self.assertRaises(ValueError):v.model(p.T,[4,2,2,2],3)"
+    },
+    {
+      "identity": "test_gate.Gate.test_local_hole_permutation",
+      "expected": "PASS",
+      "assertions": "def test_local_hole_permutation(self):\n  t=p.T;q=[2,2,2,2];s=p.canonical(t,3,q);nodes=p.layout(t);child=nodes[0][0];trace=[]\n  path=p.transport_child(s,t,child,[0,1],[1,0],[0,1,2],trace)\n  end=s[:];region=sum(1<<v for v in p.vertices(nodes,child))\n  end[0]=(s[0]&~region)|(s[1]&region);end[1]=(s[1]&~region)|(s[0]&region)\n  v.path_check(t,3,q,path,s,end)\n  self.assertTrue(any(e['kind']=='local_hole' for e in trace))"
+    },
+    {
+      "identity": "test_gate.Gate.test_missing_case_rejected",
+      "expected": "PASS",
+      "assertions": "def test_missing_case_rejected(self):\n  with self.assertRaisesRegex(ValueError,'identities'):v.verify({'schema':1,'scope':v.SCOPE,'cases':[]})"
+    },
+    {
+      "identity": "test_gate.Gate.test_nonprimitive",
+      "expected": "PASS",
+      "assertions": "def test_nonprimitive(self):self.bad(lambda path:path.append(path[0][:]))"
+    },
+    {
+      "identity": "test_gate.Gate.test_omitted_identity",
+      "expected": "PASS",
+      "assertions": "def test_omitted_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['a'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_ordered_equivariance",
+      "expected": "PASS",
+      "assertions": "def test_ordered_equivariance(self):\n  t=p.T;q=[2,2,2,2];k=3;s=p.initial(t,k,q,'reversal','compact');base=p.normalize(s,t,k,q)\n  perm=[2,0,1]\n  def relabel(s):\n   out=[0]*k\n   for j in range(k):out[perm[j]]=s[j]\n   return out\n  actual=p.normalize(relabel(s),t,k,q,perm)\n  self.assertEqual(actual,[relabel(s) for s in base])"
+    },
+    {
+      "identity": "test_gate.Gate.test_reordered_identity",
+      "expected": "PASS",
+      "assertions": "def test_reordered_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['b','a'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_root_changed",
+      "expected": "PASS",
+      "assertions": "def test_root_changed(self):self.bad(lambda path:path.append([path[0][0]^1,*path[0][1:]]))"
+    },
+    {
+      "identity": "test_gate.Gate.test_root_plus_child_stacking",
+      "expected": "PASS",
+      "assertions": "def test_root_plus_child_stacking(self):\n  t=p.T;k=3;q=[2,2,2,2];s=p.canonical(t,k,q);nodes=p.layout(t);A,B,C=nodes[0]\n  # At canonical supports {0,1},{0,2},{1,2}, add 0 to C then to A's second leaf.\n  x=s[:];x[0]|=1<<C;y=x[:];y[0]|=1<<nodes[A][1]\n  self.assertEqual(sum(abs(a-b) for a,b in zip(v.profile_check(t,k,y),q)),2)\n  with self.assertRaisesRegex(ValueError,'total excursion'):v.path_check(t,k,q,[s,x,y],s,s)"
+    },
+    {
+      "identity": "test_gate.Gate.test_root_two_count",
+      "expected": "PASS",
+      "assertions": "def test_root_two_count(self):self.assertEqual(sum(s['q'][0]==2 for s in v.expected_specs()),864)"
+    },
+    {
+      "identity": "test_gate.Gate.test_scope_rejected",
+      "expected": "PASS",
+      "assertions": "def test_scope_rejected(self):\n  with self.assertRaises(ValueError):v.verify({'schema':1,'scope':'all trees','cases':[]})"
+    },
+    {
+      "identity": "test_gate.Gate.test_small_palette",
+      "expected": "PASS",
+      "assertions": "def test_small_palette(self):\n  with self.assertRaises(ValueError):v.model(p.T,[2,2,2,2],2)"
+    },
+    {
+      "identity": "test_gate.Gate.test_spare_palette",
+      "expected": "PASS",
+      "assertions": "def test_spare_palette(self):self.check(p.T,4,[2,2,2,2],p.initial(p.T,4,[2,2,2,2],'cyclic','compact'))"
+    },
+    {
+      "identity": "test_gate.Gate.test_substituted_identity",
+      "expected": "PASS",
+      "assertions": "def test_substituted_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['a','c'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_target_one",
+      "expected": "PASS",
+      "assertions": "def test_target_one(self):self.check(p.U,4,[1,2,2,1,2,2,2],p.initial(p.U,4,[1,2,2,1,2,2,2],'reversal','interface_and_binary_inflated'))"
+    },
+    {
+      "identity": "test_gate.Gate.test_target_three",
+      "expected": "PASS",
+      "assertions": "def test_target_three(self):self.check(p.T,6,[3,2,2,2],p.initial(p.T,6,[3,2,2,2],'reversal','compact'))"
+    },
+    {
+      "identity": "test_gate.Gate.test_triangle",
+      "expected": "PASS",
+      "assertions": "def test_triangle(self):\n  path,trace=self.check(p.T,3,[2,2,2,2],p.initial(p.T,3,[2,2,2,2],'reversal','compact'))\n  self.assertGreater(len(path),1)\n  self.assertTrue(any(e['kind']=='role_transport' for e in trace))"
+    },
+    {
+      "identity": "test_gate.Gate.test_two_child_stacking",
+      "expected": "PASS",
+      "assertions": "def test_two_child_stacking(self):\n  t=p.T;k=3;q=[2,2,2,2];s=p.canonical(t,k,q);nodes=p.layout(t);A,B,C=nodes[0]\n  x=s[:];x[0]|=1<<nodes[A][1];y=x[:];y[0]|=1<<nodes[B][1]\n  self.assertEqual(sum(abs(a-b) for a,b in zip(v.profile_check(t,k,y),q)),2)\n  with self.assertRaisesRegex(ValueError,'total excursion'):v.path_check(t,k,q,[s,x,y],s,s)"
+    },
+    {
+      "identity": "test_gate.Gate.test_unnested_support",
+      "expected": "PASS",
+      "assertions": "def test_unnested_support(self):\n  def mutate(path):\n   x=path[0][:];x[2]|=1<<2;path.append(x)\n  self.bad(mutate)"
+    },
+    {
+      "identity": "test_gate.Gate.test_whole_palette_child",
+      "expected": "PASS",
+      "assertions": "def test_whole_palette_child(self):\n  q=[2,1,1,1,2,2,2]\n  start=p.initial(p.U,4,q,'reversal','interface_and_binary_inflated')\n  path,trace=self.check(p.U,4,q,start)\n  full=[e for e in trace if e['kind']=='whole_palette_child']\n  self.assertEqual(len(full),1)\n  self.assertFalse(any(e['kind']=='role_transport' and e['child']==full[0]['child'] for e in trace))"
+    },
+    {
+      "identity": "test_gate.Gate.test_width_minimality",
+      "expected": "PASS",
+      "assertions": "def test_width_minimality(self):\n  for a,b,c in ((1,1,1),(2,2,2),(4,1,1),(2,3,4)):\n   for r in (1,2,3):\n    M=max(a,b,c) if r==1 else (a+b+c if r==3 else max(a,b,c,(a+b+c+1)//2))\n    self.assertTrue(v.root_feasible(a,b,c,r,M));self.assertFalse(v.root_feasible(a,b,c,r,M-1))"
+    },
+    {
+      "identity": "test_gate.Gate.test_wrong_endpoint",
+      "expected": "PASS",
+      "assertions": "def test_wrong_endpoint(self):\n  t=p.T;k=3;q=[2,2,2,2];start=p.initial(t,k,q,'reversal','compact');path=p.normalize(start,t,k,q)\n  self.assertNotEqual(path[-1],start)\n  with self.assertRaisesRegex(ValueError,'exact canonical endpoint'):v.path_check(t,k,q,path,start,start)"
+    }
+  ]
+}
