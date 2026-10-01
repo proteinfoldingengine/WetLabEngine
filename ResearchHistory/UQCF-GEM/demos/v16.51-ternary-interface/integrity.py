@@ -1,7 +1,7 @@
 """v16.51 execution bindings; immutable parent sources plus explicit new sources."""
 from pathlib import Path
 import snapshot
-import importlib.util,json,os,subprocess,sys,tarfile,gzip,io,re,hashlib
+import importlib.util,json,os,subprocess,sys,tarfile,gzip,io,re,hashlib,ast
 ROOT=Path.cwd();HERE=ROOT/'ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface'
 OLD=HERE.parent/'v16.50-recursive-binary-composition';OLD39=HERE.parent/'v16.39-theorem-validation';INFRA=ROOT/'tools/retained_ci'
 PARENT='4a2866132b53c8400e10c425e1461143d9f3bdd9'
@@ -76,23 +76,37 @@ def verify_package(out):
     scientific_equal(out/'scientific',out/'scientific')
     parent_equal(out/'scientific/parent50',OLD/'evidence/science/scientific')
     metrics=json.loads((out/'METRICS.json').read_text())
-    if metrics.get('inherited_tests')!=994 or metrics.get('new_controls')!=63 or not metrics.get('all_commands_passed'):raise ValueError('execution coverage')
+    if metrics.get('inherited_tests')!=994 or metrics.get('new_controls')!=77 or not metrics.get('all_commands_passed'):raise ValueError('execution coverage')
     suites=json.loads((out/'inherited/SUITES.json').read_text())
     expected_paths=[s for s in (OLD39/'inherited.txt').read_text().splitlines() if s.strip()]
     expected_counts=[8,26,12,16,4,8,5,28,3,5,30,28,11,28,2,22,3,22]
     if [r['path'] for r in suites]!=expected_paths or [r['tests'] for r in suites]!=expected_counts:raise ValueError('retained suite membership')
     logs={f'inherited/suite-{i:02}.log':c for i,c in enumerate(expected_counts)}
-    logs.update({'preflight/parent50/parent49/current-controls.log': 56, 'preflight/parent50/parent49/v48-controls.log': 50, 'preflight/parent50/parent49/v48-integrity.log': 33, 'preflight/parent50/parent49/v47-controls.log': 54, 'preflight/parent50/parent49/v47-integrity.log': 33, 'preflight/parent50/parent49/v46-controls.log': 42, 'preflight/parent50/parent49/v46-integrity.log': 33, 'preflight/parent50/parent49/v45-controls.log': 38, 'preflight/parent50/parent49/v45-integrity.log': 31, 'preflight/parent50/parent49/v44-controls.log': 37, 'preflight/parent50/parent49/v44-integrity.log': 19, 'preflight/parent50/parent49/v43-controls.log': 30, 'preflight/parent50/parent49/v43-integrity.log': 14, 'preflight/parent50/parent49/v42-controls.log': 30, 'preflight/parent50/parent49/v42-integrity.log': 14, 'preflight/parent50/parent49/v41-controls.log': 33, 'preflight/parent50/parent49/v41-integrity.log': 15, 'preflight/parent50/parent49/v40-controls.log': 25, 'preflight/parent50/parent49/v40-integrity.log': 14, 'preflight/parent50/parent49/integrity-controls.log': 33, 'preflight/parent50/parent49/v39-controls.log': 28, 'preflight/parent50/parent49/inherited-infrastructure.log': 11, 'preflight/parent50/current-controls.log': 27, 'preflight/parent50/integrity-controls.log': 33, 'preflight/current-controls.log': 30, 'preflight/integrity-controls.log': 33})
+    logs.update({'preflight/parent50/parent49/current-controls.log': 56, 'preflight/parent50/parent49/v48-controls.log': 50, 'preflight/parent50/parent49/v48-integrity.log': 33, 'preflight/parent50/parent49/v47-controls.log': 54, 'preflight/parent50/parent49/v47-integrity.log': 33, 'preflight/parent50/parent49/v46-controls.log': 42, 'preflight/parent50/parent49/v46-integrity.log': 33, 'preflight/parent50/parent49/v45-controls.log': 38, 'preflight/parent50/parent49/v45-integrity.log': 31, 'preflight/parent50/parent49/v44-controls.log': 37, 'preflight/parent50/parent49/v44-integrity.log': 19, 'preflight/parent50/parent49/v43-controls.log': 30, 'preflight/parent50/parent49/v43-integrity.log': 14, 'preflight/parent50/parent49/v42-controls.log': 30, 'preflight/parent50/parent49/v42-integrity.log': 14, 'preflight/parent50/parent49/v41-controls.log': 33, 'preflight/parent50/parent49/v41-integrity.log': 15, 'preflight/parent50/parent49/v40-controls.log': 25, 'preflight/parent50/parent49/v40-integrity.log': 14, 'preflight/parent50/parent49/integrity-controls.log': 33, 'preflight/parent50/parent49/v39-controls.log': 28, 'preflight/parent50/parent49/inherited-infrastructure.log': 11, 'preflight/parent50/current-controls.log': 27, 'preflight/parent50/integrity-controls.log': 33, 'preflight/current-controls.log': 44, 'preflight/integrity-controls.log': 33})
     for name,count in logs.items():
         content=(out/name).read_text()
         if list(map(int,re.findall(r'Ran (\d+) tests? in',content)))!=[count] or not re.search(r'^OK$',content,re.M):raise ValueError('retained passing test log '+name)
+    inherited=json.loads((HERE/'TEST_MANIFEST_INHERITED.json').read_text())
+    if inherited['count']!=994 or inherited['parent']!=PARENT:raise ValueError('inherited manifest binding')
+    actual_count=0
+    for name,entry in inherited['suites'].items():
+        text=(ROOT/name).read_text()
+        if sha(text.encode())!=entry['source_sha256']:raise ValueError('inherited assertion source')
+        found=[]
+        for cls in ast.parse(text).body:
+            if isinstance(cls,ast.ClassDef):
+                for node in cls.body:
+                    if isinstance(node,ast.FunctionDef) and node.name.startswith('test_'):found.append({'identity':cls.name+'.'+node.name,'expected':'PASS','assertions_sha256':sha(ast.get_source_segment(text,node).encode())})
+        if found!=entry['tests'] or len(found)!=entry['count']:raise ValueError('inherited exact identities/assertions')
+        actual_count+=len(found)
+    if actual_count!=994:raise ValueError('inherited identity count')
     manifest=json.loads((HERE/'TEST_MANIFEST_CAMPAIGN.json').read_text())
     for module,log in (('test_gate','preflight/current-controls.log'),('test_integrity','preflight/integrity-controls.log')):
         text=(out/log).read_text()
         identities=sorted(re.findall(r'^test_\w+ \(([^)]+)\) \.\.\. ok$',text,re.M))
         expected_ids=sorted(r['identity'].replace(module+'.','__main__.',1) for r in manifest['tests'] if r['identity'].startswith(module+'.'))
         if identities!=expected_ids:raise ValueError('exact test identities '+module)
-    if sum(logs.values())!=1057:raise ValueError('full test count')
+    if sum(logs.values())!=1071:raise ValueError('full test count')
     commands=json.loads((out/'logs/COMMANDS.json').read_text())
     if set(commands)!={'science','inherited'} or any(r['returncode']!=0 for r in commands.values()):raise ValueError('execution commands')
     legacy.compare_suites(json.loads((INFRA/'evidence/science/inherited/optimized-fixtures.json').read_text()),json.loads((out/'inherited/optimized-fixtures.json').read_text()))

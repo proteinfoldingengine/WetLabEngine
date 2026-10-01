@@ -53,7 +53,7 @@ def publication():
     archive.retain(api_dir/'publication-artifact.zip')
     metrics=json.loads((HERE/'evidence/science/METRICS.json').read_text())
     result=json.loads((HERE/'evidence/science/scientific/VERIFY.json').read_text())
-    report='# v16.51 ternary interface results\n\n'+json.dumps(result,indent=2)+'\n\nAll 994 inherited checks and 63 new controls pass in both scientific and fresh reproduction execution. Fresh parent50/nested science matched byte-for-byte. The frozen2592 directed cases are not exhaustive universes. See THEOREM.md for the reviewed single-ternary-root composition argument; repeated ternary composition and higher arity remain unresolved. A failed construction is not a nonunit barrier. Actual-merge audit and independently documented receipt closeout remain required.\n'
+    report='# v16.51 ternary interface results\n\n'+json.dumps(result,indent=2)+'\n\nAll 994 inherited checks and 77 new controls pass in both scientific and fresh reproduction execution. Fresh parent50/nested science matched byte-for-byte. The frozen2592 directed cases are not exhaustive universes. See THEOREM.md for the reviewed single-ternary-root composition argument; repeated ternary composition and higher arity remain unresolved. A failed construction is not a nonunit barrier. Actual-merge audit and independently documented receipt closeout remain required.\n'
     (HERE/'REPORT.md').write_text(report)
     paths=[p for p in HERE.rglob('*') if p.is_file() and '__pycache__' not in p.parts and p!=HERE/'PUBLICATION_MANIFEST.json']
     paths.append(ROOT/WORKFLOW)

@@ -7,3 +7,5 @@ Ruling: API-backed isolated branch/source mirror preserves the established proje
 
 Task 1: genuine RED verified in run 36885588846 at db3a3e51f558a34bb9de38b9d3ba628f06bb9062; exactly two intended failures, zero errors; raw artifact digest audited and preserved. Independent analytical proof accepts T1-T6 under the explicit ordering/full-palette/phase conditions.
 Task 2-3: producer/verifier and substantive controls written; GitHub development verification pending. No numerical science executed locally.
+
+Independent source review: four findings accepted and corrected; prospective AMENDMENT_001 preserves original timing/env deviations. Review RED run36887031192 at752b0708c395405bd8b7bf00c7f48c373757cbe0 produced exactly four intended failures, zero errors. Raw artifact digest verified. Corrective green: 44 science/coverage/failure controls +33 integrity controls; 77 new, 1071 including inherited. Execution pending.

@@ -161,8 +161,10 @@ def specs():
 def produce():
  cases=[]
  for spec in specs():
-  t=TREES[spec['tree']];k=spec['k'];q=spec['q'];start=initial(t,k,q,spec['permutation'],spec['mode']);trace=[]
-  try:path=normalize(start,t,k,q,trace=trace);failure=None
-  except Exception as exc:path=getattr(exc,'path',[]);failure={'type':type(exc).__name__,'message':str(exc),'trace':trace}
+  t=TREES[spec['tree']];k=spec['k'];q=spec['q'];trace=[];start=None;path=[];phase='start'
+  try:
+   start=initial(t,k,q,spec['permutation'],spec['mode']);phase='normalization'
+   path=normalize(start,t,k,q,trace=trace);failure=None
+  except Exception as exc:path=getattr(exc,'path',[]);failure={'phase':phase,'type':type(exc).__name__,'message':str(exc),'trace':trace}
   cases.append({'spec':spec,'width':data(t,q)[2][0],'start':start,'path':path,'failure':failure})
  return {'schema':1,'scope':SCOPE,'cases':cases}

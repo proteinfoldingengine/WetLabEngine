@@ -13,24 +13,13 @@ jobs:
         with: {fetch-depth: 64}
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
       - run: |
-          mkdir -p out/review-red
-          set +e
-          python ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/test_review_red.py > out/review-red/RED.log 2>&1
-          code=$?
-          set -e
-          cat out/review-red/RED.log
-          test "$code" -eq 1
-          python - <<'PYRED'
-          from pathlib import Path
-          log=Path('out/review-red/RED.log').read_text()
-          assert 'Ran 4 tests' in log and 'FAILED (failures=4)' in log
-          assert 'FULL_VERIFIER_OMISSION_ACCEPTED' in log and 'FULL_PALETTE_ORDER_LOST' in log
-          assert 'START_FAILURE_ESCAPED' in log and 'MISSING_FAILURE_OUTCOME_CLASSIFIER' in log
-          assert 'ERROR:' not in log
-          PYRED
-          cp ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/{AMENDMENT_001.md,TEST_MANIFEST_REVIEW_RED.json,test_review_red.py} out/review-red/
-          git rev-parse HEAD > out/review-red/HEAD
+          mkdir -p out/green
+          python ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/test_gate.py > out/green/controls.log 2>&1
+          python ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/test_integrity.py > out/green/integrity.log 2>&1
+          cp ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/TEST_MANIFEST_CAMPAIGN.json out/green/
+          git rev-parse HEAD > out/green/HEAD
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
-        with: {name: 'v1651-review-red-${{ github.sha }}', path: out/review-red, if-no-files-found: error}
+        with: {name: 'v1651-green-${{ github.sha }}', path: out/green, if-no-files-found: error}

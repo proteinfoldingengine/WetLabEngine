@@ -3,6 +3,7 @@ from itertools import product,combinations
 from functools import lru_cache
 from coverage import verify_identities
 L=();C=(L,L);D=(C,L);F=(C,C);SHAPES={'T':(C,C,C),'U':(C,D,F)}
+class InterfaceNotPreserved(ValueError):pass
 SCOPE='one ternary root over finite full binary child trees; repeated ternary composition unresolved'
 def topology(tree):
  children={};parent={};internal=[]
@@ -78,23 +79,23 @@ def model(tree,target,k,permutation='identity',mode='compact'):
 def cached_topology(tree):return topology(tree)
 def profile_check(tree,k,raw):
  ch,parents,internal=cached_topology(tree);n=len(ch)
- if not isinstance(raw,list) or len(raw)!=k or any(type(z)!=int or z<0 or z>=1<<n for z in raw):raise ValueError('state representation')
+ if not isinstance(raw,list) or len(raw)!=k or any(type(z)!=int or z<0 or z>=1<<n for z in raw):raise InterfaceNotPreserved('state representation')
  supports=[{j for j,z in enumerate(raw) if z>>v&1} for v in range(n)]
- if supports[0]!=set(range(k)):raise ValueError('root changed')
- if any(not S for S in supports) or any(not supports[v]<=supports[p] for v,p in parents.items()):raise ValueError('state admission')
+ if supports[0]!=set(range(k)):raise InterfaceNotPreserved('root changed')
+ if any(not S for S in supports) or any(not supports[v]<=supports[p] for v,p in parents.items()):raise InterfaceNotPreserved('state admission')
  return [hitting([supports[c] for c in ch[v]]) for v in internal]
 def path_check(tree,k,target,path,start,end):
- if not isinstance(path,list) or not path or path[0]!=start:raise ValueError('path start')
+ if not isinstance(path,list) or not path or path[0]!=start:raise InterfaceNotPreserved('path start')
  peaks=[0,0,0]
  for i,raw in enumerate(path):
   profile=profile_check(tree,k,raw)
   if len(profile)!=len(target):raise ValueError('target length')
   defects=[abs(a-b) for a,b in zip(profile,target)]
   costs=[sum(defects),max(defects,default=0),sum(bool(z) for z in defects)]
-  if costs[0]>1:raise ValueError('total excursion exceeds one')
+  if costs[0]>1:raise InterfaceNotPreserved('total excursion exceeds one')
   peaks=[max(a,b) for a,b in zip(peaks,costs)]
-  if i and sum((a^b).bit_count() for a,b in zip(raw,path[i-1]))!=1:raise ValueError('nonprimitive move')
- if profile_check(tree,k,path[0])!=target or path[-1]!=end or profile_check(tree,k,path[-1])!=target:raise ValueError('exact canonical endpoint')
+  if i and sum((a^b).bit_count() for a,b in zip(raw,path[i-1]))!=1:raise InterfaceNotPreserved('nonprimitive move')
+ if profile_check(tree,k,path[0])!=target or path[-1]!=end or profile_check(tree,k,path[-1])!=target:raise InterfaceNotPreserved('exact canonical endpoint')
  return peaks
 def expected_specs():
  rows=[]
@@ -113,13 +114,13 @@ def verify(doc):
  verify_identities([row.get('spec') for row in rows],expected_specs());results=[];width_checks={}
  for index,row in enumerate(rows):
   if set(row)!={'spec','width','start','path','failure'}:raise ValueError('record keys')
-  if row['failure'] is not None:raise ValueError('recorded construction failure: '+str(index))
+  if row['failure'] is not None:raise InterfaceNotPreserved('recorded construction failure: '+str(index))
   s=row['spec'];tree=SHAPES[s['tree']];q=s['q'];k=s['k'];M,start,end=model(tree,q,k,s['permutation'],s['mode'])
   if type(row['width'])!=int or row['width']!=M or row['start']!=start:raise ValueError('width/start')
   # Derive child widths from canonical endpoint cardinalities, independently of producer.
   ch,parents,internal=topology(tree);sizes=tuple(sum(bool(z>>c&1) for z in end) for c in ch[0]);key=(*sizes,q[0])
   if key not in width_checks:
-   if not root_feasible(*sizes,q[0],M) or root_feasible(*sizes,q[0],M-1):raise ValueError('minimum palette refuted')
+   if not root_feasible(*sizes,q[0],M) or root_feasible(*sizes,q[0],M-1):raise InterfaceNotPreserved('minimum palette refuted')
    width_checks[key]=M
   peaks=path_check(tree,k,q,row['path'],start,end)
   results.append({'case':index,'steps':len(row['path'])-1,'peaks':peaks})

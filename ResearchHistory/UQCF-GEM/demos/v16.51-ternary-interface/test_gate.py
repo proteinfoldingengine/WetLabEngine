@@ -131,4 +131,21 @@ class Corpus(unittest.TestCase):
  def test_claimed_failure(self):self.reject(lambda d:d['cases'][0].update(failure={'message':'failed'}),'construction failure')
  def test_false_schema(self):self.reject(lambda d:d.update(schema=9),'schema/scope')
  def test_extra_record_field(self):self.reject(lambda d:d['cases'][0].update(claimed_total=0),'record keys')
+class FailureHandling(unittest.TestCase):
+ def test_start_failure_retained(self):
+  from unittest.mock import patch
+  with patch.object(p,'initial',side_effect=ValueError('INJECTED_START_FAILURE')):doc=p.produce()
+  self.assertEqual(len(doc['cases']),2592)
+  self.assertTrue(all(row['start'] is None and row['failure']['phase']=='start' for row in doc['cases']))
+ def test_construction_failure_retained(self):
+  from unittest.mock import patch
+  with patch.object(p,'normalize',side_effect=p.ConstructionFailure(ValueError('INJECTED_PATH_FAILURE'),[[1]])):doc=p.produce()
+  self.assertEqual(len(doc['cases']),2592)
+  self.assertTrue(all(row['path']==[[1]] and row['failure']['phase']=='normalization' for row in doc['cases']))
+ def test_scientific_failure_outcome(self):
+  import run_campaign
+  self.assertEqual(run_campaign.failure_outcome(v.InterfaceNotPreserved('illegal repair')),'INTERFACE_NOT_PRESERVED')
+ def test_execution_failure_outcome(self):
+  import run_campaign
+  self.assertEqual(run_campaign.failure_outcome(ValueError('coverage gap')),'INCOMPLETE')
 if __name__=='__main__':unittest.main(verbosity=2)

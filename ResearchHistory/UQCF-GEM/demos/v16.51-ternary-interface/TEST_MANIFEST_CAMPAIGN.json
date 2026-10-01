@@ -1,7 +1,77 @@
 {
   "schema": 1,
-  "phase": "preflight-science-reproduction-postmerge",
+  "phase": "development-green/preflight/science/reproduction/postmerge",
   "tests": [
+    {
+      "identity": "test_gate.Corpus.test_claimed_failure",
+      "expected": "PASS",
+      "assertions": "def test_claimed_failure(self):self.reject(lambda d:d['cases'][0].update(failure={'message':'failed'}),'construction failure')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_duplicate_full_case",
+      "expected": "PASS",
+      "assertions": "def test_duplicate_full_case(self):self.reject(lambda d:d['cases'].__setitem__(-1,d['cases'][0]),'identities')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_extra_record_field",
+      "expected": "PASS",
+      "assertions": "def test_extra_record_field(self):self.reject(lambda d:d['cases'][0].update(claimed_total=0),'record keys')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_false_schema",
+      "expected": "PASS",
+      "assertions": "def test_false_schema(self):self.reject(lambda d:d.update(schema=9),'schema/scope')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_omitted_full_case",
+      "expected": "PASS",
+      "assertions": "def test_omitted_full_case(self):self.reject(lambda d:d['cases'].pop(),'identities')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_substituted_full_case",
+      "expected": "PASS",
+      "assertions": "def test_substituted_full_case(self):self.reject(lambda d:d['cases'][0]['spec'].update(mode='wrong'),'identities')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_valid_full_corpus",
+      "expected": "PASS",
+      "assertions": "def test_valid_full_corpus(self):self.assertEqual(v.verify(self.corpus)['cases'],2592)"
+    },
+    {
+      "identity": "test_gate.Corpus.test_wrong_start",
+      "expected": "PASS",
+      "assertions": "def test_wrong_start(self):self.reject(lambda d:d['cases'][0].update(start=[]),'width/start')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_wrong_target",
+      "expected": "PASS",
+      "assertions": "def test_wrong_target(self):self.reject(lambda d:d['cases'][0]['spec'].update(q=[2]),'identities')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_wrong_width",
+      "expected": "PASS",
+      "assertions": "def test_wrong_width(self):self.reject(lambda d:d['cases'][0].update(width=999),'width/start')"
+    },
+    {
+      "identity": "test_gate.FailureHandling.test_construction_failure_retained",
+      "expected": "PASS",
+      "assertions": "def test_construction_failure_retained(self):\n  from unittest.mock import patch\n  with patch.object(p,'normalize',side_effect=p.ConstructionFailure(ValueError('INJECTED_PATH_FAILURE'),[[1]])):doc=p.produce()\n  self.assertEqual(len(doc['cases']),2592)\n  self.assertTrue(all(row['path']==[[1]] and row['failure']['phase']=='normalization' for row in doc['cases']))"
+    },
+    {
+      "identity": "test_gate.FailureHandling.test_execution_failure_outcome",
+      "expected": "PASS",
+      "assertions": "def test_execution_failure_outcome(self):\n  import run_campaign\n  self.assertEqual(run_campaign.failure_outcome(ValueError('coverage gap')),'INCOMPLETE')"
+    },
+    {
+      "identity": "test_gate.FailureHandling.test_scientific_failure_outcome",
+      "expected": "PASS",
+      "assertions": "def test_scientific_failure_outcome(self):\n  import run_campaign\n  self.assertEqual(run_campaign.failure_outcome(v.InterfaceNotPreserved('illegal repair')),'INTERFACE_NOT_PRESERVED')"
+    },
+    {
+      "identity": "test_gate.FailureHandling.test_start_failure_retained",
+      "expected": "PASS",
+      "assertions": "def test_start_failure_retained(self):\n  from unittest.mock import patch\n  with patch.object(p,'initial',side_effect=ValueError('INJECTED_START_FAILURE')):doc=p.produce()\n  self.assertEqual(len(doc['cases']),2592)\n  self.assertTrue(all(row['start'] is None and row['failure']['phase']=='start' for row in doc['cases']))"
+    },
     {
       "identity": "test_gate.Gate.test_all_shared_pairs",
       "expected": "PASS",
@@ -140,7 +210,7 @@
     {
       "identity": "test_gate.Gate.test_whole_palette_child",
       "expected": "PASS",
-      "assertions": "def test_whole_palette_child(self):\n  q=[2,1,1,1,2,2,2]\n  start=p.initial(p.U,4,q,'reversal','interface_and_binary_inflated')\n  path,trace=self.check(p.U,4,q,start)\n  full=[e for e in trace if e['kind']=='whole_palette_child']\n  self.assertEqual(len(full),1)\n  self.assertFalse(any(e['kind']=='role_transport' and e['child']==full[0]['child'] for e in trace))"
+      "assertions": "def test_whole_palette_child(self):\n  q=[2,1,1,1,2,2,2]\n  start=p.initial(p.U,4,q,'reversal','compact')\n  path,trace=self.check(p.U,4,q,start)\n  full=[e for e in trace if e['kind']=='whole_palette_child']\n  self.assertEqual(len(full),1)\n  anchor=next(e for e in trace if e['kind']=='anchor');self.assertEqual(anchor['label'],3);self.assertEqual(anchor['pair'],[0,2])\n  self.assertFalse(any(e['kind']=='role_transport' and e['child']==full[0]['child'] for e in trace))"
     },
     {
       "identity": "test_gate.Gate.test_width_minimality",
@@ -318,8 +388,8 @@
       "assertions": "def test_zip_traversal(self):\n        b=io.BytesIO()\n        with zipfile.ZipFile(b,'w') as z:z.writestr('../a','x')\n        data=b.getvalue()\n        with tempfile.TemporaryDirectory() as d:\n            with self.assertRaises(ValueError):unpack_zip(data,'sha256:'+sha(data),d)"
     }
   ],
-  "new_count": 63,
+  "new_count": 77,
   "inherited_count": 994,
-  "total_count": 1057,
-  "inherited_source": "exact parent v16.50; SOURCE_MANIFEST freezes all inherited test source and current integrity.py freezes exact suite/log membership"
+  "total_count": 1071,
+  "inherited_manifest": "TEST_MANIFEST_INHERITED.json"
 }
