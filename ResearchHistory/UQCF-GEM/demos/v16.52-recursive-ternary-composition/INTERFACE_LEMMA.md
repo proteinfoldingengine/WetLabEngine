@@ -1,6 +1,6 @@
 # Recursive repair interface: candidate proof
 
-Status: independently accepted analytical argument; see INDEPENDENT_PROOF_REVIEW.md. No implementation, numerical validation or stage certification claimed.
+Status: independently accepted analytical argument; see INDEPENDENT_PROOF_REVIEW.md. This mathematical review status is distinct from implementation validation and stage certification; see PROGRESS.md for current execution status.
 
 ## Typed statement
 

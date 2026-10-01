@@ -68,13 +68,15 @@ def replace_role(current,nodes,child,x,y,path):
  for v in reversed(used):current[x]&=~(1<<v);path.append(current[:])
 def transport_child(state,t,child,roles,desired,P,trace=None):
  trace=[] if trace is None else trace;nodes=layout(t);current=list(state);path=[current[:]];roles=list(roles)
- for i,y in enumerate(desired):
-  if roles[i]==y:continue
-  if y in roles:
-   other=roles.index(y);hole=next(j for j in P if j not in roles)
-   replace_role(current,nodes,child,roles[other],hole,path);roles[other]=hole
-   trace.append({'kind':'local_hole','child':child,'label':hole})
-  replace_role(current,nodes,child,roles[i],y,path);roles[i]=y
+ try:
+  for i,y in enumerate(desired):
+   if roles[i]==y:continue
+   if y in roles:
+    other=roles.index(y);hole=next(j for j in P if j not in roles)
+    replace_role(current,nodes,child,roles[other],hole,path);roles[other]=hole
+    trace.append({'kind':'local_hole','child':child,'label':hole})
+   replace_role(current,nodes,child,roles[i],y,path);roles[i]=y
+ except Exception as exc:raise ConstructionFailure(exc,path) from exc
  return path
 def _normalize(state,t,k,q,order=None,trace=None,_record=None):
  trace=[] if trace is None else trace;nodes,target,w=data(t,q);P=list(range(k)) if order is None else list(order)
@@ -125,7 +127,11 @@ def _normalize(state,t,k,q,order=None,trace=None,_record=None):
   for i,c in enumerate(children):
    if w[c]==k:continue
    trace.append({'kind':'role_transport','child':c})
-   for nxt in transport_child(current,t,c,roles[i],targets[i],P,trace)[1:]:current[:]=nxt;path.append(current[:])
+   failure=None
+   try:transport=transport_child(current,t,c,roles[i],targets[i],P,trace)
+   except ConstructionFailure as exc:transport=exc.path;failure=exc
+   for nxt in transport[1:]:current[:]=nxt;path.append(current[:])
+   if failure is not None:raise failure
   trace.append({'kind':'transport_complete','end':len(path)-1})
  if r==len(children):
   flat=[j for row in roles for j in row];owner=[c for c,row in zip(children,roles) for j in row]
@@ -144,7 +150,8 @@ def _normalize(state,t,k,q,order=None,trace=None,_record=None):
    trace.append({'kind':'disjoint_transport','end':len(path)-1})
  return path
 class ConstructionFailure(Exception):
- def __init__(self,original,path):super().__init__(str(original));self.path=path
+ def __init__(self,original,path):
+  super().__init__(str(original));self.path=path;self.original=getattr(original,'original',original)
  def __str__(self):return super().__str__()
 def normalize(state,t,k,q,order=None,trace=None):
  attempted=[]
@@ -167,6 +174,9 @@ def produce():
   try:
    start=initial(t,k,q,spec['permutation'],spec['mode']);phase='normalization'
    path=normalize(start,t,k,q,trace=trace);failure=None
-  except Exception as exc:path=getattr(exc,'path',[]);failure={'phase':phase,'type':type(exc).__name__,'message':str(exc),'trace':trace}
+  except Exception as exc:
+   original=getattr(exc,'original',exc);path=getattr(exc,'path',[])
+   category='construction' if isinstance(original,(ValueError,AssertionError)) else 'incomplete'
+   failure={'phase':phase,'type':type(exc).__name__,'original_type':type(original).__name__,'category':category,'message':str(original),'trace':trace}
   cases.append({'spec':spec,'width':data(t,q)[2][0],'start':start,'path':path,'failure':failure})
  return {'schema':1,'scope':SCOPE,'kind':'campaign','cases':cases}

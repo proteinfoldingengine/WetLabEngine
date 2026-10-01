@@ -1,7 +1,7 @@
 """Full inherited controls plus independently bound recursive campaign."""
 from pathlib import Path
 import sys,subprocess,re,time,json
-from integrity import HERE,OLD,INFRA,dump,run_commands,source_map,package,legacy
+from integrity import HERE,OLD,INFRA,dump,run_commands,source_map,package,legacy,current_test_manifest
 PY=sys.executable
 def logged(argv,path,count=None,red=None):
  path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
@@ -11,11 +11,12 @@ def logged(argv,path,count=None,red=None):
  elif r.returncode:raise RuntimeError('failed '+str(argv))
  if count is not None and list(map(int,re.findall(r'Ran (\d+) tests? in',s)))!=[count]:raise ValueError('test count')
 def preflight(out):
- out=Path(out);source_map(check_execution=True)
+ out=Path(out);source_map(check_execution=True);current_test_manifest()
  subprocess.run([PY,str(OLD/'run.py'),'preflight',str(out/'parent51')],check=True)
  logged([PY,str(HERE/'test_gate.py')],out/'current-controls.log',41)
  logged([PY,str(HERE/'test_implementation_red.py')],out/'recursive-behavior.log',2)
  logged([PY,str(HERE/'test_integrity.py')],out/'integrity-controls.log',33)
+ logged([PY,str(HERE/'test_review_red.py')],out/'review-controls.log',3)
  # Audit preserved RED rather than rerunning the repaired coverage baseline.
  import base64,zipfile,io,hashlib
  receipt=json.loads((HERE/'RED_RECEIPT.json').read_text());raw=base64.b64decode((HERE/'RED_ARTIFACT.zip.b64').read_bytes())
@@ -32,12 +33,19 @@ def preflight(out):
   if 'FAILED (failures=2)' not in content or 'RECURSIVE_PRODUCER_MISSING' not in content or 'ERROR:' in content:raise ValueError('behavior RED assertions')
   if z.read('test_implementation_red.py')!=(HERE/'test_implementation_red.py').read_bytes():raise ValueError('behavior test source changed')
   (out/'implementation-red.log').write_text(content)
+ receipt=json.loads((HERE/'RED_REVIEW_RECEIPT.json').read_text());raw=base64.b64decode((HERE/'RED_REVIEW_ARTIFACT.zip.b64').read_bytes())
+ if 'sha256:'+hashlib.sha256(raw).hexdigest()!=receipt['digest']:raise ValueError('review RED digest')
+ with zipfile.ZipFile(io.BytesIO(raw)) as z:
+  content=z.read('RED.log').decode()
+  if 'FAILED (failures=3)' not in content or 'ERROR:' in content or any(t not in content for t in ('PARTIAL_TRANSPORT_PATH_LOST','MISSING_NEW_ASSERTION_BINDING','RESOURCE_FAILURE_MISCLASSIFIED')):raise ValueError('review RED assertions')
+  if z.read('test_review_red.py')!=(HERE/'test_review_red.py').read_bytes():raise ValueError('review test source changed')
+  (out/'review-red.log').write_text(content)
 
 def phase(out):
  out=Path(out);out.mkdir(parents=True,exist_ok=True);preflight(out/'preflight');tick=time.perf_counter()
  results=run_commands({'science':[PY,str(HERE/'run_campaign.py'),str(out/'scientific')],'inherited':[PY,str(INFRA/'run.py'),'inherited',str(out/'inherited')]},out/'logs')
  legacy.compare_suites(json.loads((INFRA/'evidence/science/inherited/optimized-fixtures.json').read_text()),json.loads((out/'inherited/optimized-fixtures.json').read_text()))
- dump(out/'METRICS.json',{'inherited_tests':1071,'new_controls':76,'all_commands_passed':True,'independent_verifier_recomputed':True,'interface_feasibility_cache':'within-process complete width/root-target/palette keys, as preregistered','parallel_seconds':time.perf_counter()-tick,'commands':results})
+ dump(out/'METRICS.json',{'inherited_tests':1071,'new_controls':79,'all_commands_passed':True,'independent_verifier_recomputed':True,'interface_feasibility_cache':'within-process complete width/root-target/palette keys, as preregistered','parallel_seconds':time.perf_counter()-tick,'commands':results})
 if __name__=='__main__':
  cmd,out=sys.argv[1:3]
  if cmd=='preflight':preflight(out)

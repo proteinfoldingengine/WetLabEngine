@@ -106,7 +106,7 @@ class Corpus(unittest.TestCase):
  def test_wrong_palette_identity(self):self.reject(lambda d:d['cases'][0]['spec'].update(k=999),'identities')
  def test_wrong_width(self):self.reject(lambda d:d['cases'][0].update(width=999),'width/start')
  def test_wrong_start(self):self.reject(lambda d:d['cases'][0].update(start=[]),'width/start')
- def test_claimed_failure(self):self.reject(lambda d:d['cases'][0].update(failure={'message':'failed'}),'construction failure')
+ def test_claimed_failure(self):self.reject(lambda d:d['cases'][0].update(failure={'message':'failed','category':'construction'}),'construction failure')
  def test_false_schema(self):self.reject(lambda d:d.update(schema=9),'schema/scope')
  def test_extra_record_field(self):self.reject(lambda d:d['cases'][0].update(claimed_total=0),'record keys')
  def test_campaign_not_control(self):self.reject(lambda d:d.update(kind='canonical_coverage_control'),'width/start|control singleton path')

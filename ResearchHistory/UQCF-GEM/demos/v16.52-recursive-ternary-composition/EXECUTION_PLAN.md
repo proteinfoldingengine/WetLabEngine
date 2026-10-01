@@ -77,4 +77,4 @@ Create run_campaign.py, integrity.py, run.py, snapshot.py, archive.py, publish.p
 
 ## Design review status
 
-Mathematical interface review is separate from implementation approval. No implementation or numerical v16.52 execution has occurred. This written plan requires review before implementation under the brainstorming/writing-plans workflow; previous scope approval authorized preparation of this concrete specification.
+Historical status at written-plan publication44ba8a2: mathematical interface review was separate from implementation approval, and implementation/numerical execution had not occurred. The user subsequently approved this written plan on2026-10-01. Current execution status is recorded chronologically in PROGRESS.md.

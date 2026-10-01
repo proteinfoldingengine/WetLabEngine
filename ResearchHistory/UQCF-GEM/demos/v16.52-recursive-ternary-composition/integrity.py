@@ -14,6 +14,23 @@ unpack_zip=legacy.unpack_zip;replace_directory=legacy.replace_directory
 
 def anchored(path):return legacy.anchored_file(ROOT,PARENT,str(path.relative_to(ROOT)))
 
+def verify_test_manifest(manifest,sources):
+    rows=[]
+    for module,text in sources.items():
+        for cls in ast.parse(text).body:
+            if isinstance(cls,ast.ClassDef):
+                for node in cls.body:
+                    if isinstance(node,ast.FunctionDef) and node.name.startswith('test_'):
+                        rows.append({'identity':module+'.'+cls.name+'.'+node.name,'expected':'PASS','assertions_sha256':sha(ast.get_source_segment(text,node).encode())})
+    if manifest!={'count':len(rows),'tests':rows}:raise ValueError('assertion manifest differs from source')
+    return True
+
+def current_test_manifest():
+    manifest=json.loads((HERE/'TEST_MANIFEST_CAMPAIGN.json').read_text())
+    modules=('test_gate','test_integrity','test_implementation_red','test_review_red')
+    verify_test_manifest(manifest,{m:(HERE/(m+'.py')).read_text() for m in modules})
+    return manifest
+
 def source_map(check_execution=False):
     head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
     if check_execution and any(os.environ.get(key,head)!=head for key in ('GITHUB_SHA','GITHUB_WORKFLOW_SHA')):raise ValueError('execution head before science')
@@ -76,14 +93,14 @@ def verify_package(out):
     scientific_equal(out/'scientific',out/'scientific')
     parent_equal(out/'scientific/parent51',OLD/'evidence/science/scientific')
     metrics=json.loads((out/'METRICS.json').read_text())
-    if metrics.get('inherited_tests')!=1071 or metrics.get('new_controls')!=76 or not metrics.get('all_commands_passed'):raise ValueError('execution coverage')
+    if metrics.get('inherited_tests')!=1071 or metrics.get('new_controls')!=79 or not metrics.get('all_commands_passed'):raise ValueError('execution coverage')
     suites=json.loads((out/'inherited/SUITES.json').read_text())
     expected_paths=[s for s in (OLD39/'inherited.txt').read_text().splitlines() if s.strip()]
     expected_counts=[8,26,12,16,4,8,5,28,3,5,30,28,11,28,2,22,3,22]
     if [r['path'] for r in suites]!=expected_paths or [r['tests'] for r in suites]!=expected_counts:raise ValueError('retained suite membership')
     logs={f'inherited/suite-{i:02}.log':c for i,c in enumerate(expected_counts)}
     logs.update({'preflight/parent51/parent50/parent49/current-controls.log': 56, 'preflight/parent51/parent50/parent49/v48-controls.log': 50, 'preflight/parent51/parent50/parent49/v48-integrity.log': 33, 'preflight/parent51/parent50/parent49/v47-controls.log': 54, 'preflight/parent51/parent50/parent49/v47-integrity.log': 33, 'preflight/parent51/parent50/parent49/v46-controls.log': 42, 'preflight/parent51/parent50/parent49/v46-integrity.log': 33, 'preflight/parent51/parent50/parent49/v45-controls.log': 38, 'preflight/parent51/parent50/parent49/v45-integrity.log': 31, 'preflight/parent51/parent50/parent49/v44-controls.log': 37, 'preflight/parent51/parent50/parent49/v44-integrity.log': 19, 'preflight/parent51/parent50/parent49/v43-controls.log': 30, 'preflight/parent51/parent50/parent49/v43-integrity.log': 14, 'preflight/parent51/parent50/parent49/v42-controls.log': 30, 'preflight/parent51/parent50/parent49/v42-integrity.log': 14, 'preflight/parent51/parent50/parent49/v41-controls.log': 33, 'preflight/parent51/parent50/parent49/v41-integrity.log': 15, 'preflight/parent51/parent50/parent49/v40-controls.log': 25, 'preflight/parent51/parent50/parent49/v40-integrity.log': 14, 'preflight/parent51/parent50/parent49/integrity-controls.log': 33, 'preflight/parent51/parent50/parent49/v39-controls.log': 28, 'preflight/parent51/parent50/parent49/inherited-infrastructure.log': 11, 'preflight/parent51/parent50/current-controls.log': 27, 'preflight/parent51/parent50/integrity-controls.log': 33, 'preflight/parent51/current-controls.log': 44, 'preflight/parent51/integrity-controls.log': 33})
-    logs.update({'preflight/current-controls.log':41,'preflight/integrity-controls.log':33,'preflight/recursive-behavior.log':2})
+    logs.update({'preflight/current-controls.log':41,'preflight/integrity-controls.log':33,'preflight/recursive-behavior.log':2,'preflight/review-controls.log':3})
     for name,count in logs.items():
         content=(out/name).read_text()
         if list(map(int,re.findall(r'Ran (\d+) tests? in',content)))!=[count] or not re.search(r'^OK$',content,re.M):raise ValueError('retained passing test log '+name)
@@ -101,13 +118,13 @@ def verify_package(out):
         if found!=entry['tests'] or len(found)!=entry['count']:raise ValueError('inherited exact identities/assertions')
         actual_count+=len(found)
     if actual_count!=1071:raise ValueError('inherited identity count')
-    manifest=json.loads((HERE/'TEST_MANIFEST_CAMPAIGN.json').read_text())
-    for module,log in (('test_gate','preflight/current-controls.log'),('test_integrity','preflight/integrity-controls.log'),('test_implementation_red','preflight/recursive-behavior.log')):
+    manifest=current_test_manifest()
+    for module,log in (('test_gate','preflight/current-controls.log'),('test_integrity','preflight/integrity-controls.log'),('test_implementation_red','preflight/recursive-behavior.log'),('test_review_red','preflight/review-controls.log')):
         text=(out/log).read_text()
         identities=sorted(re.findall(r'^test_\w+ \(([^)]+)\) \.\.\. ok$',text,re.M))
         expected_ids=sorted(r['identity'].replace(module+'.','__main__.',1) for r in manifest['tests'] if r['identity'].startswith(module+'.'))
         if identities!=expected_ids:raise ValueError('exact test identities '+module)
-    if sum(logs.values())!=1147:raise ValueError('full test count')
+    if sum(logs.values())!=1150:raise ValueError('full test count')
     commands=json.loads((out/'logs/COMMANDS.json').read_text())
     if set(commands)!={'science','inherited'} or any(r['returncode']!=0 for r in commands.values()):raise ValueError('execution commands')
     legacy.compare_suites(json.loads((INFRA/'evidence/science/inherited/optimized-fixtures.json').read_text()),json.loads((out/'inherited/optimized-fixtures.json').read_text()))

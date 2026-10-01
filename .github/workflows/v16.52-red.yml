@@ -1,11 +1,11 @@
-name: v16.52 source-review RED controls
+name: v16.52 development GREEN controls
 on:
   push:
     branches: [research/v16.52-recursive-ternary-composition]
     paths: ['ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/**', '.github/workflows/v16.52-red.yml']
 permissions: {contents: read}
 jobs:
-  review_red:
+  development:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
@@ -14,22 +14,14 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with: {python-version: '3.11'}
       - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
-      - name: Verify intended review RED assertions
+      - name: Validate recursive behavior and rejecting controls
         run: |
-          mkdir -p out/red
-          set +e
-          python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_review_red.py > out/red/RED.log 2>&1
-          code=$?
-          set -e
-          cat out/red/RED.log
-          test "$code" -eq 1
-          python - <<'PYRED'
-          from pathlib import Path
-          log=Path('out/red/RED.log').read_text()
-          assert 'Ran 3 tests' in log and 'FAILED (failures=3)' in log and 'ERROR:' not in log
-          assert 'PARTIAL_TRANSPORT_PATH_LOST' in log and 'MISSING_NEW_ASSERTION_BINDING' in log and 'RESOURCE_FAILURE_MISCLASSIFIED' in log
-          PYRED
-          cp ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/{test_review_red.py,TEST_MANIFEST_REVIEW_RED.json,producer.py,integrity.py} out/red/
+          mkdir -p out/green
+          python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_implementation_red.py > out/green/behavior.log 2>&1
+          python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_gate.py > out/green/controls.log 2>&1
+          python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_integrity.py > out/green/integrity.log 2>&1
+          python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_review_red.py > out/green/review.log 2>&1
+          cat out/green/*.log
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
-        with: {name: 'v1652-review-red-${{ github.sha }}', path: out/red, if-no-files-found: error}
+        with: {name: 'v1652-green-${{ github.sha }}', path: out/green, if-no-files-found: error}

@@ -1,5 +1,5 @@
 {
-  "count": 76,
+  "count": 79,
   "tests": [
     {
       "assertions_sha256": "0fa75af82f7aab5453354969a45b20cf32034c9c3de0aac43a82176ddc8ef9f8",
@@ -167,7 +167,7 @@
       "identity": "test_gate.Corpus.test_wrong_start"
     },
     {
-      "assertions_sha256": "2056f96669d25f9bc779fcdf3c5b4cd28ef4c1f77b7631cd196093ca0d0f9177",
+      "assertions_sha256": "52b3090297c9916ed83e469eb1e6e7ec48971d9b03ffa5f2d19fe87fcf44801c",
       "expected": "PASS",
       "identity": "test_gate.Corpus.test_claimed_failure"
     },
@@ -380,6 +380,21 @@
       "assertions_sha256": "38e487ca10de75782c27aeb5a3f81e2ff15b61ee8b95460520f824e7b9e4c8f5",
       "expected": "PASS",
       "identity": "test_implementation_red.RecursiveBehavior.test_binary_parent_ternary_child"
+    },
+    {
+      "assertions_sha256": "5465a140ed56e6f1616948155493852e84be70aee50311a2fea0c31914521ad7",
+      "expected": "PASS",
+      "identity": "test_review_red.ReviewControls.test_transport_partial_path_retained"
+    },
+    {
+      "assertions_sha256": "1b84139740984eac44993b2e2373f51d3cb9f67abc01fcabba394206a6e92dd0",
+      "expected": "PASS",
+      "identity": "test_review_red.ReviewControls.test_assertion_manifest_rejects_hash_mutation"
+    },
+    {
+      "assertions_sha256": "390b6f0400feb00825a9e14b683e331255eafa364f3877241787a7c5a62cd662",
+      "expected": "PASS",
+      "identity": "test_review_red.ReviewControls.test_resource_failure_is_incomplete"
     }
   ]
 }

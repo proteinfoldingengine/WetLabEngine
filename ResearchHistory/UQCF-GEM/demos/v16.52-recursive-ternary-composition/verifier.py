@@ -111,7 +111,10 @@ def verify(doc):
  verify_identities([row.get('spec') for row in rows],expected_specs());results=[];width_checks={}
  for index,row in enumerate(rows):
   if set(row)!={'spec','width','start','path','failure'}:raise ValueError('record keys')
-  if row['failure'] is not None:raise InterfaceNotPreserved('recorded construction failure: '+str(index))
+  if row['failure'] is not None:
+   failure=row['failure']
+   if not isinstance(failure,dict) or failure.get('category')!='construction':raise ValueError('incomplete recorded attempt: '+str(index))
+   raise InterfaceNotPreserved('recorded construction failure: '+str(index))
   s=row['spec'];tree=SHAPES[s['tree']];q=s['q'];k=s['k'];M,start,end=model(tree,q,k,s['permutation'],s['mode'])
   if doc['kind']=='canonical_coverage_control':start=end
   if type(row['width'])!=int or row['width']!=M or row['start']!=start:raise ValueError('width/start')
