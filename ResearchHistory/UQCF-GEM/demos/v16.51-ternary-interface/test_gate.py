@@ -32,10 +32,11 @@ class Gate(unittest.TestCase):
    self.assertEqual(tuple(anchor['pair']),pair);self.assertEqual(anchor['label'],1)
  def test_whole_palette_child(self):
   q=[2,1,1,1,2,2,2]
-  start=p.initial(p.U,4,q,'reversal','interface_and_binary_inflated')
+  start=p.initial(p.U,4,q,'reversal','compact')
   path,trace=self.check(p.U,4,q,start)
   full=[e for e in trace if e['kind']=='whole_palette_child']
   self.assertEqual(len(full),1)
+  anchor=next(e for e in trace if e['kind']=='anchor');self.assertEqual(anchor['label'],3);self.assertEqual(anchor['pair'],[0,2])
   self.assertFalse(any(e['kind']=='role_transport' and e['child']==full[0]['child'] for e in trace))
  def test_local_hole_permutation(self):
   t=p.T;q=[2,2,2,2];s=p.canonical(t,3,q);nodes=p.layout(t);child=nodes[0][0];trace=[]
@@ -113,4 +114,21 @@ class Gate(unittest.TestCase):
   with self.assertRaises(ValueError):v.model(p.T,[4,2,2,2],3)
  def test_small_palette(self):
   with self.assertRaises(ValueError):v.model(p.T,[2,2,2,2],2)
+class Corpus(unittest.TestCase):
+ @classmethod
+ def setUpClass(cls):cls.corpus=p.produce()
+ def doc(self):return copy.deepcopy(self.corpus)
+ def reject(self,mutate,pattern=None):
+  doc=self.doc();mutate(doc)
+  with self.assertRaisesRegex(ValueError,pattern or '.') :v.verify(doc)
+ def test_valid_full_corpus(self):self.assertEqual(v.verify(self.corpus)['cases'],2592)
+ def test_omitted_full_case(self):self.reject(lambda d:d['cases'].pop(),'identities')
+ def test_duplicate_full_case(self):self.reject(lambda d:d['cases'].__setitem__(-1,d['cases'][0]),'identities')
+ def test_substituted_full_case(self):self.reject(lambda d:d['cases'][0]['spec'].update(mode='wrong'),'identities')
+ def test_wrong_width(self):self.reject(lambda d:d['cases'][0].update(width=999),'width/start')
+ def test_wrong_start(self):self.reject(lambda d:d['cases'][0].update(start=[]),'width/start')
+ def test_wrong_target(self):self.reject(lambda d:d['cases'][0]['spec'].update(q=[2]),'identities')
+ def test_claimed_failure(self):self.reject(lambda d:d['cases'][0].update(failure={'message':'failed'}),'construction failure')
+ def test_false_schema(self):self.reject(lambda d:d.update(schema=9),'schema/scope')
+ def test_extra_record_field(self):self.reject(lambda d:d['cases'][0].update(claimed_total=0),'record keys')
 if __name__=='__main__':unittest.main(verbosity=2)

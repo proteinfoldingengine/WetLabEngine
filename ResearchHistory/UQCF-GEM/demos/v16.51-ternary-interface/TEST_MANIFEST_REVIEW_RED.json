@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "phase": "prospective-review-mutation-red",
+  "count": 4,
+  "expected_failures": 4,
+  "expected_errors": 0,
+  "tests": [
+    {
+      "identity": "test_review_red.ReviewRed.test_full_verifier_omission",
+      "expected": "FAIL",
+      "assertions": "def test_full_verifier_omission(self):\n  doc=p.produce();self.assertEqual(v.verify(doc)['cases'],2592)\n  doc['cases'].pop()\n  original=v.verify_identities\n  def supplied_only(rows,expected):\n   for row in rows:\n    if row not in expected:raise ValueError('unknown identity')\n   return True\n  v.verify_identities=supplied_only\n  try:\n   with self.assertRaisesRegex(ValueError,'identities',msg='FULL_VERIFIER_OMISSION_ACCEPTED'):v.verify(doc)\n  finally:v.verify_identities=original"
+    },
+    {
+      "identity": "test_review_red.ReviewRed.test_whole_palette_exception",
+      "expected": "FAIL",
+      "assertions": "def test_whole_palette_exception(self):\n  source=Path(p.__file__).read_text();needle='i in chosen and w[c]<k'\n  self.assertEqual(source.count(needle),1)\n  module=types.ModuleType('mutant_producer');module.__file__=p.__file__\n  exec(compile(source.replace(needle,'i in chosen'),p.__file__,'exec'),module.__dict__)\n  q=[2,1,1,1,2,2,2];start=p.initial(p.U,4,q,'reversal','compact')\n  self.assertEqual(module.normalize(start,p.U,4,q)[-1],p.canonical(p.U,4,q),'FULL_PALETTE_ORDER_LOST')"
+    },
+    {
+      "identity": "test_review_red.ReviewRed.test_start_failure_retained",
+      "expected": "FAIL",
+      "assertions": "def test_start_failure_retained(self):\n  from unittest.mock import patch\n  with patch.object(p,'initial',side_effect=ValueError('INJECTED_START_FAILURE')):\n   try:doc=p.produce()\n   except Exception:self.fail('START_FAILURE_ESCAPED')\n  self.assertEqual(len(doc['cases']),2592)\n  self.assertTrue(all(row['failure'] is not None for row in doc['cases']))"
+    },
+    {
+      "identity": "test_review_red.ReviewRed.test_failure_outcome_classifier",
+      "expected": "FAIL",
+      "assertions": "def test_failure_outcome_classifier(self):\n  import run_campaign\n  self.assertTrue(callable(getattr(run_campaign,'failure_outcome',None)),'MISSING_FAILURE_OUTCOME_CLASSIFIER')"
+    }
+  ]
+}
