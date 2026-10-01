@@ -1,0 +1,65 @@
+{
+  "fixture_hashes": {
+    "3": "cd89b77e47b1e47c1db7e7df1f2ba0247f9bb83964c6345dd59e8c11c8a2cafc",
+    "4": "86cb3f86b64a5313a65e3feeadb448f59222e7d3df1c6a9ee1feb18de02b3fb7"
+  },
+  "producer_generations": 2,
+  "producer_requests": 12,
+  "producer_seconds": 26.908122528999982,
+  "reuse": true,
+  "seconds": 64.950965248,
+  "success": true,
+  "tests": [
+    {
+      "id": "inherited_v1636.T.test_complete_small",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_extra_duplicate_pair_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_false_barrier_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_false_extension_count_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_false_gate_d_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_false_group_count_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_false_signature_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_false_ultrametric_count_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_hidden_exclusion_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_missing_gate_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_omitted_valid_pair_rejected",
+      "outcome": "success"
+    },
+    {
+      "id": "inherited_v1636.T.test_substituted_pair_rejected",
+      "outcome": "success"
+    }
+  ],
+  "verifier_calls": 12,
+  "verifier_seconds": 38.034227972999986,
+  "verifier_uncached": true
+}
