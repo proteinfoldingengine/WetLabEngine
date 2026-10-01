@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "status": "INDEPENDENT_RECEIPT_CLOSEOUT_APPROVED",
+  "stage": "v16.51",
+  "protocol_basis": "PREREGISTRATION.md as explicitly amended by AMENDMENT_001.md",
+  "merge": "76f373c8940433efc463762e675daf3e231f8cb5",
+  "ordered_merge_parents": [
+    "4a2866132b53c8400e10c425e1461143d9f3bdd9",
+    "3b2dd7850dad4a57b73c6191b0a0f5946b6e7de4"
+  ],
+  "publication_tree": "3829d2f4be44c3c19c72f990afcf6e45b4559817",
+  "workflow_receipt": "a5529d77031a18c60f00f2d1eae0fa94ac5b0e6a",
+  "receipt_tree": "a176aa8bc4d66a13992c9aa6347208970bb70c38",
+  "reviewer": "independent assistant reviewer /root/v1651_proof_review",
+  "review_method": "Independent analytical/source review, direct live GitHub API retrieval, and byte-only archive/log/Git audits; no local scientific execution or tests",
+  "decision": "APPROVE CLOSED/CERTIFIED under AMENDMENT_001 upon durable publication of this decision; no outstanding findings",
+  "run": 36890668837,
+  "run_attempt": 1,
+  "terminal_status": "completed",
+  "terminal_conclusion": "success",
+  "terminal_updated_at": "2026-10-01T16:27:15Z",
+  "integrated_ci_run": 36890668741,
+  "integrated_ci_conclusion": "success",
+  "verified": {
+    "execution_manifest_members": 101,
+    "receipt_manifest_members": 109,
+    "publication_manifest_members": 263,
+    "source_input_paths": 1850,
+    "unique_source_objects": 1490,
+    "passing_checks": 1071,
+    "inherited_checks": 994,
+    "new_controls": 77,
+    "scientific_files_byte_identical": 39,
+    "fresh_parent50_scientific_files": 36,
+    "ordered_merge_parents": true,
+    "publication_tree_equality": true,
+    "receipt_direct_child_merge": true,
+    "receipt_only_audit_prefix_added": true,
+    "durable_binary_references": true,
+    "source_and_receipt_git_bindings": true,
+    "complete_original_raw_archives": true,
+    "separate_science_reproduction_runners": true,
+    "actual_merge_replay": true,
+    "terminal_api_provenance": true
+  },
+  "post_merge_artifact": {
+    "id": 11177375422,
+    "size": 110351627,
+    "digest": "sha256:57f70e55d24160346f22975005fc6d7d5e8f748b880bff1836aeb1f8a79d5f14"
+  },
+  "receipt_artifact": {
+    "id": 11176274902,
+    "size": 52736791,
+    "digest": "sha256:8b6c158cead5316ca9a79572d8442ba413871ef159efaaaf256d5417f2dc7927"
+  },
+  "scientific_result": {
+    "outcome": "TERNARY_Q2_INTERFACE_VALIDATED",
+    "frozen_cases": 2592,
+    "root_two_cases": 864,
+    "primitive_moves": 92352,
+    "cases_with_unit_excursion": 1213,
+    "independent_interface_width_checks": 72,
+    "construction_failures": 0,
+    "proof_scope": "One genuine ternary root over three arbitrary finite ordered full binary child trees in the nonempty nested-support category. Ternary targets one and three are boundary controls; target two is the primary interface.",
+    "barrier_consequence": "For this scoped profile, B1=Binf=Bs=1 between distinct exact-profile components and 0 within an exact component. Each primary scalar objective is independently minimized; LEX remains diagnostic.",
+    "evidence_limit": "The 2592 directed cases validate implementation and are not an exhaustive state-space universe. Generality for arbitrary finite binary children rests on the independently reviewed analytical proof.",
+    "remaining": "Repeated/recursive ternary composition, higher arity, and unrestricted retained-category universality remain unresolved. No nonunit witness or physical interpretation is claimed."
+  },
+  "methodological_amendment": {
+    "original_preregistration_unchanged": true,
+    "initial_omission_red": "Original helper-only RED did not satisfy the promised preimplementation verifier-level omitted-corpus requirement.",
+    "replacement": "AMENDMENT_001 prospectively substituted postimplementation, pre-definitive-science full-verifier mutation RED and corrective GREEN, with all original evidence retained. This is not retroactive satisfaction of the missed timing requirement.",
+    "review_mutation_red_run": 36887031192,
+    "review_mutation_expected_failures": 4,
+    "review_mutation_errors": 0,
+    "corrective_green_run": 36887590636,
+    "environment_disclosure": "Earlier standard-library development/RED runs omitted installing Sympy/mpmath; the amendment preserves and discloses them as development evidence. Corrective GREEN and definitive preflight/science/reproduction/actual-merge execution used the pinned environment.",
+    "accepted_under_amended_protocol": true
+  },
+  "closure_requirement": "Independent analytical/source and receipt review is complete. No separate external-auditor dependency exists. Publish this decision durably before reporting CLOSED/CERTIFIED.",
+  "snapshot_note": "Receipt RUN.json may be an earlier in-progress snapshot; independently fetched terminal live API confirms completed/success for the actual-merge campaign and integrated CI."
+}
