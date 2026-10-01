@@ -1,0 +1,491 @@
+{
+  "jobs": [
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/110529750486",
+      "completed_at": "2026-10-01T18:54:10Z",
+      "conclusion": "success",
+      "created_at": "2026-10-01T18:51:12Z",
+      "head_branch": "research/v16.52-recursive-ternary-composition",
+      "head_sha": "0db3ea122068aa7f8aa7939ac768cf00c0a40a98",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36909923039/job/110529750486",
+      "id": 110529750486,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "preflight",
+      "node_id": "CR_kwDORG4isM8AAAAZvBYl1g",
+      "run_attempt": 1,
+      "run_id": 36909923039,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36909923039",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000004043,
+      "runner_name": "GitHub Actions 1000004043",
+      "started_at": "2026-10-01T18:51:14Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-10-01T18:51:15Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-10-01T18:51:14Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:52:34Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "started_at": "2026-10-01T18:51:15Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:52:34Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 3,
+          "started_at": "2026-10-01T18:52:34Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:52:41Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install sympy==1.13.3 mpmath==1.3.0",
+          "number": 4,
+          "started_at": "2026-10-01T18:52:34Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:54:08Z",
+          "conclusion": "success",
+          "name": "Run python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/run.py preflight out/preflight",
+          "number": 5,
+          "started_at": "2026-10-01T18:52:41Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:54:08Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "number": 6,
+          "started_at": "2026-10-01T18:54:08Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:54:09Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 11,
+          "started_at": "2026-10-01T18:54:08Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:54:09Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 12,
+          "started_at": "2026-10-01T18:54:09Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:54:09Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "started_at": "2026-10-01T18:54:09Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/110529750486",
+      "workflow_name": "v16.52 ternary interface campaign"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/110530980847",
+      "completed_at": "2026-10-01T19:07:35Z",
+      "conclusion": "success",
+      "created_at": "2026-10-01T18:54:11Z",
+      "head_branch": "research/v16.52-recursive-ternary-composition",
+      "head_sha": "0db3ea122068aa7f8aa7939ac768cf00c0a40a98",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36909923039/job/110530980847",
+      "id": 110530980847,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "publication",
+      "node_id": "CR_kwDORG4isM8AAAAZvCjr7w",
+      "run_attempt": 1,
+      "run_id": 36909923039,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36909923039",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000004044,
+      "runner_name": "GitHub Actions 1000004044",
+      "started_at": "2026-10-01T18:54:15Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-10-01T18:54:17Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-10-01T18:54:16Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:55:58Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "started_at": "2026-10-01T18:54:17Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:55:59Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 3,
+          "started_at": "2026-10-01T18:55:58Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:56:09Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install sympy==1.13.3 mpmath==1.3.0",
+          "number": 4,
+          "started_at": "2026-10-01T18:55:59Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:07:17Z",
+          "conclusion": "success",
+          "name": "Run python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/run.py phase out/reproduction",
+          "number": 5,
+          "started_at": "2026-10-01T18:56:09Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:07:27Z",
+          "conclusion": "success",
+          "name": "Run python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/run.py package out/reproduction publication",
+          "number": 6,
+          "started_at": "2026-10-01T19:07:17Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:07:32Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "number": 7,
+          "started_at": "2026-10-01T19:07:27Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:07:32Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 13,
+          "started_at": "2026-10-01T19:07:32Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:07:32Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 14,
+          "started_at": "2026-10-01T19:07:32Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:07:32Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 15,
+          "started_at": "2026-10-01T19:07:32Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/110530980847",
+      "workflow_name": "v16.52 ternary interface campaign"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/110530980874",
+      "completed_at": "2026-10-01T19:04:31Z",
+      "conclusion": "success",
+      "created_at": "2026-10-01T18:54:11Z",
+      "head_branch": "research/v16.52-recursive-ternary-composition",
+      "head_sha": "0db3ea122068aa7f8aa7939ac768cf00c0a40a98",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36909923039/job/110530980874",
+      "id": 110530980874,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "science",
+      "node_id": "CR_kwDORG4isM8AAAAZvCjsCg",
+      "run_attempt": 1,
+      "run_id": 36909923039,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36909923039",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000004045,
+      "runner_name": "GitHub Actions 1000004045",
+      "started_at": "2026-10-01T18:54:13Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-10-01T18:54:15Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-10-01T18:54:14Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:55:29Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "started_at": "2026-10-01T18:54:15Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:55:30Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 3,
+          "started_at": "2026-10-01T18:55:29Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T18:55:38Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install sympy==1.13.3 mpmath==1.3.0",
+          "number": 4,
+          "started_at": "2026-10-01T18:55:30Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:04:17Z",
+          "conclusion": "success",
+          "name": "Run python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/run.py phase out/science",
+          "number": 5,
+          "started_at": "2026-10-01T18:55:38Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:04:25Z",
+          "conclusion": "success",
+          "name": "Run python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/run.py package out/science science",
+          "number": 6,
+          "started_at": "2026-10-01T19:04:17Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:04:29Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "number": 7,
+          "started_at": "2026-10-01T19:04:25Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:04:29Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 13,
+          "started_at": "2026-10-01T19:04:29Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:04:30Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 14,
+          "started_at": "2026-10-01T19:04:29Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:04:30Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 15,
+          "started_at": "2026-10-01T19:04:30Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/110530980874",
+      "workflow_name": "v16.52 ternary interface campaign"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/110530982553",
+      "completed_at": "2026-10-01T18:54:11Z",
+      "conclusion": "skipped",
+      "created_at": "2026-10-01T18:54:11Z",
+      "head_branch": "research/v16.52-recursive-ternary-composition",
+      "head_sha": "0db3ea122068aa7f8aa7939ac768cf00c0a40a98",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36909923039/job/110530982553",
+      "id": 110530982553,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "post_merge",
+      "node_id": "CR_kwDORG4isM8AAAAZvCjymQ",
+      "run_attempt": 1,
+      "run_id": 36909923039,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36909923039",
+      "runner_group_id": null,
+      "runner_group_name": null,
+      "runner_id": null,
+      "runner_name": null,
+      "started_at": "2026-10-01T18:54:11Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/110530982553",
+      "workflow_name": "v16.52 ternary interface campaign"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/110530983851",
+      "completed_at": "2026-10-01T18:54:11Z",
+      "conclusion": "skipped",
+      "created_at": "2026-10-01T18:54:11Z",
+      "head_branch": "research/v16.52-recursive-ternary-composition",
+      "head_sha": "0db3ea122068aa7f8aa7939ac768cf00c0a40a98",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36909923039/job/110530983851",
+      "id": 110530983851,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "receipt",
+      "node_id": "CR_kwDORG4isM8AAAAZvCj3qw",
+      "run_attempt": 1,
+      "run_id": 36909923039,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36909923039",
+      "runner_group_id": null,
+      "runner_group_name": null,
+      "runner_id": null,
+      "runner_name": null,
+      "started_at": "2026-10-01T18:54:11Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/110530983851",
+      "workflow_name": "v16.52 ternary interface campaign"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/110536555435",
+      "completed_at": null,
+      "conclusion": null,
+      "created_at": "2026-10-01T19:07:35Z",
+      "head_branch": "research/v16.52-recursive-ternary-composition",
+      "head_sha": "0db3ea122068aa7f8aa7939ac768cf00c0a40a98",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36909923039/job/110536555435",
+      "id": 110536555435,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "publish_evidence",
+      "node_id": "CR_kwDORG4isM8AAAAZvH37qw",
+      "run_attempt": 1,
+      "run_id": 36909923039,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/36909923039",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000004046,
+      "runner_name": "GitHub Actions 1000004046",
+      "started_at": "2026-10-01T19:07:38Z",
+      "status": "in_progress",
+      "steps": [
+        {
+          "completed_at": "2026-10-01T19:07:40Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-10-01T19:07:39Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:08:59Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "started_at": "2026-10-01T19:07:40Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:09:00Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 3,
+          "started_at": "2026-10-01T19:08:59Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-01T19:09:09Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install sympy==1.13.3 mpmath==1.3.0",
+          "number": 4,
+          "started_at": "2026-10-01T19:09:00Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Run python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/publish.py download \"$GITHUB_RUN_ID\" out/download science",
+          "number": 5,
+          "started_at": "2026-10-01T19:09:09Z",
+          "status": "in_progress"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Run python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/publish.py download \"$GITHUB_RUN_ID\" out/fresh publication",
+          "number": 6,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Run python ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/publish.py stage_reproduction",
+          "number": 7,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Publish verified evidence",
+          "number": 8,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "number": 9,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 17,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 18,
+          "started_at": null,
+          "status": "pending"
+        }
+      ],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/110536555435",
+      "workflow_name": "v16.52 ternary interface campaign"
+    }
+  ],
+  "total_count": 6
+}
