@@ -1,0 +1,4 @@
+# v16.47 saturated-chain repair
+Target: the saturated outer-root boundary left open by v16.46. The new construction repairs the nested subtree inside its fixed palette, then transports labels while preserving inner profiles and permitting only a unit outer-root defect. Together with the inherited non-saturated lemma this is a proposed general theorem for three-internal-vertex chains, not arbitrary retained trees.
+Same nine complete graph domains as v16.46; known finite unit connectivity is disclosed. New constructive certificates cover every exact-component representative, including saturated profiles. See PREREGISTRATION.md, THEOREM.md, EXECUTION_PLAN.md and REVIEW.md.
+Numerical execution is GitHub-only:762 checks, full fresh inherited science, independent reproduction, artifact/source/hash closure, actual-merge replay and durable receipt. Until all gates pass, PRE-CLOSURE / NOT CERTIFIED. Final status is recorded in PR95 and its audited closure receipt.
