@@ -1,0 +1,16 @@
+F
+======================================================================
+FAIL: test_missing_state (test_gate.Gate.test_missing_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.44-two-branch-unit-barrier/test_gate.py", line 15, in test_missing_state
+    def test_missing_state(self):self.graph()['states'].pop();self.reject()
+                                                              ^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.44-two-branch-unit-barrier/test_gate.py", line 11, in reject
+    with self.assertRaises(ValueError):self.check()
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (failures=1)
