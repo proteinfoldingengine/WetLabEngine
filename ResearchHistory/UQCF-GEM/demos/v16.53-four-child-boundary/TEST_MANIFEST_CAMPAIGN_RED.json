@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "ast_sha256": "415dae5c60c248fc4cc6d54fa8f6a886d97bff2649cefd636494dbf3f6d452fd",
+      "id": "test_campaign.Campaign.test_complete_frozen_campaign"
+    },
+    {
+      "ast_sha256": "f5c5851812f60a4686277a2ab41745210ed6e95547978ffe19db62a4f7d0e6d8",
+      "id": "test_campaign.Campaign.test_campaign_omission_rejected"
+    },
+    {
+      "ast_sha256": "cfb2ce6b03789514010a3fefcfd2642b872fe1ef8558668b47d3351e0facd38e",
+      "id": "test_campaign.Campaign.test_infeasible_not_construction_failure"
+    },
+    {
+      "ast_sha256": "26969df6e66890bd3e67e7eaa80c5321a3976f98cc47c6383fd5b40e61d52059",
+      "id": "test_campaign.Campaign.test_native_unsafe_q2_rejected_as_unit"
+    },
+    {
+      "ast_sha256": "eee73945f21053a44bc68c6fd7341f16eae8503b21dec5b915f41623777f7058",
+      "id": "test_campaign.Campaign.test_native_unsafe_q3_rejected_as_unit"
+    },
+    {
+      "ast_sha256": "f7a9293dcf22adb5f62bc669e6844b1b625b7d070c65c72bf8c4e1e9df0ad369",
+      "id": "test_campaign.Campaign.test_resource_failure_incomplete"
+    },
+    {
+      "ast_sha256": "86ee4578fef84b16c09ad88a47155ad5e5fbeaddd5ba0981ff923089baaad34a",
+      "id": "test_campaign.Campaign.test_construction_failure_scoped"
+    },
+    {
+      "ast_sha256": "42e5c374ed9281f48330ec7111c104e7a6c0dc2a5abb2a2c6ac2847e62d22bb4",
+      "id": "test_integrity.AssertionBindings.test_assertion_hash_mutation"
+    },
+    {
+      "ast_sha256": "15bc4e59be79d0ec32eccb052abe70b57eac54835a2591cf79c1b2cf3c7a15b3",
+      "id": "test_integrity.AssertionBindings.test_assertion_source_mutation"
+    },
+    {
+      "ast_sha256": "2d98e10b91aac587a9b7fa9e1bdafbc82f8e9ec067293f9d0dca8e7bc22116a3",
+      "id": "test_integrity.AssertionBindings.test_assertion_identity_omission"
+    }
+  ]
+}

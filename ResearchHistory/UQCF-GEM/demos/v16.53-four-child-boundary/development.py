@@ -12,11 +12,14 @@ for module in phase['modules']:
     errors+=sum(map(int,re.findall(r'errors=(\d+)',s)))
     if p.returncode and not re.search(r'FAILED \(',s):raise RuntimeError('non-test failure '+module)
     if not re.search(r'Ran \d+ tests? in',s):raise RuntimeError('missing tests '+module)
-sources={}
+sources={};prior_archives={}
 for p in sorted(HERE.iterdir()):
     if p.is_file():
-        b=p.read_bytes();dest=out/'source'/p.name;dest.parent.mkdir(exist_ok=True);dest.write_bytes(b);sources[p.name]=hashlib.sha256(b).hexdigest()
-meta={'head':os.environ['GITHUB_SHA'],'run':os.environ['GITHUB_RUN_ID'],'phase':phase,'failures':failures,'errors':errors,'source':sources}
+        b=p.read_bytes()
+        if p.name.endswith('.zip.b64'):
+            prior_archives[p.name]=hashlib.sha256(b).hexdigest();continue
+        dest=out/'source'/p.name;dest.parent.mkdir(exist_ok=True);dest.write_bytes(b);sources[p.name]=hashlib.sha256(b).hexdigest()
+meta={'head':os.environ['GITHUB_SHA'],'run':os.environ['GITHUB_RUN_ID'],'phase':phase,'failures':failures,'errors':errors,'source':sources,'prior_archive_hashes':prior_archives}
 (out/'RESULT.json').write_text(json.dumps(meta,sort_keys=True,indent=2)+'\n')
 print(logs)
 assert errors==0 and failures==phase['failures'],(failures,errors,phase)
