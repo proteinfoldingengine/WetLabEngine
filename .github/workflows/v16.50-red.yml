@@ -1,0 +1,34 @@
+name: v16.50 prospective RED
+on:
+  push:
+    branches: [research/v16.50-recursive-binary-composition]
+    paths: ['.github/workflows/v16.50-red.yml']
+permissions: {contents: read}
+jobs:
+  red:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: |
+          mkdir -p out
+          set +e
+          python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/test_prospective_red.py > out/RED.log 2>&1
+          status=$?
+          set -e
+          test "$status" = 1
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('out/RED.log').read_text()
+          assert 'MISSING_RECURSIVE_BINARY_INTERFACE' in s and 'ValueError not raised' in s
+          assert 'FAILED (failures=2)' in s
+          PY
+          git rev-parse HEAD > out/RED_HEAD
+          git show -s --format=%P 19306397237d3b6941d5b3b463839337febce145 > out/PREREG_PARENT
+          sha256sum ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/PREREGISTRATION.md > out/RED_PROTOCOL.sha256
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'v1650-red-${{ github.sha }}', path: out, if-no-files-found: error}
