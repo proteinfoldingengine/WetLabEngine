@@ -14,3 +14,6 @@ Task3: inherited runner and publication adapters authored; independent whole-sou
 Initial GREEN run36908053410:76 exact test identities pass; artifact digest and logs audited.
 Final review:3 Important findings; no Critical. Corrections follow genuine3-failure/0-error RED run36908623549. Source review limitations are separate required runtime gates, not waived scope.
 Final: fixed private transport path loss by preserving and merging partial transport paths; fixed new assertion manifest enforcement in preflight/package; fixed resource classification by preserving original exception/category. GREEN for all79 controls pending.
+Task2: complete; final GitHub GREEN36909426860 passed79/79 controls; exact test identities, logs and artifact SHA256 independently audited.
+Final review: all3 findings ADDRESSED by independent scoped re-review; all3 regression controls now GREEN. No deferred minors.
+Task3: scientific source frozen for full1150-check execution and separate42-file reproduction; publication/merge/receipt remain pending.

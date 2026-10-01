@@ -15,3 +15,13 @@ Minor: historical preimplementation status text should be explicitly dated as hi
 The reviewer did not adjudicate pending runtime GREEN/performance, fresh scientific reproduction, live GitHub publication/merge/receipt, or re-prove inherited science outside supplied analytical context. Those are separate mandatory execution/closure gates; none is waived.
 
 The construction and verifier appear consistent with R1–R6. Suitability for definitive science is conditional on the three fixes, their RED-to-GREEN controls, and review of the corrected source. Certification remains pending all execution and post-merge gates.
+
+## Corrected-source scoped re-review
+
+Independent reviewer source_review inspected corrected source37cc2729b76f60b7a470acf434a0be21c864ced9 and the proposed campaign workflow. Verdict: all three Important findings ADDRESSED; no new blocking source defect. Suitable for definitive science contingent on79 GitHub controls passing and retained frozen source/manifest bindings.
+
+Partial-path retention is addressed at both levels: transport captures completed primitives; its caller appends retained steps after the duplicate initial state before propagating, so normalize retains the full outer path and recursive callers project it into ancestor coordinates. Assertion-manifest reconstruction now enforces identities, expected results, hashes and count in preflight and package verification; all79 entries statically match source. Original exception types survive wrappers; recorded resource/infrastructure categories remain INCOMPLETE through the end-to-end verifier/runner classifier.
+
+The reviewer verified the review RED archive digest, unchanged test source, and exactly3 intended failures with0 errors. Historical statuses are clarified. Preflight, separate fresh executions, publication checks and actual-merge receipt workflow remain suitable. This acceptance does not assert runtime success or certification; no numerical science/tests were run by the reviewer.
+
+Runtime gate resolved by executor after review: GitHub run36909426860 passed all79 exact test identities. Downloaded archive SHA25625dc33ee704eef4be27fa37532d0c1fea879acb9e12bb3e881f850ab33aa3303 and all four logs independently inspected. This satisfies the reviewer’s GREEN condition; definitive science remains a separate subsequent execution.
