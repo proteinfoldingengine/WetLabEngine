@@ -1,0 +1,49 @@
+test_claimed_failure (__main__.Corpus.test_claimed_failure) ... ok
+test_duplicate_full_case (__main__.Corpus.test_duplicate_full_case) ... ok
+test_extra_record_field (__main__.Corpus.test_extra_record_field) ... ok
+test_false_schema (__main__.Corpus.test_false_schema) ... ok
+test_omitted_full_case (__main__.Corpus.test_omitted_full_case) ... ok
+test_substituted_full_case (__main__.Corpus.test_substituted_full_case) ... ok
+test_valid_full_corpus (__main__.Corpus.test_valid_full_corpus) ... ok
+test_wrong_start (__main__.Corpus.test_wrong_start) ... ok
+test_wrong_target (__main__.Corpus.test_wrong_target) ... ok
+test_wrong_width (__main__.Corpus.test_wrong_width) ... ok
+test_construction_failure_retained (__main__.FailureHandling.test_construction_failure_retained) ... ok
+test_execution_failure_outcome (__main__.FailureHandling.test_execution_failure_outcome) ... ok
+test_scientific_failure_outcome (__main__.FailureHandling.test_scientific_failure_outcome) ... ok
+test_start_failure_retained (__main__.FailureHandling.test_start_failure_retained) ... ok
+test_all_shared_pairs (__main__.Gate.test_all_shared_pairs) ... ok
+test_asymmetric (__main__.Gate.test_asymmetric) ... ok
+test_bad_representation (__main__.Gate.test_bad_representation) ... ok
+test_duplicate_identity (__main__.Gate.test_duplicate_identity) ... ok
+test_empty_support (__main__.Gate.test_empty_support) ... ok
+test_extra_identity (__main__.Gate.test_extra_identity) ... ok
+test_independent_case_universe (__main__.Gate.test_independent_case_universe) ... ok
+test_independent_model (__main__.Gate.test_independent_model) ... ok
+test_invalid_profile (__main__.Gate.test_invalid_profile) ... ok
+test_local_hole_permutation (__main__.Gate.test_local_hole_permutation) ... ok
+test_missing_case_rejected (__main__.Gate.test_missing_case_rejected) ... ok
+test_nonprimitive (__main__.Gate.test_nonprimitive) ... ok
+test_omitted_identity (__main__.Gate.test_omitted_identity) ... ok
+test_ordered_equivariance (__main__.Gate.test_ordered_equivariance) ... ok
+test_reordered_identity (__main__.Gate.test_reordered_identity) ... ok
+test_root_changed (__main__.Gate.test_root_changed) ... ok
+test_root_plus_child_stacking (__main__.Gate.test_root_plus_child_stacking) ... ok
+test_root_two_count (__main__.Gate.test_root_two_count) ... ok
+test_scope_rejected (__main__.Gate.test_scope_rejected) ... ok
+test_small_palette (__main__.Gate.test_small_palette) ... ok
+test_spare_palette (__main__.Gate.test_spare_palette) ... ok
+test_substituted_identity (__main__.Gate.test_substituted_identity) ... ok
+test_target_one (__main__.Gate.test_target_one) ... ok
+test_target_three (__main__.Gate.test_target_three) ... ok
+test_triangle (__main__.Gate.test_triangle) ... ok
+test_two_child_stacking (__main__.Gate.test_two_child_stacking) ... ok
+test_unnested_support (__main__.Gate.test_unnested_support) ... ok
+test_whole_palette_child (__main__.Gate.test_whole_palette_child) ... ok
+test_width_minimality (__main__.Gate.test_width_minimality) ... ok
+test_wrong_endpoint (__main__.Gate.test_wrong_endpoint) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 6.104s
+
+OK
