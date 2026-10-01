@@ -1,0 +1,22 @@
+FF
+======================================================================
+FAIL: test_missing_recursive_interface (__main__.Red.test_missing_recursive_interface)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/test_prospective_red.py", line 11, in test_missing_recursive_interface
+    def test_missing_recursive_interface(self):self.assertTrue(callable(getattr(old,'normalize_recursive',None)),'MISSING_RECURSIVE_BINARY_INTERFACE')
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : MISSING_RECURSIVE_BINARY_INTERFACE
+
+======================================================================
+FAIL: test_supplied_only_omission (__main__.Red.test_supplied_only_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/test_prospective_red.py", line 13, in test_supplied_only_omission
+    with self.assertRaises(ValueError):supplied_only([])
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

@@ -1,0 +1,29 @@
+test_binary_parent_ternary_child (test_implementation_red.RecursiveBehavior.test_binary_parent_ternary_child) ... FAIL
+test_nested_ternary (test_implementation_red.RecursiveBehavior.test_nested_ternary) ... FAIL
+
+======================================================================
+FAIL: test_binary_parent_ternary_child (test_implementation_red.RecursiveBehavior.test_binary_parent_ternary_child)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_implementation_red.py", line 17, in test_binary_parent_ternary_child
+    def test_binary_parent_ternary_child(self):self.check(v.SHAPES['J'],[2,2,2,2,2,2],4)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_implementation_red.py", line 8, in check
+    self.assertIsNotNone(importlib.util.find_spec('producer'), 'RECURSIVE_PRODUCER_MISSING')
+AssertionError: unexpectedly None : RECURSIVE_PRODUCER_MISSING
+
+======================================================================
+FAIL: test_nested_ternary (test_implementation_red.RecursiveBehavior.test_nested_ternary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_implementation_red.py", line 16, in test_nested_ternary
+    def test_nested_ternary(self):self.check(v.SHAPES['A'],[2,3],3)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_implementation_red.py", line 8, in check
+    self.assertIsNotNone(importlib.util.find_spec('producer'), 'RECURSIVE_PRODUCER_MISSING')
+AssertionError: unexpectedly None : RECURSIVE_PRODUCER_MISSING
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

@@ -1,0 +1,46 @@
+test_assertion_manifest_rejects_hash_mutation (__main__.ReviewControls.test_assertion_manifest_rejects_hash_mutation) ... FAIL
+test_resource_failure_is_incomplete (__main__.ReviewControls.test_resource_failure_is_incomplete) ... FAIL
+test_transport_partial_path_retained (__main__.ReviewControls.test_transport_partial_path_retained) ... FAIL
+
+======================================================================
+FAIL: test_assertion_manifest_rejects_hash_mutation (__main__.ReviewControls.test_assertion_manifest_rejects_hash_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_review_red.py", line 21, in test_assertion_manifest_rejects_hash_mutation
+    self.assertTrue(callable(getattr(integrity,'verify_test_manifest',None)),'MISSING_NEW_ASSERTION_BINDING')
+AssertionError: False is not true : MISSING_NEW_ASSERTION_BINDING
+
+======================================================================
+FAIL: test_resource_failure_is_incomplete (__main__.ReviewControls.test_resource_failure_is_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_review_red.py", line 36, in test_resource_failure_is_incomplete
+    self.assertEqual(outcome,'INCOMPLETE','RESOURCE_FAILURE_MISCLASSIFIED')
+AssertionError: 'INTERFACE_NOT_PRESERVED' != 'INCOMPLETE'
+- INTERFACE_NOT_PRESERVED
++ INCOMPLETE
+ : RESOURCE_FAILURE_MISCLASSIFIED
+
+======================================================================
+FAIL: test_transport_partial_path_retained (__main__.ReviewControls.test_transport_partial_path_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_review_red.py", line 19, in test_transport_partial_path_retained
+    self.assertEqual(retained,emitted,'PARTIAL_TRANSPORT_PATH_LOST')
+AssertionError: Lists differ: [] != [[375, 5643, 2721], [375, 5643, 2723], [37[48 chars]731]]
+
+Second list contains 5 additional elements.
+First extra element 0:
+[375, 5643, 2721]
+
+- []
++ [[375, 5643, 2721],
++  [375, 5643, 2723],
++  [375, 5643, 2731],
++  [375, 5635, 2731],
++  [375, 5633, 2731]] : PARTIAL_TRANSPORT_PATH_LOST
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.882s
+
+FAILED (failures=3)
