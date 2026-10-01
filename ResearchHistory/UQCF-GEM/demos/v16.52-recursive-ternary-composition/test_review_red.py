@@ -25,5 +25,14 @@ class ReviewControls(unittest.TestCase):
   integrity.verify_test_manifest(manifest,{'example':source})
   bad=copy.deepcopy(manifest);bad['tests'][0]['assertions_sha256']='0'*64
   with self.assertRaisesRegex(ValueError,'assertion manifest'):integrity.verify_test_manifest(bad,{'example':source})
+ def test_resource_failure_is_incomplete(self):
+  import verifier as v
+  import run_campaign
+  with patch.object(p,'_normalize',side_effect=MemoryError('INJECTED_RESOURCE_EXHAUSTION')):doc=p.produce()
+  self.assertEqual(len(doc['cases']),7236)
+  try:v.verify(doc)
+  except Exception as exc:outcome=run_campaign.failure_outcome(exc)
+  else:self.fail('resource failure was accepted')
+  self.assertEqual(outcome,'INCOMPLETE','RESOURCE_FAILURE_MISCLASSIFIED')
 
 if __name__=='__main__':unittest.main(verbosity=2)

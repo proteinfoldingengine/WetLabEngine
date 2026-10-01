@@ -1,5 +1,5 @@
 {
-  "count": 2,
+  "count": 3,
   "tests": [
     {
       "identity": "test_review_red.ReviewControls.test_transport_partial_path_retained",
@@ -8,6 +8,10 @@
     {
       "identity": "test_review_red.ReviewControls.test_assertion_manifest_rejects_hash_mutation",
       "sha256": "1b84139740984eac44993b2e2373f51d3cb9f67abc01fcabba394206a6e92dd0"
+    },
+    {
+      "identity": "test_review_red.ReviewControls.test_resource_failure_is_incomplete",
+      "sha256": "390b6f0400feb00825a9e14b683e331255eafa364f3877241787a7c5a62cd662"
     }
   ]
 }

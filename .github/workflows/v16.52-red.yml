@@ -26,8 +26,8 @@ jobs:
           python - <<'PYRED'
           from pathlib import Path
           log=Path('out/red/RED.log').read_text()
-          assert 'Ran 2 tests' in log and 'FAILED (failures=2)' in log and 'ERROR:' not in log
-          assert 'PARTIAL_TRANSPORT_PATH_LOST' in log and 'MISSING_NEW_ASSERTION_BINDING' in log
+          assert 'Ran 3 tests' in log and 'FAILED (failures=3)' in log and 'ERROR:' not in log
+          assert 'PARTIAL_TRANSPORT_PATH_LOST' in log and 'MISSING_NEW_ASSERTION_BINDING' in log and 'RESOURCE_FAILURE_MISCLASSIFIED' in log
           PYRED
           cp ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/{test_review_red.py,TEST_MANIFEST_REVIEW_RED.json,producer.py,integrity.py} out/red/
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
