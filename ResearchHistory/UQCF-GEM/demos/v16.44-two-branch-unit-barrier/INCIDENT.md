@@ -1,0 +1,6 @@
+# Failed first execution: protocol byte drift rejected
+Run36800975231 at source3d7a62d91f2a99a03446e325244229afcb53f820 passed the531 checks and completed scientific production/verification, but package creation failed with `ValueError: preregistration changed`; publication did not run. Treat that run as INCOMPLETE, not certified.
+
+Root cause: the initial local patch creation appended one extra LF to PREREGISTRATION.md. The prospective Git commit e36486f067349ce42083ff17f7972c9d86e9fffd has4477 bytes; the first execution source has4478 bytes. Their only difference is the extra trailing LF. No wording, domain, objective, outcome or stopping gate changed. Restore the EXACT original4477 bytes; do not normalize or weaken the equality check. The same exact byte gate now runs in preflight before expensive science as well as packaging. No producer, theorem, verifier, finite domain or acceptance criterion changed after observing the result.
+
+Retain the entire failed science ZIP as lossless chunks in evidence/prior_failure, with original API run/artifact metadata and job log. Artifact11135692601 is36381144 bytes, SHA256 e0d5f1dcd8643b38bd34721790dedf22c660012962dbb76c1f7ab43f9c917355. This record preserves the failed attempt; a complete fresh execution and publication replay are required.
