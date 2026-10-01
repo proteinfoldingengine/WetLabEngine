@@ -1,0 +1,52 @@
+{
+  "artifact": {
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11190583710/zip",
+    "created_at": "2026-10-01T20:06:03Z",
+    "digest": "sha256:a169e63366e5bec34e384ec1d370cd18ea4880264e56a0a84d4b02199629ef36",
+    "expired": false,
+    "expires_at": "2026-12-30T19:49:25Z",
+    "id": 11190583710,
+    "name": "v1652-post_merge-b6bf95798ec5892963c29f4020f8b75069fd2e3b",
+    "node_id": "MDg6QXJ0aWZhY3QxMTE5MDU4MzcxMA==",
+    "size_in_bytes": 111634621,
+    "updated_at": "2026-10-01T20:06:03Z",
+    "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11190583710",
+    "workflow_run": {
+      "head_branch": "research/v16.34-fiber-component-invariant",
+      "head_repository_id": 1148068528,
+      "head_sha": "b6bf95798ec5892963c29f4020f8b75069fd2e3b",
+      "id": 36917113237,
+      "repository_id": 1148068528
+    }
+  },
+  "parts": [
+    {
+      "index": 0,
+      "sha256": "a0da157faad9a003d779154363267d750cd688ff76a7cfb06f4be8316c50288e",
+      "size": 25165824
+    },
+    {
+      "index": 1,
+      "sha256": "6274165d9ee55ca41bd1a5450d293bac74930bc6c8c1f65b48d0dedb023fc181",
+      "size": 25165824
+    },
+    {
+      "index": 2,
+      "sha256": "63ff0215d0353d5372c96af0594858204b8bf3c191724e0ddcc93974b7604645",
+      "size": 25165824
+    },
+    {
+      "index": 3,
+      "sha256": "743c87466f821b37f342b776b769b17a804cc1ca6088ca87d072df6196d64ee1",
+      "size": 25165824
+    },
+    {
+      "index": 4,
+      "sha256": "0ce53268e9baabffadc61eaddec37f269499011d72ff1e4c519c98aa7fc35812",
+      "size": 10971325
+    }
+  ],
+  "phase": "post_merge",
+  "source_head": "b6bf95798ec5892963c29f4020f8b75069fd2e3b",
+  "source_run": 36917113237
+}

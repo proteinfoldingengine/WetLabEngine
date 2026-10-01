@@ -1,0 +1,1563 @@
+{
+  "phase": "science",
+  "head": "0db3ea122068aa7f8aa7939ac768cf00c0a40a98",
+  "run": "36909923039",
+  "manifest_members": 111,
+  "source_paths": 1931,
+  "unique_objects": 1531,
+  "passing_checks": 1150,
+  "scientific_files": 42,
+  "scientific_bytes_equal": true,
+  "result": {
+    "cases": 7236,
+    "cases_with_unit_excursion": 3491,
+    "construction_failures": [],
+    "kind": "campaign",
+    "nonunit_witness": "NOT_CLAIMED",
+    "outcome": "RECURSIVE_INTERFACE_VALIDATED",
+    "root_two_cases": 2412,
+    "scope": "finite rooted ordered trees with internal arity two or three; higher arity unresolved",
+    "status": "VERIFIED",
+    "total_moves": 263927,
+    "width_checks": [
+      {
+        "minimum_palette": 1,
+        "root_target": 1,
+        "widths": [
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 2,
+        "widths": [
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 1,
+        "root_target": 1,
+        "widths": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 2,
+        "widths": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 3,
+        "widths": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 1,
+        "widths": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 2,
+        "widths": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 3,
+        "widths": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 3,
+        "widths": [
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 1,
+        "widths": [
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 1,
+        "widths": [
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 2,
+        "widths": [
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 3,
+        "widths": [
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 1,
+        "widths": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 3,
+        "widths": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 3,
+        "widths": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          1,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          1,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 3,
+        "widths": [
+          1,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 3,
+        "widths": [
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          1,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          1,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 3,
+        "widths": [
+          1,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          1,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          1,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          1,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          1,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          1,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          1,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 1,
+        "widths": [
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 1,
+        "widths": [
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 2,
+        "widths": [
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 3,
+        "widths": [
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 1,
+        "widths": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 3,
+        "widths": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 3,
+        "widths": [
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 1,
+        "widths": [
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 3,
+        "widths": [
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 2,
+        "root_target": 1,
+        "widths": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 3,
+        "widths": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 3,
+        "widths": [
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          2,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          2,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          2,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          2,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          2,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          2,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          2,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          2,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 9,
+        "root_target": 3,
+        "widths": [
+          2,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 3,
+        "widths": [
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          3,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 3,
+        "widths": [
+          3,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          3,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          3,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 2,
+        "widths": [
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 3,
+        "widths": [
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          3,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          3,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          3,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          3,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          3,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          3,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          3,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          3,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 3,
+        "root_target": 1,
+        "widths": [
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 9,
+        "root_target": 3,
+        "widths": [
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          3,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          3,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          3,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          3,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          3,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 9,
+        "root_target": 3,
+        "widths": [
+          3,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          3,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          3,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 10,
+        "root_target": 3,
+        "widths": [
+          3,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          4,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 3,
+        "widths": [
+          4,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          4,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          4,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          4,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          4,
+          1,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          4,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          4,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          4,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          4,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          4,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 9,
+        "root_target": 3,
+        "widths": [
+          4,
+          2,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 2,
+        "widths": [
+          4,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          4,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 9,
+        "root_target": 3,
+        "widths": [
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 10,
+        "root_target": 3,
+        "widths": [
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          4,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 9,
+        "root_target": 3,
+        "widths": [
+          4,
+          4,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          4,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 10,
+        "root_target": 3,
+        "widths": [
+          4,
+          4,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 4,
+        "root_target": 1,
+        "widths": [
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 6,
+        "root_target": 2,
+        "widths": [
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 11,
+        "root_target": 3,
+        "widths": [
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 1,
+        "widths": [
+          5,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          5,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 7,
+        "root_target": 3,
+        "widths": [
+          5,
+          1,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 1,
+        "widths": [
+          5,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          5,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          5,
+          1,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 1,
+        "widths": [
+          5,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          5,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 8,
+        "root_target": 3,
+        "widths": [
+          5,
+          2,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 1,
+        "widths": [
+          5,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          5,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 9,
+        "root_target": 3,
+        "widths": [
+          5,
+          2,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 1,
+        "widths": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 9,
+        "root_target": 3,
+        "widths": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 1,
+        "widths": [
+          5,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 5,
+        "root_target": 2,
+        "widths": [
+          5,
+          3,
+          2
+        ]
+      },
+      {
+        "minimum_palette": 10,
+        "root_target": 3,
+        "widths": [
+          5,
+          3,
+          2
+        ]
+      }
+    ]
+  }
+}
