@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "status": "INDEPENDENT_RECEIPT_CLOSEOUT_APPROVED",
+  "stage": "v16.49",
+  "merge": "a8280c1c77d7e29f8b90dfd4807bede6411c7ca7",
+  "workflow_receipt": "9d087aff03d694b84dd6da4f7b823f68e98df380",
+  "reviewer": "independent assistant reviewer /root/v1649_closure_review",
+  "review_method": "Independent byte-only inspection outside scientific execution; no local scientific code or tests",
+  "decision": "APPROVE CLOSED/CERTIFIED for scoped v16.49",
+  "verified": {
+    "ordered_merge_parents": true,
+    "publication_tree_equality": true,
+    "post_merge_zip_sha256": "57835cf01bf262ee5db1341a7b563cdd9e52a76e33a3d53cb10cdf65bd86e5a8",
+    "receipt_zip_sha256": "7e7997b86f1675f5eaf059f5f083be7f71d336edbd651f4615a48ba4aba05ee6",
+    "execution_manifest_members": 88,
+    "receipt_manifest_members": 96,
+    "passing_checks": 934,
+    "scientific_files_byte_identical": 33,
+    "git_source_bindings": true,
+    "receipt_git_bindings": true,
+    "durable_binary_references": true,
+    "receipt_direct_child_actual_merge": true,
+    "terminal_run": 36863457271,
+    "terminal_status": "completed",
+    "terminal_conclusion": "success",
+    "terminal_updated_at": "2026-10-01T12:51:29Z"
+  },
+  "scope": "One binary parent with two internal-chain children of arbitrary finite lengths/degrees. General branching unresolved at v16.49.",
+  "correction": "No external-auditor dependency exists in documented protocol. Earlier pending-external-audit label was an assistant reporting error.",
+  "snapshot_note": "Receipt RUN.json predates terminal completion; separately fetched terminal run evidence establishes success."
+}
