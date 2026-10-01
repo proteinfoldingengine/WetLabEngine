@@ -1,0 +1,293 @@
+﻿2026-10-01T01:00:21.3470577Z Current runner version: '2.337.0'
+2026-10-01T01:00:21.3497750Z ##[group]Runner Image Provisioner
+2026-10-01T01:00:21.3498657Z Hosted Compute Agent
+2026-10-01T01:00:21.3499329Z Version: 20260901.588
+2026-10-01T01:00:21.3500004Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-01T01:00:21.3500743Z Build Date: 2026-09-01T19:56:44Z
+2026-10-01T01:00:21.3501919Z Worker ID: {f7f307a8-0b4b-440d-942a-13c3cda0ffac}
+2026-10-01T01:00:21.3502662Z Azure Region: westus
+2026-10-01T01:00:21.3503231Z ##[endgroup]
+2026-10-01T01:00:21.3505012Z ##[group]Operating System
+2026-10-01T01:00:21.3505689Z Ubuntu
+2026-10-01T01:00:21.3506340Z 24.04.5
+2026-10-01T01:00:21.3507161Z LTS
+2026-10-01T01:00:21.3507680Z ##[endgroup]
+2026-10-01T01:00:21.3508324Z ##[group]Runner Image
+2026-10-01T01:00:21.3508936Z Image: ubuntu-24.04
+2026-10-01T01:00:21.3509572Z Version: 20260927.320.1
+2026-10-01T01:00:21.3510859Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-01T01:00:21.3512497Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-01T01:00:21.3513484Z ##[endgroup]
+2026-10-01T01:00:21.3514699Z ##[group]GITHUB_TOKEN Permissions
+2026-10-01T01:00:21.3517240Z Contents: read
+2026-10-01T01:00:21.3517954Z Metadata: read
+2026-10-01T01:00:21.3518647Z ##[endgroup]
+2026-10-01T01:00:21.3520797Z Secret source: Actions
+2026-10-01T01:00:21.3521919Z Cache mode: write
+2026-10-01T01:00:21.3522635Z Prepare workflow directory
+2026-10-01T01:00:21.3871803Z Prepare all required actions
+2026-10-01T01:00:21.3922400Z Getting action download info
+2026-10-01T01:00:21.7643510Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-01T01:00:21.8767565Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-01T01:00:21.9559225Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-01T01:00:22.1715654Z Complete job name: post_merge
+2026-10-01T01:00:22.2540719Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-10-01T01:00:22.2542239Z with:
+2026-10-01T01:00:22.2542718Z   fetch-depth: 64
+2026-10-01T01:00:22.2543253Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-01T01:00:22.2547321Z   token: ***
+2026-10-01T01:00:22.2547776Z   ssh-strict: true
+2026-10-01T01:00:22.2548218Z   ssh-user: git
+2026-10-01T01:00:22.2548669Z   persist-credentials: true
+2026-10-01T01:00:22.2549176Z   clean: true
+2026-10-01T01:00:22.2549631Z   sparse-checkout-cone-mode: true
+2026-10-01T01:00:22.2550160Z   fetch-tags: false
+2026-10-01T01:00:22.2550610Z   show-progress: true
+2026-10-01T01:00:22.2551066Z   lfs: false
+2026-10-01T01:00:22.2551487Z   submodules: false
+2026-10-01T01:00:22.2551944Z   set-safe-directory: true
+2026-10-01T01:00:22.2552457Z   allow-unsafe-pr-checkout: false
+2026-10-01T01:00:22.2553375Z ##[endgroup]
+2026-10-01T01:00:22.3632546Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-01T01:00:22.3635364Z ##[group]Getting Git version info
+2026-10-01T01:00:22.3636892Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-01T01:00:22.3638690Z [command]/usr/bin/git version
+2026-10-01T01:00:22.3684995Z git version 2.55.0
+2026-10-01T01:00:22.3707109Z ##[endgroup]
+2026-10-01T01:00:22.3726086Z Temporarily overriding HOME='/home/runner/work/_temp/129a6474-3d50-453d-b173-9db6482881e9' before making global git config changes
+2026-10-01T01:00:22.3728765Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-01T01:00:22.3732856Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-01T01:00:22.3792220Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-01T01:00:22.3797381Z ##[group]Initializing the repository
+2026-10-01T01:00:22.3801574Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-01T01:00:22.3917564Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-01T01:00:22.3920210Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-01T01:00:22.3921986Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-01T01:00:22.3923437Z hint: call:
+2026-10-01T01:00:22.3925897Z hint:
+2026-10-01T01:00:22.3927259Z hint: 	git config --global init.defaultBranch <name>
+2026-10-01T01:00:22.3928456Z hint:
+2026-10-01T01:00:22.3929573Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-01T01:00:22.3932064Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-01T01:00:22.3933488Z hint:
+2026-10-01T01:00:22.3934321Z hint: 	git branch -m <name>
+2026-10-01T01:00:22.3935252Z hint:
+2026-10-01T01:00:22.3936838Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-01T01:00:22.3939435Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-01T01:00:22.3943151Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-01T01:00:22.3981848Z ##[endgroup]
+2026-10-01T01:00:22.3983171Z ##[group]Disabling automatic garbage collection
+2026-10-01T01:00:22.3986881Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-01T01:00:22.4023001Z ##[endgroup]
+2026-10-01T01:00:22.4024637Z ##[group]Setting up auth
+2026-10-01T01:00:22.4031224Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-01T01:00:22.4070890Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-01T01:00:22.4548929Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-01T01:00:22.4596013Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-01T01:00:22.4872691Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-01T01:00:22.4911446Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-01T01:00:22.5143941Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-01T01:00:22.5187859Z ##[endgroup]
+2026-10-01T01:00:22.5189188Z ##[group]Fetching the repository
+2026-10-01T01:00:22.5198760Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=64 origin +278be101e2c3c9e1cc4745533be94b306967bdf1:refs/remotes/origin/research/v16.34-fiber-component-invariant
+2026-10-01T01:00:44.6871820Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-01T01:00:44.6873365Z  * [new ref]         278be101e2c3c9e1cc4745533be94b306967bdf1 -> origin/research/v16.34-fiber-component-invariant
+2026-10-01T01:00:44.6876904Z ##[endgroup]
+2026-10-01T01:00:44.6877877Z ##[group]Determining the checkout info
+2026-10-01T01:00:44.6880657Z ##[endgroup]
+2026-10-01T01:00:44.6887080Z [command]/usr/bin/git sparse-checkout disable
+2026-10-01T01:00:44.6940987Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-01T01:00:44.6973476Z ##[group]Checking out the ref
+2026-10-01T01:00:44.6978455Z [command]/usr/bin/git checkout --progress --force -B research/v16.34-fiber-component-invariant refs/remotes/origin/research/v16.34-fiber-component-invariant
+2026-10-01T01:00:45.8071734Z Updating files:  46% (2861/6187)
+2026-10-01T01:00:46.0267691Z Updating files:  47% (2908/6187)
+2026-10-01T01:00:46.1334645Z Updating files:  48% (2970/6187)
+2026-10-01T01:00:46.1386027Z Updating files:  49% (3032/6187)
+2026-10-01T01:00:46.1430007Z Updating files:  50% (3094/6187)
+2026-10-01T01:00:46.1489822Z Updating files:  51% (3156/6187)
+2026-10-01T01:00:46.4585778Z Updating files:  52% (3218/6187)
+2026-10-01T01:00:46.5129362Z Updating files:  53% (3280/6187)
+2026-10-01T01:00:46.5302880Z Updating files:  54% (3341/6187)
+2026-10-01T01:00:46.5457334Z Updating files:  55% (3403/6187)
+2026-10-01T01:00:46.5639187Z Updating files:  56% (3465/6187)
+2026-10-01T01:00:46.7596733Z Updating files:  57% (3527/6187)
+2026-10-01T01:00:46.7665186Z Updating files:  57% (3564/6187)
+2026-10-01T01:00:46.7713577Z Updating files:  58% (3589/6187)
+2026-10-01T01:00:46.7768758Z Updating files:  59% (3651/6187)
+2026-10-01T01:00:46.7802325Z Updating files:  60% (3713/6187)
+2026-10-01T01:00:46.7855073Z Updating files:  61% (3775/6187)
+2026-10-01T01:00:46.8551313Z Updating files:  62% (3836/6187)
+2026-10-01T01:00:46.8580442Z Updating files:  63% (3898/6187)
+2026-10-01T01:00:46.8605995Z Updating files:  64% (3960/6187)
+2026-10-01T01:00:46.8755756Z Updating files:  65% (4022/6187)
+2026-10-01T01:00:46.8893437Z Updating files:  66% (4084/6187)
+2026-10-01T01:00:46.9067968Z Updating files:  67% (4146/6187)
+2026-10-01T01:00:46.9119618Z Updating files:  68% (4208/6187)
+2026-10-01T01:00:46.9574305Z Updating files:  69% (4270/6187)
+2026-10-01T01:00:47.1010234Z Updating files:  70% (4331/6187)
+2026-10-01T01:00:47.2788325Z Updating files:  71% (4393/6187)
+2026-10-01T01:00:47.3350480Z Updating files:  72% (4455/6187)
+2026-10-01T01:00:47.5101340Z Updating files:  73% (4517/6187)
+2026-10-01T01:00:47.5920821Z Updating files:  74% (4579/6187)
+2026-10-01T01:00:47.6490443Z Updating files:  75% (4641/6187)
+2026-10-01T01:00:47.6719359Z Updating files:  76% (4703/6187)
+2026-10-01T01:00:47.6790255Z Updating files:  77% (4764/6187)
+2026-10-01T01:00:47.7226384Z Updating files:  78% (4826/6187)
+2026-10-01T01:00:47.7263346Z Updating files:  78% (4853/6187)
+2026-10-01T01:00:47.7297337Z Updating files:  79% (4888/6187)
+2026-10-01T01:00:47.7336440Z Updating files:  80% (4950/6187)
+2026-10-01T01:00:47.7374075Z Updating files:  81% (5012/6187)
+2026-10-01T01:00:47.7411061Z Updating files:  82% (5074/6187)
+2026-10-01T01:00:47.7456227Z Updating files:  83% (5136/6187)
+2026-10-01T01:00:47.7485203Z Updating files:  84% (5198/6187)
+2026-10-01T01:00:47.7530128Z Updating files:  85% (5259/6187)
+2026-10-01T01:00:47.7673530Z Updating files:  86% (5321/6187)
+2026-10-01T01:00:48.1383804Z Updating files:  87% (5383/6187)
+2026-10-01T01:00:48.1559302Z Updating files:  88% (5445/6187)
+2026-10-01T01:00:48.1798379Z Updating files:  89% (5507/6187)
+2026-10-01T01:00:48.2080561Z Updating files:  90% (5569/6187)
+2026-10-01T01:00:48.2373674Z Updating files:  91% (5631/6187)
+2026-10-01T01:00:48.2861188Z Updating files:  92% (5693/6187)
+2026-10-01T01:00:48.2924933Z Updating files:  93% (5754/6187)
+2026-10-01T01:00:48.2972892Z Updating files:  94% (5816/6187)
+2026-10-01T01:00:48.3076128Z Updating files:  95% (5878/6187)
+2026-10-01T01:00:48.3133383Z Updating files:  96% (5940/6187)
+2026-10-01T01:00:48.3276300Z Updating files:  97% (6002/6187)
+2026-10-01T01:00:48.3421289Z Updating files:  98% (6064/6187)
+2026-10-01T01:00:48.3681243Z Updating files:  99% (6126/6187)
+2026-10-01T01:00:48.3682014Z Updating files: 100% (6187/6187)
+2026-10-01T01:00:48.3682479Z Updating files: 100% (6187/6187), done.
+2026-10-01T01:00:48.3764110Z Switched to a new branch 'research/v16.34-fiber-component-invariant'
+2026-10-01T01:00:48.3767549Z branch 'research/v16.34-fiber-component-invariant' set up to track 'origin/research/v16.34-fiber-component-invariant'.
+2026-10-01T01:00:48.3894917Z ##[endgroup]
+2026-10-01T01:00:48.3941278Z [command]/usr/bin/git log -1 --format=%H
+2026-10-01T01:00:48.3975398Z 278be101e2c3c9e1cc4745533be94b306967bdf1
+2026-10-01T01:00:48.4392965Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-10-01T01:00:48.4393593Z with:
+2026-10-01T01:00:48.4393913Z   python-version: 3.11
+2026-10-01T01:00:48.4394331Z   check-latest: false
+2026-10-01T01:00:48.4399408Z   token: ***
+2026-10-01T01:00:48.4399791Z   update-environment: true
+2026-10-01T01:00:48.4400403Z   allow-prereleases: false
+2026-10-01T01:00:48.4400747Z   freethreaded: false
+2026-10-01T01:00:48.4401053Z ##[endgroup]
+2026-10-01T01:00:48.5797127Z ##[group]Installed versions
+2026-10-01T01:00:48.9758713Z (node:2306) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-01T01:00:48.9759981Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-01T01:00:48.9763806Z Successfully set up CPython (3.11.16)
+2026-10-01T01:00:48.9779035Z ##[endgroup]
+2026-10-01T01:00:48.9987651Z ##[group]Run python -m pip install sympy==1.13.3 mpmath==1.3.0
+2026-10-01T01:00:48.9988167Z [36;1mpython -m pip install sympy==1.13.3 mpmath==1.3.0[0m
+2026-10-01T01:00:49.0292358Z shell: /usr/bin/bash -e {0}
+2026-10-01T01:00:49.0292675Z env:
+2026-10-01T01:00:49.0293207Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:49.0293733Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-01T01:00:49.0294355Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:49.0294840Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:49.0295255Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:49.0295659Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-01T01:00:49.0296000Z ##[endgroup]
+2026-10-01T01:00:50.2906301Z Collecting sympy==1.13.3
+2026-10-01T01:00:50.3604858Z   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
+2026-10-01T01:00:50.3970667Z Collecting mpmath==1.3.0
+2026-10-01T01:00:50.4091569Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-10-01T01:00:50.4299392Z Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+2026-10-01T01:00:50.5342893Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 77.6 MB/s  0:00:00
+2026-10-01T01:00:50.5460608Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-10-01T01:00:50.5532213Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 65.1 MB/s  0:00:00
+2026-10-01T01:00:50.6260466Z Installing collected packages: mpmath, sympy
+2026-10-01T01:00:56.1759293Z 
+2026-10-01T01:00:56.1768546Z Successfully installed mpmath-1.3.0 sympy-1.13.3
+2026-10-01T01:00:56.4179895Z ##[group]Run python ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/publish.py verify
+2026-10-01T01:00:56.4181220Z [36;1mpython ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/publish.py verify[0m
+2026-10-01T01:00:56.4255990Z shell: /usr/bin/bash -e {0}
+2026-10-01T01:00:56.4256241Z env:
+2026-10-01T01:00:56.4256751Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:56.4257218Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-01T01:00:56.4257655Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:56.4258056Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:56.4258448Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:56.4258855Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-01T01:00:56.4259177Z ##[endgroup]
+2026-10-01T01:00:59.0705261Z {"package": "VERIFIED", "source_members": 1425}
+2026-10-01T01:00:59.0705967Z {"package": "VERIFIED", "source_members": 1425}
+2026-10-01T01:00:59.0706740Z {"publication": "VERIFIED", "members": 134}
+2026-10-01T01:00:59.0851500Z ##[group]Run python ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/run.py phase out/merge
+2026-10-01T01:00:59.0852309Z [36;1mpython ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/run.py phase out/merge[0m
+2026-10-01T01:00:59.0917244Z shell: /usr/bin/bash -e {0}
+2026-10-01T01:00:59.0917506Z env:
+2026-10-01T01:00:59.0917795Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:59.0918270Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-01T01:00:59.0918705Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:59.0919271Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:59.0919658Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:00:59.0920037Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-01T01:00:59.0920359Z ##[endgroup]
+2026-10-01T01:06:13.8718048Z ##[group]Run python ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/run.py package out/merge post_merge
+2026-10-01T01:06:13.8718957Z [36;1mpython ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/run.py package out/merge post_merge[0m
+2026-10-01T01:06:13.8782789Z shell: /usr/bin/bash -e {0}
+2026-10-01T01:06:13.8783045Z env:
+2026-10-01T01:06:13.8783316Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:06:13.8783768Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-01T01:06:13.8784225Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:06:13.8784616Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:06:13.8785018Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:06:13.8785405Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-01T01:06:13.8785731Z ##[endgroup]
+2026-10-01T01:06:18.9803024Z {"package": "VERIFIED", "source_members": 1425}
+2026-10-01T01:06:19.0005101Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-01T01:06:19.0005520Z with:
+2026-10-01T01:06:19.0005803Z   name: v1643-post_merge-278be101e2c3c9e1cc4745533be94b306967bdf1
+2026-10-01T01:06:19.0006154Z   path: out/merge
+2026-10-01T01:06:19.0006373Z   if-no-files-found: error
+2026-10-01T01:06:19.0006942Z   compression-level: 6
+2026-10-01T01:06:19.0007178Z   overwrite: false
+2026-10-01T01:06:19.0007392Z   include-hidden-files: false
+2026-10-01T01:06:19.0007623Z env:
+2026-10-01T01:06:19.0007871Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:06:19.0008304Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-01T01:06:19.0008734Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:06:19.0009105Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:06:19.0009485Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-01T01:06:19.0009899Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-01T01:06:19.0010222Z ##[endgroup]
+2026-10-01T01:06:19.1669258Z (node:2590) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-01T01:06:19.1670431Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-01T01:06:19.1880655Z With the provided path, there will be 55 files uploaded
+2026-10-01T01:06:19.1882017Z Artifact name is valid!
+2026-10-01T01:06:19.1882910Z Root directory input is valid!
+2026-10-01T01:06:19.5835844Z Beginning upload of artifact content to blob storage
+2026-10-01T01:06:19.8726649Z (node:2590) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-01T01:06:20.7829388Z Uploaded bytes 8388608
+2026-10-01T01:06:21.2095165Z Uploaded bytes 16777216
+2026-10-01T01:06:21.2290072Z Uploaded bytes 25165824
+2026-10-01T01:06:21.2870377Z Uploaded bytes 33554432
+2026-10-01T01:06:21.5192492Z Uploaded bytes 41943040
+2026-10-01T01:06:21.6236937Z Uploaded bytes 50331648
+2026-10-01T01:06:21.8172326Z Uploaded bytes 58720256
+2026-10-01T01:06:22.1747049Z Uploaded bytes 66625042
+2026-10-01T01:06:22.2541802Z Finished uploading artifact content to blob storage!
+2026-10-01T01:06:22.2545210Z SHA256 digest of uploaded artifact zip is b02a915aedb14933c4622f430253e1ebbb285e2804526d0bdcfe1d31d9559d97
+2026-10-01T01:06:22.2548189Z Finalizing artifact upload
+2026-10-01T01:06:22.5370755Z Artifact v1643-post_merge-278be101e2c3c9e1cc4745533be94b306967bdf1.zip successfully finalized. Artifact ID 11134868696
+2026-10-01T01:06:22.5373303Z Artifact v1643-post_merge-278be101e2c3c9e1cc4745533be94b306967bdf1 has been successfully uploaded! Final size is 66625042 bytes. Artifact ID is 11134868696
+2026-10-01T01:06:22.5380887Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36798921114/artifacts/11134868696
+2026-10-01T01:06:22.5582125Z Post job cleanup.
+2026-10-01T01:06:22.6777241Z (node:2605) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-01T01:06:22.6778047Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-01T01:06:22.6972165Z Post job cleanup.
+2026-10-01T01:06:22.7912600Z [command]/usr/bin/git version
+2026-10-01T01:06:22.7964364Z git version 2.55.0
+2026-10-01T01:06:22.8009437Z Temporarily overriding HOME='/home/runner/work/_temp/411343cf-e4b7-4529-9fe0-bedbf27b1bcf' before making global git config changes
+2026-10-01T01:06:22.8011119Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-01T01:06:22.8016232Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-01T01:06:22.8064729Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-01T01:06:22.8103963Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-01T01:06:22.8452914Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-01T01:06:22.8483575Z http.https://github.com/.extraheader
+2026-10-01T01:06:22.8499060Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-01T01:06:22.8537606Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-01T01:06:22.8813856Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-01T01:06:22.8861964Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-01T01:06:22.9335683Z Cleaning up orphan processes
+2026-10-01T01:06:22.9618681Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
