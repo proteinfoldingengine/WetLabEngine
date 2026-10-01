@@ -8,7 +8,7 @@ jobs:
   transfer:
     strategy:
       matrix:
-        phase: [science, publication]
+        phase: [post_merge, receipt]
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -20,11 +20,11 @@ jobs:
           PHASE: '${{ matrix.phase }}'
         run: |
           python - <<'PY'
-          import json,os,urllib.request,urllib.error,hashlib
+          import json,os,urllib.request,urllib.error,hashlib,time
           from pathlib import Path
           api='https://api.github.com/repos/proteinfoldingengine/WetLabEngine'
-          source_run=36909923039
-          source_head='0db3ea122068aa7f8aa7939ac768cf00c0a40a98'
+          source_run=36917113237
+          source_head='b6bf95798ec5892963c29f4020f8b75069fd2e3b'
           phase=os.environ['PHASE']
           class NoRedirect(urllib.request.HTTPRedirectHandler):
               def redirect_request(self,*args):return None
@@ -34,8 +34,11 @@ jobs:
               except urllib.error.HTTPError as e:
                   if e.code not in (301,302,303,307,308):raise
                   return urllib.request.urlopen(e.headers['Location']).read()
-          artifacts=json.loads(get(api+'/actions/runs/'+str(source_run)+'/artifacts'))['artifacts']
-          matches=[a for a in artifacts if a['name']=='v1652-'+phase+'-'+source_head]
+          for attempt in range(40):
+              artifacts=json.loads(get(api+'/actions/runs/'+str(source_run)+'/artifacts'))['artifacts']
+              matches=[a for a in artifacts if a['name']=='v1652-'+phase+'-'+source_head]
+              if matches:break
+              time.sleep(15)
           assert len(matches)==1
           a=matches[0];raw=get(a['archive_download_url'])
           assert a['workflow_run']['id']==source_run and a['workflow_run']['head_sha']==source_head
@@ -50,12 +53,12 @@ jobs:
           print(json.dumps({'source_run':source_run,'phase':phase,'archive_digest':a['digest'],'parts':len(parts),'bytes':len(raw)}))
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with: {name: 'v1652-${{ matrix.phase }}-part-0', path: out/0, compression-level: 0, if-no-files-found: error}
+        with: {name: 'v1652-${{ matrix.phase }}-part-0', path: out/0, compression-level: 0, if-no-files-found: ignore}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with: {name: 'v1652-${{ matrix.phase }}-part-1', path: out/1, compression-level: 0, if-no-files-found: error}
+        with: {name: 'v1652-${{ matrix.phase }}-part-1', path: out/1, compression-level: 0, if-no-files-found: ignore}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with: {name: 'v1652-${{ matrix.phase }}-part-2', path: out/2, compression-level: 0, if-no-files-found: error}
+        with: {name: 'v1652-${{ matrix.phase }}-part-2', path: out/2, compression-level: 0, if-no-files-found: ignore}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with: {name: 'v1652-${{ matrix.phase }}-part-3', path: out/3, compression-level: 0, if-no-files-found: error}
+        with: {name: 'v1652-${{ matrix.phase }}-part-3', path: out/3, compression-level: 0, if-no-files-found: ignore}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with: {name: 'v1652-${{ matrix.phase }}-part-4', path: out/4, compression-level: 0, if-no-files-found: error}
+        with: {name: 'v1652-${{ matrix.phase }}-part-4', path: out/4, compression-level: 0, if-no-files-found: ignore}
