@@ -1,0 +1,132 @@
+name: v16.50 recursive binary composition theorem
+on:
+  push:
+    branches: [research/v16.50-recursive-binary-composition, research/v16.34-fiber-component-invariant]
+    paths: ['ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/**', '.github/workflows/v16.50-recursive-binary-composition.yml']
+permissions: {contents: read}
+concurrency:
+  group: v1650-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/run.py preflight out/preflight
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'v1650-preflight-${{ github.sha }}', path: out/preflight, if-no-files-found: error}
+  science:
+    needs: preflight
+    if: github.ref_name == 'research/v16.50-recursive-binary-composition'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/run.py phase out/science
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/run.py package out/science science
+        if: always()
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'v1650-science-${{ github.sha }}', path: out/science, if-no-files-found: error}
+  publication:
+    needs: preflight
+    if: github.ref_name == 'research/v16.50-recursive-binary-composition'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/run.py phase out/reproduction
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/run.py package out/reproduction publication
+        if: always()
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'v1650-publication-${{ github.sha }}', path: out/reproduction, if-no-files-found: error}
+  publish_evidence:
+    needs: [science, publication]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions: {contents: write, actions: read}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/publish.py download "$GITHUB_RUN_ID" out/download science
+        env: {GH_TOKEN: '${{ github.token }}'}
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/publish.py download "$GITHUB_RUN_ID" out/fresh publication
+        env: {GH_TOKEN: '${{ github.token }}'}
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/publish.py stage_reproduction
+      - name: Publish verified evidence
+        run: |
+          set -euo pipefail
+          python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/publish.py finalize
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition
+          git commit -m 'publish v16.50 independently reproduced recursive binary campaign'
+          git push origin HEAD:research/v16.50-recursive-binary-composition
+          test "$(git rev-parse HEAD)" = "$(git ls-remote origin refs/heads/research/v16.50-recursive-binary-composition | cut -f1)"
+          python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/publish.py verify
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: failure()
+        with: {name: 'v1650-publication-failure-${{ github.sha }}', path: out, if-no-files-found: warn}
+  post_merge:
+    needs: preflight
+    if: github.ref_name == 'research/v16.34-fiber-component-invariant'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/publish.py verify
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/run.py phase out/merge
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/run.py package out/merge post_merge
+        if: always()
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'v1650-post_merge-${{ github.sha }}', path: out/merge, if-no-files-found: error}
+  receipt:
+    needs: post_merge
+    if: github.ref_name == 'research/v16.34-fiber-component-invariant'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions: {contents: write, actions: read, pull-requests: read}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 64}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/publish.py receipt "$GITHUB_RUN_ID" out/receipt 98
+        env: {GH_TOKEN: '${{ github.token }}'}
+      - name: Commit verified receipt on separate branch
+        run: |
+          set -euo pipefail
+          git switch -c research/v16.50-audit-receipt
+          mkdir -p ResearchHistory/UQCF-GEM/audits/v16.50
+          cp -a out/receipt ResearchHistory/UQCF-GEM/audits/v16.50/"$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ResearchHistory/UQCF-GEM/audits/v16.50
+          git commit -m 'record v16.50 verified actual-merge closure receipt'
+          git push origin HEAD:research/v16.50-audit-receipt
+          test "$(git rev-parse HEAD)" = "$(git ls-remote origin refs/heads/research/v16.50-audit-receipt | cut -f1)"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'v1650-receipt-${{ github.sha }}', path: out/receipt, if-no-files-found: error}
