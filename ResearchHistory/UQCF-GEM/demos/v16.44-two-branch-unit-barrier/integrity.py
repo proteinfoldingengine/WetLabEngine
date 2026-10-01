@@ -14,6 +14,8 @@ unpack_zip=legacy.unpack_zip;replace_directory=legacy.replace_directory
 def anchored(path):return legacy.anchored_file(ROOT,PARENT,str(path.relative_to(ROOT)))
 
 def source_map():
+    protocol=str((HERE/'PREREGISTRATION.md').relative_to(ROOT))
+    if subprocess.check_output(['git','show',PREREG+':'+protocol])!=(HERE/'PREREGISTRATION.md').read_bytes():raise ValueError('preregistration changed before execution')
     frozen_path=OLD/'evidence/science/SOURCE_MANIFEST.json';frozen=json.loads(anchored(frozen_path))
     for name,digest in frozen.items():
         if sha((ROOT/name).read_bytes())!=digest:raise ValueError('frozen parent source: '+name)

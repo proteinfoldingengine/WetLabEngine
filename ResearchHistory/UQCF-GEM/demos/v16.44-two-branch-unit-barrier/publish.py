@@ -38,6 +38,20 @@ def download(run_id,out,phase='science'):
     if len(matches)!=1 or matches[0]['conclusion']!='success' or matches[0]['head_sha']!=run['head_sha']:raise ValueError('job success/source')
     (out/'JOB.log').write_bytes(get(API+'/actions/jobs/'+str(matches[0]['id'])+'/logs'))
     dump(out/'INTEGRITY.json',{'artifact_id':a['id'],'sha256':sha(data),'api_digest_crc_manifests_source_science':'VERIFIED','phase':phase,'head':run['head_sha']})
+    if phase=='science':retain_prior_failure(out/'prior_failure')
+
+def retain_prior_failure(out):
+    out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    run=json.loads(get(API+'/actions/runs/36800975231'))
+    artifact=json.loads(get(API+'/actions/artifacts/11135692601'))
+    if run['head_sha']!='3d7a62d91f2a99a03446e325244229afcb53f820' or run['conclusion']!='failure' or run['path']!=WORKFLOW:raise ValueError('prior failure run')
+    expected='sha256:e0d5f1dcd8643b38bd34721790dedf22c660012962dbb76c1f7ab43f9c917355'
+    if artifact['id']!=11135692601 or artifact['workflow_run']['id']!=36800975231 or artifact['digest']!=expected:raise ValueError('prior failure artifact')
+    data=get(artifact['archive_download_url'])
+    if 'sha256:'+sha(data)!=expected or len(data)!=artifact['size_in_bytes']:raise ValueError('prior failure bytes')
+    dump(out/'RUN.json',run);dump(out/'ARTIFACT.json',artifact)
+    (out/'JOB.log').write_bytes(get(API+'/actions/jobs/110175134501/logs'))
+    (out/'science-artifact.zip').write_bytes(data);archive.retain(out/'science-artifact.zip')
 
 def publication():
     verify_package('out/download/science');verify_package('out/reproduction')
@@ -65,6 +79,7 @@ def verify_publication():
     api_artifact=json.loads((HERE/'evidence/ARTIFACT.json').read_text())
     raw=archive.verify(HERE/'evidence/science-artifact.chunks',api_artifact['digest'])
     archive.verify_extracted(raw,HERE/'evidence/science',api_artifact['digest'])
+    archive.verify(HERE/'evidence/prior_failure/science-artifact.chunks','sha256:e0d5f1dcd8643b38bd34721790dedf22c660012962dbb76c1f7ab43f9c917355')
     print(json.dumps({'publication':'VERIFIED','members':len(manifest)}))
 
 def validate_merge(run,pr,commit,publication,head):
