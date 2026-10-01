@@ -5,3 +5,6 @@ Ruling: API-backed isolated branch/source mirror replaces local worktree helpers
 Pre-flight: verifier->producer certificate schema requires explicit kind; campaign and canonical_coverage_control share the unconditional identity gate, with distinct reconstructed starts.
 Pre-flight: inherited runner->publication requires42 science files and1071 inherited checks.
 Task1: in progress; producer absent.
+
+Task1: complete; GitHub run36904469389 success, intended2 RED assertion failures and0 errors, downloaded archive digest and source bytes audited.
+Task2: in progress; nested/mixed behavior tests committed before producer.
