@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib,json,os,subprocess,sys
 HERE=Path(__file__).resolve().parent
 out=Path(sys.argv[1]);out.mkdir(parents=True,exist_ok=True)
+os.environ['V1653_TEST_OUTPUT']=str((out/'attempts').resolve())
 phase=json.loads((HERE/'DEV_PHASE.json').read_text());failures=errors=0;logs=''
 import re
 for module in phase['modules']:

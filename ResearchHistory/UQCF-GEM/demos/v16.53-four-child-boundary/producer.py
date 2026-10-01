@@ -253,3 +253,70 @@ def normalize_four(current,t,k,q,P,trace,path):
     if failure is not None:raise failure
     for i in range(4):child_call(i)
     return path
+
+L=();B=(L,L);T=(L,L,L);Q=(L,L,L,L)
+TEMPLATES=[('C',(B,L,L,L),[(2,2),(3,2)]),('Z',(T,L,L,L),[(3,3)]),
+           ('D',(B,B,B,L),[(3,2,2,2)]),('E',(Q,L),[(2,2),(2,3)]),
+           ('G',(Q,L,L,L),[(2,3),(3,3)])]
+TREES={name:t for name,t,profiles in TEMPLATES}
+def specs():
+    rows=[]
+    for a in product(range(1,3),repeat=4):
+        for r in range(1,5):
+            for k in range(1,5):rows.append(['F',list(a),r,k])
+    for k in range(1,4):
+        choices=[[x for x in range(k) if mask>>x&1] for mask in range(1,2**k)]
+        for roots in product(choices,repeat=4):rows.append(['R',k,*roots])
+    for labels in permutations(range(4)):rows.append(['R',4,*[[j] for j in labels]])
+    for name,t,profiles in TEMPLATES:
+        for q in profiles:
+            m=data(t,q)[2][0]
+            for k in [m,m+1]:
+                for perm in ['identity','reversal','cyclic']:
+                    for mode in ['compact','inflated']:rows.append(['N',name,list(q),k,perm,mode])
+    rows.extend([['M',name] for name in ['clearance_root_full','spare_current_bin','unsafe_q2','unsafe_q3']])
+    return rows
+def encode_roots(k,roots):return [1|sum(1<<(i+1) for i,A in enumerate(roots) if j in A) for j in range(k)]
+def mechanism_record(name):
+    if name=='spare_current_bin':
+        import cover
+        start=[{0},{1,2},set(),set()];end=[{1},{0,2},set(),set()];caps=[2,2,2,0]
+        path=cover.reconfigure(start,end,caps,[0,1,2])
+        return {'start_cover':[sorted(A) for A in start],'target_cover':[sorted(A) for A in end],'capacities':caps,'cover_path':[[sorted(A) for A in row] for row in path]}
+    if name=='clearance_root_full':
+        tree=(B,L,L,L);k=4;q=[3,2];start=[23,43,67,3]
+        roots=[{0,1,2,3},{0},{1},{2}];end=[{1,2,3},{0},{1},{2}]
+        path=lift_root_path(start,tree,q,[roots,end],list(range(k)),[])
+        outcome='exact_interior_clearance'
+    else:
+        tree=Q;k=4 if name=='unsafe_q2' else 3;q=[2 if k==4 else 3]
+        roots=[{0},{0},{1},{1 if k==4 else 2}];current=encode_roots(k,roots);path=[current[:]]
+        edits=[(2,0,2),(4,1,3)] if k==4 else [(3,1,0),(4,2,0)]
+        for child,x,y in edits:
+            current[y]|=1<<child;path.append(current[:]);current[x]&=~(1<<child);path.append(current[:])
+        outcome='native_but_not_unit'
+    return {'tree':tree,'q':q,'k':k,'start':path[0],'end':path[-1],'path':path,'expected_outcome':outcome}
+def produce():
+    records=[]
+    for identity in specs():
+        row={'identity':identity,'status':'ok'};phase='metadata';start=None
+        try:
+            family=identity[0]
+            if family=='F':
+                _,widths,r,k=identity;roots=feasibility.at_width(tuple(widths),r,k)
+                row['feasible']=roots is not None
+                if roots is not None:row['canonical_roots']=[list(A) for A in roots]
+            elif family=='M':
+                phase='mechanism';row.update(mechanism_record(identity[1]))
+            else:
+                if family=='R':
+                    k=identity[1];tree=Q;start=encode_roots(k,identity[2:]);q=[coordinate(start,layout(tree)[0])]
+                else:
+                    _,name,q,k,perm,mode=identity;tree=TREES[name];start=initial(tree,k,q,perm,mode)
+                row.update(tree=tree,q=q,k=k,start=start,end=canonical(tree,k,q));phase='normalization'
+                row['path']=normalize(start,tree,k,q)
+        except Exception as exc:
+            original=getattr(exc,'original',exc)
+            row.update(status='interrupted',phase=phase,exception_type=type(original).__name__,category='construction' if isinstance(original,(ValueError,AssertionError)) else 'incomplete',partial_path=getattr(exc,'path',[start] if start is not None else []),message=str(original))
+        records.append(row)
+    return {'schema':1,'kind':'campaign','records':records}

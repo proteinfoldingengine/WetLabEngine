@@ -1,14 +1,20 @@
 import unittest
 import copy
+import os,json,gzip
+from pathlib import Path
 from unittest.mock import patch
 import producer as p
 import verifier as v
 
 class Campaign(unittest.TestCase):
     document=None
+    def retain(self,name,doc):
+        folder=Path(os.environ.get('V1653_TEST_OUTPUT','out/v1653-test-attempts'));folder.mkdir(parents=True,exist_ok=True)
+        (folder/(name+'.json.gz')).write_bytes(gzip.compress((json.dumps(doc,sort_keys=True,separators=(',',':'))+'\n').encode(),mtime=0))
     def campaign(self):
         self.assertTrue(callable(getattr(p,'produce',None)),'CAMPAIGN_IMPLEMENTATION_MISSING')
-        if type(self).document is None:type(self).document=p.produce()
+        if type(self).document is None:
+            type(self).document=p.produce();self.retain('campaign',type(self).document)
         return copy.deepcopy(type(self).document)
     def test_complete_frozen_campaign(self):
         d=self.campaign();result=v.verify(d)
@@ -37,6 +43,7 @@ class Campaign(unittest.TestCase):
     def test_resource_failure_incomplete(self):
         self.campaign()
         with patch.object(p,'normalize',side_effect=MemoryError('INJECTED_RESOURCE_EXHAUSTION')):d=p.produce()
+        self.retain('resource_failure',d)
         self.assertEqual([r['identity'] for r in d['records']],v.expected_specs())
         failures=[r for r in d['records'] if r['status']!='ok']
         self.assertTrue(failures)
@@ -46,6 +53,7 @@ class Campaign(unittest.TestCase):
     def test_construction_failure_scoped(self):
         self.campaign()
         with patch.object(p,'normalize',side_effect=ValueError('INJECTED_CONSTRUCTION_FAILURE')):d=p.produce()
+        self.retain('construction_failure',d)
         self.assertEqual([r['identity'] for r in d['records']],v.expected_specs())
         with self.assertRaises(v.InterfaceNotPreserved):v.verify(d)
 
