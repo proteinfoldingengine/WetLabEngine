@@ -1,8 +1,8 @@
 # v16.53 — four-child boundary, proof first
 
-**Analytical result: ACCEPTED by independent review, with no outstanding findings.** The four-child join returns the same six-clause repair interface, establishing the structural-induction extension to internal arities 2,3,4. Implementation validation and full execution certification remain pending.
+**Analytical result: ACCEPTED by independent review, with no outstanding findings.** The four-child join returns the same six-clause repair interface, establishing the structural-induction extension to internal arities 2,3,4. At this source freeze, all38 focused software controls pass; inherited replay, independent source review, publication, actual-merge replay and receipt remain certification gates. See REPORT.md and the separate audit receipt for subsequent execution status.
 
-The decisive artifact is [FOUR_CHILD_INTERFACE.md](FOUR_CHILD_INTERFACE.md), with native rules frozen in [NATIVE_ADMISSIBILITY.md](NATIVE_ADMISSIBILITY.md) before the proof draft. [INDEPENDENT_PROOF_REVIEW.md](INDEPENDENT_PROOF_REVIEW.md) records the analytical decision. This branch contains mathematical documents only; no new implementation, numerical campaign, or full execution certification is claimed.
+The decisive artifact is [FOUR_CHILD_INTERFACE.md](FOUR_CHILD_INTERFACE.md), with native rules frozen in [NATIVE_ADMISSIBILITY.md](NATIVE_ADMISSIBILITY.md) before the proof draft. [INDEPENDENT_PROOF_REVIEW.md](INDEPENDENT_PROOF_REVIEW.md) records the analytical decision. The implementation supplies independent15-region feasibility, fixed-root clearance, complementary-cover reconfiguration, guarded recursive joining, and a separately implemented support-set verifier.
 
 ## What the argument changes
 
@@ -16,7 +16,7 @@ The proof returns the same six interface clauses, including exact minimum-palett
 
 ## Evidence and limits
 
-This stage's evidence is a self-contained constructive argument and independent analytical review. No passing-case total substitutes for either. The certified software result remains v16.52 until the new clearance and cover procedures receive their own implementation validation. Higher arity, broader native categories, path-length optimality and physical interpretation are outside this result.
+This stage's basis is a self-contained constructive argument and independent analytical review. No passing-case total substitutes for either. The focused GitHub run36938171540 passed all38 frozen controls and verified every protocol record:256 feasibility rows,2507 native four-leaf starts,96 new-interface composition cases, and4 mechanism controls. Infeasible rows and the two expected unsafe-transport rejections remain explicit. Full-stage certification is a separate gate. Higher arity, broader native categories, path-length optimality and physical interpretation are outside this result.
 
 The root-only expansion argument for target 2 is arity-independent, and exact-interior role transport was already arity-independent. This does not establish a complete interface at arity five or higher: additional target values require additional guards.
 
