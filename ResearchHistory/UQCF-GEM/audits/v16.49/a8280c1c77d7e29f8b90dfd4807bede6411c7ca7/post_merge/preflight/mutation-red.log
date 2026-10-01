@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_missing_case (__main__.Red.test_missing_case)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.49-fork-chain-interface/test_red_contract.py", line 8, in test_missing_case
+    with self.assertRaises(ValueError):supplied_only([],['overlapping-fork-singleton-identity'])
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
