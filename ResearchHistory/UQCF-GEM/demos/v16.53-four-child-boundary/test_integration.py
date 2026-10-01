@@ -36,6 +36,19 @@ class Integration(unittest.TestCase):
         p=self.producer();nodes=p.layout(Q)
         with self.assertRaisesRegex(ValueError,'recursive call requires exact parent'):
             p.require_exact_parent([31,31,31],nodes,3)
+    def test_recursive_boundary_one_unit(self):
+        from unittest.mock import patch
+        p=self.producer();tree=(B,L,L,L);q=[3,2];state=[55,43,67,3]
+        profile=v.profile_check(tree,4,state)
+        self.assertEqual(profile,[2,2])
+        self.assertEqual(sum(abs(a-b) for a,b in zip(profile,q)),1)
+        with patch.object(p,'normalize',wraps=p.normalize) as calls:
+            with self.assertRaises(p.ConstructionFailure) as caught:
+                p.normalize(state,tree,4,q)
+            self.assertEqual(calls.call_count,1,'child normalization began with inexact parent')
+        self.assertIsInstance(caught.exception.original,ValueError)
+        self.assertIn('recursive call requires exact parent',str(caught.exception.original))
+        self.assertEqual(caught.exception.path,[state])
     def test_stacked_defect_rejected(self):
         self.producer();t=(B,B);raw=[127,1]
         with self.assertRaisesRegex(v.InterfaceNotPreserved,'total excursion'):
