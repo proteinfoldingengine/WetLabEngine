@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_missing_representative_must_be_rejected (__main__.Red.test_missing_representative_must_be_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.46-nested-chain-repair/test_red_contract.py", line 8, in test_missing_representative_must_be_rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
