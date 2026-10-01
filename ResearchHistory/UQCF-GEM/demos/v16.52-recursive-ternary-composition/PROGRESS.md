@@ -8,3 +8,5 @@ Task1: in progress; producer absent.
 
 Task1: complete; GitHub run36904469389 success, intended2 RED assertion failures and0 errors, downloaded archive digest and source bytes audited.
 Task2: in progress; nested/mixed behavior tests committed before producer.
+Task2: nested/mixed tests RED on36907223873 with2 intended failures and0 errors. Generic producer authored only after downloaded evidence audit. GREEN pending.
+Task3: inherited runner and publication adapters authored; independent whole-source review and definitive execution pending.
