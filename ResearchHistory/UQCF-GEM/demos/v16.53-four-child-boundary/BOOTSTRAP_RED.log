@@ -1,0 +1,14 @@
+test_real_control_verifier (__main__.Bootstrap.test_real_control_verifier) ... FAIL
+
+======================================================================
+FAIL: test_real_control_verifier (__main__.Bootstrap.test_real_control_verifier)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_bootstrap.py", line 10, in test_real_control_verifier
+    self.assertIsNotNone(importlib.util.find_spec('verifier'),'VERIFIER_MISSING')
+AssertionError: unexpectedly None : VERIFIER_MISSING
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
