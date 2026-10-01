@@ -1,0 +1,2746 @@
+{
+  "finite_result": {
+    "construction_failures": [],
+    "corpus": [
+      {
+        "case": 0,
+        "k": 1,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 1,
+        "k": 1,
+        "permutation": "reversal",
+        "steps": 0,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 2,
+        "k": 1,
+        "permutation": "cyclic",
+        "steps": 0,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 3,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 8,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 4,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 20,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 5,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 20,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 6,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 4,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 7,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 16,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 8,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 16,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 9,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 12,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 10,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 22,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 11,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 28,
+        "target": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 12,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 4,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 13,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 18,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 14,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 18,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 15,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 10,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 16,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 18,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 17,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 18,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 8,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 19,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 42,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 20,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 21,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 14,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 22,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 26,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 23,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 30,
+        "target": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 24,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 4,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 25,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 16,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 26,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 16,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 27,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 12,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 28,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 22,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 29,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 28,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 30,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 31,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 12,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 32,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 12,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 33,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 8,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 34,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 16,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 35,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 28,
+        "target": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 36,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 37,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 14,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 38,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 14,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 39,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 6,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 40,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 12,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 41,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 42,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 4,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 43,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 36,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 44,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 45,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 10,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 46,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 28,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 47,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 30,
+        "target": [
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 48,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 4,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 49,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 18,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 50,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 18,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 51,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 10,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 52,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 18,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 53,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 54,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 55,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 14,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 56,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 14,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 57,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 6,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 58,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 12,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 59,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 60,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 61,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 16,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 62,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 16,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 63,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 4,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 64,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 8,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 65,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 20,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 66,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 2,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 67,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 32,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 68,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 20,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 69,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 6,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 70,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 20,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 71,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 72,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 8,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 73,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 42,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 74,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 75,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 14,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 76,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 26,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 77,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 30,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 78,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 4,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 79,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 36,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 80,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 81,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 10,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 82,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 28,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 83,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 30,
+        "target": [
+          1,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 84,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 2,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 85,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 32,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 86,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 20,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 87,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 6,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 88,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 20,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 89,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 90,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 91,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 56,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 92,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 20,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 93,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 4,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 94,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 16,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 95,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 96,
+        "k": 2,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 97,
+        "k": 2,
+        "permutation": "reversal",
+        "steps": 20,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 98,
+        "k": 2,
+        "permutation": "cyclic",
+        "steps": 20,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 99,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 100,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 10,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 101,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 20,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 102,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 103,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 76,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 104,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 105,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 106,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 16,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 107,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 108,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 109,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 68,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 110,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 22,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 111,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 112,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 18,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 113,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 22,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 114,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 115,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 134,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 116,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 117,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 118,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 38,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 119,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 26,
+        "target": [
+          2,
+          1,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 120,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 121,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 40,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 122,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 34,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 123,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 124,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 40,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 125,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 126,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 127,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 40,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 128,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 36,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 129,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 130,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 86,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 131,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 28,
+        "target": [
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 132,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 133,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 40,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 134,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 30,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 135,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 136,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 80,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 137,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 26,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 138,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 139,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 138,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 140,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 32,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 141,
+        "k": 6,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 142,
+        "k": 6,
+        "permutation": "reversal",
+        "steps": 138,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 143,
+        "k": 6,
+        "permutation": "cyclic",
+        "steps": 30,
+        "target": [
+          2,
+          1,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 144,
+        "k": 3,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 145,
+        "k": 3,
+        "permutation": "reversal",
+        "steps": 40,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 146,
+        "k": 3,
+        "permutation": "cyclic",
+        "steps": 32,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 147,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 148,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 40,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 149,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 22,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 150,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 151,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 40,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 152,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 34,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 153,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 154,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 74,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 155,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 26,
+        "target": [
+          2,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 156,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 157,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 40,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 158,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 28,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 159,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 160,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 68,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 161,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 24,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 162,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 163,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 114,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 164,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 30,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 165,
+        "k": 6,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 166,
+        "k": 6,
+        "permutation": "reversal",
+        "steps": 114,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 167,
+        "k": 6,
+        "permutation": "cyclic",
+        "steps": 28,
+        "target": [
+          2,
+          2,
+          1,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 168,
+        "k": 4,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 169,
+        "k": 4,
+        "permutation": "reversal",
+        "steps": 74,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 170,
+        "k": 4,
+        "permutation": "cyclic",
+        "steps": 46,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 171,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 172,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 54,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 173,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 26,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 174,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 175,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 106,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 176,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 46,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 177,
+        "k": 6,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 178,
+        "k": 6,
+        "permutation": "reversal",
+        "steps": 78,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 179,
+        "k": 6,
+        "permutation": "cyclic",
+        "steps": 30,
+        "target": [
+          2,
+          2,
+          2,
+          1,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 180,
+        "k": 5,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 181,
+        "k": 5,
+        "permutation": "reversal",
+        "steps": 96,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 182,
+        "k": 5,
+        "permutation": "cyclic",
+        "steps": 36,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 183,
+        "k": 6,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 184,
+        "k": 6,
+        "permutation": "reversal",
+        "steps": 76,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 185,
+        "k": 6,
+        "permutation": "cyclic",
+        "steps": 28,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "valid": true
+      },
+      {
+        "case": 186,
+        "k": 6,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 187,
+        "k": 6,
+        "permutation": "reversal",
+        "steps": 88,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 188,
+        "k": 6,
+        "permutation": "cyclic",
+        "steps": 38,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 189,
+        "k": 7,
+        "permutation": "identity",
+        "steps": 0,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 190,
+        "k": 7,
+        "permutation": "reversal",
+        "steps": 114,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      },
+      {
+        "case": 191,
+        "k": 7,
+        "permutation": "cyclic",
+        "steps": 32,
+        "target": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "valid": true
+      }
+    ],
+    "directed_cases": 192,
+    "general_claim": "One binary parent with two internal-chain children admits total L1 excursion<=1 by reviewed interface composition; arbitrary branching is not covered.",
+    "nonunit_pairs": 0,
+    "normalizations": 133,
+    "outcome": "FORK_CHAIN_INTERFACE_VALIDATED",
+    "per_graph": [
+      {
+        "adjacent_active_pairs": 0,
+        "code": "(((()())())((()())()))",
+        "components": 27,
+        "construction_paths": 0,
+        "disjoint_profiles": 1,
+        "edges": 4620,
+        "k": 2,
+        "nonunit_pairs": 0,
+        "normalizations": 27,
+        "overlap_pairs": 29,
+        "overlap_profiles": 9,
+        "pairs": 29,
+        "partition_pairs": 0,
+        "profiles": 10,
+        "states": 1225,
+        "target_states": 1225,
+        "vertices": 11
+      },
+      {
+        "adjacent_active_pairs": 750,
+        "code": "(((()())())((()())()))",
+        "components": 106,
+        "construction_paths": 0,
+        "disjoint_profiles": 5,
+        "edges": 3108630,
+        "k": 3,
+        "nonunit_pairs": 0,
+        "normalizations": 106,
+        "overlap_pairs": 780,
+        "overlap_profiles": 16,
+        "pairs": 780,
+        "partition_pairs": 0,
+        "profiles": 21,
+        "states": 429025,
+        "target_states": 429025,
+        "vertices": 11
+      }
+    ],
+    "profiles": 31,
+    "status": "VERIFIED",
+    "universal_unit_barrier": "UNRESOLVED"
+  },
+  "general_claim": "See independently reviewed THEOREM.md; finite results do not establish the universal unit-barrier claim.",
+  "parent48_fresh_bytes_identical": true,
+  "preregistered_outcome": "FORK_CHAIN_INTERFACE_VALIDATED"
+}

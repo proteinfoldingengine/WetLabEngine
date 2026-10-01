@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_saturated_path_required (__main__.SaturatedRed.test_saturated_path_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.47-saturated-chain-repair/test_saturated_red.py", line 10, in test_saturated_path_required
+    self.assertIsInstance(path,list)
+AssertionError: None is not an instance of <class 'list'>
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
