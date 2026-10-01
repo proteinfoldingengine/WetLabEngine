@@ -3,16 +3,16 @@ from pathlib import Path
 import subprocess,unittest
 from unittest.mock import patch
 import producer as p
-from test_integration import Integration
+import test_integration as integration
 
 class ReviewFixes(unittest.TestCase):
     def test_one_unit_boundary_control_kills_permissive_guard(self):
         name='test_recursive_boundary_one_unit'
-        self.assertTrue(hasattr(Integration,name),'ONE_UNIT_BOUNDARY_CONTROL_MISSING')
+        self.assertTrue(hasattr(integration.Integration,name),'ONE_UNIT_BOUNDARY_CONTROL_MISSING')
         def permissive(state,nodes,q):
             if abs(p.coordinate(state,nodes[0])-q)>1:raise ValueError('recursive call requires exact parent')
         result=unittest.TestResult()
-        with patch.object(p,'require_exact_parent',side_effect=permissive):Integration(name).run(result)
+        with patch.object(p,'require_exact_parent',side_effect=permissive):integration.Integration(name).run(result)
         self.assertEqual(len(result.errors),0)
         self.assertEqual(len(result.failures),1,'ONE_UNIT_GUARD_MUTANT_SURVIVED')
     def test_generated_bytecode_is_ignored(self):
