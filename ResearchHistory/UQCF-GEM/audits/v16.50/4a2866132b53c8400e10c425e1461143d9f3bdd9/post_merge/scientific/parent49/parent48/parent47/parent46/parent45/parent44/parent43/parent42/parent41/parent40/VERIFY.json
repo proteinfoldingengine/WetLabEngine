@@ -1,0 +1,41 @@
+{
+  "SC_pairs": 0,
+  "admitted_states": 279685,
+  "classifications": {
+    "moving_required": 450,
+    "static_sufficient": 180
+  },
+  "endpoint_full_pairs": 0,
+  "indecomposable_fixed_coordinate": "UNRESOLVED",
+  "named": {
+    "LEX": [
+      1,
+      1,
+      1
+    ],
+    "candidate_valid": true,
+    "deviation_coordinates": [
+      1,
+      6
+    ],
+    "incidence_hamming": 8,
+    "moves": 8,
+    "primary": [
+      1,
+      1,
+      1
+    ],
+    "shortest_if_valid": true,
+    "static_success_coordinates": []
+  },
+  "outcome": "MOVING_LOCATION_WITNESS_VALIDATED",
+  "pairs": 630,
+  "prefix_views": 99,
+  "scope": "one fixed tree, k and q profile; complete admitted states and target component pairs",
+  "status": "VERIFIED",
+  "target_components": 36,
+  "target_states": 36,
+  "unit_edges": 5580,
+  "unit_states": 2304,
+  "universal_unit_barrier": "UNRESOLVED"
+}
