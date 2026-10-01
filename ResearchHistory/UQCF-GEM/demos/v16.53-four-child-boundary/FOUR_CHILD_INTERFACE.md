@@ -1,6 +1,6 @@
 # Four-child joining interface — candidate analytical proof
 
-Status: candidate, pending independent analytical review. Native category and research scope were recorded first in commit 8fcc46597ab7c2b83fe9dd2fd0611a07e66169cd. No new implementation or numerical campaign is claimed.
+This is the proof text submitted for independent analytical review; the current decision is recorded in INDEPENDENT_PROOF_REVIEW.md. Native category and research scope were recorded first in commit 8fcc46597ab7c2b83fe9dd2fd0611a07e66169cd. No new implementation or numerical campaign is claimed.
 
 ## 1. Statement
 
@@ -20,7 +20,7 @@ Why compact feasibility equals native feasibility: suppose an exact nested state
 
 Consequently any native exact state requires k>=w. Conversely, select a compact tuple realizing w, embed it into the first w labels of P, and fill each child using its own canonical interface. This gives an exact nested state for every k>=w. No used label can be absent from all four roots in a minimum-w tuple, since deleting that unused palette label and relabeling would contradict minimality.
 
-Choose the lexicographically least feasible tuple of incidence bit strings on [w], with child order and ordered palette positions fixing the comparison. Embed it into the first w labels of P; call the resulting roots A_i*. Fill child i with K(T_i,A_i*,q_i), using induced P order. This defines K for the joined tree. The union of all its proper descendant supports is exactly the first w labels: its immediate child roots already have that union and all lower supports are nested. The root itself remains all P.
+Choose the lexicographically least feasible tuple of incidence bit strings on [w]: compare child 1's string first, then children 2,3,4; within each string compare palette positions increasingly, with bit 1 ordered before bit 0. Embed it into the first w labels of P; call the resulting roots A_i*. Fill child i with K(T_i,A_i*,q_i), using induced P order. This defines K for the joined tree. The union of all its proper descendant supports is exactly the first w labels: its immediate child roots already have that union and all lower supports are nested. The root itself remains all P.
 
 ## 3. Fixed-root clearance and lifting lemma
 
@@ -58,7 +58,7 @@ This addresses the genuinely new overlap problem. The surplus complementary capa
 
 ## 7. Target q=4
 
-An exact tuple has pairwise disjoint roots. Normalize each child on its fixed root and contract it to width a_i; roots remain disjoint, so the parent stays exact. Necessarily k>=S=sum a_i, and the canonical target is a tuple of disjoint consecutive blocks.
+An exact tuple has pairwise disjoint roots. Normalize each child on its fixed root and contract it to width a_i; roots remain disjoint, so the parent stays exact. Necessarily k>=S=sum a_i. Target exactly the disjoint tuple A_i* selected in Section 2; the role-assignment argument works for that tuple without needing any additional block convention.
 
 The inherited disjoint-role assignment proof applies with four children. Replace a complete role by a globally absent desired label when possible. If a desired label is occupied in another child, exchange the two roles through two complete-role replacements. At every primitive the only possible shared label is between those two children; the other two roots remain disjoint from them and each other. Thus the parent hitting number is 3 or 4, and every child interior is exact. Each complete exchange restores disjointness. A same-child role swap uses three cross-child exchanges with a role in another nonempty child as pivot, restoring the pivot at the end. Fix target roles successively, preserving previously fixed roles at the end of each exchange. This finite procedure realizes the canonical disjoint assignment, including ordered child roles, with total excursion <=1.
 
