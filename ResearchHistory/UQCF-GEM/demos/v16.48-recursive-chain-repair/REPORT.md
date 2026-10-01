@@ -1,0 +1,4291 @@
+# v16.48 recursive-chain repair results
+
+{
+  "construction_failures": [],
+  "corpus": [
+    {
+      "case": 0,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 1,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 1,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 1,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 2,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 1,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 3,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 4,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 5,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 6,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 7,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 10,
+      "valid": true
+    },
+    {
+      "case": 8,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 10,
+      "valid": true
+    },
+    {
+      "case": 9,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 10,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 11,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 12,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 13,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 12,
+      "valid": true
+    },
+    {
+      "case": 14,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 12,
+      "valid": true
+    },
+    {
+      "case": 15,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 4,
+      "valid": true
+    },
+    {
+      "case": 16,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 10,
+      "valid": true
+    },
+    {
+      "case": 17,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 18,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 19,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 32,
+      "valid": true
+    },
+    {
+      "case": 20,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 21,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 4,
+      "valid": true
+    },
+    {
+      "case": 22,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 23,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 24,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 25,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 26,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 27,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 28,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 29,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 30,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 31,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 46,
+      "valid": true
+    },
+    {
+      "case": 32,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 33,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 34,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 12,
+      "valid": true
+    },
+    {
+      "case": 35,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 36,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 37,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 38,
+      "valid": true
+    },
+    {
+      "case": 38,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 39,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 40,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 41,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 42,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 43,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 80,
+      "valid": true
+    },
+    {
+      "case": 44,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 45,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 46,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 34,
+      "valid": true
+    },
+    {
+      "case": 47,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 48,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 49,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 50,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 51,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 52,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 53,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 54,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 55,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 60,
+      "valid": true
+    },
+    {
+      "case": 56,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 57,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 58,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 10,
+      "valid": true
+    },
+    {
+      "case": 59,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 60,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 61,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 52,
+      "valid": true
+    },
+    {
+      "case": 62,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 63,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 64,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 12,
+      "valid": true
+    },
+    {
+      "case": 65,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 66,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 67,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 100,
+      "valid": true
+    },
+    {
+      "case": 68,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 69,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 70,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 32,
+      "valid": true
+    },
+    {
+      "case": 71,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 26,
+      "valid": true
+    },
+    {
+      "case": 72,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 73,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 44,
+      "valid": true
+    },
+    {
+      "case": 74,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 75,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 76,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 77,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 78,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 79,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 108,
+      "valid": true
+    },
+    {
+      "case": 80,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 81,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 82,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 46,
+      "valid": true
+    },
+    {
+      "case": 83,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 24,
+      "valid": true
+    },
+    {
+      "case": 84,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 85,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 90,
+      "valid": true
+    },
+    {
+      "case": 86,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 87,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 88,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 38,
+      "valid": true
+    },
+    {
+      "case": 89,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 90,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 91,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 160,
+      "valid": true
+    },
+    {
+      "case": 92,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 93,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 6,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 94,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 6,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 80,
+      "valid": true
+    },
+    {
+      "case": 95,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 6,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 28,
+      "valid": true
+    },
+    {
+      "case": 96,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 1,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 97,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 1,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 98,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 1,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 99,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 100,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 101,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 102,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 103,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 104,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 105,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 106,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 107,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "steps": 24,
+      "valid": true
+    },
+    {
+      "case": 108,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 109,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 110,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 111,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 8,
+      "valid": true
+    },
+    {
+      "case": 112,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 113,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "steps": 26,
+      "valid": true
+    },
+    {
+      "case": 114,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 115,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 116,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 117,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 118,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 119,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "steps": 28,
+      "valid": true
+    },
+    {
+      "case": 120,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 121,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 122,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 123,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 124,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 8,
+      "valid": true
+    },
+    {
+      "case": 125,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 126,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 127,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 56,
+      "valid": true
+    },
+    {
+      "case": 128,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 24,
+      "valid": true
+    },
+    {
+      "case": 129,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 130,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 131,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 24,
+      "valid": true
+    },
+    {
+      "case": 132,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 133,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 56,
+      "valid": true
+    },
+    {
+      "case": 134,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 26,
+      "valid": true
+    },
+    {
+      "case": 135,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 4,
+      "valid": true
+    },
+    {
+      "case": 136,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 137,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "steps": 24,
+      "valid": true
+    },
+    {
+      "case": 138,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 139,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 52,
+      "valid": true
+    },
+    {
+      "case": 140,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 141,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 142,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 143,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "steps": 24,
+      "valid": true
+    },
+    {
+      "case": 144,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 145,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 146,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 20,
+      "valid": true
+    },
+    {
+      "case": 147,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 12,
+      "valid": true
+    },
+    {
+      "case": 148,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 24,
+      "valid": true
+    },
+    {
+      "case": 149,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "steps": 30,
+      "valid": true
+    },
+    {
+      "case": 150,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 151,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 152,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 153,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 154,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 155,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "steps": 28,
+      "valid": true
+    },
+    {
+      "case": 156,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 157,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 158,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 16,
+      "valid": true
+    },
+    {
+      "case": 159,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 8,
+      "valid": true
+    },
+    {
+      "case": 160,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 161,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "steps": 30,
+      "valid": true
+    },
+    {
+      "case": 162,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 163,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 164,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 165,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 166,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 167,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "steps": 32,
+      "valid": true
+    },
+    {
+      "case": 168,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 169,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 170,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 18,
+      "valid": true
+    },
+    {
+      "case": 171,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 172,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 6,
+      "valid": true
+    },
+    {
+      "case": 173,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "steps": 24,
+      "valid": true
+    },
+    {
+      "case": 174,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 175,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 54,
+      "valid": true
+    },
+    {
+      "case": 176,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 28,
+      "valid": true
+    },
+    {
+      "case": 177,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 178,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 179,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "steps": 28,
+      "valid": true
+    },
+    {
+      "case": 180,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 181,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 54,
+      "valid": true
+    },
+    {
+      "case": 182,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 30,
+      "valid": true
+    },
+    {
+      "case": 183,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 4,
+      "valid": true
+    },
+    {
+      "case": 184,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 24,
+      "valid": true
+    },
+    {
+      "case": 185,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "steps": 28,
+      "valid": true
+    },
+    {
+      "case": 186,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 187,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 50,
+      "valid": true
+    },
+    {
+      "case": 188,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 3,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 26,
+      "valid": true
+    },
+    {
+      "case": 189,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 190,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 22,
+      "valid": true
+    },
+    {
+      "case": 191,
+      "degrees": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "k": 4,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 28,
+      "valid": true
+    },
+    {
+      "case": 192,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 1,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 193,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 1,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 194,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 1,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 195,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "identity",
+      "q": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 14,
+      "valid": true
+    },
+    {
+      "case": 196,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "reversal",
+      "q": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 32,
+      "valid": true
+    },
+    {
+      "case": 197,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 2,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "steps": 32,
+      "valid": true
+    },
+    {
+      "case": 198,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 9,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 199,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 9,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 928,
+      "valid": true
+    },
+    {
+      "case": 200,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 9,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 46,
+      "valid": true
+    },
+    {
+      "case": 201,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 10,
+      "permutation": "identity",
+      "q": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 202,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 10,
+      "permutation": "reversal",
+      "q": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 660,
+      "valid": true
+    },
+    {
+      "case": 203,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 10,
+      "permutation": "cyclic",
+      "q": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "steps": 88,
+      "valid": true
+    },
+    {
+      "case": 204,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 0,
+      "valid": true
+    },
+    {
+      "case": 205,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 276,
+      "valid": true
+    },
+    {
+      "case": 206,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 5,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 42,
+      "valid": true
+    },
+    {
+      "case": 207,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 6,
+      "permutation": "identity",
+      "q": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 2,
+      "valid": true
+    },
+    {
+      "case": 208,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 6,
+      "permutation": "reversal",
+      "q": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 138,
+      "valid": true
+    },
+    {
+      "case": 209,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "k": 6,
+      "permutation": "cyclic",
+      "q": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "steps": 56,
+      "valid": true
+    }
+  ],
+  "directed_cases": 210,
+  "general_claim": "All finite internal chains admit total L1 excursion<=1 by independently reviewed compact-palette induction; arbitrary internal branching is not covered.",
+  "nonunit_pairs": 0,
+  "normalizations": 106,
+  "outcome": "CHAIN_INDUCTION_VALIDATED",
+  "per_graph": [
+    {
+      "adjacent_active_pairs": 0,
+      "code": "((((()())())())())",
+      "components": 9,
+      "construction_paths": 0,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "edges": 1024,
+      "k": 2,
+      "nonunit_pairs": 0,
+      "normalizations": 9,
+      "overlap_pairs": 4,
+      "pairs": 4,
+      "partition_pairs": 0,
+      "profiles": 5,
+      "states": 321,
+      "target_states": 321,
+      "vertices": 9
+    },
+    {
+      "adjacent_active_pairs": 45,
+      "code": "((((()())())())())",
+      "components": 41,
+      "construction_paths": 0,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "edges": 209544,
+      "k": 3,
+      "nonunit_pairs": 0,
+      "normalizations": 41,
+      "overlap_pairs": 90,
+      "pairs": 90,
+      "partition_pairs": 0,
+      "profiles": 11,
+      "states": 34321,
+      "target_states": 34321,
+      "vertices": 9
+    },
+    {
+      "adjacent_active_pairs": 6,
+      "code": "((((()())())())()())",
+      "components": 20,
+      "construction_paths": 0,
+      "degrees": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "edges": 3714,
+      "k": 2,
+      "nonunit_pairs": 0,
+      "normalizations": 20,
+      "overlap_pairs": 21,
+      "pairs": 21,
+      "partition_pairs": 0,
+      "profiles": 8,
+      "states": 963,
+      "target_states": 963,
+      "vertices": 10
+    },
+    {
+      "adjacent_active_pairs": 6,
+      "code": "((((()())())()())())",
+      "components": 16,
+      "construction_paths": 0,
+      "degrees": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "edges": 3682,
+      "k": 2,
+      "nonunit_pairs": 0,
+      "normalizations": 16,
+      "overlap_pairs": 15,
+      "pairs": 15,
+      "partition_pairs": 0,
+      "profiles": 7,
+      "states": 951,
+      "target_states": 951,
+      "vertices": 10
+    },
+    {
+      "adjacent_active_pairs": 6,
+      "code": "((((()())()())())())",
+      "components": 12,
+      "construction_paths": 0,
+      "degrees": [
+        2,
+        2,
+        3,
+        2
+      ],
+      "edges": 3562,
+      "k": 2,
+      "nonunit_pairs": 0,
+      "normalizations": 12,
+      "overlap_pairs": 9,
+      "pairs": 9,
+      "partition_pairs": 0,
+      "profiles": 6,
+      "states": 915,
+      "target_states": 915,
+      "vertices": 10
+    },
+    {
+      "adjacent_active_pairs": 0,
+      "code": "((((()()())())())())",
+      "components": 8,
+      "construction_paths": 0,
+      "degrees": [
+        2,
+        2,
+        2,
+        3
+      ],
+      "edges": 3130,
+      "k": 2,
+      "nonunit_pairs": 0,
+      "normalizations": 8,
+      "overlap_pairs": 3,
+      "pairs": 3,
+      "partition_pairs": 0,
+      "profiles": 5,
+      "states": 807,
+      "target_states": 807,
+      "vertices": 10
+    }
+  ],
+  "profiles": 42,
+  "status": "VERIFIED",
+  "universal_unit_barrier": "UNRESOLVED"
+}
+
+All 762 inherited checks and 83 new controls pass in both scientific and fresh publication execution. The parent v16.47 science and nested canonical universes were freshly reconstructed and matched byte-for-byte. Complete admission identities, unit edges, paths and cuts are independently verified. See THEOREM.md for the general arbitrary-length internal-chain induction; arbitrary trees remain unresolved; no smallest-example or universal-unit theorem is claimed. Actual-merge audit and durable receipt remain required before stage closure.

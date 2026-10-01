@@ -1,0 +1,30 @@
+{
+  "all_commands_passed": true,
+  "commands": {
+    "inherited": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/tools/retained_ci/run.py",
+        "inherited",
+        "out/reproduction/inherited"
+      ],
+      "end_seconds": 81.988694748,
+      "returncode": 0,
+      "start_seconds": 0.000406982999990646
+    },
+    "science": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/run_campaign.py",
+        "out/reproduction/scientific"
+      ],
+      "end_seconds": 482.739064859,
+      "returncode": 0,
+      "start_seconds": 0.00023372999999082822
+    }
+  },
+  "independent_verifier_uncached": true,
+  "inherited_tests": 762,
+  "new_controls": 83,
+  "parallel_seconds": 482.739841856
+}
