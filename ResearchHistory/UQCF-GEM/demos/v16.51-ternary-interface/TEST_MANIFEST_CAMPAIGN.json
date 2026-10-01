@@ -1,0 +1,395 @@
+{
+  "schema": 1,
+  "phase": "development-green/preflight/science/reproduction/postmerge",
+  "tests": [
+    {
+      "identity": "test_gate.Corpus.test_claimed_failure",
+      "expected": "PASS",
+      "assertions": "def test_claimed_failure(self):self.reject(lambda d:d['cases'][0].update(failure={'message':'failed'}),'construction failure')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_duplicate_full_case",
+      "expected": "PASS",
+      "assertions": "def test_duplicate_full_case(self):self.reject(lambda d:d['cases'].__setitem__(-1,d['cases'][0]),'identities')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_extra_record_field",
+      "expected": "PASS",
+      "assertions": "def test_extra_record_field(self):self.reject(lambda d:d['cases'][0].update(claimed_total=0),'record keys')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_false_schema",
+      "expected": "PASS",
+      "assertions": "def test_false_schema(self):self.reject(lambda d:d.update(schema=9),'schema/scope')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_omitted_full_case",
+      "expected": "PASS",
+      "assertions": "def test_omitted_full_case(self):self.reject(lambda d:d['cases'].pop(),'identities')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_substituted_full_case",
+      "expected": "PASS",
+      "assertions": "def test_substituted_full_case(self):self.reject(lambda d:d['cases'][0]['spec'].update(mode='wrong'),'identities')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_valid_full_corpus",
+      "expected": "PASS",
+      "assertions": "def test_valid_full_corpus(self):self.assertEqual(v.verify(self.corpus)['cases'],2592)"
+    },
+    {
+      "identity": "test_gate.Corpus.test_wrong_start",
+      "expected": "PASS",
+      "assertions": "def test_wrong_start(self):self.reject(lambda d:d['cases'][0].update(start=[]),'width/start')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_wrong_target",
+      "expected": "PASS",
+      "assertions": "def test_wrong_target(self):self.reject(lambda d:d['cases'][0]['spec'].update(q=[2]),'identities')"
+    },
+    {
+      "identity": "test_gate.Corpus.test_wrong_width",
+      "expected": "PASS",
+      "assertions": "def test_wrong_width(self):self.reject(lambda d:d['cases'][0].update(width=999),'width/start')"
+    },
+    {
+      "identity": "test_gate.FailureHandling.test_construction_failure_retained",
+      "expected": "PASS",
+      "assertions": "def test_construction_failure_retained(self):\n  from unittest.mock import patch\n  with patch.object(p,'normalize',side_effect=p.ConstructionFailure(ValueError('INJECTED_PATH_FAILURE'),[[1]])):doc=p.produce()\n  self.assertEqual(len(doc['cases']),2592)\n  self.assertTrue(all(row['path']==[[1]] and row['failure']['phase']=='normalization' for row in doc['cases']))"
+    },
+    {
+      "identity": "test_gate.FailureHandling.test_execution_failure_outcome",
+      "expected": "PASS",
+      "assertions": "def test_execution_failure_outcome(self):\n  import run_campaign\n  self.assertEqual(run_campaign.failure_outcome(ValueError('coverage gap')),'INCOMPLETE')"
+    },
+    {
+      "identity": "test_gate.FailureHandling.test_scientific_failure_outcome",
+      "expected": "PASS",
+      "assertions": "def test_scientific_failure_outcome(self):\n  import run_campaign\n  self.assertEqual(run_campaign.failure_outcome(v.InterfaceNotPreserved('illegal repair')),'INTERFACE_NOT_PRESERVED')"
+    },
+    {
+      "identity": "test_gate.FailureHandling.test_start_failure_retained",
+      "expected": "PASS",
+      "assertions": "def test_start_failure_retained(self):\n  from unittest.mock import patch\n  with patch.object(p,'initial',side_effect=ValueError('INJECTED_START_FAILURE')):doc=p.produce()\n  self.assertEqual(len(doc['cases']),2592)\n  self.assertTrue(all(row['start'] is None and row['failure']['phase']=='start' for row in doc['cases']))"
+    },
+    {
+      "identity": "test_gate.Gate.test_all_shared_pairs",
+      "expected": "PASS",
+      "assertions": "def test_all_shared_pairs(self):\n  for pair in ((0,1),(0,2),(1,2)):\n   state=p.canonical(p.T,2,[2,1,1,1]);nodes=p.layout(p.T)\n   supports=[{0},{1},{1}]\n   for i in range(3):supports[i]={1} if i in pair else {0}\n   state=[1,1]\n   for i,c in enumerate(nodes[0]):\n    for vertex in p.vertices(nodes,c):\n     for label in supports[i]:state[label]|=1<<vertex\n   path,trace=self.check(p.T,2,[2,1,1,1],state)\n   anchor=next(e for e in trace if e['kind']=='anchor')\n   self.assertEqual(tuple(anchor['pair']),pair);self.assertEqual(anchor['label'],1)"
+    },
+    {
+      "identity": "test_gate.Gate.test_asymmetric",
+      "expected": "PASS",
+      "assertions": "def test_asymmetric(self):\n  self.check(p.U,6,[2,2,2,1,2,2,2],p.initial(p.U,6,[2,2,2,1,2,2,2],'cyclic','interface_and_binary_inflated'))"
+    },
+    {
+      "identity": "test_gate.Gate.test_bad_representation",
+      "expected": "PASS",
+      "assertions": "def test_bad_representation(self):self.bad(lambda path:path.append([True,0,0]))"
+    },
+    {
+      "identity": "test_gate.Gate.test_duplicate_identity",
+      "expected": "PASS",
+      "assertions": "def test_duplicate_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['a','a'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_empty_support",
+      "expected": "PASS",
+      "assertions": "def test_empty_support(self):self.bad(lambda path:path.append([1,1,1]))"
+    },
+    {
+      "identity": "test_gate.Gate.test_extra_identity",
+      "expected": "PASS",
+      "assertions": "def test_extra_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['a','b','c'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_independent_case_universe",
+      "expected": "PASS",
+      "assertions": "def test_independent_case_universe(self):self.assertEqual(p.specs(),v.expected_specs());self.assertEqual(len(v.expected_specs()),2592)"
+    },
+    {
+      "identity": "test_gate.Gate.test_independent_model",
+      "expected": "PASS",
+      "assertions": "def test_independent_model(self):\n  for s in v.expected_specs():\n   t=p.TREES[s['tree']];M,start,end=v.model(t,s['q'],s['k'],s['permutation'],s['mode'])\n   self.assertEqual(M,p.data(t,s['q'])[2][0]);self.assertEqual(start,p.initial(t,s['k'],s['q'],s['permutation'],s['mode']));self.assertEqual(end,p.canonical(t,s['k'],s['q']))"
+    },
+    {
+      "identity": "test_gate.Gate.test_invalid_profile",
+      "expected": "PASS",
+      "assertions": "def test_invalid_profile(self):\n  with self.assertRaises(ValueError):v.model(p.T,[4,2,2,2],3)"
+    },
+    {
+      "identity": "test_gate.Gate.test_local_hole_permutation",
+      "expected": "PASS",
+      "assertions": "def test_local_hole_permutation(self):\n  t=p.T;q=[2,2,2,2];s=p.canonical(t,3,q);nodes=p.layout(t);child=nodes[0][0];trace=[]\n  path=p.transport_child(s,t,child,[0,1],[1,0],[0,1,2],trace)\n  end=s[:];region=sum(1<<v for v in p.vertices(nodes,child))\n  end[0]=(s[0]&~region)|(s[1]&region);end[1]=(s[1]&~region)|(s[0]&region)\n  v.path_check(t,3,q,path,s,end)\n  self.assertTrue(any(e['kind']=='local_hole' for e in trace))"
+    },
+    {
+      "identity": "test_gate.Gate.test_missing_case_rejected",
+      "expected": "PASS",
+      "assertions": "def test_missing_case_rejected(self):\n  with self.assertRaisesRegex(ValueError,'identities'):v.verify({'schema':1,'scope':v.SCOPE,'cases':[]})"
+    },
+    {
+      "identity": "test_gate.Gate.test_nonprimitive",
+      "expected": "PASS",
+      "assertions": "def test_nonprimitive(self):self.bad(lambda path:path.append(path[0][:]))"
+    },
+    {
+      "identity": "test_gate.Gate.test_omitted_identity",
+      "expected": "PASS",
+      "assertions": "def test_omitted_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['a'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_ordered_equivariance",
+      "expected": "PASS",
+      "assertions": "def test_ordered_equivariance(self):\n  t=p.T;q=[2,2,2,2];k=3;s=p.initial(t,k,q,'reversal','compact');base=p.normalize(s,t,k,q)\n  perm=[2,0,1]\n  def relabel(s):\n   out=[0]*k\n   for j in range(k):out[perm[j]]=s[j]\n   return out\n  actual=p.normalize(relabel(s),t,k,q,perm)\n  self.assertEqual(actual,[relabel(s) for s in base])"
+    },
+    {
+      "identity": "test_gate.Gate.test_reordered_identity",
+      "expected": "PASS",
+      "assertions": "def test_reordered_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['b','a'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_root_changed",
+      "expected": "PASS",
+      "assertions": "def test_root_changed(self):self.bad(lambda path:path.append([path[0][0]^1,*path[0][1:]]))"
+    },
+    {
+      "identity": "test_gate.Gate.test_root_plus_child_stacking",
+      "expected": "PASS",
+      "assertions": "def test_root_plus_child_stacking(self):\n  t=p.T;k=3;q=[2,2,2,2];s=p.canonical(t,k,q);nodes=p.layout(t);A,B,C=nodes[0]\n  # At canonical supports {0,1},{0,2},{1,2}, add 0 to C then to A's second leaf.\n  x=s[:];x[0]|=1<<C;y=x[:];y[0]|=1<<nodes[A][1]\n  self.assertEqual(sum(abs(a-b) for a,b in zip(v.profile_check(t,k,y),q)),2)\n  with self.assertRaisesRegex(ValueError,'total excursion'):v.path_check(t,k,q,[s,x,y],s,s)"
+    },
+    {
+      "identity": "test_gate.Gate.test_root_two_count",
+      "expected": "PASS",
+      "assertions": "def test_root_two_count(self):self.assertEqual(sum(s['q'][0]==2 for s in v.expected_specs()),864)"
+    },
+    {
+      "identity": "test_gate.Gate.test_scope_rejected",
+      "expected": "PASS",
+      "assertions": "def test_scope_rejected(self):\n  with self.assertRaises(ValueError):v.verify({'schema':1,'scope':'all trees','cases':[]})"
+    },
+    {
+      "identity": "test_gate.Gate.test_small_palette",
+      "expected": "PASS",
+      "assertions": "def test_small_palette(self):\n  with self.assertRaises(ValueError):v.model(p.T,[2,2,2,2],2)"
+    },
+    {
+      "identity": "test_gate.Gate.test_spare_palette",
+      "expected": "PASS",
+      "assertions": "def test_spare_palette(self):self.check(p.T,4,[2,2,2,2],p.initial(p.T,4,[2,2,2,2],'cyclic','compact'))"
+    },
+    {
+      "identity": "test_gate.Gate.test_substituted_identity",
+      "expected": "PASS",
+      "assertions": "def test_substituted_identity(self):\n  with self.assertRaises(ValueError):verify_identities(['a','c'],['a','b'])"
+    },
+    {
+      "identity": "test_gate.Gate.test_target_one",
+      "expected": "PASS",
+      "assertions": "def test_target_one(self):self.check(p.U,4,[1,2,2,1,2,2,2],p.initial(p.U,4,[1,2,2,1,2,2,2],'reversal','interface_and_binary_inflated'))"
+    },
+    {
+      "identity": "test_gate.Gate.test_target_three",
+      "expected": "PASS",
+      "assertions": "def test_target_three(self):self.check(p.T,6,[3,2,2,2],p.initial(p.T,6,[3,2,2,2],'reversal','compact'))"
+    },
+    {
+      "identity": "test_gate.Gate.test_triangle",
+      "expected": "PASS",
+      "assertions": "def test_triangle(self):\n  path,trace=self.check(p.T,3,[2,2,2,2],p.initial(p.T,3,[2,2,2,2],'reversal','compact'))\n  self.assertGreater(len(path),1)\n  self.assertTrue(any(e['kind']=='role_transport' for e in trace))"
+    },
+    {
+      "identity": "test_gate.Gate.test_two_child_stacking",
+      "expected": "PASS",
+      "assertions": "def test_two_child_stacking(self):\n  t=p.T;k=3;q=[2,2,2,2];s=p.canonical(t,k,q);nodes=p.layout(t);A,B,C=nodes[0]\n  x=s[:];x[0]|=1<<nodes[A][1];y=x[:];y[0]|=1<<nodes[B][1]\n  self.assertEqual(sum(abs(a-b) for a,b in zip(v.profile_check(t,k,y),q)),2)\n  with self.assertRaisesRegex(ValueError,'total excursion'):v.path_check(t,k,q,[s,x,y],s,s)"
+    },
+    {
+      "identity": "test_gate.Gate.test_unnested_support",
+      "expected": "PASS",
+      "assertions": "def test_unnested_support(self):\n  def mutate(path):\n   x=path[0][:];x[2]|=1<<2;path.append(x)\n  self.bad(mutate)"
+    },
+    {
+      "identity": "test_gate.Gate.test_whole_palette_child",
+      "expected": "PASS",
+      "assertions": "def test_whole_palette_child(self):\n  q=[2,1,1,1,2,2,2]\n  start=p.initial(p.U,4,q,'reversal','compact')\n  path,trace=self.check(p.U,4,q,start)\n  full=[e for e in trace if e['kind']=='whole_palette_child']\n  self.assertEqual(len(full),1)\n  anchor=next(e for e in trace if e['kind']=='anchor');self.assertEqual(anchor['label'],3);self.assertEqual(anchor['pair'],[0,2])\n  self.assertFalse(any(e['kind']=='role_transport' and e['child']==full[0]['child'] for e in trace))"
+    },
+    {
+      "identity": "test_gate.Gate.test_width_minimality",
+      "expected": "PASS",
+      "assertions": "def test_width_minimality(self):\n  for a,b,c in ((1,1,1),(2,2,2),(4,1,1),(2,3,4)):\n   for r in (1,2,3):\n    M=max(a,b,c) if r==1 else (a+b+c if r==3 else max(a,b,c,(a+b+c+1)//2))\n    self.assertTrue(v.root_feasible(a,b,c,r,M));self.assertFalse(v.root_feasible(a,b,c,r,M-1))"
+    },
+    {
+      "identity": "test_gate.Gate.test_wrong_endpoint",
+      "expected": "PASS",
+      "assertions": "def test_wrong_endpoint(self):\n  t=p.T;k=3;q=[2,2,2,2];start=p.initial(t,k,q,'reversal','compact');path=p.normalize(start,t,k,q)\n  self.assertNotEqual(path[-1],start)\n  with self.assertRaisesRegex(ValueError,'exact canonical endpoint'):v.path_check(t,k,q,path,start,start)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_archive_extracted_binding",
+      "expected": "PASS",
+      "assertions": "def test_archive_extracted_binding(self):\n        stream=io.BytesIO()\n        with zipfile.ZipFile(stream,'w') as z:z.writestr('certificate','original')\n        data=stream.getvalue();digest='sha256:'+sha(data)\n        with tempfile.TemporaryDirectory() as d:\n            p=Path(d)/'certificate';p.write_text('original');archive.verify_extracted(data,d,digest)\n            p.write_text('substituted')\n            with self.assertRaises(ValueError):archive.verify_extracted(data,d,digest)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_archive_omission",
+      "expected": "PASS",
+      "assertions": "def test_archive_omission(self):\n        with self.assertRaises(ValueError):self.archive_case(lambda p:(p/'00001.part').unlink())"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_archive_positive",
+      "expected": "PASS",
+      "assertions": "def test_archive_positive(self):self.assertEqual(self.archive_case(),b'0123456789')"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_archive_reordering",
+      "expected": "PASS",
+      "assertions": "def test_archive_reordering(self):\n        def mutate(p):\n            f=p/'ARCHIVE.json';r=json.loads(f.read_text());r['chunks'].reverse();f.write_text(json.dumps(r))\n        with self.assertRaises(ValueError):self.archive_case(mutate)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_archive_substitution",
+      "expected": "PASS",
+      "assertions": "def test_archive_substitution(self):\n        with self.assertRaises(ValueError):self.archive_case(lambda p:(p/'00000.part').write_bytes(b'abcd'))"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_merge_parent",
+      "expected": "PASS",
+      "assertions": "def test_merge_parent(self):\n        r,p,c,u=self.merge_objects();c['parents'][0]['sha']='d'*40\n        with self.assertRaises(ValueError):validate_merge(r,p,c,u,self.head)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_merge_positive",
+      "expected": "PASS",
+      "assertions": "def test_merge_positive(self):validate_merge(*self.merge_objects(),self.head)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_merge_tree",
+      "expected": "PASS",
+      "assertions": "def test_merge_tree(self):\n        r,p,c,u=self.merge_objects();u['tree']['sha']='d'*40\n        with self.assertRaises(ValueError):validate_merge(r,p,c,u,self.head)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_positive",
+      "expected": "PASS",
+      "assertions": "def test_positive(self):self.check()"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_publication_provenance",
+      "expected": "PASS",
+      "assertions": "def test_publication_provenance(self):\n        self.art['name']='v1651-publication-'+self.head;self.meta['phase']='publication'\n        provenance(self.run,self.art,self.meta,self.head,42,1,'publication')"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_publication_wrong_head",
+      "expected": "PASS",
+      "assertions": "def test_publication_wrong_head(self):\n        self.art['name']='v1651-publication-'+self.head;self.meta['phase']='publication';self.meta['head']='b'*40\n        with self.assertRaises(ValueError):provenance(self.run,self.art,self.meta,self.head,42,1,'publication')"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_duplicate_mapping_json",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_duplicate_mapping_json(self):\n        with tempfile.TemporaryDirectory() as d:\n            p=Path(d)/'mapping.json';p.write_text('{\"a\":\"x\",\"a\":\"x\"}')\n            with self.assertRaises(ValueError):snapshot.read_json(p)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_duplicate_object",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_duplicate_object(self):\n        with self.assertRaises(ValueError):self.source_case(lambda r,m,f:r.append(r[0]))"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_extra_mapping",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_extra_mapping(self):\n        with self.assertRaises(ValueError):self.source_case(lambda r,m,f:m.update(other=m['a']))"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_extra_object",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_extra_object(self):\n        with self.assertRaises(ValueError):self.source_case(lambda r,m,f:r.append(('objects/'+sha(b'extra'),b'extra')))"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_missing_mapping",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_missing_mapping(self):\n        with self.assertRaises(ValueError):self.source_case(lambda r,m,f:m.pop('b'))"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_missing_object",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_missing_object(self):\n        with self.assertRaises(ValueError):self.source_case(lambda r,m,f:r.clear())"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_positive_dedup",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_positive_dedup(self):\n        rows,result=self.source_case();self.assertEqual(len(rows),1);self.assertEqual(result,{'a':b'same','b':b'same'})"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_renamed_mapping",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_renamed_mapping(self):\n        def mutate(r,m,f):m['other']=m.pop('b')\n        with self.assertRaises(ValueError):self.source_case(mutate)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_substitution",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_substitution(self):\n        with self.assertRaises(ValueError):self.source_case(lambda r,m,f:r.__setitem__(0,(r[0][0],b'wrong')))"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_snapshot_wrong_format",
+      "expected": "PASS",
+      "assertions": "def test_snapshot_wrong_format(self):\n        with self.assertRaises(ValueError):self.source_case(lambda r,m,f:f.update(schema=2))"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_summary_false_universal_claim",
+      "expected": "PASS",
+      "assertions": "def test_summary_false_universal_claim(self):\n        result={'outcome':'FORK_CHAIN_INTERFACE_VALIDATED'}\n        report={'finite_result':result,'preregistered_outcome':result['outcome'],'general_claim':'Universal unit barriers proved'}\n        with self.assertRaises(ValueError):validate_summary(report,result)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_summary_wrong_outcome",
+      "expected": "PASS",
+      "assertions": "def test_summary_wrong_outcome(self):\n        result={'outcome':'CONSTRUCTION_REFUTED'}\n        report={'finite_result':result,'preregistered_outcome':'FORK_CHAIN_INTERFACE_VALIDATED','general_claim':'See independently reviewed THEOREM.md; finite results do not establish the universal unit-barrier claim.'}\n        with self.assertRaises(ValueError):validate_summary(report,result)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_wrong_artifact",
+      "expected": "PASS",
+      "assertions": "def test_wrong_artifact(self):self.art['workflow_run']['id']=43;self.reject()"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_wrong_attempt",
+      "expected": "PASS",
+      "assertions": "def test_wrong_attempt(self):self.run['run_attempt']=2;self.reject()"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_wrong_branch",
+      "expected": "PASS",
+      "assertions": "def test_wrong_branch(self):self.run['head_branch']='main';self.reject()"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_wrong_embedded_sha",
+      "expected": "PASS",
+      "assertions": "def test_wrong_embedded_sha(self):self.meta['workflow_sha']='b'*40;self.reject()"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_wrong_head",
+      "expected": "PASS",
+      "assertions": "def test_wrong_head(self):self.run['head_sha']='b'*40;self.reject()"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_wrong_parent",
+      "expected": "PASS",
+      "assertions": "def test_wrong_parent(self):self.meta['verified_parent']='b'*40;self.reject()"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_wrong_prereg",
+      "expected": "PASS",
+      "assertions": "def test_wrong_prereg(self):self.meta['preregistration']='b'*40;self.reject()"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_wrong_workflow",
+      "expected": "PASS",
+      "assertions": "def test_wrong_workflow(self):self.run['path']='other.yml';self.reject()"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_zip_digest",
+      "expected": "PASS",
+      "assertions": "def test_zip_digest(self):\n        b=io.BytesIO()\n        with zipfile.ZipFile(b,'w') as z:z.writestr('a','x')\n        with tempfile.TemporaryDirectory() as d:\n            with self.assertRaises(ValueError):unpack_zip(b.getvalue(),'sha256:wrong',d)"
+    },
+    {
+      "identity": "test_integrity.Integrity.test_zip_traversal",
+      "expected": "PASS",
+      "assertions": "def test_zip_traversal(self):\n        b=io.BytesIO()\n        with zipfile.ZipFile(b,'w') as z:z.writestr('../a','x')\n        data=b.getvalue()\n        with tempfile.TemporaryDirectory() as d:\n            with self.assertRaises(ValueError):unpack_zip(data,'sha256:'+sha(data),d)"
+    }
+  ],
+  "new_count": 77,
+  "inherited_count": 994,
+  "total_count": 1071,
+  "inherited_manifest": "TEST_MANIFEST_INHERITED.json"
+}
