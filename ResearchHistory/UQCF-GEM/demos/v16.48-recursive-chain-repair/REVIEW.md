@@ -1,0 +1,7 @@
+# Independent review before execution
+
+Reviewer: independent v1648_review agent, separate from author; no numerical execution locally.
+
+Analytical review accepted the arbitrary internal-chain induction after requiring: every nonempty ordered palette including singleton; simultaneous minimum-palette lower bound; canonical descendant union exactly the first m labels; and fixed recursive root support. These obligations are explicit in THEOREM.md. The nonsaturated contraction retains the first label and preserves the parent's scaffold; generic clone-before-delete preserves every inner hitting number at arbitrary depth. Multiple internal children remain outside the theorem.
+
+Pre-execution source review inspected producer, independent verifier, frozen six-graph and210-case identity coverage, controls, complete parent replay and30-scientific-member artifact structure. The reviewer found the new outer/outer exchange branch lacked a targeted control: the frozen degree3 cases never saturate. Added test_saturated_outer_outer_exchange with degrees(3,2), k3, q(3,1), permutation[1,0,2], explicitly forcing that branch. This adds a control without changing either frozen scientific domain; gate count50, integrity33, total new83. Two stale outcome strings in integrity test fixtures were corrected to CHAIN_INDUCTION_VALIDATED before source freeze; their rejecting behavior is unchanged. No remaining static correctness blocker. Runtime validation, independent fresh reproduction and final artifact/merge review remain mandatory. This record is not stage certification.
