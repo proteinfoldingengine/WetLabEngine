@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_fork_contract (__main__.ForkRed.test_fork_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.49-fork-chain-interface/test_fork_red.py", line 10, in test_fork_contract
+    self.assertIsInstance(path,list)
+AssertionError: None is not an instance of <class 'list'>
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
