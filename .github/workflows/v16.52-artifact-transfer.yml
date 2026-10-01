@@ -1,0 +1,61 @@
+name: v16.52 artifact transfer audit
+on:
+  push:
+    branches: [research/v16.52-artifact-transfer]
+    paths: ['.github/workflows/v16.52-artifact-transfer.yml']
+permissions: {contents: read, actions: read}
+jobs:
+  transfer:
+    strategy:
+      matrix:
+        phase: [science, publication]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - name: Download and byte-verify original execution archive
+        env:
+          GH_TOKEN: '${{ github.token }}'
+          PHASE: '${{ matrix.phase }}'
+        run: |
+          python - <<'PY'
+          import json,os,urllib.request,urllib.error,hashlib
+          from pathlib import Path
+          api='https://api.github.com/repos/proteinfoldingengine/WetLabEngine'
+          source_run=36909923039
+          source_head='0db3ea122068aa7f8aa7939ac768cf00c0a40a98'
+          phase=os.environ['PHASE']
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,*args):return None
+          def get(url):
+              req=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+              try:return urllib.request.build_opener(NoRedirect).open(req).read()
+              except urllib.error.HTTPError as e:
+                  if e.code not in (301,302,303,307,308):raise
+                  return urllib.request.urlopen(e.headers['Location']).read()
+          artifacts=json.loads(get(api+'/actions/runs/'+str(source_run)+'/artifacts'))['artifacts']
+          matches=[a for a in artifacts if a['name']=='v1652-'+phase+'-'+source_head]
+          assert len(matches)==1
+          a=matches[0];raw=get(a['archive_download_url'])
+          assert a['workflow_run']['id']==source_run and a['workflow_run']['head_sha']==source_head
+          assert a['digest']=='sha256:'+hashlib.sha256(raw).hexdigest() and a['size_in_bytes']==len(raw)
+          limit=24*1024*1024;parts=[raw[i:i+limit] for i in range(0,len(raw),limit)]
+          assert len(parts)<=5
+          receipt={'artifact':a,'source_run':source_run,'source_head':source_head,'phase':phase,'parts':[{'index':i,'size':len(b),'sha256':hashlib.sha256(b).hexdigest()} for i,b in enumerate(parts)]}
+          for i,b in enumerate(parts):
+              p=Path('out')/str(i);p.mkdir(parents=True)
+              (p/'archive.part').write_bytes(b)
+              (p/'TRANSFER.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+          print(json.dumps({'source_run':source_run,'phase':phase,'archive_digest':a['digest'],'parts':len(parts),'bytes':len(raw)}))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with: {name: 'v1652-${{ matrix.phase }}-part-0', path: out/0, compression-level: 0, if-no-files-found: error}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with: {name: 'v1652-${{ matrix.phase }}-part-1', path: out/1, compression-level: 0, if-no-files-found: error}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with: {name: 'v1652-${{ matrix.phase }}-part-2', path: out/2, compression-level: 0, if-no-files-found: error}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with: {name: 'v1652-${{ matrix.phase }}-part-3', path: out/3, compression-level: 0, if-no-files-found: error}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with: {name: 'v1652-${{ matrix.phase }}-part-4', path: out/4, compression-level: 0, if-no-files-found: error}
