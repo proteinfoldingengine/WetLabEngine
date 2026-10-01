@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "status": "INDEPENDENT_RECEIPT_CLOSEOUT_APPROVED",
+  "stage": "v16.50",
+  "merge": "4a2866132b53c8400e10c425e1461143d9f3bdd9",
+  "ordered_merge_parents": [
+    "a8280c1c77d7e29f8b90dfd4807bede6411c7ca7",
+    "8b6f929f14cd6ec1fcfc199eaa60dd5ddad1bcd4"
+  ],
+  "publication_tree": "9e80e59c31afef814d8de450d049e7fdbd561cd3",
+  "workflow_receipt": "1d1ce274b32966dca6ee3c44557c380fbe586f2e",
+  "reviewer": "independent assistant reviewer /root/v1650_proof_review",
+  "review_method": "Independent analytical/source review and live API plus byte-only archive/Git audits outside scientific execution; no local science/tests",
+  "decision": "APPROVE CLOSED/CERTIFIED; no outstanding findings",
+  "run": 36879469964,
+  "terminal_status": "completed",
+  "terminal_conclusion": "success",
+  "terminal_updated_at": "2026-10-01T15:00:46Z",
+  "integrated_ci_run": 36879469908,
+  "integrated_ci_conclusion": "success",
+  "verified": {
+    "execution_manifest_members": 94,
+    "receipt_manifest_members": 102,
+    "publication_manifest_members": 235,
+    "source_input_paths": 1777,
+    "unique_source_objects": 1452,
+    "passing_checks": 994,
+    "inherited_checks": 934,
+    "new_controls": 60,
+    "scientific_files_byte_identical": 36,
+    "fresh_parent49_scientific_files": 33,
+    "ordered_merge_parents": true,
+    "publication_tree_equality": true,
+    "receipt_direct_child_merge": true,
+    "receipt_only_audit_prefix_added": true,
+    "durable_binary_references": true,
+    "source_and_receipt_git_bindings": true,
+    "complete_original_raw_archives": true,
+    "separate_science_reproduction_runners": true
+  },
+  "post_merge_artifact": {
+    "id": 11171351970,
+    "size": 109728542,
+    "digest": "sha256:fcc6aa4595a5e6fa50b6ce4b249cae8bf0cd683265a6f5fd7ed2db23067df875"
+  },
+  "receipt_artifact": {
+    "id": 11171297239,
+    "size": 52551542,
+    "digest": "sha256:26edd3e486ccab94118d2e99ee43a36d06160404e514dce431f7cb5548a42b40"
+  },
+  "scientific_result": {
+    "outcome": "RECURSIVE_BINARY_INTERFACE_VALIDATED",
+    "frozen_cases": 1920,
+    "primitive_moves": 72512,
+    "cases_with_unit_excursion": 878,
+    "construction_failures": 0,
+    "proof_scope": "Every finite full binary tree in the frozen nonempty nested-support category; binary joining preserves the fixed-root compact-normalization interface.",
+    "barrier_consequence": "B1=Binf=Bs=1 between distinct exact-profile components, and0 within one exact component. Primary scalar objectives are independently minimized; LEX remains diagnostic.",
+    "evidence_limit": "Directed cases validate implementation; general quantification rests on independently reviewed induction.",
+    "remaining": "Higher-arity and arbitrary retained-category universality remain unresolved; no nonunit witness claimed."
+  },
+  "publication_repair": "Three compiled cache files removed and ignore rule bound into publication manifest; science/source/input and both original raw execution archives unchanged; full actual-merge replay subsequently passed.",
+  "closure_requirement": "The documented independent receipt audit is complete. No separate external-auditor dependency exists.",
+  "snapshot_note": "Receipt RUN.json is an earlier in-progress snapshot; separately fetched terminal live API evidence verifies completed/success."
+}
