@@ -102,3 +102,13 @@ The arbitrary-floor star lemma permits replacement of roots containing one label
 The direct unguarded graph generalization fails. A symbolic four-root floor-three example has tau=3; a slot-compatible clone retaining a shared triple and equal clone-label degrees reduces tau to 2. Two disjoint copies give successive completed values 6,5,4, violating the target-6 lower bound. This refutes that iteration rule, not exact-endpoint connectivity: the prescribed final tuple is not exact-6.
 
 The graph proof's structural protection is now explicit: a pair root forbids an independent set from containing both clone labels. A larger shared hyperedge does not. General higher-floor connectivity still needs another completed-exchange invariant or a way to restore exactness before another unit is spent. No universal existence/termination theorem is inferred from the local rule, and no native barrier or numerical campaign is claimed.
+
+## Contraction guard replaces the pair-root assumption for a clone
+
+CONTRACTION_CLONE_GUARD.md (118829a29f39e3642e48b3d9e8f43d9c74df8ede; SHA256 86a894e88fd36d62f551a2e23d3f9afa292a6e9070cb8bdac717f8cfce615e9f) is independently accepted in INDEPENDENT_CONTRACTION_REVIEW.md with no findings.
+
+For the slot-compatible clone, let F be old roots avoiding u and L be retained roots with u,v contracted away. Then tau(new)=min(1+tau(F),tau(L)), using infinity for an un-hittable empty contracted support. If old tau=t, the completed clone is safe exactly when tau(L)>=t; it stays exactly at t exactly when additionally tau(F)=t-1 or tau(L)=t. A (t-1)-cover of L is a concrete unsafe-clone certificate. These are auxiliary proof objects, not native moves lowering root floors.
+
+The criterion handles genuinely higher-floor cases with no native pair/singleton root. An arbitrary-target symbolic all-floor-three family gives an exact exchange from an endpoint with q disjoint root witnesses to one with maximum disjoint-root family size q-1. This supplies a connection into the protected component for those destinations while keeping the one-unit budget; it does not establish accessibility for all unprotected endpoints.
+
+The remaining obligation is global: find a finite sufficient sequence of guarded exchanges or an exactness-restoring move when the guard fails. No universal higher-floor connectivity, efficiency or termination theorem is inferred. No numerical campaign or implementation certification occurred.

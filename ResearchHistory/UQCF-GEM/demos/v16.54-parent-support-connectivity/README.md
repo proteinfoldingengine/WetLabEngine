@@ -17,3 +17,5 @@ Latest: FLOOR_TWO_CONNECTIVITY.md and INDEPENDENT_FLOOR_TWO_REVIEW.md prove all 
 Latest: SINGLETON_ANCHOR_REDUCTION.md and INDEPENDENT_SINGLETON_REVIEW.md prove connectivity for all mixed floors in {1,2}, and for arbitrary remaining floors whenever at least q indices have floor 1. Residual hyperedge cases with fewer singleton-capable roots remain OPEN beyond the earlier scoped results. No implementation certification.
 
 Latest: HYPEREDGE_CLONE_BOUNDARY.md and INDEPENDENT_HYPEREDGE_REVIEW.md give an arbitrary-floor star rule, an exact root-slot criterion and pair-protected hyperedge cloning. A symbolic floor-three construction proves that unguarded repeated cloning can spend more than one unit. This is a method failure, not a connectivity/native barrier; general higher-floor connectivity remains OPEN.
+
+Latest: CONTRACTION_CLONE_GUARD.md and INDEPENDENT_CONTRACTION_REVIEW.md derive the exact cloned hitting number and a necessary-and-sufficient endpoint safety guard without requiring native pair roots. A floor-three family reaches unprotected exact endpoints from the protected component. Universal higher-floor accessibility remains OPEN.
