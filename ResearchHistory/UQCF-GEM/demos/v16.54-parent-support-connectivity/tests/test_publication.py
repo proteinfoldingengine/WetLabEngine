@@ -93,3 +93,22 @@ class Publication(unittest.TestCase):
         source={'verifier.py':'a'*64,'protocol.json':'b'*64}
         self.assertTrue(check(['a'*40,'b'*40],source,{'verifier.py':'c'*64,'protocol.json':'b'*64}))
         self.assertTrue(check(['a'*40,'b'*40],source,{'verifier.py':'a'*64}))
+
+    def test_original_archive_parts_reconstruct_exact_bytes(self):
+        import hashlib
+        pack=getattr(publication,'archive_parts',None)
+        self.assertIsNotNone(pack,'large original archives need exact-byte publication')
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);source=root/'original.zip';data=b'original archive bytes'*9;source.write_bytes(data)
+            manifest=pack(source,root/'parts',hashlib.sha256(data).hexdigest(),chunk_bytes=31)
+            rebuilt=b''.join((root/'parts'/row['name']).read_bytes() for row in manifest['parts'])
+            self.assertEqual(rebuilt,data)
+            self.assertEqual(manifest['archive_sha256'],hashlib.sha256(data).hexdigest())
+            self.assertTrue(all(row['bytes']<=31 for row in manifest['parts']))
+
+    def test_corrupt_original_archive_is_not_published(self):
+        pack=getattr(publication,'archive_parts',None)
+        self.assertIsNotNone(pack,'large original archives need exact-byte publication')
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);source=root/'original.zip';source.write_bytes(b'corrupt')
+            with self.assertRaises(ValueError):pack(source,root/'parts','a'*64,chunk_bytes=31)
