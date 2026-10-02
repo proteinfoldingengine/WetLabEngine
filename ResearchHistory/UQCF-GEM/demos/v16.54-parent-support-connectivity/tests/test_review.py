@@ -48,8 +48,8 @@ class MechanismReview(unittest.TestCase):
         return case('M5','balance',9,[3]*len(rows),6,rows,{},form='cyclic',h=3,sizes=[4,3,2],extras='P',d=0)
 
     def test_canonical_root_order_includes_duplicates(self):
-        rows=core(parts((3,3)),3)+[list(range(6))]
-        c=case('M5','balance',6,[3]*3,2,rows,{},form='module',h=3,sizes=[3,3],extras='P',d=1)
+        rows=core(parts((3,4)),3)+[list(range(7))]
+        c=case('M5','balance',7,[3]*len(rows),3,rows,{},form='module',h=3,sizes=[3,4],extras='P',d=1)
         r=produce(c)
         self.assertEqual(r['path'][-1],sorted(r['path'][-1]))
 
@@ -79,3 +79,8 @@ class MechanismReview(unittest.TestCase):
         other=case('M2','degree2',5,[2,2,4],None,rows,{'target':target})
         r=produce(other);r['identity']=c['identity']
         self.assertTrue(verify_record(c,r))
+
+    def test_direct_vacancy_lexicographic_pair(self):
+        c=case('M2','degree2',4,[1,1,1],None,[[3],[0],[2]],{'target':[[2],[1],[2]]})
+        r=produce(c)
+        self.assertEqual((r['events'][0]['source'],r['events'][0]['target']),(0,1))
