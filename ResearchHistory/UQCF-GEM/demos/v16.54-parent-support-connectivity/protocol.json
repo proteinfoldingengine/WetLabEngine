@@ -1,0 +1,54 @@
+{
+  "approved_plan_commit": "16b5d9340d29cb29907cee67751e15774694cf14",
+  "approved_plan_sha256": "d4d13e0ebb6feb63c0f235ff5c06d7ab36cb9c497f07df988f306e1d683e1d63",
+  "certified_parent": "f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8",
+  "claims": {
+    "certification": "PENDING",
+    "implementation": "PENDING",
+    "universal_higher_floor": "OPEN"
+  },
+  "execution": "GitHub only",
+  "families": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8",
+    "M9"
+  ],
+  "outcomes": [
+    "PASS",
+    "FAIL",
+    "INCOMPLETE"
+  ],
+  "proofs": {
+    "CONTRACTION_CLONE_GUARD.md": "86a894e88fd36d62f551a2e23d3f9afa292a6e9070cb8bdac717f8cfce615e9f",
+    "CYCLIC_TRIPLE_CONNECTIVITY.md": "50b033a5c771e8ceeb043ea5f7fb3f4cb68c95dfb50e019a068b8bf0b148da31",
+    "EXACT_ENDPOINT_CAPACITY.md": "37556dd879d80b1301395fbc89b8ec1ee442a0497459c659accbf776fa604ff8",
+    "FINITE_SUPPORT_REDUCTION.md": "134752fabcfec810ba99f212fde39e943f04bc6368d71307ba177e89e1f73ba1",
+    "FLOOR_TWO_CONNECTIVITY.md": "cdfd4f9550c4787b2c21e3b2de2d7b2d48b584e2b516c52db2ea7691d9214840",
+    "GENERAL_PARENT_CONNECTIVITY.md": "de144b98ee80c99510dc1eabb7318be11d67603f5f7337004019dc8372bc2751",
+    "GUARD_BUFFER_CONNECTIVITY.md": "ce9816b2170a4d234f20a06b01b8ab3d6bc37be7381267f1db308422025da5eb",
+    "HYPEREDGE_CLONE_BOUNDARY.md": "05bedf4d486c41c07191315866fed9ff8036f660c0f111614022dc17994bcd6f",
+    "HYPEREDGE_STAR_RELOCATION.md": "70cc9abe8e63f48820b656b95cb1a4a6a359bea4360090ceb1028ff05ce12251",
+    "MODULE_CAPACITY_OBSTRUCTION.md": "d4664fcd76e39d9c885e301c876b23f49424a48b1649a74505b56d673c644fda",
+    "NATIVE_ADMISSIBILITY.md": "d65770752184555729faf37f454c604549089acb1b0d6b5dac188a98a38e8117",
+    "OVERLAPPING_CLIQUE_EXCHANGE.md": "5515da06738778bccf0e46dc126aee358bf9c4c4446a5d8c34f07697672f6e14",
+    "PALETTE_SLACK_CONNECTIVITY.md": "f95e0ad39b3d4ba094ba2e4178b501070ff11370b41bf2459bf86dc57c9ebe9f",
+    "PROTECTED_EXCHANGE.md": "a76dffd9e6f9db7e590ebb89e62c4a195c27af826e84cc5c3a60005329279ee0",
+    "RESEARCH_SCOPE.md": "53d74f94a7c752d1fdb4f69280d5b5163296f7e16b3ec0df09bcdfe371802ff3",
+    "SINGLETON_ANCHOR_REDUCTION.md": "93eda3cc5c6f7904c5d88e6d99576d70892e638cda04e2414ad9bb2ea4fb932c"
+  },
+  "resources": {
+    "max_parallel_shards": 8,
+    "memory_bytes": 4294967296,
+    "minutes_per_job": 60,
+    "vertices_per_identity": 1000000
+  },
+  "schema": "v1654-mechanisms-v1",
+  "specification": "PROSPECTIVE_VALIDATION_PLAN.md sections 2-4",
+  "transport": "immutable run-request via branch-scoped push or workflow_dispatch"
+}
