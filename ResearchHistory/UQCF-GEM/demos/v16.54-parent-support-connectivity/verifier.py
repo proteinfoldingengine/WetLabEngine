@@ -8,6 +8,7 @@ from pathlib import Path
 import hashlib
 import json
 import math
+import re
 import os
 import sqlite3
 import subprocess
@@ -309,11 +310,21 @@ def verify_protocol(protocol, directory):
         if hashlib.sha256((root/name).read_bytes()).hexdigest()!=digest:
             errors.append('proof digest: '+name)
     freeze = os.environ.get('PREREGISTRATION_SHA')
-    if freeze:
+    if not isinstance(freeze,str) or not re.fullmatch('[0-9a-f]{40}',freeze):
+        errors.append('missing or nonimmutable preregistration binding')
+    else:
         relative = 'ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/protocol.json'
         frozen = json.loads(subprocess.check_output(['git','show',freeze+':'+relative],text=True))
         if protocol != frozen:
             errors.append('protocol differs from immutable preregistration')
+    approved = protocol.get('approved_plan_commit')
+    if approved != '16b5d9340d29cb29907cee67751e15774694cf14':
+        errors.append('approved plan commit mismatch')
+    else:
+        plan_path = 'ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/PROSPECTIVE_VALIDATION_PLAN.md'
+        approved_bytes = subprocess.check_output(['git','show',approved+':'+plan_path])
+        if hashlib.sha256(approved_bytes).hexdigest()!=PLAN_SHA:
+            errors.append('approved plan object digest mismatch')
     if protocol.get('families')!=['M'+str(i) for i in range(1,10)]:
         errors.append('family coverage changed')
     if protocol.get('resources')!={'minutes_per_job':60,'memory_bytes':4294967296,
@@ -322,4 +333,7 @@ def verify_protocol(protocol, directory):
     return errors
 
 def verify_record(case, record):
+    return []
+
+def verify_nested(path, nodes, targets, k):
     return []
