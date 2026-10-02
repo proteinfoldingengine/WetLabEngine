@@ -3,6 +3,15 @@ import hashlib,json,os,re,resource,shutil,subprocess,sys
 from pathlib import Path
 from publication import api,archive_parts,digest_file,download_artifact,dump,BASE
 
+def validated_campaign(aggregate,status,metadata,provenance):
+    run=aggregate.get('run');attempt=aggregate.get('attempt');head=aggregate.get('scientific_sha')
+    if type(run) is not int or run<=0 or type(attempt) is not int or attempt<=0 or not isinstance(head,str) or not re.fullmatch('[0-9a-f]{40}',head):raise ValueError('invalid campaign destination')
+    if aggregate.get('status')!='PASS' or aggregate.get('workflow_sha')!=head:raise ValueError('aggregate campaign binding')
+    if any(status.get(k)!=v for k,v in {'status':'PASS','run':run,'attempt':attempt,'scientific_sha':head}.items()):raise ValueError('campaign status substitution')
+    if any(metadata.get(k)!=v for k,v in {'id':run,'run_attempt':attempt,'head_sha':head,'status':'completed','conclusion':'success'}.items()):raise ValueError('campaign run substitution')
+    if provenance.get('target_head')!=head:raise ValueError('aggregate target substitution')
+    return run,attempt,head
+
 def prepare(request,out):
     if os.environ.get('GITHUB_ACTIONS')!='true':raise RuntimeError('GitHub-only evidence packaging')
     resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
@@ -25,7 +34,7 @@ def prepare(request,out):
     if aggregate['status']!='PASS' or status['status']!='PASS' or provenance['head']!=head or provenance['workflow_sha']!=head or str(provenance['run_id'])!=str(run) or int(provenance['attempt'])!=attempt:raise ValueError('aggregate result/provenance mismatch')
     source=subprocess.check_output(['git','show',head+':'+BASE+'publication.py'])
     if provenance['publication_sha256']!=hashlib.sha256(source).hexdigest():raise ValueError('aggregate publication source mismatch')
-    campaign=aggregate['run'];campaign_attempt=aggregate['attempt'];scientific=aggregate['scientific_sha']
+    campaign,campaign_attempt,scientific=validated_campaign(aggregate,status,json.loads((folder/'RUN.json').read_text()),provenance)
     destination=Path(BASE)/'evidence/validated'/f'run-{campaign}-attempt-{campaign_attempt}'
     if destination.exists():raise ValueError('refusing to overwrite published evidence')
     destination.mkdir(parents=True)

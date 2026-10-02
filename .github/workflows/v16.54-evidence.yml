@@ -52,8 +52,9 @@ jobs:
           assert changed and all(p.startswith(destination+'/') for p in changed)
           subprocess.run(['git','commit','-m','evidence(v16.54): preserve verified original campaign archives'],check=True)
           sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
-          # No force update; an existing ref causes rejection rather than replacement.
-          subprocess.run(['git','push','origin','HEAD:refs/heads/'+branch],check=True)
+          # Empty expected old SHA is an atomic absent-ref lease: even a
+          # fast-forward update to an existing remote branch is rejected.
+          subprocess.run(['git','push','--force-with-lease=refs/heads/'+branch+':','origin','HEAD:refs/heads/'+branch],check=True)
           Path('out/preserve/receipt/PUBLISHED_COMMIT.json').write_text(json.dumps({'branch':branch,'commit':sha,'source_parent':os.environ['GITHUB_SHA'],'destination':destination,'files':len(changed)},sort_keys=True)+'\n')
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

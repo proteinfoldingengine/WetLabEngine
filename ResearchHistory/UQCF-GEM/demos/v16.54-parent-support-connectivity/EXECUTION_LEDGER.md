@@ -51,3 +51,13 @@ Aggregation initial GREEN run 37060796749 passed nine controls. Independent publ
 First complete campaign checkpoint: all eight M1–M9 domain shards passed in run 37059520424; the full inherited job is running. This is not aggregate certification: original artifacts and mechanism diagnostics still require complete aggregation.
 
 Reproduction transport ruling: subsequent campaign artifacts include the GitHub run-attempt suffix. This preserves both original and fresh-run artifacts without deletion or name collisions; it changes neither scientific files nor frozen domains/resources.
+
+Task 4 checkpoint: first full campaign37059520424 completed successfully, including all8 complete domains and unchanged full inherited stack. Aggregation37063427057 at3c7490fd4121708d329ce5d057ac95082b619aa1 completed successfully; inherited package verification reported2049 source members. Complete mechanism diagnostics and independent identity-stream equality passed. Fresh reproduction and actual-merge replay remain pending.
+
+Actual-merge binding RED37062647557:15tests2assertion failures0errors. GREEN37062979456 passed. Independent transport review accepted corrected routing at8376b663b74825f58cf6dffe82ea65e18a233b10: contract-only feature pushes skip scientific jobs; integration merge runs all8shards and inherited; requested/event SHA equality is checked before routing.
+
+Ruling: publish large original campaign ZIPs as ordered16MiB binary parts with per-part hashes, original archive SHA/length and verified exact reconstruction — the inherited original is114,011,453bytes, beyond the local32MiB transfer and Git100MiB blob bounds — wrong reconstruction invalidates evidence, so byte equality is checked before publication. The aggregate transfer wrapper duplicates the originals; its API digest/length are verified and retained in the receipt, while the8 original domain ZIPs and original inherited ZIP are preserved in full. No scientific domain, resource bound or successful-result criterion changes.
+
+Ruling: use a GitHub-only evidence packaging job to push only the verified evidence prefix to a fresh isolated evidence branch, then integrate its exact blobs through the existing API — avoids local scientific execution and oversized tool payloads — incorrect source/destination binding would invalidate publication, so the request, aggregate run, original digests and isolated branch are enforced and independently reviewed before launch.
+
+Archive preservation RED37067368613 observed17tests2assertion failures0errors. Corrected exact-byte splitting and publication transport are under GitHub GREEN/source review. Universal higher-floor connectivity remains OPEN.

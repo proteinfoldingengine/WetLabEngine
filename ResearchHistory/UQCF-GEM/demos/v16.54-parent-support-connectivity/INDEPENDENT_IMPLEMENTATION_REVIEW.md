@@ -43,3 +43,7 @@ The publication reviewer accepted independent universe matching, pre-path contig
 Initial source 2b1b548201eda3a17530e5d39b73c1ebe6c46209 had three Important findings: missing enforced executing-helper/target-run provenance, incomplete inherited-package verification, and no durable INCOMPLETE status on aggregation failure. Genuine RED run37061765428 reproduced four missing contracts (13 tests, 4 assertion failures, no errors).
 
 Independent rereview accepted corrected source e7967c1fbef4b268c11da796ec5633253de54b24, publication.py SHA2560fbd2f6e382caa345e104539e369d0724224c3d6d13501a190714993f765e78b. It checked the consumed helper dependency closure, unchanged inherited full verifier, exact source bindings and atomic failure status. GitHub run37062080622 passed all13 controls. This scoped acceptance does not claim real aggregation, reproduction, whole-source acceptance or certification.
+
+## Actual-merge replay binding review
+
+Scoped source review accepted hash parity between certified primary and actual two-parent merge for Python sources/tests, protocol and execution workflows. Frozen proof/review bytes remain enforced by every shard's protocol check. Two transport issues (premature feature contract-triggered campaign and dispatch input mismatch on audit path) were corrected; independent rereview accepted8376b663b74825f58cf6dffe82ea65e18a233b10. This is acceptance of audit machinery, not a claim that an actual merge or audit has occurred.
