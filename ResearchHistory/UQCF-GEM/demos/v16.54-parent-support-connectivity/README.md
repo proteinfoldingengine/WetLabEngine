@@ -19,3 +19,5 @@ Latest: SINGLETON_ANCHOR_REDUCTION.md and INDEPENDENT_SINGLETON_REVIEW.md prove 
 Latest: HYPEREDGE_CLONE_BOUNDARY.md and INDEPENDENT_HYPEREDGE_REVIEW.md give an arbitrary-floor star rule, an exact root-slot criterion and pair-protected hyperedge cloning. A symbolic floor-three construction proves that unguarded repeated cloning can spend more than one unit. This is a method failure, not a connectivity/native barrier; general higher-floor connectivity remains OPEN.
 
 Latest: CONTRACTION_CLONE_GUARD.md and INDEPENDENT_CONTRACTION_REVIEW.md derive the exact cloned hitting number and a necessary-and-sufficient endpoint safety guard without requiring native pair roots. A floor-three family reaches unprotected exact endpoints from the protected component. Universal higher-floor accessibility remains OPEN.
+
+Latest: HYPEREDGE_STAR_RELOCATION.md and INDEPENDENT_RELOCATION_REVIEW.md prove finite balancing connectivity for complete uniform hyperedge modules using star relocations. They also prove guarded completed clones are insufficient even for a pair connected by one-unit native moves. Arbitrary higher-floor endpoint accessibility remains OPEN.

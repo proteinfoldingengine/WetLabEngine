@@ -102,3 +102,15 @@ The criterion handles genuinely higher-floor cases with no native pair/singleton
 The remaining obligation is global: find a finite sufficient sequence of guarded exchanges or an exactness-restoring move when the guard fails. No universal higher-floor connectivity, efficiency or termination theorem is inferred. No numerical campaign or implementation certification occurred.
 
 All earlier accepted proofs remain unchanged. The independent reviewer verified the new hash, accepted the exact formula, guard and bridge, and found no Critical, Important or Minor findings. Each declined item has an executor ruling in INDEPENDENT_CONTRACTION_REVIEW.md. The executor verifies exact GitHub bytes, direct ancestry and documentation-only scope. No numerical execution or workflow dispatch occurred. PR102 remains draft; v16.54 is not CLOSED/CERTIFIED.
+
+## Guarded clones are incomplete; star relocation supplies a new progress mechanism
+
+HYPEREDGE_STAR_RELOCATION.md (8a63b59c5104eab214052dbbc6e7a8a944a72f9a; SHA256 70cc9abe8e63f48820b656b95cb1a4a6a359bea4360090ceb1028ff05ce12251) is independently accepted in INDEPENDENT_RELOCATION_REVIEW.md with no findings.
+
+A fixed family of hitting number q-1, avoiding u, permits arbitrary floor-safe replacements of other roots as long as they retain u. This directly preserves tau in {q-1,q}. Applied to complete uniform hyperedge modules, moving a label from a larger to a smaller module fits the existing slots by a binomial count. Completed moves remain exact-q, and the sum of squared module sizes strictly decreases. Canonical balancing therefore connects all such module tuples with the same r,k,h,q, including different overlap structures and redundant root multiplicities.
+
+Guarded completed clones alone are not complete for connectivity, even with label/root permutations. Pure complete modules are fixed by within-module clones, while across-module clones have f=lambda=q-1 and are unsafe. Yet the same-floor exact-q endpoints with h=3,k=8,r=11,q=4 and module sizes (3,5) versus (4,4) plus three duplicates are connected by one star relocation and redundancy normalization. The restricted clone progression cannot connect them. This is a proved method limitation accompanied by a successful native one-unit replacement, not a native barrier.
+
+The remaining global issue is reaching module forms or another common class from arbitrary higher-floor endpoints. No such theorem or universal progress measure is claimed. No numerical campaign or implementation certification occurred.
+
+Earlier proof bytes are unchanged. Independent review verified the new hash and accepted the fixed-star lemma, module theorem and restricted-operation obstruction with no findings. Every declined item has an executor ruling in INDEPENDENT_RELOCATION_REVIEW.md. The executor verifies immutable bytes, direct ancestry and documentation-only scope. No scientific execution or workflow dispatch. PR102 remains draft; v16.54 is not CLOSED/CERTIFIED.
