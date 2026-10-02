@@ -1,0 +1,78 @@
+test_duplicate_rejected (test_task1.Task1.test_duplicate_rejected) ... FAIL
+test_equal_count_substitution_rejected (test_task1.Task1.test_equal_count_substitution_rejected) ... FAIL
+test_false_plan_hash_rejected (test_task1.Task1.test_false_plan_hash_rejected) ... FAIL
+test_false_proof_hash_rejected (test_task1.Task1.test_false_proof_hash_rejected) ... FAIL
+test_full_independent_universe (test_task1.Task1.test_full_independent_universe) ... FAIL
+test_missing_rejected (test_task1.Task1.test_missing_rejected) ... FAIL
+test_valid_protocol (test_task1.Task1.test_valid_protocol) ... ok
+test_wrong_input_rejected (test_task1.Task1.test_wrong_input_rejected) ... FAIL
+
+======================================================================
+FAIL: test_duplicate_rejected (test_task1.Task1.test_duplicate_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task1.py", line 33, in test_duplicate_rejected
+    self.assertTrue(verify_universe(iter([toy(0), toy(1)]), iter([toy(0), toy(1), toy(1)])))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_equal_count_substitution_rejected (test_task1.Task1.test_equal_count_substitution_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task1.py", line 36, in test_equal_count_substitution_rejected
+    self.assertTrue(verify_universe(iter([toy(0), toy(1)]), iter([toy(0), toy(2)])))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_false_plan_hash_rejected (test_task1.Task1.test_false_plan_hash_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task1.py", line 48, in test_false_plan_hash_rejected
+    self.assertTrue(verify_protocol(protocol, HERE))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_false_proof_hash_rejected (test_task1.Task1.test_false_proof_hash_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task1.py", line 53, in test_false_proof_hash_rejected
+    self.assertTrue(verify_protocol(protocol, HERE))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_full_independent_universe (test_task1.Task1.test_full_independent_universe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task1.py", line 27, in test_full_independent_universe
+    self.assertEqual(seen, set(protocol['families']))
+AssertionError: Items in the second set but not the first:
+'M8'
+'M4'
+'M5'
+'M3'
+'M7'
+'M9'
+'M1'
+'M2'
+'M6'
+
+======================================================================
+FAIL: test_missing_rejected (test_task1.Task1.test_missing_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task1.py", line 30, in test_missing_rejected
+    self.assertTrue(verify_universe(iter([toy(0), toy(1)]), iter([toy(0)])))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_wrong_input_rejected (test_task1.Task1.test_wrong_input_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task1.py", line 43, in test_wrong_input_rejected
+    self.assertTrue(verify_universe(iter([good]), iter([bad])))
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+FAILED (failures=7)

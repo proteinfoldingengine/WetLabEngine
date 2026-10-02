@@ -12,3 +12,8 @@ Pre-flight shared interfaces:
 
 Task 1: in progress. Prospective freeze prepared; no scientific execution yet.
 Tasks 2-5: pending.
+
+Task 1 RED: GitHub run 37042645917, scientific 5169c010228bbff501de68015fecd7cb98f5fded, workflow 8a9e46a1f0735e8ec4412dac40d7efe047819f29. Observed 8 tests, 7 assertion failures, zero errors. Original artifact 11243275224 downloaded; SHA256 dafd8baccff3c91edc247ba0aeaef95e987255cdee9cd000f8559758199f31f1 verified against API and all internal source hashes.
+Ruling: supplement the initial protocol with explicit hashes of all prior independent review files — the approved immutable commit already bound their bytes, but the initial JSON listed proof hashes only — no scientific domain changes; initial RED remains preserved, and subsequent runs bind the completed manifest.
+Ruling: keep complete identity sorting on disk using SQLite — the protocol specifies exact lexicographic equality under a 4 GiB limit — database or resource failure makes the campaign INCOMPLETE, never a sampled PASS.
+Ruling: M2 element-cover inputs are typed auxiliary blocks, permitting empty bins/capacity k as the approved domain states — native root nonemptiness applies to native-path records, not auxiliary proof objects — conflating these types would invalidate native claims, so the verifier checks them separately.
