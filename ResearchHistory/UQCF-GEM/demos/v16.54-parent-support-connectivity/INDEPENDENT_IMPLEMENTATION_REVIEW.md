@@ -47,3 +47,9 @@ Independent rereview accepted corrected source e7967c1fbef4b268c11da796ec5633253
 ## Actual-merge replay binding review
 
 Scoped source review accepted hash parity between certified primary and actual two-parent merge for Python sources/tests, protocol and execution workflows. Frozen proof/review bytes remain enforced by every shard's protocol check. Two transport issues (premature feature contract-triggered campaign and dispatch input mismatch on audit path) were corrected; independent rereview accepted8376b663b74825f58cf6dffe82ea65e18a233b10. This is acceptance of audit machinery, not a claim that an actual merge or audit has occurred.
+
+## Original archive publication and reproduction review
+
+The reviewer confirmed exact reconstruction of all8domain original ZIPs and the inherited original ZIP from ordered16MiB binary parts. At8d5eaa6580b80a52d76ce16de446f8cc3131d753 it required pre-write campaign identity validation and atomic create-only remote-ref behavior. Corrections06532593be7b1c6bb75473ae702a9cba58303c17 were accepted; full81-control GREEN37068234545 passed.
+
+The reproduction reference is read directly from executing Git HEAD and compared as a complete nonempty dictionary of deterministic file hashes. A follow-up rejected explicitnull instead of treating it as an absent request. RED37068702175 demonstrated that issue and nondictionary equality; corrected source287227a0abaf271fa1e842c859abbc76f2d27a30 was independently accepted. This acceptance concerns source and controlled write behavior; actual publication, fresh reproduction and merge audit remain separate evidence gates.
