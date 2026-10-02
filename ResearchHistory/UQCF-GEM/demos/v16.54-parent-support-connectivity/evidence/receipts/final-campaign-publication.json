@@ -1,0 +1,35 @@
+{
+  "campaign": {
+    "run": 37069226242,
+    "attempt": 1,
+    "head": "0a0037bc74399e04609e156d3bfd00736486bcbc",
+    "status": "SUCCESS"
+  },
+  "aggregation": {
+    "run": 37073565129,
+    "attempt": 1,
+    "head": "7c14d279feb100cf55104fecd2271adbe5cacf11",
+    "artifact": 11255172798,
+    "artifact_sha256": "2ab87e78fbad693c244b754657c98cacea6301d7e0b894bde912d3881ea3b9ec",
+    "status": "SUCCESS"
+  },
+  "publication": {
+    "run": 37074296257,
+    "attempt": 1,
+    "head": "2e4acea3a32ed774f73b066fc109e9c084090c62",
+    "commit": "aca507ff7a22f7ee6050c2c6eb6e8da0e93653dc",
+    "tree": "e773f661d3c08de8fc0cf8e28cce1bb4408ea659",
+    "receipt_artifact": 11255512768,
+    "receipt_artifact_sha256": "6ddfe967db8c559e4ef24702a45e5c9959409fd579ed366efe8232acb13f46bb",
+    "status": "SUCCESS"
+  },
+  "reproduction": {
+    "reference_run": 37059520424,
+    "reference_attempt": 1,
+    "files": 77,
+    "manifest_sha256": "9d320e67ef4a718d225a08e888c0358e69fda22f97b73bcc9fee6800a8e73567",
+    "status": "BYTE_IDENTICAL"
+  },
+  "certification": "PENDING_FINAL_REVIEW_AND_ACTUAL_MERGE",
+  "universal_higher_floor": "OPEN"
+}
