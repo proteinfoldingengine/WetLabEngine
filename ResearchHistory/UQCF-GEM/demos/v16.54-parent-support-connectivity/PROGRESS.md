@@ -30,3 +30,15 @@ User explicitly directed continued mathematics on exact-q endpoint structure and
 Independent reviewer /root/v1654_capacity_review verified SHA256 37556dd879d80b1301395fbc89b8ec1ee442a0497459c659accbf776fa604ff8 and accepted all scoped claims with no Critical, Important or Minor findings. INDEPENDENT_CAPACITY_REVIEW.md records each declined-to-judge item and executor disposition. The executor read back the exact immutable proof from GitHub. No tests, numerical enumeration, implementation or workflow dispatch occurred. Proof acceptance does not constitute implementation certification, and PR102 remains draft.
 
 The theorem resolves the entire equality boundary of the user's capacity inequality. The general positive-slack problem remains open; neither localized capacity inequalities nor the deficit count is claimed sufficient for exchange. This result advances by structural conditions, not branching number.
+
+## Positive-slack exchange with protected roots
+
+PROTECTED_EXCHANGE.md is accepted by INDEPENDENT_PROTECTED_REVIEW.md, with no findings, at proof commit 4825b8d5544ace5185b10ca9af7f856c1840c276 and SHA256 a76dffd9e6f9db7e590ebb89e62c4a195c27af826e84cc5c3a60005329279ee0. Candidate wording in the proof header preserves reviewed bytes; the review records acceptance.
+
+All exact-q endpoints possessing q pairwise-disjoint roots are connected with tau in {q-1,q}, at arbitrary arity and slack. Witness indices can be moved to the q smallest-floor indices through exact states, after which finite size transfers and partition swaps reach a common canonical tuple. No spare label is needed.
+
+Such protected endpoints exist exactly when the sum of the q smallest floors is at most k. A symbolic family of m disjoint triangles (m>=2, r=k=3m, q=2m, all floors 2) has exact target q and positive slack but violates that condition: 4m>3m. It admits no protected state anywhere in the width-floor carrier. This is a precise obstruction to the protected-root method, not evidence of disconnection or a native barrier.
+
+The general positive-slack problem remains OPEN. When the floor condition holds, reaching the protected class from unprotected exact endpoints is unproved. When it fails, a different mechanism preserving overlapping witnesses or complementary subset covers is necessary. Deficient-label counts do not imply the protected-root condition. No numerical campaign or implementation was initiated.
+
+The executor preserved both earlier accepted proof files and verified the new proof's exact remote bytes. The independent reviewer found no Critical, Important or Minor issues. INDEPENDENT_PROTECTED_REVIEW.md gives a separate ruling for every declined-to-judge item. Publication uses the existing API-backed analytical branch. No workflow was dispatched; no local scientific computation occurred. PR102 remains draft and v16.54 is not CLOSED/CERTIFIED.

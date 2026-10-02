@@ -49,3 +49,13 @@ At an exact-q endpoint every s-subset S, s<=q-1, lies in at least q-s complement
 When total capacity attains its lower bound, every exact endpoint has r-q full-palette roots and q roots partitioning the palette. The same floor vector forces the same full-palette indices. Finite partition swaps give a one-unit path for every q>=3 and every arity, resolving pair and all higher-subset reconfiguration on this entire boundary.
 
 For positive delta=sum b_i-(q-1)k, compaction leaves at most delta labels below maximum incidence degree r-q+1. Their deficits sum exactly to delta. This localizes the remaining structural problem without proving that these labels supply a safe exchange buffer. Universal positive-slack connectivity remains OPEN. No implementation or numerical campaign was initiated.
+
+## Positive-slack exchange with protected roots
+
+PROTECTED_EXCHANGE.md is accepted by INDEPENDENT_PROTECTED_REVIEW.md, with no findings, at proof commit 4825b8d5544ace5185b10ca9af7f856c1840c276 and SHA256 a76dffd9e6f9db7e590ebb89e62c4a195c27af826e84cc5c3a60005329279ee0. Candidate wording in the proof header preserves reviewed bytes; the review records acceptance.
+
+All exact-q endpoints possessing q pairwise-disjoint roots are connected with tau in {q-1,q}, at arbitrary arity and slack. Witness indices can be moved to the q smallest-floor indices through exact states, after which finite size transfers and partition swaps reach a common canonical tuple. No spare label is needed.
+
+Such protected endpoints exist exactly when the sum of the q smallest floors is at most k. A symbolic family of m disjoint triangles (m>=2, r=k=3m, q=2m, all floors 2) has exact target q and positive slack but violates that condition: 4m>3m. It admits no protected state anywhere in the width-floor carrier. This is a precise obstruction to the protected-root method, not evidence of disconnection or a native barrier.
+
+The general positive-slack problem remains OPEN. When the floor condition holds, reaching the protected class from unprotected exact endpoints is unproved. When it fails, a different mechanism preserving overlapping witnesses or complementary subset covers is necessary. Deficient-label counts do not imply the protected-root condition. No numerical campaign or implementation was initiated.
