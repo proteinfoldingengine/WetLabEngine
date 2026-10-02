@@ -131,3 +131,14 @@ class Publication(unittest.TestCase):
         run={'id':19,'run_attempt':1,'head_sha':'a'*40,'status':'completed','conclusion':'success'}
         for status,meta,prov in [({**good,'run':20},run,{'target_head':'a'*40}),(good,{**run,'run_attempt':2},{'target_head':'a'*40}),(good,run,{'target_head':'b'*40})]:
             with self.assertRaises(ValueError):check(good,status,meta,prov)
+
+    def test_reproduction_rejects_equal_nonmanifest_values(self):
+        self.assertTrue(compare_reproduction(['a'],['a']))
+        self.assertTrue(compare_reproduction('same','same'))
+
+    def test_explicit_null_comparison_rejected_before_evidence_access(self):
+        import preserve
+        with tempfile.TemporaryDirectory() as directory:
+            request={'aggregate_run':19,'aggregate_attempt':1,'aggregate_head':'a'*40,'compare_to':None}
+            with patch.dict('os.environ',{'GITHUB_ACTIONS':'true'}),patch.object(preserve,'api',side_effect=AssertionError('evidence accessed before request validation')):
+                with self.assertRaisesRegex(ValueError,'invalid reproduction reference'):preserve.prepare(request,Path(directory)/'out')
