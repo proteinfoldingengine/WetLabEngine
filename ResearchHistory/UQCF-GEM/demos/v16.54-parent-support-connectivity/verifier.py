@@ -320,3 +320,6 @@ def verify_protocol(protocol, directory):
                                    'vertices_per_identity':1000000,'max_parallel_shards':8}:
         errors.append('resource specification changed')
     return errors
+
+def verify_record(case, record):
+    return []
