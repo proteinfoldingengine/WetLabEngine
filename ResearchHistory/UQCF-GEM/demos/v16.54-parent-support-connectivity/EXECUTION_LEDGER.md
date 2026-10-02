@@ -45,3 +45,9 @@ Campaign runner review RED: 37059096994, ten tests, two assertion failures, zero
 First complete campaign launched: scientific/workflow SHA 0ba1284ade581267997882de2d4c723f2b9ee3a4, run 37059520424. The development gate passed and all eight complete-domain shards started. This is an in-progress validation, not a success claim.
 
 Aggregation/reproduction RED run 37059832519: nine tests, seven assertion failures, zero errors. Controls cover absent/duplicated shards, overlapping intervals, mismatched full universe, missing mechanism categories and changed/omitted deterministic files. Aggregation is being implemented while the immutable first campaign runs.
+
+Aggregation initial GREEN run 37060796749 passed nine controls. Independent publication review then required executing-helper/target-run binding, full unchanged inherited-package verification and durable INCOMPLETE status. Genuine review RED run 37061765428 observed thirteen tests, four assertion failures, zero errors. Corrected source e7967c1fbef4b268c11da796ec5633253de54b24 passed all thirteen controls in run 37062080622; independent source rereview accepted all three corrections. Real aggregation, reproduction and actual-merge audit remain outstanding.
+
+First complete campaign checkpoint: all eight M1–M9 domain shards passed in run 37059520424; the full inherited job is running. This is not aggregate certification: original artifacts and mechanism diagnostics still require complete aggregation.
+
+Reproduction transport ruling: subsequent campaign artifacts include the GitHub run-attempt suffix. This preserves both original and fresh-run artifacts without deletion or name collisions; it changes neither scientific files nor frozen domains/resources.

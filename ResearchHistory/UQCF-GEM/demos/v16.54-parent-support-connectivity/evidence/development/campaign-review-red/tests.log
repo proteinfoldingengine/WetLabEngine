@@ -1,0 +1,31 @@
+test_current_identity_checkpoint_precedes_production (test_campaign.AttemptEvidence.test_current_identity_checkpoint_precedes_production) ... FAIL
+test_producer_exception_does_not_reuse_previous_record (test_campaign.AttemptEvidence.test_producer_exception_does_not_reuse_previous_record) ... FAIL
+test_corrupted_scientific_bytes_rejected (test_campaign.Campaign.test_corrupted_scientific_bytes_rejected) ... ok
+test_equal_count_wrong_identity_digest_rejected (test_campaign.Campaign.test_equal_count_wrong_identity_digest_rejected) ... ok
+test_failed_cannot_pass (test_campaign.Campaign.test_failed_cannot_pass) ... ok
+test_incomplete_cannot_pass (test_campaign.Campaign.test_incomplete_cannot_pass) ... ok
+test_invalid_provenance_rejected (test_campaign.Campaign.test_invalid_provenance_rejected) ... ok
+test_missing_scientific_file_rejected (test_campaign.Campaign.test_missing_scientific_file_rejected) ... ok
+test_valid_manifest (test_campaign.Campaign.test_valid_manifest) ... ok
+test_valid_summary (test_campaign.Campaign.test_valid_summary) ... ok
+
+======================================================================
+FAIL: test_current_identity_checkpoint_precedes_production (test_campaign.AttemptEvidence.test_current_identity_checkpoint_precedes_production)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_campaign.py", line 72, in test_current_identity_checkpoint_precedes_production
+    self.assertTrue(checkpoint.exists())
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_producer_exception_does_not_reuse_previous_record (test_campaign.AttemptEvidence.test_producer_exception_does_not_reuse_previous_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_campaign.py", line 66, in test_producer_exception_does_not_reuse_previous_record
+    self.assertIsNone(failure['record'])
+AssertionError: {'events': [], 'identity': ['M1', '00', [], []], 'status': 'PASS'} is not None
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.216s
+
+FAILED (failures=2)

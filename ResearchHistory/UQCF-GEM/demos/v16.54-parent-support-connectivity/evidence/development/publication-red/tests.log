@@ -1,0 +1,70 @@
+test_complete_partition (test_publication.Publication.test_complete_partition) ... ok
+test_duplicate_shard_rejected (test_publication.Publication.test_duplicate_shard_rejected) ... FAIL
+test_empty_mechanism_category_rejected (test_publication.Publication.test_empty_mechanism_category_rejected) ... FAIL
+test_equal_scientific_reproduction (test_publication.Publication.test_equal_scientific_reproduction) ... ok
+test_mismatched_universe_rejected (test_publication.Publication.test_mismatched_universe_rejected) ... FAIL
+test_missing_reproduction_file_rejected (test_publication.Publication.test_missing_reproduction_file_rejected) ... FAIL
+test_missing_shard_rejected (test_publication.Publication.test_missing_shard_rejected) ... FAIL
+test_overlapping_interval_rejected (test_publication.Publication.test_overlapping_interval_rejected) ... FAIL
+test_scientific_byte_change_rejected (test_publication.Publication.test_scientific_byte_change_rejected) ... FAIL
+
+======================================================================
+FAIL: test_duplicate_shard_rejected (test_publication.Publication.test_duplicate_shard_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 22, in test_duplicate_shard_rejected
+    self.assertTrue(check_partition(s))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_empty_mechanism_category_rejected (test_publication.Publication.test_empty_mechanism_category_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 33, in test_empty_mechanism_category_rejected
+    self.assertTrue(check_required_diagnostics({}))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_mismatched_universe_rejected (test_publication.Publication.test_mismatched_universe_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 30, in test_mismatched_universe_rejected
+    self.assertTrue(check_partition(s))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_missing_reproduction_file_rejected (test_publication.Publication.test_missing_reproduction_file_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 42, in test_missing_reproduction_file_rejected
+    self.assertTrue(compare_reproduction({'a':'a'*64},{}))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_missing_shard_rejected (test_publication.Publication.test_missing_shard_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 18, in test_missing_shard_rejected
+    self.assertTrue(check_partition(self.shards()[:-1]))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_overlapping_interval_rejected (test_publication.Publication.test_overlapping_interval_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 26, in test_overlapping_interval_rejected
+    self.assertTrue(check_partition(s))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_scientific_byte_change_rejected (test_publication.Publication.test_scientific_byte_change_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 39, in test_scientific_byte_change_rejected
+    self.assertTrue(compare_reproduction({'a':'a'*64},{'a':'b'*64}))
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (failures=7)
