@@ -1,8 +1,8 @@
 name: v16.54 complete mechanism domains
 on:
   push:
-    branches: [research/v16.54-parent-support-connectivity]
-    paths: ['ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/CAMPAIGN_REQUEST.json']
+    branches: [research/v16.54-parent-support-connectivity, research/v16.34-fiber-component-invariant]
+    paths: ['ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/CAMPAIGN_REQUEST.json', 'ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/AUDIT_CONTRACT.json']
   workflow_dispatch:
     inputs:
       scientific_sha:
@@ -58,6 +58,13 @@ jobs:
           import json,os,re,subprocess
           from pathlib import Path
           base='ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/'
+          if os.environ['GITHUB_REF']=='refs/heads/research/v16.34-fiber-component-invariant':
+              import sys
+              sys.path.insert(0,base)
+              from publication import bind_actual_merge
+              bind_actual_merge('out/domain')
+              subprocess.run(['python',base+'campaign.py','all',os.environ['SHARD'],'out/domain'],check=True)
+              raise SystemExit(0)
           request=json.loads(Path(base+'CAMPAIGN_REQUEST.json').read_text())
           parent=request['scientific_parent_sha'];head=os.environ['SCIENTIFIC_SHA']
           assert re.fullmatch('[0-9a-f]{40}',parent) and re.fullmatch('[0-9a-f]{40}',head)
@@ -93,6 +100,8 @@ jobs:
           resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
           base='ResearchHistory/UQCF-GEM/demos/'
           request=json.loads(Path(base+'v16.54-parent-support-connectivity/CAMPAIGN_REQUEST.json').read_text())
+          if os.environ['GITHUB_REF']=='refs/heads/research/v16.34-fiber-component-invariant':
+              request['scope']='all'
           if request['scope']=='local':
               Path('out/inherited').mkdir(parents=True,exist_ok=True)
               Path('out/inherited/STAGE.json').write_text(json.dumps({'status':'NOT_REQUESTED_AT_LOCAL_STAGE','scope':'local'})+'\n')

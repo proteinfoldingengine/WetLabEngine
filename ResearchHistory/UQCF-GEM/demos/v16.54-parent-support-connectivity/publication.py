@@ -68,6 +68,38 @@ def check_run_binding(metadata,run,attempt,head):
 def check_helper_binding(expected,actual):
     return [] if expected and expected==actual else ['executing scientific helpers differ from target campaign']
 
+def check_merge_sources(parents,expected,actual):
+    errors=[]
+    if len(parents)!=2 or any(not re.fullmatch('[0-9a-f]{40}',p) for p in parents):errors.append('actual audit requires a two-parent merge')
+    if not expected or expected!=actual:errors.append('actual merge scientific source differs from certified primary')
+    return errors
+
+def bind_actual_merge(out):
+    if os.environ.get('GITHUB_ACTIONS')!='true' or os.environ['GITHUB_REF']!='refs/heads/research/v16.34-fiber-component-invariant':raise ValueError('audit requires actual integration branch event')
+    out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+    if head!=os.environ['GITHUB_SHA'] or head!=os.environ['GITHUB_WORKFLOW_SHA']:raise ValueError('actual merge checkout/workflow mismatch')
+    contract=json.loads((HERE/'AUDIT_CONTRACT.json').read_text())
+    if set(contract)!={'certified_primary_sha','preregistration_sha','scope'} or contract['scope']!='all' or contract['preregistration_sha']!='a189546887e8744092deebecbdf73076b66ec044':raise ValueError('invalid audit contract')
+    target=contract['certified_primary_sha']
+    if not re.fullmatch('[0-9a-f]{40}',target):raise ValueError('invalid primary SHA')
+    parents=subprocess.check_output(['git','show','-s','--format=%P',head],text=True).split()
+    def science(ref):
+        # Mutable reporting prose is excluded; frozen proof/review bytes remain
+        # enforced by protocol verification in every complete domain shard.
+        result={BASE+name:digest for name,digest in _source_inventory(ref).items() if name.endswith('.py') or name=='protocol.json'}
+        for name in ('v16.54-mechanism-validation.yml','v16.54-publication.yml','v16.54-red.yml'):
+            path='.github/workflows/'+name
+            result[path]=hashlib.sha256(subprocess.check_output(['git','show',ref+':'+path])).hexdigest()
+        return result
+    expected=science(target);actual=science(head)
+    errors=check_merge_sources(parents,expected,actual)
+    if errors:raise ValueError(errors)
+    subprocess.run(['git','merge-base','--is-ancestor',target,parents[1]],check=True)
+    subprocess.run(['git','merge-base','--is-ancestor',contract['preregistration_sha'],target],check=True)
+    if any(Path(name).read_bytes()!=subprocess.check_output(['git','show',head+':'+name]) for name in actual):raise ValueError('dirty audit checkout')
+    dump(out/'ACTUAL_MERGE_BINDING.json',{'merge_sha':head,'parents':parents,'primary_sha':target,'scientific_source_hashes':actual,'workflow_sha':os.environ['GITHUB_WORKFLOW_SHA'],'run_id':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT']})
+
 def execution_binding(head,out):
     actual_head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
     provenance={'head':actual_head,'workflow_sha':os.environ['GITHUB_WORKFLOW_SHA'],
