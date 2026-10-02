@@ -114,3 +114,15 @@ Guarded completed clones alone are not complete for connectivity, even with labe
 The remaining global issue is reaching module forms or another common class from arbitrary higher-floor endpoints. No such theorem or universal progress measure is claimed. No numerical campaign or implementation certification occurred.
 
 Earlier proof bytes are unchanged. Independent review verified the new hash and accepted the fixed-star lemma, module theorem and restricted-operation obstruction with no findings. Every declined item has an executor ruling in INDEPENDENT_RELOCATION_REVIEW.md. The executor verifies immutable bytes, direct ancestry and documentation-only scope. No scientific execution or workflow dispatch. PR102 remains draft; v16.54 is not CLOSED/CERTIFIED.
+
+## Accepted complete-module capacity obstruction
+
+MODULE_CAPACITY_OBSTRUCTION.md (proof bc9ce299e76886f38b159618739e1f6184d42242; SHA256 d4664fcd76e39d9c885e301c876b23f49424a48b1649a74505b56d673c644fda) is independently accepted in INDEPENDENT_MODULE_CAPACITY_REVIEW.md, with no findings.
+
+Theorem Z supplies an infinite all-floor-three cyclic family: k=3a, r=a(a-1)(2a-1), exact q=k-3, a>=2, with strictly positive derived capacity slack. Every four-label set contains a root, while a transversal triple is independent. Any disjoint complete-triple-module state at that exact target would require one module on k-1 labels, even allowing labels outside the core and redundant extra roots. Its required slot count exceeds r by (a-1)^2(5a-2)/2. The terminal form is therefore unavailable anywhere in the same carrier.
+
+The unequal-part (3,2,2) illustration has k=7, r=12 and q=4, whereas its hypothetical exact-target module core requires twenty slots. These are symbolic proof values, not a numerical campaign.
+
+This supersedes the prior suggestion that every higher-floor endpoint might reach the complete-module class. Theorem Y remains valid for endpoints already of that type. A universal argument must accommodate other overlap structures within the fixed slot budget. General higher-floor connectivity remains OPEN; this is neither a disconnected pair nor a native barrier. No implementation, numerical campaign or certification occurred.
+
+Earlier proof bytes are unchanged. Independent review accepted the exact new proof hash with no findings; declined items and executor rulings are recorded. Publication verification covers immutable bytes, ancestry and documentation-only changes. No scientific execution or workflow dispatch. PR102 remains draft; v16.54 is not CLOSED/CERTIFIED.
