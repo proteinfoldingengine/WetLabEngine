@@ -25,7 +25,7 @@ jobs:
           from pathlib import Path
           base='ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/'
           request=json.loads(Path(base+'EVIDENCE_REQUEST.json').read_text())
-          assert set(request)=={'aggregate_run','aggregate_attempt','aggregate_head','source_parent'}
+          assert set(request) in ({'aggregate_run','aggregate_attempt','aggregate_head','source_parent'}, {'aggregate_run','aggregate_attempt','aggregate_head','source_parent','compare_to'})
           parent=request['source_parent'];head=os.environ['GITHUB_SHA']
           assert re.fullmatch('[0-9a-f]{40}',parent)
           assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==head==os.environ['GITHUB_WORKFLOW_SHA']

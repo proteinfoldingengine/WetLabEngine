@@ -1,7 +1,7 @@
 """Publish verified original campaign ZIP bytes without local science execution."""
 import hashlib,json,os,re,resource,shutil,subprocess,sys
 from pathlib import Path
-from publication import api,archive_parts,digest_file,download_artifact,dump,BASE
+from publication import api,archive_parts,compare_reproduction,digest_file,download_artifact,dump,BASE
 
 def validated_campaign(aggregate,status,metadata,provenance):
     run=aggregate.get('run');attempt=aggregate.get('attempt');head=aggregate.get('scientific_sha')
@@ -35,6 +35,16 @@ def prepare(request,out):
     source=subprocess.check_output(['git','show',head+':'+BASE+'publication.py'])
     if provenance['publication_sha256']!=hashlib.sha256(source).hexdigest():raise ValueError('aggregate publication source mismatch')
     campaign,campaign_attempt,scientific=validated_campaign(aggregate,status,json.loads((folder/'RUN.json').read_text()),provenance)
+    comparison=None
+    if request.get('compare_to') is not None:
+        reference=request['compare_to']
+        if not isinstance(reference,dict) or set(reference)!={'run','attempt'} or any(type(reference[k]) is not int or reference[k]<=0 for k in reference):raise ValueError('invalid reproduction reference')
+        path=BASE+f"evidence/validated/run-{reference['run']}-attempt-{reference['attempt']}/SCIENTIFIC_MANIFEST.json"
+        recorded=subprocess.check_output(['git','show','HEAD:'+path])
+        current=(folder/'SCIENTIFIC_MANIFEST.json').read_bytes()
+        if compare_reproduction(json.loads(recorded),json.loads(current)):raise ValueError('deterministic scientific reproduction differs')
+        comparison={'status':'BYTE_IDENTICAL','reference':reference,'reference_manifest_git_blob':subprocess.check_output(['git','rev-parse','HEAD:'+path],text=True).strip(),
+                    'reference_manifest_sha256':hashlib.sha256(recorded).hexdigest(),'current_manifest_sha256':hashlib.sha256(current).hexdigest(),'files':len(json.loads(current))}
     destination=Path(BASE)/'evidence/validated'/f'run-{campaign}-attempt-{campaign_attempt}'
     if destination.exists():raise ValueError('refusing to overwrite published evidence')
     destination.mkdir(parents=True)
@@ -53,6 +63,7 @@ def prepare(request,out):
              'publication_run':os.environ['GITHUB_RUN_ID'],'publication_attempt':os.environ['GITHUB_RUN_ATTEMPT'],
              'universal_higher_floor':'OPEN','status':'ORIGINAL_BYTES_VERIFIED'}
     dump(destination/'PUBLICATION_RECEIPT.json',receipt)
+    if comparison is not None:dump(destination/'REPRODUCTION.json',comparison)
     files={str(p.relative_to(destination)):digest_file(p) for p in sorted(destination.rglob('*')) if p.is_file()}
     dump(destination/'PUBLICATION_MANIFEST.json',files)
     (out/'DESTINATION.txt').write_text(str(destination)+'\n')
@@ -61,6 +72,7 @@ def prepare(request,out):
     receipt_out=out/'receipt';receipt_out.mkdir()
     for name in ('PUBLICATION_RECEIPT.json','PUBLICATION_MANIFEST.json','AGGREGATE.json','SCIENTIFIC_MANIFEST.json'):
         shutil.copyfile(destination/name,receipt_out/name)
+    if comparison is not None:shutil.copyfile(destination/'REPRODUCTION.json',receipt_out/'REPRODUCTION.json')
     return destination
 
 if __name__=='__main__':prepare(json.loads(Path(sys.argv[1]).read_text()),sys.argv[2])
