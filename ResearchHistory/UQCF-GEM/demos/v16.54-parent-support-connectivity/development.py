@@ -18,6 +18,7 @@ def main():
     phase, output = sys.argv[1:3]
     out = Path(output)
     out.mkdir(parents=True, exist_ok=True)
+    os.environ['V1654_DEV_OUTPUT'] = str(out.resolve())
     scientific = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
     if scientific != os.environ['SCIENTIFIC_SHA']:
         raise ValueError('checked-out scientific SHA mismatch')

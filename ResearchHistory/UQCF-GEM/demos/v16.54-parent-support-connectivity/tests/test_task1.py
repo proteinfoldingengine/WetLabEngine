@@ -1,6 +1,8 @@
 """Full-universe and verifier-rejection contracts, before implementation."""
 import copy
 import json
+import gzip
+import os
 import sys
 import unittest
 from pathlib import Path
@@ -23,7 +25,16 @@ class Task1(unittest.TestCase):
             for case in generate_cases(protocol):
                 seen.add(case['identity'][0])
                 yield case
-        self.assertEqual(verify_universe(reconstruct_cases(protocol), production()), [])
+        def save(iterator, name):
+            directory = Path(os.environ['V1654_DEV_OUTPUT']) / 'universe'
+            directory.mkdir(parents=True, exist_ok=True)
+            with (directory / (name+'.jsonl.gz')).open('wb') as raw:
+                with gzip.GzipFile(filename='',mode='wb',fileobj=raw,mtime=0) as stream:
+                    for record in iterator:
+                        stream.write((json.dumps(record,sort_keys=True,separators=(',',':'))+'\n').encode())
+                        yield record
+        self.assertEqual(verify_universe(save(reconstruct_cases(protocol),'independent'),
+                                        save(production(),'producer')), [])
         self.assertEqual(seen, set(protocol['families']))
 
     def test_missing_rejected(self):
