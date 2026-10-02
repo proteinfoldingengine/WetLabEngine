@@ -1,27 +1,33 @@
-# v16.54 general parent-support connectivity
+# v16.54 — structural conditions for one-unit repair
 
-Status: independently accepted analytical results; no implementation or new numerical execution; not CLOSED/CERTIFIED.
+Current status: the first complete mechanism campaign and its independent evidence aggregation passed. Fresh reproduction, final publication review and actual-merge replay are pending. This is not yet a CLOSED/CERTIFIED implementation.
 
-Start with FINDINGS.md for the result, GENERAL_PARENT_CONNECTIVITY.md for the exact reviewed proof, and INDEPENDENT_PROOF_REVIEW.md for its independent acceptance. NATIVE_ADMISSIBILITY.md and RESEARCH_SCOPE.md preserve the original category, question and disclosed prior leads.
+## Mathematical result
 
-The general theorem removes upper excursions and reduces parent unit connectivity to lower subset-cover connectivity. Target3 is connected for arbitrary arity; five-child target4 is connected including saturation. General higher-target subset-cover connectivity remains OPEN. The certified predecessor is v16.53 at integrated commit f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8.
+The parent-support problem reduces to connectivity of capacity-bounded complementary blocks that cover every `(q-2)`-subset. Once such a lower-guard connection exists, maximum-layer replacement removes upper excursions and gives a root path with transversal number in `{q-1,q}`. This criterion is independent of branching number.
 
-The exact-endpoint extension is in EXACT_ENDPOINT_CAPACITY.md, accepted by INDEPENDENT_CAPACITY_REVIEW.md. It proves local redundancy and capacity inequalities, and resolves the entire saturated capacity boundary sum b_i=(q-1)k for every q>=3 and every arity. Positive-slack pair/higher-subset connectivity remains OPEN. The extension retains its candidate header to preserve reviewed bytes; its review records acceptance.
+Exact-q endpoints have additional structure: their complements cover every `(q-1)`-subset, leave at least one q-subset uncovered, and obey `sum_i(k-a_i) >= (q-1)k`. These are derived endpoint restrictions. They are not assumed to prove general pair- or higher-subset exchange connectivity.
 
-PROTECTED_EXCHANGE.md and INDEPENDENT_PROTECTED_REVIEW.md add an accepted arbitrary-arity positive-slack theorem for endpoints with q disjoint root witnesses, plus an exact floor criterion for this class to exist. A symbolic exact-q family shows the class may be absent; this is only a method obstruction. Universal positive-slack connectivity remains OPEN.
+The accepted analytical work supplies constructive regimes and explicit limits: element-cover buffering, degree-two cycle exchanges, saturated configurations, guarded clone/contraction and relocation steps, palette slack, finite-support reduction, and native lifting. A failure of a particular module construction is recorded as such; it is not promoted to impossibility of every native one-unit path.
 
-OVERLAPPING_CLIQUE_EXCHANGE.md and INDEPENDENT_OVERLAP_REVIEW.md resolve an entire overlapping-root parameter family, including the earlier triangle method obstruction: all exact endpoints are connected despite the impossibility of disjoint root witnesses. The mechanism is extremal endpoint classification plus general safe symmetry exchanges. Universal positive-slack connectivity remains OPEN.
+The universal higher-floor connectivity question remains **OPEN**.
 
-Latest: FLOOR_TWO_CONNECTIVITY.md and INDEPENDENT_FLOOR_TWO_REVIEW.md prove all exact endpoints connected for every feasible arity/palette/target with every root floor equal to 2. The new star-symmetrization mechanism changes overlap structure and subsumes the clique-boundary family. General mixed/higher-floor connectivity remains OPEN; no numerical campaign or implementation certification.
+## Implementation evidence
 
-Latest: SINGLETON_ANCHOR_REDUCTION.md and INDEPENDENT_SINGLETON_REVIEW.md prove connectivity for all mixed floors in {1,2}, and for arbitrary remaining floors whenever at least q indices have floor 1. Residual hyperedge cases with fewer singleton-capable roots remain OPEN beyond the earlier scoped results. No implementation certification.
+The approved [prospective validation plan](PROSPECTIVE_VALIDATION_PLAN.md) freezes nine mechanism families M1–M9. The producer constructs paths; a separate verifier reconstructs the entire prescribed universe and checks primitive steps, width floors, guards and the shared excursion budget.
 
-Latest: HYPEREDGE_CLONE_BOUNDARY.md and INDEPENDENT_HYPEREDGE_REVIEW.md give an arbitrary-floor star rule, an exact root-slot criterion and pair-protected hyperedge cloning. A symbolic floor-three construction proves that unguarded repeated cloning can spend more than one unit. This is a method failure, not a connectivity/native barrier; general higher-floor connectivity remains OPEN.
+- First complete campaign: GitHub run `37059520424`, scientific/workflow SHA `0ba1284ade581267997882de2d4c723f2b9ee3a4`. All eight complete-domain shards and the inherited v16.53 stack passed.
+- Independent aggregation: run `37063427057`. Complete identity coverage, prescribed mechanism diagnostics, original artifact hashes and full inherited-package verification passed.
+- Final certification still requires fresh deterministic reproduction, durable evidence, whole-branch review and replay at the actual merge SHA.
 
-Latest: CONTRACTION_CLONE_GUARD.md and INDEPENDENT_CONTRACTION_REVIEW.md derive the exact cloned hitting number and a necessary-and-sufficient endpoint safety guard without requiring native pair roots. A floor-three family reaches unprotected exact endpoints from the protected component. Universal higher-floor accessibility remains OPEN.
+Use [EXECUTION_LEDGER.md](EXECUTION_LEDGER.md) and [INDEPENDENT_IMPLEMENTATION_REVIEW.md](INDEPENDENT_IMPLEMENTATION_REVIEW.md) for the execution and review record. Frozen analytical documents and `protocol.json` retain their original historical status text; this page reports the subsequent implementation phase without changing those preregistered bytes.
 
-Latest: HYPEREDGE_STAR_RELOCATION.md and INDEPENDENT_RELOCATION_REVIEW.md prove finite balancing connectivity for complete uniform hyperedge modules using star relocations. They also prove guarded completed clones are insufficient even for a pair connected by one-unit native moves. Arbitrary higher-floor endpoint accessibility remains OPEN.
+## Proof entry points
 
-Latest: MODULE_CAPACITY_OBSTRUCTION.md and INDEPENDENT_MODULE_CAPACITY_REVIEW.md prove that complete-module exact-target forms need not fit the fixed root-slot budget, even for exact higher-floor endpoints with positive capacity slack and with unused labels allowed. Universal routing to that class is impossible; general higher-floor connectivity remains OPEN. This is a normal-form obstruction, not a native barrier.
+- [General parent connectivity](GENERAL_PARENT_CONNECTIVITY.md): maximum-layer replacement, complementary-block criterion and arbitrary-arity target-three connectivity.
+- [Exact endpoint capacity](EXACT_ENDPOINT_CAPACITY.md): the stronger endpoint conditions.
+- [Module capacity obstruction](MODULE_CAPACITY_OBSTRUCTION.md): a characterized limit of the module method.
+- [Finite-support reduction](FINITE_SUPPORT_REDUCTION.md): reusable finite support for a prescribed finite path.
+- [Native admissibility](NATIVE_ADMISSIBILITY.md): the fixed carrier and move rules.
 
-Latest: four independently reviewed analytical proofs connect cyclic endpoints, give a uniform-floor two-guard slot bound, prove arbitrary-floor connectivity when k>=sum floors, and reduce possible fixed-h,q obstructions to a finite region. See ANALYTICAL_HANDOFF.md for exact claims and remaining obligations. PROSPECTIVE_VALIDATION_PLAN.md is proposed for user review; no implementation or numerical campaign is authorized by its publication.
+This work extends v16.54. It does not open v16.55.

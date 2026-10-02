@@ -56,7 +56,7 @@ def check_required_diagnostics(diagnostics):
     return ['missing mechanism witness: '+name for name in sorted(REQUIRED) if type(diagnostics.get(name)) is not int or diagnostics[name]<=0]
 
 def compare_reproduction(primary,reproduction):
-    return [] if primary and primary==reproduction else ['deterministic scientific membership or bytes differ']
+    return [] if isinstance(primary,dict) and isinstance(reproduction,dict) and primary and primary==reproduction else ['deterministic scientific membership or bytes differ']
 
 def check_run_binding(metadata,run,attempt,head):
     expected={'head_sha':head,'status':'completed','conclusion':'success','run_attempt':attempt,

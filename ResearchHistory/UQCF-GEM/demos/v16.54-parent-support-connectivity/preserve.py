@@ -14,6 +14,10 @@ def validated_campaign(aggregate,status,metadata,provenance):
 
 def prepare(request,out):
     if os.environ.get('GITHUB_ACTIONS')!='true':raise RuntimeError('GitHub-only evidence packaging')
+    reference=None
+    if 'compare_to' in request:
+        reference=request['compare_to']
+        if not isinstance(reference,dict) or set(reference)!={'run','attempt'} or any(type(reference[k]) is not int or reference[k]<=0 for k in reference):raise ValueError('invalid reproduction reference')
     resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
     out=Path(out);out.mkdir(parents=True,exist_ok=False)
     run=request['aggregate_run'];attempt=request['aggregate_attempt'];head=request['aggregate_head']
@@ -36,9 +40,7 @@ def prepare(request,out):
     if provenance['publication_sha256']!=hashlib.sha256(source).hexdigest():raise ValueError('aggregate publication source mismatch')
     campaign,campaign_attempt,scientific=validated_campaign(aggregate,status,json.loads((folder/'RUN.json').read_text()),provenance)
     comparison=None
-    if request.get('compare_to') is not None:
-        reference=request['compare_to']
-        if not isinstance(reference,dict) or set(reference)!={'run','attempt'} or any(type(reference[k]) is not int or reference[k]<=0 for k in reference):raise ValueError('invalid reproduction reference')
+    if reference is not None:
         path=BASE+f"evidence/validated/run-{reference['run']}-attempt-{reference['attempt']}/SCIENTIFIC_MANIFEST.json"
         recorded=subprocess.check_output(['git','show','HEAD:'+path])
         current=(folder/'SCIENTIFIC_MANIFEST.json').read_bytes()
