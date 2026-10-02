@@ -1,0 +1,77 @@
+{
+  "artifact": 11197889478,
+  "digest": "sha256:970ceed5524eff6eaf789eba93e6497250e382ad34d15e90301e8385c5d9f590",
+  "head": "37225ea9712ba79e014735e59f9fd11d4f750ebc",
+  "result": {
+    "errors": 0,
+    "failures": 10,
+    "head": "37225ea9712ba79e014735e59f9fd11d4f750ebc",
+    "phase": {
+      "failures": 10,
+      "modules": [
+        "test_bootstrap",
+        "test_gate",
+        "test_mechanisms",
+        "test_feasibility",
+        "test_lifting",
+        "test_integration",
+        "test_campaign",
+        "test_integrity"
+      ],
+      "name": "integration_green_campaign_red",
+      "signatures": [
+        "CAMPAIGN_IMPLEMENTATION_MISSING",
+        "ASSERTION_BINDING_MISSING"
+      ]
+    },
+    "prior_archive_hashes": {
+      "BOOTSTRAP_RED.zip.b64": "bf2c93299311deb6ebd2197f1518dc5825455080ef096d07c97f251c3b8399ba",
+      "INTEGRATION_RED.zip.b64": "08d6ced6303793b7d21094b0ab7b05238dcbb010cd849bb76ceb173c0d7fda7a",
+      "MECHANISMS_RED.zip.b64": "35e7b4d47f78a4470807a7bdbeae359839214aacac9b347d6903dd14a8cafd2c",
+      "PREIMPLEMENTATION_RED.zip.b64": "a5977ce8d42612dcee030ea06c42ac403cb93d187d84213b674cd0ff56d1e39a"
+    },
+    "run": "36937909415",
+    "source": {
+      "BOOTSTRAP_RECEIPT.json": "9e6d5f101917367179cbc961c12db02a78b72e5ca62334de16d3f86d1e196d4b",
+      "BOOTSTRAP_RED.log": "cfe4529872b8c62d32fe32df95b692bc33fe543f180acb4ca8c855cf2f69a313",
+      "DEV_PHASE.json": "a4fb9d600116c83e76ca88ac79c84d833ca284ebbdeb0c7547077f0074305d5e",
+      "DOCUMENT_MANIFEST.json": "4b26a30b21afa5e631f1bdfc15b88505a1c8a525b00921af6d74d8beafc56e09",
+      "EXECUTION_PLAN.md": "8b7e03eb6515795da028280a2df5e2de9210c584e8c0e465b7f81e41c8adc921",
+      "FOUR_CHILD_INTERFACE.md": "a42d22c25568475f8e9373c6288646b1b68abdc90ecc657a517a0375990f8872",
+      "INDEPENDENT_PROOF_REVIEW.md": "daba98abe0d437adf2f7901a9686f79bbb508305301d3fa4f3d5ae0a43da69fb",
+      "INTEGRATION_RED.log": "cb4c4220c69f73faba5f1771daee189e12f9710a4ab780108a664c060d340059",
+      "INTEGRATION_RED_RECEIPT.json": "9285a4a93a7121491db51d2ffdead8aba82794fd9eda1c9dd0246662a92e5b2e",
+      "MECHANISMS_RED.log": "4a7331fc2f691e742db4418624ef3da6e2fc1b1952149920815d2c922ce1841d",
+      "MECHANISMS_RED_RECEIPT.json": "c27f48af4cb6bfd4023332a605b9eedadd32ea235b90870b0db204d3ce732b33",
+      "NATIVE_ADMISSIBILITY.md": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "NEXT_VALIDATION_GATE.md": "b296a97d91a3e3dd178e2c293431d4e3e585d1af2b8304a1345cac57c5a35bbd",
+      "PREIMPLEMENTATION_RED.log": "eacc1928f561531c12f755eb2e1b918f282d5b70f20776f4ff5262dfd1342774",
+      "PREIMPLEMENTATION_RED_RECEIPT.json": "adc8e2b4e6f5e897fbe97c402848bf67d729e0aabee5187f4d46af890b2f0c11",
+      "PROGRESS.md": "1421541d6c51178d635a042958c41c298b907165b882132ca962aa5c39d89c1d",
+      "README.md": "0eef3c737339262af8e2a2933a2679cb11afeef688b3cde245fcfed315cdbe1c",
+      "SCOPE.md": "c13dd50e6b32a03c04670ab4efbdebbd8cec0f8cd958ebd92e425b233f0854a1",
+      "TEST_MANIFEST_BOOTSTRAP.json": "0617b21fa92cdf1ac00d31c18e0304e317f713e4c9a141c2e2d1452c4b9ac965",
+      "TEST_MANIFEST_CAMPAIGN_RED.json": "54835a6cd516616564c4d70a58e7da9f7f1444cb487a894634b0a96555d4af25",
+      "TEST_MANIFEST_INTEGRATION_RED.json": "5d1cf0fed9912c3e9244835e75cbdb68b0a74cdf34eb4acba0bb95e87eff091e",
+      "TEST_MANIFEST_MECHANISMS_RED.json": "f108c773cacde4f17a8688d6d33e92bb3fd9170cf0610757231d5823bf018ef0",
+      "TEST_MANIFEST_RED.json": "3c9c601c8b88c5a388f4ae6d0577104961311eb5c5f005d6ec30313addae6a6d",
+      "VALIDATION_PROTOCOL.md": "fdb2d159a331efcf2762ead0c2638ac49f148aa3145968a53d911a933156c708",
+      "cover.py": "f670588f01946b0d7ed8b00ada88a3f490c929128187b8ecd6f6ae712d3f8d81",
+      "coverage.py": "fc3b98a3ca9d2932bc08597bc200ad2aa2f0aea15da2a4f247683342f4827068",
+      "development.py": "79e55932a92dbc72796f8396a6a8ed765d6b68a4ed1cea6e179cce651df449bd",
+      "feasibility.py": "18c4757d7c01e610966f6f38babf1c555efd3d8b0579e655092d1eb9ad5fe015",
+      "producer.py": "61d46a9bfa50aba62543ab8ee0a54b80cc6ca0645b5c28bc09ad4eadd5ed95ea",
+      "test_bootstrap.py": "dbb40a9d5780c5d84ea68d97cb3824a1caab0c99360f61b7ad221c4e23aa50fe",
+      "test_campaign.py": "fb23d0224fd136ed70c9f7411e9c17a8f9bf87e71c5da7c7f7ccff6b72fb359f",
+      "test_feasibility.py": "2e7512555e22f370e8d820429a2d93c6fd5cd015ffc9d98fd8c7420f688be66e",
+      "test_gate.py": "71ca9dda0faabb39f594f9445197a0ff412bc6dd6e9311b57185a89edb3c85db",
+      "test_integration.py": "1a289a1c5e108561f92dc33ea1a289eae7a67e405580449a6469a533aa1be33c",
+      "test_integrity.py": "a8e188a8247cc76ee1bdee3552a2981279a20466a7cafe102068467e0a04f60c",
+      "test_lifting.py": "0449387073da062d557a405bad7dfac0fb433e50f50577ba2362a0c91bd855be",
+      "test_mechanisms.py": "99d7dc55dec327fa8eba2bfb6cda64d6899f2e0bb553e58ca09c1634db02e672",
+      "test_red.py": "5d86912bf8a65b9444be0e428a998ed60fbb5318c0821245422af857df2ca235",
+      "verifier.py": "846cf7d286d48634ed869aef9ca94631b5c1ae54d62a6e5412e07add2be4e54a"
+    }
+  },
+  "run": 36937909415
+}

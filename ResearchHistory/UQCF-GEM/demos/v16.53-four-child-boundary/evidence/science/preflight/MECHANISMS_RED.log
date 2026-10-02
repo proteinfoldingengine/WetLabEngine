@@ -1,0 +1,41 @@
+test_real_control_verifier (__main__.Bootstrap.test_real_control_verifier) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+OK
+test_complete_control (__main__.VerifierGate.test_complete_control) ... ok
+test_duplicate_rejected (__main__.VerifierGate.test_duplicate_rejected) ... ok
+test_omission_rejected (__main__.VerifierGate.test_omission_rejected) ... ok
+test_stacked_defect_rejected (__main__.VerifierGate.test_stacked_defect_rejected) ... ok
+test_substitution_rejected (__main__.VerifierGate.test_substitution_rejected) ... ok
+test_wrong_profile_rejected (__main__.VerifierGate.test_wrong_profile_rejected) ... ok
+test_wrong_start_rejected (__main__.VerifierGate.test_wrong_start_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+test_clearance_root_full_exact (__main__.Mechanisms.test_clearance_root_full_exact) ... FAIL
+test_cover_spare_current_bin (__main__.Mechanisms.test_cover_spare_current_bin) ... FAIL
+
+======================================================================
+FAIL: test_clearance_root_full_exact (__main__.Mechanisms.test_clearance_root_full_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_mechanisms.py", line 8, in test_clearance_root_full_exact
+    self.assertIsNotNone(spec,'CLEARANCE_IMPLEMENTATION_MISSING')
+AssertionError: unexpectedly None : CLEARANCE_IMPLEMENTATION_MISSING
+
+======================================================================
+FAIL: test_cover_spare_current_bin (__main__.Mechanisms.test_cover_spare_current_bin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_mechanisms.py", line 25, in test_cover_spare_current_bin
+    self.assertIsNotNone(spec,'COVER_IMPLEMENTATION_MISSING')
+AssertionError: unexpectedly None : COVER_IMPLEMENTATION_MISSING
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

@@ -1,0 +1,232 @@
+{
+  "count": 43,
+  "format": "python311-ast-without-empty-type-params-v1",
+  "sources": {
+    "test_bootstrap": "dbb40a9d5780c5d84ea68d97cb3824a1caab0c99360f61b7ad221c4e23aa50fe",
+    "test_campaign": "371baba3667901f042b3399a7e16c2a284fca25377536cbd0efc4dfa46f762c3",
+    "test_feasibility": "2e7512555e22f370e8d820429a2d93c6fd5cd015ffc9d98fd8c7420f688be66e",
+    "test_gate": "71ca9dda0faabb39f594f9445197a0ff412bc6dd6e9311b57185a89edb3c85db",
+    "test_integration": "9405686ea44d653ad186734e1727a9f6e90cf993fc76c0cbad2122d95ebc6730",
+    "test_integrity": "03918036083f519d0f1c972729c89724cc63e18ad1b29fc5bb5d2b2c8ca79f7d",
+    "test_lifting": "0449387073da062d557a405bad7dfac0fb433e50f50577ba2362a0c91bd855be",
+    "test_mechanisms": "99d7dc55dec327fa8eba2bfb6cda64d6899f2e0bb553e58ca09c1634db02e672",
+    "test_review": "4c09b662f75ad185bd5bd3c6a11a93dde8661cc766c08b74290c3bd5b7e565ab"
+  },
+  "tests": [
+    {
+      "ast_sha256": "bc055652d6938fdd5acb6060d776fa7c6d5ff5d076fdae2a570d9766dacd4891",
+      "expected": "PASS",
+      "identity": "test_bootstrap.Bootstrap.test_real_control_verifier"
+    },
+    {
+      "ast_sha256": "3509abb96dc8a8c203f13c0c2a0da9fa70645aba1c45432f83191c26938a2841",
+      "expected": "PASS",
+      "identity": "test_gate.VerifierGate.test_complete_control"
+    },
+    {
+      "ast_sha256": "0fadbd6847290a9cb91d9b3974c27db67e2e87e98608c96f7210e019e2c23597",
+      "expected": "PASS",
+      "identity": "test_gate.VerifierGate.test_omission_rejected"
+    },
+    {
+      "ast_sha256": "f5225b66be70fee10a41dc0869bd62457fb0bb6b3c9b0a97a21eeba485503421",
+      "expected": "PASS",
+      "identity": "test_gate.VerifierGate.test_duplicate_rejected"
+    },
+    {
+      "ast_sha256": "85f47508c089ca8b449854cc6569e215d1cec2b190359bc85b4bd34ae759084f",
+      "expected": "PASS",
+      "identity": "test_gate.VerifierGate.test_substitution_rejected"
+    },
+    {
+      "ast_sha256": "dea4b42e8c8ea48b10a598596f5121aae219618b4aaa17167161bbb6be086cff",
+      "expected": "PASS",
+      "identity": "test_gate.VerifierGate.test_wrong_profile_rejected"
+    },
+    {
+      "ast_sha256": "5f5e821c4b76ab09553c03d70e2a66a39a4cae2bdcd0ec3b8d3b22ea53675a80",
+      "expected": "PASS",
+      "identity": "test_gate.VerifierGate.test_wrong_start_rejected"
+    },
+    {
+      "ast_sha256": "ed77401070a3b1a59450edda42217c4e43661936f4f3c2f6991e4aca044d6e3c",
+      "expected": "PASS",
+      "identity": "test_gate.VerifierGate.test_stacked_defect_rejected"
+    },
+    {
+      "ast_sha256": "9c077ce5c747efcdff8132d53c73fddc1800e83e4cbcb0cc0fd1c90f95d7a7ec",
+      "expected": "PASS",
+      "identity": "test_mechanisms.Mechanisms.test_clearance_root_full_exact"
+    },
+    {
+      "ast_sha256": "000f7deca618d3fda1eefa53a7200c9ef80104a139a0d0bcd888b7e16808472f",
+      "expected": "PASS",
+      "identity": "test_mechanisms.Mechanisms.test_cover_spare_current_bin"
+    },
+    {
+      "ast_sha256": "adb3898ae33f6ed39fce5e338a90272004cc541f725407dacd5f2fae3659dc7e",
+      "expected": "PASS",
+      "identity": "test_feasibility.Feasibility.test_all_frozen_feasibility_rows"
+    },
+    {
+      "ast_sha256": "1d14c58b9752df9b544ac33de1f48d1f1180228d76c8a1ad4bdc32c5a2b7a0eb",
+      "expected": "PASS",
+      "identity": "test_feasibility.Feasibility.test_disjoint_minimum_beyond_frozen_palette"
+    },
+    {
+      "ast_sha256": "dc9946f57f73aa3e234d5edac8c500234cad4cb00b76c5a27de20d784247b642",
+      "expected": "PASS",
+      "identity": "test_lifting.Lifting.test_zero_capacity_child"
+    },
+    {
+      "ast_sha256": "fa68d6fa057da3a8475051f8f99cb0607e2c99684d86ded0efb179dc4e70a19b",
+      "expected": "PASS",
+      "identity": "test_lifting.Lifting.test_root_full_lift_and_leaf"
+    },
+    {
+      "ast_sha256": "d4fb87abf58c6080e40fe8b1612a89748f21140c07435aa992969ce739f458ca",
+      "expected": "PASS",
+      "identity": "test_lifting.Lifting.test_deletion_at_minimum_rejected"
+    },
+    {
+      "ast_sha256": "920e92bca4e41d1e7f8cda77247aaee58f718e364b430872158c1ebed070a5ab",
+      "expected": "PASS",
+      "identity": "test_lifting.Lifting.test_invalid_root_step_rejected"
+    },
+    {
+      "ast_sha256": "332dd277a6cb89f44d8003eba0e6f88700e23173d1acb78622e603f4d7924577",
+      "expected": "PASS",
+      "identity": "test_lifting.Lifting.test_destination_properly_occupied_rejected"
+    },
+    {
+      "ast_sha256": "47c12fa1fd49156528d0f3c81bab9120a9c68e4dd2bea322c8a36a3d347f6c93",
+      "expected": "PASS",
+      "identity": "test_lifting.Lifting.test_partial_clearance_retained"
+    },
+    {
+      "ast_sha256": "5c263dfe0e9e5ab4b932641da6521b77094d8cf1cc348c231e050ce0189b8728",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_q2_expand_contract_guard"
+    },
+    {
+      "ast_sha256": "bea8aee8a5844bff027548e942641408e7c188937819e918010884ce238ef1ac",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_q3_cover_guard"
+    },
+    {
+      "ast_sha256": "0e064dc73194f61814a0514e8684c644f4bd4b169af61f192524dba6fe4346c9",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_q4_disjoint_exchange"
+    },
+    {
+      "ast_sha256": "d54977042f820310980a2f2c180b47f6407007182e2ba711895d0fab5c2d85bb",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_four_child_under_binary_parent"
+    },
+    {
+      "ast_sha256": "a5d906a592b5cc5906dc8142e501d33cfa4be5ecc7a0456c26bd84fad1e8ea50",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_repeated_four_child"
+    },
+    {
+      "ast_sha256": "04478f96f48946abbcf813b90ccd631b900dd10634906e5aebfed6808a1791f3",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_recursive_call_requires_exact_parent"
+    },
+    {
+      "ast_sha256": "f28f6e016518669b41bbc169c992d413aaf1914ceb61c778d2308d2f237594f9",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_recursive_boundary_one_unit"
+    },
+    {
+      "ast_sha256": "3f37a579de800e28c7b38212c57a1a8f31b17c37c7534862d01673428339e025",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_stacked_defect_rejected"
+    },
+    {
+      "ast_sha256": "ae4271f477da659a9c22ac57902ceb1c70244f935bfccc34c6fc7cf5857243ee",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_canonical_endpoint"
+    },
+    {
+      "ast_sha256": "304c30bc90a97557446fc42892b392884ee3b669de78e8a15e5a64e8d96c1799",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_compact_contraction"
+    },
+    {
+      "ast_sha256": "8e196c8aecd434cc8d4f0ee5d625cc5620f8531a31612542576cffdbd40f88ac",
+      "expected": "PASS",
+      "identity": "test_integration.Integration.test_transported_order_equivariance"
+    },
+    {
+      "ast_sha256": "7df7522ea895bd3d35bc42642037d4208104efa97c31133c0e3e7130f1ac57ad",
+      "expected": "PASS",
+      "identity": "test_campaign.Campaign.test_complete_frozen_campaign"
+    },
+    {
+      "ast_sha256": "dfc34cd5f1bd37750af40f8b75a9df311d3816f8cbfed7904845a211c7f13eba",
+      "expected": "PASS",
+      "identity": "test_campaign.Campaign.test_campaign_omission_rejected"
+    },
+    {
+      "ast_sha256": "3b9985623e76765d895877cd57be552a4e7a59d8d2ebff44b0ef2405cbcdcc2c",
+      "expected": "PASS",
+      "identity": "test_campaign.Campaign.test_infeasible_not_construction_failure"
+    },
+    {
+      "ast_sha256": "dbce3cce5d490a673ed5bbd04776c7ef5af85bd6239411d2112b35cd3721112b",
+      "expected": "PASS",
+      "identity": "test_campaign.Campaign.test_native_unsafe_q2_rejected_as_unit"
+    },
+    {
+      "ast_sha256": "f4f346b3252fd517b8453c1335a86a11290a58578ce33f621dad45278b60fc64",
+      "expected": "PASS",
+      "identity": "test_campaign.Campaign.test_native_unsafe_q3_rejected_as_unit"
+    },
+    {
+      "ast_sha256": "553b1398c8ea44430d1fd398def4ad97cf2f96ff40a75d0bf9d16784615b99ed",
+      "expected": "PASS",
+      "identity": "test_campaign.Campaign.test_resource_failure_incomplete"
+    },
+    {
+      "ast_sha256": "7f9aa1f5c21e1d8593dcebd727dd3d0677e1f6ecfb4117f05fa94e46bd9f8486",
+      "expected": "PASS",
+      "identity": "test_campaign.Campaign.test_construction_failure_scoped"
+    },
+    {
+      "ast_sha256": "59540adaf90242f4478f59ab9ca44b7c74cf752f2f7d7100969b5dd762c37e5f",
+      "expected": "PASS",
+      "identity": "test_integrity.AssertionBindings.test_assertion_hash_mutation"
+    },
+    {
+      "ast_sha256": "8353f63d2199689a781d3fa0651499fd5f172d509f1cb90495ec35da7a4846b6",
+      "expected": "PASS",
+      "identity": "test_integrity.AssertionBindings.test_assertion_source_mutation"
+    },
+    {
+      "ast_sha256": "38079ba6b180184ab0a1d8b33449d30557d40ac9f849b76c77c63f55f71ce167",
+      "expected": "PASS",
+      "identity": "test_integrity.AssertionBindings.test_assertion_identity_omission"
+    },
+    {
+      "ast_sha256": "10b22047e4b3e5107d44f2ad1fb6a59a4848d9212f7a105ec324d9eaa02d7ced",
+      "expected": "PASS",
+      "identity": "test_integrity.AssertionBindings.test_checked_in_manifest_matches_pinned_runtime"
+    },
+    {
+      "ast_sha256": "8893e7e30f3efc68ba212e467cb413ebf3d6a839ca364adba9e7e96895eb41bb",
+      "expected": "PASS",
+      "identity": "test_review.ReviewFixes.test_one_unit_boundary_control_kills_permissive_guard"
+    },
+    {
+      "ast_sha256": "38405b3211d5ecf747164451368289790d582640cfd39b64ad5306570132bd2d",
+      "expected": "PASS",
+      "identity": "test_review.ReviewFixes.test_generated_bytecode_is_ignored"
+    },
+    {
+      "ast_sha256": "ee71abaeb325b47d668a03aa5317826b860aeb37717b151898b29770d740afe2",
+      "expected": "PASS",
+      "identity": "test_review.ReviewFixes.test_hidden_source_retained_in_development_artifact"
+    }
+  ]
+}

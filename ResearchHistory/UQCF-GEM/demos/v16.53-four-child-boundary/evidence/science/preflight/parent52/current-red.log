@@ -1,0 +1,23 @@
+test_full_verifier_omission_rejected (test_prospective_red.Prospective.test_full_verifier_omission_rejected) ... FAIL
+test_recursive_interface_present (test_prospective_red.Prospective.test_recursive_interface_present) ... FAIL
+
+======================================================================
+FAIL: test_full_verifier_omission_rejected (test_prospective_red.Prospective.test_full_verifier_omission_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_prospective_red.py", line 21, in test_full_verifier_omission_rejected
+    with self.assertRaises(ValueError,msg='FULL_VERIFIER_OMISSION_ACCEPTED'):v.verify(missing)
+AssertionError: ValueError not raised : FULL_VERIFIER_OMISSION_ACCEPTED
+
+======================================================================
+FAIL: test_recursive_interface_present (test_prospective_red.Prospective.test_recursive_interface_present)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/test_prospective_red.py", line 15, in test_recursive_interface_present
+    self.assertTrue(Path(__file__).with_name('producer.py').is_file(),'MISSING_RECURSIVE_TERNARY_INTERFACE')
+AssertionError: False is not true : MISSING_RECURSIVE_TERNARY_INTERFACE
+
+----------------------------------------------------------------------
+Ran 2 tests in 13.455s
+
+FAILED (failures=2)
