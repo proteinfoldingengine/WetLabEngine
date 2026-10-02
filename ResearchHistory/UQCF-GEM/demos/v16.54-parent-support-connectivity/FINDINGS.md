@@ -1,6 +1,6 @@
 # v16.54 findings — the general parent-support principle
 
-Status: independently accepted analytical results. No implementation or new numerical campaign has run. v16.54 is not CLOSED/CERTIFIED; the certified v16.53 predecessor remains unchanged.
+Current execution status (2026-10-02): the independently accepted analytical results now have an implemented M1–M9 mechanism suite. First full campaign37059520424 and aggregation37063427057 passed; all nine original campaign archives are durably published and their committed bytes independently read back and verified. Final campaign37069226242 at0a0037bc74399e04609e156d3bfd00736486bcbc passed83development controls and is running full domains. Fresh reproduction, final review and actual-merge replay remain pending. v16.54 is not yet CLOSED/CERTIFIED; universal higher-floor connectivity remains OPEN. Earlier phase-status statements below retain their historical meaning.
 
 ## The general result
 
@@ -147,3 +147,4 @@ With N=C(h+q-2,h), any uniform-floor counterexample at fixed h,q must have compa
 INDEPENDENT_CYCLIC_REVIEW.md, INDEPENDENT_GUARD_BUFFER_REVIEW.md and INDEPENDENT_FINITE_SUPPORT_REVIEW.md record independent verdicts, two resolved wording findings, final hash rechecks and executor rulings on all declined judgments.
 
 ANALYTICAL_HANDOFF.md states the remaining guard-exchange obligation and every pending scientific closure requirement. PROSPECTIVE_VALIDATION_PLAN.md proposes a bounded mechanism-driven campaign; it is not authorized or executed. No code, numerical campaign or workflow dispatch was introduced. PR102 remains draft and v16.54 is not CLOSED/CERTIFIED.
+

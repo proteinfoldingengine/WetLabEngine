@@ -8,7 +8,7 @@ The parent-support problem reduces to connectivity of capacity-bounded complemen
 
 Exact-q endpoints have additional structure: their complements cover every `(q-1)`-subset, leave at least one q-subset uncovered, and obey `sum_i(k-a_i) >= (q-1)k`. These are derived endpoint restrictions. They are not assumed to prove general pair- or higher-subset exchange connectivity.
 
-The accepted analytical work supplies constructive regimes and explicit limits: element-cover buffering, degree-two cycle exchanges, saturated configurations, guarded clone/contraction and relocation steps, palette slack, finite-support reduction, and native lifting. A failure of a particular module construction is recorded as such; it is not promoted to impossibility of every native one-unit path.
+The accepted floor-two theorem connects every feasible exact-q endpoint pair with all root floors equal to two, for arbitrary arity (q>=3; the elementary cases handle q=1,2). The accepted analytical work also supplies constructive regimes and explicit limits: element-cover buffering, degree-two cycle exchanges, saturated configurations, guarded clone/contraction and relocation steps, palette slack, finite-support reduction, and native lifting. A failure of a particular module construction is recorded as such; it is not promoted to impossibility of every native one-unit path.
 
 The universal higher-floor connectivity question remains **OPEN**.
 
