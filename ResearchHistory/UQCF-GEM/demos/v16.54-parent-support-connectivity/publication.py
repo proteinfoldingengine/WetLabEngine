@@ -58,6 +58,51 @@ def check_required_diagnostics(diagnostics):
 def compare_reproduction(primary,reproduction):
     return [] if primary and primary==reproduction else ['deterministic scientific membership or bytes differ']
 
+def check_run_binding(metadata,run,attempt,head):
+    expected={'head_sha':head,'status':'completed','conclusion':'success','run_attempt':attempt,
+              'id':run,'path':'.github/workflows/v16.54-mechanism-validation.yml'}
+    errors=['campaign metadata mismatch: '+key for key,value in expected.items() if metadata.get(key)!=value]
+    if metadata.get('event') not in ('push','workflow_dispatch'):errors.append('unapproved campaign event')
+    return errors
+
+def check_helper_binding(expected,actual):
+    return [] if expected and expected==actual else ['executing scientific helpers differ from target campaign']
+
+def execution_binding(head,out):
+    actual_head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+    provenance={'head':actual_head,'workflow_sha':os.environ['GITHUB_WORKFLOW_SHA'],
+                'trigger_sha':os.environ['GITHUB_SHA'],'run_id':os.environ['GITHUB_RUN_ID'],
+                'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'target_head':head,
+                'publication_sha256':digest_file(HERE/'publication.py')}
+    dump(out/'AGGREGATOR_PROVENANCE.json',provenance)
+    if provenance['workflow_sha']!=actual_head or provenance['trigger_sha']!=actual_head:raise ValueError('aggregator checkout/workflow mismatch')
+    if subprocess.check_output(['git','show',actual_head+':'+BASE+'publication.py'])!=(HERE/'publication.py').read_bytes():raise ValueError('aggregator source mismatch')
+    names=('campaign.py','verifier.py')
+    wanted={name:hashlib.sha256(subprocess.check_output(['git','show',head+':'+BASE+name])).hexdigest() for name in names}
+    actual={name:digest_file(HERE/name) for name in names}
+    if check_helper_binding(wanted,actual):raise ValueError('executing scientific helpers differ from target campaign')
+    dump(out/'EXECUTING_HELPERS.json',actual)
+
+def verify_inherited_package(folder,head):
+    recorded=json.loads((folder/'SOURCE_MANIFEST.json').read_text())
+    if not recorded:raise ValueError('empty inherited source inventory')
+    for name,digest in recorded.items():
+        path=PurePosixPath(name)
+        if path.is_absolute() or '..' in path.parts:raise ValueError('invalid inherited source path')
+        target=subprocess.check_output(['git','show',head+':'+name])
+        if hashlib.sha256(target).hexdigest()!=digest or Path(name).read_bytes()!=target:raise ValueError('inherited source differs from target Git or executing checkout')
+    inherited='ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary'
+    if any(inherited+'/'+name not in recorded for name in ('integrity.py','snapshot.py','bindings.py')) or 'tools/retained_ci/core.py' not in recorded:raise ValueError('unbound inherited verification helper')
+    # Separate import namespace; the unchanged verifier enforces source archive,
+    # exact 45 scientific files, 1193 controls and their frozen assertion identities.
+    command='import sys;sys.path.insert(0,sys.argv[1]);import integrity;integrity.verify_package(sys.argv[2])'
+    subprocess.run([sys.executable,'-c',command,inherited,str(folder.resolve())],check=True)
+
+def checkpoint(out,phase,**fields):
+    path=out/'STATUS.json';state=json.loads(path.read_text()) if path.exists() else {}
+    state.update(status='INCOMPLETE',phase=phase,**fields)
+    temporary=out/'STATUS.tmp';dump(temporary,state);temporary.replace(path)
+
 def api(path):
     request=urllib.request.Request('https://api.github.com/repos/'+REPO+'/'+path,headers={'Accept':'application/vnd.github+json','Authorization':'Bearer '+os.environ['GH_TOKEN'],'X-GitHub-Api-Version':'2022-11-28'})
     with urllib.request.urlopen(request) as r:return json.load(r)
@@ -142,12 +187,25 @@ def _diagnose(case,record):
     return out
 
 def aggregate(run,attempt,head,out):
+    if os.environ.get('GITHUB_ACTIONS')!='true':raise RuntimeError('scientific aggregation is GitHub-only')
+    out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    checkpoint(out,'initialization',run=run,attempt=attempt,scientific_sha=head,reason='aggregation not completed')
+    try:
+        resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
+        return _aggregate(run,attempt,head,out)
+    except BaseException as error:
+        phase=json.loads((out/'STATUS.json').read_text())['phase']
+        checkpoint(out,phase,reason=type(error).__name__+': '+str(error))
+        raise
+
+def _aggregate(run,attempt,head,out):
+    checkpoint(out,'execution_binding')
+    execution_binding(head,out)
     from campaign import validate_campaign_summary
     from verifier import reconstruct_cases
-    if os.environ.get('GITHUB_ACTIONS')!='true':raise RuntimeError('scientific aggregation is GitHub-only')
-    resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296));out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    checkpoint(out,'target_run_metadata')
     metadata=api('actions/runs/'+str(run)+'/attempts/'+str(attempt));dump(out/'RUN.json',metadata)
-    if metadata['head_sha']!=head or metadata['status']!='completed' or metadata['conclusion']!='success':raise ValueError('campaign attempt did not complete successfully at requested SHA')
+    if check_run_binding(metadata,run,attempt,head):raise ValueError('campaign attempt/source/workflow binding failed')
     inventory=[];page=1
     while True:
         response=api('actions/runs/'+str(run)+'/artifacts?per_page=100&page='+str(page));inventory+=response['artifacts']
@@ -155,6 +213,7 @@ def aggregate(run,attempt,head,out):
         page+=1
     dump(out/'ARTIFACTS.json',inventory);folders=[];freezes=[];manifests={};provenances=[]
     for i in range(8):
+        checkpoint(out,'shard_artifacts',shard=i)
         stem='v1654-domain-'+str(i)+'-'+head
         candidates=[a for a in inventory if a['name'] in (stem,stem+'-attempt-'+str(attempt))]
         if len(candidates)!=1:raise ValueError('missing or ambiguous original shard artifact')
@@ -175,6 +234,7 @@ def aggregate(run,attempt,head,out):
     protocol=json.loads(subprocess.check_output(['git','show',head+':'+BASE+'protocol.json'],text=True))
     expected=iter(reconstruct_cases(protocol));whole=hashlib.sha256();total=0;diagnostics=Counter();family_counts=Counter()
     for i,folder in enumerate(folders):
+        checkpoint(out,'independent_identity_stream',shard=i,checked=total)
         science=folder/'scientific';freeze=freezes[i];summary=json.loads((science/'SUMMARY.json').read_text());identities=hashlib.sha256();record_hash=hashlib.sha256();count=0;first=None;last=None
         for case,record in zip_longest(_records(science/'CASES.jsonl.gz'),_records(science/'RECORDS.jsonl.gz')):
             if case is None or record is None:raise ValueError('case/record multiplicity mismatch')
@@ -184,14 +244,17 @@ def aggregate(run,attempt,head,out):
             whole.update((serial(case)+'\n').encode());identities.update((serial(case['identity'])+'\n').encode());record_hash.update((serial(record)+'\n').encode());count+=1;total+=1;first=first or case['identity'];last=case['identity'];diagnostics.update(_diagnose(case,record));family_counts[case['identity'][0]]+=1
         if count!=freeze['stop']-freeze['start'] or count!=summary['checked'] or first!=freeze['first'] or last!=freeze['last'] or identities.hexdigest()!=freeze['identity_sha256'] or identities.hexdigest()!=summary['verified_identity_sha256'] or record_hash.hexdigest()!=summary['record_sha256']:raise ValueError('shard complete stream binding mismatch')
     if next(expected,None) is not None or total!=freezes[0]['total'] or whole.hexdigest()!=freezes[0]['whole_universe_sha256']:raise ValueError('aggregate omitted/substituted universe')
+    checkpoint(out,'mechanism_diagnostics',checked=total)
     errors=check_required_diagnostics(diagnostics)
     if errors:raise ValueError(errors)
+    checkpoint(out,'inherited_package')
     inherited_names=('v1654-inherited-'+head,'v1654-inherited-'+head+'-attempt-'+str(attempt));inherited=[a for a in inventory if a['name'] in inherited_names]
     if len(inherited)!=1:raise ValueError('complete inherited artifact unavailable')
     inherited_folder=download_artifact(inherited[0],out/'inherited.zip')
     inherited_manifest=json.loads((inherited_folder/'MANIFEST.json').read_text())
     inherited_actual={str(p.relative_to(inherited_folder)):digest_file(p) for p in inherited_folder.rglob('*') if p.is_file() and p!=inherited_folder/'MANIFEST.json'}
     if inherited_manifest!=inherited_actual:raise ValueError('inherited internal manifest mismatch')
+    verify_inherited_package(inherited_folder,head)
     metrics=json.loads((inherited_folder/'METRICS.json').read_text());meta=json.loads((inherited_folder/'METADATA.json').read_text())
     if metrics['inherited_tests']!=1150 or metrics['new_controls']!=43 or not metrics['all_commands_passed']:raise ValueError('inherited full-stack metrics')
     if meta['head']!=head or meta['workflow_sha']!=head or meta['trigger_sha']!=head or str(meta['run_id'])!=str(run) or int(meta['run_attempt'])!=attempt:raise ValueError('inherited provenance mismatch')
@@ -199,6 +262,8 @@ def aggregate(run,attempt,head,out):
         if p.is_file():manifests['inherited/'+str(p.relative_to(inherited_folder/'scientific'))]=digest_file(p)
     dump(out/'SCIENTIFIC_MANIFEST.json',manifests)
     dump(out/'AGGREGATE.json',{'status':'PASS','run':run,'attempt':attempt,'scientific_sha':head,'workflow_sha':head,'total':total,'family_counts':dict(family_counts),'diagnostics':dict(diagnostics),'universal_higher_floor':'OPEN','certification':'PENDING_REPRODUCTION_AND_ACTUAL_MERGE'})
+    final={'status':'PASS','phase':'complete','run':run,'attempt':attempt,'scientific_sha':head,'checked':total}
+    dump(out/'STATUS.tmp',final);(out/'STATUS.tmp').replace(out/'STATUS.json')
     return manifests
 
 if __name__=='__main__':aggregate(int(sys.argv[1]),int(sys.argv[2]),sys.argv[3],sys.argv[4])
