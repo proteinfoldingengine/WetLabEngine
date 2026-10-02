@@ -112,3 +112,22 @@ class Publication(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);source=root/'original.zip';source.write_bytes(b'corrupt')
             with self.assertRaises(ValueError):pack(source,root/'parts','a'*64,chunk_bytes=31)
+
+    def test_archive_destination_rejects_noninteger_run_before_writing(self):
+        import preserve
+        check=getattr(preserve,'validated_campaign',None)
+        self.assertIsNotNone(check,'campaign destination must be validated before writes')
+        good={'status':'PASS','run':19,'attempt':1,'scientific_sha':'a'*40,'workflow_sha':'a'*40}
+        status={**good};run={'id':19,'run_attempt':1,'head_sha':'a'*40,'status':'completed','conclusion':'success'}
+        self.assertEqual(check(good,status,run,{'target_head':'a'*40}),(19,1,'a'*40))
+        for key,value in [('run','../../escape'),('run',True),('attempt',0),('scientific_sha','not-a-sha')]:
+            with self.subTest(key=key,value=value),self.assertRaises(ValueError):check({**good,key:value},status,run,{'target_head':'a'*40})
+
+    def test_archive_campaign_cross_bindings_reject_substitution(self):
+        import preserve
+        check=getattr(preserve,'validated_campaign',None)
+        self.assertIsNotNone(check,'campaign identities must agree across retained records')
+        good={'status':'PASS','run':19,'attempt':1,'scientific_sha':'a'*40,'workflow_sha':'a'*40}
+        run={'id':19,'run_attempt':1,'head_sha':'a'*40,'status':'completed','conclusion':'success'}
+        for status,meta,prov in [({**good,'run':20},run,{'target_head':'a'*40}),(good,{**run,'run_attempt':2},{'target_head':'a'*40}),(good,run,{'target_head':'b'*40})]:
+            with self.assertRaises(ValueError):check(good,status,meta,prov)
