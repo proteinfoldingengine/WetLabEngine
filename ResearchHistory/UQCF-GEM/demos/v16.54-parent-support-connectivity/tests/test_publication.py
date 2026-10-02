@@ -79,3 +79,17 @@ class Publication(unittest.TestCase):
             self.assertEqual(result['status'],'INCOMPLETE')
             self.assertTrue(result['phase'])
             self.assertTrue(result['reason'])
+
+    def test_actual_merge_requires_two_parents(self):
+        check=getattr(publication,'check_merge_sources',None)
+        self.assertIsNotNone(check,'actual merge needs source verification')
+        source={'verifier.py':'a'*64,'protocol.json':'b'*64}
+        self.assertEqual(check(['a'*40,'b'*40],source,source),[])
+        self.assertTrue(check(['a'*40],source,source))
+
+    def test_actual_merge_rejects_changed_or_missing_science(self):
+        check=getattr(publication,'check_merge_sources',None)
+        self.assertIsNotNone(check,'actual merge needs source verification')
+        source={'verifier.py':'a'*64,'protocol.json':'b'*64}
+        self.assertTrue(check(['a'*40,'b'*40],source,{'verifier.py':'c'*64,'protocol.json':'b'*64}))
+        self.assertTrue(check(['a'*40,'b'*40],source,{'verifier.py':'a'*64}))
