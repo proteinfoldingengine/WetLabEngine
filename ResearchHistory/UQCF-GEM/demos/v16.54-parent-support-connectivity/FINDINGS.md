@@ -59,3 +59,13 @@ All exact-q endpoints possessing q pairwise-disjoint roots are connected with ta
 Such protected endpoints exist exactly when the sum of the q smallest floors is at most k. A symbolic family of m disjoint triangles (m>=2, r=k=3m, q=2m, all floors 2) has exact target q and positive slack but violates that condition: 4m>3m. It admits no protected state anywhere in the width-floor carrier. This is a precise obstruction to the protected-root method, not evidence of disconnection or a native barrier.
 
 The general positive-slack problem remains OPEN. When the floor condition holds, reaching the protected class from unprotected exact endpoints is unproved. When it fails, a different mechanism preserving overlapping witnesses or complementary subset covers is necessary. Deficient-label counts do not imply the protected-root condition. No numerical campaign or implementation was initiated.
+
+## Overlapping roots: the earlier obstruction family is connected
+
+OVERLAPPING_CLIQUE_EXCHANGE.md and INDEPENDENT_OVERLAP_REVIEW.md record the next accepted analytical result. Reviewed proof SHA256: 5515da06738778bccf0e46dc126aee358bf9c4c4446a5d8c34f07697672f6e14. The initial candidate at 9105f42b683546a039f09405234f1493dc2c65f4 received one grammatical correction; the reviewer verified the corrected hash and reaffirmed acceptance. No unresolved findings remain.
+
+General label transpositions and floor-compatible root permutations admit one-unit paths for arbitrary overlapping supports. These symmetry moves become a complete connectivity proof on the following extremal family: all floors 2, k=ms labels, r=m*s*(s-1)/2 roots, exact q=m(s-1)>=3, and s>=3. Compaction and an independent-set averaging equality force every compact exact endpoint to be m disjoint complete graphs on s labels. Safe symmetry exchanges connect all such forms, and reversing compaction handles every original exact endpoint.
+
+These carriers have positive slack and no q disjoint root witnesses, since 2q>k. Thus the earlier disjoint-triangle family (s=3) is now proved connected, as part of a uniform overlapping-root theorem. Its prior status as a protected-method obstruction remains correct; it is not a connectivity obstruction.
+
+The open problem is now exchanges between different overlap structures outside the extremal equality regime. The theorem does not assert arbitrary positive-slack connectivity. No numerical campaign, implementation or certification was initiated.

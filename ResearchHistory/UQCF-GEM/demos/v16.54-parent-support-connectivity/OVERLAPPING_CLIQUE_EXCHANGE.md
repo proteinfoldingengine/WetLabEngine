@@ -61,7 +61,7 @@ Suppose the graph contained an induced path u-v-w, so u,w are not adjacent. Choo
 
 There is therefore no induced three-vertex path. Each connected component is complete: a shortest path between nonadjacent vertices would begin with an induced three-vertex path. Regular degree s-1 then forces each component to contain exactly s vertices. There are exactly m components, each a complete graph on s vertices. Every pair edge occurs exactly once among the ordered roots.
 
-This classification is forced for every compact exact-q endpoint in the specified carrier. It is not an assumption about the input and not just a exhibited family. Conversely a union of m such cliques has minimum vertex cover m(s-1)=q, so exact endpoints exist.
+This classification is forced for every compact exact-q endpoint in the specified carrier. It is not an assumption about the input and not just an exhibited family. Conversely a union of m such cliques has minimum vertex cover m(s-1)=q, so exact endpoints exist.
 
 ## 6. Connecting all exact endpoints
 
