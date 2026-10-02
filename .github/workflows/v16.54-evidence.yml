@@ -1,0 +1,64 @@
+name: v16.54 durable original evidence
+on:
+  push:
+    branches: [research/v16.54-parent-support-connectivity]
+    paths: ['ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/EVIDENCE_REQUEST.json']
+permissions: {contents: write, actions: read}
+concurrency:
+  group: v1654-evidence-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  preserve:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - name: Verify request and preserve exact original archive bytes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json,os,re,subprocess,sys
+          from pathlib import Path
+          base='ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/'
+          request=json.loads(Path(base+'EVIDENCE_REQUEST.json').read_text())
+          assert set(request)=={'aggregate_run','aggregate_attempt','aggregate_head','source_parent'}
+          parent=request['source_parent'];head=os.environ['GITHUB_SHA']
+          assert re.fullmatch('[0-9a-f]{40}',parent)
+          assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==head==os.environ['GITHUB_WORKFLOW_SHA']
+          assert subprocess.check_output(['git','show','-s','--format=%P',head],text=True).strip()==parent
+          assert subprocess.check_output(['git','diff','--name-only',parent,head],text=True).splitlines()==[base+'EVIDENCE_REQUEST.json']
+          subprocess.run(['git','merge-base','--is-ancestor',request['aggregate_head'],parent],check=True)
+          subprocess.run([sys.executable,base+'preserve.py',base+'EVIDENCE_REQUEST.json','out/preserve'],check=True)
+          PY
+      - name: Commit only verified evidence to a fresh isolated evidence branch
+        run: |
+          python - <<'PY'
+          import json,os,re,subprocess
+          from pathlib import Path
+          run=os.environ['GITHUB_RUN_ID'];attempt=os.environ['GITHUB_RUN_ATTEMPT']
+          assert re.fullmatch('[0-9]+',run) and re.fullmatch('[0-9]+',attempt)
+          branch='research/v16.54-evidence-'+run+'-'+attempt
+          destination=Path('out/preserve/DESTINATION.txt').read_text().strip()
+          assert re.fullmatch(r'ResearchHistory/UQCF-GEM/demos/v16\.54-parent-support-connectivity/evidence/validated/run-[0-9]+-attempt-[0-9]+',destination)
+          subprocess.run(['git','checkout','-b',branch],check=True)
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          subprocess.run(['git','add','--',destination],check=True)
+          changed=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
+          assert changed and all(p.startswith(destination+'/') for p in changed)
+          subprocess.run(['git','commit','-m','evidence(v16.54): preserve verified original campaign archives'],check=True)
+          sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          # No force update; an existing ref causes rejection rather than replacement.
+          subprocess.run(['git','push','origin','HEAD:refs/heads/'+branch],check=True)
+          Path('out/preserve/receipt/PUBLISHED_COMMIT.json').write_text(json.dumps({'branch':branch,'commit':sha,'source_parent':os.environ['GITHUB_SHA'],'destination':destination,'files':len(changed)},sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1654-evidence-receipt-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: out/preserve/receipt
+          if-no-files-found: error

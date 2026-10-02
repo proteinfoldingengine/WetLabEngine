@@ -74,6 +74,28 @@ def check_merge_sources(parents,expected,actual):
     if not expected or expected!=actual:errors.append('actual merge scientific source differs from certified primary')
     return errors
 
+def archive_parts(source,destination,expected_digest,chunk_bytes=16*1024**2):
+    source=Path(source);destination=Path(destination)
+    if type(chunk_bytes) is not int or not 0<chunk_bytes<=16*1024**2:raise ValueError('invalid archive part size')
+    if digest_file(source)!=expected_digest:raise ValueError('original archive digest mismatch before publication')
+    destination.mkdir(parents=True,exist_ok=False);parts=[]
+    with source.open('rb') as stream:
+        while True:
+            data=stream.read(chunk_bytes)
+            if not data:break
+            name='original.zip.part'+str(len(parts)).zfill(4)
+            (destination/name).write_bytes(data)
+            parts.append({'name':name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
+    rebuilt=hashlib.sha256();length=0
+    for part in parts:
+        data=(destination/part['name']).read_bytes()
+        if len(data)!=part['bytes'] or hashlib.sha256(data).hexdigest()!=part['sha256']:raise ValueError('published part changed')
+        rebuilt.update(data);length+=len(data)
+    if rebuilt.hexdigest()!=expected_digest or length!=source.stat().st_size:raise ValueError('original archive reconstruction differs')
+    manifest={'archive_sha256':expected_digest,'archive_bytes':length,'parts':parts,'reconstruction':'Concatenate parts in listed order as original.zip; verify archive_sha256 before extracting.'}
+    dump(destination/'PARTS.json',manifest)
+    return manifest
+
 def bind_actual_merge(out):
     if os.environ.get('GITHUB_ACTIONS')!='true' or os.environ['GITHUB_REF']!='refs/heads/research/v16.34-fiber-component-invariant':raise ValueError('audit requires actual integration branch event')
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
@@ -88,7 +110,7 @@ def bind_actual_merge(out):
         # Mutable reporting prose is excluded; frozen proof/review bytes remain
         # enforced by protocol verification in every complete domain shard.
         result={BASE+name:digest for name,digest in _source_inventory(ref).items() if name.endswith('.py') or name=='protocol.json'}
-        for name in ('v16.54-mechanism-validation.yml','v16.54-publication.yml','v16.54-red.yml'):
+        for name in ('v16.54-mechanism-validation.yml','v16.54-publication.yml','v16.54-red.yml','v16.54-evidence.yml'):
             path='.github/workflows/'+name
             result[path]=hashlib.sha256(subprocess.check_output(['git','show',ref+':'+path])).hexdigest()
         return result
