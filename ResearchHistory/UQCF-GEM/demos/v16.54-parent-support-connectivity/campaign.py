@@ -94,7 +94,11 @@ def run_shard(scope,shard,out):
             dump(science/'DOMAIN_FREEZE.json',freeze)
             actual_hash=hashlib.sha256();counts=Counter();diagnostics=Counter();records=JsonGzip(science/'RECORDS.jsonl.gz')
             for payload, in db.execute('SELECT payload FROM universe WHERE n>=? AND n<? ORDER BY n',(start,stop)):
-                current=json.loads(payload);record=produce(current);errors=verify_record(current,record)
+                current=json.loads(payload);record=None
+                checkpoint=out/'CURRENT_ATTEMPT.json.tmp'
+                dump(checkpoint,{'case':current,'ordinal':start+summary['checked'],'phase':'production','scientific_sha':prov['scientific_sha']})
+                checkpoint.replace(out/'CURRENT_ATTEMPT.json')
+                record=produce(current);errors=verify_record(current,record)
                 if errors:
                     summary['failures']+=1;dump(out/'FIRST_FAILURE.json',{'case':current,'record':record,'errors':errors});raise ValueError('independent path rejection: '+str(errors))
                 records.write(record);actual_hash.update((serial(record['identity'])+'\n').encode());summary['checked']+=1;counts[current['identity'][0]+':'+record['status']]+=1

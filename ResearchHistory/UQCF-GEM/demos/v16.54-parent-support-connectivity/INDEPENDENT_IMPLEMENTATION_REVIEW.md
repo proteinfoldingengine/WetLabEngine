@@ -33,3 +33,7 @@ Integrated run 37058127774 passed 60 tests with zero failures, errors or skips. 
 ## Original evidence preservation
 
 Downloaded original GitHub ZIP archives are preserved as binary original.zip files next to receipts. Each receipt binds its GitHub artifact ID, original archive SHA256 and byte count, run/workflow/scientific SHAs and test outcomes. All archived source hashes were checked before staging publication. The historical Task 1 RED remains in its original base64 representation. No failed test run is deleted or recoded as passing evidence.
+
+## Initial campaign launch review
+
+The publication reviewer accepted independent universe matching, pre-path contiguous shard freezing, event-SHA provenance, and unchanged inherited phase guards. One Important issue was found: a producer exception could retain the previous identity's record in FIRST_FAILURE.json. Run 37059096994 reproduced that problem and missing attempt checkpoint: ten tests, two assertion failures, zero errors. The producer loop now resets its record and atomically publishes CURRENT_ATTEMPT.json before every production call. Fresh campaign development gating is mandatory before any path shard starts. Aggregate mechanism coverage, reproduction, publication and actual-merge closeout are still subsequent obligations.
