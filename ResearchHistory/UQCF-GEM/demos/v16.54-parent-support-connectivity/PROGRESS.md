@@ -78,3 +78,15 @@ Theorem Q connects all exact-q endpoints whenever every floor lies in {1,2}. Wit
 These structural reductions cover arbitrary feasible arity and target. The general remaining case involves floors at least 3 and fewer than q singleton-capable indices, outside earlier saturated/protected/low-target results. Hyperedge connectivity there remains OPEN. No implementation or numerical campaign ran.
 
 All earlier accepted proofs are unchanged. The independent reviewer checked the new proof hash and relevant dependency arguments, finding no Critical, Important or Minor defects. INDEPENDENT_SINGLETON_REVIEW.md records every declined item and executor ruling. The executor checks exact GitHub bytes, direct ancestry and documentation-only changes on the existing API-backed branch. No workflow dispatch or numerical execution occurred. PR102 stays draft and v16.54 is not CLOSED/CERTIFIED.
+
+## Higher-floor clone boundary: safe criterion and failed unguarded iteration
+
+HYPEREDGE_CLONE_BOUNDARY.md (0da7319bef2f58d6c43489c6a8cfb78aded9fbcc, SHA256 05bedf4d486c41c07191315866fed9ff8036f660c0f111614022dc17994bcd6f) is independently accepted by INDEPENDENT_HYPEREDGE_REVIEW.md with no findings.
+
+The arbitrary-floor star lemma permits replacement of roots containing one label while untouched roots protect tau>=q-1. To iterate, completed exchanges need a renewed tau>=q guard. A new theorem provides it for hyperedge clones protected by an EXISTING pair root, with an exact sorted floor/size matching test assigning copied supports to existing root slots. No root or palette label is added.
+
+The direct unguarded graph generalization fails. A symbolic four-root floor-three example has tau=3; a slot-compatible clone retaining a shared triple and equal clone-label degrees reduces tau to 2. Two disjoint copies give successive completed values 6,5,4, violating the target-6 lower bound. This refutes that iteration rule, not exact-endpoint connectivity: the prescribed final tuple is not exact-6.
+
+The graph proof's structural protection is now explicit: a pair root forbids an independent set from containing both clone labels. A larger shared hyperedge does not. General higher-floor connectivity still needs another completed-exchange invariant or a way to restore exactness before another unit is spent. No universal existence/termination theorem is inferred from the local rule, and no native barrier or numerical campaign is claimed.
+
+Earlier accepted proofs remain unchanged. Independent review found no Critical, Important or Minor findings and verified the exact proof hash. All declined-to-judge items have explicit rulings in INDEPENDENT_HYPEREDGE_REVIEW.md. The executor verifies publication bytes, direct branch ancestry and documentation-only changes. No scientific execution or workflow dispatch occurred. PR102 remains draft; v16.54 is not CLOSED/CERTIFIED.
