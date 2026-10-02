@@ -36,7 +36,7 @@ def main():
             dest.write_bytes(data)
             sources[str(rel)] = hashlib.sha256(data).hexdigest()
     (out / 'SOURCE_MANIFEST.json').write_text(json.dumps(sources, indent=2, sort_keys=True)+'\n')
-    suite = unittest.defaultTestLoader.discover(str(HERE / 'tests'), pattern='test_'+phase+'.py')
+    suite = unittest.defaultTestLoader.discover(str(HERE / 'tests'), pattern='test_*.py' if phase=='all' else 'test_'+phase+'.py')
     with (out / 'tests.log').open('w') as stream:
         result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
     print((out / 'tests.log').read_text())

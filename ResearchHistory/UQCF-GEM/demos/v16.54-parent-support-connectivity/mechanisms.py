@@ -46,7 +46,7 @@ def degree_two(c):
               for x,y in zip(sorted(row-target[i]),sorted(target[i]-row))])
     while pending:
         occupancy=lambda x:sum(x in row for row in route.last)
-        free=next((e for e in pending if occupancy(e[1])<2),None)
+        free=min((e for e in pending if occupancy(e[1])<2),default=None)
         if free is not None:
             x,y,i=free;start=len(route.vertices)-1;transfer(route,i,x,y);pending.remove(free)
             events.append(dict(kind='direct_vacancy',start=start,end=len(route.vertices)-1,row=i,source=x,target=y))
@@ -180,7 +180,7 @@ def balance_route(rows,p):
     canonical=group_parts(list(map(len,groups)))
     mapping={x:y for old,new in zip(groups,canonical) for x,y in zip(sorted(old),sorted(new))}
     route.rename(mapping)
-    edges=group_core(canonical,h,cyclic);desired=edges+[edges[0]]*(len(rows)-len(edges))
+    edges=group_core(canonical,h,cyclic);desired=sorted(edges+[edges[0]]*(len(rows)-len(edges)),key=lambda row:tuple(sorted(row)))
     reps={next(i for i,row in enumerate(route.last) if row==edge) for edge in edges}
     for i in range(len(rows)):
         if i not in reps:route.replace(i,edges[0])
@@ -194,13 +194,16 @@ def modules(c):
             'required_slots':math.comb(6,3),'claim':'method obstruction only'})
     if p['kind']=='relocate':
         groups=group_parts(p['sizes']);normalize_extras(route,groups,p['h'],p['form']=='cyclic',p['k'])
+        start=len(route.vertices)-1
         move=relocate(route,groups,*ch,p['h'],p['form']=='cyclic',p['k'])
+        move.update(start=start,end=len(route.vertices)-1)
         return result(c,route.vertices,{'relocation':move})
     left,records=balance_route(rows,p)
     facts={'balancing':records}
     if p['kind']=='module_pair':
         right,other=balance_route(ch['target'],dict(p,sizes=[4,4]))
         assert left[-1]==right[-1]
+        facts['left_path']=[plain(v) for v in left];facts['right_path']=[plain(v) for v in right]
         left+=list(reversed(right))[1:];facts['right_balancing']=other
     return result(c,left,facts)
 
@@ -227,7 +230,98 @@ def guards(c):
            'preliminary_path':[plain(v) for v in preliminary],'layers':layers}
     return result(c,clipped,facts)
 
-# Keep dispatch last so all constructors are explicit, with no fallback search.
+def splitting_route(rows,p):
+    route=Path(rows);splits=[]
+    while True:
+        active=set().union(*route.last)
+        choices=[(x,i,y) for x in sorted(active) if sum(x in row for row in route.last)>1
+                 for i,row in enumerate(route.last) if x in row
+                 for y in range(p['k']) if y not in active]
+        if not choices:break
+        x,i,y=choices[0];start=len(route.vertices)-1
+        route.toggle(i,y,True);route.toggle(i,x,False)
+        splits.append({'choice':[x,i,y],'start':start,'end':len(route.vertices)-1})
+    assert sum(map(len,route.last))==len(set().union(*route.last))
+    canonical=group_parts(p['a']);mapping={x:y for row,target in zip(route.last,canonical) for x,y in zip(sorted(row),sorted(target))}
+    route.rename(mapping)
+    return route.vertices,splits
+
+def splitting(c):
+    _,p,rows,ch=c['identity']
+    if p['k']<sum(p['a']):return result(c,[state(rows)],{'reason':'palette smaller than floor sum','required_labels':sum(p['a']),'available_labels':p['k']},status='REFUSED')
+    if p['kind']=='split_local':
+        x,i,y=ch;route=Path(rows);route.toggle(i,y,True);route.toggle(i,x,False)
+        return result(c,route.vertices,{'active_labels':[sorted(set().union(*v)) for v in route.vertices]})
+    target=[[p['k']-1-x for x in row] for row in rows]
+    left,first=splitting_route(rows,p);right,second=splitting_route(target,p)
+    assert left[-1]==right[-1]
+    preliminary=left+list(reversed(right))[1:]
+    final,layers=clip(preliminary,p['q'])
+    return result(c,final,{'preliminary_path':[plain(v) for v in preliminary],
+                         'left_path':[plain(v) for v in left],'right_path':[plain(v) for v in right],
+                         'left_splits':first,'right_splits':second,'layers':layers,
+                         'active_labels':[sorted(set().union(*v)) for v in final]})
+
+def finite_support(c):
+    _,p,rows,ch=c['identity'];original=Path(rows);used=set().union(*original.last);x=ch['label']
+    for y in range(len(used),len(used)+ch['length']):
+        owners=[i for i,row in enumerate(original.last) if x in row]
+        for i in owners:original.toggle(i,y,True)
+        for i in owners:original.toggle(i,x,False)
+        x=y
+    original.vertices+=list(reversed(original.vertices))[1:]
+    compact=Path(rows);selections=[];boundaries=[]
+    for vertex in original.vertices:
+        selected=tuple(frozenset(sorted(row)[:floor]) for row,floor in zip(vertex,p['a']))
+        selections.append(plain(selected))
+        for i,row in enumerate(selected):
+            for x,y in zip(sorted(compact.last[i]-row),sorted(row-compact.last[i])):
+                compact.toggle(i,y,True);compact.toggle(i,x,False)
+        boundaries.append(len(compact.vertices)-1)
+    reserve=[x for x in range(p['k']) if x not in used][:sum(p['a'])+1]
+    assignments={};mapped=[];maps=[]
+    for vertex in compact.vertices:
+        active=set().union(*vertex)
+        for x in sorted(active-used):
+            if x not in assignments:assignments[x]=next(y for y in reserve if y not in assignments.values())
+        # Keep existing images through the move, release only disappeared roles.
+        assignments={x:y for x,y in assignments.items() if x in active}
+        mapped.append(tuple(frozenset(x if x in used else assignments[x] for x in row) for row in vertex))
+        maps.append([[x,y] for x,y in sorted(assignments.items())])
+    final,layers=clip(mapped,p['q'])
+    return result(c,final,{'original_path':[plain(v) for v in original.vertices],
+        'selections':selections,'projection_boundaries':boundaries,'compact_path':[plain(v) for v in compact.vertices],
+        'mapped_path':[plain(v) for v in mapped],'assignments':maps,'reserve':reserve,'layers':layers})
+
+def native(c):
+    from inherited_binding import load_clearance
+    clear_role,binding=load_clearance()
+    family,p,rows,ch=c['identity'];parentcase={'identity':['M6',dict(p,kind='guards'),rows,ch]}
+    parent=guards(parentcase);rootpath=[state(v) for v in parent['path']]
+    h=p['h'];k=p['k'];nodes=[[]];targets={0:p['q']};supports=[frozenset(range(k))]
+    for row in rootpath[0]:
+        child=len(nodes);nodes[0].append(child);nodes.append([]);supports.append(row);targets[child]=h
+        for x in sorted(row)[:h]:nodes[child].append(len(nodes));nodes.append([]);supports.append(frozenset([x]))
+    current=[sum(1<<v for v,row in enumerate(supports) if x in row) for x in range(k)]
+    masks=[current[:]];trace=[];parent_boundaries=[0]
+    for before,after in zip(rootpath,rootpath[1:]):
+        i,x=next((i,x) for i,(a,b) in enumerate(zip(before,after)) for x in sorted(a^b));child=nodes[0][i];add=x in after[i]
+        if not add:
+            active={z for z in range(k) if any(current[z]&(1<<v) for v in nodes[child])}
+            if x in active:
+                y=min(before[i]-active);start=len(masks)-1
+                clear_role(current,nodes,child,x,y,masks)
+                trace.append({'child':child,'x':x,'y':y,'start':start,'end':len(masks)-1})
+        if add:current[x]|=1<<child
+        else:current[x]&=~(1<<child)
+        masks.append(current[:]);parent_boundaries.append(len(masks)-1)
+        if len(masks)>1000000:raise RuntimeError('INCOMPLETE: native vertex bound')
+    nested=[[[x for x in range(k) if masks_at[x]&(1<<v)] for v in range(len(nodes))] for masks_at in masks]
+    return result(c,rootpath,{'inherited_parent':'f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8','inherited_sha256':binding,
+                             'parent_record':parent,'clearance':trace,'parent_boundaries':parent_boundaries},
+                  nested_path=nested,nodes=nodes,targets={str(v):q for v,q in targets.items()})
+
+# Total dispatcher: no fallback search or automatically reduced domains.
 def produce(c):
     family,p,rows,ch=c['identity']
     if family=='M1':return packet_family(c)
@@ -236,4 +330,7 @@ def produce(c):
     if family=='M4':return clone_sequence(c)
     if family=='M5':return modules(c)
     if family=='M6':return guards(c)
-    return {'identity':c['identity'],'status':'UNIMPLEMENTED'}
+    if family=='M7':return splitting(c)
+    if family=='M8':return finite_support(c)
+    if family=='M9':return native(c)
+    raise ValueError('unknown protocol family')

@@ -332,11 +332,6 @@ def verify_protocol(protocol, directory):
         errors.append('resource specification changed')
     return errors
 
-def verify_record(case, record):
-    return []
-
-def verify_nested(path, nodes, targets, k):
-    return []
 
 # Certificate checks use direct subset search, never producer cover witnesses.
 def _states(raw):
@@ -435,6 +430,7 @@ def _verify_record(c,r):
         if kind=='neighbor':low=q-2;high=q-1
     if family=='M3' and kind=='classify':low=high=None
     if family=='M4':low=high=None
+    if family=='M7' and kind=='split_local':low=q;high=q+1
     e,values=_primitive(path,p,low,high,auxiliary);errors+=e
     if r.get('tau')!=values:errors.append('false tau')
     if family=='M1':
@@ -535,7 +531,7 @@ def _verify_record(c,r):
                 widths=list(map(len,groups))
                 if max(widths)-min(widths)>1:errors.append('incomplete balancing')
                 sizes=min(widths[j:]+widths[:j] for j in range(3)) if cyclic else sorted(widths)
-                edges=_independent_core(_groups(sizes),h,cyclic);wanted=edges+[edges[0]]*(len(roots)-len(edges))
+                edges=_independent_core(_groups(sizes),h,cyclic);wanted=sorted(edges+[edges[0]]*(len(roots)-len(edges)),key=lambda row:tuple(sorted(row)))
                 if last!=tuple(wanted):errors.append('canonical module/cycle endpoint')
     elif family=='M6':
         if first!=initial or last!=tuple(map(frozenset,ch['target'])):errors.append('guard final endpoints')
@@ -550,6 +546,8 @@ def _verify_record(c,r):
         if covering_number([preliminary[midpoint][i] for i in dest])!=q-1:errors.append('target guard not established')
         if any(tuple(v[i] for i in dest)!=tuple(target[i] for i in dest) for v in preliminary[midpoint:finished+1]):errors.append('target guard changed prematurely')
         if preliminary[finished]!=target:errors.append('guard permutation endpoint')
+    elif family in ('M7','M8','M9'):
+        errors+=_verify_extensions(c,r,path)
     else:errors.append('unsupported family')
     return errors
 
@@ -557,3 +555,270 @@ def verify_record(case,record):
     try:return _verify_record(case,record)
     except (KeyError,ValueError,TypeError,IndexError,AssertionError,StopIteration) as exc:
         return ['malformed or invalid certificate: '+type(exc).__name__+': '+str(exc)]
+
+def _toggle_state(rows,i,x,add):
+    answer=list(rows)
+    if (x in answer[i])==add:raise ValueError('redundant prescribed move')
+    answer[i]=answer[i]|{x} if add else answer[i]-{x}
+    return tuple(answer)
+
+def _verify_extensions(c,r,path):
+    family,p,roots,ch=c['identity'];initial=tuple(map(frozenset,roots));facts=r['facts'];q=p['q'];errors=[]
+    if path[0]!=initial:errors.append('extension initial endpoint')
+    if family=='M7':
+        if p['k']<sum(p['a']):errors.append('palette API must refuse')
+        active=[sorted(set().union(*v)) for v in path]
+        if facts.get('active_labels')!=active:errors.append('false active-label history')
+        if p['kind']=='split_local':
+            x,i,y=ch
+            if sum(x in row for row in initial)<2 or y in set().union(*initial):errors.append('invalid first split')
+            middle=_toggle_state(initial,i,y,True);end=_toggle_state(middle,i,x,False)
+            if path!=[initial,middle,end]:errors.append('first split trace')
+            return errors
+        target=tuple(frozenset(p['k']-1-x for x in row) for row in roots)
+        if path[-1]!=target:errors.append('palette endpoint labels changed')
+        left=_states(facts['left_path']);right=_states(facts['right_path']);preliminary=_states(facts['preliminary_path'])
+        if left[0]!=initial or right[0]!=target or left[-1]!=right[-1]:errors.append('canonical splitting endpoints')
+        if preliminary!=left+list(reversed(right))[1:]:errors.append('split route concatenation')
+        e,_=_primitive(preliminary,p,q-1,None);errors+=e
+        expected_canonical=tuple(map(frozenset,_groups(p['a'])))
+        if left[-1]!=expected_canonical:errors.append('splitting canonical intervals')
+        for leg,records in ((left,facts['left_splits']),(right,facts['right_splits'])):
+            cursor=0
+            for ev in records:
+                vertex=leg[cursor];used=set().union(*vertex)
+                candidates=[(x,i,y) for x in sorted(used) if sum(x in row for row in vertex)>1 for i,row in enumerate(vertex) if x in row for y in range(p['k']) if y not in used]
+                if not candidates:errors.append('unnecessary split');break
+                x,i,y=min(candidates)
+                middle=_toggle_state(vertex,i,y,True);end=_toggle_state(middle,i,x,False)
+                if ev!={'choice':[x,i,y],'start':cursor,'end':cursor+2} or leg[cursor:cursor+3]!=[vertex,middle,end]:errors.append('prescribed splitting trace')
+                cursor+=2
+            if sum(map(len,leg[cursor]))!=len(set().union(*leg[cursor])):errors.append('incomplete role splitting')
+    elif family=='M8':
+        if path[-1]!=initial:errors.append('support reduction endpoint identity')
+        original=_states(facts['original_path']);compact=_states(facts['compact_path']);mapped=_states(facts['mapped_path'])
+        expected=[initial];x=ch['label'];used=set().union(*initial)
+        for y in range(len(used),len(used)+ch['length']):
+            owners=[i for i,row in enumerate(expected[-1]) if x in row]
+            for i in owners:expected.append(_toggle_state(expected[-1],i,y,True))
+            for i in owners:expected.append(_toggle_state(expected[-1],i,x,False))
+            x=y
+        expected+=list(reversed(expected))[1:]
+        if original!=expected:errors.append('prescribed original rename loop')
+        projected=[initial];selected=[];boundaries=[]
+        for vertex in original:
+            small=tuple(frozenset(sorted(row)[:floor]) for row,floor in zip(vertex,p['a']));selected.append([sorted(row) for row in small])
+            for i,row in enumerate(small):
+                for x,y in zip(sorted(projected[-1][i]-row),sorted(row-projected[-1][i])):
+                    projected.append(_toggle_state(projected[-1],i,y,True));projected.append(_toggle_state(projected[-1],i,x,False))
+            boundaries.append(len(projected)-1)
+        if compact!=projected or facts['selections']!=selected or facts['projection_boundaries']!=boundaries:errors.append('compact projection trace')
+        reserve=[x for x in range(p['k']) if x not in used][:sum(p['a'])+1]
+        if facts['reserve']!=reserve or len(mapped)!=len(compact) or len(facts['assignments'])!=len(compact):errors.append('reserve dimensions')
+        images={}
+        for v,w,pairs in zip(compact,mapped,facts['assignments']):
+            active=set().union(*v)
+            for x in sorted(active-used):
+                if x not in images:images[x]=min(set(reserve)-set(images.values()))
+            images={x:y for x,y in images.items() if x in active}
+            if pairs!=[[x,y] for x,y in sorted(images.items())]:errors.append('reserve assignment/release mismatch')
+            expected=tuple(frozenset(x if x in used else images[x] for x in row) for row in v)
+            if w!=expected or len(set(images.values()))!=len(images):errors.append('noninjective support simulation')
+            if covering_number(v)!=covering_number(w):errors.append('simulation changed hitting number')
+        for trace in (original,compact,mapped):
+            e,_=_primitive(trace,p,q-1,None);errors+=e
+        if mapped[0]!=initial or mapped[-1]!=initial:errors.append('mapped endpoint identity')
+        allowed=used|set(reserve)
+        if any(not row<=allowed for vertex in path for row in vertex):errors.append('final path exceeds finite reserve')
+    elif family=='M9':
+        parentcase={'identity':['M6',dict(p,kind='guards'),roots,ch]}
+        parent=facts['parent_record'];errors+=verify_record(parentcase,parent)
+        if r['path']!=parent['path']:errors.append('native parent differs from M6 final path')
+        nodes=[[]];targets={0:q};initial_nested=[frozenset(range(p['k']))]
+        for row in initial:
+            child=len(nodes);nodes[0].append(child);nodes.append([]);initial_nested.append(row);targets[child]=p['h']
+            for x in sorted(row)[:p['h']]:nodes[child].append(len(nodes));nodes.append([]);initial_nested.append(frozenset([x]))
+        if r['nodes']!=nodes or r['targets']!={str(v):t for v,t in targets.items()}:errors.append('native fixture substitution')
+        nested=_states(r['nested_path']);errors+=verify_nested(r['nested_path'],nodes,targets,p['k'])
+        if nested[0]!=tuple(initial_nested):errors.append('native initial leaves')
+        boundaries=facts['parent_boundaries']
+        if len(boundaries)!=len(path) or boundaries[0]!=0 or boundaries[-1]!=len(nested)-1:errors.append('native parent boundaries')
+        for i,bound in enumerate(boundaries):
+            if tuple(nested[bound][v] for v in nodes[0])!=path[i]:errors.append('native parent projection')
+        # Independently check exact internal children at every lifted state.
+        for vertex in nested:
+            if any(covering_number([vertex[w] for w in nodes[v]])!=t for v,t in targets.items() if v):errors.append('child deviation during parent repair')
+        parent='f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8';base='ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/'
+        hashes={name:hashlib.sha256(subprocess.check_output(['git','show',parent+':'+base+name])).hexdigest() for name in ('producer.py','feasibility.py')}
+        if facts['inherited_parent']!=parent or facts['inherited_sha256']!=hashes:errors.append('inherited clearance binding')
+    return errors
+
+def verify_nested(raw,nodes,targets,k):
+    try:
+        path=_states(raw);errors=[];targets={int(v):q for v,q in targets.items()}
+        if len(path)>1000000:errors.append('native vertex resource bound')
+        parent={child:v for v,children in enumerate(nodes) for child in children}
+        if set(parent)!=set(range(1,len(nodes))) or sum(map(len,nodes))!=len(nodes)-1:return ['invalid native tree']
+        if set(targets)!={i for i,children in enumerate(nodes) if children}:return ['native target inventory']
+        for step,vertex in enumerate(path):
+            if len(vertex)!=len(nodes):return ['native vertex dimensions']
+            if vertex[0]!=frozenset(range(k)):errors.append('native fixed root changed')
+            if any(not row or not row<=set(range(k)) for row in vertex):errors.append('native nonempty palette')
+            if any(not vertex[v]<=vertex[parent[v]] for v in parent):errors.append('native nesting')
+            total=sum(abs(covering_number([vertex[c] for c in nodes[v]])-q) for v,q in targets.items())
+            if total>1:errors.append('global native deviation exceeds one')
+            if step:
+                changed=[i for i,(a,b) in enumerate(zip(path[step-1],vertex)) if a!=b]
+                if len(changed)!=1 or changed[0]==0 or len(path[step-1][changed[0]]^vertex[changed[0]])!=1:errors.append('native primitive violation')
+        return errors
+    except (ValueError,TypeError,KeyError,IndexError) as exc:return ['malformed native certificate: '+str(exc)]
+
+# Independent reconstruction of each maximum-layer transformation.
+def _bridge(a,b):
+    trace=[a]
+    for i,row in enumerate(b):
+        for x in sorted(row-trace[-1][i]):trace.append(_toggle_state(trace[-1],i,x,True))
+    for i,row in enumerate(b):
+        for x in sorted(trace[-1][i]-row):trace.append(_toggle_state(trace[-1],i,x,False))
+    return trace
+
+def _least_cover(rows):
+    active=sorted(set().union(*rows))
+    for size in range(len(active)+1):
+        for selected in combinations(active,size):
+            if all(set(selected)&row for row in rows):return selected
+    raise ValueError('unhittable native roots')
+
+def _layer_check(original,final,q,metadata,p):
+    errors=[];current=original;computed=[]
+    while max(map(covering_number,current))>q:
+        peak=max(map(covering_number,current))
+        if covering_number(current[0])>=peak or covering_number(current[-1])>=peak:return ['nonfixed maximum-layer endpoints']
+        replacements=[_packet(v,*_least_cover(v)[:2]) if covering_number(v)==peak else v for v in current]
+        converted=[replacements[0]]
+        for target in replacements[1:]:converted.extend(_bridge(converted[-1],target)[1:])
+        e,values=_primitive(converted,p,q-1,peak-1);errors+=e
+        computed.append({'peak':peak,'before':len(current),'after':len(converted)})
+        if len(converted)>1000000:return errors+['layer vertex resource bound']
+        current=converted
+    if metadata!=computed:errors.append('false or omitted maximum-layer records')
+    if current!=final:errors.append('final path differs from prescribed layer replacement')
+    return errors
+
+def _full_trace_contract(c,r):
+    family,p,roots,ch=c['identity'];facts=r['facts'];path=_states(r['path']);errors=[]
+    if r['status']=='REFUSED':return errors
+    if family=='M1' and p['kind']=='layers':
+        legs=[];initial=tuple(map(frozenset,roots))
+        for reverse in (False,True):
+            leg=[initial]
+            for step in range(ch['peak']-p['q']):
+                h=_least_cover(leg[-1]);x,y=(h[-1],h[-2]) if reverse else h[:2];original=leg[-1]
+                for i,row in enumerate(original):
+                    if y in row and x not in leg[-1][i]:leg.append(_toggle_state(leg[-1],i,x,True))
+            legs.append(leg)
+        original=list(reversed(legs[0]))+legs[1][1:]
+        if _states(facts['original_path'])!=original:errors.append('prescribed M1 merge legs changed')
+        errors+=_layer_check(original,path,p['q'],facts.get('layers'),p)
+    elif family=='M4':
+        original=_states(facts.get('preliminary_path',r['path']));cursor=0
+        e,_=_primitive(original,p);errors+=e
+        for record in facts['clones']:
+            if record['start']!=cursor:errors.append('uncovered clone trace interval')
+            expected=[original[cursor]]
+            for j,i in enumerate(record['slots']):
+                target=list(expected[-1]);target[i]=frozenset(record['demands'][j]) if j<len(record['demands']) else frozenset(range(p['k']))
+                expected.extend(_bridge(expected[-1],tuple(target))[1:])
+            end=cursor+len(expected)-1
+            if record['end']!=end or original[cursor:end+1]!=expected:errors.append('clone slot-by-slot trace changed')
+            cursor=end
+        if cursor!=len(original)-1:errors.append('unchecked clone trace tail')
+        if facts['completed_tau'][-1]==p['q']:errors+=_layer_check(original,path,p['q'],facts.get('layers'),p)
+        elif original!=path:errors.append('unsafe diagnostic path replaced')
+    elif family=='M6':errors+=_layer_check(_states(facts['preliminary_path']),path,p['q'],facts.get('layers'),p)
+    elif family=='M7' and p['kind']=='split_path':errors+=_layer_check(_states(facts['preliminary_path']),path,p['q'],facts.get('layers'),p)
+    elif family=='M8':errors+=_layer_check(_states(facts['mapped_path']),path,p['q'],facts.get('layers'),p)
+    if family=='M2':errors+=_event_semantics(c,r,path)
+    if family=='M5' and p['kind']!='obstruction':errors+=_star_semantics(c,r,path)
+    return errors
+
+_basic_verify_record=verify_record
+
+def verify_record(case,record):
+    errors=_basic_verify_record(case,record)
+    if errors:return errors
+    try:return _full_trace_contract(case,record)
+    except (KeyError,ValueError,TypeError,IndexError,AssertionError,StopIteration) as exc:
+        return ['malformed transformation certificate: '+type(exc).__name__+': '+str(exc)]
+
+def _event_semantics(c,r,path):
+    _,p,roots,ch=c['identity'];errors=[];cursor=0;target=tuple(map(frozenset,ch['target']));waiting=None
+    pending=[tuple(edge) for edge in ch['edges']] if p['kind']=='forced_cycle' else [(x,y,i) for i,row in enumerate(path[0]) for x,y in zip(sorted(row-target[i]),sorted(target[i]-row))]
+    for ev in r['events']:
+        if ev['start']!=cursor:errors.append('overlapping or nonconsecutive event intervals')
+        vertex=path[cursor];kind=ev['kind']
+        if p['kind']=='element':
+            desired={x:i for i,row in enumerate(target) for x in row}
+            x=min(x for i,row in enumerate(vertex) for x in row if desired[x]!=i) if waiting is None else waiting
+            old=next(i for i,row in enumerate(vertex) if x in row);dest=desired[x]
+            if kind=='element_buffer':
+                if waiting is not None or len(vertex[dest])!=p['capacities'][dest]:errors.append('false element buffer precondition')
+                y=min(y for y in vertex[dest] if desired[y]!=dest);spare=next(i for i,row in enumerate(vertex) if len(row)<p['capacities'][i])
+                if (ev['label'],ev['source'],ev['target'],ev['old_owner'])!=(y,dest,spare,old):errors.append('false element buffer/old-owner facts')
+                waiting=x
+            elif kind=='element_transfer':
+                if (ev['label'],ev['source'],ev['target'])!=(x,old,dest):errors.append('nonprescribed element placement')
+                waiting=None
+            else:errors.append('wrong element event type')
+        else:
+            free=sorted(e for e in pending if sum(e[1] in row for row in vertex)<2)
+            if kind=='direct_vacancy':
+                edge=(ev['source'],ev['target'],ev['row'])
+                if not free or edge!=free[0]:errors.append('nonprescribed direct vacancy order')
+                if edge not in pending:errors.append('nonpending transfer')
+                else:pending.remove(edge)
+            elif kind=='buffered_cycle':
+                edges=list(map(tuple,ev['edges']));z=ev['buffer']
+                if free:errors.append('cycle used before available direct transfer')
+                if p['kind']=='forced_cycle' and (set(edges)!=set(map(tuple,ch['edges'])) or len(edges)!=len(ch['edges'])):errors.append('substituted prescribed cycle pairing')
+                spare=ch['buffer'] if p['kind']=='forced_cycle' else next(x for x in range(p['k']) if sum(x in row for row in vertex)<2)
+                if z!=spare or any(e[1]==z for e in pending):errors.append('invalid cycle spare column')
+                for edge in edges:
+                    if edge not in pending:errors.append('nonpending cycle edge')
+                    else:pending.remove(edge)
+            else:errors.append('wrong incidence event type')
+        cursor=ev['end']
+    if cursor!=len(path)-1 or waiting is not None:errors.append('unfinished event schedule')
+    if p['kind']!='element' and pending:errors.append('unconsumed pending transfers')
+    return errors
+
+def _star_semantics(c,r,path):
+    _,p,roots,ch=c['identity'];facts=r['facts'];errors=[]
+    def check_leg(leg,parameters,records,local=False):
+        h=parameters['h'];cyclic=parameters['form']=='cyclic';groups=_groups(parameters['sizes']);cursor=0
+        expected=[leg[0]];edges=_independent_core(groups,h,cyclic);reps={next(i for i,row in enumerate(leg[0]) if row==edge) for edge in edges}
+        for i in range(len(roots)):
+            if i not in reps:
+                target=list(expected[-1]);target[i]=frozenset(range(p['k']));expected.extend(_bridge(expected[-1],tuple(target))[1:])
+        if leg[:len(expected)]!=expected:errors.append('extra-root normalization trace')
+        cursor=len(expected)-1
+        for record in records:
+            i=record['source'];j=record['destination'];u=min(groups[i]);oldcore=_independent_core(groups,h,cyclic)
+            slots=sorted(next(z for z,row in enumerate(leg[cursor]) if row==edge) for edge in oldcore if u in edge)
+            groups[i].remove(u);groups[j].add(u);desired=[row for row in _independent_core(groups,h,cyclic) if u in row]
+            if len(desired)>len(slots):errors.append('star slot shortage')
+            if record['label']!=u or record['slots']!=slots or record['new_star']!=[sorted(row) for row in desired]:errors.append('false star slot/common-label evidence')
+            start=cursor;segment=[leg[cursor]]
+            for n,z in enumerate(slots):
+                target=list(segment[-1]);target[z]=desired[n] if n<len(desired) else frozenset(range(p['k']));segment.extend(_bridge(segment[-1],tuple(target))[1:])
+            cursor+=len(segment)-1
+            if record.get('start')!=start or record.get('end')!=cursor or leg[start:cursor+1]!=segment:errors.append('star trace interval/assignment mismatch')
+            if covering_number(segment[-1])!=p['q']:errors.append('star endpoint not exact')
+        if local and cursor!=len(leg)-1:errors.append('unchecked local relocation suffix')
+    if p['kind']=='relocate':check_leg(path,p,[facts['relocation']],True)
+    elif p['kind']=='module_pair':
+        left=_states(facts['left_path']);right=_states(facts['right_path'])
+        if left[0]!=tuple(map(frozenset,roots)) or right[0]!=tuple(map(frozenset,ch['target'])) or left[-1]!=right[-1] or path!=left+list(reversed(right))[1:]:errors.append('module pair legs')
+        check_leg(left,p,facts['balancing']);check_leg(right,dict(p,sizes=[4,4]),facts['right_balancing'])
+    else:check_leg(path,p,facts['balancing'])
+    return errors
