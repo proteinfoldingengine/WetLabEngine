@@ -41,3 +41,7 @@ Second follow-up source reviews accepted M1–M6 and M7–M9 at 93a0887adc3d6502
 Integrated trace GREEN: run 37058127774, scientific 93a0887adc3d650292ccf08f63a02b755e978388, workflow 554965e8e7c1f00ec48a67e297789e15b2d7d907; sixty tests, zero failures/errors/skips. Specific empty-contraction-finite and below-floor-cycle controls also pass, extending the original false-fact/floor rejection coverage. Independent source acceptance remains conditional on complete-domain execution and later closeout gates.
 
 Campaign runner review RED: 37059096994, ten tests, two assertion failures, zero errors. Corrected stale-record retention and added atomic pre-production identity checkpoint. No primary campaign has started before this correction. Its first full campaign development gate must reject any regression before the eight path shards can begin.
+
+First complete campaign launched: scientific/workflow SHA 0ba1284ade581267997882de2d4c723f2b9ee3a4, run 37059520424. The development gate passed and all eight complete-domain shards started. This is an in-progress validation, not a success claim.
+
+Aggregation/reproduction RED run 37059832519: nine tests, seven assertion failures, zero errors. Controls cover absent/duplicated shards, overlapping intervals, mismatched full universe, missing mechanism categories and changed/omitted deterministic files. Aggregation is being implemented while the immutable first campaign runs.
