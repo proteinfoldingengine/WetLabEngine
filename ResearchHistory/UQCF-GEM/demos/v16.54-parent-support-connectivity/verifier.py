@@ -337,3 +337,223 @@ def verify_record(case, record):
 
 def verify_nested(path, nodes, targets, k):
     return []
+
+# Certificate checks use direct subset search, never producer cover witnesses.
+def _states(raw):
+    if not isinstance(raw,list) or not raw:
+        raise ValueError('missing nonempty primitive path')
+    answer=[]
+    for vertex in raw:
+        rows=[]
+        for row in vertex:
+            if row!=sorted(set(row)) or any(type(x) is not int for x in row):
+                raise ValueError('noncanonical support')
+            rows.append(frozenset(row))
+        answer.append(tuple(rows))
+    return answer
+
+def _primitive(path,p,low=None,high=None,auxiliary=False):
+    errors=[];values=[]
+    if len(path)>1000000:errors.append('vertex resource bound exceeded')
+    for j,rows in enumerate(path):
+        if len(rows)!=len(p['a']):
+            errors.append('root slot count changed');continue
+        if any(not row<=set(range(p['k'])) for row in rows):errors.append('external label')
+        if any(len(row)<floor for row,floor in zip(rows,p['a'])):errors.append('width floor')
+        if j and sum(len(x^y) for x,y in zip(path[j-1],rows))!=1:errors.append('nonprimitive transition')
+        if not auxiliary:
+            value=covering_number(rows);values.append(value)
+            if low is not None and value<low:errors.append('lower hitting guard')
+            if high is not None and value>high:errors.append('upper hitting guard')
+    return errors,values
+
+def _packet(rows,x,y):
+    return tuple(row|{x} if y in row else row for row in rows)
+
+def _independent_core(groups,h,cyclic):
+    labels=sorted(set().union(*groups));answer=[]
+    for edge in combinations(labels,h):
+        counts=[len(set(edge)&g) for g in groups]
+        allowed=max(counts)==h
+        if cyclic:allowed |= any(counts[j]==2 and counts[(j+1)%3]==1 for j in range(3))
+        if allowed:answer.append(frozenset(edge))
+    return answer
+
+def _groups(widths):
+    groups=[];cursor=0
+    for width in widths:groups.append(set(range(cursor,cursor+width)));cursor+=width
+    return groups
+
+def _check_events(path,p,events):
+    errors=[];covered=set()
+    for ev in events:
+        kind=ev.get('kind');start=ev.get('start');end=ev.get('end')
+        if type(start) is not int or type(end) is not int or not 0<=start<end<len(path):
+            errors.append('coverage event lacks valid trace interval');continue
+        covered.update(range(start,end))
+        local=[list(row) for row in path[start]];expected=[tuple(map(frozenset,local))]
+        def toggle(i,x,add):
+            rows=list(expected[-1]);assert (x in rows[i])!=add
+            rows[i]=rows[i]|{x} if add else rows[i]-{x};expected.append(tuple(rows))
+        def transfer(i,x,y):toggle(i,y,True);toggle(i,x,False)
+        if kind=='direct_vacancy':
+            if sum(ev['target'] in row for row in expected[0])>=2:errors.append('false direct vacancy')
+            transfer(ev['row'],ev['source'],ev['target'])
+        elif kind=='buffered_cycle':
+            edges=ev['edges'];z=ev['buffer'];vertices=[e[0] for e in edges]
+            if len(edges)<2 or len(set(vertices))!=len(edges) or z in vertices:errors.append('not simple buffered cycle')
+            if any(e[1]!=edges[(j+1)%len(edges)][0] for j,e in enumerate(edges)):errors.append('cycle incidence mismatch')
+            x,y,i=edges[0];transfer(i,x,z)
+            for x1,y1,i1 in reversed(edges[1:]):transfer(i1,x1,y1)
+            transfer(i,z,y)
+        elif kind in ('element_transfer','element_buffer'):
+            x=ev['label'];toggle(ev['target'],x,True);toggle(ev['source'],x,False)
+        else:errors.append('unknown or fabricated coverage category');continue
+        if expected!=path[start:end+1]:errors.append('event trace mismatch')
+    if p['kind'] in ('degree2','forced_cycle','element') and covered!=set(range(len(path)-1)):
+        errors.append('unaccounted auxiliary primitive moves')
+    return errors
+
+def _verify_record(c,r):
+    errors=[]
+    if r.get('identity')!=c['identity']:errors.append('substituted identity')
+    family,p,roots,ch=c['identity'];kind=p['kind'];initial=tuple(map(frozenset,roots));q=p['q']
+    status=r.get('status');facts=r.get('facts',{});path=_states(r.get('path'));first,last=path[0],path[-1]
+    if status not in ('PASS','REFUSED'):return errors+['missing implemented typed result']
+    if r.get('events') and family!='M2':errors.append('coverage event in wrong mechanism family')
+    if status=='REFUSED':
+        correct=(family=='M6' and len(roots)<2*p['N']) or (family=='M7' and p['k']<sum(p['a']))
+        if not correct:errors.append('unjustified sufficient-condition refusal')
+        if first!=initial or len(path)!=1:errors.append('refusal changed state')
+        if 'barrier' in r or 'barrier' in facts:errors.append('refusal recoded as barrier')
+        e,values=_primitive(path,p);errors+=e
+        if r.get('tau')!=values:errors.append('false tau')
+        return errors
+    auxiliary=family=='M2';low=q-1 if q is not None else None;high=q
+    if family=='M1':
+        if kind=='double_packet':low=q-2
+        if kind=='neighbor':low=q-2;high=q-1
+    if family=='M3' and kind=='classify':low=high=None
+    if family=='M4':low=high=None
+    e,values=_primitive(path,p,low,high,auxiliary);errors+=e
+    if r.get('tau')!=values:errors.append('false tau')
+    if family=='M1':
+        if kind in ('packet','double_packet'):
+            pairs=[ch] if kind=='packet' else ch
+            expected=initial
+            for x,y in pairs:
+                expected=tuple(row|({x} if y in base else set()) for row,base in zip(expected,initial))
+            source=[[i for i,row in enumerate(initial) if pair[1] in row] for pair in pairs]
+            if facts.get('source_rows')!=(source[0] if kind=='packet' else source):errors.append('false original-role packet membership')
+            if first!=initial or last!=expected:errors.append('packet endpoint mismatch')
+            if any(not a<=b for u,v in zip(path,path[1:]) for a,b in zip(u,v)):errors.append('packet deleted an incidence')
+        elif kind=='neighbor':
+            neighbor=list(initial);i,x=ch['edge'];neighbor[i]=neighbor[i]|{x};neighbor=tuple(neighbor)
+            wanted=(_packet(initial,*ch['left']),_packet(neighbor,*ch['right']) if ch['right'] else neighbor)
+            if ch['reverse']:wanted=wanted[::-1]
+            if (first,last)!=wanted:errors.append('neighbor shadow endpoint mismatch')
+            if facts.get('original')!=[[sorted(row) for row in v] for v in (initial,neighbor)]:errors.append('false original neighbor context')
+        elif kind=='layers':
+            original=_states(facts['original_path']);e,origvals=_primitive(original,p,p['q']-1,None);errors+=e
+            if first!=original[0] or last!=original[-1] or max(origvals)!=ch['peak']:errors.append('layer endpoints/peak mismatch')
+            endpoints=[]
+            for reverse in (False,True):
+                v=initial
+                for step in range(ch['peak']-q):
+                    active=sorted(set().union(*v));size=covering_number(v)
+                    h=next(h for h in combinations(active,size) if all(set(h)&row for row in v))
+                    pair=(h[-1],h[-2]) if reverse else (h[0],h[1]);v=_packet(v,*pair)
+                endpoints.append(v)
+            if (first,last)!=tuple(endpoints):errors.append('prescribed repeated-merge endpoints changed')
+    elif family=='M2':
+        if first!=initial or last!=tuple(map(frozenset,ch['target'])):errors.append('capacity endpoints')
+        for vertex in path:
+            if kind=='element':
+                if set().union(*vertex)!=set(range(p['k'])):errors.append('lost element cover')
+                if any(len(row)>cap for row,cap in zip(vertex,p['capacities'])):errors.append('bin capacity')
+            elif any(sum(x in row for row in vertex)>2 for x in range(p['k'])):errors.append('column capacity')
+        errors+=_check_events(path,p,r.get('events',[]))
+        if kind=='forced_cycle':
+            start_surplus={(i,x) for i,row in enumerate(initial) for x in row-set(ch['target'][i])}
+            start_deficit={(i,x) for i,row in enumerate(initial) for x in set(ch['target'][i])-row}
+            if {(i,x) for x,y,i in ch['edges']}!=start_surplus or {(i,y) for x,y,i in ch['edges']}!=start_deficit:errors.append('prescribed cycle pairing invalid')
+            if not any(e['kind']=='buffered_cycle' and e['buffer']==ch['buffer'] for e in r.get('events',[])):errors.append('prescribed buffered cycle missing')
+    elif family=='M3':
+        if first!=initial:errors.append('saturated start mismatch')
+        if kind=='classify':
+            if facts.get('feasible')!=(covering_number(initial)==q):errors.append('incorrect saturated feasibility')
+        else:
+            if last!=tuple(map(frozenset,ch['target'])):errors.append('saturated target')
+            if (len(roots)-q+1)*p['k']-sum(p['a'])!=0:errors.append('not saturated')
+            hubs=[row for row in initial if len(row)==p['k']]
+            if len(hubs)!=p['hubs']:errors.append('hub classification')
+    elif family=='M4':
+        preliminary=_states(facts.get('preliminary_path',r['path']))
+        if preliminary[0]!=initial or first!=initial or last!=preliminary[-1]:errors.append('clone endpoints')
+        records=facts.get('clones',[])
+        if len(records)!=len(ch['operations']):errors.append('clone operation omitted')
+        completed=[covering_number(initial)]
+        for record,(u,v) in zip(records,ch['operations']):
+            start,end=record['start'],record['end'];old=preliminary[start];new=preliminary[end];t=covering_number(old)
+            slots=sorted((i for i,row in enumerate(old) if u in row and v not in row),key=lambda i:(p['a'][i],i))
+            demands=sorted({row-{v}|{u} for row in old if v in row and u not in row},key=lambda row:(len(row),tuple(sorted(row))))
+            if len(demands)>len(slots) or any(p['a'][i]>len(row) for i,row in zip(slots,demands)):errors.append('invalid slot match')
+            target=list(old)
+            for j,i in enumerate(slots):target[i]=demands[j] if j<len(demands) else frozenset(range(p['k']))
+            f=covering_number([row for row in old if u not in row]);lam=covering_number([row-{u,v} for i,row in enumerate(old) if i not in slots]);value=covering_number(new)
+            expected={'u':u,'v':v,'slots':slots,'demands':[sorted(row) for row in demands],
+                      'f':f,'contraction':'infinity' if math.isinf(lam) else lam,'before':t,'after':value,
+                      'safe':lam>=t,'exact':lam>=t and (f==t-1 or lam==t),'start':start,'end':end}
+            if record!=expected:errors.append('false clone contraction/slot facts')
+            if tuple(target)!=new or value!=min(1+f,lam):errors.append('clone formula/endpoint failure')
+            e,_=_primitive(preliminary[start:end+1],p,t-1,None);errors+=e;completed.append(value)
+        if facts.get('completed_tau')!=completed:errors.append('clone completed hitting sequence')
+        if completed[-1]==q and any(v not in (q-1,q) for v in values):errors.append('exact clone not clipped')
+    elif family=='M5':
+        if first!=initial:errors.append('module initial endpoint')
+        if kind=='obstruction':
+            if facts!={'method':'complete-module normal form','available_slots':len(roots),'required_slots':20,'claim':'method obstruction only'}:errors.append('obstruction mischaracterized')
+            if len(roots)!=12 or q!=4 or p['k']!=7:errors.append('wrong obstruction carrier')
+        elif kind=='module_pair':
+            if last!=tuple(map(frozenset,ch['target'])):errors.append('explicit module target mismatch')
+        else:
+            groups=_groups(p['sizes']);h=p['h'];cyclic=p['form']=='cyclic'
+            if kind=='relocate':
+                i,j=ch;u=min(groups[i]);groups[i].remove(u);groups[j].add(u)
+                expected=set(_independent_core(groups,h,cyclic))
+                if not expected<=set(last) or any(row not in expected and row!=frozenset(range(p['k'])) for row in last):errors.append('relocation core mismatch')
+            elif kind=='balance':
+                for move in facts.get('balancing',[]):
+                    widths=list(map(len,groups));eligible=[(i,(i+1)%3) for i in range(3) if widths[i]>=widths[(i+1)%3]+2] if cyclic else [(i,j) for i in range(len(groups)) for j in range(len(groups)) if widths[i]>=widths[j]+2]
+                    if not eligible:
+                        if not cyclic or max(widths)-min(widths)<2:errors.append('extra balancing move');break
+                        i=widths.index(max(widths));eligible=[(i,(i+1)%3)]
+                    i,j=min(eligible);u=min(groups[i]);before=[sum(x*x for x in widths),len(_independent_core(groups,h,cyclic))]
+                    if (move['source'],move['destination'],move['label'])!=(i,j,u):errors.append('nonprescribed balancing move')
+                    groups[i].remove(u);groups[j].add(u);after=[sum(len(g)**2 for g in groups),len(_independent_core(groups,h,cyclic))]
+                    if not after<before or move['before']!=before or move['after']!=after:errors.append('false balancing potential')
+                widths=list(map(len,groups))
+                if max(widths)-min(widths)>1:errors.append('incomplete balancing')
+                sizes=min(widths[j:]+widths[:j] for j in range(3)) if cyclic else sorted(widths)
+                edges=_independent_core(_groups(sizes),h,cyclic);wanted=edges+[edges[0]]*(len(roots)-len(edges))
+                if last!=tuple(wanted):errors.append('canonical module/cycle endpoint')
+    elif family=='M6':
+        if first!=initial or last!=tuple(map(frozenset,ch['target'])):errors.append('guard final endpoints')
+        if len(roots)<2*p['N']:errors.append('missing slot refusal')
+        preliminary=_states(facts['preliminary_path']);e,_=_primitive(preliminary,p,q-1,None);errors+=e
+        if preliminary[0]!=first or preliminary[-1]!=last:errors.append('guard preliminary endpoints')
+        n=p['N'];source=list(range(n));dest=list(range(n,2*n));indices=sorted(((i+ch['shift'])%len(roots) for i in source),key=lambda i:(ch['target'][i],i));order=[i for i in range(len(roots)) if i not in indices]+indices
+        if facts['source_guard']!=source or facts['target_guard']!=dest or facts['target_order']!=order:errors.append('prescribed guard assignment')
+        if covering_number([initial[i] for i in source])!=q-1:errors.append('source guard wrong hitting number')
+        midpoint=facts['guard_end'];finished=facts['coexist_end'];target=tuple(frozenset(ch['target'][i]) for i in order)
+        if any(tuple(v[i] for i in source)!=tuple(initial[i] for i in source) for v in preliminary[:midpoint+1]):errors.append('source guard changed during transfer')
+        if covering_number([preliminary[midpoint][i] for i in dest])!=q-1:errors.append('target guard not established')
+        if any(tuple(v[i] for i in dest)!=tuple(target[i] for i in dest) for v in preliminary[midpoint:finished+1]):errors.append('target guard changed prematurely')
+        if preliminary[finished]!=target:errors.append('guard permutation endpoint')
+    else:errors.append('unsupported family')
+    return errors
+
+def verify_record(case,record):
+    try:return _verify_record(case,record)
+    except (KeyError,ValueError,TypeError,IndexError,AssertionError,StopIteration) as exc:
+        return ['malformed or invalid certificate: '+type(exc).__name__+': '+str(exc)]
