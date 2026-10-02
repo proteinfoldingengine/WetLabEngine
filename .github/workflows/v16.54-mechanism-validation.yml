@@ -13,7 +13,33 @@ concurrency:
   group: v1654-campaign-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  route:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    outputs:
+      mode: ${{ steps.route.outputs.mode }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0}
+      - id: route
+        env:
+          INPUT_SHA: ${{ inputs.scientific_sha }}
+        run: |
+          python - <<'PY'
+          import os,subprocess
+          head=os.environ['GITHUB_SHA']
+          assert not os.environ.get('INPUT_SHA') or os.environ['INPUT_SHA']==head
+          ref=os.environ['GITHUB_REF']
+          assert ref in ('refs/heads/research/v16.54-parent-support-connectivity','refs/heads/research/v16.34-fiber-component-invariant')
+          changed=subprocess.check_output(['git','diff','--name-only',head+'^',head],text=True).splitlines()
+          request='ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/CAMPAIGN_REQUEST.json'
+          mode='audit' if ref.endswith('/research/v16.34-fiber-component-invariant') else ('campaign' if request in changed or os.environ['GITHUB_EVENT_NAME']=='workflow_dispatch' else 'skip')
+          with open(os.environ['GITHUB_OUTPUT'],'a') as stream:stream.write('mode='+mode+'\n')
+          print('Selected route:',mode)
+          PY
   development:
+    needs: route
+    if: needs.route.outputs.mode != 'skip'
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     env:
@@ -58,6 +84,7 @@ jobs:
           import json,os,re,subprocess
           from pathlib import Path
           base='ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/'
+          assert not os.environ.get('INPUT_SHA') or os.environ['INPUT_SHA']==os.environ['SCIENTIFIC_SHA']
           if os.environ['GITHUB_REF']=='refs/heads/research/v16.34-fiber-component-invariant':
               import sys
               sys.path.insert(0,base)
