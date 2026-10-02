@@ -126,4 +126,3 @@ class FollowupReview(unittest.TestCase):
         event['edges']=edges;r['path']=[plain(v) for v in route.vertices]
         self.assertTrue(verify_record(c,r))
 
-from test_campaign import Campaign

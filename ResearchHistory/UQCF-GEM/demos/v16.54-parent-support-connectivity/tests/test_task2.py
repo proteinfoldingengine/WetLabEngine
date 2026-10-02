@@ -103,3 +103,15 @@ class Task2(unittest.TestCase):
         self.assertTrue(verify_record(simple_case(),r))
 
 if __name__=='__main__':unittest.main(verbosity=2)
+
+class SpecificRejections(unittest.TestCase):
+    def test_empty_contracted_edge_cannot_be_finite(self):
+        protocol=json.loads((HERE/'protocol.json').read_text())
+        c=case('M4','clone_sequence',6,[2]*4,3,[[0,1],[0,2],[1,3],[4,5]],{'operations':[[0,1]],'shift':0},tag='empty',source='PROSPECTIVE_VALIDATION_PLAN.md',source_sha256=protocol['approved_plan_sha256'])
+        r=produce(c);r['facts']['clones'][0]['contraction']=3
+        self.assertTrue(verify_record(c,r))
+
+    def test_below_floor_cycle_buffer_rejected(self):
+        c=case('M2','forced_cycle',5,[2,2,4],None,[[0,2],[1,3],[0,1,2,3]],{'target':[[1,3],[0,2],[0,1,2,3]],'edges':[[0,1,0],[1,2,1],[2,3,0],[3,0,1]],'buffer':4})
+        r=produce(c);r['path'][1][0]=[2]
+        self.assertTrue(verify_record(c,r))

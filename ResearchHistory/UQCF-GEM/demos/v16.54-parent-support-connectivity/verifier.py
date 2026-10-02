@@ -739,6 +739,8 @@ def _full_trace_contract(c,r):
     elif family=='M7' and p['kind']=='split_path':errors+=_layer_check(_states(facts['preliminary_path']),path,p['q'],facts.get('layers'),p)
     elif family=='M8':errors+=_layer_check(_states(facts['mapped_path']),path,p['q'],facts.get('layers'),p)
     if family=='M2':errors+=_event_semantics(c,r,path)
+    if family=='M6':errors+=_guard_phase_check(c,r)
+    if family in ('M7','M9'):errors+=_extension_trace_check(c,r)
     if family=='M5' and p['kind']!='obstruction':errors+=_star_semantics(c,r,path)
     return errors
 
@@ -781,6 +783,13 @@ def _event_semantics(c,r,path):
                 edges=list(map(tuple,ev['edges']));z=ev['buffer']
                 if free:errors.append('cycle used before available direct transfer')
                 if p['kind']=='forced_cycle' and (set(edges)!=set(map(tuple,ch['edges'])) or len(edges)!=len(ch['edges'])):errors.append('substituted prescribed cycle pairing')
+                walk=[];seen={};at=min(e[0] for e in pending)
+                while at not in seen:
+                    seen[at]=len(walk);edge=min(e for e in pending if e[0]==at);walk.append(edge);at=edge[1]
+                chosen=walk[seen[at]:]
+                rotation=next(j for j,e in enumerate(chosen) if z not in vertex[e[2]])
+                chosen=chosen[rotation:]+chosen[:rotation]
+                if edges!=chosen:errors.append('nonprescribed cycle selection or rotation')
                 spare=ch['buffer'] if p['kind']=='forced_cycle' else next(x for x in range(p['k']) if sum(x in row for row in vertex)<2)
                 if z!=spare or any(e[1]==z for e in pending):errors.append('invalid cycle spare column')
                 for edge in edges:
@@ -792,33 +801,119 @@ def _event_semantics(c,r,path):
     if p['kind']!='element' and pending:errors.append('unconsumed pending transfers')
     return errors
 
+
+def _permutation_trace(initial,mapping):
+    labels=sorted(set(mapping)|set(mapping.values()));permutation=dict(mapping)
+    for x,y in zip(sorted(set(labels)-set(mapping)),sorted(set(labels)-set(mapping.values()))):permutation[x]=y
+    trace=[initial];images={x:x for x in labels}
+    for original in labels:
+        if images[original]!=permutation[original]:
+            a,b=images[original],permutation[original]
+            changed=tuple(frozenset(b if x==a else a if x==b else x for x in row) for row in trace[-1])
+            trace.extend(_bridge(trace[-1],changed)[1:])
+            images={x:b if y==a else a if y==b else y for x,y in images.items()}
+    return trace
+
+def _root_order_trace(initial,target):
+    trace=[initial]
+    for i,row in enumerate(target):
+        if trace[-1][i]!=row:
+            j=next(j for j in range(i+1,len(target)) if trace[-1][j]==row)
+            changed=list(trace[-1]);changed[i],changed[j]=changed[j],changed[i]
+            trace.extend(_bridge(trace[-1],tuple(changed))[1:])
+    return trace
+
 def _star_semantics(c,r,path):
     _,p,roots,ch=c['identity'];facts=r['facts'];errors=[]
     def check_leg(leg,parameters,records,local=False):
-        h=parameters['h'];cyclic=parameters['form']=='cyclic';groups=_groups(parameters['sizes']);cursor=0
+        h=parameters['h'];cyclic=parameters['form']=='cyclic';groups=_groups(parameters['sizes'])
         expected=[leg[0]];edges=_independent_core(groups,h,cyclic);reps={next(i for i,row in enumerate(leg[0]) if row==edge) for edge in edges}
         for i in range(len(roots)):
             if i not in reps:
                 target=list(expected[-1]);target[i]=frozenset(range(p['k']));expected.extend(_bridge(expected[-1],tuple(target))[1:])
-        if leg[:len(expected)]!=expected:errors.append('extra-root normalization trace')
-        cursor=len(expected)-1
-        for record in records:
-            i=record['source'];j=record['destination'];u=min(groups[i]);oldcore=_independent_core(groups,h,cyclic)
-            slots=sorted(next(z for z,row in enumerate(leg[cursor]) if row==edge) for edge in oldcore if u in edge)
-            groups[i].remove(u);groups[j].add(u);desired=[row for row in _independent_core(groups,h,cyclic) if u in row]
-            if len(desired)>len(slots):errors.append('star slot shortage')
-            if record['label']!=u or record['slots']!=slots or record['new_star']!=[sorted(row) for row in desired]:errors.append('false star slot/common-label evidence')
-            start=cursor;segment=[leg[cursor]]
+        computed=[]
+        while local and not computed or not local and max(map(len,groups))-min(map(len,groups))>=2:
+            widths=list(map(len,groups))
+            if local:i,j=ch
+            else:
+                choices=[(i,(i+1)%3) for i in range(3) if widths[i]>=widths[(i+1)%3]+2] if cyclic else [(i,j) for i in range(len(groups)) for j in range(len(groups)) if widths[i]>=widths[j]+2]
+                if not choices:
+                    i=widths.index(max(widths));choices=[(i,(i+1)%3)]
+                i,j=min(choices)
+            u=min(groups[i]);oldcore=_independent_core(groups,h,cyclic)
+            slots=sorted(next(z for z,row in enumerate(expected[-1]) if row==edge) for edge in oldcore if u in edge)
+            before=[sum(x*x for x in widths),len(oldcore)];groups[i].remove(u);groups[j].add(u)
+            desired=[row for row in _independent_core(groups,h,cyclic) if u in row]
+            if len(desired)>len(slots):return ['star slot shortage']
+            start=len(expected)-1
             for n,z in enumerate(slots):
-                target=list(segment[-1]);target[z]=desired[n] if n<len(desired) else frozenset(range(p['k']));segment.extend(_bridge(segment[-1],tuple(target))[1:])
-            cursor+=len(segment)-1
-            if record.get('start')!=start or record.get('end')!=cursor or leg[start:cursor+1]!=segment:errors.append('star trace interval/assignment mismatch')
-            if covering_number(segment[-1])!=p['q']:errors.append('star endpoint not exact')
-        if local and cursor!=len(leg)-1:errors.append('unchecked local relocation suffix')
-    if p['kind']=='relocate':check_leg(path,p,[facts['relocation']],True)
+                target=list(expected[-1]);target[z]=desired[n] if n<len(desired) else frozenset(range(p['k']));expected.extend(_bridge(expected[-1],tuple(target))[1:])
+            record={'source':i,'destination':j,'label':u,'slots':slots,'new_star':[sorted(row) for row in desired],'start':start,'end':len(expected)-1}
+            if not local:
+                after=[sum(len(g)**2 for g in groups),len(_independent_core(groups,h,cyclic))]
+                if not after<before:errors.append('nondecreasing scheduled potential')
+                record.update(before=before,after=after)
+            computed.append(record)
+            if covering_number(expected[-1])!=p['q']:errors.append('star endpoint not exact')
+        if records!=computed:errors.append('omitted or false prescribed star/schedule evidence')
+        if not local:
+            ordered=min((groups[i:]+groups[:i] for i in range(3)),key=lambda gs:tuple(map(len,gs))) if cyclic else sorted(groups,key=len)
+            canonical=_groups(list(map(len,ordered)));mapping={x:y for old,new in zip(ordered,canonical) for x,y in zip(sorted(old),sorted(new))}
+            expected.extend(_permutation_trace(expected[-1],mapping)[1:])
+            edges=_independent_core(canonical,h,cyclic);reps={next(i for i,row in enumerate(expected[-1]) if row==edge) for edge in edges}
+            for i in range(len(roots)):
+                if i not in reps:
+                    target=list(expected[-1]);target[i]=edges[0];expected.extend(_bridge(expected[-1],tuple(target))[1:])
+            desired=sorted(edges+[edges[0]]*(len(roots)-len(edges)),key=lambda row:tuple(sorted(row)))
+            expected.extend(_root_order_trace(expected[-1],desired)[1:])
+        if leg!=expected:errors.append('star/canonicalization complete trace mismatch')
+        return []
+    if p['kind']=='relocate':errors+=check_leg(path,p,[facts['relocation']],True)
     elif p['kind']=='module_pair':
         left=_states(facts['left_path']);right=_states(facts['right_path'])
         if left[0]!=tuple(map(frozenset,roots)) or right[0]!=tuple(map(frozenset,ch['target'])) or left[-1]!=right[-1] or path!=left+list(reversed(right))[1:]:errors.append('module pair legs')
-        check_leg(left,p,facts['balancing']);check_leg(right,dict(p,sizes=[4,4]),facts['right_balancing'])
-    else:check_leg(path,p,facts['balancing'])
+        errors+=check_leg(left,p,facts['balancing']);errors+=check_leg(right,dict(p,sizes=[4,4]),facts['right_balancing'])
+    else:errors+=check_leg(path,p,facts['balancing'])
+    return errors
+
+def _guard_phase_check(c,r):
+    _,p,roots,ch=c['identity'];facts=r['facts'];n=p['N'];count=len(roots);trace=[tuple(map(frozenset,roots))]
+    indices=sorted(((i+ch['shift'])%count for i in range(n)),key=lambda i:(ch['target'][i],i))
+    order=[i for i in range(count) if i not in indices]+indices;target=tuple(map(frozenset,ch['target']));permuted=tuple(target[i] for i in order)
+    for i in range(n,2*n):
+        v=list(trace[-1]);v[i]=permuted[i];trace.extend(_bridge(trace[-1],tuple(v))[1:])
+    guard_end=len(trace)-1
+    for i in range(n):
+        v=list(trace[-1]);v[i]=permuted[i];trace.extend(_bridge(trace[-1],tuple(v))[1:])
+    coexist_end=len(trace)-1
+    trace.extend(_root_order_trace(trace[-1],target)[1:])
+    if type(facts['guard_end']) is not int or type(facts['coexist_end']) is not int or facts['guard_end']!=guard_end or facts['coexist_end']!=coexist_end or _states(facts['preliminary_path'])!=trace:return ['guard phase boundaries or full trace changed']
+    return []
+
+def _extension_trace_check(c,r):
+    family,p,roots,ch=c['identity'];facts=r['facts'];errors=[]
+    if family=='M7' and p['kind']=='split_path':
+        for name in ('left','right'):
+            leg=_states(facts[name+'_path']);expected=[leg[0]]
+            while True:
+                used=set().union(*expected[-1]);shared=[x for x in sorted(used) if sum(x in row for row in expected[-1])>1]
+                if not shared:break
+                x=shared[0];i=next(i for i,row in enumerate(expected[-1]) if x in row);y=min(set(range(p['k']))-used)
+                expected.append(_toggle_state(expected[-1],i,y,True));expected.append(_toggle_state(expected[-1],i,x,False))
+            canonical=_groups(p['a']);mapping={x:y for old,new in zip(expected[-1],canonical) for x,y in zip(sorted(old),sorted(new))}
+            expected.extend(_permutation_trace(expected[-1],mapping)[1:])
+            if leg!=expected:errors.append('split canonicalization complete trace mismatch')
+    if family=='M9':
+        nodes=r['nodes'];parentpath=_states(r['path']);trace=[tuple(_states(r['nested_path'])[0])];records=[];boundaries=[0]
+        for before,after in zip(parentpath,parentpath[1:]):
+            i,x=next((i,x) for i,(a,b) in enumerate(zip(before,after)) for x in sorted(a^b));child=nodes[0][i];add=x in after[i]
+            if not add:
+                active=set().union(*(trace[-1][v] for v in nodes[child]))
+                if x in active:
+                    y=min(before[i]-active);used=[v for v in nodes[child] if x in trace[-1][v]];start=len(trace)-1
+                    for v in used:trace.append(_toggle_state(trace[-1],v,y,True))
+                    for v in reversed(used):trace.append(_toggle_state(trace[-1],v,x,False))
+                    records.append({'child':child,'x':x,'y':y,'start':start,'end':len(trace)-1})
+            trace.append(_toggle_state(trace[-1],child,x,add));boundaries.append(len(trace)-1)
+        if _states(r['nested_path'])!=trace or facts['clearance']!=records or facts['parent_boundaries']!=boundaries:errors.append('native inherited-clearance full trace/events/boundaries mismatch')
     return errors
