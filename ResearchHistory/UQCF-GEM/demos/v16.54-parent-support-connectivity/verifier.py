@@ -3,6 +3,7 @@
 This module imports no producer model, enumerator, or mechanism implementation.
 """
 from collections import defaultdict
+from functools import lru_cache
 from itertools import combinations, product, zip_longest
 from pathlib import Path
 import hashlib
@@ -26,7 +27,10 @@ def item(family, kind, k, a, q, rows, choice, **fields):
     return {'identity':[family,p,[sorted(set(row)) for row in rows],choice]}
 
 def covering_number(rows):
-    constraints = [frozenset(row) for row in rows]
+    return _direct_cover(tuple(frozenset(row) for row in rows))
+
+@lru_cache(maxsize=10000)
+def _direct_cover(constraints):
     if any(not row for row in constraints):
         return math.inf
     labels = sorted(set().union(*constraints)) if constraints else []
@@ -682,6 +686,7 @@ def _bridge(a,b):
         for x in sorted(trace[-1][i]-row):trace.append(_toggle_state(trace[-1],i,x,False))
     return trace
 
+@lru_cache(maxsize=10000)
 def _least_cover(rows):
     active=sorted(set().union(*rows))
     for size in range(len(active)+1):

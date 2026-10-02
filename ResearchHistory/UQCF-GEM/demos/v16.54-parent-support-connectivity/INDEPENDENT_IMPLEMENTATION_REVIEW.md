@@ -21,3 +21,15 @@ Independent reviewer `/root/source_review` reviewed scientific source 30cdcdade6
 Run 37047482337 reproduced six assertion failures (eleven tests). Its initial canonical-order fixture used a q=2 auxiliary input outside the primary M5 domain. This was replaced by the approved-domain (3,4), h=3, q=3 fixture before correcting the implementation. The additional direct-vacancy regression and corrected fixture ran in 37055853168: twelve tests, seven assertion failures, zero errors. Both historical runs are retained; neither is primary campaign evidence.
 
 Corrections and M7–M9 implementation are published at 8b1e82d96a104482c3f2fb890d049325740aa7dc. Integrated verification and follow-up source review remain pending. No CLOSED/CERTIFIED claim is made.
+
+## Follow-up closure
+
+The second review found three residual M1–M6 gaps (module-pair suffix/schedule, negative guard-boundary aliases, ordered cycle rotation), and two M7–M9 gaps (palette permutation suffix, inherited-clearance trace/events). Run 37056662003 reproduced all five plus six campaign-evidence controls: 25 tests, 11 assertion failures, zero errors.
+
+At source 93a0887adc3d650292ccf08f63a02b755e978388, both scoped reviewers accepted the fixes. M1–M6 now independently reconstructs complete module legs, exact guard phases and ordered cycle choices. M7–M9 now independently reconstructs full palette legs and every native clearance/root step with complete event/boundary equality. Reviewers performed no local scientific execution and made no certification claim.
+
+Integrated run 37058127774 passed 60 tests with zero failures, errors or skips. The subsequent exact-result memoization refinement in the independent subset search was separately accepted by the M1–M6 reviewer; its verifier SHA256 is 19f3cb383e3976a72285ad30a0cd5a52a74b4b7f2e9a86653a2f8ecfbaaac150. The campaign includes a fresh development gate on its own immutable scientific SHA.
+
+## Original evidence preservation
+
+Downloaded original GitHub ZIP archives are preserved as binary original.zip files next to receipts. Each receipt binds its GitHub artifact ID, original archive SHA256 and byte count, run/workflow/scientific SHAs and test outcomes. All archived source hashes were checked before staging publication. The historical Task 1 RED remains in its original base64 representation. No failed test run is deleted or recoded as passing evidence.

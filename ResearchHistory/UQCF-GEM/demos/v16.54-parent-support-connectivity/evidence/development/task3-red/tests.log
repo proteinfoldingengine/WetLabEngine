@@ -1,0 +1,94 @@
+test_every_first_split_contract (test_task3.Task3.test_every_first_split_contract) ... FAIL
+test_global_budget_rejects_second_unit (test_task3.Task3.test_global_budget_rejects_second_unit) ... FAIL
+test_native_parent_path_and_clearance (test_task3.Task3.test_native_parent_path_and_clearance) ... FAIL
+test_non_nested_state_rejected (test_task3.Task3.test_non_nested_state_rejected) ... FAIL
+test_palette_boundary_refusal (test_task3.Task3.test_palette_boundary_refusal) ... FAIL
+test_palette_path_uses_exact_endpoints (test_task3.Task3.test_palette_path_uses_exact_endpoints) ... FAIL
+test_reserve_reuse_and_fixed_endpoints (test_task3.Task3.test_reserve_reuse_and_fixed_endpoints) ... FAIL
+
+======================================================================
+FAIL: test_every_first_split_contract (test_task3.Task3.test_every_first_split_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 27, in test_every_first_split_contract
+    self.require(case('M7','split_local',5,[1]*4,3,[[0],[0],[1],[2]],[0,0,3],groups=[0,0,1,2]))
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 15, in require
+    self.assertEqual(record.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_global_budget_rejects_second_unit (test_task3.Task3.test_global_budget_rejects_second_unit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 43, in test_global_budget_rejects_second_unit
+    self.assertTrue(verify_nested([initial,parent,two],nodes,targets,6))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_native_parent_path_and_clearance (test_task3.Task3.test_native_parent_path_and_clearance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 34, in test_native_parent_path_and_clearance
+    self.require(guard_case(2,3,6,1,1,'M9'))
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 15, in require
+    self.assertEqual(record.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_non_nested_state_rejected (test_task3.Task3.test_non_nested_state_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 47, in test_non_nested_state_rejected
+    self.assertTrue(verify_nested([[[0,1,2],[0],[1],[3]]],nodes,targets,3))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_palette_boundary_refusal (test_task3.Task3.test_palette_boundary_refusal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 23, in test_palette_boundary_refusal
+    r=self.require(case('M7','split_path',3,[1]*4,3,[[0],[0],[1],[2]],{},groups=[0,0,1,2]),'REFUSED')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 15, in require
+    self.assertEqual(record.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'REFUSED'
+- UNIMPLEMENTED
++ REFUSED
+
+
+======================================================================
+FAIL: test_palette_path_uses_exact_endpoints (test_task3.Task3.test_palette_path_uses_exact_endpoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 20, in test_palette_path_uses_exact_endpoints
+    self.require(case('M7','split_path',5,[1]*4,3,[[0],[0],[1],[2]],{},groups=[0,0,1,2]))
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 15, in require
+    self.assertEqual(record.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_reserve_reuse_and_fixed_endpoints (test_task3.Task3.test_reserve_reuse_and_fixed_endpoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 30, in test_reserve_reuse_and_fixed_endpoints
+    self.require(case('M8','support',25,[2]*4,3,[[0,1],[1,2],[0,2],[3,4]],
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task3.py", line 15, in require
+    self.assertEqual(record.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (failures=7)
