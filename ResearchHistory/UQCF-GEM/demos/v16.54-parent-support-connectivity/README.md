@@ -1,6 +1,6 @@
 # v16.54 — structural conditions for one-unit repair
 
-Current status: the first complete mechanism campaign and its independent evidence aggregation passed. Fresh reproduction, final publication review and actual-merge replay are pending. This is not yet a CLOSED/CERTIFIED implementation.
+Current status: the complete primary campaign, fresh reproduction, independent aggregation, durable publication and evidence review passed. All 77 scientific files reproduce exactly. Actual-merge replay remains pending; the implementation is not yet CLOSED/CERTIFIED.
 
 ## Mathematical result
 
@@ -18,7 +18,9 @@ The approved [prospective validation plan](PROSPECTIVE_VALIDATION_PLAN.md) freez
 
 - First complete campaign: GitHub run `37059520424`, scientific/workflow SHA `0ba1284ade581267997882de2d4c723f2b9ee3a4`. All eight complete-domain shards and the inherited v16.53 stack passed.
 - Independent aggregation: run `37063427057`. Complete identity coverage, prescribed mechanism diagnostics, original artifact hashes and full inherited-package verification passed.
-- Final certification still requires fresh deterministic reproduction, durable evidence, whole-branch review and replay at the actual merge SHA.
+- Fresh reproduction: run `37069226242` at `0a0037bc74399e04609e156d3bfd00736486bcbc`; all eight domains, 83 development controls and the full inherited stack passed. Aggregation `37073565129` passed.
+- Durable publication: run `37074296257`, evidence commit `aca507ff7a22f7ee6050c2c6eb6e8da0e93653dc`. All 77 scientific files are byte-identical to the first campaign; all nine original archives were reconstructed and verified by the executor and independent reviewer.
+- See [independent premerge review](INDEPENDENT_PREMERGE_REVIEW.md) and [reproduction interpretation](INDEPENDENT_REPRODUCTION_DESIGN_REVIEW.md). Final certification still requires replay and accepted evidence at the actual merge SHA.
 
 Use [EXECUTION_LEDGER.md](EXECUTION_LEDGER.md) and [INDEPENDENT_IMPLEMENTATION_REVIEW.md](INDEPENDENT_IMPLEMENTATION_REVIEW.md) for the execution and review record. Frozen analytical documents and `protocol.json` retain their original historical status text; this page reports the subsequent implementation phase without changing those preregistered bytes.
 

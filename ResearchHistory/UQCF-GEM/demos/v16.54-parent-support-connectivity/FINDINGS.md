@@ -1,6 +1,6 @@
 # v16.54 findings — the general parent-support principle
 
-Current execution status (2026-10-02): the independently accepted analytical results now have an implemented M1–M9 mechanism suite. First full campaign37059520424 and aggregation37063427057 passed; all nine original campaign archives are durably published and their committed bytes independently read back and verified. Final campaign37069226242 at0a0037bc74399e04609e156d3bfd00736486bcbc passed83development controls and is running full domains. Fresh reproduction, final review and actual-merge replay remain pending. v16.54 is not yet CLOSED/CERTIFIED; universal higher-floor connectivity remains OPEN. Earlier phase-status statements below retain their historical meaning.
+Current execution status (2026-10-02): complete primary and fresh reproduction passed, including all M1–M9 domains, 83 final development controls and the full inherited stack. Independent aggregation and publication passed. All 77 deterministic scientific files are byte-identical, and all nine original final archives were independently reconstructed and verified. Premerge evidence is accepted; actual-merge replay remains mandatory before CLOSED/CERTIFIED. Universal higher-floor connectivity remains OPEN. Earlier phase-status statements below retain their historical meaning.
 
 ## The general result
 
