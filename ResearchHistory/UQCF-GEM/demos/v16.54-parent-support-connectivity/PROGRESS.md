@@ -22,3 +22,11 @@ Review dispositions, one for each declined-to-judge item:
 - Ruling: physical interpretation and optimization beyond the native finite incidence category remain excluded. Cost if wrong: presenting combinatorial connectivity as a derived physical law.
 
 The analytical objective has produced a general upper-excursion-removal principle, arbitrary-arity target3 connectivity and the five-child target4 diagnostic proof. General pair/higher-subset cover connectivity remains the precise open frontier. v16.54 is not CLOSED/CERTIFIED. The v16.53 certification remains unchanged.
+
+## Exact-endpoint continuation
+
+User explicitly directed continued mathematics on exact-q endpoint structure and excluded an unfrozen numerical campaign. Added EXACT_ENDPOINT_CAPACITY.md at b1ebe5df4f534c8813797d5a3b2ccc430e757126, parent c678651cda8262fe39b69d9f6b7e224255dcc0c8. The earlier accepted proof bytes are preserved. Derived the local redundancy hierarchy, localized capacity inequalities, arbitrary-arity/all-q>=3 saturated classification and connectivity, and a limited defect-count reduction for positive slack.
+
+Independent reviewer /root/v1654_capacity_review verified SHA256 37556dd879d80b1301395fbc89b8ec1ee442a0497459c659accbf776fa604ff8 and accepted all scoped claims with no Critical, Important or Minor findings. INDEPENDENT_CAPACITY_REVIEW.md records each declined-to-judge item and executor disposition. The executor read back the exact immutable proof from GitHub. No tests, numerical enumeration, implementation or workflow dispatch occurred. Proof acceptance does not constitute implementation certification, and PR102 remains draft.
+
+The theorem resolves the entire equality boundary of the user's capacity inequality. The general positive-slack problem remains open; neither localized capacity inequalities nor the deficit count is claimed sufficient for exchange. This result advances by structural conditions, not branching number.
