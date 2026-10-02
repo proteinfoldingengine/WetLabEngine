@@ -1,0 +1,118 @@
+test_corrupted_scientific_bytes_rejected (test_campaign.Campaign.test_corrupted_scientific_bytes_rejected) ... FAIL
+test_equal_count_wrong_identity_digest_rejected (test_campaign.Campaign.test_equal_count_wrong_identity_digest_rejected) ... FAIL
+test_failed_cannot_pass (test_campaign.Campaign.test_failed_cannot_pass) ... FAIL
+test_incomplete_cannot_pass (test_campaign.Campaign.test_incomplete_cannot_pass) ... FAIL
+test_invalid_provenance_rejected (test_campaign.Campaign.test_invalid_provenance_rejected) ... FAIL
+test_missing_scientific_file_rejected (test_campaign.Campaign.test_missing_scientific_file_rejected) ... FAIL
+test_valid_manifest (test_campaign.Campaign.test_valid_manifest) ... ok
+test_valid_summary (test_campaign.Campaign.test_valid_summary) ... ok
+test_missing_native_clearance_trace_rejected (test_review.FollowupReview.test_missing_native_clearance_trace_rejected) ... FAIL
+test_module_pair_omitted_balancing_rejected (test_review.FollowupReview.test_module_pair_omitted_balancing_rejected) ... FAIL
+test_negative_guard_boundary_rejected (test_review.FollowupReview.test_negative_guard_boundary_rejected) ... FAIL
+test_unprescribed_cycle_rotation_rejected (test_review.FollowupReview.test_unprescribed_cycle_rotation_rejected) ... FAIL
+test_unprescribed_split_permutation_detour_rejected (test_review.FollowupReview.test_unprescribed_split_permutation_detour_rejected) ... FAIL
+test_canonical_root_order_includes_duplicates (test_review.MechanismReview.test_canonical_root_order_includes_duplicates) ... ok
+test_direct_vacancy_lexicographic_pair (test_review.MechanismReview.test_direct_vacancy_lexicographic_pair) ... ok
+test_false_layer_peak_rejected (test_review.MechanismReview.test_false_layer_peak_rejected) ... ok
+test_false_old_owner_category_rejected (test_review.MechanismReview.test_false_old_owner_category_rejected) ... ok
+test_false_star_slots_rejected (test_review.MechanismReview.test_false_star_slots_rejected) ... ok
+test_substituted_prescribed_cycle_pairing_rejected (test_review.MechanismReview.test_substituted_prescribed_cycle_pairing_rejected) ... ok
+test_unchecked_clone_preliminary_tail_rejected (test_review.MechanismReview.test_unchecked_clone_preliminary_tail_rejected) ... ok
+test_changed_plan_commit_rejected_without_binding (test_review.ProtocolReview.test_changed_plan_commit_rejected_without_binding) ... ok
+test_missing_preregistration_rejected (test_review.ProtocolReview.test_missing_preregistration_rejected) ... ok
+test_nonimmutable_binding_rejected (test_review.ProtocolReview.test_nonimmutable_binding_rejected) ... ok
+test_removed_inventories_rejected_without_binding (test_review.ProtocolReview.test_removed_inventories_rejected_without_binding) ... ok
+test_valid_frozen_protocol (test_review.ProtocolReview.test_valid_frozen_protocol) ... ok
+
+======================================================================
+FAIL: test_corrupted_scientific_bytes_rejected (test_campaign.Campaign.test_corrupted_scientific_bytes_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_campaign.py", line 21, in test_corrupted_scientific_bytes_rejected
+    self.assertTrue(verify_scientific_manifest({'a':b'abd'},{'a':hashlib.sha256(b'abc').hexdigest()}))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_equal_count_wrong_identity_digest_rejected (test_campaign.Campaign.test_equal_count_wrong_identity_digest_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_campaign.py", line 36, in test_equal_count_wrong_identity_digest_rejected
+    self.assertTrue(validate_campaign_summary(s))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_failed_cannot_pass (test_campaign.Campaign.test_failed_cannot_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_campaign.py", line 40, in test_failed_cannot_pass
+    self.assertTrue(validate_campaign_summary(s))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_incomplete_cannot_pass (test_campaign.Campaign.test_incomplete_cannot_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_campaign.py", line 32, in test_incomplete_cannot_pass
+    self.assertTrue(validate_campaign_summary(s))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_invalid_provenance_rejected (test_campaign.Campaign.test_invalid_provenance_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_campaign.py", line 28, in test_invalid_provenance_rejected
+    self.assertTrue(validate_campaign_summary(s))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_missing_scientific_file_rejected (test_campaign.Campaign.test_missing_scientific_file_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_campaign.py", line 24, in test_missing_scientific_file_rejected
+    self.assertTrue(verify_scientific_manifest({}, {'a':hashlib.sha256(b'abc').hexdigest()}))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_missing_native_clearance_trace_rejected (test_review.FollowupReview.test_missing_native_clearance_trace_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_review.py", line 115, in test_missing_native_clearance_trace_rejected
+    self.assertTrue(verify_record(c,r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_module_pair_omitted_balancing_rejected (test_review.FollowupReview.test_module_pair_omitted_balancing_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_review.py", line 96, in test_module_pair_omitted_balancing_rejected
+    self.assertTrue(verify_record(c,r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_negative_guard_boundary_rejected (test_review.FollowupReview.test_negative_guard_boundary_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_review.py", line 101, in test_negative_guard_boundary_rejected
+    self.assertTrue(verify_record(c,r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_unprescribed_cycle_rotation_rejected (test_review.FollowupReview.test_unprescribed_cycle_rotation_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_review.py", line 127, in test_unprescribed_cycle_rotation_rejected
+    self.assertTrue(verify_record(c,r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_unprescribed_split_permutation_detour_rejected (test_review.FollowupReview.test_unprescribed_split_permutation_detour_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_review.py", line 111, in test_unprescribed_split_permutation_detour_rejected
+    self.assertTrue(verify_record(c,r))
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.818s
+
+FAILED (failures=11)

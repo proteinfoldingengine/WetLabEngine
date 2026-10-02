@@ -1,0 +1,50 @@
+test_complete_partition (test_publication.Publication.test_complete_partition) ... ok
+test_duplicate_shard_rejected (test_publication.Publication.test_duplicate_shard_rejected) ... ok
+test_empty_mechanism_category_rejected (test_publication.Publication.test_empty_mechanism_category_rejected) ... ok
+test_equal_scientific_reproduction (test_publication.Publication.test_equal_scientific_reproduction) ... ok
+test_executing_helpers_must_match_target (test_publication.Publication.test_executing_helpers_must_match_target) ... FAIL
+test_inherited_package_uses_full_verifier (test_publication.Publication.test_inherited_package_uses_full_verifier) ... FAIL
+test_mismatched_universe_rejected (test_publication.Publication.test_mismatched_universe_rejected) ... ok
+test_missing_reproduction_file_rejected (test_publication.Publication.test_missing_reproduction_file_rejected) ... ok
+test_missing_shard_rejected (test_publication.Publication.test_missing_shard_rejected) ... ok
+test_overlapping_interval_rejected (test_publication.Publication.test_overlapping_interval_rejected) ... ok
+test_scientific_byte_change_rejected (test_publication.Publication.test_scientific_byte_change_rejected) ... ok
+test_target_workflow_attempt_binding (test_publication.Publication.test_target_workflow_attempt_binding) ... FAIL
+test_unavailable_evidence_preserves_incomplete (test_publication.Publication.test_unavailable_evidence_preserves_incomplete) ... FAIL
+
+======================================================================
+FAIL: test_executing_helpers_must_match_target (test_publication.Publication.test_executing_helpers_must_match_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 58, in test_executing_helpers_must_match_target
+    self.assertIsNotNone(check,'executing helpers must be bound')
+AssertionError: unexpectedly None : executing helpers must be bound
+
+======================================================================
+FAIL: test_inherited_package_uses_full_verifier (test_publication.Publication.test_inherited_package_uses_full_verifier)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 66, in test_inherited_package_uses_full_verifier
+    self.assertIsNotNone(check,'full inherited package verification is required')
+AssertionError: unexpectedly None : full inherited package verification is required
+
+======================================================================
+FAIL: test_target_workflow_attempt_binding (test_publication.Publication.test_target_workflow_attempt_binding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 49, in test_target_workflow_attempt_binding
+    self.assertIsNotNone(check,'target workflow binding is required')
+AssertionError: unexpectedly None : target workflow binding is required
+
+======================================================================
+FAIL: test_unavailable_evidence_preserves_incomplete (test_publication.Publication.test_unavailable_evidence_preserves_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 77, in test_unavailable_evidence_preserves_incomplete
+    self.assertTrue(status.exists(),'missing durable INCOMPLETE status')
+AssertionError: False is not true : missing durable INCOMPLETE status
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.032s
+
+FAILED (failures=4)

@@ -1,0 +1,54 @@
+test_actual_merge_rejects_changed_or_missing_science (test_publication.Publication.test_actual_merge_rejects_changed_or_missing_science) ... ok
+test_actual_merge_requires_two_parents (test_publication.Publication.test_actual_merge_requires_two_parents) ... ok
+test_archive_campaign_cross_bindings_reject_substitution (test_publication.Publication.test_archive_campaign_cross_bindings_reject_substitution) ... ok
+test_archive_destination_rejects_noninteger_run_before_writing (test_publication.Publication.test_archive_destination_rejects_noninteger_run_before_writing) ... ok
+test_complete_partition (test_publication.Publication.test_complete_partition) ... ok
+test_corrupt_original_archive_is_not_published (test_publication.Publication.test_corrupt_original_archive_is_not_published) ... ok
+test_duplicate_shard_rejected (test_publication.Publication.test_duplicate_shard_rejected) ... ok
+test_empty_mechanism_category_rejected (test_publication.Publication.test_empty_mechanism_category_rejected) ... ok
+test_equal_scientific_reproduction (test_publication.Publication.test_equal_scientific_reproduction) ... ok
+test_executing_helpers_must_match_target (test_publication.Publication.test_executing_helpers_must_match_target) ... ok
+test_explicit_null_comparison_rejected_before_evidence_access (test_publication.Publication.test_explicit_null_comparison_rejected_before_evidence_access) ... FAIL
+test_inherited_package_uses_full_verifier (test_publication.Publication.test_inherited_package_uses_full_verifier) ... ok
+test_mismatched_universe_rejected (test_publication.Publication.test_mismatched_universe_rejected) ... ok
+test_missing_reproduction_file_rejected (test_publication.Publication.test_missing_reproduction_file_rejected) ... ok
+test_missing_shard_rejected (test_publication.Publication.test_missing_shard_rejected) ... ok
+test_original_archive_parts_reconstruct_exact_bytes (test_publication.Publication.test_original_archive_parts_reconstruct_exact_bytes) ... ok
+test_overlapping_interval_rejected (test_publication.Publication.test_overlapping_interval_rejected) ... ok
+test_reproduction_rejects_equal_nonmanifest_values (test_publication.Publication.test_reproduction_rejects_equal_nonmanifest_values) ... FAIL
+test_scientific_byte_change_rejected (test_publication.Publication.test_scientific_byte_change_rejected) ... ok
+test_target_workflow_attempt_binding (test_publication.Publication.test_target_workflow_attempt_binding) ... ok
+test_unavailable_evidence_preserves_incomplete (test_publication.Publication.test_unavailable_evidence_preserves_incomplete) ... ok
+
+======================================================================
+FAIL: test_explicit_null_comparison_rejected_before_evidence_access (test_publication.Publication.test_explicit_null_comparison_rejected_before_evidence_access)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 144, in test_explicit_null_comparison_rejected_before_evidence_access
+    with self.assertRaisesRegex(ValueError,'invalid reproduction reference'):preserve.prepare(request,Path(directory)/'out')
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/preserve.py", line 21, in prepare
+    metadata=api(f'actions/runs/{run}/attempts/{attempt}')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/unittest/mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/unittest/mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/unittest/mock.py", line 1183, in _execute_mock_call
+    raise effect
+AssertionError: evidence accessed before request validation
+
+======================================================================
+FAIL: test_reproduction_rejects_equal_nonmanifest_values (test_publication.Publication.test_reproduction_rejects_equal_nonmanifest_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_publication.py", line 136, in test_reproduction_rejects_equal_nonmanifest_values
+    self.assertTrue(compare_reproduction(['a'],['a']))
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.015s
+
+FAILED (failures=2)

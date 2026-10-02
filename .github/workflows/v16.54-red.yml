@@ -1,0 +1,58 @@
+name: v16.54 mechanism development RED and GREEN
+on:
+  push:
+    branches: [research/v16.54-parent-support-connectivity]
+    paths: ['ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/RUN_REQUEST.json']
+  workflow_dispatch:
+    inputs:
+      scientific_sha:
+        description: Immutable scientific commit, must match committed request
+        required: true
+permissions: {contents: read}
+concurrency:
+  group: v1654-development-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  development:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0}
+      - id: request
+        env:
+          INPUT_SHA: ${{ inputs.scientific_sha }}
+        run: |
+          python - <<'PY'
+          import json,os,re,subprocess
+          from pathlib import Path
+          p=Path('ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity')
+          r=json.loads((p/'RUN_REQUEST.json').read_text())
+          assert re.fullmatch('[0-9a-f]{40}',r['scientific_sha'])
+          assert re.fullmatch('[0-9a-f]{40}',r['preregistration_sha'])
+          assert r['phase'] in ['task1','task2','task3','review','all','campaign','publication']
+          assert not os.environ.get('INPUT_SHA') or os.environ['INPUT_SHA']==r['scientific_sha']
+          subprocess.run(['git','merge-base','--is-ancestor',r['preregistration_sha'],r['scientific_sha']],check=True)
+          subprocess.run(['git','merge-base','--is-ancestor',r['scientific_sha'],os.environ['GITHUB_SHA']],check=True)
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              for key in ['scientific_sha','preregistration_sha','phase']:f.write(key+'='+r[key]+'\n')
+          PY
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ steps.request.outputs.scientific_sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: Run genuine development tests
+        env:
+          SCIENTIFIC_SHA: ${{ steps.request.outputs.scientific_sha }}
+          PREREGISTRATION_SHA: ${{ steps.request.outputs.preregistration_sha }}
+          PHASE: ${{ steps.request.outputs.phase }}
+        run: python ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/development.py "$PHASE" out/development
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1654-development-${{ github.sha }}
+          path: out/development
+          if-no-files-found: error

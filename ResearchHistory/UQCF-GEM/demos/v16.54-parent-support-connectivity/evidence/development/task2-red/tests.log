@@ -1,0 +1,209 @@
+test_both_maximum_layer_neighbors (test_task2.Task2.test_both_maximum_layer_neighbors) ... FAIL
+test_cyclic_exceptional_move (test_task2.Task2.test_cyclic_exceptional_move) ... FAIL
+test_element_old_owner_buffer (test_task2.Task2.test_element_old_owner_buffer) ... FAIL
+test_empty_contraction (test_task2.Task2.test_empty_contraction) ... FAIL
+test_external_label_rejected (test_task2.Task2.test_external_label_rejected) ... FAIL
+test_false_coverage_rejected (test_task2.Task2.test_false_coverage_rejected) ... FAIL
+test_false_packet_source_rejected (test_task2.Task2.test_false_packet_source_rejected) ... FAIL
+test_guard_transfer (test_task2.Task2.test_guard_transfer) ... FAIL
+test_original_packet_membership (test_task2.Task2.test_original_packet_membership) ... FAIL
+test_repeated_color_cycle (test_task2.Task2.test_repeated_color_cycle) ... FAIL
+test_repeated_layer_removal (test_task2.Task2.test_repeated_layer_removal) ... FAIL
+test_saturated_swap (test_task2.Task2.test_saturated_swap) ... FAIL
+test_simultaneous_move_rejected (test_task2.Task2.test_simultaneous_move_rejected) ... FAIL
+test_slot_boundary_refusal (test_task2.Task2.test_slot_boundary_refusal) ... FAIL
+test_substituted_identity_rejected (test_task2.Task2.test_substituted_identity_rejected) ... FAIL
+test_valid_reference (test_task2.Task2.test_valid_reference) ... ok
+test_wrong_floor_rejected (test_task2.Task2.test_wrong_floor_rejected) ... FAIL
+test_wrong_tau_rejected (test_task2.Task2.test_wrong_tau_rejected) ... FAIL
+
+======================================================================
+FAIL: test_both_maximum_layer_neighbors (test_task2.Task2.test_both_maximum_layer_neighbors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 37, in test_both_maximum_layer_neighbors
+    self.require(case('M1','neighbor',4,[1]*5,4,roots,
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_cyclic_exceptional_move (test_task2.Task2.test_cyclic_exceptional_move)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 65, in test_cyclic_exceptional_move
+    self.require(case('M5','balance',9,[3]*len(rows),6,rows,{},
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_element_old_owner_buffer (test_task2.Task2.test_element_old_owner_buffer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 49, in test_element_old_owner_buffer
+    self.require(case('M2','element',4,[0]*3,None,[[0],[1,2],[3]],
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_empty_contraction (test_task2.Task2.test_empty_contraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 58, in test_empty_contraction
+    self.require(case('M4','clone_sequence',6,[2]*4,3,[[0,1],[0,2],[1,3],[4,5]],
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_external_label_rejected (test_task2.Task2.test_external_label_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 87, in test_external_label_rejected
+    self.assertTrue(verify_record(simple_case(),r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_false_coverage_rejected (test_task2.Task2.test_false_coverage_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 103, in test_false_coverage_rejected
+    self.assertTrue(verify_record(simple_case(),r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_false_packet_source_rejected (test_task2.Task2.test_false_packet_source_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 95, in test_false_packet_source_rejected
+    self.assertTrue(verify_record(simple_case(),r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_guard_transfer (test_task2.Task2.test_guard_transfer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 69, in test_guard_transfer
+    self.require(guard_case(3,4,20,1,1))
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_original_packet_membership (test_task2.Task2.test_original_packet_membership)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 32, in test_original_packet_membership
+    self.require(c)
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_repeated_color_cycle (test_task2.Task2.test_repeated_color_cycle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 44, in test_repeated_color_cycle
+    self.require(case('M2','forced_cycle',5,[2,2,4],None,[[0,2],[1,3],[0,1,2,3]],
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_repeated_layer_removal (test_task2.Task2.test_repeated_layer_removal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 41, in test_repeated_layer_removal
+    self.require(case('M1','layers',6,[1]*7,3,[[x] for x in range(6)]+[[0,1]],{'peak':6}))
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_saturated_swap (test_task2.Task2.test_saturated_swap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 53, in test_saturated_swap
+    self.require(case('M3','saturated',4,[2,1,1,4],3,[[0,1],[2],[3],[0,1,2,3]],
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'PASS'
+- UNIMPLEMENTED
++ PASS
+
+
+======================================================================
+FAIL: test_simultaneous_move_rejected (test_task2.Task2.test_simultaneous_move_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 91, in test_simultaneous_move_rejected
+    self.assertTrue(verify_record(simple_case(),r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_slot_boundary_refusal (test_task2.Task2.test_slot_boundary_refusal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 72, in test_slot_boundary_refusal
+    self.require(guard_case(3,4,19,1,1),'REFUSED')
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 26, in require
+    self.assertEqual(r.get('status'),status)
+AssertionError: 'UNIMPLEMENTED' != 'REFUSED'
+- UNIMPLEMENTED
++ REFUSED
+
+
+======================================================================
+FAIL: test_substituted_identity_rejected (test_task2.Task2.test_substituted_identity_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 99, in test_substituted_identity_rejected
+    self.assertTrue(verify_record(simple_case(),r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_wrong_floor_rejected (test_task2.Task2.test_wrong_floor_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 83, in test_wrong_floor_rejected
+    self.assertTrue(verify_record(simple_case(),r))
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_wrong_tau_rejected (test_task2.Task2.test_wrong_tau_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/tests/test_task2.py", line 79, in test_wrong_tau_rejected
+    self.assertTrue(verify_record(simple_case(),r))
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.002s
+
+FAILED (failures=17)

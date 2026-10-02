@@ -1,0 +1,55 @@
+# v16.54 implementation review record
+
+This is source review, not certification. No reviewer executed local scientific code.
+
+## Universe/provenance review
+
+Independent reviewer `/root/v1654_universe_review` found no concrete M1–M9 universe omission or duplication. Producer and verifier use separate reconstruction algorithms. The twenty-error limit is diagnostic only; full iteration continues.
+
+Important finding: protocol verification skipped immutable binding when PREREGISTRATION_SHA was absent. Regression run 37045732696 produced four assertion failures in five tests, zero errors. The corrected API requires a 40-hex immutable preregistration, compares the full frozen protocol, pins the approved plan commit, and checks that object's plan bytes. Run 37046145283 passed five tests. Follow-up manual review found the source issue resolved. Reviewer declined runtime, artifact, and certification judgments.
+
+## Local mechanism review
+
+Independent reviewer `/root/source_review` reviewed scientific source 30cdcdade6a8e15a2843509ec4ff249cec52afc6. The 18 targeted tests had passed in run 37046781551, but the reviewer required changes before accepting Task 2:
+
+1. Sort the entire M5 canonical root multiset including duplicates; choose M2 direct vacancies by the prescribed lexicographic pair order.
+2. Validate the whole M4 preliminary trace, consecutive clone intervals and fixed slots, not only claimed slices.
+3. Bind M5 star-slot/common-label facts and intervals to actual primitive traces, including both explicit module-pair legs.
+4. Verify M2 old-owner diagnostics, actual buffer preconditions, prescribed repeated-color cycle pairing, and nonoverlapping event intervals.
+5. Independently reconstruct and verify maximum-layer transformations and metadata, not only their final endpoint band.
+
+Run 37047482337 reproduced six assertion failures (eleven tests). Its initial canonical-order fixture used a q=2 auxiliary input outside the primary M5 domain. This was replaced by the approved-domain (3,4), h=3, q=3 fixture before correcting the implementation. The additional direct-vacancy regression and corrected fixture ran in 37055853168: twelve tests, seven assertion failures, zero errors. Both historical runs are retained; neither is primary campaign evidence.
+
+Corrections and M7–M9 implementation are published at 8b1e82d96a104482c3f2fb890d049325740aa7dc. Integrated verification and follow-up source review remain pending. No CLOSED/CERTIFIED claim is made.
+
+## Follow-up closure
+
+The second review found three residual M1–M6 gaps (module-pair suffix/schedule, negative guard-boundary aliases, ordered cycle rotation), and two M7–M9 gaps (palette permutation suffix, inherited-clearance trace/events). Run 37056662003 reproduced all five plus six campaign-evidence controls: 25 tests, 11 assertion failures, zero errors.
+
+At source 93a0887adc3d650292ccf08f63a02b755e978388, both scoped reviewers accepted the fixes. M1–M6 now independently reconstructs complete module legs, exact guard phases and ordered cycle choices. M7–M9 now independently reconstructs full palette legs and every native clearance/root step with complete event/boundary equality. Reviewers performed no local scientific execution and made no certification claim.
+
+Integrated run 37058127774 passed 60 tests with zero failures, errors or skips. The subsequent exact-result memoization refinement in the independent subset search was separately accepted by the M1–M6 reviewer; its verifier SHA256 is 19f3cb383e3976a72285ad30a0cd5a52a74b4b7f2e9a86653a2f8ecfbaaac150. The campaign includes a fresh development gate on its own immutable scientific SHA.
+
+## Original evidence preservation
+
+Downloaded original GitHub ZIP archives are preserved as binary original.zip files next to receipts. Each receipt binds its GitHub artifact ID, original archive SHA256 and byte count, run/workflow/scientific SHAs and test outcomes. All archived source hashes were checked before staging publication. The historical Task 1 RED remains in its original base64 representation. No failed test run is deleted or recoded as passing evidence.
+
+## Initial campaign launch review
+
+The publication reviewer accepted independent universe matching, pre-path contiguous shard freezing, event-SHA provenance, and unchanged inherited phase guards. One Important issue was found: a producer exception could retain the previous identity's record in FIRST_FAILURE.json. Run 37059096994 reproduced that problem and missing attempt checkpoint: ten tests, two assertion failures, zero errors. The producer loop now resets its record and atomically publishes CURRENT_ATTEMPT.json before every production call. Fresh campaign development gating is mandatory before any path shard starts. Aggregate mechanism coverage, reproduction, publication and actual-merge closeout are still subsequent obligations.
+
+## Aggregation review
+
+Initial source 2b1b548201eda3a17530e5d39b73c1ebe6c46209 had three Important findings: missing enforced executing-helper/target-run provenance, incomplete inherited-package verification, and no durable INCOMPLETE status on aggregation failure. Genuine RED run37061765428 reproduced four missing contracts (13 tests, 4 assertion failures, no errors).
+
+Independent rereview accepted corrected source e7967c1fbef4b268c11da796ec5633253de54b24, publication.py SHA2560fbd2f6e382caa345e104539e369d0724224c3d6d13501a190714993f765e78b. It checked the consumed helper dependency closure, unchanged inherited full verifier, exact source bindings and atomic failure status. GitHub run37062080622 passed all13 controls. This scoped acceptance does not claim real aggregation, reproduction, whole-source acceptance or certification.
+
+## Actual-merge replay binding review
+
+Scoped source review accepted hash parity between certified primary and actual two-parent merge for Python sources/tests, protocol and execution workflows. Frozen proof/review bytes remain enforced by every shard's protocol check. Two transport issues (premature feature contract-triggered campaign and dispatch input mismatch on audit path) were corrected; independent rereview accepted8376b663b74825f58cf6dffe82ea65e18a233b10. This is acceptance of audit machinery, not a claim that an actual merge or audit has occurred.
+
+## Original archive publication and reproduction review
+
+The reviewer confirmed exact reconstruction of all8domain original ZIPs and the inherited original ZIP from ordered16MiB binary parts. At8d5eaa6580b80a52d76ce16de446f8cc3131d753 it required pre-write campaign identity validation and atomic create-only remote-ref behavior. Corrections06532593be7b1c6bb75473ae702a9cba58303c17 were accepted; full81-control GREEN37068234545 passed.
+
+The reproduction reference is read directly from executing Git HEAD and compared as a complete nonempty dictionary of deterministic file hashes. A follow-up rejected explicitnull instead of treating it as an absent request. RED37068702175 demonstrated that issue and nondictionary equality; corrected source287227a0abaf271fa1e842c859abbc76f2d27a30 was independently accepted. This acceptance concerns source and controlled write behavior; actual publication, fresh reproduction and merge audit remain separate evidence gates.
