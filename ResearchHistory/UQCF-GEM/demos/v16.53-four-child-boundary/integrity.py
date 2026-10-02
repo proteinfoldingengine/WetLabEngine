@@ -15,7 +15,7 @@ unpack_zip=legacy.unpack_zip;replace_directory=legacy.replace_directory
 def anchored(path):return legacy.anchored_file(ROOT,PARENT,str(path.relative_to(ROOT)))
 
 MODULES=('test_bootstrap','test_gate','test_mechanisms','test_feasibility','test_lifting','test_integration','test_campaign','test_integrity','test_review')
-COUNTS=(1,7,2,2,6,11,7,3,3)
+COUNTS=(1,7,2,2,6,11,7,4,3)
 def current_test_manifest():
     import bindings
     manifest=json.loads((HERE/'TEST_MANIFEST_CAMPAIGN.json').read_text())
@@ -89,7 +89,7 @@ def verify_package(out):
     scientific_equal(out/'scientific',out/'scientific')
     parent_equal(out/'scientific/parent52',OLD/'evidence/science/scientific')
     metrics=json.loads((out/'METRICS.json').read_text())
-    if metrics.get('inherited_tests')!=1150 or metrics.get('new_controls')!=42 or not metrics.get('all_commands_passed'):raise ValueError('execution coverage')
+    if metrics.get('inherited_tests')!=1150 or metrics.get('new_controls')!=43 or not metrics.get('all_commands_passed'):raise ValueError('execution coverage')
     suites=json.loads((out/'inherited/SUITES.json').read_text())
     expected_paths=[s for s in (OLD39/'inherited.txt').read_text().splitlines() if s.strip()]
     expected_counts=[8,26,12,16,4,8,5,28,3,5,30,28,11,28,2,22,3,22]
@@ -121,7 +121,7 @@ def verify_package(out):
         identities=sorted(re.findall(r'^test_\w+ \(([^)]+)\) \.\.\. ok$',text,re.M))
         expected_ids=sorted(r['identity'].replace(module+'.','__main__.',1) for r in manifest['tests'] if r['identity'].startswith(module+'.'))
         if identities!=expected_ids:raise ValueError('exact test identities '+module)
-    if sum(logs.values())!=1192:raise ValueError('full test count')
+    if sum(logs.values())!=1193:raise ValueError('full test count')
     commands=json.loads((out/'logs/COMMANDS.json').read_text())
     if set(commands)!={'science','inherited'} or any(r['returncode']!=0 for r in commands.values()):raise ValueError('execution commands')
     legacy.compare_suites(json.loads((INFRA/'evidence/science/inherited/optimized-fixtures.json').read_text()),json.loads((out/'inherited/optimized-fixtures.json').read_text()))

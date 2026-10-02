@@ -1,4 +1,4 @@
-"""Inherited 1150 checks, 42 frozen controls, fresh 45-file science."""
+"""Inherited 1150 checks, 43 frozen controls, fresh 45-file science."""
 from pathlib import Path
 import sys,subprocess,re,time,json,os,base64,zipfile,io,hashlib,ast
 from integrity import HERE,OLD,INFRA,dump,run_commands,source_map,package,legacy,current_test_manifest,MODULES,COUNTS
@@ -25,18 +25,26 @@ def audit_red(prefix,expected):
         for name,digest in result['source'].items():
             if hashlib.sha256(z.read('source/'+name)).hexdigest()!=digest:raise ValueError('RED source digest')
     return all_logs
-def preflight(out):
+def _preflight(out):
     out=Path(out);out.mkdir(parents=True,exist_ok=True);source_map(check_execution=True);current_test_manifest()
     subprocess.run([PY,str(OLD/'run.py'),'preflight',str(out/'parent52')],check=True)
     os.environ['V1653_TEST_OUTPUT']=str((out/'attempts').resolve())
     for module,count in zip(MODULES,COUNTS):logged([PY,str(HERE/(module+'.py'))],out/(module+'.log'),count)
     for prefix,count in [('PREIMPLEMENTATION_RED',2),('MECHANISMS_RED',2),('INTEGRATION_RED',10),('CAMPAIGN_RED',10),('REVIEW_RED',3)]:
         (out/(prefix+'.log')).write_text(audit_red(prefix,count))
+def preflight(out):
+    out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    status={'status':'RUNNING','head':os.environ.get('GITHUB_SHA'),'run':os.environ.get('GITHUB_RUN_ID')}
+    dump(out/'PREFLIGHT_STATUS.json',status)
+    try:_preflight(out)
+    except Exception as exc:
+        dump(out/'PREFLIGHT_STATUS.json',{**status,'status':'INCOMPLETE','exception_type':type(exc).__name__,'message':str(exc)});raise
+    dump(out/'PREFLIGHT_STATUS.json',{**status,'status':'PASSED'})
 def phase(out):
     out=Path(out);out.mkdir(parents=True,exist_ok=True);preflight(out/'preflight');tick=time.perf_counter()
     commands=run_commands({'science':[PY,str(HERE/'run_campaign.py'),str(out/'scientific')],'inherited':[PY,str(INFRA/'run.py'),'inherited',str(out/'inherited')]},out/'logs')
     legacy.compare_suites(json.loads((INFRA/'evidence/science/inherited/optimized-fixtures.json').read_text()),json.loads((out/'inherited/optimized-fixtures.json').read_text()))
-    dump(out/'METRICS.json',{'inherited_tests':1150,'new_controls':42,'all_commands_passed':True,'independent_verifier_recomputed':True,'parallel_seconds':time.perf_counter()-tick,'commands':commands})
+    dump(out/'METRICS.json',{'inherited_tests':1150,'new_controls':43,'all_commands_passed':True,'independent_verifier_recomputed':True,'parallel_seconds':time.perf_counter()-tick,'commands':commands})
 if __name__=='__main__':
     cmd,out=sys.argv[1:3]
     if cmd=='preflight':preflight(out)
