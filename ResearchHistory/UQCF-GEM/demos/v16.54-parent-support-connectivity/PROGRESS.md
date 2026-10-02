@@ -66,3 +66,15 @@ Exact compaction gives a graph. A star edit retains the G-u constraints, losing 
 This supersedes the clique-boundary limitation for floors 2 while preserving that earlier proof. It is a structural exchange theorem, not an arity campaign. Mixed or higher floors remain the general unresolved case: compact roots may be hyperedges and the graph cloning/slot argument does not automatically apply. No implementation, numerical campaign or certification was initiated.
 
 All earlier accepted proof files are unchanged. The independent reviewer verified the proof hash and found no Critical, Important or Minor findings. INDEPENDENT_FLOOR_TWO_REVIEW.md records every declined-to-judge item and executor ruling. Publication uses the same API-backed analytical branch; the executor checks immutable bytes and the final documentation-only diff. No numerical tests or workflow dispatch occurred. PR102 remains draft, and v16.54 is not CLOSED/CERTIFIED.
+
+## Singleton anchors: mixed floors and arbitrary higher floors with enough anchors
+
+SINGLETON_ANCHOR_REDUCTION.md (60a1b1da426858926dc6022f78de1f1d46e95a62; SHA256 93eda3cc5c6f7904c5d88e6d99576d70892e638cda04e2414ad9bb2ea4fb932c) is independently accepted in INDEPENDENT_SINGLETON_REVIEW.md with no findings.
+
+Theorem P connects all exact-q endpoints when at least q root indices have floor 1, regardless of the other floors. Exact compaction and duplicate-anchor separation establish q distinct forced labels; they protect the lower bound while every other root expands, reaching the previously proved protected class.
+
+Theorem Q connects all exact-q endpoints whenever every floor lies in {1,2}. With fewer than q singleton-capable roots, canonical distinct singleton labels contribute a fixed p units. Pair roots touching those labels are redundant; the remaining graph lies on the complementary palette. The proof handles residual target 1 separately and explicitly extends graph normalization to target 2 and starting cover number above target. Final maximum-layer replacement restores the one-unit band globally.
+
+These structural reductions cover arbitrary feasible arity and target. The general remaining case involves floors at least 3 and fewer than q singleton-capable indices, outside earlier saturated/protected/low-target results. Hyperedge connectivity there remains OPEN. No implementation or numerical campaign ran.
+
+All earlier accepted proofs are unchanged. The independent reviewer checked the new proof hash and relevant dependency arguments, finding no Critical, Important or Minor defects. INDEPENDENT_SINGLETON_REVIEW.md records every declined item and executor ruling. The executor checks exact GitHub bytes, direct ancestry and documentation-only changes on the existing API-backed branch. No workflow dispatch or numerical execution occurred. PR102 stays draft and v16.54 is not CLOSED/CERTIFIED.

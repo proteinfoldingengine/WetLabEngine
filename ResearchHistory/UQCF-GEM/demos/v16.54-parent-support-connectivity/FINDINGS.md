@@ -21,7 +21,9 @@ Write B_i=P\A_i and impose capacities |B_i|<=k-a_i. A hitting-number lower bound
 | q=4, five children | Cover every pair of labels | Connected; degree-two incidence transfers plus an explicit saturated-hub argument |
 | q>=3, arbitrary arity, saturated capacity sum b_i=(q-1)k | Cover every (q-2)-subset | Connected by the exact-endpoint normal form and partition exchanges |
 | All floors 2, arbitrary feasible arity and target | Cover every (q-2)-subset | Connected by star symmetrization, canonicalization and upper-excursion removal |
-| Mixed or higher floors, general positive slack | Cover every (q-2)-subset | General connectivity remains OPEN beyond the proved cases |
+| Mixed floors in {1,2}, arbitrary feasible arity and target | Singleton anchors plus residual graph | Connected |
+| At least q floor-1 indices, arbitrary remaining floors | q forced anchor labels | Connected |
+| Higher floors with fewer than q floor-1 indices | General residual hyperedge cover | OPEN beyond the earlier proved cases |
 
 Five-child target3 is now a consequence of the arbitrary-arity theorem. It does not require its own passing-case campaign. Five-child target4 tests a genuinely different lower guard: ordinary label coverage is insufficient. Its proof handles both spare incidence capacity and the no-spare-capacity case, rather than silently excluding saturated exact states.
 
@@ -80,3 +82,13 @@ For every feasible r,k,q>=3 with all root floors equal to 2, all exact-q endpoin
 Exact compaction gives a graph. A star edit retains the G-u constraints, losing at most one hitting unit, and fits the fixed root slots whenever the new degree does not exceed the old. Closed-neighborhood class symmetrization does not increase independence number or distinct edge count and strictly reduces class count. Clique splitting, balancing, duplicate normalization and safe symmetry exchanges yield one canonical tuple. The preceding maximum-layer theorem removes upper excursions only after this complete lower-guard path has been established.
 
 This supersedes the clique-boundary limitation for floors 2 while preserving that earlier proof. It is a structural exchange theorem, not an arity campaign. Mixed or higher floors remain the general unresolved case: compact roots may be hyperedges and the graph cloning/slot argument does not automatically apply. No implementation, numerical campaign or certification was initiated.
+
+## Singleton anchors: mixed floors and arbitrary higher floors with enough anchors
+
+SINGLETON_ANCHOR_REDUCTION.md (60a1b1da426858926dc6022f78de1f1d46e95a62; SHA256 93eda3cc5c6f7904c5d88e6d99576d70892e638cda04e2414ad9bb2ea4fb932c) is independently accepted in INDEPENDENT_SINGLETON_REVIEW.md with no findings.
+
+Theorem P connects all exact-q endpoints when at least q root indices have floor 1, regardless of the other floors. Exact compaction and duplicate-anchor separation establish q distinct forced labels; they protect the lower bound while every other root expands, reaching the previously proved protected class.
+
+Theorem Q connects all exact-q endpoints whenever every floor lies in {1,2}. With fewer than q singleton-capable roots, canonical distinct singleton labels contribute a fixed p units. Pair roots touching those labels are redundant; the remaining graph lies on the complementary palette. The proof handles residual target 1 separately and explicitly extends graph normalization to target 2 and starting cover number above target. Final maximum-layer replacement restores the one-unit band globally.
+
+These structural reductions cover arbitrary feasible arity and target. The general remaining case involves floors at least 3 and fewer than q singleton-capable indices, outside earlier saturated/protected/low-target results. Hyperedge connectivity there remains OPEN. No implementation or numerical campaign ran.
