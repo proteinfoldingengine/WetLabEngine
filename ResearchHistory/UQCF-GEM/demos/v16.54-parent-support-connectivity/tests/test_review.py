@@ -37,3 +37,45 @@ class ProtocolReview(unittest.TestCase):
     def test_nonimmutable_binding_rejected(self):
         with patch.dict(os.environ, {'PREREGISTRATION_SHA':'HEAD'}):
             self.assertTrue(verify_protocol(self.protocol(), HERE))
+
+from universe import case,core,parts
+from mechanisms import produce
+from verifier import verify_record
+
+class MechanismReview(unittest.TestCase):
+    def cyclic(self):
+        rows=core(parts((4,3,2)),3,True)
+        return case('M5','balance',9,[3]*len(rows),6,rows,{},form='cyclic',h=3,sizes=[4,3,2],extras='P',d=0)
+
+    def test_canonical_root_order_includes_duplicates(self):
+        rows=core(parts((3,3)),3)+[list(range(6))]
+        c=case('M5','balance',6,[3]*3,2,rows,{},form='module',h=3,sizes=[3,3],extras='P',d=1)
+        r=produce(c)
+        self.assertEqual(r['path'][-1],sorted(r['path'][-1]))
+
+    def test_false_star_slots_rejected(self):
+        c=self.cyclic();r=produce(c);r['facts']['balancing'][0]['slots']=[]
+        self.assertTrue(verify_record(c,r))
+
+    def test_false_layer_peak_rejected(self):
+        c=case('M1','layers',4,[1]*5,3,[[0],[1],[2],[3],[0,1]],{'peak':4})
+        r=produce(c);r['facts']['layers'][0]['peak']=999
+        self.assertTrue(verify_record(c,r))
+
+    def test_unchecked_clone_preliminary_tail_rejected(self):
+        p=json.loads((HERE/'protocol.json').read_text())
+        c=case('M4','clone_sequence',6,[2]*4,3,[[0,1],[0,2],[1,3],[4,5]],{'operations':[[0,1]],'shift':0},tag='empty',source='PROSPECTIVE_VALIDATION_PLAN.md',source_sha256=p['approved_plan_sha256'])
+        r=produce(c);r['facts']['preliminary_path'].append(copy.deepcopy(r['facts']['preliminary_path'][-1]))
+        self.assertTrue(verify_record(c,r))
+
+    def test_false_old_owner_category_rejected(self):
+        c=case('M2','element',4,[0]*3,None,[[0],[1,2],[3]],{'target':[[1],[0,2],[3]]},capacities=[2,2,1],representation='blocks')
+        r=produce(c);event=next(e for e in r['events'] if e['kind']=='element_buffer');event['old_owner']=2
+        self.assertTrue(verify_record(c,r))
+
+    def test_substituted_prescribed_cycle_pairing_rejected(self):
+        rows=[[0,2],[1,3],[0,1,2,3]];target=[[1,3],[0,2],[0,1,2,3]]
+        c=case('M2','forced_cycle',5,[2,2,4],None,rows,{'target':target,'edges':[[0,1,0],[1,2,1],[2,3,0],[3,0,1]],'buffer':4})
+        other=case('M2','degree2',5,[2,2,4],None,rows,{'target':target})
+        r=produce(other);r['identity']=c['identity']
+        self.assertTrue(verify_record(c,r))
