@@ -54,3 +54,15 @@ These carriers have positive slack and no q disjoint root witnesses, since 2q>k.
 The open problem is now exchanges between different overlap structures outside the extremal equality regime. The theorem does not assert arbitrary positive-slack connectivity. No numerical campaign, implementation or certification was initiated.
 
 The executor retained all preceding proof files unchanged, used the approved API-backed analytical branch and verified the exact candidate and corrected publication bytes. Independent review accepted the corrected hash with no unresolved findings. INDEPENDENT_OVERLAP_REVIEW.md records all declined-to-judge items and rulings. No workflow dispatch or scientific execution occurred. v16.54 remains a draft analytical result, not CLOSED/CERTIFIED.
+
+## General all-floor-two theorem: overlap structure may change
+
+FLOOR_TWO_CONNECTIVITY.md (ab27c05ee225c28d2a1fcd517d03eb406693d2c0, SHA256 cdfd4f9550c4787b2c21e3b2de2d7b2d48b584e2b516c52db2ea7691d9214840) is independently accepted by INDEPENDENT_FLOOR_TWO_REVIEW.md with no findings.
+
+For every feasible r,k,q>=3 with all root floors equal to 2, all exact-q endpoints are connected with tau in {q-1,q}. Existing q=1,2 arguments complete the feasible targets for this floor class. This needs neither disjoint root witnesses nor extremal clique parameters nor common endpoint symmetry type.
+
+Exact compaction gives a graph. A star edit retains the G-u constraints, losing at most one hitting unit, and fits the fixed root slots whenever the new degree does not exceed the old. Closed-neighborhood class symmetrization does not increase independence number or distinct edge count and strictly reduces class count. Clique splitting, balancing, duplicate normalization and safe symmetry exchanges yield one canonical tuple. The preceding maximum-layer theorem removes upper excursions only after this complete lower-guard path has been established.
+
+This supersedes the clique-boundary limitation for floors 2 while preserving that earlier proof. It is a structural exchange theorem, not an arity campaign. Mixed or higher floors remain the general unresolved case: compact roots may be hyperedges and the graph cloning/slot argument does not automatically apply. No implementation, numerical campaign or certification was initiated.
+
+All earlier accepted proof files are unchanged. The independent reviewer verified the proof hash and found no Critical, Important or Minor findings. INDEPENDENT_FLOOR_TWO_REVIEW.md records every declined-to-judge item and executor ruling. Publication uses the same API-backed analytical branch; the executor checks immutable bytes and the final documentation-only diff. No numerical tests or workflow dispatch occurred. PR102 remains draft, and v16.54 is not CLOSED/CERTIFIED.

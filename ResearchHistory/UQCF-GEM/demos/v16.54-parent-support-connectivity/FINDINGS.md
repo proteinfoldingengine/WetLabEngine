@@ -20,7 +20,8 @@ Write B_i=P\A_i and impose capacities |B_i|<=k-a_i. A hitting-number lower bound
 | q=3, arbitrary arity | Cover every individual label | Connected; native exact admissibility supplies spare capacity |
 | q=4, five children | Cover every pair of labels | Connected; degree-two incidence transfers plus an explicit saturated-hub argument |
 | q>=3, arbitrary arity, saturated capacity sum b_i=(q-1)k | Cover every (q-2)-subset | Connected by the exact-endpoint normal form and partition exchanges |
-| Positive-slack higher targets at arbitrary arity | Cover every (q-2)-subset | General connectivity remains OPEN beyond the proved cases |
+| All floors 2, arbitrary feasible arity and target | Cover every (q-2)-subset | Connected by star symmetrization, canonicalization and upper-excursion removal |
+| Mixed or higher floors, general positive slack | Cover every (q-2)-subset | General connectivity remains OPEN beyond the proved cases |
 
 Five-child target3 is now a consequence of the arbitrary-arity theorem. It does not require its own passing-case campaign. Five-child target4 tests a genuinely different lower guard: ordinary label coverage is insufficient. Its proof handles both spare incidence capacity and the no-spare-capacity case, rather than silently excluding saturated exact states.
 
@@ -69,3 +70,13 @@ General label transpositions and floor-compatible root permutations admit one-un
 These carriers have positive slack and no q disjoint root witnesses, since 2q>k. Thus the earlier disjoint-triangle family (s=3) is now proved connected, as part of a uniform overlapping-root theorem. Its prior status as a protected-method obstruction remains correct; it is not a connectivity obstruction.
 
 The open problem is now exchanges between different overlap structures outside the extremal equality regime. The theorem does not assert arbitrary positive-slack connectivity. No numerical campaign, implementation or certification was initiated.
+
+## General all-floor-two theorem: overlap structure may change
+
+FLOOR_TWO_CONNECTIVITY.md (ab27c05ee225c28d2a1fcd517d03eb406693d2c0, SHA256 cdfd4f9550c4787b2c21e3b2de2d7b2d48b584e2b516c52db2ea7691d9214840) is independently accepted by INDEPENDENT_FLOOR_TWO_REVIEW.md with no findings.
+
+For every feasible r,k,q>=3 with all root floors equal to 2, all exact-q endpoints are connected with tau in {q-1,q}. Existing q=1,2 arguments complete the feasible targets for this floor class. This needs neither disjoint root witnesses nor extremal clique parameters nor common endpoint symmetry type.
+
+Exact compaction gives a graph. A star edit retains the G-u constraints, losing at most one hitting unit, and fits the fixed root slots whenever the new degree does not exceed the old. Closed-neighborhood class symmetrization does not increase independence number or distinct edge count and strictly reduces class count. Clique splitting, balancing, duplicate normalization and safe symmetry exchanges yield one canonical tuple. The preceding maximum-layer theorem removes upper excursions only after this complete lower-guard path has been established.
+
+This supersedes the clique-boundary limitation for floors 2 while preserving that earlier proof. It is a structural exchange theorem, not an arity campaign. Mixed or higher floors remain the general unresolved case: compact roots may be hyperedges and the graph cloning/slot argument does not automatically apply. No implementation, numerical campaign or certification was initiated.
