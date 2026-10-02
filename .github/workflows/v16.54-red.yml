@@ -30,7 +30,7 @@ jobs:
           r=json.loads((p/'RUN_REQUEST.json').read_text())
           assert re.fullmatch('[0-9a-f]{40}',r['scientific_sha'])
           assert re.fullmatch('[0-9a-f]{40}',r['preregistration_sha'])
-          assert r['phase'] in ['task1','task2','task3','review','all','campaign']
+          assert r['phase'] in ['task1','task2','task3','review','all','campaign','publication']
           assert not os.environ.get('INPUT_SHA') or os.environ['INPUT_SHA']==r['scientific_sha']
           subprocess.run(['git','merge-base','--is-ancestor',r['preregistration_sha'],r['scientific_sha']],check=True)
           subprocess.run(['git','merge-base','--is-ancestor',r['scientific_sha'],os.environ['GITHUB_SHA']],check=True)
