@@ -1,0 +1,36 @@
+# v16.53 execution and closeout ledger
+
+This extends the immutable stage PROGRESS.md without modifying source already validated in primary/reproduction. The approved plan is f07526ea971117d0584782f62b3503dee5792d76. Numerical execution remains GitHub-only.
+
+## Observed completion through merge
+
+Tasks1–3 implementation and independent whole-source review completed, including the single RED→GREEN correction pass for both Important findings. The Python AST portability failure was preserved and corrected prospectively. Source433b3c2e9ffb34e08e34b425d5c56dc1b8a851cf passed definitive preflight, primary and independent fresh reproduction in run36944252886. Both original execution archives were independently audited:1193 passing checks,2049 source paths,45 identical scientific files,2863 frozen F/R/N/M records,34234 moves. All42 inherited scientific files matched the integrated baseline. These counts validate implementation and do not replace the reusable proof.
+
+Publication e84643fdb667e28c41018a56c3422f4b90ef5160 passed all363 manifest-entry checks, with unchanged source and inherited baseline. Independent exact-head review approved that head after a separate initial-preflight archival gap was closed. Exact review bytes were published/read back at b32b2fc6e7487117bb8ab0acc7fe6fb87d66f9c1, on research/v16.53-artifact-transfer. The standalone preflight archive/API record is at f4361758285e2ae44afdf44cd1c66351744d2b62 in the same branch.
+
+PR101 merged as f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8. Ordered parents are b6bf95798ec5892963c29f4020f8b75069fd2e3b and e84643fdb667e28c41018a56c3422f4b90ef5160. Merge tree2063d52a660a85b5a1675424d5d974b7038dad90 exactly equals the reviewed publication tree. Integrated CI36946472199 passed. Actual-merge certification run36946472173 passed preflight, full replay and receipt publication. Independent byte/source/log audit verified1193 checks,45 identical scientific files,2049 source paths and unchanged result accounting at the actual merge.
+
+The original actual-merge archive11202962182 is114011394 bytes, SHA2561830143fd012ee2d619d2c7371df7f44a76e51b0855691da26c71c745122cf80. Its complete ZIP is retained in verified chunks in durable receipt e85be3d4fd318bb577a101f0fdbeed9251dd9ebc. All149 receipt files and its complete manifest match Git. The original receipt API ZIP11203290048 is228054516 bytes, SHA2568d1de8f57a944e755607f1cf146cbffdbb2b311591e657bd6d79a11a36e1db35; every extracted receipt byte is retained under the Git manifest. Audit-only transfer36947746113 passed; no numerical work ran in transfer or local audits.
+
+The actual-merge standalone preflight original11202860824 is separately retained/read back at b2241b272847f1ac4ee62a7be5142119a494b0f4, folder ResearchHistory/UQCF-GEM/audits/v16.53/premerge-e84643f/, files MERGE_INITIAL_PREFLIGHT.zip.b64 and MERGE_INITIAL_PREFLIGHT_API.json. Decoded size122052 bytes; SHA2562aba3e6022b49b64a0054cc61ebd9e6a21ec6548a7544ca7ce033848a03d4ec6. The independent receipt reviewer separately verified this supplement. The independent receipt approval was published at a377ad8a014dd901d828bfacbb81ab5ef170806d and read back exactly. A fresh terminal check then confirmed merge run36946472173 completed/success at the actual merge. All Task4 gates are complete: CLOSED/CERTIFIED.
+
+## Rulings in chronological order and cost if wrong
+
+1. Keep the approved isolated API-backed source mirror instead of a local Git worktree, and run all numerical work on GitHub. Cost if wrong: a source/provenance mismatch; exact Git blobs, archives and branch identities are checked at each gate.
+2. Add a one-control verifier bootstrap RED before implementing the independent verifier, without replacing the required two-failure RED. Its manifest was recorded after dispatch and is not described as preregistered. Cost if wrong: misleading TDD provenance; the required prospectively frozen RED remains independently retained.
+3. Use a sparse shallow stage checkout only for development, retaining full source/history for definitive execution. Cost if wrong: a missing-source development failure; no definitive gate uses the sparse checkout.
+4. Exercise three remaining infeasibility/unsafe campaign mutation controls against the complete producer corpus in Task3, keeping the real verifier and full-coverage requirement. Cost: later feedback for those controls; no test-only admission bypass was introduced.
+5. Bind prior development ZIPs by hash in later development snapshots rather than recursively nesting their bytes; retain every original in Git. Cost if wrong: a provenance gap; original receipts/digests and complete definitive source snapshots are audited.
+6. Treat runtime sufficiency, live ancestry, publication bytes, terminal status and certification declined by source review as explicit later gates. Cost if wrong: invalid certification; no such result is inferred from source review.
+7. Version the assertion serialization to Python3.11 AST without empty type_params, retaining full source and complete function/assertion hashes, and add the pinned-runtime regression. Cost if wrong: false assertion acceptance/rejection; source/hash/identity mutations and the runtime regression remain mandatory. Historical manifests/archives are unchanged.
+8. Retain the standalone initial preflight original/API metadata on the separate audit branch before merge, supplementing the full preflight reruns in both execution archives. Cost if wrong: an archival omission; independent exact-byte readback closed the Important retention finding. Apply the same retention rule to the actual-merge standalone preflight.
+
+## Other disclosed corrections
+
+The imported-TestCase review harness run was rejected for discovering ten unintended tests; its archive/log/receipt was preserved and the module import corrected before the proper RED gate. Early preflight failure now retains explicit status/exception evidence. Neither correction weakens a scientific assertion or shrinks the frozen domain.
+
+Deferred minors: none. No unresolved source-review, exact-head or receipt findings remain. Independent receipt reviewer /root/v1653_receipt_review approved CLOSED/CERTIFIED after independently checking merge provenance, terminal success,1193 recorded checks,45-file equality, source bindings, original archive digests, all149 durable receipt files and both preflight supplements. Decision SHA256364998905594452446b91d50797969647f0f63fe2309774363b7a6d1d0c2f855. Its exact-byte publication/readback and final terminal recheck conditions were fulfilled before closure was announced.
+
+## Scientific scope
+
+The decisive deliverable is the independently accepted four-child interface in FOUR_CHILD_INTERFACE.md, returning the same six clauses used by binary/ternary joining. Native exact q=3 admissibility supplies complementary capacity for the new overlap problem; guarded root reconfiguration and exact-interior clearance lift it while preserving total excursion at most one. Structural induction covers finite ordered trees with internal arities2/3/4 under the frozen native rules. Unsafe unrestricted transports disprove that shortcut, not one-unit connectivity. No structural obstruction is claimed. Arity>=5 and physical interpretation remain outside scope.
