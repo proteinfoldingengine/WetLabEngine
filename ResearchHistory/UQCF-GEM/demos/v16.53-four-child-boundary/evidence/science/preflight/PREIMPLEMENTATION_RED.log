@@ -1,0 +1,41 @@
+test_real_control_verifier (__main__.Bootstrap.test_real_control_verifier) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+OK
+test_complete_control (__main__.VerifierGate.test_complete_control) ... ok
+test_duplicate_rejected (__main__.VerifierGate.test_duplicate_rejected) ... ok
+test_omission_rejected (__main__.VerifierGate.test_omission_rejected) ... ok
+test_stacked_defect_rejected (__main__.VerifierGate.test_stacked_defect_rejected) ... ok
+test_substitution_rejected (__main__.VerifierGate.test_substitution_rejected) ... ok
+test_wrong_profile_rejected (__main__.VerifierGate.test_wrong_profile_rejected) ... ok
+test_wrong_start_rejected (__main__.VerifierGate.test_wrong_start_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+test_actual_verifier_omission_red (__main__.Prospective.test_actual_verifier_omission_red) ... FAIL
+test_four_child_implementation_missing (__main__.Prospective.test_four_child_implementation_missing) ... FAIL
+
+======================================================================
+FAIL: test_actual_verifier_omission_red (__main__.Prospective.test_actual_verifier_omission_red)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_red.py", line 23, in test_actual_verifier_omission_red
+    self.assertTrue(rejected,'OMITTED_BOUNDARY_CONTROL_ACCEPTED')
+AssertionError: False is not true : OMITTED_BOUNDARY_CONTROL_ACCEPTED
+
+======================================================================
+FAIL: test_four_child_implementation_missing (__main__.Prospective.test_four_child_implementation_missing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_red.py", line 11, in test_four_child_implementation_missing
+    self.assertIsNotNone(importlib.util.find_spec('producer'), 'FOUR_CHILD_IMPLEMENTATION_MISSING')
+AssertionError: unexpectedly None : FOUR_CHILD_IMPLEMENTATION_MISSING
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

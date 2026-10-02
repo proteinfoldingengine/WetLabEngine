@@ -1,0 +1,30 @@
+{
+  "all_commands_passed": true,
+  "commands": {
+    "inherited": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/tools/retained_ci/run.py",
+        "inherited",
+        "out/science/inherited"
+      ],
+      "end_seconds": 80.22305033099997,
+      "returncode": 0,
+      "start_seconds": 0.0005317110000078173
+    },
+    "science": {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+        "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/run_campaign.py",
+        "out/science/scientific"
+      ],
+      "end_seconds": 575.5043873519999,
+      "returncode": 0,
+      "start_seconds": 0.00026981700000305864
+    }
+  },
+  "independent_verifier_recomputed": true,
+  "inherited_tests": 1150,
+  "new_controls": 43,
+  "parallel_seconds": 575.5051297829999
+}
