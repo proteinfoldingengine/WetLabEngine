@@ -1,0 +1,180 @@
+test_real_control_verifier (__main__.Bootstrap.test_real_control_verifier) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+OK
+test_complete_control (__main__.VerifierGate.test_complete_control) ... ok
+test_duplicate_rejected (__main__.VerifierGate.test_duplicate_rejected) ... ok
+test_omission_rejected (__main__.VerifierGate.test_omission_rejected) ... ok
+test_stacked_defect_rejected (__main__.VerifierGate.test_stacked_defect_rejected) ... ok
+test_substitution_rejected (__main__.VerifierGate.test_substitution_rejected) ... ok
+test_wrong_profile_rejected (__main__.VerifierGate.test_wrong_profile_rejected) ... ok
+test_wrong_start_rejected (__main__.VerifierGate.test_wrong_start_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+test_clearance_root_full_exact (__main__.Mechanisms.test_clearance_root_full_exact) ... ok
+test_cover_spare_current_bin (__main__.Mechanisms.test_cover_spare_current_bin) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.007s
+
+OK
+test_all_frozen_feasibility_rows (__main__.Feasibility.test_all_frozen_feasibility_rows) ... ok
+test_disjoint_minimum_beyond_frozen_palette (__main__.Feasibility.test_disjoint_minimum_beyond_frozen_palette) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.304s
+
+OK
+test_deletion_at_minimum_rejected (__main__.Lifting.test_deletion_at_minimum_rejected) ... ok
+test_destination_properly_occupied_rejected (__main__.Lifting.test_destination_properly_occupied_rejected) ... ok
+test_invalid_root_step_rejected (__main__.Lifting.test_invalid_root_step_rejected) ... ok
+test_partial_clearance_retained (__main__.Lifting.test_partial_clearance_retained) ... ok
+test_root_full_lift_and_leaf (__main__.Lifting.test_root_full_lift_and_leaf) ... ok
+test_zero_capacity_child (__main__.Lifting.test_zero_capacity_child) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK
+test_canonical_endpoint (__main__.Integration.test_canonical_endpoint) ... FAIL
+test_compact_contraction (__main__.Integration.test_compact_contraction) ... FAIL
+test_four_child_under_binary_parent (__main__.Integration.test_four_child_under_binary_parent) ... FAIL
+test_q2_expand_contract_guard (__main__.Integration.test_q2_expand_contract_guard) ... FAIL
+test_q3_cover_guard (__main__.Integration.test_q3_cover_guard) ... FAIL
+test_q4_disjoint_exchange (__main__.Integration.test_q4_disjoint_exchange) ... FAIL
+test_recursive_call_requires_exact_parent (__main__.Integration.test_recursive_call_requires_exact_parent) ... FAIL
+test_repeated_four_child (__main__.Integration.test_repeated_four_child) ... FAIL
+test_stacked_defect_rejected (__main__.Integration.test_stacked_defect_rejected) ... FAIL
+test_transported_order_equivariance (__main__.Integration.test_transported_order_equivariance) ... FAIL
+
+======================================================================
+FAIL: test_canonical_endpoint (__main__.Integration.test_canonical_endpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 44, in test_canonical_endpoint
+    p=self.producer()
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+======================================================================
+FAIL: test_compact_contraction (__main__.Integration.test_compact_contraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 48, in test_compact_contraction
+    p=self.producer();t=(Q,L);q=[2,3];k=6
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+======================================================================
+FAIL: test_four_child_under_binary_parent (__main__.Integration.test_four_child_under_binary_parent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 32, in test_four_child_under_binary_parent
+    self.check((Q,L),[2,3],5)
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 13, in check
+    p=self.producer();_,expected,end=v.model(t,q,k,perm,mode)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+======================================================================
+FAIL: test_q2_expand_contract_guard (__main__.Integration.test_q2_expand_contract_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 22, in test_q2_expand_contract_guard
+    _,path,trace=self.check(Q,[2],4,start=[7,25,1,1])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 13, in check
+    p=self.producer();_,expected,end=v.model(t,q,k,perm,mode)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+======================================================================
+FAIL: test_q3_cover_guard (__main__.Integration.test_q3_cover_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 26, in test_q3_cover_guard
+    _,path,trace=self.check(Q,[3],3,start=[7,9,17])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 13, in check
+    p=self.producer();_,expected,end=v.model(t,q,k,perm,mode)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+======================================================================
+FAIL: test_q4_disjoint_exchange (__main__.Integration.test_q4_disjoint_exchange)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 30, in test_q4_disjoint_exchange
+    self.check(Q,[4],4,start=[17,9,5,3])
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 13, in check
+    p=self.producer();_,expected,end=v.model(t,q,k,perm,mode)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+======================================================================
+FAIL: test_recursive_call_requires_exact_parent (__main__.Integration.test_recursive_call_requires_exact_parent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 36, in test_recursive_call_requires_exact_parent
+    p=self.producer();nodes=p.layout(Q)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+======================================================================
+FAIL: test_repeated_four_child (__main__.Integration.test_repeated_four_child)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 34, in test_repeated_four_child
+    self.check((Q,L,L,L),[3,3],5)
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 13, in check
+    p=self.producer();_,expected,end=v.model(t,q,k,perm,mode)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+======================================================================
+FAIL: test_stacked_defect_rejected (__main__.Integration.test_stacked_defect_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 40, in test_stacked_defect_rejected
+    self.producer();t=(B,B);raw=[127,1]
+    ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+======================================================================
+FAIL: test_transported_order_equivariance (__main__.Integration.test_transported_order_equivariance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 54, in test_transported_order_equivariance
+    p=self.producer();t=(Q,L,L,L);q=[3,3];k=5
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integration.py", line 10, in producer
+    self.assertTrue(callable(getattr(p,'normalize',None)),'FOUR_CHILD_JOIN_MISSING')
+AssertionError: False is not true : FOUR_CHILD_JOIN_MISSING
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+FAILED (failures=10)

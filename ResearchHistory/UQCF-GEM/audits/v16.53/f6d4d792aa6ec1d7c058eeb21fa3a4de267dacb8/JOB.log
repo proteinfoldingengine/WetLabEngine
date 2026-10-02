@@ -1,0 +1,563 @@
+﻿2026-10-02T00:34:38.5956791Z Current runner version: '2.337.0'
+2026-10-02T00:34:38.5982698Z ##[group]Runner Image Provisioner
+2026-10-02T00:34:38.5983674Z Hosted Compute Agent
+2026-10-02T00:34:38.5984285Z Version: 20260901.588
+2026-10-02T00:34:38.5984904Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-02T00:34:38.5985700Z Build Date: 2026-09-01T19:56:44Z
+2026-10-02T00:34:38.5986423Z Worker ID: {8dd83995-9056-41c3-b9d7-c9d4b2b181a3}
+2026-10-02T00:34:38.5987164Z Azure Region: westus2
+2026-10-02T00:34:38.5987747Z ##[endgroup]
+2026-10-02T00:34:38.5989584Z ##[group]Operating System
+2026-10-02T00:34:38.5990652Z Ubuntu
+2026-10-02T00:34:38.5991270Z 24.04.5
+2026-10-02T00:34:38.5991832Z LTS
+2026-10-02T00:34:38.5992360Z ##[endgroup]
+2026-10-02T00:34:38.5992918Z ##[group]Runner Image
+2026-10-02T00:34:38.5993568Z Image: ubuntu-24.04
+2026-10-02T00:34:38.5994165Z Version: 20260927.320.1
+2026-10-02T00:34:38.5995472Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-02T00:34:38.5997042Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-02T00:34:38.5998077Z ##[endgroup]
+2026-10-02T00:34:38.5999226Z ##[group]GITHUB_TOKEN Permissions
+2026-10-02T00:34:38.6001509Z Contents: read
+2026-10-02T00:34:38.6002209Z Metadata: read
+2026-10-02T00:34:38.6002775Z ##[endgroup]
+2026-10-02T00:34:38.6005083Z Secret source: Actions
+2026-10-02T00:34:38.6006062Z Cache mode: write
+2026-10-02T00:34:38.6006961Z Prepare workflow directory
+2026-10-02T00:34:38.6389158Z Prepare all required actions
+2026-10-02T00:34:38.6452201Z Getting action download info
+2026-10-02T00:34:39.0127371Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-02T00:34:39.1230676Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-02T00:34:39.1983346Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-02T00:34:39.4113273Z Complete job name: post_merge
+2026-10-02T00:34:39.4920005Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-10-02T00:34:39.4921725Z with:
+2026-10-02T00:34:39.4922172Z   fetch-depth: 0
+2026-10-02T00:34:39.4922689Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-02T00:34:39.4926518Z   token: ***
+2026-10-02T00:34:39.4926943Z   ssh-strict: true
+2026-10-02T00:34:39.4927374Z   ssh-user: git
+2026-10-02T00:34:39.4927827Z   persist-credentials: true
+2026-10-02T00:34:39.4928362Z   clean: true
+2026-10-02T00:34:39.4928799Z   sparse-checkout-cone-mode: true
+2026-10-02T00:34:39.4929316Z   fetch-tags: false
+2026-10-02T00:34:39.4929745Z   show-progress: true
+2026-10-02T00:34:39.4930359Z   lfs: false
+2026-10-02T00:34:39.4930758Z   submodules: false
+2026-10-02T00:34:39.4931192Z   set-safe-directory: true
+2026-10-02T00:34:39.4931695Z   allow-unsafe-pr-checkout: false
+2026-10-02T00:34:39.4932568Z ##[endgroup]
+2026-10-02T00:34:39.6037534Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-02T00:34:39.6040807Z ##[group]Getting Git version info
+2026-10-02T00:34:39.6042050Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-02T00:34:39.6043774Z [command]/usr/bin/git version
+2026-10-02T00:34:39.6096037Z git version 2.55.0
+2026-10-02T00:34:39.6122159Z ##[endgroup]
+2026-10-02T00:34:39.6137371Z Temporarily overriding HOME='/home/runner/work/_temp/54a758c0-282f-4947-b2bf-7f67db7eabb7' before making global git config changes
+2026-10-02T00:34:39.6139794Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T00:34:39.6147869Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-02T00:34:39.6207511Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-02T00:34:39.6213436Z ##[group]Initializing the repository
+2026-10-02T00:34:39.6218458Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-02T00:34:39.6338809Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-02T00:34:39.6341642Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-02T00:34:39.6344070Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-02T00:34:39.6347524Z hint: call:
+2026-10-02T00:34:39.6349238Z hint:
+2026-10-02T00:34:39.6350844Z hint: 	git config --global init.defaultBranch <name>
+2026-10-02T00:34:39.6352234Z hint:
+2026-10-02T00:34:39.6353640Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-02T00:34:39.6355258Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-02T00:34:39.6356513Z hint:
+2026-10-02T00:34:39.6357172Z hint: 	git branch -m <name>
+2026-10-02T00:34:39.6358015Z hint:
+2026-10-02T00:34:39.6359114Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-02T00:34:39.6361152Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-02T00:34:39.6364550Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-02T00:34:39.6412238Z ##[endgroup]
+2026-10-02T00:34:39.6413691Z ##[group]Disabling automatic garbage collection
+2026-10-02T00:34:39.6442115Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-02T00:34:39.6482691Z ##[endgroup]
+2026-10-02T00:34:39.6484552Z ##[group]Setting up auth
+2026-10-02T00:34:39.6493114Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T00:34:39.6538197Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T00:34:39.7009633Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T00:34:39.7093172Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T00:34:39.7337265Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T00:34:39.7378898Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T00:34:39.7609789Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-02T00:34:39.7651766Z ##[endgroup]
+2026-10-02T00:34:39.7653193Z ##[group]Fetching the repository
+2026-10-02T00:34:39.7663114Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-10-02T00:35:17.8475379Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-02T00:35:17.8476870Z  * [new branch]        agent/retire-legacy-retained-atlas-loop -> origin/agent/retire-legacy-retained-atlas-loop
+2026-10-02T00:35:17.8478471Z  * [new branch]        archive/v15.28-scientific-source-34892900423 -> origin/archive/v15.28-scientific-source-34892900423
+2026-10-02T00:35:17.8479757Z  * [new branch]        ci/retained-execution-audit -> origin/ci/retained-execution-audit
+2026-10-02T00:35:17.8481101Z  * [new branch]        ci/retained-execution-optimization -> origin/ci/retained-execution-optimization
+2026-10-02T00:35:17.8482055Z  * [new branch]        gen3-historical-backbone-reconstruction-v1 -> origin/gen3-historical-backbone-reconstruction-v1
+2026-10-02T00:35:17.8483275Z  * [new branch]        main                  -> origin/main
+2026-10-02T00:35:17.8484202Z  * [new branch]        mainmain              -> origin/mainmain
+2026-10-02T00:35:17.8485324Z  * [new branch]        maintenance/v15.01-checker-repro -> origin/maintenance/v15.01-checker-repro
+2026-10-02T00:35:17.8486749Z  * [new branch]        maintenance/withdrawn-lab-history-cleanup -> origin/maintenance/withdrawn-lab-history-cleanup
+2026-10-02T00:35:17.8488853Z  * [new branch]        publication/uqcf-v1544-v1545-main -> origin/publication/uqcf-v1544-v1545-main
+2026-10-02T00:35:17.8490632Z  * [new branch]        research/foundational-closure-verification -> origin/research/foundational-closure-verification
+2026-10-02T00:35:17.8492485Z  * [new branch]        research/protein-p0-v9-native-information-audit -> origin/research/protein-p0-v9-native-information-audit
+2026-10-02T00:35:17.8494296Z  * [new branch]        research/protein-p1-v9-regularizer-reduction -> origin/research/protein-p1-v9-regularizer-reduction
+2026-10-02T00:35:17.8496004Z  * [new branch]        research/protein-p4-backbone-tpo-replay -> origin/research/protein-p4-backbone-tpo-replay
+2026-10-02T00:35:17.8497844Z  * [new branch]        research/protein-p5-constrained-backbone-survival -> origin/research/protein-p5-constrained-backbone-survival
+2026-10-02T00:35:17.8499650Z  * [new branch]        research/protein-p6-continuation-decision -> origin/research/protein-p6-continuation-decision
+2026-10-02T00:35:17.8503311Z  * [new branch]        research/protein-p6-native-blind-preorganization -> origin/research/protein-p6-native-blind-preorganization
+2026-10-02T00:35:17.8505142Z  * [new branch]        research/protein-p7-early-backbone-controller-survival -> origin/research/protein-p7-early-backbone-controller-survival
+2026-10-02T00:35:17.8506770Z  * [new branch]        research/protein-p8-patch622-624-reopen -> origin/research/protein-p8-patch622-624-reopen
+2026-10-02T00:35:17.8508387Z  * [new branch]        research/protein-p8-patch622-624-reopen-certification -> origin/research/protein-p8-patch622-624-reopen-certification
+2026-10-02T00:35:17.8510280Z  * [new branch]        research/protein-p8b-authoritative-launch -> origin/research/protein-p8b-authoritative-launch
+2026-10-02T00:35:17.8512092Z  * [new branch]        research/protein-p8b-independent-verifier -> origin/research/protein-p8b-independent-verifier
+2026-10-02T00:35:17.8513248Z  * [new branch]        research/protein-p8b-measurement-layer -> origin/research/protein-p8b-measurement-layer
+2026-10-02T00:35:17.8514069Z  * [new branch]        research/protein-p8b-result-record -> origin/research/protein-p8b-result-record
+2026-10-02T00:35:17.8514941Z  * [new branch]        research/protein-p8b-valid-backbone-controller-gate -> origin/research/protein-p8b-valid-backbone-controller-gate
+2026-10-02T00:35:17.8515938Z  * [new branch]        research/protein-p9-coherence-state-falsifier -> origin/research/protein-p9-coherence-state-falsifier
+2026-10-02T00:35:17.8516880Z  * [new branch]        research/protein-p9-retained-coherence-falsifier -> origin/research/protein-p9-retained-coherence-falsifier
+2026-10-02T00:35:17.8517813Z  * [new branch]        research/protein-program-go-no-go-closeout -> origin/research/protein-program-go-no-go-closeout
+2026-10-02T00:35:17.8518764Z  * [new branch]        research/protein-program-post-p6-closeout -> origin/research/protein-program-post-p6-closeout
+2026-10-02T00:35:17.8519671Z  * [new branch]        research/protein-ufi-foldability-audit -> origin/research/protein-ufi-foldability-audit
+2026-10-02T00:35:17.8520960Z  * [new branch]        research/v13.26-rscl-origin -> origin/research/v13.26-rscl-origin
+2026-10-02T00:35:17.8522271Z  * [new branch]        research/v13.27-gravity-progress-demo -> origin/research/v13.27-gravity-progress-demo
+2026-10-02T00:35:17.8523239Z  * [new branch]        research/v13.27-peer-review -> origin/research/v13.27-peer-review
+2026-10-02T00:35:17.8523874Z  * [new branch]        research/v13.27-peer-review-2 -> origin/research/v13.27-peer-review-2
+2026-10-02T00:35:17.8524604Z  * [new branch]        research/v13.27-projective-coupled-source -> origin/research/v13.27-projective-coupled-source
+2026-10-02T00:35:17.8525366Z  * [new branch]        research/v13.27-rescope-revision -> origin/research/v13.27-rescope-revision
+2026-10-02T00:35:17.8526075Z  * [new branch]        research/v13.28-rgcl-pairing-audit -> origin/research/v13.28-rgcl-pairing-audit
+2026-10-02T00:35:17.8527027Z  * [new branch]        research/v14.01-global-admissibility -> origin/research/v14.01-global-admissibility
+2026-10-02T00:35:17.8527730Z  * [new branch]        research/v14.02-convex-dual-normal -> origin/research/v14.02-convex-dual-normal
+2026-10-02T00:35:17.8528443Z  * [new branch]        research/v14.03-projective-source-ray -> origin/research/v14.03-projective-source-ray
+2026-10-02T00:35:17.8529229Z  * [new branch]        research/v14.04-provenance-representation -> origin/research/v14.04-provenance-representation
+2026-10-02T00:35:17.8530433Z  * [new branch]        research/v15.01-common-parent-representation -> origin/research/v15.01-common-parent-representation
+2026-10-02T00:35:17.8531697Z  * [new branch]        research/v15.01-red-proof -> origin/research/v15.01-red-proof
+2026-10-02T00:35:17.8532427Z  * [new branch]        research/v15.02-shared-label-equivariance -> origin/research/v15.02-shared-label-equivariance
+2026-10-02T00:35:17.8533260Z  * [new branch]        research/v15.03-graph-site-source-lift -> origin/research/v15.03-graph-site-source-lift
+2026-10-02T00:35:17.8534041Z  * [new branch]        research/v15.04-spectral-source-freedom -> origin/research/v15.04-spectral-source-freedom
+2026-10-02T00:35:17.8534865Z  * [new branch]        research/v15.05-composition-selector-boundary -> origin/research/v15.05-composition-selector-boundary
+2026-10-02T00:35:17.8617809Z  * [new branch]        research/v15.06-recoverability-multiplicativity-boundary -> origin/research/v15.06-recoverability-multiplicativity-boundary
+2026-10-02T00:35:17.8619950Z  * [new branch]        research/v15.07-canonical-neutral-reference -> origin/research/v15.07-canonical-neutral-reference
+2026-10-02T00:35:17.8621875Z  * [new branch]        research/v15.08-genesis-source-semantics -> origin/research/v15.08-genesis-source-semantics
+2026-10-02T00:35:17.8623321Z  * [new branch]        research/v15.09-quantum-carrier-origin -> origin/research/v15.09-quantum-carrier-origin
+2026-10-02T00:35:17.8625350Z  * [new branch]        research/v15.10-pruning-order-emergent-time -> origin/research/v15.10-pruning-order-emergent-time
+2026-10-02T00:35:17.8627224Z  * [new branch]        research/v15.11-ontology-continuity-reconciliation -> origin/research/v15.11-ontology-continuity-reconciliation
+2026-10-02T00:35:17.8628918Z  * [new branch]        research/v15.12-integrated-pretime-history -> origin/research/v15.12-integrated-pretime-history
+2026-10-02T00:35:17.8630593Z  * [new branch]        research/v15.13-independent-events -> origin/research/v15.13-independent-events
+2026-10-02T00:35:17.8631947Z  * [new branch]        research/v15.14-record-dependencies -> origin/research/v15.14-record-dependencies
+2026-10-02T00:35:17.8633142Z  * [new branch]        research/v15.15-coherent-records -> origin/research/v15.15-coherent-records
+2026-10-02T00:35:17.8634269Z  * [new branch]        research/v15.16-partial-pruning -> origin/research/v15.16-partial-pruning
+2026-10-02T00:35:17.8635407Z  * [new branch]        research/v15.17-retained-motion -> origin/research/v15.17-retained-motion
+2026-10-02T00:35:17.8636797Z  * [new branch]        research/v15.20-artifact-preservation -> origin/research/v15.20-artifact-preservation
+2026-10-02T00:35:17.8638031Z  * [new branch]        research/v15.20-results-archive -> origin/research/v15.20-results-archive
+2026-10-02T00:35:17.8638709Z  * [new branch]        research/v15.21-record-readout -> origin/research/v15.21-record-readout
+2026-10-02T00:35:17.8639388Z  * [new branch]        research/v15.22-event-sufficiency -> origin/research/v15.22-event-sufficiency
+2026-10-02T00:35:17.8640583Z  * [new branch]        research/v15.23-sufficient-channel-family -> origin/research/v15.23-sufficient-channel-family
+2026-10-02T00:35:17.8641424Z  * [new branch]        research/v15.24-composition-gate -> origin/research/v15.24-composition-gate
+2026-10-02T00:35:17.8642173Z  * [new branch]        research/v15.25-pretime-gravity-canary -> origin/research/v15.25-pretime-gravity-canary
+2026-10-02T00:35:17.8643251Z  * [new branch]        research/v15.26-response-selector-rank -> origin/research/v15.26-response-selector-rank
+2026-10-02T00:35:17.8643999Z  * [new branch]        research/v15.27-target-origin -> origin/research/v15.27-target-origin
+2026-10-02T00:35:17.8644634Z  * [new branch]        research/v15.28-coupling-space -> origin/research/v15.28-coupling-space
+2026-10-02T00:35:17.8645352Z  * [new branch]        research/v15.29-provenance-faithfulness -> origin/research/v15.29-provenance-faithfulness
+2026-10-02T00:35:17.8646176Z  * [new branch]        research/v15.30-provenance-fiber-definability -> origin/research/v15.30-provenance-fiber-definability
+2026-10-02T00:35:17.8647597Z  * [new branch]        research/v15.31-source-extension-minimality -> origin/research/v15.31-source-extension-minimality
+2026-10-02T00:35:17.8649126Z  * [new branch]        research/v15.32-commutant-sector-decomposition -> origin/research/v15.32-commutant-sector-decomposition
+2026-10-02T00:35:17.8650410Z  * [new branch]        research/v15.33-sector-weight-constraint-audit -> origin/research/v15.33-sector-weight-constraint-audit
+2026-10-02T00:35:17.8651365Z  * [new branch]        research/v15.34-canonical-adjacency-commutant -> origin/research/v15.34-canonical-adjacency-commutant
+2026-10-02T00:35:17.8652223Z  * [new branch]        research/v15.35-support-radius-locality -> origin/research/v15.35-support-radius-locality
+2026-10-02T00:35:17.8653030Z  * [new branch]        research/v15.36-order-semigroup-constraint -> origin/research/v15.36-order-semigroup-constraint
+2026-10-02T00:35:17.8653899Z  * [new branch]        research/v15.37-response-selector-irreducibility -> origin/research/v15.37-response-selector-irreducibility
+2026-10-02T00:35:17.8654783Z  * [new branch]        research/v15.38-response-axiom-admissibility -> origin/research/v15.38-response-axiom-admissibility
+2026-10-02T00:35:17.8655657Z  * [new branch]        research/v15.39-higher-incidence-source-axioms -> origin/research/v15.39-higher-incidence-source-axioms
+2026-10-02T00:35:17.8656776Z  * [new branch]        research/v15.40-global-balance-geometry-specificity -> origin/research/v15.40-global-balance-geometry-specificity
+2026-10-02T00:35:17.8657891Z  * [new branch]        research/v15.41-formal-connection-curvature-source-correspondence -> origin/research/v15.41-formal-connection-curvature-source-correspondence
+2026-10-02T00:35:17.8658984Z  * [new branch]        research/v15.42-duality-covariant-transport-repair -> origin/research/v15.42-duality-covariant-transport-repair
+2026-10-02T00:35:17.8659881Z  * [new branch]        research/v15.43-certified-response-geometry -> origin/research/v15.43-certified-response-geometry
+2026-10-02T00:35:17.8661090Z  * [new branch]        research/v15.44-intrinsic-curvature-interpretation -> origin/research/v15.44-intrinsic-curvature-interpretation
+2026-10-02T00:35:17.8662141Z  * [new branch]        research/v15.45-curvature-factorization-spectral-boundary -> origin/research/v15.45-curvature-factorization-spectral-boundary
+2026-10-02T00:35:17.8663205Z  * [new branch]        research/v15.46-primitive-joint-source-admissibility -> origin/research/v15.46-primitive-joint-source-admissibility
+2026-10-02T00:35:17.8664172Z  * [new branch]        research/v15.55-source-compatibility-response -> origin/research/v15.55-source-compatibility-response
+2026-10-02T00:35:17.8665047Z  * [new branch]        research/v15.56-response-selector-obstruction -> origin/research/v15.56-response-selector-obstruction
+2026-10-02T00:35:17.8665880Z  * [new branch]        research/v15.56-source-edge-factorization -> origin/research/v15.56-source-edge-factorization
+2026-10-02T00:35:17.8666660Z  * [new branch]        research/v15.57-source-law-specificity -> origin/research/v15.57-source-law-specificity
+2026-10-02T00:35:17.8667463Z  * [new branch]        research/v15.58-asymmetric-heldout-ensemble -> origin/research/v15.58-asymmetric-heldout-ensemble
+2026-10-02T00:35:17.8668588Z  * [new branch]        research/v15.59-nonclosed-source-class -> origin/research/v15.59-nonclosed-source-class
+2026-10-02T00:35:17.8670654Z  * [new branch]        research/v15.60-shared-response-geometry -> origin/research/v15.60-shared-response-geometry
+2026-10-02T00:35:17.8672334Z  * [new branch]        research/v15.61-source-derivative-classification -> origin/research/v15.61-source-derivative-classification
+2026-10-02T00:35:17.8673999Z  * [new branch]        research/v15.62-symmetric-leakage-null -> origin/research/v15.62-symmetric-leakage-null
+2026-10-02T00:35:17.8675464Z  * [new branch]        research/v15.63-global-symmetric-null-lift -> origin/research/v15.63-global-symmetric-null-lift
+2026-10-02T00:35:17.8676901Z  * [new branch]        research/v15.64-source-vector-field-null -> origin/research/v15.64-source-vector-field-null
+2026-10-02T00:35:17.8678431Z  * [new branch]        research/v15.65-null-asymptotic-scaling -> origin/research/v15.65-null-asymptotic-scaling
+2026-10-02T00:35:17.8679999Z  * [new branch]        research/v15.66-polar-derivative-numerics -> origin/research/v15.66-polar-derivative-numerics
+2026-10-02T00:35:17.8681864Z  * [new branch]        research/v15.67-highprecision-identity-audit -> origin/research/v15.67-highprecision-identity-audit
+2026-10-02T00:35:17.8683421Z  * [new branch]        research/v15.68-complex-highprecision-repair -> origin/research/v15.68-complex-highprecision-repair
+2026-10-02T00:35:17.8684871Z  * [new branch]        research/v15.69-covariant-symmetric-null -> origin/research/v15.69-covariant-symmetric-null
+2026-10-02T00:35:17.8686278Z  * [new branch]        research/v15.70-atlas-descent-composition -> origin/research/v15.70-atlas-descent-composition
+2026-10-02T00:35:17.8687610Z  * [new branch]        research/v15.71-memory-enriched-null -> origin/research/v15.71-memory-enriched-null
+2026-10-02T00:35:17.8689110Z  * [new branch]        research/v15.71-minimal-extension-memory -> origin/research/v15.71-minimal-extension-memory
+2026-10-02T00:35:17.8689965Z  * [new branch]        research/v15.72-extension-memory-numerics -> origin/research/v15.72-extension-memory-numerics
+2026-10-02T00:35:17.8691345Z  * [new branch]        research/v15.72-operational-mixture-affinity -> origin/research/v15.72-operational-mixture-affinity
+2026-10-02T00:35:17.8692199Z  * [new branch]        research/v15.73-two-body-unitary-source -> origin/research/v15.73-two-body-unitary-source
+2026-10-02T00:35:17.8693041Z  * [new branch]        research/v15.74-hamiltonian-null-classification -> origin/research/v15.74-hamiltonian-null-classification
+2026-10-02T00:35:17.8693838Z  * [new branch]        research/v15.75-affine-open-null -> origin/research/v15.75-affine-open-null
+2026-10-02T00:35:17.8694544Z  * [new branch]        research/v15.76-cptp-null-composition -> origin/research/v15.76-cptp-null-composition
+2026-10-02T00:35:17.8695279Z  * [new branch]        research/v15.77-active-baseline-null -> origin/research/v15.77-active-baseline-null
+2026-10-02T00:35:17.8696008Z  * [new branch]        research/v15.78-source-free-covariance -> origin/research/v15.78-source-free-covariance
+2026-10-02T00:35:17.8696806Z  * [new branch]        research/v15.79-covariant-source-couplings -> origin/research/v15.79-covariant-source-couplings
+2026-10-02T00:35:17.8698104Z  * [new branch]        research/v15.80-signed-cptp-tangents -> origin/research/v15.80-signed-cptp-tangents
+2026-10-02T00:35:17.8699606Z  * [new branch]        research/v15.81-source-component-interference -> origin/research/v15.81-source-component-interference
+2026-10-02T00:35:17.8701442Z  * [new branch]        research/v15.82-polar-boundary-obstruction -> origin/research/v15.82-polar-boundary-obstruction
+2026-10-02T00:35:17.8702893Z  * [new branch]        research/v15.83-support-loop-composition -> origin/research/v15.83-support-loop-composition
+2026-10-02T00:35:17.8703883Z  * [new branch]        research/v15.84-loop-channel-recoverability -> origin/research/v15.84-loop-channel-recoverability
+2026-10-02T00:35:17.8704723Z  * [new branch]        research/v15.85-affine-shift-obstruction -> origin/research/v15.85-affine-shift-obstruction
+2026-10-02T00:35:17.8705737Z  * [new branch]        research/v15.86-cptp-support-completion -> origin/research/v15.86-cptp-support-completion
+2026-10-02T00:35:17.8706476Z  * [new branch]        research/v15.87-cptp-erasure-cost -> origin/research/v15.87-cptp-erasure-cost
+2026-10-02T00:35:17.8707240Z  * [new branch]        research/v15.88-exact-erasure-entanglement -> origin/research/v15.88-exact-erasure-entanglement
+2026-10-02T00:35:17.8708150Z  * [new branch]        research/v15.89-weakest-direction-entanglement-bound -> origin/research/v15.89-weakest-direction-entanglement-bound
+2026-10-02T00:35:17.8709180Z  * [new branch]        research/v15.90-arbitrary-input-negativity -> origin/research/v15.90-arbitrary-input-negativity
+2026-10-02T00:35:17.8710350Z  * [new branch]        research/v15.91-separable-output-rotation -> origin/research/v15.91-separable-output-rotation
+2026-10-02T00:35:17.8711447Z  * [new branch]        research/v15.92-preparation-span-obstruction -> origin/research/v15.92-preparation-span-obstruction
+2026-10-02T00:35:17.8713163Z  * [new branch]        research/v15.93-oriented-rank-two-response -> origin/research/v15.93-oriented-rank-two-response
+2026-10-02T00:35:17.8714970Z  * [new branch]        research/v15.94-oriented-composition-compatibility -> origin/research/v15.94-oriented-composition-compatibility
+2026-10-02T00:35:17.8716822Z  * [new branch]        research/v15.95-compatible-holonomy-reduction -> origin/research/v15.95-compatible-holonomy-reduction
+2026-10-02T00:35:17.8718396Z  * [new branch]        research/v15.96-overlap-holonomy-common-line -> origin/research/v15.96-overlap-holonomy-common-line
+2026-10-02T00:35:17.8719952Z  * [new branch]        research/v15.97-overlap-hidden-response -> origin/research/v15.97-overlap-hidden-response
+2026-10-02T00:35:17.8721726Z  * [new branch]        research/v15.98-composed-four-body-response -> origin/research/v15.98-composed-four-body-response
+2026-10-02T00:35:17.8723217Z  * [new branch]        research/v15.99-intermediate-eb-retention -> origin/research/v15.99-intermediate-eb-retention
+2026-10-02T00:35:17.8724855Z  * [new branch]        research/v16.00-precision-readout-audit -> origin/research/v16.00-precision-readout-audit
+2026-10-02T00:35:17.8726256Z  * [new branch]        research/v16.01-global-input-precision -> origin/research/v16.01-global-input-precision
+2026-10-02T00:35:17.8727602Z  * [new branch]        research/v16.02-full-ensemble-precision -> origin/research/v16.02-full-ensemble-precision
+2026-10-02T00:35:17.8729109Z  * [new branch]        research/v16.03-finite-source-continuation -> origin/research/v16.03-finite-source-continuation
+2026-10-02T00:35:17.8730978Z  * [new branch]        research/v16.04-inserted-channel-factorization -> origin/research/v16.04-inserted-channel-factorization
+2026-10-02T00:35:17.8732596Z  * [new branch]        research/v16.05-retained-edge-localization -> origin/research/v16.05-retained-edge-localization
+2026-10-02T00:35:17.8733913Z  * [new branch]        research/v16.06-sixth-edge-domain -> origin/research/v16.06-sixth-edge-domain
+2026-10-02T00:35:17.8735242Z  * [new branch]        research/v16.07-support-stratum-stability -> origin/research/v16.07-support-stratum-stability
+2026-10-02T00:35:17.8736625Z  * [new branch]        research/v16.08-physical-channel-paths -> origin/research/v16.08-physical-channel-paths
+2026-10-02T00:35:17.8738241Z  * [new branch]        research/v16.09-boundary-polar-limits -> origin/research/v16.09-boundary-polar-limits
+2026-10-02T00:35:17.8739188Z  * [new branch]        research/v16.10-source-reversal -> origin/research/v16.10-source-reversal
+2026-10-02T00:35:17.8739865Z  * [new branch]        research/v16.11-coherence-family -> origin/research/v16.11-coherence-family
+2026-10-02T00:35:17.8740940Z  * [new branch]        research/v16.12-continuous-response -> origin/research/v16.12-continuous-response
+2026-10-02T00:35:17.8741670Z  * [new branch]        research/v16.13-local-gauge-content -> origin/research/v16.13-local-gauge-content
+2026-10-02T00:35:17.8742393Z  * [new branch]        research/v16.13F-foundational-closure -> origin/research/v16.13F-foundational-closure
+2026-10-02T00:35:17.8743372Z  * [new branch]        research/v16.14-closed-network-response -> origin/research/v16.14-closed-network-response
+2026-10-02T00:35:17.8744237Z  * [new branch]        research/v16.14F-obstruction-carrier-closure -> origin/research/v16.14F-obstruction-carrier-closure
+2026-10-02T00:35:17.8745049Z  * [new branch]        research/v16.15-network-interpretation -> origin/research/v16.15-network-interpretation
+2026-10-02T00:35:17.8745856Z  * [new branch]        research/v16.15F-graded-obstruction-descent -> origin/research/v16.15F-graded-obstruction-descent
+2026-10-02T00:35:17.8747128Z  * [new branch]        research/v16.16-information-exhaust -> origin/research/v16.16-information-exhaust
+2026-10-02T00:35:17.8748504Z  * [new branch]        research/v16.19-response-information-kernel -> origin/research/v16.19-response-information-kernel
+2026-10-02T00:35:17.8749363Z  * [new branch]        research/v16.20-second-order-information -> origin/research/v16.20-second-order-information
+2026-10-02T00:35:17.8750587Z  * [new branch]        research/v16.21-foundational-closure-verification -> origin/research/v16.21-foundational-closure-verification
+2026-10-02T00:35:17.8751536Z  * [new branch]        research/v16.22-response-selection-closure -> origin/research/v16.22-response-selection-closure
+2026-10-02T00:35:17.8752298Z  * [new branch]        research/v16.23-overlap-descent -> origin/research/v16.23-overlap-descent
+2026-10-02T00:35:17.8752986Z  * [new branch]        research/v16.24-consistency-order -> origin/research/v16.24-consistency-order
+2026-10-02T00:35:17.8753752Z  * [new branch]        research/v16.25-pruning-refinement-closure -> origin/research/v16.25-pruning-refinement-closure
+2026-10-02T00:35:17.8754589Z  * [new branch]        research/v16.26-consistency-increment-law -> origin/research/v16.26-consistency-increment-law
+2026-10-02T00:35:17.8755434Z  * [new branch]        research/v16.27-increment-attribution-closure -> origin/research/v16.27-increment-attribution-closure
+2026-10-02T00:35:17.8756480Z  * [new branch]        research/v16.28-diamond-attribution-closure -> origin/research/v16.28-diamond-attribution-closure
+2026-10-02T00:35:17.8757288Z  * [new branch]        research/v16.29-local-profile-closure -> origin/research/v16.29-local-profile-closure
+2026-10-02T00:35:17.8758105Z  * [new branch]        research/v16.30-interaction-component-closure -> origin/research/v16.30-interaction-component-closure
+2026-10-02T00:35:17.8759084Z  * [new branch]        research/v16.31-global-component-factorization -> origin/research/v16.31-global-component-factorization
+2026-10-02T00:35:17.8760306Z  * [new branch]        research/v16.32-retained-state-reconstruction -> origin/research/v16.32-retained-state-reconstruction
+2026-10-02T00:35:17.8761654Z  * [new branch]        research/v16.33-consistency-quotient-kernel -> origin/research/v16.33-consistency-quotient-kernel
+2026-10-02T00:35:17.8762555Z  * [new branch]        research/v16.34-fiber-component-invariant -> origin/research/v16.34-fiber-component-invariant
+2026-10-02T00:35:17.8763561Z  * [new branch]        research/v16.35-fiber-barrier-closure -> origin/research/v16.35-fiber-barrier-closure
+2026-10-02T00:35:17.8764498Z  * [new branch]        research/v16.36-barrier-law-closure -> origin/research/v16.36-barrier-law-closure
+2026-10-02T00:35:17.8765438Z  * [new branch]        research/v16.36-pair-completeness-closure -> origin/research/v16.36-pair-completeness-closure
+2026-10-02T00:35:17.8766310Z  * [new branch]        research/v16.36-proof-ledger-closure -> origin/research/v16.36-proof-ledger-closure
+2026-10-02T00:35:17.8767090Z  * [new branch]        research/v16.37-audit-receipt -> origin/research/v16.37-audit-receipt
+2026-10-02T00:35:17.8767906Z  * [new branch]        research/v16.37-certified-closure -> origin/research/v16.37-certified-closure
+2026-10-02T00:35:17.8768774Z  * [new branch]        research/v16.37-minimax-structural-audit -> origin/research/v16.37-minimax-structural-audit
+2026-10-02T00:35:17.8769797Z  * [new branch]        research/v16.38-audit-receipt -> origin/research/v16.38-audit-receipt
+2026-10-02T00:35:17.8770753Z  * [new branch]        research/v16.38-six-vertex-barriers -> origin/research/v16.38-six-vertex-barriers
+2026-10-02T00:35:17.8771631Z  * [new branch]        research/v16.39-audit-receipt -> origin/research/v16.39-audit-receipt
+2026-10-02T00:35:17.8772512Z  * [new branch]        research/v16.39-structural-unit-barrier -> origin/research/v16.39-structural-unit-barrier
+2026-10-02T00:35:17.8773275Z  * [new branch]        research/v16.39-theorem-validation -> origin/research/v16.39-theorem-validation
+2026-10-02T00:35:17.8774106Z  * [new branch]        research/v16.40-audit-receipt -> origin/research/v16.40-audit-receipt
+2026-10-02T00:35:17.8774978Z  * [new branch]        research/v16.40-coordinate-obstruction -> origin/research/v16.40-coordinate-obstruction
+2026-10-02T00:35:17.8775742Z  * [new branch]        research/v16.41-audit-receipt -> origin/research/v16.41-audit-receipt
+2026-10-02T00:35:17.8776563Z  * [new branch]        research/v16.41-unit-barrier-dichotomy -> origin/research/v16.41-unit-barrier-dichotomy
+2026-10-02T00:35:17.8777415Z  * [new branch]        research/v16.42-audit-receipt -> origin/research/v16.42-audit-receipt
+2026-10-02T00:35:17.8778208Z  * [new branch]        research/v16.42-overlapping-core-repair -> origin/research/v16.42-overlapping-core-repair
+2026-10-02T00:35:17.8779006Z  * [new branch]        research/v16.43-audit-receipt -> origin/research/v16.43-audit-receipt
+2026-10-02T00:35:17.8779895Z  * [new branch]        research/v16.43-star-fiber-classification -> origin/research/v16.43-star-fiber-classification
+2026-10-02T00:35:17.8781025Z  * [new branch]        research/v16.44-audit-receipt -> origin/research/v16.44-audit-receipt
+2026-10-02T00:35:17.8781893Z  * [new branch]        research/v16.44-two-branch-unit-barrier -> origin/research/v16.44-two-branch-unit-barrier
+2026-10-02T00:35:17.8782664Z  * [new branch]        research/v16.45-audit-receipt -> origin/research/v16.45-audit-receipt
+2026-10-02T00:35:17.8783712Z  * [new branch]        research/v16.45-binary-fork-unit-barrier -> origin/research/v16.45-binary-fork-unit-barrier
+2026-10-02T00:35:17.8784628Z  * [new branch]        research/v16.46-audit-receipt -> origin/research/v16.46-audit-receipt
+2026-10-02T00:35:17.8785369Z  * [new branch]        research/v16.46-nested-chain-repair -> origin/research/v16.46-nested-chain-repair
+2026-10-02T00:35:17.8786151Z  * [new branch]        research/v16.47-audit-receipt -> origin/research/v16.47-audit-receipt
+2026-10-02T00:35:17.8787009Z  * [new branch]        research/v16.47-saturated-chain-repair -> origin/research/v16.47-saturated-chain-repair
+2026-10-02T00:35:17.8787777Z  * [new branch]        research/v16.48-audit-receipt -> origin/research/v16.48-audit-receipt
+2026-10-02T00:35:17.8788553Z  * [new branch]        research/v16.48-recursive-chain-repair -> origin/research/v16.48-recursive-chain-repair
+2026-10-02T00:35:17.8789394Z  * [new branch]        research/v16.49-audit-receipt -> origin/research/v16.49-audit-receipt
+2026-10-02T00:35:17.8790386Z  * [new branch]        research/v16.49-fork-chain-interface -> origin/research/v16.49-fork-chain-interface
+2026-10-02T00:35:17.8791107Z  * [new branch]        research/v16.50-audit-receipt -> origin/research/v16.50-audit-receipt
+2026-10-02T00:35:17.8792032Z  * [new branch]        research/v16.50-recursive-binary-composition -> origin/research/v16.50-recursive-binary-composition
+2026-10-02T00:35:17.8792964Z  * [new branch]        research/v16.51-audit-receipt -> origin/research/v16.51-audit-receipt
+2026-10-02T00:35:17.8793619Z  * [new branch]        research/v16.51-ternary-interface -> origin/research/v16.51-ternary-interface
+2026-10-02T00:35:17.8794473Z  * [new branch]        research/v16.52-artifact-transfer -> origin/research/v16.52-artifact-transfer
+2026-10-02T00:35:17.8795279Z  * [new branch]        research/v16.52-audit-receipt -> origin/research/v16.52-audit-receipt
+2026-10-02T00:35:17.8796388Z  * [new branch]        research/v16.52-recursive-ternary-composition -> origin/research/v16.52-recursive-ternary-composition
+2026-10-02T00:35:17.8797197Z  * [new branch]        research/v16.53-artifact-transfer -> origin/research/v16.53-artifact-transfer
+2026-10-02T00:35:17.8798076Z  * [new branch]        research/v16.53-four-child-boundary -> origin/research/v16.53-four-child-boundary
+2026-10-02T00:35:17.8798861Z  * [new branch]        uqcf-history-assembly -> origin/uqcf-history-assembly
+2026-10-02T00:35:17.8799440Z  * [new branch]        uqcf-history-backfill-final -> origin/uqcf-history-backfill-final
+2026-10-02T00:35:17.8800317Z  * [new branch]        uqcf-history-backfill-v13 -> origin/uqcf-history-backfill-v13
+2026-10-02T00:35:17.8801157Z  * [new branch]        uqcf-history-backfill-v13-final -> origin/uqcf-history-backfill-v13-final
+2026-10-02T00:35:17.8801781Z  * [new branch]        uqcf-history-finalize -> origin/uqcf-history-finalize
+2026-10-02T00:35:17.8802483Z  * [new branch]        uqcf-history-publish  -> origin/uqcf-history-publish
+2026-10-02T00:35:17.8803064Z  * [new branch]        uqcf-history-v13-backfill -> origin/uqcf-history-v13-backfill
+2026-10-02T00:35:17.8803788Z  * [new branch]        uqcf-v13-24-publish   -> origin/uqcf-v13-24-publish
+2026-10-02T00:35:17.8804309Z  * [new branch]        uqcf-v13-24-publish2  -> origin/uqcf-v13-24-publish2
+2026-10-02T00:35:17.8804985Z  * [new branch]        uqcf-v13-24-publish3  -> origin/uqcf-v13-24-publish3
+2026-10-02T00:35:17.8805480Z  * [new branch]        uqcf-v13-24-publish4  -> origin/uqcf-v13-24-publish4
+2026-10-02T00:35:17.8806144Z  * [new branch]        uqcf-v13-24-publish5  -> origin/uqcf-v13-24-publish5
+2026-10-02T00:35:17.8806637Z  * [new branch]        uqcf-v13-24-publish6  -> origin/uqcf-v13-24-publish6
+2026-10-02T00:35:17.8807295Z  * [new branch]        uqcf-v13-24-publish7  -> origin/uqcf-v13-24-publish7
+2026-10-02T00:35:17.8807795Z  * [new branch]        uqcf-v13-24-publish8  -> origin/uqcf-v13-24-publish8
+2026-10-02T00:35:17.8808466Z  * [new branch]        uqcf-v13-24-publish9  -> origin/uqcf-v13-24-publish9
+2026-10-02T00:35:17.8809332Z  * [new tag]           uqcf-gem-v15.20-artifacts-34798361336-a1 -> uqcf-gem-v15.20-artifacts-34798361336-a1
+2026-10-02T00:35:17.8810198Z  * [new tag]           uqcf-gem-v15.21-34800673289-a1 -> uqcf-gem-v15.21-34800673289-a1
+2026-10-02T00:35:17.8811046Z  * [new tag]           uqcf-gem-v15.22-34802604073-a1 -> uqcf-gem-v15.22-34802604073-a1
+2026-10-02T00:35:17.8811666Z  * [new tag]           uqcf-gem-v15.23-34847969675-a1 -> uqcf-gem-v15.23-34847969675-a1
+2026-10-02T00:35:17.8812326Z  * [new tag]           uqcf-gem-v15.24-34861726829-a1 -> uqcf-gem-v15.24-34861726829-a1
+2026-10-02T00:35:17.8812992Z  * [new tag]           uqcf-gem-v15.25-34869134143-a1 -> uqcf-gem-v15.25-34869134143-a1
+2026-10-02T00:35:17.8813574Z  * [new tag]           uqcf-gem-v15.26-34870478027-a1 -> uqcf-gem-v15.26-34870478027-a1
+2026-10-02T00:35:17.8814257Z  * [new tag]           uqcf-gem-v15.27-34876560680-a1 -> uqcf-gem-v15.27-34876560680-a1
+2026-10-02T00:35:17.8814829Z  * [new tag]           uqcf-gem-v15.28-34892900423-a1 -> uqcf-gem-v15.28-34892900423-a1
+2026-10-02T00:35:17.8815529Z  * [new tag]           uqcf-gem-v15.29-35251080495-a2 -> uqcf-gem-v15.29-35251080495-a2
+2026-10-02T00:35:17.8816073Z  * [new tag]           uqcf-gem-v15.30-35266670939-a1 -> uqcf-gem-v15.30-35266670939-a1
+2026-10-02T00:35:17.8817981Z [command]/usr/bin/git branch --list --remote origin/research/v16.34-fiber-component-invariant
+2026-10-02T00:35:17.8818570Z   origin/research/v16.34-fiber-component-invariant
+2026-10-02T00:35:17.8819669Z [command]/usr/bin/git rev-parse refs/remotes/origin/research/v16.34-fiber-component-invariant
+2026-10-02T00:35:17.8820509Z f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8
+2026-10-02T00:35:17.8821413Z ##[endgroup]
+2026-10-02T00:35:17.8822052Z ##[group]Determining the checkout info
+2026-10-02T00:35:17.8822565Z ##[endgroup]
+2026-10-02T00:35:17.8822846Z [command]/usr/bin/git sparse-checkout disable
+2026-10-02T00:35:17.8823649Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-02T00:35:17.8825087Z ##[group]Checking out the ref
+2026-10-02T00:35:17.8825843Z [command]/usr/bin/git checkout --progress --force -B research/v16.34-fiber-component-invariant refs/remotes/origin/research/v16.34-fiber-component-invariant
+2026-10-02T00:35:18.9438856Z Updating files:  33% (2879/8528)
+2026-10-02T00:35:19.2165927Z Updating files:  34% (2900/8528)
+2026-10-02T00:35:19.4545422Z Updating files:  35% (2985/8528)
+2026-10-02T00:35:19.7928836Z Updating files:  36% (3071/8528)
+2026-10-02T00:35:19.9043007Z Updating files:  37% (3156/8528)
+2026-10-02T00:35:20.0268624Z Updating files:  37% (3165/8528)
+2026-10-02T00:35:20.4667938Z Updating files:  38% (3241/8528)
+2026-10-02T00:35:20.7157001Z Updating files:  39% (3326/8528)
+2026-10-02T00:35:20.9206188Z Updating files:  40% (3412/8528)
+2026-10-02T00:35:21.2918357Z Updating files:  40% (3444/8528)
+2026-10-02T00:35:21.5569011Z Updating files:  41% (3497/8528)
+2026-10-02T00:35:21.9195099Z Updating files:  42% (3582/8528)
+2026-10-02T00:35:22.1267898Z Updating files:  42% (3658/8528)
+2026-10-02T00:35:22.3541373Z Updating files:  43% (3668/8528)
+2026-10-02T00:35:22.4450790Z Updating files:  44% (3753/8528)
+2026-10-02T00:35:22.9086185Z Updating files:  45% (3838/8528)
+2026-10-02T00:35:22.9662572Z Updating files:  45% (3875/8528)
+2026-10-02T00:35:23.2567025Z Updating files:  46% (3923/8528)
+2026-10-02T00:35:23.6277588Z Updating files:  47% (4009/8528)
+2026-10-02T00:35:23.8923780Z Updating files:  48% (4094/8528)
+2026-10-02T00:35:23.9722999Z Updating files:  48% (4171/8528)
+2026-10-02T00:35:24.1459003Z Updating files:  49% (4179/8528)
+2026-10-02T00:35:24.8277230Z Updating files:  50% (4264/8528)
+2026-10-02T00:35:24.8996778Z Updating files:  51% (4350/8528)
+2026-10-02T00:35:25.0943032Z Updating files:  51% (4407/8528)
+2026-10-02T00:35:25.1644174Z Updating files:  52% (4435/8528)
+2026-10-02T00:35:25.8191822Z Updating files:  53% (4520/8528)
+2026-10-02T00:35:25.8944971Z Updating files:  54% (4606/8528)
+2026-10-02T00:35:26.0909002Z Updating files:  54% (4669/8528)
+2026-10-02T00:35:26.1656495Z Updating files:  55% (4691/8528)
+2026-10-02T00:35:26.6386943Z Updating files:  56% (4776/8528)
+2026-10-02T00:35:26.9082576Z Updating files:  57% (4861/8528)
+2026-10-02T00:35:26.9083399Z Updating files:  57% (4946/8528)
+2026-10-02T00:35:27.1416593Z Updating files:  58% (4947/8528)
+2026-10-02T00:35:27.2169685Z Updating files:  59% (5032/8528)
+2026-10-02T00:35:27.8643038Z Updating files:  60% (5117/8528)
+2026-10-02T00:35:27.9297885Z Updating files:  61% (5203/8528)
+2026-10-02T00:35:27.9347444Z Updating files:  61% (5206/8528)
+2026-10-02T00:35:28.2083191Z Updating files:  62% (5288/8528)
+2026-10-02T00:35:28.2152942Z Updating files:  63% (5373/8528)
+2026-10-02T00:35:28.2221354Z Updating files:  64% (5458/8528)
+2026-10-02T00:35:28.5652866Z Updating files:  65% (5544/8528)
+2026-10-02T00:35:28.5882029Z Updating files:  66% (5629/8528)
+2026-10-02T00:35:28.6141866Z Updating files:  67% (5714/8528)
+2026-10-02T00:35:28.6819190Z Updating files:  68% (5800/8528)
+2026-10-02T00:35:28.8317671Z Updating files:  69% (5885/8528)
+2026-10-02T00:35:28.8385712Z Updating files:  70% (5970/8528)
+2026-10-02T00:35:28.8433248Z Updating files:  71% (6055/8528)
+2026-10-02T00:35:28.8946512Z Updating files:  72% (6141/8528)
+2026-10-02T00:35:28.9153261Z Updating files:  72% (6214/8528)
+2026-10-02T00:35:28.9191076Z Updating files:  73% (6226/8528)
+2026-10-02T00:35:28.9336424Z Updating files:  74% (6311/8528)
+2026-10-02T00:35:28.9479312Z Updating files:  75% (6396/8528)
+2026-10-02T00:35:28.9700594Z Updating files:  76% (6482/8528)
+2026-10-02T00:35:28.9772233Z Updating files:  77% (6567/8528)
+2026-10-02T00:35:29.1415869Z Updating files:  78% (6652/8528)
+2026-10-02T00:35:29.3209084Z Updating files:  79% (6738/8528)
+2026-10-02T00:35:29.5541217Z Updating files:  80% (6823/8528)
+2026-10-02T00:35:29.6525657Z Updating files:  81% (6908/8528)
+2026-10-02T00:35:29.7112426Z Updating files:  82% (6993/8528)
+2026-10-02T00:35:29.7286685Z Updating files:  83% (7079/8528)
+2026-10-02T00:35:29.7779061Z Updating files:  84% (7164/8528)
+2026-10-02T00:35:29.7830796Z Updating files:  85% (7249/8528)
+2026-10-02T00:35:29.7882222Z Updating files:  86% (7335/8528)
+2026-10-02T00:35:29.7930097Z Updating files:  87% (7420/8528)
+2026-10-02T00:35:29.7983789Z Updating files:  88% (7505/8528)
+2026-10-02T00:35:29.8085148Z Updating files:  89% (7590/8528)
+2026-10-02T00:35:29.9433315Z Updating files:  90% (7676/8528)
+2026-10-02T00:35:30.1808617Z Updating files:  90% (7744/8528)
+2026-10-02T00:35:30.2034946Z Updating files:  91% (7761/8528)
+2026-10-02T00:35:30.2418086Z Updating files:  92% (7846/8528)
+2026-10-02T00:35:30.2751228Z Updating files:  93% (7932/8528)
+2026-10-02T00:35:30.3327479Z Updating files:  94% (8017/8528)
+2026-10-02T00:35:30.3408227Z Updating files:  95% (8102/8528)
+2026-10-02T00:35:30.3538459Z Updating files:  96% (8187/8528)
+2026-10-02T00:35:30.3689458Z Updating files:  97% (8273/8528)
+2026-10-02T00:35:30.3793369Z Updating files:  98% (8358/8528)
+2026-10-02T00:35:30.4183065Z Updating files:  99% (8443/8528)
+2026-10-02T00:35:30.4184060Z Updating files: 100% (8528/8528)
+2026-10-02T00:35:30.4184514Z Updating files: 100% (8528/8528), done.
+2026-10-02T00:35:30.7645602Z Switched to a new branch 'research/v16.34-fiber-component-invariant'
+2026-10-02T00:35:30.7648593Z branch 'research/v16.34-fiber-component-invariant' set up to track 'origin/research/v16.34-fiber-component-invariant'.
+2026-10-02T00:35:30.7918824Z ##[endgroup]
+2026-10-02T00:35:30.7968159Z [command]/usr/bin/git log -1 --format=%H
+2026-10-02T00:35:30.8003345Z f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8
+2026-10-02T00:35:30.8825306Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-10-02T00:35:30.8825734Z with:
+2026-10-02T00:35:30.8825937Z   python-version: 3.11
+2026-10-02T00:35:30.8826172Z   check-latest: false
+2026-10-02T00:35:30.8828626Z   token: ***
+2026-10-02T00:35:30.8828843Z   update-environment: true
+2026-10-02T00:35:30.8829087Z   allow-prereleases: false
+2026-10-02T00:35:30.8829326Z   freethreaded: false
+2026-10-02T00:35:30.8829564Z ##[endgroup]
+2026-10-02T00:35:31.0224401Z ##[group]Installed versions
+2026-10-02T00:35:31.5050982Z (node:2324) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T00:35:31.5052065Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T00:35:31.5053326Z Successfully set up CPython (3.11.16)
+2026-10-02T00:35:31.5054104Z ##[endgroup]
+2026-10-02T00:35:31.5235515Z ##[group]Run python -m pip install sympy==1.13.3 mpmath==1.3.0
+2026-10-02T00:35:31.5236039Z [36;1mpython -m pip install sympy==1.13.3 mpmath==1.3.0[0m
+2026-10-02T00:35:32.4536124Z shell: /usr/bin/bash -e {0}
+2026-10-02T00:35:32.4536459Z env:
+2026-10-02T00:35:32.4536792Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:32.4537342Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T00:35:32.4537865Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:32.4538349Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:32.4538814Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:32.4539284Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T00:35:32.4539678Z ##[endgroup]
+2026-10-02T00:35:33.6233630Z Collecting sympy==1.13.3
+2026-10-02T00:35:33.6857930Z   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
+2026-10-02T00:35:33.7061381Z Collecting mpmath==1.3.0
+2026-10-02T00:35:33.7143298Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-10-02T00:35:33.7377765Z Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+2026-10-02T00:35:33.8837796Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 47.4 MB/s  0:00:00
+2026-10-02T00:35:33.8917049Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-10-02T00:35:33.9011734Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 43.6 MB/s  0:00:00
+2026-10-02T00:35:34.0622981Z Installing collected packages: mpmath, sympy
+2026-10-02T00:35:40.1163945Z 
+2026-10-02T00:35:40.1173527Z Successfully installed mpmath-1.3.0 sympy-1.13.3
+2026-10-02T00:35:40.1661260Z ##[group]Run python ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/publish.py verify
+2026-10-02T00:35:40.1662069Z [36;1mpython ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/publish.py verify[0m
+2026-10-02T00:35:40.1726099Z shell: /usr/bin/bash -e {0}
+2026-10-02T00:35:40.1726372Z env:
+2026-10-02T00:35:40.1726651Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:40.1727109Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T00:35:40.1727558Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:40.1727948Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:40.1728352Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:40.1728752Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T00:35:40.1729099Z ##[endgroup]
+2026-10-02T00:35:49.6623050Z {"package": "VERIFIED", "source_members": 2049}
+2026-10-02T00:35:49.6623588Z {"package": "VERIFIED", "source_members": 2049}
+2026-10-02T00:35:49.6623947Z {"publication": "VERIFIED", "members": 363}
+2026-10-02T00:35:49.6801499Z ##[group]Run python ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/run.py phase out/merge
+2026-10-02T00:35:49.6802257Z [36;1mpython ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/run.py phase out/merge[0m
+2026-10-02T00:35:49.6864976Z shell: /usr/bin/bash -e {0}
+2026-10-02T00:35:49.6865231Z env:
+2026-10-02T00:35:49.6865499Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:49.6865956Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T00:35:49.6866386Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:49.6866777Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:49.6867162Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:35:49.6867561Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T00:35:49.6867888Z ##[endgroup]
+2026-10-02T00:46:49.5749183Z ##[group]Run python ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/run.py package out/merge post_merge
+2026-10-02T00:46:49.5750428Z [36;1mpython ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/run.py package out/merge post_merge[0m
+2026-10-02T00:46:49.5815018Z shell: /usr/bin/bash -e {0}
+2026-10-02T00:46:49.5815275Z env:
+2026-10-02T00:46:49.5815548Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:46:49.5816000Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T00:46:49.5816442Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:46:49.5816825Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:46:49.5817231Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:46:49.5817647Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T00:46:49.5817974Z ##[endgroup]
+2026-10-02T00:46:59.9196364Z {"package": "VERIFIED", "source_members": 2049}
+2026-10-02T00:46:59.9423367Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-02T00:46:59.9423806Z with:
+2026-10-02T00:46:59.9424094Z   name: v1653-post_merge-f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8
+2026-10-02T00:46:59.9424445Z   path: out/merge
+2026-10-02T00:46:59.9424657Z   if-no-files-found: error
+2026-10-02T00:46:59.9424902Z   compression-level: 6
+2026-10-02T00:46:59.9425130Z   overwrite: false
+2026-10-02T00:46:59.9425352Z   include-hidden-files: false
+2026-10-02T00:46:59.9425588Z env:
+2026-10-02T00:46:59.9425845Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:46:59.9426282Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T00:46:59.9426702Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:46:59.9427289Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:46:59.9427686Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T00:46:59.9428110Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T00:46:59.9428431Z ##[endgroup]
+2026-10-02T00:47:00.1118696Z (node:3143) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T00:47:00.1119884Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T00:47:00.1596912Z With the provided path, there will be 133 files uploaded
+2026-10-02T00:47:00.1598191Z Artifact name is valid!
+2026-10-02T00:47:00.1598752Z Root directory input is valid!
+2026-10-02T00:47:00.5419458Z Beginning upload of artifact content to blob storage
+2026-10-02T00:47:00.8298718Z (node:3143) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-02T00:47:01.7970674Z Uploaded bytes 8388608
+2026-10-02T00:47:02.0120124Z Uploaded bytes 16777216
+2026-10-02T00:47:02.1412854Z Uploaded bytes 25165824
+2026-10-02T00:47:02.2836261Z Uploaded bytes 33554432
+2026-10-02T00:47:02.3967740Z Uploaded bytes 41943040
+2026-10-02T00:47:02.5361015Z Uploaded bytes 50331648
+2026-10-02T00:47:02.6365412Z Uploaded bytes 58720256
+2026-10-02T00:47:03.0273264Z Uploaded bytes 67108864
+2026-10-02T00:47:03.3330014Z Uploaded bytes 75497472
+2026-10-02T00:47:03.6320307Z Uploaded bytes 83886080
+2026-10-02T00:47:03.9907450Z Uploaded bytes 92274688
+2026-10-02T00:47:04.4553992Z Uploaded bytes 100663296
+2026-10-02T00:47:04.5478923Z Uploaded bytes 109051904
+2026-10-02T00:47:04.7427166Z Uploaded bytes 114011394
+2026-10-02T00:47:04.8245039Z Finished uploading artifact content to blob storage!
+2026-10-02T00:47:04.8248220Z SHA256 digest of uploaded artifact zip is 1830143fd012ee2d619d2c7371df7f44a76e51b0855691da26c71c745122cf80
+2026-10-02T00:47:04.8250454Z Finalizing artifact upload
+2026-10-02T00:47:05.1164171Z Artifact v1653-post_merge-f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8.zip successfully finalized. Artifact ID 11202962182
+2026-10-02T00:47:05.1165566Z Artifact v1653-post_merge-f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8 has been successfully uploaded! Final size is 114011394 bytes. Artifact ID is 11202962182
+2026-10-02T00:47:05.1172657Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/36946472173/artifacts/11202962182
+2026-10-02T00:47:05.1374702Z Post job cleanup.
+2026-10-02T00:47:05.2611790Z (node:3157) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T00:47:05.2612724Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T00:47:05.2803160Z Post job cleanup.
+2026-10-02T00:47:05.3671005Z [command]/usr/bin/git version
+2026-10-02T00:47:05.3715460Z git version 2.55.0
+2026-10-02T00:47:05.3754937Z Temporarily overriding HOME='/home/runner/work/_temp/fc009227-4c8c-42fd-87ba-e5508ba3d160' before making global git config changes
+2026-10-02T00:47:05.3756354Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T00:47:05.3760531Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-02T00:47:05.3800516Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T00:47:05.3836472Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T00:47:05.4104257Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T00:47:05.4131923Z http.https://github.com/.extraheader
+2026-10-02T00:47:05.4145922Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-02T00:47:05.4183952Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T00:47:05.4556791Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T00:47:05.4620716Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T00:47:05.5084322Z Cleaning up orphan processes
+2026-10-02T00:47:05.5387473Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

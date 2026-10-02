@@ -1,0 +1,192 @@
+test_real_control_verifier (__main__.Bootstrap.test_real_control_verifier) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+OK
+test_complete_control (__main__.VerifierGate.test_complete_control) ... ok
+test_duplicate_rejected (__main__.VerifierGate.test_duplicate_rejected) ... ok
+test_omission_rejected (__main__.VerifierGate.test_omission_rejected) ... ok
+test_stacked_defect_rejected (__main__.VerifierGate.test_stacked_defect_rejected) ... ok
+test_substitution_rejected (__main__.VerifierGate.test_substitution_rejected) ... ok
+test_wrong_profile_rejected (__main__.VerifierGate.test_wrong_profile_rejected) ... ok
+test_wrong_start_rejected (__main__.VerifierGate.test_wrong_start_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+test_clearance_root_full_exact (__main__.Mechanisms.test_clearance_root_full_exact) ... ok
+test_cover_spare_current_bin (__main__.Mechanisms.test_cover_spare_current_bin) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.011s
+
+OK
+test_all_frozen_feasibility_rows (__main__.Feasibility.test_all_frozen_feasibility_rows) ... ok
+test_disjoint_minimum_beyond_frozen_palette (__main__.Feasibility.test_disjoint_minimum_beyond_frozen_palette) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.321s
+
+OK
+test_deletion_at_minimum_rejected (__main__.Lifting.test_deletion_at_minimum_rejected) ... ok
+test_destination_properly_occupied_rejected (__main__.Lifting.test_destination_properly_occupied_rejected) ... ok
+test_invalid_root_step_rejected (__main__.Lifting.test_invalid_root_step_rejected) ... ok
+test_partial_clearance_retained (__main__.Lifting.test_partial_clearance_retained) ... ok
+test_root_full_lift_and_leaf (__main__.Lifting.test_root_full_lift_and_leaf) ... ok
+test_zero_capacity_child (__main__.Lifting.test_zero_capacity_child) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK
+test_canonical_endpoint (__main__.Integration.test_canonical_endpoint) ... ok
+test_compact_contraction (__main__.Integration.test_compact_contraction) ... ok
+test_four_child_under_binary_parent (__main__.Integration.test_four_child_under_binary_parent) ... ok
+test_q2_expand_contract_guard (__main__.Integration.test_q2_expand_contract_guard) ... ok
+test_q3_cover_guard (__main__.Integration.test_q3_cover_guard) ... ok
+test_q4_disjoint_exchange (__main__.Integration.test_q4_disjoint_exchange) ... ok
+test_recursive_call_requires_exact_parent (__main__.Integration.test_recursive_call_requires_exact_parent) ... ok
+test_repeated_four_child (__main__.Integration.test_repeated_four_child) ... ok
+test_stacked_defect_rejected (__main__.Integration.test_stacked_defect_rejected) ... ok
+test_transported_order_equivariance (__main__.Integration.test_transported_order_equivariance) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.031s
+
+OK
+test_campaign_omission_rejected (__main__.Campaign.test_campaign_omission_rejected) ... FAIL
+test_complete_frozen_campaign (__main__.Campaign.test_complete_frozen_campaign) ... FAIL
+test_construction_failure_scoped (__main__.Campaign.test_construction_failure_scoped) ... FAIL
+test_infeasible_not_construction_failure (__main__.Campaign.test_infeasible_not_construction_failure) ... FAIL
+test_native_unsafe_q2_rejected_as_unit (__main__.Campaign.test_native_unsafe_q2_rejected_as_unit) ... FAIL
+test_native_unsafe_q3_rejected_as_unit (__main__.Campaign.test_native_unsafe_q3_rejected_as_unit) ... FAIL
+test_resource_failure_incomplete (__main__.Campaign.test_resource_failure_incomplete) ... FAIL
+
+======================================================================
+FAIL: test_campaign_omission_rejected (__main__.Campaign.test_campaign_omission_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 19, in test_campaign_omission_rejected
+    d=self.campaign();d['records'].pop()
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 10, in campaign
+    self.assertTrue(callable(getattr(p,'produce',None)),'CAMPAIGN_IMPLEMENTATION_MISSING')
+AssertionError: False is not true : CAMPAIGN_IMPLEMENTATION_MISSING
+
+======================================================================
+FAIL: test_complete_frozen_campaign (__main__.Campaign.test_complete_frozen_campaign)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 14, in test_complete_frozen_campaign
+    d=self.campaign();result=v.verify(d)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 10, in campaign
+    self.assertTrue(callable(getattr(p,'produce',None)),'CAMPAIGN_IMPLEMENTATION_MISSING')
+AssertionError: False is not true : CAMPAIGN_IMPLEMENTATION_MISSING
+
+======================================================================
+FAIL: test_construction_failure_scoped (__main__.Campaign.test_construction_failure_scoped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 47, in test_construction_failure_scoped
+    self.campaign()
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 10, in campaign
+    self.assertTrue(callable(getattr(p,'produce',None)),'CAMPAIGN_IMPLEMENTATION_MISSING')
+AssertionError: False is not true : CAMPAIGN_IMPLEMENTATION_MISSING
+
+======================================================================
+FAIL: test_infeasible_not_construction_failure (__main__.Campaign.test_infeasible_not_construction_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 22, in test_infeasible_not_construction_failure
+    d=self.campaign();result=v.verify(d)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 10, in campaign
+    self.assertTrue(callable(getattr(p,'produce',None)),'CAMPAIGN_IMPLEMENTATION_MISSING')
+AssertionError: False is not true : CAMPAIGN_IMPLEMENTATION_MISSING
+
+======================================================================
+FAIL: test_native_unsafe_q2_rejected_as_unit (__main__.Campaign.test_native_unsafe_q2_rejected_as_unit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 35, in test_native_unsafe_q2_rejected_as_unit
+    def test_native_unsafe_q2_rejected_as_unit(self):self.unsafe('unsafe_q2')
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 27, in unsafe
+    d=self.campaign();result=v.verify(d)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 10, in campaign
+    self.assertTrue(callable(getattr(p,'produce',None)),'CAMPAIGN_IMPLEMENTATION_MISSING')
+AssertionError: False is not true : CAMPAIGN_IMPLEMENTATION_MISSING
+
+======================================================================
+FAIL: test_native_unsafe_q3_rejected_as_unit (__main__.Campaign.test_native_unsafe_q3_rejected_as_unit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 36, in test_native_unsafe_q3_rejected_as_unit
+    def test_native_unsafe_q3_rejected_as_unit(self):self.unsafe('unsafe_q3')
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 27, in unsafe
+    d=self.campaign();result=v.verify(d)
+      ^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 10, in campaign
+    self.assertTrue(callable(getattr(p,'produce',None)),'CAMPAIGN_IMPLEMENTATION_MISSING')
+AssertionError: False is not true : CAMPAIGN_IMPLEMENTATION_MISSING
+
+======================================================================
+FAIL: test_resource_failure_incomplete (__main__.Campaign.test_resource_failure_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 38, in test_resource_failure_incomplete
+    self.campaign()
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_campaign.py", line 10, in campaign
+    self.assertTrue(callable(getattr(p,'produce',None)),'CAMPAIGN_IMPLEMENTATION_MISSING')
+AssertionError: False is not true : CAMPAIGN_IMPLEMENTATION_MISSING
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+FAILED (failures=7)
+test_assertion_hash_mutation (__main__.AssertionBindings.test_assertion_hash_mutation) ... FAIL
+test_assertion_identity_omission (__main__.AssertionBindings.test_assertion_identity_omission) ... FAIL
+test_assertion_source_mutation (__main__.AssertionBindings.test_assertion_source_mutation) ... FAIL
+
+======================================================================
+FAIL: test_assertion_hash_mutation (__main__.AssertionBindings.test_assertion_hash_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integrity.py", line 9, in test_assertion_hash_mutation
+    b=self.integrity();sources={'example':'class E:\n def test_a(self):\n  assert 1==1\n'}
+      ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integrity.py", line 5, in integrity
+    self.assertIsNotNone(importlib.util.find_spec('bindings'),'ASSERTION_BINDING_MISSING')
+AssertionError: unexpectedly None : ASSERTION_BINDING_MISSING
+
+======================================================================
+FAIL: test_assertion_identity_omission (__main__.AssertionBindings.test_assertion_identity_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integrity.py", line 18, in test_assertion_identity_omission
+    b=self.integrity();sources={'example':'class E:\n def test_a(self):\n  assert 1==1\n'}
+      ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integrity.py", line 5, in integrity
+    self.assertIsNotNone(importlib.util.find_spec('bindings'),'ASSERTION_BINDING_MISSING')
+AssertionError: unexpectedly None : ASSERTION_BINDING_MISSING
+
+======================================================================
+FAIL: test_assertion_source_mutation (__main__.AssertionBindings.test_assertion_source_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integrity.py", line 14, in test_assertion_source_mutation
+    b=self.integrity();sources={'example':'class E:\n def test_a(self):\n  assert 1==1\n'}
+      ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/test_integrity.py", line 5, in integrity
+    self.assertIsNotNone(importlib.util.find_spec('bindings'),'ASSERTION_BINDING_MISSING')
+AssertionError: unexpectedly None : ASSERTION_BINDING_MISSING
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

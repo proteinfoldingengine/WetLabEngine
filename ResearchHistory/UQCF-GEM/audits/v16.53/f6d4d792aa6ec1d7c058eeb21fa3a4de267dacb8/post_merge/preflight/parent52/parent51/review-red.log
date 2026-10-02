@@ -1,0 +1,68 @@
+test_failure_outcome_classifier (__main__.ReviewRed.test_failure_outcome_classifier) ... FAIL
+test_full_verifier_omission (__main__.ReviewRed.test_full_verifier_omission) ... FAIL
+test_start_failure_retained (__main__.ReviewRed.test_start_failure_retained) ... FAIL
+test_whole_palette_exception (__main__.ReviewRed.test_whole_palette_exception) ... FAIL
+
+======================================================================
+FAIL: test_failure_outcome_classifier (__main__.ReviewRed.test_failure_outcome_classifier)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/test_review_red.py", line 35, in test_failure_outcome_classifier
+    self.assertTrue(callable(getattr(run_campaign,'failure_outcome',None)),'MISSING_FAILURE_OUTCOME_CLASSIFIER')
+AssertionError: False is not true : MISSING_FAILURE_OUTCOME_CLASSIFIER
+
+======================================================================
+FAIL: test_full_verifier_omission (__main__.ReviewRed.test_full_verifier_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/test_review_red.py", line 17, in test_full_verifier_omission
+    with self.assertRaisesRegex(ValueError,'identities',msg='FULL_VERIFIER_OMISSION_ACCEPTED'):v.verify(doc)
+AssertionError: ValueError not raised : FULL_VERIFIER_OMISSION_ACCEPTED
+
+======================================================================
+FAIL: test_start_failure_retained (__main__.ReviewRed.test_start_failure_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/test_review_red.py", line 29, in test_start_failure_retained
+    try:doc=p.produce()
+            ^^^^^^^^^^^
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/producer.py", line 164, in produce
+    t=TREES[spec['tree']];k=spec['k'];q=spec['q'];start=initial(t,k,q,spec['permutation'],spec['mode']);trace=[]
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/unittest/mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/unittest/mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/unittest/mock.py", line 1183, in _execute_mock_call
+    raise effect
+ValueError: INJECTED_START_FAILURE
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/test_review_red.py", line 30, in test_start_failure_retained
+    except Exception:self.fail('START_FAILURE_ESCAPED')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: START_FAILURE_ESCAPED
+
+======================================================================
+FAIL: test_whole_palette_exception (__main__.ReviewRed.test_whole_palette_exception)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/test_review_red.py", line 25, in test_whole_palette_exception
+    self.assertEqual(module.normalize(start,p.U,4,q)[-1],p.canonical(p.U,4,q),'FULL_PALETTE_ORDER_LOST')
+AssertionError: Lists differ: [5647, 25585, 41473, 3585] != [3599, 6129, 25089, 41473]
+
+First differing element 0:
+5647
+3599
+
+- [5647, 25585, 41473, 3585]
++ [3599, 6129, 25089, 41473] : FULL_PALETTE_ORDER_LOST
+
+----------------------------------------------------------------------
+Ran 4 tests in 12.297s
+
+FAILED (failures=4)
