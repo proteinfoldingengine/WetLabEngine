@@ -1,6 +1,6 @@
 # Post-v16.54: Distributed Repair
 
-Current phase: OPEN analytical research. Last completed primary checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, A11.X1 disproves safe-prefix extension, and X3/X4 close stronger native anchor classes while X5 proves conditional triple-anchor renewal at saturated residual capacity; universal destination-directed schedule existence remains unproved. Latest completed bounded checkpoint: A11.X5, conditional triple-anchor renewal including exactly saturated residual capacity. Combined X3/X4 close every target-four carrier containing a floor one or two. General global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
+Current phase: OPEN analytical research. Last completed primary checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, A11.X1 disproves safe-prefix extension, and X3/X4 close stronger native anchor classes while X5 proves conditional triple-anchor renewal at saturated residual capacity; universal destination-directed schedule existence remains unproved. Latest completed bounded checkpoint: A11.X6, sharp seven-label X5 target-existence boundary and empty-target Route A obstruction; no native disconnection. Combined X3/X4 close every target-four carrier containing a floor one or two. General global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
 
 ## Closed baseline
 
@@ -152,3 +152,11 @@ Use this reporting template:
 - Next authorized action and any genuine approval gate.
 
 STATUS.json distinguishes checkpoint completion from the overall OPEN research objective. A completed checkpoint must never be reported as unfinished v16.54 or as universal closure. Version designation can be agreed separately; no prior exploratory result will be retrospectively called preregistered.
+
+## A11.X6: sharp X5 target-existence boundary
+
+On the seven-label uniform-floor-three carrier, the X5-qualified exact-four class G_s is nonempty at any chosen labelled slot if and only if r>=13. Exact compaction retains the supplied minimum four-cover and guard; four residual triples plus coupled mixed-triple witness counting force thirteen slots. An explicit thirteen-slot state attains the bound. Therefore ALL G_s are empty at r<=12, allowing every floor-permitted support size. A cyclic (3,2,2) core supplies a feasible exact-four twelve-slot control, already connected within accepted AA. This is an empty-target obstruction to Route A, NOT native disconnection. For six labels exact four requires at least twenty slots; G_s is empty for any r, and the all-twenty-triples control is already solved by AC.
+
+No arbitrary accessibility or new universal repair theorem is proved. At seven labels/r>=13, existence is distinct from reachability; at seven labels/r=12 a replacement mechanism must avoid reliance on X5's all-triple-avoiding family. Other accepted classes remain valid. Larger palettes, A11 destination-directed scheduling and unrestricted native/nested universality remain OPEN. No scientific run or implementation is initiated.
+
+Evidence: A11_X6_SCOPE.md, A11_X6_GUARD_ACCESSIBILITY.md, INDEPENDENT_A11_X6_REVIEW.md and A11_X6_CLOSEOUT.md. Candidate 442fb7b839425a96b2ae248616b944f56f1229a0. This is analytical source freezing and review, not numerical preregistration.

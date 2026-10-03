@@ -72,3 +72,11 @@ This proves renewing protection at saturated residual capacity without creating 
 
 Evidence: A11_TRIPLE_ANCHOR_SCOPE.md; A11_TRIPLE_ANCHOR_RENEWAL.md; INDEPENDENT_A11_TRIPLE_REVIEW.md; A11_TRIPLE_ANCHOR_CLOSEOUT.md. Candidate 3857dfcc33eccb2c01456a1273426ab9dd94bade. Inherited C/L and X4's residual band argument are domain-checked, not recertified; no universal floor-two theorem is misapplied to the residual carrier. X3/X4's universal target-four class with an original floor one or two remains accepted. A11 universal destination-directed scheduling, remaining floor-three cases outside accepted classes and general root/nested universality remain OPEN. Temporary incidences/repeated toggles are allowed; child-interface conditions govern native lifting. No numerical campaign or implementation certification is assigned.
 
+
+## A11.X6: sharp X5 target-existence boundary
+
+On the seven-label uniform-floor-three carrier, the X5-qualified exact-four class G_s is nonempty at any chosen labelled slot if and only if r>=13. Exact compaction retains the supplied minimum four-cover and guard; four residual triples plus coupled mixed-triple witness counting force thirteen slots. An explicit thirteen-slot state attains the bound. Therefore ALL G_s are empty at r<=12, allowing every floor-permitted support size. A cyclic (3,2,2) core supplies a feasible exact-four twelve-slot control, already connected within accepted AA. This is an empty-target obstruction to Route A, NOT native disconnection. For six labels exact four requires at least twenty slots; G_s is empty for any r, and the all-twenty-triples control is already solved by AC.
+
+No arbitrary accessibility or new universal repair theorem is proved. At seven labels/r>=13, existence is distinct from reachability; at seven labels/r=12 a replacement mechanism must avoid reliance on X5's all-triple-avoiding family. Other accepted classes remain valid. Larger palettes, A11 destination-directed scheduling and unrestricted native/nested universality remain OPEN. No scientific run or implementation is initiated.
+
+Evidence: A11_X6_SCOPE.md, A11_X6_GUARD_ACCESSIBILITY.md, INDEPENDENT_A11_X6_REVIEW.md and A11_X6_CLOSEOUT.md. Candidate 442fb7b839425a96b2ae248616b944f56f1229a0. This is analytical source freezing and review, not numerical preregistration.
