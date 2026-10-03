@@ -113,7 +113,7 @@ Apply accepted Theorem A ONCE to this full path to remove any upward excursions 
 
 ## 7. Protection renewal and global termination
 
-With m=q-3 anchors, a forbidden set of q-2=m+1 labels must consist of U plus ONE residual label x. It fails to hit the tuple exactly when x is missed by at least one flexible root. Thus the anchored lower problem is ORDINARY ELEMENT coverage by residual complementary blocks, not arbitrary pair coverage.
+With m=q-3 anchors, any candidate hitting set of q-2=m+1 labels must consist of U plus ONE residual label x; a set omitting an anchor already fails to hit its singleton root. Such a candidate fails to hit the tuple exactly when x is missed by at least one flexible root. Thus the anchored lower problem is ORDINARY ELEMENT coverage by residual complementary blocks, not arbitrary pair coverage.
 
 The accepted target-three construction maintains that coverage: its element-owner transfers establish a replacement occurrence before deleting the old occurrence, and its spare-capacity argument provides the next legal transfer. The exact-three residual endpoints supply the accepted capacity hypotheses. This inherited renewal mechanism is being lifted to the full tuple, not inferred from endpoint counts alone or newly recertified.
 
@@ -140,4 +140,3 @@ Sufficiency does not establish a minimal or necessary anchor count. Fewer than q
 This does NOT prove universal A11 destination-directed scheduling: endpoint permutations, preparation to R or P, helper labels, residual transfers and reversed normalization can use temporary incidences and repeated toggles. General unrestricted q>=4 root/nested universality remains OPEN, and native lifting retains its accepted child-interface conditions.
 
 No physical geometry, primitive time, new external design property, numerical result, implementation certification, measured efficiency or originality claim is made. This is an analytical reduction using accepted lower-target connectivity, with all original floors and labelled slots preserved.
-
