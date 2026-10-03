@@ -1,6 +1,6 @@
 # Post-v16.54: Distributed Repair
 
-Current phase: OPEN analytical research. Last completed primary checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, A11.X1 disproves safe-prefix extension, and X3/X4 close stronger native anchor classes while X5 proves conditional triple-anchor renewal at saturated residual capacity; universal destination-directed schedule existence remains unproved. Latest completed analytical checkpoint: A11.X8, one-overlap incidence-guard complete repair, including ALL seven-label/floor-three exact-four endpoints at thirteen, fifteen and seventeen slots; X7's twelve-slot closure remains accepted. Combined X3/X4 close every target-four carrier containing a floor one or two. General global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
+Current phase: OPEN analytical research. Last completed primary checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, A11.X1 disproves safe-prefix extension, and X3/X4 close stronger native anchor classes while X5 proves conditional triple-anchor renewal at saturated residual capacity; universal destination-directed schedule existence remains unproved. Latest completed analytical checkpoint: A11.X9, strictly smaller actual guard derived from exact endpoints plus full reviewed repair composition. Uniform floor-three target-four repair is complete for ALL feasible palettes at r>=17; incidence results also cover smaller seven-label carriers. X7/X8 remain accepted. Seven-label remaining universal candidates are r14,16 before accepted subclass exclusions. Combined X3/X4 close every target-four carrier containing a floor one or two. General global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
 
 ## Closed baseline
 
@@ -131,9 +131,9 @@ This track is independent of A7 and is not a dependency of v16.54 certification.
 
 | ID | Deliverable | Status / authorization |
 | --- | --- | --- |
-| B1 | Source-backed timing baseline from existing runs, attempts, logs and job dependencies | NOT STARTED; read-only analysis authorized |
-| B2 | Bounded orchestration design and tiny end-to-end validation proposal | NOT STARTED; design authorized |
-| B3 | Written implementation/execution scope, independent design review and user approval | NOT STARTED; needed before new tests or implementation |
+| B1 | Source-backed timing baseline from existing runs, attempts, logs and job dependencies | COMPLETED; source-backed read-only baseline independently reviewed on isolated engineering branch |
+| B2 | Bounded orchestration design and tiny end-to-end validation proposal | COMPLETED; bounded proposal and tiny validation DESIGN independently reviewed; execution unstarted |
+| B3 | Written implementation/execution scope, independent design review and user approval | Candidate design independently reviewed; implementation/execution scope remains to be frozen before new tests or implementation |
 | B4 | Approved implementation and focused equivalence/performance validation | NOT AUTHORIZED by current analytical scope |
 
 Start with automated mechanical transitions and justified dependency parallelism. Consider preparation/chunking only after measurements and accepted design justify it. Preserve independent verification, exact scientific bytes or approved correspondence, inherited checks, resource limits, rejecting controls, reproduction and audit. No speedup percentage is claimed without measurements.
@@ -182,3 +182,15 @@ All seven-label/uniform-floor-three exact-four endpoint pairs are therefore conn
 This is incremental analytical composition, not recertification of X7G/O1/M/A or a new multiple-overlap theorem. Original A11 destination-directed scheduling and general native/nested universality remain OPEN. Failure of a sufficient inequality is inconclusive.
 
 Evidence: A11_X8_SCOPE.md, A11_X8_ONE_OVERLAP_INCIDENCE_REPAIR.md, INDEPENDENT_A11_X8_REVIEW.md and A11_X8_CLOSEOUT.md. Candidate 6c5b2159080486b83fd005d42e0bbd719561f9f2. No numerical campaign, run, tests, workflows, implementation or numbered version.
+
+## A11.X9 — strictly smaller guards derived from exact endpoints
+
+Fresh whole-argument analytical review accepts X9G and the complete repair composition. For uniform original floor h>=2, exact-q endpoints q>=3 have an actual (q-1)-guard of size at most B-1 after exact minimum-cover-retaining compaction, where B=binomial(h+q-2,h). A smallest guard attaining B would be the classical complete equality core; exactness supplies an ACTUAL external root. Replacing two core selections by that existing root yields a smaller guard with explicit witnesses against every forbidden cover.
+
+Combine with X7G using G=min(floor(r*(k-h)/k),B-1). If r>=2G-1, safe full exact endpoint permutation places guards with at most one shared slot. O1 protects every primitive of handover; installed destination protection supports all remaining repairs with eligible strictly decreasing symmetric difference. The supplied lower path can exceed q; accepted A converts it before reversed permutation/compaction restore the original labelled noncompact destination.
+
+Palette-independent r>=2B-3 follows. Uniform floor-three target-four repair is complete for ALL feasible palettes at r>=17, improving the prior nineteen threshold. Seven-label remaining universal carrier obligations are confined to r14,16 before accepted subclass exclusions. No isolated campaign, sharpness, multiple-overlap universality, mixed-floor or original directed/nested closure.
+
+New external dependency is the CLASSICAL uniform Bollobas equality case, explicitly sourced in the proof; no originality claim. Frozen prior sources/certificates unchanged. Scope7664ed65aac533f16f39740483dc5019055f217f, candidate31566452722b73d833250f1132a154883a73d60f. Proof A11_X9_STRICT_GUARD_REPAIR.md, consolidation A11_REPAIR_CONSOLIDATION.md, fresh INDEPENDENT_A11_X9_WHOLE_REVIEW.md, closeout A11_X9_CLOSEOUT.md.
+
+Separately promised evidence-based efficiency baseline / bounded orchestration proposal / tiny end-to-end validation DESIGN are completed on the isolated engineering branch; runner implementation, execution and measured speedup remain NOT STARTED. No numerical jobs, workflows, new version or certified integration merge.
