@@ -1,29 +1,25 @@
-# Next after A11.X16 — actual protection and general floor profiles
+# Next after A11.X17 — active protection beyond the covered mixed profiles
 
-## Preserved mathematical closure
+## Preserved and extended complete classes
 
-X15's universal original-UNIFORM-FLOOR-THREE, TARGET-FOUR NATIVE ROOT theorem remains complete/independently accepted: every exact-four endpoint pair on every feasible finite carrier connects through3<=tau<=4 with full original labelled/noncompact restoration. No carrier obligation remains for that theorem. Original destination-directed scheduling is separate/open.
+X15 universal original-UNIFORM-FLOOR-THREE target-four ROOT repair remains complete/accepted with exact original labelled/noncompact destination restoration. No carrier obligation remains in that class. X16 palette-aware guard bounds and mixed/higher-floor budget classes remain accepted.
 
-## Added actual protection bounds
+X17 proves a sufficient lifting principle: original floors>=k-q+2 meet every(q-1)-label set. Full exact-q endpoints project to ACTUAL exact-q retained families. A supplied retained{q-1,q} repair lifts while those large supports stay fixed, and their exact original destinations are restored afterward at full level q. Original slots/floors are never deleted or weakened. The lift can be reused at exact joins and needs no whole-carrier incidence budget.
 
-X16 derives necessary complementary-cover counts by recursive incidence counting of ACTUAL blocks. Exact endpoint and label-avoiding guard obligations share actual capacities. The guard minimum g yields endpoint degree<=r-g and, through X14/X15, complete repair when r<=2g-2, or at r=2g-1 with strict sum-floors<(g-1)k, or at r>=2g with sum-floors<=(g-1)k. This is a sufficient complete-repair criterion, not a necessary connectivity law or a maximum selected-guard bound.
+At q4 this closes every feasible original floor profile with each a_i<=3 OR a_i>=k-2. Thus every feasible positive-floor target-four profile on k<=6 is connected. Arbitrarily many large-floor coordinates are allowed. Explicit k9 controls with eight original floor3 roots and at least two original floor7 roots lie outside ANY whole-carrier X15N capacity/degree parameters but have complete repair by this lift.
 
-Complete declared classes include every feasible ten-label original-uniform-floor-four exact-four carrier and the minfloor3/nine-label/eight-root profiles with sum floors<=27. A supplied(4,3,3,3,3,3,3,3) endpoint proves genuine nonuniform feasibility. At floor4/nine-label/eleven-root the stronger g6 bound gives complete repair conditional on exact endpoints existing; no feasibility classification is supplied.
+## Precise remaining mathematical direction
 
-Necessary covering bounds do NOT prove attaining families exist. Ten-label floor4/r9 feasibility remains undecided; r<=8 is infeasible and r>=10 has a supplied exact hub. These status distinctions are part of the accepted statement, not campaign assignments.
+Unrestricted original destination-directed scheduling and mixed-floor/higher-target/nested universality remain OPEN outside the proved classes. For target4, a remaining profile with no original floor1/2 slot must contain some floor between4 and k-3; otherwise X17 applies. This is a structural profile boundary, NOT a campaign checklist and not a feasibility/disconnection claim. Other accepted classes must still be excluded first.
 
-## Remaining analytical direction
+Seek actual protecting subfamilies or renewed coupled handovers for these intermediate floors. Large original-floor coordinates can be held fixed and restored after an active complete path; selected active floors must remain original and their exact endpoint inputs must be proved. A convenient subfamily's existence alone is not access or complete repair. Track every forbidden-cover witness, original shared capacities, eligible next primitives, renewed structure, progress and full labelled/noncompact restoration.
 
-Continue general ACTUAL protection/access and reusable coupled handovers for floor profiles outside the stated budgets. Seek sharper minimum actual avoiding-family requirements, lower-cost leveling or witnesses for handovers when pair counts cease to be strict. The new g controls endpoint availability; it is not automatically an editable buffer. Never reuse exact-endpoint implications at deficient prefixes without renewed witnesses.
+Do NOT infer a converse projection theorem. A full safe path may spend protection in a large root while its retained projection drops below the lower band. X17 supplies an actual safe-prefix countercontrol on a feasible exact-four carrier. An obstruction in a selected retained graph is not automatically a full native obstruction. The same caution remains for root-only versus nested paths.
 
-Every proposed extension must supply original floors/shared capacities, all forbidden-cover witnesses, actual next primitives, restored buffer structure, progress and exact labelled/noncompact destination restoration. Primitive paths retain temporary larger supports/repeated edits/background flexibility. A terminal selected-method obstruction or failed sufficient inequality is not native disconnection. No arbitrary mixed-floor permutation is permitted.
+All native temporary incidences, larger supports, repeated toggles and background edits remain available. No arbitrary mixed-floor permutations or destination-monotonicity restriction. Child lifting keeps baseline interfaces. Root defect upper bounds make no physical energy/metric/gravity or fundamental-time claim.
 
-Universal unrestricted mixed-floor target-four, all higher-floor palettes/targets, original A11 destination-directed universality and unconditional nested universality remain OPEN outside accepted classes. Child lifting retains the frozen interfaces. Root upper defect bounds do not establish physical energy/metric/gravity or fundamental time.
+## Review and implementation gates
 
-Any next major closure requires analytical source freezing/disclosure and fresh whole-argument review. Any implementation/numerical diagnostic requires its separately approved prospective full-domain protocol and scientific evidence gates. No isolated campaign checklist replaces the mechanism.
+Any new major closure requires scope/disclosed reasoning, exact candidate freezing, fresh whole-argument review and immutable source verification. Numerical diagnostics/implementation need separately approved prospective complete-domain protocols before execution. No numbered v16.55 implementation/certification, enumeration/test/workflow/run ID or integration merge was launched in this analytical packet.
 
-## Preservation and implementation gates
-
-No numbered v16.55 implementation/certification, enumeration, scientific test/workflow/run ID or integration merge was launched in X16. A later stage requires verified integrated parent, prospective approved scope, independent complete reconstruction/rejecting controls, inherited GitHub stack, reproduction/publication, independent closeout and post-merge audit. Certified v16.54 remains466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f; inherited proofs and prior failed-route records remain frozen.
-
-Separate promised read-only efficiency baseline/A2 proposal/tiny validation DESIGN remain complete/accepted at ea49d2556e4ca4929c0aece68d01e8193ab94b66. Runner implementation, fixture execution, benchmarks/measured speedup and A3 changes remain unstarted.
+Certified v16.54 remains466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f. Frozen inherited sources, X15 consolidation and failed-method classifications remain unchanged. Separate accepted efficiency baseline/A2 proposal/tiny validation DESIGN remains complete at ea49d2556e4ca4929c0aece68d01e8193ab94b66; runner implementation, fixture execution, benchmarks/measured speedup and A3 changes remain unstarted.
