@@ -128,14 +128,16 @@ Q union {b,c,f}; Q union {a,d,e}; Q union {a,d,e}; U; V1; W1.
 
 Every root is already at its original floor. The first four roots require exactly two hitting labels: a Q label and a U label hit them, while no single label lies in all four. In the source, {a,b,c} intersect {d,e,f} is empty; in the destination, {b,c,f} intersect {a,d,e} is empty. The last two roots use separate private groups outside Q union U and each requires another label. Thus both full tuples are EXACT four with explicitly supplied four-covers consisting of a Q label, a U label, one label of V0/V1 and one of W0/W1.
 
-Choose D_x as the maximum of its actual endpoint degrees and F_i=B_i intersect Z_i. Q labels have D=3 and are common in rows1,2,3; a,d,e have D=2; b,c,f and all private labels have D=1. The fixed common Q/a rows are row3 (one); Q/d and Q/e rows are rows2,3 (two); Q/b and Q/c have row1; Q/f has none.
+Choose D_x as the maximum of its actual endpoint degrees and F_i=B_i intersect Z_i. Q labels and a,d,e have D=3; b,c,f have D=2; private labels have D=1. The U row contributes one incidence to EVERY a,...,f at both endpoints and must be included in these degrees. The fixed common Q/a rows are row3 (one); Q/d and Q/e rows are rows2,3 (two); Q/b and Q/c have row1; Q/f has none.
 
-For two Q labels the corrected pair count is 3+3-3=3.
-For Q with a it is 3+2-1=4.
-For Q with d or e it is 3+2-2=3.
-For Q with any capacity-one label it is at most 3+1=4.
-For pairs containing no Q label it is at most 2+2=4.
-All satisfy D_x+D_y-c_F(x,y)<=4=r-2. Every pair therefore has certificate1; no independent capacities or invented guards are used.
+For two Q labels the corrected pair count is 3+3-3=3, satisfying certificate1. However Q with a has count 3+3-1=5, exceeding r-2=4; no all-pairs capacity-only claim is made.
+
+Instead verify the SAME hybrid certificate for every pair:
+- Every pair entirely within Q union U is missed by the ACTUAL row5 endpoint union V0 union V1, so certificate2 applies. This includes the pairs failing the corrected count.
+- A pair with one label in Q union U and one private label has capacity sum at most 3+1=4; subtracting a nonnegative fixed codegree only improves this. Certificate1 applies.
+- A pair of two private labels has capacity sum at most 1+1=2, so certificate1 applies.
+
+These categories exhaust all palette pairs. The count and actual union witnesses concern the same native schedule and rows. No independent capacity system is introduced.
 
 Scalar X14 cannot apply to these unique floor compactions: their maximum degree is three, requiring r>=8 rather than six. Any whole-carrier X15N parameters have M>=3 and r>=D+M+1, so D<=2. But S=3m+23>2(m+22)=2k for m>=22. No such X15N parameter choice works. X17's mixed profile also does not cover this profile, since floors m+3 and six/four exceed three while remaining below k-2=m+20.
 
@@ -147,7 +149,9 @@ The NEW statement is Section1's reusable general construction with eligible prog
 
 Before the proof freeze, an exploratory variant used Q plus {x,v3,u2}, Q plus {y,u1,p}, Q plus {x,w3,u3}, followed by {x,u1,u2,u3,u4,u5}, {v1,v2,v3,v4}, {w1,w2,w3,w4}. It was intended as an exact-four control with overlapping incidence handovers.
 
-It is NOT exact four: {u1,v3,w3} hits all six roots. The failed exact-endpoint premise invalidates its use as a theorem application or new exact-four carrier. It does not refute Section1, whose exact endpoint inputs remain mandatory; it proves no native disconnection. The control was rejected analytically before freezing this candidate, with no numerical execution. The corrected control in Section7 proves its exact endpoint premise directly.
+It is NOT exact four: {u1,v3,w3} hits all six roots. The failed exact-endpoint premise invalidates its use as a theorem application or new exact-four carrier. It does not refute Section1, whose exact endpoint inputs remain mandatory; it proves no native disconnection. The control was rejected analytically before freezing this candidate, with no numerical execution. The valid control in Section7 proves its exact endpoint premise directly.
+
+The first frozen X18 candidate d6953eb4ccf10c9ceb216665b117d9a1940f3443 also contained a degree-count error in that valid control: it omitted row4=U and claimed capacities2 for a,d,e and1 for b,c,f. The independent reviewer caught this before acceptance. Section7 now includes the actual U incidences and uses the theorem's actual row5 union witness for the affected pairs. The general theorem and its proof are unchanged; the rejected capacity-only check is not presented as accepted evidence.
 
 ## 9. Dependencies, discovery and explicit remaining obligation
 
