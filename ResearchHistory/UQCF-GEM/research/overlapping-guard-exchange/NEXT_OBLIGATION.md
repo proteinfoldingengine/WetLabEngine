@@ -1,11 +1,13 @@
-# Next obligation: renewable protection across distributed root changes
+# Next obligation: accessibility by renewing distributed role exchanges
 
-The universal one-buffer/order existence question from the previous checkpoint is resolved NEGATIVELY by UNBOUNDED_REPAIR_PARTICIPATION.md. The counterexample is symbolic, compact, uniform-floor and positive-slack, and has k<sum_i a_i. Every one-unit path requires unbounded endpoint-relative root participation across the family, while an explicit one-unit path exists.
+The universal bounded-root-participation architecture is disproved by UNBOUNDED_REPAIR_PARTICIPATION.md. The new TWO_LABEL_DISTRIBUTED_EXCHANGE.md supplies a positive mechanism that can span arbitrarily many roots while involving only two label roles in each exchange.
 
-No fixed number of buffer roots plus one active root can be a universal architecture under the stated per-state participation restriction. Stop extending that completeness claim one buffer at a time. The previously accepted conditional buffer theorems remain valid and may still be useful locally.
+Within a two-label fiber (fixed backgrounds and fixed active-root union), every pair of exact-q configurations has a primitive unit-band path through role saturation. The exact transversal formula supplies the completed renewal condition; at the critical inactive-family level q-2, every minimum cover of that family must leave both a pure-u and a pure-v root unhit on its background.
 
-The next positive theorem must allow many roots to remain temporarily modified. Existing label transpositions and original-role packets demonstrate how a bounded hitting-number defect can span many roots. Their renewal is established for specific mechanisms, but symmetry exchanges do not connect arbitrary endpoint overlap structures, and a local packet bound does not by itself prove a globally terminating repair.
+The remaining task is global accessibility. Can arbitrary exact-q endpoints be linked by a finite sequence of such exchanges, with completed tuples retaining at least q and a proved progress measure? Pair choices, background changes and active-root unions may differ between completed exchanges, but each invocation must verify its own hypotheses. Local safety and an exact endpoint test do not supply existence of the next improving exchange.
 
-A useful target is an exchange of relational roles that changes overlap structure, uses only the fixed palette and labelled root slots, preserves every floor and the lower guard, and renews a certificate after completion. It must also establish eligible progress toward an exact destination or proved common reachable form. Do not substitute a bound on the number of edited roots for a proof of the hitting-number guard.
+Changing a root from inactive to active for the chosen pair, or removing both roles, leaves the current fiber. Such a move needs a separate guard. Three-label saturation is not an automatic shortcut: the published symbolic counterexample falls two units below its exact endpoints.
 
-Universal higher-floor connectivity remains OPEN. The participation theorem is neither a native barrier greater than one nor a physical energy, memory, runtime or fundamental-time claim. No implementation or numerical campaign is authorized by these analytical documents.
+A useful next theorem must either establish cross-fiber accessibility under native-derived structural hypotheses, or prove a precise limitation of this distributed exchange class. No native disconnection or barrier greater than one follows from failure of one method. Universal higher-floor connectivity remains OPEN.
+
+No implementation or numerical campaign is authorized by these documents. The higher-floor role-exchange example is a mechanism illustration within an already solved protected class, not a new arity campaign or a claim of universal progress by passing-case count.

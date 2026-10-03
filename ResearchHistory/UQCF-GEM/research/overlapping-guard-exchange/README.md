@@ -1,6 +1,10 @@
-# Unit excursion can require distributed repair
+# Distributed repair through two label roles
 
-Current result: a symbolic obstruction to universal bounded-participation repair, independently reviewed as recorded in INDEPENDENT_PARTICIPATION_REVIEW.md. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
+Current positive result: distributed two-label exchange and an exact renewal test, independently reviewed as recorded in INDEPENDENT_TWO_LABEL_REVIEW.md. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
+
+Fix two labels, every other incidence, and which roots contain at least one of the two labels. Any two admissible exact-q configurations in that class are connected with excursion at most one, even if arbitrarily many roots change. Expand the two roles across all their active roots, then contract to the destination. A four-case transversal formula proves the band and gives the exact condition under which a completed role reassignment restores level q. The exchange can change overlap structure and root sizes, so it is broader than a global label permutation.
+
+This is a reusable distributed mechanism, not a universal sequence-selection theorem. To connect arbitrary endpoints, a proof must still find a finite progressing sequence of such or stronger exchanges with renewed protection at every completion. Saturating three labels at once is not automatically safe: a symbolic exact-endpoint example loses two units.
 
 The universal adaptive one-buffer conjecture is now DISPROVED. On an explicit exact-endpoint family, every one-unit root path must reach a state where at least m-3 roots are away from BOTH their own endpoint supports. Yet a primitive one-unit path exists through global label transpositions. The number of required intermediate roots grows without bound, while the excursion remains at most one.
 
@@ -43,8 +47,11 @@ Files:
 - UNBOUNDED_REPAIR_PARTICIPATION.md: explicit family, every-path participation lower bound, unit-band construction and bounded-buffer exclusion.
 - METHOD_COMPLETENESS_DECISION.md: negative resolution of the method-completeness conjecture and the resulting research direction.
 - INDEPENDENT_PARTICIPATION_REVIEW.md: acceptance, hashes and limits of the participation theorem and decision.
+- TWO_LABEL_DISTRIBUTED_EXCHANGE.md: exact transversal formula, renewal conditions and distributed unit-band exchange within a two-label fiber.
+- TWO_LABEL_EXAMPLES_AND_LIMITS.md: higher-floor nonsymmetry exchange, occupancy/floor limitations, and three-label saturation failure.
+- INDEPENDENT_TWO_LABEL_REVIEW.md: exact reviewed candidate, hashes and acceptance limits.
 - STATUS.json: current phase and next authorized transition.
 
-The next scientific task is a renewable certificate allowing an unbounded number of roots to retain temporary supports. Label permutations already provide such a mechanism for symmetry-related endpoints; they must not be mistaken for connectivity between different overlap types. Further work should extend structural role exchanges, not repeatedly add a fixed buffer or run another arity campaign. A numerical or engineering-test campaign would need its own prospective bounded authorization.
+The next scientific task is accessibility across different two-label fibers: prove eligible distributed exchanges exist and give well-founded progress while preserving the completed lower bound, or characterize a limitation of this exchange class. Safe exchanges within one fiber do not establish that global accessibility. A numerical or engineering-test campaign would need its own prospective bounded authorization.
 
 This checkpoint is published on the separate research branch. It does not merge new work into the integrated certified branch. The performance-baseline/orchestration workstream remains separately pending.
