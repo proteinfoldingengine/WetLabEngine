@@ -1,6 +1,8 @@
-# Distributed repair: two completed-method obstructions
+# Distributed repair: defect-boundary renewal and method limits
 
-**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A8, the negative A7/A8 method results, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A9, the negative A7/A8 method results and bounded A9 renewal interface, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+
+Current A9 result: saturation can safely start at a one-unit-defective boundary exactly when the actual inactive roots already have transversal q-2. A supplied finite chain can carry this lower guard across stages. Critical fibers need both pure-role witnesses: one exact fiber is disconnected with a legal full-carrier escape, while another admits an interleaved fiber path despite failed saturation. These are bounded interface results, not a global sequence-selection theorem. See A9_SCOPE.md, A9_DEFECT_BOUNDARY_RENEWAL.md and INDEPENDENT_A9_REVIEW.md.
 
 Current A8 result: completed two-label exchanges PLUS compatible root-slot swaps are still incomplete. An explicit 25-label design pair is separated by a whole-component isomorphism invariant. Both endpoints nevertheless have a primitive one-unit path using disjoint guards and accepted normalization. The perfect starting design uses the named primary-source dependency D25; no local design-property recertification is claimed. See A8_SCOPE.md, A8_COMBINED_EXCHANGE_OBSTRUCTION.md and INDEPENDENT_A8_REVIEW.md.
 
@@ -61,8 +63,11 @@ Files:
 - A8_SCOPE.md: fixed enlarged relation, analytical gate and external-dependency rules.
 - A8_COMBINED_EXCHANGE_OBSTRUCTION.md: cycle-switch reduction, perfect-design component invariant, explicit separated 25-label endpoints, and primitive connectivity.
 - INDEPENDENT_A8_REVIEW.md: exact candidate and primary-source review with dependency limits.
+- A9_SCOPE.md: bounded checkpoint, defect-boundary route and completion limits.
+- A9_DEFECT_BOUNDARY_RENEWAL.md: exact safe-saturation criterion, defect-carrying chain interface and discriminating witnesses/examples.
+- INDEPENDENT_A9_REVIEW.md: exact frozen-source review and accepted boundaries.
 - STATUS.json: current phase and next authorized transition.
 
-The next scientific task is a broader exchange or renewal interface that can carry a level-q-1 guard across a macro boundary, with independently proved protection and finite global progress. A8's combined relation is now proved incomplete between different unlabelled incidence structures; universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
+The next scientific task is a general existence and well-founded selection theorem for defect-carrying renewal. A9 now supplies one exact local interface and identifies critical witness failures, but not global progress. A8's combined relation is now proved incomplete between different unlabelled incidence structures; universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
 
 This checkpoint is published on the separate research branch. It does not merge new work into the integrated certified branch. The performance-baseline/orchestration workstream remains separately pending.
