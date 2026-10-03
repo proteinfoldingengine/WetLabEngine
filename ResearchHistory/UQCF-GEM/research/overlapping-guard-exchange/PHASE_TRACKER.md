@@ -1,6 +1,6 @@
 # Post-v16.54: Distributed Repair
 
-Current phase: OPEN analytical research. Last completed primary checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, A11.X1 disproves safe-prefix extension, and A11.X2 closes native connectivity with at least q-2 floor-one slots and arbitrary other floors; universal destination-directed schedule existence remains unproved. Latest completed bounded checkpoint: A11.X2, renewable native connectivity with q-2 floor-one slots. General global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
+Current phase: OPEN analytical research. Last completed primary checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, A11.X1 disproves safe-prefix extension, and A11.X3 closes native connectivity with at least q-3 floor-one slots and arbitrary other floors; universal destination-directed schedule existence remains unproved. Latest completed bounded checkpoint: A11.X3, residual target-three lifting with q-3 floor-one slots. General global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
 
 ## Closed baseline
 
@@ -22,7 +22,7 @@ Purpose: determine when distributed relational changes admit a renewing protecti
 | A8 | Completed two-label exchange plus compatible root swaps | COMPLETE, NEGATIVE with explicit source dependency D25 | A8_SCOPE.md; A8_COMBINED_EXCHANGE_OBSTRUCTION.md; INDEPENDENT_A8_REVIEW.md |
 | A9 | Exact renewal at one-unit-defective boundaries | COMPLETE, bounded analytical interface and diagnostics | A9_SCOPE.md; A9_DEFECT_BOUNDARY_RENEWAL.md; INDEPENDENT_A9_REVIEW.md |
 | A10 | Recovery completeness and primitive move expressiveness | COMPLETE: negative recovery for M; exact local completeness for W | A10_SCOPE.md; A10_RECOVERY_TRAP_AND_MOVE_COMPLETENESS.md; INDEPENDENT_A10_REVIEW.md |
-| A11 | Global destination-directed incidence scheduling at q=4 | OPEN: reduction, prefix obstruction and native anchor class accepted; universal directed feasibility unproved | A11_SCOPE.md; A11_GLOBAL_SCHEDULE_REDUCTION.md; A11_SAFE_PREFIX_NONEXTENSION.md; A11_PROGRESS.md |
+| A11 | Global destination-directed incidence scheduling at q=4 | OPEN: reduction, prefix obstruction and stronger residual-three anchor class accepted; universal directed feasibility unproved | A11_SCOPE.md; A11_GLOBAL_SCHEDULE_REDUCTION.md; A11_SAFE_PREFIX_NONEXTENSION.md; A11_PROGRESS.md |
 
 A4 remains a correct sufficient interface. A5 disproves its universal completeness, not A4's theorem and not the general one-unit law. A6 supplies a correct distributed mechanism. A7 disproves its global completeness on the declared labelled completed-state graph, while constructing a primitive one-unit path for the same endpoints. Universal primitive higher-floor connectivity remains OPEN.
 
@@ -92,6 +92,16 @@ The construction makes the selected anchors distinct, obtains two actual avoidin
 A11.X2 is COMPLETE as a sufficient native connectivity theorem, including explicit renewal, eligible next operations, finite global progress and labelled endpoint restoration. Temporary incidences and repeated toggles are allowed. It does NOT close A11's destination-directed existence question or invalidate A11.X1's stranded-prefix result. Evidence: A11_RENEWABLE_ANCHOR_SCOPE.md; A11_RENEWABLE_SINGLETON_ANCHORS.md; INDEPENDENT_A11_ANCHOR_REVIEW.md; A11_RENEWABLE_ANCHOR_CLOSEOUT.md.
 
 Fewer than q-2 floor-one slots remain outside this theorem unless another accepted result applies. The condition is sufficient, not proved necessary or minimal. In particular, uniform floor three at target four has no such slots and remains OPEN. General unrestricted root/nested universality is not claimed; native lifting retains accepted child interfaces. No numerical campaign or implementation certification is assigned.
+
+### A11.X3: completed target-three anchor lifting
+
+For every q>=4, at least q-3 ORIGINAL floor-one slots now suffice for native one-unit connectivity of ALL admissible exact-q endpoint pairs, with arbitrary positive floors elsewhere. For q=4, ONE such slot suffices. This strengthens X2's sufficient count q-2 using the ALREADY accepted arbitrary-floor target-three theorem.
+
+Distinct anchors are aligned by inherited primitive symmetry paths. Roots whose floors fit the complement of the anchor label set form a SAME labelled residual carrier at both endpoints; inactive flexible roots are safely moved to the full residual palette, while higher-floor roots necessarily meet an anchor and become redundant full-palette roots. Exact additivity holds at every residual primitive. Legal expansions from higher residual levels produce exact-three endpoints before the accepted theorem D is invoked.
+
+X3 supplies finite stage progress and exact labelled restoration, followed by accepted upper-excursion removal. Its conditional anchor-lift principle has an explicit lower-target universal-connectivity premise; no such premise is assumed at target four or higher. Dependencies D, L and A are inherited and not recertified.
+
+A11.X3 is COMPLETE as a sufficient native class. It does NOT close A11's universal directed-schedule question, establish minimality, or close target-four ZERO-singleton-floor carriers. The original uniform-floor-three diagnostic remains OPEN outside applicable accepted classes; general root/nested universality is unchanged. Evidence: A11_RESIDUAL_THREE_SCOPE.md; A11_RESIDUAL_THREE_ANCHOR_LIFT.md; INDEPENDENT_A11_RESIDUAL_REVIEW.md; A11_RESIDUAL_THREE_CLOSEOUT.md. No numerical campaign, implementation or new certification is assigned.
 
 ## Track B: execution efficiency
 

@@ -45,3 +45,13 @@ Two actual protecting roots from endpoint redundancy can be renewed after EVERY 
 This closes A11.X2's sufficient native class, as recorded in A11_RENEWABLE_ANCHOR_CLOSEOUT.md. It permits temporary incidences and repeated toggles and therefore does not complete A11.2's universal destination-directed question. A11 primary remains OPEN; A10 remains the last completed primary checkpoint in the existing reporting scheme. Original uniform-floor-three diagnostics and general root/nested universality remain OPEN.
 
 Earlier reduction, prefix obstruction, frozen scopes and independent receipts remain unchanged.
+
+## Subsequent stronger native theorem A11.X3
+
+A11_RESIDUAL_THREE_ANCHOR_LIFT.md, independently reviewed in INDEPENDENT_A11_RESIDUAL_REVIEW.md, strengthens the sufficient count to q-3 original floor-one slots for q>=4, with arbitrary other floors. At target four, ONE such slot suffices.
+
+Canonical anchors expose a residual family of transversal at least three. Inactive flexible roots are moved to the whole residual palette without changing that hitting requirement; higher-floor roots necessarily meet an anchor and remain redundant. This supplies a SAME labelled residual floor carrier at both endpoints. Legal additions reach exact three before the inherited target-three theorem is used, and exact additivity lifts every primitive to the full root system. Primitive symmetry and upper-excursion removal are inherited dependencies, not recertified results.
+
+A11.X3 is closed in its native sufficient scope, detailed in A11_RESIDUAL_THREE_CLOSEOUT.md. Target-three universality itself is old accepted work. Temporary incidences and repeated toggles mean the universal A11 directed question remains OPEN. Zero-singleton-floor target four, including the original uniform-floor-three diagnostic outside already solved classes, and general root/nested universality remain OPEN. No minimal necessary anchor count is proved.
+
+Prior X2 and X1 sources/scopes/receipts remain frozen and correct.

@@ -15,6 +15,7 @@ All statements concern fixed palette, labelled slots and positive floors. Unless
 | Mixed floors 1/2; SINGLETON_ANCHOR_REDUCTION, Q | Every floor belongs to {1,2} | Anchor/residual-graph reduction; does not cover arbitrary higher floors |
 | Enough singleton anchors; same source, P | At least q slots have floor 1 | Other floors may be arbitrary; reaches protected class |
 | Renewable singleton anchors; A11_RENEWABLE_SINGLETON_ANCHORS, X2 (separate analytical branch) | q>=4, at least q-2 ORIGINAL floor-one slots | Arbitrary remaining positive floors; finite renewed guard path plus accepted upper removal; temporaries/repeated toggles allowed |
+| Residual target-three anchor lift; A11_RESIDUAL_THREE_ANCHOR_LIFT, X3 (separate analytical branch) | q>=4, at least q-3 ORIGINAL floor-one slots | Arbitrary remaining positive floors; common residual carrier plus inherited target-three D, symmetry L and upper removal A; temporaries/repeated toggles allowed |
 | Protected roots; PROTECTED_EXCHANGE, J/K | Each endpoint has q pairwise disjoint roots | Connects that class; its existence requires sum of q smallest floors<=k, but accessibility from every endpoint is not proved |
 | Safe symmetry exchanges; OVERLAPPING_CLIQUE_EXCHANGE, L/M | Label permutation, or root permutation with destination-compatible floors, at exact q | Connects symmetry-related endpoints, not arbitrary overlap types |
 | Contraction clone guard; CONTRACTION_CLONE_GUARD, U/V/W | Slot-compatible prescribed clone; retained-family cover f and contraction cover lambda | Exact formula tau(new)=min(1+f,lambda); eligible clones or a globally terminating sequence are not guaranteed |
@@ -36,3 +37,11 @@ A11.X2 is independently accepted at candidate 1cd572d2e90ba3880dc5598d260c14e8a9
 For q=4, two original floor-one slots now suffice for native one-unit connectivity of every exact-four endpoint pair. A11.X1's large carrier is therefore covered as a full native class. The proof supplies renewable protection and unconditional finite progress within this class. It does not guarantee destination-directed incidence monotonicity.
 
 The original q=4/uniform-floor-three diagnostic has zero singleton-capable slots and remains OPEN unless its individual parameter class is already covered elsewhere in this ledger. Fewer than q-2 singleton-capable slots are not declared universally unresolved: previously accepted results still apply. No minimal-anchor necessity or universal root/nested closure is claimed.
+
+## A11.X3 stronger sufficient class
+
+A11.X3 is independently accepted at candidate d2f79a71983a135eb035ef4d4c1289bdf6409814, receipt INDEPENDENT_A11_RESIDUAL_REVIEW.md. It improves the sufficient arbitrary-other-floor count to q-3. For q=4, a SINGLE original floor-one slot suffices for native one-unit connectivity of all exact-four endpoint pairs. X2 remains correct and retains its separate six-move renewable-guard mechanism.
+
+The new ingredient is a common residual carrier: every nonanchor slot with floor <=k-(q-3) can be prepared inside the complementary palette; larger-floor slots necessarily intersect the forced anchors and are redundant. Higher residual levels descend to exact three before the ALREADY accepted target-three theorem is invoked. Dependency applicability was reviewed; no baseline theorem is newly discovered or recertified.
+
+Any remaining exact-four native counterexample, IF one exists, must have zero original floor-one slots. This does not declare every zero-anchor carrier unresolved: all earlier graph, protected, symmetry, palette-room, slot-bound and other sufficient classes remain valid. Original uniform-floor-three diagnostics outside those classes remain OPEN. Universal A11 destination-directed scheduling and general root/nested universality remain OPEN. No minimal or necessary anchor-count threshold is asserted.
