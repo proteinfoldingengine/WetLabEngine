@@ -2,22 +2,22 @@
   "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
   "workstream": "analytical_overlapping_guard_exchange",
   "current_phase": "A11_global_destination_directed_scheduling",
-  "phase_state": "OPEN_DIRECTED_QUESTION_NATIVE_MIN_FLOOR_AT_MOST_TWO_TARGET_FOUR_CLASS_CLOSED",
+  "phase_state": "OPEN_DIRECTED_QUESTION_CONDITIONAL_TRIPLE_ANCHOR_SATURATED_RENEWAL_CLOSED",
   "active_run_id": null,
   "run_attempt": null,
-  "scientific_sha": "6525e708393c345b01e2004163fcc738f1e4d486",
+  "scientific_sha": "3857dfcc33eccb2c01456a1273426ab9dd94bade",
   "workflow_sha": null,
-  "last_verified_event": "A11.X4 independently accepted: one original floor-two slot suffices at target four, directly in {3,4}; higher-target preserved-profile corollary accepted",
-  "current_blocker": "Universal A11 destination-directed scheduling remains unproved. Native target-four carriers with all floors at least three remain open outside applicable accepted classes; coupled triple-anchor pair protection unresolved",
-  "next_authorized_transition": "Analytical all-floor-at-least-three target-four renewal using coupled pair protection, excluding solved classes, or separate universal directed scheduling",
-  "review_gate": "ACCEPTED_ANALYTICAL_PAIR_ANCHOR_DIRECT_BAND_AND_PRESERVED_PROFILE",
-  "mathematical_claim_status": "One original floor-two slot suffices at target four with arbitrary other positive floors; X3/X4 close all target-four carriers containing a floor one or two. q-4 floor-one slots plus a distinct floor-two slot suffice at q>=4. No monotone universality, necessity, or general root/nested universality",
+  "last_verified_event": "A11.X5 independently ACCEPTED without corrections: conditional triple-anchor renewal at strict-slack and saturated capacity, with direct {3,4} primitive paths",
+  "current_blocker": "Universal destination-directed schedules remain unproved. Outside accepted classes, native all-floor-at-least-three endpoints may lack a qualifying compact triple with an actual avoiding family of residual transversal at least two",
+  "next_authorized_transition": "Analytical renewal without X5 actual avoiding-root guard, or derive qualifying triple accessibility, excluding solved classes; universal directed scheduling remains separate",
+  "review_gate": "ACCEPTED_EXACT_SOURCE_A11_X5_CONDITIONAL_TRIPLE_RENEWAL",
+  "mathematical_claim_status": "Conditional original floor-three anchor theorem proves direct {3,4} paths with a supplied actual avoiding-root guard at both endpoints, including saturated residual capacity. X3/X4 universal min-floor-at-most-two class unchanged. No universal triple availability, monotone schedules, necessity or general root/nested closure",
   "implementation_status": "NOT_STARTED_NOT_AUTHORIZED_FOR_THIS_EXTENSION",
   "engineering_workstream_status": "Performance baseline and orchestration proposal pending separately",
   "v16_54_status": "UNCHANGED_CLOSED_CERTIFIED_BOUNDED_IMPLEMENTATION",
   "new_numbered_version": null,
   "research_branch": "research/uqcf-overlapping-guard-exchange",
-  "analytical_deliverable_status": "A11_X4_PAIR_ANCHOR_NATIVE_CLASS_CLOSED_A11_PRIMARY_DIRECTED_QUESTION_OPEN",
+  "analytical_deliverable_status": "A11_X5_CONDITIONAL_TRIPLE_ANCHOR_CLASS_CLOSED_A11_PRIMARY_OPEN",
   "pending_execution": "NONE",
   "accepted_candidate_commits": [
     "fa71695118731da7f0e17bf8a31f0142e4c76267",
@@ -34,7 +34,8 @@
     "da356a65f1be3443343d0604031a615f343ba52e",
     "1cd572d2e90ba3880dc5598d260c14e8a92acc5c",
     "d2f79a71983a135eb035ef4d4c1289bdf6409814",
-    "6525e708393c345b01e2004163fcc738f1e4d486"
+    "6525e708393c345b01e2004163fcc738f1e4d486",
+    "3857dfcc33eccb2c01456a1273426ab9dd94bade"
   ],
   "universal_adaptive_one_buffer_conjecture": "DISPROVED_BY_SYMBOLIC_EXACT_ENDPOINT_FAMILY",
   "bounded_participation_completeness": "DISPROVED_FOR_EVERY_FIXED_BUFFER_COUNT_UNDER_STATED_ARCHITECTURE",
@@ -99,7 +100,7 @@
   "a11_review": "INDEPENDENT_A11_REVIEW.md",
   "a11_progress": "A11_PROGRESS.md",
   "a11_new_external_design_dependency": false,
-  "last_completed_bounded_checkpoint": "A11_X4_pair_anchor_native_connectivity",
+  "last_completed_bounded_checkpoint": "A11_X5_conditional_triple_anchor_saturated_renewal",
   "a11_reduction_scientific_sha": "1fe8b4a522cac271c0ec0609e5df45783d9ba533",
   "a11_x1_scope_sha": "ca6908bd04ef35bf9f297c42c8878f156d7c6263",
   "a11_x1_scientific_sha": "da356a65f1be3443343d0604031a615f343ba52e",
@@ -194,5 +195,32 @@
     ],
     "review_scope": "DOMAIN_APPLICABILITY_CHECKED_NOT_RECERTIFIED"
   },
-  "a11_x4_new_external_design_dependency": false
+  "a11_x4_new_external_design_dependency": false,
+  "a11_x5_scope_sha": "aad997b37eba3fef5059d8729c46ebfec87a3eef",
+  "a11_x5_scientific_sha": "3857dfcc33eccb2c01456a1273426ab9dd94bade",
+  "a11_x5_review": "INDEPENDENT_A11_TRIPLE_REVIEW.md",
+  "a11_x5_closeout": "A11_TRIPLE_ANCHOR_CLOSEOUT.md",
+  "a11_x5_proof_sha256": "de5ab2e018f7c3e5ede7f69e205828c729d6abfbd331458b7a8fe35306266e35",
+  "a11_x5_result": "CONDITIONAL_TRIPLE_ANCHOR_NATIVE_BAND_WITH_SATURATED_CAPACITY_RENEWAL",
+  "a11_x5_condition": {
+    "target": 4,
+    "same_original_floor_three_slot": true,
+    "each_endpoint_compact_triple_meets_minimum_four_cover": true,
+    "actual_avoiding_family_residual_transversal_minimum": 2,
+    "residual_strict_slack_required": false,
+    "universal_guard_availability_proved": false,
+    "temporary_incidences_allowed": true,
+    "repeated_toggles_allowed": true
+  },
+  "a11_x5_inherited_dependencies": {
+    "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
+    "results": [
+      "GENERAL_PARENT_CONNECTIVITY Lemma C",
+      "OVERLAPPING_CLIQUE_EXCHANGE Lemma L",
+      "A11_PAIR_ANCHOR_CONNECTIVITY residual upper-band argument"
+    ],
+    "review_scope": "DOMAIN_APPLICABILITY_CHECKED_NOT_RECERTIFIED"
+  },
+  "a11_x5_new_external_design_dependency": false,
+  "a11_x5_review_sha256": "7f840ec142e3945c4190463400a153f0c03931fabc8d6fbb8d7dca0cd145a7ec"
 }
