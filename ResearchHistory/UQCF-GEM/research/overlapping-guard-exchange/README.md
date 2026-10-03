@@ -1,6 +1,8 @@
 # Distributed repair: local certificates and the global frontier
 
-**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A10, the negative A7/A8 method results and bounded A9 renewal interface, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A10, open A11 with an accepted reduction, the negative A7/A8 method results and bounded A9 renewal interface, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+
+Current A11 progress: an exact global scheduling reduction accounts for every root floor and every pair's missed-root interval, including protection supplied by partially repaired roots. All pair intervals must cover every event prefix under ONE common event order. This does not prove such an order exists for every exact-four pair. A11 remains OPEN; only bounded substep A11.1 is accepted. See [proof](A11_GLOBAL_SCHEDULE_REDUCTION.md), [independent review](INDEPENDENT_A11_REVIEW.md) and [progress boundary](A11_PROGRESS.md).
 
 Current A10 result: certified saturation/root swaps cannot recover every legally reachable defective state. An explicit q=4, floor-four repeated-triple configuration remains trapped in that method despite a legal primitive recovery path. Separately, critical-witness single-incidence certificates exactly match all legal lower primitive moves. Thus local expressiveness is complete while global progress remains unproved. See A10_SCOPE.md, A10_RECOVERY_TRAP_AND_MOVE_COMPLETENESS.md and INDEPENDENT_A10_REVIEW.md.
 
@@ -71,8 +73,12 @@ Files:
 - A10_SCOPE.md: distinct recovery-method and primitive-certificate questions.
 - A10_RECOVERY_TRAP_AND_MOVE_COMPLETENESS.md: reachable M trap, explicit primitive recovery, and W edge equality.
 - INDEPENDENT_A10_REVIEW.md: exact candidate review and claim limits.
+- A11_SCOPE.md: destination-directed scheduling question and explicit primary completion gate.
+- A11_GLOBAL_SCHEDULE_REDUCTION.md: exact event-prefix floor and pair-interval coverage criterion.
+- INDEPENDENT_A11_REVIEW.md: frozen reduction review, hashes and OPEN primary boundary.
+- A11_PROGRESS.md: bounded substep acceptance and unproved universal scheduling obligation.
 - STATUS.json: current phase and next authorized transition.
 
-The next scientific task is a global complementary-pair-cover connectivity/progress theorem at q=4, using the exact endpoints' triple coverage. A10 completes local primitive-move expressiveness and disproves unconditional recovery by the restricted safe-saturation method; neither result gives a globally terminating construction. A8's combined relation is now proved incomplete between different unlabelled incidence structures; universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
+The next scientific task is to prove joint feasibility of the A11 schedule constraints using endpoint triple coverage, or rigorously exclude every destination-directed schedule for a specified admissible pair. A11's exact encoding has not answered this existence question. A10 completes local primitive-move expressiveness and disproves unconditional recovery by the restricted safe-saturation method; neither result gives a globally terminating construction. A8's combined relation is now proved incomplete between different unlabelled incidence structures; universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
 
 This checkpoint is published on the separate research branch. It does not merge new work into the integrated certified branch. The performance-baseline/orchestration workstream remains separately pending.

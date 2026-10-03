@@ -1,6 +1,6 @@
 # Post-v16.54: Distributed Repair
 
-Current phase: OPEN analytical research. Last completed checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
+Current phase: OPEN analytical research. Last completed checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, while universal schedule existence remains unproved. Global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
 
 ## Closed baseline
 
@@ -22,6 +22,7 @@ Purpose: determine when distributed relational changes admit a renewing protecti
 | A8 | Completed two-label exchange plus compatible root swaps | COMPLETE, NEGATIVE with explicit source dependency D25 | A8_SCOPE.md; A8_COMBINED_EXCHANGE_OBSTRUCTION.md; INDEPENDENT_A8_REVIEW.md |
 | A9 | Exact renewal at one-unit-defective boundaries | COMPLETE, bounded analytical interface and diagnostics | A9_SCOPE.md; A9_DEFECT_BOUNDARY_RENEWAL.md; INDEPENDENT_A9_REVIEW.md |
 | A10 | Recovery completeness and primitive move expressiveness | COMPLETE: negative recovery for M; exact local completeness for W | A10_SCOPE.md; A10_RECOVERY_TRAP_AND_MOVE_COMPLETENESS.md; INDEPENDENT_A10_REVIEW.md |
+| A11 | Global destination-directed incidence scheduling at q=4 | OPEN: exact reduction accepted; universal feasibility unproved | A11_SCOPE.md; A11_GLOBAL_SCHEDULE_REDUCTION.md; INDEPENDENT_A11_REVIEW.md; A11_PROGRESS.md |
 
 A4 remains a correct sufficient interface. A5 disproves its universal completeness, not A4's theorem and not the general one-unit law. A6 supplies a correct distributed mechanism. A7 disproves its global completeness on the declared labelled completed-state graph, while constructing a primitive one-unit path for the same endpoints. Universal primitive higher-floor connectivity remains OPEN.
 
@@ -60,6 +61,19 @@ A9 is a bounded completed checkpoint, NOT general sequence-existence closure. It
 The certified saturation/root-swap recovery method M fails from a legal defect state: a 35-root, seven-label, floor-four, q=4 repeated-triple configuration is primitive-reachable from exact four but every label pair has inactive transversal one. Its entire M-component consists of root reorderings at level three. A self-contained finite primitive route recovers exact four. This is method-recovery incompleteness, not a primitive barrier or exact-endpoint-only connectivity counterexample.
 
 The separately defined critical-witness single-incidence relation W covers ALL and ONLY legal lower primitive edges: retain a companion label at the edited root to obtain its two-label certificate. This settles local expressiveness but does not choose improving moves. General progress must now be proved at the complementary-pair-cover level, rather than inferred from more local safety certificates. A10 uses no new external design dependency; A8's D25 remains A8-specific. Universal q>=4 primitive/nested connectivity and the q=4/floor-three diagnostic remain OPEN.
+
+### A11 partial progress and unchanged completion gate
+
+A11.1 supplies an exact necessary-and-sufficient schedule criterion: every original root floor holds at every event prefix, and for every label pair the intervals of missed-root protection cover every prefix. Partially repaired roots may provide transient protection even when they hit the pair at both endpoints. A feasible permutation has finite descent in its unperformed events; this is conditional termination, not schedule existence.
+
+| ID | Required result | Current state |
+| --- | --- | --- |
+| A11.1 | Exact global schedule reduction and independent review | COMPLETE, bounded analytical acceptance |
+| A11.2 | Universal feasible schedule theorem OR rigorous obstruction to every schedule in the declared class | OPEN, neither obtained |
+| A11.3 | Independent review of A11.2 and scoped primary decision | NOT REACHED |
+| A11.4 | Publish primary decision and close A11 | NOT REACHED |
+
+A11 itself remains OPEN. Exact-four endpoint redundancy supplies boundary protection, not a jointly feasible ordering of all events. A failed order is not a class obstruction; a class obstruction would not imply full primitive disconnection. Accepted maximum-layer removal converts any supplied lower path to the one-unit band but need not preserve destination-directed monotonicity. No numerical campaign, implementation or certification is claimed.
 
 ## Track B: execution efficiency
 

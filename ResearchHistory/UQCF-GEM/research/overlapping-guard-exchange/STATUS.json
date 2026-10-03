@@ -1,23 +1,23 @@
 {
   "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
   "workstream": "analytical_overlapping_guard_exchange",
-  "current_phase": "A10_recovery_obstruction_and_local_move_completeness",
-  "phase_state": "CHECKPOINT_COMPLETE_GLOBAL_PROGRESS_OPEN",
+  "current_phase": "A11_global_destination_directed_scheduling",
+  "phase_state": "OPEN_REDUCTION_ACCEPTED_PRIMARY_QUESTION_UNPROVED",
   "active_run_id": null,
   "run_attempt": null,
-  "scientific_sha": "45cf9131f79e19d4e1ae7450731bcd9fca497d7d",
+  "scientific_sha": "1fe8b4a522cac271c0ec0609e5df45783d9ba533",
   "workflow_sha": null,
-  "last_verified_event": "A10 independently accepted: certified saturation/root-swap recovery incomplete; critical-witness certificates match all legal lower primitive edges; exact bytes published",
-  "current_blocker": "Global connectivity/progress for capacity-bounded complementary pair covers at q=4 remains unproved; exact-endpoint-only connectivity of M is not disproved",
-  "next_authorized_transition": "Analytical global q=4 complementary-pair-cover argument using exact endpoint redundancy; B1 timing baseline remains separate",
-  "review_gate": "ACCEPTED_ANALYTICAL_A10_RECOVERY_AND_LOCAL_EXPRESSIVENESS",
-  "mathematical_claim_status": "M cannot recover every primitive-reachable defect state; W equals the lower primitive graph locally; no global connectivity proof or primitive obstruction; general q>=4 closure OPEN",
+  "last_verified_event": "A11.1 exact floor/protection interval reduction independently reviewed; A11 primary existence question remains OPEN",
+  "current_blocker": "Joint feasibility of one event permutation satisfying all floors and all pair-protection intervals for arbitrary exact-four endpoints is unproved; no class obstruction obtained",
+  "next_authorized_transition": "Analytical universal schedule-extension theorem or rigorous destination-directed class obstruction, preserving unrestricted connectivity distinction",
+  "review_gate": "ACCEPTED_ANALYTICAL_REDUCTION_ONLY_NOT_PRIMARY_COMPLETION",
+  "mathematical_claim_status": "Exact iff schedule criterion; conditional finite termination; no universal schedule existence, class obstruction, or primitive/nested closure",
   "implementation_status": "NOT_STARTED_NOT_AUTHORIZED_FOR_THIS_EXTENSION",
   "engineering_workstream_status": "Performance baseline and orchestration proposal pending separately",
   "v16_54_status": "UNCHANGED_CLOSED_CERTIFIED_BOUNDED_IMPLEMENTATION",
   "new_numbered_version": null,
   "research_branch": "research/uqcf-overlapping-guard-exchange",
-  "analytical_deliverable_status": "COMPLETED_REVIEWED_NOT_UNIVERSAL_CLOSURE",
+  "analytical_deliverable_status": "A11_1_REDUCTION_ACCEPTED_A11_PRIMARY_OPEN",
   "pending_execution": "NONE",
   "accepted_candidate_commits": [
     "fa71695118731da7f0e17bf8a31f0142e4c76267",
@@ -29,7 +29,8 @@
     "b0c281f991860f8f9cb04467ef1bed835def7717",
     "d4eda779dc9490e3b59c8a151e9d9b0bcf82cc85",
     "3c8443e34e8f185398946c1df00f82f4c888d1bd",
-    "45cf9131f79e19d4e1ae7450731bcd9fca497d7d"
+    "45cf9131f79e19d4e1ae7450731bcd9fca497d7d",
+    "1fe8b4a522cac271c0ec0609e5df45783d9ba533"
   ],
   "universal_adaptive_one_buffer_conjecture": "DISPROVED_BY_SYMBOLIC_EXACT_ENDPOINT_FAMILY",
   "bounded_participation_completeness": "DISPROVED_FOR_EVERY_FIXED_BUFFER_COUNT_UNDER_STATED_ARCHITECTURE",
@@ -48,7 +49,7 @@
     "alternative_primitive_move_count": 8
   },
   "a7_review": "INDEPENDENT_A7_REVIEW.md",
-  "scope_sha": "69d0ec47822ba133ab4a6148c41f2a128b912fea",
+  "scope_sha": "4e958ed23e0a8b3db2f741cf2b7ead1eae713250",
   "a8_result": "NEGATIVE_FOR_ENLARGED_EXCHANGE_CLASS_NOT_PRIMITIVE_BARRIER",
   "a8_counterexample": {
     "palette_size": 25,
@@ -88,5 +89,10 @@
     "defect_level": 3,
     "primitive_path_upper_bound": 168,
     "original_floor_three_diagnostic": false
-  }
+  },
+  "a11_primary_status": "OPEN",
+  "a11_reduction_status": "ACCEPTED_ANALYTICAL",
+  "a11_review": "INDEPENDENT_A11_REVIEW.md",
+  "a11_progress": "A11_PROGRESS.md",
+  "a11_new_external_design_dependency": false
 }
