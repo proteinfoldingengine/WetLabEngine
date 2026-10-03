@@ -1,17 +1,17 @@
 {
   "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
   "workstream": "analytical_overlapping_guard_exchange",
-  "current_phase": "A9_bounded_defect_boundary_renewal",
-  "phase_state": "CHECKPOINT_COMPLETE_GENERAL_RENEWAL_OPEN",
+  "current_phase": "A10_recovery_obstruction_and_local_move_completeness",
+  "phase_state": "CHECKPOINT_COMPLETE_GLOBAL_PROGRESS_OPEN",
   "active_run_id": null,
   "run_attempt": null,
-  "scientific_sha": "3c8443e34e8f185398946c1df00f82f4c888d1bd",
+  "scientific_sha": "45cf9131f79e19d4e1ae7450731bcd9fca497d7d",
   "workflow_sha": null,
-  "last_verified_event": "A9 bounded defect-boundary criterion and discriminating fiber examples independently accepted; exact frozen bytes published",
-  "current_blocker": "No general existence or well-founded selection theorem for defect-carrying exchange sequences at q>=4",
-  "next_authorized_transition": "Analytical global eligibility/progress or broader witness-preserving renewal; B1 read-only timing baseline remains separate",
-  "review_gate": "ACCEPTED_ANALYTICAL_A9_BOUNDED_INTERFACE",
-  "mathematical_claim_status": "A9 saturation from lower endpoints safe iff inactive tau>=q-2; supplied finite defect-carrying chains safe; critical fiber examples distinguish method failure/disconnection from primitive barrier; general q>=4 primitive/nested connectivity OPEN",
+  "last_verified_event": "A10 independently accepted: certified saturation/root-swap recovery incomplete; critical-witness certificates match all legal lower primitive edges; exact bytes published",
+  "current_blocker": "Global connectivity/progress for capacity-bounded complementary pair covers at q=4 remains unproved; exact-endpoint-only connectivity of M is not disproved",
+  "next_authorized_transition": "Analytical global q=4 complementary-pair-cover argument using exact endpoint redundancy; B1 timing baseline remains separate",
+  "review_gate": "ACCEPTED_ANALYTICAL_A10_RECOVERY_AND_LOCAL_EXPRESSIVENESS",
+  "mathematical_claim_status": "M cannot recover every primitive-reachable defect state; W equals the lower primitive graph locally; no global connectivity proof or primitive obstruction; general q>=4 closure OPEN",
   "implementation_status": "NOT_STARTED_NOT_AUTHORIZED_FOR_THIS_EXTENSION",
   "engineering_workstream_status": "Performance baseline and orchestration proposal pending separately",
   "v16_54_status": "UNCHANGED_CLOSED_CERTIFIED_BOUNDED_IMPLEMENTATION",
@@ -28,13 +28,14 @@
     "36fa636de04d9a0078a8a1adbae4877ea57eb5a8",
     "b0c281f991860f8f9cb04467ef1bed835def7717",
     "d4eda779dc9490e3b59c8a151e9d9b0bcf82cc85",
-    "3c8443e34e8f185398946c1df00f82f4c888d1bd"
+    "3c8443e34e8f185398946c1df00f82f4c888d1bd",
+    "45cf9131f79e19d4e1ae7450731bcd9fca497d7d"
   ],
   "universal_adaptive_one_buffer_conjecture": "DISPROVED_BY_SYMBOLIC_EXACT_ENDPOINT_FAMILY",
   "bounded_participation_completeness": "DISPROVED_FOR_EVERY_FIXED_BUFFER_COUNT_UNDER_STATED_ARCHITECTURE",
   "phase_name": "Post-v16.54 Distributed Repair",
   "research_status": "OPEN",
-  "last_completed_checkpoint": "A9_exact_defect_boundary_renewal",
+  "last_completed_checkpoint": "A10_recovery_obstruction_and_local_move_completeness",
   "last_checkpoint_state": "COMPLETED",
   "tracker": "PHASE_TRACKER.md",
   "research_brief": "RESEARCH_BRIEF.md",
@@ -47,7 +48,7 @@
     "alternative_primitive_move_count": 8
   },
   "a7_review": "INDEPENDENT_A7_REVIEW.md",
-  "scope_sha": "27a18a94e499f3657b33d07b164e406533287a7a",
+  "scope_sha": "69d0ec47822ba133ab4a6148c41f2a128b912fea",
   "a8_result": "NEGATIVE_FOR_ENLARGED_EXCHANGE_CLASS_NOT_PRIMITIVE_BARRIER",
   "a8_counterexample": {
     "palette_size": 25,
@@ -72,5 +73,20 @@
   "a9_review": "INDEPENDENT_A9_REVIEW.md",
   "a9_new_external_design_dependency": false,
   "target_three_status": "ALREADY_CLOSED_FOR_ARBITRARY_ARITY_BY_ACCEPTED_V16_54_THEOREM_D",
-  "q4_floor_three_diagnostic": "OPEN"
+  "q4_floor_three_diagnostic": "OPEN",
+  "a10_result": {
+    "method_M": "RECOVERY_COMPLETENESS_DISPROVED_NOT_EXACT_ENDPOINT_CONNECTIVITY",
+    "relation_W": "EXACT_LOCAL_PRIMITIVE_EDGE_COMPLETENESS_NOT_GLOBAL_PROGRESS"
+  },
+  "a10_review": "INDEPENDENT_A10_REVIEW.md",
+  "a10_new_external_design_dependency": false,
+  "a10_recovery_example": {
+    "palette_size": 7,
+    "root_count": 35,
+    "uniform_floor": 4,
+    "target": 4,
+    "defect_level": 3,
+    "primitive_path_upper_bound": 168,
+    "original_floor_three_diagnostic": false
+  }
 }

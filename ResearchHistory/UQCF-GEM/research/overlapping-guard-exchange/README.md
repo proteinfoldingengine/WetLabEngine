@@ -1,6 +1,8 @@
-# Distributed repair: defect-boundary renewal and method limits
+# Distributed repair: local certificates and the global frontier
 
-**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A9, the negative A7/A8 method results and bounded A9 renewal interface, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A10, the negative A7/A8 method results and bounded A9 renewal interface, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+
+Current A10 result: certified saturation/root swaps cannot recover every legally reachable defective state. An explicit q=4, floor-four repeated-triple configuration remains trapped in that method despite a legal primitive recovery path. Separately, critical-witness single-incidence certificates exactly match all legal lower primitive moves. Thus local expressiveness is complete while global progress remains unproved. See A10_SCOPE.md, A10_RECOVERY_TRAP_AND_MOVE_COMPLETENESS.md and INDEPENDENT_A10_REVIEW.md.
 
 Current A9 result: saturation can safely start at a one-unit-defective boundary exactly when the actual inactive roots already have transversal q-2. A supplied finite chain can carry this lower guard across stages. Critical fibers need both pure-role witnesses: one exact fiber is disconnected with a legal full-carrier escape, while another admits an interleaved fiber path despite failed saturation. These are bounded interface results, not a global sequence-selection theorem. See A9_SCOPE.md, A9_DEFECT_BOUNDARY_RENEWAL.md and INDEPENDENT_A9_REVIEW.md.
 
@@ -66,8 +68,11 @@ Files:
 - A9_SCOPE.md: bounded checkpoint, defect-boundary route and completion limits.
 - A9_DEFECT_BOUNDARY_RENEWAL.md: exact safe-saturation criterion, defect-carrying chain interface and discriminating witnesses/examples.
 - INDEPENDENT_A9_REVIEW.md: exact frozen-source review and accepted boundaries.
+- A10_SCOPE.md: distinct recovery-method and primitive-certificate questions.
+- A10_RECOVERY_TRAP_AND_MOVE_COMPLETENESS.md: reachable M trap, explicit primitive recovery, and W edge equality.
+- INDEPENDENT_A10_REVIEW.md: exact candidate review and claim limits.
 - STATUS.json: current phase and next authorized transition.
 
-The next scientific task is a general existence and well-founded selection theorem for defect-carrying renewal. A9 now supplies one exact local interface and identifies critical witness failures, but not global progress. A8's combined relation is now proved incomplete between different unlabelled incidence structures; universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
+The next scientific task is a global complementary-pair-cover connectivity/progress theorem at q=4, using the exact endpoints' triple coverage. A10 completes local primitive-move expressiveness and disproves unconditional recovery by the restricted safe-saturation method; neither result gives a globally terminating construction. A8's combined relation is now proved incomplete between different unlabelled incidence structures; universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
 
 This checkpoint is published on the separate research branch. It does not merge new work into the integrated certified branch. The performance-baseline/orchestration workstream remains separately pending.
