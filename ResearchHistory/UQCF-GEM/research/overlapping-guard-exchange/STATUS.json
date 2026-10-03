@@ -2,22 +2,22 @@
   "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
   "workstream": "analytical_overlapping_guard_exchange",
   "current_phase": "A11_global_destination_directed_scheduling",
-  "phase_state": "OPEN_DIRECTED_QUESTION_X7_INCIDENCE_GUARD_UNIFORM_REPAIR_CLASS_CLOSED",
+  "phase_state": "OPEN_DIRECTED_QUESTION_X8_ONE_OVERLAP_INCIDENCE_UNIFORM_REPAIR_CLASS_CLOSED",
   "active_run_id": null,
   "run_attempt": null,
-  "scientific_sha": "4e0eee45107e54d6059d00b846a666fd0cd6c00d",
+  "scientific_sha": "6c5b2159080486b83fd005d42e0bbd719561f9f2",
   "workflow_sha": null,
-  "last_verified_event": "A11.X7 independently ACCEPTED: derived actual guards yield complete repair under 2*floor(r*(k-h)/k)<=r, including all seven-label twelve-slot floor-three exact-four endpoints",
-  "current_blocker": "General carriers outside accepted incidence/disjoint/one-overlap/other classes and original destination-directed schedules remain open; seven-label twelve-slot uniform-floor-three native connectivity is resolved",
-  "next_authorized_transition": "Combine incidence-derived guards with accepted one-overlap interface using exact domain/composition checks; then investigate remaining shared-slot budgets or stronger guard bounds",
-  "review_gate": "ACCEPTED_EXACT_SOURCE_A11_X7_INCIDENCE_GUARD_COMPLETE_UNIFORM_REPAIR",
-  "mathematical_claim_status": "Uniform incidence criterion 2N<=r with N=floor(r*(k-h)/k) proves full exact-labelled {q-1,q} repair for feasible q>=3; includes 2h>=k and all k7/r12/h3/q4 endpoints. No universal original directed schedule, mixed-floor or unrestricted nested closure",
+  "last_verified_event": "A11.X8 independently ACCEPTED: incidence-derived actual guards plus accepted O1 yield full exact-labelled repair under r>=2N-1, including all k7/h3/q4 endpoints at r13,15,17",
+  "current_blocker": "Remaining universal k7/h3/q4 carrier obligations confined to r14,16,18 before accepted subclass exclusions; other native parameters and original destination-directed scheduling remain open",
+  "next_authorized_transition": "Investigate stronger actual guard bounds, endpoint degree conditions, or rigorous coupled multiple-overlap renewal; preserve method limits and no numerical campaign authorization",
+  "review_gate": "ACCEPTED_EXACT_SOURCE_A11_X8_ONE_OVERLAP_INCIDENCE_REPAIR",
+  "mathematical_claim_status": "Uniform q>=3, N=floor(r*(k-h)/k), r>=2N-1 gives complete exact-labelled {q-1,q} repair; endpoint compact degree sum d_A+d_C>=r-1 also sufficient. No multiple-overlap or original directed/nested universality",
   "implementation_status": "NOT_STARTED_NOT_AUTHORIZED_FOR_THIS_EXTENSION",
   "engineering_workstream_status": "Performance baseline and orchestration proposal pending separately",
   "v16_54_status": "UNCHANGED_CLOSED_CERTIFIED_BOUNDED_IMPLEMENTATION",
   "new_numbered_version": null,
   "research_branch": "research/uqcf-overlapping-guard-exchange",
-  "analytical_deliverable_status": "A11_X7_UNIFORM_INCIDENCE_REPAIR_THEOREM_ACCEPTED_A11_PRIMARY_OPEN",
+  "analytical_deliverable_status": "A11_X8_ONE_OVERLAP_INCIDENCE_REPAIR_THEOREM_ACCEPTED_A11_PRIMARY_OPEN",
   "pending_execution": "NONE",
   "accepted_candidate_commits": [
     "fa71695118731da7f0e17bf8a31f0142e4c76267",
@@ -37,7 +37,8 @@
     "6525e708393c345b01e2004163fcc738f1e4d486",
     "3857dfcc33eccb2c01456a1273426ab9dd94bade",
     "442fb7b839425a96b2ae248616b944f56f1229a0",
-    "4e0eee45107e54d6059d00b846a666fd0cd6c00d"
+    "4e0eee45107e54d6059d00b846a666fd0cd6c00d",
+    "6c5b2159080486b83fd005d42e0bbd719561f9f2"
   ],
   "universal_adaptive_one_buffer_conjecture": "DISPROVED_BY_SYMBOLIC_EXACT_ENDPOINT_FAMILY",
   "bounded_participation_completeness": "DISPROVED_FOR_EVERY_FIXED_BUFFER_COUNT_UNDER_STATED_ARCHITECTURE",
@@ -81,7 +82,7 @@
   "a9_review": "INDEPENDENT_A9_REVIEW.md",
   "a9_new_external_design_dependency": false,
   "target_three_status": "ALREADY_CLOSED_FOR_ARBITRARY_ARITY_BY_ACCEPTED_V16_54_THEOREM_D",
-  "q4_floor_three_diagnostic": "ALL_K7_R12_UNIFORM_FLOOR_THREE_ENDPOINTS_CLOSED_OTHER_PARAMETERS_OPEN_OUTSIDE_ACCEPTED_CLASSES",
+  "q4_floor_three_diagnostic": "K7_UNIVERSAL_REMAINING_CARRIER_OBLIGATIONS_R14_R16_R18_BEFORE_ACCEPTED_SUBCLASS_EXCLUSIONS",
   "a10_result": {
     "method_M": "RECOVERY_COMPLETENESS_DISPROVED_NOT_EXACT_ENDPOINT_CONNECTIVITY",
     "relation_W": "EXACT_LOCAL_PRIMITIVE_EDGE_COMPLETENESS_NOT_GLOBAL_PROGRESS"
@@ -102,7 +103,7 @@
   "a11_review": "INDEPENDENT_A11_REVIEW.md",
   "a11_progress": "A11_PROGRESS.md",
   "a11_new_external_design_dependency": false,
-  "last_completed_bounded_checkpoint": "A11_X7_incidence_derived_uniform_guard_complete_repair",
+  "last_completed_bounded_checkpoint": "A11_X8_one_overlap_incidence_complete_uniform_repair",
   "a11_reduction_scientific_sha": "1fe8b4a522cac271c0ec0609e5df45783d9ba533",
   "a11_x1_scope_sha": "ca6908bd04ef35bf9f297c42c8878f156d7c6263",
   "a11_x1_scientific_sha": "da356a65f1be3443343d0604031a615f343ba52e",
@@ -256,5 +257,33 @@
     "OVERLAPPING_CLIQUE_EXCHANGE M",
     "GENERAL_PARENT_CONNECTIVITY A"
   ],
-  "a11_x7_new_external_design_dependency": false
+  "a11_x7_new_external_design_dependency": false,
+  "a11_x8_scope_sha": "8010f4e04b616d89cc2227cd53f7960a502d5af6",
+  "a11_x8_scientific_sha": "6c5b2159080486b83fd005d42e0bbd719561f9f2",
+  "a11_x8_proof_sha256": "ee966487ab7b5de20574af2af127e3a7e1caf40040e8f0c4f732db3e8edb50ed",
+  "a11_x8_review": "INDEPENDENT_A11_X8_REVIEW.md",
+  "a11_x8_closeout": "A11_X8_CLOSEOUT.md",
+  "a11_x8_result": "COMPLETE_UNIFORM_REPAIR_BY_ONE_OVERLAP_INCIDENCE_GUARD_COMPOSITION",
+  "a11_x8_primary_carriers": {
+    "k": 7,
+    "h": 3,
+    "q": 4,
+    "r": [
+      13,
+      15,
+      17
+    ],
+    "all_permitted_endpoints": true,
+    "exact_labelled_restoration": true,
+    "x5_required": false,
+    "cyclic_required": false
+  },
+  "a11_x8_general_condition": "q>=3, uniform original h, N=floor(r*(k-h)/k), r>=2N-1; pair-sensitive compact maximum degrees d_A+d_C>=r-1",
+  "a11_x8_inherited_dependencies": [
+    "A11_X7 X7G",
+    "GUARD_HANDOVER O1",
+    "OVERLAPPING_CLIQUE_EXCHANGE M",
+    "GENERAL_PARENT_CONNECTIVITY A"
+  ],
+  "a11_x8_new_external_design_dependency": false
 }
