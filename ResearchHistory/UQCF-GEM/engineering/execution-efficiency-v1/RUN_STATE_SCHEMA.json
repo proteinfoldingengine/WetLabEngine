@@ -1,0 +1,447 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:uqcf-gem:a2:run-state:1",
+  "title": "Prospective A2 run-stage receipt",
+  "description": "Design only; structural validation is insufficient for cross-object binding, all-success gates or monotonic transitions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "claim_status",
+    "key",
+    "revision",
+    "binding",
+    "expected_upstream",
+    "state",
+    "timestamps",
+    "limits",
+    "artifacts",
+    "failure",
+    "publication"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "claim_status": {
+      "enum": [
+        "UNCERTIFIED_ENGINEERING",
+        "INCOMPLETE",
+        "FAIL",
+        "TERMINAL_AUDITED_ENGINEERING"
+      ]
+    },
+    "key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "campaign_run_id",
+        "campaign_attempt",
+        "stage"
+      ],
+      "properties": {
+        "campaign_run_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "campaign_attempt": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "stage": {
+          "enum": [
+            "route",
+            "development",
+            "domain-0",
+            "domain-1",
+            "domain-2",
+            "domain-3",
+            "domain-4",
+            "domain-5",
+            "domain-6",
+            "domain-7",
+            "inherited",
+            "aggregate",
+            "preserve",
+            "terminal_audit"
+          ]
+        }
+      }
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "event_sha",
+        "workflow_sha",
+        "scientific_sha",
+        "preregistration_sha",
+        "protocol_sha256",
+        "source_manifest_sha256",
+        "approved_helper_sha256",
+        "input_sha256"
+      ],
+      "properties": {
+        "repository": {
+          "const": "proteinfoldingengine/WetLabEngine"
+        },
+        "event_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "workflow_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "scientific_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "preregistration_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "protocol_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "approved_helper_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "input_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "expected_upstream": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "run_id",
+          "attempt",
+          "job_id",
+          "stage",
+          "head_sha",
+          "conclusion"
+        ],
+        "properties": {
+          "run_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "job_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "stage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "head_sha": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "conclusion": {
+            "enum": [
+              "pending",
+              "running",
+              "success",
+              "failure",
+              "cancelled",
+              "skipped",
+              "timed_out",
+              "unknown"
+            ]
+          }
+        }
+      }
+    },
+    "state": {
+      "enum": [
+        "PENDING",
+        "READY",
+        "RUNNING",
+        "SUCCEEDED",
+        "FAILED",
+        "INCOMPLETE"
+      ]
+    },
+    "timestamps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "created_at",
+        "prerequisite_ready_at",
+        "started_at",
+        "completed_at",
+        "last_observed_at"
+      ],
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "prerequisite_ready_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "started_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "last_observed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_domains",
+        "max_inherited",
+        "max_science_total",
+        "memory_bytes_per_job",
+        "stage_timeout_seconds",
+        "controller_deadline_at",
+        "controller_event_limit",
+        "transport_retry_limit"
+      ],
+      "properties": {
+        "max_domains": {
+          "const": 7
+        },
+        "max_inherited": {
+          "const": 1
+        },
+        "max_science_total": {
+          "const": 8
+        },
+        "memory_bytes_per_job": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "Use the prospectively approved limit for this stage; null only when the existing stage has no explicit memory limit. Domain and inherited scientific jobs retain 4294967296 bytes."
+        },
+        "stage_timeout_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "controller_deadline_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "controller_event_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "transport_retry_limit": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "run_id",
+          "attempt",
+          "name",
+          "bytes",
+          "archive_sha256",
+          "manifest_sha256",
+          "verified"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "run_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "archive_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "manifest_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "verified": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "failure": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "message",
+            "first_failure_identity",
+            "checkpoint_artifact_id",
+            "assertion_retry_permitted"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "SCIENTIFIC_REJECTION",
+                "BINDING_MISMATCH",
+                "COVERAGE_MISMATCH",
+                "RESOURCE_LIMIT",
+                "TIMEOUT",
+                "CANCELLED",
+                "TRANSPORT",
+                "PUBLICATION_BOUNDARY",
+                "UNKNOWN_OUTCOME"
+              ]
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1
+            },
+            "first_failure_identity": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "checkpoint_artifact_id": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "assertion_retry_permitted": {
+              "const": false
+            }
+          }
+        }
+      ]
+    },
+    "publication": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "approved_prefix",
+            "isolated_branch",
+            "absent_ref_lease",
+            "commit_sha",
+            "readback_verified",
+            "outcome"
+          ],
+          "properties": {
+            "approved_prefix": {
+              "type": "string",
+              "pattern": "^ResearchHistory/UQCF-GEM/demos/v16\\.54-parent-support-connectivity/evidence/validated/run-[0-9]+-attempt-[0-9]+/$"
+            },
+            "isolated_branch": {
+              "type": "string",
+              "minLength": 1
+            },
+            "absent_ref_lease": {
+              "const": true
+            },
+            "commit_sha": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "readback_verified": {
+              "type": "boolean"
+            },
+            "outcome": {
+              "enum": [
+                "NOT_STARTED",
+                "COMMITTED",
+                "FAILED",
+                "UNKNOWN"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "x-semantic-invariants": [
+    "Key and input/binding digests are immutable; identical delivery is idempotent and conflicting input rejects.",
+    "Allowed transitions PENDING->READY->RUNNING->{SUCCEEDED,FAILED,INCOMPLETE}; terminal state never overwritten.",
+    "READY requires exact expected upstream run/attempt/job identity, all pages, completed/success conclusions and immutable source binding.",
+    "Aggregate exact upstream set includes route if present, development, all eight domain jobs and inherited; count equality alone is insufficient.",
+    "SUCCEEDED requires completed timestamp, no failure and stage-specific exact artifact/identity/reproduction validation.",
+    "FAILED or INCOMPLETE requires a durable typed failure receipt; assertion retry is forbidden.",
+    "Global science permits <=8, domains <=7, inherited <=1 across duplicate events and attempts under one controller.",
+    "All eight scientific intervals and complete inherited work are mandatory; scientific limits/pins remain unchanged.",
+    "Publication prefix must bind the same campaign run and attempt; execute approved helper only, treat artifacts as data.",
+    "Unknown write outcome must be read back before any resume; existing branch rejects.",
+    "TERMINAL_AUDITED_ENGINEERING is permitted only for terminal audit after exact whole-run chain completed/success, preservation/readback and all invariant checks; it is not numerical certification.",
+    "Controller/stage/resource/extraction/retry limits must be frozen prospectively before launch; schema does not supply authorization.",
+    "Domain and inherited scientific stages retain 4294967296-byte address-space limits; do not silently impose or remove a different stage resource bound. Null marks an unavailable/unset existing stage limit, not permission to relax science."
+  ]
+}
