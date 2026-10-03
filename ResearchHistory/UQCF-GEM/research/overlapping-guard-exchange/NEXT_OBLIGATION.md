@@ -1,31 +1,29 @@
-# Next after A11.X14 — renew actual protection below the sufficient incidence bound
+# Next after A11.X15 — universal floor-three root repair and separate remaining obligations
 
-Priority remains mathematical mechanism, not isolated carrier campaigns.
+## Mathematical closure achieved
 
-## Consolidated explanation
+Universal original-UNIFORM-FLOOR-THREE, TARGET-FOUR native ROOT repair is analytically proved and independently accepted. EVERY exact-four endpoint pair on EVERY feasible finite ordered-palette/labelled-slot carrier has a finite one-incidence path maintaining3<=tau<=4 and restoring the exact original labelled/noncompact destination. There is NO remaining carrier-by-carrier obligation for this root theorem. The unit is an upper bound; not every pair is asserted to require a defect.
 
-X12 derives actual input guards and complete access to exact module hubs: all floor-three target-four pairs at r>=10 across every feasible palette, every feasible k>=10 carrier and all seven-label carriers. X13 proves exhausted-palette disjoint-guard completion bounds and exact six-root feasibility iff k>=10. Those results remain accepted.
+X15 supplies strict-slack arbitrary-capacity incidence repair with actual restored external buffers, protected degree leveling into that class, and composition with X14's saturated lower cycles. At an unfinished boundary it proves an eligible next transfer/cycle. Every forbidden small cover has an actual missed root; excess degree and pending macro differences give finite progress. Internal arrival can remain at level three. Maximum-layer A is applied only after the complete lower path connects the ORIGINAL exact endpoints.
 
-X14G proves a four-root three-guard at floor h needs ceil(5h/2) actual labels. Label-avoiding guards live on P minus that label, forcing stronger degrees. At k8,h3,q4 every avoiding guard needs five roots, so r<=7 is infeasible and r8 forces exactly degree3 at every label.
+X5's conditional guard is replaced for this universal conclusion, not universally manufactured. Empty X5 entry classes remain correctly classified. Inherited X12-X14 whole-domain branches and the new nine-label mechanism exhaust all original-floor-three target-four carriers. Full proof and consolidated explanation were frozen together for fresh whole-argument review; published bytes must match that source.
 
-X14C supplies a GENUINELY REUSABLE incidence handover without spare column capacity: pending destination differences either admit a transfer to a below-D label or contain an eligible directed cycle. Rotate that cycle using one temporary degree D+1 and a travelling underfull label. All original row floors and actual shared capacities are checked; each primitive improves destination symmetric difference; all columns return to <=D at completed boundaries, and another cycle is supplied if work remains. If r>=(q-2)D+2, every forbidden small cover misses an actual root throughout. The lower path can exceed q; inherited upper removal and reversed exact compaction reach every original labelled/noncompact destination incidence.
+## Distinct open mathematical questions
 
-This closes ALL feasible eight-label floor-three target-four carriers: saturated r8 cycles, X12D r>=9, infeasibility below8. Mixed floors are permitted ONLY in X14C's bounded-incidence class because original row floors stay fixed and no permutation is used. No unrestricted mixed-floor theorem follows.
+Original A11 destination-directed universality remains OPEN. The new buffer macros can temporarily displace correct compact incidences and upper conversion can alter the schedule. Do not mark A11's stricter scheduling question closed from the unrestricted root theorem.
 
-## Remaining mathematical obligation
+Unrestricted mixed-floor target-four, higher floor/target profiles and unconditional nested universality remain OPEN outside accepted sufficient classes. X15N covers arbitrary positive floors ONLY when its explicit degree/total-incidence/row-count hypotheses hold. It uses no arbitrary mixed-floor permutation. Conditional child lifting retains baseline six-clause interfaces and fixed-root clearance; the universal root theorem does not independently prove those interfaces for every subtree.
 
-Possible unresolved original-floor-three target-four carriers now have ONLY k=9 and r=7..9, before other accepted-class/feasibility exclusions. Not every tuple is asserted feasible. These bounds are consequences of general actual protection/renewal theorems, NOT isolated numerical campaign assignments.
+Any analytical continuation should seek general actual protection/access or reusable coupled handovers outside the proved degree/slack domain. Do not replace the completed floor-three theorem with isolated carrier campaigns. Keep safe local moves, repeatable structures and guaranteed completion distinct. Preserve all original primitives, temporary supports/repeated changes and earlier failed-method classifications.
 
-Seek sharper actual pair protection or a reusable handover when X14C's sufficient degree inequality is unavailable. A temporary overfull label must retain an ACTUAL missed root against every other label; counts at or beyond the threshold alone do not certify that. Exact-endpoint redundancy may supply coupled witnesses, but do not apply exact-four degree implications at arbitrary level-three prefixes. Prove replacement protection, the next eligible edit, repeated use, finite progress and full exact original destination restoration.
+## v16.55 implementation is a separate gate
 
-Distinguish degree-bound failure, failure of a selected cycle/guard strategy, empty exact-entry class and genuine native disconnection. None implies the others. Actual supports can grow temporarily; labels/roots may be reused and background supports edited. Do not freeze root sizes, cap path lengths, insist on destination monotonicity or introduce geometry/labels/slots/floors. A safe supplied cycle is not universal cycle availability outside its proved balance/degree domain.
+This accepted mathematical result supplies a potential theorem basis for a later numbered implementation stage. No v16.55 implementation or certification has been launched. A numerical/implementation assignment needs a concrete prospective approved scope from the verified integrated parent, exact complete finite domain, independent reconstruction and rejecting controls, resource/terminal rules, inherited GitHub stack, deterministic reproduction/publication, independent closeout and actual-merge audit. Do not label an open analytical branch or PR a running scientific process. Do not rerun v16.54 merely to reconfirm it.
 
-A lower path may be converted by maximum-layer A; separate preliminary and converted paths. Exact joins allow renewal, while level-three internal handovers need not reset exactness. Original A11 destination-directed universality and unrestricted nested universality remain OPEN; child lifting keeps baseline interfaces. The bounded-incidence mixed-floor sufficient class does not authorize arbitrary mixed-floor token permutations.
+No scientific execution, enumeration, test/workflow/run ID or certified integration merge belongs to X15. Root upper bounds do not establish physical energy/metric/gravity or fundamental time.
 
-Any next major closure requires prospective analytical scope/source freezing and a fresh whole-argument review. Any sharply defined numerical diagnostic requires a separately approved prospective full-domain protocol before implementation/execution.
+## Preservation and separate efficiency
 
-## Preservation and separate engineering
+Certified integration remains466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f. Frozen inherited proofs/certificates and earlier failed-route records remain unchanged.
 
-Certified integration remains466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f; inherited proofs and previous failed-route classifications remain frozen. No numerical campaign, test/workflow/run, implementation, numbered v16.55 certification or integration merge is assigned by this analytical checkpoint.
-
-The separate promised read-only efficiency baseline/A2 proposal/tiny end-to-end validation DESIGN remain complete/independently accepted at ea49d2556e4ca4929c0aece68d01e8193ab94b66. Runner implementation, fixture execution, benchmarking, measured speedup and A3 changes remain NOT STARTED.
+Separate promised read-only efficiency baseline/A2 proposal/tiny end-to-end validation DESIGN remain complete/accepted at ea49d2556e4ca4929c0aece68d01e8193ab94b66. Runner implementation, fixture execution, benchmarking, measured speedup and A3 changes remain NOT STARTED; any later execution keeps its prospective evidence gates.
