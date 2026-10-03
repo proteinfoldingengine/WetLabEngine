@@ -1,6 +1,6 @@
 # v16.54 — structural conditions for one-unit repair
 
-Current status: the complete primary campaign, fresh reproduction, independent aggregation, durable publication and evidence review passed. All 77 scientific files reproduce exactly. Actual-merge replay remains pending; the implementation is not yet CLOSED/CERTIFIED.
+Current status: **CLOSED/CERTIFIED for the approved bounded M1–M9 implementation and native integration.** The actual-merge replay, deterministic comparison, durable evidence and independent audit receipt all passed. Universal higher-floor connectivity remains **OPEN**.
 
 ## Mathematical result
 
@@ -20,9 +20,11 @@ The approved [prospective validation plan](PROSPECTIVE_VALIDATION_PLAN.md) freez
 - Independent aggregation: run `37063427057`. Complete identity coverage, prescribed mechanism diagnostics, original artifact hashes and full inherited-package verification passed.
 - Fresh reproduction: run `37069226242` at `0a0037bc74399e04609e156d3bfd00736486bcbc`; all eight domains, 83 development controls and the full inherited stack passed. Aggregation `37073565129` passed.
 - Durable publication: run `37074296257`, evidence commit `aca507ff7a22f7ee6050c2c6eb6e8da0e93653dc`. All 77 scientific files are byte-identical to the first campaign; all nine original archives were reconstructed and verified by the executor and independent reviewer.
-- See [independent premerge review](INDEPENDENT_PREMERGE_REVIEW.md) and [reproduction interpretation](INDEPENDENT_REPRODUCTION_DESIGN_REVIEW.md). Final certification still requires replay and accepted evidence at the actual merge SHA.
+- Actual-merge audit: run `37075311542` at `496a4035f8f10946187d0eb64a9a0749844ec62a`; all 83 controls, eight complete domain shards and 1,193 inherited checks passed. Aggregation `37084743074` and preservation `37085148218` passed; all 77 scientific files reproduce both preceding campaigns exactly.
+- Independent acceptance: [actual-merge audit review](INDEPENDENT_ACTUAL_MERGE_AUDIT_REVIEW.md), [durable audit receipt](evidence/receipts/actual-merge-audit.json), and [bounded certification record](CERTIFICATION.json). No outstanding findings remain.
+- See also [premerge review](INDEPENDENT_PREMERGE_REVIEW.md) and the accepted [reproduction interpretation](INDEPENDENT_REPRODUCTION_DESIGN_REVIEW.md).
 
-Use [EXECUTION_LEDGER.md](EXECUTION_LEDGER.md) and [INDEPENDENT_IMPLEMENTATION_REVIEW.md](INDEPENDENT_IMPLEMENTATION_REVIEW.md) for the execution and review record. Frozen analytical documents and `protocol.json` retain their original historical status text; this page reports the subsequent implementation phase without changing those preregistered bytes.
+Use [EXECUTION_LEDGER.md](EXECUTION_LEDGER.md) and [INDEPENDENT_IMPLEMENTATION_REVIEW.md](INDEPENDENT_IMPLEMENTATION_REVIEW.md) for the execution and review record. Frozen analytical documents, earlier phase reports and capture-time receipts retain their historical status text. This page and `CERTIFICATION.json` report final closure without changing preregistered bytes or earlier evidence.
 
 ## Proof entry points
 

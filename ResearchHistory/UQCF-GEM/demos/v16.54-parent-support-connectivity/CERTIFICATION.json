@@ -1,0 +1,61 @@
+{
+  "actual_merge": {
+    "aggregation_run": 37084743074,
+    "ordered_parents": [
+      "f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8",
+      "d5fb24f4286b2ff3796aa214f506a228f5e06950"
+    ],
+    "pr": 102,
+    "preservation_run": 37085148218,
+    "run": 37075311542,
+    "sha": "496a4035f8f10946187d0eb64a9a0749844ec62a",
+    "status": "AUDIT_PASSED",
+    "tree": "982a11537194106a1d9fd22907deead9c0b382a1"
+  },
+  "approved_plan": {
+    "commit": "16b5d9340d29cb29907cee67751e15774694cf14",
+    "sha256": "d4d13e0ebb6feb63c0f235ff5c06d7ab36cb9c497f07df988f306e1d683e1d63"
+  },
+  "closed_at_utc": "2026-10-03T01:22:52.667043+00:00",
+  "complete_inherited_checks": 1193,
+  "development_controls": 83,
+  "domain_shards": 8,
+  "durable_audit_receipt": {
+    "commit": "a98b3f48cb510838d0565a3ef4c606726589a748",
+    "path": "evidence/receipts/actual-merge-audit.json",
+    "sha256": "53d6aa7e2bc7e965f334419b368bc5741e2118f47cfc25d146f09040a503783c"
+  },
+  "fresh_reproduction": {
+    "run": 37069226242,
+    "source": "0a0037bc74399e04609e156d3bfd00736486bcbc",
+    "status": "BYTE_IDENTICAL"
+  },
+  "independent_acceptance": {
+    "outstanding_findings": [],
+    "report": "INDEPENDENT_ACTUAL_MERGE_AUDIT_REVIEW.md",
+    "report_sha256": "a2b787641bc5f773d8983cebfe3a854ad32ff55850daa3b0839cf34ac66245da",
+    "reviewer": "/root/v1653_whole_source_review",
+    "verdict": "ACCEPT"
+  },
+  "limitations": [
+    "Finite validation certifies only the frozen mechanism domains and their typed outcomes.",
+    "Analytical results retain their separately reviewed hypotheses; finite evidence does not prove universal connectivity.",
+    "No physical barrier, energy, metric or fundamental-time conclusion is inferred."
+  ],
+  "preregistration": "a189546887e8744092deebecbdf73076b66ec044",
+  "primary": {
+    "run": 37059520424,
+    "source": "0ba1284ade581267997882de2d4c723f2b9ee3a4"
+  },
+  "retained_development_archives": 27,
+  "reviewed_source_manifest_canonical_sha256": "1b8bf60b254bf91b612f1f01dc842024e536eeb24e8de3233e80cf09346c6eb4",
+  "scientific_execution": "GitHub only",
+  "scientific_files": 77,
+  "scientific_manifest_sha256": "9d320e67ef4a718d225a08e888c0358e69fda22f97b73bcc9fee6800a8e73567",
+  "scope": "Approved bounded M1\u2013M9 mechanism implementation and native integration only.",
+  "stage": "v16.54",
+  "status": "CLOSED/CERTIFIED",
+  "universal_higher_floor": "OPEN",
+  "v16.55_started": false,
+  "verified_integrated_parent": "f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8"
+}

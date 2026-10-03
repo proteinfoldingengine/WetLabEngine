@@ -1,6 +1,6 @@
 # v16.54 progress
 
-Current execution status (2026-10-02): complete primary and fresh reproduction passed, including all M1–M9 domains, 83 final development controls and the full inherited stack. Independent aggregation and publication passed. All 77 deterministic scientific files are byte-identical, and all nine original final archives were independently reconstructed and verified. Premerge evidence is accepted; actual-merge replay remains mandatory before CLOSED/CERTIFIED. Universal higher-floor connectivity remains OPEN. Earlier phase-status statements below retain their historical meaning.
+Final execution status (2026-10-03 UTC): **CLOSED/CERTIFIED for the approved bounded M1–M9 implementation and native integration.** Primary, fresh reproduction and actual-merge audit passed. All 77 scientific files are byte-identical across the three campaigns. The actual-merge run passed 83 controls, all eight complete domains and the full 1,193-check inherited stack; original evidence is durably published and the exact audit receipt independently accepted with no findings. See CERTIFICATION.json and INDEPENDENT_ACTUAL_MERGE_AUDIT_REVIEW.md. Universal higher-floor connectivity remains **OPEN**; earlier phase-status statements below remain historical.
 
 ## Historical analytical progress
 
