@@ -1,17 +1,17 @@
 {
   "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
   "workstream": "analytical_overlapping_guard_exchange",
-  "current_phase": "A7_completed_negative_method_result",
-  "phase_state": "COMPLETE_NEGATIVE_FOR_SPECIFIED_METHOD",
+  "current_phase": "A8_completed_negative_combined_method_result",
+  "phase_state": "COMPLETE_NEGATIVE_WITH_EXPLICIT_SOURCE_DEPENDENCY",
   "active_run_id": null,
   "run_attempt": null,
-  "scientific_sha": "b0c281f991860f8f9cb04467ef1bed835def7717",
+  "scientific_sha": "d4eda779dc9490e3b59c8a151e9d9b0bcf82cc85",
   "workflow_sha": null,
-  "last_verified_event": "A7 tight-design obstruction accepted and published with independent review; same endpoints have eight-move primitive unit-band construction",
-  "current_blocker": "A7 specified exchange relation is incomplete; general primitive accessibility and a prospective enlarged relation remain unresolved",
-  "next_authorized_transition": "Analytical definition and assessment of an enlarged exchange relation; B1 read-only timing baseline remains separate",
-  "review_gate": "ACCEPTED_ANALYTICAL_A7_METHOD_OBSTRUCTION",
-  "mathematical_claim_status": "A7 universal completed two-label accessibility DISPROVED; A6 remains valid; same A7 endpoints primitive-connected; universal higher-floor primitive connectivity OPEN",
+  "last_verified_event": "A8 combined-exchange obstruction independently accepted with source dependency D25; published exact bytes and updated scoped status",
+  "current_blocker": "Completed label exchanges plus root swaps are incomplete across design isomorphism classes; a broader renewal mechanism remains unproved",
+  "next_authorized_transition": "Analytical characterization of broader exchanges or renewal through level q-1 macro boundaries; B1 timing baseline remains separate",
+  "review_gate": "ACCEPTED_ANALYTICAL_A8_WITH_PRIMARY_SOURCE_DEPENDENCY",
+  "mathematical_claim_status": "A8 completed two-label plus floor-compatible root-swap accessibility DISPROVED using D25; same endpoints primitive-connected using accepted normalization; universal primitive/nested connectivity OPEN",
   "implementation_status": "NOT_STARTED_NOT_AUTHORIZED_FOR_THIS_EXTENSION",
   "engineering_workstream_status": "Performance baseline and orchestration proposal pending separately",
   "v16_54_status": "UNCHANGED_CLOSED_CERTIFIED_BOUNDED_IMPLEMENTATION",
@@ -26,13 +26,14 @@
     "3f295467f1aec6a8ecbda28f9fef0a3881f61a41",
     "133ef73f2e3c51be700f481710a03c76b368056a",
     "36fa636de04d9a0078a8a1adbae4877ea57eb5a8",
-    "b0c281f991860f8f9cb04467ef1bed835def7717"
+    "b0c281f991860f8f9cb04467ef1bed835def7717",
+    "d4eda779dc9490e3b59c8a151e9d9b0bcf82cc85"
   ],
   "universal_adaptive_one_buffer_conjecture": "DISPROVED_BY_SYMBOLIC_EXACT_ENDPOINT_FAMILY",
   "bounded_participation_completeness": "DISPROVED_FOR_EVERY_FIXED_BUFFER_COUNT_UNDER_STATED_ARCHITECTURE",
   "phase_name": "Post-v16.54 Distributed Repair",
   "research_status": "OPEN",
-  "last_completed_checkpoint": "A7_negative_completed_two_label_accessibility",
+  "last_completed_checkpoint": "A8_negative_combined_completed_exchange_accessibility",
   "last_checkpoint_state": "COMPLETED",
   "tracker": "PHASE_TRACKER.md",
   "research_brief": "RESEARCH_BRIEF.md",
@@ -44,5 +45,26 @@
     "target": 3,
     "alternative_primitive_move_count": 8
   },
-  "a7_review": "INDEPENDENT_A7_REVIEW.md"
+  "a7_review": "INDEPENDENT_A7_REVIEW.md",
+  "scope_sha": "83378979919501b160b51e15458b43d85990d0ea",
+  "a8_result": "NEGATIVE_FOR_ENLARGED_EXCHANGE_CLASS_NOT_PRIMITIVE_BARRIER",
+  "a8_counterexample": {
+    "palette_size": 25,
+    "root_count": 100,
+    "uniform_floor": 22,
+    "target": 3,
+    "primitive_connectivity": "PROVED_USING_ACCEPTED_MAXIMUM_LAYER_REMOVAL_NO_EXPLICIT_NORMALIZED_MOVE_LIST"
+  },
+  "a8_review": "INDEPENDENT_A8_REVIEW.md",
+  "external_dependencies": [
+    {
+      "id": "D25",
+      "property": "Displayed translated STS(25) is perfect",
+      "primary_source": "https://grannell.net/Papers/perfect.pdf",
+      "source_location": "Introduction, PDF page 3",
+      "local_recertification": false
+    }
+  ],
+  "integrated_baseline_branch": "research/v16.34-fiber-component-invariant",
+  "integrated_baseline_live_head": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f"
 }

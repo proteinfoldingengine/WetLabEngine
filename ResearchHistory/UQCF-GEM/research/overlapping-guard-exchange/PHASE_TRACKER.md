@@ -1,6 +1,6 @@
 # Post-v16.54: Distributed Repair
 
-Current phase: OPEN analytical research. Last completed checkpoint: A7, negative resolution of completed two-label accessibility. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
+Current phase: OPEN analytical research. Last completed checkpoint: A8, negative resolution of completed two-label exchange plus compatible root swaps (with explicit primary-source design dependency D25). No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
 
 ## Closed baseline
 
@@ -19,6 +19,7 @@ Purpose: determine when distributed relational changes admit a renewing protecti
 | A5 | Universal bounded-participation method test | COMPLETE, NEGATIVE result | UNBOUNDED_REPAIR_PARTICIPATION.md; INDEPENDENT_PARTICIPATION_REVIEW.md |
 | A6 | Distributed two-label exchange and exact renewal test | COMPLETE, analytical acceptance | TWO_LABEL_DISTRIBUTED_EXCHANGE.md; INDEPENDENT_TWO_LABEL_REVIEW.md |
 | A7 | Global accessibility by renewing distributed exchanges | COMPLETE, NEGATIVE FOR THE SPECIFIED METHOD | A7_FANO_EXCHANGE_OBSTRUCTION.md; INDEPENDENT_A7_REVIEW.md |
+| A8 | Completed two-label exchange plus compatible root swaps | COMPLETE, NEGATIVE with explicit source dependency D25 | A8_SCOPE.md; A8_COMBINED_EXCHANGE_OBSTRUCTION.md; INDEPENDENT_A8_REVIEW.md |
 
 A4 remains a correct sufficient interface. A5 disproves its universal completeness, not A4's theorem and not the general one-unit law. A6 supplies a correct distributed mechanism. A7 disproves its global completeness on the declared labelled completed-state graph, while constructing a primitive one-unit path for the same endpoints. Universal primitive higher-floor connectivity remains OPEN.
 
@@ -31,9 +32,20 @@ A4 remains a correct sufficient interface. A5 disproves its universal completene
 | A7.3 | Independent review of the exact candidate and claim limits | COMPLETE: see INDEPENDENT_A7_REVIEW.md |
 | A7.4 | Publish accepted proof/obstruction and scoped decision; update tracker | COMPLETE in this publication |
 
-A7 is now complete negatively for its specified method; this is not universal primitive closure. The next analytical obligation is to state and assess a revised exchange relation, rather than silently modify the closed A7 question. NEXT_OBLIGATION.md proposes adding floor-compatible root-slot transpositions. No universal assertion for that enlarged relation has been accepted.
+A7 is now complete negatively for its specified method; this is not universal primitive closure. A8 states that enlarged relation explicitly and disproves its universal completeness between different unlabelled incidence structures. Its concrete starting design uses primary-source dependency D25; D25 has not been locally recertified. Both A7 and A8 endpoints nevertheless admit primitive one-unit repair. NEXT_OBLIGATION.md records the still-open broader renewal obligation.
 
 A new local lemma can complete a checkpoint without completing a general accessibility question. A7 is complete only when A7.2-A7.4 are satisfied, or the user explicitly agrees to a revised scope. A failed construction, an unresolved proof attempt, or another passing example does not count as closure. No percentage completion is assigned to the open theorem.
+
+### A8 completion and source boundary
+
+| ID | Required result | Current state |
+| --- | --- | --- |
+| A8.1 | Fixed enlarged relation and completion gate | COMPLETE: A8_SCOPE.md |
+| A8.2 | General proof or rigorous method obstruction | COMPLETE NEGATIVE: tight triple-design cycle-switch invariant; explicit 25-label endpoints |
+| A8.3 | Independent exact-candidate and primary-source review | COMPLETE: INDEPENDENT_A8_REVIEW.md |
+| A8.4 | Publication and exact byte verification | COMPLETE in this publication |
+
+D25 is the established perfection property of the displayed translated STS(25), checked against its primary source, not a new local enumeration or certificate. The native obstruction and explicit nonperfect destination are analytical derivations. Primitive connectivity for the same endpoints uses the accepted maximum-layer-removal dependency. Universal primitive/nested connectivity and the q=4/floor-three diagnostic remain OPEN. No numbered version or implementation certification is assigned.
 
 ## Track B: execution efficiency
 

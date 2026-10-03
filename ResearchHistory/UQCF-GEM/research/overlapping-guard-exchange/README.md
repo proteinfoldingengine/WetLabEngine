@@ -1,6 +1,8 @@
-# Distributed repair: local exchange and global method obstruction
+# Distributed repair: two completed-method obstructions
 
-**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A7, the negative A7 method result, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A8, the negative A7/A8 method results, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+
+Current A8 result: completed two-label exchanges PLUS compatible root-slot swaps are still incomplete. An explicit 25-label design pair is separated by a whole-component isomorphism invariant. Both endpoints nevertheless have a primitive one-unit path using disjoint guards and accepted normalization. The perfect starting design uses the named primary-source dependency D25; no local design-property recertification is claimed. See A8_SCOPE.md, A8_COMBINED_EXCHANGE_OBSTRUCTION.md and INDEPENDENT_A8_REVIEW.md.
 
 Current A7 result: completed two-label accessibility is DISPROVED by a tight seven-root family. The same endpoints admit an explicit eight-move primitive one-unit path. See A7_FANO_EXCHANGE_OBSTRUCTION.md and INDEPENDENT_A7_REVIEW.md. This is a method obstruction, not a primitive barrier.
 
@@ -8,7 +10,7 @@ Current positive result: distributed two-label exchange and an exact renewal tes
 
 Fix two labels, every other incidence, and which roots contain at least one of the two labels. Any two admissible exact-q configurations in that class are connected with excursion at most one, even if arbitrarily many roots change. Expand the two roles across all their active roots, then contract to the destination. A four-case transversal formula proves the band and gives the exact condition under which a completed role reassignment restores level q. The exchange can change overlap structure and root sizes, so it is broader than a global label permutation.
 
-This is a reusable distributed mechanism, not a universal sequence-selection theorem. A7 now proves that these exchanges alone cannot connect arbitrary labelled endpoints. A revised relation must be stated explicitly and independently assessed; safe root-slot transpositions repair this particular failure but their general completeness is unproved. Saturating three labels at once is not automatically safe: a symbolic exact-endpoint example loses two units.
+This is a reusable distributed mechanism, not a universal sequence-selection theorem. A7 now proves that these exchanges alone cannot connect arbitrary labelled endpoints. A8 assessed the explicit enlarged relation: safe root-slot transpositions repair A7's particular failure, but A8 proves that they do not yield general completeness. Saturating three labels at once is not automatically safe: a symbolic exact-endpoint example loses two units.
 
 The universal adaptive one-buffer conjecture is now DISPROVED. On an explicit exact-endpoint family, every one-unit root path must reach a state where at least m-3 roots are away from BOTH their own endpoint supports. Yet a primitive one-unit path exists through global label transpositions. The number of required intermediate roots grows without bound, while the excursion remains at most one.
 
@@ -56,8 +58,11 @@ Files:
 - INDEPENDENT_TWO_LABEL_REVIEW.md: exact reviewed candidate, hashes and acceptance limits.
 - A7_FANO_EXCHANGE_OBSTRUCTION.md: complete analytical obstruction to A7's exchange class and eight-move legal alternative.
 - INDEPENDENT_A7_REVIEW.md: frozen candidate, exact hashes and independent review decision.
+- A8_SCOPE.md: fixed enlarged relation, analytical gate and external-dependency rules.
+- A8_COMBINED_EXCHANGE_OBSTRUCTION.md: cycle-switch reduction, perfect-design component invariant, explicit separated 25-label endpoints, and primitive connectivity.
+- INDEPENDENT_A8_REVIEW.md: exact candidate and primary-source review with dependency limits.
 - STATUS.json: current phase and next authorized transition.
 
-The next scientific task is to define and assess an enlarged relation combining distributed two-label exchanges with floor-compatible labelled-root transpositions. A7's relation is now proved incomplete; adding the latter operation repairs its exhibited counterexample without proving general accessibility. Universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
+The next scientific task is a broader exchange or renewal interface that can carry a level-q-1 guard across a macro boundary, with independently proved protection and finite global progress. A8's combined relation is now proved incomplete between different unlabelled incidence structures; universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
 
 This checkpoint is published on the separate research branch. It does not merge new work into the integrated certified branch. The performance-baseline/orchestration workstream remains separately pending.
