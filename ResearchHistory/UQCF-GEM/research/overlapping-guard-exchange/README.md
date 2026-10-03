@@ -1,12 +1,14 @@
-# Distributed repair through two label roles
+# Distributed repair: local exchange and global method obstruction
 
-**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A6, open research objective A7, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A7, the negative A7 method result, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+
+Current A7 result: completed two-label accessibility is DISPROVED by a tight seven-root family. The same endpoints admit an explicit eight-move primitive one-unit path. See A7_FANO_EXCHANGE_OBSTRUCTION.md and INDEPENDENT_A7_REVIEW.md. This is a method obstruction, not a primitive barrier.
 
 Current positive result: distributed two-label exchange and an exact renewal test, independently reviewed as recorded in INDEPENDENT_TWO_LABEL_REVIEW.md. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
 
 Fix two labels, every other incidence, and which roots contain at least one of the two labels. Any two admissible exact-q configurations in that class are connected with excursion at most one, even if arbitrarily many roots change. Expand the two roles across all their active roots, then contract to the destination. A four-case transversal formula proves the band and gives the exact condition under which a completed role reassignment restores level q. The exchange can change overlap structure and root sizes, so it is broader than a global label permutation.
 
-This is a reusable distributed mechanism, not a universal sequence-selection theorem. To connect arbitrary endpoints, a proof must still find a finite progressing sequence of such or stronger exchanges with renewed protection at every completion. Saturating three labels at once is not automatically safe: a symbolic exact-endpoint example loses two units.
+This is a reusable distributed mechanism, not a universal sequence-selection theorem. A7 now proves that these exchanges alone cannot connect arbitrary labelled endpoints. A revised relation must be stated explicitly and independently assessed; safe root-slot transpositions repair this particular failure but their general completeness is unproved. Saturating three labels at once is not automatically safe: a symbolic exact-endpoint example loses two units.
 
 The universal adaptive one-buffer conjecture is now DISPROVED. On an explicit exact-endpoint family, every one-unit root path must reach a state where at least m-3 roots are away from BOTH their own endpoint supports. Yet a primitive one-unit path exists through global label transpositions. The number of required intermediate roots grows without bound, while the excursion remains at most one.
 
@@ -39,7 +41,7 @@ Files:
 - SEQUENTIAL_HANDOVER.md: exact local safety and ordering criteria, acyclic certificates, renewal and termination.
 - SEQUENTIAL_EXAMPLES.md: a successful sequential extension and a forced-cycle method obstruction.
 - INDEPENDENT_SEQUENTIAL_REVIEW.md: independent acceptance of the frozen sequential proof and examples.
-- NEXT_OBLIGATION.md: remaining cycle-resolution problem and limits of greedy choices.
+- NEXT_OBLIGATION.md: prospective enlarged exchange relation and remaining global obligation.
 - CYCLE_BUFFER.md: exact capacity and acyclic-residual certificate for existing buffer slots.
 - CYCLE_BUFFER_EXAMPLE.md: compact higher-floor family where a buffer resolves a forced cycle.
 - INDEPENDENT_BUFFER_REVIEW.md: acceptance and exact hashes of the buffer proof and example.
@@ -52,8 +54,10 @@ Files:
 - TWO_LABEL_DISTRIBUTED_EXCHANGE.md: exact transversal formula, renewal conditions and distributed unit-band exchange within a two-label fiber.
 - TWO_LABEL_EXAMPLES_AND_LIMITS.md: higher-floor nonsymmetry exchange, occupancy/floor limitations, and three-label saturation failure.
 - INDEPENDENT_TWO_LABEL_REVIEW.md: exact reviewed candidate, hashes and acceptance limits.
+- A7_FANO_EXCHANGE_OBSTRUCTION.md: complete analytical obstruction to A7's exchange class and eight-move legal alternative.
+- INDEPENDENT_A7_REVIEW.md: frozen candidate, exact hashes and independent review decision.
 - STATUS.json: current phase and next authorized transition.
 
-The next scientific task is accessibility across different two-label fibers: prove eligible distributed exchanges exist and give well-founded progress while preserving the completed lower bound, or characterize a limitation of this exchange class. Safe exchanges within one fiber do not establish that global accessibility. A numerical or engineering-test campaign would need its own prospective bounded authorization.
+The next scientific task is to define and assess an enlarged relation combining distributed two-label exchanges with floor-compatible labelled-root transpositions. A7's relation is now proved incomplete; adding the latter operation repairs its exhibited counterexample without proving general accessibility. Universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
 
 This checkpoint is published on the separate research branch. It does not merge new work into the integrated certified branch. The performance-baseline/orchestration workstream remains separately pending.

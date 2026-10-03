@@ -1,6 +1,6 @@
 # A7: Global accessibility through distributed two-label exchanges
 
-Status: analytical research scope definition, not a theorem or execution protocol. Track and history: PHASE_TRACKER.md. Current accepted basis: A6 at scientific candidate 36fa636de04d9a0078a8a1adbae4877ea57eb5a8, published with its review at 92fc8465a1f60108f3956cf4e2006b0e3c53d5aa.
+Status: declared analytical question resolved NEGATIVELY for its specified exchange class; original scope retained below. Accepted result and review: A7_FANO_EXCHANGE_OBSTRUCTION.md and INDEPENDENT_A7_REVIEW.md. This is not an execution protocol. Track and history: PHASE_TRACKER.md. Current accepted basis: A6 at scientific candidate 36fa636de04d9a0078a8a1adbae4877ea57eb5a8, published with its review at 92fc8465a1f60108f3956cf4e2006b0e3c53d5aa.
 
 ## Primary question
 
@@ -29,3 +29,7 @@ If another distributed mechanism is required, record the revised exchange relati
 Analytical derivations, read-only source checks, independent mathematical review and repository documentation are authorized. No new numerical campaign, implementation or test execution is included. No repeated binary/ternary campaign, arity-by-arity enumeration, extra labels, extra slots, geometry insertion or physical-law claim is part of A7.
 
 This brief defines future analysis. It does not retrospectively preregister A1-A6, assign v16.55, reopen v16.54, or authorize merging new implementation into the certified baseline. Any numerical validation requires its own prospective bounded plan and approval.
+
+## A7 resolution
+
+The tight seven-root family at palette size seven, uniform floor four and q=3 disproves the stated universal completed-state accessibility. Pair-cover equality forces every completed tuple to have triple-design complements, and all eligible two-label edges are global palette transpositions. A lone labelled-root interchange is outside that orbit. The same endpoints have an explicit eight-incidence primitive path with tau in {2,3}. Thus this is a method obstruction with a legal alternative repair, not a primitive or full nested barrier. Completed states above q cannot evade the proof. The q=4/floor-three diagnostic and universal primitive connectivity remain OPEN. Any enlarged exchange relation is a subsequent question, not a retrospective alteration of A7.
