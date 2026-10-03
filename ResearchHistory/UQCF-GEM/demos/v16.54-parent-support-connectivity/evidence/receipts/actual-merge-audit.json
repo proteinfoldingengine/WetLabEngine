@@ -1,0 +1,104 @@
+{
+  "schema": "v16.54-actual-merge-audit-v1",
+  "status": "AUDIT_VERIFIED",
+  "claim": "Approved bounded M1–M9 implementation and native integration; no universal higher-floor connectivity claim.",
+  "objects": {
+    "head": "d5fb24f4286b2ff3796aa214f506a228f5e06950",
+    "head_tree": "982a11537194106a1d9fd22907deead9c0b382a1",
+    "base": "f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8",
+    "base_tree": "2063d52a660a85b5a1675424d5d974b7038dad90",
+    "source": "0a0037bc74399e04609e156d3bfd00736486bcbc",
+    "reviewed_source_manifest_sha256": "1b8bf60b254bf91b612f1f01dc842024e536eeb24e8de3233e80cf09346c6eb4",
+    "reviewer": "/root/v1653_whole_source_review",
+    "verdict": "EXACT_REVIEWED_OBJECTS_MATCH",
+    "pr": 102,
+    "method": "merge",
+    "actual_merge_sha": "496a4035f8f10946187d0eb64a9a0749844ec62a",
+    "actual_merge_tree": "982a11537194106a1d9fd22907deead9c0b382a1",
+    "actual_ordered_parents": [
+      "f6d4d792aa6ec1d7c058eeb21fa3a4de267dacb8",
+      "d5fb24f4286b2ff3796aa214f506a228f5e06950"
+    ],
+    "object_binding": "PASS",
+    "universal_higher_floor": "OPEN"
+  },
+  "execution": {
+    "run": 37075311542,
+    "attempt": 1,
+    "scientific_sha": "496a4035f8f10946187d0eb64a9a0749844ec62a",
+    "workflow_sha": "496a4035f8f10946187d0eb64a9a0749844ec62a",
+    "conclusion": "success",
+    "development_controls": 83,
+    "inherited_checks": 1193,
+    "complete_domain_shards": 8
+  },
+  "aggregation": {
+    "run": 37084743074,
+    "attempt": 1,
+    "head": "3620c80850a1ff67e1e8d07b238ee052f3b86838",
+    "artifact": {
+      "id": 11259557164,
+      "name": "v1654-aggregate-3620c80850a1ff67e1e8d07b238ee052f3b86838-attempt-1",
+      "size_in_bytes": 309061063,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11259557164",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11259557164/zip",
+      "expired": false,
+      "created_at": "2026-10-03T01:09:41Z",
+      "expires_at": "2027-01-01T01:05:33Z",
+      "updated_at": "2026-10-03T01:09:41Z",
+      "digest": "sha256:37f81a054e6eadafc1eb1afee9ddc8bd0af3cbd00fbce5ec0170a010ed17d8c8",
+      "workflow_run": {
+        "id": 37084743074,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/v16.54-parent-support-connectivity",
+        "head_sha": "3620c80850a1ff67e1e8d07b238ee052f3b86838"
+      }
+    },
+    "status": "PASS"
+  },
+  "publication": {
+    "run": 37085148218,
+    "attempt": 1,
+    "head": "6aa3ef5b00e7271e4fb02aaf33fa7cc8635386b9",
+    "commit": "61c3d3538546043a13c7c9157ff09df38b0ee0a3",
+    "tree": "7118db006fb02bd879a0e7a55b87d723e7220d2e",
+    "prefix": "ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/evidence/validated/run-37075311542-attempt-1/",
+    "receipt_artifact": {
+      "id": 11260213153,
+      "name": "v1654-evidence-receipt-6aa3ef5b00e7271e4fb02aaf33fa7cc8635386b9-attempt-1",
+      "size_in_bytes": 10082,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11260213153",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11260213153/zip",
+      "expired": false,
+      "created_at": "2026-10-03T01:13:14Z",
+      "expires_at": "2027-01-01T01:11:42Z",
+      "updated_at": "2026-10-03T01:13:14Z",
+      "digest": "sha256:81375949bd7d31053b7888553596949f86859937befb5be4125e484668b7ef38",
+      "workflow_run": {
+        "id": 37085148218,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/v16.54-parent-support-connectivity",
+        "head_sha": "6aa3ef5b00e7271e4fb02aaf33fa7cc8635386b9"
+      }
+    },
+    "status": "PASS"
+  },
+  "verification": {
+    "git_blobs": 34,
+    "publication_manifest_files": 33,
+    "original_archives": 9,
+    "archive_crcs": 9,
+    "actual_scientific_files": 77,
+    "actual_merge_bindings": 8,
+    "source_files_per_binding": 20,
+    "scientific_manifest_sha256": "9d320e67ef4a718d225a08e888c0358e69fda22f97b73bcc9fee6800a8e73567",
+    "reference_run": 37069226242,
+    "reference_attempt": 1,
+    "reproduction": "BYTE_IDENTICAL",
+    "live_github_original_artifact_metadata": "MATCH"
+  },
+  "closure": "Independent acceptance of this durable audit receipt is required before certification.",
+  "universal_higher_floor": "OPEN"
+}
