@@ -80,3 +80,13 @@ On the seven-label uniform-floor-three carrier, the X5-qualified exact-four clas
 No arbitrary accessibility or new universal repair theorem is proved. At seven labels/r>=13, existence is distinct from reachability; at seven labels/r=12 a replacement mechanism must avoid reliance on X5's all-triple-avoiding family. Other accepted classes remain valid. Larger palettes, A11 destination-directed scheduling and unrestricted native/nested universality remain OPEN. No scientific run or implementation is initiated.
 
 Evidence: A11_X6_SCOPE.md, A11_X6_GUARD_ACCESSIBILITY.md, INDEPENDENT_A11_X6_REVIEW.md and A11_X6_CLOSEOUT.md. Candidate 442fb7b839425a96b2ae248616b944f56f1229a0. This is analytical source freezing and review, not numerical preregistration.
+
+## A11.X7: incidence-derived replacement guards and complete repair
+
+For uniform original floor h on k labels and r labelled slots, exact-q endpoints (q>=3) compact exactly while retaining a supplied minimum cover. A maximum-incidence label belongs to at least ceil(hr/k) compact roots. The ACTUAL family avoiding that single label requires at least q-1 hitting labels; otherwise its smaller cover plus the omitted label would cover the exact-q tuple. Thus every compact endpoint has a guard on at most N=floor(r*(k-h)/k) existing slots.
+
+If 2N<=r, the guards from two endpoints fit on disjoint existing indices after the inherited safe endpoint root permutation. Inherited AB installs the destination guard while preserving the source, then uses the installed guard to finish every other root. Actual next primitives exist and symmetric difference decreases. The preliminary lower path is converted by accepted upper-layer removal to {q-1,q}; reversing endpoint permutation and exact compaction restores the ORIGINAL labelled noncompact destination.
+
+This closes ALL exact-four endpoint pairs at k=7,r=12,h=3, without a cyclic or X5 hypothesis. X6 remains correct: every X5 target is empty there. The replacement is a single-label-avoiding guard of at most six roots, not an all-triple-avoiding guard. The general sufficient criterion also holds whenever 2h>=k. These are analytical theorems, not new implementation certification. AB/M/A remain inherited and domain-checked, not recertified.
+
+Evidence: A11_X7_SCOPE.md, A11_X7_INCIDENCE_GUARD_REPAIR.md, INDEPENDENT_A11_X7_REVIEW.md and A11_X7_CLOSEOUT.md. Candidate 4e0eee45107e54d6059d00b846a666fd0cd6c00d. No numerical campaign, run, workflow, tests or numbered version. A11 original destination-directed scheduling and general native/nested universality remain OPEN; failure of the sufficient slot inequality is not disconnection.
