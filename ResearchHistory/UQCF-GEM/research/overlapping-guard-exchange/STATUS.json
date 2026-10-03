@@ -1,18 +1,18 @@
 {
   "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
   "workstream": "analytical_overlapping_guard_exchange",
-  "current_phase": "distributed_two_label_exchange_checkpoint",
-  "phase_state": "COMPLETED",
+  "current_phase": "A7_global_accessibility",
+  "phase_state": "INCOMPLETE",
   "active_run_id": null,
   "run_attempt": null,
   "scientific_sha": "36fa636de04d9a0078a8a1adbae4877ea57eb5a8",
   "workflow_sha": null,
-  "last_verified_event": "Independent ACCEPT of distributed two-label exchange, exact renewal formula and symbolic limits; no findings",
+  "last_verified_event": "A6 proof accepted and published; A7 research brief and phase tracker defined; no new mathematical result in tracking update",
   "current_blocker": "Global accessibility through renewing distributed exchanges across different fibers remains unproved",
-  "next_authorized_transition": "Analytical cross-fiber accessibility or a precise method obstruction; no numerical execution",
+  "next_authorized_transition": "A7 analytical accessibility proof or precise obstruction; B1 read-only timing baseline is a separate authorized track",
   "review_gate": "ACCEPTED_ANALYTICAL_DISTRIBUTED_EXCHANGE",
   "mathematical_claim_status": "Two-label fiber exact-endpoint connectivity and exact renewal conditions accepted; bounded-buffer completeness remains disproved; universal higher-floor connectivity OPEN",
-  "implementation_status": "NOT_STARTED_NOT_CERTIFIED_FOR_THIS_EXTENSION",
+  "implementation_status": "NOT_STARTED_NOT_AUTHORIZED_FOR_THIS_EXTENSION",
   "engineering_workstream_status": "Performance baseline and orchestration proposal pending separately",
   "v16_54_status": "UNCHANGED_CLOSED_CERTIFIED_BOUNDED_IMPLEMENTATION",
   "new_numbered_version": null,
@@ -28,5 +28,11 @@
     "36fa636de04d9a0078a8a1adbae4877ea57eb5a8"
   ],
   "universal_adaptive_one_buffer_conjecture": "DISPROVED_BY_SYMBOLIC_EXACT_ENDPOINT_FAMILY",
-  "bounded_participation_completeness": "DISPROVED_FOR_EVERY_FIXED_BUFFER_COUNT_UNDER_STATED_ARCHITECTURE"
+  "bounded_participation_completeness": "DISPROVED_FOR_EVERY_FIXED_BUFFER_COUNT_UNDER_STATED_ARCHITECTURE",
+  "phase_name": "Post-v16.54 Distributed Repair",
+  "research_status": "OPEN",
+  "last_completed_checkpoint": "A6_distributed_two_label_exchange",
+  "last_checkpoint_state": "COMPLETED",
+  "tracker": "PHASE_TRACKER.md",
+  "research_brief": "RESEARCH_BRIEF.md"
 }

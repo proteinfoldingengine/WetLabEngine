@@ -1,5 +1,7 @@
 # Distributed repair through two label roles
 
+**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A6, open research objective A7, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+
 Current positive result: distributed two-label exchange and an exact renewal test, independently reviewed as recorded in INDEPENDENT_TWO_LABEL_REVIEW.md. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
 
 Fix two labels, every other incidence, and which roots contain at least one of the two labels. Any two admissible exact-q configurations in that class are connected with excursion at most one, even if arbitrarily many roots change. Expand the two roles across all their active roots, then contract to the destination. A four-case transversal formula proves the band and gives the exact condition under which a completed role reassignment restores level q. The exchange can change overlap structure and root sizes, so it is broader than a global label permutation.
