@@ -1,10 +1,14 @@
-# Adaptive protection transfer and renewal
+# Unit excursion can require distributed repair
 
-Analytical deliverable: complete after independent acceptance of the adaptive renewal theorem, as recorded in INDEPENDENT_RENEWAL_REVIEW.md. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
+Current result: a symbolic obstruction to universal bounded-participation repair, independently reviewed as recorded in INDEPENDENT_PARTICIPATION_REVIEW.md. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
 
-The final result is an adaptive buffer interface. At an exact-q endpoint, any existing root may initially serve as the buffer because all other roots retain transversal at least q-1. During a chosen order of edits to the other roots, each active union has an exact safe label pool for the buffer. A repair in this method class exists exactly when every such pool meets the buffer's original floor. At completed edits the buffer can change support safely through the union of its old and next supports. This proves renewal without requiring exactness at each intermediate state or one fixed buffer support for the whole path.
+The universal adaptive one-buffer conjecture is now DISPROVED. On an explicit exact-endpoint family, every one-unit root path must reach a state where at least m-3 roots are away from BOTH their own endpoint supports. Yet a primitive one-unit path exists through global label transpositions. The number of required intermediate roots grows without bound, while the excursion remains at most one.
 
-The proof supplies legal single-incidence moves, eligible supports, finite termination, exact labelled endpoint restoration and conditional native lifting. It does not establish that every exact endpoint pair has a buffer and order satisfying those inequalities. RENEWAL_SCOPE_CLOSEOUT.md separates the completed analytical deliverable from this open universal existence problem.
+This excludes every choice of one buffer and whole-root edit order on that family. It also excludes any fixed b-buffer architecture allowing at most one further active root, once m>b+4. Buffer identities may change and roots may be revisited; the lower bound still applies whenever at most b+1 roots may be intermediate at one state. This is a necessary participation bound, not a memory/runtime bound or a barrier greater than one.
+
+The preceding adaptive buffer interface remains valid as a conditional theorem. At an exact-q endpoint, any existing root may initially serve as the buffer because all other roots retain transversal at least q-1. During a chosen order of edits to the other roots, each active union has an exact safe label pool for the buffer. A repair in this method class exists exactly when every such pool meets the buffer's original floor. At completed edits the buffer can change support safely through the union of its old and next supports. This proves renewal without requiring exactness at each intermediate state or one fixed buffer support for the whole path.
+
+That proof supplies legal single-incidence moves, eligible supports, finite termination, exact labelled endpoint restoration and conditional native lifting. RENEWAL_SCOPE_CLOSEOUT.md records its historical checkpoint, when universal existence for this method was still open. The subsequent participation theorem answers that method-completeness question negatively without falsifying the conditional interface or the general one-unit conjecture.
 
 The first advance is a reusable handover theorem: two actual protective root subfamilies at exact-q endpoints may share one labelled root slot and still provide a primitive repair path with transversal in {q-1,q}. Disjoint protection is sufficient but no longer necessary for this construction. The proof works with arbitrary positive floors and uses only the existing palette and slots.
 
@@ -36,8 +40,11 @@ Files:
 - ADAPTIVE_BUFFER_RENEWAL.md: arbitrary initial buffer reservation, safe support pools, exact adaptive criterion and reusable boundary handover.
 - INDEPENDENT_RENEWAL_REVIEW.md: independent acceptance and exact hashes of the final proof and scope closeout.
 - RENEWAL_SCOPE_CLOSEOUT.md: completed analytical deliverable, unchanged certification and unresolved universal obligation.
+- UNBOUNDED_REPAIR_PARTICIPATION.md: explicit family, every-path participation lower bound, unit-band construction and bounded-buffer exclusion.
+- METHOD_COMPLETENESS_DECISION.md: negative resolution of the method-completeness conjecture and the resulting research direction.
+- INDEPENDENT_PARTICIPATION_REVIEW.md: acceptance, hashes and limits of the participation theorem and decision.
 - STATUS.json: current phase and next authorized transition.
 
-The next scientific question is whether exact-endpoint structure guarantees a choice of buffer and edit order meeting every local safe-pool capacity, or whether a stronger local exchange is needed to bypass a deficient stage. Initial lack of a slot outside the selected guards has been removed as an intrinsic obstacle by R1. No large arity campaign is proposed. A numerical or engineering-test campaign would need its own prospective bounded authorization.
+The next scientific task is a renewable certificate allowing an unbounded number of roots to retain temporary supports. Label permutations already provide such a mechanism for symmetry-related endpoints; they must not be mistaken for connectivity between different overlap types. Further work should extend structural role exchanges, not repeatedly add a fixed buffer or run another arity campaign. A numerical or engineering-test campaign would need its own prospective bounded authorization.
 
 This checkpoint is published on the separate research branch. It does not merge new work into the integrated certified branch. The performance-baseline/orchestration workstream remains separately pending.

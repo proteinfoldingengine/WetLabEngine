@@ -1,13 +1,11 @@
-# Remaining universal existence or bypass obligation
+# Next obligation: renewable protection across distributed root changes
 
-The analytical renewal deliverable is recorded in RENEWAL_SCOPE_CLOSEOUT.md. ADAPTIVE_BUFFER_RENEWAL.md removes the apparent initial slot-availability obstacle: at exact-q endpoints any one root can be reserved, because all other roots form a (q-1)-guard.
+The universal one-buffer/order existence question from the previous checkpoint is resolved NEGATIVELY by UNBOUNDED_REPAIR_PARTICIPATION.md. The counterexample is symbolic, compact, uniform-floor and positive-slack, and has k<sum_i a_i. Every one-unit path requires unbounded endpoint-relative root participation across the family, while an explicit one-unit path exists.
 
-For a chosen buffer b and order of all other roots, let U_s be each active-union residual family. The adaptive method works exactly when every safe pool W_{q-1}(U_s) has at least a_b labels. Buffer supports can then change at completed edits, with a proved union handover. One common support for all stages is unnecessary.
+No fixed number of buffer roots plus one active root can be a universal architecture under the stated per-state participation restriction. Stop extending that completeness claim one buffer at a time. The previously accepted conditional buffer theorems remain valid and may still be useful locally.
 
-The unproved universal statement is: for every pair of exact-q endpoints on the same native width-floor carrier, does some b and root order satisfy all of these inequalities? The theorem does not assume the answer is yes. Even a negative answer would disprove this method's completeness, not universal root connectivity.
+The next positive theorem must allow many roots to remain temporarily modified. Existing label transpositions and original-role packets demonstrate how a bounded hitting-number defect can span many roots. Their renewal is established for specific mechanisms, but symmetry exchanges do not connect arbitrary endpoint overlap structures, and a local packet bound does not by itself prove a globally terminating repair.
 
-A stronger route could interleave partial nonbuffer edits or introduce intermediate supports beyond old/new unions. It must preserve every small-transversal obstruction, respect all original floors, renew a certificate after the exchange, and establish eligible progress. Total complementary capacity and endpoint redundancy do not currently prove those properties.
+A useful target is an exchange of relational roles that changes overlap structure, uses only the fixed palette and labelled root slots, preserves every floor and the lower guard, and renews a certificate after completion. It must also establish eligible progress toward an exact destination or proved common reachable form. Do not substitute a bound on the number of edited roots for a proof of the hitting-number guard.
 
-For a particular prescribed order, a deficient pool is a precise obstruction: no buffer support meeting its floor can protect that active-union tuple. At residual transversal below q-2 the pool is empty; at residual transversal q-2 the pool comprises labels in no minimum residual transversal. This gives a concrete mathematical object for further study.
-
-No universal disconnection example or native barrier has been proved. No new numerical campaign or engineering-test execution is authorized by these documents. Further progress requires an existence/bypass theorem or a genuinely stronger structural limitation, rather than another passing-case count or another restatement of a restricted scheduling criterion.
+Universal higher-floor connectivity remains OPEN. The participation theorem is neither a native barrier greater than one nor a physical energy, memory, runtime or fundamental-time claim. No implementation or numerical campaign is authorized by these analytical documents.
