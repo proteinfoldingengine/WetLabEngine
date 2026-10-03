@@ -1,6 +1,10 @@
-# Protection can transfer through shared roots in a safe order
+# Adaptive protection transfer and renewal
 
-Analytical checkpoint: independently ACCEPTED. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
+Analytical deliverable: complete after independent acceptance of the adaptive renewal theorem, as recorded in INDEPENDENT_RENEWAL_REVIEW.md. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
+
+The final result is an adaptive buffer interface. At an exact-q endpoint, any existing root may initially serve as the buffer because all other roots retain transversal at least q-1. During a chosen order of edits to the other roots, each active union has an exact safe label pool for the buffer. A repair in this method class exists exactly when every such pool meets the buffer's original floor. At completed edits the buffer can change support safely through the union of its old and next supports. This proves renewal without requiring exactness at each intermediate state or one fixed buffer support for the whole path.
+
+The proof supplies legal single-incidence moves, eligible supports, finite termination, exact labelled endpoint restoration and conditional native lifting. It does not establish that every exact endpoint pair has a buffer and order satisfying those inequalities. RENEWAL_SCOPE_CLOSEOUT.md separates the completed analytical deliverable from this open universal existence problem.
 
 The first advance is a reusable handover theorem: two actual protective root subfamilies at exact-q endpoints may share one labelled root slot and still provide a primitive repair path with transversal in {q-1,q}. Disjoint protection is sufficient but no longer necessary for this construction. The proof works with arbitrary positive floors and uses only the existing palette and slots.
 
@@ -10,7 +14,7 @@ The existing-buffer extension now resolves cycles when an actual root outside bo
 
 The protection is not a conserved scalar. It passes from an unchanged old guard, through a proved union-bridge certificate, to a completed destination guard. Exact endpoint redundancy is restored at completion. This permits repeated use along an eligible exact-endpoint chain without assuming redundancy survives every intermediate edit.
 
-A symbolic example proves that sequential handover can succeed where the full union bridge fails. A second example forces contradictory precedences and excludes every order in the restricted sequential method, although a different native repair still works. The precise next problem is protected resolution of these forced cycles through another preparation or partial exchange.
+A symbolic example proves that sequential handover can succeed where the full union bridge fails. A second example forces contradictory precedences and excludes every order in the restricted sequential method, although a different native repair still works. These examples motivated the subsequent buffer and renewal results; they remain method limitations rather than connectivity obstructions.
 
 A further symbolic family resolves such a forced cycle with five compact roots of arbitrary floor h>=3 on 4h labels. An existing fifth root supplies protection without adding a slot or label, despite the palette being smaller than the sum of floors. The family already belongs to a solved connectivity class; its value here is explaining how the cycle is broken and protection renewed.
 
@@ -29,8 +33,11 @@ Files:
 - CYCLE_BUFFER.md: exact capacity and acyclic-residual certificate for existing buffer slots.
 - CYCLE_BUFFER_EXAMPLE.md: compact higher-floor family where a buffer resolves a forced cycle.
 - INDEPENDENT_BUFFER_REVIEW.md: acceptance and exact hashes of the buffer proof and example.
+- ADAPTIVE_BUFFER_RENEWAL.md: arbitrary initial buffer reservation, safe support pools, exact adaptive criterion and reusable boundary handover.
+- INDEPENDENT_RENEWAL_REVIEW.md: independent acceptance and exact hashes of the final proof and scope closeout.
+- RENEWAL_SCOPE_CLOSEOUT.md: completed analytical deliverable, unchanged certification and unresolved universal obligation.
 - STATUS.json: current phase and next authorized transition.
 
-The next scientific task is a protected exchange when no suitable outside-guard buffer certificate exists, especially when the selected guards occupy every slot or avoiding-label pools do not meet the available floors. A proposed edit of an active guard root must explicitly replace the protection that edit removes and prove renewal and progress. No large arity campaign is proposed. A numerical or engineering-test campaign would need its own prospective bounded authorization.
+The next scientific question is whether exact-endpoint structure guarantees a choice of buffer and edit order meeting every local safe-pool capacity, or whether a stronger local exchange is needed to bypass a deficient stage. Initial lack of a slot outside the selected guards has been removed as an intrinsic obstacle by R1. No large arity campaign is proposed. A numerical or engineering-test campaign would need its own prospective bounded authorization.
 
 This checkpoint is published on the separate research branch. It does not merge new work into the integrated certified branch. The performance-baseline/orchestration workstream remains separately pending.
