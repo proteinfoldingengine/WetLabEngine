@@ -147,3 +147,17 @@ Arbitrary exact endpoints receive actual guards<=9 from X9. Six plus nine needs 
 The former seven-label fourteen-slot obligation is closed; there is no remaining prior seven-label carrier obligation. Residual coarse bounds can use4<=r<=13,8<=k<=3r-1 before accepted subclass exclusions; not every tuple is feasible. These are consequences of a general exact-cover packing/hub mechanism, not an enumeration checklist. Universalr13 on larger palettes, sharpness, smaller guards/hubs, necessary multiple-overlap renewal, original directed schedules, mixed-floor placement and unconditional nested repair remain open.
 
 Certified v16.54 and all frozen inherited sources are unchanged. Read-only efficiency baseline/design remains complete; runner execution and measured speedup remain unstarted. No scientific enumeration, tests, workflows, numerical campaign, numbered version or integration merge.
+
+## A11.X12 — incidence-selected protection and minimal-guard module access
+
+Reviewed candidate: adaa8f50fa75c90da19f720c4074535f877125fa; proof A11_X12_MODULE_HUB_ACCESS.md, SHA256 c70dce453d84447b7b0021412df1a70130fb13b3d57fb930692ac4f0da4aba12. Fresh whole-argument receipt: INDEPENDENT_A11_X12_WHOLE_REVIEW.md; closeout: A11_X12_CLOSEOUT.md.
+
+An exact compact endpoint has hr incidences. A maximum-degree label of degree d supplies an ACTUAL three-guard on r-d avoiding-root slots. An exact hub with actual m-root guard has complete native access when d>=m-1: uniform full exact-endpoint permutation places its guard with at most one overlap, and O1/M/A plus eligible finite primitive progress restores the entire original labelled/noncompact endpoint. Exact full hub return makes two-leg composition reusable.
+
+General uniform h>=2,target4: a complete h-uniform core on h+1 labels plus two private h-blocks makes an exact-four hub on h+3 slots/3h+1 labels with the MINIMUM three-root guard. Thus ALL endpoints are connected at r>=h+3,k>=3h+1: k<hr forces degree>=2 and actual guard access; k>=hr is accepted palette-room AE. Two disjoint complete h+1 cores yield another exact-four hub on2h+2 slots/labels with m=h+2 guard and derived universal access when ceil(hr/k)>=h+1.
+
+At floor three, these mechanisms plus checked inherited domains give UNIVERSAL full repair at r>=10 across EVERY feasible palette, improving fourteen. ALL feasible k>=10 carriers are covered at EVERY r; k8/r>=9 and k9/r>=10 are covered. Small palettes use actual guards and explicit hub branches rather than X9 equality: k7 incidence/O1 and X11's explicit constructor, k6 actualtwentytriples/ten-root guards, k<=5 infeasible. r4 protectedJ and r5F extend wide-palette closure at small arity.
+
+Remaining possible carriers before accepted subclass exclusions have ONLY eight or nine labels and small r (r>=6, r<=9; at eight labels r<=8). This is the consequence of general guard/module/density mechanisms, not an isolated campaign checklist. A failed degree budget is not disconnection. Sharper actual protection, lower-cost access or genuinely reusable necessary multiple-overlap handovers remain the mathematical obligation.
+
+No new external classification/equality/design dependency; X9's bound is NOT needed in the new proof. Original directed scheduling, mixed-floor placement, unrestricted nested universality and efficiency remain open. Frozen proofs/v16.54 certificate remain unchanged. Read-only efficiency baseline/design stays complete with runner execution unstarted. No runs, tests, workflow, numbered version or integration merge.

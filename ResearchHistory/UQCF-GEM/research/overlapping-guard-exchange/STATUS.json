@@ -2,22 +2,22 @@
   "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
   "workstream": "analytical_overlapping_guard_exchange",
   "current_phase": "A11_global_destination_directed_scheduling",
-  "phase_state": "OPEN_DIRECTED_QUESTION_X11_GROUPED_COVER_EXACT_HUB_REPAIR_CLASS_CLOSED",
+  "phase_state": "OPEN_DIRECTED_QUESTION_X12_INCIDENCE_MODULE_HUB_REPAIR_CLASS_CLOSED",
   "active_run_id": null,
   "run_attempt": null,
-  "scientific_sha": "f51ac417fe18772e1b91b2558ee89635b6a5c765",
+  "scientific_sha": "adaa8f50fa75c90da19f720c4074535f877125fa",
   "workflow_sha": null,
-  "last_verified_event": "A11.X11 fresh whole-argument ACCEPT: grouped minimum-cover completion, thirteen-root exact hub with six-root guard, universal floor-three target-four repair r>=14 across ALL feasible palettes",
-  "current_blocker": "Need smaller actual guards/economical exact hubs, sharper access budgets or reusable necessary multiple-overlap handovers below fourteen; directed, mixed-floor and unrestricted nested questions remain open",
+  "last_verified_event": "A11.X12 fresh whole-argument ACCEPT: actual incidence guards, minimal module-hub access, all-palette floor-three target-four repair r>=10 and ALL k>=10 carriers",
+  "current_blocker": "Only narrow eight/nine-label floor-three carriers remain before accepted exclusions; need sharper actual protection/access or reusable necessary multiple-overlap handovers; directed, mixed-floor and unrestricted nested questions remain open",
   "next_authorized_transition": "Mechanism-first analytical guard bounds or renewable necessary multiple overlaps; maintain complete proof/next-move/restoration obligations and whole-argument review, without isolated carrier campaigns",
-  "review_gate": "ACCEPTED_EXACT_SOURCE_FRESH_WHOLE_ARGUMENT_A11_X11",
-  "mathematical_claim_status": "Exact minimum-cover completion and fixed-guard/fixed-q-cover grouped extension equivalence; explicit six-root guard plus seven reserves creates exact-four hub. X9 arbitrary endpoint guard<=9 and complete O1/M/A chain give full labelled/noncompact repair at r>=14 on every feasible palette; no universal r13 or directed/nested closure",
+  "review_gate": "ACCEPTED_EXACT_SOURCE_FRESH_WHOLE_ARGUMENT_A11_X12",
+  "mathematical_claim_status": "Uniform target4 incidence-to-hub access d>=m-1; minimal3guard hub gives all endpoints r>=h+3,k>=3h+1; two-core hub degree criterion. Floor3 universal r>=10 all feasible palettes, all k>=10 at every r, k8r>=9/k9r>=10; full labelled/noncompact restoration, no remaining small-carrier universality or original directed/nested closure",
   "implementation_status": "NOT_STARTED_NOT_AUTHORIZED_FOR_THIS_EXTENSION",
   "engineering_workstream_status": "PROMISED_READ_ONLY_BASELINE_AND_BOUNDED_ORCHESTRATION_VALIDATION_DESIGN_COMPLETE_INDEPENDENT_ACCEPT; RUNNER_IMPLEMENTATION_FIXTURE_EXECUTION_BENCHMARKING_UNSTARTED",
   "v16_54_status": "UNCHANGED_CLOSED_CERTIFIED_BOUNDED_IMPLEMENTATION",
   "new_numbered_version": null,
   "research_branch": "research/uqcf-overlapping-guard-exchange",
-  "analytical_deliverable_status": "A11_X11_GROUPED_COVER_COMPLETION_AND_UNIVERSAL_ECONOMICAL_EXACT_HUB_REPAIR_ACCEPTED_A11_PRIMARY_OPEN",
+  "analytical_deliverable_status": "A11_X12_INCIDENCE_SELECTED_MINIMAL_MODULE_HUB_ACCESS_AND_UNIVERSAL_TEN_ROOT_REPAIR_ACCEPTED_A11_PRIMARY_OPEN",
   "pending_execution": "NONE",
   "accepted_candidate_commits": [
     "fa71695118731da7f0e17bf8a31f0142e4c76267",
@@ -42,7 +42,8 @@
     "31566452722b73d833250f1132a154883a73d60f",
     "4bc023027488c023bbe4c79983f45c92decbafeb",
     "2d1c448320f5d1d56561074a533a106b13212f30",
-    "f51ac417fe18772e1b91b2558ee89635b6a5c765"
+    "f51ac417fe18772e1b91b2558ee89635b6a5c765",
+    "adaa8f50fa75c90da19f720c4074535f877125fa"
   ],
   "universal_adaptive_one_buffer_conjecture": "DISPROVED_BY_SYMBOLIC_EXACT_ENDPOINT_FAMILY",
   "bounded_participation_completeness": "DISPROVED_FOR_EVERY_FIXED_BUFFER_COUNT_UNDER_STATED_ARCHITECTURE",
@@ -94,7 +95,7 @@
   "a9_review": "INDEPENDENT_A9_REVIEW.md",
   "a9_new_external_design_dependency": false,
   "target_three_status": "ALREADY_CLOSED_FOR_ARBITRARY_ARITY_BY_ACCEPTED_V16_54_THEOREM_D",
-  "q4_floor_three_diagnostic": "ALL_FEASIBLE_PALETTES_CLOSED_R_GE_14; FORMER_K7_R14_OBLIGATION_CLOSED; RESIDUAL_COARSE_R_LE_13_K_GE_8_BEFORE_ACCEPTED_SUBCLASS_EXCLUSIONS",
+  "q4_floor_three_diagnostic": "ALL_PALETTES_CLOSED_R_GE_10; ALL_FEASIBLE_K_GE_10_CARRIERS_CLOSED; K8_R_GE_9_K9_R_GE_10_CLOSED; ONLY_K8_SMALL_R_LE_8_OR_K9_SMALL_R_LE_9_REMAIN_BEFORE_SUBCLASS_EXCLUSIONS",
   "a10_result": {
     "method_M": "RECOVERY_COMPLETENESS_DISPROVED_NOT_EXACT_ENDPOINT_CONNECTIVITY",
     "relation_W": "EXACT_LOCAL_PRIMITIVE_EDGE_COMPLETENESS_NOT_GLOBAL_PROGRESS"
@@ -115,7 +116,7 @@
   "a11_review": "INDEPENDENT_A11_REVIEW.md",
   "a11_progress": "A11_PROGRESS.md",
   "a11_new_external_design_dependency": false,
-  "last_completed_bounded_checkpoint": "A11_X11_grouped_minimum_cover_completion_and_universal_economical_exact_hub_repair",
+  "last_completed_bounded_checkpoint": "A11_X12_incidence_selected_minimal_module_hub_and_universal_ten_root_repair",
   "a11_reduction_scientific_sha": "1fe8b4a522cac271c0ec0609e5df45783d9ba533",
   "a11_x1_scope_sha": "ca6908bd04ef35bf9f297c42c8878f156d7c6263",
   "a11_x1_scientific_sha": "da356a65f1be3443343d0604031a615f343ba52e",
@@ -394,5 +395,41 @@
     "Safe-pool algebra compared with CYCLE_BUFFER and ADAPTIVE_BUFFER_RENEWAL"
   ],
   "a11_x11_whole_argument_review_fresh": true,
-  "a11_x11_multiple_overlap_universality": false
+  "a11_x11_multiple_overlap_universality": false,
+  "a11_x12_scope_sha": "21f0a707fe1d52a335539b53b9bc39e4c2ff0de3",
+  "a11_x12_scientific_sha": "adaa8f50fa75c90da19f720c4074535f877125fa",
+  "a11_x12_proof_sha256": "c70dce453d84447b7b0021412df1a70130fb13b3d57fb930692ac4f0da4aba12",
+  "a11_x12_review": "INDEPENDENT_A11_X12_WHOLE_REVIEW.md",
+  "a11_x12_closeout": "A11_X12_CLOSEOUT.md",
+  "a11_x12_result": "INCIDENCE_SELECTED_ACTUAL_PROTECTION_AND_MINIMAL_MODULE_HUB_COMPLETE_ACCESS",
+  "a11_x12_general_conditions": {
+    "minimal_guard_hub": "Uniform h>=2,target4,r>=h+3,k>=3h+1; degree>=2 when k<hr or inheritedAE whenk>=hr",
+    "two_core_hub": "Uniform h>=2,target4,r>=2h+2,k>=2h+2,ceil(hr/k)>=h+1",
+    "actual_access": "Given exactfourhub with actual m-slot threeguard, compact source degree d>=m-1"
+  },
+  "a11_x12_primary_corollary": {
+    "h": 3,
+    "q": 4,
+    "r_minimum": 10,
+    "all_feasible_palette_sizes": true,
+    "all_permitted_endpoints": true,
+    "exact_labelled_noncompact_restoration": true,
+    "all_feasible_k_ge_10_at_every_r": true,
+    "k8_r_ge_9": true,
+    "k9_r_ge_10": true,
+    "input_module_pattern_required": false
+  },
+  "a11_x12_new_external_mathematical_dependency": false,
+  "a11_x12_inherited_dependencies": [
+    "Actual incidence guard/X7 logic restated",
+    "GUARD_HANDOVER O1",
+    "OVERLAPPING_CLIQUE_EXCHANGE M",
+    "GENERAL_PARENT_CONNECTIVITY A/F and conditional child interfaces",
+    "PALETTE_SLACK_CONNECTIVITY AE",
+    "PROTECTED_EXCHANGE J",
+    "X11 explicit thirteen-root hub ONLY, not X9 size bound"
+  ],
+  "a11_x12_x9_equality_bound_used": false,
+  "a11_x12_whole_argument_review_fresh": true,
+  "a11_x12_multiple_overlap_universality": false
 }
