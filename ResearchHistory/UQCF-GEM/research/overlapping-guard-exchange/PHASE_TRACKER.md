@@ -1,6 +1,6 @@
 # Post-v16.54: Distributed Repair
 
-Current phase: OPEN analytical research. Last completed primary checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, A11.X1 disproves safe-prefix extension, and A11.X3 closes native connectivity with at least q-3 floor-one slots and arbitrary other floors; universal destination-directed schedule existence remains unproved. Latest completed bounded checkpoint: A11.X3, residual target-three lifting with q-3 floor-one slots. General global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
+Current phase: OPEN analytical research. Last completed primary checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, A11.X1 disproves safe-prefix extension, and X3/X4 close stronger native anchor classes with arbitrary other floors; universal destination-directed schedule existence remains unproved. Latest completed bounded checkpoint: A11.X4, direct target-four connectivity with one original floor-two slot and arbitrary other floors. Combined X3/X4 close every target-four carrier containing a floor one or two. General global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
 
 ## Closed baseline
 
@@ -22,7 +22,7 @@ Purpose: determine when distributed relational changes admit a renewing protecti
 | A8 | Completed two-label exchange plus compatible root swaps | COMPLETE, NEGATIVE with explicit source dependency D25 | A8_SCOPE.md; A8_COMBINED_EXCHANGE_OBSTRUCTION.md; INDEPENDENT_A8_REVIEW.md |
 | A9 | Exact renewal at one-unit-defective boundaries | COMPLETE, bounded analytical interface and diagnostics | A9_SCOPE.md; A9_DEFECT_BOUNDARY_RENEWAL.md; INDEPENDENT_A9_REVIEW.md |
 | A10 | Recovery completeness and primitive move expressiveness | COMPLETE: negative recovery for M; exact local completeness for W | A10_SCOPE.md; A10_RECOVERY_TRAP_AND_MOVE_COMPLETENESS.md; INDEPENDENT_A10_REVIEW.md |
-| A11 | Global destination-directed incidence scheduling at q=4 | OPEN: reduction, prefix obstruction and stronger residual-three anchor class accepted; universal directed feasibility unproved | A11_SCOPE.md; A11_GLOBAL_SCHEDULE_REDUCTION.md; A11_SAFE_PREFIX_NONEXTENSION.md; A11_PROGRESS.md |
+| A11 | Global destination-directed incidence scheduling at q=4 | OPEN: reduction, prefix obstruction, residual-three and pair-anchor classes accepted; universal directed feasibility unproved | A11_SCOPE.md; A11_GLOBAL_SCHEDULE_REDUCTION.md; A11_SAFE_PREFIX_NONEXTENSION.md; A11_PROGRESS.md |
 
 A4 remains a correct sufficient interface. A5 disproves its universal completeness, not A4's theorem and not the general one-unit law. A6 supplies a correct distributed mechanism. A7 disproves its global completeness on the declared labelled completed-state graph, while constructing a primitive one-unit path for the same endpoints. Universal primitive higher-floor connectivity remains OPEN.
 
@@ -102,6 +102,18 @@ Distinct anchors are aligned by inherited primitive symmetry paths. Roots whose 
 X3 supplies finite stage progress and exact labelled restoration, followed by accepted upper-excursion removal. Its conditional anchor-lift principle has an explicit lower-target universal-connectivity premise; no such premise is assumed at target four or higher. Dependencies D, L and A are inherited and not recertified.
 
 A11.X3 is COMPLETE as a sufficient native class. It does NOT close A11's universal directed-schedule question, establish minimality, or close target-four ZERO-singleton-floor carriers. The original uniform-floor-three diagnostic remains OPEN outside applicable accepted classes; general root/nested universality is unchanged. Evidence: A11_RESIDUAL_THREE_SCOPE.md; A11_RESIDUAL_THREE_ANCHOR_LIFT.md; INDEPENDENT_A11_RESIDUAL_REVIEW.md; A11_RESIDUAL_THREE_CLOSEOUT.md. No numerical campaign, implementation or new certification is assigned.
+
+## A11.X4: completed pair-anchor native connectivity
+
+For target four, ONE ORIGINAL floor-two slot suffices for native one-unit connectivity of ALL exact-four endpoint pairs, with arbitrary positive floors elsewhere. Together with X3, every carrier containing an original floor one OR two is covered. Any hypothetical remaining native exact-four counterexample must have ALL floors at least three; none is claimed.
+
+Compact and align the pair root T. Actual roots avoiding both pair labels have residual transversal two or three, and their complements cover every outside label. Exact-four endpoint triple coverage forces strict total residual capacity greater than the outside palette size. The inherited element-cover owner construction then transfers protection in a common labelled residual carrier. A separate upper-bound argument proves every residual primitive stays in {2,3}, so the main theorem lifts DIRECTLY to {3,4}, with finite progress and exact labelled restoration.
+
+For q>=4, q-4 original floor-one slots PLUS a distinct original floor-two slot also suffice. This corollary preserves a specific residual floor profile before invoking X4; it assumes no universal target-four theorem. Main dependencies C/L and corollary A/X3 are inherited and domain-checked, not recertified.
+
+A fixed triple anchor does not inherit this one-family preparation: the all-twenty-triples example would prepare to level two, but is itself already covered by the accepted uniform-slot theorem AC. This is a method failure, not disconnection. Renewal of THREE overlapping pair-indexed protection systems with shared capacities remains unresolved. Exclude other accepted classes before identifying an unresolved all-floor-at-least-three domain.
+
+Evidence: A11_PAIR_ANCHOR_SCOPE.md; A11_PAIR_ANCHOR_CONNECTIVITY.md; INDEPENDENT_A11_PAIR_REVIEW.md; A11_PAIR_ANCHOR_CLOSEOUT.md. Candidate 6525e708393c345b01e2004163fcc738f1e4d486, independently ACCEPTED without corrections. Temporaries/repeated toggles are permitted; universal A11 destination-directed scheduling and general root/nested universality remain OPEN. Native lifting retains accepted child interfaces. No numerical campaign, implementation or new certification is assigned.
 
 ## Track B: execution efficiency
 

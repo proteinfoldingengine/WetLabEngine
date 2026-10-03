@@ -2,22 +2,22 @@
   "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
   "workstream": "analytical_overlapping_guard_exchange",
   "current_phase": "A11_global_destination_directed_scheduling",
-  "phase_state": "OPEN_DIRECTED_QUESTION_NATIVE_Q_MINUS_THREE_ANCHOR_CLASS_CLOSED",
+  "phase_state": "OPEN_DIRECTED_QUESTION_NATIVE_MIN_FLOOR_AT_MOST_TWO_TARGET_FOUR_CLASS_CLOSED",
   "active_run_id": null,
   "run_attempt": null,
-  "scientific_sha": "d2f79a71983a135eb035ef4d4c1289bdf6409814",
+  "scientific_sha": "6525e708393c345b01e2004163fcc738f1e4d486",
   "workflow_sha": null,
-  "last_verified_event": "A11.X3 independently accepted: q-3 original floor-one slots suffice for native one-unit connectivity via common residual carrier and inherited target-three theorem",
-  "current_blocker": "Universal A11 destination-directed scheduling remains unproved. At q=4, native zero-singleton-floor carriers remain outside X3 unless another accepted theorem applies; original uniform-floor-three diagnostic OPEN",
-  "next_authorized_transition": "Analytical anchor-free target-four protection renewal, excluding solved parameter classes, or the separate universal directed scheduling question",
-  "review_gate": "ACCEPTED_ANALYTICAL_Q_MINUS_THREE_ANCHOR_LIFT_USING_INHERITED_D_L_A",
-  "mathematical_claim_status": "Native one-unit connectivity proved for q>=4 with at least q-3 original floor-one slots and arbitrary other floors. Target-three theorem inherited, not new. No monotone universality, minimal anchor necessity, zero-anchor target-four closure, or general root/nested universality",
+  "last_verified_event": "A11.X4 independently accepted: one original floor-two slot suffices at target four, directly in {3,4}; higher-target preserved-profile corollary accepted",
+  "current_blocker": "Universal A11 destination-directed scheduling remains unproved. Native target-four carriers with all floors at least three remain open outside applicable accepted classes; coupled triple-anchor pair protection unresolved",
+  "next_authorized_transition": "Analytical all-floor-at-least-three target-four renewal using coupled pair protection, excluding solved classes, or separate universal directed scheduling",
+  "review_gate": "ACCEPTED_ANALYTICAL_PAIR_ANCHOR_DIRECT_BAND_AND_PRESERVED_PROFILE",
+  "mathematical_claim_status": "One original floor-two slot suffices at target four with arbitrary other positive floors; X3/X4 close all target-four carriers containing a floor one or two. q-4 floor-one slots plus a distinct floor-two slot suffice at q>=4. No monotone universality, necessity, or general root/nested universality",
   "implementation_status": "NOT_STARTED_NOT_AUTHORIZED_FOR_THIS_EXTENSION",
   "engineering_workstream_status": "Performance baseline and orchestration proposal pending separately",
   "v16_54_status": "UNCHANGED_CLOSED_CERTIFIED_BOUNDED_IMPLEMENTATION",
   "new_numbered_version": null,
   "research_branch": "research/uqcf-overlapping-guard-exchange",
-  "analytical_deliverable_status": "A11_X3_NATIVE_RESIDUAL_THREE_ANCHOR_CLASS_CLOSED_A11_PRIMARY_DIRECTED_QUESTION_OPEN",
+  "analytical_deliverable_status": "A11_X4_PAIR_ANCHOR_NATIVE_CLASS_CLOSED_A11_PRIMARY_DIRECTED_QUESTION_OPEN",
   "pending_execution": "NONE",
   "accepted_candidate_commits": [
     "fa71695118731da7f0e17bf8a31f0142e4c76267",
@@ -33,7 +33,8 @@
     "1fe8b4a522cac271c0ec0609e5df45783d9ba533",
     "da356a65f1be3443343d0604031a615f343ba52e",
     "1cd572d2e90ba3880dc5598d260c14e8a92acc5c",
-    "d2f79a71983a135eb035ef4d4c1289bdf6409814"
+    "d2f79a71983a135eb035ef4d4c1289bdf6409814",
+    "6525e708393c345b01e2004163fcc738f1e4d486"
   ],
   "universal_adaptive_one_buffer_conjecture": "DISPROVED_BY_SYMBOLIC_EXACT_ENDPOINT_FAMILY",
   "bounded_participation_completeness": "DISPROVED_FOR_EVERY_FIXED_BUFFER_COUNT_UNDER_STATED_ARCHITECTURE",
@@ -98,7 +99,7 @@
   "a11_review": "INDEPENDENT_A11_REVIEW.md",
   "a11_progress": "A11_PROGRESS.md",
   "a11_new_external_design_dependency": false,
-  "last_completed_bounded_checkpoint": "A11_X3_residual_target_three_anchor_lift",
+  "last_completed_bounded_checkpoint": "A11_X4_pair_anchor_native_connectivity",
   "a11_reduction_scientific_sha": "1fe8b4a522cac271c0ec0609e5df45783d9ba533",
   "a11_x1_scope_sha": "ca6908bd04ef35bf9f297c42c8878f156d7c6263",
   "a11_x1_scientific_sha": "da356a65f1be3443343d0604031a615f343ba52e",
@@ -161,5 +162,37 @@
   },
   "a11_x3_new_external_design_dependency": false,
   "a11_x3_initial_candidate_sha": "cf61a4f8832284eacc387990e5781b14b1ebdc9a",
-  "a11_x3_source_revision": "SECTION7_HITTING_SET_PREMISE_CLARIFIED_AND_ONE_TERMINAL_BLANK_LINE_REMOVED"
+  "a11_x3_source_revision": "SECTION7_HITTING_SET_PREMISE_CLARIFIED_AND_ONE_TERMINAL_BLANK_LINE_REMOVED",
+  "a11_x4_scope_sha": "f74b5afe9a81d2dbf328a515da506a87f401b6f3",
+  "a11_x4_scientific_sha": "6525e708393c345b01e2004163fcc738f1e4d486",
+  "a11_x4_review": "INDEPENDENT_A11_PAIR_REVIEW.md",
+  "a11_x4_closeout": "A11_PAIR_ANCHOR_CLOSEOUT.md",
+  "a11_x4_result": "ONE_ORIGINAL_FLOOR_TWO_SLOT_SUFFICES_TARGET_FOUR_DIRECT_BAND",
+  "a11_x4_condition": {
+    "target": 4,
+    "required_original_floor_two_count": 1,
+    "other_floors": "ARBITRARY_POSITIVE",
+    "temporary_incidences_allowed": true,
+    "repeated_toggles_allowed": true,
+    "necessity_proved": false
+  },
+  "a11_x4_profile_corollary": "Q_MINUS_FOUR_ORIGINAL_FLOOR_ONE_SLOTS_PLUS_DISTINCT_ORIGINAL_FLOOR_TWO_SLOT_FOR_Q_AT_LEAST_FOUR",
+  "a11_x4_combined_q4_frontier": "ALL_FLOORS_AT_LEAST_THREE_OUTSIDE_OTHER_ACCEPTED_CLASSES_NO_COUNTEREXAMPLE_CLAIM",
+  "a11_x4_proof_sha256": "7c60e7d5b80838acc9f24cf9d0659d132d5cbd3db80b6a843e17faa286d6cfc2",
+  "a11_x4_inherited_dependencies": {
+    "baseline_sha": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
+    "main": [
+      "GENERAL_PARENT_CONNECTIVITY Lemma C",
+      "OVERLAPPING_CLIQUE_EXCHANGE Lemma L"
+    ],
+    "corollary": [
+      "A11_RESIDUAL_THREE_ANCHOR_LIFT preparation",
+      "GENERAL_PARENT_CONNECTIVITY Theorem A"
+    ],
+    "method_boundary": [
+      "GUARD_BUFFER_CONNECTIVITY Theorem AC"
+    ],
+    "review_scope": "DOMAIN_APPLICABILITY_CHECKED_NOT_RECERTIFIED"
+  },
+  "a11_x4_new_external_design_dependency": false
 }
