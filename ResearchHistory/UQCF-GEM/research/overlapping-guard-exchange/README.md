@@ -1,6 +1,10 @@
-# Distributed repair: local certificates and the global frontier
+# Distributed repair: renewable anchor connectivity and the global frontier
 
-**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A10, open A11 with an accepted reduction, the negative A7/A8 method results and bounded A9 renewal interface, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+**Start here:** [Phase tracker](PHASE_TRACKER.md) separates the completed v16.54 baseline, completed checkpoints A1-A10, the open A11 directed question and completed X1/X2 subresults, the negative A7/A8 method results and bounded A9 renewal interface, and pending execution-efficiency track B. [A7 research brief](RESEARCH_BRIEF.md) defines the question and completion gate.
+
+Current A11.X2 theorem: for q>=4, at least q-2 ORIGINAL floor-one slots suffice to connect ALL exact-q endpoint pairs in the native one-unit band, with arbitrary positive floors elsewhere. Two avoiding roots are obtained from endpoint redundancy; a six-move anchor exchange restores both guards, making the next exchange available; a finite label schedule and protected final repairs reach the labelled destination. For target four, two singleton-capable slots suffice. See [proof](A11_RENEWABLE_SINGLETON_ANCHORS.md), [independent review](INDEPENDENT_A11_ANCHOR_REVIEW.md) and [closeout](A11_RENEWABLE_ANCHOR_CLOSEOUT.md).
+
+This is a sufficient native connectivity class. It permits temporary incidences and repeated toggles; A11's universal destination-directed question, fewer-anchor carriers outside other solved classes, and the original uniform-floor-three diagnostic remain OPEN. The theorem does not prove a necessary minimum anchor count.
 
 Current A11.X1 result: a legal destination-directed prefix between exact-four endpoints can strand EVERY remaining directed edit. A private pair blocks each addition, floors block deletions at thirteen compact roots, and two already completed slots must be revisited to escape. The same endpoints have another complete destination-directed path: retain the two singleton constraints until replacement pair protection is established. This disproves safe-prefix extension, not universal schedule existence. See [proof](A11_SAFE_PREFIX_NONEXTENSION.md), [independent review](INDEPENDENT_A11_PREFIX_REVIEW.md) and [bounded closeout](A11_EXTENSION_CLOSEOUT.md). A11 itself remains OPEN.
 
@@ -14,7 +18,7 @@ Current A8 result: completed two-label exchanges PLUS compatible root-slot swaps
 
 Current A7 result: completed two-label accessibility is DISPROVED by a tight seven-root family. The same endpoints admit an explicit eight-move primitive one-unit path. See A7_FANO_EXCHANGE_OBSTRUCTION.md and INDEPENDENT_A7_REVIEW.md. This is a method obstruction, not a primitive barrier.
 
-Current positive result: distributed two-label exchange and an exact renewal test, independently reviewed as recorded in INDEPENDENT_TWO_LABEL_REVIEW.md. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
+Earlier positive result: distributed two-label exchange and an exact renewal test, independently reviewed as recorded in INDEPENDENT_TWO_LABEL_REVIEW.md. Implementation: not started. Universal higher-floor connectivity: OPEN. No new numbered version is assigned, and v16.54's bounded certification is unchanged.
 
 Fix two labels, every other incidence, and which roots contain at least one of the two labels. Any two admissible exact-q configurations in that class are connected with excursion at most one, even if arbitrarily many roots change. Expand the two roles across all their active roots, then contract to the destination. A four-case transversal formula proves the band and gives the exact condition under which a completed role reassignment restores level q. The exchange can change overlap structure and root sizes, so it is broader than a global label permutation.
 
@@ -83,8 +87,12 @@ Files:
 - A11_SAFE_PREFIX_NONEXTENSION.md: exact endpoints, blocked legal prefix, necessary completed-root revisitation, and complete alternative.
 - INDEPENDENT_A11_PREFIX_REVIEW.md: frozen exact-source review and claim boundary.
 - A11_EXTENSION_CLOSEOUT.md: bounded negative result and continued OPEN A11 primary gate.
+- A11_RENEWABLE_ANCHOR_SCOPE.md: q-2 original floor-one slots with arbitrary remaining floors.
+- A11_RENEWABLE_SINGLETON_ANCHORS.md: distinct normalization, six-move renewable guard invariant, global label schedule and native one-unit closure.
+- INDEPENDENT_A11_ANCHOR_REVIEW.md: frozen theorem, hashes and acceptance limits.
+- A11_RENEWABLE_ANCHOR_CLOSEOUT.md: completed sufficient class and still-open directed/general obligations.
 - STATUS.json: current phase and next authorized transition.
 
-The next scientific task is to prove joint feasibility of the A11 schedule constraints using a maintained future-protection invariant, or rigorously exclude every destination-directed schedule for a specified admissible pair. A11.X1 excludes extending EVERY safe prefix as a universal strategy; it does not exclude carefully selected schedules. A11's exact encoding has not answered this existence question. A10 completes local primitive-move expressiveness and disproves unconditional recovery by the restricted safe-saturation method; neither result gives a globally terminating construction. A8's combined relation is now proved incomplete between different unlabelled incidence structures; universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
+The next scientific task is protection renewal with fewer than q-2 singleton-capable slots, or proof/obstruction for the still-open A11 directed schedule class. Check all accepted parameter classes before identifying an unresolved carrier. A11.X2 supplies global native progress in its anchor class but uses temporary incidences. A11.X1 excludes extending EVERY safe prefix as a universal strategy; it does not exclude carefully selected schedules. A11's exact encoding has not answered this existence question. A10 completes local primitive-move expressiveness and disproves unconditional recovery by the restricted safe-saturation method; neither result gives a globally terminating construction. A8's combined relation is now proved incomplete between different unlabelled incidence structures; universal primitive higher-floor connectivity remains OPEN. A numerical or engineering-test campaign would need its own prospective bounded authorization.
 
 This checkpoint is published on the separate research branch. It does not merge new work into the integrated certified branch. The performance-baseline/orchestration workstream remains separately pending.

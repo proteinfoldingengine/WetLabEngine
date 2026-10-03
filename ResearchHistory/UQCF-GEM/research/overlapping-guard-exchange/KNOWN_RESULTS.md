@@ -1,4 +1,4 @@
-# Accepted starting results and the remaining obligation
+# Accepted connectivity classes and remaining obligations
 
 Source baseline: `466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f`, under `ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/`. Historical proof headers say candidate; their separate independent review records and final closeout govern acceptance. The original files are unchanged. This ledger summarizes scope, not a new certification of their implementations.
 
@@ -14,6 +14,7 @@ All statements concern fixed palette, labelled slots and positive floors. Unless
 | All floors 2; FLOOR_TWO_CONNECTIVITY, O | a_i=2 for every slot | Graph star edits and renewed symmetrization reach a common form |
 | Mixed floors 1/2; SINGLETON_ANCHOR_REDUCTION, Q | Every floor belongs to {1,2} | Anchor/residual-graph reduction; does not cover arbitrary higher floors |
 | Enough singleton anchors; same source, P | At least q slots have floor 1 | Other floors may be arbitrary; reaches protected class |
+| Renewable singleton anchors; A11_RENEWABLE_SINGLETON_ANCHORS, X2 (separate analytical branch) | q>=4, at least q-2 ORIGINAL floor-one slots | Arbitrary remaining positive floors; finite renewed guard path plus accepted upper removal; temporaries/repeated toggles allowed |
 | Protected roots; PROTECTED_EXCHANGE, J/K | Each endpoint has q pairwise disjoint roots | Connects that class; its existence requires sum of q smallest floors<=k, but accessibility from every endpoint is not proved |
 | Safe symmetry exchanges; OVERLAPPING_CLIQUE_EXCHANGE, L/M | Label permutation, or root permutation with destination-compatible floors, at exact q | Connects symmetry-related endpoints, not arbitrary overlap types |
 | Contraction clone guard; CONTRACTION_CLONE_GUARD, U/V/W | Slot-compatible prescribed clone; retained-family cover f and contraction cover lambda | Exact formula tau(new)=min(1+f,lambda); eligible clones or a globally terminating sequence are not guaranteed |
@@ -27,3 +28,11 @@ All statements concern fixed palette, labelled slots and positive floors. Unless
 The exact-endpoint hierarchy supplies |N_A(X)|>=q-|X| and the local capacity inequalities. One-root replacement consumes at most one lower-guard unit, but the completed state need not renew exact redundancy. Complete-module normal forms are genuinely unavailable in some exact higher-floor carriers (MODULE_CAPACITY_OBSTRUCTION); those examples are not disconnection results and the cyclic class has its own successful method.
 
 The present candidate targets a missing link: protection can transfer through one shared root, without requiring disjoint guards or palette room. The unresolved problem is a generally available, renewing exchange when multiple shared slots admit different missed-root sets. An exact characterization of one bridge's failure does not resolve general connectivity.
+
+## A11.X2 extension and current boundary
+
+A11.X2 is independently accepted at candidate 1cd572d2e90ba3880dc5598d260c14e8a92acc5c, receipt INDEPENDENT_A11_ANCHOR_REVIEW.md. It lowers the sufficient arbitrary-other-floor singleton count from q to q-2. It is not merged implementation certification or a change to the integrated baseline sources.
+
+For q=4, two original floor-one slots now suffice for native one-unit connectivity of every exact-four endpoint pair. A11.X1's large carrier is therefore covered as a full native class. The proof supplies renewable protection and unconditional finite progress within this class. It does not guarantee destination-directed incidence monotonicity.
+
+The original q=4/uniform-floor-three diagnostic has zero singleton-capable slots and remains OPEN unless its individual parameter class is already covered elsewhere in this ledger. Fewer than q-2 singleton-capable slots are not declared universally unresolved: previously accepted results still apply. No minimal-anchor necessity or universal root/nested closure is claimed.

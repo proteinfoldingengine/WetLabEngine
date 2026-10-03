@@ -1,6 +1,6 @@
 # Post-v16.54: Distributed Repair
 
-Current phase: OPEN analytical research. Last completed checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, and A11.X1 disproves safe-prefix extension with an explicit alternative schedule; universal schedule existence remains unproved. Global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
+Current phase: OPEN analytical research. Last completed primary checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, A11.X1 disproves safe-prefix extension, and A11.X2 closes native connectivity with at least q-2 floor-one slots and arbitrary other floors; universal destination-directed schedule existence remains unproved. Latest completed bounded checkpoint: A11.X2, renewable native connectivity with q-2 floor-one slots. General global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
 
 ## Closed baseline
 
@@ -22,7 +22,7 @@ Purpose: determine when distributed relational changes admit a renewing protecti
 | A8 | Completed two-label exchange plus compatible root swaps | COMPLETE, NEGATIVE with explicit source dependency D25 | A8_SCOPE.md; A8_COMBINED_EXCHANGE_OBSTRUCTION.md; INDEPENDENT_A8_REVIEW.md |
 | A9 | Exact renewal at one-unit-defective boundaries | COMPLETE, bounded analytical interface and diagnostics | A9_SCOPE.md; A9_DEFECT_BOUNDARY_RENEWAL.md; INDEPENDENT_A9_REVIEW.md |
 | A10 | Recovery completeness and primitive move expressiveness | COMPLETE: negative recovery for M; exact local completeness for W | A10_SCOPE.md; A10_RECOVERY_TRAP_AND_MOVE_COMPLETENESS.md; INDEPENDENT_A10_REVIEW.md |
-| A11 | Global destination-directed incidence scheduling at q=4 | OPEN: reduction and safe-prefix nonextension accepted; universal feasibility unproved | A11_SCOPE.md; A11_GLOBAL_SCHEDULE_REDUCTION.md; A11_SAFE_PREFIX_NONEXTENSION.md; A11_PROGRESS.md |
+| A11 | Global destination-directed incidence scheduling at q=4 | OPEN: reduction, prefix obstruction and native anchor class accepted; universal directed feasibility unproved | A11_SCOPE.md; A11_GLOBAL_SCHEDULE_REDUCTION.md; A11_SAFE_PREFIX_NONEXTENSION.md; A11_PROGRESS.md |
 
 A4 remains a correct sufficient interface. A5 disproves its universal completeness, not A4's theorem and not the general one-unit law. A6 supplies a correct distributed mechanism. A7 disproves its global completeness on the declared labelled completed-state graph, while constructing a primitive one-unit path for the same endpoints. Universal primitive higher-floor connectivity remains OPEN.
 
@@ -82,6 +82,16 @@ A legal 12010-addition prefix between declared exact-four endpoints reaches a ta
 The same endpoints have a proved complete destination-directed lower path: retain two singleton constraints while handing protection for their forced label pair from an old root to a completed new root, and expand the singleton roots only after all other repairs are done. Any native exit from D must first delete a destination incidence at one of the completed roots. This proves necessary revisitation at D, not necessary revisitation along every path between the endpoints.
 
 A11.X1 is COMPLETE as a bounded negative extension result with a constructive alternative. It does not complete A11.2 or A11: SOME schedule exists for this example, and the universal existence question stays OPEN. Carrier: 15 roots, 12870 labels, two floors one and thirteen floors 6006. This is distinct from the original uniform-floor-three diagnostic. Evidence: A11_EXTENSION_SCOPE.md; A11_SAFE_PREFIX_NONEXTENSION.md; INDEPENDENT_A11_PREFIX_REVIEW.md; A11_EXTENSION_CLOSEOUT.md. All reasoning is analytical; no new external design property or numerical campaign is used.
+
+### A11.X2: completed renewable-anchor native connectivity class
+
+For every q>=4, at least q-2 ORIGINAL floor-one slots suffice for native one-unit connectivity of ALL admissible exact-q endpoint pairs, with arbitrary positive floors elsewhere. For q=4, only two such slots are required. This improves the accepted sufficient condition of q floor-one slots for arbitrary other floors; all historical baseline sources remain unchanged.
+
+The construction makes the selected anchors distinct, obtains two actual avoiding roots from endpoint redundancy, and expands them to the complement of the anchor label set. A six-primitive exchange protects the old and new forced sets and restores BOTH guard roots after every anchor change. A finite ordered-label schedule then reaches the destination anchor values; a destination avoiding root protects all final repairs. Accepted maximum-layer removal supplies the final one-unit band.
+
+A11.X2 is COMPLETE as a sufficient native connectivity theorem, including explicit renewal, eligible next operations, finite global progress and labelled endpoint restoration. Temporary incidences and repeated toggles are allowed. It does NOT close A11's destination-directed existence question or invalidate A11.X1's stranded-prefix result. Evidence: A11_RENEWABLE_ANCHOR_SCOPE.md; A11_RENEWABLE_SINGLETON_ANCHORS.md; INDEPENDENT_A11_ANCHOR_REVIEW.md; A11_RENEWABLE_ANCHOR_CLOSEOUT.md.
+
+Fewer than q-2 floor-one slots remain outside this theorem unless another accepted result applies. The condition is sufficient, not proved necessary or minimal. In particular, uniform floor three at target four has no such slots and remains OPEN. General unrestricted root/nested universality is not claimed; native lifting retains accepted child interfaces. No numerical campaign or implementation certification is assigned.
 
 ## Track B: execution efficiency
 

@@ -35,3 +35,13 @@ A11_EXTENSION_SCOPE.md freezes a separate safe-prefix question. A11_SAFE_PREFIX_
 A11.X1 is a completed bounded checkpoint, detailed in A11_EXTENSION_CLOSEOUT.md. It is NOT an A11.2 class obstruction: the example has a full schedule. A11 primary universal existence remains OPEN, and A10 remains the last completed primary checkpoint. The old conditional event-count termination statement is unchanged; arbitrary safe edits do not ensure its premise.
 
 This publication updates the original progress record but does not modify its frozen reduction/scope or earlier independent receipt.
+
+## Subsequent bounded native theorem A11.X2
+
+A11_RENEWABLE_SINGLETON_ANCHORS.md, independently reviewed in INDEPENDENT_A11_ANCHOR_REVIEW.md, proves native one-unit connectivity for ALL exact-q endpoint pairs whenever q>=4 and at least q-2 original floors equal one. Other floors may be arbitrary. For q=4, two singleton-capable slots suffice.
+
+Two actual protecting roots from endpoint redundancy can be renewed after EVERY anchor change through six individual moves. An explicit finite injection schedule reaches the destination labels, then an installed destination root protects all remaining root repairs. Guard floors, available next operations, finite progress and endpoint restoration are established without a numerical campaign.
+
+This closes A11.X2's sufficient native class, as recorded in A11_RENEWABLE_ANCHOR_CLOSEOUT.md. It permits temporary incidences and repeated toggles and therefore does not complete A11.2's universal destination-directed question. A11 primary remains OPEN; A10 remains the last completed primary checkpoint in the existing reporting scheme. Original uniform-floor-three diagnostics and general root/nested universality remain OPEN.
+
+Earlier reduction, prefix obstruction, frozen scopes and independent receipts remain unchanged.
