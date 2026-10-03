@@ -12,7 +12,7 @@ The accepted result is Theorem I11's exact necessary-and-sufficient event schedu
 
 ## What is not complete
 
-A11's primary question asks whether every admissible exact-four endpoint pair has such a schedule. No universal existence theorem and no obstruction excluding every schedule for a declared pair have been obtained. Therefore A11 remains OPEN; A11.1 is the only completed bounded substep. The last completed primary checkpoint remains A10.
+A11's primary question asks whether every admissible exact-four endpoint pair has such a schedule. No universal existence theorem and no obstruction excluding every schedule for a declared pair have been obtained. Therefore A11 remains OPEN. A11.1 is the completed reduction; the subsequently completed A11.X1 bounded result is recorded below. The last completed primary checkpoint remains A10.
 
 The finite remaining-event measure terminates a supplied feasible schedule; it does not prove feasibility or an eligible next move. Exact endpoint redundancy establishes boundary coverage but not joint interval coverage through all intermediate states. This publication is progress, not a scope revision or primary closeout.
 
@@ -27,3 +27,11 @@ Scope/proof remain frozen. Receipt, this progress record, tracker, status, READM
 ## Next authorized obligation
 
 Prove a global extension/scheduling theorem from endpoint triple coverage, or rigorously exclude all schedules in the declared class for explicit admissible endpoints. Preserve the distinction between a failed order, class obstruction and unrestricted primitive disconnection. General q>=4 primitive/nested connectivity and q=4/floor-three diagnostic remain OPEN.
+
+## Subsequent bounded result A11.X1
+
+A11_EXTENSION_SCOPE.md freezes a separate safe-prefix question. A11_SAFE_PREFIX_NONEXTENSION.md, independently reviewed in INDEPENDENT_A11_PREFIX_REVIEW.md, disproves universal completion of EVERY legal destination-directed prefix. Its explicit exact-four endpoints nevertheless admit another complete destination-directed lower path. Every native exit from the stranded D must revisit a completed slot by temporarily deleting a destination incidence.
+
+A11.X1 is a completed bounded checkpoint, detailed in A11_EXTENSION_CLOSEOUT.md. It is NOT an A11.2 class obstruction: the example has a full schedule. A11 primary universal existence remains OPEN, and A10 remains the last completed primary checkpoint. The old conditional event-count termination statement is unchanged; arbitrary safe edits do not ensure its premise.
+
+This publication updates the original progress record but does not modify its frozen reduction/scope or earlier independent receipt.

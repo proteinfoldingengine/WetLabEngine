@@ -1,6 +1,6 @@
 # Post-v16.54: Distributed Repair
 
-Current phase: OPEN analytical research. Last completed checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, while universal schedule existence remains unproved. Global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
+Current phase: OPEN analytical research. Last completed checkpoint: A10, reachable recovery obstruction for certified saturation/root swaps, and completeness of critical-witness primitive move certificates. Current A11 is OPEN: exact global interval scheduling is a reviewed reduction, and A11.X1 disproves safe-prefix extension with an explicit alternative schedule; universal schedule existence remains unproved. Global progress remains OPEN. No run is active or queued. This phase has not been assigned a numbered version. In particular, it is not unfinished v16.54 and is not yet designated v16.55.
 
 ## Closed baseline
 
@@ -22,7 +22,7 @@ Purpose: determine when distributed relational changes admit a renewing protecti
 | A8 | Completed two-label exchange plus compatible root swaps | COMPLETE, NEGATIVE with explicit source dependency D25 | A8_SCOPE.md; A8_COMBINED_EXCHANGE_OBSTRUCTION.md; INDEPENDENT_A8_REVIEW.md |
 | A9 | Exact renewal at one-unit-defective boundaries | COMPLETE, bounded analytical interface and diagnostics | A9_SCOPE.md; A9_DEFECT_BOUNDARY_RENEWAL.md; INDEPENDENT_A9_REVIEW.md |
 | A10 | Recovery completeness and primitive move expressiveness | COMPLETE: negative recovery for M; exact local completeness for W | A10_SCOPE.md; A10_RECOVERY_TRAP_AND_MOVE_COMPLETENESS.md; INDEPENDENT_A10_REVIEW.md |
-| A11 | Global destination-directed incidence scheduling at q=4 | OPEN: exact reduction accepted; universal feasibility unproved | A11_SCOPE.md; A11_GLOBAL_SCHEDULE_REDUCTION.md; INDEPENDENT_A11_REVIEW.md; A11_PROGRESS.md |
+| A11 | Global destination-directed incidence scheduling at q=4 | OPEN: reduction and safe-prefix nonextension accepted; universal feasibility unproved | A11_SCOPE.md; A11_GLOBAL_SCHEDULE_REDUCTION.md; A11_SAFE_PREFIX_NONEXTENSION.md; A11_PROGRESS.md |
 
 A4 remains a correct sufficient interface. A5 disproves its universal completeness, not A4's theorem and not the general one-unit law. A6 supplies a correct distributed mechanism. A7 disproves its global completeness on the declared labelled completed-state graph, while constructing a primitive one-unit path for the same endpoints. Universal primitive higher-floor connectivity remains OPEN.
 
@@ -74,6 +74,14 @@ A11.1 supplies an exact necessary-and-sufficient schedule criterion: every origi
 | A11.4 | Publish primary decision and close A11 | NOT REACHED |
 
 A11 itself remains OPEN. Exact-four endpoint redundancy supplies boundary protection, not a jointly feasible ordering of all events. A failed order is not a class obstruction; a class obstruction would not imply full primitive disconnection. Accepted maximum-layer removal converts any supplied lower path to the one-unit band but need not preserve destination-directed monotonicity. No numerical campaign, implementation or certification is claimed.
+
+### A11.X1: completed bounded safe-prefix obstruction
+
+A legal 12010-addition prefix between declared exact-four endpoints reaches a tau=3 tuple D. Every addition has an explicit private pair whose last missed root it destroys. Thirteen roots are at their original floors; the two remaining roots already equal their destinations. Therefore no remaining destination-directed event is legal. Universal safe-prefix extension is FALSE, even for a prefix staying in {3,4}.
+
+The same endpoints have a proved complete destination-directed lower path: retain two singleton constraints while handing protection for their forced label pair from an old root to a completed new root, and expand the singleton roots only after all other repairs are done. Any native exit from D must first delete a destination incidence at one of the completed roots. This proves necessary revisitation at D, not necessary revisitation along every path between the endpoints.
+
+A11.X1 is COMPLETE as a bounded negative extension result with a constructive alternative. It does not complete A11.2 or A11: SOME schedule exists for this example, and the universal existence question stays OPEN. Carrier: 15 roots, 12870 labels, two floors one and thirteen floors 6006. This is distinct from the original uniform-floor-three diagnostic. Evidence: A11_EXTENSION_SCOPE.md; A11_SAFE_PREFIX_NONEXTENSION.md; INDEPENDENT_A11_PREFIX_REVIEW.md; A11_EXTENSION_CLOSEOUT.md. All reasoning is analytical; no new external design property or numerical campaign is used.
 
 ## Track B: execution efficiency
 
