@@ -1,27 +1,23 @@
-# Next after A11.X19 — coupled protection beyond shared-core narrow access
+# Next after A11.X20 — mixed protection and higher-floor reusable access
 
-## Newly complete analytical domain
+## Completed native root domains
 
-X19 constructs an exact-four hub on2h+1 existing labels by completing two shared-label cores. Every core three-cover{x,u,v} is missed by an actual coupled blocker, while a supplied four-cover hits all supports. Even h uses four added supports and odd h uses six; the actual h+2-slot three-guard is the first complete core plus the second core's private root.
+X20U closes EVERY feasible original-uniform-floor-four, target-four native ROOT carrier: exact endpoints connect through 3<=tau<=4 with full original labelled/noncompact restoration. X15 already closes uniform floor three. Neither class has a remaining root-connectivity carrier obligation.
 
-Every original uniform-floor-h exact-four endpoint supplies access on k=2h+1 when r>=2h+6(even) or r>=2h+8(odd). Exact compaction preserves a supplied cover; compact incidence forces source degree>=h+1, furnishing the actual avoiding-label guard and compatible placement budget. Complete original labelled/noncompact endpoints are restored through the same exact hub.
+The new exact-three complement module and private root CREATE an exact-four hub with an actual four-slot three-guard. Incidence-derived actual avoiding-label protection and uniform full exact endpoint placement prove arbitrary access separately from existence. Structural six-slot and seven-slot degree bounds compose accepted strict/saturated renewal with the hub and inherited domains. The full proof and consolidated explanation received fresh whole-argument ACCEPT without revisions.
 
-ALL feasible uniform-original-floor-four/nine-label carriers now have complete repair. r<11 is infeasible; r11..13 existence remains UNDECIDED, while their conditional connectivity is inherited. Existence at every r>=14 is constructed. This is connectivity closure within a declared class, not universal feasibility or allfloor4 closure.
+X20L adds profiles whose original floors are four or at least k-2 through X17's exact retained-family lift. X17's floors<=3 or>=k-2 class, X16's mixed budget classes, X18's shared-incidence certificate and X19's general narrow-palette access remain accepted.
 
-X15 universal floor-three ROOT closure, X16 floor-four/ten-label and mixed budget classes, X17 cover-automatic lift, X18 shared-incidence renewal and earlier accepted results remain unchanged. No carrier obligation remains in X15's class.
+## Remaining structural obligation
 
-## Remaining mathematical direction
+Develop stronger actual derived protection or a genuinely reusable coupled handover for unrestricted mixed profiles, especially mixtures of original floors three and four, or uniform floors>=5 beyond accepted domains. X18's unequal capacities and actual shared-incidence correction remain a sufficient certificate that must be derived in genuinely unresolved classes. X20H applies at h>=2, r>=8, k>=7ceil(h/4)+h, ceil(hr/k)>=3; X20S supplies all feasible six-slot uniform-positive-floor cases. Check every accepted dependency before declaring a carrier unresolved.
 
-Continue structural derived protection/access or genuinely reusable shared handovers outside accepted domains. X18 still requires actual certificate derivation in further unresolved classes. X19 replaces the disjoint-core palette requirement through exact coupled completion; it does not prove all mixed-floor or all uniform-floor-four connectivity.
+Uniform endpoint permutations do not extend arbitrarily to mixed floors. A correct local move, renewed structure and guaranteed full repair require separate arguments. Supply actual all-pair witnesses, legal original floors/slots, an eligible next primitive whenever unfinished, a well-founded measure, repeated reserve restoration and exact original destination restoration. A failed certificate/hub/placement budget is not native disconnection. Do not organize remaining counts as isolated campaigns.
 
-Exclude ALL applicable accepted results before assigning an unresolved class. h2/h3 and larger-palette X12D domains are already solved, and some narrow-palette root counts below the new hub threshold may already satisfy incidence/O1. Do not turn remaining counts into isolated campaigns.
+Original A11 destination-directed universality, general higher targets and unrestricted nested repair remain OPEN. Conditional nested lifting retains accepted child interfaces and fixed-root clearance. Connectivity closure does not settle every parameter tuple's feasibility, including previously recorded small-count existence questions. X5 qualification is replaced in the universal floor-three/four root conclusions, not proved universally available.
 
-The constructor's even four-blocker bound is attained; odd at leastfive versus suppliedsix leaves a CONSTRUCTOR optimization gap, not a native disconnection or necessary repair barrier. Nonexistence of one convenient hub or failure of an access budget does not establish no native path. Exact input, actual all-pair witnesses, original shared floors/slots, eligible next primitive, renewal, finite progress and full destination restoration stay mandatory.
+## Review and execution boundaries
 
-Original A11 destination-directed scheduling, unrestricted mixed-floor/higher-target/nested universality and all remaining floor-four palettes remain open. Uniform endpoint permutations do not extend arbitrarily to mixed floors. X5's same-slot condition is neither invoked nor weakened. Safe-prefix completion and converse projection remain invalid shortcuts.
+Freeze new scope and exact candidate; obtain fresh independent WHOLE-ARGUMENT review before another major closure; publish and read the immutable packet back. No numerical diagnostic/implementation execution without separately approved prospective protocol. No active or queued numerical run, numbered v16.55 implementation certification or integration merge exists.
 
-## Review, execution and efficiency boundaries
-
-New major closure requires disclosed scope, exact candidate freezing, fresh WHOLE-ARGUMENT review and immutable publication verification. Numerical diagnostics/implementation require separately approved prospective protocols before scientific execution. No active numerical run or numbered v16.55 implementation certification/merge exists under this analytical packet.
-
-Certified v16.54 remains466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f. Separate accepted efficiency baseline/A2 proposal/tiny validation DESIGN remains complete at ea49d2556e4ca4929c0aece68d01e8193ab94b66; runner implementation, fixture execution, benchmarks/measured speedup remain unstarted. Conditional child lifting keeps inherited interfaces. Use ordered repair/retained recoverability; no physical geometry or fundamental-time claim.
+Certified v16.54 remains 466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f. Separate accepted efficiency baseline/A2 proposal/tiny validation DESIGN remains complete at ea49d2556e4ca4929c0aece68d01e8193ab94b66; runner implementation, fixture execution and measured benchmarks remain unstarted. Use ordered repair/retained recoverability; no fundamental-time or physical/originality claim.
