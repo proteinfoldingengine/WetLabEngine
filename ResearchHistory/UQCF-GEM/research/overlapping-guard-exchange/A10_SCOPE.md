@@ -18,3 +18,7 @@ If a lower vertex is reachable from an exact-q tuple by some legal primitive uni
 Complete this unit with a proof or rigorous counterexample, independent review of frozen exact source and scoped claims, and verified publication/status. Failure of recovery from an arbitrary lower state does not disprove exact-endpoint connectivity of the method: a globally selected path might avoid the exhibited trap. Preserve that open distinction.
 
 No enumeration, implementation, tests, workflows, extra palette/slots during a path, new geometry, physical law or locally recertified external design is included. Symbolic endpoint construction and analytical primitive paths are authorized. The scope is not retrospective preregistration of its motivating deduction.
+
+## Secondary classification obligation
+
+Separately define a single-incidence critical-witness extension, using A9's exact witness test when inactive tau=q-3, and determine whether it covers all legal lower primitive moves. This relation is distinct from the recovery method above. If it is merely equivalent to the original lower primitive graph, report that equivalence as an expressiveness result, not a global algorithm or connectivity proof. This extension is analytical only and does not authorize implementing a witness search or running a campaign.
