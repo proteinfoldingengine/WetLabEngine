@@ -1,0 +1,98 @@
+{
+  "schema": "v1655-partial-primary-archive-inspection-v1",
+  "scope": "EXTERNAL_ARCHIVE_HASH_AND_SUPPLIED_METADATA_SCIENTIFIC_BYTES_ONLY; NO_LOCAL_SCIENTIFIC_EXECUTION",
+  "run_id": 37211847122,
+  "attempt": 1,
+  "scientific_sha": "3183c29896ebb47c320fa46a67ca2dd0696702fc",
+  "archive_count": 6,
+  "checked_in_supplied_summaries": 2822,
+  "expected_full_count": 3763,
+  "full_campaign_status": "IN_PROGRESS_NO_FULL_PASS_INFERRED",
+  "baseline_aggregate": {
+    "commit": "bbdbf6138b60e51e0f229951280b01455d2a4c09",
+    "blob": "a2532d796758f8226a1fe4c5cece6b237b67bc63"
+  },
+  "scientific_member_count": 24,
+  "byte_equality_to_accepted_original": true,
+  "archives": [
+    {
+      "shard": 0,
+      "artifact_id": 11306333205,
+      "archive_bytes": 370471,
+      "archive_sha256": "5cc730b485e36b35967e21a980dbc9d082e6f38512c20d3f0732cfe67c8c2960",
+      "checked": 470,
+      "science": {
+        "records.jsonl.gz": "db08f861fe004bcc6a3544a4f466742560d96e510b0fe3fc38fde7257b601f30",
+        "identities.jsonl.gz": "22c5fd9fc989782ba47084162ae902a95ebd5b9d7655b92997112de31df5bee5",
+        "SUMMARY.json": "c05b8e0e34bb0251e5005edd53c2930838846c52f4f96b44ff4b8056ecfdd3cc",
+        "DOMAIN_FREEZE.json": "07bf79a764c3ed117dac0361e8d6c27738778a50f38c73af110325117fb68fe8"
+      }
+    },
+    {
+      "shard": 1,
+      "artifact_id": 11307067049,
+      "archive_bytes": 1265534,
+      "archive_sha256": "b2843c6cb2f7ef6b026699534c94d9cc158ffae0c2cd9ec21aec4fdeaf644fa5",
+      "checked": 470,
+      "science": {
+        "records.jsonl.gz": "0ddc0821824339b52918815cebd1b0aeb62402f3d32e4b5957a8cdf817fb6d8e",
+        "identities.jsonl.gz": "f289bf093e26e1cd7cff941fa5144b3fea5eec18c9845a6660356ba8552d9d3b",
+        "SUMMARY.json": "e5850fdc54865065356378dd727dadf3e3b8d01724f315bf7aa2c393eb155bb1",
+        "DOMAIN_FREEZE.json": "a47fadbc231a877113cd34e3c9d6f647ebeca297123cc862894a705bbb2ec536"
+      }
+    },
+    {
+      "shard": 2,
+      "artifact_id": 11306163267,
+      "archive_bytes": 860682,
+      "archive_sha256": "058fb912efc160e2118c27d96258106ccfbd620c0eb948696abcdd4c3327c2d8",
+      "checked": 471,
+      "science": {
+        "records.jsonl.gz": "55c35a4b2c790a78259bf4d1efcd15bf48bed4c5d0c427658254f62434e780a9",
+        "identities.jsonl.gz": "aaceaf8a2dc46407ef750cbd35b9f2bdf559a9d3c3b61fbbc6c49c4e738fdf6f",
+        "SUMMARY.json": "70c3959933ebb194e708afd0381f32ae6477955abd02646468e82ff11ef9fa9d",
+        "DOMAIN_FREEZE.json": "8edd71d78f46d37e38ba9e768a1da085bf871f014621f4ea172145a5b18c5122"
+      }
+    },
+    {
+      "shard": 3,
+      "artifact_id": 11306739280,
+      "archive_bytes": 1502896,
+      "archive_sha256": "d050860a4957b34d8a06f2cdb61f9e49dc0dd0980abbaaad3f57b6de53266620",
+      "checked": 470,
+      "science": {
+        "records.jsonl.gz": "f70b8c3461484d2515b3058c9e155e006ea414a90762e8bd2620639fa4ef6132",
+        "identities.jsonl.gz": "fcee2d0a196c639d8f1d9c2d9df0b79e882906c128287d5162d514010506ce00",
+        "SUMMARY.json": "e04e30fa97980f3214f77dcdd501436d946dab51d0c826adce2c9c39f16f096f",
+        "DOMAIN_FREEZE.json": "294b885a591496562d619bdb11af7c060f661f0cba2d1f095fa2d5a5ebf190b1"
+      }
+    },
+    {
+      "shard": 4,
+      "artifact_id": 11306962281,
+      "archive_bytes": 862693,
+      "archive_sha256": "0012128fa360c2008a3fc629a19515a89ae074e7f69659f5fa9f4e06132d2c75",
+      "checked": 470,
+      "science": {
+        "records.jsonl.gz": "3c579035a11da34c6190f5aab579b5ad21a37a96b71dc2a355484477c087391c",
+        "identities.jsonl.gz": "cb298ed4f7b5374eb84ae2579d9ce2ba7b3c8755dc26b860f881bdc0899dd8fb",
+        "SUMMARY.json": "ff93202282a886fd9c1c733907403101251797ad46f11eabe63a431153739dc4",
+        "DOMAIN_FREEZE.json": "3cd4e1cb5f823f6f57535b756af786dd7ab37d543d9bc7582ba1eaaf05159868"
+      }
+    },
+    {
+      "shard": 7,
+      "artifact_id": 11306607962,
+      "archive_bytes": 1298713,
+      "archive_sha256": "0b9d505626171df5a53b39cfd5a2ebb3f87e4694f2f10e469893f6af199fb929",
+      "checked": 471,
+      "science": {
+        "records.jsonl.gz": "9f9fb8d013b211d6d22f9822657367ced76c7056e9ba4ff8b8835fe8a5d7f15e",
+        "identities.jsonl.gz": "d9d7824b325c9259af825306f02ed317ca3c8bb1b33bc535ce1cca2b72c40a1c",
+        "SUMMARY.json": "8b9c104932647219e096c1dfb43944cd7889c7c7ffc2ae7e0736798a533de072",
+        "DOMAIN_FREEZE.json": "cd2cabe18c595b283c5eb54e874eb0ef1359f4f39a9d746265d1db6f309722e2"
+      }
+    }
+  ],
+  "publication_policy": "Inspection metadata references current original ZIP IDs/length/SHA256; no extracted or recursive binary copy committed. Complete current originals remain to be published once by approved durable join."
+}
