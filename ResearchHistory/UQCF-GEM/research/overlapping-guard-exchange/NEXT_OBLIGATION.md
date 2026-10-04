@@ -2,6 +2,18 @@
 
 Current numbered status: the approved bounded v16.55 certificate is complete, as recorded in the terminal section below. Earlier approval/open-run instructions in this file are historical. The remaining research direction is stronger derived compatible guards or reusable multiple-overlap handovers; the separately promised efficiency runner/fixture/benchmark remains unstarted and requires its own prospective numerical protocol.
 
+## A11.X35 — component-wise actual witness renewal
+
+Candidate 974d0356b78c294804c3db49686e1e0f32dcd90a; scope c003ea6c3d26d43c656358f4ee4559e6b84846fb. Source A11_X35_COMPONENT_WITNESS_RENEWAL.md, independent whole review INDEPENDENT_A11_X35_WHOLE_REVIEW.md, closeout A11_X35_CLOSEOUT.md.
+
+X35 derives weaker availability than X34's GLOBAL count. ACTUAL noncommon pair witness sets U_K union V_K define root-interaction components. Each component's sum1/C(u+v,u)<1 supplies a complete deterministic safe local order by exact conditional averaging; concatenated component orders cover ALL pairs through every active union. Shared root indices are joined in the same component, without separate-capacity assumptions; components need not be standalone three-guards. Positive ORIGINAL floors and every original labelled/noncompact destination support are retained. Certified local prefixes may remain at level3 and still supply the next eligible root.
+
+The infinite even m>=6 original-floor m-1/m family has exact-four endpoints and global X34 count=m/6>=1, growing without bound, with distinct pair events; every local component has count1/3. Fixed background and whole endpoint union have tau2. A critical tau3 combined state has neither old nor new family independently protecting, even including background in both. Literal eligible primitive continuation and repeated module-assignment sorting restore exact labelled destinations directly in{3,4}. These symmetry-related endpoints already connect by M; no claim places them outside every prior connectivity theorem. The advance is the stronger derived availability/renewal interface, not a new universal connectivity classification.
+
+General X35 first completes ORIGINAL exact-ended lower paths, then uses A for{3,4}. Preliminary lower chains reach specified waypoints; A on a concatenated chain guarantees exact OUTER ends, not inexact internal waypoints/schedule/length. Complete exact-four adjacent segments can be individually converted.
+
+A failed component inequality is not absence of an order or native disconnection. The one-active-root method remains nonuniversal under inherited participation limits. Next: weaker actual component-availability constraints or genuinely reusable interleaved/repeated handovers when no whole-root order exists; retain stronger compatible-grade direction. Unrestricted mixed/directed/higher-target/nested questions remain open. No new science execution, numerical scope, implementation, benchmark, integration merge or numbered certificate. Bounded v16.55/v16.54 certifications/evidence remain unchanged; separate efficiency runner/fixture/benchmark still unstarted.
+
 ## A11.X34 — accepted coupled witness handover
 
 Proof candidate: ed68d5be73e986bab193c1393d7c1c1f066660f3; scope: efd6dea7b73809e4c1f8fb2daf1ab7936c87eacc. See A11_X34_COUPLED_WITNESS_HANDOVER.md, INDEPENDENT_A11_X34_WHOLE_REVIEW.md and A11_X34_CLOSEOUT.md.
