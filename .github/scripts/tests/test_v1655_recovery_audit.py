@@ -294,6 +294,31 @@ class DurablePublicationTests(unittest.TestCase):
         self.assertEqual(superseded[0]["classification"], "SUPERSEDED_COMPONENT_WRAPPER")
         self.assertEqual(superseded[0]["references"][0]["resolution"], "COMPONENT_DUPLICATION_MAP.json#primary")
 
+    def test_nested_archive_copy_is_counted_as_extracted_member(self):
+        key = "20:" + "b" * 64
+        members = [
+            {"name": "originals/shard-0.zip", "bytes": 20, "sha256": "b" * 64},
+            {"name": "partial/archives/shard-0.zip", "bytes": 20, "sha256": "b" * 64},
+        ]
+        mapped = publish.classify_wrapper_members(
+            members,
+            set(),
+            {key: [{"artifact_id": 1}]},
+            {key: [{"artifact_id": 2, "member": "archives/shard-0.zip"}]},
+            archive_names={"originals/shard-0.zip"},
+        )
+        self.assertEqual([row["classification"] for row in mapped], [
+            "ARCHIVE_REFERENCE", "MEMBER_REFERENCE",
+        ])
+        self.assertEqual(mapped[1]["references"], [
+            {"artifact_id": 2, "member": "archives/shard-0.zip"},
+        ])
+        with self.assertRaises(ValueError):
+            publish.classify_wrapper_members(
+                members, set(), {key: [{"artifact_id": 1}]}, {},
+                archive_names={"originals/shard-0.zip"},
+            )
+
     def test_wrapper_member_mapping_rejects_any_unaccounted_payload(self):
         with self.assertRaisesRegex(ValueError, "unaccounted wrapper member"):
             publish.classify_wrapper_members(
