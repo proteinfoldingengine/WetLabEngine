@@ -1,11 +1,13 @@
 import copy
 import importlib
+import io
 import json
 import os
 from pathlib import Path
 import sys
 import tempfile
 import unittest
+import urllib.error
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 audit = importlib.import_module("v1655_recovery_audit")
@@ -194,6 +196,34 @@ class DurablePublicationTests(unittest.TestCase):
             (destination / manifest["parts"][0]["name"]).write_bytes(b"corrupt")
             with self.assertRaises(ValueError):
                 publish.verify_parts(destination)
+
+    def test_artifact_redirect_does_not_forward_github_credentials(self):
+        api_url = "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11301883937/zip"
+        signed_url = "https://blob.example/package.zip?sig=secret"
+        seen = {}
+
+        class RedirectOpener:
+            def open(self, request):
+                seen["api"] = request
+                raise urllib.error.HTTPError(request.full_url, 302, "Found", {"Location": signed_url}, None)
+
+        def signed_open(request):
+            seen["signed"] = request
+            return io.BytesIO(b"package-bytes")
+
+        with tempfile.TemporaryDirectory() as directory:
+            destination = Path(directory) / "package.zip"
+            publish.download(
+                {"archive_download_url": api_url},
+                destination,
+                api_opener=RedirectOpener(),
+                signed_open=signed_open,
+                token="github-secret",
+            )
+            self.assertEqual(destination.read_bytes(), b"package-bytes")
+        self.assertEqual(seen["api"].get_header("Authorization"), "Bearer github-secret")
+        self.assertIsNone(seen["signed"].get_header("Authorization"))
+        self.assertEqual(dict(seen["signed"].header_items()), {})
 
     def test_split_rejects_wrong_size_or_digest(self):
         payload = b"native-evidence" * 100
