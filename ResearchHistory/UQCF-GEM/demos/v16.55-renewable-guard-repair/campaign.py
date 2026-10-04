@@ -12,6 +12,7 @@ import resource
 import subprocess
 import sys
 import traceback
+from itertools import zip_longest
 
 HERE=Path(__file__).resolve().parent
 MAX_VERTICES=10000000
@@ -111,7 +112,7 @@ def run_shard(shard,out):
     from universe import generate_cases
     from verifier import reconstruct_cases,verify_universe,verify_record
     from mechanisms import produce,ResourceLimit
-    out=Path(out);out.mkdir(parents=True,exist_ok=True);bind(out)
+    out=Path(out);out.mkdir(parents=True,exist_ok=True);dump(out/"SUMMARY.json",dict(status="INCOMPLETE",reason="initialization or execution not finished",shard=shard));bind(out)
     if not 0<=shard<8:raise ValueError("invalid declared shard")
     producer=ordered_domain(generate_cases);independent=ordered_domain(reconstruct_cases)
     if producer!=independent:raise ValueError("independent identity/full-input reconstruction mismatch")
@@ -119,9 +120,12 @@ def run_shard(shard,out):
     whole_hash=hashlib.sha256((serial([case["identity"] for case in independent])+"\n").encode()).hexdigest()
     identities=Stream(out/"identities.jsonl.gz");records=Stream(out/"records.jsonl.gz")
     summary=dict(status="PASS",shard=shard,shards=8,total=total,start=start,stop=stop,whole_universe_sha256=whole_hash,expected=stop-start,checked=0,serialized_vertices=0,diagnostics={},refusals={},common_degree_greedy_transfers=0,strict_slack_X15S_exercised=False)
+    dump(out/"DOMAIN_FREEZE.json",dict(shard=shard,shards=8,total=total,start=start,stop=stop,whole_universe_sha256=whole_hash,first=independent[start]["identity"],last=independent[stop-1]["identity"]))
+    dump(out/"SUMMARY.json",dict(summary,status="INCOMPLETE",reason="execution not finished"))
     counts=Counter();refusals=Counter();current=None
     try:
         for current in independent[start:stop]:
+            dump(out/"CURRENT_ATTEMPT.json",dict(case=current,ordinal=start+summary["checked"],phase="production-and-independent-verification"))
             record=produce(current);errors=verify_record(current,record)
             count=science_count(record)
             if count>1000000:raise ResourceLimit("serialized per-identity primitive vertices, including metadata/native, exceeded")
@@ -129,12 +133,16 @@ def run_shard(shard,out):
             if summary["serialized_vertices"]>MAX_VERTICES:raise ResourceLimit("whole campaign bound exceeded within shard")
             entry=dict(case=current,record=record)
             records.write(entry);identities.write(current["identity"])
+            records.zipped.flush();identities.zipped.flush()
+            if records.raw.tell()+identities.raw.tell()>MAX_BYTES:raise ResourceLimit("compressed deterministic science bound exceeded within shard")
             if errors:
                 dump(out/"FIRST_FAILURE.json",dict(case=current,record=record,errors=errors));summary["status"]="FAIL";break
             summary["checked"]+=1;counts.update(diagnostic(current,record))
             if record["status"]!="PATH":refusals[record["status"]]+=1
     except ResourceLimit as error:
         summary["status"]="INCOMPLETE";dump(out/"FIRST_FAILURE.json",dict(case=current,reason=str(error)))
+    except MemoryError:
+        summary["status"]="INCOMPLETE";dump(out/"FIRST_FAILURE.json",dict(case=current,reason="approved memory bound exhausted"))
     except Exception as error:
         summary["status"]="FAIL";dump(out/"FIRST_FAILURE.json",dict(case=current,reason=repr(error),traceback=traceback.format_exc()))
     finally:records.close();identities.close()
@@ -142,7 +150,7 @@ def run_shard(shard,out):
     summary["compressed_bytes"]=(out/"records.jsonl.gz").stat().st_size+(out/"identities.jsonl.gz").stat().st_size
     if summary["compressed_bytes"]>MAX_BYTES:summary["status"]="INCOMPLETE"
     dump(out/"SUMMARY.json",summary)
-    manifest={name:digest(out/name) for name in ("records.jsonl.gz","identities.jsonl.gz","SUMMARY.json")}
+    manifest={name:digest(out/name) for name in ("records.jsonl.gz","identities.jsonl.gz","SUMMARY.json","DOMAIN_FREEZE.json")}
     dump(out/"SCIENCE_MANIFEST.json",manifest)
     print(serial(summary),flush=True)
     return 0 if summary["status"]=="PASS" and summary["checked"]==summary["expected"] else 1
@@ -152,21 +160,43 @@ def read_records(directory,name):
         for line in stream:yield json.loads(line)
 
 def aggregate(root,out):
-    from verifier import reconstruct_cases,verify_universe,verify_manifest,verify_diagnostics
+    from verifier import reconstruct_cases,verify_universe,verify_manifest,verify_diagnostics,verify_record,verify_provenance
     if os.environ.get("GITHUB_ACTIONS")!="true":raise RuntimeError("GitHub only")
     resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
     root=Path(root);out=Path(out);out.mkdir(parents=True,exist_ok=True)
     expected=ordered_domain(reconstruct_cases);errors=[];identities=[];counts=Counter();vertices=0;compressed=0;manifests={}
+    head=os.environ["SCIENTIFIC_SHA"];source_expected={}
+    for path in sorted([*HERE.glob("*.py"),*HERE.glob("*.md"),*HERE.glob("*.json"),*HERE.glob("tests/*.py"),*HERE.glob("analytical/*.md")]):
+        if path.name.endswith("REQUEST.json"):continue
+        source_expected[str(path.relative_to(HERE))]=hashlib.sha256(path.read_bytes()).hexdigest()
     for shard in range(8):
         directory=root/f"shard-{shard}";summary=json.loads((directory/"SUMMARY.json").read_text());manifest=json.loads((directory/"SCIENCE_MANIFEST.json").read_text())
+        if set(manifest)!={"records.jsonl.gz","identities.jsonl.gz","SUMMARY.json","DOMAIN_FREEZE.json"}:errors.append("wrong science inventory")
         errors+=verify_manifest({name:(directory/name).read_bytes() for name in manifest},manifest)
+        provenance=json.loads((directory/"PROVENANCE.json").read_text())
+        protocol=json.loads((HERE/"protocol.json").read_text())
+        errors+=verify_provenance(provenance,dict(scientific_sha=head,workflow_sha=os.environ["GITHUB_SHA"],run_id=os.environ["GITHUB_RUN_ID"],attempt=os.environ["GITHUB_RUN_ATTEMPT"],preregistration_sha=os.environ["PREREGISTRATION_SHA"],approved_protocol_sha256=protocol["approved_protocol_sha256"]))
+        source_recorded=json.loads((directory/"SOURCE_MANIFEST.json").read_text())
+        source_files={str(p.relative_to(directory/"source")):p.read_bytes() for p in (directory/"source").rglob("*") if p.is_file()}
+        if source_recorded!=source_expected:errors.append("executing source inventory mismatch")
+        errors+=verify_manifest(source_files,source_expected)
         if summary["status"]!="PASS" or summary["checked"]!=summary["expected"]:errors.append("unfinished shard "+str(shard))
         if (summary["shard"],summary["shards"],summary["total"],summary["start"],summary["stop"])!=(shard,8,len(expected),len(expected)*shard//8,len(expected)*(shard+1)//8):errors.append("wrong interval "+str(shard))
         actual=list(read_records(directory,"identities.jsonl.gz"));errors+=verify_universe([c["identity"] for c in expected[summary["start"]:summary["stop"]]],actual)
         # Input membership is independently reconstructed; equal totals cannot substitute inputs.
-        for entry,case in zip(read_records(directory,"records.jsonl.gz"),expected[summary["start"]:summary["stop"]]):
-            if entry["case"]!=case or entry["record"]["identity"]!=case["identity"]:errors.append("substituted full input")
-        identities.extend(actual);counts.update(summary["diagnostics"]);vertices+=summary["serialized_vertices"];compressed+=summary["compressed_bytes"];manifests[str(shard)]=manifest
+        shardcounts=Counter();shardvertices=0;shardrefusals=Counter();checked=0
+        for entry,case in zip_longest(read_records(directory,"records.jsonl.gz"),expected[summary["start"]:summary["stop"]]):
+            if entry is None or case is None:errors.append("record cardinality mismatch");continue
+            if entry["case"]!=case or entry["record"]["identity"]!=case["identity"]:errors.append("substituted full input");continue
+            errors+=verify_record(case,entry["record"])
+            shardcounts.update(diagnostic(case,entry["record"]));v=science_count(entry["record"]);shardvertices+=v
+            if v>1000000:errors.append("serialized identity resource bound")
+            if entry["record"]["status"]!="PATH":shardrefusals[entry["record"]["status"]]+=1
+            checked+=1
+        shardbytes=(directory/"records.jsonl.gz").stat().st_size+(directory/"identities.jsonl.gz").stat().st_size
+        if checked!=summary["checked"] or dict(shardcounts)!=summary["diagnostics"] or dict(shardrefusals)!=summary["refusals"] or shardvertices!=summary["serialized_vertices"] or shardbytes!=summary["compressed_bytes"]:errors.append("fabricated shard counters")
+        if summary.get("common_degree_greedy_transfers")!=0 or summary.get("strict_slack_X15S_exercised") is not False:errors.append("fabricated strict-slack witness")
+        identities.extend(actual);counts.update(shardcounts);vertices+=shardvertices;compressed+=shardbytes;manifests[str(shard)]=manifest
     errors+=verify_universe([c["identity"] for c in expected],identities)
     missing=verify_diagnostics(counts,REQUIRED)
     if vertices>MAX_VERTICES or compressed>MAX_BYTES:missing.append("whole campaign resource bound")

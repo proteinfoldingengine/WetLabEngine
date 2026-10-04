@@ -179,6 +179,7 @@ def _verify_record(case,record):
             if preliminary!=expected:errors.append("unattached incidence metadata")
             converted,layers=independent_conversion(case,expected)
             if final!=converted or meta["conversion"]!=layers:errors.append("incorrect full-path A reconstruction")
+            if meta["upper_entry"]!=[case["A"],case["C"]]:errors.append("missing actual exact incidence entries")
     if method in ("X32","X33"):
         errors+=verify_handover(case,meta)
         mandatory=("cover","upper_entry","assignment","handover","permutation","preparation","conversion")+( ("placement",) if method=="X32" else ("covers",))
@@ -189,6 +190,9 @@ def _verify_record(case,record):
             converted,layers=independent_conversion(case,middle)
             expectedFinal=concatenate(prep["source"],converted,reverseM,reverseC)
             if preliminary!=expected or final!=expectedFinal or meta["conversion"]!=layers:errors.append("unattached handover/A/M reconstruction")
+            cert=meta["handover"]
+            if meta["upper_entry"]!=[case["A"],case["C"],cert["source"],cert["destination"],cert["placed"]]:errors.append("missing actual exact handover entries")
+            if method=="X33" and meta["covers"]!=[dict(vertex=case["A"],H=list(cover(k,case["A"]))),dict(vertex=case["C"],H=list(cover(k,case["C"])) )]:errors.append("missing actual endpoint compaction covers")
     if case["method"]=="NATIVE":
         errors+=verify_nested(case,record.get("nested",{}))
         if record.get("nested")!=independent_lift(case,final):errors.append("native path differs from prescribed parent/clearance lift")
@@ -278,6 +282,11 @@ def verify_handover(case,meta):
             for root,floor in zip(original,floors):
                 expected.append(list(next(subset for subset in combinations(root,floor) if H.intersection(subset))))
             if leg[-1]!=expected:errors.append("nonlex cover-retaining compaction")
+            sequence=[original];now=list(sets(original))
+            for slot,root in enumerate(expected):
+                for label in sorted(now[slot]-frozenset(root)):
+                    now[slot]=now[slot]-{label};sequence.append([sorted(row) for row in now])
+            if leg!=sequence:errors.append("noncanonical exact preparation primitives")
     permutation=meta.get("permutation",{});mvertices=permutation.get("vertices",[])
     errors+=verify_path(case,mvertices,3,4)
     if not mvertices or mvertices[0]!=C or mvertices[-1]!=placed:errors.append("wrong full permutation endpoints")
@@ -323,6 +332,19 @@ def verify_handover(case,meta):
         for slot,token in zip(slots,tokens):expectedAssignment[slot]=token
         for slot,token in zip([i for i in group if i not in slots],[i for i in group if i not in tokens]):expectedAssignment[slot]=token
     if assignment!=expectedAssignment:errors.append("nonlex/incomplete full token assignment")
+    # Full token permutation M, including zero-incidence swaps of equal tokens.
+    permutationStates=[C];permutationEvents=[];tokens=list(range(len(floors)));now=list(sets(C))
+    for slot,token in enumerate(expectedAssignment):
+        if tokens[slot]==token:continue
+        other=tokens.index(token);start=len(permutationStates)-1;a,b=now[slot],now[other]
+        for i,target in ((slot,a|b),(other,a|b),(slot,b),(other,a)):
+            for adding in (True,False):
+                changed=sorted(target-now[i] if adding else now[i]-target)
+                for x in changed:
+                    now[i]=now[i]|{x} if adding else now[i]-{x};permutationStates.append([sorted(row) for row in now])
+        tokens[slot],tokens[other]=tokens[other],tokens[slot]
+        permutationEvents.append(dict(i=slot,j=other,start=start,end=len(permutationStates)-1))
+    if mvertices!=permutationStates or permutation.get("swaps")!=permutationEvents:errors.append("unaccounted/noncanonical saved permutation macros")
     phasepath=cert["vertices"]
     errors+=verify_path(case,phasepath,3,None)
     if phasepath[0]!=A or phasepath[-1]!=placed:errors.append("wrong handover endpoint")
