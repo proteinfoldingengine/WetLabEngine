@@ -4,6 +4,22 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X39 — derived reserve-free renewal for arbitrary ownership cycles
+
+Scope 87009d0a9bb4ed3b07e2308a5444a1749e0cde24; exact candidate d8f53c74cadd092df731c8c3b3ef19b51e9bba2c; proof blob c822f57babdcd2782ed8259f740d839c864e6f2b. Source A11_X39_DENSE_MASK_CYCLE_RENEWAL.md; fresh attributable whole review INDEPENDENT_A11_X39_WHOLE_REVIEW.md; closeout A11_X39_CLOSEOUT.md.
+
+On SAME supplied nonempty group partitions with equal corresponding sizes, each ORIGINAL actual root is a union of a fixed mask of width>=m-3, m>=4. Exact FOUR forces an ACTUAL complementary mask for EVERY triple of group indices, deriving r>=C(m,3), at leastm-2 actual witnesses for every group pair, and ANYfour-index minimum cover. Original floors may be arbitrary positive values up to N_i, including complete saturation; extra original roots/multiplicities of qualifying width remain permitted.
+
+For ANY actual simple ownership cycle lengthl<=m, ordinary/adjacent pair footprints use<=3roles and have common actual witnesses. Only pairs of selected labels on disjoint cycle edges need transfer: d_l=l(l-3)/2 for l>=4, zero for2/3. Their old/new actual witness sets have >=m-2 roots each. The inherited X34 conditional mean is <=d_l/C(2m-4,m-2)<1 for ALLm>=4. Finite conditional averaging supplies a next root and a complete safe per-cycle actual witness handover, including every partial native edit. Each same-slot root expands to its local union before contracting, preserving its ORIGINAL floor even when replacement incidences already exist through shared roles.
+
+A derived common FOUR-label cover of BOTH cycle endpoints hits every changing root; no maximum-layer conversion is needed. Balanced residual ownership always supplies another simple cycle; the strict bound holds for ANY length, so no short-cycle graph condition is required. Each complete cycle restores all group/root sizes and actual witness multiplicities; incorrect labels strictly decrease; full original labelled/noncompact destination restoration is proved. Every original differing incidence toggles ONCE/commonfixed, giving mathematicalsum_i|A_i symmetric_difference C_i|, not an executed speed benchmark.
+
+Infinite structural control ALLm>=5,t>=1: existing diagonal/forward-cycle t-label cells, k2mt, rC(m,3), actualN2t(m-3), saturatedN orunequalN/N-1 ORIGINAL floors. No short ownership cycle exists; all actual roots change; four disjoint floor-safe roots cannot fit anywhere. Whole cycle/original endpoint union has exacttau2, yet witnessed individual-root handovers complete repair. At t>=2 after FIRSTcycle ALLoriginalroots differ from BOTHoriginalends while everyN is restored; t-1longcycles remain eligible and tcycles reach exactC. No claim excludes EVERY whole-original-root order or contracted auxiliary guards.
+
+This removes X37's reserve and X38's short-cycle restriction WITHIN the supplied dense-mask class; their wider sparse-template classes remain valid. All endpoints were ALREADY L symmetry-connected. The advance is derived event-unique reserve-free completion/renewal, not new connectivity, universal implementation coverage or established literature originality.
+
+Next: sparser actual masks without reserve, unequal group sizes, or deriving appropriate representations/accessibility from arbitrary exact-four endpoints. Preserve stronger compatible-grade work, all previous controls and general mixed/directed/higher-target/nested OPEN obligations. v16.55/v16.54/frozen sources/original evidence unchanged. Separate efficiency implementation/fixture/benchmark remains unstarted and independently scoped. No numerical execution, workflow, code, benchmark, integration merge or numbered certification.
+
 ## A11.X38 — reserve-free repeated triangle-cycle handovers
 
 Scope a89a6b4a24727f83c367e73748dec03a9a1312e3; exact candidate 90f22b4d506139a7bca7a801d2c02739fc658a5b; proof blob abb8304dd3c76356ada9ab5d92b2aae516bdc5a3. Source A11_X38_TRIANGLE_CYCLE_RENEWAL.md; fresh attributable whole review INDEPENDENT_A11_X38_WHOLE_REVIEW.md; closeout A11_X38_CLOSEOUT.md.
