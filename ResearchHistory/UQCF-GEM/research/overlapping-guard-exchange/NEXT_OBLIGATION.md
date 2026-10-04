@@ -1,4 +1,4 @@
-# Next after A11.X27 — shared witness constraints and reusable handovers
+# Next after A11.X28 — relaxing forced protection and coupled renewal
 
 ## Completed analytical mechanisms
 
@@ -18,9 +18,11 @@ On seven labels with ell<=6, actual triple capacity forces r>=35-3ell and f>=11.
 
 X27 derives strict parity bounds from ACTUAL shared triple-witness multiplicities. Tight ell7 profiles with r14/15 force a low three-guard, which installs a disjoint replacement high guard before old protection changes. The new fourteen-root hub uses eight small tokens. Together with X26, EVERY feasible seven-label mixed3/4 carrier with ell<=8 is solved, with full original labelled/noncompact restoration. Ell<=7 feasibility is iff r>=35-3ell; ell8 iff r>=14. No spare capacity or independent witness systems are assumed.
 
+X28 generalizes zero-excess parity to ODD palettes with original floors k-4/k-3 and integer counts4ell+f=C(k,3),3f=C(k,2). Every exact endpoint has ACTUAL guards in BOTH original grades. A direct source-HIGH/destination-LOW handover completes full exact endpoint repair without canonical hub access. The self-contained k9 ell18/f12 floors5/6 construction supplies a feasible control; existence for other qualifying k is not claimed.
+
 ## Remaining structural direction
 
-Derive stronger actual guard constraints or genuinely reusable coupled handovers where too few capable slots hold the small guard tokens, or where the small exact module does not fit the available original slots. Source degree alone is insufficient if it counts the wrong original floor grades. Actual shared incidences, weighted completion and full compatible pools must account for the SAME capacities and ALL forbidden pairs.
+Relax the X28 exact saturation/balance hypotheses through stronger actual shared-multiplicity bounds, or derive genuinely reusable coupled handovers where too few capable slots hold the small guard tokens, or where the small exact module does not fit the available original slots. Source degree alone is insufficient if it counts the wrong original floor grades. Actual shared incidences, weighted completion and full compatible pools must account for the SAME capacities and ALL forbidden pairs.
 
 Any unresolved mixed3/4 carrier is on k7..10 outside ALL accepted sufficient classes. k<=6 is already X17; k>=11 and r6 are solved, and k8..10,r>=14 are now solved. For k8, X24 additionally excludes r<=9 from unresolved connectivity. X27 excludes ALL seven-label ell<=8 carriers; X25 excludes its new seven-label capable-slot classes; X23's ell>=10,r>=13 and allr>=35 remain accepted. Restricted incidence reserves impose further necessary residual restrictions. These bounds are NOT a checklist of isolated campaigns or a claim every remaining tuple is feasible. Do not infer disconnection from a failed grade/base/pool test.
 
