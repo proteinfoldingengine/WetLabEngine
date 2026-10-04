@@ -7,7 +7,7 @@
   "run_attempt": 1,
   "scientific_sha": "3183c29896ebb47c320fa46a67ca2dd0696702fc",
   "workflow_sha": "3183c29896ebb47c320fa46a67ca2dd0696702fc",
-  "last_verified_event": "PR103 verified two-parent merge and independent structural acceptance; actual-merge controls66 PASS; six primary shards PASS (2822/3763), full replay still active",
+  "last_verified_event": "PR103 verified two-parent merge and independent structural acceptance; actual-merge controls66 PASS; seven primary shards PASS (3293/3763), full replay still active",
   "current_blocker": "Actual-merge full primary/reproduction/inherited replay, three full audits, durable original reconstruction and final independent whole-evidence acceptance are incomplete",
   "next_authorized_transition": "Finish approved actual-merge run37211847122 without duplicate launch; independently reconstruct durable originals, review exact complete evidence, then publish bounded numbered certification only if every gate passes",
   "review_gate": "ACCEPTED_EXACT_SOURCE_FRESH_WHOLE_ARGUMENT_A11_X33",
@@ -671,16 +671,16 @@
   "a11_x22_whole_argument_review_fresh": true,
   "a11_x22_new_external_mathematical_dependency": false,
   "requested_numbered_stage": "v16.55",
-  "v16_55_status": "OPEN_CONCRETE_PROSPECTIVE_R1_R5_PROTOCOL_APPROVAL_PENDING_EXECUTION_AND_ACTUAL_MERGE_AUDIT_UNSATISFIED",
-  "v16_55_active_run_id": null,
+  "v16_55_status": "OPEN_ACTUAL_MERGE_REPLAY_IN_PROGRESS_CERTIFICATION_PENDING",
+  "v16_55_active_run_id": 37211847122,
   "v16_55_missing_gates": [
-    "Approved prospective implementation/numerical scope",
-    "Algorithmically independent production and full-domain reconstruction",
-    "Substantive rejecting controls with RED evidence",
-    "Full inherited GitHub execution and exact log inspection",
-    "Reproduced durable scientific bytes and verified manifests",
-    "Independent exact merge-head closeout",
-    "Actual certified-branch merge and post-merge replay/audit"
+    "Complete current actual-merge primary R1–R5 domains",
+    "Complete fresh current actual-merge deterministic reproduction",
+    "Complete current inherited replay and exact log/baseline audit",
+    "Three full current independent component audits and durable join",
+    "Independent immutable reconstruction of all27current originals",
+    "Fresh exact whole-evidence/argument actual-merge review",
+    "Final bounded numbered certification/closeout publication"
   ],
   "a11_x23_scope_sha": "9e1d1e4797e1cf7155b1e1866c0e71039516f7c6",
   "a11_x23_scientific_sha": "024321372981671c5907526d92dba0caa1aaa447",
@@ -855,9 +855,10 @@
       2,
       3,
       4,
+      5,
       7
     ],
-    "completed_primary_identities": 2822,
+    "completed_primary_identities": 3293,
     "total_identities": 3763,
     "original_run_id": 37180275767,
     "original_terminal": "CANCELLED_INCOMPLETE_AGGREGATE_TIMEOUT",
@@ -879,6 +880,23 @@
       "numbered_closeout"
     ],
     "no_new_numerical_scope": true,
-    "v16_54_preserved": true
+    "v16_54_preserved": true,
+    "observed_at_utc": "2026-10-04T15:32:25Z",
+    "checked_deterministic_scientific_files": 28
+  },
+  "historical_proposal_status_at_c44891cbe855d6ae74b98caa39f1a4a38d680e13": {
+    "v16_55_status": "OPEN_CONCRETE_PROSPECTIVE_R1_R5_PROTOCOL_APPROVAL_PENDING_EXECUTION_AND_ACTUAL_MERGE_AUDIT_UNSATISFIED",
+    "v16_55_active_run_id": null,
+    "v16_55_missing_gates": [
+      "Approved prospective implementation/numerical scope",
+      "Algorithmically independent production and full-domain reconstruction",
+      "Substantive rejecting controls with RED evidence",
+      "Full inherited GitHub execution and exact log inspection",
+      "Reproduced durable scientific bytes and verified manifests",
+      "Independent exact merge-head closeout",
+      "Actual certified-branch merge and post-merge replay/audit"
+    ],
+    "v16_55_protocol_user_approval": "PENDING_NO_EXECUTION_AUTHORIZED_BY_PROPOSAL",
+    "implementation_status": "NOT_STARTED_NOT_AUTHORIZED_FOR_THIS_EXTENSION"
   }
 }
