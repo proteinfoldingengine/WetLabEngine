@@ -8,15 +8,66 @@ on:
   workflow_dispatch:
 permissions: {contents: read, actions: read}
 concurrency: {group: v1655-publication-recovery, cancel-in-progress: false}
+env:
+  REQUEST: ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/RECOVERY_REQUEST.json
 jobs:
   controls:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
+    outputs:
+      recovery: ${{ steps.route.outputs.recovery }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with: {fetch-depth: 0}
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with: {python-version: '3.11'}
+      - id: route
+        run: |
+          changed=$(git diff --name-only "${GITHUB_SHA}^" "${GITHUB_SHA}")
+          if [ "$changed" = "$REQUEST" ]; then echo 'recovery=true' >> "$GITHUB_OUTPUT"; else echo 'recovery=false' >> "$GITHUB_OUTPUT"; fi
       - name: Recovery adapter controls
         run: python -m unittest discover -s .github/scripts/tests -p 'test_v1655_recovery_audit.py' -v
-
+  audit:
+    needs: controls
+    if: needs.controls.outputs.recovery == 'true'
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: {component: [primary, reproduction, inherited, partial]}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env: {GH_TOKEN: '${{ github.token }}'}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0}
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 60c48b818366354d26366af35726788553865455
+          fetch-depth: 0
+          path: original
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python .github/scripts/v1655_recovery_audit.py "${{ matrix.component }}" "$REQUEST" original "out/${{ matrix.component }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1655-recovery-${{ matrix.component }}-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: out/${{ matrix.component }}
+          if-no-files-found: error
+  package:
+    needs: audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env: {GH_TOKEN: '${{ github.token }}'}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - run: python .github/scripts/v1655_recovery_audit.py package "$REQUEST" . out/package
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1655-recovery-package-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: out/package
+          if-no-files-found: error
