@@ -1,0 +1,56 @@
+name: v16.55 renewable guard controls
+on:
+  push:
+    branches: [research/v16.55-renewable-guard-repair]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/CONTROL_REQUEST.json'
+      - 'ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/RECOVERY_CONTROL_REQUEST.json'
+  workflow_dispatch:
+permissions: {contents: read}
+concurrency: {group: v1655-controls, cancel-in-progress: false}
+jobs:
+  controls:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - name: Bind request and run controls
+        run: |
+          mkdir -p out/controls
+          python - <<'PY'
+          import json,os,subprocess
+          from pathlib import Path
+          b=Path('ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair')
+          head=os.environ['GITHUB_SHA']
+          changed=subprocess.check_output(['git','diff','--name-only',head+'^',head],text=True).splitlines()
+          recovery=str(b/'RECOVERY_CONTROL_REQUEST.json')
+          if changed==[recovery]:
+              r=json.loads((b/'RECOVERY_CONTROL_REQUEST.json').read_text())
+              assert r['audited_run_id']==37180275767
+              assert r['audited_sha']=='60c48b818366354d26366af35726788553865455'
+              assert subprocess.check_output(['git','show','-s','--format=%P',head],text=True).strip()==r['scientific_parent_sha']
+              command=['python','-m','unittest','discover','-s','.github/scripts/tests','-p','test_v1655*.py','-v']
+          else:
+              r=json.loads((b/'CONTROL_REQUEST.json').read_text())
+              assert subprocess.check_output(['git','show','-s','--format=%P',head],text=True).strip()==r['scientific_parent_sha']
+              assert changed==[str(b/'CONTROL_REQUEST.json')]
+              subprocess.run(['git','merge-base','--is-ancestor',r['preregistration_sha'],head],check=True)
+              command=['python','-m','unittest','discover','-s',str(b/'tests'),'-v']
+          Path('out/controls/PROVENANCE.json').write_text(json.dumps({'workflow_sha':head,'scientific_sha':head,'request':r,'run_id':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT']},sort_keys=True)+'\n')
+          p=subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
+          Path('out/controls/tests.log').write_text(p.stdout);print(p.stdout)
+          if changed==[recovery]:
+              scientific=subprocess.run(['python','-m','unittest','discover','-s',str(b/'tests'),'-v'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
+              Path('out/controls/scientific-tests.log').write_text(scientific.stdout);print(scientific.stdout)
+              raise SystemExit(p.returncode or scientific.returncode)
+          raise SystemExit(p.returncode)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1655-controls-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: out/controls
+          if-no-files-found: error

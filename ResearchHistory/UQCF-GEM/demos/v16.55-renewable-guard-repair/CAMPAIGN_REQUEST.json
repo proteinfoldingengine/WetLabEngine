@@ -1,0 +1,12 @@
+{
+  "scientific_parent_sha": "adfbecf7459f2a002c6e3c253413b6fdfad537fb",
+  "preregistration_sha": "891470cfc817f26d9721f96278b2c0f8652c3fdf",
+  "scope": "all",
+  "mode": "campaign",
+  "partition": {
+    "shards": 8,
+    "order": "canonical compact JSON identity",
+    "interval": "[floor(N*s/8),floor(N*(s+1)/8))"
+  },
+  "source_review": "independent /root/v1655_implementation_review accepted exact adfbecf source for complete bounded execution; certification pending"
+}

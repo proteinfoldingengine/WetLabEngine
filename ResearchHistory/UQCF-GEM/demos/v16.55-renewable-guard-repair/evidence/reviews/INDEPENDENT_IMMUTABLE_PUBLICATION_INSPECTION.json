@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "method": "Independent Git tree/JSON readback; SHA1 Git blob identities and SHA256 derived from previously external-digest-verified original ZIP bytes; all reference edges validated from actual existing ZIP member bytes, no scientific execution",
+  "commit": "bbdbf6138b60e51e0f229951280b01455d2a4c09",
+  "files": 98,
+  "parts": 37,
+  "originals": 28,
+  "original_bytes": 301804233,
+  "metadata": 25,
+  "component_statistics": {
+    "RETAINED_METADATA": {
+      "count": 22,
+      "bytes": 188702
+    },
+    "ARCHIVE_REFERENCE": {
+      "count": 28,
+      "bytes": 301804233
+    },
+    "MEMBER_REFERENCE": {
+      "count": 2217,
+      "bytes": 583060369
+    }
+  },
+  "package_statistics": {
+    "RETAINED_METADATA": {
+      "count": 3,
+      "bytes": 362414
+    },
+    "SUPERSEDED_COMPONENT_WRAPPER": {
+      "count": 4,
+      "bytes": 603564564
+    },
+    "MEMBER_REFERENCE": {
+      "count": 2267,
+      "bytes": 885053304
+    }
+  },
+  "package_manifest_members": 2272,
+  "acyclic_resolution": "package -> component -> original archive/member or retained metadata; no upward/reference cycles"
+}

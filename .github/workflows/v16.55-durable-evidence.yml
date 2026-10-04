@@ -1,0 +1,59 @@
+name: v16.55 durable recovery evidence
+on:
+  push:
+    branches: [research/v16.55-renewable-guard-repair]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/DURABLE_PUBLICATION_REQUEST.json'
+permissions: {contents: write, actions: read}
+concurrency: {group: v1655-durable-evidence, cancel-in-progress: false}
+jobs:
+  preserve:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env: {GH_TOKEN: '${{ github.token }}'}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - name: Verify request and construct deduplicated evidence publication
+        run: |
+          python - <<'PY'
+          import json,os,subprocess,sys
+          from pathlib import Path
+          base=Path('ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair')
+          request=json.loads((base/'DURABLE_PUBLICATION_REQUEST.json').read_text())
+          head=os.environ['GITHUB_SHA'];parent=request['source_parent']
+          assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==head==os.environ['GITHUB_WORKFLOW_SHA']
+          assert subprocess.check_output(['git','show','-s','--format=%P',head],text=True).strip()==parent
+          assert subprocess.check_output(['git','diff','--name-only',parent,head],text=True).splitlines()==[str(base/'DURABLE_PUBLICATION_REQUEST.json')]
+          subprocess.run([sys.executable,'.github/scripts/v1655_durable_publish.py',str(base/'DURABLE_PUBLICATION_REQUEST.json'),'out/preserve'],check=True)
+          PY
+      - name: Commit only verified evidence to a fresh isolated branch
+        run: |
+          python - <<'PY'
+          import json,os,re,subprocess
+          from pathlib import Path
+          run=os.environ['GITHUB_RUN_ID'];attempt=os.environ['GITHUB_RUN_ATTEMPT']
+          assert re.fullmatch('[0-9]+',run) and re.fullmatch('[0-9]+',attempt)
+          branch='research/v16.55-evidence-'+run+'-'+attempt
+          destination=Path('out/preserve/DESTINATION.txt').read_text().strip()
+          assert re.fullmatch(r'ResearchHistory/UQCF-GEM/demos/v16\.55-renewable-guard-repair/evidence/recovery/run-37196753029-attempt-1',destination)
+          subprocess.run(['git','checkout','-b',branch],check=True)
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          subprocess.run(['git','add','--',destination],check=True)
+          changed=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
+          assert changed and all(path.startswith(destination+'/') for path in changed)
+          subprocess.run(['git','commit','-m','evidence(v16.55): preserve unique originals and verified manifests'],check=True)
+          sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          subprocess.run(['git','push','--force-with-lease=refs/heads/'+branch+':','origin','HEAD:refs/heads/'+branch],check=True)
+          receipt=Path('out/preserve/receipt/PUBLISHED_COMMIT.json')
+          receipt.write_text(json.dumps({'branch':branch,'commit':sha,'source_parent':os.environ['GITHUB_SHA'],'destination':destination,'files':len(changed)},sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1655-durable-evidence-receipt-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: out/preserve/receipt
+          if-no-files-found: error

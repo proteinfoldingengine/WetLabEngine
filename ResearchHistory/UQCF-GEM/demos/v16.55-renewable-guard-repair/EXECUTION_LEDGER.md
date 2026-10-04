@@ -1,0 +1,43 @@
+# Implementation ledger — v16.55 approved prospective protocol
+
+Plan:PROSPECTIVE_EXECUTION_PROTOCOL.md, approved atc44891cbe855d6ae74b98caa39f1a4a38d680e13.
+Integrated parent:466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f.
+User approval:"Approved",2026-10-03T21:43:28-07:00.
+Current state: approved implementation in progress; all scientific tests run on GitHub.
+
+Preregistration commit: 891470cfc817f26d9721f96278b2c0f8652c3fdf.
+Initial RED run: 37178082160, request 0dafac26f7e16ed328927cb2e037527dc5d7127a, 23 expected missing-implementation failures. Original archive 11294205441 SHA256 baaf54856843ed74b971b7255c1e741e556afdef42429c3f709dbc55f0558717 was downloaded and its digest and provenance inspected.
+Initial implementation source: 339d358cf38c5b55eee4a3635dd7fb183d6349fe. Controls run 37178704624 passed all 23 initial tests; this did not constitute whole-source acceptance.
+Fresh intermediate review: INDEPENDENT_INITIAL_IMPLEMENTATION_REVIEW.md, CHANGES REQUIRED for mechanism lineage, mandatory metadata, actual event potentials, native projection and resource accounting.
+Lineage RED run: 37178875452, request 1be4af2a27d930ac434d5845e9426db183f5ad54, 26 tests with three genuine missing-gate failures (cycle coverage, mandatory assignment, clearance lineage). Original artifact11294296420 digest77f00ea3c6ec27db61ed695f9836a382ce4d69579e6b3d6a38658b476bf435af.
+Expanded actual-potential RED run:37178982021, request bdef5d3ffd27389bcc342d071e77bb4a1027bb55, retained before publishing the strengthened verifier.
+This run completed with27 tests and four genuine gate failures. The tightened source2fabb2388224acb2df71f1986992d3b498aacdbb then passed27 controls in run37179228090, requestd9af340ee0bbbefa5bdf7f69db3eb1887dbeb8c4.
+Final intermediate-review RED run37179347625, request519829efb9e30ebef5cc258e2a46372ac32f72ad:29 tests, two expected failures for omitted saved-permutation events and missing actual endpoint covers. The nested-budget control now isolates a genuine second defect unit while keeping all other primitive/nesting/floor/end conditions legal.
+The following source revision independently reconstructs deterministic compaction and every full token swap, requires the exact supplied-cover/entry lists, and independently re-verifies complete aggregate record streams and all counters/source/provenance.
+Complete29-control GREEN run37179756622, requestb1b26bfc7b7fa7ac2242cc38319865bfc8e5d1e8, source7cdc63e14ab37306c94659352c1946bd80c1cbb2:29 tests,0 failures/errors/skips. All seven historical original control archives were downloaded, external SHA256 digests matched GitHub, and internal source/prereg/run provenance and terminal test logs were inspected; complete archives are retained undercontrol-evidence/.
+Independent complete-source review of7cdc required orchestration fixes. Corrected source grants actions:read, includes/audits full-controls archive, checks inherited development's exact frozen source and complete GREEN logs, requires an exact/nonempty reviewed actual-merge inventory, binds all four prospective prerequisites plus15 accepted proof/review copies to preregistration Git bytes, and independently reconstructs full DOMAIN_FREEZE metadata/resource accounting. Frozen inherited sources remain unchanged. Source review and full campaign evidence gates remain open pending actual results.
+
+Inherited transport ruling: frozen v16.53 integrity requires actual scientific checkout=GITHUB_SHA=GITHUB_WORKFLOW_SHA. Therefore primary/reproduction science executes at the request event SHA (sole changed file is its request), with the exact source-parent SHA separately bound; actual-merge replay executes on the actual two-parent integration merge event itself. No environment SHA is rewritten and no frozen integrity check is weakened. Complete workflow is branch/path scoped, preserving the certified branch until reviewed integration.
+
+Ruling frozen before complete execution: R1 has S=3k and no strict-slack common-degree greedy transfer. Its required greedy diagnostic means actual protected leveling vacancy transfers, reported as leveling_greedy_vacancy_transfers. common_degree_greedy_transfers=0 and strict_slack_X15S_exercised=false remain explicit. Independent intermediate review accepts this reading; if final review requires the impossible strict-slack category, report INCOMPLETE rather than change the domain or fabricate a witness.
+
+Complete campaign partition frozen before execution: canonical JSON identity order over ALL R1-R5 identities; shard s in0..7 is the contiguous ordinal interval [floor(N*s/8),floor(N*(s+1)/8)). Both independent full-input builders reconstruct N and the exact interval membership; no family or refused input is filtered. Required mechanism categories are checked globally after all eight complete intervals. No local scientific command has run.
+
+Preflight interfaces: independent producer/verifier identity builders must agree exactly; serialized supports are increasing integer arrays; all paths contain full labelled tuples; native integration uses child-star interface with only final PARENT destination imposed; deterministic science excludes run-specific provenance only.
+
+Ruling: use the existing API-backed isolated branch and local source mirror instead of git worktree scripts — approved protocol restricts local activity to edits/reads/hashes/artifact inspection and all scientific commands to GitHub. Cost if wrong: branch/mirror reconciliation, not scientific domain alteration.
+
+Ruling: preserve approved protocol's historical APPROVAL_PENDING text and add the explicit subsequent approval receipt — avoids rewriting frozen approved bytes. Cost if wrong: provenance ambiguity; receipt binds exact commit/blob/hash.
+
+Tasks: freeze approval/protocol/source inventory; RED tests; independent producer/verifier implementation and GREEN controls; full R1-R5 and inherited execution; exact full-source review; fresh reproduction and durable original-archive audit; verified-head integration; actual-merge replay and independent closeout. No task is marked complete on planned evidence.
+
+
+## Recovery publication and actual-merge scheduling repair — 2026-10-04 UTC
+
+Original campaign37180275767 at60c48b818366354d26366af35726788553865455 remains cancelled/INCOMPLETE because its monolithic publication timed out. Successful partitioned recovery37196753029 at a75c82f31c5547bf20feb75960fbedf2f7e5c0a6 independently audited all3763new identities, exact primary/reproduction science,83inherited controls/77certified hashes and the complete inherited stack; it did not rerun science. Attributable whole-evidence review is preserved under evidence/reviews.
+
+Deduplicated publication37207960846 at abb27dcacfe8721a49a7a9742b37eebc2f3a0efc succeeded. Its evidence commit bbdbf6138b60e51e0f229951280b01455d2a4c09 has exactly98files,37parts reconstructing all28original ZIPs/301804233bytes,25retained metadata roots and complete acyclic component/package maps. Independent immutable readback accepted publication only, using actual original-byte-derived Git object identities, not uploader PASS. Avoided905215086recursive-wrapper bytes; existing Git history and original evidence remain untouched. Failed publication37207229521 remains FAILURE; its classification/correction review is preserved. Feature fast-forward and a5666c1ccce747aca10fb60540983236ecb38bfd publish the attributable reviews without changing science.
+
+Mechanical current-context controls:37208757027 at2c549457e34af2e64085c26c4d7581c7ac43f757 showed five expected missing-validator failures, but a stale local test mirror had omitted the11existing packaging controls. That partial14-test run is not a complete-suite claim. The full original20tests/imports were restored exactly before implementation; complete RED37208935149 at77653d570a15945d79a2bcccde8752c4aac5ab12 ran25tests,20passed/five expected failures. Corrected current context0e3e29da2071a46331bcf45a954213400225feee and GREEN37208976928 at3623c17d00ff8e507bfa277b6deb3621fe9fd087 ran all25successfully, no failures/errors/skips. Artifact11305893343:1381bytes/SHA256d7164399cf2a100386896a9e0387be228de070aa090757af5edf326b95ad1ee9. No failed run is relabelled.
+
+Split/join/source-closure tests are prospective rejecting controls for mechanical actual-merge completion, not a new numerical domain. Workflow now preserves complete mechanical and scientific suites and binds the sole request parent. Pending: exact split implementation/source review; full reviewed merge contract; verified-head two-parent merge; fresh actual-merge R1–R5/reproduction/inherited replay; durable replay publication and fresh independent whole-evidence/actual-merge review. v16.55 OPEN. Certified v16.54 remains unchanged.
