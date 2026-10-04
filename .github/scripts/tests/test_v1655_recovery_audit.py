@@ -9,6 +9,7 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 audit = importlib.import_module("v1655_recovery_audit")
+publish = importlib.import_module("v1655_durable_publish")
 
 
 class RecoveryContextTests(unittest.TestCase):
@@ -146,6 +147,63 @@ class EvidenceContractTests(unittest.TestCase):
             audit.validate_inherited_baseline(expected_ids, expected_ids[:-1], expected_hashes, dict(expected_hashes))
         with self.assertRaises(ValueError):
             audit.validate_inherited_baseline(expected_ids, list(expected_ids), expected_hashes, {**expected_hashes, "extra": "0" * 64})
+
+
+class DurablePublicationTests(unittest.TestCase):
+    def setUp(self):
+        self.request = {
+            "recovery_run_id": 37196753029,
+            "recovery_attempt": 1,
+            "recovery_sha": "a75c82f31c5547bf20feb75960fbedf2f7e5c0a6",
+            "package_artifact_id": 11301883937,
+            "package_artifact_bytes": 1207019319,
+            "package_artifact_digest": "sha256:ca76f0dbc839c3899f0162cf7475c06f69ef8c7f7e22b11ebc1e6199606b0bbe",
+            "audited_run_id": 37180275767,
+            "audited_sha": "60c48b818366354d26366af35726788553865455",
+            "audited_attempt": 1,
+        }
+
+    def test_exact_package_tuple_is_required(self):
+        self.assertEqual(publish.validate_request(self.request), self.request)
+        for key, value in (
+            ("recovery_run_id", 0),
+            ("recovery_sha", "0" * 40),
+            ("package_artifact_id", 0),
+            ("package_artifact_bytes", 1),
+            ("package_artifact_digest", "sha256:" + "0" * 64),
+            ("audited_run_id", 0),
+        ):
+            bad = dict(self.request)
+            bad[key] = value
+            with self.assertRaises(ValueError):
+                publish.validate_request(bad)
+
+    def test_split_parts_reconstruct_exact_bytes_and_digest(self):
+        payload = bytes(range(251)) * 41
+        expected = publish.sha256_bytes(payload)
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "package.zip"
+            destination = Path(directory) / "parts"
+            source.write_bytes(payload)
+            manifest = publish.split_archive(source, destination, len(payload), expected, part_bytes=1024)
+            self.assertEqual(manifest["bytes"], len(payload))
+            self.assertEqual(manifest["sha256"], expected)
+            self.assertGreater(len(manifest["parts"]), 1)
+            self.assertEqual(publish.verify_parts(destination), (len(payload), expected))
+            (destination / manifest["parts"][0]["name"]).write_bytes(b"corrupt")
+            with self.assertRaises(ValueError):
+                publish.verify_parts(destination)
+
+    def test_split_rejects_wrong_size_or_digest(self):
+        payload = b"native-evidence" * 100
+        expected = publish.sha256_bytes(payload)
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "package.zip"
+            source.write_bytes(payload)
+            with self.assertRaises(ValueError):
+                publish.split_archive(source, Path(directory) / "size", len(payload) + 1, expected, part_bytes=100)
+            with self.assertRaises(ValueError):
+                publish.split_archive(source, Path(directory) / "digest", len(payload), "0" * 64, part_bytes=100)
 
 
 if __name__ == "__main__":
