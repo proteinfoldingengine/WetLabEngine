@@ -4,6 +4,24 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X40 — sparse actual-witness renewal beyond the complete pattern
+
+Scope 94b2d3b689a9dd5a717608ba0579518fab9542a0; candidate 79701f3a9ea5826a79b2fa83525d99cf01d7f4d6; proof blob c3de07704e3c3faa9b77ab72df1d8445bf41094c. Source A11_X40_SPARSE_WITNESS_RENEWAL.md; fresh attributable INDEPENDENT_A11_X40_WHOLE_REVIEW.md; closeout A11_X40_CLOSEOUT.md.
+
+Arbitrary supplied SAME nonempty masks of template transversal4, equal positive group cardinalities, and SAME ORIGINAL positive floors a_i<=N_i. NO dense-width/co-triple premise or floor reserve. Exact consistency forces at least TWO ACTUAL witnesses for every group-index pair. More generally actual redundancyrho with C(2rho,rho)>m(m-3)/2 guarantees complete renewed lower repair: only at most l(l-3)/2 disjoint selected-edge palette pairs can lack common witnesses in one ownership cycle; all others retain ACTUAL common roots. Inherited X34 conditional averaging derives next roots/primitives and actual shared-witness handovers at saturated floors.
+
+Balanced residual ownership supplies ANY simple cycle, the same strict bound renews after each complete exchange, incorrect labels strictly decrease and FULL original labelled/noncompact destination is restored. Preliminary lower path toggles each endpoint differing incidence ONCE/commonfixed. X40B invokes A only AFTER the complete original-ended lower path; converted3/4 retains exact outer endpoints/floors but NOT necessarily eventminimum/schedule/internalwaypoints.
+
+X40U separately obtains DIRECT3/4 and the incidence minimum when a supplied minimum four-role coverH has at least TWO existing labels in each H group. A cycle selects at most one per group, leaving FOUR unselected actual representatives stable across both adjacent endpoints and all partial edits. This is renewable upper protection, not root-floor spare capacity or added labels. No benchmark is executed.
+
+For EVERY template on m4/5, exactness-derivedrho>=2 AUTOMATICALLY satisfies the strict bound (maximum2/5<6). X40L/B therefore complete all supplied equal-cardinality pattern pairs; directX40U uses its cover-multiplicity hypothesis. These are structural role-pattern classes, not numerical carrier campaigns.
+
+Unbounded sparse control m>=5: ONEactual{1}root plusd original copies of each rest-mask complementary to a pair, r1+d*C(m-1,2), exacttemplate4, actualrho=d+1. d=m-3 satisfies the bound for ALLm; m5d1 also suffices. All co-triple masks whose excluded triple avoids1 are absent; the singleton supplies many of those witness obligations. Existing diagonal/forwardmcycle t-cells give groups2t, k2mt, saturated unequal floors2t/high2t(m-3). NO4disjointfloor-safe roots fit anywhere; only long ownership cycles exist; entirecycle/endpointunion has a two-cover. Nonetheless direct eventminimum repair works. At t>=2 ALLoriginalroots remain unfinishedBOTHends afterfirstcycle while cardinalities/witnessesrenew; exactlytcycles finish.
+
+The advance removes X39's complete-pattern/dense-mask requirement under actual redundancy and explicit upper-cover conditions. All endpoints ALREADY Lconnected; no new native connectivity classification or universal coverage. X34/A/L and prior X39 induction are inherited openly. Failed sufficient counts/cover tests are not disconnection.
+
+Next: force enough actual redundancy or derive alternate interleaved renewal below this bound, supply upper covers when representatives are scarce, unequal group sizes and template accessibility. Preserve compatible-grade research and broader mixed/directed/higher-target/nested OPEN obligations. v16.55/v16.54/frozen sources/original evidence unchanged. Separate efficiency implementation/fixture/benchmark remains unstarted and independently scoped. No scientific commands/tests/numerical workflow/code/benchmark/integration merge/numbered version.
+
 ## A11.X39 — derived reserve-free renewal for arbitrary ownership cycles
 
 Scope 87009d0a9bb4ed3b07e2308a5444a1749e0cde24; exact candidate d8f53c74cadd092df731c8c3b3ef19b51e9bba2c; proof blob c822f57babdcd2782ed8259f740d839c864e6f2b. Source A11_X39_DENSE_MASK_CYCLE_RENEWAL.md; fresh attributable whole review INDEPENDENT_A11_X39_WHOLE_REVIEW.md; closeout A11_X39_CLOSEOUT.md.
