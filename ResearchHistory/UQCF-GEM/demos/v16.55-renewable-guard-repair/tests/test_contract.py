@@ -60,7 +60,12 @@ class Contract(unittest.TestCase):
     def test_fake_diagnostics(self):
         self.assertTrue(self.api().verify_diagnostics({"cycle":0},["cycle"]))
     def test_nested_second_unit(self):
-        self.assertTrue(self.api().verify_nested({"k":4,"target":4,"floors":[1]*4,"A":[[0],[1],[2],[3]],"C":[[0],[1],[2],[3]]},{"vertices":[{"parent":[[0],[0],[0],[0]],"leaves":[[[0]],[[1]],[[2]],[[3]]]}]}))
+        a=[[0,4],[1,5],[2,6],[3,7]];initial={"parent":a,"leaves":[[[x] for x in row] for row in a]}
+        first=copy.deepcopy(initial);first["parent"][1]=[0,1,5]
+        second=copy.deepcopy(first);second["leaves"][0][1]=[0,4]
+        c={"k":8,"target":4,"floors":[2]*4,"A":a,"C":a}
+        errors=self.api().verify_nested(c,{"vertices":[initial,first,second,first,initial]})
+        self.assertEqual(set(errors),{"second global defect unit"})
     def test_complete_reconstruction(self):
         try:
             u=importlib.import_module("universe")
@@ -94,5 +99,12 @@ class Contract(unittest.TestCase):
         c,r=self.produced("R5");self.assertTrue(r["nested"]["clearances"])
         r["nested"]["clearances"]=[]
         self.assertTrue(self.api().verify_record(c,r),"unattached native clearance metadata accepted")
+    def test_saved_permutation_macro_lineage(self):
+        c,r=self.produced("R2");self.assertTrue(r["meta"]["permutation"]["swaps"])
+        r["meta"]["permutation"]["swaps"]=[]
+        self.assertTrue(self.api().verify_record(c,r),"missing saved permutation macro events accepted")
+    def test_both_exact_compaction_covers_supplied(self):
+        c,r=self.produced("R3");r["meta"]["covers"]=[]
+        self.assertTrue(self.api().verify_record(c,r),"missing endpoint covers accepted")
 
 if __name__=="__main__":unittest.main(verbosity=2)
