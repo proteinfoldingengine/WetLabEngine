@@ -396,3 +396,17 @@ A self-contained field/orbit constructor supplies an actual feasible k9 mixed pr
 Existence at other integer odd-palette profiles is NOT asserted. The k7 case overlaps X27 openly. At k9r30S162 every M>=18; X14 would require r>=38 and X15 forces D<=11 inconsistent with162<=9D. Palette-room, cover-automatic and stated full-compatible module domains also fail; conditional older bridges are not blanket-excluded.
 
 All previous closures/failures remain preserved. Next mathematics relaxes shared saturation/balance or develops genuinely reusable multiple-overlap handovers outside accepted domains. Directed/unrestricted mixed/higher-target/nested and physical questions remain open. Numbered v16.55 stays OPEN; no scientific run, implementation/benchmark or integration merge. Certified v16.54 and efficiency design unchanged; runner execution/measured speedup unstarted.
+
+## A11.X29 — actual pair redundancy tolerates grade imbalance
+
+Scopeb1dec959c6765ae5691c2bdc03e26e91e6c107ae; reviewed candidate838d8e6a1d3d18a8f8016b2e8c7fdfba2be419ba; proof A11_X29_GUARD_IMBALANCE_TOLERANCE.md, Git blobfa98734b52737fb8316334964e65e66146cbcf19, SHA2568c68ddfe0f829b98a52a567576a7bec701727dc995e84cdbda2d6bd78fb52660. Fresh whole-argument receipt INDEPENDENT_A11_X29_WHOLE_REVIEW.md; closeout A11_X29_CLOSEOUT.md.
+
+For ODD k>=7, original low/high floors k-4/k-3 and exact capacity4ell+f=C(k,3), set epsilon=3f-C(k,2). If0<=epsilon<k-3, EVERY exact endpoint has actual guards in BOTH original grades. The shared identity2p4+p3=k-2 and nonnegative sum epsilon=sum_pairs(p3-1) give p3>=1 and p4>0 for every pair. Losing the last low witness would consume at least k-3 excess. Exact grade balance is removed; exact saturation/oddness remain.
+
+The source HIGH guard protects complete installation of actual destination LOW supports, then that installed guard protects all HIGH repair. Supplied individual edits retain floors/palette, finite symmetric difference decreases and every unfinished root supplies its next move. A converts ONLY the complete exact-ended lower path; exact full labelled restoration and renewed endpoint reuse follow without a hub/permutation/outside-room assumption.
+
+A self-contained binary-vector constructor proves infinitely many UNBALANCED feasible carriers. For k=2^m-1 and12t<k-3, ell=k(k-1)(k-3)/24-t and f=k(k-1)/6+4t. Punctured zero-sum four-blocks uniquely partition triple witnesses; replacing t low complements by their FOUR triple subsets retains that partition and supplied nonzero-sum H. This defines a NEW FIXED carrier, not native floor/slot changes. For every m>=5, t1 has positive excess12 and lies outside X28 balance. ALL exact endpoints on these profiles repair, not only structured constructor states.
+
+The k31/t1 control has ell1084/f159,r1243,floors27/28,S33720,M>=1088. X14 requires r>=2178; X15 forces D<=154 while33720<=4774 would be necessary. Prior conditional bridges are not blanket-excluded. Bound sharpness and feasibility at other odd palettes are not asserted.
+
+All prior source/failure classifications preserved. Next directions relax saturation or prove actual coupled handover when the low witness budget is exhausted. Original directed/unrestricted mixed/higher-target/nested/physical closure and v16.55 certification remain OPEN. No scientific run/test/enumeration/workflow, implementation/benchmark or integration merge. Certified v16.54 and efficiency design unchanged; runner execution/measured speedup unstarted.

@@ -1,6 +1,8 @@
 # Post-v16.54: Distributed Repair
 
-Latest X28: ODD-palette exact saturation/balance forces actual protection in BOTH original k-4/k-3 grades, providing complete DIRECT endpoint repair without hub/permutation/outside-room hypotheses. The algebraic k9 ell18/f12 floors5/6 constructor supplies exact feasibility and H. Fresh whole-argument acceptance applies only to its stated conditional carrier class; v16.55 and original A11 directed universality stay OPEN. See A11_X28_CLOSEOUT.md.
+Latest X29: shared pair excess epsilon<k-3 relaxes X28's exact grade balance while retaining both actual original-grade guards and full direct exact endpoint repair. Infinitely many feasible positive-excess carriers are constructed algebraically. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X29_CLOSEOUT.md.
+
+Earlier X28: ODD-palette exact saturation/balance forces actual protection in BOTH original k-4/k-3 grades, providing complete DIRECT endpoint repair without hub/permutation/outside-room hypotheses. The algebraic k9 ell18/f12 floors5/6 constructor supplies exact feasibility and H. Fresh whole-argument acceptance applies only to its stated conditional carrier class; v16.55 and original A11 directed universality stay OPEN. See A11_X28_CLOSEOUT.md.
 
 Earlier X27: shared near-saturated triple-witness parity forces actual low guards, enabling disjoint replacement installation at tight ell7 profiles. A new eight-small-token fourteen-root exact hub completes ell8. EVERY feasible seven-label mixed3/4 carrier with ell<=8 now has full native3/4 endpoint repair. Fresh whole-argument review accepts the exact candidate; v16.55 certification and original A11 directed universality remain OPEN. See A11_X27_CLOSEOUT.md.
 
