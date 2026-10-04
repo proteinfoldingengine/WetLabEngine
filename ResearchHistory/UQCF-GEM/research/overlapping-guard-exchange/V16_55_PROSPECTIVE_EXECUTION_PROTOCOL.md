@@ -67,9 +67,9 @@ Require at least one verified noncompact exact endpoint, one actual mixed-grade 
 
 ### R4 — boundary identities and verification refusal
 
-Keep separate identities for:
+Keep separate identities for the following FOUR types. Except the explicitly transformed c0 case, use UNTRANSFORMED endpoints, transformation NONE and augmentation NONE; the type name is part of the R4 identity parameters:
 - R2 source/destination with p=40, U=ALL actual destination tokens: both exact4 and destination U is a guard, but Phi<1 fails; X32 sufficient-condition API refuses WITHOUT a barrier claim.
-- R2 source/destination original support sizes with altered ORIGINAL high floors that exceed at least one source support: typed INVALID_INPUT_FLOOR, never repaired by weakening a floor.
+- INVALID_INPUT_FLOOR: keep the untransformed R2 source and Q14-plus26-full-root destination, k7,r40, with EXACT ORIGINAL floor vector a_7=5 and a_i=3 for EVERY i!=7. Binary source slot7 is the first high support and has size4, so this is invalid. Require typed INVALID_INPUT_FLOOR; never repair it by weakening a floor. Its identity is [R4,{type:INVALID_INPUT_FLOOR,k:7,r:40},NONE,NONE] under the canonical JSON convention.
 - R2 binary14 source and identical destination, L=the seven original low indices (floor3), F=the seven high indices (floor4), p0. Actual source L and destination F are three-guards; Phi0; require valid zero-patch complete restoration.
 - R3 exact base plus one full-palette ORIGINAL floor-k slot: c0 grade adds no bad label or guard token. For m4,d0 and the single transformation a1,v1,bL1,bF1, require X33 full repair and exact restoration of this grade.
 
