@@ -513,4 +513,4 @@ Next: derive weaker structural conditions forcing this bound, or a reusable inte
 
 Band-conversion qualification: the preliminary lower chain reaches each specified waypoint in order. A applied to the complete concatenation guarantees the exact outer endpoints; preservation of inexact internal waypoints is not established.
 
-Reporting reconciliation: the stale top-level STATUS.pending_execution=V16_55_ACTUAL_MERGE_REPLAY_IN_PROGRESS at eb676 is retained as a dated historical field and replaced by null. No live science or pending campaign exists. All bounded v16.55/v16.54 certification and evidence fields are unchanged.
+Reporting reconciliation: the stale top-level STATUS.pending_execution=V16_55_ACTUAL_MERGE_REPLAY_IN_PROGRESS at eb676 is retained as a commit-anchored historical field and replaced by null. No live science or pending campaign exists. All bounded v16.55/v16.54 certification and evidence fields are unchanged.
