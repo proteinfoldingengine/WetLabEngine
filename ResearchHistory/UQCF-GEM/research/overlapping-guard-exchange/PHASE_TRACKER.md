@@ -1,6 +1,8 @@
 # Post-v16.54: Distributed Repair
 
-Latest X29: shared pair excess epsilon<k-3 relaxes X28's exact grade balance while retaining both actual original-grade guards and full direct exact endpoint repair. Infinitely many feasible positive-excess carriers are constructed algebraically. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X29_CLOSEOUT.md.
+Latest X30: one excess triple localizes incomplete HIGH protection. A destination root avoiding that triple is installed without destroying old LOW pair witnesses, then the installed HIGH-plus-patch guard protects complete repair. Exact minimum-cover compaction/reversal restores FULL original noncompact endpoints. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X30_CLOSEOUT.md.
+
+Earlier X29: shared pair excess epsilon<k-3 relaxes X28's exact grade balance while retaining both actual original-grade guards and full direct exact endpoint repair. Infinitely many feasible positive-excess carriers are constructed algebraically. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X29_CLOSEOUT.md.
 
 Earlier X28: ODD-palette exact saturation/balance forces actual protection in BOTH original k-4/k-3 grades, providing complete DIRECT endpoint repair without hub/permutation/outside-room hypotheses. The algebraic k9 ell18/f12 floors5/6 constructor supplies exact feasibility and H. Fresh whole-argument acceptance applies only to its stated conditional carrier class; v16.55 and original A11 directed universality stay OPEN. See A11_X28_CLOSEOUT.md.
 
