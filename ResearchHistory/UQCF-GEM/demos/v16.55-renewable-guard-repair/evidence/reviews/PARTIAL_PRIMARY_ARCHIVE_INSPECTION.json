@@ -4,15 +4,15 @@
   "run_id": 37211847122,
   "attempt": 1,
   "scientific_sha": "3183c29896ebb47c320fa46a67ca2dd0696702fc",
-  "archive_count": 6,
-  "checked_in_supplied_summaries": 2822,
+  "archive_count": 7,
+  "checked_in_supplied_summaries": 3293,
   "expected_full_count": 3763,
   "full_campaign_status": "IN_PROGRESS_NO_FULL_PASS_INFERRED",
   "baseline_aggregate": {
     "commit": "bbdbf6138b60e51e0f229951280b01455d2a4c09",
     "blob": "a2532d796758f8226a1fe4c5cece6b237b67bc63"
   },
-  "scientific_member_count": 24,
+  "scientific_member_count": 28,
   "byte_equality_to_accepted_original": true,
   "archives": [
     {
@@ -81,6 +81,19 @@
       }
     },
     {
+      "shard": 5,
+      "artifact_id": 11307218135,
+      "archive_bytes": 5209328,
+      "archive_sha256": "dea68efca26cc0fbc7e1a81c8afb476ef4e2668046ebac95830c6893fb276108",
+      "checked": 471,
+      "science": {
+        "records.jsonl.gz": "798124e1dfc99c0866caecb1acafb85ec7f5b27c454ae4cb08f7211f6a73357d",
+        "identities.jsonl.gz": "34b62695bed43107cfc826178b0bfa06e2329577db7eecc7bfda236f288143fa",
+        "SUMMARY.json": "a509586b72d60572f94a7f2a0bb053d58ebab0e85c67576674eefb2f30f1ed4a",
+        "DOMAIN_FREEZE.json": "f674ab3619c627bcc5263e934c8f3bafa6273fc59ee2c262a3ca41bb98389998"
+      }
+    },
+    {
       "shard": 7,
       "artifact_id": 11306607962,
       "archive_bytes": 1298713,
@@ -94,5 +107,6 @@
       }
     }
   ],
-  "publication_policy": "Inspection metadata references current original ZIP IDs/length/SHA256; no extracted or recursive binary copy committed. Complete current originals remain to be published once by approved durable join."
+  "publication_policy": "Inspection metadata references current original ZIP IDs/length/SHA256; no extracted or recursive binary copy committed. Complete current originals remain to be published once by approved durable join.",
+  "observed_at_utc": "2026-10-04T15:32:25Z"
 }
