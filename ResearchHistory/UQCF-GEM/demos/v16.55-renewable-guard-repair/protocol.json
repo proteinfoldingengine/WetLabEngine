@@ -1,0 +1,95 @@
+{
+  "schema": "v1655-renewable-guards-v1",
+  "certified_parent": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
+  "approval_text": "Approved",
+  "approval_local_datetime": "2026-10-03T21:43:28-07:00",
+  "approved_publication": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+  "approved_protocol_blob": "e4627a37ff551249ec2d14169207784677f39dd1",
+  "approved_protocol_sha256": "c3df9af46c30bcd5f35e665225fa1c8b6b8a2578abd97fb3dc3a11b8d20653f7",
+  "families": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+  ],
+  "execution": "GitHub only",
+  "resources": {
+    "minutes_per_job": 60,
+    "memory_bytes": 4294967296,
+    "vertices_per_identity": 1000000,
+    "vertices_total": 10000000,
+    "compressed_bytes_total": 1073741824,
+    "max_parallel_shards": 8
+  },
+  "proofs": {
+    "A11_X14_SATURATED_INCIDENCE_RENEWAL.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "70ba07a459da08e9b6b3c5ee81fb5880eaea42d6"
+    },
+    "A11_X15_UNIVERSAL_FLOOR_THREE_REPAIR.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "1a512e7193b082f3e50d8fc2d0d555489416f6be"
+    },
+    "A11_X25_FIVE_ROOT_GUARD_COMPLETION.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "3445a347ff9f4a227d7150850bef46f73185617a"
+    },
+    "A11_X29_GUARD_IMBALANCE_TOLERANCE.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "fa98734b52737fb8316334964e65e66146cbcf19"
+    },
+    "A11_X31_MULTIPLE_PATCH_RENEWAL.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "beecb74bffd30cf8fed5a91f8f726eea20f48dce"
+    },
+    "A11_X32_WITNESS_PRESERVING_PLACEMENT.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "7adf1d9fecece6afa0370d48d033bead5762a7c3"
+    },
+    "A11_X33_SIMULTANEOUS_GRADE_GUARDS.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "ef93c4010d7f22c1db18c349de06ad9f54a429a1"
+    },
+    "INDEPENDENT_A11_X14_WHOLE_REVIEW.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "c6f5287a0543d8b1cafeecc00d8abd46e6cc4597"
+    },
+    "INDEPENDENT_A11_X15_WHOLE_REVIEW.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "988b06f6ab7f765916a5c7248a48a2f47822aa48"
+    },
+    "INDEPENDENT_A11_X25_WHOLE_REVIEW.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "a604108b51751f6c1fdd19ba97dea17b54ae2b15"
+    },
+    "INDEPENDENT_A11_X29_WHOLE_REVIEW.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "7612ba8f10010cb9d42931bc098ad791ec91ae05"
+    },
+    "INDEPENDENT_A11_X31_WHOLE_REVIEW.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "620a05024fd4d96ce836badcc7c21b62cc872055"
+    },
+    "INDEPENDENT_A11_X32_WHOLE_REVIEW.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "fb82a1910379e488fc7e58a02dcc6342cbe84974"
+    },
+    "INDEPENDENT_A11_X33_WHOLE_REVIEW.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "2d000d73ff723b259d0d1f7388b54b31d07d1816"
+    },
+    "INDEPENDENT_V16_55_PROSPECTIVE_REVIEW.md": {
+      "source_sha": "c44891cbe855d6ae74b98caa39f1a4a38d680e13",
+      "git_blob": "dec6c45d9b4a5cd83f1c10a5397ce00b8aa7d901"
+    }
+  },
+  "claims": {
+    "implementation": "PENDING",
+    "certification": "OPEN",
+    "unrestricted_mixed_or_nested": "OPEN"
+  },
+  "specification": "PROSPECTIVE_EXECUTION_PROTOCOL.md sections2-6",
+  "identity_serialization": "json.dumps(sort_keys=True,separators=(',',':'),allow_nan=False)",
+  "transport": "branch-scoped immutable push request"
+}
