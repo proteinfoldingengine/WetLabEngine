@@ -1,4 +1,4 @@
-# Next after A11.X24 — shared witness consistency and coupled protection
+# Next after A11.X25 — economical protection and coupled access
 
 ## Completed analytical mechanisms
 
@@ -10,11 +10,13 @@ Uniform floor3/4 is universally closed; mixed3/4 k>=11/allrootcounts and r6/allp
 
 X24 adds individual-floor complementary capacities and equality consistency. Every actual pair partition obeys vertex incidence equations and at-most-one intersections. On seven labels this forbids a five-root three-guard with three size-four supports. Exact eight-label mixed3/4 endpoints with nine roots must therefore have at most four high slots and strict total incidence S<32. X15 gives complete exact restoration automatically; below eight roots endpoints are infeasible and at eight roots only uniform floor3 survives. These are derived shared-guard bounds, not isolated campaigns or full feasibility classifications.
 
+X25 supplies a FIVE-triple actual guard on seven labels, attaining the minimum guard cardinality in that size/palette class. Its complete fifteen minimum covers are grouped into exact-four hubs with fifteen/eight or fourteen/nine total/small tokens. Actual capable-slot degree>=4 licenses full mixed placement, renewal and destination restoration for k7,r>=15,ell>=8 OR r>=14,ell>=9. Feasible controls fail every whole-carrier X15 degree/slack parameter choice. This reduces the prior six-root guard and ten-capable-slot construction, without claiming optimal total hub count or a native obstruction outside its domain.
+
 ## Remaining structural direction
 
 Derive stronger actual guard constraints or genuinely reusable coupled handovers where too few capable slots hold the small guard tokens, or where the small exact module does not fit the available original slots. Source degree alone is insufficient if it counts the wrong original floor grades. Actual shared incidences, weighted completion and full compatible pools must account for the SAME capacities and ALL forbidden pairs.
 
-Any unresolved mixed3/4 carrier is on k7..10 outside ALL accepted sufficient classes. k<=6 is already X17; k>=11 and r6 are solved, and k8..10,r>=14 are now solved. For k8, X24 additionally excludes r<=9 from unresolved connectivity. Restricted incidence reserves impose further necessary residual restrictions. These bounds are NOT a checklist of isolated campaigns or a claim every remaining tuple is feasible. Do not infer disconnection from a failed grade/base/pool test.
+Any unresolved mixed3/4 carrier is on k7..10 outside ALL accepted sufficient classes. k<=6 is already X17; k>=11 and r6 are solved, and k8..10,r>=14 are now solved. For k8, X24 additionally excludes r<=9 from unresolved connectivity. X25 excludes its new seven-label capable-slot classes; X23's ell>=10,r>=13 and allr>=35 remain accepted. Restricted incidence reserves impose further necessary residual restrictions. These bounds are NOT a checklist of isolated campaigns or a claim every remaining tuple is feasible. Do not infer disconnection from a failed grade/base/pool test.
 
 Supply exact endpoint minimum-cover preparation, original floor/palette legality, actual lower witnesses for every pair, next primitive whenever unfinished, renewed structure, a decreasing measure and exact original labelled restoration. Use upper conversion only on complete lower paths between ACTUAL exact ends. A restored level-three guard can carry progress; no arbitrary safe-prefix, cloning-path, uniform permutation or converse retained projection shortcut.
 
