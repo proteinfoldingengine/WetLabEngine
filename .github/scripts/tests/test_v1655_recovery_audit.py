@@ -67,6 +67,23 @@ class EvidenceContractTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             audit.validate_exact_source_manifest({**wanted, "extra.py": "c" * 64}, dict(wanted), wanted)
 
+    def test_inherited_domain_source_inventory_matches_frozen_selector(self):
+        base = "ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity"
+        paths = [
+            base + "/campaign.py",
+            base + "/README.md",
+            base + "/protocol.json",
+            base + "/CERTIFICATION.json",
+            base + "/tests/test_campaign.py",
+            base + "/tests/fixture.json",
+            base + "/evidence/result.json",
+            base + "/nested/proof.md",
+        ]
+        self.assertEqual(
+            audit.domain_source_relatives(paths, base),
+            ["campaign.py", "README.md", "protocol.json", "tests/test_campaign.py"],
+        )
+
     def test_foundation_metadata_binds_original_run_without_spoofing(self):
         context = audit.validate_request({
             "audited_run_id": 37180275767,
