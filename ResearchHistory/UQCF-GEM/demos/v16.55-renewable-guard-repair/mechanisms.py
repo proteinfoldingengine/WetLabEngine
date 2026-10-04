@@ -149,7 +149,7 @@ def select_patches(k,roots,L,p):
         chosen=next(i for i in L if i not in D and phi(k,roots,L,p,D+[i])<=value)
         D.append(chosen);value=phi(k,roots,L,p,D);steps.append(dict(D=D[:],phi=str(value)))
     if value!=0:raise AssertionError("unfinished conditional placement")
-    return D,steps
+    return sorted(D),steps
 
 def assignment(floors,U,J):
     result=[None]*len(floors)

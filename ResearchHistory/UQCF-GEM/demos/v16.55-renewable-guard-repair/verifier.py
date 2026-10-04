@@ -73,6 +73,43 @@ def verify_manifest(files,manifest):
     return errors
 def verify_diagnostics(counts,required):return ["missing category: "+name for name in required if type(counts.get(name)) is not int or counts[name]<=0]
 
+def concatenate(*paths):
+    result=[]
+    for path in paths:
+        if not path:return []
+        if result and result[-1]!=path[0]:raise ValueError("false actual metadata join")
+        result.extend(path if not result else path[1:])
+    return result
+
+def independent_conversion(case,vertices):
+    """Separate set-model reconstruction of deterministic maximum-layer removal."""
+    current=vertices;layers=[];k=case["k"]
+    if len(cover(k,current[0]))!=4 or len(cover(k,current[-1]))!=4:raise ValueError("inexact A entry")
+    while True:
+        peak=max(len(cover(k,state)) for state in current)
+        if peak<=4:return current,layers
+        replacements=[]
+        for state in current:
+            roots=sets(state)
+            if len(cover(k,state))==peak:
+                x,y=cover(k,state)[:2]
+                roots=tuple(root|{x} if y in root else root for root in roots)
+            replacements.append(roots)
+        result=[[sorted(row) for row in replacements[0]]]
+        now=list(replacements[0])
+        for target in replacements[1:]:
+            for adding in (True,False):
+                for i in range(len(now)):
+                    changed=sorted(target[i]-now[i] if adding else now[i]-target[i])
+                    for x in changed:
+                        now[i]=now[i]|{x} if adding else now[i]-{x}
+                        result.append([sorted(row) for row in now])
+                        if len(result)>1000000:raise ValueError("conversion resource bound")
+        after=max(len(cover(k,state)) for state in result)
+        if after>=peak:raise ValueError("nondecreasing maximum layer")
+        layers.append(dict(before=peak,after=after,vertices_before=len(current),vertices_after=len(result)))
+        current=result
+
 def verify_path(case,vertices,lower,upper):
     errors=[];k=case["k"];floors=case["floors"]
     if not vertices:return ["empty path"]
@@ -88,6 +125,10 @@ def verify_path(case,vertices,lower,upper):
     return errors
 
 def verify_record(case,record):
+    try:return _verify_record(case,record)
+    except (KeyError,IndexError,TypeError,ValueError,StopIteration) as error:return ["malformed or inconsistent certificate: "+repr(error)]
+
+def _verify_record(case,record):
     errors=[]
     if record.get("identity")!=case["identity"]:errors.append("wrong identity")
     expected=expected_status(case)
@@ -130,10 +171,41 @@ def verify_record(case,record):
         if len(old)!=p or oldphi!=0:errors.append("unfinished witness placement")
     # Family-specific metadata ties witness/progress certificates to actual paths.
     method=case.get("parent_method",case["method"])
-    if method=="X15N":errors+=verify_level_cycles(case,preliminary,meta)
-    if method in ("X32","X33"):errors+=verify_handover(case,meta)
-    if case["method"]=="NATIVE":errors+=verify_nested(case,record.get("nested",{}))
+    if method=="X15N":
+        errors+=verify_level_cycles(case,preliminary,meta)
+        if not all(key in meta for key in ("cover","upper_entry","leveling","cycle_path","cycles","conversion","progress")):errors.append("missing mandatory incidence certificate")
+        else:
+            expected=concatenate(meta["leveling"]["source"]["vertices"],meta["cycle_path"],list(reversed(meta["leveling"]["destination"]["vertices"])))
+            if preliminary!=expected:errors.append("unattached incidence metadata")
+            converted,layers=independent_conversion(case,expected)
+            if final!=converted or meta["conversion"]!=layers:errors.append("incorrect full-path A reconstruction")
+    if method in ("X32","X33"):
+        errors+=verify_handover(case,meta)
+        mandatory=("cover","upper_entry","assignment","handover","permutation","preparation","conversion")+( ("placement",) if method=="X32" else ("covers",))
+        if not all(key in meta for key in mandatory):errors.append("missing mandatory handover certificate")
+        else:
+            prep=meta["preparation"];middle=meta["handover"]["vertices"];reverseM=list(reversed(meta["permutation"]["vertices"]));reverseC=list(reversed(prep["destination"]))
+            expected=concatenate(prep["source"],middle,reverseM,reverseC)
+            converted,layers=independent_conversion(case,middle)
+            expectedFinal=concatenate(prep["source"],converted,reverseM,reverseC)
+            if preliminary!=expected or final!=expectedFinal or meta["conversion"]!=layers:errors.append("unattached handover/A/M reconstruction")
+    if case["method"]=="NATIVE":
+        errors+=verify_nested(case,record.get("nested",{}))
+        if record.get("nested")!=independent_lift(case,final):errors.append("native path differs from prescribed parent/clearance lift")
     return errors
+
+def independent_cycle(current,destination):
+    edges=sorted((x,y,i) for i,(a,b) in enumerate(zip(current,destination)) for x,y in zip(sorted(a-b),sorted(b-a)))
+    def completions(start,tail,used,sequence):
+        for edge in edges:
+            x,y,i=edge
+            if x!=tail:continue
+            if y==start:yield sequence+[list(edge)]
+            elif y not in used:yield from completions(start,y,used|{y},sequence+[list(edge)])
+    for start in sorted({edge[0] for edge in edges}):
+        candidate=next(completions(start,start,{start},[]),None)
+        if candidate:return candidate
+    return None
 
 def verify_level_cycles(case,path,meta):
     errors=[];k=case["k"];r=len(case["floors"])
@@ -143,26 +215,47 @@ def verify_level_cycles(case,path,meta):
         errors+=verify_path(case,leg["vertices"],3,None)
         start=case["A"] if endpoint=="source" else case["C"]
         if leg["vertices"][0]!=start:errors.append("wrong leveling origin")
+        boundary=0
         for event in leg["events"]:
             a=sets(leg["vertices"][event["start"]]);b=sets(leg["vertices"][event["end"]]);x,y,i=event["x"],event["y"],event["i"]
             da=[sum(v in row for row in a) for v in range(k)];db=[sum(v in row for row in b) for v in range(k)]
             if da[x]<=3 or da[y]>=3 or x not in a[i] or y in a[i] or b[i]!=(a[i]-{x})|{y}:errors.append("ineligible leveling move")
+            eligiblex=next((v for v,d in enumerate(da) if d>3),None);eligibley=next((v for v,d in enumerate(da) if d<3),None)
+            eligiblei=next((j for j,row in enumerate(a) if x in row and y not in row),None)
+            if (x,y,i)!=(eligiblex,eligibley,eligiblei):errors.append("nonlex leveling move")
+            if event["start"]!=boundary or event["end"]!=boundary+2:errors.append("incomplete leveling event coverage")
+            middle=[sorted(row|{y}) if j==i else sorted(row) for j,row in enumerate(a)]
+            if leg["vertices"][event["start"]+1]!=middle:errors.append("wrong leveling primitive order")
+            boundary=event["end"]
             if sum(max(d-3,0) for d in db)!=sum(max(d-3,0) for d in da)-1:errors.append("false leveling progress")
+            if event["before"]!=sum(max(d-3,0) for d in da) or event["after"]!=sum(max(d-3,0) for d in db):errors.append("fabricated leveling potential")
+        if boundary!=len(leg["vertices"])-1:errors.append("unaccounted leveling primitives")
         if any(sum(x in row for row in sets(leg["vertices"][-1]))!=3 for x in range(k)):errors.append("unfinished saturated leveling")
     cyclepath=meta.get("cycle_path",[])
     if not cyclepath:errors.append("missing common degree connection");return errors
     errors+=verify_path(case,cyclepath,3,None)
+    boundary=0
     for event in meta.get("cycles",[]):
         start,end=event["start"],event["end"];edges=event["edges"]
         before=sets(cyclepath[start]);after=sets(cyclepath[end]);destination=sets(meta["leveling"]["destination"]["vertices"][-1])
+        if edges!=independent_cycle(before,destination):errors.append("nonlex/ unavailable pending cycle")
         if len({edge[0] for edge in edges})!=len(edges) or any(edge[1]!=edges[(i+1)%len(edges)][0] for i,edge in enumerate(edges)):errors.append("invalid cycle")
         if any(x not in before[row] or x in destination[row] or y in before[row] or y not in destination[row] for x,y,row in edges):errors.append("ineligible pending edge")
         pre=sum(len(a-b) for a,b in zip(before,destination));post=sum(len(a-b) for a,b in zip(after,destination))
         if post!=pre-len(edges):errors.append("false cycle progress")
+        if event["before"]!=pre or event["after"]!=post:errors.append("fabricated cycle potential")
+        if start!=boundary or end!=start+2*len(edges):errors.append("incomplete cycle event coverage")
+        current=list(before);expected=[cyclepath[start]]
+        for x,y,i in [edges[0]]+list(reversed(edges[1:])):
+            current[i]=current[i]|{y};expected.append([sorted(row) for row in current])
+            current[i]=current[i]-{x};expected.append([sorted(row) for row in current])
+        if cyclepath[start:end+1]!=expected:errors.append("wrong saturated primitive schedule")
+        boundary=end
         for vertex in cyclepath[start:end+1]:
             roots=sets(vertex);degrees=[sum(x in row for row in roots) for x in range(k)]
             if max(degrees)>4 or sum(deg==4 for deg in degrees)>1:errors.append("cycle temporary capacity exceeded")
         if any(sum(x in row for row in after)!=3 for x in range(k)) or any(len(row)!=floor for row,floor in zip(after,case["floors"])):errors.append("unrestored cycle boundary")
+    if boundary!=len(cyclepath)-1:errors.append("unaccounted cycle primitives")
     if cyclepath[0]!=meta["leveling"]["source"]["vertices"][-1] or cyclepath[-1]!=meta["leveling"]["destination"]["vertices"][-1]:errors.append("wrong degree endpoints")
     return errors
 
@@ -217,6 +310,19 @@ def verify_handover(case,meta):
         if not witnesses(k,A,sorted(set(L)-set(J))) or not witnesses(k,placed,F+J):errors.append("invalid patch witnesses")
         sourceindices=sorted(set(L)-set(J));destindices=F+J
         expected_phases=[(sorted(F),sorted(L)),(sorted(J),sorted(set(L)-set(J))),(sorted(set(L)-set(J)),sorted(F+J))]
+        placement=meta.get("placement")
+        if placement is None or placement["L"]!=L or placement["p"]!=len(case["U"]) or sorted(placement["steps"][-1]["D"])!=sorted(J):errors.append("unbound actual patch placement")
+    # Reconstruct every token, including tokens outside the guards.
+    expectedAssignment=list(range(len(floors)))
+    if method=="X33":
+        groups=[[i for i,value in enumerate(floors) if value==h] for h in sorted(set(floors))]
+        guardTokens=cert["destination_guard"]
+    else:groups=[case["L"]];guardTokens=case["U"]
+    for group in groups:
+        tokens=[i for i in guardTokens if i in group];slots=[i for i in J if i in group]
+        for slot,token in zip(slots,tokens):expectedAssignment[slot]=token
+        for slot,token in zip([i for i in group if i not in slots],[i for i in group if i not in tokens]):expectedAssignment[slot]=token
+    if assignment!=expectedAssignment:errors.append("nonlex/incomplete full token assignment")
     phasepath=cert["vertices"]
     errors+=verify_path(case,phasepath,3,None)
     if phasepath[0]!=A or phasepath[-1]!=placed:errors.append("wrong handover endpoint")
@@ -225,6 +331,15 @@ def verify_handover(case,meta):
     for phase in cert["phases"]:
         fixed=phase["fixed"];allowed=phase["allowed"]
         start,end=phase["start"],phase["end"]
+        actual=list(sets(phasepath[start]));expected=[phasepath[start]]
+        for slot in sorted(allowed):
+            desired=frozenset(placed[slot])
+            for adding in (True,False):
+                changed=sorted(desired-actual[slot] if adding else actual[slot]-desired)
+                for label in changed:
+                    actual[slot]=actual[slot]|{label} if adding else actual[slot]-{label}
+                    expected.append([sorted(row) for row in actual])
+        if phasepath[start:end+1]!=expected:errors.append("phase does not supply lexicographic next primitive")
         for n in range(start,end+1):
             vertex=phasepath[n]
             if not witnesses(k,vertex,fixed):errors.append("phase loses actual pair guard")
@@ -261,6 +376,25 @@ def verify_nested(case,record):
         if previous is not None and sum(len(a^b) for a,b in zip(previous,allsets))!=1:errors.append("nonprimitive nested edge")
         previous=allsets
     return errors
+
+def independent_lift(case,parent_path):
+    current=sets(case["A"]);children=[[frozenset((x,)) for x in root[:floor]] for root,floor in zip(case["A"],case["floors"])]
+    vertices=[];clearances=[]
+    def save():vertices.append(dict(parent=[sorted(row) for row in current],leaves=[[sorted(leaf) for leaf in group] for group in children]))
+    save()
+    for target in parent_path[1:]:
+        target=sets(target)
+        edits=[(i,x) for i,(a,b) in enumerate(zip(current,target)) for x in sorted(a^b)]
+        if len(edits)!=1:raise ValueError("invalid parent projection")
+        i,x=edits[0]
+        if x not in target[i]:
+            union=frozenset().union(*children[i])
+            if x in union:
+                y=min(current[i]-union);j=next(j for j,leaf in enumerate(children[i]) if x in leaf);start=len(vertices)-1
+                children[i][j]=children[i][j]|{y};save();children[i][j]=children[i][j]-{x};save()
+                clearances.append(dict(root=i,child=j,x=x,y=y,start=start,end=len(vertices)-1))
+        current=target;save()
+    return dict(vertices=vertices,clearances=clearances)
 
 def smoke_cases():
     wanted=[("R1",{"d":1},{"a":1,"b":1,"v":1}), ("R2",{},{"a":1,"b":1,"v":1}), ("R3",{"m":4,"d":15},{"a":1,"v":1,"bL":1,"bF":1})]
