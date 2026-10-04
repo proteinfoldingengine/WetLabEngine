@@ -1,0 +1,18 @@
+# A11.X39 scope — derived reserve-free renewal for arbitrary ownership cycles
+
+Analytical parent 97b818b0953ebc76efaff42e427ae9512df1a1db. Certified v16.55/v16.54 and original evidence remain frozen.
+This is analytical source freezing, not prospective numerical preregistration.
+
+## Objective and already-known reasoning disclosed before freeze
+Replace the X38 short-cycle restriction by a derived witness bound for longer cycles without X37's original-floor reserve. Prior to this freeze the investigator derived the following candidate: on m nonempty group roles, if each actual root mask has at least m-3 indices, exact-four consistency forces an ACTUAL complementary mask for every three-index set. Consequently every two-index set has at least m-2 actual avoiding roots. A selected ownership cycle of length l has only l(l-3)/2 noncommon palette-pair obligations for l>=4; all other pairs use at most three expanded roles and retain common actual witnesses. Applying accepted X34 gives conditional failure weight at most l(l-3)/(2*binomial(2m-4,m-2))<1 for all m>=4, l<=m. A common FOUR-label cover of BOTH adjacent cycle endpoints can be supplied from cycle labels and outside representatives. This is already-known analytical reasoning, not relabelled preregistered execution.
+
+## Native domain and intended result
+Fixed finite ordered palette, labelled actual slots, SAME ORIGINAL positive floors and individual incidence primitives. Source/destination partitions into m>=4 nonempty group roles have equal corresponding sizes, with actual root supports unioned according to the SAME masks Q_i. Each |Q_i|>=m-3. An exact-four endpoint supplies the rigidity premise. Original floors may be saturated at N_i=sum_{j in Q_i}b_j; no reserve. Derive all actual witnesses, minimum covers, floor legality, deterministic eligible root/primitive choices, arbitrary-cycle availability, renewed progress, strict termination and complete labelled/noncompact restoration. Every original differing incidence must toggle once, with no numerical efficiency claim.
+
+## Structural controls and limits
+Develop an infinite m>=5,t>=1 oriented m-cycle family with existing diagonal/edge cells, actual complementary-triple masks and saturated or unequal ORIGINAL floors. It should have no short ownership cycle, no four disjoint floor-safe roots, an unsafe full-cycle union, yet complete witness handover and repeated renewal. At t>=2 the first completed cycle should restore sizes while ALL original roots remain unfinished; prove the next eligible cycle.
+
+Keep the supplied dense-mask group representation/equal-size hypotheses open and visible. Arbitrary templates, unequal group sizes, template accessibility, unrestricted mixed/directed/higher-target/nested claims remain open. Existing L already connects symmetry-related endpoints; this is a derived event-minimal directed scheduling/renewal interface. X34's conditional averaging and exact whole-root witness criterion are inherited, not re-invented. The new claim derives their strict applicability cycle by cycle and proves global renewal. No claim excludes every whole-original-root order.
+
+## Gates
+Freeze exact candidate before fresh independent whole-argument review; review rigidity, all pair cases, inequality, shared roots, conditional next-slot availability, actual upper covers, floor legality, cycle existence/renewal/termination/restoration and inherited domains together. Review the reconciled exact reporting packet afterward and read final immutable publication back. Preserve all failures and controls with their correct classifications. No code, scientific commands/tests, numerical workflow, benchmark, efficiency fixture, integration merge or numbered certification in this analytical checkpoint.
