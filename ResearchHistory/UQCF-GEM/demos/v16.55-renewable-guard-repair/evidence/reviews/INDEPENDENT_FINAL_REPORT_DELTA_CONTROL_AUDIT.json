@@ -1,0 +1,139 @@
+[
+  {
+    "run_id": 37208757027,
+    "classification": "PARTIAL_RED_14_TESTS_5_EXPECTED_FAILURES",
+    "logs": {
+      "tests.log": {
+        "totals": [
+          "14"
+        ],
+        "terminal": [
+          "FAILED (failures=5)"
+        ]
+      }
+    },
+    "zip_bytes": 1399
+  },
+  {
+    "run_id": 37208935149,
+    "classification": "RED_25_TESTS_5_EXPECTED_FAILURES",
+    "logs": {
+      "tests.log": {
+        "totals": [
+          "25"
+        ],
+        "terminal": [
+          "FAILED (failures=5)"
+        ]
+      }
+    },
+    "zip_bytes": 1717
+  },
+  {
+    "run_id": 37208976928,
+    "classification": "GREEN_25_TESTS",
+    "logs": {
+      "tests.log": {
+        "totals": [
+          "25"
+        ],
+        "terminal": [
+          "OK"
+        ]
+      }
+    },
+    "zip_bytes": 1381
+  },
+  {
+    "run_id": 37209181964,
+    "classification": "RED_32_MECHANICAL_7_EXPECTED_FAILURES_29_SCIENTIFIC_GREEN",
+    "logs": {
+      "tests.log": {
+        "totals": [
+          "32"
+        ],
+        "terminal": [
+          "FAILED (failures=7)"
+        ]
+      },
+      "scientific-tests.log": {
+        "totals": [
+          "29"
+        ],
+        "terminal": [
+          "OK"
+        ]
+      }
+    },
+    "zip_bytes": 2775
+  },
+  {
+    "run_id": 37209718372,
+    "classification": "GREEN_32_MECHANICAL_29_SCIENTIFIC_PREFINAL_WORKFLOW",
+    "logs": {
+      "tests.log": {
+        "totals": [
+          "32"
+        ],
+        "terminal": [
+          "OK"
+        ]
+      },
+      "scientific-tests.log": {
+        "totals": [
+          "29"
+        ],
+        "terminal": [
+          "OK"
+        ]
+      }
+    },
+    "zip_bytes": 2290
+  },
+  {
+    "run_id": 37210218652,
+    "classification": "RED_37_MECHANICAL_5_EXPECTED_FAILURES_29_SCIENTIFIC_GREEN",
+    "logs": {
+      "tests.log": {
+        "totals": [
+          "37"
+        ],
+        "terminal": [
+          "FAILED (failures=5)"
+        ]
+      },
+      "scientific-tests.log": {
+        "totals": [
+          "29"
+        ],
+        "terminal": [
+          "OK"
+        ]
+      }
+    },
+    "zip_bytes": 2871
+  },
+  {
+    "run_id": 37210511396,
+    "classification": "GREEN_37_MECHANICAL_29_SCIENTIFIC_FINAL_SOURCE",
+    "logs": {
+      "tests.log": {
+        "totals": [
+          "37"
+        ],
+        "terminal": [
+          "OK"
+        ]
+      },
+      "scientific-tests.log": {
+        "totals": [
+          "29"
+        ],
+        "terminal": [
+          "OK"
+        ]
+      }
+    },
+    "zip_bytes": 2442
+  }
+]

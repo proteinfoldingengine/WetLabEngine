@@ -1,0 +1,170 @@
+{
+  "status": "PASS",
+  "source_file_instances": 2752,
+  "certified_hashes": 77,
+  "inherited_control_ids": 83,
+  "foundation_controls": 43,
+  "foundation_inherited_tests": 1150,
+  "summaries": {
+    "0": {
+      "checked": 299181,
+      "counts": {
+        "M1:PASS": 299181
+      },
+      "diagnostics": {},
+      "expected": 299181,
+      "failures": 0,
+      "identity_sha256": "b7eb4b9be43e441b97d55c8377485381c2a36cc21c2b4fe18df395abe595e92f",
+      "incomplete": 0,
+      "record_sha256": "2b93e54c5a2747271ab42cb23c792f9ebbdb26f33a819bbf35d29ecb01738481",
+      "scope": "all",
+      "shard": 0,
+      "shards": 8,
+      "status": "PASS",
+      "verified_identity_sha256": "b7eb4b9be43e441b97d55c8377485381c2a36cc21c2b4fe18df395abe595e92f"
+    },
+    "6": {
+      "checked": 299181,
+      "counts": {
+        "M2:PASS": 221736,
+        "M3:PASS": 46359,
+        "M4:PASS": 37,
+        "M5:PASS": 952,
+        "M6:PASS": 92,
+        "M6:REFUSED": 84,
+        "M7:PASS": 28482,
+        "M7:REFUSED": 1439
+      },
+      "diagnostics": {
+        "buffered_cycle": 6007,
+        "direct_vacancy": 282624,
+        "element_buffer": 11555,
+        "element_spare_is_old_owner": 6009,
+        "element_transfer": 278939,
+        "exceptional_cyclic_balancing": 135,
+        "ordinary_balancing": 726,
+        "repeated_row_colors": 1
+      },
+      "expected": 299181,
+      "failures": 0,
+      "identity_sha256": "73cfd5a0c3a620b74597c398446fb4454ba5926c29c39e0ac7fc5d1ac20bc743",
+      "incomplete": 0,
+      "record_sha256": "2ffd19c5441e3d8039013c96f0f70ae755db8066714289fba74fd5721ebb2146",
+      "scope": "all",
+      "shard": 6,
+      "shards": 8,
+      "status": "PASS",
+      "verified_identity_sha256": "73cfd5a0c3a620b74597c398446fb4454ba5926c29c39e0ac7fc5d1ac20bc743"
+    },
+    "7": {
+      "checked": 299182,
+      "counts": {
+        "M7:PASS": 284072,
+        "M7:REFUSED": 15082,
+        "M8:PASS": 24,
+        "M9:PASS": 4
+      },
+      "diagnostics": {},
+      "expected": 299182,
+      "failures": 0,
+      "identity_sha256": "206b6b2fab7711c751de3774e6fcc484fd975f8f9558004453d88de1f55b785e",
+      "incomplete": 0,
+      "record_sha256": "6597894f7e7ba1f4205ae62b20afa49855077505f1bec5132dfd229914a07587",
+      "scope": "all",
+      "shard": 7,
+      "shards": 8,
+      "status": "PASS",
+      "verified_identity_sha256": "206b6b2fab7711c751de3774e6fcc484fd975f8f9558004453d88de1f55b785e"
+    },
+    "1": {
+      "checked": 299181,
+      "counts": {
+        "M1:PASS": 299181
+      },
+      "diagnostics": {},
+      "expected": 299181,
+      "failures": 0,
+      "identity_sha256": "4f4e848afa368792d389a61646b5c3e1c0358fcf27fe1e28f995211dc8534028",
+      "incomplete": 0,
+      "record_sha256": "00b150b21cce6235c0e0d4b2deb4a15e87fc928a70c4f6051a593402f123de1d",
+      "scope": "all",
+      "shard": 1,
+      "shards": 8,
+      "status": "PASS",
+      "verified_identity_sha256": "4f4e848afa368792d389a61646b5c3e1c0358fcf27fe1e28f995211dc8534028"
+    },
+    "4": {
+      "checked": 299181,
+      "counts": {
+        "M1:PASS": 299181
+      },
+      "diagnostics": {},
+      "expected": 299181,
+      "failures": 0,
+      "identity_sha256": "bd4102ed1b29ea1f0848a334b6d1f913b927cdcd723823daea5f06a424e7780b",
+      "incomplete": 0,
+      "record_sha256": "300ac106c7dfc951d09d7058ff1c5080e0c2314e2b8092d91d0be085489f3ca6",
+      "scope": "all",
+      "shard": 4,
+      "shards": 8,
+      "status": "PASS",
+      "verified_identity_sha256": "bd4102ed1b29ea1f0848a334b6d1f913b927cdcd723823daea5f06a424e7780b"
+    },
+    "5": {
+      "checked": 299181,
+      "counts": {
+        "M1:PASS": 216758,
+        "M2:PASS": 82423
+      },
+      "diagnostics": {
+        "element_buffer": 23383,
+        "element_spare_is_old_owner": 9615,
+        "element_transfer": 198361
+      },
+      "expected": 299181,
+      "failures": 0,
+      "identity_sha256": "0ae487f307a58166ac5eddb3875bc7814ec386d05d05e8a300539506091fe991",
+      "incomplete": 0,
+      "record_sha256": "4592bc5f94359d54d93e8626b3fd2fe5f3cee474acdbe55ba4c73a25b3153777",
+      "scope": "all",
+      "shard": 5,
+      "shards": 8,
+      "status": "PASS",
+      "verified_identity_sha256": "0ae487f307a58166ac5eddb3875bc7814ec386d05d05e8a300539506091fe991"
+    },
+    "2": {
+      "checked": 299181,
+      "counts": {
+        "M1:PASS": 299181
+      },
+      "diagnostics": {},
+      "expected": 299181,
+      "failures": 0,
+      "identity_sha256": "5d8c291a55c46b63cdca3d991f215c78153b4cd55bc73453a55b1c5dbbecba2b",
+      "incomplete": 0,
+      "record_sha256": "1fd5df77635f1a34a49458d62846791210c75edbc2763aeca132eabf2298386d",
+      "scope": "all",
+      "shard": 2,
+      "shards": 8,
+      "status": "PASS",
+      "verified_identity_sha256": "5d8c291a55c46b63cdca3d991f215c78153b4cd55bc73453a55b1c5dbbecba2b"
+    },
+    "3": {
+      "checked": 299182,
+      "counts": {
+        "M1:PASS": 299182
+      },
+      "diagnostics": {},
+      "expected": 299182,
+      "failures": 0,
+      "identity_sha256": "b6324f81b67f8599080f300a1695e2979cea845a419fd20df400edfdca354d72",
+      "incomplete": 0,
+      "record_sha256": "c4e38f72a87f4ff467c3e5c5d981dab7420feb87f4d140b291ef2b79e41aad18",
+      "scope": "all",
+      "shard": 3,
+      "shards": 8,
+      "status": "PASS",
+      "verified_identity_sha256": "b6324f81b67f8599080f300a1695e2979cea845a419fd20df400edfdca354d72"
+    }
+  }
+}

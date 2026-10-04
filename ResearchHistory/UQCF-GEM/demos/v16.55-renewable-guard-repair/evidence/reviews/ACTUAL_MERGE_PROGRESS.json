@@ -1,0 +1,31 @@
+{
+  "schema": "v1655-actual-merge-execution-checkpoint-v1",
+  "status": "ACTUAL_MERGE_REPLAY_IN_PROGRESS",
+  "numbered_certification": "PENDING_ACTUAL_MERGE_WHOLE_EVIDENCE_REVIEW",
+  "observed_at": "2026-10-04T15:11:35Z",
+  "run_id": 37211847122,
+  "attempt": 1,
+  "sha": "3183c29896ebb47c320fa46a67ca2dd0696702fc",
+  "workflow_sha": "3183c29896ebb47c320fa46a67ca2dd0696702fc",
+  "scientific_sha": "3183c29896ebb47c320fa46a67ca2dd0696702fc",
+  "reviewed_source": "36e9f882fdc900ff85d91019ce551c88a27dfcd9",
+  "controls": {
+    "job_id": 111464455922,
+    "conclusion": "success",
+    "scientific": 29,
+    "mechanical": 37,
+    "log": "ACTUAL_MERGE_CONTROLS_JOB_111464455922.log",
+    "artifact_sha256": "4757a7c228d84dda5332f0676bc3e406c76cf3983765e42978e224ad08d6995d"
+  },
+  "remaining": [
+    "complete_primary",
+    "complete_fresh_reproduction",
+    "complete_inherited",
+    "three_full_component_audits",
+    "durable_original_publication",
+    "immutable_reconstruction",
+    "independent_whole_actual_merge_review",
+    "numbered_closeout"
+  ],
+  "no_duplicate_execution": true
+}
