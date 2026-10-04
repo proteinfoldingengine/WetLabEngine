@@ -31,7 +31,8 @@ jobs:
               r=json.loads((b/'RECOVERY_CONTROL_REQUEST.json').read_text())
               assert r['audited_run_id']==37180275767
               assert r['audited_sha']=='60c48b818366354d26366af35726788553865455'
-              command=['python','-m','unittest','discover','-s','.github/scripts/tests','-p','test_v1655_recovery_audit.py','-v']
+              assert subprocess.check_output(['git','show','-s','--format=%P',head],text=True).strip()==r['scientific_parent_sha']
+              command=['python','-m','unittest','discover','-s','.github/scripts/tests','-p','test_v1655*.py','-v']
           else:
               r=json.loads((b/'CONTROL_REQUEST.json').read_text())
               assert subprocess.check_output(['git','show','-s','--format=%P',head],text=True).strip()==r['scientific_parent_sha']
@@ -41,6 +42,10 @@ jobs:
           Path('out/controls/PROVENANCE.json').write_text(json.dumps({'workflow_sha':head,'scientific_sha':head,'request':r,'run_id':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT']},sort_keys=True)+'\n')
           p=subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
           Path('out/controls/tests.log').write_text(p.stdout);print(p.stdout)
+          if changed==[recovery]:
+              scientific=subprocess.run(['python','-m','unittest','discover','-s',str(b/'tests'),'-v'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
+              Path('out/controls/scientific-tests.log').write_text(scientific.stdout);print(scientific.stdout)
+              raise SystemExit(p.returncode or scientific.returncode)
           raise SystemExit(p.returncode)
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
