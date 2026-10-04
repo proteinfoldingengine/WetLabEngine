@@ -156,7 +156,9 @@ class JoinContractTests(unittest.TestCase):
                 api.validate_original_ledgers(bad, context)
 
 
-class PublicationOrchestrationTests(JoinContractTests):
+class PublicationOrchestrationTests(unittest.TestCase):
+    api = JoinContractTests.api
+    fixtures = JoinContractTests.fixtures
     # Breaks caught: missing transport mkdir, absent exact metadata roles,
     # unchecked control IDs/member maps, duplicate ZIP extraction names.
     def test_original_transport_creates_parent_and_matches_actual_member_bytes(self):
