@@ -170,7 +170,7 @@ Finish the displayed eight-primitive cycle. The roots are again a disjoint parti
 
 This is repeated repair through several unfinished roots, not a single successful local move. The direct/cycle algorithm handles EVERY subsequent actual boundary and preserves original floors even where its donor is saturated. It is finite for every t, not a numerical sample.
 
-The whole endpoint union tuple has tau<=2: choose a label in B_12 and one in B_34; these hit unions at indices1,2 and3,4 respectively. Thus a static guard below every endpoint union cannot explain the repair. Several partial supports carry the protection instead.
+The whole endpoint union tuple has tau<=2: choose a label in B_12 and one in B_34; these hit unions at indices1,2 and3,4 respectively. Therefore no subfamily of these ACTUAL union roots is a three-guard. This excludes using those unions as an unchanged guard; it does not exclude auxiliary contracted supports or other prior protected-root repairs. Several partial supports carry the protection instead.
 
 ## 8. Dependencies, novelty, limitations and review checklist
 
