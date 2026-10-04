@@ -1,4 +1,4 @@
-# Next after A11.X32 — compatible witness placement and coupled renewal
+# Next after A11.X33 — remaining compatible guards and prospective v16.55 approval
 
 ## Completed analytical mechanisms
 
@@ -28,9 +28,11 @@ X31 handles MULTIPLE excess triples when actual source redundancy can carry the 
 
 X32 selects a compatible patch placement using exact ACTUAL witness counts instead of requiring more old witnesses than patches. In a common original-floor grade, sum_K C(ell-w_K,p-w_K)/C(ell,p)<1 supplies an eligible deterministic conditional-count construction leaving an unchanged witness outside all patches. Full legal M reversal restores original token indices. Scalar C(k,2)*(p/ell)^rho<1 and shared odd two-grade bounds derive complete full endpoint repair on infinitely many profiles failing X31's sufficient inequality. No randomized scientific execution or universal mixed-floor permutation is inferred.
 
+X33 DERIVES simultaneous original-grade guards: sum_j floor(n_j*c_j/(floor(n_j/2)+1))<k supplies an actual omitted label good in EVERY grade. Endpoint guards occupy at most half of each grade and permit a complete full-token placement on disjoint slots using ONLY same-original-floor permutations. Native AB/M/A with saved exact compactions restores every labelled/noncompact endpoint. ALLfloors k-4/k-3 at k>=13 are solved, any parity/counts/excess. No arbitrary mixed-floor or destination-directed universality follows.
+
 ## Remaining structural direction
 
-Improve actual shared redundancy and X32's compatible placement bounds, exploit ACTUAL smaller patch sets, or supply coupled pair witnesses when source protection is insufficient to leave one witness outside all patch slots through stronger actual shared-multiplicity bounds, or derive genuinely reusable coupled handovers where too few capable slots hold the small guard tokens, or where the small exact module does not fit the available original slots. Source degree alone is insufficient if it counts the wrong original floor grades. Actual shared incidences, weighted completion and full compatible pools must account for the SAME capacities and ALL forbidden pairs.
+Extend simultaneous compatible-grade availability where X33's count fails; preserve X33's complete k>=13 complementary4/3 class and all earlier classes. Improve actual shared redundancy and X32's smaller-palette compatible placement bounds, exploit ACTUAL smaller patch sets, or supply coupled pair witnesses when source protection is insufficient to leave one witness outside all patch slots through stronger actual shared-multiplicity bounds, or derive genuinely reusable coupled handovers where too few capable slots hold the small guard tokens, or where the small exact module does not fit the available original slots. Source degree alone is insufficient if it counts the wrong original floor grades. Actual shared incidences, weighted completion and full compatible pools must account for the SAME capacities and ALL forbidden pairs.
 
 Any unresolved mixed3/4 carrier is on k7..10 outside ALL accepted sufficient classes. k<=6 is already X17; k>=11 and r6 are solved, and k8..10,r>=14 are now solved. For k8, X24 additionally excludes r<=9 from unresolved connectivity. X27 excludes ALL seven-label ell<=8 carriers; X25 excludes its new seven-label capable-slot classes; X23's ell>=10,r>=13 and allr>=35 remain accepted. Restricted incidence reserves impose further necessary residual restrictions. These bounds are NOT a checklist of isolated campaigns or a claim every remaining tuple is feasible. Do not infer disconnection from a failed grade/base/pool test.
 
@@ -39,6 +41,8 @@ Supply exact endpoint minimum-cover preparation, original floor/palette legality
 Original directed/unrestricted mixed/higher-target/nested universality remains open. Child lifting retains inherited interfaces/fixed-root clearance. Unit repair is an upper bound, not a positive minimum for every pair.
 
 ## v16.55 and execution gates
+
+A concrete protocol is now published: V16_55_PROSPECTIVE_EXECUTION_PROTOCOL.md, bounded R1-R5 construction/native-integration domains from exact integrated parent466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f. Status APPROVAL_PENDING. Review that exact prospective scope before implementation/scientific execution; no implementation branch or numerical job exists. Approval would authorize the defined implementation/execution/publication/integration chain subject to every existing gate, not unrestricted universality. Independent prospective design review is recorded separately; design acceptance is not user approval.
 
 This is continued analytical progress toward the corrected v16.55 target, not numbered CLOSED/CERTIFIED. No scientific/numerical process or new run ID exists. Prospective protocol from integrated parent, independent production/full-domain reconstruction, substantive rejecting controls/RED evidence, inherited GitHub replay/log inspection, durable reproduced certificates/manifests, exact merge-head review and actual post-merge audit remain unsatisfied. Future numerical diagnostics/implementation require their separately approved prospective protocol before execution.
 
