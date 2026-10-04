@@ -116,6 +116,49 @@ def original_artifact_name(stem, context):
     return f"{stem}-{context.sha}-attempt-{context.attempt}"
 
 
+def validate_current_run(metadata, context, provenance):
+    """Bind a live audit to its actual event, not the historical recovery tuple."""
+    expected = {"id": context.run_id, "run_attempt": context.attempt,
+                "head_sha": context.sha, "path": context.workflow}
+    actual = {"run_id": str(context.run_id), "attempt": str(context.attempt),
+              "sha": context.sha, "workflow_sha": context.sha}
+    if any(metadata.get(key) != value for key, value in expected.items()) or provenance != actual:
+        raise ValueError("current run identity/provenance mismatch")
+    if (metadata.get("status"), metadata.get("conclusion")) not in (
+        ("in_progress", None), ("completed", "success")
+    ):
+        raise ValueError("current run is failed, cancelled or not executing")
+
+
+def validate_current_jobs(jobs, component, context):
+    required = {
+        "primary": ["controls"] + [f"domains ({i})" for i in range(8)],
+        "reproduction": [f"reproduction ({i})" for i in range(8)],
+        "inherited": ["controls", "inherited-development", "inherited-foundation"]
+                     + [f"inherited-domains ({i})" for i in range(8)],
+        "package": ["audit-primary", "audit-reproduction", "audit-inherited"],
+    }
+    if component not in required:
+        raise ValueError("unknown current audit component")
+    for name in required[component]:
+        rows = [row for row in jobs if row.get("name") == name]
+        expected = {"run_id": context.run_id, "run_attempt": context.attempt,
+                    "head_sha": context.sha, "status": "completed", "conclusion": "success"}
+        if len(rows) != 1 or any(rows[0].get(key) != value for key, value in expected.items()):
+            raise ValueError("missing/ambiguous/unsuccessful current producing job " + name)
+
+
+def validate_current_artifact(item, context):
+    run = item.get("workflow_run", {})
+    if (run.get("id") != context.run_id or run.get("head_sha") != context.sha
+        or item.get("expired") is not False
+        or not item.get("name", "").endswith(f"-{context.sha}-attempt-{context.attempt}")
+        or type(item.get("id")) is not int or item["id"] <= 0
+        or type(item.get("size_in_bytes")) is not int or item["size_in_bytes"] <= 0
+        or not re.fullmatch(r"sha256:[0-9a-f]{64}", str(item.get("digest", "")))):
+        raise ValueError("current artifact identity/length/digest mismatch")
+
+
 def recovery_provenance():
     if os.environ.get("GITHUB_ACTIONS") != "true":
         raise RuntimeError("GitHub only")
