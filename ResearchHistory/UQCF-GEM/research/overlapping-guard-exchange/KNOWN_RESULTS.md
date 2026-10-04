@@ -368,3 +368,17 @@ The feasible ell6/r17 control has S62 and any compact M>=9. X15N would force D<=
 All pair witnesses, actual original floors, supplied next edits, installed renewable guard, finite termination, exact upper conversion inputs and full noncompact destination restoration are proved. Remaining mixed/directed/higher-target/unrestricted nested and physical interpretation stay open; no general optimal hub or native disconnection claim.
 
 No numerical scientific enumeration/tests/workflows/run IDs, implementation, benchmark or certified integration merge. v16.55 prospective execution/reconstruction/rejecting-controls/inherited replay/reproduction/durable evidence/exact review/post-merge gates remain open. Certified v16.54 and separately accepted efficiency design unchanged; runner execution and measured speedup unstarted.
+
+## A11.X27 — near-saturated witness parity and forced guard renewal
+
+Scope41f64e0cb669eeeeacc6271f831300bef20640a7; reviewed candidate ab6a5ede6d4f4d2e3e70c2c858c8b1abd6ca9479; proof A11_X27_NEAR_SATURATED_GUARD_RENEWAL.md, Git blob2c7af6cea6894e9f996c9253a9fe403c5682c9ba, SHA256f4120d8030abab370c2782c535862feec7ca5245b920bc64fa51013396f597cb. Fresh whole-argument receipt INDEPENDENT_A11_X27_WHOLE_REVIEW.md; closeout A11_X27_CLOSEOUT.md.
+
+Shared ACTUAL triple multiplicities supply pair and vertex identities. On seven labels they imply f>=7-delta, strictly f>=8-delta for0<delta<=6. Equality would force a linear excess family with exactlydelta used vertices of degree3, but a used vertex needs six other used vertices. This is a structural necessary bound, not a feasibility/disconnection claim.
+
+At ell7,f7/8 the actual ORIGINAL low roots necessarily form a three-guard, even with just one excess witness. Holding them fixed installs Q7's disjoint HIGH guard, then that installed guard protects complete low repair. Eligible one-incidence edits, original floor legality and finite symmetric-difference progress supply full exact-ended lower construction; A converts the complete leg to3/4. Both endpoint legs join at the SAME labelled exact Q and restore every original noncompact support.
+
+Three disjoint NEW groups of X25's fifteen minimum covers admit triple reserves345,156,147, with six remaining four-support complements. The resulting EXACT FOUR fourteen-token hub needs EIGHT small slots, has an actual five-triple guard and supplied H1234. Restricted original low incidence24 supplies compatible X23A access.
+
+Consequently ell7 exact feasibility is iff r>=14 and ALL pairs repair; ell8 feasibility is iff r>=14 and ALL pairs repair. Combined with X26, EVERY feasible seven-label original3/4 carrier with ell<=8 has complete native3/4 repair. For ell<=7 feasibility is iff r>=35-3ell; for ell8 iff r>=14. This removes independent high-slot access at tight ell7 profiles and the ninth-low-slot requirement at fourteen total roots.
+
+All prior results and failure classifications remain accepted. Remaining work concerns stronger shared guard constraints or reusable multiple-overlap handovers outside ALL accepted domains; no campaign checklist. Original directed, unrestricted mixed/higher-target/nested and physical questions remain open. Numbered v16.55 remains OPEN; no scientific execution/run ID, implementation/benchmark or integration merge. Certified v16.54 and efficiency design unchanged; runner execution/measured speedup unstarted.
