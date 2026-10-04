@@ -52,7 +52,7 @@ class Contract(unittest.TestCase):
     def test_lost_pair_witness(self):
         self.reject(lambda c,r:r.update(meta={"pair_witnesses":[{"pair":[0,1],"index":0}]}))
     def test_false_conditional_count(self):
-        self.reject(lambda c,r:r.update(meta={"placement":{"L":[0,1,2,3],"p":1,"steps":[{"D":[],"phi":"0"}]}}))
+        self.reject(lambda c,r:r.update(meta={"placement":{"L":[0,1,2,3],"p":1,"steps":[{"D":[],"phi":"1"},{"D":[0],"phi":"0"}]}}))
     def test_false_provenance(self):
         self.assertTrue(self.api().verify_provenance({"scientific_sha":"fake"},{"scientific_sha":"0"*40}))
     def test_corrupt_digest(self):
@@ -83,6 +83,10 @@ class Contract(unittest.TestCase):
         c,r=self.produced("R1");self.assertTrue(r["meta"]["cycles"])
         r["meta"]["cycles"]=[]
         self.assertTrue(self.api().verify_record(c,r),"missing actual cycles accepted")
+    def test_cycle_progress_is_actual(self):
+        c,r=self.produced("R1");event=r["meta"]["cycles"][0]
+        event["before"]+=100;event["after"]+=100
+        self.assertTrue(self.api().verify_record(c,r),"fabricated decreasing potential accepted")
     def test_full_assignment_is_mandatory(self):
         c,r=self.produced("R2");del r["meta"]["assignment"]
         self.assertTrue(self.api().verify_record(c,r),"missing full token assignment accepted")
