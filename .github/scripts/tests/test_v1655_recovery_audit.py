@@ -161,6 +161,7 @@ class DurablePublicationTests(unittest.TestCase):
             "audited_run_id": 37180275767,
             "audited_sha": "60c48b818366354d26366af35726788553865455",
             "audited_attempt": 1,
+            "source_parent": "f" * 40,
         }
 
     def test_exact_package_tuple_is_required(self):
