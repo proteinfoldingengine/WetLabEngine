@@ -143,18 +143,25 @@ def add_content_reference(index, byte_count, digest, reference):
         index[key].append(reference)
 
 
-def classify_wrapper_members(members, retained_names, archive_index, member_index, archive_classification="ARCHIVE_REFERENCE"):
+def classify_wrapper_members(members, retained_names, archive_index, member_index, archive_classification="ARCHIVE_REFERENCE", archive_names=None):
+    names = [row["name"] for row in members]
+    if len(names) != len(set(names)):
+        raise ValueError("duplicate wrapper member name")
+    if archive_names is not None and not set(archive_names).issubset(names):
+        raise ValueError("missing declared archive member")
     mapped = []
     for supplied in members:
         row = {key: supplied[key] for key in ("name", "bytes", "sha256")}
         key = content_key(row["bytes"], row["sha256"])
+        if archive_names is not None and row["name"] in archive_names and key != archive_names[row["name"]]:
+            raise ValueError("archive member differs from its exact ledger content")
         if row["name"] in retained_names:
             classification = "RETAINED_METADATA"
             references = [{"published_name": row["name"]}]
-        elif key in archive_index:
+        elif key in archive_index and (archive_names is None or row["name"] in archive_names):
             classification = archive_classification
             references = archive_index[key]
-        elif key in member_index:
+        elif key in member_index and (archive_names is None or row["name"] not in archive_names):
             classification = "MEMBER_REFERENCE"
             references = member_index[key]
         else:
@@ -353,6 +360,7 @@ def prepare(request, out):
     component_transports = {}
     component_members = {}
     component_retained = {}
+    component_archive_names = {}
     expected_component_metadata = {
         "primary": {"AGGREGATE.json", "ORIGINAL_ARCHIVE_AUDIT.json", "ORIGINAL_ARTIFACTS.json", "ORIGINAL_RUN.json", "SCIENTIFIC_BYTES.json", "STATUS.json"},
         "reproduction": {"AGGREGATE.json", "ORIGINAL_ARCHIVE_AUDIT.json", "ORIGINAL_ARTIFACTS.json", "ORIGINAL_RUN.json", "SCIENTIFIC_BYTES.json", "STATUS.json"},
@@ -373,7 +381,28 @@ def prepare(request, out):
             raise ValueError("recovery component terminal status mismatch")
         if "ORIGINAL_ARCHIVE_AUDIT.json" not in values:
             raise ValueError("recovery component missing original archive ledger")
-        ledgers.append(values["ORIGINAL_ARCHIVE_AUDIT.json"])
+        ledger = values["ORIGINAL_ARCHIVE_AUDIT.json"]
+        prefix = "out/" + expected["component"] + "/"
+        declared = {}
+        for row in ledger:
+            local = row.get("local_archive", "")
+            if not local.startswith(prefix):
+                raise ValueError("original archive ledger path prefix mismatch")
+            member_name = local[len(prefix):]
+            if member_name in declared:
+                raise ValueError("duplicate original archive ledger member")
+            declared[member_name] = content_key(row["bytes"], row["digest"].removeprefix("sha256:"))
+        component = expected["component"]
+        if component in ("primary", "reproduction"):
+            wanted_members = {f"originals/shard-{i}.zip" for i in range(8)}
+        elif component == "inherited":
+            wanted_members = {"originals/full-controls.zip", "originals/inherited-development.zip", "originals/inherited-foundation.zip"} | {f"originals/inherited-domain-{i}.zip" for i in range(8)}
+        else:
+            wanted_members = {"partial-original-publication.zip"}
+        if set(declared) != wanted_members:
+            raise ValueError("original archive ledger member inventory mismatch")
+        component_archive_names[component] = declared
+        ledgers.append(ledger)
         component_metadata.append({key: expected[key] for key in ("component", "id", "name", "bytes", "digest")})
         component_transports[expected["component"]] = transport
         component_members[expected["component"]] = zip_members(transport)
@@ -417,6 +446,7 @@ def prepare(request, out):
             component_retained[name],
             archive_index,
             original_member_index,
+            archive_names=component_archive_names[name],
         )
         for member in component_members[name]:
             add_content_reference(
@@ -456,7 +486,7 @@ def prepare(request, out):
         "RETAINED_METADATA": {"count": 22, "bytes": 188702},
     }
     if component_totals != expected_component_totals:
-        raise ValueError("component duplication inventory mismatch")
+        raise ValueError("component duplication inventory mismatch: " + serial(component_totals))
     dump(destination / "COMPONENT_DUPLICATION_MAP.json", {"status": "PASS", "totals": component_totals, "components": component_maps})
 
     package_transport = temporary / "recovery-package.zip"
