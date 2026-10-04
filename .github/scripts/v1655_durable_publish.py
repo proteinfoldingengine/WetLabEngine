@@ -8,6 +8,8 @@ import re
 import resource
 import shutil
 import sys
+import urllib.error
+import urllib.parse
 import urllib.request
 import zipfile
 
@@ -140,16 +142,40 @@ def api(path):
         return json.load(response)
 
 
-def download(item, destination):
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, request, file_pointer, code, message, headers, new_url):
+        return None
+
+
+def download(item, destination, api_opener=None, signed_open=None, token=None):
+    api_url = item["archive_download_url"]
+    expected_url = f"https://api.github.com/repos/{REPO}/actions/artifacts/{PACKAGE_ID}/zip"
+    if api_url != expected_url:
+        raise ValueError("unexpected package artifact download endpoint")
     request = urllib.request.Request(
-        item["archive_download_url"],
+        api_url,
         headers={
-            "Authorization": "Bearer " + os.environ["GH_TOKEN"],
+            "Authorization": "Bearer " + (token or os.environ["GH_TOKEN"]),
             "Accept": "application/vnd.github+json",
             "X-GitHub-Api-Version": "2022-11-28",
         },
     )
-    with urllib.request.urlopen(request) as response, Path(destination).open("wb") as stream:
+    opener = api_opener or urllib.request.build_opener(NoRedirect)
+    try:
+        response = opener.open(request)
+    except urllib.error.HTTPError as error:
+        if error.code not in (301, 302, 303, 307, 308):
+            raise
+        location = error.headers.get("Location")
+    else:
+        response.close()
+        raise ValueError("artifact endpoint did not return an inspected redirect")
+    parsed = urllib.parse.urlsplit(location or "")
+    if parsed.scheme != "https" or not parsed.netloc or parsed.netloc == "api.github.com":
+        raise ValueError("invalid signed artifact redirect")
+    signed_request = urllib.request.Request(location)
+    open_signed = signed_open or urllib.request.urlopen
+    with open_signed(signed_request) as response, Path(destination).open("wb") as stream:
         shutil.copyfileobj(response, stream, 1024 * 1024)
 
 
