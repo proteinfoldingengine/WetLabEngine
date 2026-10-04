@@ -5,7 +5,7 @@ Date:2026-10-04 UTC.
 
 PR103 has been merged at3183c29896ebb47c320fa46a67ca2dd0696702fc. The exact ordered parents are the unchanged certified integration466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f and independently reviewed featuread4617e13de6db88b855d8831bba66572802884e. Actual tree d6310f3b7535a72e6b07e9a98fc2e2fa9492f5f3 equals the accepted preview; all42 source/executable blobs and literal contract match. Independent structural acceptance is recorded separately.
 
-The integration push launched fresh approved full replay37211847122/attempt1 at the ACTUAL merge SHA. No manually launched duplicate exists. This is the required postmerge R1–R5/reproduction/inherited execution, not a rerun to shrink archives. At this checkpoint controls were still IN_PROGRESS; no current scientific/audit terminal outcome is inferred.
+The integration push launched fresh approved full replay37211847122/attempt1 at the ACTUAL merge SHA. No manually launched duplicate exists. This is the required postmerge R1–R5/reproduction/inherited execution, not a rerun to shrink archives. Update2026-10-04T15:11:35Z: control job111464455922 completed SUCCESS; exact logs show29scientific and37mechanical tests, all66methods OK, with checkout/event/workflow SHA3183c298. All eight primary shards are now IN_PROGRESS. No domain/reproduction/inherited/audit terminal outcome is inferred.
 
 ## Scientific discovery and bounded implementation
 
