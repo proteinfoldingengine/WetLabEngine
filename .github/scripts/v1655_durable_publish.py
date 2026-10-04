@@ -1,4 +1,4 @@
-"""Durably preserve the exact v16.55 recovery package without rerunning science."""
+"""Publish each original v16.55 evidence archive once; reference derived wrappers."""
 from __future__ import annotations
 import hashlib
 import json
@@ -25,8 +25,15 @@ PACKAGE_NAME = f"v1655-recovery-package-{RECOVERY_SHA}-attempt-{RECOVERY_ATTEMPT
 AUDITED_RUN = 37180275767
 AUDITED_SHA = "60c48b818366354d26366af35726788553865455"
 AUDITED_ATTEMPT = 1
+AUDITED_WORKFLOW = ".github/workflows/v16.55-renewable-guard-validation.yml"
 BASE = Path("ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair")
 PART_BYTES = 20 * 1024 * 1024
+COMPONENTS = [
+    {"component": "primary", "id": 11302736991, "name": f"v1655-recovery-primary-{RECOVERY_SHA}-attempt-1", "bytes": 47755058, "digest": "sha256:470e96998ecbb8b7e787a5c2b262a0f8b77c1f589bc1a47a9806f0a214620ae4"},
+    {"component": "reproduction", "id": 11302517301, "name": f"v1655-recovery-reproduction-{RECOVERY_SHA}-attempt-1", "bytes": 47755038, "digest": "sha256:56d6a67414780620867a735cdcb3174fffe70ed63481936f29b29aac14ae949c"},
+    {"component": "inherited", "id": 11302105924, "name": f"v1655-recovery-inherited-{RECOVERY_SHA}-attempt-1", "bytes": 317071692, "digest": "sha256:4587f585410f0237f0a95d7afb250c4b016ba01b82d230b86754d6cbb3327bcf"},
+    {"component": "partial", "id": 11301163521, "name": f"v1655-recovery-partial-{RECOVERY_SHA}-attempt-1", "bytes": 190982776, "digest": "sha256:fc895cf2facc74093acd8ce9c258c4d445f6abd727c21d4ea296760e89a99b9f"},
+]
 
 
 def serial(value):
@@ -73,13 +80,60 @@ def validate_request(value):
     return value
 
 
+def expected_original_names():
+    suffix = f"-{AUDITED_SHA}-attempt-{AUDITED_ATTEMPT}"
+    return (
+        ["v1655-full-controls" + suffix]
+        + [f"v1655-primary-{shard}" + suffix for shard in range(8)]
+        + [f"v1655-reproduction-{shard}" + suffix for shard in range(8)]
+        + ["v1655-inherited-development" + suffix]
+        + [f"v1655-inherited-domain-{shard}" + suffix for shard in range(8)]
+        + ["v1655-inherited-foundation" + suffix, "v1655-original-archive-audit" + suffix]
+    )
+
+
+def deduplicate_ledgers(ledgers):
+    by_id = {}
+    for ledger in ledgers:
+        for supplied in ledger:
+            row = {key: supplied[key] for key in ("id", "name", "digest", "bytes")}
+            if type(row["id"]) is not int or type(row["bytes"]) is not int or row["bytes"] <= 0:
+                raise ValueError("invalid original evidence ledger row")
+            if not isinstance(row["name"], str) or not re.fullmatch("sha256:[0-9a-f]{64}", row["digest"]):
+                raise ValueError("invalid original evidence ledger metadata")
+            if row["id"] in by_id and by_id[row["id"]] != row:
+                raise ValueError("conflicting duplicate original evidence ledger row")
+            by_id[row["id"]] = row
+    return sorted(by_id.values(), key=lambda row: row["id"])
+
+
+def size_inventory(originals, components, package):
+    unique = sum(row["bytes"] for row in originals)
+    wrappers = sum(row["bytes"] for row in components)
+    recursive = package["bytes"]
+    return {
+        "publication_policy": "ORIGINAL_ARCHIVES_ONCE_MANIFEST_REFERENCED_WRAPPERS",
+        "unique_original_count": len(originals),
+        "unique_original_bytes": unique,
+        "published_binary_bytes": unique,
+        "recovery_component_wrapper_count": len(components),
+        "recovery_component_wrapper_bytes": wrappers,
+        "recursive_package_wrapper_bytes": recursive,
+        "git_bytes_avoided": recursive - unique,
+        "wrapper_classification": {
+            "recovery_components": "DERIVED_ZIPS_PLUS_EXTRACTED_ORIGINAL_COPIES_NOT_PUBLISHED",
+            "recursive_package": "COMPONENT_ZIPS_PLUS_EXTRACTED_COMPONENT_TREES_NOT_PUBLISHED",
+        },
+    }
+
+
 def split_archive(source, destination, expected_bytes, expected_sha256, part_bytes=PART_BYTES):
     source = Path(source)
     destination = Path(destination)
     if source.stat().st_size != expected_bytes:
-        raise ValueError("package archive byte length mismatch")
+        raise ValueError("archive byte length mismatch")
     if sha256_file(source) != expected_sha256:
-        raise ValueError("package archive digest mismatch")
+        raise ValueError("archive digest mismatch")
     destination.mkdir(parents=True, exist_ok=False)
     parts = []
     with source.open("rb") as stream:
@@ -93,16 +147,10 @@ def split_archive(source, destination, expected_bytes, expected_sha256, part_byt
             path.write_bytes(block)
             parts.append({"name": name, "bytes": len(block), "sha256": sha256_bytes(block)})
             index += 1
-    manifest = {
-        "format": "ordered-concatenation",
-        "bytes": expected_bytes,
-        "sha256": expected_sha256,
-        "part_bytes": part_bytes,
-        "parts": parts,
-    }
+    manifest = {"format": "ordered-concatenation", "bytes": expected_bytes, "sha256": expected_sha256, "part_bytes": part_bytes, "parts": parts}
     dump(destination / "PARTS.json", manifest)
     if verify_parts(destination) != (expected_bytes, expected_sha256):
-        raise ValueError("package parts self-verification failed")
+        raise ValueError("archive parts self-verification failed")
     return manifest
 
 
@@ -112,31 +160,27 @@ def verify_parts(destination):
     expected_names = [item["name"] for item in manifest["parts"]]
     actual_names = sorted(path.name for path in destination.glob("original.zip.part*"))
     if actual_names != expected_names:
-        raise ValueError("package part inventory mismatch")
+        raise ValueError("archive part inventory mismatch")
     total = 0
     result = hashlib.sha256()
     for item in manifest["parts"]:
         path = destination / item["name"]
         if path.stat().st_size != item["bytes"] or sha256_file(path) != item["sha256"]:
-            raise ValueError("package part mismatch")
+            raise ValueError("archive part mismatch")
         total += item["bytes"]
         with path.open("rb") as stream:
             for chunk in iter(lambda: stream.read(1024 * 1024), b""):
                 result.update(chunk)
     digest = result.hexdigest()
     if total != manifest["bytes"] or digest != manifest["sha256"]:
-        raise ValueError("reconstructed package mismatch")
+        raise ValueError("reconstructed archive mismatch")
     return total, digest
 
 
 def api(path):
     request = urllib.request.Request(
         f"https://api.github.com/repos/{REPO}/{path}",
-        headers={
-            "Authorization": "Bearer " + os.environ["GH_TOKEN"],
-            "Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-        },
+        headers={"Authorization": "Bearer " + os.environ["GH_TOKEN"], "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"},
     )
     with urllib.request.urlopen(request) as response:
         return json.load(response)
@@ -149,16 +193,12 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 def download(item, destination, api_opener=None, signed_open=None, token=None):
     api_url = item["archive_download_url"]
-    expected_url = f"https://api.github.com/repos/{REPO}/actions/artifacts/{PACKAGE_ID}/zip"
-    if api_url != expected_url:
-        raise ValueError("unexpected package artifact download endpoint")
+    match = re.fullmatch(rf"https://api\.github\.com/repos/{re.escape(REPO)}/actions/artifacts/([0-9]+)/zip", api_url)
+    if not match or ("id" in item and int(match.group(1)) != item["id"]):
+        raise ValueError("unexpected artifact download endpoint")
     request = urllib.request.Request(
         api_url,
-        headers={
-            "Authorization": "Bearer " + (token or os.environ["GH_TOKEN"]),
-            "Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-        },
+        headers={"Authorization": "Bearer " + (token or os.environ["GH_TOKEN"]), "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"},
     )
     opener = api_opener or urllib.request.build_opener(NoRedirect)
     try:
@@ -174,9 +214,33 @@ def download(item, destination, api_opener=None, signed_open=None, token=None):
     if parsed.scheme != "https" or not parsed.netloc or parsed.netloc == "api.github.com":
         raise ValueError("invalid signed artifact redirect")
     signed_request = urllib.request.Request(location)
-    open_signed = signed_open or urllib.request.urlopen
-    with open_signed(signed_request) as response, Path(destination).open("wb") as stream:
+    with (signed_open or urllib.request.urlopen)(signed_request) as response, Path(destination).open("wb") as stream:
         shutil.copyfileobj(response, stream, 1024 * 1024)
+
+
+def exact_artifact(metadata, expected):
+    wanted = {
+        "id": expected["id"],
+        "name": expected["name"],
+        "size_in_bytes": expected["bytes"],
+        "digest": expected["digest"],
+        "expired": False,
+    }
+    if any(metadata.get(key) != value for key, value in wanted.items()):
+        raise ValueError("artifact metadata mismatch " + expected["name"])
+    return metadata
+
+
+def root_json(archive, destination):
+    destination.mkdir(parents=True, exist_ok=False)
+    values = {}
+    with zipfile.ZipFile(archive) as source:
+        for name in sorted(source.namelist()):
+            if name.endswith(".json") and "/" not in name.strip("/"):
+                data = source.read(name)
+                (destination / name).write_bytes(data)
+                values[name] = json.loads(data)
+    return values
 
 
 def prepare(request, out):
@@ -184,61 +248,91 @@ def prepare(request, out):
         raise RuntimeError("GitHub-only durable evidence publication")
     validate_request(request)
     resource.setrlimit(resource.RLIMIT_AS, (4294967296, 4294967296))
-    metadata = api(f"actions/runs/{RECOVERY_RUN}/attempts/{RECOVERY_ATTEMPT}")
-    wanted_run = {
-        "id": RECOVERY_RUN,
-        "run_attempt": RECOVERY_ATTEMPT,
-        "head_sha": RECOVERY_SHA,
-        "path": RECOVERY_WORKFLOW,
-        "status": "completed",
-        "conclusion": "success",
-    }
-    if any(metadata.get(key) != value for key, value in wanted_run.items()):
+    recovery = api(f"actions/runs/{RECOVERY_RUN}/attempts/{RECOVERY_ATTEMPT}")
+    recovery_wanted = {"id": RECOVERY_RUN, "run_attempt": RECOVERY_ATTEMPT, "head_sha": RECOVERY_SHA, "path": RECOVERY_WORKFLOW, "status": "completed", "conclusion": "success"}
+    if any(recovery.get(key) != value for key, value in recovery_wanted.items()):
         raise ValueError("recovery run metadata mismatch")
-    artifacts = api(f"actions/runs/{RECOVERY_RUN}/artifacts?per_page=100")["artifacts"]
-    candidates = [item for item in artifacts if item["id"] == PACKAGE_ID and item["name"] == PACKAGE_NAME and not item["expired"]]
-    if len(candidates) != 1:
-        raise ValueError("package artifact unavailable or ambiguous")
-    item = candidates[0]
-    if item["size_in_bytes"] != PACKAGE_BYTES or item["digest"] != "sha256:" + PACKAGE_DIGEST:
-        raise ValueError("package artifact metadata mismatch")
+    original = api(f"actions/runs/{AUDITED_RUN}/attempts/{AUDITED_ATTEMPT}")
+    original_wanted = {"id": AUDITED_RUN, "run_attempt": AUDITED_ATTEMPT, "head_sha": AUDITED_SHA, "path": AUDITED_WORKFLOW, "status": "completed", "conclusion": "cancelled"}
+    if any(original.get(key) != value for key, value in original_wanted.items()):
+        raise ValueError("original run metadata mismatch")
+    recovery_artifacts = api(f"actions/runs/{RECOVERY_RUN}/artifacts?per_page=100")["artifacts"]
+    original_artifacts = api(f"actions/runs/{AUDITED_RUN}/artifacts?per_page=100")["artifacts"]
+    by_recovery_id = {item["id"]: item for item in recovery_artifacts}
+    by_original_id = {item["id"]: item for item in original_artifacts}
+    package_expected = {"id": PACKAGE_ID, "name": PACKAGE_NAME, "bytes": PACKAGE_BYTES, "digest": "sha256:" + PACKAGE_DIGEST}
+    package = exact_artifact(by_recovery_id[PACKAGE_ID], package_expected)
     out = Path(out)
     out.mkdir(parents=True, exist_ok=False)
-    transport = out / "package.zip"
-    download(item, transport)
+    temporary = out / "temporary"
+    temporary.mkdir()
     destination = BASE / "evidence" / "recovery" / f"run-{RECOVERY_RUN}-attempt-{RECOVERY_ATTEMPT}"
     if destination.exists():
         raise ValueError("refusing to overwrite durable evidence")
     destination.mkdir(parents=True)
-    split_archive(transport, destination / "package-archive", PACKAGE_BYTES, PACKAGE_DIGEST)
-    with zipfile.ZipFile(transport) as archive:
-        names = set(archive.namelist())
-        for name in ("STATUS.json", "DURABLE_MANIFEST.json", "COMPONENT_ARTIFACTS.json"):
-            if name not in names:
-                raise ValueError("package metadata missing " + name)
-            (destination / name).write_bytes(archive.read(name))
-    transport.unlink()
-    status = json.loads((destination / "STATUS.json").read_text())
-    if status.get("status") != "PASS" or status.get("component") != "package":
-        raise ValueError("package terminal status mismatch")
-    if status.get("audited", {}).get("run_id") != AUDITED_RUN or status.get("audited", {}).get("sha") != AUDITED_SHA:
-        raise ValueError("package audited provenance mismatch")
-    if status.get("recovery", {}).get("run_id") != str(RECOVERY_RUN) or status.get("recovery", {}).get("sha") != RECOVERY_SHA:
-        raise ValueError("package recovery provenance mismatch")
-    if status.get("numbered_certification") != "PENDING_DURABLE_GIT_PUBLICATION_REVIEW_MERGE_AND_ACTUAL_MERGE_AUDIT":
-        raise ValueError("package prematurely certified")
-    dump(destination / "PACKAGE_ARTIFACT.json", item)
+    ledgers = []
+    component_metadata = []
+    component_root = destination / "recovery-components"
+    for expected in COMPONENTS:
+        item = exact_artifact(by_recovery_id[expected["id"]], expected)
+        transport = temporary / f"{expected['component']}.zip"
+        download(item, transport)
+        if transport.stat().st_size != expected["bytes"] or sha256_file(transport) != expected["digest"].removeprefix("sha256:"):
+            raise ValueError("recovery component bytes mismatch")
+        values = root_json(transport, component_root / expected["component"])
+        status = values.get("STATUS.json", {})
+        if status.get("status") != "PASS" or status.get("component") != expected["component"]:
+            raise ValueError("recovery component terminal status mismatch")
+        if "ORIGINAL_ARCHIVE_AUDIT.json" not in values:
+            raise ValueError("recovery component missing original archive ledger")
+        ledgers.append(values["ORIGINAL_ARCHIVE_AUDIT.json"])
+        component_metadata.append(item)
+        transport.unlink()
+    originals = deduplicate_ledgers(ledgers)
+    if len(originals) != 28 or {row["name"] for row in originals} != set(expected_original_names()):
+        raise ValueError("recovery ledgers do not cover exact original evidence inventory")
+    published = []
+    archive_root = destination / "original-archives"
+    for row in sorted(originals, key=lambda value: value["name"]):
+        if row["id"] not in by_original_id:
+            raise ValueError("referenced original artifact absent")
+        item = exact_artifact(by_original_id[row["id"]], row)
+        transport = temporary / f"original-{row['id']}.zip"
+        download(item, transport)
+        relative = Path("original-archives") / row["name"]
+        split_archive(transport, destination / relative, row["bytes"], row["digest"].removeprefix("sha256:"))
+        transport.unlink()
+        published.append({**row, "published_at": str(relative)})
+    wrapper_reference = {"recovery_components": component_metadata, "recovery_package": package}
+    dump(destination / "ORIGINAL_EVIDENCE_INVENTORY.json", published)
+    dump(destination / "DERIVED_WRAPPER_REFERENCES.json", wrapper_reference)
+    inventory = size_inventory(published, COMPONENTS, {"bytes": PACKAGE_BYTES})
+    dump(destination / "SIZE_HASH_INVENTORY.json", inventory)
+    reconstructed = []
+    for row in published:
+        size, digest = verify_parts(destination / row["published_at"])
+        reconstructed.append({"id": row["id"], "name": row["name"], "bytes": size, "sha256": digest})
+    reconstruction = {
+        "status": "PASS",
+        "mode": "BYTE_EXACT_ORIGINAL_ARCHIVES_FROM_GIT_PARTS",
+        "count": len(reconstructed),
+        "bytes": sum(row["bytes"] for row in reconstructed),
+        "artifacts": reconstructed,
+        "recovery_component_statuses": ["primary", "reproduction", "inherited", "partial"],
+        "recovery_package": "DERIVED_WRAPPER_REFERENCED_BY_ID_SIZE_DIGEST_NOT_RECURSIVELY_EMBEDDED",
+        "scientific_execution": "NOT_RERUN",
+    }
+    if reconstruction["count"] != 28 or reconstruction["bytes"] != 301804233:
+        raise ValueError("complete original evidence reconstruction mismatch")
+    dump(destination / "RECONSTRUCTION.json", reconstruction)
     receipt = {
-        "status": "ORIGINAL_PACKAGE_BYTES_VERIFIED",
-        "recovery_run": metadata,
-        "package_artifact": item,
+        "status": "ORIGINAL_ARCHIVES_ONCE_VERIFIED",
+        "audited_run": original,
+        "recovery_run": recovery,
         "publication_workflow_sha": os.environ["GITHUB_WORKFLOW_SHA"],
         "publication_event_sha": os.environ["GITHUB_SHA"],
         "publication_run": os.environ["GITHUB_RUN_ID"],
         "publication_attempt": os.environ["GITHUB_RUN_ATTEMPT"],
-        "audited_run_id": AUDITED_RUN,
-        "audited_sha": AUDITED_SHA,
-        "audited_attempt": AUDITED_ATTEMPT,
         "numbered_certification": "PENDING_REVIEW_MERGE_AND_ACTUAL_MERGE_AUDIT",
     }
     dump(destination / "PUBLICATION_RECEIPT.json", receipt)
@@ -247,9 +341,9 @@ def prepare(request, out):
     (out / "DESTINATION.txt").write_text(str(destination) + "\n")
     receipt_out = out / "receipt"
     receipt_out.mkdir()
-    for name in ("STATUS.json", "PACKAGE_ARTIFACT.json", "PUBLICATION_RECEIPT.json", "PUBLICATION_MANIFEST.json"):
+    for name in ("ORIGINAL_EVIDENCE_INVENTORY.json", "DERIVED_WRAPPER_REFERENCES.json", "SIZE_HASH_INVENTORY.json", "RECONSTRUCTION.json", "PUBLICATION_RECEIPT.json", "PUBLICATION_MANIFEST.json"):
         shutil.copyfile(destination / name, receipt_out / name)
-    shutil.copyfile(destination / "package-archive" / "PARTS.json", receipt_out / "PARTS.json")
+    shutil.rmtree(temporary)
     return destination
 
 
