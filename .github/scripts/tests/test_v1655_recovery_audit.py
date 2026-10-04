@@ -225,6 +225,44 @@ class DurablePublicationTests(unittest.TestCase):
         self.assertIsNone(seen["signed"].get_header("Authorization"))
         self.assertEqual(dict(seen["signed"].header_items()), {})
 
+    def test_expected_original_inventory_has_all_28_archives(self):
+        names = publish.expected_original_names()
+        self.assertEqual(len(names), 28)
+        self.assertEqual(len(set(names)), 28)
+        self.assertIn("v1655-full-controls-60c48b818366354d26366af35726788553865455-attempt-1", names)
+        self.assertIn("v1655-original-archive-audit-60c48b818366354d26366af35726788553865455-attempt-1", names)
+        self.assertEqual(sum(name.startswith("v1655-primary-") for name in names), 8)
+        self.assertEqual(sum(name.startswith("v1655-reproduction-") for name in names), 8)
+        self.assertEqual(sum(name.startswith("v1655-inherited-domain-") for name in names), 8)
+
+    def test_component_ledgers_deduplicate_only_exact_rows(self):
+        first = {"id": 1, "name": "a", "digest": "sha256:" + "a" * 64, "bytes": 10, "local_archive": "temporary/a.zip"}
+        second = {"id": 2, "name": "b", "digest": "sha256:" + "b" * 64, "bytes": 20, "local_archive": "temporary/b.zip"}
+        rows = publish.deduplicate_ledgers([[first, second], [dict(first)]])
+        self.assertEqual(rows, [
+            {"id": 1, "name": "a", "digest": "sha256:" + "a" * 64, "bytes": 10},
+            {"id": 2, "name": "b", "digest": "sha256:" + "b" * 64, "bytes": 20},
+        ])
+        with self.assertRaises(ValueError):
+            publish.deduplicate_ledgers([[first], [{**first, "bytes": 11}]])
+
+    def test_size_inventory_separates_unique_evidence_from_wrappers(self):
+        inventory = publish.size_inventory(
+            [{"bytes": 301804233}],
+            [
+                {"bytes": 47755058},
+                {"bytes": 47755038},
+                {"bytes": 317071692},
+                {"bytes": 190982776},
+            ],
+            {"bytes": 1207019319},
+        )
+        self.assertEqual(inventory["unique_original_bytes"], 301804233)
+        self.assertEqual(inventory["recovery_component_wrapper_bytes"], 603564564)
+        self.assertEqual(inventory["recursive_package_wrapper_bytes"], 1207019319)
+        self.assertEqual(inventory["git_bytes_avoided"], 905215086)
+        self.assertEqual(inventory["publication_policy"], "ORIGINAL_ARCHIVES_ONCE_MANIFEST_REFERENCED_WRAPPERS")
+
     def test_split_rejects_wrong_size_or_digest(self):
         payload = b"native-evidence" * 100
         expected = publish.sha256_bytes(payload)
