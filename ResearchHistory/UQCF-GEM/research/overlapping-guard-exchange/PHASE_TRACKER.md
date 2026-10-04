@@ -1,6 +1,8 @@
 # Post-v16.54: Distributed Repair
 
-Latest X30: one excess triple localizes incomplete HIGH protection. A destination root avoiding that triple is installed without destroying old LOW pair witnesses, then the installed HIGH-plus-patch guard protects complete repair. Exact minimum-cover compaction/reversal restores FULL original noncompact endpoints. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X30_CLOSEOUT.md.
+Latest X31: derived ACTUAL source witness redundancy protects installation of all existing destination patches across MULTIPLE shared slots. HIGH-plus-patches completes renewed protection and full native3/4 endpoint restoration under epsilon+5delta<k-3. Infinite multi-excess profiles are constructed symbolically. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X31_CLOSEOUT.md.
+
+Earlier X30: one excess triple localizes incomplete HIGH protection. A destination root avoiding that triple is installed without destroying old LOW pair witnesses, then the installed HIGH-plus-patch guard protects complete repair. Exact minimum-cover compaction/reversal restores FULL original noncompact endpoints. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X30_CLOSEOUT.md.
 
 Earlier X29: shared pair excess epsilon<k-3 relaxes X28's exact grade balance while retaining both actual original-grade guards and full direct exact endpoint repair. Infinitely many feasible positive-excess carriers are constructed algebraically. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X29_CLOSEOUT.md.
 

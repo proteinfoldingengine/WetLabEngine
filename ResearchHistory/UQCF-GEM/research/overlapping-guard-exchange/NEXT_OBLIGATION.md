@@ -1,4 +1,4 @@
-# Next after A11.X30 — multiple localized defects and actual coupled renewal
+# Next after A11.X31 — actual patch budgets and coupled witness renewal
 
 ## Completed analytical mechanisms
 
@@ -24,9 +24,11 @@ X29 removes exact grade BALANCE: with odd k and saturated triple capacity, share
 
 X30 now relaxes exact saturation to ONE excess triple capacity at odd k and epsilon<k-6. Low roots are a forced guard; installed destination HIGH roots protect every pair outside the excess triple. Exact4 supplies an actual avoiding root. Its outside-triple additions preserve old critical pair witnesses until HIGH-plus-patch protection is complete. Full original labelled/noncompact repair follows. X30L separately supplies this conditional coupled patch at arbitrary positive floors when actual localization/avoiding witnesses hold.
 
+X31 handles MULTIPLE excess triples when actual source redundancy can carry the patch budget. At odd k with delta=4ell+f-C(k,3)>=0 and epsilon=3f-C(k,2),epsilon+5delta<k-3 forces delta+1 actual LOW witnesses per pair. Exact4 supplies at mostdelta actual destination patches whose installed HIGH-plus-patch family is a guard. One old witness outside ALL changed patch slots survives every pair; installed protection completes full endpoint repair. Preserve X30's stronger one-excess bound.
+
 ## Remaining structural direction
 
-Handle SEVERAL excess triples whose pair defects may not fit inside one set with an actual avoiding support, or strengthen the X30 guard bound through stronger actual shared-multiplicity bounds, or derive genuinely reusable coupled handovers where too few capable slots hold the small guard tokens, or where the small exact module does not fit the available original slots. Source degree alone is insufficient if it counts the wrong original floor grades. Actual shared incidences, weighted completion and full compatible pools must account for the SAME capacities and ALL forbidden pairs.
+Improve the X31 redundancy bound, exploit ACTUAL smaller patch sets, or supply coupled pair witnesses when source protection is insufficient to leave one witness outside all patch slots through stronger actual shared-multiplicity bounds, or derive genuinely reusable coupled handovers where too few capable slots hold the small guard tokens, or where the small exact module does not fit the available original slots. Source degree alone is insufficient if it counts the wrong original floor grades. Actual shared incidences, weighted completion and full compatible pools must account for the SAME capacities and ALL forbidden pairs.
 
 Any unresolved mixed3/4 carrier is on k7..10 outside ALL accepted sufficient classes. k<=6 is already X17; k>=11 and r6 are solved, and k8..10,r>=14 are now solved. For k8, X24 additionally excludes r<=9 from unresolved connectivity. X27 excludes ALL seven-label ell<=8 carriers; X25 excludes its new seven-label capable-slot classes; X23's ell>=10,r>=13 and allr>=35 remain accepted. Restricted incidence reserves impose further necessary residual restrictions. These bounds are NOT a checklist of isolated campaigns or a claim every remaining tuple is feasible. Do not infer disconnection from a failed grade/base/pool test.
 
