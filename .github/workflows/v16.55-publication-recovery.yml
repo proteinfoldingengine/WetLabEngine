@@ -3,7 +3,6 @@ on:
   push:
     branches: [research/v16.55-renewable-guard-repair]
     paths:
-      - 'ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/RECOVERY_CONTROL_REQUEST.json'
       - 'ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/RECOVERY_REQUEST.json'
   workflow_dispatch:
 permissions: {contents: read, actions: read}
