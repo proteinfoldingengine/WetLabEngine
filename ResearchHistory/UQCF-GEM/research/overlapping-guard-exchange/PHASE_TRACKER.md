@@ -1,6 +1,8 @@
 # Post-v16.54: Distributed Repair
 
-Latest X31: derived ACTUAL source witness redundancy protects installation of all existing destination patches across MULTIPLE shared slots. HIGH-plus-patches completes renewed protection and full native3/4 endpoint restoration under epsilon+5delta<k-3. Infinite multi-excess profiles are constructed symbolically. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X31_CLOSEOUT.md.
+Latest X32: deterministic ACTUAL witness counts select patch slots leaving one old witness outside ALL patches for every pair. Legal same-original-floor FULL token placement, renewed background-plus-patch protection and saved permutation reversal complete native3/4 repair with exact labelled/noncompact restoration. The sufficient count C(k,2)*(p/ell)^rho<1 removes X31's rho>p requirement and gives an infinite feasible family outside X31's bound. Fresh whole-argument review and closeout: A11_X32_CLOSEOUT.md. v16.55 remains OPEN.
+
+Earlier X31: derived ACTUAL source witness redundancy protects installation of all existing destination patches across MULTIPLE shared slots. HIGH-plus-patches completes renewed protection and full native3/4 endpoint restoration under epsilon+5delta<k-3. Infinite multi-excess profiles are constructed symbolically. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X31_CLOSEOUT.md.
 
 Earlier X30: one excess triple localizes incomplete HIGH protection. A destination root avoiding that triple is installed without destroying old LOW pair witnesses, then the installed HIGH-plus-patch guard protects complete repair. Exact minimum-cover compaction/reversal restores FULL original noncompact endpoints. Fresh whole-argument acceptance; v16.55 and original directed universality remain OPEN. See A11_X30_CLOSEOUT.md.
 

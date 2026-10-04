@@ -1,4 +1,4 @@
-# Next after A11.X31 — actual patch budgets and coupled witness renewal
+# Next after A11.X32 — compatible witness placement and coupled renewal
 
 ## Completed analytical mechanisms
 
@@ -26,9 +26,11 @@ X30 now relaxes exact saturation to ONE excess triple capacity at odd k and epsi
 
 X31 handles MULTIPLE excess triples when actual source redundancy can carry the patch budget. At odd k with delta=4ell+f-C(k,3)>=0 and epsilon=3f-C(k,2),epsilon+5delta<k-3 forces delta+1 actual LOW witnesses per pair. Exact4 supplies at mostdelta actual destination patches whose installed HIGH-plus-patch family is a guard. One old witness outside ALL changed patch slots survives every pair; installed protection completes full endpoint repair. Preserve X30's stronger one-excess bound.
 
+X32 selects a compatible patch placement using exact ACTUAL witness counts instead of requiring more old witnesses than patches. In a common original-floor grade, sum_K C(ell-w_K,p-w_K)/C(ell,p)<1 supplies an eligible deterministic conditional-count construction leaving an unchanged witness outside all patches. Full legal M reversal restores original token indices. Scalar C(k,2)*(p/ell)^rho<1 and shared odd two-grade bounds derive complete full endpoint repair on infinitely many profiles failing X31's sufficient inequality. No randomized scientific execution or universal mixed-floor permutation is inferred.
+
 ## Remaining structural direction
 
-Improve the X31 redundancy bound, exploit ACTUAL smaller patch sets, or supply coupled pair witnesses when source protection is insufficient to leave one witness outside all patch slots through stronger actual shared-multiplicity bounds, or derive genuinely reusable coupled handovers where too few capable slots hold the small guard tokens, or where the small exact module does not fit the available original slots. Source degree alone is insufficient if it counts the wrong original floor grades. Actual shared incidences, weighted completion and full compatible pools must account for the SAME capacities and ALL forbidden pairs.
+Improve actual shared redundancy and X32's compatible placement bounds, exploit ACTUAL smaller patch sets, or supply coupled pair witnesses when source protection is insufficient to leave one witness outside all patch slots through stronger actual shared-multiplicity bounds, or derive genuinely reusable coupled handovers where too few capable slots hold the small guard tokens, or where the small exact module does not fit the available original slots. Source degree alone is insufficient if it counts the wrong original floor grades. Actual shared incidences, weighted completion and full compatible pools must account for the SAME capacities and ALL forbidden pairs.
 
 Any unresolved mixed3/4 carrier is on k7..10 outside ALL accepted sufficient classes. k<=6 is already X17; k>=11 and r6 are solved, and k8..10,r>=14 are now solved. For k8, X24 additionally excludes r<=9 from unresolved connectivity. X27 excludes ALL seven-label ell<=8 carriers; X25 excludes its new seven-label capable-slot classes; X23's ell>=10,r>=13 and allr>=35 remain accepted. Restricted incidence reserves impose further necessary residual restrictions. These bounds are NOT a checklist of isolated campaigns or a claim every remaining tuple is feasible. Do not infer disconnection from a failed grade/base/pool test.
 
