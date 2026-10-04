@@ -2,9 +2,16 @@
 import copy
 import importlib
 import importlib.util
+import hashlib
+import io
+import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
+from unittest import mock
+import warnings
+import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 BASE = "ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/"
@@ -147,6 +154,134 @@ class JoinContractTests(unittest.TestCase):
                     [rows[:-1] + [dict(rows[-1], id=rows[0]["id"])]]):
             with self.assertRaises(ValueError):
                 api.validate_original_ledgers(bad, context)
+
+
+class PublicationOrchestrationTests(JoinContractTests):
+    # Breaks caught: missing transport mkdir, absent exact metadata roles,
+    # unchecked control IDs/member maps, duplicate ZIP extraction names.
+    def test_original_transport_creates_parent_and_matches_actual_member_bytes(self):
+        api = self.api()
+        self.assertTrue(callable(getattr(api, "preserve_original", None)),
+                        "original transport orchestration is missing")
+        payload = b"native-evidence"
+        buffer = io.BytesIO()
+        with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_STORED) as archive:
+            archive.writestr("evidence.json", payload)
+        original = buffer.getvalue()
+        item = {"id": 7, "name": "actual-original", "size_in_bytes": len(original),
+                "digest": "sha256:" + hashlib.sha256(original).hexdigest()}
+        members = [{"name": "evidence.json", "bytes": 15, "sha256": hashlib.sha256(payload).hexdigest()}]
+        def external_transport(supplied, destination):
+            self.assertEqual(supplied, item)
+            destination.write_bytes(original)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            result = api.preserve_original(item, root / "temporary", root / "publication", members,
+                                           download=external_transport)
+            self.assertEqual(result["published_at"], "originals/7")
+            self.assertEqual(result["bytes"], len(original))
+            self.assertFalse((root / "temporary/originals/7.zip").exists())
+            manifest = json.loads((root / "publication/originals/7/PARTS.json").read_text())
+            reconstructed = b"".join((root / "publication/originals/7" / row["name"]).read_bytes() for row in manifest["parts"])
+            self.assertEqual(reconstructed, original)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with self.assertRaises(ValueError):
+                api.preserve_original(item, root / "temporary", root / "publication", [],
+                                      download=external_transport)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with self.assertRaises(ValueError):
+                api.preserve_original(item, root / "temporary", root / "publication",
+                                      [dict(members[0], sha256="f" * 64)], download=external_transport)
+
+    def test_component_metadata_requires_exact_roles_not_self_authored_manifest_only(self):
+        api = self.api()
+        self.assertTrue(callable(getattr(api, "validate_component_roles", None)),
+                        "exact component metadata gate is missing")
+        common = {name: {} for name in ("STATUS.json", "ORIGINAL_RUN.json", "ORIGINAL_ARTIFACTS.json",
+            "PRODUCING_JOBS.json", "EXECUTABLE_SOURCE_BINDING.json", "ORIGINAL_ARCHIVE_AUDIT.json",
+            "ORIGINAL_MEMBER_MANIFESTS.json", "MANIFEST.json")}
+        extras = {"primary": ("AGGREGATE.json", "SCIENTIFIC_BYTES.json", "FULL_CONTROLS.json"),
+                  "reproduction": ("AGGREGATE.json", "SCIENTIFIC_BYTES.json"),
+                  "inherited": ("INHERITED_AGGREGATE.json", "FULL_CONTROLS.json")}
+        for component, names in extras.items():
+            files = {**common, **{name: {} for name in names}}
+            api.validate_component_roles(files, component)
+            for name in files:
+                bad = dict(files); del bad[name]
+                with self.subTest(component=component, name=name), self.assertRaises(ValueError):
+                    api.validate_component_roles(bad, component)
+            with self.assertRaises(ValueError):
+                api.validate_component_roles({**files, "recursive.zip": {}}, component)
+
+    def test_control_receipts_require_source_derived_exact_ids(self):
+        api = self.api()
+        self.assertTrue(callable(getattr(api, "validate_control_receipt", None)),
+                        "source-derived control receipt gate is missing")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for folder, filename in ((BASE + "tests", "test_native.py"),
+                                     (".github/scripts/tests", "test_v1655_mechanical.py")):
+                path = root / folder / filename; path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("class C:\n    def test_witness(self):\n        pass\n")
+            receipt = {"status": "PASS", "control_ids": ["test_native.C.test_witness"],
+                       "mechanical_control_ids": ["test_v1655_mechanical.C.test_witness"]}
+            api.validate_control_receipt(receipt, root)
+            for mutation in ({"status": "INCOMPLETE"}, {"control_ids": []},
+                             {"control_ids": receipt["control_ids"] * 2},
+                             {"mechanical_control_ids": ["test_v1655_mechanical.C.test_substitute"]}):
+                with self.assertRaises(ValueError):
+                    api.validate_control_receipt(dict(receipt, **mutation), root)
+
+    def test_member_map_requires_each_component_owned_ledger_and_identical_shared_map(self):
+        api = self.api(); context, _, _, _, _ = self.fixtures()
+        self.assertTrue(callable(getattr(api, "validate_member_maps", None)),
+                        "exact original member-map ownership gate is missing")
+        files, index = {}, {}
+        next_id = 1
+        for component, stems in (
+            ("primary", ["v1655-full-controls"] + ["v1655-primary-" + str(i) for i in range(8)]),
+            ("reproduction", ["v1655-reproduction-" + str(i) for i in range(8)]),
+            ("inherited", ["v1655-full-controls", "v1655-inherited-development", "v1655-inherited-foundation"]
+                           + ["v1655-inherited-domain-" + str(i) for i in range(8)]),
+        ):
+            ledger, members = [], {}
+            for stem in stems:
+                if stem not in index:
+                    index[stem] = next_id; next_id += 1
+                artifact_id = index[stem]
+                ledger.append({"id": artifact_id, "name": stem + "-" + "a" * 40 + "-attempt-2",
+                               "bytes": 10, "digest": "sha256:" + "b" * 64})
+                members[str(artifact_id)] = [{"name": "source.json", "bytes": 2, "sha256": "c" * 64}]
+            files[component] = {"ORIGINAL_ARCHIVE_AUDIT.json": ledger, "ORIGINAL_MEMBER_MANIFESTS.json": members}
+        originals = api.validate_original_ledgers([value["ORIGINAL_ARCHIVE_AUDIT.json"] for value in files.values()], context)
+        self.assertEqual(len(api.validate_member_maps(files, originals, context)), 27)
+        for component in files:
+            bad = copy.deepcopy(files)
+            bad[component]["ORIGINAL_MEMBER_MANIFESTS.json"].pop(next(iter(bad[component]["ORIGINAL_MEMBER_MANIFESTS.json"])))
+            with self.assertRaises(ValueError):
+                api.validate_member_maps(bad, originals, context)
+        bad = copy.deepcopy(files)
+        bad["inherited"]["ORIGINAL_MEMBER_MANIFESTS.json"][str(index["v1655-full-controls"])][0]["sha256"] = "f" * 64
+        with self.assertRaises(ValueError):
+            api.validate_member_maps(bad, originals, context)
+
+    def test_duplicate_metadata_zip_names_are_rejected_before_extraction(self):
+        buffer = io.BytesIO()
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", UserWarning)
+            with zipfile.ZipFile(buffer, "w") as archive:
+                archive.writestr("STATUS.json", b"first")
+                archive.writestr("STATUS.json", b"second")
+        payload = buffer.getvalue()
+        item = {"id": 7, "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/7/zip",
+                "size_in_bytes": len(payload), "digest": "sha256:" + hashlib.sha256(payload).hexdigest()}
+        opener = type("ExternalResponse", (), {"open": lambda self, request: io.BytesIO(payload)})()
+        with tempfile.TemporaryDirectory() as directory, mock.patch.dict(audit.os.environ, {"GH_TOKEN": "fixture-token"}), \
+             mock.patch.object(audit.urllib.request, "build_opener", return_value=opener):
+            with self.assertRaisesRegex(ValueError, "duplicate ZIP member"):
+                audit.download_artifact(item, Path(directory) / "component.zip")
 
 
 if __name__ == "__main__":
