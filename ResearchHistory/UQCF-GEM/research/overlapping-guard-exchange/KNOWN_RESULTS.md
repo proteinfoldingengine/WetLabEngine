@@ -603,3 +603,20 @@ Unbounded sparse control m>=5: ONEactual{1}root plusd original copies of each re
 The advance removes X39's complete-pattern/dense-mask requirement under actual redundancy and explicit upper-cover conditions. All endpoints ALREADY Lconnected; no new native connectivity classification or universal coverage. X34/A/L and prior X39 induction are inherited openly. Failed sufficient counts/cover tests are not disconnection.
 
 Next: force enough actual redundancy or derive alternate interleaved renewal below this bound, supply upper covers when representatives are scarce, unequal group sizes and template accessibility. Preserve compatible-grade research and broader mixed/directed/higher-target/nested OPEN obligations. v16.55/v16.54/frozen sources/original evidence unchanged. Separate efficiency implementation/fixture/benchmark remains unstarted and independently scoped. No scientific commands/tests/numerical workflow/code/benchmark/integration merge/numbered version.
+
+## A11.X41 — localized asymmetric protection, without replicated roots
+
+Scope 20d78a3ebb425ef1b06c8e3381494b879ef87ff9; exact candidate 1378b5f5046d784532a3ccdd1702bbb1e6d2e32a; proof blob f2f61cdb82a73801f524a1730fc526d11c10bb55.
+Proof A11_X41_LOCALIZED_ASYMMETRIC_RENEWAL.md; fresh attributable INDEPENDENT_A11_X41_WHOLE_REVIEW.md; closeout A11_X41_CLOSEOUT.md.
+
+On the SAME supplied exact-four masks/equal positive group sizes/original positive floors, an ACTUAL singleton mask {h} localizes noncommon cycle-pair obligations to disjoint selected edges incident to h. At most2(l-3) remain (zero for l<=3 or cycles avoiding h). One endpoint owner-pair contains h, the other avoids h. Actual counts alpha=min w({h,u}), beta=min w({u,v}) outside h obey alpha,beta>=2. C(alpha+beta,alpha)>2(m-3) derives a complete conditional X34 order on the SAME shared original slots, not independent per-pair resources.
+
+Actual additions-before-deletions preserve SAME original floors even at saturation. Every pair retains a common root or untouched old witness until new protection completes. Balanced ownership supplies the next cycle, all cardinalities/masks/singleton/alpha/beta renew, and incorrect-label descent terminates at FULL exact labelled/noncompact C. Preliminary lower repair toggles each differing incidence ONCE.
+
+X41B invokes A ONLY AFTER complete original-ended lower completion, obtaining{3,4} with exact ends/floors but NOT guaranteeing eventminimum/schedule/internalwaypoints. X41U separately gives DIRECT{3,4} and the minimum count if a supplied minimumfour-role H has b_j>=2, leaving FOUR unselected existing cover representatives at EVERY cycle.
+
+ALLm>=5 sparse family: ONE {1} root and ONE copy each rest co-pair mask, r=1+C(m-1,2), alpha=m-2,beta=rho=2. C(m,2)>2(m-3) for ALLm. X40 GLOBAL rho test fails EVERYm>=6; X41 removes the replication requirement of that scalar application, not a limitation of exact X34 counting or native connectivity. Missing dense co-triples remain absent. Existing t-cells yield group2t/palette2mt, saturated unequal originalfloors2t/high2t(m-3), onlylongcycles/no4disjointfloor-safe supports/unsafewholeunion. At t>=2 ALLroots remain unfinishedBOTHends afterfirstcycle, yet protectionrenews and exactlytcycles restoreC. If minimum floor>=3 is required, take t>=2.
+
+Inputs remain an actual singleton/template/equalgroupcounts/asymmetricbound and additional covermultiplicity for direct minimum. No allwhole-rootorder impossibility, universaltemplateaccessibility, arbitrarymixed/directed/higher-target/nested claim or newconnectivityclassification (Lalreadyconnects). Below-bound/localization-free renewal, scarce upper representatives and unequalgroupcounts remain OPEN; strongercompatiblegrade work parallel.
+
+No sciencecommands/tests/numericalworkflow/implementation/benchmark/integrationmerge/numberedversion. v16.55/v16.54 and original evidence unchanged. Separate efficiency implementation/fixture/benchmark remains unstarted and independently scoped.
