@@ -65,7 +65,7 @@ Thus every pair has p4>=1. Its actual original low root complement supplies a mi
 Use inherited X26Q's explicit Q7:
 low triples123,145,167,246,257,347,356;
 high supports4567,2367,2345,1357,1346,1256,1247.
-The displayed triples cover every pair exactly once; distinct triples intersect once, so the four-subsets in their complements partition the other twenty-eight triples. Accordingly every triple misses an actual Q7 root. H=1234 hits every root. Q7 is EXACT FOUR and its seven high roots form a three-guard (each pair lies in a displayed low triple and misses its high complement).
+The displayed triples cover every pair exactly once; distinct triples intersect once, so the three-subsets in their complements partition the other twenty-eight triples. Accordingly every triple misses an actual Q7 root. H=1234 hits every root. Q7 is EXACT FOUR and its seven high roots form a three-guard (each pair lies in a displayed low triple and misses its high complement).
 
 At ell7,r14/15 place the seven low tokens in the ORIGINAL low slots and the seven high tokens in seven ORIGINAL high slots, in fixed orders. At r15 put a duplicate4567 in the remaining high slot. This specifies the SAME FULL legal exact-four Q for both endpoint legs.
 
@@ -104,7 +104,7 @@ f4 gives delta1 and requires f>=7;
 f5 gives delta2 and requires f>=6.
 All contradict. Thus any exact-four endpoint requires f>=6,r>=14.
 
-Conversely place Section6's eight small tokens in the eight ORIGINAL low slots and its six four-tokens in high slots. Any further high slots receive duplicate4567, which contains the guard root367 and is hit by H. The base preserves the lower exact-four bound, so the FULL padded hub is exact4. This proves feasibility for every r>=14.
+Conversely place Section6's eight small tokens in the eight ORIGINAL low slots and its six four-tokens in high slots. Any further high slots receive duplicate4567, which is hit by H. The base preserves the lower exact-four bound, so the FULL padded hub is exact4. This proves feasibility for every r>=14.
 
 For complete access apply accepted X23A with h3,b4,n8,m5. The restricted compact-source incidence is exactly3ell=24. Some actual label has ORIGINAL low-slot degree at least ceil(24/7)=4=m-1. Its ALL-root avoiding family is an actual three-guard: a two-cover with the label appended would contradict exact4.
 
