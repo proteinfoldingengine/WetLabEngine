@@ -305,7 +305,7 @@ class DurablePublicationTests(unittest.TestCase):
             set(),
             {key: [{"artifact_id": 1}]},
             {key: [{"artifact_id": 2, "member": "archives/shard-0.zip"}]},
-            archive_names={"originals/shard-0.zip"},
+            archive_names={"originals/shard-0.zip": key},
         )
         self.assertEqual([row["classification"] for row in mapped], [
             "ARCHIVE_REFERENCE", "MEMBER_REFERENCE",
@@ -316,7 +316,25 @@ class DurablePublicationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             publish.classify_wrapper_members(
                 members, set(), {key: [{"artifact_id": 1}]}, {},
-                archive_names={"originals/shard-0.zip"},
+                archive_names={"originals/shard-0.zip": key},
+            )
+
+    def test_archive_names_bind_exact_ledger_content_and_presence(self):
+        key = "20:" + "b" * 64
+        other = "21:" + "c" * 64
+        declared = {"originals/shard-0.zip": key}
+        index = {key: [{"artifact_id": 1}], other: [{"artifact_id": 2}]}
+        with self.assertRaises(ValueError):
+            publish.classify_wrapper_members([], set(), index, {}, archive_names=declared)
+        with self.assertRaises(ValueError):
+            publish.classify_wrapper_members(
+                [{"name": "originals/shard-0.zip", "bytes": 21, "sha256": "c" * 64}],
+                set(), index, {}, archive_names=declared,
+            )
+        with self.assertRaises(ValueError):
+            publish.classify_wrapper_members(
+                [{"name": "originals/shard-0.zip", "bytes": 20, "sha256": "b" * 64}] * 2,
+                set(), index, {}, archive_names=declared,
             )
 
     def test_wrapper_member_mapping_rejects_any_unaccounted_payload(self):
