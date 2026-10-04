@@ -263,6 +263,37 @@ class DurablePublicationTests(unittest.TestCase):
         self.assertEqual(inventory["git_bytes_avoided"], 905215086)
         self.assertEqual(inventory["publication_policy"], "ORIGINAL_ARCHIVES_ONCE_MANIFEST_REFERENCED_WRAPPERS")
 
+    def test_wrapper_members_require_complete_hash_reconstruction_map(self):
+        members = [
+            {"name": "STATUS.json", "bytes": 11, "sha256": "a" * 64},
+            {"name": "originals/a.zip", "bytes": 20, "sha256": "b" * 64},
+            {"name": "originals/a/result.json", "bytes": 30, "sha256": "c" * 64},
+        ]
+        archive_key = publish.content_key(20, "b" * 64)
+        member_key = publish.content_key(30, "c" * 64)
+        mapped = publish.classify_wrapper_members(
+            members,
+            {"STATUS.json"},
+            {archive_key: [{"artifact_id": 1, "name": "a"}]},
+            {member_key: [{"artifact_id": 1, "member": "result.json"}]},
+        )
+        self.assertEqual([row["classification"] for row in mapped], [
+            "RETAINED_METADATA",
+            "ARCHIVE_REFERENCE",
+            "MEMBER_REFERENCE",
+        ])
+        self.assertEqual(mapped[1]["references"][0]["artifact_id"], 1)
+        self.assertEqual(mapped[2]["references"][0]["member"], "result.json")
+
+    def test_wrapper_member_mapping_rejects_any_unaccounted_payload(self):
+        with self.assertRaisesRegex(ValueError, "unaccounted wrapper member"):
+            publish.classify_wrapper_members(
+                [{"name": "unknown.bin", "bytes": 1, "sha256": "d" * 64}],
+                set(),
+                {},
+                {},
+            )
+
     def test_split_rejects_wrong_size_or_digest(self):
         payload = b"native-evidence" * 100
         expected = publish.sha256_bytes(payload)
