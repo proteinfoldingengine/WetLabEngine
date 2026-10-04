@@ -107,6 +107,81 @@ def deduplicate_ledgers(ledgers):
     return sorted(by_id.values(), key=lambda row: row["id"])
 
 
+
+def content_key(byte_count, digest):
+    if type(byte_count) is not int or byte_count < 0 or not isinstance(digest, str) or not re.fullmatch("[0-9a-f]{64}", digest):
+        raise ValueError("invalid content identity")
+    return f"{byte_count}:{digest}"
+
+
+def zip_members(archive):
+    rows = []
+    names = set()
+    with zipfile.ZipFile(archive) as source:
+        for info in source.infolist():
+            if info.is_dir():
+                continue
+            if info.filename in names:
+                raise ValueError("duplicate ZIP member name")
+            names.add(info.filename)
+            digest = hashlib.sha256()
+            total = 0
+            with source.open(info) as stream:
+                for block in iter(lambda: stream.read(1024 * 1024), b""):
+                    total += len(block)
+                    digest.update(block)
+            if total != info.file_size:
+                raise ValueError("ZIP member byte length mismatch")
+            rows.append({"name": info.filename, "bytes": total, "sha256": digest.hexdigest()})
+    return sorted(rows, key=lambda row: row["name"])
+
+
+def add_content_reference(index, byte_count, digest, reference):
+    key = content_key(byte_count, digest)
+    index.setdefault(key, [])
+    if reference not in index[key]:
+        index[key].append(reference)
+
+
+def classify_wrapper_members(members, retained_names, archive_index, member_index):
+    mapped = []
+    for supplied in members:
+        row = {key: supplied[key] for key in ("name", "bytes", "sha256")}
+        key = content_key(row["bytes"], row["sha256"])
+        if row["name"] in retained_names:
+            classification = "RETAINED_METADATA"
+            references = [{"published_name": row["name"]}]
+        elif key in archive_index:
+            classification = "ARCHIVE_REFERENCE"
+            references = archive_index[key]
+        elif key in member_index:
+            classification = "MEMBER_REFERENCE"
+            references = member_index[key]
+        else:
+            raise ValueError("unaccounted wrapper member " + row["name"])
+        mapped.append({**row, "classification": classification, "references": references})
+    return mapped
+
+
+def mapping_stats(mapped):
+    result = {}
+    for row in mapped:
+        item = result.setdefault(row["classification"], {"count": 0, "bytes": 0})
+        item["count"] += 1
+        item["bytes"] += row["bytes"]
+    return result
+
+
+def scalar_values(value):
+    if isinstance(value, dict):
+        for item in value.values():
+            yield from scalar_values(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from scalar_values(item)
+    else:
+        yield value
+
 def size_inventory(originals, components, package):
     unique = sum(row["bytes"] for row in originals)
     wrappers = sum(row["bytes"] for row in components)
@@ -262,6 +337,7 @@ def prepare(request, out):
     by_original_id = {item["id"]: item for item in original_artifacts}
     package_expected = {"id": PACKAGE_ID, "name": PACKAGE_NAME, "bytes": PACKAGE_BYTES, "digest": "sha256:" + PACKAGE_DIGEST}
     package = exact_artifact(by_recovery_id[PACKAGE_ID], package_expected)
+
     out = Path(out)
     out.mkdir(parents=True, exist_ok=False)
     temporary = out / "temporary"
@@ -270,9 +346,13 @@ def prepare(request, out):
     if destination.exists():
         raise ValueError("refusing to overwrite durable evidence")
     destination.mkdir(parents=True)
+
     ledgers = []
     component_metadata = []
     component_root = destination / "recovery-components"
+    component_transports = {}
+    component_members = {}
+    component_retained = {}
     for expected in COMPONENTS:
         item = exact_artifact(by_recovery_id[expected["id"]], expected)
         transport = temporary / f"{expected['component']}.zip"
@@ -286,13 +366,17 @@ def prepare(request, out):
         if "ORIGINAL_ARCHIVE_AUDIT.json" not in values:
             raise ValueError("recovery component missing original archive ledger")
         ledgers.append(values["ORIGINAL_ARCHIVE_AUDIT.json"])
-        component_metadata.append(item)
-        transport.unlink()
+        component_metadata.append({key: expected[key] for key in ("component", "id", "name", "bytes", "digest")})
+        component_transports[expected["component"]] = transport
+        component_members[expected["component"]] = zip_members(transport)
+        component_retained[expected["component"]] = set(values)
+
     originals = deduplicate_ledgers(ledgers)
     if len(originals) != 28 or {row["name"] for row in originals} != set(expected_original_names()):
         raise ValueError("recovery ledgers do not cover exact original evidence inventory")
     published = []
-    archive_root = destination / "original-archives"
+    archive_index = {}
+    original_member_index = {}
     for row in sorted(originals, key=lambda value: value["name"]):
         if row["id"] not in by_original_id:
             raise ValueError("referenced original artifact absent")
@@ -301,32 +385,138 @@ def prepare(request, out):
         download(item, transport)
         relative = Path("original-archives") / row["name"]
         split_archive(transport, destination / relative, row["bytes"], row["digest"].removeprefix("sha256:"))
+        archive_reference = {"artifact_id": row["id"], "artifact_name": row["name"], "published_at": str(relative)}
+        add_content_reference(archive_index, row["bytes"], row["digest"].removeprefix("sha256:"), archive_reference)
+        for member in zip_members(transport):
+            add_content_reference(
+                original_member_index,
+                member["bytes"],
+                member["sha256"],
+                {"artifact_id": row["id"], "artifact_name": row["name"], "member": member["name"]},
+            )
         transport.unlink()
         published.append({**row, "published_at": str(relative)})
-    wrapper_reference = {"recovery_components": component_metadata, "recovery_package": package}
+    if len(archive_index) != 28:
+        raise ValueError("original evidence archives are not content-unique")
+
+    component_maps = []
+    component_member_index = {}
+    component_archive_index = {}
+    for expected in COMPONENTS:
+        name = expected["component"]
+        mapped = classify_wrapper_members(
+            component_members[name],
+            component_retained[name],
+            archive_index,
+            original_member_index,
+        )
+        for member in component_members[name]:
+            add_content_reference(
+                component_member_index,
+                member["bytes"],
+                member["sha256"],
+                {"component": name, "artifact_id": expected["id"], "member": member["name"]},
+            )
+        add_content_reference(
+            component_archive_index,
+            expected["bytes"],
+            expected["digest"].removeprefix("sha256:"),
+            {"component": name, "artifact_id": expected["id"], "artifact_name": expected["name"]},
+        )
+        component_maps.append({
+            "component": name,
+            "wrapper": {key: expected[key] for key in ("id", "name", "bytes", "digest")},
+            "retained_metadata": sorted(component_retained[name]),
+            "statistics": mapping_stats(mapped),
+            "members": mapped,
+        })
+        component_transports[name].unlink()
+    component_totals = {}
+    for item in component_maps:
+        for classification, values in item["statistics"].items():
+            total = component_totals.setdefault(classification, {"count": 0, "bytes": 0})
+            total["count"] += values["count"]
+            total["bytes"] += values["bytes"]
+    expected_component_totals = {
+        "ARCHIVE_REFERENCE": {"count": 28, "bytes": 301804233},
+        "MEMBER_REFERENCE": {"count": 2217, "bytes": 583060369},
+        "RETAINED_METADATA": {"count": 22, "bytes": 188702},
+    }
+    if component_totals != expected_component_totals:
+        raise ValueError("component duplication inventory mismatch")
+    dump(destination / "COMPONENT_DUPLICATION_MAP.json", {"status": "PASS", "totals": component_totals, "components": component_maps})
+
+    package_transport = temporary / "recovery-package.zip"
+    download(package, package_transport)
+    if package_transport.stat().st_size != PACKAGE_BYTES or sha256_file(package_transport) != PACKAGE_DIGEST:
+        raise ValueError("recovery package bytes mismatch")
+    package_metadata_dir = destination / "recovery-package-metadata"
+    package_values = root_json(package_transport, package_metadata_dir)
+    required_package_metadata = {"STATUS.json", "DURABLE_MANIFEST.json", "COMPONENT_ARTIFACTS.json"}
+    if set(package_values) != required_package_metadata:
+        raise ValueError("recovery package root metadata inventory mismatch")
+    if package_values["STATUS.json"].get("status") != "PASS":
+        raise ValueError("recovery package status is not PASS")
+    component_scalars = set(scalar_values(package_values["COMPONENT_ARTIFACTS.json"]))
+    for expected in COMPONENTS:
+        if not {expected["id"], expected["name"], expected["bytes"], expected["digest"]}.issubset(component_scalars):
+            raise ValueError("recovery package component reference mismatch")
+    package_members = zip_members(package_transport)
+    package_mapped = classify_wrapper_members(
+        package_members,
+        required_package_metadata,
+        component_archive_index,
+        component_member_index,
+    )
+    package_map = {
+        "status": "PASS",
+        "wrapper": {"id": PACKAGE_ID, "name": PACKAGE_NAME, "bytes": PACKAGE_BYTES, "digest": "sha256:" + PACKAGE_DIGEST},
+        "retained_metadata": sorted(required_package_metadata),
+        "statistics": mapping_stats(package_mapped),
+        "members": package_mapped,
+    }
+    dump(destination / "PACKAGE_DUPLICATION_MAP.json", package_map)
+    package_transport.unlink()
+
+    wrapper_reference = {
+        "recovery_components": component_metadata,
+        "recovery_package": {key: package_expected[key] for key in ("id", "name", "bytes", "digest")},
+        "policy": "EXACT_WRAPPER_BYTES_REFERENCED_NOT_RECURSIVELY_EMBEDDED",
+    }
     dump(destination / "ORIGINAL_EVIDENCE_INVENTORY.json", published)
     dump(destination / "DERIVED_WRAPPER_REFERENCES.json", wrapper_reference)
     inventory = size_inventory(published, COMPONENTS, {"bytes": PACKAGE_BYTES})
+    inventory.update({
+        "component_uncompressed_duplication": component_totals,
+        "package_uncompressed_duplication": package_map["statistics"],
+        "retained_component_metadata_files": component_totals["RETAINED_METADATA"]["count"],
+        "retained_package_metadata_files": len(required_package_metadata),
+        "temporary_transport_directory": "out/preserve/temporary (removed before publication)",
+    })
     dump(destination / "SIZE_HASH_INVENTORY.json", inventory)
+
     reconstructed = []
     for row in published:
         size, digest = verify_parts(destination / row["published_at"])
         reconstructed.append({"id": row["id"], "name": row["name"], "bytes": size, "sha256": digest})
     reconstruction = {
         "status": "PASS",
-        "mode": "BYTE_EXACT_ORIGINAL_ARCHIVES_FROM_GIT_PARTS",
+        "mode": "BYTE_EXACT_ORIGINAL_ARCHIVES_PLUS_COMPLETE_WRAPPER_PAYLOAD_MAP",
         "count": len(reconstructed),
         "bytes": sum(row["bytes"] for row in reconstructed),
         "artifacts": reconstructed,
-        "recovery_component_statuses": ["primary", "reproduction", "inherited", "partial"],
-        "recovery_package": "DERIVED_WRAPPER_REFERENCED_BY_ID_SIZE_DIGEST_NOT_RECURSIVELY_EMBEDDED",
+        "component_payload_accounting": {"status": "PASS", "members": sum(sum(v["count"] for v in item["statistics"].values()) for item in component_maps), "totals": component_totals},
+        "package_payload_accounting": {"status": "PASS", "members": len(package_mapped), "totals": package_map["statistics"]},
+        "retained_metadata": {"component_files": 22, "package_files": 3},
+        "wrapper_zip_encodings": "NOT_REPRODUCED; EXACT GITHUB ARTIFACT ID_SIZE_SHA256 REFERENCES RETAINED",
+        "recovery_package": "DERIVED_RECURSIVE_WRAPPER_NOT_EMBEDDED",
         "scientific_execution": "NOT_RERUN",
     }
     if reconstruction["count"] != 28 or reconstruction["bytes"] != 301804233:
         raise ValueError("complete original evidence reconstruction mismatch")
     dump(destination / "RECONSTRUCTION.json", reconstruction)
     receipt = {
-        "status": "ORIGINAL_ARCHIVES_ONCE_VERIFIED",
+        "status": "ORIGINAL_ARCHIVES_ONCE_AND_ALL_WRAPPER_MEMBERS_ACCOUNTED",
         "audited_run": original,
         "recovery_run": recovery,
         "publication_workflow_sha": os.environ["GITHUB_WORKFLOW_SHA"],
@@ -341,11 +531,19 @@ def prepare(request, out):
     (out / "DESTINATION.txt").write_text(str(destination) + "\n")
     receipt_out = out / "receipt"
     receipt_out.mkdir()
-    for name in ("ORIGINAL_EVIDENCE_INVENTORY.json", "DERIVED_WRAPPER_REFERENCES.json", "SIZE_HASH_INVENTORY.json", "RECONSTRUCTION.json", "PUBLICATION_RECEIPT.json", "PUBLICATION_MANIFEST.json"):
+    for name in (
+        "ORIGINAL_EVIDENCE_INVENTORY.json",
+        "DERIVED_WRAPPER_REFERENCES.json",
+        "SIZE_HASH_INVENTORY.json",
+        "COMPONENT_DUPLICATION_MAP.json",
+        "PACKAGE_DUPLICATION_MAP.json",
+        "RECONSTRUCTION.json",
+        "PUBLICATION_RECEIPT.json",
+        "PUBLICATION_MANIFEST.json",
+    ):
         shutil.copyfile(destination / name, receipt_out / name)
     shutil.rmtree(temporary)
     return destination
-
 
 if __name__ == "__main__":
     prepare(json.loads(Path(sys.argv[1]).read_text()), sys.argv[2])
