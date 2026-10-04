@@ -284,6 +284,15 @@ class DurablePublicationTests(unittest.TestCase):
         ])
         self.assertEqual(mapped[1]["references"][0]["artifact_id"], 1)
         self.assertEqual(mapped[2]["references"][0]["member"], "result.json")
+        superseded = publish.classify_wrapper_members(
+            [members[1]],
+            set(),
+            {archive_key: [{"artifact_id": 1, "resolution": "COMPONENT_DUPLICATION_MAP.json#primary"}]},
+            {},
+            archive_classification="SUPERSEDED_COMPONENT_WRAPPER",
+        )
+        self.assertEqual(superseded[0]["classification"], "SUPERSEDED_COMPONENT_WRAPPER")
+        self.assertEqual(superseded[0]["references"][0]["resolution"], "COMPONENT_DUPLICATION_MAP.json#primary")
 
     def test_wrapper_member_mapping_rejects_any_unaccounted_payload(self):
         with self.assertRaisesRegex(ValueError, "unaccounted wrapper member"):
