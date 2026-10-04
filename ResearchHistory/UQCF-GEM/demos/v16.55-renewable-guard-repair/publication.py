@@ -10,6 +10,7 @@ from pathlib import Path
 import resource
 import subprocess
 import sys
+import re
 from campaign import aggregate,serial,dump,digest
 
 HERE=Path(__file__).resolve().parent
@@ -41,6 +42,11 @@ def main(out):
         target=out/"archives"/(stem+".zip");folder=helper.download_artifact(items[0],target)
         destination.parent.mkdir(parents=True,exist_ok=True);folder.rename(destination)
         audit.append(dict(id=items[0]["id"],name=name,digest=items[0]["digest"],bytes=items[0]["size_in_bytes"],local_archive=str(target.relative_to(out))))
+    obtain("v1655-full-controls",out/"controls")
+    log=(out/"controls"/"tests.log").read_text()
+    # Enumerate frozen control method names without importing/executing their bodies.
+    tests=(HERE/"tests"/"test_contract.py").read_text();names=re.findall(r"^    def (test_[A-Za-z0-9_]+)\(self\):",tests,re.M)
+    if len(set(names))!=len(names) or any(not re.search(r"^"+re.escape(name)+r" \([^\n]+\) \.\.\. ok$",log,re.M) for name in names) or "Ran "+str(len(names))+" tests" not in log or "\nOK\n" not in log:raise ValueError("complete new controls missing/failed/substituted")
     for mode in ("primary","reproduction"):
         for shard in range(8):obtain("v1655-"+mode+"-"+str(shard),out/mode/f"shard-{shard}")
         if aggregate(out/mode,out/(mode+"-aggregate")):raise ValueError("complete independent aggregate failed")
@@ -51,7 +57,7 @@ def main(out):
     obtain("v1655-inherited-foundation",out/"inherited"/"inherited-foundation")
     subprocess.run([sys.executable,str(HERE/"inherited_aggregate.py"),str(out/"inherited"),str(out/"INHERITED_AGGREGATE.json")],check=True)
     dump(out/"ORIGINAL_ARCHIVE_AUDIT.json",audit)
-    manifest={str(path.relative_to(out)):digest(path) for path in sorted(out.rglob("*")) if path.is_file() and path.name!="STATUS.json"}
+    manifest={str(path.relative_to(out)):digest(path) for path in sorted(out.rglob("*")) if path.is_file() and path!=out/"STATUS.json"}
     dump(out/"DURABLE_MANIFEST.json",manifest)
     dump(out/"STATUS.json",dict(status="PASS",phase="original archives, full reconstruction, all inherited replay and fresh science equality",scientific_sha=os.environ["SCIENTIFIC_SHA"],workflow_sha=event,run_id=run,attempt=attempt,numbered_certification="PENDING_EXACT_REVIEW_MERGE_AND_ACTUAL_MERGE_AUDIT"))
 

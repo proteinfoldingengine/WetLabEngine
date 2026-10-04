@@ -73,7 +73,12 @@ def bind(out):
     if os.environ.get("GITHUB_ACTIONS")!="true":raise RuntimeError("all scientific execution is GitHub-only")
     resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
     actual=subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
-    if actual!=os.environ["SCIENTIFIC_SHA"]:raise ValueError("actual scientific source mismatch")
+    if actual!=os.environ["SCIENTIFIC_SHA"] or actual!=os.environ["GITHUB_SHA"] or actual!=os.environ["GITHUB_WORKFLOW_SHA"]:raise ValueError("actual scientific/workflow source mismatch")
+    prereg="891470cfc817f26d9721f96278b2c0f8652c3fdf"
+    if os.environ["PREREGISTRATION_SHA"]!=prereg:raise ValueError("unapproved preregistration")
+    for name in ("protocol.json","PROSPECTIVE_EXECUTION_PROTOCOL.md","APPROVAL_AND_PREREGISTRATION.md","INHERITED_SOURCE_INVENTORY.json"):
+        path=HERE/name;gitpath=str(path.relative_to(Path.cwd()))
+        if path.read_bytes()!=subprocess.check_output(["git","show",prereg+":"+gitpath]):raise ValueError("prospectively frozen prerequisite changed: "+name)
     protocol=json.loads((HERE/"protocol.json").read_text())
     raw=(HERE/"PROSPECTIVE_EXECUTION_PROTOCOL.md").read_bytes()
     if hashlib.sha256(raw).hexdigest()!=protocol["approved_protocol_sha256"]:raise ValueError("approved protocol modified")
@@ -82,6 +87,9 @@ def bind(out):
     paths=inventory["git_blobs"]
     listing=subprocess.check_output(["git","ls-tree","-r",actual],text=True).splitlines()
     current_blobs={line.split("\t",1)[1]:line.split("\t",1)[0].split()[2] for line in listing}
+    for name,item in protocol["proofs"].items():
+        path=HERE/"analytical"/name;gitpath=str(path.relative_to(Path.cwd()))
+        if current_blobs.get(gitpath)!=item["git_blob"] or path.read_bytes()!=subprocess.check_output(["git","show",prereg+":"+gitpath]):raise ValueError("accepted analytical proof/review changed: "+name)
     for path,item in paths.items():
         expected=item if isinstance(item,str) else item["git_blob"]
         current=current_blobs.get(path)
@@ -147,11 +155,15 @@ def run_shard(shard,out):
         summary["status"]="FAIL";dump(out/"FIRST_FAILURE.json",dict(case=current,reason=repr(error),traceback=traceback.format_exc()))
     finally:records.close();identities.close()
     summary["diagnostics"]=dict(counts);summary["refusals"]=dict(refusals)
-    summary["compressed_bytes"]=(out/"records.jsonl.gz").stat().st_size+(out/"identities.jsonl.gz").stat().st_size
-    if summary["compressed_bytes"]>MAX_BYTES:summary["status"]="INCOMPLETE"
-    dump(out/"SUMMARY.json",summary)
-    manifest={name:digest(out/name) for name in ("records.jsonl.gz","identities.jsonl.gz","SUMMARY.json","DOMAIN_FREEZE.json")}
-    dump(out/"SCIENCE_MANIFEST.json",manifest)
+    summary["compressed_bytes"]=0
+    while True:
+        dump(out/"SUMMARY.json",summary)
+        manifest={name:digest(out/name) for name in ("records.jsonl.gz","identities.jsonl.gz","SUMMARY.json","DOMAIN_FREEZE.json")}
+        dump(out/"SCIENCE_MANIFEST.json",manifest)
+        actual_bytes=sum((out/name).stat().st_size for name in list(manifest)+["SCIENCE_MANIFEST.json"])
+        if actual_bytes==summary["compressed_bytes"]:break
+        summary["compressed_bytes"]=actual_bytes
+        if actual_bytes>MAX_BYTES:summary["status"]="INCOMPLETE"
     print(serial(summary),flush=True)
     return 0 if summary["status"]=="PASS" and summary["checked"]==summary["expected"] else 1
 
@@ -165,6 +177,7 @@ def aggregate(root,out):
     resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
     root=Path(root);out=Path(out);out.mkdir(parents=True,exist_ok=True)
     expected=ordered_domain(reconstruct_cases);errors=[];identities=[];counts=Counter();vertices=0;compressed=0;manifests={}
+    whole_hash=hashlib.sha256((serial([case["identity"] for case in expected])+"\n").encode()).hexdigest()
     head=os.environ["SCIENTIFIC_SHA"];source_expected={}
     for path in sorted([*HERE.glob("*.py"),*HERE.glob("*.md"),*HERE.glob("*.json"),*HERE.glob("tests/*.py"),*HERE.glob("analytical/*.md")]):
         if path.name.endswith("REQUEST.json"):continue
@@ -182,6 +195,9 @@ def aggregate(root,out):
         errors+=verify_manifest(source_files,source_expected)
         if summary["status"]!="PASS" or summary["checked"]!=summary["expected"]:errors.append("unfinished shard "+str(shard))
         if (summary["shard"],summary["shards"],summary["total"],summary["start"],summary["stop"])!=(shard,8,len(expected),len(expected)*shard//8,len(expected)*(shard+1)//8):errors.append("wrong interval "+str(shard))
+        start=len(expected)*shard//8;stop=len(expected)*(shard+1)//8
+        freeze_expected=dict(shard=shard,shards=8,total=len(expected),start=start,stop=stop,whole_universe_sha256=whole_hash,first=expected[start]["identity"],last=expected[stop-1]["identity"])
+        if json.loads((directory/"DOMAIN_FREEZE.json").read_text())!=freeze_expected or summary["whole_universe_sha256"]!=whole_hash:errors.append("wrong full domain freeze")
         actual=list(read_records(directory,"identities.jsonl.gz"));errors+=verify_universe([c["identity"] for c in expected[summary["start"]:summary["stop"]]],actual)
         # Input membership is independently reconstructed; equal totals cannot substitute inputs.
         shardcounts=Counter();shardvertices=0;shardrefusals=Counter();checked=0
@@ -193,7 +209,7 @@ def aggregate(root,out):
             if v>1000000:errors.append("serialized identity resource bound")
             if entry["record"]["status"]!="PATH":shardrefusals[entry["record"]["status"]]+=1
             checked+=1
-        shardbytes=(directory/"records.jsonl.gz").stat().st_size+(directory/"identities.jsonl.gz").stat().st_size
+        shardbytes=sum((directory/name).stat().st_size for name in list(manifest)+["SCIENCE_MANIFEST.json"])
         if checked!=summary["checked"] or dict(shardcounts)!=summary["diagnostics"] or dict(shardrefusals)!=summary["refusals"] or shardvertices!=summary["serialized_vertices"] or shardbytes!=summary["compressed_bytes"]:errors.append("fabricated shard counters")
         if summary.get("common_degree_greedy_transfers")!=0 or summary.get("strict_slack_X15S_exercised") is not False:errors.append("fabricated strict-slack witness")
         identities.extend(actual);counts.update(shardcounts);vertices+=shardvertices;compressed+=shardbytes;manifests[str(shard)]=manifest

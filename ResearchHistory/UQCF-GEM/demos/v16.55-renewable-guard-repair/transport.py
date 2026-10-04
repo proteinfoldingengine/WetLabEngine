@@ -8,6 +8,19 @@ import subprocess
 BASE="ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/"
 PREREG="891470cfc817f26d9721f96278b2c0f8652c3fdf"
 PARENT="466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f"
+REPORTING_EXCLUSIONS=("CAMPAIGN_REQUEST.json","CONTROL_REQUEST.json","MERGE_CONTRACT.json","CLOSEOUT.md","INDEPENDENT_V16_55_WHOLE_REVIEW.md","INDEPENDENT_ACTUAL_MERGE_AUDIT.md")
+
+def scientific_inventory(head):
+    listing=subprocess.check_output(["git","ls-tree","-r",head],text=True).splitlines();result={}
+    workflows={".github/workflows/v16.55-controls.yml",".github/workflows/v16.55-renewable-guard-validation.yml"}
+    for line in listing:
+        header,path=line.split("\t",1);wanted=path in workflows
+        if path.startswith(BASE):
+            relative=path[len(BASE):];parts=relative.split("/")
+            wanted=(len(parts)==1 and relative not in REPORTING_EXCLUSIONS and Path(relative).suffix in (".py",".md",".json")) or (len(parts)==2 and parts[0] in ("tests","analytical") and Path(relative).suffix in (".py",".md"))
+        if wanted:result[path]=header.split()[2]
+    if not result or not workflows<=set(result):raise ValueError("empty/incomplete scientific source inventory")
+    return result
 
 def bind_request():
     if os.environ.get("GITHUB_ACTIONS")!="true":raise RuntimeError("GitHub only")
@@ -19,6 +32,9 @@ def bind_request():
         if parents[0]!=contract["integration_parent"]:raise ValueError("actual merge differs from authorized integration parent")
         subprocess.run(["git","merge-base","--is-ancestor",contract["reviewed_source_parent"],parents[1]],check=True)
         if contract["preregistration_sha"]!=PREREG:raise ValueError("merge preregistration mismatch")
+        if contract["reporting_exclusions"]!=list(REPORTING_EXCLUSIONS):raise ValueError("unapproved scientific membership exclusions")
+        required=scientific_inventory(contract["reviewed_source_parent"])
+        if contract["scientific_git_blobs"]!=required or scientific_inventory(event)!=required:raise ValueError("empty/partial/modified reviewed scientific source inventory")
         for path,blob in contract["scientific_git_blobs"].items():
             if subprocess.check_output(["git","rev-parse",event+":"+path],text=True).strip()!=blob:raise ValueError("actual merge scientific source differs from reviewed source")
         request=dict(mode="actual_merge",contract=contract)

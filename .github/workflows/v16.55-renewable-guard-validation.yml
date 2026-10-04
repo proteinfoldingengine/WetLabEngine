@@ -3,7 +3,7 @@ on:
   push:
     branches: [research/v16.55-renewable-guard-repair, research/v16.34-fiber-component-invariant]
     paths: ['ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/CAMPAIGN_REQUEST.json', 'ResearchHistory/UQCF-GEM/demos/v16.55-renewable-guard-repair/MERGE_CONTRACT.json']
-permissions: {contents: read}
+permissions: {contents: read, actions: read}
 concurrency: {group: v1655-complete-campaign, cancel-in-progress: false}
 jobs:
   controls:
