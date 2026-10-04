@@ -423,11 +423,13 @@ def aggregate_mode_explicit(root, mode_root, output, context):
         raise ValueError("complete explicit-context aggregate failed")
 
 
-def audit_mode(args, context, recovery):
+def audit_mode(args, context, recovery, *, artifacts=None):
     root = bind_original_checkout(args.repo, context)
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
     dump(out / "STATUS.json", {"status": "INCOMPLETE", "component": args.component})
-    artifacts = original_inventory(context, out); ledger = []
+    if artifacts is None:
+        artifacts = original_inventory(context, out)
+    ledger = []
     mode_root = out / "originals"
     for shard in range(8):
         obtain(f"v1655-{args.component}-{shard}", mode_root / f"shard-{shard}", context, artifacts, ledger)
@@ -478,11 +480,13 @@ def load_v154(root):
     return base, v154_verifier, v154_campaign, v154_publication
 
 
-def audit_inherited(args, context, recovery):
+def audit_inherited(args, context, recovery, *, artifacts=None):
     root = bind_original_checkout(args.repo, context)
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
     dump(out / "STATUS.json", {"status": "INCOMPLETE", "component": "inherited"})
-    artifacts = original_inventory(context, out); ledger = []
+    if artifacts is None:
+        artifacts = original_inventory(context, out)
+    ledger = []
     controls = obtain("v1655-full-controls", out / "originals/full-controls", context, artifacts, ledger)
     development = obtain("v1655-inherited-development", out / "originals/inherited-development", context, artifacts, ledger)
     domains = []
