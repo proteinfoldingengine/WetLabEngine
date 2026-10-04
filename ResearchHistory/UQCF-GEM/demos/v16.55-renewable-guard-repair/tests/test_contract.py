@@ -46,7 +46,9 @@ class Contract(unittest.TestCase):
     def test_missing_assignment_token(self):
         self.reject(lambda c,r:r.update(meta={"assignment":[0,1,2]}))
     def test_illegal_grade_assignment(self):
-        self.reject(lambda c,r:(c.update(floors=[2,1,1,1]),r.update(meta={"assignment":[1,0,2,3]})))
+        c,r=self.base();c.update(k=5,floors=[2,1,1,1],A=[[0,4],[1],[2],[3]],C=[[0,4],[1],[2],[3]])
+        r.update(preliminary=[c["A"]],final=[c["C"]],meta={"assignment":[1,0,2,3]})
+        self.assertTrue(self.api().verify_record(c,r))
     def test_lost_pair_witness(self):
         self.reject(lambda c,r:r.update(meta={"pair_witnesses":[{"pair":[0,1],"index":0}]}))
     def test_false_conditional_count(self):
@@ -73,5 +75,20 @@ class Contract(unittest.TestCase):
         for c in v.smoke_cases():
             r=m.produce(c)
             self.assertEqual(v.verify_record(c,r),[],c["identity"])
+    def produced(self,family):
+        m=importlib.import_module("mechanisms")
+        c=next(c for c in self.api().smoke_cases() if c["identity"][0]==family)
+        return c,m.produce(c)
+    def test_cycle_metadata_must_cover_actual_connection(self):
+        c,r=self.produced("R1");self.assertTrue(r["meta"]["cycles"])
+        r["meta"]["cycles"]=[]
+        self.assertTrue(self.api().verify_record(c,r),"missing actual cycles accepted")
+    def test_full_assignment_is_mandatory(self):
+        c,r=self.produced("R2");del r["meta"]["assignment"]
+        self.assertTrue(self.api().verify_record(c,r),"missing full token assignment accepted")
+    def test_native_clearance_lineage(self):
+        c,r=self.produced("R5");self.assertTrue(r["nested"]["clearances"])
+        r["nested"]["clearances"]=[]
+        self.assertTrue(self.api().verify_record(c,r),"unattached native clearance metadata accepted")
 
 if __name__=="__main__":unittest.main(verbosity=2)
