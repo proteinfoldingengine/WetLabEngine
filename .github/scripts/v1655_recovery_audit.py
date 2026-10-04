@@ -149,6 +149,25 @@ def validate_inherited_baseline(expected_ids, actual_ids, expected_hashes, actua
         raise ValueError("inherited 77-hash baseline mismatch")
 
 
+def validate_exact_source_manifest(recorded, actual, expected):
+    if recorded != expected or actual != expected:
+        raise ValueError("inherited domain exact archived source mismatch")
+
+
+def validate_foundation_metadata(metadata, context):
+    expected = {
+        "head": context.sha,
+        "workflow_sha": context.sha,
+        "trigger_sha": context.sha,
+        "run_id": str(context.run_id),
+        "run_attempt": str(context.attempt),
+        "verified_parent": "b6bf95798ec5892963c29f4020f8b75069fd2e3b",
+        "preregistration": "8fcc46597ab7c2b83fe9dd2fd0611a07e66169cd",
+    }
+    if any(str(metadata.get(key)) != str(value) for key, value in expected.items()):
+        raise ValueError("inherited foundation original provenance mismatch")
+
+
 def api(path):
     request = urllib.request.Request(
         f"https://api.github.com/repos/{REPO}/{path}",
@@ -439,6 +458,9 @@ def audit_inherited(args, context, recovery):
     actual_hashes = {}
     for shard, folder in enumerate(domains):
         science = folder / "scientific"
+        recorded_source = json.loads((folder / "SOURCE_MANIFEST.json").read_text())
+        archived_source = {str(path.relative_to(folder / "source")): digest(path) for path in (folder / "source").rglob("*") if path.is_file()}
+        validate_exact_source_manifest(recorded_source, archived_source, source_expected)
         provenance = json.loads((folder / "PROVENANCE.json").read_text())
         wanted = dict(scientific_sha=context.sha, workflow_sha=context.sha, run_id=str(context.run_id), attempt=str(context.attempt), shard=shard, scope="all")
         if any(str(provenance.get(key)) != str(value) for key, value in wanted.items()):
@@ -476,6 +498,10 @@ def audit_inherited(args, context, recovery):
     foundation_actual = {str(path.relative_to(foundation)): digest(path) for path in foundation.rglob("*") if path.is_file() and path != foundation / "MANIFEST.json"}
     if foundation_manifest != foundation_actual:
         raise ValueError("inherited foundation manifest mismatch")
+    metrics = json.loads((foundation / "METRICS.json").read_text())
+    if metrics.get("inherited_tests") != 1150 or metrics.get("new_controls") != 43 or metrics.get("all_commands_passed") is not True:
+        raise ValueError("inherited foundation complete-stack metrics mismatch")
+    validate_foundation_metadata(json.loads((foundation / "METADATA.json").read_text()), context)
     for path in (foundation / "scientific").rglob("*"):
         if path.is_file():
             actual_hashes["inherited/" + str(path.relative_to(foundation / "scientific"))] = digest(path)
