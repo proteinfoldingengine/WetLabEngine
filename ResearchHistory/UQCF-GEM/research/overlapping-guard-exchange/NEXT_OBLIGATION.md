@@ -1,27 +1,23 @@
-# Next after A11.X21 — protection within the remaining mixed-floor domains
+# Next after A11.X22 — remaining coupled mixed protection and v16.55 gates
 
-## Completed root domains
+## Completed analytical domains
 
-X15/X20 universally close uniform original floors three/four at target four. X21 removes the uniform-floor requirement from explicit hub access by retaining FULL support tokens that fit every original slot. It supplies:
-- arbitrary positive floors with b=max a_i>=2, r>=b+3 and k>=3b+1;
-- an explicit module class r>=8,k>=7ceil(b/4)+b,ceil((sum original floors)/k)>=3;
-- EVERY original mixed-three/four profile at k>=13 with ANY root count, and at k11/12,r>=8;
-- at k>=13, every profile whose original floors are<=4 OR>=k-2, with arbitrarily many automatic high-floor slots.
+Every original uniform-floor-three/four target-four native ROOT carrier is closed by X15/X20. X22 now closes EVERY mixed-three/four profile at k>=11 with ANY feasible root count, and EVERY six-slot mixed-three/four carrier at ANY palette. It extends k>=11 to every original floor<=4 OR>=k-2 through the exact retained-family positive lift.
 
-All conclusions restore exact original labelled/noncompact destinations through native{3,4} paths. Full source compaction preserves a supplied minimum cover; actual incidence derives the source guard. Compatible FULL exact hub placement precedes handover; no unequal compact token is illegally reassigned. Actual O1 supplies pair witnesses and renewed protection; upper conversion acts only between exact endpoints.
+The mechanism combines a weighted completion inequality with coupled legal placement of two small guard tokens. Actual shared low-floor incidence supplies compatible access; its absence forces private modules whose remaining exact-two family supplies complete alternative repair. No special input core, unrestricted compact-token permutation or safe-prefix assumption occurs. Every original labelled/noncompact destination is restored, with finite next-edit progress and renewed protection.
 
-## Remaining structural obligation
+## Remaining mathematical obligation
 
-Continue stronger DERIVED protection/access or genuinely reusable shared handovers within mixed-three/four profiles outside those domains, or higher/more general mixed floors outside accepted classes. At k<=6 accepted X17 already covers all positive-floor profiles; the new claim does not create a remaining obligation there. At k7..10 and the omitted smaller arities at k11/12, check ALL inherited sufficient results before calling an input class unresolved. Do not turn residual tuples into isolated campaigns.
+Continue genuinely structural derived protection or reusable coupled handovers for mixed-three/four on k7..10 beyond inherited classes, or other original mixed/higher-floor/higher-target domains. Six-slot cases are now excluded from this residual mixed agenda at EVERY palette; k<=6 arbitrary-positive profiles are already closed by X17. Check ALL accepted results before labelling a class unresolved.
 
-X18's unequal capacities/shared actual incidence remains a sufficient certificate whose availability must be derived where useful. X21's full-support compatibility removes one mixed-slot obstruction but does not promise arbitrary compatible small hubs on narrower palettes. A strengthened-floor target carrier can be empty; such emptiness is failure of a proposed route, not native endpoint disconnection.
+Weighted completion counts constrain ACTUAL supports with the SAME label/floor budgets; failed counts prove only endpoint infeasibility in their hypotheses. They do not imply native disconnection. Small-token placement requires a compatible final FULL assignment; arbitrary mixed compact-root permutations remain invalid. When one access mechanism fails, seek a structural alternative rather than assuming its target is unreachable or canonical.
 
-Supply actual all-pair witnesses, shared original floor/slot legality, an eligible next edit whenever unfinished, a well-founded measure, renewed protection and complete original destination restoration. Exact-four endpoints must be proved before exact endpoint theorems. Inexact protected intermediates are allowed in complete LOWER constructions; apply upper removal only at the correct exact ends. Uniform permutation, arbitrary safe-prefix completion and converse full-to-retained safety projection remain invalid shortcuts.
+Every proposed route must supply legal next primitives, all forbidden-pair actual witnesses, renewed usable structure, a well-founded measure and exact full restoration. Exact inputs to inherited endpoint theorems are mandatory. Lower paths at level three and later upper conversion remain distinct. Original A11 destination-directed universality and unrestricted nested repair stay OPEN; accepted child interfaces/fixed-root clearance remain required.
 
-Original A11 destination-directed scheduling, general higher-target and unrestricted nested universality stay OPEN. Conditional child lifting retains accepted interfaces and fixed-root clearance. Connectivity is not feasibility classification, and a failed guard/access/capacity test is not disconnection. Unit repair is an upper bound, not a positive minimum for every pair.
+## Corrected user closure target: v16.55
 
-## Gates and unchanged efficiency status
+The user requested an iterative attempt to close v16.55, correcting an initial16.44 message. X22 is analytical progress toward that goal. It does NOT redefine this numbered stage as CLOSED/CERTIFIED.
 
-Another major analytical closure requires disclosed scope, exact candidate freezing, fresh independent whole-argument review and immutable packet readback. Numerical diagnostics/implementation require separately approved prospective protocols; no numerical process or run ID exists here. No numbered v16.55 certification or integration merge.
+No v16.55 implementation/scientific execution exists here. The numbered closure requirements from ResearchHistory/UQCF-GEM/AGENTS.md remain unmet: integrated-parent prospective scope/protocol; independent production/reconstruction of the complete declared universe; substantive rejecting controls and RED evidence; complete inherited GitHub execution and inspected logs; reproduced durable certificates/manifests; exact merge-head review; actual certified-branch merge and post-merge replay/audit. A new diagnostic/campaign requires its separately approved prospective protocol before implementation/execution. No invented run IDs or measured speedups.
 
-Certified v16.54 stays466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f. Separately accepted efficiency baseline/A2 proposal/tiny validation DESIGN staysea49d2556e4ca4929c0aece68d01e8193ab94b66. Runner implementation, fixture execution and benchmarks/measured speedup remain unstarted. Use ordered repair/retained recoverability; no inserted geometry/fundamental time or physical/originality claim.
+Certified v16.54 remains466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f. Separately accepted efficiency baseline/A2 proposal/tiny validation DESIGN remainsea49d2556e4ca4929c0aece68d01e8193ab94b66; runner implementation/fixture execution/benchmark remain unstarted. Continue theorem-first structural loops within authorization; major closure requires exact freezing, fresh independent whole-argument review and immutable packet verification. Ordered repair/retained recoverability, no fundamental time/inserted geometry or physical/originality claim.
