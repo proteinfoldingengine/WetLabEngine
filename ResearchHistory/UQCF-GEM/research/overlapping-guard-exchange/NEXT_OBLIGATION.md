@@ -2,6 +2,22 @@
 
 Current numbered status: the approved bounded v16.55 certificate is complete, as recorded in the terminal section below. Earlier approval/open-run instructions in this file are historical. The remaining research direction is stronger derived compatible guards or reusable multiple-overlap handovers; the separately promised efficiency runner/fixture/benchmark remains unstarted and requires its own prospective numerical protocol.
 
+## A11.X34 — accepted coupled witness handover
+
+Proof candidate: ed68d5be73e986bab193c1393d7c1c1f066660f3; scope: efd6dea7b73809e4c1f8fb2daf1ab7936c87eacc. See A11_X34_COUPLED_WITNESS_HANDOVER.md, INDEPENDENT_A11_X34_WHOLE_REVIEW.md and A11_X34_CLOSEOUT.md.
+
+The ACTUAL source/destination missed-root sets U_K,V_K supply a derived completion condition: sum_{K:U_K intersect V_K empty}1/binomial(|U_K|+|V_K|,|U_K|)<1. Exact finite counting and conditional averaging DERIVE an eligible root order. Common witnesses survive their changing union; otherwise an actual new witness completes before the last actual old witness changes. All edits preserve the ORIGINAL floor at that SAME labelled slot; full noncompact destination restoration is proved. At every certified prefix the conditional count remains<1 and an eligible next root exists, including at level THREE.
+
+Uniform actual pair redundancy rho with binomial(k,2)<binomial(2rho,rho) gives complete repeated handovers on ANY fixed positive-floor carrier. Each full endpoint restores the next input. This is a quantitative availability theorem for the inherited A2 order criterion, acknowledging X32's prior conditional-expectation principle, rather than merely assuming a compatible order.
+
+An infinite mixed-floor k>=8 control (original floors3/k-3) has union-tuple tau1 and no X33 simultaneous good-label entry. A proved critical prefix has tau3 while neither completed new nor remaining old roots alone forms a three-guard; a strict conditional count guarantees completion. This demonstrates combined changing protection. It is NOT claimed outside every earlier repair theorem.
+
+For ORIGINAL exact-four ends, FIRST construct the entire finite tau>=3 path, THEN apply accepted A for a native{3,4} path to the exact labelled C. Intermediate band conversion is not assumed; one-pass schedule/length need not survive A. Failure of the sufficient bound or whole-root method is not native disconnection. No universal arbitrary mixed/directed/higher-target/nested claim, new numerical execution, implementation, benchmark, integration merge or numbered certification.
+
+Next: derive weaker structural conditions forcing this bound, or a reusable interleaved/repeated handover when no compatible whole-root order exists. Stronger compatible grade bounds remain a parallel analytical direction. The completed bounded v16.55 certificate at0a1cd7019762daa71a8982322ed9a4a74c04ac53 and certified v16.54 remain unchanged. Separate efficiency runner/fixture/benchmark is still unstarted and separately scoped.
+
+Band-conversion qualification: the preliminary lower chain reaches each specified waypoint in order. A applied to the complete concatenation guarantees the exact outer endpoints; preservation of inexact internal waypoints is not established.
+
 ## Completed analytical mechanisms
 
 X23 counts incidence only in ORIGINAL capable slots and links it to an actual ALL-root avoiding-label guard. Small full hub tokens can then be placed in capable outside slots, with at most one protected overlap. Remaining tokens meet every original floor. Large padding supports CONTAIN an actual base support, preserving exactness even at arbitrary original high floors. Full M/O1/A composition restores every original labelled/noncompact destination.

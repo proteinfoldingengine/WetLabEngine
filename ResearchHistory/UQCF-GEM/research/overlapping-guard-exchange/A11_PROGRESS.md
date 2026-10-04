@@ -495,3 +495,22 @@ Independent fresh whole-argument/source/evidence terminal acceptance verified al
 The scientific gain is actual renewable protection: X15U replaces X5 entry availability for universal original-uniform-floor-three exact-four ROOT repair; X32 preserves actual witnesses through deterministic multiple-patch placement, and X33 derives compatible actual guards simultaneously across original grades under its explicit bound. Complete lower paths restore exact labelled/noncompact endpoints before maximum-layer conversion. Bounded testing does not establish universal implementation coverage. Zero common-degree greedy and strict-slack X15S coverage remain disclosed.
 
 A11's stricter destination-directed question, unrestricted arbitrary mixed-floor/higher-target/nested questions and separate efficiency runner/fixture/benchmark remain outside this certificate. The next mathematical directions remain stronger compatible shared-grade bounds and reusable multiple-overlap handovers, with fresh whole-argument review before a new major analytical closure. No isolated carrier campaign or new efficiency numerical scope is approved by this receipt.
+
+
+## A11.X34 — accepted coupled witness handover
+
+Proof candidate: ed68d5be73e986bab193c1393d7c1c1f066660f3; scope: efd6dea7b73809e4c1f8fb2daf1ab7936c87eacc. See A11_X34_COUPLED_WITNESS_HANDOVER.md, INDEPENDENT_A11_X34_WHOLE_REVIEW.md and A11_X34_CLOSEOUT.md.
+
+The ACTUAL source/destination missed-root sets U_K,V_K supply a derived completion condition: sum_{K:U_K intersect V_K empty}1/binomial(|U_K|+|V_K|,|U_K|)<1. Exact finite counting and conditional averaging DERIVE an eligible root order. Common witnesses survive their changing union; otherwise an actual new witness completes before the last actual old witness changes. All edits preserve the ORIGINAL floor at that SAME labelled slot; full noncompact destination restoration is proved. At every certified prefix the conditional count remains<1 and an eligible next root exists, including at level THREE.
+
+Uniform actual pair redundancy rho with binomial(k,2)<binomial(2rho,rho) gives complete repeated handovers on ANY fixed positive-floor carrier. Each full endpoint restores the next input. This is a quantitative availability theorem for the inherited A2 order criterion, acknowledging X32's prior conditional-expectation principle, rather than merely assuming a compatible order.
+
+An infinite mixed-floor k>=8 control (original floors3/k-3) has union-tuple tau1 and no X33 simultaneous good-label entry. A proved critical prefix has tau3 while neither completed new nor remaining old roots alone forms a three-guard; a strict conditional count guarantees completion. This demonstrates combined changing protection. It is NOT claimed outside every earlier repair theorem.
+
+For ORIGINAL exact-four ends, FIRST construct the entire finite tau>=3 path, THEN apply accepted A for a native{3,4} path to the exact labelled C. Intermediate band conversion is not assumed; one-pass schedule/length need not survive A. Failure of the sufficient bound or whole-root method is not native disconnection. No universal arbitrary mixed/directed/higher-target/nested claim, new numerical execution, implementation, benchmark, integration merge or numbered certification.
+
+Next: derive weaker structural conditions forcing this bound, or a reusable interleaved/repeated handover when no compatible whole-root order exists. Stronger compatible grade bounds remain a parallel analytical direction. The completed bounded v16.55 certificate at0a1cd7019762daa71a8982322ed9a4a74c04ac53 and certified v16.54 remain unchanged. Separate efficiency runner/fixture/benchmark is still unstarted and separately scoped.
+
+Band-conversion qualification: the preliminary lower chain reaches each specified waypoint in order. A applied to the complete concatenation guarantees the exact outer endpoints; preservation of inexact internal waypoints is not established.
+
+Reporting reconciliation: the stale top-level STATUS.pending_execution=V16_55_ACTUAL_MERGE_REPLAY_IN_PROGRESS at eb676 is retained as a dated historical field and replaced by null. No live science or pending campaign exists. All bounded v16.55/v16.54 certification and evidence fields are unchanged.
