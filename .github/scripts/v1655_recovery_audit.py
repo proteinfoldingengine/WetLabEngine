@@ -272,6 +272,9 @@ def download_artifact(item, destination):
     folder = destination.with_suffix("")
     folder.mkdir(exist_ok=False)
     with zipfile.ZipFile(destination) as archive:
+        names = [entry.filename for entry in archive.infolist()]
+        if len(names) != len(set(names)):
+            raise ValueError("duplicate ZIP member name")
         for entry in archive.infolist():
             member = PurePosixPath(entry.filename)
             if member.is_absolute() or ".." in member.parts or "\\" in entry.filename:

@@ -10,7 +10,7 @@ import argparse
 import ast
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 import resource
 import shutil
@@ -98,6 +98,103 @@ def validate_original_ledgers(ledgers, context):
     return rows
 
 
+def validate_component_roles(files, component):
+    common = {"STATUS.json", "ORIGINAL_RUN.json", "ORIGINAL_ARTIFACTS.json", "PRODUCING_JOBS.json",
+              "EXECUTABLE_SOURCE_BINDING.json", "ORIGINAL_ARCHIVE_AUDIT.json",
+              "ORIGINAL_MEMBER_MANIFESTS.json", "MANIFEST.json"}
+    extras = {"primary": {"AGGREGATE.json", "SCIENTIFIC_BYTES.json", "FULL_CONTROLS.json"},
+              "reproduction": {"AGGREGATE.json", "SCIENTIFIC_BYTES.json"},
+              "inherited": {"INHERITED_AGGREGATE.json", "FULL_CONTROLS.json"}}
+    if component not in extras or set(files) != common | extras[component]:
+        raise ValueError("missing/extra exact component metadata role")
+
+
+def declared_control_ids(root, mechanical=False):
+    folder = root / (".github/scripts/tests" if mechanical else BASE / "tests")
+    wanted = []
+    for path in sorted(folder.glob("test_v1655*.py" if mechanical else "test_*.py")):
+        for node in ast.parse(path.read_text()).body:
+            if isinstance(node, ast.ClassDef):
+                wanted.extend(f"{path.stem}.{node.name}.{child.name}" for child in node.body
+                              if isinstance(child, ast.FunctionDef) and child.name.startswith("test_"))
+    if not wanted or len(wanted) != len(set(wanted)):
+        raise ValueError("empty/duplicate source-declared control identity")
+    return sorted(wanted)
+
+
+def validate_control_receipt(receipt, root):
+    if set(receipt) != {"status", "control_ids", "mechanical_control_ids"} or receipt["status"] != "PASS":
+        raise ValueError("full control receipt not exact PASS")
+    for field, mechanical in (("control_ids", False), ("mechanical_control_ids", True)):
+        values = receipt[field]
+        if not isinstance(values, list) or sorted(values) != declared_control_ids(root, mechanical):
+            raise ValueError("full control receipt source identity/multiplicity mismatch")
+
+
+def validate_member_maps(data, originals, context):
+    stems = {
+        "primary": ["v1655-full-controls"] + [f"v1655-primary-{i}" for i in range(8)],
+        "reproduction": [f"v1655-reproduction-{i}" for i in range(8)],
+        "inherited": ["v1655-full-controls", "v1655-inherited-development", "v1655-inherited-foundation"]
+                     + [f"v1655-inherited-domain-{i}" for i in range(8)],
+    }
+    if set(data) != set(stems):
+        raise ValueError("incomplete member-map components")
+    original_by_id = {row["id"]: row for row in originals}
+    merged = {}
+    for component, files in data.items():
+        supplied = files["ORIGINAL_ARCHIVE_AUDIT.json"]
+        wanted = {audit.original_artifact_name(stem, context) for stem in stems[component]}
+        ledger = publish.deduplicate_ledgers([supplied])
+        if len(supplied) != len(wanted) or len(ledger) != len(wanted) or {row["name"] for row in ledger} != wanted:
+            raise ValueError("wrong component original ledger ownership/multiplicity")
+        maps = files["ORIGINAL_MEMBER_MANIFESTS.json"]
+        if set(maps) != {str(row["id"]) for row in ledger}:
+            raise ValueError("missing/extra original member-map ID")
+        for row in ledger:
+            if original_by_id.get(row["id"]) != row:
+                raise ValueError("component original row differs from unique union")
+            key = str(row["id"]); members = maps[key]
+            if not isinstance(members, list) or not members:
+                raise ValueError("empty original member map")
+            names = []
+            for member in members:
+                if set(member) != {"name", "bytes", "sha256"}:
+                    raise ValueError("malformed original member row")
+                name = member["name"]
+                if (not isinstance(name, str) or not name or PurePosixPath(name).is_absolute()
+                    or ".." in PurePosixPath(name).parts or "\\" in name
+                    or type(member["bytes"]) is not int or member["bytes"] < 0
+                    or not re.fullmatch(r"[0-9a-f]{64}", str(member["sha256"]))):
+                    raise ValueError("unsafe/malformed original member identity")
+                names.append(name)
+            if len(names) != len(set(names)) or names != sorted(names):
+                raise ValueError("duplicate/unordered original member names")
+            if key in merged and merged[key] != members:
+                raise ValueError("shared original member map differs")
+            merged[key] = members
+    if set(merged) != {str(row["id"]) for row in originals}:
+        raise ValueError("incomplete unique original member-map union")
+    return merged
+
+
+def preserve_original(item, temporary, out, members, *, download=None):
+    archive = temporary / "originals" / (str(item["id"]) + ".zip")
+    archive.parent.mkdir(parents=True, exist_ok=True)
+    (download or publish.download)(item, archive)
+    if archive.stat().st_size != item["size_in_bytes"] or audit.digest(archive) != item["digest"][7:]:
+        raise ValueError("external original byte length/digest mismatch")
+    if publish.zip_members(archive) != members:
+        raise ValueError("original member map differs from downloaded ZIP bytes")
+    relative = "originals/" + str(item["id"])
+    publish.split_archive(archive, out / relative, item["size_in_bytes"], item["digest"][7:])
+    if publish.verify_parts(out / relative) != (item["size_in_bytes"], item["digest"][7:]):
+        raise ValueError("durable original reconstruction mismatch")
+    archive.unlink()
+    return {"id": item["id"], "name": item["name"], "bytes": item["size_in_bytes"],
+            "digest": item["digest"], "published_at": relative}
+
+
 def current_context():
     provenance = audit.recovery_provenance()
     if os.environ["GITHUB_REF"] != "refs/heads/research/v16.34-fiber-component-invariant":
@@ -140,12 +237,7 @@ def current_inventory(context, provenance, component, out):
 
 
 def verify_controls(folder, root):
-    wanted = []
-    for path in sorted((root / BASE / "tests").glob("test_*.py")):
-        for node in ast.parse(path.read_text()).body:
-            if isinstance(node, ast.ClassDef):
-                wanted.extend(f"{path.stem}.{node.name}.{child.name}" for child in node.body
-                              if isinstance(child, ast.FunctionDef) and child.name.startswith("test_"))
+    wanted = declared_control_ids(root)
     log = (folder / "tests.log").read_text()
     actual = re.findall(r"^test_\w+ \(([A-Za-z0-9_.]+)\) \.\.\. ok$", log, re.M)
     if (len(wanted) != len(set(wanted)) or sorted(wanted) != sorted(actual)
@@ -153,18 +245,15 @@ def verify_controls(folder, root):
         raise ValueError("full new controls omitted/duplicated/failed")
     mechanical = (folder / "mechanical-tests.log").read_text()
     # Derive exact IDs from the actual contract-bound test source, not a passing count.
-    mechanical_wanted = []
-    for path in sorted((root / ".github/scripts/tests").glob("test_v1655*.py")):
-        for node in ast.parse(path.read_text()).body:
-            if isinstance(node, ast.ClassDef):
-                mechanical_wanted.extend(f"{path.stem}.{node.name}.{child.name}" for child in node.body
-                                         if isinstance(child, ast.FunctionDef) and child.name.startswith("test_"))
+    mechanical_wanted = declared_control_ids(root, True)
     mechanical_actual = re.findall(r"^test_\w+ \(([A-Za-z0-9_.]+)\) \.\.\. ok$", mechanical, re.M)
     if (len(mechanical_wanted) != len(set(mechanical_wanted))
         or sorted(mechanical_wanted) != sorted(mechanical_actual)
         or f"Ran {len(mechanical_wanted)} tests" not in mechanical or "\nOK\n" not in mechanical):
         raise ValueError("mechanical source-bound controls incomplete")
-    return {"status": "PASS", "control_ids": actual, "mechanical_control_ids": mechanical_actual}
+    receipt = {"status": "PASS", "control_ids": actual, "mechanical_control_ids": mechanical_actual}
+    validate_control_receipt(receipt, root)
+    return receipt
 
 
 def audit_component(component, out, context, provenance):
@@ -188,11 +277,7 @@ def audit_component(component, out, context, provenance):
             audit.dump(scratch / "FULL_CONTROLS.json", verify_controls(controls, Path.cwd()))
         member_manifests = {}
         for row in json.loads((scratch / "ORIGINAL_ARCHIVE_AUDIT.json").read_text()):
-            with zipfile.ZipFile(row["local_archive"]) as archive:
-                members = publish.zip_members(Path(row["local_archive"]))
-                if len({member["name"] for member in members}) != len(members):
-                    raise ValueError("duplicate original archive member")
-                member_manifests[str(row["id"])] = members
+            member_manifests[str(row["id"])] = publish.zip_members(Path(row["local_archive"]))
         audit.dump(scratch / "ORIGINAL_MEMBER_MANIFESTS.json", member_manifests)
         for path in scratch.glob("*.json"):
             shutil.copyfile(path, out / path.name)
@@ -222,6 +307,11 @@ def package(out, context, provenance):
             if actual != recorded or any("/" in path or not path.endswith(".json") for path in actual):
                 raise ValueError("component payload not complete metadata-only manifest")
             data[component] = {path.name: json.loads(path.read_text()) for path in folder.glob("*.json")}
+            validate_component_roles(data[component], component)
+            audit.validate_current_run(data[component]["ORIGINAL_RUN.json"], context, provenance)
+            audit.validate_current_jobs(data[component]["PRODUCING_JOBS.json"], component, context)
+            if component in ("primary", "inherited"):
+                validate_control_receipt(data[component]["FULL_CONTROLS.json"], Path.cwd())
             if data[component]["EXECUTABLE_SOURCE_BINDING.json"] != json.loads((scratch / "EXECUTABLE_SOURCE_BINDING.json").read_text()):
                 raise ValueError("component executable source mismatch")
             ledgers.append(data[component]["ORIGINAL_ARCHIVE_AUDIT.json"])
@@ -233,6 +323,7 @@ def package(out, context, provenance):
                                "bytes": item["size_in_bytes"], "digest": item["digest"]})
         result = validate_join(data, context, provenance, audit.expected_control_ids(Path.cwd()), audit.baseline_hashes(Path.cwd()))
         originals = validate_original_ledgers(ledgers, context)
+        member_maps = validate_member_maps(data, originals, context)
         published = []
         for row in originals:
             candidates = [item for item in artifacts if item["id"] == row["id"]]
@@ -241,14 +332,7 @@ def package(out, context, provenance):
             item = candidates[0]
             if {"id": item["id"], "name": item["name"], "bytes": item["size_in_bytes"], "digest": item["digest"]} != row:
                 raise ValueError("original ledger differs from external metadata")
-            archive = scratch / "originals" / (str(row["id"]) + ".zip")
-            publish.download(item, archive)
-            relative = "originals/" + str(row["id"])
-            publish.split_archive(archive, out / relative, row["bytes"], row["digest"][7:])
-            if publish.verify_parts(out / relative) != (row["bytes"], row["digest"][7:]):
-                raise ValueError("durable original reconstruction mismatch")
-            published.append({**row, "published_at": relative})
-            archive.unlink()
+            published.append(preserve_original(item, scratch, out, member_maps[str(row["id"])]))
         for name in ("ORIGINAL_RUN.json", "ORIGINAL_ARTIFACTS.json", "PRODUCING_JOBS.json", "EXECUTABLE_SOURCE_BINDING.json"):
             shutil.copyfile(scratch / name, out / name)
     audit.dump(out / "ORIGINAL_EVIDENCE_INVENTORY.json", published)
