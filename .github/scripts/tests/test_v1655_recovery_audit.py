@@ -59,6 +59,38 @@ class RecoveryContextTests(unittest.TestCase):
 
 
 class EvidenceContractTests(unittest.TestCase):
+    def test_each_inherited_domain_requires_exact_archived_source(self):
+        wanted = {"campaign.py": "a" * 64, "verifier.py": "b" * 64}
+        audit.validate_exact_source_manifest(dict(wanted), dict(wanted), wanted)
+        with self.assertRaises(ValueError):
+            audit.validate_exact_source_manifest(dict(wanted), {"campaign.py": "a" * 64}, wanted)
+        with self.assertRaises(ValueError):
+            audit.validate_exact_source_manifest({**wanted, "extra.py": "c" * 64}, dict(wanted), wanted)
+
+    def test_foundation_metadata_binds_original_run_without_spoofing(self):
+        context = audit.validate_request({
+            "audited_run_id": 37180275767,
+            "audited_sha": "60c48b818366354d26366af35726788553865455",
+            "audited_attempt": 1,
+            "audited_workflow": ".github/workflows/v16.55-renewable-guard-validation.yml",
+            "certified_parent": "466aa8a6d55a9b21cbf6bfe8a34dd8e6f5c6946f",
+            "mode": "publication_recovery",
+        })
+        metadata = {
+            "head": context.sha,
+            "workflow_sha": context.sha,
+            "trigger_sha": context.sha,
+            "run_id": str(context.run_id),
+            "run_attempt": str(context.attempt),
+            "verified_parent": "b6bf95798ec5892963c29f4020f8b75069fd2e3b",
+            "preregistration": "8fcc46597ab7c2b83fe9dd2fd0611a07e66169cd",
+        }
+        before = dict(os.environ)
+        audit.validate_foundation_metadata(metadata, context)
+        self.assertEqual(dict(os.environ), before)
+        with self.assertRaises(ValueError):
+            audit.validate_foundation_metadata({**metadata, "run_id": "0"}, context)
+
     def test_component_status_requires_terminal_pass_and_both_provenances(self):
         context = audit.validate_request({
             "audited_run_id": 37180275767,
@@ -101,4 +133,3 @@ class EvidenceContractTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
