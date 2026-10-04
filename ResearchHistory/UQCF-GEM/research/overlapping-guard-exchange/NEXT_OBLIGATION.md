@@ -4,6 +4,20 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X38 — reserve-free repeated triangle-cycle handovers
+
+Scope a89a6b4a24727f83c367e73748dec03a9a1312e3; exact candidate 90f22b4d506139a7bca7a801d2c02739fc658a5b; proof blob abb8304dd3c76356ada9ab5d92b2aae516bdc5a3. Source A11_X38_TRIANGLE_CYCLE_RENEWAL.md; fresh attributable whole review INDEPENDENT_A11_X38_WHOLE_REVIEW.md; closeout A11_X38_CLOSEOUT.md.
+
+X38T extends the accepted transposition union-cover argument to ONE palette three-cycle at any exact q>=3: a union cover repairs to an old cover with at most ONE added label. Add ALL destination-only incidences before removing ANY source-only incidences. Every primitive contains a floor-safe endpoint and lies inside that union, preserving original floors and the one-unit band. Common incidences remain fixed; each differing incidence toggles once. Native additions/removals are individual, never simultaneous.
+
+X38R derives full reusable target-four completion through actual overlapping union-template roots with SAME positive group cardinalities and arbitrary original floors a_i<=N_i, INCLUDING saturation N_i. The actual balanced ownership graph has no simple directed cycle longer than three; every strongly connected component of size<=3 is a sufficient checkable subclass. Balance forces a two/three-cycle whenever unfinished; deleting its arcs preserves balance and the structural condition. Every pair's expanded footprint uses<=3roles, supplying an ACTUAL avoiding root throughout all partial packets. Completed cycles restore all group/root sizes; incorrect labels strictly decrease; literal next edits and eligible next cycles supply complete exact labelled/noncompact destination restoration. NO one-incidence reserve, upper-layer conversion or supplied cycle decomposition is needed. Total primitive count is mathematically exactlysum_i|A_i symmetric_difference C_i|, not a measured benchmark.
+
+Infinite t>=1 control: twelve t-sized cells, two oriented triangle components on six groups, all twenty triple masks, k12t, actual sizes6t. Either saturated floors6t or unequal6t/6t-1. NO reciprocal ownership arc permits a directed two-cycle; triangles are derived. Four disjoint floor-safe roots cannot fit ANYWHERE. Full endpoint union has a two-cover, while a single prepared triangle reaches exacttau3 with eighteen actual roots unfinished and then renews full sizes. Exactly2t completed triangles restore the destination. No claim excludes EVERY whole-root order or contracted auxiliary guards.
+
+The saturated adjacent-link triangle list from X37 can lose ONE actual incidence; X38's full triangle preparation replaces that mechanism. For a separately declared four-cycle on the all-triples template, full-cycle union has an actual two-cover and this proposed preparation fails. That is a precise METHOD obstruction only; X37's reserve-bearing lift and accepted L remain valid. All endpoint classes were ALREADY symmetry-connected by L; the advance is reserve-free, destination-event-unique reusable overlap scheduling, not new connectivity or universal coverage.
+
+Next: longer coupled ownership cycles with saturated actual roots, derived replacement protection beyond the short-cycle condition, unequal group cardinalities and template accessibility. Preserve stronger compatible-grade research and all historical claims/controls. General A11 mixed/directed/higher-target/nested universality remains OPEN. v16.55/v16.54/frozen sources/original evidence unchanged. Separate efficiency implementation/fixture/benchmark remains unstarted and independently gated. No numerical execution, workflow, implementation, benchmark, integration merge or numbered certification.
+
 ## A11.X37 — reusable shared-role cycles through pre-existing overlap
 
 Scope 0bcd78348096d477936db8c32fc8963ce51fbd45; exact candidate 55a3a1801bc7b33c15606c231780c6d23aea3b2a; proof blob f057022ba890a74a37c30b4983a1be9000f8914a. Source A11_X37_SHARED_ROLE_CYCLE_RENEWAL.md; attributable fresh whole review INDEPENDENT_A11_X37_WHOLE_REVIEW.md; closeout A11_X37_CLOSEOUT.md.
