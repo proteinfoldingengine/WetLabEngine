@@ -154,6 +154,25 @@ def validate_exact_source_manifest(recorded, actual, expected):
         raise ValueError("inherited domain exact archived source mismatch")
 
 
+def domain_source_relatives(paths, base):
+    prefix = str(base).rstrip("/") + "/"
+    result = []
+    for path in paths:
+        if not path.startswith(prefix):
+            raise ValueError("source path outside inherited base")
+        relative = path[len(prefix):]
+        parts = PurePosixPath(relative).parts
+        wanted = (
+            len(parts) == 1
+            and (relative.endswith(".py") or relative.endswith(".md") or relative == "protocol.json")
+        ) or (
+            len(parts) == 2 and parts[0] == "tests" and relative.endswith(".py")
+        )
+        if wanted:
+            result.append(relative)
+    return result
+
+
 def validate_foundation_metadata(metadata, context):
     expected = {
         "head": context.sha,
@@ -449,6 +468,10 @@ def audit_inherited(args, context, recovery):
         relative = str(Path(path).relative_to(V154))
         if Path(path).suffix in (".py", ".json", ".md") and "__pycache__" not in Path(path).parts:
             source_expected[relative] = hashlib.sha256(git_bytes(root, context.sha, path)).hexdigest()
+    domain_source_expected = {
+        relative: hashlib.sha256(git_bytes(root, context.sha, str(V154 / relative))).hexdigest()
+        for relative in domain_source_relatives(source_paths, str(V154))
+    }
     recorded = json.loads((development / "SOURCE_MANIFEST.json").read_text())
     actual_source = {str(path.relative_to(development / "source")): digest(path) for path in (development / "source").rglob("*") if path.is_file()}
     if recorded != source_expected or actual_source != source_expected:
@@ -460,7 +483,7 @@ def audit_inherited(args, context, recovery):
         science = folder / "scientific"
         recorded_source = json.loads((folder / "SOURCE_MANIFEST.json").read_text())
         archived_source = {str(path.relative_to(folder / "source")): digest(path) for path in (folder / "source").rglob("*") if path.is_file()}
-        validate_exact_source_manifest(recorded_source, archived_source, source_expected)
+        validate_exact_source_manifest(recorded_source, archived_source, domain_source_expected)
         provenance = json.loads((folder / "PROVENANCE.json").read_text())
         wanted = dict(scientific_sha=context.sha, workflow_sha=context.sha, run_id=str(context.run_id), attempt=str(context.attempt), shard=shard, scope="all")
         if any(str(provenance.get(key)) != str(value) for key, value in wanted.items()):
