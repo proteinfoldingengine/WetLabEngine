@@ -143,7 +143,7 @@ def add_content_reference(index, byte_count, digest, reference):
         index[key].append(reference)
 
 
-def classify_wrapper_members(members, retained_names, archive_index, member_index):
+def classify_wrapper_members(members, retained_names, archive_index, member_index, archive_classification="ARCHIVE_REFERENCE"):
     mapped = []
     for supplied in members:
         row = {key: supplied[key] for key in ("name", "bytes", "sha256")}
@@ -152,7 +152,7 @@ def classify_wrapper_members(members, retained_names, archive_index, member_inde
             classification = "RETAINED_METADATA"
             references = [{"published_name": row["name"]}]
         elif key in archive_index:
-            classification = "ARCHIVE_REFERENCE"
+            classification = archive_classification
             references = archive_index[key]
         elif key in member_index:
             classification = "MEMBER_REFERENCE"
@@ -353,6 +353,12 @@ def prepare(request, out):
     component_transports = {}
     component_members = {}
     component_retained = {}
+    expected_component_metadata = {
+        "primary": {"AGGREGATE.json", "ORIGINAL_ARCHIVE_AUDIT.json", "ORIGINAL_ARTIFACTS.json", "ORIGINAL_RUN.json", "SCIENTIFIC_BYTES.json", "STATUS.json"},
+        "reproduction": {"AGGREGATE.json", "ORIGINAL_ARCHIVE_AUDIT.json", "ORIGINAL_ARTIFACTS.json", "ORIGINAL_RUN.json", "SCIENTIFIC_BYTES.json", "STATUS.json"},
+        "inherited": {"INHERITED_AGGREGATE.json", "ORIGINAL_ARCHIVE_AUDIT.json", "ORIGINAL_ARTIFACTS.json", "ORIGINAL_RUN.json", "STATUS.json"},
+        "partial": {"PARTIAL_INSPECTION.json", "ORIGINAL_ARCHIVE_AUDIT.json", "ORIGINAL_ARTIFACTS.json", "ORIGINAL_RUN.json", "STATUS.json"},
+    }
     for expected in COMPONENTS:
         item = exact_artifact(by_recovery_id[expected["id"]], expected)
         transport = temporary / f"{expected['component']}.zip"
@@ -360,6 +366,8 @@ def prepare(request, out):
         if transport.stat().st_size != expected["bytes"] or sha256_file(transport) != expected["digest"].removeprefix("sha256:"):
             raise ValueError("recovery component bytes mismatch")
         values = root_json(transport, component_root / expected["component"])
+        if set(values) != expected_component_metadata[expected["component"]]:
+            raise ValueError("recovery component root metadata inventory mismatch")
         status = values.get("STATUS.json", {})
         if status.get("status") != "PASS" or status.get("component") != expected["component"]:
             raise ValueError("recovery component terminal status mismatch")
@@ -421,7 +429,12 @@ def prepare(request, out):
             component_archive_index,
             expected["bytes"],
             expected["digest"].removeprefix("sha256:"),
-            {"component": name, "artifact_id": expected["id"], "artifact_name": expected["name"]},
+            {
+                "component": name,
+                "artifact_id": expected["id"],
+                "artifact_name": expected["name"],
+                "resolution": "COMPONENT_DUPLICATION_MAP.json#" + name,
+            },
         )
         component_maps.append({
             "component": name,
@@ -467,12 +480,22 @@ def prepare(request, out):
         required_package_metadata,
         component_archive_index,
         component_member_index,
+        archive_classification="SUPERSEDED_COMPONENT_WRAPPER",
     )
+    package_statistics = mapping_stats(package_mapped)
+    if len(package_mapped) != 2274:
+        raise ValueError("recovery package member count mismatch")
+    if package_statistics.get("SUPERSEDED_COMPONENT_WRAPPER") != {"count": 4, "bytes": 603564564}:
+        raise ValueError("recovery package component transport inventory mismatch")
+    if package_statistics.get("MEMBER_REFERENCE") != {"count": 2267, "bytes": 885053304}:
+        raise ValueError("recovery package extracted component inventory mismatch")
+    if package_statistics.get("RETAINED_METADATA", {}).get("count") != 3:
+        raise ValueError("recovery package retained metadata count mismatch")
     package_map = {
         "status": "PASS",
         "wrapper": {"id": PACKAGE_ID, "name": PACKAGE_NAME, "bytes": PACKAGE_BYTES, "digest": "sha256:" + PACKAGE_DIGEST},
         "retained_metadata": sorted(required_package_metadata),
-        "statistics": mapping_stats(package_mapped),
+        "statistics": package_statistics,
         "members": package_mapped,
     }
     dump(destination / "PACKAGE_DUPLICATION_MAP.json", package_map)
