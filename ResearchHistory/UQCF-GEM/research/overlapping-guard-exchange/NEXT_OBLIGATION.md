@@ -4,6 +4,24 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X48 - mixed-prefix four-cover relay (accepted analytical)
+
+X48 proves that a direct upper bound does not require one four-label set to cover both restored endpoints. For a lower-safe whole-root order, let M_p contain the first p roots at destination and the remainder at source. If each M_p has a four-label hitting set, the same endpoint-containing path has tau at most four: the M_p cover protects additions, the M_(p+1) cover protects deletions, and the witness may change existentially at the union state without a primitive.
+
+A two-cover relay suffices. K_minus may fail only destination roots V; K_plus may fail only source roots U. If every U root precedes every V root, K_minus protects early prefixes and K_plus protects later prefixes.
+
+For every even m at least eight, the d = 1 X47 alternating family forces such a relay on every total root order. Restricted to odd-window complementary roots, some cyclic adjacent pair must ascend. That orientation identifies singleton U and V and the two exact physical four-label sets.
+
+Accepted X40L supplies the lower-safe order. The forced relay supplies tau at most four on that same order. Therefore the preliminary path is directly in the band, retains the endpoint-toggle minimum and restores the full labelled noncompact destination. Theorem A is not used.
+
+This succeeds while beta = Gamma = m/2, X46 fails at equality and the X45 same-representative intersection is empty. The new resource is the orientation of exact cover exceptions inside the actual lower-safe order, not more redundancy or fewer bad windows.
+
+Renewal holds for finite chains using the same declared cyclic role order, or an explicitly template-preserving automorphic order. Arbitrary reordered cycles and duplicated d greater than one families are not claimed.
+
+The next obligation is a multi-stage relay through several overlapping exception sets under the same lower-order potential. Arbitrary accessibility, unequal corresponding group sizes, below-X40 lower repair and unrestricted mixed-floor, directed, higher-target and nested universality remain open.
+
+Analytical only: no numerical execution, workflow, implementation, benchmark, integration merge, numbered certification, originality or physical claim. v16.55/v16.54 and all evidence remain unchanged. Separate efficiency work remains unstarted.
+
 ## A11.X47 source-integrity erratum - authoritative corrected rendering
 
 The accepted X47 mathematics is unchanged. The original X47 proof, whole review, closeout and three report blocks were published through ordinary JavaScript template literals; escape processing inserted forbidden C0 bytes and removed intended mathematical backslashes. The former byte readback compared against the already-escaped in-memory strings and therefore did not detect the rendering damage.
