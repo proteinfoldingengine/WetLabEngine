@@ -1722,7 +1722,6 @@
   "a11_x60_x59_upper_exception_disjointness_required": false,
   "a11_x60_inactive_column_required": false,
   "a11_x60_constructor": "ALL_SHARED_COLOR_ADDITIONS_DELETIONS_THEN_ALL_REMAINING_ADDITIONS_DELETIONS",
-  "a11_x60_upper_cover_count_bound": 3,
   "a11_x60_actual_copy_coexistence": true,
   "a11_x60_unequal_saturated_original_floors": true,
   "a11_x60_column_renewal": true,
@@ -1738,5 +1737,6 @@
   "a11_x60_maximum_layer_used": false,
   "a11_x60_numerical_execution": false,
   "a11_x60_efficiency_started": false,
-  "a11_x60_remaining": "WEAKEN_UNIQUE_SMALL_COVER_COLORED_REPRESENTATION_WITH_COMPETING_COVERS_OR_NONCOMMON_FOOTPRINT_SHAPES"
+  "a11_x60_remaining": "WEAKEN_UNIQUE_SMALL_COVER_COLORED_REPRESENTATION_WITH_COMPETING_COVERS_OR_NONCOMMON_FOOTPRINT_SHAPES",
+  "a11_x60_per_column_upper_cover_count_bound": 3
 }
