@@ -4,6 +4,27 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X43 — renewable upper-cover transport with scarce representatives
+
+Scope 2b462c72b6a4798149ae4ee81cad68248bee96ac; exact candidate b833945f6715013b3784131b1405e7cc90ae15e9; proof blob 125418e807e5522c0d1777b4078894c23f3906b3.
+Proof A11_X43_SCARCE_COVER_TRANSPORT.md; fresh attributable INDEPENDENT_A11_X43_WHOLE_REVIEW.md; closeout A11_X43_CLOSEOUT.md.
+
+New actual cover property: G=S disjoint-union R, p>=1,n>=p+3, and EVERY four-role set with one S and three R covers every mask. For ANY role permutation pi, derive such I with pi(I) also one-plus-three: if an S-to-S role exists, take it and three R-to-R roles; otherwise take one S-to-R, one R-to-S and two R-to-R roles. At leastn-p>=3 R-to-R choices always exist. These are SAME transported role identities, not unmatched endpoint covers.
+
+At each X42 simple ownership cycle, take its selected ACTUAL label at each cycle role and an ordinary representative elsewhere. The four labels indexed by I have oldownersI and nextownerspi(I); both cover ALL actual roots. Every partial physical root contains an old or new support, so those SAME labels preserve tau<=4. They need not keep their owners. No two-label-per-cover-group hypothesis is used.
+
+Inherited actual X42 pair witnesses/shared conditional orders/original-floor legality supply tau>=3 on the SAME eventunique path. Every restored cycle renews nonempty groups, counts/masks and the eligible next cover, balanced ownership supplies another cycle, incorrect labels descend and FULL labelled/noncompact C is reached. DIRECT{3,4} retains minimumsum_i|A_i triangle C_i|; no A conversion or benchmark.
+
+EVERYp>=2,n>=5p X42 sparsefamily meets the cover property and lower bound, now for ALL positive correspondinggroupcounts, including singletons. No newroot/palettelabel/supportreserve. Allroleprofilesdistinct/no singletonmaskrepresentation remains the X42 direct-input control.
+
+For EVERYp>=3,n>=5p, allb_j1 saturatedp/n-2/m-1 floors yield onefullmcycle: EVERYlabel changesowner, NONEunselected, and no SAMEstate regrouping gives larger cells. Direct commoncover transport completes minimumevent repair despite unsafewholeunion/no4disjointfloorsafe roots.
+
+Repeatedcontrol b_s1,b_Rp+1 has k=p+n(p+1), saturatedp/(n-2)(p+1)/k-1 grades and p cycles oflengthn+1. EVERY minimumcover needs a singletonS group, so NONE meets oldmultiplicity hypothesis, even afterSAMEstate regrouping. At0<q<p low+ALLhigh roots areunfinishedBOTHends while renewednextcycle exists; broadroots mayalreadycomplete/unchanged (notALLrootsunfinished). Exactlypcycles restoreC. This control mayuseanunchangedSrepresentative outsideeachcycle; theno-unselectedcontrol is separate. Unsafeunion/private-root comparisons remainmethodlimitations, notevery-order/nativeobstruction.
+
+Advance removes oldunselected-representative multiplicity within this structuralclass; commoncoverprinciple alreadyX39, lowermechanism X42/X34 inherited, Lalreadyconnects. Suppliedtemplate/equalcorrespondingcounts/actualS/lowerstrictmargin/EVERYcoverproperty remain inputs. Accessibility, templateswithoutcovertransport, below-boundlowerrepair, unequalgroupcounts and broadermixed/directed/higher-target/nested questions remainOPEN; compatiblegrade direction staysparallel.
+
+No sciencecommands/tests/enumeration/workflow/code/benchmark/integrationmerge/numberedstage/physicaltimeclaim. v16.55/v16.54 and original evidence unchanged; separate efficiency implementation/fixture/benchmark remains unstarted and independently scoped.
+
 ## A11.X42 — multi-role localization beyond every singleton representation
 
 Scope b8c3c4eab45df3c4d070e20b74d447c1d5f3b295; exact candidate a2a3c613ce4b9735844b01bfa127ec1026df195d; proof blob fb715253a36c5c69ee282fa29fe8762b7a8bdb67.
