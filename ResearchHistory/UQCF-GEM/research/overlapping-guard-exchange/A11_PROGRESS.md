@@ -908,3 +908,20 @@ This removes X55's full anchor-edge product. The colored inequalities alone do n
 
 Next: derive renewable repair under colored protection without the four shared relay types, or handle several coupled exceptional pairs. Unbounded upper-cover stages with moving lower witnesses remains open. Analytical only; native connectivity already known, no numerical job or new numbered certification, v16.54/v16.55 and evidence preserved. Separate efficiency runner/fixture/benchmark work remains unstarted.
 
+
+## A11.X57 - derived handover without shared relay types (accepted analytical)
+
+Accepted candidate a831d16e623181ca2eeda0f7e725454bb817e11a; proof A11_X57_DERIVED_HANDOVER_WITHOUT_SHARED_RELAYS.md.
+
+For an ABSTRACT four-anchor colored carrier satisfying vc(Gamma_J)>|J| for every nonempty anchor subset J, the full actual edge union has a maximal matching of at least3edges. Their actual colors either differ, or an edge of another nonempty color misses one of the three. This finitely DERIVES two disjoint actual edges at distinct anchors. Choose BOTH anchor and outside labeling before defining endpoint groups and numeric successor exchange.
+
+Assign the two transfer anchors1/2 and their edges {4,6}/{5,7}. No edge shared by several anchors and no four-type relay rectangle is required. Process the derived new witness v first, then all old exceptions U of destination cover K2, then every remaining actual type. U has anchor3; source cover K0's new exceptions have anchor0; old witness u has anchor1. This three-stage order retains old u until v completes and switches directly from K0 to K2 upper protection on the SAME copied primitive sequence.
+
+The colored footprint criterion supplies all ordinary pair witnesses and exact-four prepared states. Literal add-before-delete preserves every individual same original positive floor, including unequal saturation. Every completed parallel column renews the mechanism; finite pending edits and decreasing remaining columns supply continuation and termination. Every exact original labelled destination support is restored directly in {3,4}. Every differing endpoint incidence toggles once, attaining the global primitive minimum.
+
+The private-edge family has2disjoint edges per anchor, all8outside edges distinct and pairwise disjoint. For every m>=20 it satisfies the guard, has no cross-anchor edge intersection, uses8distinct root types and has exact one-copy length48t. This completes X56's failed shared-relay extraction control by a different mechanism. Eight-type minimality remains confined to the colored footprint condition. The global graph count stays t(6s-2H); full endpoint-union tau=2. Exactly2four-cover identities suffice and are necessary only for singleton one-column endpoints on the new schedule. X56's3cover necessity concerned its DIFFERENT supplied schedule and remains correct.
+
+This removes the supplied-relay hypothesis within the abstract colored class, but compatible ordering is chosen before endpoints. Arbitrary preassigned cycles or exact endpoints, multiple coupled exceptional pairs, general ownership exchanges and unrestricted mixed/directed/higher-target/nested repair remain open. Native connectivity was already known; no numerical campaign, efficiency result, numbered certification or physical claim is added.
+
+Next: derive renewable transfer for several coupled pair obligations on a prescribed exchange without choosing its compatible ordering. Unbounded upper-cover stages with moving lower protection remains open. v16.54/v16.55 and all evidence are preserved. Separate efficiency runner/fixture/benchmark work remains unstarted.
+
