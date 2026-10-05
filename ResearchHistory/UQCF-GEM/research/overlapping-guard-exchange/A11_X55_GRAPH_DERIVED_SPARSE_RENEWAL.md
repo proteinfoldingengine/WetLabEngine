@@ -4,19 +4,19 @@ Status: frozen analytical candidate; independent review pending. Parent b94c9952
 
 ## Theorem
 
-Let m>=10, G={0,...,m-1}, A={0,1,2,3}, and R=G minus A. Let Gamma be any simple graph on R whose vertex-cover number vc(Gamma) is at least five. For every a in A and e in E(Gamma), declare the ACTUAL root type Q={a} union e, with an arbitrary positive number c_Q of ORIGINAL labelled copies.
+Let m>=10 and let an abstract simple graph Gamma on m-4 outside roles have vertex-cover number vc(Gamma) at least five. Before defining endpoint groups or the successor exchange, choose a compatible labeling G={0,...,m-1}, A={0,1,2,3}, R=G minus A such that {4,6} and {5,7} are graph edges and m-1 is not in {4,6}. For every a in A and e in E(Gamma), declare the ACTUAL root type Q={a} union e, with an arbitrary positive number c_Q of ORIGINAL labelled copies.
 
 Fix t>=1 disjoint original column labels x_(j,h), j in G and 1<=h<=t, and disjoint fixed original padding sets Z_j of sizes p_j>=0. Source groups are B_j=Z_j union {x_(j,h):1<=h<=t}; destination groups are D_j=Z_j union {x_(j-1,h):1<=h<=t}, with indices modulo m. Every source copy of type Q has support union_(j in Q) B_j and exact labelled destination union_(j in Q) D_j. It retains its own original positive floor f_i<=N_Q=3t+sum_(j in Q)p_j.
 
 There is an explicit finite primitive path between these exact-four endpoints with 3<=tau<=4 after every edit. It restores every exact labelled destination support, changes each differing endpoint incidence exactly once and no other incidence, and therefore has globally minimum primitive length for the endpoint pair. The same construction resolves all t columns and permits arbitrary unequal p_j and arbitrary unequal original copy floors, including saturation.
 
-The number of distinct types is 4|E(Gamma)|. In particular, for every m>=14 a five-edge matching (plus isolated outside roles) gives only 20 types, independent of m. This is the minimum type count within the theorem's graph condition because vc(Gamma)<=|E(Gamma)|.
+The number of distinct types is 4|E(Gamma)|. In particular, for every m>=14 a compatibly labeled five-edge matching (plus isolated outside roles) gives only 20 types, independent of m. This is the minimum type count within the theorem's graph condition because vc(Gamma)<=|E(Gamma)|.
 
-## Structural normalization forced by vc(Gamma)>=5
+## Existence and timing of the compatible labeling
 
-The endpoints and path are invariant under a simultaneous relabeling of outside roles, so first choose a convenient outside labeling. The endpoints of any maximal matching cover every graph edge. If the maximum matching had size at most two, Gamma would have a vertex cover of size at most four, contrary to hypothesis. Hence Gamma has three pairwise disjoint edges.
+The endpoints of any maximal matching cover every graph edge. If the maximum matching had size at most two, Gamma would have a vertex cover of size at most four, contrary to hypothesis. Hence Gamma has three pairwise disjoint edges.
 
-Label two of them e_u={4,6} and e_v={5,7}. At least one endpoint of the third is outside these four vertices; label such an outside vertex m-1. Thus m-1 is not in e_u. The remaining outside vertices can be labelled arbitrarily. This is only notation for the supplied role relation; it changes neither native rules nor the graph.
+For an abstract Gamma, choose two of them and label their endpoints e_u={4,6} and e_v={5,7}. Label an endpoint of the third edge m-1, so m-1 is not in e_u; label the remaining outside vertices arbitrarily. ONLY AFTER this labeling is fixed do we declare B_j,D_j and the numeric successor j->j+1. Therefore every abstract Gamma with vc>=5 supplies at least one compatible cyclic exchange in the theorem. The theorem does not assert the construction for every cyclic order assigned to Gamma in advance.
 
 ## Exact-four prepared states
 
@@ -97,6 +97,6 @@ The full outer endpoint-union tuple has transversal exactly two. The physical pa
 
 In the singleton one-column control t=1 and all p_j=0, the unique physical endpoint covers are K0 and K2 because A is the unique role cover of size at most four. Immediately after b completes and before c starts, K0 misses new b and K2 misses old c. Any two-cover family valid throughout this specified schedule must contain both unique endpoint covers, so it fails at that boundary. K0,L,K2 work, making three exact for THIS schedule only. No other-order obstruction is claimed.
 
-The theorem replaces complete outside-pair coverage by the sharp proof-level condition vc(Gamma)>=5 and allows witness redundancy one in the five-matching control. It still assumes every anchor-edge combination, equal corresponding endpoint group sizes, supplied parallel full-cycle columns and a graph-derived relabeling. It does not prove arbitrary missing anchor-edge types, several coupled exceptional pairs, arbitrary ownership graphs, or universal mixed-floor, directed, higher-target or nested repair. Applicable native connectivity was already known; the result is a sparse renewable schedule and exact minimum, not a new connectivity classification.
+The theorem replaces complete outside-pair coverage by the sharp proof-level condition vc(Gamma)>=5. In the five-matching control a four-role outside footprint can leave exactly one matching edge unhit; this is not a claim that minimum old/new pair-root redundancy equals one. It still assumes every anchor-edge combination, equal corresponding endpoint group sizes, supplied parallel full-cycle columns and a compatible graph labeling chosen before those endpoints and the successor map are declared. It does not prove arbitrary missing anchor-edge types, several coupled exceptional pairs, arbitrary ownership graphs, or universal mixed-floor, directed, higher-target or nested repair. Applicable native connectivity was already known; the result is a sparse renewable schedule and exact minimum, not a new connectivity classification.
 
 No numerical job, implementation, benchmark, integration merge, numbered certification or physical claim is made. v16.54/v16.55 and all frozen evidence remain unchanged. The next mathematical obligation is to allow missing anchor-edge combinations or several genuinely coupled exceptional pairs without losing actual witness renewal. Unbounded upper-cover stages with moving lower witnesses also remains open. Separate efficiency runner/fixture/benchmark work remains unstarted.

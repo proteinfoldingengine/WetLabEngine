@@ -8,18 +8,18 @@ Determine whether X54's complete outside-pair family can be replaced by a struct
 
 ## Disclosed candidate
 
-Let the four anchor roles be A={0,1,2,3}, and let Gamma be an arbitrary simple graph on the outside roles R. Declare actual root types {a} union e for every anchor a and edge e of Gamma, with arbitrary positive original labelled copies.
+Let the four anchor roles be A={0,1,2,3}, and let Gamma be an abstract simple graph on the outside roles. Choose a compatible outside labeling BEFORE declaring the numeric successor exchange and endpoint groups. In that labeling require actual edges {4,6} and {5,7}, with m-1 outside {4,6}. Then declare actual root types {a} union e for every anchor a and labeled edge e of Gamma, with arbitrary positive original labelled copies.
 
 The already-known X54 proof appears to use only:
 1. no set of at most four outside roles covers every edge of Gamma, i.e. vertex-cover number vc(Gamma)>=5;
-2. two disjoint actual edges for the moving exceptional witness handover; and
-3. one further outside vertex for the boundary labeling used by the upper-cover relay.
+2. the two stated disjoint actual edges for the moving exceptional witness handover; and
+3. the stated boundary-label compatibility for the upper-cover relay.
 
-Condition vc(Gamma)>=5 itself forces a matching of size at least three: otherwise the endpoints of a maximal matching of size at most two cover every edge. Thus after relabeling, two disjoint edges can be written {4,6} and {5,7}, with m-1 chosen outside the first edge. This should reproduce X54's five-stage order on the restricted ACTUAL type set.
+Condition vc(Gamma)>=5 itself forces a matching of size at least three: otherwise the endpoints of a maximal matching of size at most two cover every edge. Thus every such ABSTRACT graph admits the required compatible labeling before the groups and successor map are defined. This is an existential family of compatible cyclic exchanges, not a theorem for every preassigned numeric cyclic labeling of Gamma. It should reproduce X54's five-stage order on the restricted ACTUAL type set.
 
 The key proposed lemma is: every role footprint F with |F|<=4 and F!=A has an actual avoiding type. Choose an anchor outside F. Since F intersect R is not a vertex cover, Gamma has an edge disjoint from F. This simultaneously derives endpoint exactness and every ordinary physical-pair witness.
 
-A five-edge matching has vertex-cover number five. It would yield only 20 root types, independent of palette size, and is edge-minimal under this graph condition. This is a disclosed analytical consequence to prove, not numerical evidence.
+A compatibly labeled five-edge matching has vertex-cover number five. It would yield only 20 root types, independent of palette size, and is edge-minimal under this graph condition. A four-role footprint can leave only one matching edge unhit; this is a statement about a surviving outside edge, not a claim that old/new pair-root redundancy equals one. This is a disclosed analytical consequence to prove, not numerical evidence.
 
 ## Required proof obligations
 
