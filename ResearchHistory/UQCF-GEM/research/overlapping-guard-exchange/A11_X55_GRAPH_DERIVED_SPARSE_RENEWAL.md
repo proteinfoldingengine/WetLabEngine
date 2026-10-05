@@ -1,6 +1,6 @@
 # A11.X55 — graph-derived sparse witness renewal
 
-Status: frozen analytical candidate; independent review pending. Parent b94c9952c79b397986f35a19645f8bec533d8659. Scope A11_X55_SCOPE.md at 9ed853bb880f4634c70a9f1baf5299c9decf0bed. No numerical execution, implementation certification or universal connectivity claim.
+Status: corrected frozen analytical candidate; independent review pending. Parent b94c9952c79b397986f35a19645f8bec533d8659. Initial prospective scope commit 9ed853bb880f4634c70a9f1baf5299c9decf0bed is historical; corrected reviewed A11_X55_SCOPE.md blob 0f64fe63c835c676370eb24790a4b29149c0d707 supersedes its labeling wording. Initial candidate 80fd4db19f6d548b9086fc38d7d96d08dd48f136 is superseded. No numerical execution, implementation certification or universal connectivity claim.
 
 ## Theorem
 
