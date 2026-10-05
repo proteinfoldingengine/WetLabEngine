@@ -1,3 +1,7 @@
+# SUPERSEDED PRE-SCOPE EXPLORATORY NOTE
+
+This file records an unreviewed color-relay argument developed concurrently with the accepted A11.X59 line. It is NOT the accepted X59 theorem and must not be cited as X59. The accepted X59 result is A11_X59_ANCHOR_MIXING_RENEWAL.md at corrected candidate 75c411628357330520d7f769c32a2c3fa27e4bff. The stronger universal color-relay claim below is being moved to a separately frozen X60 question so that it can receive fresh whole-argument review. Nothing below is accepted merely because this exploratory file exists.
+
 # A11.X59 — prescribed anchor-mixing repair by color-relay renewal
 
 Status: exact analytical candidate for fresh independent whole-argument review. Analytical only.
