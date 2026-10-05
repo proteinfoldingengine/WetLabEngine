@@ -781,3 +781,17 @@ The next obligation is a multi-stage relay through several overlapping exception
 
 Analytical only: no numerical execution, workflow, implementation, benchmark, integration merge, numbered certification, originality or physical claim. v16.55/v16.54 and all evidence remain unchanged. Separate efficiency work remains unstarted.
 
+## A11.X49 - joint multi-cover ordering potential (accepted analytical)
+
+Accepted candidate 388c6b4ebcec73d69065cd780d70838249ce2c39; proof A11_X49_JOINT_RELAY_POTENTIAL.md; fresh independent whole review accepted without corrections.
+
+For a supplied physical cover K, mixed-prefix validity is exactly U_K subset D and V_K disjoint D. Inclusion-exclusion on shared exception unions counts covered subsets exactly. Theta is the exact expected number of uncovered prefixes. Psi is the inherited expected number of lower pair-loss events on the SAME labelled-order domain.
+
+J=Psi+Theta<1 constructs an order. Conditional extension means supply a nonincreasing next choice at each generated prefix. Remaining-root count decreases; terminal integer bad-event count below one is zero. X48 then yields a direct {3,4} path, original-floor legality, minimum endpoint toggles and full labelled/noncompact restoration. Renewal requires a fresh certificate per leg.
+
+The scope's unconditional repeated-root upper lift was rejected during self-review. Lower protection lifts; upper protection needs a cover meeting both old and new active-type supports or a complete actual-copy prefix certificate. No new d>1 alternating-family completion is asserted.
+
+This sufficient multi-stage relay class is not universal or efficient. No newly demonstrated infinite family satisfying its bound beyond accepted cases is asserted. Next: economical structural inequalities forcing J<1 and repeated-root coexistence covers.
+
+Analytical only. No numerical execution, implementation, benchmark, integration merge, numbered certification or physical claim. v16.55/v16.54 and all evidence preserved. Separate efficiency work remains unstarted.
+
