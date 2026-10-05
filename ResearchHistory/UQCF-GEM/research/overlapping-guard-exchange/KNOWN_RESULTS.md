@@ -620,3 +620,22 @@ ALLm>=5 sparse family: ONE {1} root and ONE copy each rest co-pair mask, r=1+C(m
 Inputs remain an actual singleton/template/equalgroupcounts/asymmetricbound and additional covermultiplicity for direct minimum. No allwhole-rootorder impossibility, universaltemplateaccessibility, arbitrarymixed/directed/higher-target/nested claim or newconnectivityclassification (Lalreadyconnects). Below-bound/localization-free renewal, scarce upper representatives and unequalgroupcounts remain OPEN; strongercompatiblegrade work parallel.
 
 No sciencecommands/tests/numericalworkflow/implementation/benchmark/integrationmerge/numberedversion. v16.55/v16.54 and original evidence unchanged. Separate efficiency implementation/fixture/benchmark remains unstarted and independently scoped.
+
+## A11.X42 — multi-role localization beyond every singleton representation
+
+Scope b8c3c4eab45df3c4d070e20b74d447c1d5f3b295; exact candidate a2a3c613ce4b9735844b01bfa127ec1026df195d; proof blob fb715253a36c5c69ee282fa29fe8762b7a8bdb67.
+Proof A11_X42_MULTI_ROLE_LOCALIZATION.md; fresh attributable INDEPENDENT_A11_X42_WHOLE_REVIEW.md; closeout A11_X42_CLOSEOUT.md.
+
+An actual original root with mask S of size p localizes cycle-pair obligations without a singleton assumption. Footprints of size at most three have actual common witnesses; footprints avoiding S have the S root as a common witness even while it changes. Only disjoint selected edges incident to S can remain noncommon, at most 2p(l-3), with permitted overcount. At least one endpoint owner pair meets S. Let alpha be minimum actual pair avoidance for pairs meeting S, and rho the global minimum. Exact-four forces alpha>=rho>=2. C(alpha+rho,alpha)>2p(m-3) derives a complete X34 conditional order on the SAME shared original slots.
+
+Every actual next primitive preserves SAME original floors, including saturation. Actual old protection survives until new protection completes. Balanced ownership supplies another simple cycle, restored group/root sizes and masks renew S/alpha/rho/H, and incorrect-label descent terminates at FULL exact labelled/noncompact C. Preliminary lower repair toggles each differing incidence once.
+
+X42B uses A ONLY AFTER complete original-ended lower repair; converted{3,4} preserves exact outer ends/floors but NOT guaranteed minimum/schedule/internalwaypoints. X42U separately gives DIRECT{3,4} and incidence minimum if a supplied minimum four-role H has two existing labels per group; unselected actual representatives renew each cycle.
+
+Structural family EVERYp>=2,n>=5p, m=p+n: ONE S root, ONE rest co-pair root per pair, and p ORIGINAL broad G-minus-s roots distinguish the S roles. Exact template4, alpha=n-1,rho=2; C(n+1,2)>2p(n+p-3) by positive symbolic expansion. All role profiles are distinct; every root contains at least two profiles, so NO singleton mask exists in ANY partition-union representation of the SAME source/destination tuple. This avoids the naive collapse back to X41, not a native disconnection or inability to access another state.
+
+Existing t-cells, t>=1, give groups2t/palette2tm and saturated unequal floors2tp/2t(n-2)/2t(m-1), all>=4. Only long ownership cycles exist; four disjoint floor-safe supports cannot fit ANYWHERE; wholecycle/originalendpointunion has a two-cover. At t>=2 ALL roots remain unfinishedBOTHends afterfirstcycle while protection renews; exactlytcycles restoreC. No replicas. X40 globalrho test fails; X39 dense premise fails; no universal alternate-method exclusion or allwhole-rootorder impossibility is claimed.
+
+Advance: actual multi-role protection without ANY singleton direct-input representation, under explicit counts. X41's sharper singleton-specific beta bound stays valid; X42's conservative bound does not replace all its domains. X34 conditional counting and X40 cycle/upper mechanisms inherited; L already connects these symmetry-related ends. Not newconnectivityclassification, literatureoriginality or benchmark.
+
+Actual S/template/equalgroupcounts/strictmargin remain inputs; directminimum additionally needs covermultiplicity. Accessibility, scarce cover representatives, unequal group sizes and unlocalized/below-bound renewal remain OPEN alongside broader mixed/directed/higher-target/nested questions and compatible-grade work. No sciencecommands/tests/numericalworkflow/code/benchmark/integrationmerge/numberedversion. v16.55/v16.54 and every original evidence blob unchanged; separate efficiency implementation/fixture/benchmark remains independently scoped and unstarted.
