@@ -854,3 +854,18 @@ The entire endpoint-union tuple has tau=2 and every root changes; lower protecti
 Next: remove dense complementary-four availability, derive compatible relays after the conditional margin fails, or prove an all-order method obstruction without confusing it with native disconnection. Generic accessibility/unequal sizes/unrestricted mixed-floor, directed, higher-target and nested universality remain open.
 
 Analytical only. No implementation, benchmark, integration merge, numbered certification or physical claim. v16.55/v16.54 and all evidence remain preserved. Separate efficiency work remains unstarted.
+
+## A11.X54 - quadratic sparse anchor renewal (accepted analytical)
+
+Frozen candidate ad2b91206eeccbe9ded59f50eecfb3a40be155b5; proof A11_X54_QUADRATIC_SPARSE_ANCHOR_RENEWAL.md. Exact whole-argument review is published with the packet.
+
+For every m>=10, four anchors and all pairs of the n=m-4 outside roles supply 2n(n-1) actual three-role types, with arbitrary positive original labelled copies. Groups have t>=1 parallel cyclic column labels plus arbitrary fixed padding; corresponding endpoint group sizes agree but can differ across roles. Every original positive floor remains <=its original endpoint size, including unequal saturation.
+
+Every physical pair except the selected {x0,x2} has an actual full-union witness. Existing v={2,5,7} completes before old u={1,4,6} changes, transferring the exceptional obligation. A five-stage type order simultaneously transports K0,L,K2 upper covers; copied add-before-delete blocks remain in the direct {3,4} band. Each completed column restores the exact-four template and supplies the next column. All labelled original destination supports are restored.
+
+Every differing endpoint incidence toggles exactly once. With one copy per type the analytical global minimum is 12t(n-1)^2. Full endpoint-union tau=2 excludes permanent union protection. Exactly three covers are necessary ONLY on the specified singleton one-column schedule; other-order obstruction is not claimed.
+
+This removes the dense complementary-four carrier and order-averaging requirement for a structural infinite family. Complete outside-pair coverage and the supplied parallel cyclic exchanges remain hypotheses. Native connectivity was already known; no universal sparse/mixed/directed/nested claim, numerical job, efficiency benchmark or numbered certification is added. v16.54/v16.55 and evidence remain unchanged.
+
+Next: weaken complete outside-pair coverage or derive reusable handovers for multiple coupled exceptional pairs; unbounded upper-cover stages with transferring lower protection remain open. Separate efficiency runner/fixture/benchmark work remains unstarted.
+
