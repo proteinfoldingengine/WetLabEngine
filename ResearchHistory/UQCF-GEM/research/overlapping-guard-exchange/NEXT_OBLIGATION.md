@@ -4,6 +4,20 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X51 - multi-cover exception-chain renewal (accepted analytical)
+
+Accepted candidate cbe8e9e00c47bc8654dd147aab37136e0b746c7c; proof A11_X51_MULTICOVER_EXCEPTION_CHAIN.md. Fresh whole-argument independent review assesses the complete theorem and its schedule-relative control together.
+
+For physical covers K_0,...,K_h, source exceptions U_j and destination exceptions V_j, require U_0 empty, V_h empty and every U_(j+1) type before every V_j type. The least j with minpos(V_j)>p gives a cover meeting BOTH active endpoints at every block p. Exceptions need not be nested; all shared types use the same order.
+
+Combining these upper edges with one selected destination-witness-before-source-witness edge for each noncommon physical pair gives a joint structural DAG certificate. If acyclic, least-source topological choices always exist. Actual pair witnesses lift to original copies; literal edits preserve all individual original floors. The path is directly in {3,4}, finite, endpoint-toggle minimum and fully labelled/noncompact destination restoring. Each next leg needs its qualifying chain/certificate.
+
+For every h>=2, a symbolic k=4(h+1) family with arbitrary positive original copies has h+1 successive UNIQUE four-covers on the declared block schedule. Thus THAT schedule requires arbitrarily many cover identities. Fixed complementary background roots already supply a permanent lower guard; a different two-cover order exists. This is an upper-schedule certificate separation, not new interdependent lower renewal, absence of all two-cover orders or native disconnection.
+
+Next: derive such compatible lower witness choices and multi-cover chains from weaker actual endpoint structure, particularly with no permanent lower guard or two-cover order; cyclic graph failure remains only a method limitation. Generic accessibility/unequal role sizes/below-X40 lower protection/unrestricted mixed-floor, directed, higher-target and nested universality remain open.
+
+Analytical only. No numerical execution, implementation, benchmark, integration merge, numbered certification or physical claim. Certified v16.55/v16.54 and all evidence are preserved; separate efficiency work remains unstarted.
+
 ## A11.X50 - block-stable two-cover renewal (accepted analytical)
 
 Accepted candidate bff256c83cad96c3543f5c070a3161d57d2a29c9; proof A11_X50_BLOCK_STABLE_RELAY.md. Fresh independent whole-argument review checks the coexistence argument and the full copied-family construction together.
