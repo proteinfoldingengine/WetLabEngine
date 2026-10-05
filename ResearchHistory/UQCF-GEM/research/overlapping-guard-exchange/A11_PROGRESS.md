@@ -876,3 +876,18 @@ This removes the dense complementary-four carrier and order-averaging requiremen
 
 Next: weaken complete outside-pair coverage or derive reusable handovers for multiple coupled exceptional pairs; unbounded upper-cover stages with transferring lower protection remain open. Separate efficiency runner/fixture/benchmark work remains unstarted.
 
+
+## A11.X55 - graph-derived sparse witness renewal (accepted analytical)
+
+Accepted corrected candidate b9eb52feff6e2cf141ff2a01be0e9c3f4b1d3805; proof A11_X55_GRAPH_DERIVED_SPARSE_RENEWAL.md. The initial candidate 80fd4db19f6d548b9086fc38d7d96d08dd48f136 was superseded after review identified that outside labeling must precede declaration of the numeric successor exchange.
+
+Let Gamma be an abstract outside-role graph with vertex-cover number at least five. This condition forces three disjoint edges and hence permits a compatible labeling BEFORE endpoint groups and j->j+1 are defined, with relay edges {4,6},{5,7} and m-1 outside {4,6}. Supply every actual one-anchor-plus-edge type with arbitrary positive original labelled copies and individual same original floors up to endpoint size.
+
+Any footprint of at most four roles other than the four anchors misses an actual type: choose an unused anchor and a graph edge disjoint from the outside footprint. This single derived condition proves exact-four endpoints and all ordinary physical-pair witnesses. Existing u={1,4,6} and v={2,5,7} transfer the sole exceptional obligation per active column. The same explicit five-stage K0,L,K2 order supplies upper protection. Every primitive is floor legal, every completed column renews the construction, and the exact labelled destination is reached directly in {3,4}.
+
+The path toggles every differing endpoint incidence exactly once and is globally shortest. For one copy per type its exact length is t[24|E|-8a-2(deg(4)+deg(m-1))]. A five-edge matching gives the edge-minimal control: exactly20 distinct root types for every m>=14 and exact length116t, independent of palette size. A four-role footprint can leave exactly one matching edge unhit; this is not a pair-root-redundancy-one claim.
+
+This removes X54's complete outside-pair family. It remains an existential compatible cyclic exchange, not every preassigned cyclic order, and still requires every anchor-edge combination, corresponding endpoint group sizes and supplied parallel columns. No new connectivity classification, numerical job, efficiency benchmark, numbered certification or physical claim is added. v16.54/v16.55 and evidence remain unchanged.
+
+Next: allow missing anchor-edge combinations or several genuinely coupled exceptional pairs. Unbounded upper-cover stages with moving lower witnesses remains open. Separate efficiency runner/fixture/benchmark work remains unstarted.
+
