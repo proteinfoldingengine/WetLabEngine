@@ -959,3 +959,16 @@ Calibration pi=(0 4) has actual U/V overlap, rejecting X51's strict block-stable
 
 Next: derive moving-cover/interleaved repair for nonempty E_pi when B misses an obligation or U/V overlap. v16.54/v16.55 and original evidence remain preserved. No numerical execution or new numbered certification; separate efficiency runner/fixture/benchmark remains unstarted.
 
+
+## A11.X60 - shared exceptional color and universal prescribed minimum repair (accepted analytical)
+
+Accepted candidate d8a312133ac3aacf57373124f5791ea23ecbed1c; proof A11_X60_SHARED_COLOR_COVER_TRANSPORT.md.
+
+Within the EXACT X58/X59 colored carrier satisfying(C), EVERY prescribed role permutation now has a direct {3,4} path attaining the GLOBAL endpoint incidence Hamming minimum and restoring every original labelled destination. This includes t=1/no padding/saturated floor3, arbitrary positive copy multiplicities, fixed unequal padding and unequal individual original floors.
+
+The structural lemma removes X59's remaining common-hit seed/upper relay assumptions: for anchor-mixing pi, nonempty E_pi has at most TWO exceptional pairs and a shared anchor s. Repair ALL copies of color s by family-wide additions then deletions while complementary colors remain OLD. Completed color s then protects ALL exceptions. Add every remaining destination incidence, then delete remaining source-only incidences. Source cover, one mixed cover replacing s by pi^{-1}(s), and destination cover hit every actual primitive state and old/new copy. Shared witnesses, legal next edits and finite phase/column progress renew until exact restoration. X58 handles anchor-preserving pi and X59 handles empty exceptions, completing the exhaustive all-pi theorem in this COLORED representation.
+
+An arbitrarily long private eight-type control at every m>=24 has a single mixed m-cycle with two separated two-anchor runs, E_pi={{0,1}}, X59 B empty, union tau2 and no unchanged root. The old strict endpoint-two-cover root-block relay forces lower failure. The new three-cover interleaving succeeds. EVERY minimum-incidence direct-band path in this control needs at least THREE distinct physical four-covers: minimum paths remain inside endpoint unions, simultaneous endpoint covers force pair{0,1} to hit all roots, and a first transition to the destination cover requires an addition preserving the previous cover. The construction attains exactly THREE. This is an ALL-minimum-path bound, not an unrestricted temporary-incidence obstruction.
+
+Next: weaken the unique small-cover/colored-footprint representation, deriving renewable minimum-edit upper/lower coordination with several competing minimum covers or noncommon footprint shapes. Arbitrary access, noncolored carriers, unrestricted mixed/directed/higher-target/nested and physical interpretation remain open. No numerical execution or new numbered certification. Certified v16.54/v16.55 and original evidence remain preserved; separate efficiency runner/fixtures/benchmarks remain unstarted.
+
