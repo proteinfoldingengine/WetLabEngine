@@ -4,6 +4,25 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X45 — permutation-orbit cover transport below majority (accepted)
+
+Exact analytical parent `090f684531de77a3c319c7419cab41b7c56e3f87`; scope `1fb37f8b170067ec494079ae8733b39c824aa54f`; accepted candidate `347a39dc177825d09e9c87d22b17eea532c421f6`; tree `dbf0b19b9e36bc3267146265dbd124ccc43b100e`; exact proof blob `75efa54776bcfd4692de270daac09b5087690d9d`. Fresh independent whole-argument review: ACCEPTED with no revision.
+
+X45 identifies the exact permutation-sensitive upper condition for the declared one-representative-per-role lift. For an exact-four template with cover family `H4` and prescribed ownership permutation `pi`, FOUR SAME representatives cover both restored endpoints exactly when `H4 intersect pi^{-1}(H4)` is nonempty. Equivalently, some orbit of `pi` on four-subsets has adjacent occupied vertices. Occupancy above half on ONE orbit or a nonempty invariant cover subfamily suffices; global cover majority is unnecessary.
+
+When a separately valid lower theorem supplies an endpoint-containing add-before-delete handover, those same four labels hit every primitive and give `tau<=4`. Lower pair witnesses, floors, eligible moves, renewal and descent remain separate obligations on the SAME path. Restored masks renew the orbit test, so a finite lower-protected sequence with compatibility at every cycle becomes direct `{3,4}` repair without adding primitives or losing the endpoint-toggle minimum.
+
+The accepted infinite family has `q>=2` cyclic blocks of length `ell>=6`, `m=q ell`, and one original mask `G minus J` for every four-set `J` that is not a four-consecutive interval inside one block. The exact four-cover family consists of those intervals, has exactly `m` members and density `24/[(m-1)(m-2)(m-3)]`, tending to zero. Actual pair redundancy is exactly `rho=binomial(m-2,2)-3=m(m-5)/2`, which satisfies X40L's strict bound.
+
+With singleton groups and destination equal to the product of the `q` block rotations, X40L supplies lower protection and X45 transports an active-block interval cover. Exactly `q` long handovers restore the FULL labelled/noncompact destination, all four active cover labels move, no unselected representative exists in an active group, and every endpoint-differing incidence toggles once. All original roots may be saturated at floor `m-4`.
+
+The family lies outside X38's short-cycle, X39's width, X40U's multiplicity, X43's size and X44's majority hypotheses; distinct role profiles exclude any singleton-mask representation of the same endpoint. Four disjoint saturated supports cannot fit, while two selected labels two-cover the rootwise whole endpoint union. These are method separations and controls, not disconnection.
+
+Remaining inputs are a supplied exact-four mask template, equal positive corresponding group sizes, a typed representative/simple-cycle endpoint-containing lower path, and orbit compatibility for each selected permutation. Failure of compatibility only rejects this SAME-four lift. Arbitrary accessibility, unequal sizes, below-bound lower repair, derivation from arbitrary endpoints, unrestricted permutation families and mixed/directed/higher-target/nested universality remain open. L already connects these symmetry endpoints.
+
+Analytical only: no scientific execution, enumeration, workflow, implementation, benchmark, integration merge, numbered certification, literature-originality or physical claim. v16.55/v16.54 and all original evidence are unchanged. The separately promised efficiency runner/fixtures/benchmarks remain unstarted.
+
+
 ## A11.X44 — majority-cover transport beyond typed cover patterns
 
 Scope f1bd8022142fa751948599cadf474fac28b71a0b; exact candidate 9c8083bbc12d84fab5ca36361a39466e24d0a425; proof blob 624cc9bd2414e220f57199932440b3f265e28689.
