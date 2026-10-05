@@ -4,6 +4,22 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X58 - prescribed anchor permutation with coupled pair renewal (accepted analytical)
+
+Accepted candidate 8512e70c3d208ee0209f412bf49b4ce1f9ab7072; proof A11_X58_PRESCRIBED_COUPLED_PAIR_RENEWAL.md.
+
+On a FIXED labelled colored carrier satisfying vc(Gamma_J)>|J| for every nonempty anchor subset J, fix IN ADVANCE any prescribed role permutation pi with pi(A)=A. No compatible relabeling follows. In each parallel column, active x_s moves from owner s to pi(s).
+
+Exceptional selected pairs are exactly E_pi={S subset A: |S|=2, pi(S)=A minus S}; all other physical pairs retain an actual endpoint-union witness. For every exceptional S, old witnesses have colors A minus S and completed new witnesses have colors S. Singleton colored protection gives at least2distinct actual types per color. Reserve one original root copy in each color; choose a seed-color set T meeting every exceptional S; complete one distinct seed copy per color of T. Untouched reserves protect every obligation until its first seed completes, and the completed seeds then jointly protect all remaining edits. Shared roots carry several obligations simultaneously.
+
+The active four anchor labels form one physical cover at both endpoints because pi(A)=A. Add-before-delete therefore gives a direct {3,4} path on the SAME lower-safe order, preserving arbitrary positive individual original floors including unequal saturation. Finite pending edits, column renewal and decreasing unresolved columns give eligible continuation, termination and exact labelled destination restoration.
+
+Every differing incidence toggles exactly once; the global minimum is t sum_Q c_Q |Q symmetric-difference pi^{-1}(Q)|. In the fixed private eight-type carrier with prescribed pi=(0 1)(2 3) on anchors and identity outside, four exceptional pairs coexist. No single old or new color protects all four; T={0,1} jointly does. Exact one-copy length is16t. The full endpoint-union tuple has tau2; one physical upper-cover identity suffices in the singleton control. Eight-type minimality remains only under the colored footprint condition.
+
+This advances X57 from an exchange chosen after labeling to every prescribed anchor-preserving permutation. It does not cover pi(A)!=A, arbitrary exact endpoint accessibility, failure of the colored guard, multiple exchanged anchor blocks or unrestricted mixed/directed/higher-target/nested repair. No all-root-order obstruction is claimed.
+
+Next: couple a moving upper cover to several lower witness transfers when pi(A)!=A, or characterize a precise compatibility obstruction for such a prescribed exchange. Analytical only; native connectivity was already known, no numerical campaign or numbered certification, v16.54/v16.55 and evidence preserved. Separate efficiency runner/fixture/benchmark work remains unstarted.
+
 ## A11.X57 - derived handover without shared relay types (accepted analytical)
 
 Accepted candidate a831d16e623181ca2eeda0f7e725454bb817e11a; proof A11_X57_DERIVED_HANDOVER_WITHOUT_SHARED_RELAYS.md.
