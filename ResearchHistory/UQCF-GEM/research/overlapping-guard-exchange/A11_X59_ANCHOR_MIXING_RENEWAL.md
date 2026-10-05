@@ -86,7 +86,7 @@ During additions all roots contain their source column endpoints. K0={x_(a,h):a 
 
 Thus moving upper protection works without a common four-cover and without whole-root completion ordering. Each endpoint-differing incidence toggles once. This theorem covers calibration pi=(0 4): no two-start footprint can be A because the only nonfixed owners are 0 and4, while starts outside that pair have singleton owner footprints.
 
-In that calibration, singleton(C) forces some color0 edge avoiding4, because vc(Gamma_0)>=2. Its type lies in BOTH U and V. Therefore the source/destination TWO-cover complete-root-block relay is impossible for these endpoint cover identities, despite our interleaved union bridge being legal and minimum. This is a precise METHOD obstruction and positive remedy, not native disconnection, nor an obstruction to every cover relay.
+In that calibration, singleton(C) forces some color0 edge avoiding4, because vc(Gamma_0)>=2. Its type lies in BOTH U and V. Therefore X51's STRICT block-stable U-before-V certificate, with a cover hitting BOTH active endpoints and switches confined to block boundaries, is impossible for these endpoint cover identities. Our interleaved union bridge remains legal and minimum. This does NOT exclude whole-root paths that switch covers inside an active root at its enlarged union, other cover relays or native paths.
 
 ## 7. Derived joint relay when exceptions coexist
 
@@ -120,7 +120,7 @@ All permutations below are prescribed on fixed labels with unlisted roles fixed,
 
 (a) pi=(0 1)(2 3): X58 calibration. E_pi has four cross-block pairs, B=A, U=V=empty. Section7 reproduces the shared seed/reserve repair and fixed cover.
 
-(b) pi=(0 4): E_pi empty. Section6 supplies the interleaved minimum bridge, and its U/V overlap demonstrates the stated whole-root two-cover limitation.
+(b) pi=(0 4): E_pi empty. Section6 supplies the interleaved minimum bridge, and its U/V overlap demonstrates the stated strict boundary-separated relay limitation.
 
 (c) pi=(0 1 2 3 4 5).
 pi(A)={1,2,3,4}; pi^{-1}(A)={0,1,2,5}; B={1,2}.
@@ -178,7 +178,7 @@ Dependencies: X58 supplies colored footprint/endpoints and seed/reserve ideas; X
 
 The certificates reject losing a last old witness before its seed completes, a fictitious missed root, a cover missing an active endpoint or coexisting old copy, deletion below a labelled floor, endpoint relabeling and repeated toggles under a minimum claim. No executed numerical rejection suite is claimed.
 
-R1 failure rejects the chosen common-hit seed-color certificate; R2 failure rejects this endpoint-two-cover whole-copy relay, as control(b) shows. Neither rejects other seeds, extra covers, partial-root interleaving or native paths. The supplied controls establish absence of a COMMON endpoint cover and presence of a moving-cover path, not impossibility of all whole-root orders.
+R1 failure rejects the chosen common-hit seed-color certificate; R2 failure rejects this strict X51 block-stable boundary-separated relay certificate, as control(b) shows. Neither rejects other seeds, extra covers, partial-root interleaving or native paths. The supplied controls establish absence of a COMMON endpoint cover and presence of a moving-cover path, not impossibility of all whole-root orders. A concrete distinction is Gamma_0={{4,5},{6,7}}, with each other color two private disjoint outside edges, all six private edges disjoint from {4,5,6,7}, under pi=(0 4). Condition(C) holds: color0 has cover number2, and each other added color contributes two disjoint private edges. Here U=V is the single type {0,6,7}. Process its sole copy first by adding4, switch K0 to K1 at its union {0,4,6,7}, then delete0. All other roots are hit by both covers at both endpoints. This is a whole-root two-cover minimum path with an INSIDE-block switch; it fails the strict boundary-separated certificate but is not excluded natively. It was identified during independent review and is already-known reasoning, not new numerical evidence.
 
 The remaining analytical objective is direct-minimum single-column repair with E_pi nonempty when the compatible common-hit anchor set fails to meet it or actual U,V overlap. Derive another relay/interleaving or characterize the chosen-method obstruction. General lower renewal and t>=2 direct minimum are now complete in this colored class.
 
