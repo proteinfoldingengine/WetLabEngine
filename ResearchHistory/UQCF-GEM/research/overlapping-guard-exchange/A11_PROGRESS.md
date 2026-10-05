@@ -707,3 +707,22 @@ Remaining inputs are a supplied exact-four mask template, equal positive corresp
 
 Analytical only: no scientific execution, enumeration, workflow, implementation, benchmark, integration merge, numbered certification, literature-originality or physical claim. v16.55/v16.54 and all original evidence are unchanged. The separately promised efficiency runner/fixtures/benchmarks remain unstarted.
 
+
+## A11.X46 — actual cycle-gap derivation of orbit compatibility (accepted)
+
+Exact analytical parent `02add6acaa56284cd21308990dce23a84a469d75`; scope `70aa5ecdb03e4d2d74429a66a8877b602823aed9`; accepted candidate `6d375e887cfbcd8541a0d4ec7450cd7c086fe9f6`; tree `adbd68abed3ba9d71cd0549efdafaa8876df594a`; exact proof blob `8016ac69c74ad83cb30c4b67befbf6ded2a7f3c2`. Fresh independent whole-argument review: ACCEPTED without revision.
+
+For a lower-selected directed cycle `C=(c_0,...,c_(ell-1))`, `ell>=5`, let `W_a` be four consecutive roles and let `g_i(C)` count windows missed by actual mask `Q_i`. If `Gamma(C)=sum_i g_i(C)<ceil(ell/2)`, then more than half the cyclic starts are actual covers, forcing two consecutive covering windows. Since `pi(W_a)=W_(a+1)`, X45 compatibility is derived directly from actual root gaps. The exact rootwise formula is the sum of `max(0,d-3)` over cyclic complement gaps, or `ell` when a root avoids the cycle.
+
+X46 supplies only the upper lift. An endpoint-containing lower theorem must separately supply actual pair protection, floors, root scheduling, eligible cycles, progress and exact restoration on the SAME path. The gap budget is sufficient, not necessary; failure does not negate X45 compatibility or native repair.
+
+The accepted infinite family has `q>=2` cyclic blocks of length `4h`, `h>=2`, every co-triple root, and two sparse residue roots `D_0,D_2` of width `H=qh=m/4`. Every block four-window hits every root, so every active cycle has `Gamma=0`. Four-covers are exactly four-sets meeting both sparse roots, with count `C(4H,4)-2C(3H,4)+C(2H,4)`, strictly below half for every `H>=4`.
+
+Actual pair redundancy is exactly `rho=m-2`, satisfying X40L. With singleton groups and the `q` block rotations, X40L plus X46/X45 gives exactly `q` renewable long handovers, direct `3<=tau<=4`, every active cover label moving, the endpoint-toggle minimum and FULL labelled/noncompact restoration. Unequal saturated floors are `H` on the two sparse roots and `m-3` on co-triples.
+
+The family lies outside X38, X39, X40U, X41, X43 and X44 sufficient inputs. Four disjoint saturated supports cannot fit; two selected labels two-cover the whole endpoint union; every root changes. These are method controls, not disconnection.
+
+Remaining inputs are a supplied exact-four equal-size role representation, an endpoint-containing lower mechanism and an eligible gap cycle at every unfinished boundary. Arbitrary accessibility, universal gap-cycle existence, unequal corresponding sizes, below-X40 lower repair and unrestricted mixed/directed/higher-target/nested universality remain open. L already connects these endpoints.
+
+Analytical only: no numerical execution, enumeration, workflow, implementation, benchmark, integration merge, numbered certification, literature-originality or physical claim. v16.55/v16.54 and all original evidence remain unchanged. Separate efficiency implementation/fixtures/benchmarks remain unstarted.
+
