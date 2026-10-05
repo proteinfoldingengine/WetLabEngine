@@ -182,7 +182,7 @@ which is the mathematical endpoint-toggle minimum. Maximum-layer Theorem A is no
 
 Completing the full m-cycle restores the singleton group sizes, the same actual masks, the same saturated floors, exact target four and the exact labelled destination for that leg.
 
-For any finite supplied chain of exact singleton partitions on the same alternating template, with each next leg a one-step cyclic rotation in some declared cyclic role order, apply X40L separately to the leg. Every resulting total root order again has a cyclic ascent among its odd-window roots, so the two-cover relay is reconstructed rather than consumed.
+For any finite supplied chain of exact singleton partitions on the same alternating template, let every leg use the same declared cyclic role order. More generally, a leg may use an explicitly template-preserving automorphic order whose even-start four-windows are H_alt and whose odd-start windows have the corresponding declared complementary roots. Apply X40L separately to each such leg. Every resulting total root order again has a cyclic ascent among its odd-window roots, so the two-cover relay is reconstructed rather than consumed.
 
 Concatenating the finite legs gives a direct band path and exact labelled restoration at every declared leg endpoint. The endpoint-toggle minimum is retained per leg. A concatenated chain that revisits incidences is not claimed globally minimum between its outermost endpoints.
 
@@ -226,7 +226,7 @@ X48 proves a general mixed-prefix upper interface and an infinite saturated fami
 
 The inputs remain substantial. The general theorem requires a complete lower-safe whole-root order plus four-covers for all mixed prefixes, or the stated two-cover exception order. The family uses the supplied alternating template, equal singleton role sizes, d = 1 and a full cyclic rotation.
 
-X48 does not prove arbitrary endpoints admit a relay order, that X40's conditional choice can enforce arbitrary block precedence, or that duplicated alternating families work. Unequal corresponding group sizes, below-X40 lower repair, arbitrary accessibility and unrestricted mixed-floor, directed, higher-target and nested universality remain open.
+X48 does not prove arbitrary endpoints admit a relay order, that X40's conditional choice can enforce arbitrary block precedence, that duplicated alternating families work, or that renewal survives an arbitrary reordered cycle that is not template-preserving. Unequal corresponding group sizes, below-X40 lower repair, arbitrary accessibility and unrestricted mixed-floor, directed, higher-target and nested universality remain open.
 
 The next mathematical question is whether several covers can relay through multiple overlapping exception sets under the same conditional root-order potential. That would replace the one-switch certificate with a genuinely multi-stage cover handover.
 
