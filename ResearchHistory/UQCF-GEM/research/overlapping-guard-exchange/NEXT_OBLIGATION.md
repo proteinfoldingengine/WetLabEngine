@@ -4,6 +4,23 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X47 source-integrity erratum - authoritative corrected rendering
+
+The accepted X47 mathematics is unchanged. The original X47 proof, whole review, closeout and three report blocks were published through ordinary JavaScript template literals; escape processing inserted forbidden C0 bytes and removed intended mathematical backslashes. The former byte readback compared against the already-escaped in-memory strings and therefore did not detect the rendering damage.
+
+Historical head 6414a606bba86712faa89222ef5f7d5203085acd and all affected blobs remain immutable incident evidence. The authoritative readable proof is now A11_X47_REDUNDANCY_ORBIT_OBSTRUCTION_CORRECTED.md at corrected candidate 4372e9fc280ed0fd7f4b9c21c796bcc84d96dff4, proof blob 29d5a612862d84c85a47a56ee47409f029e96719.
+
+A fresh independent whole-argument and source-integrity review reproduced the historical counts, verified zero forbidden controls and zero replacement characters in the new scope and proof, and accepted exact mathematical equivalence without correction. The result remains:
+
+- beta(C) is the exact duplicate-insensitive bad-window union size;
+- beta(C) < ceil(ell/2) sharply forces adjacent good windows as a scalar-only guarantee;
+- the alternating family has beta = m/2, Gamma = d m/2 and rho = d [C(m-2,2)-2];
+- unbounded pair redundancy does not force X45/X46 orbit-compatible upper protection;
+- X40L supplies complete lower repair, and Theorem A applies only after that complete path;
+- no native disconnection, direct event-minimum, arbitrary-accessibility or universal mixed/directed/higher-target/nested claim is made.
+
+This erratum introduces no new theorem, numerical work, implementation, benchmark, integration merge or numbered certification. v16.55/v16.54 and all evidence remain unchanged. X48 resumes with the same joint lower-witness/upper-cover-transition obligation. Separate efficiency work remains unstarted.
+
 ## A11.X47 — redundancy/orbit orthogonality and the next joint condition (accepted)
 
 ## A11.X47 — pair-witness redundancy and upper-cover transport are orthogonal (accepted analytical)
