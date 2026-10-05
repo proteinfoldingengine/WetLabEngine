@@ -4,6 +4,22 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X59 - prescribed anchor mixing with moving upper protection (accepted analytical)
+
+Accepted candidate 75c411628357330520d7f769c32a2c3fa27e4bff; proof A11_X59_ANCHOR_MIXING_RENEWAL.md.
+
+On the fixed X58 colored carrier, EVERY prescribed permutation now has a complete actual-pair-protected LOWER path, with all-color reserves and exact labelled restoration at the global endpoint Hamming minimum. Exceptional pairs are exactly S with S union pi(S)=A; complement closure is unnecessary.
+
+For t>=2, an inactive column supplies an actual four-cover on the SAME path, giving universal direct {3,4} minimum repair in this colored class. This convenience is expressly excluded from the single-column/no-padding controls.
+
+At t=1, an empty exceptional family permits an interleaved all-add/all-delete minimum path with a moving endpoint cover. More generally B=A intersect pi(A) intersect pi^{-1}(A) meeting every exceptional S, together with actual U intersect V empty for U={Q:Q avoids pi^{-1}(A)}, V={Q:Q avoids pi(A)}, DERIVES seeds hit by BOTH endpoint covers and a complete joint schedule: seeds, all U copies, remaining copies. Both bounds hold at every primitive and old/new copy coexistence. Arbitrary positive labelled multiplicities, padding and original floors including unequal saturation are allowed.
+
+The prescribed mixed controls pi=(0 1 2 3 4 5) and pi=(0 1)(2 3 4 5) satisfy this condition for EVERY valid colored carrier. The latter transfers TWO non-complement-closed exceptional pairs while the upper cover moves. Private-eight-type one-copy minimum counts are20t and18t respectively; shared five-edge colored carriers also qualify. Singleton no-padding endpoints have distinct unique four-covers, so exactly TWO cover identities are necessary and sufficient in these controls. Actual endpoint unions have tau2, without an unchanged background root.
+
+Calibration pi=(0 4) has actual U/V overlap, rejecting X51's strict block-stable boundary-separated relay certificate, while partial-root union interleaving succeeds. Inside-block cover switching may also repair the calibration; this obstruction does not exclude all whole-root paths or native connectivity. General SINGLE-column direct minimum with nonempty exceptions outside the joint criterion remains open. Complete lower paths there can be converted by A only AFTER reaching exact outer ends; schedule/minimum preservation is not inferred.
+
+Next: derive moving-cover/interleaved repair for nonempty E_pi when B misses an obligation or U/V overlap. v16.54/v16.55 and original evidence remain preserved. No numerical execution or new numbered certification; separate efficiency runner/fixture/benchmark remains unstarted.
+
 ## A11.X58 - prescribed anchor permutation with coupled pair renewal (accepted analytical)
 
 Accepted candidate 8512e70c3d208ee0209f412bf49b4ce1f9ab7072; proof A11_X58_PRESCRIBED_COUPLED_PAIR_RENEWAL.md.
