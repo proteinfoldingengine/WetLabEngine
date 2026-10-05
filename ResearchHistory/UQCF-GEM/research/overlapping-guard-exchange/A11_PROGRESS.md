@@ -726,3 +726,23 @@ Remaining inputs are a supplied exact-four equal-size role representation, an en
 
 Analytical only: no numerical execution, enumeration, workflow, implementation, benchmark, integration merge, numbered certification, literature-originality or physical claim. v16.55/v16.54 and all original evidence remain unchanged. Separate efficiency implementation/fixtures/benchmarks remain unstarted.
 
+## A11.X47 — pair-witness redundancy and upper-cover transport are orthogonal (accepted analytical)
+
+X47 proves that the duplicate-insensitive bad-window union
+[
+eta(C)=left|igcup_i B_i(C)ight|
+]
+is the exact number of bad cyclic four-window starts. The strict bound (eta<lceilell/2ceil) forces consecutive good windows and is the sharp universal threshold using this scalar alone. X46's (Gamma=sum_i|B_i|) is a potentially loose union bound and scales under duplicate labelled roots even when the obstruction does not change.
+
+For every even (mgeq8) and (dgeq1), the alternating-window family has exact four-cover set equal to the (m/2) even-start windows, one full ownership cycle, empty X45 representative intersection, (eta=m/2), (Gamma=dm/2), and exact pair redundancy
+[
+ho=dleft[inom{m-2}{2}-2ight].
+]
+Thus exact-four consistency and arbitrarily large raw pair-witness redundancy do not force X45/X46 orbit-compatible upper protection. Nevertheless X40L supplies a complete lower-protected path, and Theorem A may be applied only after that path is complete to obtain a band path; no direct representative upper lift or preserved event minimum is claimed.
+
+The endpoints are saturated singleton-role instances outside X38, X39, X40U, X41, X43, X44, X45 and X46 sufficient inputs. Four private saturated supports cannot fit, the whole endpoint union is two-covered, and every root changes. These are method controls, not native disconnection; L also connects the symmetry endpoints.
+
+The next obligation is a genuinely joint condition coupling lower witness sets to transitions among actual minimum covers—an overlap-corrected bad-window structure or cover-aware cycle selection—not a larger raw redundancy count. Arbitrary accessibility, unequal corresponding group sizes, below-X40 lower repair and unrestricted mixed/directed/higher-target/nested universality remain open.
+
+Analytical only: no numerical execution, workflow, implementation, benchmark, integration merge, numbered certification, originality or physical claim. v16.55/v16.54 and all evidence remain unchanged. Separate efficiency work remains unstarted.
+

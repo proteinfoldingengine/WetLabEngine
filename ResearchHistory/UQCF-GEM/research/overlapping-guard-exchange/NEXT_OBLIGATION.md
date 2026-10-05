@@ -4,6 +4,28 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X47 — redundancy/orbit orthogonality and the next joint condition (accepted)
+
+## A11.X47 — pair-witness redundancy and upper-cover transport are orthogonal (accepted analytical)
+
+X47 proves that the duplicate-insensitive bad-window union
+[
+eta(C)=left|igcup_i B_i(C)ight|
+]
+is the exact number of bad cyclic four-window starts. The strict bound (eta<lceilell/2ceil) forces consecutive good windows and is the sharp universal threshold using this scalar alone. X46's (Gamma=sum_i|B_i|) is a potentially loose union bound and scales under duplicate labelled roots even when the obstruction does not change.
+
+For every even (mgeq8) and (dgeq1), the alternating-window family has exact four-cover set equal to the (m/2) even-start windows, one full ownership cycle, empty X45 representative intersection, (eta=m/2), (Gamma=dm/2), and exact pair redundancy
+[
+ho=dleft[inom{m-2}{2}-2ight].
+]
+Thus exact-four consistency and arbitrarily large raw pair-witness redundancy do not force X45/X46 orbit-compatible upper protection. Nevertheless X40L supplies a complete lower-protected path, and Theorem A may be applied only after that path is complete to obtain a band path; no direct representative upper lift or preserved event minimum is claimed.
+
+The endpoints are saturated singleton-role instances outside X38, X39, X40U, X41, X43, X44, X45 and X46 sufficient inputs. Four private saturated supports cannot fit, the whole endpoint union is two-covered, and every root changes. These are method controls, not native disconnection; L also connects the symmetry endpoints.
+
+The next obligation is a genuinely joint condition coupling lower witness sets to transitions among actual minimum covers—an overlap-corrected bad-window structure or cover-aware cycle selection—not a larger raw redundancy count. Arbitrary accessibility, unequal corresponding group sizes, below-X40 lower repair and unrestricted mixed/directed/higher-target/nested universality remain open.
+
+Analytical only: no numerical execution, workflow, implementation, benchmark, integration merge, numbered certification, originality or physical claim. v16.55/v16.54 and all evidence remain unchanged. Separate efficiency work remains unstarted.
+
 ## A11.X46 — actual cycle-gap derivation of orbit compatibility (accepted)
 
 Exact analytical parent `02add6acaa56284cd21308990dce23a84a469d75`; scope `70aa5ecdb03e4d2d74429a66a8877b602823aed9`; accepted candidate `6d375e887cfbcd8541a0d4ec7450cd7c086fe9f6`; tree `adbd68abed3ba9d71cd0549efdafaa8876df594a`; exact proof blob `8016ac69c74ad83cb30c4b67befbf6ded2a7f3c2`. Fresh independent whole-argument review: ACCEPTED without revision.
