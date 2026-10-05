@@ -884,3 +884,20 @@ This removes X54's complete outside-pair family. It remains an existential compa
 
 Next: allow missing anchor-edge combinations or several genuinely coupled exceptional pairs. Unbounded upper-cover stages with moving lower witnesses remains open. Separate efficiency runner/fixture/benchmark work remains unstarted.
 
+
+## A11.X56 - colored graph guards without the anchor-edge product (accepted analytical)
+
+Accepted candidate bc2c2441b670d30606e2766ae1156064c6b6e012; proof A11_X56_COLORED_GRAPH_GUARD_RENEWAL.md.
+
+Each anchor now has its own ACTUAL outside graph Gamma_a. For every nonempty anchor subset J, require vc(union_(a in J) Gamma_a)>|J|. This is equivalent to A being the only role hitting set of size at most four and to every other footprint of at most four roles having an actual avoiding type. No absent anchor-edge combination is inferred.
+
+Four ACTUAL compatible relay types remain supplied: edges {4,6} with anchors1/3 and {5,7} with anchors0/2. Cyclic labeling is fixed BEFORE endpoints. The same five-stage physical order simultaneously transfers the sole exceptional pair per active column and carries K0,L,K2 upper covers. Arbitrary positive original copies and individual same original floors, including unequal saturation, are legal.
+
+Each completed column restores the template and all conditions; explicit finite incidence lists supply the next eligible edit. All parallel columns terminate at the exact labelled destination directly in {3,4}. Every differing outer endpoint incidence toggles once, attaining the global minimum. For one copy per type the count is t(6s-2H), with H the sum of outside type adjacencies and the two boundary degree terms.
+
+Six disjoint outside edges with color graphs {e_v,f0},{e_u,f1},{e_v,f2},{e_u,f3} give exactly8distinct actual types for every m>=16, an empty common all-anchor edge graph and exact length46t. Eight is minimal ONLY among the declared colored-guard types, from vc(Gamma_a)>=2 for each anchor. Extra isolated palette roles supply no guards. Full endpoint-union tau=2 and schedule-only singleton three-cover necessity remain checked.
+
+This removes X55's full anchor-edge product. The colored inequalities alone do not force the supplied shared relay edges: two completely private disjoint edges per anchor satisfy the guard but defeat this relay extraction. This is a method boundary, not disconnection. General repair without compatible relays, multiple coupled exceptions, arbitrary preassigned ownership exchanges and unrestricted mixed/directed/higher-target/nested results remain open.
+
+Next: derive renewable repair under colored protection without the four shared relay types, or handle several coupled exceptional pairs. Unbounded upper-cover stages with moving lower witnesses remains open. Analytical only; native connectivity already known, no numerical job or new numbered certification, v16.54/v16.55 and evidence preserved. Separate efficiency runner/fixture/benchmark work remains unstarted.
+
