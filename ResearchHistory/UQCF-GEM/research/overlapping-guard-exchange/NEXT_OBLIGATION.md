@@ -4,6 +4,24 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X52 - multicover renewal with transferring lower protection (accepted analytical)
+
+Accepted candidate 9ab0109b60f707eb8f4871a464fafaffc4515740; proof A11_X52_TRANSFERRING_LOWER_MULTICOVER.md. Fresh independent whole-argument review assesses the full construction, exact pair localization and limits.
+
+For EVERY m>=8 singleton cyclic-role template, retain original complementary-four roots Q_J=G minus J for every J except K0={0,1,2,3}, with arbitrary positive original copies and individual same original positive floors<=m-4. Source and destination each have a unique four-cover. Physical label shift pi(s)=s-1 corresponds to owner-role rotation s->s+1.
+
+Every physical pair except {x0,x2} has an ACTUAL root whose whole old/new union avoids it. The exceptional pair has disjoint old/new witness sets. Two explicit existing types transfer that protection through v before u. Four other existing types impose a<b<c<d and a three-cover relay K0,L,pi(K0), L={0,1,4,5}. These six distinct types form an acyclic certificate, supplying each next type directly without order averaging.
+
+Type blocks and actual copies have full pair protection, simultaneous old/new upper covers, original-floor legality, eligible literal edits, finite termination, DIRECT {3,4} repair, endpoint-toggle minimum and full labelled/noncompact destination restoration. Finite forward rotation chains in the SAME cyclic order renew the construction; minima are per leg.
+
+EVERY type changes. The whole endpoint union has tau=2, excluding a permanent three-guard made from subfamilies of those actual unions. There is no unchanged lower background. Exactly three cover identities are necessary on THIS constructed schedule, but another lower-safe order permits two; no all-order obstruction or new native connectivity is claimed. Contracted auxiliary guards are not excluded.
+
+The initially scoped conditioned-count approach is proved separately with unequal extension-class weights; exact single-pair localization yields a stronger explicit witness constructor for the family. No counting execution occurred.
+
+Next: preserve actual lower/upper compatibility when further complementary roots are absent, or derive unbounded multicover stages with transferring lower obligations. Dense supplied template/singleton groups/SAME cyclic order remain hypotheses. Generic accessibility/unequal sizes/unrestricted mixed-floor, directed, higher-target and nested universality remain open.
+
+Analytical only. No numerical execution, implementation, benchmark, integration merge, numbered certification or physical claim. v16.55/v16.54 and all evidence remain preserved. Separate efficiency work remains unstarted.
+
 ## A11.X51 - multi-cover exception-chain renewal (accepted analytical)
 
 Accepted candidate cbe8e9e00c47bc8654dd147aab37136e0b746c7c; proof A11_X51_MULTICOVER_EXCEPTION_CHAIN.md. Fresh whole-argument independent review assesses the complete theorem and its schedule-relative control together.
