@@ -965,3 +965,18 @@ An arbitrarily long private eight-type control at every m>=24 has a single mixed
 
 Next: weaken the unique small-cover/colored-footprint representation, deriving renewable minimum-edit upper/lower coordination with several competing minimum covers or noncommon footprint shapes. Arbitrary access, noncolored carriers, unrestricted mixed/directed/higher-target/nested and physical interpretation remain open. No numerical execution or new numbered certification. Certified v16.54/v16.55 and original evidence remain preserved; separate efficiency runner/fixtures/benchmarks remain unstarted.
 
+
+## A11.X61 - hybrid-boundary batches with competing covers (accepted analytical)
+
+Accepted candidate f8b96d1fabb4cd15b87cb943a8d87f0f470a9463; proof A11_X61_HYBRID_BOUNDARY_BATCH_HANDOVER.md.
+
+X61B is a representation-free sufficient repair interface on arbitrary ORIGINAL labelled exact-four root endpoints. Partition roots into ordered batches. Require an actual at-most-four hitting set at every exact hybrid boundary. For every physical pair require either one actual root avoiding it at BOTH endpoints, or an actual destination witness in an earlier batch than an actual source witness.
+
+Within each batch, add ALL destination-only incidences while the previous boundary cover remains valid, switch covers only after every batch root contains its destination, then delete old-only incidences while the next boundary cover remains valid. The retained later source witness protects through installation of the earlier destination witness; afterward the completed witness persists. This SAME schedule gives actual tau>=3 and tau<=4 through every primitive, arbitrary unequal individual floors, eligible continuation, exact labelled restoration and the GLOBAL endpoint Hamming minimum.
+
+An infinite m>=9 control deletes TWO complementary-four masks K0={0,1,2,3} and M={0,2,5,7} from X52's cyclic singleton-role family. The source has exactly competing covers {K0,M}; the destination exactly {pi(K0),pi(M)}. No smaller cover exists. M is not a pair footprint, so the sole noncommon pair remains {x_0,x_2}. Three derived batches place actual new witness v before retained old witness u and use covers K0,L={0,1,4,5},K2=pi(K0),K2. All copies and saturated/unequal floors are permitted.
+
+Every root changes, the endpoint-union tuple has tau2 and no permanent union three-guard. Lower protection transfers from u to v. In an X60 prepared endpoint the physical four-covers form a one-representative-per-anchor Cartesian product. A two-member such product differs in one representative, whereas K0 and M differ in two positions. The family therefore lies outside X60's colored representation and demonstrates competing minimum covers. Three-cover necessity is NOT claimed; another certificate/path may exist.
+
+Next: derive qualifying partitions/covers from weaker endpoint invariants, or handle cycles between lower-witness precedence and upper hybrid-cover reachability through partial-root interleaving. Failed certificates remain method failures. No numerical execution or numbered certification; v16.54/v16.55 and evidence preserved. Separate efficiency work remains unstarted.
+
