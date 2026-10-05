@@ -660,3 +660,24 @@ Repeatedcontrol b_s1,b_Rp+1 has k=p+n(p+1), saturatedp/(n-2)(p+1)/k-1 grades and
 Advance removes oldunselected-representative multiplicity within this structuralclass; commoncoverprinciple alreadyX39, lowermechanism X42/X34 inherited, Lalreadyconnects. Suppliedtemplate/equalcorrespondingcounts/actualS/lowerstrictmargin/EVERYcoverproperty remain inputs. Accessibility, templateswithoutcovertransport, below-boundlowerrepair, unequalgroupcounts and broadermixed/directed/higher-target/nested questions remainOPEN; compatiblegrade direction staysparallel.
 
 No sciencecommands/tests/enumeration/workflow/code/benchmark/integrationmerge/numberedstage/physicaltimeclaim. v16.55/v16.54 and original evidence unchanged; separate efficiency implementation/fixture/benchmark remains unstarted and independently scoped.
+
+## A11.X44 — majority-cover transport beyond typed cover patterns
+
+Scope f1bd8022142fa751948599cadf474fac28b71a0b; exact candidate 9c8083bbc12d84fab5ca36361a39466e24d0a425; proof blob 624cc9bd2414e220f57199932440b3f265e28689.
+Proof A11_X44_MAJORITY_COVER_TRANSPORT.md; fresh attributable INDEPENDENT_A11_X44_WHOLE_REVIEW.md; closeout A11_X44_CLOSEOUT.md.
+
+Let H4 be ALL four-role covers of a supplied exact-four actual mask template. If |H4|>C(m,4)/2, then for EVERY role permutation pi, H4 intersects pi^{-1}(H4). The least intersection member I gives I and pi(I) both actual minimum covers. Cycle-selected ACTUAL representatives indexed by I are FOUR SAME labels covering both adjacent tuples and every add-before-delete partial support. No cover type, fixed owner or group multiplicity beyond nonemptiness.
+
+X44R is explicitly an UPPER interface. Combined with a separately proved one-label simple-cycle lower path whose root edits contain old/next endpoints, it upgrades the SAME path to direct3<=tau<=4 and preserves its one-toggle endpoint count. Lower pair witnesses, original same-slot floors, next primitives, renewal/progress and exact restoration remain separate obligations, not consequences of majority.
+
+Infinite separation family EVERYh>=3: m=3h roles split equally S,T,U; original roots are ALL G-minus-triple masks plus ONE S and ONE T. Exacttemplate4. Four-covers are exactly four-sets meeting BOTH S,T, with count C(3h,4)-2C(2h,4)+C(h,4). Strict majority follows because twice-count minus C(3h,4) equals h(h-1)(19h^2+37h-18)/24>0.
+
+Every pair has at leastm-2 actual co-triple witnesses. Using S for X42 localization, alpha,rho>=m-2 and C(2m-4,m-2)>2h(m-3), so complete lower repair holds. X44 supplies DIRECT minimum-event band repair for ALL positive equal corresponding group sizes and all same original positive floors<=N_i.
+
+This family lies outside X39: S,T widthh<m-3. It lies outside X43 for EVERY actual root: S-based one-plus-three sets can missT, T symmetrically, and a co-triple block has complement3<p+3. Co-triples distinguish every role profile and every root contains>=h profiles, so NO singleton mask exists in ANY union-partition representation of the SAME endpoint. X40/X42 lower redundancy can still apply; advance isuppercover transport, notlowerconnectivity.
+
+Allsingleton b_j1 control has saturatedmixedfloors h forS/T andm-3 forco-triples, onefullmcycle, everylabelmoves and NONEunselected. Fourdisjointfloor-safe supports cannot fit ANYWHERE. Two block-boundary selected labels have four distinct owner roles meetingS/T, hence two-cover every root union; whole-union preparation unsafe. Yet X42+X44 reaches exactlabelledC directly in{3,4} with minimum incidences. These aremethodcontrols, notevery-order/nativeobstructions.
+
+Initial candidate5306bc21 was correctly rejected for stating X44R over arbitrary lower handovers without typing this simple-cycle representative/root schedule. Revised candidate9c8083 narrows the theorem exactly; the failed broader statement remains immutable in ancestry and unaccepted. Strict majority is sufficient notnecessary; X43 works belowhalf. Sameactualtemplate/equalcorrespondingpositivegroups and separatelyvalid renewablelowerpath remain inputs. Accessibility, at/below-half incompatiblecoverfamilies, unequalgroups, below-boundlowerrepair and unrestrictedmixed/directed/higher-target/nested questions remainOPEN; compatible-grade work parallel. Lalreadyconnects symmetryends; no newconnectivity/literatureoriginality.
+
+No sciencecommands/tests/enumeration/workflow/code/benchmark/integrationmerge/numberedstage/physicalfundamentaltimeclaim. v16.55/v16.54/frozen evidence unchanged; separate efficiency implementation/fixtures/benchmarks remains unstarted and independently scoped.
