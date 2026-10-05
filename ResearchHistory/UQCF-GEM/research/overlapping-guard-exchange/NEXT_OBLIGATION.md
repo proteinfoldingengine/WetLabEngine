@@ -4,6 +4,20 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X50 - block-stable two-cover renewal (accepted analytical)
+
+Accepted candidate bff256c83cad96c3543f5c070a3161d57d2a29c9; proof A11_X50_BLOCK_STABLE_RELAY.md. Fresh independent whole-argument review checks the coexistence argument and the full copied-family construction together.
+
+A strict two-cover TYPE relay derives a cover of BOTH active source and destination supports. Before the first exceptional destination type use K_minus; at that type and afterward use K_plus, because all source exceptions have completed. Thus old copies, new copies and the active expanded support coexist safely. Lower pair witnesses lift by selecting the actual active copy as its type representative.
+
+For EVERY even m>=8 alternating-window template, arbitrary positive original multiplicities n_J and individual same original positive floors<=m-4, X40L supplies a lower-safe TYPE order. Its cyclic ascent gives the relay on that SAME order. Processing original copies in type blocks yields DIRECT 3<=tau<=4, eligible literal edits, finite termination, endpoint-toggle minimum and full labelled/noncompact destination restoration. Finite chains in the SAME or template-preserving cyclic order renew the construction; minima are per leg.
+
+This removes X48F's one-copy restriction and discharges X49Q's coexistence-cover hypothesis for this family. It does NOT reinstate X49's failed generic type-prefix upper lift, assert arbitrary-copy order precedence or new connectivity. No maximum-layer conversion is used.
+
+Next: block-stable multi-cover handovers beyond two ordered exception sets, or economical joint structural bounds where this separation cannot be derived. Arbitrary accessibility/unequal role sizes/below-X40 lower protection/unrestricted mixed-floor, directed, higher-target and nested universality remain open.
+
+Analytical only. No numerical execution, implementation, benchmark, integration merge, numbered certification or physical claim. Certified v16.55/v16.54 and all evidence remain preserved. Separate efficiency work remains unstarted.
+
 ## A11.X49 - joint multi-cover ordering potential (accepted analytical)
 
 Accepted candidate 388c6b4ebcec73d69065cd780d70838249ce2c39; proof A11_X49_JOINT_RELAY_POTENTIAL.md; fresh independent whole review accepted without corrections.
