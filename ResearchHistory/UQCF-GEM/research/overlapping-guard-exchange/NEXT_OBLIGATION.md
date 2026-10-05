@@ -4,6 +4,22 @@ Current numbered status: the approved bounded v16.55 certificate is complete, as
 
 
 
+## A11.X53 - sparse omitted-cover compatibility (accepted analytical)
+
+Accepted candidate 3753ea59f70dd5ca065e0773775e365d76c3a376; proof A11_X53_SPARSE_OMITTED_COVER_COMPATIBILITY.md. Fresh independent whole-argument review checks the exact cover family, pair-footprint characterization, conditioned joint order and copied native path together.
+
+For EVERY m>=8, supply a nonempty omitted four-set family H with |H|<=m-4, containing K0={0,1,2,3} while K2=pi(K0), pi^-1(K0), L={0,1,4,5} and pi^-1(L) remain retained. Declare arbitrary positive original copies of every complementary-four type outside H, with individual same original floors<=m-4.
+
+The source four-covers are exactly H and the destination covers exactly pi(H); both endpoints are exact four. A physical pair B has a common old/new union witness exactly when some retained four-set contains F(B)={s,t,s+1,t+1}. Thus all moving lower obligations are characterized exactly.
+
+Every pair retains at least rho=C(m-2,2)-|H| old and new witnesses. Conditioning on four retained types ordered a<b<c<d has probability1/24 and forces the K0,L,K2 cover chain. The exact conditional lower-bad-event mean is below one because C(2rho,rho)>24C(m,2). Unequal valid-extension weights construct an eligible next type at every prefix. The resulting copied path is DIRECT {3,4}, original-floor legal, finite, endpoint-toggle minimum and fully labelled/noncompact destination restoring.
+
+The entire endpoint-union tuple has tau=2 and every root changes; lower protection genuinely transfers. Finite forward rotations in the SAME cyclic role order renew the theorem. H and four compatibility exclusions, singleton roles, dense retained complementary-four carrier and full cyclic rotation remain hypotheses. No cover-minimum, all-order obstruction, new connectivity, efficient algorithm or numerical execution is claimed.
+
+Next: remove dense complementary-four availability, derive compatible relays after the conditional margin fails, or prove an all-order method obstruction without confusing it with native disconnection. Generic accessibility/unequal sizes/unrestricted mixed-floor, directed, higher-target and nested universality remain open.
+
+Analytical only. No implementation, benchmark, integration merge, numbered certification or physical claim. v16.55/v16.54 and all evidence remain preserved. Separate efficiency work remains unstarted.
+
 ## A11.X52 - multicover renewal with transferring lower protection (accepted analytical)
 
 Accepted candidate 9ab0109b60f707eb8f4871a464fafaffc4515740; proof A11_X52_TRANSFERRING_LOWER_MULTICOVER.md. Fresh independent whole-argument review assesses the full construction, exact pair localization and limits.
