@@ -1,126 +1,62 @@
-# A12.1-A12.5 scientific closeout and independent review gate
+# A12.1-A12.5 scientific closeout — self-contained repository process
 
-Date: 2026-10-06 UTC.
-Status: AUTHORITATIVE CLOSEOUT REQUEST. This file supersedes the narrower A12.3-A12.5 review request as the governance gate. It does not itself accept, reject, correct, merge, certify, or physically interpret any A12 claim.
+Updated: 2026-10-06 UTC.
+Status: GOVERNANCE AMENDMENT; A12 CLOSEOUT REMAINS OPEN.
+Baseline before this amendment: c120223a4ea7eaa9a383de9ab7109826ca5b5cd9.
+Tracking: GitHub issue #104, branch research/uqcf-overlapping-guard-exchange.
 
-## Non-negotiable gate
+## Authority and purpose
 
-NO A12.6, response geometry, force-law, observer-locality, coarse-graining, continuum, or other scientific extension may be opened until A12.1 through A12.5 are scientifically reconciled.
+The user's latest direction is that the scientific process should be self-contained, tracked on GitHub, and not require outside AI. This amendment implements that direction prospectively. It replaces the outside-AI approval dependency; it does not waive a mathematical defect, change an external verdict, or certify a candidate.
 
-Each result must receive:
-1. fresh independent whole-argument review against immutable scope/proof sources;
-2. correction/refreeze + fresh re-review if mathematical changes are required;
-3. separate publication/reporting consistency review after mathematical acceptance;
-4. immutable source/tree/live-reference readback;
-5. a reconciled closeout/status record.
+The earlier full-stack request at commit 6efa44543f46d0454c987b43dd765cb588c97560 and the narrower A12.3-A12.5 request remain historical provenance. Their mandatory external-review interpretation is superseded. Historical status sentences in frozen proof/scope files are snapshots, not the current governance authority.
 
-Only then may the A12 physical-bridge program advance.
+The purpose is to determine exactly what follows from the native finite incidence/admissibility definitions, with explicit assumptions, complete arguments and reproducible checks where used. Obtaining another model's approval is not a scientific objective.
 
-## Review order
+## Self-contained evidence standard
 
-A12.1 -> A12.2 -> A12.3 -> A12.4 -> A12.5.
+1. State the question, native definitions, exact domain, dependencies and failure condition before further proof changes or validation execution. Use immutable Git commits/blobs. A mathematical correction is a new candidate, not a silent rewrite of an accepted source.
+2. Audit the complete argument, refutation-first. Record attempted counterexamples, missing hypotheses, boundary cases and the disposition of every obligation in the repository. Keep mathematical proof, bounded computational evidence and interpretation separate.
+3. Where computational verification is used, commit the executable verifier, independently specified reference calculation, declared finite universe, rejecting controls, environment and run commands. The reference calculation must not simply consume the author's supplied passing cases as its universe. Scientific execution and its logs/results belong in GitHub Actions under a prospectively recorded scope/resource budget. Preserve failed and incomplete runs. Reproduce the declared evidence and rerun inherited checks required by that execution scope.
+4. Verify reporting separately from mathematics: source identities, assumptions, result scope, status language, attribution, links, manifests and immutable publication readback. This is a repository audit, not a required external-AI job.
+5. Publish one reconciled A12.1-A12.5 closeout naming what survived, was narrowed, failed, or remains open, and what evidence supports each status. Keep issue #104 open until that record and its required checks are actually complete.
 
-Later results may use earlier results only after the earlier result has passed its independent mathematical gate. Reviewers may also verify a later proof natively if it explicitly claims not to depend on an earlier candidate.
+A passing finite campaign is not a proof of an unrestricted theorem. A general mathematical claim still requires a complete argument. A same-author rereading must be labelled author-side audit, not independent review. A separately constructed checker provides methodological independence only for the domain it actually verifies; it is not an independent human/model verdict or a universal proof certificate. A genuinely separate in-workflow review may be recorded when available, but no outside AI service is required or authorized by this amendment.
 
-## Immutable sources
+No scientific status advances merely because this governance file changes. No formal-proof or universal-certification claim is created.
 
-### A12.1 — signed admissibility response
-Scope commit: 8a9b9747a3e95118af46b5d16c2bffa5938d7d6e
-Scope blob: 64685e2fcad2f77f6a590685368a1ac21896e057
-Proof commit: 36220cab3f17f2f8b9b0308a59c5037bfadde108
-Proof blob: 54cf74c9d01548368b7e32814f2f06e7fba5d628
-Scope: ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE_SCOPE.md
-Proof: ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md
+## Current source registry
 
-Review especially:
-- transversal-number monotonicity;
-- all four response-sign quadrants, including same-root floor effects;
-- cross-root/global-constraint mediation;
-- all four symbolic controls;
-- relabeling covariance;
-- boundaries: response is not force magnitude, energy, geometry, locality, or autonomous dynamics.
+All paths below are relative to this directory. Original frozen sources remain recoverable from the prior request at 6efa44543f46d0454c987b43dd765cb588c97560.
 
-### A12.2 — collective-response hierarchy
-Scope commit: 824cc79ce006985499e0f2ffacab34b8f9e90786
-Scope blob: 48c7698a38a69685643f040b59a6f040be3ac054
-Proof commit: 72c361344c5eb0459285c791d7ae6440e8661c26
-Proof blob: bfb364b75e18a279f2e4aa53254370f563a9545c
-Scope: ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_SCOPE.md
-Proof: ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md
+| Result | Scope commit | Proof commit | Files |
+| --- | --- | --- | --- |
+| A12.1 | 8a9b9747a3e95118af46b5d16c2bffa5938d7d6e | 36220cab3f17f2f8b9b0308a59c5037bfadde108 | A12_1_SIGNED_ADMISSIBILITY_RESPONSE_SCOPE.md; A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md |
+| A12.2 | 824cc79ce006985499e0f2ffacab34b8f9e90786 | 72c361344c5eb0459285c791d7ae6440e8661c26 | A12_2_COLLECTIVE_RESPONSE_SCOPE.md; A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md |
+| A12.3 corrected candidate | 3ae51147985f885770dee3167eb73bd542f5192e | 05b1300fa877fad66e10c0acd1d6a093c125ccac | A12_3_DUAL_CERTIFICATE_FIELDS_SCOPE.md; A12_3_DUAL_CERTIFICATE_FIELDS.md |
+| A12.4 | 5be2e81ff224761a0f9622104354ac804dc15bae | c10c68922fbcbf520d28b1ca509faa38fcf3bcd5 | A12_4_CANDIDATE_RESPONSE_MARGINS_SCOPE.md; A12_4_CANDIDATE_RESPONSE_MARGINS.md |
+| A12.5 | fe6cf6207f5d9a007e52a75c088d0595d8c78a9d | 0f3a6790777ebe1ce1f6c2739c2ca99f0c2fa433 | A12_5_OVERLAP_LOCALITY_NOGO_SCOPE.md; A12_5_OVERLAP_LOCALITY_NOGO.md |
 
-Review especially:
-- exact tau=3 of the n-family;
-- legality of every intervention prefix;
-- legality of f after every proper subset;
-- full-set pair cover and illegality;
-- Mobius coefficient kappa=-1 and vanishing proper-subset coefficients;
-- no-fixed-finite-response-order conclusion;
-- relabeling invariance;
-- boundary: update-response hierarchy is not a physical many-body-force claim.
+Corrected A12.3 proof blob: b9fa20d44002d0d743278f3fd21cce3214d02600.
+Corrected A12.3 scope blob: 0e8ac8ba64fe72e17c207d6532c7c51fd71b300a.
+The presence of these edits does not establish that the repair has passed the new closeout audit.
 
-### A12.3 — dual certificate fields
-Scope commit: 71f4b61f3201777a3654cc09aeb3725627d10c47
-Scope blob: e62cc948cdf36c925132a71d22401a3ff9e018e6
-Proof commit: cb8a6f1fc29b90e55a9cdf4f01b06eeaad8f855c
-Proof blob: cded0e4481f656fd5bbcce9520f1b2843bcfe1d1
-Scope/proof paths unchanged from the earlier review packet.
+## Existing external material — history, not a dependency
 
-Review all obligations in A12_3_5_INDEPENDENT_REVIEW_REQUEST.md, including small-palette edge cases, exact W/C primitive updates, coordinate counts, cover monotonicity, legality decomposition, and relabeling covariance.
+Preserve reviews/A12_1_5_EXTERNAL_MATH_REVIEW_01a10f15.json unchanged at its original publication c120223a4ea7eaa9a383de9ab7109826ca5b5cd9 (blob 10138796a22237e30760bfe96e025ddc215a09da). Its returned verdicts remain the reviewer's verdicts, including A12.3 REVISE and full-stack CLOSEOUT_BLOCKED for the original sources. Useful objections must be resolved on their merits, not discarded because the service is no longer required.
 
-### A12.4 — candidate response margins
-Scope commit: 5be2e81ff224761a0f9622104354ac804dc15bae
-Scope blob: 7a7593740c65b87473cbe0bb36432064c278a428
-Proof commit: c10c68922fbcbf520d28b1ca509faa38fcf3bcd5
-Proof blob: a0d38aeacac80f036f9cb997f08f921f4e0f4b59
+Provenance qualification from repository readback: the archive's provenance object contains thread_id and model, but omits job_id and has sources=null. The conversation records the original dispatch job as 01a10f15-28a1-73d1-8204-09c5a666d8ef, thread 01a10f15-28e4-76e9-819a-fb61e9985313. Do not describe that archive as a complete raw provider-response capture or invent a sources trace. This note supplements history; it does not modify the archive.
 
-Review all obligations in the earlier packet: exact addition shadow and iff A>=2 criterion; deletion surviving-cover iff; threshold response; both same-state insufficiency controls; covariance; no minimality/observer-access claim.
+The conversation also records a corrected-A12.3 external job 01a1109a-de9f-74f0-ba32-1374577394dd, thread 01a1109a-dee7-72ca-9495-29e12fe22d4c. This amendment makes it non-gating. It does not assert that the remote job was cancelled, completed, accepted, or rejected. Do not continue its polling, dispatch new external reviews, or launch the previously planned external publication review without new user authorization.
 
-### A12.5 — overlap-locality no-go
-Scope commit: fe6cf6207f5d9a007e52a75c088d0595d8c78a9d
-Scope blob: 001804a390c1ed9603e8bc15abac30cd255b981e
-Proof commit: 0f3a6790777ebe1ce1f6c2739c2ca99f0c2fa433
-Proof blob: 0da2ddad7ed177219f3fed50e7e152b2e1ffa679
+## Immediate recovery work, not a new research stage
 
-Review all obligations in the earlier packet: both exact six-root states, tau values, identical isolated candidate component, candidate post-states, witness explanation, and exact logical scope of the no-go.
+Reconcile the five existing claims against the source registry in order A12.1 -> A12.2 -> A12.3 -> A12.4 -> A12.5, recording actual dependencies rather than assuming later results inherit earlier acceptance.
 
-## Independence and verdict rules
+Retain the existing obligations: the four sign quadrants and floor effects; the collective-family quantifiers and empty-subset coefficient; A12.3's explicit palette/root domain and exact update identities; candidate syntax, margins and floor thresholds; and the exact input class and post-state values of the overlap counterexample. First record which obligations have repository-contained proof evidence and which still need checking. Freeze any required verifier scope before execution. Do not replace the outstanding audit with this checklist.
 
-Reviewer must use a fresh independent context and read complete immutable sources. Attempt refutation before acceptance. Do not rely on chat summaries or author-side audit comments.
+This amendment changes governance/status documentation only. It launches no numerical campaign, implementation, workflow replay, efficiency benchmark or new science.
 
-Create:
-- INDEPENDENT_A12_1_WHOLE_REVIEW.md
-- INDEPENDENT_A12_2_WHOLE_REVIEW.md
-- INDEPENDENT_A12_3_WHOLE_REVIEW.md
-- INDEPENDENT_A12_4_WHOLE_REVIEW.md
-- INDEPENDENT_A12_5_WHOLE_REVIEW.md
+## Unchanged boundaries
 
-Each review records reviewer/context, date, immutable commits/blobs, verdict, reasoning, corrections/counterexamples, boundaries, and whether proof source must change.
-
-Allowed verdicts:
-- ACCEPTED
-- ACCEPTED WITH REPORTING CORRECTION
-- REVISE
-- REJECT
-
-A mathematical correction requires a newly frozen candidate and fresh independent review. Do not patch an accepted source silently.
-
-## Publication closeout after mathematical acceptance
-
-For every accepted result, obtain a separate publication/reporting review that verifies:
-- proof and scope files at accepted immutable refs;
-- review attribution and verdict;
-- status/summary language does not exceed proof;
-- links and source refs resolve;
-- no later candidate is represented as accepted prematurely.
-
-Then publish one reconciled A12.1-A12.5 closeout identifying exactly which claims survived, were narrowed, or failed.
-
-## Governance boundaries
-
-No numerical campaign is requested by this closeout.
-Do not reopen v16.54/v16.55.
-Do not run efficiency benchmarks.
-Do not infer force, energy, geometry, spacetime, GR/ADM, dark-matter replacement, or fundamental time.
-Do not progress to A12.6 until this gate is CLOSED.
-
-The earlier A12_3_5_INDEPENDENT_REVIEW_REQUEST.md remains provenance but is superseded by this full-stack gate.
+A12 remains OPEN. No A12.6 or other scientific extension is opened by this amendment or by a late external response. No force, geometry, energy, GR/ADM, dark-matter replacement, physical nonlocality, continuum or fundamental-time conclusion is inferred during closeout. Certified v16.54/v16.55 and accepted A11 results remain unchanged.
