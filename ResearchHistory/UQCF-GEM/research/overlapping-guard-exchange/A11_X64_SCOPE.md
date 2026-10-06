@@ -11,7 +11,7 @@ Pending candidates X62/X63 remain pending and are not assumed accepted.
 
 Isolate the smallest exact obstruction behind event-level repair cycles without depending on X62/X63.
 
-Study arbitrary ORIGINAL labelled exact-four endpoints with a fixed physical upper cover H that hits every endpoint UNION, and a declared unit-exchange subproblem in which each participating root has exactly one destination-only addition a_i and exactly one source-only deletion d_i.
+Study arbitrary ORIGINAL labelled exact-four endpoints with a fixed physical upper cover H containing at least one COMMON endpoint incidence in every root, i.e. H intersect E_i intersect C_i is nonempty for every i, and a declared unit-exchange subproblem in which each participating root has exactly one destination-only addition a_i and exactly one source-only deletion d_i.
 
 For every physical pair lacking a common endpoint-union witness, declare an ACTUAL destination witness v and ACTUAL source witness u. In the unit model its protection handoff requires d_v before a_u. Let T be the directed root dependency graph v->u.
 
@@ -21,7 +21,7 @@ Target theorem: the declared minimum-event handover certificate is feasible IF A
 
 ## Required obligations
 
-1. Prove fixed H supplies tau<=4 through every endpoint-only event order because H intersects every E_i union C_i.
+1. Prove fixed H supplies tau<=4 through every endpoint-only event order because each root retains an H incidence common to E_i and C_i. The weaker endpoint-union condition is explicitly insufficient and is not assumed.
 2. Prove each declared lower transfer edge v->u is exactly the event precedence d_v -> a_u needed to overlap the chosen old/new witnesses.
 3. Prove saturation forces a_i -> d_i, while one unit of initial slack removes that precedence for a unit-exchange root without violating its floor.
 4. Prove every event-graph directed cycle alternates transfer and saturated-floor edges and therefore projects to a directed cycle of T entirely inside saturated roots.
