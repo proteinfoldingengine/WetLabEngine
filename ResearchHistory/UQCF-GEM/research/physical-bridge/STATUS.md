@@ -2,35 +2,41 @@
 
 Updated: 2026-10-06 UTC.
 
-## Gate
+## HARD SCIENTIFIC CLOSEOUT GATE
 
-A12 theorem expansion is PAUSED at the independent-review gate.
+A12 scientific progression is PAUSED.
 
-Fresh independent whole-argument review has been requested for A12.3, A12.4 and A12.5 in that order.
+A12.1 through A12.5 must all be scientifically closed before any A12.6, response-derived locality/geometry, force-law, coarse-graining, continuum, or other physical-bridge extension.
 
-Authoritative review packet:
-- A12_3_5_INDEPENDENT_REVIEW_REQUEST.md
-- request commit e19b5c05a8d84a9e88a990f101b076e1b70c6289
+Authoritative closeout request:
+- A12_1_5_SCIENTIFIC_CLOSEOUT_REQUEST.md
+- commit 6efa44543f46d0454c987b43dd765cb588c97560
 - GitHub issue #104
 
-No independent verdict has yet been recorded in this status file.
+Required sequence:
+A12.1 -> A12.2 -> A12.3 -> A12.4 -> A12.5.
 
-## Candidate state
+For each: fresh independent whole-argument review; correction/refreeze + fresh review if needed; separate publication/reporting review after mathematical acceptance; immutable readback. Then one reconciled A12.1-A12.5 closeout.
 
-- A12.1 signed admissibility response: CANDIDATE / not independently accepted.
-- A12.2 collective-response hierarchy: CANDIDATE / not independently accepted.
-- A12.3 dual certificate update law: CANDIDATE / REVIEW REQUESTED.
-- A12.4 candidate-centered response margins: CANDIDATE / REVIEW REQUESTED.
-- A12.5 overlap-locality no-go: CANDIDATE / REVIEW REQUESTED.
+## Current state
 
-A12.1/A12.2 are intentionally not promoted by the A12.3-A12.5 request. Later review may audit them separately or as inherited comparisons only.
+- A12.1 signed admissibility response: CANDIDATE / independent review required.
+- A12.2 collective-response hierarchy: CANDIDATE / independent review required.
+- A12.3 dual certificate update law: CANDIDATE / independent review required.
+- A12.4 candidate-centered response margins: CANDIDATE / independent review required.
+- A12.5 overlap-locality no-go: CANDIDATE / independent review required.
+
+No independent acceptance has yet been recorded for any A12.1-A12.5 result.
+
+The earlier A12.3-A12.5-only review packet remains provenance but is superseded as the governance gate.
 
 ## Governance
 
-Do not describe A12.1-A12.5 as accepted theorems until the required independent whole-argument review exists and any publication/reporting gate is reconciled.
+Author-side stress audits do not satisfy independence.
+Do not create A12.6 or extend physical interpretation until this gate is CLOSED.
+Do not describe candidate results as accepted theorems.
+Do not infer force, energy, geometry, spacetime, GR/ADM, dark-matter replacement, or fundamental time.
 
-A mathematical correction requires a newly frozen candidate and fresh review.
-
-No numerical campaign, workflow execution, efficiency benchmark, physical-force claim, geometry claim, GR/ADM claim or numbered certification is authorized by this status.
+No numerical campaign or efficiency benchmark is authorized by this gate.
 
 Certified v16.54/v16.55 and accepted A11 analytical results remain unchanged.
