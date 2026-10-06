@@ -9,7 +9,7 @@ No geometry, force, energy, action, probability, continuum, numerical execution,
 
 ## 1. Two exact certificate fields
 
-Let E=(E_i) be a finite root state on palette P.
+Let E=(E_i) be a finite nonempty-root state on a finite palette P with |P|>=2. (In the intended protected target-four band, tau(E)>=3 already forces |P|>=3.)
 
 For every two-label set K define the actual lower-witness multiplicity
 
@@ -25,7 +25,7 @@ Then exactly:
 
     tau(E)>=3  iff  W_E(K)>=1 for every |K|=2,
 
-because tau<=2 precisely when some pair covers; a one- or zero-label cover can be extended to a pair when |P|>=2.
+because tau<=2 precisely when some cover of size at most two exists; when |P|>=2, any zero- or one-label cover extends to a physical two-label set K. The stated nonempty-root convention keeps tau finite and matches the protected-state domain.
 
 Also
 
