@@ -7,6 +7,8 @@ Status: prospective analytical physics-bridge scope. Native proof only; A12.1/A1
 
 Rewrite target-four band admissibility as exact update laws for two relabeling-covariant certificate fields.
 
+Domain: E is a finite nonempty-root state on a finite palette P with |P|>=2. In the intended protected target-four band, tau(E)>=3 implies |P|>=3. This domain is explicit because extending a zero- or one-label cover to a physical pair requires |P|>=2.
+
 For state E define lower witness multiplicity for every physical pair K:
     W_E(K)=#{i:E_i intersect K=empty}.
 
