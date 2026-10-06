@@ -1,0 +1,176 @@
+{
+  "provenance": {
+    "thread_id": "01a10f15-28e4-76e9-819a-fb61e9985313",
+    "model": "spark-2",
+    "mode": "extract",
+    "expires_at": "2026-10-07T02:40:07.334Z",
+    "sources": null
+  },
+  "immutable_review_result": {
+    "reviewer_context": "Fresh independent mathematical review; complete immutable scope/proof files were read in review order A12.1 -> A12.2 -> A12.3 -> A12.4 -> A12.5. Review date: 2026-10-06 UTC.",
+    "authoritative_closeout_request": "https://github.com/proteinfoldingengine/WetLabEngine/blob/6efa44543f46d0454c987b43dd765cb588c97560/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_5_SCIENTIFIC_CLOSEOUT_REQUEST.md",
+    "authoritative_closeout_request_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/6efa44543f46d0454c987b43dd765cb588c97560/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_5_SCIENTIFIC_CLOSEOUT_REQUEST.md",
+    "reviews": [
+      {
+        "id": "A12.1",
+        "verdict": "ACCEPTED",
+        "scope_commit": "8a9b9747a3e95118af46b5d16c2bffa5938d7d6e",
+        "proof_commit": "36220cab3f17f2f8b9b0308a59c5037bfadde108",
+        "scope_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/8a9b9747a3e95118af46b5d16c2bffa5938d7d6e/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE_SCOPE.md",
+        "proof_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/36220cab3f17f2f8b9b0308a59c5037bfadde108/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md",
+        "detailed_mathematical_reasoning": "The componentwise inclusion lemma is correct: if every root only gains incidences, every old transversal still hits every root, so tau cannot increase; deletion cannot decrease tau. From a protected state, an addition can fail the band only by lowering tau to at most 2, and a deletion can fail it only by raising tau to at least 5, apart from deletion-floor legality. Applying monotonicity to the post-state of a second candidate gives all four signs: Add->Add and Del->Del cannot turn an illegal candidate legal; Add->Del and Del->Add cannot turn a legal candidate illegal. The arguments include same-root floor effects because a same-root addition cannot reduce deletion slack and a same-root deletion cannot create it. For different roots, syntax and floor status of the receiving candidate are unchanged, so any nonzero response is mediated by the global transversal constraint. The four supplied controls are valid: two additions jointly create a pair cover, a deletion restores addition legality, two deletions jointly produce five singleton roots, and an addition restores deletion legality. Root/label permutations preserve incidence, floors carried with roots, tau, move syntax, and the response difference, so the response graph is covariant and S/F/Q/M are invariant counts.",
+        "detailed_mathematical_reasoning_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/8a9b9747a3e95118af46b5d16c2bffa5938d7d6e/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE_SCOPE.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/36220cab3f17f2f8b9b0308a59c5037bfadde108/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md"
+        ],
+        "attempted_counterexamples_and_edge_cases": "I checked all four sign quadrants, including candidates on the same root, distinct incidences, floor-boundary cases, and cross-root cases. The controls give the required strict signs while remaining in the protected band before the first move. A candidate whose syntax is changed directly by e is excluded by the stated distinct-incidence/f remains syntactically defined condition; without that qualification it would not be a response comparison. No counterexample was found. The cross-root witness descriptions are consistent with the exact monotonicity proof, though the sign theorem does not depend on the informal channel explanation.",
+        "attempted_counterexamples_and_edge_cases_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/36220cab3f17f2f8b9b0308a59c5037bfadde108/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md",
+        "mathematical_correction": "None.",
+        "mathematical_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/36220cab3f17f2f8b9b0308a59c5037bfadde108/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md",
+        "reporting_correction": "Keep response/interaction explicitly qualified as change in admissible continuation structure. S, F, Q, and M are dimensionless combinatorial summaries, not force, energy, geometry, locality, probability, or observer-accessible measurements.",
+        "reporting_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/36220cab3f17f2f8b9b0308a59c5037bfadde108/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md",
+        "exact_claim_boundaries": "Accepted exactly for finite labelled-root states initially satisfying 3 <= tau <= 4, a legal first move e, and a distinct candidate f whose syntactic definition remains valid after e: R is nonpositive for Add/Add and Del/Del and nonnegative for Add/Del and Del/Add. Cross-root nonzero response is global-transversal mediated, while same-root floor effects are retained. Relabeling covariance and invariance of the stated counts are established. No force magnitude, energy, geometry, metric, physical locality, autonomous dynamics, composition law, continuum law, or fundamental time follows.",
+        "exact_claim_boundaries_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/8a9b9747a3e95118af46b5d16c2bffa5938d7d6e/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE_SCOPE.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/36220cab3f17f2f8b9b0308a59c5037bfadde108/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md"
+        ],
+        "proof_source_must_change": false,
+        "confidence": "High",
+        "unresolved_concerns": "Only intentionally open bridge questions remain: update selection, operational measurement, composition/coarse-graining, scaling, and any derived locality. They are not defects in this finite one-step theorem.",
+        "unresolved_concerns_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/36220cab3f17f2f8b9b0308a59c5037bfadde108/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md"
+      },
+      {
+        "id": "A12.2",
+        "verdict": "ACCEPTED WITH REPORTING CORRECTION",
+        "scope_commit": "824cc79ce006985499e0f2ffacab34b8f9e90786",
+        "proof_commit": "72c361344c5eb0459285c791d7ae6440e8661c26",
+        "scope_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/824cc79ce006985499e0f2ffacab34b8f9e90786/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_SCOPE.md",
+        "proof_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/72c361344c5eb0459285c791d7ae6440e8661c26/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md",
+        "detailed_mathematical_reasoning": "For every n >= 2, the n+2-root family has exact tau=3: {a,b,c} covers, while {a,b} misses every C root, {a,c} misses R_b, and {b,c} misses R_a. After any intervention subset, C_0 remains {c}, so every intervention prefix remains at tau=3 and every e_j is legal in any order. After a proper subset, some C_k remains {c}; after f, the three possible pairs are still blocked by C_k, R_b, and R_a respectively, so f remains legal. After the full set, f changes C_0 to {a,c}, and {a,b} covers every root, making tau <= 2 and f illegal. Since the initial state has tau=3 and the full post-state has a two-label cover while distinct singleton roots R_a and R_b prevent tau=1, the intended boundary crossing is exact. The legality cube is 1 on every proper subset and 0 only at the full set. Its Mobius coefficient is -1 at the full set and 0 at every nonempty proper subset. Therefore, for any fixed k, selecting n>k produces an exact native response invisible at all orders through k, uniformly as root count grows. Relabeling preserves the construction and coefficient.",
+        "detailed_mathematical_reasoning_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/824cc79ce006985499e0f2ffacab34b8f9e90786/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_SCOPE.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/72c361344c5eb0459285c791d7ae6440e8661c26/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md"
+        ],
+        "attempted_counterexamples_and_edge_cases": "The n=2 case works directly; the empty subset is included among proper subsets; prefix legality is order-independent because C_0 is untouched; and the only three labels mean there is no untested pair type. At the full set, the pair cover is explicit. The quantifier is a growing-family statement, not an assertion of unbounded order in one fixed finite state. The coefficient claim is correctly about nonempty proper subsets; kappa(empty;f)=1 follows from the definition and should not be accidentally reported as zero.",
+        "attempted_counterexamples_and_edge_cases_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/72c361344c5eb0459285c791d7ae6440e8661c26/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md",
+        "mathematical_correction": "None. The full-set Mobius coefficient is -1 and the vanishing statement is correctly restricted to nonempty proper subsets; the empty-subset coefficient is 1.",
+        "mathematical_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/72c361344c5eb0459285c791d7ae6440e8661c26/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md",
+        "reporting_correction": "When summarized, explicitly say kappa(empty;f)=1 and that the no-fixed-finite-order conclusion is uniform over root count. Describe the result as an update/admissibility-response hierarchy only; it does not establish physical many-body forces, physical nonlocality, energy, action, a force law, or failure of effective low-order descriptions after coarse-graining.",
+        "reporting_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/72c361344c5eb0459285c791d7ae6440e8661c26/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md",
+        "exact_claim_boundaries": "Proved: for every n >= 2 there is a finite native family with legal commuting interventions, f legal after every proper subset and illegal only after the full set, Delta(full)=-1, kappa(full)=-1, and all nonempty proper-subset coefficients zero. Hence no fixed finite update-interaction order is exact uniformly over growing root counts. Not proved: physical many-body forces, geometry, metric, energy, time dynamics, continuum behavior, or impossibility of pairwise coarse-grained physics.",
+        "exact_claim_boundaries_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/824cc79ce006985499e0f2ffacab34b8f9e90786/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_SCOPE.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/72c361344c5eb0459285c791d7ae6440e8661c26/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md"
+        ],
+        "proof_source_must_change": false,
+        "confidence": "High",
+        "unresolved_concerns": "No mathematical concern remains under the stated native legality convention. The proof assumes that convention rather than re-deriving any upstream model-side legality rule, but every constructed prefix is explicitly checked against the tau band.",
+        "unresolved_concerns_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/72c361344c5eb0459285c791d7ae6440e8661c26/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md"
+      },
+      {
+        "id": "A12.3",
+        "verdict": "REVISE",
+        "scope_commit": "71f4b61f3201777a3654cc09aeb3725627d10c47",
+        "proof_commit": "cb8a6f1fc29b90e55a9cdf4f01b06eeaad8f855c",
+        "scope_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/71f4b61f3201777a3654cc09aeb3725627d10c47/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS_SCOPE.md",
+        "proof_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/cb8a6f1fc29b90e55a9cdf4f01b06eeaad8f855c/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS.md",
+        "review_request_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/e19b5c05a8d84a9e88a990f101b076e1b70c6289/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_5_INDEPENDENT_REVIEW_REQUEST.md",
+        "detailed_mathematical_reasoning": "The core dual-field mathematics is correct after the domain is stated precisely. For nonempty roots and |P| >= 2, W_E(K)=0 is exactly the statement that K is a two-label cover, so absence of pair covers is equivalent to tau >= 3; any cover of size 0 or 1 can be extended to a pair. A small cover H of size at most 4 is exactly the condition tau <= 4. The addition and deletion indicator updates for W are exact, with changed-coordinate counts |P|-|E_i|-1 and |P|-|E_i| respectively. Upper-cover indicators are monotone: additions cannot destroy covers and create one only when the edited root was the unique missed root; deletions cannot create covers and destroy one exactly when the edited root was hit only by x. Thus, from a protected state, additions can violate only the lower condition, while deletions can violate only the upper condition plus the local floor. The one-update bounds, witness-reservoir interpretation, and relabeling covariance follow. However, the proof opens with an unrestricted 'finite root state on palette P' and states the tau>=3 equivalence while only giving a later parenthetical 'when |P|>=2'; it never makes |P|>=2 and nonempty roots explicit standing hypotheses. For |P|=1, the universal quantifier over pairs is vacuous while tau>=3 is false for an ordinary nonempty-root hitting system, so the stated unrestricted equivalence is not literally valid. A protected finite state normally forces a sufficiently large palette (indeed |P|>=3 under the standard nonempty-root convention), but that implication and the positive-root-floor assumption must be written into the proof rather than left implicit. This is a proof-domain defect, not a failure of the update identities on the intended domain.",
+        "detailed_mathematical_reasoning_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/71f4b61f3201777a3654cc09aeb3725627d10c47/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS_SCOPE.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/cb8a6f1fc29b90e55a9cdf4f01b06eeaad8f855c/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/e19b5c05a8d84a9e88a990f101b076e1b70c6289/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_5_INDEPENDENT_REVIEW_REQUEST.md"
+        ],
+        "attempted_counterexamples_and_edge_cases": "Palette size 2 cannot support a nonempty-root state with tau >= 3 because the full palette is a two-label cover; palette size 3 is valid for the protected band because the full palette is a size-3 cover. Palette size 1 exposes the omitted domain hypothesis: pair quantification is empty but tau>=3 is false. Roots containing all palette labels give zero changed W coordinates on addition and |P|-|E_i|=0 on deletion, consistent with the formulas. Covers of sizes 0, 1, 2, 3, and 4 are included by the C definition; the pair equivalence needs the explicit extension hypothesis. Multiple covers can be created or destroyed by one incidence, and the proof correctly does not treat N4 as a conserved scalar. Empty-root behavior is not specified by the reviewed source; a positive-root-floor/nonempty-root convention must therefore be made explicit before claiming an unrestricted equivalence.",
+        "attempted_counterexamples_and_edge_cases_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/e19b5c05a8d84a9e88a990f101b076e1b70c6289/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_5_INDEPENDENT_REVIEW_REQUEST.md",
+        "mathematical_correction": "Freeze a corrected proof candidate with an explicit standing domain: finite palette with |P|>=2 (or, more tightly, restrict throughout to protected finite states with the standard nonempty-root/positive-floor convention, which implies |P|>=3), and state the needed nonempty-root condition. Then restate the tau>=3 iff as conditional on that domain. If the project intends to admit palettes of size 0 or 1 or empty roots, add separate exceptional cases rather than retaining the universal equivalence. Fresh independent review is required after this mathematical source change.",
+        "mathematical_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/cb8a6f1fc29b90e55a9cdf4f01b06eeaad8f855c/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS.md",
+        "reporting_correction": "Do not report the W/K equivalence as unconditional. State the palette/root domain and that floors are a separate local legality constraint. Preserve the boundary that W and C are combinatorial certificate fields, not conserved quantities, energy, force, geometry, locality, observer readouts, or physical time.",
+        "reporting_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/71f4b61f3201777a3654cc09aeb3725627d10c47/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS_SCOPE.md",
+        "exact_claim_boundaries": "Conditionally valid after domain repair: exact W/C update laws, coordinate counts, cover monotonicities, legality decomposition in the protected band, one-update bounds, signed-response derivation, collective W-reservoir explanation, and relabeling covariance. Not valid as an unrestricted statement over arbitrary finite palettes/root states until the palette-size and root nonemptiness assumptions are explicit. No conservation law, force, energy, geometry, physical locality, observer accessibility, continuum, GR/ADM, dark-matter, or fundamental-time claim is established.",
+        "exact_claim_boundaries_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/cb8a6f1fc29b90e55a9cdf4f01b06eeaad8f855c/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/e19b5c05a8d84a9e88a990f101b076e1b70c6289/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_5_INDEPENDENT_REVIEW_REQUEST.md"
+        ],
+        "proof_source_must_change": true,
+        "confidence": "High",
+        "unresolved_concerns": "The intended upstream model may already impose positive floors and a minimum palette, but those assumptions are not explicit in the immutable A12.3 proof reviewed here. The corrected candidate must say whether it is restricting the theorem to protected states or proving a broader theorem with exceptional small-palette cases.",
+        "unresolved_concerns_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/cb8a6f1fc29b90e55a9cdf4f01b06eeaad8f855c/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS.md"
+      },
+      {
+        "id": "A12.4",
+        "verdict": "ACCEPTED WITH REPORTING CORRECTION",
+        "scope_commit": "5be2e81ff224761a0f9622104354ac804dc15bae",
+        "proof_commit": "c10c68922fbcbf520d28b1ca509faa38fcf3bcd5",
+        "scope_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/5be2e81ff224761a0f9622104354ac804dc15bae/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS_SCOPE.md",
+        "proof_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/c10c68922fbcbf520d28b1ca509faa38fcf3bcd5/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS.md",
+        "detailed_mathematical_reasoning": "For an addition Add(i,x), only pairs containing x can lose root i as a witness, and the affected shadow is exactly {{x,y}: y outside E_i and y != x}. In a protected state every W coordinate is at least 1; each affected coordinate drops by one, so the addition remains in the lower band iff the minimum shadow multiplicity is at least 2. Additions cannot violate the upper tau<=4 condition. For a deletion, lower-band failure is impossible by monotonicity; upper legality is exactly existence of an old size<=4 cover that still intersects E_i minus {x}, and the separate floor inequality is necessary. The covariance maps shadows, covers, and floor slack bijectively. The two same-state controls are valid: two addition candidates have different shadow minima despite identical mu_- and N4, and two deletion candidates on one root have different surviving-cover outcomes despite identical global scalars. This establishes candidate-specific sufficiency, not minimality or observability.",
+        "detailed_mathematical_reasoning_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/5be2e81ff224761a0f9622104354ac804dc15bae/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS_SCOPE.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/c10c68922fbcbf520d28b1ca509faa38fcf3bcd5/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS.md"
+        ],
+        "attempted_counterexamples_and_edge_cases": "The empty addition shadow gives A=+infinity and is correctly legal. A=1 is the exact failure boundary, while A>=2 survives every affected pair. For deletion, D>=1 is not enough at a violated local floor, and the conjunction with |E_i|-1>=f_i handles that same-root edge. The addition and deletion controls were checked by explicit pair/cover calculations. Cross-root threshold statements are valid when the candidate remains syntactically fixed; same-root floor changes must be kept separate. No mathematical counterexample was found.",
+        "attempted_counterexamples_and_edge_cases_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/c10c68922fbcbf520d28b1ca509faa38fcf3bcd5/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS.md",
+        "mathematical_correction": "None. Clarify in any future presentation that threshold crossing is for a fixed, still-valid candidate; same-root deletion response can additionally be caused by the floor threshold.",
+        "mathematical_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/c10c68922fbcbf520d28b1ca509faa38fcf3bcd5/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS.md",
+        "reporting_correction": "Call A and D candidate-centered certificate margins/statistics, not physical potentials, field strengths, energies, distances, or observables. State that the insufficiency result targets the particular pair (mu_-, N4), not every conceivable pair of scalar summaries. Qualify exact threshold-crossing language by candidate syntax and separate same-root floor effects.",
+        "reporting_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/5be2e81ff224761a0f9622104354ac804dc15bae/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS_SCOPE.md",
+        "exact_claim_boundaries": "Established for protected states: Add(i,x) is legal iff A>=2; Del(i,x) is legal iff the local floor survives and D>=1; both are relabeling covariant; cross-root response is a candidate-margin threshold crossing; and (mu_-,N4) is insufficient for specified-move legality. Not established: minimality, observer access, bounded/local reconstructibility, geometry, force, potential, energy, metric, continuum behavior, or implementation.",
+        "exact_claim_boundaries_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/5be2e81ff224761a0f9622104354ac804dc15bae/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS_SCOPE.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/c10c68922fbcbf520d28b1ca509faa38fcf3bcd5/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS.md"
+        ],
+        "proof_source_must_change": false,
+        "confidence": "High",
+        "unresolved_concerns": "The proof uses the native definitions of tau, W, C, and floors supplied in the packet. Its threshold prose should be tightened for same-root syntax/floor cases, but the two iff results themselves are exact.",
+        "unresolved_concerns_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/c10c68922fbcbf520d28b1ca509faa38fcf3bcd5/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS.md"
+      },
+      {
+        "id": "A12.5",
+        "verdict": "ACCEPTED WITH REPORTING CORRECTION",
+        "scope_commit": "fe6cf6207f5d9a007e52a75c088d0595d8c78a9d",
+        "proof_commit": "0f3a6790777ebe1ce1f6c2739c2ca99f0c2fa433",
+        "scope_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/fe6cf6207f5d9a007e52a75c088d0595d8c78a9d/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO_SCOPE.md",
+        "proof_url": "https://github.com/proteinfoldingengine/WetLabEngine/blob/0f3a6790777ebe1ce1f6c2739c2ca99f0c2fa433/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO.md",
+        "detailed_mathematical_reasoning": "The construction matches all required local/global inputs. In both states the palette is {a,b,c,d,e}, there are six original roots with floor 1, R0={d}, and candidate f=Add(R0,b). Since d occurs nowhere else, the candidate root is an isolated singleton overlap component, so every finite-radius overlap view and the complete component are identical. In state L, d is forced by R0, a by singleton R3, and c or e by R2, so tau>=3; {a,c,d} covers all roots, so tau=3. In state I, d, b, and c are forced by the three singleton requirements R0, R4, R5, and {b,c,d} covers, so tau=3. After f in L, any pair must contain a for R3 and then b or d for R0; either choice misses R2={c,e}, while {a,b,c} covers, so tau remains 3 and f is legal. After f in I, {b,c} covers all roots, so tau<=2; R4={b} and R5={c} are disjoint singleton roots, so tau is exactly 2 and f is illegal. For K={b,c}, the candidate removes the sole witness R0 in I but leaves at least R0 and R3 as witnesses in L. Therefore no uniform exact legality function can use only the candidate component plus the matched palette size, root count, floors, current tau, and candidate identity/type. This is an incidence-overlap no-go, not a physical nonlocality theorem.",
+        "detailed_mathematical_reasoning_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/fe6cf6207f5d9a007e52a75c088d0595d8c78a9d/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO_SCOPE.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/0f3a6790777ebe1ce1f6c2739c2ca99f0c2fa433/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO.md"
+        ],
+        "attempted_counterexamples_and_edge_cases": "I checked that d creates no hidden overlap edge, that L post-f has no unconsidered pair cover by the forced-R3 argument, and that I post-f cannot have tau=1 because of disjoint singleton roots R4 and R5. Duplicate roots in I do not affect the cover proof. The no-go is stronger than failure at any fixed radius because the entire candidate component is identical. No counterexample to the indistinguishability argument was found.",
+        "attempted_counterexamples_and_edge_cases_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/0f3a6790777ebe1ce1f6c2739c2ca99f0c2fa433/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO.md",
+        "mathematical_correction": "None required for the no-go. The proof should add one sentence giving the lower bound tau>=2 in state I after f if it intends to report the exact post-state value, rather than only tau<=2; the disjoint singleton roots R4 and R5 supply it.",
+        "mathematical_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/0f3a6790777ebe1ce1f6c2739c2ca99f0c2fa433/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO.md",
+        "reporting_correction": "Report the I post-state as tau=2 with the explicit lower-bound sentence, and keep the no-go input class exact. The conclusion is only that raw root-incidence overlap is insufficient as an exact admissibility-locality notion; it does not establish physical nonlocality, geometry, force, energy, continuum behavior, or fundamental time.",
+        "reporting_correction_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/fe6cf6207f5d9a007e52a75c088d0595d8c78a9d/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO_SCOPE.md",
+        "exact_claim_boundaries": "Accepted exactly: no function restricted to the candidate root's complete labelled overlap component, its floors, palette size, total root count, current tau, and candidate identity/type can determine exact candidate legality uniformly over the stated protected states. The component-level counterexample implies failure for every finite overlap radius. No claim is made about all possible locality notions or about physical nonlocality; response/dependency locality remains a future proposal.",
+        "exact_claim_boundaries_citation": [
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/fe6cf6207f5d9a007e52a75c088d0595d8c78a9d/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO_SCOPE.md",
+          "https://github.com/proteinfoldingengine/WetLabEngine/blob/0f3a6790777ebe1ce1f6c2739c2ca99f0c2fa433/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO.md"
+        ],
+        "proof_source_must_change": false,
+        "confidence": "High",
+        "unresolved_concerns": "Only a presentation gap remains: the proof establishes tau<=2 after f in I, sufficient for illegality, but should explicitly state the disjoint-singleton lower bound if the exact value tau=2 is part of the reported candidate post-state.",
+        "unresolved_concerns_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/0f3a6790777ebe1ce1f6c2739c2ca99f0c2fa433/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO.md"
+      }
+    ],
+    "full_stack_verdict": "CLOSEOUT_BLOCKED",
+    "full_stack_verdict_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/6efa44543f46d0454c987b43dd765cb588c97560/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_5_SCIENTIFIC_CLOSEOUT_REQUEST.md",
+    "full_stack_reasoning": "The authoritative gate permits CLOSED only when all five candidates survive independent mathematical review without unresolved mathematical correction. A12.1, A12.2, A12.4, and A12.5 survive mathematically, subject to reporting clarifications. A12.3 has a domain-level mathematical blocker: its first tau/W equivalence is written for an unrestricted finite root state but relies on an unstated palette-size and root-nonemptiness domain. A corrected, newly frozen A12.3 candidate and fresh independent re-review are required. Because A12.3 is not yet accepted mathematically, the ordered A12.3 -> A12.4 -> A12.5 closeout cannot be marked CLOSED.",
+    "full_stack_reasoning_citation": [
+      "https://github.com/proteinfoldingengine/WetLabEngine/blob/6efa44543f46d0454c987b43dd765cb588c97560/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_5_SCIENTIFIC_CLOSEOUT_REQUEST.md",
+      "https://github.com/proteinfoldingengine/WetLabEngine/blob/e19b5c05a8d84a9e88a990f101b076e1b70c6289/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_5_INDEPENDENT_REVIEW_REQUEST.md"
+    ],
+    "exact_blockers": [
+      {
+        "id": "A12.3-domain-hypothesis",
+        "blocker": "Add explicit standing hypotheses (at minimum |P|>=2 for pair extension, and the intended nonempty-root/positive-floor convention; protected states under that convention imply |P|>=3), or add exceptional cases for smaller palettes/empty roots. Then freeze a new candidate and obtain fresh independent review.",
+        "blocker_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/cb8a6f1fc29b90e55a9cdf4f01b06eeaad8f855c/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS.md"
+      }
+    ],
+    "global_boundary": "Nothing in this review infers a force law, geometry, energy, GR/ADM, dark-matter replacement, fundamental time, physical nonlocality, or an observer-accessible physical field. The reviewed claims are combinatorial statements about hitting numbers, admissibility, certificate updates, candidate margins, and overlap-based indistinguishability.",
+    "global_boundary_citation": "https://github.com/proteinfoldingengine/WetLabEngine/blob/6efa44543f46d0454c987b43dd765cb588c97560/ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_5_SCIENTIFIC_CLOSEOUT_REQUEST.md"
+  },
+  "message": "Independent mathematical review complete. A12.3 is blocked pending an explicit domain-hypothesis correction and fresh re-review; therefore the full stack is CLOSEOUT_BLOCKED.",
+  "credits_used": 0
+}
