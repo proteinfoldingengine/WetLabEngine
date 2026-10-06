@@ -10,6 +10,9 @@ on:
 permissions:
   contents: write
   actions: read
+defaults:
+  run:
+    shell: bash
 concurrency:
   group: a12-self-contained-${{ github.ref }}
   cancel-in-progress: false
@@ -48,6 +51,14 @@ jobs:
           pathlib.Path(os.environ['RUNNER_TEMP'], 'a12-output', 'context.json').write_text(json.dumps(data, sort_keys=True, indent=2)+'\n')
           print(json.dumps({k:v for k,v in data.items() if k != 'source_sha256'}, sort_keys=True))
           PY
+      - name: Reject a failed command hidden by tee
+        run: |
+          set +e
+          (exit 23) | tee "$RUNNER_TEMP/a12-output/pipeline_control.log"
+          result=$?
+          set -e
+          test "$result" -eq 23
+          printf '{"observed_exit":23,"expected_exit":23,"status":"REJECTED_MASKED_FAILURE"}\n' > "$RUNNER_TEMP/a12-output/pipeline_control.json"
       - name: Contract tests (RED until implementation and source repair)
         run: |
           python -m unittest discover -s "$A12/verification" -p 'test_*.py' -v 2>&1 | tee "$RUNNER_TEMP/a12-output/contracts.log"
