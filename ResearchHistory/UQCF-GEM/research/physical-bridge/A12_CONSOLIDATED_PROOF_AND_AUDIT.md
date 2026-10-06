@@ -1,14 +1,16 @@
 # A12.1-A12.5 consolidated corrected candidate and author-side audit
 
 Date: 2026-10-06 UTC.
-Status: WRITTEN ARGUMENT AUDIT COMPLETE; BOUNDED VERIFICATION NOT RUN; A12 GATE OPEN.
+Status: REVISED WRITTEN CANDIDATE R1; execution and closeout status are tracked separately in STATUS.md.
 Attribution: ChatGPT authoring context. This is an author-side mathematical audit, NOT independent peer review or a formal proof-assistant certificate.
 Prospective protocol: A12_SELF_CONTAINED_AUDIT_PROTOCOL.md at 291425d273412a65e98facc79bc368616200d7a1.
 Source baseline: 62b6bec4bea5e6446680aec5694fbd0d8f096165. The protocol records all ten immutable scope/proof sources and blobs.
 
+R1 correction: the original consolidated publication 5541843b2539cd714796d2e9c94d05741b2a49d8 substituted several A12.5 supports without disclosure. Section 6 now restores the exact original L and I supports. The existing transversal and witness arguments below apply to these originals. A source-fidelity test rejected the substitution before the full bounded campaign. The palette-cardinality bars in the ledger are escaped for correct Markdown rendering. No other mathematical claim is changed in R1; original documents and historical verdicts remain untouched.
+
 This file is a new consolidated candidate. It does not silently replace the original proof/scope documents or change any historical external verdict. It supplies the complete arguments for the claims retained below, explicit corrections and narrowed conclusions, and the remaining evidence obligations. No external AI approval is used as a premise.
 
-Prospective fixture clarification before execution: the protocol's phrase 'five-root/six-label deletion fixtures' misdescribes the original A12.1 examples. The original upper-bound controls use FIVE labels, as transcribed in Section 2.3 below. The protocol's explicit requirement to reproduce all four original examples governs; no change to the primary universe, family range or resource budget is made. No verification has run under either description.
+Prospective fixture clarification recorded before execution: the protocol's phrase 'five-root/six-label deletion fixtures' misdescribes the original A12.1 examples. The original upper-bound controls use FIVE labels, as transcribed in Section 2.3 below. The protocol's explicit requirement to reproduce all four original examples governs; no change to the primary universe, family range or resource budget is made. No verification had run when this clarification was first published.
 
 ## 1. Common definitions, domain and dependency boundary
 
@@ -201,8 +203,8 @@ This targets the PARTICULAR summaries (mu_-,N_4), not every pair of scalar encod
 
 Use palette {a,b,c,d,e}, six roots labelled 0,...,5, all floors 1, and the SAME candidate g=Add(0,b). Define
 
-    L: ({d}, {b,c}, {c,e}, {a}, {a,c}, {a,b});
-    I: ({d}, {b,c}, {b,c}, {a,b}, {b}, {c}).
+    L: ({d}, {a,c}, {c,e}, {a}, {a,c,e}, {a,b});
+    I: ({d}, {a,b,e}, {a,b,e}, {a,c,e}, {b}, {c}).
 
 The root overlap graph joins distinct slots when their supports intersect. In both states d occurs only in root 0; its entire labelled connected component is the isolated support {d}, with the same floor. Hence all finite-radius overlap views at that root are identical, even if the entire component is supplied. Palette, root count, all floors and candidate identity/type are also identical.
 
@@ -228,21 +230,19 @@ The impossibility is restricted to the specified input. Remote supports or other
 | A12.2 root count | Original n+2 is incorrect for listed roots; corrected to n+3 | Automated fixture-metadata rejection |
 | A12.2 subset/endpoints/coefficients/uniform quantifier | Complete general-n argument in Section 3; empty coefficient is 1 | Declared n=2,...,8 cube checks |
 | A12.2 arbitrary full-graph insufficiency | Not established by the supplied family; withdrawn from retained conclusions | No new theorem or campaign opened |
-| A12.3 pair-domain defect | Explicit |P|>=2 and nonempty legal supports; p=1 counterexample recorded | Domain/update/certificate checks |
+| A12.3 pair-domain defect | Explicit \|P\|>=2 and nonempty legal supports; p=1 counterexample recorded | Domain/update/certificate checks |
 | A12.3 updates, counts, band, bounds, covariance | Complete author-side argument in Section 4 | Direct-reference comparison |
 | A12.4 iffs and scalar limitation | Exact with syntax/floor qualifications; fixed-candidate relabeling completion in Section 5 | Candidate, relabeling and floor controls |
 | Stronger same-root A monotonicity | False; explicit 2-to-infinity example while legality stays unchanged | Reproduce example; do not claim this as an original theorem failure |
-| A12.5 matched inputs and post-state values | Complete argument in Section 6; add explicit tau(gI)>=2 lower bound | Component/input/endpoint checks |
+| A12.5 matched inputs and post-state values | Complete argument in Section 6; add explicit tau(gI)>=2 lower bound; R1 restores original supports | Input/component/endpoint checks |
 | Protocol upper-fixture label count | Five labels in original upper controls; six-label wording corrected prospectively above | Implement actual frozen original fixtures |
 
 These are the author's dispositions on the new consolidated candidate, not replacements for the external review's verdicts on older sources. Historical review and original source bytes remain unchanged.
 
-## 8. What is and is not completed
+## 8. Original publication checkpoint and subsequent verification
 
-Completed here: all ten source files audited; a self-contained native argument for each retained mathematical conclusion; explicit assumptions and dependency ordering; symbolic counterexample/control reasoning; correction and narrowing ledger; bounded verification protocol frozen before candidate publication.
+At original candidate publication: all ten source files had been audited; native arguments, explicit assumptions, dependency ordering, symbolic control reasoning, and the correction/narrowing ledger were written; the bounded verification protocol had been frozen before candidate publication. The subsequent R1 source-fidelity correction above is part of the audit history, not concealed by that earlier completion statement.
 
-NOT completed here: executable bounded verifier, its rejecting controls, a GitHub Actions run, deterministic reproduction, durable execution evidence, or final reporting/closeout audit. None is represented as PASS. The 35,792-state figure in the protocol is a prospective combinatorial scope count, not a performed campaign.
+At that original checkpoint, the executable bounded verifier, its rejecting controls, a GitHub Actions run, deterministic reproduction, durable execution evidence, and final reporting/closeout audit were NOT completed. The 35,792-state figure was a prospective combinatorial scope count, not a performed campaign. Current execution results and remaining obligations belong in STATUS.md, A12_IMPLEMENTATION_LOG.md, and the immutable run evidence, not in this mathematical source's historical checkpoint text.
 
-The immediate next work is implementing and executing precisely that declared verifier, not another analytical stage and not outside-AI review. Issue #104 remains OPEN. Final A12 closeout must say which claims are retained, corrected or withdrawn and distinguish written proof from finite corroboration.
-
-No force, geometry, energy, GR/ADM, dark-matter replacement, physical nonlocality, continuum or fundamental-time inference is made. No A12.6 is opened. Certified v16.54/v16.55 and accepted A11 remain unchanged.
+Final A12 closeout must say which claims are retained, corrected or withdrawn and distinguish written proof from finite corroboration. No force, geometry, energy, GR/ADM, dark-matter replacement, physical nonlocality, continuum or fundamental-time inference is made. No A12.6 is opened. Certified v16.54/v16.55 and accepted A11 remain unchanged.
