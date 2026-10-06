@@ -1,0 +1,45 @@
+{
+  "schema": "A12.evidence.manifest.v1",
+  "record_type": "author_reconciliation_of_observed_GitHub_evidence_not_raw_provider_response",
+  "protocol_commit": "291425d273412a65e98facc79bc368616200d7a1",
+  "implementation_commit": "b2085eb1fdca0bbe754743e6bd74ef6fda6bdbef",
+  "consolidated_proof_blob": "f670e9a6687aec49b18429655285f937404e1a36",
+  "consolidated_proof_sha256": "82dba56d65f80dcb53c010ced48c3dfb4880ebb6e523975672b656b18bbe74ad",
+  "source_blobs": {
+    "verification/certificate.py": "7d0ff86ce167266546451f89414b0927a5645f65",
+    "verification/reference.py": "867e8e0db01dd7fabf538c1db321ca1a0d04f322",
+    "verification/verify.py": "e86da1539085086becdb654ef1184d032f18309f",
+    ".github/workflows/uqcf-a12-self-contained.yml": "43b634e3efe6156c6e74974d2627ea74b7c425f9"
+  },
+  "runs": [
+    {"run_id": 37500570046, "attempt": 1, "job_id": 112396204906, "source": "4928457ebe247382a714584a478fe057ddbad5d8", "disposition": "FAILED_RED_AND_PIPELINE_MASKING", "original_evidence_commit": "c008c2679ce4c0f6747ca10ec0279a754c551820", "path": "evidence/37500570046-1", "tree": "2f4a2f7e47997767a9870f52c694e279c060d534"},
+    {"run_id": 37500792495, "attempt": 1, "job_id": 112396959265, "source": "8be884e9793e5ba69f456f61a434f6f086d75ad5", "disposition": "FAILED_EXPECTED_RED_WITH_CORRECT_PROPAGATION", "original_evidence_commit": "89f956ff96e514092000b785faac1c7414f5f3d3", "path": "evidence/37500792495-1", "tree": "ba72577e7ad6dd774bbcd3618b5464c0d6f8788b"},
+    {"run_id": 37502203890, "attempt": 1, "job_id": 112401765007, "source": "b2085eb1fdca0bbe754743e6bd74ef6fda6bdbef", "disposition": "BOUNDED_PASS_AND_BYTE_EXACT_REPRODUCTION", "terminal_run_status": "completed", "terminal_run_conclusion": "success", "terminal_job_conclusion": "success", "original_evidence_commit": "90ef3d6daa0b09b1b8de0ee28403bb396db98931", "path": "evidence/37502203890-1", "tree": "96993680409c32a01bd63f7658c0e64e00312ee1"}
+  ],
+  "green_files": [
+    {"name":"context.json","blob":"bfa8355d0e9666ac769e3b92aa2f0892a202dde4","bytes":3967},
+    {"name":"contracts.log","blob":"4e83af40df9d0cd3363d379bffdee94ec6ecbb9b","bytes":1349},
+    {"name":"controls.json","blob":"3ec2eb84a4272a67d0428214374f6afe2692f458","bytes":2228},
+    {"name":"controls.log","blob":"440efeeed0a7bd12a94387d3b6cb6eff6b4b1880","bytes":18},
+    {"name":"jobs_snapshot.json","blob":"0bd811c313b2e8c77f6ade76ad87827155cf93ea","bytes":5137},
+    {"name":"pipeline_control.json","blob":"47369b0b077d165568e254b3874dc9d8e6e816fb","bytes":75},
+    {"name":"pipeline_control.log","blob":"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391","bytes":0},
+    {"name":"primary.json","blob":"4e4431c56d11348fc5f0833b3b341319861f2470","bytes":10057},
+    {"name":"primary.log","blob":"63731e6f25f3b6e61ade263e1daccaa019a23e98","bytes":629},
+    {"name":"reproduction.json","blob":"4e4431c56d11348fc5f0833b3b341319861f2470","bytes":10057},
+    {"name":"reproduction.log","blob":"63731e6f25f3b6e61ade263e1daccaa019a23e98","bytes":629},
+    {"name":"reproduction_comparison.json","blob":"b9414c8e032ede8adc614437c816ad2a127b05f0","bytes":211}
+  ],
+  "green_evidence_bytes": 34357,
+  "scientific_file_sha256": "e0ef0a032d2070057e7feb573872bf24a09686a9dd012f1114952ee37ec37b57",
+  "check_stream_digest": "650851cf5ad2f91ef2be7c60bd549039aa5e9daee79f9a6eedff21c003a9ea3c",
+  "primary_states": 35792,
+  "protected_primary_states": 102,
+  "fixture_state_evaluations": 33,
+  "collective_subsets": 508,
+  "collective_edges": 1792,
+  "unit_contracts_passed": 10,
+  "rejecting_controls_passed": 11,
+  "artifact_platform_metadata": {"artifact_id":11430296564,"zip_bytes":11210,"reported_sha256":"aeb5c6f282c3adfc39c0f641c25934f48646c6707c8fd62029a9fed27f052585","independent_zip_reconstruction_claimed":false},
+  "limitations": ["bounded corroboration is not an unrestricted proof", "same-author calculations are not independent peer review", "digests are not raw per-state output", "jobs_snapshot is pre-terminal", "old execution-time OPEN status remains unchanged in raw evidence", "no historical certified-engine replay or new physical conclusion"]
+}

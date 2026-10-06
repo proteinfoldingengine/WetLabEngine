@@ -1,0 +1,153 @@
+{
+  "jobs": [
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/112401765007",
+      "completed_at": null,
+      "conclusion": null,
+      "created_at": "2026-10-06T17:16:00Z",
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "head_sha": "b2085eb1fdca0bbe754743e6bd74ef6fda6bdbef",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/37502203890/job/112401765007",
+      "id": 112401765007,
+      "labels": [
+        "ubuntu-22.04"
+      ],
+      "name": "verify",
+      "node_id": "CR_kwDORG4isM8AAAAaK6rSjw",
+      "run_attempt": 1,
+      "run_id": 37502203890,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/37502203890",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000004254,
+      "runner_name": "GitHub Actions 1000004254",
+      "started_at": "2026-10-06T17:16:02Z",
+      "status": "in_progress",
+      "steps": [
+        {
+          "completed_at": "2026-10-06T17:16:04Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-10-06T17:16:03Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-06T17:16:06Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 2,
+          "started_at": "2026-10-06T17:16:04Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-06T17:16:06Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 3,
+          "started_at": "2026-10-06T17:16:06Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-06T17:16:06Z",
+          "conclusion": "success",
+          "name": "Capture immutable source and environment",
+          "number": 4,
+          "started_at": "2026-10-06T17:16:06Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-06T17:16:07Z",
+          "conclusion": "success",
+          "name": "Reject a failed command hidden by tee",
+          "number": 5,
+          "started_at": "2026-10-06T17:16:06Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-06T17:16:07Z",
+          "conclusion": "success",
+          "name": "Contract tests (RED until implementation and source repair)",
+          "number": 6,
+          "started_at": "2026-10-06T17:16:07Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-06T17:16:07Z",
+          "conclusion": "success",
+          "name": "Rejecting controls before full campaign",
+          "number": 7,
+          "started_at": "2026-10-06T17:16:07Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-06T17:16:31Z",
+          "conclusion": "success",
+          "name": "Complete bounded primary execution",
+          "number": 8,
+          "started_at": "2026-10-06T17:16:07Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Fresh-process deterministic reproduction",
+          "number": 9,
+          "started_at": "2026-10-06T17:16:31Z",
+          "status": "in_progress"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Compare complete scientific outputs and budget",
+          "number": 10,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Capture actual job metadata",
+          "number": 11,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Preserve output on unique evidence-only branch",
+          "number": 12,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "number": 13,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 25,
+          "started_at": null,
+          "status": "pending"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 26,
+          "started_at": null,
+          "status": "pending"
+        }
+      ],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/112401765007",
+      "workflow_name": "A12 self-contained bounded verification"
+    }
+  ],
+  "total_count": 1
+}
