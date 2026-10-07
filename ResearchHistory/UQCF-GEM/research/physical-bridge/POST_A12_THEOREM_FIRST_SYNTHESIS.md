@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: SINGLE-BUFFER PERMUTATION-CYCLE CANDIDATE PUBLISHED; INDEPENDENT REVIEW PENDING; COUPLED-CYCLE GENERALIZATION OPEN.
+Status: SINGLE-BUFFER PERMUTATION-CYCLE THEOREM CLOSED/INDEPENDENTLY ACCEPTED; COUPLED-CYCLE GENERALIZATION OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -190,18 +190,18 @@ This is distinct from the earlier macro-cycle escape: that obstruction vanished 
 
 For n=3 or4 floor1 singleton roots with distinct labels and a target permutation, a single fresh auxiliary label w is reused to repair every nontrivial permutation cycle. The proposed exact schedule uses 2m+2c native edits for m moved roots in c nontrivial cycles and preserves pairwise disjoint supports, hence tau=n throughout. For n=3 any nonidentity target permutation is endpoint-only blocked; for n=4 endpoint-only swaps can sometimes succeed, so w is not universally necessary.
 
-This result has passed only an author-side argument audit. A separate external adversarial mathematical review was launched (job 01a117ed-cd22-7520-b6d1-c6423766f657), and the candidate must NOT be promoted to accepted or scientifically closed until that verdict is reconciled.
+The frozen result received an independent mathematical ACCEPTED verdict at 361e5931368e44b2bfc6c82fad7483d92c05455a and a separate independent publication-consistency acceptance (with reporting clarifications) published at fc618c3223e19c38f94fb9abd38b965cbaaef7e9. Reporting reconciliation is published at b6b738f54dd7cef3861da79415151a0b81192b20. The final scoped closeout is at 4f9a65bfb0e71be48e8bb14b4f9dcf3cf567ab5d. The frozen proof is unchanged.
 
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. The immediate gate is independent review of the one-buffer singleton permutation-cycle theorem.
+The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
 
-After that review, the mathematical frontier is COUPLED CYCLE BREAKING beyond disjoint singleton permutations: overlapping supports, shared witness obligations, and original floors that cannot be represented as independent label cycles. A valid theorem must derive a retained host-selection rule, maintain both protected-band bounds, prove finite termination and exact cleanup, and show where one buffer fails.
+The next mathematical frontier is COUPLED CYCLE BREAKING beyond disjoint singleton permutations: overlapping supports, shared witness obligations, and original floors that cannot be represented as independent label cycles. A valid theorem must derive a retained host-selection rule, maintain both protected-band bounds, prove finite termination and exact cleanup, and show where one buffer fails.
 
 No numerical universe or implementation is launched by this continuation update.
 
 ## Evidence and unchanged boundaries
 
-This item is written mathematics with author-side argument/reporting audit and immutable readback, not independent peer review, formal proof-assistant certification, numerical PASS or numbered v16 certification. No outside AI was polled or dispatched and no scientific computation was executed for it.
+The earlier fixed-residual handover item was written mathematics with author-side review only. The newer singleton-permutation auxiliary theorem separately received independent AI mathematical and publication-consistency reviews. Neither result is a formal proof-assistant certification, numerical PASS, numbered v16 certification or physical validation.
 
 A12.1-A12.5 remains closed at bbc6e6f68beaf7d2d1641e711b46b55ae0bf62db; issue #104, accepted A11 sources and certified v16.54/v16.55 remain untouched. No A12.6 is opened. No physical force, geometry, energy, GR/ADM, dark-matter replacement, physical nonlocality, continuum, observer field or fundamental-time claim follows from the handover result.
