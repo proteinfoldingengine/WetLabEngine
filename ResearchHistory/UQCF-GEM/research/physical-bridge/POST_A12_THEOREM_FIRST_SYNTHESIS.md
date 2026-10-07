@@ -1,6 +1,6 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
-Updated: 2026-10-06 (America/Phoenix).
+Updated: 2026-10-07 (America/Phoenix).
 Status: SINGLE-BUFFER PERMUTATION-CYCLE CANDIDATE PUBLISHED; INDEPENDENT REVIEW PENDING; COUPLED-CYCLE GENERALIZATION OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
