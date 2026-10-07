@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-06 (America/Phoenix).
-Status: PHASED RETAINED-EVENT INTERFACE ANALYTICALLY COMPLETE; AUTOMATIC CERTIFICATE-HANDOFF DERIVATION OPEN.
+Status: AUTOMATIC UPPER-COVER HANDOFF ANALYTICALLY COMPLETE; LOWER-WITNESS HANDOFF OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -142,21 +142,32 @@ The closed macro-cycle carrier embeds with acyclic event graph Pp,Pq -> H -> Fr,
 
 Crucially, this acyclic event graph has no topological execution satisfying whole-macro contiguity: p's finish requires q's preparation, q's finish requires p's preparation, and r requires the handoff. The earlier macro deadlock is therefore formally identified as a coarse scheduling/contiguity effect, not native disconnection.
 
+## Automatic upper-cover handoff now completed
+
+The phased prepare/handoff/finish structure can now be derived automatically for the upper certificate channel:
+
+- [Frozen automatic-cover scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/9569cbcd8f6797ee93134cb5cded4a40e5139298/ResearchHistory/UQCF-GEM/research/physical-bridge/AUTO_COVER_HANDOFF_SCOPE.md).
+- [Automatic upper-cover theorem](https://github.com/proteinfoldingengine/WetLabEngine/blob/9a34fb8d949c325cf03d52afebc72b4c0d331fdf/ResearchHistory/UQCF-GEM/research/physical-bridge/AUTO_COVER_HANDOFF_RESULT.md).
+- [Scoped analytical closeout](https://github.com/proteinfoldingengine/WetLabEngine/blob/e13f829e5bef68d8558d355300ec07b18f53d8b6/ResearchHistory/UQCF-GEM/research/physical-bridge/AUTO_COVER_HANDOFF_CLOSEOUT.md).
+
+Given an old <=4 cover H0 and replacement <=4 cover H1, retained endpoint signatures determine the event graph root-by-root. A root without a common H1 hit receives a selected destination-only H1 gain before the handoff. A root without a common H0 hit retains one selected source-only H0 incidence until after the handoff. All additions precede deletions within each root for floor safety.
+
+The resulting graph is automatically acyclic by levels addition -> handoff -> deletion. H0 is guaranteed before handoff, H1 at and after handoff. With an independent lower certificate this gives a complete protected endpoint path.
+
+Applied to the macro-cycle carrier, the rule reconstructs the essential p/q preparations and held p/q/r deletions without being supplied the earlier safe schedule. It also correctly discovers that q's deletion of f does not threaten H0 and may occur before handoff.
+
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. The next frontier is AUTOMATIC CERTIFICATE-HANDOFF DERIVATION.
+The full B1/B2 program is NOT closed. The next frontier is AUTOMATIC LOWER-WITNESS HANDOFF.
 
-The phased theorem still receives its prepare/finish partition and handoff marker as supplied structure. The next result must derive them from retained certificate data itself.
+For every physical pair K, the next theorem should derive from retained endpoint signatures:
+1. which roots are old K-witnesses;
+2. which roots are new K-witnesses;
+3. which deletions establish a selected new witness;
+4. which additions can destroy a selected old witness;
+5. precedence edges that guarantee witness-interval overlap.
 
-For upper protection, the target is to derive:
-1. which endpoint additions are required to install a replacement <=4 cover;
-2. which source deletions can destroy the current cover;
-3. the precedence edges placing all required gains before the handoff and all dangerous losses after it;
-4. a fiber-uniform test that the replacement cover is guaranteed before the handoff fires.
-
-The closed macro-cycle carrier should emerge from this rule without manually prescribing Pp,Pq,H,Fp,Fq.
-
-A later dual theorem should derive lower pair-witness handoff.
+Then combine these lower edges with the automatic upper-cover/floor edges in one retained event graph. The decisive question is whether that joint graph remains acyclic or exposes a genuine event-level obstruction.
 
 No numerical universe or implementation is launched by this continuation update.
 
