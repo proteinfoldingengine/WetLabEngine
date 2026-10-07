@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-06 (America/Phoenix).
-Status: RETAINED-QUOTIENT PRECEDENCE INTERFACE ANALYTICALLY COMPLETE; CONCRETE MULTI-VERTEX REALIZABILITY OPEN.
+Status: CONCRETE THREE-PAYLOAD RETAINED PRECEDENCE ANALYTICALLY COMPLETE; CYCLE REALIZABILITY OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -100,20 +100,29 @@ Under exact obligation completion and graph renewal by induced-subgraph deletion
 
 The closed two-payload joint theorem embeds as the one-edge graph P_x -> P_y while retaining 2^s hidden spectator states.
 
+## Concrete three-payload precedence now completed
+
+The retained precedence interface now has a genuine multi-vertex native realization:
+
+- [Final fiber-uniform scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/005857e5b486e07545d91bd89f161a59c0ac972d/ResearchHistory/UQCF-GEM/research/physical-bridge/THREE_PAYLOAD_PRECEDENCE_SCOPE.md).
+- [Three-payload fork theorem](https://github.com/proteinfoldingengine/WetLabEngine/blob/e83e85afd4f5c2dcb08f4c7cb5067337fece4b93/ResearchHistory/UQCF-GEM/research/physical-bridge/THREE_PAYLOAD_PRECEDENCE_RESULT.md).
+- [Scoped analytical closeout](https://github.com/proteinfoldingengine/WetLabEngine/blob/d7394285e70d21476dadc08ffd713a4787799e35/ResearchHistory/UQCF-GEM/research/physical-bridge/THREE_PAYLOAD_PRECEDENCE_CLOSEOUT.md).
+
+Three payloads begin at core a with targets b,c,b and an invariant environment root at b. Retained core miss counts plus labelled target address derive the fork graph p->q and r->q. Either b-target may be completed first; graph renewal gives the induced one-edge graph. The c-target q is uniformly unsafe until both predecessors complete: its addition leaves tau=4 but its deletion gives tau=5. After both predecessors complete q is safe.
+
+Both topological orders p,r,q and r,p,q reach the exact destination in six primitive edits. An arbitrary hidden spectator subset on p gives 2^s distinct full states following the same retained graph trajectory.
+
+Two prospective scope corrections were made before the proof because broader hidden spectator placement could rescue the nominal tau5 state. The final carrier is therefore genuinely fiber-uniform rather than silently depending on hidden incidences.
+
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. The next frontier is CONCRETE MULTI-VERTEX REALIZABILITY.
+The full B1/B2 program is NOT closed. The next frontier is CYCLE REALIZABILITY.
 
-The interface theorem is only sufficient structure. The next scientific task is to derive a precedence graph directly from native retained certificate+address formulas in a concrete carrier with at least three labelled obligations.
+The question is now sharply constrained: can native target-four retained certificate/address formulas derive a genuine directed cycle among complete endpoint macros while all declared endpoints remain protected?
 
-A successful realization must:
-1. derive at least two nontrivial precedence edges without hidden-state reads;
-2. prove fiber-uniform legality for each eligible macro;
-3. update the retained certificate and renew the graph after each macro;
-4. preserve multiple hidden full states under the same retained trajectory;
-5. exhibit a concrete cyclic retained graph that blocks the declared macro policy, while distinguishing that from native connectivity.
+A positive result must prove the retained macro deadlock and then distinguish it from native connectivity, ideally by exhibiting an interleaved or alternative path if one exists.
 
-This is the test of whether retained precedence is a recurring native mechanism rather than merely an abstract scheduling wrapper.
+A negative result must derive a structural acyclicity theorem for a meaningful carrier class rather than report unsuccessful examples.
 
 No numerical universe or implementation is launched by this continuation update.
 
