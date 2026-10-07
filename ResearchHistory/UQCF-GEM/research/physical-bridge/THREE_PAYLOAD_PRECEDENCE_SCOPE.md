@@ -21,10 +21,11 @@ Residual environment:
     h={b}, invariant.
 
 Three labelled payloads p,q,r start with core a.
-Allow arbitrary invariant spectator sets Z_p,Z_q,Z_r subseteq T:
+Allow arbitrary invariant spectator sets Z_p,Z_q subseteq T on p and q only:
     p={a} union Z_p,
     q={a} union Z_q,
-    r={a} union Z_r.
+    r={a}.
+The second b-target payload r is deliberately spectator-free so the wrong-order obstruction is uniform over the hidden fiber.
 All floors1.
 
 Exact core targets:
@@ -62,11 +63,11 @@ Prove this graph is derived from retained environment certificate plus D, not hi
 4. After both b-target payloads complete, q is safe and target tau4.
 5. Exact completion occurs in three macros=six incidence edits for either topological order p,r,q or r,p,q.
 
-Prove uniformly over all hidden Z assignments.
+Prove uniformly over all allowed hidden (Z_p,Z_q) assignments. Explain why allowing arbitrary spectators also on r would invalidate the uniform rejecting control.
 
 ## Hidden multiplicity
 
-For fixed retained core/address data there are 2^(3s) spectator assignments with the same retained graph and macro order choices. They remain hidden and are preserved exactly.
+For fixed retained core/address data there are 2^(2s) spectator assignments (Z_p,Z_q) with the same retained graph and macro order choices. They remain hidden and are preserved exactly.
 
 ## Policy obstruction
 
