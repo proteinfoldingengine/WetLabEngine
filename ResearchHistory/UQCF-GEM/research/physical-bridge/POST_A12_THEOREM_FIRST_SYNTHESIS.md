@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-06 (America/Phoenix).
-Status: FIXED-RESIDUAL X2 HANDOVER ITEM ANALYTICALLY COMPLETE; BROADER SCHEDULING QUESTION OPEN.
+Status: FIXED-RESIDUAL HANDOVER AND DECLARED DYNAMIC-RESIDUAL UPDATEABILITY ANALYTICALLY COMPLETE; SELECTION/COMPLETION OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -22,13 +22,33 @@ Complete safe handovers connect exactly the ordered anchor pairs in the same com
 
 The result also supplies valid exact-four endpoints whose macro graph is disconnected. A different native path joins them, so this refutes universal sufficiency of the prescribed handover policy, not X2 or general native repair.
 
+## Dynamic residual updateability now completed
+
+The next obligation from the fixed-residual closeout has now been resolved for DECLARED residual edits:
+
+- [Frozen dynamic-residual scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/716ff49fe1b1105695945d3ee7e808a927820cfa/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_DYNAMIC_RESIDUAL_SCOPE.md).
+- [Exact miss-count update theorem](https://github.com/proteinfoldingengine/WetLabEngine/blob/d1aeaeba5ddb6a6748a5a80cb69d5ab76fdf8db7/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_DYNAMIC_RESIDUAL_RESULT.md).
+- [Argument audit and scoped closeout](https://github.com/proteinfoldingengine/WetLabEngine/blob/46ccf73fafb974d8721bfd6736de7201d4cb95d7/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_DYNAMIC_RESIDUAL_CLOSEOUT.md).
+
+The old Boolean F_R table is provably not update-closed once a residual root changes: the published same-record counterexample gives identical retained F_R and identical declared edits but tau=4 versus tau=5 after the second primitive.
+
+The exact update-closed replacement is the residual miss-count field
+
+    M_R(H)=#{r:S_r intersect H=empty}, 1<=|H|<=4.
+
+For a named residual edit S->S', each coordinate updates locally by subtracting the old root's miss indicator and adding the new one. Pair coordinates M_R(K) are exactly the residual contribution to lower witnesses; zero coordinates M_R(H)=0 identify residual small covers. Combined with explicitly retained controlled supports, the same field reconstructs both target-four band tests and can be updated without rereading any other residual support.
+
+This closes legality/updateability for DECLARED edits. It does not select a hidden residual root, discover its unretained support, or prove arbitrary endpoint completion.
+
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. Preparation, residual-root modifications, arbitrary full endpoint restoration and factoring X2's upper-layer conversion through a retained description remain outside the completed item.
+The full B1/B2 program is NOT closed. Arbitrary full endpoint restoration and a terminating retained-information controller remain outside the completed items.
 
-The next mathematical task is to specify a broader permitted operation and an information record whose legality, updateability and termination can be proved without an undeclared full-state read. In particular F_R is not asserted updateable when R changes. A counterexample for one narrow macro must not be converted into a claim that all retained-input policies fail.
+The next mathematical task is now SELECTION/COMPLETION. A broader controller must specify how a residual root is selected and how its current support becomes available without an undeclared global read, then prove that its legal choices terminate at an exact stated endpoint class. The information obligations must remain separated: initialization, active-root access, legality, retained-record update, route selection, and termination.
 
-No next extension, new numerical universe or implementation is launched by this continuation update. Any needed computation requires its own prospectively stated domain, reference calculation, rejecting controls and GitHub execution scope.
+M_R solves legality/updateability once a named active root and its support are supplied. It is not asserted minimal, compressed, observer-accessible, or sufficient by itself to choose the next hidden root.
+
+No numerical universe or implementation is launched by this continuation update. Any needed computation requires its own prospective domain, reference calculation, rejecting controls and GitHub execution scope.
 
 ## Evidence and unchanged boundaries
 
