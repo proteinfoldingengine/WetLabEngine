@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-06 (America/Phoenix).
-Status: RETAINED-STATE FACTORIZATION WITH HIDDEN INVARIANT INCIDENCES ANALYTICALLY COMPLETE; JOINT CERTIFICATE+ADDRESS FACTORIZATION OPEN.
+Status: JOINT CERTIFICATE+ADDRESS FACTORIZATION ANALYTICALLY COMPLETE IN A BOUNDED CLASS; MULTI-PAYLOAD PRECEDENCE OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -72,19 +72,34 @@ For fixed Q there are 2^(ns) different labelled spectator assignments with the s
 
 This is a genuine information-factorization result, but M_R is unnecessary because legality is structurally guaranteed. It does not yet make aggregate certificate information and reduced address information simultaneously active.
 
+## Joint certificate+address factorization now completed
+
+The first class in which both retained channels are simultaneously active is now closed analytically:
+
+- [Frozen joint scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/0fa27e915b77742e21657c91bfd49b4cf0f6a1e5/ResearchHistory/UQCF-GEM/research/physical-bridge/JOINT_RETAINED_SCOPE.md).
+- [Corrected joint theorem](https://github.com/proteinfoldingengine/WetLabEngine/blob/6454074a95b526bf2125272f76bfad392e2f468f/ResearchHistory/UQCF-GEM/research/physical-bridge/JOINT_RETAINED_RESULT.md).
+- [Scoped analytical closeout](https://github.com/proteinfoldingengine/WetLabEngine/blob/63f1be4edbf0ee99f9df22012e99285d7a256829/ResearchHistory/UQCF-GEM/research/physical-bridge/JOINT_RETAINED_CLOSEOUT.md).
+
+Two labelled payloads begin with core a and must end at distinct target cores b,c. A third invariant environment root is either {b} or {c}. A core-projected miss-count field identifies the environment target type that must be established first; a labelled target-address record identifies which payload carries that target obligation.
+
+Repairing the matching payload first gives tau sequence (4,4,4,4,4). Repairing the other payload first gives (4,4,5) on its first macro and exits the protected band.
+
+Both retained channels are necessary for the declared deterministic complete-macro policy. Yet for fixed environment and target address, 2^s arbitrary spectator assignments on one payload give identical retained certificate/address data and controller transcript while producing distinct full labelled states and targets. Thus the joint retained state still does not reconstruct the full incidence state.
+
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. The next frontier is JOINT CERTIFICATE+ADDRESS FACTORIZATION.
+The full B1/B2 program is NOT closed. The next frontier is MULTI-PAYLOAD PRECEDENCE.
 
-A successful next class should allow some non-core incidences to change so that:
-1. legality of at least one permitted edit genuinely depends on the updateable aggregate certificate field;
-2. labelled route selection genuinely depends on a reduced address/difference record;
-3. conditioning on BOTH retained objects still leaves multiple full labelled incidence states hidden;
-4. the controller nevertheless reaches exact labelled destinations with a terminating proof and no undeclared support read.
+The target is a finite class in which retained aggregate certificate data and labelled target addresses derive a directed precedence graph among several endpoint-difference obligations. The proof should show:
+1. how each precedence edge is derived from retained data rather than hidden supports;
+2. acyclicity implies a legal topological repair order and exact termination;
+3. the retained certificate/graph updates after each macro without a full-state read;
+4. conditioning on the retained graph state still leaves multiple full incidence states hidden;
+5. a directed cycle gives a precise obstruction for the declared macro policy, not native disconnection.
 
-That would be the first theorem where global certificate information and labelled destination-address information are both necessary but still do not reconstruct the full incidence state.
+This would convert the present two-payload 'matching target first' rule into a reusable scheduling interface.
 
-No numerical universe or implementation is launched by this continuation update. Any computation requires a prospective domain and rejecting controls.
+No numerical universe or implementation is launched by this continuation update.
 
 ## Evidence and unchanged boundaries
 
