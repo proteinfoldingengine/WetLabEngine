@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: SINGLE-BUFFER PERMUTATION-CYCLE THEOREM CLOSED/INDEPENDENTLY ACCEPTED; COUPLED-CYCLE GENERALIZATION OPEN.
+Status: SINGLE-BUFFER THEOREM CLOSED; COUPLED-CYCLE C1 STRUCTURAL CANDIDATE PUBLISHED; C2-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -191,6 +191,17 @@ This is distinct from the earlier macro-cycle escape: that obstruction vanished 
 For n=3 or4 floor1 singleton roots with distinct labels and a target permutation, a single fresh auxiliary label w is reused to repair every nontrivial permutation cycle. The proposed exact schedule uses 2m+2c native edits for m moved roots in c nontrivial cycles and preserves pairwise disjoint supports, hence tau=n throughout. For n=3 any nonidentity target permutation is endpoint-only blocked; for n=4 endpoint-only swaps can sometimes succeed, so w is not universally necessary.
 
 The frozen result received an independent mathematical ACCEPTED verdict at 361e5931368e44b2bfc6c82fad7483d92c05455a and a separate independent publication-consistency acceptance (with reporting clarifications) published at fc618c3223e19c38f94fb9abd38b965cbaaef7e9. Reporting reconciliation is published at b6b738f54dd7cef3861da79415151a0b81192b20. The final scoped closeout is at 4f9a65bfb0e71be48e8bb14b4f9dcf3cf567ab5d. The frozen proof is unchanged.
+
+
+## Coupled-cycle theorem-first program opened (2026-10-07)
+
+- [Prospectively frozen C1-C6 scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/f95cdfef30b452e1688172b978ee2e25fb1924d8/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_AUXILIARY_SCOPE.md).
+- [C1 minimum-overlap lemma candidate](https://github.com/proteinfoldingengine/WetLabEngine/blob/5836e007044372fd61316a360a0b224e2fd1c8ea/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C1_MINIMAL_OVERLAP.md).
+- [C1 author-side audit and padded-overlap rejecting control](https://github.com/proteinfoldingengine/WetLabEngine/blob/ec471f259e6ab88f75d0f051dd6f1869e115ad1e/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C1_AUDIT.md).
+
+For n nonempty labelled roots, tau=n iff their supports are pairwise disjoint. Therefore n=3 cannot exhibit overlap in the protected band; the smallest overlapping protected carrier has n=4, with tau=3 at any overlapping endpoint. This is a proved author-side structural filter, not an independently certified coupled-cycle result.
+
+The audit also rejects a padded four-root singleton swap with a fixed overlapping root: genuine overlap does not by itself create coupled endpoint obligations. C2 must identify actual interacting obligations, with native witness/cover evidence. C3-C6 remain open. No numerical campaign has been authorized.
 
 ## Next unresolved obligation
 
