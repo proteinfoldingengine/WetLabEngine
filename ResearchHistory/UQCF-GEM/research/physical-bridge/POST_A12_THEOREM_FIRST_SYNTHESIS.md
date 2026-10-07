@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-06 (America/Phoenix).
-Status: CONCRETE THREE-PAYLOAD RETAINED PRECEDENCE ANALYTICALLY COMPLETE; CYCLE REALIZABILITY OPEN.
+Status: RETAINED MACRO-CYCLE REALIZED AND NATIVELY BYPASSED; PHASED EVENT-LEVEL INTERFACE OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -114,15 +114,34 @@ Both topological orders p,r,q and r,p,q reach the exact destination in six primi
 
 Two prospective scope corrections were made before the proof because broader hidden spectator placement could rescue the nominal tau5 state. The final carrier is therefore genuinely fiber-uniform rather than silently depending on hidden incidences.
 
+## Retained macro-cycle and native interleaving escape now completed
+
+Cycle realizability has a positive, carefully scoped answer:
+
+- [Frozen macro-cycle scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/a0a1f6a9205375f2ca2c844702d7264791650487/ResearchHistory/UQCF-GEM/research/physical-bridge/MACRO_CYCLE_SCOPE.md).
+- [Macro-cycle and interleaving theorem](https://github.com/proteinfoldingengine/WetLabEngine/blob/956d270b653a2c7eb23683de356674dd17027188/ResearchHistory/UQCF-GEM/research/physical-bridge/MACRO_CYCLE_RESULT.md).
+- [Scoped analytical closeout](https://github.com/proteinfoldingengine/WetLabEngine/blob/430bf224c7e83da105e76f830d316fdf44efc269/ResearchHistory/UQCF-GEM/research/physical-bridge/MACRO_CYCLE_CLOSEOUT.md).
+
+The residual source has unique two-cover {a,c}; the target has unique two-cover {a,b}. Completing any one of the three declared endpoint macros first destroys every residual two-cover and gives full tau=5. Hence the complete-macro policy has no initial source. Any faithful indegree-zero precedence-graph representation must contain a directed cycle, although the retained certificate does not select one canonical cycle orientation.
+
+Native connectivity survives. Preparing p and q by adding b before completing either macro creates an overlap state in which BOTH {a,c} and {a,b} are residual covers. The remaining deletions then preserve {a,b}. The explicit six-primitive path stays at full tau=4 and reaches the exact destination.
+
+Thus the macro cycle is a resolution artifact: atomic completion hides the certificate-overlap state needed for handoff.
+
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. The next frontier is CYCLE REALIZABILITY.
+The full B1/B2 program is NOT closed. The next frontier is a PHASED EVENT-LEVEL RETAINED INTERFACE.
 
-The question is now sharply constrained: can native target-four retained certificate/address formulas derive a genuine directed cycle among complete endpoint macros while all declared endpoints remain protected?
+Whole macros are now known to be too coarse: a cyclic atomic policy can become acyclic when its prepare and finish phases are exposed.
 
-A positive result must prove the retained macro deadlock and then distinguish it from native connectivity, ideally by exhibiting an interleaved or alternative path if one exists.
+The next theorem should:
+1. represent each endpoint obligation by prepare/handoff/finish events;
+2. derive event precedence from retained old/new cover or witness certificates;
+3. require fiber-uniform legality/update over hidden states;
+4. prove that an acyclic event graph yields exact completion;
+5. show the closed macro-cycle carrier as a concrete case where the event graph is acyclic although the projected whole-macro policy is cyclic/deadlocked.
 
-A negative result must derive a structural acyclicity theorem for a meaningful carrier class rather than report unsuccessful examples.
+This would formalize retained certificate handoff rather than merely exhibit one escape path.
 
 No numerical universe or implementation is launched by this continuation update.
 
