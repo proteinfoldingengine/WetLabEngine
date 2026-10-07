@@ -91,7 +91,7 @@ After deleting a from P_x, P_x contains x (and possibly Z if P_x=p). The other p
 
 Now P_x and h both contain x. The remaining payload starts at {a} (or {a} union Z if it is p).
 
-After adding y to P_y, anchors force d,e and h forces x. To hit P_y one needs a or y unless its spectator Z is used when P_y=p. If a spectator is used, G={a,b,c} still requires one core label among a,x,y, so at least one fourth label is required beyond d,e,x. Hence tau>=4.
+After adding y to P_y, anchors force d,e and h (and P_x) force x. The remaining payload P_y is disjoint from {d,e,x}: its core incidences are a,y and, when P_y=p, its spectators lie in T. Hence every cover needs a fourth label to hit P_y. The guard is already hit by x because x is b or c. Therefore tau>=4.
 
 A four-cover exists:
     {d,e,x,a}
