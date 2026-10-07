@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-06 (America/Phoenix).
-Status: FIXED-RESIDUAL HANDOVER AND DECLARED DYNAMIC-RESIDUAL UPDATEABILITY ANALYTICALLY COMPLETE; SELECTION/COMPLETION OPEN.
+Status: FIXED-RESIDUAL HANDOVER, DYNAMIC UPDATEABILITY, AND BINARY LABELLED SELECTION ANALYTICALLY COMPLETE; RICHER FACTORIZATION OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -40,15 +40,37 @@ For a named residual edit S->S', each coordinate updates locally by subtracting 
 
 This closes legality/updateability for DECLARED edits. It does not select a hidden residual root, discover its unretained support, or prove arbitrary endpoint completion.
 
+## Binary labelled selection/completion now completed
+
+The first bounded selection/completion theorem is now published:
+
+- [Frozen selection/completion scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/eff1e50769c4e73bd325fe8b1ff06a72ea06d2ee/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_SELECTION_COMPLETION_SCOPE.md).
+- [Exact labelled-address theorem](https://github.com/proteinfoldingengine/WetLabEngine/blob/1e89814d397763cbfe8157b7cc484a3ba45b5819/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_SELECTION_COMPLETION_RESULT.md).
+- [Scoped analytical closeout](https://github.com/proteinfoldingengine/WetLabEngine/blob/b5883356c2ec2eadf57fc1f9655998b687bd2129/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_SELECTION_COMPLETION_CLOSEOUT.md).
+
+In the selected binary-singleton residual class, the aggregate M_R field depends only on how many labelled residual roots carry {a} versus {b}, not which roots carry them. Two same-count sources can therefore have identical M_R and the same exact target but require different labelled first edits.
+
+Retaining the labelled mismatch set Q resolves selection. The deterministic controller repairs the least root in Q by {b}->{a,b}->{a}; every primitive remains in 3<=tau<=4, |Q| decreases by one per macro, and the exact labelled target is reached in 2|Q| edits.
+
+For fixed mismatch count m, any deterministic no-read endpoint-directed controller must distinguish all binomial(n,m) labelled mismatch sets; otherwise two hidden states with the same retained record and same aggregate M trajectory eventually require disjoint next roots. Thus the supplemental address record needs at least ceil(log2 binomial(n,m)) fixed-length bits in that policy model.
+
+In this deliberately tiny class Q itself reconstructs the residual incidence state, so M_R is redundant once Q is known. The result establishes the certificate/address distinction but is NOT yet a nontrivial compression theorem.
+
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. Arbitrary full endpoint restoration and a terminating retained-information controller remain outside the completed items.
+The full B1/B2 program is NOT closed. The next unresolved question is a RICHER FACTORIZATION in which labelled address information does not simply reconstruct every residual incidence.
 
-The next mathematical task is now SELECTION/COMPLETION. A broader controller must specify how a residual root is selected and how its current support becomes available without an undeclared global read, then prove that its legal choices terminate at an exact stated endpoint class. The information obligations must remain separated: initialization, active-root access, legality, retained-record update, route selection, and termination.
+The target is a support class with multiple possible support patterns per labelled root and a declared finite family of endpoint-directed macros. The proof should compare the number of hidden full states with the number of retained address states and establish:
 
-M_R solves legality/updateability once a named active root and its support are supplied. It is not asserted minimal, compressed, observer-accessible, or sufficient by itself to choose the next hidden root.
+    aggregate certificate state
+    + reduced labelled address/difference state
+    -> legal terminating exact completion,
 
-No numerical universe or implementation is launched by this continuation update. Any needed computation requires its own prospective domain, reference calculation, rejecting controls and GitHub execution scope.
+without an undeclared support read.
+
+A valid theorem must preserve exact floors and 3<=tau<=4, quantify what distinctions the controller must retain, and state whether any apparent compression is genuine rather than a re-encoding of the full incidence state.
+
+No numerical universe or implementation is launched by this continuation update. Any computation requires a prospective domain and rejecting controls.
 
 ## Evidence and unchanged boundaries
 
