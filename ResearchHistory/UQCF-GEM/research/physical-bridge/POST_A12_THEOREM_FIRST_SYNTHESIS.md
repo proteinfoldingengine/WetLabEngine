@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-06 (America/Phoenix).
-Status: JOINT CERTIFICATE+ADDRESS FACTORIZATION ANALYTICALLY COMPLETE IN A BOUNDED CLASS; MULTI-PAYLOAD PRECEDENCE OPEN.
+Status: RETAINED-QUOTIENT PRECEDENCE INTERFACE ANALYTICALLY COMPLETE; CONCRETE MULTI-VERTEX REALIZABILITY OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -86,18 +86,34 @@ Repairing the matching payload first gives tau sequence (4,4,4,4,4). Repairing t
 
 Both retained channels are necessary for the declared deterministic complete-macro policy. Yet for fixed environment and target address, 2^s arbitrary spectator assignments on one payload give identical retained certificate/address data and controller transcript while producing distinct full labelled states and targets. Thus the joint retained state still does not reconstruct the full incidence state.
 
+## Retained-quotient precedence interface now completed
+
+The two-payload precedence has been extracted into a reusable sufficient interface:
+
+- [Frozen precedence-interface scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/28ec21aee2b2bcc3aaee271b75c0ee85bda9d422/ResearchHistory/UQCF-GEM/research/physical-bridge/PRECEDENCE_INTERFACE_SCOPE.md).
+- [Retained quotient precedence theorem](https://github.com/proteinfoldingengine/WetLabEngine/blob/00a58b1b3d9d6b1c0c190995a18c5d5e5d19cd40/ResearchHistory/UQCF-GEM/research/physical-bridge/PRECEDENCE_INTERFACE_RESULT.md).
+- [Scoped analytical closeout](https://github.com/proteinfoldingengine/WetLabEngine/blob/e81c236b707d2ed1c5e07ebe806858bac83f1f25/ResearchHistory/UQCF-GEM/research/physical-bridge/PRECEDENCE_INTERFACE_CLOSEOUT.md).
+
+A retained state is treated as a quotient of full incidence states. For each unfinished obligation set, retained data derive a precedence graph. The key hypothesis is fiber-uniformity: every indegree-zero macro must be legal for every hidden full state represented by the retained record and must map all of them to one deterministic next retained record.
+
+Under exact obligation completion and graph renewal by induced-subgraph deletion, any acyclic retained graph yields protected exact completion after exactly one macro per obligation. A directed cycle is an exact deadlock for the indegree-zero-only macro policy because no cycle vertex can become eligible while the cycle persists. This is explicitly not a native-disconnection theorem.
+
+The closed two-payload joint theorem embeds as the one-edge graph P_x -> P_y while retaining 2^s hidden spectator states.
+
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. The next frontier is MULTI-PAYLOAD PRECEDENCE.
+The full B1/B2 program is NOT closed. The next frontier is CONCRETE MULTI-VERTEX REALIZABILITY.
 
-The target is a finite class in which retained aggregate certificate data and labelled target addresses derive a directed precedence graph among several endpoint-difference obligations. The proof should show:
-1. how each precedence edge is derived from retained data rather than hidden supports;
-2. acyclicity implies a legal topological repair order and exact termination;
-3. the retained certificate/graph updates after each macro without a full-state read;
-4. conditioning on the retained graph state still leaves multiple full incidence states hidden;
-5. a directed cycle gives a precise obstruction for the declared macro policy, not native disconnection.
+The interface theorem is only sufficient structure. The next scientific task is to derive a precedence graph directly from native retained certificate+address formulas in a concrete carrier with at least three labelled obligations.
 
-This would convert the present two-payload 'matching target first' rule into a reusable scheduling interface.
+A successful realization must:
+1. derive at least two nontrivial precedence edges without hidden-state reads;
+2. prove fiber-uniform legality for each eligible macro;
+3. update the retained certificate and renew the graph after each macro;
+4. preserve multiple hidden full states under the same retained trajectory;
+5. exhibit a concrete cyclic retained graph that blocks the declared macro policy, while distinguishing that from native connectivity.
+
+This is the test of whether retained precedence is a recurring native mechanism rather than merely an abstract scheduling wrapper.
 
 No numerical universe or implementation is launched by this continuation update.
 
