@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: SINGLE-BUFFER THEOREM CLOSED; COUPLED-CYCLE C1 STRUCTURAL CANDIDATE PUBLISHED; C2-C6 OPEN.
+Status: SINGLE-BUFFER THEOREM CLOSED; COUPLED C1 INDEPENDENTLY ACCEPTED; C2 PROOF CANDIDATE UNDER REVIEW; C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -202,6 +202,18 @@ The frozen result received an independent mathematical ACCEPTED verdict at 361e5
 For n nonempty labelled roots, tau=n iff their supports are pairwise disjoint. Therefore n=3 cannot exhibit overlap in the protected band; the smallest overlapping protected carrier has n=4, with tau=3 at any overlapping endpoint. This is a proved author-side structural filter, not an independently certified coupled-cycle result.
 
 The audit also rejects a padded four-root singleton swap with a fixed overlapping root: genuine overlap does not by itself create coupled endpoint obligations. C2 must identify actual interacting obligations, with native witness/cover evidence. C3-C6 remain open. No numerical campaign has been authorized.
+
+
+## C1 accepted; active four-root C2 carrier published (2026-10-07)
+
+- [C1 independent mathematical verdict](https://github.com/proteinfoldingengine/WetLabEngine/blob/29e259186a1dafb976a565a62b549b02e986ba09/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C1_INDEPENDENT_REVIEW.md) — ACCEPTED with minor declaration of the auxiliary palette label w in the padded control.
+- [Frozen C2 carrier](https://github.com/proteinfoldingengine/WetLabEngine/blob/c00318259d31c92e2dd0bd7a3ce97755bf74ea02/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_SCOPE.md).
+- [C2 complete proof candidate](https://github.com/proteinfoldingengine/WetLabEngine/blob/5d4e7548c03c7c13b04f25f5a39cb723a684ceb6/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_RESULT.md).
+- [C2 author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/blob/e12dca9218de6e3db9bbea5f6971b01158b879d3/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_AUDIT.md).
+
+The C2 carrier has four active labelled roots with source ({a},{b},{c},{a,d}) and target ({b},{a},{c},{b,c}), all floors1. A complete eight-edit endpoint-only path preserves tau=3. M2-first is unsafe, and completing M4 first changes both other macros' first additions from potentially protected to tau=2 violations. Unlike the earlier padded control, M4 is itself an endpoint obligation that changes witness availability.
+
+This establishes a concrete candidate for coupled order-dependence, NOT an auxiliary-necessity or coupled-cycle theorem. Fresh external C2 mathematical review launched: job 01a11835-dee1-77ee-8285-5854a3f05566. C3-C6 remain open. No numerical campaign or physical claim.
 
 ## Next unresolved obligation
 
