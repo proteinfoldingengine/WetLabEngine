@@ -5,3 +5,5 @@
 Audit job: 01a11806-6b95-729b-bac7-8ec3c8233402. Verdict: publication-consistent with reporting clarifications.
 
 Reviewer: spark-2. Thread: 01a11806-6bc2-7568-b106-bb97a84b1bf5. Verified proof commit dcec4d02f79539c4b4ba0e5eb827917149040e77 and review commit 361e5931368e44b2bfc6c82fad7483d92c05455a. Earlier main-branch search in audit 01a117ff-f16a-72fd-8f71-ab5b6dc722d1 was inconclusive for the research branch.
+
+Verified scope: n=3 or 4, singleton supports, floor1, prescribed permutation target, one globally fresh label. Corrective reporting is at commit b6b738f5. The older main-branch audit was not a mathematical contradiction. No physical interpretation is claimed.
