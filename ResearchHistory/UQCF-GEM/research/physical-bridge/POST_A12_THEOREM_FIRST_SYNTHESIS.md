@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-06 (America/Phoenix).
-Status: FIXED-RESIDUAL HANDOVER, DYNAMIC UPDATEABILITY, AND BINARY LABELLED SELECTION ANALYTICALLY COMPLETE; RICHER FACTORIZATION OPEN.
+Status: RETAINED-STATE FACTORIZATION WITH HIDDEN INVARIANT INCIDENCES ANALYTICALLY COMPLETE; JOINT CERTIFICATE+ADDRESS FACTORIZATION OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -56,19 +56,33 @@ For fixed mismatch count m, any deterministic no-read endpoint-directed controll
 
 In this deliberately tiny class Q itself reconstructs the residual incidence state, so M_R is redundant once Q is known. The result establishes the certificate/address distinction but is NOT yet a nontrivial compression theorem.
 
+## Hidden-spectator factorization now completed
+
+A richer exact-completion class now proves genuine retained-state reduction:
+
+- [Frozen hidden-spectator scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/1dde3e9887cc840a42e8bbe6bb750710094ecf81/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_RICHER_FACTORIZATION_SCOPE.md).
+- [Exact hidden-spectator completion theorem](https://github.com/proteinfoldingengine/WetLabEngine/blob/eee9eba17ec2f272949051dcd7533e4424ab33f3/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_RICHER_FACTORIZATION_RESULT.md).
+- [Scoped analytical closeout](https://github.com/proteinfoldingengine/WetLabEngine/blob/3c1f302324e8560424d7a7fa3d22da64b84ff409/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_RICHER_FACTORIZATION_CLOSEOUT.md).
+
+Each labelled residual root carries a mutable core a/b plus an arbitrary immutable spectator subset Z_r from s spectator labels. The controller retains only the labelled core mismatch set Q. It repairs b->a in each mismatched root by Add a then Del b, while never reading or toggling Z_r.
+
+The band is structural: c,d are forced by the anchors, the guards force one of a,b, and {a,b,c,d} remains a four-cover because every residual root always contains a or b. Thus every primitive stays in 3<=tau<=4.
+
+For fixed Q there are 2^(ns) different labelled spectator assignments with the same controller transcript; with all residual floors fixed to1, even floor metadata is identical. The exact final supports {a} union Z_r are restored because the hidden spectator incidences are invariant. Q therefore does NOT reconstruct the full residual state.
+
+This is a genuine information-factorization result, but M_R is unnecessary because legality is structurally guaranteed. It does not yet make aggregate certificate information and reduced address information simultaneously active.
+
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. The next unresolved question is a RICHER FACTORIZATION in which labelled address information does not simply reconstruct every residual incidence.
+The full B1/B2 program is NOT closed. The next frontier is JOINT CERTIFICATE+ADDRESS FACTORIZATION.
 
-The target is a support class with multiple possible support patterns per labelled root and a declared finite family of endpoint-directed macros. The proof should compare the number of hidden full states with the number of retained address states and establish:
+A successful next class should allow some non-core incidences to change so that:
+1. legality of at least one permitted edit genuinely depends on the updateable aggregate certificate field;
+2. labelled route selection genuinely depends on a reduced address/difference record;
+3. conditioning on BOTH retained objects still leaves multiple full labelled incidence states hidden;
+4. the controller nevertheless reaches exact labelled destinations with a terminating proof and no undeclared support read.
 
-    aggregate certificate state
-    + reduced labelled address/difference state
-    -> legal terminating exact completion,
-
-without an undeclared support read.
-
-A valid theorem must preserve exact floors and 3<=tau<=4, quantify what distinctions the controller must retain, and state whether any apparent compression is genuine rather than a re-encoding of the full incidence state.
+That would be the first theorem where global certificate information and labelled destination-address information are both necessary but still do not reconstruct the full incidence state.
 
 No numerical universe or implementation is launched by this continuation update. Any computation requires a prospective domain and rejecting controls.
 
