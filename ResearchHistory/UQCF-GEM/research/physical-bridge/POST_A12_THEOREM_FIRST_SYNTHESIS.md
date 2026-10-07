@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-06 (America/Phoenix).
-Status: RETAINED MACRO-CYCLE REALIZED AND NATIVELY BYPASSED; PHASED EVENT-LEVEL INTERFACE OPEN.
+Status: PHASED RETAINED-EVENT INTERFACE ANALYTICALLY COMPLETE; AUTOMATIC CERTIFICATE-HANDOFF DERIVATION OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -128,20 +128,35 @@ Native connectivity survives. Preparing p and q by adding b before completing ei
 
 Thus the macro cycle is a resolution artifact: atomic completion hides the certificate-overlap state needed for handoff.
 
+## Phased retained-event interface now completed
+
+The macro-cycle escape has been promoted to a reusable event-level theorem:
+
+- [Frozen phased-event scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/66556bbeb7c49a17e1a53f6efa59da8bda8c94d9/ResearchHistory/UQCF-GEM/research/physical-bridge/PHASED_EVENT_INTERFACE_SCOPE.md).
+- [Phased retained-event theorem](https://github.com/proteinfoldingengine/WetLabEngine/blob/4675afe7b90515502245ff09b39d992d54daf22e/ResearchHistory/UQCF-GEM/research/physical-bridge/PHASED_EVENT_INTERFACE_RESULT.md).
+- [Scoped analytical closeout](https://github.com/proteinfoldingengine/WetLabEngine/blob/e50ccd46bd3adae7ae9b9f359570a04a297a8ae5/ResearchHistory/UQCF-GEM/research/physical-bridge/PHASED_EVENT_INTERFACE_CLOSEOUT.md).
+
+A retained repair may now expose native PREPARE and FINISH events plus proof-only certificate HANDOFF markers. Fiber-uniform event legality/update and an acyclic retained event graph imply exact protected completion.
+
+The closed macro-cycle carrier embeds with acyclic event graph Pp,Pq -> H -> Fr,Fp,Fq1 -> Fq2. Before H the old cover {a,c} persists; after both preparations the replacement cover {a,b} also exists; after H the new cover protects all finishing deletions.
+
+Crucially, this acyclic event graph has no topological execution satisfying whole-macro contiguity: p's finish requires q's preparation, q's finish requires p's preparation, and r requires the handoff. The earlier macro deadlock is therefore formally identified as a coarse scheduling/contiguity effect, not native disconnection.
+
 ## Next unresolved obligation
 
-The full B1/B2 program is NOT closed. The next frontier is a PHASED EVENT-LEVEL RETAINED INTERFACE.
+The full B1/B2 program is NOT closed. The next frontier is AUTOMATIC CERTIFICATE-HANDOFF DERIVATION.
 
-Whole macros are now known to be too coarse: a cyclic atomic policy can become acyclic when its prepare and finish phases are exposed.
+The phased theorem still receives its prepare/finish partition and handoff marker as supplied structure. The next result must derive them from retained certificate data itself.
 
-The next theorem should:
-1. represent each endpoint obligation by prepare/handoff/finish events;
-2. derive event precedence from retained old/new cover or witness certificates;
-3. require fiber-uniform legality/update over hidden states;
-4. prove that an acyclic event graph yields exact completion;
-5. show the closed macro-cycle carrier as a concrete case where the event graph is acyclic although the projected whole-macro policy is cyclic/deadlocked.
+For upper protection, the target is to derive:
+1. which endpoint additions are required to install a replacement <=4 cover;
+2. which source deletions can destroy the current cover;
+3. the precedence edges placing all required gains before the handoff and all dangerous losses after it;
+4. a fiber-uniform test that the replacement cover is guaranteed before the handoff fires.
 
-This would formalize retained certificate handoff rather than merely exhibit one escape path.
+The closed macro-cycle carrier should emerge from this rule without manually prescribing Pp,Pq,H,Fp,Fq.
+
+A later dual theorem should derive lower pair-witness handoff.
 
 No numerical universe or implementation is launched by this continuation update.
 
