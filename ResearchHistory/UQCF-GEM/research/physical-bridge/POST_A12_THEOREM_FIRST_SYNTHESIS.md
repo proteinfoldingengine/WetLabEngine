@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: BOUNDED C3 CLOSED; CONDITIONAL CAPACITY OBSERVABILITY MATHEMATICALLY ACCEPTED/PUBLICATION AUDIT PENDING; NATIVE INTERFACE SOURCE AUDIT UNDER REVIEW; BROADER C3-C6 OPEN.
+Status: BOUNDED C3 CLOSED; CONDITIONAL CAPACITY OBSERVABILITY CLOSED; NATIVE INTERFACE MATHEMATICALLY ACCEPTED/PUBLICATION AUDIT PENDING; BROADER C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -322,6 +322,16 @@ Independent mathematical review job 01a119a1-f593-729d-af2c-c44fba48dba6 is pend
 Direct reading of earlier POST_A12_DYNAMIC_RESIDUAL_RESULT.md revealed an EXISTING full-palette miss-count certificate. When r4 alone is residual, M_R({z})=1-1[z in Z] for each spectator z; thus b=OR_{z in T}(1-M_R({z})). By contrast core-only R/M_core/Q/D and floors2 cannot distinguish Z empty from nonempty. This is a conditional mathematical extraction from a previously published certificate, NOT proof of initialization or native observer accessibility. Prior dynamic-residual work explicitly requires a declared active-root support for updates and does not prove that full-palette M_R can be initialized from a hidden state without a full read.
 
 Independent source-audit review job 01a119a5-c39b-7487-983e-7dc5a0e359f5 is processing. Separate publication audit of the conditional observability theorem job 01a119a6-063b-753e-8645-a9c17abcc417 is processing. The next unresolved gate is a genuine first-principles initialization/access mechanism, not the algebraic existence of a capacity bit.
+
+
+## Conditional capacity observability scoped closeout
+
+- [Independent mathematical review](https://github.com/proteinfoldingengine/WetLabEngine/commit/1e69741891d19ef5c4480cef8dd5aa5f5a848e65).
+- [Independent publication audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/e25889f5a9fb9e9c2f10af7ca5c6fc46c04b31ce).
+- [Final conditional closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/3a1ae9fe728a04b9779b4879e4c9ac06d9c59712).
+- [Native interface mathematical ACCEPTED review](https://github.com/proteinfoldingengine/WetLabEngine/commit/2359e734d8037e3708c6ea581728b6a102102246).
+
+The conditional theorem sigma4=|Z| and hypothetical-edit legality b=1[Z nonempty] is independently accepted and publication-closed within the explicit I0/I1/I2 scope. The native-interface source audit is mathematically accepted: full-palette miss counts can represent b if initialized, but no native initialization/observer-access derivation is established. Its separate publication audit job 01a119a9-ee3e-768d-b19e-8bfb3494368f remains in progress. Broader C3 and C4-C6 remain open.
 
 ## Next unresolved obligation
 
