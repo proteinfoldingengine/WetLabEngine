@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: SINGLE-BUFFER THEOREM CLOSED; COUPLED C1 INDEPENDENTLY ACCEPTED; C2 PROOF CANDIDATE UNDER REVIEW; C3-C6 OPEN.
+Status: SINGLE-BUFFER THEOREM CLOSED; COUPLED C1 INDEPENDENTLY ACCEPTED; C2 CLOSED/INDEPENDENTLY ACCEPTED; C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -214,6 +214,17 @@ The audit also rejects a padded four-root singleton swap with a fixed overlappin
 The C2 carrier has four active labelled roots with source ({a},{b},{c},{a,d}) and target ({b},{a},{c},{b,c}), all floors1. A complete eight-edit endpoint-only path preserves tau=3. M2-first is unsafe, and completing M4 first changes both other macros' first additions from potentially protected to tau=2 violations. Unlike the earlier padded control, M4 is itself an endpoint obligation that changes witness availability.
 
 This establishes a concrete candidate for coupled order-dependence, NOT an auxiliary-necessity or coupled-cycle theorem. Fresh external C2 mathematical review launched: job 01a11835-dee1-77ee-8285-5854a3f05566. C3-C6 remain open. No numerical campaign or physical claim.
+
+
+## C2 independent closeout completed
+
+- [Initial REVISE record](https://github.com/proteinfoldingengine/WetLabEngine/commit/7da41a7d6792ef445862c07dfce01704c294c143).
+- [Corrected frozen proof](https://github.com/proteinfoldingengine/WetLabEngine/commit/0d91bb646a3b641cce7c9c90ca462aa767400ce8).
+- [Fresh independent mathematical ACCEPTED review](https://github.com/proteinfoldingengine/WetLabEngine/commit/3aea01fdd5acfdd4b66089b148fcff21c0f63e03).
+- [Separate independent publication audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/d36b3a068b29a2f869ccb173f263b58200d1711e) — ACCEPTED WITH REPORTING CORRECTIONS.
+- [Final scoped C2 closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/787467cc6a1bfc9f09f586809948ebfe16d32742).
+
+The revised proof's header still says re-review was required; that is an immutable pre-review snapshot, superseded by the later independent ACCEPTED review. The bounded C2 theorem is now closed. It establishes an eight-edit tau=3 protected path and order-dependent witness failures in one active four-root carrier. It does NOT establish necessity of an auxiliary or a coupled-cycle deadlock. C3-C6 remain OPEN.
 
 ## Next unresolved obligation
 
