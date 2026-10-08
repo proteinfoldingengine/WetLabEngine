@@ -15,6 +15,7 @@ names = (
     "COUPLED_C3_CORE_PROBE_SCOPE.md",
     "COUPLED_C3_CORE_PROBE_RESULT.md",
     "COUPLED_C3_CORE_PROBE_AUDIT.md",
+    "COUPLED_C3_CORE_PROBE_TRANSITION_CLARIFICATION.md",
 )
 out = pathlib.Path("core_probe_review")
 out.mkdir(exist_ok=True)
@@ -48,14 +49,14 @@ prompt = (
 )
 payload = {"contents": [{"parts": [{"text": prompt + "\n\n" + "\n\n".join(
     "DOCUMENT " + n + "\n" + docs[n] for n in names)}]}],
-    "generationConfig": {"temperature": 0, "maxOutputTokens": 4096}}
+    "generationConfig": {"temperature": 0, "maxOutputTokens": 16384}}
 req = urllib.request.Request(
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent",
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent",
     data=json.dumps(payload).encode("utf-8"),
     headers={"Content-Type": "application/json", "x-goog-api-key": key},
     method="POST")
 try:
-    with urllib.request.urlopen(req, timeout=100) as response:
+    with urllib.request.urlopen(req, timeout=240) as response:
         result = json.load(response)
 except urllib.error.HTTPError as exc:
     print("FAIL: Gemini HTTP", exc.code)

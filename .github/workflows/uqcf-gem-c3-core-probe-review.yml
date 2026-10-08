@@ -15,20 +15,32 @@ jobs:
   independent-review:
     name: Independent C3 core-history mathematical review
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     steps:
       - name: Checkout reviewer
         uses: actions/checkout@v4
       - name: Checkout pinned core-probe proof
         uses: actions/checkout@v4
         with:
-          ref: 9bce6bfcdc74ba109d108cede970d361c1545e08
+          ref: 4f0f70f46c547f7ba287e7685bfc95ba8a585a7d
           path: research_snapshot
           persist-credentials: false
           sparse-checkout: |
             ResearchHistory/UQCF-GEM/research/physical-bridge
           sparse-checkout-cone-mode: false
           fetch-depth: 1
+      - name: Reproduce bounded graph and run independent rejecting controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p core_probe_review
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT" -p test_core_probe_replay.py -v 2>&1 | tee core_probe_review/replay_tests.log
+          python3 -m unittest discover -s "$ROOT/verification" -p 'test_*.py' -v 2>&1 | tee core_probe_review/independent_tests.log
+          python3 "$ROOT/COUPLED_C3_CORE_PROBE_REPLAY.py" > core_probe_review/reproduced.json
+          python3 "$ROOT/verification/c3_core_probe_independent.py" core_probe_review/reproduced.json | tee core_probe_review/independent_verdict.json
+          cd research_snapshot
+          python3 ResearchHistory/UQCF-GEM/research/physical-bridge/verification/verify.py --output ../core_probe_review/a12_baseline.json 2>&1 | tee ../core_probe_review/a12_baseline.log
       - name: Independent adversarial Gemini mathematical review
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
