@@ -1,0 +1,24 @@
+test_duplicate_json_keys_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_duplicate_json_keys_rejected) ... ok
+test_fresh_producer_matches_stored_evidence_and_independent_checker (test_c3_core_probe_independent.IndependentC3Contracts.test_fresh_producer_matches_stored_evidence_and_independent_checker) ... ok
+test_isolated_checker_without_producer (test_c3_core_probe_independent.IndependentC3Contracts.test_isolated_checker_without_producer) ... ok
+test_metadata_and_coverage_forgery_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_metadata_and_coverage_forgery_rejected) ... ok
+test_missing_duplicate_and_changed_graph_records_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_missing_duplicate_and_changed_graph_records_rejected) ... ok
+test_restored_fibers_and_empty_core (test_c3_core_probe_independent.IndependentC3Contracts.test_restored_fibers_and_empty_core) ... ok
+test_saved_complete_evidence (test_c3_core_probe_independent.IndependentC3Contracts.test_saved_complete_evidence) ... ok
+test_wrong_deficit_and_boolean_integer_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_wrong_deficit_and_boolean_integer_rejected) ... ok
+test_addition_margins_decide_the_original_control (test_contracts.Contracts.test_addition_margins_decide_the_original_control) ... ok
+test_both_primitive_update_identities (test_contracts.Contracts.test_both_primitive_update_identities) ... ok
+test_consolidated_overlap_fixtures_match_original_sources (test_contracts.Contracts.test_consolidated_overlap_fixtures_match_original_sources) ... ok
+test_coverage_rejects_omission_and_duplicate (test_contracts.Contracts.test_coverage_rejects_omission_and_duplicate) ... ok
+test_deletion_surviving_cover_and_floor_are_separate (test_contracts.Contracts.test_deletion_surviving_cover_and_floor_are_separate) ... ok
+test_direct_transversal_and_exception_conventions (test_contracts.Contracts.test_direct_transversal_and_exception_conventions) ... ok
+test_exact_pair_and_cover_fields (test_contracts.Contracts.test_exact_pair_and_cover_fields) ... ok
+test_frozen_original_blob_identities (test_contracts.Contracts.test_frozen_original_blob_identities) ... ok
+test_independent_complete_identity_generators (test_contracts.Contracts.test_independent_complete_identity_generators) ... ok
+test_same_candidate_can_acquire_empty_shadow (test_contracts.Contracts.test_same_candidate_can_acquire_empty_shadow) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.157s
+
+OK
+C3 independent bounded verification: {"deficit_used_to_generate_beliefs": false, "edges": [46, 96], "full_assignments_enumerated": [64, 128], "independent_mathematical_review": false, "nodes": [4, 8], "scope": "fixed triangle; root-4 core edits; N=1,2 only", "status": "ALGORITHMICALLY_INDEPENDENT_BOUNDED_PASS"}
