@@ -19,11 +19,7 @@ try:
         raise ValueError("Review response digest mismatch")
     expected = {
         "COUPLED_C3_SAFE_PROBE_SCOPE.md",
-        "COUPLED_C3_SAFE_PROBE_RESULT.md",
-        "COUPLED_C3_SAFE_PROBE_AUDIT.md",
-        "COUPLED_C3_SAFE_PROBE_CLARIFICATION.md",
-        "COUPLED_C3_SAFE_PROBE_VERDICT_ADJUDICATION.md",
-        "COUPLED_C3_SAFE_PROBE_COORDINATE_AUDIT.md",
+        "COUPLED_C3_SAFE_PROBE_CONSOLIDATED.md",
     }
     if set(manifest.get("input_sha256", {})) != expected:
         raise ValueError("Unexpected or missing research proof inputs")
