@@ -1,0 +1,43 @@
+name: UQCF-GEM C3 native core-probe review
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/uqcf-gem-c3-core-probe-review.yml'
+      - '.github/scripts/c3_core_probe_review.py'
+
+permissions:
+  contents: read
+
+jobs:
+  independent-review:
+    name: Independent C3 core-history mathematical review
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout reviewer
+        uses: actions/checkout@v4
+      - name: Checkout pinned core-probe proof
+        uses: actions/checkout@v4
+        with:
+          ref: 9bce6bfcdc74ba109d108cede970d361c1545e08
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
+      - name: Independent adversarial Gemini mathematical review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/c3_core_probe_review.py
+      - name: Preserve complete independent review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c3-core-probe-independent-review
+          path: core_probe_review/
+          if-no-files-found: warn
+          retention-days: 30
