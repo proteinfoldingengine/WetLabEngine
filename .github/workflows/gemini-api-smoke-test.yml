@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   gemini-smoke-test:
-    name: Diagnose Gemini model generation access
+    name: Test requested image model and text fallback
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -83,42 +83,50 @@ jobs:
           if not supported:
               sys.exit("FAIL: No supported Gemini models returned.")
 
+          requested = "models/gemini-2.5-flash-image"
+          print("Requested model advertised:", requested in supported)
+
           def rank(name):
-              if name == "models/gemini-2.5-flash": return (0, name)
-              if "flash" in name and "2.5" in name: return (1, name)
-              if "flash" in name and "2.0" in name: return (2, name)
-              if "flash" in name: return (3, name)
-              return (4, name)
+              if name == requested: return (0, name)
+              if name == "models/gemini-2.5-flash": return (1, name)
+              if "flash" in name and "2.5" in name: return (2, name)
+              if "flash" in name and "2.0" in name: return (3, name)
+              if "flash" in name: return (4, name)
+              return (5, name)
 
           ordered = sorted(supported, key=rank)
-          # Probe up to three distinct advertised models; v1beta then v1.
+          # Test requested image model first, then at most two advertised alternatives.
           # A single successful request ends testing to minimize API usage.
           payload = {
               "contents": [{"parts": [{"text": "Reply with exactly OK."}]}],
               "generationConfig": {"temperature": 0, "maxOutputTokens": 64},
           }
-          for name in ordered[:3]:
+          candidates = [requested] + [name for name in ordered if name != requested][:2]
+          for name in candidates:
               for version in ("v1beta", "v1"):
                   print(f"Testing {version}/{name}: ", end="", flush=True)
                   code, body, error = request(f"{version}/{name}:generateContent", payload)
                   if code == 200:
-                      parts = [p.get("text", "") for c in body.get("candidates", [])
+                      parts = [p for c in body.get("candidates", [])
                                for p in c.get("content", {}).get("parts", [])]
-                      if any(isinstance(t, str) and t.strip() for t in parts):
+                      has_text = any(isinstance(p.get("text"), str) and p["text"].strip() for p in parts)
+                      has_image = any(isinstance(p.get("inlineData"), dict) and p["inlineData"].get("data") for p in parts)
+                      if has_text or has_image:
                           print("PASS")
                           print("Working endpoint:", f"{version}/{name}")
+                          print("Response modalities:", "text" if has_text else "", "image" if has_image else "")
                           print("Reported model:", body.get("modelVersion", "not reported"))
                           print("Total tokens:", body.get("usageMetadata", {}).get("totalTokenCount", "not reported"))
                           print("No key or generated text printed.")
                           sys.exit(0)
-                      print("HTTP 200 but no text generated")
+                      print("HTTP 200 but no text or image generated")
                   else:
                       print(f"HTTP {code}, API status {error}")
                       if code in (401, 403, 429):
                           print("Stopping on authentication, permission, or quota error.")
                           sys.exit(1)
 
-          print("FAIL: No tested advertised model generated text.")
+          print("FAIL: No tested model generated text or image.")
           print("Check Gemini API project access, restrictions and model endpoint availability.")
           sys.exit(1)
           PY
