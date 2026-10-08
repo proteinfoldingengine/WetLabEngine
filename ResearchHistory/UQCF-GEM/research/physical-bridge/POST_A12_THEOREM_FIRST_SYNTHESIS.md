@@ -373,6 +373,16 @@ With finite spectator palette size N and a COMPLETE valid r4 spectator event-dir
 
 This is a conditional analytical candidate; independent review job 01a119b4-060a-7349-85f4-f81ee21bf3b5 is processing. It does not derive completeness or physical observer access. Broader C3 and C4-C6 remain OPEN.
 
+
+## C3 partial-seed event theorem independently closed
+
+- [Final accepted corrected proof](https://github.com/proteinfoldingengine/WetLabEngine/commit/e5723dd1b8f52adf5af424c98dccdabe8a5d1853).
+- [Independent mathematical ACCEPTED review](https://github.com/proteinfoldingengine/WetLabEngine/commit/aa147815218514df87458673b586eb80bd6a8b5a).
+- [Independent publication audit ACCEPTED](https://github.com/proteinfoldingengine/WetLabEngine/commit/1b24bb0c48182134f54054f357e2adaf568a0adf).
+- [Final bounded closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/5b0c4cab8814bf7a1b77971bd3036747df89831c).
+
+For a known finite spectator palette and complete valid root-addressed sign ledger, exact feasible initial spectator counts are [max(0,-min prefix sum), min(N,N-max prefix sum)]. Current count interval determines whether b=0, b=1, or ambiguous. A safe eight-edit buffer route exists uniformly, whereas the six-edit shortest route requires nonempty spectators; no universal shortest first move exists in ambiguous fibers. Fresh w outside T is a uniform buffer, NOT a unique optimal label. This bounded mathematical theorem is independently accepted and publication audited, but the existence of the complete native observer event channel is not derived. Broader C3/C4-C6 remain OPEN.
+
 ## Next unresolved obligation
 
 The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
