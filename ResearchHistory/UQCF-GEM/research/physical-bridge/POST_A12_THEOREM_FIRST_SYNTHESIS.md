@@ -16,6 +16,7 @@ Latest complete domain: 14 states, 110 probe outcomes, 6 service outcomes; 43 te
 
 ## Next obligation
 Continue the [native record-origin dependency reduction](COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md): derive accessible core records and native enforcement from existing typed retained/update inputs. An admissible-state relation alone is not an implementation or actual-record selection law. Do not add an observer-side hidden-state oracle or impose progress.
+The [ten-source dependency inspection](COUPLED_C3_NATIVE_RECORD_ORIGIN_DEPENDENCIES.md) now identifies the remaining supplied inputs in the verifier, retained-count and RAS/RCR routes. This is an OPEN author working note; no new theorem or Gemini acceptance is claimed.
 The observation-fiber criterion remains the factorization test; direct-tau dependence has been reduced, not the entire observer-origin problem solved.
 
 Research-source changes have event-driven verification/review workflows. Historical publications need not rerun unchanged mathematics. Separate publication audit and author reconciliation remain required for future closure. The existing monitor schedules discrete checks, not continuous background research.
