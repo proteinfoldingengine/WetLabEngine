@@ -14,6 +14,7 @@ from pathlib import Path, PurePosixPath
 import re
 import stat
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -116,7 +117,7 @@ class API:
             data=encoded(data) if data is not None else None, method=method,
             headers={'Authorization': 'Bearer ' + self.token,
                      'Accept': 'application/vnd.github+json',
-                     'Content-Type': 'application/json'})
+                     'Content-Type': 'application/json', 'Cache-Control': 'no-cache'})
         return urllib.request.build_opener(NoRedirect).open(request, timeout=60)
 
     def json(self, method, path, data=None):
@@ -154,6 +155,22 @@ def ref_sha(api, branch):
         raise
 
 
+def await_ref(api, branch, expected, previous, sleep=time.sleep):
+    # Read-only bounded convergence: never accept an unrelated ref or rewrite it.
+    observations = []
+    for attempt in range(5):
+        observed = ref_sha(api, branch)
+        observations.append(observed)
+        if observed == expected:
+            return
+        require(observed == previous, 'Unexpected concurrent reference: ' + str(observed))
+        if attempt < 4:
+            print('Reference readback has previous value; retrying GET:',
+                  branch, observed, 'expected', expected, flush=True)
+            sleep(0.5 * (2 ** attempt))
+    raise PublicationError('Reference did not converge: ' + json.dumps(observations))
+
+
 def blob_read(api, sha):
     result = api.json('GET', 'git/blobs/' + sha)
     require(result['encoding'] == 'base64', 'Unexpected blob encoding')
@@ -183,7 +200,7 @@ def publish(api, base, branch, files):
     if existing is None:
         # Reference creation points ONLY at an already-published source commit.
         api.json('POST', 'git/refs', {'ref': 'refs/heads/' + branch, 'sha': base})
-    require(ref_sha(api, branch) == base, 'Seeded source reference did not read back')
+    await_ref(api, branch, base, None)
     tree = api.json('GET', 'git/commits/' + base)['tree']['sha']
     changes = []
     for path, body in sorted(files.items()):
@@ -204,8 +221,9 @@ def publish(api, base, branch, files):
             result['tree']['sha'] == created_tree, 'Unexpected evidence commit ancestry')
     commit = result['sha']
     verify_added(api, base, commit, files)
-    api.json('PATCH', 'git/refs/heads/' + branch, {'sha': commit, 'force': False})
-    require(ref_sha(api, branch) == commit, 'Final reference readback failed')
+    updated = api.json('PATCH', 'git/refs/heads/' + branch, {'sha': commit, 'force': False})
+    require(updated['object']['sha'] == commit, 'Reference update receipt differs')
+    await_ref(api, branch, commit, base)
     verify_added(api, base, commit, files)
     return commit
 
