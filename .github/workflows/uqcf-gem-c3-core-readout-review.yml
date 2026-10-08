@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 7a7cd0c33f316f0631246356ddf937362aaebb65
+          ref: f6417541c95c4584f4d955ae0745f4109506645c
           path: research_snapshot
           persist-credentials: false
           sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
@@ -52,7 +52,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
         with:
-          ref: 7a7cd0c33f316f0631246356ddf937362aaebb65
+          ref: f6417541c95c4584f4d955ae0745f4109506645c
           path: research_snapshot
           persist-credentials: false
           sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
