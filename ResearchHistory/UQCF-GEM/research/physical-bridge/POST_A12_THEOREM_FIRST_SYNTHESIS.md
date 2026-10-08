@@ -394,6 +394,15 @@ Two valid histories from the SAME known empty spectator seed, +u(r4),-u(r4) vers
 
 Independent mathematical review job 01a11ca8-bf9e-7294-b4f7-9c9ae2b3c864 is processing. Broader C3 and C4-C6 remain OPEN.
 
+
+## C3 coarse native event-channel separation independently closed
+
+- [Independent mathematical ACCEPTED review](https://github.com/proteinfoldingengine/WetLabEngine/commit/80810b7f43ac01daae7814792bf702126e745bd4).
+- [Independent publication audit ACCEPTED](https://github.com/proteinfoldingengine/WetLabEngine/commit/84cb40ff8a31d55686e6e392012cf80846564b0e).
+- [Final scoped closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/e1bc1dae02e7647a00ff11c4b439851ee076f775).
+
+The declared O_coarse retained channel (core projections, core-only miss counts, exact tau, floor-validity and ordered event occurrence/root address) cannot distinguish +u,-u from +u,+v after a known empty seed. Both native histories preserve tau=3 and floors2, but final b differs. Thus no O_coarse-only deterministic capacity estimator can be correct for both. Event sign or full-palette counts/root4 cardinality could distinguish conditionally, but their native observer availability remains OPEN. This is an independently reviewed scoped information separation, not a physical observer theorem. Broader C3 and C4-C6 remain OPEN.
+
 ## Next unresolved obligation
 
 The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
