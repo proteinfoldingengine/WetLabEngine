@@ -71,7 +71,8 @@ jobs:
           names = ("COUPLED_C3_SAFE_PROBE_SCOPE.md",
                    "COUPLED_C3_SAFE_PROBE_RESULT.md",
                    "COUPLED_C3_SAFE_PROBE_AUDIT.md",
-                   "COUPLED_C3_SAFE_PROBE_CLARIFICATION.md")
+                   "COUPLED_C3_SAFE_PROBE_CLARIFICATION.md",
+                   "COUPLED_C3_SAFE_PROBE_VERDICT_ADJUDICATION.md")
           files = {}
           hashes = {}
           for name in names:
@@ -91,7 +92,13 @@ jobs:
               "unreported spectator changes between steps) and success acknowledgements "
               "that reveal only committed command identity, not hidden state. "
               "Verify the fixed labelled residual family R={r4} makes M_core(H) independent of Z. "
-              "If either assumption is missing or the clarification is insufficient, mark REVISE. Search for counterexamples "
+              "If either assumption is missing or the clarification is insufficient, mark REVISE. "
+              "The previous reviewer marked REVISE despite zero missing assumptions and zero counterexamples. "
+              "Adjudicate that conflict independently, not by deference to the author. "
+              "A REVISE or REJECT verdict must identify at least one precise actionable false claim, "
+              "missing necessary hypothesis, or native counterexample in findings and explain it. "
+              "A strong scope limitation alone is not a mathematical error if explicitly declared. "
+              "Search for counterexamples "
               "within the frozen scope. Return concise JSON with keys verdict "
               "(ACCEPTED, REVISE, or REJECT), findings (array), missing_assumptions (array), "
               "counterexamples (array), and limitations (array). "
