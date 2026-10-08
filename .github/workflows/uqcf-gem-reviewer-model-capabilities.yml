@@ -1,0 +1,33 @@
+name: UQCF-GEM reviewer model capability check
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/uqcf-gem-reviewer-model-capabilities.yml']
+permissions:
+  contents: read
+jobs:
+  capabilities:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read public model capabilities with existing API integration
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json,os,urllib.request,urllib.error,pathlib,sys
+          req=urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models",headers={"x-goog-api-key":os.environ["GEMINI_API_KEY"]})
+          try:
+              with urllib.request.urlopen(req,timeout=90) as r: data=json.load(r)
+          except urllib.error.HTTPError as e:
+              print("Model capability lookup HTTP",e.code);sys.exit(1)
+          result=[{k:m.get(k) for k in ("name","displayName","supportedGenerationMethods","inputTokenLimit","outputTokenLimit")} for m in data.get("models",[])]
+          pathlib.Path("model_capabilities.json").write_text(json.dumps({"models":result,"nextPageToken_present":bool(data.get("nextPageToken"))},indent=2))
+          print(json.dumps(result,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-reviewer-model-capabilities
+          path: model_capabilities.json
