@@ -403,6 +403,16 @@ Independent mathematical review job 01a11ca8-bf9e-7294-b4f7-9c9ae2b3c864 is proc
 
 The declared O_coarse retained channel (core projections, core-only miss counts, exact tau, floor-validity and ordered event occurrence/root address) cannot distinguish +u,-u from +u,+v after a known empty seed. Both native histories preserve tau=3 and floors2, but final b differs. Thus no O_coarse-only deterministic capacity estimator can be correct for both. Event sign or full-palette counts/root4 cardinality could distinguish conditionally, but their native observer availability remains OPEN. This is an independently reviewed scoped information separation, not a physical observer theorem. Broader C3 and C4-C6 remain OPEN.
 
+
+## C3 signed command provenance independently closed
+
+- [Corrected proof](https://github.com/proteinfoldingengine/WetLabEngine/commit/0aa0b7542077fd46be3260e9f96507bfb07b5789).
+- [Independent mathematical acceptance](https://github.com/proteinfoldingengine/WetLabEngine/commit/1c7a51af54407d6c4ac5ba746cb552ccbea49871).
+- [Independent publication audit acceptance](https://github.com/proteinfoldingengine/WetLabEngine/commit/35583f15d4901184e250cd54ef51804c7ef226a3).
+- [Final scoped closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/62f012a48c1a6abd25637179eac39214f58a2e25).
+
+The conditional theorem proves that a known seed, complete authenticated exactly-once semantic COMMIT records, and exclusive writing or equivalent complete change reporting suffice to update q from signed committed edits. Signed intent is not a state transition; unknown outcomes remain unknown. Sign-only unknown-seed interval is exact for capacity-feasible histories, but identity-labelled commands impose further constraints. Unreported external changes defeat own-command-only reconstruction. Native access to the commit contract is NOT derived. Broader C3 and C4-C6 remain OPEN.
+
 ## Next unresolved obligation
 
 The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
