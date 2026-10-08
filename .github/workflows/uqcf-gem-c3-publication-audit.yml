@@ -1,0 +1,43 @@
+name: UQCF-GEM C3 independent publication audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/uqcf-gem-c3-publication-audit.yml'
+      - '.github/scripts/c3_publication_audit.py'
+
+permissions:
+  contents: read
+
+jobs:
+  publication-audit:
+    name: Independent Gemini publication consistency audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout audit code
+        uses: actions/checkout@v4
+      - name: Checkout immutable accepted proof record
+        uses: actions/checkout@v4
+        with:
+          ref: 1d4eb466350fbc45270186cee7d6ed071e89f31c
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
+      - name: Audit bounded C3 publication with independent Gemini call
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/c3_publication_audit.py
+      - name: Preserve complete publication audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c3-publication-audit-evidence
+          path: publication_audit/
+          if-no-files-found: warn
+          retention-days: 30
