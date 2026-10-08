@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: C1/C2 AND BOUNDED C3 ACCEPTED; C3 UNIQUE OPTIMAL-HOST CANDIDATE UNDER REVIEW; BROADER C3-C6 OPEN.
+Status: C1/C2 AND BOUNDED C3 ACCEPTED; C3 UNIQUE OPTIMAL-HOST THEOREM CLOSED/INDEPENDENTLY ACCEPTED; BROADER C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -268,6 +268,16 @@ Broader C3 is still OPEN: derive a fiber-uniform retained host-selection rule an
 - [Author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/9911ffebc3dc87d44646b6be3af7f02eb8ae50ac).
 
 In the already accepted four-root coupled carrier, the new theorem candidate classifies every possible first off-endpoint addition and proves only +w on r4 can initiate an eight-edit minimum protected path. In fact +w(r4),-d(r4) are forced first two events in any optimal path. The result uses the declared labelled endpoint supports and explicit two-cover witnesses, not an undeclared hidden-state read. It is NOT a general compressed retained host-selection theorem. Independent review job 01a1198c-a99c-70a8-98fc-60a33c47fc84 is processing.
+
+
+## C3 unique optimal host independently closed
+
+- [Independent mathematical ACCEPTED review](https://github.com/proteinfoldingengine/WetLabEngine/commit/c714fe91b55eccd919d6f402ce2b3bbb4cfb788d).
+- [Reporting addendum](https://github.com/proteinfoldingengine/WetLabEngine/commit/663130a41cb1d8ac17b2b9eaee6949146011fd20).
+- [Independent publication audit ACCEPTED](https://github.com/proteinfoldingengine/WetLabEngine/commit/2a3780b9ad5438b43667dde79c5c4a92b8b6a61e).
+- [Final bounded closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/e34768054850ebcea714c6f56834cae2231a80df).
+
+In the declared four-root carrier, r4 is the unique auxiliary host in EVERY minimum eight-edit protected repair, with forced prefix +w(r4),-d(r4). All other first additions are excluded by explicit two-covers, and r1,r2,r3 hosts cannot finish within the eight-edit budget. This is an independently reviewed bounded optimal-host result, NOT a general retained-information host-selection theorem. Broader C3 and C4-C6 remain open.
 
 ## Next unresolved obligation
 
