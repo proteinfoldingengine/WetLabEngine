@@ -77,3 +77,19 @@ The fixed-triangle/root-4-only replay reconstructs 4 retained states and 46 comm
 At restored core {d,e}, D=0,1,2 can encode three distinct hidden-completion families even though the current core snapshot is identical. The Boolean nonemptiness target is weaker than the exact completion-family target. No change to the original proof was required by the same-assistant whole-argument check.
 
 This is repository-contained review preparation and bounded execution evidence, NOT a fresh independent mathematical acceptance. The separate post-acceptance publication audit and scoped closeout remain unfulfilled; no external reviewer job, CI run, inherited replay or main merge is represented as completed. The original scope/proof/audit and all earlier certified results are unchanged. Broader C3 and C4-C6 remain OPEN.
+
+## C3 algorithmically independent checker and GitHub execution — latest update
+
+- [Frozen follow-on scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/4d5a092b91f8e75e0277da802561585420be3d61).
+- [Tests-first RED source](https://github.com/proteinfoldingengine/WetLabEngine/commit/6a4ba75ca3a1ce332e6481e383bfecf6046f31b9).
+- [Separate bit-mask/relational checker](https://github.com/proteinfoldingengine/WetLabEngine/commit/ad42d751f69c6fba7af585e6ba15b00941bc201f).
+- [Exact execution report and publication blocker](https://github.com/proteinfoldingengine/WetLabEngine/commit/c1e446052d4f5eba41373b14480a1d891b42da36).
+- [Exact successful contract log recovered from the downloaded artifact](https://github.com/proteinfoldingengine/WetLabEngine/commit/95116415270584c5458f3a6d9c73e585da6446e8).
+
+The prior replay regenerated its evidence with its own producer. The new checker instead builds a full-state relation and observable knowledge graph without D in the state, then annotates all possible history deficits. It imports no producer and is tested in isolation. It reconstructs and verifies the same exact 12 nodes and 142 edges; no scientific scope expansion is claimed.
+
+Actual GitHub RED run 37832509819 failed the eight not-yet-implemented C3 contracts while passing the ten existing A12 contracts. Actual implemented run 37832751396 passed all 18 contracts, the 11 baseline rejecting controls, and the unchanged A12 bounded primary/reproduction checks. The downloaded A12 primary and reproduction files are byte-identical. These A12 checks are not the complete inherited v16 stack or extra C3 cases.
+
+IMPORTANT: the implemented workflow's OVERALL conclusion is FAILURE, because its evidence-branch push was rejected with a server timeout/workflows-scope diagnostic. Both raw artifacts were downloaded and their ZIP digests checked; the successful contract log is now durably published separately. Automatic evidence-branch publication and complete durable archival recovery remain unfinished. Do not label the entire workflow green or treat an uploaded artifact as a verified evidence commit.
+
+This fixes an algorithmic-independence gap, not the distinct independent-mathematical-review requirement. No separate-context verdict, external-AI job, post-acceptance publication audit, main merge, physical observer mechanism or broader C3/C4-C6 closure is claimed. The next operational obligation is durable recovery of the complete two run artifacts and diagnosis of the evidence publisher without weakening permissions or scientific gates; the mathematical acceptance gate remains explicitly OPEN.
