@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: SINGLE-BUFFER THEOREM CLOSED; COUPLED C1 INDEPENDENTLY ACCEPTED; C2 CLOSED/INDEPENDENTLY ACCEPTED; C3-C6 OPEN.
+Status: SINGLE-BUFFER THEOREM CLOSED; C1/C2 INDEPENDENTLY ACCEPTED; C3 ANCHOR LEMMA UNDER INDEPENDENT REVIEW; C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -225,6 +225,17 @@ This establishes a concrete candidate for coupled order-dependence, NOT an auxil
 - [Final scoped C2 closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/787467cc6a1bfc9f09f586809948ebfe16d32742).
 
 The revised proof's header still says re-review was required; that is an immutable pre-review snapshot, superseded by the later independent ACCEPTED review. The bounded C2 theorem is now closed. It establishes an eight-edit tau=3 protected path and order-dependent witness failures in one active four-root carrier. It does NOT establish necessity of an auxiliary or a coupled-cycle deadlock. C3-C6 remain OPEN.
+
+
+## C3 first obstruction gate: three singleton anchors
+
+- [Frozen C3 structural scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/f12d6775214b827ede8e5a5248e9b8f92721c048).
+- [C3 analytical lemma candidate](https://github.com/proteinfoldingengine/WetLabEngine/commit/f99a7622a968d8a5ebdfebb4e43c76dc4e925fb0).
+- [Author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/f6291c0c46248465e0f6e625f78866e28f03e8ef).
+
+For four nonempty roots with three distinct frozen singleton supports {a},{b},{c}, every nonempty fourth support has 3<=tau<=4. Therefore an active fourth root can always execute its own endpoint-only additions before deletions while the singleton triple stays frozen, preserving floors and the band. This excludes an initial endpoint-only deadlock in that special carrier but does not prove full endpoint connectivity or general auxiliary impossibility.
+
+Fresh independent mathematical review launched: job 01a1195c-f9c9-724f-bac6-e7d7d3e901c8. C3 remains OPEN. The next genuinely discriminating carrier must not rely on three frozen singleton anchors.
 
 ## Next unresolved obligation
 
