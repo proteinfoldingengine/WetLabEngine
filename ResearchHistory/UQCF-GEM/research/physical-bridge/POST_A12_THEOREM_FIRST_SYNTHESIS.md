@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: C1/C2 AND BOUNDED C3 CLOSED; CAPACITY-BIT CONDITIONAL OBSERVABILITY CANDIDATE UNDER REVIEW; BROADER C3-C6 OPEN.
+Status: BOUNDED C3 CLOSED; CONDITIONAL CAPACITY OBSERVABILITY MATHEMATICALLY ACCEPTED/PUBLICATION AUDIT PENDING; NATIVE INTERFACE SOURCE AUDIT UNDER REVIEW; BROADER C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -310,6 +310,18 @@ The hidden-spectator family proves a distinction between fiber-uniform LEGAL rep
 In the closed hidden-Z family, the exact source floor slack of r4 is sigma4=|Z|. The hypothetical native edit -d(r4) preserves tau=3 for all Z but respects floor2 iff Z nonempty. Thus the one-bit distinction b is a threshold of slack OR equals the hypothetical-edit legality bit, CONDITIONALLY on one of those quantities already being legitimately retained/observable. The deliberately restricted R alone cannot derive it. No new observation primitive or full-state read is permitted by this result.
 
 Independent mathematical review job 01a119a1-f593-729d-af2c-c44fba48dba6 is pending. Next scientific task is an exact audit of the existing native retained-information interface to determine whether slack or nondestructive legality was previously derived. Broader C3 and C4-C6 remain open.
+
+
+## Existing native retained-interface source audit: full-palette versus core-only
+
+- [Frozen source-audit scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/9e762fc7cf0354c3f5bf48e2a4cf4c79fe5d1e0e).
+- [Native interface source-audit proof candidate](https://github.com/proteinfoldingengine/WetLabEngine/commit/750a6b2170bed809b64095a7f5c383b6abdc1b46).
+- [Author-side source checks](https://github.com/proteinfoldingengine/WetLabEngine/commit/8fdfcb71376697c5530e024b56cc0205683c0d83).
+- [Accepted mathematical review of preceding conditional theorem](https://github.com/proteinfoldingengine/WetLabEngine/commit/1e69741891d19ef5c4480cef8dd5aa5f5a848e65).
+
+Direct reading of earlier POST_A12_DYNAMIC_RESIDUAL_RESULT.md revealed an EXISTING full-palette miss-count certificate. When r4 alone is residual, M_R({z})=1-1[z in Z] for each spectator z; thus b=OR_{z in T}(1-M_R({z})). By contrast core-only R/M_core/Q/D and floors2 cannot distinguish Z empty from nonempty. This is a conditional mathematical extraction from a previously published certificate, NOT proof of initialization or native observer accessibility. Prior dynamic-residual work explicitly requires a declared active-root support for updates and does not prove that full-palette M_R can be initialized from a hidden state without a full read.
+
+Independent source-audit review job 01a119a5-c39b-7487-983e-7dc5a0e359f5 is processing. Separate publication audit of the conditional observability theorem job 01a119a6-063b-753e-8645-a9c17abcc417 is processing. The next unresolved gate is a genuine first-principles initialization/access mechanism, not the algebraic existence of a capacity bit.
 
 ## Next unresolved obligation
 
