@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: C1/C2 AND BOUNDED C3 CLOSED; C3 HIDDEN-SPECTATOR OPTIMALITY INDEPENDENTLY CLOSED; BROADER C3-C6 OPEN.
+Status: C1/C2 AND BOUNDED C3 CLOSED; CAPACITY-BIT CONDITIONAL OBSERVABILITY CANDIDATE UNDER REVIEW; BROADER C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -299,6 +299,17 @@ This is an author-side candidate, not an independently accepted result. It does 
 - [Final bounded closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/4c134d9b904eac92653c564b6e0299accab5b702).
 
 The hidden-spectator family proves a distinction between fiber-uniform LEGAL repair and fiber-uniform SHORTEST repair. The restricted core record R supports a legal eight-edit route for all Z, but optimal repair requires eight edits for Z empty and six for Z nonempty. One Boolean 1[Z nonempty] suffices to choose shortest routes within this family. The bit has NOT been derived from existing native retained observer invariants; broader C3 and C4-C6 remain open.
+
+
+## C3 native capacity-bit observability: conditional theorem candidate
+
+- [Frozen scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/0b8d59969c33f77410a543b0bd997a501b717b56).
+- [Proof candidate](https://github.com/proteinfoldingengine/WetLabEngine/commit/7b567d4b22dbc968f60ddcaa7a04fced941ba490).
+- [Author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/554b3538c7d162aa00d017a5f8765211e28238bc).
+
+In the closed hidden-Z family, the exact source floor slack of r4 is sigma4=|Z|. The hypothetical native edit -d(r4) preserves tau=3 for all Z but respects floor2 iff Z nonempty. Thus the one-bit distinction b is a threshold of slack OR equals the hypothetical-edit legality bit, CONDITIONALLY on one of those quantities already being legitimately retained/observable. The deliberately restricted R alone cannot derive it. No new observation primitive or full-state read is permitted by this result.
+
+Independent mathematical review job 01a119a1-f593-729d-af2c-c44fba48dba6 is pending. Next scientific task is an exact audit of the existing native retained-information interface to determine whether slack or nondestructive legality was previously derived. Broader C3 and C4-C6 remain open.
 
 ## Next unresolved obligation
 
