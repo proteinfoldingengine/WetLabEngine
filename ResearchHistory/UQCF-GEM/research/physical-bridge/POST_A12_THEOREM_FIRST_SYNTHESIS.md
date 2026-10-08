@@ -422,6 +422,16 @@ The conditional theorem proves that a known seed, complete authenticated exactly
 
 One issued +z(r4) attempt from a known empty spectator seed can either actually commit a valid native edit or be rejected as a NO-OP. Both outcomes have identical core projections, core-only miss counts, tau=3 and floor-validity, but differ in actual commitment and capacity. Thus attempted signed command plus O_core does not certify semantic commitment. A genuine acknowledgement, full-palette miss count, cardinality/slack or guaranteed commit would distinguish if separately justified. This is a scoped mathematical non-identifiability result, not a derived native observer. Broader C3/C4-C6 remain OPEN.
 
+
+## C3 observation-fiber certification theorem independently closed
+
+- [Independent mathematical acceptance](https://github.com/proteinfoldingengine/WetLabEngine/commit/abc3eacd359d4bfabb0d595dbe5ea6835943e910).
+- [Notation addendum](https://github.com/proteinfoldingengine/WetLabEngine/commit/04b29fe862ffab96ee5c0043ea6f624f0274a350).
+- [Independent publication audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/e0cb8fe60f5295dd7b4783e79eabbdc7292ac24a).
+- [Final scoped closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/ce9e86013daeabdebc9c1118d8b08f1b39a437f1).
+
+For finite outcome records Y with retained observation O and target p (commitment, capacity or pair), a deterministic certifier exists exactly when p is constant on every O-fiber. The coarsest sufficient refinement is the common partition of O and p, with minimal additional alphabet max_r |p(O^{-1}(r))|. This abstract theorem is independently accepted and publication audited. It does NOT derive a native observer-accessible O or physical sensor. Broader C3 and C4-C6 remain OPEN.
+
 ## Next unresolved obligation
 
 The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
