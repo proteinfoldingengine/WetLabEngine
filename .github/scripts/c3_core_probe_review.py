@@ -51,7 +51,7 @@ payload = {"contents": [{"parts": [{"text": prompt + "\n\n" + "\n\n".join(
     "DOCUMENT " + n + "\n" + docs[n] for n in names)}]}],
     "generationConfig": {"temperature": 0, "maxOutputTokens": 16384}}
 req = urllib.request.Request(
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent",
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent",
     data=json.dumps(payload).encode("utf-8"),
     headers={"Content-Type": "application/json", "x-goog-api-key": key},
     method="POST")
