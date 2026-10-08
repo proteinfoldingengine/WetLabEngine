@@ -1,0 +1,87 @@
+test_duplicate_json_keys_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_duplicate_json_keys_rejected) ... FAIL
+test_fresh_producer_matches_stored_evidence_and_independent_checker (test_c3_core_probe_independent.IndependentC3Contracts.test_fresh_producer_matches_stored_evidence_and_independent_checker) ... FAIL
+test_isolated_checker_without_producer (test_c3_core_probe_independent.IndependentC3Contracts.test_isolated_checker_without_producer) ... FAIL
+test_metadata_and_coverage_forgery_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_metadata_and_coverage_forgery_rejected) ... FAIL
+test_missing_duplicate_and_changed_graph_records_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_missing_duplicate_and_changed_graph_records_rejected) ... FAIL
+test_restored_fibers_and_empty_core (test_c3_core_probe_independent.IndependentC3Contracts.test_restored_fibers_and_empty_core) ... FAIL
+test_saved_complete_evidence (test_c3_core_probe_independent.IndependentC3Contracts.test_saved_complete_evidence) ... FAIL
+test_wrong_deficit_and_boolean_integer_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_wrong_deficit_and_boolean_integer_rejected) ... FAIL
+test_addition_margins_decide_the_original_control (test_contracts.Contracts.test_addition_margins_decide_the_original_control) ... ok
+test_both_primitive_update_identities (test_contracts.Contracts.test_both_primitive_update_identities) ... ok
+test_consolidated_overlap_fixtures_match_original_sources (test_contracts.Contracts.test_consolidated_overlap_fixtures_match_original_sources) ... ok
+test_coverage_rejects_omission_and_duplicate (test_contracts.Contracts.test_coverage_rejects_omission_and_duplicate) ... ok
+test_deletion_surviving_cover_and_floor_are_separate (test_contracts.Contracts.test_deletion_surviving_cover_and_floor_are_separate) ... ok
+test_direct_transversal_and_exception_conventions (test_contracts.Contracts.test_direct_transversal_and_exception_conventions) ... ok
+test_exact_pair_and_cover_fields (test_contracts.Contracts.test_exact_pair_and_cover_fields) ... ok
+test_frozen_original_blob_identities (test_contracts.Contracts.test_frozen_original_blob_identities) ... ok
+test_independent_complete_identity_generators (test_contracts.Contracts.test_independent_complete_identity_generators) ... ok
+test_same_candidate_can_acquire_empty_shadow (test_contracts.Contracts.test_same_candidate_can_acquire_empty_shadow) ... ok
+
+======================================================================
+FAIL: test_duplicate_json_keys_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_duplicate_json_keys_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/verification/test_c3_core_probe_independent.py", line 21, in setUp
+    self.assertTrue(CHECKER.is_file(), 'Independent checker not implemented (expected RED)')
+AssertionError: False is not true : Independent checker not implemented (expected RED)
+
+======================================================================
+FAIL: test_fresh_producer_matches_stored_evidence_and_independent_checker (test_c3_core_probe_independent.IndependentC3Contracts.test_fresh_producer_matches_stored_evidence_and_independent_checker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/verification/test_c3_core_probe_independent.py", line 21, in setUp
+    self.assertTrue(CHECKER.is_file(), 'Independent checker not implemented (expected RED)')
+AssertionError: False is not true : Independent checker not implemented (expected RED)
+
+======================================================================
+FAIL: test_isolated_checker_without_producer (test_c3_core_probe_independent.IndependentC3Contracts.test_isolated_checker_without_producer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/verification/test_c3_core_probe_independent.py", line 21, in setUp
+    self.assertTrue(CHECKER.is_file(), 'Independent checker not implemented (expected RED)')
+AssertionError: False is not true : Independent checker not implemented (expected RED)
+
+======================================================================
+FAIL: test_metadata_and_coverage_forgery_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_metadata_and_coverage_forgery_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/verification/test_c3_core_probe_independent.py", line 21, in setUp
+    self.assertTrue(CHECKER.is_file(), 'Independent checker not implemented (expected RED)')
+AssertionError: False is not true : Independent checker not implemented (expected RED)
+
+======================================================================
+FAIL: test_missing_duplicate_and_changed_graph_records_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_missing_duplicate_and_changed_graph_records_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/verification/test_c3_core_probe_independent.py", line 21, in setUp
+    self.assertTrue(CHECKER.is_file(), 'Independent checker not implemented (expected RED)')
+AssertionError: False is not true : Independent checker not implemented (expected RED)
+
+======================================================================
+FAIL: test_restored_fibers_and_empty_core (test_c3_core_probe_independent.IndependentC3Contracts.test_restored_fibers_and_empty_core)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/verification/test_c3_core_probe_independent.py", line 21, in setUp
+    self.assertTrue(CHECKER.is_file(), 'Independent checker not implemented (expected RED)')
+AssertionError: False is not true : Independent checker not implemented (expected RED)
+
+======================================================================
+FAIL: test_saved_complete_evidence (test_c3_core_probe_independent.IndependentC3Contracts.test_saved_complete_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/verification/test_c3_core_probe_independent.py", line 21, in setUp
+    self.assertTrue(CHECKER.is_file(), 'Independent checker not implemented (expected RED)')
+AssertionError: False is not true : Independent checker not implemented (expected RED)
+
+======================================================================
+FAIL: test_wrong_deficit_and_boolean_integer_rejected (test_c3_core_probe_independent.IndependentC3Contracts.test_wrong_deficit_and_boolean_integer_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/verification/test_c3_core_probe_independent.py", line 21, in setUp
+    self.assertTrue(CHECKER.is_file(), 'Independent checker not implemented (expected RED)')
+AssertionError: False is not true : Independent checker not implemented (expected RED)
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.004s
+
+FAILED (failures=8)
