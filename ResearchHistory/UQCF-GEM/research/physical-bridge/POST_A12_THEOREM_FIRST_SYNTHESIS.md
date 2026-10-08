@@ -342,6 +342,17 @@ The conditional theorem sigma4=|Z| and hypothetical-edit legality b=1[Z nonempty
 
 The full-palette residual miss-count field already defined in earlier work conditionally determines the C3 hidden capacity bit if its spectator singleton coordinates have been initialized and retained. The core-only quotient cannot determine it. Neither this source audit nor the preceding conditional capacity theorem proves how an observer initializes or accesses those counts from ordered events without a hidden full-state read. That remains the decisive OPEN first-principles gate.
 
+
+## C3 ordered-event initialization: conditional theorem candidate
+
+- [Frozen scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/a7e2b8f66844286ea129b6c2c210f9fc41f2989a).
+- [Analytical proof candidate](https://github.com/proteinfoldingengine/WetLabEngine/commit/a52461ecb4bf4c7a2a7cce57099c8a4612d80305).
+- [Author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/c5c08a127f81857e01afd9a2d2ee6f7d911dee5b).
+
+For a known initial spectator cardinality q0 and COMPLETE valid r4-addressed spectator event directions eps_j, the count q_n=q0+sum eps_j is an exact update-closed retained statistic; b=1[q_n>0]. Without seed, empty and singleton spectator states yield the same empty event transcript and different b. Even with known empty seed, a core-only event channel misses spectator additions. b alone is not update-closed under spectator deletions (states of count1 vs2, then one valid deletion). This is a CONDITIONAL event-ledger theorem candidate, not proof that an observer receives a seed or complete events.
+
+Independent mathematical review job 01a119ad-4f1d-72c9-998e-e9aa88cccd70 is running. Broader C3 and C4-C6 remain open.
+
 ## Next unresolved obligation
 
 The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
