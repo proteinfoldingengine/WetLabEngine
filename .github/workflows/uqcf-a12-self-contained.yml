@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/uqcf-a12-self-contained.yml'
       - 'ResearchHistory/UQCF-GEM/research/physical-bridge/verification/**'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/publication/**'
       - 'ResearchHistory/UQCF-GEM/research/physical-bridge/A12_CONSOLIDATED_PROOF_AND_AUDIT.md'
   workflow_dispatch:
 permissions:
@@ -59,6 +60,9 @@ jobs:
           set -e
           test "$result" -eq 23
           printf '{"observed_exit":23,"expected_exit":23,"status":"REJECTED_MASKED_FAILURE"}\n' > "$RUNNER_TEMP/a12-output/pipeline_control.json"
+      - name: Publication safety contracts
+        run: |
+          python -m unittest discover -s "$A12/publication" -p 'test_*.py' -v 2>&1 | tee "$RUNNER_TEMP/a12-output/publication_contracts.log"
       - name: Contract tests (RED until implementation and source repair)
         run: |
           python -m unittest discover -s "$A12/verification" -p 'test_*.py' -v 2>&1 | tee "$RUNNER_TEMP/a12-output/contracts.log"
@@ -101,23 +105,12 @@ jobs:
           pathlib.Path(os.environ['RUNNER_TEMP'],'a12-output','jobs_snapshot.json').write_text(json.dumps(data,sort_keys=True,indent=2)+'\n')
           print('Actual numeric job IDs:', [j['id'] for j in data['jobs']])
           PY
-      - name: Preserve output on unique evidence-only branch
+      - name: Recover historical archives and publish verified evidence-only commits
         if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          dest="$A12/evidence/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
-          mkdir -p "$dest"
-          cp -a "$RUNNER_TEMP/a12-output/." "$dest/"
-          python - "$dest" <<'PY'
-          import pathlib,sys
-          root=pathlib.Path(sys.argv[1])
-          assert sum(p.stat().st_size for p in root.rglob('*') if p.is_file()) <= 2*1024*1024, 'Evidence budget exceeded'
-          PY
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "$dest"
-          git commit -m "evidence: preserve A12 run ${GITHUB_RUN_ID} attempt ${GITHUB_RUN_ATTEMPT}"
-          git push origin "HEAD:refs/heads/research/a12-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
-          echo "Immutable evidence commit: $(git rev-parse HEAD)"
+          python "$A12/publication/evidence_publisher.py"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
