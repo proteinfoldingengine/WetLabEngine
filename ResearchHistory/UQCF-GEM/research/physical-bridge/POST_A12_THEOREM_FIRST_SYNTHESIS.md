@@ -93,3 +93,19 @@ Actual GitHub RED run 37832509819 failed the eight not-yet-implemented C3 contra
 IMPORTANT: the implemented workflow's OVERALL conclusion is FAILURE, because its evidence-branch push was rejected with a server timeout/workflows-scope diagnostic. Both raw artifacts were downloaded and their ZIP digests checked; the successful contract log is now durably published separately. Automatic evidence-branch publication and complete durable archival recovery remain unfinished. Do not label the entire workflow green or treat an uploaded artifact as a verified evidence commit.
 
 This fixes an algorithmic-independence gap, not the distinct independent-mathematical-review requirement. No separate-context verdict, external-AI job, post-acceptance publication audit, main merge, physical observer mechanism or broader C3/C4-C6 closure is claimed. The next operational obligation is durable recovery of the complete two run artifacts and diagnosis of the evidence publisher without weakening permissions or scientific gates; the mathematical acceptance gate remains explicitly OPEN.
+
+## C3 historical evidence recovered and automatic publisher verified — operational blocker resolved
+
+- [Approved recovery scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/191196636c0e20cba3c459fcd4f4199747e0ebc2).
+- [Final tested publisher source](https://github.com/proteinfoldingengine/WetLabEngine/commit/bbe0c397b2b380f0aa511b804aefecb9aeac73b1).
+- [Complete permanent historical archive](https://github.com/proteinfoldingengine/WetLabEngine/commit/475919b55dc2f27867b98aa87ba6d5ab5e3c5ecf).
+- [Successful new-run evidence commit](https://github.com/proteinfoldingengine/WetLabEngine/commit/3170c217dded032460643043cb41a4587332e861).
+- [Verified operational report](https://github.com/proteinfoldingengine/WetLabEngine/commit/77a81857f8a9bd3ea45356fb8fc0b4a2f56a3969).
+
+Both original ZIPs and all seventeen extracted members, including empty logs, are now preserved in a twenty-file permanent archive with exact SHA-256/Git-blob manifests. Original run conclusions remain FAILURE; only their archival availability has changed.
+
+Final workflow run 37835621311, attempt 1, job 113511769089, at source bbe0c397b2b380f0aa511b804aefecb9aeac73b1 concluded SUCCESS for every step, including automatic evidence publication and artifact upload. Eleven publication contracts, eighteen C3/A12 contracts, eleven baseline rejecting controls and byte-identical within-run primary/reproduction passed. This is not the complete inherited v16 stack.
+
+The replacement publisher retains the same token permissions and checks evidence-only single-parent commits, non-force updates, exact path/blob sets and immutable bytes. An immediate-reference-readback failure during the first repair was preserved and addressed with bounded read-only convergence tests; unrelated references and failures still reject. The final artifact was downloaded and hashed, and its complete locally reconstructed evidence tree 98e03e82c3fa1015babb6d1424c5d6f433d414e1 matched immutable GitHub directory readback.
+
+This supersedes the prior operational recovery/publisher blocker, not historical failures or mathematical scope. The native core-probe theorem is still an author-side candidate with independent mathematical acceptance and its subsequent publication audit unfulfilled. No external-AI review, main merge, observer mechanism or physical-force result is claimed. Broader C3 and C4-C6 remain OPEN.
