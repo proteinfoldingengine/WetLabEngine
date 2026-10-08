@@ -55,6 +55,38 @@ class PublicationContracts(unittest.TestCase):
         self.assertEqual(row['sha256'], hashlib.sha256(b'x\n').hexdigest())
         self.assertEqual(row['git_blob'], hashlib.sha1(b'blob 2\0x\n').hexdigest())
 
+    def test_bounded_readback_tolerates_only_known_previous_ref(self):
+        self.assertTrue(callable(getattr(self.p, 'await_ref', None)), 'Bounded reference readback not implemented (expected RED)')
+        values = iter(['a' * 40, 'a' * 40, 'b' * 40])
+        class StaleAPI:
+            def json(self, method, path, data=None):
+                return {'object': {'sha': next(values)}}
+        waits = []
+        self.p.await_ref(StaleAPI(), 'research/test', 'b' * 40, 'a' * 40, sleep=waits.append)
+        self.assertEqual(waits, [0.5, 1.0])
+
+    def test_unrelated_reference_never_treated_as_staleness(self):
+        self.assertTrue(callable(getattr(self.p, 'await_ref', None)), 'Bounded reference readback not implemented (expected RED)')
+        class ChangedAPI:
+            def json(self, method, path, data=None):
+                return {'object': {'sha': 'd' * 40}}
+        waits = []
+        with self.assertRaises(self.p.PublicationError):
+            self.p.await_ref(ChangedAPI(), 'research/test', 'b' * 40, 'a' * 40, sleep=waits.append)
+        self.assertEqual(waits, [])
+
+    def test_readback_deadline_fails_without_rewriting(self):
+        self.assertTrue(callable(getattr(self.p, 'await_ref', None)), 'Bounded reference readback not implemented (expected RED)')
+        calls, waits = [], []
+        class StaleAPI:
+            def json(self, method, path, data=None):
+                calls.append(method)
+                return {'object': {'sha': 'a' * 40}}
+        with self.assertRaises(self.p.PublicationError):
+            self.p.await_ref(StaleAPI(), 'research/test', 'b' * 40, 'a' * 40, sleep=waits.append)
+        self.assertEqual(calls, ['GET'] * 5)
+        self.assertEqual(waits, [0.5, 1.0, 2.0, 4.0])
+
     def fake(self, corrupt=False, collision=False, denied=False):
         p = self.p
         class API:
