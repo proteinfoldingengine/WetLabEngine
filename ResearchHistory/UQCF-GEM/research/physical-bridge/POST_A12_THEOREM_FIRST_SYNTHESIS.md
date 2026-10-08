@@ -413,6 +413,15 @@ The declared O_coarse retained channel (core projections, core-only miss counts,
 
 The conditional theorem proves that a known seed, complete authenticated exactly-once semantic COMMIT records, and exclusive writing or equivalent complete change reporting suffice to update q from signed committed edits. Signed intent is not a state transition; unknown outcomes remain unknown. Sign-only unknown-seed interval is exact for capacity-feasible histories, but identity-labelled commands impose further constraints. Unreported external changes defeat own-command-only reconstruction. Native access to the commit contract is NOT derived. Broader C3 and C4-C6 remain OPEN.
 
+
+## C3 semantic-commit observability independently closed
+
+- [Independent mathematical acceptance](https://github.com/proteinfoldingengine/WetLabEngine/commit/5c62bec5340699b9a2137f708bc9b08351bce865).
+- [Independent publication audit acceptance](https://github.com/proteinfoldingengine/WetLabEngine/commit/24df50e928757d98fd3d24f0132a363d9d85fb9c).
+- [Final scoped closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/373baba85931899f2831f44d63f9dc6594ddc3c6).
+
+One issued +z(r4) attempt from a known empty spectator seed can either actually commit a valid native edit or be rejected as a NO-OP. Both outcomes have identical core projections, core-only miss counts, tau=3 and floor-validity, but differ in actual commitment and capacity. Thus attempted signed command plus O_core does not certify semantic commitment. A genuine acknowledgement, full-palette miss count, cardinality/slack or guaranteed commit would distinguish if separately justified. This is a scoped mathematical non-identifiability result, not a derived native observer. Broader C3/C4-C6 remain OPEN.
+
 ## Next unresolved obligation
 
 The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
