@@ -1,0 +1,75 @@
+test_certificate_fibers (test_core_readout.Contracts.test_certificate_fibers) ... FAIL
+test_complete_identity (test_core_readout.Contracts.test_complete_identity) ... FAIL
+test_corrupted_tau_type_and_guard (test_core_readout.Contracts.test_corrupted_tau_type_and_guard) ... FAIL
+test_false_claims_and_provenance (test_core_readout.Contracts.test_false_claims_and_provenance) ... FAIL
+test_independent_without_producer_and_duplicate_json (test_core_readout.Contracts.test_independent_without_producer_and_duplicate_json) ... FAIL
+test_missing_duplicate_substitution (test_core_readout.Contracts.test_missing_duplicate_substitution) ... FAIL
+test_paths_and_delayed_service (test_core_readout.Contracts.test_paths_and_delayed_service) ... FAIL
+
+======================================================================
+FAIL: test_certificate_fibers (test_core_readout.Contracts.test_certificate_fibers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_readout/test_core_readout.py", line 5, in setUp
+    f=P/'independent.py';self.assertTrue(f.exists(),'Expected RED: independent checker absent')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Expected RED: independent checker absent
+
+======================================================================
+FAIL: test_complete_identity (test_core_readout.Contracts.test_complete_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_readout/test_core_readout.py", line 5, in setUp
+    f=P/'independent.py';self.assertTrue(f.exists(),'Expected RED: independent checker absent')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Expected RED: independent checker absent
+
+======================================================================
+FAIL: test_corrupted_tau_type_and_guard (test_core_readout.Contracts.test_corrupted_tau_type_and_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_readout/test_core_readout.py", line 5, in setUp
+    f=P/'independent.py';self.assertTrue(f.exists(),'Expected RED: independent checker absent')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Expected RED: independent checker absent
+
+======================================================================
+FAIL: test_false_claims_and_provenance (test_core_readout.Contracts.test_false_claims_and_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_readout/test_core_readout.py", line 5, in setUp
+    f=P/'independent.py';self.assertTrue(f.exists(),'Expected RED: independent checker absent')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Expected RED: independent checker absent
+
+======================================================================
+FAIL: test_independent_without_producer_and_duplicate_json (test_core_readout.Contracts.test_independent_without_producer_and_duplicate_json)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_readout/test_core_readout.py", line 5, in setUp
+    f=P/'independent.py';self.assertTrue(f.exists(),'Expected RED: independent checker absent')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Expected RED: independent checker absent
+
+======================================================================
+FAIL: test_missing_duplicate_substitution (test_core_readout.Contracts.test_missing_duplicate_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_readout/test_core_readout.py", line 5, in setUp
+    f=P/'independent.py';self.assertTrue(f.exists(),'Expected RED: independent checker absent')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Expected RED: independent checker absent
+
+======================================================================
+FAIL: test_paths_and_delayed_service (test_core_readout.Contracts.test_paths_and_delayed_service)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_readout/test_core_readout.py", line 5, in setUp
+    f=P/'independent.py';self.assertTrue(f.exists(),'Expected RED: independent checker absent')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Expected RED: independent checker absent
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (failures=7)
