@@ -1,0 +1,72 @@
+name: UQCF-GEM C3 core-readout verification and review
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/uqcf-gem-c3-core-readout-review.yml'
+      - '.github/scripts/c3_core_readout_review.py'
+
+permissions:
+  contents: read
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: c63e66082c11297c2bfd9aa1dcf49648a8bc4cfa
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - name: Complete independent channel and inherited compatibility checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p core_readout_verification
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT/core_readout" -p test_core_readout.py -v 2>&1 | tee core_readout_verification/contracts.log
+          python3 "$ROOT/core_readout/producer.py" > core_readout_verification/graph.json
+          python3 "$ROOT/core_readout/producer.py" > /tmp/channel-repeat.json
+          cmp core_readout_verification/graph.json /tmp/channel-repeat.json
+          python3 "$ROOT/core_readout/independent.py" core_readout_verification/graph.json | tee core_readout_verification/independent.json
+          python3 -m unittest discover -s "$ROOT/shared_witness" -p test_shared_witness.py -v 2>&1 | tee core_readout_verification/inherited_channel.log
+          python3 -m unittest discover -s "$ROOT" -p test_core_probe_replay.py -v 2>&1 | tee core_readout_verification/inherited_core.log
+          python3 -m unittest discover -s "$ROOT/verification" -p 'test_*.py' -v 2>&1 | tee core_readout_verification/inherited_contracts.log
+          cd research_snapshot
+          python3 ResearchHistory/UQCF-GEM/research/physical-bridge/verification/verify.py --output ../core_readout_verification/a12_baseline.json 2>&1 | tee ../core_readout_verification/a12_baseline.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-core-readout-verification
+          path: core_readout_verification/
+          retention-days: 30
+  adversarial-review:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: c63e66082c11297c2bfd9aa1dcf49648a8bc4cfa
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-core-readout-verification
+          path: core_readout_verification
+      - name: Independent adversarial mathematical review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/c3_core_readout_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-core-readout-review
+          path: core_readout_review/
+          retention-days: 30
