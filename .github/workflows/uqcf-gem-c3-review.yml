@@ -45,6 +45,10 @@ jobs:
           ref: research/uqcf-overlapping-guard-exchange
           path: research_snapshot
           persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
       - name: Review proof with Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
