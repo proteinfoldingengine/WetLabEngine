@@ -1,0 +1,77 @@
+test_claim_and_provenance_forgery_reject (test_shared_witness.SharedWitnessContracts.test_claim_and_provenance_forgery_reject) ... FAIL
+test_complete_independent_identity_equality (test_shared_witness.SharedWitnessContracts.test_complete_independent_identity_equality) ... FAIL
+test_duplicate_json_keys_reject (test_shared_witness.SharedWitnessContracts.test_duplicate_json_keys_reject) ... FAIL
+test_each_command_can_reject_and_locked_decoder_is_exact (test_shared_witness.SharedWitnessContracts.test_each_command_can_reject_and_locked_decoder_is_exact) ... FAIL
+test_independent_root_choice_oracle_without_producer (test_shared_witness.SharedWitnessContracts.test_independent_root_choice_oracle_without_producer) ... FAIL
+test_missing_duplicate_substituted_outcomes_reject (test_shared_witness.SharedWitnessContracts.test_missing_duplicate_substituted_outcomes_reject) ... FAIL
+test_premature_decoder_and_silent_anchor_counterexamples (test_shared_witness.SharedWitnessContracts.test_premature_decoder_and_silent_anchor_counterexamples) ... FAIL
+test_wrong_tau_and_boolean_value_reject (test_shared_witness.SharedWitnessContracts.test_wrong_tau_and_boolean_value_reject) ... FAIL
+
+======================================================================
+FAIL: test_claim_and_provenance_forgery_reject (test_shared_witness.SharedWitnessContracts.test_claim_and_provenance_forgery_reject)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/shared_witness/test_shared_witness.py", line 15, in setUp
+    self.assertTrue(path.is_file(), 'Independent verifier absent: expected tests-first RED')
+AssertionError: False is not true : Independent verifier absent: expected tests-first RED
+
+======================================================================
+FAIL: test_complete_independent_identity_equality (test_shared_witness.SharedWitnessContracts.test_complete_independent_identity_equality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/shared_witness/test_shared_witness.py", line 15, in setUp
+    self.assertTrue(path.is_file(), 'Independent verifier absent: expected tests-first RED')
+AssertionError: False is not true : Independent verifier absent: expected tests-first RED
+
+======================================================================
+FAIL: test_duplicate_json_keys_reject (test_shared_witness.SharedWitnessContracts.test_duplicate_json_keys_reject)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/shared_witness/test_shared_witness.py", line 15, in setUp
+    self.assertTrue(path.is_file(), 'Independent verifier absent: expected tests-first RED')
+AssertionError: False is not true : Independent verifier absent: expected tests-first RED
+
+======================================================================
+FAIL: test_each_command_can_reject_and_locked_decoder_is_exact (test_shared_witness.SharedWitnessContracts.test_each_command_can_reject_and_locked_decoder_is_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/shared_witness/test_shared_witness.py", line 15, in setUp
+    self.assertTrue(path.is_file(), 'Independent verifier absent: expected tests-first RED')
+AssertionError: False is not true : Independent verifier absent: expected tests-first RED
+
+======================================================================
+FAIL: test_independent_root_choice_oracle_without_producer (test_shared_witness.SharedWitnessContracts.test_independent_root_choice_oracle_without_producer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/shared_witness/test_shared_witness.py", line 15, in setUp
+    self.assertTrue(path.is_file(), 'Independent verifier absent: expected tests-first RED')
+AssertionError: False is not true : Independent verifier absent: expected tests-first RED
+
+======================================================================
+FAIL: test_missing_duplicate_substituted_outcomes_reject (test_shared_witness.SharedWitnessContracts.test_missing_duplicate_substituted_outcomes_reject)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/shared_witness/test_shared_witness.py", line 15, in setUp
+    self.assertTrue(path.is_file(), 'Independent verifier absent: expected tests-first RED')
+AssertionError: False is not true : Independent verifier absent: expected tests-first RED
+
+======================================================================
+FAIL: test_premature_decoder_and_silent_anchor_counterexamples (test_shared_witness.SharedWitnessContracts.test_premature_decoder_and_silent_anchor_counterexamples)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/shared_witness/test_shared_witness.py", line 15, in setUp
+    self.assertTrue(path.is_file(), 'Independent verifier absent: expected tests-first RED')
+AssertionError: False is not true : Independent verifier absent: expected tests-first RED
+
+======================================================================
+FAIL: test_wrong_tau_and_boolean_value_reject (test_shared_witness.SharedWitnessContracts.test_wrong_tau_and_boolean_value_reject)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/shared_witness/test_shared_witness.py", line 15, in setUp
+    self.assertTrue(path.is_file(), 'Independent verifier absent: expected tests-first RED')
+AssertionError: False is not true : Independent verifier absent: expected tests-first RED
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=8)
