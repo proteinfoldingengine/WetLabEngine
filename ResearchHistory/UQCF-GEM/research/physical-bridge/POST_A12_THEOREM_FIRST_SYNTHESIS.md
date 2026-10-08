@@ -353,6 +353,15 @@ For a known initial spectator cardinality q0 and COMPLETE valid r4-addressed spe
 
 Independent mathematical review job 01a119ad-4f1d-72c9-998e-e9aa88cccd70 is running. Broader C3 and C4-C6 remain open.
 
+
+## C3 ordered-event initialization conditionally closed
+
+- [Independent mathematical acceptance](https://github.com/proteinfoldingengine/WetLabEngine/commit/a9c9d0314161d8ca379442df74ae0fcd5cb0e91c).
+- [Independent publication audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/5fe9d5e9dd72f760855691b64ecf6ca21dd16ec3).
+- [Final scoped closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/9c8a6fad8c4f7011a67cf7ecda995dca69231f61).
+
+A known seed count q0 and complete VALID spectator event-direction ledger reconstruct q_n=q0+sum eps_j, b=1[q_n>0] without subsequent hidden-state reads. Unknown seed or spectator-blind channels cannot generally reconstruct b. A Boolean alone cannot be updated across arbitrary deletions, whereas q can. This is a conditional ordered-event theorem, not a derivation that a native observer has q0 or a complete ledger. Broader C3 and C4-C6 remain OPEN.
+
 ## Next unresolved obligation
 
 The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
