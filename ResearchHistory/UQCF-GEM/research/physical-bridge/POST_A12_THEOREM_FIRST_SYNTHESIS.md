@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: C1/C2 AND BOUNDED C3 CLOSED; C3 HIDDEN-SPECTATOR OPTIMALITY CANDIDATE UNDER REVIEW; BROADER C3-C6 OPEN.
+Status: C1/C2 AND BOUNDED C3 CLOSED; C3 HIDDEN-SPECTATOR OPTIMALITY INDEPENDENTLY CLOSED; BROADER C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -289,6 +289,16 @@ In the declared four-root carrier, r4 is the unique auxiliary host in EVERY mini
 In the bounded coupled four-root family, add an arbitrary hidden spectator subset Z to r4 at BOTH endpoints, with all spectators invariant. The original eight-edit buffer route remains uniformly LEGAL. But for nonempty Z, a six-edit endpoint-only route is legal and optimal, whereas empty Z requires eight edits. Both fibers share the deliberately restricted core projection R. Thus R alone cannot select a shortest protected repair uniformly across both fibers; one extra retained bit 1[Z nonempty] suffices in this family.
 
 This is an author-side candidate, not an independently accepted result. It does not show that the bit can be recovered from native observer variables. Independent mathematical review job 01a11997-77e2-75ac-9c97-8e8d6fc5aa1e is pending. Broader C3/C4-C6 remain open.
+
+
+## C3 hidden-spectator optimality independently closed
+
+- [Corrected proof](https://github.com/proteinfoldingengine/WetLabEngine/commit/2f476d454e2ac7fcd3d3bbfc841dfe4d14388fd6).
+- [Independent mathematical ACCEPTED review](https://github.com/proteinfoldingengine/WetLabEngine/commit/7472afcaa6d7bfa114d62e92ee3e181be4c047dc).
+- [Independent publication audit ACCEPTED](https://github.com/proteinfoldingengine/WetLabEngine/commit/ed7d6c295417d423a04a1bdadbb33c04a1913acd).
+- [Final bounded closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/4c134d9b904eac92653c564b6e0299accab5b702).
+
+The hidden-spectator family proves a distinction between fiber-uniform LEGAL repair and fiber-uniform SHORTEST repair. The restricted core record R supports a legal eight-edit route for all Z, but optimal repair requires eight edits for Z empty and six for Z nonempty. One Boolean 1[Z nonempty] suffices to choose shortest routes within this family. The bit has NOT been derived from existing native retained observer invariants; broader C3 and C4-C6 remain open.
 
 ## Next unresolved obligation
 
