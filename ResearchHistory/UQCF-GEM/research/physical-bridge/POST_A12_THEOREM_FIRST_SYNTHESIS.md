@@ -63,3 +63,17 @@ A12.1-A12.5 remains closed at bbc6e6f68beaf7d2d1641e711b46b55ae0bf62db. Issue #1
 A scoped accepted theorem, an author-side candidate, and native observer accessibility are distinct statuses. Earlier independent AI reviews are historical evidence, not a fresh review of this follow-on. The new work introduces no external-AI dependency and contains no invented review job or verdict.
 
 No physical force, geometry, energy, GR/ADM correspondence, dark-matter replacement, physical nonlocality, continuum, observer field, or fundamental-time claim follows. Retained-order history is not promoted to a physical time primitive. Broader C3 and C4-C6 remain OPEN.
+
+## C3 core-probe bounded refutation replay — evidence published, independent gate still open
+
+- [Frozen replay scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/5a993893a99d6cab75c0a2fae4170cad61838117).
+- [Direct-support executable oracle](https://github.com/proteinfoldingengine/WetLabEngine/commit/4374f342a12c73bed8bffc7dad94e77316fbe14b).
+- [Wrong-estimator and omitted-record rejecting tests](https://github.com/proteinfoldingengine/WetLabEngine/commit/fd46a381e10630675aedc4a5f1326bbd159929eb).
+- [Complete bounded graph and counterexample evidence](https://github.com/proteinfoldingengine/WetLabEngine/commit/93f2a284f5b9fb423f064fd4f86a7f7467787269).
+- [Actual execution, whole-argument author examination and review disposition](https://github.com/proteinfoldingengine/WetLabEngine/commit/a9a09d5b2b5658181eaceefa3d39d226dc75bce6).
+
+The fixed-triangle/root-4-only replay reconstructs 4 retained states and 46 command/outcome edges for T={u}, and 8 states and 96 edges for T={u,v}. It propagates explicit full-support outcomes before comparing exact labelled completion sets with the proposed D formula. All 10 local tests passed; false attempt credit, forgotten history, Boolean collapse of exact completion families, wrong spectator identities, omitted nodes and omitted outcomes are rejected. Complete finite graph exploration covers arbitrary history length within this strict slice, not the full all-root theorem.
+
+At restored core {d,e}, D=0,1,2 can encode three distinct hidden-completion families even though the current core snapshot is identical. The Boolean nonemptiness target is weaker than the exact completion-family target. No change to the original proof was required by the same-assistant whole-argument check.
+
+This is repository-contained review preparation and bounded execution evidence, NOT a fresh independent mathematical acceptance. The separate post-acceptance publication audit and scoped closeout remain unfulfilled; no external reviewer job, CI run, inherited replay or main merge is represented as completed. The original scope/proof/audit and all earlier certified results are unchanged. Broader C3 and C4-C6 remain OPEN.
