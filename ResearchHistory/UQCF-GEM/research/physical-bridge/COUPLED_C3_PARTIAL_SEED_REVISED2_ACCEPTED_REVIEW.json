@@ -1,0 +1,135 @@
+{
+  "archive_provenance": {
+    "recorded_date": "2026-10-08",
+    "service": "Firecrawl",
+    "action": "firecrawl_agent_status",
+    "job_id": "01a11bd1-8688-731d-887d-3414d4b142ef",
+    "thread_id": "01a11bd1-86b7-76fd-a0a7-45eea036d82b",
+    "proof_commit": "d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a",
+    "scope_commit": "542782cd198b65e9bfd79dd88193251666e74637",
+    "record_type": "Exact structured completed service response; JSON whitespace normalized. Archive metadata is separate from reviewer output.",
+    "reviewer_type": "Separate AI research-agent mathematical review; not human peer review or a machine-checked proof.",
+    "publication_status": "Mathematical review ACCEPTED; separate publication audit and final closeout still pending at archival."
+  },
+  "service_response": {
+    "success": true,
+    "status": "completed",
+    "data": {
+      "review_type": "Fresh independent adversarial mathematical review",
+      "verdict": "ACCEPTED",
+      "verdict_basis": "The supplied proof correctly establishes the partial-seed interval, current-count/bit classification, the six-versus-eight protected-edit optimum, the disjoint optimal-first-event classes in ambiguous fibers, and the universal-but-not-always-optimal eight-edit fallback, under its explicitly stated assumptions. No material mathematical defect was found.",
+      "verdict_basis_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md",
+      "source_documents": [
+        {
+          "commit": "d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a",
+          "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md",
+          "url": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "commit": "542782cd198b65e9bfd79dd88193251666e74637",
+          "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_SCOPE.md",
+          "url": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/542782cd198b65e9bfd79dd88193251666e74637/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_SCOPE.md"
+        }
+      ],
+      "scope_audit": {
+        "finding": "The review is confined to the declared carrier, finite spectator palette, complete ordered sign ledger, known N, and protected native-toggle repair problem. It does not infer observer access, ledger completeness, root addressability, geometry, forces, energy, GR/ADM, continuum physics, or fundamental time.",
+        "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/542782cd198b65e9bfd79dd88193251666e74637/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_SCOPE.md",
+        "proof_boundary_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+      },
+      "mathematical_audit": [
+        {
+          "topic": "Exact feasible initial seed interval",
+          "status": "PASS",
+          "finding": "With s_j the prefix sums, m=min s_j and M=max s_j, the necessary and sufficient integer interval is L=max(0,-m) through U=min(N,N-M). Necessity follows from 0<=q0+s_j<=N. Sufficiency is valid because cardinality feasibility guarantees an absent label for every plus event and a present label for every minus event; labels can therefore be chosen inductively.",
+          "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "topic": "Inconsistent ledgers and current-count classification",
+          "status": "PASS",
+          "finding": "If L>U the history set is empty, so the input is inconsistent rather than evidence for b=0. For a nonempty feasible interval, current counts are exactly [L+s_n,U+s_n]. The three cases B=0, A>=1, and A=0<B correctly classify b as universally zero, universally one, or undetermined.",
+          "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "topic": "Eight-step fresh-w route and event-by-event protectedness",
+          "status": "PASS",
+          "event_audit": [
+            {"step":0,"event":"initial","r4_support":"{d,e} union Z","triangle_roots":["{a,b}","{b,c}","{a,c}"],"support_check":"r4 is disjoint from the triangle union {a,b,c}; r4 has at least two labels.","hitting_number":3,"floor_check":"all roots have size at least 2"},
+            {"step":1,"event":"+w(r4)","r4_support":"{d,e,w} union Z","triangle_roots":["{a,b}","{b,c}","{a,c}"],"support_check":"w is outside the core and T, so r4 remains disjoint from the triangle union.","hitting_number":3,"floor_check":"r4 has at least 3 labels"},
+            {"step":2,"event":"-d(r4)","r4_support":"{e,w} union Z","triangle_roots":["{a,b}","{b,c}","{a,c}"],"support_check":"r4 remains disjoint from {a,b,c}.","hitting_number":3,"floor_check":"r4 has at least 2 labels"},
+            {"step":3,"event":"+d(r1)","r4_support":"{e,w} union Z","triangle_roots":["{a,b,d}","{b,c}","{a,c}"],"support_check":"r4 is disjoint from the triangle union {a,b,c,d}; {b,c} is a 2-cover of the triangle and no singleton hits all three roots.","hitting_number":3,"floor_check":"all roots have size at least 2"},
+            {"step":4,"event":"-a(r1)","r4_support":"{e,w} union Z","triangle_roots":["{b,d}","{b,c}","{a,c}"],"support_check":"r4 is disjoint from the triangle union {a,b,c,d}; {b,c} is a 2-cover and no singleton hits all three roots.","hitting_number":3,"floor_check":"all roots have size at least 2"},
+            {"step":5,"event":"+d(r3)","r4_support":"{e,w} union Z","triangle_roots":["{b,d}","{b,c}","{a,c,d}"],"support_check":"r4 is disjoint from the triangle union {a,b,c,d}; {b,c} is a 2-cover and no singleton hits all three roots.","hitting_number":3,"floor_check":"all roots have size at least 2"},
+            {"step":6,"event":"-a(r3)","r4_support":"{e,w} union Z","triangle_roots":["{b,d}","{b,c}","{c,d}"],"support_check":"r4 is disjoint from the triangle union {b,c,d}; {b,c} is a 2-cover and no singleton hits all three roots.","hitting_number":3,"floor_check":"all roots have size at least 2"},
+            {"step":7,"event":"+a(r4)","r4_support":"{a,e,w} union Z","triangle_roots":["{b,d}","{b,c}","{c,d}"],"support_check":"r4 is disjoint from the triangle union {b,c,d}; the triangle remains a 2-hitting-number family.","hitting_number":3,"floor_check":"r4 has at least 3 labels"},
+            {"step":8,"event":"-w(r4)","r4_support":"{a,e} union Z","triangle_roots":["{b,d}","{b,c}","{c,d}"],"support_check":"r4 is disjoint from {b,c,d}; the final state is protected.","hitting_number":3,"floor_check":"all roots have size at least 2"}
+          ],
+          "finding": "The support/disjointness and hitting-number claims survive inspection after every event, including Z=empty and Z=T, provided T is the declared spectator palette disjoint from the core labels and w is fresh as stated. The triangle always has hitting number exactly 2, r4 contributes exactly 1 because of disjoint support, and every root stays at floor 2 or above.",
+          "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "topic": "Six-edit route for nonempty Z",
+          "status": "PASS",
+          "finding": "For Z nonempty, -d(r4), +d(r1), -a(r1), +d(r3), -a(r3), +a(r4) is legal. After the first event r4={e} union Z has at least two labels; all later triangle changes preserve its 2-hitting-number structure and remain disjoint from r4 until the final restoration. The six endpoint parity differences give a lower bound of six, so this route is optimal.",
+          "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "topic": "Empty-Z lower bound and initial legal endpoint moves",
+          "status": "PASS",
+          "finding": "When Z is empty, endpoint deletions -a(r1), -a(r3), and -d(r4) immediately violate floor 2. Endpoint additions +d(r1), +d(r3), and +a(r4) immediately admit 2-covers {c,d}, {b,d}, and {a,b}, respectively, so they violate the lower protected bound on the total hitting number. Therefore no endpoint-only first event is legal. Any exact path must include an off-endpoint toggle; parity requires at least two such toggles, giving 6+2=8, and the fresh-w path attains eight.",
+          "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "topic": "Parity and optimal-first-event classes",
+          "status": "PASS",
+          "finding": "A six-edit exact path can contain only the six endpoint-differing toggles, so for nonempty Z its first move must be -d(r4), the only initially legal member of that set. For empty Z every endpoint-differing first move is illegal, while an off-endpoint first move such as +w(r4) begins an eight-edit optimum. Thus the optimal-first-event classes are disjoint: -d(r4) for nonempty Z versus off-endpoint for empty Z.",
+          "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "topic": "Ambiguous ledger impossibility and universal fallback",
+          "status": "PASS",
+          "finding": "For N=2 and ledger (+1,-1), q0 can be 0 or 1 and the final count can be 0 or 1. The same observed inputs therefore include an empty and a nonempty current world, whose shortest first-event classes are disjoint. No deterministic sign-ledger-only controller can be optimal in both. Nevertheless the eight-event fresh-w route is legal for every possible Z and is therefore a safe fiber-uniform fallback, although nonoptimal on nonempty fibers.",
+          "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "topic": "Nonunique buffer label",
+          "status": "PASS",
+          "finding": "The proof correctly withdraws any unique-buffer-label claim in the enlarged palette. If z is an available spectator in T and Z is empty, +z(r4) followed by -z(r4) gives another eight-edit shortest route. Fresh w is needed only for a uniform route that remains available when Z=T.",
+          "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "topic": "Boundary and control examples",
+          "status": "PASS",
+          "finding": "The examples are arithmetically correct: (+1,-1), N=2 yields q0 in {0,1}; (-1,+1), N=2 yields q0 in {1,2} and always-positive current count; (+1,+1,-1,-1), N=2 forces q0=0; (+1,+1), N=1 is inconsistent; and N=0 permits only the empty valid ledger. These cover ambiguity, deletion-derived positivity, saturation-based seed reconstruction, inconsistency, and the empty-palette boundary.",
+          "finding_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        }
+      ],
+      "mathematical_defects": [],
+      "reporting_notes": [
+        {
+          "note": "For maximum self-containment, the theorem should state the exact target carrier explicitly rather than relying on the listed endpoint differences and final path to reconstruct it.",
+          "classification": "reporting/clarity note, not a mathematical defect",
+          "citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        },
+        {
+          "note": "The argument that {e} union Z has at least two labels after -d(r4) uses the intended meaning that the spectator palette T is disjoint from the core labels. That should be stated literally, rather than left to the word spectator and the palette notation.",
+          "classification": "minor formal-assumption clarification, not a defect under the declared model",
+          "citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/542782cd198b65e9bfd79dd88193251666e74637/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_SCOPE.md"
+        },
+        {
+          "note": "The result is conditional on a complete ordered event-direction ledger, known N, declared prepared carrier, and native root addressability; it is not an observer-access or physical-origin theorem.",
+          "classification": "scope limitation explicitly acknowledged by the sources",
+          "citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+        }
+      ],
+      "conclusion": "ACCEPTED within the frozen scope at commit 542782cd198b65e9bfd79dd88193251666e74637 and the second-corrected proof at commit d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a. The accepted result is conditional and makes no broader C3 or physics claim.",
+      "conclusion_citation": "https://raw.githubusercontent.com/proteinfoldingengine/WetLabEngine/d9f1e77fcbb9fdeb4bbcbe3237fb27e8ce2fc36a/ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md"
+    },
+    "creditsUsed": 45,
+    "expiresAt": "2026-10-09T14:01:18.733Z",
+    "model": "spark-2",
+    "mode": "extract",
+    "threadId": "01a11bd1-86b7-76fd-a0a7-45eea036d82b",
+    "threadTurn": 1,
+    "message": "Completed the independent mathematical audit from the two supplied immutable raw GitHub sources only. Verdict: ACCEPTED within the frozen scope; no material mathematical defects found. Minor reporting/assumption-clarity notes are recorded separately."
+  }
+}
