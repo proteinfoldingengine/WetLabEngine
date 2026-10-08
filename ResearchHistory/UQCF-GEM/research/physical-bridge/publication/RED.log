@@ -1,0 +1,85 @@
+test_denied_access_is_not_retried_with_other_credentials (test_evidence_publisher.PublicationContracts.test_denied_access_is_not_retried_with_other_credentials) ... FAIL
+test_evidence_only_path_and_budget_guard (test_evidence_publisher.PublicationContracts.test_evidence_only_path_and_budget_guard) ... FAIL
+test_exact_archive_keeps_empty_members (test_evidence_publisher.PublicationContracts.test_exact_archive_keeps_empty_members) ... FAIL
+test_manifest_hashes_exact_bytes (test_evidence_publisher.PublicationContracts.test_manifest_hashes_exact_bytes) ... FAIL
+test_readback_corruption_prevents_reference_update (test_evidence_publisher.PublicationContracts.test_readback_corruption_prevents_reference_update) ... FAIL
+test_reference_collision_fails_closed (test_evidence_publisher.PublicationContracts.test_reference_collision_fails_closed) ... FAIL
+test_seed_then_evidence_only_nonforce_update (test_evidence_publisher.PublicationContracts.test_seed_then_evidence_only_nonforce_update) ... FAIL
+test_wrong_digest_missing_duplicate_and_unsafe_members_rejected (test_evidence_publisher.PublicationContracts.test_wrong_digest_missing_duplicate_and_unsafe_members_rejected) ... FAIL
+
+======================================================================
+FAIL: test_denied_access_is_not_retried_with_other_credentials (test_evidence_publisher.PublicationContracts.test_denied_access_is_not_retried_with_other_credentials)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/c3_publication/publication/test_evidence_publisher.py", line 16, in setUp
+    self.assertTrue(MODULE.is_file(), 'Evidence publisher not implemented (expected RED)')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Evidence publisher not implemented (expected RED)
+
+======================================================================
+FAIL: test_evidence_only_path_and_budget_guard (test_evidence_publisher.PublicationContracts.test_evidence_only_path_and_budget_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/c3_publication/publication/test_evidence_publisher.py", line 16, in setUp
+    self.assertTrue(MODULE.is_file(), 'Evidence publisher not implemented (expected RED)')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Evidence publisher not implemented (expected RED)
+
+======================================================================
+FAIL: test_exact_archive_keeps_empty_members (test_evidence_publisher.PublicationContracts.test_exact_archive_keeps_empty_members)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/c3_publication/publication/test_evidence_publisher.py", line 16, in setUp
+    self.assertTrue(MODULE.is_file(), 'Evidence publisher not implemented (expected RED)')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Evidence publisher not implemented (expected RED)
+
+======================================================================
+FAIL: test_manifest_hashes_exact_bytes (test_evidence_publisher.PublicationContracts.test_manifest_hashes_exact_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/c3_publication/publication/test_evidence_publisher.py", line 16, in setUp
+    self.assertTrue(MODULE.is_file(), 'Evidence publisher not implemented (expected RED)')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Evidence publisher not implemented (expected RED)
+
+======================================================================
+FAIL: test_readback_corruption_prevents_reference_update (test_evidence_publisher.PublicationContracts.test_readback_corruption_prevents_reference_update)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/c3_publication/publication/test_evidence_publisher.py", line 16, in setUp
+    self.assertTrue(MODULE.is_file(), 'Evidence publisher not implemented (expected RED)')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Evidence publisher not implemented (expected RED)
+
+======================================================================
+FAIL: test_reference_collision_fails_closed (test_evidence_publisher.PublicationContracts.test_reference_collision_fails_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/c3_publication/publication/test_evidence_publisher.py", line 16, in setUp
+    self.assertTrue(MODULE.is_file(), 'Evidence publisher not implemented (expected RED)')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Evidence publisher not implemented (expected RED)
+
+======================================================================
+FAIL: test_seed_then_evidence_only_nonforce_update (test_evidence_publisher.PublicationContracts.test_seed_then_evidence_only_nonforce_update)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/c3_publication/publication/test_evidence_publisher.py", line 16, in setUp
+    self.assertTrue(MODULE.is_file(), 'Evidence publisher not implemented (expected RED)')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Evidence publisher not implemented (expected RED)
+
+======================================================================
+FAIL: test_wrong_digest_missing_duplicate_and_unsafe_members_rejected (test_evidence_publisher.PublicationContracts.test_wrong_digest_missing_duplicate_and_unsafe_members_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/c3_publication/publication/test_evidence_publisher.py", line 16, in setUp
+    self.assertTrue(MODULE.is_file(), 'Evidence publisher not implemented (expected RED)')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Evidence publisher not implemented (expected RED)
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=8)
