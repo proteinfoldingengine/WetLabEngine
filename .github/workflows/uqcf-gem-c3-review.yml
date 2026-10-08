@@ -50,6 +50,7 @@ jobs:
           import json
           import os
           import pathlib
+          import subprocess
           import sys
           import urllib.error
           import urllib.request
@@ -124,6 +125,9 @@ jobs:
               "model_requested": os.environ["REVIEW_MODEL"],
               "model_reported": result.get("modelVersion"),
               "research_branch": "research/uqcf-overlapping-guard-exchange",
+              "research_commit": subprocess.check_output(
+                  ["git", "-C", "research_snapshot", "rev-parse", "HEAD"],
+                  text=True).strip(),
               "workflow_commit": os.environ["RESEARCH_SHA"],
               "input_sha256": hashes,
               "utc_completed": datetime.datetime.now(datetime.timezone.utc).isoformat(),
