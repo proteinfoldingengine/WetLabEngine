@@ -2,7 +2,7 @@
 
 Updated: 2026-10-08 (America/Phoenix).
 Branch: research/uqcf-overlapping-guard-exchange.
-Status: ACCEPTED SCOPED C3 OBSERVATION-FIBER THEOREM PRESERVED; NATIVE CORE-PROBE FOLLOW-ON IS AN AUTHOR-SIDE CANDIDATE. BROADER C3 AND C4-C6 OPEN.
+Status: SCOPED SAFE-PROBE AND CORE-HISTORY CAPACITY THEOREMS CLOSED; NATIVE RECORD ACCESS AND PROGRESS, BROADER C3 AND C4-C6 OPEN. No numbered v16 certification or post-merge full-stack claim.
 
 ## Historical record and index consolidation
 
@@ -10,7 +10,7 @@ The complete previous chronological index, including every earlier candidate upd
 
 The original proposal and precise B1/B2 questions remain at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. The archived index links the fixed-residual handover, dynamic miss-count update, labelled selection, spectator factorization, joint certificate/address, precedence, phased-event and singleton-cycle developments and their individual evidence scopes.
 
-## Latest independently closed checkpoint: observation-fiber certification
+## Inherited observation-fiber checkpoint
 
 Immutable records:
 
@@ -25,7 +25,9 @@ For finite outcome records Y with post-state projection pi, observation O and ta
 
 Earlier conditional capacity, source-audit and event-ledger results remain within their own accepted scopes. Their full records and the hidden-spectator optimality, coarse-channel separation, signed-commit provenance and semantic-commit separation closeouts are in the immutable chronological index above. None establishes physical accessibility of the assumed retained observations.
 
-## Current follow-on: native core-history capacity certificate
+## Prior candidate record: native core-history capacity certificate
+
+The candidate and pending-review notices in this historical section are superseded by the final scoped closeout below; original sources remain unchanged.
 
 Status: AUTHOR-SIDE ANALYTICAL CANDIDATE; independent mathematical review not yet obtained. No new reviewer job is represented as running.
 
@@ -48,7 +50,9 @@ The same candidate proves that no deterministic adaptive procedure guarantees a 
 
 These are author-side analytical results with small explicit hand-case diagnostics, not independent acceptance, an exhaustive numerical campaign, inherited CI replay, formal proof-assistant certification, or a new numbered v16 closure.
 
-## Next work and closure gate
+## Historical next-work and closure gate
+
+The mathematical-review and publication gates described here have now been completed within the scoped analytical model; see the current closeout below.
 
 The immediate next gate is a fresh independent mathematical review of the exact core-probe proof, especially its constructive history-fiber sufficiency, empty-projection boundary, arbitrary-rejection semantics, adaptation and spectator-invariance assumptions. Any substantive correction requires a new exact-source review. Only after mathematical acceptance should a separate publication-consistency audit, scoped closeout and immutable readback be recorded.
 
@@ -122,3 +126,17 @@ This supersedes the prior operational recovery/publisher blocker, not historical
 The finite four-root theorem proves that, with closed-world state-independent committed feedback, uniformly safe spectator-only native edits and the fixed core-only retained observation map, adaptive control cannot distinguish initial Z=empty from Z={u}. The full observed transcripts coincide by induction and q_B-q_A=1 persists. The theorem is independent-review ACCEPTED and publication audited; bounded GitHub controls also pass. Earlier REVISE and evidence errors remain historical, not silently removed.
 
 **Scope separation:** This closes ONLY the stated safe-probe information-obstruction theorem. It does NOT close the distinct native core-history capacity-certificate follow-on described above, derive native observer access or physical forces, or alter broader C3/C4-C6 OPEN status. Continue the native first-principles observer-access program under its own frozen gate.
+
+
+## Current checkpoint: native core-history capacity theorem — scoped CLOSED
+
+The explicit transition clarification at 4f0f70f46c547f7ba287e7685bfc95ba8a585a7d resolved the preserved REVISE objection. Fresh mathematical review in run 37853935344 returned ACCEPTED with no missing assumptions or counterexamples; separate publication audit in run 37854425686 returned ACCEPTED with zero issues. The author reconciled exact source/artifact bytes and qualified the reviewer's imprecise eventual-commit wording: no fairness or eventual success is assumed.
+
+- [Final scoped closeout](COUPLED_C3_CORE_PROBE_CLOSEOUT.md).
+- [Accepted mathematical review and adjudication](COUPLED_C3_CORE_PROBE_ACCEPTED_REVIEW.md).
+- [Separate publication audit](COUPLED_C3_CORE_PROBE_PUBLICATION_AUDIT.md).
+- [Original ZIP archives and manifest](evidence/c3-20261008-closeout/).
+
+The exact completion family is F(H_n)={Z subseteq T: |Z|>=D_n}, with D_n=max(0,max_j(2-|P4_j|)). A visibly committed core deletion can certify positive hidden capacity. The retained bound survives core restoration while Z is invariant. Rejection never certifies emptiness; arbitrary rejection prevents guaranteed finite two-sided decisions. All 28 tests, independent 12-state/142-edge bounded reconstruction and the inherited A12 bounded baseline passed. The general analytical proof is not inferred from those finite counts.
+
+**Current next obligation:** derive the accessibility and retention of a sufficient core-floor witness from an already existing native record/update interface. Do not introduce a spectator read, legality oracle, mandatory-success premise or new physical observer primitive. Distinguish record realization from eventual progress. Broader C3/C4-C6 remain OPEN. This is scoped analytical closure, not numbered v16 certification or a post-merge replay of the complete foundational stack.

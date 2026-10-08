@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-08",
+  "archives": {
+    "audit.zip": {
+      "sha256": "b57fba3dd8f9d1f97202e97e860131ce796a0c32ff8492fd9143d17847035ce7",
+      "bytes": 1408,
+      "git_blob": "9ca320c40f820e6db0e5e78a654484dead287a00"
+    },
+    "review.zip": {
+      "sha256": "97b2794367126c836a5c08eacd935bcc3042463d6ac5bcdfde1461cfd6bf1f19",
+      "bytes": 1519,
+      "git_blob": "415cde5bd8c01cc0cb1a52c89a1fcd0622d9bc49"
+    },
+    "core_review.zip": {
+      "sha256": "3259841ebdd0be795a3bcf3300c478199efd6266f32661dec521da7d0ccec076",
+      "bytes": 2219,
+      "git_blob": "c79e2471df1c496355d1e4858b87a38dc5fda552"
+    },
+    "controls.zip": {
+      "sha256": "d70d87b09c3ba1861e46d10f970887b28d6e5f807e5565c3ef9b5979c4f9ecd7",
+      "bytes": 6094,
+      "git_blob": "cffec2d29390ad8872ad82a5780749b887de5e78"
+    },
+    "core_review_accepted.zip": {
+      "sha256": "984bd32c3900b48130f781c431206ea9c5a449dbc9a0ea2e6ba49f7a9552e7f8",
+      "bytes": 8256,
+      "git_blob": "32d1cb8c2f3dccf0a9ecb8f33c9113b6a6373988"
+    },
+    "publication_final.zip": {
+      "sha256": "0c189e5cf995175e7f5c4c847fdd72e484bb64cfdc28caf42cd9c00acb0dfccf",
+      "bytes": 24169,
+      "git_blob": "8d889b853d3093a6de61c3cfd0b0fdf672a181bd"
+    }
+  },
+  "artifacts": {
+    "audit.zip": 11582202861,
+    "review.zip": 11583035530,
+    "core_review.zip": 11582437890,
+    "controls.zip": 11582143989,
+    "core_review_accepted.zip": 11582568402,
+    "publication_final.zip": 11583655880
+  },
+  "scope": "Exact original ZIP bytes downloaded and hashed; no scientific or post-merge certification inferred from archive integrity."
+}
