@@ -2,6 +2,11 @@ name: UQCF-GEM C3 theorem verification
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/uqcf-gem-c3-review.yml'
+      - '.github/scripts/c3_safe_probe_verify.py'
 
 permissions:
   contents: read
