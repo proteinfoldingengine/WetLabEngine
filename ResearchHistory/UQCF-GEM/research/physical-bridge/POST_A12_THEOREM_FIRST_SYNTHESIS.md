@@ -109,3 +109,16 @@ Final workflow run 37835621311, attempt 1, job 113511769089, at source bbe0c397b
 The replacement publisher retains the same token permissions and checks evidence-only single-parent commits, non-force updates, exact path/blob sets and immutable bytes. An immediate-reference-readback failure during the first repair was preserved and addressed with bounded read-only convergence tests; unrelated references and failures still reject. The final artifact was downloaded and hashed, and its complete locally reconstructed evidence tree 98e03e82c3fa1015babb6d1424c5d6f433d414e1 matched immutable GitHub directory readback.
 
 This supersedes the prior operational recovery/publisher blocker, not historical failures or mathematical scope. The native core-probe theorem is still an author-side candidate with independent mathematical acceptance and its subsequent publication audit unfulfilled. No external-AI review, main merge, observer mechanism or physical-force result is claimed. Broader C3 and C4-C6 remain OPEN.
+
+
+## C3 uniformly safe active-probe non-identifiability — bounded independent closeout
+
+- [Frozen safe-probe scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/d562bd602c2c7f87bface370717ddcfa2a84d0c5).
+- [Consolidated self-contained theorem](https://github.com/proteinfoldingengine/WetLabEngine/commit/42a3201bdf9be5238161a1d882fa478e7727aa3b).
+- [Independent mathematical ACCEPTED review](https://github.com/proteinfoldingengine/WetLabEngine/commit/1d4eb466350fbc45270186cee7d6ed071e89f31c), GitHub run 37851706533.
+- [Independent publication-consistency ACCEPTED audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/e9c048ae57022a7e0554f0c94f0e07528cad68a5), GitHub run 37852390513.
+- [Final bounded scientific closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/572d3d117df634610df22b116680de0ab39bbb0c).
+
+The finite four-root theorem proves that, with closed-world state-independent committed feedback, uniformly safe spectator-only native edits and the fixed core-only retained observation map, adaptive control cannot distinguish initial Z=empty from Z={u}. The full observed transcripts coincide by induction and q_B-q_A=1 persists. The theorem is independent-review ACCEPTED and publication audited; bounded GitHub controls also pass. Earlier REVISE and evidence errors remain historical, not silently removed.
+
+**Scope separation:** This closes ONLY the stated safe-probe information-obstruction theorem. It does NOT close the distinct native core-history capacity-certificate follow-on described above, derive native observer access or physical forces, or alter broader C3/C4-C6 OPEN status. Continue the native first-principles observer-access program under its own frozen gate.
