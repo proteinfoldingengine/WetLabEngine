@@ -1,0 +1,71 @@
+name: UQCF-GEM C3 changed research-source verification
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/shared_witness/*.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SHARED_WITNESS_CHANNEL_SCOPE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SHARED_WITNESS_CHANNEL_RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SHARED_WITNESS_VERIFICATION_CONTRACT.md'
+
+permissions:
+  contents: read
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+      - name: Complete independent channel and inherited compatibility checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p shared_witness_verification
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT/shared_witness" -p test_shared_witness.py -v 2>&1 | tee shared_witness_verification/contracts.log
+          python3 "$ROOT/shared_witness/shared_witness_producer.py" > shared_witness_verification/graph.json
+          python3 "$ROOT/shared_witness/shared_witness_producer.py" > /tmp/channel-repeat.json
+          cmp shared_witness_verification/graph.json /tmp/channel-repeat.json
+          python3 "$ROOT/shared_witness/shared_witness_independent.py" shared_witness_verification/graph.json | tee shared_witness_verification/independent.json
+          python3 -m unittest discover -s "$ROOT" -p test_core_probe_replay.py -v 2>&1 | tee shared_witness_verification/inherited_core.log
+          python3 -m unittest discover -s "$ROOT/verification" -p 'test_*.py' -v 2>&1 | tee shared_witness_verification/inherited_contracts.log
+          cd research_snapshot
+          python3 ResearchHistory/UQCF-GEM/research/physical-bridge/verification/verify.py --output ../shared_witness_verification/a12_baseline.json 2>&1 | tee ../shared_witness_verification/a12_baseline.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-shared-witness-verification
+          path: shared_witness_verification/
+          retention-days: 30
+  adversarial-review:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-shared-witness-verification
+          path: shared_witness_verification
+      - name: Independent adversarial mathematical review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/c3_shared_witness_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-shared-witness-review
+          path: shared_witness_review/
+          retention-days: 30
