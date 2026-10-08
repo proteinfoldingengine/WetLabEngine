@@ -362,6 +362,17 @@ Independent mathematical review job 01a119ad-4f1d-72c9-998e-e9aa88cccd70 is runn
 
 A known seed count q0 and complete VALID spectator event-direction ledger reconstruct q_n=q0+sum eps_j, b=1[q_n>0] without subsequent hidden-state reads. Unknown seed or spectator-blind channels cannot generally reconstruct b. A Boolean alone cannot be updated across arbitrary deletions, whereas q can. This is a conditional ordered-event theorem, not a derivation that a native observer has q0 or a complete ledger. Broader C3 and C4-C6 remain OPEN.
 
+
+## C3 partial-seed event observability: exact feasible-count interval candidate
+
+- [Frozen scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/542782cd198b65e9bfd79dd88193251666e74637).
+- [Analytical proof candidate](https://github.com/proteinfoldingengine/WetLabEngine/commit/e7a6c7286f08256efd188e3a5357f08cb7a1b961).
+- [Author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/70ec17011040c940d8809be614dc34b92ef38392).
+
+With finite spectator palette size N and a COMPLETE valid r4 spectator event-direction ledger but UNKNOWN seed count, prefix sums s_j give the exact feasible initial count interval [max(0,-min s_j), min(N,N-max s_j)]. Current counts are that interval translated by s_n. Hence the capacity bit b can sometimes be determined from event validity and finite palette bounds even without a known initial count. If current counts include both 0 and positive values, uniform shortest repair remains impossible from this ledger, though the eight-edit buffer repair is universally legal.
+
+This is a conditional analytical candidate; independent review job 01a119b4-060a-7349-85f4-f81ee21bf3b5 is processing. It does not derive completeness or physical observer access. Broader C3 and C4-C6 remain OPEN.
+
 ## Next unresolved obligation
 
 The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
