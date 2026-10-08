@@ -22,6 +22,7 @@ try:
         "COUPLED_C3_SAFE_PROBE_RESULT.md",
         "COUPLED_C3_SAFE_PROBE_AUDIT.md",
         "COUPLED_C3_SAFE_PROBE_CLARIFICATION.md",
+        "COUPLED_C3_SAFE_PROBE_VERDICT_ADJUDICATION.md",
     }
     if set(manifest.get("input_sha256", {})) != expected:
         raise ValueError("Unexpected or missing research proof inputs")
@@ -48,6 +49,9 @@ try:
                   findings_count=len(obj["findings"]),
                   missing_assumptions_count=len(obj["missing_assumptions"]),
                   counterexamples_count=len(obj["counterexamples"]))
+    if verdict == "REVISE" and not obj["missing_assumptions"] and not obj["counterexamples"]:
+        output["status"] = "NEEDS_HUMAN_RECONCILIATION"
+        output["reason"] = "REVISE has no listed missing assumptions or counterexamples; inspect findings for actionable objection"
     if verdict == "ACCEPTED" and (obj["missing_assumptions"] or obj["counterexamples"]):
         output["status"] = "NEEDS_HUMAN_RECONCILIATION"
         output["reason"] = "Accepted verdict conflicts with unresolved objections"
