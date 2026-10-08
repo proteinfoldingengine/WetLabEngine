@@ -72,7 +72,7 @@ payload = {"contents": [{"parts": [{"text": prompt + "\n\n" + "\n\n".join(
     "DOCUMENT " + n + "\n" + docs[n] for n in names)}]}],
     "generationConfig": {"temperature": 0, "maxOutputTokens": 16384}}
 req = urllib.request.Request(
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
     data=json.dumps(payload).encode("utf-8"),
     headers={"Content-Type": "application/json", "x-goog-api-key": key},
     method="POST")
@@ -80,7 +80,15 @@ try:
     with urllib.request.urlopen(req, timeout=240) as response:
         result = json.load(response)
 except urllib.error.HTTPError as exc:
-    print("FAIL: Gemini HTTP", exc.code)
+    try:
+        message = str(json.loads(exc.read()).get("error", {}).get("message", "")).replace(key, "[REDACTED]")
+    except Exception:
+        message = "No structured error message"
+    failure = {"status": "INFRASTRUCTURE_FAILURE_NOT_MATHEMATICAL_VERDICT",
+               "http_status": exc.code, "message": message,
+               "input_sha256": hashes, "model_requested": "models/gemini-3.1-pro-preview"}
+    (out / "infrastructure_failure.json").write_text(json.dumps(failure, indent=2)+"\n")
+    print("FAIL: Gemini HTTP", exc.code, message)
     sys.exit(1)
 except Exception as exc:
     print("FAIL: Gemini request", type(exc).__name__)
@@ -97,7 +105,7 @@ manifest = {
         ["git", "-C", "research_snapshot", "rev-parse", "HEAD"], text=True).strip(),
     "input_sha256": hashes,
     "model": result.get("modelVersion"),
-    "model_requested": "models/gemini-2.5-flash",
+    "model_requested": "models/gemini-3.1-pro-preview",
     "response_sha256": hashlib.sha256(raw.encode()).hexdigest(),
     "tokens": result.get("usageMetadata", {}).get("totalTokenCount"),
 }
