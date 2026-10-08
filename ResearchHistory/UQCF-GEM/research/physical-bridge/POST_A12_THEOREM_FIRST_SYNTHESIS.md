@@ -1,38 +1,22 @@
 # Post-A12 theorem-first synthesis — current continuation index
+Updated: 2026-10-08. Branch: research/uqcf-overlapping-guard-exchange.
+Status: FOUR SCOPED C3 CHECKPOINTS CLOSED; native record genesis/enforcement/progress and broader C3/C4-C6 OPEN. No numbered v16 or full-stack post-merge certification.
 
-Updated 2026-10-08. Branch: research/uqcf-overlapping-guard-exchange.
-Status: safe-probe obstruction, core-history capacity and shared-witness channel are CLOSED only within their declared scopes. Native record accessibility/progress, broader C3 and C4-C6 remain OPEN. No numbered v16 or full-stack post-merge certification.
+## Preserved history
+The complete preceding index, including prior pending notices and adverse core-readout reviews, is preserved at [f6417541c95c4584f4d955ae0745f4109506645c](https://github.com/proteinfoldingengine/WetLabEngine/blob/f6417541c95c4584f4d955ae0745f4109506645c/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_THEOREM_FIRST_SYNTHESIS.md). Historical source files are unchanged.
+A12.1-A12.5 at bbc6e6f68beaf7d2d1641e711b46b55ae0bf62db, A11, v16.54/v16.55 and issue104 remain unchanged. No A12.6. Path A active; Hodge/path B closed.
 
-## Preserved historical record
+## Current scoped results
+- [Safe-probe obstruction](COUPLED_C3_SAFE_PROBE_CLOSEOUT.md), 572d3d117df634610df22b116680de0ab39bbb0c: fixed-channel uniformly safe spectator-only indistinguishability.
+- [Core-history capacity](COUPLED_C3_CORE_PROBE_CLOSEOUT.md), 443ddb4d1721b0e1ad0250c580789ada6e2d2c1d: exact completion family through retained core-floor deficit; one-sided capacity certificate.
+- [Shared-witness channel](COUPLED_C3_SHARED_WITNESS_CLOSEOUT.md), 95fd6a70e34a27615f2f5b83b3081730972e88df: tau=4-xy, direct-tau synchronization and immediate anchored payload decoding.
+- [Core-visible two-sided readout](COUPLED_C3_CORE_READOUT_CLOSEOUT.md): complementary actual core witnesses certify xy=1 and xy=0 without observing tau. On a core-certified anchor, fresh before/after certificates detect one pending payload toggle. Guarded rejection and core access are assumed; decoding is delayed, completion unguaranteed, attempts not uniformly safe before issue.
 
-The complete prior index, including earlier candidate notices, accepted theorem chains and historical failures, is preserved verbatim at [edad36f7002f76bbc1d206a7d1ebd4f1c2a8ae9f](https://github.com/proteinfoldingengine/WetLabEngine/blob/edad36f7002f76bbc1d206a7d1ebd4f1c2a8ae9f/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_THEOREM_FIRST_SYNTHESIS.md). Consolidation here supersedes outdated processing notices without deleting their sources.
+Latest complete domain: 14 states, 110 probe outcomes, 6 service outcomes; 43 tests pass. Initial image-model REVISE responses are preserved and explicitly adjudicated by [Pro run37858766349](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/37858766349), ACCEPTED, zero missing assumptions/counterexamples. [Separate publication audit37859191017](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/37859191017) ACCEPTED, zero issues. See [accepted review](COUPLED_C3_CORE_READOUT_ACCEPTED_REVIEW.md), [audit reconciliation](COUPLED_C3_CORE_READOUT_PUBLICATION_AUDIT.md), and [complete evidence](evidence/core-readout/).
 
-A12.1-A12.5 at bbc6e6f68beaf7d2d1641e711b46b55ae0bf62db, accepted A11, certified v16.54/v16.55 and issue #104 are unchanged. No A12.6 is opened. Path A remains active; closed Hodge/path B is not mixed into this work.
+## Next obligation
+Continue the [native record-origin dependency reduction](COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md): derive accessible core records and native enforcement from existing typed retained/update inputs. An admissible-state relation alone is not an implementation or actual-record selection law. Do not add an observer-side hidden-state oracle or impose progress.
+The observation-fiber criterion remains the factorization test; direct-tau dependence has been reduced, not the entire observer-origin problem solved.
 
-## Closed bounded checkpoints
-
-- [Safe-probe closeout](COUPLED_C3_SAFE_PROBE_CLOSEOUT.md), commit 572d3d117df634610df22b116680de0ab39bbb0c: uniformly safe spectator-only edits preserve the stated observational indistinguishability/count offset under the closed-world fixed observation model. Mathematical run 37851706533 and publication run 37852390513 accepted.
-- [Core-history closeout](COUPLED_C3_CORE_PROBE_CLOSEOUT.md), commit 443ddb4d1721b0e1ad0250c580789ada6e2d2c1d: exact compatible family F(H)={Z:|Z|>=D}, D=max(0,max_j(2-|P4_j|)). A visibly committed core deletion certifies positive capacity; retained history survives restoration. Mathematical run 37853935344 and publication run 37854425686 accepted. Rejection gives no emptiness certificate or finite-progress guarantee.
-- [Shared-witness closeout](COUPLED_C3_SHARED_WITNESS_CLOSEOUT.md): tau=4-xy; observed tau=3 synchronizes x=y=1. With x then fixed, y=4-tau decodes actual payload toggles and cleanup/renewal. Proof 1c5d58a857a633854ab7485e9a0d0cf409f333c5; exact graph/code snapshot 159c1b119e3bc0707837aecf3a3d01c04b52e2f6. [Verification and mathematical review](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/37856079404) and [separate publication audit](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/37856637045) accepted. [Original evidence](evidence/c3-shared-witness-37856079404/), [author reconciliation](COUPLED_C3_SHARED_WITNESS_ACCEPTED_REVIEW.md), [publication audit](COUPLED_C3_SHARED_WITNESS_PUBLICATION_AUDIT.md).
-
-The observation-fiber criterion p=g o O iff p is constant on every O-fiber remains the exact sufficiency test. These results do not derive observer accessibility of the supplied coordinates. The shared-witness result assumes exact tau and a frozen anchor; it neither reconstructs unknown initial bits nor guarantees reaching synchronization.
-
-## Active next obligation
-
-Trace initialization and update provenance for a sufficient native retained record. The existing full-palette miss-count field is mathematically sufficient in relevant carriers but its theorem explicitly assumes correct initialization and the active root's support. Replacing tau by that uninitialized field would not solve access.
-
-Require exact existing-source interfaces and their quantifiers, a noncircular construction or a precisely bounded obstruction, rejecting controls and the complete verification/review/publication loop. Distinguish accessible record, semantic commit and eventual progress. Do not reopen closed results absent new evidence or advance to C4-C6 by relabeling conditional data as a physical measurement.
-
-No fundamental time, physical force, inserted geometry, dark-matter variable, energy law, continuum or GR derivation is claimed. GitHub workflows and the existing hourly monitor support discrete execution; they do not imply uninterrupted autonomous background research.
-
-## Current continuation receipt
-
-Shared-witness final publication and exact original-archive readback completed at [95fd6a70e34a27615f2f5b83b3081730972e88df](https://github.com/proteinfoldingengine/WetLabEngine/commit/95fd6a70e34a27615f2f5b83b3081730972e88df). The next [native record-origin scope](COUPLED_C3_NATIVE_RECORD_ORIGIN_SCOPE.md) is OPEN. Initial source reads confirm that miss-count initialization, semantic-commit access and supplied RAS/RCR are distinct prerequisites; this is a source audit, not a newly proved universal obstruction.
-
-A research-branch push workflow now rechecks the exact event commit when the shared-witness scientific source, verification contract or Python verification files change. Its verification job gates the separate adversarial review. Merely publishing this continuation or its historical closeout does not rerun the unchanged theorem. Fresh reviewer acceptance never automatically updates scientific CLOSED status.
-
-## Active core-visible readout candidate — OPEN
-
-Native record-origin work found a conditional two-sided core readout construction: visible floor-supported deletion certifies presence, and a visible protected-band bridge addition certifies absence, without directly observing tau. Scope d68f460d6b594c83c8d7f5f242c85e4e61847580; proof f0fb556d39047e58e87e358b2433e58a0a25fb3b; clarification 7a7cd0c33f316f0631246356ddf937362aaebb65. Exact14-state/110-probe/6-service verification and43 tests passed in runs37857965667 and37858216032. Both image-model reviews returned REVISE with no counterexamples. The second repeats requests already explicitly answered; see COUPLED_C3_CORE_READOUT_REVIEW_ADJUDICATION.md and preserved raw evidence. Independent adjudication and subsequent publication audit are pending. Do not call this checkpoint closed.
-
-The proposal expands allowed core actions and assumes enforced admissible-toggle-or-NOOP transitions; it does not apply to uniformly-safe-before-issue commands. It yields delayed certificate-conditioned readout with no guaranteed progress. Core accessibility and enforcement origin remain open.
+Research-source changes have event-driven verification/review workflows. Historical publications need not rerun unchanged mathematics. Separate publication audit and author reconciliation remain required for future closure. The existing monitor schedules discrete checks, not continuous background research.
+No fundamental time, force, inserted spacetime geometry, dark-matter variable, continuum or GR derivation is claimed.

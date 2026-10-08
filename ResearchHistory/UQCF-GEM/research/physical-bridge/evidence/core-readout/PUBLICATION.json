@@ -1,0 +1,82 @@
+{
+  "run": 37859191017,
+  "workflow_commit": "2e9ab64643cb91428f2910ef3069071e4fb41f68",
+  "audited_commit": "a2b5c92e067834595240897437227bb9d0a99358",
+  "artifact": {
+    "id": 11585118947,
+    "name": "c3-core-readout-publication-audit",
+    "size_in_bytes": 59161,
+    "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11585118947",
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11585118947/zip",
+    "expired": false,
+    "created_at": "2026-10-08T23:24:16Z",
+    "expires_at": "2026-11-07T23:24:16Z",
+    "updated_at": "2026-10-08T23:24:16Z",
+    "digest": "sha256:c1cd5226fc3c739b98025b14ffa7771e22386377c80d171be5322096e399a452",
+    "workflow_run": {
+      "id": 37859191017,
+      "repository_id": 1148068528,
+      "head_repository_id": 1148068528,
+      "head_branch": "main",
+      "head_sha": "2e9ab64643cb91428f2910ef3069071e4fb41f68"
+    }
+  },
+  "archive": {
+    "zip_sha256": "c1cd5226fc3c739b98025b14ffa7771e22386377c80d171be5322096e399a452",
+    "members": {
+      "publication_review.txt": {
+        "sha256": "2323c883c50968a7ee17ac023bb235d41b0e202446181f26c78e2a39842c7774",
+        "bytes": 1825
+      },
+      "submitted_documents.json": {
+        "sha256": "16988f61adc5062cce1611948dceb3c81a9d0aa35ea5b5a594119283d58bc32f",
+        "bytes": 260498
+      },
+      "manifest.json": {
+        "sha256": "6064c743d233711849aa79bf020507f42b982b2d5137c60ee5bf3dd386c911dc",
+        "bytes": 3501
+      }
+    },
+    "manifest": {
+      "input_sha256": {
+        "COUPLED_C3_CORE_PROBE_TRANSITION_CLARIFICATION.md": "56c493856df8face993439e5dbc619b01d613751dc221e1e2ca09624844f3728",
+        "COUPLED_C3_CORE_READOUT_ACCEPTED_REVIEW.md": "0d2e0a270e9fe526362ecddfb3577679d25aee580f79cf896a998963d7b0fe7b",
+        "COUPLED_C3_CORE_READOUT_CLARIFICATION.md": "ccaf19c5143cd14b9f409bcd59585171492eed90e5483128e4487959b25e49f6",
+        "COUPLED_C3_CORE_READOUT_RESULT.md": "9e97d9709b8b4df605fe19a3d6a310247e869895f216fb511f7784c3d6cea244",
+        "COUPLED_C3_CORE_READOUT_REVIEW_ADJUDICATION.md": "f7dce91aa9049684a16131a6f4a6aec01025c267fb84b16c8fb0239581a0b1f9",
+        "COUPLED_C3_CORE_READOUT_SCOPE.md": "dcaf9c0bd81ecbddca29e827a257816a8d4e53e43cb46aa0faf1d3181ccf529d",
+        "COUPLED_C3_SHARED_WITNESS_CHANNEL_SCOPE.md": "862178c67c105952b95017679ae8fd35fa5606b8738fd984fc93eb225cc0410f",
+        "core_readout/independent.py": "e9d6f6b784cad8fae56dd9d9b88810c64fcfa5a0b3c58f3f7c2a344af5c5a2d4",
+        "core_readout/pins.py": "a669dca3979bffe38cb3a9a962625780c47784901354ec477edc47ec6483a224",
+        "core_readout/producer.py": "2892d183620e91ba7eee36c6a344bbc93b9d954fe9abe2a5702d0c1cd9662e56",
+        "core_readout/test_core_readout.py": "07a0bb1df342d8d0ecc008530876074dfb455afe86989f2599028c7655b305f4",
+        "evidence/core-readout/EVIDENCE.json": "58f669ca30b2e0b5b34030abefadd30b946e9582925afb6a93b380d887e2623f",
+        "evidence/core-readout/initial_review.txt": "f581405e72aaf7c93ce57c892281ae852c8a3ab1e0ab72af6a5ff5ec96ff2717",
+        "evidence/core-readout/second_review.txt": "ce7a2ffe1feeb6f14651134ccb48c05d7c4e3478fffffa0709056bc9e66f8b68"
+      },
+      "model_reported": "gemini-3.1-pro-preview",
+      "model_requested": "models/gemini-3.1-pro-preview",
+      "research_commit": "a2b5c92e067834595240897437227bb9d0a99358",
+      "response_sha256": "2323c883c50968a7ee17ac023bb235d41b0e202446181f26c78e2a39842c7774",
+      "scientific_closeout": false,
+      "submitted_document_sha256": {
+        "COUPLED_C3_CORE_PROBE_TRANSITION_CLARIFICATION.md": "56c493856df8face993439e5dbc619b01d613751dc221e1e2ca09624844f3728",
+        "COUPLED_C3_CORE_READOUT_ACCEPTED_REVIEW.md": "0d2e0a270e9fe526362ecddfb3577679d25aee580f79cf896a998963d7b0fe7b",
+        "COUPLED_C3_CORE_READOUT_CLARIFICATION.md": "ccaf19c5143cd14b9f409bcd59585171492eed90e5483128e4487959b25e49f6",
+        "COUPLED_C3_CORE_READOUT_RESULT.md": "9e97d9709b8b4df605fe19a3d6a310247e869895f216fb511f7784c3d6cea244",
+        "COUPLED_C3_CORE_READOUT_REVIEW_ADJUDICATION.md": "f7dce91aa9049684a16131a6f4a6aec01025c267fb84b16c8fb0239581a0b1f9",
+        "COUPLED_C3_CORE_READOUT_SCOPE.md": "dcaf9c0bd81ecbddca29e827a257816a8d4e53e43cb46aa0faf1d3181ccf529d",
+        "COUPLED_C3_SHARED_WITNESS_CHANNEL_SCOPE.md": "862178c67c105952b95017679ae8fd35fa5606b8738fd984fc93eb225cc0410f",
+        "core_readout/independent.py": "e9d6f6b784cad8fae56dd9d9b88810c64fcfa5a0b3c58f3f7c2a344af5c5a2d4",
+        "core_readout/pins.py": "a669dca3979bffe38cb3a9a962625780c47784901354ec477edc47ec6483a224",
+        "core_readout/producer.py": "2892d183620e91ba7eee36c6a344bbc93b9d954fe9abe2a5702d0c1cd9662e56",
+        "core_readout/test_core_readout.py": "07a0bb1df342d8d0ecc008530876074dfb455afe86989f2599028c7655b305f4",
+        "evidence/core-readout/EVIDENCE.json": "58f669ca30b2e0b5b34030abefadd30b946e9582925afb6a93b380d887e2623f",
+        "evidence/core-readout/initial_review.txt": "f581405e72aaf7c93ce57c892281ae852c8a3ab1e0ab72af6a5ff5ec96ff2717",
+        "evidence/core-readout/second_review.txt": "ce7a2ffe1feeb6f14651134ccb48c05d7c4e3478fffffa0709056bc9e66f8b68"
+      },
+      "tokens": 94663
+    },
+    "response": "```json\n{\n  \"verdict\": \"ACCEPTED\",\n  \"issues\": [],\n  \"checks\": [\n    \"Disjoint-group additivity mathematically verified: U={a,b,c,d,w} and V={e,f,g,h} are disjoint, so hitting sets partition exactly, yielding tau = 4-xy-b.\",\n    \"Sequential admissibility verified: -a(root1) from xy=1 baseline yields an admissible intermediate state (tau=3, floors satisfied), allowing -c(root2).\",\n    \"Complete-alphabet induction verified: closed-world assumption ensures only the single payload request can toggle y, making delayed readout sound.\",\n    \"43 distinct tests verified (7 new, 36 inherited) and initial tests-first RED confirmed.\",\n    \"Exact 14-state, 110-probe-outcome, 6-service-outcome reconstruction verified independently.\",\n    \"Model selection disclosure verified: image models returned REVISE, text Flash returned HTTP404, Pro accepted.\",\n    \"Adverse evidence preservation verified: initial and second REVISE reviews are fully retained and addressed.\",\n    \"Claimed improvement correctly scoped: core-only two-sided certificates with guarded inadmissible-or-NOOP relation, not uniform safety or instant decoding.\",\n    \"All scientific archive members and full runner boilerplate verified as retained verbatim.\"\n  ],\n  \"limitations\": [\n    \"Core access and native constraint enforcement (floors and band) remain assumed primitives, not physically derived.\",\n    \"Protocol does not guarantee progress or completion due to arbitrary rejections (infinite all-NOOP executions).\",\n    \"Immediate payload decoding is not available; detection is delayed and certificate-conditioned.\",\n    \"Not valid under a uniformly-safe-before-issue controller model.\",\n    \"A12 diagnostics are bounded finite corroboration, not full v16 certification.\",\n    \"Candidate/pending notices in frozen earlier sources are historical.\"\n  ]\n}\n```"
+  }
+}
