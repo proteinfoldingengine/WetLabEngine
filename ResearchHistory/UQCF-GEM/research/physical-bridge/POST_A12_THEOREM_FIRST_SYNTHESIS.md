@@ -383,6 +383,17 @@ This is a conditional analytical candidate; independent review job 01a119b4-060a
 
 For a known finite spectator palette and complete valid root-addressed sign ledger, exact feasible initial spectator counts are [max(0,-min prefix sum), min(N,N-max prefix sum)]. Current count interval determines whether b=0, b=1, or ambiguous. A safe eight-edit buffer route exists uniformly, whereas the six-edit shortest route requires nonempty spectators; no universal shortest first move exists in ambiguous fibers. Fresh w outside T is a uniform buffer, NOT a unique optimal label. This bounded mathematical theorem is independently accepted and publication audited, but the existence of the complete native observer event channel is not derived. Broader C3/C4-C6 remain OPEN.
 
+
+## C3 native event-channel separation — author-side theorem candidate
+
+- [Frozen scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/5f11d4ee5d9911b717e2eac68fcd945c65a8720a).
+- [Proof candidate](https://github.com/proteinfoldingengine/WetLabEngine/commit/95ccef2d12ce7a16ccb8114c2972c8d8d6f56fba).
+- [Author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/09f59e66a08dde359892e5ed76fd1ab0ed66ea74).
+
+Two valid histories from the SAME known empty spectator seed, +u(r4),-u(r4) versus +u(r4),+v(r4), have identical ordered event OCCURRENCES and root addresses, identical core projections and core miss-count certificates, tau=3 and all floor-validity flags at every slice, yet final spectator capacity bits differ. Therefore these already specified coarse observables cannot determine the shortest six-versus-eight repair choice, even with complete event occurrence counting and a known seed. The second event SIGN distinguishes the pair, but native sign access is not established. This is a precise scoped information obstruction, not a general no-observer theorem.
+
+Independent mathematical review job 01a11ca8-bf9e-7294-b4f7-9c9ae2b3c864 is processing. Broader C3 and C4-C6 remain OPEN.
+
 ## Next unresolved obligation
 
 The full B1/B2 program is NOT closed. The one-buffer singleton permutation-cycle theorem is independently reviewed and publication-closed. Its bounded scientific gate is complete.
