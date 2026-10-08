@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: C1/C2 INDEPENDENTLY ACCEPTED; C3 ANCHOR LEMMA ACCEPTED; C3 COUPLED DEADLOCK/BYPASS CANDIDATE UNDER REVIEW; C3-C6 OPEN.
+Status: C1/C2 INDEPENDENTLY ACCEPTED; C3 ANCHOR AND BOUNDED COUPLED-DEADLOCK THEOREMS ACCEPTED; BROADER C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -248,6 +248,17 @@ Fresh independent mathematical review launched: job 01a1195c-f9c9-724f-bac6-e7d7
 The new carrier has source ({a,b},{b,c},{a,c},{d,e}) and target ({b,d},{b,c},{c,d},{a,e}), floors2. At source every endpoint-only deletion violates its floor and each endpoint-only addition creates an explicit two-cover. The proposed native eight-edit path using temporary w on r4 keeps tau=3 at every state and removes w at exact target. The author-side proof also gives a carrier-specific 8-edit lower bound.
 
 This is a stronger, genuinely coupled positive candidate than the C2 order-dependence example, but not a universal retained host-selection or renewable-cycle theorem. Fresh independent mathematical review launched: job 01a11962-0b81-76ac-865b-f75aac9fd5c3. Do not promote C3 to closed before review and further retained-controller work.
+
+
+## Bounded C3 coupled deadlock independently closed
+
+- [Independent mathematical acceptance](https://github.com/proteinfoldingengine/WetLabEngine/commit/50b3073e09a4dd7afff0e2ec0f05efd901056e5e).
+- [Separate independent publication audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/d31e3654bd020532d6fd04dc08f0ed9790da9c81).
+- [Final scoped closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/fae793e6fb586c949845e495ec243bd996b0cdf4).
+
+The frozen four-root carrier has no legal endpoint-only first edit, but one temporary w on its fourth root gives a minimum eight-edit protected path with tau=3 throughout and exact cleanup. Independent mathematical and publication reviews accepted this bounded result. The initial REVISE was a source-retrieval issue, not a mathematical counterexample.
+
+Broader C3 is still OPEN: derive a fiber-uniform retained host-selection rule and renewable protection across multiple genuinely coupled changes. C4-C6 remain OPEN. No numerical, formal proof-assistant, or physical validation claim.
 
 ## Next unresolved obligation
 
