@@ -1,0 +1,30 @@
+```json
+{
+  "verdict": "REVISE",
+  "findings": [
+    "The argument for tau=4-xy-b in COUPLED_C3_CORE_READOUT_RESULT.md, Section 1, relies on the hitting number calculation. While the calculation for S1,S2 (2-xy) and S3,S4 (2-b) is presented, the step of adding these to get tau=4-xy-b is not fully justified for all configurations, especially those failing floors. The 'transversal numbers add' principle is generally for disjoint sets, but the supports themselves are not entirely disjoint in terms of labels (e.g., 'w' and 'e' are shared within their respective pairs). A more rigorous proof of the hitting number for the combined system is needed, explicitly considering how shared labels affect the overall transversal number, particularly when floors are violated.",
+    "The 'protected lower bound' for b=1 implying xy=0 is stated as a consequence of 'xy+b<=1'. This inequality is presented as equivalent to the lower band. However, the derivation of this equivalence from the hitting number tau=4-xy-b and the band 3<=tau<=4 needs to be explicitly shown. Specifically, how 3 <= 4-xy-b implies xy+b <= 1.",
+    "The claim in COUPLED_C3_CORE_READOUT_RESULT.md, Section 2, that 'From xy=1, -a(root1) followed by -c(root2) are admissible toggles and actual commitments yield d1=d2=1' needs further scrutiny. While -a(root1) might be admissible for x=1, and -c(root2) for y=1, the admissibility of the *sequence* of these two operations, especially if the state changes after the first, needs to be explicitly confirmed under the 'admissible-toggle-or-NOOP' transition model. The model states 'each executed once as either the syntactically valid toggle with an admissible successor, or a NOOP'. This implies that the second command's admissibility depends on the state *after* the first command's potential commitment. The document assumes this sequence is admissible without explicit state-by-state verification.",
+    "The 'Core-certified anchor and delayed payload channel' in COUPLED_C3_CORE_READOUT_RESULT.md, Section 4, describes a process where a fresh core certificate is acquired after a payload request. It states 'y_new!=y_old iff that one pending payload request actually toggled w. Equality certifies NOOP under this exact relation.' This relies on the assumption that the payload request is the *only* possible cause for a change in y. While 'no further payload requests or hidden writers while probing' is stipulated, the argument needs to explicitly rule out any other unobserved or implicit changes to y that could occur between the old certificate and the new one, especially given the 'arbitrary finite-episode induction' and 'no guaranteed progress' clauses. The 'retained-history inference' needs to be robust against all possible unobserved state changes within the defined model.",
+    "The 'Rejecting controls and boundary' in COUPLED_C3_CORE_READOUT_RESULT.md, Section 5, lists several controls. The control 'hidden_writer': ['10000','11000'] is listed, but its specific role as a rejecting control or counterexample is not explicitly detailed in the text. It's unclear what 'After certifying a bit, an unreported spectator toggle can invalidate it while leaving core observations unchanged. Completeness/exclusive writing is load-bearing.' means in the context of this specific control. A more precise explanation of how this control demonstrates a limitation or rejection scenario is required.",
+    "The 'What is genuinely new' section in COUPLED_C3_CORE_READOUT_RESULT.md, Section 6, claims novelty over the 'one-sided capacity and direct-tau shared-witness channel'. While it highlights the two-sided nature and lack of direct tau observation, a more detailed comparison with the specific limitations and capabilities of the 'one-sided capacity' and 'direct-tau shared-witness channel' (as described in COUPLED_C3_SHARED_WITNESS_CHANNEL_SCOPE.md) would strengthen the novelty claim. For instance, explicitly stating what the previous methods *could not* do that this one *can* do, beyond the general statements."
+  ],
+  "missing_assumptions": [
+    "Explicit proof of the combined hitting number formula (tau=4-xy-b) from the individual support hitting numbers, especially for states violating floors.",
+    "Explicit derivation of the equivalence between the lower band (3<=tau) and the condition xy+b<=1.",
+    "Detailed state-by-state admissibility check for sequential commands, particularly for the certificate-producing sequences like '-a(root1) followed by -c(root2)'.",
+    "Formal argument ruling out all other unobserved changes to hidden bits (x,y) that could invalidate a stored certificate during the delayed payload channel, beyond just 'no further payload requests or hidden writers while probing'.",
+    "Clearer explanation of the 'hidden_writer' control and how it demonstrates a specific rejection or limitation within the model."
+  ],
+  "counterexamples": [],
+  "limitations": [
+    "The protocol does not guarantee progress or completion of certificate acquisition or restoration due to arbitrary rejections.",
+    "Immediate payload decoding is not available; detection is delayed and certificate-conditioned.",
+    "No initial hidden-bit recovery is claimed after destructive payload edits.",
+    "Core accessibility and native constraint enforcement are assumed, not physically derived.",
+    "The solution is conditional on already accessible core snapshots and enforced admissible-or-NOOP native transitions; it does not solve native record genesis, enforcement, or physical measurement.",
+    "The 'core-certified anchor' for the payload channel is conditional; if initially x=0 and only the core-probe alphabet is used, no such anchor certificate is reachable.",
+    "The argument does not infer a universal physical law from this finite graph."
+  ]
+}
+```
