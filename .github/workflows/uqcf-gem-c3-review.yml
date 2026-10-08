@@ -9,6 +9,7 @@ on:
     paths:
       - '.github/workflows/uqcf-gem-c3-review.yml'
       - '.github/scripts/c3_safe_probe_verify.py'
+      - '.github/scripts/c3_review_gate.py'
 
 permissions:
   contents: read
@@ -59,6 +60,7 @@ jobs:
           import pathlib
           import subprocess
           import sys
+          import time
           import urllib.error
           import urllib.request
 
@@ -108,16 +110,27 @@ jobs:
               headers={"x-goog-api-key": key, "Content-Type": "application/json"},
               method="POST",
           )
-          try:
-              with urllib.request.urlopen(request, timeout=90) as response:
-                  result = json.load(response)
-          except urllib.error.HTTPError as exc:
-              print("FAIL: Gemini HTTP", exc.code)
-              # Never log raw API error bodies, headers, or secret.
-              sys.exit(1)
-          except Exception as exc:
-              print("FAIL: Gemini request error", type(exc).__name__)
-              sys.exit(1)
+          # Retry only transient transport/quota errors; never retry proof verdicts.
+          result = None
+          for attempt in range(3):
+              try:
+                  with urllib.request.urlopen(request, timeout=90) as response:
+                      result = json.load(response)
+                  break
+              except urllib.error.HTTPError as exc:
+                  if exc.code in (429, 500, 502, 503, 504) and attempt < 2:
+                      print("Transient Gemini HTTP", exc.code, "retry", attempt + 1)
+                      time.sleep(2 ** (attempt + 1))
+                      continue
+                  print("FAIL: Gemini HTTP", exc.code)
+                  sys.exit(1)
+              except Exception as exc:
+                  if isinstance(exc, (TimeoutError, urllib.error.URLError)) and attempt < 2:
+                      print("Transient request error; retry", attempt + 1)
+                      time.sleep(2 ** (attempt + 1))
+                      continue
+                  print("FAIL: Gemini request error", type(exc).__name__)
+                  sys.exit(1)
 
           text_parts = [part.get("text", "")
                         for candidate in result.get("candidates", [])
@@ -157,5 +170,31 @@ jobs:
         with:
           name: c3-gemini-review-evidence
           path: review_artifact/
+          if-no-files-found: warn
+          retention-days: 30
+
+  evidence-audit:
+    name: Verify review artifact and classify verdict
+    if: always()
+    needs: [bounded-controls, gemini-review]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout evidence validator
+        uses: actions/checkout@v4
+      - name: Download Gemini evidence
+        if: needs.gemini-review.result == 'success'
+        uses: actions/download-artifact@v4
+        with:
+          name: c3-gemini-review-evidence
+          path: review_artifact
+      - name: Audit immutable evidence and verdict
+        run: python3 .github/scripts/c3_review_gate.py
+      - name: Preserve audit outcome
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c3-review-gate
+          path: audit_artifact/
           if-no-files-found: warn
           retention-days: 30
