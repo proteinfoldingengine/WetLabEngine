@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: C1/C2 INDEPENDENTLY ACCEPTED; C3 ANCHOR AND BOUNDED COUPLED-DEADLOCK THEOREMS ACCEPTED; BROADER C3-C6 OPEN.
+Status: C1/C2 AND BOUNDED C3 ACCEPTED; C3 UNIQUE OPTIMAL-HOST CANDIDATE UNDER REVIEW; BROADER C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -259,6 +259,15 @@ This is a stronger, genuinely coupled positive candidate than the C2 order-depen
 The frozen four-root carrier has no legal endpoint-only first edit, but one temporary w on its fourth root gives a minimum eight-edit protected path with tau=3 throughout and exact cleanup. Independent mathematical and publication reviews accepted this bounded result. The initial REVISE was a source-retrieval issue, not a mathematical counterexample.
 
 Broader C3 is still OPEN: derive a fiber-uniform retained host-selection rule and renewable protection across multiple genuinely coupled changes. C4-C6 remain OPEN. No numerical, formal proof-assistant, or physical validation claim.
+
+
+## C3 optimal auxiliary host selection — new analytical candidate
+
+- [Frozen scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/22d0f1cfa93406379e9e0950d12548c422495f28).
+- [Complete proof candidate](https://github.com/proteinfoldingengine/WetLabEngine/commit/b91a850caf5b9e56094698cdd475243b793c62db).
+- [Author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/9911ffebc3dc87d44646b6be3af7f02eb8ae50ac).
+
+In the already accepted four-root coupled carrier, the new theorem candidate classifies every possible first off-endpoint addition and proves only +w on r4 can initiate an eight-edit minimum protected path. In fact +w(r4),-d(r4) are forced first two events in any optimal path. The result uses the declared labelled endpoint supports and explicit two-cover witnesses, not an undeclared hidden-state read. It is NOT a general compressed retained host-selection theorem. Independent review job 01a1198c-a99c-70a8-98fc-60a33c47fc84 is processing.
 
 ## Next unresolved obligation
 
