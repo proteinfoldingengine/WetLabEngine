@@ -75,7 +75,16 @@ try:
     with urllib.request.urlopen(req, timeout=100) as response:
         body = json.load(response)
 except urllib.error.HTTPError as exc:
-    print("FAIL: Gemini publication audit HTTP", exc.code)
+    try:
+        error = json.loads(exc.read()).get("error", {})
+        message = str(error.get("message", "No structured message")).replace(key, "[REDACTED]")
+    except Exception:
+        message = "Could not decode structured API error"
+    failure = {"status": "INFRASTRUCTURE_FAILURE_NOT_MATHEMATICAL_VERDICT",
+               "http_status": exc.code, "message": message,
+               "research_commit": research_sha, "input_sha256": digests}
+    (out / "infrastructure_failure.json").write_text(json.dumps(failure, indent=2)+"\n")
+    print("FAIL: Gemini publication audit HTTP", exc.code, message)
     sys.exit(1)
 except Exception as exc:
     print("FAIL: Gemini publication audit request", type(exc).__name__)
