@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: BOUNDED C3 CLOSED; CONDITIONAL CAPACITY OBSERVABILITY CLOSED; NATIVE INTERFACE MATHEMATICALLY ACCEPTED/PUBLICATION AUDIT PENDING; BROADER C3-C6 OPEN.
+Status: BOUNDED C3 CLOSED; CONDITIONAL CAPACITY OBSERVABILITY AND NATIVE INTERFACE SOURCE AUDIT CLOSED; INITIALIZATION/OBSERVER ACCESS AND BROADER C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -332,6 +332,15 @@ Independent source-audit review job 01a119a5-c39b-7487-983e-7dc5a0e359f5 is proc
 - [Native interface mathematical ACCEPTED review](https://github.com/proteinfoldingengine/WetLabEngine/commit/2359e734d8037e3708c6ea581728b6a102102246).
 
 The conditional theorem sigma4=|Z| and hypothetical-edit legality b=1[Z nonempty] is independently accepted and publication-closed within the explicit I0/I1/I2 scope. The native-interface source audit is mathematically accepted: full-palette miss counts can represent b if initialized, but no native initialization/observer-access derivation is established. Its separate publication audit job 01a119a9-ee3e-768d-b19e-8bfb3494368f remains in progress. Broader C3 and C4-C6 remain open.
+
+
+## Native-interface source audit independently closed
+
+- [Independent mathematical acceptance](https://github.com/proteinfoldingengine/WetLabEngine/commit/2359e734d8037e3708c6ea581728b6a102102246).
+- [Independent publication acceptance](https://github.com/proteinfoldingengine/WetLabEngine/commit/871e97124d82616ac28f80e3b79c1bc24ed0704c).
+- [Final scoped closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/59c330c4ba455bd7e12ff3aa157cebbf0baa1878).
+
+The full-palette residual miss-count field already defined in earlier work conditionally determines the C3 hidden capacity bit if its spectator singleton coordinates have been initialized and retained. The core-only quotient cannot determine it. Neither this source audit nor the preceding conditional capacity theorem proves how an observer initializes or accesses those counts from ordered events without a hidden full-state read. That remains the decisive OPEN first-principles gate.
 
 ## Next unresolved obligation
 
