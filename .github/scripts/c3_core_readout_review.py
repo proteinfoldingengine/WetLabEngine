@@ -14,6 +14,8 @@ base = pathlib.Path("research_snapshot/ResearchHistory/UQCF-GEM/research/physica
 names = (
  "COUPLED_C3_CORE_READOUT_SCOPE.md",
  "COUPLED_C3_CORE_READOUT_RESULT.md",
+ "COUPLED_C3_CORE_READOUT_CLARIFICATION.md",
+ "evidence/core-readout/initial_review.txt",
  "COUPLED_C3_CORE_PROBE_TRANSITION_CLARIFICATION.md",
  "COUPLED_C3_SHARED_WITNESS_CHANNEL_SCOPE.md",
  "core_readout/producer.py", "core_readout/independent.py",
@@ -105,7 +107,7 @@ try:
 except (ValueError, KeyError, TypeError) as exc:
     print("FAIL: Malformed independent review", type(exc).__name__)
     sys.exit(1)
-print("Shared-witness independent verdict:", verdict)
+print("Core-readout independent verdict:", verdict)
 print("Missing assumptions:", len(obj["missing_assumptions"]))
 print("Counterexamples:", len(obj["counterexamples"]))
 print("Response SHA256:", manifest["response_sha256"])
