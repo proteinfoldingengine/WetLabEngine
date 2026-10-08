@@ -2,6 +2,8 @@ name: UQCF-GEM C3 theorem verification
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 15 * * *'  # Daily at 08:00 America/Phoenix (UTC-7)
   push:
     branches: [main]
     paths:
