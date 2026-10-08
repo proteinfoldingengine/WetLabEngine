@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: SINGLE-BUFFER THEOREM CLOSED; C1/C2 INDEPENDENTLY ACCEPTED; C3 ANCHOR LEMMA UNDER INDEPENDENT REVIEW; C3-C6 OPEN.
+Status: C1/C2 INDEPENDENTLY ACCEPTED; C3 ANCHOR LEMMA ACCEPTED; C3 COUPLED DEADLOCK/BYPASS CANDIDATE UNDER REVIEW; C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -236,6 +236,18 @@ The revised proof's header still says re-review was required; that is an immutab
 For four nonempty roots with three distinct frozen singleton supports {a},{b},{c}, every nonempty fourth support has 3<=tau<=4. Therefore an active fourth root can always execute its own endpoint-only additions before deletions while the singleton triple stays frozen, preserving floors and the band. This excludes an initial endpoint-only deadlock in that special carrier but does not prove full endpoint connectivity or general auxiliary impossibility.
 
 Fresh independent mathematical review launched: job 01a1195c-f9c9-724f-bac6-e7d7d3e901c8. C3 remains OPEN. The next genuinely discriminating carrier must not rely on three frozen singleton anchors.
+
+
+## C3 four-root coupled endpoint-only deadlock and one-buffer bypass candidate
+
+- [Frozen prospective scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/08eb9dada9c5d4665453768810522303119d2fe6).
+- [Analytical proof candidate](https://github.com/proteinfoldingengine/WetLabEngine/commit/a2346862f2aa9c1a4b03b986b2ae3abf2381ec37).
+- [Author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/745065f7fe938d729aba4b473f0753bfaa2ca02b).
+- [Earlier independently accepted C3 anchor lemma](https://github.com/proteinfoldingengine/WetLabEngine/commit/3069106e708714fcaac36553cc39ef5967938b05).
+
+The new carrier has source ({a,b},{b,c},{a,c},{d,e}) and target ({b,d},{b,c},{c,d},{a,e}), floors2. At source every endpoint-only deletion violates its floor and each endpoint-only addition creates an explicit two-cover. The proposed native eight-edit path using temporary w on r4 keeps tau=3 at every state and removes w at exact target. The author-side proof also gives a carrier-specific 8-edit lower bound.
+
+This is a stronger, genuinely coupled positive candidate than the C2 order-dependence example, but not a universal retained host-selection or renewable-cycle theorem. Fresh independent mathematical review launched: job 01a11962-0b81-76ac-865b-f75aac9fd5c3. Do not promote C3 to closed before review and further retained-controller work.
 
 ## Next unresolved obligation
 
