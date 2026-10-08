@@ -1,7 +1,7 @@
 # Post-A12 theorem-first synthesis — current continuation index
 
 Updated: 2026-10-07 (America/Phoenix).
-Status: C1/C2 AND BOUNDED C3 ACCEPTED; C3 UNIQUE OPTIMAL-HOST THEOREM CLOSED/INDEPENDENTLY ACCEPTED; BROADER C3-C6 OPEN.
+Status: C1/C2 AND BOUNDED C3 CLOSED; C3 HIDDEN-SPECTATOR OPTIMALITY CANDIDATE UNDER REVIEW; BROADER C3-C6 OPEN.
 Branch: research/uqcf-overlapping-guard-exchange.
 
 The original proposal, its publication history and precise B1/B2 questions remain immutable at commit 963ad536d9f110e7fe51b443e90c1f8afc461096, blob 29f61b20b72665e3972abdae49b5020eb5547c17. This file now points to the approved follow-on work; it does not retroactively change that proposal or the closed A12 sources.
@@ -278,6 +278,17 @@ In the already accepted four-root coupled carrier, the new theorem candidate cla
 - [Final bounded closeout](https://github.com/proteinfoldingengine/WetLabEngine/commit/e34768054850ebcea714c6f56834cae2231a80df).
 
 In the declared four-root carrier, r4 is the unique auxiliary host in EVERY minimum eight-edit protected repair, with forced prefix +w(r4),-d(r4). All other first additions are excluded by explicit two-covers, and r1,r2,r3 hosts cannot finish within the eight-edit budget. This is an independently reviewed bounded optimal-host result, NOT a general retained-information host-selection theorem. Broader C3 and C4-C6 remain open.
+
+
+## C3 hidden-spectator optimality discrimination (candidate)
+
+- [Frozen scope](https://github.com/proteinfoldingengine/WetLabEngine/commit/c2383f36b4c099f8bb27582639b55c2cb59c94a2).
+- [Proof candidate](https://github.com/proteinfoldingengine/WetLabEngine/commit/f1531c690ba36662c5a016cd7f2a0cd6ab084275).
+- [Author-side audit](https://github.com/proteinfoldingengine/WetLabEngine/commit/4fde7e4c9ac8ccb5b254e62802509ef115ee0f65).
+
+In the bounded coupled four-root family, add an arbitrary hidden spectator subset Z to r4 at BOTH endpoints, with all spectators invariant. The original eight-edit buffer route remains uniformly LEGAL. But for nonempty Z, a six-edit endpoint-only route is legal and optimal, whereas empty Z requires eight edits. Both fibers share the deliberately restricted core projection R. Thus R alone cannot select a shortest protected repair uniformly across both fibers; one extra retained bit 1[Z nonempty] suffices in this family.
+
+This is an author-side candidate, not an independently accepted result. It does not show that the bit can be recovered from native observer variables. Independent mathematical review job 01a11997-77e2-75ac-9c97-8e8d6fc5aa1e is pending. Broader C3/C4-C6 remain open.
 
 ## Next unresolved obligation
 
