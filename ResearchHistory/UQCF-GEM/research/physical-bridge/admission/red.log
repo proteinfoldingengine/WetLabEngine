@@ -1,0 +1,852 @@
+test_budget (test_admission.Contracts.test_budget) ... FAIL
+test_complete (test_admission.Contracts.test_complete) ... FAIL
+test_duplicate_edge (test_admission.Contracts.test_duplicate_edge) ... FAIL
+test_duplicate_node (test_admission.Contracts.test_duplicate_node) ... FAIL
+test_duplicate_source (test_admission.Contracts.test_duplicate_source) ... FAIL
+test_exact_admission_and_extension (test_admission.Contracts.test_exact_admission_and_extension) ... FAIL
+test_false_admission_sensor (test_admission.Contracts.test_false_admission_sensor) ... FAIL
+test_false_exact_tau (test_admission.Contracts.test_false_exact_tau) ... FAIL
+test_false_guard_needed (test_admission.Contracts.test_false_guard_needed) ... FAIL
+test_false_native_guard (test_admission.Contracts.test_false_native_guard) ... FAIL
+test_false_new_label (test_admission.Contracts.test_false_new_label) ... FAIL
+test_false_optimality (test_admission.Contracts.test_false_optimality) ... FAIL
+test_false_origin (test_admission.Contracts.test_false_origin) ... FAIL
+test_false_progress (test_admission.Contracts.test_false_progress) ... FAIL
+test_false_tau3_universal (test_admission.Contracts.test_false_tau3_universal) ... FAIL
+test_false_uniform_safety (test_admission.Contracts.test_false_uniform_safety) ... FAIL
+test_false_unobservable (test_admission.Contracts.test_false_unobservable) ... FAIL
+test_floor (test_admission.Contracts.test_floor) ... FAIL
+test_guarded_edge_mismatch (test_admission.Contracts.test_guarded_edge_mismatch) ... FAIL
+test_hidden_read (test_admission.Contracts.test_hidden_read) ... FAIL
+test_illegal_host_delete (test_admission.Contracts.test_illegal_host_delete) ... FAIL
+test_intersection (test_admission.Contracts.test_intersection) ... FAIL
+test_marker_insert (test_admission.Contracts.test_marker_insert) ... FAIL
+test_missing_edge (test_admission.Contracts.test_missing_edge) ... FAIL
+test_missing_graph (test_admission.Contracts.test_missing_graph) ... FAIL
+test_missing_node (test_admission.Contracts.test_missing_node) ... FAIL
+test_missing_noop (test_admission.Contracts.test_missing_noop) ... FAIL
+test_missing_path (test_admission.Contracts.test_missing_path) ... FAIL
+test_missing_rejection (test_admission.Contracts.test_missing_rejection) ... FAIL
+test_missing_source (test_admission.Contracts.test_missing_source) ... FAIL
+test_missing_triangle (test_admission.Contracts.test_missing_triangle) ... FAIL
+test_no_runtime_guard_query (test_admission.Contracts.test_no_runtime_guard_query) ... FAIL
+test_observable_deterministic_endpoint (test_admission.Contracts.test_observable_deterministic_endpoint) ... FAIL
+test_path_command (test_admission.Contracts.test_path_command) ... FAIL
+test_protected (test_admission.Contracts.test_protected) ... FAIL
+test_provenance (test_admission.Contracts.test_provenance) ... FAIL
+test_rank (test_admission.Contracts.test_rank) ... FAIL
+test_rejection_tau (test_admission.Contracts.test_rejection_tau) ... FAIL
+test_reverse_edge (test_admission.Contracts.test_reverse_edge) ... FAIL
+test_sharp_boundary (test_admission.Contracts.test_sharp_boundary) ... FAIL
+test_singleton_count (test_admission.Contracts.test_singleton_count) ... FAIL
+test_source_admission (test_admission.Contracts.test_source_admission) ... FAIL
+test_source_tau (test_admission.Contracts.test_source_tau) ... FAIL
+test_substituted_graph (test_admission.Contracts.test_substituted_graph) ... FAIL
+test_target (test_admission.Contracts.test_target) ... FAIL
+test_type (test_admission.Contracts.test_type) ... FAIL
+test_wrong_formula (test_admission.Contracts.test_wrong_formula) ... FAIL
+test_wrong_residual_tau (test_admission.Contracts.test_wrong_residual_tau) ... FAIL
+
+======================================================================
+FAIL: test_budget (test_admission.Contracts.test_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 68, in test_budget
+    def test_budget(self):self.reject(lambda c:c['paths'][0].__setitem__('beta',0))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_complete (test_admission.Contracts.test_complete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 17, in test_complete
+    self.ready();self.mods['independent'].verify(self.cert);self.assertEqual(len(self.cert['sources']),256);self.assertEqual(len(self.cert['paths']),64)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_edge (test_admission.Contracts.test_duplicate_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 55, in test_duplicate_edge
+    def test_duplicate_edge(self):self.reject(lambda c:c['graphs'][0]['edges'].append(c['graphs'][0]['edges'][0]))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_node (test_admission.Contracts.test_duplicate_node)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 53, in test_duplicate_node
+    def test_duplicate_node(self):self.reject(lambda c:c['graphs'][0]['nodes'].__setitem__(1,c['graphs'][0]['nodes'][0]))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_source (test_admission.Contracts.test_duplicate_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 45, in test_duplicate_source
+    def test_duplicate_source(self):self.reject(lambda c:c['sources'].__setitem__(1,c['sources'][0]))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_exact_admission_and_extension (test_admission.Contracts.test_exact_admission_and_extension)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 32, in test_exact_admission_and_extension
+    self.ready();rows={tuple(s['id']):s for s in self.cert['sources']}
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_admission_sensor (test_admission.Contracts.test_false_admission_sensor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 43, in test_false_admission_sensor
+    def test_false_admission_sensor(self):self.reject(lambda c:c['claims'].__setitem__('admission_access_derived',True))
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_exact_tau (test_admission.Contracts.test_false_exact_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 71, in test_false_exact_tau
+    def test_false_exact_tau(self):self.reject(lambda c:c['claims'].__setitem__('exact_tau_preserved',True))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_guard_needed (test_admission.Contracts.test_false_guard_needed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 75, in test_false_guard_needed
+    def test_false_guard_needed(self):self.reject(lambda c:c['claims'].__setitem__('runtime_guard_required',True))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_native_guard (test_admission.Contracts.test_false_native_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 76, in test_false_native_guard
+    def test_false_native_guard(self):self.reject(lambda c:c['claims'].__setitem__('universal_guard_derived',True))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_new_label (test_admission.Contracts.test_false_new_label)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 78, in test_false_new_label
+    def test_false_new_label(self):self.reject(lambda c:c['claims'].__setitem__('new_labels',1))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_optimality (test_admission.Contracts.test_false_optimality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 80, in test_false_optimality
+    def test_false_optimality(self):self.reject(lambda c:c['claims'].__setitem__('path_optimal',True))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_origin (test_admission.Contracts.test_false_origin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 74, in test_false_origin
+    def test_false_origin(self):self.reject(lambda c:c['claims'].__setitem__('observer_origin',True))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_progress (test_admission.Contracts.test_false_progress)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 72, in test_false_progress
+    def test_false_progress(self):self.reject(lambda c:c['claims'].__setitem__('guaranteed_progress',True))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_tau3_universal (test_admission.Contracts.test_false_tau3_universal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 79, in test_false_tau3_universal
+    def test_false_tau3_universal(self):self.reject(lambda c:c['claims'].__setitem__('all_tau3_sources_safe',True))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_uniform_safety (test_admission.Contracts.test_false_uniform_safety)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 77, in test_false_uniform_safety
+    def test_false_uniform_safety(self):self.reject(lambda c:c['claims'].__setitem__('all_issued_commands_safe',False))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_unobservable (test_admission.Contracts.test_false_unobservable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 73, in test_false_unobservable
+    def test_false_unobservable(self):self.reject(lambda c:c['claims'].__setitem__('observable_completion',False))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_floor (test_admission.Contracts.test_floor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 64, in test_floor
+    def test_floor(self):self.reject(lambda c:c['graphs'][0]['floors'].__setitem__(5,0))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_guarded_edge_mismatch (test_admission.Contracts.test_guarded_edge_mismatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 56, in test_guarded_edge_mismatch
+    def test_guarded_edge_mismatch(self):self.reject(lambda c:c['graphs'][0]['guarded_edges'].pop())
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_hidden_read (test_admission.Contracts.test_hidden_read)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 66, in test_hidden_read
+    def test_hidden_read(self):self.reject(lambda c:c['graphs'][0]['nodes'][0]['core'].__setitem__(0,127))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_illegal_host_delete (test_admission.Contracts.test_illegal_host_delete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 58, in test_illegal_host_delete
+    def test_illegal_host_delete(self):self.reject(lambda c:c['graphs'][0]['nodes'][0].__setitem__('policy',[[5,3,0]]))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_intersection (test_admission.Contracts.test_intersection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 38, in test_intersection
+    def test_intersection(self):self.reject(lambda c:c['sources'][0].__setitem__('intersection',[6]))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_marker_insert (test_admission.Contracts.test_marker_insert)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 63, in test_marker_insert
+    def test_marker_insert(self):self.reject(lambda c:c['graphs'][0]['nodes'][0]['state'].__setitem__(5,c['graphs'][0]['nodes'][0]['state'][5]|32))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_edge (test_admission.Contracts.test_missing_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 54, in test_missing_edge
+    def test_missing_edge(self):self.reject(lambda c:c['graphs'][0]['edges'].pop())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_graph (test_admission.Contracts.test_missing_graph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 47, in test_missing_graph
+    def test_missing_graph(self):self.reject(lambda c:c['graphs'].pop())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_node (test_admission.Contracts.test_missing_node)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 52, in test_missing_node
+    def test_missing_node(self):self.reject(lambda c:c['graphs'][0]['nodes'].pop())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_noop (test_admission.Contracts.test_missing_noop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 57, in test_missing_noop
+    def test_missing_noop(self):self.reject(lambda c:c['graphs'][0].__setitem__('edges',[e for e in c['graphs'][0]['edges'] if e[0]!=e[2]]))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_path (test_admission.Contracts.test_missing_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 69, in test_missing_path
+    def test_missing_path(self):self.reject(lambda c:c['paths'].pop())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_rejection (test_admission.Contracts.test_missing_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 41, in test_missing_rejection
+    def test_missing_rejection(self):self.reject(lambda c:c['rejected'].pop())
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_source (test_admission.Contracts.test_missing_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 44, in test_missing_source
+    def test_missing_source(self):self.reject(lambda c:c['sources'].pop())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_triangle (test_admission.Contracts.test_missing_triangle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 83, in test_missing_triangle
+    def test_missing_triangle(self):self.reject(lambda c:c['fixtures'].pop('triangle'))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_no_runtime_guard_query (test_admission.Contracts.test_no_runtime_guard_query)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 26, in test_no_runtime_guard_query
+    self.ready();m=self.mods['producer'];s=(1,1,1,2,4,24);old=m.tau
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_observable_deterministic_endpoint (test_admission.Contracts.test_observable_deterministic_endpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 19, in test_observable_deterministic_endpoint
+    self.ready()
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_path_command (test_admission.Contracts.test_path_command)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 70, in test_path_command
+    def test_path_command(self):self.reject(lambda c:c['paths'][0]['commands'][0].__setitem__(1,5))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_protected (test_admission.Contracts.test_protected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 40, in test_protected
+    def test_protected(self):self.reject(lambda c:c['sources'][0].__setitem__('protected',False))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_provenance (test_admission.Contracts.test_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 81, in test_provenance
+    def test_provenance(self):self.reject(lambda c:c.__setitem__('scope_commit','0'*40))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_rank (test_admission.Contracts.test_rank)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 65, in test_rank
+    def test_rank(self):self.reject(lambda c:c['graphs'][0]['nodes'][0].__setitem__('rank',-1))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_rejection_tau (test_admission.Contracts.test_rejection_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 42, in test_rejection_tau
+    def test_rejection_tau(self):self.reject(lambda c:c['rejected'][0].__setitem__('prepared_tau',3))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_reverse_edge (test_admission.Contracts.test_reverse_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 62, in test_reverse_edge
+    self.reject(f)
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_sharp_boundary (test_admission.Contracts.test_sharp_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 24, in test_sharp_boundary
+    self.ready();self.assertEqual(self.cert['fixtures']['triangle']['taus'],[3,2]);self.assertEqual(self.cert['fixtures']['disjoint']['taus'],[4,3,4])
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_singleton_count (test_admission.Contracts.test_singleton_count)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 39, in test_singleton_count
+    def test_singleton_count(self):self.reject(lambda c:c['sources'][0]['singleton_misses'].__setitem__(6,0))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_source_admission (test_admission.Contracts.test_source_admission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 49, in test_source_admission
+    def test_source_admission(self):self.reject(lambda c:c['sources'][0].__setitem__('admitted',False))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_source_tau (test_admission.Contracts.test_source_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 48, in test_source_tau
+    def test_source_tau(self):self.reject(lambda c:c['sources'][0].__setitem__('tau',3))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_substituted_graph (test_admission.Contracts.test_substituted_graph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 46, in test_substituted_graph
+    def test_substituted_graph(self):self.reject(lambda c:c['graphs'].__setitem__(1,c['graphs'][0]))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_target (test_admission.Contracts.test_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 67, in test_target
+    def test_target(self):self.reject(lambda c:c['graphs'][0]['nodes'][0].__setitem__('target',not c['graphs'][0]['nodes'][0]['target']))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_type (test_admission.Contracts.test_type)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 82, in test_type
+    def test_type(self):self.reject(lambda c:c['sources'][0]['id'].__setitem__(0,False))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_formula (test_admission.Contracts.test_wrong_formula)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 51, in test_wrong_formula
+    def test_wrong_formula(self):self.reject(lambda c:c['sources'][0].__setitem__('prepared_tau',4))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_residual_tau (test_admission.Contracts.test_wrong_residual_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 50, in test_wrong_residual_tau
+    def test_wrong_residual_tau(self):self.reject(lambda c:c['sources'][0].__setitem__('rho',1))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/admission/test_admission.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+----------------------------------------------------------------------
+Ran 48 tests in 0.007s
+
+FAILED (failures=48)
