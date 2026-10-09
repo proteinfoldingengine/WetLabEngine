@@ -1,0 +1,496 @@
+test_analytic_pair (test_transfer.Contracts.test_analytic_pair) ... FAIL
+test_complete (test_transfer.Contracts.test_complete) ... FAIL
+test_duplicate_fiber (test_transfer.Contracts.test_duplicate_fiber) ... FAIL
+test_duplicate_source (test_transfer.Contracts.test_duplicate_source) ... FAIL
+test_false_access (test_transfer.Contracts.test_false_access) ... FAIL
+test_false_fiber_record (test_transfer.Contracts.test_false_fiber_record) ... FAIL
+test_false_minimal_bits (test_transfer.Contracts.test_false_minimal_bits) ... FAIL
+test_false_mixed (test_transfer.Contracts.test_false_mixed) ... FAIL
+test_false_order (test_transfer.Contracts.test_false_order) ... FAIL
+test_false_scope (test_transfer.Contracts.test_false_scope) ... FAIL
+test_fibers (test_transfer.Contracts.test_fibers) ... FAIL
+test_identity (test_transfer.Contracts.test_identity) ... FAIL
+test_missing_fiber1 (test_transfer.Contracts.test_missing_fiber1) ... FAIL
+test_missing_fiber2 (test_transfer.Contracts.test_missing_fiber2) ... FAIL
+test_missing_member (test_transfer.Contracts.test_missing_member) ... FAIL
+test_missing_query (test_transfer.Contracts.test_missing_query) ... FAIL
+test_missing_source (test_transfer.Contracts.test_missing_source) ... FAIL
+test_substituted_member (test_transfer.Contracts.test_substituted_member) ... FAIL
+test_type (test_transfer.Contracts.test_type) ... FAIL
+test_wrong_admission (test_transfer.Contracts.test_wrong_admission) ... FAIL
+test_wrong_decode (test_transfer.Contracts.test_wrong_decode) ... FAIL
+test_wrong_outside (test_transfer.Contracts.test_wrong_outside) ... FAIL
+test_wrong_pair (test_transfer.Contracts.test_wrong_pair) ... FAIL
+test_wrong_protected (test_transfer.Contracts.test_wrong_protected) ... FAIL
+test_wrong_singleton (test_transfer.Contracts.test_wrong_singleton) ... FAIL
+test_wrong_state (test_transfer.Contracts.test_wrong_state) ... FAIL
+test_wrong_tau (test_transfer.Contracts.test_wrong_tau) ... FAIL
+test_wrong_witness (test_transfer.Contracts.test_wrong_witness) ... FAIL
+
+======================================================================
+FAIL: test_analytic_pair (test_transfer.Contracts.test_analytic_pair)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 23, in test_analytic_pair
+    self.ready();d={tuple(s['id']):s for s in self.cert['sources']};a,b=d[0,0,3],d[0,0,24]
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_complete (test_transfer.Contracts.test_complete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 16, in test_complete
+    def test_complete(self):self.ready();self.assertTrue(self.mods['independent'].verify(self.cert));self.assertEqual(len(self.cert['sources']),4096)
+                            ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_fiber (test_transfer.Contracts.test_duplicate_fiber)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 37, in test_duplicate_fiber
+    def test_duplicate_fiber(self):self.reject(lambda c:c['fibers2'].__setitem__(1,c['fibers2'][0]))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_source (test_transfer.Contracts.test_duplicate_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 26, in test_duplicate_source
+    def test_duplicate_source(self):self.reject(lambda c:c['sources'].__setitem__(1,c['sources'][0]))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_access (test_transfer.Contracts.test_false_access)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 44, in test_false_access
+    def test_false_access(self):self.reject(lambda c:c['claims'].__setitem__('native_access_derived',True))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_fiber_record (test_transfer.Contracts.test_false_fiber_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 41, in test_false_fiber_record
+    def test_false_fiber_record(self):self.reject(lambda c:c['fibers1'][0]['record'].__setitem__(0,99))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_minimal_bits (test_transfer.Contracts.test_false_minimal_bits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 45, in test_false_minimal_bits
+    def test_false_minimal_bits(self):self.reject(lambda c:c['claims'].__setitem__('minimal_bits',True))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_mixed (test_transfer.Contracts.test_false_mixed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 40, in test_false_mixed
+    def test_false_mixed(self):self.reject(lambda c:c['fibers2'][0].__setitem__('mixed',True))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_order (test_transfer.Contracts.test_false_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 46, in test_false_order
+    def test_false_order(self):self.reject(lambda c:c['claims'].__setitem__('sufficient_global_order',1))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_scope (test_transfer.Contracts.test_false_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 47, in test_false_scope
+    def test_false_scope(self):self.reject(lambda c:c.__setitem__('scope_commit','0'*40))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_fibers (test_transfer.Contracts.test_fibers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 21, in test_fibers
+    self.ready();self.assertTrue(any(f['mixed'] for f in self.cert['fibers1']));self.assertFalse(any(f['mixed'] for f in self.cert['fibers2']))
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_identity (test_transfer.Contracts.test_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 18, in test_identity
+    self.ready()
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_fiber1 (test_transfer.Contracts.test_missing_fiber1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 35, in test_missing_fiber1
+    def test_missing_fiber1(self):self.reject(lambda c:c['fibers1'].pop())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_fiber2 (test_transfer.Contracts.test_missing_fiber2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 36, in test_missing_fiber2
+    def test_missing_fiber2(self):self.reject(lambda c:c['fibers2'].pop())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_member (test_transfer.Contracts.test_missing_member)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 38, in test_missing_member
+    def test_missing_member(self):self.reject(lambda c:c['fibers1'][0]['members'].pop())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_query (test_transfer.Contracts.test_missing_query)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 42, in test_missing_query
+    def test_missing_query(self):self.reject(lambda c:c['queries'].pop())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_source (test_transfer.Contracts.test_missing_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 25, in test_missing_source
+    def test_missing_source(self):self.reject(lambda c:c['sources'].pop())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_substituted_member (test_transfer.Contracts.test_substituted_member)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 39, in test_substituted_member
+    def test_substituted_member(self):self.reject(lambda c:c['fibers2'][0]['members'].__setitem__(0,[9,9,9]))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_type (test_transfer.Contracts.test_type)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 48, in test_type
+    def test_type(self):self.reject(lambda c:c['sources'][0]['id'].__setitem__(0,False))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_admission (test_transfer.Contracts.test_wrong_admission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 30, in test_wrong_admission
+    def test_wrong_admission(self):self.reject(lambda c:c['sources'][0].__setitem__('admitted',False))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_decode (test_transfer.Contracts.test_wrong_decode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 33, in test_wrong_decode
+    def test_wrong_decode(self):self.reject(lambda c:c['sources'][0]['decoded'].__setitem__(6,0))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_outside (test_transfer.Contracts.test_wrong_outside)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 34, in test_wrong_outside
+    def test_wrong_outside(self):self.reject(lambda c:c['sources'][0]['outside_misses'].__setitem__(6,0))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_pair (test_transfer.Contracts.test_wrong_pair)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 32, in test_wrong_pair
+    def test_wrong_pair(self):self.reject(lambda c:c['sources'][0]['moments'].__setitem__(7,0))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_protected (test_transfer.Contracts.test_wrong_protected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 29, in test_wrong_protected
+    def test_wrong_protected(self):self.reject(lambda c:c['sources'][0].__setitem__('protected',False))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_singleton (test_transfer.Contracts.test_wrong_singleton)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 31, in test_wrong_singleton
+    def test_wrong_singleton(self):self.reject(lambda c:c['sources'][0]['moments'].__setitem__(0,0))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_state (test_transfer.Contracts.test_wrong_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 27, in test_wrong_state
+    def test_wrong_state(self):self.reject(lambda c:c['sources'][0]['state'].__setitem__(0,127))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_tau (test_transfer.Contracts.test_wrong_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 28, in test_wrong_tau
+    def test_wrong_tau(self):self.reject(lambda c:c['sources'][0].__setitem__('tau',3))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_witness (test_transfer.Contracts.test_wrong_witness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 43, in test_wrong_witness
+    def test_wrong_witness(self):self.reject(lambda c:c['witness'].__setitem__(0,[0,0,0]))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/record_transfer/test_transfer.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.004s
+
+FAILED (failures=28)
