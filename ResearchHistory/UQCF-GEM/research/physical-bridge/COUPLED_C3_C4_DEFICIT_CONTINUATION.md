@@ -1,17 +1,22 @@
 # C3/C4 continuation after deficit-bounded repair
 
-Status: OPEN continuation after scoped deficit repair and core-reactive handoff closeouts. Broader native C3 and general C4 remain unresolved.
+Status: OPEN continuation after scoped deficit repair, core-reactive handoff and cyclic pipeline closeouts. Broader native C3 and general C4 remain unresolved.
 
 ## Current achieved interface
 The deficit theorem gives one-excess-incidence repair whenever at most one selected-role root remains uncovered by an admissible pair of stable other roles. A three-role family with at most one unshared root per role therefore supports arbitrary target assignments even with arbitrarily many shared roots.
 The full-batch theorem preserves exact tau with higher possible cost; the deficit theorem preserves the band and permits tau3->4. Neither is a universal path-optimality theorem.
 
-## Newly closed conditional reduction
+## Current closed composition reduction
+[Cyclic pipeline](COUPLED_C3_PIPELINE_CLOSEOUT.md) proves that naive host-parking composition admits actual edit cycles. It replaces those segments by one buffered distinct-slot cyclic chain and erases repeated cores under fixed hidden background/marker, yielding a phase-free set-valued policy. The first and final host edits are the only parking operations. This addresses a previously explicit composition restriction without adding a scheduler or core/guard origin mechanism.
+The complete bounded paths/graphs and committed-cycle controls passed independent reconstruction, Gemini mathematical review and separate publication audit in run37880781623. Resource fixture:28 changes becomes18 with peak1. Do not extrapolate to arbitrary target/repeated-slot policies or shortest paths.
+The native input-to-core/routing/guard bridge remains the priority first-principles obligation. Do not keep substituting conditional controller refinements for that construction.
+
+## Previously closed conditional reduction
 [Core-reactive handoff](COUPLED_C3_REACTIVE_CLOSEOUT.md) derives the request policy from current pool-core incidences plus static parameters. Hidden marker preparation/cleanup require no direct marker read or acknowledgment. Actual changes form an acyclic graph with an absorbing exact target, but arbitrary NOOPs and request selection still permit stalling; clean completion is not observable from the core. Do not promote this relation to a derived deterministic physical scheduler or arbitrary composable protocol.
 The whole graph, including slack-host bypass and every NOOP, was independently reconstructed and separately reviewed/audited in run37879440145. This is substantive controller information reduction, not a repeat of the already known NOOP counterexample.
 
 ## Priority C3 obligation
-Inspect the actual native retained/update objects against the concrete information needed here: role/root routing, the stable-role coverage certificate, reserved fresh marker availability, current core access and guarded enforcement. Mutable actual-edit phase is no longer required by the separately closed single-macro set-valued policy.
+Inspect the actual native retained/update objects against the concrete information needed here: role/root routing, the stable-role coverage certificate, reserved fresh marker availability, current core access and guarded enforcement. Mutable actual-edit phase and macro index are no longer required by the separately closed single-macro and compiled distinct-slot cyclic policies.
 Pin the relevant source definitions, then apply the observation-fiber criterion to the REQUIRED certificate and routing data. Mathematical availability of a certificate is not proof that the observer can access it. Do not insert a full-state read, acknowledgment or successor-selection law.
 A useful result must derive an accessible sufficient record or identify a new precise missing dependency. Do not repeat the already known arbitrary-NOOP obstruction or rename supplied inputs as derived records.
 

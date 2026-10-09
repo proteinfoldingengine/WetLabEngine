@@ -1,0 +1,122 @@
+{
+  "artifacts": [
+    {
+      "bytes": 89042,
+      "id": 11593894801,
+      "members_sha256": {
+        "certificate.json": "ba728d3ff5467fa4e108bc36ed013727ff1b12084c01fef81d9b0e5bf98f7d44",
+        "certificate.sha256": "55726bb33baf4af0716a1965326b236403a2eeeb525263f6e8e97c4efb6a4c23",
+        "contracts.log": "66c8048bbcdb201b2fb16127452b9afa3040d9969dc8b6eaa1e9e42e81cdda58",
+        "counts.json": "cd0090b5841ee53b17311563fb8cca7982d5d5385aac87b5db6653f8cac51fa5",
+        "independent.json": "e86085416d6830c16bb2e454c094d5022487519d17109863bfb9dc80cc580ceb",
+        "inherited_reactive.log": "a5653d0e9e29232a78c8a4d606c2d54d5004f096f20e97f95ba44f5607d7582a",
+        "provenance.txt": "3f574544ec2bdb79a42e766f17543b8b1a4d1c857c2b1a404d348078bef50af4"
+      },
+      "name": "c3-pipeline-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "4db5c287ad9a0546b9ddba9ce8b78105dd09a771784ea1f7705cb4747f2b36b4"
+    },
+    {
+      "bytes": 2285,
+      "id": 11594431107,
+      "members_sha256": {
+        "manifest.json": "7208339ce0a2cf4f1577e193b5ef9cb579130185c8aaeb9cd6035e5ebd4e4dd3",
+        "review.txt": "29e13e01c83a5717a1edb852ab2b7db5ea551bbd86a5673788cdac0f4d291565"
+      },
+      "name": "c3-pipeline-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "37380b27b997ad70e395e9fb06720bd072363d7b4e5de02375e45375cfb683dd"
+    },
+    {
+      "bytes": 2962,
+      "id": 11594325992,
+      "members_sha256": {
+        "pipeline_gate.json": "a4fc7461dc392e71d858f1fe5e108fc83d20214f71361cecbb5b6e740cbcd5a2",
+        "pipeline_publication/manifest.json": "603f02cd532c12a01985e27d259300f53798fb79c5920cc683d02cea0d902b35",
+        "pipeline_publication/review.txt": "995ceceee11013f6cc0f5b101caa6ccc90823451c2380ba626fadeda92cf827d"
+      },
+      "name": "c3-pipeline-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "6374ba88f043d20ac9e7f6b31e0047574c31062004acd66bdf8e73d5b70ebba2"
+    }
+  ],
+  "author_notes": [
+    "Mathematical reviewer wording about RED rejecting false claims is not adopted: RED proves absent implementation; GREEN exercises the 38 corruption controls.",
+    "Empty reviewer limitations do not override fixed-core/guard/static-template assumptions, unobservable completion, possible NOOP stalling and nonoptimality.",
+    "New certificate checks exact tau at all raw slices and reconstructed graph nodes; lower maps and moving covers are analytical arguments rather than separately emitted new map certificates.",
+    "Distinct-slot cyclic goal only; no arbitrary target/slot repetition, native observer/guard origin or full-stack/v16 certification."
+  ],
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "certificate": {
+    "bytes": 1760468,
+    "counts": {
+      "edges": 23160,
+      "graphs": 384,
+      "nodes": 11292,
+      "paths": 64,
+      "paths_shortened": 2,
+      "protected_sources": 192,
+      "sources": 256
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "ba728d3ff5467fa4e108bc36ed013727ff1b12084c01fef81d9b0e5bf98f7d44"
+  },
+  "jobs": {
+    "mathematical_review": 113659803991,
+    "publication_audit": 113659996832,
+    "verification": 113659734677
+  },
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "29e13e01c83a5717a1edb852ab2b7db5ea551bbd86a5673788cdac0f4d291565",
+    "scientific_commit": "01889c7fb468ab654f0760b5064fe9f63d200cc2",
+    "status": "PASS",
+    "verified_review_inputs": 16
+  },
+  "resource_fixture": {
+    "erased_nonhost_changes": 14,
+    "id": [
+      4,
+      3,
+      0
+    ],
+    "independent_marked_macro_changes": 28,
+    "not_global_optimality": true,
+    "peak_excess": 1,
+    "pipeline_marked_changes": 18,
+    "raw_nonhost_changes": 16
+  },
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 16,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "29e13e01c83a5717a1edb852ab2b7db5ea551bbd86a5673788cdac0f4d291565",
+      "tokens": 35190,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 19,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "995ceceee11013f6cc0f5b101caa6ccc90823451c2380ba626fadeda92cf827d",
+      "tokens": 34259,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 37880781623,
+  "scientific_commit": "01889c7fb468ab654f0760b5064fe9f63d200cc2",
+  "scope_commit": "b9eb2d1d2d87b8692e3b90d32524a95d3e389bf7",
+  "tests_commit": "9cc4d1c24b82b130c9d60b57000fb2c7371169ca"
+}

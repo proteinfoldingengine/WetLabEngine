@@ -1,9 +1,15 @@
 # Post-A12 theorem-first synthesis — current continuation index
 Updated: 2026-10-09 UTC. Branch: research/uqcf-overlapping-guard-exchange.
-Status: NINE RECENT SCOPED C3 CHECKPOINTS AND THREE C4 REPAIR CHECKPOINTS CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
+Status: TEN RECENT SCOPED C3 CHECKPOINTS AND THREE C4 REPAIR CHECKPOINTS CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
 
 
-## Latest scoped C3 result: core-reactive repair without stored phase
+## Latest scoped C3 result: cyclic composition by buffered pipeline and loop erasure
+[Cyclic pipeline closeout](COUPLED_C3_PIPELINE_CLOSEOUT.md) is scoped CLOSED. Faithful host-parking composition contains a committed two-cycle; a buffered distinct-slot pipeline removes internal parking, and uniform core loop erasure removes shared-incidence loops. Fixed Q/w on the nonhost slices makes equal cores equal full states in each promised world, so erasure preserves native edges, floors, band and endpoints. The compiled core-simple path requires no stored phase or macro index.
+One fresh marker serves the entire cyclic goal, with at most2 sum(m_j)+4 marked changes and peak max_j max(1,r_j). A fixture improves28 independent-macro changes to18 with peak1. Global optimality, arbitrary target/repeated-slot composition, progress, observable cleanup and native core/guard origin remain OPEN.
+Run37880781623 passed70 tests; complete independent reconstruction gives64 paths and384 graphs with11292 nodes/23160 edges. Separate mathematical/publication reviews ACCEPTED, with author correction of the mathematical review's loose RED wording. Original artifacts, raw reviews and full logs are permanently preserved.
+[Continuation](COUPLED_C3_C4_DEFICIT_CONTINUATION.md): construct the native core/routing/guard connection; the scoped composition phase gap has now been reduced.
+
+## Prior scoped C3 result: core-reactive repair without stored phase
 [Core-reactive closeout](COUPLED_C3_REACTIVE_CLOSEOUT.md) is scoped CLOSED. Given the current pool-core projection, static routing/certificate parameters and the inherited guarded request relation, one deficit handoff admits a set-valued policy with no mutable phase counter, marker read or success acknowledgment. Its complete committed graph is acyclic and has an absorbing exact target; hidden preparation includes both saturated and slack host branches.
 This does not provide guaranteed progress, observable cleanup completion, a deterministic memoryless scheduler, arbitrary macro composition or native origin of the core/guard interface. It is a conditional controller information reduction, not broad C3 closure.
 Run37879440145 passed55 tests and independently reconstructed384 graphs with5568 states/11712 request-outcome edges. Separate Gemini mathematical/publication verdicts ACCEPTED; original archives, exact provenance and author reconciliation are preserved.
