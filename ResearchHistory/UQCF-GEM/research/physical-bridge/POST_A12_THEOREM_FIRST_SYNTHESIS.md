@@ -1,7 +1,10 @@
 # Post-A12 theorem-first synthesis — current continuation index
 Updated: 2026-10-09 UTC. Branch: research/uqcf-overlapping-guard-exchange.
-Status: ELEVEN RECENT SCOPED C3 CHECKPOINTS AND THREE C4 REPAIR CHECKPOINTS CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
+Status: Scoped C3 and C4 closeouts are recorded individually below; native record origin/enforcement/progress and arbitrary coupled repair remain OPEN. No numbered v16 or full-stack post-merge certification.
 
+
+## Current origin re-entry decision
+[Bootstrap-route assessment](COUPLED_C3_ORIGIN_REENTRY_DECISION.md): the verifier's full-support count calculation, conditional count-update law, seeded event reconstruction and guarded positive records do not construct their own native-access inputs. Eight immutable source identities checked. No new theorem, scientific campaign, Gemini verdict or closure is claimed. The next candidate must supply a justified native carrier/action/retained-output connection; another conditional decoder is not that connection. Earlier scoped closeouts remain valid and broad C3/general C4 remain OPEN.
 
 ## Latest scoped C3 representation result: global record transfer
 [Global-to-outside transfer](COUPLED_C3_TRANSFER_CLOSEOUT.md) is scoped CLOSED: M_F(x)=M(A,x)-M(x)+M(E,x) at the initial template. Existing A/E role labels isolate outside-root singleton misses from correctly initialized GLOBAL singleton/pair counts, without a separately initialized F field or explicit hidden host-support input. Global singleton counts alone cannot decide admission; pair order suffices within this specified truncated-record interface. This is not minimal storage or native record production.
