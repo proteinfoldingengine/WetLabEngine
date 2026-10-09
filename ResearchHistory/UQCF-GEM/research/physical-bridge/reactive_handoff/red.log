@@ -1,0 +1,518 @@
+test_complete (test_reactive.Contracts.test_complete) ... FAIL
+test_duplicate_edge (test_reactive.Contracts.test_duplicate_edge) ... FAIL
+test_duplicate_source (test_reactive.Contracts.test_duplicate_source) ... FAIL
+test_duplicate_state (test_reactive.Contracts.test_duplicate_state) ... FAIL
+test_eligibility (test_reactive.Contracts.test_eligibility) ... FAIL
+test_excess (test_reactive.Contracts.test_excess) ... FAIL
+test_false_completion (test_reactive.Contracts.test_false_completion) ... FAIL
+test_false_composition (test_reactive.Contracts.test_false_composition) ... FAIL
+test_false_marker_read (test_reactive.Contracts.test_false_marker_read) ... FAIL
+test_false_origin (test_reactive.Contracts.test_false_origin) ... FAIL
+test_false_progress (test_reactive.Contracts.test_false_progress) ... FAIL
+test_false_uniform_safety (test_reactive.Contracts.test_false_uniform_safety) ... FAIL
+test_floor (test_reactive.Contracts.test_floor) ... FAIL
+test_hidden_marker_alias (test_reactive.Contracts.test_hidden_marker_alias) ... FAIL
+test_illegal_direct_deletion (test_reactive.Contracts.test_illegal_direct_deletion) ... FAIL
+test_marker_observation (test_reactive.Contracts.test_marker_observation) ... FAIL
+test_missing_edge (test_reactive.Contracts.test_missing_edge) ... FAIL
+test_missing_graph (test_reactive.Contracts.test_missing_graph) ... FAIL
+test_missing_source (test_reactive.Contracts.test_missing_source) ... FAIL
+test_missing_state (test_reactive.Contracts.test_missing_state) ... FAIL
+test_omitted_noop (test_reactive.Contracts.test_omitted_noop) ... FAIL
+test_policy (test_reactive.Contracts.test_policy) ... FAIL
+test_provenance (test_reactive.Contracts.test_provenance) ... FAIL
+test_rank (test_reactive.Contracts.test_rank) ... FAIL
+test_reverse_change (test_reactive.Contracts.test_reverse_change) ... FAIL
+test_substituted_graph (test_reactive.Contracts.test_substituted_graph) ... FAIL
+test_target (test_reactive.Contracts.test_target) ... FAIL
+test_tau (test_reactive.Contracts.test_tau) ... FAIL
+test_type (test_reactive.Contracts.test_type) ... FAIL
+
+======================================================================
+FAIL: test_complete (test_reactive.Contracts.test_complete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 17, in test_complete
+    self.ready();self.mods['independent'].verify(self.cert);self.assertEqual(len(self.cert['sources']),256)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_edge (test_reactive.Contracts.test_duplicate_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 32, in test_duplicate_edge
+    def test_duplicate_edge(self):self.reject(lambda c:c['graphs'][0]['edges'].append(c['graphs'][0]['edges'][0]))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_source (test_reactive.Contracts.test_duplicate_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 24, in test_duplicate_source
+    def test_duplicate_source(self):self.reject(lambda c:c['sources'].__setitem__(1,c['sources'][0]))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_state (test_reactive.Contracts.test_duplicate_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 30, in test_duplicate_state
+    def test_duplicate_state(self):self.reject(lambda c:c['graphs'][0]['nodes'].__setitem__(1,c['graphs'][0]['nodes'][0]))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_eligibility (test_reactive.Contracts.test_eligibility)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 28, in test_eligibility
+    def test_eligibility(self):self.reject(lambda c:c['sources'][0].__setitem__('protected',False))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_excess (test_reactive.Contracts.test_excess)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 48, in test_excess
+    def test_excess(self):self.reject(lambda c:c['graphs'][0]['nodes'][0].__setitem__('excess',99))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_completion (test_reactive.Contracts.test_false_completion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 50, in test_false_completion
+    def test_false_completion(self):self.reject(lambda c:c['claims'].__setitem__('observable_completion',True))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_composition (test_reactive.Contracts.test_false_composition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 54, in test_false_composition
+    def test_false_composition(self):self.reject(lambda c:c['claims'].__setitem__('arbitrary_macro_composition',True))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_marker_read (test_reactive.Contracts.test_false_marker_read)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 52, in test_false_marker_read
+    def test_false_marker_read(self):self.reject(lambda c:c['claims'].__setitem__('marker_observed',True))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_origin (test_reactive.Contracts.test_false_origin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 51, in test_false_origin
+    def test_false_origin(self):self.reject(lambda c:c['claims'].__setitem__('observer_origin',True))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_progress (test_reactive.Contracts.test_false_progress)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 49, in test_false_progress
+    def test_false_progress(self):self.reject(lambda c:c['claims'].__setitem__('guaranteed_progress',True))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_uniform_safety (test_reactive.Contracts.test_false_uniform_safety)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 53, in test_false_uniform_safety
+    def test_false_uniform_safety(self):self.reject(lambda c:c['claims'].__setitem__('all_issued_commands_safe',True))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_floor (test_reactive.Contracts.test_floor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 43, in test_floor
+    def test_floor(self):self.reject(lambda c:c['graphs'][0]['floors'].__setitem__(5,0))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_hidden_marker_alias (test_reactive.Contracts.test_hidden_marker_alias)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 19, in test_hidden_marker_alias
+    self.ready()
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_illegal_direct_deletion (test_reactive.Contracts.test_illegal_direct_deletion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 42, in test_illegal_direct_deletion
+    self.reject(f)
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_marker_observation (test_reactive.Contracts.test_marker_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 46, in test_marker_observation
+    def test_marker_observation(self):self.reject(lambda c:c['graphs'][0]['nodes'][0]['core'].__setitem__(5,255))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_edge (test_reactive.Contracts.test_missing_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 31, in test_missing_edge
+    def test_missing_edge(self):self.reject(lambda c:c['graphs'][0]['edges'].pop())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_graph (test_reactive.Contracts.test_missing_graph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 26, in test_missing_graph
+    def test_missing_graph(self):self.reject(lambda c:c['graphs'].pop())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_source (test_reactive.Contracts.test_missing_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 23, in test_missing_source
+    def test_missing_source(self):self.reject(lambda c:c['sources'].pop())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_state (test_reactive.Contracts.test_missing_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 29, in test_missing_state
+    def test_missing_state(self):self.reject(lambda c:c['graphs'][0]['nodes'].pop())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_omitted_noop (test_reactive.Contracts.test_omitted_noop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 33, in test_omitted_noop
+    def test_omitted_noop(self):self.reject(lambda c:c['graphs'][0].__setitem__('edges',[e for e in c['graphs'][0]['edges'] if e[0]!=e[2]]))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_policy (test_reactive.Contracts.test_policy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 45, in test_policy
+    def test_policy(self):self.reject(lambda c:c['graphs'][0]['nodes'][c['graphs'][0]['start']].__setitem__('policy',[[5,5,1]]))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_provenance (test_reactive.Contracts.test_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 55, in test_provenance
+    def test_provenance(self):self.reject(lambda c:c.__setitem__('scope_commit','0'*40))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_rank (test_reactive.Contracts.test_rank)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 44, in test_rank
+    def test_rank(self):self.reject(lambda c:c['graphs'][0]['nodes'][0].__setitem__('rank',-1))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_reverse_change (test_reactive.Contracts.test_reverse_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 37, in test_reverse_change
+    self.reject(f)
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_substituted_graph (test_reactive.Contracts.test_substituted_graph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 25, in test_substituted_graph
+    def test_substituted_graph(self):self.reject(lambda c:c['graphs'].__setitem__(1,c['graphs'][0]))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_target (test_reactive.Contracts.test_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 47, in test_target
+    def test_target(self):self.reject(lambda c:c['graphs'][0]['nodes'][0].__setitem__('target',not c['graphs'][0]['nodes'][0]['target']))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_tau (test_reactive.Contracts.test_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 27, in test_tau
+    def test_tau(self):self.reject(lambda c:c['sources'][0].__setitem__('tau',1))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_type (test_reactive.Contracts.test_type)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 56, in test_type
+    def test_type(self):self.reject(lambda c:c['sources'][0]['id'].__setitem__(0,False))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/reactive_handoff/test_reactive.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.004s
+
+FAILED (failures=29)
