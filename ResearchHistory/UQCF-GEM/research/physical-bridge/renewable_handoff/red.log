@@ -1,0 +1,274 @@
+test_duplicate_source (test_handoff.Contracts.test_duplicate_source) ... FAIL
+test_false_observer_claim (test_handoff.Contracts.test_false_observer_claim) ... FAIL
+test_false_optimality (test_handoff.Contracts.test_false_optimality) ... FAIL
+test_false_progress_claim (test_handoff.Contracts.test_false_progress_claim) ... FAIL
+test_false_provenance (test_handoff.Contracts.test_false_provenance) ... FAIL
+test_full_independent_universe (test_handoff.Contracts.test_full_independent_universe) ... FAIL
+test_illegal_intermediate (test_handoff.Contracts.test_illegal_intermediate) ... FAIL
+test_invalid_spectator_classification (test_handoff.Contracts.test_invalid_spectator_classification) ... FAIL
+test_missing_path (test_handoff.Contracts.test_missing_path) ... FAIL
+test_missing_source (test_handoff.Contracts.test_missing_source) ... FAIL
+test_numeric_boolean_substitution (test_handoff.Contracts.test_numeric_boolean_substitution) ... FAIL
+test_substituted_path (test_handoff.Contracts.test_substituted_path) ... FAIL
+test_unremoved_marker (test_handoff.Contracts.test_unremoved_marker) ... FAIL
+test_wrong_floor_minimum (test_handoff.Contracts.test_wrong_floor_minimum) ... FAIL
+test_wrong_renewal (test_handoff.Contracts.test_wrong_renewal) ... FAIL
+test_wrong_tau (test_handoff.Contracts.test_wrong_tau) ... FAIL
+
+======================================================================
+FAIL: test_duplicate_source (test_handoff.Contracts.test_duplicate_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 33, in test_duplicate_source
+    def test_duplicate_source(self):self.reject(lambda c:c['sources'].__setitem__(1,c['sources'][0]))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_false_observer_claim (test_handoff.Contracts.test_false_observer_claim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 43, in test_false_observer_claim
+    def test_false_observer_claim(self):self.reject(lambda c:c['claims'].__setitem__('observer_origin',True))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_false_optimality (test_handoff.Contracts.test_false_optimality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 45, in test_false_optimality
+    def test_false_optimality(self):self.reject(lambda c:c['claims'].__setitem__('optimal',True))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_false_progress_claim (test_handoff.Contracts.test_false_progress_claim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 44, in test_false_progress_claim
+    def test_false_progress_claim(self):self.reject(lambda c:c['claims'].__setitem__('guaranteed_request_completion',True))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_false_provenance (test_handoff.Contracts.test_false_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 42, in test_false_provenance
+    def test_false_provenance(self):self.reject(lambda c:c.__setitem__('scope_commit','0'*40))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_full_independent_universe (test_handoff.Contracts.test_full_independent_universe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 28, in test_full_independent_universe
+    self.ready();self.modules['independent'].verify(self.cert)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_illegal_intermediate (test_handoff.Contracts.test_illegal_intermediate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 38, in test_illegal_intermediate
+    def test_illegal_intermediate(self):self.reject(lambda c:c['paths'][0]['states'][2].__setitem__(3,0))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_invalid_spectator_classification (test_handoff.Contracts.test_invalid_spectator_classification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 37, in test_invalid_spectator_classification
+    def test_invalid_spectator_classification(self):self.reject(lambda c:c['sources'][0].__setitem__('separated',False))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_missing_path (test_handoff.Contracts.test_missing_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 35, in test_missing_path
+    def test_missing_path(self):self.reject(lambda c:c['paths'].pop())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_missing_source (test_handoff.Contracts.test_missing_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 32, in test_missing_source
+    def test_missing_source(self):self.reject(lambda c:c['sources'].pop())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_numeric_boolean_substitution (test_handoff.Contracts.test_numeric_boolean_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 46, in test_numeric_boolean_substitution
+    def test_numeric_boolean_substitution(self):self.reject(lambda c:c['sources'][0]['id'].__setitem__(0,False))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_substituted_path (test_handoff.Contracts.test_substituted_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 34, in test_substituted_path
+    def test_substituted_path(self):self.reject(lambda c:c['paths'].__setitem__(1,c['paths'][0]))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_unremoved_marker (test_handoff.Contracts.test_unremoved_marker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 40, in test_unremoved_marker
+    def test_unremoved_marker(self):self.reject(lambda c:c['paths'][0]['states'][-1].__setitem__(3,c['paths'][0]['states'][-1][3]|32))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_floor_minimum (test_handoff.Contracts.test_wrong_floor_minimum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 39, in test_wrong_floor_minimum
+    def test_wrong_floor_minimum(self):self.reject(lambda c:c['paths'][0]['minimum_sizes'].__setitem__(0,1))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_renewal (test_handoff.Contracts.test_wrong_renewal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 41, in test_wrong_renewal
+    def test_wrong_renewal(self):self.reject(lambda c:c['walks'][0]['states'][-1].__setitem__(0,0))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_tau (test_handoff.Contracts.test_wrong_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 36, in test_wrong_tau
+    def test_wrong_tau(self):self.reject(lambda c:c['sources'][0].__setitem__('tau',2))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 24, in reject
+    self.ready(); c=copy.deepcopy(self.cert);edit(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/renewable_handoff/test_handoff.py", line 21, in ready
+    self.assertEqual(set(self.modules),{'producer','independent'},'intended RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : intended RED: implementation absent
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.003s
+
+FAILED (failures=16)
