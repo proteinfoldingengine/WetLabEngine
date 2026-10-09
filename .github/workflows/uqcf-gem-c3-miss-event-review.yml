@@ -1,0 +1,69 @@
+name: UQCF-GEM C3 miss-count event inversion review
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/uqcf-gem-c3-miss-event-review.yml'
+      - '.github/scripts/c3_miss_event_review.py'
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 25d05a1d44d44f35288e13e423bedc0510806ee8
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - name: Exact independent reconstruction and rejecting controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p miss_event_verification
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT/miss_event" -p test_event.py -v 2>&1 | tee miss_event_verification/contracts.log
+          python3 "$ROOT/miss_event/producer.py" > miss_event_verification/certificate.json
+          python3 "$ROOT/miss_event/producer.py" > /tmp/repeated-certificate.json
+          cmp miss_event_verification/certificate.json /tmp/repeated-certificate.json
+          python3 "$ROOT/miss_event/independent.py" miss_event_verification/certificate.json | tee miss_event_verification/independent.json
+          python3 -m unittest discover -s "$ROOT/core_readout" -p test_core_readout.py -v 2>&1 | tee miss_event_verification/inherited_core_readout.log
+          python3 -m unittest discover -s "$ROOT/miss_reconstruction" -p test_reconstruction.py -v 2>&1 | tee miss_event_verification/inherited_reconstruction.log
+          echo "scientific_sha=$(git -C research_snapshot rev-parse HEAD)" > miss_event_verification/provenance.txt
+          echo "workflow_sha=$GITHUB_SHA" >> miss_event_verification/provenance.txt
+          sha256sum miss_event_verification/certificate.json > miss_event_verification/certificate.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-miss-event-verification
+          path: miss_event_verification/
+          retention-days: 30
+  adversarial-review:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: 25d05a1d44d44f35288e13e423bedc0510806ee8
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-miss-event-verification
+          path: miss_event_verification
+      - name: Independent mathematical review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/c3_miss_event_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-miss-event-review
+          path: miss_event_review/
+          retention-days: 30
