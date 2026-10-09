@@ -16,7 +16,7 @@ tau(source with +A(h))=min(tau(source),1+rho).
 
 Proof: any old source hitting set remains a hitting set after addition. A together with a minimum hitting set of F hits all nonhost roots and the new host, giving the other upper bound. Conversely, a hitting set after addition either already hits the old host, hence is a source cover, or uses A to cover the host and must additionally cover F. Since A occurs in none of F, that second case needs at least1+rho labels. This exact formula is mathematical, not an observer algorithm for hidden F.
 
-Also tau(source)<=2+rho: A, a cover of F, and E cover the source. Thus a tau4 source has rho>=2 and the prepared source has tau>=3. The four-root triangle {a,b},{b,c},{a,c},{d,e} instead has tau3 and rho_a=1; adding a at the host gives tau2. The initial upper-edge promise cannot be dropped from the general sufficient theorem. Some tau3 sources are safe, but their exact additional residual condition is not provided by this core-only controller.
+Also tau(source)<=2+rho: A, a cover of F, and E cover the source. Thus a tau4 source has rho>=2 and the prepared source has tau>=3. The four-root triangle {a,b},{b,c},{a,c},{d,e} instead has tau3 and rho_a=1; adding a at the host gives tau2. Under the retained K certificate, rho<=2 as well, so every tau4 source in this class has rho=2 and the first prepared slice has EXACT tau3. This stronger consequence was identified analytically before implementation or enumeration. The initial upper-edge promise cannot be dropped from the general sufficient theorem. Some tau3 sources are safe, but their exact additional residual condition is not provided by this core-only controller.
 
 ## Script and uniform safety before issue
 Use only existing labels:
