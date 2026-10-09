@@ -30,3 +30,6 @@ The observation-fiber criterion remains the factorization test; direct-tau depen
 
 Research-source changes have event-driven verification/review workflows. Historical publications need not rerun unchanged mathematics. Separate publication audit and author reconciliation remain required for future closure. The existing monitor schedules discrete checks, not continuous background research.
 No fundamental time, force, inserted spacetime geometry, dark-matter variable, continuum or GR derivation is claimed.
+
+## Latest origin investigation: quantum-interface screen
+[Source-scoped route assessment](COUPLED_C3_QUANTUM_BRIDGE_SCREEN.md), OPEN author note: earlier matrix responses and signed ensemble readout do not yet supply a justified carrier/action/actual-record bridge to the marker-star channel. Eight immutable sources were identity-checked. No new theorem, scientific campaign, Gemini verdict or checkpoint closure is claimed. The next substantive step is the native bridge itself; the seven scoped closeouts remain unchanged.
