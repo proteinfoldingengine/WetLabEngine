@@ -1,0 +1,127 @@
+{
+  "status": "EXECUTED_AND_AUTHOR_RECONCILED",
+  "scope_commit": "e51e7333c581b1b343c2e6311b97d898b33e3203",
+  "proof_commit": "c53915549cae52bf48a7178dca8825ba7afff908",
+  "scientific_commit": "cce161f5623ff91b349c4943db2a81891474c9d5",
+  "workflow_commit": "cce161f5623ff91b349c4943db2a81891474c9d5",
+  "run_id": 37870623125,
+  "jobs": [
+    {
+      "id": 113627625832,
+      "name": "verification",
+      "conclusion": "success"
+    },
+    {
+      "id": 113628013840,
+      "name": "mathematical-review",
+      "conclusion": "success"
+    },
+    {
+      "id": 113628651940,
+      "name": "publication-audit",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11590601338,
+      "name": "c3-handoff-review",
+      "size_in_bytes": 2093,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11590601338",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11590601338/zip",
+      "expired": false,
+      "created_at": "2026-10-09T01:40:49Z",
+      "expires_at": "2027-01-07T01:36:52Z",
+      "updated_at": "2026-10-09T01:40:49Z",
+      "digest": "sha256:0208ba477732a68c41d84ef38b898ccfd17b14ed28cba45d0d805a7f6d11b37a",
+      "workflow_run": {
+        "id": 37870623125,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "head_sha": "cce161f5623ff91b349c4943db2a81891474c9d5"
+      }
+    },
+    {
+      "id": 11590551707,
+      "name": "c3-handoff-publication",
+      "size_in_bytes": 2710,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11590551707",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11590551707/zip",
+      "expired": false,
+      "created_at": "2026-10-09T01:42:15Z",
+      "expires_at": "2027-01-07T01:36:52Z",
+      "updated_at": "2026-10-09T01:42:15Z",
+      "digest": "sha256:302f56a446d7a7a3a5901aebb553f6fe771efbc9b1cf145ab08f080a06884611",
+      "workflow_run": {
+        "id": 37870623125,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "head_sha": "cce161f5623ff91b349c4943db2a81891474c9d5"
+      }
+    },
+    {
+      "id": 11589684989,
+      "name": "c3-handoff-verification",
+      "size_in_bytes": 28357,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11589684989",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11589684989/zip",
+      "expired": false,
+      "created_at": "2026-10-09T01:38:20Z",
+      "expires_at": "2027-01-07T01:36:52Z",
+      "updated_at": "2026-10-09T01:38:20Z",
+      "digest": "sha256:0430438a58085d876cb9f4f23a2da714ffeb93ad1af3eeeeedb5dd80656065b2",
+      "workflow_run": {
+        "id": 37870623125,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "head_sha": "cce161f5623ff91b349c4943db2a81891474c9d5"
+      }
+    }
+  ],
+  "archives": {
+    "verification": {
+      "zip_sha256": "0430438a58085d876cb9f4f23a2da714ffeb93ad1af3eeeeedb5dd80656065b2",
+      "bytes": 28357,
+      "members": {
+        "certificate.json": "a351ef212c37c7c26c4f4c3501244cd94abacd583542aae48a3d5d1171eee61c",
+        "certificate.sha256": "332fa1be3537f5e29c8cf920458719eb73b3cbb908922be896dba2e1e531c817",
+        "contracts.log": "5f83752dac6ee9456564a35a1d8ab22bd83ab8ed8951d232420723a6c7643262",
+        "independent.json": "24f421e907b08961d69ef526f7a95c236c065fd3a43bfcda050e2f7922eec28d",
+        "inherited_core.log": "28989e5f71d44828c74781f706e1b21b154da2a31f8288c113ba68735b30733c",
+        "inherited_fresh.log": "08c6879bbc30d119a1bea1b7f0bc2429e7c1770d7c30dfa34b63545f1e771585",
+        "provenance.txt": "11c9bc88aed8ce05b178fa6ca49b3f47c3324482bcb30c3d59d67fb712b4ad13"
+      }
+    },
+    "review": {
+      "zip_sha256": "0208ba477732a68c41d84ef38b898ccfd17b14ed28cba45d0d805a7f6d11b37a",
+      "bytes": 2093,
+      "members": {
+        "manifest.json": "ab0740d5065f15160e9777c1e719e68bc6cc110c9cfd2e13e276500001028e54",
+        "review.txt": "9be134c2b37746bf56d40a85df7f97d3b66e2183c7bf3fc1439d4d63dde4a1f5"
+      }
+    },
+    "publication": {
+      "zip_sha256": "302f56a446d7a7a3a5901aebb553f6fe771efbc9b1cf145ab08f080a06884611",
+      "bytes": 2710,
+      "members": {
+        "handoff_publication/manifest.json": "2120eade1aeed8718013b243573d17b286c5ff742ff9518dbab2c2f8bc05be35",
+        "handoff_publication/review.txt": "96ca8557979884375d6cbac32590142b2086c88058656347144edfd8e109f3db",
+        "handoff_gate.json": "4dcfb403fd228ef1221c2accfcc31fc212e5612f4337954ac067c9ba5361748d"
+      }
+    }
+  },
+  "author_hash_checks": {
+    "mathematical_inputs": 14,
+    "publication_inputs": 17,
+    "response_hashes": 2,
+    "downloaded_zip_digests": 3,
+    "local_and_remote_certificate_byte_equal": true
+  },
+  "new_tests": 16,
+  "inherited_core_tests": 7,
+  "inherited_fresh_tests": 11,
+  "new_observer_or_progress_claim": false
+}

@@ -1,0 +1,21 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The scope, result, and code artifacts are perfectly aligned with the bounded claims. The result explicitly disclaims observer-origin solutions, guaranteed request completion, optimality, and general core skeletons.",
+    "The independent verification script (`independent.py`) correctly implements closed-form phase construction (`rows`) and a representative-union algorithm (`hitting`), strictly separating its logic from the literal edit replay (`path`) and subset-transversal search (`tau`) used in the producer.",
+    "The domain sizes are exactly as specified: 768 sources, 192 protected sources, 384 eight-edit paths, and 768 two-exchange words.",
+    "Complete canonical identities are verified via byte-exact JSON serialization matching between the independent reconstruction and the provided certificate.",
+    "Corruption controls are comprehensively tested and pass, as evidenced by `contracts.log` and the initial `red.log`.",
+    "The mathematical review returned ACCEPTED, and the publication gate confirms byte-exact reproduction and independent full reconstruction.",
+    "The evidence received includes all required scopes, results, code, test logs, provenance hashes, and independent gate outputs."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The result is a committed-path specification and does not establish actual completion, phase recognition, or an actuator.",
+    "The theorem does not solve the broader observer-origin obligation or provide a universal host-selection theorem.",
+    "The uniform eight-edit schedule is not claimed to be optimal; shorter routes may exist for specific hidden states."
+  ]
+}
+```

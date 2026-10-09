@@ -34,3 +34,6 @@ The [quantum-interface screen](COUPLED_C3_QUANTUM_BRIDGE_SCREEN.md) examines the
 
 ## Concrete internal write attempted and rejected
 The [two-request internal-record attempt](COUPLED_C3_INTERNAL_RECORD_ATTEMPT.md) fixes record coordinates as actual core incidences and attempts to copy hidden x,y by -a(root1), -c(root2). Its exact outcome sets instantiate the already closed core-readout relation. Deterministic copying requires an added commit-every-legal-request rule; that rule is not derived or adopted. This is a failed candidate derivation, not a new theorem or audit campaign. A future attempt must supply a specific inherited coupling/resolution mechanism before another protocol is proposed. Broader C3 remains OPEN.
+
+## Repair progress alongside the open origin question
+[Admissibility-derived renewable handoff](COUPLED_C3_RENEWABLE_HANDOFF_CLOSEOUT.md) is scoped CLOSED. This proves uniform repair without acquiring hidden spectator information; it does not solve its acquisition. The original repair and native-origin obligations are now explicitly separated. Retained core roles and committed path semantics remain declared inputs. Neither perpetual retention nor guaranteed request completion is inferred; reversible memory is not ruled out merely because inverse edits are allowed.

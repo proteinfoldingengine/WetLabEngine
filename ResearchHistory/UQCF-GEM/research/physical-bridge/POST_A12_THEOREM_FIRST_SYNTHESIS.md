@@ -1,6 +1,6 @@
 # Post-A12 theorem-first synthesis — current continuation index
 Updated: 2026-10-08. Branch: research/uqcf-overlapping-guard-exchange.
-Status: SEVEN RECENT SCOPED C3 CHECKPOINTS CLOSED; native record genesis/enforcement/progress and broader C3/C4-C6 OPEN. No numbered v16 or full-stack post-merge certification.
+Status: EIGHT RECENT SCOPED C3 CHECKPOINTS CLOSED; native record genesis/enforcement/progress and broader C3/C4-C6 OPEN. No numbered v16 or full-stack post-merge certification.
 
 ## Preserved history
 The complete preceding index, including prior pending notices and adverse core-readout reviews, is preserved at [f6417541c95c4584f4d955ae0745f4109506645c](https://github.com/proteinfoldingengine/WetLabEngine/blob/f6417541c95c4584f4d955ae0745f4109506645c/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_THEOREM_FIRST_SYNTHESIS.md). Historical source files are unchanged.
@@ -36,3 +36,6 @@ No fundamental time, force, inserted spacetime geometry, dark-matter variable, c
 
 ## Concrete internal-record attempt
 [Attempt and rejection](COUPLED_C3_INTERNAL_RECORD_ATTEMPT.md): core deletions can carry a correlated internal record, but forcing the two-request copy requires a successor-selection rule absent from the inherited admissible-or-NOOP relation. No new primitive was adopted. This explicitly instantiates a known boundary and earns no new theorem/closure count. No new Actions or Gemini run was justified; native record generation remains OPEN.
+
+## Admissibility-derived hidden separation and renewable handoff
+[New bounded closeout](COUPLED_C3_RENEWABLE_HANDOFF_CLOSEOUT.md): native lower protection forces the exact spectator separation required by the triangle-plus-pair handoff. All four roots may have hidden spectators; arbitrary original admissible floors are preserved. The buffer is removed at each exact endpoint and reused along arbitrary finite prescribed apex exchanges. The retained controller needs no spectator read or count channel. GitHub run37870623125 passed34 tests and independent full reconstruction; separate mathematical and publication reviews ACCEPTED. This advances original C3/C4 repair under the declared committed-edit interface; native observer origin and general coupled repair remain OPEN. Next investigate genuinely interacting repair blocks, not another probe variant.
