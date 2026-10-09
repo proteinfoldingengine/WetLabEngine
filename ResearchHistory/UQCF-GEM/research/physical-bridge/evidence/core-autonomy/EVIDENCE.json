@@ -1,0 +1,115 @@
+{
+  "artifacts": [
+    {
+      "bytes": 7613,
+      "id": 11632725002,
+      "members_sha256": {
+        "certificate.json": "50ab05cc8c7c687922d33cf2c08f4fc880bf32798e7cc1e607417e867b439969",
+        "certificate.sha256": "74a69c0dff3cc7a7a11ac5c0409bf99e3eb6cc519b4f5f366c998a56ca38d053",
+        "contracts.log": "4aa462997584623409fd89947ce6c082a977b708ed6769befe20f550d3355347",
+        "counts.json": "fb5515c090269cf6005549c595fffa002c14e4d0f1965efaeb2e6d4174413e94",
+        "independent.json": "40aab2ac894acb0095ccc508e9c04245c4b3a8d1f7b4113f2cf1af335627a7c2",
+        "inherited_transfer.log": "1cd0f9018a068489ba141f2ef4114d534d7450155998fe8f48ee68c90cff1aa5",
+        "provenance.txt": "acfff790bebc43d69188c80bb970bf4bb5f065d7d382f4b49e7fae59ece1c5ad"
+      },
+      "name": "c3-autonomy-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "68777b8c1063664919ce126ca904199cdf4077fc0c019f1260af05730c99014b"
+    },
+    {
+      "bytes": 2789,
+      "id": 11631970778,
+      "members_sha256": {
+        "manifest.json": "8d7626728f0ab7c309154bebadbfc79731b5f742939caad0bd5a6e7e6191699b",
+        "review.txt": "09a41144dc1aa92b7e9ac51a8c8eb72d374fe48b6337cd3656fc6f4083ed1990"
+      },
+      "name": "c3-autonomy-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "8e0b1741a1892014a7fb650a217efd71ae3f904708a186c6754073e3110fcf9c"
+    },
+    {
+      "bytes": 3196,
+      "id": 11631521253,
+      "members_sha256": {
+        "autonomy_gate.json": "d4e11958b90b7d84a1ef30558c092ce89c41dfb6a43f27b6d7b6535b376d845f",
+        "autonomy_publication/manifest.json": "339a6c738aeb85d9e25239862144d29653f398f7e6b5016fc13c0759d2bb851a",
+        "autonomy_publication/review.txt": "9663eb284af2b64a13f880b3427b8664b73761b60faf7e7b76b421caeca9265c"
+      },
+      "name": "c3-autonomy-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "9d255d60cee146b8f3b09a5a7a6531b9b9d8f2239cd923ad1f158670792378c2"
+    }
+  ],
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "author_scope_controls": [
+    "Rejection alone does not generally identify the hidden bit; legal requests may also NOOP.",
+    "Possible trace equality is not distribution equality for arbitrary hidden-dependent resolution kernels.",
+    "Initial-predicate obstruction does not prohibit preparing a different known-admitted current state.",
+    "General proof permits hidden writes; bounded alphabet contains core switches only."
+  ],
+  "certificate": {
+    "bytes": 79002,
+    "counts": {
+      "admissible": 56,
+      "guarded_edges": 776,
+      "nonuniform_boundaries": 76,
+      "paired_nodes": 100,
+      "paired_safe_edges": 688,
+      "states": 128,
+      "world_pairs": 10
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "50ab05cc8c7c687922d33cf2c08f4fc880bf32798e7cc1e607417e867b439969"
+  },
+  "jobs": {
+    "mathematical-review": 113926139135,
+    "publication-audit": 113926777552,
+    "verification": 113926053004
+  },
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "09a41144dc1aa92b7e9ac51a8c8eb72d374fe48b6337cd3656fc6f4083ed1990",
+    "scientific_commit": "d7c8f1b3e0ca1b66af0cf379fa25a65885c484e8",
+    "status": "PASS",
+    "verified_review_inputs": 16
+  },
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 16,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "09a41144dc1aa92b7e9ac51a8c8eb72d374fe48b6337cd3656fc6f4083ed1990",
+      "tokens": 35024,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 19,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "9663eb284af2b64a13f880b3427b8664b73761b60faf7e7b76b421caeca9265c",
+      "tokens": 29910,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 37961753132,
+  "scientific_commit": "d7c8f1b3e0ca1b66af0cf379fa25a65885c484e8",
+  "scope_commit": "14fc8eafc5af1cbf263c3845c883324587d0e0e6",
+  "tests": {
+    "corruption": 24,
+    "inherited_transfer": 28,
+    "positive": 4,
+    "total": 56
+  },
+  "tests_commit": "a93adf701ca1eae5922899f46e5ced34926094a5"
+}

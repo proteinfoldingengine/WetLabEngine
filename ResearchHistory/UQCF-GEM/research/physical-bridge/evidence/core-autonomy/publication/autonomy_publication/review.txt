@@ -1,0 +1,21 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The native projection identity O(T_a(S)) = f_a(O(S)) is mathematically sound, relying on the disjointness of the observed core palette P and the hidden palette T. Syntactically valid toggles affect only their respective projections.",
+    "The all-commit obstruction theorem is rigorously proven by induction. It correctly demonstrates that deterministic, uniformly safe protocols cannot distinguish initially core-equivalent worlds, even with genuine core changes, arbitrary transcript-derived memory, and adaptive stopping.",
+    "The extension to optional-NOOP semantics correctly establishes the equivalence of possible trace languages under matched resolution masks, while explicitly and correctly avoiding the overclaim of probabilistic equivalence for arbitrary hidden-dependent outcome laws.",
+    "The bounded domain exhaustive enumeration exactly matches the claimed counts: 128 states, 56 admissible, 776 guarded edges, 10 unordered hidden pairs, 100 paired nodes, 688 paired safe edges, and 76 nonuniform boundaries.",
+    "The admission application correctly demonstrates that the previously established exact admission pair (with differing tau but identical core and floors) falls under this general obstruction, proving that uniformly safe incidence writes cannot initialize a record of this hidden predicate.",
+    "The independent verification script successfully reconstructs the complete canonical graph, including all identities and types, confirming the literal supports and subset tau against set supports and representative unions.",
+    "The test suite correctly implements 4 positive and 24 corruption tests, ensuring the integrity of the certificate, the resolution masks, and the claims."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem strictly applies only to protocols that are uniformly safe before issue. It does not invalidate guarded conditional sensing, where state-dependent admissibility provides an information channel (as explicitly noted in the scope boundary).",
+    "The equivalence of possible trace languages under optional-NOOP semantics does not imply equal trace distributions if the underlying physical resolution law (commit vs. NOOP probability) contains hidden-state dependence.",
+    "The result is a specific protocol obstruction for the defined write-only projection interface and does not establish a universal no-observer theorem, nor does it derive physical forces, fundamental time, or geometry."
+  ]
+}
+```
