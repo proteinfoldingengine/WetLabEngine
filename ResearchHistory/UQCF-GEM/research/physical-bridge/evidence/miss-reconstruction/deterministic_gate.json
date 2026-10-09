@@ -1,0 +1,28 @@
+{
+  "certificate_byte_reproduced": true,
+  "independent": {
+    "families": 495,
+    "minimum_collision_size": {
+      "0": 1,
+      "1": 2,
+      "2": 4,
+      "3": null
+    },
+    "native": {
+      "nonempty_queries": 385,
+      "residuals_per_world": 16,
+      "roots_per_world": 19,
+      "tau": [
+        3,
+        3
+      ]
+    },
+    "records": 1980,
+    "status": "PASS_BOUNDED_NOT_GENERAL_PROOF"
+  },
+  "original_archives": 2,
+  "review_input_hashes": 14,
+  "scientific_commit": "6ffcdb3c418bb83ae48c51d86567c32120816d35",
+  "status": "PASS",
+  "workflow_commit": "700c405bdc1267fc861c78042771489929ee7489"
+}

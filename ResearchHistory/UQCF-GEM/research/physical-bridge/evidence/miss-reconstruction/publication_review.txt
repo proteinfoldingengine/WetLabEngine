@@ -1,0 +1,23 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The mathematical proof of the integer cancellation lemma and the resulting N < 2^d uniqueness threshold is sound, correctly relying on the known total count N (the empty query) to bound the positive mass of the multiplicity difference.",
+    "The parity sharpness construction correctly demonstrates ambiguity at N = 2^d using even and odd subsets on d+1 free labels, exploiting the pairing of subsets when toggling a label outside the query.",
+    "The native degree-four boundary correctly embeds the N=16 ambiguity within a valid floor-two, tau-three protected carrier using 16 residual roots and 3 fixed core roots, proving that real ambiguity exists in valid native states.",
+    "The bounded verification domain (495 multisets, 1980 records for N<=4, d<=3) and the native fixture (385 nonempty queries) are correctly implemented by the producer and independently verified by the checker using a Boolean zeta transform.",
+    "The rejecting controls correctly verify the integrity of the certificate, successfully catching missing, duplicate, substituted, and corrupted records, as well as false scope and provenance claims.",
+    "The deterministic gate successfully verified all SHA linkages, both original ZIP byte digests, all archive member hashes, all 14 mathematical-review input hashes, and freshly reproduced the complete certificate.",
+    "The claims correctly scope the result as an analytical threshold for unordered multiset reconstruction, explicitly disclaiming efficient reconstruction, record-origin closure, observer accessibility, and full numbered v16 certification."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The reconstruction recovers only the unordered multiset of supports; it cannot resolve the assignment of these supports to specific labelled slots without additional retained data.",
+    "The procedure strictly requires the full palette and the known total count N; without N, supports equal to the full palette are invisible to all nonempty miss queries.",
+    "The result is an analytical threshold and finite enumeration; it does not provide a computationally efficient reconstruction algorithm for large palettes.",
+    "The bounded verification computationally checks general uniqueness only up to d=3 for a 3-label palette, relying entirely on the analytical proof for the general N < 2^d theorem.",
+    "The result quantifies the information content of the initialized miss-count field but does not derive the physical origin, initialization mechanism, or observer accessibility of the records."
+  ]
+}
+```
