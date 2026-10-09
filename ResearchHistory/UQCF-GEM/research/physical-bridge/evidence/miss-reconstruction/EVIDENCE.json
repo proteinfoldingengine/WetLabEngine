@@ -1,0 +1,60 @@
+{
+  "scope_commit": "9c75d6ed5d7f5452c97032f64b50904171b69d28",
+  "scientific_commit": "6ffcdb3c418bb83ae48c51d86567c32120816d35",
+  "workflow_commit": "700c405bdc1267fc861c78042771489929ee7489",
+  "run_id": 37863006548,
+  "artifacts": {
+    "verification": {
+      "id": 11586599610,
+      "name": "c3-miss-reconstruction-verification",
+      "size_in_bytes": 11026,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11586599610",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11586599610/zip",
+      "expired": false,
+      "created_at": "2026-10-09T00:06:12Z",
+      "expires_at": "2026-11-08T00:06:11Z",
+      "updated_at": "2026-10-09T00:06:12Z",
+      "digest": "sha256:b457dda97279e00d23b88fb905d1f72b87f080397ef1d4b513906920885bdde0",
+      "workflow_run": {
+        "id": 37863006548,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "main",
+        "head_sha": "700c405bdc1267fc861c78042771489929ee7489"
+      },
+      "zip_sha256": "b457dda97279e00d23b88fb905d1f72b87f080397ef1d4b513906920885bdde0",
+      "member_sha256": {
+        "certificate.json": "dabd54f7262e1b4ff5e409a4e03bdf969ffa7add96ac6444aac65f79bd6e25ad",
+        "certificate.sha256": "264462cec4a9258b11740b0281ab70703e3c4df2c8440f59e471b2fb0c22e1ae",
+        "contracts.log": "3ca64840a5258cbc7de2de829e2f0f9caebc694382584f67d5ba1d1773deec6b",
+        "independent.json": "337f8c362a3ed910672e60badb419ff6b58e2c9fa55de30593f048c4a270850b",
+        "inherited_core_readout.log": "32cd8a673f1bbfa20a93ef5e373672c98441fb9de82f32ae4a13aba254882680",
+        "provenance.txt": "b37791a55571fed228a2446f8e0c509500c25a2ca9efc7a1e5bebf9e330414b2"
+      }
+    },
+    "review": {
+      "id": 11586961421,
+      "name": "c3-miss-reconstruction-review",
+      "size_in_bytes": 2471,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11586961421",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11586961421/zip",
+      "expired": false,
+      "created_at": "2026-10-09T00:07:35Z",
+      "expires_at": "2026-11-08T00:07:35Z",
+      "updated_at": "2026-10-09T00:07:35Z",
+      "digest": "sha256:2baf02dfb8a369fcb291449f658adfb87f5c48c67387bcbadcb37aa76494562c",
+      "workflow_run": {
+        "id": 37863006548,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "main",
+        "head_sha": "700c405bdc1267fc861c78042771489929ee7489"
+      },
+      "zip_sha256": "2baf02dfb8a369fcb291449f658adfb87f5c48c67387bcbadcb37aa76494562c",
+      "member_sha256": {
+        "manifest.json": "1ed2db51ce3a114863c9a14a3c62ef12949b80658cc9373ed9356eea0ee4512c",
+        "review.txt": "0bd00ce41414d9ccc6b0ebfa24c3102e770ab987ce0b019c2d89cd5a34a91c95"
+      }
+    }
+  }
+}

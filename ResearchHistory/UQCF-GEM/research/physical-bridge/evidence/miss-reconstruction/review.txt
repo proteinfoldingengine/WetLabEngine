@@ -1,0 +1,22 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The integer signed-Boolean moment lemma is correctly stated and proven using an elegant induction on coordinate slices. The empty moment correctly ensures that the total negative mass equals the positive mass, and the induction establishes the $2^d$ positive mass threshold.",
+    "The multiplicity cancellation argument correctly applies the lemma to the difference of two multiplicity arrays, proving that the support multiset is uniquely determined when $N < 2^d$.",
+    "The parity sharpness construction correctly demonstrates nonuniqueness at $N = 2^d$ using even and odd subsets on $d+1$ free labels, exploiting the fact that toggling a label outside the query pairs even and odd subsets.",
+    "The native 19-root floor-two tau-three embedding correctly instantiates the $d=4, N=16$ boundary case within the protected class. It proves that real ambiguity can occur in valid native states without violating floor or tau constraints.",
+    "The independent verification correctly uses occupancy compositions and a fast Boolean zeta transform on the superset lattice, providing a robust independent check against the producer's direct multiset enumeration and disjointness checks.",
+    "The dependency ledger accurately distinguishes between a mathematical state projection, an exact legality algorithm, and the actual record origin. It correctly identifies that initialization and observer accessibility of the miss-count field remain open obligations."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The bounded verification computationally checks general uniqueness only up to $d=3$ and a specific fixture for $d=4$; it relies on the algebraic proof for the general theorem.",
+    "The result quantifies the information content of the initialized miss-count field but does not provide a mechanism for its initialization or observer accessibility from native inputs.",
+    "The explicit reconstruction procedure is a finite enumeration of all valid multiplicity arrays, which serves as an exact terminating procedure but is not claimed to be computationally efficient.",
+    "The theorem strictly requires the total count $N$ (the empty query) to be known; without it, supports equal to the full palette are invisible to all nonempty queries.",
+    "The reconstruction recovers only the unordered multiset of supports; it cannot resolve the assignment of these supports to specific labelled slots without additional retained data."
+  ]
+}
+```
