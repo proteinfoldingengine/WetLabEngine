@@ -1,0 +1,23 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The mathematical proof of sufficiency is sound: any putative hitting set of size <= 2 must cover the untouched family F (which has tau=2). Since A and D are absent from F, the hitting set cannot contain them. Because only A and D change during the script, this hitting set would also cover the original source, contradicting the initial tau >= 3 promise.",
+    "The necessity proof correctly applies the exact preparation identity tau(S+A(h)) = min(tau(S), 1+rho). For protected sources with rho=1, the first host addition strictly reduces tau to 2, making the script unsafe.",
+    "The reduction of the admission criterion to an empty intersection on F (rho=2) is correctly shown to be decidable by first-order singleton miss counts over a complete palette.",
+    "The strict extension example (source 7,0,0) correctly demonstrates that the exact admission criterion safely admits some tau=3 sources, proving that the earlier tau=4 sufficient promise is not a necessary condition.",
+    "The common-floor same-core example (sources 0,0,0 and 0,0,24) correctly instantiates the observation-fiber obstruction, proving that the core record alone is insufficient to evaluate the admission predicate.",
+    "The bounded universe enumeration exactly matches the analytical claims: 256 total sources, 192 protected, 128 admitted (including 54 with tau=3), 64 rejected, 64 paths, 1152 nodes, and 2048 edges.",
+    "The test suite correctly implements the RED/GREEN protocol with 48 tests (5 positive, 43 corruption controls) and 41 inherited tests, verifying that the producer policy does not query tau at runtime and that out-of-band sources are not misrepresented."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The admission criterion requires a correctly initialized full-palette singleton miss field; the native initialization and access to this field are not derived.",
+    "The result assumes a complete palette or another proof covering all unobserved labels to declare the intersection empty.",
+    "The protocol does not derive a universal native guard, guaranteed progress, or physical origin of the observer.",
+    "The exact intermediate tau preservation is intentionally exchanged for band-safe control without a guard/hidden marker; transient tau=3 states are allowed.",
+    "The deterministic policy relies on the supplied static template and current core, but does not solve the broader scheduling or arbitrary target composition problems."
+  ]
+}
+```

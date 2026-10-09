@@ -2,6 +2,10 @@
 
 Status: OPEN continuation after scoped deficit repair, reactive/cyclic controllers and visible-buffer guard redundancy. Broader native C3 and general C4 remain unresolved.
 
+## Current exact admission target
+[Exact admission](COUPLED_C3_ADMISSION_CLOSEOUT.md) now removes the need to demand tau4 specifically: within the initially protected band and inherited template, the fixed script is safe exactly when no label belongs to every untouched outside root. The earlier tau4 theorem is preserved as a sufficient subcase. A complete-palette singleton miss field suffices to decide this condition; it is not a necessary representation, and a correctly certified bit remains valid during this one handoff.
+The next native C3 construction must explain how that certificate and the current core are initialized and accessible, accounting for every hidden label without a full-state oracle or assumed count response. Initial band3..4, routing and exclusive atomic resolution remain supplied. The same-core admission pair rules out simply computing the bit from existing core observations. Do not rename this conditional admission theorem as native source preparation. Run37943399282 completed89 tests, separate mathematical/publication review and author reconciliation; broad C3 and general C4 remain OPEN.
+
 ## Current achieved interface
 The deficit theorem gives one-excess-incidence repair whenever at most one selected-role root remains uncovered by an admissible pair of stable other roles. A three-role family with at most one unshared root per role therefore supports arbitrary target assignments even with arbitrarily many shared roots.
 The full-batch theorem preserves exact tau with higher possible cost; the deficit theorem preserves the band and permits tau3->4. Neither is a universal path-optimality theorem.

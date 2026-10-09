@@ -1,0 +1,131 @@
+{
+  "artifacts": [
+    {
+      "bytes": 16244,
+      "id": 11623271555,
+      "members_sha256": {
+        "certificate.json": "4c95b113bd73c19257c73e58c469180061e66de5f84c2ef3d45b084b62e32e75",
+        "certificate.sha256": "86729903b9a0b4503480901c9d3da4d71a0164b8441ad63e9a413a4166dfbbf5",
+        "contracts.log": "abc32c51bdaf5cdca40638ddfc10c887b559942cbd5276b05927beb6af35acd3",
+        "counts.json": "504ae1f6871309becfc45c9a91f9644d379d5c2fd284c2b4bb875348a10b59ae",
+        "independent.json": "07f467156be80b41619f20740664ecf732909191cab44a8883aeb1635dd72619",
+        "inherited_visible.log": "c53de15c1dfa7ae851dea743ae44faa757e1cb72d987e8be18e9301323518613",
+        "provenance.txt": "0ea4b6809d7353eebb5c6e5db3ceb8b8cc3de3aa970f8727f8024e8c0cbc9624"
+      },
+      "name": "c3-admission-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "d7a4ecb018ba206f13f246046ca2b62030f491c960cd4ff95518c60a09ac668a"
+    },
+    {
+      "bytes": 2649,
+      "id": 11622901949,
+      "members_sha256": {
+        "manifest.json": "3097a1aa7922188eba90ea2c987e1fb9457ea77f770ae0c015a7d2ff0edeb7f0",
+        "review.txt": "d0cb917bc9aba1fc5aa3313c404a42666d3dc0c8e90586b44e106c118995f701"
+      },
+      "name": "c3-admission-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "a23a24108c46fc7bd2fab51274352700fc7b73c9327c7429118739bc21e4f8de"
+    },
+    {
+      "bytes": 3205,
+      "id": 11622357464,
+      "members_sha256": {
+        "admission_gate.json": "5da66b13ae9736bb55c4fd52b1900adb2de63edbf57f9a20087ba3a22ea3641e",
+        "admission_publication/manifest.json": "6deec5951e5ecd0d9ed7e6cf0ae4fdf1ad9d61013797a0c2cccef71adca8a600",
+        "admission_publication/review.txt": "a88d55fe1508499a10d07177a6ce433747998a51aef79e8ffaf7050887c6556d"
+      },
+      "name": "c3-admission-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "90693ae3d67217083cf6588ce2c31d30b442c21dc994dd6bcecd80fbbabcb8ea"
+    }
+  ],
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "author_reporting_clarifications": [
+    "Singleton miss field is sufficient, not a necessary representation; a correct admission bit suffices for unchanged F.",
+    "GREEN corruption controls successfully reject corrupted certificates; RED records missing implementation only.",
+    "Empty reviewer limitations do not discharge stated native-access, admission or execution assumptions."
+  ],
+  "certificate": {
+    "bytes": 261525,
+    "counts": {
+      "admitted": 128,
+      "guarded_edges": 2048,
+      "new_tau3": 54,
+      "nodes": 1152,
+      "paths": 64,
+      "protected": 192,
+      "rejected_protected": 64,
+      "sources": 256,
+      "syntax_edges": 2048
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "4c95b113bd73c19257c73e58c469180061e66de5f84c2ef3d45b084b62e32e75"
+  },
+  "immutable_source_blobs": {
+    "blobs": {
+      "COUPLED_C3_ADMISSION_RESULT.md": "63497d1077b0291adbfdce28aff395003e0923e7",
+      "COUPLED_C3_ADMISSION_SCOPE.md": "fcf2626554502845a766cb1b1d6c069d273fb078",
+      "COUPLED_C3_NATIVE_RECORD_ORIGIN_DEPENDENCIES.md": "1f954715e39a3298ca26d236846c59438fb24f01",
+      "COUPLED_C3_VISIBLE_CLOSEOUT.md": "98f24edf8dc8454026f9c817c29fb8406ecaf7a7",
+      "COUPLED_C3_VISIBLE_RESULT.md": "47a5bd4cb157db1cc894b66027e98e8fc8f16fb6",
+      "POST_A12_DYNAMIC_RESIDUAL_RESULT.md": "61a764852a94f389a9c4a017bf45dfcbb70ef2a6",
+      "admission/independent.py": "b8e9c82634803284ab1e4ba09423f84c21747da1",
+      "admission/producer.py": "161bbcb374ac1020acb9d74e6be0076bbd9ec31d",
+      "admission/red.log": "9aafcbcecbfbf96924a395b74ffa984a8f7c7524",
+      "admission/test_admission.py": "a47ff6b34e6f2adfdc39a23ac9eb2d046cb507de"
+    },
+    "commit": "a20f56bb0e02f49a7120e925f1900ad5a3e63fb5"
+  },
+  "jobs": {
+    "mathematical-review": 113863368170,
+    "publication-audit": 113863583680,
+    "verification": 113863292551
+  },
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "d0cb917bc9aba1fc5aa3313c404a42666d3dc0c8e90586b44e106c118995f701",
+    "scientific_commit": "a20f56bb0e02f49a7120e925f1900ad5a3e63fb5",
+    "status": "PASS",
+    "verified_review_inputs": 16
+  },
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 16,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "d0cb917bc9aba1fc5aa3313c404a42666d3dc0c8e90586b44e106c118995f701",
+      "tokens": 37786,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 19,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "a88d55fe1508499a10d07177a6ce433747998a51aef79e8ffaf7050887c6556d",
+      "tokens": 40327,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 37943399282,
+  "scientific_commit": "a20f56bb0e02f49a7120e925f1900ad5a3e63fb5",
+  "scope_commit": "eefa97449ef540587450fa91bf207b9cff3482b6",
+  "tests": {
+    "inherited_visible": 41,
+    "new_corruption": 43,
+    "new_positive": 5,
+    "total": 89
+  },
+  "tests_commit": "6a8c60c5ba6923fa7e1ee8ed5d44d15647f2f568"
+}
