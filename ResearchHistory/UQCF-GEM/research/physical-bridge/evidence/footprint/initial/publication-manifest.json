@@ -1,0 +1,38 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_ADMISSION_RESULT.md": "a3357889b5cd26a50ccc0b075324d569663d89eed8a3b066bb6fe2b3bbf2fab1",
+    "COUPLED_C3_AUTONOMY_RESULT.md": "5f8282383b12b204689d5348debdae647f375033e835677666ba24071dde3292",
+    "COUPLED_C3_DEADLOCK_RESULT.md": "e2259d6d74e1006ddb860b35ca5c57a52154b74984042e055f51334b5056cb88",
+    "COUPLED_C3_FIXED_FAMILY_RESULT.md": "eefc1c8c74b7c5fbd0bb9cc6e0f9da9ffd38b638bdf194c0e8ef1a507f70fda4",
+    "COUPLED_C3_FOOTPRINT_RESULT.md": "ac8d59b3e50447149c35c09bbef4a467c9ab79fe69cdea6b117b3f39dcbf78ea",
+    "COUPLED_C3_FOOTPRINT_SCOPE.md": "0fdf0d37170bdaeb109b6d02d80453462ba36a7f2059ef109ece77180d04982a",
+    "COUPLED_C3_VISIBLE_RESULT.md": "7bf06c92c6d72b70a467b6a6590ed6ffad890f5f44064032533bcc0f281f6ce9",
+    "EVIDENCE/certificate.sha256": "14d8e5221a92f47b51cbdec2de38b83a3199675ea80be691be2606b4b8a2b165",
+    "EVIDENCE/contracts.log": "e79b02bd811d423c979a82c61f1568adc8698f5b4e70976da8416952675bbff0",
+    "EVIDENCE/counts.json": "fc24c6703d0355f0256b218b7117a54f98efbc962688c5d09d89fee9b2747da5",
+    "EVIDENCE/independent.json": "f98cb0012d3ea2af4e5320bbf0ce9e35a04f1716710e5525d594258c9a081f15",
+    "EVIDENCE/inherited_fixed_family.log": "9101545b8619559265ce16512045ededbf74836a3308b2e70bfcb2c09552c0c0",
+    "EVIDENCE/provenance.txt": "8f1f476d6a4aa25e8a0f105e38b73338ea8246ddd25f974da889506c13ba33e5",
+    "MATH_REVIEW/manifest.json": "07a13856b5a41061db8d7d7d9d67b0f1b95b9f9da24d41125f9cf6165062636a",
+    "MATH_REVIEW/review.txt": "5988eabb0ae92f0e084f860920603bf5a6fb2306732b70eb0212d30e3bf540e3",
+    "PUBLICATION_GATE": "c9f222a45eaabdae59b1c60e68135080a9ead76bda7dbe1c757bb1f443502d53",
+    "footprint/controls-red.log": "d6889326bf2ecfb92b0a2a8ec4efe2465b5669870c011eb1cd7367e563909500",
+    "footprint/independent.py": "e46f22f1ec1b02cc9cf6d8f851520fad481bee79e6ec7f00a18daa6324829b34",
+    "footprint/producer.py": "8eb58d390ebd5172c0e125ec56b506240d4fe0b3fee4b970e6249c911656d27e",
+    "footprint/red.log": "51d02afbc82966b0d7daeae1aa40e27487aef61d279a6368a69ea06c4aa259cb",
+    "footprint/test_footprint.py": "7060e955cf9dd16e4d4b057fa9d7d16541e8408050e2b3c25e24c6cb8aaf841d"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "9a68f2b25fccc9638366467b6ce2df9eab5e538b",
+  "response_sha256": "d2fe0a9230c527d94b4369d9c797ab33d8bbb0c9aecc8912cecb6507422c1076",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 24159,
+  "workflow_commit": "9a68f2b25fccc9638366467b6ce2df9eab5e538b"
+}

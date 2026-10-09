@@ -1,0 +1,23 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The universal core-region theorem correctly establishes that a candidate core D is universally admissible over the full protected-completion fiber if and only if it satisfies floor constraints, tau(D) <= 4, and every nonempty current core-label footprint is contained in some original core-label footprint.",
+    "The necessity proof is mathematically sound, utilizing a single hidden label on the complement of a violating footprint to construct a valid source completion that drops the hitting number below the protected band, thereby avoiding reliance on hypothetical unprotected worlds.",
+    "The sufficiency proof correctly employs a cover replacement strategy, mapping current core hits back to original core hits, which guarantees the hitting number cannot increase beyond the original.",
+    "The exact-repair application rigorously demonstrates the no-spare obstruction: any first edit using only the five active labels creates a footprint not contained in any original footprint, violating the universal criterion.",
+    "The reserved-label bypass correctly maintains the hitting number <= 4 by batching the additions of D before the deletions of A, preventing the hitting number from spiking to 5, and achieves the sharp minimum cost of 2m+4 edits.",
+    "The independent verification script successfully reconstructs the entire bounded census using set operations and representative-union hitting, confirming the bitwise producer's results.",
+    "The corruption controls and upper tau5 / cross-role tau2 controls are correctly implemented and verified, ensuring the integrity of the bounded census."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem does not cover hidden-label operations or restricted correlated fibers.",
+    "The results do not apply to configurations where floors exceed original core sizes.",
+    "The proof relies on a fixed finite palette and does not address unbounded root creation.",
+    "The findings do not resolve broader bands (e.g., general C4) or general exact-target connectivity.",
+    "The framework does not derive physical forces, spacetime, fundamental time, dark-matter variables, or general relativity."
+  ]
+}
+```
