@@ -1,9 +1,14 @@
 # Post-A12 theorem-first synthesis — current continuation index
 Updated: 2026-10-09 UTC. Branch: research/uqcf-overlapping-guard-exchange.
-Status: EIGHT RECENT SCOPED C3 CHECKPOINTS AND TWO C4 REPAIR CHECKPOINTS CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
+Status: EIGHT RECENT SCOPED C3 CHECKPOINTS AND THREE C4 REPAIR CHECKPOINTS CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
 
 
-## Current C3/C4 checkpoint: moving upper covers
+## Current checkpoint: one-incidence repair from retained overlap
+[Deficit closeout](COUPLED_C4_DEFICIT_CLOSEOUT.md) is scoped CLOSED. Stable other roles cover part of the selected role, reducing peak excess from m to max(1,r), where r is the uncovered deficit. A three-role family with at most one unshared root per role permits one-incidence repair for arbitrarily large overlapping roles. A fixture has no persistent four-cover; another proves tau3->4 is allowed, so only band protection is claimed in general.
+Run37877458430 passed49 tests and independently reconstructed18528 handoffs and720 goal paths. Separate mathematical/publication reviews ACCEPTED; exact original evidence and author provenance reconciliation are archived.
+[Current continuation](COUPLED_C3_C4_DEFICIT_CONTINUATION.md): prioritize native access to the concrete coverage/routing certificate; separately study certificate handover where no stable pair suffices. Native observer origin and universal one-incidence connectivity remain OPEN. Earlier current/next sections below retain their historical context.
+
+## Previous C3/C4 checkpoint: moving upper covers
 [Role-complete closeout](COUPLED_C4_ROLE_COMPLETE_CLOSEOUT.md) is scoped CLOSED. Arbitrary overlapping/coincident known role patterns admit exact-tau-preserving label handoff and target completion without reading hidden backgrounds or covers. Upper protection passes between covers; a concrete tau4 path has no persistent four-cover. One fresh marker is used, but peak excess is m for a role on m roots. General one-excess-incidence repair remains OPEN.
 Run37876323983 passed43 tests, independently reconstructed17768 handoffs/576 goals, and obtained separate mathematical/publication ACCEPTED verdicts. The author's reconciliation rejects the mathematical review's unsupported necessity wording. Full evidence and all harness failures are preserved.
 [Current continuation](COUPLED_C3_C4_ROLE_COMPLETE_CONTINUATION.md): reduce incidence cost under a proved moving-cover condition, and derive native access to the sufficient retained interface. Historical “next” notices below remain in their original context.

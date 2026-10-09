@@ -1,0 +1,26 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The retained certificate correctly identifies a cover of size at most two for non-host roots outside the selected role, covering individually processed roots, and batching only the remaining deficit.",
+    "The schedule exactly matches the 2m+4 edits and peak max(1,r) claims.",
+    "Lower containment and the two upper covers are mathematically sound, ensuring the full band 3<=tau<=4 is protected.",
+    "The exact tau boundary (3->4) is correctly demonstrated by the 'rise' fixture, confirming exact tau invariance is not claimed.",
+    "The 'moving' fixture correctly demonstrates a width-one m=3 path with no persistent four-cover (persistent cover tau = 5).",
+    "Target induction correctly routes labels using the host without disturbing previously fixed slots, ensuring exact endpoints and original floor preservation.",
+    "Domain counts (4096 sources in Domain A, 18 sources in Domain B) are exactly reconciled with the provided evidence and independent reconstruction.",
+    "Independent verification successfully reconstructs the exact canonical identity, type, and value equality using closed-form set phases and representative-union hitting numbers.",
+    "RED/GREEN testing successfully proves the absence of the implementation and the sensitivity of the verification to all critical claims."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The controller relies on a supplied template, current/target roles, host address, label/root order, and committed-edit phase.",
+    "Native generation or observer-accessible realization of these records is not proved.",
+    "Forced request completion is not guaranteed; arbitrary NOOPs can block completion.",
+    "Certificate minimization is a sufficient interface and does not imply global native path-optimality or universal one-incidence repair.",
+    "A missing certificate indicates a failure of this specific interface, not a proof of native connectivity obstruction.",
+    "No fundamental time, inserted spacetime geometry, dark matter, physical force, or general relativity derivation is inferred."
+  ]
+}
+```
