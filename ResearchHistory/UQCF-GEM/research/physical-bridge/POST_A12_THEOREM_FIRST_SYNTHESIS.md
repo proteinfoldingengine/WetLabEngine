@@ -1,6 +1,6 @@
 # Post-A12 theorem-first synthesis — current continuation index
 Updated: 2026-10-08. Branch: research/uqcf-overlapping-guard-exchange.
-Status: SIX RECENT SCOPED C3 CHECKPOINTS CLOSED; native record genesis/enforcement/progress and broader C3/C4-C6 OPEN. No numbered v16 or full-stack post-merge certification.
+Status: SEVEN RECENT SCOPED C3 CHECKPOINTS CLOSED; native record genesis/enforcement/progress and broader C3/C4-C6 OPEN. No numbered v16 or full-stack post-merge certification.
 
 ## Preserved history
 The complete preceding index, including prior pending notices and adverse core-readout reviews, is preserved at [f6417541c95c4584f4d955ae0745f4109506645c](https://github.com/proteinfoldingengine/WetLabEngine/blob/f6417541c95c4584f4d955ae0745f4109506645c/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_THEOREM_FIRST_SYNTHESIS.md). Historical source files are unchanged.
@@ -19,6 +19,9 @@ Core-readout domain: 14 states, 110 probe outcomes, 6 service outcomes; 43 tests
 
 ## Atomic event inversion
 [Miss-count event inversion](COUPLED_C3_MISS_EVENT_CLOSEOUT.md) is scoped CLOSED. Singleton/pair increments across one actual toggle reconstruct the active before/after support for arbitrary residual-family size; trusted addresses and complete root coverage yield the current labelled residual state without a support seed. It does not derive field access or prospective guard enforcement. All 768 identities and 26 tests passed; mathematical review37864605869 and separate publication audit37864875261 ACCEPTED.
+
+## Uniformly safe restored probing
+[Fresh-label restored probe](COUPLED_C3_FRESH_PROBE_CLOSEOUT.md) is scoped CLOSED conditional on the declared count-response interface. A globally fresh marker preserves tau when added to any nonempty root; its star response reads that root before exact removal/restoration. Completed scans reuse one marker, with two actual toggles per root. All 4536 outcomes and 37 tests passed; mathematical review37865793728 and separate publication audit37866062914 ACCEPTED. Count access, free-marker availability, exclusive atomic resolution and memory remain assumptions; NOOPs can prevent restoration/completion.
 
 ## Next obligation
 Continue the [native record-origin dependency reduction](COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md): derive accessible core records and native enforcement from existing typed retained/update inputs. An admissible-state relation alone is not an implementation or actual-record selection law. Do not add an observer-side hidden-state oracle or impose progress.

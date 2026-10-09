@@ -1,0 +1,30 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "Exact global-freshness tau invariance and pre-issue floor/band safety are analytically proven and computationally verified.",
+    "The star count decoder correctly reconstructs the support using only M({w}) and M({w,y}).",
+    "Full-family M({w})=N certificate is correctly identified as a valid global absence check if N is known.",
+    "Phase induction correctly handles arbitrary NOOPs, maintaining exact state invariants.",
+    "Conditional incidence restoration is proven, returning the incidence state to its exact original state while the controller retains the decoded transcript.",
+    "Marker reuse and conditional 2N-commit scanning are analytically proven and computationally verified with an 8-commit scan.",
+    "Indefinitely rejected removal correctly does NOT guarantee eventual restoration.",
+    "Proof sources, accepted review, and SHA linkages are verified.",
+    "The bounded verification correctly checks 399 families, 1134 contexts, and 4536 records.",
+    "Native adverse fixtures and an 8-commit scan are successfully demonstrated.",
+    "37 executed tests (11 new, 26 inherited) pass successfully.",
+    "Local-only RED and rejecting controls are preserved.",
+    "The deterministic gate successfully checked both original ZIPs, member hashes, all 16 mathematical-review input hashes, fresh byte reproduction, and independent full reconstruction.",
+    "Full certificate rows were not submitted and are not claimed to have been personally inspected.",
+    "'New address information' correctly means support at an independently named root, not derivation of an unknown address."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "No count-access mechanism, free-marker existence, actual selection, fairness, unconditional restoration, physics, or full numbered-stage certification is claimed.",
+    "Does not derive count sensors, root creation, native actual selection, fields/forces, geometry, time, or dark matter.",
+    "Requires explicit retention of count access, free-marker availability, atomic exclusive resolution, and memory assumptions.",
+    "Does not guarantee finite completion or unconditional eventual restoration if NOOPs persist indefinitely."
+  ]
+}
+```
