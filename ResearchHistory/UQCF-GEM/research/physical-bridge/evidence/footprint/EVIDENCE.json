@@ -1,0 +1,153 @@
+{
+  "artifacts": [
+    {
+      "bytes": 47579,
+      "id": 11651511147,
+      "members_sha256": {
+        "certificate.json": "c67dac5120375119477996317a82df74b46d3da5068e05054a6d60d950c744ef",
+        "certificate.sha256": "14d8e5221a92f47b51cbdec2de38b83a3199675ea80be691be2606b4b8a2b165",
+        "contracts.log": "605b4494a5fb013255edcaf3fe370b2583780c099544fb57b70403e7387b41f1",
+        "counts.json": "fc24c6703d0355f0256b218b7117a54f98efbc962688c5d09d89fee9b2747da5",
+        "independent.json": "f98cb0012d3ea2af4e5320bbf0ce9e35a04f1716710e5525d594258c9a081f15",
+        "inherited_fixed_family.log": "042808796f4d6f6b800b9cb08cfd52408a29d42e603f1cdcf87f3996640a7900",
+        "provenance.txt": "285b7bc59c6a1f228ce2d90d158472eaf1aa6a484db17911bf4d2ace21f74f84"
+      },
+      "name": "c3-footprint-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "207f85d547709974a0ad119a6e57b450b740d10855127f943b649c4fa2513030"
+    },
+    {
+      "bytes": 2995,
+      "id": 11651735658,
+      "members_sha256": {
+        "manifest.json": "6ae7db56e96419d9f6e5944d83069478975c60e2e40a33155f15173856d0deb4",
+        "review.txt": "ecf9e0c15ab3ffaf0fb005ab539a5dc0c826bf249e63ee721b62483eb05dcf7e"
+      },
+      "name": "c3-footprint-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "ea2e1ca238c2304d8814423d1a400717508f59ebd8cc577daf677b1dfbc3ad25"
+    },
+    {
+      "bytes": 3675,
+      "id": 11651481486,
+      "members_sha256": {
+        "footprint_gate.json": "4d4d1844bcf4b19a09b80846f8e508142a2ba487e9fcd7e8a771515016b7bf89",
+        "footprint_publication/manifest.json": "71ccc83e5e43428299271d2837b7fab2f4defc80c9dce9ededf03d62d158493d",
+        "footprint_publication/review.txt": "c5b823b59b1867a1f2196efe2f3802bd8168df31a7fd08780132ac628cb5d289"
+      },
+      "name": "c3-footprint-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "d18f1fdeebf01de64be497e9ddf83195d3f85c45b960c7a4c9fcf5b877ab1978"
+    }
+  ],
+  "author_adjudication": {
+    "fresh_reviews": "Both explicitly correct the inequality and split floor/footprint failures",
+    "initial_reviews": "ACCEPTED labels withheld from closure because inequality reversed and first-edit obstructions conflated",
+    "terminology": "C4 is a project obligation label, not a hitting-number band; reviewer parenthetical e.g. general C4 is not adopted"
+  },
+  "author_local_control": {
+    "candidate": [
+      1,
+      8,
+      2,
+      4
+    ],
+    "candidate_tau": 4,
+    "conditions": [
+      true,
+      true,
+      true
+    ],
+    "scope": "post-review local control outside frozen census",
+    "source": [
+      1,
+      1,
+      2,
+      4
+    ],
+    "source_tau": 3
+  },
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "certificate": {
+    "bytes": 627695,
+    "counts": {
+      "candidates": 12913,
+      "exchange_slices": 11,
+      "exchange_sources": 53,
+      "safe_by_fixture": {
+        "overlapping-role": 6,
+        "repeated-role": 6,
+        "tau4-singleton-candidates": 24,
+        "three-with-spare": 60
+      },
+      "source_masks_by_fixture": {
+        "overlapping-role": 9,
+        "repeated-role": 10,
+        "tau4-singleton-candidates": 11,
+        "three-with-spare": 4
+      }
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "c67dac5120375119477996317a82df74b46d3da5068e05054a6d60d950c744ef"
+  },
+  "freeze_readback": {
+    "files": 4,
+    "initial_test_file_later_extended_by_two_native_controls": true,
+    "status": "PASS"
+  },
+  "initial_run": 38005748370,
+  "initial_scientific_commit": "9a68f2b25fccc9638366467b6ce2df9eab5e538b",
+  "jobs": {
+    "mathematical_review": 114075219888,
+    "publication_audit": 114075420189,
+    "verification": 114075138189
+  },
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "ecf9e0c15ab3ffaf0fb005ab539a5dc0c826bf249e63ee721b62483eb05dcf7e",
+    "scientific_commit": "7f237318f5c5f5e58e3171f6755523f6777d3fc2",
+    "status": "PASS",
+    "verified_review_inputs": 21
+  },
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 21,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "ecf9e0c15ab3ffaf0fb005ab539a5dc0c826bf249e63ee721b62483eb05dcf7e",
+      "tokens": 24847,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 24,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "c5b823b59b1867a1f2196efe2f3802bd8168df31a7fd08780132ac628cb5d289",
+      "tokens": 24928,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 38006101325,
+  "scientific_commit": "7f237318f5c5f5e58e3171f6755523f6777d3fc2",
+  "scientific_inputs_unchanged_between_runs": 12,
+  "scope_commit": "49227fd7c18fe4ec358817102e1e31ff43d8c965",
+  "tests": {
+    "corruption_controls": 16,
+    "inherited": 28,
+    "native_rejecting_controls": 2,
+    "positive_contracts": 4,
+    "total_passed": 50
+  },
+  "tests_commit": "c53835ab4127dabd460b5b47bde955a2be61f9b6"
+}
