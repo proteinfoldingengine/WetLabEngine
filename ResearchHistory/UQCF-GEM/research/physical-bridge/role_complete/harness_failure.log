@@ -1,0 +1,70 @@
+test_bound (test_role.Contracts.test_bound) ... ok
+test_broken_substitution (test_role.Contracts.test_broken_substitution) ... ok
+test_changed_plan (test_role.Contracts.test_changed_plan) ... ok
+test_complete (test_role.Contracts.test_complete) ... ok
+test_duplicate_source (test_role.Contracts.test_duplicate_source) ... ok
+test_false_admissibility (test_role.Contracts.test_false_admissibility) ... FAIL
+test_false_fixed_cover (test_role.Contracts.test_false_fixed_cover) ... ok
+test_invalid_intermediate (test_role.Contracts.test_invalid_intermediate) ... ERROR
+test_marker_retained (test_role.Contracts.test_marker_retained) ... ERROR
+test_missing_goal (test_role.Contracts.test_missing_goal) ... ok
+test_missing_source (test_role.Contracts.test_missing_source) ... ok
+test_moving_cover (test_role.Contracts.test_moving_cover) ... ok
+test_observer (test_role.Contracts.test_observer) ... ok
+test_one_incidence (test_role.Contracts.test_one_incidence) ... ok
+test_optimality (test_role.Contracts.test_optimality) ... ok
+test_peak (test_role.Contracts.test_peak) ... ok
+test_progress (test_role.Contracts.test_progress) ... ok
+test_provenance (test_role.Contracts.test_provenance) ... ok
+test_substituted_path (test_role.Contracts.test_substituted_path) ... ok
+test_type (test_role.Contracts.test_type) ... ok
+test_wrong_floor (test_role.Contracts.test_wrong_floor) ... ok
+test_wrong_target (test_role.Contracts.test_wrong_target) ... ok
+test_wrong_tau (test_role.Contracts.test_wrong_tau) ... ok
+
+======================================================================
+ERROR: test_invalid_intermediate (test_role.Contracts.test_invalid_intermediate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/role_complete/test_role.py", line 25, in test_invalid_intermediate
+    def test_invalid_intermediate(self):self.reject(lambda c:c['handoffs'][0]['states'][2].__setitem__(5,0))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/role_complete/test_role.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+                                            ^^^^
+  File "/workspace/scratch/e1b2c832a87f/role_complete/test_role.py", line 25, in <lambda>
+    def test_invalid_intermediate(self):self.reject(lambda c:c['handoffs'][0]['states'][2].__setitem__(5,0))
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: list assignment index out of range
+
+======================================================================
+ERROR: test_marker_retained (test_role.Contracts.test_marker_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/role_complete/test_role.py", line 29, in test_marker_retained
+    def test_marker_retained(self):self.reject(lambda c:c['handoffs'][0]['states'][-1].__setitem__(5,c['handoffs'][0]['states'][-1][4]|256))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/role_complete/test_role.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+                                            ^^^^
+  File "/workspace/scratch/e1b2c832a87f/role_complete/test_role.py", line 29, in <lambda>
+    def test_marker_retained(self):self.reject(lambda c:c['handoffs'][0]['states'][-1].__setitem__(5,c['handoffs'][0]['states'][-1][4]|256))
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: list assignment index out of range
+
+======================================================================
+FAIL: test_false_admissibility (test_role.Contracts.test_false_admissibility)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/role_complete/test_role.py", line 24, in test_false_admissibility
+    def test_false_admissibility(self):self.reject(lambda c:c['sources_a'][0].__setitem__('protected',False))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/role_complete/test_role.py", line 15, in reject
+    with self.assertRaises(ValueError):self.mods['independent'].verify(c)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 23 tests in 46.174s
+
+FAILED (failures=1, errors=2)
