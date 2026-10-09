@@ -1,0 +1,21 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The mathematical review correctly evaluated the core-reactive handoff proof without claiming personal row inspection or proof-assistant certification, relying appropriately on the provided compact evidence and code.",
+    "The evidence confirms the exact bounded domain: 256 sources (8x8 patterns x 4 spectator masks), 192 protected sources, and 384 graphs (two floor profiles per protected source), reconciling exactly with the reported 5568 nodes and 11712 edges.",
+    "The independent verifier successfully reconstructs the complete reachable graph using closed-form set states and root-representative unions, exactly matching the producer's BFS and subset hitting oracle via canonical full equality.",
+    "The policy is verified to be set-valued, memoryless (no mutable phase or ack), and strictly core-dependent, correctly handling both saturated and slack host branches without observing the marker or floor values.",
+    "Hidden marker aliases are correctly handled; the target dirty and clean states share the same core projection and policy, proving observable clean completion is false.",
+    "The exact guarded outcomes, including mandatory NOOPs for invalid requests and permitted NOOPs for valid ones, are explicitly modeled and verified in the transition relation.",
+    "Strict rank increases for committed changes and exact target absorption are verified, ensuring acyclicity of actual changes.",
+    "Lower containment maps and moving upper covers are analytically proven and empirically verified to maintain the 3..4 band.",
+    "The deterministic single-action impossibility is correctly restricted to the frozen source action set, avoiding universal impossibility claims.",
+    "The RED log and contracts log confirm the rejection of false claims (progress, completion, origin, uniform safety, arbitrary composition) and structural corruptions.",
+    "The boundary of the result is well-defined, explicitly leaving the broader C3 observation-origin problem and C4 physical derivation OPEN."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": []
+}
+```

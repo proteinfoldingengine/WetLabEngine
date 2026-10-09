@@ -1,0 +1,107 @@
+{
+  "artifacts": [
+    {
+      "bytes": 36361,
+      "id": 11593478486,
+      "members_sha256": {
+        "certificate.json": "6648e2fea2f7ff810cf6d543b4d2fe0cd813fc42ba948e7dadddccec95bd9523",
+        "certificate.sha256": "33ebf636ae56e60e2dbf9c8a223598b3c5f192259cfa969a183ad616b5e90722",
+        "contracts.log": "a66bbdbd13e4318969468db3b8324eabb8c948b5a67d54c1aa8b5075869aad6e",
+        "counts.json": "11a56e5f1501c655d3c6a9caec8e506483160c1904285d050372874dee1290b8",
+        "independent.json": "a7707ec17a3ebc23169b7cf4ee353ef62b511d2d7d42ac8bdeec63506d347bf7",
+        "inherited_deficit.log": "23b7ec88ab974f96efe7a89f014651e11f087bd82196cf48ca750bb1021bbfff",
+        "provenance.txt": "97a38f011e8345db66f1a738f68fe766918742f36e323b604c7acc9a0db0b211"
+      },
+      "name": "c3-reactive-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "54bfd8b317d6894aeedae6087f1024b982aa31a0e8d9f3939f8b2cdd4264b82d"
+    },
+    {
+      "bytes": 2282,
+      "id": 11594240727,
+      "members_sha256": {
+        "manifest.json": "33229381f4aaf774974a43cdb55f5963b3a88bb025dae4e2a74d7f216aa8281e",
+        "review.txt": "85cf405f666b09f89081fe2883085e4e5c4837ed0d15376518615a0a52747031"
+      },
+      "name": "c3-reactive-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "b029cf0c59e7e5672a41b5457b277a06953ad07ec32a019fcbb81fb719a168dd"
+    },
+    {
+      "bytes": 3061,
+      "id": 11594131458,
+      "members_sha256": {
+        "reactive_gate.json": "9f25e23f1772296a449fb4ff17d68f94921637f135aa208bb11dbe57f3b0ee19",
+        "reactive_publication/manifest.json": "0d617a60ca0d8471246a97be54245038dad817c83772d83f813abde4e2bae1c4",
+        "reactive_publication/review.txt": "0da89d81cb0e798561811e2116d5e33760d291cf14982291622f64bcc2f5ccf2"
+      },
+      "name": "c3-reactive-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "19cdcfbc23db34b9e81fbaf6abd4e598f48d07f67e9b9f16ce9ff3fe795131bc"
+    }
+  ],
+  "author_notes": [
+    "Empty reviewer limitation arrays do not remove explicit theorem limitations.",
+    "RED shows implementation absence; the later GREEN suite exercises 27 corruption controls.",
+    "New graph verification checks exact hitting numbers at every node; it does not separately emit a label-map certificate. The lower maps and cover construction are analytically proved, with inherited deficit map controls retained.",
+    "Not a numbered v16/full-stack or post-merge certification."
+  ],
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "certificate": {
+    "bytes": 848933,
+    "counts": {
+      "edges": 11712,
+      "graphs": 384,
+      "nodes": 5568,
+      "protected_sources": 192,
+      "sources": 256
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "6648e2fea2f7ff810cf6d543b4d2fe0cd813fc42ba948e7dadddccec95bd9523"
+  },
+  "jobs": {
+    "mathematical_review": 113655730663,
+    "publication_audit": 113655947294,
+    "verification": 113655480988
+  },
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "85cf405f666b09f89081fe2883085e4e5c4837ed0d15376518615a0a52747031",
+    "scientific_commit": "a444693a76de4528ced9e502746b46d938d161f0",
+    "status": "PASS",
+    "verified_review_inputs": 16
+  },
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 16,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "85cf405f666b09f89081fe2883085e4e5c4837ed0d15376518615a0a52747031",
+      "tokens": 28735,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 19,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "0da89d81cb0e798561811e2116d5e33760d291cf14982291622f64bcc2f5ccf2",
+      "tokens": 28363,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 37879440145,
+  "scientific_commit": "a444693a76de4528ced9e502746b46d938d161f0",
+  "scope_commit": "bc0bc6d34a4de9d8b65fcf2abcce54800c3e24ce",
+  "tests_commit": "e2162a87d1ff54c56ea896d6ea73837069b57a1c"
+}

@@ -1,12 +1,18 @@
 # Post-A12 theorem-first synthesis — current continuation index
 Updated: 2026-10-09 UTC. Branch: research/uqcf-overlapping-guard-exchange.
-Status: EIGHT RECENT SCOPED C3 CHECKPOINTS AND THREE C4 REPAIR CHECKPOINTS CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
+Status: NINE RECENT SCOPED C3 CHECKPOINTS AND THREE C4 REPAIR CHECKPOINTS CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
 
+
+## Latest scoped C3 result: core-reactive repair without stored phase
+[Core-reactive closeout](COUPLED_C3_REACTIVE_CLOSEOUT.md) is scoped CLOSED. Given the current pool-core projection, static routing/certificate parameters and the inherited guarded request relation, one deficit handoff admits a set-valued policy with no mutable phase counter, marker read or success acknowledgment. Its complete committed graph is acyclic and has an absorbing exact target; hidden preparation includes both saturated and slack host branches.
+This does not provide guaranteed progress, observable cleanup completion, a deterministic memoryless scheduler, arbitrary macro composition or native origin of the core/guard interface. It is a conditional controller information reduction, not broad C3 closure.
+Run37879440145 passed55 tests and independently reconstructed384 graphs with5568 states/11712 request-outcome edges. Separate Gemini mathematical/publication verdicts ACCEPTED; original archives, exact provenance and author reconciliation are preserved.
+[Updated continuation](COUPLED_C3_C4_DEFICIT_CONTINUATION.md) removes mutable phase from this single-macro input obligation and retains the native core/routing/guard construction as unresolved.
 
 ## Latest C3 origin investigation
 [Native coverage/routing origin screen](COUPLED_C3_COVERAGE_ORIGIN_SCREEN.md): the v15.46 native-record functions are provenance audits; v15.15 coherently writes to supplied diagnostic registers but does not supply a C3 incidence/register connection or actual record selection; the Genesis Pin still requires certified descent maps. Eleven immutable source identities checked. This is an OPEN author source reconciliation, not a new theorem or review campaign. The candidate shortcut is unsupported; native C3 remains OPEN. A concrete inherited input-to-accessible-record construction is still required.
 
-## Current closed checkpoint: one-incidence repair from retained overlap
+## Prior closed checkpoint: one-incidence repair from retained overlap
 [Deficit closeout](COUPLED_C4_DEFICIT_CLOSEOUT.md) is scoped CLOSED. Stable other roles cover part of the selected role, reducing peak excess from m to max(1,r), where r is the uncovered deficit. A three-role family with at most one unshared root per role permits one-incidence repair for arbitrarily large overlapping roles. A fixture has no persistent four-cover; another proves tau3->4 is allowed, so only band protection is claimed in general.
 Run37877458430 passed49 tests and independently reconstructed18528 handoffs and720 goal paths. Separate mathematical/publication reviews ACCEPTED; exact original evidence and author provenance reconciliation are archived.
 [Current continuation](COUPLED_C3_C4_DEFICIT_CONTINUATION.md): prioritize native access to the concrete coverage/routing certificate; separately study certificate handover where no stable pair suffices. Native observer origin and universal one-incidence connectivity remain OPEN. Earlier current/next sections below retain their historical context.
