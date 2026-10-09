@@ -1,0 +1,35 @@
+{
+  "certificate_byte_reproduced": true,
+  "independent": {
+    "committed": 384,
+    "coverage_final": [
+      5,
+      3
+    ],
+    "native_controls": [
+      "swapped_root",
+      "singletons_insufficient",
+      "address_ambiguity",
+      "batch_cancellation"
+    ],
+    "native_tau": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "noop": 384,
+    "records": 768,
+    "status": "PASS_BOUNDED_NOT_GENERAL_PROOF"
+  },
+  "original_archives": 2,
+  "review_input_hashes": 16,
+  "scientific_commit": "25d05a1d44d44f35288e13e423bedc0510806ee8",
+  "status": "PASS",
+  "workflow_commit": "20670c29c94be9476897f0baf97948484027a86e"
+}
