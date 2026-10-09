@@ -1,0 +1,497 @@
+test_admissible (test_autonomy.Contracts.test_admissible) ... FAIL
+test_admission_application (test_autonomy.Contracts.test_admission_application) ... FAIL
+test_admit_nonuniform (test_autonomy.Contracts.test_admit_nonuniform) ... FAIL
+test_all_commit_not_noop_only (test_autonomy.Contracts.test_all_commit_not_noop_only) ... FAIL
+test_complete (test_autonomy.Contracts.test_complete) ... FAIL
+test_constant_scratch (test_autonomy.Contracts.test_constant_scratch) ... FAIL
+test_duplicate_guarded_edge (test_autonomy.Contracts.test_duplicate_guarded_edge) ... FAIL
+test_duplicate_pair_edge (test_autonomy.Contracts.test_duplicate_pair_edge) ... FAIL
+test_duplicate_state (test_autonomy.Contracts.test_duplicate_state) ... FAIL
+test_false_distribution_claim (test_autonomy.Contracts.test_false_distribution_claim) ... FAIL
+test_false_nonuniform (test_autonomy.Contracts.test_false_nonuniform) ... FAIL
+test_false_noop_dependency (test_autonomy.Contracts.test_false_noop_dependency) ... FAIL
+test_false_universal_observer (test_autonomy.Contracts.test_false_universal_observer) ... FAIL
+test_floor (test_autonomy.Contracts.test_floor) ... FAIL
+test_missing_guarded_edge (test_autonomy.Contracts.test_missing_guarded_edge) ... FAIL
+test_missing_nonuniform (test_autonomy.Contracts.test_missing_nonuniform) ... FAIL
+test_missing_pair (test_autonomy.Contracts.test_missing_pair) ... FAIL
+test_missing_pair_edge (test_autonomy.Contracts.test_missing_pair_edge) ... FAIL
+test_missing_pair_node (test_autonomy.Contracts.test_missing_pair_node) ... FAIL
+test_missing_state (test_autonomy.Contracts.test_missing_state) ... FAIL
+test_nonuniform_guard_boundary (test_autonomy.Contracts.test_nonuniform_guard_boundary) ... FAIL
+test_provenance (test_autonomy.Contracts.test_provenance) ... FAIL
+test_substituted_pair (test_autonomy.Contracts.test_substituted_pair) ... FAIL
+test_support (test_autonomy.Contracts.test_support) ... FAIL
+test_tau (test_autonomy.Contracts.test_tau) ... FAIL
+test_type (test_autonomy.Contracts.test_type) ... FAIL
+test_wrong_core_effect (test_autonomy.Contracts.test_wrong_core_effect) ... FAIL
+test_wrong_resolution_mask (test_autonomy.Contracts.test_wrong_resolution_mask) ... FAIL
+
+======================================================================
+FAIL: test_admissible (test_autonomy.Contracts.test_admissible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 29, in test_admissible
+    def test_admissible(self):self.reject(lambda c:c['states'][0].__setitem__('admissible',False))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_admission_application (test_autonomy.Contracts.test_admission_application)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 24, in test_admission_application
+    self.ready();f=self.cert['admission'];self.assertEqual(f['taus'],[[4,4],[3,3]]);self.assertEqual(f['admission'],[True,False]);self.assertEqual(f['cores'][0],f['cores'][1])
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_admit_nonuniform (test_autonomy.Contracts.test_admit_nonuniform)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 40, in test_admit_nonuniform
+    def test_admit_nonuniform(self):self.reject(lambda c:c['pairs'][3]['edges'].append([[0,0,0,0,0],[3,4,1],1,[0,0,1,0,0]]))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_all_commit_not_noop_only (test_autonomy.Contracts.test_all_commit_not_noop_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 18, in test_all_commit_not_noop_only
+    self.ready();trace=self.cert['scratch_trace'];self.assertEqual(len(trace),5);self.assertNotEqual(trace[0],trace[1]);self.assertEqual(trace[0],trace[-1])
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_complete (test_autonomy.Contracts.test_complete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 16, in test_complete
+    def test_complete(self):self.ready();self.assertTrue(self.mods['independent'].verify(self.cert));self.assertEqual(len(self.cert['states']),128)
+                            ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_constant_scratch (test_autonomy.Contracts.test_constant_scratch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 43, in test_constant_scratch
+    def test_constant_scratch(self):self.reject(lambda c:c['scratch_trace'].__setitem__(1,c['scratch_trace'][0]))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_guarded_edge (test_autonomy.Contracts.test_duplicate_guarded_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 32, in test_duplicate_guarded_edge
+    def test_duplicate_guarded_edge(self):self.reject(lambda c:c['guarded_edges'].append(c['guarded_edges'][0]))
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_pair_edge (test_autonomy.Contracts.test_duplicate_pair_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 37, in test_duplicate_pair_edge
+    def test_duplicate_pair_edge(self):self.reject(lambda c:c['pairs'][0]['edges'].append(c['pairs'][0]['edges'][0]))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate_state (test_autonomy.Contracts.test_duplicate_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 26, in test_duplicate_state
+    def test_duplicate_state(self):self.reject(lambda c:c['states'].__setitem__(1,c['states'][0]))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_distribution_claim (test_autonomy.Contracts.test_false_distribution_claim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 44, in test_false_distribution_claim
+    def test_false_distribution_claim(self):self.reject(lambda c:c['claims'].__setitem__('arbitrary_kernel_distribution_equality',True))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_nonuniform (test_autonomy.Contracts.test_false_nonuniform)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 42, in test_false_nonuniform
+    def test_false_nonuniform(self):self.reject(lambda c:c['nonuniform'][0].__setitem__('left_legal',not c['nonuniform'][0]['left_legal']))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_noop_dependency (test_autonomy.Contracts.test_false_noop_dependency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 46, in test_false_noop_dependency
+    def test_false_noop_dependency(self):self.reject(lambda c:c['claims'].__setitem__('relies_on_all_noop',True))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_universal_observer (test_autonomy.Contracts.test_false_universal_observer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 45, in test_false_universal_observer
+    def test_false_universal_observer(self):self.reject(lambda c:c['claims'].__setitem__('universal_no_observer',True))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_floor (test_autonomy.Contracts.test_floor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 28, in test_floor
+    def test_floor(self):self.reject(lambda c:c['states'][0].__setitem__('floor_valid',False))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_guarded_edge (test_autonomy.Contracts.test_missing_guarded_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 31, in test_missing_guarded_edge
+    def test_missing_guarded_edge(self):self.reject(lambda c:c['guarded_edges'].pop())
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_nonuniform (test_autonomy.Contracts.test_missing_nonuniform)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 41, in test_missing_nonuniform
+    def test_missing_nonuniform(self):self.reject(lambda c:c['nonuniform'].pop())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_pair (test_autonomy.Contracts.test_missing_pair)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 33, in test_missing_pair
+    def test_missing_pair(self):self.reject(lambda c:c['pairs'].pop())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_pair_edge (test_autonomy.Contracts.test_missing_pair_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 36, in test_missing_pair_edge
+    def test_missing_pair_edge(self):self.reject(lambda c:c['pairs'][0]['edges'].pop())
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_pair_node (test_autonomy.Contracts.test_missing_pair_node)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 35, in test_missing_pair_node
+    def test_missing_pair_node(self):self.reject(lambda c:c['pairs'][0]['nodes'].pop())
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing_state (test_autonomy.Contracts.test_missing_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 25, in test_missing_state
+    def test_missing_state(self):self.reject(lambda c:c['states'].pop())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_nonuniform_guard_boundary (test_autonomy.Contracts.test_nonuniform_guard_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 22, in test_nonuniform_guard_boundary
+    self.ready();self.assertTrue(any(r['left_legal']!=r['right_legal'] for r in self.cert['nonuniform']));self.assertIn({'pair':[0,3],'core':[0,0,0,0,0],'command':[3,4,1],'left_legal':True,'right_legal':False},self.cert['nonuniform'])
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_provenance (test_autonomy.Contracts.test_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 47, in test_provenance
+    def test_provenance(self):self.reject(lambda c:c.__setitem__('scope_commit','0'*40))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_substituted_pair (test_autonomy.Contracts.test_substituted_pair)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 34, in test_substituted_pair
+    def test_substituted_pair(self):self.reject(lambda c:c['pairs'].__setitem__(1,c['pairs'][0]))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_support (test_autonomy.Contracts.test_support)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 30, in test_support
+    def test_support(self):self.reject(lambda c:c['states'][0]['supports'].__setitem__(0,0))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_tau (test_autonomy.Contracts.test_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 27, in test_tau
+    def test_tau(self):self.reject(lambda c:c['states'][0].__setitem__('tau',2))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_type (test_autonomy.Contracts.test_type)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 48, in test_type
+    def test_type(self):self.reject(lambda c:c['states'][0]['id'].__setitem__(0,False))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_core_effect (test_autonomy.Contracts.test_wrong_core_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 39, in test_wrong_core_effect
+    def test_wrong_core_effect(self):self.reject(lambda c:c['pairs'][0]['edges'][0][3].__setitem__(0,9))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_resolution_mask (test_autonomy.Contracts.test_wrong_resolution_mask)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 38, in test_wrong_resolution_mask
+    def test_wrong_resolution_mask(self):self.reject(lambda c:c['pairs'][0]['edges'][0].__setitem__(2,9))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 14, in reject
+    self.ready();c=copy.deepcopy(self.cert);f(c)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/e1b2c832a87f/core_autonomy/test_autonomy.py", line 12, in ready
+    def ready(self):self.assertEqual(set(self.mods),{'producer','independent'},'expected RED: implementation absent')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'producer'
+'independent' : expected RED: implementation absent
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.004s
+
+FAILED (failures=28)
