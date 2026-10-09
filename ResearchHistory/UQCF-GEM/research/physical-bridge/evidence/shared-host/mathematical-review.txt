@@ -1,0 +1,19 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The cover-substitution lemma is mathematically sound and correctly applied. The phase maps $\\phi$ validly satisfy $\\phi(U_r) \\subseteq S_r$ at every root and slice, including the critical intermediate phases 2 and 6.",
+    "The explicit three-cover $\\{B,C,E\\}$ is rigorously maintained throughout the macro, ensuring $\\tau(U) \\le 3$ globally. Combined with the substitution lemma, this proves exact preservation of $\\tau=3$.",
+    "The genuine gain over one-block separation is successfully demonstrated. Spectator mask 33 (spectator on $R_{00}$ and $R_h$) yields a 2-cover $\\{C, z\\}$ for the isolated block, but the full six-root carrier correctly obstructs this, proving $\\tau=3$ globally. This justifies the necessity of the coupled multi-block approach.",
+    "The goal-fixing controller bound of $2k$ exchanges and $16k$ edits is correctly derived from the deterministic scheduling algorithm, which requires at most two exchanges per block.",
+    "All immutable positive floors are preserved, as the add-before-delete sequence ensures root sizes never fall below their macro-source sizes.",
+    "Exact labelled targets are achieved. The boundary conditions correctly exchange pool labels without leaving residual markers, and all hidden spectator incidences remain strictly in their original roots.",
+    "The independent verification algorithms (subset-transversal enumeration and representative-union truncated at size 2) are mathematically correct and perfectly match the literal edit replay.",
+    "The execution evidence confirms the exact derived counts: 4096 sources in Domain A, 768 sources in Domain B, and all corresponding handoffs and goals.",
+    "All required corruption controls are present and correctly reject invalid states, broken substitutions, wrong floors, retained markers, and false claims."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": []
+}
+```

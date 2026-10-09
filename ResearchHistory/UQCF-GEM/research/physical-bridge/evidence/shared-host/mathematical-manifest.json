@@ -1,0 +1,31 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_AUXILIARY_SCOPE.md": "7333ce0a58dc659c898689092fc97deefbb2a38eb1d9a0a3e609c01d2516a79c",
+    "COUPLED_C3_RENEWABLE_HANDOFF_CLOSEOUT.md": "5dac5c90017093cb28b3bea6b0ac6215ee7a7dd1e0eb55c201411f33cb2d3768",
+    "COUPLED_C4_SHARED_HOST_RESULT.md": "0157d92f83adec56d74847c10ade774264aaf415f42cc29be34c799c0d14dfd4",
+    "COUPLED_C4_SHARED_HOST_SCOPE.md": "0944ea61d6e28513e40fe3af336bb3ccc1be6ee397236e2821e72cd008abe63e",
+    "EVIDENCE/certificate.sha256": "6e222b7d6742ae71257338f288f855a49c1a9c409ce9f90568efa1f26179bf6c",
+    "EVIDENCE/contracts.log": "1ff36dcd16200de838b7a6330cab2f3336b726f9721779126d74f1619a9b1f2a",
+    "EVIDENCE/counts.json": "99ac6f194f6de5956d56c2afcfb9f526402bd9d3f318bdd51a3fbffe756fa3cb",
+    "EVIDENCE/independent.json": "d71be283b1c68baeb82e42d09cd7eb443b59f60549d9718a65b1145f9f94d087",
+    "EVIDENCE/inherited_handoff.log": "bc22ffea79638cafd0c32eebd191d346e7538b354ff457ff56d067622706135f",
+    "EVIDENCE/provenance.txt": "8d0d08ddcbe73b442029ed4986c95c7e79c3199e5673c095e622f794d7046378",
+    "shared_host/independent.py": "673d44b5e2ae8ddb30b578b4e180274c5355fc6de79270d77a0d835a41369b60",
+    "shared_host/producer.py": "d6ab1879406ea75eaaa6e2718df283d4bbb4f3926d209d14ce1819149a960b71",
+    "shared_host/red.log": "71332ed13f351072021833d0cd1dcb3422cba04b166283b0a1a7ac5e67d5be53",
+    "shared_host/test_shared.py": "8ea9c37a9bb6052cc406dcf357b471d7eeba27b6e5cad81e1665db058c0b7d5e"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "08bb774ad90d2747c14194379af08ab72d85de0d",
+  "response_sha256": "95da80aa39082ee02ea0d7a056f7c8cfd7c87bc1161db1837c58a545c607fa12",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 27924,
+  "workflow_commit": "08bb774ad90d2747c14194379af08ab72d85de0d"
+}

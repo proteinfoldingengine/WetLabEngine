@@ -1,0 +1,18 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The scope and provenance are correctly aligned. The mathematical argument explicitly disclaims observer-origin, guaranteed progress, optimality, and arbitrary core skeletons, which is consistent with the code's metadata claims.",
+    "The execution evidence confirms the exact derived counts: 4096 sources in Domain A (yielding 8468 handoffs, implying 2117 protected sources with 4 handoffs each) and 768 sources in Domain B (yielding 6768 goals, implying 564 protected sources with 12 goals each).",
+    "The independent verification correctly implements the subset-transversal algorithm (in producer.py) and the representative-union algorithm (in independent.py), confirming exact literal edit replay versus closed-form phases.",
+    "All required corruption controls are present and correctly reject invalid states, broken substitutions, wrong floors, retained markers, and false claims, as evidenced by the red.log and contracts.log.",
+    "The mathematical review was completed and accepted, and the publication gate passed with exact byte-for-byte certificate reproduction."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The bounded exact verification does not substitute for the universal proof of arbitrary finite spectator palettes and arbitrary allowed floors, though the mathematical argument covers these.",
+    "The construction relies on committed edits and does not guarantee request completion under arbitrary NOOP semantics."
+  ]
+}
+```

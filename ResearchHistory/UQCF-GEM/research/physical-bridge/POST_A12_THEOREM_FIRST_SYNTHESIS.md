@@ -1,6 +1,6 @@
 # Post-A12 theorem-first synthesis — current continuation index
-Updated: 2026-10-08. Branch: research/uqcf-overlapping-guard-exchange.
-Status: EIGHT RECENT SCOPED C3 CHECKPOINTS CLOSED; native record genesis/enforcement/progress and broader C3/C4-C6 OPEN. No numbered v16 or full-stack post-merge certification.
+Updated: 2026-10-09 UTC. Branch: research/uqcf-overlapping-guard-exchange.
+Status: EIGHT RECENT SCOPED C3 CHECKPOINTS AND ONE SHARED-HOST C4 CHECKPOINT CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
 
 ## Preserved history
 The complete preceding index, including prior pending notices and adverse core-readout reviews, is preserved at [f6417541c95c4584f4d955ae0745f4109506645c](https://github.com/proteinfoldingengine/WetLabEngine/blob/f6417541c95c4584f4d955ae0745f4109506645c/ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_THEOREM_FIRST_SYNTHESIS.md). Historical source files are unchanged.
@@ -39,3 +39,7 @@ No fundamental time, force, inserted spacetime geometry, dark-matter variable, c
 
 ## Admissibility-derived hidden separation and renewable handoff
 [New bounded closeout](COUPLED_C3_RENEWABLE_HANDOFF_CLOSEOUT.md): native lower protection forces the exact spectator separation required by the triangle-plus-pair handoff. All four roots may have hidden spectators; arbitrary original admissible floors are preserved. The buffer is removed at each exact endpoint and reused along arbitrary finite prescribed apex exchanges. The retained controller needs no spectator read or count channel. GitHub run37870623125 passed34 tests and independent full reconstruction; separate mathematical and publication reviews ACCEPTED. This advances original C3/C4 repair under the declared committed-edit interface; native observer origin and general coupled repair remain OPEN. Next investigate genuinely interacting repair blocks, not another probe variant.
+
+## Shared-host multi-block completion
+[Scoped C4 closeout](COUPLED_C4_SHARED_HOST_CLOSEOUT.md): arbitrary k labelled blocks can attain every target apex injection through one reusable marker, at most2k exchanges/16k actual edits, preserving tau=3 and all original floors. A cover-substitution proof handles arbitrary hidden cross-root spectator sharing, including sources excluded by isolated-block separation. The controller reads no spectators.
+Run37875260741 verified4096/768 sources,8468 handoffs and6768 goal trajectories with36 tests. Separate mathematical and publication reviews ACCEPTED; original artifacts/logs and author hash reconciliation are archived. Native observer origin and request completion remain OPEN. [Next obligation](COUPLED_C4_SHARED_HOST_CONTINUATION.md): freeze a carrier where upper-four protection is a genuine additional obligation and no persistent common three-cover settles it. Historical “next” notices above retain their original context; this paragraph is the current repair continuation.

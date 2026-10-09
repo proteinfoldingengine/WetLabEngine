@@ -1,0 +1,67 @@
+{
+  "run_id": 37875260741,
+  "scientific_commit": "08bb774ad90d2747c14194379af08ab72d85de0d",
+  "scope_commit": "0da4cab896c7f60d4aa244372e5bd104cddca097",
+  "proof_test_commit": "48e81b10efd2801531a72c7825c6150e3d322a50",
+  "jobs": {
+    "verification": 113642274308,
+    "mathematical_review": 113642434701,
+    "publication_audit": 113642807630
+  },
+  "artifacts": [
+    {
+      "name": "verification",
+      "artifact_id": 11591887419,
+      "bytes": 373888,
+      "sha256": "03b9370a889fd8322259a9a6f1732632870816429fce096e80ae1853a05f581e",
+      "members": {
+        "certificate.json": "0e602b3116ba18c067b7cf2d002b85085153dcebbd600e2cc7e2230122048ffd",
+        "certificate.sha256": "6e222b7d6742ae71257338f288f855a49c1a9c409ce9f90568efa1f26179bf6c",
+        "contracts.log": "1ff36dcd16200de838b7a6330cab2f3336b726f9721779126d74f1619a9b1f2a",
+        "counts.json": "99ac6f194f6de5956d56c2afcfb9f526402bd9d3f318bdd51a3fbffe756fa3cb",
+        "independent.json": "d71be283b1c68baeb82e42d09cd7eb443b59f60549d9718a65b1145f9f94d087",
+        "inherited_handoff.log": "bc22ffea79638cafd0c32eebd191d346e7538b354ff457ff56d067622706135f",
+        "provenance.txt": "8d0d08ddcbe73b442029ed4986c95c7e79c3199e5673c095e622f794d7046378"
+      }
+    },
+    {
+      "name": "review",
+      "artifact_id": 11592078450,
+      "bytes": 2323,
+      "sha256": "faf2569ef1c23906cfc3aa825c16616dd571a30402c129ddcd2e39812f8070dd",
+      "members": {
+        "manifest.json": "3b62fb71d6a904c865ff43cda9537d1f45b0b6fa5581f561c93661fcf3bcb388",
+        "review.txt": "95da80aa39082ee02ea0d7a056f7c8cfd7c87bc1161db1837c58a545c607fa12"
+      }
+    },
+    {
+      "name": "publication",
+      "artifact_id": 11592575058,
+      "bytes": 2650,
+      "sha256": "ef84c20a807a5310d2699caa03f7dc685d76497ec4cb8514efd970e46ed68179",
+      "members": {
+        "shared_publication/manifest.json": "ed53867dfc9d7895ba0c689a5e8395f778c21ff82bbfc173dddf5f40b0294e78",
+        "shared_publication/review.txt": "5a05f26a35ab5bff471e7d6315cd16641626771ebae38ac7d01384a39f1a70b4",
+        "shared_gate.json": "c168e48063eab93c72bdb9057ebe41e36288ac41812ae4e512196c4861f7f64e"
+      }
+    }
+  ],
+  "certificate_bytes": 7508566,
+  "certificate_sha256": "0e602b3116ba18c067b7cf2d002b85085153dcebbd600e2cc7e2230122048ffd",
+  "author_input_hash_checks": {
+    "mathematical": 14,
+    "publication": 17
+  },
+  "counts": {
+    "sources_a": 4096,
+    "protected_a": 2117,
+    "handoffs": 8468,
+    "sources_b": 768,
+    "protected_b": 564,
+    "goals": 6768,
+    "maximum_exchanges_k2": 3,
+    "new_tests": 20,
+    "inherited_tests": 16
+  },
+  "author_reconciliation": "All source input hashes, response hashes, workflow/source commit identities and original artifact digests checked. Local and Actions certificate bytes identical. RED demonstrates absent implementation; GREEN corruption tests establish rejection. Gemini did not receive full certificate rows; deterministic independent code reconstructs them. No proof-assistant certification."
+}
