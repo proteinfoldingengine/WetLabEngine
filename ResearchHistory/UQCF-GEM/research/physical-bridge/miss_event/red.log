@@ -1,0 +1,95 @@
+test_atomicity_and_scope (test_event.Contracts.test_atomicity_and_scope) ... FAIL
+test_coverage (test_event.Contracts.test_coverage) ... FAIL
+test_duplicate (test_event.Contracts.test_duplicate) ... FAIL
+test_full_universe (test_event.Contracts.test_full_universe) ... FAIL
+test_invalid_support (test_event.Contracts.test_invalid_support) ... FAIL
+test_missing (test_event.Contracts.test_missing) ... FAIL
+test_native_controls (test_event.Contracts.test_native_controls) ... FAIL
+test_provenance (test_event.Contracts.test_provenance) ... FAIL
+test_substitution (test_event.Contracts.test_substitution) ... FAIL
+test_wrong_value (test_event.Contracts.test_wrong_value) ... FAIL
+
+======================================================================
+FAIL: test_atomicity_and_scope (test_event.Contracts.test_atomicity_and_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_coverage (test_event.Contracts.test_coverage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_duplicate (test_event.Contracts.test_duplicate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_full_universe (test_event.Contracts.test_full_universe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_invalid_support (test_event.Contracts.test_invalid_support)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_missing (test_event.Contracts.test_missing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_native_controls (test_event.Contracts.test_native_controls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_provenance (test_event.Contracts.test_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_substitution (test_event.Contracts.test_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_wrong_value (test_event.Contracts.test_wrong_value)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/miss_event/test_event.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=10)
