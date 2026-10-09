@@ -1,0 +1,31 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "Both hitting-number inequalities (tau(E+) <= tau(E) and tau(E) <= tau(E+)) are analytically proven in the fresh-label invariance lemma.",
+    "Nonempty support and GLOBAL freshness are explicitly required; local absence is shown to be insufficient via the nonfresh two-cover control.",
+    "Floor safety is guaranteed before count readout, removing the need for pre-probe legality checks.",
+    "The star-only count decoder correctly reconstructs the support using only M({w}) and M({w,y}).",
+    "Full-family M({w})=N freshness certificate is correctly identified as a valid global absence check if N is known.",
+    "Add/remove phase induction correctly handles arbitrary NOOPs, maintaining exact state invariants.",
+    "Exact restoration applies to the incidence state, while the controller retains the decoded transcript.",
+    "Marker reuse and conditional 2N-commit scanning are analytically proven and computationally verified with an 8-commit scan.",
+    "Indefinitely rejected removal correctly does NOT guarantee eventual restoration.",
+    "Native nonfresh and premature-reuse two-covers are successfully demonstrated as band violations.",
+    "The protocol is compatible with the fixed-core safe-probe obstruction, as the star pair {w,u} lies outside the fixed-core channel.",
+    "The inherited swapped-root control successfully demonstrates that the fresh probe reveals new address information not present in the initial aggregate.",
+    "The composition genuinely removes pre-probe support/prospective-legality input while explicitly retaining count access, free-marker availability, atomic exclusive resolution, and memory assumptions.",
+    "The bounded verification correctly checks 399 families, 1134 contexts, and 4536 records.",
+    "Independent verification uses Boolean incidence, occupancy/co-occupancy, representative-union hitting numbers, and candidate-support inversion, contrasting with the producer's direct methods.",
+    "Full certificate rows are checked by code, with source, logs, and summary provided.",
+    "No full numbered-stage replay or physical derivation is claimed."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "Does not derive count sensors, root creation, native actual selection, fields/forces, geometry, time, or dark matter.",
+    "Requires explicit retention of count access, free-marker availability, atomic exclusive resolution, and memory assumptions.",
+    "Does not guarantee finite completion or unconditional eventual restoration if NOOPs persist indefinitely."
+  ]
+}
+```

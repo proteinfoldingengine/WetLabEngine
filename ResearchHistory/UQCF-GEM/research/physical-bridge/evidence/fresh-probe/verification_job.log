@@ -1,0 +1,266 @@
+﻿2026-10-09T00:38:25.5314820Z Current runner version: '2.337.0'
+2026-10-09T00:38:25.5331640Z ##[group]Runner Image Provisioner
+2026-10-09T00:38:25.5332277Z Hosted Compute Agent
+2026-10-09T00:38:25.5332624Z Version: 20261002.596
+2026-10-09T00:38:25.5333027Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-09T00:38:25.5333503Z Build Date: 2026-10-02T22:28:27Z
+2026-10-09T00:38:25.5333913Z Worker ID: {6ecb5d01-efbd-4b07-b032-f2758cc79888}
+2026-10-09T00:38:25.5334362Z Region: centralus
+2026-10-09T00:38:25.5334702Z Cloud: Azure
+2026-10-09T00:38:25.5335320Z ##[endgroup]
+2026-10-09T00:38:25.5336154Z ##[group]Operating System
+2026-10-09T00:38:25.5336523Z Ubuntu
+2026-10-09T00:38:25.5336899Z 24.04.5
+2026-10-09T00:38:25.5337223Z LTS
+2026-10-09T00:38:25.5337561Z ##[endgroup]
+2026-10-09T00:38:25.5337922Z ##[group]Runner Image
+2026-10-09T00:38:25.5338284Z Image: ubuntu-24.04
+2026-10-09T00:38:25.5338617Z Version: 20261004.327.1
+2026-10-09T00:38:25.5339459Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-09T00:38:25.5340399Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-09T00:38:25.5340954Z ##[endgroup]
+2026-10-09T00:38:25.5341894Z ##[group]GITHUB_TOKEN Permissions
+2026-10-09T00:38:25.5343208Z Contents: read
+2026-10-09T00:38:25.5343537Z Metadata: read
+2026-10-09T00:38:25.5343927Z ##[endgroup]
+2026-10-09T00:38:25.5345330Z Secret source: Actions
+2026-10-09T00:38:25.5345935Z Cache mode: write
+2026-10-09T00:38:25.5346370Z Prepare workflow directory
+2026-10-09T00:38:25.5544277Z Prepare all required actions
+2026-10-09T00:38:25.5574705Z Getting action download info
+2026-10-09T00:38:25.7728370Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-09T00:38:25.8680332Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-09T00:38:26.0546359Z Complete job name: verification
+2026-10-09T00:38:26.1049206Z ##[group]Run actions/checkout@v4
+2026-10-09T00:38:26.1049632Z with:
+2026-10-09T00:38:26.1049899Z   ref: 65866b3620e6e4629996f43144cc69ac5b5a07b5
+2026-10-09T00:38:26.1050229Z   path: research_snapshot
+2026-10-09T00:38:26.1050510Z   persist-credentials: false
+2026-10-09T00:38:26.1050879Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+2026-10-09T00:38:26.1051304Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-09T00:38:26.1053351Z   token: ***
+2026-10-09T00:38:26.1053585Z   ssh-strict: true
+2026-10-09T00:38:26.1053827Z   ssh-user: git
+2026-10-09T00:38:26.1054062Z   clean: true
+2026-10-09T00:38:26.1054313Z   sparse-checkout-cone-mode: true
+2026-10-09T00:38:26.1054606Z   fetch-depth: 1
+2026-10-09T00:38:26.1054847Z   fetch-tags: false
+2026-10-09T00:38:26.1055279Z   show-progress: true
+2026-10-09T00:38:26.1055531Z   lfs: false
+2026-10-09T00:38:26.1055760Z   submodules: false
+2026-10-09T00:38:26.1056012Z   set-safe-directory: true
+2026-10-09T00:38:26.1056316Z   allow-unsafe-pr-checkout: false
+2026-10-09T00:38:26.1056690Z ##[endgroup]
+2026-10-09T00:38:26.1717745Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-09T00:38:26.1718950Z ##[group]Getting Git version info
+2026-10-09T00:38:26.1719394Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+2026-10-09T00:38:26.1719993Z [command]/usr/bin/git version
+2026-10-09T00:38:26.1809914Z git version 2.55.0
+2026-10-09T00:38:26.1822848Z ##[endgroup]
+2026-10-09T00:38:26.1832839Z Temporarily overriding HOME='/home/runner/work/_temp/aa12c402-29cc-446c-8280-f84b0c5c1549' before making global git config changes
+2026-10-09T00:38:26.1834174Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T00:38:26.1836132Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+2026-10-09T00:38:26.1883129Z ##[group]Initializing the repository
+2026-10-09T00:38:26.1888438Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+2026-10-09T00:38:26.1998318Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-09T00:38:26.1999546Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-09T00:38:26.2000325Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-09T00:38:26.2000939Z hint: call:
+2026-10-09T00:38:26.2001565Z hint:
+2026-10-09T00:38:26.2002008Z hint: 	git config --global init.defaultBranch <name>
+2026-10-09T00:38:26.2002609Z hint:
+2026-10-09T00:38:26.2003098Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-09T00:38:26.2003892Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-09T00:38:26.2004513Z hint:
+2026-10-09T00:38:26.2004857Z hint: 	git branch -m <name>
+2026-10-09T00:38:26.2005350Z hint:
+2026-10-09T00:38:26.2005939Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-09T00:38:26.2006966Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+2026-10-09T00:38:26.2014251Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-09T00:38:26.2057385Z ##[endgroup]
+2026-10-09T00:38:26.2057818Z ##[group]Disabling automatic garbage collection
+2026-10-09T00:38:26.2060464Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-09T00:38:26.2088524Z ##[endgroup]
+2026-10-09T00:38:26.2088922Z ##[group]Setting up auth
+2026-10-09T00:38:26.2094457Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T00:38:26.2122393Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T00:38:26.2411332Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T00:38:26.2438393Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T00:38:26.2602149Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T00:38:26.2628333Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T00:38:26.2792421Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-09T00:38:26.2822805Z ##[endgroup]
+2026-10-09T00:38:26.2823395Z ##[group]Fetching the repository
+2026-10-09T00:38:26.2828801Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin 65866b3620e6e4629996f43144cc69ac5b5a07b5
+2026-10-09T00:38:26.7457608Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-09T00:38:26.7458510Z  * branch            65866b3620e6e4629996f43144cc69ac5b5a07b5 -> FETCH_HEAD
+2026-10-09T00:38:26.7468433Z ##[endgroup]
+2026-10-09T00:38:26.7468905Z ##[group]Determining the checkout info
+2026-10-09T00:38:26.7469416Z ##[endgroup]
+2026-10-09T00:38:26.7469871Z ##[group]Setting up sparse checkout
+2026-10-09T00:38:26.7471581Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge
+2026-10-09T00:38:26.7511568Z ##[endgroup]
+2026-10-09T00:38:26.7512072Z ##[group]Checking out the ref
+2026-10-09T00:38:26.7514104Z [command]/usr/bin/git checkout --progress --force 65866b3620e6e4629996f43144cc69ac5b5a07b5
+2026-10-09T00:38:27.4247579Z Note: switching to '65866b3620e6e4629996f43144cc69ac5b5a07b5'.
+2026-10-09T00:38:27.4248655Z 
+2026-10-09T00:38:27.4249168Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-09T00:38:27.4250341Z changes and commit them, and you can discard any commits you make in this
+2026-10-09T00:38:27.4251710Z state without impacting any branches by switching back to a branch.
+2026-10-09T00:38:27.4252827Z 
+2026-10-09T00:38:27.4253380Z If you want to create a new branch to retain commits you create, you may
+2026-10-09T00:38:27.4254659Z do so (now or later) by using -c with the switch command. Example:
+2026-10-09T00:38:27.4255524Z 
+2026-10-09T00:38:27.4255863Z   git switch -c <new-branch-name>
+2026-10-09T00:38:27.4256365Z 
+2026-10-09T00:38:27.4256705Z Or undo this operation with:
+2026-10-09T00:38:27.4257204Z 
+2026-10-09T00:38:27.4257524Z   git switch -
+2026-10-09T00:38:27.4257906Z 
+2026-10-09T00:38:27.4258624Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-09T00:38:27.4259610Z 
+2026-10-09T00:38:27.4260523Z HEAD is now at 65866b3 research: derive uniformly safe restored support readout with one fresh marker
+2026-10-09T00:38:27.4267539Z ##[endgroup]
+2026-10-09T00:38:27.4301492Z [command]/usr/bin/git log -1 --format=%H
+2026-10-09T00:38:27.4322363Z 65866b3620e6e4629996f43144cc69ac5b5a07b5
+2026-10-09T00:38:27.4329641Z ##[group]Removing auth
+2026-10-09T00:38:27.4331913Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T00:38:27.4356534Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T00:38:27.4532825Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T00:38:27.4555502Z http.https://github.com/.extraheader
+2026-10-09T00:38:27.4560351Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-09T00:38:27.4587127Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T00:38:27.4757616Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T00:38:27.4781111Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T00:38:27.4948564Z ##[endgroup]
+2026-10-09T00:38:27.5120702Z ##[group]Run set -euo pipefail
+2026-10-09T00:38:27.5121510Z [36;1mset -euo pipefail[0m
+2026-10-09T00:38:27.5122262Z [36;1mmkdir -p fresh_probe_verification[0m
+2026-10-09T00:38:27.5123430Z [36;1mROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge[0m
+2026-10-09T00:38:27.5125370Z [36;1mpython3 -m unittest discover -s "$ROOT/fresh_probe" -p test_probe.py -v 2>&1 | tee fresh_probe_verification/contracts.log[0m
+2026-10-09T00:38:27.5127181Z [36;1mpython3 "$ROOT/fresh_probe/producer.py" > fresh_probe_verification/certificate.json[0m
+2026-10-09T00:38:27.5128689Z [36;1mpython3 "$ROOT/fresh_probe/producer.py" > /tmp/repeated-certificate.json[0m
+2026-10-09T00:38:27.5130151Z [36;1mcmp fresh_probe_verification/certificate.json /tmp/repeated-certificate.json[0m
+2026-10-09T00:38:27.5132148Z [36;1mpython3 "$ROOT/fresh_probe/independent.py" fresh_probe_verification/certificate.json | tee fresh_probe_verification/independent.json[0m
+2026-10-09T00:38:27.5134599Z [36;1mpython3 -m unittest discover -s "$ROOT/core_readout" -p test_core_readout.py -v 2>&1 | tee fresh_probe_verification/inherited_core_readout.log[0m
+2026-10-09T00:38:27.5137302Z [36;1mpython3 -m unittest discover -s "$ROOT/miss_reconstruction" -p test_reconstruction.py -v 2>&1 | tee fresh_probe_verification/inherited_reconstruction.log[0m
+2026-10-09T00:38:27.5139738Z [36;1mpython3 -m unittest discover -s "$ROOT/miss_event" -p test_event.py -v 2>&1 | tee fresh_probe_verification/inherited_event.log[0m
+2026-10-09T00:38:27.5141798Z [36;1mecho "scientific_sha=$(git -C research_snapshot rev-parse HEAD)" > fresh_probe_verification/provenance.txt[0m
+2026-10-09T00:38:27.5143464Z [36;1mecho "workflow_sha=$GITHUB_SHA" >> fresh_probe_verification/provenance.txt[0m
+2026-10-09T00:38:27.5145225Z [36;1msha256sum fresh_probe_verification/certificate.json > fresh_probe_verification/certificate.sha256[0m
+2026-10-09T00:38:27.5364704Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-09T00:38:27.5365768Z ##[endgroup]
+2026-10-09T00:38:27.6494284Z test_complete_domain (test_probe.Contracts.test_complete_domain) ... ok
+2026-10-09T00:38:27.6584644Z test_decoder (test_probe.Contracts.test_decoder) ... ok
+2026-10-09T00:38:27.6795372Z test_duplicate (test_probe.Contracts.test_duplicate) ... ok
+2026-10-09T00:38:27.7026230Z test_invalid_support (test_probe.Contracts.test_invalid_support) ... ok
+2026-10-09T00:38:27.7306013Z test_missing (test_probe.Contracts.test_missing) ... ok
+2026-10-09T00:38:27.7728106Z test_native_and_scan (test_probe.Contracts.test_native_and_scan) ... ok
+2026-10-09T00:38:27.8107918Z test_provenance (test_probe.Contracts.test_provenance) ... ok
+2026-10-09T00:38:27.8493110Z test_scope (test_probe.Contracts.test_scope) ... ok
+2026-10-09T00:38:27.8744456Z test_substitution (test_probe.Contracts.test_substitution) ... ok
+2026-10-09T00:38:27.9609462Z test_wrong_count_or_floor (test_probe.Contracts.test_wrong_count_or_floor) ... ok
+2026-10-09T00:38:27.9845847Z test_wrong_tau (test_probe.Contracts.test_wrong_tau) ... ok
+2026-10-09T00:38:27.9849478Z 
+2026-10-09T00:38:27.9850096Z ----------------------------------------------------------------------
+2026-10-09T00:38:27.9851098Z Ran 11 tests in 0.375s
+2026-10-09T00:38:27.9851467Z 
+2026-10-09T00:38:27.9851698Z OK
+2026-10-09T00:38:28.1346611Z {
+2026-10-09T00:38:28.1347162Z   "count_channel_derived": false,
+2026-10-09T00:38:28.1347628Z   "families": 399,
+2026-10-09T00:38:28.1347921Z   "native_tau": [
+2026-10-09T00:38:28.1348196Z     3,
+2026-10-09T00:38:28.1348477Z     2,
+2026-10-09T00:38:28.1348745Z     3,
+2026-10-09T00:38:28.1349028Z     2,
+2026-10-09T00:38:28.1349292Z     3,
+2026-10-09T00:38:28.1349557Z     3,
+2026-10-09T00:38:28.1349822Z     3,
+2026-10-09T00:38:28.1350090Z     3
+2026-10-09T00:38:28.1350361Z   ],
+2026-10-09T00:38:28.1350653Z   "probe_contexts": 1134,
+2026-10-09T00:38:28.1351051Z   "records": 4536,
+2026-10-09T00:38:28.1351388Z   "scan_commits": 8,
+2026-10-09T00:38:28.1351709Z   "scan_exact_restoration": true,
+2026-10-09T00:38:28.1352517Z   "status": "PASS_BOUNDED_NOT_GENERAL_PROOF"
+2026-10-09T00:38:28.1352900Z }
+2026-10-09T00:38:28.2188416Z test_certificate_fibers (test_core_readout.Contracts.test_certificate_fibers) ... ok
+2026-10-09T00:38:28.2356896Z test_complete_identity (test_core_readout.Contracts.test_complete_identity) ... ok
+2026-10-09T00:38:28.3023363Z test_corrupted_tau_type_and_guard (test_core_readout.Contracts.test_corrupted_tau_type_and_guard) ... ok
+2026-10-09T00:38:28.4036775Z test_false_claims_and_provenance (test_core_readout.Contracts.test_false_claims_and_provenance) ... ok
+2026-10-09T00:38:28.4041803Z test_independent_without_producer_and_duplicate_json (test_core_readout.Contracts.test_independent_without_producer_and_duplicate_json) ... ok
+2026-10-09T00:38:28.5551642Z test_missing_duplicate_substitution (test_core_readout.Contracts.test_missing_duplicate_substitution) ... ok
+2026-10-09T00:38:28.5726177Z test_paths_and_delayed_service (test_core_readout.Contracts.test_paths_and_delayed_service) ... ok
+2026-10-09T00:38:28.5726690Z 
+2026-10-09T00:38:28.5726789Z ----------------------------------------------------------------------
+2026-10-09T00:38:28.5726994Z Ran 7 tests in 0.384s
+2026-10-09T00:38:28.5727140Z 
+2026-10-09T00:38:28.5727203Z OK
+2026-10-09T00:38:28.6162988Z test_duplicate (test_reconstruction.Contracts.test_duplicate) ... ok
+2026-10-09T00:38:28.6257826Z test_false_provenance (test_reconstruction.Contracts.test_false_provenance) ... ok
+2026-10-09T00:38:28.6361101Z test_full_universe (test_reconstruction.Contracts.test_full_universe) ... ok
+2026-10-09T00:38:28.6455076Z test_invalid_support (test_reconstruction.Contracts.test_invalid_support) ... ok
+2026-10-09T00:38:28.6548636Z test_missing (test_reconstruction.Contracts.test_missing) ... ok
+2026-10-09T00:38:28.6708820Z test_native_fixture (test_reconstruction.Contracts.test_native_fixture) ... ok
+2026-10-09T00:38:28.6803070Z test_scope_controls (test_reconstruction.Contracts.test_scope_controls) ... ok
+2026-10-09T00:38:28.6927972Z test_substitution (test_reconstruction.Contracts.test_substitution) ... ok
+2026-10-09T00:38:28.7019745Z test_wrong_value (test_reconstruction.Contracts.test_wrong_value) ... ok
+2026-10-09T00:38:28.7021070Z 
+2026-10-09T00:38:28.7021236Z ----------------------------------------------------------------------
+2026-10-09T00:38:28.7021563Z Ran 9 tests in 0.096s
+2026-10-09T00:38:28.7021771Z 
+2026-10-09T00:38:28.7021849Z OK
+2026-10-09T00:38:28.8017429Z test_atomicity_and_scope (test_event.Contracts.test_atomicity_and_scope) ... ok
+2026-10-09T00:38:28.9279724Z test_coverage (test_event.Contracts.test_coverage) ... ok
+2026-10-09T00:38:28.9951736Z test_duplicate (test_event.Contracts.test_duplicate) ... ok
+2026-10-09T00:38:29.0639661Z test_full_universe (test_event.Contracts.test_full_universe) ... ok
+2026-10-09T00:38:29.1307054Z test_invalid_support (test_event.Contracts.test_invalid_support) ... ok
+2026-10-09T00:38:29.1966696Z test_missing (test_event.Contracts.test_missing) ... ok
+2026-10-09T00:38:29.3249533Z test_native_controls (test_event.Contracts.test_native_controls) ... ok
+2026-10-09T00:38:29.3897034Z test_provenance (test_event.Contracts.test_provenance) ... ok
+2026-10-09T00:38:29.4539923Z test_substitution (test_event.Contracts.test_substitution) ... ok
+2026-10-09T00:38:29.5209326Z test_wrong_value (test_event.Contracts.test_wrong_value) ... ok
+2026-10-09T00:38:29.5209904Z 
+2026-10-09T00:38:29.5210144Z ----------------------------------------------------------------------
+2026-10-09T00:38:29.5210583Z Ran 10 tests in 0.786s
+2026-10-09T00:38:29.5210709Z 
+2026-10-09T00:38:29.5210781Z OK
+2026-10-09T00:38:29.5424504Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T00:38:29.5424660Z with:
+2026-10-09T00:38:29.5424785Z   name: c3-fresh-probe-verification
+2026-10-09T00:38:29.5425118Z   path: fresh_probe_verification/
+2026-10-09T00:38:29.5425300Z   retention-days: 30
+2026-10-09T00:38:29.5425435Z   if-no-files-found: warn
+2026-10-09T00:38:29.5425562Z   compression-level: 6
+2026-10-09T00:38:29.5425681Z   overwrite: false
+2026-10-09T00:38:29.5425804Z   include-hidden-files: false
+2026-10-09T00:38:29.5425942Z ##[endgroup]
+2026-10-09T00:38:29.6454481Z (node:2212) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T00:38:29.6455190Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T00:38:29.6495863Z With the provided path, there will be 8 files uploaded
+2026-10-09T00:38:29.6499717Z Artifact name is valid!
+2026-10-09T00:38:29.6500138Z Root directory input is valid!
+2026-10-09T00:38:29.9271401Z Beginning upload of artifact content to blob storage
+2026-10-09T00:38:29.9503109Z (node:2212) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T00:38:30.1149179Z Uploaded bytes 32417
+2026-10-09T00:38:30.1550549Z Finished uploading artifact content to blob storage!
+2026-10-09T00:38:30.1551330Z SHA256 digest of uploaded artifact zip is 40c9a5c1f1d0a31cd842d6e6a0bbbb779b9e4e0d2679ebcdd3d30fdfb8ca2b13
+2026-10-09T00:38:30.1552735Z Finalizing artifact upload
+2026-10-09T00:38:30.3794557Z Artifact c3-fresh-probe-verification.zip successfully finalized. Artifact ID 11588132031
+2026-10-09T00:38:30.3795473Z Artifact c3-fresh-probe-verification has been successfully uploaded! Final size is 32417 bytes. Artifact ID is 11588132031
+2026-10-09T00:38:30.3800294Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/37865793728/artifacts/11588132031
+2026-10-09T00:38:30.3952738Z Post job cleanup.
+2026-10-09T00:38:30.4459712Z [command]/usr/bin/git version
+2026-10-09T00:38:30.4490419Z git version 2.55.0
+2026-10-09T00:38:30.4514461Z Temporarily overriding HOME='/home/runner/work/_temp/a28e7cc9-74cd-4be0-9ff5-2cac88c0d06c' before making global git config changes
+2026-10-09T00:38:30.4515274Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T00:38:30.4518442Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+2026-10-09T00:38:30.4546410Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T00:38:30.4570394Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T00:38:30.4768164Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T00:38:30.4795451Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T00:38:30.4999082Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T00:38:30.5029798Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T00:38:30.5324198Z Cleaning up orphan processes
+2026-10-09T00:38:30.5535546Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
