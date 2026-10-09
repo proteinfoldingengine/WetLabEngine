@@ -1,0 +1,29 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The exact domain is correctly specified: known nonempty core supports with tau(C) in {3,4}, original floors bounded by core sizes, disjoint hidden palette with at least one label u, and ALL native protected hidden completions.",
+    "The identity tau(C+uF) = min(tau(C), 1+tau(C_B)) is analytically sound and correctly handles the case where B is empty.",
+    "The trichotomy is exhaustive and mutually exclusive: common core label on F forces false; complement core tau <= 1 forces true; remaining empty core intersection with complement tau >= 2 is mixed via empty Q and uF completions.",
+    "The proof correctly establishes that the first two cases cannot overlap, as their intersection would imply tau(C) <= 2, violating the initial promise.",
+    "The universal core-only CURRENT preparation conclusion is sharp: zero edits suffice when tau(C_B) <= 1; otherwise, the valid uF completion persistently blocks preparation because u remains common on F under every core-only path.",
+    "The obstruction is correctly distinguished from initial-record obstructions and does not rely on NOOPs, progress, full hidden knowledge, or memory.",
+    "Positive core certification correctly requires no hidden palette enumeration, while negative completeness relies on at least one hidden label.",
+    "The prepared six-root original F={3,4} is correctly classified as mixed and blocked.",
+    "The bounded universe is exhaustively verified by two independent methods (producer and independent) comparing all membership sets, values, and types without sampling.",
+    "All counts exactly match the analytical predictions: 4096 complete states, 3088 protected states, 4032 F fibers, 194544 protected fiber memberships, 1008 forced true, 944 forced false, 2080 mixed, and 1008 zero-edit feasible.",
+    "The test suite correctly implements 28 tests (4 positive, 24 corruption) that reject corrupt data (GREEN) and fail when the implementation is absent (RED). The 28 inherited autonomy tests also pass.",
+    "No new path enumeration is required because hidden persistence is correctly identified as an analytical invariant.",
+    "Exact frozen, source, and workflow hashes (9a559996ffc552c0ed623f2cd8b93bbf14de337a) are successfully reconciled with the deterministic reproduction and prior response."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem explicitly excludes hidden edits, retargeting F, changed root slots, smaller correlated ensembles, and floors above core sizes.",
+    "The result does not provide a nontrivial positive preparation, native observer access, or full repair readiness for arbitrary F.",
+    "The proof does not establish a universal no-observer theorem, physical record genesis, or any fundamental physical properties (time, geometry, dark matter).",
+    "Floors that exceed core sizes require hidden padding and are outside the current classification; the uF witness cannot be imported there without checking that domain.",
+    "A native proof of the initial protected band and physical core access remains an open obligation."
+  ]
+}
+```
