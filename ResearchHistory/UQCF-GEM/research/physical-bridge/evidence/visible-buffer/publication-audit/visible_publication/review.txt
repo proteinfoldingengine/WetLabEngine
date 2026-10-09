@@ -1,0 +1,19 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The exact preparation formula tau(source with +A(h)) = min(tau(source), 1+rho) is mathematically proven and computationally verified across all 256 sources. For eligible tau=4 sources, the retained certificate forces rho=2, ensuring the first prepared slice has exact tau=3.",
+    "The triangle fixture correctly demonstrates a tau=3 source dropping to tau=2 upon host addition, successfully refuting any universal exact-tau extension claim.",
+    "The dynamic lower image and upper covers are mathematically sound. The exhaustive BFS confirms that tau remains bounded between 3 and 4 for all reachable states, and original floors are strictly respected.",
+    "The script executes exactly 2m+2 toggles (where m is the number of covered roots) with a peak excess of max(1, r) (where r is the deficit size). No new labels are introduced, and label 5 is strictly verified to never appear.",
+    "The policy is confirmed to be a deterministic, single-request map based solely on the nonterminal core and static parameters. It correctly issues no requests at the exact endpoint and requires no mutable phase, success acknowledgment, or hidden marker cleanup.",
+    "The producer BFS correctly uses syntax-only outcomes. The separate guarded-edge comparison confirms that all issued moves are uniformly safe before issue (syntax edges exactly match guarded edges), establishing the restricted equivalence of guarded and unguarded execution for this policy.",
+    "The independent reconstruction using closed-set slices and representative hitting unions perfectly matches the producer's exact canonical graph identities, types, and values.",
+    "The RED/GREEN logs reconcile perfectly: exactly 41 executed controls fail when the implementation is absent or corrupted (RED log), and all 41 pass on the valid certificate (GREEN log).",
+    "The claims explicitly and correctly disavow global core injectivity, native observer/guard implementation, guaranteed progress, and global path optimality, matching the stated operational premise reduction."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": []
+}
+```

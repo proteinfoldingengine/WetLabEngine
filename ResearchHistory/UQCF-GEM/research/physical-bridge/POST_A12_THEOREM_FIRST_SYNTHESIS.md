@@ -1,9 +1,15 @@
 # Post-A12 theorem-first synthesis — current continuation index
 Updated: 2026-10-09 UTC. Branch: research/uqcf-overlapping-guard-exchange.
-Status: TEN RECENT SCOPED C3 CHECKPOINTS AND THREE C4 REPAIR CHECKPOINTS CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
+Status: ELEVEN RECENT SCOPED C3 CHECKPOINTS AND THREE C4 REPAIR CHECKPOINTS CLOSED; native record genesis/enforcement/progress and arbitrary coupled repair OPEN. No numbered v16 or full-stack post-merge certification.
 
 
-## Latest scoped C3 result: cyclic composition by buffered pipeline and loop erasure
+## Latest scoped C3 result: existing visible buffer and restricted guard redundancy
+[Visible-buffer closeout](COUPLED_C3_VISIBLE_CLOSEOUT.md) is scoped CLOSED. Under a stronger tau4 initial promise, use the departing existing pool label at the host, then perform the deficit handoff. Every issued command is uniformly safe before issue; syntax-only and guarded execution agree for the policy, with no runtime floor/band query. No fresh marker, hidden cleanup, mutable phase or acknowledgment is required. The deterministic core policy has an observable exact stopping endpoint.
+The first preparation necessarily gives tau3 under the retained coverage certificate; the endpoint returns4. A tau3 triangle drops2 and prevents universal extension. Cost2m+2 changes, peak max(1,r), zero new labels. Native core access, source admission and atomic resolution remain supplied; universal enforcement and progress remain OPEN.
+Run37882153190 passed70 tests and reconstructed74 complete graphs with666 nodes/1184 edges after classifying256 sources. Both Gemini verdicts ACCEPTED; author explicitly corrects the audit's m definition and RED/GREEN/count wording. Original evidence, raw reviews and full logs are preserved.
+[Continuation](COUPLED_C3_C4_DEFICIT_CONTINUATION.md) prioritizes native core initialization/access and earned admission; runtime guard reliance has been eliminated only for this restricted protocol.
+
+## Prior scoped C3 result: cyclic composition by buffered pipeline and loop erasure
 [Cyclic pipeline closeout](COUPLED_C3_PIPELINE_CLOSEOUT.md) is scoped CLOSED. Faithful host-parking composition contains a committed two-cycle; a buffered distinct-slot pipeline removes internal parking, and uniform core loop erasure removes shared-incidence loops. Fixed Q/w on the nonhost slices makes equal cores equal full states in each promised world, so erasure preserves native edges, floors, band and endpoints. The compiled core-simple path requires no stored phase or macro index.
 One fresh marker serves the entire cyclic goal, with at most2 sum(m_j)+4 marked changes and peak max_j max(1,r_j). A fixture improves28 independent-macro changes to18 with peak1. Global optimality, arbitrary target/repeated-slot composition, progress, observable cleanup and native core/guard origin remain OPEN.
 Run37880781623 passed70 tests; complete independent reconstruction gives64 paths and384 graphs with11292 nodes/23160 edges. Separate mathematical/publication reviews ACCEPTED, with author correction of the mathematical review's loose RED wording. Original artifacts, raw reviews and full logs are permanently preserved.

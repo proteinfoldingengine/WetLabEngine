@@ -1,0 +1,118 @@
+{
+  "artifacts": [
+    {
+      "bytes": 11626,
+      "id": 11594836579,
+      "members_sha256": {
+        "certificate.json": "9c967f3396fe8e950779b573311e98f2d0a225f5158f38c38997e59100e412ba",
+        "certificate.sha256": "e985ab1f84e6a6aeb4ba88ca263c15fb009308ce911c2834eb40ebc2403e1d23",
+        "contracts.log": "b2604cfbd309cc4ed0b846389159ad8a5be2b476495daf8a2fa6900c3eee31a9",
+        "counts.json": "c1aafc613e003322519578bccd08a609756666c1f22b2b315de8c6d336f54664",
+        "independent.json": "d6185859bcbc9bf2535b685882f71ddbed7b96b14270e2ea9b619bb539537c88",
+        "inherited_reactive.log": "50eae0690cb6ea6e43e6e204d40de68f8239810eaf28c9ee2ab4f7d4bbdc6425",
+        "provenance.txt": "9d22a55a24a96243614fd0d07c765190a4e9a04e6094e97b07d389d7c75cddcc"
+      },
+      "name": "c3-visible-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "a6ffc92b99a0c004a5a2db92ff7aafae99395353f4b77f05f4fb6573ee56547d"
+    },
+    {
+      "bytes": 2326,
+      "id": 11595022332,
+      "members_sha256": {
+        "manifest.json": "ef4a05f844043c9f12d0e902873ba7483423f3e22593c92cdf81a17f4a2ca416",
+        "review.txt": "43142b0e2a297941b69a4da6352b76a0fa325e9f0aca023df9e292e7960d8de5"
+      },
+      "name": "c3-visible-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "c9315b586444f90772dd005c030d2bab1c59eff9eb6f981cd10ec7b940011553"
+    },
+    {
+      "bytes": 3084,
+      "id": 11594997404,
+      "members_sha256": {
+        "visible_gate.json": "9419f512c479dc3cfcbf647eb1d971b8d0fb077e7f7eda19dc21eb53d5c0dfc2",
+        "visible_publication/manifest.json": "1dba32ff3df7fde2db8aae2e3fb2c83163f65b303e35070fe0ad867b51dd750d",
+        "visible_publication/review.txt": "0f57c301a08e7886d62c5a4e32c82650fd0a416a8613c3e7d5aaf4b3fd7eafa6"
+      },
+      "name": "c3-visible-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "965372b7674417b321533f3f55c1678d635bbccefe0361a64ba618fa03a564bd"
+    }
+  ],
+  "author_notes": [
+    "Reject publication-audit wording m=covered-root count. Correct m=|W|=|P|+|R|; bounded domain m=3, all complete scripts have8 toggles even when |P|=0.",
+    "Reject both reviews calling all41 tests corruption controls. There are4 positive checks and37 corruption controls. RED establishes implementation absence; GREEN exercises named corruptions. The RED archive is not a run on corrupted implementations.",
+    "Finite BFS verifies the bounded graphs. General uniform-before-issue safety and guard redundancy follow from the analytical proof, not enumeration or an ACCEPTED label.",
+    "Empty reviewer limitation arrays do not remove the stronger tau4 initial promise, core/static-input access, exclusive atomicity or possible indefinite NOOPs.",
+    "Guard independence is restricted to the issued protocol. Native core origin and universal guard implementation remain unresolved; no physical mechanism or full-stack/v16 certification is inferred."
+  ],
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "certificate": {
+    "bytes": 155228,
+    "counts": {
+      "eligible_sources": 74,
+      "graphs": 74,
+      "guarded_edges": 1184,
+      "nodes": 666,
+      "paths": 64,
+      "sources": 256,
+      "syntax_edges": 1184
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "9c967f3396fe8e950779b573311e98f2d0a225f5158f38c38997e59100e412ba"
+  },
+  "initial_scope_commit": "a733f86567df71acefc771ab98b6f7af5ebc12b7",
+  "jobs": {
+    "mathematical_review": 113664061109,
+    "publication_audit": 113664277102,
+    "verification": 113664002068
+  },
+  "prospective_scope_amendment": "Exact preparation tau3 consequence was strengthened before implementation or enumeration.",
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "43142b0e2a297941b69a4da6352b76a0fa325e9f0aca023df9e292e7960d8de5",
+    "scientific_commit": "baa8ff7a71f4a9d289bd9a3e8a397bb8dad0a0d0",
+    "status": "PASS",
+    "verified_review_inputs": 16
+  },
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 16,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "43142b0e2a297941b69a4da6352b76a0fa325e9f0aca023df9e292e7960d8de5",
+      "tokens": 36000,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 19,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "0f57c301a08e7886d62c5a4e32c82650fd0a416a8613c3e7d5aaf4b3fd7eafa6",
+      "tokens": 35046,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 37882153190,
+  "scientific_commit": "baa8ff7a71f4a9d289bd9a3e8a397bb8dad0a0d0",
+  "scope_commit": "2b7dc87aecd3b3b504e4c3be2270aa164bce13c6",
+  "tested_contracts": {
+    "corruption_controls": 37,
+    "inherited_reactive": 29,
+    "new_total": 41,
+    "positive": 4
+  },
+  "tests_commit": "39c77e699868823f95bc3ed679a5a95fe0fe004f"
+}

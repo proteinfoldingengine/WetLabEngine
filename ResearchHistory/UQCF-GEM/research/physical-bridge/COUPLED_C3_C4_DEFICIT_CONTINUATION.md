@@ -1,12 +1,17 @@
 # C3/C4 continuation after deficit-bounded repair
 
-Status: OPEN continuation after scoped deficit repair, core-reactive handoff and cyclic pipeline closeouts. Broader native C3 and general C4 remain unresolved.
+Status: OPEN continuation after scoped deficit repair, reactive/cyclic controllers and visible-buffer guard redundancy. Broader native C3 and general C4 remain unresolved.
 
 ## Current achieved interface
 The deficit theorem gives one-excess-incidence repair whenever at most one selected-role root remains uncovered by an admissible pair of stable other roles. A three-role family with at most one unshared root per role therefore supports arbitrary target assignments even with arbitrarily many shared roots.
 The full-batch theorem preserves exact tau with higher possible cost; the deficit theorem preserves the band and permits tau3->4. Neither is a universal path-optimality theorem.
 
-## Current closed composition reduction
+## Current closed enforcement-dependency reduction
+[Visible pool buffer](COUPLED_C3_VISIBLE_CLOSEOUT.md) proves uniformly safe-before-issue handoff for a tau4 source using only existing pool labels. No runtime full-state admission guard is needed by this specific protocol. A deterministic current-core policy has no fresh marker/phase/ack and an observable exact endpoint. Preparation necessarily changes tau4->3 and the goal returns4; a tau3 triangle leaves the band, so the initial promise is not derived away.
+All70 new/inherited tests pass; separate mathematical/publication reviews accepted the argument in run37882153190. Reporting errors in the audit's m and RED/GREEN wording are explicitly corrected by the author; raw reviews are preserved.
+The remaining priority is a typed construction of native core-record initialization/access and earned source admission, plus actual atomic resolution. Static routing/certificates remain supplied. This is not universal guard implementation or observer origin. Do not interpret the verifier's tau4 classification as an observer sensor, or substitute another conditional protocol for those maps.
+
+## Previously closed composition reduction
 [Cyclic pipeline](COUPLED_C3_PIPELINE_CLOSEOUT.md) proves that naive host-parking composition admits actual edit cycles. It replaces those segments by one buffered distinct-slot cyclic chain and erases repeated cores under fixed hidden background/marker, yielding a phase-free set-valued policy. The first and final host edits are the only parking operations. This addresses a previously explicit composition restriction without adding a scheduler or core/guard origin mechanism.
 The complete bounded paths/graphs and committed-cycle controls passed independent reconstruction, Gemini mathematical review and separate publication audit in run37880781623. Resource fixture:28 changes becomes18 with peak1. Do not extrapolate to arbitrary target/repeated-slot policies or shortest paths.
 The native input-to-core/routing/guard bridge remains the priority first-principles obligation. Do not keep substituting conditional controller refinements for that construction.
@@ -16,7 +21,7 @@ The native input-to-core/routing/guard bridge remains the priority first-princip
 The whole graph, including slack-host bypass and every NOOP, was independently reconstructed and separately reviewed/audited in run37879440145. This is substantive controller information reduction, not a repeat of the already known NOOP counterexample.
 
 ## Priority C3 obligation
-Inspect the actual native retained/update objects against the concrete information needed here: role/root routing, the stable-role coverage certificate, reserved fresh marker availability, current core access and guarded enforcement. Mutable actual-edit phase and macro index are no longer required by the separately closed single-macro and compiled distinct-slot cyclic policies.
+Inspect the actual native retained/update objects against the concrete information needed here: role/root routing, the stable-role coverage certificate, current core initialization/access, source admission and actual atomic outcomes. Guarded enforcement/fresh-marker availability remain assumptions of the older band3..4 buffered controllers; the new visible tau4 protocol eliminates those two requirements only within its narrower class. Mutable actual-edit phase and macro index are no longer required by the separately closed single-macro and compiled distinct-slot cyclic policies.
 Pin the relevant source definitions, then apply the observation-fiber criterion to the REQUIRED certificate and routing data. Mathematical availability of a certificate is not proof that the observer can access it. Do not insert a full-state read, acknowledgment or successor-selection law.
 A useful result must derive an accessible sufficient record or identify a new precise missing dependency. Do not repeat the already known arbitrary-NOOP obstruction or rename supplied inputs as derived records.
 

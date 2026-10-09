@@ -1,0 +1,17 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The exact preparation formula min(tau_source, 1+rho) is mathematically sound. The proof correctly demonstrates that adding A to the host bounds the new tau between min(tau_source, 1+rho) and 1+rho, and the retained certificate K forces rho=2, ensuring the first prepared slice has exact tau=3.",
+    "The dynamic lower image proof correctly establishes tau >= 3 by constructing a source hitting set of size at most |H|+1. Mapping D to A and adding the original D label is a valid mathematical cover argument that does not introduce physical incidences.",
+    "The upper covers K U {E,A} and K U {E,D} are valid and correctly bound tau <= 4 throughout the trajectory, as K protects the outside roots and P, while A and D sequentially cover the deficit roots R.",
+    "The script strictly uses 2m+2 toggles (2 for host preparation, 2|P| for covered roots, 2|R| for deficit roots) and achieves a peak excess of max(1, r) without introducing any new labels.",
+    "The deterministic single-request policy correctly relies only on the observed pool-core and static parameters, successfully eliminating the need for a mutable phase, success acknowledgment, or hidden marker cleanup.",
+    "The exhaustive BFS confirms that all issued syntax-only moves are uniformly safe before issue, establishing the restricted equivalence of guarded and unguarded execution for this specific policy.",
+    "The RED/GREEN reconciliation confirms exactly 41 executed controls. The RED log proves the tests correctly reject absent implementations, and the GREEN log verifies the exact bounds, false-claim rejections, and canonical graph identities."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": []
+}
+```
