@@ -1,0 +1,111 @@
+{
+  "run_id": 37876323983,
+  "scientific_commit": "397ac4f42d14ffddc69ad766d21de6dc3feb50aa",
+  "workflow_commit": "397ac4f42d14ffddc69ad766d21de6dc3feb50aa",
+  "scope_proof_commit": "2a20eebec47bb916abf419a9880d4b3f8e3c9c9b",
+  "original_test_commit": "f74604e788100a3522458a465ab933866f0d6c11",
+  "jobs": {
+    "verification": 113645673139,
+    "mathematical_review": 113646062353,
+    "publication_audit": 113646215714
+  },
+  "artifacts": [
+    {
+      "name": "verification",
+      "artifact_id": 11592671666,
+      "bytes": 517501,
+      "sha256": "d62cf82952f7f9bd7cd59244669d33348dd995ff4e739604b3b23edda47fe068",
+      "members": {
+        "certificate.json": "7fb58b7fa3cfff9602e70bd8e28238a6d6cb514d528828003dbef7bd644003fa",
+        "certificate.sha256": "18523bbdbc7a940fdc5c6e9a47761df0fa4083088335fe002ee534cbee5fbf17",
+        "contracts.log": "1dea6eab8380e11f7938ccb32100bbad4ed49c262187c77f81ce7f812dd210aa",
+        "counts.json": "7de26a6b65eb351b72cea2e60a48744a89a6b1591d575f490ea7797b19cd7b30",
+        "independent.json": "d71be283b1c68baeb82e42d09cd7eb443b59f60549d9718a65b1145f9f94d087",
+        "inherited_shared.log": "2c0076d4a51fc793e2555a9d0f86d6cbd63d96bb64d3ae74878ed543872cf45a",
+        "provenance.txt": "709ebf4499c25caf2833a095296babf6f6122763c04c3b538eb753da25d70720"
+      }
+    },
+    {
+      "name": "review",
+      "artifact_id": 11592960731,
+      "bytes": 2428,
+      "sha256": "f406e2f6afc1fc4ba9e68dcb3dd381ac2a8b847fdc72784b957fa935286ca10f",
+      "members": {
+        "manifest.json": "664c09b63298627623dfbca614fa7bbcabb7cb4c8d1546af8fd465c0d470ed0b",
+        "review.txt": "ccfb5e38e5d26ed3b6521e38817223f7f96378f222879ac66c89606395600319"
+      }
+    },
+    {
+      "name": "publication",
+      "artifact_id": 11592602051,
+      "bytes": 2919,
+      "sha256": "ee873cce387cbf2a16a294c3eb05c339ffa52068c3d35f61a16ff4d47d673e4f",
+      "members": {
+        "role_publication/manifest.json": "0b5b5556f5097228ba89d810df385b93667e42b483c2ea551c53471f0595c729",
+        "role_publication/review.txt": "16db059cddce61c83844e4ab5b930048c8bf9917188b79057b2e5f1f40b8a67b",
+        "role_gate.json": "de1f6f0b3f7171a903f8b5a797a0b3ad46c7eb5969d6d851c7d6d90672bb98c2"
+      }
+    }
+  ],
+  "local_summary": {
+    "sources_a": {
+      "sources": 7200,
+      "protected": 4442,
+      "tau_counts": {
+        "5": 96,
+        "4": 1126,
+        "3": 3316,
+        "2": 2437,
+        "1": 225
+      }
+    },
+    "sources_b": {
+      "sources": 108,
+      "protected": 48,
+      "tau_counts": {
+        "4": 12,
+        "3": 36,
+        "1": 36,
+        "2": 24
+      }
+    },
+    "handoffs": 17768,
+    "goals": 576,
+    "fixture": {
+      "alternating_taus": [
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4
+      ],
+      "persistent_cover_tau": 5,
+      "source_tau": 4
+    },
+    "certificate_bytes": 9298350,
+    "certificate_sha256": "7fb58b7fa3cfff9602e70bd8e28238a6d6cb514d528828003dbef7bd644003fa"
+  },
+  "author_input_hash_checks": {
+    "mathematical": 16,
+    "publication": 19
+  },
+  "author_checks": [
+    "Original archive digests match GitHub",
+    "Each archive member SHA256 recorded",
+    "Local and Actions certificate bytes identical",
+    "All review source/evidence input hashes and response hashes match",
+    "Scientific/workflow SHA identities match",
+    "Actual job logs and both structured review responses inspected"
+  ],
+  "qualifications": [
+    "AI review is not proof-assistant certification",
+    "Reviewer does not receive all certificate rows; independent code reconstructs them",
+    "Reviewer necessity phrase is not adopted; only selected alternating schedule is falsified",
+    "One fresh marker is not one excess incidence",
+    "Initial absent implementation and first faulty harness run preserved"
+  ]
+}

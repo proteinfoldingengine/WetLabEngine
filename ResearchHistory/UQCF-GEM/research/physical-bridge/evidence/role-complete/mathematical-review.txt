@@ -1,0 +1,24 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "Lower containment maps correctly preserve the lower bound by mapping w to E, D to A during the addition phase, and A to D after A leaves its non-host roots.",
+    "Upper covers correctly preserve the upper bound without being observed, by shifting from H_0 (D replaced by E) to H_1 (A replaced by D) only after D fully occupies the role.",
+    "Exact tau invariance is maintained throughout the 2m+4 primitive edits for arbitrary overlapping or coincident incidence patterns.",
+    "Goal induction successfully resolves overlapping patterns using at most 2k exchanges by evacuating unfixed slots to the least ordered hosted label.",
+    "The adverse alternating schedule genuinely fails by reaching tau=5 from tau=4, confirming the necessity of the batched path.",
+    "The successful batched path genuinely lacks a persistent four-cover, proving that upper protection relies on moving covers.",
+    "The cost is explicitly m excess incidences for a role of m roots, distinguishing this from a one-excess-incidence repair.",
+    "The independent verification correctly contrasts root-representative unions against the producer's subset transversals.",
+    "Evidence confirms exactly 7200 sources in domain A (4442 protected, yielding 17768 handoffs) and 108 sources in domain B (48 protected, yielding 576 goals).",
+    "The test harness correction properly addresses the host index and boolean mutation defects, and the GREEN mutation tests successfully establish rejection of corrupted certificates."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The mechanism requires up to m temporary excess incidences, leaving general one-excess-incidence repair unresolved.",
+    "Core-template, role, and committed-phase access must be supplied to the controller; native observer-origin is not derived.",
+    "The schedule is sufficient but not optimal, and arbitrary NOOPs can prevent completion (no guaranteed request progress)."
+  ]
+}
+```
