@@ -1,0 +1,104 @@
+test_complete_domain (test_probe.Contracts.test_complete_domain) ... FAIL
+test_decoder (test_probe.Contracts.test_decoder) ... FAIL
+test_duplicate (test_probe.Contracts.test_duplicate) ... FAIL
+test_invalid_support (test_probe.Contracts.test_invalid_support) ... FAIL
+test_missing (test_probe.Contracts.test_missing) ... FAIL
+test_native_and_scan (test_probe.Contracts.test_native_and_scan) ... FAIL
+test_provenance (test_probe.Contracts.test_provenance) ... FAIL
+test_scope (test_probe.Contracts.test_scope) ... FAIL
+test_substitution (test_probe.Contracts.test_substitution) ... FAIL
+test_wrong_count_or_floor (test_probe.Contracts.test_wrong_count_or_floor) ... FAIL
+test_wrong_tau (test_probe.Contracts.test_wrong_tau) ... FAIL
+
+======================================================================
+FAIL: test_complete_domain (test_probe.Contracts.test_complete_domain)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_decoder (test_probe.Contracts.test_decoder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_duplicate (test_probe.Contracts.test_duplicate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_invalid_support (test_probe.Contracts.test_invalid_support)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_missing (test_probe.Contracts.test_missing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_native_and_scan (test_probe.Contracts.test_native_and_scan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_provenance (test_probe.Contracts.test_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_scope (test_probe.Contracts.test_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_substitution (test_probe.Contracts.test_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_wrong_count_or_floor (test_probe.Contracts.test_wrong_count_or_floor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+======================================================================
+FAIL: test_wrong_tau (test_probe.Contracts.test_wrong_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e1b2c832a87f/fresh_probe/test_probe.py", line 11, in setUp
+    self.assertIsNotNone(producer, 'implementation absent: intended local RED')
+AssertionError: unexpectedly None : implementation absent: intended local RED
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.001s
+
+FAILED (failures=11)
