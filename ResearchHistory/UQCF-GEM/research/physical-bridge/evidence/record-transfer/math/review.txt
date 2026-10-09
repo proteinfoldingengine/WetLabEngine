@@ -1,0 +1,16 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The algebraic identity M_F({x}) = M({A,x}) - M({x}) + M({E,x}) is mathematically exact. It correctly leverages the structural premises: A is absent from the host and F, and E is exclusively at the host. This allows exact isolation of the outside-root absences without requiring a separately initialized restricted-root field.",
+    "The witness pair (X with hidden label 6 on roots 0,1; Y with hidden label 6 on roots 3,4) is mathematically confirmed. Both yield identical global singleton profiles and share the same core, palette, and floors, yet X is admitted (empty F intersection) and Y is rejected (F intersection contains 6). This proves that order 1 global counts are strictly insufficient.",
+    "The independent verification script correctly implements inclusion-exclusion for global pair moments (6 - contain[x] - contain[y] + contain[x and y]).",
+    "The bounded universe execution confirms that order 2 global counts are sufficient for this specific hierarchy, successfully separating all protected sources (2464 degree 2 fibers, 0 mixed) compared to the order 1 failure (320 degree 1 fibers, 192 mixed).",
+    "The expected counts (4096 sources, 3088 protected, 2640 admitted) exactly match the provided evidence in counts.json.",
+    "The test suite correctly validates the contracts, with RED logs confirming the rejection of missing implementations and GREEN logs confirming the rejection of corrupt certificates."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": []
+}
+```

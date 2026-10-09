@@ -1,0 +1,114 @@
+{
+  "artifacts": [
+    {
+      "bytes": 76190,
+      "id": 11623511159,
+      "members_sha256": {
+        "certificate.json": "5e75094e8b84720af88bd05adc677c56b5be57e46bbcc677818cdf37c9fe76ce",
+        "certificate.sha256": "f9080e7d832f80ef825735fedc11e5e2eb2df9c44c0c1f0340fa4c49de99a7d9",
+        "contracts.log": "6972282f87f434da539f53ed5d5db8d22689b9999011e21240c600ead878098a",
+        "counts.json": "9729650731ec31c697d90d5153432cb947be4fd13b018dca965b3a0f162d1e02",
+        "independent.json": "5c5f0a5208018117c1ce7b80e5d268837547174df2d7ca7a181d8432f7e0c79f",
+        "inherited_admission.log": "5bc7574e075460cd79501f674bdb92b0435f51581a95d203cc990644cdad3ba6",
+        "provenance.txt": "89e57edfb4b6c95ab34603b65129f20fffdcb908816f08c1454fc3dae3ad1a75"
+      },
+      "name": "c3-transfer-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "0c3f17c3f92fd91e6e0033178cd673e41a2f86555ea6d5b81f2d967bc39d523a"
+    },
+    {
+      "bytes": 2213,
+      "id": 11624420987,
+      "members_sha256": {
+        "manifest.json": "ae2d05a041d73602b8fb588ac79e407fab91c08d679ad303836faa77fda3eeb9",
+        "review.txt": "5e01ecbcdbbe6ac6aa3f32973fce94087dddcb4af8f02c32b14432f1ee167fbe"
+      },
+      "name": "c3-transfer-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "72f48609bc42c4079ee4381398627c5eb6f62ba4c5cb052bd0eefd061da850b0"
+    },
+    {
+      "bytes": 2885,
+      "id": 11623801421,
+      "members_sha256": {
+        "transfer_gate.json": "0bb6371538735b18904152277dd674c7f9daaf6e6a3cf6f8ccd41ad3c1259694",
+        "transfer_publication/manifest.json": "2cb59fc8fe6fc84450809852e38cb59c4e340d8849c7a70574f2b7824a705661",
+        "transfer_publication/review.txt": "220bbaa02b8dee6a658aafe0f829743891978f4a7a7f145afcc2fda6980f2e2a"
+      },
+      "name": "c3-transfer-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "e2d87580e977a97807e29066be5ca596261824f95958e204bc19e46b5d1e11ec"
+    }
+  ],
+  "author_clarifications": [
+    "Pair-record fibers are admission-homogeneous, not injective state observations:2464 fibers contain3088 protected sources.",
+    "Empty reviewer limitation arrays do not erase the stated input assumptions.",
+    "Initial-template transfer is not a universal later-slice formula; the admitted F stays fixed."
+  ],
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "certificate": {
+    "bytes": 1176723,
+    "counts": {
+      "admitted": 2640,
+      "fibers1": 320,
+      "fibers2": 2464,
+      "mixed1": 192,
+      "mixed2": 0,
+      "protected": 3088,
+      "sources": 4096
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "5e75094e8b84720af88bd05adc677c56b5be57e46bbcc677818cdf37c9fe76ce"
+  },
+  "jobs": {
+    "mathematical-review": 113872682502,
+    "publication-audit": 113873049133,
+    "verification": 113872566193
+  },
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "5e01ecbcdbbe6ac6aa3f32973fce94087dddcb4af8f02c32b14432f1ee167fbe",
+    "scientific_commit": "5487616ed57d0922825ffb3dad438674a3c1449e",
+    "status": "PASS",
+    "verified_review_inputs": 16
+  },
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 16,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "5e01ecbcdbbe6ac6aa3f32973fce94087dddcb4af8f02c32b14432f1ee167fbe",
+      "tokens": 29566,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 19,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "220bbaa02b8dee6a658aafe0f829743891978f4a7a7f145afcc2fda6980f2e2a",
+      "tokens": 30129,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 37946082524,
+  "scientific_commit": "5487616ed57d0922825ffb3dad438674a3c1449e",
+  "scope_commit": "5023e725651ce62bf3dc7a7e99ecc1dd5cd74ab6",
+  "tests": {
+    "inherited_admission": 48,
+    "new_corruption": 24,
+    "new_positive": 4,
+    "total": 76
+  },
+  "tests_commit": "4f31c23cb8d3bfbca97fcbc5a30867844ab21a89"
+}
