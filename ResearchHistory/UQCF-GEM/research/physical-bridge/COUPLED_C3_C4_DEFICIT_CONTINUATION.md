@@ -16,3 +16,6 @@ When no pair of stable roles certifies the outside roots, or when the deficit ex
 Keep exact-tau and band-safe objectives separate. Missing certificates and failed schedules are not connectivity impossibility proofs.
 
 Any new substantive checkpoint requires proof, prospectively frozen exact verification when needed, rejecting controls, actual independent mathematical review, separate publication auditing, author reconciliation and immutable readback.
+
+## Executed origin-route screen
+The [coverage/routing source screen](COUPLED_C3_COVERAGE_ORIGIN_SCREEN.md) now checks native_record_search/native_record_trace, coherent record code and the Genesis-base classification against this specific controller requirement. It identifies no supplied initializer that can be promoted to a native derivation. The coherent construction needs supplied registers/gates; the provenance audits explicitly fail the native-source gate. Eleven source identities were checked, with no new theorem or execution claim. The next proposal must construct the missing typed input/action/retained-output connection, rather than invoke those filenames as an existing mechanism.
