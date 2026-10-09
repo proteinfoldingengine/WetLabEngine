@@ -1,0 +1,125 @@
+name: UQCF-GEM shared-host repair verification review and publication audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_SHARED_HOST_SCOPE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_SHARED_HOST_RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/shared_host/*.py'
+      - '.github/scripts/c4_shared_host_review.py'
+      - '.github/workflows/uqcf-gem-c4-shared-host.yml'
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - name: Exact verification and inherited controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir shared_verification
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT/shared_host" -p test_shared.py -v 2>&1 | tee shared_verification/contracts.log
+          python3 "$ROOT/shared_host/producer.py" shared_verification/certificate.json | tee shared_verification/counts.json
+          python3 "$ROOT/shared_host/producer.py" /tmp/repeated.json
+          cmp shared_verification/certificate.json /tmp/repeated.json
+          python3 "$ROOT/shared_host/independent.py" shared_verification/certificate.json | tee shared_verification/independent.json
+          python3 -m unittest discover -s "$ROOT/renewable_handoff" -p test_handoff.py -v 2>&1 | tee shared_verification/inherited_handoff.log
+          echo "scientific_sha=$(git -C research_snapshot rev-parse HEAD)" > shared_verification/provenance.txt
+          echo "workflow_sha=$GITHUB_SHA" >> shared_verification/provenance.txt
+          sha256sum shared_verification/certificate.json > shared_verification/certificate.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c4-shared-verification
+          path: shared_verification/
+  mathematical-review:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c4-shared-verification
+          path: shared_verification
+      - name: Independent mathematical review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 research_snapshot/.github/scripts/c4_shared_host_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c4-shared-review
+          path: shared_review/
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c4-shared-verification
+          path: shared_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: c4-shared-review
+          path: shared_review
+      - name: Independent reproduction and provenance reconciliation
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/shared_host/producer.py" /tmp/publication-certificate.json
+          cmp /tmp/publication-certificate.json shared_verification/certificate.json
+          python3 "$ROOT/shared_host/independent.py" /tmp/publication-certificate.json
+          python3 - <<'PY'
+          import json,hashlib,pathlib,os
+          m=json.loads(pathlib.Path('shared_review/manifest.json').read_text())
+          if m['research_commit']!=os.environ['GITHUB_SHA'] or m['workflow_commit']!=os.environ['GITHUB_SHA']: raise ValueError('commit provenance')
+          for n,h in m['input_sha256'].items():
+              p=(pathlib.Path('shared_verification')/n[9:]) if n.startswith('EVIDENCE/') else (pathlib.Path('research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge')/n)
+              if hashlib.sha256(p.read_bytes()).hexdigest()!=h: raise ValueError('input hash '+n)
+          raw=pathlib.Path('shared_review/review.txt').read_bytes()
+          if hashlib.sha256(raw).hexdigest()!=m['response_sha256']: raise ValueError('response hash')
+          provenance=pathlib.Path('shared_verification/provenance.txt').read_text()
+          if provenance!=f"scientific_sha={os.environ['GITHUB_SHA']}\nworkflow_sha={os.environ['GITHUB_SHA']}\n": raise ValueError('execution provenance')
+          gate={'status':'PASS','scientific_commit':os.environ['GITHUB_SHA'],'verified_review_inputs':len(m['input_sha256']),'certificate_reproduced_byte_exact':True,'independent_full_reconstruction':True,'response_sha256':m['response_sha256']}
+          pathlib.Path('shared_gate.json').write_text(json.dumps(gate,indent=2)+'\n')
+          print(json.dumps(gate))
+          PY
+      - name: Separate independent publication audit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REVIEW_PHASE: publication
+        run: python3 research_snapshot/.github/scripts/c4_shared_host_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c4-shared-publication
+          path: |
+            shared_publication/
+            shared_gate.json
