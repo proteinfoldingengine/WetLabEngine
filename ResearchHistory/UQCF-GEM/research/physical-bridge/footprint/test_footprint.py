@@ -35,6 +35,12 @@ class Contracts(unittest.TestCase):
         self.assertEqual(self.good['upper_control']['candidate_tau'],5)
         self.assertEqual(self.good['upper_control']['conditions'],[True,False,True])
 
+    def test_cross_role_hidden_witness(self):
+        self.assertEqual(self.good['application'].get('cross_role_taus'),[3,2])
+
+    def test_premature_deletion(self):
+        self.assertEqual(self.good['application'].get('premature_deletion_tau'),5)
+
 def corrupt(which,d):
     if which=='missing_fixture': d['fixtures'].pop()
     elif which=='missing_row': d['fixtures'][0]['rows'].pop()
