@@ -1,0 +1,70 @@
+name: UQCF-GEM C3 fresh-label restored probe review
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/uqcf-gem-c3-fresh-probe-review.yml'
+      - '.github/scripts/c3_fresh_probe_review.py'
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 65866b3620e6e4629996f43144cc69ac5b5a07b5
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - name: Exact independent reconstruction and rejecting controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p fresh_probe_verification
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT/fresh_probe" -p test_probe.py -v 2>&1 | tee fresh_probe_verification/contracts.log
+          python3 "$ROOT/fresh_probe/producer.py" > fresh_probe_verification/certificate.json
+          python3 "$ROOT/fresh_probe/producer.py" > /tmp/repeated-certificate.json
+          cmp fresh_probe_verification/certificate.json /tmp/repeated-certificate.json
+          python3 "$ROOT/fresh_probe/independent.py" fresh_probe_verification/certificate.json | tee fresh_probe_verification/independent.json
+          python3 -m unittest discover -s "$ROOT/core_readout" -p test_core_readout.py -v 2>&1 | tee fresh_probe_verification/inherited_core_readout.log
+          python3 -m unittest discover -s "$ROOT/miss_reconstruction" -p test_reconstruction.py -v 2>&1 | tee fresh_probe_verification/inherited_reconstruction.log
+          python3 -m unittest discover -s "$ROOT/miss_event" -p test_event.py -v 2>&1 | tee fresh_probe_verification/inherited_event.log
+          echo "scientific_sha=$(git -C research_snapshot rev-parse HEAD)" > fresh_probe_verification/provenance.txt
+          echo "workflow_sha=$GITHUB_SHA" >> fresh_probe_verification/provenance.txt
+          sha256sum fresh_probe_verification/certificate.json > fresh_probe_verification/certificate.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-fresh-probe-verification
+          path: fresh_probe_verification/
+          retention-days: 30
+  adversarial-review:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: 65866b3620e6e4629996f43144cc69ac5b5a07b5
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-fresh-probe-verification
+          path: fresh_probe_verification
+      - name: Independent mathematical review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/c3_fresh_probe_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-fresh-probe-review
+          path: fresh_probe_review/
+          retention-days: 30
