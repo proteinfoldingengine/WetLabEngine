@@ -1,0 +1,126 @@
+name: UQCF-GEM exact-admission verification review and publication audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ADMISSION_SCOPE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ADMISSION_RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/admission/*.py'
+      - '.github/scripts/c3_admission_review.py'
+      - '.github/workflows/uqcf-gem-c3-admission.yml'
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - name: Exact verification and inherited controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir admission_verification
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT/admission" -p test_admission.py -v 2>&1 | tee admission_verification/contracts.log
+          python3 "$ROOT/admission/producer.py" admission_verification/certificate.json | tee admission_verification/counts.json
+          python3 "$ROOT/admission/producer.py" /tmp/repeated.json
+          cmp admission_verification/certificate.json /tmp/repeated.json
+          python3 "$ROOT/admission/independent.py" admission_verification/certificate.json | tee admission_verification/independent.json
+          python3 -m unittest discover -s "$ROOT/visible_buffer" -p test_visible.py -v 2>&1 | tee admission_verification/inherited_visible.log
+          echo "scientific_sha=$(git -C research_snapshot rev-parse HEAD)" > admission_verification/provenance.txt
+          echo "workflow_sha=$GITHUB_SHA" >> admission_verification/provenance.txt
+          sha256sum admission_verification/certificate.json > admission_verification/certificate.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-admission-verification
+          path: admission_verification/
+  mathematical-review:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-admission-verification
+          path: admission_verification
+      - name: Independent mathematical review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 research_snapshot/.github/scripts/c3_admission_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-admission-review
+          path: admission_review/
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-admission-verification
+          path: admission_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-admission-review
+          path: admission_review
+      - name: Independent reproduction and provenance reconciliation
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/admission/producer.py" /tmp/publication-certificate.json
+          cmp /tmp/publication-certificate.json admission_verification/certificate.json
+          python3 "$ROOT/admission/independent.py" /tmp/publication-certificate.json
+          python3 - <<'PY'
+          import json,hashlib,pathlib,os
+          m=json.loads(pathlib.Path('admission_review/manifest.json').read_text())
+          if m['research_commit']!=os.environ['GITHUB_SHA'] or m['workflow_commit']!=os.environ['GITHUB_SHA']: raise ValueError('commit provenance')
+          for n,h in m['input_sha256'].items():
+              p=(pathlib.Path('admission_verification')/n[9:]) if n.startswith('EVIDENCE/') else (pathlib.Path('research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge')/n)
+              if hashlib.sha256(p.read_bytes()).hexdigest()!=h: raise ValueError('input hash '+n)
+          raw=pathlib.Path('admission_review/review.txt').read_bytes()
+          if hashlib.sha256(raw).hexdigest()!=m['response_sha256']: raise ValueError('response hash')
+          provenance=pathlib.Path('admission_verification/provenance.txt').read_text()
+          if provenance!=f"scientific_sha={os.environ['GITHUB_SHA']}\nworkflow_sha={os.environ['GITHUB_SHA']}\n": raise ValueError('execution provenance')
+          gate={'status':'PASS','scientific_commit':os.environ['GITHUB_SHA'],'verified_review_inputs':len(m['input_sha256']),'certificate_reproduced_byte_exact':True,'independent_full_reconstruction':True,'response_sha256':m['response_sha256']}
+          pathlib.Path('admission_gate.json').write_text(json.dumps(gate,indent=2)+'\n')
+          print(json.dumps(gate))
+          PY
+      - name: Separate independent publication audit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REVIEW_PHASE: publication
+        run: python3 research_snapshot/.github/scripts/c3_admission_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-admission-publication
+          path: |
+            admission_publication/
+            admission_gate.json
+
