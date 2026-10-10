@@ -1,0 +1,120 @@
+{
+  "artifacts": [
+    {
+      "bytes": 110814,
+      "id": 11652975650,
+      "members_sha256": {
+        "certificate.json": "25b520a5aa75c3cd70aff66e3a67cfe8f8cc7b3aeea4c6b0081942592d2f3ad8",
+        "certificate.sha256": "7d8e0d23e5c0ec852cc86492a6f41b548446ea97c28cdd05fa61bd263faa6756",
+        "contracts.log": "18e2b1396ca5807e0daf650fc0b4475791ef53d495a0166232d30c39946c9537",
+        "counts.json": "d97549f2ed05af59202fa71e543bf50adc3c42b8026e822ae232e3a0b868b579",
+        "independent.json": "f98cb0012d3ea2af4e5320bbf0ce9e35a04f1716710e5525d594258c9a081f15",
+        "inherited_fixed_family.log": "bf7fce1612c35b087b72ff06f09b276da070b2a8435cf1e7c8f01b0216b92c62",
+        "inherited_footprint.log": "e698cc6c3a8665e0d8bd2e60ff7aea5c904b3756b51ba92e17e62b1630765eec",
+        "provenance.txt": "858109a3f765264a2fbcbad4e10eae980bf679a6bd24d75b3ea0e0f53e4837a1"
+      },
+      "name": "c3-label_release-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "529f7d79965ef8bd680db3bca2a224762b9e3cb06d7d7b368d4e3d0e8c949eac"
+    },
+    {
+      "bytes": 2562,
+      "id": 11652246918,
+      "members_sha256": {
+        "manifest.json": "a5d897c4cfb909a25643ecbd32230b15a93718ed277877e35bdca1ec12f64eb3",
+        "review.txt": "3ef82035d715fde8484310d1abf187f9b911d8b80b1c5533960108db1a9ddeb3"
+      },
+      "name": "c3-label_release-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "8ec0e9a32faddd6178d700614d59f454f4b5f0db0bf02088d98baac13020da97"
+    },
+    {
+      "bytes": 3167,
+      "id": 11652572468,
+      "members_sha256": {
+        "label_release_gate.json": "a3d146aad3f914b9c31a70422e69a4088e6a8189d5c5134cd4eff50f3c2ca2e6",
+        "label_release_publication/manifest.json": "75203ed68c695766c7c002f75a926a9f01b048fa9e0b10ebb3c6d7aee36fdd68",
+        "label_release_publication/review.txt": "c59034cb94024520e72a6bba5571c03ecb6a75b22afc62fb0545c80da2e1da90"
+      },
+      "name": "c3-label_release-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "e5003f3e2d226f4d7275db722aedd656eb4d95d86a3bfcf46df276ce2c2999b3"
+    }
+  ],
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "author_reporting_corrections": [
+    "Footprint safety needs ordinary containment including equality; reviewer strictly dominated wording is imprecise. Strict inclusion belongs only to the first-progress theorem.",
+    "The host-aware variant saves four host-r toggles relative to full release when host is in M; off-host extraction/restoration is unchanged. Publication review off-host wording is wrong."
+  ],
+  "certificate": {
+    "bytes": 2074352,
+    "counts": {
+      "first_progress_sources": 1536,
+      "loan_completions": 2570,
+      "loan_masks": 52,
+      "loan_slice_checks": 72746,
+      "rejected_loan_masks": 11,
+      "release_tests": 19584,
+      "sources": 2448
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "25b520a5aa75c3cd70aff66e3a67cfe8f8cc7b3aeea4c6b0081942592d2f3ad8"
+  },
+  "freeze_readback": {
+    "files": 4,
+    "status": "PASS"
+  },
+  "jobs": {
+    "mathematical_review": 114084084192,
+    "publication_audit": 114084345729,
+    "verification": 114083933534
+  },
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "3ef82035d715fde8484310d1abf187f9b911d8b80b1c5533960108db1a9ddeb3",
+    "scientific_commit": "480edcaed3e0139d6528f8cd998c544b4a1b08d8",
+    "status": "PASS",
+    "verified_review_inputs": 17
+  },
+  "review_wording_corrections_change_math_or_code": false,
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 17,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "3ef82035d715fde8484310d1abf187f9b911d8b80b1c5533960108db1a9ddeb3",
+      "tokens": 25337,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 20,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "c59034cb94024520e72a6bba5571c03ecb6a75b22afc62fb0545c80da2e1da90",
+      "tokens": 24878,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 38008863854,
+  "scientific_commit": "480edcaed3e0139d6528f8cd998c544b4a1b08d8",
+  "scope_commit": "fb6ea22bd270bdf008eb8358ce4c98fcf01b3782",
+  "tests": {
+    "inherited_fixed_family": 28,
+    "inherited_footprint": 22,
+    "new_corruption_controls": 19,
+    "new_positive_and_native_controls": 7,
+    "total_passed": 76
+  },
+  "tests_commit": "260ae5543cd08b167fd05f45e7fa3fe7a3364a4b"
+}

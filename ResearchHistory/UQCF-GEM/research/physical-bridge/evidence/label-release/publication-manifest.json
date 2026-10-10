@@ -1,0 +1,37 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_FOOTPRINT_CLOSEOUT.md": "1062ec38dfdfa00305f5366e91fe306a118f81bf112b88a8cecd3a6b87f2bca0",
+    "COUPLED_C3_FOOTPRINT_RESULT.md": "ac8d59b3e50447149c35c09bbef4a467c9ab79fe69cdea6b117b3f39dcbf78ea",
+    "COUPLED_C3_LABEL_RELEASE_RESULT.md": "eb1772ebc101100a71afbdbda35c10753ec6a52410f5c2bc8769b285c22e866a",
+    "COUPLED_C3_LABEL_RELEASE_SCOPE.md": "83ad992c5a401881759bd960cd4c9dba47ee42053870637d526d87f110bf6833",
+    "COUPLED_C3_VISIBLE_RESULT.md": "7bf06c92c6d72b70a467b6a6590ed6ffad890f5f44064032533bcc0f281f6ce9",
+    "COUPLED_C4_SHARED_HOST_RESULT.md": "0157d92f83adec56d74847c10ade774264aaf415f42cc29be34c799c0d14dfd4",
+    "EVIDENCE/certificate.sha256": "7d8e0d23e5c0ec852cc86492a6f41b548446ea97c28cdd05fa61bd263faa6756",
+    "EVIDENCE/contracts.log": "18e2b1396ca5807e0daf650fc0b4475791ef53d495a0166232d30c39946c9537",
+    "EVIDENCE/counts.json": "d97549f2ed05af59202fa71e543bf50adc3c42b8026e822ae232e3a0b868b579",
+    "EVIDENCE/independent.json": "f98cb0012d3ea2af4e5320bbf0ce9e35a04f1716710e5525d594258c9a081f15",
+    "EVIDENCE/inherited_fixed_family.log": "bf7fce1612c35b087b72ff06f09b276da070b2a8435cf1e7c8f01b0216b92c62",
+    "EVIDENCE/inherited_footprint.log": "e698cc6c3a8665e0d8bd2e60ff7aea5c904b3756b51ba92e17e62b1630765eec",
+    "EVIDENCE/provenance.txt": "858109a3f765264a2fbcbad4e10eae980bf679a6bd24d75b3ea0e0f53e4837a1",
+    "MATH_REVIEW/manifest.json": "a5d897c4cfb909a25643ecbd32230b15a93718ed277877e35bdca1ec12f64eb3",
+    "MATH_REVIEW/review.txt": "3ef82035d715fde8484310d1abf187f9b911d8b80b1c5533960108db1a9ddeb3",
+    "PUBLICATION_GATE": "a3d146aad3f914b9c31a70422e69a4088e6a8189d5c5134cd4eff50f3c2ca2e6",
+    "label_release/independent.py": "fb6140207b77406b056408d3abcb1e6007b4c6555e57233007e951aa9cd4dbd3",
+    "label_release/producer.py": "0aa4f563157a4486ed75fc9ec02b6230d9eaafeb5eb175d2ca27cd0813806f83",
+    "label_release/red.log": "56b231838b03fd6b29edb736f6226ab79a4c6d0e68d2510d0463baae24e46b68",
+    "label_release/test_release.py": "ee8a4d1e34179f44bd7914294ea911cab654d52d046dc314679ec38046475e06"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "480edcaed3e0139d6528f8cd998c544b4a1b08d8",
+  "response_sha256": "c59034cb94024520e72a6bba5571c03ecb6a75b22afc62fb0545c80da2e1da90",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 24878,
+  "workflow_commit": "480edcaed3e0139d6528f8cd998c544b4a1b08d8"
+}

@@ -1,0 +1,20 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The exact first-progress criterion correctly identifies that strict footprint nesting is necessary and sufficient for a uniformly safe first toggle in saturated sources, as equal footprints cannot satisfy the strict subset requirement for addition.",
+    "The deletion-only reserve extraction theorem accurately establishes the exact conditions for safely removing all incidences of a label. The inclusion of the upper bound check $\\tau(C^-) \\le 4$ is rigorously justified by the provided 5-root counterexample where slack alone fails to prevent a tau increase.",
+    "The capacity obstruction example successfully demonstrates that strict nesting, while sufficient for first progress, does not guarantee the ability to completely free a label. The global floor requirements across disjoint maximal footprints correctly force all labels to remain active.",
+    "The occupied reserve repair protocol is mathematically sound. It cleverly leverages the universal criterion to prove that an existing label can be temporarily repurposed as a buffer, because its intermediate footprints (e.g., at the host) are strictly dominated by the original host labels' footprints.",
+    "The host-aware reduction correctly optimizes the protocol when the buffer label is already present at the host. By leaving the label at the host and only deleting it off-host, the intermediate states remain protected by the original baseline covers, avoiding unnecessary toggles.",
+    "The correct cover inequality $\\tau(\\text{source}) \\le \\tau(\\text{current})$ is properly applied. The proof correctly maps any hitting set of the current state to a hitting set of the source state of equal or smaller size, ensuring that lower protection is not violated."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem does not cover hidden-label operations, restricted correlated fibers, or original floors that exceed the initial core sizes.",
+    "The protocol relies on the availability of a suitable existing label with a known footprint and does not derive general exact-target connectivity for arbitrary sources lacking such a label.",
+    "The results establish uniform safety and exact syntactic endpoints but do not imply physical progress, outcome selection, or native observer genesis."
+  ]
+}
+```

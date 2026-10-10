@@ -1,0 +1,369 @@
+﻿2026-10-10T00:23:53.0594982Z Current runner version: '2.337.0'
+2026-10-10T00:23:53.0610307Z ##[group]Runner Image Provisioner
+2026-10-10T00:23:53.0610940Z Hosted Compute Agent
+2026-10-10T00:23:53.0611365Z Version: 20261002.596
+2026-10-10T00:23:53.0611722Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-10T00:23:53.0612189Z Build Date: 2026-10-02T22:28:27Z
+2026-10-10T00:23:53.0612598Z Worker ID: {e13a9dd2-300f-41df-a879-35b3aba86b61}
+2026-10-10T00:23:53.0612999Z Region: westus3
+2026-10-10T00:23:53.0613350Z Cloud: Azure
+2026-10-10T00:23:53.0613660Z ##[endgroup]
+2026-10-10T00:23:53.0614566Z ##[group]Operating System
+2026-10-10T00:23:53.0615052Z Ubuntu
+2026-10-10T00:23:53.0615472Z 24.04.5
+2026-10-10T00:23:53.0615956Z LTS
+2026-10-10T00:23:53.0616365Z ##[endgroup]
+2026-10-10T00:23:53.0616891Z ##[group]Runner Image
+2026-10-10T00:23:53.0617328Z Image: ubuntu-24.04
+2026-10-10T00:23:53.0617658Z Version: 20261004.327.1
+2026-10-10T00:23:53.0618437Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-10T00:23:53.0619306Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-10T00:23:53.0619887Z ##[endgroup]
+2026-10-10T00:23:53.0620508Z ##[group]GITHUB_TOKEN Permissions
+2026-10-10T00:23:53.0622159Z Contents: read
+2026-10-10T00:23:53.0622523Z Metadata: read
+2026-10-10T00:23:53.0622874Z ##[endgroup]
+2026-10-10T00:23:53.0624121Z Secret source: Actions
+2026-10-10T00:23:53.0624879Z Cache mode: write
+2026-10-10T00:23:53.0625419Z Prepare workflow directory
+2026-10-10T00:23:53.0820717Z Prepare all required actions
+2026-10-10T00:23:53.0851981Z Getting action download info
+2026-10-10T00:23:53.3763441Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-10T00:23:53.4639975Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-10T00:23:53.6811441Z Complete job name: verification
+2026-10-10T00:23:53.7236235Z ##[group]Run actions/checkout@v4
+2026-10-10T00:23:53.7236659Z with:
+2026-10-10T00:23:53.7236893Z   path: research_snapshot
+2026-10-10T00:23:53.7237165Z   persist-credentials: false
+2026-10-10T00:23:53.7237631Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+.github/scripts
+
+2026-10-10T00:23:53.7238101Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-10T00:23:53.7240058Z   token: ***
+2026-10-10T00:23:53.7240286Z   ssh-strict: true
+2026-10-10T00:23:53.7240522Z   ssh-user: git
+2026-10-10T00:23:53.7240749Z   clean: true
+2026-10-10T00:23:53.7240987Z   sparse-checkout-cone-mode: true
+2026-10-10T00:23:53.7241261Z   fetch-depth: 1
+2026-10-10T00:23:53.7241493Z   fetch-tags: false
+2026-10-10T00:23:53.7241732Z   show-progress: true
+2026-10-10T00:23:53.7241972Z   lfs: false
+2026-10-10T00:23:53.7242198Z   submodules: false
+2026-10-10T00:23:53.7242440Z   set-safe-directory: true
+2026-10-10T00:23:53.7242710Z   allow-unsafe-pr-checkout: false
+2026-10-10T00:23:53.7243071Z ##[endgroup]
+2026-10-10T00:23:53.7851737Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-10T00:23:53.7852996Z ##[group]Getting Git version info
+2026-10-10T00:23:53.7853431Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+2026-10-10T00:23:53.7854044Z [command]/usr/bin/git version
+2026-10-10T00:23:53.7939376Z git version 2.55.0
+2026-10-10T00:23:53.7951510Z ##[endgroup]
+2026-10-10T00:23:53.7961918Z Temporarily overriding HOME='/home/runner/work/_temp/0b93631c-9453-42a6-854c-db54bd7dcf16' before making global git config changes
+2026-10-10T00:23:53.7963189Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-10T00:23:53.7965375Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+2026-10-10T00:23:53.8009159Z ##[group]Initializing the repository
+2026-10-10T00:23:53.8014027Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+2026-10-10T00:23:53.8116128Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-10T00:23:53.8117313Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-10T00:23:53.8118477Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-10T00:23:53.8119111Z hint: call:
+2026-10-10T00:23:53.8119441Z hint:
+2026-10-10T00:23:53.8119914Z hint: 	git config --global init.defaultBranch <name>
+2026-10-10T00:23:53.8120435Z hint:
+2026-10-10T00:23:53.8120936Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-10T00:23:53.8121742Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-10T00:23:53.8122362Z hint:
+2026-10-10T00:23:53.8122693Z hint: 	git branch -m <name>
+2026-10-10T00:23:53.8123085Z hint:
+2026-10-10T00:23:53.8123608Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-10T00:23:53.8124893Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+2026-10-10T00:23:53.8128817Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-10T00:23:53.8179793Z ##[endgroup]
+2026-10-10T00:23:53.8180613Z ##[group]Disabling automatic garbage collection
+2026-10-10T00:23:53.8181765Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-10T00:23:53.8209343Z ##[endgroup]
+2026-10-10T00:23:53.8210095Z ##[group]Setting up auth
+2026-10-10T00:23:53.8213216Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-10T00:23:53.8239428Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-10T00:23:53.8530331Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-10T00:23:53.8558628Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-10T00:23:53.8726724Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-10T00:23:53.8751807Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-10T00:23:53.8915368Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-10T00:23:53.8947330Z ##[endgroup]
+2026-10-10T00:23:53.8947968Z ##[group]Fetching the repository
+2026-10-10T00:23:53.8954317Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin +480edcaed3e0139d6528f8cd998c544b4a1b08d8:refs/remotes/origin/research/uqcf-overlapping-guard-exchange
+2026-10-10T00:23:54.5343499Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-10T00:23:54.5345153Z  * [new ref]         480edcaed3e0139d6528f8cd998c544b4a1b08d8 -> origin/research/uqcf-overlapping-guard-exchange
+2026-10-10T00:23:54.5347700Z ##[endgroup]
+2026-10-10T00:23:54.5348518Z ##[group]Determining the checkout info
+2026-10-10T00:23:54.5349882Z ##[endgroup]
+2026-10-10T00:23:54.5350754Z ##[group]Setting up sparse checkout
+2026-10-10T00:23:54.5354305Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge .github/scripts
+2026-10-10T00:23:54.5394427Z ##[endgroup]
+2026-10-10T00:23:54.5395619Z ##[group]Checking out the ref
+2026-10-10T00:23:54.5398174Z [command]/usr/bin/git checkout --progress --force -B research/uqcf-overlapping-guard-exchange refs/remotes/origin/research/uqcf-overlapping-guard-exchange
+2026-10-10T00:23:55.7354944Z Updating files:   0% (1/773)
+2026-10-10T00:23:55.7356691Z Updating files:   1% (8/773)
+2026-10-10T00:23:55.7360033Z Updating files:   2% (16/773)
+2026-10-10T00:23:55.7362692Z Updating files:   3% (24/773)
+2026-10-10T00:23:55.7365358Z Updating files:   4% (31/773)
+2026-10-10T00:23:55.7368753Z Updating files:   5% (39/773)
+2026-10-10T00:23:55.7372312Z Updating files:   6% (47/773)
+2026-10-10T00:23:55.7375918Z Updating files:   7% (55/773)
+2026-10-10T00:23:55.7379609Z Updating files:   8% (62/773)
+2026-10-10T00:23:55.7382470Z Updating files:   9% (70/773)
+2026-10-10T00:23:55.7385459Z Updating files:  10% (78/773)
+2026-10-10T00:23:55.7387993Z Updating files:  11% (86/773)
+2026-10-10T00:23:55.7393259Z Updating files:  12% (93/773)
+2026-10-10T00:23:55.7396666Z Updating files:  13% (101/773)
+2026-10-10T00:23:55.7399186Z Updating files:  14% (109/773)
+2026-10-10T00:23:55.7402236Z Updating files:  15% (116/773)
+2026-10-10T00:23:55.7406011Z Updating files:  16% (124/773)
+2026-10-10T00:23:55.7410311Z Updating files:  17% (132/773)
+2026-10-10T00:23:55.7413375Z Updating files:  18% (140/773)
+2026-10-10T00:23:55.7416698Z Updating files:  19% (147/773)
+2026-10-10T00:23:55.7419376Z Updating files:  20% (155/773)
+2026-10-10T00:23:55.7422746Z Updating files:  21% (163/773)
+2026-10-10T00:23:55.7425635Z Updating files:  22% (171/773)
+2026-10-10T00:23:55.7433820Z Updating files:  23% (178/773)
+2026-10-10T00:23:55.7434425Z Updating files:  24% (186/773)
+2026-10-10T00:23:55.7437102Z Updating files:  25% (194/773)
+2026-10-10T00:23:55.7440509Z Updating files:  26% (201/773)
+2026-10-10T00:23:55.7444286Z Updating files:  27% (209/773)
+2026-10-10T00:23:55.7447490Z Updating files:  28% (217/773)
+2026-10-10T00:23:55.7450624Z Updating files:  29% (225/773)
+2026-10-10T00:23:55.7454522Z Updating files:  30% (232/773)
+2026-10-10T00:23:55.7458502Z Updating files:  31% (240/773)
+2026-10-10T00:23:55.7461890Z Updating files:  32% (248/773)
+2026-10-10T00:23:55.7465009Z Updating files:  33% (256/773)
+2026-10-10T00:23:55.7470114Z Updating files:  34% (263/773)
+2026-10-10T00:23:55.7473111Z Updating files:  35% (271/773)
+2026-10-10T00:23:55.7476344Z Updating files:  36% (279/773)
+2026-10-10T00:23:55.7479523Z Updating files:  37% (287/773)
+2026-10-10T00:23:55.7483307Z Updating files:  38% (294/773)
+2026-10-10T00:23:55.7486993Z Updating files:  39% (302/773)
+2026-10-10T00:23:55.7490308Z Updating files:  40% (310/773)
+2026-10-10T00:23:55.7495119Z Updating files:  41% (317/773)
+2026-10-10T00:23:55.7499571Z Updating files:  42% (325/773)
+2026-10-10T00:23:55.7505550Z Updating files:  43% (333/773)
+2026-10-10T00:23:55.7508538Z Updating files:  44% (341/773)
+2026-10-10T00:23:55.7516115Z Updating files:  45% (348/773)
+2026-10-10T00:23:55.7518502Z Updating files:  46% (356/773)
+2026-10-10T00:23:55.7521025Z Updating files:  47% (364/773)
+2026-10-10T00:23:55.7523487Z Updating files:  48% (372/773)
+2026-10-10T00:23:55.7530031Z Updating files:  49% (379/773)
+2026-10-10T00:23:55.7535048Z Updating files:  50% (387/773)
+2026-10-10T00:23:55.7537313Z Updating files:  51% (395/773)
+2026-10-10T00:23:55.7545343Z Updating files:  52% (402/773)
+2026-10-10T00:23:55.7553188Z Updating files:  53% (410/773)
+2026-10-10T00:23:55.7557462Z Updating files:  54% (418/773)
+2026-10-10T00:23:55.7561304Z Updating files:  55% (426/773)
+2026-10-10T00:23:55.7565376Z Updating files:  56% (433/773)
+2026-10-10T00:23:55.7570747Z Updating files:  57% (441/773)
+2026-10-10T00:23:55.7576130Z Updating files:  58% (449/773)
+2026-10-10T00:23:55.7579275Z Updating files:  59% (457/773)
+2026-10-10T00:23:55.7583275Z Updating files:  60% (464/773)
+2026-10-10T00:23:55.7605756Z Updating files:  61% (472/773)
+2026-10-10T00:23:55.7608012Z Updating files:  62% (480/773)
+2026-10-10T00:23:55.7610893Z Updating files:  63% (487/773)
+2026-10-10T00:23:55.7616168Z Updating files:  64% (495/773)
+2026-10-10T00:23:55.7618825Z Updating files:  65% (503/773)
+2026-10-10T00:23:55.7623153Z Updating files:  66% (511/773)
+2026-10-10T00:23:55.7626433Z Updating files:  67% (518/773)
+2026-10-10T00:23:55.7628998Z Updating files:  68% (526/773)
+2026-10-10T00:23:55.7634489Z Updating files:  69% (534/773)
+2026-10-10T00:23:55.7640307Z Updating files:  70% (542/773)
+2026-10-10T00:23:55.7645127Z Updating files:  71% (549/773)
+2026-10-10T00:23:55.7649106Z Updating files:  72% (557/773)
+2026-10-10T00:23:55.7652627Z Updating files:  73% (565/773)
+2026-10-10T00:23:55.7656338Z Updating files:  74% (573/773)
+2026-10-10T00:23:55.7662742Z Updating files:  75% (580/773)
+2026-10-10T00:23:55.7665770Z Updating files:  76% (588/773)
+2026-10-10T00:23:55.7668925Z Updating files:  77% (596/773)
+2026-10-10T00:23:55.7674484Z Updating files:  78% (603/773)
+2026-10-10T00:23:55.7676984Z Updating files:  79% (611/773)
+2026-10-10T00:23:55.7683284Z Updating files:  80% (619/773)
+2026-10-10T00:23:55.7685431Z Updating files:  81% (627/773)
+2026-10-10T00:23:55.7687715Z Updating files:  82% (634/773)
+2026-10-10T00:23:55.7692432Z Updating files:  83% (642/773)
+2026-10-10T00:23:55.7713336Z Updating files:  84% (650/773)
+2026-10-10T00:23:55.7715529Z Updating files:  85% (658/773)
+2026-10-10T00:23:55.7717700Z Updating files:  86% (665/773)
+2026-10-10T00:23:55.7732732Z Updating files:  87% (673/773)
+2026-10-10T00:23:55.7736801Z Updating files:  88% (681/773)
+2026-10-10T00:23:55.7739713Z Updating files:  89% (688/773)
+2026-10-10T00:23:55.7743042Z Updating files:  90% (696/773)
+2026-10-10T00:23:55.7746015Z Updating files:  91% (704/773)
+2026-10-10T00:23:55.7748821Z Updating files:  92% (712/773)
+2026-10-10T00:23:55.7751233Z Updating files:  93% (719/773)
+2026-10-10T00:23:55.7756951Z Updating files:  94% (727/773)
+2026-10-10T00:23:55.7760267Z Updating files:  95% (735/773)
+2026-10-10T00:23:55.7763818Z Updating files:  96% (743/773)
+2026-10-10T00:23:55.7767065Z Updating files:  97% (750/773)
+2026-10-10T00:23:55.7770260Z Updating files:  98% (758/773)
+2026-10-10T00:23:55.7773523Z Updating files:  99% (766/773)
+2026-10-10T00:23:55.7773880Z Updating files: 100% (773/773)
+2026-10-10T00:23:55.7774326Z Updating files: 100% (773/773), done.
+2026-10-10T00:23:55.7846324Z Switched to a new branch 'research/uqcf-overlapping-guard-exchange'
+2026-10-10T00:23:55.7851836Z branch 'research/uqcf-overlapping-guard-exchange' set up to track 'origin/research/uqcf-overlapping-guard-exchange'.
+2026-10-10T00:23:55.7860961Z ##[endgroup]
+2026-10-10T00:23:55.7902529Z [command]/usr/bin/git log -1 --format=%H
+2026-10-10T00:23:55.7925746Z 480edcaed3e0139d6528f8cd998c544b4a1b08d8
+2026-10-10T00:23:55.7932492Z ##[group]Removing auth
+2026-10-10T00:23:55.7935143Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-10T00:23:55.7960443Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-10T00:23:55.8141898Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-10T00:23:55.8166113Z http.https://github.com/.extraheader
+2026-10-10T00:23:55.8171924Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-10T00:23:55.8200112Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-10T00:23:55.8376458Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-10T00:23:55.8401968Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-10T00:23:55.8578960Z ##[endgroup]
+2026-10-10T00:23:55.8730309Z ##[group]Run set -euo pipefail
+2026-10-10T00:23:55.8730660Z [36;1mset -euo pipefail[0m
+2026-10-10T00:23:55.8730915Z [36;1mmkdir label_release_verification[0m
+2026-10-10T00:23:55.8731268Z [36;1mROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge[0m
+2026-10-10T00:23:55.8731766Z [36;1mpython3 -m unittest discover -s "$ROOT/label_release" -p test_release.py -v 2>&1 | tee label_release_verification/contracts.log[0m
+2026-10-10T00:23:55.8732336Z [36;1mpython3 "$ROOT/label_release/producer.py" label_release_verification/certificate.json | tee label_release_verification/counts.json[0m
+2026-10-10T00:23:55.8732798Z [36;1mpython3 "$ROOT/label_release/producer.py" /tmp/repeated.json[0m
+2026-10-10T00:23:55.8733298Z [36;1mcmp label_release_verification/certificate.json /tmp/repeated.json[0m
+2026-10-10T00:23:55.8733799Z [36;1mpython3 "$ROOT/label_release/independent.py" label_release_verification/certificate.json | tee label_release_verification/independent.json[0m
+2026-10-10T00:23:55.8734522Z [36;1mpython3 -m unittest discover -s "$ROOT/footprint" -p test_footprint.py -v 2>&1 | tee label_release_verification/inherited_footprint.log[0m
+2026-10-10T00:23:55.8735089Z [36;1mpython3 -m unittest discover -s "$ROOT/fixed_family" -p test_fixed_family.py -v 2>&1 | tee label_release_verification/inherited_fixed_family.log[0m
+2026-10-10T00:23:55.8735628Z [36;1mecho "scientific_sha=$(git -C research_snapshot rev-parse HEAD)" > label_release_verification/provenance.txt[0m
+2026-10-10T00:23:55.8736062Z [36;1mecho "workflow_sha=$GITHUB_SHA" >> label_release_verification/provenance.txt[0m
+2026-10-10T00:23:55.8736490Z [36;1msha256sum label_release_verification/certificate.json > label_release_verification/certificate.sha256[0m
+2026-10-10T00:23:55.8956149Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-10T00:23:55.8956454Z ##[endgroup]
+2026-10-10T00:23:58.1156970Z test_first_progress_equivalence (test_release.Contracts.test_first_progress_equivalence) ... ok
+2026-10-10T00:24:03.5261381Z test_full_independent_reconstruction (test_release.Contracts.test_full_independent_reconstruction) ... ok
+2026-10-10T00:24:03.5262231Z test_host_only_endpoint_cost (test_release.Contracts.test_host_only_endpoint_cost) ... ok
+2026-10-10T00:24:03.5277184Z test_loan_renewal (test_release.Contracts.test_loan_renewal) ... ok
+2026-10-10T00:24:03.5277679Z test_native_capacity_obstruction (test_release.Contracts.test_native_capacity_obstruction) ... ok
+2026-10-10T00:24:03.5278187Z test_native_upper_control (test_release.Contracts.test_native_upper_control) ... ok
+2026-10-10T00:24:03.7017768Z test_reject_bad_mask (test_release.Contracts.test_reject_bad_mask) ... ok
+2026-10-10T00:24:03.8697449Z test_reject_capacity (test_release.Contracts.test_reject_capacity) ... ok
+2026-10-10T00:24:04.3684101Z test_reject_extra (test_release.Contracts.test_reject_extra) ... ok
+2026-10-10T00:24:04.5381091Z test_reject_first_toggles (test_release.Contracts.test_reject_first_toggles) ... ok
+2026-10-10T00:24:05.0493679Z test_reject_loan_cost (test_release.Contracts.test_reject_loan_cost) ... ok
+2026-10-10T00:24:05.2202557Z test_reject_loan_mask (test_release.Contracts.test_reject_loan_mask) ... ok
+2026-10-10T00:24:05.7563787Z test_reject_loan_slice (test_release.Contracts.test_reject_loan_slice) ... ok
+2026-10-10T00:24:05.9265530Z test_reject_loan_tau (test_release.Contracts.test_reject_loan_tau) ... ok
+2026-10-10T00:24:06.0975880Z test_reject_missing_loan (test_release.Contracts.test_reject_missing_loan) ... ok
+2026-10-10T00:24:06.6306438Z test_reject_missing_mask (test_release.Contracts.test_reject_missing_mask) ... ok
+2026-10-10T00:24:06.8056530Z test_reject_missing_source (test_release.Contracts.test_reject_missing_source) ... ok
+2026-10-10T00:24:07.3473068Z test_reject_provenance (test_release.Contracts.test_reject_provenance) ... ok
+2026-10-10T00:24:07.5242557Z test_reject_release_value (test_release.Contracts.test_reject_release_value) ... ok
+2026-10-10T00:24:07.6959095Z test_reject_release_witness (test_release.Contracts.test_reject_release_witness) ... ok
+2026-10-10T00:24:08.2224528Z test_reject_source_core (test_release.Contracts.test_reject_source_core) ... ok
+2026-10-10T00:24:08.4027829Z test_reject_source_tau (test_release.Contracts.test_reject_source_tau) ... ok
+2026-10-10T00:24:08.5807905Z test_reject_strict_pair (test_release.Contracts.test_reject_strict_pair) ... ok
+2026-10-10T00:24:09.0856477Z test_reject_type (test_release.Contracts.test_reject_type) ... ok
+2026-10-10T00:24:09.2573203Z test_reject_upper (test_release.Contracts.test_reject_upper) ... ok
+2026-10-10T00:24:09.2607596Z test_release_criterion (test_release.Contracts.test_release_criterion) ... ok
+2026-10-10T00:24:09.2608251Z 
+2026-10-10T00:24:09.2608374Z ----------------------------------------------------------------------
+2026-10-10T00:24:09.2608751Z Ran 26 tests in 13.294s
+2026-10-10T00:24:09.2608945Z 
+2026-10-10T00:24:09.2609020Z OK
+2026-10-10T00:24:12.5498726Z {"first_progress_sources": 1536, "loan_completions": 2570, "loan_masks": 52, "loan_slice_checks": 72746, "rejected_loan_masks": 11, "release_tests": 19584, "sources": 2448}
+2026-10-10T00:24:14.8143729Z {"first_progress_sources": 1536, "loan_completions": 2570, "loan_masks": 52, "loan_slice_checks": 72746, "rejected_loan_masks": 11, "release_tests": 19584, "sources": 2448}
+2026-10-10T00:24:20.3825991Z {"status": "PASS", "method": "complete independent set/representative-union reconstruction"}
+2026-10-10T00:24:22.4640819Z test_complete_independent_reconstruction (test_footprint.Contracts.test_complete_independent_reconstruction) ... ok
+2026-10-10T00:24:22.4641536Z test_cross_role_hidden_witness (test_footprint.Contracts.test_cross_role_hidden_witness) ... ok
+2026-10-10T00:24:22.4642104Z test_declared_universe (test_footprint.Contracts.test_declared_universe) ... ok
+2026-10-10T00:24:22.4642596Z test_premature_deletion (test_footprint.Contracts.test_premature_deletion) ... ok
+2026-10-10T00:24:22.5930784Z test_reject_boolean_type (test_footprint.Contracts.test_reject_boolean_type) ... ok
+2026-10-10T00:24:22.6406360Z test_reject_classification (test_footprint.Contracts.test_reject_classification) ... ok
+2026-10-10T00:24:22.6837105Z test_reject_conditions (test_footprint.Contracts.test_reject_conditions) ... ok
+2026-10-10T00:24:22.8151280Z test_reject_deadlock (test_footprint.Contracts.test_reject_deadlock) ... ok
+2026-10-10T00:24:22.8560470Z test_reject_duplicate_row (test_footprint.Contracts.test_reject_duplicate_row) ... ok
+2026-10-10T00:24:22.8965317Z test_reject_floor (test_footprint.Contracts.test_reject_floor) ... ok
+2026-10-10T00:24:23.0147356Z test_reject_missing_fixture (test_footprint.Contracts.test_reject_missing_fixture) ... ok
+2026-10-10T00:24:23.0546381Z test_reject_missing_row (test_footprint.Contracts.test_reject_missing_row) ... ok
+2026-10-10T00:24:23.0959310Z test_reject_path (test_footprint.Contracts.test_reject_path) ... ok
+2026-10-10T00:24:23.2147097Z test_reject_protected_mask (test_footprint.Contracts.test_reject_protected_mask) ... ok
+2026-10-10T00:24:23.2545674Z test_reject_provenance (test_footprint.Contracts.test_reject_provenance) ... ok
+2026-10-10T00:24:23.3841623Z test_reject_source_core (test_footprint.Contracts.test_reject_source_core) ... ok
+2026-10-10T00:24:23.4261801Z test_reject_tau (test_footprint.Contracts.test_reject_tau) ... ok
+2026-10-10T00:24:23.4672096Z test_reject_unknown_field (test_footprint.Contracts.test_reject_unknown_field) ... ok
+2026-10-10T00:24:23.5949985Z test_reject_upper (test_footprint.Contracts.test_reject_upper) ... ok
+2026-10-10T00:24:23.6361073Z test_reject_violations (test_footprint.Contracts.test_reject_violations) ... ok
+2026-10-10T00:24:23.6361494Z test_sharp_exchange (test_footprint.Contracts.test_sharp_exchange) ... ok
+2026-10-10T00:24:23.6361935Z test_upper_control (test_footprint.Contracts.test_upper_control) ... ok
+2026-10-10T00:24:23.6362105Z 
+2026-10-10T00:24:23.6362200Z ----------------------------------------------------------------------
+2026-10-10T00:24:23.6362388Z Ran 22 tests in 2.285s
+2026-10-10T00:24:23.6362796Z 
+2026-10-10T00:24:23.6362847Z OK
+2026-10-10T00:24:24.0101469Z test_all_categories (test_fixed_family.Contracts.test_all_categories) ... ok
+2026-10-10T00:24:24.2667900Z test_category (test_fixed_family.Contracts.test_category) ... ok
+2026-10-10T00:24:24.3507692Z test_complement_tau (test_fixed_family.Contracts.test_complement_tau) ... ok
+2026-10-10T00:24:24.3721459Z test_complete (test_fixed_family.Contracts.test_complete) ... ok
+2026-10-10T00:24:24.4596682Z test_core_intersection (test_fixed_family.Contracts.test_core_intersection) ... ok
+2026-10-10T00:24:24.5425699Z test_duplicate_completion (test_fixed_family.Contracts.test_duplicate_completion) ... ok
+2026-10-10T00:24:24.6323053Z test_duplicate_state (test_fixed_family.Contracts.test_duplicate_state) ... ok
+2026-10-10T00:24:24.7141997Z test_false_floor_extension (test_fixed_family.Contracts.test_false_floor_extension) ... ok
+2026-10-10T00:24:24.8009286Z test_false_hidden_control (test_fixed_family.Contracts.test_false_hidden_control) ... ok
+2026-10-10T00:24:24.8815355Z test_false_native_access (test_fixed_family.Contracts.test_false_native_access) ... ok
+2026-10-10T00:24:24.9684632Z test_false_retarget (test_fixed_family.Contracts.test_false_retarget) ... ok
+2026-10-10T00:24:25.0602987Z test_floor (test_fixed_family.Contracts.test_floor) ... ok
+2026-10-10T00:24:25.0656187Z test_full_partition (test_fixed_family.Contracts.test_full_partition) ... ok
+2026-10-10T00:24:25.1486137Z test_missing_completion (test_fixed_family.Contracts.test_missing_completion) ... ok
+2026-10-10T00:24:25.2371225Z test_missing_false_member (test_fixed_family.Contracts.test_missing_false_member) ... ok
+2026-10-10T00:24:25.3193662Z test_missing_fiber (test_fixed_family.Contracts.test_missing_fiber) ... ok
+2026-10-10T00:24:25.4080347Z test_missing_state (test_fixed_family.Contracts.test_missing_state) ... ok
+2026-10-10T00:24:25.4877193Z test_preparation (test_fixed_family.Contracts.test_preparation) ... ok
+2026-10-10T00:24:25.5675272Z test_protected (test_fixed_family.Contracts.test_protected) ... ok
+2026-10-10T00:24:25.6531994Z test_scope (test_fixed_family.Contracts.test_scope) ... ok
+2026-10-10T00:24:25.6541353Z test_sharp_preparation (test_fixed_family.Contracts.test_sharp_preparation) ... ok
+2026-10-10T00:24:25.7386709Z test_state (test_fixed_family.Contracts.test_state) ... ok
+2026-10-10T00:24:25.8270232Z test_substitute_fiber (test_fixed_family.Contracts.test_substitute_fiber) ... ok
+2026-10-10T00:24:25.9091882Z test_substituted_truth (test_fixed_family.Contracts.test_substituted_truth) ... ok
+2026-10-10T00:24:25.9959707Z test_tau (test_fixed_family.Contracts.test_tau) ... ok
+2026-10-10T00:24:26.0758518Z test_type (test_fixed_family.Contracts.test_type) ... ok
+2026-10-10T00:24:26.1565813Z test_witness_protected (test_fixed_family.Contracts.test_witness_protected) ... ok
+2026-10-10T00:24:26.2423402Z test_witness_tau (test_fixed_family.Contracts.test_witness_tau) ... ok
+2026-10-10T00:24:26.2423649Z 
+2026-10-10T00:24:26.2423777Z ----------------------------------------------------------------------
+2026-10-10T00:24:26.2434754Z Ran 28 tests in 2.383s
+2026-10-10T00:24:26.2434871Z 
+2026-10-10T00:24:26.2434939Z OK
+2026-10-10T00:24:26.2706354Z ##[group]Run actions/upload-artifact@v4
+2026-10-10T00:24:26.2706507Z with:
+2026-10-10T00:24:26.2706625Z   name: c3-label_release-verification
+2026-10-10T00:24:26.2706773Z   path: label_release_verification/
+2026-10-10T00:24:26.2706920Z   if-no-files-found: warn
+2026-10-10T00:24:26.2707041Z   compression-level: 6
+2026-10-10T00:24:26.2707157Z   overwrite: false
+2026-10-10T00:24:26.2707272Z   include-hidden-files: false
+2026-10-10T00:24:26.2707402Z ##[endgroup]
+2026-10-10T00:24:26.3762574Z (node:2213) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-10T00:24:26.3763127Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-10T00:24:26.3809338Z With the provided path, there will be 8 files uploaded
+2026-10-10T00:24:26.3813974Z Artifact name is valid!
+2026-10-10T00:24:26.3814448Z Root directory input is valid!
+2026-10-10T00:24:26.7429080Z Beginning upload of artifact content to blob storage
+2026-10-10T00:24:26.7792481Z (node:2213) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-10T00:24:27.1149374Z Uploaded bytes 110814
+2026-10-10T00:24:27.1715709Z Finished uploading artifact content to blob storage!
+2026-10-10T00:24:27.1716174Z SHA256 digest of uploaded artifact zip is 529f7d79965ef8bd680db3bca2a224762b9e3cb06d7d7b368d4e3d0e8c949eac
+2026-10-10T00:24:27.1726779Z Finalizing artifact upload
+2026-10-10T00:24:27.4116858Z Artifact c3-label_release-verification.zip successfully finalized. Artifact ID 11652975650
+2026-10-10T00:24:27.4117504Z Artifact c3-label_release-verification has been successfully uploaded! Final size is 110814 bytes. Artifact ID is 11652975650
+2026-10-10T00:24:27.4121797Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38008863854/artifacts/11652975650
+2026-10-10T00:24:27.4277681Z Post job cleanup.
+2026-10-10T00:24:27.4833284Z [command]/usr/bin/git version
+2026-10-10T00:24:27.4865863Z git version 2.55.0
+2026-10-10T00:24:27.4892072Z Temporarily overriding HOME='/home/runner/work/_temp/f72e386f-7598-4739-bce6-1d717d145d05' before making global git config changes
+2026-10-10T00:24:27.4892647Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-10T00:24:27.4895996Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+2026-10-10T00:24:27.4925728Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-10T00:24:27.4952472Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-10T00:24:27.5154086Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-10T00:24:27.5181475Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-10T00:24:27.5379154Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-10T00:24:27.5409410Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-10T00:24:27.5692643Z Cleaning up orphan processes
+2026-10-10T00:24:27.5880353Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
