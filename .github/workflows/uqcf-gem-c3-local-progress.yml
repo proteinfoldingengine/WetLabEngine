@@ -1,0 +1,72 @@
+name: UQCF-GEM local progress and inaccessible reserve verification
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/local_progress/*.py'
+      - '.github/workflows/uqcf-gem-c3-local-progress.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - name: Exact new and inherited reconstruction
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir evidence
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT/local_progress" -p test_progress.py -v 2>&1 | tee evidence/contracts.log
+          python3 "$ROOT/local_progress/producer.py" evidence/certificate.json | tee evidence/counts.json
+          python3 "$ROOT/local_progress/independent.py" evidence/certificate.json | tee evidence/independent.json
+          python3 -m unittest discover -s "$ROOT/capacity_gap" -p test_capacity.py -v 2>&1 | tee evidence/inherited_capacity.log
+          python3 -m unittest discover -s "$ROOT/saturated_transfer" -p test_transfer.py -v 2>&1 | tee evidence/inherited_transfer.log
+          python3 -m unittest discover -s "$ROOT/label_release" -p test_release.py -v 2>&1 | tee evidence/inherited_release.log
+          python3 -m unittest discover -s "$ROOT/footprint" -p test_footprint.py -v 2>&1 | tee evidence/inherited_footprint.log
+          python3 -m unittest discover -s "$ROOT/fixed_family" -p test_fixed_family.py -v 2>&1 | tee evidence/inherited_fixed.log
+          python3 "$ROOT/local_progress/producer.py" /tmp/repeated.json
+          cmp /tmp/repeated.json evidence/certificate.json
+          echo "scientific_sha=$(git -C research_snapshot rev-parse HEAD)" > evidence/provenance.txt
+          echo "workflow_sha=$GITHUB_SHA" >> evidence/provenance.txt
+          sha256sum evidence/certificate.json > evidence/certificate.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-local-progress-verification
+          path: evidence/
+  fresh-reproduction:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-local-progress-verification
+          path: evidence
+      - name: Fresh reconstruction and source identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/local_progress/producer.py" /tmp/fresh.json
+          cmp /tmp/fresh.json evidence/certificate.json
+          python3 "$ROOT/local_progress/independent.py" /tmp/fresh.json | tee evidence/fresh_independent.json
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-local-progress-fresh-reproduction
+          path: evidence/
