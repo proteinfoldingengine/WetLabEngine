@@ -1,0 +1,37 @@
+# Maximal-footprint handover graph: exact safe connectivity reduction
+
+Date: 2026-10-10 UTC. Status: OPEN analytical checkpoint; prospective theorem/scope freeze before new execution. Integrated parent: 47ebf4a717f4a9eadc7d51567b27e42bfb1e1d73. Previous anchored-release external review is in progress; this does not close that review.
+
+## Objects
+Finite nonempty original core C on n labelled roots; palette P consists of its N active labels. Fixed positive original floors f_i <= |C_i|, and 3 <= tau(C) <= 4. All original protected hidden completions are fixed, with disjoint hidden labels. Core-only single incidence toggles, supplied core access and actual committed changes. Use the inherited exact universal-safety criterion: a current core is safe for ALL original completions iff it meets the original core floors, has tau <= 4, and every current label footprint is contained in an original footprint. No source-fiber reset.
+
+Let M be the inclusion-maximal original nonempty footprints. An assignment vertex v gives EACH actual labelled palette element either a member of M or the empty footprint 0. Its induced root supports must meet all original floors and admit a cover by at most four actual labels. The inherited criterion makes every vertex universally safe.
+
+Distinct vertices are adjacent iff they differ in exactly one label x and their meet core B, obtained by replacing that coordinate by v_x intersection w_x while keeping every other coordinate fixed, meets the floors and has tau <= 4. Domination follows automatically: the intersection lies inside both original maximal footprints (or is empty). Do not substitute pairwise overlap alone for this gate.
+
+## Theorem 1: exact quotient connectivity
+For ANY two safe cores S,T dominated by C, retain their empty label footprints and independently expand every nonempty footprint to any containing member of M. Call the resulting vertices v(S),v(T). S and T are connected by safe single core toggles iff v(S),v(T) are connected in the handover graph. The answer does not depend on the containing-maximal choices.
+
+Expansion lemma: add incidences inside the chosen original maximal containers. Every intermediate core contains S, so its original floor satisfaction and at-most-four cover persist. All footprints stay originally dominated. All original hidden completions therefore remain safe. Empty footprints are retained, not filled.
+
+Choice lemma: two expansions of S can be joined by changing one coordinate at a time. For a differing label, the intersection of the two containers contains its footprint in S; all other expanded footprints contain their footprints in S. The meet thus contains S and satisfies floors and upper cover. This gives graph edges; arbitrary choices are equivalent.
+
+Forward compression: for a safe incidence addition S->T, the changed nonempty footprint in T contains that in S. If both are nonempty, choose the SAME maximal container of the larger footprint, and identical containers for every unchanged label. Their expansions coincide. If S_x is empty and T_x is a singleton, the expansions differ only at x, from 0 to a container; their meet is the expanded S and is safe. A deletion is the reversed argument. Apply the choice lemma between successive choices along any finite safe path. The compressed walk is exact; no conclusion is drawn from a lone safe endpoint.
+
+Reverse lifting: for an edge v->w changing x from A to D, delete x on A minus D, reaching the meet B, then add x on D minus A. During the deletion stage each current core contains B and x remains a subset of A; during additions it contains B and x remains a subset of D. Floors and an at-most-four cover of B survive, and original domination survives throughout. Every toggle is safe for ALL original hidden completions. Edge cost is |A symmetric-difference D|. Expand S to v(S), lift the graph walk and reverse the expansion of T to reach EXACTLY T. This is a constructive labelled path, not an unlabelled equivalence.
+
+## Corollary 2: exact first-reserve availability
+Choose any anchored maximal expansion of C. An absent label can be reached iff its graph component contains a vertex with an empty coordinate. A prescribed r is reachable absent iff such a vertex has coordinate r empty. Thus failure of every two-stage anchored-release certificate is not itself a connectivity theorem; the exact remaining question is whether its maximal-assignment component can reach any empty coordinate by handovers.
+
+A component without empty coordinates supplies a genuine invariant excluding any first absent label, even if static safe vacancy vertices exist elsewhere. The finite graph is constructive and decidable, not a claimed efficient closed formula. At most (|M|+1)^N vertices, before floor/cover rejection, replace the raw 2^(nN) incidence cube. No universal polynomial runtime or global optimal path is claimed. Lift costs can include preparatory additions.
+
+## Corollary 3: renewable exact permutations from ANY release path
+If the graph yields a safe release L:C->S with a label r absent, use the inherited absent-label whole-footprint rename choreography to obtain S->pi(S) for any permutation pi of the existing core palette. Then follow reverse pi(L) to reach EXACTLY pi(C). Hidden labels are fixed; core relabelling preserves full hitting number for every original hidden completion and preserves original domination as an unlabelled footprint multiset. Every preparatory handover is restored in its prescribed labelled image. Repeat under relabelling for any finite prescribed permutation sequence. The supplied script may have a program counter; no native observer access, fairness, deterministic outcome selection or phase-free controller is derived.
+
+## Prospective verification scope
+1. Independently enumerate all safe four-root/four-labelled-palette cores for every complete original source in the inherited tau3..4 universe (2,448 sources), in saturated and one-slack floor modes. Compare full safe-toggle components with the maximal-assignment graph by complete component equivalence, including every safe labelled endpoint, not only supplied paths. Exact source and endpoint identities must be independently reconstructed.
+2. Test edge lifting and expansion-choice equivalence, empty/nonempty bridges, upper-cover and floor gate rejection, omitted vertex/edge corruption rejection, and inherited isolated/local-progress controls. Keep arbitrary hidden-palette proof scope distinct from finite one-hidden-mask checks.
+3. A separate explicitly exploratory deterministic lexicographic search over multisets of five nonempty footprints on five roots (five active labels; original tau3..4; saturated and one-slack floors) may stop at the FIRST example with no anchored release for ANY label yet an absent coordinate reachable in the handover graph. Report a found example only after exact path/hidden checks. A stopped or bounded search is not a negative theorem or complete-universe claim. If none is found, publish only the exact reduction and measured bounded scope, not general anchored sufficiency.
+4. Freeze before execution; independent implementations, rejecting controls, relevant inherited tests, original evidence, separate reviews, author reconciliation and immutable readback are required before acceptance. No external review status or workflow success is anticipated.
+
+Broad C3/general C4 and native observer/source/progress origin remain OPEN. No physical derivation or numbered-stage certification.
