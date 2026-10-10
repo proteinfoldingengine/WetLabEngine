@@ -1,0 +1,38 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_FOOTPRINT_CLOSEOUT.md": "1062ec38dfdfa00305f5366e91fe306a118f81bf112b88a8cecd3a6b87f2bca0",
+    "COUPLED_C3_FOOTPRINT_RESULT.md": "ac8d59b3e50447149c35c09bbef4a467c9ab79fe69cdea6b117b3f39dcbf78ea",
+    "COUPLED_C3_LABEL_RELEASE_RESULT.md": "eb1772ebc101100a71afbdbda35c10753ec6a52410f5c2bc8769b285c22e866a",
+    "COUPLED_C3_SATURATED_TRANSFER_RESULT.md": "615c00da1adcc2bf0ec64529d29ec35d0e51d95fa36ec72b758c42484ca5855e",
+    "COUPLED_C3_SATURATED_TRANSFER_SCOPE.md": "60093e6082e12a3e67d6179b2eae29949edb508303d1a60f9f227c6ffc0d49fe",
+    "COUPLED_C4_SHARED_HOST_RESULT.md": "0157d92f83adec56d74847c10ade774264aaf415f42cc29be34c799c0d14dfd4",
+    "EVIDENCE/certificate.sha256": "a2f0d0e79f4c981f0955d1bafefb1f57f0498ade865c6c4b9548c326b012d0c1",
+    "EVIDENCE/contracts.log": "8abf394318a4ff9c5ec1eb6ebf1f9d1cdf48eddb5b345fe6e109b49e9d08fc07",
+    "EVIDENCE/counts.json": "4761b043739ee40fa4d9ed379c8fb8bfb2a73b496c218e103d7a1b5b17e1e31f",
+    "EVIDENCE/independent.json": "653bbcde98e125439417eee0d883a7a4dd21ee99f9d55b8c4edc7bf1d4eb7b42",
+    "EVIDENCE/inherited_fixed_family.log": "aebd382a0988cb2629e7fef3a791984041e4dceb1ca9ca59521a58155fe18614",
+    "EVIDENCE/inherited_footprint.log": "e01917435ce287d60ea452abf8cfa24ef709c3533e7b67403538b2049d833f85",
+    "EVIDENCE/inherited_label_release.log": "3581c8ee8b34776d7993aced969da53ca4d6afa34073e58e4bc827bba44a227c",
+    "EVIDENCE/provenance.txt": "2e57f6b78b0ae9271e497ee6a324e9e8b0b1f7885da51a8ce57e97499d3d0a99",
+    "MATH_REVIEW/manifest.json": "c7d7c8e58f24ad1d5adc54292868e3050d72f819754664156155952cad4755e9",
+    "MATH_REVIEW/review.txt": "132341c7ccb047212e41210bb2107aa0c23c112858749a726ea0b649dd367892",
+    "PUBLICATION_GATE": "851ffea4ae793ac63977357e31430f3290e519947082df0ddf04bcc1805f8b97",
+    "saturated_transfer/independent.py": "ec5e224c6a05971dd610a0923050b98051da494929b079250e4c4ae8ab5473ce",
+    "saturated_transfer/producer.py": "853d16dd3f619c13d97b45ae3cc90183d6cac3b9c2b758dfaa5a3e26241168b0",
+    "saturated_transfer/red.log": "8f2ea8fa13cfb59a698fd980507bf1ea588747d612db03536a4f2a93632aaa55",
+    "saturated_transfer/test_transfer.py": "6cd202e644dcb3c753c0f8b05ddd0ba5d23acc93dea6238119d912cd7226cfcd"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "d1b8cbe3dbe122bd4b929d3ed5484ef214bad9d5",
+  "response_sha256": "720952e824c02f60bf654a2ee19b27e429e59dfb9d9149fa1fbf2792dcc24237",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 24838,
+  "workflow_commit": "d1b8cbe3dbe122bd4b929d3ed5484ef214bad9d5"
+}

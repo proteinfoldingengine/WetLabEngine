@@ -1,0 +1,99 @@
+{
+  "artifacts": [
+    {
+      "bytes": 27191,
+      "id": 11654590427,
+      "members_sha256": {
+        "certificate.json": "7798630bf272e04d11650c07093eccd05cccbc1df6a11cbe46b7530c77532a40",
+        "certificate.sha256": "a2f0d0e79f4c981f0955d1bafefb1f57f0498ade865c6c4b9548c326b012d0c1",
+        "contracts.log": "8abf394318a4ff9c5ec1eb6ebf1f9d1cdf48eddb5b345fe6e109b49e9d08fc07",
+        "counts.json": "4761b043739ee40fa4d9ed379c8fb8bfb2a73b496c218e103d7a1b5b17e1e31f",
+        "independent.json": "653bbcde98e125439417eee0d883a7a4dd21ee99f9d55b8c4edc7bf1d4eb7b42",
+        "inherited_fixed_family.log": "aebd382a0988cb2629e7fef3a791984041e4dceb1ca9ca59521a58155fe18614",
+        "inherited_footprint.log": "e01917435ce287d60ea452abf8cfa24ef709c3533e7b67403538b2049d833f85",
+        "inherited_label_release.log": "3581c8ee8b34776d7993aced969da53ca4d6afa34073e58e4bc827bba44a227c",
+        "provenance.txt": "2e57f6b78b0ae9271e497ee6a324e9e8b0b1f7885da51a8ce57e97499d3d0a99"
+      },
+      "name": "c3-saturated_transfer-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "fc590b072367488e25285d14899b4d03c335d0975d09062a2886e22fc459c5b3"
+    },
+    {
+      "bytes": 2468,
+      "id": 11654455585,
+      "members_sha256": {
+        "manifest.json": "c7d7c8e58f24ad1d5adc54292868e3050d72f819754664156155952cad4755e9",
+        "review.txt": "132341c7ccb047212e41210bb2107aa0c23c112858749a726ea0b649dd367892"
+      },
+      "name": "c3-saturated_transfer-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "9b872493adeeb23705e13679799164b7f310377db5801878858ccb1d882b600f"
+    },
+    {
+      "bytes": 3321,
+      "id": 11653244037,
+      "members_sha256": {
+        "saturated_transfer_gate.json": "851ffea4ae793ac63977357e31430f3290e519947082df0ddf04bcc1805f8b97",
+        "saturated_transfer_publication/manifest.json": "62dc582611017a7efe464ba7604bb440f0b47637d13ce7a87d600845a124875a",
+        "saturated_transfer_publication/review.txt": "720952e824c02f60bf654a2ee19b27e429e59dfb9d9149fa1fbf2792dcc24237"
+      },
+      "name": "c3-saturated_transfer-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "8901eb98f2683b50e615aaba5174795ff7579bbdd45afa6e17a217254b907e69"
+    }
+  ],
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "certificate": {
+    "bytes": 926114,
+    "counts": {
+      "cases": 76,
+      "isolated_sources": 3,
+      "native_controls": 4,
+      "protected_completions": 7444,
+      "rejecting_toggles": 108,
+      "slice_checks": 274096
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "7798630bf272e04d11650c07093eccd05cccbc1df6a11cbe46b7530c77532a40"
+  },
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "132341c7ccb047212e41210bb2107aa0c23c112858749a726ea0b649dd367892",
+    "scientific_commit": "d1b8cbe3dbe122bd4b929d3ed5484ef214bad9d5",
+    "status": "PASS",
+    "verified_review_inputs": 18
+  },
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 18,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "132341c7ccb047212e41210bb2107aa0c23c112858749a726ea0b649dd367892",
+      "tokens": 26064,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 21,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "720952e824c02f60bf654a2ee19b27e429e59dfb9d9149fa1fbf2792dcc24237",
+      "tokens": 24838,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 38012134114,
+  "scientific_commit": "d1b8cbe3dbe122bd4b929d3ed5484ef214bad9d5",
+  "scope_commit": "ad57f8a73882980b44b76b90d8a9f08a9024c168",
+  "tests_commit": "58b3c89b0295bf07b108dbc762967f0401530ecb"
+}
