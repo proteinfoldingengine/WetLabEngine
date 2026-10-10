@@ -69,3 +69,83 @@ jobs:
         with:
           name: c3-handover-graph-fresh-reproduction
           path: handover_fresh/
+  mathematical-review:
+    needs: fresh-reproduction
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-handover-graph-fresh-reproduction
+          path: handover_verification
+      - name: Adversarial Gemini mathematical review of exact event commit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 research_snapshot/.github/scripts/c3_handover_graph_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-handover-graph-mathematical-review
+          path: handover_graph_review/
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-handover-graph-fresh-reproduction
+          path: handover_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-handover-graph-mathematical-review
+          path: handover_graph_review
+      - name: Exact provenance and fresh independent publication gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/handover_graph/producer.py" /tmp/publication.json
+          cmp /tmp/publication.json handover_verification/certificate.json
+          python3 "$ROOT/handover_graph/independent.py" /tmp/publication.json
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib
+          manifest=json.loads(pathlib.Path('handover_graph_review/manifest.json').read_text())
+          assert manifest['research_commit']==manifest['workflow_commit']==os.environ['GITHUB_SHA']
+          for name,digest in manifest['input_sha256'].items():
+              path=pathlib.Path('handover_verification')/name[9:] if name.startswith('EVIDENCE/') else pathlib.Path('research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge')/name
+              assert hashlib.sha256(path.read_bytes()).hexdigest()==digest,name
+          raw=pathlib.Path('handover_graph_review/review.txt').read_bytes()
+          assert hashlib.sha256(raw).hexdigest()==manifest['response_sha256']
+          expected=f"scientific_sha={os.environ['GITHUB_SHA']}\nworkflow_sha={os.environ['GITHUB_SHA']}\n"
+          assert pathlib.Path('handover_verification/provenance.txt').read_text()==expected
+          gate={'status':'PASS','scientific_commit':os.environ['GITHUB_SHA'],'verified_review_inputs':len(manifest['input_sha256']),'certificate_reproduced_byte_exact':True,'independent_full_reconstruction':True,'response_sha256':manifest['response_sha256']}
+          pathlib.Path('handover_graph_gate.json').write_text(json.dumps(gate,indent=2)+'\n');print(json.dumps(gate))
+          PY
+      - name: Separate Gemini publication audit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REVIEW_PHASE: publication
+        run: python3 research_snapshot/.github/scripts/c3_handover_graph_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-handover-graph-publication-audit
+          path: |
+            handover_graph_publication/
+            handover_graph_gate.json
