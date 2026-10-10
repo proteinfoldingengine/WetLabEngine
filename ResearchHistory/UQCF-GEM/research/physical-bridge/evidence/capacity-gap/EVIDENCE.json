@@ -1,0 +1,100 @@
+{
+  "artifacts": [
+    {
+      "bytes": 21290,
+      "id": 11655201340,
+      "members_sha256": {
+        "certificate.json": "10e28eeb9b6ea550e15c8f8727bb751c1109d98daf3f4eba3daebed2f9f0d232",
+        "certificate.sha256": "d27a68cd9353c2bb425e6b33e2bd90bdfb7f945716b8658a3f31397dff64518c",
+        "contracts.log": "58ca69daaff8d6f4d562ed5209d41e623ddd18eee82600e10eb5759992e4e01d",
+        "counts.json": "dee99db82c87b037adb8b0f9fcd389457c187af9a30b1f873938354270ac16a7",
+        "independent.json": "b4eb94680fa1da647bbbb3ce95457937d315c8f959a4e9344144835fbe20e7c6",
+        "inherited_fixed_family.log": "59aa131007a14f83e15d6e0773a64ba72048f8b6152ac6660930f0e266deb739",
+        "inherited_footprint.log": "2403dddfb12aef4701edc3a6b910ef8590dee43ef97d5da2d7a33dd2eccbe59a",
+        "inherited_label_release.log": "eec0761d5ad824695bc49b888b216c2dff1fe5341862047d7eeb3fd432af8493",
+        "inherited_saturated_transfer.log": "7fc749544552e1f5bf4bdcdfd167a1c42337973e90e4ce7d82f90adeb754328e",
+        "provenance.txt": "821c4f83779e09c0b52da06e5c424b95e858123541497be485ad1029720cc74d"
+      },
+      "name": "c3-capacity_gap-verification",
+      "permanent_path": "original-verification.zip",
+      "sha256": "cc4075ec4a27eef3a8c8cbdfd9e038f66e8fa600c407cf46129380cad24a4d3e"
+    },
+    {
+      "bytes": 2495,
+      "id": 11655361284,
+      "members_sha256": {
+        "manifest.json": "bfa56f0ebb484ba8713a8a29f9721059f4bccbd737eebb753b5b0eb0885094fd",
+        "review.txt": "34271b49122723e6a4ae167c934a1b2d8de6fb8c042aa472c3d04808a5e470b1"
+      },
+      "name": "c3-capacity_gap-review",
+      "permanent_path": "original-review.zip",
+      "sha256": "fc76b7dd5bd743a244700c365d751c8cf8876f487cdd67cbae9543c531639755"
+    },
+    {
+      "bytes": 3021,
+      "id": 11654681806,
+      "members_sha256": {
+        "capacity_gap_gate.json": "958a622d9882c186e77ec4476e03a862ef471c8def27794fddb95bfcd25d2ffc",
+        "capacity_gap_publication/manifest.json": "2ec04bcab202897cfffefd604fef98dab93dcce124aeb10129c0e2263be6d788",
+        "capacity_gap_publication/review.txt": "863352115c79e212884b896f42e2e07e5848446d7abc614bdd9d84ba981ba635"
+      },
+      "name": "c3-capacity_gap-publication",
+      "permanent_path": "original-publication.zip",
+      "sha256": "831d62a9dbd461bc81d3b83ab615385cf89440bfb664c19a4f63b906011e92b3"
+    }
+  ],
+  "author_reconciliation": "PASS: original archive digests, all member hashes, all review input hashes, both response hashes, execution provenance, byte-identical local/Actions certificate and separate reproduction gate",
+  "certificate": {
+    "bytes": 197274,
+    "counts": {
+      "core_sources": 2448,
+      "family_sources": 4,
+      "floor_instances": 4896,
+      "protected_completions": 2586,
+      "rejecting_first_toggles": 218,
+      "upper_controls": 1
+    },
+    "local_actions_byte_equal": true,
+    "sha256": "10e28eeb9b6ea550e15c8f8727bb751c1109d98daf3f4eba3daebed2f9f0d232"
+  },
+  "publication_gate": {
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true,
+    "response_sha256": "34271b49122723e6a4ae167c934a1b2d8de6fb8c042aa472c3d04808a5e470b1",
+    "scientific_commit": "927836d37fbe858dea36c3e88856a53cbb69d7db",
+    "status": "PASS",
+    "verified_review_inputs": 20
+  },
+  "reviews": {
+    "mathematical": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 20,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "34271b49122723e6a4ae167c934a1b2d8de6fb8c042aa472c3d04808a5e470b1",
+      "tokens": 22017,
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "RESPONSE_RECEIVED"
+        }
+      ],
+      "input_count": 23,
+      "model": "gemini-3.1-pro-preview",
+      "response_sha256": "863352115c79e212884b896f42e2e07e5848446d7abc614bdd9d84ba981ba635",
+      "tokens": 24625,
+      "verdict": "ACCEPTED"
+    }
+  },
+  "run_id": 38013084106,
+  "scientific_commit": "927836d37fbe858dea36c3e88856a53cbb69d7db",
+  "scope_commit": "e45ad56b1186eb7135d317f71ba505c381bf7eef",
+  "tests_commit": "925cd71249a0709368fc3adce8e8b41eb2f965c9"
+}
