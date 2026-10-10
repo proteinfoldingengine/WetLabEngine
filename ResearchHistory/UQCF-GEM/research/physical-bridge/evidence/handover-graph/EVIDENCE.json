@@ -1,0 +1,111 @@
+{
+  "schema": "maximal-handover-evidence-v1",
+  "prospective_freeze": "2cb5b7e1f0af82f41c31129907e6a3be5cd4987e",
+  "freeze_parent": "47ebf4a717f4a9eadc7d51567b27e42bfb1e1d73",
+  "integrated_closeout_parent": "8dc62a0e51ae10168bf5e7fccaf6f894dd099312",
+  "initial_science_workflow_commit": "9096ecef1b3ddba39fa34f54d6aa0e9d1c58e7ba",
+  "exact_review_campaign_commit": "c2669a01bd73ad853aaea1beac19e217c1894e70",
+  "initial_run": 38063679686,
+  "review_run": 38063828876,
+  "counts": {
+    "compressed_components": 1582,
+    "compressed_edges": 9504,
+    "compressed_vertices": 5016,
+    "floor_cases": 4896,
+    "full_components": 1582,
+    "full_edges": 36480,
+    "full_hidden_slice_checks": 161208,
+    "full_states": 18648,
+    "lifted_slice_checks": 29664,
+    "nonmonotone_only_cases": 0,
+    "regions": 177,
+    "sources": 2448
+  },
+  "new_tests": 20,
+  "inherited_tests": 155,
+  "total_tests": 175,
+  "certificate_bytes": 1016442,
+  "certificate_sha256": "620a6540bbae0144f3f514f8bd3f0c5dfc92043577f21adf68e8ed5cee3d37d0",
+  "certificate_location": "inside original verification and reproduction ZIPs",
+  "archives": {
+    "initial_c3-handover-graph-fresh-reproduction.zip": {
+      "sha256": "726aabf97a8adfb8404dd958fe45bc35e221e939ed11b7ac30b90319b39337ba",
+      "size": 118084,
+      "git_blob": "0da9c26addca5b258e18ca5a60f6da919da00055",
+      "members_sha256": {
+        "certificate.json": "620a6540bbae0144f3f514f8bd3f0c5dfc92043577f21adf68e8ed5cee3d37d0",
+        "certificate.sha256": "5b4d61f42b30a234fd06249dc258dd21cae725d2e57b99ec5adc6199f9497830",
+        "contracts.log": "c5fb8d37d63518ff22ec1c697691b1af7a435541624448a7c2e2fa6bb303841c",
+        "counts.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "fresh_independent.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "frozen_proof_scope.md": "0cc0448697756fb1c27e4dfb35e80f5d7f06764200779660139faead77db4a63",
+        "independent.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "independent.py": "6f7c10ea62ce335b2d1ee97410d60b5f4a0714ffb9c697f6849328427fa4c0cc",
+        "inherited_anchored_release.log": "646300fcafcb7cffb785747f76931d873c1fa4684dc8f47ee34b039df499743c",
+        "inherited_capacity_gap.log": "98cb5832d9b77845acfac0e80e21cda84dbd8a671cf0fd5a7346edc99abe919a",
+        "inherited_fixed_family.log": "39971d78788b35489575728b5342cb7904326a680878ee5476dc33e4f9928a73",
+        "inherited_footprint.log": "45f9e56d94fead4d5512b55793ae00bd6151c2232cc9bb97364749c24995b4c5",
+        "inherited_label_release.log": "9cbb3e59411ff53351e0f4d6f92fc7f33325682da8bac8f32e68322b159ecb13",
+        "inherited_local_progress.log": "9d3ca9adc1629eae3ceb72b72d1f73bd19e38c41a74df5479f5381cf179c6818",
+        "producer.py": "13a10bfe928972af695dac37c606a170796739588876def102ed2fbc8bfa2d96",
+        "inherited_saturated_transfer.log": "7a3fd156091636c758ee607f9984344ea3b33ff53d570a11b6d180328ae49fb4",
+        "provenance.txt": "1517fe380545fa852cc337b803273802842e51f1882788652c0f5b344836e3d8",
+        "red.log": "4e59acf0bc7009384efaf5063cdfdf1bbb06cf69314c1e7c527f00cc0c140166",
+        "test_handover.py": "4652f5a9cb302024c2b71bd385958ec7b4d731738e38570cf72d7541218291be"
+      }
+    },
+    "initial_c3-handover-graph-verification.zip": {
+      "sha256": "f2ddea10853be67b16a05f0455bf13fb57ceb2a81b782231dbde71b96677c473",
+      "size": 117778,
+      "git_blob": "05af2a71bdb8516a98bbb07db5040380d6b1d5f4",
+      "members_sha256": {
+        "certificate.json": "620a6540bbae0144f3f514f8bd3f0c5dfc92043577f21adf68e8ed5cee3d37d0",
+        "certificate.sha256": "5b4d61f42b30a234fd06249dc258dd21cae725d2e57b99ec5adc6199f9497830",
+        "contracts.log": "c5fb8d37d63518ff22ec1c697691b1af7a435541624448a7c2e2fa6bb303841c",
+        "counts.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "frozen_proof_scope.md": "0cc0448697756fb1c27e4dfb35e80f5d7f06764200779660139faead77db4a63",
+        "independent.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "independent.py": "6f7c10ea62ce335b2d1ee97410d60b5f4a0714ffb9c697f6849328427fa4c0cc",
+        "inherited_anchored_release.log": "646300fcafcb7cffb785747f76931d873c1fa4684dc8f47ee34b039df499743c",
+        "inherited_capacity_gap.log": "98cb5832d9b77845acfac0e80e21cda84dbd8a671cf0fd5a7346edc99abe919a",
+        "inherited_fixed_family.log": "39971d78788b35489575728b5342cb7904326a680878ee5476dc33e4f9928a73",
+        "inherited_footprint.log": "45f9e56d94fead4d5512b55793ae00bd6151c2232cc9bb97364749c24995b4c5",
+        "inherited_label_release.log": "9cbb3e59411ff53351e0f4d6f92fc7f33325682da8bac8f32e68322b159ecb13",
+        "inherited_local_progress.log": "9d3ca9adc1629eae3ceb72b72d1f73bd19e38c41a74df5479f5381cf179c6818",
+        "inherited_saturated_transfer.log": "7a3fd156091636c758ee607f9984344ea3b33ff53d570a11b6d180328ae49fb4",
+        "producer.py": "13a10bfe928972af695dac37c606a170796739588876def102ed2fbc8bfa2d96",
+        "provenance.txt": "1517fe380545fa852cc337b803273802842e51f1882788652c0f5b344836e3d8",
+        "red.log": "4e59acf0bc7009384efaf5063cdfdf1bbb06cf69314c1e7c527f00cc0c140166",
+        "test_handover.py": "4652f5a9cb302024c2b71bd385958ec7b4d731738e38570cf72d7541218291be"
+      }
+    }
+  },
+  "source_readback": [
+    {
+      "file": "producer.py",
+      "equal": true,
+      "blob": "4b5c99424c9e66c1747eb7d6aa3f1a9400e61bd0"
+    },
+    {
+      "file": "independent.py",
+      "equal": true,
+      "blob": "7f6ac831edda34d85f511ad61fbbbd9fc6e60f67"
+    },
+    {
+      "file": "test_handover.py",
+      "equal": true,
+      "blob": "8eb7d4a443e6d3a488f5735e40c32de058add989"
+    },
+    {
+      "file": "red.log",
+      "equal": true,
+      "blob": "e6c3466dbd06559312f0cecd5e0cd9eee55592d0"
+    }
+  ],
+  "mathematical_review": "separate internal ACCEPTED; external pending",
+  "publication_audit": "pending",
+  "exploration_independently_certified": false,
+  "exploration_hard_case_branch_executed": false,
+  "numbered_stage_certification": false,
+  "full_stack_replay": false
+}
