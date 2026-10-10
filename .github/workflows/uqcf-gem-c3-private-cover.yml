@@ -122,7 +122,7 @@ jobs:
           ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
           python3 "$ROOT/private_cover/producer.py" /tmp/publication.json
           cmp /tmp/publication.json private_verification/certificate.json
-          python3 "$ROOT/private_cover/independent.py" /tmp/publication.json
+          python3 "$ROOT/private_cover/independent.py" /tmp/publication.json /tmp/publication_independent.json
           python3 - <<'PY'
           import hashlib,json,os,pathlib
           manifest=json.loads(pathlib.Path('private_cover_review/manifest.json').read_text())
