@@ -1,0 +1,142 @@
+name: UQCF-GEM anchored release adversarial review and publication audit
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_SCOPE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_REVIEW.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/anchored_release/*.py'
+      - '.github/scripts/c3_anchored_release_review.py'
+      - '.github/workflows/uqcf-gem-c3-anchored-release-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - name: Exact event-commit verification and inherited controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          mkdir anchored_release_verification
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT/anchored_release" -p test_anchored.py -v 2>&1 | tee anchored_release_verification/contracts.log
+          python3 "$ROOT/anchored_release/producer.py" anchored_release_verification/certificate.json | tee anchored_release_verification/counts.json
+          python3 "$ROOT/anchored_release/independent.py" anchored_release_verification/certificate.json | tee anchored_release_verification/independent.json
+          python3 -m unittest discover -s "$ROOT/local_progress" -p test_progress.py -v 2>&1 | tee anchored_release_verification/inherited_local_progress.log
+          python3 -m unittest discover -s "$ROOT/capacity_gap" -p test_capacity.py -v 2>&1 | tee anchored_release_verification/inherited_capacity.log
+          python3 -m unittest discover -s "$ROOT/saturated_transfer" -p test_transfer.py -v 2>&1 | tee anchored_release_verification/inherited_transfer.log
+          python3 -m unittest discover -s "$ROOT/label_release" -p test_release.py -v 2>&1 | tee anchored_release_verification/inherited_release.log
+          python3 -m unittest discover -s "$ROOT/footprint" -p test_footprint.py -v 2>&1 | tee anchored_release_verification/inherited_footprint.log
+          python3 -m unittest discover -s "$ROOT/fixed_family" -p test_fixed_family.py -v 2>&1 | tee anchored_release_verification/inherited_fixed.log
+          python3 "$ROOT/anchored_release/producer.py" /tmp/repeated.json
+          cmp /tmp/repeated.json anchored_release_verification/certificate.json
+          printf 'scientific_sha=%s\nworkflow_sha=%s\n' "$GITHUB_SHA" "$GITHUB_SHA" > anchored_release_verification/provenance.txt
+          sha256sum anchored_release_verification/certificate.json > anchored_release_verification/certificate.sha256
+          cp "$ROOT/anchored_release/red.log" anchored_release_verification/red.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-anchored-release-verification-review
+          path: anchored_release_verification/
+  mathematical-review:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-anchored-release-verification-review
+          path: anchored_release_verification
+      - name: Gemini 3.1 Pro adversarial mathematical review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          python3 research_snapshot/.github/scripts/c3_anchored_release_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-anchored-release-mathematical-review
+          path: anchored_release_review/
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-anchored-release-verification-review
+          path: anchored_release_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-anchored-release-mathematical-review
+          path: anchored_release_review
+      - name: Fresh reconstruction and provenance gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/anchored_release/producer.py" /tmp/publication-certificate.json
+          cmp /tmp/publication-certificate.json anchored_release_verification/certificate.json
+          python3 "$ROOT/anchored_release/independent.py" /tmp/publication-certificate.json
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib
+          manifest=json.loads(pathlib.Path('anchored_release_review/manifest.json').read_text())
+          if manifest['research_commit']!=os.environ['GITHUB_SHA'] or manifest['workflow_commit']!=os.environ['GITHUB_SHA']:
+              raise ValueError('commit provenance')
+          for name,digest in manifest['input_sha256'].items():
+              if name.startswith('EVIDENCE/'):
+                  path=pathlib.Path('anchored_release_verification')/name[9:]
+              else:
+                  path=pathlib.Path('research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge')/name
+              if hashlib.sha256(path.read_bytes()).hexdigest()!=digest:
+                  raise ValueError('input hash '+name)
+          raw=pathlib.Path('anchored_release_review/review.txt').read_bytes()
+          if hashlib.sha256(raw).hexdigest()!=manifest['response_sha256']:
+              raise ValueError('response hash')
+          expected=f"scientific_sha={os.environ['GITHUB_SHA']}\nworkflow_sha={os.environ['GITHUB_SHA']}\n"
+          if pathlib.Path('anchored_release_verification/provenance.txt').read_text()!=expected:
+              raise ValueError('execution provenance')
+          gate={'status':'PASS','scientific_commit':os.environ['GITHUB_SHA'],'verified_review_inputs':len(manifest['input_sha256']),'certificate_reproduced_byte_exact':True,'independent_full_reconstruction':True,'response_sha256':manifest['response_sha256']}
+          pathlib.Path('anchored_release_gate.json').write_text(json.dumps(gate,indent=2)+'\n')
+          print(json.dumps(gate))
+          PY
+      - name: Separate Gemini 3.1 Pro publication audit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REVIEW_PHASE: publication
+        run: python3 research_snapshot/.github/scripts/c3_anchored_release_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-anchored-release-publication-audit
+          path: |
+            anchored_release_publication/
+            anchored_release_gate.json
