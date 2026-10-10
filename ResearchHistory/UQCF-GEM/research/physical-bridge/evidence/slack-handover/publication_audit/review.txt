@@ -1,0 +1,28 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "Exact event commit hashes and provenance (987b61f8b8d0aede92e2f0a0ec64caf7fb874bd7) are verified and consistent across the publication gate and evidence logs.",
+    "Fresh byte-equal certificate reproduction and independent full reconstruction are confirmed by the publication gate.",
+    "Raw math review inputs, response hashes, and separate verdicts are present, matching the manifest and publication gate.",
+    "The code correctly implements and verifies the exact static capacity kappa=min(q+2,h+3) and the sharp two-slack threshold (h <= q-2).",
+    "The global four-toggle optimum to ANY first vacancy is verified by the raw safe-toggle BFS depth 4 check for q3h1, q4h1, and q4h2.",
+    "The batch release cost of 1+3m is achieved, and the maximum batch attains kappa, demonstrating unbounded accessible surplus with q.",
+    "Exact release, permutation, reverse-conjugate restoration, and renewed two-permutation sequences are correctly implemented, including intermediate restored states and moved reserves.",
+    "The raw BFS correctly uses the 3..4 tau bounds, and the genuine RED logs for the overly strict tau3 assertion are preserved, confirming it was a diagnostic correction and not a theorem relaxation.",
+    "The 24 new tests and 175 inherited tests pass as expected, matching the provided execution logs.",
+    "Omission controls, wrong-floor, operation, renewal bypass, and native hiddenmask20 rejection are correctly implemented and verified in the test suite."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "Arbitrary upper-cover handovers, fully saturated positive results, and general reachability are explicitly excluded from the scope.",
+    "Native observer, access, source, outcome, and progress are not derived.",
+    "Broad C3, general C4, numbered-stage/full-stack certification, and physical/spacetime derivations remain OPEN.",
+    "The positive family is mixed-floor and NOT fully saturated; fully saturated members are obstructed.",
+    "Four edits is optimal for ANY first vacancy, but is not claimed optimal for a specifically prescribed b or e label.",
+    "The batch release cost of 1+3m is achieved but is not claimed to be globally optimal.",
+    "The universal all-original-hidden safety theorem is proof-based; finite computational checks are limited to one-hidden-label masks."
+  ]
+}
+```

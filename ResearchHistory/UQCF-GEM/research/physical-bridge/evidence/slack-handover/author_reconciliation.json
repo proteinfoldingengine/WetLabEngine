@@ -1,0 +1,173 @@
+{
+  "certificate_sha256": "39537e4a3dd193ebe8df8791d9d6a29a67f3766a2762a7beea46ecea3bb304f3",
+  "complete_job_logs": {
+    "fresh-reproduction_job.log": {
+      "sha256": "55c1fabad841a3ae791a767e6694ae5d07856bff6bb502562a1c77be7295f56f",
+      "size": 23386
+    },
+    "mathematical-review_job.log": {
+      "sha256": "c00ff059fe5cf86e8a81179bbcc48a7d15a96861340c41f1039e3d0ab4959002",
+      "size": 21285
+    },
+    "publication-audit_job.log": {
+      "sha256": "db159fb5dc1742d6b8de069cc53e27004248bbb11a9dc673acc147b2a4442e75",
+      "size": 28720
+    },
+    "verification_job.log": {
+      "sha256": "6e653a51d497cb37cc5c304f18fee6767ef7e122c8e61ad07e9b114aa9054dfb",
+      "size": 47213
+    }
+  },
+  "counts": {
+    "batch": 1934,
+    "bfs": 3,
+    "bfs_layer_sizes": [
+      [
+        1,
+        3,
+        9,
+        27,
+        66
+      ],
+      [
+        1,
+        4,
+        18,
+        76,
+        286
+      ],
+      [
+        1,
+        4,
+        18,
+        72,
+        250
+      ]
+    ],
+    "capacity": 27,
+    "capacity_vectors": 26330,
+    "hidden_checks": 647499,
+    "permutations": 120,
+    "positive": 420,
+    "primary": 644,
+    "renewal": 3,
+    "route_and_bfs_slices": 24043,
+    "sources": 27,
+    "unique_hidden_states": 3482
+  },
+  "initial_red_tests": 21,
+  "limitations": [
+    "mixed-floor positive family, not fully saturated",
+    "scripted exacttau3; rawBFS3..4",
+    "finite onehidden masks; universal theorem proof-based",
+    "four optimal toANYfirstvacancy; batch cost achieved",
+    "broadC3/generalC4/nativeobserver-access-outcome-progress OPEN"
+  ],
+  "math_response_sha256": "89b6ba09956bb5dba29ec710b736915414eac9d942857ae466493b660c889ba8",
+  "math_verified_inputs": 31,
+  "mathematical_verdict": "ACCEPTED",
+  "original_archives": [
+    {
+      "file": "c3-slack-handover-fresh-reproduction.zip",
+      "git_blob_sha1": "9544392ceb4d2b864648c8af9ad20bf5a9fe8c83",
+      "members": {
+        "certificate.json": "39537e4a3dd193ebe8df8791d9d6a29a67f3766a2762a7beea46ecea3bb304f3",
+        "certificate.sha256": "66e23243ab5a1468d49ecd312ee2d11dd20cf0b7dc2cdd633c39a5887378e831",
+        "contracts.log": "74ea842e14e0634dd0fb28c8c8fd530531cb082d3abee1d1a583f5f68c5a3912",
+        "counts.json": "3254ca0fc4521533879ec49d8ab7472ea54245891491c48cadcf2ebd547c20cb",
+        "fresh_independent.json": "7953a14b7d34efb8729ae62ce241d13ba561aac417d82b91136a521a42e80dea",
+        "frozen_proof_scope.md": "c2f5d310db706068dc147aaa020be00d995fc4866dcd348e71e5038c643accfc",
+        "full_scope_failure.log": "fecc3a503cd4216805b87fc271b5f21646c38808ae7dbd6cbc5be965defb207e",
+        "independent.json": "7953a14b7d34efb8729ae62ce241d13ba561aac417d82b91136a521a42e80dea",
+        "independent.log": "7953a14b7d34efb8729ae62ce241d13ba561aac417d82b91136a521a42e80dea",
+        "independent.py": "77eaad8c3f9fa1d312cbdf36042f25a6ecd6fc585b0bf739b4761e887cc8b47d",
+        "inherited_anchored_release.log": "0e608e62c5841713f68b40bfb81c2c2d3cf58eb091ae68c241ad60100cbf56a3",
+        "inherited_capacity_gap.log": "cf30cf60d7aee994279136d1de423ba4c3e619ad8c534791d79b34321820d5a5",
+        "inherited_fixed_family.log": "1069f0c6d7c55a139cdb5945cbfa97c116f2b94310ad111849a319dfb1abd244",
+        "inherited_footprint.log": "9652d09831699c5ce228ec594a97731b956a2e4d67f0965705c91366c3dbdd27",
+        "inherited_handover_graph.log": "4fb1f54053a70a2722724f2e6a4565a5e9afc43d48e1776cc52fd39afa5f0e9a",
+        "inherited_label_release.log": "fa7415dc44321fc03f88b506d3c47606394548e8e444bc00fd35a67181715d68",
+        "inherited_local_progress.log": "0e3467266989ce7bd4ad0e81dadc0df747adf6f1e6e8505fc2cd695b52c0db96",
+        "inherited_saturated_transfer.log": "c0fea6af285e8c23582ca19c25378fc144defe2ab391edb8de0e0db6b8d58990",
+        "producer.py": "687f11625778a2f793e1250d6bd42d71d118f57d02f4e53af1a9feef8e901101",
+        "provenance.txt": "60021e2222174ae689c94a4c0fad4d680e91627face9283f984123592fd23da9",
+        "red.log": "947ed83b74eadd8d083e7be21e33e3580f59fb0cbd9d225fb88409a5e71fe3b0",
+        "test_slack.py": "21067e734a3c8b18e5084b399e8ec5da9ae7e8327e82e03ccacf10960f45590f",
+        "upper_four_red.log": "ab1e8f92781fd86ab2f9b1f79fcfb4007d808ea810884e27b4cebd8f8af8f25f"
+      },
+      "sha256": "f9370ff35bfee32cad429df87da7a1ef1c49345111ace81936bc4062ac4f1c45",
+      "size": 130320
+    },
+    {
+      "file": "c3-slack-handover-mathematical-review.zip",
+      "git_blob_sha1": "592eeba154ab91504247e6e35ec120e37add7212",
+      "members": {
+        "manifest.json": "cb828e1ac97c857c939c787e2c4fdec23c3b83bfa33d213d10ee90f8560aeb63",
+        "review.txt": "89b6ba09956bb5dba29ec710b736915414eac9d942857ae466493b660c889ba8"
+      },
+      "sha256": "1ea872bd8ee19a1d1b437459bfeb40692f26bba4447df4de82c92160e630146c",
+      "size": 3213
+    },
+    {
+      "file": "c3-slack-handover-publication-audit.zip",
+      "git_blob_sha1": "714645d6bacb1edd04e8ce8a605e321a6e67ecc9",
+      "members": {
+        "slack_handover_gate.json": "1a518a1561817931535495ce9d2c5cdc782174689047e51ae812b5cbccce1767",
+        "slack_handover_publication/manifest.json": "9f3d408b456cc5d2ec7ec4340dfce042408c5a51a9ca2e357ba6ea60f350b145",
+        "slack_handover_publication/review.txt": "ed9240e02ac76993a9bb27bd594b344753e92f6e147d96b6a3eb6a52309a5f2d"
+      },
+      "sha256": "cfb5a22be12fb04a0eee6bdd7585ae943e99bac5e537993b8612e8c5a5d4b651",
+      "size": 3728
+    },
+    {
+      "file": "c3-slack-handover-verification.zip",
+      "git_blob_sha1": "a23d4a12d41825d9c34b88e96b6432aade214f49",
+      "members": {
+        "certificate.json": "39537e4a3dd193ebe8df8791d9d6a29a67f3766a2762a7beea46ecea3bb304f3",
+        "certificate.sha256": "66e23243ab5a1468d49ecd312ee2d11dd20cf0b7dc2cdd633c39a5887378e831",
+        "contracts.log": "74ea842e14e0634dd0fb28c8c8fd530531cb082d3abee1d1a583f5f68c5a3912",
+        "counts.json": "3254ca0fc4521533879ec49d8ab7472ea54245891491c48cadcf2ebd547c20cb",
+        "frozen_proof_scope.md": "c2f5d310db706068dc147aaa020be00d995fc4866dcd348e71e5038c643accfc",
+        "full_scope_failure.log": "fecc3a503cd4216805b87fc271b5f21646c38808ae7dbd6cbc5be965defb207e",
+        "independent.json": "7953a14b7d34efb8729ae62ce241d13ba561aac417d82b91136a521a42e80dea",
+        "independent.log": "7953a14b7d34efb8729ae62ce241d13ba561aac417d82b91136a521a42e80dea",
+        "independent.py": "77eaad8c3f9fa1d312cbdf36042f25a6ecd6fc585b0bf739b4761e887cc8b47d",
+        "inherited_anchored_release.log": "0e608e62c5841713f68b40bfb81c2c2d3cf58eb091ae68c241ad60100cbf56a3",
+        "inherited_capacity_gap.log": "cf30cf60d7aee994279136d1de423ba4c3e619ad8c534791d79b34321820d5a5",
+        "inherited_fixed_family.log": "1069f0c6d7c55a139cdb5945cbfa97c116f2b94310ad111849a319dfb1abd244",
+        "inherited_footprint.log": "9652d09831699c5ce228ec594a97731b956a2e4d67f0965705c91366c3dbdd27",
+        "inherited_handover_graph.log": "4fb1f54053a70a2722724f2e6a4565a5e9afc43d48e1776cc52fd39afa5f0e9a",
+        "inherited_label_release.log": "fa7415dc44321fc03f88b506d3c47606394548e8e444bc00fd35a67181715d68",
+        "inherited_local_progress.log": "0e3467266989ce7bd4ad0e81dadc0df747adf6f1e6e8505fc2cd695b52c0db96",
+        "inherited_saturated_transfer.log": "c0fea6af285e8c23582ca19c25378fc144defe2ab391edb8de0e0db6b8d58990",
+        "producer.py": "687f11625778a2f793e1250d6bd42d71d118f57d02f4e53af1a9feef8e901101",
+        "provenance.txt": "60021e2222174ae689c94a4c0fad4d680e91627face9283f984123592fd23da9",
+        "red.log": "947ed83b74eadd8d083e7be21e33e3580f59fb0cbd9d225fb88409a5e71fe3b0",
+        "test_slack.py": "21067e734a3c8b18e5084b399e8ec5da9ae7e8327e82e03ccacf10960f45590f",
+        "upper_four_red.log": "ab1e8f92781fd86ab2f9b1f79fcfb4007d808ea810884e27b4cebd8f8af8f25f"
+      },
+      "sha256": "b7279332cc1e1d0fb415774b42cafbe3b98a246bf807d8892d2f123d167f0ed3",
+      "size": 129929
+    }
+  ],
+  "publication_response_sha256": "ed9240e02ac76993a9bb27bd594b344753e92f6e147d96b6a3eb6a52309a5f2d",
+  "publication_verdict": "ACCEPTED",
+  "publication_verified_inputs": 34,
+  "scientific_commit": "987b61f8b8d0aede92e2f0a0ec64caf7fb874bd7",
+  "scope_freeze": "6f2f90d80d1b9e6bb309527051a347835d7b5d0a",
+  "status": "ACCEPTED_AUTHOR_RECONCILIATION",
+  "test_counts": {
+    "contracts.log": 24,
+    "inherited_anchored_release.log": 20,
+    "inherited_capacity_gap.log": 20,
+    "inherited_fixed_family.log": 28,
+    "inherited_footprint.log": 22,
+    "inherited_handover_graph.log": 20,
+    "inherited_label_release.log": 26,
+    "inherited_local_progress.log": 17,
+    "inherited_saturated_transfer.log": 22
+  },
+  "tests_total": 199,
+  "upper_four_red_tests": 22,
+  "workflow_run": 38067111288
+}

@@ -1,0 +1,55 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "error_type": "TimeoutError"
+    },
+    {
+      "attempt": 2,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_ANCHORED_RELEASE_CLOSEOUT.md": "b1f432788932a82e73953cc151109d71ee0189664624bd8e3009126928737bf8",
+    "COUPLED_C3_FOOTPRINT_CLOSEOUT.md": "1062ec38dfdfa00305f5366e91fe306a118f81bf112b88a8cecd3a6b87f2bca0",
+    "COUPLED_C3_HANDOVER_GRAPH_CLOSEOUT.md": "0211506ba9b06e2ab119c2a313adfde111b6feba914f72e501888d9c8dcda397",
+    "COUPLED_C3_SLACK_HANDOVER_REPORT.md": "3f5df6dd84980fe2ae624c62ca406ac6ed9ea1aa4747e439d439c408376caada",
+    "COUPLED_C3_SLACK_HANDOVER_RESULT.md": "c2f5d310db706068dc147aaa020be00d995fc4866dcd348e71e5038c643accfc",
+    "COUPLED_C3_SLACK_HANDOVER_REVIEW.md": "2d6bfa9b726588cf3e502fed7fe8c1b673975bf1d83247dc585a07996c3aff4a",
+    "EVIDENCE/certificate.sha256": "66e23243ab5a1468d49ecd312ee2d11dd20cf0b7dc2cdd633c39a5887378e831",
+    "EVIDENCE/contracts.log": "74ea842e14e0634dd0fb28c8c8fd530531cb082d3abee1d1a583f5f68c5a3912",
+    "EVIDENCE/counts.json": "3254ca0fc4521533879ec49d8ab7472ea54245891491c48cadcf2ebd547c20cb",
+    "EVIDENCE/fresh_independent.json": "7953a14b7d34efb8729ae62ce241d13ba561aac417d82b91136a521a42e80dea",
+    "EVIDENCE/frozen_proof_scope.md": "c2f5d310db706068dc147aaa020be00d995fc4866dcd348e71e5038c643accfc",
+    "EVIDENCE/full_scope_failure.log": "fecc3a503cd4216805b87fc271b5f21646c38808ae7dbd6cbc5be965defb207e",
+    "EVIDENCE/independent.json": "7953a14b7d34efb8729ae62ce241d13ba561aac417d82b91136a521a42e80dea",
+    "EVIDENCE/independent.log": "7953a14b7d34efb8729ae62ce241d13ba561aac417d82b91136a521a42e80dea",
+    "EVIDENCE/independent.py": "77eaad8c3f9fa1d312cbdf36042f25a6ecd6fc585b0bf739b4761e887cc8b47d",
+    "EVIDENCE/inherited_anchored_release.log": "0e608e62c5841713f68b40bfb81c2c2d3cf58eb091ae68c241ad60100cbf56a3",
+    "EVIDENCE/inherited_capacity_gap.log": "cf30cf60d7aee994279136d1de423ba4c3e619ad8c534791d79b34321820d5a5",
+    "EVIDENCE/inherited_fixed_family.log": "1069f0c6d7c55a139cdb5945cbfa97c116f2b94310ad111849a319dfb1abd244",
+    "EVIDENCE/inherited_footprint.log": "9652d09831699c5ce228ec594a97731b956a2e4d67f0965705c91366c3dbdd27",
+    "EVIDENCE/inherited_handover_graph.log": "4fb1f54053a70a2722724f2e6a4565a5e9afc43d48e1776cc52fd39afa5f0e9a",
+    "EVIDENCE/inherited_label_release.log": "fa7415dc44321fc03f88b506d3c47606394548e8e444bc00fd35a67181715d68",
+    "EVIDENCE/inherited_local_progress.log": "0e3467266989ce7bd4ad0e81dadc0df747adf6f1e6e8505fc2cd695b52c0db96",
+    "EVIDENCE/inherited_saturated_transfer.log": "c0fea6af285e8c23582ca19c25378fc144defe2ab391edb8de0e0db6b8d58990",
+    "EVIDENCE/producer.py": "687f11625778a2f793e1250d6bd42d71d118f57d02f4e53af1a9feef8e901101",
+    "EVIDENCE/provenance.txt": "60021e2222174ae689c94a4c0fad4d680e91627face9283f984123592fd23da9",
+    "EVIDENCE/red.log": "947ed83b74eadd8d083e7be21e33e3580f59fb0cbd9d225fb88409a5e71fe3b0",
+    "EVIDENCE/test_slack.py": "21067e734a3c8b18e5084b399e8ec5da9ae7e8327e82e03ccacf10960f45590f",
+    "EVIDENCE/upper_four_red.log": "ab1e8f92781fd86ab2f9b1f79fcfb4007d808ea810884e27b4cebd8f8af8f25f",
+    "MATH_REVIEW/manifest.json": "cb828e1ac97c857c939c787e2c4fdec23c3b83bfa33d213d10ee90f8560aeb63",
+    "MATH_REVIEW/review.txt": "89b6ba09956bb5dba29ec710b736915414eac9d942857ae466493b660c889ba8",
+    "PUBLICATION_GATE": "1a518a1561817931535495ce9d2c5cdc782174689047e51ae812b5cbccce1767",
+    "slack_handover/independent.py": "77eaad8c3f9fa1d312cbdf36042f25a6ecd6fc585b0bf739b4761e887cc8b47d",
+    "slack_handover/producer.py": "687f11625778a2f793e1250d6bd42d71d118f57d02f4e53af1a9feef8e901101",
+    "slack_handover/test_slack.py": "21067e734a3c8b18e5084b399e8ec5da9ae7e8327e82e03ccacf10960f45590f"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "987b61f8b8d0aede92e2f0a0ec64caf7fb874bd7",
+  "response_sha256": "ed9240e02ac76993a9bb27bd594b344753e92f6e147d96b6a3eb6a52309a5f2d",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 40109,
+  "workflow_commit": "987b61f8b8d0aede92e2f0a0ec64caf7fb874bd7"
+}

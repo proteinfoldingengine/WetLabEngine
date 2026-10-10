@@ -1,0 +1,25 @@
+# Shared-root slack handover: scientific closeout
+
+Date: 2026-10-10 UTC. Status: CLOSED for the declared family, the four-toggle first-vacancy theorem and its prospective verification contract. Broad C3/general C4 remain OPEN.
+
+## Scientific increment
+The already-used palette can create its first absent label even when every anchored monotone-release certificate fails. In the family P_i={b,x_i},R={x_0,...,x_{q-1}},T={e}, with private floors2, shared floor h and singleton floor1, exact static minimum is kappa = min(q+2,h+3). Shared-root slack q-h>=2 is necessary and sufficient for any vacancy. Four committed changes is the global minimum to any first absent label. This is not a four-cost result for a prescribed b or e reserve.
+
+A donor deletes its shared incidence before borrowing a private incidence inside the original B container, then releases another spoke. Private floors never relax; the actual fixed three-label cover b,x_s,e and original-footprint domination preserve every original protected hidden completion. One slack permits motion but no static vacancy. The fully saturated member has no safe first changing toggle. Positive sources are mixed-floor, not fully saturated.
+
+Batch preparation releases m <= q-h-1 spokes in 1+3m achieved edits, attaining exact minimum h+3 active labels at maximum batch size. Accessible surplus grows without bound at fixed h. The batch cost is not claimed globally optimal. Inherited absent-label renames, followed by reverse pi(L), implement exactly pi(C), restore preparation and renew for finite prescribed permutation sequences, including permutations moving the reserve.
+
+## Verification and independent review
+Prospective proof/scope freeze 6f2f90d80d1b9e6bb309527051a347835d7b5d0a; scientific/external-review commit 987b61f8b8d0aede92e2f0a0ec64caf7fb874bd7. Run 38067111288: 199 passing tests (24 new, 175 inherited), independent complete identities and fresh byte-identical certificate reproduction. Scope q=2..7, every h: 27 sources, 644 ordered primary cases (420 positive), 1,934 batches, 26,330 admissible multiplicity vectors, all 120 permutations of the five-label palette and three renewed sequences. Complete raw BFS layers 0..4 for (q,h)=(3,1),(4,1),(4,2) find no vacancy before depth four and actual vacancies at depth four. Scripted routes have exact tau3; raw BFS admits 3..4, as inherited safety requires. 24,043 route/BFS slice occurrences reduce to 3,482 exact (q,current-core) hidden states and 647,499 original one-hidden-mask checks. Arbitrary q/hidden-palette/sequence claims are proof-based, not finite certification.
+
+Internal math/code and separate scope audits accepted after reconciliation. Gemini mathematical review and separate publication audit ACCEPTED with no missing assumptions/counterexamples. Exact input/output hashes, original provenance, fresh certificate reproduction and independent reconstruction were verified by author. Fresh jobs do not rerun all 199 tests.
+
+Initial 21-test RED, separate 22-test upper-four RED and final 24-test GREEN are distinct, preserved stages. Full-scope tau3-overconstraint on raw BFS was diagnosed and fixed without changing the frozen theorem or universe. Internal review gaps in original-palette rejection and renewal intermediate restoration were corrected, with rejecting regression controls.
+
+## Original evidence and readback
+[Proof](COUPLED_C3_SLACK_HANDOVER_RESULT.md), [report](COUPLED_C3_SLACK_HANDOVER_REPORT.md), [internal review](COUPLED_C3_SLACK_HANDOVER_REVIEW.md), [author reconciliation](COUPLED_C3_SLACK_HANDOVER_RECONCILIATION.md), [publication audit](COUPLED_C3_SLACK_HANDOVER_PUBLICATION_AUDIT.md). Original evidence under evidence/slack-handover/: all four original ZIPs, four complete job logs, raw Gemini answers/manifests, publication gate and exact archive/member/code/input/response hash reconciliation. Original mathematical/publication responses remain unedited. All nine scientific review inputs were fetched from the immutable review commit and compared. Final publication proof, closeout documents and continuation indices must read back byte-exactly from final commit, with matching branch head.
+
+## Continuation
+The structural hard-positive family settles the previous request for static spare capacity and first-vacancy reachability despite ALL anchored failures. Next seek a comparable sufficient rule or an exact obstruction for fully saturated sources with static spare capacity and every anchored criterion failing, including upper-cover handovers beyond a persistent three-label cover. Safe absent-label existence, component reachability and a native mechanism remain distinct. General saturated reserve availability is OPEN.
+
+Supplied core observation/access/addresses, source admission, outcome selection and committed progress remain assumptions. Broad C3/general C4, native observer/enforcement/progress, one-excess-incidence universality and physical GR are OPEN. No numbered-stage/full-stack certification, fresh primitive, hidden-variable extension or relaxed original floor.
