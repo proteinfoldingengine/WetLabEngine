@@ -1,0 +1,36 @@
+# Tight upper-cover handover — scientific closeout
+
+Date: 2026-10-10 UTC. CLOSED for the declared theorem and prospective verification contract; publication completion is reported only after immutable readback.
+
+This closeout supersedes the historical OPEN/pending statuses in the frozen RESULT, REPORT and REVIEW, whose reviewed contents remain unchanged.
+
+Prospective freeze: dbe4c779be4ddde37017328b84ede84169659d5d. Scientific/event/workflow commit: d35e722533c035d07a2b368b0aabbaa0082b3d65. Integrated parent: 9030d5c8637083f17c073962d71ce3c1616aab95.
+
+[Theorem and prospective contract](COUPLED_C3_MOVING_COVER_RESULT.md), [execution report](COUPLED_C3_MOVING_COVER_REPORT.md), [internal review](COUPLED_C3_MOVING_COVER_REVIEW.md).
+
+## What is proved
+Protection can change its actual label identities while the core hitting number remains exactly four. For the declared fully saturated crossed-block family with an additional source singleton, the old protecting set {u,v,e,z} hands over to {u,v,b,z}. Both are actual covers on the overlap slice. No extra unit of hitting-number budget is used, every original floor survives, and all root cardinalities return to their source values.
+
+The achieved route first frees b in 4r+6 edits, then adds b at T and deletes e there: 4r+8 edits to prescribed e absence, for r>=3. Every source cover must contain e. Every safe core has hitting number four, so at an e-absent endpoint a fixed set containing e has at most three active members and cannot cover. Thus cover movement is necessary for ANY safe path to this prescribed vacancy, independently of this route. The r=2 member has safe additions but no static vacancy; all anchored release certificates fail throughout the family. Static minimum is r+5=N-1 for r>=3 and N=8 for r=2.
+
+The first vacancy is b, and it has a persistent four-cover. This checkpoint proves necessary movement for the prescribed e vacancy after that first reserve; it does not prove movement necessary before any first vacancy. All safe CORES here have tau=4; original protected FULL completions remain in {3,4}. The added z is an existing source label of the enlarged family, never a fresh label during execution. Cost is achieved, not proved optimal. Exact permutation/restoration and finite renewal follow from the inherited absent-label interface; no new full-palette permutation campaign is claimed.
+
+A separate general theorem supplies an exact test for persistent-cover accessibility. Mark the actual identities of a source cover H and, when needed, the prescribed target label. Count only the unmarked labels by original maximal-footprint types, retaining empty types. Exact meet gates preserve floors and the SAME H. Every quotient edge lifts from every labelled representative, and expansion/compression gives exact native reachability. Compare its source components with unrestricted reserve accessibility to decide whether movement is unavoidable. Anonymous vacancy does not establish a marked target's absence. The vertex bound is polynomial only for fixed maximal-type count; exact labelled-target connectivity and native shortest paths remain outside the criterion.
+
+## Complete verification
+Run [38080966096](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38080966096) uses the exact scientific SHA above. All four jobs succeeded: verification, fresh reproduction, mathematical review and separate publication audit. Both original Gemini verdicts are ACCEPTED with no missing assumptions or counterexamples. Exact author reconciliation verified the complete sets of32 mathematical and35 publication inputs and both response hashes; each review used one response attempt.
+
+The declared universes contain 90 sources, 180 floor-mode cases, 42,720 labelled vertices, 183,870 safe edges and 3,426 source-cover/target jobs. Their quotient graphs contain 425,232 vertices and 1,414,368 edges, summed over jobs. Every-representative lifting checks 2,961,216 projected edges. Native slice occurrences total 533,072; fixed-cover lift occurrences summed over covers total 743,616. The lifted family has 31 cases: the r=2 control and every ordered triple for r=3,4. Original protected one-hidden-mask checks total 1,943,761.
+
+Producer and independent checker completely reconstruct source, vertex, edge, component, lift, cover, target and vacancy identities before comparing canonical hashes. No hash or reported count substitutes for enumeration. The implementations use distinct bitmask/set representations, source enumerators, hitting-set solvers, edge construction and component algorithms. Every marked edge lifts from every representative; exact projected source-component and vacancy identities are explicitly compared. Symmetry caches omit no declared job.
+
+In these finite cases, ANY vacancy is persistent-cover reachable in 99 cases and unreachable in 81; none forces movement. For prescribed targets, 477 have persistent-cover routes, 24 require movement, and 411 are unreachable. These bounded classifications do not establish a general theorem about first vacancies.
+
+All 28 new and 225 inherited contracts pass locally (253 total). Original CI logs independently establish all253 exact-event passes. Initial 22-test RED has 20 failures and two incidental passes; final 28-test GREEN includes six added controls. The direct test-entrypoint issue was corrected and independently verified. Fresh and publication jobs regenerate the full certificate and independent reconstruction; they do not rerun all 253 tests.
+
+Certificate SHA256: 1fc3b973ab9328df08f99cdcb83a6d151cde7203e0d17415c2b0603cd6cf985c. Original evidence is retained under evidence/moving-cover/: four unchanged ZIPs, four complete job logs, raw Gemini responses and manifests, exact scientific input readbacks, publication gate, artifact/run/job metadata, executable author audit and full hash manifests. The executable author audit authenticated all inputs and responses, exact archive-member/test-log sets, run/job/artifact/log identities and completion markers. Six adversarial evidence controls reject missing review inputs, truncated logs, wrong run/job identities, compensating test-count substitutions and omitted archive members; the intact packet passes. These audit controls are separate from253 scientific tests. Final immutable text/binary/head readback is required before publication is reported complete.
+
+[Author reconciliation](COUPLED_C3_MOVING_COVER_RECONCILIATION.md) and [separate publication audit](COUPLED_C3_MOVING_COVER_PUBLICATION_AUDIT.md) record the final evidence gates.
+
+## Continuation
+Next: determine structural conditions forcing protection to move before ANY first reserve, or derive an invariant explaining when a persistent cover always suffices. This is stronger than the prescribed-label obstruction proved here. Native observation/access/source/outcome/committed progress remain supplied assumptions; broad C3/general C4 remain OPEN. Path A remains active and Path B closed. Universal hidden/arbitrary-r claims are analytical, with finite masks as corroboration. No physical derivation, new primitive, inserted geometry, fundamental-time or dark-matter variable, numbered stage or full-stack certification.

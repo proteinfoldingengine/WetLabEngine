@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_ANCHORED_RELEASE_CLOSEOUT.md": "b1f432788932a82e73953cc151109d71ee0189664624bd8e3009126928737bf8",
+    "COUPLED_C3_FOOTPRINT_CLOSEOUT.md": "1062ec38dfdfa00305f5366e91fe306a118f81bf112b88a8cecd3a6b87f2bca0",
+    "COUPLED_C3_HANDOVER_GRAPH_CLOSEOUT.md": "0211506ba9b06e2ab119c2a313adfde111b6feba914f72e501888d9c8dcda397",
+    "COUPLED_C3_MOVING_COVER_REPORT.md": "e206d9d6f5288e2e46c870130ff7db3cafe80e7b826c2575358887ae74f0979f",
+    "COUPLED_C3_MOVING_COVER_RESULT.md": "b1c7e3d6c8ff8f6643e5b4d1d0371a78bc6c474ef65c272f04747940f35ea04e",
+    "COUPLED_C3_MOVING_COVER_REVIEW.md": "5810a0cf3db48c1e0b8d2dd72bd241366f4cdf284847d6bea207af049e150794",
+    "COUPLED_C3_SATURATED_HANDOVER_CLOSEOUT.md": "1322b6699e8158b6a6127fd604c59b252cfbab9e93000054b9d64a2065e1df8d",
+    "EVIDENCE/certificate.sha256": "0115f469c397126cd0f79be68d1d56d0b678bae22e9d26eaf193bb4f20e13bc0",
+    "EVIDENCE/contracts.log": "645749768b8829add4859eac4553fb51580f91d0b8e49d92e921d9045465d742",
+    "EVIDENCE/counts.json": "3e69ea344a277139d6f2e72c607032d00bfc9096f2d6284c74a79f466347aa6c",
+    "EVIDENCE/fresh_independent.json": "92c9abb32d1e8a49d0a2ae2588517fb9f73e9a694a1114ca40125cdc2dd778d8",
+    "EVIDENCE/frozen_proof_scope.md": "b1c7e3d6c8ff8f6643e5b4d1d0371a78bc6c474ef65c272f04747940f35ea04e",
+    "EVIDENCE/independent.json": "92c9abb32d1e8a49d0a2ae2588517fb9f73e9a694a1114ca40125cdc2dd778d8",
+    "EVIDENCE/independent.log": "92c9abb32d1e8a49d0a2ae2588517fb9f73e9a694a1114ca40125cdc2dd778d8",
+    "EVIDENCE/independent.py": "b668490fbff98c47b5a45640225458895104cd6f4a806c614fc12415cd9390dd",
+    "EVIDENCE/inherited_anchored_release.log": "8803863a2c664d46057532d28516c2f1aa9bac69acd467a87cb9b95f0803133c",
+    "EVIDENCE/inherited_capacity_gap.log": "fff3c5a17f72c4cc913d78111b7dc194078fcd2b32bb83c847032015c1574cef",
+    "EVIDENCE/inherited_fixed_family.log": "f2fba7c268e649d7be58bb18cda0f9ba0d916145dd2c961a528c2a8c72d7234b",
+    "EVIDENCE/inherited_footprint.log": "b673d218e92769ded168386371572a31ab086ee85c80eeb588c69d5fc0c78056",
+    "EVIDENCE/inherited_handover_graph.log": "bc944e3529563b059174162568c13aef1e505125d0569d7dceccea89b35cbd7a",
+    "EVIDENCE/inherited_label_release.log": "50897e072e5b5299239272fc23e6e9768b257c7b76633b62c5e56f7c49064015",
+    "EVIDENCE/inherited_local_progress.log": "502989606b5801397fc4e57947f0c33268fca3ef76656477f68be2de70552633",
+    "EVIDENCE/inherited_saturated_handover.log": "b7b483e08e95b1618f00513f19eb9a9eb55bb9bedc3ef0b700df348f7e18079a",
+    "EVIDENCE/inherited_saturated_transfer.log": "77fadf95a299a60ffc87b651d881e219b64711de9a00bd13c261ca8880d525f9",
+    "EVIDENCE/inherited_slack_handover.log": "1d4110104dd94d9fd15cd0b187c7f44c0b292ac4dc84f850ed95e66d6da4b416",
+    "EVIDENCE/producer.py": "de1335dbfbc736088426437924504ec44b76d8fb5db5c80c305b3d452b6b8460",
+    "EVIDENCE/provenance.txt": "3973d87f1b50c02d91b9ba9dd2616487e5dcd7bcd25554f3faf5ced47a6cf0cc",
+    "EVIDENCE/red.log": "be2471927028b1aca9b8b8fdc741e156fac560d3bd37b1d5e4ff33a5e0ea943c",
+    "EVIDENCE/test_moving.py": "846ae4ad101ae060acf8450b60c4d77fb3a82dc18d273fc45094d0f6eed2203f",
+    "MATH_REVIEW/manifest.json": "3ac1e87f1883549904ba14484cbc91e7765151db06b103ca0303cd1b39bd8a87",
+    "MATH_REVIEW/review.txt": "5f6ce6d33ea491ebba42b538bf3303ce893c835702a7ccf667b3a2da2c8f99d8",
+    "PUBLICATION_GATE": "f7ed33ca9f64a11a292c9d82042eee9df18959afb5e73ba9945c1eb70494d0cd",
+    "moving_cover/independent.py": "b668490fbff98c47b5a45640225458895104cd6f4a806c614fc12415cd9390dd",
+    "moving_cover/producer.py": "de1335dbfbc736088426437924504ec44b76d8fb5db5c80c305b3d452b6b8460",
+    "moving_cover/test_moving.py": "846ae4ad101ae060acf8450b60c4d77fb3a82dc18d273fc45094d0f6eed2203f"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "d35e722533c035d07a2b368b0aabbaa0082b3d65",
+  "response_sha256": "3d1ea71c342456d9d95b37b2bb031670d3847f83c0ca48fe9c5dd18e2aa2d1c6",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 51191,
+  "workflow_commit": "d35e722533c035d07a2b368b0aabbaa0082b3d65"
+}

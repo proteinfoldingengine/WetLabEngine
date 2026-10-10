@@ -1,0 +1,48 @@
+{
+  "controls": [
+    {
+      "control": "intact",
+      "exit_code": 0,
+      "expected_gate": null,
+      "status": "ACCEPTED"
+    },
+    {
+      "control": "missing_review_input",
+      "exit_code": 1,
+      "expected_gate": "expected_inputs",
+      "status": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "control": "truncated_complete_log",
+      "exit_code": 1,
+      "expected_gate": "Cleaning up orphan processes",
+      "status": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "control": "wrong_run_identity",
+      "exit_code": 1,
+      "expected_gate": "runmeta['id']",
+      "status": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "control": "compensating_test_counts",
+      "exit_code": 1,
+      "expected_gate": "test_counts==TESTS",
+      "status": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "control": "omitted_archive_member",
+      "exit_code": 1,
+      "expected_gate": "set(verification)==VERIFICATION",
+      "status": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "control": "wrong_job_binding",
+      "exit_code": 1,
+      "expected_gate": "item['job_id']==job['id']",
+      "status": "REJECTED_AS_REQUIRED"
+    }
+  ],
+  "scientific_tests_not_incremented": 253,
+  "status": "ACCEPTED"
+}

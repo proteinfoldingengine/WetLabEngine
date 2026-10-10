@@ -1,0 +1,11 @@
+# Tight moving-cover handover — separate publication audit
+
+Date:2026-10-10 UTC. Independent reviewer /root/audit_moving_publication: ACCEPT for the final original-evidence packet and publication scope. Scientific SHA d35e722533c035d07a2b368b0aabbaa0082b3d65, run38080966096.
+
+Reviewer authenticated RESULT/REPORT/REVIEW and all three scientific Python files against exact scientific input readbacks, independently verified certificate SHA256 and finite classifications, and checked original local RED/GREEN/inherited totals. Scope preserves persistent actual H versus moving cover, target identity versus anonymous vacancy, prescribed e versus firstb vacancy, coretau4 versus FULLhidden3..4, fixed-k complexity, achieved cost and analytical universality versus finite corroboration.
+
+Initial author-audit review found integrity gaps in exact input membership, log completeness, run/job binding and exact test-log counts. These were corrected before final acceptance. Reviewer independently executed audit_originals.py: exit0,253tests,32mathematical and35publication inputs, both raw ACCEPTED. Reviewer independently executed test_original_audit.py: intact packet passes and all six deliberately corrupted temporary packets reject at their intended gates. Original archives remain unchanged.
+
+Reviewer inspected the original fourth publication ZIP, full raw response, manifest, hashes and PASS gate. The gate authenticates exact scientific provenance, fresh byte-equal certificate, full independent reconstruction and original mathematical response hash. Both external reviews have one response attempt, empty missing-assumption/counterexample arrays and appropriate limitations. Four original archives, full logs and exact metadata/bindings support the reported outcomes. Final closeout and author reconciliation have no outstanding scientific or publication-scope defect.
+
+Final publication completion remains subject to publishing-author immutable text, binary and branch-head readback. This audit does not claim that a future readback already occurred, or impute scientific CI to the later evidence-only publication commit. Broad/native C3/C4 and necessity of moving protection before ANY first reserve remain OPEN.

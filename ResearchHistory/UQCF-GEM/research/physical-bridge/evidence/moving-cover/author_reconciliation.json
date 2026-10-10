@@ -1,0 +1,185 @@
+{
+  "certificate_sha256": "1fc3b973ab9328df08f99cdcb83a6d151cde7203e0d17415c2b0603cd6cf985c",
+  "complete_job_logs": {
+    "fresh_reproduction_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114298454767,
+      "run_id": 38080966096,
+      "sha256": "94d6d39976dc681e845a637ca4ad3a0eda5dfa351b77e809e4ee03220608443e",
+      "size": 23413
+    },
+    "mathematical_review_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114298993045,
+      "run_id": 38080966096,
+      "sha256": "a9b7f7a1fe2e857d41def0e406f318d149fd2b7bd27b946284c987ead97762a5",
+      "size": 22744
+    },
+    "publication_audit_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114299140263,
+      "run_id": 38080966096,
+      "sha256": "bcc53f829a96f801cae4977be92e7c12734afbd32386ed460d9a619cea929f30",
+      "size": 22498
+    },
+    "verification_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114297616457,
+      "run_id": 38080966096,
+      "sha256": "cef2ed151d958f720d742dac32f9b04750ba0c7a63ac1efeffd56c413e95e4d4",
+      "size": 47583
+    }
+  },
+  "counts": {
+    "cases": 180,
+    "cover_jobs": 3426,
+    "edges": 183870,
+    "families": 31,
+    "fixed_cover_lift_slices": 743616,
+    "hidden_checks": 1943761,
+    "native_slice_occurrences": 533072,
+    "orbit_edge_lifts": 2961216,
+    "quotient_edges": 1414368,
+    "quotient_vertices": 425232,
+    "sources": 90,
+    "vertices": 42720
+  },
+  "final_new_tests": 28,
+  "finite_classification": {
+    "any_persistent_possible": 99,
+    "any_unreachable": 81,
+    "prescribed_moving_required": 24,
+    "prescribed_persistent_possible": 477,
+    "prescribed_unreachable": 411
+  },
+  "initial_red_tests": 22,
+  "limitations": [
+    "prescribed e vacancy forces moving cover; first b vacancy has persistent4cover",
+    "coretau4; FULLhidden3..4",
+    "achieved4r+8, no native optimality",
+    "finite90sources180cases3426cover-targetjobs plus31familycases; universal theorem proof-based",
+    "exact marked quotient for reserve predicates, not exact labelled targets",
+    "polynomial vertices only fixedk",
+    "broadC3/generalC4/nativeobserver-access-outcome-progress OPEN"
+  ],
+  "math_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "math_response_sha256": "5f6ce6d33ea491ebba42b538bf3303ce893c835702a7ccf667b3a2da2c8f99d8",
+  "math_verified_inputs": 32,
+  "mathematical_verdict": "ACCEPTED",
+  "original_archives": [
+    {
+      "file": "c3-moving-cover-fresh-reproduction.zip",
+      "git_blob_sha1": "9f2ed89f879d6ba4dc0d1fae1ddf8e4c224c5891",
+      "members": {
+        "certificate.json": "1fc3b973ab9328df08f99cdcb83a6d151cde7203e0d17415c2b0603cd6cf985c",
+        "certificate.sha256": "0115f469c397126cd0f79be68d1d56d0b678bae22e9d26eaf193bb4f20e13bc0",
+        "contracts.log": "645749768b8829add4859eac4553fb51580f91d0b8e49d92e921d9045465d742",
+        "counts.json": "3e69ea344a277139d6f2e72c607032d00bfc9096f2d6284c74a79f466347aa6c",
+        "fresh_independent.json": "92c9abb32d1e8a49d0a2ae2588517fb9f73e9a694a1114ca40125cdc2dd778d8",
+        "frozen_proof_scope.md": "b1c7e3d6c8ff8f6643e5b4d1d0371a78bc6c474ef65c272f04747940f35ea04e",
+        "independent.json": "92c9abb32d1e8a49d0a2ae2588517fb9f73e9a694a1114ca40125cdc2dd778d8",
+        "independent.log": "92c9abb32d1e8a49d0a2ae2588517fb9f73e9a694a1114ca40125cdc2dd778d8",
+        "independent.py": "b668490fbff98c47b5a45640225458895104cd6f4a806c614fc12415cd9390dd",
+        "inherited_anchored_release.log": "8803863a2c664d46057532d28516c2f1aa9bac69acd467a87cb9b95f0803133c",
+        "inherited_capacity_gap.log": "fff3c5a17f72c4cc913d78111b7dc194078fcd2b32bb83c847032015c1574cef",
+        "inherited_fixed_family.log": "f2fba7c268e649d7be58bb18cda0f9ba0d916145dd2c961a528c2a8c72d7234b",
+        "inherited_footprint.log": "b673d218e92769ded168386371572a31ab086ee85c80eeb588c69d5fc0c78056",
+        "inherited_handover_graph.log": "bc944e3529563b059174162568c13aef1e505125d0569d7dceccea89b35cbd7a",
+        "inherited_label_release.log": "50897e072e5b5299239272fc23e6e9768b257c7b76633b62c5e56f7c49064015",
+        "inherited_local_progress.log": "502989606b5801397fc4e57947f0c33268fca3ef76656477f68be2de70552633",
+        "inherited_saturated_handover.log": "b7b483e08e95b1618f00513f19eb9a9eb55bb9bedc3ef0b700df348f7e18079a",
+        "inherited_saturated_transfer.log": "77fadf95a299a60ffc87b651d881e219b64711de9a00bd13c261ca8880d525f9",
+        "inherited_slack_handover.log": "1d4110104dd94d9fd15cd0b187c7f44c0b292ac4dc84f850ed95e66d6da4b416",
+        "producer.py": "de1335dbfbc736088426437924504ec44b76d8fb5db5c80c305b3d452b6b8460",
+        "provenance.txt": "3973d87f1b50c02d91b9ba9dd2616487e5dcd7bcd25554f3faf5ced47a6cf0cc",
+        "red.log": "be2471927028b1aca9b8b8fdc741e156fac560d3bd37b1d5e4ff33a5e0ea943c",
+        "test_moving.py": "846ae4ad101ae060acf8450b60c4d77fb3a82dc18d273fc45094d0f6eed2203f"
+      },
+      "sha256": "6bba4f5ccd2a1339b8a607e800b95cab67df22729d153c2ec6d0350ff8106090",
+      "size": 121747
+    },
+    {
+      "file": "c3-moving-cover-mathematical-review.zip",
+      "git_blob_sha1": "0c1264fe0f4eeb2122b35115e8a97743ce435e53",
+      "members": {
+        "manifest.json": "3ac1e87f1883549904ba14484cbc91e7765151db06b103ca0303cd1b39bd8a87",
+        "review.txt": "5f6ce6d33ea491ebba42b538bf3303ce893c835702a7ccf667b3a2da2c8f99d8"
+      },
+      "sha256": "7f4023036f6329c92206c556ffa8c2631b161e199ce19b54d5f9484874fad151",
+      "size": 2951
+    },
+    {
+      "file": "c3-moving-cover-publication-audit.zip",
+      "git_blob_sha1": "53aa1ce6d56861b4c6ab1a9d88fbea0b52598ce4",
+      "members": {
+        "moving_cover_gate.json": "f7ed33ca9f64a11a292c9d82042eee9df18959afb5e73ba9945c1eb70494d0cd",
+        "moving_cover_publication/manifest.json": "33d001ff4da882d1eba259ce50722b02835a0d6ce92806b0115b55ffcf67ab75",
+        "moving_cover_publication/review.txt": "3d1ea71c342456d9d95b37b2bb031670d3847f83c0ca48fe9c5dd18e2aa2d1c6"
+      },
+      "sha256": "b1a3f8dbfa63d4c0d33c1f7934d3d506eb92662ac2e64317f19972bfa7934b9e",
+      "size": 3909
+    },
+    {
+      "file": "c3-moving-cover-verification.zip",
+      "git_blob_sha1": "7835ad36ee856ce5d65dcae3b598b55ecc291c0f",
+      "members": {
+        "certificate.json": "1fc3b973ab9328df08f99cdcb83a6d151cde7203e0d17415c2b0603cd6cf985c",
+        "certificate.sha256": "0115f469c397126cd0f79be68d1d56d0b678bae22e9d26eaf193bb4f20e13bc0",
+        "contracts.log": "645749768b8829add4859eac4553fb51580f91d0b8e49d92e921d9045465d742",
+        "counts.json": "3e69ea344a277139d6f2e72c607032d00bfc9096f2d6284c74a79f466347aa6c",
+        "frozen_proof_scope.md": "b1c7e3d6c8ff8f6643e5b4d1d0371a78bc6c474ef65c272f04747940f35ea04e",
+        "independent.json": "92c9abb32d1e8a49d0a2ae2588517fb9f73e9a694a1114ca40125cdc2dd778d8",
+        "independent.log": "92c9abb32d1e8a49d0a2ae2588517fb9f73e9a694a1114ca40125cdc2dd778d8",
+        "independent.py": "b668490fbff98c47b5a45640225458895104cd6f4a806c614fc12415cd9390dd",
+        "inherited_anchored_release.log": "8803863a2c664d46057532d28516c2f1aa9bac69acd467a87cb9b95f0803133c",
+        "inherited_capacity_gap.log": "fff3c5a17f72c4cc913d78111b7dc194078fcd2b32bb83c847032015c1574cef",
+        "inherited_fixed_family.log": "f2fba7c268e649d7be58bb18cda0f9ba0d916145dd2c961a528c2a8c72d7234b",
+        "inherited_footprint.log": "b673d218e92769ded168386371572a31ab086ee85c80eeb588c69d5fc0c78056",
+        "inherited_handover_graph.log": "bc944e3529563b059174162568c13aef1e505125d0569d7dceccea89b35cbd7a",
+        "inherited_label_release.log": "50897e072e5b5299239272fc23e6e9768b257c7b76633b62c5e56f7c49064015",
+        "inherited_local_progress.log": "502989606b5801397fc4e57947f0c33268fca3ef76656477f68be2de70552633",
+        "inherited_saturated_handover.log": "b7b483e08e95b1618f00513f19eb9a9eb55bb9bedc3ef0b700df348f7e18079a",
+        "inherited_saturated_transfer.log": "77fadf95a299a60ffc87b651d881e219b64711de9a00bd13c261ca8880d525f9",
+        "inherited_slack_handover.log": "1d4110104dd94d9fd15cd0b187c7f44c0b292ac4dc84f850ed95e66d6da4b416",
+        "producer.py": "de1335dbfbc736088426437924504ec44b76d8fb5db5c80c305b3d452b6b8460",
+        "provenance.txt": "3973d87f1b50c02d91b9ba9dd2616487e5dcd7bcd25554f3faf5ced47a6cf0cc",
+        "red.log": "be2471927028b1aca9b8b8fdc741e156fac560d3bd37b1d5e4ff33a5e0ea943c",
+        "test_moving.py": "846ae4ad101ae060acf8450b60c4d77fb3a82dc18d273fc45094d0f6eed2203f"
+      },
+      "sha256": "e6f93dc086b2c8a97c41970f1c035aecbdc4fd12aafb5d23e12324966d808a27",
+      "size": 121386
+    }
+  ],
+  "publication_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "publication_response_sha256": "3d1ea71c342456d9d95b37b2bb031670d3847f83c0ca48fe9c5dd18e2aa2d1c6",
+  "publication_verdict": "ACCEPTED",
+  "publication_verified_inputs": 35,
+  "scientific_commit": "d35e722533c035d07a2b368b0aabbaa0082b3d65",
+  "scope_freeze": "dbe4c779be4ddde37017328b84ede84169659d5d",
+  "status": "ACCEPTED_AUTHOR_RECONCILIATION",
+  "test_counts": {
+    "contracts.log": 28,
+    "inherited_anchored_release.log": 20,
+    "inherited_capacity_gap.log": 20,
+    "inherited_fixed_family.log": 28,
+    "inherited_footprint.log": 22,
+    "inherited_handover_graph.log": 20,
+    "inherited_label_release.log": 26,
+    "inherited_local_progress.log": 17,
+    "inherited_saturated_handover.log": 26,
+    "inherited_saturated_transfer.log": 22,
+    "inherited_slack_handover.log": 24
+  },
+  "tests_total": 253,
+  "workflow_run": 38080966096
+}
