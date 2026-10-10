@@ -1,0 +1,208 @@
+{
+  "certificate_sha256": "64dd08aaab8a4044b330b5bf9e8c53ef1c4eb648990888748fdc6bf9a48896bc",
+  "complete_job_logs": {
+    "fresh_reproduction_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114321069154,
+      "run_id": 38088634303,
+      "sha256": "4becb348501f275102b7fc28a49e8f07096d5349e0ccc4d2e922432d955cd7b1",
+      "size": 23623
+    },
+    "mathematical_review_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114322046379,
+      "run_id": 38088634303,
+      "sha256": "81e786f547c7d9d910ec80ef84763f62ca22700461fbae9a24406eb6b0f236b8",
+      "size": 22737
+    },
+    "publication_audit_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114322149020,
+      "run_id": 38088634303,
+      "sha256": "a8c837fee9a904f69d601baf84934f18b5d1bc11b4a1a3790a485d41cfd64381",
+      "size": 28834
+    },
+    "verification_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114320311621,
+      "run_id": 38088634303,
+      "sha256": "988035d5bb3b6dce128df723559611cd5a0565a0f9fa199fa7471c31d9381396",
+      "size": 63848
+    }
+  },
+  "counts": {
+    "cherry_routes": 1920,
+    "graph_cases": 3072,
+    "hidden_checks": 64538544,
+    "isolated_routes": 960,
+    "lower_witnesses": 480,
+    "native_cores": 67368,
+    "routes": 8640,
+    "slice_occurrences": 96000,
+    "structures": 1024,
+    "triple_routes": 5760
+  },
+  "final_new_tests": 32,
+  "finite_classification": {
+    "1": {
+      "locked_spare": 0,
+      "reachable": 256,
+      "static_spare": 256
+    },
+    "2": {
+      "locked_spare": 20,
+      "reachable": 621,
+      "static_spare": 641
+    },
+    "3": {
+      "locked_spare": 20,
+      "reachable": 621,
+      "static_spare": 641
+    }
+  },
+  "initial_red_loader_tests": 1,
+  "limitations": [
+    "Five-type pair-root family and uniform multiplicity only",
+    "Static safe absence differs from accessible absence",
+    "Cherry cost8 globally optimal only without isolates; isolated optimum4",
+    "Triple cost<=13 achieved not necessarily optimal",
+    "Every reachable first reserve admits fixed protection in this family only",
+    "Onehidden finite corroboration; arbitrary hidden theorem proof based",
+    "Other footprints/nonuniform multiplicities and broadC3/generalC4/native observer-access-outcome-progress OPEN"
+  ],
+  "math_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "math_response_sha256": "2462c4027b6063bae6ea7685431e3688fefdca4e4b99b43a92a9d6da52efaa8b",
+  "math_verified_inputs": 40,
+  "mathematical_verdict": "ACCEPTED",
+  "original_archives": [
+    {
+      "file": "c3-weak-trace-fresh-reproduction.zip",
+      "git_blob_sha1": "05d75041a1b1a4dd962b1117bfeb3f6115543975",
+      "members": {
+        "certificate.json": "64dd08aaab8a4044b330b5bf9e8c53ef1c4eb648990888748fdc6bf9a48896bc",
+        "certificate.json.identities.jsonl.gz": "58c67b2537006e4868c9f65357cb3383171c2e9bbbd98888f8e72ac770944461",
+        "certificate.sha256": "2b941baa1b430bb45f4e718d2e9825d15712dc7e9ad1e9e203753f2a16f92c2b",
+        "contracts.log": "9352f067be7b4d5eed70c0d5ad3450afda5f01959334eb618e9109f675239afb",
+        "counts.json": "8af5d62a7a710cb31626dc05caa9a541006e6a5bf83ddf4696283bc28eaa1c81",
+        "fresh_independent.json": "b724f9ba2ea2ca2731e2b6ed5b75373157f9e9f88e5f730288f604f259519627",
+        "frozen_proof_scope.md": "609576ec82f03948d8ee08d40f06ac2e52ac0c259dc6c00f44799863f8813871",
+        "identities.sha256": "60b1a10a8d21d0fbe47e5a93857f35b5c3524aae3ae390a3272ebf60991e6373",
+        "independent.json": "b724f9ba2ea2ca2731e2b6ed5b75373157f9e9f88e5f730288f604f259519627",
+        "independent.log": "3aa24af08d7d39217863f49f56c96eef990494e8633e2690c3b715621b9ae03b",
+        "independent.py": "a29521fb2e0aabc7b22b58a12946e7df0a176a96c44afd2203c3acb50285a672",
+        "inherited_anchored_release.log": "514ae9af92056c336bd8dcc53434c06a5d37ed2b40367c09c89778edd60c8525",
+        "inherited_capacity_gap.log": "551a1eed3d08a7ae6cfa55beb77fe27823c73f240ab20fee8d2b0084e225361f",
+        "inherited_fingerprint_lock.log": "14cd7b678ef4dd7a6df1f5993a4265483f3c21762077094fe546b1894d997d21",
+        "inherited_fixed_family.log": "ef5f4d26b619a96e7d7fdb51158cdc51104901388027e198b5d2235c607b040f",
+        "inherited_footprint.log": "b4370c48a7c220855dd0d39cfc858bf2f6a37ef7267694ecd1b80b52be530ff8",
+        "inherited_handover_graph.log": "1f4b3e8373506414b90bb0b3c44d144c664dad62346ccf37db95c53f42c6ce44",
+        "inherited_label_release.log": "5f196a25b6c6840c5dca005ae34568a0bcbfbe8770fe2e43336fd796da6d8d83",
+        "inherited_local_progress.log": "cf2c59f18a89a4f24133c113bd1be35e0acdb02b213e3aa8b0f59e6d49bf9d1a",
+        "inherited_moving_cover.log": "265c153afb1ba4b4cba92cc099ff321dfb006b71bc1f7efce04d7fd6cbb1b858",
+        "inherited_private_cover.log": "93205ce6a1644a3f905377cd01c147775a6109247b07c32cc4347991a362c33b",
+        "inherited_saturated_handover.log": "612223587b3b4081670d4575160e794db6b0c958b493f2509db11959998b6d1b",
+        "inherited_saturated_transfer.log": "a5a9295329d6ab935ecae5271e4834d5a513de597a09632a57e39bc4104a74dd",
+        "inherited_slack_handover.log": "b5f8760408f890454fbe9bb19e0ff91ab815ec83800937601f8a97f7375190cd",
+        "producer.py": "377d913d6727a661cc748d9fb3ff497bbc6136c324f5451c64bd7dcd5366e97b",
+        "provenance.txt": "83fbc78eeb38c0923b93baf7729932a2fdbe846047baf7ddc73f81d19c312abc",
+        "raw_mutation_failure.log": "8ac1d73f5c8f6b3dad78103a0c2fe74edf7ff4bacc97961723b540d76f2b71b6",
+        "red.log": "1fee35c2992ae6e4722a72dd5ce541d41c9f5d9d96c8eceef1881eeeb8e90256",
+        "test_weak.py": "4216586828b3452f1a7e676099a031becc0277148a4c4338aa5c51f9b28c934d"
+      },
+      "sha256": "ebf9191d4bc53f5b63b026d3e78033193b08ba4c2cfc8359b5d8e4918b266e1a",
+      "size": 24118440
+    },
+    {
+      "file": "c3-weak-trace-mathematical-review.zip",
+      "git_blob_sha1": "0fbd49fcc34e6a981fb9e1413774496d429d9864",
+      "members": {
+        "manifest.json": "a22ad38374a445f605bd288558198c695f386ef8bf65aa76cdee8f596289de62",
+        "review.txt": "2462c4027b6063bae6ea7685431e3688fefdca4e4b99b43a92a9d6da52efaa8b"
+      },
+      "sha256": "1720392a0e4e2ca57eff42413f401a5ab6293ac61807b674cb61ebdcc956ebdb",
+      "size": 3151
+    },
+    {
+      "file": "c3-weak-trace-publication-audit.zip",
+      "git_blob_sha1": "97ba5e0cf4860753dd26a2bc1a37a9d4d93d3f56",
+      "members": {
+        "weak_trace_gate.json": "8b441e07bea02696c498bf246e021220114cff8a1902d3148adfbee45193f5d2",
+        "weak_trace_publication/manifest.json": "9b860c37746263ea7adc83c62a7614c362f32b5072aca67747772f51f620a9b7",
+        "weak_trace_publication/review.txt": "3ff44abc3227c605abfd7fade72c46ff63c1d929bb45d968e57503d228eb68e3"
+      },
+      "sha256": "f37030eca8f11f3deb08eb0d40fa17e87e6498d08102184372497b92cf561e69",
+      "size": 4075
+    },
+    {
+      "file": "c3-weak-trace-verification.zip",
+      "git_blob_sha1": "fc34fad18f53708ed24dd1336f8c5290dce74912",
+      "members": {
+        "certificate.json": "64dd08aaab8a4044b330b5bf9e8c53ef1c4eb648990888748fdc6bf9a48896bc",
+        "certificate.json.identities.jsonl.gz": "58c67b2537006e4868c9f65357cb3383171c2e9bbbd98888f8e72ac770944461",
+        "certificate.sha256": "2b941baa1b430bb45f4e718d2e9825d15712dc7e9ad1e9e203753f2a16f92c2b",
+        "contracts.log": "9352f067be7b4d5eed70c0d5ad3450afda5f01959334eb618e9109f675239afb",
+        "counts.json": "8af5d62a7a710cb31626dc05caa9a541006e6a5bf83ddf4696283bc28eaa1c81",
+        "frozen_proof_scope.md": "609576ec82f03948d8ee08d40f06ac2e52ac0c259dc6c00f44799863f8813871",
+        "identities.sha256": "60b1a10a8d21d0fbe47e5a93857f35b5c3524aae3ae390a3272ebf60991e6373",
+        "independent.json": "b724f9ba2ea2ca2731e2b6ed5b75373157f9e9f88e5f730288f604f259519627",
+        "independent.log": "3aa24af08d7d39217863f49f56c96eef990494e8633e2690c3b715621b9ae03b",
+        "independent.py": "a29521fb2e0aabc7b22b58a12946e7df0a176a96c44afd2203c3acb50285a672",
+        "inherited_anchored_release.log": "514ae9af92056c336bd8dcc53434c06a5d37ed2b40367c09c89778edd60c8525",
+        "inherited_capacity_gap.log": "551a1eed3d08a7ae6cfa55beb77fe27823c73f240ab20fee8d2b0084e225361f",
+        "inherited_fingerprint_lock.log": "14cd7b678ef4dd7a6df1f5993a4265483f3c21762077094fe546b1894d997d21",
+        "inherited_fixed_family.log": "ef5f4d26b619a96e7d7fdb51158cdc51104901388027e198b5d2235c607b040f",
+        "inherited_footprint.log": "b4370c48a7c220855dd0d39cfc858bf2f6a37ef7267694ecd1b80b52be530ff8",
+        "inherited_handover_graph.log": "1f4b3e8373506414b90bb0b3c44d144c664dad62346ccf37db95c53f42c6ce44",
+        "inherited_label_release.log": "5f196a25b6c6840c5dca005ae34568a0bcbfbe8770fe2e43336fd796da6d8d83",
+        "inherited_local_progress.log": "cf2c59f18a89a4f24133c113bd1be35e0acdb02b213e3aa8b0f59e6d49bf9d1a",
+        "inherited_moving_cover.log": "265c153afb1ba4b4cba92cc099ff321dfb006b71bc1f7efce04d7fd6cbb1b858",
+        "inherited_private_cover.log": "93205ce6a1644a3f905377cd01c147775a6109247b07c32cc4347991a362c33b",
+        "inherited_saturated_handover.log": "612223587b3b4081670d4575160e794db6b0c958b493f2509db11959998b6d1b",
+        "inherited_saturated_transfer.log": "a5a9295329d6ab935ecae5271e4834d5a513de597a09632a57e39bc4104a74dd",
+        "inherited_slack_handover.log": "b5f8760408f890454fbe9bb19e0ff91ab815ec83800937601f8a97f7375190cd",
+        "producer.py": "377d913d6727a661cc748d9fb3ff497bbc6136c324f5451c64bd7dcd5366e97b",
+        "provenance.txt": "83fbc78eeb38c0923b93baf7729932a2fdbe846047baf7ddc73f81d19c312abc",
+        "raw_mutation_failure.log": "8ac1d73f5c8f6b3dad78103a0c2fe74edf7ff4bacc97961723b540d76f2b71b6",
+        "red.log": "1fee35c2992ae6e4722a72dd5ce541d41c9f5d9d96c8eceef1881eeeb8e90256",
+        "test_weak.py": "4216586828b3452f1a7e676099a031becc0277148a4c4338aa5c51f9b28c934d"
+      },
+      "sha256": "214d21b10374bebacfbe116a9597f04456f1fa41ebbdc97ad298782754125098",
+      "size": 24118033
+    }
+  ],
+  "publication_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "publication_response_sha256": "3ff44abc3227c605abfd7fade72c46ff63c1d929bb45d968e57503d228eb68e3",
+  "publication_verdict": "ACCEPTED",
+  "publication_verified_inputs": 43,
+  "scientific_commit": "ef83e9c7dc5c09dcf88f4838c818f6d91b9e1211",
+  "scope_freeze": "381614fa11f5e3677a511ab597d6cc08f19b7ffa",
+  "status": "ACCEPTED_AUTHOR_RECONCILIATION",
+  "test_counts": {
+    "contracts.log": 32,
+    "inherited_anchored_release.log": 20,
+    "inherited_capacity_gap.log": 20,
+    "inherited_fingerprint_lock.log": 33,
+    "inherited_fixed_family.log": 28,
+    "inherited_footprint.log": 22,
+    "inherited_handover_graph.log": 20,
+    "inherited_label_release.log": 26,
+    "inherited_local_progress.log": 17,
+    "inherited_moving_cover.log": 28,
+    "inherited_private_cover.log": 26,
+    "inherited_saturated_handover.log": 26,
+    "inherited_saturated_transfer.log": 22,
+    "inherited_slack_handover.log": 24
+  },
+  "tests_total": 344,
+  "workflow_run": 38088634303
+}

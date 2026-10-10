@@ -1,0 +1,24 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The source code, logs, and reports are perfectly consistent with the claimed counts: 1024 structures, 3072 graph cases, 8640 routes (960 isolated, 1920 cherry, 5760 triple), 67368 native cores, 96000 slice occurrences, 64538544 hidden checks, and 480 lower witnesses.",
+    "The test logs confirm exactly 32 new tests and 312 inherited tests passed, totaling 344 tests, matching the report.",
+    "The raw_mutation_failure.log accurately records the tuple-pop error in the test helper (AttributeError: 'tuple' object has no attribute 'pop'), which was subsequently fixed by slicing.",
+    "The red.log accurately records the initial missing producer import error (ModuleNotFoundError: No module named 'producer').",
+    "The producer and independent checker implementations are strictly separated, using bitwise and set-based engines respectively, with no cross-imports.",
+    "The publication gate confirms byte-exact certificate reproduction, full independent reconstruction, and exact event provenance.",
+    "The mathematical review is present, accepted, and correctly distinguishes the all-t analytical proofs from the finite computational corroboration (t1..3 for graphs, t2..5 for routes).",
+    "The endpoint lower bound of 8 toggles for arbitrary histories without isolates is corroborated by the 480 reconstructed witnesses."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem applies only to the specific five-type pair-root family with uniform source multiplicities; other footprint families and nonuniform multiplicities remain OPEN.",
+    "Broad C3, general C4, and native observer/access/source/outcome/committed progress remain supplied assumptions and OPEN.",
+    "No physical derivation, new primitive, fundamental time, dark matter, inserted geometry, or full-stack certification is provided.",
+    "The general independent triple route cost <= 13 is achieved but not asserted to be globally optimal.",
+    "Mathematical review cannot attest future publication; this audit verifies the exact event input, raw response, provenance, and fresh independent gate."
+  ]
+}
+```

@@ -1,0 +1,21 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The static dichotomy proof correctly partitions the 5-vertex graphs into spanning cycles/triangle+edge (statically obstructed) and independent sets (statically feasible).",
+    "The fingerprint obstruction correctly identifies the 20 K_{2,3} variants as statically feasible but dynamically locked for t >= 2.",
+    "The constructive routes (cherry and triple) correctly establish reachability for all other statically feasible graphs, with costs 8 and <= 13 respectively.",
+    "The lower bound of 8 toggles for graphs without isolates is soundly derived from the necessity of compensating a saturated edge using a distinct donor label.",
+    "The verification contract correctly distinguishes the all-t analytical proofs from the finite t <= 5 computational corroboration.",
+    "The provided logs and independent reconstruction scripts confirm the exact execution of the verification contract, including the correction of the tuple-pop mutation test error."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem applies only to the specific five-type pair-root family with uniform source multiplicities.",
+    "Broad C3, general C4, and native observer/access/source/outcome/progress remain open.",
+    "No physical derivation, new primitive, fundamental time, dark matter, inserted geometry, or full-stack certification is provided.",
+    "The general triple route cost <= 13 is achieved but not proven to be globally optimal."
+  ]
+}
+```

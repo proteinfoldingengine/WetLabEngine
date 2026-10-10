@@ -6,7 +6,16 @@ Status: Scoped C3 and C4 closeouts are recorded individually below; native recor
 
 
 
-## Latest scoped result: saturated fingerprints separate static reserve from reachable reserve
+## Latest scoped result: complete weak-trace first-reserve classification
+[Weak-trace closeout](COUPLED_C3_WEAK_TRACE_CLOSEOUT.md): scoped CLOSED for the frozen theorem and verification contract. In the uniform five-type pair-root family, t1 admits a first reserve iff G has an isolated vertex; t>=2 admits one iff a static safe reserve exists and minimum degree(G)<=1. EVERY reachable case admits four unchanged actual original maximal anchors. Forced protection movement for a first reserve is absent in this family, including redundant maxima; other footprints/nonuniform multiplicities remain OPEN.
+
+Exactly20 labelled K23/optional-two-part-edge graphs have static spare but inaccessible reserve at t>=2, with minimum4t+1 versus5t locked source labels. Isolated first vacancy has optimal cost4. Ordered cherries achieve8 toggles, globally optimal without isolates and improving the prior nonoptimal16 route. Independent-triple routes achieve<=13; no general optimum claim.
+
+Run38088634303 at ef83e9c7dc5c09dcf88f4838c818f6d91b9e1211:344 scientific tests (32new312inherited),3072 complete graph cases,8640 routes,96000 native slice occurrences and64538544 original protected one-hidden checks. Full canonical identities, independent complete reconstruction and fresh byte-equal reproduction passed. Both Gemini reviews ACCEPTED attempt1. Original evidence preserves two large ZIPs as exact ordered byte segments and two small ZIPs whole, plus complete logs/raw responses/input hashes; author reconciliation and a separate publication audit qualify favorable wording. Both broad C3/general C4 and native observation/access/source/outcome/committed progress remain supplied/OPEN.
+
+Next: saturated reserve availability beyond uniform five-type sources. Safe absent-label existence and reachability through safe edits remain distinct. Path A active; Path B closed.
+
+## Previous scoped result: saturated fingerprints separate static reserve from reachable reserve
 [Fingerprint closeout](COUPLED_C3_FINGERPRINT_LOCK_CLOSEOUT.md): scoped CLOSED for the frozen structural theorem and verification contract. Nonempty saturated-root traces that uniquely identify original maximal containers and contain their complete allowed locked traces are immutable. ANY first vacancy is obstructed, even with moving covers. The exact safe labelled component admits coordinatewise-join paths with native toggle cost equal to Hamming distance; commitment remains supplied.
 
 In the five-type pair-root family, fingerprint acceptance and source count isolation hold iff the saturated graph has minimum degree>=2. K23 has static minimum4t+1 versus source5t: unbounded static reserve surplus t-1 is safe but inaccessible, despite safe local edits. Actual upper-four filtering is essential. The star boundary admits a first vacancy in an achieved16 toggles and a full batch in36(t-1), under four unchanged actual leaf anchors, reaching static minimum2t+3. Every anchored release fails in THESE two families; star costs are not global first-vacancy optima, and mixed-floor capacity endpoints need not restore cardinalities.
