@@ -1,0 +1,46 @@
+test_actual_nonmonotone_handover_toggles (test_handover.Contract.test_actual_nonmonotone_handover_toggles) ... FAIL
+test_upper_four_meet_accepted (test_handover.Contract.test_upper_four_meet_accepted) ... FAIL
+test_zero_bridge_lift (test_handover.Contract.test_zero_bridge_lift) ... FAIL
+
+======================================================================
+FAIL: test_actual_nonmonotone_handover_toggles (test_handover.Contract.test_actual_nonmonotone_handover_toggles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/handover_graph/test_handover.py", line 4, in test_actual_nonmonotone_handover_toggles
+    self.assertEqual(p.lift((3,1,6,8),(6,1,6,8)),[[0,0],[2,0]])
+AssertionError: Lists differ: [] != [[0, 0], [2, 0]]
+
+Second list contains 2 additional elements.
+First extra element 0:
+[0, 0]
+
+- []
++ [[0, 0], [2, 0]]
+
+======================================================================
+FAIL: test_upper_four_meet_accepted (test_handover.Contract.test_upper_four_meet_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/handover_graph/test_handover.py", line 6, in test_upper_four_meet_accepted
+    self.assertTrue(p.gate((2,1,6,8),[1]*4,4))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_zero_bridge_lift (test_handover.Contract.test_zero_bridge_lift)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/handover_graph/test_handover.py", line 8, in test_zero_bridge_lift
+    self.assertEqual(p.lift((0,3,6,8),(3,3,6,8)),[[0,0],[1,0]])
+AssertionError: Lists differ: [] != [[0, 0], [1, 0]]
+
+Second list contains 2 additional elements.
+First extra element 0:
+[0, 0]
+
+- []
++ [[0, 0], [1, 0]]
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

@@ -1,0 +1,71 @@
+name: UQCF-GEM maximal-footprint handover connectivity
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/handover_graph/*.py'
+      - '.github/workflows/uqcf-gem-c3-handover-graph.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - name: Exact source verification and complete component comparison
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          mkdir handover_verification
+          python3 -m unittest discover -s "$ROOT/handover_graph" -p test_handover.py -v 2>&1 | tee handover_verification/contracts.log
+          python3 "$ROOT/handover_graph/producer.py" handover_verification/certificate.json | tee handover_verification/counts.json
+          python3 "$ROOT/handover_graph/independent.py" handover_verification/certificate.json | tee handover_verification/independent.json
+          for SPEC in 'anchored_release test_anchored.py' 'local_progress test_progress.py' 'capacity_gap test_capacity.py' 'saturated_transfer test_transfer.py' 'label_release test_release.py' 'footprint test_footprint.py' 'fixed_family test_fixed_family.py'; do
+            read -r DIR PATTERN <<< "$SPEC"
+            python3 -m unittest discover -s "$ROOT/$DIR" -p "$PATTERN" -v 2>&1 | tee "handover_verification/inherited_$DIR.log"
+          done
+          printf 'scientific_sha=%s\nworkflow_sha=%s\n' "$GITHUB_SHA" "$GITHUB_SHA" > handover_verification/provenance.txt
+          cp "$ROOT/COUPLED_C3_HANDOVER_GRAPH_RESULT.md" handover_verification/frozen_proof_scope.md
+          cp "$ROOT/handover_graph/producer.py" "$ROOT/handover_graph/independent.py" "$ROOT/handover_graph/test_handover.py" "$ROOT/handover_graph/red.log" handover_verification/
+          sha256sum handover_verification/certificate.json > handover_verification/certificate.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-handover-graph-verification
+          path: handover_verification/
+  fresh-reproduction:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-handover-graph-verification
+          path: handover_fresh
+      - name: Fresh complete producer and independent reconstruction
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/handover_graph/producer.py" /tmp/fresh.json
+          cmp /tmp/fresh.json handover_fresh/certificate.json
+          python3 "$ROOT/handover_graph/independent.py" /tmp/fresh.json | tee handover_fresh/fresh_independent.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-handover-graph-fresh-reproduction
+          path: handover_fresh/
