@@ -1,0 +1,42 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_CAPACITY_GAP_CLOSEOUT.md": "a1ee61a4f877490e2bae07e1d323feb60502dab8fe08cd4f26b98dbf4306df2d",
+    "COUPLED_C3_CAPACITY_GAP_RESULT.md": "1a69a9b6edfa8913fafb90c8da42feada4e90bf59c1af3a3546f51fb4085ebbe",
+    "COUPLED_C3_FOOTPRINT_CLOSEOUT.md": "1062ec38dfdfa00305f5366e91fe306a118f81bf112b88a8cecd3a6b87f2bca0",
+    "COUPLED_C3_FOOTPRINT_RESULT.md": "ac8d59b3e50447149c35c09bbef4a467c9ab79fe69cdea6b117b3f39dcbf78ea",
+    "COUPLED_C3_LOCAL_PROGRESS_PUBLICATION_AUDIT.md": "910d1c37ff7bcdcb80d347281b798644e0e3178a7134a316f2c43040b591bc2e",
+    "COUPLED_C3_LOCAL_PROGRESS_REPORT.md": "e0264fc846f87c05475fd5afff1d57d55fcf1e3aa2cbb75f27270fc50e63b4ea",
+    "COUPLED_C3_LOCAL_PROGRESS_RESULT.md": "e12bb829c62d90f34897262abf8035d0ec4a737510e0a248329e99e38a5ab232",
+    "COUPLED_C3_LOCAL_PROGRESS_REVIEW.md": "e5663c594405e67144ac6f7e881b6a198b8be37584acc8a597a8ef85b219dbe6",
+    "COUPLED_C3_LOCAL_PROGRESS_SCOPE.md": "4afb8af7edf88aa529337efd60da411c50d79ff4f4202cb67f8f632d8a027788",
+    "EVIDENCE/certificate.sha256": "596d60a5baeba086935b983d31c2e4b58d19ea03325bd3b4aaa3c12d50339d3d",
+    "EVIDENCE/contracts.log": "6b5e0ca14726a79141a07881ee502370a6085a121ac3f09c7885029f5ecb7130",
+    "EVIDENCE/counts.json": "0cb2dde24dfd6d2af829383c9c79862ff51c2248486472ea9a94d102fadec19b",
+    "EVIDENCE/independent.json": "5eb63d79dc712883d90c8e92c73c3f49ad3581b502525a1aa1a1c29cf4e8750e",
+    "EVIDENCE/inherited_capacity.log": "f4296b1e4710d00550d23f7cab4084cee25e7dd44e15f8415b6a1bf2342061b7",
+    "EVIDENCE/inherited_fixed.log": "b6fd7bda6ab7837b472fd4c65fd6eefa91879a4e1d69abb55c8bd8c3ee34df18",
+    "EVIDENCE/inherited_footprint.log": "fc3b112a59c0589332e8c18f85a906a46acbc65824d7c263054d9066338b1d61",
+    "EVIDENCE/inherited_release.log": "1ad033d4e15a3a7f19097fa3268c6176a5180c133cb2ca3dabbdf2242a21d529",
+    "EVIDENCE/inherited_transfer.log": "f0c2ea8574c523e34e71a95d6c4408f090d0239183b50f57d9501027a781527a",
+    "EVIDENCE/provenance.txt": "4e467565e565581b09dec2ec9234ed2210723155eb81999dfff89d8c064d7a7d",
+    "MATH_REVIEW/manifest.json": "09727ef051b3a04c96fe1fd927af9e1456f447577dcfb0821d1eac7ebddcae13",
+    "MATH_REVIEW/review.txt": "2758df21dc78b1f9f0852885542310fb19c88f5680f5db381a059ee3db3e39ff",
+    "PUBLICATION_GATE": "78859bcbd3c49201bc08514cdfca66a514bf05c3f12d4e4e32a557c72145cb3b",
+    "local_progress/independent.py": "e5f8b3f8a159b81c4c598520f458889d002e6158aec1b0e292f44f2382279273",
+    "local_progress/producer.py": "2fc812e4b5c2317fb9e5b9b46e06dea515bc1a0bfde90c0aa102178cb18fb37f",
+    "local_progress/test_progress.py": "4adddf457aa6a24c6f8c06fa7a3f5571bd2c4a2addc488c1d72b34e24464d03b"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "afbbb19cb11a578d3d8a5ad43f6c2490d03dd35a",
+  "response_sha256": "1da3932982092b3a7c0beabe70ae0987253879c88a3f34453a3c36835028dbc1",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 24436,
+  "workflow_commit": "afbbb19cb11a578d3d8a5ad43f6c2490d03dd35a"
+}

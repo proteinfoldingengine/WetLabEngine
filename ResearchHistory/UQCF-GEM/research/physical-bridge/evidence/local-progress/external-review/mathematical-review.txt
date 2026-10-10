@@ -1,0 +1,23 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The edge counts (18 directed edges per family, 72 total) and state counts (7 per family, 28 total) are mathematically exact and independently reconstructed by the verifier.",
+    "The capacity quantifier kappa=7 is analytically sound: the 4n incidence demand for L/R roots with maximal footprint size n requires at least 4 labels, and T independently requires 3 disjoint gadget labels.",
+    "Target safety is rigorously confirmed: the exact 7-label target preserves floors, maintains tau<=4, and satisfies original footprint domination for all n>=2.",
+    "The n=2 boundary is correctly characterized: at n=2, the target uses all 7 labels (no absent labels) but remains outside the reachable component, while for n>=3, the static surplus of n-2 labels grows without bound.",
+    "Fixed-fiber semantics and hidden completion preservation are strictly maintained. The independent verifier checks every original admitted hidden mask (e.g., 52 masks for n=2, 5298 total) using set-valued roots and recursive minimum transversals, rather than assuming the producer's footprint predicate.",
+    "The finite verifier successfully reconstructs the BFS graph natively and independently, verifying all 2140 rejecting toggles.",
+    "Publication phase requirements are fully satisfied: exact event-commit provenance is documented, fresh byte-identical certificate reproduction is confirmed (SHA256 7deae40ee68d1671f973a77a7054ce6dec3ec208ad31aaa3fd8cf8aaa3e54d5e), and distinct mathematical and publication verdicts are present with consistent final status wording.",
+    "The authors correctly and explicitly disclaim broad C3/C4 closure, native observer origin, physical derivation, numbered v16 certification, external peer review, and proof-assistant certification."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The obstruction relies on the restriction to single-toggle operations and optional NOOPs; larger atomic edits, hidden-label operations, or modified floors are not covered.",
+    "The unbounded inaccessible reserve applies only for n>=3; at n=2, the distinct target is inaccessible but no labels are actually absent.",
+    "The theorem demonstrates an obstruction in a specific isolated family but does not prove that progress inside a repair-relevant component would be insufficient in general.",
+    "Native observer access, source admission, and committed progress remain supplied assumptions rather than derived physical properties."
+  ]
+}
+```
