@@ -1,0 +1,52 @@
+test_anchoring_control (test_anchored.Contracts.test_anchoring_control) ... ERROR
+test_arbitrary_reserve_moving_permutations (test_anchored.Contracts.test_arbitrary_reserve_moving_permutations) ... ok
+test_bool_for_int (test_anchored.Contracts.test_bool_for_int) ... ok
+test_complete_independent_identity (test_anchored.Contracts.test_complete_independent_identity) ... ok
+test_duplicate_primary (test_anchored.Contracts.test_duplicate_primary) ... ok
+test_exact_primary_coverage (test_anchored.Contracts.test_exact_primary_coverage) ... ok
+test_extra_field (test_anchored.Contracts.test_extra_field) ... ok
+test_false_coverage (test_anchored.Contracts.test_false_coverage) ... ok
+test_floor_demand_control (test_anchored.Contracts.test_floor_demand_control) ... ERROR
+test_missing_primary (test_anchored.Contracts.test_missing_primary) ... ok
+test_multi_donor_without_backbone (test_anchored.Contracts.test_multi_donor_without_backbone) ... ok
+test_old_obstructions_retained (test_anchored.Contracts.test_old_obstructions_retained) ... ok
+test_original_domination_control (test_anchored.Contracts.test_original_domination_control) ... ERROR
+test_substituted_source (test_anchored.Contracts.test_substituted_source) ... ok
+test_upper_cover_control (test_anchored.Contracts.test_upper_cover_control) ... ok
+test_wrong_endpoint (test_anchored.Contracts.test_wrong_endpoint) ... ok
+test_wrong_hidden_mask (test_anchored.Contracts.test_wrong_hidden_mask) ... ok
+test_wrong_reserve (test_anchored.Contracts.test_wrong_reserve) ... ok
+test_wrong_script (test_anchored.Contracts.test_wrong_script) ... ok
+test_wrong_witness (test_anchored.Contracts.test_wrong_witness) ... ok
+
+======================================================================
+ERROR: test_anchoring_control (test_anchored.Contracts.test_anchoring_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/anchored_release/test_anchored.py", line 14, in test_anchoring_control
+    def test_anchoring_control(self):self.assertEqual(self.actual['anchor_control']['candidate_admitted'],True);self.assertEqual(self.actual['anchor_control']['donor_inclusion'],False);self.assertIsNone(self.actual['anchor_control']['witness'])
+                                                      ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'anchor_control'
+
+======================================================================
+ERROR: test_floor_demand_control (test_anchored.Contracts.test_floor_demand_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/anchored_release/test_anchored.py", line 12, in test_floor_demand_control
+    def test_floor_demand_control(self):self.assertEqual(self.actual['floor_control']['candidate_admitted'],False);self.assertEqual(self.actual['floor_control']['candidate_tau'],3)
+                                                         ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'floor_control'
+
+======================================================================
+ERROR: test_original_domination_control (test_anchored.Contracts.test_original_domination_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/anchored_release/test_anchored.py", line 13, in test_original_domination_control
+    def test_original_domination_control(self):self.assertEqual(self.actual['domination_control']['source_tau'],3);self.assertEqual(self.actual['domination_control']['candidate_tau'],2)
+                                                                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'domination_control'
+
+----------------------------------------------------------------------
+Ran 20 tests in 6.671s
+
+FAILED (errors=3)

@@ -1,0 +1,133 @@
+{
+  "schema": "anchored-release-evidence-v1",
+  "parent": "1e7cd0938a668fbbcd916e6767e355be0cd1c39e",
+  "prospective_freeze": "ff482f62399bdf71774baf8923008e561035a47e",
+  "science_commit": "06f8e31cf286cf9da204feef038ac0153bb10bd9",
+  "workflow_commit": "06f8e31cf286cf9da204feef038ac0153bb10bd9",
+  "run_id": 38061911959,
+  "jobs": [
+    {
+      "id": 114241715364,
+      "name": "verification",
+      "conclusion": "success"
+    },
+    {
+      "id": 114242040816,
+      "name": "fresh-reproduction",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11673486743,
+      "name": "c3-anchored-release-fresh-reproduction",
+      "size": 100144,
+      "sha256": "da2987fed12b37db549fbbfa6d15ef09b637504f7aabd5911b28a8236cc80740"
+    },
+    {
+      "id": 11672948227,
+      "name": "c3-anchored-release-verification",
+      "size": 99833,
+      "sha256": "2a80ebd586341a9800a302b6896df6c3fa9c9b524d3f9cdcde9efe81cedea853"
+    }
+  ],
+  "certificate_sha256": "9271b04d2011b04e4c13fda37b36b84d91dc32723d6cc3d983ea8db30d990def",
+  "certificate_bytes": 530457,
+  "certificate_location": "original_verification.zip!/certificate.json",
+  "counts": {
+    "permutation_cases": 72,
+    "permutation_hidden_slice_checks": 24020,
+    "positive_releases": 5424,
+    "primary_hidden_slice_checks": 143520,
+    "primary_identities": 19584,
+    "primary_release_toggles": 10752,
+    "renewal_cases": 3,
+    "sources": 2448
+  },
+  "new_tests": 20,
+  "inherited_tests": 135,
+  "total_tests": 155,
+  "archived_local_RED": "20 executed test bodies; three missing control fields raised KeyError before implementation;17passed; not mathematical counterexamples",
+  "original_archives_downloaded_and_digest_checked": true,
+  "all_original_members_fresh_byte_equal": true,
+  "source_readback": [
+    {
+      "file": "independent.py",
+      "blob": "f4ce1bc90ff1f9b3eea41674b91a04d41f6ce0da",
+      "readback_equal": true
+    },
+    {
+      "file": "producer.py",
+      "blob": "481e2d23521e37c9276c035a0481f44258bd3bd3",
+      "readback_equal": true
+    },
+    {
+      "file": "test_anchored.py",
+      "blob": "8ead00a63765d88491156959d5deb87a818a0560",
+      "readback_equal": true
+    }
+  ],
+  "primary_positive_by_floor_mode": [
+    0,
+    5424
+  ],
+  "primary_by_floor_diagnostic_postexecution": true,
+  "fresh_job_reran_all_tests": false,
+  "mathematical_review": "separate internal reviewer ACCEPTED, initial control-coverage gap repaired",
+  "publication_audit": "pending",
+  "numbered_stage_certification": false,
+  "external_AI_review": false,
+  "archives": {
+    "original_reproduction.zip": {
+      "sha256": "da2987fed12b37db549fbbfa6d15ef09b637504f7aabd5911b28a8236cc80740",
+      "size": 100144,
+      "git_blob": "91d67ba948fe6449b15017cd5de1965d488f829c",
+      "members_sha256": {
+        "certificate.json": "9271b04d2011b04e4c13fda37b36b84d91dc32723d6cc3d983ea8db30d990def",
+        "certificate.sha256": "41a16e7e9735f3f0830a19b7d11be521df041174b0c8d813a61e5844bd5b2b95",
+        "contracts.log": "a73ff786cae58cffae671fde1ff86235202932bde227826714e29b806055a3c8",
+        "counts.json": "6bd7c7a49126babed9e006f61f4336bc331214c6a48ecbf067c441498f379362",
+        "fresh_independent.json": "1d813214c548a39086cdd2186cea4edca780cbd6337ac5ad55cb0a64f895bb03",
+        "frozen_proof.md": "ed2df0355fe1112542f47948c006f985fdd2c3334e7d9f8e1d37b586734b8d84",
+        "frozen_scope.md": "313964da9c79508707c22a8236dcefe6799eab0b1d04ab6472257029a38e6195",
+        "independent.json": "1d813214c548a39086cdd2186cea4edca780cbd6337ac5ad55cb0a64f895bb03",
+        "independent.py": "335fc790077266b8a798488039a443418f2e7e810aff02af17bdd5fcd0b0aaa7",
+        "inherited_capacity.log": "cf30cf60d7aee994279136d1de423ba4c3e619ad8c534791d79b34321820d5a5",
+        "inherited_fixed.log": "fb2fd1f16a8c0985218b4157d80787a1da3e39254b66f67476fdc4059a5d96f0",
+        "inherited_footprint.log": "93be1c7ddd129dd54cf8396de5421c007ed87edb4594ca392a6d7594c834615c",
+        "inherited_local_progress.log": "a2849bc39634872cd30fd5e2bc3df72454f3342bbf2a0092d3b05e1156ceffe4",
+        "inherited_release.log": "855e3f44e564ebac2289542d2cad5633bf91f4bc677e5b696cb39cd4b6b5ecd3",
+        "inherited_transfer.log": "7afbf96ec9621e29149b3e7a839a6efc56a9d85223a78d63aa6f0eae56fa2bde",
+        "producer.py": "0187d1d703c45ad87c6a2bed878a4f7c529f7aa42ccee0051a0e2268b67a59f0",
+        "provenance.txt": "536ce4c3e99e4e05b836f48af784112bfa9d48aadbbf545d954efe3cb8fcd535",
+        "red.log": "9971b8197d8e4f77e99dd27b41a81df81c8e2dc8446165e4fdae7068a907f227",
+        "test_anchored.py": "e681d91be56f582b28c5dbf31df9a5f738c806c5a4ff1c4d2f20feabe3ed238d"
+      }
+    },
+    "original_verification.zip": {
+      "sha256": "2a80ebd586341a9800a302b6896df6c3fa9c9b524d3f9cdcde9efe81cedea853",
+      "size": 99833,
+      "git_blob": "958b3194a9c569683f77ef9d2d1e320ab35ab047",
+      "members_sha256": {
+        "certificate.json": "9271b04d2011b04e4c13fda37b36b84d91dc32723d6cc3d983ea8db30d990def",
+        "contracts.log": "a73ff786cae58cffae671fde1ff86235202932bde227826714e29b806055a3c8",
+        "certificate.sha256": "41a16e7e9735f3f0830a19b7d11be521df041174b0c8d813a61e5844bd5b2b95",
+        "counts.json": "6bd7c7a49126babed9e006f61f4336bc331214c6a48ecbf067c441498f379362",
+        "frozen_proof.md": "ed2df0355fe1112542f47948c006f985fdd2c3334e7d9f8e1d37b586734b8d84",
+        "independent.json": "1d813214c548a39086cdd2186cea4edca780cbd6337ac5ad55cb0a64f895bb03",
+        "frozen_scope.md": "313964da9c79508707c22a8236dcefe6799eab0b1d04ab6472257029a38e6195",
+        "independent.py": "335fc790077266b8a798488039a443418f2e7e810aff02af17bdd5fcd0b0aaa7",
+        "inherited_capacity.log": "cf30cf60d7aee994279136d1de423ba4c3e619ad8c534791d79b34321820d5a5",
+        "inherited_fixed.log": "fb2fd1f16a8c0985218b4157d80787a1da3e39254b66f67476fdc4059a5d96f0",
+        "inherited_footprint.log": "93be1c7ddd129dd54cf8396de5421c007ed87edb4594ca392a6d7594c834615c",
+        "inherited_local_progress.log": "a2849bc39634872cd30fd5e2bc3df72454f3342bbf2a0092d3b05e1156ceffe4",
+        "inherited_release.log": "855e3f44e564ebac2289542d2cad5633bf91f4bc677e5b696cb39cd4b6b5ecd3",
+        "producer.py": "0187d1d703c45ad87c6a2bed878a4f7c529f7aa42ccee0051a0e2268b67a59f0",
+        "provenance.txt": "536ce4c3e99e4e05b836f48af784112bfa9d48aadbbf545d954efe3cb8fcd535",
+        "inherited_transfer.log": "7afbf96ec9621e29149b3e7a839a6efc56a9d85223a78d63aa6f0eae56fa2bde",
+        "red.log": "9971b8197d8e4f77e99dd27b41a81df81c8e2dc8446165e4fdae7068a907f227",
+        "test_anchored.py": "e681d91be56f582b28c5dbf31df9a5f738c806c5a4ff1c4d2f20feabe3ed238d"
+      }
+    }
+  }
+}
