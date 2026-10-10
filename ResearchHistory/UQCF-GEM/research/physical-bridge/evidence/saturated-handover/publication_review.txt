@@ -1,0 +1,40 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The publication audit confirms exact event SHA provenance (259416bd4962966a827d26aabd0f4ded517a17dc), fresh byte-equal certificate reproduction, and independent full reconstruction.",
+    "The mathematical review inputs and outputs are hashed and verified, matching the provided manifest and review documents.",
+    "The fully saturated crossed-block handover family correctly uses only the original palette, with no fresh labels introduced.",
+    "The ALL-original-hidden universality is preserved, as the actual u, v, e three-cover remains unchanged at every slice, ensuring the original hidden lower bound survives.",
+    "Theorem 1 correctly establishes that ALL anchored certificates fail for every reserve label, as no maximal-footprint donor can expand to cover the required roots without violating saturated floors.",
+    "The exact static active-label minimum kappa is correctly derived as r+4 for r>=3 and 7 for r=2. The r=2 case admits safe changing additions but no static vacancy.",
+    "The native 4r+6 achieved route is verified, successfully restoring all floors exactly to their source saturated cardinalities.",
+    "The FIRST vacancy is correctly achieved on the final b deletion, removing the previous mixed-floor positivity limitation for this new family.",
+    "The 4r+6 cost is an achieved route; there is explicitly NO global or specified-reserve native optimality claim, nor does this prove general saturated availability or arbitrary upper-cover handover.",
+    "The general count-orbit graph correctly defines count vertices as sum N actual multiplicities of empty and original maximal footprints, with meet-gated one-label type changes.",
+    "The projection and lift properties are mathematically sound: every count edge lifts from EVERY labelled assignment with source counts, and every labelled edge projects.",
+    "Source-expansion choice independence is correctly established, meaning exact ANY first vacancy is reachable if and only if the source component contains an empty coordinate.",
+    "Prescribed absence yes/no is correctly decided via the safe rename interface.",
+    "The limitation that exact labelled-target connectivity and optimal raw-toggle costs are NOT decided by equal counts or count paths is correctly identified and controlled by the singleton 3-root counterexample (same counts for swap, but all first toggles reject).",
+    "The binomial(N+k,k) bound is correctly identified as polynomial only for fixed k, acknowledging that k may grow.",
+    "The complete primary verification for r=2..5 covers all 90 ordered triples for r>=3, every admissible multiplicity vector (total <= N), and every count vertex/edge/component/canonical native lift.",
+    "The exact counts are verified: 499 vertices, 4233 edges, 5 components, and source component minima [7, 7, 8, 9].",
+    "Every original protected one-hidden mask is independently derived, with exact (r, current-core) deduplication while explicitly retaining the exact reported slice occurrences/states/checks, source-expansion, and graph vacancy witness paths.",
+    "Scripted routes correctly maintain exact tau 3, while generic count-edge lifts maintain safety 3..4. Universal hidden/q/general lemma claims are correctly proof-based.",
+    "The 147 FULL-palette permutation identities are exactly the declared union of 120 working-role permutations, 28 transpositions, 8 rotations, and 6 cover-role permutations, explicitly NOT claiming 8! coverage.",
+    "The three renewed two-permutation sequences correctly include intermediate pi(C), second pi(L), and reverse restoration.",
+    "The test logs confirm the expected progression: initial RED had 24 tests (5 failures, 18 errors), a later witness RED had 26 tests (1 failure), and the final GREEN has 26 tests. Combined with 199 inherited tests, the 225 total tests are verified.",
+    "Omitted source/route/vector/graph vertex/edge/component/lift/permutation/renewal controls correctly reject.",
+    "The bad native add control (adding c0 at B1 before deleting A0) correctly violates original domination, yielding candidate tau 2 against source tau 3 under hidden mask 166."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The result does not prove general saturated reserve availability or arbitrary upper-cover handover.",
+    "The 4r+6 route cost is an achieved upper bound, not a globally minimal native-toggle claim.",
+    "The count quotient graph decides reachability of an absent label but does not decide exact labelled-target connectivity or optimal raw-toggle costs.",
+    "The binomial(N+k,k) complexity bound is polynomial only for fixed k; it does not imply general polynomial efficiency as k may grow.",
+    "Broad C3/general C4, native observer/access/source/outcome/progress, numbered stage/full stack, and physical GR/time primitive/dark matter claims are explicitly rejected and remain OPEN."
+  ]
+}
+```

@@ -1,0 +1,173 @@
+{
+  "certificate_sha256": "de22bef5b724490c5c138de88b1708aa6644f837a1304acc24534f2136028bdb",
+  "complete_job_logs": {
+    "fresh_reproduction_job.log": {
+      "sha256": "8bafac26dd48f49c62a9af587ea71025b231724b16c9ea533d2c00a2dd81ca78",
+      "size": 17406
+    },
+    "mathematical_review_job.log": {
+      "sha256": "109b6c3775c40e27f8e4d72dcae6ae97965bac8b33c80964bbf21f79a3df4401",
+      "size": 22808
+    },
+    "publication_audit_job.log": {
+      "sha256": "6c3cf47c85f6944c8fe50508810b4a405b811898ed9ef4123b1fcfa09ba292a2",
+      "size": 29004
+    },
+    "verification_job.log": {
+      "sha256": "1eb9529f2e6e7ea16c5420cc5594f5e793036ac8fafdd2d430ab1aef4308da81",
+      "size": 50483
+    }
+  },
+  "counts": {
+    "all_slice_occurrences": 37369,
+    "capacity": 4,
+    "capacity_vectors": 499,
+    "component_minima": [
+      7,
+      7,
+      8,
+      9
+    ],
+    "count_components": 5,
+    "count_edge_lift_slices": 24909,
+    "count_edges": 4233,
+    "count_vertices": 499,
+    "graphs": 4,
+    "hidden_checks": 36486118,
+    "permutations": 147,
+    "renewal": 3,
+    "routes": 90,
+    "script_slices": 2286,
+    "sources": 4,
+    "unique_hidden_states": 16608
+  },
+  "initial_red_tests": 24,
+  "limitations": [
+    "fully saturated crossed-block family; persistent actual3cover",
+    "achieved4r+6, no native optimality",
+    "finite r2..5 and147 permutation union; universal theorem proof-based",
+    "exact count quotient for first vacancy, not exact labelled targets",
+    "polynomial vertices only fixedk",
+    "broadC3/generalC4/nativeobserver-access-outcome-progress OPEN"
+  ],
+  "math_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "math_response_sha256": "d937c502fde93a6c5e22d285cc1d7996f7504ea97b16ad1995b6a9a859be996a",
+  "math_verified_inputs": 32,
+  "mathematical_verdict": "ACCEPTED",
+  "original_archives": [
+    {
+      "file": "c3-saturated-handover-fresh-reproduction.zip",
+      "git_blob_sha1": "c0b66b90fc218276e41ab4473446ef71ed8cfb0e",
+      "members": {
+        "certificate.json": "de22bef5b724490c5c138de88b1708aa6644f837a1304acc24534f2136028bdb",
+        "certificate.sha256": "df90b3c92ac26e81b33eb4d09153427ae562f58449e10e4c0bfcfae6b5918cbf",
+        "contracts.log": "07f5ad2cc38974af37758472f78f7789b31ca2a0bc4fe70cc517098bce7d7d54",
+        "counts.json": "130b2c808a2c6a4369effebadf96328a396e6e65de65e4aefd19ddc876490dd5",
+        "fresh_independent.json": "72363a28b821f1b38adc2dc7613b55953b9d4fb0c8f1f02df09f1eca01fa14c0",
+        "frozen_proof_scope.md": "1025e27e1bc0b3f2da13713b57626fb4e6f4526723378814586acdcd7832f9fa",
+        "independent.json": "72363a28b821f1b38adc2dc7613b55953b9d4fb0c8f1f02df09f1eca01fa14c0",
+        "independent.log": "72363a28b821f1b38adc2dc7613b55953b9d4fb0c8f1f02df09f1eca01fa14c0",
+        "independent.py": "aa06cf24e144bc433c870704c5c9ef96e9e9e24158fce7825a0f30b77d11f7c1",
+        "inherited_anchored_release.log": "c0b640567626f949fbcdd11a8c871b655901731d97d61026726dc2bfb212c26f",
+        "inherited_capacity_gap.log": "22e582f4b6005190cd09c17f684f5b2b4c4eee5974d6e999adfde2ad7c198a68",
+        "inherited_fixed_family.log": "16e6c7e3a708a457106ac9b4aeb4195bc9c62565bc2d17a2b96c7a77a968261e",
+        "inherited_footprint.log": "1c548664d15aacf01ee002b77e4788b77f9622aac86f6be17f61d71be4f9978c",
+        "inherited_handover_graph.log": "38da6b002f6d0b7180caba24eb9cb48792beb6072dec4e5cd600ff4adcc0431a",
+        "inherited_label_release.log": "4609bf7724a222cda7f0f3e776eb850017f60a5a1d1772d73b0d4ca797fd12b9",
+        "inherited_local_progress.log": "be6a46aac97cfc309a8c9da07eb831d1151226e839bc18ab26a0479bf2b44abc",
+        "inherited_saturated_transfer.log": "bd27dfc5963a82caf2fd7f1f16ab52382cd9e157e7a33753a980ddb6b564778b",
+        "inherited_slack_handover.log": "54834964d8ab554bbfe625b7ba3270549ce842f8858c9141590f4e8b64379552",
+        "producer.py": "5aa14380aa39eff0bb9566f5017cbb67c56b4d30f90e1231af7056a57b97e469",
+        "provenance.txt": "eeff1519f54736b0e28c3a184d8fc6a1ba376f374cf7a8981f9448e13b19b4f6",
+        "red.log": "55485b8900da7b8a3d6f7e23d2683c5acf0c0767f0fb744c7e7c6e516757e426",
+        "test_saturated.py": "8e545c924080d16d0d85573cfb2fba758c5274f72a6522ef1d1ba629747f244c",
+        "witness_red.log": "d2f57d9328966dba8b5258108f5afdf72a905d92a16a5fb9206d7c2bc794826a"
+      },
+      "sha256": "c4c6e68056ad6595e0c79527e49dfb16aefe8494af237dd06545b23dacb160a8",
+      "size": 158725
+    },
+    {
+      "file": "c3-saturated-handover-mathematical-review.zip",
+      "git_blob_sha1": "ee2d9e9018712b67a4bf110849c709b71bd09625",
+      "members": {
+        "manifest.json": "fd3f81966dfa13067e4e956f3f85960478ba21eedaa2a881104e02f0e8742a59",
+        "review.txt": "d937c502fde93a6c5e22d285cc1d7996f7504ea97b16ad1995b6a9a859be996a"
+      },
+      "sha256": "5060bd9b31e888791819e6de246e8258f50e29c6011bb34f727ce9d49e0529cb",
+      "size": 4046
+    },
+    {
+      "file": "c3-saturated-handover-publication-audit.zip",
+      "git_blob_sha1": "6c287bdc51a33ec0b48dbdfe5a89abe4a3656fcb",
+      "members": {
+        "saturated_handover_gate.json": "796a78d61867ddd01b99ba272ea8884a497c25455552c6201621620afffa09f5",
+        "saturated_handover_publication/manifest.json": "e26e1a7d2e767391832f92c7dd4141c20c6c0ff96103d8488c1f3d0bb24fd9bc",
+        "saturated_handover_publication/review.txt": "b958c81d3435ef13b9e7e572ef3a7534210026042007d5f5cc66eff6b4580b40"
+      },
+      "sha256": "c118696e4ae45b7faea1e33a79130f02c0a5fa4e2c121e666b25addb54440e55",
+      "size": 4772
+    },
+    {
+      "file": "c3-saturated-handover-verification.zip",
+      "git_blob_sha1": "60485ce73a0905c35b680844caae0fe02d1c5bb2",
+      "members": {
+        "certificate.json": "de22bef5b724490c5c138de88b1708aa6644f837a1304acc24534f2136028bdb",
+        "certificate.sha256": "df90b3c92ac26e81b33eb4d09153427ae562f58449e10e4c0bfcfae6b5918cbf",
+        "contracts.log": "07f5ad2cc38974af37758472f78f7789b31ca2a0bc4fe70cc517098bce7d7d54",
+        "counts.json": "130b2c808a2c6a4369effebadf96328a396e6e65de65e4aefd19ddc876490dd5",
+        "frozen_proof_scope.md": "1025e27e1bc0b3f2da13713b57626fb4e6f4526723378814586acdcd7832f9fa",
+        "independent.json": "72363a28b821f1b38adc2dc7613b55953b9d4fb0c8f1f02df09f1eca01fa14c0",
+        "independent.log": "72363a28b821f1b38adc2dc7613b55953b9d4fb0c8f1f02df09f1eca01fa14c0",
+        "independent.py": "aa06cf24e144bc433c870704c5c9ef96e9e9e24158fce7825a0f30b77d11f7c1",
+        "inherited_anchored_release.log": "c0b640567626f949fbcdd11a8c871b655901731d97d61026726dc2bfb212c26f",
+        "inherited_capacity_gap.log": "22e582f4b6005190cd09c17f684f5b2b4c4eee5974d6e999adfde2ad7c198a68",
+        "inherited_fixed_family.log": "16e6c7e3a708a457106ac9b4aeb4195bc9c62565bc2d17a2b96c7a77a968261e",
+        "inherited_footprint.log": "1c548664d15aacf01ee002b77e4788b77f9622aac86f6be17f61d71be4f9978c",
+        "inherited_handover_graph.log": "38da6b002f6d0b7180caba24eb9cb48792beb6072dec4e5cd600ff4adcc0431a",
+        "inherited_label_release.log": "4609bf7724a222cda7f0f3e776eb850017f60a5a1d1772d73b0d4ca797fd12b9",
+        "inherited_local_progress.log": "be6a46aac97cfc309a8c9da07eb831d1151226e839bc18ab26a0479bf2b44abc",
+        "inherited_saturated_transfer.log": "bd27dfc5963a82caf2fd7f1f16ab52382cd9e157e7a33753a980ddb6b564778b",
+        "inherited_slack_handover.log": "54834964d8ab554bbfe625b7ba3270549ce842f8858c9141590f4e8b64379552",
+        "producer.py": "5aa14380aa39eff0bb9566f5017cbb67c56b4d30f90e1231af7056a57b97e469",
+        "provenance.txt": "eeff1519f54736b0e28c3a184d8fc6a1ba376f374cf7a8981f9448e13b19b4f6",
+        "red.log": "55485b8900da7b8a3d6f7e23d2683c5acf0c0767f0fb744c7e7c6e516757e426",
+        "test_saturated.py": "8e545c924080d16d0d85573cfb2fba758c5274f72a6522ef1d1ba629747f244c",
+        "witness_red.log": "d2f57d9328966dba8b5258108f5afdf72a905d92a16a5fb9206d7c2bc794826a"
+      },
+      "sha256": "f1bf00f27cffa2910c2b9d8325977e405cffe24145c43ea6cfd0ff8b046875da",
+      "size": 158326
+    }
+  ],
+  "publication_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "publication_response_sha256": "b958c81d3435ef13b9e7e572ef3a7534210026042007d5f5cc66eff6b4580b40",
+  "publication_verdict": "ACCEPTED",
+  "publication_verified_inputs": 35,
+  "scientific_commit": "259416bd4962966a827d26aabd0f4ded517a17dc",
+  "scope_freeze": "851a80a803b47696466c1cee3c3605e2744457ed",
+  "status": "ACCEPTED_AUTHOR_RECONCILIATION",
+  "test_counts": {
+    "contracts.log": 26,
+    "inherited_anchored_release.log": 20,
+    "inherited_capacity_gap.log": 20,
+    "inherited_fixed_family.log": 28,
+    "inherited_footprint.log": 22,
+    "inherited_handover_graph.log": 20,
+    "inherited_label_release.log": 26,
+    "inherited_local_progress.log": 17,
+    "inherited_saturated_transfer.log": 22,
+    "inherited_slack_handover.log": 24
+  },
+  "tests_total": 225,
+  "witness_red_tests": 26,
+  "workflow_run": 38079576180
+}
