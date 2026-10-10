@@ -1,0 +1,246 @@
+test_anonymous_absence_not_marked (test_moving.MovingContracts.test_anonymous_absence_not_marked) ... ok
+test_complete_fixture (test_moving.MovingContracts.test_complete_fixture) ... ok
+test_component_omission (test_moving.MovingContracts.test_component_omission) ... FAIL
+test_cover_job_omission (test_moving.MovingContracts.test_cover_job_omission) ... FAIL
+test_edge_omission (test_moving.MovingContracts.test_edge_omission) ... FAIL
+test_family_anchored_omission (test_moving.MovingContracts.test_family_anchored_omission) ... FAIL
+test_family_capacity (test_moving.MovingContracts.test_family_capacity) ... FAIL
+test_family_fixed_cover_obstruction (test_moving.MovingContracts.test_family_fixed_cover_obstruction) ... FAIL
+test_family_wrong_endpoint (test_moving.MovingContracts.test_family_wrong_endpoint) ... FAIL
+test_family_wrong_ops (test_moving.MovingContracts.test_family_wrong_ops) ... FAIL
+test_fixture_contains_both_floor_modes (test_moving.MovingContracts.test_fixture_contains_both_floor_modes) ... FAIL
+test_floor_identity (test_moving.MovingContracts.test_floor_identity) ... FAIL
+test_marked_target_absence (test_moving.MovingContracts.test_marked_target_absence) ... FAIL
+test_native_lift_omission (test_moving.MovingContracts.test_native_lift_omission) ... FAIL
+test_omitted_cases (test_moving.MovingContracts.test_omitted_cases) ... FAIL
+test_omitted_family (test_moving.MovingContracts.test_omitted_family) ... FAIL
+test_real_fixed_cover (test_moving.MovingContracts.test_real_fixed_cover) ... FAIL
+test_saturated_family_route (test_moving.MovingContracts.test_saturated_family_route) ... FAIL
+test_source_component (test_moving.MovingContracts.test_source_component) ... FAIL
+test_source_identity (test_moving.MovingContracts.test_source_identity) ... FAIL
+test_unmarked_any_absence (test_moving.MovingContracts.test_unmarked_any_absence) ... FAIL
+test_vertex_omission (test_moving.MovingContracts.test_vertex_omission) ... FAIL
+
+======================================================================
+FAIL: test_component_omission (test_moving.MovingContracts.test_component_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 23, in test_component_omission
+    def test_component_omission(self):self.corrupt('cases','components_hash','omitted')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_cover_job_omission (test_moving.MovingContracts.test_cover_job_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 25, in test_cover_job_omission
+    def test_cover_job_omission(self):self.corrupt('cases','covers',[])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_edge_omission (test_moving.MovingContracts.test_edge_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 22, in test_edge_omission
+    def test_edge_omission(self):self.corrupt('cases','edges_hash','omitted')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_family_anchored_omission (test_moving.MovingContracts.test_family_anchored_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 30, in test_family_anchored_omission
+    def test_family_anchored_omission(self):self.corrupt('families','anchored_failures',[])
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_family_capacity (test_moving.MovingContracts.test_family_capacity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 31, in test_family_capacity
+    def test_family_capacity(self):self.corrupt('families','capacity_hash','omitted')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_family_fixed_cover_obstruction (test_moving.MovingContracts.test_family_fixed_cover_obstruction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 29, in test_family_fixed_cover_obstruction
+    def test_family_fixed_cover_obstruction(self):self.corrupt('families','failed_source_covers',[])
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_family_wrong_endpoint (test_moving.MovingContracts.test_family_wrong_endpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 28, in test_family_wrong_endpoint
+    def test_family_wrong_endpoint(self):self.corrupt('families','states',[])
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_family_wrong_ops (test_moving.MovingContracts.test_family_wrong_ops)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 27, in test_family_wrong_ops
+    def test_family_wrong_ops(self):self.corrupt('families','ops',[])
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_fixture_contains_both_floor_modes (test_moving.MovingContracts.test_fixture_contains_both_floor_modes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 6, in test_fixture_contains_both_floor_modes
+    def test_fixture_contains_both_floor_modes(self):self.assertEqual(len(self.data['cases']),2)
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_floor_identity (test_moving.MovingContracts.test_floor_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 20, in test_floor_identity
+    def test_floor_identity(self):self.corrupt('cases','floors',[])
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_marked_target_absence (test_moving.MovingContracts.test_marked_target_absence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 9, in test_marked_target_absence
+    def test_marked_target_absence(self):self.assertTrue(P.target_empty((1,0,2,3),(0,1),1))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_native_lift_omission (test_moving.MovingContracts.test_native_lift_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 24, in test_native_lift_omission
+    def test_native_lift_omission(self):self.corrupt('cases','lifts_hash','omitted')
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_omitted_cases (test_moving.MovingContracts.test_omitted_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 13, in test_omitted_cases
+    def test_omitted_cases(self):d=copy.deepcopy(self.data);d['cases']=[];self.assertRaises(AssertionError,I.verify,d,True)
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AssertionError not raised by verify
+
+======================================================================
+FAIL: test_omitted_family (test_moving.MovingContracts.test_omitted_family)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 14, in test_omitted_family
+    def test_omitted_family(self):d=copy.deepcopy(self.data);d['families']=[];self.assertRaises(AssertionError,I.verify,d,True)
+                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AssertionError not raised by verify
+
+======================================================================
+FAIL: test_real_fixed_cover (test_moving.MovingContracts.test_real_fixed_cover)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 8, in test_real_fixed_cover
+    def test_real_fixed_cover(self):self.assertTrue(P.covered((1,1,2,4,8),(0,2,3,4),4))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_saturated_family_route (test_moving.MovingContracts.test_saturated_family_route)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 7, in test_saturated_family_route
+    def test_saturated_family_route(self):self.assertEqual(len(self.data['families']),1)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_source_component (test_moving.MovingContracts.test_source_component)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 26, in test_source_component
+    def test_source_component(self):self.corrupt('cases','reachable',[])
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_source_identity (test_moving.MovingContracts.test_source_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 19, in test_source_identity
+    def test_source_identity(self):self.corrupt('cases','source',[])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+======================================================================
+FAIL: test_unmarked_any_absence (test_moving.MovingContracts.test_unmarked_any_absence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 10, in test_unmarked_any_absence
+    def test_unmarked_any_absence(self):self.assertTrue(P.target_empty((1,2,3,4),(1,0),None))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_vertex_omission (test_moving.MovingContracts.test_vertex_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 21, in test_vertex_omission
+    def test_vertex_omission(self):self.corrupt('cases','vertices_hash','omitted')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/moving_cover/test_moving.py", line 17, in corrupt
+    if not d.get(part):self.fail('Missing required certificate section')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing required certificate section
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.002s
+
+FAILED (failures=20)
