@@ -74,7 +74,7 @@
   "primary_by_floor_diagnostic_postexecution": true,
   "fresh_job_reran_all_tests": false,
   "mathematical_review": "separate internal reviewer ACCEPTED, initial control-coverage gap repaired",
-  "publication_audit": "pending",
+  "publication_audit": "separate internal publication auditor ACCEPTED; caveats reconciled",
   "numbered_stage_certification": false,
   "external_AI_review": false,
   "archives": {
@@ -129,5 +129,8 @@
         "test_anchored.py": "e681d91be56f582b28c5dbf31df9a5f738c806c5a4ff1c4d2f20feabe3ed238d"
       }
     }
-  }
+  },
+  "evidence_publication_commit": "3fcfe0d04ccc0cc6c6ef2fa4ab223a4a2a44e49e",
+  "report": "COUPLED_C3_ANCHORED_RELEASE_REPORT.md",
+  "publication_audit_record": "COUPLED_C3_ANCHORED_RELEASE_PUBLICATION_AUDIT.md"
 }
