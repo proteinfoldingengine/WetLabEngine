@@ -173,7 +173,7 @@
     }
   ],
   "mathematical_review": "separate internal and Gemini ACCEPTED",
-  "publication_audit": "separate Gemini ACCEPTED; final internal publication readback audit pending",
+  "publication_audit": "separate Gemini and internal source-integrity auditor ACCEPTED",
   "exploration_independently_certified": false,
   "exploration_hard_case_branch_executed": false,
   "numbered_stage_certification": false,
@@ -325,5 +325,9 @@
   },
   "math_response_sha256": "d00a010e253fbb4bb1d5337a8d6f03a41a2f87b6c7b6a2c92660df331d777468",
   "publication_response_sha256": "40abf158ce44efc768f1ecf2ddea74a001bc619eabd3f6fe7f7a34a393f7cb3b",
-  "fresh_job_reran_all_tests": false
+  "fresh_job_reran_all_tests": false,
+  "scoped_status": "CLOSED exact core-connectivity theorem and declared verification",
+  "evidence_audited_at": "558cddf44eff153ae22411f3033ed565aa35fe4c",
+  "closeout": "COUPLED_C3_HANDOVER_GRAPH_CLOSEOUT.md",
+  "internal_publication_audit": "COUPLED_C3_HANDOVER_GRAPH_PUBLICATION_AUDIT.md"
 }
