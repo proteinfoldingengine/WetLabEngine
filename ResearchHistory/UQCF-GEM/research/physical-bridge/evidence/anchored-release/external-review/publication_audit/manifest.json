@@ -1,0 +1,47 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_ANCHORED_RELEASE_PUBLICATION_AUDIT.md": "81e0a7110e94e9b96b88261b2e85060b42bfe061d3e8313e7f0bfec50be8d9b2",
+    "COUPLED_C3_ANCHORED_RELEASE_REPORT.md": "1a39acd4784a878a81ec2ebe49a53f01a04be98fea8adbb1687eb021e52557d9",
+    "COUPLED_C3_ANCHORED_RELEASE_RESULT.md": "ed2df0355fe1112542f47948c006f985fdd2c3334e7d9f8e1d37b586734b8d84",
+    "COUPLED_C3_ANCHORED_RELEASE_REVIEW.md": "01e667d586bf35b8634cf41a9abbd9dcdd3f50002105014964f2206dded92871",
+    "COUPLED_C3_ANCHORED_RELEASE_SCOPE.md": "313964da9c79508707c22a8236dcefe6799eab0b1d04ab6472257029a38e6195",
+    "COUPLED_C3_C4_DEFICIT_CONTINUATION.md": "63fadf6e9ff5dcb046c702756752c64f2da16971b80fa3b8a6da98b120dbb653",
+    "COUPLED_C3_CAPACITY_GAP_CLOSEOUT.md": "a1ee61a4f877490e2bae07e1d323feb60502dab8fe08cd4f26b98dbf4306df2d",
+    "COUPLED_C3_FOOTPRINT_CLOSEOUT.md": "1062ec38dfdfa00305f5366e91fe306a118f81bf112b88a8cecd3a6b87f2bca0",
+    "COUPLED_C3_LABEL_RELEASE_CLOSEOUT.md": "48bc9f716330ec0742fb394071073a2c223b94351626d020c2ea98523aca62dd",
+    "COUPLED_C3_LOCAL_PROGRESS_CLOSEOUT.md": "61e33acdcc28ec0e45cbfd735a63c43fd3aacb9cc43b64781b469bafab38126b",
+    "COUPLED_C3_SATURATED_TRANSFER_CLOSEOUT.md": "ee13d019a207371395540e76e5ff0e3b1ff62120721b2ed97677fd9f507e202e",
+    "EVIDENCE/certificate.sha256": "783c85bc6d816668bcd08428556eec4fb9b8f81c10ddfe704f086246e3ed41cd",
+    "EVIDENCE/contracts.log": "aabac851f93828ef665d480a8a2fb520175041be4836eaa1620faf61548bc327",
+    "EVIDENCE/counts.json": "6bd7c7a49126babed9e006f61f4336bc331214c6a48ecbf067c441498f379362",
+    "EVIDENCE/independent.json": "1d813214c548a39086cdd2186cea4edca780cbd6337ac5ad55cb0a64f895bb03",
+    "EVIDENCE/inherited_capacity.log": "81b5dcdbc94c82b22ae0f010af2d01fc8844df56833d0822654a624c5a839a6f",
+    "EVIDENCE/inherited_fixed.log": "8414dae02c6cb004c54dbbcbb5573508f3de61db71a39ed1013ac12a5ab0f7b6",
+    "EVIDENCE/inherited_footprint.log": "2aab0818a3d3f48ab1f227ccd5deed37ca628013f1d2f21c958b0ed4b3104f00",
+    "EVIDENCE/inherited_local_progress.log": "0898f2c9078025a53792dbe8d273ddd80f1bcc1dd88c6d0292a9379a63e755f8",
+    "EVIDENCE/inherited_release.log": "a0af20e2bba4c982917a4836bd847918c7703c008ceccf4bae84c1fcc4ca00b6",
+    "EVIDENCE/inherited_transfer.log": "ab6ab1c77052236295cb36180fc432bdc4cac8c2eac8f207301e1aee9e0ffc50",
+    "EVIDENCE/provenance.txt": "b8192f65d6e12efe8948755c0495d259dbcbe89e8888dff875e87f07439457e6",
+    "EVIDENCE/red.log": "9971b8197d8e4f77e99dd27b41a81df81c8e2dc8446165e4fdae7068a907f227",
+    "MATH_REVIEW/manifest.json": "8b39811b4c72db8a4e9a179987306ebf327ea2e2b1d3d072f7349d33ac5384bb",
+    "MATH_REVIEW/review.txt": "332292c77d2931c5a891f4c287c17c266e8723de23da1502ce34aac0ba12028b",
+    "PUBLICATION_GATE": "c5f03ca3ea8741cb3f2cd5ec8d5cc3ac68dcb64a2a0f3ab29a91f5954d0382c7",
+    "anchored_release/independent.py": "335fc790077266b8a798488039a443418f2e7e810aff02af17bdd5fcd0b0aaa7",
+    "anchored_release/producer.py": "0187d1d703c45ad87c6a2bed878a4f7c529f7aa42ccee0051a0e2268b67a59f0",
+    "anchored_release/test_anchored.py": "e681d91be56f582b28c5dbf31df9a5f738c806c5a4ff1c4d2f20feabe3ed238d",
+    "evidence/anchored-release/EVIDENCE.json": "b79b8f0b7ea6b774e2063c2b9f16c7a7bee15138a69a1bc33da1bfec83f111b9"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "47ebf4a717f4a9eadc7d51567b27e42bfb1e1d73",
+  "response_sha256": "e68ade9ede98daf2f6f4e3a0347e5c29d357dcc383906ac093a04c9ff0605e63",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 42331,
+  "workflow_commit": "47ebf4a717f4a9eadc7d51567b27e42bfb1e1d73"
+}

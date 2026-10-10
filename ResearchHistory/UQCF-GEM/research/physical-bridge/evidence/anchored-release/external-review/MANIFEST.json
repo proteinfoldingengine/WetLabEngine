@@ -1,0 +1,35 @@
+{
+  "schema": "anchored-release-external-review-archive-v1",
+  "event_commit": "47ebf4a717f4a9eadc7d51567b27e42bfb1e1d73",
+  "run_id": 38062751004,
+  "jobs": [
+    {"id": 114244171557, "name": "verification", "conclusion": "success"},
+    {"id": 114244385538, "name": "mathematical-review", "conclusion": "success"},
+    {"id": 114244699975, "name": "publication-audit", "conclusion": "success"}
+  ],
+  "artifacts": [
+    {"id": 11673842680, "name": "c3-anchored-release-verification-review", "size": 87296, "sha256": "bb7e681a759e9bc44254ea9d14e929e0362bbd66dde9950294cc781e08ce4e61"},
+    {"id": 11673363615, "name": "c3-anchored-release-mathematical-review", "size": 2686, "sha256": "8e602d1715aa3e20d07db9db03148b42cf7509f315025241b263b406de356f2f"},
+    {"id": 11673543348, "name": "c3-anchored-release-publication-audit", "size": 3555, "sha256": "32721bc0cbe2592973af98eace9b0d9574f9ec5b62da30339b17bf03d30765ac"}
+  ],
+  "mathematical_review": {
+    "model": "gemini-3.1-pro-preview",
+    "verdict": "ACCEPTED",
+    "missing_assumptions": 0,
+    "counterexamples": 0,
+    "response_sha256": "332292c77d2931c5a891f4c287c17c266e8723de23da1502ce34aac0ba12028b"
+  },
+  "publication_audit": {
+    "model": "gemini-3.1-pro-preview",
+    "verdict": "ACCEPTED",
+    "missing_assumptions": 0,
+    "counterexamples": 0,
+    "response_sha256": "e68ade9ede98daf2f6f4e3a0347e5c29d357dcc383906ac093a04c9ff0605e63"
+  },
+  "publication_gate": {
+    "status": "PASS",
+    "verified_review_inputs": 27,
+    "certificate_reproduced_byte_exact": true,
+    "independent_full_reconstruction": true
+  }
+}

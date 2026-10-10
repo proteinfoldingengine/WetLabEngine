@@ -1,0 +1,21 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "Exact event-commit provenance is verified: scientific and workflow commits match at 47ebf4a717f4a9eadc7d51567b27e42bfb1e1d73 across provenance.txt, PUBLICATION_GATE, and MATH_REVIEW/manifest.json.",
+    "Fresh byte-identical certificate reproduction is confirmed: PUBLICATION_GATE reports true, and EVIDENCE/certificate.sha256 matches the historical hash 9271b04d2011b04e4c13fda37b36b84d91dc32723d6cc3d983ea8db30d990def.",
+    "Manifest, input, and response hashes are consistent: MATH_REVIEW/manifest.json response_sha256 matches PUBLICATION_GATE.",
+    "Mathematical review verdict is ACCEPTED, distinct from this publication audit.",
+    "Status wording is consistent: all documents explicitly reject broad C3/general C4 closure, native observer origin, guaranteed progress, physical derivation, numbered-v16 certification, external peer review, and proof-assistant certification.",
+    "Test counts and execution logs match the reported claims: 155 total tests passed (20 new, 135 inherited), and the RED log correctly captures the three pre-implementation KeyErrors for the negative controls.",
+    "Independent reconstruction correctly uses exhaustive donor-expanding three-label core enumeration rather than validating the producer's maximal footprint assignments."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem is restricted to the declared monotone release class; failure of its anchored assignment does not prove general safe-path impossibility.",
+    "Native core access, routing, initial protection, and committed progress remain supplied assumptions.",
+    "General connectivity, native observer genesis, full-stack closure, and physical derivations remain OPEN and are not supported by this scoped result."
+  ]
+}
+```
