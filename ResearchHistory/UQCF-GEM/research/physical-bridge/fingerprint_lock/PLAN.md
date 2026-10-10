@@ -42,4 +42,4 @@ Files: workflow, review runner, REPORT, REVIEW, author evidence audit, corruptio
 - [x] Retain original archives, complete logs, raw answer texts, full input/response hashes and retry/failure history.
 - [x] Authenticate exact input/member/count sets and API/job/run/artifact bindings; reject evidence omissions/corruptions.
 - [x] Obtain separate publication audit and portable-layout checks. Separate reviewer accepted; intact plus seven corruptions behaved as required.
-- [ ] Publish the scoped closeout and updated indices; read back every text/blob identity and leased branch head before reporting completion.
+- [x] Publish the scoped closeout and updated indices; read back every text/blob identity and leased branch head before reporting completion.40texts/4original blobs passed at168e21397148e0e33d60d613f9902e72a89481f0; final record checked separately.
