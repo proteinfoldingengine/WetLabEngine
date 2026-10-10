@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/producer.py", line 119, in <module>
+    d=build();pathlib.Path(sys.argv[1]).write_text(json.dumps(d,sort_keys=True,separators=(',',':'))+'\n');print(json.dumps(d['counts'],sort_keys=True))
+      ^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/slack_handover/producer.py", line 103, in build
+    for layer in record['layers']:check(record['q'],record['h'],map(tuple,layer))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/slack_handover/producer.py", line 74, in check
+    assert safe(s,q,h) and tau(s)==3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,222 @@
+EEFEEEEEEEEFFFEFFFFFF
+======================================================================
+ERROR: test_altered_floor (test_slack.CertificateContracts.test_altered_floor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 33, in test_altered_floor
+    c=copy.deepcopy(self.c);c['sources'][0]['floors'][0]=1
+                            ~^^^^^^^^^^^
+KeyError: 'sources'
+
+======================================================================
+ERROR: test_altered_toggle (test_slack.CertificateContracts.test_altered_toggle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 36, in test_altered_toggle
+    c=copy.deepcopy(self.c);c['primary'][-1]['ops'][0][0]=0
+                            ~^^^^^^^^^^^
+KeyError: 'primary'
+
+======================================================================
+ERROR: test_omitted_batch (test_slack.CertificateContracts.test_omitted_batch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 22, in test_omitted_batch
+    def test_omitted_batch(self):self.reject('batch')
+                                 ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 18, in reject
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'batch'
+
+======================================================================
+ERROR: test_omitted_bfs (test_slack.CertificateContracts.test_omitted_bfs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 25, in test_omitted_bfs
+    def test_omitted_bfs(self):self.reject('bfs')
+                               ^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 18, in reject
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'bfs'
+
+======================================================================
+ERROR: test_omitted_capacity (test_slack.CertificateContracts.test_omitted_capacity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 23, in test_omitted_capacity
+    def test_omitted_capacity(self):self.reject('capacity')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 18, in reject
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'capacity'
+
+======================================================================
+ERROR: test_omitted_layer_state (test_slack.CertificateContracts.test_omitted_layer_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 30, in test_omitted_layer_state
+    c=copy.deepcopy(self.c);c['bfs'][0]['layers'][1].pop()
+                            ~^^^^^^^
+KeyError: 'bfs'
+
+======================================================================
+ERROR: test_omitted_permutation (test_slack.CertificateContracts.test_omitted_permutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 24, in test_omitted_permutation
+    def test_omitted_permutation(self):self.reject('permutations')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 18, in reject
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'permutations'
+
+======================================================================
+ERROR: test_omitted_route (test_slack.CertificateContracts.test_omitted_route)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 21, in test_omitted_route
+    def test_omitted_route(self):self.reject('primary')
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 18, in reject
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'primary'
+
+======================================================================
+ERROR: test_omitted_source (test_slack.CertificateContracts.test_omitted_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 20, in test_omitted_source
+    def test_omitted_source(self):self.reject('sources')
+                                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 18, in reject
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'sources'
+
+======================================================================
+ERROR: test_omitted_vector (test_slack.CertificateContracts.test_omitted_vector)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 27, in test_omitted_vector
+    c=copy.deepcopy(self.c);c['capacity'][0]['vectors'].pop()
+                            ~^^^^^^^^^^^^
+KeyError: 'capacity'
+
+======================================================================
+ERROR: test_first_vacancy (test_slack.SlackContracts.test_first_vacancy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 5, in test_first_vacancy
+    def test_first_vacancy(self):self.assertTrue(p.route(p.source(3),p.release(3,0,[1]))[-1][1]&4==0)
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: tuple index out of range
+
+======================================================================
+FAIL: test_independent (test_slack.CertificateContracts.test_independent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 16, in test_independent
+    def test_independent(self):v.verify(self.c,3)
+                               ^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/slack_handover/independent.py", line 1, in verify
+    def verify(c,n=7):raise AssertionError('not implemented')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: not implemented
+
+======================================================================
+FAIL: test_bad_domination (test_slack.SlackContracts.test_bad_domination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 10, in test_bad_domination
+    def test_bad_domination(self):self.assertFalse(p.safe((3,7,9,14,16),3,1))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_bfs_minimum (test_slack.SlackContracts.test_bfs_minimum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 9, in test_bfs_minimum
+    def test_bfs_minimum(self):self.assertEqual(p.bfs(3,1)['first_vacancy'],4)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 4
+
+======================================================================
+FAIL: test_capacity (test_slack.SlackContracts.test_capacity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 6, in test_capacity
+    def test_capacity(self):self.assertEqual(p.capacity(3,1)['minimum'],4)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 4
+
+======================================================================
+FAIL: test_hidden_witness (test_slack.SlackContracts.test_hidden_witness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 11, in test_hidden_witness
+    def test_hidden_witness(self):self.assertEqual(p.fulltau((3,7,9,14,16),20),2)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_no_slack (test_slack.SlackContracts.test_no_slack)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 8, in test_no_slack
+    def test_no_slack(self):self.assertEqual(p.capacity(3,3)['minimum'],5)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 5
+
+======================================================================
+FAIL: test_one_slack (test_slack.SlackContracts.test_one_slack)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 7, in test_one_slack
+    def test_one_slack(self):self.assertEqual(p.capacity(3,2)['minimum'],5)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 5
+
+======================================================================
+FAIL: test_positive (test_slack.SlackContracts.test_positive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 4, in test_positive
+    def test_positive(self):self.assertEqual(len(p.release(3,0,[1])),4)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 4
+
+======================================================================
+FAIL: test_source (test_slack.SlackContracts.test_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 3, in test_source
+    def test_source(self):self.assertEqual(p.source(3),(3,5,9,14,16))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: () != (3, 5, 9, 14, 16)
+
+Second tuple contains 5 additional elements.
+First extra element 0:
+3
+
+- ()
++ (3, 5, 9, 14, 16)
+
+======================================================================
+FAIL: test_source_hidden (test_slack.SlackContracts.test_source_hidden)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/slack_handover/test_slack.py", line 12, in test_source_hidden
+    def test_source_hidden(self):self.assertEqual(p.fulltau(p.source(3),20),3)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 3
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.002s
+
+FAILED (failures=10, errors=11)
