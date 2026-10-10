@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_ANCHORED_RELEASE_CLOSEOUT.md": "b1f432788932a82e73953cc151109d71ee0189664624bd8e3009126928737bf8",
+    "COUPLED_C3_FOOTPRINT_CLOSEOUT.md": "1062ec38dfdfa00305f5366e91fe306a118f81bf112b88a8cecd3a6b87f2bca0",
+    "COUPLED_C3_HANDOVER_GRAPH_REPORT.md": "476c528f44532a926e11c977458212568ebeb640a4f44c20e5e2e7800b57f68f",
+    "COUPLED_C3_HANDOVER_GRAPH_RESULT.md": "0cc0448697756fb1c27e4dfb35e80f5d7f06764200779660139faead77db4a63",
+    "COUPLED_C3_HANDOVER_GRAPH_REVIEW.md": "5bba100e66253bb84d6f67caac692b75f4f35bd2a5bae8db3283d7284664b11c",
+    "EVIDENCE/certificate.sha256": "5b4d61f42b30a234fd06249dc258dd21cae725d2e57b99ec5adc6199f9497830",
+    "EVIDENCE/contracts.log": "96a13803ba2dc97dd76e1938a2e5884ae330e7ba1ddcc52386f27305a0cab909",
+    "EVIDENCE/counts.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+    "EVIDENCE/fresh_independent.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+    "EVIDENCE/frozen_proof_scope.md": "0cc0448697756fb1c27e4dfb35e80f5d7f06764200779660139faead77db4a63",
+    "EVIDENCE/independent.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+    "EVIDENCE/independent.py": "6f7c10ea62ce335b2d1ee97410d60b5f4a0714ffb9c697f6849328427fa4c0cc",
+    "EVIDENCE/inherited_anchored_release.log": "14f249ac7608964a559bc9ccc154a1789a26a978946a0103fe08d22dac316751",
+    "EVIDENCE/inherited_capacity_gap.log": "4bf7ec891ead0e1c6b3d2ce3073faa5663ea035e30a6850523f1cdb2376f7617",
+    "EVIDENCE/inherited_fixed_family.log": "0bf9c87111924a923f22f321f026932f4575510048773b90478e7c85c534eef7",
+    "EVIDENCE/inherited_footprint.log": "d6116622ae027e66d324361444712d41051d9bdf6ad7f4f17d5d358a4358ebd2",
+    "EVIDENCE/inherited_label_release.log": "af18478e03a4dff6fb1d5339fb6be98e27a91a71162a2e661e9e7710f3f26c88",
+    "EVIDENCE/inherited_local_progress.log": "736dec998000810c68999d9a25d7a73d5d58c9537457c24b5dfabd6b1a284bcd",
+    "EVIDENCE/inherited_saturated_transfer.log": "c3eed80a9fa7f11fea5ee33d304cea336e6cc2c5e8ee086b2e5864462b360a19",
+    "EVIDENCE/producer.py": "13a10bfe928972af695dac37c606a170796739588876def102ed2fbc8bfa2d96",
+    "EVIDENCE/provenance.txt": "6bbbddde1b3dfe55d3bdfc083e20fdeab683f0ca09c46465b9400724c6fa9d4e",
+    "EVIDENCE/red.log": "4e59acf0bc7009384efaf5063cdfdf1bbb06cf69314c1e7c527f00cc0c140166",
+    "EVIDENCE/test_handover.py": "4652f5a9cb302024c2b71bd385958ec7b4d731738e38570cf72d7541218291be",
+    "handover_graph/independent.py": "6f7c10ea62ce335b2d1ee97410d60b5f4a0714ffb9c697f6849328427fa4c0cc",
+    "handover_graph/producer.py": "13a10bfe928972af695dac37c606a170796739588876def102ed2fbc8bfa2d96",
+    "handover_graph/test_handover.py": "4652f5a9cb302024c2b71bd385958ec7b4d731738e38570cf72d7541218291be"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "c2669a01bd73ad853aaea1beac19e217c1894e70",
+  "response_sha256": "d00a010e253fbb4bb1d5337a8d6f03a41a2f87b6c7b6a2c92660df331d777468",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 32039,
+  "workflow_commit": "c2669a01bd73ad853aaea1beac19e217c1894e70"
+}

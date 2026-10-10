@@ -1,0 +1,21 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The publication audit confirms exact event-commit provenance (c2669a01bd73ad853aaea1beac19e217c1894e70) consistently across provenance.txt, the mathematical review manifest, and the publication gate.",
+    "Fresh byte-equal reconstruction of the certificate and complete independent full reconstruction are explicitly verified by the publication gate.",
+    "All 26 input file digests and the mathematical review response digest (d00a010e253fbb4bb1d5337a8d6f03a41a2f87b6c7b6a2c92660df331d777468) match perfectly between the manifest and the publication gate.",
+    "The separate independent mathematical review returned an ACCEPTED verdict with zero missing assumptions and zero counterexamples.",
+    "The primary evidence correctly and independently enumerates the full labelled incidence cores versus maximal assignments for all 2,448 four-root/four-label original sources, confirming exact component equivalence across 1,582 components.",
+    "The authors explicitly and correctly disclaim broader C3/C4, numbered-stage/full-stack closure, and physical/native-origin claims, keeping the theorem strictly within its proven mathematical scope."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The finite decision procedure relies on an exponential bound (|M|+1)^N and does not provide or claim polynomial runtime efficiency or globally optimal paths.",
+    "The theorem assumes supplied core access, script state, and actual committed edits; it does not derive native observer origin, outcome selection, fairness, or guaranteed physical progress.",
+    "The exploratory five-by-five screen did not exercise the hard-case handover branch (as all cases lacking anchored release failed static vacancy feasibility), meaning no nonmonotone witness or general anchored-sufficiency claim is established.",
+    "Broad C3/general C4, physical derivations, and numbered-stage or full-stack certifications remain explicitly OPEN."
+  ]
+}
+```

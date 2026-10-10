@@ -78,6 +78,76 @@
         "red.log": "4e59acf0bc7009384efaf5063cdfdf1bbb06cf69314c1e7c527f00cc0c140166",
         "test_handover.py": "4652f5a9cb302024c2b71bd385958ec7b4d731738e38570cf72d7541218291be"
       }
+    },
+    "review_c3-handover-graph-fresh-reproduction.zip": {
+      "sha256": "85402fb20094edeba4de5322a98595e23ae07d120534d78e6c0ae6b31b6defa9",
+      "size": 118086,
+      "git_blob": "639a4f9318b62a853bab9935155c1604e5814f6d",
+      "members_sha256": {
+        "certificate.sha256": "5b4d61f42b30a234fd06249dc258dd21cae725d2e57b99ec5adc6199f9497830",
+        "certificate.json": "620a6540bbae0144f3f514f8bd3f0c5dfc92043577f21adf68e8ed5cee3d37d0",
+        "contracts.log": "96a13803ba2dc97dd76e1938a2e5884ae330e7ba1ddcc52386f27305a0cab909",
+        "counts.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "fresh_independent.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "frozen_proof_scope.md": "0cc0448697756fb1c27e4dfb35e80f5d7f06764200779660139faead77db4a63",
+        "independent.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "independent.py": "6f7c10ea62ce335b2d1ee97410d60b5f4a0714ffb9c697f6849328427fa4c0cc",
+        "inherited_anchored_release.log": "14f249ac7608964a559bc9ccc154a1789a26a978946a0103fe08d22dac316751",
+        "inherited_capacity_gap.log": "4bf7ec891ead0e1c6b3d2ce3073faa5663ea035e30a6850523f1cdb2376f7617",
+        "inherited_fixed_family.log": "0bf9c87111924a923f22f321f026932f4575510048773b90478e7c85c534eef7",
+        "inherited_footprint.log": "d6116622ae027e66d324361444712d41051d9bdf6ad7f4f17d5d358a4358ebd2",
+        "inherited_label_release.log": "af18478e03a4dff6fb1d5339fb6be98e27a91a71162a2e661e9e7710f3f26c88",
+        "inherited_local_progress.log": "736dec998000810c68999d9a25d7a73d5d58c9537457c24b5dfabd6b1a284bcd",
+        "inherited_saturated_transfer.log": "c3eed80a9fa7f11fea5ee33d304cea336e6cc2c5e8ee086b2e5864462b360a19",
+        "provenance.txt": "6bbbddde1b3dfe55d3bdfc083e20fdeab683f0ca09c46465b9400724c6fa9d4e",
+        "producer.py": "13a10bfe928972af695dac37c606a170796739588876def102ed2fbc8bfa2d96",
+        "red.log": "4e59acf0bc7009384efaf5063cdfdf1bbb06cf69314c1e7c527f00cc0c140166",
+        "test_handover.py": "4652f5a9cb302024c2b71bd385958ec7b4d731738e38570cf72d7541218291be"
+      }
+    },
+    "review_c3-handover-graph-mathematical-review.zip": {
+      "sha256": "9b36c2044140fa36f125ffbdcb85106f5516364c7f5b41aa3fdf968e002d4da5",
+      "size": 2724,
+      "git_blob": "c8cbbaa2cd6e3cd7e603dd196d6559faf022028d",
+      "members_sha256": {
+        "manifest.json": "ae590c1a8b3069a309677dd8ed851ba25f4dc7fb1298034ee14182487afb82af",
+        "review.txt": "d00a010e253fbb4bb1d5337a8d6f03a41a2f87b6c7b6a2c92660df331d777468"
+      }
+    },
+    "review_c3-handover-graph-publication-audit.zip": {
+      "sha256": "461363649394da63f5af47911891adc4ff43984114438edda736e12badf843a2",
+      "size": 3293,
+      "git_blob": "be6c1fede32b99d4a8498da87ce65ccd21afe0bd",
+      "members_sha256": {
+        "handover_graph_publication/review.txt": "40abf158ce44efc768f1ecf2ddea74a001bc619eabd3f6fe7f7a34a393f7cb3b",
+        "handover_graph_gate.json": "b5e492a7ae3fefb76531f16049a5fd0f29d6f9219127fb4dff65ef17eef21951",
+        "handover_graph_publication/manifest.json": "ab152bab6ed3235cb2f14cc14262b70c676feb1a60749f728c7fac95ce65b68f"
+      }
+    },
+    "review_c3-handover-graph-verification.zip": {
+      "sha256": "13b2d40fdfbfe36ab03618a03eba78e87e2e51cc4a2437dbb2e74ad2e97db886",
+      "size": 117780,
+      "git_blob": "2d4b32e9861d1355c39c2e47fb4a00c790f5c6a3",
+      "members_sha256": {
+        "certificate.json": "620a6540bbae0144f3f514f8bd3f0c5dfc92043577f21adf68e8ed5cee3d37d0",
+        "contracts.log": "96a13803ba2dc97dd76e1938a2e5884ae330e7ba1ddcc52386f27305a0cab909",
+        "certificate.sha256": "5b4d61f42b30a234fd06249dc258dd21cae725d2e57b99ec5adc6199f9497830",
+        "counts.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "frozen_proof_scope.md": "0cc0448697756fb1c27e4dfb35e80f5d7f06764200779660139faead77db4a63",
+        "independent.json": "d25c5dc2966d179ce5f5658fde35c3f95e56a13c44c81aa680c829f730c93224",
+        "independent.py": "6f7c10ea62ce335b2d1ee97410d60b5f4a0714ffb9c697f6849328427fa4c0cc",
+        "inherited_anchored_release.log": "14f249ac7608964a559bc9ccc154a1789a26a978946a0103fe08d22dac316751",
+        "inherited_capacity_gap.log": "4bf7ec891ead0e1c6b3d2ce3073faa5663ea035e30a6850523f1cdb2376f7617",
+        "inherited_fixed_family.log": "0bf9c87111924a923f22f321f026932f4575510048773b90478e7c85c534eef7",
+        "inherited_footprint.log": "d6116622ae027e66d324361444712d41051d9bdf6ad7f4f17d5d358a4358ebd2",
+        "inherited_label_release.log": "af18478e03a4dff6fb1d5339fb6be98e27a91a71162a2e661e9e7710f3f26c88",
+        "inherited_local_progress.log": "736dec998000810c68999d9a25d7a73d5d58c9537457c24b5dfabd6b1a284bcd",
+        "inherited_saturated_transfer.log": "c3eed80a9fa7f11fea5ee33d304cea336e6cc2c5e8ee086b2e5864462b360a19",
+        "producer.py": "13a10bfe928972af695dac37c606a170796739588876def102ed2fbc8bfa2d96",
+        "provenance.txt": "6bbbddde1b3dfe55d3bdfc083e20fdeab683f0ca09c46465b9400724c6fa9d4e",
+        "red.log": "4e59acf0bc7009384efaf5063cdfdf1bbb06cf69314c1e7c527f00cc0c140166",
+        "test_handover.py": "4652f5a9cb302024c2b71bd385958ec7b4d731738e38570cf72d7541218291be"
+      }
     }
   },
   "source_readback": [
@@ -102,10 +172,158 @@
       "blob": "e6c3466dbd06559312f0cecd5e0cd9eee55592d0"
     }
   ],
-  "mathematical_review": "separate internal ACCEPTED; external pending",
-  "publication_audit": "pending",
+  "mathematical_review": "separate internal and Gemini ACCEPTED",
+  "publication_audit": "separate Gemini ACCEPTED; final internal publication readback audit pending",
   "exploration_independently_certified": false,
   "exploration_hard_case_branch_executed": false,
   "numbered_stage_certification": false,
-  "full_stack_replay": false
+  "full_stack_replay": false,
+  "initial_artifacts": [
+    {
+      "id": 11674175469,
+      "name": "c3-handover-graph-verification",
+      "size_in_bytes": 117778,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11674175469",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11674175469/zip",
+      "expired": false,
+      "created_at": "2026-10-10T15:29:13Z",
+      "expires_at": "2027-01-08T15:27:25Z",
+      "updated_at": "2026-10-10T15:29:13Z",
+      "digest": "sha256:f2ddea10853be67b16a05f0455bf13fb57ceb2a81b782231dbde71b96677c473",
+      "workflow_run": {
+        "id": 38063679686,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "head_sha": "9096ecef1b3ddba39fa34f54d6aa0e9d1c58e7ba"
+      }
+    },
+    {
+      "id": 11673829345,
+      "name": "c3-handover-graph-fresh-reproduction",
+      "size_in_bytes": 118084,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11673829345",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11673829345/zip",
+      "expired": false,
+      "created_at": "2026-10-10T15:29:40Z",
+      "expires_at": "2027-01-08T15:27:25Z",
+      "updated_at": "2026-10-10T15:29:40Z",
+      "digest": "sha256:726aabf97a8adfb8404dd958fe45bc35e221e939ed11b7ac30b90319b39337ba",
+      "workflow_run": {
+        "id": 38063679686,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "head_sha": "9096ecef1b3ddba39fa34f54d6aa0e9d1c58e7ba"
+      }
+    }
+  ],
+  "review_artifacts": [
+    {
+      "id": 11674900018,
+      "name": "c3-handover-graph-publication-audit",
+      "size_in_bytes": 3293,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11674900018",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11674900018/zip",
+      "expired": false,
+      "created_at": "2026-10-10T15:33:35Z",
+      "expires_at": "2027-01-08T15:29:39Z",
+      "updated_at": "2026-10-10T15:33:35Z",
+      "digest": "sha256:461363649394da63f5af47911891adc4ff43984114438edda736e12badf843a2",
+      "workflow_run": {
+        "id": 38063828876,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "head_sha": "c2669a01bd73ad853aaea1beac19e217c1894e70"
+      }
+    },
+    {
+      "id": 11674695190,
+      "name": "c3-handover-graph-mathematical-review",
+      "size_in_bytes": 2724,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11674695190",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11674695190/zip",
+      "expired": false,
+      "created_at": "2026-10-10T15:32:44Z",
+      "expires_at": "2027-01-08T15:29:39Z",
+      "updated_at": "2026-10-10T15:32:44Z",
+      "digest": "sha256:9b36c2044140fa36f125ffbdcb85106f5516364c7f5b41aa3fdf968e002d4da5",
+      "workflow_run": {
+        "id": 38063828876,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "head_sha": "c2669a01bd73ad853aaea1beac19e217c1894e70"
+      }
+    },
+    {
+      "id": 11673979518,
+      "name": "c3-handover-graph-fresh-reproduction",
+      "size_in_bytes": 118086,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11673979518",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11673979518/zip",
+      "expired": false,
+      "created_at": "2026-10-10T15:31:50Z",
+      "expires_at": "2027-01-08T15:29:39Z",
+      "updated_at": "2026-10-10T15:31:50Z",
+      "digest": "sha256:85402fb20094edeba4de5322a98595e23ae07d120534d78e6c0ae6b31b6defa9",
+      "workflow_run": {
+        "id": 38063828876,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "head_sha": "c2669a01bd73ad853aaea1beac19e217c1894e70"
+      }
+    },
+    {
+      "id": 11673719800,
+      "name": "c3-handover-graph-verification",
+      "size_in_bytes": 117780,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11673719800",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11673719800/zip",
+      "expired": false,
+      "created_at": "2026-10-10T15:31:26Z",
+      "expires_at": "2027-01-08T15:29:39Z",
+      "updated_at": "2026-10-10T15:31:26Z",
+      "digest": "sha256:13b2d40fdfbfe36ab03618a03eba78e87e2e51cc4a2437dbb2e74ad2e97db886",
+      "workflow_run": {
+        "id": 38063828876,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "head_sha": "c2669a01bd73ad853aaea1beac19e217c1894e70"
+      }
+    }
+  ],
+  "review_jobs": [
+    {
+      "id": 114247338287,
+      "name": "verification",
+      "conclusion": "success"
+    },
+    {
+      "id": 114247717326,
+      "name": "fresh-reproduction",
+      "conclusion": "success"
+    },
+    {
+      "id": 114247794037,
+      "name": "mathematical-review",
+      "conclusion": "success"
+    },
+    {
+      "id": 114247972165,
+      "name": "publication-audit",
+      "conclusion": "success"
+    }
+  ],
+  "review_run_conclusion": "success",
+  "review_input_hash_checks": {
+    "mathematical": 26,
+    "publication": 29
+  },
+  "math_response_sha256": "d00a010e253fbb4bb1d5337a8d6f03a41a2f87b6c7b6a2c92660df331d777468",
+  "publication_response_sha256": "40abf158ce44efc768f1ecf2ddea74a001bc619eabd3f6fe7f7a34a393f7cb3b",
+  "fresh_job_reran_all_tests": false
 }
