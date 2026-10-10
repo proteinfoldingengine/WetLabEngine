@@ -1,0 +1,127 @@
+name: UQCF-GEM existing-label release and renewable occupied reserve verification review and publication audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LABEL_RELEASE_SCOPE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LABEL_RELEASE_RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/label_release/*.py'
+      - '.github/scripts/c3_label_release_review.py'
+      - '.github/workflows/uqcf-gem-c3-label_release.yml'
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - name: Exact verification and inherited controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir label_release_verification
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 -m unittest discover -s "$ROOT/label_release" -p test_release.py -v 2>&1 | tee label_release_verification/contracts.log
+          python3 "$ROOT/label_release/producer.py" label_release_verification/certificate.json | tee label_release_verification/counts.json
+          python3 "$ROOT/label_release/producer.py" /tmp/repeated.json
+          cmp label_release_verification/certificate.json /tmp/repeated.json
+          python3 "$ROOT/label_release/independent.py" label_release_verification/certificate.json | tee label_release_verification/independent.json
+          python3 -m unittest discover -s "$ROOT/footprint" -p test_footprint.py -v 2>&1 | tee label_release_verification/inherited_footprint.log
+          python3 -m unittest discover -s "$ROOT/fixed_family" -p test_fixed_family.py -v 2>&1 | tee label_release_verification/inherited_fixed_family.log
+          echo "scientific_sha=$(git -C research_snapshot rev-parse HEAD)" > label_release_verification/provenance.txt
+          echo "workflow_sha=$GITHUB_SHA" >> label_release_verification/provenance.txt
+          sha256sum label_release_verification/certificate.json > label_release_verification/certificate.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-label_release-verification
+          path: label_release_verification/
+  mathematical-review:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-label_release-verification
+          path: label_release_verification
+      - name: Independent mathematical review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 research_snapshot/.github/scripts/c3_label_release_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-label_release-review
+          path: label_release_review/
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-label_release-verification
+          path: label_release_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-label_release-review
+          path: label_release_review
+      - name: Independent reproduction and provenance reconciliation
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/label_release/producer.py" /tmp/publication-certificate.json
+          cmp /tmp/publication-certificate.json label_release_verification/certificate.json
+          python3 "$ROOT/label_release/independent.py" /tmp/publication-certificate.json
+          python3 - <<'PY'
+          import json,hashlib,pathlib,os
+          m=json.loads(pathlib.Path('label_release_review/manifest.json').read_text())
+          if m['research_commit']!=os.environ['GITHUB_SHA'] or m['workflow_commit']!=os.environ['GITHUB_SHA']: raise ValueError('commit provenance')
+          for n,h in m['input_sha256'].items():
+              p=(pathlib.Path('label_release_verification')/n[9:]) if n.startswith('EVIDENCE/') else (pathlib.Path('research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge')/n)
+              if hashlib.sha256(p.read_bytes()).hexdigest()!=h: raise ValueError('input hash '+n)
+          raw=pathlib.Path('label_release_review/review.txt').read_bytes()
+          if hashlib.sha256(raw).hexdigest()!=m['response_sha256']: raise ValueError('response hash')
+          provenance=pathlib.Path('label_release_verification/provenance.txt').read_text()
+          if provenance!=f"scientific_sha={os.environ['GITHUB_SHA']}\nworkflow_sha={os.environ['GITHUB_SHA']}\n": raise ValueError('execution provenance')
+          gate={'status':'PASS','scientific_commit':os.environ['GITHUB_SHA'],'verified_review_inputs':len(m['input_sha256']),'certificate_reproduced_byte_exact':True,'independent_full_reconstruction':True,'response_sha256':m['response_sha256']}
+          pathlib.Path('label_release_gate.json').write_text(json.dumps(gate,indent=2)+'\n')
+          print(json.dumps(gate))
+          PY
+      - name: Separate independent publication audit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REVIEW_PHASE: publication
+        run: python3 research_snapshot/.github/scripts/c3_label_release_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-label_release-publication
+          path: |
+            label_release_publication/
+            label_release_gate.json
+
