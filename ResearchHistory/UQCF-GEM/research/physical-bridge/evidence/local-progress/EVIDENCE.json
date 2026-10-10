@@ -45,7 +45,49 @@
   "total_tests": 135,
   "original_archives_downloaded_and_hash_checked": true,
   "certificate_three_copies_equal": true,
-  "mathematical_status": "author proof; fresh internal adversarial review pending",
+  "mathematical_status": "scoped author proof ACCEPTED by separate internal mathematical reviewer",
   "numbered_stage_certification": false,
-  "external_review_requested": false
+  "external_review_requested": false,
+  "archive_members_sha256": {
+    "original_reproduction.zip": {
+      "certificate.json": "7deae40ee68d1671f973a77a7054ce6dec3ec208ad31aaa3fd8cf8aaa3e54d5e",
+      "certificate.sha256": "43f6423ff56ac90f211679e6d67670706437a2bfad267468d03d9571259f1c98",
+      "contracts.log": "4d4af333ea35062babb4c4dd82f7a501f6d6c0f0f7b5dbad020c289036f58315",
+      "counts.json": "0cb2dde24dfd6d2af829383c9c79862ff51c2248486472ea9a94d102fadec19b",
+      "fresh_independent.json": "5eb63d79dc712883d90c8e92c73c3f49ad3581b502525a1aa1a1c29cf4e8750e",
+      "independent.json": "5eb63d79dc712883d90c8e92c73c3f49ad3581b502525a1aa1a1c29cf4e8750e",
+      "inherited_capacity.log": "a2a5ebc9c1a6d68fa53b0774e29d97e110dad21a5efe606c5cb221bdfb78883f",
+      "inherited_fixed.log": "b4ed9c1531cee049fa3b307cf2f972eb12296939971e8e09d8754650041c1ef1",
+      "inherited_footprint.log": "695d381bd500c3bb8fc1ff6ac1964bc1aa728bbb719c31e0592458b63b631a37",
+      "inherited_release.log": "12d06b95c7329779ba645666354918a1db6f079429936347d365728ef8aee734",
+      "inherited_transfer.log": "2c83af4936d6a5e20ac938ef7249201edefe02d27ddf4f6a42851895d6071e72",
+      "provenance.txt": "9470df3a61ee84e2d4b441479030d35ab492ee2ec1b97c6395b534659f29adc3"
+    },
+    "original_verification.zip": {
+      "contracts.log": "4d4af333ea35062babb4c4dd82f7a501f6d6c0f0f7b5dbad020c289036f58315",
+      "counts.json": "0cb2dde24dfd6d2af829383c9c79862ff51c2248486472ea9a94d102fadec19b",
+      "certificate.json": "7deae40ee68d1671f973a77a7054ce6dec3ec208ad31aaa3fd8cf8aaa3e54d5e",
+      "certificate.sha256": "43f6423ff56ac90f211679e6d67670706437a2bfad267468d03d9571259f1c98",
+      "independent.json": "5eb63d79dc712883d90c8e92c73c3f49ad3581b502525a1aa1a1c29cf4e8750e",
+      "inherited_capacity.log": "a2a5ebc9c1a6d68fa53b0774e29d97e110dad21a5efe606c5cb221bdfb78883f",
+      "inherited_fixed.log": "b4ed9c1531cee049fa3b307cf2f972eb12296939971e8e09d8754650041c1ef1",
+      "inherited_footprint.log": "695d381bd500c3bb8fc1ff6ac1964bc1aa728bbb719c31e0592458b63b631a37",
+      "inherited_release.log": "12d06b95c7329779ba645666354918a1db6f079429936347d365728ef8aee734",
+      "inherited_transfer.log": "2c83af4936d6a5e20ac938ef7249201edefe02d27ddf4f6a42851895d6071e72",
+      "provenance.txt": "9470df3a61ee84e2d4b441479030d35ab492ee2ec1b97c6395b534659f29adc3"
+    }
+  },
+  "source_sha256": {
+    "producer.py": "2fc812e4b5c2317fb9e5b9b46e06dea515bc1a0bfde90c0aa102178cb18fb37f",
+    "independent.py": "e5f8b3f8a159b81c4c598520f458889d002e6158aec1b0e292f44f2382279273",
+    "test_progress.py": "4adddf457aa6a24c6f8c06fa7a3f5571bd2c4a2addc488c1d72b34e24464d03b"
+  },
+  "prospective_proof_readback": true,
+  "executed_source_readback": true,
+  "certification_status": "no CLOSED/CERTIFIED or numbered-stage claim",
+  "publication_status": "ACCEPTED by separate internal publication/source auditor",
+  "current_report": "COUPLED_C3_LOCAL_PROGRESS_REPORT.md",
+  "mathematical_review": "COUPLED_C3_LOCAL_PROGRESS_REVIEW.md",
+  "publication_audit": "COUPLED_C3_LOCAL_PROGRESS_PUBLICATION_AUDIT.md",
+  "fresh_job_reran_all_tests": false
 }
