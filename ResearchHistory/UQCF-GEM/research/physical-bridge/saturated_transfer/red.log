@@ -1,0 +1,21 @@
+test_transfer (unittest.loader._FailedTest.test_transfer) ... ERROR
+
+======================================================================
+ERROR: test_transfer (unittest.loader._FailedTest.test_transfer)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_transfer
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/scratch/e1b2c832a87f/saturated_transfer/test_transfer.py", line 6, in <module>
+    import producer
+ModuleNotFoundError: No module named 'producer'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
