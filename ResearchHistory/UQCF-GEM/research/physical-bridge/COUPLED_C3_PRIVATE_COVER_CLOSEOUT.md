@@ -1,0 +1,38 @@
+# Private maximal footprints — scientific closeout
+
+2026-10-10 UTC. CLOSED for the declared structural theorem and prospective verification contract; publication completion is reported only after immutable readback. This authoritative closeout supersedes the historical OPEN/pending statuses in the immutable RESULT, REPORT and REVIEW.
+
+Prospective freeze191ebabb14efae2b3a847e519232d5b8f7c39292. Scientific/event/workflow commit703c05495e2a5b655e8f50bba491b8786e0594da. Integrated parentbdcd6fd4200e955e71a5cab72710600609d322fe.
+
+The first event f7c4b9af140aec9fedb13f505d1edac94269f3df, run38082779963, passed verification, fresh reconstruction and Gemini mathematical review. Its publication gate stopped with an IndexError because the workflow omitted the independent checker's output-path argument. The Gemini publication step was skipped; no publication verdict exists for that run. The one-line workflow invocation was fixed and the complete pipeline rerun at the event above. All ten reviewed scientific inputs and the certificate remained byte-identical. The original first-run three ZIPs, four complete logs, raw mathematical answer/manifest, immutable inputs and metadata are preserved under evidence/private-cover/failed-attempt/. A separate executable failure reconciliation authenticates the cause, identities and unchanged scientific content.
+
+[Theorem and frozen contract](COUPLED_C3_PRIVATE_COVER_RESULT.md), [execution report](COUPLED_C3_PRIVATE_COVER_REPORT.md), [internal review](COUPLED_C3_PRIVATE_COVER_REVIEW.md).
+
+## What is proved
+If every maximal original footprint has a root belonging to no other maximal footprint, if any first reserve is safely reachable, some first reserve is safely reachable while leaving one original maximal label pertype completely unchanged. This holds for EVERY choice of those original labels; it does not prescribe which non-anchor label becomes vacant first. The maxima can overlap; PRIVATE is equivalent to their number k equalling source hitting number, hence k=3or4 in the inherited setting.
+
+Positive original floors force every maximal type to remain occupied. A safe exact-meet transfer cannot take its last occupant. We can therefore reserve one original actual label pertype as an unchanged cover and move only the other labels. Subtracting those anchors and their root contributions yields an exact isomorphism of the entire unrestricted and residual count graphs, not merely a one-way sufficient test. Every edge lifts from every actual residual assignment. Residual bookkeeping floors may be zero, but every original floor is preserved at every native slice.
+
+This proves a structural no-movement result, not existence of a reserve. Source-component membership still decides accessibility. Source-component and global static minimum active counts have corresponding anchor-subtraction formulas, without a claim they coincide. Prescribed NON-anchor absence can be obtained by copying into an already vacant label and then deleting the target; it need not be the first vacancy. Exact labelled destinations and native shortest paths remain outside the count criterion.
+
+Consequently a case forcing protection to change before ANY first vacancy must have a redundant maximal footprint: k>source hitting number. This is necessary, not sufficient. No general theorem about sources with redundant maxima is claimed.
+
+## Complete verification
+Run [38083110622](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38083110622) is bound to the scientific/event commit above. All four jobs succeeded: verification, fresh reproduction, mathematical review and separate publication audit. Both original Gemini verdicts are ACCEPTED with no missing assumptions or counterexamples. Author reconciliation authenticates all33 mathematical and36 publication inputs, raw answer hashes and retry records; each final review used one response attempt.
+
+The full frozen universe contains319 sources and638 floor-mode cases,1478 actual anchor choices and1734 expansions. Entire unrestricted graphs total3543 vertices and8877 edges. Full fixed-anchor labelled residual graphs total13826 vertices and42164 undirected edges, with both directed canonical native lifts verified. Every-representative quotient adjacency checks total75507, and1830 non-anchor rename witnesses are checked.343 cases have a reachable reserve;295 do not. These classifications are finite, while the structural theorem is analytical.
+
+Fourteen saturated all-maximal-only controls have no vacancy. Two explicit saturated overlapping sources, at coretau3and4, release an extra label in exactly the declared two toggles while keeping every anchor unchanged; no general optimal-cost theorem is claimed. Two last-private-occupant meet controls reject the unsafe transfer. The no-PRIVATE triangle is rejected at theorem entry.
+
+There are448703 original protected one-hidden-mask checks and268628 native slice occurrences, counted separately. Complete source/anchor/expansion/vertex/edge/component/lift/vacancy/rename identities are independently enumerated before hashing. The implementations share no imports and use bitmask/set representations, composition/multiset source-count enumeration, donor/pairwise edge construction and BFS/union-find components. No full raw incidence-cube campaign is claimed.
+
+All26 new and253 inherited tests pass locally and in the original final CI logs,279 total. Initial22-test RED contains22 errors; four boundary controls were added during independent review. Both-direction canonical lift coverage and explicit boundary records were corrected before the scientific commit; the frozen theorem/universe were unchanged. Fresh jobs reproduce the full certificate and independent reconstruction, not all279 tests. Certificate SHA256:f4dad9a0dba31d85764f3dea65ec2c0325da38d9429ddb6d2ca36e81cb577b48.
+
+Original final evidence under evidence/private-cover/ includes four unchanged ZIPs, four complete decoded job logs, raw Gemini answer texts/manifests, provenance gate, run/job/artifact metadata, immutable scientific input readbacks and executable author audit. The first failed run adds three unchanged ZIPs and four complete logs under failed-attempt/. Author audits and six adversarial evidence controls pass, without inflating the279 scientific tests. Separate publication audit and portable-layout checks accompany the evidence.
+
+Both favorable Gemini reviews include an overly broad phrase about exact labelled targets. The author rejects that extension: the rename phase proves prescribed NON-anchor ABSENCE only. The mathematical review's upper-cover statement applies to full cores with anchors restored, not the residual-only bookkeeping graph. Frozen proof/code/report already state the correct scope. Original answers are preserved unchanged; [author reconciliation](COUPLED_C3_PRIVATE_COVER_RECONCILIATION.md) records these corrections and the failed-workflow chronology. [Separate publication audit](COUPLED_C3_PRIVATE_COVER_PUBLICATION_AUDIT.md) checks final originals and retained failure.
+
+## Continuation
+Next investigate sources with redundant maximal footprints: find structural conditions forcing cover movement before the first vacancy, construct a witness, or prove a stronger persistent-cover invariant. The PRIVATE class is now excluded from such witnesses. Do not conflate prescribed-label movement after an earlier reserve with movement required for ANY first reserve.
+
+Broad C3/general C4 and native observation/access/source/outcome/committed progress remain OPEN and supplied where assumed. Path A active, Path B closed. No new native primitive, physical derivation, inserted geometry, fundamental-time/dark-matter variable or full-stack certification.

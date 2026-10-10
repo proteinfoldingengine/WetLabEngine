@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_ANCHORED_RELEASE_CLOSEOUT.md": "b1f432788932a82e73953cc151109d71ee0189664624bd8e3009126928737bf8",
+    "COUPLED_C3_FOOTPRINT_CLOSEOUT.md": "1062ec38dfdfa00305f5366e91fe306a118f81bf112b88a8cecd3a6b87f2bca0",
+    "COUPLED_C3_HANDOVER_GRAPH_CLOSEOUT.md": "0211506ba9b06e2ab119c2a313adfde111b6feba914f72e501888d9c8dcda397",
+    "COUPLED_C3_PRIVATE_COVER_REPORT.md": "9f8c4311ef5e9353cfcf8469663b7c9a8ae20bb9886e5ce0634237bbbc1d819c",
+    "COUPLED_C3_PRIVATE_COVER_RESULT.md": "e01efab94b5f0dada84cdced5dbb72a61f04bd1cb7f4aab07b7c9bc08c7ef45f",
+    "COUPLED_C3_PRIVATE_COVER_REVIEW.md": "6e441a72150012aba9f366c62ec7e849c83fda93a2fe053c3a39988459625d61",
+    "COUPLED_C3_SATURATED_HANDOVER_CLOSEOUT.md": "1322b6699e8158b6a6127fd604c59b252cfbab9e93000054b9d64a2065e1df8d",
+    "EVIDENCE/certificate.sha256": "2f482afeddf1cf57dcba8eabe4f2b083635aa7b348285da7727dab24a2ae1a15",
+    "EVIDENCE/contracts.log": "a1ff1f9c7bdd2b9f1920fbc26d6da876167244effe5d1a365f70fd89bebca5c7",
+    "EVIDENCE/counts.json": "d711a3766692df6ccdfaa427b54b5fb3d3ba8e78fdfc8c14fd50292dd0441427",
+    "EVIDENCE/fresh_independent.json": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+    "EVIDENCE/frozen_proof_scope.md": "e01efab94b5f0dada84cdced5dbb72a61f04bd1cb7f4aab07b7c9bc08c7ef45f",
+    "EVIDENCE/independent.json": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+    "EVIDENCE/independent.log": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+    "EVIDENCE/independent.py": "961b6ffff0513c929e1b707634d431dbfaa48223504436c68218e1096a0ee57d",
+    "EVIDENCE/inherited_anchored_release.log": "96c28622ac23412280c814695d1d7439a86bdf225460c6a34e3c88d94503b967",
+    "EVIDENCE/inherited_capacity_gap.log": "5038091b8cbfe20e1577b512c899716f7e05126d4473ea29ac33c665f64408ad",
+    "EVIDENCE/inherited_fixed_family.log": "637b6899b59c5790d96b31e0b12c9f534cefce0689f53b5a6b08390dd38c7581",
+    "EVIDENCE/inherited_footprint.log": "80bc3aec557f7aa0bf08c47eb118245295b3116e331535d0ce1d06695690bd69",
+    "EVIDENCE/inherited_handover_graph.log": "4f6992aa7ba076c52a68b82d6798d44eb92ce4d5e3489894d286494d61280fc9",
+    "EVIDENCE/inherited_label_release.log": "8cec489aec9934995a16ae75aa5dc981a741e2b6dc74deb23adab15c7e715852",
+    "EVIDENCE/inherited_local_progress.log": "b57003f5dd2c5e34c9f313ea41bea1fa34687ae7ce0abb45f945afb20c0ed8a2",
+    "EVIDENCE/inherited_moving_cover.log": "fd74946e8d70b32d964405a2910f691d2d0e63ffd3a8f4a94e3fc6d3e9fcf066",
+    "EVIDENCE/inherited_saturated_handover.log": "8560f69bb21bdcd1b26c81109c48425eb62263589d810937a48bd845a5900789",
+    "EVIDENCE/inherited_saturated_transfer.log": "96f2b5face22388a355216b0820837da26e68ade81d36d3d06a220214e048d22",
+    "EVIDENCE/inherited_slack_handover.log": "adb6ab20322ddaa77a3f7e6c9716ca33312f9b06be59336f4e6709b5f1b5964b",
+    "EVIDENCE/producer.py": "27b94bfabd6761b24b9a605d86e8f3d05c6a42db2ddc9cbd1dcc73b0f37aa867",
+    "EVIDENCE/provenance.txt": "8a9f7461bb78831b489db3211b0af9a762d2183dfe8c8227a42bc6aa5dd9dfe2",
+    "EVIDENCE/red.log": "3a4845cfd5e3aaf2b593fbdc740f731452152ef5eab4331e108865bb8692477e",
+    "EVIDENCE/test_private.py": "da293375b94d706da4440b44c8742243a3449da4310368866c99bf634c8ad96d",
+    "private_cover/independent.py": "961b6ffff0513c929e1b707634d431dbfaa48223504436c68218e1096a0ee57d",
+    "private_cover/producer.py": "27b94bfabd6761b24b9a605d86e8f3d05c6a42db2ddc9cbd1dcc73b0f37aa867",
+    "private_cover/test_private.py": "da293375b94d706da4440b44c8742243a3449da4310368866c99bf634c8ad96d"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "703c05495e2a5b655e8f50bba491b8786e0594da",
+  "response_sha256": "843e645a76431bdd58ed8f6a96ee34bf20f3429e9fefbe66717d9a27f43ae477",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 51785,
+  "workflow_commit": "703c05495e2a5b655e8f50bba491b8786e0594da"
+}

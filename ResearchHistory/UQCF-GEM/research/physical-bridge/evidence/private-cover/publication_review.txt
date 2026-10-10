@@ -1,0 +1,29 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The prospective UQCF-GEM private-maximal-footprint first-reserve theorem is fully supported by the provided evidence and source code.",
+    "The PRIVATE hypothesis (every maximum has a root unique among maxima) is correctly implemented and verified to be equivalent to the number of maxima equaling the source hitting number.",
+    "The exact count-graph isomorphism between the unrestricted safe count graph and the residual count graph is rigorously checked, including exact-meet edges and the subtraction of unchanged anchor contributions.",
+    "The code confirms that positive original floors force every nonempty type to be occupied, and that every safe departure leaves a private root, ensuring at least two occupants were present.",
+    "The universal safety of the copy-then-delete rename mechanism for prescribed non-anchor absence is verified across the declared universe.",
+    "The complete source universe for k=3 and k=4 is independently enumerated and reconstructed using distinct representations (bitmasks in producer.py, sets in independent.py) without relying on pre-computed lists.",
+    "Both directed canonical native lifts and every-representative orbit equality are explicitly checked.",
+    "All ORIGINAL protected one-hidden masks of all distinct lifted cores are verified.",
+    "The explicit boundary controls (two-edit saturated positive routes for both k, all-maximal isolated controls, private-root-loss meet rejection, and triangle outside scope) are present and pass.",
+    "The test suite contains exactly 26 new tests and 253 inherited tests (totaling 279), all of which pass in the final logs. The initial RED log correctly shows 22 errors before implementation.",
+    "The publication gate passed, confirming byte-exact reproduction, independent full reconstruction, and exact provenance."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem establishes a conditional accessibility equivalence, not a general reserve availability guarantee. Source-component membership is still required.",
+    "The necessary condition for forced cover movement (k > source hitting number) is not sufficient; sources with PRIVATE may still have no reachable reserve.",
+    "The count graph does not identify a prescribed labelled endpoint; exact labelled targets require the subsequent copy-then-delete rename phase.",
+    "The prescribed absence reachability does not apply to the chosen anchor labels, which must remain fixed.",
+    "The theorem requires positive original floors; zero original floors would not force the occupancy required to fix the anchors.",
+    "Broad C3/general C4, native observation/access/source/outcome, and committed progress remain OPEN or supplied assumptions.",
+    "No physical derivation, new primitive, fundamental time, dark matter variable, inserted geometry, optimal-cost claim, or full-stack certification is provided."
+  ]
+}
+```

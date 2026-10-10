@@ -1,0 +1,185 @@
+{
+  "certificate_sha256": "f4dad9a0dba31d85764f3dea65ec2c0325da38d9429ddb6d2ca36e81cb577b48",
+  "complete_job_logs": {
+    "fresh_reproduction_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114304209763,
+      "run_id": 38083110622,
+      "sha256": "6109bd3839e7a038ad8c28e71a5b60b6e7925aad0fff010abef291d1e8aaaf0d",
+      "size": 17300
+    },
+    "mathematical_review_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114304299930,
+      "run_id": 38083110622,
+      "sha256": "8d7e1114a5d13758993b924928c3c8ee8d92bb92d286ca42b1acdd1046db28db",
+      "size": 17523
+    },
+    "publication_audit_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114304519841,
+      "run_id": 38083110622,
+      "sha256": "e6512431c11b73fa10b059747d51860e31c20757c468bb27ce9827763f3aacdb",
+      "size": 22587
+    },
+    "verification_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114303920382,
+      "run_id": 38083110622,
+      "sha256": "df2c62c417a48db644afa50af95882b7cd1f7bc61254b271e980d5cda0c96369",
+      "size": 56911
+    }
+  },
+  "counts": {
+    "anchor_jobs": 1478,
+    "cases": 638,
+    "edges": 8877,
+    "expansions": 1734,
+    "hidden_checks": 448703,
+    "labelled_edges": 42164,
+    "labelled_vertices": 13826,
+    "orbit_lifts": 75507,
+    "reachable_cases": 343,
+    "rename_witnesses": 1830,
+    "slice_occurrences": 268628,
+    "sources": 319,
+    "vertices": 3543
+  },
+  "final_new_tests": 26,
+  "finite_classification": {
+    "reachable": 343,
+    "unreachable": 295
+  },
+  "initial_red_tests": 22,
+  "limitations": [
+    "PRIVATE structural class only; no general reserve guarantee",
+    "necessary maximal redundancy for forced first movement, not sufficient",
+    "fixed anchor incidences for ANY first vacancy; prescribed nonanchor may follow earlier vacancy",
+    "finite319sources638cases; universal theorem proof based",
+    "source components distinct from static endpoints; no exact labelled-target or optimal-cost claim",
+    "broadC3/generalC4/nativeobserver-access-outcome-progress OPEN"
+  ],
+  "math_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "math_response_sha256": "843e645a76431bdd58ed8f6a96ee34bf20f3429e9fefbe66717d9a27f43ae477",
+  "math_verified_inputs": 33,
+  "mathematical_verdict": "ACCEPTED",
+  "original_archives": [
+    {
+      "file": "c3-private-cover-fresh-reproduction.zip",
+      "git_blob_sha1": "c4e23d5750d708687f6dacce397f6fddc9d7f605",
+      "members": {
+        "certificate.json": "f4dad9a0dba31d85764f3dea65ec2c0325da38d9429ddb6d2ca36e81cb577b48",
+        "certificate.sha256": "2f482afeddf1cf57dcba8eabe4f2b083635aa7b348285da7727dab24a2ae1a15",
+        "contracts.log": "a1ff1f9c7bdd2b9f1920fbc26d6da876167244effe5d1a365f70fd89bebca5c7",
+        "counts.json": "d711a3766692df6ccdfaa427b54b5fb3d3ba8e78fdfc8c14fd50292dd0441427",
+        "fresh_independent.json": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+        "frozen_proof_scope.md": "e01efab94b5f0dada84cdced5dbb72a61f04bd1cb7f4aab07b7c9bc08c7ef45f",
+        "independent.json": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+        "independent.log": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+        "independent.py": "961b6ffff0513c929e1b707634d431dbfaa48223504436c68218e1096a0ee57d",
+        "inherited_anchored_release.log": "96c28622ac23412280c814695d1d7439a86bdf225460c6a34e3c88d94503b967",
+        "inherited_capacity_gap.log": "5038091b8cbfe20e1577b512c899716f7e05126d4473ea29ac33c665f64408ad",
+        "inherited_fixed_family.log": "637b6899b59c5790d96b31e0b12c9f534cefce0689f53b5a6b08390dd38c7581",
+        "inherited_footprint.log": "80bc3aec557f7aa0bf08c47eb118245295b3116e331535d0ce1d06695690bd69",
+        "inherited_handover_graph.log": "4f6992aa7ba076c52a68b82d6798d44eb92ce4d5e3489894d286494d61280fc9",
+        "inherited_label_release.log": "8cec489aec9934995a16ae75aa5dc981a741e2b6dc74deb23adab15c7e715852",
+        "inherited_local_progress.log": "b57003f5dd2c5e34c9f313ea41bea1fa34687ae7ce0abb45f945afb20c0ed8a2",
+        "inherited_moving_cover.log": "fd74946e8d70b32d964405a2910f691d2d0e63ffd3a8f4a94e3fc6d3e9fcf066",
+        "inherited_saturated_handover.log": "8560f69bb21bdcd1b26c81109c48425eb62263589d810937a48bd845a5900789",
+        "inherited_saturated_transfer.log": "96f2b5face22388a355216b0820837da26e68ade81d36d3d06a220214e048d22",
+        "inherited_slack_handover.log": "adb6ab20322ddaa77a3f7e6c9716ca33312f9b06be59336f4e6709b5f1b5964b",
+        "producer.py": "27b94bfabd6761b24b9a605d86e8f3d05c6a42db2ddc9cbd1dcc73b0f37aa867",
+        "provenance.txt": "8a9f7461bb78831b489db3211b0af9a762d2183dfe8c8227a42bc6aa5dd9dfe2",
+        "red.log": "3a4845cfd5e3aaf2b593fbdc740f731452152ef5eab4331e108865bb8692477e",
+        "test_private.py": "da293375b94d706da4440b44c8742243a3449da4310368866c99bf634c8ad96d"
+      },
+      "sha256": "f1f78189100168640432a58f005952e1e2a548c866aea0db31c74de047a12803",
+      "size": 197994
+    },
+    {
+      "file": "c3-private-cover-mathematical-review.zip",
+      "git_blob_sha1": "726c19fb7ecaabdb031ec4ead2fb41507ad5c4d7",
+      "members": {
+        "manifest.json": "2e256d32974f1c8cc340106f8e178fd924381f7c002b6cf2ba2907d10d725bf2",
+        "review.txt": "843e645a76431bdd58ed8f6a96ee34bf20f3429e9fefbe66717d9a27f43ae477"
+      },
+      "sha256": "13c206e0aa408e117985a88188e9a823c12d0be8c22f29764e144ceb01e63cb6",
+      "size": 3254
+    },
+    {
+      "file": "c3-private-cover-publication-audit.zip",
+      "git_blob_sha1": "7b04e2251bd7f5ba26ed181caaeca59e9f0390e6",
+      "members": {
+        "private_cover_gate.json": "cdbff5d57230c22fda4e949fecba0e1a7cab033389cbbc0f2284c02631545686",
+        "private_cover_publication/manifest.json": "b267b587c53f7f534b7f7ce330578f71e8a9b2265764c34c17844d3ddabee3a8",
+        "private_cover_publication/review.txt": "595ef621baafedb397d7eab0e89cad72ad8fcdbfdb2fe1061109708e8afb903e"
+      },
+      "sha256": "f688e0a16a811f022a62b842a679695d1e03c1b19ed591bbcc54661babcfefef",
+      "size": 4030
+    },
+    {
+      "file": "c3-private-cover-verification.zip",
+      "git_blob_sha1": "28ac5e5bf61981a272cb3b0267d578e7d16dbbbd",
+      "members": {
+        "certificate.json": "f4dad9a0dba31d85764f3dea65ec2c0325da38d9429ddb6d2ca36e81cb577b48",
+        "certificate.sha256": "2f482afeddf1cf57dcba8eabe4f2b083635aa7b348285da7727dab24a2ae1a15",
+        "contracts.log": "a1ff1f9c7bdd2b9f1920fbc26d6da876167244effe5d1a365f70fd89bebca5c7",
+        "counts.json": "d711a3766692df6ccdfaa427b54b5fb3d3ba8e78fdfc8c14fd50292dd0441427",
+        "frozen_proof_scope.md": "e01efab94b5f0dada84cdced5dbb72a61f04bd1cb7f4aab07b7c9bc08c7ef45f",
+        "independent.json": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+        "independent.log": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+        "independent.py": "961b6ffff0513c929e1b707634d431dbfaa48223504436c68218e1096a0ee57d",
+        "inherited_anchored_release.log": "96c28622ac23412280c814695d1d7439a86bdf225460c6a34e3c88d94503b967",
+        "inherited_capacity_gap.log": "5038091b8cbfe20e1577b512c899716f7e05126d4473ea29ac33c665f64408ad",
+        "inherited_fixed_family.log": "637b6899b59c5790d96b31e0b12c9f534cefce0689f53b5a6b08390dd38c7581",
+        "inherited_footprint.log": "80bc3aec557f7aa0bf08c47eb118245295b3116e331535d0ce1d06695690bd69",
+        "inherited_handover_graph.log": "4f6992aa7ba076c52a68b82d6798d44eb92ce4d5e3489894d286494d61280fc9",
+        "inherited_label_release.log": "8cec489aec9934995a16ae75aa5dc981a741e2b6dc74deb23adab15c7e715852",
+        "inherited_local_progress.log": "b57003f5dd2c5e34c9f313ea41bea1fa34687ae7ce0abb45f945afb20c0ed8a2",
+        "inherited_moving_cover.log": "fd74946e8d70b32d964405a2910f691d2d0e63ffd3a8f4a94e3fc6d3e9fcf066",
+        "inherited_saturated_handover.log": "8560f69bb21bdcd1b26c81109c48425eb62263589d810937a48bd845a5900789",
+        "inherited_saturated_transfer.log": "96f2b5face22388a355216b0820837da26e68ade81d36d3d06a220214e048d22",
+        "inherited_slack_handover.log": "adb6ab20322ddaa77a3f7e6c9716ca33312f9b06be59336f4e6709b5f1b5964b",
+        "producer.py": "27b94bfabd6761b24b9a605d86e8f3d05c6a42db2ddc9cbd1dcc73b0f37aa867",
+        "provenance.txt": "8a9f7461bb78831b489db3211b0af9a762d2183dfe8c8227a42bc6aa5dd9dfe2",
+        "red.log": "3a4845cfd5e3aaf2b593fbdc740f731452152ef5eab4331e108865bb8692477e",
+        "test_private.py": "da293375b94d706da4440b44c8742243a3449da4310368866c99bf634c8ad96d"
+      },
+      "sha256": "9f972179058b1ebdea0ef1ac86d1aee5f356dd2f8b9acee079b100631740456d",
+      "size": 197563
+    }
+  ],
+  "publication_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "publication_response_sha256": "595ef621baafedb397d7eab0e89cad72ad8fcdbfdb2fe1061109708e8afb903e",
+  "publication_verdict": "ACCEPTED",
+  "publication_verified_inputs": 36,
+  "scientific_commit": "703c05495e2a5b655e8f50bba491b8786e0594da",
+  "scope_freeze": "191ebabb14efae2b3a847e519232d5b8f7c39292",
+  "status": "ACCEPTED_AUTHOR_RECONCILIATION",
+  "test_counts": {
+    "contracts.log": 26,
+    "inherited_anchored_release.log": 20,
+    "inherited_capacity_gap.log": 20,
+    "inherited_fixed_family.log": 28,
+    "inherited_footprint.log": 22,
+    "inherited_handover_graph.log": 20,
+    "inherited_label_release.log": 26,
+    "inherited_local_progress.log": 17,
+    "inherited_moving_cover.log": 28,
+    "inherited_saturated_handover.log": 26,
+    "inherited_saturated_transfer.log": 22,
+    "inherited_slack_handover.log": 24
+  },
+  "tests_total": 279,
+  "workflow_run": 38083110622
+}

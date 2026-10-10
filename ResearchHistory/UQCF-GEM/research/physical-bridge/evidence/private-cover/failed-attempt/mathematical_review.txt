@@ -1,0 +1,23 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The equivalence between the PRIVATE hypothesis and $k$ equalling the source hitting number is mathematically sound. If any maximum lacked a private root, it would be entirely covered by the union of the other maxima, which would reduce the hitting number to at most $k-1$.",
+    "The deduction that $n_i \\ge 1$ universally and $n_i \\ge 2$ for any departing edge is correct. The private root $p_i$ is strictly excluded from any exact meet with a different maximum. To maintain the positive original floor $F(p_i) \\ge 1$ during the safe meet, at least one other occupant of type $i$ must remain present.",
+    "The exact count-graph isomorphism is rigorously established. The fixed anchors provide exactly $b(x)$ coverage for each root, reducing the floor requirements for the residual non-anchor labels to $G(x) = \\max(0, F(x) - b(x))$. The upper-cover constraint is automatically satisfied throughout by the fixed anchors.",
+    "The copy-then-delete rename for prescribed non-anchor absence is universally safe because it operates strictly within the original footprint bounds, preserves exact coverage before deletion, and does not increase the core hitting number.",
+    "The contrapositive correctly identifies that forced cover movement to reach a first reserve strictly requires a redundant maximal footprint ($k > \\tau$), establishing a necessary structural obstruction."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem only applies to sources satisfying the PRIVATE condition (where the number of maximal original footprints equals the source hitting number).",
+    "The result is a conditional accessibility equivalence, not a guarantee that a first reserve is actually reachable (which still depends on source-component membership).",
+    "The prescribed absence construction applies only to non-anchor labels; it does not guarantee the ability to vacate a chosen anchor label without moving the cover.",
+    "The theorem does not claim optimal native cost or exact labelled-target connectivity outside the count graph.",
+    "Broad C3/general C4 and general saturated reserve accessibility remain open problems.",
+    "Native observer origin, core access, outcome selection, and committed progress remain supplied assumptions.",
+    "No physical derivation, new primitive, inserted geometry, fundamental-time/dark-matter variable, or full-stack certification is claimed."
+  ]
+}
+```

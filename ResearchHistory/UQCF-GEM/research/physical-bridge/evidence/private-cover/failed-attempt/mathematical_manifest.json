@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "input_sha256": {
+    "COUPLED_C3_ANCHORED_RELEASE_CLOSEOUT.md": "b1f432788932a82e73953cc151109d71ee0189664624bd8e3009126928737bf8",
+    "COUPLED_C3_FOOTPRINT_CLOSEOUT.md": "1062ec38dfdfa00305f5366e91fe306a118f81bf112b88a8cecd3a6b87f2bca0",
+    "COUPLED_C3_HANDOVER_GRAPH_CLOSEOUT.md": "0211506ba9b06e2ab119c2a313adfde111b6feba914f72e501888d9c8dcda397",
+    "COUPLED_C3_PRIVATE_COVER_REPORT.md": "9f8c4311ef5e9353cfcf8469663b7c9a8ae20bb9886e5ce0634237bbbc1d819c",
+    "COUPLED_C3_PRIVATE_COVER_RESULT.md": "e01efab94b5f0dada84cdced5dbb72a61f04bd1cb7f4aab07b7c9bc08c7ef45f",
+    "COUPLED_C3_PRIVATE_COVER_REVIEW.md": "6e441a72150012aba9f366c62ec7e849c83fda93a2fe053c3a39988459625d61",
+    "COUPLED_C3_SATURATED_HANDOVER_CLOSEOUT.md": "1322b6699e8158b6a6127fd604c59b252cfbab9e93000054b9d64a2065e1df8d",
+    "EVIDENCE/certificate.sha256": "2f482afeddf1cf57dcba8eabe4f2b083635aa7b348285da7727dab24a2ae1a15",
+    "EVIDENCE/contracts.log": "034120163dd127921a775890797a58e3ca53301639133deb04ac9dcd9f1c2b73",
+    "EVIDENCE/counts.json": "d711a3766692df6ccdfaa427b54b5fb3d3ba8e78fdfc8c14fd50292dd0441427",
+    "EVIDENCE/fresh_independent.json": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+    "EVIDENCE/frozen_proof_scope.md": "e01efab94b5f0dada84cdced5dbb72a61f04bd1cb7f4aab07b7c9bc08c7ef45f",
+    "EVIDENCE/independent.json": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+    "EVIDENCE/independent.log": "646b5aed2f67998ac8ebf8fb6acda9d21471ea7295c137416eeca31a4735b57f",
+    "EVIDENCE/independent.py": "961b6ffff0513c929e1b707634d431dbfaa48223504436c68218e1096a0ee57d",
+    "EVIDENCE/inherited_anchored_release.log": "0b5aafd6ed4e02f2d68015c6e47b8c067ad50e7305a618c7ce865e4d3182de63",
+    "EVIDENCE/inherited_capacity_gap.log": "95d1d2b43daac11d4057444375ac6989dbdf11020595e80175398e8bc419984b",
+    "EVIDENCE/inherited_fixed_family.log": "beacff0f534ff4dd753d0f1f20225aac3311aecd9ab992f0002206d3747f166f",
+    "EVIDENCE/inherited_footprint.log": "4592e50b1928bc56b218c8c1c27182787acbe6aa1da5e30fc625c4cb27c5f767",
+    "EVIDENCE/inherited_handover_graph.log": "ce74402b0a72aeac67e3c7dd07bfdbc12dc5acb00ab2b64f35de51180c9a9f95",
+    "EVIDENCE/inherited_label_release.log": "786a7dc735c8984ab8656dff2e4425c6b976643bd52f8ed20cdb6f928ca7549f",
+    "EVIDENCE/inherited_local_progress.log": "25386dd8c8015ee1144f05568327d78e695c6acf2d0319f53fc261656d403d5a",
+    "EVIDENCE/inherited_moving_cover.log": "9208d8924850ad0217dcb441f5f26c85e7e343f4bbc5241a1277e4c8c0fb8588",
+    "EVIDENCE/inherited_saturated_handover.log": "be1ddf937b3b65315a2eeafbc1fc99ef5cdd52c647f75c2f12b176d255bf6d23",
+    "EVIDENCE/inherited_saturated_transfer.log": "04d8ccdb4d4b4a42f39002e26443e46173ed7699f8b0c036f9fb3d014c03fbd8",
+    "EVIDENCE/inherited_slack_handover.log": "11698c4d056130f61fb204ae45c4509587c8ef324bd604dc136e694a517ae7bc",
+    "EVIDENCE/producer.py": "27b94bfabd6761b24b9a605d86e8f3d05c6a42db2ddc9cbd1dcc73b0f37aa867",
+    "EVIDENCE/provenance.txt": "68c80efb64735efc81992e19c7c8a3cee7db67406129d3922e5139c1965d10d7",
+    "EVIDENCE/red.log": "3a4845cfd5e3aaf2b593fbdc740f731452152ef5eab4331e108865bb8692477e",
+    "EVIDENCE/test_private.py": "da293375b94d706da4440b44c8742243a3449da4310368866c99bf634c8ad96d",
+    "private_cover/independent.py": "961b6ffff0513c929e1b707634d431dbfaa48223504436c68218e1096a0ee57d",
+    "private_cover/producer.py": "27b94bfabd6761b24b9a605d86e8f3d05c6a42db2ddc9cbd1dcc73b0f37aa867",
+    "private_cover/test_private.py": "da293375b94d706da4440b44c8742243a3449da4310368866c99bf634c8ad96d"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "model_requested": "models/gemini-3.1-pro-preview",
+  "research_commit": "f7c4b9af140aec9fedb13f505d1edac94269f3df",
+  "response_sha256": "798de60671d0ee21953556ca580faf173ba361df4ded8849250b7c1fe54409f5",
+  "status": "INDEPENDENT_AI_REVIEW_NOT_SCIENTIFIC_CLOSEOUT",
+  "tokens": 50139,
+  "workflow_commit": "f7c4b9af140aec9fedb13f505d1edac94269f3df"
+}

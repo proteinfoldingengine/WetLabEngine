@@ -1,0 +1,25 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The theorem correctly establishes that when every inclusion-maximal original footprint has a private root (which is equivalent to the number of maxima k equaling the source hitting number), one anchor label per maximum can remain permanently fixed.",
+    "The exact count-graph isomorphism between the unrestricted safe count graph and the residual count graph is rigorously proven. The private roots ensure that the positive original floors require at least one occupant per maximum, meaning the fixed anchors naturally satisfy this requirement and are never forced to move.",
+    "The subtraction of the anchor contributions exactly matches the residual floors, and the upper-cover gate is automatically satisfied in both graphs because the hitting number is exactly k <= 4.",
+    "The copy-then-delete rename mechanism is universally safe and correctly demonstrates that reaching any vacancy is sufficient to reach a prescribed non-anchor vacancy without editing the anchors.",
+    "The contrapositive deduction is sound: if a first reserve requires cover movement, the maximal footprint family must have a redundant member (k > source hitting number).",
+    "The verification contract is comprehensive, checking all anchor choices, all source expansions, both directions of canonical native lifts, and all original protected one-hidden masks.",
+    "Independent reconstruction uses distinct representations (sets vs. bitmasks) and confirms the exact isomorphism, reachability, and safety properties across the declared universe."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem is a conditional accessibility equivalence, not a guarantee of reserve availability; static minima do not imply accessible minima, and source-component membership is still required.",
+    "The necessary condition for forced cover movement (k > source hitting number) is not sufficient; overlap alone is not the obstruction, and sources with PRIVATE may still have no reachable reserve.",
+    "The count graph does not identify a prescribed labelled endpoint; exact labelled targets require the subsequent copy-then-delete rename phase.",
+    "The prescribed absence reachability does not apply to the chosen anchor labels, which must remain fixed.",
+    "The theorem requires positive original floors; zero original floors would not force the occupancy required to fix the anchors.",
+    "Broad C3/general C4, native observation/access/source/outcome, and committed progress remain OPEN or supplied assumptions.",
+    "No physical derivation, new primitive, fundamental time, dark matter variable, inserted geometry, optimal-cost claim, or full-stack certification is provided."
+  ]
+}
+```
