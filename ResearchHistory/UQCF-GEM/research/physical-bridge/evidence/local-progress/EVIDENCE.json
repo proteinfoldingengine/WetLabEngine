@@ -1,0 +1,51 @@
+{
+  "schema": "local-progress-evidence-v1",
+  "parent": "3949cfd085731f29c4b6dd32e8e2938e5b49c4b5",
+  "prospective_freeze": "4426bd04f91913d09d9f939ad2e9119f858473e4",
+  "science_commit": "f36a2d8ad65149aab7fc444c79523c46002f2e7c",
+  "workflow_commit": "f36a2d8ad65149aab7fc444c79523c46002f2e7c",
+  "run_id": 38017118964,
+  "jobs": [
+    {
+      "id": 114109764381,
+      "name": "verification",
+      "conclusion": "success"
+    },
+    {
+      "id": 114110096447,
+      "name": "fresh-reproduction",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11656887475,
+      "name": "c3-local-progress-fresh-reproduction",
+      "size": 26326,
+      "sha256": "7afcde3d6ef231599cf2eae23b0eaba82f31ffe9d8bab23ac728014dfe218948"
+    },
+    {
+      "id": 11656119076,
+      "name": "c3-local-progress-verification",
+      "size": 26042,
+      "sha256": "2ccd2b442b04e0b3a3f24d7779599361bc62f69599a01789c5934c766822e4b6"
+    }
+  ],
+  "certificate_sha256": "7deae40ee68d1671f973a77a7054ce6dec3ec208ad31aaa3fd8cf8aaa3e54d5e",
+  "counts": {
+    "directed_edges": 72,
+    "families": 4,
+    "protected_completions": 5298,
+    "protected_state_checks": 42384,
+    "reachable_states": 28,
+    "rejecting_toggles": 2140
+  },
+  "new_tests": 17,
+  "inherited_tests": 118,
+  "total_tests": 135,
+  "original_archives_downloaded_and_hash_checked": true,
+  "certificate_three_copies_equal": true,
+  "mathematical_status": "author proof; fresh internal adversarial review pending",
+  "numbered_stage_certification": false,
+  "external_review_requested": false
+}
