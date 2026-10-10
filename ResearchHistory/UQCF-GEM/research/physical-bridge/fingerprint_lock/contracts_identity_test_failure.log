@@ -1,0 +1,52 @@
+test_actual_input_rejection (test_fingerprint.Contracts.test_actual_input_rejection) ... ok
+test_batch_cost (test_fingerprint.Contracts.test_batch_cost) ... ok
+test_batch_omission (test_fingerprint.Contracts.test_batch_omission) ... ok
+test_canonical_vertex_corruption (test_fingerprint.Contracts.test_canonical_vertex_corruption) ... ERROR
+test_certificate_controls (test_fingerprint.Contracts.test_certificate_controls) ... ok
+test_components (test_fingerprint.Contracts.test_components) ... ok
+test_count_corruption (test_fingerprint.Contracts.test_count_corruption) ... ok
+test_edges (test_fingerprint.Contracts.test_edges) ... ok
+test_fingerprint (test_fingerprint.Contracts.test_fingerprint) ... ok
+test_first_absence (test_fingerprint.Contracts.test_first_absence) ... ok
+test_first_cost (test_fingerprint.Contracts.test_first_cost) ... ok
+test_first_omission (test_fingerprint.Contracts.test_first_omission) ... ok
+test_floor_corruption (test_fingerprint.Contracts.test_floor_corruption) ... ok
+test_graph_identity (test_fingerprint.Contracts.test_graph_identity) ... ok
+test_graph_omission (test_fingerprint.Contracts.test_graph_omission) ... ok
+test_hidden (test_fingerprint.Contracts.test_hidden) ... ok
+test_hidden_omission (test_fingerprint.Contracts.test_hidden_omission) ... ok
+test_identity_omission (test_fingerprint.Contracts.test_identity_omission) ... ok
+test_independent (test_fingerprint.Contracts.test_independent) ... ok
+test_isolation (test_fingerprint.Contracts.test_isolation) ... ok
+test_join_hidden (test_fingerprint.Contracts.test_join_hidden) ... ok
+test_join_optimal (test_fingerprint.Contracts.test_join_optimal) ... ok
+test_join_reverse (test_fingerprint.Contracts.test_join_reverse) ... ok
+test_lifts (test_fingerprint.Contracts.test_lifts) ... ok
+test_locked_minimum (test_fingerprint.Contracts.test_locked_minimum) ... ok
+test_raw (test_fingerprint.Contracts.test_raw) ... ok
+test_raw_connected (test_fingerprint.Contracts.test_raw_connected) ... ok
+test_source (test_fingerprint.Contracts.test_source) ... ok
+test_star_minimum (test_fingerprint.Contracts.test_star_minimum) ... ok
+test_static (test_fingerprint.Contracts.test_static) ... ok
+test_t_identity (test_fingerprint.Contracts.test_t_identity) ... ok
+test_upper5 (test_fingerprint.Contracts.test_upper5) ... ok
+test_vertices (test_fingerprint.Contracts.test_vertices) ... ok
+
+======================================================================
+ERROR: test_canonical_vertex_corruption (test_fingerprint.Contracts.test_canonical_vertex_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/fingerprint_lock/test_fingerprint.py", line 41, in test_canonical_vertex_corruption
+    self.reject(change)
+  File "/workspace/scratch/ef409e5b669c/fingerprint_lock/test_fingerprint.py", line 20, in reject
+    d=copy.deepcopy(self.d);f(d)
+                            ^^^^
+  File "/workspace/scratch/ef409e5b669c/fingerprint_lock/test_fingerprint.py", line 40, in change
+    def change(d):d['identities']['["count",0,1]']['vertices'][0]=(99,0,0,0,0,0)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'tuple' object does not support item assignment
+
+----------------------------------------------------------------------
+Ran 33 tests in 4.403s
+
+FAILED (errors=1)

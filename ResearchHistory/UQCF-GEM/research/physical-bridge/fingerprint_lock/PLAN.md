@@ -20,7 +20,7 @@
 
 ## Task1: proof and frozen contract
 - [x] Obtain independent prospective mathematical review and resolve blockers. Reviewer accepted Theorems1–4; four-occupied departure reasoning and explicit upper-five control were added before freeze.
-- [ ] Publish RESULT and this plan from the integrated parent; immutable readback before any campaign.
+- [x] Publish RESULT and this plan from the integrated parent; immutable readback before any campaign. Freeze771ef64f2bc56436c2e405346fa26c10e967329b.
 
 ## Task2: complete verification and independent reconstruction
 Files: fingerprint_lock/producer.py, independent.py, test_fingerprint.py, red.log.
