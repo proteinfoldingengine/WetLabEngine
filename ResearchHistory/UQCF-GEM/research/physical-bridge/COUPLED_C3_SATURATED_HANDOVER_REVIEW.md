@@ -1,0 +1,9 @@
+# Fully saturated handover: internal mathematical/code review
+
+Date: 2026-10-10 UTC. Frozen theorem/scope 851a80a803b47696466c1cee3c3605e2744457ed. Independent reviewer /root/review_sat_handover: ACCEPT, no blocking mathematical or code defect. This is not scientific closeout until full execution, external reviews, original evidence audit and immutable publication readback finish.
+
+Reviewed every anchored donor case, r2 private-incidence obstruction, r>=3 exact static witness, all ordered-distinct triple floor accounting, achieved4r+6 cost, first vacancy, restored saturated cardinalities, unchanged actualu,v,e cover and all-original-hidden protection. General count quotient's meet gate, lift from EVERY assignment in an orbit, projection, source expansion choice-independence, exact vacancy predicate, fixed-k complexity and exact-target/optimal-cost exclusions reviewed.
+
+Code review checked distinct bitmask/set-support implementations, complete multiplicity/count-edge/component/lift identities, protected hidden complements, original palette gate,147permutation-union identities and explicit renewed intermediate restoration. Reviewer independently ran26contracts:PASS. Source expansion/source count witness traceability was improved on reviewer suggestion: derive counts from actual y→U additions; retain every source expansion state and deterministic BFS vacancy path. A genuine26-test witnessRED precedes current26GREEN, alongside the initial24-test stubRED (5failures18errors1 incidental passing source-floor equality assertion). Exact graph reconstruction rejects omitted witness as well as other omissions. No frozen theorem/scope changed.
+
+Full regenerated producer/independent campaign must complete independently; do not infer it from the small contract fixture. No broadC3/generalC4, arbitrary upper-cover, exact labelled-target or native optimal-cost conclusion.

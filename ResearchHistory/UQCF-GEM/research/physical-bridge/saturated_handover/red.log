@@ -1,0 +1,240 @@
+EFEEE.FFFEEEEEEEFEEEEEEE
+======================================================================
+ERROR: test_bad_domination (test_saturated.Construction.test_bad_domination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 10, in test_bad_domination
+    s=list(p.source(3));s[4]|=8;self.assertFalse(p.safe(tuple(s),3))
+                        ~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_first_vacancy (test_saturated.Construction.test_first_vacancy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 6, in test_first_vacancy
+    def test_first_vacancy(self):self.assertEqual(p.columns(p.route(p.source(3),p.release(3,0,1,2))[-1],8)[0],0)
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_fresh_label (test_saturated.Construction.test_fresh_label)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 14, in test_fresh_label
+    s=list(p.source(3));s[0]|=256;self.assertFalse(p.safe(tuple(s),3))
+                        ~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_native_hidden (test_saturated.Construction.test_native_hidden)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 12, in test_native_hidden
+    s=list(p.source(3));s[4]|=8;self.assertEqual(p.fulltau(p.source(3),166),3);self.assertEqual(p.fulltau(tuple(s),166),2)
+                        ~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_bad_floor (test_saturated.Contracts.test_bad_floor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 41, in test_bad_floor
+    c=copy.deepcopy(self.c);c['sources'][0]['floors'][0]=2
+                            ~^^^^^^^^^^^
+KeyError: 'sources'
+
+======================================================================
+ERROR: test_bad_toggle (test_saturated.Contracts.test_bad_toggle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 44, in test_bad_toggle
+    c=copy.deepcopy(self.c);c['routes'][0]['ops'][0][0]=6
+                            ~^^^^^^^^^^
+KeyError: 'routes'
+
+======================================================================
+ERROR: test_capacity_omission (test_saturated.Contracts.test_capacity_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 24, in test_capacity_omission
+    def test_capacity_omission(self):self.reject_list('capacity')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 20, in reject_list
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'capacity'
+
+======================================================================
+ERROR: test_component_corruption (test_saturated.Contracts.test_component_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 35, in test_component_corruption
+    c=copy.deepcopy(self.c);c['graphs'][1]['components'][0].pop()
+                            ~^^^^^^^^^^
+KeyError: 'graphs'
+
+======================================================================
+ERROR: test_edge_omission (test_saturated.Contracts.test_edge_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 32, in test_edge_omission
+    c=copy.deepcopy(self.c);c['graphs'][1]['edges'].pop()
+                            ~^^^^^^^^^^
+KeyError: 'graphs'
+
+======================================================================
+ERROR: test_equal_counts_do_not_decide_labelled_target (test_saturated.Contracts.test_equal_counts_do_not_decide_labelled_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 49, in test_equal_counts_do_not_decide_labelled_target
+    def test_equal_counts_do_not_decide_labelled_target(self):self.assertTrue(self.c['singleton_control']['same_counts']);self.assertEqual(self.c['singleton_control']['safe_first_toggles'],0)
+                                                                              ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'singleton_control'
+
+======================================================================
+ERROR: test_graph_omission (test_saturated.Contracts.test_graph_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 25, in test_graph_omission
+    def test_graph_omission(self):self.reject_list('graphs')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 20, in reject_list
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'graphs'
+
+======================================================================
+ERROR: test_lift_omission (test_saturated.Contracts.test_lift_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 38, in test_lift_omission
+    c=copy.deepcopy(self.c);c['graphs'][1]['edges'][0]['states'].pop()
+                            ~^^^^^^^^^^
+KeyError: 'graphs'
+
+======================================================================
+ERROR: test_permutation_omission (test_saturated.Contracts.test_permutation_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 26, in test_permutation_omission
+    def test_permutation_omission(self):self.reject_list('permutations')
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 20, in reject_list
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'permutations'
+
+======================================================================
+ERROR: test_renewal_bypass (test_saturated.Contracts.test_renewal_bypass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 47, in test_renewal_bypass
+    c=copy.deepcopy(self.c);c['renewal'][0]['boundary']=18
+                            ~^^^^^^^^^^^
+KeyError: 'renewal'
+
+======================================================================
+ERROR: test_renewal_omission (test_saturated.Contracts.test_renewal_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 27, in test_renewal_omission
+    def test_renewal_omission(self):self.reject_list('renewal')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 20, in reject_list
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'renewal'
+
+======================================================================
+ERROR: test_route_omission (test_saturated.Contracts.test_route_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 23, in test_route_omission
+    def test_route_omission(self):self.reject_list('routes')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 20, in reject_list
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'routes'
+
+======================================================================
+ERROR: test_source_omission (test_saturated.Contracts.test_source_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 22, in test_source_omission
+    def test_source_omission(self):self.reject_list('sources')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 20, in reject_list
+    c=copy.deepcopy(self.c);c[key].pop()
+                            ~^^^^^
+KeyError: 'sources'
+
+======================================================================
+ERROR: test_vector_omission (test_saturated.Contracts.test_vector_omission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 29, in test_vector_omission
+    c=copy.deepcopy(self.c);c['capacity'][0]['vectors'].pop()
+                            ~^^^^^^^^^^^^
+KeyError: 'capacity'
+
+======================================================================
+FAIL: test_cost (test_saturated.Construction.test_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 5, in test_cost
+    def test_cost(self):self.assertEqual(len(p.release(3,0,1,2)),18)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 18
+
+======================================================================
+FAIL: test_source (test_saturated.Construction.test_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 3, in test_source
+    def test_source(self):self.assertEqual(p.source(3),(11,19,35,13,21,37,126,128))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: () != (11, 19, 35, 13, 21, 37, 126, 128)
+
+Second tuple contains 8 additional elements.
+First extra element 0:
+11
+
+- ()
++ (11, 19, 35, 13, 21, 37, 126, 128)
+
+======================================================================
+FAIL: test_static_negative (test_saturated.Construction.test_static_negative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 8, in test_static_negative
+    def test_static_negative(self):self.assertEqual(p.capacity(2)['minimum'],7)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 7
+
+======================================================================
+FAIL: test_static_positive (test_saturated.Construction.test_static_positive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 7, in test_static_positive
+    def test_static_positive(self):self.assertEqual(p.capacity(3)['minimum'],7)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 7
+
+======================================================================
+FAIL: test_independent (test_saturated.Contracts.test_independent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/test_saturated.py", line 18, in test_independent
+    def test_independent(self):v.verify(self.c,3)
+                               ^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/saturated_handover/independent.py", line 1, in verify
+    def verify(c,n=5):raise AssertionError('not implemented')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: not implemented
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.002s
+
+FAILED (failures=5, errors=18)

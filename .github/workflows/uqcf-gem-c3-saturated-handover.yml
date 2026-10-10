@@ -1,0 +1,151 @@
+name: UQCF-GEM fully saturated first-reserve handover
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/saturated_handover/*.py'
+      - '.github/workflows/uqcf-gem-c3-saturated-handover.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - name: Exact saturated family and complete count quotient verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          mkdir saturated_verification
+          python3 -m unittest discover -s "$ROOT/saturated_handover" -p test_saturated.py -v 2>&1 | tee saturated_verification/contracts.log
+          python3 "$ROOT/saturated_handover/producer.py" saturated_verification/certificate.json | tee saturated_verification/counts.json
+          python3 "$ROOT/saturated_handover/independent.py" saturated_verification/certificate.json saturated_verification/independent.json | tee saturated_verification/independent.log
+          for SPEC in 'slack_handover test_slack.py' 'handover_graph test_handover.py' 'anchored_release test_anchored.py' 'local_progress test_progress.py' 'capacity_gap test_capacity.py' 'saturated_transfer test_transfer.py' 'label_release test_release.py' 'footprint test_footprint.py' 'fixed_family test_fixed_family.py'; do
+            read -r DIR PATTERN <<< "$SPEC"
+            python3 -m unittest discover -s "$ROOT/$DIR" -p "$PATTERN" -v 2>&1 | tee "saturated_verification/inherited_$DIR.log"
+          done
+          printf 'scientific_sha=%s\nworkflow_sha=%s\n' "$GITHUB_SHA" "$GITHUB_SHA" > saturated_verification/provenance.txt
+          cp "$ROOT/COUPLED_C3_SATURATED_HANDOVER_RESULT.md" saturated_verification/frozen_proof_scope.md
+          cp "$ROOT/saturated_handover/producer.py" "$ROOT/saturated_handover/independent.py" "$ROOT/saturated_handover/test_saturated.py" "$ROOT/saturated_handover/red.log" "$ROOT/saturated_handover/witness_red.log" saturated_verification/
+          sha256sum saturated_verification/certificate.json > saturated_verification/certificate.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-saturated-handover-verification
+          path: saturated_verification/
+  fresh-reproduction:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-saturated-handover-verification
+          path: saturated_fresh
+      - name: Fresh complete producer and independent reconstruction
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/saturated_handover/producer.py" /tmp/fresh.json
+          cmp /tmp/fresh.json saturated_fresh/certificate.json
+          python3 "$ROOT/saturated_handover/independent.py" /tmp/fresh.json saturated_fresh/fresh_independent.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-saturated-handover-fresh-reproduction
+          path: saturated_fresh/
+  mathematical-review:
+    needs: fresh-reproduction
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-saturated-handover-fresh-reproduction
+          path: saturated_verification
+      - name: Adversarial Gemini mathematical review of exact event commit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 research_snapshot/.github/scripts/c3_saturated_handover_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-saturated-handover-mathematical-review
+          path: saturated_handover_review/
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-saturated-handover-fresh-reproduction
+          path: saturated_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-saturated-handover-mathematical-review
+          path: saturated_handover_review
+      - name: Exact provenance and fresh independent publication gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/saturated_handover/producer.py" /tmp/publication.json /tmp/publication_independent.json
+          cmp /tmp/publication.json saturated_verification/certificate.json
+          python3 "$ROOT/saturated_handover/independent.py" /tmp/publication.json /tmp/publication_independent.json
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib
+          manifest=json.loads(pathlib.Path('saturated_handover_review/manifest.json').read_text())
+          assert manifest['research_commit']==manifest['workflow_commit']==os.environ['GITHUB_SHA']
+          for name,digest in manifest['input_sha256'].items():
+              path=pathlib.Path('saturated_verification')/name[9:] if name.startswith('EVIDENCE/') else pathlib.Path('research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge')/name
+              assert hashlib.sha256(path.read_bytes()).hexdigest()==digest,name
+          raw=pathlib.Path('saturated_handover_review/review.txt').read_bytes()
+          assert hashlib.sha256(raw).hexdigest()==manifest['response_sha256']
+          expected=f"scientific_sha={os.environ['GITHUB_SHA']}\nworkflow_sha={os.environ['GITHUB_SHA']}\n"
+          assert pathlib.Path('saturated_verification/provenance.txt').read_text()==expected
+          gate={'status':'PASS','scientific_commit':os.environ['GITHUB_SHA'],'verified_review_inputs':len(manifest['input_sha256']),'certificate_reproduced_byte_exact':True,'independent_full_reconstruction':True,'response_sha256':manifest['response_sha256']}
+          pathlib.Path('saturated_handover_gate.json').write_text(json.dumps(gate,indent=2)+'\n');print(json.dumps(gate))
+          PY
+      - name: Separate Gemini publication audit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REVIEW_PHASE: publication
+        run: python3 research_snapshot/.github/scripts/c3_saturated_handover_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-saturated-handover-publication-audit
+          path: |
+            saturated_handover_publication/
+            saturated_handover_gate.json
