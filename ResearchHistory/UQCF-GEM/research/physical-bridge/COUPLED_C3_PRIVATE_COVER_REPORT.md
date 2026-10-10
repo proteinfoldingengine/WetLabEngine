@@ -1,0 +1,17 @@
+# Private maximal footprints — execution report
+
+2026-10-10 UTC. Scientific verification report; external exact-event review and publication gates pending. Prospective freeze191ebabb14efae2b3a847e519232d5b8f7c39292; integrated parentbdcd6fd4200e955e71a5cab72710600609d322fe.
+
+The new theorem supplies a structural class in which cover movement is never necessary to reach a FIRST reserve: each maximal original footprint has a private root among maxima. This is equivalent to the number of maxima equalling source hitting number, necessarily3or4 in the inherited setting. ANY choice of one original maximal label pertype can remain completely unchanged. Subtracting their contributions gives an exact isomorphism of the whole safe count graphs, including exact-meet edges. Original floors remain unchanged; residual bookkeeping floors may be zero.
+
+This is a conditional accessibility equivalence, not a reserve guarantee. The source component still decides accessibility. A forced-moving first reserve must therefore have a redundant maximum (k>source tau); that necessary condition is not sufficient. Prescribed NON-anchor absence may follow after an earlier vacancy. Exact labelled targets and native optimal cost remain outside the count graph.
+
+Complete frozen enumeration:319 sources,638 floor-mode cases,1478 actual anchor jobs,1734 source expansions,3543 unrestricted count vertices and8877 edges;13826 fixed-anchor labelled residual vertices and42164 undirected edges. Both directed canonical lifts of each edge are checked. Every-representative adjacency projection checks75507 directed quotient-edge incidences. There are1830 canonical non-anchor rename witnesses. All complete identities are enumerated before hashing; independent reconstruction does not trust supplied cases/counts.
+
+343 cases have a reachable reserve and295 do not. These classifications only cover the declared finite universe. Fourteen all-maximal-only source controls have no vacancy. Explicit saturated two-toggle positive routes for k3/k4, and two private-root-loss meet rejections, are independently reconstructed. Hidden verification checks448703 pairs of native core and ORIGINAL protected one-hidden mask, with per-case deduplication plus the explicit positive controls. Native slice occurrences, counted separately, total268628. Universal hidden-palette and arbitrary-parameter claims are analytical.
+
+The independently reconstructed complete certificate has SHA256 f4dad9a0dba31d85764f3dea65ec2c0325da38d9429ddb6d2ca36e81cb577b48. Final26 new contracts pass; initial22-test RED has22 errors. The inherited253 contracts are required in the exact-event CI, giving279 total. The local inherited log set is checked for complete per-file test counts before publication; fresh jobs reproduce the certificate and independent reconstruction but do not rerun all279 tests.
+
+Independent mathematical/code review accepted after explicit boundary and both-direction lift coverage fixes; see REVIEW. The prospective RESULT remains immutable. External mathematical review, separate publication review, original archives/full logs/raw answers/hashes/retries, author reconciliation, separate publication audit and immutable readback must complete before the authoritative CLOSEOUT reports CLOSED.
+
+Broad C3/general C4 remain OPEN. Original observation/access/source/outcome/committed progress remain supplied assumptions. No physical derivation, new primitive, inserted geometry, fundamental-time/dark-matter variable or full-stack claim. Path A active; Path B closed.

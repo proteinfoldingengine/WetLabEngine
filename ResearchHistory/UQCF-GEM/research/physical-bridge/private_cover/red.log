@@ -1,0 +1,358 @@
+test_all_anchor_choices (test_private.Contracts.test_all_anchor_choices) ... ERROR
+test_both_modes (test_private.Contracts.test_both_modes) ... ERROR
+test_changed_mode (test_private.Contracts.test_changed_mode) ... ERROR
+test_component_corruption (test_private.Contracts.test_component_corruption) ... ERROR
+test_counts_corruption (test_private.Contracts.test_counts_corruption) ... ERROR
+test_edge_corruption (test_private.Contracts.test_edge_corruption) ... ERROR
+test_exact_tau (test_private.Contracts.test_exact_tau) ... ERROR
+test_expansion_corruption (test_private.Contracts.test_expansion_corruption) ... ERROR
+test_hidden_checked (test_private.Contracts.test_hidden_checked) ... ERROR
+test_independent (test_private.Contracts.test_independent) ... ERROR
+test_lift_corruption (test_private.Contracts.test_lift_corruption) ... ERROR
+test_negative (test_private.Contracts.test_negative) ... ERROR
+test_no_private_rejected (test_private.Contracts.test_no_private_rejected) ... ERROR
+test_omitted_anchor (test_private.Contracts.test_omitted_anchor) ... ERROR
+test_omitted_source (test_private.Contracts.test_omitted_source) ... ERROR
+test_positive (test_private.Contracts.test_positive) ... ERROR
+test_rename_corruption (test_private.Contracts.test_rename_corruption) ... ERROR
+test_shift_graph (test_private.Contracts.test_shift_graph) ... ERROR
+test_vacancy_corruption (test_private.Contracts.test_vacancy_corruption) ... ERROR
+test_vertex_corruption (test_private.Contracts.test_vertex_corruption) ... ERROR
+test_zero_original_floor_rejected (test_private.Contracts.test_zero_original_floor_rejected) ... ERROR
+test_zero_residual_floors (test_private.Contracts.test_zero_residual_floors) ... ERROR
+
+======================================================================
+ERROR: test_all_anchor_choices (test_private.Contracts.test_all_anchor_choices)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 11, in test_all_anchor_choices
+    def test_all_anchor_choices(self):self.assertTrue(all(len(c['anchors'])>0 for c in self.data()['cases']))
+                                                                                       ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_both_modes (test_private.Contracts.test_both_modes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 8, in test_both_modes
+    def test_both_modes(self):self.assertEqual([c['mode'] for c in self.data()['cases']],['saturated','slack'])
+                                                                   ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_changed_mode (test_private.Contracts.test_changed_mode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 23, in test_changed_mode
+    def test_changed_mode(self):self.reject(lambda d:d['cases'][0].update(mode='other'))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_component_corruption (test_private.Contracts.test_component_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 28, in test_component_corruption
+    def test_component_corruption(self):self.reject(lambda d:d['cases'][0].update(components_hash='bad'))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_counts_corruption (test_private.Contracts.test_counts_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 32, in test_counts_corruption
+    def test_counts_corruption(self):self.reject(lambda d:d['counts'].update(hidden_checks=0))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_edge_corruption (test_private.Contracts.test_edge_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 27, in test_edge_corruption
+    def test_edge_corruption(self):self.reject(lambda d:d['cases'][0].update(edges_hash='bad'))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_exact_tau (test_private.Contracts.test_exact_tau)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 10, in test_exact_tau
+    def test_exact_tau(self):self.assertTrue(all(c['tau']==3 for c in self.data()['cases']))
+                                                                      ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_expansion_corruption (test_private.Contracts.test_expansion_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 25, in test_expansion_corruption
+    def test_expansion_corruption(self):self.reject(lambda d:d['cases'][0]['anchors'][0].update(expansions_hash='bad'))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_hidden_checked (test_private.Contracts.test_hidden_checked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 14, in test_hidden_checked
+    def test_hidden_checked(self):self.assertGreater(self.data()['counts']['hidden_checks'],0)
+                                                     ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_independent (test_private.Contracts.test_independent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 7, in test_independent
+    def test_independent(self):self.assertTrue(q.verify(self.data(),True))
+                                                        ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_lift_corruption (test_private.Contracts.test_lift_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 29, in test_lift_corruption
+    def test_lift_corruption(self):self.reject(lambda d:d['cases'][0]['anchors'][0].update(lifts_hash='bad'))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_negative (test_private.Contracts.test_negative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 15, in test_negative
+    def test_negative(self):self.assertTrue(all(not x['reachable'] for x in self.data()['controls']))
+                                                                            ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_no_private_rejected (test_private.Contracts.test_no_private_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 16, in test_no_private_rejected
+    def test_no_private_rejected(self):self.assertFalse(p.private((3,5,6)))
+                                                        ^^^^^^^^^
+AttributeError: module 'producer' has no attribute 'private'
+
+======================================================================
+ERROR: test_omitted_anchor (test_private.Contracts.test_omitted_anchor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 24, in test_omitted_anchor
+    def test_omitted_anchor(self):self.reject(lambda d:d['cases'][0]['anchors'].pop())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_omitted_source (test_private.Contracts.test_omitted_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 22, in test_omitted_source
+    def test_omitted_source(self):self.reject(lambda d:d['cases'].pop())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_positive (test_private.Contracts.test_positive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 9, in test_positive
+    def test_positive(self):self.assertTrue(all(c['reachable'] for c in self.data()['cases']))
+                                                                        ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_rename_corruption (test_private.Contracts.test_rename_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 31, in test_rename_corruption
+    def test_rename_corruption(self):self.reject(lambda d:d['cases'][0]['anchors'][0].update(renames_hash='bad'))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_shift_graph (test_private.Contracts.test_shift_graph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 12, in test_shift_graph
+    def test_shift_graph(self):self.assertTrue(all(c['graph_hash']==c['shifted_graph_hash'] for c in self.data()['cases']))
+                                                                                                     ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_vacancy_corruption (test_private.Contracts.test_vacancy_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 30, in test_vacancy_corruption
+    def test_vacancy_corruption(self):self.reject(lambda d:d['cases'][0]['anchors'][0].update(vacancies_hash='bad'))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_vertex_corruption (test_private.Contracts.test_vertex_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 26, in test_vertex_corruption
+    def test_vertex_corruption(self):self.reject(lambda d:d['cases'][0].update(vertices_hash='bad'))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 20, in reject
+    d=copy.deepcopy(self.data());change(d)
+                    ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+======================================================================
+ERROR: test_zero_original_floor_rejected (test_private.Contracts.test_zero_original_floor_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 18, in test_zero_original_floor_rejected
+    with self.assertRaises(ValueError):p.case((9,10,4,1,8),'invalid',(0,1,1,1))
+                                       ^^^^^^
+AttributeError: module 'producer' has no attribute 'case'
+
+======================================================================
+ERROR: test_zero_residual_floors (test_private.Contracts.test_zero_residual_floors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 13, in test_zero_residual_floors
+    def test_zero_residual_floors(self):self.assertIn(0,self.data()['cases'][1]['residual_floors'])
+                                                        ^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/test_private.py", line 6, in data
+    def data(self):return p.build(True)
+                          ^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/private_cover/producer.py", line 2, in build
+    raise NotImplementedError('prospective RED')
+NotImplementedError: prospective RED
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.002s
+
+FAILED (errors=22)

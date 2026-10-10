@@ -1,0 +1,151 @@
+name: UQCF-GEM private maximal-footprint first reserve
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/private_cover/*.py'
+      - '.github/workflows/uqcf-gem-c3-private-cover.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - name: Exact private anchor subtraction and first-reserve verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          mkdir private_verification
+          python3 -m unittest discover -s "$ROOT/private_cover" -p test_private.py -v 2>&1 | tee private_verification/contracts.log
+          python3 "$ROOT/private_cover/producer.py" private_verification/certificate.json | tee private_verification/counts.json
+          python3 "$ROOT/private_cover/independent.py" private_verification/certificate.json private_verification/independent.json | tee private_verification/independent.log
+          for SPEC in 'moving_cover test_moving.py' 'saturated_handover test_saturated.py' 'slack_handover test_slack.py' 'handover_graph test_handover.py' 'anchored_release test_anchored.py' 'local_progress test_progress.py' 'capacity_gap test_capacity.py' 'saturated_transfer test_transfer.py' 'label_release test_release.py' 'footprint test_footprint.py' 'fixed_family test_fixed_family.py'; do
+            read -r DIR PATTERN <<< "$SPEC"
+            python3 -m unittest discover -s "$ROOT/$DIR" -p "$PATTERN" -v 2>&1 | tee "private_verification/inherited_$DIR.log"
+          done
+          printf 'scientific_sha=%s\nworkflow_sha=%s\n' "$GITHUB_SHA" "$GITHUB_SHA" > private_verification/provenance.txt
+          cp "$ROOT/COUPLED_C3_PRIVATE_COVER_RESULT.md" private_verification/frozen_proof_scope.md
+          cp "$ROOT/private_cover/producer.py" "$ROOT/private_cover/independent.py" "$ROOT/private_cover/test_private.py" "$ROOT/private_cover/red.log" private_verification/
+          sha256sum private_verification/certificate.json > private_verification/certificate.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-private-cover-verification
+          path: private_verification/
+  fresh-reproduction:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-private-cover-verification
+          path: private_fresh
+      - name: Fresh complete producer and independent reconstruction
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/private_cover/producer.py" /tmp/fresh.json
+          cmp /tmp/fresh.json private_fresh/certificate.json
+          python3 "$ROOT/private_cover/independent.py" /tmp/fresh.json private_fresh/fresh_independent.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-private-cover-fresh-reproduction
+          path: private_fresh/
+  mathematical-review:
+    needs: fresh-reproduction
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-private-cover-fresh-reproduction
+          path: private_verification
+      - name: Adversarial Gemini mathematical review of exact event commit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 research_snapshot/.github/scripts/c3_private_cover_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-private-cover-mathematical-review
+          path: private_cover_review/
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-private-cover-fresh-reproduction
+          path: private_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: c3-private-cover-mathematical-review
+          path: private_cover_review
+      - name: Exact provenance and fresh independent publication gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C research_snapshot rev-parse HEAD)" = "$GITHUB_SHA"
+          ROOT=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/private_cover/producer.py" /tmp/publication.json
+          cmp /tmp/publication.json private_verification/certificate.json
+          python3 "$ROOT/private_cover/independent.py" /tmp/publication.json
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib
+          manifest=json.loads(pathlib.Path('private_cover_review/manifest.json').read_text())
+          assert manifest['research_commit']==manifest['workflow_commit']==os.environ['GITHUB_SHA']
+          for name,digest in manifest['input_sha256'].items():
+              path=pathlib.Path('private_verification')/name[9:] if name.startswith('EVIDENCE/') else pathlib.Path('research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge')/name
+              assert hashlib.sha256(path.read_bytes()).hexdigest()==digest,name
+          raw=pathlib.Path('private_cover_review/review.txt').read_bytes()
+          assert hashlib.sha256(raw).hexdigest()==manifest['response_sha256']
+          expected=f"scientific_sha={os.environ['GITHUB_SHA']}\nworkflow_sha={os.environ['GITHUB_SHA']}\n"
+          assert pathlib.Path('private_verification/provenance.txt').read_text()==expected
+          gate={'status':'PASS','scientific_commit':os.environ['GITHUB_SHA'],'verified_review_inputs':len(manifest['input_sha256']),'certificate_reproduced_byte_exact':True,'independent_full_reconstruction':True,'response_sha256':manifest['response_sha256']}
+          pathlib.Path('private_cover_gate.json').write_text(json.dumps(gate,indent=2)+'\n');print(json.dumps(gate))
+          PY
+      - name: Separate Gemini publication audit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REVIEW_PHASE: publication
+        run: python3 research_snapshot/.github/scripts/c3_private_cover_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-private-cover-publication-audit
+          path: |
+            private_cover_publication/
+            private_cover_gate.json
