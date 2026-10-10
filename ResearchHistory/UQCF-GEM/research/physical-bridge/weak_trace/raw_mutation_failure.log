@@ -1,0 +1,54 @@
+test_anchor (test_weak.Contracts.test_anchor) ... ok
+test_anchors (test_weak.Contracts.test_anchors) ... ok
+test_certificate (test_weak.Contracts.test_certificate) ... ok
+test_cherry_cost (test_weak.Contracts.test_cherry_cost) ... ok
+test_classification (test_weak.Contracts.test_classification) ... ok
+test_component (test_weak.Contracts.test_component) ... ok
+test_controls (test_weak.Contracts.test_controls) ... ok
+test_count_change (test_weak.Contracts.test_count_change) ... ok
+test_edge (test_weak.Contracts.test_edge) ... ok
+test_first_vacancy (test_weak.Contracts.test_first_vacancy) ... ok
+test_floor_change (test_weak.Contracts.test_floor_change) ... ok
+test_graph_omission (test_weak.Contracts.test_graph_omission) ... ok
+test_hidden (test_weak.Contracts.test_hidden) ... ok
+test_hidden_omission (test_weak.Contracts.test_hidden_omission) ... ok
+test_identity_omission (test_weak.Contracts.test_identity_omission) ... ok
+test_independent (test_weak.Contracts.test_independent) ... ok
+test_isolated_cost (test_weak.Contracts.test_isolated_cost) ... ok
+test_locked_spare (test_weak.Contracts.test_locked_spare) ... ok
+test_lower_bound (test_weak.Contracts.test_lower_bound) ... ok
+test_lower_omission (test_weak.Contracts.test_lower_omission) ... ok
+test_lower_universe (test_weak.Contracts.test_lower_universe) ... ok
+test_missing_compensation (test_weak.Contracts.test_missing_compensation) ... ok
+test_path (test_weak.Contracts.test_path) ... ok
+test_raw_component (test_weak.Contracts.test_raw_component) ... ok
+test_raw_edge (test_weak.Contracts.test_raw_edge) ... ok
+test_raw_hidden_mask (test_weak.Contracts.test_raw_hidden_mask) ... ok
+test_raw_vertex (test_weak.Contracts.test_raw_vertex) ... ERROR
+test_static (test_weak.Contracts.test_static) ... ok
+test_t1_exception (test_weak.Contracts.test_t1_exception) ... ok
+test_t_omission (test_weak.Contracts.test_t_omission) ... ok
+test_triple_cost (test_weak.Contracts.test_triple_cost) ... ok
+test_vertex (test_weak.Contracts.test_vertex) ... ok
+
+======================================================================
+ERROR: test_raw_vertex (test_weak.Contracts.test_raw_vertex)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/weak_trace/test_weak.py", line 42, in test_raw_vertex
+    def test_raw_vertex(self):self.raw_reject('count','vertices')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/weak_trace/test_weak.py", line 41, in raw_reject
+    self.reject(mutate)
+  File "/workspace/scratch/ef409e5b669c/weak_trace/test_weak.py", line 22, in reject
+    d=copy.deepcopy(self.d);f(d)
+                            ^^^^
+  File "/workspace/scratch/ef409e5b669c/weak_trace/test_weak.py", line 40, in mutate
+    d['identities'][key][field].pop()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'pop'
+
+----------------------------------------------------------------------
+Ran 32 tests in 1.929s
+
+FAILED (errors=1)
