@@ -25,21 +25,21 @@
 ## Task2: complete verification and independent reconstruction
 Files: fingerprint_lock/producer.py, independent.py, test_fingerprint.py, red.log.
 Interfaces: build(fixture=False)->certificate; verify(certificate,fixture=False)->True or AssertionError.
-- [ ] Write RED contracts for certificate predicates, graph/source classification, minima, raw upper-five rejection, canonical component lifts, first/batch identities and omission rejection.
-- [ ] Run and retain genuine RED before implementation.
-- [ ] Implement complete five-type count graphs; producer uses donor enumeration, checker uses pairwise identity changes or a distinct indexed construction.
-- [ ] Implement complete locked raw source components for K23 t1,2; distinct hitting solvers and component algorithms.
-- [ ] Implement canonical same-palette targets, generic optimal join control and all declared star paths/batches.
-- [ ] Verify all original one-hidden masks over complete deduplicated native cores, separately tracking slice occurrences.
-- [ ] Run new GREEN and all279 inherited contracts; compare the fully independently reconstructed certificate.
-- [ ] Obtain independent code review, fix findings and rerun affected verification.
+- [x] Write RED contracts for certificate predicates, graph/source classification, minima, raw upper-five rejection, canonical component lifts, first/batch identities and omission rejection.
+- [x] Run and retain genuine RED before implementation.
+- [x] Implement complete five-type count graphs; producer uses donor enumeration, checker uses pairwise identity changes or a distinct indexed construction.
+- [x] Implement complete locked raw source components for K23 t1,2; distinct hitting solvers and component algorithms.
+- [x] Implement canonical same-palette targets, generic optimal join control and all declared star paths/batches.
+- [x] Verify all original one-hidden masks over complete deduplicated native cores, separately tracking slice occurrences.
+- [x] Run new GREEN and all279 inherited contracts; compare the fully independently reconstructed certificate.
+- [x] Obtain independent code review, fix findings and rerun affected verification.
 
 ## Task3: exact-event execution and closeout
 Files: workflow, review runner, REPORT, REVIEW, author evidence audit, corruption controls, CLOSEOUT, RECONCILIATION, PUBLICATION_AUDIT and both continuation indices.
-- [ ] Validate every CLI invocation with all required arguments before pushing the scientific event.
-- [ ] Run all exact-event tests; obtain fresh byte-equal reproduction and independent reconstruction.
-- [ ] Obtain original Gemini mathematical and separate publication answers; assess actual objections and overstatements.
-- [ ] Retain original archives, complete logs, raw answer texts, full input/response hashes and retry/failure history.
-- [ ] Authenticate exact input/member/count sets and API/job/run/artifact bindings; reject evidence omissions/corruptions.
-- [ ] Obtain separate publication audit and portable-layout checks.
+- [x] Validate every CLI invocation with all required arguments before pushing the scientific event.
+- [x] Run all exact-event tests; obtain fresh byte-equal reproduction and independent reconstruction.
+- [x] Obtain original Gemini mathematical and separate publication answers; assess actual objections and overstatements.
+- [x] Retain original archives, complete logs, raw answer texts, full input/response hashes and retry/failure history.
+- [x] Authenticate exact input/member/count sets and API/job/run/artifact bindings; reject evidence omissions/corruptions.
+- [x] Obtain separate publication audit and portable-layout checks. Separate reviewer accepted; intact plus seven corruptions behaved as required.
 - [ ] Publish the scoped closeout and updated indices; read back every text/blob identity and leased branch head before reporting completion.

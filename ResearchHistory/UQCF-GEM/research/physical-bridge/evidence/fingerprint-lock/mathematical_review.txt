@@ -1,0 +1,23 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The mathematical proofs for the saturated-fingerprint lock, pair-root count criterion, unbounded static surplus, and star first-reserve are logically sound and correctly implemented.",
+    "The exact labelled component invariant is rigorously proven: condition (c) prevents additions at locked roots, while saturated floors prevent deletions, locking the component to exact safe motion within unique maximal containers.",
+    "The independent verification correctly uses distinct representations (multisets, sets, branch-and-bound hitting solver, union-find) to corroborate the producer's results (compositions, bitwise operations, brute-force combinations, BFS).",
+    "The explicit upper-five control correctly validates the necessity of the upper-cover gate, and the generic join-path control correctly verifies the exact Hamming cost and safety of the coordinatewise join path.",
+    "All 279 inherited tests pass, ensuring no regressions in previously established theorems.",
+    "The reported counts (2048 graph cases, 49176 raw vertices, 48 first routes, 4 batches) exactly match the independent reconstruction and the provided evidence."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "Broad C3/general C4, native observation/access/source/outcome/committed progress and forced-moving FIRST reserve for general redundant-maxima sources remain OPEN.",
+    "Path A remains active; Path B remains closed.",
+    "No physical derivation, fundamental time, dark-matter variable, inserted geometry, new primitive, heuristic proof, or full-stack certification is claimed.",
+    "The exact component certificate is not a classification of all sources lacking the certificate.",
+    "Safe local motion and optimal exact motion inside a component do not imply transferable reserve.",
+    "There is no global cost optimality claim for the constructed star first-vacancy routes."
+  ]
+}
+```

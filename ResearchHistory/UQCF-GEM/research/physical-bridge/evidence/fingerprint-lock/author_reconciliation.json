@@ -1,0 +1,186 @@
+{
+  "certificate_sha256": "ea5739d98cda28c3140fecad5a50f3f36e9f7d215792759472eddd913df9f503",
+  "complete_job_logs": {
+    "fresh_reproduction_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114314839472,
+      "run_id": 38086587211,
+      "sha256": "54bdbf41ac5d083b5028851b818100b4a84bf5674ff62cf4c3c80345a15d56ef",
+      "size": 23413
+    },
+    "mathematical_review_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114315306842,
+      "run_id": 38086587211,
+      "sha256": "f2b7bee1b04f3aaf763227799941f632ab4d4a1e76e42699acd68c866686eae6",
+      "size": 16565
+    },
+    "publication_audit_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114315551427,
+      "run_id": 38086587211,
+      "sha256": "bf7920814ab3af736c223edfa04ea33ecbde4032b307ec33fa74b114c103d838",
+      "size": 28796
+    },
+    "verification_job.log": {
+      "complete_markers_verified": true,
+      "job_id": 114314259327,
+      "run_id": 38086587211,
+      "sha256": "1ec0c05a44c4cb4b1868504b0bc4a5847cf819d1fbc6449ae686247db5ea2d7d",
+      "size": 54237
+    }
+  },
+  "counts": {
+    "batches": 4,
+    "first_routes": 48,
+    "graph_cases": 2048,
+    "hidden_checks": 48245883,
+    "raw_vertices": 49176,
+    "slice_occurrences": 826147
+  },
+  "final_new_tests": 33,
+  "finite_classification": {
+    "locked_count_sources": 506,
+    "unlocked_count_sources": 1542
+  },
+  "initial_red_loader_tests": 1,
+  "limitations": [
+    "Saturated fingerprint sufficient obstruction, no classification beyond five-type count family",
+    "Static safe absence differs from accessible absence",
+    "Exact join Hamming optimum limited to locked labelled component",
+    "Star costs16/36(t-1) achieved, not global first-vacancy optimal",
+    "Mixed floors; no cardinality restoration for star capacity endpoint",
+    "Onehidden finite corroboration; arbitrary hidden theorem proof based",
+    "General forced-moving FIRST reserve and broadC3/generalC4/native observer-access-outcome-progress OPEN"
+  ],
+  "math_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "math_response_sha256": "f857c70067e52d24b0f461c74cdd390d6e99c6c9e984c1a8c789dd6553b0f4cb",
+  "math_verified_inputs": 36,
+  "mathematical_verdict": "ACCEPTED",
+  "original_archives": [
+    {
+      "file": "c3-fingerprint-lock-fresh-reproduction.zip",
+      "git_blob_sha1": "e3b2088a5e59960c8abf8008cf61a014a16c4a9f",
+      "members": {
+        "certificate.json": "ea5739d98cda28c3140fecad5a50f3f36e9f7d215792759472eddd913df9f503",
+        "certificate.json.identities.jsonl.gz": "7574a8efc0bcf6060773d115bc3cfa76e40084b86340ac53edece365a98588e6",
+        "certificate.sha256": "c890fe3b518046854b1eb0f5f9524f60f3ffe68a716d2f74add4bfa8a5a06684",
+        "contracts.log": "838f304dca341f5879fe489808662de68ad60531723a096950a6b11276d920a9",
+        "counts.json": "fc8982d80734e48030dbcc74cb212a2d4f0f576f64e3c58967c71cbfbbbe60ab",
+        "fresh_independent.json": "ed38c709bffa4e9a4c70e0200dffd7156ac5616c6da7e6ba62dc67a493943b84",
+        "frozen_proof_scope.md": "af5191c031dec071f3475feeb9d2dcdb3734975526fbeb093b10cc8b07953747",
+        "identities.sha256": "86f080bdee55e5f13895b88cfcaba87f042191584a5af2fdc0f0876c37946ebc",
+        "independent.json": "ed38c709bffa4e9a4c70e0200dffd7156ac5616c6da7e6ba62dc67a493943b84",
+        "independent.log": "c38059e33a9e2a6183d41efac8bbfb5ccddaa65c5bc8705185182881af1cbb6a",
+        "independent.py": "f2afc50266f41dbd5cecf3a569ec12ce9b21f4da99b3c967e95fdf5aa2212894",
+        "inherited_anchored_release.log": "7f5e8def4d5add17c6ab859262d4da1ebd58ff32d189420a6a6472fee7c3d116",
+        "inherited_capacity_gap.log": "d585ff1ef2ed45c43aef0f1680952822c4aaaf56bc12c940211516f842fd30ec",
+        "inherited_fixed_family.log": "949b300e0b5f139351813944be71489bb1573a1071d740b5c46172bfdc4cce90",
+        "inherited_footprint.log": "862fd607b83ff5b7388f0b87f765934b9ac269751cc8f20024c1d8d6ea44e9b3",
+        "inherited_handover_graph.log": "4c47ba70ca4687f149af0f07f251efea552c28abba5c09e1de40d5d2aa35c625",
+        "inherited_label_release.log": "556017f303f9c49936ea850c97949f795d647c608a63ae8a2427edff0ed1bed1",
+        "inherited_local_progress.log": "5732c4b2954f736de47b70acee5eb9760c17f5fa293e9a3d9bd5a384ad6a3706",
+        "inherited_moving_cover.log": "2f69e2b16a7900c12c0664ca034387c2a7128dd57b48d5c5a8ef5c525138a8a4",
+        "inherited_private_cover.log": "fed2147b16e2a6e2adccdbc37997300dbfa40b95e70b4bf7ebf71755bc011e5e",
+        "inherited_saturated_handover.log": "3cc11c75282a4bee2e274e07d1a59318a24ab9ca0765a73d7d8e2ea017b37e9d",
+        "inherited_saturated_transfer.log": "b31855e7b0096142744a7f06c8343e66ca235aceb7df14c01a2ddac74b7e731b",
+        "inherited_slack_handover.log": "470f768f4b386dd03ca4f79dad0133f34e634ea003bb71f35cca17bb2fb2932a",
+        "producer.py": "5106c80a40ec53e92e87359970e640042322ebad9dc9595125085cfeaee08827",
+        "provenance.txt": "df881a0c480118c8bad80894bf8b136f58c363da5e1977adbcb1d192efa8ea3f",
+        "red.log": "636d1420f04086d504199d75bae3fc4e5796e05e4d93de0b598ee9ccff27f231",
+        "test_fingerprint.py": "489cd1e31e88cb9212425a3805f9508ef4bb5d280b473e27366b08f253906cc8"
+      },
+      "sha256": "9ccbf5ee765daf782399b6dd500c6c93183bfa6f484f9f7386a4f8c204d58362",
+      "size": 7409530
+    },
+    {
+      "file": "c3-fingerprint-lock-mathematical-review.zip",
+      "git_blob_sha1": "afd8e5bbbf67d193106efeb5d263dd47b3b2981d",
+      "members": {
+        "manifest.json": "38f4d303c5d5cf438f717b94c7b0b46d9590896628e4e56d015cac2c9d3d8877",
+        "review.txt": "f857c70067e52d24b0f461c74cdd390d6e99c6c9e984c1a8c789dd6553b0f4cb"
+      },
+      "sha256": "f877e77f1e4ed9223049e3ae096ff7d5c2eed4b6254d83371d7d1db55f66cf2d",
+      "size": 3176
+    },
+    {
+      "file": "c3-fingerprint-lock-publication-audit.zip",
+      "git_blob_sha1": "ea02f888f661111599dac3aabd66a8d4e71e3c77",
+      "members": {
+        "fingerprint_lock_gate.json": "e65088b931c066fc7954351080fdd82c9c0e7252623a803e95d30cf30a52ab8e",
+        "fingerprint_lock_publication/manifest.json": "ca0d8334d028242383e37bfdc52c374f75f9f7fb75731524d6bf0146eb12258d",
+        "fingerprint_lock_publication/review.txt": "f895a52c2a924904ed98cc6dd8a741375974a32bb4c9a3f8c2426e02b2e1244a"
+      },
+      "sha256": "af64cc5c462f89a840c66f7f4fcfc36444f3dbeedf17cc2319a767ce249f2e0f",
+      "size": 4920
+    },
+    {
+      "file": "c3-fingerprint-lock-verification.zip",
+      "git_blob_sha1": "0fde6a9b7287414ba14a86e0d03f0e8b2a7c3285",
+      "members": {
+        "certificate.json": "ea5739d98cda28c3140fecad5a50f3f36e9f7d215792759472eddd913df9f503",
+        "certificate.json.identities.jsonl.gz": "7574a8efc0bcf6060773d115bc3cfa76e40084b86340ac53edece365a98588e6",
+        "certificate.sha256": "c890fe3b518046854b1eb0f5f9524f60f3ffe68a716d2f74add4bfa8a5a06684",
+        "contracts.log": "838f304dca341f5879fe489808662de68ad60531723a096950a6b11276d920a9",
+        "counts.json": "fc8982d80734e48030dbcc74cb212a2d4f0f576f64e3c58967c71cbfbbbe60ab",
+        "frozen_proof_scope.md": "af5191c031dec071f3475feeb9d2dcdb3734975526fbeb093b10cc8b07953747",
+        "identities.sha256": "86f080bdee55e5f13895b88cfcaba87f042191584a5af2fdc0f0876c37946ebc",
+        "independent.json": "ed38c709bffa4e9a4c70e0200dffd7156ac5616c6da7e6ba62dc67a493943b84",
+        "independent.log": "c38059e33a9e2a6183d41efac8bbfb5ccddaa65c5bc8705185182881af1cbb6a",
+        "independent.py": "f2afc50266f41dbd5cecf3a569ec12ce9b21f4da99b3c967e95fdf5aa2212894",
+        "inherited_anchored_release.log": "7f5e8def4d5add17c6ab859262d4da1ebd58ff32d189420a6a6472fee7c3d116",
+        "inherited_capacity_gap.log": "d585ff1ef2ed45c43aef0f1680952822c4aaaf56bc12c940211516f842fd30ec",
+        "inherited_fixed_family.log": "949b300e0b5f139351813944be71489bb1573a1071d740b5c46172bfdc4cce90",
+        "inherited_footprint.log": "862fd607b83ff5b7388f0b87f765934b9ac269751cc8f20024c1d8d6ea44e9b3",
+        "inherited_handover_graph.log": "4c47ba70ca4687f149af0f07f251efea552c28abba5c09e1de40d5d2aa35c625",
+        "inherited_label_release.log": "556017f303f9c49936ea850c97949f795d647c608a63ae8a2427edff0ed1bed1",
+        "inherited_local_progress.log": "5732c4b2954f736de47b70acee5eb9760c17f5fa293e9a3d9bd5a384ad6a3706",
+        "inherited_moving_cover.log": "2f69e2b16a7900c12c0664ca034387c2a7128dd57b48d5c5a8ef5c525138a8a4",
+        "inherited_private_cover.log": "fed2147b16e2a6e2adccdbc37997300dbfa40b95e70b4bf7ebf71755bc011e5e",
+        "inherited_saturated_handover.log": "3cc11c75282a4bee2e274e07d1a59318a24ab9ca0765a73d7d8e2ea017b37e9d",
+        "inherited_saturated_transfer.log": "b31855e7b0096142744a7f06c8343e66ca235aceb7df14c01a2ddac74b7e731b",
+        "inherited_slack_handover.log": "470f768f4b386dd03ca4f79dad0133f34e634ea003bb71f35cca17bb2fb2932a",
+        "producer.py": "5106c80a40ec53e92e87359970e640042322ebad9dc9595125085cfeaee08827",
+        "provenance.txt": "df881a0c480118c8bad80894bf8b136f58c363da5e1977adbcb1d192efa8ea3f",
+        "red.log": "636d1420f04086d504199d75bae3fc4e5796e05e4d93de0b598ee9ccff27f231",
+        "test_fingerprint.py": "489cd1e31e88cb9212425a3805f9508ef4bb5d280b473e27366b08f253906cc8"
+      },
+      "sha256": "8e7dea489cd0c7ed608b47a8bae6c73096afa8c4caee50ecf7124f1b1e92cea7",
+      "size": 7409167
+    }
+  ],
+  "publication_attempts": [
+    {
+      "attempt": 1,
+      "status": "RESPONSE_RECEIVED"
+    }
+  ],
+  "publication_response_sha256": "f895a52c2a924904ed98cc6dd8a741375974a32bb4c9a3f8c2426e02b2e1244a",
+  "publication_verdict": "ACCEPTED",
+  "publication_verified_inputs": 39,
+  "scientific_commit": "81c26f9e6098b659dde01656639ad3b2b9f1d4c5",
+  "scope_freeze": "771ef64f2bc56436c2e405346fa26c10e967329b",
+  "status": "ACCEPTED_AUTHOR_RECONCILIATION",
+  "test_counts": {
+    "contracts.log": 33,
+    "inherited_anchored_release.log": 20,
+    "inherited_capacity_gap.log": 20,
+    "inherited_fixed_family.log": 28,
+    "inherited_footprint.log": 22,
+    "inherited_handover_graph.log": 20,
+    "inherited_label_release.log": 26,
+    "inherited_local_progress.log": 17,
+    "inherited_moving_cover.log": 28,
+    "inherited_private_cover.log": 26,
+    "inherited_saturated_handover.log": 26,
+    "inherited_saturated_transfer.log": 22,
+    "inherited_slack_handover.log": 24
+  },
+  "tests_total": 312,
+  "workflow_run": 38086587211
+}
