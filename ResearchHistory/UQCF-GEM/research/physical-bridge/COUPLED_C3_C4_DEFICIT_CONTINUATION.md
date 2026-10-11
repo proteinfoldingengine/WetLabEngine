@@ -248,3 +248,14 @@ The retained projective source J_s=g_ret(s) delta[k,k(s)] already exists conditi
 The historical v13.26-v13.28 calibration/coupling obstructions and v14.04 representation stop remain in force within their stated classes. This gate does not reopen source-to-GR coupling, adopt an axiom, insert a sensor or use an Einstein residual as a selector. The first eligible new object is a justified source-event-to-C3-request/reference binding with update/access semantics. Show its behavior on the inherited swapped-root discriminator before allocating a new numerical campaign.
 
 The source register preserves distinctions between proved obstructions, conditional results and source-specific missing-map assessments. New scientific tests: zero. Native C3 input/carrier/action/retained output, enforcement, actual selection and progress remain OPEN; broad C4-C6 and physical source correspondence remain OPEN. Path A active; Path B closed. No fundamental clock, dark-matter variable or geometry is introduced.
+
+
+## C2 archived-ledger producer assessment — independent corroboration
+
+[The event-binding producer assessment](COUPLED_C3_EVENT_BINDING_PROBE.md) follows the v15.56 ledger citation into the actual V1172 producer at source parent ba999041ae68e3d4bde4b88164d962c7ae41d49b. make_ledger constructs seven fixed event names before the numerical update loop. The loop writes numerical diagnostics separately; it does not append its actual updates into that ledger. Final certification combines ledger and field checks without adding an incidence-event payload binding.
+
+The archived-ledger candidate therefore does not supply the complete signed/root-associated C3 event record required by the closed conditional event-initialization theorem. This is a source-scoped failed direct-reuse proposal, not a new impossibility theorem, a historical simulation rerun or an invalidation of conditional source grading/localization. Richer strings could be supplied to a hash function, but that does not derive their origin, capture completeness or access.
+
+The next eligible object is an actual native interaction-to-record producer with justified request/reference identities and update/access semantics. No full hidden-state wrapper, acknowledgment or compulsory commitment is introduced. No new numerical campaign is launched; native C3 and broad C4-C6 remain OPEN. Source and review/publication provenance are retained in evidence/event-binding-probe/.
+
+Integration note: concurrent commits through972e1bcb0b50146116fb5b68dada5ff7599e3526 already publish [lineage candidate C1](COUPLED_C3_LINEAGE_BINDING_CANDIDATE_C1.md) and [archived-ledger candidate C2](COUPLED_C3_V1172_LEDGER_PAYLOAD_C2.md). The local C1 name retained in this probe/review refers to that same upstream C2 route. This assessment adds independent source review and byte/provenance reconciliation; it is not a third candidate or an additional scientific discovery. All concurrent files remain intact.

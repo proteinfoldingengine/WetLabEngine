@@ -18,3 +18,14 @@ Date: 2026-10-11 UTC. A navigation register over the pinned source snapshot `284
 | Core-label permutation as a changed invariant endpoint | [Activation/exchange reconciliation](COUPLED_C3_ACTIVATION_EXCHANGE_RECONCILIATION.md): exact exchange/restoration is available conditionally, but endpoints are core-label-isomorphic. | A derived joint record/reference coupling may distinguish a relative change. This does not declare every label gauge or rule out changes along intermediate slices. |
 
 The register deliberately separates mathematical obstructions, historical branch stops, conditional constructions and source-scoped missing-map assessments. No row supports an archive-wide impossibility conclusion. The new target-blind response gate tests a missing connection; it does not reopen the absolute source-to-GR coupling branch.
+
+
+## C2 archived-ledger producer assessment — independent corroboration
+
+[The event-binding producer assessment](COUPLED_C3_EVENT_BINDING_PROBE.md) follows the v15.56 ledger citation into the actual V1172 producer at source parent ba999041ae68e3d4bde4b88164d962c7ae41d49b. make_ledger constructs seven fixed event names before the numerical update loop. The loop writes numerical diagnostics separately; it does not append its actual updates into that ledger. Final certification combines ledger and field checks without adding an incidence-event payload binding.
+
+The archived-ledger candidate therefore does not supply the complete signed/root-associated C3 event record required by the closed conditional event-initialization theorem. This is a source-scoped failed direct-reuse proposal, not a new impossibility theorem, a historical simulation rerun or an invalidation of conditional source grading/localization. Richer strings could be supplied to a hash function, but that does not derive their origin, capture completeness or access.
+
+The next eligible object is an actual native interaction-to-record producer with justified request/reference identities and update/access semantics. No full hidden-state wrapper, acknowledgment or compulsory commitment is introduced. No new numerical campaign is launched; native C3 and broad C4-C6 remain OPEN. Source and review/publication provenance are retained in evidence/event-binding-probe/.
+
+Integration note: concurrent commits through972e1bcb0b50146116fb5b68dada5ff7599e3526 already publish [lineage candidate C1](COUPLED_C3_LINEAGE_BINDING_CANDIDATE_C1.md) and [archived-ledger candidate C2](COUPLED_C3_V1172_LEDGER_PAYLOAD_C2.md). The local C1 name retained in this probe/review refers to that same upstream C2 route. This assessment adds independent source review and byte/provenance reconciliation; it is not a third candidate or an additional scientific discovery. All concurrent files remain intact.
