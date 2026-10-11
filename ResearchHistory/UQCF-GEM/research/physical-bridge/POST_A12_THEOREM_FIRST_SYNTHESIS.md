@@ -2,6 +2,11 @@
 Updated: 2026-10-11 UTC. Branch: research/uqcf-overlapping-guard-exchange.
 Status: Scoped C3 and C4 closeouts are recorded individually below; native record origin/enforcement/progress and arbitrary coupled repair remain OPEN. No numbered v16 or full-stack post-merge certification.
 
+## Active prospective analytical bridge — 3-/4-root C3 to nested-support star (OPEN)
+
+[Scope](COUPLED_C3_STAR_CARRIER_SCOPE.md) frozen at 365d55c497d65f6003b5e7f8691438280e62c3fe; [analytical candidate](COUPLED_C3_STAR_CARRIER_RESULT.md) at the current branch. A fixed-state C3 tuple with 3 or 4 named roots, positive floors and band 3<=tau<=4 maps bijectively to a depth-one nested-support star with fixed parent palette, the same indexed child supports, and **additional matching floor/band restrictions**. The root h equals tau, and restricted single-incidence edit graphs are isomorphic. The unrestricted nested category is larger; the inherited two-residual swapped-root discriminator requires five children and is outside this theorem. Protected hidden-completion intersections, observer record origin, physical root/reference identity, enforcement, actual outcome selection and progress are NOT derived. This is NOT independently verified or CLOSED: mathematical review, bounded independent enumeration/rejecting controls, Actions, publication audit and immutable scientific closeout remain pending. Broad C3/C4-C6 OPEN.
+
+
 
 
 
