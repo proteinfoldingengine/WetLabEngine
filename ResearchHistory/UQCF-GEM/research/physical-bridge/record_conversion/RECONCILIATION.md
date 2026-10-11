@@ -1,6 +1,6 @@
 # Record conversion — author reconciliation
 
-Status: COMPLETE author audit of original run evidence; durable publication and immutable readbacks are still the final gate.
+Status: COMPLETE author audit and verified research-branch evidence publication.
 
 The raw analytical and code reviews are preserved unchanged. The analytical reviewer required explicit signed-toggle source membership and one addressed incidence change, because full endpoint admission alone can accept a nonexistent deletion as an unchanged state. That correction was incorporated into the prospective freeze before implementation. Both implementations and the rejection controls respect it.
 
@@ -19,3 +19,5 @@ Separate publication response: ACCEPTED, attempt1,82 exact hashed inputs, no mis
 The publication auditor passed intact acceptance and nine rejecting evidence controls. These10 controls are separate from the527 scientific tests. The first test-harness run had9 readiness failures and one test-order AttributeError; that failed log is retained. After correcting readiness ordering, all10 tests failed genuinely for the absent auditor, then passed with implementation and original evidence. No failed scientific run was overwritten.
 
 Fresh separate publication review: APPROVE to scoped research-branch publication, no critical/important blocker. The reviewer independently checked CRC/digests, six frozen and eleven archived scientific objects, exact70/82 prompt inputs, raw API extraction, counts/logs/failure retention and the same-full-endpoint forgery. A temporary published-layout replay passed the audit and all10controls. The current progress.md intentionally evolves from its scientific-manifest historical version; it is not described as an unchanged scientific input.
+
+Durable evidence publication completed at1b35f4f1cdc26616c3f973cc1600a2759aa2d3d1. All48 texts and all5 unchanged original ZIP byte streams were exactly read back; Git blob identities agree. publication_readback.json binds the53 objects. Final receipt/plan/hash publication records that completed gate. This is research-branch publication, not main-merge numbered-stage certification or broad physical closure.
