@@ -37,3 +37,7 @@ The [two-request internal-record attempt](COUPLED_C3_INTERNAL_RECORD_ATTEMPT.md)
 
 ## Repair progress alongside the open origin question
 [Admissibility-derived renewable handoff](COUPLED_C3_RENEWABLE_HANDOFF_CLOSEOUT.md) is scoped CLOSED. This proves uniform repair without acquiring hidden spectator information; it does not solve its acquisition. The original repair and native-origin obligations are now explicitly separated. Retained core roles and committed path semantics remain declared inputs. Neither perpetual retention nor guaranteed request completion is inferred; reversible memory is not ruled out merely because inverse edits are allowed.
+
+## Lineage-to-request candidate C1 screened (2026-10-11)
+
+[Candidate C1](COUPLED_C3_LINEAGE_BINDING_CANDIDATE_C1.md) inspects the existing certified source-event/full-lineage binding and intrinsic parent-child incidence as a potential route to the named C3 request/reference. The first two typed arrows exist conditionally, but no inspected source derives the lineage-event-to-named-root request map or an actual retained marker increment. C1 is therefore CANDIDATE_STOPPED_MISSING_CONNECTION, not a new impossibility theorem or a passed native bridge. The inherited swapped-root discriminator remains unmet, and v15.11 actual-record selection remains explicitly supplied. No numerical campaign or new external review is claimed. Re-entry requires a provenance-grounded root/reference binding plus justified action/update/access semantics; do not invent an encoding. Broad C3/C4-C6 and native record origin remain OPEN.
