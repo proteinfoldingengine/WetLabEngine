@@ -1,6 +1,6 @@
 # Cover-aware static reserve — scoped scientific closeout
 
-Status: all scientific and separate publication-readiness gates ACCEPTED; immutable publication readback pending. This intermediate publication is not yet a CLOSED claim.
+Status: scoped CLOSED for the cover-aware static reserve theorem and its declared verification contract. Broad C3/general C4 remain OPEN.
 
 ## Result
 
@@ -23,3 +23,7 @@ The arbitrary-carrier positive-integer result is analytical. The finite campaign
 General reachability and the connection to exact repair remain OPEN. C3 native information origin remains a distinct obligation: justified native input, carrier/initial correlation, action connection and accessible retained output. Existing source screens exclude recovering an initially hidden admission predicate merely by uniformly safe core-writing with the same observation interface. No full-state read, acknowledgment, hidden-dependent outcome kernel or compulsory commitment is inserted. Broad C3/general C4 remain OPEN. Select and prospectively freeze the next concrete obligation only after this publication is complete.
 
 Historical pending headers in frozen source/report/plan remain historical; the final verified closeout will be the authoritative scoped status.
+
+## Publication verification
+
+Evidence publication49a470c8ef040f2b2638571d447cdff69a68b346 was read back at the immutable commit: all45published texts exactly match, all6archive Git blob identities match independently hashed local bytes, and branch head was confirmed. The persisted immutable_readback.json records these checks. This final status/plan/manifest update must itself be read back before the author announces closure.

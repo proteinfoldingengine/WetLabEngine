@@ -57,9 +57,13 @@ Create/adapt audit_originals.py, test_original_audit.py, reassemble_archives.py,
 - [x] Collect all original ZIP bytes, complete job logs, final run/jobs/artifact metadata and exact log endpoint bindings. Segment large archives into ordered raw chunks<=8,000,000bytes if necessary; do not repack originals.
 - [x] Audit exact members, inputs/responses, hashes, sizes, every suite count and full reproduction. Run intact plus separate rejecting evidence controls, and clean segment-only reassembly when applicable. Expected: intact acceptance and each corruption rejected at its intended gate.
 - [x] Obtain a fresh separate publication reviewer after concrete evidence. Apply author qualifications; keep general reachability, repair, acquisition and C3/C4 open.
-- [ ] Publish evidence/closeout/two indices with a lease, read every published text and binary identity at the immutable commit, and confirm branch head.
-- [ ] Persist readback ledger/completed plan, refresh hash manifest, publish and verify final commit before announcing scoped CLOSED.
+- [x] Publish evidence/closeout/two indices with a lease, read every published text and binary identity at the immutable commit, and confirm branch head.
+- [x] Persist readback ledger/completed plan, refresh hash manifest, publish and verify final commit before announcing scoped CLOSED.
 
 ## Self-review of this plan
 
 Proof/source scope is implemented by Task2's complete source/count/cover/endpoint reconstruction and explicit negative controls. Task3 consumes the same canonical companion and suite counts. Task4 consumes original Task3 artifacts and actual external verdicts. The five review-focus risks have named Task2 tests. No unknown future count is hardcoded except the prospectively derived source-family cardinality3072. No implementation or finite result is represented as existing.
+
+## Completion record
+
+All tasks completed against scientific6259573656b9a5fc6ed7b71c5fcede5c9047526a/run38101841497. Separate publication review accepted; original audit/control/reassembly evidence retained. First publication49a470c8ef040f2b2638571d447cdff69a68b346 verified45texts/6binary identities/head. This completed plan and readback ledger are included in the final commit, which is read back before announcement. Frozen prospective PLAN at98bbefd remains unchanged historical evidence.
