@@ -1,6 +1,6 @@
 # Activation/exchange source reconciliation — publication record
 
-Date: 2026-10-11 UTC. Classification: reviewed analytical corollary of inherited closed results. This is not a new numerical scientific checkpoint, Gemini campaign or physical derivation.
+Date: 2026-10-11 UTC. Current status: reviewed and published source reconciliation, with exact first-publication readback complete. This record supersedes the retained pre-publication status sentence in RESULT.md. Classification: reviewed analytical corollary of inherited closed results. This is not a new numerical scientific checkpoint, Gemini campaign or physical derivation.
 
 The exact composition and its bounds are in [the reconciliation](../../COUPLED_C3_ACTIVATION_EXCHANGE_RECONCILIATION.md). The [unchanged separate review](../../COUPLED_C3_ACTIVATION_EXCHANGE_REVIEW.md) records delegated Codex acceptance, source integrity checks, symbolic cost checks and the limits of that review. It is not a claim that the reviewer independently reran or re-audited historical scientific campaigns.
 
@@ -10,4 +10,6 @@ The contribution is to apply the previously accepted absent-label permutation/re
 
 The physical qualification is essential: endpoints are core-label-isomorphic, so no observable invariant under that permutation changes at the endpoint by this corollary alone. A physically distinguishable response relative to an independently derived record/reference coupling remains open, as do native input, enforcement, selection, progress and broad C3/C4-C6. This does not assert that all broader label identities are gauge.
 
-Publication state at initial staging: separate analytical review accepted; leased publication and complete immutable readback pending. Completion will be recorded through `binding.json`, `immutable_readback.json` and the updated `PLAN_CURRENT.md`. The hash manifest binds all publication payload files except itself. It records content identities, not scientific verification.
+First publication `a9709483920edd61016326dea7f2a6008eb79118`, tree `4e0c6d828394fcc62331a9f0afdf5e1302db7817`, advanced the branch from the inspected parent under an exact expected-head lease. All ten published text contents were fetched at that immutable commit, compared exactly with the local payloads, and their returned Git blob identities independently recomputed from the local bytes. The live branch head matched that commit. `binding.json` and `immutable_readback.json` retain these checks.
+
+This final ledger/plan update persists the completed reconciliation and first-publication receipt. Its own entire text payload and live head are checked after publication and before the user-facing completion report. The hash manifest binds all publication payload files except itself; the immutable readback also checks the manifest. These are content/provenance checks, not scientific verification. The original PLAN.md remains historical; PLAN_CURRENT.md records completed work.
