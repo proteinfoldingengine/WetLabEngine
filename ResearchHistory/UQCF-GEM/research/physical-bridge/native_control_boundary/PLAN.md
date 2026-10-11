@@ -7,6 +7,8 @@ User approved pursuing native protocol enforcement and accessible retained outpu
 - [x] Select a concrete candidate: ordinary finite nested-support controller augmentation with unchanged primitive graph and total-unit excursion budget.
 - [x] Derive its boundary as a corollary of inherited normalization. All reasoning was developed before review and is disclosed as such; no prospective numerical discovery is claimed.
 - [x] Obtain separate analytical review, including novelty/dependency, stopping-rule loopholes, unit-budget concatenation, ancillary-carrier quantifiers and physical scope.
-- [ ] Publish the reviewed result, precise source identities, raw review and reconciled continuation entries through leased Git operations; verify immutable readbacks.
+- [x] Publish the reviewed result, precise source identities, raw review and reconciled continuation entries through leased Git operations; verify immutable readbacks.
 
 No new theorem implementation, numerical campaign or new physical postulate is authorized by this note. The research authorization remains active; absence of an admitted physical construction must be reported honestly. A negative candidate result does not establish nonexistence of native interactions.
+
+Completed analytical publication at b6fbb376e27b2f0bad52803cf0617b58e397455b: all 11 published text files read back exactly; all 10 manifest-bound Git blob identities matched. This receipt update persists that evidence. No numerical campaign or physical closure is claimed.
