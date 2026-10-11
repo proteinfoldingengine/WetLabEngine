@@ -4,6 +4,18 @@ Status: OPEN continuation after scoped deficit repair, reactive/cyclic controlle
 
 
 
+## Active prospective checkpoint: cover-aware static reserves
+
+[Prospective theorem](COUPLED_C3_COVER_STATIC_RESULT.md), [frozen verification scope](COUPLED_C3_COVER_STATIC_SCOPE.md), [analytical review](COUPLED_C3_COVER_STATIC_ANALYTICAL_REVIEW.md). Status: OPEN; independently accepted analytical statement and prospective verification scope, not a completed numerical campaign or scientific closeout.
+
+For a general finite pair-root carrier H with source hitting number3or4, positive source multiplicities and saturated subgraph G, the candidate upper-four static criterion is: some vertex cover C of H with at most four types admits a G-independent deficient set I avoiding the singleton types inside C. It gives a unit-per-type redistribution endpoint preserving any selected original anchors of that C. Existence depends on multiplicities only through which types are singletons. This is an endpoint theorem; neither safe reachability nor a fixed-anchor path is supplied.
+
+Two analytical boundaries distinguish this from the closed five-type result. H=K6-minus45 with all singleton types and G isolating universal type0 has floor-valid apparent surplus but no admissible static reserve: deleting0 requires five covering labels. H=K5-minus34 with G isolating0 and allsingleton types instead has a valid upper-four reserve preserving cover1234, although it cannot preserve its unique minimum cover012. Thus isolated saturated types and minimum-cover-only tests cannot be generalized blindly.
+
+The prospective contract declares3072source identities across five explicit carriers, complete feasible-count/C/I classifications, canonical actual endpoints and original protected one-hidden masks. No new computation or CI result is asserted. Execute that contract after immutable scope readback; retain all failures and complete the established scientific loop before CLOSED.
+
+This advances the approved static-availability branch only. The source screens still require a justified native input, carrier/initial correlation, action connection and accessible retained output. Broad C3/general C4, missing source types, more general root hypergraphs, native acquisition, exact restoration and committed progress remain OPEN. No new primitive, physical derivation, full-state sensor, acknowledgment or compulsory-commit rule is introduced.
+
 ## Current checkpoint: nonuniform five-type first-reserve classification
 
 [Nonuniform closeout](COUPLED_C3_NONUNIFORM_RESERVE_CLOSEOUT.md): **scoped CLOSED / CERTIFIED**. Exact-event verification, fresh reproduction, both external reviews, original-evidence audit, separate publication review and immutable evidence-publication readback passed. Evidence commit `2eb38a65487aecb4a06251ede199585fb6b825ce` and its readback ledger bind43publication texts,14scientific sources and10binary objects. Earlier pending headers below are historical.
