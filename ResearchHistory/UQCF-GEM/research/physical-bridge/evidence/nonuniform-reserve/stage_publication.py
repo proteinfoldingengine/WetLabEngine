@@ -11,6 +11,7 @@ for n in ['binding.json','freeze_binding.json','scientific_binding.json','counts
 for p in (P/'originals').iterdir():
  if p.suffix in ('.json','.log'):mapping['originals/'+p.name]=E+p.name
 mapping['publication_runtime_observation.json']=E+'publication_runtime_observation.json'
+if (P/'immutable_readback.json').exists():mapping['immutable_readback.json']=E+'immutable_readback.json'
 for n in ['stage_publication.py','prepare_archive_segments.py','binary_entries.json','binary_upload_plan.json']:
  mapping[n]=E+n
 for p in (P/'publication_evidence').iterdir():mapping['publication_evidence/'+p.name]=E+p.name

@@ -1,6 +1,6 @@
 # Nonuniform reserve — author reconciliation
 
-Status: original-evidence audit ACCEPTED. All four exact-event jobs passed; mathematical and publication reviews both ACCEPTED on attempt one. Fresh separate publication review ACCEPTED with no blocking findings; immutable publication readback remains pending.
+Status: original-evidence audit ACCEPTED. All four exact-event jobs passed; mathematical and publication reviews both ACCEPTED on attempt one. Fresh separate publication review ACCEPTED with no blocking findings; immutable evidence-publication readback passed.
 
 ## Immutable scope
 
@@ -36,4 +36,4 @@ The long publication reproduction eventually completed successfully. No cancella
 
 ## Final publication requirements
 
-The intact evidence audit accepted and all nine corruptions were rejected at their intended evidence gates: missing/corrupt segments, missing review input, truncated complete log, wrong run, compensating suite counts, missing archive member, missing canonical companion and wrong job binding. These ten audit outcomes do not increase the378scientific-test total. Both continuation indices retain their historical sections. The fresh separate publication reviewer ACCEPTED with no blocking findings; leased publication and immutable readback remain required before scoped CLOSED is announced. The execution ledger records these remaining events and their actual outcomes.
+The intact evidence audit accepted and all nine corruptions were rejected at their intended evidence gates: missing/corrupt segments, missing review input, truncated complete log, wrong run, compensating suite counts, missing archive member, missing canonical companion and wrong job binding. These ten audit outcomes do not increase the378scientific-test total. Both continuation indices retain their historical sections. The fresh separate publication reviewer ACCEPTED with no blocking findings; leased evidence publication and immutable readback passed at commit `2eb38a65487aecb4a06251ede199585fb6b825ce`:43publication texts,14scientific source documents,10binary Git identities and the branch head verified. The final ledger/manifest/status commit is then read back before scoped CLOSED is announced. The execution ledger records these remaining events and their actual outcomes.

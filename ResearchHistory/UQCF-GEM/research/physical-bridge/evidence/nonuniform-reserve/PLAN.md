@@ -49,5 +49,8 @@ Files: audit_originals.py, test_original_audit.py, reassemble_archives.py if nee
 - [x] Audit original unchanged archive bytes/member sets, complete decoded logs, run/job/input/response identities, exact per-suite counts and full reproduction.
 - [x] Intact plus rejecting original-evidence controls, including segment integrity where applicable; do not increment scientific-test total.
 - [x] Fresh separate publication reviewer after evidence is concrete; resolve qualifications before publishing.
-- [ ] Publish closeout/evidence and COUPLED_C3_C4_DEFICIT_CONTINUATION.md plus POST_A12_THEOREM_FIRST_SYNTHESIS.md with lease; immutable text/blob/head readback.
-- [ ] Persist ledger/completed plan, update final manifest and read back final commit before announcing scoped CLOSED.
+- [x] Publish closeout/evidence and COUPLED_C3_C4_DEFICIT_CONTINUATION.md plus POST_A12_THEOREM_FIRST_SYNTHESIS.md with lease; immutable text/blob/head readback.
+- [x] Persist ledger/completed plan, update final manifest and read back final commit before announcing scoped CLOSED.
+
+## Completion record
+All four tasks completed through exact-event CI, independent publication review and immutable evidence-publication readback at2eb38a65487aecb4a06251ede199585fb6b825ce. The final ledger/status/hash-manifest revision is read back after its commit before announcing scoped closure. Frozen original prospective sources remain unchanged. See progress.md and immutable_readback.json.
