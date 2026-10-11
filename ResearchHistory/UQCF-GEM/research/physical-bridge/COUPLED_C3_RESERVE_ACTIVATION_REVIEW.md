@@ -1,0 +1,11 @@
+# Reserve activation — author review reconciliation
+
+Analytical review ACCEPTED for the fixed-anchor monotone saturated-neighbor template before freeze bf40d757b903256f66f9f809b767db7d9ab0826f. The reviewer requested that the domain explicitly restrict each transfer to a saturated pivot and previously unactivated receiver; this was clarified before freeze. Raw initial draft and raw review remain unchanged.
+
+Fresh implementation reviewer found no scientific algorithm defect and identified one concrete control-coverage issue: the test named source_profile_omission removed the final K2 fixture rather than a source multiplicity profile. The author corrected it to explicitly select the full-saturation native fixture with a=[2]*7, assert that identity, remove it and require rejection. Final30tests pass; no producer or checker behavior changed for this correction. The raw CODE_REVIEW.md preserves the reviewer finding and its attestation limits.
+
+Independent complete reconstruction and fresh byte reproduction passed after the final producer/checker changes. All455inherited tests passed. Full evidence does not rely on reviewer spot checks. Initial29test run preceded explicit native closure/Z classification fields; a failing contract for those absent fields was retained, then final30tests and full reconstruction passed. The initial inherited launcher failure is operational only and retained; no suite was falsely counted from that failed launch.
+
+Exactness is restricted to the declared template. Fixed covers and donor sets are supplied; general reachability is open. Zero-edit K2 container reassignment is not a committed transition. Exact reversal is only without an intervening change, so arbitrary reserve use/exchange/restoration is not proved. Achieved costs are not optimality results. Native information origin, enforcement, actual successor choice and guaranteed progress remain unresolved, as do broad C3/C4-C6 and physical derivation.
+
+Remote mathematical review, separate publication audit, original-evidence audit and final immutable closeout remain pending. Raw future reviews must be preserved and substantive objections resolved; favorable overstatements must be qualified rather than silently adopted.

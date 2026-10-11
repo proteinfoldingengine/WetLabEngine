@@ -1,0 +1,15 @@
+test_native_closure_classification (test_activation.Activation.test_native_closure_classification) ... ERROR
+
+======================================================================
+ERROR: test_native_closure_classification (test_activation.Activation.test_native_closure_classification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/reserve_activation/test_activation.py", line 22, in test_native_closure_classification
+    if r['kind']=='native':self.assertEqual(r['released'],len(r['Z'])>len(r['closure']))
+                                                              ~^^^^^
+KeyError: 'Z'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.024s
+
+FAILED (errors=1)

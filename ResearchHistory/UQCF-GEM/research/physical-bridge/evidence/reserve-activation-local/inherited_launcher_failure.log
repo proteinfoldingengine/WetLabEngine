@@ -1,0 +1,1 @@
+Initial inherited launcher failed before running suites: FileNotFoundError source_escape/inherited/results.json. Path('.') had not been resolved, so .parent did not point at the project root. Fixed launcher uses Path(__file__).resolve().parent and explicit inherited suite list. No scientific implementation changed.
