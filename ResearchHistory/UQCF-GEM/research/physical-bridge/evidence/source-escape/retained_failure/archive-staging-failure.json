@@ -1,0 +1,13 @@
+{
+  "cause": "git add rejected the newly generated archive outside the sparse checkout; collection and original-evidence audit had passed",
+  "job_id": 114376882630,
+  "log_sha256": "a223618941970a676fa4f986f1481a4b883eb408194a32ae8ffa04324083421c",
+  "note": "The failed staging job produced a complete packet artifact but no Git publication. Its log and digest are retained; the four scientific original ZIPs are independently preserved unchanged.",
+  "original_attempt_packet_artifact": 11689834911,
+  "original_attempt_packet_sha256": "cf72129874a93fee45f9135735831d900f37800e6c399b2bd3a990905a5af1a6",
+  "repair": "git add --sparse -- the explicitly bounded evidence directory",
+  "run_id": 38107795218,
+  "scientific_source_changed": false,
+  "scientific_tests_rerun": false,
+  "source_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/114376882630/logs"
+}

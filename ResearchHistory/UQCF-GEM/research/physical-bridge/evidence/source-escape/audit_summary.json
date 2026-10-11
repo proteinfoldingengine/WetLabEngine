@@ -1,0 +1,173 @@
+{
+  "archives": {
+    "fresh-reproduction": {
+      "artifact_id": 11689212787,
+      "bytes": 22895716,
+      "git_blob_sha1": "4057841c53d062fb9d31a2043dc46e4db844eba1",
+      "members": {
+        "certificate.json": "fe42f879d864a8138b3220d1312b73cdf59aacf16b0e16736158a80efa68d778",
+        "certificate.json.identities.jsonl.gz": "a2eb36d2e233796dee29ef89e5b657d0d501846c42a305bd222096b3f56582e9",
+        "certificate.sha256": "04a197c4cf2d3c4804d2590c0891e655c38327b95075c1294831947e25e2362a",
+        "contracts.log": "4230db5c6ea06dffc7f499bdd18411fd1e0e74e4e455d5c8f90b8e7be68fbaa1",
+        "counts.json": "c1ad4fb4ecb536850f62101458cafadf0c54dca6dc8b11f6dd0ebcc01fafc714",
+        "fresh_independent.json": "5bdb9261e170b80204962d2e982da1d4e3da91f1885f7f967101d459b6be5b5a",
+        "frozen_proof_scope.md": "1647359880b6261b2c81ab562c6f97b7e98a34e0036915eb3a74d1686f381e43",
+        "identities.sha256": "4526b80297a58a25236b5179a97e59ded9cb9083ef8b532d3a2afe9d239cf097",
+        "independent.json": "5bdb9261e170b80204962d2e982da1d4e3da91f1885f7f967101d459b6be5b5a",
+        "independent.log": "42922bcf58a9f0bec7332575176387a7ee119ce3fa61dc285d4ce7ed8c3a16dd",
+        "independent.py": "aa5ef30d27531fe140ab0ce75c08098d07d2f9d007ff440aebd43fe19575cad7",
+        "inherited_anchored_release.log": "9c2150188feea6b9861ba1d3af3fb3b193e1294294a249bd10b3aeae4af712df",
+        "inherited_capacity_gap.log": "2335fb3fc7f093118e1a132778ed7d64e03a1f78e2535e79832f0e1755cadd68",
+        "inherited_cover_static.log": "6d400b1070fcaf164240ccfbc9042ed51d8b816dc43ddd82ef7d8666154d5b24",
+        "inherited_fingerprint_lock.log": "62c3db22d638fdd4c778ceb828ca8e124c5e21a9938762c49dd769ba17ec395d",
+        "inherited_fixed_family.log": "1d23618ded068b6cabdd4fb0f1afdc38a5ac2796ffc4db1f030863952ead35d8",
+        "inherited_footprint.log": "605a1f143c5faefb6704a053ab0a5096f2fb007f27895f3d1e902844e0623e4b",
+        "inherited_handover_graph.log": "c5c08df3c5338b6bcfb56c873d578e9cbf1ec4f976e1b71518653cba6dca9292",
+        "inherited_label_release.log": "a364710c78da4ca0018d0af05a84d18d65751463a92bd3a6f8e770d20224acb5",
+        "inherited_local_progress.log": "ea2aebd36c75ef72657f2ced8efde69f6d2b8da824140a252d91768af304ee1f",
+        "inherited_moving_cover.log": "5e6dcd9a4875a7d0039119f9831bc4ce82b31c138fdd15d327c7aaef97ce542d",
+        "inherited_nonuniform_reserve.log": "61f10785e2f1d8800f001571d6ddb95237564200ae694d5802192ebe6cce933b",
+        "inherited_private_cover.log": "e254ca6267c587c0c5c88bda97a364bde7770f064c0d5ed97f7cfb3ed2f7e365",
+        "inherited_saturated_handover.log": "a46236817856d982b5d28cc6f92a01b380d840b7fcc5445db6f15c245fd55798",
+        "inherited_saturated_transfer.log": "bd1f4b7cf5ac604ed3e8886f70d2db39b05853c2fea66b9e9df39e388946b67f",
+        "inherited_slack_handover.log": "4a942d647829df6169cb35db4437bf4440515ebe5694fef5f3553a34559065af",
+        "inherited_weak_trace.log": "14511767245d933dcd6eef1c4e8db58366fcdd64e94410f3c58b552a1ecf916b",
+        "producer.py": "9292bcb927e5e30ae2ab84e291afdab6c75db2fd62925ffb0ad0c2b0c1e83b4f",
+        "provenance.txt": "cf25f71d6319e1cc483f3bfbe6ba521e1dffb839ae88f60346fd639dc2addd55",
+        "red.log": "b1d6eea2102bfaf6243313f2c1919f10d95385339364bf3ec0b4f04e1be64ce6",
+        "test_escape.py": "0e539621f5755646c5f43a849df27b3c89550a521c40acf42eae619a26630d10"
+      },
+      "sha256": "1d4d129d2321071448c55cfd447c0efe46e2322bdf177c299fdf60bced23767b"
+    },
+    "mathematical-review": {
+      "artifact_id": 11690216565,
+      "bytes": 3970,
+      "git_blob_sha1": "ad919dcea54a5c964950c23b2ecb281c6eada651",
+      "members": {
+        "manifest.json": "626f24719067628afb164523ea572c7c69ab0fb64e19a73dfb5cb4db3f764f13",
+        "review.txt": "b1969182aa903208a3d86d781d03fb8b582d1edcde5226e49004899ea7edb854"
+      },
+      "sha256": "31cee3dd9517ed28e4ef37ba5237bb80d4fbcf00219cb1393a76b8b6e6a88d4e"
+    },
+    "publication-audit": {
+      "artifact_id": 11690157041,
+      "bytes": 4768,
+      "git_blob_sha1": "26c3cb7af545b1b09e1f6e6fdd00741b7fa83359",
+      "members": {
+        "source_escape_gate.json": "b88f897e2da76fd7939d932a949e96e5827a00a0155f82b7865721f3bade023c",
+        "source_escape_publication/manifest.json": "4f1b5e6675455b9846e5b2eaace4231ed78a0e3009dda037fb2209a1101534e0",
+        "source_escape_publication/review.txt": "012366d307625708f42147556af160450691ebe31bb19d6b6c9c2f650232415c"
+      },
+      "sha256": "48e6d9b235c67a79db82f60a6f99e8c15f6dede42e6b93f2fb7a07c13ac117dd"
+    },
+    "verification": {
+      "artifact_id": 11689277555,
+      "bytes": 22895312,
+      "git_blob_sha1": "385bdf02a76d953f135631b35c5d6ab7719d3ecf",
+      "members": {
+        "certificate.json": "fe42f879d864a8138b3220d1312b73cdf59aacf16b0e16736158a80efa68d778",
+        "certificate.json.identities.jsonl.gz": "a2eb36d2e233796dee29ef89e5b657d0d501846c42a305bd222096b3f56582e9",
+        "certificate.sha256": "04a197c4cf2d3c4804d2590c0891e655c38327b95075c1294831947e25e2362a",
+        "contracts.log": "4230db5c6ea06dffc7f499bdd18411fd1e0e74e4e455d5c8f90b8e7be68fbaa1",
+        "counts.json": "c1ad4fb4ecb536850f62101458cafadf0c54dca6dc8b11f6dd0ebcc01fafc714",
+        "frozen_proof_scope.md": "1647359880b6261b2c81ab562c6f97b7e98a34e0036915eb3a74d1686f381e43",
+        "identities.sha256": "4526b80297a58a25236b5179a97e59ded9cb9083ef8b532d3a2afe9d239cf097",
+        "independent.json": "5bdb9261e170b80204962d2e982da1d4e3da91f1885f7f967101d459b6be5b5a",
+        "independent.log": "42922bcf58a9f0bec7332575176387a7ee119ce3fa61dc285d4ce7ed8c3a16dd",
+        "independent.py": "aa5ef30d27531fe140ab0ce75c08098d07d2f9d007ff440aebd43fe19575cad7",
+        "inherited_anchored_release.log": "9c2150188feea6b9861ba1d3af3fb3b193e1294294a249bd10b3aeae4af712df",
+        "inherited_capacity_gap.log": "2335fb3fc7f093118e1a132778ed7d64e03a1f78e2535e79832f0e1755cadd68",
+        "inherited_cover_static.log": "6d400b1070fcaf164240ccfbc9042ed51d8b816dc43ddd82ef7d8666154d5b24",
+        "inherited_fingerprint_lock.log": "62c3db22d638fdd4c778ceb828ca8e124c5e21a9938762c49dd769ba17ec395d",
+        "inherited_fixed_family.log": "1d23618ded068b6cabdd4fb0f1afdc38a5ac2796ffc4db1f030863952ead35d8",
+        "inherited_footprint.log": "605a1f143c5faefb6704a053ab0a5096f2fb007f27895f3d1e902844e0623e4b",
+        "inherited_handover_graph.log": "c5c08df3c5338b6bcfb56c873d578e9cbf1ec4f976e1b71518653cba6dca9292",
+        "inherited_label_release.log": "a364710c78da4ca0018d0af05a84d18d65751463a92bd3a6f8e770d20224acb5",
+        "inherited_local_progress.log": "ea2aebd36c75ef72657f2ced8efde69f6d2b8da824140a252d91768af304ee1f",
+        "inherited_moving_cover.log": "5e6dcd9a4875a7d0039119f9831bc4ce82b31c138fdd15d327c7aaef97ce542d",
+        "inherited_nonuniform_reserve.log": "61f10785e2f1d8800f001571d6ddb95237564200ae694d5802192ebe6cce933b",
+        "inherited_private_cover.log": "e254ca6267c587c0c5c88bda97a364bde7770f064c0d5ed97f7cfb3ed2f7e365",
+        "inherited_saturated_handover.log": "a46236817856d982b5d28cc6f92a01b380d840b7fcc5445db6f15c245fd55798",
+        "inherited_saturated_transfer.log": "bd1f4b7cf5ac604ed3e8886f70d2db39b05853c2fea66b9e9df39e388946b67f",
+        "inherited_slack_handover.log": "4a942d647829df6169cb35db4437bf4440515ebe5694fef5f3553a34559065af",
+        "inherited_weak_trace.log": "14511767245d933dcd6eef1c4e8db58366fcdd64e94410f3c58b552a1ecf916b",
+        "producer.py": "9292bcb927e5e30ae2ab84e291afdab6c75db2fd62925ffb0ad0c2b0c1e83b4f",
+        "provenance.txt": "cf25f71d6319e1cc483f3bfbe6ba521e1dffb839ae88f60346fd639dc2addd55",
+        "red.log": "b1d6eea2102bfaf6243313f2c1919f10d95385339364bf3ec0b4f04e1be64ce6",
+        "test_escape.py": "0e539621f5755646c5f43a849df27b3c89550a521c40acf42eae619a26630d10"
+      },
+      "sha256": "b58b8cce52fa58168ece321dd9ec7c996161dfed3e904adbd263eb0cc21c5528"
+    }
+  },
+  "audit_rejecting_controls": 8,
+  "audit_tests": 9,
+  "counts": {
+    "candidates": 2570928,
+    "distinct_states": 183904,
+    "escape_sources": 6688,
+    "hidden_checks": 501629984,
+    "routes": 109440,
+    "slice_occurrences": 427968,
+    "sources": 7360,
+    "vacancy_candidates": 54912
+  },
+  "damaged_prefix": "Reconstructed exact bytes matched pre-existing immutable failure record; not an independently downloaded initial damaged file",
+  "limitations": [
+    "First source escape only; X does not imply a subsequent vacancy",
+    "No optimal cost, full component classification, native record, enforcement, successor selection or progress derivation",
+    "Broad C3/general C4-C6 remain OPEN; no physical or full-stack closure"
+  ],
+  "logs": {
+    "fresh-reproduction": {
+      "bytes": 23692,
+      "job_id": 114371636556,
+      "sha256": "d1c126c5fef1e02e9960152d2bc72aef1e64a4ea85ffc5da255255d1e36d5c31",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/114371636556/logs"
+    },
+    "mathematical-review": {
+      "bytes": 22800,
+      "job_id": 114372111206,
+      "sha256": "0e6697525301272de580a2fdb5065402d9a83a65aa04be26b098aba217fd747f",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/114372111206/logs"
+    },
+    "publication-audit": {
+      "bytes": 28877,
+      "job_id": 114372249396,
+      "sha256": "8e6c2f51c15193f769cd278d67a22669456bfb1b9fa9b852e41be8214e90070b",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/114372249396/logs"
+    },
+    "verification": {
+      "bytes": 77240,
+      "job_id": 114370783282,
+      "sha256": "ed7b5c2f7c490197e2cb036032a8991dd53619a093d56711642460be05c586c8",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/114370783282/logs"
+    }
+  },
+  "math_inputs": 45,
+  "math_response_sha256": "b1969182aa903208a3d86d781d03fb8b582d1edcde5226e49004899ea7edb854",
+  "publication_inputs": 48,
+  "publication_response_sha256": "012366d307625708f42147556af160450691ebe31bb19d6b6c9c2f650232415c",
+  "run_id": 38105740578,
+  "scientific_commit": "5091874b16ca70d13f2b62c99e46d6817df9df07",
+  "scientific_tests": 455,
+  "status": "PASS_ORIGINAL_EVIDENCE_AUDIT_NOT_NEW_SCIENCE",
+  "test_counts": {
+    "contracts.log": 42,
+    "inherited_anchored_release.log": 20,
+    "inherited_capacity_gap.log": 20,
+    "inherited_cover_static.log": 35,
+    "inherited_fingerprint_lock.log": 33,
+    "inherited_fixed_family.log": 28,
+    "inherited_footprint.log": 22,
+    "inherited_handover_graph.log": 20,
+    "inherited_label_release.log": 26,
+    "inherited_local_progress.log": 17,
+    "inherited_moving_cover.log": 28,
+    "inherited_nonuniform_reserve.log": 34,
+    "inherited_private_cover.log": 26,
+    "inherited_saturated_handover.log": 26,
+    "inherited_saturated_transfer.log": 22,
+    "inherited_slack_handover.log": 24,
+    "inherited_weak_trace.log": 32
+  }
+}

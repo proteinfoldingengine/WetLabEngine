@@ -1,0 +1,18 @@
+test_archive (unittest.loader._FailedTest.test_archive) ... ERROR
+
+======================================================================
+ERROR: test_archive (unittest.loader._FailedTest.test_archive)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_archive
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "/mnt/data/uqcf_source_escape/archive_work/test_archive.py", line 2, in <module>
+    from audit_helpers import check_review,check_tests,check_inputs,check_log,check_zip
+ModuleNotFoundError: No module named 'audit_helpers'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

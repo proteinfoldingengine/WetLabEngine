@@ -1,0 +1,3 @@
+# First-source-escape original evidence
+
+This archive authenticates the already completed run38105740578 at5091874b16ca70d13f2b62c99e46d6817df9df07. No scientific or Gemini campaign is rerun here. Four original ZIPs and four complete raw job logs are retained. Audit tests are separate from455scientific tests. The damaged prior companion is explicitly reconstructed to its previously recorded exact digest, not relabelled as an independently downloaded original. Scope: first escape, not later vacancy reachability or native origin/progress. Final closeout and immutable publication readback remain separate gates.

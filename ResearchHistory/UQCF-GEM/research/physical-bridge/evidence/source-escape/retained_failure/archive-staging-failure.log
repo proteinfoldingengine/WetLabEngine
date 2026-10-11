@@ -1,0 +1,243 @@
+﻿2026-10-11T03:15:30.1669530Z Current runner version: '2.337.0'
+2026-10-11T03:15:30.1694337Z ##[group]Runner Image Provisioner
+2026-10-11T03:15:30.1695451Z Hosted Compute Agent
+2026-10-11T03:15:30.1696143Z Version: 20261002.596
+2026-10-11T03:15:30.1696800Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-11T03:15:30.1697557Z Build Date: 2026-10-02T22:28:27Z
+2026-10-11T03:15:30.1698300Z Worker ID: {5c13248f-80f7-4740-8fc5-70b8f1db9b7a}
+2026-10-11T03:15:30.1699005Z Region: westus2
+2026-10-11T03:15:30.1699625Z Cloud: Azure
+2026-10-11T03:15:30.1700156Z ##[endgroup]
+2026-10-11T03:15:30.1701813Z ##[group]Operating System
+2026-10-11T03:15:30.1702481Z Ubuntu
+2026-10-11T03:15:30.1703027Z 24.04.5
+2026-10-11T03:15:30.1703583Z LTS
+2026-10-11T03:15:30.1704130Z ##[endgroup]
+2026-10-11T03:15:30.1704994Z ##[group]Runner Image
+2026-10-11T03:15:30.1705652Z Image: ubuntu-24.04
+2026-10-11T03:15:30.1706212Z Version: 20261004.327.1
+2026-10-11T03:15:30.1707862Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-11T03:15:30.1709452Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-11T03:15:30.1710473Z ##[endgroup]
+2026-10-11T03:15:30.1711596Z ##[group]GITHUB_TOKEN Permissions
+2026-10-11T03:15:30.1713773Z Actions: read
+2026-10-11T03:15:30.1714664Z Contents: write
+2026-10-11T03:15:30.1715327Z Metadata: read
+2026-10-11T03:15:30.1715909Z ##[endgroup]
+2026-10-11T03:15:30.1717957Z Secret source: Actions
+2026-10-11T03:15:30.1718997Z Cache mode: write
+2026-10-11T03:15:30.1719658Z Prepare workflow directory
+2026-10-11T03:15:30.2119720Z Prepare all required actions
+2026-10-11T03:15:30.2168426Z Getting action download info
+2026-10-11T03:15:30.5886208Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-11T03:15:30.7106522Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-11T03:15:30.9123240Z Complete job name: preserve-originals
+2026-10-11T03:15:30.9889147Z ##[group]Run actions/checkout@v4
+2026-10-11T03:15:30.9890059Z with:
+2026-10-11T03:15:30.9890872Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape-tools
+2026-10-11T03:15:30.9891857Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-11T03:15:30.9896186Z   token: ***
+2026-10-11T03:15:30.9896639Z   ssh-strict: true
+2026-10-11T03:15:30.9897080Z   ssh-user: git
+2026-10-11T03:15:30.9897532Z   persist-credentials: true
+2026-10-11T03:15:30.9898023Z   clean: true
+2026-10-11T03:15:30.9898476Z   sparse-checkout-cone-mode: true
+2026-10-11T03:15:30.9899003Z   fetch-depth: 1
+2026-10-11T03:15:30.9899435Z   fetch-tags: false
+2026-10-11T03:15:30.9899873Z   show-progress: true
+2026-10-11T03:15:30.9900320Z   lfs: false
+2026-10-11T03:15:30.9900739Z   submodules: false
+2026-10-11T03:15:30.9901193Z   set-safe-directory: true
+2026-10-11T03:15:30.9901699Z   allow-unsafe-pr-checkout: false
+2026-10-11T03:15:30.9902468Z env:
+2026-10-11T03:15:30.9902954Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-11T03:15:30.9903489Z ##[endgroup]
+2026-10-11T03:15:31.0931093Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-11T03:15:31.0933864Z ##[group]Getting Git version info
+2026-10-11T03:15:31.0935504Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-11T03:15:31.0937283Z [command]/usr/bin/git version
+2026-10-11T03:15:31.0996399Z git version 2.55.0
+2026-10-11T03:15:31.1019139Z ##[endgroup]
+2026-10-11T03:15:31.1041757Z Temporarily overriding HOME='/home/runner/work/_temp/c5a2c2ec-0132-4f5a-92fc-89daecd15bba' before making global git config changes
+2026-10-11T03:15:31.1044093Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-11T03:15:31.1048544Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-11T03:15:31.1111827Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-11T03:15:31.1116381Z ##[group]Initializing the repository
+2026-10-11T03:15:31.1121297Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-11T03:15:31.1231559Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-11T03:15:31.1233382Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-11T03:15:31.1235275Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-11T03:15:31.1236553Z hint: call:
+2026-10-11T03:15:31.1237311Z hint:
+2026-10-11T03:15:31.1238249Z hint: 	git config --global init.defaultBranch <name>
+2026-10-11T03:15:31.1239394Z hint:
+2026-10-11T03:15:31.1240447Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-11T03:15:31.1242276Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-11T03:15:31.1243613Z hint:
+2026-10-11T03:15:31.1244335Z hint: 	git branch -m <name>
+2026-10-11T03:15:31.1245416Z hint:
+2026-10-11T03:15:31.1246538Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-11T03:15:31.1248626Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-11T03:15:31.1262128Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-11T03:15:31.1305749Z ##[endgroup]
+2026-10-11T03:15:31.1307233Z ##[group]Disabling automatic garbage collection
+2026-10-11T03:15:31.1310042Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-11T03:15:31.1351088Z ##[endgroup]
+2026-10-11T03:15:31.1352374Z ##[group]Setting up auth
+2026-10-11T03:15:31.1360270Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-11T03:15:31.1403928Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-11T03:15:31.1793747Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-11T03:15:31.1845886Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-11T03:15:31.2082247Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-11T03:15:31.2118998Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-11T03:15:31.2361570Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-11T03:15:31.2422594Z ##[endgroup]
+2026-10-11T03:15:31.2432768Z ##[group]Fetching the repository
+2026-10-11T03:15:31.2436316Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin +7e1d79fd79170ba10cd227186138ad2c861a6564:refs/remotes/origin/research/uqcf-overlapping-guard-exchange
+2026-10-11T03:15:31.5688743Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-11T03:15:31.5690974Z  * [new ref]         7e1d79fd79170ba10cd227186138ad2c861a6564 -> origin/research/uqcf-overlapping-guard-exchange
+2026-10-11T03:15:31.5694736Z ##[endgroup]
+2026-10-11T03:15:31.5696132Z ##[group]Determining the checkout info
+2026-10-11T03:15:31.5697993Z ##[endgroup]
+2026-10-11T03:15:31.5704994Z ##[group]Setting up sparse checkout
+2026-10-11T03:15:31.5707158Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape-tools
+2026-10-11T03:15:31.5756139Z ##[endgroup]
+2026-10-11T03:15:31.5757591Z ##[group]Checking out the ref
+2026-10-11T03:15:31.5764621Z [command]/usr/bin/git checkout --progress --force -B research/uqcf-overlapping-guard-exchange refs/remotes/origin/research/uqcf-overlapping-guard-exchange
+2026-10-11T03:15:31.9801683Z Switched to a new branch 'research/uqcf-overlapping-guard-exchange'
+2026-10-11T03:15:31.9807743Z branch 'research/uqcf-overlapping-guard-exchange' set up to track 'origin/research/uqcf-overlapping-guard-exchange'.
+2026-10-11T03:15:31.9817669Z ##[endgroup]
+2026-10-11T03:15:31.9873098Z [command]/usr/bin/git log -1 --format=%H
+2026-10-11T03:15:31.9902952Z 7e1d79fd79170ba10cd227186138ad2c861a6564
+2026-10-11T03:15:32.0138427Z ##[group]Run set -euo pipefail
+2026-10-11T03:15:32.0139300Z [36;1mset -euo pipefail[0m
+2026-10-11T03:15:32.0140500Z [36;1mROOT=ResearchHistory/UQCF-GEM/research/physical-bridge/evidence[0m
+2026-10-11T03:15:32.0142744Z [36;1mpython3 "$ROOT/source-escape-tools/collect_source_escape.py" "$ROOT/source-escape" --collect[0m
+2026-10-11T03:15:32.0393368Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-11T03:15:32.0394997Z env:
+2026-10-11T03:15:32.0395603Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-11T03:15:32.0407620Z   GH_TOKEN: ***
+2026-10-11T03:15:32.0408152Z ##[endgroup]
+2026-10-11T03:15:41.7746833Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-11T03:15:41.7748448Z  * branch            5091874b16ca70d13f2b62c99e46d6817df9df07 -> FETCH_HEAD
+2026-10-11T03:15:44.2253414Z {"audit_tests": 9, "full_job_logs": 4, "math_inputs": 45, "original_archives": 4, "publication_inputs": 48, "scientific_tests": 455, "status": "PASS_ORIGINAL_EVIDENCE_AUDIT_NOT_NEW_SCIENCE"}
+2026-10-11T03:15:44.2429331Z ##[group]Run set -euo pipefail
+2026-10-11T03:15:44.2429728Z [36;1mset -euo pipefail[0m
+2026-10-11T03:15:44.2430091Z [36;1mBRANCH=research/uqcf-overlapping-guard-exchange[0m
+2026-10-11T03:15:44.2430628Z [36;1mROOT=ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape[0m
+2026-10-11T03:15:44.2431190Z [36;1mLIVE=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)[0m
+2026-10-11T03:15:44.2431603Z [36;1mtest "$LIVE" = "$GITHUB_SHA"[0m
+2026-10-11T03:15:44.2431913Z [36;1mgit add -- "$ROOT"[0m
+2026-10-11T03:15:44.2432250Z [36;1mgit config user.name 'UQCF-GEM evidence archive'[0m
+2026-10-11T03:15:44.2432761Z [36;1mgit config user.email '41898282+github-actions[bot]@users.noreply.github.com'[0m
+2026-10-11T03:15:44.2433480Z [36;1mgit commit -m 'Preserve source-escape original Actions evidence and reconcile recorded truncation'[0m
+2026-10-11T03:15:44.2434055Z [36;1mgit push origin "HEAD:refs/heads/$BRANCH"[0m
+2026-10-11T03:15:44.2434756Z [36;1mprintf 'archive_commit=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"[0m
+2026-10-11T03:15:44.2500066Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-11T03:15:44.2500489Z env:
+2026-10-11T03:15:44.2500760Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-11T03:15:44.2501050Z ##[endgroup]
+2026-10-11T03:15:44.4245160Z The following paths and/or pathspecs matched paths that exist
+2026-10-11T03:15:44.4246159Z outside of your sparse-checkout definition, so will not be
+2026-10-11T03:15:44.4246883Z updated in the index:
+2026-10-11T03:15:44.4247752Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/README.md
+2026-10-11T03:15:44.4249012Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/artifacts.json
+2026-10-11T03:15:44.4250298Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/audit_controls.log
+2026-10-11T03:15:44.4251593Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/audit_helpers.py
+2026-10-11T03:15:44.4252615Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/audit_summary.json
+2026-10-11T03:15:44.4253931Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/collect_source_escape.py
+2026-10-11T03:15:44.4255478Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/fresh-reproduction-job.log
+2026-10-11T03:15:44.4256195Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/jobs.json
+2026-10-11T03:15:44.4256956Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/mathematical-manifest.json
+2026-10-11T03:15:44.4257743Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/mathematical-review-job.log
+2026-10-11T03:15:44.4258863Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/mathematical-review.txt
+2026-10-11T03:15:44.4259649Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/original-fresh-reproduction.zip
+2026-10-11T03:15:44.4260462Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/original-mathematical-review.zip
+2026-10-11T03:15:44.4261257Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/original-publication-audit.zip
+2026-10-11T03:15:44.4262023Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/original-verification.zip
+2026-10-11T03:15:44.4262770Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/publication-audit-job.log
+2026-10-11T03:15:44.4263493Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/publication-gate.json
+2026-10-11T03:15:44.4264218Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/publication-manifest.json
+2026-10-11T03:15:44.4265407Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/publication-review.txt
+2026-10-11T03:15:44.4266141Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/readback_manifest.json
+2026-10-11T03:15:44.4267013Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/red.log
+2026-10-11T03:15:44.4267759Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/retained_failure/RECONSTRUCTION.md
+2026-10-11T03:15:44.4268596Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/retained_failure/archive_failure.json
+2026-10-11T03:15:44.4331628Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/retained_failure/independent_attempt1_failure.log
+2026-10-11T03:15:44.4332761Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/retained_failure/initial_test_syntax_failure.log
+2026-10-11T03:15:44.4333864Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/retained_failure/reconstructed-damaged-companion.jsonl.gz
+2026-10-11T03:15:44.4334977Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/run.json
+2026-10-11T03:15:44.4335774Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_AUTONOMY_CLOSEOUT.md
+2026-10-11T03:15:44.4336740Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_COVERAGE_ORIGIN_SCREEN.md
+2026-10-11T03:15:44.4337692Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_COVER_STATIC_CLOSEOUT.md
+2026-10-11T03:15:44.4338687Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_NONUNIFORM_RESERVE_CLOSEOUT.md
+2026-10-11T03:15:44.4339663Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_ORIGIN_REENTRY_DECISION.md
+2026-10-11T03:15:44.4340659Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_SOURCE_ESCAPE_ANALYTICAL_REVIEW.md
+2026-10-11T03:15:44.4341641Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_SOURCE_ESCAPE_REPORT.md
+2026-10-11T03:15:44.4342576Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_SOURCE_ESCAPE_RESULT.md
+2026-10-11T03:15:44.4343546Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_SOURCE_ESCAPE_REVIEW.md
+2026-10-11T03:15:44.4344793Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/COUPLED_C3_SOURCE_ESCAPE_SCOPE.md
+2026-10-11T03:15:44.4345823Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/source_escape/PLAN.md
+2026-10-11T03:15:44.4346804Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/source_escape/independent.py
+2026-10-11T03:15:44.4348013Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/source_escape/producer.py
+2026-10-11T03:15:44.4348930Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/scientific_inputs/source_escape/test_escape.py
+2026-10-11T03:15:44.4349736Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/test_archive.py
+2026-10-11T03:15:44.4350476Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/transport_attempts.json
+2026-10-11T03:15:44.4351220Z ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/verification-job.log
+2026-10-11T03:15:44.4351850Z hint: If you intend to update such entries, try one of the following:
+2026-10-11T03:15:44.4352278Z hint: * Use the --sparse option.
+2026-10-11T03:15:44.4352624Z hint: * Disable or modify the sparsity rules.
+2026-10-11T03:15:44.4353122Z hint: Disable this message with "git config set advice.updateSparsePath false"
+2026-10-11T03:15:44.4361991Z ##[error]Process completed with exit code 1.
+2026-10-11T03:15:44.4452812Z ##[group]Run actions/upload-artifact@v4
+2026-10-11T03:15:44.4453172Z with:
+2026-10-11T03:15:44.4453470Z   name: c3-source-escape-permanent-original-packet
+2026-10-11T03:15:44.4453988Z   path: ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/
+2026-10-11T03:15:44.4454677Z   compression-level: 0
+2026-10-11T03:15:44.4454951Z   if-no-files-found: error
+2026-10-11T03:15:44.4455219Z   overwrite: false
+2026-10-11T03:15:44.4455475Z   include-hidden-files: false
+2026-10-11T03:15:44.4455748Z env:
+2026-10-11T03:15:44.4455992Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-11T03:15:44.4456272Z ##[endgroup]
+2026-10-11T03:15:44.6096089Z (node:2389) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-11T03:15:44.6097690Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-11T03:15:44.6262619Z With the provided path, there will be 44 files uploaded
+2026-10-11T03:15:44.6269789Z Artifact name is valid!
+2026-10-11T03:15:44.6271076Z Root directory input is valid!
+2026-10-11T03:15:45.0047547Z Beginning upload of artifact content to blob storage
+2026-10-11T03:15:45.0682508Z (node:2389) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-11T03:15:46.0382212Z Uploaded bytes 8388608
+2026-10-11T03:15:46.0503283Z Uploaded bytes 16777216
+2026-10-11T03:15:46.0707847Z Uploaded bytes 25165824
+2026-10-11T03:15:46.0961264Z Uploaded bytes 33554432
+2026-10-11T03:15:46.3136508Z Uploaded bytes 41943040
+2026-10-11T03:15:46.3262876Z Uploaded bytes 50331648
+2026-10-11T03:15:46.3718934Z Uploaded bytes 58720256
+2026-10-11T03:15:46.3772321Z Uploaded bytes 67108864
+2026-10-11T03:15:46.5754264Z Uploaded bytes 75497472
+2026-10-11T03:15:46.5980086Z Uploaded bytes 83886080
+2026-10-11T03:15:46.8197923Z Uploaded bytes 88281383
+2026-10-11T03:15:46.8990347Z Finished uploading artifact content to blob storage!
+2026-10-11T03:15:46.8991691Z SHA256 digest of uploaded artifact zip is cf72129874a93fee45f9135735831d900f37800e6c399b2bd3a990905a5af1a6
+2026-10-11T03:15:46.8992750Z Finalizing artifact upload
+2026-10-11T03:15:47.1899912Z Artifact c3-source-escape-permanent-original-packet.zip successfully finalized. Artifact ID 11689834911
+2026-10-11T03:15:47.1901596Z Artifact c3-source-escape-permanent-original-packet has been successfully uploaded! Final size is 88281383 bytes. Artifact ID is 11689834911
+2026-10-11T03:15:47.1925990Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38107795218/artifacts/11689834911
+2026-10-11T03:15:47.2203392Z Post job cleanup.
+2026-10-11T03:15:47.3067700Z [command]/usr/bin/git version
+2026-10-11T03:15:47.3110855Z git version 2.55.0
+2026-10-11T03:15:47.3150902Z Temporarily overriding HOME='/home/runner/work/_temp/8705ac9a-18ee-4fc0-a0a0-1a500e785d1e' before making global git config changes
+2026-10-11T03:15:47.3152690Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-11T03:15:47.3156273Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-11T03:15:47.3195543Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-11T03:15:47.3230513Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-11T03:15:47.3510331Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-11T03:15:47.3537510Z http.https://github.com/.extraheader
+2026-10-11T03:15:47.3549565Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-11T03:15:47.3585411Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-11T03:15:47.3861080Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-11T03:15:47.3902385Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-11T03:15:47.4352785Z Evaluate and set job outputs
+2026-10-11T03:15:47.4359175Z Cleaning up orphan processes
+2026-10-11T03:15:47.4641558Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

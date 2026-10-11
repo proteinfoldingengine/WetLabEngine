@@ -1,0 +1,24 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The analytical necessity of the intact saturated trace before the first escape is rigorously established. Because no label has yet acquired an outside root, any saturated edge must be supported entirely by its original types. The fixed original floors exactly match the available original labels, preventing any saturated incidence deletion prior to the first escape.",
+    "The simplification of the X-gate necessity condition from a three-cover of H minus vw to B_v is logically sound. Adding the vertex w to any such three-cover yields a valid four-cover of H excluding v, satisfying B_v.",
+    "The equivalence between cover-pinning and the failure of B_v is correctly derived. If every 4-cover contains v, removing v or replacing it with a single excluded neighbor would yield a 4-cover excluding v, contradicting the premise. Thus, any 4-cover must leave at least two neighbors of v outside the cover, forcing the label to retain at least two private roots.",
+    "The explicit static-but-unreachable counterexample (H=K6-minus45, G=K23 isolate 0) correctly demonstrates that static reserve existence combined with minDegree(G)<=1 is insufficient for reachability, validating the necessity of the exact gate and the cover-pinning lock.",
+    "The degree-one carrier boundary example (H=K23 disjoint K2) correctly proves the substantive nature of the third-vertex requirement (z) in the X certificate. It shows that equal source-star behavior without a geometric extension prevents escape, even when a static reserve exists.",
+    "The computational verification strictly aligns with the analytical claims. The independent checker successfully reconstructs the 7,360 declared sources using set-based combinations against the producer's bitmasks. It correctly retains all unsafe candidates to prevent selection bias and verifies the exact canonical routes and hidden masks.",
+    "The scientific test suite correctly executes 42 new tests and 413 inherited tests (total 455), with the genuine missing-producer RED log preserved. The exact byte-for-byte reproduction of the certificate and canonical companion is confirmed."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem strictly classifies the first source escape event (V or X); it does not classify general first-vacancy reachability subsequent to an X event.",
+    "The achieved edit costs (deg_H(v)) represent constructive counts for the specific normalized canonical routes and are not claimed to be globally optimal edit costs.",
+    "The cover-reinforced lock is a sufficient condition for unreachability, not a necessary classification of all locked sources, as weak saturated types may lack a geometric X extension.",
+    "The computational verification is finite, covering the declared matrix and canonical routes; universal arbitrary hidden-completion safety and arbitrary deletion-order safety rely entirely on the analytical proof.",
+    "The result does not establish native acquisition, observation, access, retained output, or committed progress. Broad C3 and general C4 remain OPEN.",
+    "This review is based on the provided evidence and cannot attest to future immutable publication or readback operations."
+  ]
+}
+```
