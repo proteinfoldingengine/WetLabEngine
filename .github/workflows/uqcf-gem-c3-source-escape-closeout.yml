@@ -1,0 +1,153 @@
+name: UQCF-GEM first-source-escape closeout publication
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths: ['.github/workflows/uqcf-gem-c3-source-escape-closeout.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: c3-source-escape-closeout-publication
+  cancel-in-progress: false
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+jobs:
+  reconcile-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    outputs:
+      closeout_commit: ${{ steps.publish.outputs.closeout_commit }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape
+      - name: Reconcile original evidence and publish only the two continuation indices
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=ResearchHistory/UQCF-GEM/research/physical-bridge
+          python3 "$ROOT/evidence/source-escape/collect_source_escape.py" "$ROOT/evidence/source-escape"
+          python3 - <<'PY'
+          import hashlib,io,json,os,pathlib,sys,urllib.request,zipfile
+          root=pathlib.Path('ResearchHistory/UQCF-GEM/research/physical-bridge')
+          archive=root/'evidence/source-escape'
+          sys.path.insert(0,str(archive))
+          from collect_source_escape import SafeRedirect
+          from audit_helpers import require,sha256,git_blob
+          publication=root/'evidence/source-escape-publication'
+          require(not publication.exists(),'Concurrent publication exists; do not overwrite')
+          publication.mkdir()
+          req=urllib.request.Request('https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/11690089880/zip',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+          with urllib.request.build_opener(SafeRedirect()).open(req,timeout=180) as response: raw=response.read()
+          require(sha256(raw)=='7963521fd05d9421c4ba2c877b033737aec93c23a290c96eaad90837cc3e11aa','Original immutable-readback ZIP mismatch')
+          (publication/'original-archive-readback.zip').write_bytes(raw)
+          with zipfile.ZipFile(io.BytesIO(raw)) as z:
+              require(z.namelist()==['immutable-readback.json'],'Wrong readback ZIP member')
+              receipt=z.read('immutable-readback.json')
+          require(sha256(receipt)=='5318f774f56166ce5cd48f99731bb7852a63ca1627b23b76dfffb36223f080c8','Readback receipt mismatch')
+          (publication/'immutable-archive-readback.json').write_bytes(receipt)
+          rb=json.loads(receipt)
+          require(rb['status']=='PASS_IMMUTABLE_ARCHIVE_READBACK' and rb['archive_commit']=='9870b9457cc8d03576845beb19ebd785f9c939e8' and len(rb['files'])==46,'Wrong archive readback')
+          files={}
+          for name,row in rb['files'].items():
+              b=(archive/name).read_bytes()
+              require({'bytes':len(b),'sha256':sha256(b),'git_blob_sha1':git_blob(b)}==row,'Archive changed after readback: '+name)
+              files['evidence/source-escape/'+name]=b
+          docs={'COUPLED_C3_SOURCE_ESCAPE_CLOSEOUT.md':'e91e4dd93555d4c8ac3623b6151c6e322b8d3e21','COUPLED_C3_SOURCE_ESCAPE_RECONCILIATION.md':'321ac9dce74dfadf02cb864a54b9730c24f6b6e7','COUPLED_C3_SOURCE_ESCAPE_PUBLICATION_AUDIT.md':'490024ab5e24067627e8032fe90c264a6afa877b'}
+          for name,expected in docs.items():
+              b=(root/name).read_bytes();require(git_blob(b)==expected,'Changed closeout text: '+name);files[name]=b
+          entry='''## Latest scoped result: exact first-source-escape gate — CLOSED
+
+          [First-source-escape closeout](COUPLED_C3_SOURCE_ESCAPE_CLOSEOUT.md), [author reconciliation](COUPLED_C3_SOURCE_ESCAPE_RECONCILIATION.md), and [publication audit](COUPLED_C3_SOURCE_ESCAPE_PUBLICATION_AUDIT.md) are authoritative. Run38105740578 at5091874b16ca70d13f2b62c99e46d6817df9df07 passed455scientific tests (42new,413inherited), full independent reconstruction, fresh exact certificate/companion reproduction, and separate Gemini mathematical/publication ACCEPTED verdicts with no listed missing assumptions or counterexamples. All45/48review inputs were reconciled. The46-file original-evidence archive at9870b9457cc8d03576845beb19ebd785f9c939e8 passed a separate immutable readback and offline author audit; all failures are retained with their actual provenance.
+
+          For the declared finite simple isolate-free pair-root carrier H, positive multiplicities a and saturated subgraph G, let B_v mean some H vertex cover of size at most four excludes v. A first vacancy of type v is possible exactly when its saturated trace is empty and (a_v>=2 or B_v). A first outside-original-star incidence v->wz is possible exactly when v,w,z are distinct, vw/wz are H edges, the saturated trace at v is contained in {vw}, and the same cover-aware gate holds. Normalized routes achieve degree_H(v) edits, with no global optimality claim.
+
+          The K6-minus45 control has an isolated saturated type and a safe static reserve but no first escape because its weak singleton type is cover-pinned. Thus the closed five-type static-plus-low-degree reachability criterion does not generalize to arbitrary carriers. The complete7360-source census includes54912vacancy candidates,2570928extension candidates,109440canonical actual-label routes and501629984original protected one-hidden-mask/state checks;6688sources permit an escape and672do not. An escape X is not necessarily a vacancy, and subsequent vacancy reachability remains OPEN.
+
+          Next derive a safe continuation from permitted source escape to first vacancy, or a genuinely new obstruction, without treating static availability or a first edit as a restoring path. Native record origin/access/retention, enforcement, actual-successor selection and committed progress remain independent OPEN obligations. Broad C3/general C4-C6 and physical origin remain OPEN; no numbered-v16/full-stack certification. Path A active; Path B closed.
+
+          The cover-static checkpoint is also CLOSED as recorded in [its closeout](COUPLED_C3_COVER_STATIC_CLOSEOUT.md). The formerly active prospective entry below is retained as historical scope, not a reopened or unexecuted campaign.
+
+          '''
+          for name,expected in [('POST_A12_THEOREM_FIRST_SYNTHESIS.md','e8c0e608c8a936ce74e61521110ed0aeb44b567d'),('COUPLED_C3_C4_DEFICIT_CONTINUATION.md','37901d809f0aa0ec7674a0b2bab193a217384e6b')]:
+              b=(root/name).read_bytes();require(git_blob(b)==expected,'Concurrent index modification: '+name)
+              text=b.decode();old='## Active prospective checkpoint: cover-aware static reserves'
+              require(text.count(old)==1,'Historical index heading mismatch')
+              header,history=text.split('\n## ',1);history='## '+history
+              history=history.replace(old,'## Historical prospective scope: cover-aware static reserves (now closed)',1)
+              final=header.replace('Updated: 2026-10-10 UTC.','Updated: 2026-10-11 UTC.')+'\n\n'+entry+history
+              require(final.endswith(text.split(old,1)[1]),'Historical suffix changed')
+              b=final.encode();(root/name).write_bytes(b);files[name]=b
+          for name in ('original-archive-readback.zip','immutable-archive-readback.json'):
+              files['evidence/source-escape-publication/'+name]=(publication/name).read_bytes()
+          manifest={'scientific_commit':'5091874b16ca70d13f2b62c99e46d6817df9df07','original_archive_commit':rb['archive_commit'],'scientific_run_id':38105740578,'archive_readback_run_id':38107938180,'publication_workflow_commit':os.environ['GITHUB_SHA'],'files':{name:{'bytes':len(b),'sha256':sha256(b),'git_blob_sha1':git_blob(b)} for name,b in sorted(files.items())},'scope':'Final bounded first-escape closeout; no new science or Gemini review'}
+          (publication/'closure_manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({'status':'PASS_PUBLICATION_PREPARATION','existing_archive_files':46,'total_bound_files':len(files),'scientific_tests_rerun':False}))
+          PY
+      - name: Commit and publish with live-head protection
+        id: publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          BRANCH=research/uqcf-overlapping-guard-exchange
+          ROOT=ResearchHistory/UQCF-GEM/research/physical-bridge
+          test "$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)" = "$GITHUB_SHA"
+          git add --sparse -- "$ROOT/POST_A12_THEOREM_FIRST_SYNTHESIS.md" "$ROOT/COUPLED_C3_C4_DEFICIT_CONTINUATION.md" "$ROOT/evidence/source-escape-publication"
+          git config user.name 'UQCF-GEM scientific closeout'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Close first-source-escape checkpoint and reconcile both continuation indices'
+          git push origin "HEAD:refs/heads/$BRANCH"
+          printf 'closeout_commit=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+  immutable-closeout-readback:
+    needs: reconcile-and-publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.reconcile-and-publish.outputs.closeout_commit }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape
+            ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape-publication
+      - name: Read every bound file from the immutable published Git commit
+        env:
+          CLOSEOUT_COMMIT: ${{ needs.reconcile-and-publish.outputs.closeout_commit }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,subprocess
+          sha=os.environ['CLOSEOUT_COMMIT']
+          if subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()!=sha: raise SystemExit('Wrong immutable closeout head')
+          root='ResearchHistory/UQCF-GEM/research/physical-bridge/'
+          mf='evidence/source-escape-publication/closure_manifest.json'
+          m=json.loads(pathlib.Path(root+mf).read_text())
+          expected=set(m['files'])|{mf}
+          output=pathlib.Path('closeout-readback');output.mkdir()
+          rows={}
+          for name in sorted(expected):
+              b=subprocess.check_output(['git','show',sha+':'+root+name])
+              row={'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'git_blob_sha1':hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()}
+              if name in m['files'] and row!=m['files'][name]:raise SystemExit('Immutable closeout mismatch: '+name)
+              if pathlib.Path(root+name).read_bytes()!=b:raise SystemExit('Checkout content mismatch: '+name)
+              rows[name]=row
+              if '/' not in name or name==mf:
+                  dest=output/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(b)
+          archived=subprocess.check_output(['git','ls-tree','-r','--name-only',sha,'--',root+'evidence/source-escape/'],text=True).splitlines()
+          if set(archived)!={root+n for n in expected if n.startswith('evidence/source-escape/')}:raise SystemExit('Archive path set changed')
+          receipt={'status':'PASS_IMMUTABLE_SCIENTIFIC_CLOSEOUT_READBACK','closeout_commit':sha,'scientific_commit':m['scientific_commit'],'scientific_run_id':m['scientific_run_id'],'file_count':len(rows),'original_archive_files':46,'files':rows,'scope':'First-source-escape only; broad C3/general C4-C6 and native origin/enforcement/progress remain OPEN'}
+          (output/'closure_readback.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({k:v for k,v in receipt.items() if k!='files'}))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-source-escape-final-closeout-readback
+          path: closeout-readback/
+          if-no-files-found: error
