@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/reserve_activation/test_original_audit.py", line 54, in <module>
+    else:assert p.returncode==0,p.stderr
+                ^^^^^^^^^^^^^^^
+AssertionError: Traceback (most recent call last):
+  File "/tmp/tmp_2m70n9p/audit_originals.py", line 85, in <module>
+    b=(O/filename).read_bytes();t=b.decode();assert len(b)==item['bytes'] and digest(b)==item['sha256']
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+

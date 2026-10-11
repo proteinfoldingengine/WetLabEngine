@@ -211,3 +211,12 @@ COUPLED_C3_SOURCE_ESCAPE_RESULT.md, COUPLED_C3_SOURCE_ESCAPE_SCOPE.md and source
 After source-escape scoped closeout at c31f5313486be2be25ff1d32d01b507d2de2e313, the user authorized escape-to-usable-reserve research. The independently accepted candidate gives an exact closure-surplus criterion for a specified fixed-anchor monotone saturated-neighbor transfer template. A K4,3 chain requires successive compensation before release and has no initial saturated cherry. Exact reversal restores the source only if no intervening operation occurs.
 
 [Candidate](COUPLED_C3_RESERVE_ACTIVATION_RESULT.md), [prospective scope](COUPLED_C3_RESERVE_ACTIVATION_SCOPE.md), and reserve_activation/PLAN.md bind5054abstract graphs and8192native sources before computation. This launch records analytical acceptance, not numerical verification or scientific closure. General native reachability, usable reserve after arbitrary inserted repair, native origin/enforcement/selection/progress and broad C3/C4-C6 remain OPEN. Historical headers remain unchanged below this appended update.
+
+
+## Reserve activation — scoped scientific gates passed
+
+[Reserve-activation closeout](COUPLED_C3_RESERVE_ACTIVATION_CLOSEOUT.md) is authoritative after final immutable publication verification. Run38142825347 at b1caebd3d57dcb74c85f969543d577931e04ed5b passed allfourjobs; actual Gemini mathematical/publication verdicts ACCEPTED with no missing assumptions or counterexamples.485scientific tests (30new+455inherited), complete5054abstract graphs/8192native sources, independent reconstruction and fresh byte reproduction. Original evidence audit and nine rejecting controls passed separately.
+
+The exact closure-surplus criterion classifies release within the fixed-anchor monotone saturated-neighbor template. Successive compensation frees a label in a chain with no initial saturated cherry.18edits is the example's achieved cost, not an optimum. Exact reversal restores the original source only with no intervening operation. Finalcloseout qualifies raw review wording and preserves adverse evidence.
+
+General native reserve reachability and use of the freed label for a specified exchange followed by exact restoration remain unresolved. Native input/carrier/initialcorrelation/action/accessible retained output, enforcement, actual successor selection and progress remain separate OPEN obligations, as do broad C3/C4-C6. This campaign supplies no native observer mechanism or physical force. No new campaign is launched by this closeout. Historical OPEN/pending headers remain retained.

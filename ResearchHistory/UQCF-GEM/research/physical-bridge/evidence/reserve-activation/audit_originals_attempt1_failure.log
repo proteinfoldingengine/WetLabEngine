@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/reserve_activation/audit_originals.py", line 85, in <module>
+    b=(O/filename).read_bytes();t=b.decode();assert len(b)==item['bytes'] and digest(b)==item['sha256']
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
