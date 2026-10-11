@@ -2,6 +2,14 @@
 Updated: 2026-10-11 UTC. Branch: research/uqcf-overlapping-guard-exchange.
 Status: Scoped C3 and C4 closeouts are recorded individually below; native record origin/enforcement/progress and arbitrary coupled repair remain OPEN. No numbered v16 or full-stack post-merge certification.
 
+## Current analytical result: permitted first escape can have no vacancy endpoint — NOT CLOSED
+
+[Prospective obstruction scope](COUPLED_C3_ESCAPE_OBSTRUCTION_SCOPE.md) and [author-side proof](COUPLED_C3_ESCAPE_OBSTRUCTION_RESULT.md) record a new separation after the CLOSED first-source-escape theorem. Let H be K6 minus edge45 and G any perfect matching contained in H. Every positive-multiplicity source has a permitted cross-star X escape: a type4 or5 label can cross its unique saturated edge because the unique size-four cover excludes that type. Nevertheless no static reserve exists. The matching-partner map injects every independent set I into N_G(I), so |I|>|N_G(I)| never holds; the CLOSED cover-static theorem then excludes every vacancy endpoint and therefore every first-vacancy path.
+
+The broader [escape-to-vacancy substitution scope](COUPLED_C3_ESCAPE_TO_VACANCY_SCOPE.md) is retained as a falsified prospective claim. Its naive substitution failed exactly because the crossing label was already counted on the saturated shared edge and supplies no replacement unit there. An initial scope-serialization defect is also retained and corrected before any computation.
+
+Status is AUTHOR-SIDE ANALYTICAL RESULT only. The frozen complete bounded matrix has12perfect matchings times64profiles =768sources. Implementation, independent reconstruction, tests-first RED, inherited replay, Actions, Gemini3.1Pro mathematical review, separate publication audit, evidence preservation, closeout and immutable readback remain pending. This is not general escape-to-vacancy classification, native record origin, enforcement, actual selection, progress or broadC3/C4-C6 closure.
+
 ## Latest scoped result: exact 3-/4-root C3 ↔ nested-star carrier — CLOSED
 
 [Closeout](COUPLED_C3_STAR_CARRIER_CLOSEOUT.md), [publication audit](COUPLED_C3_STAR_CARRIER_PUBLICATION_AUDIT.md), and [artifact ledger](evidence/star-carrier/artifacts.json) are authoritative. Exact-event run38156240484 at2361b402923ae8845eb4afc9bb1257cc6f239da1 passed495contracts (10new+485inherited), complete independent reconstruction, fresh byte-identical reproduction, and separate Gemini3.1Pro mathematical/publication ACCEPTED verdicts with zero missing assumptions or counterexamples.
