@@ -2,7 +2,7 @@
 Updated: 2026-10-11 UTC. Branch: research/uqcf-overlapping-guard-exchange.
 Status: Scoped C3 and C4 closeouts are recorded individually below; native record origin/enforcement/progress and arbitrary coupled repair remain OPEN. No numbered v16 or full-stack post-merge certification.
 
-## Current verified result: permitted first escape can have no vacancy endpoint — PUBLICATION READBACK PENDING
+## Current verified result: permitted first escape can have no vacancy endpoint — SCOPED CLOSED
 
 [Prospective obstruction scope](COUPLED_C3_ESCAPE_OBSTRUCTION_SCOPE.md) and [author-side proof](COUPLED_C3_ESCAPE_OBSTRUCTION_RESULT.md) record a new separation after the CLOSED first-source-escape theorem. Let H be K6 minus edge45 and G any perfect matching contained in H. Every positive-multiplicity source has a permitted cross-star X escape: a type4 or5 label can cross its unique saturated edge because the unique size-four cover excludes that type. Nevertheless no static reserve exists. The matching-partner map injects every independent set I into N_G(I), so |I|>|N_G(I)| never holds; the CLOSED cover-static theorem then excludes every vacancy endpoint and therefore every first-vacancy path.
 
@@ -322,3 +322,5 @@ Integration note: concurrent commits through972e1bcb0b50146116fb5b68dada5ff7599e
 ## Perfect-matching escape obstruction verification
 
 At event commit `857803fb97e80a9d7b4f9338ebf9ef2de4d5f8e1`, Actions run `38167992780` verified the frozen `K6-{45}` campaign over all 12 contained perfect matchings and all 64 `{1,2}^6` profiles. Exact totals: 768 sources, 19,968 actual-label X routes, 110,592 slices, 648,680,448 protected-mask/state checks, and 504 tests. Producer and independent checker agreed on canonical stream SHA-256 `b6b53398b5ec82f9552284b93cdb2e10ef357bc277e27054eda3aee41af77610`; fresh reproduction matched. Gemini 3.1 Pro mathematical review and separate publication audit both ACCEPTED with zero missing assumptions/counterexamples. The result is a bounded endpoint obstruction, not broad C3/C4–C6 or physical closure.
+
+Immutable publication/evidence readback completed at `d1c2fc5594555764e6ec0ba333e41c3cbdff492b`; the perfect-matching escape obstruction is now scoped CLOSED. Broad C3/C4–C6 and physical origin remain OPEN.

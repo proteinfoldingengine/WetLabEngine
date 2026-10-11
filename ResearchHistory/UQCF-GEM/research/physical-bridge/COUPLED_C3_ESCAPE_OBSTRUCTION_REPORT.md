@@ -1,6 +1,6 @@
 # Perfect-matching escape-without-vacancy obstruction — verification report
 
-Status: VERIFIED at event commit `857803fb97e80a9d7b4f9338ebf9ef2de4d5f8e1`; bounded closeout pending immutable publication readback. This report closes only the prospectively frozen `K6-{45}` / perfect-matching campaign. Broad C3, C4–C6, and physical origin remain OPEN.
+Status: **SCOPED CLOSED** after verification at event commit `857803fb97e80a9d7b4f9338ebf9ef2de4d5f8e1` and exact immutable publication readback at `d1c2fc5594555764e6ec0ba333e41c3cbdff492b`. This report closes only the prospectively frozen `K6-{45}` / perfect-matching campaign. Broad C3, C4–C6, and physical origin remain OPEN.
 
 ## Result
 

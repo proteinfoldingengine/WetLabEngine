@@ -2,7 +2,7 @@
 
 Date: 2026-10-11 UTC.
 Prospective scope: `d18095854994928e4cc65a448600bfef2c78a161`.
-Status: **VERIFIED AT EVENT COMMIT `857803fb97e80a9d7b4f9338ebf9ef2de4d5f8e1`; SCOPED CLOSEOUT PENDING IMMUTABLE PUBLICATION READBACK**.
+Status: **SCOPED CLOSED** after verification at event commit `857803fb97e80a9d7b4f9338ebf9ef2de4d5f8e1` and exact immutable publication readback at `d1c2fc5594555764e6ec0ba333e41c3cbdff492b`.
 
 ## Theorem
 
