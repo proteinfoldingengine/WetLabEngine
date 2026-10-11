@@ -1,12 +1,25 @@
 # Post-A12 theorem-first synthesis — current continuation index
-Updated: 2026-10-10 UTC. Branch: research/uqcf-overlapping-guard-exchange.
+Updated: 2026-10-11 UTC. Branch: research/uqcf-overlapping-guard-exchange.
 Status: Scoped C3 and C4 closeouts are recorded individually below; native record origin/enforcement/progress and arbitrary coupled repair remain OPEN. No numbered v16 or full-stack post-merge certification.
 
 
 
 
 
-## Active prospective checkpoint: cover-aware static reserves
+
+## Latest scoped result: exact first-source-escape gate — CLOSED
+
+[First-source-escape closeout](COUPLED_C3_SOURCE_ESCAPE_CLOSEOUT.md), [author reconciliation](COUPLED_C3_SOURCE_ESCAPE_RECONCILIATION.md), and [publication audit](COUPLED_C3_SOURCE_ESCAPE_PUBLICATION_AUDIT.md) are authoritative. Run38105740578 at5091874b16ca70d13f2b62c99e46d6817df9df07 passed455scientific tests (42new,413inherited), full independent reconstruction, fresh exact certificate/companion reproduction, and separate Gemini mathematical/publication ACCEPTED verdicts with no listed missing assumptions or counterexamples. All45/48review inputs were reconciled. The46-file original-evidence archive at9870b9457cc8d03576845beb19ebd785f9c939e8 passed a separate immutable readback and offline author audit; all failures are retained with their actual provenance.
+
+For the declared finite simple isolate-free pair-root carrier H, positive multiplicities a and saturated subgraph G, let B_v mean some H vertex cover of size at most four excludes v. A first vacancy of type v is possible exactly when its saturated trace is empty and (a_v>=2 or B_v). A first outside-original-star incidence v->wz is possible exactly when v,w,z are distinct, vw/wz are H edges, the saturated trace at v is contained in {vw}, and the same cover-aware gate holds. Normalized routes achieve degree_H(v) edits, with no global optimality claim.
+
+The K6-minus45 control has an isolated saturated type and a safe static reserve but no first escape because its weak singleton type is cover-pinned. Thus the closed five-type static-plus-low-degree reachability criterion does not generalize to arbitrary carriers. The complete7360-source census includes54912vacancy candidates,2570928extension candidates,109440canonical actual-label routes and501629984original protected one-hidden-mask/state checks;6688sources permit an escape and672do not. An escape X is not necessarily a vacancy, and subsequent vacancy reachability remains OPEN.
+
+Next derive a safe continuation from permitted source escape to first vacancy, or a genuinely new obstruction, without treating static availability or a first edit as a restoring path. Native record origin/access/retention, enforcement, actual-successor selection and committed progress remain independent OPEN obligations. Broad C3/general C4-C6 and physical origin remain OPEN; no numbered-v16/full-stack certification. Path A active; Path B closed.
+
+The cover-static checkpoint is also CLOSED as recorded in [its closeout](COUPLED_C3_COVER_STATIC_CLOSEOUT.md). The formerly active prospective entry below is retained as historical scope, not a reopened or unexecuted campaign.
+
+## Historical prospective scope: cover-aware static reserves (now closed)
 
 [Prospective theorem](COUPLED_C3_COVER_STATIC_RESULT.md), [frozen verification scope](COUPLED_C3_COVER_STATIC_SCOPE.md), [analytical review](COUPLED_C3_COVER_STATIC_ANALYTICAL_REVIEW.md). Status: OPEN; independently accepted analytical statement and prospective verification scope, not a completed numerical campaign or scientific closeout.
 
