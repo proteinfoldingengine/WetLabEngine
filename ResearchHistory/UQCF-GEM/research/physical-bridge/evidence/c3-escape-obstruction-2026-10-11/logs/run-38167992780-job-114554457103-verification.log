@@ -1,0 +1,969 @@
+﻿2026-10-11T19:26:03.5340877Z Current runner version: '2.337.0'
+2026-10-11T19:26:03.5364876Z ##[group]Runner Image Provisioner
+2026-10-11T19:26:03.5365841Z Hosted Compute Agent
+2026-10-11T19:26:03.5366397Z Version: 20261002.596
+2026-10-11T19:26:03.5367056Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-11T19:26:03.5367753Z Build Date: 2026-10-02T22:28:27Z
+2026-10-11T19:26:03.5368393Z Worker ID: {6bf5edce-7c1b-49a3-9ae8-75226319ee94}
+2026-10-11T19:26:03.5369206Z Region: northcentralus
+2026-10-11T19:26:03.5369762Z Cloud: Azure
+2026-10-11T19:26:03.5370251Z ##[endgroup]
+2026-10-11T19:26:03.5371580Z ##[group]Operating System
+2026-10-11T19:26:03.5372153Z Ubuntu
+2026-10-11T19:26:03.5372750Z 24.04.5
+2026-10-11T19:26:03.5373231Z LTS
+2026-10-11T19:26:03.5373701Z ##[endgroup]
+2026-10-11T19:26:03.5374587Z ##[group]Runner Image
+2026-10-11T19:26:03.5375340Z Image: ubuntu-24.04
+2026-10-11T19:26:03.5376346Z Version: 20261004.327.1
+2026-10-11T19:26:03.5377652Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-11T19:26:03.5379546Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-11T19:26:03.5380683Z ##[endgroup]
+2026-10-11T19:26:03.5382019Z ##[group]GITHUB_TOKEN Permissions
+2026-10-11T19:26:03.5385226Z Contents: read
+2026-10-11T19:26:03.5385973Z Metadata: read
+2026-10-11T19:26:03.5386580Z ##[endgroup]
+2026-10-11T19:26:03.5389457Z Secret source: Actions
+2026-10-11T19:26:03.5390746Z Cache mode: write
+2026-10-11T19:26:03.5391948Z Prepare workflow directory
+2026-10-11T19:26:03.6336769Z Prepare all required actions
+2026-10-11T19:26:03.6407442Z Getting action download info
+2026-10-11T19:26:03.8552550Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-11T19:26:03.9772965Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-11T19:26:04.0816960Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-11T19:26:04.3272708Z Complete job name: verification
+2026-10-11T19:26:04.4002441Z ##[group]Run actions/checkout@v4
+2026-10-11T19:26:04.4003352Z with:
+2026-10-11T19:26:04.4003975Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-11T19:26:04.4008609Z   token: ***
+2026-10-11T19:26:04.4009201Z   ssh-strict: true
+2026-10-11T19:26:04.4009743Z   ssh-user: git
+2026-10-11T19:26:04.4010295Z   persist-credentials: true
+2026-10-11T19:26:04.4010922Z   clean: true
+2026-10-11T19:26:04.4011473Z   sparse-checkout-cone-mode: true
+2026-10-11T19:26:04.4012124Z   fetch-depth: 1
+2026-10-11T19:26:04.4012802Z   fetch-tags: false
+2026-10-11T19:26:04.4013346Z   show-progress: true
+2026-10-11T19:26:04.4013929Z   lfs: false
+2026-10-11T19:26:04.4014666Z   submodules: false
+2026-10-11T19:26:04.4015285Z   set-safe-directory: true
+2026-10-11T19:26:04.4015902Z   allow-unsafe-pr-checkout: false
+2026-10-11T19:26:04.4016716Z ##[endgroup]
+2026-10-11T19:26:04.5002617Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-11T19:26:04.5005470Z ##[group]Getting Git version info
+2026-10-11T19:26:04.5006848Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-11T19:26:04.5008616Z [command]/usr/bin/git version
+2026-10-11T19:26:04.5061512Z git version 2.55.0
+2026-10-11T19:26:04.5084864Z ##[endgroup]
+2026-10-11T19:26:04.5104168Z Temporarily overriding HOME='/home/runner/work/_temp/8bb00af6-329e-40e9-85c4-1136a14e684f' before making global git config changes
+2026-10-11T19:26:04.5107615Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-11T19:26:04.5112150Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-11T19:26:04.5170920Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-11T19:26:04.5175627Z ##[group]Initializing the repository
+2026-10-11T19:26:04.5179813Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-11T19:26:04.5291224Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-11T19:26:04.5293853Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-11T19:26:04.5301158Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-11T19:26:04.5302983Z hint: call:
+2026-10-11T19:26:04.5303906Z hint:
+2026-10-11T19:26:04.5305424Z hint: 	git config --global init.defaultBranch <name>
+2026-10-11T19:26:04.5306620Z hint:
+2026-10-11T19:26:04.5307836Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-11T19:26:04.5309945Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-11T19:26:04.5311126Z hint:
+2026-10-11T19:26:04.5312098Z hint: 	git branch -m <name>
+2026-10-11T19:26:04.5313070Z hint:
+2026-10-11T19:26:04.5314589Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-11T19:26:04.5316793Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-11T19:26:04.5320568Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-11T19:26:04.5356762Z ##[endgroup]
+2026-10-11T19:26:04.5357706Z ##[group]Disabling automatic garbage collection
+2026-10-11T19:26:04.5363426Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-11T19:26:04.5395758Z ##[endgroup]
+2026-10-11T19:26:04.5397464Z ##[group]Setting up auth
+2026-10-11T19:26:04.5403897Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-11T19:26:04.5439941Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-11T19:26:04.5798577Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-11T19:26:04.5841624Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-11T19:26:04.6105344Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-11T19:26:04.6138350Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-11T19:26:04.6328739Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-11T19:26:04.6368961Z ##[endgroup]
+2026-10-11T19:26:04.6377374Z ##[group]Fetching the repository
+2026-10-11T19:26:04.6379629Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +857803fb97e80a9d7b4f9338ebf9ef2de4d5f8e1:refs/remotes/origin/research/uqcf-overlapping-guard-exchange
+2026-10-11T19:27:00.6188179Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-11T19:27:00.6189514Z  * [new ref]         857803fb97e80a9d7b4f9338ebf9ef2de4d5f8e1 -> origin/research/uqcf-overlapping-guard-exchange
+2026-10-11T19:27:00.6192470Z ##[endgroup]
+2026-10-11T19:27:00.6193504Z ##[group]Determining the checkout info
+2026-10-11T19:27:00.6198455Z ##[endgroup]
+2026-10-11T19:27:00.6200395Z [command]/usr/bin/git sparse-checkout disable
+2026-10-11T19:27:00.6255202Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-11T19:27:00.6286828Z ##[group]Checking out the ref
+2026-10-11T19:27:00.6291524Z [command]/usr/bin/git checkout --progress --force -B research/uqcf-overlapping-guard-exchange refs/remotes/origin/research/uqcf-overlapping-guard-exchange
+2026-10-11T19:27:01.7591231Z Updating files:  26% (2908/10926)
+2026-10-11T19:27:02.2243904Z Updating files:  27% (2951/10926)
+2026-10-11T19:27:02.5180109Z Updating files:  28% (3060/10926)
+2026-10-11T19:27:02.6622962Z Updating files:  29% (3169/10926)
+2026-10-11T19:27:03.1721210Z Updating files:  29% (3179/10926)
+2026-10-11T19:27:03.6632722Z Updating files:  30% (3278/10926)
+2026-10-11T19:27:03.7717216Z Updating files:  30% (3360/10926)
+2026-10-11T19:27:04.0897691Z Updating files:  31% (3388/10926)
+2026-10-11T19:27:04.7045641Z Updating files:  32% (3497/10926)
+2026-10-11T19:27:04.9434987Z Updating files:  32% (3545/10926)
+2026-10-11T19:27:05.2969216Z Updating files:  33% (3606/10926)
+2026-10-11T19:27:05.6616350Z Updating files:  34% (3715/10926)
+2026-10-11T19:27:06.1308149Z Updating files:  34% (3740/10926)
+2026-10-11T19:27:06.4805658Z Updating files:  35% (3825/10926)
+2026-10-11T19:27:06.6536123Z Updating files:  36% (3934/10926)
+2026-10-11T19:27:07.1845304Z Updating files:  36% (3950/10926)
+2026-10-11T19:27:07.4635603Z Updating files:  37% (4043/10926)
+2026-10-11T19:27:07.6549807Z Updating files:  38% (4152/10926)
+2026-10-11T19:27:08.6025524Z Updating files:  38% (4171/10926)
+2026-10-11T19:27:08.6835114Z Updating files:  39% (4262/10926)
+2026-10-11T19:27:08.9216216Z Updating files:  39% (4263/10926)
+2026-10-11T19:27:09.6543323Z Updating files:  40% (4371/10926)
+2026-10-11T19:27:10.4766596Z Updating files:  40% (4408/10926)
+2026-10-11T19:27:10.6741165Z Updating files:  41% (4480/10926)
+2026-10-11T19:27:11.1371895Z Updating files:  41% (4493/10926)
+2026-10-11T19:27:11.6545411Z Updating files:  42% (4589/10926)
+2026-10-11T19:27:12.9526353Z Updating files:  42% (4659/10926)
+2026-10-11T19:27:12.9547556Z Updating files:  42% (4674/10926)
+2026-10-11T19:27:13.3976932Z Updating files:  43% (4699/10926)
+2026-10-11T19:27:13.7206497Z Updating files:  44% (4808/10926)
+2026-10-11T19:27:14.0075496Z Updating files:  44% (4821/10926)
+2026-10-11T19:27:14.7201528Z Updating files:  45% (4917/10926)
+2026-10-11T19:27:15.7125087Z Updating files:  45% (4938/10926)
+2026-10-11T19:27:15.7881312Z Updating files:  45% (4950/10926)
+2026-10-11T19:27:16.4962307Z Updating files:  46% (5026/10926)
+2026-10-11T19:27:16.6527426Z Updating files:  47% (5136/10926)
+2026-10-11T19:27:17.6884037Z Updating files:  48% (5245/10926)
+2026-10-11T19:27:18.4998389Z Updating files:  48% (5277/10926)
+2026-10-11T19:27:18.6528702Z Updating files:  49% (5354/10926)
+2026-10-11T19:27:18.9410633Z Updating files:  49% (5395/10926)
+2026-10-11T19:27:19.0404699Z Updating files:  50% (5463/10926)
+2026-10-11T19:27:19.7044019Z Updating files:  51% (5573/10926)
+2026-10-11T19:27:19.7680373Z Updating files:  51% (5673/10926)
+2026-10-11T19:27:20.6743584Z Updating files:  52% (5682/10926)
+2026-10-11T19:27:21.6393655Z Updating files:  52% (5721/10926)
+2026-10-11T19:27:21.6456571Z Updating files:  53% (5791/10926)
+2026-10-11T19:27:21.6543801Z Updating files:  53% (5793/10926)
+2026-10-11T19:27:21.6617771Z Updating files:  54% (5901/10926)
+2026-10-11T19:27:21.6693698Z Updating files:  55% (6010/10926)
+2026-10-11T19:27:21.6768148Z Updating files:  56% (6119/10926)
+2026-10-11T19:27:21.6821627Z Updating files:  57% (6228/10926)
+2026-10-11T19:27:21.6874784Z Updating files:  58% (6338/10926)
+2026-10-11T19:27:21.6926811Z Updating files:  59% (6447/10926)
+2026-10-11T19:27:21.6994874Z Updating files:  60% (6556/10926)
+2026-10-11T19:27:21.7079040Z Updating files:  61% (6665/10926)
+2026-10-11T19:27:21.8048801Z Updating files:  62% (6775/10926)
+2026-10-11T19:27:21.8985765Z Updating files:  63% (6884/10926)
+2026-10-11T19:27:21.9141284Z Updating files:  64% (6993/10926)
+2026-10-11T19:27:22.2627194Z Updating files:  65% (7102/10926)
+2026-10-11T19:27:22.2761728Z Updating files:  66% (7212/10926)
+2026-10-11T19:27:22.3160972Z Updating files:  67% (7321/10926)
+2026-10-11T19:27:22.3237545Z Updating files:  68% (7430/10926)
+2026-10-11T19:27:22.8408033Z Updating files:  69% (7539/10926)
+2026-10-11T19:27:22.9815240Z Updating files:  69% (7563/10926)
+2026-10-11T19:27:23.1283079Z Updating files:  70% (7649/10926)
+2026-10-11T19:27:23.1335769Z Updating files:  71% (7758/10926)
+2026-10-11T19:27:23.5905322Z Updating files:  72% (7867/10926)
+2026-10-11T19:27:23.6458862Z Updating files:  73% (7976/10926)
+2026-10-11T19:27:24.2330755Z Updating files:  73% (8012/10926)
+2026-10-11T19:27:24.2999893Z Updating files:  74% (8086/10926)
+2026-10-11T19:27:24.6610816Z Updating files:  75% (8195/10926)
+2026-10-11T19:27:24.9259878Z Updating files:  75% (8302/10926)
+2026-10-11T19:27:24.9431265Z Updating files:  76% (8304/10926)
+2026-10-11T19:27:24.9473022Z Updating files:  77% (8414/10926)
+2026-10-11T19:27:25.1025236Z Updating files:  78% (8523/10926)
+2026-10-11T19:27:25.1054981Z Updating files:  79% (8632/10926)
+2026-10-11T19:27:25.1476754Z Updating files:  80% (8741/10926)
+2026-10-11T19:27:25.2298794Z Updating files:  81% (8851/10926)
+2026-10-11T19:27:25.2983311Z Updating files:  82% (8960/10926)
+2026-10-11T19:27:25.7374197Z Updating files:  83% (9069/10926)
+2026-10-11T19:27:25.8770176Z Updating files:  83% (9159/10926)
+2026-10-11T19:27:26.1645426Z Updating files:  84% (9178/10926)
+2026-10-11T19:27:26.4733950Z Updating files:  85% (9288/10926)
+2026-10-11T19:27:26.5975043Z Updating files:  86% (9397/10926)
+2026-10-11T19:27:26.6752488Z Updating files:  87% (9506/10926)
+2026-10-11T19:27:26.6779446Z Updating files:  87% (9592/10926)
+2026-10-11T19:27:26.6835670Z Updating files:  88% (9615/10926)
+2026-10-11T19:27:26.6883917Z Updating files:  89% (9725/10926)
+2026-10-11T19:27:26.6940318Z Updating files:  90% (9834/10926)
+2026-10-11T19:27:26.6970520Z Updating files:  91% (9943/10926)
+2026-10-11T19:27:27.2806355Z Updating files:  92% (10052/10926)
+2026-10-11T19:27:27.3252612Z Updating files:  93% (10162/10926)
+2026-10-11T19:27:27.3724889Z Updating files:  94% (10271/10926)
+2026-10-11T19:27:27.5148195Z Updating files:  95% (10380/10926)
+2026-10-11T19:27:27.5253981Z Updating files:  96% (10489/10926)
+2026-10-11T19:27:27.5538068Z Updating files:  97% (10599/10926)
+2026-10-11T19:27:27.5951540Z Updating files:  98% (10708/10926)
+2026-10-11T19:27:27.6436691Z Updating files:  99% (10817/10926)
+2026-10-11T19:27:27.7173943Z Updating files:  99% (10862/10926)
+2026-10-11T19:27:27.7175125Z Updating files: 100% (10926/10926)
+2026-10-11T19:27:27.7175668Z Updating files: 100% (10926/10926), done.
+2026-10-11T19:27:28.2700141Z Switched to a new branch 'research/uqcf-overlapping-guard-exchange'
+2026-10-11T19:27:28.2701675Z branch 'research/uqcf-overlapping-guard-exchange' set up to track 'origin/research/uqcf-overlapping-guard-exchange'.
+2026-10-11T19:27:28.2890711Z ##[endgroup]
+2026-10-11T19:27:28.2938401Z [command]/usr/bin/git log -1 --format=%H
+2026-10-11T19:27:28.2963431Z 857803fb97e80a9d7b4f9338ebf9ef2de4d5f8e1
+2026-10-11T19:27:28.4150881Z ##[group]Run actions/setup-python@v5
+2026-10-11T19:27:28.4151267Z with:
+2026-10-11T19:27:28.4151595Z   python-version: 3.12
+2026-10-11T19:27:28.4151913Z   check-latest: false
+2026-10-11T19:27:28.4154757Z   token: ***
+2026-10-11T19:27:28.4155103Z   update-environment: true
+2026-10-11T19:27:28.4155464Z   allow-prereleases: false
+2026-10-11T19:27:28.4155822Z   freethreaded: false
+2026-10-11T19:27:28.4156124Z ##[endgroup]
+2026-10-11T19:27:28.5441786Z ##[group]Installed versions
+2026-10-11T19:27:28.5781183Z (node:2265) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-11T19:27:28.5782084Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-11T19:27:28.5782791Z Successfully set up CPython (3.12.15)
+2026-10-11T19:27:28.5783579Z ##[endgroup]
+2026-10-11T19:27:28.6336253Z ##[group]Run python -m unittest -v test_obstruction.py
+2026-10-11T19:27:28.6336912Z [36;1mpython -m unittest -v test_obstruction.py[0m
+2026-10-11T19:27:28.6966206Z shell: /usr/bin/bash -e {0}
+2026-10-11T19:27:28.6966599Z env:
+2026-10-11T19:27:28.6966983Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:28.6967539Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-11T19:27:28.6968024Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:28.6968527Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:28.6968974Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:28.6969408Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-11T19:27:28.6969807Z ##[endgroup]
+2026-10-11T19:27:35.5199704Z test_checker_rejects_truncation_extra_and_canonical_corruption (test_obstruction.EscapeObstructionTests.test_checker_rejects_truncation_extra_and_canonical_corruption) ... ok
+2026-10-11T19:27:48.8233743Z test_complete_stream_agrees_with_independent_checker (test_obstruction.EscapeObstructionTests.test_complete_stream_agrees_with_independent_checker) ... ok
+2026-10-11T19:27:48.8239956Z test_declared_rejecting_controls_all_fire (test_obstruction.EscapeObstructionTests.test_declared_rejecting_controls_all_fire) ... ok
+2026-10-11T19:27:48.9620848Z test_every_source_has_actual_x_escape_and_no_v_escape (test_obstruction.EscapeObstructionTests.test_every_source_has_actual_x_escape_and_no_v_escape) ... ok
+2026-10-11T19:27:48.9629856Z test_exact_frozen_source_universe (test_obstruction.EscapeObstructionTests.test_exact_frozen_source_universe) ... ok
+2026-10-11T19:27:48.9630776Z test_host_is_k6_minus_only_45 (test_obstruction.EscapeObstructionTests.test_host_is_k6_minus_only_45) ... ok
+2026-10-11T19:27:48.9647922Z test_no_matching_independent_set_is_deficient (test_obstruction.EscapeObstructionTests.test_no_matching_independent_set_is_deficient) ... ok
+2026-10-11T19:27:48.9710437Z test_route_slices_preserve_exact_invariants_and_no_vacancy (test_obstruction.EscapeObstructionTests.test_route_slices_preserve_exact_invariants_and_no_vacancy) ... ok
+2026-10-11T19:27:48.9711832Z test_saturated_bridge_substitution_is_rejected (test_obstruction.EscapeObstructionTests.test_saturated_bridge_substitution_is_rejected) ... ok
+2026-10-11T19:27:48.9712740Z 
+2026-10-11T19:27:48.9712925Z ----------------------------------------------------------------------
+2026-10-11T19:27:48.9713356Z Ran 9 tests in 19.310s
+2026-10-11T19:27:48.9713539Z 
+2026-10-11T19:27:48.9713669Z OK
+2026-10-11T19:27:48.9878489Z ##[group]Run python producer.py --stream canonical_stream.jsonl --certificate certificate.json
+2026-10-11T19:27:48.9879238Z [36;1mpython producer.py --stream canonical_stream.jsonl --certificate certificate.json[0m
+2026-10-11T19:27:48.9921860Z shell: /usr/bin/bash -e {0}
+2026-10-11T19:27:48.9922260Z env:
+2026-10-11T19:27:48.9922630Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:48.9923134Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-11T19:27:48.9923634Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:48.9924089Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:48.9924680Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:48.9925106Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-11T19:27:48.9925521Z ##[endgroup]
+2026-10-11T19:27:54.5394813Z {"all_sources_escape": true, "all_sources_no_deficiency": true, "controls": {"canonical_corruption": {"rejected": true}, "false_deficiency": {"rejected": true}, "false_x": {"rejected": true, "witness": {"admitted": false, "gate": false, "geometry": true, "kind": "X", "trace_ok": true, "v": 0, "w": 1, "z": 2}}, "forbidden_45": {"rejected": true}, "minimum_degree_substitution": {"rejected": true}, "missing_matching_edge": {"rejected": true}, "missing_third_vertex": {"rejected": true}, "saturated_bridge_substitution": {"rejected": true, "witness": {"accepted": false, "bridge": [0, 1], "count": 1, "reason": "floor_violation", "required": 2}}}, "red_run": 38167334252, "row_counts": {"candidates": 96768, "distinct_route_states": 39936, "hidden_checks": 648680448, "independent_sets": 48384, "metadata": 1, "route_slices": 110592, "routes": 19968, "sources": 768}, "source_count": 768, "stream_sha256": "b6b53398b5ec82f9552284b93cdb2e10ef357bc277e27054eda3aee41af77610"}
+2026-10-11T19:27:54.5491211Z ##[group]Run python independent.py --stream canonical_stream.jsonl --output independent.json
+2026-10-11T19:27:54.5491907Z [36;1mpython independent.py --stream canonical_stream.jsonl --output independent.json[0m
+2026-10-11T19:27:54.5532189Z shell: /usr/bin/bash -e {0}
+2026-10-11T19:27:54.5532631Z env:
+2026-10-11T19:27:54.5532990Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:54.5533665Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-11T19:27:54.5534186Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:54.5535030Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:54.5535622Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:27:54.5536263Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-11T19:27:54.5536774Z ##[endgroup]
+2026-10-11T19:28:02.4854704Z {"all_rows_reconstructed": true, "row_counts": {"candidates": 96768, "distinct_route_states": 39936, "hidden_checks": 648680448, "independent_sets": 48384, "metadata": 1, "route_slices": 110592, "routes": 19968, "sources": 768}, "source_count": 768, "stream_sha256": "b6b53398b5ec82f9552284b93cdb2e10ef357bc277e27054eda3aee41af77610"}
+2026-10-11T19:28:02.4960944Z ##[group]Run set -euo pipefail
+2026-10-11T19:28:02.4961344Z [36;1mset -euo pipefail[0m
+2026-10-11T19:28:02.4961690Z [36;1mfor spec in \[0m
+2026-10-11T19:28:02.4962078Z [36;1m  'reserve_activation test_activation.py' \[0m
+2026-10-11T19:28:02.4962463Z [36;1m  'source_escape test_escape.py' \[0m
+2026-10-11T19:28:02.4962856Z [36;1m  'cover_static test_cover_static.py' \[0m
+2026-10-11T19:28:02.4963244Z [36;1m  'nonuniform_reserve test_nonuniform.py' \[0m
+2026-10-11T19:28:02.4963594Z [36;1m  'weak_trace test_weak.py' \[0m
+2026-10-11T19:28:02.4963996Z [36;1m  'fingerprint_lock test_fingerprint.py' \[0m
+2026-10-11T19:28:02.4964499Z [36;1m  'private_cover test_private.py' \[0m
+2026-10-11T19:28:02.4965036Z [36;1m  'moving_cover test_moving.py' \[0m
+2026-10-11T19:28:02.4965401Z [36;1m  'saturated_handover test_saturated.py' \[0m
+2026-10-11T19:28:02.4965750Z [36;1m  'slack_handover test_slack.py' \[0m
+2026-10-11T19:28:02.4966260Z [36;1m  'handover_graph test_handover.py' \[0m
+2026-10-11T19:28:02.4966614Z [36;1m  'anchored_release test_anchored.py' \[0m
+2026-10-11T19:28:02.4967008Z [36;1m  'local_progress test_progress.py' \[0m
+2026-10-11T19:28:02.4967379Z [36;1m  'capacity_gap test_capacity.py' \[0m
+2026-10-11T19:28:02.4967769Z [36;1m  'saturated_transfer test_transfer.py' \[0m
+2026-10-11T19:28:02.4968155Z [36;1m  'label_release test_release.py' \[0m
+2026-10-11T19:28:02.4968511Z [36;1m  'footprint test_footprint.py' \[0m
+2026-10-11T19:28:02.4968910Z [36;1m  'fixed_family test_fixed_family.py' \[0m
+2026-10-11T19:28:02.4969259Z [36;1m  'star_carrier test_star.py'[0m
+2026-10-11T19:28:02.4969602Z [36;1mdo[0m
+2026-10-11T19:28:02.4969894Z [36;1m  set -- $spec[0m
+2026-10-11T19:28:02.4970222Z [36;1m  (cd "$1" && python -m unittest -v "$2")[0m
+2026-10-11T19:28:02.4970571Z [36;1mdone[0m
+2026-10-11T19:28:02.5013215Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-11T19:28:02.5013636Z env:
+2026-10-11T19:28:02.5014453Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:28:02.5015108Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-11T19:28:02.5015621Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:28:02.5016079Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:28:02.5016687Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:28:02.5017161Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-11T19:28:02.5017607Z ##[endgroup]
+2026-10-11T19:28:02.6410476Z test_anchor_mutation (test_activation.Activation.test_anchor_mutation) ... ok
+2026-10-11T19:28:02.6411355Z test_chain_eighteen (test_activation.Activation.test_chain_eighteen) ... ok
+2026-10-11T19:28:02.6967058Z test_complete_source_universes (test_activation.Activation.test_complete_source_universes) ... ok
+2026-10-11T19:28:02.7155775Z test_corrupt_stream (test_activation.Activation.test_corrupt_stream) ... ok
+2026-10-11T19:28:02.7156749Z test_exact_reversal (test_activation.Activation.test_exact_reversal) ... ok
+2026-10-11T19:28:02.7293829Z test_extra_stream (test_activation.Activation.test_extra_stream) ... ok
+2026-10-11T19:28:02.7335506Z test_fixture_acceptance (test_activation.Activation.test_fixture_acceptance) ... ok
+2026-10-11T19:28:02.7336722Z test_forced_cherry (test_activation.Activation.test_forced_cherry) ... ok
+2026-10-11T19:28:02.7374627Z test_forged_closure (test_activation.Activation.test_forged_closure) ... ok
+2026-10-11T19:28:02.7412746Z test_forged_surplus (test_activation.Activation.test_forged_surplus) ... ok
+2026-10-11T19:28:02.7465631Z test_hidden_mask_omission (test_activation.Activation.test_hidden_mask_omission) ... ok
+2026-10-11T19:28:02.7467221Z test_ineligible_anchor (test_activation.Activation.test_ineligible_anchor) ... ok
+2026-10-11T19:28:02.7520961Z test_invalid_shared_root (test_activation.Activation.test_invalid_shared_root) ... ok
+2026-10-11T19:28:02.7573894Z test_missing_compensation (test_activation.Activation.test_missing_compensation) ... ok
+2026-10-11T19:28:02.7613624Z test_missing_stream (test_activation.Activation.test_missing_stream) ... ok
+2026-10-11T19:28:02.7614862Z test_native_closure_classification (test_activation.Activation.test_native_closure_classification) ... ok
+2026-10-11T19:28:02.7652678Z test_omitted_abstract_graph (test_activation.Activation.test_omitted_abstract_graph) ... ok
+2026-10-11T19:28:02.7690631Z test_omitted_reachable_state (test_activation.Activation.test_omitted_reachable_state) ... ok
+2026-10-11T19:28:02.7729282Z test_omitted_rejected_candidate (test_activation.Activation.test_omitted_rejected_candidate) ... ok
+2026-10-11T19:28:02.7767423Z test_omitted_valid_edge (test_activation.Activation.test_omitted_valid_edge) ... ok
+2026-10-11T19:28:02.9414883Z test_optimized_runtime_rejection (test_activation.Activation.test_optimized_runtime_rejection) ... ok
+2026-10-11T19:28:02.9475101Z test_original_floor_mutation (test_activation.Activation.test_original_floor_mutation) ... ok
+2026-10-11T19:28:02.9528822Z test_premature_vacancy (test_activation.Activation.test_premature_vacancy) ... ok
+2026-10-11T19:28:02.9581205Z test_repeated_donor (test_activation.Activation.test_repeated_donor) ... ok
+2026-10-11T19:28:02.9634418Z test_repeated_receiver (test_activation.Activation.test_repeated_receiver) ... ok
+2026-10-11T19:28:02.9687273Z test_reverse_label_corruption (test_activation.Activation.test_reverse_label_corruption) ... ok
+2026-10-11T19:28:02.9688630Z test_saturated_lock (test_activation.Activation.test_saturated_lock) ... ok
+2026-10-11T19:28:02.9748438Z test_source_profile_omission (test_activation.Activation.test_source_profile_omission) ... ok
+2026-10-11T19:28:02.9889595Z test_truncated_stream (test_activation.Activation.test_truncated_stream) ... ok
+2026-10-11T19:28:02.9890832Z test_zero_edit_not_escape (test_activation.Activation.test_zero_edit_not_escape) ... ok
+2026-10-11T19:28:02.9891747Z 
+2026-10-11T19:28:02.9892198Z ----------------------------------------------------------------------
+2026-10-11T19:28:02.9893157Z Ran 30 tests in 0.415s
+2026-10-11T19:28:02.9893578Z 
+2026-10-11T19:28:02.9893802Z OK
+2026-10-11T19:28:03.2525733Z test_actual_label_choices (test_escape.EscapeTests.test_actual_label_choices) ... ok
+2026-10-11T19:28:03.2527259Z test_all_direct_candidates (test_escape.EscapeTests.test_all_direct_candidates) ... ok
+2026-10-11T19:28:03.3433330Z test_complete_source_family (test_escape.EscapeTests.test_complete_source_family) ... ok
+2026-10-11T19:28:03.7266672Z test_corrupted_cost (test_escape.EscapeTests.test_corrupted_cost) ... ok
+2026-10-11T19:28:04.0654173Z test_corrupted_stream (test_escape.EscapeTests.test_corrupted_stream) ... ok
+2026-10-11T19:28:04.0655796Z test_cover_pinned_static_unreachable (test_escape.EscapeTests.test_cover_pinned_static_unreachable) ... ok
+2026-10-11T19:28:04.0656537Z test_duplicate_unpins (test_escape.EscapeTests.test_duplicate_unpins) ... ok
+2026-10-11T19:28:04.3702406Z test_early_outside_incidence (test_escape.EscapeTests.test_early_outside_incidence) ... ok
+2026-10-11T19:28:04.6815330Z test_early_vacancy (test_escape.EscapeTests.test_early_vacancy) ... ok
+2026-10-11T19:28:05.2310742Z test_extra_stream (test_escape.EscapeTests.test_extra_stream) ... ok
+2026-10-11T19:28:05.2312250Z test_first_event_routes (test_escape.EscapeTests.test_first_event_routes) ... ok
+2026-10-11T19:28:05.2313460Z test_invalid_multiplicity (test_escape.EscapeTests.test_invalid_multiplicity) ... ok
+2026-10-11T19:28:05.5476996Z test_invalid_third_vertex (test_escape.EscapeTests.test_invalid_third_vertex) ... ok
+2026-10-11T19:28:05.5478151Z test_isolated_carrier_type (test_escape.EscapeTests.test_isolated_carrier_type) ... ok
+2026-10-11T19:28:05.5478974Z test_leaf_and_equal_star_domain (test_escape.EscapeTests.test_leaf_and_equal_star_domain) ... ok
+2026-10-11T19:28:05.8543409Z test_missing_addition (test_escape.EscapeTests.test_missing_addition) ... ok
+2026-10-11T19:28:06.1535007Z test_missing_implementation_contract (test_escape.EscapeTests.test_missing_implementation_contract) ... ok
+2026-10-11T19:28:06.2040823Z test_missing_stream (test_escape.EscapeTests.test_missing_stream) ... ok
+2026-10-11T19:28:06.2042059Z test_nonminimum_upper_four_cover (test_escape.EscapeTests.test_nonminimum_upper_four_cover) ... ok
+2026-10-11T19:28:06.5173095Z test_omitted_actual_label (test_escape.EscapeTests.test_omitted_actual_label) ... ok
+2026-10-11T19:28:06.8533124Z test_omitted_carrier (test_escape.EscapeTests.test_omitted_carrier) ... ok
+2026-10-11T19:28:07.1641545Z test_omitted_cover (test_escape.EscapeTests.test_omitted_cover) ... ok
+2026-10-11T19:28:07.4804871Z test_omitted_hidden_mask (test_escape.EscapeTests.test_omitted_hidden_mask) ... ok
+2026-10-11T19:28:07.8016025Z test_omitted_profile (test_escape.EscapeTests.test_omitted_profile) ... ok
+2026-10-11T19:28:08.1076854Z test_omitted_root (test_escape.EscapeTests.test_omitted_root) ... ok
+2026-10-11T19:28:08.4222825Z test_omitted_route (test_escape.EscapeTests.test_omitted_route) ... ok
+2026-10-11T19:28:08.7376310Z test_omitted_saturation (test_escape.EscapeTests.test_omitted_saturation) ... ok
+2026-10-11T19:28:09.0423216Z test_omitted_slice (test_escape.EscapeTests.test_omitted_slice) ... ok
+2026-10-11T19:28:09.3539654Z test_omitted_subset (test_escape.EscapeTests.test_omitted_subset) ... ok
+2026-10-11T19:28:09.6705114Z test_omitted_unsafe_candidate (test_escape.EscapeTests.test_omitted_unsafe_candidate) ... ok
+2026-10-11T19:28:09.9381485Z test_omitted_v_certificate (test_escape.EscapeTests.test_omitted_v_certificate) ... ok
+2026-10-11T19:28:10.2521966Z test_omitted_verdict (test_escape.EscapeTests.test_omitted_verdict) ... ok
+2026-10-11T19:28:10.5693786Z test_omitted_x_certificate (test_escape.EscapeTests.test_omitted_x_certificate) ... ok
+2026-10-11T19:28:10.6026660Z test_optimized_runtime_rejection (test_escape.EscapeTests.test_optimized_runtime_rejection) ... ok
+2026-10-11T19:28:10.9103391Z test_original_hidden_masks (test_escape.EscapeTests.test_original_hidden_masks) ... ok
+2026-10-11T19:28:10.9105004Z test_saturated_k2_has_no_outside_extension (test_escape.EscapeTests.test_saturated_k2_has_no_outside_extension) ... ok
+2026-10-11T19:28:10.9106431Z test_saturated_nonedge (test_escape.EscapeTests.test_saturated_nonedge) ... ok
+2026-10-11T19:28:11.2237108Z test_shifted_floor (test_escape.EscapeTests.test_shifted_floor) ... ok
+2026-10-11T19:28:11.2238639Z test_source_hitting_outside_domain (test_escape.EscapeTests.test_source_hitting_outside_domain) ... ok
+2026-10-11T19:28:11.7687099Z test_truncated_stream (test_escape.EscapeTests.test_truncated_stream) ... ok
+2026-10-11T19:28:12.0867572Z test_wrong_label (test_escape.EscapeTests.test_wrong_label) ... ok
+2026-10-11T19:28:12.3943881Z test_wrong_type (test_escape.EscapeTests.test_wrong_type) ... ok
+2026-10-11T19:28:12.3944265Z 
+2026-10-11T19:28:12.3944692Z ----------------------------------------------------------------------
+2026-10-11T19:28:12.3945106Z Ran 42 tests in 9.335s
+2026-10-11T19:28:12.3945358Z 
+2026-10-11T19:28:12.3945508Z OK
+2026-10-11T19:28:12.8253499Z test_actual_anchor_endpoints (test_cover_static.CoverStaticTests.test_actual_anchor_endpoints) ... ok
+2026-10-11T19:28:12.8571320Z test_complete_family_identity (test_cover_static.CoverStaticTests.test_complete_family_identity) ... ok
+2026-10-11T19:28:12.9843133Z test_corrupt_stream (test_cover_static.CoverStaticTests.test_corrupt_stream) ... ok
+2026-10-11T19:28:12.9845421Z test_cover_condition_rejects_floor_only_spare (test_cover_static.CoverStaticTests.test_cover_condition_rejects_floor_only_spare) ... ok
+2026-10-11T19:28:12.9847116Z test_duplicate_restores_eligibility (test_cover_static.CoverStaticTests.test_duplicate_restores_eligibility) ... ok
+2026-10-11T19:28:13.1914672Z test_every_declared_count_and_cover (test_cover_static.CoverStaticTests.test_every_declared_count_and_cover) ... ok
+2026-10-11T19:28:13.4715545Z test_extra_stream (test_cover_static.CoverStaticTests.test_extra_stream) ... ok
+2026-10-11T19:28:13.5922879Z test_fresh_label (test_cover_static.CoverStaticTests.test_fresh_label) ... ok
+2026-10-11T19:28:13.5924793Z test_invalid_cover (test_cover_static.CoverStaticTests.test_invalid_cover) ... ok
+2026-10-11T19:28:13.5925848Z test_isolated_carrier (test_cover_static.CoverStaticTests.test_isolated_carrier) ... ok
+2026-10-11T19:28:13.5927035Z test_locked_static_boundary (test_cover_static.CoverStaticTests.test_locked_static_boundary) ... ok
+2026-10-11T19:28:13.8038497Z test_missing_implementation_contract (test_cover_static.CoverStaticTests.test_missing_implementation_contract) ... ok
+2026-10-11T19:28:13.8170740Z test_missing_stream (test_cover_static.CoverStaticTests.test_missing_stream) ... ok
+2026-10-11T19:28:13.8171777Z test_nonessential_isolates (test_cover_static.CoverStaticTests.test_nonessential_isolates) ... ok
+2026-10-11T19:28:13.8172718Z test_nonminimum_cover_required (test_cover_static.CoverStaticTests.test_nonminimum_cover_required) ... ok
+2026-10-11T19:28:14.0383054Z test_omitted_carrier (test_cover_static.CoverStaticTests.test_omitted_carrier) ... ok
+2026-10-11T19:28:14.1565523Z test_omitted_count (test_cover_static.CoverStaticTests.test_omitted_count) ... ok
+2026-10-11T19:28:14.2743587Z test_omitted_cover (test_cover_static.CoverStaticTests.test_omitted_cover) ... ok
+2026-10-11T19:28:14.3931524Z test_omitted_endpoint (test_cover_static.CoverStaticTests.test_omitted_endpoint) ... ok
+2026-10-11T19:28:14.5116481Z test_omitted_independent_set (test_cover_static.CoverStaticTests.test_omitted_independent_set) ... ok
+2026-10-11T19:28:14.6302798Z test_omitted_minimizer (test_cover_static.CoverStaticTests.test_omitted_minimizer) ... ok
+2026-10-11T19:28:14.7462157Z test_omitted_profile (test_cover_static.CoverStaticTests.test_omitted_profile) ... ok
+2026-10-11T19:28:14.8595135Z test_omitted_protected_mask (test_cover_static.CoverStaticTests.test_omitted_protected_mask) ... ok
+2026-10-11T19:28:14.9749242Z test_omitted_saturation (test_cover_static.CoverStaticTests.test_omitted_saturation) ... ok
+2026-10-11T19:28:14.9923316Z test_optimized_runtime_rejects (test_cover_static.CoverStaticTests.test_optimized_runtime_rejects) ... ok
+2026-10-11T19:28:15.2044802Z test_original_hidden_masks (test_cover_static.CoverStaticTests.test_original_hidden_masks) ... ok
+2026-10-11T19:28:15.2046437Z test_oversized_cover (test_cover_static.CoverStaticTests.test_oversized_cover) ... ok
+2026-10-11T19:28:15.2047686Z test_saturated_nonedge (test_cover_static.CoverStaticTests.test_saturated_nonedge) ... ok
+2026-10-11T19:28:15.3175205Z test_shifted_floor (test_cover_static.CoverStaticTests.test_shifted_floor) ... ok
+2026-10-11T19:28:15.5328244Z test_singleton_cover_depletion (test_cover_static.CoverStaticTests.test_singleton_cover_depletion) ... ok
+2026-10-11T19:28:15.5329394Z test_source_tau_outside (test_cover_static.CoverStaticTests.test_source_tau_outside) ... ok
+2026-10-11T19:28:15.8115673Z test_truncated_stream (test_cover_static.CoverStaticTests.test_truncated_stream) ... ok
+2026-10-11T19:28:15.9293659Z test_wrong_actual_anchor (test_cover_static.CoverStaticTests.test_wrong_actual_anchor) ... ok
+2026-10-11T19:28:16.0488428Z test_wrong_deficiency (test_cover_static.CoverStaticTests.test_wrong_deficiency) ... ok
+2026-10-11T19:28:16.0489906Z test_zero_multiplicity (test_cover_static.CoverStaticTests.test_zero_multiplicity) ... ok
+2026-10-11T19:28:16.0491270Z 
+2026-10-11T19:28:16.0491722Z ----------------------------------------------------------------------
+2026-10-11T19:28:16.0492555Z Ran 35 tests in 3.574s
+2026-10-11T19:28:16.0492877Z 
+2026-10-11T19:28:16.0493083Z OK
+2026-10-11T19:28:17.1618383Z test_anchor (test_nonuniform.Contracts.test_anchor) ... ok
+2026-10-11T19:28:17.1619379Z test_anchor_count (test_nonuniform.Contracts.test_anchor_count) ... ok
+2026-10-11T19:28:17.3259975Z test_case_omission (test_nonuniform.Contracts.test_case_omission) ... ok
+2026-10-11T19:28:17.3260733Z test_cherry_cost (test_nonuniform.Contracts.test_cherry_cost) ... ok
+2026-10-11T19:28:17.3261403Z test_compensation (test_nonuniform.Contracts.test_compensation) ... ok
+2026-10-11T19:28:17.3261910Z test_controls (test_nonuniform.Contracts.test_controls) ... ok
+2026-10-11T19:28:17.4905253Z test_count (test_nonuniform.Contracts.test_count) ... ok
+2026-10-11T19:28:17.6527472Z test_exclusion (test_nonuniform.Contracts.test_exclusion) ... ok
+2026-10-11T19:28:17.6528927Z test_exclusion_differs_target (test_nonuniform.Contracts.test_exclusion_differs_target) ... ok
+2026-10-11T19:28:17.6530018Z test_first_vacancy (test_nonuniform.Contracts.test_first_vacancy) ... ok
+2026-10-11T19:28:17.8151676Z test_floor (test_nonuniform.Contracts.test_floor) ... ok
+2026-10-11T19:28:17.8152817Z test_hidden (test_nonuniform.Contracts.test_hidden) ... ok
+2026-10-11T19:28:17.9774727Z test_hidden_omission (test_nonuniform.Contracts.test_hidden_omission) ... ok
+2026-10-11T19:28:18.0715442Z test_independent (test_nonuniform.Contracts.test_independent) ... ok
+2026-10-11T19:28:18.0716548Z test_isolated_cost (test_nonuniform.Contracts.test_isolated_cost) ... ok
+2026-10-11T19:28:18.0717448Z test_locked_spare (test_nonuniform.Contracts.test_locked_spare) ... ok
+2026-10-11T19:28:18.0718523Z test_lower_bound (test_nonuniform.Contracts.test_lower_bound) ... ok
+2026-10-11T19:28:18.2338575Z test_lower_omission (test_nonuniform.Contracts.test_lower_omission) ... ok
+2026-10-11T19:28:18.2339788Z test_lower_witnesses (test_nonuniform.Contracts.test_lower_witnesses) ... ok
+2026-10-11T19:28:18.3629183Z test_path (test_nonuniform.Contracts.test_path) ... ok
+2026-10-11T19:28:18.5252766Z test_profile (test_nonuniform.Contracts.test_profile) ... ok
+2026-10-11T19:28:18.5253724Z test_profiles (test_nonuniform.Contracts.test_profiles) ... ok
+2026-10-11T19:28:18.6544684Z test_raw_component (test_nonuniform.Contracts.test_raw_component) ... ok
+2026-10-11T19:28:18.7827749Z test_raw_edge (test_nonuniform.Contracts.test_raw_edge) ... ok
+2026-10-11T19:28:18.9135379Z test_raw_hidden (test_nonuniform.Contracts.test_raw_hidden) ... ok
+2026-10-11T19:28:19.0428724Z test_raw_profile_omission (test_nonuniform.Contracts.test_raw_profile_omission) ... ok
+2026-10-11T19:28:19.1714483Z test_raw_vertex (test_nonuniform.Contracts.test_raw_vertex) ... ok
+2026-10-11T19:28:19.1715105Z test_reachable (test_nonuniform.Contracts.test_reachable) ... ok
+2026-10-11T19:28:19.1715715Z test_singleton_donor (test_nonuniform.Contracts.test_singleton_donor) ... ok
+2026-10-11T19:28:19.3349467Z test_source (test_nonuniform.Contracts.test_source) ... ok
+2026-10-11T19:28:19.3350418Z test_static (test_nonuniform.Contracts.test_static) ... ok
+2026-10-11T19:28:19.3351574Z test_static_obstructed_weak (test_nonuniform.Contracts.test_static_obstructed_weak) ... ok
+2026-10-11T19:28:19.4641278Z test_static_witness (test_nonuniform.Contracts.test_static_witness) ... ok
+2026-10-11T19:28:19.4642360Z test_triple_cost (test_nonuniform.Contracts.test_triple_cost) ... ok
+2026-10-11T19:28:19.4642781Z 
+2026-10-11T19:28:19.4643127Z ----------------------------------------------------------------------
+2026-10-11T19:28:19.4643525Z Ran 34 tests in 3.330s
+2026-10-11T19:28:19.4643767Z 
+2026-10-11T19:28:19.4643876Z OK
+2026-10-11T19:28:20.3365503Z test_anchor (test_weak.Contracts.test_anchor) ... ok
+2026-10-11T19:28:20.3366539Z test_anchors (test_weak.Contracts.test_anchors) ... ok
+2026-10-11T19:28:20.4426772Z test_certificate (test_weak.Contracts.test_certificate) ... ok
+2026-10-11T19:28:20.4427907Z test_cherry_cost (test_weak.Contracts.test_cherry_cost) ... ok
+2026-10-11T19:28:20.4428403Z test_classification (test_weak.Contracts.test_classification) ... ok
+2026-10-11T19:28:20.5742498Z test_component (test_weak.Contracts.test_component) ... ok
+2026-10-11T19:28:20.5743232Z test_controls (test_weak.Contracts.test_controls) ... ok
+2026-10-11T19:28:20.7056915Z test_count_change (test_weak.Contracts.test_count_change) ... ok
+2026-10-11T19:28:20.8375818Z test_edge (test_weak.Contracts.test_edge) ... ok
+2026-10-11T19:28:20.8376541Z test_first_vacancy (test_weak.Contracts.test_first_vacancy) ... ok
+2026-10-11T19:28:20.9702040Z test_floor_change (test_weak.Contracts.test_floor_change) ... ok
+2026-10-11T19:28:21.1025410Z test_graph_omission (test_weak.Contracts.test_graph_omission) ... ok
+2026-10-11T19:28:21.1026889Z test_hidden (test_weak.Contracts.test_hidden) ... ok
+2026-10-11T19:28:21.2342241Z test_hidden_omission (test_weak.Contracts.test_hidden_omission) ... ok
+2026-10-11T19:28:21.3392896Z test_identity_omission (test_weak.Contracts.test_identity_omission) ... ok
+2026-10-11T19:28:21.4128725Z test_independent (test_weak.Contracts.test_independent) ... ok
+2026-10-11T19:28:21.4129541Z test_isolated_cost (test_weak.Contracts.test_isolated_cost) ... ok
+2026-10-11T19:28:21.4130444Z test_locked_spare (test_weak.Contracts.test_locked_spare) ... ok
+2026-10-11T19:28:21.4131219Z test_lower_bound (test_weak.Contracts.test_lower_bound) ... ok
+2026-10-11T19:28:21.5451889Z test_lower_omission (test_weak.Contracts.test_lower_omission) ... ok
+2026-10-11T19:28:21.5452915Z test_lower_universe (test_weak.Contracts.test_lower_universe) ... ok
+2026-10-11T19:28:21.5453524Z test_missing_compensation (test_weak.Contracts.test_missing_compensation) ... ok
+2026-10-11T19:28:21.6515712Z test_path (test_weak.Contracts.test_path) ... ok
+2026-10-11T19:28:21.7564995Z test_raw_component (test_weak.Contracts.test_raw_component) ... ok
+2026-10-11T19:28:21.8616609Z test_raw_edge (test_weak.Contracts.test_raw_edge) ... ok
+2026-10-11T19:28:21.9676251Z test_raw_hidden_mask (test_weak.Contracts.test_raw_hidden_mask) ... ok
+2026-10-11T19:28:22.0733375Z test_raw_vertex (test_weak.Contracts.test_raw_vertex) ... ok
+2026-10-11T19:28:22.2053097Z test_static (test_weak.Contracts.test_static) ... ok
+2026-10-11T19:28:22.2054499Z test_t1_exception (test_weak.Contracts.test_t1_exception) ... ok
+2026-10-11T19:28:22.3372582Z test_t_omission (test_weak.Contracts.test_t_omission) ... ok
+2026-10-11T19:28:22.3373775Z test_triple_cost (test_weak.Contracts.test_triple_cost) ... ok
+2026-10-11T19:28:22.4692868Z test_vertex (test_weak.Contracts.test_vertex) ... ok
+2026-10-11T19:28:22.4693609Z 
+2026-10-11T19:28:22.4693980Z ----------------------------------------------------------------------
+2026-10-11T19:28:22.4695370Z Ran 32 tests in 2.931s
+2026-10-11T19:28:22.4695800Z 
+2026-10-11T19:28:22.4696095Z OK
+2026-10-11T19:28:22.8506780Z test_actual_input_rejection (test_fingerprint.Contracts.test_actual_input_rejection) ... ok
+2026-10-11T19:28:22.8507926Z test_batch_cost (test_fingerprint.Contracts.test_batch_cost) ... ok
+2026-10-11T19:28:23.2079147Z test_batch_omission (test_fingerprint.Contracts.test_batch_omission) ... ok
+2026-10-11T19:28:23.2249954Z test_canonical_vertex_corruption (test_fingerprint.Contracts.test_canonical_vertex_corruption) ... ok
+2026-10-11T19:28:23.2251531Z test_certificate_controls (test_fingerprint.Contracts.test_certificate_controls) ... ok
+2026-10-11T19:28:23.2464220Z test_components (test_fingerprint.Contracts.test_components) ... ok
+2026-10-11T19:28:23.2678682Z test_count_corruption (test_fingerprint.Contracts.test_count_corruption) ... ok
+2026-10-11T19:28:23.2893037Z test_edges (test_fingerprint.Contracts.test_edges) ... ok
+2026-10-11T19:28:23.3107609Z test_fingerprint (test_fingerprint.Contracts.test_fingerprint) ... ok
+2026-10-11T19:28:23.3108837Z test_first_absence (test_fingerprint.Contracts.test_first_absence) ... ok
+2026-10-11T19:28:23.3109756Z test_first_cost (test_fingerprint.Contracts.test_first_cost) ... ok
+2026-10-11T19:28:23.3325487Z test_first_omission (test_fingerprint.Contracts.test_first_omission) ... ok
+2026-10-11T19:28:23.3539647Z test_floor_corruption (test_fingerprint.Contracts.test_floor_corruption) ... ok
+2026-10-11T19:28:23.3753367Z test_graph_identity (test_fingerprint.Contracts.test_graph_identity) ... ok
+2026-10-11T19:28:23.3970071Z test_graph_omission (test_fingerprint.Contracts.test_graph_omission) ... ok
+2026-10-11T19:28:23.3971096Z test_hidden (test_fingerprint.Contracts.test_hidden) ... ok
+2026-10-11T19:28:23.4186512Z test_hidden_omission (test_fingerprint.Contracts.test_hidden_omission) ... ok
+2026-10-11T19:28:23.4353216Z test_identity_omission (test_fingerprint.Contracts.test_identity_omission) ... ok
+2026-10-11T19:28:23.4474561Z test_independent (test_fingerprint.Contracts.test_independent) ... ok
+2026-10-11T19:28:23.4476092Z test_isolation (test_fingerprint.Contracts.test_isolation) ... ok
+2026-10-11T19:28:23.4476999Z test_join_hidden (test_fingerprint.Contracts.test_join_hidden) ... ok
+2026-10-11T19:28:23.4477971Z test_join_optimal (test_fingerprint.Contracts.test_join_optimal) ... ok
+2026-10-11T19:28:23.4485743Z test_join_reverse (test_fingerprint.Contracts.test_join_reverse) ... ok
+2026-10-11T19:28:23.4694697Z test_lifts (test_fingerprint.Contracts.test_lifts) ... ok
+2026-10-11T19:28:23.4695461Z test_locked_minimum (test_fingerprint.Contracts.test_locked_minimum) ... ok
+2026-10-11T19:28:23.4911399Z test_raw (test_fingerprint.Contracts.test_raw) ... ok
+2026-10-11T19:28:23.4912192Z test_raw_connected (test_fingerprint.Contracts.test_raw_connected) ... ok
+2026-10-11T19:28:23.5126216Z test_source (test_fingerprint.Contracts.test_source) ... ok
+2026-10-11T19:28:23.5126965Z test_star_minimum (test_fingerprint.Contracts.test_star_minimum) ... ok
+2026-10-11T19:28:23.5339106Z test_static (test_fingerprint.Contracts.test_static) ... ok
+2026-10-11T19:28:23.5553318Z test_t_identity (test_fingerprint.Contracts.test_t_identity) ... ok
+2026-10-11T19:28:23.5554435Z test_upper5 (test_fingerprint.Contracts.test_upper5) ... ok
+2026-10-11T19:28:23.5770974Z test_vertices (test_fingerprint.Contracts.test_vertices) ... ok
+2026-10-11T19:28:23.5771436Z 
+2026-10-11T19:28:23.5771665Z ----------------------------------------------------------------------
+2026-10-11T19:28:23.5772316Z Ran 33 tests in 1.051s
+2026-10-11T19:28:23.5772587Z 
+2026-10-11T19:28:23.5772724Z OK
+2026-10-11T19:28:23.6610759Z test_all_anchor_choices (test_private.Contracts.test_all_anchor_choices) ... ok
+2026-10-11T19:28:23.6732803Z test_both_modes (test_private.Contracts.test_both_modes) ... ok
+2026-10-11T19:28:23.7012835Z test_changed_mode (test_private.Contracts.test_changed_mode) ... ok
+2026-10-11T19:28:23.7277874Z test_component_corruption (test_private.Contracts.test_component_corruption) ... ok
+2026-10-11T19:28:23.7543141Z test_counts_corruption (test_private.Contracts.test_counts_corruption) ... ok
+2026-10-11T19:28:23.7808270Z test_edge_corruption (test_private.Contracts.test_edge_corruption) ... ok
+2026-10-11T19:28:23.7930600Z test_exact_tau (test_private.Contracts.test_exact_tau) ... ok
+2026-10-11T19:28:23.8195259Z test_expansion_corruption (test_private.Contracts.test_expansion_corruption) ... ok
+2026-10-11T19:28:23.8318145Z test_hidden_checked (test_private.Contracts.test_hidden_checked) ... ok
+2026-10-11T19:28:23.8580526Z test_independent (test_private.Contracts.test_independent) ... ok
+2026-10-11T19:28:23.8843524Z test_lift_corruption (test_private.Contracts.test_lift_corruption) ... ok
+2026-10-11T19:28:23.9129602Z test_meet_corruption (test_private.Contracts.test_meet_corruption) ... ok
+2026-10-11T19:28:23.9261977Z test_negative (test_private.Contracts.test_negative) ... ok
+2026-10-11T19:28:23.9262993Z test_no_private_rejected (test_private.Contracts.test_no_private_rejected) ... ok
+2026-10-11T19:28:23.9530028Z test_omitted_anchor (test_private.Contracts.test_omitted_anchor) ... ok
+2026-10-11T19:28:23.9794597Z test_omitted_source (test_private.Contracts.test_omitted_source) ... ok
+2026-10-11T19:28:23.9918839Z test_positive (test_private.Contracts.test_positive) ... ok
+2026-10-11T19:28:24.0183997Z test_positive_omission (test_private.Contracts.test_positive_omission) ... ok
+2026-10-11T19:28:24.0306943Z test_positive_route (test_private.Contracts.test_positive_route) ... ok
+2026-10-11T19:28:24.0430184Z test_private_loss_rejected (test_private.Contracts.test_private_loss_rejected) ... ok
+2026-10-11T19:28:24.0695241Z test_rename_corruption (test_private.Contracts.test_rename_corruption) ... ok
+2026-10-11T19:28:24.0818127Z test_shift_graph (test_private.Contracts.test_shift_graph) ... ok
+2026-10-11T19:28:24.1082990Z test_vacancy_corruption (test_private.Contracts.test_vacancy_corruption) ... ok
+2026-10-11T19:28:24.1349045Z test_vertex_corruption (test_private.Contracts.test_vertex_corruption) ... ok
+2026-10-11T19:28:24.1350540Z test_zero_original_floor_rejected (test_private.Contracts.test_zero_original_floor_rejected) ... ok
+2026-10-11T19:28:24.1473931Z test_zero_residual_floors (test_private.Contracts.test_zero_residual_floors) ... ok
+2026-10-11T19:28:24.1474685Z 
+2026-10-11T19:28:24.1474876Z ----------------------------------------------------------------------
+2026-10-11T19:28:24.1475398Z Ran 26 tests in 0.503s
+2026-10-11T19:28:24.1475590Z 
+2026-10-11T19:28:24.1475698Z OK
+2026-10-11T19:28:25.3362901Z test_cover_edge_omission (test_moving.AdditionalControls.test_cover_edge_omission) ... ok
+2026-10-11T19:28:25.3372844Z test_cover_vertex_omission (test_moving.AdditionalControls.test_cover_vertex_omission) ... ok
+2026-10-11T19:28:25.3374260Z test_mandatory_target_requires_moving_cover (test_moving.AdditionalControls.test_mandatory_target_requires_moving_cover) ... ok
+2026-10-11T19:28:25.3385057Z test_marked_identity_corruption (test_moving.AdditionalControls.test_marked_identity_corruption) ... ok
+2026-10-11T19:28:25.3395294Z test_one_cover_target_job_omission (test_moving.AdditionalControls.test_one_cover_target_job_omission) ... ok
+2026-10-11T19:28:25.3405138Z test_target_identity_corruption (test_moving.AdditionalControls.test_target_identity_corruption) ... ok
+2026-10-11T19:28:25.8059110Z test_anonymous_absence_not_marked (test_moving.MovingContracts.test_anonymous_absence_not_marked) ... ok
+2026-10-11T19:28:25.8064129Z test_complete_fixture (test_moving.MovingContracts.test_complete_fixture) ... ok
+2026-10-11T19:28:25.8074816Z test_component_omission (test_moving.MovingContracts.test_component_omission) ... ok
+2026-10-11T19:28:25.8084110Z test_cover_job_omission (test_moving.MovingContracts.test_cover_job_omission) ... ok
+2026-10-11T19:28:25.8093946Z test_edge_omission (test_moving.MovingContracts.test_edge_omission) ... ok
+2026-10-11T19:28:25.8103844Z test_family_anchored_omission (test_moving.MovingContracts.test_family_anchored_omission) ... ok
+2026-10-11T19:28:25.8113655Z test_family_capacity (test_moving.MovingContracts.test_family_capacity) ... ok
+2026-10-11T19:28:25.8123747Z test_family_fixed_cover_obstruction (test_moving.MovingContracts.test_family_fixed_cover_obstruction) ... ok
+2026-10-11T19:28:25.8133315Z test_family_wrong_endpoint (test_moving.MovingContracts.test_family_wrong_endpoint) ... ok
+2026-10-11T19:28:25.8143080Z test_family_wrong_ops (test_moving.MovingContracts.test_family_wrong_ops) ... ok
+2026-10-11T19:28:25.8144243Z test_fixture_contains_both_floor_modes (test_moving.MovingContracts.test_fixture_contains_both_floor_modes) ... ok
+2026-10-11T19:28:25.8153733Z test_floor_identity (test_moving.MovingContracts.test_floor_identity) ... ok
+2026-10-11T19:28:25.8154893Z test_marked_target_absence (test_moving.MovingContracts.test_marked_target_absence) ... ok
+2026-10-11T19:28:25.8164258Z test_native_lift_omission (test_moving.MovingContracts.test_native_lift_omission) ... ok
+2026-10-11T19:28:25.8172789Z test_omitted_cases (test_moving.MovingContracts.test_omitted_cases) ... ok
+2026-10-11T19:28:25.8181993Z test_omitted_family (test_moving.MovingContracts.test_omitted_family) ... ok
+2026-10-11T19:28:25.8182961Z test_real_fixed_cover (test_moving.MovingContracts.test_real_fixed_cover) ... ok
+2026-10-11T19:28:25.8183981Z test_saturated_family_route (test_moving.MovingContracts.test_saturated_family_route) ... ok
+2026-10-11T19:28:25.8193552Z test_source_component (test_moving.MovingContracts.test_source_component) ... ok
+2026-10-11T19:28:25.8203737Z test_source_identity (test_moving.MovingContracts.test_source_identity) ... ok
+2026-10-11T19:28:25.8204909Z test_unmarked_any_absence (test_moving.MovingContracts.test_unmarked_any_absence) ... ok
+2026-10-11T19:28:25.8214254Z test_vertex_omission (test_moving.MovingContracts.test_vertex_omission) ... ok
+2026-10-11T19:28:25.8214880Z 
+2026-10-11T19:28:25.8215229Z ----------------------------------------------------------------------
+2026-10-11T19:28:25.8216156Z Ran 28 tests in 1.607s
+2026-10-11T19:28:25.8216500Z 
+2026-10-11T19:28:25.8216741Z OK
+2026-10-11T19:28:25.8901431Z test_bad_domination (test_saturated.Construction.test_bad_domination) ... ok
+2026-10-11T19:28:25.8903091Z test_cost (test_saturated.Construction.test_cost) ... ok
+2026-10-11T19:28:25.8903969Z test_first_vacancy (test_saturated.Construction.test_first_vacancy) ... ok
+2026-10-11T19:28:25.8905059Z test_fresh_label (test_saturated.Construction.test_fresh_label) ... ok
+2026-10-11T19:28:25.8906052Z test_native_hidden (test_saturated.Construction.test_native_hidden) ... ok
+2026-10-11T19:28:25.8906965Z test_saturated (test_saturated.Construction.test_saturated) ... ok
+2026-10-11T19:28:25.8907795Z test_source (test_saturated.Construction.test_source) ... ok
+2026-10-11T19:28:25.8936542Z test_static_negative (test_saturated.Construction.test_static_negative) ... ok
+2026-10-11T19:28:25.9035789Z test_static_positive (test_saturated.Construction.test_static_positive) ... ok
+2026-10-11T19:28:26.6971894Z test_bad_floor (test_saturated.Contracts.test_bad_floor) ... ok
+2026-10-11T19:28:26.8269213Z test_bad_toggle (test_saturated.Contracts.test_bad_toggle) ... ok
+2026-10-11T19:28:26.8637601Z test_capacity_omission (test_saturated.Contracts.test_capacity_omission) ... ok
+2026-10-11T19:28:26.9207332Z test_component_corruption (test_saturated.Contracts.test_component_corruption) ... ok
+2026-10-11T19:28:26.9775395Z test_count_vertex_omission (test_saturated.Contracts.test_count_vertex_omission) ... ok
+2026-10-11T19:28:27.0413894Z test_edge_omission (test_saturated.Contracts.test_edge_omission) ... ok
+2026-10-11T19:28:27.0415598Z test_equal_counts_do_not_decide_labelled_target (test_saturated.Contracts.test_equal_counts_do_not_decide_labelled_target) ... ok
+2026-10-11T19:28:27.0781159Z test_graph_omission (test_saturated.Contracts.test_graph_omission) ... ok
+2026-10-11T19:28:27.6561637Z test_independent (test_saturated.Contracts.test_independent) ... ok
+2026-10-11T19:28:27.7294759Z test_lift_omission (test_saturated.Contracts.test_lift_omission) ... ok
+2026-10-11T19:28:27.8006831Z test_permutation_omission (test_saturated.Contracts.test_permutation_omission) ... ok
+2026-10-11T19:28:28.0449722Z test_renewal_bypass (test_saturated.Contracts.test_renewal_bypass) ... ok
+2026-10-11T19:28:28.3025203Z test_renewal_omission (test_saturated.Contracts.test_renewal_omission) ... ok
+2026-10-11T19:28:28.3704795Z test_route_omission (test_saturated.Contracts.test_route_omission) ... ok
+2026-10-11T19:28:28.4062426Z test_source_omission (test_saturated.Contracts.test_source_omission) ... ok
+2026-10-11T19:28:28.4590838Z test_vector_omission (test_saturated.Contracts.test_vector_omission) ... ok
+2026-10-11T19:28:28.5160941Z test_witness_omission (test_saturated.Contracts.test_witness_omission) ... ok
+2026-10-11T19:28:28.5161403Z 
+2026-10-11T19:28:28.5161637Z ----------------------------------------------------------------------
+2026-10-11T19:28:28.5162050Z Ran 26 tests in 2.626s
+2026-10-11T19:28:28.5162260Z 
+2026-10-11T19:28:28.5162423Z OK
+2026-10-11T19:28:28.9091720Z test_altered_floor (test_slack.CertificateContracts.test_altered_floor) ... ok
+2026-10-11T19:28:28.9288276Z test_altered_toggle (test_slack.CertificateContracts.test_altered_toggle) ... ok
+2026-10-11T19:28:29.0685133Z test_independent (test_slack.CertificateContracts.test_independent) ... ok
+2026-10-11T19:28:29.0807104Z test_omitted_batch (test_slack.CertificateContracts.test_omitted_batch) ... ok
+2026-10-11T19:28:29.0987542Z test_omitted_bfs (test_slack.CertificateContracts.test_omitted_bfs) ... ok
+2026-10-11T19:28:29.1087538Z test_omitted_capacity (test_slack.CertificateContracts.test_omitted_capacity) ... ok
+2026-10-11T19:28:29.1205807Z test_omitted_layer_state (test_slack.CertificateContracts.test_omitted_layer_state) ... ok
+2026-10-11T19:28:29.1339471Z test_omitted_permutation (test_slack.CertificateContracts.test_omitted_permutation) ... ok
+2026-10-11T19:28:29.1438225Z test_omitted_route (test_slack.CertificateContracts.test_omitted_route) ... ok
+2026-10-11T19:28:29.1528667Z test_omitted_source (test_slack.CertificateContracts.test_omitted_source) ... ok
+2026-10-11T19:28:29.1628854Z test_omitted_vector (test_slack.CertificateContracts.test_omitted_vector) ... ok
+2026-10-11T19:28:29.2111967Z test_renewal_bypass_rejected (test_slack.CertificateContracts.test_renewal_bypass_rejected) ... ok
+2026-10-11T19:28:29.2112975Z test_bad_domination (test_slack.SlackContracts.test_bad_domination) ... ok
+2026-10-11T19:28:29.8546473Z test_bfs_allows_upper_four (test_slack.SlackContracts.test_bfs_allows_upper_four) ... ok
+2026-10-11T19:28:29.8547390Z test_bfs_minimum (test_slack.SlackContracts.test_bfs_minimum) ... ok
+2026-10-11T19:28:29.8548135Z test_capacity (test_slack.SlackContracts.test_capacity) ... ok
+2026-10-11T19:28:29.8548904Z test_first_vacancy (test_slack.SlackContracts.test_first_vacancy) ... ok
+2026-10-11T19:28:29.8549751Z test_fresh_label_rejected (test_slack.SlackContracts.test_fresh_label_rejected) ... ok
+2026-10-11T19:28:29.8550584Z test_hidden_witness (test_slack.SlackContracts.test_hidden_witness) ... ok
+2026-10-11T19:28:29.8551411Z test_no_slack (test_slack.SlackContracts.test_no_slack) ... ok
+2026-10-11T19:28:29.8552126Z test_one_slack (test_slack.SlackContracts.test_one_slack) ... ok
+2026-10-11T19:28:29.8552705Z test_positive (test_slack.SlackContracts.test_positive) ... ok
+2026-10-11T19:28:29.8553185Z test_source (test_slack.SlackContracts.test_source) ... ok
+2026-10-11T19:28:29.8553702Z test_source_hidden (test_slack.SlackContracts.test_source_hidden) ... ok
+2026-10-11T19:28:29.8554068Z 
+2026-10-11T19:28:29.8554245Z ----------------------------------------------------------------------
+2026-10-11T19:28:29.8555181Z Ran 24 tests in 1.247s
+2026-10-11T19:28:29.8574776Z 
+2026-10-11T19:28:29.8585234Z OK
+2026-10-11T19:28:29.9253389Z test_actual_nonmonotone_handover_toggles (test_handover.Contract.test_actual_nonmonotone_handover_toggles) ... ok
+2026-10-11T19:28:29.9254548Z test_upper_four_meet_accepted (test_handover.Contract.test_upper_four_meet_accepted) ... ok
+2026-10-11T19:28:29.9255516Z test_zero_bridge_lift (test_handover.Contract.test_zero_bridge_lift) ... ok
+2026-10-11T19:28:30.2633980Z test_corrupted_compressed_partition_rejected (test_handover.GraphContracts.test_corrupted_compressed_partition_rejected) ... ok
+2026-10-11T19:28:30.3664138Z test_corrupted_full_partition_rejected (test_handover.GraphContracts.test_corrupted_full_partition_rejected) ... ok
+2026-10-11T19:28:30.3666115Z test_empty_coordinate_retained_in_expansion (test_handover.GraphContracts.test_empty_coordinate_retained_in_expansion) ... ok
+2026-10-11T19:28:30.3666883Z test_floor_rejects_vertex (test_handover.GraphContracts.test_floor_rejects_vertex) ... ok
+2026-10-11T19:28:30.4763137Z test_full_component_equivalence (test_handover.GraphContracts.test_full_component_equivalence) ... ok
+2026-10-11T19:28:30.4764796Z test_multiple_coordinates_are_not_an_edge_lift (test_handover.GraphContracts.test_multiple_coordinates_are_not_an_edge_lift) ... ok
+2026-10-11T19:28:30.4765737Z test_nonmonotone_lift_restores_exact_labelled_source (test_handover.GraphContracts.test_nonmonotone_lift_restores_exact_labelled_source) ... ok
+2026-10-11T19:28:30.5782927Z test_omitted_compressed_vertex_rejected (test_handover.GraphContracts.test_omitted_compressed_vertex_rejected) ... ok
+2026-10-11T19:28:30.6822242Z test_omitted_edge_rejected (test_handover.GraphContracts.test_omitted_edge_rejected) ... ok
+2026-10-11T19:28:30.7859896Z test_omitted_full_vertex_rejected (test_handover.GraphContracts.test_omitted_full_vertex_rejected) ... ok
+2026-10-11T19:28:31.7289986Z test_source_omission_rejected (test_handover.GraphContracts.test_source_omission_rejected) ... ok
+2026-10-11T19:28:31.7294255Z test_true_upper_cover_handover_obstruction (test_handover.GraphContracts.test_true_upper_cover_handover_obstruction) ... ok
+2026-10-11T19:28:31.7316442Z test_all_expansion_choices_share_a_component (test_handover.InheritedBoundaryContracts.test_all_expansion_choices_share_a_component) ... ok
+2026-10-11T19:28:31.7318280Z test_hidden_upper_control_rejects_empty_meet (test_handover.InheritedBoundaryContracts.test_hidden_upper_control_rejects_empty_meet) ... ok
+2026-10-11T19:28:31.7323046Z test_isolated_obstruction_has_singleton_assignment_component (test_handover.InheritedBoundaryContracts.test_isolated_obstruction_has_singleton_assignment_component) ... ok
+2026-10-11T19:28:31.7324948Z test_lift_cost_is_symmetric_difference (test_handover.InheritedBoundaryContracts.test_lift_cost_is_symmetric_difference) ... ok
+2026-10-11T19:28:31.7330216Z test_local_motion_collapses_without_reserve (test_handover.InheritedBoundaryContracts.test_local_motion_collapses_without_reserve) ... ok
+2026-10-11T19:28:31.7331476Z 
+2026-10-11T19:28:31.7331814Z ----------------------------------------------------------------------
+2026-10-11T19:28:31.7332712Z Ran 20 tests in 1.808s
+2026-10-11T19:28:31.7333081Z 
+2026-10-11T19:28:31.7333310Z OK
+2026-10-11T19:28:40.4701078Z test_anchoring_control (test_anchored.Contracts.test_anchoring_control) ... ok
+2026-10-11T19:28:40.4702772Z test_arbitrary_reserve_moving_permutations (test_anchored.Contracts.test_arbitrary_reserve_moving_permutations) ... ok
+2026-10-11T19:28:40.5634064Z test_bool_for_int (test_anchored.Contracts.test_bool_for_int) ... ok
+2026-10-11T19:28:40.6083747Z test_complete_independent_identity (test_anchored.Contracts.test_complete_independent_identity) ... ok
+2026-10-11T19:28:40.6832004Z test_duplicate_primary (test_anchored.Contracts.test_duplicate_primary) ... ok
+2026-10-11T19:28:40.6832728Z test_exact_primary_coverage (test_anchored.Contracts.test_exact_primary_coverage) ... ok
+2026-10-11T19:28:40.7845169Z test_extra_field (test_anchored.Contracts.test_extra_field) ... ok
+2026-10-11T19:28:40.8951124Z test_false_coverage (test_anchored.Contracts.test_false_coverage) ... ok
+2026-10-11T19:28:40.8952575Z test_floor_demand_control (test_anchored.Contracts.test_floor_demand_control) ... ok
+2026-10-11T19:28:40.9835301Z test_missing_primary (test_anchored.Contracts.test_missing_primary) ... ok
+2026-10-11T19:28:40.9836876Z test_multi_donor_without_backbone (test_anchored.Contracts.test_multi_donor_without_backbone) ... ok
+2026-10-11T19:28:40.9838501Z test_old_obstructions_retained (test_anchored.Contracts.test_old_obstructions_retained) ... ok
+2026-10-11T19:28:40.9839824Z test_original_domination_control (test_anchored.Contracts.test_original_domination_control) ... ok
+2026-10-11T19:28:41.0504608Z test_substituted_source (test_anchored.Contracts.test_substituted_source) ... ok
+2026-10-11T19:28:41.0505597Z test_upper_cover_control (test_anchored.Contracts.test_upper_cover_control) ... ok
+2026-10-11T19:28:41.1602125Z test_wrong_endpoint (test_anchored.Contracts.test_wrong_endpoint) ... ok
+2026-10-11T19:28:41.2838566Z test_wrong_hidden_mask (test_anchored.Contracts.test_wrong_hidden_mask) ... ok
+2026-10-11T19:28:41.3527222Z test_wrong_reserve (test_anchored.Contracts.test_wrong_reserve) ... ok
+2026-10-11T19:28:41.4773885Z test_wrong_script (test_anchored.Contracts.test_wrong_script) ... ok
+2026-10-11T19:28:41.5457521Z test_wrong_witness (test_anchored.Contracts.test_wrong_witness) ... ok
+2026-10-11T19:28:41.5457941Z 
+2026-10-11T19:28:41.5458426Z ----------------------------------------------------------------------
+2026-10-11T19:28:41.5458968Z Ran 20 tests in 9.636s
+2026-10-11T19:28:41.5459204Z 
+2026-10-11T19:28:41.5459327Z OK
+2026-10-11T19:29:12.2606330Z test_boolean_integer (test_progress.Contracts.test_boolean_integer) ... ok
+2026-10-11T19:29:12.2735185Z test_duplicate_family (test_progress.Contracts.test_duplicate_family) ... ok
+2026-10-11T19:29:12.2845091Z test_duplicate_state (test_progress.Contracts.test_duplicate_state) ... ok
+2026-10-11T19:29:12.2939173Z test_exact_independent_universe (test_progress.Contracts.test_exact_independent_universe) ... ok
+2026-10-11T19:29:12.3046938Z test_extra_field (test_progress.Contracts.test_extra_field) ... ok
+2026-10-11T19:29:12.3159368Z test_missing_edge (test_progress.Contracts.test_missing_edge) ... ok
+2026-10-11T19:29:12.3264848Z test_missing_family (test_progress.Contracts.test_missing_family) ... ok
+2026-10-11T19:29:12.3375220Z test_missing_state (test_progress.Contracts.test_missing_state) ... ok
+2026-10-11T19:29:12.3482530Z test_missing_witness (test_progress.Contracts.test_missing_witness) ... ok
+2026-10-11T19:29:12.3484257Z test_no_reachable_absent_label (test_progress.Contracts.test_no_reachable_absent_label) ... ok
+2026-10-11T19:29:12.3485422Z test_nonisolated_seven_state_component (test_progress.Contracts.test_nonisolated_seven_state_component) ... ok
+2026-10-11T19:29:12.3486321Z test_static_reserve_grows (test_progress.Contracts.test_static_reserve_grows) ... ok
+2026-10-11T19:29:12.3595420Z test_substituted_edge (test_progress.Contracts.test_substituted_edge) ... ok
+2026-10-11T19:29:12.3702412Z test_wrong_capacity (test_progress.Contracts.test_wrong_capacity) ... ok
+2026-10-11T19:29:12.3812288Z test_wrong_floor (test_progress.Contracts.test_wrong_floor) ... ok
+2026-10-11T19:29:12.3920028Z test_wrong_target (test_progress.Contracts.test_wrong_target) ... ok
+2026-10-11T19:29:12.4031854Z test_wrong_witness (test_progress.Contracts.test_wrong_witness) ... ok
+2026-10-11T19:29:12.4032305Z 
+2026-10-11T19:29:12.4032618Z ----------------------------------------------------------------------
+2026-10-11T19:29:12.4033467Z Ran 17 tests in 30.753s
+2026-10-11T19:29:12.4033705Z 
+2026-10-11T19:29:12.4034040Z OK
+2026-10-11T19:29:15.0080977Z test_complete (test_capacity.Contracts.test_complete) ... ok
+2026-10-11T19:29:15.0247204Z test_duplicate_core (test_capacity.Contracts.test_duplicate_core) ... ok
+2026-10-11T19:29:15.0408565Z test_extra (test_capacity.Contracts.test_extra) ... ok
+2026-10-11T19:29:15.0717073Z test_fake_absence (test_capacity.Contracts.test_fake_absence) ... ok
+2026-10-11T19:29:15.1024181Z test_fake_witness (test_capacity.Contracts.test_fake_witness) ... ok
+2026-10-11T19:29:15.1025692Z test_family_capacity (test_capacity.Contracts.test_family_capacity) ... ok
+2026-10-11T19:29:15.1026622Z test_general_domain (test_capacity.Contracts.test_general_domain) ... ok
+2026-10-11T19:29:15.1333659Z test_hidden_omission (test_capacity.Contracts.test_hidden_omission) ... ok
+2026-10-11T19:29:15.1491328Z test_missing_core (test_capacity.Contracts.test_missing_core) ... ok
+2026-10-11T19:29:15.1798622Z test_missing_family (test_capacity.Contracts.test_missing_family) ... ok
+2026-10-11T19:29:15.2043478Z test_missing_maximal (test_capacity.Contracts.test_missing_maximal) ... ok
+2026-10-11T19:29:15.2345664Z test_missing_toggle (test_capacity.Contracts.test_missing_toggle) ... ok
+2026-10-11T19:29:15.2651750Z test_type (test_capacity.Contracts.test_type) ... ok
+2026-10-11T19:29:15.2652981Z test_unbounded_pattern (test_capacity.Contracts.test_unbounded_pattern) ... ok
+2026-10-11T19:29:15.2983408Z test_upper_forgery (test_capacity.Contracts.test_upper_forgery) ... ok
+2026-10-11T19:29:15.2984751Z test_upper_native_control (test_capacity.Contracts.test_upper_native_control) ... ok
+2026-10-11T19:29:15.3140674Z test_wrong_capacity (test_capacity.Contracts.test_wrong_capacity) ... ok
+2026-10-11T19:29:15.3475209Z test_wrong_counts (test_capacity.Contracts.test_wrong_counts) ... ok
+2026-10-11T19:29:15.3779331Z test_wrong_source (test_capacity.Contracts.test_wrong_source) ... ok
+2026-10-11T19:29:15.4083887Z test_wrong_target (test_capacity.Contracts.test_wrong_target) ... ok
+2026-10-11T19:29:15.4084864Z 
+2026-10-11T19:29:15.4085278Z ----------------------------------------------------------------------
+2026-10-11T19:29:15.4086785Z Ran 20 tests in 2.700s
+2026-10-11T19:29:15.4087103Z 
+2026-10-11T19:29:15.4087354Z OK
+2026-10-11T19:29:32.9447927Z test_bool_for_int (test_transfer.TransferContracts.test_bool_for_int) ... ok
+2026-10-11T19:29:33.0256580Z test_duplicate_case (test_transfer.TransferContracts.test_duplicate_case) ... ok
+2026-10-11T19:29:33.0258336Z test_empty_hidden_protected (test_transfer.TransferContracts.test_empty_hidden_protected) ... ok
+2026-10-11T19:29:33.1463032Z test_entire_typed_domain (test_transfer.TransferContracts.test_entire_typed_domain) ... ok
+2026-10-11T19:29:33.1467664Z test_every_forward_reverse_exact (test_transfer.TransferContracts.test_every_forward_reverse_exact) ... ok
+2026-10-11T19:29:33.2461521Z test_extra_field (test_transfer.TransferContracts.test_extra_field) ... ok
+2026-10-11T19:29:33.3256710Z test_floor_forged (test_transfer.TransferContracts.test_floor_forged) ... ok
+2026-10-11T19:29:33.5253214Z test_forged_control (test_transfer.TransferContracts.test_forged_control) ... ok
+2026-10-11T19:29:33.7451179Z test_forged_counts (test_transfer.TransferContracts.test_forged_counts) ... ok
+2026-10-11T19:29:33.8239556Z test_hidden_change (test_transfer.TransferContracts.test_hidden_change) ... ok
+2026-10-11T19:29:33.9023969Z test_missing_case (test_transfer.TransferContracts.test_missing_case) ... ok
+2026-10-11T19:29:33.9809316Z test_missing_hidden (test_transfer.TransferContracts.test_missing_hidden) ... ok
+2026-10-11T19:29:34.1958870Z test_missing_isolation (test_transfer.TransferContracts.test_missing_isolation) ... ok
+2026-10-11T19:29:34.2749634Z test_missing_partition (test_transfer.TransferContracts.test_missing_partition) ... ok
+2026-10-11T19:29:34.4746124Z test_missing_toggle (test_transfer.TransferContracts.test_missing_toggle) ... ok
+2026-10-11T19:29:34.4747536Z test_native_rejecting_controls (test_transfer.TransferContracts.test_native_rejecting_controls) ... ok
+2026-10-11T19:29:34.4748670Z test_one_block_isolation (test_transfer.TransferContracts.test_one_block_isolation) ... ok
+2026-10-11T19:29:34.5537647Z test_private_cleanup_omitted (test_transfer.TransferContracts.test_private_cleanup_omitted) ... ok
+2026-10-11T19:29:34.6476313Z test_wrong_donor (test_transfer.TransferContracts.test_wrong_donor) ... ok
+2026-10-11T19:29:34.7267564Z test_wrong_hitting (test_transfer.TransferContracts.test_wrong_hitting) ... ok
+2026-10-11T19:29:34.8048955Z test_wrong_reserve (test_transfer.TransferContracts.test_wrong_reserve) ... ok
+2026-10-11T19:29:34.9007990Z test_wrong_reverse (test_transfer.TransferContracts.test_wrong_reverse) ... ok
+2026-10-11T19:29:34.9008929Z 
+2026-10-11T19:29:34.9009297Z ----------------------------------------------------------------------
+2026-10-11T19:29:34.9010191Z Ran 22 tests in 19.405s
+2026-10-11T19:29:34.9010596Z 
+2026-10-11T19:29:34.9010842Z OK
+2026-10-11T19:29:40.3413668Z test_first_progress_equivalence (test_release.Contracts.test_first_progress_equivalence) ... ok
+2026-10-11T19:29:49.9433227Z test_full_independent_reconstruction (test_release.Contracts.test_full_independent_reconstruction) ... ok
+2026-10-11T19:29:49.9434646Z test_host_only_endpoint_cost (test_release.Contracts.test_host_only_endpoint_cost) ... ok
+2026-10-11T19:29:49.9459308Z test_loan_renewal (test_release.Contracts.test_loan_renewal) ... ok
+2026-10-11T19:29:49.9460104Z test_native_capacity_obstruction (test_release.Contracts.test_native_capacity_obstruction) ... ok
+2026-10-11T19:29:49.9461060Z test_native_upper_control (test_release.Contracts.test_native_upper_control) ... ok
+2026-10-11T19:29:50.2706734Z test_reject_bad_mask (test_release.Contracts.test_reject_bad_mask) ... ok
+2026-10-11T19:29:50.5907275Z test_reject_capacity (test_release.Contracts.test_reject_capacity) ... ok
+2026-10-11T19:29:51.2929669Z test_reject_extra (test_release.Contracts.test_reject_extra) ... ok
+2026-10-11T19:29:51.6117695Z test_reject_first_toggles (test_release.Contracts.test_reject_first_toggles) ... ok
+2026-10-11T19:29:52.3142085Z test_reject_loan_cost (test_release.Contracts.test_reject_loan_cost) ... ok
+2026-10-11T19:29:52.6326001Z test_reject_loan_mask (test_release.Contracts.test_reject_loan_mask) ... ok
+2026-10-11T19:29:53.3558016Z test_reject_loan_slice (test_release.Contracts.test_reject_loan_slice) ... ok
+2026-10-11T19:29:53.6740666Z test_reject_loan_tau (test_release.Contracts.test_reject_loan_tau) ... ok
+2026-10-11T19:29:53.9953486Z test_reject_missing_loan (test_release.Contracts.test_reject_missing_loan) ... ok
+2026-10-11T19:29:54.7044822Z test_reject_missing_mask (test_release.Contracts.test_reject_missing_mask) ... ok
+2026-10-11T19:29:55.0221331Z test_reject_missing_source (test_release.Contracts.test_reject_missing_source) ... ok
+2026-10-11T19:29:55.3403663Z test_reject_provenance (test_release.Contracts.test_reject_provenance) ... ok
+2026-10-11T19:29:56.0420793Z test_reject_release_value (test_release.Contracts.test_reject_release_value) ... ok
+2026-10-11T19:29:56.3598762Z test_reject_release_witness (test_release.Contracts.test_reject_release_witness) ... ok
+2026-10-11T19:29:57.0639828Z test_reject_source_core (test_release.Contracts.test_reject_source_core) ... ok
+2026-10-11T19:29:57.3831179Z test_reject_source_tau (test_release.Contracts.test_reject_source_tau) ... ok
+2026-10-11T19:29:58.1045907Z test_reject_strict_pair (test_release.Contracts.test_reject_strict_pair) ... ok
+2026-10-11T19:29:58.4240696Z test_reject_type (test_release.Contracts.test_reject_type) ... ok
+2026-10-11T19:29:58.7431524Z test_reject_upper (test_release.Contracts.test_reject_upper) ... ok
+2026-10-11T19:29:58.7484621Z test_release_criterion (test_release.Contracts.test_release_criterion) ... ok
+2026-10-11T19:29:58.7485499Z 
+2026-10-11T19:29:58.7486075Z ----------------------------------------------------------------------
+2026-10-11T19:29:58.7487222Z Ran 26 tests in 23.716s
+2026-10-11T19:29:58.7487663Z 
+2026-10-11T19:29:58.7487872Z OK
+2026-10-11T19:30:02.4572648Z test_complete_independent_reconstruction (test_footprint.Contracts.test_complete_independent_reconstruction) ... ok
+2026-10-11T19:30:02.4573880Z test_cross_role_hidden_witness (test_footprint.Contracts.test_cross_role_hidden_witness) ... ok
+2026-10-11T19:30:02.4575114Z test_declared_universe (test_footprint.Contracts.test_declared_universe) ... ok
+2026-10-11T19:30:02.4576295Z test_premature_deletion (test_footprint.Contracts.test_premature_deletion) ... ok
+2026-10-11T19:30:02.6242811Z test_reject_boolean_type (test_footprint.Contracts.test_reject_boolean_type) ... ok
+2026-10-11T19:30:02.7028643Z test_reject_classification (test_footprint.Contracts.test_reject_classification) ... ok
+2026-10-11T19:30:02.7796339Z test_reject_conditions (test_footprint.Contracts.test_reject_conditions) ... ok
+2026-10-11T19:30:02.9289441Z test_reject_deadlock (test_footprint.Contracts.test_reject_deadlock) ... ok
+2026-10-11T19:30:03.0069546Z test_reject_duplicate_row (test_footprint.Contracts.test_reject_duplicate_row) ... ok
+2026-10-11T19:30:03.0848457Z test_reject_floor (test_footprint.Contracts.test_reject_floor) ... ok
+2026-10-11T19:30:03.2370402Z test_reject_missing_fixture (test_footprint.Contracts.test_reject_missing_fixture) ... ok
+2026-10-11T19:30:03.3154723Z test_reject_missing_row (test_footprint.Contracts.test_reject_missing_row) ... ok
+2026-10-11T19:30:03.3929793Z test_reject_path (test_footprint.Contracts.test_reject_path) ... ok
+2026-10-11T19:30:03.5458797Z test_reject_protected_mask (test_footprint.Contracts.test_reject_protected_mask) ... ok
+2026-10-11T19:30:03.6264575Z test_reject_provenance (test_footprint.Contracts.test_reject_provenance) ... ok
+2026-10-11T19:30:03.7885077Z test_reject_source_core (test_footprint.Contracts.test_reject_source_core) ... ok
+2026-10-11T19:30:03.8678474Z test_reject_tau (test_footprint.Contracts.test_reject_tau) ... ok
+2026-10-11T19:30:03.9481848Z test_reject_unknown_field (test_footprint.Contracts.test_reject_unknown_field) ... ok
+2026-10-11T19:30:04.1148397Z test_reject_upper (test_footprint.Contracts.test_reject_upper) ... ok
+2026-10-11T19:30:04.1926237Z test_reject_violations (test_footprint.Contracts.test_reject_violations) ... ok
+2026-10-11T19:30:04.1927695Z test_sharp_exchange (test_footprint.Contracts.test_sharp_exchange) ... ok
+2026-10-11T19:30:04.1928988Z test_upper_control (test_footprint.Contracts.test_upper_control) ... ok
+2026-10-11T19:30:04.1929852Z 
+2026-10-11T19:30:04.1930235Z ----------------------------------------------------------------------
+2026-10-11T19:30:04.1931218Z Ran 22 tests in 4.119s
+2026-10-11T19:30:04.1931566Z 
+2026-10-11T19:30:04.1931841Z OK
+2026-10-11T19:30:04.7973263Z test_all_categories (test_fixed_family.Contracts.test_all_categories) ... ok
+2026-10-11T19:30:05.2862987Z test_category (test_fixed_family.Contracts.test_category) ... ok
+2026-10-11T19:30:05.4391327Z test_complement_tau (test_fixed_family.Contracts.test_complement_tau) ... ok
+2026-10-11T19:30:05.4853541Z test_complete (test_fixed_family.Contracts.test_complete) ... ok
+2026-10-11T19:30:05.6442205Z test_core_intersection (test_fixed_family.Contracts.test_core_intersection) ... ok
+2026-10-11T19:30:05.7949657Z test_duplicate_completion (test_fixed_family.Contracts.test_duplicate_completion) ... ok
+2026-10-11T19:30:05.9540483Z test_duplicate_state (test_fixed_family.Contracts.test_duplicate_state) ... ok
+2026-10-11T19:30:06.1050069Z test_false_floor_extension (test_fixed_family.Contracts.test_false_floor_extension) ... ok
+2026-10-11T19:30:06.2658571Z test_false_hidden_control (test_fixed_family.Contracts.test_false_hidden_control) ... ok
+2026-10-11T19:30:06.4171059Z test_false_native_access (test_fixed_family.Contracts.test_false_native_access) ... ok
+2026-10-11T19:30:06.5678707Z test_false_retarget (test_fixed_family.Contracts.test_false_retarget) ... ok
+2026-10-11T19:30:06.7256384Z test_floor (test_fixed_family.Contracts.test_floor) ... ok
+2026-10-11T19:30:06.7351892Z test_full_partition (test_fixed_family.Contracts.test_full_partition) ... ok
+2026-10-11T19:30:06.8855838Z test_missing_completion (test_fixed_family.Contracts.test_missing_completion) ... ok
+2026-10-11T19:30:07.0453021Z test_missing_false_member (test_fixed_family.Contracts.test_missing_false_member) ... ok
+2026-10-11T19:30:07.1981562Z test_missing_fiber (test_fixed_family.Contracts.test_missing_fiber) ... ok
+2026-10-11T19:30:07.3598680Z test_missing_state (test_fixed_family.Contracts.test_missing_state) ... ok
+2026-10-11T19:30:07.5115071Z test_preparation (test_fixed_family.Contracts.test_preparation) ... ok
+2026-10-11T19:30:07.6630448Z test_protected (test_fixed_family.Contracts.test_protected) ... ok
+2026-10-11T19:30:07.8213476Z test_scope (test_fixed_family.Contracts.test_scope) ... ok
+2026-10-11T19:30:07.8232427Z test_sharp_preparation (test_fixed_family.Contracts.test_sharp_preparation) ... ok
+2026-10-11T19:30:07.9739335Z test_state (test_fixed_family.Contracts.test_state) ... ok
+2026-10-11T19:30:08.1325665Z test_substitute_fiber (test_fixed_family.Contracts.test_substitute_fiber) ... ok
+2026-10-11T19:30:08.2833088Z test_substituted_truth (test_fixed_family.Contracts.test_substituted_truth) ... ok
+2026-10-11T19:30:08.4446445Z test_tau (test_fixed_family.Contracts.test_tau) ... ok
+2026-10-11T19:30:08.5960239Z test_type (test_fixed_family.Contracts.test_type) ... ok
+2026-10-11T19:30:08.7488597Z test_witness_protected (test_fixed_family.Contracts.test_witness_protected) ... ok
+2026-10-11T19:30:08.9074685Z test_witness_tau (test_fixed_family.Contracts.test_witness_tau) ... ok
+2026-10-11T19:30:08.9075514Z 
+2026-10-11T19:30:08.9076100Z ----------------------------------------------------------------------
+2026-10-11T19:30:08.9076939Z Ran 28 tests in 4.476s
+2026-10-11T19:30:08.9077258Z 
+2026-10-11T19:30:08.9077555Z OK
+2026-10-11T19:30:09.0810886Z test_fixture_reconstructs (test_star.StarCarrier.test_fixture_reconstructs) ... ok
+2026-10-11T19:30:09.0811936Z test_frozen_complete_universe_size (test_star.StarCarrier.test_frozen_complete_universe_size) ... ok
+2026-10-11T19:30:09.1379729Z test_optimized_runtime_rejection (test_star.StarCarrier.test_optimized_runtime_rejection) ... ok
+2026-10-11T19:30:09.2666172Z test_reject_corrupted_child_order (test_star.StarCarrier.test_reject_corrupted_child_order) ... ok
+2026-10-11T19:30:09.4037655Z test_reject_edge_status_corruption (test_star.StarCarrier.test_reject_edge_status_corruption) ... ok
+2026-10-11T19:30:09.5320010Z test_reject_omitted_band (test_star.StarCarrier.test_reject_omitted_band) ... ok
+2026-10-11T19:30:09.6578307Z test_reject_omitted_floor (test_star.StarCarrier.test_reject_omitted_floor) ... ok
+2026-10-11T19:30:09.7200165Z test_reject_truncation (test_star.StarCarrier.test_reject_truncation) ... ok
+2026-10-11T19:30:09.8455560Z test_reject_wrong_h (test_star.StarCarrier.test_reject_wrong_h) ... ok
+2026-10-11T19:30:09.8515888Z test_tau_equals_h_for_every_fixture_state (test_star.StarCarrier.test_tau_equals_h_for_every_fixture_state) ... ok
+2026-10-11T19:30:09.8516512Z 
+2026-10-11T19:30:09.8516785Z ----------------------------------------------------------------------
+2026-10-11T19:30:09.8517752Z Ran 10 tests in 0.867s
+2026-10-11T19:30:09.8518072Z 
+2026-10-11T19:30:09.8518325Z OK
+2026-10-11T19:30:09.8648806Z ##[group]Run set -euo pipefail
+2026-10-11T19:30:09.8649245Z [36;1mset -euo pipefail[0m
+2026-10-11T19:30:09.8649706Z [36;1mroot='ResearchHistory/UQCF-GEM/research/physical-bridge'[0m
+2026-10-11T19:30:09.8650141Z [36;1mmkdir -p evidence[0m
+2026-10-11T19:30:09.8650557Z [36;1mcp "$root/escape_obstruction/canonical_stream.jsonl" evidence/[0m
+2026-10-11T19:30:09.8651047Z [36;1mcp "$root/escape_obstruction/certificate.json" evidence/[0m
+2026-10-11T19:30:09.8651509Z [36;1mcp "$root/escape_obstruction/independent.json" evidence/[0m
+2026-10-11T19:30:09.8651944Z [36;1mcp "$root/escape_obstruction/PLAN.md" evidence/[0m
+2026-10-11T19:30:09.8652385Z [36;1mcp "$root/escape_obstruction/producer.py" evidence/[0m
+2026-10-11T19:30:09.8652888Z [36;1mcp "$root/escape_obstruction/independent.py" evidence/[0m
+2026-10-11T19:30:09.8653355Z [36;1mcp "$root/escape_obstruction/test_obstruction.py" evidence/[0m
+2026-10-11T19:30:09.8653945Z [36;1mcp "$root/COUPLED_C3_ESCAPE_OBSTRUCTION_SCOPE.md" evidence/[0m
+2026-10-11T19:30:09.8654694Z [36;1mcp "$root/COUPLED_C3_ESCAPE_OBSTRUCTION_RESULT.md" evidence/[0m
+2026-10-11T19:30:09.8655249Z [36;1msha256sum evidence/* | sort > evidence/SHA256SUMS[0m
+2026-10-11T19:30:09.8695327Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-11T19:30:09.8695794Z env:
+2026-10-11T19:30:09.8696158Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:30:09.8696660Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-11T19:30:09.8697176Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:30:09.8697639Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:30:09.8698111Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:30:09.8698545Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-11T19:30:09.8698953Z ##[endgroup]
+2026-10-11T19:30:09.9313985Z ##[group]Run actions/upload-artifact@v4
+2026-10-11T19:30:09.9314565Z with:
+2026-10-11T19:30:09.9314871Z   name: escape-obstruction-verification
+2026-10-11T19:30:09.9315207Z   path: evidence
+2026-10-11T19:30:09.9315530Z   if-no-files-found: error
+2026-10-11T19:30:09.9315840Z   retention-days: 90
+2026-10-11T19:30:09.9316543Z   compression-level: 6
+2026-10-11T19:30:09.9316842Z   overwrite: false
+2026-10-11T19:30:09.9317130Z   include-hidden-files: false
+2026-10-11T19:30:09.9317481Z env:
+2026-10-11T19:30:09.9317814Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:30:09.9318321Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-11T19:30:09.9318803Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:30:09.9319238Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:30:09.9319715Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:30:09.9320244Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-11T19:30:09.9320672Z ##[endgroup]
+2026-10-11T19:30:10.0961907Z (node:2352) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-11T19:30:10.0963135Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-11T19:30:10.1037080Z With the provided path, there will be 10 files uploaded
+2026-10-11T19:30:10.1038125Z Artifact name is valid!
+2026-10-11T19:30:10.1038572Z Root directory input is valid!
+2026-10-11T19:30:10.3449618Z Beginning upload of artifact content to blob storage
+2026-10-11T19:30:10.6251635Z (node:2352) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-11T19:30:11.0148971Z Uploaded bytes 1324725
+2026-10-11T19:30:11.0514004Z Finished uploading artifact content to blob storage!
+2026-10-11T19:30:11.0515920Z SHA256 digest of uploaded artifact zip is 2f4c17e9dd94046e0e8a540e533c1578ac08d45d5040aeadb514b80c93be2c71
+2026-10-11T19:30:11.0517101Z Finalizing artifact upload
+2026-10-11T19:30:11.2606499Z Artifact escape-obstruction-verification.zip successfully finalized. Artifact ID 11713195272
+2026-10-11T19:30:11.2607956Z Artifact escape-obstruction-verification has been successfully uploaded! Final size is 1324725 bytes. Artifact ID is 11713195272
+2026-10-11T19:30:11.2614969Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38167992780/artifacts/11713195272
+2026-10-11T19:30:11.2782022Z Post job cleanup.
+2026-10-11T19:30:11.3947691Z (node:2366) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-11T19:30:11.3948480Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-11T19:30:11.4086867Z Post job cleanup.
+2026-10-11T19:30:11.4936280Z [command]/usr/bin/git version
+2026-10-11T19:30:11.4980690Z git version 2.55.0
+2026-10-11T19:30:11.5020316Z Temporarily overriding HOME='/home/runner/work/_temp/a7d7e464-4e87-450b-9be5-1b96edd959cc' before making global git config changes
+2026-10-11T19:30:11.5021392Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-11T19:30:11.5026841Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-11T19:30:11.5066086Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-11T19:30:11.5098131Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-11T19:30:11.5320057Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-11T19:30:11.5345908Z http.https://github.com/.extraheader
+2026-10-11T19:30:11.5359062Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-11T19:30:11.5394542Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-11T19:30:11.5620113Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-11T19:30:11.5650463Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-11T19:30:11.6073921Z Cleaning up orphan processes
+2026-10-11T19:30:11.6468858Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

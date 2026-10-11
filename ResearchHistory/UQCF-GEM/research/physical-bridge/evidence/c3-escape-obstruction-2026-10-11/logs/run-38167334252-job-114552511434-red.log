@@ -1,0 +1,255 @@
+﻿2026-10-11T19:16:48.9738614Z Current runner version: '2.337.0'
+2026-10-11T19:16:48.9764234Z ##[group]Runner Image Provisioner
+2026-10-11T19:16:48.9765111Z Hosted Compute Agent
+2026-10-11T19:16:48.9765804Z Version: 20261002.596
+2026-10-11T19:16:48.9766440Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-11T19:16:48.9767154Z Build Date: 2026-10-02T22:28:27Z
+2026-10-11T19:16:48.9767949Z Worker ID: {d47affc1-680f-4f5d-b0ba-34ba7f0630a4}
+2026-10-11T19:16:48.9768688Z Region: eastus2
+2026-10-11T19:16:48.9769503Z Cloud: Azure
+2026-10-11T19:16:48.9770068Z ##[endgroup]
+2026-10-11T19:16:48.9771556Z ##[group]Operating System
+2026-10-11T19:16:48.9772356Z Ubuntu
+2026-10-11T19:16:48.9772928Z 24.04.5
+2026-10-11T19:16:48.9773483Z LTS
+2026-10-11T19:16:48.9774014Z ##[endgroup]
+2026-10-11T19:16:48.9774556Z ##[group]Runner Image
+2026-10-11T19:16:48.9775598Z Image: ubuntu-24.04
+2026-10-11T19:16:48.9776216Z Version: 20261004.327.1
+2026-10-11T19:16:48.9777537Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-11T19:16:48.9779102Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-11T19:16:48.9780550Z ##[endgroup]
+2026-10-11T19:16:48.9781694Z ##[group]GITHUB_TOKEN Permissions
+2026-10-11T19:16:48.9783937Z Contents: read
+2026-10-11T19:16:48.9784551Z Metadata: read
+2026-10-11T19:16:48.9785189Z ##[endgroup]
+2026-10-11T19:16:48.9787269Z Secret source: Actions
+2026-10-11T19:16:48.9788327Z Cache mode: write
+2026-10-11T19:16:48.9789552Z Prepare workflow directory
+2026-10-11T19:16:49.0117763Z Prepare all required actions
+2026-10-11T19:16:49.0165783Z Getting action download info
+2026-10-11T19:16:49.2412444Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-11T19:16:49.3321248Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-11T19:16:49.4098872Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-11T19:16:49.6684121Z Complete job name: verification
+2026-10-11T19:16:49.7475002Z ##[group]Run actions/checkout@v4
+2026-10-11T19:16:49.7475891Z with:
+2026-10-11T19:16:49.7476389Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-11T19:16:49.7480446Z   token: ***
+2026-10-11T19:16:49.7480892Z   ssh-strict: true
+2026-10-11T19:16:49.7481318Z   ssh-user: git
+2026-10-11T19:16:49.7481757Z   persist-credentials: true
+2026-10-11T19:16:49.7482243Z   clean: true
+2026-10-11T19:16:49.7482680Z   sparse-checkout-cone-mode: true
+2026-10-11T19:16:49.7483190Z   fetch-depth: 1
+2026-10-11T19:16:49.7483614Z   fetch-tags: false
+2026-10-11T19:16:49.7484053Z   show-progress: true
+2026-10-11T19:16:49.7484489Z   lfs: false
+2026-10-11T19:16:49.7484894Z   submodules: false
+2026-10-11T19:16:49.7485338Z   set-safe-directory: true
+2026-10-11T19:16:49.7485849Z   allow-unsafe-pr-checkout: false
+2026-10-11T19:16:49.7486618Z ##[endgroup]
+2026-10-11T19:16:49.8517678Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-11T19:16:49.8520166Z ##[group]Getting Git version info
+2026-10-11T19:16:49.8521523Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-11T19:16:49.8522941Z [command]/usr/bin/git version
+2026-10-11T19:16:49.8571997Z git version 2.55.0
+2026-10-11T19:16:49.8595769Z ##[endgroup]
+2026-10-11T19:16:49.8610976Z Temporarily overriding HOME='/home/runner/work/_temp/e8d9eaec-669d-445b-bf6a-ca37c8138992' before making global git config changes
+2026-10-11T19:16:49.8612949Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-11T19:16:49.8616223Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-11T19:16:49.8667199Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-11T19:16:49.8671705Z ##[group]Initializing the repository
+2026-10-11T19:16:49.8676595Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-11T19:16:49.8777896Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-11T19:16:49.8779972Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-11T19:16:49.8781177Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-11T19:16:49.8781927Z hint: call:
+2026-10-11T19:16:49.8782498Z hint:
+2026-10-11T19:16:49.8783033Z hint: 	git config --global init.defaultBranch <name>
+2026-10-11T19:16:49.8783650Z hint:
+2026-10-11T19:16:49.8784234Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-11T19:16:49.8785171Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-11T19:16:49.8785912Z hint:
+2026-10-11T19:16:49.8786323Z hint: 	git branch -m <name>
+2026-10-11T19:16:49.8786798Z hint:
+2026-10-11T19:16:49.8787421Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-11T19:16:49.8793020Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-11T19:16:49.8803054Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-11T19:16:49.8850816Z ##[endgroup]
+2026-10-11T19:16:49.8851776Z ##[group]Disabling automatic garbage collection
+2026-10-11T19:16:49.8855829Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-11T19:16:49.8888931Z ##[endgroup]
+2026-10-11T19:16:49.8890167Z ##[group]Setting up auth
+2026-10-11T19:16:49.8896063Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-11T19:16:49.8943917Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-11T19:16:49.9307121Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-11T19:16:49.9347262Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-11T19:16:49.9587156Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-11T19:16:49.9623406Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-11T19:16:49.9876240Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-11T19:16:49.9923391Z ##[endgroup]
+2026-10-11T19:16:49.9924411Z ##[group]Fetching the repository
+2026-10-11T19:16:49.9938361Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7aaccd8b83f9a001e2d8f138fa2dbb4397ffc28d:refs/remotes/origin/research/uqcf-overlapping-guard-exchange
+2026-10-11T19:17:44.8974712Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-11T19:17:44.8976310Z  * [new ref]         7aaccd8b83f9a001e2d8f138fa2dbb4397ffc28d -> origin/research/uqcf-overlapping-guard-exchange
+2026-10-11T19:17:44.8981769Z ##[endgroup]
+2026-10-11T19:17:44.8982674Z ##[group]Determining the checkout info
+2026-10-11T19:17:44.8992496Z ##[endgroup]
+2026-10-11T19:17:44.8993138Z [command]/usr/bin/git sparse-checkout disable
+2026-10-11T19:17:44.9044671Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-11T19:17:44.9076862Z ##[group]Checking out the ref
+2026-10-11T19:17:44.9081774Z [command]/usr/bin/git checkout --progress --force -B research/uqcf-overlapping-guard-exchange refs/remotes/origin/research/uqcf-overlapping-guard-exchange
+2026-10-11T19:17:46.2427472Z Updating files:  27% (2958/10923)
+2026-10-11T19:17:46.4791643Z Updating files:  28% (3059/10923)
+2026-10-11T19:17:46.9803467Z Updating files:  29% (3168/10923)
+2026-10-11T19:17:46.9901243Z Updating files:  29% (3247/10923)
+2026-10-11T19:17:47.4692553Z Updating files:  30% (3277/10923)
+2026-10-11T19:17:47.7185467Z Updating files:  31% (3387/10923)
+2026-10-11T19:17:47.9287048Z Updating files:  32% (3496/10923)
+2026-10-11T19:17:48.3991015Z Updating files:  32% (3529/10923)
+2026-10-11T19:17:48.6800361Z Updating files:  33% (3605/10923)
+2026-10-11T19:17:48.9264602Z Updating files:  34% (3714/10923)
+2026-10-11T19:17:49.3614533Z Updating files:  34% (3737/10923)
+2026-10-11T19:17:49.6392643Z Updating files:  35% (3824/10923)
+2026-10-11T19:17:49.9694583Z Updating files:  36% (3933/10923)
+2026-10-11T19:17:50.2008741Z Updating files:  36% (3959/10923)
+2026-10-11T19:17:50.4260997Z Updating files:  37% (4042/10923)
+2026-10-11T19:17:50.9646213Z Updating files:  38% (4151/10923)
+2026-10-11T19:17:50.9996121Z Updating files:  38% (4253/10923)
+2026-10-11T19:17:51.1827873Z Updating files:  39% (4260/10923)
+2026-10-11T19:17:51.8608879Z Updating files:  40% (4370/10923)
+2026-10-11T19:17:51.9847869Z Updating files:  41% (4479/10923)
+2026-10-11T19:17:52.1607164Z Updating files:  41% (4492/10923)
+2026-10-11T19:17:52.8152094Z Updating files:  42% (4588/10923)
+2026-10-11T19:17:52.9802126Z Updating files:  43% (4697/10923)
+2026-10-11T19:17:53.0873655Z Updating files:  43% (4754/10923)
+2026-10-11T19:17:53.3251569Z Updating files:  44% (4807/10923)
+2026-10-11T19:17:53.8864869Z Updating files:  45% (4916/10923)
+2026-10-11T19:17:53.9338149Z Updating files:  46% (5025/10923)
+2026-10-11T19:17:54.1236553Z Updating files:  46% (5037/10923)
+2026-10-11T19:17:54.2883413Z Updating files:  47% (5134/10923)
+2026-10-11T19:17:54.9046367Z Updating files:  48% (5244/10923)
+2026-10-11T19:17:54.9511000Z Updating files:  49% (5353/10923)
+2026-10-11T19:17:55.1789585Z Updating files:  49% (5382/10923)
+2026-10-11T19:17:55.2085275Z Updating files:  50% (5462/10923)
+2026-10-11T19:17:55.3844447Z Updating files:  51% (5571/10923)
+2026-10-11T19:17:55.7684891Z Updating files:  52% (5680/10923)
+2026-10-11T19:17:55.7779906Z Updating files:  53% (5790/10923)
+2026-10-11T19:17:55.7866492Z Updating files:  54% (5899/10923)
+2026-10-11T19:17:55.7954883Z Updating files:  55% (6008/10923)
+2026-10-11T19:17:55.8040295Z Updating files:  56% (6117/10923)
+2026-10-11T19:17:55.8107005Z Updating files:  57% (6227/10923)
+2026-10-11T19:17:55.8174651Z Updating files:  58% (6336/10923)
+2026-10-11T19:17:55.8241390Z Updating files:  59% (6445/10923)
+2026-10-11T19:17:55.8321392Z Updating files:  60% (6554/10923)
+2026-10-11T19:17:55.8413748Z Updating files:  61% (6664/10923)
+2026-10-11T19:17:55.8654020Z Updating files:  62% (6773/10923)
+2026-10-11T19:17:55.9144850Z Updating files:  63% (6882/10923)
+2026-10-11T19:17:55.9226597Z Updating files:  64% (6991/10923)
+2026-10-11T19:17:55.9243134Z Updating files:  65% (7100/10923)
+2026-10-11T19:17:56.0682743Z Updating files:  65% (7110/10923)
+2026-10-11T19:17:56.0755328Z Updating files:  66% (7210/10923)
+2026-10-11T19:17:56.0897475Z Updating files:  67% (7319/10923)
+2026-10-11T19:17:56.0981752Z Updating files:  68% (7428/10923)
+2026-10-11T19:17:56.4272442Z Updating files:  69% (7537/10923)
+2026-10-11T19:17:56.4813692Z Updating files:  70% (7647/10923)
+2026-10-11T19:17:56.4886340Z Updating files:  71% (7756/10923)
+2026-10-11T19:17:56.7409678Z Updating files:  72% (7865/10923)
+2026-10-11T19:17:56.9346997Z Updating files:  73% (7974/10923)
+2026-10-11T19:17:56.9789200Z Updating files:  73% (8019/10923)
+2026-10-11T19:17:57.0107682Z Updating files:  74% (8084/10923)
+2026-10-11T19:17:57.3138818Z Updating files:  75% (8193/10923)
+2026-10-11T19:17:57.3236643Z Updating files:  76% (8302/10923)
+2026-10-11T19:17:57.3297816Z Updating files:  77% (8411/10923)
+2026-10-11T19:17:57.4091237Z Updating files:  78% (8520/10923)
+2026-10-11T19:17:57.4099946Z Updating files:  79% (8630/10923)
+2026-10-11T19:17:57.4256553Z Updating files:  80% (8739/10923)
+2026-10-11T19:17:57.4558318Z Updating files:  81% (8848/10923)
+2026-10-11T19:17:57.4993055Z Updating files:  82% (8957/10923)
+2026-10-11T19:17:57.8037560Z Updating files:  83% (9067/10923)
+2026-10-11T19:17:57.9244288Z Updating files:  84% (9176/10923)
+2026-10-11T19:17:57.9470396Z Updating files:  84% (9273/10923)
+2026-10-11T19:17:58.1321372Z Updating files:  85% (9285/10923)
+2026-10-11T19:17:58.1953624Z Updating files:  86% (9394/10923)
+2026-10-11T19:17:58.2475904Z Updating files:  87% (9504/10923)
+2026-10-11T19:17:58.2540591Z Updating files:  88% (9613/10923)
+2026-10-11T19:17:58.2604088Z Updating files:  89% (9722/10923)
+2026-10-11T19:17:58.2673876Z Updating files:  90% (9831/10923)
+2026-10-11T19:17:58.2725660Z Updating files:  91% (9940/10923)
+2026-10-11T19:17:58.6500680Z Updating files:  92% (10050/10923)
+2026-10-11T19:17:58.6853667Z Updating files:  93% (10159/10923)
+2026-10-11T19:17:58.7234748Z Updating files:  94% (10268/10923)
+2026-10-11T19:17:58.7995193Z Updating files:  95% (10377/10923)
+2026-10-11T19:17:58.8101094Z Updating files:  96% (10487/10923)
+2026-10-11T19:17:58.8242367Z Updating files:  97% (10596/10923)
+2026-10-11T19:17:58.8421628Z Updating files:  98% (10705/10923)
+2026-10-11T19:17:58.8827689Z Updating files:  99% (10814/10923)
+2026-10-11T19:17:58.8828198Z Updating files: 100% (10923/10923)
+2026-10-11T19:17:58.8828658Z Updating files: 100% (10923/10923), done.
+2026-10-11T19:17:59.1725819Z Switched to a new branch 'research/uqcf-overlapping-guard-exchange'
+2026-10-11T19:17:59.1727354Z branch 'research/uqcf-overlapping-guard-exchange' set up to track 'origin/research/uqcf-overlapping-guard-exchange'.
+2026-10-11T19:17:59.2009985Z ##[endgroup]
+2026-10-11T19:17:59.2069059Z [command]/usr/bin/git log -1 --format=%H
+2026-10-11T19:17:59.2099475Z 7aaccd8b83f9a001e2d8f138fa2dbb4397ffc28d
+2026-10-11T19:17:59.4758709Z ##[group]Run actions/setup-python@v5
+2026-10-11T19:17:59.4758998Z with:
+2026-10-11T19:17:59.4759504Z   python-version: 3.12
+2026-10-11T19:17:59.4759765Z   check-latest: false
+2026-10-11T19:17:59.4762230Z   token: ***
+2026-10-11T19:17:59.4762446Z   update-environment: true
+2026-10-11T19:17:59.4762691Z   allow-prereleases: false
+2026-10-11T19:17:59.4762955Z   freethreaded: false
+2026-10-11T19:17:59.4763167Z ##[endgroup]
+2026-10-11T19:17:59.6054338Z ##[group]Installed versions
+2026-10-11T19:18:00.0312465Z (node:2309) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-11T19:18:00.0313332Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-11T19:18:00.0314589Z Successfully set up CPython (3.12.15)
+2026-10-11T19:18:00.0315643Z ##[endgroup]
+2026-10-11T19:18:00.1276317Z ##[group]Run python -m unittest -v test_obstruction.py
+2026-10-11T19:18:00.1276819Z [36;1mpython -m unittest -v test_obstruction.py[0m
+2026-10-11T19:18:00.9345884Z shell: /usr/bin/bash -e {0}
+2026-10-11T19:18:00.9346176Z env:
+2026-10-11T19:18:00.9346463Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:18:00.9346948Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-11T19:18:00.9347401Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:18:00.9347792Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:18:00.9348176Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-11T19:18:00.9348618Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-11T19:18:00.9348956Z ##[endgroup]
+2026-10-11T19:18:01.1081737Z test_obstruction (unittest.loader._FailedTest.test_obstruction) ... ERROR
+2026-10-11T19:18:01.1082200Z 
+2026-10-11T19:18:01.1082431Z ======================================================================
+2026-10-11T19:18:01.1082974Z ERROR: test_obstruction (unittest.loader._FailedTest.test_obstruction)
+2026-10-11T19:18:01.1083533Z ----------------------------------------------------------------------
+2026-10-11T19:18:01.1084054Z ImportError: Failed to import test module: test_obstruction
+2026-10-11T19:18:01.1084494Z Traceback (most recent call last):
+2026-10-11T19:18:01.1090917Z   File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+2026-10-11T19:18:01.1091680Z     module = __import__(module_name)
+2026-10-11T19:18:01.1092017Z              ^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-11T19:18:01.1092977Z   File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/escape_obstruction/test_obstruction.py", line 7, in <module>
+2026-10-11T19:18:01.1094193Z     import independent
+2026-10-11T19:18:01.1094509Z ModuleNotFoundError: No module named 'independent'
+2026-10-11T19:18:01.1094747Z 
+2026-10-11T19:18:01.1094753Z 
+2026-10-11T19:18:01.1094908Z ----------------------------------------------------------------------
+2026-10-11T19:18:01.1095240Z Ran 1 test in 0.000s
+2026-10-11T19:18:01.1095372Z 
+2026-10-11T19:18:01.1095460Z FAILED (errors=1)
+2026-10-11T19:18:01.1169076Z ##[error]Process completed with exit code 1.
+2026-10-11T19:18:01.1332568Z Post job cleanup.
+2026-10-11T19:18:01.2177836Z [command]/usr/bin/git version
+2026-10-11T19:18:01.2222053Z git version 2.55.0
+2026-10-11T19:18:01.2260125Z Temporarily overriding HOME='/home/runner/work/_temp/614d9cdc-1a73-43c5-8538-e12b62c21018' before making global git config changes
+2026-10-11T19:18:01.2261502Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-11T19:18:01.2265666Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-11T19:18:01.2305563Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-11T19:18:01.2340651Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-11T19:18:01.2608474Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-11T19:18:01.2634952Z http.https://github.com/.extraheader
+2026-10-11T19:18:01.2646816Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-11T19:18:01.2712476Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-11T19:18:01.3015099Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-11T19:18:01.3058776Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-11T19:18:01.3458387Z Cleaning up orphan processes
+2026-10-11T19:18:01.3786994Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -2,7 +2,7 @@
 
 Date: 2026-10-11 UTC.
 Prospective scope: `d18095854994928e4cc65a448600bfef2c78a161`.
-Status: **AUTHOR-SIDE ANALYTICAL RESULT / NOT YET INDEPENDENTLY VERIFIED OR CLOSED**.
+Status: **VERIFIED AT EVENT COMMIT `857803fb97e80a9d7b4f9338ebf9ef2de4d5f8e1`; SCOPED CLOSEOUT PENDING IMMUTABLE PUBLICATION READBACK**.
 
 ## Theorem
 
@@ -64,3 +64,8 @@ The finite enumeration will corroborate the bounded source matrix. The proof abo
 This does not classify escape-to-vacancy reachability when a static reserve exists. It does not assert that every non-perfect-matching saturation graph has a reserve, or that static existence plus X is sufficient. It does not derive native observation, access, retention, enforcement, outcome selection, commitment, or progress.
 
 Broad C3/C4-C6 and physical origin remain OPEN. No force, geometry, fundamental time, dark-matter variable, external alignment, or numerical heuristic is introduced.
+
+
+## Independent verification
+
+Actions run `38167992780` verified the prospectively frozen 12-matchings × 64-profiles universe: 768 sources, 96,768 candidate classifications, 48,384 independent-set rows, 19,968 actual-label X routes, 110,592 slices, and 648,680,448 protected-mask/state checks. The independent checker reconstructed the complete canonical stream at SHA-256 `b6b53398b5ec82f9552284b93cdb2e10ef357bc277e27054eda3aee41af77610`; a fresh reproduction was byte-identical. All 504 tests passed. Gemini 3.1 Pro mathematical review and separate publication audit both ACCEPTED with zero missing assumptions and zero counterexamples. See `COUPLED_C3_ESCAPE_OBSTRUCTION_REPORT.md` and the evidence index.
