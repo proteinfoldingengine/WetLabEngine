@@ -14,3 +14,5 @@ Known before this investigation: exchange ends at pi(C), original protections co
 Campaign gate: only a substantive new mathematical/native construction warrants prospective scientific freeze, independent exhaustive reconstruction, rejecting controls, inherited tests, mathematical and publication reviews. No new scientific execution or numbered retained-research stage is authorized by merely finding a missing premise.
 
 Ruling: this is a source-audited analytical candidate assessment, not software implementation. Use the established repository evidence folder instead of a software worktree; no implementation tests or fresh scientific counts are created. Retain all evidence. Publication is already authorized by the user's continuing research instructions.
+
+Execution outcome: all four bounded investigation steps completed. Candidate stopped at the missing native interaction; separate review ACCEPTED the assessment. Seven published texts read back exactly at 3d2df59b600b3ec2c2f7cf7cf3501f8b402783eb. No numerical campaign launched. See progress.md and readback.json for the scoped evidence.
