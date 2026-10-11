@@ -1,0 +1,155 @@
+name: UQCF-GEM C3 perfect-matching escape obstruction
+
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/escape_obstruction/**'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ESCAPE_OBSTRUCTION_SCOPE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ESCAPE_OBSTRUCTION_RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ESCAPE_OBSTRUCTION_REPORT.md'
+      - '.github/scripts/c3_escape_obstruction_review.py'
+      - '.github/workflows/uqcf-gem-c3-escape-obstruction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact bounded tests
+        working-directory: ResearchHistory/UQCF-GEM/research/physical-bridge/escape_obstruction
+        run: python -m unittest -v test_obstruction.py
+      - name: Produce canonical campaign
+        working-directory: ResearchHistory/UQCF-GEM/research/physical-bridge/escape_obstruction
+        run: python producer.py --stream canonical_stream.jsonl --certificate certificate.json
+      - name: Independent complete-stream check
+        working-directory: ResearchHistory/UQCF-GEM/research/physical-bridge/escape_obstruction
+        run: python independent.py --stream canonical_stream.jsonl --output independent.json
+      - name: Inherited Path-A regression stack
+        working-directory: ResearchHistory/UQCF-GEM/research/physical-bridge
+        shell: bash
+        run: |
+          set -euo pipefail
+          for spec in \
+            'reserve_activation test_activation.py' \
+            'source_escape test_escape.py' \
+            'cover_static test_cover_static.py' \
+            'nonuniform_reserve test_nonuniform.py' \
+            'weak_trace test_weak.py' \
+            'fingerprint_lock test_fingerprint.py' \
+            'private_cover test_private.py' \
+            'moving_cover test_moving.py' \
+            'saturated_handover test_saturated.py' \
+            'slack_handover test_slack.py' \
+            'handover_graph test_handover.py' \
+            'anchored_release test_anchored.py' \
+            'local_progress test_progress.py' \
+            'capacity_gap test_capacity.py' \
+            'saturated_transfer test_transfer.py' \
+            'label_release test_release.py' \
+            'footprint test_footprint.py' \
+            'fixed_family test_fixed_family.py' \
+            'star_carrier test_star_carrier.py'
+          do
+            set -- $spec
+            (cd "$1" && python -m unittest -v "$2")
+          done
+      - name: Collect verification evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          root='ResearchHistory/UQCF-GEM/research/physical-bridge'
+          mkdir -p evidence
+          cp "$root/escape_obstruction/canonical_stream.jsonl" evidence/
+          cp "$root/escape_obstruction/certificate.json" evidence/
+          cp "$root/escape_obstruction/independent.json" evidence/
+          cp "$root/escape_obstruction/PLAN.md" evidence/
+          cp "$root/escape_obstruction/producer.py" evidence/
+          cp "$root/escape_obstruction/independent.py" evidence/
+          cp "$root/escape_obstruction/test_obstruction.py" evidence/
+          cp "$root/COUPLED_C3_ESCAPE_OBSTRUCTION_SCOPE.md" evidence/
+          cp "$root/COUPLED_C3_ESCAPE_OBSTRUCTION_RESULT.md" evidence/
+          sha256sum evidence/* | sort > evidence/SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: escape-obstruction-verification
+          path: evidence
+          if-no-files-found: error
+          retention-days: 90
+
+  reproduction:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: escape-obstruction-verification
+          path: evidence
+      - name: Fresh independent reproduction
+        working-directory: ResearchHistory/UQCF-GEM/research/physical-bridge/escape_obstruction
+        run: |
+          python producer.py --stream reproduced.jsonl --certificate reproduced_certificate.json
+          python independent.py --stream reproduced.jsonl --output reproduced_independent.json
+          cmp canonical_stream.jsonl ../../../dummy 2>/dev/null || true
+          test "$(sha256sum reproduced.jsonl | cut -d' ' -f1)" = "$(sha256sum ../../../../../evidence/canonical_stream.jsonl | cut -d' ' -f1)"
+
+  adversarial-review:
+    needs: [verification, reproduction]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: escape-obstruction-verification
+          path: evidence
+      - name: Gemini 3.1 Pro mathematical review
+        run: python .github/scripts/c3_escape_obstruction_review.py mathematical evidence review.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: escape-obstruction-mathematical-review
+          path: review.json
+          if-no-files-found: error
+          retention-days: 90
+
+  publication-audit:
+    needs: adversarial-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: escape-obstruction-verification
+          path: evidence
+      - name: Gemini 3.1 Pro publication audit
+        run: python .github/scripts/c3_escape_obstruction_review.py publication evidence publication.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: escape-obstruction-publication-audit
+          path: publication.json
+          if-no-files-found: error
+          retention-days: 90
