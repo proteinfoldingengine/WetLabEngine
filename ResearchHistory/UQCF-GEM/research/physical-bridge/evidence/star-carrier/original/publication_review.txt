@@ -1,0 +1,23 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The exact C3/depth-one nested-star correspondence is analytically proven and numerically verified for the complete frozen universe (m in {3,4}, n in {3,4}, f in {1,2}).",
+    "The independent checker successfully reconstructs all 8 configurations, 148,480 states, and 2,302,976 directed toggle candidates without importing the producer.",
+    "The exact counts of 3,174 admitted states and 21,504 admitted edges are confirmed, with all rejected candidates correctly classified by source/target floor or band.",
+    "Empty admitted universes are properly retained and recorded without post-hoc filtering.",
+    "Rejecting controls for child reorder, wrong h, omitted floor/band, edge corruption, truncation, and disabled assertions pass.",
+    "The canonical identity stream and certificate are byte-identical and their SHA-256 hashes match the expected values.",
+    "The scope correctly excludes unrestricted nested stars, m>4, hidden-completion universal safety, native NOOP, physical root/reference identity, enforcement, actual selection, and progress."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The result establishes a reusable mathematical carrier only, not a physical closure, C3/C4-C6 closure, force, geometry, fundamental time, dark matter, observer access, or realized update law.",
+    "The correspondence does not extend to unrestricted nested stars, m>4, or the five-child swapped-two-residual discriminator.",
+    "NOOP is a possible resolved C3 request outcome, not a native toggle edge.",
+    "The v16.53 unit-excursion interface and A11.X63 candidate certificate are not inherited as C3 band connectivity/physical laws.",
+    "The theorem does not assert equivalence of the C3 universally-safe hidden-completion graph to an unrestricted single-star graph."
+  ]
+}
+```

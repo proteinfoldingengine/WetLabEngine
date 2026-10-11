@@ -259,3 +259,12 @@ The archived-ledger candidate therefore does not supply the complete signed/root
 The next eligible object is an actual native interaction-to-record producer with justified request/reference identities and update/access semantics. No full hidden-state wrapper, acknowledgment or compulsory commitment is introduced. No new numerical campaign is launched; native C3 and broad C4-C6 remain OPEN. Source and review/publication provenance are retained in evidence/event-binding-probe/.
 
 Integration note: concurrent commits through972e1bcb0b50146116fb5b68dada5ff7599e3526 already publish [lineage candidate C1](COUPLED_C3_LINEAGE_BINDING_CANDIDATE_C1.md) and [archived-ledger candidate C2](COUPLED_C3_V1172_LEDGER_PAYLOAD_C2.md). The local C1 name retained in this probe/review refers to that same upstream C2 route. This assessment adds independent source review and byte/provenance reconciliation; it is not a third candidate or an additional scientific discovery. All concurrent files remain intact.
+
+
+## C3 / nested-support star carrier — scoped CLOSED
+
+The prospectively frozen 3-/4-root carrier correspondence is scoped CLOSED at scientific commit2361b402923ae8845eb4afc9bb1257cc6f239da1 by Actions38156240484. The restricted C3 fixed-state toggle graph and the induced depth-one ordered nested-star graph are exactly isomorphic when the star carries the SAME positive floors and3<=h_root<=4 band; h_root=tau state by state.
+
+Complete verification retained all8declared configurations,148480states and2302976directed toggle candidates, including empty admitted universes. It found3174admitted states and21504admitted directed edges.495contracts passed (10new+485inherited); fresh certificate and canonical stream reproduction were byte-identical. Separate Gemini3.1Pro mathematical and publication reviews ACCEPTED on first attempt with zero missing assumptions/counterexamples. COUPLED_C3_STAR_CARRIER_CLOSEOUT.md is authoritative.
+
+No unrestricted nested-star connectivity, more-than-four-child result, universal hidden-completion safety, native NOOP semantics or physical index/reference coupling follows. The shared carrier narrows C4 notation/structure but does not close native C3 origin, enforcement, actual selection, retained output or progress. BroadC3/C4-C6 remain OPEN.

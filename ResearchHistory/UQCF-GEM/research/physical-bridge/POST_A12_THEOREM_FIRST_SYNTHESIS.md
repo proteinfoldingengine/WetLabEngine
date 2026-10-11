@@ -2,15 +2,13 @@
 Updated: 2026-10-11 UTC. Branch: research/uqcf-overlapping-guard-exchange.
 Status: Scoped C3 and C4 closeouts are recorded individually below; native record origin/enforcement/progress and arbitrary coupled repair remain OPEN. No numbered v16 or full-stack post-merge certification.
 
-## Active prospective analytical bridge — 3-/4-root C3 to nested-support star (OPEN)
+## Latest scoped result: exact 3-/4-root C3 ↔ nested-star carrier — CLOSED
 
-[Scope](COUPLED_C3_STAR_CARRIER_SCOPE.md) frozen at 365d55c497d65f6003b5e7f8691438280e62c3fe; [analytical candidate](COUPLED_C3_STAR_CARRIER_RESULT.md) at the current branch. A fixed-state C3 tuple with 3 or 4 named roots, positive floors and band 3<=tau<=4 maps bijectively to a depth-one nested-support star with fixed parent palette, the same indexed child supports, and **additional matching floor/band restrictions**. The root h equals tau, and restricted single-incidence edit graphs are isomorphic. The unrestricted nested category is larger; the inherited two-residual swapped-root discriminator requires five children and is outside this theorem. Protected hidden-completion intersections, observer record origin, physical root/reference identity, enforcement, actual outcome selection and progress are NOT derived. This is NOT independently verified or CLOSED: mathematical review, bounded independent enumeration/rejecting controls, Actions, publication audit and immutable scientific closeout remain pending. Broad C3/C4-C6 OPEN.
+[Closeout](COUPLED_C3_STAR_CARRIER_CLOSEOUT.md), [publication audit](COUPLED_C3_STAR_CARRIER_PUBLICATION_AUDIT.md), and [artifact ledger](evidence/star-carrier/artifacts.json) are authoritative. Exact-event run38156240484 at2361b402923ae8845eb4afc9bb1257cc6f239da1 passed495contracts (10new+485inherited), complete independent reconstruction, fresh byte-identical reproduction, and separate Gemini3.1Pro mathematical/publication ACCEPTED verdicts with zero missing assumptions or counterexamples.
 
+For m=3or4 indexed nonempty C3 roots, fixed finite ordered palette, positive floors and band3<=tau<=4, the fixed-state directed toggle graph is exactly isomorphic to the induced depth-one nested-support star graph with the same ordered supports and ADDED matching floor/h_root restrictions. Statewise h_root=tau. The complete bounded universe contains8configurations,148480states and2302976directed toggle candidates;3174states and21504edges are admitted. Empty admitted universes are retained.
 
-
-
-
-
+This is a reusable mathematical carrier, not unrestricted nested-star equivalence, arity>4, universal hidden-completion safety or a physical record mechanism. The five-child swapped-two-residual discriminator remains outside scope. Native root/reference origin, enforcement, actual-successor selection, retained accessibility and progress remain OPEN, as do broadC3/C4-C6 and physical source correspondence. No force, geometry, dark matter or fundamental time is introduced.
 
 ## Latest scoped result: exact first-source-escape gate — CLOSED
 
