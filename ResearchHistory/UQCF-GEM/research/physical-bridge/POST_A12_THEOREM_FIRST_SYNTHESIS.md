@@ -251,3 +251,10 @@ After scoped cover-static closeout bc23cf44110e4d794ada59ae2b647599b5a19d42, the
 The explicit K6-minus45/saturatedK23 isolate0 source a=(1,1,1,2,1,1) has a safe static reserve but no first escape. Thus the five-type criterion 'static and minDegree<=1' cannot be generalized. A saturated disjoint K2 component gives another no-extension boundary. These are analytical claims pending the new checkpoint's full verification and closeout, not computed results.
 
 COUPLED_C3_SOURCE_ESCAPE_RESULT.md, COUPLED_C3_SOURCE_ESCAPE_SCOPE.md and source_escape/PLAN.md define the prospective7360source contract. No new campaign has run at this entry. This is an exact first-escape gate, not general vacancy reachability after reassignment. Native C3 input/carrier/action/retained output, committed progress and broad C3/generalC4 remain OPEN. No native sensor, acknowledgment or mandatory commitment is inserted.
+
+
+## Reserve activation — new analytical campaign OPEN
+
+After source-escape scoped closeout at c31f5313486be2be25ff1d32d01b507d2de2e313, the user authorized escape-to-usable-reserve research. The independently accepted candidate gives an exact closure-surplus criterion for a specified fixed-anchor monotone saturated-neighbor transfer template. A K4,3 chain requires successive compensation before release and has no initial saturated cherry. Exact reversal restores the source only if no intervening operation occurs.
+
+[Candidate](COUPLED_C3_RESERVE_ACTIVATION_RESULT.md), [prospective scope](COUPLED_C3_RESERVE_ACTIVATION_SCOPE.md), and reserve_activation/PLAN.md bind5054abstract graphs and8192native sources before computation. This launch records analytical acceptance, not numerical verification or scientific closure. General native reachability, usable reserve after arbitrary inserted repair, native origin/enforcement/selection/progress and broad C3/C4-C6 remain OPEN. Historical headers remain unchanged below this appended update.
