@@ -1,0 +1,105 @@
+name: UQCF-GEM source-escape original evidence archive
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths: ['.github/workflows/uqcf-gem-c3-source-escape-archive.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: c3-source-escape-original-archive
+  cancel-in-progress: false
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+jobs:
+  preserve-originals:
+    permissions:
+      contents: write
+      actions: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      archive_commit: ${{ steps.publish.outputs.archive_commit }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape-tools
+      - name: Audit and preserve the completed original run without rerunning science
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=ResearchHistory/UQCF-GEM/research/physical-bridge/evidence
+          python3 "$ROOT/source-escape-tools/collect_source_escape.py" "$ROOT/source-escape" --collect
+      - name: Publish evidence only with fast-forward protection
+        id: publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          BRANCH=research/uqcf-overlapping-guard-exchange
+          ROOT=ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape
+          LIVE=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$LIVE" = "$GITHUB_SHA"
+          git add -- "$ROOT"
+          git config user.name 'UQCF-GEM evidence archive'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Preserve source-escape original Actions evidence and reconcile recorded truncation'
+          git push origin "HEAD:refs/heads/$BRANCH"
+          printf 'archive_commit=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-source-escape-permanent-original-packet
+          path: ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/
+          compression-level: 0
+          if-no-files-found: error
+  immutable-readback:
+    needs: preserve-originals
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.preserve-originals.outputs.archive_commit }}
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape
+      - name: Independent immutable Git-byte readback and offline packet audit
+        env:
+          ARCHIVE_COMMIT: ${{ needs.preserve-originals.outputs.archive_commit }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape
+          python3 "$ROOT/collect_source_escape.py" "$ROOT"
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,subprocess
+          sha=os.environ['ARCHIVE_COMMIT']
+          if subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()!=sha:
+              raise SystemExit('Wrong immutable archive checkout')
+          root='ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape/'
+          m=json.loads(pathlib.Path(root+'readback_manifest.json').read_text())
+          names=subprocess.check_output(['git','ls-tree','-r','--name-only',sha,'--',root],text=True).splitlines()
+          expected=set(m['files'])|{'readback_manifest.json'}
+          if {n[len(root):] for n in names}!=expected:
+              raise SystemExit('Published file set differs from archive manifest')
+          rows={}
+          for n in sorted(expected):
+              raw=subprocess.check_output(['git','show',sha+':'+root+n])
+              row={'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'git_blob_sha1':hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()}
+              if n in m['files'] and row!=m['files'][n]:
+                  raise SystemExit('Immutable content mismatch: '+n)
+              if pathlib.Path(root+n).read_bytes()!=raw:
+                  raise SystemExit('Working copy differs: '+n)
+              rows[n]=row
+          out={'status':'PASS_IMMUTABLE_ARCHIVE_READBACK','archive_commit':sha,'scientific_commit':m['scientific_commit'],'run_id':m['run_id'],'files':rows,'file_count':len(rows),'note':'All stored Git bytes checked; no scientific rerun or future closeout certification.'}
+          pathlib.Path('immutable-readback.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({k:v for k,v in out.items() if k!='files'}))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c3-source-escape-immutable-archive-readback
+          path: immutable-readback.json
+          if-no-files-found: error
