@@ -1,0 +1,23 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The analytical theorem correctly establishes the upper-four static reserve criterion for arbitrary finite simple H without isolates, using a layer-cake expansion argument for necessity and unit redistribution for sufficiency.",
+    "The finite verification scope correctly enumerates the 3,072 declared source identities, confirming the analytical result for these specific families and binary profiles.",
+    "The independent checker correctly uses explicit sets and multisets, avoiding any mutual imports with the bitmask/compositions-based producer.",
+    "The required boundary controls (K6-minus45 isolate 0 singleton rejection, K5-minus34 nonminimum cover requirement, K5 duplicated K23 static-only boundary) are explicitly tested and behave as claimed.",
+    "The test suite contains exactly 35 new tests and 378 inherited tests (413 total), all of which pass, and the genuine missing-producer RED log is preserved.",
+    "The optimized Python runtime rejection is implemented and tested in both the producer and checker, ensuring assertion-based verification gates are not bypassed.",
+    "The publication gate and independent full reconstruction passed, with exact byte-for-byte reproduction of the certificate and canonical companion."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem is an endpoint-only guarantee; it does not establish native routes, reachability classification, edit-cost optimality, or committed progress.",
+    "The unrestricted result is existential in C; it does not assert that every minimum cover works or that a predetermined original minimum cover is preserved at an arbitrary given endpoint.",
+    "The finite verification corroborates only the declared 3,072 source identities and first/last canonical endpoints, not arbitrary labelled endpoints, mixed anchor choices, or multi-hidden states.",
+    "The result does not provide a mechanism for native observation, access, retained output, or C3 acquisition, and does not claim broad C3 or general C4 closure.",
+    "No physical derivation, new primitive, fundamental time, inserted geometry, or full-stack certification is claimed."
+  ]
+}
+```

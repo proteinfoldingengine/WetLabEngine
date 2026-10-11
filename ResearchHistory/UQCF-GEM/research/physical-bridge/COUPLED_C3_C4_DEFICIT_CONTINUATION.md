@@ -169,3 +169,12 @@ Any new substantive checkpoint requires proof, prospectively frozen exact verifi
 
 ## Executed origin-route screen
 The [coverage/routing source screen](COUPLED_C3_COVERAGE_ORIGIN_SCREEN.md) now checks native_record_search/native_record_trace, coherent record code and the Genesis-base classification against this specific controller requirement. It identifies no supplied initializer that can be promoted to a native derivation. The coherent construction needs supplied registers/gates; the provenance audits explicitly fail the native-source gate. Eleven source identities were checked, with no new theorem or execution claim. The next proposal must construct the missing typed input/action/retained-output connection, rather than invoke those filenames as an existing mechanism.
+
+
+## Cover-aware static reserve publication update — 2026-10-11 UTC
+
+The generalized endpoint criterion is analytically proved and locally/remotely verified: for a prescribed original cover C of size at most four, a reserve preserving any chosen actual original C-anchors exists iff G has a deficient independent set I avoiding singleton source types in C. Some such C,I characterize unrestricted static existence. C may need to be nonminimum when source hitting number is three. An isolated saturated type can still be indispensable to upper-four protection.
+
+Scientific commit6259573656b9a5fc6ed7b71c5fcede5c9047526a, prospective freeze98bbefd62e95d0b9d89dd92b2267970a73f5a26e, Actions38101841497: all four jobs PASS; both raw Gemini reviews ACCEPTED.413scientific tests; complete3072declared sources; exact original-evidence audit and separate nine corrupt-evidence controls PASS. The publication readback remains pending in this intermediate entry; consult COUPLED_C3_COVER_STATIC_CLOSEOUT.md for the final authoritative scoped status. Earlier pending headers remain historical.
+
+This closes no general reachability, path, exact repair/restoration, progress or acquisition obligation. Next candidate must be selected and prospectively frozen after this publication. C3 native input, carrier/initial correlation, action connection and accessible retained output remain distinct from conditional repair mathematics; no full-state read, acknowledgment, hidden-dependent outcome rule or compulsory commitment may be inserted. Broad C3/general C4 remain OPEN.

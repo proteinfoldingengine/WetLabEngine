@@ -1,0 +1,20 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The mathematical proof of the upper-four static reserve theorem is sound. The use of finite integer layer identities to establish the existence of a deficient independent set from any valid static endpoint is correct and elegantly avoids uniform-multiplicity assumptions.",
+    "The distinction between minimum covers and covers of size at most four is correctly handled and mathematically necessary, as demonstrated by the K5-minus34 control where a non-minimum cover of size 4 is required to satisfy the eligibility condition.",
+    "The expansion argument correctly shows that any static reserve with a hitting number of at most four implies the existence of an original vertex cover of size at most four, without requiring the original anchors to be maximal or restricting domination to a label's own type.",
+    "The finite verification scope is well-defined. The independent checker correctly avoids importing the producer's logic, utilizing explicit sets, combinations-with-replacement, and direct root coverage instead of the producer's bitmasks and integer compositions.",
+    "The protected hidden-completion checks correctly verify that no single core footprint can cover all exposed roots for any valid protected mask, ensuring the full system cannot be covered by two labels."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem is an endpoint-only guarantee. It establishes the existence of a static reserve but does not provide a native route, reachability classification, or edit-cost optimality.",
+    "The unrestricted result is existential in C; it does not assert that every minimum cover works, nor does it guarantee that a predetermined original minimum cover is preserved at an arbitrary given endpoint.",
+    "The finite verification corroborates only the declared 3,072 source identities and first/last canonical endpoints. It does not enumerate arbitrary labelled endpoints, mixed anchor choices, or multi-hidden states.",
+    "The result does not provide a mechanism for native observation, access, retained output, or committed progress, and does not claim broad C3 or general C4 closure."
+  ]
+}
+```

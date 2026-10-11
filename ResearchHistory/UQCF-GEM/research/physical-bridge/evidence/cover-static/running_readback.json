@@ -1,0 +1,157 @@
+{
+  "commit": "09160163591b52e3d45e1bc7119a32297e9fed9b",
+  "branch_head_confirmed": true,
+  "records": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/CURRENT_STATUS.md",
+      "sha": "1d928d33efb299743184753410ebc7a36ff83597",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/scientific_binding.json",
+      "sha": "c730462618421a4e59447f48c320b7e0f9088fcb",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/binding.json",
+      "sha": "1884435f82ada3dcb8648b02c0c2af291fb99245",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/scientific_manifest.json",
+      "sha": "902f91e0c618d2bc71a517b309e99614174dc5d4",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/scientific_readback.json",
+      "sha": "bf025ebec821bac3d6ea9079a74781a3e1b526aa",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/jobs_last_observed.json",
+      "sha": "1d2a28a539da802337716d6a1ba646ca21ecbdb0",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/counts.json",
+      "sha": "c7098dac86ec4f412efa6f25ecf54f77072df5a9",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/prepare_audit.py",
+      "sha": "e3ff7139b3eabcca856ae3ff46a6d2cf7bb79f16",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/audit_originals.py",
+      "sha": "c91293f555b77bb27a744f105c0763f04dfa5150",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/test_original_audit.py",
+      "sha": "c18d8e56d9dbb81b4c28757ae669dad51d56512c",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/reassemble_archives.py",
+      "sha": "d5384fda719d795309d779a38e26f2ae59b6e712",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/prepare_archive_segments.py",
+      "sha": "b565863d2ad52c025ce4896f921bc1ed2118a41e",
+      "exact": true,
+      "git_blob_verified": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/cover-static-running/review_inputs.json",
+      "sha": "cbfafed21488d4a9df55f020c145557bcb7930e6",
+      "exact": true,
+      "git_blob_verified": true
+    }
+  ],
+  "jobs": {
+    "total_count": 1,
+    "jobs": [
+      {
+        "id": 114359200616,
+        "run_id": 38101841497,
+        "workflow_name": "UQCF-GEM cover-aware static reserve",
+        "head_branch": "research/uqcf-overlapping-guard-exchange",
+        "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/38101841497",
+        "run_attempt": 1,
+        "node_id": "CR_kwDORG4isM8AAAAaoFbraA",
+        "head_sha": "6259573656b9a5fc6ed7b71c5fcede5c9047526a",
+        "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/114359200616",
+        "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38101841497/job/114359200616",
+        "status": "in_progress",
+        "conclusion": null,
+        "created_at": "2026-10-11T01:26:27Z",
+        "started_at": "2026-10-11T01:26:29Z",
+        "completed_at": null,
+        "name": "verification",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-11T01:26:30Z",
+            "completed_at": "2026-10-11T01:26:32Z"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-11T01:26:32Z",
+            "completed_at": "2026-10-11T01:26:44Z"
+          },
+          {
+            "name": "Exact cover-aware static reserve verification",
+            "status": "in_progress",
+            "conclusion": null,
+            "number": 3,
+            "started_at": "2026-10-11T01:26:44Z",
+            "completed_at": null
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "pending",
+            "conclusion": null,
+            "number": 4,
+            "started_at": null,
+            "completed_at": null
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "pending",
+            "conclusion": null,
+            "number": 8,
+            "started_at": null,
+            "completed_at": null
+          }
+        ],
+        "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/114359200616",
+        "labels": [
+          "ubuntu-latest"
+        ],
+        "runner_id": 1000004430,
+        "runner_name": "GitHub Actions 1000004430",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions"
+      }
+    ]
+  }
+}

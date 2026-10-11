@@ -1,0 +1,31 @@
+# Fresh separate publication-readiness review
+
+Verdict: ACCEPTED for publication readiness, 2026-10-11 UTC. Reviewer: /root/cover_static_publication_final. No blocking Critical or Important findings. This is a fresh independent review; no acceptance from the disappeared earlier reviewer session is assumed. It is not an attestation that final publication, branch-head readback, or scoped CLOSED has occurred.
+
+## Binding and inspected scope
+
+Prospective freeze: 98bbefd62e95d0b9d89dd92b2267970a73f5a26e. Scientific commit: 6259573656b9a5fc6ed7b71c5fcede5c9047526a; tree: 42de26b783685c83894549a2d685948207f74cc6. Actions run: 38101841497. Original metadata binds the four successful jobs to this event: verification 114359200616, fresh-reproduction 114359614446, mathematical-review 114359761119, publication-audit 114359921013.
+
+Reviewed CLOSEOUT.md draft, RECONCILIATION.md, RESULT.md, VERIFICATION_SCOPE.md, REPORT.md, REVIEW.md, binding.json, review_inputs.json, original archive/log/metadata evidence, raw Gemini responses and manifests, author_reconciliation.json, author_audit_controls.json, reassembly_verification.json, scientific_readback.json, scientific_entries.json, and binary_entries.json. Inspected the audit/control/reassembly implementations and optimized-runtime guards/regression. Scientific source and original evidence were not modified; executions that write audit results used a disposable temporary copy.
+
+## Fresh verification performed
+
+- Ran audit_originals.py to completion in a temporary copy: exit 0, 413 scientific tests accounted for, 43 mathematical inputs and 46 publication inputs verified, both raw verdicts ACCEPTED. Exact archive member sets, source bytes, response hashes, certificate/companion identities, per-suite counts, provenance and complete job-log bindings passed. Regenerated reconciliation JSON exactly equals the retained report.
+- Ran test_original_audit.py to completion in the temporary copy: exit 0. Intact evidence accepted; all nine controls rejected at their expected gates: missing segment, corrupt segment, missing review input, compensated truncated log, wrong run, compensating suite counts, omitted member, omitted canonical archive, wrong job binding. Regenerated controls JSON exactly equals the retained report. These controls add nothing to the 413 scientific tests.
+- Independently concatenated the ordered original segments and compared complete bytes with both original ZIPs. Fresh ZIP: 7,442,975 bytes, SHA256 a023a119cec451bf7fa5494704b7904bf38795a37e61fba5540ee80047aec394. Verification ZIP: 7,442,600 bytes, SHA256 5ad3e5e6d988f901ebe52fe589c4ccde7f06f3ede0f6f0df15ec17864fa4528a. Both comparisons passed.
+- Independently recomputed all six local archive/segment Git blob identities and matched binary_entries.json. This establishes local bytes versus the recorded uploaded identities; this review did not perform a fresh remote blob download or final tree/head readback.
+- Compared all five extracted publication-evidence files byte-for-byte with their original ZIP members. Both original responses are ACCEPTED, attempt 1, with empty missing-assumptions and counterexample arrays.
+- Independently checked all 38 immutable scientific entry texts against the scientific readback SHA256 and Git blob identities. The current progress.md has an appended publication-preparation section; its historical scientific entry, rather than that evolving working ledger, matches the immutable readback. No scientific-source discrepancy was found.
+- Directly imported BOTH producer and checker under -O, -OO and PYTHONOPTIMIZE=1, disabling bytecode writes. All six executions rejected with the explicit assertions-required runtime error.
+
+The original remote suite logs account for 35 new plus 378 inherited tests. Recorded complete reconstruction covers 3,072 source identities, 216,299 feasible vectors, 91,214 endpoint occurrences, 53,118 source-local distinct endpoints and 48,769,461 protected-one-hidden checks. Certificate SHA256 d6c4637fcc7c92b3157563771b24ebadb31bbde1515a43e1d82d3c3512ce3a51 and companion SHA256 b5031a53570981300bbceba2409effd17b940507dfb7959af5534f155a41e9b6 reconcile. This reviewer audited the retained full-campaign results and did not rerun the full scientific enumeration or all 413 tests.
+
+## Qualifications and publication obligations
+
+The optimized-runtime wording in the raw publication response must retain RECONCILIATION.md's qualification: the committed subprocess regression exercises the checker, while separate direct checks cover both modules. This reviewer independently repeated those direct checks. Two incomplete redirected local test logs remain incomplete evidence; the complete captured local run and original remote contracts.log supply the final 35-test summaries. Historical pending headers must remain recognizable as historical. The inherited nonuniform stream exception-type minor is not claimed repaired.
+
+The analytical statement is sound within its stated finite simple isolate-free pair-root domain, positive multiplicities, source hitting number three or four, and upper-FOUR endpoint bound. Nonminimum original four-covers are essential. Finite corroboration remains exactly the frozen five families, binary profiles, first/last canonical anchor conventions and all original protected one-hidden masks. Universal multiplicity, anchor-choice and hidden-completion claims rest on the proof, not exhaustive labelled enumeration.
+
+Endpoint existence supplies no safe path, general reachability, exact exchange/restoration, edit-cost optimum, committed progress, native acquisition, observation, access or retained output. C3 native information-origin obligations remain distinct; broad C3 and general C4 remain OPEN.
+
+The CLOSEOUT draft is accepted as a scoped basis for final publication, not as evidence that publication already occurred. Its phrase that evidence “remain published” must be read only as a retention commitment until the final publication has actually been verified. The author must publish the complete evidence and reviewer report, reconcile both indices, and verify immutable text/blob/tree/head readback before changing status to scoped CLOSED. No future publication or readback is attested here.
