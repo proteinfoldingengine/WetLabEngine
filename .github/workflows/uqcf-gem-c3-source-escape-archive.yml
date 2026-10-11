@@ -33,6 +33,32 @@ jobs:
           set -euo pipefail
           ROOT=ResearchHistory/UQCF-GEM/research/physical-bridge/evidence
           python3 "$ROOT/source-escape-tools/collect_source_escape.py" "$ROOT/source-escape" --collect
+      - name: Preserve the diagnosed sparse-staging failure
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,sys,urllib.request
+          root=pathlib.Path('ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape')
+          sys.path.insert(0,str(root))
+          from collect_source_escape import SafeRedirect
+          url='https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/114376882630/logs'
+          req=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+          with urllib.request.build_opener(SafeRedirect()).open(req,timeout=180) as r: raw=r.read()
+          text=raw.decode('utf-8-sig')
+          for marker in ('7e1d79fd79170ba10cd227186138ad2c861a6564','PASS_ORIGINAL_EVIDENCE_AUDIT_NOT_NEW_SCIENCE','outside of your sparse-checkout definition','Cleaning up orphan processes'):
+              if marker not in text: raise SystemExit('Incomplete original staging failure log')
+          (root/'retained_failure/archive-staging-failure.log').write_bytes(raw)
+          note={'run_id':38107795218,'job_id':114376882630,'source_url':url,'log_sha256':hashlib.sha256(raw).hexdigest(),'cause':'git add rejected the newly generated archive outside the sparse checkout; collection and original-evidence audit had passed','repair':'git add --sparse -- the explicitly bounded evidence directory','scientific_source_changed':False,'scientific_tests_rerun':False,'original_attempt_packet_artifact':11689834911,'original_attempt_packet_sha256':'cf72129874a93fee45f9135735831d900f37800e6c399b2bd3a990905a5af1a6','note':'The failed staging job produced a complete packet artifact but no Git publication. Its log and digest are retained; the four scientific original ZIPs are independently preserved unchanged.'}
+          (root/'retained_failure/archive-staging-failure.json').write_text(json.dumps(note,indent=2,sort_keys=True)+'\n')
+          manifest=json.loads((root/'readback_manifest.json').read_text())
+          for name in ('retained_failure/archive-staging-failure.log','retained_failure/archive-staging-failure.json'):
+              data=(root/name).read_bytes()
+              manifest['files'][name]={'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'git_blob_sha1':hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()}
+          (root/'readback_manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+          PY
       - name: Publish evidence only with fast-forward protection
         id: publish
         shell: bash
@@ -42,10 +68,10 @@ jobs:
           ROOT=ResearchHistory/UQCF-GEM/research/physical-bridge/evidence/source-escape
           LIVE=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
           test "$LIVE" = "$GITHUB_SHA"
-          git add -- "$ROOT"
+          git add --sparse -- "$ROOT"
           git config user.name 'UQCF-GEM evidence archive'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Preserve source-escape original Actions evidence and reconcile recorded truncation'
+          git commit -m 'Preserve source-escape original Actions evidence and reconcile recorded failures'
           git push origin "HEAD:refs/heads/$BRANCH"
           printf 'archive_commit=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
