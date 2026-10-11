@@ -229,3 +229,12 @@ This closes no general reachability, path, exact repair/restoration, progress or
 ### Final cover-static scoped status
 
 Scoped CLOSED after accepted scientific/external/publication reviews and complete original-evidence audit. Evidence publication49a470c8ef040f2b2638571d447cdff69a68b346 verified45texts/6binary identities/head; the final completed-plan/readback-ledger update is verified before announcement. COUPLED_C3_COVER_STATIC_CLOSEOUT.md is authoritative over historical pending headers. Static endpoints remain distinct from safe reachability; exact repair/progress and native C3 acquisition/access/retained output remain OPEN, as do broad C3/generalC4. No next campaign has begun.
+
+
+## Next analytical obligation: source escape — OPEN
+
+After scoped cover-static closeout bc23cf44110e4d794ada59ae2b647599b5a19d42, the new hand-derived first-source-escape theorem has independent analytical acceptance. A first vacancy or first outside-original-star incidence can be normalized to a single-label construction. Its upper-cover condition is that the type has a second original copy or some original cover of size<=4 omits the type; saturated trace and an actual third-vertex extension govern the two event kinds. A singleton type essential to every four-cover can be locked by upper protection even when isolated in G.
+
+The explicit K6-minus45/saturatedK23 isolate0 source a=(1,1,1,2,1,1) has a safe static reserve but no first escape. Thus the five-type criterion 'static and minDegree<=1' cannot be generalized. A saturated disjoint K2 component gives another no-extension boundary. These are analytical claims pending the new checkpoint's full verification and closeout, not computed results.
+
+COUPLED_C3_SOURCE_ESCAPE_RESULT.md, COUPLED_C3_SOURCE_ESCAPE_SCOPE.md and source_escape/PLAN.md define the prospective7360source contract. No new campaign has run at this entry. This is an exact first-escape gate, not general vacancy reachability after reassignment. Native C3 input/carrier/action/retained output, committed progress and broad C3/generalC4 remain OPEN. No native sensor, acknowledgment or mandatory commitment is inserted.
