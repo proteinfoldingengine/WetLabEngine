@@ -224,3 +224,16 @@ General native reserve reachability and use of the freed label for a specified e
 ### Final reserve-activation status
 
 Scoped CLOSED after fresh separate publication acceptance and immutable evidence readback at17bb69cdf520056e82c2d6fb5092fe733a45679c (45texts,14scientificsources,4originalZIPidentities,head). Finalledger/completedplan update verified before announcement. COUPLED_C3_RESERVE_ACTIVATION_CLOSEOUT.md supersedes historical pending entries. General reachability, arbitrary reserve-use/restoration and native origin/enforcement/selection/progress remain OPEN; broadC3/C4-C6 remain OPEN. No next campaign launched.
+
+
+## Activation to exact exchange — inherited composition reconciled
+
+[The activation/exchange reconciliation](COUPLED_C3_ACTIVATION_EXCHANGE_RECONCILIATION.md) applies the already closed anchored-release absent-label interface to the already closed activation path. If the declared activation criterion succeeds, a release L:C->S, an exact palette permutation S->pi(S), and reverse(pi(L)) reach exactly pi(C), preserving all original floors and every original protected hidden completion. The permutation may move the released label and the original anchor labels. Preparatory changes disappear in their prescribed images, and the construction renews for any finite prescribed sequence. This is an inherited corollary, not a new numerical campaign or a general native reachability theorem.
+
+This corrects the overbroad historical statement that use of the released label for a specified exact exchange with restoration is wholly unresolved. Reversing L verbatim still requires no intervening change; the composed exchange uses reverse(pi(L)). Arbitrary inserted repair and restoration remain OPEN. On the accepted seven-type chain, symbolic inherited scripts achieve44edits for swap(0,3) and60for swap(4,5); neither is an optimum or a newly simulated result. The prior485scientific-test count is unchanged.
+
+Review and immutable publication provenance are recorded in [the publication record](evidence/activation-exchange/PUBLICATION.md). The new record is a source reconciliation, not another independently certified scientific campaign. Original closeouts, raw reviews and historical pending headers remain intact.
+
+Usable freedom now includes this specified exact rearrangement and removal of preparatory residue. Core access, source promises, script selection and actual committed edits remain supplied. Native input/carrier/initial correlation/action/accessible retained output, enforcement, successor selection and guaranteed progress remain OPEN, as do broad C3/C4-C6. No new observer mechanism, physical force, mass, energy, duration or arrow of time is claimed. Repeating the fixed-family preparation or core-write autonomy obstructions is not a new research obligation. Path A active; Path B closed.
+
+The exact exchanged endpoints are core-label-isomorphic while hidden incidences stay fixed. No label-invariant physical observable changes at the endpoint by this corollary alone; physical distinguishability relative to a derived record/reference coupling remains to be established. This does not classify all broader label identities as gauge.
