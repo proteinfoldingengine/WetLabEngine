@@ -1,9 +1,5 @@
-# Reserve activation current status
+# Reserve activation — scoped CLOSED
 
-Scientific and original-evidence gates PASSED. Separate publication review ACCEPTED; immutable closeout/readback is pending; checkpoint remains OPEN until these finish.
+Scientific b1caebd3d57dcb74c85f969543d577931e04ed5b; run38142825347 allfourjobs PASS, both rawreviews ACCEPTED.485scientific tests, complete independent reconstruction, fresh byte reproduction, original audit and nine separate corruption controls PASS. Fresh publication reviewer ACCEPTED. Evidence17bb69cdf520056e82c2d6fb5092fe733a45679c readback verified45texts/14scientificsources/4originalZIPidentities/head. Finalledger update is verified before announcement. CLOSEOUT.md is authoritative over historical pending headers.
 
-Scientific commit b1caebd3d57dcb74c85f969543d577931e04ed5b; tree0dbf9d99c11c36c079ca811f61bcd0f93f97ae8e. Prospective freeze bf40d757b903256f66f9f809b767db7d9ab0826f. Run38142825347: verification, fresh-reproduction, mathematical-review, publication-audit allsuccess. Both actual raw Gemini responses ACCEPTED on attempt1, no missingassumptions/counterexamples.46math/49publication inputs reconciled.
-
-485scientific tests PASS (30new+455inherited). Full5054abstract/8192native independent reconstruction and fresh byte reproduction PASS. Original audit and intact+nine corruption controls PASS. Four original unchangedZIPs preserved whole; no segmentation needed. Firstaudit caught localfreshjoblog truncation; fresh retrieval matched its already recorded completehash; failureevidence retained.
-
-General reachability, arbitrary intervening reserve-use/restoration, native acquisition/origin/enforcement/selection/progress and broadC3/C4-C6 remain OPEN. No next scientific campaign started.
+Exact classification only for fixed-anchor monotone activation template. General reachability, reserve use with arbitrary intervening repair/restoration, native acquisition/origin/enforcement/selection/progress and broadC3/C4-C6 remain OPEN. No next campaign launched.

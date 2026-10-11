@@ -267,3 +267,7 @@ After source-escape scoped closeout at c31f5313486be2be25ff1d32d01b507d2de2e313,
 The exact closure-surplus criterion classifies release within the fixed-anchor monotone saturated-neighbor template. Successive compensation frees a label in a chain with no initial saturated cherry.18edits is the example's achieved cost, not an optimum. Exact reversal restores the original source only with no intervening operation. Finalcloseout qualifies raw review wording and preserves adverse evidence.
 
 General native reserve reachability and use of the freed label for a specified exchange followed by exact restoration remain unresolved. Native input/carrier/initialcorrelation/action/accessible retained output, enforcement, actual successor selection and progress remain separate OPEN obligations, as do broad C3/C4-C6. This campaign supplies no native observer mechanism or physical force. No new campaign is launched by this closeout. Historical OPEN/pending headers remain retained.
+
+### Final reserve-activation status
+
+Scoped CLOSED after fresh separate publication acceptance and immutable evidence readback at17bb69cdf520056e82c2d6fb5092fe733a45679c (45texts,14scientificsources,4originalZIPidentities,head). Finalledger/completedplan update verified before announcement. COUPLED_C3_RESERVE_ACTIVATION_CLOSEOUT.md supersedes historical pending entries. General reachability, arbitrary reserve-use/restoration and native origin/enforcement/selection/progress remain OPEN; broadC3/C4-C6 remain OPEN. No next campaign launched.

@@ -37,10 +37,12 @@ Files: audit_originals.py, test_original_audit.py, reassemble_archives.py, CLOSE
 - [x] Download originals, complete logs and final metadata/provenance; verify exact archive members, hashes, sizes, review inputs and responses, tests and reproductions. Retain adverse evidence. Binary segments<=8,000,000rawbytes when needed; verify Git blobs.
 - [x] Intact original audit and explicit corrupt-evidence controls; clean original reassembly; evidence controls excluded from scientific total.
 - [x] Fresh independent publication reviewer after concrete evidence; resolve blocking issues. Update indices preserving history and respecting information-origin boundaries.
-- [ ] Publish and read back complete text/binary evidence at immutable commit; persist ledger/completed plan/hash manifest, publish and verify final head. Only then scoped CLOSED and select another obligation.
+- [x] Publish and read back complete text/binary evidence at immutable commit; persist ledger/completed plan/hash manifest, publish and verify final head. Only then scoped CLOSED and select another obligation.
 
 ## Self-review
 
 The abstract complete graph tests the closure equivalence rather than only accepted routes. Native matrix verifies committed slices, original protections and exact reversal. K2 control separates bookkeeping from physical edits. No claim of general reachability or native acquisition is smuggled into the definition. No new scientific computation has run at this initial plan.
 
 Current execution: scientific event b1caebd3d57dcb74c85f969543d577931e04ed5b; run38142825347. All localscientificgates passed. Frozen PLAN.md remains historical.
+
+Evidence publication17bb69c readback PASS; finalledger and completedplan commit read back before announcement. No scientificscope expansion.

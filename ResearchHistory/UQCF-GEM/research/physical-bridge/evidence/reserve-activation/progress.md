@@ -18,3 +18,5 @@ Full final producer/checker PASS:5054abstract+8192native sources; canonical reco
 Allfourremotejobs PASS; actualmath/publication ACCEPTED,46/49inputs. Originals audit and intact+ninecontrols PASS. Truncatedlocalfreshlog detected then recovered by exactpre-existinghash; rawfailures retained. Finalseparatepublicationreview andreadbackpending.
 
 Fresh separate publication reviewer ACCEPTED, no blockers; independently regenerated originalaudit and allninecontrols exactly. Raw PUBLICATION_AUDIT.md retained. Final immutablepublication/readback next.
+
+Evidencepublication17bb69cdf520056e82c2d6fb5092fe733a45679c verified45texts/14scientificsources/4binaryidentities/head. Allauthorizations/gates complete; finalledger/completedplan/hashmanifest update next, then immutablefinalreadback before scopedCLOSED announcement.
