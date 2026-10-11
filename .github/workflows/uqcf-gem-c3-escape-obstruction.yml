@@ -103,7 +103,6 @@ jobs:
         run: |
           python producer.py --stream reproduced.jsonl --certificate reproduced_certificate.json
           python independent.py --stream reproduced.jsonl --output reproduced_independent.json
-          cmp canonical_stream.jsonl ../../../dummy 2>/dev/null || true
           test "$(sha256sum reproduced.jsonl | cut -d' ' -f1)" = "$(sha256sum ../../../../../evidence/canonical_stream.jsonl | cut -d' ' -f1)"
 
   adversarial-review:
@@ -124,6 +123,7 @@ jobs:
       - name: Gemini 3.1 Pro mathematical review
         run: python .github/scripts/c3_escape_obstruction_review.py mathematical evidence review.json
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: escape-obstruction-mathematical-review
           path: review.json
@@ -145,9 +145,14 @@ jobs:
         with:
           name: escape-obstruction-verification
           path: evidence
+      - uses: actions/download-artifact@v4
+        with:
+          name: escape-obstruction-mathematical-review
+          path: mathematical-review
       - name: Gemini 3.1 Pro publication audit
-        run: python .github/scripts/c3_escape_obstruction_review.py publication evidence publication.json
+        run: python .github/scripts/c3_escape_obstruction_review.py publication evidence publication.json mathematical-review
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: escape-obstruction-publication-audit
           path: publication.json

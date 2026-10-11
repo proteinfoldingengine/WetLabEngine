@@ -23,10 +23,15 @@ bridge substitution, stream truncation, extra rows, and canonical corruption.
 
 ## Tests-first record
 
-The first commit deliberately contains this plan, the tests, and the workflow
+The first commit `7aaccd8b83f9a001e2d8f138fa2dbb4397ffc28d` deliberately contains this plan, the tests, and the workflow
 but no producer/checker modules.  Its verification job must fail specifically
 because `producer` is absent.  That run is the required RED observation; the
 implementation is added only after the actual Actions log confirms that cause.
+
+Observed RED: Actions run `38167334252`, job `114552511434`, failed in the exact
+bounded test step with `ModuleNotFoundError: No module named 'independent'`;
+all producer, checker, inherited-test, and review steps were skipped.  This
+failure is preserved and was inspected before either implementation was added.
 
 No result in this campaign is CLOSED until the bounded run, rejecting controls,
 adversarial mathematical review, separate publication audit, evidence
