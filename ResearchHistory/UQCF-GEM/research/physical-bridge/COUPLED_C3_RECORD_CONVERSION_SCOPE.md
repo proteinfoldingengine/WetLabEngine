@@ -1,0 +1,24 @@
+# Prospective verification scope — converted nested record
+
+Status: draft before independent analytical review; no new scientific execution. Mathematical construction and all controls below were already hand-derived during formulation and are disclosed as known. Source parent 0427e18aeae1625b7bd685e511038f769eef0c01. A Git freeze must precede scientific implementation/execution.
+
+Primary claim: RESULT.md's five-request protocol admits the complete sigma=1 source-erasing record conversion, preserves total excursion <=1 on every legal ordered subsequence, and never yields absence of a for original sigma=0. Record soundness is conditional on initialization and protocol order; native physical access/enforcement is not claimed.
+
+Frozen proposed finite universe: labels a=0,b=1,c=2,d=3,x=4 plus n in {0,1,2} extra labels. Each extra label independently occupies exactly one of five patterns: root only; A but not W; A and W; B0; C0. Base A=W={a,b}, B0={c}, C0={d}. All labels occur at the fixed global root. This gives 1+5+25=31 structural profiles, each with sigma in {0,1}, and every five-bit execution/skip mask: 31*2*32=1,984 requested histories. Include rejected masks and their first illegal command; never filter them out of the identity universe.
+
+The universe is a bounded family inside the general proof, not all native states. Extra-label profiles test whether irrelevance, nesting and hitting computations are implemented without assuming only the smallest fixture. No finite passing count upgrades the proof.
+
+Producer: construct bitset supports from five-way label assignments and process masks in command order using local native admission.
+Independent checker: enumerate A-extra subsets, W-extra subsets of A-extra, and disjoint B/C subsets of the remaining extras; reconstruct set-valued full states. For every selected signed command require correct presence/absence at its source, exactly one changed addressed incidence, and complete endpoint nonempty/root/nesting checks; absent deletion or present addition must never become an accepted unchanged state. Compute every internal hitting number by explicit hitting-set enumeration. Reconstruct every canonical record independently and require exact equality, including rejected requests and intermediate states, before comparing hashes. It must not import producer code or validate only submitted records.
+
+Primary outputs: full canonical identity universe, source and path slices, executed positions, first invalid command where any, endpoint, original source bit, record bit, source-erased flag, profile sequence and peak excursion. State conventions and exact serialized schema must be locked in the implementation plan before execution.
+
+Controls: missing/duplicated/substituted identities; incorrect original bit; forged record bit; wrong state/illegal incidence; missing transient (3,2) slice; erroneous zero-excursion claim; unearned native-access/guaranteed-write claim; wrong source commit or protocol order. Include the natively legal +b,-a sigma=0 counterhistory and require its classification as outside protocol, not native rejection. Include all-skip as a non-writing valid history without presenting it as a new obstruction.
+
+No shortest-path claim. Covariance under simultaneous transport of labels, order and addresses is an analytical invariance of the definitions; no exhaustive permutation universe is silently added.
+
+Known analytical expectations from the pre-implementation reviewer: per structural profile, sigma=0 has 2 legal execution masks and sigma=1 has 14. Hence 496 histories should be valid and 1488 rejected in the proposed universe. A positive record together with source erasure requires all five selected commands, giving one such history per profile. These are hand-derived expectations, not computed results or blinded findings. The independent reconstruction must still produce the entire universe.
+
+Resource limit: small pure-Python standard-library primary reconstruction, no randomized sampling or heuristic pruning. Run complete inherited scientific contract suites required by the latest integrated workflow, plus appropriate native grammar checks. Preserve genuine missing-implementation RED. Then fresh reproduction, separate Gemini mathematical and publication reviews, original archives/logs, independent evidence audit, leased publication and immutable readbacks. No CLOSED status before the complete closure chain.
+
+Integration before freeze: current branch parent a8ca2289d4a4c7a5643cb028f17c06cd150ad771 adds the inherited coherent-register realization screen and an origin-index entry. The compare from 0427e18 shows no scientific implementation or used theorem changes. That screen is retained; this candidate does not claim its missing quantum/incidence representation or native enforcement/access bridge. Analytical source snapshot remains 0427e18; freeze is based on the current integrated parent.
