@@ -6,6 +6,18 @@ Status: Scoped C3 and C4 closeouts are recorded individually below; native recor
 
 
 
+## Current checkpoint: nonuniform five-type first-reserve classification
+
+[Nonuniform closeout](COUPLED_C3_NONUNIFORM_RESERVE_CLOSEOUT.md): exact-event verification, fresh reproduction, mathematical review, publication review and original-evidence audit ACCEPTED. Final publication/readback status is recorded in that closeout and its immutable ledger; earlier pending headers below are historical.
+
+The theorem now covers every positive integer source multiplicity in the five-type pair-root family. Static safe reserve exists iff there is an isolated vertex or a deficient independent set containing at most one singleton source type. A first reserve is reachable iff static reserve exists and minimum graph degree is at most one. Every reachable case admits four unchanged actual original maximal anchors. Isolated vacancy costs four optimally; eight is a lower bound without isolates, attained by eligible cherries; triple routes achieve at most thirteen without a general optimality claim.
+
+Run38092297156 at72551789ce372e2bbe89916b41ec1f884c983aea passed all four jobs:378 scientific tests (34new+344inherited),32768 graph/profile cases,44800 routes,450560 native slice occurrences and316352676 original protected one-hidden checks. Full canonical reconstruction and fresh byte-equal certificate/companion reproduction passed. Both external reviews ACCEPTED attempt1;42math/45publication input hashes were reconciled. Original archives, complete logs, raw responses and nine rejecting evidence controls are retained. Mathematical-review cost wording is qualified in the final closeout; the raw answer remains unchanged.
+
+Approved roadmap remains a program, not a proof of C3/C4 closure: generalize reserve availability beyond this family; connect reachable reserves to exact repair/exchange/restoration; derive progress without assuming commitment; derive native observation/access/retained output and verify composition against exact C3/C4 obligations. No new roadmap theorem or mechanism is established here. The three origin-screen source readbacks are retained in evidence/nonuniform-reserve/roadmap_source_readbacks.json. Native input, carrier/initial correlation, action connection and accessible retained output must be justified; additional conditional repair campaigns do not resolve information origin. Do not insert a full-state read, acknowledgment, hidden-dependent outcome kernel or mandatory commitment rule.
+
+Other footprints, missing source types, broad C3/general C4 and native observation/access/outcomes/committed progress remain OPEN. Finish this checkpoint's publication before selecting and freezing the next concrete obligation. Path A remains active; Path B closed.
+
 ## Latest scoped result: complete weak-trace first-reserve classification
 [Weak-trace closeout](COUPLED_C3_WEAK_TRACE_CLOSEOUT.md): scoped CLOSED for the frozen theorem and verification contract. In the uniform five-type pair-root family, t1 admits a first reserve iff G has an isolated vertex; t>=2 admits one iff a static safe reserve exists and minimum degree(G)<=1. EVERY reachable case admits four unchanged actual original maximal anchors. Forced protection movement for a first reserve is absent in this family, including redundant maxima; other footprints/nonuniform multiplicities remain OPEN.
 

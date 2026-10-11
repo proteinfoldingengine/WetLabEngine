@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-10-10T23:29:01.191032+00:00",
+  "run": 38092297156,
+  "publication_job": 114333777003,
+  "state": "independent publication gate running; Gemini step pending",
+  "prior_fresh_reproduction_seconds": 397,
+  "publication_gate_started_at": "2026-10-10T22:56:20Z",
+  "configured_job_timeout_minutes": 90,
+  "comparison": "Both jobs run the same scientific producer, certificate/companion byte comparisons and independent checker at the same event commit. Publication then verifies mathematical review input hashes. Output paths differ.",
+  "diagnosis": "No demonstrated root cause from available metadata; no complete running-job log available. Slower execution alone does not establish a code defect.",
+  "action": "Preserve running job and its original evidence; no speculative code change, cancellation, reduced verification or duplicate campaign."
+}

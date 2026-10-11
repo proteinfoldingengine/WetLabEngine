@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "operation": "fetch publication job through generic GitHub fetch",
+      "result": "400 unsupported endpoint",
+      "impact": "No evidence altered; use workflow jobs endpoint"
+    },
+    {
+      "operation": "fetch running publication job log",
+      "result": "404 BlobNotFound at 2026-10-10T23:24:14Z",
+      "impact": "Complete log unavailable while job running; retry after completion"
+    }
+  ]
+}

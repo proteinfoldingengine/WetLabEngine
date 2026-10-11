@@ -1,0 +1,26 @@
+```json
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The layer-cake necessity and sufficiency arguments for the static criterion are correctly implemented and verified, confirming that at most one type can have a zero count and bounding the singleton types in the deficient independent set.",
+    "The anchor-selection lemma is correctly implemented in both the producer and independent checker: it excludes the unique changed singleton if present, otherwise the target. It edits the FIRST label of the excluded type and the SECOND label of other changed types, ensuring four unchanged actual original maximal anchors throughout the route.",
+    "The cost bounds are verified: isolated routes cost 4 toggles, cherry routes cost 8 toggles (globally optimal without isolates), and triple routes cost <= 13 toggles.",
+    "The 480 subfootprint witnesses for the endpoint lower bound of 8 toggles are present and independently verified.",
+    "The capacity-conditioned K23 obstruction is accurately characterized. The requirement of at least two fat types in the independent size-three part correctly identifies the 320 locked spare cases for the binary profiles {1,2}^5.",
+    "The 32,768 complete count graph cases (1024 graphs * 32 profiles) are fully reconstructed by the independent checker using sets, multisets, explicit meets, and union-find, without importing the producer.",
+    "The genuine initial RED log (missing producer import) is preserved, and the comprehensive suite of negative controls (e.g., two-singleton cherry, insufficient triple, wrong exclusion, fresh label) confirms the integrity of the verification contract.",
+    "The test suite successfully executed 34 new tests and 344 inherited scientific tests.",
+    "The publication gate confirms exact event input, response, provenance, byte-exact certificate reproduction, and full independent reconstruction."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem applies specifically to positive integer multiplicities in the five-type pair-root family; other footprint families or sources missing types remain OPEN.",
+    "While the analytical theorem covers all positive integer multiplicities, the finite computational verification is restricted to binary profiles {1,2}^5.",
+    "Count-source isolation (minDegree >= 2) does not imply raw native-state isolation.",
+    "Broad C3, general C4, native observation, access, source, outcome, and committed progress remain supplied assumptions and are not derived by this theorem.",
+    "This review evaluates the mathematical and computational claims as presented; it cannot attest to future publication success and does not constitute a full-stack certification.",
+    "No physical derivation, new primitive, fundamental time, dark matter variable, or inserted geometry is claimed or validated."
+  ]
+}
+```
