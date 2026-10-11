@@ -29,3 +29,11 @@ The archived-ledger candidate therefore does not supply the complete signed/root
 The next eligible object is an actual native interaction-to-record producer with justified request/reference identities and update/access semantics. No full hidden-state wrapper, acknowledgment or compulsory commitment is introduced. No new numerical campaign is launched; native C3 and broad C4-C6 remain OPEN. Source and review/publication provenance are retained in evidence/event-binding-probe/.
 
 Integration note: concurrent commits through972e1bcb0b50146116fb5b68dada5ff7599e3526 already publish [lineage candidate C1](COUPLED_C3_LINEAGE_BINDING_CANDIDATE_C1.md) and [archived-ledger candidate C2](COUPLED_C3_V1172_LEDGER_PAYLOAD_C2.md). The local C1 name retained in this probe/review refers to that same upstream C2 route. This assessment adds independent source review and byte/provenance reconciliation; it is not a third candidate or an additional scientific discovery. All concurrent files remain intact.
+
+
+## Common ancestral pruning as the selective record interaction — candidate stopped
+
+[Interaction attempt](COUPLED_C3_PRUNING_INTERACTION_ATTEMPT.md), inspected parent 7c4d7ec35845295d2fe578e4ce57ebe93bbeb589: for prefix-closed views, r_Z(Y_i)=Y_i intersect Z. Uniform ancestral pruning preserves every surviving vertex's indexed support and cannot write the declared incidence record at that vertex. This remains true for source-dependent Z; a same-union output requires identity. Individual Z_i would provide the missing selective inputs, not derive them from the common retraction.
+
+Re-entry requires an inherited event-to-indexed-view action and justified retention/access, or a separately typed alternative output. The explicit prune-r control shows why changing the common carrier can remove the earlier source witness. This is a scoped structural obstruction to one proposed connection, not a physical no-go, a rejection of extensive source pushforward, or another actual-outcome-selection objection. Earlier register entries remain historical and unchanged.
+

@@ -103,3 +103,15 @@ From an exact preparation S with profile q, a native endpoint E is reachable und
 
 A sound positive endpoint must retain at least one original source-one-exclusive incidence at its original coordinate. Thus this construction does not provide the source-erasing conversion previously obtained under an exclusive protocol. It establishes a conditional pruning-record bridge, not native physical initialization, enforcement, accessible readout, actual outcome selection or progress. The readout is a declared projection; equal h profiles do not expose it. No numerical campaign or new test count is claimed; the historical 527-test checkpoint is unchanged and not rerun. No numbered-stage CLOSED/CERTIFIED or main-merge claim. Next derive a justified retained-input interaction lying in this pruning relation and accessible use of its record. All earlier historical sections remain intact.
 
+
+
+## 2026-10-11 — attempted physical realization by common ancestral pruning
+
+Following pruning-record publication 7c4d7ec35845295d2fe578e4ce57ebe93bbeb589, the user approved deriving the interaction. COUPLED_C3_PRUNING_INTERACTION_ATTEMPT.md records a precise failed direct-reuse candidate, with source evidence and raw review in pruning_interaction_attempt/.
+
+Applying the same ancestral retraction r_Z to every prefix-closed view gives r_Z(Y_i)=Y_i intersect Z. Every surviving vertex therefore keeps its full original label support. This uniform operation cannot write the previous record at retained u, even with an arbitrary source-dependent choice of Z. Preserving the original union forces Z=T and makes it the identity. Selective same-union pruning instead needs individually justified retained subviews Z_i and protection of their union.
+
+A deliberately changed-carrier control first prunes the source leaf r globally, making the two preparations identical; subsequent selective -a(w),-a(u) yields the same positive memory from both original sources. This is outside the previous fixed-union theorem and shows why that premise needs justification. The inspected quantum instruments/read wiring and masks remain supplied; extensive grade pushforward is valid but has a different output type. No physical interaction or accessible readout was derived, and no archive-wide impossibility is claimed.
+
+Verdict: UNIFORM_PRUNING_INTERACTION_CANDIDATE_REJECTED; SELECTIVE_INTERACTION_AND_ACCESS_NOT_DERIVED. No numerical campaign, new test count, main merge or numbered-stage CLOSED/CERTIFIED claim. The historical 527-test checkpoint is unchanged and not rerun. Next require an inherited event-to-indexed-view action with justified retention and accessible output, or a separately earned alternative consumer. Historical sections remain intact.
+
