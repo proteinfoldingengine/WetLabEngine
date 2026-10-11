@@ -1,0 +1,28 @@
+test_absent_deletions_are_rejected (test_conversion.Contracts.test_absent_deletions_are_rejected) ... ok
+test_bool_identity (test_conversion.Contracts.test_bool_identity) ... ok
+test_complete_reconstruction (test_conversion.Contracts.test_complete_reconstruction) ... ok
+test_duplicate (test_conversion.Contracts.test_duplicate) ... ok
+test_false_access (test_conversion.Contracts.test_false_access) ... ok
+test_false_guarantee (test_conversion.Contracts.test_false_guarantee) ... ok
+test_false_record (test_conversion.Contracts.test_false_record) ... ok
+test_false_zero_peak (test_conversion.Contracts.test_false_zero_peak) ... ok
+test_forgery_native_rejection (test_conversion.Contracts.test_forgery_native_rejection) ... ok
+test_forgery_native_valid_but_outside_protocol (test_conversion.Contracts.test_forgery_native_valid_but_outside_protocol) ... ok
+test_forgery_protocol_acceptance (test_conversion.Contracts.test_forgery_protocol_acceptance) ... ok
+test_full_positive_path (test_conversion.Contracts.test_full_positive_path) ... ok
+test_illegal_state (test_conversion.Contracts.test_illegal_state) ... ok
+test_missing (test_conversion.Contracts.test_missing) ... ok
+test_omitted_transient (test_conversion.Contracts.test_omitted_transient) ... ok
+test_one_sided_soundness (test_conversion.Contracts.test_one_sided_soundness) ... ok
+test_skips_do_not_guarantee_write (test_conversion.Contracts.test_skips_do_not_guarantee_write) ... ok
+test_substitution (test_conversion.Contracts.test_substitution) ... ok
+test_syntax_laundered_as_skip (test_conversion.Contracts.test_syntax_laundered_as_skip) ... ok
+test_wrong_order (test_conversion.Contracts.test_wrong_order) ... ok
+test_wrong_parent (test_conversion.Contracts.test_wrong_parent) ... ok
+test_wrong_scope (test_conversion.Contracts.test_wrong_scope) ... ok
+test_wrong_source_bit (test_conversion.Contracts.test_wrong_source_bit) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 4.606s
+
+OK

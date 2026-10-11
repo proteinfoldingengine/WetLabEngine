@@ -1,0 +1,217 @@
+{
+  "canonical_requested": 1984,
+  "certificate_sha256": "27ca764746af8f9d63e2f4bedfe6481457786ba2a4a09918c9742153e39b9bef",
+  "inherited_tests": 504,
+  "native_slice_occurrences": 6637,
+  "new_tests": 23,
+  "original_archives": [
+    {
+      "bytes": 21643,
+      "file": "conversion-reproduction.zip",
+      "git_blob": "082cc94b3b02fcd351c3d75cdc149b730162f5aa",
+      "members": {
+        "certificate.json": "27ca764746af8f9d63e2f4bedfe6481457786ba2a4a09918c9742153e39b9bef",
+        "file_manifest.json": "9c1c3bcd1258fd4768457bcbaa9e5c0b93a5dfb1d090fc916d35f80ae8e89b49",
+        "independent.json": "2cc6c819dadf62ad389803188be78d534309ea747e4325d5e77d1f5205114e25",
+        "independent.log": "05cca384c3568d66263990e238ed88f2102b0d486d1ee50ce1eb63b02a363753",
+        "native_check.json": "6d14ef1686af48176914513773eff236598270ca24b287d0e8466f0b5219493c",
+        "native_check.log": "56f5129938e3921dd03a80674d6b6d46d8657d362aab00f7464ac7bb1ad4031e",
+        "producer.log": "5ae1d9120bf5aa8324d4b0e10f69e5c38ee4fb3866436ec379d4aac3daf35c82",
+        "provenance.json": "d09f99287e0a47493c3f32fd014472a1feda4d079c4695b05bf3746152bddc8b",
+        "reproduction.json": "cca6359b606b44618709f55db1603f77bc1e8c32b8ef30a68733cdc21a954217"
+      },
+      "sha256": "421240b03a1cd51e2445d2a47c111ae3b8d33bf8caa75279e6bfd8eb9d25c28d"
+    },
+    {
+      "bytes": 92788,
+      "file": "conversion-publication.zip",
+      "git_blob": "6cdba3ea003ae98a5cfda85178f5161902d0ebe4",
+      "members": {
+        "manifest.json": "523031916d85674316569750c7ebf3f7a188676a429a218761ddaa53a61b5e48",
+        "prompt.txt": "c1e6e58c5054da639fc6a508168faee90c0986cfff5fa723353f46f64623928e",
+        "response.json": "c8c159a97047bc9be3ca65dbff8b2a62cb7e8d2c687307b24741944c2da4a3e8",
+        "review.txt": "94addfdfec18ec9598b9b232fe092b1c94827420a349056275f9fbfd26294496"
+      },
+      "sha256": "40a73371600610d3fe6045b813dd5dff7bb4b496c0818238dd35352a909bdf0c"
+    },
+    {
+      "bytes": 21999,
+      "file": "conversion-gate.zip",
+      "git_blob": "9d351f73f14684dd6cffb52777ede2a63de64eee",
+      "members": {
+        "certificate.json": "27ca764746af8f9d63e2f4bedfe6481457786ba2a4a09918c9742153e39b9bef",
+        "file_manifest.json": "3b1ed310ad4c451eecb4cd16ae587cf23b895f3dc6377adb873136fcd02aa3f9",
+        "independent.json": "2cc6c819dadf62ad389803188be78d534309ea747e4325d5e77d1f5205114e25",
+        "independent.log": "05cca384c3568d66263990e238ed88f2102b0d486d1ee50ce1eb63b02a363753",
+        "native_check.json": "6d14ef1686af48176914513773eff236598270ca24b287d0e8466f0b5219493c",
+        "native_check.log": "56f5129938e3921dd03a80674d6b6d46d8657d362aab00f7464ac7bb1ad4031e",
+        "producer.log": "5ae1d9120bf5aa8324d4b0e10f69e5c38ee4fb3866436ec379d4aac3daf35c82",
+        "provenance.json": "d09f99287e0a47493c3f32fd014472a1feda4d079c4695b05bf3746152bddc8b",
+        "publication_gate.json": "ca3e51afc9e5a950a2b12bb91a866cb87a418b2f1e78c7f2a186e459b3c2b47d",
+        "reproduction.json": "cca6359b606b44618709f55db1603f77bc1e8c32b8ef30a68733cdc21a954217"
+      },
+      "sha256": "a1c6de156f7cc07e54aaa2e1621ab3538a909387dbdcd855eb72e4cb91afd52d"
+    },
+    {
+      "bytes": 120246,
+      "file": "conversion-verification.zip",
+      "git_blob": "04efa05fa1d5569598ae131e4f6eca82901a830a",
+      "members": {
+        "ANALYTICAL_REVIEW.md": "82a800e2cebca30510f45794a5ccb73c45308dad63232895c368887b1ed7b06b",
+        "CODE_REVIEW.md": "5fa1b24c48da8aa57149beb9fde6a6e463ee7ab6cbfeb895fdcd0bd9fc8df064",
+        "COUPLED_C3_RECORD_CONVERSION_REPORT.md": "2dd3063980107b67139fda341e296e30343c456815acfca642b5bd232b6cb992",
+        "COUPLED_C3_RECORD_CONVERSION_RESULT.md": "a84f4622cbec898e2a08e7c3b538d0e7b2a656d24b4a54d60d508fa7d2c48eb2",
+        "COUPLED_C3_RECORD_CONVERSION_SCOPE.md": "477119113be8674a4b090a2056137d74553dd04fb44515b37a6c249523f13b0c",
+        "PLAN.md": "f449218f84993322c61b410d748547ffc259c25791053d1a77a47470a8aa964d",
+        "REVIEW_INPUT_SCOPE.md": "91439af0dc977c164ca3e98e74cd2c8baba9e9577fa3017d253cfa7fd990643b",
+        "anchored_release_tests.log": "fa050b3f45628a3f6c6acda86601c35739133f18cfac5134d3ada70b2663a4a3",
+        "bound_sources/AGENTS.md": "56d5ffb2d1f8f0d1a1660b6cc5b31ebae92b59fb48b547e7d47ea13f0bafdee0",
+        "bound_sources/COUPLED_C3_COMMAND_PROVENANCE_REVISED.md": "70bb1b97de2183eb5e8b47f5496913bb8d1595c937a58765794161cc32b26eb9",
+        "bound_sources/COUPLED_C3_EVENT_CHANNEL_RESULT.md": "2185fda2584269daa4bbd0f65bab6f44b83505b6d78705fbc54df6efe68638dc",
+        "bound_sources/COUPLED_C3_EVENT_GRAMMAR_C4.md": "b972279cf4645c98f1b66670890310d22851a56d6a19423b128f336ea0d86110",
+        "bound_sources/COUPLED_C3_EVENT_INIT_RESULT.md": "b6b36a651d17cd9f037e5dd6e0f8a18ab08f67686fc2fd0b899a4271c26ea6b0",
+        "bound_sources/COUPLED_C3_INTERNAL_RECORD_ATTEMPT.md": "51c879138fa1af3a81f874481e15f7a14ba12d715bdd965fa678590e569fec12",
+        "bound_sources/COUPLED_C3_NESTED_RECORD_PROBE.md": "eaec8e9416f54281084d23508603c87015f567d61e7969cf57f8aa7af11d2d56",
+        "bound_sources/COUPLED_C3_NESTED_RECORD_REALIZATION_SCREEN.md": "bce6bb22066e9f48436b30c3f7fae56d984bac1658114a31733242eb5345b228",
+        "bound_sources/COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md": "3362d45ae65a16e9326b0651cc19e46611f5c920fb1b1aa2f520558825b0cc60",
+        "bound_sources/NATIVE_ADMISSIBILITY.md": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+        "bound_sources/PHASED_EVENT_INTERFACE_RESULT.md": "00820aac84b6943baf989165a250e15929670693802ea2803bc74ba025bfa7eb",
+        "bound_sources/PRECEDENCE_INTERFACE_RESULT.md": "e2420aa93c1e1ad356951d339eb6bb064636611fd9e39e851a48ad591b421e0f",
+        "bound_sources/coverage.py": "fc3b98a3ca9d2932bc08597bc200ad2aa2f0aea15da2a4f247683342f4827068",
+        "bound_sources/verifier.py": "846cf7d286d48634ed869aef9ca94631b5c1ae54d62a6e5412e07add2be4e54a",
+        "c3_record_conversion_review.py": "155e6b433d339cc6736ee30c8cbab71871556d82eeb57d7305ca22b725967b31",
+        "capacity_gap_tests.log": "176fe9277d6ef3151f704fa556519eb0a5691f8526c3250575110eb3b72e4868",
+        "certificate.json": "27ca764746af8f9d63e2f4bedfe6481457786ba2a4a09918c9742153e39b9bef",
+        "ci_campaign.py": "2f14fb5585cab6d141a993c9a84bbc8bad8a433028cf01b57425189cf629cea3",
+        "cover_static_tests.log": "237dc4de5cedf817a36a73dd03f99387c76b0df48ec3d94e66fe2ac3f4ccf473",
+        "escape_obstruction_tests.log": "d322042a859bdbf7ce0525f1651c947d36141255e93a9e1ec18569731682b7a7",
+        "file_manifest.json": "86183b8fa5975aad2767882cab68d82b6d337a51313249b10f4b84700932b02f",
+        "fingerprint_lock_tests.log": "89ce72a40a4b5a473562469da719e496273a2bfac3a72bf58fc90d3de902f23f",
+        "fixed_family_tests.log": "0b9dbfe1b2aceeab9d74100c707fe188960e1cb9bef172e9088ea7a735f1d6ab",
+        "footprint_tests.log": "923b493ec972dd07ae3c092db17d247580805190487d144cad15f82498848ad3",
+        "freeze_binding.json": "1a4211f6147ac9516f829a344b48a2018421dc522d43c5b18879ffb5cb2bb8ff",
+        "handover_graph_tests.log": "c856da7c9ab67d42c1f18ad2039c9d6b523a86b60b8a2b5ce55fbef44247b448",
+        "independent.json": "2cc6c819dadf62ad389803188be78d534309ea747e4325d5e77d1f5205114e25",
+        "independent.log": "05cca384c3568d66263990e238ed88f2102b0d486d1ee50ce1eb63b02a363753",
+        "independent.py": "0c0ac22fb2429afa8447d5c0f2e6f10f5660e00a9a0c6a4666610179b9a891f2",
+        "label_release_tests.log": "a9ab7d0a5961ca6628088e8cc67bcee88f50a755d5454bc8d98a85303e3afb62",
+        "local_progress_tests.log": "f0561f84724ce4b90c64e999ebc4342613a13ba45a84ff417ad759076b0ba854",
+        "moving_cover_tests.log": "128133b7c910ad59c591197229ca5fa4fa41124c0b3bb915354aecc62ae136c8",
+        "native_check.json": "6d14ef1686af48176914513773eff236598270ca24b287d0e8466f0b5219493c",
+        "native_check.log": "56f5129938e3921dd03a80674d6b6d46d8657d362aab00f7464ac7bb1ad4031e",
+        "native_crosscheck.py": "00435e7ba9ae6352cd3a006fa96a05a39061cea22c09d66cc11dafe8df685b73",
+        "nonuniform_reserve_tests.log": "13ca3a648caa3213b28e3b8739a0695591101749ab5bcc7e996fd863b683e3d2",
+        "private_cover_tests.log": "4e4f0222cf114a546d653bad6db5263ae80c498f4a23a0d4cc565c1082ea1c7a",
+        "producer.log": "5ae1d9120bf5aa8324d4b0e10f69e5c38ee4fb3866436ec379d4aac3daf35c82",
+        "producer.py": "16260669de0a357e149883818d13593c715715ee5ffd42aec5445bbed2a08b90",
+        "provenance.json": "d09f99287e0a47493c3f32fd014472a1feda4d079c4695b05bf3746152bddc8b",
+        "record_conversion_tests.log": "80e65cd5cc5436782d57e8684fdacd83c02e85bc631e9c99920aa663a756ccb5",
+        "red.log": "5292da0d7fccd878fc9b9560057c3c42c52a72189a3cdd6134a4e6d5090c3685",
+        "reserve_activation_tests.log": "9600603c3d757531d7f009888c11df9aa3bab9d492b1d666185e11609241eeb7",
+        "saturated_handover_tests.log": "4225fb977cd2b4470ebfd513675c57f06bb85778c11ae6a8a60295f6933fc88f",
+        "saturated_transfer_tests.log": "9bbad84921e31b5234b2257f92157e66d937d996a1976326ff7cc8d99b724d4c",
+        "slack_handover_tests.log": "6d4b2fd9a7972de8dd3e32c7cb0c89c8a6cab9c5170a3a3c3d138eaa36ea39ed",
+        "source_escape_tests.log": "7c0a1f3fafb4e10b56da1ecc072959992ce6f5489fb2d42f0655ce5bf77ca5cb",
+        "source_readbacks.json": "0cde3c271fb3c4c293279c2a785fd6ff079d8864d0e786cc7d8306ce69c7357a",
+        "star_carrier_tests.log": "2564b262fccf998759cae76a118e674308414dd657b769915fe81d390a1c5473",
+        "test_conversion.py": "0a8827f5cd58e610713f1cdde214e3af1c8ba1db0110decfb69a6d8f4ce0e5e7",
+        "test_counts.json": "041162083c02ac6aa949d572a502398f34fd7a354d9e7517666f2e9bf10357d4",
+        "uqcf-gem-c3-record-conversion.yml": "544905aca62113fe74c02c3605f827c39148fe4135941176985364186107f64b",
+        "weak_trace_tests.log": "6c3828d46468041e62c2208d6bb2d77a6b524c0605e2d0a112726811302b8ccf"
+      },
+      "sha256": "6d3ee2abb0d9d92bdf1725ffdebf099b51d97c14ed602dc45ab71a0a8e2af4c4"
+    },
+    {
+      "bytes": 89618,
+      "file": "conversion-review.zip",
+      "git_blob": "d9f511e603c3220945639b319d349f7d27373060",
+      "members": {
+        "manifest.json": "a5f9d4429cda93e97f89101a25bf040f250daaa1ae11e7121b10d6962bf6b8e0",
+        "prompt.txt": "38ec01ff7c85545877fc5e92e3d036ccbe7993718f37519a87b3afa104a79abb",
+        "response.json": "ed12e4bd92b9f328e69345119c8c465af2b6735a6703790457d81264fdff287d",
+        "review.txt": "e51a32ee5fa3df1e63506fd336b4dfef283c6e063577ee1770dace990fb833ad"
+      },
+      "sha256": "30ca2bf09a806fb0841ec64f9f6725dedda736037f06577e48395040de22aa1c"
+    }
+  ],
+  "positive": 124,
+  "review_inputs": {
+    "mathematical": 70,
+    "publication": 82
+  },
+  "reviews": {
+    "mathematical": {
+      "counterexamples": [],
+      "findings": [
+        "The independent checker correctly implements signed source membership checks (prior absence for addition, prior presence for deletion) and exactly one changed incidence, addressing the pre-implementation specification clarification.",
+        "The producer and independent checker use algorithmically independent methods: the producer uses bitsets and dynamic programming for hitting numbers, while the independent checker uses set-partition enumeration and exhaustive combinations for hitting sets.",
+        "The test suite includes 23 new tests and 504 inherited tests, totaling 527, which exactly matches the expected counts.",
+        "A genuine missing-implementation RED log is preserved, demonstrating that the 23 new tests fail when the implementation is absent.",
+        "The native cross-check successfully validates all 6,637 slice occurrences (6,634 from the main universe + 3 from the forgery) against the inherited v16.53 verifier.",
+        "The explicit native-valid sigma0 out-of-protocol +b(r),-a(r) forgery is correctly implemented and classified as native-valid but protocol-invalid, confirming that the endpoint alone cannot certify history.",
+        "Fresh reproduction confirms byte-identical outputs for certificate.json, independent.json, and native_check.json.",
+        "Provenance is correctly bound, with scientific_sha matching workflow_sha, and the freeze commit is properly recorded."
+      ],
+      "limitations": [
+        "No native initialization, protocol enforcement/exclusivity, access, selected outcome, guaranteed writing, physical source correspondence, force, geometry, fundamental time, or broad C3/C4-C6 closure is claimed.",
+        "The historical record is conditional on the declared initial state and restricted edit order (protocol); the explicit out-of-protocol forgery demonstrates that the endpoint alone cannot certify history even with full-state access.",
+        "The record can be erased later (e.g., by +a(r)); there is no physical force or permanent memory law ensuring arbitrary persistence.",
+        "The downstream -b(r) availability argument is an operational graph distinction, not an observer oracle or a proof of physical access to the record."
+      ],
+      "missing_assumptions": [],
+      "verdict": "ACCEPTED"
+    },
+    "publication": {
+      "counterexamples": [],
+      "findings": [
+        "The mathematical review was ACCEPTED with no missing assumptions or counterexamples.",
+        "The publication gate successfully verified the mathematical inputs and response SHA256.",
+        "The independent checker correctly implements signed source membership checks (prior absence for addition, prior presence for deletion) and exactly one changed incidence.",
+        "The producer and independent checker use algorithmically independent methods: the producer uses bitsets and dynamic programming for hitting numbers, while the independent checker uses set-partition enumeration and exhaustive combinations for hitting sets.",
+        "The test suite includes exactly 23 new tests and 504 inherited tests, totaling 527, all passing.",
+        "A genuine missing-implementation RED log is preserved, showing 23 assertion failures when the implementation is absent.",
+        "The native cross-check successfully validates all 6,637 slice occurrences (6,634 from the main universe + 3 from the forgery) against the inherited v16.53 verifier.",
+        "The explicit native-valid sigma0 out-of-protocol +b(r),-a(r) forgery is correctly implemented and classified as native-valid but protocol-invalid, confirming that the endpoint alone cannot certify history.",
+        "Fresh reproduction confirms byte-identical outputs for certificate.json, independent.json, and native_check.json.",
+        "Provenance is correctly bound, with scientific_sha matching workflow_sha, and the freeze commit is properly recorded."
+      ],
+      "limitations": [
+        "No native initialization, protocol enforcement/exclusivity, access, selected outcome, guaranteed writing, physical source correspondence, force, geometry, fundamental time, or broad C3/C4-C6 closure is claimed.",
+        "The historical record is conditional on the declared initial state and restricted edit order (protocol); the explicit out-of-protocol forgery demonstrates that the endpoint alone cannot certify history even with full-state access.",
+        "The record can be erased later (e.g., by +a(r)); there is no physical force or permanent memory law ensuring arbitrary persistence.",
+        "The downstream -b(r) availability argument is an operational graph distinction, not an observer oracle or a proof of physical access to the record."
+      ],
+      "missing_assumptions": [],
+      "verdict": "ACCEPTED"
+    }
+  },
+  "scientific_commit": "2c2fcd0434227952669039257104fd9e5d9b21fa",
+  "scientific_tests": 527,
+  "source_erased_positive": 31,
+  "status": "VERIFIED",
+  "test_counts": {
+    "anchored_release": 20,
+    "capacity_gap": 20,
+    "cover_static": 35,
+    "escape_obstruction": 9,
+    "fingerprint_lock": 33,
+    "fixed_family": 28,
+    "footprint": 22,
+    "handover_graph": 20,
+    "label_release": 26,
+    "local_progress": 17,
+    "moving_cover": 28,
+    "nonuniform_reserve": 34,
+    "private_cover": 26,
+    "record_conversion": 23,
+    "reserve_activation": 30,
+    "saturated_handover": 26,
+    "saturated_transfer": 22,
+    "slack_handover": 24,
+    "source_escape": 42,
+    "star_carrier": 10,
+    "weak_trace": 32
+  },
+  "valid": 496,
+  "workflow_run": 38180145086
+}

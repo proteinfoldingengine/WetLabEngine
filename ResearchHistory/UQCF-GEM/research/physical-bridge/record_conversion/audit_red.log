@@ -1,0 +1,150 @@
+test_corrupt_certificate (test_original_audit.Evidence.test_corrupt_certificate) ... FAIL
+test_false_gate (test_original_audit.Evidence.test_false_gate) ... FAIL
+test_false_review_input (test_original_audit.Evidence.test_false_review_input) ... FAIL
+test_false_success (test_original_audit.Evidence.test_false_success) ... FAIL
+test_intact (test_original_audit.Evidence.test_intact) ... FAIL
+test_missing_member (test_original_audit.Evidence.test_missing_member) ... FAIL
+test_missing_suite (test_original_audit.Evidence.test_missing_suite) ... FAIL
+test_rewritten_raw_review (test_original_audit.Evidence.test_rewritten_raw_review) ... FAIL
+test_truncated_job_log (test_original_audit.Evidence.test_truncated_job_log) ... FAIL
+test_wrong_scientific_commit (test_original_audit.Evidence.test_wrong_scientific_commit) ... FAIL
+
+======================================================================
+FAIL: test_corrupt_certificate (test_original_audit.Evidence.test_corrupt_certificate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 19, in test_corrupt_certificate
+    def test_corrupt_certificate(self):self.reject(lambda p:p['archives']['conversion-reproduction'].__setitem__('certificate.json',b'{}'))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 14, in reject
+    packet=self.ready();mutate(packet)
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+======================================================================
+FAIL: test_false_gate (test_original_audit.Evidence.test_false_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 32, in test_false_gate
+    self.reject(mutate)
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 14, in reject
+    packet=self.ready();mutate(packet)
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+======================================================================
+FAIL: test_false_review_input (test_original_audit.Evidence.test_false_review_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 27, in test_false_review_input
+    self.reject(mutate)
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 14, in reject
+    packet=self.ready();mutate(packet)
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+======================================================================
+FAIL: test_false_success (test_original_audit.Evidence.test_false_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 21, in test_false_success
+    def test_false_success(self):self.reject(lambda p:p['jobs']['jobs'][0].__setitem__('conclusion','failure'))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 14, in reject
+    packet=self.ready();mutate(packet)
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+======================================================================
+FAIL: test_intact (test_original_audit.Evidence.test_intact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 17, in test_intact
+    packet=self.ready();self.assertEqual(self.mod.check(packet)['status'],'VERIFIED')
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+======================================================================
+FAIL: test_missing_member (test_original_audit.Evidence.test_missing_member)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 18, in test_missing_member
+    def test_missing_member(self):self.reject(lambda p:p['archives']['conversion-verification'].pop('producer.py'))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 14, in reject
+    packet=self.ready();mutate(packet)
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+======================================================================
+FAIL: test_missing_suite (test_original_audit.Evidence.test_missing_suite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 22, in test_missing_suite
+    def test_missing_suite(self):self.reject(lambda p:p['archives']['conversion-verification'].pop('star_carrier_tests.log'))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 14, in reject
+    packet=self.ready();mutate(packet)
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+======================================================================
+FAIL: test_rewritten_raw_review (test_original_audit.Evidence.test_rewritten_raw_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 23, in test_rewritten_raw_review
+    def test_rewritten_raw_review(self):self.reject(lambda p:p['archives']['conversion-review'].__setitem__('review.txt',b'{"verdict":"ACCEPTED"}'))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 14, in reject
+    packet=self.ready();mutate(packet)
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+======================================================================
+FAIL: test_truncated_job_log (test_original_audit.Evidence.test_truncated_job_log)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 28, in test_truncated_job_log
+    def test_truncated_job_log(self):self.reject(lambda p:p['logs'].__setitem__('verification_job.log',b'ACCEPTED'))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 14, in reject
+    packet=self.ready();mutate(packet)
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+======================================================================
+FAIL: test_wrong_scientific_commit (test_original_audit.Evidence.test_wrong_scientific_commit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 20, in test_wrong_scientific_commit
+    def test_wrong_scientific_commit(self):self.reject(lambda p:p['run'].__setitem__('head_sha','0'*40))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 14, in reject
+    packet=self.ready();mutate(packet)
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_original_audit.py", line 11, in ready
+    self.assertIsNotNone(self.mod,'expected RED: publication auditor absent')
+AssertionError: unexpectedly None : expected RED: publication auditor absent
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+FAILED (failures=10)
