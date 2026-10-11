@@ -1,0 +1,31 @@
+test_bad_domination (test_saturated.Construction.test_bad_domination) ... ok
+test_cost (test_saturated.Construction.test_cost) ... ok
+test_first_vacancy (test_saturated.Construction.test_first_vacancy) ... ok
+test_fresh_label (test_saturated.Construction.test_fresh_label) ... ok
+test_native_hidden (test_saturated.Construction.test_native_hidden) ... ok
+test_saturated (test_saturated.Construction.test_saturated) ... ok
+test_source (test_saturated.Construction.test_source) ... ok
+test_static_negative (test_saturated.Construction.test_static_negative) ... ok
+test_static_positive (test_saturated.Construction.test_static_positive) ... ok
+test_bad_floor (test_saturated.Contracts.test_bad_floor) ... ok
+test_bad_toggle (test_saturated.Contracts.test_bad_toggle) ... ok
+test_capacity_omission (test_saturated.Contracts.test_capacity_omission) ... ok
+test_component_corruption (test_saturated.Contracts.test_component_corruption) ... ok
+test_count_vertex_omission (test_saturated.Contracts.test_count_vertex_omission) ... ok
+test_edge_omission (test_saturated.Contracts.test_edge_omission) ... ok
+test_equal_counts_do_not_decide_labelled_target (test_saturated.Contracts.test_equal_counts_do_not_decide_labelled_target) ... ok
+test_graph_omission (test_saturated.Contracts.test_graph_omission) ... ok
+test_independent (test_saturated.Contracts.test_independent) ... ok
+test_lift_omission (test_saturated.Contracts.test_lift_omission) ... ok
+test_permutation_omission (test_saturated.Contracts.test_permutation_omission) ... ok
+test_renewal_bypass (test_saturated.Contracts.test_renewal_bypass) ... ok
+test_renewal_omission (test_saturated.Contracts.test_renewal_omission) ... ok
+test_route_omission (test_saturated.Contracts.test_route_omission) ... ok
+test_source_omission (test_saturated.Contracts.test_source_omission) ... ok
+test_vector_omission (test_saturated.Contracts.test_vector_omission) ... ok
+test_witness_omission (test_saturated.Contracts.test_witness_omission) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 1.892s
+
+OK

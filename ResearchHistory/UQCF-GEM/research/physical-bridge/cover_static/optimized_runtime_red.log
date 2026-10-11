@@ -1,0 +1,14 @@
+test_optimized_runtime_rejects (test_cover_static.CoverStaticTests.test_optimized_runtime_rejects) ... FAIL
+
+======================================================================
+FAIL: test_optimized_runtime_rejects (test_cover_static.CoverStaticTests.test_optimized_runtime_rejects)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/cover_static/test_cover_static.py", line 33, in test_optimized_runtime_rejects
+    self.assertNotEqual(result.returncode,0)
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.368s
+
+FAILED (failures=1)

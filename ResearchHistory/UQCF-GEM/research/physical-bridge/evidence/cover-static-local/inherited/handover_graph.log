@@ -1,0 +1,25 @@
+test_actual_nonmonotone_handover_toggles (test_handover.Contract.test_actual_nonmonotone_handover_toggles) ... ok
+test_upper_four_meet_accepted (test_handover.Contract.test_upper_four_meet_accepted) ... ok
+test_zero_bridge_lift (test_handover.Contract.test_zero_bridge_lift) ... ok
+test_corrupted_compressed_partition_rejected (test_handover.GraphContracts.test_corrupted_compressed_partition_rejected) ... ok
+test_corrupted_full_partition_rejected (test_handover.GraphContracts.test_corrupted_full_partition_rejected) ... ok
+test_empty_coordinate_retained_in_expansion (test_handover.GraphContracts.test_empty_coordinate_retained_in_expansion) ... ok
+test_floor_rejects_vertex (test_handover.GraphContracts.test_floor_rejects_vertex) ... ok
+test_full_component_equivalence (test_handover.GraphContracts.test_full_component_equivalence) ... ok
+test_multiple_coordinates_are_not_an_edge_lift (test_handover.GraphContracts.test_multiple_coordinates_are_not_an_edge_lift) ... ok
+test_nonmonotone_lift_restores_exact_labelled_source (test_handover.GraphContracts.test_nonmonotone_lift_restores_exact_labelled_source) ... ok
+test_omitted_compressed_vertex_rejected (test_handover.GraphContracts.test_omitted_compressed_vertex_rejected) ... ok
+test_omitted_edge_rejected (test_handover.GraphContracts.test_omitted_edge_rejected) ... ok
+test_omitted_full_vertex_rejected (test_handover.GraphContracts.test_omitted_full_vertex_rejected) ... ok
+test_source_omission_rejected (test_handover.GraphContracts.test_source_omission_rejected) ... ok
+test_true_upper_cover_handover_obstruction (test_handover.GraphContracts.test_true_upper_cover_handover_obstruction) ... ok
+test_all_expansion_choices_share_a_component (test_handover.InheritedBoundaryContracts.test_all_expansion_choices_share_a_component) ... ok
+test_hidden_upper_control_rejects_empty_meet (test_handover.InheritedBoundaryContracts.test_hidden_upper_control_rejects_empty_meet) ... ok
+test_isolated_obstruction_has_singleton_assignment_component (test_handover.InheritedBoundaryContracts.test_isolated_obstruction_has_singleton_assignment_component) ... ok
+test_lift_cost_is_symmetric_difference (test_handover.InheritedBoundaryContracts.test_lift_cost_is_symmetric_difference) ... ok
+test_local_motion_collapses_without_reserve (test_handover.InheritedBoundaryContracts.test_local_motion_collapses_without_reserve) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.330s
+
+OK
