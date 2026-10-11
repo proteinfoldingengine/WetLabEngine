@@ -1,0 +1,163 @@
+name: UQCF-GEM C3 converted retained record
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/record_conversion/producer.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/record_conversion/independent.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/record_conversion/test_conversion.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/record_conversion/native_crosscheck.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/record_conversion/ci_campaign.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RECORD_CONVERSION_RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RECORD_CONVERSION_SCOPE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RECORD_CONVERSION_REPORT.md'
+      - '.github/scripts/c3_record_conversion_review.py'
+      - '.github/workflows/uqcf-gem-c3-record-conversion.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact verification evidence
+        run: python research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/record_conversion/ci_campaign.py verification
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conversion-verification
+          path: conversion_verification
+          if-no-files-found: error
+          retention-days: 90
+  reproduction:
+    needs: verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: conversion-verification
+          path: conversion_verification
+      - name: Exact reproduction evidence
+        run: python research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/record_conversion/ci_campaign.py reproduction
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conversion-reproduction
+          path: conversion_reproduction
+          if-no-files-found: error
+          retention-days: 90
+  mathematical-review:
+    needs: reproduction
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: conversion-verification
+          path: conversion_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: conversion-reproduction
+          path: conversion_reproduction
+      - name: Separate Gemini review
+        env:
+          REVIEW_PHASE: mathematical
+        run: python research_snapshot/.github/scripts/c3_record_conversion_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conversion-review
+          path: conversion_review
+          if-no-files-found: error
+          retention-days: 90
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: conversion-verification
+          path: conversion_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: conversion-reproduction
+          path: conversion_reproduction
+      - uses: actions/download-artifact@v4
+        with:
+          name: conversion-review
+          path: conversion_review
+      - name: Exact gate evidence
+        run: python research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/record_conversion/ci_campaign.py gate
+      - name: Separate Gemini review
+        env:
+          REVIEW_PHASE: publication
+        run: python research_snapshot/.github/scripts/c3_record_conversion_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conversion-gate
+          path: conversion_gate
+          if-no-files-found: error
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conversion-publication
+          path: conversion_publication
+          if-no-files-found: error
+          retention-days: 90

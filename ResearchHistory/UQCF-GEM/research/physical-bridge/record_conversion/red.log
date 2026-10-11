@@ -1,0 +1,385 @@
+test_absent_deletions_are_rejected (test_conversion.Contracts.test_absent_deletions_are_rejected) ... FAIL
+test_bool_identity (test_conversion.Contracts.test_bool_identity) ... FAIL
+test_complete_reconstruction (test_conversion.Contracts.test_complete_reconstruction) ... FAIL
+test_duplicate (test_conversion.Contracts.test_duplicate) ... FAIL
+test_false_access (test_conversion.Contracts.test_false_access) ... FAIL
+test_false_guarantee (test_conversion.Contracts.test_false_guarantee) ... FAIL
+test_false_record (test_conversion.Contracts.test_false_record) ... FAIL
+test_false_zero_peak (test_conversion.Contracts.test_false_zero_peak) ... FAIL
+test_forgery_native_rejection (test_conversion.Contracts.test_forgery_native_rejection) ... FAIL
+test_forgery_native_valid_but_outside_protocol (test_conversion.Contracts.test_forgery_native_valid_but_outside_protocol) ... FAIL
+test_forgery_protocol_acceptance (test_conversion.Contracts.test_forgery_protocol_acceptance) ... FAIL
+test_full_positive_path (test_conversion.Contracts.test_full_positive_path) ... FAIL
+test_illegal_state (test_conversion.Contracts.test_illegal_state) ... FAIL
+test_missing (test_conversion.Contracts.test_missing) ... FAIL
+test_omitted_transient (test_conversion.Contracts.test_omitted_transient) ... FAIL
+test_one_sided_soundness (test_conversion.Contracts.test_one_sided_soundness) ... FAIL
+test_skips_do_not_guarantee_write (test_conversion.Contracts.test_skips_do_not_guarantee_write) ... FAIL
+test_substitution (test_conversion.Contracts.test_substitution) ... FAIL
+test_syntax_laundered_as_skip (test_conversion.Contracts.test_syntax_laundered_as_skip) ... FAIL
+test_wrong_order (test_conversion.Contracts.test_wrong_order) ... FAIL
+test_wrong_parent (test_conversion.Contracts.test_wrong_parent) ... FAIL
+test_wrong_scope (test_conversion.Contracts.test_wrong_scope) ... FAIL
+test_wrong_source_bit (test_conversion.Contracts.test_wrong_source_bit) ... FAIL
+
+======================================================================
+FAIL: test_absent_deletions_are_rejected (test_conversion.Contracts.test_absent_deletions_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 51, in test_absent_deletions_are_rejected
+    r = self.row(0,mask); self.assertEqual(r['status'], 'REJECTED'); self.assertEqual(r['failure'], step); self.assertEqual(r['executed'], [])
+        ^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 24, in row
+    self.ready(); return next(r for r in self.cert['rows'] if r['id'] == [0, [], sigma, mask])
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_bool_identity (test_conversion.Contracts.test_bool_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 71, in test_bool_identity
+    def test_bool_identity(self): self.reject(lambda d: d['rows'][0]['id'].__setitem__(0,False))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_complete_reconstruction (test_conversion.Contracts.test_complete_reconstruction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 27, in test_complete_reconstruction
+    self.ready(); summary = self.mods['independent'].verify(self.cert)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_duplicate (test_conversion.Contracts.test_duplicate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 59, in test_duplicate
+    def test_duplicate(self): self.reject(lambda d: d['rows'].__setitem__(1,copy.deepcopy(d['rows'][0])))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_access (test_conversion.Contracts.test_false_access)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 67, in test_false_access
+    def test_false_access(self): self.reject(lambda d: d['claims'].__setitem__('native_access',True))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_guarantee (test_conversion.Contracts.test_false_guarantee)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 68, in test_false_guarantee
+    def test_false_guarantee(self): self.reject(lambda d: d['claims'].__setitem__('guaranteed_write',True))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_record (test_conversion.Contracts.test_false_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 62, in test_false_record
+    def test_false_record(self): self.reject(lambda d: d['rows'][0].__setitem__('record_at_stop',1))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_false_zero_peak (test_conversion.Contracts.test_false_zero_peak)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 65, in test_false_zero_peak
+    def test_false_zero_peak(self): self.reject(lambda d: next(r for r in d['rows'] if r['id']==[0,[],1,31]).__setitem__('peak',0))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_forgery_native_rejection (test_conversion.Contracts.test_forgery_native_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 72, in test_forgery_native_rejection
+    def test_forgery_native_rejection(self): self.reject(lambda d: d['forgery'].__setitem__('native_valid',False))
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_forgery_native_valid_but_outside_protocol (test_conversion.Contracts.test_forgery_native_valid_but_outside_protocol)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 54, in test_forgery_native_valid_but_outside_protocol
+    self.ready(); f = self.cert['forgery']
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_forgery_protocol_acceptance (test_conversion.Contracts.test_forgery_protocol_acceptance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 73, in test_forgery_protocol_acceptance
+    def test_forgery_protocol_acceptance(self): self.reject(lambda d: d['forgery'].__setitem__('protocol_valid',True))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_full_positive_path (test_conversion.Contracts.test_full_positive_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 32, in test_full_positive_path
+    r = self.row(1, 31)
+        ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 24, in row
+    self.ready(); return next(r for r in self.cert['rows'] if r['id'] == [0, [], sigma, mask])
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_illegal_state (test_conversion.Contracts.test_illegal_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 63, in test_illegal_state
+    def test_illegal_state(self): self.reject(lambda d: d['rows'][0]['states'][0].__setitem__(2,16))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_missing (test_conversion.Contracts.test_missing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 58, in test_missing
+    def test_missing(self): self.reject(lambda d: d['rows'].pop())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_omitted_transient (test_conversion.Contracts.test_omitted_transient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 64, in test_omitted_transient
+    def test_omitted_transient(self): self.reject(lambda d: next(r for r in d['rows'] if r['id']==[0,[],1,31])['states'].pop(2))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_one_sided_soundness (test_conversion.Contracts.test_one_sided_soundness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 38, in test_one_sided_soundness
+    self.ready()
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_skips_do_not_guarantee_write (test_conversion.Contracts.test_skips_do_not_guarantee_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 47, in test_skips_do_not_guarantee_write
+    r = self.row(1, 0); self.assertEqual(r['status'], 'VALID'); self.assertEqual(r['record_at_stop'], 0); self.assertEqual(r['executed'], [])
+        ^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 24, in row
+    self.ready(); return next(r for r in self.cert['rows'] if r['id'] == [0, [], sigma, mask])
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_substitution (test_conversion.Contracts.test_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 60, in test_substitution
+    def test_substitution(self): self.reject(lambda d: d['rows'][0]['id'].__setitem__(1,[4]))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_syntax_laundered_as_skip (test_conversion.Contracts.test_syntax_laundered_as_skip)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 77, in test_syntax_laundered_as_skip
+    self.reject(mutate)
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_order (test_conversion.Contracts.test_wrong_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 66, in test_wrong_order
+    def test_wrong_order(self): self.reject(lambda d: d['commands'].__setitem__(1,[2,1,1]))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_parent (test_conversion.Contracts.test_wrong_parent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 69, in test_wrong_parent
+    def test_wrong_parent(self): self.reject(lambda d: d.__setitem__('source_parent','0'*40))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_scope (test_conversion.Contracts.test_wrong_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 70, in test_wrong_scope
+    def test_wrong_scope(self): self.reject(lambda d: d.__setitem__('scope_sha256','0'*64))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+======================================================================
+FAIL: test_wrong_source_bit (test_conversion.Contracts.test_wrong_source_bit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 61, in test_wrong_source_bit
+    def test_wrong_source_bit(self): self.reject(lambda d: d['rows'][0]['id'].__setitem__(2,1))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 20, in reject
+    self.ready(); doc = copy.deepcopy(self.cert); mutate(doc)
+    ^^^^^^^^^^^^
+  File "/workspace/scratch/ef409e5b669c/record_conversion/test_conversion.py", line 17, in ready
+    self.assertEqual(set(self.mods), {'producer', 'independent'}, 'expected RED: implementation absent')
+AssertionError: Items in the second set but not the first:
+'independent'
+'producer' : expected RED: implementation absent
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.003s
+
+FAILED (failures=23)
