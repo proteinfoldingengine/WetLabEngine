@@ -1,0 +1,54 @@
+name: UQCF-GEM pinned source-escape source snapshot
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths: ['.github/workflows/uqcf-gem-c3-source-escape-snapshot.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fd505492f7118c664b9cbc61d9c8a85b095c9789
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            .github/scripts
+            .github/workflows
+      - name: Package only tracked research source and workflow text
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess,zipfile
+          sha='fd505492f7118c664b9cbc61d9c8a85b095c9789'
+          if subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()!=sha:
+              raise SystemExit('Wrong pinned source head')
+          root='ResearchHistory/UQCF-GEM/research/physical-bridge/'
+          rows=subprocess.check_output(['git','ls-tree','-r',sha],text=True).splitlines()
+          selected={}
+          with zipfile.ZipFile('source-snapshot.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for row in rows:
+                  meta,name=row.split('\t',1)
+                  mode,kind,blob=meta.split()
+                  p=pathlib.PurePosixPath(name)
+                  science=name.startswith(root) and 'evidence' not in p.parts
+                  integration=name.startswith('.github/scripts/c3_') or name.startswith('.github/workflows/uqcf-gem-c3-')
+                  if kind!='blob' or not(science or integration) or p.suffix not in ('.py','.md','.yml','.log'):
+                      continue
+                  data=subprocess.check_output(['git','cat-file','blob',blob])
+                  data.decode('utf-8')
+                  selected[name]={'git_blob_sha1':blob,'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data)}
+                  z.writestr(name,data)
+              z.writestr('PINNED_SOURCE_MANIFEST.json',json.dumps({'source_commit':sha,'files':selected,'scope':'Source transport only; no scientific tests or reviews executed.'},sort_keys=True,indent=2)+'\n')
+          print(json.dumps({'source_commit':sha,'files':len(selected),'archive_sha256':hashlib.sha256(pathlib.Path('source-snapshot.zip').read_bytes()).hexdigest(),'scope':'Source transport only; no scientific tests or reviews executed.'}))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: c3-source-escape-pinned-source-snapshot
+          path: source-snapshot.zip
+          if-no-files-found: error
