@@ -8,7 +8,7 @@ The result identifies why one concrete archived producer does not supply the req
 
 Both continuation indices and the obstruction register preserve their full previous contents as prefixes. No historical source, scientific implementation, workflow, certificate, original archive or review is modified. New scientific tests: zero.
 
-Initial publication and immutable readback pending. This record will be updated with the verified first-publication binding and completed plan; the final update will itself be read back before completion is announced.
+Publication and first immutable readback COMPLETE for this source assessment. First published commit b238eaf135a44ad9a2d7f5ce2d67dd6e863a6526, based on inspected concurrent parent f9a1b75e70463022f3c569bfd87742e840ec15fa. All12text contents were fetched at the immutable commit, compared exactly and locally Git-hash verified; branch head matched. Five concurrently published candidate/continuation file identities were verified unchanged in that tree. Complete identities and the final rebase are in immutable_readback.json. This final ledger/plan update is read back before announcement. The native gate remains OPEN.
 
 ## Concurrent integration and candidate naming
 
