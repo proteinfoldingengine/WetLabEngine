@@ -57,7 +57,7 @@ jobs:
             'label_release test_release.py' \
             'footprint test_footprint.py' \
             'fixed_family test_fixed_family.py' \
-            'star_carrier test_star_carrier.py'
+            'star_carrier test_star.py'
           do
             set -- $spec
             (cd "$1" && python -m unittest -v "$2")
