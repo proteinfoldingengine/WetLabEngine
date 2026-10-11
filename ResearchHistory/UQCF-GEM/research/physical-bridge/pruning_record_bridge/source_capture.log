@@ -1,0 +1,1 @@
+Initial apply_patch capture added a final newline to source content; Git blob identity check rejected it. Rewrote exact fetched content without newline alteration. All 10 byte counts, SHA256 and Git blob identities subsequently checked. No scientific execution or test count is involved.

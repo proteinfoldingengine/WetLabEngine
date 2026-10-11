@@ -373,3 +373,13 @@ Inherited v16.53 normalization connects both exact source preparations on the SA
 
 Verdict: CONTROLLER_CANDIDATE_STOPPED_BY_INHERITED_CONNECTIVITY. This is a reviewed application of an inherited theorem, not a new normalization theorem or numerical campaign. The previous 527-test scientific checkpoint is unchanged and was not rerun for this note. No main merge, numbered-stage CLOSED/CERTIFIED status or physical no-go is claimed. Exact-only histories, extra immutable supports/guards, first-hit stopping and independently justified restricted dynamics are outside this corollary; their exclusion does not establish their physical validity. The next obligation remains a justified actual update restriction or preserved control structure and accessible retained output. Native realization, selection/progress, source correspondence and broad C3/C4-C6 remain OPEN. Historical sections above are retained.
 
+
+
+## 2026-10-11 — same-union pruning and protected records
+
+Approved continuation from 95d0b2381f6006fb30c5fa7cd76ce80696bb3b2d yields the scoped analytical result in COUPLED_C3_PRUNING_RECORD_BRIDGE.md; review and evidence are in pruning_record_bridge/. The support/view transposition identifies deletion-only native paths with the inherited same-union leaf-pruning relation on the SAME supplied carrier. It does not select that relation as physical dynamics.
+
+From an exact preparation S with profile q, a native endpoint E is reachable under budget B exactly when E<=S and D_q(E)<=B. The designated-incidence pruning-cone criterion then gives exact attainability and minimum deletion count. A five-vertex, two-deletion example writes an initially absent positive record that is sound and persistent under ALL such pruning histories; the source-zero singleton blocks it. Other legal paths can fail to write. Additions restore a four-toggle false-positive path, so the history restriction is essential.
+
+A sound positive endpoint must retain at least one original source-one-exclusive incidence at its original coordinate. Thus this construction does not provide the source-erasing conversion previously obtained under an exclusive protocol. It establishes a conditional pruning-record bridge, not native physical initialization, enforcement, accessible readout, actual outcome selection or progress. The readout is a declared projection; equal h profiles do not expose it. No numerical campaign or new test count is claimed; the historical 527-test checkpoint is unchanged and not rerun. No numbered-stage CLOSED/CERTIFIED or main-merge claim. Next derive a justified retained-input interaction lying in this pruning relation and accessible use of its record. All earlier historical sections remain intact.
+
