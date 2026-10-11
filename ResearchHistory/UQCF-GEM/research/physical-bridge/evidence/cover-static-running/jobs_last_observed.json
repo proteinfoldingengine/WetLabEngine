@@ -1,0 +1,73 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 114359200616,
+      "run_id": 38101841497,
+      "workflow_name": "UQCF-GEM cover-aware static reserve",
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/38101841497",
+      "run_attempt": 1,
+      "node_id": "CR_kwDORG4isM8AAAAaoFbraA",
+      "head_sha": "6259573656b9a5fc6ed7b71c5fcede5c9047526a",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/114359200616",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38101841497/job/114359200616",
+      "status": "in_progress",
+      "conclusion": null,
+      "created_at": "2026-10-11T01:26:27Z",
+      "started_at": "2026-10-11T01:26:29Z",
+      "completed_at": null,
+      "name": "verification",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-11T01:26:30Z",
+          "completed_at": "2026-10-11T01:26:32Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-11T01:26:32Z",
+          "completed_at": "2026-10-11T01:26:44Z"
+        },
+        {
+          "name": "Exact cover-aware static reserve verification",
+          "status": "in_progress",
+          "conclusion": null,
+          "number": 3,
+          "started_at": "2026-10-11T01:26:44Z",
+          "completed_at": null
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "pending",
+          "conclusion": null,
+          "number": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "pending",
+          "conclusion": null,
+          "number": 8,
+          "started_at": null,
+          "completed_at": null
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/114359200616",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000004430,
+      "runner_name": "GitHub Actions 1000004430",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}
