@@ -339,3 +339,14 @@ A deliberately changed-carrier control first prunes the source leaf r globally, 
 
 Verdict: UNIFORM_PRUNING_INTERACTION_CANDIDATE_REJECTED; SELECTIVE_INTERACTION_AND_ACCESS_NOT_DERIVED. No numerical campaign, new test count, main merge or numbered-stage CLOSED/CERTIFIED claim. The historical 527-test checkpoint is unchanged and not rerun. Next require an inherited event-to-indexed-view action with justified retention and accessible output, or a separately earned alternative consumer. Historical sections remain intact.
 
+
+
+## 2026-10-12 — event-origin source continuation
+
+COUPLED_C3_EVENT_ORIGIN_FOLLOWUP.md examines twelve pinned inputs at parent 970fd6073e60ef13fb49a41a34f5543b2a6669d2. Evidence, exact reviewed draft, review and source identities are in event_origin_followup/. This is a bounded source assessment; no new theorem or physical interaction is claimed.
+
+The v15.23/v15.24 sufficient-channel and partition classifications remain valid conditional results. The admissible family is derived relative to supplied sharp instruments and tensor factors. The inspected implementations do not derive the native instrument or an event-to-indexed-view action producing individual retained subviews Z_i. The v16.13F-v16.15F result documents establish consequences of given full lineage addresses and pruning; their kernel bookkeeping does not select that action.
+
+Disposition: NO_NEW_NATIVE_ACTION_ADMITTED_IN_INSPECTED_CONTINUATION. This is not an archive-wide absence proof, a rejection of every quantum interaction, or a new obstruction theorem. The unresolved derivation has three distinct interfaces: native event/instrument provenance, action on the declared view/reference carrier, and retained accessible output. A nondeterministic derived interaction could qualify without guaranteed progress; requiring a deterministic outcome is not the admission criterion.
+
+Continue only with an explicitly justified candidate under the existing target-blind gate. For the present incidence consumer, derive the individual Z_i and the survival of the source distinctions needed by the record. A differently typed consumer requires its own justified contract. Re-running supplied channel choices does not resolve these interfaces. No new numerical campaign, historical-stack replay, main merge or numbered-stage CLOSED/CERTIFIED status is claimed. The historical 527-test checkpoint remains unchanged. Physical origin/access, source correspondence and broad C3/C4-C6 remain OPEN.
