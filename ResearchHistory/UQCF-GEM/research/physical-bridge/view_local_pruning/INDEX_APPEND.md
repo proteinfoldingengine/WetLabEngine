@@ -1,0 +1,11 @@
+
+
+## 2026-10-12 — universal view-local pruning and conditional response
+
+COUPLED_C3_VIEW_LOCAL_PRUNING_RESULT.md classifies the declared view-local architecture on a fixed known finite tree T and palette with at least two indices. A separate contracting prefix-view map per index preserves the union for every cover iff it retains that view's global leaves and their ancestors. Their ancestor hull H_T(Y) is the unique least retained member. If the operation instead receives no common carrier and must work for every finite carrier, the only universally safe view-only contraction is identity. These are information-restricted analytical statements; physical locality and availability of T are not derived.
+
+The explicit H_T action determines individual retained subviews without a supplied mask per view. A new four-label, five-vertex example with identical initial memory and hitting profile (2,2) produces distinguishable memory in one legal zero-excursion deletion per preparation, retaining the original source witness. This is a separately declared conditional consumer, not the old two-edit record or the restored-marker C3 contract. The old record requires deletion of a global-leaf incidence, which this universal view-local class cannot perform.
+
+The operation is not adopted as an actual event law: identity and intermediate safe idempotent maps remain alternatives. A ternary control also shows H_T can exceed the total-unit hitting band. Common-carrier knowledge, source/reference initialization, physical execution/enforcement and accessible output remain unearned. The request-induced pruning cone was recognized as already published, not counted again. No numerical campaign, historical test replay, force, main merge or numbered-stage certification is claimed. Broad C3/C4-C6 and physical origin/access remain OPEN. Evidence and separate review are in view_local_pruning/.
+
+Next justify the carrier/global-leaf information and an inherited event whose action belongs to this class, or justify an action outside it using, for example, cross-view redundancy information or a restricted input promise. Universal safety does not itself cause maximal deletion. This analytical construction narrows the required mechanism without introducing a maximal-pruning axiom.
