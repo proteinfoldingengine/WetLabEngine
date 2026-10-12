@@ -1,0 +1,23 @@
+{
+  "note": "During route discovery, a guessed README path in v15.56-response-selector-obstruction returned 404. The existing directory listing was then used to select exact source paths. This was a technical lookup failure, not a scientific rejecting control. It does not affect the ten accepted source bindings.",
+  "path": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/README.md",
+  "ref": "c8e1c39cd65032c7702e265a75c2f2b80098f41d",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+      }
+    ],
+    "structuredContent": {
+      "error": "GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}",
+      "error_code": "NOT_FOUND",
+      "error_data": {
+        "message": "Not Found",
+        "documentation_url": "https://docs.github.com/rest/repos/contents#get-repository-content",
+        "status": "404"
+      }
+    },
+    "isError": true
+  }
+}
