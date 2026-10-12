@@ -6,7 +6,9 @@ Parent: c56d2d11e5d0f3c40661fe999b2560d93d4a69e8.
 - [x] Test direct reuse of actual-record preservation, source binding, retained grade and ancestral pushforward.
 - [x] Derive exact analytical controls and the conditional historical-terminal maintenance corollary.
 - [x] Complete separate analytical/source review and reconcile findings.
-- [ ] Publish the bounded source decision and append-only continuation updates.
-- [ ] Complete separate publication audit and immutable readback.
+- [x] Publish the bounded source decision and append-only continuation updates.
+- [x] Complete separate publication audit and immutable readback.
 
 No numerical campaign or new native interaction is claimed. Initial certificate acquisition, current membership, execution and accessible output remain unresolved.
+
+Analytical publication: 5563bc5a8fe6edc816c68da31b78d33bc1c103fd. Separate publication audit PASS applies to that immutable publication; final receipt readback follows its enclosing commit.
