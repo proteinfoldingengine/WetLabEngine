@@ -1,0 +1,29 @@
+{
+  "kind": "mechanical source recovery integrity checks only; no scientific execution",
+  "archives": [
+    {
+      "archive": "v957_fresh_event_ledger_transfer_audit.zip",
+      "file_members_verified": 10,
+      "sha256": "84ed989e418f5c1cc6c0d0d67c4446ae3f20936281ab71fec7667ce7e48be563"
+    },
+    {
+      "archive": "v960_independent_trajectory_family_event_ledger_stress.zip",
+      "file_members_verified": 10,
+      "sha256": "d135f2a7411188d19e5cfc8572e2a1a721c02b47ec6b2c31410f2fc4c7ad5d05"
+    },
+    {
+      "archive": "v970_event_to_symbol_causal_coupling_audit.zip",
+      "file_members_verified": 9,
+      "sha256": "a94e0efc83df02a487cb77e15a476c9a97d052aae5b8dc8ede4a26cee362207b"
+    },
+    {
+      "archive": "v971_causal_coupled_closure_freeze_packet.zip",
+      "file_members_verified": 18,
+      "sha256": "7cd12b64aa784c78d1b0a7c6c8eacdc9a0e3dff731883bb2ad080c51415581a0"
+    }
+  ],
+  "selected_sources_verified": 13,
+  "index_append_identity": true,
+  "v971_old_github_archive_and_recovered_archive_exact_match": true,
+  "tooling_note": "Inventory lists file members only. Initial integrity comparison included directory entries and stopped; comparison corrected to compare the same declared file-member universe."
+}

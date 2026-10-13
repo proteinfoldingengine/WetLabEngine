@@ -1,0 +1,41 @@
+{
+  "verdict": "independent_trajectory_family_event_ledger_stress_certified",
+  "closed_for_v960_independent_stress": true,
+  "summary": {
+    "trajectory_rows": 14148,
+    "path_rows": 432,
+    "seeds": [
+      84011,
+      84047,
+      84089
+    ],
+    "resolutions": [
+      10,
+      28,
+      40
+    ],
+    "geometries": [
+      "oblique_triple",
+      "ripple_wall",
+      "corner_sink",
+      "spiral_interference",
+      "checker_saddle",
+      "fractal_patch_noise"
+    ],
+    "protocol_count": 8,
+    "clean_rejections": 0,
+    "clean_false_nonrejected": 0,
+    "adversarial_false_nonrejected_total": 0,
+    "adversarial_rejected_total": 1975,
+    "qonly_exception_false_nonrejected": 0,
+    "symbol_membership_only_false_nonrejected": 1027
+  },
+  "criteria": {
+    "stress_clean_event_ledger_exact_no_rejection": true,
+    "stress_adversarial_zero_false_nonrejected": true,
+    "stress_qonly_exception_preserved": true,
+    "stress_full_variant_no_false_nonrejected": true,
+    "stress_symbol_membership_only_fails": true
+  },
+  "status": "Event-ledger closure transferred to a harder independently generated trajectory family."
+}

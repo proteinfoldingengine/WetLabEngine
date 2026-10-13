@@ -1,0 +1,38 @@
+{
+  "name": "V971 Causal-Coupled Closure Freeze",
+  "object": "C_causal = (Q_obs, S_ternary, symbol_emission_event_ledger, generator_compatibility_causal)",
+  "components": {
+    "Q_obs": "admissible symbolic / geometry-like form",
+    "S_ternary": "minimal source-role primitive for source-degenerate quotients",
+    "symbol_emission_event_ledger": "internal ordered-update emission-state provenance for Q_obs and S_ternary",
+    "generator_compatibility_causal": {
+      "clean_symbolic_transfer": "false cases = 0 and unclassified rows = 0",
+      "sufficient_symbolic_support": "nontrivial Q_obs, S_ternary, and true-class coverage",
+      "tolerant_event_dynamics_manifold": "candidate event dynamics remain inside certified emission-state envelope",
+      "event_to_symbol_causal_coupling": "emitted Q/S symbols are predictable from event dynamics using certified-domain models"
+    }
+  },
+  "certified_predictability": [
+    {
+      "symbol_target": "Q_obs",
+      "leave_domain_out_accuracy": 0.9548611111111112,
+      "n_classes": 5
+    },
+    {
+      "symbol_target": "S_ternary",
+      "leave_domain_out_accuracy": 0.878968253968254,
+      "n_classes": 3
+    },
+    {
+      "symbol_target": "QS_pair",
+      "leave_domain_out_accuracy": 0.8764880952380952,
+      "n_classes": 11
+    },
+    {
+      "symbol_target": "true_class",
+      "leave_domain_out_accuracy": 0.8705357142857143,
+      "n_classes": 7
+    }
+  ],
+  "boundary": "Certified for tested symbolic/event-ledger/generator-compatible domains and tested far/near symbolic-mimic attacks. Not universal over arbitrary generators."
+}

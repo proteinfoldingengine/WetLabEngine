@@ -1,0 +1,41 @@
+{
+  "purpose": "Source-schema inspection only; not analysis of trajectory outcomes.",
+  "excerpts": [
+    {
+      "archive": "v957_fresh_event_ledger_transfer_audit.zip",
+      "archive_sha256": "84ed989e418f5c1cc6c0d0d67c4446ae3f20936281ab71fec7667ce7e48be563",
+      "member": "v957_fresh_event_ledger_transfer_audit/v957_fresh_trajectories.csv",
+      "member_sha256": "bb836e8a731d1f312d075fbb3cbbdd1bd6fff3136acd37774cef73014b8cf3d4",
+      "member_bytes": 5476493,
+      "excerpt": "first CSV header line only, exact decoded UTF-8 including newline",
+      "content": "seed,n,geometry,mode,step,accepted_steps,E_OSC,D_AC,m_AC,orientation_error,A_cv,max_weight_frac,basin,domain_source,protocol_label,driver_mode,source_family,internal_path_id\n"
+    },
+    {
+      "archive": "v957_fresh_event_ledger_transfer_audit.zip",
+      "archive_sha256": "84ed989e418f5c1cc6c0d0d67c4446ae3f20936281ab71fec7667ce7e48be563",
+      "member": "v957_fresh_event_ledger_transfer_audit/v957_fresh_symbol_generation_event_ledger.csv",
+      "member_sha256": "bed9ce318964cffff190ea5731e9ee0c9ff1975718722c5160b20bff75d6f705",
+      "member_bytes": 475091,
+      "excerpt": "first CSV header line only, exact decoded UTF-8 including newline",
+      "content": "domain_source,seed,n,geometry,protocol_label,internal_path_id,steps_count,emit_step,E_OSC_emit,E_OSC_first,E_OSC_delta,E_OSC_auc,E_OSC_early,E_OSC_mid,E_OSC_late,D_AC_emit,D_AC_first,D_AC_delta,D_AC_auc,D_AC_early,D_AC_mid,D_AC_late,orientation_error_emit,orientation_error_first,orientation_error_delta,orientation_error_auc,orientation_error_early,orientation_error_mid,orientation_error_late,A_cv_emit,A_cv_first,A_cv_delta,A_cv_auc,A_cv_early,A_cv_mid,A_cv_late,accepted_steps_emit,accepted_steps_first,accepted_steps_delta,accepted_steps_auc,accepted_steps_early,accepted_steps_mid,accepted_steps_late,Q_obs,S_ternary,true_class,Q_emit_sig,S_emit_sig,Q_adv,S_adv\n"
+    },
+    {
+      "archive": "v960_independent_trajectory_family_event_ledger_stress.zip",
+      "archive_sha256": "d135f2a7411188d19e5cfc8572e2a1a721c02b47ec6b2c31410f2fc4c7ad5d05",
+      "member": "v960_independent_trajectory_family_event_ledger_stress/v960_stress_trajectories.csv",
+      "member_sha256": "17f5b149b9cb0d9fc7b791515bc4087d19f9514e2803b95d53ac979c00617322",
+      "member_bytes": 3783424,
+      "excerpt": "first CSV header line only, exact decoded UTF-8 including newline",
+      "content": "seed,n,geometry,mode,step,accepted_steps,E_OSC,D_AC,m_AC,orientation_error,A_cv,max_weight_frac,basin,domain_source,protocol_label,driver_mode,source_family,internal_path_id\n"
+    },
+    {
+      "archive": "v960_independent_trajectory_family_event_ledger_stress.zip",
+      "archive_sha256": "d135f2a7411188d19e5cfc8572e2a1a721c02b47ec6b2c31410f2fc4c7ad5d05",
+      "member": "v960_independent_trajectory_family_event_ledger_stress/v960_stress_symbol_generation_event_ledger.csv",
+      "member_sha256": "83e8b19b1fa537200a07d3db1e7d55885f5dcf373c3ddb6be94ba325ef1ad4ab",
+      "member_bytes": 372163,
+      "excerpt": "first CSV header line only, exact decoded UTF-8 including newline",
+      "content": "domain_source,seed,n,geometry,protocol_label,internal_path_id,steps_count,emit_step,E_OSC_emit,E_OSC_first,E_OSC_delta,E_OSC_auc,E_OSC_early,E_OSC_mid,E_OSC_late,D_AC_emit,D_AC_first,D_AC_delta,D_AC_auc,D_AC_early,D_AC_mid,D_AC_late,orientation_error_emit,orientation_error_first,orientation_error_delta,orientation_error_auc,orientation_error_early,orientation_error_mid,orientation_error_late,A_cv_emit,A_cv_first,A_cv_delta,A_cv_auc,A_cv_early,A_cv_mid,A_cv_late,accepted_steps_emit,accepted_steps_first,accepted_steps_delta,accepted_steps_auc,accepted_steps_early,accepted_steps_mid,accepted_steps_late,Q_obs,S_ternary,true_class,event_state_sig,Q_emit_sig,S_emit_sig,Q_adv,S_adv\n"
+    }
+  ]
+}

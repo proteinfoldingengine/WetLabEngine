@@ -1,0 +1,9 @@
+
+
+## 2026-10-12 — User-defined native-interaction milestone and generator-source probe
+
+`NATIVE_EVENT_MILESTONE.md` records the user's target: a native informational difference must force an accessible consequence without supplying the mechanism by hand. A derived probabilistic law may qualify; full gravity/C3 closure and unique realized outcomes are not prerequisites. Native action and justified retained access remain essential. Current milestone status is NOT ACHIEVED.
+
+The new source investigation follows V995's event-to-symbol generator layer independently of the quantum/C3 carrier problem. Original V957/V960/V970/V971 archives and the V930/V906 implementation ancestry were recovered. V970's criterion is prediction of emitted symbols from event dynamics. V930 explicitly imports V906, where a supplied mode selects the update and a mode-family map supplies source-role information. V906 also assigns its true/predicted classes with the same taxonomy function; that self-agreement is not independent native-interaction evidence. This does not impute the same implementation to the later audits. Their exact generation/fitting code remains unrecovered in the inspected archives. Construction/validation is identified; a native action/access derivation is not established. Exact source identities, selected original bytes, archive inventories and review are preserved in `native_generator_probe/`.
+
+Next inspect any recovered V957/V960 generation-and-emission or V970 fitting code for a native derivation beyond those supplied-mode/predictive contracts, or develop another native candidate with genuinely justified inputs. Re-evaluating the scores cannot supply the missing action. The existing hourly research task now watches this exact milestone. No new numerical campaign, physical mechanism, test count or numbered-stage certification. Previous entries and positive inherited results remain intact.

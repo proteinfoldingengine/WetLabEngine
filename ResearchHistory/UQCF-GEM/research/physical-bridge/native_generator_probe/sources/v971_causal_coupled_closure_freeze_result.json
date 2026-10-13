@@ -1,0 +1,37 @@
+{
+  "verdict": "causal_coupled_closure_freeze_certified",
+  "closed_for_v971_causal_freeze": true,
+  "core_object": "C_causal = (Q_obs, S_ternary, symbol_emission_event_ledger, generator_compatibility_causal)",
+  "certification_rows": 5,
+  "passed_rows": 5,
+  "failed_rows": 0,
+  "predictability": [
+    {
+      "symbol_target": "Q_obs",
+      "leave_domain_out_accuracy": 0.9548611111111112,
+      "n_classes": 5
+    },
+    {
+      "symbol_target": "S_ternary",
+      "leave_domain_out_accuracy": 0.878968253968254,
+      "n_classes": 3
+    },
+    {
+      "symbol_target": "QS_pair",
+      "leave_domain_out_accuracy": 0.8764880952380952,
+      "n_classes": 11
+    },
+    {
+      "symbol_target": "true_class",
+      "leave_domain_out_accuracy": 0.8705357142857143,
+      "n_classes": 7
+    }
+  ],
+  "v957_causal_certified": true,
+  "v960_causal_certified": true,
+  "near_mimic_behavior_only_certified": true,
+  "near_mimic_radius_certified": true,
+  "near_mimic_causal_certified": false,
+  "near_mimic_qs_pair_match_rate": 0.0880952380952381,
+  "status_boundary": "Certified for tested symbolic/event-ledger/generator-compatible domains and tested far/near symbolic-mimic attacks. Not universal over arbitrary generators."
+}

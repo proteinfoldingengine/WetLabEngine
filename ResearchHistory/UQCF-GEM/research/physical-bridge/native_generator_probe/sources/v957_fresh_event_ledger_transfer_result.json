@@ -1,0 +1,41 @@
+{
+  "verdict": "fresh_event_ledger_transfer_certified",
+  "closed_for_v957_fresh_event_ledger_transfer": true,
+  "summary": {
+    "trajectory_rows": 20591,
+    "path_rows": 576,
+    "seeds": [
+      73001,
+      73019,
+      73043,
+      73061
+    ],
+    "resolutions": [
+      14,
+      22,
+      34
+    ],
+    "geometries": [
+      "spiral_interference",
+      "checker_saddle",
+      "lensed_dipole",
+      "fractal_patch_noise",
+      "corner_sink",
+      "phase_fault"
+    ],
+    "protocol_count": 8,
+    "clean_rejections": 0,
+    "clean_false_nonrejected": 0,
+    "adversarial_false_nonrejected_total": 0,
+    "adversarial_rejected_total": 2643,
+    "qonly_exception_false_nonrejected": 0
+  },
+  "criteria": {
+    "fresh_clean_event_ledger_exact_no_rejection": true,
+    "fresh_adversarial_event_tampering_zero_false_nonrejected": true,
+    "fresh_qonly_exception_preserved": true,
+    "fresh_unseen_q_rejected": true,
+    "fresh_foreign_event_grafts_rejected": true
+  },
+  "status": "Event-ledger guard transferred to fresh generated trajectories outside V930 seed/resolution set."
+}

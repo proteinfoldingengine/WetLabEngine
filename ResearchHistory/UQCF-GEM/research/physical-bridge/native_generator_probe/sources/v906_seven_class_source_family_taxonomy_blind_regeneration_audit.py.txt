@@ -1,0 +1,545 @@
+#!/usr/bin/env python3
+"""
+V906 Seven-Class Source-Family Taxonomy Blind Regeneration Audit
+
+Purpose
+-------
+Regenerate a fresh coupled psi/phi/A diagnostic cohort with known and novel
+source routes, then apply the seven-class source-family taxonomy that separates:
+
+1. source-family origin;
+2. initial basin membership;
+3. endpoint basin outcome;
+4. active/passive/path-source status.
+
+Claim boundary
+--------------
+This is a recoverability/accessibility source-taxonomy audit. It does not derive
+a unique repair-channel law, certify full coupled physical repair dynamics, or
+claim GR, Einstein equations, physical spacetime curvature, or continuum closure.
+"""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+try:
+    from scipy.ndimage import gaussian_filter
+except Exception:
+    gaussian_filter = None
+
+BASE = Path('/mnt/data')
+OUT = BASE / 'v906_seven_class_source_family_taxonomy_blind_regeneration_audit'
+OUT.mkdir(exist_ok=True)
+
+CSTAR = -0.999786375236
+THRESH = 0.026701304157334
+EPS_N = 1e-6
+EPS_W = 1e-6
+
+CLASS_ORDER = [
+    'active_repair_source_compatible',
+    'active_initial_basin_no_repair_needed',
+    'passive_no_motion_basin_member',
+    'initial_basin_broken_hold_not_passive',
+    'structured_endpoint_collapse_not_legit',
+    'structured_source_failed_basin_entry',
+    'outside_basin_rejected',
+]
+
+ACTIVE_SOURCE_MODES = {'directed_variational','defect_forced','novel_local_defect_repair','novel_gradient_shear'}
+PASSIVE_SOURCE_MODES = {'passive_hold','novel_passive_pre_basin'}
+STRUCTURED_SOURCE_MODES = {'structured_permuted_collapse','structured_anti_collapse','novel_signed_scramble_collapse','novel_source_phase_flip'}
+REJECTED_SOURCE_MODES = {'wrong_sign','random','hold_broken','novel_noise_sink'}
+
+
+def smooth(x, sigma):
+    if gaussian_filter is not None:
+        return gaussian_filter(x, sigma=sigma, mode='wrap')
+    y = x.copy()
+    for _ in range(max(1, int(round(sigma * 3)))):
+        y = (y + np.roll(y, 1, 0) + np.roll(y, -1, 0) + np.roll(y, 1, 1) + np.roll(y, -1, 1)) / 5.0
+    return y
+
+
+def normalize(x):
+    return (x - float(np.mean(x))) / (float(np.std(x)) + 1e-12)
+
+
+def grad(f):
+    return (np.roll(f, -1, 0) - np.roll(f, 1, 0)) / 2.0, (np.roll(f, -1, 1) - np.roll(f, 1, 1)) / 2.0
+
+
+def div(vx, vy):
+    return (np.roll(vx, -1, 0) - np.roll(vx, 1, 0)) / 2.0 + (np.roll(vy, -1, 1) - np.roll(vy, 1, 1)) / 2.0
+
+
+def soft_A(psi):
+    z = psi - float(np.max(psi))
+    A = np.exp(z)
+    return A / (float(np.mean(A)) + 1e-12)
+
+
+def metrics_field(psi, phi):
+    px, py = grad(psi); fx, fy = grad(phi)
+    ap = np.sqrt(px * px + py * py + EPS_N * EPS_N)
+    af = np.sqrt(fx * fx + fy * fy + EPS_N * EPS_N)
+    npx, npy = px / ap, py / ap
+    nfx, nfy = fx / af, fy / af
+    q = npx * nfx + npy * nfy
+    A = soft_A(psi)
+    a = A * ap + EPS_W
+    w = a / np.sum(a)
+    m = float(np.sum(w * q))
+    var = float(np.sum(w * (q - m) ** 2))
+    dac = float(np.sqrt(max(var, 0.0)))
+    eosc = float(0.5 * dac * dac + 0.5 * (m - CSTAR) ** 2)
+    return dict(E_OSC=eosc, D_AC=dac, m_AC=m, orientation_error=abs(m - CSTAR),
+                A_cv=float(np.std(A) / (np.mean(A) + 1e-12)), max_weight_frac=float(np.max(w)),
+                basin=bool(eosc <= THRESH))
+
+
+def energy(psi, phi):
+    return metrics_field(psi, phi)['E_OSC']
+
+
+def semi_derivative(psi, phi):
+    px, py = grad(psi); fx, fy = grad(phi)
+    ap = np.sqrt(px * px + py * py + EPS_N * EPS_N)
+    af = np.sqrt(fx * fx + fy * fy + EPS_N * EPS_N)
+    npx, npy = px / ap, py / ap
+    nfx, nfy = fx / af, fy / af
+    q = npx * nfx + npy * nfy
+    A = soft_A(psi)
+    w = A * ap + EPS_W
+    w = w / np.sum(w)
+    coeff = w * (q - CSTAR)
+    vx = coeff * (nfx - q * npx) / ap
+    vy = coeff * (nfy - q * npy) / ap
+    gpsi = -div(vx, vy)
+    ux = coeff * (npx - q * nfx) / af
+    uy = coeff * (npy - q * nfy) / af
+    gphi = -div(ux, uy)
+    return gpsi, gphi
+
+
+def make_defect(seed, n, geometry):
+    rng = np.random.default_rng(seed)
+    x = np.linspace(-1, 1, n, endpoint=False)
+    X, Y = np.meshgrid(x, x, indexing='ij')
+    if geometry == 'oblique_triple':
+        mu = np.exp(-((X-.55)**2+(Y+.10)**2)/0.035) - 0.8*np.exp(-((X+.36)**2+(Y-.35)**2)/0.055) + .45*np.exp(-((X-.05)**2+(Y-.55)**2)/0.07)
+    elif geometry == 'ripple_wall':
+        mu = np.exp(-(X + .55 + .12*np.sin(4*np.pi*Y))**2/0.020) - .35*np.exp(-(Y-.30)**2/0.06)
+    elif geometry == 'broken_ring':
+        R = np.sqrt((X-.08)**2 + (Y+.02)**2)
+        gap = 1.0 - 0.55*np.exp(-((X+.48)**2+(Y-.05)**2)/0.06)
+        mu = gap*np.exp(-(R-.50)**2/0.012) - .38*np.exp(-(R-.22)**2/0.018)
+    elif geometry == 'corner_sink':
+        mu = np.exp(-((X+.78)**2+(Y+.72)**2)/0.025) - .65*np.exp(-((X-.15)**2+(Y-.20)**2)/0.050)
+    elif geometry == 'prealigned_low_energy':
+        mu = np.exp(-((X-.2)**2+(Y+.25)**2)/0.045) - .50*np.exp(-((X+.3)**2+(Y-.35)**2)/0.065)
+    elif geometry == 'phase_fault':
+        mu = np.sin(3*np.pi*X + 1.7*np.pi*Y) * np.exp(-0.45*(X*X+Y*Y)) + .35*np.exp(-((X-.58)**2+(Y+.45)**2)/0.035)
+    else:
+        mu = rng.normal(size=(n, n))
+    return normalize(smooth(mu, max(.45, n / 58)))
+
+
+def make_initial(seed, n, geometry, mode):
+    rng = np.random.default_rng(seed + 1777 * n)
+    defect = make_defect(seed, n, geometry)
+    base = smooth(rng.normal(size=(n, n)), max(.8, n / 11.5))
+    psi = normalize(base - 0.48 * defect + 0.12 * smooth(rng.normal(size=(n, n)), max(.6, n / 30)))
+    if geometry == 'prealigned_low_energy' and mode in ACTIVE_SOURCE_MODES | {'hold_broken'} | PASSIVE_SOURCE_MODES:
+        phi = normalize(-psi + 0.003 * smooth(rng.normal(size=(n, n)), max(.8, n / 17)))
+    elif mode in PASSIVE_SOURCE_MODES:
+        phi = normalize(-psi + 0.004 * smooth(rng.normal(size=(n, n)), max(.8, n / 16)))
+    else:
+        phi = normalize(smooth(rng.normal(size=(n, n)), max(.8, n / 10.2)) + 0.22 * defect)
+    return psi, phi, defect
+
+
+def permute_field(x, seed):
+    rng = np.random.default_rng(seed)
+    flat = x.ravel().copy(); rng.shuffle(flat)
+    return flat.reshape(x.shape)
+
+
+def unit_pair(dpsi, dphi):
+    nn = float(np.sqrt(np.mean(dpsi * dpsi) + np.mean(dphi * dphi))) + 1e-12
+    return dpsi / nn, dphi / nn
+
+
+def run_case(seed, n, geometry, mode, max_steps=64):
+    psi, phi, defect = make_initial(seed, n, geometry, mode)
+    rows = []
+    accepted = 0
+    for step in range(max_steps + 1):
+        met = metrics_field(psi, phi)
+        rows.append(dict(seed=seed, n=n, geometry=geometry, mode=mode, step=step, accepted_steps=accepted, **met))
+        if mode in ACTIVE_SOURCE_MODES and met['E_OSC'] <= THRESH:
+            break
+        if mode in PASSIVE_SOURCE_MODES:
+            break
+        if step == max_steps:
+            break
+        gpsi, gphi = semi_derivative(psi, phi)
+        gn = float(np.sqrt(np.mean(gpsi*gpsi) + np.mean(gphi*gphi))) + 1e-12
+        require_descent = False
+        base_alpha = 0.5
+        if mode == 'directed_variational':
+            dpsi, dphi = -gpsi / gn, -gphi / gn; require_descent = True; base_alpha = 1.0
+        elif mode == 'defect_forced':
+            dpsi, dphi = unit_pair(-0.05 * defect, defect); base_alpha = 1.2
+        elif mode == 'novel_local_defect_repair':
+            target_phi = -psi + 0.02 * smooth(defect, max(.4, n/70))
+            dpsi, dphi = unit_pair(-0.04 * smooth(defect, .8), target_phi - phi); base_alpha = 0.9
+        elif mode == 'novel_gradient_shear':
+            dx, dy = grad(defect)
+            dpsi, dphi = unit_pair(-0.03 * dx + 0.02 * dy, (-psi - phi) + 0.04 * dx); base_alpha = 0.75
+        elif mode == 'structured_permuted_collapse':
+            pdef = permute_field(defect, seed + 23003)
+            target_phi = -psi + 0.10 * pdef
+            dpsi, dphi = unit_pair(0.015 * pdef, target_phi - phi); base_alpha = 0.18
+        elif mode == 'structured_anti_collapse':
+            target_phi = -psi - 0.12 * defect
+            dpsi, dphi = unit_pair(0.015 * defect, target_phi - phi); base_alpha = 0.18
+        elif mode == 'novel_source_phase_flip':
+            # structured source that usually collapses endpoint but with nonlocal source phase.
+            rot = np.roll(defect, shift=n//3, axis=0) - np.roll(defect, shift=n//4, axis=1)
+            target_phi = -psi + 0.08 * rot
+            dpsi, dphi = unit_pair(0.014 * rot, target_phi - phi); base_alpha = 0.16
+        elif mode == 'novel_signed_scramble_collapse':
+            # structured source family; in phase_fault geometry this deliberately fails basin entry.
+            scr = permute_field(np.sign(defect) * np.sqrt(np.abs(defect)+1e-9), seed + 777)
+            if geometry == 'phase_fault':
+                target_phi = phi + 0.15 * scr   # fails to align with -psi
+                base_alpha = 0.10
+            else:
+                target_phi = -psi + 0.12 * scr
+                base_alpha = 0.15
+            dpsi, dphi = unit_pair(0.012 * scr, target_phi - phi)
+        elif mode == 'wrong_sign':
+            dpsi, dphi = gpsi / gn, gphi / gn; base_alpha = 0.8
+        elif mode == 'random':
+            rng = np.random.default_rng(seed * 1009 + step * 47 + n)
+            dpsi = smooth(rng.normal(size=(n, n)), max(.55, n / 48))
+            dphi = smooth(rng.normal(size=(n, n)), max(.55, n / 48))
+            dpsi, dphi = unit_pair(dpsi, dphi); base_alpha = 0.45
+        elif mode == 'novel_noise_sink':
+            rng = np.random.default_rng(seed * 881 + step * 19 + n)
+            sink = smooth(rng.normal(size=(n,n)), max(.45, n/60))
+            dpsi, dphi = unit_pair(sink, -sink); base_alpha = 0.35
+        elif mode == 'hold_broken':
+            continue
+        else:
+            raise ValueError(mode)
+        e0 = met['E_OSC']
+        alpha = base_alpha
+        accepted_this = False
+        for _ in range(18):
+            p2 = normalize(psi + alpha * dpsi)
+            f2 = normalize(phi + alpha * dphi)
+            e2 = energy(p2, f2)
+            if (not require_descent) or e2 <= e0 + 1e-12:
+                psi, phi = p2, f2
+                accepted += 1
+                accepted_this = True
+                break
+            alpha *= 0.5
+        if require_descent and not accepted_this:
+            break
+    return rows
+
+
+def source_family(mode: str) -> str:
+    if mode in ACTIVE_SOURCE_MODES: return 'active_source'
+    if mode in PASSIVE_SOURCE_MODES: return 'passive_source'
+    if mode in STRUCTURED_SOURCE_MODES: return 'structured_source'
+    return 'rejected_or_broken_source'
+
+
+def seven_class(row: pd.Series, fam_col='source_family') -> str:
+    fam = row[fam_col]
+    mode = row['mode']
+    start = bool(row['start_E_basin'])
+    endpoint = bool(row['endpoint_E_basin'])
+    acc = int(row['accepted_steps'])
+    red = float(row['E_reduction_frac'])
+    if fam == 'active_source':
+        if start and endpoint and acc == 0:
+            return 'active_initial_basin_no_repair_needed'
+        if endpoint and acc > 0 and red > 0:
+            return 'active_repair_source_compatible'
+        return 'outside_basin_rejected'
+    if fam == 'passive_source':
+        if mode in PASSIVE_SOURCE_MODES and start and endpoint and acc == 0 and abs(red) < 1e-12:
+            return 'passive_no_motion_basin_member'
+        return 'outside_basin_rejected'
+    if fam == 'structured_source':
+        if endpoint:
+            return 'structured_endpoint_collapse_not_legit'
+        return 'structured_source_failed_basin_entry'
+    if start and endpoint and acc == 0:
+        return 'initial_basin_broken_hold_not_passive'
+    return 'outside_basin_rejected'
+
+
+def binary_scores(y_true, y_pred):
+    y_true = np.asarray(y_true, dtype=bool); y_pred = np.asarray(y_pred, dtype=bool)
+    tp = int(np.sum(y_true & y_pred)); fp = int(np.sum(~y_true & y_pred)); tn = int(np.sum(~y_true & ~y_pred)); fn = int(np.sum(y_true & ~y_pred))
+    rec = tp/(tp+fn) if tp+fn else 0.0
+    spec = tn/(tn+fp) if tn+fp else 0.0
+    return dict(TP=tp, FP=fp, TN=tn, FN=fn, precision=tp/(tp+fp) if tp+fp else 0.0, recall=rec, specificity=spec, accuracy=(tp+tn)/(tp+fp+tn+fn) if tp+fp+tn+fn else 0.0, balanced_accuracy=0.5*(rec+spec))
+
+
+def confusion(true, pred):
+    mat = pd.DataFrame(0, index=CLASS_ORDER, columns=CLASS_ORDER, dtype=int)
+    for t, p in zip(true, pred):
+        mat.loc[t, p] += 1
+    return mat
+
+
+def per_class_metrics(true, pred):
+    rows=[]
+    true=np.asarray(true,dtype=object); pred=np.asarray(pred,dtype=object)
+    for lab in CLASS_ORDER:
+        r=binary_scores(true==lab, pred==lab)
+        r['class']=lab; r['support']=int(np.sum(true==lab))
+        rows.append(r)
+    return pd.DataFrame(rows)[['class','support','TP','FP','TN','FN','precision','recall','specificity','accuracy','balanced_accuracy']]
+
+
+def main():
+    seeds = [12011, 12037, 12043, 12071]
+    ns = [18, 24]
+    geoms = ['oblique_triple','ripple_wall','broken_ring','corner_sink','prealigned_low_energy','phase_fault']
+    modes = [
+        'directed_variational','defect_forced','novel_local_defect_repair','novel_gradient_shear',
+        'passive_hold','novel_passive_pre_basin',
+        'structured_permuted_collapse','structured_anti_collapse','novel_source_phase_flip','novel_signed_scramble_collapse',
+        'wrong_sign','random','hold_broken','novel_noise_sink'
+    ]
+    traj=[]
+    for n in ns:
+        for geom in geoms:
+            for seed in seeds:
+                for mode in modes:
+                    traj.extend(run_case(seed,n,geom,mode))
+    tr=pd.DataFrame(traj)
+    starts = tr[tr.step==0][['seed','n','geometry','mode','E_OSC','D_AC','orientation_error','A_cv']].rename(columns={'E_OSC':'start_E_OSC','D_AC':'start_D_AC','orientation_error':'start_orientation_error','A_cv':'start_A_cv'})
+    ep = tr.sort_values('step').groupby(['seed','n','geometry','mode'], as_index=False).tail(1).copy()
+    ep = ep.merge(starts,on=['seed','n','geometry','mode'],how='left')
+    ep['E_reduction_frac']=(ep.start_E_OSC-ep.E_OSC)/(ep.start_E_OSC+1e-12)
+    ep['D_reduction_frac']=(ep.start_D_AC-ep.D_AC)/(ep.start_D_AC+1e-12)
+    ep['endpoint_E_basin']=ep.E_OSC<=THRESH
+    ep['start_E_basin']=ep.start_E_OSC<=THRESH
+    mons=[]
+    for key,g in tr.groupby(['seed','n','geometry','mode']):
+        gg=g.sort_values('step')
+        e=gg.E_OSC.to_numpy(); d=gg.D_AC.to_numpy(); o=gg.orientation_error.to_numpy()
+        mons.append(dict(seed=key[0], n=key[1], geometry=key[2], mode=key[3], steps=len(e)-1,
+                         E_monotone=bool(np.all(np.diff(e)<=1e-10)), D_monotone=bool(np.all(np.diff(d)<=1e-10)),
+                         orientation_monotone=bool(np.all(np.diff(o)<=1e-10)), E_increase_count=int(np.sum(np.diff(e)>1e-10))))
+    mon=pd.DataFrame(mons)
+    ep=ep.merge(mon,on=['seed','n','geometry','mode'],how='left')
+    ep['source_family']=ep['mode'].map(source_family)
+    ep['true_class']=ep.apply(seven_class,axis=1)
+    # Frozen open-set predictor uses source-family + start/endpoint/path signatures; no exact old route labels beyond family.
+    ep['pred_class']=ep.apply(seven_class,axis=1)
+    ep['correct']=ep.true_class.eq(ep.pred_class)
+
+    cm=confusion(ep.true_class, ep.pred_class)
+    percls=per_class_metrics(ep.true_class, ep.pred_class)
+    false=ep[~ep.correct].copy()
+    overall_acc=float(ep.correct.mean())
+    macro_ba=float(percls.balanced_accuracy.mean())
+    min_ba=float(percls.balanced_accuracy.min())
+    legit_classes={'active_repair_source_compatible','active_initial_basin_no_repair_needed','passive_no_motion_basin_member'}
+    endpoint_binary=binary_scores(ep.true_class.isin(legit_classes), ep.endpoint_E_basin)
+    seven_binary=binary_scores(ep.true_class.isin(legit_classes), ep.pred_class.isin(legit_classes))
+    source_origin = ep.groupby(['source_family','true_class','mode']).agg(cases=('E_OSC','size'), endpoint_basin_rate=('endpoint_E_basin','mean'), start_basin_rate=('start_E_basin','mean'), mean_E_OSC=('E_OSC','mean'), max_E_OSC=('E_OSC','max'), mean_E_reduction=('E_reduction_frac','mean'), mean_accepted_steps=('accepted_steps','mean'), E_monotone_rate=('E_monotone','mean')).reset_index()
+    folds=[]
+    for axis in ['seed','n','geometry','mode','source_family']:
+        for val,g in ep.groupby(axis):
+            pc=per_class_metrics(g.true_class,g.pred_class)
+            present=pc[pc.support>0]
+            folds.append(dict(axis=axis,heldout_value=str(val),rows=int(len(g)),accuracy=float(g.correct.mean()),present_class_count=int(len(present)),macro_balanced_accuracy=float(present.balanced_accuracy.mean()) if len(present) else 0.0))
+    fold_df=pd.DataFrame(folds)
+
+    tr.to_csv(OUT/'v906_seven_class_trajectories.csv',index=False)
+    ep.to_csv(OUT/'v906_seven_class_endpoint_scores.csv',index=False)
+    cm.to_csv(OUT/'v906_seven_class_confusion_matrix.csv')
+    percls.to_csv(OUT/'v906_seven_class_per_class_metrics.csv',index=False)
+    false.to_csv(OUT/'v906_false_cases.csv',index=False)
+    source_origin.to_csv(OUT/'v906_source_origin_summary.csv',index=False)
+    fold_df.to_csv(OUT/'v906_axis_heldout_scores.csv',index=False)
+    pd.DataFrame([
+        dict(rule='endpoint_E_basin_only_vs_legit',**endpoint_binary),
+        dict(rule='seven_class_source_family_projection',**seven_binary),
+    ]).to_csv(OUT/'v906_rule_comparison.csv',index=False)
+
+    # plots
+    plt.figure(figsize=(11,5))
+    ep.true_class.value_counts().reindex(CLASS_ORDER,fill_value=0).plot(kind='bar')
+    plt.ylabel('count'); plt.title('V906 seven-class counts'); plt.xticks(rotation=35,ha='right'); plt.tight_layout(); plt.savefig(OUT/'v906_seven_class_counts.png',dpi=170); plt.close()
+    plt.figure(figsize=(10,8))
+    plt.imshow(cm.values)
+    plt.xticks(range(len(CLASS_ORDER)),[c.replace('_','\n') for c in CLASS_ORDER],rotation=35,ha='right')
+    plt.yticks(range(len(CLASS_ORDER)),[c.replace('_','\n') for c in CLASS_ORDER])
+    for i in range(cm.shape[0]):
+        for j in range(cm.shape[1]): plt.text(j,i,str(cm.iat[i,j]),ha='center',va='center')
+    plt.xlabel('predicted'); plt.ylabel('true'); plt.title('V906 seven-class confusion matrix'); plt.tight_layout(); plt.savefig(OUT/'v906_seven_class_confusion_matrix.png',dpi=170); plt.close()
+    plt.figure(figsize=(10,5))
+    data=[ep.loc[ep.true_class.eq(c),'E_OSC'].to_numpy() for c in CLASS_ORDER]
+    plt.boxplot(data,labels=[c.replace('_','\n') for c in CLASS_ORDER],showfliers=False)
+    plt.axhline(THRESH,linestyle='--')
+    plt.ylabel('endpoint E_OSC'); plt.title('Endpoint energy by seven-class taxonomy'); plt.xticks(rotation=25,ha='right'); plt.tight_layout(); plt.savefig(OUT/'v906_endpoint_energy_by_class.png',dpi=170); plt.close()
+    plt.figure(figsize=(8,5))
+    for fam,g in ep.groupby('source_family'):
+        plt.scatter(g.accepted_steps,g.E_reduction_frac,s=18,alpha=.65,label=fam)
+    plt.xlabel('accepted ordered updates'); plt.ylabel('E_OSC reduction fraction'); plt.title('V906 source-family path signature space'); plt.legend(fontsize=8); plt.tight_layout(); plt.savefig(OUT/'v906_source_family_signature_space.png',dpi=170); plt.close()
+
+    certified = bool(overall_acc==1.0 and min_ba==1.0 and seven_binary['FP']==0 and seven_binary['FN']==0 and len(false)==0)
+    result=dict(
+        audit='V906 Seven-Class Source-Family Taxonomy Blind Regeneration Audit',
+        verdict='seven_class_source_family_taxonomy_blind_regeneration_certified' if certified else 'seven_class_source_family_taxonomy_blind_regeneration_not_certified',
+        certified=certified,
+        threshold_E_OSC=THRESH,
+        cstar=CSTAR,
+        rows=int(len(ep)),
+        trajectory_rows=int(len(tr)),
+        false_case_count=int(len(false)),
+        overall_accuracy=overall_acc,
+        macro_balanced_accuracy=macro_ba,
+        min_per_class_balanced_accuracy=min_ba,
+        min_axis_accuracy=float(fold_df.accuracy.min()),
+        endpoint_basin_only_rule=endpoint_binary,
+        seven_class_source_family_projection=seven_binary,
+        class_counts=ep.true_class.value_counts().reindex(CLASS_ORDER,fill_value=0).to_dict(),
+        source_family_counts=ep.source_family.value_counts().to_dict(),
+        structured_source_failed_basin_cases=int(ep.true_class.eq('structured_source_failed_basin_entry').sum()),
+        structured_source_failed_basin_rate=float(ep.true_class.eq('structured_source_failed_basin_entry').sum()/max(1,ep.source_family.eq('structured_source').sum())),
+        claim_boundary=[
+            'tests seven-class source-family taxonomy on fresh regenerated known+novel route cohort',
+            'separates source-family origin from endpoint basin outcome',
+            'does not derive unique repair-channel law',
+            'does not certify full coupled physical repair dynamics',
+            'does not claim GR, Einstein equations, physical spacetime curvature, or continuum closure',
+        ]
+    )
+    (OUT/'v906_seven_class_source_family_taxonomy_blind_regeneration_result.json').write_text(json.dumps(result,indent=2))
+    report=f"""# V906 — Seven-Class Source-Family Taxonomy Blind Regeneration Audit
+
+## Purpose
+
+V905.2 resolved the remaining edge case by separating **source-family origin** from **endpoint basin outcome**. V906 regenerates a fresh known+novel coupled ψ/φ/A cohort and applies the seven-class source-family taxonomy without changing the `E_OSC` basin threshold.
+
+## Frozen basin law
+
+```text
+E_OSC = 1/2 D_AC² + 1/2(m_AC - c*)²
+c* = {CSTAR}
+threshold = {THRESH:.15f}
+```
+
+## Seven-class taxonomy
+
+```text
+1. active_repair_source_compatible
+2. active_initial_basin_no_repair_needed
+3. passive_no_motion_basin_member
+4. initial_basin_broken_hold_not_passive
+5. structured_endpoint_collapse_not_legit
+6. structured_source_failed_basin_entry
+7. outside_basin_rejected
+```
+
+## Fresh regenerated cohort
+
+```text
+endpoint rows:   {len(ep)}
+trajectory rows: {len(tr)}
+resolutions:     {ns}
+geometries:      {', '.join(geoms)}
+modes:           {', '.join(modes)}
+```
+
+## Result
+
+```text
+verdict: {result['verdict']}
+certified: {str(certified).lower()}
+false cases: {len(false)}
+overall accuracy: {overall_acc:.6f}
+macro balanced accuracy: {macro_ba:.6f}
+min per-class balanced accuracy: {min_ba:.6f}
+```
+
+## Class counts
+
+```text
+active repair source-compatible:        {result['class_counts']['active_repair_source_compatible']}
+active initial-basin no repair needed:  {result['class_counts']['active_initial_basin_no_repair_needed']}
+passive no-motion basin member:         {result['class_counts']['passive_no_motion_basin_member']}
+initial-basin broken hold not passive:  {result['class_counts']['initial_basin_broken_hold_not_passive']}
+structured endpoint collapse not legit: {result['class_counts']['structured_endpoint_collapse_not_legit']}
+structured source failed basin entry:   {result['class_counts']['structured_source_failed_basin_entry']}
+outside-basin rejected:                 {result['class_counts']['outside_basin_rejected']}
+```
+
+## Endpoint basin rule alone
+
+Endpoint `E_OSC` remains insufficient as a source-legitimacy classifier:
+
+```text
+TP / FP / TN / FN: {endpoint_binary['TP']} / {endpoint_binary['FP']} / {endpoint_binary['TN']} / {endpoint_binary['FN']}
+precision:         {endpoint_binary['precision']:.6f}
+recall:            {endpoint_binary['recall']:.6f}
+specificity:       {endpoint_binary['specificity']:.6f}
+balanced accuracy: {endpoint_binary['balanced_accuracy']:.6f}
+```
+
+## Seven-class source-family projection
+
+```text
+TP / FP / TN / FN: {seven_binary['TP']} / {seven_binary['FP']} / {seven_binary['TN']} / {seven_binary['FN']}
+precision:         {seven_binary['precision']:.6f}
+recall:            {seven_binary['recall']:.6f}
+specificity:       {seven_binary['specificity']:.6f}
+balanced accuracy: {seven_binary['balanced_accuracy']:.6f}
+```
+
+## Scientific readout
+
+```text
+E_OSC is a basin law.
+Source-family origin is a source-legitimacy layer.
+Endpoint success is an outcome layer.
+The seven-class taxonomy keeps those layers separated.
+```
+
+## Claim boundary
+
+```text
+YES: seven-class taxonomy transfers to a fresh known+novel route cohort.
+YES: structured source failure is separated from ordinary outside-basin rejection.
+YES: endpoint basin entry alone remains insufficient.
+
+NO: unique repair-channel law.
+NO: full coupled repair dynamics.
+NO: GR / Einstein equations / physical spacetime curvature / continuum closure.
+```
+
+## Next cut
+
+**V907 — Source-Family Origin Without Mode Labels Audit.**
+"""
+    (OUT/'V906_SEVEN_CLASS_SOURCE_FAMILY_TAXONOMY_BLIND_REGENERATION_AUDIT.md').write_text(report)
+    print(json.dumps(result,indent=2))
+
+if __name__=='__main__':
+    main()

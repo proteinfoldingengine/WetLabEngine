@@ -1,0 +1,316 @@
+#!/usr/bin/env python3
+"""
+V930 Fresh Compatible Cohort Blind Transfer
+==========================================
+
+Purpose
+-------
+V928 froze the minimal symbolic closure rule:
+
+    Q_obs-only where geometry is sufficient;
+    (Q_obs, S_ternary) where source legitimacy is required.
+
+V929 showed exact transfer to an existing compatible regenerated cohort.
+
+V930 generates a fresh compatible cohort with new seeds, applies the frozen V928
+rule without modification, and reports pass/fail.
+
+Claim boundary:
+- Fresh compatible in-domain transfer only.
+- No universal law claim.
+- No GR / Einstein equation / physical spacetime / continuum claim.
+- No 1/f, CMB, or black-hole claim.
+"""
+
+from __future__ import annotations
+import argparse, json, importlib.util, sys
+from pathlib import Path
+import numpy as np
+import pandas as pd
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+BASE = Path("/mnt/data")
+DEFAULT_OUT = BASE / "v930_fresh_compatible_cohort_blind_transfer"
+V906_PATH = BASE / "v906_seven_class_source_family_taxonomy_blind_regeneration_audit.py"
+V928_RULE_PATH = BASE / "v928_minimal_symbolic_closure_law/v928_minimal_symbolic_rule_table.csv"
+
+SOURCE_ROLE_MAP = {
+    "active_source": "source_active_role",
+    "passive_source": "source_basin_eligible_nonactive_role",
+    "structured_source": "source_basin_eligible_nonactive_role",
+    "rejected_or_broken_source": "source_rejected_or_broken_role",
+}
+
+def load_v906():
+    spec = importlib.util.spec_from_file_location("v906", V906_PATH)
+    v906 = importlib.util.module_from_spec(spec)
+    sys.modules["v906"] = v906
+    spec.loader.exec_module(v906)
+    return v906
+
+def observable_quotient(row: pd.Series) -> str:
+    start = bool(row["start_E_basin"])
+    end = bool(row["endpoint_E_basin"])
+    acc = int(row["accepted_steps"])
+    red = float(row["E_reduction_frac"])
+    sf = row.get("source_family", "")
+    if start and end and acc == 0 and abs(red) < 1e-12:
+        return "initial_basin_no_motion_observable"
+    if (not start) and end and acc > 0 and red > 0:
+        return "active_or_structured_endpoint_entry_observable"
+    if start and end and acc > 0:
+        return "initial_basin_active_motion_observable"
+    if (not end) and sf == "structured_source":
+        return "structured_origin_failed_basin_observable"
+    if not end:
+        return "outside_basin_rejected_observable"
+    return "other_observable"
+
+def source_role(row: pd.Series) -> str:
+    return SOURCE_ROLE_MAP.get(row.get("source_family", ""), "source_unknown_role")
+
+def generate_fresh(v906):
+    """
+    New seed range not used in V921. Same compatible observable semantics.
+    """
+    seeds = [26011, 26031, 26053, 26083, 26101, 26137]
+    ns = [18, 26]
+    geoms = ["oblique_triple", "ripple_wall", "broken_ring", "corner_sink", "prealigned_low_energy", "phase_fault"]
+    modes = [
+        "directed_variational", "defect_forced", "novel_local_defect_repair", "novel_gradient_shear",
+        "passive_hold", "novel_passive_pre_basin",
+        "structured_permuted_collapse", "structured_anti_collapse", "novel_source_phase_flip",
+        "novel_signed_scramble_collapse",
+        "wrong_sign", "random", "hold_broken", "novel_noise_sink"
+    ]
+    traj = []
+    for n in ns:
+        for geom in geoms:
+            for seed in seeds:
+                for mode in modes:
+                    traj.extend(v906.run_case(seed, n, geom, mode))
+    tr = pd.DataFrame(traj)
+    starts = tr[tr.step == 0][["seed","n","geometry","mode","E_OSC","D_AC","orientation_error","A_cv"]].rename(columns={
+        "E_OSC":"start_E_OSC",
+        "D_AC":"start_D_AC",
+        "orientation_error":"start_orientation_error",
+        "A_cv":"start_A_cv",
+    })
+    ep = tr.sort_values("step").groupby(["seed","n","geometry","mode"], as_index=False).tail(1).copy()
+    ep = ep.merge(starts, on=["seed","n","geometry","mode"], how="left")
+    ep["E_reduction_frac"] = (ep.start_E_OSC - ep.E_OSC)/(ep.start_E_OSC + 1e-12)
+    ep["D_reduction_frac"] = (ep.start_D_AC - ep.D_AC)/(ep.start_D_AC + 1e-12)
+    ep["endpoint_E_basin"] = ep.E_OSC <= v906.THRESH
+    ep["start_E_basin"] = ep.start_E_OSC <= v906.THRESH
+
+    mons = []
+    for key, g in tr.groupby(["seed","n","geometry","mode"]):
+        gg = g.sort_values("step")
+        e = gg.E_OSC.to_numpy()
+        d = gg.D_AC.to_numpy()
+        o = gg.orientation_error.to_numpy()
+        mons.append(dict(
+            seed=key[0], n=key[1], geometry=key[2], mode=key[3], steps=len(e)-1,
+            E_monotone=bool(np.all(np.diff(e) <= 1e-10)),
+            D_monotone=bool(np.all(np.diff(d) <= 1e-10)),
+            orientation_monotone=bool(np.all(np.diff(o) <= 1e-10)),
+            E_increase_count=int(np.sum(np.diff(e) > 1e-10)),
+        ))
+    ep = ep.merge(pd.DataFrame(mons), on=["seed","n","geometry","mode"], how="left")
+    ep["source_family"] = ep["mode"].map(v906.source_family)
+    ep["true_class"] = ep.apply(v906.seven_class, axis=1)
+    ep["v930_observable_quotient"] = ep.apply(observable_quotient, axis=1)
+    ep["v930_source_role_primitive"] = ep.apply(source_role, axis=1)
+    return tr, ep, seeds, ns, geoms, modes
+
+def apply_rules(ep: pd.DataFrame, rules: pd.DataFrame):
+    preds = []
+    rule_ids = []
+    for _, row in ep.iterrows():
+        pred = "__unclassified_out_of_domain__"
+        rid = "__none__"
+        for _, r in rules.sort_values("priority").iterrows():
+            if r["kind"] == "q_only":
+                if row["v930_observable_quotient"] == r["Q_obs"]:
+                    pred = r["output_class"]; rid = r["rule_id"]; break
+            elif r["kind"] == "q_role":
+                if row["v930_observable_quotient"] == r["Q_obs"] and row["v930_source_role_primitive"] == r["S_ternary"]:
+                    pred = r["output_class"]; rid = r["rule_id"]; break
+        preds.append(pred); rule_ids.append(rid)
+    return pd.Series(preds, index=ep.index), pd.Series(rule_ids, index=ep.index)
+
+def confusion(y, pred):
+    labels = sorted(set(y) | set(pred))
+    return pd.crosstab(pd.Series(y, name="true"), pd.Series(pred, name="pred")).reindex(index=labels, columns=labels, fill_value=0)
+
+def run(out_dir: Path):
+    out_dir.mkdir(parents=True, exist_ok=True)
+    v906 = load_v906()
+    rules = pd.read_csv(V928_RULE_PATH)
+
+    tr, ep, seeds, ns, geoms, modes = generate_fresh(v906)
+    pred, matched = apply_rules(ep, rules)
+    ep["v930_pred_frozen_v928_rule"] = pred
+    ep["v930_matched_rule_id"] = matched
+    ep["v930_correct"] = ep["v930_pred_frozen_v928_rule"].eq(ep["true_class"])
+
+    acc = float(ep["v930_correct"].mean())
+    false_cases = int((~ep["v930_correct"]).sum())
+    unclassified = int(ep["v930_pred_frozen_v928_rule"].eq("__unclassified_out_of_domain__").sum())
+
+    false_df = ep.loc[~ep["v930_correct"]].copy()
+    cm = confusion(ep["true_class"], ep["v930_pred_frozen_v928_rule"])
+    q_role_counts = ep.groupby(["v930_observable_quotient","v930_source_role_primitive","true_class"]).size().reset_index(name="count")
+    rule_usage = ep.groupby(["v930_matched_rule_id","v930_pred_frozen_v928_rule"]).size().reset_index(name="count").sort_values("v930_matched_rule_id")
+
+    # Compare observed fresh key set to frozen rule key set.
+    observed_keys = set(zip(ep["v930_observable_quotient"], ep["v930_source_role_primitive"]))
+    frozen_keys = set()
+    q_only_keys = set()
+    for _, r in rules.iterrows():
+        if r["kind"] == "q_only":
+            q_only_keys.add(r["Q_obs"])
+        else:
+            frozen_keys.add((r["Q_obs"], r["S_ternary"]))
+    key_rows = []
+    for q, s in sorted(observed_keys):
+        covered = (q in q_only_keys) or ((q,s) in frozen_keys)
+        key_rows.append({"Q_obs": q, "S_ternary": s, "covered_by_frozen_rule": covered})
+    key_coverage = pd.DataFrame(key_rows)
+    uncovered_keys = int((~key_coverage["covered_by_frozen_rule"]).sum()) if len(key_coverage) else 0
+
+    criteria = {
+        "frozen_rule_used_without_modification": True,
+        "fresh_seed_set_not_v921": True,
+        "fresh_cohort_accuracy_exact": bool(acc == 1.0 and false_cases == 0),
+        "no_unclassified_in_compatible_domain": bool(unclassified == 0),
+        "all_observed_keys_covered": bool(uncovered_keys == 0),
+    }
+    closed = all(criteria.values())
+
+    tr.to_csv(out_dir / "v930_fresh_trajectories.csv", index=False)
+    ep.to_csv(out_dir / "v930_fresh_endpoint_scores.csv", index=False)
+    false_df.to_csv(out_dir / "v930_fresh_false_cases.csv", index=False)
+    cm.to_csv(out_dir / "v930_confusion_matrix.csv")
+    q_role_counts.to_csv(out_dir / "v930_qobs_role_class_counts.csv", index=False)
+    rule_usage.to_csv(out_dir / "v930_frozen_rule_usage.csv", index=False)
+    key_coverage.to_csv(out_dir / "v930_fresh_key_coverage.csv", index=False)
+
+    # plots
+    plt.figure(figsize=(9,5))
+    usage = rule_usage.copy()
+    plt.bar(usage["v930_matched_rule_id"].astype(str), usage["count"])
+    plt.xlabel("Frozen V928 rule id")
+    plt.ylabel("Fresh cohort rows")
+    plt.title("V930 Frozen Rule Usage on Fresh Cohort")
+    plt.xticks(rotation=45, ha="right")
+    plt.grid(axis="y", alpha=0.3)
+    plt.savefig(out_dir / "v930_frozen_rule_usage.png", dpi=180, bbox_inches="tight")
+    plt.close()
+
+    plt.figure(figsize=(8,5))
+    vals = [acc, 1-acc]
+    plt.bar(["accuracy", "error"], vals)
+    plt.ylim(0,1.05)
+    plt.ylabel("fraction")
+    plt.title("V930 Frozen Rule Blind Transfer")
+    plt.grid(axis="y", alpha=0.3)
+    plt.savefig(out_dir / "v930_blind_transfer_accuracy.png", dpi=180, bbox_inches="tight")
+    plt.close()
+
+    summary = {
+        "verdict": "fresh_compatible_cohort_blind_transfer_certified" if closed else "fresh_compatible_cohort_blind_transfer_failed_or_bounded",
+        "closed_for_fresh_compatible_cohort": closed,
+        "rows": int(len(ep)),
+        "trajectory_rows": int(len(tr)),
+        "seeds": seeds,
+        "ns": ns,
+        "geometries": geoms,
+        "modes": modes,
+        "accuracy": acc,
+        "false_cases": false_cases,
+        "unclassified_cases": unclassified,
+        "observed_key_count": int(len(observed_keys)),
+        "uncovered_observed_keys": uncovered_keys,
+        "matched_rule_count": int(ep["v930_matched_rule_id"].nunique()),
+        "criteria": criteria,
+        "claim_boundary": [
+            "Frozen-rule fresh compatible-cohort transfer only",
+            "No universal out-of-domain law claim",
+            "No physical spacetime, GR, Einstein equation, or continuum closure claim",
+            "No 1/f ledger, CMB, or black-hole claim",
+        ],
+    }
+    (out_dir / "v930_fresh_compatible_cohort_blind_transfer_result.json").write_text(json.dumps(summary, indent=2, default=str))
+
+    report = f"""# V930 Fresh Compatible Cohort Blind Transfer
+
+## Verdict
+
+`{summary['verdict']}`
+
+Closed for fresh compatible cohort: **{closed}**
+
+## Test
+
+The V928 minimal symbolic rule was frozen and applied without modification to a newly generated compatible cohort.
+
+## Fresh cohort
+
+```text
+endpoint rows: {len(ep)}
+trajectory rows: {len(tr)}
+seeds: {seeds}
+n values: {ns}
+geometries: {geoms}
+modes: {len(modes)} modes
+```
+
+## Result
+
+```text
+accuracy: {acc:.6f}
+false cases: {false_cases}
+unclassified cases: {unclassified}
+observed keys: {len(observed_keys)}
+uncovered observed keys: {uncovered_keys}
+matched frozen rules: {summary['matched_rule_count']}
+```
+
+## Criteria
+
+{pd.DataFrame([{'criterion':k, 'passed':v} for k,v in criteria.items()]).to_markdown(index=False)}
+
+## Scientific update
+
+V930 upgrades the result from compatible cross-cohort transfer to fresh compatible-cohort blind transfer.
+
+The frozen V928 law:
+
+```text
+Q_obs-only where geometry is sufficient;
+(Q_obs, S_ternary) where source legitimacy is required.
+```
+
+transferred exactly to a newly generated compatible cohort with no modification.
+
+## Boundary
+
+This remains an in-domain result over compatible quotient/source-role semantics.
+
+It does not claim physical spacetime, GR, Einstein equations, continuum closure, 1/f ledger closure, CMB, or black-hole physics.
+"""
+    (out_dir / "V930_FRESH_COMPATIBLE_COHORT_BLIND_TRANSFER_REPORT.md").write_text(report)
+
+    return summary
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    args = ap.parse_args()
+    print(json.dumps(run(args.out), indent=2, default=str))
+
+if __name__ == "__main__":
+    main()

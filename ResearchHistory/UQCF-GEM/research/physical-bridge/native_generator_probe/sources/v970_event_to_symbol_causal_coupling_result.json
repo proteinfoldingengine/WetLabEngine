@@ -1,0 +1,95 @@
+{
+  "verdict": "event_to_symbol_causal_coupling_certified",
+  "closed_for_v970_event_symbol_coupling": true,
+  "pair_threshold": 0.8264880952380952,
+  "component_threshold": 0.8289682539682539,
+  "predictability": [
+    {
+      "symbol_target": "Q_obs",
+      "leave_domain_out_accuracy": 0.9548611111111112,
+      "n_classes": 5
+    },
+    {
+      "symbol_target": "S_ternary",
+      "leave_domain_out_accuracy": 0.878968253968254,
+      "n_classes": 3
+    },
+    {
+      "symbol_target": "QS_pair",
+      "leave_domain_out_accuracy": 0.8764880952380952,
+      "n_classes": 11
+    },
+    {
+      "symbol_target": "true_class",
+      "leave_domain_out_accuracy": 0.8705357142857143,
+      "n_classes": 7
+    }
+  ],
+  "criteria": {
+    "certified_event_dynamics_predict_symbols_above_threshold": true,
+    "causal_coupling_preserves_v957_control": true,
+    "causal_coupling_preserves_v960_control": true,
+    "causal_coupling_rejects_near_manifold_mimic": true,
+    "v969_radius_envelope_would_accept_mimic": true
+  },
+  "candidate_scores": [
+    {
+      "candidate_generator": "candidate_certified_control_V957",
+      "candidate_family": "compatible_control",
+      "rows": 240,
+      "q_match_rows": 240,
+      "s_match_rows": 240,
+      "pair_match_rows": 240,
+      "qs_component_match_rows": 240,
+      "true_class_match_rows": 240,
+      "q_match_rate": 1.0,
+      "s_match_rate": 1.0,
+      "pair_match_rate": 1.0,
+      "qs_component_match_rate": 1.0,
+      "true_class_match_rate": 1.0,
+      "event_symbol_coupling_certified": true,
+      "behavior_only_certified": true,
+      "radius_envelope_certified": true,
+      "causal_coupling_certified": true
+    },
+    {
+      "candidate_generator": "candidate_certified_control_V960",
+      "candidate_family": "compatible_control",
+      "rows": 240,
+      "q_match_rows": 240,
+      "s_match_rows": 240,
+      "pair_match_rows": 240,
+      "qs_component_match_rows": 240,
+      "true_class_match_rows": 239,
+      "q_match_rate": 1.0,
+      "s_match_rate": 1.0,
+      "pair_match_rate": 1.0,
+      "qs_component_match_rate": 1.0,
+      "true_class_match_rate": 0.9958333333333333,
+      "event_symbol_coupling_certified": true,
+      "behavior_only_certified": true,
+      "radius_envelope_certified": true,
+      "causal_coupling_certified": true
+    },
+    {
+      "candidate_generator": "candidate_near_manifold_symbolic_mimic",
+      "candidate_family": "adversarial_near_manifold_mimic",
+      "rows": 420,
+      "q_match_rows": 114,
+      "s_match_rows": 138,
+      "pair_match_rows": 37,
+      "qs_component_match_rows": 35,
+      "true_class_match_rows": 77,
+      "q_match_rate": 0.2714285714285714,
+      "s_match_rate": 0.32857142857142857,
+      "pair_match_rate": 0.0880952380952381,
+      "qs_component_match_rate": 0.08333333333333333,
+      "true_class_match_rate": 0.18333333333333332,
+      "event_symbol_coupling_certified": false,
+      "behavior_only_certified": true,
+      "radius_envelope_certified": true,
+      "causal_coupling_certified": false
+    }
+  ],
+  "status": "Event-to-symbol causal coupling rejects the near-manifold symbolic mimic while preserving certified controls."
+}
