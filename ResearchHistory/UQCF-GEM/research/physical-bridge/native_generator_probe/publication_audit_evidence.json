@@ -1,0 +1,655 @@
+{
+  "schema": "native-generator-publication-audit/v1",
+  "verdict": "PASS_PUBLICATION_ONLY",
+  "scientific_status": "OPEN",
+  "milestone_status": "NOT_ACHIEVED",
+  "audited_at_utc": "2026-10-13T00:44:06.548354+00:00",
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "declared_branch": "research/uqcf-overlapping-guard-exchange",
+  "observed_branch_head": "719425f878e1c9f68682c34b6e31064726894926",
+  "analytical_commit": "719425f878e1c9f68682c34b6e31064726894926",
+  "tree": "30f2b3b6e156df5c736bcd9fbdad93534ae897bf",
+  "sole_parent": "1148f1f1f4d4b3f918018aee8ddb9ea09555a0af",
+  "parent_tree": "d2128e2428485773897cadb45d75090c2614aa91",
+  "scope": "Immutable analytical publication integrity, source-byte identity, review binding, index append preservation, and retention of claim limits.",
+  "method": {
+    "remote": "This auditor independently used the GitHub connector fetch, fetch_commit, compare_commits and fetch_file operations; file reads used the exact analytical or parent commit SHA and base64 encoding.",
+    "identity": "Recomputed local expected UTF-8 lengths, SHA256 and Git blob SHA1 (blob header plus bytes) with Python hashlib; compared each complete GitHub base64 payload to the exact local expected encoding and each returned GitHub blob ID to that recomputed ID. Exact byte equality transfers the recomputed length and SHA256 to the remotely retrieved bytes.",
+    "recovered_sources": "Static reading, JSON parsing, ZIP file-member reads and hashes only. No archived scientific module import, scientific execution, trajectory recomputation or model replay."
+  },
+  "input_bundle": {
+    "local_path": "/workspace/scratch/a8b66050777b/native_generator_probe/bundle.json",
+    "sha256": "a7546bb049a9e139db2012cd1680b260e4db0c464fe30a2cadc99d27e9bd882c",
+    "payloads": 25,
+    "unique_paths": true
+  },
+  "commit_checks": {
+    "commit_identity_matches": true,
+    "expected_unique": true,
+    "manifest_unique": true,
+    "manifest_self_excluded": true,
+    "manifest_set_exact": true,
+    "manifest_parent_binding": true,
+    "changed_set_exact": true,
+    "changed_files": 25,
+    "added": 24,
+    "modified": 1,
+    "deletions": 0,
+    "commit_diff_set_equals_compare": true,
+    "branch_equal_at_read_time": true
+  },
+  "manifest": {
+    "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/manifest.json",
+    "bytes": 7898,
+    "sha256": "a4a3023cc67c29aed74060c859cb43321ed65b9c5afcfa58f46d656bf5fde673",
+    "git_blob_sha": "0f6837ebe04c11c7ae2de6d5fb04e8e42fe589a5",
+    "payload_entries": 24,
+    "self_excluded": true,
+    "exact_payload_path_set": true,
+    "all_identity_tuples_match": true,
+    "parent_bindings_match": true
+  },
+  "published_files": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/NATIVE_EVENT_MILESTONE.md",
+      "status": "added",
+      "bytes": 12865,
+      "sha256": "7c848e15bdcafe2a908268237b5afaf5ffe0f39f28c2776fd8a23efafc161c0d",
+      "git_blob_sha": "46c27da7d5a049820ebde455b91863f071b621e5",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "status": "modified",
+      "bytes": 37024,
+      "sha256": "fe01d65a5ec2c272717a9fd1d899854c8ca767f2784fce0d0ae16736c7a141b2",
+      "git_blob_sha": "0f2685578e9a822caeed7fda3bc21d2291fe7572",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/source_packet.json",
+      "status": "added",
+      "bytes": 98390,
+      "sha256": "7083f613a182f0472e1910fa7916520b1dad69766b3fd963c40ed25cb7ca9b0b",
+      "git_blob_sha": "323ae237caf83402f476330aa3387966249f043b",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/SOURCE_READBACKS.json",
+      "status": "added",
+      "bytes": 4838,
+      "sha256": "92e8baf0f9789a311076df1ce5d207d07a90d0e717d1c4d1a6b942be398000c3",
+      "git_blob_sha": "640f23d2c593c508b97571f3dee299a1c7bc9add",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/ARCHIVE_EXCERPTS.json",
+      "status": "added",
+      "bytes": 6291,
+      "sha256": "ef7d76e6f059a3a94bf96ae8f19b17588fd8fc1a92b0f8ebe1db08f471cee71e",
+      "git_blob_sha": "aa236cebe75a882acc1eb984421128be8d18be4d",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/RECOVERED_SOURCE_MANIFEST.json",
+      "status": "added",
+      "bytes": 10327,
+      "sha256": "b789d976c752d32dd90d3e8d2f92768aab1c79aaeea1c039195dbebd22fcdb96",
+      "git_blob_sha": "ac5010369d899c20d6562382e202539c10fd437b",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/recovered_inventory.json",
+      "status": "added",
+      "bytes": 11796,
+      "sha256": "054607fddc69071082e01bc14fa7ad727d805be9eaa49ddbdcb27029d46f3c16",
+      "git_blob_sha": "17502d7b53e204ca625d31074d27e997cd207648",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/SOURCE_INTEGRITY_CHECK.json",
+      "status": "added",
+      "bytes": 1242,
+      "sha256": "0ff466bd9e44d332ff5d50c2bd2dc6ff7cb656a00226e32689a3cbef77b3fab8",
+      "git_blob_sha": "9ce61691bb186cac7f2ff0796829e860d96e6a63",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/LEDGER_SCHEMA_EXCERPTS.json",
+      "status": "added",
+      "bytes": 3839,
+      "sha256": "5e4e66e08582539b84a9930466d6be1835a1f5ee9db5609ada983b7ad289b2a2",
+      "git_blob_sha": "130308e773d45e58089aafdbc3374173ddc652d4",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/ANALYTICAL_REVIEW.md",
+      "status": "added",
+      "bytes": 13227,
+      "sha256": "46d196f37dd3836ff70a7aaa8ec1fc3d03b3eb702e1c869ea15d2606474773c7",
+      "git_blob_sha": "a9bab9c878737c4a50906c55eacab622c2413f2c",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/INDEX_APPEND.md",
+      "status": "added",
+      "bytes": 1917,
+      "sha256": "3ba914161b1408c5f165d64c9ece6dc9505ecf55f0dd1e7d27b68c248fa44090",
+      "git_blob_sha": "d443c9754cd4f925a9e7fc074abebb4a844004e9",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/V957_FRESH_EVENT_LEDGER_TRANSFER_AUDIT.md",
+      "status": "added",
+      "bytes": 1418,
+      "sha256": "f2c415b7b0b48146c320f4b1ca33da239cd62fa8b33816239e5337a4b1442edd",
+      "git_blob_sha": "0105f6626149ada23188241285c2221f62c4fee1",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/V960_INDEPENDENT_TRAJECTORY_FAMILY_EVENT_LEDGER_STRESS.md",
+      "status": "added",
+      "bytes": 1241,
+      "sha256": "6adb7f2b193ad51519b6ce2a9e876c05797a41c75ba1c5ca5cfd49dda69383c2",
+      "git_blob_sha": "b05129886f984eb5f7328d6874e7ea5ed7e180e1",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/V970_EVENT_TO_SYMBOL_CAUSAL_COUPLING_AUDIT.md",
+      "status": "added",
+      "bytes": 4131,
+      "sha256": "91599584452499516d665d8f634e147aebcefda7200cfc1ca3b700943559aebf",
+      "git_blob_sha": "2e6d90e110b43e07a5a2602d6093fc13c1bccdab",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/V971_SCIENTIFIC_REPORT.md",
+      "status": "added",
+      "bytes": 4930,
+      "sha256": "c1579aaa7054d06191358e9fa998cb8e332b4fba6c01a74d87996b3c729acf28",
+      "git_blob_sha": "a88c83056696d8f014b9ea270339e3c1fe316efe",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/v906_seven_class_source_family_taxonomy_blind_regeneration_audit.py.txt",
+      "status": "added",
+      "bytes": 24491,
+      "sha256": "1f72023c57b1ea61cb20e31efb78515d0830a523c2e6b45b693f4c49d359e02f",
+      "git_blob_sha": "2cee9ae060339bc138f73a96e0c9bec4e93ff6d4",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/v930_fresh_compatible_cohort_blind_transfer.py.txt",
+      "status": "added",
+      "bytes": 12367,
+      "sha256": "57a170cda7a7d59f2ab4d418435f4974910c025de8de81c36c42335d967a8dd3",
+      "git_blob_sha": "39769a1129d6b3d52b167af8fb5b54e382c39ff8",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/v957_fresh_event_ledger_transfer_result.json",
+      "status": "added",
+      "bytes": 1091,
+      "sha256": "c2fd4b46905be1211f4db51a21c1d4ede317f81a8ae1d054e6e4610cf8e4e8a4",
+      "git_blob_sha": "915680176c12532d3ceab71febdc58ae86d588f8",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/v960_independent_trajectory_family_event_ledger_stress_result.json",
+      "status": "added",
+      "bytes": 1141,
+      "sha256": "c5bf27df0600829bb8dccbead19d6677151d817943bdb4ef20513a9b20bc87fa",
+      "git_blob_sha": "f2bd56cbd2a518e0b2f1b912f69a678510294d44",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/v970_certified_event_to_symbol_predictability.csv",
+      "status": "added",
+      "bytes": 169,
+      "sha256": "69ea5c075ecfb9820272031025db4164ba06b84ed04344b7dc690e7b47e991a8",
+      "git_blob_sha": "71c05fb89da5dade5ccd5e85954eb548dda93cf4",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/v970_event_to_symbol_causal_coupling_result.json",
+      "status": "added",
+      "bytes": 3167,
+      "sha256": "d86f5ffb570a1c80c3a092d8cccb09b802864bd26c54b8be47b93093bfa22b5a",
+      "git_blob_sha": "0727f56593ffe9d01a710b40485c36beb94dba28",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/v970_generator_causal_coupling_scores.csv",
+      "status": "added",
+      "bytes": 785,
+      "sha256": "78552075227a0a58673a32f04a13e063c67c074157e40282ee5e56f823c88b45",
+      "git_blob_sha": "23855cc86711c3f838fce73909a25e8c51282715",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/v971_causal_coupled_closure_freeze_result.json",
+      "status": "added",
+      "bytes": 1226,
+      "sha256": "5f5e3ad68a48e619d2208ea6e38c9dac9461fb1aad2a0e477efccc340641245a",
+      "git_blob_sha": "2a225cec6ef73cead90732662339f30ee6aff26d",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/sources/v971_causal_coupled_closure_spec.json",
+      "status": "added",
+      "bytes": 1601,
+      "sha256": "eef9aa1f4d797a80317b16259650304d20562fb8193196f856e47143d575b3fc",
+      "git_blob_sha": "b55b7ff64d59d38040ccb46cca83c368f6898149",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/manifest.json",
+      "status": "added",
+      "bytes": 7898,
+      "sha256": "a4a3023cc67c29aed74060c859cb43321ed65b9c5afcfa58f46d656bf5fde673",
+      "git_blob_sha": "0f6837ebe04c11c7ae2de6d5fb04e8e42fe589a5",
+      "remote_bytes_and_git_blob_match": true,
+      "expected_bundle_equals_local_file": true,
+      "manifest_bound": false
+    }
+  ],
+  "index_preservation": {
+    "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+    "parent_bytes": 35107,
+    "append_bytes": 1917,
+    "updated_bytes": 37024,
+    "parent_git_blob": "77d756ead4e2e34f2b07fa14af5119bd2d35d15a",
+    "parent_sha256": "c3acb78cd71d36a55eabcd6b8e9af234cd1ed445b6a46ee348b37904009de6af",
+    "append_sha256": "3ba914161b1408c5f165d64c9ece6dc9505ecf55f0dd1e7d27b68c248fa44090",
+    "updated_sha256": "fe01d65a5ec2c272717a9fd1d899854c8ca767f2784fce0d0ae16736c7a141b2",
+    "exact_concatenation": true,
+    "parent_equals_source_packet": true,
+    "parent_matches_independently_fetched_parent_file": true,
+    "published_equals_parent_plus_published_append": true
+  },
+  "analytical_review": {
+    "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe/ANALYTICAL_REVIEW.md",
+    "bytes": 13227,
+    "sha256": "46d196f37dd3836ff70a7aaa8ec1fc3d03b3eb702e1c869ea15d2606474773c7",
+    "git_blob_sha": "a9bab9c878737c4a50906c55eacab622c2413f2c",
+    "reviewed_file_hashes_checked": 24,
+    "archive_hashes_checked": 5,
+    "all_29_hashes_match": true,
+    "reviewed_report_and_append_equal_published_bytes": true,
+    "scientific_argument_not_rereviewed": true
+  },
+  "parent_source_files": [
+    {
+      "path": "Tmp/TOE/Einstein 4/v995_pre_report_closure_synthesis_packet/V995_PRE_REPORT_CLOSURE_SYNTHESIS.md",
+      "bytes": 5852,
+      "sha256": "de6bd5ea8f6bac04cf8f2e03976ca289159442322309161bb747933dad745abe",
+      "git_blob_sha": "a0cb9a17344800ebfee1cbe3f724da2ac418e164",
+      "immutable_parent_bytes_match_source_packet": true,
+      "source_packet_and_source_readbacks_identities_match": true
+    },
+    {
+      "path": "Tmp/TOE/Einstein 4/v995_pre_report_closure_synthesis_packet/artifacts/v994_closure_dependency_edges.csv",
+      "bytes": 1019,
+      "sha256": "52734ba3613449bf5186e40d6b736f4796b3349bb57f2977f502d01e77aa7c10",
+      "git_blob_sha": "4af52c46d38bb01bc1018ed1dc97f31924a2167a",
+      "immutable_parent_bytes_match_source_packet": true,
+      "source_packet_and_source_readbacks_identities_match": true
+    },
+    {
+      "path": "Tmp/TOE/Einstein 4/V997_FULL_STACK_GENESIS_PIN_BRIDGE_REPORT.md",
+      "bytes": 18219,
+      "sha256": "75e81c4b38471c53b86ea0fe4e64f8ffc1b2fbef1cd12e71cde85fbaee084584",
+      "git_blob_sha": "8f4ee48cbaf6c822b87dd5e30a5dfee4d596e26e",
+      "immutable_parent_bytes_match_source_packet": true,
+      "source_packet_and_source_readbacks_identities_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/AGENTS.md",
+      "bytes": 2368,
+      "sha256": "56d5ffb2d1f8f0d1a1660b6cc5b31ebae92b59fb48b547e7d47ea13f0bafdee0",
+      "git_blob_sha": "e5407215a81b914fc02f5c107333a2f0261634ee",
+      "immutable_parent_bytes_match_source_packet": true,
+      "source_packet_and_source_readbacks_identities_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md",
+      "bytes": 5170,
+      "sha256": "3362d45ae65a16e9326b0651cc19e46611f5c920fb1b1aa2f520558825b0cc60",
+      "git_blob_sha": "878e6c4b590a0dd64244d36755d70b080e08928d",
+      "immutable_parent_bytes_match_source_packet": true,
+      "source_packet_and_source_readbacks_identities_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TARGET_BLIND_RESPONSE_GATE.md",
+      "bytes": 10784,
+      "sha256": "0c3771c923283001cd13b44e1ace0ae18e2d19f52efcef07dce0bc4cbb5ef594",
+      "git_blob_sha": "478aecf3df5b4214209cdfd0e615d78c552a3bd0",
+      "immutable_parent_bytes_match_source_packet": true,
+      "source_packet_and_source_readbacks_identities_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/v15/v15.08/REPORT.md",
+      "bytes": 14074,
+      "sha256": "e9df82f3acf2f8e231b01c042b441a92cb7d3c2a3991d4619b5e773dc79263e1",
+      "git_blob_sha": "23bbeaecdb81adfe1a39b3140569d23c367b8b55",
+      "immutable_parent_bytes_match_source_packet": true,
+      "source_packet_and_source_readbacks_identities_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "bytes": 35107,
+      "sha256": "c3acb78cd71d36a55eabcd6b8e9af234cd1ed445b6a46ee348b37904009de6af",
+      "git_blob_sha": "77d756ead4e2e34f2b07fa14af5119bd2d35d15a",
+      "immutable_parent_bytes_match_source_packet": true,
+      "source_packet_and_source_readbacks_identities_match": true
+    }
+  ],
+  "parent_v993_archive": {
+    "path": "Tmp/TOE/Einstein 4/v995_pre_report_closure_synthesis_packet/artifacts/v993_C_reganchor_closure_freeze_packet.zip",
+    "bytes": 392928,
+    "sha256": "0bbf116efb409473cd377e5e56cd4da78115e991dac7683bc90d9c6666a8548a",
+    "git_blob_sha": "9549a264f85c98bed22f0f91189e3efd4824e6e5",
+    "identities_match": true,
+    "members": [
+      {
+        "member": "v993_C_reganchor_closure_freeze_packet/v993_C_reganchor_closure_spec.json",
+        "bytes": 2280,
+        "sha256": "4c80cb052054be81abf18591f7e6cc98419a5a8e4bda1bf71ce0a9fa8e37abe5",
+        "declared_identity_matches": true,
+        "content_exact": true
+      },
+      {
+        "member": "v993_C_reganchor_closure_freeze_packet/REPRODUCIBILITY_MANIFEST.json",
+        "bytes": 1411,
+        "sha256": "ac7d6d92dcc12c6cce081543692ecc46536545ee1d590a69022a7b836dfeb568",
+        "declared_identity_matches": true,
+        "content_exact": true
+      },
+      {
+        "member": "v993_C_reganchor_closure_freeze_packet/artifacts/v971_causal_coupled_closure_freeze_result.json",
+        "bytes": 1226,
+        "sha256": "5f5e3ad68a48e619d2208ea6e38c9dac9461fb1aad2a0e477efccc340641245a",
+        "declared_identity_matches": true,
+        "content_exact": true
+      }
+    ],
+    "remote_fetched_ok": true,
+    "remote_bytes_exact": true,
+    "remote_git_blob_matches": true
+  },
+  "recovered_archives": [
+    {
+      "file": "v957_fresh_event_ledger_transfer_audit.zip",
+      "bytes": 1692691,
+      "sha256": "84ed989e418f5c1cc6c0d0d67c4446ae3f20936281ab71fec7667ce7e48be563",
+      "git_blob": "69360970dd530331cca61bfb7355896ad7f3186d",
+      "archive_identities_match": true,
+      "declared_file_count": 10,
+      "actual_file_count": 10,
+      "member_set_exact": true,
+      "members_all_identities_match": true,
+      "duplicate_file_names_absent": true
+    },
+    {
+      "file": "v960_independent_trajectory_family_event_ledger_stress.zip",
+      "bytes": 1071314,
+      "sha256": "d135f2a7411188d19e5cfc8572e2a1a721c02b47ec6b2c31410f2fc4c7ad5d05",
+      "git_blob": "be704b1932294e527d97b23f7e102ccf10521771",
+      "archive_identities_match": true,
+      "declared_file_count": 10,
+      "actual_file_count": 10,
+      "member_set_exact": true,
+      "members_all_identities_match": true,
+      "duplicate_file_names_absent": true
+    },
+    {
+      "file": "v970_event_to_symbol_causal_coupling_audit.zip",
+      "bytes": 503012,
+      "sha256": "a94e0efc83df02a487cb77e15a476c9a97d052aae5b8dc8ede4a26cee362207b",
+      "git_blob": "48fe908d78383f980adbb78e97c94f3f5712d9ec",
+      "archive_identities_match": true,
+      "declared_file_count": 9,
+      "actual_file_count": 9,
+      "member_set_exact": true,
+      "members_all_identities_match": true,
+      "duplicate_file_names_absent": true
+    },
+    {
+      "file": "v971_causal_coupled_closure_freeze_packet.zip",
+      "bytes": 211679,
+      "sha256": "7cd12b64aa784c78d1b0a7c6c8eacdc9a0e3dff731883bb2ad080c51415581a0",
+      "git_blob": "0d14225d1291b07e64f5e0cccc7bfac5a4471b28",
+      "archive_identities_match": true,
+      "declared_file_count": 18,
+      "actual_file_count": 18,
+      "member_set_exact": true,
+      "members_all_identities_match": true,
+      "duplicate_file_names_absent": true
+    }
+  ],
+  "recovered_selected_sources": [
+    {
+      "path": "sources/v906_seven_class_source_family_taxonomy_blind_regeneration_audit.py.txt",
+      "bytes": 24491,
+      "sha256": "1f72023c57b1ea61cb20e31efb78515d0830a523c2e6b45b693f4c49d359e02f",
+      "origin_kind": "recovered_code",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/v930_fresh_compatible_cohort_blind_transfer.py.txt",
+      "bytes": 12367,
+      "sha256": "57a170cda7a7d59f2ab4d418435f4974910c025de8de81c36c42335d967a8dd3",
+      "origin_kind": "recovered_code",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/v957_fresh_event_ledger_transfer_result.json",
+      "bytes": 1091,
+      "sha256": "c2fd4b46905be1211f4db51a21c1d4ede317f81a8ae1d054e6e4610cf8e4e8a4",
+      "origin_kind": "archive_member",
+      "archive": "v957_fresh_event_ledger_transfer_audit.zip",
+      "member": "v957_fresh_event_ledger_transfer_audit/v957_fresh_event_ledger_transfer_result.json",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/V957_FRESH_EVENT_LEDGER_TRANSFER_AUDIT.md",
+      "bytes": 1418,
+      "sha256": "f2c415b7b0b48146c320f4b1ca33da239cd62fa8b33816239e5337a4b1442edd",
+      "origin_kind": "archive_member",
+      "archive": "v957_fresh_event_ledger_transfer_audit.zip",
+      "member": "v957_fresh_event_ledger_transfer_audit/V957_FRESH_EVENT_LEDGER_TRANSFER_AUDIT.md",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/v960_independent_trajectory_family_event_ledger_stress_result.json",
+      "bytes": 1141,
+      "sha256": "c5bf27df0600829bb8dccbead19d6677151d817943bdb4ef20513a9b20bc87fa",
+      "origin_kind": "archive_member",
+      "archive": "v960_independent_trajectory_family_event_ledger_stress.zip",
+      "member": "v960_independent_trajectory_family_event_ledger_stress/v960_independent_trajectory_family_event_ledger_stress_result.json",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/V960_INDEPENDENT_TRAJECTORY_FAMILY_EVENT_LEDGER_STRESS.md",
+      "bytes": 1241,
+      "sha256": "6adb7f2b193ad51519b6ce2a9e876c05797a41c75ba1c5ca5cfd49dda69383c2",
+      "origin_kind": "archive_member",
+      "archive": "v960_independent_trajectory_family_event_ledger_stress.zip",
+      "member": "v960_independent_trajectory_family_event_ledger_stress/V960_INDEPENDENT_TRAJECTORY_FAMILY_EVENT_LEDGER_STRESS.md",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/v970_certified_event_to_symbol_predictability.csv",
+      "bytes": 169,
+      "sha256": "69ea5c075ecfb9820272031025db4164ba06b84ed04344b7dc690e7b47e991a8",
+      "origin_kind": "archive_member",
+      "archive": "v970_event_to_symbol_causal_coupling_audit.zip",
+      "member": "v970_event_to_symbol_causal_coupling_audit/v970_certified_event_to_symbol_predictability.csv",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/v970_generator_causal_coupling_scores.csv",
+      "bytes": 785,
+      "sha256": "78552075227a0a58673a32f04a13e063c67c074157e40282ee5e56f823c88b45",
+      "origin_kind": "archive_member",
+      "archive": "v970_event_to_symbol_causal_coupling_audit.zip",
+      "member": "v970_event_to_symbol_causal_coupling_audit/v970_generator_causal_coupling_scores.csv",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/v970_event_to_symbol_causal_coupling_result.json",
+      "bytes": 3167,
+      "sha256": "d86f5ffb570a1c80c3a092d8cccb09b802864bd26c54b8be47b93093bfa22b5a",
+      "origin_kind": "archive_member",
+      "archive": "v970_event_to_symbol_causal_coupling_audit.zip",
+      "member": "v970_event_to_symbol_causal_coupling_audit/v970_event_to_symbol_causal_coupling_result.json",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/V970_EVENT_TO_SYMBOL_CAUSAL_COUPLING_AUDIT.md",
+      "bytes": 4131,
+      "sha256": "91599584452499516d665d8f634e147aebcefda7200cfc1ca3b700943559aebf",
+      "origin_kind": "archive_member",
+      "archive": "v970_event_to_symbol_causal_coupling_audit.zip",
+      "member": "v970_event_to_symbol_causal_coupling_audit/V970_EVENT_TO_SYMBOL_CAUSAL_COUPLING_AUDIT.md",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/v971_causal_coupled_closure_spec.json",
+      "bytes": 1601,
+      "sha256": "eef9aa1f4d797a80317b16259650304d20562fb8193196f856e47143d575b3fc",
+      "origin_kind": "archive_member",
+      "archive": "v971_causal_coupled_closure_freeze_packet.zip",
+      "member": "v971_causal_coupled_closure_freeze_packet/v971_causal_coupled_closure_spec.json",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/v971_causal_coupled_closure_freeze_result.json",
+      "bytes": 1226,
+      "sha256": "5f5e3ad68a48e619d2208ea6e38c9dac9461fb1aad2a0e477efccc340641245a",
+      "origin_kind": "archive_member",
+      "archive": "v971_causal_coupled_closure_freeze_packet.zip",
+      "member": "v971_causal_coupled_closure_freeze_packet/v971_causal_coupled_closure_freeze_result.json",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    },
+    {
+      "path": "sources/V971_SCIENTIFIC_REPORT.md",
+      "bytes": 4930,
+      "sha256": "c1579aaa7054d06191358e9fa998cb8e332b4fba6c01a74d87996b3c729acf28",
+      "origin_kind": "archive_member",
+      "archive": "v971_causal_coupled_closure_freeze_packet.zip",
+      "member": "v971_causal_coupled_closure_freeze_packet/SCIENTIFIC_REPORT.md",
+      "all_identity_and_local_origin_binding_checks_pass": true
+    }
+  ],
+  "ledger_excerpts": [
+    {
+      "archive": "v957_fresh_event_ledger_transfer_audit.zip",
+      "member": "v957_fresh_event_ledger_transfer_audit/v957_fresh_trajectories.csv",
+      "archive_sha256_matches": true,
+      "member_bytes_match": true,
+      "member_sha256_matches": true,
+      "header_utf8_bytes_match": true
+    },
+    {
+      "archive": "v957_fresh_event_ledger_transfer_audit.zip",
+      "member": "v957_fresh_event_ledger_transfer_audit/v957_fresh_symbol_generation_event_ledger.csv",
+      "archive_sha256_matches": true,
+      "member_bytes_match": true,
+      "member_sha256_matches": true,
+      "header_utf8_bytes_match": true
+    },
+    {
+      "archive": "v960_independent_trajectory_family_event_ledger_stress.zip",
+      "member": "v960_independent_trajectory_family_event_ledger_stress/v960_stress_trajectories.csv",
+      "archive_sha256_matches": true,
+      "member_bytes_match": true,
+      "member_sha256_matches": true,
+      "header_utf8_bytes_match": true
+    },
+    {
+      "archive": "v960_independent_trajectory_family_event_ledger_stress.zip",
+      "member": "v960_independent_trajectory_family_event_ledger_stress/v960_stress_symbol_generation_event_ledger.csv",
+      "archive_sha256_matches": true,
+      "member_bytes_match": true,
+      "member_sha256_matches": true,
+      "header_utf8_bytes_match": true
+    }
+  ],
+  "historical_v971_result_old_and_new_archive_bytes_equal": true,
+  "claim_boundary_checks": {
+    "report_not_achieved_explicit": true,
+    "report_route_open_explicit": true,
+    "report_physical_frontier_open": true,
+    "report_stochastic_law_eligible": true,
+    "report_no_historical_execution": true,
+    "report_no_new_physics_claim": true,
+    "report_historical_certification_distinction": true,
+    "report_archives_selection_limit": true,
+    "report_monitoring_not_scientific_evidence": true,
+    "index_not_achieved_explicit": true,
+    "index_no_new_certification": true,
+    "analytical_review_not_native_certification": true,
+    "analytical_review_not_achieved_explicit": true
+  },
+  "findings": [],
+  "limits": [
+    "PASS_PUBLICATION_ONLY does not certify a scientific mechanism, theorem, native milestone, gravity result, historical execution, numbered-stage closure, workflow, pull request or merge.",
+    "The bounded scientific argument was separately reviewed in the exact published ANALYTICAL_REVIEW.md; this audit verifies its binding and retained limits.",
+    "The four recovered ZIPs were independently inspected locally and match the published inventories. Their full archives are not part of the 25-file publication; 13 exact selected source files, inventories and hashes are published.",
+    "Recovered Library origin IDs and metadata were checked for consistency with supplied local provenance records; this auditor did not independently re-fetch those provider objects or prove historic execution of these bytes.",
+    "Availability or absence of additional source code outside inspected materials is not inferred.",
+    "Existing-automation configuration, schedule and future behavior are outside this scientific/publication audit and were not queried.",
+    "Branch-head observation is point-in-time; verdict is bound to the immutable analytical commit and its exact tree.",
+    "This audit made no repository mutations and assessed no later audit-publication commit."
+  ]
+}
+
