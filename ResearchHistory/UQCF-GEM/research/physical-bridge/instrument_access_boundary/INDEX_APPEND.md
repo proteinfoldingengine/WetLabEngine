@@ -1,0 +1,11 @@
+
+
+## Pinching does not by itself force an informative record — 2026-10-14 UTC
+
+See `instrument_access_boundary/RESULT.md` for an exact all-instrument refinement of the inherited v15.11 two-instrument control. This is conditional analysis using standard CP-map machinery, not a new native interaction, numerical campaign, or numbered-stage certification.
+
+For nonzero orthogonal projectors resolving identity and fixed E(X)=sum_i P_i X P_i, every finite CP instrument summing to E has branches J_r(X)=sum_ij C^(r)_ij P_i X P_j with C^(r)>=0 and sum_r C^(r)=I. Consequently its classical label law is exactly a stochastic processing T of sector weights w_i=Tr(P_i rho), with T_ri=C^(r)_ii. Every stochastic T is realizable. Over all such instruments the minimum label separation of any pair is zero; the maximum is the total-variation distance of their sector-weight vectors. This is a label-only statement: direct retained-system access, joint quantum/flag recovery, and references have separate contracts.
+
+An additional all-input requirement that label i accompanies an output confined to P_i uniquely forces J_i(X)=P_i X P_i and its trace-weight probability law. That reliable sector association is not forced by the nonselective channel. No branch is made actual or delivered by the proof. Random phase-unitary branches provide distinct nonzero labels with input-independent probabilities; retaining their joint quantum output can allow recovery. Branches alpha_r E instead retain no extra recovery information. These controls prevent confusing loss, a label, a sector record, and physical access.
+
+This classifies instruments of a fixed channel, unlike v15.23's preprocessors of a fixed instrument. It preserves the preceding record-to-compatible-view pruning theorem, whose stricter record remains supplied. A nonunique action could still meet the milestone if all physically justified possibilities force an accessible distinction; uniqueness of a microscopic outcome is not required. The next target is native evidence restricting the actual accessible interface enough to exclude the uninformative laws, not further simulations of supplied instruments. Native milestone: NOT ACHIEVED. Physical force and source/access origin remain unresolved.
