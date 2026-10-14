@@ -1,0 +1,12 @@
+
+
+## 2026-10-14 — operational-source provenance and direct quantum-state reuse
+
+`operational_source_bridge/RESULT.md` extends the earlier v15.54 README-only screen into its frozen design, producer, independent verifier, retained reduction and v15.55 defect implementation. The candidate CHSH_PREREGISTERED contains the explicit table with correlations (1,1,1,-1), S=4 and D=2. Its carrier/permutations and probability table are separate supplied fields; the inspected code validates and scores the table but does not generate its probability law from those operations. The retained reduction returns the same diamond and does not acquire paired outcomes.
+
+An analytical schema control holds the listed carrier/operations fixed and varies only the fourth row with rational alpha in [0,1], giving E_11=1-2alpha, S=2+2alpha and D=2alpha while all local marginals stay uniform. This is not a new frozen candidate enumeration; the full inputs differ in their table field. It exposes where source information is supplied without claiming a new physical interpolation or repeating a mutation control as discovery.
+
+The exact family cannot be represented by one setting-independent quantum state and local binary POVMs for any alpha>0. Three perfect correlations force A_1 sqrt(rho)=B_0 sqrt(rho)=A_0 sqrt(rho)=B_1 sqrt(rho), hence E_11=1. The alpha=0 shared-fair-bit endpoint is a positive control. The archived alpha=1 table is the known Popescu-Rohrlich table; no novelty is claimed. This excludes only the proposed direct shared-state/local-measurement bridge. A diagonal state storing contexts and outcomes, or a joint-context sampler, can encode/realize the table with different supplied interfaces, so no blanket quantum-process or physical impossibility follows.
+
+Single-output laws do not reveal alpha; paired parity at context (1,1) does if that joint record and its context/reference are actually available. The native producer, pairing/access, retention and readout remain unearned. The prior Bell-local obstruction and v15.55 response-space classification remain unchanged in their declared scopes; neither is promoted to native interaction. Disposition: SUPPLIED_OPERATIONAL_TABLE; DIRECT_LOCAL_QUANTUM_STATE_BRIDGE_EXCLUDED; NATIVE_ACQUISITION_OPEN. Native milestone NOT ACHIEVED. No scientific execution, historical test-count change, new primitive, physical force, main merge or numbered-stage certification is claimed. Independent review and publication evidence are preserved in `operational_source_bridge/`.
+
