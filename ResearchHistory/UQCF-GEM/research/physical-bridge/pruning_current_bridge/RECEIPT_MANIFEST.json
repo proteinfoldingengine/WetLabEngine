@@ -1,0 +1,91 @@
+{
+  "kind": "pruning_current_publication_receipt",
+  "scientific_commit": "2aa29b2dd35e1e84e6e47574de73d9ce7cd9d2c2",
+  "scientific_tree": "cca68f37c4d24177714ac87798da490aad3fdec8",
+  "auditor_scope": "Scientific commit only; later receipt publication is subject to author terminal readback",
+  "payloads": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/PUBLICATION_AUDIT.md",
+      "bytes": 7291,
+      "sha256": "c16f56e261c20d09e8e16174870c9644895045ea2dd9aa82e966c00868956463",
+      "git_blob": "5c68020e1f266056019ba40f1c521364ac41d57b"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/PUBLICATION_AUDIT_EVIDENCE.json",
+      "bytes": 11719,
+      "sha256": "893fff1159672001691fc06bd6e2d9167b299dabd57d5a075bd60ab97597b100",
+      "git_blob": "cef75c3af91c81904b1cc69a19a114649b72115c"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/AUTHOR_READBACK.json",
+      "bytes": 4383,
+      "sha256": "980f0cadc0283568287ad28180ded56d7d58a253a6307f67e8bb7a91e3f69d8b",
+      "git_blob": "5465073b4085c350c42f5bd6d4b5750457f1e5fc"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/PUBLICATION_RECEIPT.md",
+      "bytes": 3465,
+      "sha256": "9b62cf0feee6b2f12c181456f3b812d456b58ffc1f195e49738def4bf8795125",
+      "git_blob": "05d111355d6cb4d08894aeadb3140377cc4d5f87"
+    }
+  ],
+  "unchanged_scientific_payloads": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/RESULT.md",
+      "bytes": 16820,
+      "sha256": "f7f0b01b3032684d24380c9cbc447b1cc9fcdde3dfd2c909c0ad456008f068ee",
+      "git_blob": "9d5230adcea0290ca2e5e2a66cbe24899f132bc1"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/INDEX_APPEND.md",
+      "bytes": 2501,
+      "sha256": "e1738ece85a61210a757d58be5a9925473137eab99b5d54fa2089a73fed3ca6a",
+      "git_blob": "433be24c44c4b909c3e88d8f2cbde80f5193c676"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/source_packet.json",
+      "bytes": 117682,
+      "sha256": "3464c93861ed3f881bfb1c8632880abc717e8f0a87ddcf0da7acac6dd92f024d",
+      "git_blob": "ba0cb9701293c1fee0ae590599a0946e55e57efb"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/source_identities.json",
+      "bytes": 3167,
+      "sha256": "373ac1f6c944341e2a8846f0d426e7ee859c3a7f23adcd67ba9bc012f0e71efe",
+      "git_blob": "7bb13b290f617b13caa894dafea1fc6d86bcc7df"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/ANALYTICAL_REVIEW_RAW.md",
+      "bytes": 15794,
+      "sha256": "ddb2548a1b478a1fea0d64755a49c07fdce00e72289638dd02097e57dfaac414",
+      "git_blob": "35cac6d7967f2397fac40460affbcc77417570d4"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "bytes": 55150,
+      "sha256": "3d93b145481435d6e6b8e5c8a2aaf91c09dc277966f31f11641bc1a95f10c9df",
+      "git_blob": "241adc4f744cf5ebde84eefe1bc9625cca1d6ab4"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge/PUBLICATION_MANIFEST.json",
+      "bytes": 2736,
+      "sha256": "8b3611bd672b7cbf7ab54a69b8f22ceb65e505eab085601a6f4010d270c66a2c",
+      "git_blob": "5ee9406767682cf076d61395704457c3a76501cd"
+    }
+  ],
+  "monitor": {
+    "id": "6ac80a4ca10081918747aaa3b1262fdb",
+    "title": "C3 GitHub Verification",
+    "prompt_characters": 9941,
+    "is_enabled": true,
+    "schedule": "BEGIN:VEVENT\nDTSTART:20261008T212632Z\nRRULE:FREQ=HOURLY\nEND:VEVENT",
+    "default_timezone": "America/Phoenix",
+    "timing_mode": "condition_watch",
+    "updated_at": "2026-10-14T15:10:32.532202+00:00",
+    "verified_at_utc": "2026-10-14T15:10:43.748Z",
+    "change": "Prompt only; prior checkpoint summaries condensed; pruning-current bridge added. Schedule and enabled state unchanged; no duplicate created."
+  },
+  "manifest_self_excluded": true,
+  "physical_milestone": "NOT_ACHIEVED",
+  "scientific_execution": "NONE"
+}
