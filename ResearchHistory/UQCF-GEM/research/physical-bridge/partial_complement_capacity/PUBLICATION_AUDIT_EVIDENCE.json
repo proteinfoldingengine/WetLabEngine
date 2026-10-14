@@ -1,0 +1,3909 @@
+{
+  "audit_kind": "independent_analytical_source_and_immutable_scientific_publication_audit",
+  "disposition": "PASS_WITHIN_DECLARED_SCOPE",
+  "blockers": [],
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "declared_branch": "research/uqcf-overlapping-guard-exchange",
+  "audit_anchor": {
+    "scientific_commit": "1f839335192ba315ad6fdacbb4a54a37a46af611",
+    "scientific_tree": "6b27c224ce6cc8cfe6a3f577e97a7c10f7b3d840",
+    "sole_parent": "69b8ad5a2aa5f81c93a5d91b6b8f7c16d760d325",
+    "parent_tree": "b5a9002b2cd9668962ba9bd6af7d055e0edc297f"
+  },
+  "scope": {
+    "included": [
+      "Independent pinned-parent source fetches and full UTF-8 content equality",
+      "Byte counts, SHA256, Git blob SHA1 and complete source-tree memberships",
+      "Scoped source claims and established-bound attribution",
+      "Independent immutable full seven-file publication readback",
+      "Accepted raw analytical review exact input binding",
+      "Manifest six-payload inventory and self-exclusion",
+      "Exact old index plus accepted append",
+      "Complete nonrecursive changed-tree comparison and Git tree hash recomputation"
+    ],
+    "excluded": [
+      "Duplicate whole-argument mathematical review",
+      "Scientific module execution, enumeration or numerical campaign",
+      "Native physical mechanism or milestone certification",
+      "Archive-wide absence or impossibility",
+      "Historical scientific recertification",
+      "Numbered-stage CLOSED/CERTIFIED status",
+      "CI or foundational-stack completion",
+      "Main merge or post-merge replay",
+      "Later publication of PUBLICATION_AUDIT.md, this evidence or a receipt"
+    ]
+  },
+  "stage1_source_checks": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/AGENTS.md",
+      "bytes": 2368,
+      "sha256": "56d5ffb2d1f8f0d1a1660b6cc5b31ebae92b59fb48b547e7d47ea13f0bafdee0",
+      "git_blob": "e5407215a81b914fc02f5c107333a2f0261634ee",
+      "identity_matches": true,
+      "packet_content_matches": true,
+      "returned_git_blob_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/complementary_record_screen/RESULT.md",
+      "bytes": 20369,
+      "sha256": "fabfaa6430d864f040c6f137045043a60cb0f2bda9506ac08763e81bd0edd73e",
+      "git_blob": "1a7b6d220c2bfee2c7ba540a26b743f95d2e6b45",
+      "identity_matches": true,
+      "packet_content_matches": true,
+      "returned_git_blob_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "bytes": 57750,
+      "sha256": "abdc2ba704a3a87ece60a4bf55b8205b0afa0fb830695789ee941b0504cb9647",
+      "git_blob": "85b39a2ed7a7aa22acc7875e5e71a625b144bb2d",
+      "identity_matches": true,
+      "packet_content_matches": true,
+      "returned_git_blob_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md",
+      "bytes": 5170,
+      "sha256": "3362d45ae65a16e9326b0651cc19e46611f5c920fb1b1aa2f520558825b0cc60",
+      "git_blob": "878e6c4b590a0dd64244d36755d70b080e08928d",
+      "identity_matches": true,
+      "packet_content_matches": true,
+      "returned_git_blob_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/NATIVE_EVENT_MILESTONE.md",
+      "bytes": 12865,
+      "sha256": "7c848e15bdcafe2a908268237b5afaf5ffe0f39f28c2776fd8a23efafc161c0d",
+      "git_blob": "46c27da7d5a049820ebde455b91863f071b621e5",
+      "identity_matches": true,
+      "packet_content_matches": true,
+      "returned_git_blob_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/v15/v15.11/REPORT.md",
+      "bytes": 9470,
+      "sha256": "ddee424afcdb610812aa0c33947a0abb8968c2142fcbd1cfee8c39f17598bdaf",
+      "git_blob": "255a62a329cc4ebb445122a8c5602df6e2dabc9c",
+      "identity_matches": true,
+      "packet_content_matches": true,
+      "returned_git_blob_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RETENTION_DECISION_ANALYSIS.md",
+      "bytes": 6976,
+      "sha256": "10aacd8dc4c5e48640aabead46f57ee341ceb1d1905251a6e1a70f28382efeea",
+      "git_blob": "abc180bec8d130b4a8e44b272f9d830b40453193",
+      "identity_matches": true,
+      "packet_content_matches": true,
+      "returned_git_blob_matches": true
+    }
+  ],
+  "stage1_candidate_identities": {
+    "RESULT.md": {
+      "bytes": 16531,
+      "sha256": "0d9c24f46dedde29dd145319a8f16468166167bce84e7e5a405bb918cf2e49ce",
+      "git_blob": "d2b0c53a457976e470042d58ed51314f96d9b9c2"
+    },
+    "INDEX_APPEND.md": {
+      "bytes": 2287,
+      "sha256": "c15fac967a122ac9bdb7dfaeb71c8a793622edb932315d35252e0548633f2257",
+      "git_blob": "58308ecd665e8e8e5cbe0d005f7ca7e9ca652315"
+    },
+    "source_packet.json": {
+      "bytes": 117322,
+      "sha256": "fcd0ffafc1bc5acec7308bc6da53b4a5dc54225d8e19b153eeb741a07ce0f80b",
+      "git_blob": "332483db07b29f953063045fa28b1deacebae21e"
+    },
+    "source_identities.json": {
+      "bytes": 2086,
+      "sha256": "9276200c16c87150245a720d980813cf64b4f53f012c52a749bb7c0b07eea642",
+      "git_blob": "322ac5c44559550c73e3347617552254b2960256"
+    }
+  },
+  "source_tree_membership": {
+    "prefixes": {
+      "": "b5a9002b2cd9668962ba9bd6af7d055e0edc297f",
+      "ResearchHistory": "17dc5ca692b645bfd1783dcd597eac0f07e89091",
+      "ResearchHistory/UQCF-GEM": "5fdde93710c756d1859853c7be9d49e428f2c41c",
+      "ResearchHistory/UQCF-GEM/v15": "bb729fc5aa93f3e0aa2e2f75614142b697a3c11e",
+      "ResearchHistory/UQCF-GEM/research": "c52fbecc47cefa24ed3bd7b83d3445db103cd4d2",
+      "ResearchHistory/UQCF-GEM/v15/v15.11": "6de4ba650fdb408af2bffd593a653703350fa287",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge": "54f1cabf94632e0f0e3a0f459dfc48afc959e701",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/complementary_record_screen": "6f5652d9515d2557be0542667a09ce35b17282de"
+    },
+    "membership": [
+      {
+        "path": "ResearchHistory/UQCF-GEM/AGENTS.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e5407215a81b914fc02f5c107333a2f0261634ee",
+        "size": 2368,
+        "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/e5407215a81b914fc02f5c107333a2f0261634ee",
+        "entry_name": "AGENTS.md"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/complementary_record_screen/RESULT.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a7b6d220c2bfee2c7ba540a26b743f95d2e6b45",
+        "size": 20369,
+        "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/1a7b6d220c2bfee2c7ba540a26b743f95d2e6b45",
+        "entry_name": "RESULT.md"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "85b39a2ed7a7aa22acc7875e5e71a625b144bb2d",
+        "size": 57750,
+        "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/85b39a2ed7a7aa22acc7875e5e71a625b144bb2d",
+        "entry_name": "COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "878e6c4b590a0dd64244d36755d70b080e08928d",
+        "size": 5170,
+        "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/878e6c4b590a0dd64244d36755d70b080e08928d",
+        "entry_name": "COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/NATIVE_EVENT_MILESTONE.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "46c27da7d5a049820ebde455b91863f071b621e5",
+        "size": 12865,
+        "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/46c27da7d5a049820ebde455b91863f071b621e5",
+        "entry_name": "NATIVE_EVENT_MILESTONE.md"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/v15/v15.11/REPORT.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "255a62a329cc4ebb445122a8c5602df6e2dabc9c",
+        "size": 9470,
+        "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/255a62a329cc4ebb445122a8c5602df6e2dabc9c",
+        "entry_name": "REPORT.md"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RETENTION_DECISION_ANALYSIS.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "abc180bec8d130b4a8e44b272f9d830b40453193",
+        "size": 6976,
+        "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/abc180bec8d130b4a8e44b272f9d830b40453193",
+        "entry_name": "COUPLED_C3_RETENTION_DECISION_ANALYSIS.md"
+      }
+    ]
+  },
+  "claim_findings": [
+    {
+      "claim": "Inherited complete pure complement and same-channel isometric realization freedom",
+      "source": "complementary_record_screen/RESULT.md sections 2, 3 and 6",
+      "finding": "Supported within supplied finite channel/all-input/pure-isometric scope. Previous report explicitly excludes arbitrary accessible subregisters and mixed unpurified apparatus."
+    },
+    {
+      "claim": "RAS/RCR do not earn native accessible RQ, omitted quantum dimension or all-POVM receiver",
+      "source": "v15/v15.11/REPORT.md sections 3, 5 and 8; complementary_record_screen/RESULT.md sections 1, 3 and 8",
+      "finding": "Supported as bounded premise audit. Existing supplied algebra, actual central record and conditional order remain preserved. No archive-wide absence is inferred."
+    },
+    {
+      "claim": "Lineage retention does not equate pruned vertices with q or cause actual retention",
+      "source": "COUPLED_C3_RETENTION_DECISION_ANALYSIS.md declared domain, classification, selection and decision",
+      "finding": "Supported. Vertex-observable equality and prefix closure differ in mathematical type from quantum tensor factors and dimension; least sufficient set is not an actual selection law."
+    },
+    {
+      "claim": "Native milestone remains open without requiring deterministic outcome or unique microscopic realization",
+      "source": "NATIVE_EVENT_MILESTONE.md What will count; COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md Concrete next obligation; continuation index",
+      "finding": "Supported. Derived probabilistic consequence with justified access remains eligible, conditional RAS/RCR retained, no new physical prerequisite imposed."
+    },
+    {
+      "claim": "q-squared guessing inequality is standard quantum-information mathematics",
+      "source": "Chen, Chung, Lai and Wu, Leakage Chain Rule and Superdense Coding (2017), Lemma 2.3, Theorem 3.1 and Claim 1",
+      "finding": "Primary source independently retrieved. Min-entropy/guessing relation and 2 log(dim Q) leakage bound support the attribution; theorem credits Winkler et al. Lemma 13. Report disclaims originality."
+    },
+    {
+      "claim": "All-POVM optimization assumes known ensemble",
+      "source": "Watrous, The Theory of Quantum Information, chapter 3 section 3.1.2 Scenario 3.8, equations (3.32), (3.36)",
+      "finding": "Primary context independently retrieved. Known ensemble and maximization over measurements support operational caveat; no physical detector supplied."
+    },
+    {
+      "claim": "Append is precise scoped summary",
+      "source": "INDEX_APPEND.md bound to report candidate",
+      "finding": "Candidate append preserves uniform-prior and orthogonal-record premises, fixed-channel controls, pair-vs-ensemble distinction, missing native interface, milestone-open and no-execution claims. Exact candidate hash bound above."
+    }
+  ],
+  "primary_mathematical_context": [
+    {
+      "url": "https://homepage.iis.sinica.edu.tw/~kmchung/download/Leakage%20Chain%20Rule%20and%20Superdense%20Coding.pdf",
+      "anchors": [
+        "Lemma 2.3",
+        "Theorem 3.1",
+        "Claim 1"
+      ],
+      "attribution": "Chen, Chung, Lai and Wu; September 8, 2017. Theorem 3.1 credits Winkler et al. Lemma 13. Established bound, no originality claim."
+    },
+    {
+      "url": "https://cs.uwaterloo.ca/~watrous/TQI/TQI.double.3.pdf",
+      "anchors": [
+        "chapter 3 section 3.1.2",
+        "Scenario 3.8",
+        "equations (3.32) and (3.36)"
+      ],
+      "attribution": "Watrous; known-ensemble measurement optimization context."
+    }
+  ],
+  "final_published_identities_and_readback_checks": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/RESULT.md",
+      "bytes": 16531,
+      "sha256": "0d9c24f46dedde29dd145319a8f16468166167bce84e7e5a405bb918cf2e49ce",
+      "git_blob": "d2b0c53a457976e470042d58ed51314f96d9b9c2",
+      "bundle_full_content_matches": true,
+      "returned_blob_matches": true,
+      "bundle_identity_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/INDEX_APPEND.md",
+      "bytes": 2287,
+      "sha256": "c15fac967a122ac9bdb7dfaeb71c8a793622edb932315d35252e0548633f2257",
+      "git_blob": "58308ecd665e8e8e5cbe0d005f7ca7e9ca652315",
+      "bundle_full_content_matches": true,
+      "returned_blob_matches": true,
+      "bundle_identity_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/source_packet.json",
+      "bytes": 117322,
+      "sha256": "fcd0ffafc1bc5acec7308bc6da53b4a5dc54225d8e19b153eeb741a07ce0f80b",
+      "git_blob": "332483db07b29f953063045fa28b1deacebae21e",
+      "bundle_full_content_matches": true,
+      "returned_blob_matches": true,
+      "bundle_identity_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/source_identities.json",
+      "bytes": 2086,
+      "sha256": "9276200c16c87150245a720d980813cf64b4f53f012c52a749bb7c0b07eea642",
+      "git_blob": "322ac5c44559550c73e3347617552254b2960256",
+      "bundle_full_content_matches": true,
+      "returned_blob_matches": true,
+      "bundle_identity_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/ANALYTICAL_REVIEW_RAW.md",
+      "bytes": 13681,
+      "sha256": "1a76824b3bcb58f754371e567f03f379a16f2969725485398214eff2bbfcdff9",
+      "git_blob": "598e50a37c25f98b7f87d377f70e17e8070e33cd",
+      "bundle_full_content_matches": true,
+      "returned_blob_matches": true,
+      "bundle_identity_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "bytes": 60037,
+      "sha256": "20fdf259dce1500e2520f595ff1f6e9375e7bc556701557e24c214e8c05b40b5",
+      "git_blob": "2a30f6c6d39661c5f2dce0683eb01b2f65f3d038",
+      "bundle_full_content_matches": true,
+      "returned_blob_matches": true,
+      "bundle_identity_matches": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/PUBLICATION_MANIFEST.json",
+      "bytes": 2768,
+      "sha256": "78341401c632c5d48d39d2ba8fb4fc6bff46ce5eba5d28bf1996b00561422e2f",
+      "git_blob": "48dc385fb8c9402c33b87ca010ff59a83b2d0304",
+      "bundle_full_content_matches": true,
+      "returned_blob_matches": true,
+      "bundle_identity_matches": true
+    }
+  ],
+  "stage2_checks": {
+    "all_checks_passed": true,
+    "science_commit": "1f839335192ba315ad6fdacbb4a54a37a46af611",
+    "science_tree": "6b27c224ce6cc8cfe6a3f577e97a7c10f7b3d840",
+    "sole_parent": "69b8ad5a2aa5f81c93a5d91b6b8f7c16d760d325",
+    "parent_tree": "b5a9002b2cd9668962ba9bd6af7d055e0edc297f",
+    "published_file_count": 7,
+    "changed_path_count": 7,
+    "added_path_count": 6,
+    "modified_path_count": 1,
+    "unchanged_entry_identity_count": 536,
+    "all_published_blobs_100644": true,
+    "full_readbacks_match_bundle": true,
+    "stage1_candidates_unchanged": true,
+    "all_published_sources_match_independent_parent_fetches": true,
+    "review_binding": {
+      "RESULT.md": {
+        "bytes": 16531,
+        "sha256": "0d9c24f46dedde29dd145319a8f16468166167bce84e7e5a405bb918cf2e49ce"
+      },
+      "INDEX_APPEND.md": {
+        "bytes": 2287,
+        "sha256": "c15fac967a122ac9bdb7dfaeb71c8a793622edb932315d35252e0548633f2257"
+      },
+      "source_packet.json": {
+        "bytes": 117322,
+        "sha256": "fcd0ffafc1bc5acec7308bc6da53b4a5dc54225d8e19b153eeb741a07ce0f80b"
+      },
+      "source_identities.json": {
+        "bytes": 2086,
+        "sha256": "9276200c16c87150245a720d980813cf64b4f53f012c52a749bb7c0b07eea642"
+      }
+    },
+    "review_disposition": "ACCEPTED_FOR_STATED_CONDITIONAL_ANALYTICAL_SCOPE",
+    "review_identity": {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/ANALYTICAL_REVIEW_RAW.md",
+      "bytes": 13681,
+      "sha256": "1a76824b3bcb58f754371e567f03f379a16f2969725485398214eff2bbfcdff9",
+      "git_blob": "598e50a37c25f98b7f87d377f70e17e8070e33cd",
+      "bundle_full_content_matches": true,
+      "returned_blob_matches": true,
+      "bundle_identity_matches": true
+    },
+    "index_exact_old_plus_append": true,
+    "manifest_six_payloads_validated_self_excluded": true,
+    "manifest_identity": {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/PUBLICATION_MANIFEST.json",
+      "bytes": 2768,
+      "sha256": "78341401c632c5d48d39d2ba8fb4fc6bff46ce5eba5d28bf1996b00561422e2f",
+      "git_blob": "48dc385fb8c9402c33b87ca010ff59a83b2d0304",
+      "bundle_full_content_matches": true,
+      "returned_blob_matches": true,
+      "bundle_identity_matches": true
+    },
+    "tree_hash_checks": [
+      {
+        "sha": "17dc5ca692b645bfd1783dcd597eac0f07e89091",
+        "entries": 1,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "237df89322b4ea026ff572ca458781ac4ab7ec51",
+        "entries": 1,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "4d5437d2fcdafa3d0e46defaf9147ba9097647ea",
+        "entries": 498,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "54f1cabf94632e0f0e3a0f459dfc48afc959e701",
+        "entries": 497,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "5fdde93710c756d1859853c7be9d49e428f2c41c",
+        "entries": 33,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "6b27c224ce6cc8cfe6a3f577e97a7c10f7b3d840",
+        "entries": 8,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "6de4ba650fdb408af2bffd593a653703350fa287",
+        "entries": 5,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "6f5652d9515d2557be0542667a09ce35b17282de",
+        "entries": 11,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "9e87b29577c49f89704e1f5b5214d2e9a307e892",
+        "entries": 6,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "b5a9002b2cd9668962ba9bd6af7d055e0edc297f",
+        "entries": 8,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "bb729fc5aa93f3e0aa2e2f75614142b697a3c11e",
+        "entries": 11,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "c52fbecc47cefa24ed3bd7b83d3445db103cd4d2",
+        "entries": 2,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "d99be646434ccd01cc3f9ca4ea37abdc53c2bd29",
+        "entries": 33,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      },
+      {
+        "sha": "e8f2432fd560e5bc983cd2379e0749943ac10aae",
+        "entries": 2,
+        "complete": true,
+        "computed_git_tree_sha1_matches": true
+      }
+    ],
+    "exact_changed_path_inventory": [
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+        "status": "modified",
+        "before_git_blob": "85b39a2ed7a7aa22acc7875e5e71a625b144bb2d",
+        "after_git_blob": "2a30f6c6d39661c5f2dce0683eb01b2f65f3d038"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/ANALYTICAL_REVIEW_RAW.md",
+        "status": "added",
+        "before_git_blob": null,
+        "after_git_blob": "598e50a37c25f98b7f87d377f70e17e8070e33cd"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/INDEX_APPEND.md",
+        "status": "added",
+        "before_git_blob": null,
+        "after_git_blob": "58308ecd665e8e8e5cbe0d005f7ca7e9ca652315"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/PUBLICATION_MANIFEST.json",
+        "status": "added",
+        "before_git_blob": null,
+        "after_git_blob": "48dc385fb8c9402c33b87ca010ff59a83b2d0304"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/RESULT.md",
+        "status": "added",
+        "before_git_blob": null,
+        "after_git_blob": "d2b0c53a457976e470042d58ed51314f96d9b9c2"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/source_identities.json",
+        "status": "added",
+        "before_git_blob": null,
+        "after_git_blob": "322ac5c44559550c73e3347617552254b2960256"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/source_packet.json",
+        "status": "added",
+        "before_git_blob": null,
+        "after_git_blob": "332483db07b29f953063045fa28b1deacebae21e"
+      }
+    ]
+  },
+  "candidate_index_append": {
+    "old_bytes": 57750,
+    "old_sha256": "abdc2ba704a3a87ece60a4bf55b8205b0afa0fb830695789ee941b0504cb9647",
+    "append_bytes": 2287,
+    "append_sha256": "c15fac967a122ac9bdb7dfaeb71c8a793622edb932315d35252e0548633f2257",
+    "expected_index_bytes": 60037,
+    "expected_index_sha256": "20fdf259dce1500e2520f595ff1f6e9375e7bc556701557e24c214e8c05b40b5",
+    "expected_index_git_blob": "2a30f6c6d39661c5f2dce0683eb01b2f65f3d038",
+    "candidate_is_exact_old_plus_append": true
+  },
+  "complete_tree_delta": {
+    "comparisons": [
+      {
+        "path": "",
+        "before": "b5a9002b2cd9668962ba9bd6af7d055e0edc297f",
+        "after": "6b27c224ce6cc8cfe6a3f577e97a7c10f7b3d840",
+        "old_entry_count": 8,
+        "new_entry_count": 8,
+        "complete": true
+      },
+      {
+        "path": "ResearchHistory",
+        "before": "17dc5ca692b645bfd1783dcd597eac0f07e89091",
+        "after": "237df89322b4ea026ff572ca458781ac4ab7ec51",
+        "old_entry_count": 1,
+        "new_entry_count": 1,
+        "complete": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM",
+        "before": "5fdde93710c756d1859853c7be9d49e428f2c41c",
+        "after": "d99be646434ccd01cc3f9ca4ea37abdc53c2bd29",
+        "old_entry_count": 33,
+        "new_entry_count": 33,
+        "complete": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research",
+        "before": "c52fbecc47cefa24ed3bd7b83d3445db103cd4d2",
+        "after": "e8f2432fd560e5bc983cd2379e0749943ac10aae",
+        "old_entry_count": 2,
+        "new_entry_count": 2,
+        "complete": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge",
+        "before": "54f1cabf94632e0f0e3a0f459dfc48afc959e701",
+        "after": "4d5437d2fcdafa3d0e46defaf9147ba9097647ea",
+        "old_entry_count": 497,
+        "new_entry_count": 498,
+        "complete": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity",
+        "before": null,
+        "after": "9e87b29577c49f89704e1f5b5214d2e9a307e892",
+        "entry_count": 6,
+        "complete": true
+      }
+    ],
+    "changes": [
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+        "status": "modified",
+        "before": {
+          "path": "COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "85b39a2ed7a7aa22acc7875e5e71a625b144bb2d",
+          "size": 57750,
+          "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/85b39a2ed7a7aa22acc7875e5e71a625b144bb2d"
+        },
+        "after": {
+          "path": "COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2a30f6c6d39661c5f2dce0683eb01b2f65f3d038",
+          "size": 60037,
+          "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/2a30f6c6d39661c5f2dce0683eb01b2f65f3d038"
+        }
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/ANALYTICAL_REVIEW_RAW.md",
+        "status": "added",
+        "before": null,
+        "after": {
+          "path": "ANALYTICAL_REVIEW_RAW.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "598e50a37c25f98b7f87d377f70e17e8070e33cd",
+          "size": 13681,
+          "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/598e50a37c25f98b7f87d377f70e17e8070e33cd"
+        }
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/INDEX_APPEND.md",
+        "status": "added",
+        "before": null,
+        "after": {
+          "path": "INDEX_APPEND.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "58308ecd665e8e8e5cbe0d005f7ca7e9ca652315",
+          "size": 2287,
+          "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/58308ecd665e8e8e5cbe0d005f7ca7e9ca652315"
+        }
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/PUBLICATION_MANIFEST.json",
+        "status": "added",
+        "before": null,
+        "after": {
+          "path": "PUBLICATION_MANIFEST.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "48dc385fb8c9402c33b87ca010ff59a83b2d0304",
+          "size": 2768,
+          "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/48dc385fb8c9402c33b87ca010ff59a83b2d0304"
+        }
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/RESULT.md",
+        "status": "added",
+        "before": null,
+        "after": {
+          "path": "RESULT.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d2b0c53a457976e470042d58ed51314f96d9b9c2",
+          "size": 16531,
+          "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/d2b0c53a457976e470042d58ed51314f96d9b9c2"
+        }
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/source_identities.json",
+        "status": "added",
+        "before": null,
+        "after": {
+          "path": "source_identities.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "322ac5c44559550c73e3347617552254b2960256",
+          "size": 2086,
+          "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/322ac5c44559550c73e3347617552254b2960256"
+        }
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/source_packet.json",
+        "status": "added",
+        "before": null,
+        "after": {
+          "path": "source_packet.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "332483db07b29f953063045fa28b1deacebae21e",
+          "size": 117322,
+          "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/git/blobs/332483db07b29f953063045fa28b1deacebae21e"
+        }
+      }
+    ],
+    "unchanged": [
+      {
+        "path": ".github",
+        "sha": "c2bbd17e988348605bc1eb6c07e8e45c90a121b7",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "License",
+        "sha": "51b4b9490ff44415b221e97e0f73a7837562db07",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "README.md",
+        "sha": "1eef0cac34831aae82c49cee13c7d11d6f42446f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/AGENTS.md",
+        "sha": "e5407215a81b914fc02f5c107333a2f0261634ee",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/CHANGELOG.md",
+        "sha": "f43c0b724a45a84a19418a79c428c9fa5fd7ef35",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/GITHUB_DELIVERY_POLICY.md",
+        "sha": "05b6f82c4447cbe514fa05e3a06e85456b5587ea",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/README.md",
+        "sha": "f75bd1620c441432c5ab5c8dca23e48866c628f6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/STATUS.md",
+        "sha": "9126fca760640bfe31ed2fccf737030fdb53ac58",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_09-11_REPORT.md",
+        "sha": "206e74699bb198a572132c172698505e6251fd11",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_09-11_RESULTS.json",
+        "sha": "5073deaf493623f50dfc1ecc884da9b60dd7733d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_09-11_SHA256SUMS",
+        "sha": "e13b802ce14e272f8cdcb57407eefd49490e6e78",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_12_REPORT.md",
+        "sha": "efa6500cfe715727a73866b6de822ed4d4ce89b5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_21_REPORT.md",
+        "sha": "e7a271486e1706a05df4c5f5a992120b1a89fe61",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_22_REPORT.md",
+        "sha": "5b2b6c4d5a263a35a02e3caa69d4dcd19590533a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_23_REPORT.md",
+        "sha": "ab4264b61e21a88b27ed789762deecab7ce9677f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_24_REPORT.md",
+        "sha": "90f70711774471b8fd4e021661f64ac9234612ea",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_25_REPORT.md",
+        "sha": "900e935f7bca02333061104cc55fa61f2de69c58",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_26_REPORT.md",
+        "sha": "0499161bf137ffe1a41633e45fcdec2724863ddb",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_27_COMPLETION_REPORT.md",
+        "sha": "01d55ea6b4882c32fc3fa26e8e2a51eb7b191e5e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_27_REPORT.md",
+        "sha": "6a64db3e20a55a8e4e7f617f539c0d1fd900523f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_28_REPORT.md",
+        "sha": "34d62304ca9e68851da931674e854d8a63ab8552",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_29_REPORT.md",
+        "sha": "7887047b5a1b6e9b72091a6e6dd3496dddc6435e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_30_REPORT.md",
+        "sha": "f6b05a4b2fb2aa8bd43bc65fef501cc39b276057",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_31_REPORT.md",
+        "sha": "5173bb3edd048343ec8d8013ec6ca0310bc717ae",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_32_REPORT.md",
+        "sha": "ad9beb27fe5b2df6d1a0108ee48a32d201d9049e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_33_REPORT.md",
+        "sha": "9ffca4853f25d8cffbd3ff6db4e7c3fc98f23cbb",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_34_REPORT.md",
+        "sha": "4ca4f9c0b6e7e57ffd34bb79ed3b2820f8fc7f07",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_35_REPORT.md",
+        "sha": "be38acc16984fd65104ccdfeecd39a1b9ea6f744",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/V16_36_REPORT.md",
+        "sha": "f1ace33995475a3dd9630eb08dcd11424e2a8164",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/demos",
+        "sha": "18991987f5a962da43f98fb08ac1adad9a08c330",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+        "sha": "d91907df74abc46c2f564935a8205de1b8a881fb",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/overlapping-guard-exchange",
+        "sha": "1f6d99b6786acd839c6626119665ba72292a800e",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_5_CLOSEOUT.md",
+        "sha": "544383dd703f5f05f08212b40ac4f8ba1b1ae68e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_5_SCIENTIFIC_CLOSEOUT_REQUEST.md",
+        "sha": "fb20066bd8a7f7370e61e02f774c1273fbb16a30",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE.md",
+        "sha": "54cf74c9d01548368b7e32814f2f06e7fba5d628",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_1_SIGNED_ADMISSIBILITY_RESPONSE_SCOPE.md",
+        "sha": "64685e2fcad2f77f6a590685368a1ac21896e057",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_HIERARCHY.md",
+        "sha": "bfb364b75e18a279f2e4aa53254370f563a9545c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_2_COLLECTIVE_RESPONSE_SCOPE.md",
+        "sha": "48c7698a38a69685643f040b59a6f040be3ac054",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_5_INDEPENDENT_REVIEW_REQUEST.md",
+        "sha": "ff07ebe4b88bb77efb33dadecd994b2fb3489bf3",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS.md",
+        "sha": "b9fa20d44002d0d743278f3fd21cce3214d02600",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_3_DUAL_CERTIFICATE_FIELDS_SCOPE.md",
+        "sha": "0e8ac8ba64fe72e17c207d6532c7c51fd71b300a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS.md",
+        "sha": "a0d38aeacac80f036f9cb997f08f921f4e0f4b59",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_4_CANDIDATE_RESPONSE_MARGINS_SCOPE.md",
+        "sha": "7a7593740c65b87473cbe0bb36432064c278a428",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO.md",
+        "sha": "0da2ddad7ed177219f3fed50e7e152b2e1ffa679",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_5_OVERLAP_LOCALITY_NOGO_SCOPE.md",
+        "sha": "001804a390c1ed9603e8bc15abac30cd255b981e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_CONSOLIDATED_PROOF_AND_AUDIT.md",
+        "sha": "f670e9a6687aec49b18429655285f937404e1a36",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_EVIDENCE_MANIFEST.json",
+        "sha": "f31c71b20689219f9c9769e983d72aeb7d05b003",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_IMPLEMENTATION_LOG.md",
+        "sha": "8a5ca18cd7b43f5657957e37878fea510886310c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_PUBLICATION_AUDIT.md",
+        "sha": "5e7762e441a2ac462088142447431a87ab275051",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/A12_SELF_CONTAINED_AUDIT_PROTOCOL.md",
+        "sha": "db1e349268f7b864219bf37d1f5917abbc3e1fef",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUTO_COVER_HANDOFF_CLOSEOUT.md",
+        "sha": "af2954209f904188d33793c2eb646072b3dbfd04",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUTO_COVER_HANDOFF_RESULT.md",
+        "sha": "e95bb9ea0a8634c67f932642e7684ef4f9983064",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUTO_COVER_HANDOFF_SCOPE.md",
+        "sha": "62502919073823e5b76f04e66aa79d346b8b08ce",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUTO_LOWER_WITNESS_CLOSEOUT.md",
+        "sha": "e66328f78bc0fcf079a6989de45270bd282036b7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUTO_LOWER_WITNESS_RESULT.md",
+        "sha": "6cca18f13183cfc279dc9ac142d296230fe4502c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUTO_LOWER_WITNESS_SCOPE.md",
+        "sha": "3aad8f4461a1d448c5d914c651b706714d36f00e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUXILIARY_PERMUTATION_AUDIT.md",
+        "sha": "c726d45247bb1e3d2d56c02910d54127d4329bf7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUXILIARY_PERMUTATION_CLOSEOUT.md",
+        "sha": "650e187fe5cc749a673b364319921853868c65bd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUXILIARY_PERMUTATION_PUBLICATION_AUDIT.md",
+        "sha": "950b3fb8542854e2f5b406f0b902a2e2f58924b5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUXILIARY_PERMUTATION_PUBLICATION_STATUS.md",
+        "sha": "1fb6517d0bdea2f16e934dc0e4cd77cd22b85900",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUXILIARY_PERMUTATION_RESULT.md",
+        "sha": "b9b2b37dbf548d3469eb11237434168cc339c41e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AUXILIARY_PERMUTATION_SCOPE.md",
+        "sha": "8f05c9d376a3f45f267a8976890dfbb12ed9c4c9",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_AUXILIARY_SCOPE.md",
+        "sha": "50244099f4bea7d6854bdb958ec37b5f2b64e0de",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C1_AUDIT.md",
+        "sha": "1cda52f202b084550679a322b22f036cbcc5972f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C1_INDEPENDENT_REVIEW.md",
+        "sha": "55dfe5c55fa639e2946e37b409c3ac02d6ff4dbd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C1_MINIMAL_OVERLAP.md",
+        "sha": "5d132a35d835f0dc1fcae97785f0bb8d2ac84d23",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C1_REVIEW_GATE.md",
+        "sha": "71e9dabee8f200deb5b22af299124e52a211ac8f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_ACCEPTED_REVIEW.md",
+        "sha": "1dc0bc0b96c3c7831241a70e681302248a504a5b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_AUDIT.md",
+        "sha": "111de601e1b383714dbbbb17b65e61c07f3a8de4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_CLOSEOUT.md",
+        "sha": "d12a69eb595f14a530e9d03d730f374b5444aac2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_INDEPENDENT_REREVIEW.md",
+        "sha": "4818c0f225c7a1217493944a81a0d5aa02223680",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_INDEPENDENT_REVIEW.md",
+        "sha": "9429255557fe67ac21a0b97e5e77280a9c9aca5f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_PUBLICATION_AUDIT.md",
+        "sha": "184dc0e236cc7b7cc1a25bb512845e89d1c28069",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_RESULT.md",
+        "sha": "ee961fff2bb68fb0965f2978844d7770aab09141",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_RESULT_REVISED.md",
+        "sha": "6d583b0b3872613442df6ec142ea879f08e1bacd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C2_SCOPE.md",
+        "sha": "af0a63109c4a0455dba4149808becc4cf4ddd439",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ACTIVATION_EXCHANGE_RECONCILIATION.md",
+        "sha": "eca686981c4c37f1a6b17c038db87ca91469e4c0",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ACTIVATION_EXCHANGE_REVIEW.md",
+        "sha": "793ff61ab137a4ebea840b9f14686cb5fb33e6c1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ADMISSION_ACCEPTED_REVIEW.md",
+        "sha": "502a8a7bac808faad2fe60f37a1668420274d0a4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ADMISSION_CLOSEOUT.md",
+        "sha": "e60b75957e6943f83a88e4dca9c7cf23e615d8f4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ADMISSION_PUBLICATION_AUDIT.md",
+        "sha": "f71da2473150eeed9a238f977789ab31ecfe548f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ADMISSION_RESULT.md",
+        "sha": "63497d1077b0291adbfdce28aff395003e0923e7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ADMISSION_SCOPE.md",
+        "sha": "fcf2626554502845a766cb1b1d6c069d273fb078",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_CLOSEOUT.md",
+        "sha": "b2a77fb6b90e0070af5c4dc84817cfd99af8aab5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_GEMINI_RECONCILIATION.md",
+        "sha": "bf47e5b4cd43f92000573b3e5a73ab1a86b0c9aa",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_PUBLICATION_AUDIT.md",
+        "sha": "5c07f914623ce102d622bf3e6465f280fc2fa052",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_REPORT.md",
+        "sha": "dee3e6409f30f892b4d5e925ec3822e631f1dd8f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_RESULT.md",
+        "sha": "7444b8049ea00a17ab04ce122feadb27497ff5b8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_REVIEW.md",
+        "sha": "c417fbde6b56dee58fb5fc18860a52352c136401",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHORED_RELEASE_SCOPE.md",
+        "sha": "9b4fcdd9785149183eb6002db23127dee3def253",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHOR_ACCEPTED_REVIEW.md",
+        "sha": "e8a2a395e909a0a3b1e4b41508f2d3c9ff499e41",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHOR_AUDIT.md",
+        "sha": "7bfd65513ea4a9149c3f30619e60a4b8f2f534ac",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHOR_RESULT.md",
+        "sha": "2aab48a14f52c355814e9fe962d5957479d142a2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ANCHOR_SCOPE.md",
+        "sha": "ba2ee783d09dd3e12e667da86570602db94a390f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_AUTONOMY_ACCEPTED_REVIEW.md",
+        "sha": "f097f4013508ee97deaa0585ca84e01ca2b538f3",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_AUTONOMY_CLOSEOUT.md",
+        "sha": "04ba76241e5c2b59b82492c5ba973623e624a502",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_AUTONOMY_PUBLICATION_AUDIT.md",
+        "sha": "6a68214502f7938caa77b7419f62179bb87a4797",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_AUTONOMY_RESULT.md",
+        "sha": "65bb41f9b1c19e01775053abb787848032be5600",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_AUTONOMY_SCOPE.md",
+        "sha": "fa72178edf7fbe78b2591309598ac5e21690076f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_C4_DEFICIT_CONTINUATION.md",
+        "sha": "133c03f06796fd14988cccbab1bbae6275aed16b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_C4_ROLE_COMPLETE_CONTINUATION.md",
+        "sha": "bda86c25072a8a0cb83328a0b3a4fb2a04a99171",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_GAP_ACCEPTED_REVIEW.md",
+        "sha": "95cb8088cea57b8f5e129d8a9a192f21795ef536",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_GAP_CLOSEOUT.md",
+        "sha": "fd485ad4344dd2aa6d93649a0c4aea1039ee6653",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_GAP_PUBLICATION_AUDIT.md",
+        "sha": "8600bda8bafc9ad9812fac6556b564ed32a62d98",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_GAP_RESULT.md",
+        "sha": "a2e8cfca81b57b94388f0f92aaac3d0049564cef",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_GAP_SCOPE.md",
+        "sha": "59a6866c2772522eb88ff0d8a138b84c866d807c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_OBSERVABILITY_ACCEPTED_REVIEW.md",
+        "sha": "6587a0be69b2e380a2f202b422ed0cea274086a2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_OBSERVABILITY_AUDIT.md",
+        "sha": "ba18c2e19117b101b2981e10727ddf0b8cf3775c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_OBSERVABILITY_CLOSEOUT.md",
+        "sha": "6fc68932846acd148f7a18d11321f667dd8c3e69",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_OBSERVABILITY_PUBLICATION_AUDIT.md",
+        "sha": "71221cb1b7cfd3241a0bcb619b128f57bd5ccdff",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_OBSERVABILITY_RESULT.md",
+        "sha": "8c49298ec114fc64fdc4583a2f9923345f0677fb",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CAPACITY_OBSERVABILITY_SCOPE.md",
+        "sha": "9bd028a93623b60301e197b4897c6f0dadebbaea",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMAND_PROVENANCE_ACCEPTED_REVIEW.md",
+        "sha": "39bacef072c9eed50e4fe3a543fd26ba4ec5449b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMAND_PROVENANCE_AUDIT.md",
+        "sha": "e95fac39e0f386cacf02d29a9749ca87d9b73f58",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMAND_PROVENANCE_CLOSEOUT.md",
+        "sha": "cfec3783ac68a78cd4ec22a3993fbee917e05acb",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMAND_PROVENANCE_PUBLICATION_AUDIT.md",
+        "sha": "33b5352c70d4c8e0cc620128a450a7db48ca93e5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMAND_PROVENANCE_RESULT.md",
+        "sha": "f41fddedcabc0ebcf2e79cc00dae629d6d2bd0da",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMAND_PROVENANCE_REVISED.md",
+        "sha": "013d56ae4336302dad2bfcadcb3d15cd817169d4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMAND_PROVENANCE_SCOPE.md",
+        "sha": "1b365b675fe361e1613124bed8f075c6a20728da",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMIT_OBSERVABILITY_ACCEPTED_REVIEW.md",
+        "sha": "93a297a1cba30bd341e083293cec4f2177f18420",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMIT_OBSERVABILITY_AUDIT.md",
+        "sha": "b92535f4439b4e653f263821a743df18c73e5daa",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMIT_OBSERVABILITY_CLOSEOUT.md",
+        "sha": "6b13755c49599f6c2967910a39251683408f5ad3",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMIT_OBSERVABILITY_PUBLICATION_AUDIT.md",
+        "sha": "7e27e8a7a276b034182623475d88247973db47e8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMIT_OBSERVABILITY_RESULT.md",
+        "sha": "1c804963719a0947d3ca6fa1b3c41fb43b7f1bc6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COMMIT_OBSERVABILITY_SCOPE.md",
+        "sha": "032490cf21facd20ecf9024edd607febb6eedc32",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_ACCEPTED_REVIEW.md",
+        "sha": "56981522c5570da56846732555c40015f9af653a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_AUDIT.md",
+        "sha": "1b2189c41a665a5bb91f97e44edd213aac0263a2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_CI_CONTRACTS.log",
+        "sha": "4e9a79e0348f4d8b8ab3304d1cbeaed4b436d0ca",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_CI_EXECUTION.md",
+        "sha": "9066278d6f6ac6cc502dcf0762b75069360d0996",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_CLOSEOUT.md",
+        "sha": "3a49ccc8f6be00408b17b63d027c259c0dcb3061",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_INDEPENDENT_CHECK_SCOPE.md",
+        "sha": "ff859283442fc6dd886b06ab31378d86400b0148",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_PUBLICATION_AUDIT.md",
+        "sha": "0c074144cbc8ff1842db4e4de3746087811cecc9",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_REPLAY.py",
+        "sha": "fdb103d73dfcdba0350acb710c18b46414b061f7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_REPLAY_EVIDENCE.json",
+        "sha": "857f2d69a26d758455850d20467c08687c12a2ee",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_REPLAY_REVIEW.md",
+        "sha": "baa15e68ca6f27b9eb4431d7c2109db632bd7075",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_REPLAY_SCOPE.md",
+        "sha": "8507d5277b95a75a279a95859511c3bb9891e689",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_RESULT.md",
+        "sha": "d619932c44d051f2a0c698365709d6f42e02f078",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_REVIEW_RESUMPTION.md",
+        "sha": "0c68c86fabbea160c6a9ac0cf464d5a7875be3bd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_SCOPE.md",
+        "sha": "8891b150d4374a4f7fac6945fed2035f03648590",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_PROBE_TRANSITION_CLARIFICATION.md",
+        "sha": "d977e0d0ec52fe77c2a8a42ebda6a8e539e33192",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_READOUT_ACCEPTED_REVIEW.md",
+        "sha": "f10521dd28cb6dc28d22472733780e78d519158c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_READOUT_CLARIFICATION.md",
+        "sha": "09f35e74d532946e048be8ca80bead9d67ca488a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_READOUT_CLOSEOUT.md",
+        "sha": "dcf48ca2da726ab0dcaddf13836b96ad663ce706",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_READOUT_PUBLICATION_AUDIT.md",
+        "sha": "4a7dd43fd75683170a94df981eab46d0035fb142",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_READOUT_RESULT.md",
+        "sha": "ab878f02aa1f1746a0d305d5bab97306a36c92a6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_READOUT_REVIEW_ADJUDICATION.md",
+        "sha": "72fedc64dd92ec4249ba187c94dcaaaf457cfcd5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_CORE_READOUT_SCOPE.md",
+        "sha": "5cd79cd7c311d96e86d0af3596decd5ef7ffa589",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COVERAGE_ORIGIN_SCREEN.md",
+        "sha": "2633e57fbc7b38f7d9abee5ff369e75448182566",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COVER_STATIC_ANALYTICAL_REVIEW.md",
+        "sha": "fee82868ff50514358c51170efe17e452cead828",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COVER_STATIC_CLOSEOUT.md",
+        "sha": "4edd5becc95ef085cfe3f4b2044fcfa7bac639b7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COVER_STATIC_PUBLICATION_AUDIT.md",
+        "sha": "79249cea2e8a5c27b37606935b8db571d45e517a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COVER_STATIC_RECONCILIATION.md",
+        "sha": "f3c8fe809ec2f556275a3a2018eca014a6b10b61",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COVER_STATIC_REPORT.md",
+        "sha": "fe82de7fe3dc2a9093818d95c1172004f7f39b3c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COVER_STATIC_RESULT.md",
+        "sha": "ee7df4b3021f49412cb92f11de5ad480f15d0853",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COVER_STATIC_REVIEW.md",
+        "sha": "6dffd43c626b686091110a5eee640f9f522247a2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_COVER_STATIC_SCOPE.md",
+        "sha": "9796adc35382b47b64ae3375055128cf6da951a6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_DEADLOCK_ACCEPTED_REVIEW.md",
+        "sha": "d4a6071a73132b57e83d7bbfdc307523717fa1db",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_DEADLOCK_AUDIT.md",
+        "sha": "2ad75fa8f958630a69e2a0e7eaa5a2a4e67bd571",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_DEADLOCK_CLOSEOUT.md",
+        "sha": "dd14f77b5197d2d9f6a10a0d1fea82d1de02d794",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_DEADLOCK_PUBLICATION_AUDIT.md",
+        "sha": "cb3a53a11c723f8eb3a119543b07a3e8f9948350",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_DEADLOCK_RESULT.md",
+        "sha": "dbb88e7d27e4cba48cc328738c6ea2e9dec6b486",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_DEADLOCK_SCOPE.md",
+        "sha": "8ffdb0deb88a6d51290f08399e15c90ad9359b42",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ESCAPE_OBSTRUCTION_CLOSEOUT.md",
+        "sha": "56e5751fe18c8a9634d6fd91ba5e6ea89e053a57",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ESCAPE_OBSTRUCTION_REPORT.md",
+        "sha": "10f1e674fda5204d0638da9df34c9e788b99121e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ESCAPE_OBSTRUCTION_RESULT.md",
+        "sha": "a63e03066d25b9cc468bb7feca664d3666aa6286",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ESCAPE_OBSTRUCTION_SCOPE.md",
+        "sha": "65dd06841aa092e6eda52aebb8949891b90463f4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ESCAPE_TO_VACANCY_SCOPE.md",
+        "sha": "308c8512ac0ab5e3cc2bf6ae6a5b3fae00990240",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_BINDING_PROBE.md",
+        "sha": "8471c0cef0caa0322212c582501a3477e31ba638",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_BINDING_PROBE_REVIEW.md",
+        "sha": "139c6afd2319e33fd2ce1b7b7fdc69f3697f06b5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_CHANNEL_ACCEPTED_REVIEW.md",
+        "sha": "c2fd5856d76ba2c78325a820528c463ca67bcb9d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_CHANNEL_AUDIT.md",
+        "sha": "6284572dffeee8551759740879f053dad266e63f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_CHANNEL_CLOSEOUT.md",
+        "sha": "e1280eb0ef1a099cdf40291ad14b1ec0ff59f342",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_CHANNEL_PUBLICATION_AUDIT.md",
+        "sha": "dce522a8bc34792743897d3636dd8747aa2d4dca",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_CHANNEL_RESULT.md",
+        "sha": "177b243f5044a205613b7e1a32f9d56faff4e525",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_CHANNEL_SCOPE.md",
+        "sha": "d81c2d84fc2afe5a5533c1074e8151dbdb6a43b8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_GRAMMAR_C4.md",
+        "sha": "f37aa4bd5b3fffeb67a3306d319ddee7a30ff112",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_INIT_ACCEPTED_REVIEW.md",
+        "sha": "4bae9b525f5bf78d116a11c6c52c651f63f709a2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_INIT_AUDIT.md",
+        "sha": "b567b42adc5a3c5ae98241adf9101e66e2cac058",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_INIT_CLOSEOUT.md",
+        "sha": "88fa33d3b8b172c45bdaa587d436fcdaf87e26f4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_INIT_PUBLICATION_AUDIT.md",
+        "sha": "19800946dd2ef5214c9c0293563b8b79c4a4489d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_INIT_RESULT.md",
+        "sha": "61ebfbea1649a5ea28fec0c7de4cbc16f4f70265",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_INIT_SCOPE.md",
+        "sha": "8e9981505907f81572b3b08e256c7d2c71123a03",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_ORIGIN_FOLLOWUP.md",
+        "sha": "0f2a9c0d73edc18a56a1e5efbe19d2ad6f323f47",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVENT_RECORD_CANDIDATE_C3.md",
+        "sha": "ce699ed95a1971f82d4df4b5899f09e6ee80905d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVIDENCE_RECOVERY_REPORT.md",
+        "sha": "b0d18e2f43678027d4e68eca2fcdc506c299c46d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_EVIDENCE_RECOVERY_SCOPE.md",
+        "sha": "c84d4be82fde54257202984d7d953be975ffc74a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIBER_CERT_ACCEPTED_REVIEW.md",
+        "sha": "5304d5eed160e4c5ce7ac3b5ea859ed0132b258f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIBER_CERT_AUDIT.md",
+        "sha": "081c573bdfe540eb23ff035722d3690d4312ce47",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIBER_CERT_CLOSEOUT.md",
+        "sha": "1423b75db543d11a48b83b64e205bfbbbe53e312",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIBER_CERT_NOTATION_ADDENDUM.md",
+        "sha": "34179ab39651e4f6e5bce2616dc3fc2eb0441973",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIBER_CERT_OUTCOME_NOTATION.md",
+        "sha": "57d2ae36e8c603140ea8f67ae2459bfa214b0107",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIBER_CERT_PROVENANCE_ERRATUM.md",
+        "sha": "ea4e9245ab3b786b2148549ab605375eb2766084",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIBER_CERT_PUBLICATION_AUDIT.md",
+        "sha": "b396b294b715d0683ba13792105f824ae9828a8a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIBER_CERT_RESULT.md",
+        "sha": "b6104814d72814911a4ad8c8f0e42b2bb3a87daf",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIBER_CERT_SCOPE.md",
+        "sha": "dba47b98cd910368fb310cb61e5edd74ebdde9a9",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FINGERPRINT_LOCK_CLOSEOUT.md",
+        "sha": "70cba55bbecad466c92deda7aef95c7ebdad0d04",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FINGERPRINT_LOCK_PUBLICATION_AUDIT.md",
+        "sha": "c6430689b61d2c03f61ec557853f40fe759e0fe1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FINGERPRINT_LOCK_RECONCILIATION.md",
+        "sha": "1690caa6bd164a68101d6830e5d5d12dcb201c3e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FINGERPRINT_LOCK_REPORT.md",
+        "sha": "0711382a82af964b4bfd68c40b71f63fcc56a6bc",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FINGERPRINT_LOCK_RESULT.md",
+        "sha": "0b35020815b5142763b601f2eb8fece435525f35",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FINGERPRINT_LOCK_REVIEW.md",
+        "sha": "b3a66e3da8aaf60470b8825a2fb418e0b8ce84cd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIRECRAWL_REVIEW_RESPONSE.md",
+        "sha": "0e16e1c529d529eb880d40bda44426fce4a86fa6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIXED_FAMILY_ACCEPTED_REVIEW.md",
+        "sha": "cad690a04c382b315868938bfa55a469ee7c6b2e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIXED_FAMILY_CLOSEOUT.md",
+        "sha": "20ed241fe22d457104e734671d7f68668332cf6f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIXED_FAMILY_PUBLICATION_AUDIT.md",
+        "sha": "02ff540fdcf82586bb4759d6698ed0e3c8991387",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIXED_FAMILY_RESULT.md",
+        "sha": "d533bfef02d4d0ceecca3f2affb3ef23ee5f8f90",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FIXED_FAMILY_SCOPE.md",
+        "sha": "541dafa12bc9359de7f64e3906a344e98ecec67c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FOOTPRINT_ACCEPTED_REVIEW.md",
+        "sha": "1390668f84eb0e7a1265d7d8079599db97cb5519",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FOOTPRINT_CLOSEOUT.md",
+        "sha": "3a27717edb3dfd7a366901290916b75272da88bf",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FOOTPRINT_PUBLICATION_AUDIT.md",
+        "sha": "39efc346f497bc26663b004cf85ef055d62c6abc",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FOOTPRINT_RESULT.md",
+        "sha": "26c6050a99b5c53040d53a14dc3b248c4841b26d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FOOTPRINT_REVIEW_ADJUDICATION.md",
+        "sha": "6c24b3f25787e561b60f2a32303fb95e8e4e42ba",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FOOTPRINT_SCOPE.md",
+        "sha": "2dfcf99a586f8aba6a9b023d6857944d2c0a4102",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FRESH_PROBE_ACCEPTED_REVIEW.md",
+        "sha": "4fb84bb30ff89418e3c02aeaea729536d098e42e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FRESH_PROBE_CLOSEOUT.md",
+        "sha": "92084ec115af26245585e33e29d31169bf0efc42",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FRESH_PROBE_PUBLICATION_AUDIT.md",
+        "sha": "df408cb316cd75c49f3e815db6229c3cfd5dfeea",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FRESH_PROBE_RESULT.md",
+        "sha": "09f16288006d900747442c91a20cb6679afc9ff8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_FRESH_PROBE_SCOPE.md",
+        "sha": "f68a1eeb962f93254e60a688aa6bcd0853732a4a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HANDOVER_GRAPH_CLOSEOUT.md",
+        "sha": "8b94ec08031042f53161bf018036ab96700fadff",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HANDOVER_GRAPH_PUBLICATION_AUDIT.md",
+        "sha": "024e4ebae980764a6cb69da0bad93ffeb39fab14",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HANDOVER_GRAPH_RECONCILIATION.md",
+        "sha": "958d04ea3a9040f1ab3959d8e97d3efbc2f15912",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HANDOVER_GRAPH_REPORT.md",
+        "sha": "b7febbbc666acdee31af1c4e620a8bd1ca75f065",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HANDOVER_GRAPH_RESULT.md",
+        "sha": "9f0bbb38c7abab2140732996eb821c1690ae57be",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HANDOVER_GRAPH_REVIEW.md",
+        "sha": "80cfcf4f54c3ac9a69891f26824561fdf6f92ed8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HIDDEN_OPTIMALITY_ACCEPTED_REVIEW.md",
+        "sha": "e52aca6053fe15fe46c523a3b56e689693650e2b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HIDDEN_OPTIMALITY_AUDIT.md",
+        "sha": "f1d9dae89a2a6e60c75a866618db5d12dc18f64c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HIDDEN_OPTIMALITY_CLOSEOUT.md",
+        "sha": "31fce834b18286479976ae584a06630294fe4912",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HIDDEN_OPTIMALITY_PUBLICATION_AUDIT.md",
+        "sha": "bee2374c4e9207fcea0cdcc9af080075006863f1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HIDDEN_OPTIMALITY_RESULT.md",
+        "sha": "9ce7dad1910cde4798a9ce05c672b06a9771326f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HIDDEN_OPTIMALITY_REVISED.md",
+        "sha": "1226768cb97f6cb4cde11c0ddb7b0848a07aba85",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HIDDEN_OPTIMALITY_SCOPE.md",
+        "sha": "e6d1f3107421bb736baddd7012a72e3b2cb230ea",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HOST_ACCEPTED_REVIEW.md",
+        "sha": "e43563cbf0179bb1901cf31193c48b5b4e98d6ff",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HOST_AUDIT.md",
+        "sha": "306f073b81bf9de09c345901be93af545e388220",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HOST_CLOSEOUT.md",
+        "sha": "fa4f08cc57961c1cbec5ccef7e013e5bf8274416",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HOST_PUBLICATION_AUDIT.md",
+        "sha": "d4918e8aeb6e25afdd8a8b8759d50cb28c3e41d3",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HOST_REPORTING_ADDENDUM.md",
+        "sha": "22929f99596005d4e197cc978f2e3958ccfdd598",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HOST_RESULT.md",
+        "sha": "ebcd4e07cbf8bd485387678f15b8b87821e0c8b2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_HOST_SCOPE.md",
+        "sha": "952fed5ee2cb4038202f7a0865d6d4a5b9191c7e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_INTERNAL_RECORD_ATTEMPT.md",
+        "sha": "110e50261834c1c44fbf53d62d16c291203c96ce",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LABEL_RELEASE_ACCEPTED_REVIEW.md",
+        "sha": "d8bd39492e41c2b24d1629b47d0da299775cebd4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LABEL_RELEASE_CLOSEOUT.md",
+        "sha": "01284e59f0b159d22d8bff98b2f788cfb6a6a081",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LABEL_RELEASE_PUBLICATION_AUDIT.md",
+        "sha": "01c06f11acc471241b002f98d757273bac066063",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LABEL_RELEASE_RESULT.md",
+        "sha": "3a2f3433b7937721c1df587c66f0116e1b08cd13",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LABEL_RELEASE_SCOPE.md",
+        "sha": "0a8c21d48fa128a989e18c0753c5e7765e928986",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LINEAGE_BINDING_CANDIDATE_C1.md",
+        "sha": "96166fe525a72c2897298bf7729457434fd1a1a8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LIVE_CERTIFICATE_SOURCE_SCREEN.md",
+        "sha": "1417b6804bbf2d9cba834d800148e8a845995a5b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LOCAL_PROGRESS_CLOSEOUT.md",
+        "sha": "68660ad07331ccb66f31ba41eae520756d22aaa7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LOCAL_PROGRESS_GEMINI_RECONCILIATION.md",
+        "sha": "737c3f8023ada06678f52ced29c12670a639a840",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LOCAL_PROGRESS_PUBLICATION_AUDIT.md",
+        "sha": "425bee54ce5b4b3715384d09848349b266f51291",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LOCAL_PROGRESS_REPORT.md",
+        "sha": "ba731fadd305a9d600d1d208ac79f20835c92302",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LOCAL_PROGRESS_RESULT.md",
+        "sha": "9c821b1294c550e040e7d53248a495a524cbba4b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LOCAL_PROGRESS_REVIEW.md",
+        "sha": "06579e6cd536996085161965dc6fd314aa62226c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_LOCAL_PROGRESS_SCOPE.md",
+        "sha": "af96350b002ebd60a53dd8228aa7cf3da5c6359e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_EVENT_ACCEPTED_REVIEW.md",
+        "sha": "49018fff681dae48e2670def0457696fcbd9f4bd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_EVENT_CLOSEOUT.md",
+        "sha": "8ddeb417d80894fec66f2436817868495cfb25ee",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_EVENT_PUBLICATION_AUDIT.md",
+        "sha": "c88699a6bae08bb28da6a7c61902c5439733f425",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_EVENT_RESULT.md",
+        "sha": "70dd88746e25654d626321fb40c8923ca2ddbbea",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_EVENT_SCOPE.md",
+        "sha": "2573d0e264fa00ff957f4d31e8582617d4379b38",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_RECONSTRUCTION_ACCEPTED_REVIEW.md",
+        "sha": "7825ecc516dba36dd120e515180e68de1a64fafe",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_RECONSTRUCTION_CLOSEOUT.md",
+        "sha": "56d623a4d277dbc7ba590ce2fc7da5fc6f0ca832",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_RECONSTRUCTION_PUBLICATION_AUDIT.md",
+        "sha": "22a61a9348314b062d784373545a8046fa3aec31",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_RECONSTRUCTION_RESULT.md",
+        "sha": "5015c7f3363d0ab67e31afc78c2e0090abc67824",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MISS_RECONSTRUCTION_SCOPE.md",
+        "sha": "0f073c3ebf4f0577f8600cb5ffcd26d5f7043ff8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MOVING_COVER_CLOSEOUT.md",
+        "sha": "661b07adc9fdfa614f46db4f800a01005352cccd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MOVING_COVER_PUBLICATION_AUDIT.md",
+        "sha": "8d453b8c991c22b444683f964251fd6e5252d497",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MOVING_COVER_RECONCILIATION.md",
+        "sha": "b69fe4cc9514394b55b7ef8c31fca4f3e82ff642",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MOVING_COVER_REPORT.md",
+        "sha": "3ccf64b2a3c7828871811bd8cc224de378dd9d4a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MOVING_COVER_RESULT.md",
+        "sha": "d88f65c27de7b900efb0d730233c49f491c5e256",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_MOVING_COVER_REVIEW.md",
+        "sha": "923618cacf5773b615c8146f28700f0ddc553f8a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_CONTROL_BOUNDARY.md",
+        "sha": "84204cef0faf2ebd5e6a7d41e960d34b649fbb2c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_INFORMATION_BOUNDARY.md",
+        "sha": "2e601ab897a943b6eecc36c353e213ed5d1a4660",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_INTERFACE_ACCEPTED_REVIEW.md",
+        "sha": "5c028df86166f814d4290fdfc943249261301882",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_INTERFACE_AUDIT.md",
+        "sha": "056a68d6846a8dedd9972e2309e951bc4c0ac05a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_INTERFACE_CLOSEOUT.md",
+        "sha": "156cf8956b24ec052c9f24e70b38cd788e6e3d9b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_INTERFACE_PUBLICATION_AUDIT.md",
+        "sha": "c29d58fdc1244bb5e747288b1dbaac9e3504e101",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_INTERFACE_RESULT.md",
+        "sha": "f027b1c98a8f20032b835265aa651dfc1dc1bdbb",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_INTERFACE_SCOPE.md",
+        "sha": "606f9dda812764a01e84547417e94f86417498f1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_DEPENDENCIES.md",
+        "sha": "1f954715e39a3298ca26d236846c59438fb24f01",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_SCOPE.md",
+        "sha": "b36c9a5b9ca38ab14b79c5dff1690af3652db75f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_SELECTION_ATTEMPT.md",
+        "sha": "6bf12e3eeb02ed077c626f446e002a56add726a8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_SELECTION_ATTEMPT_REVIEW.md",
+        "sha": "c9a336b5e6fd178bb0a88d9a6cd5c4db74fd6365",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NESTED_RECORD_PROBE.md",
+        "sha": "970501974b4986d265f05f0754e90b13d54ee633",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NESTED_RECORD_REALIZATION_SCREEN.md",
+        "sha": "05e38924d91d6f75dead62b892aa2256cc4fcfef",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NESTED_RECORD_REVIEW.md",
+        "sha": "bdc7871b9a5cfa2285a744827df1597aafd633d9",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NONUNIFORM_RESERVE_CLOSEOUT.md",
+        "sha": "c018d7b0dfaf36333581aeae1281a8eb2f057e7a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NONUNIFORM_RESERVE_PUBLICATION_AUDIT.md",
+        "sha": "9d6047ff2b636bac166f44d06a510586975eeb31",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NONUNIFORM_RESERVE_RECONCILIATION.md",
+        "sha": "ba18c7296e9490225a8f67245c787419f468df49",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NONUNIFORM_RESERVE_REPORT.md",
+        "sha": "cae34f66e08244b054c816e3ea70d63468886c17",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NONUNIFORM_RESERVE_RESULT.md",
+        "sha": "5a30eb1687cb96427f537fc448f7fe88fcff62ff",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NONUNIFORM_RESERVE_REVIEW.md",
+        "sha": "560d5cbb019189bbffae7b846941168169fedb26",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_ORIGIN_REENTRY_DECISION.md",
+        "sha": "a02cd7de6dd883d44ca3cd03b3bb0b15d84a35cd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_ACCEPTED_REVIEW.md",
+        "sha": "a783d305f573f83cc995f19f65b906d8145d505b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_AUDIT.md",
+        "sha": "05765d4c2c55a6db88f764bf5be1d84ea7981848",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_CLOSEOUT.md",
+        "sha": "6f8e6dffb1660fe2c0591085d0aa5b35f3d3e42f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_PUBLICATION_AUDIT.md",
+        "sha": "94d10c13910bba512c098c73d706f57e7ff82786",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REPORTING_CLARIFICATION.md",
+        "sha": "8aadb1621dd2674db57a5be7624c652b70504911",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_RESULT.md",
+        "sha": "d5863ca909cb98014c231e6c74d9c53e5cedcf47",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED.md",
+        "sha": "046496a3cd31a53d6f9544b02ffb0fdea38643e4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2.md",
+        "sha": "f24d58ce087375bd3da174a05f5584f1bbdd2195",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED2_ACCEPTED_REVIEW.json",
+        "sha": "fa4deec6736888af643ad1ea9a4439b80437a878",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_REVISED3.md",
+        "sha": "f24d58ce087375bd3da174a05f5584f1bbdd2195",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PARTIAL_SEED_SCOPE.md",
+        "sha": "cb955266893955d858f4e3423484c845c5fa3f77",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md",
+        "sha": "878e6c4b590a0dd64244d36755d70b080e08928d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PHYSICAL_FRONTIER_REVIEW.md",
+        "sha": "39c34bd6a435b599d41eaa1f497da69e8a535357",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PIPELINE_ACCEPTED_REVIEW.md",
+        "sha": "25b492b8263cd0b6dc513b2327ac27d994f477ed",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PIPELINE_CLOSEOUT.md",
+        "sha": "d104d55cbee310e9b7148e66fc38f1809b6976a3",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PIPELINE_PUBLICATION_AUDIT.md",
+        "sha": "b07f912e19f049c4c36aa0e1bdc6246d05b05090",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PIPELINE_RESULT.md",
+        "sha": "e359ef441c73758e53f95c55b697878e686e9ef8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PIPELINE_SCOPE.md",
+        "sha": "1b6636591f4e50f5831b15323ce5fb5908dbbd5b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PRIVATE_COVER_CLOSEOUT.md",
+        "sha": "45edbb46478c905a0f66f564d8d182e4e9963066",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PRIVATE_COVER_INDEPENDENT_READBACK.md",
+        "sha": "ae390469280fcdad356e41b9ab3b986cc8c0dc41",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PRIVATE_COVER_PUBLICATION_AUDIT.md",
+        "sha": "5ceef55589afeecef12085a889664aebd7bf2edc",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PRIVATE_COVER_RECONCILIATION.md",
+        "sha": "1587221f60e1300ccc8d5f88350fb01af990571b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PRIVATE_COVER_REPORT.md",
+        "sha": "0662f33d49f7c1d26b8b94e624c133874ed83214",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PRIVATE_COVER_RESULT.md",
+        "sha": "e7da24e16aa99495e2598f998bd6853641c634a9",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PRIVATE_COVER_REVIEW.md",
+        "sha": "eadb20063da37d59992f84b869a1367affacd4fe",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PRUNING_INTERACTION_ATTEMPT.md",
+        "sha": "865baf469789c1a4b83b2b271abd348bf4e083ed",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PRUNING_RECORD_BRIDGE.md",
+        "sha": "1ab142f32390545b4617c94edd2151da8c78117e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_QUANTUM_BRIDGE_SCREEN.md",
+        "sha": "2aa2801088c6c238700282dce71815d2a644cbdc",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_REACTIVE_ACCEPTED_REVIEW.md",
+        "sha": "cd3e50a11c39c39568db2ad093c3306b98b68f6c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_REACTIVE_CLOSEOUT.md",
+        "sha": "dd115c6616db4b6c1ba99bb680c69a059d6b5cf3",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_REACTIVE_PUBLICATION_AUDIT.md",
+        "sha": "a7f08a134326a21ab4389c0a278880aeb928c392",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_REACTIVE_RESULT.md",
+        "sha": "28e765fb178b5e0f758b1360147b9dd123acbb49",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_REACTIVE_SCOPE.md",
+        "sha": "72674f605a8b01ef484c3715f0f07e6e127b04e0",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RECONCILIATION_NEXT_GATE.md",
+        "sha": "9150527420786450ab2aab4481d7d998b5211896",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RECORD_CONVERSION_CLOSEOUT.md",
+        "sha": "5eefc86b02d3522edfe9574b67a0e3f4066434bd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RECORD_CONVERSION_REPORT.md",
+        "sha": "4b2cd768f4a15b51a514c80cd63f767782b6646e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RECORD_CONVERSION_RESULT.md",
+        "sha": "b6a03d8887fd4f55e8cd6c17684a9d76a14509a1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RECORD_CONVERSION_SCOPE.md",
+        "sha": "43127305c55c896925c8f8da2deaa47080c66c58",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RELATIVE_EXCHANGE_ATTEMPT.md",
+        "sha": "48c3d6f6a66f7b29dee1dc74ecb70eda2195912f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RELATIVE_EXCHANGE_REVIEW.md",
+        "sha": "3a5119164271283d4c3ebb072c6ad73b10fd48e4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RENEWABLE_HANDOFF_ACCEPTED_REVIEW.md",
+        "sha": "3a12ef1c3576122eadc74a4ece18ec767a626d67",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RENEWABLE_HANDOFF_CLOSEOUT.md",
+        "sha": "5cbafdef9c800eeba6692028e15b5ad57356a6e1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RENEWABLE_HANDOFF_PUBLICATION_AUDIT.md",
+        "sha": "6b43c839f160348cc7c5a54447dfd5288e4e5158",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RENEWABLE_HANDOFF_RESULT.md",
+        "sha": "724f6b0b540cde29fad6642a7e6fb44f0c6aa582",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RENEWABLE_HANDOFF_SCOPE.md",
+        "sha": "e926ebe9c3d0badd9c274dc7e03b05fa051528c5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RESERVE_ACTIVATION_ANALYTICAL_REVIEW.md",
+        "sha": "12956d1174975aac614ea5ab7229be6ca6e1b0c8",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RESERVE_ACTIVATION_CLOSEOUT.md",
+        "sha": "d0229c8eb297e22d28cfbb76939ddf6167685ecd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RESERVE_ACTIVATION_PUBLICATION_AUDIT.md",
+        "sha": "8739d1bb0021c078ac94cde190d2580962f53496",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RESERVE_ACTIVATION_RECONCILIATION.md",
+        "sha": "e3fbb95caece0f45ae473bd3484093c477b2889c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RESERVE_ACTIVATION_REPORT.md",
+        "sha": "3415d954f500af04c55d360f9dfa10b82e029e81",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RESERVE_ACTIVATION_RESULT.md",
+        "sha": "1129868b297ec35dcef8dc329df7237f180d0d09",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RESERVE_ACTIVATION_REVIEW.md",
+        "sha": "74a6dfab39649120aa15addd24fb5cccb3c18c66",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RESERVE_ACTIVATION_SCOPE.md",
+        "sha": "8e6a1f05b5f73311a7f5413a1ef5a56de08d931f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RETENTION_DECISION_ANALYSIS.md",
+        "sha": "abc180bec8d130b4a8e44b272f9d830b40453193",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_RETENTION_DECISION_REVIEW.md",
+        "sha": "40ef6610d4742bf04df85c4fa3a5dce232a79eca",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_ACCEPTED_REVIEW.md",
+        "sha": "cec92836aaec992ea68c20f358898d058fdbfd4a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_AUDIT.md",
+        "sha": "bf968756d799b8eba53738bf313807c493ee0c26",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_CLARIFICATION.md",
+        "sha": "59e7d87adf07ae6052678ef6ee465ba1d2aba07d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_CLOSEOUT.md",
+        "sha": "54d6388ccfd093f30a0cc4bcafd96ca1841444a4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_CONSOLIDATED.md",
+        "sha": "beee9ff5c35d53cda3a2b7fc7c16cdbd1319b839",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_COORDINATE_AUDIT.md",
+        "sha": "02c559c85fcad3782bdb177e6eab73165fae9f36",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_PRECLOSEOUT_LEDGER.md",
+        "sha": "54511ea74104e4f8ea447c8d8df482ae9297ada1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_PUBLICATION_AUDIT.md",
+        "sha": "922049f81bf93c1670993c496e17c257a56fbec6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_RESULT.md",
+        "sha": "453c216f41e4c11d76edcfba1ae43adf11ba1206",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_SCOPE.md",
+        "sha": "3077d89991d79efe75130defae76d2b4afef0c4f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SAFE_PROBE_VERDICT_ADJUDICATION.md",
+        "sha": "ee3c93c88ded1af4b6c24ac6ded8ea4fdbb758eb",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_HANDOVER_CLOSEOUT.md",
+        "sha": "24c3b1c2613ec0f58bf0a5e2668f1c3106a8d1e1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_HANDOVER_PUBLICATION_AUDIT.md",
+        "sha": "050150d3f1523210ba4c4d75a02b3408916fff6d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_HANDOVER_RECONCILIATION.md",
+        "sha": "9256b78f14c45a28f6ff0c24d58c296f5d1482e7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_HANDOVER_REPORT.md",
+        "sha": "fbd94f6cf6c3ea80ce36609975614e736ba91464",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_HANDOVER_RESULT.md",
+        "sha": "186ebd0e0c7101735f71a74cd17997252b922770",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_HANDOVER_REVIEW.md",
+        "sha": "f517f42672e52d1ecdb79e2ae491b263ab89f24b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_TRANSFER_ACCEPTED_REVIEW.md",
+        "sha": "5bc449f6b360a0552c46b0bee97a690faf49bc99",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_TRANSFER_CLOSEOUT.md",
+        "sha": "e7374b898c571ace5d4ea77348a8cc9d7c142965",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_TRANSFER_PUBLICATION_AUDIT.md",
+        "sha": "2872e9424d1a83556112c2679048266b101e1f5e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_TRANSFER_RESULT.md",
+        "sha": "979d9ae501f66e61c69bd7389fa42dc959419a57",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SATURATED_TRANSFER_SCOPE.md",
+        "sha": "eb6c056b26a40a360d1367702971a6e2084debba",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SHARED_WITNESS_ACCEPTED_REVIEW.md",
+        "sha": "9b072ac2e471f0dfbfa3b61dffba29bdf62b66d7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SHARED_WITNESS_CHANNEL_RESULT.md",
+        "sha": "58282f446a41bdaa42af65b0f2e89e645fe20c73",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SHARED_WITNESS_CHANNEL_SCOPE.md",
+        "sha": "6793e7dc79ab165a30dfa86221a5014411f691ab",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SHARED_WITNESS_CLOSEOUT.md",
+        "sha": "fe5d6101bb520f716f68c4df365423d2e131d761",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SHARED_WITNESS_PUBLICATION_AUDIT.md",
+        "sha": "434dc5de6b2699571a7c603c5a58b8a3d918d382",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SHARED_WITNESS_VERIFICATION_CONTRACT.md",
+        "sha": "dae7fc7729504fdf096c56a819892dde25cb0039",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SLACK_HANDOVER_CLOSEOUT.md",
+        "sha": "722a79a4e369364e949a6d2d4960e18b471633a1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SLACK_HANDOVER_PUBLICATION_AUDIT.md",
+        "sha": "8dc6e0efcb078be25e7ba58a9ed90cfdadfbfd7c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SLACK_HANDOVER_RECONCILIATION.md",
+        "sha": "3b43cf120c33297c25198e48181890cff7d230ca",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SLACK_HANDOVER_REPORT.md",
+        "sha": "d719f10cf78b07af1457da9e6bd788b24b18c17a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SLACK_HANDOVER_RESULT.md",
+        "sha": "c94241a55409fb99dcd3b779e7e59d79c6ea2389",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SLACK_HANDOVER_REVIEW.md",
+        "sha": "6bcf2186c25e284632c176f90e2af353553c14eb",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SOURCE_ESCAPE_ANALYTICAL_REVIEW.md",
+        "sha": "802fc0000c1357659126d77757bd09c7b6eca274",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SOURCE_ESCAPE_CLOSEOUT.md",
+        "sha": "e91e4dd93555d4c8ac3623b6151c6e322b8d3e21",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SOURCE_ESCAPE_PUBLICATION_AUDIT.md",
+        "sha": "490024ab5e24067627e8032fe90c264a6afa877b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SOURCE_ESCAPE_RECONCILIATION.md",
+        "sha": "321ac9dce74dfadf02cb864a54b9730c24f6b6e7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SOURCE_ESCAPE_REPORT.md",
+        "sha": "7ed593c843c084bd556c4b1964b77c8fa3220ad4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SOURCE_ESCAPE_RESULT.md",
+        "sha": "288138c1fabcce3e7f7b4a64fe54bd9d856e86c2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SOURCE_ESCAPE_REVIEW.md",
+        "sha": "c2e1740bcb7c17b1a1a1c9841f98f5465c9c5036",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SOURCE_ESCAPE_SCOPE.md",
+        "sha": "d8b739adc0adae09b3ab92626d8ed149a789cf48",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_SOURCE_RESPONSE_OBSTRUCTION_REGISTER.md",
+        "sha": "d21909acf0e65c4be53ce1d1fcbd999e560e8a79",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_STAR_CARRIER_CLOSEOUT.md",
+        "sha": "381c916bdab052959ae5a96830aa4f764b98b10c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_STAR_CARRIER_PUBLICATION_AUDIT.md",
+        "sha": "b8ae5d075684ca193f507a321b8b068c7df4c011",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_STAR_CARRIER_REPORT.md",
+        "sha": "7372615eb597b52d6c35e2d50fa6ea41e12633ee",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_STAR_CARRIER_RESULT.md",
+        "sha": "c33d3ffb52fae0a0bb6d0f765399f198b526aa4c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_STAR_CARRIER_SCOPE.md",
+        "sha": "eb9a890da2f1038b24588ac7f860e503b7a6207a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TARGET_BLIND_RESPONSE_GATE.md",
+        "sha": "478aecf3df5b4214209cdfd0e615d78c552a3bd0",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TARGET_BLIND_RESPONSE_REVIEW.md",
+        "sha": "05ce880f5846c974d51fe59b2319a59e7a859516",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TASK_RECORD_SUFFICIENCY.md",
+        "sha": "0adb3655373aadcd5504ebcfeb890a6d4ed489a5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TASK_RECORD_SUFFICIENCY_REVIEW.md",
+        "sha": "9ff588bfd1f0d3a0a910831203cdbf7d389fd9fb",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TRANSFER_ACCEPTED_REVIEW.md",
+        "sha": "cacb164b464e323f8a314258023142f1da125168",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TRANSFER_CLOSEOUT.md",
+        "sha": "3db607e1ec438bfac1f2bdd2f8052590688e2672",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TRANSFER_PUBLICATION_AUDIT.md",
+        "sha": "ba0a9198ee58adfded5f43411b710cad98d2ea82",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TRANSFER_RESULT.md",
+        "sha": "7e8b2ca25f64d94d1a9931b6f30d619914f5d441",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_TRANSFER_SCOPE.md",
+        "sha": "329f4398e936109de15cb11b68242e675088480a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_V1172_LEDGER_PAYLOAD_C2.md",
+        "sha": "da1a661b5faf172621124376ea81a12bec025612",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_VIEW_LOCAL_PRUNING_RESULT.md",
+        "sha": "74ffe6936fd2870b62b572fa98ecd6370520dd3c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_VISIBLE_ACCEPTED_REVIEW.md",
+        "sha": "4a8f40ad62a31dab3bef02cc2e22b7424d72aa68",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_VISIBLE_CLOSEOUT.md",
+        "sha": "98f24edf8dc8454026f9c817c29fb8406ecaf7a7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_VISIBLE_PUBLICATION_AUDIT.md",
+        "sha": "c4a917941552020b9980cda4a6aeaacc1e217507",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_VISIBLE_RESULT.md",
+        "sha": "47a5bd4cb157db1cc894b66027e98e8fc8f16fb6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_VISIBLE_SCOPE.md",
+        "sha": "2b38542e54dc90fab24f17a0e3539d7b17f1be9c",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_WEAK_TRACE_CLOSEOUT.md",
+        "sha": "22606cf7a4ad26aa51827036244c6d4d8bdce71f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_WEAK_TRACE_PUBLICATION_AUDIT.md",
+        "sha": "f76fe0222194630162c553be1f506807b5bc01ae",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_WEAK_TRACE_RECONCILIATION.md",
+        "sha": "b9a9ce1a12a888d511292ff2ad5157770fa2a386",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_WEAK_TRACE_REPORT.md",
+        "sha": "7fef1ab82a3edee51cad4d369bd8869c129bc6ce",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_WEAK_TRACE_RESULT.md",
+        "sha": "47f9a4fb21a6731cff0c392f37964000c63d63d5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_WEAK_TRACE_REVIEW.md",
+        "sha": "5e898d226db687b7d0e8d4f75bce0620c5d4d64f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_DEFICIT_ACCEPTED_REVIEW.md",
+        "sha": "8b9966fe6cb94ccc7645b0d7a50922fa8d911941",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_DEFICIT_CLOSEOUT.md",
+        "sha": "884714892fad5303d0e258d282703d7f294243c6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_DEFICIT_PUBLICATION_AUDIT.md",
+        "sha": "84c5451907b59814b9b673f604369f18a6185da7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_DEFICIT_RESULT.md",
+        "sha": "6913a378345a82c078ba1f82168356c2fd881b6e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_DEFICIT_SCOPE.md",
+        "sha": "2dabbb34955d4c5a3c050c41644aed548ab9444b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_ROLE_COMPLETE_ACCEPTED_REVIEW.md",
+        "sha": "6d312a757da5f8461db18865812a351214f561fd",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_ROLE_COMPLETE_CLOSEOUT.md",
+        "sha": "15732d807c47e5bd5d298222a5a561a9fdaf1d8a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_ROLE_COMPLETE_PUBLICATION_AUDIT.md",
+        "sha": "a7684d5caf508ed353ba6d9707f780a506517242",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_ROLE_COMPLETE_RESULT.md",
+        "sha": "7f496302dbd276b070daf6ec0951f1b751da3744",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_ROLE_COMPLETE_SCOPE.md",
+        "sha": "0407110cb8e027d8965503396f90f203b5753ae7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_SHARED_HOST_ACCEPTED_REVIEW.md",
+        "sha": "54dc9f4dedc322c00f1a3f10017a9ab3fa8cc884",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_SHARED_HOST_CLOSEOUT.md",
+        "sha": "cdd45f0ca3b4042e42fa8951426b0808d381bc65",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_SHARED_HOST_CONTINUATION.md",
+        "sha": "db58a1530ad06eddd882f8ff244ad088fc0fcc44",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_SHARED_HOST_PUBLICATION_AUDIT.md",
+        "sha": "5d2df2443b706c86e906751d8a74af1cf88bcc3b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_SHARED_HOST_RESULT.md",
+        "sha": "ad1566c7953fd6d4e0eebfe312ff5fc7f95ec12b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C4_SHARED_HOST_SCOPE.md",
+        "sha": "65d02c700be5f25f6e28e45047d7537f36fd8493",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/INDEPENDENT_AUXILIARY_PERMUTATION_REVIEW.md",
+        "sha": "ddca2881afcb66ba92a2cba134de6fc08ae396f3",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/INDEPENDENT_AUXILIARY_PUBLICATION_REVIEW.md",
+        "sha": "81d057ec9fabf2d333393570ea97e756fd2fcf45",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/JOINT_AUTO_EVENT_CYCLE_CLOSEOUT.md",
+        "sha": "15b1f5c47fd1d18045d46065d8dfd0b973ef4ed7",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/JOINT_AUTO_EVENT_CYCLE_RESULT.md",
+        "sha": "625f7311380bdcf5a39bae7c1786a3fb81ba0dd1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/JOINT_AUTO_EVENT_CYCLE_SCOPE.md",
+        "sha": "0bf73fbb41ff82f3ae632c4ff5ed20d06539e4a3",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/JOINT_RETAINED_CLOSEOUT.md",
+        "sha": "0cbff71a40dcba32b835b14e9a47f3342ef7ff99",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/JOINT_RETAINED_RESULT.md",
+        "sha": "8c52afaee9e26988e9c4114220420ef09aeb3f1d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/JOINT_RETAINED_SCOPE.md",
+        "sha": "a77d93afba40c816ac3dd0d5dba1584b44e82d05",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/MACRO_CYCLE_CLOSEOUT.md",
+        "sha": "4431d20e0ddb806f0119abbb8fa8455e3a4284d1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/MACRO_CYCLE_RESULT.md",
+        "sha": "2ad6def7ba53826528ae5f9cd194d749c51d5ed1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/MACRO_CYCLE_SCOPE.md",
+        "sha": "38745395cb900ff9d5eb12cab9be0e0706356096",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/NATIVE_EVENT_MILESTONE.md",
+        "sha": "46c27da7d5a049820ebde455b91863f071b621e5",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/PHASED_EVENT_INTERFACE_CLOSEOUT.md",
+        "sha": "0bd00128fbe715d830aaa9f69876276d4e019425",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/PHASED_EVENT_INTERFACE_RESULT.md",
+        "sha": "a3792fdd2109ab765630eb18edd438c8aaf24e5e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/PHASED_EVENT_INTERFACE_SCOPE.md",
+        "sha": "172b21cc4247f019433143aed51c6112f70e7dd1",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_DYNAMIC_RESIDUAL_CLOSEOUT.md",
+        "sha": "f14417f213ec47ac3442b338a31dd80ce3719b01",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_DYNAMIC_RESIDUAL_RESULT.md",
+        "sha": "61a764852a94f389a9c4a017bf45dfcbb70ef2a6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_DYNAMIC_RESIDUAL_SCOPE.md",
+        "sha": "f26ea86ac785de490ca78073770521840cbf68be",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_HANDOVER_CLOSEOUT.md",
+        "sha": "9eaae266cb81dbeb417da00e04daeb420a9f6095",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_HANDOVER_RESULT.md",
+        "sha": "e75300768d771aaadc2aadab59d063c9740c8b30",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_HANDOVER_SCOPE.md",
+        "sha": "dcb9f4e654b1cf3baec3bbb4391c1661b25a470b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_RICHER_FACTORIZATION_CLOSEOUT.md",
+        "sha": "e242f5dba1fd669cf1fd6cc960a89e3d1e516084",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_RICHER_FACTORIZATION_RESULT.md",
+        "sha": "0991ec47ed8b857f86d1e8b8c9704009fd66818d",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_RICHER_FACTORIZATION_SCOPE.md",
+        "sha": "08e3a01397edc95d910055a758270b25f037ed45",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_SELECTION_COMPLETION_CLOSEOUT.md",
+        "sha": "36069f170c8f7cd711995689f53feb9c69e596b4",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_SELECTION_COMPLETION_RESULT.md",
+        "sha": "9b1d63e5e82798049dace3ed08dd4cada592728b",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_SELECTION_COMPLETION_SCOPE.md",
+        "sha": "db927f8e256102d17d5e4c712c83c53f771924f2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/POST_A12_THEOREM_FIRST_SYNTHESIS.md",
+        "sha": "028576edaaa02de5063df12b3c77d1fa79c7132a",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/PRECEDENCE_INTERFACE_CLOSEOUT.md",
+        "sha": "73c9330bf2168459389ae7b236df700d923ba69f",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/PRECEDENCE_INTERFACE_RESULT.md",
+        "sha": "23ffec96ebef5f79d0c6fed78420782cc214b15e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/PRECEDENCE_INTERFACE_SCOPE.md",
+        "sha": "74e9c1aadc393d1cabf780a9c943b62eea245fa0",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/STATUS.md",
+        "sha": "da0a40a83c6acb89713867635b206146fd778647",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/THREE_PAYLOAD_PRECEDENCE_CLOSEOUT.md",
+        "sha": "7fe4b166997eb2dbe119da86edd8decfb986c40e",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/THREE_PAYLOAD_PRECEDENCE_RESULT.md",
+        "sha": "fd0543fe2126d4be868c4c8f358f21e24765cac2",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/THREE_PAYLOAD_PRECEDENCE_SCOPE.md",
+        "sha": "52b80444dd94721f9fdc2d9469b3c0c760977c36",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/adaptive_dependency_screen",
+        "sha": "4511ad43307ab26e0647be00f433f6dd83491fc3",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/admission",
+        "sha": "d7ac229df5ad13b4e290bb90fb7467078e4f1d0f",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/anchored_release",
+        "sha": "f210adf475766d182517647ffc3ca5ab5602b0c4",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/balance_readout_screen",
+        "sha": "e1f3fad0a849e9d9b5d59ba4cca849d8bb77a043",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/boundary_response_screen",
+        "sha": "cb86626e203d9bd591aeae585818432e19de2127",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/capacity_gap",
+        "sha": "f06ed22754cc1e18ee08b4f2b25a894237c43056",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/centered_response_clarification",
+        "sha": "ac31a3a1d93095464a9491b9644eba12ea836c47",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/chain_view_screen",
+        "sha": "515628feea04daffdc41b8b5d613b44b2aee56d0",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/complementary_record_screen",
+        "sha": "6f5652d9515d2557be0542667a09ce35b17282de",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/core_autonomy",
+        "sha": "b2c7a36d82facaff5157608b6def514be55e06fe",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/core_readout",
+        "sha": "3a2948da32e84487c92b6922cc4235779dde87cd",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/cover_static",
+        "sha": "a5a2f3ad8eb28f6ee08aae37801a98f35df88336",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/deficit_handoff",
+        "sha": "d3ef3b825af1495a912d96caaab546be894b6836",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/escape_obstruction",
+        "sha": "477d0bf3aafbe7bd7aa25e1f978bebe8c5889f62",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/event_origin_followup",
+        "sha": "2b9d39539c6a6a36fd663a7f7dfda83e4bfd647c",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/evidence",
+        "sha": "ad8f36ebf0a792dfbe27beed09e218a92180baba",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/fingerprint_lock",
+        "sha": "1ac3c7922d467c48b715dcf7a5cf2e6c94b0314a",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/finite_interaction_witness",
+        "sha": "d2ed3e11d6d21bcf63107134ac35b70f6a37cc0e",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_event_separation",
+        "sha": "eb5a070de6de8c0812131b1730efd7231decbe20",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_family",
+        "sha": "fd4cceb6c7213e34a695bfc662a634bf51aa2ae5",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/footprint",
+        "sha": "2f1fcf96f19c8ee7049fba903b48cc46c320b5d9",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/fresh_probe",
+        "sha": "e52f17aea3f2bc3004e1d7725dd175efdbe1779c",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/handover_graph",
+        "sha": "439f8dc2080145243a464389246d74467d7fccfb",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/instrument_access_boundary",
+        "sha": "c04a10cf9f973fc5976bc0d3cba6ae68e977c2c4",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/label_release",
+        "sha": "9d417c7617fbdf913364e892e6c034af7dbc6378",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/live_certificate_screen",
+        "sha": "1098abb9506519d0f132b7438f752f0992d18338",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/local_progress",
+        "sha": "b254df3d9d033cbd7c44d0b7a66585e05e99cf79",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/miss_event",
+        "sha": "9e6a1d3290fb703da9ea02837f2fdf49ecd19a19",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/miss_reconstruction",
+        "sha": "268ab39ef8a1b208db71c499e26f9662618b7882",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/moving_cover",
+        "sha": "a5a9f4a35144152d714303599c993ba63c485241",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_control_boundary",
+        "sha": "251bc6e15fd9235c7ecf32b5c7cdd1ec2ceea34a",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_generator_probe",
+        "sha": "a6573114b3eaf668055419324f1a00fb61f5c0b4",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/native_information_boundary",
+        "sha": "135c6cb67b3f3f42615a87dd82ee64a5b7d646cc",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/nonuniform_reserve",
+        "sha": "18258eabcebaa6c96912adc699c1b1d5fbe8d3ff",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pipeline_handoff",
+        "sha": "7410b7c015375d21e92940011ca47658f066c19a",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/private_cover",
+        "sha": "74e6f26abd49b9af66f4c876d83028ff5f3d677c",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_current_bridge",
+        "sha": "019a1aaeb7fba3e885a8903cca7c426d2e874601",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_interaction_attempt",
+        "sha": "6b060322ab9b9187772bcc420ceb65c31b6412ba",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_record_bridge",
+        "sha": "61db4602cbb8779fbbc94119c52b7367a62a63af",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_saturation",
+        "sha": "33ddc6613655ffb871dcc168d708180fae20d573",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/publication",
+        "sha": "4bc2bd81b768fc41be070182f370d50163e94cd5",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/reactive_handoff",
+        "sha": "2035a08f9745496dcc4f242d9d93bc1e3a31ce9b",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/record_compatibility_bridge",
+        "sha": "99d6737d66ff2f1e70ddaba2fb23253ace62b3fa",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/record_conversion",
+        "sha": "8680668f832276120cecdee6adec055814b8517a",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/record_transfer",
+        "sha": "e427c91aeacaa4ef947d47ac0885314564a40fd4",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/renewable_handoff",
+        "sha": "2e9f90bc929456f4c97ebffffeaedfe0f48a0f5c",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/reserve_activation",
+        "sha": "a599b2db856bce6384321dbff490c4ba794b6ef8",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/reviews",
+        "sha": "043a1f0021a10bc12b9207aa5a978fe9bbf0b98c",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/role_complete",
+        "sha": "87b2d50288e8eeccde549414f9a494269b258775",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/saturated_handover",
+        "sha": "3047d0ed21edbb68ddfda7456b7ed2f0f6715ba5",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/saturated_transfer",
+        "sha": "933741ea0b0f017420ba38c5ea5aef425be87227",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/shared_host",
+        "sha": "9ba274f18bddecd0567590f40b9816b485a66626",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/shared_witness",
+        "sha": "a41a3f7a7118ce58ac80b22eca5b3d751707c6fe",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/slack_handover",
+        "sha": "d140c0c1e20a4d3bd3f105b9168d37da0f8f3d0f",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/source_escape",
+        "sha": "4d4c969966f9d6cfadb4a084444cf42e37ee4369",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/star_carrier",
+        "sha": "41093160c8e7355632ad1d9e0c30ee49b4d656e6",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/test_core_probe_replay.py",
+        "sha": "a6a3691aed8ada7425f6ae1d0351e89668db6fd6",
+        "type": "blob",
+        "mode": "100644"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/verification",
+        "sha": "e22357419be3e60bfaefaefc9e43b98f3c4701d8",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/view_local_pruning",
+        "sha": "e3bb350fad71637f012b4e3c45b043fb486a7703",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/visible_buffer",
+        "sha": "6141a409aceeb26e7bff47746f27e6808e24cd2b",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/weak_trace",
+        "sha": "951c25e4371be12cee61e22c03d8dc4e159bab81",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/results",
+        "sha": "c5345286115d71990ea59759b3124b312d8ce85a",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/v13",
+        "sha": "d5139b65420ba0620b2276cfa0c6e1b4b383e35d",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/v14",
+        "sha": "201f7badc0e4d7c07c376f4cb1b0352e80ec103d",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/v15",
+        "sha": "bb729fc5aa93f3e0aa2e2f75614142b697a3c11e",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "Tmp",
+        "sha": "662c8e152836f726c45abf294f4fef45d4e23eee",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "docs",
+        "sha": "48dbdd27ac84e829eba167e0ecf0a6117a663947",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "retained-atlas-agent",
+        "sha": "56143cb744e418d3d0b468db57f8302e95a5ec86",
+        "type": "tree",
+        "mode": "040000"
+      },
+      {
+        "path": "tools",
+        "sha": "7e18922335b5ae074a5e213db6a7bdacce4ef604",
+        "type": "tree",
+        "mode": "040000"
+      }
+    ],
+    "method": "Complete nonrecursive tree comparison: recurse at every changed subtree, expand all new/deleted subtrees, record unchanged entry SHA/type/mode identities. No recursive listing or compare API truncation is relied upon."
+  },
+  "scientific_execution": "NONE; text/hash/provenance checks only",
+  "scientific_test_count_increment": 0,
+  "physical_milestone": "NOT_ACHIEVED",
+  "report_identity": {
+    "path": "PUBLICATION_AUDIT.md",
+    "bytes": 10678,
+    "sha256": "65bc5b60c487490cc43002c987a2d13485f617ff7f70e94a04512cedc86ced85",
+    "git_blob": "da481b39f7826efcfad5dc0ca791c3908753c0fb"
+  },
+  "evidence_self_identity_excluded": true,
+  "raw_evidence_locations": {
+    "parent_commit": "audit_work/parent_raw.json",
+    "scientific_commit": "audit_work/science_commit_raw.json",
+    "parent_source_responses": "audit_work/source01_raw.json through source07_raw.json",
+    "parent_source_bytes": "audit_work/source_bytes/",
+    "publication_responses": "audit_work/published01_raw.json through published07_raw.json",
+    "publication_bytes": "audit_work/published_bytes/",
+    "complete_nonrecursive_trees": "audit_work/tree_<sha>_raw.json",
+    "full_tree_difference": "audit_work/complete_tree_delta.json",
+    "stage1_record": "audit_work/stage1_evidence.json",
+    "stage2_record": "audit_work/stage2_checks.json"
+  }
+}

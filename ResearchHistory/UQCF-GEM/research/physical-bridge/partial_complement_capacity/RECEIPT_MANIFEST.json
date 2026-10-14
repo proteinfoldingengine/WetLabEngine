@@ -1,0 +1,91 @@
+{
+  "kind": "partial_complement_capacity_publication_receipt",
+  "scientific_commit": "1f839335192ba315ad6fdacbb4a54a37a46af611",
+  "scientific_tree": "6b27c224ce6cc8cfe6a3f577e97a7c10f7b3d840",
+  "auditor_scope": "Scientific commit only; later receipt publication is subject to author terminal readback",
+  "payloads": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/PUBLICATION_AUDIT.md",
+      "bytes": 10678,
+      "sha256": "65bc5b60c487490cc43002c987a2d13485f617ff7f70e94a04512cedc86ced85",
+      "git_blob": "da481b39f7826efcfad5dc0ca791c3908753c0fb"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/PUBLICATION_AUDIT_EVIDENCE.json",
+      "bytes": 150825,
+      "sha256": "bebab7683e70c85c797747e5f5cda1ef2af04f407264b6d388655e5ced9bbc43",
+      "git_blob": "1bd528e26957b48e83768c271aa8c4bb031118a3"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/AUTHOR_READBACK.json",
+      "bytes": 4429,
+      "sha256": "1ced853fa58acb75ddbe682d3bfb63ac65c7ecb4054751a5687cf1cba59c4ed4",
+      "git_blob": "f64e386928916ea01cd48b4b11ea44277628f8ef"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/PUBLICATION_RECEIPT.md",
+      "bytes": 3385,
+      "sha256": "a386b251f2f4886cb73bf48b72d2b5379969940fa5da63a9be76a0691c8e33ed",
+      "git_blob": "e63b2fe3d085e45380069ded1bc35769140ec003"
+    }
+  ],
+  "unchanged_scientific_payloads": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/RESULT.md",
+      "bytes": 16531,
+      "sha256": "0d9c24f46dedde29dd145319a8f16468166167bce84e7e5a405bb918cf2e49ce",
+      "git_blob": "d2b0c53a457976e470042d58ed51314f96d9b9c2"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/INDEX_APPEND.md",
+      "bytes": 2287,
+      "sha256": "c15fac967a122ac9bdb7dfaeb71c8a793622edb932315d35252e0548633f2257",
+      "git_blob": "58308ecd665e8e8e5cbe0d005f7ca7e9ca652315"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/source_packet.json",
+      "bytes": 117322,
+      "sha256": "fcd0ffafc1bc5acec7308bc6da53b4a5dc54225d8e19b153eeb741a07ce0f80b",
+      "git_blob": "332483db07b29f953063045fa28b1deacebae21e"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/source_identities.json",
+      "bytes": 2086,
+      "sha256": "9276200c16c87150245a720d980813cf64b4f53f012c52a749bb7c0b07eea642",
+      "git_blob": "322ac5c44559550c73e3347617552254b2960256"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/ANALYTICAL_REVIEW_RAW.md",
+      "bytes": 13681,
+      "sha256": "1a76824b3bcb58f754371e567f03f379a16f2969725485398214eff2bbfcdff9",
+      "git_blob": "598e50a37c25f98b7f87d377f70e17e8070e33cd"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "bytes": 60037,
+      "sha256": "20fdf259dce1500e2520f595ff1f6e9375e7bc556701557e24c214e8c05b40b5",
+      "git_blob": "2a30f6c6d39661c5f2dce0683eb01b2f65f3d038"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/partial_complement_capacity/PUBLICATION_MANIFEST.json",
+      "bytes": 2768,
+      "sha256": "78341401c632c5d48d39d2ba8fb4fc6bff46ce5eba5d28bf1996b00561422e2f",
+      "git_blob": "48dc385fb8c9402c33b87ca010ff59a83b2d0304"
+    }
+  ],
+  "monitor": {
+    "id": "6ac80a4ca10081918747aaa3b1262fdb",
+    "title": "C3 GitHub Verification",
+    "prompt_characters": 9971,
+    "is_enabled": true,
+    "schedule": "BEGIN:VEVENT\nDTSTART:20261008T212632Z\nRRULE:FREQ=HOURLY\nEND:VEVENT",
+    "default_timezone": "America/Phoenix",
+    "timing_mode": "condition_watch",
+    "updated_at": "2026-10-14T18:38:32.464802+00:00",
+    "verified_at_utc": "2026-10-14T18:38:49.508Z",
+    "change": "Prompt only; native-source, adaptive, pruning and complementary checkpoint summaries condensed; partial-access bound and specified-pair/native-interface limits added. Schedule, timezone and enabled state unchanged; no duplicate created."
+  },
+  "manifest_self_excluded": true,
+  "physical_milestone": "NOT_ACHIEVED",
+  "scientific_execution": "NONE"
+}
