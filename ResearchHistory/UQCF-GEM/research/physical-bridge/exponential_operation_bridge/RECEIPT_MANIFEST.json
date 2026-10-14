@@ -1,0 +1,94 @@
+{
+  "kind": "exponential_operation_bridge_publication_receipt",
+  "scientific_commit": "fc4944f043b5f41c8413c672857683d03c4302ae",
+  "scientific_tree": "80335c0a9202d1a78d8e7e321e5d9ef206e59a00",
+  "auditor_scope": "Scientific commit only; later receipt publication is subject to author terminal readback",
+  "payloads": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/PUBLICATION_AUDIT.md",
+      "bytes": 8654,
+      "sha256": "1d9ed290070be708b52b40254a713d91ccca7132b412cc5f00cb756c0b3ff133",
+      "git_blob": "cffd59bddda2703cc02e9b6e10324581abd3d165"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/PUBLICATION_AUDIT_EVIDENCE.json",
+      "bytes": 453773,
+      "sha256": "55a2d50be32ebafa2e03d9d5b225d5dc88cfd7ab7ed1820b19a0ba5fe5b5ac5b",
+      "git_blob": "4c51966d0922f802eb941073961a5542969af879"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/AUTHOR_READBACK.json",
+      "bytes": 4552,
+      "sha256": "960624a3114755125d251b59cd951f82f94670f51a642030b26b8dd43fcae8c6",
+      "git_blob": "00bf21631837c124c03dd4830ce79c8babf0e264"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/PUBLICATION_RECEIPT.md",
+      "bytes": 4193,
+      "sha256": "462bcf70856a4dd657244988ec5c662cbbf6499fd5cd666edcd9a1f8618c1079",
+      "git_blob": "e07c07c0a5b3755d2b1bbe2fcb0ffdc911e25fec"
+    }
+  ],
+  "unchanged_scientific_payloads": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/RESULT.md",
+      "bytes": 19248,
+      "sha256": "254ed95093baa2bef2e166d7194499d9070cce6b1bad6229755c8d1871a83026",
+      "git_blob": "27426646e87aa9aafd4ec3e80612bf4380df280d"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/INDEX_APPEND.md",
+      "bytes": 2405,
+      "sha256": "3107d7f6e097e1243b42f019d756d98360187349a4f2e851a1b5106c022bfa15",
+      "git_blob": "a61dfd85db9f01f27e4619697e07a67789f0ca1f"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/source_packet.json",
+      "bytes": 182636,
+      "sha256": "deead2849f7f8457f7959a39c98dfb142237822afb54476227badd544f1d3bfd",
+      "git_blob": "07dd2c65bce4af3d42ecf0931758a006ff3638f9"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/source_identities.json",
+      "bytes": 3270,
+      "sha256": "4fea8f54dcf6ab391a3e22c8eb7c7bbce66c0883d6b33ed68e9fd568fced5128",
+      "git_blob": "77e29bbe90de0ba5de12afed3f56d18d513b3154"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/ANALYTICAL_REVIEW_RAW.md",
+      "bytes": 27436,
+      "sha256": "c333fd512a34bbcf060c0891f6d63028b4919452858cfafae1f689f573e21958",
+      "git_blob": "8fbd33ac89268e482260b113e671e78dcc4eefa1"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "bytes": 64965,
+      "sha256": "aa8391cfc65b1c8fcd48457b59e7ad1deacc89cb20438ab5cb4cf136a4ec3f68",
+      "git_blob": "3a20a448c49f02c42c14b638510c1893966fdaee"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/PUBLICATION_MANIFEST.json",
+      "bytes": 2786,
+      "sha256": "cd448ecc8be8669f0bdc2846ee47fc6f476aa8282018314994bc61836b7c043b",
+      "git_blob": "627e6f495a81bae4ab7555b1102f90cfd1ccc4e3"
+    }
+  ],
+  "monitor": {
+    "id": "6ac80a4ca10081918747aaa3b1262fdb",
+    "title": "C3 GitHub Verification",
+    "prompt_length": 9972,
+    "prompt_exact_readback": true,
+    "schedule_title_timezone_enabled_timing_preserved": true,
+    "schedule": "BEGIN:VEVENT\nDTSTART:20261008T212632Z\nRRULE:FREQ=HOURLY\nEND:VEVENT",
+    "default_timezone": "America/Phoenix",
+    "is_enabled": true,
+    "timing_mode": "condition_watch",
+    "new_scientific_checkpoint": "fc4944f043b5f41c8413c672857683d03c4302ae",
+    "verified_at_utc": "2026-10-14T20:14:07.965Z",
+    "updated_at": "2026-10-14T20:14:07.216890+00:00",
+    "duplicate_created": false
+  },
+  "manifest_self_excluded": true,
+  "physical_milestone": "NOT_ACHIEVED",
+  "scientific_execution": "NONE"
+}
