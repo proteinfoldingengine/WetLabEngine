@@ -1,0 +1,691 @@
+{
+  "audit_kind": "independent_source_and_publication_consistency",
+  "auditor": "separately dispatched receiver_move_publication_audit agent",
+  "stage1_disposition": "PASS",
+  "stage2_disposition": "PASS",
+  "scientific_execution_performed": false,
+  "scientific_commit": "d6d9f758747d50acf718bc32b287939690dd0f25",
+  "scientific_tree": "0baa957684acf1cda868d3e73df5b7a3f814c72f",
+  "source_parent": "c63bc3ea9b92241fb96d52fe5e47dde16fd97c6b",
+  "source_parent_tree": "c0199b8527c14c44a8bd4496f705411369355d5b",
+  "sole_parent": "c63bc3ea9b92241fb96d52fe5e47dde16fd97c6b",
+  "parent_count": 1,
+  "publication_bundle_sha256": "f32fb9d4a14e1607b5cd15a54bfbad8fa5785ea207074ab8819091d6905c1f95",
+  "publication_bundle_bytes": 274632,
+  "blocking_findings": [],
+  "checks": {
+    "seven_unique_exact_bundle_remote_and_identity_paths": true,
+    "bundle_source_parent_and_tree": true,
+    "commit_sha": true,
+    "scientific_tree": true,
+    "sole_parent": true,
+    "all_six_tree_hashes_and_path_links": true,
+    "exact_tree_change_scope": true,
+    "compare_metadata": true,
+    "compare_seven_paths_and_statuses": true,
+    "all_seven_exact_publication_file_identities": true,
+    "stage1_pass": true,
+    "source_packet_unchanged_since_stage1": true,
+    "source_identities_unchanged_since_stage1": true,
+    "source_packet_parent_and_tree": true,
+    "ten_unique_source_paths": true,
+    "all_ten_published_sources_match_independent_originals": true,
+    "manifest_exactly_six_payloads_and_self_excluded": true,
+    "manifest_payload_identities": true,
+    "manifest_source_parent_and_tree": true,
+    "manifest_no_execution_and_no_milestone_claim": true,
+    "exact_append_only_index_update": true,
+    "four_final_hashes_bound_by_raw_review": true,
+    "expected_report_and_append_hashes": true,
+    "review_acceptance_and_scope": true,
+    "review_records_all_five_unit_band_coordinates": true,
+    "report_conditional_and_native_access_open": true,
+    "report_no_scientific_execution_or_stage_closure_claim": true,
+    "report_preserves_time_and_physical_boundaries": true,
+    "append_retains_conditional_scope_and_open_access": true
+  },
+  "published_files": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "bytes": 70679,
+      "sha256": "4df672e43c55642b10beb004b436893a046fab50e981bc927b9e5c1e76e0caf2",
+      "git_blob": "6e12bc0621056d625d67791ac3453b7199db07c2",
+      "remote_returned_blob": "6e12bc0621056d625d67791ac3453b7199db07c2",
+      "tree_blob": "6e12bc0621056d625d67791ac3453b7199db07c2",
+      "tree_size": 70679,
+      "exact_expected_bytes": true,
+      "declared_identity_matches": true,
+      "git_blob_matches_remote_and_tree": true,
+      "byte_length_matches_tree": true,
+      "tree_regular_file": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/ANALYTICAL_REVIEW_RAW.md",
+      "bytes": 15998,
+      "sha256": "9b97c2ed3e4710f21409759d8cdc02e85f6434e609c23e8d1edbcee56dc36b91",
+      "git_blob": "d3203da22b9cdc602db3d502f2db8e73773e67f8",
+      "remote_returned_blob": "d3203da22b9cdc602db3d502f2db8e73773e67f8",
+      "tree_blob": "d3203da22b9cdc602db3d502f2db8e73773e67f8",
+      "tree_size": 15998,
+      "exact_expected_bytes": true,
+      "declared_identity_matches": true,
+      "git_blob_matches_remote_and_tree": true,
+      "byte_length_matches_tree": true,
+      "tree_regular_file": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/INDEX_APPEND.md",
+      "bytes": 2267,
+      "sha256": "b32a0acc3dc04566fc6c504501447a7aacbfec0b8da424fbe115c25656e579d2",
+      "git_blob": "3473c8ad514e7628bc894a06929874b4a13f4332",
+      "remote_returned_blob": "3473c8ad514e7628bc894a06929874b4a13f4332",
+      "tree_blob": "3473c8ad514e7628bc894a06929874b4a13f4332",
+      "tree_size": 2267,
+      "exact_expected_bytes": true,
+      "declared_identity_matches": true,
+      "git_blob_matches_remote_and_tree": true,
+      "byte_length_matches_tree": true,
+      "tree_regular_file": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/PUBLICATION_MANIFEST.json",
+      "bytes": 2738,
+      "sha256": "95ba8621ea77d0644f8e22bcd7e62273d51bc8fd68ff1d253b6bae61689a9b25",
+      "git_blob": "25c6bc17f4e61ddeb50a9b9e7ca0f10c1be4368c",
+      "remote_returned_blob": "25c6bc17f4e61ddeb50a9b9e7ca0f10c1be4368c",
+      "tree_blob": "25c6bc17f4e61ddeb50a9b9e7ca0f10c1be4368c",
+      "tree_size": 2738,
+      "exact_expected_bytes": true,
+      "declared_identity_matches": true,
+      "git_blob_matches_remote_and_tree": true,
+      "byte_length_matches_tree": true,
+      "tree_regular_file": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/RESULT.md",
+      "bytes": 14856,
+      "sha256": "91ea3f0e5581cd7e95a05dd1e21afa1d946e4d58e9ca4f74bec8b9e3d089bde2",
+      "git_blob": "0371d4a8aa66ce02ffbda084ad5dde93f1ec1136",
+      "remote_returned_blob": "0371d4a8aa66ce02ffbda084ad5dde93f1ec1136",
+      "tree_blob": "0371d4a8aa66ce02ffbda084ad5dde93f1ec1136",
+      "tree_size": 14856,
+      "exact_expected_bytes": true,
+      "declared_identity_matches": true,
+      "git_blob_matches_remote_and_tree": true,
+      "byte_length_matches_tree": true,
+      "tree_regular_file": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/source_identities.json",
+      "bytes": 2935,
+      "sha256": "aa38332fadccf04b1cb8f33681836347a30289ec23ded32d59b5b3d7c216465a",
+      "git_blob": "28f419a40eaf90dab2537eba05a45763d1fff5ab",
+      "remote_returned_blob": "28f419a40eaf90dab2537eba05a45763d1fff5ab",
+      "tree_blob": "28f419a40eaf90dab2537eba05a45763d1fff5ab",
+      "tree_size": 2935,
+      "exact_expected_bytes": true,
+      "declared_identity_matches": true,
+      "git_blob_matches_remote_and_tree": true,
+      "byte_length_matches_tree": true,
+      "tree_regular_file": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/source_packet.json",
+      "bytes": 159491,
+      "sha256": "dccb60daf0b348551fdf3400f0a7c14f001da8b92225a74ff7d0a195a2e8e9f5",
+      "git_blob": "f2814aa4e62e8c17b176343c50982f56e3f950c5",
+      "remote_returned_blob": "f2814aa4e62e8c17b176343c50982f56e3f950c5",
+      "tree_blob": "f2814aa4e62e8c17b176343c50982f56e3f950c5",
+      "tree_size": 159491,
+      "exact_expected_bytes": true,
+      "declared_identity_matches": true,
+      "git_blob_matches_remote_and_tree": true,
+      "byte_length_matches_tree": true,
+      "tree_regular_file": true
+    }
+  ],
+  "exact_changed_paths_from_tree_comparison": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "status": "modified",
+      "old_blob": "e298db8b33319fbf37ae368fe0b64653acdec7e1",
+      "new_blob": "6e12bc0621056d625d67791ac3453b7199db07c2",
+      "old_mode": "100644",
+      "new_mode": "100644"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/ANALYTICAL_REVIEW_RAW.md",
+      "status": "added",
+      "old_blob": null,
+      "new_blob": "d3203da22b9cdc602db3d502f2db8e73773e67f8",
+      "old_mode": null,
+      "new_mode": "100644"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/INDEX_APPEND.md",
+      "status": "added",
+      "old_blob": null,
+      "new_blob": "3473c8ad514e7628bc894a06929874b4a13f4332",
+      "old_mode": null,
+      "new_mode": "100644"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/PUBLICATION_MANIFEST.json",
+      "status": "added",
+      "old_blob": null,
+      "new_blob": "25c6bc17f4e61ddeb50a9b9e7ca0f10c1be4368c",
+      "old_mode": null,
+      "new_mode": "100644"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/RESULT.md",
+      "status": "added",
+      "old_blob": null,
+      "new_blob": "0371d4a8aa66ce02ffbda084ad5dde93f1ec1136",
+      "old_mode": null,
+      "new_mode": "100644"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/source_identities.json",
+      "status": "added",
+      "old_blob": null,
+      "new_blob": "28f419a40eaf90dab2537eba05a45763d1fff5ab",
+      "old_mode": null,
+      "new_mode": "100644"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/source_packet.json",
+      "status": "added",
+      "old_blob": null,
+      "new_blob": "f2814aa4e62e8c17b176343c50982f56e3f950c5",
+      "old_mode": null,
+      "new_mode": "100644"
+    }
+  ],
+  "scientific_tree_chain": [
+    {
+      "path": "",
+      "tree": "0baa957684acf1cda868d3e73df5b7a3f814c72f",
+      "recomputed_tree": "0baa957684acf1cda868d3e73df5b7a3f814c72f",
+      "hash_matches": true,
+      "not_truncated": true,
+      "chained_from_parent": true
+    },
+    {
+      "path": "ResearchHistory",
+      "tree": "217c51f0d12dcc9ac4cdaa227bb99aa851bbebc7",
+      "recomputed_tree": "217c51f0d12dcc9ac4cdaa227bb99aa851bbebc7",
+      "hash_matches": true,
+      "not_truncated": true,
+      "chained_from_parent": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM",
+      "tree": "3365d1f330c5e226a0a6f3c631b08d8cc03fa52b",
+      "recomputed_tree": "3365d1f330c5e226a0a6f3c631b08d8cc03fa52b",
+      "hash_matches": true,
+      "not_truncated": true,
+      "chained_from_parent": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research",
+      "tree": "7d9768919a93d8def0fefe259fb3779c0faa5e54",
+      "recomputed_tree": "7d9768919a93d8def0fefe259fb3779c0faa5e54",
+      "hash_matches": true,
+      "not_truncated": true,
+      "chained_from_parent": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge",
+      "tree": "f6e427b49ea83108c696c40d8d30f1e8956e3c52",
+      "recomputed_tree": "f6e427b49ea83108c696c40d8d30f1e8956e3c52",
+      "hash_matches": true,
+      "not_truncated": true,
+      "chained_from_parent": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface",
+      "tree": "654cb2622f01b905d31ee37c9fd53bf36a184962",
+      "recomputed_tree": "654cb2622f01b905d31ee37c9fd53bf36a184962",
+      "hash_matches": true,
+      "not_truncated": true,
+      "chained_from_parent": true
+    }
+  ],
+  "source_snapshot_stage1_evidence": {
+    "audit_scope": "Independent original-source acquisition and byte/identity/parent-tree comparison only. No scientific proof validation, numerical enumeration, historical replay or recertification, workflow execution, or physical derivation. Native milestone not achieved.",
+    "auditor": "receiver_move_publication_audit",
+    "stage": "1_source_snapshot",
+    "disposition": "PASS",
+    "repository": "proteinfoldingengine/WetLabEngine",
+    "source_parent": "c63bc3ea9b92241fb96d52fe5e47dde16fd97c6b",
+    "source_tree": "c0199b8527c14c44a8bd4496f705411369355d5b",
+    "parent_checks": {
+      "commit_sha_matches": true,
+      "commit_tree_matches": true,
+      "source_paths_exact_and_unique": true
+    },
+    "sources": [
+      {
+        "path": "ResearchHistory/UQCF-GEM/AGENTS.md",
+        "bytes": 2368,
+        "sha256": "56d5ffb2d1f8f0d1a1660b6cc5b31ebae92b59fb48b547e7d47ea13f0bafdee0",
+        "git_blob": "e5407215a81b914fc02f5c107333a2f0261634ee",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md",
+        "bytes": 3615,
+        "sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+        "git_blob": "ebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_INFORMATION_BOUNDARY.md",
+        "bytes": 18046,
+        "sha256": "08751f2e1b3884f6b22be8f612eb798e7770900385fb8bc0dd740ec18d3dc301",
+        "git_blob": "2e601ab897a943b6eecc36c353e213ed5d1a4660",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_event_separation/RESULT.md",
+        "bytes": 20160,
+        "sha256": "599ce7940eda4994c82b99ba4b68a8187f301012a430836f4a1c66874918b780",
+        "git_blob": "6f8defb85c5768f9b06a45dc237db04b3151dd47",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/own_view_receiver_boundary/RESULT.md",
+        "bytes": 8588,
+        "sha256": "6c364833647a217db89c5b896cd08a9ce807781d82e9a8f69c04ba43752e1048",
+        "git_blob": "05330fe097054a1d794ca7edf9d6ad6a531b2a52",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_DEPENDENCIES.md",
+        "bytes": 6955,
+        "sha256": "5a284aef8be86249c5fb9b95f3a7939f0e8784c312599a77cf670760d732b5ad",
+        "git_blob": "1f954715e39a3298ca26d236846c59438fb24f01",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NESTED_RECORD_REALIZATION_SCREEN.md",
+        "bytes": 7230,
+        "sha256": "bce6bb22066e9f48436b30c3f7fae56d984bac1658114a31733242eb5345b228",
+        "git_blob": "05e38924d91d6f75dead62b892aa2256cc4fcfef",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/NATIVE_EVENT_MILESTONE.md",
+        "bytes": 12865,
+        "sha256": "7c848e15bdcafe2a908268237b5afaf5ffe0f39f28c2776fd8a23efafc161c0d",
+        "git_blob": "46c27da7d5a049820ebde455b91863f071b621e5",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md",
+        "bytes": 5170,
+        "sha256": "3362d45ae65a16e9326b0651cc19e46611f5c920fb1b1aa2f520558825b0cc60",
+        "git_blob": "878e6c4b590a0dd64244d36755d70b080e08928d",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+        "bytes": 68412,
+        "sha256": "eacad934de3e47775c8e136c8fbd279b83f3005526ecf30bf6cd28f6031d0486",
+        "git_blob": "e298db8b33319fbf37ae368fe0b64653acdec7e1",
+        "content_exact": true,
+        "returned_sha_matches_packet": true,
+        "computed_blob_matches_returned": true,
+        "computed_identity_matches_supplied": true,
+        "tree_blob_matches": true,
+        "tree_size_matches": true,
+        "tree_mode": "100644",
+        "tree_type": "blob"
+      }
+    ],
+    "tree_chain": [
+      {
+        "path": "",
+        "tree": "c0199b8527c14c44a8bd4496f705411369355d5b",
+        "computed_tree": "c0199b8527c14c44a8bd4496f705411369355d5b",
+        "hash_matches": true,
+        "chained_from_parent": true,
+        "not_truncated": true
+      },
+      {
+        "path": "ResearchHistory",
+        "tree": "dcb1f1e9d052579aa6a0084b6db2137dd046ceb1",
+        "computed_tree": "dcb1f1e9d052579aa6a0084b6db2137dd046ceb1",
+        "hash_matches": true,
+        "chained_from_parent": true,
+        "not_truncated": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM",
+        "tree": "cd8feda755342754caa7a0402004a8df22bff26d",
+        "computed_tree": "cd8feda755342754caa7a0402004a8df22bff26d",
+        "hash_matches": true,
+        "chained_from_parent": true,
+        "not_truncated": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/demos",
+        "tree": "18991987f5a962da43f98fb08ac1adad9a08c330",
+        "computed_tree": "18991987f5a962da43f98fb08ac1adad9a08c330",
+        "hash_matches": true,
+        "chained_from_parent": true,
+        "not_truncated": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary",
+        "tree": "9750dad16406b49c6e5c2825a2aff559deed7575",
+        "computed_tree": "9750dad16406b49c6e5c2825a2aff559deed7575",
+        "hash_matches": true,
+        "chained_from_parent": true,
+        "not_truncated": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research",
+        "tree": "88a02e9a731212ecbfcb756ea82e48c4d263002e",
+        "computed_tree": "88a02e9a731212ecbfcb756ea82e48c4d263002e",
+        "hash_matches": true,
+        "chained_from_parent": true,
+        "not_truncated": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge",
+        "tree": "598cff9e7fa251ec724ce4801b9c4f9689967284",
+        "computed_tree": "598cff9e7fa251ec724ce4801b9c4f9689967284",
+        "hash_matches": true,
+        "chained_from_parent": true,
+        "not_truncated": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_event_separation",
+        "tree": "eb5a070de6de8c0812131b1730efd7231decbe20",
+        "computed_tree": "eb5a070de6de8c0812131b1730efd7231decbe20",
+        "hash_matches": true,
+        "chained_from_parent": true,
+        "not_truncated": true
+      },
+      {
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/own_view_receiver_boundary",
+        "tree": "e4b96239f3b84eb97042db0533f587c4746909ea",
+        "computed_tree": "e4b96239f3b84eb97042db0533f587c4746909ea",
+        "hash_matches": true,
+        "chained_from_parent": true,
+        "not_truncated": true
+      }
+    ],
+    "source_packet_identity": {
+      "bytes": 159491,
+      "sha256": "dccb60daf0b348551fdf3400f0a7c14f001da8b92225a74ff7d0a195a2e8e9f5"
+    },
+    "source_identities_identity": {
+      "bytes": 2935,
+      "sha256": "aa38332fadccf04b1cb8f33681836347a30289ec23ded32d59b5b3d7c216465a"
+    },
+    "acquisition_note": "An initial recursive root-tree query returned Transport closed. No result from it was used. Nine non-recursive Git tree reads succeeded and their canonical Git object hashes and path links were independently recomputed. All ten full originals were independently fetched at immutable source parent.",
+    "discrepancies": [],
+    "stage2_status": "PENDING immutable scientific publication SHA and final seven-file bundle"
+  },
+  "published_source_checks": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/AGENTS.md",
+      "bytes": 2368,
+      "sha256": "56d5ffb2d1f8f0d1a1660b6cc5b31ebae92b59fb48b547e7d47ea13f0bafdee0",
+      "git_blob": "e5407215a81b914fc02f5c107333a2f0261634ee",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md",
+      "bytes": 3615,
+      "sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "git_blob": "ebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_INFORMATION_BOUNDARY.md",
+      "bytes": 18046,
+      "sha256": "08751f2e1b3884f6b22be8f612eb798e7770900385fb8bc0dd740ec18d3dc301",
+      "git_blob": "2e601ab897a943b6eecc36c353e213ed5d1a4660",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_event_separation/RESULT.md",
+      "bytes": 20160,
+      "sha256": "599ce7940eda4994c82b99ba4b68a8187f301012a430836f4a1c66874918b780",
+      "git_blob": "6f8defb85c5768f9b06a45dc237db04b3151dd47",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/own_view_receiver_boundary/RESULT.md",
+      "bytes": 8588,
+      "sha256": "6c364833647a217db89c5b896cd08a9ce807781d82e9a8f69c04ba43752e1048",
+      "git_blob": "05330fe097054a1d794ca7edf9d6ad6a531b2a52",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_DEPENDENCIES.md",
+      "bytes": 6955,
+      "sha256": "5a284aef8be86249c5fb9b95f3a7939f0e8784c312599a77cf670760d732b5ad",
+      "git_blob": "1f954715e39a3298ca26d236846c59438fb24f01",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NESTED_RECORD_REALIZATION_SCREEN.md",
+      "bytes": 7230,
+      "sha256": "bce6bb22066e9f48436b30c3f7fae56d984bac1658114a31733242eb5345b228",
+      "git_blob": "05e38924d91d6f75dead62b892aa2256cc4fcfef",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/NATIVE_EVENT_MILESTONE.md",
+      "bytes": 12865,
+      "sha256": "7c848e15bdcafe2a908268237b5afaf5ffe0f39f28c2776fd8a23efafc161c0d",
+      "git_blob": "46c27da7d5a049820ebde455b91863f071b621e5",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md",
+      "bytes": 5170,
+      "sha256": "3362d45ae65a16e9326b0651cc19e46611f5c920fb1b1aa2f520558825b0cc60",
+      "git_blob": "878e6c4b590a0dd64244d36755d70b080e08928d",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "bytes": 68412,
+      "sha256": "eacad934de3e47775c8e136c8fbd279b83f3005526ecf30bf6cd28f6031d0486",
+      "git_blob": "e298db8b33319fbf37ae368fe0b64653acdec7e1",
+      "published_packet_exact_original": true,
+      "published_packet_blob_matches": true,
+      "published_identity_matches_original": true
+    }
+  ],
+  "index_update": {
+    "parent": {
+      "bytes": 68412,
+      "sha256": "eacad934de3e47775c8e136c8fbd279b83f3005526ecf30bf6cd28f6031d0486",
+      "git_blob": "e298db8b33319fbf37ae368fe0b64653acdec7e1"
+    },
+    "append": {
+      "bytes": 2267,
+      "sha256": "b32a0acc3dc04566fc6c504501447a7aacbfec0b8da424fbe115c25656e579d2",
+      "git_blob": "3473c8ad514e7628bc894a06929874b4a13f4332"
+    },
+    "published": {
+      "bytes": 70679,
+      "sha256": "4df672e43c55642b10beb004b436893a046fab50e981bc927b9e5c1e76e0caf2",
+      "git_blob": "6e12bc0621056d625d67791ac3453b7199db07c2"
+    },
+    "exact_parent_plus_append": true,
+    "expected_lengths": true,
+    "manifest_base_matches": true,
+    "manifest_append_matches": true,
+    "manifest_path_and_method": true
+  },
+  "analytical_review_bindings": [
+    {
+      "object": "RESULT.md",
+      "sha256": "91ea3f0e5581cd7e95a05dd1e21afa1d946e4d58e9ca4f74bec8b9e3d089bde2",
+      "exact_review_table_row": true
+    },
+    {
+      "object": "INDEX_APPEND.md",
+      "sha256": "b32a0acc3dc04566fc6c504501447a7aacbfec0b8da424fbe115c25656e579d2",
+      "exact_review_table_row": true
+    },
+    {
+      "object": "source_packet.json",
+      "sha256": "dccb60daf0b348551fdf3400f0a7c14f001da8b92225a74ff7d0a195a2e8e9f5",
+      "exact_review_table_row": true
+    },
+    {
+      "object": "source_identities.json",
+      "sha256": "aa38332fadccf04b1cb8f33681836347a30289ec23ded32d59b5b3d7c216465a",
+      "exact_review_table_row": true
+    }
+  ],
+  "manifest": {
+    "identity": {
+      "bytes": 2738,
+      "sha256": "95ba8621ea77d0644f8e22bcd7e62273d51bc8fd68ff1d253b6bae61689a9b25",
+      "git_blob": "25c6bc17f4e61ddeb50a9b9e7ca0f10c1be4368c"
+    },
+    "payload_count": 6,
+    "self_excluded": true
+  },
+  "scope": {
+    "included": [
+      "Independent immutable-parent retrieval of all ten source originals and canonical tree/path verification",
+      "Independent immutable-scientific-commit retrieval of all seven publication files",
+      "Exact text bytes, lengths, SHA256, Git blob and canonical Git tree checks",
+      "Exactly six additions and one append-only index modification; six-payload self-excluded manifest",
+      "Raw analytical-review hash binding and declared claim boundaries"
+    ],
+    "excluded": [
+      "Scientific proof or physical-derivation certification",
+      "Scientific execution, numerical enumeration, simulation or numerical campaigns",
+      "Historical scientific replay, inherited tests, workflows, stage recertification or main merge",
+      "Any later receipt commit, five-file receipt, terminal author readback or later branch state"
+    ],
+    "native_milestone": "NOT_ACHIEVED",
+    "analytical_review": "Independent reviewer records ACCEPT for the exact hash-bound conditional classification and candidate assessment; this auditor checks that binding and stated scope, not the derivation.",
+    "execution_statement": "Only text/JSON parsing, cryptographic hashes and Git tree/path comparisons were executed by this auditor. Report and manifest no-execution statements were checked as declarations, not as a forensic claim about unrelated activity."
+  },
+  "evidence_artifacts": {
+    "STAGE1_EVIDENCE.json": {
+      "bytes": 9733,
+      "sha256": "3cfb05045a345ebe25a006f45997087ed6ef2e37d954bea343b443b90612c8b0",
+      "git_blob": "5591169f34aa546a6b3cac104e92df497d13a199"
+    },
+    "independent_source_packet.json": {
+      "bytes": 159622,
+      "sha256": "0fd1d1c4868ec1d8e7cabdc667977ca3d68442a34b543949b32359579d82dbd7",
+      "git_blob": "49a12b7dcf52af5af6dac9039c29df75fbd58422"
+    },
+    "stage1_tree_responses.json": {
+      "bytes": 662077,
+      "sha256": "0d60b553946a025fc2c1892864e30d86bb73545f414ba36aa394a2c01ae048a3",
+      "git_blob": "a516c97bcfeadcc6aa6249b9744cc44ab8fe02e5"
+    },
+    "stage1_raw_connector_responses.json": {
+      "bytes": 171744,
+      "sha256": "8afaeaa8d78efa1b12382f173dc4cb1d3b865307457af57e7d6adc510885b0fc",
+      "git_blob": "4fd121785aff513385586dba9677acc0af0db5e6"
+    },
+    "independent_published_packet.json": {
+      "bytes": 275162,
+      "sha256": "31c53bc2ca5b6c662571c8b18186640ca66ab176cb4d6a495a34a3696cf9b456",
+      "git_blob": "ca28c3d7478a8f021bb753b70bdfe235929d9559"
+    },
+    "stage2_raw_connector_responses.json": {
+      "bytes": 799549,
+      "sha256": "241ee71610a89e61b2f011148f4dfba7935434e38a02ec80880f3b52a3a8fdb8",
+      "git_blob": "99cadd0e6013c6bd6e3a9f8302bc44f8cd0daa79"
+    }
+  }
+}
