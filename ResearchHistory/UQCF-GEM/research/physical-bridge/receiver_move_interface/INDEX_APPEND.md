@@ -1,0 +1,11 @@
+
+## 2026-10-14 — Receiver access through native move admissibility
+
+Source parent: `c63bc3ea9b92241fb96d52fe5e47dde16fd97c6b`. [Assessment](receiver_move_interface/RESULT.md).
+
+The next candidate was whether the first-response internal a-incidence change can become readable by altering another index's available native moves. The exact bare nested-support relation gives a sharper answer: for a receiver coalition C, its own views plus the set of global leaves covered by at least one outside index completely determine its atomic-command interface. Equal data remain equivalent through every finite coalition-command history. Conversely, different outside leaf coverage can be separated by a finite legal leaf-deletion sequence and a final legality query, if that full readable interface is supplied.
+
+Every permitted first-response a-contraction fixes all global-leaf incidences and the other views. Its before/after states therefore have identical receiver-command interfaces, including source-one outputs that change R from zero to one. The original two source preparations can already differ on this stronger interface before the event; the explicit b_2 leaf control prevents miscounting that prior distinction as acquisition. A proper global-leaf source deletion supplies a positive menu-change control. Another control uses the inherited unit-band guard: two fixed receiver commands would finish at total deficit one before the internal event and two after it, giving a conditional admission discriminator. Physical guard enforcement and readable feedback remain unearned. Additional hitting guards or hidden-state-dependent laws are outside the classified bare relation.
+
+Disposition: BARE_MOVE_INTERFACE_CLASSIFIED_BY_EXTERNAL_LEAF_COVERAGE; INTERNAL_FIRST_RESPONSE_NOT_TRANSMITTED_BY_THIS_INTERFACE; NATIVE_ACCESS_OPEN. This is an elementary conditional classification and concrete candidate assessment, not physical actuation, readable rejection, a force or milestone completion. Next work must justify an actual leaf-coverage interaction and readable consequence, or an independently earned channel for the internal bit. No numerical campaign or test-count change. Independent analytical review and publication audit are recorded with the assessment.
+
