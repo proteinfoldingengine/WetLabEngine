@@ -1,0 +1,11 @@
+# Publication receipt — unit guard inputs
+
+The [assessment](RESULT.md), [independent analytical review](ANALYTICAL_REVIEW_RAW.md), ten-source packet and continuation append were published at `cc6fb045ab4d405e754e8346d318ea1cded5314a`, tree `8c1b1699ee08bb18814c4596f2610643608baabc`, with sole parent `ecfda4c115a0ea367a1f06c41c9e29cabe70b986`.
+
+The analytical review binds report SHA256 `9c5c1ea51ad7f56cdc5d2a19de69c9431ef971f537cb343550a5d9ddfefa5233` and append SHA256 `8c40c5074911bda4314830edaba0dcf2bed2fa0429e6886d8f7859c8321b2368`. The separate [publication audit](PUBLICATION_AUDIT.md) and [exact evidence](PUBLICATION_AUDIT_EVIDENCE.json) verify all ten source originals and all seven scientific publication files. The [author readback](AUTHOR_READBACK.json) separately verifies the same seven full contents and Git blobs. The continuation is the exact 70,679-byte parent plus the 2,049-byte append, totaling 72,728 bytes. The scientific commit changes only six new files and that one index.
+
+The explicit pair has identical current full hitting profiles, truthful deficit counters, complete acting views, carrier evidence, active supports and preparation-event directions. The same positive-extension-safe deletion costs zero in one state and one in the other, leaving total deficits one versus two. The tested input-only controller therefore cannot implement the exact next unit-band guard. Richer initialized certificates, full-state seed reconstruction and independently derived system-side relations remain eligible.
+
+The unit band retains its inherited status as an additional fixed-reference path bound. Its native physical applicability, enforcement and readable feedback remain unproved. Native milestone NOT ACHIEVED. This is an analytical counterexample and scoped source reconciliation, not a new force or native interaction; no archive-wide priority or impossibility claim is made.
+
+This receipt publication adds five files only: audit, audit evidence, author readback, this receipt and its self-excluded manifest. The seven scientific files remain unchanged. The independent audit covers the scientific commit; the author separately verifies the later receipt publication at its immutable commit. No scientific module, numerical campaign, historical replay, main merge, test-count change or numbered-stage CLOSED/CERTIFIED status is claimed.
