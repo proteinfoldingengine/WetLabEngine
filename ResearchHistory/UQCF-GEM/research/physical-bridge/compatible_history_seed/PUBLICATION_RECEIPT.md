@@ -1,0 +1,11 @@
+# Publication receipt — compatible-history initialization candidate
+
+The [assessment](RESULT.md), [independent analytical review](ANALYTICAL_REVIEW_RAW.md), 10-source packet and continuation append were published at `9e548d3e2442120ff8924929d42cb2e492d2a114`, tree `496b31f2af6165e0cf7f69be8f1c1a2bb9c550e5`, with sole parent `70dd25535ac01e1b97d37670078af5f1bd0cd596`.
+
+The mathematical review binds report SHA256 `2622732ecad535639494de48564391427eab5ef0263b1df35e5da02cfcbe89ce` and append SHA256 `100289812f0e9cb8e008f659d4cc54e90c9c541b7072eb5c17e7b7d95406b600`. The separate [publication audit](PUBLICATION_AUDIT.md) and [exact evidence](PUBLICATION_AUDIT_EVIDENCE.json) verify the source originals and all 7 scientific publication files. The [author readback](AUTHOR_READBACK.json) separately verifies their full contents and Git blobs. The continuation is the exact 74,665-byte parent plus the 1,984-byte append, totaling 76,649 bytes. The scientific commit changes only 6 new files and that one index.
+
+The analytical result classifies the local hitting numbers of the inherited central-sector views. A common-history family with nonzero common product must retain a universal I record to cover the fixed tree. A trivial-center all-I seed therefore has zero fixed-reference deficit throughout this restricted class. Individual cover bits can still change. Overlapping nonminimal central sums and changing carriers are outside this restriction; actual record refinements need not be atomic incidence edits.
+
+This is a bounded representation result, not an initialization or record-writing interaction derived from native dynamics. The initial algebra, representation assignment, event occurrence and receiver access remain supplied or unresolved. Native milestone NOT ACHIEVED. No physical force, archive-wide novelty, physical conservation law or general impossibility claim is made.
+
+This receipt publication adds five files only: audit, audit evidence, author readback, this receipt and its self-excluded manifest. The 7 scientific files remain unchanged. The independent audit covers the scientific commit; the author separately verifies this later receipt publication at its immutable commit. No scientific module, numerical campaign, historical replay, main merge, test-count change or numbered-stage CLOSED/CERTIFIED status is claimed.
