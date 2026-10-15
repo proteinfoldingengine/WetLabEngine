@@ -1,0 +1,11 @@
+# Publication receipt — Boolean cover record under pure pruning
+
+The [assessment](RESULT.md), [independent analytical review](ANALYTICAL_REVIEW_RAW.md), 13-source packet and continuation append were published at `f005bf8ed50565f0c844bec4ec1020a3298b8551`, tree `3460aa50a11ec391878f9b1c121ef1c8dd1b32df`, with sole parent `c65db96eedbcd354c4b96ad9d617f97c2aeb9283`.
+
+The mathematical review binds report SHA256 `c04dd56fcc58f8bf2fef9883af561f7d6378c21ad60cefbd8bbbfa71d60cbf3d` and append SHA256 `f766c65340a2d13c985f694a2c930f94b03fbaabc2c4af28b49c019bde2045dd`. The separate [publication audit](PUBLICATION_AUDIT.md) and [exact evidence](PUBLICATION_AUDIT_EVIDENCE.json) verify the source originals and all 8 scientific publication files. The [author readback](AUTHOR_READBACK.json) separately verifies the same full contents and Git blobs. The continuation is the exact 72,728-byte parent plus the 1,937-byte append, totaling 74,665 bytes. The scientific commit changes only 7 new files and that one index.
+
+The conditional result identifies a sufficient Boolean record for the declared pure-pruning grammar. Cover-validity bits update by filtering on the supplied new active support. Starting from an exact fixed target, levels q and feasible q+1 determine the capped local excess and hence the exact one-unit guard. Additions and omitted active supports invalidate the respective simplifications, as the explicit controls show.
+
+The result assumes correct initial cover bits and justified actual-event inputs. It does not acquire them, derive a physical record-writing process, or establish the native applicability/enforcement of the unit band. Native milestone NOT ACHIEVED. The argument is an elementary conditional representation/update result; no physical force, archive-wide novelty or general impossibility claim is made.
+
+This receipt publication adds five files only: audit, audit evidence, author readback, this receipt and its self-excluded manifest. The 8 scientific files remain unchanged. The independent audit covers the scientific commit; the author separately verifies this later receipt publication at its immutable commit. No scientific module, numerical campaign, historical replay, main merge, test-count change or numbered-stage CLOSED/CERTIFIED status is claimed.
