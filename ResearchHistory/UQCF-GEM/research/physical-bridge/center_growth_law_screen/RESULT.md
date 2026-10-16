@@ -1,5 +1,7 @@
 # Center growth law screen: source-independent selection and central access
 
+**2026-10-16 repair notice:** This current text incorporates the corrections in `../analytical_repair/CORRECTIONS.md`. Original reviews, preregistrations and receipts remain unchanged historical evidence; their earlier verdicts do not certify these revised bytes. Fresh review and publication gates are pending.
+
 Date: 2026-10-16 America/New_York. Parent: `560731329e33ee2ed85b4c38103c3b16ce15353f`. Preregistration: `PREREGISTRATION.md` (committed first at `6b311946f7740274d50d5ff0b6f8d91175ff4b98`).
 
 **Conditional analytical screen. Native milestone NOT ACHIEVED.** This stage does not re-prove the center-access-growth theorem, does not re-run the partial-swap candidate, and does not invent a selection law. Findings already known from prior stages are disclosed in the preregistration and are not claimed as new discoveries here.

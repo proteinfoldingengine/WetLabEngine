@@ -1,0 +1,272 @@
+name: UQCF-GEM analytical repair
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/producer.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/independent.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/test_verification.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/campaign.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/input_manifest.json'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/CORRECTIONS.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/center_access_growth/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/center_growth_law_screen/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_outcome_register/RESULT.md'
+      - '.github/workflows/uqcf-gem-analytical-repair.yml'
+      - '.github/scripts/uqcf_analytical_repair_review.py'
+  workflow_dispatch:
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+permissions:
+  contents: read
+concurrency:
+  group: uqcf-analytical-repair-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/v15/v15.11
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - name: integrity evidence
+        run: python research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/campaign.py integrity
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repair-integrity
+          path: repair_integrity
+          if-no-files-found: error
+          retention-days: 90
+  verification:
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/v15/v15.11
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-integrity
+          path: repair_integrity
+      - name: verification evidence
+        run: python research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/campaign.py verification
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repair-verification
+          path: repair_verification
+          if-no-files-found: error
+          retention-days: 90
+  reproduction:
+    needs: verification
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/v15/v15.11
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-verification
+          path: repair_verification
+      - name: reproduction evidence
+        run: python research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/campaign.py reproduction
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repair-reproduction
+          path: repair_reproduction
+          if-no-files-found: error
+          retention-days: 90
+  mathematical-review:
+    needs: reproduction
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/v15/v15.11
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-integrity
+          path: repair_integrity
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-verification
+          path: repair_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-reproduction
+          path: repair_reproduction
+      - name: Independent Gemini mathematical review
+        env:
+          REVIEW_PHASE: mathematical
+        run: python research_snapshot/.github/scripts/uqcf_analytical_repair_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repair-review
+          path: repair_review
+          if-no-files-found: error
+          retention-days: 90
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/v15/v15.11
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-integrity
+          path: repair_integrity
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-verification
+          path: repair_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-reproduction
+          path: repair_reproduction
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-review
+          path: repair_review
+      - name: Independent remote publication readback
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/publication_readback.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repair-remote-publication
+          path: repair_remote_publication
+          if-no-files-found: error
+          retention-days: 90
+      - name: Independent Gemini publication audit
+        env:
+          REVIEW_PHASE: publication
+        run: python research_snapshot/.github/scripts/uqcf_analytical_repair_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repair-publication
+          path: repair_publication
+          if-no-files-found: error
+          retention-days: 90
+  final-gate:
+    needs: publication-audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge
+            ResearchHistory/UQCF-GEM/v15/v15.11
+            ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-integrity
+          path: repair_integrity
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-verification
+          path: repair_verification
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-reproduction
+          path: repair_reproduction
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-review
+          path: repair_review
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-publication
+          path: repair_publication
+      - uses: actions/download-artifact@v4
+        with:
+          name: repair-remote-publication
+          path: repair_remote_publication
+      - name: gate evidence
+        run: python research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/analytical_repair/campaign.py gate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repair-gate
+          path: repair_gate
+          if-no-files-found: error
+          retention-days: 90

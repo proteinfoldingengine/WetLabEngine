@@ -1,5 +1,7 @@
 # Center access growth under record-retaining pruning
 
+**2026-10-16 repair notice:** This current text incorporates the corrections in `../analytical_repair/CORRECTIONS.md`. Original reviews, preregistrations and receipts remain unchanged historical evidence; their earlier verdicts do not certify these revised bytes. Fresh review and publication gates are pending.
+
 Date: 2026-10-16 America/New_York. Parent: `d63aea606eb9e73bab812aef2934f799f3bb281a`. Preregistration: `PREREGISTRATION.md` (must be committed first).
 
 **Conditional analytical assessment. Native milestone NOT ACHIEVED.** Revised after argument review (ANALYTICAL_REVIEW_RAW.md, objections R1–R3). The findings in §§1–2 were already known before preregistration and are disclosed there; they are not preregistered predictions. The theorem is an elementary consequence of standard finite-dimensional conditional-expectation facts; no mathematical priority is claimed.
@@ -16,7 +18,7 @@ Let ρ_0, ρ_1 be states, Δ = ρ_1 − ρ_0.
 
 (b) Acquisition criterion. Let the same chain (independent of b, premise P8) act on both sources. Suppose Tr(zΔ) = 0 for all z ∈ Z(A_k) (blind at stage k). Then the stage-(k+1) readout laws differ iff E_{Z(A_{k+1})}(Δ) ≠ 0, iff some atom z' of Z(A_{k+1}) has Tr(z'Δ) ≠ 0. Their total-variation distance is
   δ_TV = ½ Σ_{z' atom of Z(A_{k+1})} |Tr(z'Δ)|,
-and by (a) this law, hence δ_TV, is unchanged at every later stage m ≥ k+1.
+and by (a) this OLD acquired reader law on the atoms of Z(A_{k+1}), hence its δ_TV, is unchanged at every later stage m ≥ k+1. The full later reader Z(A_m) may refine these atoms and have a larger total-variation distance; coarse-graining shows that the finer-reader distance is nondecreasing, not necessarily constant.
 
 (c) Sector constraint. For every atom z of Z(A_k), Σ_{z' ≤ z} Tr(z'Δ) = Tr(zΔ) = 0. The acquired contrast is a redistribution within old sectors; it never changes an old sector's weight.
 
@@ -55,6 +57,8 @@ C5 Trivial-seed positive case. A_0 = M_2 (Z = ℂI, so every pair is blind), A_1
 - (ii) Partial: |0⟩⟨0| versus |+⟩⟨+|: contrasts −1/2, +1/2, δ_TV = 1/2.
 - (iii) Coherence-blind: |+⟩⟨+| versus |−⟩⟨−|: Δ is off-diagonal, so δ_TV = 0 by (d).
 The step M_2 → diagonal is itself supplied (P1a).
+
+C6 Old-reader versus finer-reader retention. On M_4 ⊇ M_2⊕M_2 ⊇ the full diagonal algebra, take diagonal states p_0=(1/2,0,1/2,0), p_1=(0,3/4,0,1/4). The middle central reader groups coordinates {1,2} and {3,4}, giving TV=1/4. The final diagonal reader gives TV=1 because the supports are disjoint. Reading the OLD two atoms at the final stage still gives TV=1/4. This rejects the stronger claim that every later full reader has the same contrast.
 
 ## 5. Relation to `collective_covariance_candidate` (overlap and novelty)
 - Different mechanism. That stage moves a fixed local reader Q by a supplied symmetric unitary, via criterion (4) of `retained_reader_write`. This note holds the dynamics nonselective and moves the reader set. Neither result implies the other. The partial-swap theorem says nothing about which readers are accessible, and the center-growth theorem contains no unitary.
