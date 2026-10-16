@@ -1,0 +1,22 @@
+{
+  "original_bytes": 1446562,
+  "original_git_blob": "eb611b429b6e8087802354b3fc1215494f33b45b",
+  "original_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/FINAL_AUDIT_RAW.zip",
+  "original_sha256": "43c428505d41905d2d474e6cbb32817260633a8fac69154324fce67d007f822c",
+  "parts": [
+    {
+      "bytes": 750000,
+      "git_blob": "de5753deaf577778fc7157e7962ac6f0a98581ee",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/FINAL_AUDIT_RAW.part01",
+      "sha256": "fb3a3497fb5178c243d7aa4c3273a9c2c5ab8cec9457f8de29edd6a34e2c1fe2"
+    },
+    {
+      "bytes": 696562,
+      "git_blob": "b0514c6a5dc977b2cc27816201fe27959459ca3a",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/FINAL_AUDIT_RAW.part02",
+      "sha256": "4f08c17b9004142b255a68b40b6cb60a544e311d00b119a57688d26640a56bca"
+    }
+  ],
+  "reason": "The GitHub file connector returned empty base64 content for the 1446562-byte original while retaining its Git blob SHA. The original remains preserved; verify full remote part bytes and reconstructed archive identity.",
+  "reconstruction": "concatenate parts in listed order"
+}
