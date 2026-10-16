@@ -1,0 +1,32 @@
+{
+  "both_generation_failures": "HTTP 429 after successful model availability",
+  "contract_commit": "68fcd6d6118f7cb30bdca88814d1a5dc8260f0da",
+  "evidence_integrity_status": "VERIFIED_FOR_BOTH_ORIGINAL_ATTEMPTS",
+  "evidence_reports": [
+    "source_stage_audit.json",
+    "failed_run_audit.json",
+    "retry_source_stage_audit.json",
+    "retry_run_audit.json"
+  ],
+  "external_writes_by_auditor": false,
+  "further_retry_authorized": false,
+  "gemini_acceptance": false,
+  "native_milestone": "OPEN",
+  "original_job_logs_verified": 4,
+  "original_scientific_commit": "23c55d38a27e5081a1c92b3ed03f37adfb446687",
+  "original_zip_archives_verified": 4,
+  "pending": "Durable evidence publication and immutable final evidence readback",
+  "publication_source_status": "PASS",
+  "retry_scientific_commit": "a42ca9e248c438081f31dcaba2ba5c6ffb36cec0",
+  "run_attempts": [
+    1,
+    1
+  ],
+  "runs": [
+    38927190206,
+    38927950314
+  ],
+  "science_execution_by_auditor": false,
+  "scientific_review_status": "REVIEW_BLOCKED",
+  "source_parent": "24dbac1a7da1a2484dd3d28f66c3b62c7ae632af"
+}

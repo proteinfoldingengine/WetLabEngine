@@ -1,0 +1,69 @@
+{
+  "artifacts": [
+    {
+      "bytes": 93122,
+      "id": 12057526434,
+      "members": [
+        "file_manifest.json",
+        "infrastructure_failure.json",
+        "model_availability.json",
+        "prompt.txt",
+        "provenance.json"
+      ],
+      "name": "history-review",
+      "sha256": "fd83c2f28372d450806f9b62d7834b1e129ed85d5c21f72e4f51ac9037dce906"
+    },
+    {
+      "bytes": 124358,
+      "id": 12056758090,
+      "members": [
+        "file_manifest.json",
+        "input_manifest.json",
+        "integrity.json",
+        "provenance.json",
+        "snapshot/.github/scripts/uqcf_analytical_repair_review.py",
+        "snapshot/.github/scripts/uqcf_history_orientation_publication.py",
+        "snapshot/.github/scripts/uqcf_history_orientation_review.py",
+        "snapshot/.github/workflows/uqcf-gem-history-orientation.yml",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/CODEX_ARGUMENT_REVIEW.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/CONTRACT.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/INFRASTRUCTURE_REVIEW.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/RESULT.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/REVIEW_INSTRUCTIONS.txt",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/source_identities.json",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/source_packet.json"
+      ],
+      "name": "history-integrity",
+      "sha256": "12038ff7eea3c61600b461f95212e25b35e8a24cf4fc8700a861fa551697524c"
+    }
+  ],
+  "failure": {
+    "error_type": "HTTPError",
+    "http_status": 429,
+    "status": "INFRASTRUCTURE_FAILURE_NOT_MATHEMATICAL_VERDICT"
+  },
+  "interpretation": "Source integrity succeeded; model availability succeeded; generation failed HTTP 429; no model response or mathematical verdict; publication job skipped. No acceptance or native milestone follows.",
+  "jobs": {
+    "integrity": "success",
+    "mathematical-review": "failure",
+    "publication-audit": "skipped"
+  },
+  "logs": [
+    {
+      "bytes": 19984,
+      "job_id": 117061628550,
+      "name": "integrity",
+      "sha256": "cca5663a31e3160143d49c56417e45e0c952ffe1a5d74ee7e2efc76456013cc0"
+    },
+    {
+      "bytes": 22621,
+      "job_id": 117061762328,
+      "name": "mathematical-review",
+      "sha256": "6690382c0eeb62af71ad4c41b55d073d449ede570a64dd6e15dcb44cbe30a44e"
+    }
+  ],
+  "run_attempt": 1,
+  "run_id": 38927190206,
+  "scientific_sha": "23c55d38a27e5081a1c92b3ed03f37adfb446687",
+  "status": "FAILED_RUN_EVIDENCE_VERIFIED"
+}
