@@ -42,19 +42,23 @@ def run():
     assert head == os.environ['UQCF_WORKFLOW_SHA']
     commit = request('/commits/'+head)
     assert commit['author']['login'] == commit['committer']['login'] == 'proteinfolding-gpt'
-    assert [p['sha'] for p in commit['parents']] == ['68fcd6d6118f7cb30bdca88814d1a5dc8260f0da']
+    assert [p['sha'] for p in commit['parents']] == ['23c55d38a27e5081a1c92b3ed03f37adfb446687']
+    first = request('/git/commits/23c55d38a27e5081a1c92b3ed03f37adfb446687')
+    assert [p['sha'] for p in first['parents']] == ['68fcd6d6118f7cb30bdca88814d1a5dc8260f0da']
     contract = request('/git/commits/68fcd6d6118f7cb30bdca88814d1a5dc8260f0da')
     assert [p['sha'] for p in contract['parents']] == ['24dbac1a7da1a2484dd3d28f66c3b62c7ae632af']
     inputs = parse((BASE/'input_manifest.json').read_bytes())
     prefix = str(BASE.relative_to(ROOT))+'/'
-    required = {prefix+n for n in ('CONTRACT.md','RESULT.md','source_packet.json','source_identities.json','CODEX_ARGUMENT_REVIEW.md','INFRASTRUCTURE_REVIEW.md','REVIEW_INSTRUCTIONS.txt')}
+    required = {prefix+n for n in ('CONTRACT.md','RESULT.md','source_packet.json','source_identities.json','CODEX_ARGUMENT_REVIEW.md','INFRASTRUCTURE_REVIEW.md','REVIEW_INSTRUCTIONS.txt','RETRY.md','RETRY_INFRASTRUCTURE_REVIEW.md')}
     required.update({'.github/scripts/uqcf_analytical_repair_review.py','.github/scripts/uqcf_history_orientation_review.py',
         '.github/scripts/uqcf_history_orientation_publication.py','.github/workflows/uqcf-gem-history-orientation.yml'})
     assert set(inputs) == required
     expected_changed = set(inputs) - {'.github/scripts/uqcf_analytical_repair_review.py',str((BASE/'CONTRACT.md').relative_to(ROOT))}
     expected_changed.add(str((BASE/'input_manifest.json').relative_to(ROOT)))
-    assert {f['filename'] for f in commit['files']} == expected_changed
-    assert all(f['status'] == 'added' for f in commit['files'])
+    cumulative = request('/compare/68fcd6d6118f7cb30bdca88814d1a5dc8260f0da...'+head)
+    assert cumulative['status'] == 'ahead' and cumulative['ahead_by'] == 2
+    assert {f['filename'] for f in cumulative['files']} == expected_changed
+    assert all(f['status'] == 'added' for f in cumulative['files'])
     checked = []
     def remote_blob(blob_id,expected,name):
         response = request('/git/blobs/'+blob_id)
@@ -64,7 +68,7 @@ def run():
         assert response['size'] == len(data)
         assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest() == blob_id
         checked.append({'path':name,'git_blob':blob_id,'bytes':len(data),'sha256':sha(data)})
-    file_index = {x['filename']:x for x in commit['files']}
+    file_index = {x['filename']:x for x in cumulative['files']}
     for name,record in inputs.items():
         data = (ROOT/name).read_bytes()
         assert record == {'bytes':len(data),'sha256':sha(data),'git_blob':hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()}

@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT / 'ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation'
 PARENT = '24dbac1a7da1a2484dd3d28f66c3b62c7ae632af'
 CONTRACT = '68fcd6d6118f7cb30bdca88814d1a5dc8260f0da'
+FIRST = '23c55d38a27e5081a1c92b3ed03f37adfb446687'
 MODEL = 'gemini-3.1-pro-preview'
 spec = importlib.util.spec_from_file_location('review_helpers', ROOT / '.github/scripts/uqcf_analytical_repair_review.py')
 helpers = importlib.util.module_from_spec(spec)
@@ -37,7 +38,7 @@ def identity():
         'run_id':'GITHUB_RUN_ID', 'run_attempt':'GITHUB_RUN_ATTEMPT'}.items()}
     if head != result['scientific_sha'] or head != result['workflow_sha']:
         raise ValueError('source/workflow identity mismatch')
-    if git('show', '-s', '--format=%P', head).decode().strip() != CONTRACT or git('show', '-s', '--format=%P', CONTRACT).decode().strip() != PARENT:
+    if git('show', '-s', '--format=%P', head).decode().strip() != FIRST or git('show', '-s', '--format=%P', FIRST).decode().strip() != CONTRACT or git('show', '-s', '--format=%P', CONTRACT).decode().strip() != PARENT:
         raise ValueError('checkpoint ancestry mismatch')
     result.update(source_parent=PARENT, contract_commit=CONTRACT)
     return result
@@ -53,7 +54,7 @@ def validate():
     inputs = helpers.strict_object((BASE / 'input_manifest.json').read_bytes())
     prefix = str(BASE.relative_to(ROOT)) + '/'
     required = {prefix + n for n in ('CONTRACT.md','RESULT.md','source_packet.json','source_identities.json',
-                'CODEX_ARGUMENT_REVIEW.md','INFRASTRUCTURE_REVIEW.md','REVIEW_INSTRUCTIONS.txt')}
+                'CODEX_ARGUMENT_REVIEW.md','INFRASTRUCTURE_REVIEW.md','REVIEW_INSTRUCTIONS.txt','RETRY.md','RETRY_INFRASTRUCTURE_REVIEW.md')}
     required.update({'.github/scripts/uqcf_analytical_repair_review.py',
         '.github/scripts/uqcf_history_orientation_review.py', '.github/scripts/uqcf_history_orientation_publication.py',
         '.github/workflows/uqcf-gem-history-orientation.yml'})

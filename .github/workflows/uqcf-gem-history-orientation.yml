@@ -23,7 +23,7 @@ jobs:
         with:
           ref: ${{ github.sha }}
           path: research_snapshot
-          fetch-depth: 3
+          fetch-depth: 4
           persist-credentials: false
           sparse-checkout: |
             ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation
@@ -37,7 +37,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: history-integrity
+          name: history-integrity-${{ github.run_attempt }}
           path: history_integrity
           include-hidden-files: true
           if-no-files-found: error
@@ -51,7 +51,7 @@ jobs:
         with:
           ref: ${{ github.sha }}
           path: research_snapshot
-          fetch-depth: 3
+          fetch-depth: 4
           persist-credentials: false
           sparse-checkout: |
             ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation
@@ -62,7 +62,7 @@ jobs:
           python-version: "3.12.12"
       - uses: actions/download-artifact@v4
         with:
-          name: history-integrity
+          name: history-integrity-${{ github.run_attempt }}
           path: history_integrity
       - name: Independent Gemini argument review
         env:
@@ -71,7 +71,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: history-review
+          name: history-review-${{ github.run_attempt }}
           path: history_review
           include-hidden-files: true
           if-no-files-found: error
@@ -85,7 +85,7 @@ jobs:
         with:
           ref: ${{ github.sha }}
           path: research_snapshot
-          fetch-depth: 3
+          fetch-depth: 4
           persist-credentials: false
           sparse-checkout: |
             ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation
@@ -96,7 +96,7 @@ jobs:
           python-version: "3.12.12"
       - uses: actions/download-artifact@v4
         with:
-          name: history-review
+          name: history-review-${{ github.run_attempt }}
           path: history_review
       - name: Independent immutable source and review byte audit
         env:
@@ -105,7 +105,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: history-publication
+          name: history-publication-${{ github.run_attempt }}
           path: history_publication
           include-hidden-files: true
           if-no-files-found: error
