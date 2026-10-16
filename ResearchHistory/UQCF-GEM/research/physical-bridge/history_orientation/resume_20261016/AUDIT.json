@@ -1,0 +1,113 @@
+{
+  "artifacts": [
+    {
+      "bytes": 93121,
+      "git_blob": "9db64a72b2e254e15c54e2dae8bfdc9e4ada011f",
+      "id": 12065146083,
+      "members": [
+        "file_manifest.json",
+        "infrastructure_failure.json",
+        "model_availability.json",
+        "prompt.txt",
+        "provenance.json"
+      ],
+      "name": "history-review-2",
+      "sha256": "5c3e273f116a95bc1cef93e703e6efa86575a4213c254cd4ddc634d4e5e2ef58"
+    },
+    {
+      "bytes": 128799,
+      "git_blob": "10ee0c9f03774a35c2c5cc2cbe761b9c2b755aba",
+      "id": 12064861414,
+      "members": [
+        "file_manifest.json",
+        "input_manifest.json",
+        "integrity.json",
+        "provenance.json",
+        "snapshot/.github/scripts/uqcf_analytical_repair_review.py",
+        "snapshot/.github/scripts/uqcf_history_orientation_publication.py",
+        "snapshot/.github/scripts/uqcf_history_orientation_review.py",
+        "snapshot/.github/workflows/uqcf-gem-history-orientation.yml",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/CODEX_ARGUMENT_REVIEW.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/CONTRACT.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/INFRASTRUCTURE_REVIEW.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/RESULT.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/RETRY.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/RETRY_INFRASTRUCTURE_REVIEW.md",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/REVIEW_INSTRUCTIONS.txt",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/source_identities.json",
+        "snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/source_packet.json"
+      ],
+      "name": "history-integrity-2",
+      "sha256": "f51364261eee52be97bde8e58d232e8e1803b0663c562b1f6ca44c517c00ce62"
+    }
+  ],
+  "audit_raw": {
+    "bytes": 343919,
+    "git_blob": "14f07d75c0781048e36192c67f735022a00144d5",
+    "sha256": "321bbe242dd52d80a1e44b72a5483714a3a59e32acc9d26908f88554e0733f5b"
+  },
+  "authorization": "Parent relay records user Continue, approved for one additional rerun after the historical stop. This audit does not independently authenticate chat authorization.",
+  "external_writes_by_auditor": false,
+  "failure": {
+    "error_type": "HTTPError",
+    "http_status": 429,
+    "status": "INFRASTRUCTURE_FAILURE_NOT_MATHEMATICAL_VERDICT"
+  },
+  "frozen_inputs_verified": 13,
+  "gemini_acceptance": false,
+  "identity": {
+    "contract_commit": "68fcd6d6118f7cb30bdca88814d1a5dc8260f0da",
+    "run_attempt": "2",
+    "run_id": "38927950314",
+    "scientific_sha": "a42ca9e248c438081f31dcaba2ba5c6ffb36cec0",
+    "source_parent": "24dbac1a7da1a2484dd3d28f66c3b62c7ae632af",
+    "workflow_sha": "a42ca9e248c438081f31dcaba2ba5c6ffb36cec0"
+  },
+  "jobs": {
+    "integrity": {
+      "conclusion": "success",
+      "id": 117121436628
+    },
+    "mathematical-review": {
+      "conclusion": "failure",
+      "id": 117121578885
+    },
+    "publication-audit": {
+      "conclusion": "skipped",
+      "id": 117121785915
+    }
+  },
+  "logs": [
+    {
+      "bytes": 19982,
+      "git_blob": "1fa78d5548308958a20e72218e3021ec80daf826",
+      "job_id": 117121436628,
+      "name": "integrity",
+      "sha256": "b7d4bb8e5134f8f51632622e2c6e1caebab880e7b4f39ab668583738ec877e14"
+    },
+    {
+      "bytes": 28736,
+      "git_blob": "0d6d60a94849f31603478de458a64ebb253d2e71",
+      "job_id": 117121578885,
+      "name": "mathematical-review",
+      "sha256": "e7e3444ea60a376b1296cf31bb1a8fd2c548576ba637a413cee457a2327035bb"
+    }
+  ],
+  "mathematical_verdict_present": false,
+  "model_available": "models/gemini-3.1-pro-preview",
+  "native_milestone": "OPEN",
+  "no_scientific_execution": true,
+  "pinned_sources_verified": 19,
+  "prompt": {
+    "bytes": 265997,
+    "git_blob": "87e181a69b029753fbe33a2f17ad687ef85e7103",
+    "sha256": "fe87572c93cbb1c0726b3fc12fed74be186a6dc524d41717b085a3a4aeee4e7b"
+  },
+  "raw_response_present": false,
+  "scientific_status": "REVIEW_BLOCKED_HTTP429",
+  "scope": "Independent evidence/source/prompt/provenance byte audit; not mathematical review, native-mechanism certification, inherited numerical replay, or numbered-stage closure. Actions publication audit was skipped. Immutable publication readback remains a separate step.",
+  "source_commit_author": "proteinfolding-gpt",
+  "source_files_and_manifest_remote_readback": 33,
+  "status": "EVIDENCE_INTEGRITY_PASS",
+  "triggering_actor": "proteinfolding-gpt"
+}
