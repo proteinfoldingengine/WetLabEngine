@@ -1,0 +1,6 @@
+## 2026-10-16: center access growth under record-retaining pruning
+
+The [conditional assessment](center_access_growth/RESULT.md) tests the changed-reader branch left eligible by the retained-reader result. Take the accessible reader to be the center of the retained algebra (supplied premise). Under inherited center retention the centers nest. A source pair blind at stage k becomes distinguishable at stage k+1 iff some new central atom has nonzero Tr(z'Δ), with total-variation distance ½Σ|Tr(z'Δ)|. That law is retained afterwards, and contrast only redistributes within old sectors; cross-atom coherences stay invisible. Controls: non-growing center, center erasure, source-chosen chain, swap outside reader, trivial-seed M_2 → diagonal.
+
+This is a change of access, not blank-memory acquisition. It agrees with the collective-covariance finding that P_- already carries its 0/½ distinction at input, and it neither subsumes nor is subsumed by that partial-swap class. Disposition: **CONDITIONAL_CENTER_ACCESS_GROWTH_PROVED; GROWTH_STEP_AND_CENTRAL_READER_SUPPLIED; NATIVE_MILESTONE_NOT_ACHIEVED.** The open question sharpens to a native, source-independent law for center growth plus justified central access. No scientific execution, numerical campaign, main merge or numbered-stage CLOSED/CERTIFIED claim. Broad C3/C4-C6 remain OPEN.
+
