@@ -1,0 +1,112 @@
+name: UQCF-GEM retained history orientation
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation/input_manifest.json'
+      - '.github/scripts/uqcf_history_orientation_*.py'
+      - '.github/workflows/uqcf-gem-history-orientation.yml'
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+permissions:
+  contents: read
+concurrency:
+  group: uqcf-history-orientation-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - name: Verify exact pinned analytical documents
+        run: python research_snapshot/.github/scripts/uqcf_history_orientation_review.py integrity
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: history-integrity
+          path: history_integrity
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 90
+  mathematical-review:
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: history-integrity
+          path: history_integrity
+      - name: Independent Gemini argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python research_snapshot/.github/scripts/uqcf_history_orientation_review.py review
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: history-review
+          path: history_review
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 90
+  publication-audit:
+    needs: mathematical-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: history-review
+          path: history_review
+      - name: Independent immutable source and review byte audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python research_snapshot/.github/scripts/uqcf_history_orientation_publication.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: history-publication
+          path: history_publication
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 90
