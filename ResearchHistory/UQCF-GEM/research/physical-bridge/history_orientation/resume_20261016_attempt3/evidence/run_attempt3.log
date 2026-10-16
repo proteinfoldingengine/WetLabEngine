@@ -1,0 +1,1018 @@
+integrity	Set up job	﻿2026-10-16T19:39:40.5027948Z Current runner version: '2.337.0'
+integrity	Set up job	2026-10-16T19:39:40.5048816Z ##[group]Runner Image Provisioner
+integrity	Set up job	2026-10-16T19:39:40.5049530Z Hosted Compute Agent
+integrity	Set up job	2026-10-16T19:39:40.5050008Z Version: 20261012.601
+integrity	Set up job	2026-10-16T19:39:40.5050636Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+integrity	Set up job	2026-10-16T19:39:40.5051249Z Build Date: 2026-10-12T17:48:21Z
+integrity	Set up job	2026-10-16T19:39:40.5051836Z Worker ID: {86bc7e52-b598-4d01-9009-0832680415fb}
+integrity	Set up job	2026-10-16T19:39:40.5052403Z Region: westus3
+integrity	Set up job	2026-10-16T19:39:40.5052841Z Cloud: Azure
+integrity	Set up job	2026-10-16T19:39:40.5053334Z ##[endgroup]
+integrity	Set up job	2026-10-16T19:39:40.5054557Z ##[group]Operating System
+integrity	Set up job	2026-10-16T19:39:40.5055124Z Ubuntu
+integrity	Set up job	2026-10-16T19:39:40.5055568Z 24.04.5
+integrity	Set up job	2026-10-16T19:39:40.5055996Z LTS
+integrity	Set up job	2026-10-16T19:39:40.5056463Z ##[endgroup]
+integrity	Set up job	2026-10-16T19:39:40.5056986Z ##[group]Runner Image
+integrity	Set up job	2026-10-16T19:39:40.5058053Z Image: ubuntu-24.04
+integrity	Set up job	2026-10-16T19:39:40.5058542Z Version: 20261012.334.1
+integrity	Set up job	2026-10-16T19:39:40.5059400Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+integrity	Set up job	2026-10-16T19:39:40.5060899Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+integrity	Set up job	2026-10-16T19:39:40.5061694Z ##[endgroup]
+integrity	Set up job	2026-10-16T19:39:40.5062567Z ##[group]GITHUB_TOKEN Permissions
+integrity	Set up job	2026-10-16T19:39:40.5064357Z Contents: read
+integrity	Set up job	2026-10-16T19:39:40.5064907Z Metadata: read
+integrity	Set up job	2026-10-16T19:39:40.5065364Z ##[endgroup]
+integrity	Set up job	2026-10-16T19:39:40.5067036Z Secret source: Actions
+integrity	Set up job	2026-10-16T19:39:40.5067960Z Cache mode: write
+integrity	Set up job	2026-10-16T19:39:40.5068583Z Prepare workflow directory
+integrity	Set up job	2026-10-16T19:39:40.5480189Z Prepare all required actions
+integrity	Set up job	2026-10-16T19:39:40.5537885Z Getting action download info
+integrity	Set up job	2026-10-16T19:39:40.8896970Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+integrity	Set up job	2026-10-16T19:39:40.9650771Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+integrity	Set up job	2026-10-16T19:39:41.0586579Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+integrity	Set up job	2026-10-16T19:39:41.2906033Z Complete job name: integrity
+integrity	Run actions/checkout@v4	﻿2026-10-16T19:39:41.3451037Z ##[group]Run actions/checkout@v4
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3451688Z with:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3452074Z   ref: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3452557Z   path: research_snapshot
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3452939Z   fetch-depth: 4
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3453301Z   persist-credentials: false
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3454098Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation
+integrity	Run actions/checkout@v4	.github/scripts
+integrity	Run actions/checkout@v4	.github/workflows
+integrity	Run actions/checkout@v4	
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3454995Z   repository: proteinfoldingengine/WetLabEngine
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3458383Z   token: ***
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3458743Z   ssh-strict: true
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3459094Z   ssh-user: git
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3459428Z   clean: true
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3459789Z   sparse-checkout-cone-mode: true
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3460206Z   fetch-tags: false
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3460555Z   show-progress: true
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3460914Z   lfs: false
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3461272Z   submodules: false
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3461653Z   set-safe-directory: true
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3462084Z   allow-unsafe-pr-checkout: false
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3462766Z env:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3463182Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.3463682Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4250766Z Syncing repository: proteinfoldingengine/WetLabEngine
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4252502Z ##[group]Getting Git version info
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4253376Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4254887Z [command]/usr/bin/git version
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4343229Z git version 2.55.0
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4362989Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4383849Z Temporarily overriding HOME='/home/runner/work/_temp/a37e2ba6-63e9-4674-94a4-645308abf86d' before making global git config changes
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4385628Z Adding repository directory to the temporary git global config as a safe directory
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4388782Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4433514Z ##[group]Initializing the repository
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4437695Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4524229Z hint: Using 'master' as the name for the initial branch. This default branch name
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4525593Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4526359Z hint: to use in all of your new repositories, which will suppress this warning,
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4526975Z hint: call:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4527614Z hint:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4528029Z hint: 	git config --global init.defaultBranch <name>
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4528520Z hint:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4528971Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4529683Z hint: 'development'. The just-created branch can be renamed via this command:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4530280Z hint:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4530621Z hint: 	git branch -m <name>
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4531014Z hint:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4531500Z hint: Disable this message with "git config set advice.defaultBranchName false"
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4536241Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4544598Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4586868Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4587955Z ##[group]Disabling automatic garbage collection
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4590563Z [command]/usr/bin/git config --local gc.auto 0
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4617595Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4618510Z ##[group]Setting up auth
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4623156Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4651081Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.4989282Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.5020274Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.5209691Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.5241119Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.5427389Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.5462337Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.5463054Z ##[group]Fetching the repository
+integrity	Run actions/checkout@v4	2026-10-16T19:39:41.5469773Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=4 origin a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7477115Z From https://github.com/proteinfoldingengine/WetLabEngine
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7479197Z  * branch            a42ca9e248c438081f31dcaba2ba5c6ffb36cec0 -> FETCH_HEAD
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7495551Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7496812Z ##[group]Determining the checkout info
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7498491Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7499741Z ##[group]Setting up sparse checkout
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7501763Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation .github/scripts .github/workflows
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7534075Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7535671Z ##[group]Checking out the ref
+integrity	Run actions/checkout@v4	2026-10-16T19:39:42.7537835Z [command]/usr/bin/git checkout --progress --force a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0231624Z Updating files:   0% (1/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0234055Z Updating files:   1% (8/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0237621Z Updating files:   2% (16/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0241935Z Updating files:   3% (23/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0246523Z Updating files:   4% (31/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0250440Z Updating files:   5% (39/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0253035Z Updating files:   6% (46/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0255196Z Updating files:   7% (54/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0260404Z Updating files:   8% (61/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0264145Z Updating files:   9% (69/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0267087Z Updating files:  10% (77/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0270546Z Updating files:  11% (84/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0273532Z Updating files:  12% (92/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0276472Z Updating files:  13% (99/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0279291Z Updating files:  14% (107/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0281819Z Updating files:  15% (115/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0284170Z Updating files:  16% (122/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0286603Z Updating files:  17% (130/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0289766Z Updating files:  18% (137/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0292858Z Updating files:  19% (145/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0295028Z Updating files:  20% (153/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0298046Z Updating files:  21% (160/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0303478Z Updating files:  22% (168/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0306743Z Updating files:  23% (176/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0310485Z Updating files:  24% (183/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0313298Z Updating files:  25% (191/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0316939Z Updating files:  26% (198/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0320623Z Updating files:  27% (206/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0323965Z Updating files:  28% (214/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0328478Z Updating files:  29% (221/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0332519Z Updating files:  30% (229/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0335961Z Updating files:  31% (236/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0339512Z Updating files:  32% (244/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0342596Z Updating files:  33% (252/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0345560Z Updating files:  34% (259/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0348501Z Updating files:  35% (267/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0351855Z Updating files:  36% (274/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0361331Z Updating files:  37% (282/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0361757Z Updating files:  38% (290/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0363647Z Updating files:  39% (297/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0366622Z Updating files:  40% (305/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0371947Z Updating files:  41% (313/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0376744Z Updating files:  42% (320/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0381062Z Updating files:  43% (328/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0384802Z Updating files:  44% (335/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0388406Z Updating files:  45% (343/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0392190Z Updating files:  46% (351/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0396293Z Updating files:  47% (358/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0400044Z Updating files:  48% (366/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0407082Z Updating files:  49% (373/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0411270Z Updating files:  50% (381/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0414454Z Updating files:  51% (389/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0418532Z Updating files:  52% (396/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0423021Z Updating files:  53% (404/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0427925Z Updating files:  54% (411/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0432462Z Updating files:  55% (419/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0436558Z Updating files:  56% (427/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0440957Z Updating files:  57% (434/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0444873Z Updating files:  58% (442/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0449186Z Updating files:  59% (449/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0453218Z Updating files:  60% (457/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0457119Z Updating files:  61% (465/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0461054Z Updating files:  62% (472/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0465781Z Updating files:  63% (480/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0469527Z Updating files:  64% (488/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0473856Z Updating files:  65% (495/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0477400Z Updating files:  66% (503/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0481282Z Updating files:  67% (510/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0485857Z Updating files:  68% (518/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0490734Z Updating files:  69% (526/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0494830Z Updating files:  70% (533/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0498957Z Updating files:  71% (541/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0503502Z Updating files:  72% (548/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0517090Z Updating files:  73% (556/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0522264Z Updating files:  74% (564/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0526186Z Updating files:  75% (571/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0530964Z Updating files:  76% (579/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0535473Z Updating files:  77% (586/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0540799Z Updating files:  78% (594/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0545486Z Updating files:  79% (602/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0550019Z Updating files:  80% (609/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0554161Z Updating files:  81% (617/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0557774Z Updating files:  82% (625/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0561525Z Updating files:  83% (632/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0565203Z Updating files:  84% (640/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0569197Z Updating files:  85% (647/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0573683Z Updating files:  86% (655/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0577492Z Updating files:  87% (663/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0582318Z Updating files:  88% (670/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0585300Z Updating files:  89% (678/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0590127Z Updating files:  90% (685/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0594266Z Updating files:  91% (693/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0598055Z Updating files:  92% (701/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0601972Z Updating files:  93% (708/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0606533Z Updating files:  94% (716/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0611373Z Updating files:  95% (723/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0616508Z Updating files:  96% (731/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0624219Z Updating files:  97% (739/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0629592Z Updating files:  98% (746/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0634708Z Updating files:  99% (754/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0635138Z Updating files: 100% (761/761)
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0635509Z Updating files: 100% (761/761), done.
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0734208Z Note: switching to 'a42ca9e248c438081f31dcaba2ba5c6ffb36cec0'.
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0734699Z 
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0734966Z You are in 'detached HEAD' state. You can look around, make experimental
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0735593Z changes and commit them, and you can discard any commits you make in this
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0736001Z state without impacting any branches by switching back to a branch.
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0736229Z 
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0736404Z If you want to create a new branch to retain commits you create, you may
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0736793Z do so (now or later) by using -c with the switch command. Example:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0737044Z 
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0737160Z   git switch -c <new-branch-name>
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0737513Z 
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0737616Z Or undo this operation with:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0737769Z 
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0737893Z   git switch -
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0738017Z 
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0738222Z Turn off this advice by setting config variable advice.detachedHead to false
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0738478Z 
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0738701Z HEAD is now at a42ca9e Preserve HTTP429 evidence and allow one clean history-review retry
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0747512Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0791977Z [command]/usr/bin/git log -1 --format=%H
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0816546Z a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0824044Z ##[group]Removing auth
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0826804Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.0854430Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.1050869Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.1075708Z http.https://github.com/.extraheader
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.1081819Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.1112700Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.1308293Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.1399301Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+integrity	Run actions/checkout@v4	2026-10-16T19:39:44.1535238Z ##[endgroup]
+integrity	Run actions/setup-python@v5	﻿2026-10-16T19:39:44.1744622Z ##[group]Run actions/setup-python@v5
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1744915Z with:
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1745128Z   python-version: 3.12.12
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1745362Z   check-latest: false
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1747406Z   token: ***
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1747621Z   update-environment: true
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1747865Z   allow-prereleases: false
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1748091Z   freethreaded: false
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1748295Z env:
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1748548Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.1748861Z ##[endgroup]
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.2785818Z ##[group]Installed versions
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.2801475Z Version 3.12.12 was not found in the local cache
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.2901513Z (node:2286) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:44.2902321Z (Use `node --trace-deprecation ...` to show where the warning was created)
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:45.5859832Z Version 3.12.12 is available for downloading
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:45.5861282Z Download from "https://github.com/actions/python-versions/releases/download/3.12.12-18393146713/python-3.12.12-linux-24.04-x64.tar.gz"
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:46.5492564Z Extract downloaded archive
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:46.5590227Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/6860d500-0509-42f3-80a5-f09bcd942b68 -f /home/runner/work/_temp/74152615-58f2-461c-8861-234727ce051d
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:48.3130811Z Execute installation script
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:48.3209439Z Check if Python hostedtoolcache folder exist...
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:48.3214322Z Create Python 3.12.12 folder
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:48.3224997Z Copy Python binaries to hostedtoolcache folder
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:48.7039960Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:48.7074997Z Upgrading pip...
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:50.4423802Z Looking in links: /tmp/tmp8ofmlwsb
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:50.4428525Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages (25.0.1)
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.4123316Z Collecting pip
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.4592333Z Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.4728216Z Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.5474801Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 33.8 MB/s eta 0:00:00
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.5475231Z 
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.5603729Z Installing collected packages: pip
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.5605268Z Attempting uninstall: pip
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.5622265Z Found existing installation: pip 25.0.1
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.5881851Z Uninstalling pip-25.0.1:
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:51.5950996Z Successfully uninstalled pip-25.0.1
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:52.4102329Z Successfully installed pip-26.2.1
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:52.4496912Z Create complete file
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:52.4529329Z Successfully set up CPython (3.12.12)
+integrity	Run actions/setup-python@v5	2026-10-16T19:39:52.4530424Z ##[endgroup]
+integrity	Verify exact pinned analytical documents	﻿2026-10-16T19:39:52.4669134Z ##[group]Run python research_snapshot/.github/scripts/uqcf_history_orientation_review.py integrity
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4669742Z [36;1mpython research_snapshot/.github/scripts/uqcf_history_orientation_review.py integrity[0m
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4891040Z shell: /usr/bin/bash -e {0}
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4891295Z env:
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4891539Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4891887Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4892243Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4892824Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4893128Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4893416Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4893708Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:52.4893968Z ##[endgroup]
+integrity	Verify exact pinned analytical documents	2026-10-16T19:39:57.8159217Z Exact document integrity verified: 19 pinned sources
+integrity	Run actions/upload-artifact@v4	﻿2026-10-16T19:39:57.8547153Z ##[group]Run actions/upload-artifact@v4
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8547659Z with:
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8547841Z   name: history-integrity-3
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8548051Z   path: history_integrity
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8548257Z   include-hidden-files: true
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8548464Z   if-no-files-found: error
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8548676Z   retention-days: 90
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8548860Z   compression-level: 6
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8549050Z   overwrite: false
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8549239Z env:
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8549455Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8549775Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8550118Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8550451Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8550764Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8551078Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8551431Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.8551698Z ##[endgroup]
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.9843356Z (node:2495) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.9844094Z (Use `node --trace-deprecation ...` to show where the warning was created)
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.9921019Z With the provided path, there will be 17 files uploaded
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.9924911Z Artifact name is valid!
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:57.9925261Z Root directory input is valid!
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:58.3139330Z Beginning upload of artifact content to blob storage
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:58.3558795Z (node:2495) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:58.7728707Z Uploaded bytes 128796
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:58.8411358Z Finished uploading artifact content to blob storage!
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:58.8412137Z SHA256 digest of uploaded artifact zip is fb9e3e2b5c4dbe09122bd42d4b686809113f4e94d8835229e48827cd26d9dcfb
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:58.8413656Z Finalizing artifact upload
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:59.1242882Z Artifact history-integrity-3.zip successfully finalized. Artifact ID 12069514455
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:59.1243582Z Artifact history-integrity-3 has been successfully uploaded! Final size is 128796 bytes. Artifact ID is 12069514455
+integrity	Run actions/upload-artifact@v4	2026-10-16T19:39:59.1249290Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38927950314/artifacts/12069514455
+integrity	Post Run actions/setup-python@v5	﻿2026-10-16T19:39:59.1392762Z Post job cleanup.
+integrity	Post Run actions/setup-python@v5	2026-10-16T19:39:59.2341731Z (node:2507) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+integrity	Post Run actions/setup-python@v5	2026-10-16T19:39:59.2342362Z (Use `node --trace-deprecation ...` to show where the warning was created)
+integrity	Post Run actions/checkout@v4	﻿2026-10-16T19:39:59.2521421Z Post job cleanup.
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3209412Z [command]/usr/bin/git version
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3243414Z git version 2.55.0
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3270981Z Temporarily overriding HOME='/home/runner/work/_temp/77f2ce15-f90f-4eeb-aa70-2cea17b2944f' before making global git config changes
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3271986Z Adding repository directory to the temporary git global config as a safe directory
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3274923Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3306267Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3335169Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3556054Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3586913Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3809232Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+integrity	Post Run actions/checkout@v4	2026-10-16T19:39:59.3837131Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+integrity	Complete job	﻿2026-10-16T19:39:59.4165428Z Cleaning up orphan processes
+integrity	Complete job	2026-10-16T19:39:59.4385709Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+mathematical-review	Set up job	﻿2026-10-16T19:40:04.7343086Z Current runner version: '2.337.0'
+mathematical-review	Set up job	2026-10-16T19:40:04.7369218Z ##[group]Runner Image Provisioner
+mathematical-review	Set up job	2026-10-16T19:40:04.7370427Z Hosted Compute Agent
+mathematical-review	Set up job	2026-10-16T19:40:04.7371073Z Version: 20261012.601
+mathematical-review	Set up job	2026-10-16T19:40:04.7371740Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+mathematical-review	Set up job	2026-10-16T19:40:04.7372629Z Build Date: 2026-10-12T17:48:21Z
+mathematical-review	Set up job	2026-10-16T19:40:04.7373365Z Worker ID: {81fe72b3-1afd-43d2-84e7-87e09edf5bc3}
+mathematical-review	Set up job	2026-10-16T19:40:04.7374156Z Region: westcentralus
+mathematical-review	Set up job	2026-10-16T19:40:04.7374848Z Cloud: Azure
+mathematical-review	Set up job	2026-10-16T19:40:04.7375457Z ##[endgroup]
+mathematical-review	Set up job	2026-10-16T19:40:04.7377015Z ##[group]Operating System
+mathematical-review	Set up job	2026-10-16T19:40:04.7377735Z Ubuntu
+mathematical-review	Set up job	2026-10-16T19:40:04.7378688Z 24.04.5
+mathematical-review	Set up job	2026-10-16T19:40:04.7379269Z LTS
+mathematical-review	Set up job	2026-10-16T19:40:04.7380056Z ##[endgroup]
+mathematical-review	Set up job	2026-10-16T19:40:04.7380770Z ##[group]Runner Image
+mathematical-review	Set up job	2026-10-16T19:40:04.7381431Z Image: ubuntu-24.04
+mathematical-review	Set up job	2026-10-16T19:40:04.7382079Z Version: 20261012.334.1
+mathematical-review	Set up job	2026-10-16T19:40:04.7383258Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+mathematical-review	Set up job	2026-10-16T19:40:04.7385181Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+mathematical-review	Set up job	2026-10-16T19:40:04.7386196Z ##[endgroup]
+mathematical-review	Set up job	2026-10-16T19:40:04.7387453Z ##[group]GITHUB_TOKEN Permissions
+mathematical-review	Set up job	2026-10-16T19:40:04.7389752Z Contents: read
+mathematical-review	Set up job	2026-10-16T19:40:04.7390748Z Metadata: read
+mathematical-review	Set up job	2026-10-16T19:40:04.7391370Z ##[endgroup]
+mathematical-review	Set up job	2026-10-16T19:40:04.7393450Z Secret source: Actions
+mathematical-review	Set up job	2026-10-16T19:40:04.7394610Z Cache mode: write
+mathematical-review	Set up job	2026-10-16T19:40:04.7395309Z Prepare workflow directory
+mathematical-review	Set up job	2026-10-16T19:40:04.8020726Z Prepare all required actions
+mathematical-review	Set up job	2026-10-16T19:40:04.8087671Z Getting action download info
+mathematical-review	Set up job	2026-10-16T19:40:05.1381525Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+mathematical-review	Set up job	2026-10-16T19:40:05.2123305Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+mathematical-review	Set up job	2026-10-16T19:40:05.3661399Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+mathematical-review	Set up job	2026-10-16T19:40:06.0827334Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+mathematical-review	Set up job	2026-10-16T19:40:06.3898772Z Complete job name: mathematical-review
+mathematical-review	Run actions/checkout@v4	﻿2026-10-16T19:40:06.4758774Z ##[group]Run actions/checkout@v4
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4760467Z with:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4761483Z   ref: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4762762Z   path: research_snapshot
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4763802Z   fetch-depth: 4
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4764779Z   persist-credentials: false
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4766929Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation
+mathematical-review	Run actions/checkout@v4	.github/scripts
+mathematical-review	Run actions/checkout@v4	.github/workflows
+mathematical-review	Run actions/checkout@v4	
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4769321Z   repository: proteinfoldingengine/WetLabEngine
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4777578Z   token: ***
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4778517Z   ssh-strict: true
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4779476Z   ssh-user: git
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4780497Z   clean: true
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4781470Z   sparse-checkout-cone-mode: true
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4782651Z   fetch-tags: false
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4783610Z   show-progress: true
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4784608Z   lfs: false
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4785522Z   submodules: false
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4786509Z   set-safe-directory: true
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4787659Z   allow-unsafe-pr-checkout: false
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4789023Z env:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4790332Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.4791725Z ##[endgroup]
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.5892227Z Syncing repository: proteinfoldingengine/WetLabEngine
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.5896630Z ##[group]Getting Git version info
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.5899361Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.5903285Z [command]/usr/bin/git version
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.5913668Z git version 2.55.0
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.5935313Z ##[endgroup]
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.5951227Z Temporarily overriding HOME='/home/runner/work/_temp/b70b41e0-4fe1-4c19-af4c-4843f666d2a1' before making global git config changes
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.5956868Z Adding repository directory to the temporary git global config as a safe directory
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.5961396Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6007124Z ##[group]Initializing the repository
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6019206Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6094749Z hint: Using 'master' as the name for the initial branch. This default branch name
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6098216Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6101803Z hint: to use in all of your new repositories, which will suppress this warning,
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6104505Z hint: call:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6106015Z hint:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6107679Z hint: 	git config --global init.defaultBranch <name>
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6109700Z hint:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6111999Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6119663Z hint: 'development'. The just-created branch can be renamed via this command:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6122300Z hint:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6123794Z hint: 	git branch -m <name>
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6125401Z hint:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6127582Z hint: Disable this message with "git config set advice.defaultBranchName false"
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6130758Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6135905Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6159521Z ##[endgroup]
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6162109Z ##[group]Disabling automatic garbage collection
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6164194Z [command]/usr/bin/git config --local gc.auto 0
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6199351Z ##[endgroup]
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6201912Z ##[group]Setting up auth
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6207306Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6245289Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6579181Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6623132Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6878869Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.6919716Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.7168707Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.7211762Z ##[endgroup]
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.7214223Z ##[group]Fetching the repository
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:06.7223848Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=4 origin a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7701411Z From https://github.com/proteinfoldingengine/WetLabEngine
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7703056Z  * branch            a42ca9e248c438081f31dcaba2ba5c6ffb36cec0 -> FETCH_HEAD
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7705739Z ##[endgroup]
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7706489Z ##[group]Determining the checkout info
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7708467Z ##[endgroup]
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7709190Z ##[group]Setting up sparse checkout
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7715965Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation .github/scripts .github/workflows
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7766143Z ##[endgroup]
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7766912Z ##[group]Checking out the ref
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:07.7772239Z [command]/usr/bin/git checkout --progress --force a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0557999Z Updating files:   0% (1/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0562260Z Updating files:   1% (8/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0567947Z Updating files:   2% (16/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0573977Z Updating files:   3% (23/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0580535Z Updating files:   4% (31/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0585855Z Updating files:   5% (39/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0589520Z Updating files:   6% (46/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0592415Z Updating files:   7% (54/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0598098Z Updating files:   8% (61/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0603803Z Updating files:   9% (69/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0607408Z Updating files:  10% (77/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0612242Z Updating files:  11% (84/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0616515Z Updating files:  12% (92/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0620691Z Updating files:  13% (99/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0624499Z Updating files:  14% (107/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0627322Z Updating files:  15% (115/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0630972Z Updating files:  16% (122/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0633954Z Updating files:  17% (130/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0638082Z Updating files:  18% (137/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0642547Z Updating files:  19% (145/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0645378Z Updating files:  20% (153/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0649495Z Updating files:  21% (160/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0657287Z Updating files:  22% (168/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0661450Z Updating files:  23% (176/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0681699Z Updating files:  24% (183/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0682463Z Updating files:  25% (191/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0683317Z Updating files:  26% (198/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0685044Z Updating files:  27% (206/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0685704Z Updating files:  28% (214/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0687912Z Updating files:  29% (221/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0693700Z Updating files:  30% (229/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0699099Z Updating files:  31% (236/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0796818Z Updating files:  32% (244/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0797863Z Updating files:  33% (252/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0798533Z Updating files:  34% (259/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0799456Z Updating files:  35% (267/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0800283Z Updating files:  36% (274/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0801218Z Updating files:  37% (282/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0801804Z Updating files:  38% (290/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0802452Z Updating files:  39% (297/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0803003Z Updating files:  40% (305/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0803599Z Updating files:  41% (313/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0804251Z Updating files:  42% (320/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0804853Z Updating files:  43% (328/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0805437Z Updating files:  44% (335/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0806179Z Updating files:  45% (343/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0806752Z Updating files:  46% (351/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0807194Z Updating files:  47% (358/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0807604Z Updating files:  48% (366/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0808018Z Updating files:  49% (373/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0808547Z Updating files:  50% (381/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0821216Z Updating files:  51% (389/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0821815Z Updating files:  52% (396/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0824848Z Updating files:  53% (404/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0832103Z Updating files:  54% (411/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0837684Z Updating files:  55% (419/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0843976Z Updating files:  56% (427/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0849474Z Updating files:  57% (434/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0854513Z Updating files:  58% (442/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0859548Z Updating files:  59% (449/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0864751Z Updating files:  60% (457/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0869760Z Updating files:  61% (465/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0874738Z Updating files:  62% (472/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0880853Z Updating files:  63% (480/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0885506Z Updating files:  64% (488/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0891368Z Updating files:  65% (495/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0896003Z Updating files:  66% (503/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0901348Z Updating files:  67% (510/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0906833Z Updating files:  68% (518/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0913176Z Updating files:  69% (526/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0918389Z Updating files:  70% (533/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0923560Z Updating files:  71% (541/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0929389Z Updating files:  72% (548/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0947187Z Updating files:  73% (556/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0953401Z Updating files:  74% (564/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0958412Z Updating files:  75% (571/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0964512Z Updating files:  76% (579/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0970262Z Updating files:  77% (586/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0976814Z Updating files:  78% (594/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0982444Z Updating files:  79% (602/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0989683Z Updating files:  80% (609/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.0995750Z Updating files:  81% (617/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1000760Z Updating files:  82% (625/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1005672Z Updating files:  83% (632/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1010695Z Updating files:  84% (640/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1015969Z Updating files:  85% (647/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1022347Z Updating files:  86% (655/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1027300Z Updating files:  87% (663/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1033009Z Updating files:  88% (670/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1037531Z Updating files:  89% (678/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1044115Z Updating files:  90% (685/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1050391Z Updating files:  91% (693/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1054849Z Updating files:  92% (701/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1060006Z Updating files:  93% (708/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1064812Z Updating files:  94% (716/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1071298Z Updating files:  95% (723/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1080801Z Updating files:  96% (731/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1088045Z Updating files:  97% (739/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1094944Z Updating files:  98% (746/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1101403Z Updating files:  99% (754/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1101842Z Updating files: 100% (761/761)
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1102259Z Updating files: 100% (761/761), done.
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1228144Z Note: switching to 'a42ca9e248c438081f31dcaba2ba5c6ffb36cec0'.
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1228618Z 
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1228924Z You are in 'detached HEAD' state. You can look around, make experimental
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1229729Z changes and commit them, and you can discard any commits you make in this
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1230474Z state without impacting any branches by switching back to a branch.
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1230762Z 
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1230959Z If you want to create a new branch to retain commits you create, you may
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1231408Z do so (now or later) by using -c with the switch command. Example:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1231679Z 
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1231792Z   git switch -c <new-branch-name>
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1231974Z 
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1232082Z Or undo this operation with:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1232252Z 
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1232350Z   git switch -
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1232481Z 
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1232735Z Turn off this advice by setting config variable advice.detachedHead to false
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1233038Z 
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1233294Z HEAD is now at a42ca9e Preserve HTTP429 evidence and allow one clean history-review retry
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1242958Z ##[endgroup]
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1297025Z [command]/usr/bin/git log -1 --format=%H
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1330152Z a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1339265Z ##[group]Removing auth
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1342998Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1377575Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1632628Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1664611Z http.https://github.com/.extraheader
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1673230Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1713518Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.1968436Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.2004452Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+mathematical-review	Run actions/checkout@v4	2026-10-16T19:40:09.2254611Z ##[endgroup]
+mathematical-review	Run actions/setup-python@v5	﻿2026-10-16T19:40:09.2515491Z ##[group]Run actions/setup-python@v5
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2515807Z with:
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2516025Z   python-version: 3.12.12
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2516278Z   check-latest: false
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2518598Z   token: ***
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2518834Z   update-environment: true
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2519108Z   allow-prereleases: false
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2519364Z   freethreaded: false
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2519586Z env:
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2520133Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.2520601Z ##[endgroup]
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.3908210Z ##[group]Installed versions
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.5592095Z Version 3.12.12 was not found in the local cache
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.5706215Z (node:2454) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:09.5706954Z (Use `node --trace-deprecation ...` to show where the warning was created)
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:10.6918594Z Version 3.12.12 is available for downloading
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:10.6920501Z Download from "https://github.com/actions/python-versions/releases/download/3.12.12-18393146713/python-3.12.12-linux-24.04-x64.tar.gz"
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:11.8476333Z Extract downloaded archive
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:11.8594189Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/78cc0144-dc49-4b08-8696-f3af12f60c6a -f /home/runner/work/_temp/a628ac97-cad9-47b0-b9f9-f48f4094a0ca
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:14.0933804Z Execute installation script
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:14.1031375Z Check if Python hostedtoolcache folder exist...
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:14.1032231Z Create Python 3.12.12 folder
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:14.1047055Z Copy Python binaries to hostedtoolcache folder
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:14.5988285Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:14.6031483Z Upgrading pip...
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:17.6494517Z Looking in links: /tmp/tmpos7ch186
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:17.6498893Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages (25.0.1)
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.2659018Z Collecting pip
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.3454482Z Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.3699521Z Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.4994684Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 20.8 MB/s eta 0:00:00
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.4995230Z 
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.5199106Z Installing collected packages: pip
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.5201195Z Attempting uninstall: pip
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.5221951Z Found existing installation: pip 25.0.1
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.5549437Z Uninstalling pip-25.0.1:
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:19.5604701Z Successfully uninstalled pip-25.0.1
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:20.4983650Z Successfully installed pip-26.2.1
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:20.5475404Z Create complete file
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:20.5513542Z Successfully set up CPython (3.12.12)
+mathematical-review	Run actions/setup-python@v5	2026-10-16T19:40:20.5514931Z ##[endgroup]
+mathematical-review	Run actions/download-artifact@v4	﻿2026-10-16T19:40:20.5720980Z ##[group]Run actions/download-artifact@v4
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5721311Z with:
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5721545Z   name: history-integrity-3
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5721826Z   path: history_integrity
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5722094Z   merge-multiple: false
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5722387Z   repository: proteinfoldingengine/WetLabEngine
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5722709Z   run-id: 38927950314
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5723125Z env:
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5723404Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5723821Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5724307Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5724753Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5725158Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5725553Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5725948Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.5726330Z ##[endgroup]
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.7217511Z Downloading single artifact
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.7391483Z (node:2534) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.7392326Z (Use `node --trace-deprecation ...` to show where the warning was created)
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.9455048Z Preparing to download the following artifacts:
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:20.9456388Z - history-integrity-3 (ID: 12069514455, Size: 128796, Expected Digest: sha256:fb9e3e2b5c4dbe09122bd42d4b686809113f4e94d8835229e48827cd26d9dcfb)
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:21.1792624Z Redirecting to blob download url: https://productionresultssa15.blob.core.windows.net/actions-results/b4317a1c-5c88-8d23-8302-2e62cff22e8d/workflow-job-run-bff58154-13e7-5d25-abf9-1b580445d04b/artifacts/e4405858e043a5097cc8bbbba1b430648e2a4d8dcfcda1c5293eb1e71d0745fa.zip
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:21.1794854Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/history_integrity
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:21.3878585Z (node:2534) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:21.4790263Z SHA256 digest of downloaded artifact is fb9e3e2b5c4dbe09122bd42d4b686809113f4e94d8835229e48827cd26d9dcfb
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:21.4791229Z Artifact download completed successfully.
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:21.4791599Z Total of 1 artifact(s) downloaded
+mathematical-review	Run actions/download-artifact@v4	2026-10-16T19:40:21.4796192Z Download artifact has finished successfully
+mathematical-review	Independent Gemini argument review	﻿2026-10-16T19:40:21.4931343Z ##[group]Run python research_snapshot/.github/scripts/uqcf_history_orientation_review.py review
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.4932105Z [36;1mpython research_snapshot/.github/scripts/uqcf_history_orientation_review.py review[0m
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5153992Z shell: /usr/bin/bash -e {0}
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5154290Z env:
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5154597Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5155034Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5155494Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5155940Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5156345Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5156735Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5157175Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5157945Z   GEMINI_API_KEY: ***
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:21.5158239Z ##[endgroup]
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5161256Z GEMINI_RAW_REVIEW_BEGIN
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5161804Z {
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5162138Z   "verdict": "ACCEPTED",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5162540Z   "findings": [],
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5162909Z   "missing_assumptions": [],
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5163364Z   "counterexamples": [],
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5163741Z   "limitations": [
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5164821Z     "The finite-dimensional algebra A, unitary group G, and common source pair with equal central block weights are supplied conditional interface data, not derived native facts.",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5166686Z     "The rooted locally finite history tree, measurable full-history space, and its sigma algebra generated by prefix maps are candidate extensions, not inherited physical facts.",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5168674Z     "The common normalized, countably additive POVM and the prefix-preserving action of G are candidate premises, not derived native laws.",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5170320Z     "The result applies only to selection based on this history; a separate quantum selective instrument or extra source/reference information is not covered.",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5171961Z     "The proof relies on countable additivity and cylinder-generated access; finitely additive extensions or tail variables not measurable in the generated sigma algebra F are not covered."
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5173065Z   ],
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5173370Z   "observations": [
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5174432Z     "The divisibility of the connected compact Lie group G = U(A) correctly forces any homomorphism to a finite permutation group to be trivial, without requiring a continuity assumption (Section 3).",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5176387Z     "The extension from finite prefixes to the full infinite history correctly applies the pi-system uniqueness theorem to the real and imaginary parts of the finite complex measures comprising the POVM (Section 4).",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5178466Z     "The total-variation approximation lemma correctly establishes that any contrast in the limit history must already appear in some finite joint prefix, avoiding the assumption of a uniform convergence rate (Section 4).",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5180828Z     "The control demonstrating that individual symbol blindness is insufficient correctly justifies the necessity of analyzing complete joint prefixes rather than individual marginals (Section 5).",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5183214Z     "The control regarding the encoding of a supplied oriented register correctly shows that such an encoding must break the finite-prefix equivariance assumption, preventing the silent smuggling of an orientation (Section 5).",
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5185896Z     "The document successfully passes the admission gate by resolving the specific proposed source of the missing diffuse orientation record without claiming a native interaction, physical completion, or new mathematical priority (Section 6)."
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5187518Z   ]
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5187839Z }
+mathematical-review	Independent Gemini argument review	2026-10-16T19:40:52.5188153Z GEMINI_RAW_REVIEW_END
+mathematical-review	Run actions/upload-artifact@v4	﻿2026-10-16T19:40:52.5368963Z ##[group]Run actions/upload-artifact@v4
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5369290Z with:
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5369541Z   name: history-review-3
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5369811Z   path: history_review
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5370272Z   include-hidden-files: true
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5370564Z   if-no-files-found: error
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5370828Z   retention-days: 90
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5371073Z   compression-level: 6
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5371315Z   overwrite: false
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5371560Z env:
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5371854Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5372289Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5372755Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5373235Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5373663Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5374094Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5374554Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.5374965Z ##[endgroup]
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.7027012Z (node:2679) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.7027961Z (Use `node --trace-deprecation ...` to show where the warning was created)
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.7115744Z With the provided path, there will be 8 files uploaded
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.7117580Z Artifact name is valid!
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:52.7118615Z Root directory input is valid!
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:53.0658115Z Beginning upload of artifact content to blob storage
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:53.1057666Z (node:2679) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:53.4498820Z Uploaded bytes 110662
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:53.5064893Z Finished uploading artifact content to blob storage!
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:53.5066091Z SHA256 digest of uploaded artifact zip is b0d138ba85391fa6b570aa2e7a4554a06faf625dfa5208b815ce414485180308
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:53.5067553Z Finalizing artifact upload
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:53.7672532Z Artifact history-review-3.zip successfully finalized. Artifact ID 12070469282
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:53.7673442Z Artifact history-review-3 has been successfully uploaded! Final size is 110662 bytes. Artifact ID is 12070469282
+mathematical-review	Run actions/upload-artifact@v4	2026-10-16T19:40:53.7679462Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38927950314/artifacts/12070469282
+mathematical-review	Post Run actions/setup-python@v5	﻿2026-10-16T19:40:53.7855327Z Post job cleanup.
+mathematical-review	Post Run actions/setup-python@v5	2026-10-16T19:40:53.9107301Z (node:2692) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+mathematical-review	Post Run actions/setup-python@v5	2026-10-16T19:40:53.9108184Z (Use `node --trace-deprecation ...` to show where the warning was created)
+mathematical-review	Post Run actions/checkout@v4	﻿2026-10-16T19:40:53.9306451Z Post job cleanup.
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.0243989Z [command]/usr/bin/git version
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.0292541Z git version 2.55.0
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.0321121Z Temporarily overriding HOME='/home/runner/work/_temp/8551ac4e-4a1c-4f54-9fa5-067982120584' before making global git config changes
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.0322395Z Adding repository directory to the temporary git global config as a safe directory
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.0323564Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.0373132Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.0413146Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.0730608Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.0778037Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.1054150Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+mathematical-review	Post Run actions/checkout@v4	2026-10-16T19:40:54.1093861Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+mathematical-review	Complete job	﻿2026-10-16T19:40:54.1586192Z Cleaning up orphan processes
+mathematical-review	Complete job	2026-10-16T19:40:54.1902688Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+publication-audit	Set up job	﻿2026-10-16T19:40:59.9064309Z Current runner version: '2.337.0'
+publication-audit	Set up job	2026-10-16T19:40:59.9089290Z ##[group]Runner Image Provisioner
+publication-audit	Set up job	2026-10-16T19:40:59.9090237Z Hosted Compute Agent
+publication-audit	Set up job	2026-10-16T19:40:59.9090874Z Version: 20261012.601
+publication-audit	Set up job	2026-10-16T19:40:59.9091588Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+publication-audit	Set up job	2026-10-16T19:40:59.9092413Z Build Date: 2026-10-12T17:48:21Z
+publication-audit	Set up job	2026-10-16T19:40:59.9093111Z Worker ID: {88255e92-17cc-4d67-914f-7ee383fa3a06}
+publication-audit	Set up job	2026-10-16T19:40:59.9093818Z Region: centralus
+publication-audit	Set up job	2026-10-16T19:40:59.9094473Z Cloud: Azure
+publication-audit	Set up job	2026-10-16T19:40:59.9095024Z ##[endgroup]
+publication-audit	Set up job	2026-10-16T19:40:59.9097018Z ##[group]Operating System
+publication-audit	Set up job	2026-10-16T19:40:59.9097701Z Ubuntu
+publication-audit	Set up job	2026-10-16T19:40:59.9098207Z 24.04.5
+publication-audit	Set up job	2026-10-16T19:40:59.9099198Z LTS
+publication-audit	Set up job	2026-10-16T19:40:59.9099741Z ##[endgroup]
+publication-audit	Set up job	2026-10-16T19:40:59.9100419Z ##[group]Runner Image
+publication-audit	Set up job	2026-10-16T19:40:59.9101078Z Image: ubuntu-24.04
+publication-audit	Set up job	2026-10-16T19:40:59.9101678Z Version: 20261012.334.1
+publication-audit	Set up job	2026-10-16T19:40:59.9102868Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+publication-audit	Set up job	2026-10-16T19:40:59.9104678Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+publication-audit	Set up job	2026-10-16T19:40:59.9105949Z ##[endgroup]
+publication-audit	Set up job	2026-10-16T19:40:59.9107144Z ##[group]GITHUB_TOKEN Permissions
+publication-audit	Set up job	2026-10-16T19:40:59.9109263Z Contents: read
+publication-audit	Set up job	2026-10-16T19:40:59.9109968Z Metadata: read
+publication-audit	Set up job	2026-10-16T19:40:59.9110645Z ##[endgroup]
+publication-audit	Set up job	2026-10-16T19:40:59.9112670Z Secret source: Actions
+publication-audit	Set up job	2026-10-16T19:40:59.9113736Z Cache mode: write
+publication-audit	Set up job	2026-10-16T19:40:59.9114468Z Prepare workflow directory
+publication-audit	Set up job	2026-10-16T19:40:59.9724383Z Prepare all required actions
+publication-audit	Set up job	2026-10-16T19:40:59.9798000Z Getting action download info
+publication-audit	Set up job	2026-10-16T19:41:00.2573805Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+publication-audit	Set up job	2026-10-16T19:41:00.3558966Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+publication-audit	Set up job	2026-10-16T19:41:00.4386531Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+publication-audit	Set up job	2026-10-16T19:41:00.8828202Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+publication-audit	Set up job	2026-10-16T19:41:01.0944865Z Complete job name: publication-audit
+publication-audit	Run actions/checkout@v4	﻿2026-10-16T19:41:01.1692550Z ##[group]Run actions/checkout@v4
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1693525Z with:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1694071Z   ref: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1694738Z   path: research_snapshot
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1695257Z   fetch-depth: 4
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1695973Z   persist-credentials: false
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1697076Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation
+publication-audit	Run actions/checkout@v4	.github/scripts
+publication-audit	Run actions/checkout@v4	.github/workflows
+publication-audit	Run actions/checkout@v4	
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1698327Z   repository: proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1702506Z   token: ***
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1702984Z   ssh-strict: true
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1703469Z   ssh-user: git
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1703923Z   clean: true
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1704416Z   sparse-checkout-cone-mode: true
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1705026Z   fetch-tags: false
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1705719Z   show-progress: true
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1706211Z   lfs: false
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1706669Z   submodules: false
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1707153Z   set-safe-directory: true
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1707762Z   allow-unsafe-pr-checkout: false
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1708642Z env:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1709242Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.1709963Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2787057Z Syncing repository: proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2789598Z ##[group]Getting Git version info
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2791020Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2793012Z [command]/usr/bin/git version
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2896607Z git version 2.55.0
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2921580Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2937489Z Temporarily overriding HOME='/home/runner/work/_temp/b0cf6e7e-48ff-4e98-831f-3ce49636721e' before making global git config changes
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2939857Z Adding repository directory to the temporary git global config as a safe directory
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2944069Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.2994426Z ##[group]Initializing the repository
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3000010Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3146324Z hint: Using 'master' as the name for the initial branch. This default branch name
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3148299Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3150023Z hint: to use in all of your new repositories, which will suppress this warning,
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3151412Z hint: call:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3152557Z hint:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3153947Z hint: 	git config --global init.defaultBranch <name>
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3155973Z hint:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3157274Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3158944Z hint: 'development'. The just-created branch can be renamed via this command:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3160189Z hint:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3161235Z hint: 	git branch -m <name>
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3162464Z hint:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3163974Z hint: Disable this message with "git config set advice.defaultBranchName false"
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3165323Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3169351Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3218883Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3220264Z ##[group]Disabling automatic garbage collection
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3223050Z [command]/usr/bin/git config --local gc.auto 0
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3257911Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3259690Z ##[group]Setting up auth
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3264552Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3306112Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3752628Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.3793554Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.4021674Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.4061043Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.4290990Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.4331783Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.4332748Z ##[group]Fetching the repository
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.4341383Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=4 origin a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9579137Z From https://github.com/proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9580782Z  * branch            a42ca9e248c438081f31dcaba2ba5c6ffb36cec0 -> FETCH_HEAD
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9585883Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9588304Z ##[group]Determining the checkout info
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9590342Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9591686Z ##[group]Setting up sparse checkout
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9598589Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/history_orientation .github/scripts .github/workflows
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9656405Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9657931Z ##[group]Checking out the ref
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:01.9662192Z [command]/usr/bin/git checkout --progress --force a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6655738Z Note: switching to 'a42ca9e248c438081f31dcaba2ba5c6ffb36cec0'.
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6657613Z 
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6658695Z You are in 'detached HEAD' state. You can look around, make experimental
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6661135Z changes and commit them, and you can discard any commits you make in this
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6663589Z state without impacting any branches by switching back to a branch.
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6664989Z 
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6666185Z If you want to create a new branch to retain commits you create, you may
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6669108Z do so (now or later) by using -c with the switch command. Example:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6671095Z 
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6671946Z   git switch -c <new-branch-name>
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6672926Z 
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6673470Z Or undo this operation with:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6674410Z 
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6675028Z   git switch -
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6676011Z 
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6677861Z Turn off this advice by setting config variable advice.detachedHead to false
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6680599Z 
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6682510Z HEAD is now at a42ca9e Preserve HTTP429 evidence and allow one clean history-review retry
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6687775Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6725273Z [command]/usr/bin/git log -1 --format=%H
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6754396Z a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6764339Z ##[group]Removing auth
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6767812Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.6803665Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.7041906Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.7069659Z http.https://github.com/.extraheader
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.7078410Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.7116196Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.7354749Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.7391297Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publication-audit	Run actions/checkout@v4	2026-10-16T19:41:02.7620647Z ##[endgroup]
+publication-audit	Run actions/setup-python@v5	﻿2026-10-16T19:41:02.8057071Z ##[group]Run actions/setup-python@v5
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8058317Z with:
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8059174Z   python-version: 3.12.12
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8060228Z   check-latest: false
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8070411Z   token: ***
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8071370Z   update-environment: true
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8072460Z   allow-prereleases: false
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8073582Z   freethreaded: false
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8074520Z env:
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8075761Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.8077216Z ##[endgroup]
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.9420232Z ##[group]Installed versions
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.9441484Z Version 3.12.12 was not found in the local cache
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.9604418Z (node:2478) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:02.9608118Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:03.8051583Z Version 3.12.12 is available for downloading
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:03.8053629Z Download from "https://github.com/actions/python-versions/releases/download/3.12.12-18393146713/python-3.12.12-linux-24.04-x64.tar.gz"
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:04.5673091Z Extract downloaded archive
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:04.5809011Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/b82c7f8b-99ec-416d-9570-7e68cf8709a0 -f /home/runner/work/_temp/d411292f-a06a-4ad8-8b7e-bda3597d5e28
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:06.5951980Z Execute installation script
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:06.6051210Z Check if Python hostedtoolcache folder exist...
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:06.6052101Z Create Python 3.12.12 folder
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:06.6068452Z Copy Python binaries to hostedtoolcache folder
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:07.0884590Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:07.0926050Z Upgrading pip...
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:09.2288805Z Looking in links: /tmp/tmpsw0gusuq
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:09.2293655Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages (25.0.1)
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.3102421Z Collecting pip
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.3709484Z Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.3886155Z Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.4835657Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 26.6 MB/s eta 0:00:00
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.4836419Z 
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.5006641Z Installing collected packages: pip
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.5008406Z Attempting uninstall: pip
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.5031084Z Found existing installation: pip 25.0.1
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.5387687Z Uninstalling pip-25.0.1:
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:10.5444237Z Successfully uninstalled pip-25.0.1
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:11.4344100Z Successfully installed pip-26.2.1
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:11.4802536Z Create complete file
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:11.4842339Z Successfully set up CPython (3.12.12)
+publication-audit	Run actions/setup-python@v5	2026-10-16T19:41:11.4843757Z ##[endgroup]
+publication-audit	Run actions/download-artifact@v4	﻿2026-10-16T19:41:11.5034374Z ##[group]Run actions/download-artifact@v4
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5034716Z with:
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5034929Z   name: history-review-3
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5035179Z   path: history_review
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5035694Z   merge-multiple: false
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5036202Z   repository: proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5036602Z   run-id: 38927950314
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5036828Z env:
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5037083Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5037479Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5037925Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5038359Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5038750Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5039150Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5039544Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.5039902Z ##[endgroup]
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.6526147Z Downloading single artifact
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.6700303Z (node:2556) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.6701452Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.8285232Z Preparing to download the following artifacts:
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:11.8286589Z - history-review-3 (ID: 12070469282, Size: 110662, Expected Digest: sha256:b0d138ba85391fa6b570aa2e7a4554a06faf625dfa5208b815ce414485180308)
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:12.0111974Z Redirecting to blob download url: https://productionresultssa15.blob.core.windows.net/actions-results/b4317a1c-5c88-8d23-8302-2e62cff22e8d/workflow-job-run-3980efb9-ebaf-5ec7-9a03-d6cf89551383/artifacts/e9383e95858d08966268874682e1a89777d3ee10c2a7916b4eb07c6d1717950a.zip
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:12.0115040Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/history_review
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:12.1699120Z (node:2556) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:12.2391557Z SHA256 digest of downloaded artifact is b0d138ba85391fa6b570aa2e7a4554a06faf625dfa5208b815ce414485180308
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:12.2392634Z Artifact download completed successfully.
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:12.2392968Z Total of 1 artifact(s) downloaded
+publication-audit	Run actions/download-artifact@v4	2026-10-16T19:41:12.2397694Z Download artifact has finished successfully
+publication-audit	Independent immutable source and review byte audit	﻿2026-10-16T19:41:12.2520581Z ##[group]Run python research_snapshot/.github/scripts/uqcf_history_orientation_publication.py
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2521337Z [36;1mpython research_snapshot/.github/scripts/uqcf_history_orientation_publication.py[0m
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2803232Z shell: /usr/bin/bash -e {0}
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2803520Z env:
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2803809Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2804253Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2804728Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2805192Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2805786Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2806219Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2806658Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2809573Z   GH_READ_TOKEN: ***
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:12.2809822Z ##[endgroup]
+publication-audit	Independent immutable source and review byte audit	2026-10-16T19:41:28.0921879Z Immutable publication and source bytes verified: 33
+publication-audit	Run actions/upload-artifact@v4	﻿2026-10-16T19:41:28.1066837Z ##[group]Run actions/upload-artifact@v4
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1067149Z with:
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1067358Z   name: history-publication-3
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1067619Z   path: history_publication
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1067878Z   include-hidden-files: true
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1068135Z   if-no-files-found: error
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1068368Z   retention-days: 90
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1068582Z   compression-level: 6
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1068797Z   overwrite: false
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1068998Z env:
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1069250Z   UQCF_WORKFLOW_SHA: a42ca9e248c438081f31dcaba2ba5c6ffb36cec0
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1069659Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1070107Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1070537Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1070921Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1071305Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1071721Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.1072048Z ##[endgroup]
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.2714962Z (node:2573) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.2716246Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.2772113Z With the provided path, there will be 2 files uploaded
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.2779281Z Artifact name is valid!
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.2779828Z Root directory input is valid!
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.5463361Z Beginning upload of artifact content to blob storage
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.5680993Z (node:2573) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.7016588Z Uploaded bytes 4283
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.7408018Z Finished uploading artifact content to blob storage!
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.7409452Z SHA256 digest of uploaded artifact zip is 34f503584d128e255e552521f3181ac3f89a95bbaa976c8fda5cd9f9babd64d6
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.7411131Z Finalizing artifact upload
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.9971160Z Artifact history-publication-3.zip successfully finalized. Artifact ID 12070158866
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.9972711Z Artifact history-publication-3 has been successfully uploaded! Final size is 4283 bytes. Artifact ID is 12070158866
+publication-audit	Run actions/upload-artifact@v4	2026-10-16T19:41:28.9979712Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38927950314/artifacts/12070158866
+publication-audit	Post Run actions/setup-python@v5	﻿2026-10-16T19:41:29.0185179Z Post job cleanup.
+publication-audit	Post Run actions/setup-python@v5	2026-10-16T19:41:29.1375035Z (node:2585) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication-audit	Post Run actions/setup-python@v5	2026-10-16T19:41:29.1376230Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication-audit	Post Run actions/checkout@v4	﻿2026-10-16T19:41:29.1543408Z Post job cleanup.
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.2480327Z [command]/usr/bin/git version
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.2532484Z git version 2.55.0
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.2579445Z Temporarily overriding HOME='/home/runner/work/_temp/4d89277c-147e-4d5f-b8f6-1a27bb78a2a3' before making global git config changes
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.2597502Z Adding repository directory to the temporary git global config as a safe directory
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.2616537Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.2644191Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.2682214Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.2958667Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.3013439Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.3378630Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publication-audit	Post Run actions/checkout@v4	2026-10-16T19:41:29.3414234Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publication-audit	Complete job	﻿2026-10-16T19:41:29.3919081Z Cleaning up orphan processes
+publication-audit	Complete job	2026-10-16T19:41:29.4202010Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
