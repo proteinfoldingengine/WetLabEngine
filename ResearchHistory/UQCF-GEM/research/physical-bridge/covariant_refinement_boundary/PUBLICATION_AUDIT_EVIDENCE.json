@@ -1,0 +1,158 @@
+{
+ "parent": "b20429c2e692d3ea219ab44404366cdfa3a5b119",
+ "scientific_head": "5f318b99d86fea2a9b1c09432705941a9edd188c",
+ "tree": "d2e16c6ded7f0ecc1356d98041ae146702be6469",
+ "commit_range": [
+  "0243bcbbc68749c99564ea29e7a8b513bc84885e",
+  "bce117d1949e22d8b420c594b9a969a251f7ac41",
+  "5f318b99d86fea2a9b1c09432705941a9edd188c"
+ ],
+ "stage1": [
+  {
+   "path": "ResearchHistory/UQCF-GEM/AGENTS.md",
+   "pass": true,
+   "bytes": 2368,
+   "sha256": "56d5ffb2d1f8f0d1a1660b6cc5b31ebae92b59fb48b547e7d47ea13f0bafdee0",
+   "git_blob": "e5407215a81b914fc02f5c107333a2f0261634ee",
+   "api_blob": "e5407215a81b914fc02f5c107333a2f0261634ee"
+  },
+  {
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/NATIVE_EVENT_MILESTONE.md",
+   "pass": true,
+   "bytes": 12865,
+   "sha256": "7c848e15bdcafe2a908268237b5afaf5ffe0f39f28c2776fd8a23efafc161c0d",
+   "git_blob": "46c27da7d5a049820ebde455b91863f071b621e5",
+   "api_blob": "46c27da7d5a049820ebde455b91863f071b621e5"
+  },
+  {
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+   "pass": true,
+   "bytes": 83737,
+   "sha256": "92894901725a16d3f5c50668442bdb56b7911e2671e6a835017c3ff9389281b5",
+   "git_blob": "b06941ace5a7e6a30d1c11526de0d213ef122309",
+   "api_blob": "b06941ace5a7e6a30d1c11526de0d213ef122309"
+  },
+  {
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/record_compatibility_bridge/RESULT.md",
+   "pass": true,
+   "bytes": 19098,
+   "sha256": "e7984289aa80eea77ac01283ce74516c193df269a11d1f147f6588217dd20f24",
+   "git_blob": "91ab61e84a7d18a90198f1084107da571b6d5cb2",
+   "api_blob": "91ab61e84a7d18a90198f1084107da571b6d5cb2"
+  },
+  {
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/retained_reader_write/RESULT.md",
+   "pass": true,
+   "bytes": 13813,
+   "sha256": "fb9ffa6ca1f505053f7a9c64072fefcbceef3c9047d4caaf877c4539a04d7ac6",
+   "git_blob": "d85dd9e4178488de9bf27c81111c46a477823a2c",
+   "api_blob": "d85dd9e4178488de9bf27c81111c46a477823a2c"
+  },
+  {
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/collective_covariance_candidate/RESULT.md",
+   "pass": true,
+   "bytes": 16341,
+   "sha256": "5b58822c309013cfb6c07b528a3dafc8360f15d3c587a2fb52143ec04f4b3eb7",
+   "git_blob": "65bbcbe3fdb88edf390f42bba16ed77dc90debcc",
+   "api_blob": "65bbcbe3fdb88edf390f42bba16ed77dc90debcc"
+  },
+  {
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/center_access_growth/RESULT.md",
+   "pass": true,
+   "bytes": 11147,
+   "sha256": "329ee9436730c8057496ff162205205a75bf45237ffe7e276a5072fc65669e66",
+   "git_blob": "666f82810e5e6228cbb89b449bf24a2cd6428af1",
+   "api_blob": "666f82810e5e6228cbb89b449bf24a2cd6428af1"
+  },
+  {
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/center_growth_law_screen/RESULT.md",
+   "pass": true,
+   "bytes": 10655,
+   "sha256": "438e7283acd01903c204ba2119ec3b320a7723e379cd9a62d81dcd8ac2e60cf3",
+   "git_blob": "bd63ad8800e18e8194a2ec23763b936b468d560e",
+   "api_blob": "bd63ad8800e18e8194a2ec23763b936b468d560e"
+  }
+ ],
+ "stage1_pass": true,
+ "stage2": [
+  {
+   "check": "change_boundary_exact",
+   "pass": true,
+   "files": [
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/ANALYTICAL_REVIEW_RAW.md",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/INDEX_APPEND.md",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/PREREGISTRATION.md",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/RESULT.md",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/source_identities.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/source_packet.json"
+   ],
+   "ahead_by": 3,
+   "status": "ahead"
+  },
+  {
+   "check": "bytes_at_head",
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+   "status": "modified",
+   "pass": true,
+   "git_blob": "b1bed4e07f33d3aabfd06780e0d63a2678261299",
+   "compare_blob": "b1bed4e07f33d3aabfd06780e0d63a2678261299",
+   "sha256": "41c54d7188c56758d12aa8b87e2a9c19f80ff45f2a1817b43cf665824e55836c"
+  },
+  {
+   "check": "bytes_at_head",
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/ANALYTICAL_REVIEW_RAW.md",
+   "status": "added",
+   "pass": true,
+   "git_blob": "e61c1b663903dc5313d18e66220472649d2fb150",
+   "compare_blob": "e61c1b663903dc5313d18e66220472649d2fb150",
+   "sha256": "83cd259cf4a0cd867b93d47a80bb3f5640c509ceafb3b68c7457088e0ef2b8ea"
+  },
+  {
+   "check": "bytes_at_head",
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/INDEX_APPEND.md",
+   "status": "added",
+   "pass": true,
+   "git_blob": "ee1b915e258574865935b5246ceb4102eecfc41d",
+   "compare_blob": "ee1b915e258574865935b5246ceb4102eecfc41d",
+   "sha256": "26bb60880f5b91231ac06c2078e541242716e7809f0823f984549005d3a05b39"
+  },
+  {
+   "check": "bytes_at_head",
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/PREREGISTRATION.md",
+   "status": "added",
+   "pass": true,
+   "git_blob": "667bc1f7a377b5afaa348b1e81318a6e9b9b57b2",
+   "compare_blob": "667bc1f7a377b5afaa348b1e81318a6e9b9b57b2",
+   "sha256": "6b03a654265c363f98993a3235ed80e8a70ef94c661fc07e8a4e7521006b0b14"
+  },
+  {
+   "check": "bytes_at_head",
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/RESULT.md",
+   "status": "added",
+   "pass": true,
+   "git_blob": "d4f600a316d318e445afab85053568fa95e749a8",
+   "compare_blob": "d4f600a316d318e445afab85053568fa95e749a8",
+   "sha256": "53c15cecb609e6c97e31641cc27b321b3b3ae3c25437a2a39f15d6f9638557f1"
+  },
+  {
+   "check": "bytes_at_head",
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/source_identities.json",
+   "status": "added",
+   "pass": true,
+   "git_blob": "96c101b3cde0936e4e6d42b32164282e292820bd",
+   "compare_blob": "96c101b3cde0936e4e6d42b32164282e292820bd",
+   "sha256": "c999a6361318aa20f4684b5247fcad3cf5ba2c95f5852652e904530ac69ac593"
+  },
+  {
+   "check": "bytes_at_head",
+   "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/covariant_refinement_boundary/source_packet.json",
+   "status": "added",
+   "pass": true,
+   "git_blob": "629480685b415b27c8a79c6f0aaa87cef515f9ed",
+   "compare_blob": "629480685b415b27c8a79c6f0aaa87cef515f9ed",
+   "sha256": "66c9224a3414924f8c1d388a6a13bbfd82ebef707ada5cc9e66d9b218f558d0d"
+  }
+ ],
+ "stage2_pass": true
+}
