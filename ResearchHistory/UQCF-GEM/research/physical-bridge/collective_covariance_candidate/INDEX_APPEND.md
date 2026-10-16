@@ -1,0 +1,10 @@
+
+
+## 2026-10-15: collective-covariance interaction candidate
+
+The [candidate assessment](collective_covariance_candidate/RESULT.md) tests whether a complete symmetry class, rather than an individually chosen copying gate, can force contrast for the inherited blank-memory source pair. On two supplied identified qubit representations, a fixed unitary commuting with every V tensor V must be a partial swap up to global phase. Its memory probabilities are 0 and sin(theta)^2 for the existing |00> / |10> pair. Every nonidentity member gives a partial statistical record; there is no uniform positive lower bound over arbitrarily weak members. Subsequent reductions retaining the reader preserve that contrast.
+
+The native inputs are not established: the common representation, collective invariance of the actual operation, reversible nonidentity occurrence and local readout/access remain supplied or unresolved. Independent local invariance would instead force a scalar unitary; coordinate covariance with transforming source data is weaker than the hypothesis used here. A nonidentity covariant source-reset channel leaves memory blank, so generic channel activity is insufficient. Invariant joint readers retain their original statistics, and inverse partial swaps undo the write. The prior swap-average control is a different channel despite one matching marginal law.
+
+Disposition: **CONDITIONAL_COLLECTIVE_UNITARY_CLASS_HAS_PAIR_SPECIFIC_TRANSFER; NATIVE_COMMON_REPRESENTATION_NONTRIVIAL_ACTION_AND_ACCESS_UNRESOLVED.** This is an application of standard partial-swap mathematics and a candidate premise audit, not a native interaction, new quantum mechanism or achieved milestone. Re-entry requires an independently justified source/receiver relation and actual action/access; do not launch a partial-swap simulation to substitute for those inputs. No scientific execution, numerical campaign, test-count increase, main merge or numbered-stage CLOSED/CERTIFIED claim. Broad C3/C4-C6 remain OPEN.
+
