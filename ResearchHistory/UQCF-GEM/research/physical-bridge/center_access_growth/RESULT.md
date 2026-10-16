@@ -2,7 +2,7 @@
 
 Date: 2026-10-16 America/New_York. Parent: `d63aea606eb9e73bab812aef2934f799f3bb281a`. Preregistration: `PREREGISTRATION.md` (must be committed first).
 
-**Conditional analytical assessment. Native milestone NOT ACHIEVED.** The findings in §§1–2 were already known before preregistration and are disclosed there; they are not preregistered predictions. The theorem is an elementary consequence of standard finite-dimensional conditional-expectation facts; no mathematical priority is claimed.
+**Conditional analytical assessment. Native milestone NOT ACHIEVED.** Revised after argument review (ANALYTICAL_REVIEW_RAW.md, objections R1–R3). The findings in §§1–2 were already known before preregistration and are disclosed there; they are not preregistered predictions. The theorem is an elementary consequence of standard finite-dimensional conditional-expectation facts; no mathematical priority is claimed.
 
 ## 1. Setting
 Finite-dimensional H. A GIVEN chain of unital *-subalgebras A_0 ⊇ A_1 ⊇ … ⊇ A_n with center retention Z(A_k) ⊆ A_{k+1}. Then Z(A_k) ⊆ Z(A_{k+1}) (`record_compatibility_bridge` §2) and the central atoms form a laminar tree: each atom of Z(A_k) is the sum of the atoms of Z(A_{k+1}) beneath it. E_k is the tracial conditional expectation onto A_k; for nested algebras E_m E_j = E_m (j ≤ m), so the nonselective output at stage m is E_m(ρ). The stage index orders pruning updates; it is not a duration.
@@ -14,7 +14,7 @@ Let ρ_0, ρ_1 be states, Δ = ρ_1 − ρ_0.
 
 (a) Retention. For j ≤ m and every z ∈ Z(A_j): Tr[z E_m(ρ)] = Tr[zρ].
 
-(b) Acquisition criterion. Suppose Tr(zΔ) = 0 for all z ∈ Z(A_k) (blind at stage k). Then the stage-(k+1) readout laws differ iff E_{Z(A_{k+1})}(Δ) ≠ 0, iff some atom z' of Z(A_{k+1}) has Tr(z'Δ) ≠ 0. Their total-variation distance is
+(b) Acquisition criterion. Let the same chain (independent of b, premise P8) act on both sources. Suppose Tr(zΔ) = 0 for all z ∈ Z(A_k) (blind at stage k). Then the stage-(k+1) readout laws differ iff E_{Z(A_{k+1})}(Δ) ≠ 0, iff some atom z' of Z(A_{k+1}) has Tr(z'Δ) ≠ 0. Their total-variation distance is
   δ_TV = ½ Σ_{z' atom of Z(A_{k+1})} |Tr(z'Δ)|,
 and by (a) this law, hence δ_TV, is unchanged at every later stage m ≥ k+1.
 
@@ -42,7 +42,7 @@ Interpretation boundary: the distinction already lies in ρ_b; (b) is a change o
 | P8 | Chain independent of the source | Required hypothesis | violating it gives C3 |
 
 ## 4. Controls (exact hand calculations; nothing executed)
-C1 Non-growing center (rejecting). H = ℂ²⊗ℂ², A_0 = M_4, A_1 = M_2⊗I. Both centers are ℂI. With ρ_0 = |00⟩⟨00| and ρ_1 = |10⟩⟨10|, the sources differ on A_0 and on A_1 (via Z⊗I), but the central readers stay blind: δ_TV = 0. Distinguishability within the retained algebra is not accessibility under P2.
+C1 Non-growing center (rejecting). H = ℂ²⊗ℂ², A_0 = M_4, A_1 = M_2⊗I. Both centers are ℂI. With ρ_0 = |00⟩⟨00| and ρ_1 = |10⟩⟨10|, the sources differ on A_0 and on A_1 (via the Pauli effect σ_z⊗I ∈ A_1), but the central readers stay blind: δ_TV = 0. Distinguishability within the retained algebra is not accessibility under P2.
 
 C2 Center erasure (rejecting). A_0 = M_2⊕M_2 with atoms p = diag(1,1,0,0) and s = diag(0,0,1,1); A_1 = B = {diag(x,y,x,y)}, so B ⊆ A_0 but p ∉ B. For ρ = p/2, E_B(ρ) = I/4, so Tr[pE_B(ρ)] = 1/2 ≠ Tr[pρ] = 1. Retention (a) fails, and the new atom q = diag(1,0,1,0) is not laminar with p, s. Premise P1b is essential.
 
@@ -61,7 +61,7 @@ The step M_2 → diagonal is itself supplied (P1a).
 - Shared object. Both examine P_- on the |00>/|10> pair with the same 0 versus 1/2 numbers (C4 here, §4 there). Their verdicts agree once access change is distinguished from blank-memory acquisition.
 - Not subsumed in either direction. The new stage's invariant-reader statement is a special case of theorem (a): span{I,F} = Z(swap commutant) is retained. The general iff criterion (b), the sector constraint (c), coherence blindness (d) and controls C1–C3 and C5 do not appear there.
 - Shared gap. Both reduce to supplied structure: there, the common representation, nonidentity occurrence and local access; here, the center-growth step and the central reader. Neither achieves the milestone.
-- Novelty is modest: an elementary standard fact applied to the changed-reader branch that `retained_reader_write` §2 left explicitly eligible and no published stage has treated.
+- Novelty is modest: an elementary standard fact applied to the changed-reader branch that `retained_reader_write` §2 left explicitly eligible; none of the nine inspected sources treats it. No archive-wide novelty claim is made.
 
 ## 6. Objection 1: is the growth step native?
 The acquisition happens exactly at a center-growth step Z(A_k) ⊊ Z(A_{k+1}), and the theorem's whole content sits there. The inspected inherited sources do not derive that step:
