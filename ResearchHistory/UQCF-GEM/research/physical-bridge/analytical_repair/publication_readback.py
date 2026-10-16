@@ -32,18 +32,24 @@ def main():
     try:
         head=subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
         if head!=os.environ['GITHUB_SHA'] or head!=os.environ['UQCF_WORKFLOW_SHA']:raise ValueError('source/workflow identity mismatch')
+        expected=json.loads((HERE/'publication_manifest.json').read_text())
+        if expected['parent']!=PARENT or expected.get('contract_commit')!=PARENT or expected.get('source_parent')!=ORIGINAL:raise ValueError('manifest provenance mismatch')
+        prior=expected.get('prior_repair_commits',[])
+        if not isinstance(prior,list) or any(not isinstance(s,str) or len(s)!=40 or any(c not in '0123456789abcdef' for c in s) for s in prior) or len(prior)!=len(set(prior)) or head in prior or PARENT in prior:raise ValueError('invalid prior repair commits')
+        expected_commits=prior+[head]
+        immediate_parent=prior[-1] if prior else PARENT
         put('provenance.json',{'source_parent':ORIGINAL,'contract_commit':PARENT,'contract_sha256':'77017270c4dbb26935940a4542982b5b0e528f5aebcc64771361df2be11a08aa','scientific_sha':head,'workflow_sha':os.environ['UQCF_WORKFLOW_SHA'],'run_id':os.environ['GITHUB_RUN_ID'],'run_attempt':os.environ['GITHUB_RUN_ATTEMPT']})
         commit=get('git/commits/'+head);put('commit.json',commit)
         if commit.get('sha')!=head:raise ValueError('remote commit identity mismatch')
-        if [p['sha'] for p in commit['parents']]!=[PARENT]:raise ValueError('unexpected parent')
+        if [p['sha'] for p in commit['parents']]!=[immediate_parent]:raise ValueError('unexpected parent')
         compare=get('compare/'+PARENT+'...'+head);put('compare.json',compare)
-        if (compare.get('status')!='ahead' or compare.get('total_commits')!=1
+        if (compare.get('status')!='ahead' or compare.get('total_commits')!=len(expected_commits)
             or compare.get('base_commit',{}).get('sha')!=PARENT
             or compare.get('merge_base_commit',{}).get('sha')!=PARENT
-            or [c.get('sha') for c in compare.get('commits',[])]!=[head]):
+            or [c.get('sha') for c in compare.get('commits',[])]!=expected_commits):
             raise ValueError('comparison ancestry mismatch')
-        expected=json.loads((HERE/'publication_manifest.json').read_text())
-        if expected['parent']!=PARENT or expected.get('contract_commit')!=PARENT or expected.get('source_parent')!=ORIGINAL:raise ValueError('manifest provenance mismatch')
+        for entry,parent in zip(compare['commits'],[PARENT]+prior):
+            if [p.get('sha') for p in entry.get('parents',[])]!=[parent]:raise ValueError('repair ancestry is not the declared linear chain')
         if expected['changed_paths']!=sorted(set(expected['changed_paths'])):raise ValueError('manifest paths not canonical')
         files=compare.get('files',[])
         if len(files)>=300 or sorted(f['filename'] for f in files)!=expected['changed_paths']:raise ValueError('publication changed-path mismatch')
@@ -61,7 +67,7 @@ def main():
         appendix=(HERE/'INDEX_APPEND.md').read_bytes()
         current=(ROOT/index).read_bytes()
         if current!=prior+appendix:raise ValueError('continuation is not exact prior plus appendix')
-        put('remote_readback.json',{'verified':True,'scientific_sha':head,'parent':PARENT,'files':evidence,'continuation_parent':ORIGINAL,'continuation_parent_blob':blob,'continuation_appendix_sha256':sha(appendix),'scope':'exact scientific publication bytes and path boundary; final receipt readback remains separate'})
+        put('remote_readback.json',{'verified':True,'scientific_sha':head,'parent':PARENT,'immediate_parent':immediate_parent,'prior_repair_commits':expected_commits[:-1],'files':evidence,'continuation_parent':ORIGINAL,'continuation_parent_blob':blob,'continuation_appendix_sha256':sha(appendix),'scope':'exact cumulative scientific publication bytes and path boundary; final receipt readback remains separate'})
     except Exception as exc:
         put('failure.json',{'verified':False,'error_type':type(exc).__name__})
         raise SystemExit('Remote readback failed; sanitized evidence retained.')

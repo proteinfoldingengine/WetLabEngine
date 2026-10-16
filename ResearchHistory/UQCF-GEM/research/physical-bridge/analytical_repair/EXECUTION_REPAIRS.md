@@ -1,0 +1,7 @@
+# Execution repair record
+
+The first scientific package was published at 8f48da3e3c7f3165e27f64262c87f268cea64165. Actions run 38916788563 passed source integrity, then stopped in verification before producer/checker execution with `artifact membership mismatch`.
+
+Inspection of the original downloaded integrity ZIP (SHA-256 c9f5fb248216f4d21755326c181fcd1568a55f78cb812c2ffc05c9b7e1383824) identified exactly three omitted manifest-bound files: sources/.github/scripts/test_uqcf_analytical_review.py, sources/.github/scripts/uqcf_analytical_repair_review.py, and sources/.github/workflows/uqcf-gem-analytical-repair.yml. actions/upload-artifact@v4 defaults to excluding hidden paths. The completeness gate correctly rejected that incomplete transport.
+
+The next revision enables include-hidden-files on the explicitly curated artifact directories. These directories contain only declared source/evidence, not runner credentials. No science values, mathematical arguments, finite domain or acceptance threshold changed. The publication audit now tracks the exact cumulative repair ancestry from the contract commit and requires all declared intermediate commits; this permits an explicit corrective commit without discarding the failed run. Original ZIPs and complete logs are retained for the final evidence publication. Every downstream verification/review gate must run on the revised immutable source commit.

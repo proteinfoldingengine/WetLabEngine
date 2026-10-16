@@ -84,6 +84,41 @@ class InfrastructureTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'path set mismatch'):
                 c.validate_remote(self.directory)
 
+    def revision_fixture(self):
+        prior = '8f48da3e3c7f3165e27f64262c87f268cea64165'
+        head = 'a' * 40
+        first = {'sha': prior, 'parents': [{'sha': c.CONTRACT_COMMIT}]}
+        current = {'sha': head, 'parents': [{'sha': prior}]}
+        compare = {'total_commits': 2, 'commits': [first, current]}
+        publication = {'prior_repair_commits': [prior]}
+        return current, compare, publication
+
+    def test_second_revision_preserves_cumulative_commit_identity(self):
+        commit, compare, publication = self.revision_fixture()
+        c.validate_remote_commits(commit, compare, publication)
+        commit['parents'] = [{'sha': c.CONTRACT_COMMIT}]
+        with self.assertRaisesRegex(ValueError, 'remote commit parent'):
+            c.validate_remote_commits(commit, compare, publication)
+
+    def test_second_revision_rejects_substituted_or_omitted_prior_commit(self):
+        for mutation in ('substitute', 'omit', 'wrong_total', 'merge_parent'):
+            commit, compare, publication = self.revision_fixture()
+            if mutation == 'substitute':
+                compare['commits'][0]['sha'] = 'b' * 40
+            elif mutation == 'omit':
+                compare['commits'].pop(0)
+            elif mutation == 'wrong_total':
+                compare['total_commits'] = 1
+            else:
+                compare['commits'][0]['parents'].append({'sha': 'b' * 40})
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                c.validate_remote_commits(commit, compare, publication)
+
+    def test_first_revision_remains_bound_to_contract(self):
+        head = 'a' * 40
+        commit = {'sha': head, 'parents': [{'sha': c.CONTRACT_COMMIT}]}
+        c.validate_remote_commits(commit, {'total_commits': 1, 'commits': [commit]}, {})
+
     def input_fixture(self):
         (self.directory / 'CONTRACT.md').write_bytes((c.HERE / 'CONTRACT.md').read_bytes())
         changed = sorted([c.REPAIR + 'input_manifest.json', c.REPAIR + 'new_source.md'])

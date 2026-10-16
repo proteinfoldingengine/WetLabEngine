@@ -32,7 +32,7 @@ class PublicationReadbackTests(unittest.TestCase):
                      'commit': {'sha': 'a'*40, 'parents': [{'sha': M.PARENT}]},
                      'compare': {'status': 'ahead', 'total_commits': 1,
                                  'base_commit': {'sha': M.PARENT}, 'merge_base_commit': {'sha': M.PARENT},
-                                 'commits': [{'sha': 'a'*40}],
+                                 'commits': [{'sha': 'a'*40, 'parents': [{'sha': M.PARENT}]}],
                                  'files': [{'filename': p, 'status': 'modified'} for p in paths]},
                      'prior': b'old\n'}
             if mutation:
@@ -50,6 +50,25 @@ class PublicationReadbackTests(unittest.TestCase):
 
     def test_valid_readback(self):
         self.assertTrue(self.run_case()['verified'])
+
+    def test_second_revision(self):
+        def mutate(state):
+            prior = '8f48da3e3c7f3165e27f64262c87f268cea64165'
+            state['manifest']['prior_repair_commits'] = [prior]
+            state['commit']['parents'] = [{'sha': prior}]
+            state['compare']['total_commits'] = 2
+            state['compare']['commits'] = [{'sha': prior, 'parents': [{'sha': M.PARENT}]}, {'sha': 'a'*40, 'parents': [{'sha': prior}]}]
+        result = self.run_case(mutate)
+        self.assertTrue(result['verified'])
+        self.assertEqual(result['immediate_parent'], '8f48da3e3c7f3165e27f64262c87f268cea64165')
+
+    def test_unexpected_revision_chain_rejected(self):
+        with self.assertRaises(SystemExit):
+            self.run_case(lambda s: s['manifest'].__setitem__('prior_repair_commits', ['b'*40]))
+
+    def test_non_linear_chain_rejected(self):
+        with self.assertRaises(SystemExit):
+            self.run_case(lambda s: s['compare']['commits'][0].__setitem__('parents', [{'sha': M.PARENT}, {'sha': 'b'*40}]))
 
     def test_extra_path_rejected(self):
         with self.assertRaises(SystemExit):

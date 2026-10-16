@@ -90,6 +90,28 @@ def validate_review_verdict(verdict):
         raise ValueError('review unresolved or incomplete')
 
 
+def validate_remote_commits(commit, compare, publication):
+    """Bind cumulative repair history and the current head's direct parent."""
+    sha=os.environ['GITHUB_SHA']
+    prior=publication.get('prior_repair_commits',[])
+    if (not isinstance(prior,list) or any(not isinstance(item,str) or not re.fullmatch('[0-9a-f]{40}',item) for item in prior)
+            or len(set(prior))!=len(prior) or sha in prior or CONTRACT_COMMIT in prior):
+        raise ValueError('invalid prior repair commit identities')
+    expected=prior+[sha]
+    parent=prior[-1] if prior else CONTRACT_COMMIT
+    if commit.get('sha')!=sha or [p['sha'] for p in commit['parents']]!=[parent]:
+        raise ValueError('remote commit parent mismatch')
+    commits=compare.get('commits',[])
+    if (type(compare.get('total_commits')) is not int or compare['total_commits']!=len(expected)
+            or [item['sha'] for item in commits]!=expected):
+        raise ValueError('remote cumulative commit identity mismatch')
+    parent=CONTRACT_COMMIT
+    for item in commits:
+        if [p['sha'] for p in item['parents']]!=[parent]:
+            raise ValueError('remote cumulative commit parent mismatch')
+        parent=item['sha']
+
+
 def validate_remote(directory):
     audit=json.loads((directory/'remote_readback.json').read_text())
     sha=os.environ['GITHUB_SHA']
@@ -114,9 +136,9 @@ def validate_remote(directory):
     if audit.get('continuation_parent_blob')!=prior_blob or audit.get('continuation_appendix_sha256')!=digest(appendix):
         raise ValueError('continuation parent binding mismatch')
     commit=json.loads((directory/'commit.json').read_text())
-    if commit.get('sha')!=sha or [p['sha'] for p in commit['parents']]!=[CONTRACT_COMMIT]:
-        raise ValueError('remote commit parent mismatch')
     compare=json.loads((directory/'compare.json').read_text())
+    publication=json.loads((HERE/'publication_manifest.json').read_text())
+    validate_remote_commits(commit,compare,publication)
     files=compare.get('files',[])
     if sorted(f['filename'] for f in files)!=sorted(publication_paths()) or any(f['status'] not in ('added','modified') for f in files):
         raise ValueError('remote changed-path boundary mismatch')

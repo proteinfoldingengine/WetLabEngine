@@ -51,6 +51,7 @@ jobs:
           path: repair_integrity
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
   verification:
     needs: integrity
     runs-on: ubuntu-24.04
@@ -83,6 +84,7 @@ jobs:
           path: repair_verification
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
   reproduction:
     needs: verification
     runs-on: ubuntu-24.04
@@ -115,6 +117,7 @@ jobs:
           path: repair_reproduction
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
   mathematical-review:
     needs: reproduction
     runs-on: ubuntu-24.04
@@ -159,6 +162,7 @@ jobs:
           path: repair_review
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
   publication-audit:
     needs: mathematical-review
     runs-on: ubuntu-24.04
@@ -207,6 +211,7 @@ jobs:
           path: repair_remote_publication
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
       - name: Independent Gemini publication audit
         env:
           REVIEW_PHASE: publication
@@ -218,6 +223,7 @@ jobs:
           path: repair_publication
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
   final-gate:
     needs: publication-audit
     runs-on: ubuntu-24.04
@@ -270,3 +276,4 @@ jobs:
           path: repair_gate
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
