@@ -1,0 +1,280 @@
+{
+  "record_type": "operational_source_recovery_inventory",
+  "observed_at_utc": "2026-10-16T23:11:53Z",
+  "verified_parent": "b01c2c9390a97451ee12d2c698480239c60d0314",
+  "scope": "Two recovered historical archive inventories; no scientific execution or new theorem.",
+  "archives": [
+    {
+      "filename": "v959_combined_event_ledger_transfer_freeze_packet.zip",
+      "byte_length": 161857,
+      "sha256": "eb5b046fa510cd8e4b2c770e0b1b694fb83530694cdabbbbbabe155ab50e1636",
+      "entries": [
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/",
+          "byte_length": 0,
+          "directory": true,
+          "sha256": null
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/v959_combined_event_ledger_attack_summary.csv",
+          "byte_length": 202,
+          "directory": false,
+          "sha256": "fc81f42dcde342d87175c534cdf049ada6e1a45bcd1dd2feef389940eaea8baf"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/v959_domain_event_ledger_variant_summary.csv",
+          "byte_length": 942,
+          "directory": false,
+          "sha256": "da9aed2962eabd508ee985e008b9026c610ccee5c71ad898e358e874ac7a7087"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/v959_combined_event_ledger_variant_summary.csv",
+          "byte_length": 366,
+          "directory": false,
+          "sha256": "ab2918f925e34b5d82a7b00bf53fbb27aa5cc662ff2ef38d02982b9b0b2e1d9d"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/v959_combined_event_ledger_domain_counts.csv",
+          "byte_length": 118,
+          "directory": false,
+          "sha256": "3fc4d8f2832fbfadbc76cd4d69e20e1331bdf165fb79dd518e88de2e85c0a6cf"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/v959_combined_freeze_certification_table.csv",
+          "byte_length": 455,
+          "directory": false,
+          "sha256": "9222810816a91f46adeab7d85d65c75b63d5247a4b3c96a8ddba9f471b6d6ea3"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/v959_combined_false_nonrejected.png",
+          "byte_length": 68326,
+          "directory": false,
+          "sha256": "b9c668b492f557523903fe821883dc89d2a97399701cdc568b59b9396d9479c6"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/v959_combined_ablation_frontier.png",
+          "byte_length": 109784,
+          "directory": false,
+          "sha256": "9e6656d3b34795d647aa13edaf07f817140a85b9c50ce0d2c63ccfb6de723eb7"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/v959_combined_event_ledger_transfer_freeze_result.json",
+          "byte_length": 704,
+          "directory": false,
+          "sha256": "e0b9592f1e5ebeadd8e9834405a765a74dc126a035497ac635b5b1dbdf5234b2"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/SCIENTIFIC_REPORT.md",
+          "byte_length": 4111,
+          "directory": false,
+          "sha256": "24af5f46b48a27a0ce2e25298f83d536d5996731a99c1d7f1d10942827be59ff"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/EXECUTIVE_SUMMARY.md",
+          "byte_length": 793,
+          "directory": false,
+          "sha256": "af686d6476b87e253b7cfa76d86525a45920d532e8c95a10d1e008d886a754df"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/REPRODUCIBILITY_MANIFEST.json",
+          "byte_length": 2041,
+          "directory": false,
+          "sha256": "82365bf9fd69e43c6ac8f5bf328b967986969ac40afcd13fb94f679300e0fe54"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/v954_event_ledger_attack_scores.csv",
+          "byte_length": 1049,
+          "directory": false,
+          "sha256": "3359440ba2804cfa19fcaaf89c5e4550abd6d0012484cd7c978bbe924171f413"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/v957_fresh_event_ledger_attack_scores.csv",
+          "byte_length": 913,
+          "directory": false,
+          "sha256": "24680d152c832bbccc4cc01b639d11d3777490fc2867d8104e438a5a4a0d7f30"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/v955_event_ledger_variant_summary.csv",
+          "byte_length": 336,
+          "directory": false,
+          "sha256": "36f40e93aced374457194b99537bc46f48feb4daefac87e37061449ead6b56f0"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/v958_fresh_event_ledger_variant_summary.csv",
+          "byte_length": 328,
+          "directory": false,
+          "sha256": "c08c5a20f14199f7482b3d7d1a2913642506c706a6a5de82da14f92b6af5fb78"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/v956_guarded_event_ledger_closure_freeze_result.json",
+          "byte_length": 548,
+          "directory": false,
+          "sha256": "976865aa2b3db362250aae98264482658bb51aab6c4a6010f33a96f92a90dc10"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/v957_fresh_event_ledger_transfer_result.json",
+          "byte_length": 1091,
+          "directory": false,
+          "sha256": "c2fd4b46905be1211f4db51a21c1d4ede317f81a8ae1d054e6e4610cf8e4e8a4"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/v958_fresh_event_ledger_ablation_necessity_result.json",
+          "byte_length": 3343,
+          "directory": false,
+          "sha256": "b475076c18cb068b1f5bde5a7b272b52c8e02babf9da563690f90114fe67d1ce"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/SCIENTIFIC_REPORT.md",
+          "byte_length": 3518,
+          "directory": false,
+          "sha256": "52dddd18282bb68bc572fa29b39b958ce2abf42d753397340530193af3a9b645"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/V957_FRESH_EVENT_LEDGER_TRANSFER_AUDIT.md",
+          "byte_length": 1418,
+          "directory": false,
+          "sha256": "f2c415b7b0b48146c320f4b1ca33da239cd62fa8b33816239e5337a4b1442edd"
+        },
+        {
+          "path": "v959_combined_event_ledger_transfer_freeze_packet/artifacts/V958_FRESH_EVENT_LEDGER_ABLATION_NECESSITY_AUDIT.md",
+          "byte_length": 1292,
+          "directory": false,
+          "sha256": "f56e3b4a45a553d69147befe1ed1187dfc5322e5d27b103aad441b15b2ce5e1a"
+        }
+      ]
+    },
+    {
+      "filename": "v961_expanded_event_ledger_closure_freeze_packet.zip",
+      "byte_length": 258611,
+      "sha256": "b4113ed5fa2252c8ba81096b86973a158eba7c731e51edfa14a85d43a500763b",
+      "entries": [
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/artifacts/",
+          "byte_length": 0,
+          "directory": true,
+          "sha256": null
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/v961_accumulated_event_ledger_attack_summary.csv",
+          "byte_length": 258,
+          "directory": false,
+          "sha256": "11d264c169cb676f0b8b2f8cd0e501df94f0f0c2409559753f5d2a3aa544c32a"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/v961_domain_event_ledger_variant_summary.csv",
+          "byte_length": 1369,
+          "directory": false,
+          "sha256": "ac8154582146d5cd3b20e2c6ec650a4a4c7f2b4bd8dd79de9dadf1c641a44581"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/v961_accumulated_event_ledger_variant_summary.csv",
+          "byte_length": 366,
+          "directory": false,
+          "sha256": "659f205295400a14ee59896cf472cb090cabf29736fc861b5ed97f96135b365a"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/v961_accumulated_event_ledger_domain_counts.csv",
+          "byte_length": 191,
+          "directory": false,
+          "sha256": "b0bc0396996edc402adf3e98228e277aa13d62299a93bf698f5b81b1866ec6cb"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/v961_freeze_certification_table.csv",
+          "byte_length": 620,
+          "directory": false,
+          "sha256": "35812ad167d8637dc63fc3d18638c3f7ccaab6d2e88efeb100a5fa6944becba9"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/v961_expanded_event_ledger_closure_freeze_result.json",
+          "byte_length": 701,
+          "directory": false,
+          "sha256": "89cb9bed53eb33e7dfb73e1191f9e18f9cd01270eceeb8ba7081169207afc3ca"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/v961_accumulated_false_nonrejected.png",
+          "byte_length": 91497,
+          "directory": false,
+          "sha256": "701a1d657beb9c27cb530ec8feb34717e9529b23feccea89fb665374c179f6f3"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/v961_accumulated_ablation_frontier.png",
+          "byte_length": 105345,
+          "directory": false,
+          "sha256": "5101541eb9ad5ce9f5cf26f3b31b90cb20a9335426422dbb9dcf929b1a25e803"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/v961_freeze_certification.png",
+          "byte_length": 97353,
+          "directory": false,
+          "sha256": "e07258fb6feaa57d02c9e44bb72e9ae42e2307e8b75ba906b569fa5047d9de6a"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/SCIENTIFIC_REPORT.md",
+          "byte_length": 4516,
+          "directory": false,
+          "sha256": "69c865b14072fe2a9b9023e7e2402da52c93dd366c05c4dc7964ad846a22db78"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/EXECUTIVE_SUMMARY.md",
+          "byte_length": 892,
+          "directory": false,
+          "sha256": "9457bb3e6121241fc3f97cbc25b09c08f594a7a3cd6a7763bb96123542bb506f"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/CLAIM_NOTES.md",
+          "byte_length": 567,
+          "directory": false,
+          "sha256": "235395d2f66cbc1d43b432019f35c4ef48be7997209e1abe5763893fc73e2256"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/REPRODUCIBILITY_MANIFEST.json",
+          "byte_length": 1826,
+          "directory": false,
+          "sha256": "ecda03c00ac117ff50291b0d78b0cd1f6d024043f687c427ed86342ee753c189"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/artifacts/v956_guarded_event_ledger_closure_freeze_result.json",
+          "byte_length": 548,
+          "directory": false,
+          "sha256": "976865aa2b3db362250aae98264482658bb51aab6c4a6010f33a96f92a90dc10"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/artifacts/v957_fresh_event_ledger_transfer_result.json",
+          "byte_length": 1091,
+          "directory": false,
+          "sha256": "c2fd4b46905be1211f4db51a21c1d4ede317f81a8ae1d054e6e4610cf8e4e8a4"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/artifacts/v958_fresh_event_ledger_ablation_necessity_result.json",
+          "byte_length": 3343,
+          "directory": false,
+          "sha256": "b475076c18cb068b1f5bde5a7b272b52c8e02babf9da563690f90114fe67d1ce"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/artifacts/v959_combined_event_ledger_transfer_freeze_result.json",
+          "byte_length": 704,
+          "directory": false,
+          "sha256": "e0b9592f1e5ebeadd8e9834405a765a74dc126a035497ac635b5b1dbdf5234b2"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/artifacts/v960_independent_trajectory_family_event_ledger_stress_result.json",
+          "byte_length": 1141,
+          "directory": false,
+          "sha256": "c5bf27df0600829bb8dccbead19d6677151d817943bdb4ef20513a9b20bc87fa"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/artifacts/SCIENTIFIC_REPORT.md",
+          "byte_length": 4111,
+          "directory": false,
+          "sha256": "24af5f46b48a27a0ce2e25298f83d536d5996731a99c1d7f1d10942827be59ff"
+        },
+        {
+          "path": "v961_expanded_event_ledger_closure_freeze_packet/artifacts/V960_INDEPENDENT_TRAJECTORY_FAMILY_EVENT_LEDGER_STRESS.md",
+          "byte_length": 1241,
+          "directory": false,
+          "sha256": "6adb7f2b193ad51519b6ce2a9e876c05797a41c75ba1c5ca5cfd49dda69383c2"
+        }
+      ]
+    }
+  ]
+}
