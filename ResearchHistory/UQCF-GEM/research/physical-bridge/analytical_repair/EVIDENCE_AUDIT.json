@@ -1,0 +1,280 @@
+{
+  "scientific_commit": "f62afaebdba109daad1031005af6c3529283bd24",
+  "run_id": "38917243291",
+  "artifacts": [
+    {
+      "name": "repair-gate",
+      "artifact_id": 12054005372,
+      "bytes": 996,
+      "sha256": "79c8afc559e673b1d674ac5b0fde7a73dd93f8780651ce48109ffa72d160f036",
+      "member_count": 3,
+      "checks": {
+        "zip_digest": true,
+        "zip_size": true,
+        "run_binding": true,
+        "unique_members": true,
+        "exact_manifest_members": true,
+        "all_member_hashes": true,
+        "all_extracted_bytes": true
+      }
+    },
+    {
+      "name": "repair-publication",
+      "artifact_id": 12053576760,
+      "bytes": 436256,
+      "sha256": "5acec6ab2e18bacbd3b13c053ef2398333279367359daed69c017deaf9672c4a",
+      "member_count": 8,
+      "checks": {
+        "zip_digest": true,
+        "zip_size": true,
+        "run_binding": true,
+        "unique_members": true,
+        "exact_manifest_members": true,
+        "all_member_hashes": true,
+        "all_extracted_bytes": true
+      }
+    },
+    {
+      "name": "repair-review",
+      "artifact_id": 12053426296,
+      "bytes": 190276,
+      "sha256": "ca4e8fe22cdf91c73f850e22eed04884db8a42c9e8f9179b14f9ce3ec5e1886d",
+      "member_count": 8,
+      "checks": {
+        "zip_digest": true,
+        "zip_size": true,
+        "run_binding": true,
+        "unique_members": true,
+        "exact_manifest_members": true,
+        "all_member_hashes": true,
+        "all_extracted_bytes": true
+      }
+    },
+    {
+      "name": "repair-remote-publication",
+      "artifact_id": 12053341600,
+      "bytes": 62625,
+      "sha256": "a7b5e7851b44858147c97d0e9edd4a19cd05173eef6ff585239772bca78cf658",
+      "member_count": 5,
+      "checks": {
+        "zip_digest": true,
+        "zip_size": true,
+        "run_binding": true,
+        "unique_members": true,
+        "exact_manifest_members": true,
+        "all_member_hashes": true,
+        "all_extracted_bytes": true
+      }
+    },
+    {
+      "name": "repair-reproduction",
+      "artifact_id": 12052703286,
+      "bytes": 2260,
+      "sha256": "c985eef24c41844eeef88dec93d7d8d0ebc94769df30927c512bf47043924676",
+      "member_count": 7,
+      "checks": {
+        "zip_digest": true,
+        "zip_size": true,
+        "run_binding": true,
+        "unique_members": true,
+        "exact_manifest_members": true,
+        "all_member_hashes": true,
+        "all_extracted_bytes": true
+      }
+    },
+    {
+      "name": "repair-integrity",
+      "artifact_id": 12052652914,
+      "bytes": 198856,
+      "sha256": "d64044b8dbfdb2f734825de5173948ee05c84e411ca523c69903588dcc475f33",
+      "member_count": 49,
+      "checks": {
+        "zip_digest": true,
+        "zip_size": true,
+        "run_binding": true,
+        "unique_members": true,
+        "exact_manifest_members": true,
+        "all_member_hashes": true,
+        "all_extracted_bytes": true
+      }
+    },
+    {
+      "name": "repair-verification",
+      "artifact_id": 12052349238,
+      "bytes": 29795,
+      "sha256": "7926ee2a13f576f3689b946ebcc831a045c71e6bcbbb133249f70e0a586b726e",
+      "member_count": 60,
+      "checks": {
+        "zip_digest": true,
+        "zip_size": true,
+        "run_binding": true,
+        "unique_members": true,
+        "exact_manifest_members": true,
+        "all_member_hashes": true,
+        "all_extracted_bytes": true
+      }
+    }
+  ],
+  "review_checks": [
+    {
+      "phase": "review",
+      "checks": {
+        "prompt_hash": true,
+        "response_hash": true,
+        "api_response_hash": true,
+        "input_hashes": true,
+        "model_returned": true,
+        "identity": true,
+        "raw_text_matches": true,
+        "verdict_parses": true,
+        "accepted": true
+      },
+      "response_id": "njfSaqnuOt-mmtkP4qWHIA",
+      "prompt_sha256": "2c3cf8a7709f16c30b89f95d17f41d01b93ac37ee664760f1303df7648a980aa",
+      "review_sha256": "76a5bf2bfc1cb902ff84edf93bbe2435c06577ae1ebb9ce3119bbd9fb3071ebb"
+    },
+    {
+      "phase": "publication",
+      "checks": {
+        "prompt_hash": true,
+        "response_hash": true,
+        "api_response_hash": true,
+        "input_hashes": true,
+        "model_returned": true,
+        "identity": true,
+        "raw_text_matches": true,
+        "verdict_parses": true,
+        "accepted": true
+      },
+      "response_id": "7jfSapCgIuLFjMcP0KaCCA",
+      "prompt_sha256": "30bcb6718cfdd5011c8febf1314821a7350f0300b14c0301a8152ce326340583",
+      "review_sha256": "76a5bf2bfc1cb902ff84edf93bbe2435c06577ae1ebb9ce3119bbd9fb3071ebb"
+    }
+  ],
+  "checks": {
+    "all_artifact_checks": true,
+    "all_review_checks": true,
+    "six_successful_jobs": true,
+    "reproduction_exact": true,
+    "provenance_exact": true,
+    "source_copies_match_independent_readback": true,
+    "inherited_logs_match_527": true,
+    "nine_controls_recorded_rejected": true,
+    "certificate_26_records": true
+  },
+  "identical_gemini_review_texts": true,
+  "distinct_api_response_ids": true,
+  "distinct_prompts": true,
+  "inherited_log_checks": {
+    "anchored_release": true,
+    "capacity_gap": true,
+    "cover_static": true,
+    "escape_obstruction": true,
+    "fingerprint_lock": true,
+    "fixed_family": true,
+    "footprint": true,
+    "handover_graph": true,
+    "label_release": true,
+    "local_progress": true,
+    "moving_cover": true,
+    "nonuniform_reserve": true,
+    "private_cover": true,
+    "record_conversion": true,
+    "reserve_activation": true,
+    "saturated_handover": true,
+    "saturated_transfer": true,
+    "slack_handover": true,
+    "source_escape": true,
+    "star_carrier": true,
+    "weak_trace": true
+  },
+  "other_logs": {
+    "review_client_tests.log": [
+      "5"
+    ],
+    "publication_readback_tests.log": [
+      "15"
+    ],
+    "infrastructure_tests.log": [
+      "15"
+    ],
+    "repair_tests.log": [
+      "10"
+    ]
+  },
+  "checks_pass": true,
+  "rejecting_controls": {
+    "duplicate": {
+      "input_hash": true,
+      "verdict_hash": true,
+      "verdict": {
+        "error": "certificate differs from the complete frozen identity/value/provenance/domain universe",
+        "verified": false
+      }
+    },
+    "false_coverage": {
+      "input_hash": true,
+      "verdict_hash": true,
+      "verdict": {
+        "error": "certificate differs from the complete frozen identity/value/provenance/domain universe",
+        "verified": false
+      }
+    },
+    "false_product_attainment": {
+      "input_hash": true,
+      "verdict_hash": true,
+      "verdict": {
+        "error": "certificate differs from the complete frozen identity/value/provenance/domain universe",
+        "verified": false
+      }
+    },
+    "false_provenance": {
+      "input_hash": true,
+      "verdict_hash": true,
+      "verdict": {
+        "error": "certificate differs from the complete frozen identity/value/provenance/domain universe",
+        "verified": false
+      }
+    },
+    "identical_state_false_contrast": {
+      "input_hash": true,
+      "verdict_hash": true,
+      "verdict": {
+        "error": "certificate differs from the complete frozen identity/value/provenance/domain universe",
+        "verified": false
+      }
+    },
+    "invalid_domain": {
+      "input_hash": true,
+      "verdict_hash": true,
+      "verdict": {
+        "error": "certificate differs from the complete frozen identity/value/provenance/domain universe",
+        "verified": false
+      }
+    },
+    "missing": {
+      "input_hash": true,
+      "verdict_hash": true,
+      "verdict": {
+        "error": "certificate differs from the complete frozen identity/value/provenance/domain universe",
+        "verified": false
+      }
+    },
+    "substitution": {
+      "input_hash": true,
+      "verdict_hash": true,
+      "verdict": {
+        "error": "certificate differs from the complete frozen identity/value/provenance/domain universe",
+        "verified": false
+      }
+    },
+    "wrong_value": {
+      "input_hash": true,
+      "verdict_hash": true,
+      "verdict": {
+        "error": "certificate differs from the complete frozen identity/value/provenance/domain universe",
+        "verified": false
+      }
+    }
+  }
+}

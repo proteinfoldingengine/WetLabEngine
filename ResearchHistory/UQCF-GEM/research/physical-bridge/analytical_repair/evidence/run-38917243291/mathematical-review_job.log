@@ -1,0 +1,468 @@
+﻿2026-10-16T14:41:01.0447917Z Current runner version: '2.337.0'
+2026-10-16T14:41:01.0468850Z ##[group]Runner Image Provisioner
+2026-10-16T14:41:01.0469739Z Hosted Compute Agent
+2026-10-16T14:41:01.0470277Z Version: 20261012.601
+2026-10-16T14:41:01.0470797Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-16T14:41:01.0471435Z Build Date: 2026-10-12T17:48:21Z
+2026-10-16T14:41:01.0472031Z Worker ID: {42349044-684d-4eca-8bb8-f7b6e2b9c64b}
+2026-10-16T14:41:01.0472888Z Region: westus3
+2026-10-16T14:41:01.0473392Z Cloud: Azure
+2026-10-16T14:41:01.0473836Z ##[endgroup]
+2026-10-16T14:41:01.0475055Z ##[group]Operating System
+2026-10-16T14:41:01.0475586Z Ubuntu
+2026-10-16T14:41:01.0476140Z 24.04.5
+2026-10-16T14:41:01.0476584Z LTS
+2026-10-16T14:41:01.0477021Z ##[endgroup]
+2026-10-16T14:41:01.0477534Z ##[group]Runner Image
+2026-10-16T14:41:01.0478038Z Image: ubuntu-24.04
+2026-10-16T14:41:01.0478498Z Version: 20261012.334.1
+2026-10-16T14:41:01.0479836Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-16T14:41:01.0481195Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-16T14:41:01.0481990Z ##[endgroup]
+2026-10-16T14:41:01.0482981Z ##[group]GITHUB_TOKEN Permissions
+2026-10-16T14:41:01.0484799Z Contents: read
+2026-10-16T14:41:01.0485342Z Metadata: read
+2026-10-16T14:41:01.0485825Z ##[endgroup]
+2026-10-16T14:41:01.0487528Z Secret source: Actions
+2026-10-16T14:41:01.0488367Z Cache mode: write
+2026-10-16T14:41:01.0488928Z Prepare workflow directory
+2026-10-16T14:41:01.0898744Z Prepare all required actions
+2026-10-16T14:41:01.0936165Z Getting action download info
+2026-10-16T14:41:01.3919170Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-16T14:41:01.5379830Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-16T14:41:01.6357112Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2026-10-16T14:41:02.3934496Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-16T14:41:02.6141659Z Complete job name: mathematical-review
+2026-10-16T14:41:02.6720554Z ##[group]Run actions/checkout@v4
+2026-10-16T14:41:02.6721299Z with:
+2026-10-16T14:41:02.6721725Z   ref: f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:02.6722252Z   path: research_snapshot
+2026-10-16T14:41:02.6722684Z   persist-credentials: false
+2026-10-16T14:41:02.6723922Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge
+ResearchHistory/UQCF-GEM/v15/v15.11
+ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+.github/scripts
+.github/workflows
+
+2026-10-16T14:41:02.6725270Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-16T14:41:02.6728679Z   token: ***
+2026-10-16T14:41:02.6729064Z   ssh-strict: true
+2026-10-16T14:41:02.6729444Z   ssh-user: git
+2026-10-16T14:41:02.6730131Z   clean: true
+2026-10-16T14:41:02.6730527Z   sparse-checkout-cone-mode: true
+2026-10-16T14:41:02.6731032Z   fetch-depth: 1
+2026-10-16T14:41:02.6731408Z   fetch-tags: false
+2026-10-16T14:41:02.6731797Z   show-progress: true
+2026-10-16T14:41:02.6732189Z   lfs: false
+2026-10-16T14:41:02.6732600Z   submodules: false
+2026-10-16T14:41:02.6732994Z   set-safe-directory: true
+2026-10-16T14:41:02.6733441Z   allow-unsafe-pr-checkout: false
+2026-10-16T14:41:02.6734128Z env:
+2026-10-16T14:41:02.6734580Z   UQCF_WORKFLOW_SHA: f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:02.6735287Z   GEMINI_API_KEY: ***
+2026-10-16T14:41:02.6735678Z ##[endgroup]
+2026-10-16T14:41:02.7534868Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-16T14:41:02.7537233Z ##[group]Getting Git version info
+2026-10-16T14:41:02.7538420Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+2026-10-16T14:41:02.7540307Z [command]/usr/bin/git version
+2026-10-16T14:41:02.7724441Z git version 2.55.0
+2026-10-16T14:41:02.7740015Z ##[endgroup]
+2026-10-16T14:41:02.7751349Z Temporarily overriding HOME='/home/runner/work/_temp/c911b8a5-5735-48f9-b0cf-05e63ad0abd8' before making global git config changes
+2026-10-16T14:41:02.7753459Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-16T14:41:02.7755350Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+2026-10-16T14:41:02.7798125Z ##[group]Initializing the repository
+2026-10-16T14:41:02.7801677Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+2026-10-16T14:41:02.7897323Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-16T14:41:02.7899288Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-16T14:41:02.7900678Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-16T14:41:02.7901884Z hint: call:
+2026-10-16T14:41:02.7902717Z hint:
+2026-10-16T14:41:02.7903647Z hint: 	git config --global init.defaultBranch <name>
+2026-10-16T14:41:02.7904494Z hint:
+2026-10-16T14:41:02.7905300Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-16T14:41:02.7906507Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-16T14:41:02.7907171Z hint:
+2026-10-16T14:41:02.7907541Z hint: 	git branch -m <name>
+2026-10-16T14:41:02.7908104Z hint:
+2026-10-16T14:41:02.7909000Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-16T14:41:02.7910900Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+2026-10-16T14:41:02.7912924Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-16T14:41:02.7950345Z ##[endgroup]
+2026-10-16T14:41:02.7951036Z ##[group]Disabling automatic garbage collection
+2026-10-16T14:41:02.7954997Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-16T14:41:02.7985669Z ##[endgroup]
+2026-10-16T14:41:02.7992118Z ##[group]Setting up auth
+2026-10-16T14:41:02.7992874Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-16T14:41:02.8094794Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-16T14:41:02.8558166Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-16T14:41:02.8589237Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-16T14:41:02.8777169Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-16T14:41:02.8807080Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-16T14:41:02.9000471Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-16T14:41:02.9035176Z ##[endgroup]
+2026-10-16T14:41:02.9036288Z ##[group]Fetching the repository
+2026-10-16T14:41:02.9042184Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:03.8981175Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-16T14:41:03.8983515Z  * branch            f62afaebdba109daad1031005af6c3529283bd24 -> FETCH_HEAD
+2026-10-16T14:41:03.8992123Z ##[endgroup]
+2026-10-16T14:41:03.8993784Z ##[group]Determining the checkout info
+2026-10-16T14:41:03.8995359Z ##[endgroup]
+2026-10-16T14:41:03.8996728Z ##[group]Setting up sparse checkout
+2026-10-16T14:41:03.9000472Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge ResearchHistory/UQCF-GEM/v15/v15.11 ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary .github/scripts .github/workflows
+2026-10-16T14:41:03.9041401Z ##[endgroup]
+2026-10-16T14:41:03.9043038Z ##[group]Checking out the ref
+2026-10-16T14:41:03.9046027Z [command]/usr/bin/git checkout --progress --force f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:18.2800785Z Updating files:   0% (1/2890)
+2026-10-16T14:41:18.2811662Z Updating files:   1% (29/2890)
+2026-10-16T14:41:18.2824587Z Updating files:   2% (58/2890)
+2026-10-16T14:41:18.2835044Z Updating files:   3% (87/2890)
+2026-10-16T14:41:18.2844339Z Updating files:   4% (116/2890)
+2026-10-16T14:41:18.2858980Z Updating files:   5% (145/2890)
+2026-10-16T14:41:18.2867700Z Updating files:   6% (174/2890)
+2026-10-16T14:41:18.2881638Z Updating files:   7% (203/2890)
+2026-10-16T14:41:18.2892407Z Updating files:   8% (232/2890)
+2026-10-16T14:41:18.2904863Z Updating files:   9% (261/2890)
+2026-10-16T14:41:18.2933280Z Updating files:  10% (289/2890)
+2026-10-16T14:41:18.2984423Z Updating files:  11% (318/2890)
+2026-10-16T14:41:18.3593861Z Updating files:  12% (347/2890)
+2026-10-16T14:41:18.3614722Z Updating files:  13% (376/2890)
+2026-10-16T14:41:18.3629906Z Updating files:  14% (405/2890)
+2026-10-16T14:41:18.3667391Z Updating files:  15% (434/2890)
+2026-10-16T14:41:18.5170783Z Updating files:  16% (463/2890)
+2026-10-16T14:41:18.8214767Z Updating files:  17% (492/2890)
+2026-10-16T14:41:18.8798703Z Updating files:  18% (521/2890)
+2026-10-16T14:41:18.8812691Z Updating files:  19% (550/2890)
+2026-10-16T14:41:18.8820594Z Updating files:  20% (578/2890)
+2026-10-16T14:41:18.9216902Z Updating files:  21% (607/2890)
+2026-10-16T14:41:18.9626153Z Updating files:  21% (623/2890)
+2026-10-16T14:41:19.1150237Z Updating files:  22% (636/2890)
+2026-10-16T14:41:19.1164016Z Updating files:  23% (665/2890)
+2026-10-16T14:41:19.1178883Z Updating files:  24% (694/2890)
+2026-10-16T14:41:19.1196773Z Updating files:  25% (723/2890)
+2026-10-16T14:41:19.1211686Z Updating files:  26% (752/2890)
+2026-10-16T14:41:19.1227434Z Updating files:  27% (781/2890)
+2026-10-16T14:41:19.1241143Z Updating files:  28% (810/2890)
+2026-10-16T14:41:19.1257012Z Updating files:  29% (839/2890)
+2026-10-16T14:41:19.1271620Z Updating files:  30% (867/2890)
+2026-10-16T14:41:19.1289451Z Updating files:  31% (896/2890)
+2026-10-16T14:41:19.1305350Z Updating files:  32% (925/2890)
+2026-10-16T14:41:19.1321638Z Updating files:  33% (954/2890)
+2026-10-16T14:41:19.1336631Z Updating files:  34% (983/2890)
+2026-10-16T14:41:19.1351598Z Updating files:  35% (1012/2890)
+2026-10-16T14:41:19.1365801Z Updating files:  36% (1041/2890)
+2026-10-16T14:41:19.1381646Z Updating files:  37% (1070/2890)
+2026-10-16T14:41:19.1412190Z Updating files:  38% (1099/2890)
+2026-10-16T14:41:19.1431044Z Updating files:  39% (1128/2890)
+2026-10-16T14:41:19.1459298Z Updating files:  40% (1156/2890)
+2026-10-16T14:41:19.1495496Z Updating files:  41% (1185/2890)
+2026-10-16T14:41:19.1553865Z Updating files:  42% (1214/2890)
+2026-10-16T14:41:19.1589144Z Updating files:  43% (1243/2890)
+2026-10-16T14:41:19.1607594Z Updating files:  44% (1272/2890)
+2026-10-16T14:41:19.1630036Z Updating files:  45% (1301/2890)
+2026-10-16T14:41:19.1642363Z Updating files:  46% (1330/2890)
+2026-10-16T14:41:19.1663206Z Updating files:  47% (1359/2890)
+2026-10-16T14:41:19.1685387Z Updating files:  48% (1388/2890)
+2026-10-16T14:41:19.1748111Z Updating files:  49% (1417/2890)
+2026-10-16T14:41:19.1763132Z Updating files:  50% (1445/2890)
+2026-10-16T14:41:19.1783292Z Updating files:  51% (1474/2890)
+2026-10-16T14:41:19.1794741Z Updating files:  52% (1503/2890)
+2026-10-16T14:41:19.1814417Z Updating files:  53% (1532/2890)
+2026-10-16T14:41:19.1967828Z Updating files:  54% (1561/2890)
+2026-10-16T14:41:19.1984043Z Updating files:  55% (1590/2890)
+2026-10-16T14:41:19.2096635Z Updating files:  56% (1619/2890)
+2026-10-16T14:41:19.2198959Z Updating files:  57% (1648/2890)
+2026-10-16T14:41:19.2214101Z Updating files:  58% (1677/2890)
+2026-10-16T14:41:19.2231153Z Updating files:  59% (1706/2890)
+2026-10-16T14:41:19.2250516Z Updating files:  60% (1734/2890)
+2026-10-16T14:41:19.2272498Z Updating files:  61% (1763/2890)
+2026-10-16T14:41:19.2284642Z Updating files:  62% (1792/2890)
+2026-10-16T14:41:19.2308903Z Updating files:  63% (1821/2890)
+2026-10-16T14:41:19.2321931Z Updating files:  64% (1850/2890)
+2026-10-16T14:41:19.3191385Z Updating files:  65% (1879/2890)
+2026-10-16T14:41:19.3209827Z Updating files:  66% (1908/2890)
+2026-10-16T14:41:19.3235846Z Updating files:  67% (1937/2890)
+2026-10-16T14:41:19.3251889Z Updating files:  68% (1966/2890)
+2026-10-16T14:41:19.3268480Z Updating files:  69% (1995/2890)
+2026-10-16T14:41:19.3279181Z Updating files:  70% (2023/2890)
+2026-10-16T14:41:19.3290586Z Updating files:  71% (2052/2890)
+2026-10-16T14:41:19.3340290Z Updating files:  72% (2081/2890)
+2026-10-16T14:41:19.3377160Z Updating files:  73% (2110/2890)
+2026-10-16T14:41:19.3399761Z Updating files:  74% (2139/2890)
+2026-10-16T14:41:19.3411809Z Updating files:  75% (2168/2890)
+2026-10-16T14:41:19.3449123Z Updating files:  76% (2197/2890)
+2026-10-16T14:41:19.3459815Z Updating files:  77% (2226/2890)
+2026-10-16T14:41:19.3474379Z Updating files:  78% (2255/2890)
+2026-10-16T14:41:19.5081624Z Updating files:  79% (2284/2890)
+2026-10-16T14:41:19.5096722Z Updating files:  80% (2312/2890)
+2026-10-16T14:41:19.5106782Z Updating files:  81% (2341/2890)
+2026-10-16T14:41:19.5582581Z Updating files:  82% (2370/2890)
+2026-10-16T14:41:19.5600328Z Updating files:  83% (2399/2890)
+2026-10-16T14:41:19.5619082Z Updating files:  84% (2428/2890)
+2026-10-16T14:41:19.5634866Z Updating files:  85% (2457/2890)
+2026-10-16T14:41:19.5656536Z Updating files:  86% (2486/2890)
+2026-10-16T14:41:19.5671160Z Updating files:  87% (2515/2890)
+2026-10-16T14:41:19.5687573Z Updating files:  88% (2544/2890)
+2026-10-16T14:41:19.5718383Z Updating files:  89% (2573/2890)
+2026-10-16T14:41:19.5738622Z Updating files:  90% (2601/2890)
+2026-10-16T14:41:19.5758169Z Updating files:  91% (2630/2890)
+2026-10-16T14:41:19.5782201Z Updating files:  92% (2659/2890)
+2026-10-16T14:41:19.5801249Z Updating files:  93% (2688/2890)
+2026-10-16T14:41:19.5825893Z Updating files:  94% (2717/2890)
+2026-10-16T14:41:19.5850479Z Updating files:  95% (2746/2890)
+2026-10-16T14:41:19.5868232Z Updating files:  96% (2775/2890)
+2026-10-16T14:41:19.5882917Z Updating files:  97% (2804/2890)
+2026-10-16T14:41:19.5900688Z Updating files:  98% (2833/2890)
+2026-10-16T14:41:19.5918000Z Updating files:  99% (2862/2890)
+2026-10-16T14:41:19.5918647Z Updating files: 100% (2890/2890)
+2026-10-16T14:41:19.5918892Z Updating files: 100% (2890/2890), done.
+2026-10-16T14:41:19.6244421Z Note: switching to 'f62afaebdba109daad1031005af6c3529283bd24'.
+2026-10-16T14:41:19.6244788Z 
+2026-10-16T14:41:19.6245055Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-16T14:41:19.6245617Z changes and commit them, and you can discard any commits you make in this
+2026-10-16T14:41:19.6246172Z state without impacting any branches by switching back to a branch.
+2026-10-16T14:41:19.6246475Z 
+2026-10-16T14:41:19.6246693Z If you want to create a new branch to retain commits you create, you may
+2026-10-16T14:41:19.6247246Z do so (now or later) by using -c with the switch command. Example:
+2026-10-16T14:41:19.6247562Z 
+2026-10-16T14:41:19.6247707Z   git switch -c <new-branch-name>
+2026-10-16T14:41:19.6247914Z 
+2026-10-16T14:41:19.6248023Z Or undo this operation with:
+2026-10-16T14:41:19.6248205Z 
+2026-10-16T14:41:19.6248316Z   git switch -
+2026-10-16T14:41:19.6248471Z 
+2026-10-16T14:41:19.6248716Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-16T14:41:19.6249049Z 
+2026-10-16T14:41:19.6249412Z HEAD is now at f62afae Preserve hidden declared sources in repair artifacts and bind corrective ancestry
+2026-10-16T14:41:19.6352775Z ##[endgroup]
+2026-10-16T14:41:19.6363083Z [command]/usr/bin/git log -1 --format=%H
+2026-10-16T14:41:19.6386117Z f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:19.6393915Z ##[group]Removing auth
+2026-10-16T14:41:19.6396731Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-16T14:41:19.6423585Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-16T14:41:19.6620425Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-16T14:41:19.6645967Z http.https://github.com/.extraheader
+2026-10-16T14:41:19.6652123Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-16T14:41:19.6753708Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-16T14:41:19.6945636Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-16T14:41:19.6973134Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-16T14:41:19.7162227Z ##[endgroup]
+2026-10-16T14:41:19.7973571Z ##[group]Run actions/setup-python@v5
+2026-10-16T14:41:19.7973803Z with:
+2026-10-16T14:41:19.7973976Z   python-version: 3.12.12
+2026-10-16T14:41:19.7974179Z   check-latest: false
+2026-10-16T14:41:19.7976133Z   token: ***
+2026-10-16T14:41:19.7976318Z   update-environment: true
+2026-10-16T14:41:19.7976527Z   allow-prereleases: false
+2026-10-16T14:41:19.7976711Z   freethreaded: false
+2026-10-16T14:41:19.7976887Z env:
+2026-10-16T14:41:19.7977096Z   UQCF_WORKFLOW_SHA: f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:19.7977437Z   GEMINI_API_KEY: ***
+2026-10-16T14:41:19.7977614Z ##[endgroup]
+2026-10-16T14:41:19.9008049Z ##[group]Installed versions
+2026-10-16T14:41:19.9022254Z Version 3.12.12 was not found in the local cache
+2026-10-16T14:41:19.9151923Z (node:2180) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-16T14:41:19.9153083Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-16T14:41:21.0244097Z Version 3.12.12 is available for downloading
+2026-10-16T14:41:21.0245653Z Download from "https://github.com/actions/python-versions/releases/download/3.12.12-18393146713/python-3.12.12-linux-24.04-x64.tar.gz"
+2026-10-16T14:41:21.6667908Z Extract downloaded archive
+2026-10-16T14:41:21.6765606Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/904eb9f9-2bff-4481-a0ce-a750bd14b7e5 -f /home/runner/work/_temp/970747ab-da43-46ed-9fba-52dee644e454
+2026-10-16T14:41:23.4127154Z Execute installation script
+2026-10-16T14:41:23.4207075Z Check if Python hostedtoolcache folder exist...
+2026-10-16T14:41:23.4207582Z Create Python 3.12.12 folder
+2026-10-16T14:41:23.4218409Z Copy Python binaries to hostedtoolcache folder
+2026-10-16T14:41:23.7853072Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+2026-10-16T14:41:23.7885982Z Upgrading pip...
+2026-10-16T14:41:30.0931078Z Looking in links: /tmp/tmpcyt3vdom
+2026-10-16T14:41:30.0933540Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages (25.0.1)
+2026-10-16T14:41:30.9277153Z Collecting pip
+2026-10-16T14:41:30.9531542Z Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+2026-10-16T14:41:30.9596838Z Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+2026-10-16T14:41:31.0248759Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 32.1 MB/s eta 0:00:00
+2026-10-16T14:41:31.0249249Z 
+2026-10-16T14:41:31.0378053Z Installing collected packages: pip
+2026-10-16T14:41:31.0378612Z Attempting uninstall: pip
+2026-10-16T14:41:31.0395579Z Found existing installation: pip 25.0.1
+2026-10-16T14:41:31.0651957Z Uninstalling pip-25.0.1:
+2026-10-16T14:41:31.0695639Z Successfully uninstalled pip-25.0.1
+2026-10-16T14:41:31.8070781Z Successfully installed pip-26.2.1
+2026-10-16T14:41:31.8512471Z Create complete file
+2026-10-16T14:41:31.8545300Z Successfully set up CPython (3.12.12)
+2026-10-16T14:41:31.8546751Z ##[endgroup]
+2026-10-16T14:41:31.8699559Z ##[group]Run actions/download-artifact@v4
+2026-10-16T14:41:31.8700031Z with:
+2026-10-16T14:41:31.8700203Z   name: repair-integrity
+2026-10-16T14:41:31.8700396Z   path: repair_integrity
+2026-10-16T14:41:31.8700579Z   merge-multiple: false
+2026-10-16T14:41:31.8700805Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-16T14:41:31.8701040Z   run-id: 38917243291
+2026-10-16T14:41:31.8701206Z env:
+2026-10-16T14:41:31.8701412Z   UQCF_WORKFLOW_SHA: f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:31.8701818Z   GEMINI_API_KEY: ***
+2026-10-16T14:41:31.8702046Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:31.8702412Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2026-10-16T14:41:31.8702745Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:31.8703042Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:31.8703373Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:31.8703670Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2026-10-16T14:41:31.8703924Z ##[endgroup]
+2026-10-16T14:41:31.9873420Z Downloading single artifact
+2026-10-16T14:41:32.0015986Z (node:2260) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-16T14:41:32.0016672Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-16T14:41:32.2191435Z Preparing to download the following artifacts:
+2026-10-16T14:41:32.2192338Z - repair-integrity (ID: 12052652914, Size: 198856, Expected Digest: sha256:d64044b8dbfdb2f734825de5173948ee05c84e411ca523c69903588dcc475f33)
+2026-10-16T14:41:32.4381535Z Redirecting to blob download url: https://productionresultssa7.blob.core.windows.net/actions-results/dbc533df-5194-8760-a716-7a09305ce38c/workflow-job-run-71b168bb-e1b3-5ffe-81d5-4d8f991d10f9/artifacts/383536d870e8595f3b96509eaf6b2b2a972f76a4a87ad0de227574adb6c81c26.zip
+2026-10-16T14:41:32.4390664Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/repair_integrity
+2026-10-16T14:41:32.6457090Z (node:2260) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-16T14:41:32.7826434Z SHA256 digest of downloaded artifact is d64044b8dbfdb2f734825de5173948ee05c84e411ca523c69903588dcc475f33
+2026-10-16T14:41:32.7827189Z Artifact download completed successfully.
+2026-10-16T14:41:32.7827550Z Total of 1 artifact(s) downloaded
+2026-10-16T14:41:32.7831426Z Download artifact has finished successfully
+2026-10-16T14:41:32.7965548Z ##[group]Run actions/download-artifact@v4
+2026-10-16T14:41:32.7965789Z with:
+2026-10-16T14:41:32.7965979Z   name: repair-verification
+2026-10-16T14:41:32.7966193Z   path: repair_verification
+2026-10-16T14:41:32.7966389Z   merge-multiple: false
+2026-10-16T14:41:32.7966630Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-16T14:41:32.7966872Z   run-id: 38917243291
+2026-10-16T14:41:32.7967046Z env:
+2026-10-16T14:41:32.7967267Z   UQCF_WORKFLOW_SHA: f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:32.7967695Z   GEMINI_API_KEY: ***
+2026-10-16T14:41:32.7967930Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:32.7968311Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2026-10-16T14:41:32.7968659Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:32.7968991Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:32.7969341Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:32.7969834Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2026-10-16T14:41:32.7970110Z ##[endgroup]
+2026-10-16T14:41:32.9178212Z Downloading single artifact
+2026-10-16T14:41:32.9292285Z (node:2272) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-16T14:41:32.9293496Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-16T14:41:33.1422169Z Preparing to download the following artifacts:
+2026-10-16T14:41:33.1422922Z - repair-verification (ID: 12052349238, Size: 29795, Expected Digest: sha256:7926ee2a13f576f3689b946ebcc831a045c71e6bcbbb133249f70e0a586b726e)
+2026-10-16T14:41:33.3687912Z Redirecting to blob download url: https://productionresultssa7.blob.core.windows.net/actions-results/dbc533df-5194-8760-a716-7a09305ce38c/workflow-job-run-7dd60fb3-4445-5c9c-826d-e59c3735a776/artifacts/4d80937bd1734ca7ae33a3e7b93e2cc9691fe73ab8a85db070ce56bedb0d13f0.zip
+2026-10-16T14:41:33.3689858Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/repair_verification
+2026-10-16T14:41:33.5705740Z (node:2272) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-16T14:41:33.6187230Z SHA256 digest of downloaded artifact is 7926ee2a13f576f3689b946ebcc831a045c71e6bcbbb133249f70e0a586b726e
+2026-10-16T14:41:33.6187976Z Artifact download completed successfully.
+2026-10-16T14:41:33.6188378Z Total of 1 artifact(s) downloaded
+2026-10-16T14:41:33.6192417Z Download artifact has finished successfully
+2026-10-16T14:41:33.6311771Z ##[group]Run actions/download-artifact@v4
+2026-10-16T14:41:33.6312014Z with:
+2026-10-16T14:41:33.6312197Z   name: repair-reproduction
+2026-10-16T14:41:33.6312423Z   path: repair_reproduction
+2026-10-16T14:41:33.6312623Z   merge-multiple: false
+2026-10-16T14:41:33.6312854Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-16T14:41:33.6313104Z   run-id: 38917243291
+2026-10-16T14:41:33.6313288Z env:
+2026-10-16T14:41:33.6313512Z   UQCF_WORKFLOW_SHA: f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:33.6313947Z   GEMINI_API_KEY: ***
+2026-10-16T14:41:33.6314187Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:33.6314559Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2026-10-16T14:41:33.6314903Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:33.6315218Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:33.6315550Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:33.6315861Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2026-10-16T14:41:33.6316135Z ##[endgroup]
+2026-10-16T14:41:33.7530196Z Downloading single artifact
+2026-10-16T14:41:33.7644173Z (node:2284) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-16T14:41:33.7645029Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-16T14:41:33.9761106Z Preparing to download the following artifacts:
+2026-10-16T14:41:33.9761847Z - repair-reproduction (ID: 12052703286, Size: 2260, Expected Digest: sha256:c985eef24c41844eeef88dec93d7d8d0ebc94769df30927c512bf47043924676)
+2026-10-16T14:41:34.1922517Z Redirecting to blob download url: https://productionresultssa7.blob.core.windows.net/actions-results/dbc533df-5194-8760-a716-7a09305ce38c/workflow-job-run-df1afd9a-3dd3-56d0-90d8-8c02b6034355/artifacts/c60b8f448e61ca0c4e6e47035cbe1cc922d060a0f9f4c71a453ee8417002e7d9.zip
+2026-10-16T14:41:34.1924075Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/repair_reproduction
+2026-10-16T14:41:34.3950165Z (node:2284) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-16T14:41:34.4032391Z SHA256 digest of downloaded artifact is c985eef24c41844eeef88dec93d7d8d0ebc94769df30927c512bf47043924676
+2026-10-16T14:41:34.4032888Z Artifact download completed successfully.
+2026-10-16T14:41:34.4033164Z Total of 1 artifact(s) downloaded
+2026-10-16T14:41:34.4036673Z Download artifact has finished successfully
+2026-10-16T14:41:34.4151773Z ##[group]Run python research_snapshot/.github/scripts/uqcf_analytical_repair_review.py
+2026-10-16T14:41:34.4152333Z [36;1mpython research_snapshot/.github/scripts/uqcf_analytical_repair_review.py[0m
+2026-10-16T14:41:34.4769119Z shell: /usr/bin/bash -e {0}
+2026-10-16T14:41:34.4769417Z env:
+2026-10-16T14:41:34.4769909Z   UQCF_WORKFLOW_SHA: f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:41:34.4770869Z   GEMINI_API_KEY: ***
+2026-10-16T14:41:34.4771243Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:34.4771741Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2026-10-16T14:41:34.4772277Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:34.4772757Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:34.4773135Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:41:34.4773452Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2026-10-16T14:41:34.4773805Z   REVIEW_PHASE: mathematical
+2026-10-16T14:41:34.4774015Z ##[endgroup]
+2026-10-16T14:42:00.3385444Z GEMINI_RAW_REVIEW_BEGIN
+2026-10-16T14:42:00.3385823Z {
+2026-10-16T14:42:00.3386076Z   "verdict": "ACCEPTED",
+2026-10-16T14:42:00.3386384Z   "findings": [],
+2026-10-16T14:42:00.3386680Z   "missing_assumptions": [],
+2026-10-16T14:42:00.3386978Z   "counterexamples": [],
+2026-10-16T14:42:00.3387274Z   "limitations": [
+2026-10-16T14:42:00.3387748Z     "The results are conditional on the supplied finite-dimensional quantum interface.",
+2026-10-16T14:42:00.3388414Z     "The algebra chain and center-retention condition are supplied.",
+2026-10-16T14:42:00.3388910Z     "The central reader (P2) is supplied.",
+2026-10-16T14:42:00.3389392Z     "Covariance is a declared class hypothesis, not a derived native law.",
+2026-10-16T14:42:00.3390143Z     "The outcome register and its retention are supplied.",
+2026-10-16T14:42:00.3390684Z     "The reference state for the state-relative covariant law is supplied."
+2026-10-16T14:42:00.3391032Z   ],
+2026-10-16T14:42:00.3391205Z   "observations": [
+2026-10-16T14:42:00.3391738Z     "The repair correctly distinguishes between old-reader retention and finer-reader TV, showing that the old reader's law is preserved while the finer reader can gain contrast.",
+2026-10-16T14:42:00.3392657Z     "The repair correctly identifies that identical states have identical state centralizers, and that common input-state dependence is distinct from external source-labelled rule selection.",
+2026-10-16T14:42:00.3393550Z     "The repair correctly identifies that arbitrary symmetry reduction is not sufficient for center growth, and that an invariant abelian extension is the exact criterion.",
+2026-10-16T14:42:00.3394397Z     "The repair correctly optimizes the factor seed to rank-one seeds by convexity and unitary invariance, and establishes the D/2 bound for fully unitary-covariant registers.",
+2026-10-16T14:42:00.3395083Z     "The repair correctly handles zero/degenerate cases and restricts divisions to nonzero contrast.",
+2026-10-16T14:42:00.3395729Z     "The repair correctly clarifies that a diffuse orientation-bearing component is required, not necessarily a full frame or a wholly diffuse record.",
+2026-10-16T14:42:00.3396554Z     "The repair correctly notes that distinguishing events need not attain optimal TV and that finite noncovariant decisions do not contradict the finite covariant-register theorem.",
+2026-10-16T14:42:00.3397227Z     "The repair correctly states that old original reviews do not certify the new bytes."
+2026-10-16T14:42:00.3397561Z   ]
+2026-10-16T14:42:00.3397718Z }
+2026-10-16T14:42:00.3397887Z GEMINI_RAW_REVIEW_END
+2026-10-16T14:42:00.3398219Z Review response SHA256: 76a5bf2bfc1cb902ff84edf93bbe2435c06577ae1ebb9ce3119bbd9fb3071ebb
+2026-10-16T14:42:00.3524943Z ##[group]Run actions/upload-artifact@v4
+2026-10-16T14:42:00.3525192Z with:
+2026-10-16T14:42:00.3525368Z   name: repair-review
+2026-10-16T14:42:00.3525569Z   path: repair_review
+2026-10-16T14:42:00.3525768Z   if-no-files-found: error
+2026-10-16T14:42:00.3526103Z   retention-days: 90
+2026-10-16T14:42:00.3526305Z   include-hidden-files: true
+2026-10-16T14:42:00.3526517Z   compression-level: 6
+2026-10-16T14:42:00.3526712Z   overwrite: false
+2026-10-16T14:42:00.3526886Z env:
+2026-10-16T14:42:00.3527119Z   UQCF_WORKFLOW_SHA: f62afaebdba109daad1031005af6c3529283bd24
+2026-10-16T14:42:00.3527563Z   GEMINI_API_KEY: ***
+2026-10-16T14:42:00.3527811Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:42:00.3528170Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2026-10-16T14:42:00.3528510Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:42:00.3528832Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:42:00.3529169Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2026-10-16T14:42:00.3529525Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2026-10-16T14:42:00.3530018Z ##[endgroup]
+2026-10-16T14:42:00.4813549Z (node:2305) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-16T14:42:00.4814142Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-16T14:42:00.4930427Z With the provided path, there will be 8 files uploaded
+2026-10-16T14:42:00.4980030Z Artifact name is valid!
+2026-10-16T14:42:00.4980391Z Root directory input is valid!
+2026-10-16T14:42:00.8509287Z Beginning upload of artifact content to blob storage
+2026-10-16T14:42:00.8891208Z (node:2305) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-16T14:42:01.2249933Z Uploaded bytes 190276
+2026-10-16T14:42:01.2823383Z Finished uploading artifact content to blob storage!
+2026-10-16T14:42:01.2824176Z SHA256 digest of uploaded artifact zip is ca4e8fe22cdf91c73f850e22eed04884db8a42c9e8f9179b14f9ce3ec5e1886d
+2026-10-16T14:42:01.2827289Z Finalizing artifact upload
+2026-10-16T14:42:01.5571881Z Artifact repair-review.zip successfully finalized. Artifact ID 12053426296
+2026-10-16T14:42:01.5573128Z Artifact repair-review has been successfully uploaded! Final size is 190276 bytes. Artifact ID is 12053426296
+2026-10-16T14:42:01.5578921Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38917243291/artifacts/12053426296
+2026-10-16T14:42:01.5732400Z Post job cleanup.
+2026-10-16T14:42:01.6651444Z (node:2318) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-16T14:42:01.6652038Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-16T14:42:01.6793874Z Post job cleanup.
+2026-10-16T14:42:01.7484203Z [command]/usr/bin/git version
+2026-10-16T14:42:01.7518282Z git version 2.55.0
+2026-10-16T14:42:01.8133743Z Temporarily overriding HOME='/home/runner/work/_temp/9c610367-7430-4042-8a06-a532468ba94d' before making global git config changes
+2026-10-16T14:42:01.8135116Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-16T14:42:01.8141049Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+2026-10-16T14:42:01.8175643Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-16T14:42:01.8212230Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-16T14:42:01.8429538Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-16T14:42:01.8460028Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-16T14:42:01.8663388Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-16T14:42:01.8694228Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-16T14:42:01.9021552Z Cleaning up orphan processes
+2026-10-16T14:42:01.9269331Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
