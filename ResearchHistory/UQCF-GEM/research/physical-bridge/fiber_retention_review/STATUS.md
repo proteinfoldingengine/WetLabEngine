@@ -1,5 +1,13 @@
 # Retained-fiber constructive review status
 
+**Current status: conditional analytical argument ACCEPTED; native bridge NOT_DERIVED; durable raw-evidence publication PENDING automatic-approval clearance.**
+
+See [REVIEW_OUTCOME.md](REVIEW_OUTCOME.md) for the inspected run, hashes, exact scope and publication block. Run 39061712192 completed successfully after explicit user approval. All three original artifacts were downloaded and verified. Public Git publication of the full prompt/request/model-response/verdict payload was separately blocked by automatic approval review; no alternative route was used.
+
+## Historical status entries
+
+# Retained-fiber constructive review status
+
 2026-10-17 America/Phoenix.
 
 ## Frozen and checked
