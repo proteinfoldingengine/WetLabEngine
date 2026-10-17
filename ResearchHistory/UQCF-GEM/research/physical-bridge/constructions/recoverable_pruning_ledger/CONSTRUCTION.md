@@ -2,7 +2,7 @@
 
 Author: proteinfolding-grokbot (UQCF Science Agent). Started 2026-10-17 America/New_York.
 Source baseline: `d90f9a30c006a15cf97257e857a149bbb9423e91`, branch `research/uqcf-overlapping-guard-exchange`.
-Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Status: ACTIVE POSITIVE CONSTRUCTION, DRAFT 2 (section 9 added 2026-10-17 ~12:00 ET on baseline `d23a59b73160acec15ff0d945a0c2f6ebcdff351`), UNREVIEWED. No adversarial grading, admission class, code or Gemini review yet; those come after the mechanism is drafted. No milestone or closure is claimed.
+Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Status: ACTIVE POSITIVE CONSTRUCTION, DRAFT 3 (section 9 added 2026-10-17 ~12:00 ET on baseline `d23a59b73160acec15ff0d945a0c2f6ebcdff351`; section 10 added 2026-10-17 ~13:00 ET on baseline `202fb12970a6b7c7c74c47aabbd18dda2926268f`), UNREVIEWED. No adversarial grading, admission class, code or Gemini review yet; those come after the mechanism is drafted. No milestone or closure is claimed.
 
 ## 0. Result first
 
@@ -178,3 +178,54 @@ Also, R_inc is not invariant under refactoring the step into elementary steps (o
 2. Multi-step general trees: prove that each owner's R_inc history reconstructs the sums over its sub-fibers in step order (telescoping), and give ownership transfer when an owner is itself pruned.
 3. Noncommutative analogue via v15.16: owner = central block of the retained algebra, and increment = the change of the block-diagonal state under E_S -> E_(S∪T). Check that this is relocation and not cloning.
 4. Then freeze, preregister, run independent producer and checker code, send to Gemini review via Actions, audit, read back.
+
+## 10. Draft 3: premise L settled (reduced to the access premise A plus earned P1 facts)
+
+### 10.1 Two earned address facts
+
+- **(E1) Stable addresses.** For Y ⊆ X and t ∈ Y, r_XY(t) = t (the longest prefix of t in Y is t). The retention section I_YX is the identity on Y-coordinates. So a retained atom keeps the *same* address through every step that retains it, and (P_{0l} x)_t for l = 0, 1, ..., j are values of one type at one address. No transport map is needed to compare them. (P1, P2.)
+- **(E2) Coherent transport.** r_{jk} r_{lj} = r_{lk} (P1). Cumulative fibers r_{0j}^{-1}(t), t ∈ X_j, partition X_0. Each fiber at level j is a union of fibers at level l ≤ j. The grade itself moves along r (P_{lj}).
+
+### 10.2 Two versions of the increment reading
+
+Section 9's R_inc says "each retained atom keeps the append-only history of its own coarse coordinate". It leaves open what happens to the history of an atom that is itself pruned. There are exactly two coherent options:
+
+- **R_inc^−**: the history of a pruned atom is discarded with it. Survivors keep only their own histories.
+- **R_inc^+**: the history of a pruned atom s at step k is re-keyed to r_{k-1,k}(s). This is the same map that carries s's grade (E2).
+
+**Prop 10.1 (R_inc^+ equals R_full in content).** For any finite pruning sequence, the R_inc^+ record of each retained owner t and the R_full record of t (draft 1's owned pieces with P1 inheritance) determine each other.
+*Proof.* Each removed z at step j carries its own history, and the last entry of that history is (P_{0,j-1} x)_z = y_z. By Lemma 3.1, π_{j,t} is determined by (y_z) for z ∈ Φ_t \ {t}. Conversely, π_{j,t} gives each y_z. The earlier entries of z's history are z's own increments, which R_full stores as π_{l,z}(z) and inherits to t. Induct on j. ∎
+So the reading lattice collapses to the chain **R_min < R_inc^− < R_inc^+ = R_full**. In particular, Prop 9.4 (the v15.10 loss arrow under simultaneous pruning) holds exactly for R_inc^−. Under R_inc^+ the global record is injective. The choice "do pruned atoms' histories survive?" *is* the choice between having a loss arrow and having full recoverability. Scratch check (`/tmp/chk3.py`, not committed; code verification comes later): in witness B with simultaneous pruning of {u, v}, a separates under R_inc^+ and not under R_inc^−. With sequential pruning a separates under both. Across 300 random 7-atom trees and leaf-pruning sequences, R_inc^+ produced no global collisions.
+
+### 10.3 L derived for each reading
+
+Recall L: a datum about atom z is indexed by the retained address its lineage lives at. Split L into:
+
+- **L_0 (coordinate ownership).** The value at address t of the retained grade (E_j x on X_j) is a datum of t.
+
+**Prop 10.2.** (i) Under R_min and R_inc^−, L is equivalent to L_0. (ii) Under R_inc^+ (equivalently R_full), L is equivalent to L_0 together with coherence: ownership is transported along the map that transports grade. Coherence is forced by (E2) once fiber-locality is required.
+*Proof.* (i) Every R_inc^− datum is (P_{0l} x)_t for some retained t and l ≤ j. By (E1) these are values at the single address t, so L_0 assigns them all to t, and no other indexing is defined without an extra map X_j → X_j. (ii) Under R_inc^+, a level-j owner also holds data (P_{0l} x)_s for pruned s ∈ X_l. Such a datum depends on x only through the level-l fiber r_{0l}^{-1}(s). By (E2), exactly one level-j atom has a cumulative fiber containing that set, namely r_{lj}(s). So fiber-local ownership (a datum is owned by an atom whose cumulative fiber contains the datum's support) has a unique solution, the P1 re-keying. ∎
+Root-keying, which section 6 noted is natural under relabelings, is excluded in (i) by L_0, because the root is not the address of a's coordinate. It is excluded in (ii) by fiber-locality whenever the root's cumulative fiber does not contain s. Naturality alone does not force L, as section 6 anticipated. The missing earned fact is (E1), together with L_0.
+
+**L_0 is the access premise A.** "A retained atom's own coarse coordinate is accessible to it" is exactly A restricted to the coarse state. It is also the same open question proteinfolding-gpt's ancestral-grade note leaves: is the aggregate the receiver's accessible state, or only a coarse description? So L is no longer a separate premise. **For R_min and R_inc^−, L ⊆ A.**
+
+### 10.4 Updated earned vs assumed (after draft 3)
+
+| Item | Status |
+| --- | --- |
+| Native distinction | Declared graded instance. Preparability G is ASSUMED. |
+| Update rule | Pruning plus the P2 split: EARNED. Reading: R_min is inherited, R_inc^− is derived as the minimal persistent reading (Prop 9.2), and R_inc^+ = R_full (Prop 10.1). |
+| Locality L | DERIVED from (E1), (E2) and A (Prop 10.2). It is no longer an independent premise. |
+| Receiver and access | Retained atom a. ASSUMED as premise A (= L_0), shared with the ancestral-grade note. |
+| Retained consequence | 0 -> 1 bit at a (every reading); persistent under R_inc^− and finer. |
+| Separation | EARNED. |
+| Loss arrow | Present iff R_inc^− and some fiber loses two or more atoms in one step (Props 9.4, 10.1). |
+| Occurrence of pruning | Still supplied. |
+
+So the open bridge premises are now exactly **A** (one sentence: an atom reads its own coordinate and its own past values) and **G**, plus the supplied occurrence of the pruning step.
+
+### 10.5 Next (one per run)
+
+1. Multi-step general trees under R_inc^−: show that the owner's record reconstructs, in step order, the sums over the sub-fibers absorbed at each step (telescoping, Lemma 3.1), and characterize exactly which preparation pairs a fixed owner separates. This is the transfer theorem in general form.
+2. The noncommutative analogue via v15.16 (owner = central block; increment = block-state change under E_S -> E_(S∪T)). Check that it is relocation, not cloning.
+3. Then freeze, preregister, run independent producer and checker code, send to Gemini via Actions, audit, read back.
