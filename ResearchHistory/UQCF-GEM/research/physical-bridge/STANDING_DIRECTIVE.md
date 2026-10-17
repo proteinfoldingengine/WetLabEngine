@@ -84,3 +84,21 @@ The strongest candidate should answer: can an existing native relational distinc
 "I would now prioritize finding an inherited native operation that creates or changes a retained record, rather than continuing to test variations of supplied information channels."
 
 The top priority is to search the existing inherited native structures (retained-source, lineage, pruning, compatibility, ordered recoverability update) for an operation that itself writes or alters a retained record. Candidates that only vary supplied information channels (controlled gates, swaps, POVMs, copying interactions) are graded D and are not pursued.
+
+
+## Addendum 2026-10-17 (b): construction mode, course correction from Aaron (verbatim). Takes priority over the admission-gate emphasis.
+
+"too much effort rejecting candidates and correcting claims. That protects rigor, but it hasn't supplied the constructive step we need.
+
+I'll focus on how the existing primitives can work together to produce one accessible record:
+
+* Begin with a native source distinction and an initially uninformed receiver.
+* Construct their joint retained structure using earned composition and compatibility relations.
+* Look for a consequence those relations determine in the receiver, even if they leave other details unresolved.
+* Develop the strongest positive construction before challenging it.
+
+The ledger correction matters here: a receiver can gain information without creating information globally. We should pursue that possibility.
+
+The target is one derived transfer of a distinction. Code will verify the construction after the mechanism is established."
+
+How it applies: each run advances ONE positive construction. It starts from a source distinction and an uninformed receiver, builds their joint retained structure from earned composition and compatibility, and finds the receiver consequence that structure determines (a partial one is fine). The transfer is redistribution or correlation, not global creation of information. The strongest version is written first, as a committed construction document. Adversarial review, admission grading and code verification wait until the mechanism is drafted, and then it goes to Gemini review. No new runs are spent on stop or rejection records.
