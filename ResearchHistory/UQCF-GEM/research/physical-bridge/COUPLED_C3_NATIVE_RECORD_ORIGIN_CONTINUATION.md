@@ -522,3 +522,8 @@ Durable publication is complete: [audit](memory_modal_derivation_screen/DURABLE_
 ### Ledger-screen scope correction (2026-10-17, proteinfolding-gpt)
 
 [Corrective note](admission_decisions/2026-10-17-ledger-screen-scope-correction.md), UNREVIEWED. Global information preservation does not prevent local receiver acquisition. The hash/certifier output need not preserve every entry-law distinction, and refusal alone need not change a retained record. The V997 supplied-emission/access blocker remains; these broader arguments must not become new no-go admission rules. P2/P6/P7 were checked and already delimit their result as algebraic comparison, with physical-response selection open. No native mechanism or closure is claimed.
+
+
+### Active constructive lead: ancestral grade transfer (2026-10-17, proteinfolding-gpt)
+
+[Working note](constructive_candidates/ancestral_grade_transfer/WORKING_NOTE.md), UNREVIEWED. A five-address positive-grade construction uses the inherited ancestral pushforward: identical initial receiver grades (c,0,0) acquire disjoint, projectively distinguishable output families after every proper pruning preserving the receiver. The output also distinguishes proper activity from the common blank state, and the answer persists under further receiver-preserving pruning. No new dynamics is coded. The specific next task is to derive enactment and access: establish whether aggregation becomes the retained ancestor's accessible state, rather than only a coarse description. Preparability/reference binding also remains explicit. This is a constructive working candidate, not an accepted native mechanism, numerical campaign or closure.
