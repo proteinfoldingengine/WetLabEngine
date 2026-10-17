@@ -1,0 +1,112 @@
+name: UQCF ledger screen scope correction
+
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/ledger_screen_correction/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/ledger_screen_correction/FREEZE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/ledger_screen_correction/source_packet.json'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/ledger_screen_correction/source_lock.json'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/ledger_screen_correction/sources/**' 
+      - '.github/scripts/uqcf_ledger_correction_*.py'
+      - '.github/workflows/uqcf-gem-ledger-screen-correction.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+
+concurrency:
+  group: uqcf-ledger-screen-correction
+  cancel-in-progress: false
+
+# Official actions v4 tag commits verified before this workflow was prepared.
+jobs:
+  integrity:
+    name: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/ledger_screen_correction
+            .github
+      - name: Offline plumbing regression tests, no science execution
+        run: python3 .github/scripts/uqcf_ledger_correction_tests.py
+      - name: Validate exact documents, locked sources and copied archive bytes
+        run: python3 .github/scripts/uqcf_ledger_correction_integrity.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: ledger-integrity-${{ github.run_attempt }}
+          path: ledger_integrity
+          if-no-files-found: error
+          retention-days: 90
+
+  argument-review:
+    name: argument-review
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/ledger_screen_correction
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: ledger-integrity-${{ github.run_attempt }}
+          path: ledger_integrity
+      - name: Fresh independent Gemini whole-argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_ledger_correction_review.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: ledger-review-${{ github.run_attempt }}
+          path: ledger_review
+          if-no-files-found: error
+          retention-days: 90
+
+  publication-audit:
+    name: publication-audit
+    needs: [integrity, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/ledger_screen_correction
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: ledger-integrity-${{ github.run_attempt }}
+          path: ledger_integrity
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: ledger-review-${{ github.run_attempt }}
+          path: ledger_review
+      - name: Independent immutable GitHub source and review readback audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/uqcf_ledger_correction_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: ledger-publication-${{ github.run_attempt }}
+          path: ledger_publication
+          if-no-files-found: error
+          retention-days: 90
