@@ -1,0 +1,1731 @@
+{
+ "commutant_dimension_diagnostic": [
+  {
+   "checker_dimension": 2,
+   "largest_null_singular_value": 2.7067194726578075e-16,
+   "producer_prediction": 2,
+   "smallest_nonzero_singular_value": 1.9999999999999998,
+   "structure": [
+    2
+   ]
+  },
+  {
+   "checker_dimension": 2,
+   "largest_null_singular_value": 6.343965733558616e-16,
+   "producer_prediction": 2,
+   "smallest_nonzero_singular_value": 2.449489742783176,
+   "structure": [
+    3
+   ]
+  },
+  {
+   "checker_dimension": 7,
+   "largest_null_singular_value": 1.5436970322062291e-15,
+   "producer_prediction": 7,
+   "smallest_nonzero_singular_value": 1.7320508075688754,
+   "structure": [
+    1,
+    2
+   ]
+  },
+  {
+   "checker_dimension": 8,
+   "largest_null_singular_value": 1.9415690720544083e-15,
+   "producer_prediction": 8,
+   "smallest_nonzero_singular_value": 1.9999999999999973,
+   "structure": [
+    2,
+    2
+   ]
+  },
+  {
+   "checker_dimension": 7,
+   "largest_null_singular_value": 1.7837523533737343e-15,
+   "producer_prediction": 7,
+   "smallest_nonzero_singular_value": 1.9999999999999951,
+   "structure": [
+    1,
+    3
+   ]
+  },
+  {
+   "checker_dimension": 8,
+   "largest_null_singular_value": 1.779429147223973e-15,
+   "producer_prediction": 8,
+   "smallest_nonzero_singular_value": 1.9999999999999942,
+   "structure": [
+    2,
+    3
+   ]
+  },
+  {
+   "checker_dimension": 16,
+   "largest_null_singular_value": 1.5690553234640613e-15,
+   "producer_prediction": 16,
+   "smallest_nonzero_singular_value": 1.4142135623730945,
+   "structure": [
+    1,
+    1,
+    2
+   ]
+  }
+ ],
+ "declared_count": 217,
+ "failures": [],
+ "numpy": "2.1.3",
+ "record_count": 217,
+ "records": [
+  {
+   "T_check": 0.0743930095,
+   "T_formula": 0.0743930095,
+   "W1_wrong_formula": 0.0743930095,
+   "W2_flipped_value": -0.0743930095,
+   "family": "B-in",
+   "key": "(2,)/B-in/0",
+   "reader_invariant": true,
+   "reader_value": 0.0743930095
+  },
+  {
+   "T_check": 0.0588524033,
+   "T_formula": 0.0588524033,
+   "W1_wrong_formula": 0.0588524033,
+   "W2_flipped_value": -0.0588524033,
+   "family": "B-in",
+   "key": "(2,)/B-in/1",
+   "reader_invariant": true,
+   "reader_value": 0.0588524033
+  },
+  {
+   "T_check": 0.139005578,
+   "T_formula": 0.139005578,
+   "W1_wrong_formula": 0.139005578,
+   "W2_flipped_value": -0.139005578,
+   "family": "B-in",
+   "key": "(2,)/B-in/2",
+   "reader_invariant": true,
+   "reader_value": 0.139005578
+  },
+  {
+   "T_check": 0.0106340145,
+   "T_formula": 0.0106340145,
+   "W1_wrong_formula": 0.0106340145,
+   "W2_flipped_value": -0.0106340145,
+   "family": "B-in",
+   "key": "(2,)/B-in/3",
+   "reader_invariant": true,
+   "reader_value": 0.0106340145
+  },
+  {
+   "T_check": 0.1148101051,
+   "T_formula": 0.1148101051,
+   "W1_wrong_formula": 0.1148101051,
+   "W2_flipped_value": -0.1148101051,
+   "family": "B-in",
+   "key": "(2,)/B-in/4",
+   "reader_invariant": true,
+   "reader_value": 0.1148101051
+  },
+  {
+   "T_check": 0.2046435187,
+   "T_formula": 0.2046435187,
+   "W1_wrong_formula": 0.2046435187,
+   "W2_flipped_value": -0.2046435187,
+   "family": "B-in",
+   "key": "(2,)/B-in/5",
+   "reader_invariant": true,
+   "reader_value": 0.2046435187
+  },
+  {
+   "T_check": 0.113649118,
+   "T_formula": 0.113649118,
+   "W1_wrong_formula": 0.113649118,
+   "W2_flipped_value": -0.113649118,
+   "family": "B-in",
+   "key": "(2,)/B-in/6",
+   "reader_invariant": true,
+   "reader_value": 0.113649118
+  },
+  {
+   "T_check": 0.0277943289,
+   "T_formula": 0.0277943289,
+   "W1_wrong_formula": 0.0277943289,
+   "W2_flipped_value": -0.0277943289,
+   "family": "B-in",
+   "key": "(2,)/B-in/7",
+   "reader_invariant": true,
+   "reader_value": 0.0277943289
+  },
+  {
+   "T_check": 0.0386070712,
+   "T_formula": 0.0386070712,
+   "W1_wrong_formula": 0.0386070712,
+   "W2_flipped_value": -0.0386070712,
+   "family": "B-out",
+   "key": "(2,)/B-out/0",
+   "reader_invariant": true,
+   "reader_value": 0.0386070712
+  },
+  {
+   "T_check": 0.1826667561,
+   "T_formula": 0.1826667561,
+   "W1_wrong_formula": 0.1826667561,
+   "W2_flipped_value": -0.1826667561,
+   "family": "B-out",
+   "key": "(2,)/B-out/1",
+   "reader_invariant": true,
+   "reader_value": 0.1826667561
+  },
+  {
+   "T_check": 0.0252237422,
+   "T_formula": 0.0252237422,
+   "W1_wrong_formula": 0.0252237422,
+   "W2_flipped_value": -0.0252237422,
+   "family": "B-out",
+   "key": "(2,)/B-out/2",
+   "reader_invariant": true,
+   "reader_value": 0.0252237422
+  },
+  {
+   "T_check": 0.0329503034,
+   "T_formula": 0.0329503034,
+   "W1_wrong_formula": 0.0329503034,
+   "W2_flipped_value": -0.0329503034,
+   "family": "B-out",
+   "key": "(2,)/B-out/3",
+   "reader_invariant": true,
+   "reader_value": 0.0329503034
+  },
+  {
+   "T_check": 0.1216677545,
+   "T_formula": 0.1216677545,
+   "family": "COR",
+   "key": "(2,)/COR/0"
+  },
+  {
+   "T_check": 0.055737391,
+   "T_formula": 0.055737391,
+   "family": "COR",
+   "key": "(2,)/COR/1"
+  },
+  {
+   "T_check": 0.2509847705,
+   "T_formula": 0.2509847705,
+   "family": "COR",
+   "key": "(2,)/COR/2"
+  },
+  {
+   "T_check": 0.3351908135,
+   "T_formula": 0.3351908135,
+   "family": "COR",
+   "key": "(2,)/COR/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2,)/A-a-mixed/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2,)/A-a-mixed/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2,)/A-a-mixed/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2,)/A-a-mixed/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(2,)/A-a-central/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(2,)/A-a-central/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2,)/A-b/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2,)/A-b/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2,)/A-b/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2,)/A-b/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2,)/A-c/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2,)/A-c/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2,)/A-c/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2,)/A-c/3"
+  },
+  {
+   "T_check": 0.0558950994,
+   "T_formula": 0.0558950994,
+   "W1_wrong_formula": 0.0558950994,
+   "W2_flipped_value": -0.0558950994,
+   "family": "B-in",
+   "key": "(3,)/B-in/0",
+   "reader_invariant": true,
+   "reader_value": 0.0558950994
+  },
+  {
+   "T_check": 0.0090065038,
+   "T_formula": 0.0090065038,
+   "W1_wrong_formula": 0.0090065038,
+   "W2_flipped_value": -0.0090065038,
+   "family": "B-in",
+   "key": "(3,)/B-in/1",
+   "reader_invariant": true,
+   "reader_value": 0.0090065038
+  },
+  {
+   "T_check": 0.0370882613,
+   "T_formula": 0.0370882613,
+   "W1_wrong_formula": 0.0370882613,
+   "W2_flipped_value": -0.0370882613,
+   "family": "B-in",
+   "key": "(3,)/B-in/2",
+   "reader_invariant": true,
+   "reader_value": 0.0370882613
+  },
+  {
+   "T_check": 0.0303808809,
+   "T_formula": 0.0303808809,
+   "W1_wrong_formula": 0.0303808809,
+   "W2_flipped_value": -0.0303808809,
+   "family": "B-in",
+   "key": "(3,)/B-in/3",
+   "reader_invariant": true,
+   "reader_value": 0.0303808809
+  },
+  {
+   "T_check": 0.0482991964,
+   "T_formula": 0.0482991964,
+   "W1_wrong_formula": 0.0482991964,
+   "W2_flipped_value": -0.0482991964,
+   "family": "B-in",
+   "key": "(3,)/B-in/4",
+   "reader_invariant": true,
+   "reader_value": 0.0482991964
+  },
+  {
+   "T_check": 0.0700118787,
+   "T_formula": 0.0700118787,
+   "W1_wrong_formula": 0.0700118787,
+   "W2_flipped_value": -0.0700118787,
+   "family": "B-in",
+   "key": "(3,)/B-in/5",
+   "reader_invariant": true,
+   "reader_value": 0.0700118787
+  },
+  {
+   "T_check": 0.0445665699,
+   "T_formula": 0.0445665699,
+   "W1_wrong_formula": 0.0445665699,
+   "W2_flipped_value": -0.0445665699,
+   "family": "B-in",
+   "key": "(3,)/B-in/6",
+   "reader_invariant": true,
+   "reader_value": 0.0445665699
+  },
+  {
+   "T_check": 0.0669157148,
+   "T_formula": 0.0669157148,
+   "W1_wrong_formula": 0.0669157148,
+   "W2_flipped_value": -0.0669157148,
+   "family": "B-in",
+   "key": "(3,)/B-in/7",
+   "reader_invariant": true,
+   "reader_value": 0.0669157148
+  },
+  {
+   "T_check": 0.0576510955,
+   "T_formula": 0.0576510955,
+   "W1_wrong_formula": 0.0576510955,
+   "W2_flipped_value": -0.0576510955,
+   "family": "B-out",
+   "key": "(3,)/B-out/0",
+   "reader_invariant": true,
+   "reader_value": 0.0576510955
+  },
+  {
+   "T_check": 0.0474256683,
+   "T_formula": 0.0474256683,
+   "W1_wrong_formula": 0.0474256683,
+   "W2_flipped_value": -0.0474256683,
+   "family": "B-out",
+   "key": "(3,)/B-out/1",
+   "reader_invariant": true,
+   "reader_value": 0.0474256683
+  },
+  {
+   "T_check": 0.0360238859,
+   "T_formula": 0.0360238859,
+   "W1_wrong_formula": 0.0360238859,
+   "W2_flipped_value": -0.0360238859,
+   "family": "B-out",
+   "key": "(3,)/B-out/2",
+   "reader_invariant": true,
+   "reader_value": 0.0360238859
+  },
+  {
+   "T_check": 0.0582982793,
+   "T_formula": 0.0582982793,
+   "W1_wrong_formula": 0.0582982793,
+   "W2_flipped_value": -0.0582982793,
+   "family": "B-out",
+   "key": "(3,)/B-out/3",
+   "reader_invariant": true,
+   "reader_value": 0.0582982793
+  },
+  {
+   "T_check": 0.0327118856,
+   "T_formula": 0.0327118856,
+   "family": "COR",
+   "key": "(3,)/COR/0"
+  },
+  {
+   "T_check": 0.1180712685,
+   "T_formula": 0.1180712685,
+   "family": "COR",
+   "key": "(3,)/COR/1"
+  },
+  {
+   "T_check": 0.236835441,
+   "T_formula": 0.236835441,
+   "family": "COR",
+   "key": "(3,)/COR/2"
+  },
+  {
+   "T_check": 0.257128166,
+   "T_formula": 0.257128166,
+   "family": "COR",
+   "key": "(3,)/COR/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(3,)/A-a-mixed/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(3,)/A-a-mixed/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(3,)/A-a-mixed/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(3,)/A-a-mixed/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(3,)/A-a-central/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(3,)/A-a-central/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(3,)/A-b/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(3,)/A-b/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(3,)/A-b/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(3,)/A-b/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(3,)/A-c/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(3,)/A-c/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(3,)/A-c/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(3,)/A-c/3"
+  },
+  {
+   "T_check": 0.0103321758,
+   "T_formula": 0.0103321758,
+   "W1_wrong_formula": 0.0103321758,
+   "W2_flipped_value": -0.0103321758,
+   "family": "B-in",
+   "key": "(1, 2)/B-in/0",
+   "reader_invariant": true,
+   "reader_value": 0.0103321758
+  },
+  {
+   "T_check": 0.0058451601,
+   "T_formula": 0.0058451601,
+   "W1_wrong_formula": 0.0058451601,
+   "W2_flipped_value": -0.0058451601,
+   "family": "B-in",
+   "key": "(1, 2)/B-in/1",
+   "reader_invariant": true,
+   "reader_value": 0.0058451601
+  },
+  {
+   "T_check": 0.0149065252,
+   "T_formula": 0.0149065252,
+   "W1_wrong_formula": 0.0149065252,
+   "W2_flipped_value": -0.0149065252,
+   "family": "B-in",
+   "key": "(1, 2)/B-in/2",
+   "reader_invariant": true,
+   "reader_value": 0.0149065252
+  },
+  {
+   "T_check": 0.0041790932,
+   "T_formula": 0.0041790932,
+   "W1_wrong_formula": 0.0041790932,
+   "W2_flipped_value": -0.0041790932,
+   "family": "B-in",
+   "key": "(1, 2)/B-in/3",
+   "reader_invariant": true,
+   "reader_value": 0.0041790932
+  },
+  {
+   "T_check": 0.0016235431,
+   "T_formula": 0.0016235431,
+   "W1_wrong_formula": 0.0016235431,
+   "W2_flipped_value": -0.0016235431,
+   "family": "B-in",
+   "key": "(1, 2)/B-in/4",
+   "reader_invariant": true,
+   "reader_value": 0.0016235431
+  },
+  {
+   "T_check": 0.0011259329,
+   "T_formula": 0.0011259329,
+   "W1_wrong_formula": 0.0011259329,
+   "W2_flipped_value": -0.0011259329,
+   "family": "B-in",
+   "key": "(1, 2)/B-in/5",
+   "reader_invariant": true,
+   "reader_value": 0.0011259329
+  },
+  {
+   "T_check": 0.0136422243,
+   "T_formula": 0.0136422243,
+   "W1_wrong_formula": 0.0136422243,
+   "W2_flipped_value": -0.0136422243,
+   "family": "B-in",
+   "key": "(1, 2)/B-in/6",
+   "reader_invariant": true,
+   "reader_value": 0.0136422243
+  },
+  {
+   "T_check": 0.028507998,
+   "T_formula": 0.028507998,
+   "W1_wrong_formula": 0.028507998,
+   "W2_flipped_value": -0.028507998,
+   "family": "B-in",
+   "key": "(1, 2)/B-in/7",
+   "reader_invariant": true,
+   "reader_value": 0.028507998
+  },
+  {
+   "T_check": 0.0216862455,
+   "T_formula": 0.0216862455,
+   "W1_wrong_formula": 0.0216862455,
+   "W2_flipped_value": -0.0216862455,
+   "family": "B-out",
+   "key": "(1, 2)/B-out/0",
+   "reader_invariant": true,
+   "reader_value": 0.0216862455
+  },
+  {
+   "T_check": 0.0030081861,
+   "T_formula": 0.0030081861,
+   "W1_wrong_formula": 0.0030081861,
+   "W2_flipped_value": -0.0030081861,
+   "family": "B-out",
+   "key": "(1, 2)/B-out/1",
+   "reader_invariant": true,
+   "reader_value": 0.0030081861
+  },
+  {
+   "T_check": 0.0095102195,
+   "T_formula": 0.0095102195,
+   "W1_wrong_formula": 0.0095102195,
+   "W2_flipped_value": -0.0095102195,
+   "family": "B-out",
+   "key": "(1, 2)/B-out/2",
+   "reader_invariant": true,
+   "reader_value": 0.0095102195
+  },
+  {
+   "T_check": 0.0038399041,
+   "T_formula": 0.0038399041,
+   "W1_wrong_formula": 0.0038399041,
+   "W2_flipped_value": -0.0038399041,
+   "family": "B-out",
+   "key": "(1, 2)/B-out/3",
+   "reader_invariant": true,
+   "reader_value": 0.0038399041
+  },
+  {
+   "T_check": 0.0309286854,
+   "T_formula": 0.0309286854,
+   "family": "COR",
+   "key": "(1, 2)/COR/0"
+  },
+  {
+   "T_check": 0.0295722548,
+   "T_formula": 0.0295722548,
+   "family": "COR",
+   "key": "(1, 2)/COR/1"
+  },
+  {
+   "T_check": 0.0080306898,
+   "T_formula": 0.0080306898,
+   "family": "COR",
+   "key": "(1, 2)/COR/2"
+  },
+  {
+   "T_check": 0.0119717608,
+   "T_formula": 0.0119717608,
+   "family": "COR",
+   "key": "(1, 2)/COR/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 2)/A-a-mixed/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 2)/A-a-mixed/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 2)/A-a-mixed/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 2)/A-a-mixed/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(1, 2)/A-a-central/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(1, 2)/A-a-central/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 2)/A-b/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 2)/A-b/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 2)/A-b/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 2)/A-b/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 2)/A-c/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 2)/A-c/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 2)/A-c/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 2)/A-c/3"
+  },
+  {
+   "T_check": 0.0187863896,
+   "T_formula": 0.0187863896,
+   "W1_wrong_formula": 0.0187863896,
+   "W2_flipped_value": -0.0187863896,
+   "family": "B-in",
+   "key": "(2, 2)/B-in/0",
+   "reader_invariant": true,
+   "reader_value": 0.0187863896
+  },
+  {
+   "T_check": 0.0567558895,
+   "T_formula": 0.0567558895,
+   "W1_wrong_formula": 0.0531689436,
+   "W2_flipped_value": -0.0567558895,
+   "family": "B-in",
+   "key": "(2, 2)/B-in/1",
+   "reader_invariant": true,
+   "reader_value": 0.0567558895
+  },
+  {
+   "T_check": 0.02275674,
+   "T_formula": 0.02275674,
+   "W1_wrong_formula": 0.0090041425,
+   "W2_flipped_value": -0.02275674,
+   "family": "B-in",
+   "key": "(2, 2)/B-in/2",
+   "reader_invariant": true,
+   "reader_value": 0.02275674
+  },
+  {
+   "T_check": 0.0470687653,
+   "T_formula": 0.0470687653,
+   "W1_wrong_formula": 0.0470687653,
+   "W2_flipped_value": -0.0470687653,
+   "family": "B-in",
+   "key": "(2, 2)/B-in/3",
+   "reader_invariant": true,
+   "reader_value": 0.0470687653
+  },
+  {
+   "T_check": 0.086715429,
+   "T_formula": 0.086715429,
+   "W1_wrong_formula": 0.086715429,
+   "W2_flipped_value": -0.086715429,
+   "family": "B-in",
+   "key": "(2, 2)/B-in/4",
+   "reader_invariant": true,
+   "reader_value": 0.086715429
+  },
+  {
+   "T_check": 0.0541074635,
+   "T_formula": 0.0541074635,
+   "W1_wrong_formula": 0.0541074635,
+   "W2_flipped_value": -0.0541074635,
+   "family": "B-in",
+   "key": "(2, 2)/B-in/5",
+   "reader_invariant": true,
+   "reader_value": 0.0541074635
+  },
+  {
+   "T_check": 0.0670673648,
+   "T_formula": 0.0670673648,
+   "W1_wrong_formula": 0.0670673648,
+   "W2_flipped_value": -0.0670673648,
+   "family": "B-in",
+   "key": "(2, 2)/B-in/6",
+   "reader_invariant": true,
+   "reader_value": 0.0670673648
+  },
+  {
+   "T_check": 0.1143846521,
+   "T_formula": 0.1143846521,
+   "W1_wrong_formula": 0.1143846521,
+   "W2_flipped_value": -0.1143846521,
+   "family": "B-in",
+   "key": "(2, 2)/B-in/7",
+   "reader_invariant": true,
+   "reader_value": 0.1143846521
+  },
+  {
+   "T_check": 0.0412533305,
+   "T_formula": 0.0412533305,
+   "W1_wrong_formula": 0.0412533305,
+   "W2_flipped_value": -0.0412533305,
+   "family": "B-out",
+   "key": "(2, 2)/B-out/0",
+   "reader_invariant": true,
+   "reader_value": 0.0412533305
+  },
+  {
+   "T_check": 0.084162694,
+   "T_formula": 0.084162694,
+   "W1_wrong_formula": 0.084162694,
+   "W2_flipped_value": -0.084162694,
+   "family": "B-out",
+   "key": "(2, 2)/B-out/1",
+   "reader_invariant": true,
+   "reader_value": 0.084162694
+  },
+  {
+   "T_check": 0.0065270656,
+   "T_formula": 0.0065270656,
+   "W1_wrong_formula": 0.0065270656,
+   "W2_flipped_value": -0.0065270656,
+   "family": "B-out",
+   "key": "(2, 2)/B-out/2",
+   "reader_invariant": true,
+   "reader_value": 0.0065270656
+  },
+  {
+   "T_check": 0.0476787188,
+   "T_formula": 0.0476787188,
+   "W1_wrong_formula": 0.0434494158,
+   "W2_flipped_value": -0.0476787188,
+   "family": "B-out",
+   "key": "(2, 2)/B-out/3",
+   "reader_invariant": true,
+   "reader_value": 0.0476787188
+  },
+  {
+   "T_check": 0.1258719163,
+   "T_formula": 0.1258719163,
+   "family": "COR",
+   "key": "(2, 2)/COR/0"
+  },
+  {
+   "T_check": 0.1000504481,
+   "T_formula": 0.1000504481,
+   "family": "COR",
+   "key": "(2, 2)/COR/1"
+  },
+  {
+   "T_check": 0.0542095662,
+   "T_formula": 0.0542095662,
+   "family": "COR",
+   "key": "(2, 2)/COR/2"
+  },
+  {
+   "T_check": 0.01341438,
+   "T_formula": 0.01341438,
+   "family": "COR",
+   "key": "(2, 2)/COR/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2, 2)/A-a-mixed/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2, 2)/A-a-mixed/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2, 2)/A-a-mixed/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2, 2)/A-a-mixed/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(2, 2)/A-a-central/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(2, 2)/A-a-central/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2, 2)/A-b/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2, 2)/A-b/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2, 2)/A-b/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2, 2)/A-b/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2, 2)/A-c/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2, 2)/A-c/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2, 2)/A-c/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2, 2)/A-c/3"
+  },
+  {
+   "T_check": 0.0034287758,
+   "T_formula": 0.0034287758,
+   "W1_wrong_formula": 0.0034287758,
+   "W2_flipped_value": -0.0034287758,
+   "family": "B-in",
+   "key": "(1, 3)/B-in/0",
+   "reader_invariant": true,
+   "reader_value": 0.0034287758
+  },
+  {
+   "T_check": 0.0272217633,
+   "T_formula": 0.0272217633,
+   "W1_wrong_formula": 0.0272217633,
+   "W2_flipped_value": -0.0272217633,
+   "family": "B-in",
+   "key": "(1, 3)/B-in/1",
+   "reader_invariant": true,
+   "reader_value": 0.0272217633
+  },
+  {
+   "T_check": 9.81254e-05,
+   "T_formula": 9.81254e-05,
+   "W1_wrong_formula": 9.81254e-05,
+   "W2_flipped_value": -9.81254e-05,
+   "family": "B-in",
+   "key": "(1, 3)/B-in/2",
+   "reader_invariant": true,
+   "reader_value": 9.81254e-05
+  },
+  {
+   "T_check": 0.012846944,
+   "T_formula": 0.012846944,
+   "W1_wrong_formula": 0.012846944,
+   "W2_flipped_value": -0.012846944,
+   "family": "B-in",
+   "key": "(1, 3)/B-in/3",
+   "reader_invariant": true,
+   "reader_value": 0.012846944
+  },
+  {
+   "T_check": 0.0183096213,
+   "T_formula": 0.0183096213,
+   "W1_wrong_formula": 0.0183096213,
+   "W2_flipped_value": -0.0183096213,
+   "family": "B-in",
+   "key": "(1, 3)/B-in/4",
+   "reader_invariant": true,
+   "reader_value": 0.0183096213
+  },
+  {
+   "T_check": 0.008867045,
+   "T_formula": 0.008867045,
+   "W1_wrong_formula": 0.008867045,
+   "W2_flipped_value": -0.008867045,
+   "family": "B-in",
+   "key": "(1, 3)/B-in/5",
+   "reader_invariant": true,
+   "reader_value": 0.008867045
+  },
+  {
+   "T_check": 0.0010773131,
+   "T_formula": 0.0010773131,
+   "W1_wrong_formula": 0.0010773131,
+   "W2_flipped_value": -0.0010773131,
+   "family": "B-in",
+   "key": "(1, 3)/B-in/6",
+   "reader_invariant": true,
+   "reader_value": 0.0010773131
+  },
+  {
+   "T_check": 0.0501127357,
+   "T_formula": 0.0501127357,
+   "W1_wrong_formula": 0.0501127357,
+   "W2_flipped_value": -0.0501127357,
+   "family": "B-in",
+   "key": "(1, 3)/B-in/7",
+   "reader_invariant": true,
+   "reader_value": 0.0501127357
+  },
+  {
+   "T_check": 0.0083073572,
+   "T_formula": 0.0083073572,
+   "W1_wrong_formula": 0.0083073572,
+   "W2_flipped_value": -0.0083073572,
+   "family": "B-out",
+   "key": "(1, 3)/B-out/0",
+   "reader_invariant": true,
+   "reader_value": 0.0083073572
+  },
+  {
+   "T_check": 0.005058792,
+   "T_formula": 0.005058792,
+   "W1_wrong_formula": 0.005058792,
+   "W2_flipped_value": -0.005058792,
+   "family": "B-out",
+   "key": "(1, 3)/B-out/1",
+   "reader_invariant": true,
+   "reader_value": 0.005058792
+  },
+  {
+   "T_check": 0.0036772527,
+   "T_formula": 0.0036772527,
+   "W1_wrong_formula": 0.0036772527,
+   "W2_flipped_value": -0.0036772527,
+   "family": "B-out",
+   "key": "(1, 3)/B-out/2",
+   "reader_invariant": true,
+   "reader_value": 0.0036772527
+  },
+  {
+   "T_check": 0.0208802851,
+   "T_formula": 0.0208802851,
+   "W1_wrong_formula": 0.0208802851,
+   "W2_flipped_value": -0.0208802851,
+   "family": "B-out",
+   "key": "(1, 3)/B-out/3",
+   "reader_invariant": true,
+   "reader_value": 0.0208802851
+  },
+  {
+   "T_check": 0.0001092346,
+   "T_formula": 0.0001092346,
+   "family": "COR",
+   "key": "(1, 3)/COR/0"
+  },
+  {
+   "T_check": 0.0732365766,
+   "T_formula": 0.0732365766,
+   "family": "COR",
+   "key": "(1, 3)/COR/1"
+  },
+  {
+   "T_check": 0.0463505004,
+   "T_formula": 0.0463505004,
+   "family": "COR",
+   "key": "(1, 3)/COR/2"
+  },
+  {
+   "T_check": 0.003851466,
+   "T_formula": 0.003851466,
+   "family": "COR",
+   "key": "(1, 3)/COR/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 3)/A-a-mixed/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 3)/A-a-mixed/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 3)/A-a-mixed/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 3)/A-a-mixed/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(1, 3)/A-a-central/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(1, 3)/A-a-central/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 3)/A-b/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 3)/A-b/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 3)/A-b/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 3)/A-b/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 3)/A-c/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 3)/A-c/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 3)/A-c/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 3)/A-c/3"
+  },
+  {
+   "T_check": 0.0272408176,
+   "T_formula": 0.0272408176,
+   "W1_wrong_formula": 0.0240910203,
+   "W2_flipped_value": -0.0272408176,
+   "family": "B-in",
+   "key": "(2, 3)/B-in/0",
+   "reader_invariant": true,
+   "reader_value": 0.0272408176
+  },
+  {
+   "T_check": 0.0213412952,
+   "T_formula": 0.0213412952,
+   "W1_wrong_formula": 0.0172250928,
+   "W2_flipped_value": -0.0213412952,
+   "family": "B-in",
+   "key": "(2, 3)/B-in/1",
+   "reader_invariant": true,
+   "reader_value": 0.0213412952
+  },
+  {
+   "T_check": 0.0458673828,
+   "T_formula": 0.0458673828,
+   "W1_wrong_formula": 0.0244386328,
+   "W2_flipped_value": -0.0458673828,
+   "family": "B-in",
+   "key": "(2, 3)/B-in/2",
+   "reader_invariant": true,
+   "reader_value": 0.0458673828
+  },
+  {
+   "T_check": 0.037073174,
+   "T_formula": 0.037073174,
+   "W1_wrong_formula": 0.037073174,
+   "W2_flipped_value": -0.037073174,
+   "family": "B-in",
+   "key": "(2, 3)/B-in/3",
+   "reader_invariant": true,
+   "reader_value": 0.037073174
+  },
+  {
+   "T_check": 0.0154743089,
+   "T_formula": 0.0154743089,
+   "W1_wrong_formula": 0.0059251497,
+   "W2_flipped_value": -0.0154743089,
+   "family": "B-in",
+   "key": "(2, 3)/B-in/4",
+   "reader_invariant": true,
+   "reader_value": 0.0154743089
+  },
+  {
+   "T_check": 0.0332136993,
+   "T_formula": 0.0332136993,
+   "W1_wrong_formula": 0.0332136993,
+   "W2_flipped_value": -0.0332136993,
+   "family": "B-in",
+   "key": "(2, 3)/B-in/5",
+   "reader_invariant": true,
+   "reader_value": 0.0332136993
+  },
+  {
+   "T_check": 0.0518816362,
+   "T_formula": 0.0518816362,
+   "W1_wrong_formula": 0.0471006695,
+   "W2_flipped_value": -0.0518816362,
+   "family": "B-in",
+   "key": "(2, 3)/B-in/6",
+   "reader_invariant": true,
+   "reader_value": 0.0518816362
+  },
+  {
+   "T_check": 0.0554265219,
+   "T_formula": 0.0554265219,
+   "W1_wrong_formula": 0.0554265219,
+   "W2_flipped_value": -0.0554265219,
+   "family": "B-in",
+   "key": "(2, 3)/B-in/7",
+   "reader_invariant": true,
+   "reader_value": 0.0554265219
+  },
+  {
+   "T_check": 0.0130769765,
+   "T_formula": 0.0130769765,
+   "W1_wrong_formula": 0.0130769765,
+   "W2_flipped_value": -0.0130769765,
+   "family": "B-out",
+   "key": "(2, 3)/B-out/0",
+   "reader_invariant": true,
+   "reader_value": 0.0130769765
+  },
+  {
+   "T_check": 0.0061803512,
+   "T_formula": 0.0061803512,
+   "W1_wrong_formula": 0.0053049333,
+   "W2_flipped_value": -0.0061803512,
+   "family": "B-out",
+   "key": "(2, 3)/B-out/1",
+   "reader_invariant": true,
+   "reader_value": 0.0061803512
+  },
+  {
+   "T_check": 0.0106826052,
+   "T_formula": 0.0106826052,
+   "W1_wrong_formula": 0.0007442321,
+   "W2_flipped_value": -0.0106826052,
+   "family": "B-out",
+   "key": "(2, 3)/B-out/2",
+   "reader_invariant": true,
+   "reader_value": 0.0106826052
+  },
+  {
+   "T_check": 0.0080791418,
+   "T_formula": 0.0080791418,
+   "W1_wrong_formula": 0.0080791418,
+   "W2_flipped_value": -0.0080791418,
+   "family": "B-out",
+   "key": "(2, 3)/B-out/3",
+   "reader_invariant": true,
+   "reader_value": 0.0080791418
+  },
+  {
+   "T_check": 0.0478928594,
+   "T_formula": 0.0478928594,
+   "family": "COR",
+   "key": "(2, 3)/COR/0"
+  },
+  {
+   "T_check": 0.084574226,
+   "T_formula": 0.084574226,
+   "family": "COR",
+   "key": "(2, 3)/COR/1"
+  },
+  {
+   "T_check": 0.1664088854,
+   "T_formula": 0.1664088854,
+   "family": "COR",
+   "key": "(2, 3)/COR/2"
+  },
+  {
+   "T_check": 0.0695179306,
+   "T_formula": 0.0695179306,
+   "family": "COR",
+   "key": "(2, 3)/COR/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2, 3)/A-a-mixed/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2, 3)/A-a-mixed/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2, 3)/A-a-mixed/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(2, 3)/A-a-mixed/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(2, 3)/A-a-central/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(2, 3)/A-a-central/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2, 3)/A-b/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2, 3)/A-b/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2, 3)/A-b/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(2, 3)/A-b/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2, 3)/A-c/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2, 3)/A-c/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2, 3)/A-c/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(2, 3)/A-c/3"
+  },
+  {
+   "T_check": 0.0583469399,
+   "T_formula": 0.0583469399,
+   "W1_wrong_formula": 0.0583469399,
+   "W2_flipped_value": -0.0583469399,
+   "family": "B-in",
+   "key": "(1, 1, 2)/B-in/0",
+   "reader_invariant": true,
+   "reader_value": 0.0583469399
+  },
+  {
+   "T_check": 0.0012486,
+   "T_formula": 0.0012486,
+   "W1_wrong_formula": 0.0012486,
+   "W2_flipped_value": -0.0012486,
+   "family": "B-in",
+   "key": "(1, 1, 2)/B-in/1",
+   "reader_invariant": true,
+   "reader_value": 0.0012486
+  },
+  {
+   "T_check": 0.0043809752,
+   "T_formula": 0.0043809752,
+   "W1_wrong_formula": 0.0043809752,
+   "W2_flipped_value": -0.0043809752,
+   "family": "B-in",
+   "key": "(1, 1, 2)/B-in/2",
+   "reader_invariant": true,
+   "reader_value": 0.0043809752
+  },
+  {
+   "T_check": 0.0003763006,
+   "T_formula": 0.0003763006,
+   "W1_wrong_formula": 0.0003763006,
+   "W2_flipped_value": -0.0003763006,
+   "family": "B-in",
+   "key": "(1, 1, 2)/B-in/3",
+   "reader_invariant": true,
+   "reader_value": 0.0003763006
+  },
+  {
+   "T_check": 0.0037554701,
+   "T_formula": 0.0037554701,
+   "W1_wrong_formula": 0.0037554701,
+   "W2_flipped_value": -0.0037554701,
+   "family": "B-in",
+   "key": "(1, 1, 2)/B-in/4",
+   "reader_invariant": true,
+   "reader_value": 0.0037554701
+  },
+  {
+   "T_check": 0.0081940094,
+   "T_formula": 0.0081940094,
+   "W1_wrong_formula": 0.0081940094,
+   "W2_flipped_value": -0.0081940094,
+   "family": "B-in",
+   "key": "(1, 1, 2)/B-in/5",
+   "reader_invariant": true,
+   "reader_value": 0.0081940094
+  },
+  {
+   "T_check": 0.0019498941,
+   "T_formula": 0.0019498941,
+   "W1_wrong_formula": 0.0019498941,
+   "W2_flipped_value": -0.0019498941,
+   "family": "B-in",
+   "key": "(1, 1, 2)/B-in/6",
+   "reader_invariant": true,
+   "reader_value": 0.0019498941
+  },
+  {
+   "T_check": 0.0513558789,
+   "T_formula": 0.0513558789,
+   "W1_wrong_formula": 0.0513558789,
+   "W2_flipped_value": -0.0513558789,
+   "family": "B-in",
+   "key": "(1, 1, 2)/B-in/7",
+   "reader_invariant": true,
+   "reader_value": 0.0513558789
+  },
+  {
+   "T_check": 0.0422931775,
+   "T_formula": 0.0422931775,
+   "W1_wrong_formula": 0.0422931775,
+   "W2_flipped_value": -0.0422931775,
+   "family": "B-out",
+   "key": "(1, 1, 2)/B-out/0",
+   "reader_invariant": true,
+   "reader_value": 0.0422931775
+  },
+  {
+   "T_check": 0.0272335556,
+   "T_formula": 0.0272335556,
+   "W1_wrong_formula": 0.0272335556,
+   "W2_flipped_value": -0.0272335556,
+   "family": "B-out",
+   "key": "(1, 1, 2)/B-out/1",
+   "reader_invariant": true,
+   "reader_value": 0.0272335556
+  },
+  {
+   "T_check": 0.0054782353,
+   "T_formula": 0.0054782353,
+   "W1_wrong_formula": 0.0054782353,
+   "W2_flipped_value": -0.0054782353,
+   "family": "B-out",
+   "key": "(1, 1, 2)/B-out/2",
+   "reader_invariant": true,
+   "reader_value": 0.0054782353
+  },
+  {
+   "T_check": 0.0063811505,
+   "T_formula": 0.0063811505,
+   "W1_wrong_formula": 0.0063811505,
+   "W2_flipped_value": -0.0063811505,
+   "family": "B-out",
+   "key": "(1, 1, 2)/B-out/3",
+   "reader_invariant": true,
+   "reader_value": 0.0063811505
+  },
+  {
+   "T_check": 0.0001394466,
+   "T_formula": 0.0001394466,
+   "family": "COR",
+   "key": "(1, 1, 2)/COR/0"
+  },
+  {
+   "T_check": 0.0551006706,
+   "T_formula": 0.0551006706,
+   "family": "COR",
+   "key": "(1, 1, 2)/COR/1"
+  },
+  {
+   "T_check": 0.0081865256,
+   "T_formula": 0.0081865256,
+   "family": "COR",
+   "key": "(1, 1, 2)/COR/2"
+  },
+  {
+   "T_check": 0.0021490029,
+   "T_formula": 0.0021490029,
+   "family": "COR",
+   "key": "(1, 1, 2)/COR/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 1, 2)/A-a-mixed/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 1, 2)/A-a-mixed/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 1, 2)/A-a-mixed/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-mixed",
+   "key": "(1, 1, 2)/A-a-mixed/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(1, 1, 2)/A-a-central/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-a-central",
+   "key": "(1, 1, 2)/A-a-central/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 1, 2)/A-b/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 1, 2)/A-b/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 1, 2)/A-b/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-b",
+   "key": "(1, 1, 2)/A-b/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 1, 2)/A-c/0"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 1, 2)/A-c/1"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 1, 2)/A-c/2"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "A-c",
+   "key": "(1, 1, 2)/A-c/3"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "CONTROL",
+   "key": "K3"
+  },
+  {
+   "T_check": 0.25,
+   "T_formula": 0.25,
+   "family": "CONTROL",
+   "key": "K4"
+  },
+  {
+   "T_check": 0.5,
+   "T_formula": 0.5,
+   "family": "CONTROL",
+   "key": "K5-aligned"
+  },
+  {
+   "T_check": 0.0,
+   "T_formula": 0.0,
+   "family": "CONTROL",
+   "key": "K5-twisted"
+  },
+  {
+   "T_check": 0.5,
+   "T_formula": 0.5,
+   "family": "NOT_A_CONSEQUENCE",
+   "key": "K6-answer-bearing"
+  },
+  {
+   "T_check": 0.5,
+   "T_formula": 0.5,
+   "family": "CONTROL",
+   "key": "ORTH"
+  },
+  {
+   "T_check": 0.0004529881,
+   "T_formula": 0.0004529881,
+   "family": "CONTROL",
+   "key": "K7"
+  }
+ ],
+ "rejecting_controls": {
+  "W1_wrong_formula_detected": true,
+  "W2_flipped_reader_detected": true,
+  "W3_noninvariant_rejected": true,
+  "W4_tamper_detected": {
+   "deleted_record": true,
+   "duplicated_record": true,
+   "perturbed_value": true,
+   "substituted_key": true
+  }
+ },
+ "scope": "bounded finite-dimensional reconstruction of ADMISSION.md section 2 and controls; not a proof, not a native mechanism",
+ "status": "GREEN",
+ "tolerance": 1e-08
+}
