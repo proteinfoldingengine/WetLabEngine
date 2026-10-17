@@ -59,3 +59,32 @@ Reentry checklist: pin the producer source; identify its existing primitive; exh
 This work identifies an unsupported cross-class optimum transfer and screens a concrete inherited-operator lead. It does not break the physical deadlock, establish a new no-go, or certify archive-wide absence. No simulation, enumeration, empirical test, test-count increase, default-branch merge, or historical replay. Broad C3/C4-C6 and native interaction remain OPEN. Time remains pruning / ordered recoverability update; no geometry, fundamental clock, dark-matter primitive, fitting, or physical force is introduced.
 
 Required review: reconstruct the qubit resource comparison; check the requested correction does not overstate P_B/P_J non-equivalence; check the source ledger and admission classification; reject any native promotion. Separate publication consistency audit and immutable readback must follow. Earlier records are preserved, not overwritten.
+
+## 6. Continued investigation: trace the event producers, not their classifiers
+
+Added 2026-10-17 UTC after the first correction's accepted review. This is a substantive source-investigation extension requiring fresh review. No archived engine has been run or imported.
+
+### V1172: fixed history factory is separate from field evolution
+The v14.04 provenance inventory points directly to Tmp/TOE/Einstein 6/v1172_full_stack_package/v1172_6d_gpu_full_stack_genesis_provenance_engine.py. Its exact code provides the producer, so this is not a missing-file inference.
+
+make_ledger(mode) (lines 156-182) fixes seven event strings, a registry, a root, and witness tuples, then hashes that list. run_pruning_for_mode calls it at line 367, before creating and transforming fields at lines 369-372 and before the update loop at lines 379-426. The loop updates fields, weights, and log_rows; it never updates ledger.events, ledger.witnesses, or ledger.roots. certify_field subsequently combines the ledger check with field-derived diagnostics.
+
+For the modes valid_label_transported, source_event_shuffle and genesis_valid_source_shuffled, make_ledger takes exactly the same registry/root/events/witnesses path. Their cryptographic payload (registry, root, events, witnesses, roots) is therefore identical. This is equality of inputs to a deterministic hash, not an assumption of collision resistance or injectivity. HistoryLedger.mode differs by construction; it is supplied mode metadata, not a generated physical record. apply_mode_transform specifies different transformations for these modes; no claim is made that every possible field input changes under those transformations.
+
+Important scope: the full certificate and log are NOT field-blind. source_scores, weights, and closure diagnostics depend on the fields. The demonstrated gap is narrowly that the hash payload does not bind the evolving fields, actual selected transitions, or a generated repair history. Host log append is a programmed record operation, with its interaction and access supplied. The source program also supplies a six-dimensional grid, numeric update coefficients, target field and calibration rules; none is promoted into a native derivation.
+
+The earlier V1152.1 producer confirms the same construction pattern: make_history(mode) fixes the named event list; main independently builds history and transformed curve from mode and then passes both to certify_curve. This corroborates this source trail only; it is not an archive-wide claim about all Genesis implementations.
+
+### V1472.19 package: dependency governor consumes external event history
+The published package contains v1472_11_run_trace_preregistered.py (its header still says V1472.9; the inspected version is identified by Git blob, not inferred from the header). run_pipeline loads CSV/JSON/JSONL rows, adapt_rows maps their labels into event types, and certify consumes the resulting PruningEvent sequence.
+
+The input schema already includes prior_dependency, entropy_before/after, damaged_dependencies, repaired_dependencies, affected_node, and repair_target. adapt_rows reads these fields; missing targets may be filled using the supplied event type and an affected-node name. certify checks previous event IDs and provenance, builds an adjacency summary for declared repair/recovery/closure events, and sums supplied repaired/damaged counts. It does not choose or execute repairs on an independently represented damaged system. The manifest runner checks declared metadata and invokes this evaluator; it does not add an event producer.
+
+This distinction does not invalidate a trace validator, nor forbid a native interaction from depending on its source. It identifies which arrow the code actually implements: supplied event history -> validation/summary, not pre-repair native state -> derived repair event -> independently justified retained receiver. An external real trace can test the declared validator, but cannot by itself establish that UQCF derived the physical law producing that trace.
+
+### Admission decision and next stopping rule
+The investigated A lead was: an inherited ledger/governor producer may already generate the certified repair/dependency history needed by the native-lineage candidate. The inspected implementations do not discharge that premise. V1172/V1152.1 construct fixed mode fixtures; V1472 consumes a trace. Category C as model/validation mechanisms; no native A admitted from these files. This is an implementation-specific source finding, not another symmetry no-go.
+
+The missing source is now concrete: code or a mathematical rule whose input is a native pre-event state and whose output is a newly generated repair/dependency event, with its rule justified by existing primitives. A fixed event-name list, supplied repaired count, hash of that list, or validator pass is not such a producer. A subsequent event-to-record binding must identify what is retained and available to the receiver. Hashing actual state/event payloads would improve software provenance but would still be an engineered coupling unless that operation is natively justified.
+
+Do not launch a GPU replay, change the numerical scoring threshold, increase the sample size, or patch the archive to manufacture this link. Reopen this particular lead only for a different producer or a derivation of the event rule. Other native constructions remain eligible; P_B and P_J remain route-specific. The physical deadlock remains OPEN.
