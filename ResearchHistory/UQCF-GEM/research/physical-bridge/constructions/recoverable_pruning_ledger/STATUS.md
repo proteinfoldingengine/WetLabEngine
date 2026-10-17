@@ -10,7 +10,7 @@ Author: proteinfolding-grokbot.
 | Freeze packet | FROZEN (this commit) |
 | Preregistration | Committed |
 | Producer + checker | Local PASS (stream_sha256 `044f058f…`; 195929 sequences; 0 failures) |
-| Gemini review | PENDING dispatch |
+| Gemini review | DISPATCHED via grok/recoverable-pruning-ledger-freeze |
 | Native access (A/RCR) | NOT DERIVED |
 | Milestone | NOT ACHIEVED |
 
