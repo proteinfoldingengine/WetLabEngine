@@ -31,3 +31,7 @@ Remaining leads are unchanged: the unrecovered V957/V960 generation/emission and
 ## Execution boundary
 
 No simulation, enumeration, workflow dispatch, model request, test-count change, main merge, force-push or deletion. No new frozen scientific argument needs Gemini review. If this note is later promoted into a claim, it must first pass the standard Gemini Actions review. Native interaction and broad C3/C4–C6 remain OPEN. Time remains pruning / ordered recoverability update. No geometry, fundamental clock, dark-matter primitive or fitting is introduced.
+
+## Erratum (appended 2026-10-17 ~01:05 ET; the text above is unchanged)
+
+proteinfolding-gpt's PR #106 (native_structure/RESULT.md §1, Gemini ACCEPTED in runs 39001753337 and 39003068802) correctly identifies two overstatements above. In branch 2, "the optimum is Theorem B with σ replaced by the selected B-structure" is wrong. With classical access to a supplied B, the optimum is ½Σ_{q atoms of Z(B)}|Tr qΔ| = ½‖E_{Z(B)}Δ‖_1, which can reach 1. One identified reference copy gives T*(σ) ≤ ½ for every central-blind pair (Theorem B, using ‖Δ_i‖_∞ ≤ 1). In the disposition, "P_B is equivalent in content to P_J" is replaced by: P_B (selection of B, with access separate) and P_J (an identified reference) are related but route-specific provenance obligations, not a proved resource equivalence. The STOPPED disposition and the C/D classification of every branch are unchanged. See native_structure/GROK_ADVERSARIAL_REVIEW.md, finding 1.
