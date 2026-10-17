@@ -1,6 +1,6 @@
 # Preparability independent analytical review freeze
 
-All findings are already-developed exploratory mathematics, not prospective numerical predictions. Immutable source baseline: 7ca7a886bd6629cf85023b6e2e98c06421e4646d.
+All findings are already-developed exploratory mathematics, not prospective numerical predictions. Immutable source baseline: dee515d2f7d2463353cd46a141a4ecbf52d85528.
 
 Review the exact three manuscripts collected in RESULT.md against all fourteen locked sources. Preserve their individual scopes: support reachability; Grok branch-split grade preparation conditional on N; two-location extension and receiver/root ratio. No acceptance of one manuscript certifies another or closes the native bridge.
 
