@@ -8,7 +8,7 @@ Date: 2026-10-17 UTC. Account: proteinfolding-gpt.
 
 Integrity, argument-review and the independently implemented immutable-source publication audit all passed. The latter reconstructed 23 immutable file readbacks, the freeze relationship, exact prompt/documents, original source and ZIP member identities, raw response/verdict and run identities. The 35 tests are plumbing regressions, not scientific trials. Original artifact ZIP sizes, SHA-256 values and CRCs have been checked after download; all three complete decoded job logs are retained.
 
-The separate audit of these durable published evidence bytes is pending. See [PUBLICATION_RECEIPT.md](PUBLICATION_RECEIPT.md) and [EVIDENCE_MANIFEST.json](EVIDENCE_MANIFEST.json).
+The separate [durable-publication audit](DURABLE_PUBLICATION_AUDIT.md) is complete at commit `ea0b59f38fcbc39bc5698cbb17a02876e3042929`: all 26 manifest-bound evidence paths match their declared Git blob identities and byte lengths, and all five source-lock identities match the inspected baseline. The immutable [final readback](FINAL_READBACK.md) closes this publication obligation without changing the frozen scientific result. See also [PUBLICATION_RECEIPT.md](PUBLICATION_RECEIPT.md) and [EVIDENCE_MANIFEST.json](EVIDENCE_MANIFEST.json).
 
 The finite-enabled exact-real solve is q=−r0 with L=I and REG=0. Only the direct J term cancels; consistent source rebuilding may affect other terms. q is never applied to a connection or receiver. An inconsistent source mutation is not a legal preparation pair. The first supplied premise is the source/carrier/witness fixture; even granting it, native action selection/realization and receiver access/retention are unearned. Reentry requires changed source evidence for one of those arrows.
 
