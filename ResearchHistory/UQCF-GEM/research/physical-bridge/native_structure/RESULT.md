@@ -88,3 +88,46 @@ The investigated A lead was: an inherited ledger/governor producer may already g
 The missing source is now concrete: code or a mathematical rule whose input is a native pre-event state and whose output is a newly generated repair/dependency event, with its rule justified by existing primitives. A fixed event-name list, supplied repaired count, hash of that list, or validator pass is not such a producer. A subsequent event-to-record binding must identify what is retained and available to the receiver. Hashing actual state/event payloads would improve software provenance but would still be an engineered coupling unless that operation is natively justified.
 
 Do not launch a GPU replay, change the numerical scoring threshold, increase the sample size, or patch the archive to manufacture this link. Reopen this particular lead only for a different producer or a derivation of the event rule. Other native constructions remain eligible; P_B and P_J remain route-specific. The physical deadlock remains OPEN.
+
+## 7. Current dynamics: distinguish programmed closure, inference, and acquisition
+
+Added 2026-10-17 UTC. This bounded follow-up asks whether the archived source/current code supplies the event producer missing in section 6. These are source-derived, already-known analytical observations, not prospective numerical results. No scientific module was executed. Exact sources are appended to source_packet.json at the same immutable baseline.
+
+### V1025: an executable update, but its closure diagnostic reuses its law
+The inspected v1025_native_continuity_closure.py does have native_update(source, repair, dx). It supplies a two-dimensional coordinate grid, an exponential/log potential geom, J=-grad(psi), flux=div(J*source), DT=0.045, positivity clipping, and a repair relaxation formula. This is more than a trace validator. However, the inspected file declares these choices in code; it does not derive them from retained lineage/pruning primitives. Calling the function native_update is not a derivation.
+
+The exact real-arithmetic relationship between its update and diagnostic is especially informative. Write f for the computed flux and x=s-DT*f, componentwise. native_update sets s'=max(x,0). continuity(s,s',r,dx) recomputes the same f from the OLD source and repair, so
+
+    C = (s'-s) + DT*f = max(x,0)-x = max(-x,0).
+
+Thus the residual vanishes by construction wherever clipping is inactive; where clipping acts it equals the clipping correction. This is an algebraic statement about the declared formulas, not a claim of exact floating-point zeros, a measured clipping frequency, or reproduction of archived output. The later repair update does not enter this diagnostic. The controls change s' without enforcing this same update, so separation from those controls can check consistency with the supplied law; it does not independently derive that law or establish physical conservation. Boundary flux and global conservation would need their own treatment.
+
+The first unearned premises are the carrier/grid and constitutive/update rules. No receiver with initially equal laws, justified record interaction, or native retention is established by this script. It remains a conditional model (C); do not rerun it as a native-interaction discovery.
+
+### Finite-graph Gate A: synthetic response inversion is not response production
+The exact small-network Phi source builds a fixed five-node, seven-edge graph and source entries s[0]=-1, s[3]=+1. It constructs J0 with a pseudoinverse and Z as a cycle basis. In the section labelled observer-selected Phi it explicitly sets
+
+    a_true = linspace(0.42,-0.35,beta1)
+    J_true = J0 + Z @ a_true
+    R_full = Z.T
+    y_full = R_full @ J_true
+
+before solving for a_hat. The weak-response control likewise synthesizes y from that same chosen J_true. These operations demonstrate conditional identifiability from supplied response data. They do not derive the choice of J_true, an occurrence law, a physical response R, or acquisition/retention of y by a receiver. This preserves the valid conditional rank(RZ)=dim(Z) result and the reported dependence on supplied Hodge weights. It does not interpret an inverse solution as an interaction.
+
+The preceding v13.25 report also keeps absolute source calibration open. Absolute stress-energy calibration is not a prerequisite for the modest native retained-consequence target; neither is a unique full current. Those stronger goals must not become accidental admission requirements.
+
+### Preserve partial consequences without promoting constraints into events
+In a fixed finite graph with incidence B, any actual solution of BJ=s obeys, for a fixed node-cut indicator h,
+
+    (B^T h)^T J = h^T s.
+
+This is direct multiplication, not a new theorem or a new numerical campaign. Cycle contributions cancel because BZ=0. In the code's specific source fixture and h selecting node 0, the signed cut sum is -1 for every exact solution, although the full current is not unique. With the code's incidence convention this is -(J_e0+J_e2+J_e6)=-1. This is a conditional constraint value, not a newly generated record.
+
+For two feasible source vectors on the same graph and the SAME justified cut reader, the difference is h^T(s1-s0). It may be zero even when s1 differs from s0. A nonzero value would only establish the target if the currents' realization and that reader's acquisition/retention were derived, with initially equal receiver laws. The script supplies one source fixture and synthetic observation data; it does not provide that native preparation pair and blank receiver. No nonzero native contrast is claimed here. If graphs/readers vary between preparations, common identification and access must be earned first. Selection or conditioning must also be accounted for.
+
+The strongest counterexample to promotion is that BJ=s is a relation among compatible variables: solving it does not cause a current or write a record. Conversely, the strongest correction to an overbroad stop is that cycle ambiguity need not obstruct a particular cut consequence. We therefore stop these inspected implementations at their supplied update/acquisition premises, not at full-current nonuniqueness or absent gravity calibration.
+
+### Decision and reentry
+No A candidate is admitted from this bounded source packet. Both executable routes are C for the native-interaction target. The cut identity is a scope safeguard for assessing future A candidates, not an independent B research program. No new dynamics is proposed, no archive-wide impossibility is inferred, and no quantum representation is demanded of a genuinely native classical route.
+
+Reentry requires a source that derives an event/update or accessible readout from existing primitives, and an actual allowed preparation pair whose initial receiver law agrees. Assess the particular retained consequence first; do not add a minimum-action choice merely to determine the entire current. Until that source is identified, more control runs, response inversion, synthetic records or fits do not discharge acquisition. Native interaction and broad C3/C4-C6 remain OPEN. Time remains pruning / ordered recoverability update; the archived grid and DT are disclosed supplied model choices, not adopted native geometry or a fundamental clock.
