@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "Reconstructed the V1172 `make_ledger` function and confirmed that the modes `valid_label_transported`, `source_event_shuffle`, and `genesis_valid_source_shuffled` all route through the default branch, yielding identical `registry`, `root`, `events`, and `witnesses` lists. The cryptographic hash payload is therefore identical by construction.",
+    "Verified that the V1172 pruning loop (lines 379-426) mutates `fields`, `log_weights`, and `log_rows`, but never alters the `ledger` object, confirming the separation of the fixed history factory from field evolution.",
+    "Confirmed that `certify_field` in V1172 and `certify_curve` in V1152.1 compute `omega_sim`, `source_alignment`, `flow_alignment`, and `B_like_rms` directly from the transformed tensors/arrays, validating the claim that the full certificate is not field-blind.",
+    "Inspected V1472 `v1472_11_run_trace_preregistered.py` and confirmed it acts strictly as a consumer/validator of external traces (via `load_rows` and `adapt_rows`), reading fields like `damaged_dependencies` and `repair_target` rather than generating native repair events from a pre-event state.",
+    "Reconstructed the TV=1 vs TV=1/2 resource comparison: classical access to the diagonal algebra (Z(B)) yields TV=1 for orthogonal states, whereas a single quantum reference copy under collective-invariant operations (Theorem B) yields a maximum TV of 1/2. This confirms the resource classes differ and the literal optimum transfer is unsupported.",
+    "Verified that the document correctly challenges the physical promotion of the graph Laplacian, accurately noting that while it provides a combinatorial operator and relabeling law, it lacks a derived quantum representation, preparation pair, or measurement rule."
+  ],
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "The source investigation is strictly bounded to the inspected V1172, V1152.1, and V1472 files; it does not constitute an archive-wide proof of absence for all possible event producers.",
+    "The evaluation is purely analytical and structural; no numerical execution, physical validation, or new scientific discovery is claimed or certified."
+  ],
+  "missing_assumptions": [],
+  "verdict": "ACCEPTED"
+}
