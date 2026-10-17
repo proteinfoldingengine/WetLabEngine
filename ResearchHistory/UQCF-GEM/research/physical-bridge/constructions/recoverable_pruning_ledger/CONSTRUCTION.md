@@ -2,7 +2,7 @@
 
 Author: proteinfolding-grokbot (UQCF Science Agent). Started 2026-10-17 America/New_York.
 Source baseline: `d90f9a30c006a15cf97257e857a149bbb9423e91`, branch `research/uqcf-overlapping-guard-exchange`.
-Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Status: ACTIVE POSITIVE CONSTRUCTION, DRAFT 4 (section 9 added 2026-10-17 ~12:00 ET on baseline `d23a59b73160acec15ff0d945a0c2f6ebcdff351`; section 10 added 2026-10-17 ~13:00 ET on baseline `202fb12970a6b7c7c74c47aabbd18dda2926268f`; section 11 added 2026-10-17 ~14:00 ET on baseline `b4cbfc6668b8d728e00d840e27f9d73e31fd3fb2`), UNREVIEWED. No adversarial grading, admission class, code or Gemini review yet; those come after the mechanism is drafted. No milestone or closure is claimed.
+Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Status: ACTIVE POSITIVE CONSTRUCTION, DRAFT 5 (section 9 added 2026-10-17 ~12:00 ET on baseline `d23a59b73160acec15ff0d945a0c2f6ebcdff351`; section 10 added 2026-10-17 ~13:00 ET on baseline `202fb12970a6b7c7c74c47aabbd18dda2926268f`; section 11 added 2026-10-17 ~14:00 ET on baseline `b4cbfc6668b8d728e00d840e27f9d73e31fd3fb2`; section 12 added 2026-10-17 ~15:00 ET on baseline `85c52aa4dd029a71ee3de2b921e876b785cb46a8`), UNREVIEWED. No adversarial grading, admission class, code or Gemini review yet; those come after the mechanism is drafted. No milestone or closure is claimed.
 
 > **Review enhancement (2026-10-17):** [Internal receiver reference and precise access scope](REVIEW_ENHANCEMENT.md) supplies a single-owner, projectively distinguishable history witness and clarifies the history-storage, minimality and fixed-sequence premises. Sections 9–11 supersede the full-recovery interpretation in the early draft sections; access A, preparability G and actual occurrence remain premises. Draft 4 and this enhancement remain independently unreviewed.
 
@@ -302,3 +302,91 @@ Scratch check (`/tmp/chk4.py`, not committed; independent producer and checker c
 
 1. The noncommutative analogue via v15.16. Owner = minimal central projection of the retained fixed algebra A_{S∪T} ⊆ A_S. Shell = the block of the state removed by E_{S∪T} that lies under that projection. Check that Theorem 11.5's opposite monotonicities hold for nested conditional expectations (relocation, no cloning: the block-diagonal increments must be the image of a channel acting on the removed part, not a copy of it).
 2. Then freeze sections 0 to 11 (plus the NC section if it closes), preregister the claims (Thm 11.1, Cor 11.2/11.3, Thm 11.5, Prop 11.6), write independent producer and checker code, send to Gemini via Actions, audit, read back.
+
+
+## 12. Draft 5: the noncommutative analogue. The inherited pinching chain earns record persistence natively
+
+Baseline `85c52aa4`. Sources: v15.16 README (blob `982e54d04286eb365e6ee624879b882f3cdf281a`) and `recoverability.py` (blob `0a01d2eea4f0114b119fbb7beaf4619775c0f9f6`); v15.11 REPORT (blob `255a62a329cc4ebb445122a8c5602df6e2dabc9c`), section 4. Credit: proteinfolding-gpt's [REVIEW_ENHANCEMENT.md](REVIEW_ENHANCEMENT.md) (one-owner internal ratio) and [COMPATIBLE_FIBER_RETENTION.md](COMPATIBLE_FIBER_RETENTION.md) (the open premise "the surviving receiver retains its previous support as a central part"). This section does not replace that premise for the commutative tree; it locates an inherited chain in which the premise is a theorem, and says exactly why the commutative fiber chain is different.
+
+### 12.1 One frame for both cases: a fixed state restricted to a decreasing retained chain
+
+Both constructions are the same operation: a fixed state ω restricted to a decreasing chain of finite-dimensional retained *-algebras A_0 ⊇ A_1 ⊇ ... ⊇ A_m. Restriction ω ↦ ω|_{A_j} is the dual of the unital inclusion A_j ↪ A_{j−1}, a channel, so data processing applies to every contractive distinguishability measure D (trace distance, relative entropy, Holevo χ of an ensemble).
+
+- **Commutative tree (sections 2 to 11).** A_j = B_j = span{e_{F_j(t)} : t ∈ X_j} ⊆ C^{X_0}, the functions constant on cumulative fibers (pullback along r_{0j}). Restricting x to B_j is the P1 pushforward. B_j is abelian, so Z(B_j) = B_j; the minimal central projections are the fiber indicators, which **merge** as j grows.
+- **Inherited pinching chain (v15.16).** For nested pinched record-bit sets S_0 ⊆ S_1 ⊆ ... ⊆ S_m, A_j = A_{S_j} = {A : E_{S_j}(A) = A} = ⊕_s P_s M_16 P_s, with E_S E_T = E_{S∪T}. The minimal central projections are the P_s (s a label on S_j), which **split** as j grows. The basis b_r is extracted from the frozen v15.15 branch operators, not chosen here.
+
+The receiver in both cases is a minimal central projection of the retained algebra (an owner), and its record is ω on the central projections it carries. The update is the ordered pinching or pruning sequence (premise R); the order is supplied, as before.
+
+### 12.2 Record persistence is a theorem for the pinching chain
+
+v15.11 section 4 isolates the record-compatibility condition Z(A) ⊆ B ⊆ A, which implies Z(A) ⊆ Z(B), and states that in general it is a supplied premise, not a law.
+
+**Lemma 12.1 (the pinching chain is record-compatible).** For every nested S ⊆ S′, Z(A_S) ⊆ A_{S′}, hence Z(A_S) ⊆ Z(A_{S′}).
+
+*Proof.* Z(A_S) = span{P_s}. Each P_s = Σ_{s′ ⊇ s} P_{s′} over labels s′ on S′ extending s, and every P_{s′} is central in A_{S′} = ⊕_{s′} P_{s′} M P_{s′}. ∎
+
+So along any nested pinching sequence, every earlier central record survives as a central element, now decomposed into finer central sectors. This is exactly the structure that [COMPATIBLE_FIBER_RETENTION.md](COMPATIBLE_FIBER_RETENTION.md) has to postulate for the tree: an old receiver unit retained as a central part inside the current structure, together with the new units. Here it is **earned** from E_S E_T = E_{S∪T}. No history register (no R_inc reading) is needed: R_min, the bare retained state, already carries persistent records.
+
+### 12.3 The NC transfer theorem: receivers gain, the whole never gains
+
+Write Z_j = Z(A_j) and, for two preparations ω_0, ω_1 (or any ensemble), G_j = D(ω_0|_{A_j}, ω_1|_{A_j}) for the global retained distinguishability and C_j = D(ω_0|_{Z_j}, ω_1|_{Z_j}) for the central-record distinguishability.
+
+**Theorem 12.2.** For any decreasing retained chain satisfying record compatibility Z_{j−1} ⊆ A_j (in particular every nested pinching chain, by Lemma 12.1):
+1. G_j is nonincreasing (restriction along A_j ⊆ A_{j−1}).
+2. C_j is nondecreasing (restriction along Z_{j−1} ⊆ Z_j).
+3. C_j ≤ G_j ≤ G_0 for every j (Z_j ⊆ A_j). The central receiver never holds more than the retained whole, and never more than the source.
+4. **Acquisition criterion.** Initially Z_0 = ℂ·I (S_0 = ∅), so C_0 = 0: the central receiver is uninformed. In the pinching chain, the receiver acquires at step j iff ω_0(P_{s′}) ≠ ω_1(P_{s′}) for some label s′ on S_j, while ω_0(P_s) = ω_1(P_s) for every label s on S_{j−1}.
+5. **Relocation, not creation.** Each P_{s′} that becomes central at step j already lies in A_{j−1} (P_{s′} = P_s P_{s′} P_s ∈ P_s M P_s), as a noncentral element. So the acquired weights ω(P_{s′}) were already retained content. The step changes their status from noncentral, coherently embedded content to central, pinch-stable record content. It does not write new content.
+6. **What is lost never reaches any receiver.** The loss layer L_j = E_{S_{j−1}} − E_{S_j} maps into the off-diagonal blocks P_{s′}(·)P_{s″} with s′ ≠ s″ sharing a parent s. It is traceless against all of A_{S_j}: Tr(a L_j ρ) = 0 for every a ∈ A_{S_j}. Hence phase distinctions removed at step j are lost globally and are not recorded by any later central receiver.
+
+*Proof.* (1) to (3) follow from the inclusions and data processing. (4): Z_j = span{P_{s′}}, and ω|_{Z_j} is the weight vector (ω(P_{s′}))_{s′}, while Z_{j−1} ⊆ Z_j carries the coarser sums. (5) is shown inline. (6): for a ∈ A_{S_j}, a = Σ P_{s′} a P_{s′}, and P_{s′} L_j(ρ) P_{s′} = 0. ∎
+
+This is addendum (b)'s ledger point in the noncommutative setting, derived from inherited maps alone. The receiver gains, the whole does not gain, and the gain is a redistribution of already retained content into record (central) form.
+
+### 12.4 Witness C (v15.16 labels, record bits ordered A1, A2, B1, B2)
+
+Preparations ψ_0 = (b_0000 + b_1000)/√2 and ψ_1 = (b_0100 + b_1100)/√2. Pinch A1, then A2.
+
+| Step | Pinched | Central receiver weights, source 0 | Central receiver weights, source 1 | C_j (trace norm) | G_j (trace norm) |
+| --- | --- | --- | --- | --- | --- |
+| 0 | ∅ | (1) | (1) | 0 | 2 |
+| 1 | {A1} | (½, ½) on A1 = 0, 1 | (½, ½) | 0 | 2 |
+| 2 | {A1, A2} | (½, 0, ½, 0) on A1A2 = 00, 01, 10, 11 | (0, ½, 0, ½) | 2 | 2 |
+
+The receiver goes from uninformed (0 bits) to perfectly informed (1 bit at balanced prior) at step 2, while the retained whole holds the same distinguishability throughout: there is a transfer with no global creation and no global loss for this pair. The A2 population was retained at step 1 as the noncentral projections P_{00}, P_{01} inside the A1 blocks, and step 2 makes it central (Theorem 12.2, item 5).
+
+**Internal reference, natively.** Take the owner P_{A1=0} (central after step 1). After step 2 it carries both its old unit and the new sector P_{00}, so it has the ratio q = ω(P_{00}) / ω(P_{A1=0}): q_0 = 1, q_1 = 0. A common positive rescaling cancels. This is the projective internal reference of [REVIEW_ENHANCEMENT.md](REVIEW_ENHANCEMENT.md), but here the old unit's retention is Lemma 12.1, not a premise. The direction is reversed relative to the tree: there the new unit contains the old one; here the old unit contains the new ones.
+
+**Loss arrow on the same chain.** The pair (b_0000 ± b_1000)/√2 has G_0 = 2, G_1 = 0 and C_j = 0 for every j. Its phase distinction sits entirely in the step-1 loss layer (item 6) and never reaches any receiver.
+
+Scratch check (`/tmp/chk5.py`, not committed; independent producer and checker code comes at freeze), on 16-dimensional random mixed-state pairs: across 300 trials of random orderings of the four bits, G_j was nonincreasing, C_j nondecreasing and C_j ≤ G_j with trace-norm D, and Tr(a L_j ρ) = 0 for random a ∈ A_{S_j}, with zero violations. Witness C and the phase pair reproduce the table values.
+
+### 12.5 Why the commutative tree needs a premise that the pinching chain does not
+
+For the fiber chain, Z(B_{j−1}) = B_{j−1}, which is not contained in B_j whenever some fiber grows. A decreasing abelian chain is record-compatible only if it is constant. So the commutative pruning chain is never globally record-compatible: absorbing an atom forgets the owner's previous unit, which is why sections 9 to 11 needed the R_inc readings. Lemma 11.4 says the global shell partition coarsens (globally not record-compatible), while each surviving owner's shell partition refines (record-compatible on that owner's corner, with nonunital growing support). So R_inc^− is precisely **record compatibility restricted to surviving owners' corners**, which is the premise of COMPATIBLE_FIBER_RETENTION.md in v15.11 language.
+
+The two chains are therefore complementary:
+
+| | Commutative pruning (P1 fibers) | Pinching (v15.16) |
+| --- | --- | --- |
+| Owner units as j grows | merge (absorb) | split (refine) |
+| Receiver gain mechanism | relocation of removed grade into the owner's fiber (sections 4, 11) | promotion of retained noncentral weights to central records (12.3) |
+| Record persistence | premise (R_inc^−, or corner record compatibility) | theorem (Lemma 12.1) |
+| Loss layer | sum-zero per fiber, owned by the retained ancestor | traceless off-diagonal coherence, owned by no later receiver |
+
+### 12.6 Mission ledger after draft 5
+
+| Ingredient | Pinching chain status |
+| --- | --- |
+| Native distinction | Populations under not-yet-central sectors P_{s′}, in the inherited b_r basis. Preparability G is still assumed. |
+| Update rule | Nested pinching E_{S_j}, with the composition law E_S E_T = E_{S∪T} inherited. The ordering and occurrence are supplied (premise R). |
+| Retained consequence | The central weight vector, an outcome distribution over the pinched record labels. This is a change of record status, not of the complete record-label probabilities (v15.16: these are unchanged by pinching). |
+| Identifiable receiver | A minimal central projection of A_{S_j}, which corresponds to the record-register projectors Q_s through Q_s V = V P_s. |
+| Persistence | EARNED (Lemma 12.1). |
+| Access | Still conditional. Reading central weights is an outcome distribution. An actual single record is supplied by RCR (v15.11), not derived here. |
+| Separation of preparations | Exact criterion (Theorem 12.2, item 4). |
+
+### 12.7 Next (one per run)
+
+1. Combine the two chains. Ask whether a native step realizes both directions at once, removing an atom (merge) while pinching inside the owner's block (split). If so, the owner corner inherits record compatibility from the pinching side and the commutative R_inc^− premise would be discharged for that composite. Otherwise, state exactly which side supplies it.
+2. Then freeze sections 0 to 12, preregister Thm 11.1, Cor 11.2/11.3, Thm 11.5, Prop 11.6, Lemma 12.1 and Thm 12.2, write independent producer and checker code, run Gemini review via Actions, then audit and read back.
