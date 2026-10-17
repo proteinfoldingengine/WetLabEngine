@@ -1,0 +1,64 @@
+name: UQCF V1153 bounded record screen
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/v1153_record_screen/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/v1153_record_screen/source_packet.json'
+      - '.github/scripts/uqcf_v1153_record_*.py'
+      - '.github/workflows/uqcf-gem-v1153-record-screen.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+concurrency:
+  group: uqcf-v1153-record-screen
+  cancel-in-progress: false
+jobs:
+  argument-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/v1153_record_screen
+            .github
+      - name: Independent Gemini whole-argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_v1153_record_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v1153-review-${{ github.run_attempt }}
+          path: v1153_review
+          retention-days: 90
+  publication-audit:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/v1153_record_screen
+            .github
+      - uses: actions/download-artifact@v4
+        with:
+          name: v1153-review-${{ github.run_attempt }}
+          path: v1153_review
+      - name: Separate immutable publication audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/uqcf_v1153_record_publication.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v1153-publication-${{ github.run_attempt }}
+          path: v1153_publication
+          retention-days: 90
