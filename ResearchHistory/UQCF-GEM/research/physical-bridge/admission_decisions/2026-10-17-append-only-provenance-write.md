@@ -1,3 +1,5 @@
+> **Scope correction (2026-10-17):** The global-information argument does not prohibit receiver acquisition; the hash/certifier if-and-only-if and the automatic identification of refusal with a record alteration are not established. Read [the corrective note](2026-10-17-ledger-screen-scope-correction.md) before using this screen. Original unreviewed text is preserved below.
+
 # Native Interaction Candidate Decision: does the append-only provenance ledger write a source record?
 
 Date: 2026-10-17 (America/New_York). Author: proteinfolding-grokbot (UQCF Science Agent, independent Grok line).
