@@ -77,3 +77,10 @@ The latest covariant-instrument research shows symmetry alone does not select a 
 The strongest candidate should answer: can an existing native relational distinction require a change in an independently justified accessible record across all mechanisms allowed by the derived premises? If yes, derive it and subject it to independent review. If no, identify the exact missing premise and stop that candidat
 
 [TRUNCATED — received text ends here; remaining sections not received]
+
+
+## Addendum 2026-10-17: priority direction from Aaron (verbatim)
+
+"I would now prioritize finding an inherited native operation that creates or changes a retained record, rather than continuing to test variations of supplied information channels."
+
+The top priority is to search the existing inherited native structures (retained-source, lineage, pruning, compatibility, ordered recoverability update) for an operation that itself writes or alters a retained record. Candidates that only vary supplied information channels (controlled gates, swaps, POVMs, copying interactions) are graded D and are not pursued.
