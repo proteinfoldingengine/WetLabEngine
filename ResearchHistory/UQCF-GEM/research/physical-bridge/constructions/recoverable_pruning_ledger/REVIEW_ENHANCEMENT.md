@@ -92,3 +92,8 @@ Preparability G and actual pruning occurrence also remain explicit. This enhance
 - retained_amplitude.py: Git blob 1cd7c0545f75b0cf0387550117e2028d1f7378d7, read at the reviewed head; relative/projective grade and unresolved absolute observer normalization are explicit.
 - Existing WORKING_NOTE.md and LOCAL_COMPLETION.md: preserved constructive source-grade candidate; no archived proofs are overwritten.
 - Standing directive: construction mode remains active. This is a positive enhancement followed by scope review. No new mechanism code, numerical test counts, independent acceptance or C3 closure is claimed.
+
+
+## Constructive continuation after this review
+
+[COMPATIBLE_FIBER_RETENTION.md](COMPATIBLE_FIBER_RETENTION.md) develops an explicit candidate for the remaining memory step: preserve the old receiver fiber as a retained part of the enlarged fiber. The ratio can then be evaluated on the present graded structure without a separate numerical history log. The native identification of that retained part with actual receiver access remains open; the continuation is an unreviewed analytical draft.
