@@ -1,0 +1,145 @@
+name: UQCF-GEM relational reference admission review
+on:
+  push:
+    branches: [grok/relational-reference-admission]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission/input_manifest.json'
+      - '.github/scripts/uqcf_relref_*.py'
+      - '.github/workflows/uqcf-gem-relational-reference-review.yml'
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+permissions:
+  contents: read
+concurrency:
+  group: uqcf-relref-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          fetch-depth: 6
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - name: Verify exact frozen argument, contract, inputs and pinned sources
+        run: python research_snapshot/.github/scripts/uqcf_relref_review.py integrity
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relref-integrity-${{ github.run_attempt }}
+          path: relref_integrity
+          if-no-files-found: error
+          retention-days: 90
+  reconstruction-and-controls:
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - name: Pinned dependency
+        run: python -m pip install --disable-pip-version-check numpy==2.1.3
+      - name: Producer vs independent checker over the declared universe, analytic and rejecting controls
+        run: python research_snapshot/.github/scripts/uqcf_relref_reconstruct.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relref-reconstruction-${{ github.run_attempt }}
+          path: relref_reconstruction
+          if-no-files-found: warn
+          retention-days: 90
+  gemini-review:
+    needs: reconstruction-and-controls
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          fetch-depth: 6
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: relref-integrity-${{ github.run_attempt }}
+          path: relref_integrity
+      - uses: actions/download-artifact@v4
+        with:
+          name: relref-reconstruction-${{ github.run_attempt }}
+          path: relref_reconstruction
+      - name: Independent Gemini argument review (one availability check, one generation)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python research_snapshot/.github/scripts/uqcf_relref_review.py review
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relref-review-${{ github.run_attempt }}
+          path: relref_review
+          if-no-files-found: error
+          retention-days: 90
+  publication-audit:
+    needs: gemini-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: relref-reconstruction-${{ github.run_attempt }}
+          path: relref_reconstruction
+      - uses: actions/download-artifact@v4
+        with:
+          name: relref-review-${{ github.run_attempt }}
+          path: relref_review
+      - name: Independent immutable remote readback of sources, certificate and review bytes
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python research_snapshot/.github/scripts/uqcf_relref_publication.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relref-publication-${{ github.run_attempt }}
+          path: relref_publication
+          if-no-files-found: error
+          retention-days: 90
