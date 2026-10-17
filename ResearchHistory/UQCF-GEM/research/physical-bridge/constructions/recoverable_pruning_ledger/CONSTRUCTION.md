@@ -2,7 +2,7 @@
 
 Author: proteinfolding-grokbot (UQCF Science Agent). Started 2026-10-17 America/New_York.
 Source baseline: `d90f9a30c006a15cf97257e857a149bbb9423e91`, branch `research/uqcf-overlapping-guard-exchange`.
-Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Status: ACTIVE POSITIVE CONSTRUCTION, DRAFT 3 (section 9 added 2026-10-17 ~12:00 ET on baseline `d23a59b73160acec15ff0d945a0c2f6ebcdff351`; section 10 added 2026-10-17 ~13:00 ET on baseline `202fb12970a6b7c7c74c47aabbd18dda2926268f`), UNREVIEWED. No adversarial grading, admission class, code or Gemini review yet; those come after the mechanism is drafted. No milestone or closure is claimed.
+Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Status: ACTIVE POSITIVE CONSTRUCTION, DRAFT 4 (section 9 added 2026-10-17 ~12:00 ET on baseline `d23a59b73160acec15ff0d945a0c2f6ebcdff351`; section 10 added 2026-10-17 ~13:00 ET on baseline `202fb12970a6b7c7c74c47aabbd18dda2926268f`; section 11 added 2026-10-17 ~14:00 ET on baseline `b4cbfc6668b8d728e00d840e27f9d73e31fd3fb2`), UNREVIEWED. No adversarial grading, admission class, code or Gemini review yet; those come after the mechanism is drafted. No milestone or closure is claimed.
 
 ## 0. Result first
 
@@ -122,8 +122,8 @@ The draft does not assume a copying gate, a supplied entry E = S, a source-depen
 ## 8. Next construction steps (one per run)
 
 1. ~~Pin or derive premise R from inherited recoverability text.~~ Done in section 9: R is replaced by a lattice of readings; the inherited texts pin the minimal one, and the persistent one is the smallest that keeps an acquired record.
-2. Settle premise L: either derive fiber-locality from P1, P2 and the relabeling naturality, or state the minimal extra earned fact.
-3. Generalize the witness: arbitrary finite trees and multi-step sequences. Prove that each owner's ledger reconstructs exactly the fine grades of the removed atoms in its cumulative fiber, which follows by telescoping.
+2. ~~Settle premise L~~ (done in section 10): either derive fiber-locality from P1, P2 and the relabeling naturality, or state the minimal extra earned fact.
+3. ~~Generalize the witness: arbitrary finite trees and multi-step sequences.~~ Done in section 11 (Thm 11.1: the owner reconstructs exactly the fine grades in its cumulative fiber under R_inc^+, and the shell sums under R_inc^−).
 4. Explore the noncommutative analogue: a conditional expectation E with loss layer ρ - E(ρ), keyed by the retained central blocks, as a recoverable-pinching ledger. Check that this is relocation and not cloning.
 5. Then freeze, preregister, independent producer and checker code, Gemini review via Actions, audit, readback.
 
@@ -229,3 +229,74 @@ So the open bridge premises are now exactly **A** (one sentence: an atom reads i
 1. Multi-step general trees under R_inc^−: show that the owner's record reconstructs, in step order, the sums over the sub-fibers absorbed at each step (telescoping, Lemma 3.1), and characterize exactly which preparation pairs a fixed owner separates. This is the transfer theorem in general form.
 2. The noncommutative analogue via v15.16 (owner = central block; increment = block-state change under E_S -> E_(S∪T)). Check that it is relocation, not cloning.
 3. Then freeze, preregister, run independent producer and checker code, send to Gemini via Actions, audit, read back.
+
+## 11. Draft 4: the general transfer theorem (arbitrary finite trees, arbitrary pruning sequences)
+
+### 11.1 Shells
+
+Fix a finite pruning sequence X_0 ⊇ X_1 ⊇ ... ⊇ X_m (prefix-closed, Genesis root retained) and a retained owner t ∈ X_j. Cumulative fibers F_l(t) = r_{0l}^{-1}(t) ⊆ X_0 for l ≤ j. By (E1) and (E2) they are nested, {t} = F_0(t) ⊆ F_1(t) ⊆ ... ⊆ F_j(t). Define the **shells**
+
+    A_0(t) = {t},    A_l(t) = F_l(t) \ F_{l-1}(t)  (1 ≤ l ≤ j).
+
+Equivalently, A_l(t) = ⋃ { F_{l-1}(s) : s ∈ X_{l-1} \ X_l, r_{l-1,l}(s) = t }. A shell is the union of the cumulative fibers of the atoms that step l removes into t's fiber. Shells of one owner are pairwise disjoint and their union is F_j(t).
+
+### 11.2 The three readings as three partitions of the owner's fiber
+
+**Theorem 11.1 (owner record = pushforward to a partition).** For every finite tree, every pruning sequence and every retained owner t ∈ X_j, the owner's record at step j determines, and is determined by, the pushforward of x|_{F_j(t)} onto one of three nested partitions of F_j(t):
+
+| Reading | Partition of F_j(t) | Record content |
+| --- | --- | --- |
+| R_min | {F_j(t)} (one block) | (P_{0j} x)_t |
+| R_inc^− | {A_0(t), A_1(t), ..., A_j(t)} (shells, empty ones dropped) | (x_t ; σ_1, ..., σ_j), σ_l = Σ_{z ∈ A_l(t)} x_z |
+| R_inc^+ = R_full | singletons | x|_{F_j(t)} |
+
+*Proof.* R_min: P1. R_inc^−: t's history is ((P_{0l} x)_t)_{l ≤ j} = (Σ_{z ∈ F_l(t)} x_z)_l. Successive differences are shell sums because the F_l(t) are nested, and the map from shell sums back to the history is a unitriangular partial-sum map. R_inc^+: every s ∈ F_j(t) \ {t} is pruned by step j, and its re-keyed history starts with (P_{00} x)_s = x_s. Each re-keyed history entry is a sum over a sub-fiber of F_j(t), so it adds nothing beyond x|_{F_j(t)}. This is Prop 10.1 made explicit. ∎
+
+The rank of the R_inc^− record is 1 + #{l ≤ j : A_l(t) ≠ ∅}. The shell indicators are disjoint, hence linearly independent when nonempty.
+
+**Corollary 11.2 (exact separation criterion).** Let δ = x^(1) − x^(0) for two deterministic preparations. Owner t is initially uninformed iff δ_t = 0. Under R_inc^− it separates the preparations at step j iff Σ_{z ∈ A_l(t)} δ_z ≠ 0 for some l ≤ j. Its **acquisition step** is l* = min{l : Σ_{A_l(t)} δ ≠ 0}. With a balanced prior, I(S; R_t^{(j)}) = 0 for j < l* and 1 bit for every j ≥ l* while t is retained (persistence, Prop 9.2). Under R_min the condition is Σ_{F_j(t)} δ ≠ 0 *at the current j*. Under R_inc^+ it is δ|_{F_j(t)} ≠ 0.
+
+**Corollary 11.3 (dipole sources, fully explicit).** Let δ = ε(e_z − e_{z'}) with ε ≠ 0 and z, z' ≠ t. This is the equal-total source distinction of witnesses A and B. Under R_inc^−, owner t separates at step j iff
+- exactly one of z, z' lies in F_j(t), **or**
+- both lie in F_j(t) but in *different* shells.
+
+The second clause is exactly what R_inc^− adds over R_min (it is witness B). Under R_inc^+ the condition is just "at least one of z, z' lies in F_j(t)". Every pruning sequence that eventually removes z without also removing t and without placing z' in the same shell writes the distinction into the record of the owner r_{0j}(z). So the section 4 witness is the generic case, not a special arrangement.
+
+### 11.3 Opposite monotonicities: the ledger point as a theorem
+
+Glue the owners. For the joint record Q_j of all survivors t ∈ X_j:
+
+- R_min: the blocks {F_j(t)}_{t ∈ X_j} partition X_0, giving the coarse state.
+- R_inc^−: the shells {A_l(t)}_{t ∈ X_j, l ≤ j} partition X_0, since the cumulative fibers partition X_0 (E2) and each F_j(t) is the disjoint union of t's shells. Call this partition 𝒮_j.
+- R_inc^+: singletons, i.e. x itself (Prop 10.1).
+
+**Lemma 11.4 (how the global shell partition changes).** 𝒮_j is obtained from 𝒮_{j−1} as follows. Every block owned by a survivor stays unchanged. For each survivor t, all blocks owned by the atoms removed into t's fiber at step j are merged into the single new block A_j(t), which is owned by t. *Proof.* The definition of A_j(t) in 11.1, plus the rule that R_inc^− discards the histories of removed atoms. ∎
+
+**Theorem 11.5 (receivers gain, the whole never gains).** Under R_inc^−, for any prior on the source S and any pruning sequence:
+1. Global: Q_j is a deterministic function of Q_{j−1} (𝒮_j coarsens 𝒮_{j−1}), so I(S; Q_j) is nonincreasing in j, and I(S; Q_j) ≤ I(S; x).
+2. Every survivor: R_t^{(j−1)} is a deterministic function of R_t^{(j)} (the owner's partition gains one block), so I(S; R_t^{(j)}) is nondecreasing in j while t is retained.
+3. Each step conserves total grade, and the new block A_j(t) is a union of former blocks. The owner's gain is therefore a relocation of blocks that were held by removed atoms. It is not new content.
+
+*Proof.* (1) and (2) follow from Lemma 11.4 and the data-processing inequality, and (3) from P1. ∎
+
+This is addendum (b)'s ledger point in general form, derived from inherited maps. One pruning step can raise the information of a fixed receiver from 0 to 1 bit while the global information stays the same (or drops). The receiver ends up holding, as its own record, a block that the step took out of the retained structure's unowned part. Under R_inc^+ statement (1) holds with equality for every j.
+
+**Prop 11.6 (precise form of the loss arrow; restates Prop 9.4 for R_inc^−).** Step j strictly coarsens 𝒮 (some pair of preparations loses global separability) iff, for some survivor t, the atoms removed into t's fiber together own at least two blocks. That happens when (a) two or more atoms are removed into one fiber, or (b) a removed atom had already absorbed a nonempty shell earlier. Hence Q under R_inc^− is injective iff no step does (a) or (b).
+
+*Correction to the scope of Prop 9.4.* Its "if" direction (one removed atom per fiber gives injectivity) holds under R_inc^+, where it is trivial, but under R_inc^− it needs the extra condition (b). Counterexample: chain o ← a ← u ← w. Prune w, then u. Each step removes one atom per fiber, yet a's shells end as {a}, ∅, {u, w}, so x_u and x_w are not separately recoverable. Accordingly, the bullet after Prop 9.4 stating "R_inc = R_full for elementary leaf-by-leaf pruning" holds for R_inc^+, and for R_inc^− only when no pruned leaf had previously absorbed a child. Child-before-parent elementary pruning of a path of length at least 2 therefore already carries the v15.10 loss arrow under R_inc^−. At the same time, the owner keeps every block it receives.
+
+Scratch check (`/tmp/chk4.py`, not committed; independent producer and checker code comes at freeze): on 500 random 9-atom trees with random closed pruning sequences, a direct history simulation under R_inc^− matched Theorem 11.1's shell sums at every owner and step, and the shells partitioned X_0 at every step. The chain counterexample above was confirmed.
+
+### 11.4 Status after draft 4
+
+| Item | Status |
+| --- | --- |
+| Transfer theorem | GENERAL: any finite tree, any sequence, any owner (Thm 11.1, Cor 11.2, Cor 11.3). |
+| Receiver vs global information | Opposite monotonicities DERIVED (Thm 11.5). |
+| Loss arrow | Exact criterion (a)/(b) under R_inc^− (Prop 11.6). Prop 9.4's scope is narrowed accordingly. |
+| Open premises | A (an atom reads its own coordinate and its own past values) and G (preparability). The occurrence of pruning is still supplied. |
+
+### 11.5 Next (one per run)
+
+1. The noncommutative analogue via v15.16. Owner = minimal central projection of the retained fixed algebra A_{S∪T} ⊆ A_S. Shell = the block of the state removed by E_{S∪T} that lies under that projection. Check that Theorem 11.5's opposite monotonicities hold for nested conditional expectations (relocation, no cloning: the block-diagonal increments must be the image of a channel acting on the removed part, not a copy of it).
+2. Then freeze sections 0 to 11 (plus the NC section if it closes), preregister the claims (Thm 11.1, Cor 11.2/11.3, Thm 11.5, Prop 11.6), write independent producer and checker code, send to Gemini via Actions, audit, read back.
