@@ -1,0 +1,82 @@
+{
+  "checked": [
+    {
+      "git_blob": "a5726349d5e0aa69c08755804da5c2ffdc05db1a",
+      "path": ".github/scripts/uqcf_v1153_record_publication.py",
+      "ref": "4ad68bd41ee342f60d88b51910e4c7d9508541fd",
+      "sha256": "e4f06eb037a274f5adbf9f7c87761d5307402341f53f82795787d67aac810a75"
+    },
+    {
+      "git_blob": "9c4dc706f7b3adfd9a2d54d4a52294cc65a90720",
+      "path": ".github/scripts/uqcf_v1153_record_review.py",
+      "ref": "4ad68bd41ee342f60d88b51910e4c7d9508541fd",
+      "sha256": "891779e8cac80910b7798c531871b327a132860dbfcf8e9349e2e7cc52b9cf9d"
+    },
+    {
+      "git_blob": "323650c38261feaad8b4ebdda83221a896235bad",
+      "path": ".github/workflows/uqcf-gem-v1153-record-screen.yml",
+      "ref": "4ad68bd41ee342f60d88b51910e4c7d9508541fd",
+      "sha256": "232631afdaf6f9c3373ff249e0847bb207af759b6fada4f6b7e8415d2d6a20c2"
+    },
+    {
+      "git_blob": "7728ca6da85c00a992f10ee7dac511a4f81f4976",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1153_record_screen/RESULT.md",
+      "ref": "4ad68bd41ee342f60d88b51910e4c7d9508541fd",
+      "sha256": "d00c127e08990cde9ba617042795a21e02fb9a3e64687cc6d40bee23e9972e56"
+    },
+    {
+      "git_blob": "49a978d63385bac31586de9b0282e0a5b809ac7b",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1153_record_screen/source_packet.json",
+      "ref": "4ad68bd41ee342f60d88b51910e4c7d9508541fd",
+      "sha256": "0194f3202d1735f29ca06f830c490460d1dc78e7334a85194087f23e086c6a4a"
+    },
+    {
+      "git_blob": "c473e6f750577a5e63d2481c1d702031edfb99b6",
+      "path": "Tmp/TOE/Einstein 6/v1153_first_principles_recoverable_pruning/v1153_first_principles_recoverable_pruning_engine.py",
+      "ref": "0922a8114ea47977b97f1c86ff3663f12798d3ac",
+      "sha256": "f44dbada0b812551ad4e79c8df3aea73e3113dea54bfab5999cccac693850a0a"
+    },
+    {
+      "git_blob": "8b7e9665de8c0c1ef11e7e008bb58007daadfa3a",
+      "path": "ResearchHistory/UQCF-GEM/v15/v15.10/REPORT.md",
+      "ref": "0922a8114ea47977b97f1c86ff3663f12798d3ac",
+      "sha256": "6400429e2563f8f5416ca8f9f682e77e8439a0451d1ae8d03b8f2318cbcf45f7"
+    }
+  ],
+  "review_manifest": {
+    "inputs": {
+      ".github/scripts/uqcf_v1153_record_publication.py": {
+        "git_blob": "a5726349d5e0aa69c08755804da5c2ffdc05db1a",
+        "sha256": "e4f06eb037a274f5adbf9f7c87761d5307402341f53f82795787d67aac810a75"
+      },
+      ".github/scripts/uqcf_v1153_record_review.py": {
+        "git_blob": "9c4dc706f7b3adfd9a2d54d4a52294cc65a90720",
+        "sha256": "891779e8cac80910b7798c531871b327a132860dbfcf8e9349e2e7cc52b9cf9d"
+      },
+      ".github/workflows/uqcf-gem-v1153-record-screen.yml": {
+        "git_blob": "323650c38261feaad8b4ebdda83221a896235bad",
+        "sha256": "232631afdaf6f9c3373ff249e0847bb207af759b6fada4f6b7e8415d2d6a20c2"
+      },
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/v1153_record_screen/RESULT.md": {
+        "git_blob": "7728ca6da85c00a992f10ee7dac511a4f81f4976",
+        "sha256": "d00c127e08990cde9ba617042795a21e02fb9a3e64687cc6d40bee23e9972e56"
+      },
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/v1153_record_screen/source_packet.json": {
+        "git_blob": "49a978d63385bac31586de9b0282e0a5b809ac7b",
+        "sha256": "0194f3202d1735f29ca06f830c490460d1dc78e7334a85194087f23e086c6a4a"
+      }
+    },
+    "model_requested": "gemini-3.1-pro-preview",
+    "model_returned": "gemini-3.1-pro-preview",
+    "prompt_sha256": "5eb2f030b3ac7ef3f770d3578ba8b656ec854e39e4282817e04f9ca4249f761f",
+    "response_sha256": "6d669eb4d13ba64a37f5b5f33acb05ce1d7dfb0475b4568cdc28682f175ab2cc",
+    "review_sha256": "1263e0f8cfd7bf85cfe98df77d880d3925186a8ae0018208928e71943ec8d6e7",
+    "run_attempt": "1",
+    "run_id": "38996098467",
+    "scientific_sha": "4ad68bd41ee342f60d88b51910e4c7d9508541fd",
+    "workflow_sha": "4ad68bd41ee342f60d88b51910e4c7d9508541fd"
+  },
+  "scientific_sha": "4ad68bd41ee342f60d88b51910e4c7d9508541fd",
+  "scope": "immutable reviewed-byte consistency; not native mechanism certification",
+  "status": "PASS"
+}
