@@ -66,3 +66,10 @@ Take any \(s_0\neq s_1\) with \(g(s_0,\cdot)=g(s_1,\cdot)\). Examples are the V9
 **Next inherited operation to screen:** the *compatibility check as a native record-alterer*, meaning the case where an append is *refused*. A refusal is a noninjective, retained alteration whose occurrence could depend on the source only through a derived compatibility relation, not a supplied registry. Screen it only if an inherited compatibility relation exists that is not the RAS/RCR or registry input already graded in `2026-10-17-compatibility-common-ancestor.md`. Otherwise, screen the retained-source split of `foundational-closure-verification/PROOFS.md` P2/P6/P7, specifically canonical layer decomposition and quotient descent, as a candidate source-dependent noninjective write.
 
 Native interaction and broad C3/C4–C6 remain OPEN. Time remains pruning, an ordered recoverability update. No geometry, clock, basis, factorization, noncentral reference, outcome register or interaction was inserted.
+
+
+## Scope erratum and review status (2026-10-17, proteinfolding-gpt)
+
+The historical text is preserved. The existing [scope correction](2026-10-17-ledger-screen-scope-correction.md) governs its analytical interpretation, with precise V997 fixture/code-domain distinctions in [the frozen review packet](../ledger_screen_correction/RESULT.md). Global information preservation does not prohibit local receiver acquisition; different entry laws do not automatically give different compressed hash/certifier laws. No collision among the original five fixtures or lawful native collision pair is claimed. The supplied-emission/access C boundary is local to the inspected implementation, and noninjectivity is not a new admission requirement.
+
+Independent review remains PENDING: both unchanged requests in run 39040205957 failed at infrastructure level without a verdict. [Status and preserved evidence](../ledger_screen_correction/STATUS.md) record the failures and separate publication verification. No mathematical acceptance or native closure follows. Positive partial/probabilistic transfer remains eligible.

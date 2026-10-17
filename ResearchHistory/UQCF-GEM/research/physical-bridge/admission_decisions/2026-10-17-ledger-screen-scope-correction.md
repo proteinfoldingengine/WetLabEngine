@@ -45,3 +45,8 @@ These earned algebraic constructions remain available. Promoting their quotient 
 Keep the V997 implementation at the supplied-emission/access boundary, not at a universal “information-neutral maps cannot write records” boundary. Do not require noninjectivity as a new admission axiom. A derived source-to-receiver transfer, including a probabilistic one, remains eligible.
 
 This is an explicit correction of an UNREVIEWED screening note, not a replacement scientific acceptance. No source simulation, numerical campaign, Gemini request, or main merge was performed. The archived note is preserved below a correction banner and in immutable history. Native interaction and broad C3/C4-C6 remain OPEN.
+
+
+## Independent review attempt receipt (2026-10-17)
+
+The original corrective text and its historical no-request sentence above are preserved. Its complete argument, reproduced verbatim with bounded V997 source-domain precision, was frozen at 8a9d5220c0ebe080894a6131965cf04d35d08f1e. [Run 39040205957](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39040205957) passed integrity/model availability in both attempts, but generation ended in RemoteDisconnected and then TimeoutError. No response or verdict was retained; both publication-audit jobs were skipped. The correction remains analytically supported but INDEPENDENT REVIEW PENDING, not accepted/closed. See [status and reproducible failure evidence](../ledger_screen_correction/STATUS.md). No further request is initiated and no native mechanism or broad C3/C4-C6 closure is claimed.

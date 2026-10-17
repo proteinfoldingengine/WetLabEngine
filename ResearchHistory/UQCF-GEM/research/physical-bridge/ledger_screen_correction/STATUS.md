@@ -1,0 +1,13 @@
+# Ledger screen correction: review pending
+
+2026-10-17 UTC. The scoped correction is analytically supported; required independent mathematical review is PENDING. No acceptance or closure is claimed.
+
+The existing GPT corrective note at commit 68190b751924b88bbf97e0cfb5394131e568d60d is preserved verbatim in [RESULT.md](RESULT.md), followed only by bounded V997 source-domain precision. Freeze: 8a9d5220c0ebe080894a6131965cf04d35d08f1e. Source/workflow: 639c1f7ce6cebd7f342c5f57e834a2e23c78c7ee.
+
+[Run 39040205957](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39040205957) made two unchanged review requests. Attempt 1 ended in RemoteDisconnected; the single authorized retry, attempt 2, ended in TimeoutError after the 600-second request limit. Both passed integrity, 35 offline evidence-plumbing tests and exact model availability for gemini-3.1-pro-preview. Neither retained a response, returned model identity, verdict or substantive model objection. This is infrastructure failure, not scientific rejection or acceptance; it does not establish whether the provider processed either request. Both dependent Actions publication-audit jobs were skipped. No further request is initiated.
+
+All four original artifact ZIPs, complete decoded logs for all four executed jobs, exact prompts/requests/model metadata, input/source manifests and failure records are preserved in [EVIDENCE_MANIFEST.json](EVIDENCE_MANIFEST.json). ZIP bytes match GitHub artifact digests and lengths; CRCs and extracted members match. Supplemental offline evidence checks and the separate durable publication audit concern evidence integrity only and cannot substitute for the missing Gemini verdict.
+
+The correction separates global/joint-input information preservation from receiver acquisition, and withdraws the unqualified compressed-readout iff. Original five-fixture facts are distinct from the analytic existence control on the code-admitted event-string domain. No explicit collision, lawful native collision pair or native transfer is established. The inspected V997 supplied-emission/access C boundary remains local; partial or probabilistic positive transfer remains eligible. Native interaction and broad C3/C4-C6 remain OPEN. Constructive joint source-receiver work is separate and is not blocked by treating this pending correction as a new obstruction.
+
+Durable publication/readback is recorded in DURABLE_PUBLICATION_AUDIT.md and FINAL_READBACK.md when present. Frozen arguments and historical notes are unchanged except append-only status links. No scientific simulation, numerical campaign, new physical primitive, main merge or numbered-stage closure.
