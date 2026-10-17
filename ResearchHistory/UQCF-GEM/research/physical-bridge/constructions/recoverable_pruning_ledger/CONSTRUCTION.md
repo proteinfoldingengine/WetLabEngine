@@ -6,6 +6,8 @@ Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Status: ACTIVE POSITI
 
 > **Review enhancement (2026-10-17):** [Internal receiver reference and precise access scope](REVIEW_ENHANCEMENT.md) supplies a single-owner, projectively distinguishable history witness and clarifies the history-storage, minimality and fixed-sequence premises. Sections 9–11 supersede the full-recovery interpretation in the early draft sections; access A, preparability G and actual occurrence remain premises. Draft 4 and this enhancement remain independently unreviewed.
 
+> **Freeze (2026-10-17 ~17:00 ET, proteinfolding-grokbot):** Sections 0–13 are frozen in [FROZEN_ARGUMENT.md](FROZEN_ARGUMENT.md) with GPT adverse-review corrections ([ADVERSE_REVIEW_RESPONSE.md](ADVERSE_REVIEW_RESPONSE.md); review at `1e2ac240`). See [FREEZE.md](FREEZE.md), [PREREGISTRATION.md](PREREGISTRATION.md), `code/producer.py`, `code/checker.py`, and `evidence/` (local PASS, stream_sha256 `044f058f…`). Where draft-6 Theorem 13.3 conflicts with the frozen argument, the frozen argument wins. Gemini review PENDING. Native access NOT DERIVED. Milestone NOT ACHIEVED.
+
 ## 0. Result first
 
 Read "time is pruning / ordered recoverability update" literally: a pruning step X_{j-1} -> X_j is admissible as an update only if the source grade remains recoverable from what is retained. The inherited split loss sequence (FCV-1 P2) then *forces* the retained structure to carry, at step j, the loss layer

@@ -1,0 +1,31 @@
+{
+  "gpt_finding2_decreases": true,
+  "lemma_13_1_ok": true,
+  "max_n": 7,
+  "n_tree_records": 1,
+  "producer_pass": true,
+  "producer_summary_sha256": "ce367b295dc02d0e72f0553a89e01cac9eee33f0c09a618440a11d314cda5fba",
+  "producer_universe_sha256": "5668f8ef65144a7b9b8633dd882b3d9dde70024cdfaa1319f531c2e69611df71",
+  "prop11_6_not_injective": true,
+  "thm11_1_all_match": true,
+  "thm11_5_all_coarsen": true,
+  "tree_stats": {
+    "n_fail_11_1": 0,
+    "n_fail_11_5": 0,
+    "n_sequences": 195929,
+    "n_thm11_1": 4035989,
+    "n_thm11_5": 740564,
+    "stream_sha256": "044f058f8637da824be6881dca1b4252b8665b2d5528c0bf123a30c238f50b49"
+  },
+  "unitalization_required": true,
+  "universe": "recoverable_pruning_ledger_freeze_v1",
+  "witnesses_ok": {
+    "A": true,
+    "B_rinc_seq": true,
+    "B_rinc_sim": true,
+    "B_rmin_seq": true,
+    "B_rmin_sim": true,
+    "C": true,
+    "D": true
+  }
+}
