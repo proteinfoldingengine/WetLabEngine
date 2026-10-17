@@ -1,0 +1,21 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The existence of a native quantum carrier is assumed as part of the declared class, not derived.",
+    "The identification datum J (the representation pi) tying the reference frame to the source frame is inserted by assumption.",
+    "The occurrence of the comparison event, access to the outcome, and retention of the outcome are supplied by assumption.",
+    "The b-independence of the reference state sigma is a deliberately explicit conditional premise.",
+    "The exact optimum in Theorem B is restricted to a single-copy source interaction."
+  ],
+  "observations": [
+    "Theorem A correctly reconstructs the standard resource theory result that G-invariant mechanisms on central-blind pairs yield no contrast unless an identified, non-invariant reference is provided. The twirl argument correctly isolates the dependence to the central twirl.",
+    "Theorem B correctly derives the exact total-variation optimum 1/2 sum_i |Tr[Delta_i sigma_i]| for a single identified reference carrier. The proof correctly uses Schur-Weyl duality to identify the g tensor g commutant and correctly bounds the cross-block terms to zero.",
+    "The self-reference Corollary correctly evaluates to (1/4)||Delta||_2^2 for unitarily related pairs by matching per-block purities.",
+    "The numerical certificate perfectly matches the preregistered contract. Controls K1-K7 accurately test their claimed properties, including the K5 identification freedom and the K4 multi-copy boundary.",
+    "The admission gate correctly classifies R0 as class B, R1 as conditional class A, and R2/R3 as class D.",
+    "The document strictly separates its mathematical conclusions from physical claims. It explicitly states that the native interaction milestone is NOT ACHIEVED and that the carrier, interaction, reference state, and access are supplied by assumption rather than derived."
+  ]
+}

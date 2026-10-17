@@ -1,0 +1,1134 @@
+integrity	Set up job	﻿2026-10-17T01:18:42.9565537Z Current runner version: '2.337.0'
+integrity	Set up job	2026-10-17T01:18:42.9583198Z ##[group]Runner Image Provisioner
+integrity	Set up job	2026-10-17T01:18:42.9583768Z Hosted Compute Agent
+integrity	Set up job	2026-10-17T01:18:42.9584114Z Version: 20261012.601
+integrity	Set up job	2026-10-17T01:18:42.9584471Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+integrity	Set up job	2026-10-17T01:18:42.9584916Z Build Date: 2026-10-12T17:48:21Z
+integrity	Set up job	2026-10-17T01:18:42.9585324Z Worker ID: {83313149-f534-4205-9d23-9ca8b1ee0573}
+integrity	Set up job	2026-10-17T01:18:42.9585708Z Region: centralus
+integrity	Set up job	2026-10-17T01:18:42.9586070Z Cloud: Azure
+integrity	Set up job	2026-10-17T01:18:42.9586407Z ##[endgroup]
+integrity	Set up job	2026-10-17T01:18:42.9587149Z ##[group]Operating System
+integrity	Set up job	2026-10-17T01:18:42.9587519Z Ubuntu
+integrity	Set up job	2026-10-17T01:18:42.9587809Z 24.04.5
+integrity	Set up job	2026-10-17T01:18:42.9588143Z LTS
+integrity	Set up job	2026-10-17T01:18:42.9588443Z ##[endgroup]
+integrity	Set up job	2026-10-17T01:18:42.9588780Z ##[group]Runner Image
+integrity	Set up job	2026-10-17T01:18:42.9589154Z Image: ubuntu-24.04
+integrity	Set up job	2026-10-17T01:18:42.9589479Z Version: 20261012.334.1
+integrity	Set up job	2026-10-17T01:18:42.9590305Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+integrity	Set up job	2026-10-17T01:18:42.9591281Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+integrity	Set up job	2026-10-17T01:18:42.9591848Z ##[endgroup]
+integrity	Set up job	2026-10-17T01:18:42.9592756Z ##[group]GITHUB_TOKEN Permissions
+integrity	Set up job	2026-10-17T01:18:42.9594085Z Contents: read
+integrity	Set up job	2026-10-17T01:18:42.9594431Z Metadata: read
+integrity	Set up job	2026-10-17T01:18:42.9594832Z ##[endgroup]
+integrity	Set up job	2026-10-17T01:18:42.9596056Z Secret source: Actions
+integrity	Set up job	2026-10-17T01:18:42.9596605Z Cache mode: write
+integrity	Set up job	2026-10-17T01:18:42.9596996Z Prepare workflow directory
+integrity	Set up job	2026-10-17T01:18:42.9892780Z Prepare all required actions
+integrity	Set up job	2026-10-17T01:18:42.9923798Z Getting action download info
+integrity	Set up job	2026-10-17T01:18:43.2140145Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+integrity	Set up job	2026-10-17T01:18:43.3162569Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+integrity	Set up job	2026-10-17T01:18:43.6246565Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+integrity	Set up job	2026-10-17T01:18:44.2785986Z Complete job name: integrity
+integrity	Run actions/checkout@v4	﻿2026-10-17T01:18:44.3268526Z ##[group]Run actions/checkout@v4
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3268963Z with:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3269223Z   ref: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3269539Z   path: research_snapshot
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3269792Z   fetch-depth: 6
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3270029Z   persist-credentials: false
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3270584Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission
+integrity	Run actions/checkout@v4	.github/scripts
+integrity	Run actions/checkout@v4	.github/workflows
+integrity	Run actions/checkout@v4	
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3271219Z   repository: proteinfoldingengine/WetLabEngine
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3273286Z   token: ***
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3273512Z   ssh-strict: true
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3273747Z   ssh-user: git
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3273970Z   clean: true
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3274210Z   sparse-checkout-cone-mode: true
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3274482Z   fetch-tags: false
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3274731Z   show-progress: true
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3274965Z   lfs: false
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3275199Z   submodules: false
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3275438Z   set-safe-directory: true
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3275758Z   allow-unsafe-pr-checkout: false
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3276117Z env:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3276427Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3276766Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3940052Z Syncing repository: proteinfoldingengine/WetLabEngine
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3941406Z ##[group]Getting Git version info
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3941933Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.3942648Z [command]/usr/bin/git version
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4024032Z git version 2.55.0
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4043843Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4049109Z Temporarily overriding HOME='/home/runner/work/_temp/cec4c559-09af-4c90-abe5-3b27197b9a14' before making global git config changes
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4049887Z Adding repository directory to the temporary git global config as a safe directory
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4054038Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4322012Z ##[group]Initializing the repository
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4326153Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4929402Z hint: Using 'master' as the name for the initial branch. This default branch name
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4930525Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4931493Z hint: to use in all of your new repositories, which will suppress this warning,
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4932363Z hint: call:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4932787Z hint:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4933240Z hint: 	git config --global init.defaultBranch <name>
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4933731Z hint:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4934033Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4934620Z hint: 'development'. The just-created branch can be renamed via this command:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4935065Z hint:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4935286Z hint: 	git branch -m <name>
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4935545Z hint:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4935868Z hint: Disable this message with "git config set advice.defaultBranchName false"
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4936465Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.4939084Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.5126513Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.5126952Z ##[group]Disabling automatic garbage collection
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.5132717Z [command]/usr/bin/git config --local gc.auto 0
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.5831242Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.5832008Z ##[group]Setting up auth
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.5837293Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.5866352Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.6141307Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.6167316Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.6352968Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.6379263Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.6549982Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.6628903Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.6629916Z ##[group]Fetching the repository
+integrity	Run actions/checkout@v4	2026-10-17T01:18:44.6636080Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=6 origin eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.6569501Z From https://github.com/proteinfoldingengine/WetLabEngine
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.6570758Z  * branch            eb5259b2727b2a7e0e195ffaede515af1ac8bdeb -> FETCH_HEAD
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.6573238Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.6574107Z ##[group]Determining the checkout info
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.6575076Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.6575929Z ##[group]Setting up sparse checkout
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.6578943Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission .github/scripts .github/workflows
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.7177144Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.7180122Z ##[group]Checking out the ref
+integrity	Run actions/checkout@v4	2026-10-17T01:18:45.7181336Z [command]/usr/bin/git checkout --progress --force eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6968981Z Note: switching to 'eb5259b2727b2a7e0e195ffaede515af1ac8bdeb'.
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6969411Z 
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6969676Z You are in 'detached HEAD' state. You can look around, make experimental
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6970074Z changes and commit them, and you can discard any commits you make in this
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6970365Z state without impacting any branches by switching back to a branch.
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6970554Z 
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6970653Z If you want to create a new branch to retain commits you create, you may
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6970905Z do so (now or later) by using -c with the switch command. Example:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6971053Z 
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6971128Z   git switch -c <new-branch-name>
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6971222Z 
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6971290Z Or undo this operation with:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6971375Z 
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6971427Z   git switch -
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6971496Z 
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6971621Z Turn off this advice by setting config variable advice.detachedHead to false
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6971900Z 
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.6972260Z HEAD is now at eb5259b Add gated integrity, independent reconstruction, Gemini review and remote audit workflow for relational-reference admission screen
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7004709Z ##[endgroup]
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7052570Z [command]/usr/bin/git log -1 --format=%H
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7074080Z eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7081019Z ##[group]Removing auth
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7083690Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7108365Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7283954Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7306850Z http.https://github.com/.extraheader
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7312691Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7340111Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7510382Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7535419Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+integrity	Run actions/checkout@v4	2026-10-17T01:18:46.7699404Z ##[endgroup]
+integrity	Run actions/setup-python@v5	﻿2026-10-17T01:18:46.7874480Z ##[group]Run actions/setup-python@v5
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7874644Z with:
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7874761Z   python-version: 3.12.12
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7874892Z   check-latest: false
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7876152Z   token: ***
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7876272Z   update-environment: true
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7876409Z   allow-prereleases: false
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7876537Z   freethreaded: false
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7876663Z env:
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7876804Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.7876988Z ##[endgroup]
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.8687324Z ##[group]Installed versions
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.8700313Z Version 3.12.12 was not found in the local cache
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.8766260Z (node:2169) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:46.8766750Z (Use `node --trace-deprecation ...` to show where the warning was created)
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:47.7583095Z Version 3.12.12 is available for downloading
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:47.7584241Z Download from "https://github.com/actions/python-versions/releases/download/3.12.12-18393146713/python-3.12.12-linux-24.04-x64.tar.gz"
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:48.5012943Z Extract downloaded archive
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:48.5110696Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/7500c45a-d988-4287-8c6d-8b0256512bc6 -f /home/runner/work/_temp/da965143-4605-4cfd-83e4-20a4ac549364
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:49.9617630Z Execute installation script
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:49.9692001Z Check if Python hostedtoolcache folder exist...
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:49.9692409Z Create Python 3.12.12 folder
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:49.9701985Z Copy Python binaries to hostedtoolcache folder
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:50.3222656Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:50.3274091Z Upgrading pip...
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:53.2557086Z Looking in links: /tmp/tmpfrdm75fi
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:53.2558092Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages (25.0.1)
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:53.9685568Z Collecting pip
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.0295240Z Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.0425448Z Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.1352652Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 25.1 MB/s eta 0:00:00
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.1352980Z 
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.1453246Z Installing collected packages: pip
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.1453949Z Attempting uninstall: pip
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.1466544Z Found existing installation: pip 25.0.1
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.1663212Z Uninstalling pip-25.0.1:
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.1697282Z Successfully uninstalled pip-25.0.1
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.7100047Z Successfully installed pip-26.2.1
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.7500408Z Create complete file
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.7528817Z Successfully set up CPython (3.12.12)
+integrity	Run actions/setup-python@v5	2026-10-17T01:18:54.7529733Z ##[endgroup]
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	﻿2026-10-17T01:18:54.7668425Z ##[group]Run python research_snapshot/.github/scripts/uqcf_relref_review.py integrity
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7668781Z [36;1mpython research_snapshot/.github/scripts/uqcf_relref_review.py integrity[0m
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7885202Z shell: /usr/bin/bash -e {0}
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7885355Z env:
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7885502Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7885728Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7885971Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7886193Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7886391Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7886589Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7886791Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:54.7886957Z ##[endgroup]
+integrity	Verify exact frozen argument, contract, inputs and pinned sources	2026-10-17T01:18:56.4884165Z Exact document integrity verified: 12 inputs, 11 pinned sources
+integrity	Run actions/upload-artifact@v4	﻿2026-10-17T01:18:56.5004390Z ##[group]Run actions/upload-artifact@v4
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5004552Z with:
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5004666Z   name: relref-integrity-1
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5004794Z   path: relref_integrity
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5004918Z   if-no-files-found: error
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5005039Z   retention-days: 90
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5005154Z   compression-level: 6
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5005278Z   overwrite: false
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5005395Z   include-hidden-files: false
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5005519Z env:
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5005660Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5005872Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5006097Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5006317Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5006520Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5006717Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5006945Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5007112Z ##[endgroup]
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5974166Z (node:2332) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.5974609Z (Use `node --trace-deprecation ...` to show where the warning was created)
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.6013666Z With the provided path, there will be 3 files uploaded
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.6023594Z Artifact name is valid!
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.6024113Z Root directory input is valid!
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.9067004Z Beginning upload of artifact content to blob storage
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:56.9190700Z (node:2332) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:57.0526214Z Uploaded bytes 2036
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:57.0944554Z Finished uploading artifact content to blob storage!
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:57.0945153Z SHA256 digest of uploaded artifact zip is 19951b54ac527d32ce806fb174baa6d685913ba641657d0de819a8fc9482754b
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:57.0945779Z Finalizing artifact upload
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:57.3289531Z Artifact relref-integrity-1.zip successfully finalized. Artifact ID 12084439296
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:57.3290318Z Artifact relref-integrity-1 has been successfully uploaded! Final size is 2036 bytes. Artifact ID is 12084439296
+integrity	Run actions/upload-artifact@v4	2026-10-17T01:18:57.3294902Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38990304264/artifacts/12084439296
+integrity	Post Run actions/setup-python@v5	﻿2026-10-17T01:18:57.3521714Z Post job cleanup.
+integrity	Post Run actions/setup-python@v5	2026-10-17T01:18:57.4265489Z (node:2344) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+integrity	Post Run actions/setup-python@v5	2026-10-17T01:18:57.4266144Z (Use `node --trace-deprecation ...` to show where the warning was created)
+integrity	Post Run actions/checkout@v4	﻿2026-10-17T01:18:57.5145622Z Post job cleanup.
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.5715777Z [command]/usr/bin/git version
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.5763012Z git version 2.55.0
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.5789677Z Temporarily overriding HOME='/home/runner/work/_temp/e5419aeb-3245-425e-9a95-b5984b366942' before making global git config changes
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.5790553Z Adding repository directory to the temporary git global config as a safe directory
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.5796650Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.6343815Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.6379841Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.6562708Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.6590080Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.6768365Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+integrity	Post Run actions/checkout@v4	2026-10-17T01:18:57.6794942Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+integrity	Complete job	﻿2026-10-17T01:18:57.7090004Z Cleaning up orphan processes
+integrity	Complete job	2026-10-17T01:18:57.7273085Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+reconstruction-and-controls	Set up job	﻿2026-10-17T01:19:02.3845716Z Current runner version: '2.337.0'
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3871492Z ##[group]Runner Image Provisioner
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3872498Z Hosted Compute Agent
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3873150Z Version: 20261012.601
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3873902Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3874680Z Build Date: 2026-10-12T17:48:21Z
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3875387Z Worker ID: {46879344-87fd-4846-9e62-02a71bc46899}
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3876224Z Region: eastus
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3876835Z Cloud: Azure
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3877457Z ##[endgroup]
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3878950Z ##[group]Operating System
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3879984Z Ubuntu
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3881083Z 24.04.5
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3881711Z LTS
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3882357Z ##[endgroup]
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3882959Z ##[group]Runner Image
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3883609Z Image: ubuntu-24.04
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3884270Z Version: 20261012.334.1
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3885422Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3887315Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3888312Z ##[endgroup]
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3889494Z ##[group]GITHUB_TOKEN Permissions
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3892115Z Contents: read
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3892810Z Metadata: read
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3893409Z ##[endgroup]
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3895558Z Secret source: Actions
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3896616Z Cache mode: write
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.3897661Z Prepare workflow directory
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.4418004Z Prepare all required actions
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.4468015Z Getting action download info
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.6312836Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.7244823Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+reconstruction-and-controls	Set up job	2026-10-17T01:19:02.7998157Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+reconstruction-and-controls	Set up job	2026-10-17T01:19:03.0084402Z Complete job name: reconstruction-and-controls
+reconstruction-and-controls	Run actions/checkout@v4	﻿2026-10-17T01:19:03.0798403Z ##[group]Run actions/checkout@v4
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0799298Z with:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0799779Z   ref: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0800612Z   path: research_snapshot
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0801112Z   fetch-depth: 1
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0801571Z   persist-credentials: false
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0802656Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission
+reconstruction-and-controls	Run actions/checkout@v4	.github/scripts
+reconstruction-and-controls	Run actions/checkout@v4	.github/workflows
+reconstruction-and-controls	Run actions/checkout@v4	
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0803848Z   repository: proteinfoldingengine/WetLabEngine
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0807851Z   token: ***
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0808285Z   ssh-strict: true
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0808716Z   ssh-user: git
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0809136Z   clean: true
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0809587Z   sparse-checkout-cone-mode: true
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0810114Z   fetch-tags: false
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0810700Z   show-progress: true
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0811176Z   lfs: false
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0811586Z   submodules: false
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0812034Z   set-safe-directory: true
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0812605Z   allow-unsafe-pr-checkout: false
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0813390Z env:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0813937Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.0814602Z ##[endgroup]
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.1826712Z Syncing repository: proteinfoldingengine/WetLabEngine
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.1829431Z ##[group]Getting Git version info
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.1831199Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.1833218Z [command]/usr/bin/git version
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.1923269Z git version 2.55.0
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.1957809Z ##[endgroup]
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.1966937Z Temporarily overriding HOME='/home/runner/work/_temp/ee1c5e72-0674-4072-89c6-38dadde94436' before making global git config changes
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.1969667Z Adding repository directory to the temporary git global config as a safe directory
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.1973976Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2032107Z ##[group]Initializing the repository
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2036433Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2179555Z hint: Using 'master' as the name for the initial branch. This default branch name
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2181821Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2183485Z hint: to use in all of your new repositories, which will suppress this warning,
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2184836Z hint: call:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2185561Z hint:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2186453Z hint: 	git config --global init.defaultBranch <name>
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2187536Z hint:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2188636Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2190264Z hint: 'development'. The just-created branch can be renamed via this command:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2191908Z hint:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2192650Z hint: 	git branch -m <name>
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2193609Z hint:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2194768Z hint: Disable this message with "git config set advice.defaultBranchName false"
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2219066Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2222684Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2270045Z ##[endgroup]
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2271254Z ##[group]Disabling automatic garbage collection
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2275441Z [command]/usr/bin/git config --local gc.auto 0
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2313989Z ##[endgroup]
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2314812Z ##[group]Setting up auth
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2322457Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2367307Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2782578Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.2819467Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.3042523Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.3080250Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.3305663Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.3346961Z ##[endgroup]
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.3347991Z ##[group]Fetching the repository
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.3357110Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5459219Z From https://github.com/proteinfoldingengine/WetLabEngine
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5461107Z  * branch            eb5259b2727b2a7e0e195ffaede515af1ac8bdeb -> FETCH_HEAD
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5464739Z ##[endgroup]
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5465786Z ##[group]Determining the checkout info
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5467281Z ##[endgroup]
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5468389Z ##[group]Setting up sparse checkout
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5474808Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission .github/scripts .github/workflows
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5525889Z ##[endgroup]
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5526910Z ##[group]Checking out the ref
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.5530734Z [command]/usr/bin/git checkout --progress --force eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9153960Z Note: switching to 'eb5259b2727b2a7e0e195ffaede515af1ac8bdeb'.
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9155301Z 
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9156398Z You are in 'detached HEAD' state. You can look around, make experimental
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9158513Z changes and commit them, and you can discard any commits you make in this
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9161854Z state without impacting any branches by switching back to a branch.
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9163370Z 
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9164438Z If you want to create a new branch to retain commits you create, you may
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9166705Z do so (now or later) by using -c with the switch command. Example:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9168283Z 
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9169016Z   git switch -c <new-branch-name>
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9170043Z 
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9171134Z Or undo this operation with:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9172110Z 
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9172757Z   git switch -
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9173554Z 
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9174719Z Turn off this advice by setting config variable advice.detachedHead to false
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9176448Z 
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9179199Z HEAD is now at eb5259b Add gated integrity, independent reconstruction, Gemini review and remote audit workflow for relational-reference admission screen
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9186220Z ##[endgroup]
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9227864Z [command]/usr/bin/git log -1 --format=%H
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9256048Z eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9265724Z ##[group]Removing auth
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9269501Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9306201Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9546228Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9575465Z http.https://github.com/.extraheader
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9584227Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9621716Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9850919Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:03.9884681Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+reconstruction-and-controls	Run actions/checkout@v4	2026-10-17T01:19:04.0113182Z ##[endgroup]
+reconstruction-and-controls	Run actions/setup-python@v5	﻿2026-10-17T01:19:04.0478494Z ##[group]Run actions/setup-python@v5
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0479746Z with:
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0480802Z   python-version: 3.12.12
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0481871Z   check-latest: false
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0492719Z   token: ***
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0493673Z   update-environment: true
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0560249Z   allow-prereleases: false
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0561886Z   freethreaded: false
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0562965Z env:
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0564107Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.0565619Z ##[endgroup]
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.1902806Z ##[group]Installed versions
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.1923587Z Version 3.12.12 was not found in the local cache
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.2050896Z (node:2404) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.2053904Z (Use `node --trace-deprecation ...` to show where the warning was created)
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.6066708Z Version 3.12.12 is available for downloading
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:04.6068766Z Download from "https://github.com/actions/python-versions/releases/download/3.12.12-18393146713/python-3.12.12-linux-24.04-x64.tar.gz"
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:05.4870073Z Extract downloaded archive
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:05.5005847Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/e565d2bd-ef10-41ab-9f4f-3189424fd1f5 -f /home/runner/work/_temp/c9becd5c-9ee5-4302-a983-4cef2827b6fd
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:07.5456530Z Execute installation script
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:07.5556212Z Check if Python hostedtoolcache folder exist...
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:07.5557041Z Create Python 3.12.12 folder
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:07.5572635Z Copy Python binaries to hostedtoolcache folder
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:08.0415041Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:08.0457697Z Upgrading pip...
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:10.2088305Z Looking in links: /tmp/tmphpwrb5x3
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:10.2093317Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages (25.0.1)
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.3392647Z Collecting pip
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.4177192Z Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.4393954Z Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.5505505Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 23.6 MB/s eta 0:00:00
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.5506073Z 
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.5673358Z Installing collected packages: pip
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.5675417Z Attempting uninstall: pip
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.5697353Z Found existing installation: pip 25.0.1
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.6059133Z Uninstalling pip-25.0.1:
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:11.6116278Z Successfully uninstalled pip-25.0.1
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:12.5156610Z Successfully installed pip-26.2.1
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:12.5644411Z Create complete file
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:12.5684423Z Successfully set up CPython (3.12.12)
+reconstruction-and-controls	Run actions/setup-python@v5	2026-10-17T01:19:12.5685874Z ##[endgroup]
+reconstruction-and-controls	Pinned dependency	﻿2026-10-17T01:19:12.5871340Z ##[group]Run python -m pip install --disable-pip-version-check numpy==2.1.3
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.5871992Z [36;1mpython -m pip install --disable-pip-version-check numpy==2.1.3[0m
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6157459Z shell: /usr/bin/bash -e {0}
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6157752Z env:
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6158040Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6158485Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6158951Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6159391Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6159777Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6160160Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6160760Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:12.6161090Z ##[endgroup]
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:13.3502851Z Collecting numpy==2.1.3
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:13.4952966Z   Downloading numpy-2.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:13.5846620Z Downloading numpy-2.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.0 MB)
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:14.1153242Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.0/16.0 MB 34.2 MB/s  0:00:00
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:14.1763562Z Installing collected packages: numpy
+reconstruction-and-controls	Pinned dependency	2026-10-17T01:19:16.0932710Z Successfully installed numpy-2.1.3
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	﻿2026-10-17T01:19:16.1453025Z ##[group]Run python research_snapshot/.github/scripts/uqcf_relref_reconstruct.py
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1453677Z [36;1mpython research_snapshot/.github/scripts/uqcf_relref_reconstruct.py[0m
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1520672Z shell: /usr/bin/bash -e {0}
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1520929Z env:
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1521198Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1521620Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1522056Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1522502Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1522881Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1523286Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1523676Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:19:16.1524191Z ##[endgroup]
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:20:35.5718589Z status GREEN records 217 failures 0 certificate_sha256 2fe8f271a7326e7a167f4b719a542da83d47f509703d091f1f44fbe3811f1115
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:20:35.5721727Z {"W1_wrong_formula_detected": true, "W2_flipped_reader_detected": true, "W3_noninvariant_rejected": true, "W4_tamper_detected": {"deleted_record": true, "duplicated_record": true, "perturbed_value": true, "substituted_key": true}}
+reconstruction-and-controls	Producer vs independent checker over the declared universe, analytic and rejecting controls	2026-10-17T01:20:35.5728064Z [{"checker_dimension": 2, "largest_null_singular_value": 2.7067194726578075e-16, "producer_prediction": 2, "smallest_nonzero_singular_value": 1.9999999999999998, "structure": [2]}, {"checker_dimension": 2, "largest_null_singular_value": 6.343965733558616e-16, "producer_prediction": 2, "smallest_nonzero_singular_value": 2.449489742783176, "structure": [3]}, {"checker_dimension": 7, "largest_null_singular_value": 1.5436970322062291e-15, "producer_prediction": 7, "smallest_nonzero_singular_value": 1.7320508075688754, "structure": [1, 2]}, {"checker_dimension": 8, "largest_null_singular_value": 1.9415690720544083e-15, "producer_prediction": 8, "smallest_nonzero_singular_value": 1.9999999999999973, "structure": [2, 2]}, {"checker_dimension": 7, "largest_null_singular_value": 1.7837523533737343e-15, "producer_prediction": 7, "smallest_nonzero_singular_value": 1.9999999999999951, "structure": [1, 3]}, {"checker_dimension": 8, "largest_null_singular_value": 1.779429147223973e-15, "producer_prediction": 8, "smallest_nonzero_singular_value": 1.9999999999999942, "structure": [2, 3]}, {"checker_dimension": 16, "largest_null_singular_value": 1.5690553234640613e-15, "producer_prediction": 16, "smallest_nonzero_singular_value": 1.4142135623730945, "structure": [1, 1, 2]}]
+reconstruction-and-controls	Run actions/upload-artifact@v4	﻿2026-10-17T01:20:35.5928314Z ##[group]Run actions/upload-artifact@v4
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5928642Z with:
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5928864Z   name: relref-reconstruction-1
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5929135Z   path: relref_reconstruction
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5929386Z   if-no-files-found: warn
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5929614Z   retention-days: 90
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5929845Z   compression-level: 6
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5930056Z   overwrite: false
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5930265Z   include-hidden-files: false
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5930836Z env:
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5931095Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5931516Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5931953Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5932377Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5932759Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5933144Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5933566Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.5933886Z ##[endgroup]
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.7602101Z (node:2533) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.7603048Z (Use `node --trace-deprecation ...` to show where the warning was created)
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.7675015Z With the provided path, there will be 4 files uploaded
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.7680740Z Artifact name is valid!
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.7681664Z Root directory input is valid!
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.9649099Z Beginning upload of artifact content to blob storage
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:35.9904598Z (node:2533) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:36.0183006Z Uploaded bytes 5295
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:36.0357082Z Finished uploading artifact content to blob storage!
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:36.0358293Z SHA256 digest of uploaded artifact zip is cebbc4be38e7026e9f844daa0dda8757b7bdc4d3053729f7a87bd3d86ef00af2
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:36.0359403Z Finalizing artifact upload
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:36.2201889Z Artifact relref-reconstruction-1.zip successfully finalized. Artifact ID 12085140516
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:36.2203786Z Artifact relref-reconstruction-1 has been successfully uploaded! Final size is 5295 bytes. Artifact ID is 12085140516
+reconstruction-and-controls	Run actions/upload-artifact@v4	2026-10-17T01:20:36.2210094Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38990304264/artifacts/12085140516
+reconstruction-and-controls	Post Run actions/setup-python@v5	﻿2026-10-17T01:20:36.2387551Z Post job cleanup.
+reconstruction-and-controls	Post Run actions/setup-python@v5	2026-10-17T01:20:36.3591454Z (node:2546) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+reconstruction-and-controls	Post Run actions/setup-python@v5	2026-10-17T01:20:36.3592303Z (Use `node --trace-deprecation ...` to show where the warning was created)
+reconstruction-and-controls	Post Run actions/checkout@v4	﻿2026-10-17T01:20:36.3826159Z Post job cleanup.
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.4821577Z [command]/usr/bin/git version
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.4867199Z git version 2.55.0
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.4911135Z Temporarily overriding HOME='/home/runner/work/_temp/b9ad86ee-70fb-41f6-a093-8084bb3cfd64' before making global git config changes
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.4912860Z Adding repository directory to the temporary git global config as a safe directory
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.4920070Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.4965546Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.5006613Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.5333320Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.5384844Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.5735021Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+reconstruction-and-controls	Post Run actions/checkout@v4	2026-10-17T01:20:36.5773919Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+reconstruction-and-controls	Complete job	﻿2026-10-17T01:20:36.6179874Z Cleaning up orphan processes
+reconstruction-and-controls	Complete job	2026-10-17T01:20:36.6480039Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+gemini-review	Set up job	﻿2026-10-17T01:20:41.6147773Z Current runner version: '2.337.0'
+gemini-review	Set up job	2026-10-17T01:20:41.6175788Z ##[group]Runner Image Provisioner
+gemini-review	Set up job	2026-10-17T01:20:41.6176863Z Hosted Compute Agent
+gemini-review	Set up job	2026-10-17T01:20:41.6177535Z Version: 20261012.601
+gemini-review	Set up job	2026-10-17T01:20:41.6178213Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+gemini-review	Set up job	2026-10-17T01:20:41.6179065Z Build Date: 2026-10-12T17:48:21Z
+gemini-review	Set up job	2026-10-17T01:20:41.6179857Z Worker ID: {acd89dc9-0706-4537-b56c-3a02cd733fa7}
+gemini-review	Set up job	2026-10-17T01:20:41.6180600Z Region: westus
+gemini-review	Set up job	2026-10-17T01:20:41.6181267Z Cloud: Azure
+gemini-review	Set up job	2026-10-17T01:20:41.6181887Z ##[endgroup]
+gemini-review	Set up job	2026-10-17T01:20:41.6184132Z ##[group]Operating System
+gemini-review	Set up job	2026-10-17T01:20:41.6184862Z Ubuntu
+gemini-review	Set up job	2026-10-17T01:20:41.6185757Z 24.04.5
+gemini-review	Set up job	2026-10-17T01:20:41.6186403Z LTS
+gemini-review	Set up job	2026-10-17T01:20:41.6186944Z ##[endgroup]
+gemini-review	Set up job	2026-10-17T01:20:41.6187650Z ##[group]Runner Image
+gemini-review	Set up job	2026-10-17T01:20:41.6188298Z Image: ubuntu-24.04
+gemini-review	Set up job	2026-10-17T01:20:41.6188905Z Version: 20261012.334.1
+gemini-review	Set up job	2026-10-17T01:20:41.6190126Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+gemini-review	Set up job	2026-10-17T01:20:41.6192002Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+gemini-review	Set up job	2026-10-17T01:20:41.6193032Z ##[endgroup]
+gemini-review	Set up job	2026-10-17T01:20:41.6194295Z ##[group]GITHUB_TOKEN Permissions
+gemini-review	Set up job	2026-10-17T01:20:41.6196785Z Contents: read
+gemini-review	Set up job	2026-10-17T01:20:41.6197617Z Metadata: read
+gemini-review	Set up job	2026-10-17T01:20:41.6198245Z ##[endgroup]
+gemini-review	Set up job	2026-10-17T01:20:41.6200458Z Secret source: Actions
+gemini-review	Set up job	2026-10-17T01:20:41.6201669Z Cache mode: write
+gemini-review	Set up job	2026-10-17T01:20:41.6202439Z Prepare workflow directory
+gemini-review	Set up job	2026-10-17T01:20:41.6799687Z Prepare all required actions
+gemini-review	Set up job	2026-10-17T01:20:41.6849156Z Getting action download info
+gemini-review	Set up job	2026-10-17T01:20:42.0260900Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+gemini-review	Set up job	2026-10-17T01:20:42.1290295Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+gemini-review	Set up job	2026-10-17T01:20:42.2068192Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+gemini-review	Set up job	2026-10-17T01:20:42.6380604Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+gemini-review	Set up job	2026-10-17T01:20:42.8588064Z Complete job name: gemini-review
+gemini-review	Run actions/checkout@v4	﻿2026-10-17T01:20:42.9387021Z ##[group]Run actions/checkout@v4
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9388050Z with:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9388614Z   ref: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9389295Z   path: research_snapshot
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9389838Z   fetch-depth: 6
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9390366Z   persist-credentials: false
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9391587Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission
+gemini-review	Run actions/checkout@v4	.github/scripts
+gemini-review	Run actions/checkout@v4	.github/workflows
+gemini-review	Run actions/checkout@v4	
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9392959Z   repository: proteinfoldingengine/WetLabEngine
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9397455Z   token: ***
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9398006Z   ssh-strict: true
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9398504Z   ssh-user: git
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9398981Z   clean: true
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9399501Z   sparse-checkout-cone-mode: true
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9400130Z   fetch-tags: false
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9400635Z   show-progress: true
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9401156Z   lfs: false
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9401626Z   submodules: false
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9402135Z   set-safe-directory: true
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9402756Z   allow-unsafe-pr-checkout: false
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9403655Z env:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9404286Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:42.9405211Z ##[endgroup]
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0457755Z Syncing repository: proteinfoldingengine/WetLabEngine
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0461479Z ##[group]Getting Git version info
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0462537Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0464016Z [command]/usr/bin/git version
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0540779Z git version 2.55.0
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0565454Z ##[endgroup]
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0581070Z Temporarily overriding HOME='/home/runner/work/_temp/0bdda1de-020d-45af-a135-54c7a7640ff3' before making global git config changes
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0584486Z Adding repository directory to the temporary git global config as a safe directory
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0587377Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0639196Z ##[group]Initializing the repository
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0644830Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0755715Z hint: Using 'master' as the name for the initial branch. This default branch name
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0757378Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0758474Z hint: to use in all of your new repositories, which will suppress this warning,
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0759349Z hint: call:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0759825Z hint:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0760581Z hint: 	git config --global init.defaultBranch <name>
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0761421Z hint:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0762192Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0763394Z hint: 'development'. The just-created branch can be renamed via this command:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0764372Z hint:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0765267Z hint: 	git branch -m <name>
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0766108Z hint:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0766953Z hint: Disable this message with "git config set advice.defaultBranchName false"
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0773473Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0786697Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0856463Z ##[endgroup]
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0858345Z ##[group]Disabling automatic garbage collection
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0860409Z [command]/usr/bin/git config --local gc.auto 0
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0896648Z ##[endgroup]
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0898226Z ##[group]Setting up auth
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0904532Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.0940952Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.1326887Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.1384267Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.1652907Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.1693701Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.1929749Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.1972841Z ##[endgroup]
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.1973799Z ##[group]Fetching the repository
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.1983392Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=6 origin eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6685666Z From https://github.com/proteinfoldingengine/WetLabEngine
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6688631Z  * branch            eb5259b2727b2a7e0e195ffaede515af1ac8bdeb -> FETCH_HEAD
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6694333Z ##[endgroup]
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6697327Z ##[group]Determining the checkout info
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6700308Z ##[endgroup]
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6702926Z ##[group]Setting up sparse checkout
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6707944Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission .github/scripts .github/workflows
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6763640Z ##[endgroup]
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6766932Z ##[group]Checking out the ref
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:43.6770808Z [command]/usr/bin/git checkout --progress --force eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2926849Z Note: switching to 'eb5259b2727b2a7e0e195ffaede515af1ac8bdeb'.
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2928839Z 
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2929958Z You are in 'detached HEAD' state. You can look around, make experimental
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2932460Z changes and commit them, and you can discard any commits you make in this
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2935163Z state without impacting any branches by switching back to a branch.
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2936669Z 
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2937670Z If you want to create a new branch to retain commits you create, you may
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2940350Z do so (now or later) by using -c with the switch command. Example:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2941881Z 
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2942479Z   git switch -c <new-branch-name>
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2943434Z 
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2944018Z Or undo this operation with:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2945189Z 
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2945789Z   git switch -
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2946506Z 
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2947754Z Turn off this advice by setting config variable advice.detachedHead to false
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2949667Z 
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2952889Z HEAD is now at eb5259b Add gated integrity, independent reconstruction, Gemini review and remote audit workflow for relational-reference admission screen
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2960168Z ##[endgroup]
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.2999180Z [command]/usr/bin/git log -1 --format=%H
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3027772Z eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3038852Z ##[group]Removing auth
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3043448Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3080561Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3322822Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3355189Z http.https://github.com/.extraheader
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3378493Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3409848Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3674504Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3722182Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+gemini-review	Run actions/checkout@v4	2026-10-17T01:20:44.3989527Z ##[endgroup]
+gemini-review	Run actions/setup-python@v5	﻿2026-10-17T01:20:44.4366710Z ##[group]Run actions/setup-python@v5
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4368001Z with:
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4368879Z   python-version: 3.12.12
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4369921Z   check-latest: false
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4379308Z   token: ***
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4380581Z   update-environment: true
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4381756Z   allow-prereleases: false
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4382819Z   freethreaded: false
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4383763Z env:
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4385253Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.4387048Z ##[endgroup]
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.5749209Z ##[group]Installed versions
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.5768108Z Version 3.12.12 was not found in the local cache
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.5882185Z (node:2421) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:44.5885601Z (Use `node --trace-deprecation ...` to show where the warning was created)
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:45.2791301Z Version 3.12.12 is available for downloading
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:45.2795645Z Download from "https://github.com/actions/python-versions/releases/download/3.12.12-18393146713/python-3.12.12-linux-24.04-x64.tar.gz"
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:46.0084677Z Extract downloaded archive
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:46.0238062Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/42ea9f24-ae86-43a0-9a8a-d3cedccab36b -f /home/runner/work/_temp/ab135257-d4c0-4c13-b42a-9a84efebe295
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:48.0983660Z Execute installation script
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:48.1091504Z Check if Python hostedtoolcache folder exist...
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:48.1092852Z Create Python 3.12.12 folder
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:48.1124399Z Copy Python binaries to hostedtoolcache folder
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:48.5992143Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:48.6034314Z Upgrading pip...
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:51.3775877Z Looking in links: /tmp/tmp5cc0q8t3
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:51.3780842Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages (25.0.1)
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.4921755Z Collecting pip
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.5458474Z Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.5622465Z Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.6386673Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 33.7 MB/s eta 0:00:00
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.6387329Z 
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.6559502Z Installing collected packages: pip
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.6560400Z Attempting uninstall: pip
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.6583980Z Found existing installation: pip 25.0.1
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.6955474Z Uninstalling pip-25.0.1:
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:52.7017741Z Successfully uninstalled pip-25.0.1
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:53.6209726Z Successfully installed pip-26.2.1
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:53.6758689Z Create complete file
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:53.6799435Z Successfully set up CPython (3.12.12)
+gemini-review	Run actions/setup-python@v5	2026-10-17T01:20:53.6800360Z ##[endgroup]
+gemini-review	Run actions/download-artifact@v4	﻿2026-10-17T01:20:53.7032402Z ##[group]Run actions/download-artifact@v4
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7032764Z with:
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7032990Z   name: relref-integrity-1
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7033256Z   path: relref_integrity
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7033498Z   merge-multiple: false
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7033802Z   repository: proteinfoldingengine/WetLabEngine
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7034124Z   run-id: 38990304264
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7034330Z env:
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7034589Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7035267Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7035734Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7036188Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7036602Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7037015Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7037408Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.7037773Z ##[endgroup]
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.8840218Z Downloading single artifact
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.8997627Z (node:2505) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:53.8999083Z (Use `node --trace-deprecation ...` to show where the warning was created)
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.1639300Z Preparing to download the following artifacts:
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.1640764Z - relref-integrity-1 (ID: 12084439296, Size: 2036, Expected Digest: sha256:19951b54ac527d32ce806fb174baa6d685913ba641657d0de819a8fc9482754b)
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.4281504Z Redirecting to blob download url: https://productionresultssa2.blob.core.windows.net/actions-results/db9d03b3-bfd5-8ee6-8308-a5fbcc06d3a5/workflow-job-run-2498d896-5da5-5a7a-a79b-d1595732b47c/artifacts/4c2369f8cc5009b4df51d19f3744e3c80f9b735a8ed250019c2198c54c085553.zip
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.4284237Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/relref_integrity
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7082181Z (node:2505) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7205374Z SHA256 digest of downloaded artifact is 19951b54ac527d32ce806fb174baa6d685913ba641657d0de819a8fc9482754b
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7206917Z Artifact download completed successfully.
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7207460Z Total of 1 artifact(s) downloaded
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7216032Z Download artifact has finished successfully
+gemini-review	Run actions/download-artifact@v4	﻿2026-10-17T01:20:54.7401297Z ##[group]Run actions/download-artifact@v4
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7401628Z with:
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7401847Z   name: relref-reconstruction-1
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7402120Z   path: relref_reconstruction
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7402375Z   merge-multiple: false
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7402650Z   repository: proteinfoldingengine/WetLabEngine
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7402953Z   run-id: 38990304264
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7403158Z env:
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7403417Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7403826Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7404259Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7404728Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7405310Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7405700Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7406092Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.7406477Z ##[endgroup]
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.8950095Z Downloading single artifact
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.9109098Z (node:2518) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:54.9110116Z (Use `node --trace-deprecation ...` to show where the warning was created)
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:55.2132369Z Preparing to download the following artifacts:
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:55.2133887Z - relref-reconstruction-1 (ID: 12085140516, Size: 5295, Expected Digest: sha256:cebbc4be38e7026e9f844daa0dda8757b7bdc4d3053729f7a87bd3d86ef00af2)
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:55.4649388Z Redirecting to blob download url: https://productionresultssa2.blob.core.windows.net/actions-results/db9d03b3-bfd5-8ee6-8308-a5fbcc06d3a5/workflow-job-run-6dea1a0b-8f1b-5057-a611-facec848eebd/artifacts/e59c9f4fc5f6e71d1cf1949e3bcf22d20b015f9b4acc49076c94367bcce20994.zip
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:55.4651497Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/relref_reconstruction
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:55.7495624Z (node:2518) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:55.7587623Z SHA256 digest of downloaded artifact is cebbc4be38e7026e9f844daa0dda8757b7bdc4d3053729f7a87bd3d86ef00af2
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:55.7588748Z Artifact download completed successfully.
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:55.7589330Z Total of 1 artifact(s) downloaded
+gemini-review	Run actions/download-artifact@v4	2026-10-17T01:20:55.7594176Z Download artifact has finished successfully
+gemini-review	Independent Gemini argument review (one availability check, one generation)	﻿2026-10-17T01:20:55.7727556Z ##[group]Run python research_snapshot/.github/scripts/uqcf_relref_review.py review
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.7728709Z [36;1mpython research_snapshot/.github/scripts/uqcf_relref_review.py review[0m
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8026505Z shell: /usr/bin/bash -e {0}
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8026919Z env:
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8027282Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8027826Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8051890Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8052699Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8053347Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8053999Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8054686Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8055901Z   GEMINI_API_KEY: ***
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:20:55.8056300Z ##[endgroup]
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2332994Z GEMINI_RAW_REVIEW_BEGIN
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2333581Z {
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2334522Z   "verdict": "ACCEPTED",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2335315Z   "findings": [],
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2335791Z   "missing_assumptions": [],
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2336373Z   "counterexamples": [],
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2336859Z   "limitations": [
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2337780Z     "The existence of a native quantum carrier is assumed as part of the declared class, not derived.",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2339740Z     "The identification datum J (the representation pi) tying the reference frame to the source frame is inserted by assumption.",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2342006Z     "The occurrence of the comparison event, access to the outcome, and retention of the outcome are supplied by assumption.",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2343950Z     "The b-independence of the reference state sigma is a deliberately explicit conditional premise.",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2345852Z     "The exact optimum in Theorem B is restricted to a single-copy source interaction."
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2346926Z   ],
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2347395Z   "observations": [
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2350146Z     "Theorem A correctly reconstructs the standard resource theory result that G-invariant mechanisms on central-blind pairs yield no contrast unless an identified, non-invariant reference is provided. The twirl argument correctly isolates the dependence to the central twirl.",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2353757Z     "Theorem B correctly derives the exact total-variation optimum 1/2 sum_i |Tr[Delta_i sigma_i]| for a single identified reference carrier. The proof correctly uses Schur-Weyl duality to identify the g tensor g commutant and correctly bounds the cross-block terms to zero.",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2356122Z     "The self-reference Corollary correctly evaluates to (1/4)||Delta||_2^2 for unitarily related pairs by matching per-block purities.",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2357311Z     "The numerical certificate perfectly matches the preregistered contract. Controls K1-K7 accurately test their claimed properties, including the K5 identification freedom and the K4 multi-copy boundary.",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2358392Z     "The admission gate correctly classifies R0 as class B, R1 as conditional class A, and R2/R3 as class D.",
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2359675Z     "The document strictly separates its mathematical conclusions from physical claims. It explicitly states that the native interaction milestone is NOT ACHIEVED and that the carrier, interaction, reference state, and access are supplied by assumption rather than derived."
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2360766Z   ]
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2360952Z }
+gemini-review	Independent Gemini argument review (one availability check, one generation)	2026-10-17T01:21:35.2361153Z GEMINI_RAW_REVIEW_END
+gemini-review	Run actions/upload-artifact@v4	﻿2026-10-17T01:21:35.2489659Z ##[group]Run actions/upload-artifact@v4
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2489994Z with:
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2490204Z   name: relref-review-1
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2490445Z   path: relref_review
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2490674Z   if-no-files-found: error
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2490909Z   retention-days: 90
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2491134Z   compression-level: 6
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2491355Z   overwrite: false
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2491581Z   include-hidden-files: false
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2491829Z env:
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2492094Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2492510Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2492954Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2493386Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2493780Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2494182Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2494602Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.2495113Z ##[endgroup]
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.4233064Z (node:2615) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.4234018Z (Use `node --trace-deprecation ...` to show where the warning was created)
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.4318861Z With the provided path, there will be 8 files uploaded
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.4324573Z Artifact name is valid!
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.4336255Z Root directory input is valid!
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.8299899Z Beginning upload of artifact content to blob storage
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:35.8692931Z (node:2615) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:36.2845750Z Uploaded bytes 81056
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:36.3651613Z Finished uploading artifact content to blob storage!
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:36.3652955Z SHA256 digest of uploaded artifact zip is 1e8c0829017a8770b097aa6616aea6029d524f20a794e6379418645b35367795
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:36.3654177Z Finalizing artifact upload
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:36.6241909Z Artifact relref-review-1.zip successfully finalized. Artifact ID 12084792840
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:36.6243802Z Artifact relref-review-1 has been successfully uploaded! Final size is 81056 bytes. Artifact ID is 12084792840
+gemini-review	Run actions/upload-artifact@v4	2026-10-17T01:21:36.6252116Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38990304264/artifacts/12084792840
+gemini-review	Post Run actions/setup-python@v5	﻿2026-10-17T01:21:36.6430700Z Post job cleanup.
+gemini-review	Post Run actions/setup-python@v5	2026-10-17T01:21:36.7710833Z (node:2627) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+gemini-review	Post Run actions/setup-python@v5	2026-10-17T01:21:36.7711956Z (Use `node --trace-deprecation ...` to show where the warning was created)
+gemini-review	Post Run actions/checkout@v4	﻿2026-10-17T01:21:36.7912025Z Post job cleanup.
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.8842768Z [command]/usr/bin/git version
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.8888781Z git version 2.55.0
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.8932185Z Temporarily overriding HOME='/home/runner/work/_temp/296991ad-5300-4fb1-aaf4-8af4a33d38a0' before making global git config changes
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.8934047Z Adding repository directory to the temporary git global config as a safe directory
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.8939248Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.8993739Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.9044819Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.9327363Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.9387287Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.9700964Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+gemini-review	Post Run actions/checkout@v4	2026-10-17T01:21:36.9747037Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+gemini-review	Complete job	﻿2026-10-17T01:21:37.0185752Z Cleaning up orphan processes
+gemini-review	Complete job	2026-10-17T01:21:37.0500973Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+publication-audit	Set up job	﻿2026-10-17T01:21:42.1871451Z Current runner version: '2.337.0'
+publication-audit	Set up job	2026-10-17T01:21:42.1896946Z ##[group]Runner Image Provisioner
+publication-audit	Set up job	2026-10-17T01:21:42.1897870Z Hosted Compute Agent
+publication-audit	Set up job	2026-10-17T01:21:42.1898877Z Version: 20261012.601
+publication-audit	Set up job	2026-10-17T01:21:42.1899586Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+publication-audit	Set up job	2026-10-17T01:21:42.1900296Z Build Date: 2026-10-12T17:48:21Z
+publication-audit	Set up job	2026-10-17T01:21:42.1901044Z Worker ID: {e7bcac7f-7cbc-4310-acec-6f447ca8a79d}
+publication-audit	Set up job	2026-10-17T01:21:42.1901792Z Region: eastus
+publication-audit	Set up job	2026-10-17T01:21:42.1902384Z Cloud: Azure
+publication-audit	Set up job	2026-10-17T01:21:42.1902925Z ##[endgroup]
+publication-audit	Set up job	2026-10-17T01:21:42.1904366Z ##[group]Operating System
+publication-audit	Set up job	2026-10-17T01:21:42.1905385Z Ubuntu
+publication-audit	Set up job	2026-10-17T01:21:42.1905944Z 24.04.5
+publication-audit	Set up job	2026-10-17T01:21:42.1906502Z LTS
+publication-audit	Set up job	2026-10-17T01:21:42.1907017Z ##[endgroup]
+publication-audit	Set up job	2026-10-17T01:21:42.1907549Z ##[group]Runner Image
+publication-audit	Set up job	2026-10-17T01:21:42.1908158Z Image: ubuntu-24.04
+publication-audit	Set up job	2026-10-17T01:21:42.1908755Z Version: 20261012.334.1
+publication-audit	Set up job	2026-10-17T01:21:42.1909867Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+publication-audit	Set up job	2026-10-17T01:21:42.1911600Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+publication-audit	Set up job	2026-10-17T01:21:42.1912586Z ##[endgroup]
+publication-audit	Set up job	2026-10-17T01:21:42.1913778Z ##[group]GITHUB_TOKEN Permissions
+publication-audit	Set up job	2026-10-17T01:21:42.1916016Z Contents: read
+publication-audit	Set up job	2026-10-17T01:21:42.1916630Z Metadata: read
+publication-audit	Set up job	2026-10-17T01:21:42.1917282Z ##[endgroup]
+publication-audit	Set up job	2026-10-17T01:21:42.1919320Z Secret source: Actions
+publication-audit	Set up job	2026-10-17T01:21:42.1920432Z Cache mode: write
+publication-audit	Set up job	2026-10-17T01:21:42.1921335Z Prepare workflow directory
+publication-audit	Set up job	2026-10-17T01:21:42.2420209Z Prepare all required actions
+publication-audit	Set up job	2026-10-17T01:21:42.2469017Z Getting action download info
+publication-audit	Set up job	2026-10-17T01:21:42.4162422Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+publication-audit	Set up job	2026-10-17T01:21:42.5042496Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+publication-audit	Set up job	2026-10-17T01:21:42.5833803Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+publication-audit	Set up job	2026-10-17T01:21:42.7609519Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+publication-audit	Set up job	2026-10-17T01:21:42.9747954Z Complete job name: publication-audit
+publication-audit	Run actions/checkout@v4	﻿2026-10-17T01:21:43.0441487Z ##[group]Run actions/checkout@v4
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0442388Z with:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0442872Z   ref: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0443477Z   path: research_snapshot
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0443969Z   fetch-depth: 1
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0444424Z   persist-credentials: false
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0445710Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission
+publication-audit	Run actions/checkout@v4	.github/scripts
+publication-audit	Run actions/checkout@v4	.github/workflows
+publication-audit	Run actions/checkout@v4	
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0446889Z   repository: proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0450603Z   token: ***
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0451031Z   ssh-strict: true
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0451464Z   ssh-user: git
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0451882Z   clean: true
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0452318Z   sparse-checkout-cone-mode: true
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0452867Z   fetch-tags: false
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0453307Z   show-progress: true
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0453747Z   lfs: false
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0454154Z   submodules: false
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0454800Z   set-safe-directory: true
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0455367Z   allow-unsafe-pr-checkout: false
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0456148Z env:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0456677Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.0457312Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1513002Z Syncing repository: proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1516108Z ##[group]Getting Git version info
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1517700Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine/research_snapshot'
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1519841Z [command]/usr/bin/git version
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1570541Z git version 2.55.0
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1615590Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1633736Z Temporarily overriding HOME='/home/runner/work/_temp/8983c2b2-1913-44b2-b397-6b91a87eb03f' before making global git config changes
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1636826Z Adding repository directory to the temporary git global config as a safe directory
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1638624Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1687786Z ##[group]Initializing the repository
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1692535Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1817188Z hint: Using 'master' as the name for the initial branch. This default branch name
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1846802Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1852287Z hint: to use in all of your new repositories, which will suppress this warning,
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1853903Z hint: call:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1855054Z hint:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1856358Z hint: 	git config --global init.defaultBranch <name>
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1857771Z hint:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1859213Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1864299Z hint: 'development'. The just-created branch can be renamed via this command:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1866206Z hint:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1867338Z hint: 	git branch -m <name>
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1868556Z hint:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1869996Z hint: Disable this message with "git config set advice.defaultBranchName false"
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1872569Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot/.git/
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1877189Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1919466Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1921726Z ##[group]Disabling automatic garbage collection
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1923445Z [command]/usr/bin/git config --local gc.auto 0
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1967160Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1968936Z ##[group]Setting up auth
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.1970704Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.2014419Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.2557756Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.2575637Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.2819577Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.2865100Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.3106363Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.3145936Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.3146787Z ##[group]Fetching the repository
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.3158162Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5478344Z From https://github.com/proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5481625Z  * branch            eb5259b2727b2a7e0e195ffaede515af1ac8bdeb -> FETCH_HEAD
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5494874Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5496507Z ##[group]Determining the checkout info
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5498059Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5499446Z ##[group]Setting up sparse checkout
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5501885Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/relational_reference_admission .github/scripts .github/workflows
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5540287Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5541767Z ##[group]Checking out the ref
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.5546186Z [command]/usr/bin/git checkout --progress --force eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9539347Z Note: switching to 'eb5259b2727b2a7e0e195ffaede515af1ac8bdeb'.
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9542427Z 
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9543582Z You are in 'detached HEAD' state. You can look around, make experimental
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9546055Z changes and commit them, and you can discard any commits you make in this
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9548481Z state without impacting any branches by switching back to a branch.
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9549856Z 
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9636491Z If you want to create a new branch to retain commits you create, you may
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9638869Z do so (now or later) by using -c with the switch command. Example:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9640187Z 
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9640731Z   git switch -c <new-branch-name>
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9641534Z 
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9641885Z Or undo this operation with:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9642523Z 
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9642850Z   git switch -
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9643329Z 
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9644047Z Turn off this advice by setting config variable advice.detachedHead to false
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9646091Z 
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9649493Z HEAD is now at eb5259b Add gated integrity, independent reconstruction, Gemini review and remote audit workflow for relational-reference admission screen
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9656564Z ##[endgroup]
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9659734Z [command]/usr/bin/git log -1 --format=%H
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9661495Z eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9666396Z ##[group]Removing auth
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9668180Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9704109Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9950290Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9981636Z http.https://github.com/.extraheader
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:43.9990244Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:44.0028971Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:44.0381614Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:44.0399096Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publication-audit	Run actions/checkout@v4	2026-10-17T01:21:44.0737779Z ##[endgroup]
+publication-audit	Run actions/setup-python@v5	﻿2026-10-17T01:21:44.1180255Z ##[group]Run actions/setup-python@v5
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1181439Z with:
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1182227Z   python-version: 3.12.12
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1183189Z   check-latest: false
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1193614Z   token: ***
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1194781Z   update-environment: true
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1195872Z   allow-prereleases: false
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1196851Z   freethreaded: false
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1197712Z env:
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1198745Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.1200121Z ##[endgroup]
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.2578095Z ##[group]Installed versions
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.2593279Z Version 3.12.12 was not found in the local cache
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.2707888Z (node:2403) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.2711676Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.6849947Z Version 3.12.12 is available for downloading
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:44.6852119Z Download from "https://github.com/actions/python-versions/releases/download/3.12.12-18393146713/python-3.12.12-linux-24.04-x64.tar.gz"
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:45.5187181Z Extract downloaded archive
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:45.5329928Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/c89f9a68-2848-409a-9d3f-241d27b1ba20 -f /home/runner/work/_temp/de2a883b-26b5-4b33-b6af-9529170cce9f
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:47.6371577Z Execute installation script
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:47.6496256Z Check if Python hostedtoolcache folder exist...
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:47.6497307Z Create Python 3.12.12 folder
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:47.6514894Z Copy Python binaries to hostedtoolcache folder
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:48.1739823Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:48.1782561Z Upgrading pip...
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:51.1178328Z Looking in links: /tmp/tmpvij9jkbl
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:51.1183181Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages (25.0.1)
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.2181695Z Collecting pip
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.3165741Z Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.3438657Z Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.4908764Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 17.7 MB/s eta 0:00:00
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.4909396Z 
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.5080394Z Installing collected packages: pip
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.5085076Z Attempting uninstall: pip
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.5104473Z Found existing installation: pip 25.0.1
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.5459878Z Uninstalling pip-25.0.1:
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:52.5518501Z Successfully uninstalled pip-25.0.1
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:53.4970380Z Successfully installed pip-26.2.1
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:53.5454029Z Create complete file
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:53.5503711Z Successfully set up CPython (3.12.12)
+publication-audit	Run actions/setup-python@v5	2026-10-17T01:21:53.5505784Z ##[endgroup]
+publication-audit	Run actions/download-artifact@v4	﻿2026-10-17T01:21:53.5780096Z ##[group]Run actions/download-artifact@v4
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5780445Z with:
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5780667Z   name: relref-reconstruction-1
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5780953Z   path: relref_reconstruction
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5781222Z   merge-multiple: false
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5781522Z   repository: proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5781850Z   run-id: 38990304264
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5782058Z env:
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5782311Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5782713Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5783174Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5783602Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5783986Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5784366Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5784949Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.5785321Z ##[endgroup]
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.7276939Z Downloading single artifact
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.7439660Z (node:2486) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.7441257Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.8199887Z Preparing to download the following artifacts:
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.8200921Z - relref-reconstruction-1 (ID: 12085140516, Size: 5295, Expected Digest: sha256:cebbc4be38e7026e9f844daa0dda8757b7bdc4d3053729f7a87bd3d86ef00af2)
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.9529222Z Redirecting to blob download url: https://productionresultssa2.blob.core.windows.net/actions-results/db9d03b3-bfd5-8ee6-8308-a5fbcc06d3a5/workflow-job-run-6dea1a0b-8f1b-5057-a611-facec848eebd/artifacts/e59c9f4fc5f6e71d1cf1949e3bcf22d20b015f9b4acc49076c94367bcce20994.zip
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.9530911Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/relref_reconstruction
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.9802308Z (node:2486) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.9903062Z SHA256 digest of downloaded artifact is cebbc4be38e7026e9f844daa0dda8757b7bdc4d3053729f7a87bd3d86ef00af2
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.9905043Z Artifact download completed successfully.
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.9905931Z Total of 1 artifact(s) downloaded
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:53.9910138Z Download artifact has finished successfully
+publication-audit	Run actions/download-artifact@v4	﻿2026-10-17T01:21:54.0089829Z ##[group]Run actions/download-artifact@v4
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0090387Z with:
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0090749Z   name: relref-review-1
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0091168Z   path: relref_review
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0091575Z   merge-multiple: false
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0092056Z   repository: proteinfoldingengine/WetLabEngine
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0092612Z   run-id: 38990304264
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0092983Z env:
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0093445Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0094177Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0095397Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0096231Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0096943Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0097648Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0098367Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.0099018Z ##[endgroup]
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.1575146Z Downloading single artifact
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.1728472Z (node:2498) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.1729383Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.2534195Z Preparing to download the following artifacts:
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.2535816Z - relref-review-1 (ID: 12084792840, Size: 81056, Expected Digest: sha256:1e8c0829017a8770b097aa6616aea6029d524f20a794e6379418645b35367795)
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.3947121Z Redirecting to blob download url: https://productionresultssa2.blob.core.windows.net/actions-results/db9d03b3-bfd5-8ee6-8308-a5fbcc06d3a5/workflow-job-run-3f40031b-b523-58e9-9294-86596aafc07a/artifacts/03b902974eb97d81d849c08f4ab592dd43bd5a55def5841b0ac2fa3d6c5ca709.zip
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.3955521Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/relref_review
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.4247382Z (node:2498) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.4428037Z SHA256 digest of downloaded artifact is 1e8c0829017a8770b097aa6616aea6029d524f20a794e6379418645b35367795
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.4429263Z Artifact download completed successfully.
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.4429866Z Total of 1 artifact(s) downloaded
+publication-audit	Run actions/download-artifact@v4	2026-10-17T01:21:54.4430400Z Download artifact has finished successfully
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	﻿2026-10-17T01:21:54.4584088Z ##[group]Run python research_snapshot/.github/scripts/uqcf_relref_publication.py
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:54.4585177Z [36;1mpython research_snapshot/.github/scripts/uqcf_relref_publication.py[0m
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0014404Z shell: /usr/bin/bash -e {0}
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0015099Z env:
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0015549Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0016003Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0016471Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0016942Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0017353Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0017756Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0018156Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0021788Z   GH_READ_TOKEN: ***
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:21:55.0022209Z ##[endgroup]
+publication-audit	Independent immutable remote readback of sources, certificate and review bytes	2026-10-17T01:22:04.3214373Z Immutable publication and source bytes verified: 24
+publication-audit	Run actions/upload-artifact@v4	﻿2026-10-17T01:22:04.3365775Z ##[group]Run actions/upload-artifact@v4
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3366123Z with:
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3366351Z   name: relref-publication-1
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3366621Z   path: relref_publication
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3366870Z   if-no-files-found: error
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3367114Z   retention-days: 90
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3367347Z   compression-level: 6
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3367572Z   overwrite: false
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3367804Z   include-hidden-files: false
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3368048Z env:
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3368318Z   UQCF_WORKFLOW_SHA: eb5259b2727b2a7e0e195ffaede515af1ac8bdeb
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3368739Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3369187Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3369626Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3370012Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3370402Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3370832Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.3371166Z ##[endgroup]
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.4973630Z (node:2517) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.4974749Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.5034409Z With the provided path, there will be 2 files uploaded
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.5044372Z Artifact name is valid!
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.5045151Z Root directory input is valid!
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.7251720Z Beginning upload of artifact content to blob storage
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.7459335Z (node:2517) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.7723680Z Uploaded bytes 3523
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.7889380Z Finished uploading artifact content to blob storage!
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.7890138Z SHA256 digest of uploaded artifact zip is 466d29de596a2ca758375c1025ce84c55b58cb7acd1877709e0448cb6877486e
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:04.7892069Z Finalizing artifact upload
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:05.0399094Z Artifact relref-publication-1.zip successfully finalized. Artifact ID 12084902500
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:05.0400796Z Artifact relref-publication-1 has been successfully uploaded! Final size is 3523 bytes. Artifact ID is 12084902500
+publication-audit	Run actions/upload-artifact@v4	2026-10-17T01:22:05.0408055Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/38990304264/artifacts/12084902500
+publication-audit	Post Run actions/setup-python@v5	﻿2026-10-17T01:22:05.0615710Z Post job cleanup.
+publication-audit	Post Run actions/setup-python@v5	2026-10-17T01:22:05.1801589Z (node:2529) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication-audit	Post Run actions/setup-python@v5	2026-10-17T01:22:05.1802854Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication-audit	Post Run actions/checkout@v4	﻿2026-10-17T01:22:05.1996106Z Post job cleanup.
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.2934898Z [command]/usr/bin/git version
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.2997222Z git version 2.55.0
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.3042955Z Temporarily overriding HOME='/home/runner/work/_temp/8e9aa484-f885-4ff7-8bb9-eeb5c31c4b33' before making global git config changes
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.3044981Z Adding repository directory to the temporary git global config as a safe directory
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.3050973Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine/research_snapshot
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.3103128Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.3149923Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.3483721Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.3527191Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.3792314Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publication-audit	Post Run actions/checkout@v4	2026-10-17T01:22:05.3836652Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publication-audit	Complete job	﻿2026-10-17T01:22:05.4280577Z Cleaning up orphan processes
+publication-audit	Complete job	2026-10-17T01:22:05.4719312Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
