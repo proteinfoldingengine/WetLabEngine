@@ -20,3 +20,10 @@ The proposed action is one availability GET and, if available, one generation PO
 The reviewer is asked to reconstruct the positive retained-part construction and attempt the missing native-access correspondence before challenging assumptions. Any ACCEPTED verdict is limited to its stated analytical scope; actual accessible-state realization, preparability and pruning enactment remain unproved unless a separate complete derivation establishes them.
 
 The frozen argument remains available for review. Explicit approval of this concrete Gemini transmission/workflow is needed to revisit the automatic rejection. No C3 closure, numerical campaign, native milestone, scientific acceptance or main merge is claimed.
+
+
+## Explicit approval and launch preparation
+
+At 2026-10-17 12:15 America/Phoenix the user explicitly approved the concrete Gemini review action after being told that it sends the frozen repository research to Gemini and uses read-only GitHub credentials for immutable readback. The workflow and scripts now installed are byte-identical to the approved local package; no change to the frozen input packet or review request was made. The existing Actions secret remains server-side. This is one availability check followed by one generation call if available, with no automatic retries or fallback.
+
+Review status: PENDING execution and verdict. The earlier approval block above is retained as history and is superseded by this explicit approval. The concurrent draft-5 commits 0c19f891 and 4d57eda4 are preserved; this review is bound to the earlier frozen retained-fiber argument and does not certify that later draft.
