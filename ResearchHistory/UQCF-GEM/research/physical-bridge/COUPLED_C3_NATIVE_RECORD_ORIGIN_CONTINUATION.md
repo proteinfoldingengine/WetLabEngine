@@ -494,3 +494,10 @@ The exact frozen argument received Gemini ACCEPTED with no findings, missing ass
 ### Durable V1699.14 publication/readback completion
 
 The separate [durable-publication audit](v1699_action_screen/DURABLE_PUBLICATION_AUDIT.md) at `ea0b59f38fcbc39bc5698cbb17a02876e3042929` read back all 26 manifest-bound evidence files with exact Git blob and byte-length equality and matched all five source-lock identities to the inspected baseline. The [final immutable readback](v1699_action_screen/FINAL_READBACK.md) closes that evidence-publication obligation without altering the category-C/native-promotion stop. This remains candidate-specific: no native action, receiver, broad C3/C4-C6 or physical origin is claimed.
+
+
+### Retained-transport invertibility correction (2026-10-17)
+
+[Result](transport_invertibility_screen/RESULT.md), [status and evidence](transport_invertibility_screen/STATUS.md). A distinct vector-update lead was screened against the native-event target. Its fixed-context cyclic transport is generically invertible; the exact determinant, invertible non-norm-preserving control and genuinely singular control are supplied. The archived reverse tests apply unrelated forward maps or the same map twice; neither tests existence of an inverse. Orthogonal comparison changes more than injectivity. Context forgetting and joint recombination may be many-to-one and are not disproved. An algebraic inverse gives no physical access or reversal permission.
+
+The assumed kernel, contexts and readers do not derive native acquisition from older primitives. Category C; native promotion STOPPED, not a universal no-go. Gemini accepted the exact frozen argument with empty substantive objections in [run 39036030658](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39036030658), source/workflow 49c8ab2eff18dff33df3d2633cefc2c80dc2ede6; integrity and separate immutable-source publication audit passed. Original artifacts and full logs are preserved; STATUS tracks durable readback. No scientific numerical execution or numbered-stage closure. Native interaction and broad C3/C4-C6 remain OPEN.
