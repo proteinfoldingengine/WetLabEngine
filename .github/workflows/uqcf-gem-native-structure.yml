@@ -1,0 +1,64 @@
+name: UQCF native structure resource audit
+on:
+  push:
+    branches: [gpt/native-structure-resource-audit]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/native_structure/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/native_structure/source_packet.json'
+      - '.github/scripts/uqcf_native_structure_*.py'
+      - '.github/workflows/uqcf-gem-native-structure.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+concurrency:
+  group: uqcf-native-structure-screen
+  cancel-in-progress: false
+jobs:
+  argument-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/native_structure
+            .github
+      - name: Independent Gemini whole-argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_native_structure_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-structure-review-${{ github.run_attempt }}
+          path: native_structure_review
+          retention-days: 90
+  publication-audit:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/native_structure
+            .github
+      - uses: actions/download-artifact@v4
+        with:
+          name: native-structure-review-${{ github.run_attempt }}
+          path: native_structure_review
+      - name: Separate immutable publication audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/uqcf_native_structure_publication.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-structure-publication-${{ github.run_attempt }}
+          path: native_structure_publication
+          retention-days: 90
