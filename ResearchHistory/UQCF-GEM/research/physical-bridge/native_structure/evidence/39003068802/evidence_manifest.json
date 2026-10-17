@@ -1,0 +1,97 @@
+{
+  "run_id": 39003068802,
+  "scientific_sha": "10c5dc0e97c5ada182f4e4fd50f594a8b7da034f",
+  "workflow_sha": "10c5dc0e97c5ada182f4e4fd50f594a8b7da034f",
+  "previous_verified_head": "61a11b577c1c1204d9478fa4f540eb911864a496",
+  "artifacts": [
+    {
+      "id": 12089922653,
+      "name": "native-structure-review-1",
+      "size_in_bytes": 78980,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12089922653",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12089922653/zip",
+      "expired": false,
+      "created_at": "2026-10-17T04:35:04Z",
+      "expires_at": "2027-01-15T04:34:23Z",
+      "updated_at": "2026-10-17T04:35:04Z",
+      "digest": "sha256:0c069015fb8a4d04e6a9dec8fef9756b03e8fce1806f65dc0b2d87ee9a8f69e8",
+      "workflow_run": {
+        "id": 39003068802,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "gpt/native-structure-resource-audit",
+        "head_sha": "10c5dc0e97c5ada182f4e4fd50f594a8b7da034f"
+      }
+    },
+    {
+      "id": 12089603788,
+      "name": "native-structure-publication-1",
+      "size_in_bytes": 2871,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12089603788",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12089603788/zip",
+      "expired": false,
+      "created_at": "2026-10-17T04:35:29Z",
+      "expires_at": "2027-01-15T04:34:23Z",
+      "updated_at": "2026-10-17T04:35:29Z",
+      "digest": "sha256:2e1dd53bf2d922730fe793b20a643143ec6db0f181149213f158dbbac8f7ed9e",
+      "workflow_run": {
+        "id": 39003068802,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "gpt/native-structure-resource-audit",
+        "head_sha": "10c5dc0e97c5ada182f4e4fd50f594a8b7da034f"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "publication/remote_readback.json",
+      "bytes": 9506,
+      "sha256": "ce996b47ba27d44f1c4b7634aaaa27d770dcc46b76a0fcfe999764eb9ad2d3b0",
+      "git_blob": "0115fe3069a722a8e2c0b7783f09cca7bd56437f"
+    },
+    {
+      "path": "publication.zip",
+      "bytes": 2871,
+      "sha256": "2e1dd53bf2d922730fe793b20a643143ec6db0f181149213f158dbbac8f7ed9e",
+      "git_blob": "9c804c786ca7def49aac19b210861fbf866fe5d3"
+    },
+    {
+      "path": "review/manifest.json",
+      "bytes": 1669,
+      "sha256": "8dc233fc86a49736d3c574b2e6b4e054f522524cbcffff616ace8320939e4876",
+      "git_blob": "0282b08dee188c2e8709c81d8c004ca7b0d5ecba"
+    },
+    {
+      "path": "review/prompt.txt",
+      "bytes": 199290,
+      "sha256": "2298b6896feec8c613bd9a9554a0012e4088d3f9766cb436fe20c9e8d0a68ac5",
+      "git_blob": "3a57e32b9d3334317e4c2adbd6b6060bc38ce150"
+    },
+    {
+      "path": "review/response.json",
+      "bytes": 18544,
+      "sha256": "d52434569c04189e0e7e12ba97cffed3a5f3d452f71c41fe6de8f78569f43fe8",
+      "git_blob": "81400b8065ce7146cc52bce9da8fc2bdd15fd56e"
+    },
+    {
+      "path": "review/review.txt",
+      "bytes": 2299,
+      "sha256": "4b2589e656f026ff46263b6917b7ede0af1a05db14e3ac7941fbe1c253286407",
+      "git_blob": "49e450e2a3cf131defa8284c29be7e57c6c6ab78"
+    },
+    {
+      "path": "review/verdict.json",
+      "bytes": 2300,
+      "sha256": "72baf09f5871277193111a72c1541e4cb858095e5a89148285f02fadb56c1c5f",
+      "git_blob": "dd705705b3d773e1c3ef75d009d8d79f10a2369f"
+    },
+    {
+      "path": "review.zip",
+      "bytes": 78980,
+      "sha256": "0c069015fb8a4d04e6a9dec8fef9756b03e8fce1806f65dc0b2d87ee9a8f69e8",
+      "git_blob": "a9a656881ee4bb9b1fb12038dc3a93badaccb59a"
+    }
+  ],
+  "scope": "Analytical source audit; no scientific source execution. Original archives, extracted exact bytes and complete decoded job logs preserved."
+}
