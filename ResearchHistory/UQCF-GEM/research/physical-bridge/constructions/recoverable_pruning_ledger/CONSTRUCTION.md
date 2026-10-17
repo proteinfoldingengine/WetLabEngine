@@ -390,3 +390,75 @@ The two chains are therefore complementary:
 
 1. Combine the two chains. Ask whether a native step realizes both directions at once, removing an atom (merge) while pinching inside the owner's block (split). If so, the owner corner inherits record compatibility from the pinching side and the commutative R_inc^− premise would be discharged for that composite. Otherwise, state exactly which side supplies it.
 2. Then freeze sections 0 to 12, preregister Thm 11.1, Cor 11.2/11.3, Thm 11.5, Prop 11.6, Lemma 12.1 and Thm 12.2, write independent producer and checker code, run Gemini review via Actions, then audit and read back.
+
+## 13. Draft 6: composite merge-plus-pinch steps. The reading lattice is the lattice of record closures of one restriction chain
+
+Baseline `c7649112`. Question from 12.7: can a native step that both merges (prunes) and splits (pinches) let the owner corner inherit record compatibility from the pinching side? Answer: no for the merged sector itself (Lemma 13.1), yes in a precise unified sense (Theorem 13.3). Sections 9 to 12 then become one construction. Credit: the conditional retained-fiber argument of proteinfolding-gpt (COMPATIBLE_FIBER_RETENTION.md; Gemini run 39061712192, conditional ACCEPTED, native bridge NOT_DERIVED) is the R_inc^- member of the family below.
+
+### 13.1 Where record persistence can live in one restriction step
+
+Let B ⊆ A be a unital inclusion of finite-dimensional *-algebras (one step of the frame in 12.1). Call a minimal central projection q of B **straddling** if q p ≠ 0 for at least two minimal central projections p of A. Straddling is the algebraic form of "merge"; pinching produces no straddles.
+
+**Lemma 13.1 (straddles kill old units, wherever pinching happens).**
+1. Z(A) ∩ B = Z(A) ∩ Z(B).
+2. Z(A) ⊆ B (record compatibility, v15.11 section 4) iff no minimal central projection of B straddles.
+3. More finely, a minimal central projection p of A lies in B iff no minimal central q of B with q p ≠ 0 straddles. The persistent part K(A, B) = Z(A) ∩ B is spanned by exactly the unstraddled sectors of A.
+
+*Proof.* (1) Elements of Z(A) commute with A ⊇ B, so any of them lying in B is central in B. (2) If Z(A) ⊆ B, each p is in Z(B) by (1), hence a sum of disjoint minimal central q's of B, and each such q lies under only that p. Conversely, if every q lies under a single p, then p = Σ_{q ≤ p} q ∈ B. (3) is the same argument for one p. ∎
+
+**Corollary 13.2 (answer to 12.7, item 1).** In any single restriction step that merges sector p_t with another sector, the old unit p_t is no longer an element of the retained algebra. This holds however much pinching the same step does inside or outside the merged block. A further split of the merged block restores p_t only if it separates along p_t, that is, only if it undoes the merge. So the pinching side cannot discharge the commutative R_inc^- premise for a merging owner. Lemma 12.1 is the special case "no straddles", and 12.5 is the special case "abelian with a growing fiber".
+
+### 13.2 Record closures: one construction that contains every reading
+
+Lemma 13.1 says what the bare chain forgets. The positive move is to retain exactly that and nothing more. Let A_0 ⊇ A_1 ⊇ ... be any decreasing chain (merges and splits allowed, in any order or in the same step). Let σ be a **retention selection**: at each step j, a set σ_j of minimal central projections of Ã_{j−1} whose records are kept. Define recursively
+
+    Ã_0 = A_0,    Ã_j = A_j ∨ K_j,    K_j = span{ Z(Ã_{j−1}) p : p ∈ σ_j } ⊆ Z(Ã_{j−1}).
+
+**Theorem 13.3 (record closure).** For every chain and every selection σ:
+1. **Decreasing.** Ã_j ⊆ Ã_{j−1} and A_j ⊆ Ã_j. So Ã is again a fixed state restricted to a decreasing chain, and Theorem 12.2's items 1 and 3 hold for it: the closed global distinguishability G̃_j is nonincreasing, and G_j ≤ G̃_j ≤ G_0.
+2. **Kept records are central.** K_j ⊆ Z(Ã_j), and Ã_j = span{a k : a ∈ A_j, k ∈ K_j}. So every selected old sector is an unstraddled central sector of the next closed algebra. Record compatibility holds on the selected corners, and receivers built from selected sectors have nondecreasing central information (Theorem 12.2, item 2, applied to those corners).
+3. **Three canonical selections recover the reading lattice of sections 9 to 11.** For the commutative tree (A_j = B_j):
+   - σ = ∅ gives Ã_j = B_j, which is **R_min**.
+   - σ = the sectors owned by survivors gives Ã_j = span{e_A : A ∈ 𝒮_j}, the shell algebra. This is **R_inc^−** (Theorem 11.1 and Lemma 11.4).
+   - σ = all sectors gives Ã_j = B_0 = C^{X_0} for all j, which is **R_inc^+ = R_full** (Prop 10.1).
+4. **Pinching collapses the lattice.** For a nested pinching chain, Ã_j = A_j for every σ. All three readings coincide, which is the content of Lemma 12.1.
+5. **The loss arrow is the unselected straddle.** Ã_j is strictly coarser than Ã_{j−1} on Z exactly when some unselected sector of Ã_{j−1} is straddled. For the tree with σ = survivors, this is Prop 11.6's criterion (a)/(b) restated.
+
+*Proof.* (1) By induction A_{j−1} ⊆ Ã_{j−1}, so A_j ⊆ Ã_{j−1}. Also K_j ⊆ Z(Ã_{j−1}) ⊆ Ã_{j−1}. (2) K_j ⊆ Z(Ã_{j−1}) commutes with Ã_{j−1} ⊇ A_j, and K_j is commutative, so K_j commutes with the generators of Ã_j. The product form follows because K_j commutes with A_j. (3) σ = ∅ is immediate. For σ = survivors, induct on j. Survivor t's old shells, joined with the fiber indicator e_{F_j(t)}, generate the shells of t together with the remainder F_j(t) \ F_{j−1}(t) = A_j(t), and the blocks of removed owners lie only inside that remainder. For σ = all, Ã_0 = B_0 is abelian, so Z(Ã_0) = B_0 is kept forever. (4) Z(A_{j−1}) ⊆ A_j by Lemma 12.1, so K_j ⊆ A_j at each step, and by induction Ã = A. (5) is Lemma 13.1(3) applied to Ã_{j−1} ⊇ Ã_j. ∎
+
+**What this changes.** The history readings of section 9 were introduced as readings of premise R. Theorem 13.3 shows they are not extra registers attached by hand. Each one is the closure of the inherited restriction chain under a retention selection. The only extra datum is σ, and in the tree σ = survivors is pinned by earned facts: survivors are defined by (E1) stable addresses, and ownership by (E2) and A (Prop 10.2). So R_inc^− is the **survivor closure** of the P1 chain. The premise of COMPATIBLE_FIBER_RETENTION.md becomes one sentence: the survivor's retained unit is a selected sector. Lemma 13.1 shows this sentence is exactly what the bare chain lacks at a merge, and Theorem 13.3(4) shows the pinching chain never needs it.
+
+### 13.3 Witness D: a transfer that needs both sides
+
+Product frame (premise J, stated below): tree atoms ⊗ the v15.16 record system, A_j = B_j ⊗ A_{S_j} on C^{X_0} ⊗ C^16, with the b_r basis and bits ordered A1, A2, B1, B2 as in witness C. By Theorem 13.3, the survivor closure of the product chain is (shell algebra) ⊗ A_{S_j}: closure acts on the tree factor only, because Z(A_{S_{j−1}}) ⊆ A_{S_j}.
+
+Chain o ← a ← u. Preparations ρ_k = |u⟩⟨u| ⊗ |ψ_k⟩⟨ψ_k|, with ψ_0, ψ_1 from witness C. Receiver: owner a, initially holding no weight in either preparation, so it is uninformed. Step options:
+
+| Step applied | Owner a's central weights on A1A2 = 00, 01, 10, 11 (k = 0 / k = 1) | C (owner a, trace norm) | G (global) |
+| --- | --- | --- | --- |
+| prune u only (S = ∅) | (1) / (1) on the merged sector {a, u} | 0 | 2 |
+| pinch {A1, A2} only | (0, 0, 0, 0) / (0, 0, 0, 0) | 0 | 2 |
+| prune u and pinch {A1, A2} | (½, 0, ½, 0) / (0, ½, 0, ½) | 2 | 2 |
+
+G_0 = 2, since ψ_0 ⊥ ψ_1. Neither inherited operation alone informs a. Pruning relocates u's weight into a's fiber but carries only the total, which is the same in both preparations. Pinching makes the A2 population central, but only under u's sector. Both together, in either order or in one composite step, give a the full 1 bit at balanced prior, while the global retained distinguishability stays at 2. So the distinction is moved twice, from a removed atom to a survivor (Theorem 11.5) and from noncentral to central (Theorem 12.2, item 5), and created nowhere. Here R_min already suffices, because the separating labels come from the pinching side. Closure matters when the tree side has witness B's structure, two removed atoms in one fiber at different steps.
+
+Scratch check (`/tmp/chk6.py`, not committed; independent producer and checker code comes at freeze): on 500 random trees with random closed simultaneous-leaf pruning sequences, the survivor closure was a partition at every step, coarsened the previous closure, and kept every survivor-owned block, with zero violations. The witness D table values were reproduced numerically.
+
+### 13.4 Mission ledger after draft 6
+
+| Ingredient | Status |
+| --- | --- |
+| Native distinction | Not-yet-central populations (pinching) or grade on removed atoms (tree). Preparability G is ASSUMED. |
+| Update rule | Restriction to the inherited decreasing chain (P1 pruning, E_S pinching, or both): EARNED. The record reading is now the closure under σ (Theorem 13.3). σ = survivors is fixed by (E1) and (E2). The order and occurrence of steps are still SUPPLIED. |
+| Retained consequence | The receiver's central weight vector, nondecreasing in information on selected corners (Theorem 13.3(2)). |
+| Receiver and access | A selected central sector. Access to it remains premise A or RCR (actual single record), and is not derived. |
+| Separation | Exact criteria: Cor 11.2/11.3 (tree), Theorem 12.2(4) (pinching), and products of the two (witness D). |
+| No global creation | G̃_j is nonincreasing and bounded by G_0 for every σ (Theorem 13.3(1)). |
+| New premise J | The product frame, in which tree atoms carry the v15.16 record system. It is used only for witness D, and it is not inherited. Witness D is conditional on J; Theorem 13.3 is not. |
+
+Open premises: A (or RCR), G, J (for witness D only), and the supplied order and occurrence of steps. Inherited-text pins: σ = survivors from (E1) and (E2) and ownership from Prop 10.2.
+
+### 13.5 Next (one per run)
+
+1. Freeze sections 0 to 13. Preregister Thm 11.1, Cor 11.2 and 11.3, Thm 11.5, Prop 11.6, Lemma 12.1, Thm 12.2, Lemma 13.1 and Thm 13.3, together with witnesses A to D, as a finite declared universe: all trees of up to 7 atoms with all closed pruning sequences, all orderings of the four v15.16 bits, and the witness D product.
+2. Write independent producer and checker code. Send the exact frozen text to Gemini (gemini-3.1-pro-preview) via Actions, asking for reconstruction, counterexamples and inserted mechanisms. Then audit and read back.
