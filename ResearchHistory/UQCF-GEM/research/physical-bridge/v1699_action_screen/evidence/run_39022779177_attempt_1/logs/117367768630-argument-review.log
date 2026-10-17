@@ -1,0 +1,211 @@
+﻿2026-10-17T09:52:52.8560466Z Current runner version: '2.337.0'
+2026-10-17T09:52:52.8595165Z ##[group]Runner Image Provisioner
+2026-10-17T09:52:52.8596883Z Hosted Compute Agent
+2026-10-17T09:52:52.8597933Z Version: 20261012.601
+2026-10-17T09:52:52.8598960Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-17T09:52:52.8600327Z Build Date: 2026-10-12T17:48:21Z
+2026-10-17T09:52:52.8601620Z Worker ID: {4d87cde8-fa4b-40ee-98c4-9f9f6ae05786}
+2026-10-17T09:52:52.8602915Z Region: eastus
+2026-10-17T09:52:52.8603847Z Cloud: Azure
+2026-10-17T09:52:52.8604812Z ##[endgroup]
+2026-10-17T09:52:52.8607580Z ##[group]Operating System
+2026-10-17T09:52:52.8608730Z Ubuntu
+2026-10-17T09:52:52.8610164Z 24.04.5
+2026-10-17T09:52:52.8611099Z LTS
+2026-10-17T09:52:52.8612049Z ##[endgroup]
+2026-10-17T09:52:52.8612986Z ##[group]Runner Image
+2026-10-17T09:52:52.8613957Z Image: ubuntu-24.04
+2026-10-17T09:52:52.8615044Z Version: 20261012.334.1
+2026-10-17T09:52:52.8617408Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-17T09:52:52.8620289Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-17T09:52:52.8622124Z ##[endgroup]
+2026-10-17T09:52:52.8624056Z ##[group]GITHUB_TOKEN Permissions
+2026-10-17T09:52:52.8627304Z Actions: read
+2026-10-17T09:52:52.8628339Z Contents: read
+2026-10-17T09:52:52.8629345Z Metadata: read
+2026-10-17T09:52:52.8630344Z ##[endgroup]
+2026-10-17T09:52:52.8633350Z Secret source: Actions
+2026-10-17T09:52:52.8634939Z Cache mode: write
+2026-10-17T09:52:52.8636782Z Prepare workflow directory
+2026-10-17T09:52:52.9333795Z Prepare all required actions
+2026-10-17T09:52:52.9382659Z Getting action download info
+2026-10-17T09:52:53.0920842Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-17T09:52:53.1819566Z Download action repository 'actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2026-10-17T09:52:53.3648134Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-17T09:52:53.5702074Z Complete job name: argument-review
+2026-10-17T09:52:53.6409283Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-10-17T09:52:53.6410347Z with:
+2026-10-17T09:52:53.6410835Z   ref: 7ccec8087a377b1a7e9e7c3761555b14cb53c572
+2026-10-17T09:52:53.6411448Z   persist-credentials: false
+2026-10-17T09:52:53.6412326Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen
+.github
+
+2026-10-17T09:52:53.6413285Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-17T09:52:53.6417294Z   token: ***
+2026-10-17T09:52:53.6417776Z   ssh-strict: true
+2026-10-17T09:52:53.6418220Z   ssh-user: git
+2026-10-17T09:52:53.6418645Z   clean: true
+2026-10-17T09:52:53.6419101Z   sparse-checkout-cone-mode: true
+2026-10-17T09:52:53.6419630Z   fetch-depth: 1
+2026-10-17T09:52:53.6420085Z   fetch-tags: false
+2026-10-17T09:52:53.6420535Z   show-progress: true
+2026-10-17T09:52:53.6420989Z   lfs: false
+2026-10-17T09:52:53.6421450Z   submodules: false
+2026-10-17T09:52:53.6421951Z   set-safe-directory: true
+2026-10-17T09:52:53.6422498Z   allow-unsafe-pr-checkout: false
+2026-10-17T09:52:53.6423294Z env:
+2026-10-17T09:52:53.6423836Z   UQCF_WORKFLOW_SHA: 7ccec8087a377b1a7e9e7c3761555b14cb53c572
+2026-10-17T09:52:53.6424492Z ##[endgroup]
+2026-10-17T09:52:53.7434407Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-17T09:52:53.7436264Z ##[group]Getting Git version info
+2026-10-17T09:52:53.7437484Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-17T09:52:53.7438727Z [command]/usr/bin/git version
+2026-10-17T09:52:53.7532908Z git version 2.55.0
+2026-10-17T09:52:53.7558029Z ##[endgroup]
+2026-10-17T09:52:53.7577429Z Temporarily overriding HOME='/home/runner/work/_temp/6ff542c6-208e-4cb5-9cf2-b298e08093b5' before making global git config changes
+2026-10-17T09:52:53.7580223Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-17T09:52:53.7583198Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-17T09:52:53.7642704Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-17T09:52:53.7647353Z ##[group]Initializing the repository
+2026-10-17T09:52:53.7652775Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-17T09:52:53.7768805Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-17T09:52:53.7770632Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-17T09:52:53.7772296Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-17T09:52:53.7773636Z hint: call:
+2026-10-17T09:52:53.7774355Z hint:
+2026-10-17T09:52:53.7775150Z hint: 	git config --global init.defaultBranch <name>
+2026-10-17T09:52:53.7775791Z hint:
+2026-10-17T09:52:53.7776759Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-17T09:52:53.7777736Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-17T09:52:53.7778549Z hint:
+2026-10-17T09:52:53.7778985Z hint: 	git branch -m <name>
+2026-10-17T09:52:53.7779478Z hint:
+2026-10-17T09:52:53.7780118Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-17T09:52:53.7781187Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-17T09:52:53.7786280Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-17T09:52:53.7841213Z ##[endgroup]
+2026-10-17T09:52:53.7842139Z ##[group]Disabling automatic garbage collection
+2026-10-17T09:52:53.7846022Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-17T09:52:53.7881262Z ##[endgroup]
+2026-10-17T09:52:53.7882110Z ##[group]Setting up auth
+2026-10-17T09:52:53.7888966Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-17T09:52:53.7923941Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-17T09:52:53.8368945Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-17T09:52:53.8409666Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-17T09:52:53.8669640Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-17T09:52:53.8712689Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-17T09:52:53.8975999Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-17T09:52:53.9022896Z ##[endgroup]
+2026-10-17T09:52:53.9024238Z ##[group]Fetching the repository
+2026-10-17T09:52:53.9034846Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin 7ccec8087a377b1a7e9e7c3761555b14cb53c572
+2026-10-17T09:52:54.4102521Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-17T09:52:54.4108998Z  * branch            7ccec8087a377b1a7e9e7c3761555b14cb53c572 -> FETCH_HEAD
+2026-10-17T09:52:54.4113212Z ##[endgroup]
+2026-10-17T09:52:54.4115078Z ##[group]Determining the checkout info
+2026-10-17T09:52:54.4117407Z ##[endgroup]
+2026-10-17T09:52:54.4119115Z ##[group]Setting up sparse checkout
+2026-10-17T09:52:54.4150656Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen .github
+2026-10-17T09:52:54.7632108Z ##[endgroup]
+2026-10-17T09:52:54.7633728Z ##[group]Checking out the ref
+2026-10-17T09:52:54.7635996Z [command]/usr/bin/git checkout --progress --force 7ccec8087a377b1a7e9e7c3761555b14cb53c572
+2026-10-17T09:52:55.3771758Z Note: switching to '7ccec8087a377b1a7e9e7c3761555b14cb53c572'.
+2026-10-17T09:52:55.3772569Z 
+2026-10-17T09:52:55.3773120Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-17T09:52:55.3774180Z changes and commit them, and you can discard any commits you make in this
+2026-10-17T09:52:55.3775162Z state without impacting any branches by switching back to a branch.
+2026-10-17T09:52:55.3775732Z 
+2026-10-17T09:52:55.3776110Z If you want to create a new branch to retain commits you create, you may
+2026-10-17T09:52:55.3777273Z do so (now or later) by using -c with the switch command. Example:
+2026-10-17T09:52:55.3777770Z 
+2026-10-17T09:52:55.3777996Z   git switch -c <new-branch-name>
+2026-10-17T09:52:55.3778347Z 
+2026-10-17T09:52:55.3778575Z Or undo this operation with:
+2026-10-17T09:52:55.3778919Z 
+2026-10-17T09:52:55.3779099Z   git switch -
+2026-10-17T09:52:55.3779357Z 
+2026-10-17T09:52:55.3779845Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-17T09:52:55.3780445Z 
+2026-10-17T09:52:55.3780916Z HEAD is now at 7ccec80 Run gated Gemini review of frozen V1699.14 analytical source audit
+2026-10-17T09:52:55.3787458Z ##[endgroup]
+2026-10-17T09:52:55.3844170Z [command]/usr/bin/git log -1 --format=%H
+2026-10-17T09:52:55.3872201Z 7ccec8087a377b1a7e9e7c3761555b14cb53c572
+2026-10-17T09:52:55.3881096Z ##[group]Removing auth
+2026-10-17T09:52:55.3884884Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-17T09:52:55.3918029Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-17T09:52:55.4156585Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-17T09:52:55.4186615Z http.https://github.com/.extraheader
+2026-10-17T09:52:55.4195118Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-17T09:52:55.4229785Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-17T09:52:55.4461001Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-17T09:52:55.4497271Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-17T09:52:55.4725409Z ##[endgroup]
+2026-10-17T09:52:55.4971682Z ##[group]Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+2026-10-17T09:52:55.4972217Z with:
+2026-10-17T09:52:55.4972472Z   name: v1699-integrity-1
+2026-10-17T09:52:55.4972762Z   path: v1699_integrity
+2026-10-17T09:52:55.5038115Z   merge-multiple: false
+2026-10-17T09:52:55.5038553Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-17T09:52:55.5039014Z   run-id: 39022779177
+2026-10-17T09:52:55.5039317Z env:
+2026-10-17T09:52:55.5039687Z   UQCF_WORKFLOW_SHA: 7ccec8087a377b1a7e9e7c3761555b14cb53c572
+2026-10-17T09:52:55.5040121Z ##[endgroup]
+2026-10-17T09:52:55.6508429Z Downloading single artifact
+2026-10-17T09:52:55.6654442Z (node:2403) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-17T09:52:55.6655947Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-17T09:52:55.7403553Z Preparing to download the following artifacts:
+2026-10-17T09:52:55.7405846Z - v1699-integrity-1 (ID: 12097492160, Size: 3994, Expected Digest: sha256:1d98a9242dabd26da7a26be5b88a6c1f74bfa8c99fad19f34f467c518f38bf90)
+2026-10-17T09:52:55.8730618Z Redirecting to blob download url: https://productionresultssa9.blob.core.windows.net/actions-results/bf9ec2e8-1cb7-8fe6-8e3e-4ae2403a80ab/workflow-job-run-f0eee311-41b3-5601-9bdb-bb6cbc1ec57e/artifacts/aee128770cc367a3d1c27a04cbbc5390783f63ed8b3ec921eec4d5e5e2b657b2.zip
+2026-10-17T09:52:55.8733016Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/v1699_integrity
+2026-10-17T09:52:55.9211853Z (node:2403) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-17T09:52:55.9291542Z SHA256 digest of downloaded artifact is 1d98a9242dabd26da7a26be5b88a6c1f74bfa8c99fad19f34f467c518f38bf90
+2026-10-17T09:52:55.9292539Z Artifact download completed successfully.
+2026-10-17T09:52:55.9293184Z Total of 1 artifact(s) downloaded
+2026-10-17T09:52:55.9297922Z Download artifact has finished successfully
+2026-10-17T09:52:55.9430263Z ##[group]Run python3 .github/scripts/uqcf_v1699_action_review.py
+2026-10-17T09:52:55.9431051Z [36;1mpython3 .github/scripts/uqcf_v1699_action_review.py[0m
+2026-10-17T09:52:55.9748998Z shell: /usr/bin/bash -e {0}
+2026-10-17T09:52:55.9749338Z env:
+2026-10-17T09:52:55.9749703Z   UQCF_WORKFLOW_SHA: 7ccec8087a377b1a7e9e7c3761555b14cb53c572
+2026-10-17T09:52:55.9750467Z   GEMINI_API_KEY: ***
+2026-10-17T09:52:55.9750775Z ##[endgroup]
+2026-10-17T09:53:35.7722368Z Independent Gemini whole-argument review ACCEPTED; full evidence retained as artifacts.
+2026-10-17T09:53:35.7898900Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-17T09:53:35.7899338Z with:
+2026-10-17T09:53:35.7899551Z   name: v1699-review-1
+2026-10-17T09:53:35.7899777Z   path: v1699_review
+2026-10-17T09:53:35.7900012Z   if-no-files-found: error
+2026-10-17T09:53:35.7900266Z   retention-days: 90
+2026-10-17T09:53:35.7900486Z   compression-level: 6
+2026-10-17T09:53:35.7900706Z   overwrite: false
+2026-10-17T09:53:35.7900928Z   include-hidden-files: false
+2026-10-17T09:53:35.7901179Z env:
+2026-10-17T09:53:35.7901435Z   UQCF_WORKFLOW_SHA: 7ccec8087a377b1a7e9e7c3761555b14cb53c572
+2026-10-17T09:53:35.7901778Z ##[endgroup]
+2026-10-17T09:53:35.9512578Z (node:2423) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-17T09:53:35.9513578Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-17T09:53:35.9601183Z With the provided path, there will be 8 files uploaded
+2026-10-17T09:53:35.9608197Z Artifact name is valid!
+2026-10-17T09:53:35.9608887Z Root directory input is valid!
+2026-10-17T09:53:36.1517337Z Beginning upload of artifact content to blob storage
+2026-10-17T09:53:36.1917623Z (node:2423) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-17T09:53:36.2418493Z Uploaded bytes 55310
+2026-10-17T09:53:36.2602471Z Finished uploading artifact content to blob storage!
+2026-10-17T09:53:36.2603592Z SHA256 digest of uploaded artifact zip is 7f328ce8afed2780dd286380e8240747e73bc834bb2d410a1fd76824dd5d87ab
+2026-10-17T09:53:36.2604655Z Finalizing artifact upload
+2026-10-17T09:53:36.4577447Z Artifact v1699-review-1.zip successfully finalized. Artifact ID 12097436556
+2026-10-17T09:53:36.4578232Z Artifact v1699-review-1 has been successfully uploaded! Final size is 55310 bytes. Artifact ID is 12097436556
+2026-10-17T09:53:36.4579166Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39022779177/artifacts/12097436556
+2026-10-17T09:53:36.4769701Z Post job cleanup.
+2026-10-17T09:53:36.5609137Z [command]/usr/bin/git version
+2026-10-17T09:53:36.5652499Z git version 2.55.0
+2026-10-17T09:53:36.5695983Z Temporarily overriding HOME='/home/runner/work/_temp/2e133903-d11f-4911-a838-b4329f42e8bb' before making global git config changes
+2026-10-17T09:53:36.5697617Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-17T09:53:36.5701865Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-17T09:53:36.5741081Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-17T09:53:36.5776571Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-17T09:53:36.6040858Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-17T09:53:36.6077536Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-17T09:53:36.6355836Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-17T09:53:36.6395751Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-17T09:53:36.6852319Z Cleaning up orphan processes
+2026-10-17T09:53:36.7157722Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

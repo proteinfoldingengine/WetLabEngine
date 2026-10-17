@@ -1,0 +1,469 @@
+{
+  "baseline": "f49c5d5fb29bb4113803de3f0d9237bd1ca8ab3f",
+  "checked_remote_files": [
+    {
+      "bytes": 2908,
+      "git_blob": "97960868e620f9f5c706d974957f55e7a9276c6c",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/source_lock.json",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "cfe8ecf303abbbdef0f602c0493eefbe96b735eaa46a1c05dcbb8874d8ef2d97"
+    },
+    {
+      "bytes": 40015,
+      "git_blob": "c38408831ebdfd73a0fd7924269ba73b07da287c",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/source_packet.json",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "c575fe7a8be12b7c0d518df47a46df16b80027db836df63a757ecdb96ad7fce3"
+    },
+    {
+      "bytes": 8559,
+      "git_blob": "1ff80c0647f8e34f5a7a363920c7f13a34451bf0",
+      "path": ".github/scripts/uqcf_v1699_action_integrity.py",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "4b3e74c2ab46a0f4e23574b67aba31a339635c07eefebcbea46fad16704bf868"
+    },
+    {
+      "bytes": 21154,
+      "git_blob": "77bca61b421cb051325599244643785e21f0c90b",
+      "path": ".github/scripts/uqcf_v1699_action_publication.py",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "cafc3524f5bd5da03684950b2fec95f5eebef39672a926f14e997d9e4393e628"
+    },
+    {
+      "bytes": 8805,
+      "git_blob": "19c275676dab60b0d1b219b77b33adf984d4e121",
+      "path": ".github/scripts/uqcf_v1699_action_review.py",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "3cb9d5cb9e4e7e1db8e51f41477f2489c4835d7ac391ac36f0e5c8e86b91b397"
+    },
+    {
+      "bytes": 19821,
+      "git_blob": "9405d1cb5260c843d60231d0dcbcce84bbd4be9e",
+      "path": ".github/scripts/uqcf_v1699_action_tests.py",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "6aeebe034897346cef968b611b5d18a96d7b2ab2a7347c3dcf2df61cc4038407"
+    },
+    {
+      "bytes": 4281,
+      "git_blob": "1d811733a3d75c9216d9167ce6f236b62b7436a4",
+      "path": ".github/workflows/uqcf-gem-v1699-action-screen.yml",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "552f0659abd7b8bb28d69e8b140d460409ecfe68bd8c98615fc3443d3c18dcc6"
+    },
+    {
+      "bytes": 4942,
+      "git_blob": "1ef03d708874b58afa2c7f09857d8c32077a3be2",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/FREEZE.md",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "0fc1adb1e8e44b0df6fcaeff6e918ff8f46cd7700dd6ea345e310ee7c1e5e9d4"
+    },
+    {
+      "bytes": 12457,
+      "git_blob": "8968a679fca271500bfddf63e97b946d1d612f1e",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/RESULT.md",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "f048056ff68364fa9f5afe8a7b873d6ed308183dd8ff90bb446ce279bbb3b466"
+    },
+    {
+      "bytes": 37023,
+      "git_blob": "c42caf6f7f2c917dffc3c1ae31b1fe84e507b578",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1689_15_common_generator_structural_emitter_package.zip",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "d4e289478ba61af0f453e6abc000665bdb816e207ff1416668d3ab2310750a47"
+    },
+    {
+      "bytes": 4468,
+      "git_blob": "2d53f2f7648af43675b3ed1442541fc9eff857de",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1689_16_common_generator_postmortem_package.zip",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "84e662f75ab6f5f56a06d484ff848a0ed85b3cd3fc44e56047a3a5cd15f9df29"
+    },
+    {
+      "bytes": 4786,
+      "git_blob": "5d9bfb53316e48e460242d8f06f72e3cdfa15281",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1698_59_provenance_witness_filling_rule_derivation_package.zip",
+      "ref": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+      "sha256": "368cddf88c6ae8e764a508313d2397c6b0edd5410a0dbfe62be7ea259bb1e904"
+    },
+    {
+      "bytes": 12457,
+      "git_blob": "8968a679fca271500bfddf63e97b946d1d612f1e",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/RESULT.md",
+      "ref": "8d9184fd0d8416cbb998837fc1684bbfd5c0ea4c",
+      "sha256": "f048056ff68364fa9f5afe8a7b873d6ed308183dd8ff90bb446ce279bbb3b466"
+    },
+    {
+      "bytes": 4942,
+      "git_blob": "1ef03d708874b58afa2c7f09857d8c32077a3be2",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/FREEZE.md",
+      "ref": "8d9184fd0d8416cbb998837fc1684bbfd5c0ea4c",
+      "sha256": "0fc1adb1e8e44b0df6fcaeff6e918ff8f46cd7700dd6ea345e310ee7c1e5e9d4"
+    },
+    {
+      "bytes": 40015,
+      "git_blob": "c38408831ebdfd73a0fd7924269ba73b07da287c",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/source_packet.json",
+      "ref": "8d9184fd0d8416cbb998837fc1684bbfd5c0ea4c",
+      "sha256": "c575fe7a8be12b7c0d518df47a46df16b80027db836df63a757ecdb96ad7fce3"
+    },
+    {
+      "bytes": 37023,
+      "git_blob": "c42caf6f7f2c917dffc3c1ae31b1fe84e507b578",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1689_15_common_generator_structural_emitter_package.zip",
+      "ref": "8d9184fd0d8416cbb998837fc1684bbfd5c0ea4c",
+      "sha256": "d4e289478ba61af0f453e6abc000665bdb816e207ff1416668d3ab2310750a47"
+    },
+    {
+      "bytes": 4468,
+      "git_blob": "2d53f2f7648af43675b3ed1442541fc9eff857de",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1689_16_common_generator_postmortem_package.zip",
+      "ref": "8d9184fd0d8416cbb998837fc1684bbfd5c0ea4c",
+      "sha256": "84e662f75ab6f5f56a06d484ff848a0ed85b3cd3fc44e56047a3a5cd15f9df29"
+    },
+    {
+      "bytes": 4786,
+      "git_blob": "5d9bfb53316e48e460242d8f06f72e3cdfa15281",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1698_59_provenance_witness_filling_rule_derivation_package.zip",
+      "ref": "8d9184fd0d8416cbb998837fc1684bbfd5c0ea4c",
+      "sha256": "368cddf88c6ae8e764a508313d2397c6b0edd5410a0dbfe62be7ea259bb1e904"
+    },
+    {
+      "bytes": 1736,
+      "git_blob": "08ae1b4777d5c0c8df6c74284ada0e61b77a0932",
+      "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/V1699_Pillar2_package/V1699_14_ACTION_PRINCIPLE_REPORT.md",
+      "ref": "f49c5d5fb29bb4113803de3f0d9237bd1ca8ab3f",
+      "sha256": "1ad0f4ae6181934a38f1f4ebe443ec5895417c05be3ce80ad19cd84b75f2a407"
+    },
+    {
+      "bytes": 23389,
+      "git_blob": "3ba128921aa9fc3b9b51ad75319fdf3f2a818ab8",
+      "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/V1699_Pillar2_package/V1699_14_retained_action_principle.py",
+      "ref": "f49c5d5fb29bb4113803de3f0d9237bd1ca8ab3f",
+      "sha256": "00a7fde7aa6bd77680362d2db8ab117eb113ff18d106a9cd6f3f75a4407f8561"
+    },
+    {
+      "bytes": 37023,
+      "git_blob": "c42caf6f7f2c917dffc3c1ae31b1fe84e507b578",
+      "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1689_15_common_generator_structural_emitter_package.zip",
+      "ref": "f49c5d5fb29bb4113803de3f0d9237bd1ca8ab3f",
+      "sha256": "d4e289478ba61af0f453e6abc000665bdb816e207ff1416668d3ab2310750a47"
+    },
+    {
+      "bytes": 4468,
+      "git_blob": "2d53f2f7648af43675b3ed1442541fc9eff857de",
+      "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1689_16_common_generator_postmortem_package.zip",
+      "ref": "f49c5d5fb29bb4113803de3f0d9237bd1ca8ab3f",
+      "sha256": "84e662f75ab6f5f56a06d484ff848a0ed85b3cd3fc44e56047a3a5cd15f9df29"
+    },
+    {
+      "bytes": 4786,
+      "git_blob": "5d9bfb53316e48e460242d8f06f72e3cdfa15281",
+      "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1698_59_provenance_witness_filling_rule_derivation_package.zip",
+      "ref": "f49c5d5fb29bb4113803de3f0d9237bd1ca8ab3f",
+      "sha256": "368cddf88c6ae8e764a508313d2397c6b0edd5410a0dbfe62be7ea259bb1e904"
+    }
+  ],
+  "commit_author": "proteinfolding-gpt",
+  "commit_committer": "proteinfolding-gpt",
+  "freeze_ancestry_status": "ahead",
+  "freeze_sha": "8d9184fd0d8416cbb998837fc1684bbfd5c0ea4c",
+  "independent_input_manifest": {
+    ".github/scripts/uqcf_v1699_action_integrity.py": {
+      "bytes": 8559,
+      "git_blob": "1ff80c0647f8e34f5a7a363920c7f13a34451bf0",
+      "sha256": "4b3e74c2ab46a0f4e23574b67aba31a339635c07eefebcbea46fad16704bf868"
+    },
+    ".github/scripts/uqcf_v1699_action_publication.py": {
+      "bytes": 21154,
+      "git_blob": "77bca61b421cb051325599244643785e21f0c90b",
+      "sha256": "cafc3524f5bd5da03684950b2fec95f5eebef39672a926f14e997d9e4393e628"
+    },
+    ".github/scripts/uqcf_v1699_action_review.py": {
+      "bytes": 8805,
+      "git_blob": "19c275676dab60b0d1b219b77b33adf984d4e121",
+      "sha256": "3cb9d5cb9e4e7e1db8e51f41477f2489c4835d7ac391ac36f0e5c8e86b91b397"
+    },
+    ".github/scripts/uqcf_v1699_action_tests.py": {
+      "bytes": 19821,
+      "git_blob": "9405d1cb5260c843d60231d0dcbcce84bbd4be9e",
+      "sha256": "6aeebe034897346cef968b611b5d18a96d7b2ab2a7347c3dcf2df61cc4038407"
+    },
+    ".github/workflows/uqcf-gem-v1699-action-screen.yml": {
+      "bytes": 4281,
+      "git_blob": "1d811733a3d75c9216d9167ce6f236b62b7436a4",
+      "sha256": "552f0659abd7b8bb28d69e8b140d460409ecfe68bd8c98615fc3443d3c18dcc6"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/FREEZE.md": {
+      "bytes": 4942,
+      "git_blob": "1ef03d708874b58afa2c7f09857d8c32077a3be2",
+      "sha256": "0fc1adb1e8e44b0df6fcaeff6e918ff8f46cd7700dd6ea345e310ee7c1e5e9d4"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/RESULT.md": {
+      "bytes": 12457,
+      "git_blob": "8968a679fca271500bfddf63e97b946d1d612f1e",
+      "sha256": "f048056ff68364fa9f5afe8a7b873d6ed308183dd8ff90bb446ce279bbb3b466"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/source_lock.json": {
+      "bytes": 2908,
+      "git_blob": "97960868e620f9f5c706d974957f55e7a9276c6c",
+      "sha256": "cfe8ecf303abbbdef0f602c0493eefbe96b735eaa46a1c05dcbb8874d8ef2d97"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/source_packet.json": {
+      "bytes": 40015,
+      "git_blob": "c38408831ebdfd73a0fd7924269ba73b07da287c",
+      "sha256": "c575fe7a8be12b7c0d518df47a46df16b80027db836df63a757ecdb96ad7fce3"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1689_15_common_generator_structural_emitter_package.zip": {
+      "bytes": 37023,
+      "git_blob": "c42caf6f7f2c917dffc3c1ae31b1fe84e507b578",
+      "sha256": "d4e289478ba61af0f453e6abc000665bdb816e207ff1416668d3ab2310750a47"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1689_16_common_generator_postmortem_package.zip": {
+      "bytes": 4468,
+      "git_blob": "2d53f2f7648af43675b3ed1442541fc9eff857de",
+      "sha256": "84e662f75ab6f5f56a06d484ff848a0ed85b3cd3fc44e56047a3a5cd15f9df29"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1698_59_provenance_witness_filling_rule_derivation_package.zip": {
+      "bytes": 4786,
+      "git_blob": "5d9bfb53316e48e460242d8f06f72e3cdfa15281",
+      "sha256": "368cddf88c6ae8e764a508313d2397c6b0edd5410a0dbfe62be7ea259bb1e904"
+    }
+  },
+  "independent_source_manifest": {
+    "archives": [
+      {
+        "all_zip_members": [
+          {
+            "bytes": 2720,
+            "name": "V1689_15_COMMON_GENERATOR_STRUCTURAL_EMITTER_REPORT.md",
+            "sha256": "fa6964c12d5328a3de9315e978550f406d3ce387889453c6ba4f0eee1c32bc7f"
+          },
+          {
+            "bytes": 2162,
+            "name": "V1689_15_SUMMARY.json",
+            "sha256": "3ff71f58156575ed048a9cf2e4a6a3770051d2c951d1e4816e44626319ddfb43"
+          },
+          {
+            "bytes": 777,
+            "name": "V1689_15_pipeline_audit_summary.csv",
+            "sha256": "4bf10898e78a5f93c32c65347e2fa822dc837d16b831b26ff6c7c4d46d35ff2f"
+          },
+          {
+            "bytes": 4256,
+            "name": "comparisons.csv",
+            "sha256": "705896113bd7df07e50da775b30e603cec33343c507712d4c0ea8434dd68fa57"
+          },
+          {
+            "bytes": 2645,
+            "name": "compatibility_residuals.csv",
+            "sha256": "f29292b203a5ecf4c91ef38c94b970c7709060a705e8dfdc355c4c058b67e44b"
+          },
+          {
+            "bytes": 4286,
+            "name": "curvatures.csv",
+            "sha256": "89f5143129d12a21b0d326d4dfbfadbbb408215a7fce80683a44a7f3db47e2fd"
+          },
+          {
+            "bytes": 44739,
+            "name": "event_actions.csv",
+            "sha256": "979a4b9a2877b657b1e51822caf04548a37bb29f4d4a8414e47dcc91a3751fe4"
+          },
+          {
+            "bytes": 8829,
+            "name": "faithfulness_defects.csv",
+            "sha256": "96b360cde60397c8f75397960106574b69ffb092de5551769777c8fb1354333c"
+          },
+          {
+            "bytes": 8815,
+            "name": "generated_algebras.csv",
+            "sha256": "b81c44c1f285724f96d4df5dc44d4990cf481d3871124196eb96b7c8988372cb"
+          },
+          {
+            "bytes": 20484,
+            "name": "generators.csv",
+            "sha256": "4ba1e0b40942e1e8b9dc0f9020110ce94d4b9891ae9e0dfa0d4c58a0031bf485"
+          },
+          {
+            "bytes": 645,
+            "name": "loops.csv",
+            "sha256": "f134c39fbbb92d5ade3e1558a4c588bfc351cd753b1c20e08437134cdc59522f"
+          },
+          {
+            "bytes": 484,
+            "name": "null_manifest.csv",
+            "sha256": "a3cc8b8a11ab84c892537c6103e3bcf2e2b1e3858735274cda33aff3cb3e1a91"
+          },
+          {
+            "bytes": 7988,
+            "name": "provenance_events.csv",
+            "sha256": "52ac613b13c647d816fe48c649422baf0efd211c1e6fda333bb16d143684417a"
+          },
+          {
+            "bytes": 2162,
+            "name": "run_manifest.json",
+            "sha256": "3ff71f58156575ed048a9cf2e4a6a3770051d2c951d1e4816e44626319ddfb43"
+          },
+          {
+            "bytes": 3299,
+            "name": "source_currents.csv",
+            "sha256": "fa9e970c98e69c396d0c84bf131d89a105e300b077dffa2b79f0c58122dcf58f"
+          },
+          {
+            "bytes": 17132,
+            "name": "transports.csv",
+            "sha256": "c411fbef94e2a9ea0a7f9e35c61dc56e7504328274f36a56eac52b468007e602"
+          }
+        ],
+        "bytes": 37023,
+        "copy_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1689_15_common_generator_structural_emitter_package.zip",
+        "git_blob": "c42caf6f7f2c917dffc3c1ae31b1fe84e507b578",
+        "members": [
+          {
+            "bytes": 2720,
+            "name": "V1689_15_COMMON_GENERATOR_STRUCTURAL_EMITTER_REPORT.md",
+            "sha256": "fa6964c12d5328a3de9315e978550f406d3ce387889453c6ba4f0eee1c32bc7f"
+          }
+        ],
+        "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1689_15_common_generator_structural_emitter_package.zip",
+        "sha256": "d4e289478ba61af0f453e6abc000665bdb816e207ff1416668d3ab2310750a47"
+      },
+      {
+        "all_zip_members": [
+          {
+            "bytes": 3363,
+            "name": "V1689_16_COMMON_GENERATOR_POSTMORTEM.md",
+            "sha256": "8c014cec7cd2cc69533a60d35853875a2da9f9765d52b5dfc2c73fac498843eb"
+          },
+          {
+            "bytes": 5517,
+            "name": "V1689_16_POSTMORTEM.json",
+            "sha256": "90c2a98a79b96cf86a51579542101e9643839e52f70bb938348279e281aa0032"
+          },
+          {
+            "bytes": 693,
+            "name": "V1689_16_decision_table.csv",
+            "sha256": "da2f3144fcbfd5c722557d7726f458d6d57bafaffb891807556176490c31ed6c"
+          }
+        ],
+        "bytes": 4468,
+        "copy_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1689_16_common_generator_postmortem_package.zip",
+        "git_blob": "2d53f2f7648af43675b3ed1442541fc9eff857de",
+        "members": [
+          {
+            "bytes": 3363,
+            "name": "V1689_16_COMMON_GENERATOR_POSTMORTEM.md",
+            "sha256": "8c014cec7cd2cc69533a60d35853875a2da9f9765d52b5dfc2c73fac498843eb"
+          }
+        ],
+        "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1689_16_common_generator_postmortem_package.zip",
+        "sha256": "84e662f75ab6f5f56a06d484ff848a0ed85b3cd3fc44e56047a3a5cd15f9df29"
+      },
+      {
+        "all_zip_members": [
+          {
+            "bytes": 6618,
+            "name": "V1698_59_PROVENANCE_WITNESS_FILLING_RULE_PROTOCOL.json",
+            "sha256": "7f55af12d883ec5db31ff1d17d6564a07a9aa96fd28dedebcbbfcddab2c7d19c"
+          },
+          {
+            "bytes": 3414,
+            "name": "V1698_59_PROVENANCE_WITNESS_FILLING_RULE_PROTOCOL.md",
+            "sha256": "96cec2ac8b3105a45709f8bdffc9880fd3da50b4f74f2e28f3e53563af020fae"
+          },
+          {
+            "bytes": 768,
+            "name": "V1698_59_witness_filling_rule_table.csv",
+            "sha256": "ccd9651b6644de38b7e3ee4923e4d1af83561cd2a9183ea3988e0794a30308c4"
+          }
+        ],
+        "bytes": 4786,
+        "copy_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/v1699_action_screen/sources/V1698_59_provenance_witness_filling_rule_derivation_package.zip",
+        "git_blob": "5d9bfb53316e48e460242d8f06f72e3cdfa15281",
+        "members": [
+          {
+            "bytes": 3414,
+            "name": "V1698_59_PROVENANCE_WITNESS_FILLING_RULE_PROTOCOL.md",
+            "sha256": "96cec2ac8b3105a45709f8bdffc9880fd3da50b4f74f2e28f3e53563af020fae"
+          }
+        ],
+        "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1698_59_provenance_witness_filling_rule_derivation_package.zip",
+        "sha256": "368cddf88c6ae8e764a508313d2397c6b0edd5410a0dbfe62be7ea259bb1e904"
+      }
+    ],
+    "baseline": "f49c5d5fb29bb4113803de3f0d9237bd1ca8ab3f",
+    "files": [
+      {
+        "bytes": 1736,
+        "git_blob": "08ae1b4777d5c0c8df6c74284ada0e61b77a0932",
+        "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/V1699_Pillar2_package/V1699_14_ACTION_PRINCIPLE_REPORT.md",
+        "sha256": "1ad0f4ae6181934a38f1f4ebe443ec5895417c05be3ce80ad19cd84b75f2a407"
+      },
+      {
+        "bytes": 23389,
+        "git_blob": "3ba128921aa9fc3b9b51ad75319fdf3f2a818ab8",
+        "path": "Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/V1699_Pillar2_package/V1699_14_retained_action_principle.py",
+        "sha256": "00a7fde7aa6bd77680362d2db8ab117eb113ff18d106a9cd6f3f75a4407f8561"
+      }
+    ]
+  },
+  "integrity_artifact_hashes": {
+    "input_manifest.json": "69023d76e0af0313e2efce31efd65fddc9369067aa3c0616e20d5b6a74cc59ee",
+    "integrity.json": "470401099e1006d074250bc6307a0dd11bb6ec484f968811484643195e277038",
+    "source_manifest.json": "6159b007478636f3d84f8de4a9a68084f9b8a2047b661057f310c3a706d2ac37"
+  },
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "remote_run": {
+    "head_sha": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+    "prerequisites": {
+      "argument-review": {
+        "conclusion": "success",
+        "head_sha": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+        "id": 117367768630,
+        "name": "argument-review",
+        "status": "completed"
+      },
+      "integrity": {
+        "conclusion": "success",
+        "head_sha": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+        "id": 117367739272,
+        "name": "integrity",
+        "status": "completed"
+      }
+    },
+    "run_attempt": "1",
+    "run_id": "39022779177",
+    "workflow_id": 387530746,
+    "workflow_path": ".github/workflows/uqcf-gem-v1699-action-screen.yml"
+  },
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "review_artifact_hashes": {
+    "input_manifest.json": "69023d76e0af0313e2efce31efd65fddc9369067aa3c0616e20d5b6a74cc59ee",
+    "model_metadata.json": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+    "prompt.txt": "2c938623ae2588ec389b307297d2736ed07aedb83e3057a77bd1bd8a091eff09",
+    "request.json": "9c8f6503d6fad3f2e5127a84ad1b6e857e09e8e6d538150133103ada470b4c12",
+    "response.json": "73ec35612d883f385e1dbf943a8effb3069cb679061f41430f3265ca51100cc6",
+    "review.txt": "0362b420820507087b2d0a5c3a3e1312c837a4dd79867e6793b2ec1323483a86",
+    "verdict.json": "e4f9557a0a580febad39e7444aabcfa245bbb6fa3d06c497a88e0a200b756ca3"
+  },
+  "review_manifest_sha256": "cd77edd8675dbdc039cce79b53c53257791e9fb0216560f9b099579f87014b89",
+  "run_attempt": "1",
+  "run_id": "39022779177",
+  "scientific_execution": false,
+  "scope": "Immutable source, document, prompt, model-response and run consistency only; no native-mechanism certification.",
+  "source_sha": "7ccec8087a377b1a7e9e7c3761555b14cb53c572",
+  "status": "PASS",
+  "verdict": {
+    "counterexamples": [],
+    "findings": [],
+    "limitations": [
+      "The audit is strictly bounded to the exact V1699.14 implementation and its specific executed branches (finite-enabled, L=I, REG=0).",
+      "The exact algebraic cancellation of the direct source-current term J against its copy in the boundary function B is a property of this specific script's construction, not a universal physical statement.",
+      "The conclusion that no native update mechanism exists is specific to this candidate script, which only computes a diagnostic coordinate q without applying it to the connection or a receiver.",
+      "The review relies on exact algebraic reconstruction of the implemented logic and does not execute the code or verify floating-point behavior."
+    ],
+    "missing_assumptions": [],
+    "verdict": "ACCEPTED"
+  },
+  "workflow_sha": "7ccec8087a377b1a7e9e7c3761555b14cb53c572"
+}
