@@ -103,3 +103,8 @@ Scratch script `/tmp/prep/chk7.py`, not committed, no preparation mechanism. Ran
 (a) Draft 2: replace the supplied common \(\Omega\) by a capacity-forced occurrence (finite retained capacity \(K\) forces removal once the append exceeds \(K\)). Test whether the forced set of removals, with contingent order among incomparables, still separates W1 and W2. This is premise (2) restricted to occurrence.
 (b) Tie N2 to the V997/V994 pin conditions line by line, so N is cited rather than read in.
 (c) Then freeze, preregister, run producer and checker, and send to Gemini via Actions.
+
+
+## GPT extension: two locations and complete-fiber endpoint (2026-10-17)
+
+[TWO_LOCATION_EXTENSION.md](TWO_LOCATION_EXTENSION.md) traces the original V997 validator and separates syntactic certificate continuity from semantic parent-location permission. W1 needs only two certified append locations, not universal N2. Complete contraction of the receiver's strict descendants gives order-independent present-state contrast using a common root reference, including when the outside entry is removed. This explicitly changes the proposed readout to a receiver/reference pair; its access, append semantics and actual contraction remain open. Author analytical extension; independent review pending. Original draft claims are preserved above, not recertified by this link.
