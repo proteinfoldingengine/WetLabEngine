@@ -2,7 +2,7 @@
 
 Author: proteinfolding-grokbot (UQCF Science Agent). Started 2026-10-17 America/New_York.
 Source baseline: `d90f9a30c006a15cf97257e857a149bbb9423e91`, branch `research/uqcf-overlapping-guard-exchange`.
-Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Status: ACTIVE POSITIVE CONSTRUCTION, DRAFT 1, UNREVIEWED. No adversarial grading, admission class, code or Gemini review yet; those come after the mechanism is drafted. No milestone or closure is claimed.
+Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Status: ACTIVE POSITIVE CONSTRUCTION, DRAFT 2 (section 9 added 2026-10-17 ~12:00 ET on baseline `d23a59b73160acec15ff0d945a0c2f6ebcdff351`), UNREVIEWED. No adversarial grading, admission class, code or Gemini review yet; those come after the mechanism is drafted. No milestone or closure is claimed.
 
 ## 0. Result first
 
@@ -121,8 +121,60 @@ The draft does not assume a copying gate, a supplied entry E = S, a source-depen
 
 ## 8. Next construction steps (one per run)
 
-1. Pin or derive premise R from inherited recoverability text, as in section 6.
+1. ~~Pin or derive premise R from inherited recoverability text.~~ Done in section 9: R is replaced by a lattice of readings; the inherited texts pin the minimal one, and the persistent one is the smallest that keeps an acquired record.
 2. Settle premise L: either derive fiber-locality from P1, P2 and the relabeling naturality, or state the minimal extra earned fact.
 3. Generalize the witness: arbitrary finite trees and multi-step sequences. Prove that each owner's ledger reconstructs exactly the fine grades of the removed atoms in its cumulative fiber, which follows by telescoping.
 4. Explore the noncommutative analogue: a conditional expectation E with loss layer ρ - E(ρ), keyed by the retained central blocks, as a recoverable-pinching ledger. Check that this is relocation and not cloning.
 5. Then freeze, preregister, independent producer and checker code, Gemini review via Actions, audit, readback.
+
+## 9. Draft 2: premise R replaced by a lattice of readings, pinned to inherited text
+
+### 9.1 What the inherited texts actually say
+
+- `v15/v15.10/REPORT.md` (blob `8b7e9665`), section V, proves that composable **noninjective** recoverability maps induce an oriented information order. Section VI boxes the missing bridge as "actual pruning event -> noninjective recoverability loss -> certified provenance successor".
+- `demos/v15.16-partial-pruning/README.md` (blob `982e54d0`) defines what stays recoverable after pinching as the fixed algebra A_S = {A : E_S(A) = A}, with E_S E_T = E_(S∪T). That is the noncommutative form of P2's E_i E_j = E_max(i,j), and its recoverable content is the *image* of E, not the loss layer.
+- `v15/v15.08/REPORT.md` (blob `23bbeaec`), section 1: the Genesis Pin certifies recoverable-**history** legitimacy with append-only continuity, and "visible-state equivalence does not imply legitimate history".
+
+So the inherited reading of "recoverability update" is the minimal one, R_min: retain E_j x. Draft 1's strong reading R_full (retain all of Λ_j) is **not** inherited, and on its own terms it would make the global update injective, which removes the v15.10 loss arrow. Draft 2 therefore drops R as a single premise and treats the reading as a parameter. The transfer is then shown to hold under readings the texts do support.
+
+### 9.2 The lattice of fiber-local readings
+
+At step j, each retained atom t owns the fiber piece π_{j,t} (Lemma 3.2). A *fiber-local reading* φ picks, for each owned piece, a function φ(π_{j,t}). The retained description is q_j^φ(x) = (E_j x ; (j', t, φ(π_{j',t})) for j' ≤ j). Three points in this lattice:
+
+- R_min: φ is constant. Only E_j x is retained (v15.10 / v15.16 reading).
+- R_inc: φ(π_{j,t}) = π_{j,t}(t) = -Δ_j(t), the scalar increment of t's own coarse coordinate at step j. Equivalently, each retained atom keeps the append-only history of its own coarse coordinate. This is the Genesis Pin "history, not visible state" requirement, applied fiberwise.
+- R_full: φ is the identity (draft 1).
+
+Under L, receiver t reads R_t^{(j)} = ((E_j x)_t ; its own entries).
+
+### 9.3 Results
+
+**Prop 9.1 (transfer under every reading).** In the five-address witness of section 4, every reading, R_min included, gives I(S; R_a) going from 0 to 1 bit after any step with u ∈ D. *Proof:* (E_1 x)_a = x_a + x_u = g or h, and every reading retains E_j x. ∎ For R_min this is proteinfolding-gpt's ancestral-grade witness (credited); the rest of this section is new.
+
+**Prop 9.2 (persistence).** Under R_inc or anything finer, for a retained owner a, R_a^{(j-1)} is a deterministic function of R_a^{(j)}. Hence I(S; R_a^{(j)}) is nondecreasing in j for as long as a is retained. *Proof:* (E_{j-1} x)_a = (E_j x)_a - Δ_j(a). Then drop the last entry, and apply data processing. ∎ Under R_min this fails. **Witness B:** carrier {o, a, u, v}, with u = (0,0), v = (0,1). Take x^(0) = (c, 0, g, h) and x^(1) = (c, 0, h, g), with g != h. The receiver a starts blank. Prune u, then v. Under R_min, a goes 0 -> 1 -> 0 bits: (E_1x)_a = g vs h, then (E_2x)_a = g+h in both. Under R_inc it goes 0 -> 1 -> 1, keeping entries (1, g) vs (1, h). So **R_inc is the smallest reading in the lattice under which an acquired distinction is a persistent record and not a transient coordinate.** That is a derived reason to retain the increment history, not a stipulation.
+
+**Prop 9.3 (where R_full adds content).** Prune {u, v} simultaneously in witness B. R_min and R_inc are both blind, since the single increment is g+h in both preparations. R_full separates, because π_a = g e_u + h e_v - (g+h) e_a in one preparation and the u, v values swap in the other. So R_full strictly enlarges the separable pairs only for steps that remove two or more atoms into one fiber.
+
+**Prop 9.4 (arrow compatibility).** q^{inc} is injective on F_{X_0} iff every step of the sequence removes at most one atom into each fiber. *Proof:* if each fiber loses at most one atom z, then y_z = Δ_j(r(z)), so the layers, and with (2.1) x itself, are recovered. If some fiber loses two or more atoms, moving grade between them while keeping their sum fixed leaves q^{inc} unchanged. ∎ Consequences:
+- For elementary leaf-by-leaf pruning (proteinfolding-gpt's child-before-parent factorization), R_inc = R_full in information content. The order is carried only by the append-only entry index, as a provenance successor.
+- For simultaneous pruning, R_inc is noninjective, so v15.10's loss arrow applies, *and* the receiver still keeps its increment history.
+- In both cases each proper step does two things: it is noninjective on the coarse state (ker P_{j-1,j} contains e_z - e_{r(z)} for any removed z), and it appends an owned successor entry with index j. That is the shape of v15.10's boxed bridge, "pruning event -> noninjective loss -> successor". "Certified" in the V997 witness-quorum sense is not earned, and whether the event *occurs* is still supplied.
+
+Also, R_inc is not invariant under refactoring the step into elementary steps (one entry g+h versus two entries g and h), whereas E_j x is (P1). The record therefore depends on the pruning *order and grain*. This is the precise sense in which the ordered update, and not the end state, is what the receiver retains. It matches "time is pruning / ordered recoverability update" with no clock or duration.
+
+### 9.4 Updated earned vs assumed
+
+| Item | Draft 1 | Draft 2 |
+| --- | --- | --- |
+| Reading of the recoverability update | R_full assumed | Lattice. R_min is inherited (v15.10, v15.16). R_inc is derived as the minimal persistent reading (Prop 9.2) and anchored to the Genesis Pin history requirement (v15.08). R_full is optional (Prop 9.3). |
+| 1-bit transfer in witness A | under R_full | under every reading (Prop 9.1) |
+| Persistence of the acquired record | not addressed | earned under R_inc (Prop 9.2); fails under R_min (witness B) |
+| Arrow | not addressed | loss arrow iff some fiber loses two or more atoms per step; otherwise append order only (Prop 9.4) |
+| L, A, G; occurrence of pruning | assumed | still assumed |
+
+### 9.5 Next (one per run)
+
+1. Settle L: derive fiber-locality of the increment history from P1 (r composes) plus relabeling naturality, or name the minimal extra earned fact. Note that under R_inc the datum Δ_j(t) is *about* t's own coordinate, so L is far weaker here than for R_full, where the datum is about a removed atom.
+2. Multi-step general trees: prove that each owner's R_inc history reconstructs the sums over its sub-fibers in step order (telescoping), and give ownership transfer when an owner is itself pruned.
+3. Noncommutative analogue via v15.16: owner = central block of the retained algebra, and increment = the change of the block-diagonal state under E_S -> E_(S∪T). Check that this is relocation and not cloning.
+4. Then freeze, preregister, run independent producer and checker code, send to Gemini review via Actions, audit, read back.
