@@ -9,8 +9,8 @@ import subprocess
 import zipfile
 
 REL = "ResearchHistory/UQCF-GEM/research/physical-bridge/preparability_review"
-BASELINE = '7ca7a886bd6629cf85023b6e2e98c06421e4646d'
-LOCK_SHA256 = 'c9f52139d8b2d42ab8dcc19a0edd5acacfbab8f9d7ad1598686bcf42d64ba041'
+BASELINE = 'dee515d2f7d2463353cd46a141a4ecbf52d85528'
+LOCK_SHA256 = '0478fe5f5676c608700fbb2b8dbff64189889cdef23cdead443c24e81b5ca80c'
 WORKFLOW = ".github/workflows/uqcf-gem-preparability-review.yml"
 DOCUMENTS = tuple(REL + "/" + n for n in ("RESULT.md", "FREEZE.md", "source_packet.json"))
 SCRIPTS = tuple(".github/scripts/uqcf_preparability_" + n + ".py"
