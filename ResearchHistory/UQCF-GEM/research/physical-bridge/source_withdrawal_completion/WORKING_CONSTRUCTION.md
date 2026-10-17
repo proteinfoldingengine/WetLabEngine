@@ -257,3 +257,8 @@ All repository paths are relative to `ResearchHistory/UQCF-GEM/` at the baseline
 - `demos/v15.56-response-selector-obstruction/identity_correspondence.py` and `augmented_lineage.py`: shared-key identity and full-lineage addressing; no cross-origin map or physical receiver access is inferred.
 
 This working construction changes the mathematical receiver interface explicitly from a label-owned complete view to a vertex-local retained support record. It derives receiver adjustment from a specified source completion and does not assert an equivalence between those record architectures. Its endpoint law and path witness are conditional analytic results. Actual source-event enactment and owned record access remain unresolved; no physical closure, independent acceptance, or numerical theorem-count increment is claimed.
+
+
+## Preparability continuation (2026-10-17)
+
+[Common-predecessor preparation](PREPARABILITY_COMMON_PREDECESSOR.md) constructs both support inputs from a common native seed while the receiver row remains unchanged. A common reference branch makes the pair inequivalent under simultaneous palette relabelling. This is relative reachability under the inherited edit grammar, not actual generation, Genesis certification, grade/quantum preparability, or receiver access. The preparation preserves the all-one profile; the reference-augmented interaction has a separately disclosed profile change. Status: author analytical construction, independent Gemini review pending.
