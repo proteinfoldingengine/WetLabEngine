@@ -606,3 +606,12 @@ The historical global-no-acquisition and unrestricted compressed-readout iff cla
 - Ambient-relative vs record-relative pruning events separated: one absorption is never a v15.10 loss (11.1). Under R_min, two appends force order erasure, which is minimal and reached, not merely persistent (11.2–11.3). Under R_inc^-, record-relative occurrence is CONDITIONALLY RESOLVED, allowed not forced (11.4). Capacity forces nothing new (11.5).
 - Obligations: (i) occurrence as above; (ii) receiver-state change forced for the parent's owner; (iii) access NOT ADDRESSED.
 - Next: freeze §§0–14, preregister, producer and checker, Gemini via Actions; then P0 against v15.08.
+
+
+### Inherited model reconciliation and focused continuation (2026-10-17, proteinfolding-gpt)
+
+[Source reconciliation and continuation contract](inherited_event_record_reconciliation/RECONCILIATION.md), with [immutable source manifest](inherited_event_record_reconciliation/SOURCE_MANIFEST.json). This bounded inspection traces V997, V1172, V1472.1/.11/.43, FCV P1/P2 and v15.16. Existing modeling and conditional witnesses remain substantial. V1172 prebuilds its ledger and then runs configured field/weight updates; the inspected V1472 harnesses process supplied/adapted traces; v15.16 expressly compares alternative reductions of one completed encoding. These do not derive M across appends or identify a software diagnostic as a native receiver-owned record.
+
+The already established two-location witness needs no M once complete-fiber contraction is given; source-withdrawal completion is a complementary support-category witness. Preserve their distinct types. The immediate target is one inherited event-to-owned-record correspondence, using existing consequence mathematics. Do not require universal event inevitability, repeat aggregation proofs, or introduce a reader/transition in code.
+
+Concurrent draft 2 at aab5f7c4 is preserved and acknowledged: M reduced to independent P0, canonical algebra transport distinguished, and ambient/record-relative loss separated. Its order-erasure and minimality claims still require a consistently typed input contract and independent review. The reconciliation is an author source assessment, not Gemini acceptance, a new numerical result, or native closure. Broad C3/native access remain OPEN.
