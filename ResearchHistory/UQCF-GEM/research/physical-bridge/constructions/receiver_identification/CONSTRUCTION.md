@@ -1,7 +1,7 @@
 # Construction: receiver identification. The inherited event names its own receiver
 
 Author: proteinfolding-grokbot (UQCF Science Agent).
-Draft 3, 2026-10-18 America/New_York (~04:00 ET loop): adds section 11 (premise G) and changes nothing in sections 0 to 9. Draft 2 (`f366da8b`, sha256 `833c011b…`) is frozen verbatim in `receiver_identification_d2_review/RESULT.md` (preregistration `7103099e`, code `33916d4e`); its review outcome is recorded in that directory, not here. Draft 1 was `512a863d`, frozen in `receiver_identification_review/RESULT.md`; draft 2 corrects an error in draft 1's Proposition 4 that draft 1's review missed (see the revision note).
+Draft 4, 2026-10-18 America/New_York (~05:00 ET loop): adds section 12 (source check for N_1(l), and the holder's climb) and changes nothing in sections 0 to 11 except a status note in section 10, item 2. Draft 3 was `947127d9` (sha256 `2fd3f0e7…`). Draft 2 (`f366da8b`, sha256 `833c011b…`) is frozen verbatim in `receiver_identification_d2_review/RESULT.md` (preregistration `7103099e`, code `33916d4e`); its review outcome is recorded in that directory, not here. Draft 1 was `512a863d`, frozen in `receiver_identification_review/RESULT.md`; draft 2 corrects an error in draft 1's Proposition 4 that draft 1's review missed (see the revision note).
 Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Target: the open premise I* of [record_access](../record_access/CONSTRUCTION.md) section 7 ("a P1 carrier address is a receiver subsystem whose state is its own grade coordinate").
 Status: **unreviewed construction draft.** No milestone, native-access closure, CLOSED/CERTIFIED status, geometry, fundamental clock, dark-matter primitive or heuristic fitting is claimed. Time = pruning / ordered recoverability update. Per Aaron's standing rule (2026-10-17 22:21 ET), the occurrence of the event is an accepted empirical input; nothing here explains its cause or an observer. Scratch checks only (section 9); independent producer/checker and Gemini come at freeze.
 
@@ -16,6 +16,10 @@ New in draft 2 (mine): Proposition 4.2, a sharp lower bound for the deterministi
 ## Revision note (draft 3)
 
 [D3] New section 11 (mine): G for this construction. Append-only extension forbids the same-carrier pair of Theorem 2 inside the pinned prefix, so its native form is a difference at an appended entry. The one-location occurrence pair (prefix P against P plus one append) needs only one legitimate append location, which is weaker than both the location-free premise N of preparability_branch_split and GPT's two-location premise, and Theorem 3 then names its single holder at every step for every history. The two-location pair has equal totals and two named holders of opposite sign until their lineages merge. This recovers the branch-split arrival criterion (its Theorem 2.2(2)) as a present-state statement. Sections 0 to 9 are unchanged from draft 2.
+
+## Revision note (draft 4)
+
+[D4] New section 12 (mine). (i) A source check of the premise N_1(l) beyond GPT's V997/v15.56 audit: the inherited stack itself records that no lawful refinement (append) morphism is typed (v15.56 `refinement_naturality.py`), and the v16.25 "refinement" is same-union cover refinement, not an append; so N_1(l) stays a premise. (ii) What the sources do supply: the FCV P2 zero extension I with P I = id is an inherited section, so the padding of Lemma 11.2 is an inherited operation, and G for Theorem 11.3 is equivalent to a fixed-carrier realizability premise R_1(e). (iii) Positive: the holder of the occurrence record is a function of the present retained view alone (factorization independent, v16.25 P3), and it climbs the ancestor chain of the source monotonically, strictly exactly when the current holder is pruned. Holding the record at a therefore certifies a fact about the receiver's own past retained structure: the whole open path from a to the source has been pruned. Sections 0 to 11 are unchanged from draft 3 apart from that status note.
 
 ## Credit: what this builds on
 
@@ -147,7 +151,7 @@ The draft 1 freeze campaign (`receiver_identification_review/`, run 39106192684)
 ## 10. Next
 
 1. (Done for draft 1, run 39106192684.) Draft 2: freeze sections 0 to 8 anew, with a P4 universe that includes several removed atoms in one fiber and a Proposition 4.2 universe, preregister, independent producer (exact enumeration over all ancestor-closed retained sets of all rooted trees up to a declared size and grade range) and checker (different algorithm, e.g. matrix form of mu_r and lineage composition), rejecting controls (wrong owner, copy instead of move, non-ancestor-closed retention, swapped lineage), then Gemini (gemini-3.1-pro-preview) via Actions on the exact frozen text.
-2. (Draft 3, section 11.) G reduced to a single legitimate append. Next: freeze section 11 with a preregistered union-carrier universe (all rooted prefixes up to a declared size, every append location or location pair, every history of up to 3 contractions written on prefix addresses), and test whether the inherited V997/v15.56 sources supply the typed event-to-tree action that premise N_1(l) needs, without re-doing GPT's two-location source audit.
+2. (Draft 3, section 11; source check done in draft 4, section 12.) G reduced to a single legitimate append. Next: freeze section 11 with a preregistered union-carrier universe (all rooted prefixes up to a declared size, every append location or location pair, every history of up to 3 contractions written on prefix addresses), and test whether the inherited V997/v15.56 sources supply the typed event-to-tree action that premise N_1(l) needs, without re-doing GPT's two-location source audit.
 
 ## 11. G: the native form of the pair, and what it needs (new in draft 3)
 
@@ -185,3 +189,45 @@ Needs: both appends legitimate (GPT's two-location premise). Gains over Theorem 
 **Status of section 11.** Earned: Proposition 11.1 (where a native difference can sit), Lemma 11.2, Theorems 11.3 and 11.4, Corollary 11.5, all from E-addr, E-ret, E-anc and sections 3 to 5. Assumed: N_1(l) for Theorem 11.3, or both appends for Theorem 11.4; the occurrence of each contraction; the contractions being written on P-addresses (source-independent, as ledger Theorem 11.5 requires). Not claimed: any native emission law for the append (the P_emit of preparability_branch_split), any derivation of N_1(l) from the V997 sources, or any order selection. Novelty: elementary linear algebra; new for UQCF only in reducing G for this construction to a single typed append premise and in naming the holder of an occurrence record at every step.
 
 Scratch check (exploratory, not preregistered, disclosed): `/tmp/rid2/chk_g.py` (seed 20261018, not committed), random prefixes with 2 to 7 nodes, random append locations, random histories of 1 to 4 contractions on P-addresses: 50,080 step checks of Theorem 11.3(a) and Lemma 11.2, Theorem 11.4(a) and (c) on every distinct-location case (9,825 merged steps), 0 violations.
+
+## 12. Source check for N_1(l), the inherited comparison map, and the holder's climb (new in draft 4)
+
+### 12.1 What the inherited sources say about N_1(l)
+
+GPT's audit (TWO_LOCATION_EXTENSION section 1) covered the V997 certificate-extension lemma and the v15.56 `source_binding.py` type. Two further inherited sources bear directly on N_1(l), both read at research head `0af09b1f` (and the v16.25 branch head `c637ac5a`):
+- **v15.56 `refinement_naturality.py`** (blob `e56c2102`, on the research branch): its own classification is `REFINEMENT_MAP_CLASS_UNDERSPECIFIED`, with `LAWFUL_REFINEMENT_MAP_ON_VERTICES_AND_EDGES` and `SOURCE_PUSHFORWARD_OR_PULLBACK_RULE` listed as missing. So the inherited stack itself records that no lawful refinement morphism (new vertices with their source values) is typed. An append under l is such a morphism.
+- **v16.25 `TYPE_AND_PROOF.md`** (blob `9dce6e32`, draft PR #69): its "refinement" is same-union cover refinement, Z_i a subset of Y_i inside a fixed union U, and its P1 "makes no claim when pruning changes the union". It is not an append.
+Conclusion: no inherited source found supplies N_1(l). It stays a typed premise, now confirmed as the stack's own recorded gap rather than an omission of this search.
+
+### 12.2 The comparison map is inherited (upgrade of Lemma 11.2)
+
+FCV PROOFS P2 (blob `a21acad7`) defines, for a retained view Y of X, the zero extension I_YX: e_y -> e_y, and proves P_XY I_YX = id_{F_Y}. It calls this "a section supplied by retention, not an arbitrary vector-space splitting".
+
+**Lemma 12.1 (naturality of the inherited section).** Let T = P plus a leaf e under l, and let X_k be a retained view of P with lifted view X_k' = X_k plus e if l is in X_k, otherwise X_k' = X_k. Then
+P_{T X_k'} I_{P T} = I_{X_k X_k'} P_{P X_k}  (as maps F_P -> F_{X_k'}).
+*Proof.* For v in P, the nearest retained ancestor of v in X_k' is the same as in X_k, because e is a leaf and is not an ancestor of any node of P. So both sides send e_v to e_{r(v)} with r(v) in X_k. QED.
+
+**Proposition 12.2 (Theorem 11.3 without a zero-grade entry).** Under N_1(l), compare the prefix history (grade x_P on P) with the appended history (grade x_T = I_{PT} x_P + w e_e on T) through the inherited section. At step k,
+P_{T X_k'} x_T - I_{X_k X_k'} P_{P X_k} x_P = w e_{h_k}, with h_k = r_{T X_k'}(e).
+*Proof.* Lemma 12.1 cancels the I x_P part; P sends e_e to e_{h_k}. QED.
+So the conclusions of Theorem 11.3 hold as a comparison between the two actual carriers P and T, using only the inherited section I. The padded zero-grade leaf of Lemma 11.2 is no longer needed, and the zero-grade scope caveat of preparability_branch_split does not enter Theorem 11.3. Equivalently, on the fixed carrier T, G for Theorem 11.3 is the realizability premise R_1(e): both I_{PT} x_P and x_T are grades of legitimate histories, where FCV states explicitly that it does not claim every signed vector is preparable. N_1(l) plus the inherited section is enough; R_1(e) is not needed separately.
+
+### 12.3 The holder is a present-state fact and climbs monotonically
+
+**Theorem 12.3 (factorization independence).** h_k depends only on the retained view X_k', not on the sequence of contractions that produced it.
+*Proof.* Retractions compose, r_{YW} = r_{ZW} o r_{YZ} (v16.25 P3; FCV P1), so the lineage image L_k(e) equals the one-step retraction r_{T X_k'}(e). QED.
+
+**Theorem 12.4 (the holder climbs).** Along any history X_0' ⊇ X_1' ⊇ ... of nested retained views of T:
+(a) h_{k+1} is h_k or a strict ancestor of h_k;
+(b) h_{k+1} = h_k exactly when h_k is in X_{k+1}'; otherwise h_{k+1} is the nearest ancestor of h_k retained in X_{k+1}', so its depth strictly decreases;
+(c) the holder never returns to a descendant of a former holder.
+*Proof.* (a) and (b): h_{k+1} = r_{X_k' X_{k+1}'}(h_k) by Theorem 12.3, and a retraction sends a node to itself if retained and to its nearest retained ancestor otherwise. (c) Depth is nonincreasing by (a). QED.
+
+**Corollary 12.5 (what holding the record certifies about the past).** A retained address a holds the occurrence record at step k (Proposition 12.2: the two histories differ at a) if and only if a is e or an ancestor of e and every node on the path from e up to a, excluding a, is absent from X_k'. Because retained views are nested, each of those nodes was pruned at some step at or before k and stays pruned.
+*Proof.* h_k = a means exactly that a is the nearest retained ancestor of e in X_k'. QED.
+
+Reading, and its limits. This is the ledger point applied to the receiver's own history. The record's value (the shift w, or the TV bound of Corollary 11.5 under nuisance) says *that* the append occurred. Its location says something about the receiver's own past retained structure, namely which part of the source's ancestry has already been pruned. The location is a function of the present retained view alone (Theorem 12.3), so reading it needs no log of the order. What it does carry is a monotone index: the holder's depth never increases (Theorem 12.4), which is the ordered recoverability update in present-state form. Pruning between incomparable branches leaves no trace in it, so the record does not fix a total order, which matches GPT's order-independent present-record contrast. For the access premise A, this gives a precise partial answer. A receiver that holds the record holds, in its own coordinate contrast, a certificate about past pruning. Whether it can read that contrast without the comparison history is still I*-b and the access premise. The contrast is a comparison between two histories, not a single-history observable.
+
+Status. Earned: Lemma 12.1, Proposition 12.2, Theorems 12.3 and 12.4, Corollary 12.5, all from FCV P1/P2 and v16.25 P3. Assumed: N_1(l) (confirmed as the stack's recorded gap in 12.1); occurrence of each contraction; contractions written on P-addresses. Novelty: elementary order theory of nearest retained ancestors. New for UQCF only in (i) the source-backed confirmation that N_1(l) is the stack's own recorded refinement gap, (ii) removing the zero-grade padding from Theorem 11.3 by the inherited FCV section, and (iii) reading the holder's monotone climb as the receiver's present certificate of past pruning.
+
+Scratch check (exploratory, not preregistered, disclosed): `/tmp/rid4/chk12.py` (seed 20261018, not committed), 4000 random prefixes with 2 to 8 nodes, a random append location, random nested histories of 1 to 5 contractions: lineage composition against the one-step retraction (Theorem 12.3), the pushforward difference w at exactly h_k (Proposition 12.2), the path criterion of Corollary 12.5 for every retained address, and the climb (Theorem 12.4), 99,683 checks, 2,717 strict climbs, 0 violations.
