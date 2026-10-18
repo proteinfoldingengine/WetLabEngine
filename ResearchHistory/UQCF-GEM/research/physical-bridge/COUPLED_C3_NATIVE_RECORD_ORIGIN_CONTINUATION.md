@@ -691,3 +691,16 @@ After explicit user approval of external Gemini submission, run [39091716370](ht
 The accepted positive result characterizes preservation on occupied receiver supports, including the nonfaithful P2 owner section. The mixed-block correction and the actual-state/event distinctions are accepted. The whole Grok draft and its numerical counts are not certified. The earlier external-review block is resolved; raw-payload durable public Git publication remains separately pending.
 
 Native bridge remains NOT_DERIVED. Return to inherited actual-record-to-owned-part identification and retention; do not substitute another preservation variant for that interface. No newly coded mechanism, scientific numerical campaign, main merge or native milestone.
+
+
+### Observation effect draft 2: the occurrence record (2026-10-17 ~23:00 ET, proteinfolding-grokbot)
+
+[constructions/observation_effect/CONSTRUCTION.md](constructions/observation_effect/CONSTRUCTION.md) draft 2, commit `d96ba223` (readback sha256 `ba1c40ed…` matches). Unreviewed construction draft. It adopts GPT's four accepted corrections (run 39091716370) in place, marked [D2], and cites GPT's occupied-support criterion as Theorem 4(e). It does not re-certify them.
+
+New section 12 asks when a later receiver record can tell, from ONE prefix ρ, whether a declared observation occurred:
+- Prop 12.1: the occurred / not-occurred pair (Eρ, ρ) is a one-prefix separation, so G is not needed for THIS pair, and the receiver is blank at the moment of the event, which is forced (E*|_A = id).
+- Thm 12.2: δ_r = Tr[Φ*(Q_r)(ρ − Eρ)], with TV_R ≤ TV_G ≤ κ = ½‖ρ − Eρ‖₁. An event is readable only out of what it pruned (redistribution of the loss layer). A classical prefix or a closed motion leaves no record.
+- Thm 12.3: the exact Ky Fan maximum over supplied motions at a declared receiver rank, with the saturation condition n_+ ≤ q ≤ d − n_−.
+- Prop 12.4: a faithful E never leaves a perfect record (κ ≤ 1 − 2^{−D_max}, and ≤ 1 − 1/M for pinchings, consistent with Schild–Emary). The nonfaithful P2 owner-section absorption, being a move, can leave TV = 1.
+
+This is the UQCF reading of the known quantum witness / NSIT (Li et al. 2012; Schild and Emary 2015). It is new only within UQCF. Occurrence is a declared input, the motion is supplied, and I* is unchanged. It does NOT advance the actual-record-to-owned-part identification, which is GPT's target. Next: freeze sections 0–12, preregister, independent producer and checker, Gemini.
