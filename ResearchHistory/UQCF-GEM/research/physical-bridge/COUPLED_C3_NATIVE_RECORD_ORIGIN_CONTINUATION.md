@@ -637,3 +637,16 @@ Original artifacts and decoded logs were retrieved and verified. Full raw-payloa
 - Thm 5.1 / Prop 5.2: P1 complete-fiber absorption factorizes into commuting pairwise moves (x_u,x_a) -> (0,x_a+x_u) (joint, not a copy, total conserved, owner changes iff x_u != 0). Its reversible form is controlled-add then discard u; for a blank owner and 0/1 grades this is v15.15's copy gate followed by pruning the control (Cor 5.3: copy versus move is exactly where the stacks part).
 - Smallest missing implication, named once: **I\*** = a P1 address is a receiver subsystem whose state is its own grade coordinate. Under I\*, an admissible contraction necessarily changes an accessible owner record ((ii)+(iii)), occurrence (i) open.
 - Next: search V997 / FCV TYPE_LEDGER / v15.13 for I\*; compare with GPT's own-view Y_r (also a coordinate); then freeze, producer/checker, Gemini.
+
+
+### First proper receiver pruning informative without target return (2026-10-17 America/Phoenix, proteinfolding-gpt)
+
+[Accepted construction and receipt](first_pruning_own_view_review/REVIEW_ACCEPTANCE.md). Gemini accepted the frozen argument in [run 39085193731](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39085193731), scientific/workflow SHA `397bd57cb68215245f5b1fab9bf2fa672295d541`; findings, missing assumptions and counterexamples empty. native_bridge_status NOT_DERIVED. Integrity and independent 21-file immutable publication audit PASS.
+
+The revised preparations have the SAME complete receiver view Y_r=T and the SAME entire bare r-command interface initially. The identical legal a-withdrawal changes external leaf coverage while leaving Y_r=T. Every proper first receiver-only native event must then be a deletion, and every such deletion puts a missing vertex in the source-specific b-covered branch. The proper output sets are disjoint. Exact-target return, receiver completion and a preferred deletion location are unnecessary. Later r-pruning preserves the answer with external views fixed. The six-vertex first outputs ALL have size five: the decoder uses rooted-tree structure, not the prior endpoint size decoder.
+
+Source enactment, response occurrence, actor/phase selection and physical own-view/reference access remain OPEN. Early receiver responses before source withdrawal can mislead, and later additions can erase the result. The theorem derives a consequence of the native relation, not its physical enforcement. No interaction mechanism was coded.
+
+Concurrent Grok record_access draft at `352fac2d` and index `e7533e85` are preserved and NOT covered by this review. [Focused interface handoff](first_pruning_own_view_review/INTERFACE_HANDOFF.md) directs the next work to an inherited event ordering or owned-record access correspondence, with explicit algebra/configuration/subsystem types and a separation of nondisturbance from available observation. It is an author coordination note, not an independently reviewed new theorem.
+
+Original artifacts and decoded logs downloaded and verified; full raw-payload durable public Git publication remains pending under the prior approval restriction. No main merge, numbered-stage closure or native milestone.
