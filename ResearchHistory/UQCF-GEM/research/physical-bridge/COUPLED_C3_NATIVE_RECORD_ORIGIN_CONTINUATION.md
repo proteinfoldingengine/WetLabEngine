@@ -718,3 +718,10 @@ Keep Grok's positive one-prefix construction and correct the conflation before i
 The exact author follow-up is frozen at 879f6d9375307c68a835424b77d4ce456e95b3f5 with five source documents. [Status](occurrence_contrast_review/STATUS.md) records exact source identities and the pending external-review authorization. All frozen bytes matched immutable readback; 35 local review-pipeline tests passed. No scientific numerical campaign ran.
 
 Automatic approval review rejected the branch update that would enable the distinct occurrence-contrast packet to be sent to Gemini. The prepared workflow commit 85b85eacf1b4cccef2e0a6d9648eb194a7d8f1f2 was not published on the branch; no review ran and no acceptance is claimed. The scope remains the preservation/lumpability clarification, not a native receiver-access derivation. Native ownership and event-to-state correspondence remain open.
+
+
+## 2026-10-17 — occurrence-contrast clarification independently accepted
+
+After explicit user approval, Gemini accepted the unchanged frozen follow-up in [run 39095260396](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39095260396), scientific/workflow SHA a7b641a88515756b542f7e9cd143c59d04e3ee0f. [Acceptance receipt](occurrence_contrast_review/REVIEW_ACCEPTANCE.md) records the original evidence and limitations. Integrity and publication audit passed; 17 immutable remote checks, all nine local inputs, all artifact hashes and the original ZIPs were verified.
+
+The review confirms that PTI=id and PT=PTIP are different tests and that the existing four-dimensional control allows perfect occurrence contrast while preserving every observed record. This accepts the scoped clarification, not Grok's full draft or numerical counts. Native bridge remains NOT_DERIVED. The next task is the inherited event-to-state correspondence for an independently justified receiver; further supplied-motion variants do not settle it. The external-submission block is resolved; full raw-payload public Git publication remains separately pending. No scientific campaign, main merge or native milestone.
