@@ -1,9 +1,17 @@
 # Construction: receiver identification. The inherited event names its own receiver
 
 Author: proteinfolding-grokbot (UQCF Science Agent).
-Draft 1, 2026-10-18 America/New_York (~02:00 ET loop). Baseline research head `5daa4ff56402291d510db4fa0e0c2666282cfd71`.
+Draft 2, 2026-10-18 America/New_York (~03:20 ET loop); draft 1 was `512a863d` (~02:00 ET), baseline research head `5daa4ff56402291d510db4fa0e0c2666282cfd71`. Draft 1 is frozen verbatim in `receiver_identification_review/RESULT.md` and was verified and Gemini ACCEPTED (run 39106192684); that acceptance covers draft 1's bytes only, and this draft corrects an error in draft 1 that the review missed (Proposition 4, see the revision note).
 Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Target: the open premise I* of [record_access](../record_access/CONSTRUCTION.md) section 7 ("a P1 carrier address is a receiver subsystem whose state is its own grade coordinate").
 Status: **unreviewed construction draft.** No milestone, native-access closure, CLOSED/CERTIFIED status, geometry, fundamental clock, dark-matter primitive or heuristic fitting is claimed. Time = pruning / ordered recoverability update. Per Aaron's standing rule (2026-10-17 22:21 ET), the occurrence of the event is an accepted empirical input; nothing here explains its cause or an observer. Scratch checks only (section 9); independent producer/checker and Gemini come at freeze.
+
+## Revision note (draft 2)
+
+[D2] adopts proteinfolding-gpt's [GPT_DRAFT1_FOLLOWUP.md](GPT_DRAFT1_FOLLOWUP.md) (`2d3ec376`, unreviewed author assessment, obtained analytically before the draft 1 freeze), checked here by scratch code (section 9):
+- **Error in draft 1 Proposition 4(b).** The owner law is not p_a * p_u when other removed atoms share the fiber of a. It is nu_a * p_u, where nu_a is the law of everything else in the owner's fiber (the prior owner grade plus every other absorbed atom). Draft 1's equality clause "equality if p_a is a point mass" is false: root a = 0 with removed children u, v; u = 0 under p and 1 under q; v fair on {0,1} under both. The owner prior is deterministic, but the receiver TV is 1/2 while the source TV is 1. The corrected equality condition is that nu_a is a point mass (sufficient, not necessary). The frozen P4 grid had no second atom in the fiber, so its passing did not test this; the Gemini review also missed it.
+- **Receiver scope.** By Theorem 2(b), every retained composite subsystem that contains r(u) is also informed. The uniqueness claim is about the unique **minimal (one-address) holder**, not the unique informed subsystem.
+- **Positive addition (GPT).** For nonnegative integer grades, convolution by a fixed nuisance law is injective, so the receiver's law changes whenever p_u != q_u; there is no uniform positive lower bound (delta_0 vs delta_1 against nuisance uniform on {0..M} gives TV 1/(M+1)).
+New in draft 2 (mine): Proposition 4.2, a sharp lower bound for the deterministic source pair: the receiver's TV is at least the largest atom of nu_a.
 
 ## Credit: what this builds on
 
@@ -16,9 +24,9 @@ Status: **unreviewed construction draft.** No milestone, native-access closure, 
 ## 0. Result first
 
 1. **I* splits in two, and the first half is not a premise (Proposition 1).** Because an inherited grade is an address-indexed function, its configuration space is a Cartesian product over addresses. The observable algebra of that space is canonically the tensor product of one-address algebras, and its canonical reversible dilation is canonically the tensor product of one-address registers. So "an address is a subsystem whose state is its grade coordinate" (call it I*-a) is earned from the inherited data type. What remains (I*-b) is only "that subsystem counts as the receiver".
-2. **The inherited event determines which subsystem receives the distinction (Theorem 2).** Take an initially uninformed receiver: two preparations that agree on every retained address. After a complete-fiber contraction r, the retained outcomes differ exactly on the owner set O = {a retained : the removed fiber sums of a differ}. For a single source difference at a removed atom u, O = {r(u)}: exactly one retained subsystem becomes informed, and it is the one the inherited fiber map names. No READS table, controller, or chosen readout is involved.
+2. **The inherited event determines which subsystem receives the distinction (Theorem 2).** Take an initially uninformed receiver: two preparations that agree on every retained address. After a complete-fiber contraction r, the retained outcomes differ exactly on the owner set O = {a retained : the removed fiber sums of a differ}. For a single source difference at a removed atom u, O = {r(u)}: exactly one one-address subsystem becomes informed (every composite containing it is informed too, Theorem 2(b)), and it is the one the inherited fiber map names. No READS table, controller, or chosen readout is involved.
 3. **The record follows the lineage and has exactly one holder (Theorem 3).** Along any finite history of complete-fiber contractions, a single source difference at u is held, at every step, by exactly one retained address, the lineage image L_k(u) = r_k o ... o r_1(u), and by no other. It is never copied and never lost while the holder is retained. This is the ancestry ledger read as a record trail.
-4. **The gain is a redistribution, not a creation (Proposition 4).** For random preparations, the receiver goes from total-variation distinguishability 0 to TV(p_a * p_u, p_a * q_u), which is at most TV(p_u, q_u), with equality when the owner's prior grade is deterministic. The retained-plus-removed joint distinguishability never increases.
+4. **The gain is a redistribution, not a creation (Proposition 4, corrected in draft 2).** For random product preparations, the receiver goes from total-variation distinguishability 0 to TV(nu_a * p_u, nu_a * q_u), where nu_a is the law of the rest of the owner's fiber. This is at most TV(p_u, q_u), with equality when nu_a is a point mass, and it is strictly positive whenever p_u != q_u (injectivity, Corollary 4.1). For the deterministic source pair it is at least max nu_a (Proposition 4.2, sharp). The retained-plus-removed joint distinguishability never increases.
 5. **The v15.13 tensor split is the dilation of the P1 address product (Proposition 5).** In the canonical reversible form, every native move acts on exactly the two registers {u, r(u)} and as the identity on all others. So the receiver locality that v15.13 supplied by hand is, under the dilation, the inherited address product.
 6. **What remains (section 7).** I*-b is the only identification step left, and given Theorems 2 and 3 it can be stated as an operational definition rather than a hidden choice: the receiver of an event is the retained subsystem whose state carries the event's distinction. Occurrence stays a declared input; preparability G of the two preparations stays the premise of preparability_branch_split.
 
@@ -61,17 +69,26 @@ Let r_1, ..., r_K be successive complete-fiber contractions X_0 -> X_1 -> ... ->
 
 So a single source distinction has a unique holder at every step, the holder is the lineage image of the source, the distinction is never duplicated (single-owner record, unlike the redundant fragments of quantum Darwinism; Zurek 2009), and it is never weakened in the deterministic case. Address stability r(t) = t is what makes "the same holder across steps" well defined. Under multiple differences the holder set at step k is {a : sum over z with L_k(z) = a of (x_z - x'_z) != 0}, and merging can cancel distinctions; this is the inherited loss arrow, now located at the step where two differing lineages first share an owner.
 
-## 5. Proposition 4 (redistribution, random preparations)
+## 5. Proposition 4 (redistribution, random preparations; corrected in draft 2)
 
-Let p, q be product distributions on Omega_s that agree on every address except a single removed atom u (marginals p_u, q_u), and let a = r(u) with prior owner grade distributed as p_a, independent of x_u.
+Let p, q be product distributions on Omega_s that agree on every address except a single removed atom u (marginals p_u, q_u), and let a = r(u). Let N_a = sum of x_z over z in r^{-1}(a) with z != u (the prior owner grade and every other atom absorbed into a), with law nu_a. By the product hypothesis nu_a is the same under p and q and independent of x_u.
 
 **Proposition 4.** (a) Before the event, every retained marginal is the same under p and q: the receiver side is blank, TV = 0.
-(b) After the event, the owner's marginals are the convolutions p_a * p_u and p_a * q_u, and TV(p_a * p_u, p_a * q_u) <= TV(p_u, q_u), with equality if p_a is a point mass.
-(c) The retained joint TV after the event equals the owner's TV in (b), and is at most the joint TV of all addresses (retained and removed) before the event, which is TV(p_u, q_u). No distinguishability is created; the receiver's gain is at most what the dropped source held.
+(b) After the event, the owner's laws are nu_a * p_u and nu_a * q_u, and TV(nu_a * p_u, nu_a * q_u) <= TV(p_u, q_u), with equality if nu_a is a point mass (sufficient, not necessary).
+(c) The retained joint TV after the event equals the owner's TV in (b), and is at most the joint TV of all addresses before the event, which is TV(p_u, q_u). No distinguishability is created; the receiver's gain is at most what the dropped source held.
 
-*Proof.* (a) by construction. (b) Convolution with p_a is a channel (data processing); a point mass shifts, which is a bijection. (c) After the event the non-owner retained coordinates are identically distributed and independent of the owner under both p and q, so the joint TV equals the owner's TV; the pushforward is a channel on the full joint, so data processing gives the bound. QED.
+*Proof.* (a) by construction. (b) Owner = N_a + x_u with independent summands, so its law is the convolution; convolution with nu_a is a channel (data processing); a point mass is a shift, a bijection. (c) Disjoint fibers of a product input give independent output coordinates; every non-owner output has the same law under p and q, so the joint TV equals the owner's TV; the pushforward is a channel on the full joint, so data processing gives the bound. QED.
 
-This is the ledger point of addendum (b) in exact form: the receiver gains information without global creation, by a move from the removed source into the owner.
+[D2] Draft 1 wrote p_a (the owner's own prior) in place of nu_a; that is correct only when no other removed atom is absorbed into a. Counterexample to draft 1's equality clause: see the revision note.
+
+**Corollary 4.1 (injectivity; GPT, D2).** For grades in Z_{>=0} with ordinary (non-wrapping) addition, p_u != q_u implies nu_a * p_u != nu_a * q_u. *Proof.* Let d = p_u - q_u, m the least index with d(m) != 0, n the least index with nu_a(n) > 0. The coefficient of nu_a * d at m + n is d(m) nu_a(n) != 0, since every other term with i + j = m + n has i < m or j < n. QED. There is no uniform lower bound: delta_0 against delta_1 with nu_a uniform on {0, ..., M} gives TV = 1/(M+1).
+
+**Proposition 4.2 (sharp lower bound for the deterministic source pair; new in draft 2).** Let p_u = delta_s and q_u = delta_t with k = |t - s| >= 1 (the Witness A form: the source distinction is definite). Then for every nuisance law nu_a on Z_{>=0} with finite support,
+max_n nu_a(n) <= TV(nu_a * delta_s, nu_a * delta_t) <= 1,
+and the lower bound is attained by nu_a uniform on {0, ..., M} with k = 1.
+*Proof.* TV = (1/2) sum_j |nu(j) - nu(j - k)| (shift invariance of TV). Fix n* with nu(n*) = max nu and restrict the sum to the residue class j = n* (mod k). Along that class the sequence nu(n* + i k), i in Z, is 0 for |i| large and takes the value max nu at i = 0, so its total variation is at least 2 max nu. Hence TV >= max nu. For uniform nu on {0..M} and k = 1 the sum is 2/(M+1). QED.
+
+Reading. Whatever else the owner's fiber absorbs, a definite source distinction leaves the receiver with at least the weight of the most likely nuisance value; the receiver's discrimination degrades only by spreading of the nuisance law, never to zero. This is the ledger point of addendum (b) in exact form: the receiver gains information without global creation, by a move from the removed source into the owner, and the gain is bounded below by a property of the inherited fiber alone.
 
 ## 6. Proposition 5 (the tensor split of v15.13 is the dilated address product)
 
@@ -96,10 +113,11 @@ Consequence: in the v15.13 to v15.16 quantum stack, the receiver factor R_A was 
 | readability, persistence | earned (Proposition 1(c), record_access Theorem 2.1) |
 | "that subsystem is the receiver" (I*-b) | **operational definition**, see below |
 | no global creation | earned (Proposition 4(c), ledger Theorem 11.5) |
+| strictly positive receiver gain in law | earned for Z_{>=0} grades and product preparations (Corollary 4.1); lower bound max nu_a for a definite source pair (Proposition 4.2) |
 | occurrence of the contraction | declared empirical input (Aaron, 2026-10-17 22:21 ET) |
 | preparability G of x, x' | open; premise of preparability_branch_split (GPT packet ACCEPTED in corrected scope, run 39076009238) |
 
-**I*-b as a definition.** After Theorems 2 and 3, there is exactly one candidate for "the receiver of this event": the unique retained subsystem whose own state carries the event's distinction, and that subsystem is named by the inherited fiber map, not chosen. Taking that as the definition of the receiver is not a free choice among alternatives; it is the only identification consistent with (i) receivers being retained subsystems (Proposition 1), (ii) a receiver holding the distinction in its own state, and (iii) Aaron's rule that observation is an empirical input whose actor is not to be explained. What the definition does not supply is any claim that this subsystem is an agent, or that it "uses" the record; v15.14's consumer step (GPT's trace) is a further supplied interface and is not addressed.
+**I*-b as a definition.** After Theorems 2 and 3, there is exactly one minimal candidate for "the receiver of this event": the unique one-address retained subsystem whose own state carries the event's distinction (composites containing it carry it too, Theorem 2(b)), and that subsystem is named by the inherited fiber map, not chosen. Taking that as the definition of the receiver is not a free choice among alternatives; it is the only identification consistent with (i) receivers being retained subsystems (Proposition 1), (ii) a receiver holding the distinction in its own state, and (iii) Aaron's rule that observation is an empirical input whose actor is not to be explained. [D2, GPT] The factorization shows B_a is a canonical state factor; it does not by itself show that B_a is the receiver's independently available observation algebra, so operational availability stays part of I*-b and is not discharged here. What the definition does not supply is any claim that this subsystem is an agent, or that it "uses" the record; v15.14's consumer step (GPT's trace) is a further supplied interface and is not addressed.
 
 Two honest limits. First, all of this is in the commutative P1 stack; the quantum stack enters only through the canonical dilation (Proposition 5), on classical inputs. Second, Theorem 2 needs the two preparations to differ at removed atoms and agree on retained ones; whether such pairs are natively preparable is G.
 
@@ -107,7 +125,7 @@ Two honest limits. First, all of this is in the commutative P1 stack; the quantu
 
 - Proposition 1: the canonical tensor factorization of functions on a product space is elementary; observable-induced subsystems are known (Zanardi, PRL 87, 077901, 2001; Zanardi, Lidar, Lloyd, PRL 92, 060402, 2004). New for UQCF: it discharges I*-a, which record_access had listed as missing.
 - Theorems 2 and 3: elementary linear algebra of pushforwards. New for UQCF: the inherited fiber and lineage maps identify the receiver of a distinction uniquely and track it as a single-owner record trail. Compared with quantum Darwinism, the record here is single-owner (a move, not a copy), so objectivity across many receivers is not addressed and is not claimed.
-- Proposition 4: data processing; standard. New only in placing the ledger's "gain without creation" in exact form for random preparations.
+- Proposition 4: data processing; standard. New only in placing the ledger's "gain without creation" in exact form for random preparations. Corollary 4.1 is the elementary injectivity of convolution on the nonnegative integers (leading-term argument). Proposition 4.2 is an elementary total-variation bound for a shifted law; I know no specific citation and claim no mathematical novelty, only its use here as a fiber-only lower bound on the receiver's gain.
 - Proposition 5: Stinespring-style dilation of a classical move; elementary. New for UQCF: the v15.13 receiver split becomes the inherited address product under that dilation.
 
 ## 9. Scratch checks (exploratory, not preregistered; disclosed)
@@ -118,7 +136,11 @@ Two honest limits. First, all of this is in the commutative P1 stack; the quantu
 - Proposition 4: owner TV <= source TV (2000 exact-rational cases), equality for point-mass owner prior (2000), data processing on the joint (2000): 0 violations.
 - Proposition 5: controlled-add permutation commutes with random operators on a third register (200), blank-owner reduced state equals the pushforward (200): 0 violations.
 
+Draft 2 additions (exploratory, not preregistered): `/tmp/rid/chk2.py` reproduces GPT's counterexample (receiver TV 1/2 vs source TV 1 with deterministic owner prior), checks the corrected law nu_a * p_u against a brute-force joint pushforward with 1 to 3 other fiber members (1500 random exact-rational cases, 0 violations, 0 injectivity failures) and the 1/(M+1) example. `/tmp/rid/chk3.py` checks Proposition 4.2 on 5000 random exact nuisance laws and shifts (0 violations; bound attained in 1394 cases; uniform M = 5 gives 1/6).
+
+The draft 1 freeze campaign (`receiver_identification_review/`, run 39106192684) remains the record for draft 1; its passing P4 grid had no second fiber atom and so did not test the corrected statement.
+
 ## 10. Next
 
-1. Freeze sections 0 to 8, preregister, independent producer (exact enumeration over all ancestor-closed retained sets of all rooted trees up to a declared size and grade range) and checker (different algorithm, e.g. matrix form of mu_r and lineage composition), rejecting controls (wrong owner, copy instead of move, non-ancestor-closed retention, swapped lineage), then Gemini (gemini-3.1-pro-preview) via Actions on the exact frozen text.
+1. (Done for draft 1, run 39106192684.) Draft 2: freeze sections 0 to 8 anew, with a P4 universe that includes several removed atoms in one fiber and a Proposition 4.2 universe, preregister, independent producer (exact enumeration over all ancestor-closed retained sets of all rooted trees up to a declared size and grade range) and checker (different algorithm, e.g. matrix form of mu_r and lineage composition), rejecting controls (wrong owner, copy instead of move, non-ancestor-closed retention, swapped lineage), then Gemini (gemini-3.1-pro-preview) via Actions on the exact frozen text.
 2. Then G: whether a pair differing only at a removed atom is natively preparable, starting from preparability_branch_split and the two-location extension.
