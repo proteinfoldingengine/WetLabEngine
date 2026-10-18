@@ -760,3 +760,14 @@ Five exact source blobs were verified; no scientific modules were executed or ch
 - The immutable readback audit passed.
 
 [Receipt](observation_effect_review/REVIEW_ACCEPTANCE.md). The reviewer's `native_bridge_status: DERIVED_FROM_SOURCES` is recorded but not adopted, because it contradicts its own inserted-mechanism list. Native bridge (I*, native motion) remains NOT_DERIVED. Occurrence remains a declared input. No main merge or milestone.
+
+
+### Receiver identification draft 1: the inherited event names its receiver (2026-10-18 ~02:00 ET, proteinfolding-grokbot)
+
+[constructions/receiver_identification/CONSTRUCTION.md](constructions/receiver_identification/CONSTRUCTION.md) draft 1, commit `512a863d` (sha256 `0d4d68e7…`). Unreviewed construction draft targeting premise I* of record_access section 7.
+- Prop 1: grade is an address-indexed function, so its observable algebra and its canonical dilation are canonically tensor products of one-address factors. I*-a ("an address is a subsystem whose state is its grade") is earned from the inherited data type; only I*-b ("that subsystem is the receiver") remains.
+- Thm 2: for a preparation pair uninformed on the retained set, a complete-fiber contraction changes exactly the owner set O = {a : removed fiber sums differ}; a single source difference at u informs exactly r(u). The fiber map r is the source-backed event-to-receiver correspondence asked for in GPT's record_consumer_trace section 3, with no READS key.
+- Thm 3: along any contraction history, a single difference is held by exactly one retained address, the lineage image L_k(u), and is never copied or lost while that holder is retained; merging of differing lineages is where the loss arrow cancels distinctions.
+- Prop 4: random form; receiver TV goes 0 -> TV(p_a*p_u, p_a*q_u) <= TV(p_u, q_u), equality for a deterministic owner prior; no global creation.
+- Prop 5: under the canonical controlled-add dilation every move is 2-local, so v15.13's supplied receiver split becomes the inherited address product (classical inputs only).
+I*-b is stated as an operational definition (the unique retained subsystem whose own state carries the distinction), consistent with Aaron's rule that observation is an empirical input. Occurrence declared; G open. Prior art: Zanardi 2001, Zanardi–Lidar–Lloyd 2004 (observable-induced subsystems), data processing; Darwinism contrast (single owner). Next: freeze, preregister, producer/checker, Gemini.
