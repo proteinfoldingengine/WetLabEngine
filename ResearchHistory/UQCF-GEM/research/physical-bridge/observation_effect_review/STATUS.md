@@ -1,0 +1,6 @@
+# observation_effect draft 3 freeze: status
+
+- Freeze + preregistration committed first: `4efed1bee2f7662ef102eef6b2fda95310f75c15` (no verification code existed in the repo at that commit).
+- This commit adds the preregistered producer (`uqcf_obs_effect_producer.py`, sympy exact), the independent checker (`uqcf_obs_effect_checker.py`, numpy superoperators + Fraction atom maps, seed 20261018), the comparator with tampering controls, the Gemini review script and the separate publication-readback audit, plus workflow `uqcf-gem-obs-effect-review.yml`.
+- Disclosure: before pushing, the three verification scripts were run once locally (Python 3.13, numpy 2.5.4, sympy 1.14.0) only to debug them; that local run was GREEN. Two code bugs were fixed during that debugging (a sympy column-swap call and the H witness reporting the half trace norm instead of the trace norm). The checker's Ky Fan random search was raised to the preregistered 2000 unitaries per case. No expected value was changed. The canonical execution is the Actions run on the pushed head with pinned numpy 2.3.5.
+- Outcome: pending the Actions run (verify → Gemini gemini-3.1-pro-preview → publication readback). A receipt is added after the run; raw reviewer output stays in Actions artifacts.
