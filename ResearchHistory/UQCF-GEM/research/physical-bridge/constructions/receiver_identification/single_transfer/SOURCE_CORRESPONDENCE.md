@@ -75,3 +75,8 @@ Draft 11 at `97915416` correctly removes the attribution of universal acquisitio
 The next work should inspect an actual retained receiver state/consumer definition and match its input/output types to (1)-(3). The required evidence is one native record whose content and availability are independently specified, together with the event's action on that same object. Do not add a source list, numeric history, READS table, local observer, or support-query API to supply the missing correspondence.
 
 This pass did not derive that identification. It preserves the positive transfer construction, settles which source objects it must refer to, and avoids an unnecessary absolute-calibration detour. Event typing, actual local record access and native preparation remain separately open. No new numerical campaign, mathematical acceptance, native milestone, mechanism in code, or main merge is claimed. Exact inspected source identities are recorded in SOURCE_TRACE_MANIFEST.json.
+
+
+## Source-recovery update, 2026-10-18
+
+The earlier v10.0-v10.2 protected-grading reports have now been recovered and preserved with the [graded-record candidate](graded_record/CONSTRUCTION.md). They provide an explicit number operator and additive composition, while explicitly identifying the grading and its conservation as added physical structure. Their original assumptions qualify subsequent reuse of the relative grade. The exact filename/hash of v13.26's unnamed predecessor is still not established. The new note identifies the occupied-sector effect Q=1[N>0] and its conditional separation consequence; native event typing, receiver access, and preparability remain open. The original inspection and review receipt above retain their stated scope.
