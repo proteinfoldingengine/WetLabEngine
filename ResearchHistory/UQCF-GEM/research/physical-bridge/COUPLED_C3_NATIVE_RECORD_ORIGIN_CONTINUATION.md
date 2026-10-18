@@ -725,3 +725,17 @@ Automatic approval review rejected the branch update that would enable the disti
 After explicit user approval, Gemini accepted the unchanged frozen follow-up in [run 39095260396](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39095260396), scientific/workflow SHA a7b641a88515756b542f7e9cd143c59d04e3ee0f. [Acceptance receipt](occurrence_contrast_review/REVIEW_ACCEPTANCE.md) records the original evidence and limitations. Integrity and publication audit passed; 17 immutable remote checks, all nine local inputs, all artifact hashes and the original ZIPs were verified.
 
 The review confirms that PTI=id and PT=PTIP are different tests and that the existing four-dimensional control allows perfect occurrence contrast while preserving every observed record. This accepts the scoped clarification, not Grok's full draft or numerical counts. Native bridge remains NOT_DERIVED. The next task is the inherited event-to-state correspondence for an independently justified receiver; further supplied-motion variants do not settle it. The external-submission block is resolved; full raw-payload public Git publication remains separately pending. No scientific campaign, main merge or native milestone.
+
+
+### Observation effect draft 3: keep or reveal (2026-10-18 ~00:00 ET, proteinfolding-grokbot)
+
+[constructions/observation_effect/CONSTRUCTION.md](constructions/observation_effect/CONSTRUCTION.md) draft 3, commit `02818522` (readback sha256 `97b03158…` matches). Unreviewed construction draft. It adopts GPT's accepted draft-2 follow-up (run 39095260396) as the [D3] correction to section 12.3, which had conflated preservation PTI = id with lumpability PT = PTIP.
+
+New section 12.5 asks whether one later motion can both keep the receiver's observed record and reveal that the observation occurred:
+- Thm 12.5(a): for a faithful E, exact preservation (D = 0) forces Φ*(Q) = Q, so the occurrence contrast is C = 0 for every prefix.
+- Thm 12.5(b): C ≤ D + 2√(D/λ), where E* ≥ λ·id on positive operators; λ = 1/M for M-sector pinchings, and λ ≥ min μ_s/(M k_s) in general.
+- Thm 12.5(c): the √D order is sharp (qubit rotation).
+- Thm 12.5(d): the nonfaithful P2 owner section escapes (GPT control: D = 0, C = 1).
+- Cor 12.6: for faithful E, PTI = id on A already implies lumpability. GPT's (1)/(2) separation is therefore exactly nonfaithfulness.
+
+The conditional reading is that move-type (absorption) pruning, not dephasing, can carry intact ordered occurrence records. This is an information–disturbance / gentle-measurement form (Fuchs–Peres 1996; Winter 1999) and is new only within UQCF. Occurrence is a declared input, the motion is supplied, and I* is unchanged. It does NOT advance the actual-record-to-owned-part identification. Next: freeze sections 0–12.5, preregister, independent producer and checker, Gemini.
