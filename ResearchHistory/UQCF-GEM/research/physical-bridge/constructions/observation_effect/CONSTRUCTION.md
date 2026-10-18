@@ -3,8 +3,9 @@
 Author: proteinfolding-grokbot (UQCF Science Agent).
 Draft 1, 2026-10-17 America/New_York (~22:00 ET loop). Baseline research head `bb1fd75b965f4ed8208c50a5a3d430f3c7b33aa1`.
 Draft 2, 2026-10-17 America/New_York (~23:00 ET loop). Baseline research head `4de08e31f2b09cefa845f9fa4060cedcbd7ad9ce`. Adds section 12 (the occurrence record: when a receiver can read THAT an observation occurred) and adopts GPT's four accepted corrections (see "Draft 2 changes" below).
+Draft 3, 2026-10-17/18 America/New_York (~00:00 ET loop). Baseline research head `a7b641a88515756b542f7e9cd143c59d04e3ee0f`. Adds section 12.5 (keep-or-reveal trade-off, Theorem 12.5 and Corollary 12.6) and adopts GPT's draft-2 follow-up correction to section 12.3 (see "Draft 3 changes" below).
 Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)). Directives followed: Aaron's 21:46/21:47 ET pre-time vs time-constituting wording and his 21:50 ET reading: "the model contains the EFFECT of observation, not its cause: if you start to observe and prune, the network changes; absent measuring it behaves differently."
-Status: **unreviewed construction draft** (draft 2; GPT's extension and corrections, which draft 2 adopts, are separately Gemini ACCEPTED in run 39091716370; draft 2 as a whole and section 12 are unreviewed). This draft does not claim a milestone, a derivation of collapse, native access or receiver ownership, CLOSED/CERTIFIED status, a clock, geometry or a fitted parameter. The scratch checks are exploratory and are disclosed in section 10. Independent producer/checker code and Gemini review come at freeze.
+Status: **unreviewed construction draft** (draft 3; GPT's extension and corrections, which draft 2 adopts, are separately Gemini ACCEPTED in run 39091716370; draft 2/3 as a whole and section 12 are unreviewed; GPT's draft-2 follow-up is separately Gemini ACCEPTED in run 39095260396, which does not review this draft). This draft does not claim a milestone, a derivation of collapse, native access or receiver ownership, CLOSED/CERTIFIED status, a clock, geometry or a fitted parameter. The scratch checks are exploratory and are disclosed in section 10. Independent producer/checker code and Gemini review come at freeze.
 
 ## Credit: the inherited foundation
 
@@ -39,6 +40,12 @@ GPT's [observation-preservation extension](../../observation_preservation_review
 
 GPT's positive extension, the occupied-support criterion (I − Q_r) L_j K_r = 0, is the correct nonfaithful, any-channel generalization of Theorem 4(a); it is cited there and not re-proved. Section 12 is new in draft 2.
 
+### Draft 3 changes (credit: proteinfolding-gpt)
+
+GPT's [draft-2 follow-up](GPT_DRAFT2_FOLLOWUP.md) (frozen as `occurrence_contrast_review/RESULT.md` at `879f6d93`; separately Gemini ACCEPTED in GPT's run 39095260396, [receipt](../../occurrence_contrast_review/REVIEW_ACCEPTANCE.md); that review did not cover this draft) separates preservation, P T I = id (1), from no occurrence effect, P T = P T I P (2, strong lumpability), and the prefix contrast P T (Id − I P) x (3). It also reads the accepted four-atom control as preservation together with a perfect occurrence contrast. Draft 3 makes two changes:
+1. **[D3] Section 12.3 wording.** The draft-2 reading said the non-lumpable motion was "one failing GPT's P T I = id". That conflated (1) and (2). It is corrected in place: the relevant property is the failure of lumpability (2). The specific three-atom swap fails both (D = 1, C = 1).
+2. **New section 12.5.** Theorem 12.5 shows that for a FAITHFUL observation, (1) restricted to the receiver forces zero occurrence contrast, with the quantitative trade-off C ≤ D + 2√(D/λ), sharp in order. Corollary 12.6 shows that for faithful E, (1) on A implies (2). GPT's separation of (1) and (2) is therefore exactly a nonfaithful phenomenon, and the P2 owner section (a move) is the pruning that can both keep and reveal.
+
 What is new here is small and is listed in section 9. GPT's review receipt asks that no further compatibility variant be counted as the receiver-identification advance. This draft does not claim that advance. It answers Aaron's separate effect-level request.
 
 ## 0. Result first
@@ -55,6 +62,8 @@ What is new here is small and is listed in section 9. GPT's review receipt asks 
 8. **The occurrence record (section 12, draft 2).** Fix one prefix state ρ. The two histories "observation occurred" and "observation did not occur" are two preparations from ONE prefix, so preparability G is not needed for this pair. A receiver's ability to tell them apart is exactly TV = ½ Σ_r |Tr[U† Q_r U (ρ − Eρ)]|. It is bounded by ½‖ρ − Eρ‖₁, the change the event itself made: an event can leave a readable record of its own occurrence only out of what it pruned. The bound is attained by a suitable supplied motion iff a rank condition holds (Ky Fan). For a faithful E (every v15.16 pinching) the record is never perfect; for the nonfaithful P2 owner section (an absorption is a move) it can be perfect. This is the UQCF reading of the known quantum-witness / no-signalling-in-time bound (Li et al. 2012; Schild and Emary 2015).
 
    This corrects my 21:51 plan, which expected "observed 1 bit vs unobserved 0". For collision pairs with equal E(ρ), the direction is the reverse, and Theorem 3 forbids the planned perfect version.
+9. **Keep or reveal (section 12.5, draft 3).** For a faithful observation (every v15.16 pinching), a later motion that keeps the receiver's observed record exactly leaves no trace of whether the observation occurred. Revealing occurrence with contrast C costs a disturbance D of the observed record with C ≤ D + 2√(D/λ) (λ = 1/M for an M-sector pinching), and the square root is sharp. The nonfaithful P2 owner-section absorption escapes this: GPT's accepted control keeps every record (D = 0) and reveals occurrence perfectly (C = 1). So GPT's split between preservation and lumpability is exactly nonfaithfulness. Conditionally, move-type pruning, not dephasing, is what can carry intact ordered occurrence records.
+
 7. **Status.** The occurrence of the observation is a DECLARED INPUT, per Aaron. E, U and the preparations are supplied, preparability G is a premise, and the receiver identification (I*) is a premise. Every theorem is mathematically forced given those inputs. Nothing about the cause of collapse is claimed.
 
 ## 1. Setting and types
@@ -298,6 +307,8 @@ The inherited Zeno-type cadence gap of 0.5 is therefore the effect of one additi
 
   **0 violations** in the final run. Two bugs in my own scratch code were found and fixed before that run: a transposed σ in the predual, and a witness algebra without multiplicity.
 
+- `/tmp/obs/chk5.py` (draft 3, section 12.5; NumPy, seed 20261017): 400 random finite-dimensional conditional expectations ⊕(id⊗ω_s)(·)⊗I, 3/4 faithful and 1/4 nonfaithful, with random projections Q ∈ A (central and noncentral) and channels (1−t)id + tΦ_0, t ∈ {1, 0.3, 0.1, 0.01, 10⁻⁴}: 2000 cases. λ is a certified lower bound, the largest λ with E* − λ·id completely positive (Choi bisection). 0 violations of C ≤ D + 2√(D/λ); the maximum ratio C/bound is 0.4457. 2000 random qubit-pinching channels: 0 violations. GPT control D = 0, C = 1, λ = 0. Three-atom swap D = 1, C = 1. **0 violations.**
+
 ## 11. Open obligations
 
 1. **Cause and occurrence of E.** Out of scope by Aaron's 21:50 reading. Here it is a declared input. Which E occurs (A and the conditional expectation) is also supplied.
@@ -359,7 +370,7 @@ For a pinching onto M nonzero central sectors (every v15.16 E_S, with M the numb
 
 *Proof.* (a): for any projection P, Tr(PΔ) = Tr(Pρ) − Tr(P Eρ) ≤ Tr(Pρ)(1 − 1/c) ≤ 1 − 1/c. The pinching inequality (Hayashi 2002) gives c ≤ M. (b) is direct computation. ∎
 
-*Reading of (b).* The owner-section absorption is a move (record_access Theorem 5.1): it relocates the unit mass from u to its owner a. So ρ and Eρ are orthogonal (κ = 1), and a non-lumpable motion (one failing GPT's P T I = id) carries them into different fibers. A dephasing can only remove coherence, which by (a) is never orthogonal to what remains. This is the occurrence-record form of record_access Corollary 5.3 (copy vs move). It is a structural difference between the two inherited kinds of pruning, the v15.16 pinching and the P2 aggregation. All exact checks: `chk4.py`, 0 violations (section 10).
+*Reading of (b).* The owner-section absorption is a move (record_access Theorem 5.1): it relocates the unit mass from u to its owner a. So ρ and Eρ are orthogonal (κ = 1), and a non-lumpable motion (one with P T ≠ P T I P, GPT's equation (2)) carries them into different fibers. [D3] Draft 2 wrote "failing GPT's P T I = id" here. That conflated preservation (1) with lumpability (2). This particular swap happens to fail both (D = 1, C = 1 in section 12.5), but the two properties are not equivalent. Section 12.5 shows they separate only for nonfaithful E. A dephasing can only remove coherence, which by (a) is never orthogonal to what remains. This is the occurrence-record form of record_access Corollary 5.3 (copy vs move). It is a structural difference between the two inherited kinds of pruning, the v15.16 pinching and the P2 aggregation. All exact checks: `chk4.py`, 0 violations (section 10).
 
 ### 12.4 Ledger and time reading
 
@@ -375,7 +386,59 @@ For a pinching onto M nonzero central sectors (every v15.16 E_S, with M the numb
 
 **Relation to known results.** TV_R for one receiver outcome is the *quantum witness* W = |P_b − Σ_a P(a, b)| of Li, Lambert, Chen, Chen and Nori (Sci. Rep. 2, 885, 2012), a no-signalling-in-time test (Kofler and Brukner 2013). Its relation to the trace distance and its maximum 1 − 1/M are due to Schild and Emary (Phys. Rev. A 92, 032101, 2015, [DOI](https://doi.org/10.1103/PhysRevA.92.032101)). Proposition 12.4(a) is consistent with that bound and is derived here from the pinching inequality. **New within UQCF only:** (i) the reading of the witness pair as a G-free, one-prefix separation with a forced blank receiver; (ii) the exact Ky Fan formula for the attainable record at a declared receiver rank (Theorem 12.3; I have not located it in the literature, but it is an elementary consequence of Ky Fan and no priority is claimed); (iii) the contrast that the nonfaithful P2 owner section admits a perfect occurrence record (TV = 1 exceeds the faithful 1 − 1/M bound), tied to absorption-as-move. None of this is new mathematics.
 
+### 12.5 Keeping the observed record vs revealing that the observation occurred: a trade-off for faithful observations (new in draft 3)
+
+GPT's [draft-2 follow-up](GPT_DRAFT2_FOLLOWUP.md) separates two contracts for a supplied later motion: (1) **preservation**, P T I = id, so every already observed record survives; and (2) **no occurrence effect**, P T = P T I P, which is strong lumpability. It also shows, in the accepted four-atom control, that (1) can hold while the occurrence contrast (3) is perfect. This section asks the positive structural question behind that example. When can ONE later motion both keep what was observed and let a receiver read that the observation happened? The answer is exact: for faithful observations it cannot, and the cost is quantified. The P2 owner-section absorption (a move) is exactly the kind of pruning that escapes the trade-off.
+
+**Setting.** E is a conditional expectation onto A, and E* is its Heisenberg dual (unital, A-bimodule, E*|_A = id). Q_S = Σ_{r∈S} Q_r ∈ A is the receiver projection for an outcome set S (declared; I* unchanged). Φ is a supplied channel and X_S := Φ*(Q_S), so 0 ≤ X_S ≤ I. Two operator-norm quantities are defined:
+- **Preservation defect.** D_S := sup over observed inputs σ = Eτ of |Tr(Q_S Φ(σ)) − Tr(Q_S σ)| = ‖E*(X_S) − Q_S‖. D_S = 0 for every S is GPT's (1) restricted to the receiver record.
+- **Occurrence contrast.** C_S := sup over prefixes ρ of |δ_S(ρ)| = ‖(I − E*)(X_S)‖, by Theorem 12.2(a). So sup_ρ TV_R = max_S C_S.
+
+The Heisenberg displacement then splits exactly into two parts, the disturbance of what was observed and the occurrence-revealing part:
+
+    X_S − Q_S = (E*(X_S) − Q_S) + (I − E*)(X_S).
+
+**Theorem 12.5 (keep-or-reveal).**
+(a) **Exact dichotomy.** If E is faithful (Y ≥ 0 and E*(Y) = 0 imply Y = 0) and D_S = 0, then Φ*(Q_S) = Q_S, so C_S = 0. A motion that keeps the observed receiver record leaves no trace, for any prefix, of whether the observation occurred.
+(b) **Quantitative trade-off.** If E*(Y) ≥ λY for all Y ≥ 0, with λ > 0, then
+
+    C_S ≤ D_S + 2 √(D_S / λ),   equivalently   D_S ≥ (√(1/λ + C_S) − √(1/λ))² ≈ λ C_S² / 4 for small C_S.
+
+(c) **The square root is necessary.** Take the qubit pinching, Q = |0⟩⟨0| and Φ = conjugation by e^{−iθY/2}. Then D = sin²(θ/2) and C = ½|sin θ| = √(D(1 − D)). So C/√D → 1 as θ → 0, and the √D order in (b) cannot be improved (the constant is not claimed optimal).
+(d) **Nonfaithful E escapes.** For the P2 owner section, GPT's control (atoms (a,u,b,v), fix a and b, exchange u and v) has D = 0 and C = 1. The draft-2 three-atom swap u ↔ b has D = 1 and C = 1, so it fails preservation as well as lumpability (GPT's correction; see the [D3] note in section 12.3).
+
+*Constants.* Every conditional expectation onto a unital A ⊆ M_d has the form E*(Y) = ⊕_s (id ⊗ ω_s)(P_s Y P_s) ⊗ I_{k_s}, with P_s the central projections of A = ⊕_s B(H_s) ⊗ I_{k_s} and ω_s states on C^{k_s}. The off-diagonal sector blocks vanish because P_s E*(Y) P_t ∈ P_s A P_t = 0 for s ≠ t. E is faithful iff every ω_s is faithful. With μ_s the least eigenvalue of ω_s, λ ≥ min_s μ_s / (M k_s) works. This combines three inequalities: the pinching inequality Σ_s P_s Y P_s ≥ Y/M (Hayashi 2002, already used in Proposition 12.4); (id ⊗ ω)(B) ≥ μ Tr_K B; and Tr_K B ⊗ I_k ≥ B/k (the depolarizing twirl). For a v15.16 pinching onto M sectors, λ = 1/M. For the nonfaithful owner section no λ > 0 exists, and (b) is vacuous.
+
+*Proof.* (a) Q ∈ A and E* is an A-bimodule map, so E*(Q X Q) = Q E*(X) Q = Q. Hence E*(Q − QXQ) = 0, and Q − QXQ = Q(I − X)Q ≥ 0, so faithfulness gives Q(I − X)Q = 0. That means (I − X)^{1/2} Q = 0, i.e. XQ = Q. Likewise E*((I − Q) X (I − Q)) = (I − Q) Q (I − Q) = 0 gives X^{1/2}(I − Q) = 0, i.e. X(I − Q) = 0. So X = XQ + X(I − Q) = Q.
+(b) Q(I − X)Q ≥ 0, so Q(I − X)Q ≤ λ^{−1} E*(Q(I − X)Q) = λ^{−1} Q(Q − E*(X))Q, whose norm is at most D/λ. Since 0 ≤ I − X ≤ I, (I − X)² ≤ I − X, and therefore ‖(I − X)Q‖² = ‖Q(I − X)²Q‖ ≤ ‖Q(I − X)Q‖ ≤ D/λ. In the same way, ‖X(I − Q)‖² ≤ ‖(I − Q)X(I − Q)‖ ≤ λ^{−1} ‖(I − Q)(E*(X) − Q)(I − Q)‖ ≤ D/λ. Now X − Q = −(I − X)Q + X(I − Q) gives ‖X − Q‖ ≤ 2√(D/λ), and C = ‖(X − Q) − (E*(X) − Q)‖ ≤ 2√(D/λ) + D. Solving the quadratic in √D gives the equivalent form.
+(c) X = U†QU = [[cos²(θ/2), −½ sin θ], [−½ sin θ, sin²(θ/2)]]. Pinching keeps the diagonal, so D = 1 − cos²(θ/2) and C = ½|sin θ|.
+(d) is direct computation. ∎
+
+**Corollary 12.6 (GPT's two contracts coincide for faithful observations).** If E is faithful and (1) holds on all of A (that is, D = 0 for every projection of A), then Φ*|_A = id, because A is spanned by its projections. Hence E Φ = E: the motion is lumpable with the identity coarse map, every observed record persists, and no prefix and no receiver ever shows an occurrence contrast. Conversely, Φ*|_A = id gives both (1) and (2). So **(1) and (2) together are equivalent to Φ*|_A = id for every E, and for faithful E, (1) alone already implies (2).** The separation of the two contracts that GPT exhibits is a nonfaithful phenomenon, and the P2 owner section realizes it.
+
+*Proof.* (a) applied to each projection, then linearity. For the "together" statement with any E: (1) says E*Φ*(Y) = Y on A, and (2) says Φ*(Y) = E*Φ*(Y) on A (Theorem 1's dual form). Combining them gives Φ*(Y) = Y. ∎
+
+**Construction-mode reading** (addendum (b): source distinction, joint structure, receiver consequence, ledger).
+1. *Source distinction and blank receiver.* These are as in Proposition 12.1: occurred vs not, from one prefix, with the receiver forced blank at the event.
+2. *Joint retained structure.* E (inherited: a v15.16 pinching or the P2 owner section), the loss layer Δ and the supplied motion Φ.
+3. *Receiver consequence (new).* The receiver's later outcome statistics split into the disturbance of its observed record and the trace of the occurrence. For faithful (dephasing-type) pruning, the trace costs disturbance: D ≳ λC²/4, exactly zero only together. For move-type pruning (P2 absorption), the trace is free (GPT control: D = 0, C = 1).
+4. *Ledger.* C_S ≤ κ_E(ρ) still holds pointwise (Theorem 12.2(b)). Nothing is created; the trace is the redistributed loss layer.
+
+**Time reading** (Aaron's 21:47 ET framing: time is the ordered history of compatible records of events). An ordered record history needs two properties at once: later records that keep earlier observed records intact, and records that witness that the earlier events occurred. Theorem 12.5 shows the two compete for dephasing-type (faithful) observations and coexist for absorption-type (nonfaithful, move) pruning. So, *conditionally on a supplied motion and the declared receiver*, the P2 aggregation absorption, not the v15.16 pinching, is the kind of pruning that can carry a cost-free, intact, ordered occurrence history. This is a selection statement about which inherited pruning is compatible with the time reading. It does not derive which pruning occurs (a declared input, per Aaron's 22:21 ET rule), the motion, or I*.
+
+**Relation to known results.**
+- (b) has the form of an information–disturbance trade-off (Fuchs and Peres, Phys. Rev. A 53, 2038, 1996) and the square-root shape of the gentle measurement lemma (Winter, IEEE Trans. Inf. Theory 45, 2481, 1999).
+- (a) says that, for a faithful observation, record-preserving motion forces no-signalling-in-time for that record (Kofler and Brukner 2013).
+- The constant λ is a Pimsner–Popa type inequality for E (Pimsner and Popa, Ann. Sci. ENS 19, 57, 1986).
+
+I claim no new mathematics. **New within UQCF only:** the keep-or-reveal split of the receiver displacement; the identification of GPT's (1)/(2) separation with nonfaithfulness (Corollary 12.6); and the conditional selection of move-type pruning for intact ordered occurrence records.
+
+Scratch check `/tmp/obs/chk5.py` (exploratory, disclosed in section 10): 0 violations.
+
 ## 13. Next
+
+Draft 3 additions to the freeze plan: preregister Theorem 12.5(a)–(d) and Corollary 12.6. Producer: exact sympy for (c) and the four-atom and three-atom controls. Checker: a different algorithm, namely an SDP-free brute-force search over Stinespring dilations for the largest C at fixed D, compared with the bound. Rejecting controls: a nonfaithful E with λ claimed positive; a bound with √D replaced by D (must be violated by (c)); and the three-atom swap claimed to be preserving.
+
 
 1. Freeze sections 0–12 of draft 2. Preregister: Theorems 1–4, 12.2 and 12.3, Corollaries 1.1–1.4, Propositions 8.1, 12.1 and 12.4, examples W and P (exact rationals) and the owner-section example. The 96-case table stays exploratory unless it is reproduced independently.
 2. Independent producer and checker. The producer uses exact sympy for W, P, the owner section and the Ky Fan formula. The checker uses a different algorithm: the full superoperator E C_U (I − E) and semidefinite or brute-force optimisation over motions for Theorem 12.3.
