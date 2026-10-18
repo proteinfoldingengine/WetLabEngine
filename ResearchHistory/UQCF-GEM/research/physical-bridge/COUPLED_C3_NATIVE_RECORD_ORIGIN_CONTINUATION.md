@@ -682,3 +682,12 @@ Results:
 Grok's observation_effect draft is preserved. GPT developed [a positive extension and scoped corrections](observation_preservation_review/RESULT.md), frozen at 53d164b07e32576f04bdedc31f1c2d3757e9637e. General channel record preservation depends on the occupied supports left by observation; P2 specializes to PTI=id. The draft's multiplicity-only condition is corrected to a block with both factor dimensions at least two. All-input effects, actual-state changes, nonselective idempotence and actual measurement events remain distinct.
 
 [Author follow-up](constructions/observation_effect/GPT_REVIEW_FOLLOWUP.md) and [status](observation_preservation_review/STATUS.md) state the exact scope. All frozen source/proof bytes were verified. Independent Gemini submission was blocked by automatic approval review over external API egress authorization; no review ran and no acceptance is claimed. No scientific numerical campaign or native receiver-identification advance.
+
+
+## 2026-10-17 — occupied-support extension independently accepted
+
+After explicit user approval of external Gemini submission, run [39091716370](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39091716370) accepted the unchanged frozen extension at scientific/workflow SHA 14d20b6de8949ff025a836d8a0d9c99d748d3c16. [Acceptance receipt](observation_preservation_review/REVIEW_ACCEPTANCE.md) records the exact scope, original artifact digests and limitations. Integrity, review and publication-audit jobs succeeded; 17 immutable remote checks and local artifact/input verification passed.
+
+The accepted positive result characterizes preservation on occupied receiver supports, including the nonfaithful P2 owner section. The mixed-block correction and the actual-state/event distinctions are accepted. The whole Grok draft and its numerical counts are not certified. The earlier external-review block is resolved; raw-payload durable public Git publication remains separately pending.
+
+Native bridge remains NOT_DERIVED. Return to inherited actual-record-to-owned-part identification and retention; do not substitute another preservation variant for that interface. No newly coded mechanism, scientific numerical campaign, main merge or native milestone.

@@ -1,18 +1,11 @@
 # Observation-preservation extension status
 
 Date: 2026-10-17 America/Phoenix.
-Analytical argument: FROZEN, INDEPENDENT REVIEW PENDING.
-Native bridge: NOT DERIVED.
+Analytical extension and scoped corrections: independently ACCEPTED.
+Native bridge: NOT_DERIVED.
 
-Freeze commit: 53d164b07e32576f04bdedc31f1c2d3757e9637e.
-RESULT.md Git blob: ec8277d35207655eebe492fba0d98e344188e158.
-Source lock SHA-256: 4977e5d78eafe46e5bad29e10596143877da9b4c3f4163631d9b54224bd5741e.
-All four frozen files were read back byte-for-byte from GitHub; all five inherited source blobs were verified locally.
+[Acceptance receipt](REVIEW_ACCEPTANCE.md) records the exact review, source identities and evidence. Gemini accepted the unchanged frozen argument in Actions run 39091716370 at scientific/workflow SHA 14d20b6de8949ff025a836d8a0d9c99d748d3c16. Integrity and independent publication audit passed; all three original artifacts were downloaded and verified.
 
-The author extension supplies an occupied-support preservation criterion for general channels and a coarse central receiver record, specializing to PTI=id for the P2 owner section. It corrects the draft's mixed-block dimension criterion and separates all-input effects from actual-state changes and nonselective idempotence from event occurrence.
+The user explicitly approved external submission after the earlier automatic approval rejection. Submission is complete. The freeze-era pending status in RESULT.md and FREEZE.md is retained as historical provenance; this receipt governs the current status.
 
-No scientific simulation or enumeration was run. The 35 inherited review-pipeline infrastructure tests passed locally. They are not scientific tests. Grok's exploratory 96-case counts are not certified by this note.
-
-The prepared Gemini review workflow has NOT been published or executed. Automatic approval review rejected creating its Git tree because the workflow would enable exact repository documents to be sent to the external Gemini API using the existing secret, and judged that egress insufficiently authorized. No alternative workflow or route was used to bypass the decision. The proposed review package is prepared locally; publication/submission awaits explicit approval.
-
-This status does not mark the mathematical argument accepted, the whole observation_effect draft reviewed, or the native record-identification gap closed. No main merge or numbered-stage closure.
+The accepted result covers occupied-support preservation, P2 specialization and the scoped corrections. It does not certify the entire observation_effect draft, exploratory counts, actual event occurrence or physical receiver access. The next native target is inherited actual-record-to-owned-part identification and retention. No mechanism was coded and no scientific numerical campaign was run. Full raw reviewer payload durable public Git publication remains pending under its separate approval restriction.

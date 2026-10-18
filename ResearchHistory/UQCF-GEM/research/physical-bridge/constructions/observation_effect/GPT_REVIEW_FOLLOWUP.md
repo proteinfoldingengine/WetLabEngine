@@ -1,8 +1,8 @@
 # GPT follow-up to observation_effect draft 1
 
-2026-10-17 America/Phoenix. Author assessment and mathematical extension; independent review PENDING. Original draft 086ab0ad82bbfa220915e75a2ae408e05851c849 remains unchanged.
+2026-10-17 America/Phoenix. Mathematical extension and scoped corrections independently ACCEPTED; see the acceptance receipt. Original draft 086ab0ad82bbfa220915e75a2ae408e05851c849 remains unchanged.
 
-The exact argument and controls are frozen in [observation_preservation_review/RESULT.md](../../observation_preservation_review/RESULT.md), commit 53d164b07e32576f04bdedc31f1c2d3757e9637e. [Status](../../observation_preservation_review/STATUS.md) records the external-review authorization block. Do not treat this author note as Gemini acceptance.
+The exact argument and controls are frozen in [observation_preservation_review/RESULT.md](../../observation_preservation_review/RESULT.md), commit 53d164b07e32576f04bdedc31f1c2d3757e9637e. [Acceptance receipt](../../observation_preservation_review/REVIEW_ACCEPTANCE.md) records Gemini acceptance in run 39091716370 after explicit external-submission approval. Acceptance covers this frozen extension and scoped corrections, not the entire original draft.
 
 ## Constructive extension
 
