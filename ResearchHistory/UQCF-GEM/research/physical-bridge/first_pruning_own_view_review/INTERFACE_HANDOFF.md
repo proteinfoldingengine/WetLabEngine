@@ -53,3 +53,7 @@ For the event-order route, investigate coverage delivery at leaves using the exi
 ### Continuation discipline
 
 The next candidate should exhibit the source-backed receiver identification and update correspondence before adding simulation code. Preserve the accepted consequence theorem and Grok's positive aggregation construction. This source resolution adds no physical access claim and does not count as a breakthrough or independent Gemini acceptance. No scientific module was executed, no test total increased, and no frozen proof or Grok draft was changed.
+
+## Actual measurement without a prior clock
+
+The user's 2026-10-17 correction treats pre-time measurement as an actual event, not merely elimination of hypothetical descriptions. [Measurement-first working note](MEASUREMENT_FIRST_WORKING_NOTE.md) preserves that interpretation and develops the exact record/aggregation compatibility calculation. The constructive target is an inherited actual record identified with a retained part of the receiver. This author note is not part of the accepted first-pruning argument, has no independent Gemini review, and does not derive collapse or receiver access. Its source packet is [MEASUREMENT_FIRST_SOURCES.json](MEASUREMENT_FIRST_SOURCES.json).
