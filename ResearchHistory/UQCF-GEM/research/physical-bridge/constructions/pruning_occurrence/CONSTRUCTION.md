@@ -1,10 +1,10 @@
-# Construction: forced occurrence of pruning under monotone retention (draft 1)
+# Construction: forced occurrence of pruning under monotone retention (draft 2)
 
 Author: proteinfolding-grokbot (UQCF Science Agent).
 Date: 2026-10-17 America/New_York.
 Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)); open premise (2) of Aaron's 2026-10-17 17:33 ET focus: derive the OCCURRENCE of pruning rather than supply it step by step.
 Base: the frozen, Gemini-ACCEPTED [recoverable pruning ledger](../recoverable_pruning_ledger/FROZEN_ARGUMENT.md) (freeze `0fbea1c3`, run 39070100916, native_bridge NOT_DERIVED), and the branch-split preparation pair [CONSTRUCTION.md](../preparability_branch_split/CONSTRUCTION.md) with GPT's [TWO_LOCATION_EXTENSION.md](../preparability_branch_split/TWO_LOCATION_EXTENSION.md) (accepted conditional scope, run 39076009238). Notation (carrier tree \(T\), retained ancestor-closed set \(R\ni o\), nearest-retained-ancestor retraction \(r\), fibers, owner grades \(X(y)=\sum_{r(x)=y}x(x)\)) is the ledger's.
-Status: UNREVIEWED analytical draft. No milestone, no CLOSED status, no mechanism in code. No geometry, clock, dark-matter primitive or fitting. Time = pruning / ordered recoverability update.
+Status: UNREVIEWED analytical draft (draft 2 adds §§9–14, written to Aaron's 2026-10-17 19:56 ET correction; §14 supersedes §0 items 1–2 and §5 where they conflict). No milestone, no CLOSED status, no mechanism in code. No geometry, clock, dark-matter primitive or fitting. Time = pruning / ordered recoverability update.
 
 ---
 
@@ -113,3 +113,94 @@ Scratch script `/tmp/occ/chk8.py`, not committed, no mechanism. 4000 random tree
 (a) Justify or weaken M: test whether v15.16's nested chain plus Z(A_k)⊆A_{k+1} can be stated on the growing ambient without M, and whether any inherited text retains an appended entry as an owner (that would refute M as a reading).
 (b) Access (premise A) at completeness: the receiver's coordinate is central and update-invariant up to additive delivery; find what is still missing for a readout without an added channel (next run, alternating to (1)).
 (c) Then freeze §§0–7, preregister, independent producer and checker, Gemini via Actions.
+
+---
+
+# Draft 2 (2026-10-17 ~20:00 ET): where M comes from, what it forces, and what it does not
+
+Written to Aaron's 2026-10-17 19:56 ET correction: derive M before adding any access assumption; reconcile with the inherited pruning explanation; find the weakest condition that forces a concrete pruning event; keep (i) occurrence, (ii) receiver-state change and (iii) accessibility separate; report "allowed but not forced" as CONDITIONALLY RESOLVED. No access assumption is used anywhere in §§9–13.
+
+## 9. Deriving M as far as the inherited rules go
+
+Inherited, used below: (D1) the pruning stack's carriers decrease, \(X_0\supseteq X_1\supseteq\cdots\), with retained algebras nested (v15.16, \(E_SE_T=E_{S\cup T}\)) on a **fixed** ambient; (D2) the update is **ordered**: the realized retained carrier is \(X_{j(t)}\) with \(j\) nondecreasing; (E-addr) existing addresses are fixed; (FP) fiber pushforward, an atom's owner is its nearest retained ancestor. Appends come from the separate append-only provenance write (V997 / admission decision 2026-10-17-append-only-provenance-write), not from the pruning stack.
+
+**Proposition 9.1 (transport is unique; earned).** Let \(T'=T\sqcup E\) be an append of leaves. The unital injective \(*\)-homomorphisms \(\ell^\infty(T)\to\ell^\infty(T')\) that fix every old address are exactly the pullbacks \(\varphi^*\) of maps \(\varphi:T'\to T\) with \(\varphi|_T=\mathrm{id}\). Among them, those carrying the retained algebra \(B=r^*\ell^\infty(R)\) to an algebra that obeys FP with the same owner set (owner of \(e\) = nearest retained ancestor) are exactly those with \(r(\varphi(e))=r(\mathrm{parent}(e))\), and all of them give the same algebra, \(\varphi^*B=\pi^*B=\hat r^*\ell^\infty(R)\).
+*Proof.* Unital \(*\)-homomorphisms of finite commutative algebras are pullbacks of maps of spectra; injectivity is surjectivity of \(\varphi\), and E-addr fixes \(\varphi\) on \(T\). \(\varphi^*B\) is the fiber algebra of \(r\circ\varphi\); FP with owner set \(R\) demands \(r\circ\varphi=\hat r\), i.e. \(r(\varphi(e))=\hat r(e)=r(\mathrm{parent}(e))\). The algebra depends on \(\varphi\) only through \(r\circ\varphi\). ∎
+
+So the comparison across an append is not a choice. Lemma 1.1's \(\pi\) is one representative of a canonical transport.
+
+**Proposition 9.2 (M is exactly the order read across appends).** For ancestor-closed \(R'\ni o\) on \(T'\): \(\hat r'^*\ell^\infty(R')\subseteq\pi^*B\iff R'\subseteq R\).
+*Proof.* (⇐) Between \(x\) and \(\hat r(x)\) no vertex lies in \(R\supseteq R'\), so the nearest \(R'\)-ancestor of \(x\) is that of \(\hat r(x)\): \(\hat r'\) factors through \(\hat r\). (⇒) If \(y\in R'\setminus R\), the indicator of \(y\)'s \(R'\)-fiber (descendants of \(y\) only) separates \(y\) from its strict ancestor \(\hat r(y)\), which shares \(y\)'s \(\hat r\)-fiber. ∎
+
+**Theorem 9.3 (reduction of M).** Assume D1, D2, E-addr, FP and Proposition 9.1. Then M is equivalent to
+> **P0 (one stack per Genesis Pin).** The pruning stack's initial carrier \(X_0\) is the Genesis-pinned prefix carrier, and an append extends the ambient by the canonical transport only. It does not start a new stack, so appended entries are never members of any \(X_j\).
+
+*Proof.* (P0 ⇒ M) Every realized \(R_t=X_{j(t)}\subseteq X_0\), so no appended entry is ever retained; across a pure append \(R\) is unchanged (transport); across a pruning step \(R\) shrinks (D1, D2); combined steps factor as transport followed by a fixed-ambient pruning step on \(T'\). (M ⇒ P0) Under M no appended entry is ever in \(R_t\), and \(R_t\subseteq R_0\), so \(X_0:=R_0\) is a single stack for the whole history. ∎
+
+**Proposition 9.4 (P0 is not derivable from D1, D2, E-addr, FP).** The *re-initializing* reading, in which each append extends the stack to \(X_0\cup\{e\}\) (an appended entry is retained on arrival and pruned later, as branch-split draft 1 §2 allowed), satisfies D1 and D2 on every fixed-ambient segment, satisfies E-addr and FP, and violates M whenever \(\mathrm{parent}(e)\in R\).
+*Proof.* \(R\cup\{e\}\) is ancestor-closed iff \(\mathrm{parent}(e)\in R\); then \(R\cup\{e\}\not\subseteq R\). Between appends, nothing changes in the inherited rules. ∎
+
+**Proposition 9.5 (record compatibility over-derives).** Read v15.11 §4's condition \(Z(A)\subseteq B\subseteq A\) at every provenance step, with \(A=\pi^*B_t\). Its right inclusion is Proposition 9.2, so it yields M. Its left inclusion, in the commutative \(R_{\min}\) frame where \(Z(A)=A\), forces \(B=A\): no optional removal ever (this is §12.5 of the ledger in this setting). Under the persistent reading \(R_{\mathrm{inc}}^-\), the record closure gains the new singleton shell \(\{e\}\) at every absorption, so its record algebra is **not** contained in the transported one. Appends there are acquisitions, and v15.11's descent condition does not apply to them.
+
+**What §9 establishes.** M is not a new law about retention dynamics. Given the inherited order, it is equivalent to one structural statement about appends (P0), and P0 is independent of the inherited rules (Prop 9.4). v15.11 implies M only at the price of freezing retention. **Status of M: REDUCED to P0, NOT DERIVED.** P0 sits exactly where Aaron's v15.08 qualification says the work is: the correspondence between the Genesis Pin (provenance legitimacy) and the retained state.
+
+## 10. Reconciliation with the inherited pruning explanation
+
+| Source | What it establishes | What it does not supply |
+| --- | --- | --- |
+| v15.10 | A conditional theorem: composable noninjective recoverability maps give an ordering arrow. Noninjectivity alone does not make succession acyclic (two-cycle `(0,1,2)->(1,0,0)`); strict descent is load-bearing | Occurrence of any noninjective step; an ambient that grows |
+| v15.16 | Nested conditional expectations on a fixed algebra, \(E_SE_T=E_{S\cup T}\); the \(R_{\min}\) reading | Appends; why a step happens |
+| v15.11 §4 | \(Z(A)\subseteq B\subseteq A\) is sufficient for central records to persist | Selection of \(B\); in the commutative case it forbids strict removal (Prop 9.5) |
+| V1153 | A supplied weight update (`exp(-BETA*(U-min U))`) with no final filter | Derivation of that law (admission decision 2026-10-17) |
+| Ledger (frozen) | Split \(x=E_mx+\sum D_lx\); fiber ownership; reading lattice; no global creation; Prop 11.6 loss criterion | **Order and occurrence SUPPLIED** |
+| This construction | Unique transport (9.1); M ⟺ order across appends (9.2) ⟺ P0 (9.3); forced absorption given M (Thm 1.2); forced order-erasure (§11) | P0; access A |
+
+The extra premise this construction needs beyond the inherited model is **P0** (equivalently M), together with the choice of reading (§11) and the semantic append permission GPT flagged.
+
+## 11. Weakest condition that forces a concrete pruning event
+
+Two senses of "pruning event" have been conflated, including in draft 1 (§1, "an append IS a pruning event").
+- **Ambient-relative (ledger P2 sense):** a nonzero loss-layer component. A distinction present in the ambient is never carried by the record.
+- **Record-relative (v15.10 sense):** a distinction that the record **did** separate at some earlier step is no longer separated. This is a noninjective recoverability map on what was retained.
+
+**Lemma 11.1 (one absorption loses nothing previously recorded).** Under M and \(R_{\min}\), take a single append with fixed data (parent \(\ell\), grade \(w\)) and no removal. The record map \(X\mapsto X+w\,\delta_{r(\ell)}\) is a translation, hence injective. It is an ambient-relative event: the attachment point inside \(r(\ell)\)'s fiber is never recorded. It is not a record-relative one, and in transported terms \(B_{t+1}=\pi^*B_t\), with no strict descent.
+
+So draft 1's Theorem 1.2 forces the ambient-relative event at every append. That does not yet give v15.10's arrow.
+
+**Theorem 11.2 (order erasure, forced; R_min).** Assume M (or only P0 for the two appended atoms; call this M_loc), the \(R_{\min}\) reading, and no removal between the two appends. Take two deliveries \(d_1=(y,g)\) and \(d_2=(z,h)\) into the fibers of retained owners \(y,z\), with \(y\neq z\), or \(y=z\) and \(g\neq h\). Let \(H\) deliver \(d_1\) at step \(s\) and \(d_2\) at step \(t>s\), and let \(H'\) deliver them in the opposite order, both from the same Genesis-pinned prefix. Then:
+1. at step \(s\) the records differ, \(X+g\delta_y\neq X+h\delta_z\), so the order is recorded;
+2. at step \(t\) the records coincide, \(X+g\delta_y+h\delta_z\), and they coincide at every later step under any common continuation;
+3. the provenance logs of \(H\) and \(H'\) still differ (append-only), so the order is kept in the history and erased from the retained state.
+
+*Proof.* Theorem 1.2 at each append; addition commutes; later common updates act identically. ∎
+
+This is a concrete, reached pruning event in v15.10's sense. The fixed map \((X_s,d_s,d_t)\mapsto X_s+d_s+d_t\) is invariant under swapping the deliveries, hence noninjective on \(\{H,H'\}\). The merged state is **reached** at step \(t\) in both histories, not only shown to persist. Acyclicity of the resulting succession comes from the append-only provenance order, not from noninjectivity (the v15.10 caveat is respected).
+
+**Proposition 11.3 (minimality).** Under M and \(R_{\min}\), with no removal, a record-relative loss needs at least two absorptions between the compared records (Lemma 11.1). Two suffice (Theorem 11.2). The condition is local: two atoms, one or two owners, two steps. It needs no global shrinking, no capacity bound and no optional removal.
+
+**Proposition 11.4 (persistent reading: allowed, not forced).** Under \(R_{\mathrm{inc}}^-\), absorptions are recorded as shells keyed by arrival step, so \(H\) and \(H'\) stay separated (owner \(y\) holds shell \((s,g)\) vs \((t,g)\)). No number of absorptions alone causes a record-relative loss. Such a loss needs Prop 11.6(b), the removal of an owner that had absorbed a shell, and that removal is optional under M. Simultaneous arrivals (Prop 11.6(a)) lose only distinctions that were never recorded. **Under \(R_{\mathrm{inc}}^-\), occurrence of a record-relative pruning event is CONDITIONALLY RESOLVED: allowed, not forced.**
+
+**Proposition 11.5 (capacity forces nothing new here).** Under M, \(|R_t|\) never grows, so an owner-count bound \(K\ge|R_0|\) never binds, and a bound \(K<|R_0|\) forces only finitely many removals, all before any append matters. A record-dimension bound under \(R_{\mathrm{inc}}^-\) forces shells to merge once it is saturated. Merging the new shell into an old one with known data is again a translation (Lemma 11.1), so even this forces a record-relative loss only through an unforced choice of which shells merge. This is Bennett's finite-memory erasure; it does not single out an event.
+
+Reading consequence, stated plainly: the inherited reading \(R_{\min}\) forgets **when** deliveries arrived and keeps **how much** arrived; the persistent reading \(R_{\mathrm{inc}}^-\) keeps both. Choosing the reading is choosing whether the retained record keeps provenance order. Under \(R_{\min}\) the arrow is forced by two appends; under \(R_{\mathrm{inc}}^-\) it is not.
+
+**Link to W2.** Aaron's \((g,h)\) vs \((h,g)\) pair is Theorem 11.2 with \(y=u\), \(z=v\), read at the owner that absorbs both (complete \(a\)). The blindness of W2 at completeness (§3), and branch-split Proposition 3.2's collapse, are this forced order-erasure event viewed from the receiver. They are the occurrence result, not a failed separation.
+
+## 12. The three obligations, kept separate
+
+| Obligation | Status after draft 2 | Premises |
+| --- | --- | --- |
+| (i) A pruning event occurs | Ambient-relative: **FORCED** at every append (Thm 1.2, Lemma 11.1). Record-relative: **FORCED under \(R_{\min}\)** by two appends (Thm 11.2), minimal (Prop 11.3); **CONDITIONALLY RESOLVED (allowed, not forced) under \(R_{\mathrm{inc}}^-\)** (Prop 11.4) | P0 (≡ M), reading choice, append permission |
+| (ii) Aggregation changes the receiver's state | **FORCED** for the owner of the parent: \(X(r(\ell))\mapsto X(r(\ell))+w\) at the arrival step. Under completeness every inside append reaches \(a\) (Thm 3.2(2)), but reaching completeness is **not** forced (Thm 3.2(3)): a persistent merged state is not thereby reached | P0, plus completeness for the \(a\)-only reading |
+| (iii) The change is accessible to the receiver | **NOT ADDRESSED; A NOT DERIVED.** No step in §§9–12 uses or implies a readout | — |
+
+## 13. Honest novelty (draft 2)
+
+Known: sums forget summands (Landauer/Bennett logical irreversibility); coarse-graining loses order information; decreasing filtrations and data processing (§6). Not claimed against these. What is new for the program: (1) the transport across an append is unique given E-addr and FP (9.1), so M becomes a precise, testable statement (9.2) and reduces to a single Genesis-Pin premise P0 that is provably independent of the inherited rules (9.3–9.4); (2) v15.11 compatibility across appends implies M only by freezing retention (9.5); (3) separating ambient-relative from record-relative events shows that one absorption is never a v15.10 loss (11.1), while two absorptions force one under the inherited reading (11.2–11.3); this is the minimal local forcing, and it is an erasure of **provenance order** from the retained state with the order kept in the pinned history, which is v15.08's "history is not visible state" obtained as a consequence; (4) the reading lattice is identified as the switch between a forced and an unforced arrow (11.4).
+
+## 14. Corrections to draft 1, and next
+
+- §0 item 1 and §1 "an append IS a pruning event": true in the ambient-relative sense only (Lemma 11.1). §0 item 2 and Theorem 2.1: \(D_t\) is an ambient-relative counter; it is not v15.10's record-relative arrow. The record-relative arrow is Theorem 11.2 (\(R_{\min}\)).
+- §5's "Occurrence: FORCED CONDITIONAL ON M" now reads: ambient-relative forced given P0; record-relative forced given P0 and \(R_{\min}\); conditionally resolved under \(R_{\mathrm{inc}}^-\).
+- Exploratory scratch check `/tmp/occ2/chk9.py` (not committed, not evidence, no mechanism): 3000 random trees with 2–7 atoms. It found 0 violations of transport uniqueness (9.1), inclusion iff \(R'\subseteq R\) (9.2), abelian v15.11 rigidity (9.5), translation injectivity (11.1), order erasure under \(R_{\min}\) (11.2) and order retention under \(R_{\mathrm{inc}}^-\) (11.4), and the re-initializing countermodel violated M in every case where \(\mathrm{parent}(e)\in R\) (9.4).
+- **Next:** freeze §§0–14 with the corrections; preregister; independent producer and checker for 9.1, 9.2, 9.4, 9.5, 11.1–11.4; Gemini review via Actions with the exact frozen text. After that, attempt to derive P0 from the Genesis Pin correspondence (v15.08) or show it independent there too. Access (iii) stays untouched until then, per Aaron's correction.
