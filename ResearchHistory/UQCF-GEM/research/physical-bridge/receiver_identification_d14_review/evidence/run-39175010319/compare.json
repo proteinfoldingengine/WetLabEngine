@@ -1,0 +1,369 @@
+{
+ "checker_sha256": "be056bce7b261c9655d0de77c02c8d09716e2f77f03e8ff63d5b2abc4af1875a",
+ "controls": {
+  "R10_A1_A2_force_full_access": "REJECTED",
+  "R1_trivial_availability_transfers": "REJECTED",
+  "R2_genesis_dump_receiver_gains": "REJECTED",
+  "R3_sigma_event_determined": "REJECTED",
+  "R4_canonical_extension_unique": "REJECTED",
+  "R5_addition_injective_01": "REJECTED",
+  "R6_threshold_unit_invariant": "REJECTED",
+  "R7_E2_Rp_imply_R_signed": "REJECTED",
+  "R8_relabel_sharpens_E": "REJECTED",
+  "R9_unit_free_transfers_without_empty": "REJECTED"
+ },
+ "freeze_sha256": "826964c9fcd0b36c143903f7d91784b7cabfa0915720f66971dd2ee34b268fee",
+ "frozen_sha256": {
+  "CORRESPONDENCE.md": "710d786c3cf6034844c753cd3bef54294f7fa838c8780232dad3612f86fc94da",
+  "FOLLOWUP.md": "5e906ca758c2cd07459fa0e39afd2b0f26380a266b11191d8bfccc9d0ec7f146",
+  "RESULT.md": "f6cc849663224a5a2c877cd32a6700ecad9df1ea2d4f723a040c66e55dbc38f9"
+ },
+ "instances": {
+  "X1.collision": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    0
+   ]
+  ],
+  "X1.inj_01_01": false,
+  "X2.G_alt": [
+   [
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ],
+  "X2.G_can": [
+   [
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    0,
+    1,
+    1
+   ]
+  ],
+  "X2.N": [
+   "1/2",
+   "1/2",
+   "1/2",
+   "1/2",
+   "1/2",
+   "1/2"
+  ],
+  "X2.Q": [
+   "1/2",
+   "1/2",
+   "1/2",
+   "1/2",
+   "1/2",
+   "1/2"
+  ],
+  "X2.sigma": [
+   [
+    "0",
+    "0",
+    "1"
+   ],
+   [
+    "0",
+    "1",
+    "0"
+   ]
+  ],
+  "X3.det_dim": [
+   3,
+   4,
+   4,
+   5,
+   7,
+   4,
+   6,
+   4,
+   10
+  ],
+  "X3.pair_ext": [
+   5,
+   13,
+   13,
+   31,
+   1,
+   6,
+   26,
+   6,
+   5
+  ],
+  "X3.plocal": [
+   [
+    9,
+    3
+   ],
+   [
+    4,
+    2
+   ]
+  ],
+  "X3.units": [
+   9,
+   16,
+   16,
+   25,
+   9,
+   16,
+   36,
+   16,
+   16
+  ],
+  "X4.a": [
+   "1",
+   "0"
+  ],
+  "X4.b": [
+   "1",
+   "1/2",
+   "0",
+   "1",
+   "0"
+  ],
+  "X4.c": [
+   "1/3",
+   "1/3"
+  ],
+  "X5.controls": [
+   "0",
+   "0"
+  ],
+  "X5.illus": [
+   "1/2",
+   "3/4",
+   "1/4"
+  ],
+  "X5.vminusu": "2",
+  "X6.prefix": [
+   [
+    "1",
+    "2",
+    "1"
+   ],
+   [
+    "0",
+    "0",
+    "1"
+   ],
+   [
+    "0",
+    "1",
+    "1"
+   ],
+   [
+    "1/2",
+    "1",
+    "1"
+   ]
+  ],
+  "X6.rfail": [
+   [
+    2
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    1
+   ],
+   [
+    1
+   ]
+  ],
+  "X7.dump": [
+   4,
+   2,
+   "0"
+  ]
+ },
+ "producer_sha256": "eae5a0a422f86f0ffe80f557a9848548602b35a1f22809d826e398f14223b6ac",
+ "status": "GREEN",
+ "tamper": {
+  "control_flip": "DETECTED",
+  "dropped_region": "DETECTED",
+  "duplicated_key": "DETECTED",
+  "duplicated_pair": "DETECTED",
+  "extra_key": "DETECTED",
+  "false_provenance": "DETECTED",
+  "flipped_invariance_digest": "DETECTED",
+  "missing_control": "DETECTED",
+  "producer_as_checker": "DETECTED",
+  "signed_counterexample_removed": "DETECTED",
+  "substituted_law": "DETECTED",
+  "violation_hidden": "DETECTED",
+  "wrong_count_U20D": "DETECTED",
+  "wrong_fraction_X4": "DETECTED",
+  "wrong_result_bytes": "DETECTED"
+ },
+ "universes": {
+  "U19A": {
+   "counts": {
+    "coherent_inputs": 507,
+    "dep": 9,
+    "extensions": 169,
+    "inv": 47,
+    "kraus_ops": 797,
+    "noninv": 112,
+    "pair": 106,
+    "rand": 54,
+    "units": 159
+   },
+   "det_dim": [
+    3,
+    4,
+    4,
+    5,
+    7,
+    4,
+    6,
+    4,
+    10
+   ],
+   "digest": "13220ffa7a76560cdfaee5f1b305c0f0bfcec88652d92208c9046e08416e8efd",
+   "pair_ext": [
+    5,
+    13,
+    13,
+    31,
+    1,
+    6,
+    26,
+    6,
+    5
+   ],
+   "plocal": [
+    [
+     9,
+     3
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "units": [
+    9,
+    16,
+    16,
+    25,
+    9,
+    16,
+    36,
+    16,
+    16
+   ]
+  },
+  "U19B": {
+   "digest": "f033dcd45058e202bb2faf49dd6e8c0746a1c225fc9aedcd44d7c163e62b2140",
+   "injective": 130,
+   "noninjective": 95,
+   "pairs": 225
+  },
+  "U19C": {
+   "E2Rp": [
+    1,
+    1,
+    5,
+    25
+   ],
+   "E2Rp_nonneg": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "E2Rp_notR": [
+    0,
+    0,
+    4,
+    24
+   ],
+   "R_true": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "digest": "4a3f63ca7afefb08add8b7bbaea9fe3357dfeafd8db50f325434a584307007ec",
+   "vectors": 1554
+  },
+  "U20A": {
+   "digest": "d92886ca8faa06050ef3ecd3d40f07fffc3f47d83d6ee72d05bc8f8a1b6f6259",
+   "functions": 1023,
+   "partitions": 202,
+   "subsets": 31
+  },
+  "U20B": {
+   "cases": 38,
+   "covering": 1676,
+   "digest": "c477708587d57842fd5f686cf11854e2dae587f0c92c901d66c76826bb3049f1",
+   "partitions": 661,
+   "positive": 572,
+   "strict_decrease": 924
+  },
+  "U20C": {
+   "admit_nontrivial": 31,
+   "digest": "b99381cb99d44fb69ca08f4e13d43d991177e03b874496294e60a8657b300e24",
+   "invariant": 94,
+   "partitions": 876,
+   "subsets": 63
+  },
+  "U20D": {
+   "cases": 260,
+   "digest": "3e7fa45648cdffc6030fb86acb63c7f160f20b16258012d10f32df0a334278cb",
+   "nontransfers": 76,
+   "transfers": 184
+  },
+  "U20E": {
+   "cases": 6500,
+   "digest": "e8b0f632472f2cf252bc6210987c93bde092ef344ee3ffe4cadca775d3ba045f",
+   "nontransfers": 2820,
+   "transfers": 3680
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "files": {
+  ".github/scripts/uqcf_rid14_checker.py": {
+   "match": true,
+   "remote_sha256": "3bd76f2bc9b606b9abfb02913629131e32fa9c160196f73135ee4ab807571c4b"
+  },
+  ".github/scripts/uqcf_rid14_compare.py": {
+   "match": true,
+   "remote_sha256": "2b76259aee2e10574a429693b35ef704f5fe775b3d6813456465adce62bb73fb"
+  },
+  ".github/scripts/uqcf_rid14_producer.py": {
+   "match": true,
+   "remote_sha256": "7bf15b78d723ffd8b43e6ce687db1afdc8ec37ca1875817020bee98b5d2fab0e"
+  },
+  ".github/scripts/uqcf_rid14_publication.py": {
+   "match": true,
+   "remote_sha256": "06c5e233cb64abe34ae1cc5e26c68d588913503b8241b05f518ffecfe65a8acc"
+  },
+  ".github/scripts/uqcf_rid14_review.py": {
+   "match": true,
+   "remote_sha256": "fbe8e6a9fde4d1a3bf10d9c49a4212f50b7f254775ab00e21f7913db07d5c75e"
+  },
+  ".github/workflows/uqcf-gem-rid14-review.yml": {
+   "match": true,
+   "remote_sha256": "aa66e4e6464a2c5d342349731c1a494cef481fa17f3b1db686ac753837a2cffe"
+  },
+  "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d14_review/CORRESPONDENCE.md": {
+   "match": true,
+   "remote_sha256": "710d786c3cf6034844c753cd3bef54294f7fa838c8780232dad3612f86fc94da"
+  },
+  "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d14_review/FOLLOWUP.md": {
+   "match": true,
+   "remote_sha256": "5e906ca758c2cd07459fa0e39afd2b0f26380a266b11191d8bfccc9d0ec7f146"
+  },
+  "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d14_review/FREEZE.md": {
+   "match": true,
+   "remote_sha256": "826964c9fcd0b36c143903f7d91784b7cabfa0915720f66971dd2ee34b268fee"
+  },
+  "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d14_review/RESULT.md": {
+   "match": true,
+   "remote_sha256": "f6cc849663224a5a2c877cd32a6700ecad9df1ea2d4f723a040c66e55dbc38f9"
+  }
+ },
+ "model_returned": "gemini-3.1-pro-preview",
+ "review_sha256": "58b88617b3dcb7b40ac272e6d560e9a07452fa09cb819b21f16cc6cf32f2bcdb",
+ "run_id": "39175010319",
+ "sha": "6d9c96b1c296a0205f61c0918199a523c3254e32",
+ "status": "PASS",
+ "verdict": "ACCEPTED",
+ "verify_status": "GREEN"
+}
