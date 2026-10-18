@@ -711,3 +711,10 @@ This is the UQCF reading of the known quantum witness / NSIT (Li et al. 2012; Sc
 [GPT draft-2 follow-up](constructions/observation_effect/GPT_DRAFT2_FOLLOWUP.md) reuses the already accepted four-dimensional nonfaithful control: fixing the owner directions preserves every observed record (PTI=id), while swapping the unoccupied directions can reveal occurrence versus nonoccurrence perfectly from one prefix. The contrast test is PT(Id-IP)x, and all-input absence of contrast is PT=PTIP (lumpability). These are distinct from PTI=id. The new occurrence interpretation is an author calculation, not covered by the earlier independent review.
 
 Keep Grok's positive one-prefix construction and correct the conflation before its planned whole-argument review. The common prefix reduces preparation bookkeeping; native motion, the event-to-map correspondence and actual receiver ownership/access remain explicit obligations. The live source reread confirms the already published interface boundary; it is not new native progress. No scientific code, new mechanism, numerical campaign, independent acceptance of draft 2, or milestone. Primary native work remains the inherited event acting on an independently justified receiver state/observation structure.
+
+
+## 2026-10-17 — occurrence-contrast follow-up frozen; independent submission blocked
+
+The exact author follow-up is frozen at 879f6d9375307c68a835424b77d4ce456e95b3f5 with five source documents. [Status](occurrence_contrast_review/STATUS.md) records exact source identities and the pending external-review authorization. All frozen bytes matched immutable readback; 35 local review-pipeline tests passed. No scientific numerical campaign ran.
+
+Automatic approval review rejected the branch update that would enable the distinct occurrence-contrast packet to be sent to Gemini. The prepared workflow commit 85b85eacf1b4cccef2e0a6d9648eb194a7d8f1f2 was not published on the branch; no review ran and no acceptance is claimed. The scope remains the preservation/lumpability clarification, not a native receiver-access derivation. Native ownership and event-to-state correspondence remain open.
