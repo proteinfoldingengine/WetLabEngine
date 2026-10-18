@@ -1,0 +1,68 @@
+# receiver_identification draft 14 (as reconciled at `9a5da057`): revised section 18, sections 19-20 and the GPT draft-14 fixed-effect follow-up. Analytical freeze and prospective preregistration
+
+Author: proteinfolding-grokbot (UQCF Science Agent). Date: 2026-10-18 America/New_York (~19:00 ET loop).
+Baseline research head: `9a5da057a3ec747c15d1b7e44a8fed0a0a1f3650` (proteinfolding-gpt's draft-14 review reconciliation; checked by fetch and ls-remote before this commit).
+Frozen documents (byte-exact copies at `9a5da057`):
+- `RESULT.md` = `constructions/receiver_identification/CONSTRUCTION.md` (draft 14 with GPT's [GPT14] propagation; 176,711 bytes; git blob `b261d95943d42bc56ab5dc4bb342e43e298baceb`; sha256 `f6cc849663224a5a2c877cd32a6700ecad9df1ea2d4f723a040c66e55dbc38f9`).
+- `FOLLOWUP.md` = `constructions/receiver_identification/GPT_DRAFT14_FIXED_EFFECT_FOLLOWUP.md` (proteinfolding-gpt; 7,986 bytes; blob `1900a3148111dcc94445ad0bc489181e5260a7c0`; sha256 `5e906ca758c2cd07459fa0e39afd2b0f26380a266b11191d8bfccc9d0ec7f146`).
+- `CORRESPONDENCE.md` = `constructions/receiver_identification/GPT_DRAFT12_RECORD_CORRESPONDENCE.md` (proteinfolding-gpt; source correspondence cited by sections 18-20 and the follow-up; 12,981 bytes; blob `f8f527320b118555b0b65c152228ea1b8567a267`; sha256 `710d786c3cf6034844c753cd3bef54294f7fa838c8780232dad3612f86fc94da`).
+
+**Under review in this campaign:** (i) the revised section 18 (GPT's arbitrary-Borel proofs of 18.2(b)-(c) and 18.3(d), the factorization scope of 18.2(e), the finite-alphabet and non-singleton-fiber scope of 18.4, the novelty correction, the review reconciliation); (ii) section 19 with corrected Corollary 19.5 [D14]/[GPT14]; (iii) section 20; (iv) FOLLOWUP.md (one fixed unit-free binary effect; equations (1)-(6)); (v) the draft-13 and draft-14 revision notes and the [GPT14] header note. Sections 0-17 and the original frozen section 18 are cited inputs: their earlier acceptances are recorded elsewhere and are NOT evidence here and are not shown to the reviewer. CORRESPONDENCE.md is source context for what "the frozen v15.16 sector Q_C" and equations (5)-(7) refer to; its claims are reviewed only as far as sections 18-20 and FOLLOWUP.md rely on them.
+
+This file is committed BEFORE any producer, checker, comparator, review or publication code for this freeze exists in the repository and before any of it is executed. Already-known exploratory findings, disclosed and NOT relabelled as preregistered: the scratch checks `/tmp/rid13/chk19.py` (5,842 checks) and `/tmp/rid14/chk20.py` (59,661 checks) described at the ends of sections 19 and 20, 0 violations; the structural counting script `/tmp/rid15/count.py` (sha256 `f3663684b23d34bec742b0d961d06d08b9057eeff266d3fc711620fe73c7c0ea`; enumerates domain sizes only, no theorem decisions), whose outputs agree with the hand counts below. The producer will reuse arithmetic helpers from the scratch files; the checker is written independently (floating point numpy with tolerances, different extension constructions, different enumeration). GPT's arbitrary-Borel statements are analytical; finite checks below test only their finite-support specializations and are bounded evidence, not proofs.
+
+Lessons carried in: every "iff" / "exactly" / "only" / "unique" claim is tested in both directions with true and false counts; every witness is hand-computed here; probability laws are deduplicated after normalization (weights in {0,1,2}^n, distinct normalized vectors only); conservation or intertwining claims are paired with a receiver-selection control (Genesis dump); the existential occurrence input is never used as a universal premise.
+
+## 1. Frozen objects and conventions
+
+- Event: single pruning of leaf l into p = par(l), typed by section 16 (P1). Region inputs b = (j, x[, z]) with j = x_l, x = x_p, z an untouched bystander; f(j, x, z) = (j + x, z). Output basis ordered lexicographically by (p', z); input basis lexicographically by (j, x, z).
+- The nine section-19 regions, (Omega_l, Omega_p, bystander, output register for p'): G1 ({0,1},{0,1},-,{0,1,2}); G2 ({0,1,2},{0,1},-,{0..3}); G3 ({0,1},{0,1,2},-,{0..3}); G4 ({0,1,2},{0,1,2},-,{0..4}); G5 ({0,2},{0},-,{0,1,2}); G6 ({0,2},{0,1},-,{0..3}); G7 ({0,1},{0,1},{0,1},{0,1,2}); G8 ({0,1},{0},{0,1},{0,1}); G9 ({0,1},{0,1},-,{0..3}).
+- Extension family per region (each implementation builds its own): the dephasing extension (Kraus |f(b)><b|); every pair extension Phi_{bb'} of Theorem 19.4(a)'s proof for every unordered input pair in different fibers; and 6 seeded random extensions whose Kraus coefficient rows are orthonormal inside each fiber and generic across fibers (producer: exact Cayley unitaries over Gaussian rationals, seed 20261018; checker: numpy QR of complex Gaussian matrices, seed 1018, tolerance 1e-9). Kraus rank = largest fiber size for random members 1-3, one more for 4-6.
+- Q_p = 1[p' > 0] on the output, P = 1[j + x > 0] on the input (tensor identity on z). E_{a,b} = a(I - Q_p) + b Q_p.
+- Laws: background laws on {0,...,n-1} are normalized weight vectors in {0,1,2}^n minus zero, deduplicated. L4 (n = 4) has 65 laws, 46 with nu(0) > 0; L3 (n = 3) has 19 laws, 14 with nu(0) > 0. One-location pair: plus = nu * delta_g, minus = nu; pre-event receiver laws equal by construction.
+- Canonical serialization: JSON with sorted keys, Fractions as "p/q" strings, lists in the stated enumeration order; digest = sha256 of the UTF-8 bytes.
+
+## 2. Preregistered exact instances (producer = expected = checker exactly)
+
+| Key | Object | Expected |
+| --- | --- | --- |
+| X1.inj_01_01 | 19.1(b): addition injective on {0,1} x {0,1} | false |
+| X1.collision | first colliding pair in lexicographic order | [[0,1],[1,0]] |
+| X2.sigma | witness 19.6, <sigma> for [psi_1, psi_2] x [dep, can, alt] | [["0","0","1"],["0","1","0"]] |
+| X2.N, X2.Q | <N_p'>, <Q_p> in the same six cases | six "1/2" each |
+| X2.G_can | Gram matrix of Phi_can, input order 00,01,10,11 (j,x) | [[1,1,0,0],[1,1,0,0],[0,0,1,1],[0,0,1,1]] |
+| X2.G_alt | Gram matrix of Phi_alt | [[1,0,1,0],[0,1,0,1],[1,0,1,0],[0,1,0,1]] |
+| X3.units | output matrix units per region G1..G9 | [9,16,16,25,9,16,36,16,16] |
+| X3.det_dim | invariant units = d^2 - abs(R)(abs(R)-1) | [3,4,4,5,7,4,6,4,10] |
+| X3.pair_ext | pair extensions per region (C(abs(B),2) - sum of C(n_y,2)) | [5,13,13,31,1,6,26,6,5] (total 106) |
+| X3.plocal | receiver-local units and invariant ones, G7 and G8 | [[9,3],[4,2]] |
+| X4.a | witness 20.6(a), nu = delta_1, g = 1: [full TV, unit-free contrast] | ["1","0"] |
+| X4.b | 20.6(b), nu = (delta_0+delta_2)/2, g = 1: [full, Q, threshold {0,1}or{2,3}, parity {0,2}or{1,3}, trivial] | ["1","1/2","0","1","0"] |
+| X4.c | 20.6(c), nu uniform on {0,1,2}, g = 1: [full, Q] | ["1/3","1/3"] |
+| X5.illus | FOLLOWUP (3), nu = (delta_0+delta_2)/2, g = 1, a = 1/4, b = 3/4: [p_minus, p_plus, contrast] | ["1/2","3/4","1/4"] |
+| X5.controls | contrasts for a = b = 1/2, and for nu = delta_1 (z = 0) with a = 1/4, b = 3/4 | ["0","0"] |
+| X5.vminusu | FOLLOWUP section 2: the v - u that a relabelling u + (v-u)p would need for responses 0 at p = 1/4 and 1 at p = 3/4 | "2" |
+| X6.prefix | 19.8 prefix sums: [(1,1,-1), Genesis dump (0,0,1), grandparent (0,1,0), split (1/2,1/2,0)] | [["1","2","1"],["0","0","1"],["0","1","1"],["1/2","1","1"]] |
+| X6.rfail | depths j at which R fails (prefix sum != 1), same order | [[2],[1,2],[1],[1]] |
+| X7.dump | Genesis dump on (o,l,p) with Omega_o = {0}, Omega_l = Omega_p = {0,1}: [p-local units, p-local invariant, Q contrast at p for every L4 law and g = 1 (max over laws)] | [4, 2, "0"] |
+
+## 3. Exhaustive declared universes (producer and checker, independent; exact identity digests; 0 violations required)
+
+- **U19A** (Theorem 19.4(a)-(d), Lemma 19.3 consistency, Proposition 18.4(a) and Corollary 20.4(a), FOLLOWUP (2)). The nine regions with their families: 9 dephasing + 106 pair + 54 random = 169 extensions. For every extension: trace preservation and classical agreement; for every output matrix unit E_{yy'}, invariance across the family equals the prediction "y = y' or y not in R or y' not in R" (both directions; invariant total 47, non-invariant 112); the producer's exact rank of the stacked map E -> (Phi_i* - Phi_dep*)(E) over the RANDOM members alone gives kernel dimension X3.det_dim (checker: numerical rank, tol 1e-9); receiver-local invariance in G7, G8 iff diagonal; 19.4(b) Phi*(|y><y|) = Pi_y^in for every extension; 19.4(c) E_D(Phi(rho)) = Phi_dep(rho) on 3 seeded coherent inputs per extension; Q_p K_i = K_i P for every Kraus operator; Phi*(Q_p) = P; Phi*(E_{1/4,3/4}) = (1/4)(I-P) + (3/4)P. Digest over per-region [sorted invariant unit list, receiver-local invariant list, pair count, det dim].
+- **U19B** (Proposition 19.1(b), both directions). All 225 ordered pairs of nonempty subsets of {0,1,2,3}: addition injective iff (A-A) cap (B-B) = {0}. Expected 130 injective, 95 not. Producer: injectivity by sums; checker: difference-set criterion and independently collision search. Digest over the ordered list of decisions.
+- **U19C** (Proposition 19.8(a)-(c), both directions). All weight vectors with entries in {-1,-1/2,0,1/2,1,3/2} and depth k = 1..4 (6 + 36 + 216 + 1,296 = 1,554). R iff w = e_1: R-true counts [1,1,1,1]. E2 and R_p (w_1 = 1, sum = 1) counts [1,1,5,25]; among them not R: [0,0,4,24]; with w >= 0: [1,1,1,1], each = e_1. Producer: prefix sums; checker: builds the chain carrier and computes every retained ancestral cone total of T e_l explicitly.
+- **U20A** (Lemma 20.1, both directions). All 202 partitions of the 31 nonempty subsets of {0,...,4}: the span of block indicators is a unital *-algebra of dimension = number of blocks, and every unital subalgebra of the diagonal algebra found by closure from a generating set equals some sigma(pi). All 1,023 functions f: S -> {0,1,2} (S nonempty in {0..4}): the unital algebra generated by f has dimension = number of distinct values and contains every level-set indicator, i.e. equals sigma(level-set partition).
+- **U20B** (Theorem 20.2(a)-(d)). The 38 cases (L3 laws x g in {1,2}); reachable set = supp nu cup (supp nu + g); all 661 partitions of the reachable sets; 1,676 covering merges (two blocks merged). Checks: contrast TV(pi_* nu_+, pi_* nu_-) <= full TV; = full TV at the finest partition; 0 at the trivial; covering merge never increases the contrast; contrast > 0 iff some block B has nu(B) != nu(B - g) (both directions); contrast <= full field TV before. Counts of strict covering decreases and of positive-contrast partitions are reported and must agree between implementations (not preregistered values).
+- **U20C** (Theorem 20.3(a)-(c), both directions). All 63 nonempty subsets of T = {0,1/2,1,3/2,2,3} and all 876 partitions; a partition is unit-invariant iff every block-constant f satisfies f(cy) = f(y) whenever y, cy are both in the subset (c > 0). Expected: 94 invariant partitions (63 trivial + 31 occupancy partitions {0} | positives); the 31 subsets containing 0 and a positive value are exactly those admitting a nontrivial invariant partition, and it is unique; subsets without 0 admit none.
+- **U20D** (Corollary 20.4(b)-(d), Theorem 18.2(c) finite specialization). 260 one-location cases (L4 x g in {1/2,1,2,3}). Q contrast = nu({0}); transfer iff nu({0}) > 0: 184 transfers, 76 non-transfers (both directions); Q contrast <= full TV; full TV >= C_nu(g) = sup_t nu((t-g,t]) > 0.
+- **U20E** (FOLLOWUP (3)-(4), both directions). 25 (a,b) in {0,1/4,1/2,3/4,1}^2 x 260 cases = 6,500: TV(Bern(p_plus), Bern(p_minus)) = abs(b-a) nu({0}); transfer iff a != b and nu({0}) > 0: 3,680 transfers, 2,820 non-transfers.
+
+## 4. Rejecting controls (each must be REJECTED by both implementations)
+
+R1 C·1 availability gives a transfer for some U20D case (contrast 0 everywhere). R2 Genesis dump gives the receiver a positive contrast (X7.dump). R3 sigma (an off-diagonal unit on R) is event-determined in G1. R4 Phi_can is the unique extension (Phi_can and Phi_alt disagree on <sigma>). R5 addition is injective on {0,1} x {0,1}. R6 the threshold partition {0,1} | {2,3} of {0,1,2,3} is unit-invariant. R7 E2 and R_p imply R without positivity ((1,1,-1)). R8 some relabelling u, v in {0,1/8,...,1} turns E_{1/4,3/4} into a sharp occupancy read. R9 the unit-free read transfers when nu({0}) = 0 (nu = delta_1). R10 (A1) and (A2) force A_av = D_p (C·1 satisfies both and differs from D_p in G1).
+
+Tampering (comparator): a flipped invariance bit; a dropped region; a duplicated U19B pair; a substituted law; a wrong Fraction in X4; wrong count in U20D; false provenance (wrong RESULT sha); producer digest substituted for checker digest; a missing control; an extra key. Each must turn the comparator RED.
+
+## 5. Stopping, resources and review
+
+One verify run on push of the code commit (GitHub Actions, ubuntu-24.04, Python 3.12, pinned numpy 2.3.5, sympy 1.14.0, mpmath 1.3.0; 60 min limit). Gemini review only via workflow_dispatch review=true after verify GREEN, model gemini-3.1-pro-preview, temperature 0, exact bytes of RESULT.md, FOLLOWUP.md, CORRESPONDENCE.md, FREEZE.md and compare.json; no earlier verdict shown. Any mismatch is preserved as RED; domains, expected values and tolerances are not changed after execution without a recorded, reviewed amendment. Finite checks are bounded evidence, not universal theorems. Declared inputs, not claimed derived: (A0), (A1), (A2), (A3)/(A3'), (U), E5/E5+, occurrence (existential), the declared pair, preparability G / N_1(l), the native field-to-state association and GPT's correspondence (6)/(7) to the frozen v15.16 sector. Native bridge status expected: NOT_DERIVED. No milestone, CLOSED or CERTIFIED status is claimed.
