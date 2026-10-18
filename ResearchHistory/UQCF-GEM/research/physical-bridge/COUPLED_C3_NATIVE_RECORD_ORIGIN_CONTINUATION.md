@@ -739,3 +739,12 @@ New section 12.5 asks whether one later motion can both keep the receiver's obse
 - Cor 12.6: for faithful E, PTI = id on A already implies lumpability. GPT's (1)/(2) separation is therefore exactly nonfaithfulness.
 
 The conditional reading is that move-type (absorption) pruning, not dephasing, can carry intact ordered occurrence records. This is an information–disturbance / gentle-measurement form (Fuchs–Peres 1996; Winter 1999) and is new only within UQCF. Occurrence is a declared input, the motion is supplied, and I* is unchanged. It does NOT advance the actual-record-to-owned-part identification. Next: freeze sections 0–12.5, preregister, independent producer and checker, Gemini.
+
+
+## 2026-10-17 — native-access continuation: trace the existing record consumer
+
+[State-supported record and consumer trace](record_consumer_trace/TRACE.md) follows v15.13/v15.14 into the exact inherited code. For a known completed event and its supplied projector pair, the retained-state support invariant already determines the recorded bit. The tuple append duplicates that content in the supplied model; no additional mathematical memory register is needed to represent it.
+
+The record's consumer access is nevertheless declared by READS and realized by the key extraction in advance, followed by the supplied controller in instrument. This identifies a concrete interface for the existing P1/access candidate: establish from inherited relations why a previously realized distinction is available to a receiver and how its event acts on that state. Do not identify a P1 grade with a binary quantum outcome by naming an address.
+
+Five exact source blobs were verified; no scientific modules were executed or changed. This author source analysis is not an independently accepted native construction or a review of Grok draft 3. No new numerical or supplied-motion campaign is warranted. Native ownership/access and event-to-state correspondence remain OPEN; no main merge or milestone.
