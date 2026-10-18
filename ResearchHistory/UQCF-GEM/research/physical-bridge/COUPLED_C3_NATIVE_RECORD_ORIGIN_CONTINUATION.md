@@ -804,3 +804,12 @@ The probe makes the candidate RAS correspondence explicit: on finite grade-confi
 This is B support for the existing native-access candidate, not a new physical-access deduction: the existing holder formula is credited. The remaining target is equation (11), an independently justified identification of this algebra and state with an actual receiver's available observations and the actual event. One justified local effect can suffice for post-event separation, but full initial accessible-state blindness must also be established. Centrality/nonselective nondisturbance alone does not supply an accessible outcome.
 
 Seven source blobs were recomputed and matched; [source manifest](receiver_algebra_probe/SOURCE_MANIFEST.json) pins them. The analytical probe is unreviewed. Do not launch another loss-law or supplied-motion campaign from it; prioritize the actual receiver-algebra identification. Native bridge NOT_DERIVED; no milestone, independent acceptance, scientific execution or main merge.
+
+
+## 2026-10-18 — inherited consumer continuation
+
+[CONSUMER.md](receiver_algebra_probe/CONSUMER.md) continues the existing P1 receiver-algebra candidate from 392a569a. A later inherited P1 contraction already consumes the current holder's grade: its local output at b is the sum over s^{-1}(b). On the declared formal bounded-grade domain this fiber is the unique minimal set of raw input coordinates determining that output. This is not a physical communication or resource lower bound, nor a preparation theorem.
+
+A displayed equal-total inside/outside trace first transfers the distinction to h, then changes a still-blind ancestor a through the same P1 operation. No new reader, copying gate, record-dependent controller or READS table is supplied. The existing lineage theorem is credited; this is a concrete consumer interface for the same candidate, not a new propagation/loss-law campaign.
+
+Internal use in the inherited model is established analytically; actual receiver-state ownership, physical enactment and available outcome access still require PROBE equation (11). The next task is that typed physical correspondence, not further variants of the same sum. Seven source blobs matched their Git identities; [manifest](receiver_algebra_probe/CONSUMER_SOURCE_MANIFEST.json). Unreviewed author continuation, no scientific execution or new test count, no Gemini acceptance or milestone, no main merge. Native bridge remains NOT_DERIVED.
