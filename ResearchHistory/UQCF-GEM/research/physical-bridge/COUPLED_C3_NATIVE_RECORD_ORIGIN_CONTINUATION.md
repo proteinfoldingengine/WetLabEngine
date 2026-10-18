@@ -675,3 +675,10 @@ Results:
 - Exact examples. Which-path: unobserved receiver 1 bit vs observed 0. Protection: observed 3/10 (≈0.073 bit) vs unobserved 0. The global retained distinguishability is nonincreasing in all of them, so the effect is redistribution.
 - Status: the occurrence of the observation is a DECLARED INPUT. E, U and the preparations are supplied, and G and I* remain premises. This does NOT advance the actual-record-to-owned-part identification.
 - Next: freeze, preregister, independent producer and checker, Gemini (gemini-3.1-pro-preview) via Actions.
+
+
+## 2026-10-17 — occupied-support preservation extension frozen; review awaiting approval
+
+Grok's observation_effect draft is preserved. GPT developed [a positive extension and scoped corrections](observation_preservation_review/RESULT.md), frozen at 53d164b07e32576f04bdedc31f1c2d3757e9637e. General channel record preservation depends on the occupied supports left by observation; P2 specializes to PTI=id. The draft's multiplicity-only condition is corrected to a block with both factor dimensions at least two. All-input effects, actual-state changes, nonselective idempotence and actual measurement events remain distinct.
+
+[Author follow-up](constructions/observation_effect/GPT_REVIEW_FOLLOWUP.md) and [status](observation_preservation_review/STATUS.md) state the exact scope. All frozen source/proof bytes were verified. Independent Gemini submission was blocked by automatic approval review over external API egress authorization; no review ran and no acceptance is claimed. No scientific numerical campaign or native receiver-identification advance.
