@@ -1,0 +1,112 @@
+name: UQCF occurrence_contrast whole-argument review
+
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/occurrence_contrast_review/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/occurrence_contrast_review/FREEZE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/occurrence_contrast_review/source_packet.json'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/occurrence_contrast_review/source_lock.json'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/occurrence_contrast_review/sources/**' 
+      - '.github/scripts/uqcf_occurrence_contrast_*.py'
+      - '.github/workflows/uqcf-gem-occurrence_contrast-review.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+
+concurrency:
+  group: uqcf-occurrence_contrast-review
+  cancel-in-progress: false
+
+# Official actions v4 tag commits verified before this workflow was prepared.
+jobs:
+  integrity:
+    name: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/occurrence_contrast_review
+            .github
+      - name: Offline plumbing regression tests, no science execution
+        run: python3 .github/scripts/uqcf_occurrence_contrast_tests.py
+      - name: Validate exact documents, locked sources and copied archive bytes
+        run: python3 .github/scripts/uqcf_occurrence_contrast_integrity.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: occurrence_contrast-integrity-${{ github.run_attempt }}
+          path: occurrence_contrast_integrity
+          if-no-files-found: error
+          retention-days: 90
+
+  argument-review:
+    name: argument-review
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/occurrence_contrast_review
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: occurrence_contrast-integrity-${{ github.run_attempt }}
+          path: occurrence_contrast_integrity
+      - name: Fresh independent Gemini whole-argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_occurrence_contrast_review.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: occurrence_contrast-review-${{ github.run_attempt }}
+          path: occurrence_contrast_review
+          if-no-files-found: error
+          retention-days: 90
+
+  publication-audit:
+    name: publication-audit
+    needs: [integrity, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/occurrence_contrast_review
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: occurrence_contrast-integrity-${{ github.run_attempt }}
+          path: occurrence_contrast_integrity
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: occurrence_contrast-review-${{ github.run_attempt }}
+          path: occurrence_contrast_review
+      - name: Independent immutable GitHub source and review readback audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/uqcf_occurrence_contrast_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: occurrence_contrast-publication-${{ github.run_attempt }}
+          path: occurrence_contrast_publication
+          if-no-files-found: error
+          retention-days: 90
