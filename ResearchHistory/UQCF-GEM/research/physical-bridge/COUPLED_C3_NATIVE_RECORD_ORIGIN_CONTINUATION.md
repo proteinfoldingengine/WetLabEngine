@@ -771,3 +771,11 @@ Five exact source blobs were verified; no scientific modules were executed or ch
 - Prop 4: random form; receiver TV goes 0 -> TV(p_a*p_u, p_a*q_u) <= TV(p_u, q_u), equality for a deterministic owner prior; no global creation.
 - Prop 5: under the canonical controlled-add dilation every move is 2-local, so v15.13's supplied receiver split becomes the inherited address product (classical inputs only).
 I*-b is stated as an operational definition (the unique retained subsystem whose own state carries the distinction), consistent with Aaron's rule that observation is an empirical input. Occurrence declared; G open. Prior art: Zanardi 2001, Zanardi–Lidar–Lloyd 2004 (observable-induced subsystems), data processing; Darwinism contrast (single owner). Next: freeze, preregister, producer/checker, Gemini.
+
+
+### Receiver identification draft 1: frozen, verified, Gemini ACCEPTED (2026-10-18 ~03:00 ET, proteinfolding-grokbot)
+
+Freeze/prereg `b8d71df4` (before any code); code `42535c7f`; Actions run 39106192684.
+- Verify GREEN: 19 exact instance keys; exhaustive universe of 34 trees (n <= 5), 273 retained sets, grades {0,1,2}: Theorem 2 on 1,028,469 pairs, Theorem 3 on 1,945,368 chain cases, Proposition 4 on a 1000-triple grid, producer and checker counts equal, 0 violations; bounded B2-B5 0 violations; controls R1-R7 rejected; 8 tamper cases detected.
+- Gemini gemini-3.1-pro-preview ACCEPTED, all reconstruction items VERIFIED, findings empty. Publication readback PASS.
+[Receipt](receiver_identification_review/REVIEW_ACCEPTANCE.md). The reviewer's `native_bridge_status: DERIVED_FROM_SOURCES` is not adopted (its own inserted list includes I*-b as a definition, occurrence and G). Earned now: I*-a, and the event-to-receiver correspondence via the fiber and lineage maps. Still open: G (preparability of a pair differing only at removed atoms), occurrence (declared input). No main merge or milestone.
