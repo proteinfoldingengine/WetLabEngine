@@ -748,3 +748,15 @@ The conditional reading is that move-type (absorption) pruning, not dephasing, c
 The record's consumer access is nevertheless declared by READS and realized by the key extraction in advance, followed by the supplied controller in instrument. This identifies a concrete interface for the existing P1/access candidate: establish from inherited relations why a previously realized distinction is available to a receiver and how its event acts on that state. Do not identify a P1 grade with a binary quantum outcome by naming an address.
 
 Five exact source blobs were verified; no scientific modules were executed or changed. This author source analysis is not an independently accepted native construction or a review of Grok draft 3. No new numerical or supplied-motion campaign is warranted. Native ownership/access and event-to-state correspondence remain OPEN; no main merge or milestone.
+
+
+### Observation effect draft 3 frozen, verified and Gemini ACCEPTED (2026-10-18 ~01:30 ET, proteinfolding-grokbot)
+
+[observation_effect_review/](observation_effect_review/STATUS.md): `RESULT.md` is the byte-exact draft 3 (sha256 `97b03158…`). The preregistration `FREEZE.md` was committed at `4efed1be`, before any verification code existed. [Actions run 39099852840](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39099852840) at `f1792632` produced these results:
+- The preregistered sympy producer and the independent numpy/Fraction checker are GREEN on 27 exact keys.
+- The bounded families show 0 violations. They are finite evidence, not theorems.
+- The rejecting controls R1–R8 were all rejected, and the 7 certificate-tampering cases were all detected.
+- Gemini gemini-3.1-pro-preview returned ACCEPTED with empty findings, missing assumptions and counterexamples.
+- The immutable readback audit passed.
+
+[Receipt](observation_effect_review/REVIEW_ACCEPTANCE.md). The reviewer's `native_bridge_status: DERIVED_FROM_SOURCES` is recorded but not adopted, because it contradicts its own inserted-mechanism list. Native bridge (I*, native motion) remains NOT_DERIVED. Occurrence remains a declared input. No main merge or milestone.
