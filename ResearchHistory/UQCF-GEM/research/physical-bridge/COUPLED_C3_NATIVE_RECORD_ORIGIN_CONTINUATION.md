@@ -657,3 +657,21 @@ Original artifacts and decoded logs downloaded and verified; full raw-payload du
 The user's atemporal-measurement interpretation is preserved in the [measurement-first argument](measurement_first_review/RESULT.md). Independent Gemini review ACCEPTED the conditional record/fiber compatibility calculation at scientific/workflow SHA 159b0d35adb1ab0ce34395949d5e5ee7dd338428, run39088738210; integrity and publication audit passed. [Receipt](measurement_first_review/REVIEW_ACCEPTANCE.md) records original artifacts, hashes and limits.
 
 The review explicitly concludes that this sharpens the criterion without advancing a receiver-state or physical-memory derivation. Native bridge remains NOT_DERIVED. No clock is imposed, but no actual collapse, source preparation, event-to-address correspondence or physical access is inferred. The next constructive obligation is the inherited actual-record-to-owned-part identification and retention, not another ratio, decoder or commutation variant. No numerical campaign, scientific test-count increase or main merge.
+
+
+### Observation effect draft 1: observed vs unobserved receiver record (2026-10-17 ~22:00 ET, proteinfolding-grokbot)
+
+[constructions/observation_effect/CONSTRUCTION.md](constructions/observation_effect/CONSTRUCTION.md), commit `086ab0ad` (readback sha256 `a32e47c5…` matches). Unreviewed construction draft. It answers Aaron's 21:50 ET request for an effect-level result: the model contains the effect of observation, not its cause. It is built on the following inherited work, all credited:
+- v15.17 retained motion (`ac75b4fe`) and v15.12–v15.16;
+- the frozen ledger (Gemini run 39070100916);
+- record_access draft 1;
+- GPT's reconciliation, the own-view and first-pruning work, and measurement-first.
+
+Results:
+- Thm 1: E Φ E = E Φ ⟺ Φ*(A) ⊆ A, for ANY conditional expectation onto A (tracial or not, so the P2 owner section E_m is included) and any channel. Cor 1.1 is the inherited v15.17 criterion U A U† = A. Cor 1.2: the classical case is strong lumpability, and the observed outputs depend on which conditional expectation is used. Cor 1.4: an inserted observation matters iff the NEXT motion is nonclosed; the inherited cadence gap 0.5 is an instance.
+- Thm 2: N = O + E C_U (I−E), with ‖N−O‖ ≤ ‖ρ−Eρ‖₁, and a strict hierarchy (F) U A U† = A ⇒ (C) U† Z(A) U ⊆ A ⇒ (R) U† Q_r U ∈ A. (R) is no-signalling-in-time. The 96 inherited cases split 17 / 0 / 43 / 36; the B motions are never visible to receiver A.
+- Thm 3: for a faithful E, observation can never make a receiver's discrimination perfect (support inclusion). This fails for the P2 owner section.
+- Thm 4 (access): the record persists under later motion ⟺ [U, P_s] = 0. Closure is neither necessary nor sufficient, because normalizers can permute sectors. This corrects the atlas wording "normalizing fixes Z(A)".
+- Exact examples. Which-path: unobserved receiver 1 bit vs observed 0. Protection: observed 3/10 (≈0.073 bit) vs unobserved 0. The global retained distinguishability is nonincreasing in all of them, so the effect is redistribution.
+- Status: the occurrence of the observation is a DECLARED INPUT. E, U and the preparations are supplied, and G and I* remain premises. This does NOT advance the actual-record-to-owned-part identification.
+- Next: freeze, preregister, independent producer and checker, Gemini (gemini-3.1-pro-preview) via Actions.
