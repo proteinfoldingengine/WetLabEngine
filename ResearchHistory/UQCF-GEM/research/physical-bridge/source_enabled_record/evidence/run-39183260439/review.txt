@@ -1,0 +1,25 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The exhaustive classification of initial b and r atomic moves is correct. The receiver is initially completely blind and immobile because all additions are saturated and all deletions violate either nesting (at internal vertices) or nonemptiness (at leaves).",
+    "The source-before-response order is successfully derived from native nonemptiness and nesting, removing the need for a prescribed phase controller. The receiver cannot act until the source delivers leaf coverage.",
+    "The all-histories theorem under at most one b edit is verified. The only source edit that enables a receiver response is +b(l) for l in L_s, which forces the first receiver edit to be -r(l).",
+    "The exact two-state receiver continuation is verified. Because d_s >= 2, the internal vertex c_s retains at least one r-child, preventing internal r-deletions. The receiver can only alternate between T and T \\ {l}.",
+    "The all-prefix partial decoder is sound and relabelling-invariant, relying on the structural arity of the missing leaf's parent in the eight-vertex witness.",
+    "The excursion bound of <= 1 is verified. The hitting number at c_s increases to 2 when its children's supports become disjoint ({b} and {r}), while h_o remains 1."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The one-source-edit bound is a supplied restriction on the episode class, not a derived physical law. As shown by the two-source-edit counterexample, arbitrary interleavings can produce false records.",
+    "Occurrence of the source edit and the receiver response is not forced. The system may remain in the initial state or take non-responding paths indefinitely.",
+    "Physical availability of the own-view record and the common reference T is not derived. The construction provides a mathematical partial record, not a physical measurement instrument."
+  ],
+  "constructive_analysis": [
+    "The manuscript successfully replaces the prescribed phase ordering (source withdrawal before receiver pruning) with a structural enabling order based on leaf coverage.",
+    "The one-source-event bound remains explicitly supplied, which is a precise and acknowledged tradeoff.",
+    "The construction strictly adheres to the inherited bare native admissibility and does not smuggle in hidden legality oracles or event rates."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Derive an actual source episode with the one-edit bound, occurrence of a receiver response, and physical availability of its own view/reference from native event/record sources."
+}

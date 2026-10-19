@@ -1,0 +1,24 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The one-source-edit limit is an explicit restriction on the episode class, not a derived physical law or event-stopping device.",
+    "Occurrence of the source edit and the receiver response is not forced; zero edits or non-responding source edits are admitted and leave the record UNKNOWN.",
+    "Physical availability of the receiver's own view and reference data is not derived; the construction relies on a formal own-view function.",
+    "The decoder is not sound under arbitrary interleavings with multiple source changes (e.g., two source edits can produce a false record)."
+  ],
+  "constructive_analysis": [
+    "Exhaustive classification of initial moves: The receiver r is initially completely blocked. Additions are impossible because Y_r = T. Internal deletions violate nesting because all children have r. Leaf deletions violate nonemptiness because leaves are exclusively covered by r. The source b has exactly three legal moves: -b(c_s) (legal because children lack b), +b(c_{1-s}) (legal because parent o has b), and +b(l) for l in L_s (legal because parent c_s has b). All other b moves violate nesting or nonemptiness.",
+    "All-histories theorem and forced enabling: Under the at-most-one-b-edit bound, the first two b moves leave all leaves exclusively r-covered, keeping r blocked. Only +b(l) provides external coverage at a leaf, uniquely enabling the receiver edit -r(l). This derives the source-before-response order and the exact responding edit directions without a prescribed phase controller.",
+    "Exact two-state continuation: After -r(l), the only absent r-incidence is l, making +r(l) the only legal addition. Other deletions remain blocked by nesting and nonemptiness. Thus, the receiver continuation strictly alternates between T and T minus {l}, allowing additions but preserving the partial record's soundness.",
+    "All-prefix partial decoder: The decoder d(T) = UNKNOWN and d(T minus {l}) = s is sound at every prefix of every episode in the class, including before any source event and after receiver restorations.",
+    "Common seed and initial blindness: Both preparations are reachable from a common seed (Y_r=T, Y_b={o}) via a single legal edit +b(c_s). The initial bare command interface for r is completely empty and identical in both preparations, proving full initial own-view and command-interface blindness.",
+    "Relabelling-invariant witness and excursion bound: The 8-vertex witness (d_0=2, d_1=3) structurally distinguishes the branches by the arity of the missing leaf's parent, requiring no literal names or cross-carrier dictionary. The hitting profile excursion is exactly 1, as h_{c_s} increases from 1 to 2 (with q_{c_s}=1) while all other internal hitting numbers remain 1.",
+    "Controls independently verified: The two-source-edit counterexample is valid (+b(c_{1-s}), +b(l_{1-s}), -r(l_{1-s}) is natively legal and yields a false record). The initial-coverage control is valid (if b initially covered a leaf, r could delete immediately, breaking the enabling order).",
+    "Premise assessment: The construction successfully removes the old prescribed-phase premise (source withdrawal must finish before receiver pruning). It explicitly retains the one-source-event bound as a supplied restriction rather than a derived property."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Derive an actual source episode with the one-edit bound, the occurrence of a receiver response, and the physical availability of its own view/reference from native event/record sources, without inserting the event law or access map by hand."
+}
