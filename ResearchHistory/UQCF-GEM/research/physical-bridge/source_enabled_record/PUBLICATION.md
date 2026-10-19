@@ -21,4 +21,4 @@ The preserved private package checkpoint has SHA-256 `359abb833fd0f90b26c3eb58f2
 
 The accepted scope remains conditional analytical correctness. Physical source/receiver occurrence, seed preparation, the one-source-edit episode identification, and actual own-view/reference availability remain open. Native bridge: NOT_DERIVED. No numbered-stage certification or main merge is claimed.
 
-An immutable readback receipt will record the evidence commit, exact text comparisons and archive identities after publication.
+Immutable readback is recorded in [READBACK.json](READBACK.json). At evidence commit `36644b992f84a2d2832a01aea8b814a12403663e`, all 36 expected text files matched exactly and all five original archive Git-blob identities and byte lengths matched. The exact 34-file publication change set and sole concurrent parent were verified. This later receipt records those checks without altering the frozen proof or original evidence.

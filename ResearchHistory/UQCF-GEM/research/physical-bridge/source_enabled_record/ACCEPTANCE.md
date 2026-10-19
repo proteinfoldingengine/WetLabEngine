@@ -38,6 +38,8 @@ Original ZIPs, selected readable raw evidence, both runs' job metadata and all f
 
 The manuscript's original awaiting-review header is preserved. This receipt supplies its subsequent disposition. Review plumbing and byte checks are not numerical scientific experiments. No archived scientific program, simulator or finite-universe campaign was run. No numbered-stage certification, full foundational-stack replay, main merge or physical milestone is claimed.
 
+Public publication and immutable readback are complete for this conditional checkpoint: [publication history](PUBLICATION.md) and [exact readback receipt](READBACK.json).
+
 ## Next constructive obligation
 
 Identify an existing actual source episode with the one-edit bound and a receiver-owned available record matching this same view. The event order no longer needs an added phase controller within the proven class. Physical source/response enactment and access still require their own source-backed identification; another variation of the two-state decoder would not establish them.
