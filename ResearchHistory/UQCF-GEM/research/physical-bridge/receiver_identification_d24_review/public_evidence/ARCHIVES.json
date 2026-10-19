@@ -1,0 +1,133 @@
+[
+  {
+    "id": 12212396714,
+    "node_id": "MDg6QXJ0aWZhY3QxMjIxMjM5NjcxNA==",
+    "name": "rid24-review-1",
+    "size_in_bytes": 248296,
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12212396714/zip",
+    "expired": false,
+    "digest": "sha256:18affac340f0de67c750bb887bb09b5f86c3eb61e94b88cdbdad64cadaacb19b",
+    "created_at": "2026-10-19T18:19:29Z",
+    "updated_at": "2026-10-19T18:19:29Z",
+    "expires_at": "2027-01-17T18:13:08Z",
+    "workflow_run": {
+      "id": 39300667905,
+      "repository_id": 1148068528,
+      "head_repository_id": 1148068528,
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "head_sha": "57895f62297c6100c1a4b8f185857a7905da780b"
+    },
+    "git_blob_sha": "6e47562622212f13249279bedd667e0421f49c3c",
+    "members": [
+      {
+        "path": "manifest.json",
+        "bytes": 925,
+        "sha256": "42658c34eb6614129daaf06b61bb7a5739f0c16dbf21d410ca298d0920eef3f0"
+      },
+      {
+        "path": "model_metadata.json",
+        "bytes": 459,
+        "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438"
+      },
+      {
+        "path": "prompt.txt",
+        "bytes": 399193,
+        "sha256": "51ef25f087062089b2a58caf9d6e120a2d67bcfdc4e179da5cd287d009bb2234"
+      },
+      {
+        "path": "request.json",
+        "bytes": 412231,
+        "sha256": "de5a155d31aded0a560cd9cd7cb940b3fc755372d085bab1e3353877b64a4074"
+      },
+      {
+        "path": "response.json",
+        "bytes": 19617,
+        "sha256": "93acdcd590db902535c1b7e8a648dc61a9bd6f247eeb20cf4f3fff4aef888d72"
+      },
+      {
+        "path": "review.txt",
+        "bytes": 3473,
+        "sha256": "0bf3658425fb707688c97844cdfd9e3350dd809ef7aa05f4ff37a67c88895ea0"
+      }
+    ]
+  },
+  {
+    "id": 12211286997,
+    "node_id": "MDg6QXJ0aWZhY3QxMjIxMTI4Njk5Nw==",
+    "name": "rid24-verify-1",
+    "size_in_bytes": 13890,
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12211286997/zip",
+    "expired": false,
+    "digest": "sha256:215496706fcb15cb10c5f70f46d14cabbeccbfd0bde0b3d4e6b3e18be6ffb181",
+    "created_at": "2026-10-19T18:17:21Z",
+    "updated_at": "2026-10-19T18:17:21Z",
+    "expires_at": "2027-01-17T18:13:08Z",
+    "workflow_run": {
+      "id": 39300667905,
+      "repository_id": 1148068528,
+      "head_repository_id": 1148068528,
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "head_sha": "57895f62297c6100c1a4b8f185857a7905da780b"
+    },
+    "git_blob_sha": "e0a3475144ddd5e11d3547961b565dd2828fe700",
+    "members": [
+      {
+        "path": "SHA256SUMS",
+        "bytes": 464,
+        "sha256": "d18f721c44634294fa6cae4c665f77974793efc16b05c90059097dc72693c0b2"
+      },
+      {
+        "path": "checker.json",
+        "bytes": 45493,
+        "sha256": "9bace24c70c57cd2c62a47e1f15ce1f01977a1c86e1ba3be9f752daa384a7572"
+      },
+      {
+        "path": "compare.json",
+        "bytes": 46473,
+        "sha256": "e2d741a54f05899075dbf6c94e3c700095506231042fe0b3a18601d17e45849e"
+      },
+      {
+        "path": "env.json",
+        "bytes": 212,
+        "sha256": "9a53a53150035124ec469938818b5413cefee968932570cad7c65741d3610d5c"
+      },
+      {
+        "path": "producer.json",
+        "bytes": 47074,
+        "sha256": "04be86d04551748dca905eb2aa2cac74977d86d7edd8f2aaa5d7db9ee411a9f9"
+      },
+      {
+        "path": "producer_repro.json",
+        "bytes": 47074,
+        "sha256": "04be86d04551748dca905eb2aa2cac74977d86d7edd8f2aaa5d7db9ee411a9f9"
+      }
+    ]
+  },
+  {
+    "id": 12211002698,
+    "node_id": "MDg6QXJ0aWZhY3QxMjIxMTAwMjY5OA==",
+    "name": "rid24-publication-1",
+    "size_in_bytes": 878,
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12211002698/zip",
+    "expired": false,
+    "digest": "sha256:7198a6ce69b3ded3acdff87520bc8fd3124a40df7efc820732caf19d858f824c",
+    "created_at": "2026-10-19T18:21:46Z",
+    "updated_at": "2026-10-19T18:21:46Z",
+    "expires_at": "2027-01-17T18:13:08Z",
+    "workflow_run": {
+      "id": 39300667905,
+      "repository_id": 1148068528,
+      "head_repository_id": 1148068528,
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "head_sha": "57895f62297c6100c1a4b8f185857a7905da780b"
+    },
+    "git_blob_sha": "467906273e4980881ffaa919d0cac684039826b3",
+    "members": [
+      {
+        "path": "publication.json",
+        "bytes": 1661,
+        "sha256": "04d1a44c70799acfc960bcd99eefb89fc8796a303db21a192cd3a2a308dcba40"
+      }
+    ]
+  }
+]

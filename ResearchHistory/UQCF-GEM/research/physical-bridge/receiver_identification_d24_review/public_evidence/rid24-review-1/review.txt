@@ -1,0 +1,29 @@
+{
+  "verdict": "ACCEPTED",
+  "reconstruction": [
+    "Proposition 28.1: VERIFIED. O3 at a leaf is a coordinate identity c_l = x_l, which imposes no condition on reads. The bridge premise (RV_l) restates (S_L).",
+    "Proposition 28.2 and Theorem 28.3: VERIFIED. On the diagonal family, (G+) iff (DS) iff F-hat = kappa id. With kappa != 0, this is equivalent to climbs of every depth and to (CL_1) plus (DS). The restriction to the W -> W+ zero-extension comparison class is correctly stated. The zero-read counterexample correctly shows kappa != 0 is needed for the climb equivalences.",
+    "Control 28.4: VERIFIED. O3 does not kill the ker-P defect, (CL_1) alone leaves the horizon, and (DS_prop) is an alien global constraint.",
+    "Lemma 29.0: VERIFIED. (PN) on a leaf-deletion-closed class is equivalent to the depth-table form of the cone sums.",
+    "Theorem 29.1: VERIFIED. (PN) + (POS) + (Fork) forces (Bl_D) iff nu(j, i) = 0 for i < j <= D and nu(j, j) = kappa >= 0. The holding formula, the fork sandwich of Step 2, and the chain induction of Step 3 are correct.",
+    "Proposition 29.2(a)-(e): VERIFIED. Each ingredient is needed. The sharp horizon witness nu(D+1, D) = 1/B and the finite-universe artifact at D = N - 1 are correct.",
+    "Lemma 30.0: VERIFIED. A leaf-deletion-closed class containing a carrier contains all its rooted subtrees, hence all its forks.",
+    "Theorem 30.1: VERIFIED. Column m is clean iff depth m branches. The family nu_t correctly demonstrates the necessity of (Fork) depth by depth.",
+    "Proposition 30.2: VERIFIED. The comb Gamma_D suffices and has the minimal vertex count 2D + 1.",
+    "Proposition 30.3: VERIFIED. The bound 0 <= A(j, m) <= kappa B^-(j-m-1) on K_B^(m) is correct and attained by the extremal table."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "inserted_mechanisms": [
+    "(POS) is honestly declared as a condition on proposed holdings, not inherited physical positivity.",
+    "Replacing (E0) by (POS) plus the blindness half of one climb is stated with its exact price: the depth horizon D, forks of two at every depth below D, and one uniform read rule across the class.",
+    "Identifying GPT's bounded-branching counterexample as a pre-informed receiver is fair, as its receiver reads g/2 before the step.",
+    "The claim that the inherited class (every finite rooted tree with fixed Genesis) makes (Fork) inherited is accurate. Forks are used only as test configurations of one read rule, not as occurring events.",
+    "No vertex is presented as performing a read, no holding as an available record, and depth is explicitly stated as lineage-address length, not time or distance.",
+    "Infinite-class statements are separated from the finite evidence, and the LP scratch is correctly described as floating point and non-load-bearing."
+  ],
+  "limitations": [],
+  "novelty_assessment": "The mathematical techniques (Farkas-type sandwich, induction along chains, depthwise sharpening, counting bound) are elementary and correctly identified as not new mathematics. The application to UQCF (replacing unbounded fans with one blind climb on bounded-branching carriers, the exact necessity of forks depth by depth, the minimal comb carrier, and the attained leak bound) is novel for the project. The explicit disclaimers regarding data processing, decoherence, einselection, quantum Darwinism, and Landauer are accurate.",
+  "native_bridge_status": "NOT_DERIVED"
+}
