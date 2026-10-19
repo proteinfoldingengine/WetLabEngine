@@ -50,3 +50,45 @@ request-rate limit. No verdict. Publication audit skipped by the workflow. The a
 is a known quota hold (Aaron's refined directive of 2026-10-19: avoid repeated review calls against a known quota hold).
 Sections 31-32 remain UNREVIEWED. Next: one dispatch at `6997aeb4` (or its same-SHA rerun) once the project's spending cap is
 raised; nothing else changes.
+
+## Amendment 1 review obtained (2026-10-19 ~18:51-19:00 ET): Gemini ACCEPTED
+
+**Status: exact verification GREEN; Gemini argument review ACCEPTED; publication readback PASS. Sections 31 (with [D26]) and 32
+(with [D27]) are now independently reviewed.** Native bridge: NOT_DERIVED. No milestone, no main merge.
+
+After Aaron raised the Gemini project's spending cap (2026-10-19 6:49 PM ET), the one same-SHA rerun allowed by
+[AMENDMENT_1.md](AMENDMENT_1.md) was used: attempt 2 of dispatch run
+[39331510927](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39331510927) at `6997aeb4` (rerun triggered by
+proteinfolding-gpt, 22:51 UTC). No other review call was made. verify, argument-review and publication-audit all **success**.
+
+- Verify (attempt 2): compare.json byte-identical to the push run, sha256 `be2c1952ef33f4a7eca39aa1b794915beabb8a715734c73b8e87e6cc737cb233`;
+  producer.json `acb630f6…`, checker.json `b70d6bd3…`.
+- Review: model requested and returned `gemini-3.1-pro-preview` (metadata version `3.1-pro-preview-01-2026`), temperature 0,
+  JSON response, finishReason STOP, one request (HTTP 200 at 22:56:42Z, no cooldown retry needed), no prior verdict shown.
+  Prompt = the amendment's exact excerpts E1 [0, 44853) and E2 [265609, 375524) of RESULT.md (whole-file sha256 `2fe553f9…`
+  asserted), 209,348 bytes, 77,370 prompt tokens; 737 output and 7,948 thinking tokens. Verdict **ACCEPTED**; 10 of 10
+  reconstruction items VERIFIED (Lemma 31.0; Theorem 31.1(a)-(d); Theorem 31.2 with [D26](i); Corollary 31.3 with [D26](ii);
+  [D26](iii); Remark 31.4; Theorem 32.1; Proposition 32.2(a)-(d); Corollary 32.3; [D27](i)-(iii) and the corrected Reading).
+  Findings, missing assumptions, counterexamples and limitations empty. Inserted mechanisms (declared inputs, as listed by the
+  reviewer): (POS), (POS_T), (SE_m), (SX_m) honestly declared as conditions on proposed reads, not inherited physical facts;
+  replacing cross-carrier isomorphism invariance by single-carrier sibling comparisons stated with its exact price; forks and
+  chains used only as test configurations of the read law, not occurring events; no claim that a vertex performs a read, a
+  holding is an available record, or depth is time or distance; finite evidence separated from the proofs, LP scratch
+  non-load-bearing, LP-only upper ends disclosed; adoption of proteinfolding-gpt's notes credited and scoped. Novelty:
+  elementary (Farkas-type sandwich, LP certificate support, equivariance under automorphisms), correctly scoped; explicitly not
+  data processing, decoherence, einselection, quantum Darwinism or Landauer bounds. native_bridge_status NOT_DERIVED, consistent
+  with its inserted-mechanism list.
+- Hashes: review.txt `5329e7c62e5d17a4a29d791f1c7abe320ff9f9a1f3668e64519024aeaec56912`, response.json `b01b793c…`,
+  prompt.txt `8f07bc28…`, request.json `cddbca29…`, model_metadata.json `17d64c78…`, AMENDMENT_1.md `e345d124…`,
+  FREEZE.md `e7aae7e0…`. Raw response kept in the Actions artifacts (rid27-review-2).
+- Publication audit: read back all nine frozen, amendment and code files at `6997aeb4` byte-identical; status PASS.
+- Reviewer caveat (recorded, not hidden): sections 0-25 were omitted from the prompt as cited inputs, and the reviewer was told
+  to report uncheckable dependencies as missing assumptions; it reported none. Acceptance is independent analytical review of
+  conditional mathematics, not physical validation.
+
+What this acceptance covers: with address-dependent reads, (PN) + (POS) + one blind addressed climb clean every side branch and
+leave one bottleneck leak t_m ∈ [0, κ] per depth into the climb's next vertex; one scalar sibling comparison (SE_m) per depth
+forces t_m = 0 and faithful climb columns to depth D; positivity is needed only on the climb units on Genesis, the two-leaf
+forks and the lines of descent, and is then equivalent to faithful climb columns; the event transfer F̂_W e_l = κ e_l needs no
+(SE). What it does not cover: that (PN), (POS), (SE) or any fork, chain or climb is inherited or occurs; that a holding is an
+available record; physical access; which outcome is actual. Section 33 (draft 28) is not covered and remains unreviewed.
