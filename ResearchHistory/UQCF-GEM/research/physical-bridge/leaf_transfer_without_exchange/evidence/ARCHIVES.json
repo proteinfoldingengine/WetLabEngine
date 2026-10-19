@@ -1,0 +1,140 @@
+[
+  {
+    "id": 12220696054,
+    "node_id": "MDg6QXJ0aWZhY3QxMjIyMDY5NjA1NA==",
+    "name": "leaf-transfer-publication-1",
+    "size_in_bytes": 512,
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12220696054/zip",
+    "expired": false,
+    "digest": "sha256:8bf5e6f6462e3e4e522d88476ace1d7afb9deb0bb41bc0c6865b5f2468208b50",
+    "created_at": "2026-10-19T20:42:00Z",
+    "updated_at": "2026-10-19T20:42:00Z",
+    "expires_at": "2027-01-17T20:40:17Z",
+    "workflow_run": {
+      "id": 39321243644,
+      "repository_id": 1148068528,
+      "head_repository_id": 1148068528,
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "head_sha": "ff15da628698d40df7d72798e3f0ae32b8f7b544"
+    },
+    "git_blob_sha": "acdb7ae01793699d77e89b4aa8c30827c3254995",
+    "members": [
+      {
+        "path": "publication.json",
+        "bytes": 526,
+        "sha256": "88c56ba25523c60f5a86141412955cce66e634d02ce1379e2305a0803cc3512b",
+        "git_blob_sha": "62ea68239703caa22523905e121d142f3dd64348"
+      }
+    ]
+  },
+  {
+    "id": 12220196681,
+    "node_id": "MDg6QXJ0aWZhY3QxMjIyMDE5NjY4MQ==",
+    "name": "leaf-transfer-integrity-1",
+    "size_in_bytes": 1256,
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12220196681/zip",
+    "expired": false,
+    "digest": "sha256:bfb5381c730cd0c48e079847eecc14621f3103184ba4a0100a1f64c2abd679c4",
+    "created_at": "2026-10-19T20:40:24Z",
+    "updated_at": "2026-10-19T20:40:24Z",
+    "expires_at": "2027-01-17T20:40:17Z",
+    "workflow_run": {
+      "id": 39321243644,
+      "repository_id": 1148068528,
+      "head_repository_id": 1148068528,
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "head_sha": "ff15da628698d40df7d72798e3f0ae32b8f7b544"
+    },
+    "git_blob_sha": "cc240ac287d3e111f8d2841ea0b6f804c7a05296",
+    "members": [
+      {
+        "path": "artifact_manifest.json",
+        "bytes": 130,
+        "sha256": "ff08a022f205e9a91dd8d2ade10d5224c281300a359752c327d40eb0893ca344",
+        "git_blob_sha": "43e7d23e8c095b3a0a4aa05d0d8c358d26b71579"
+      },
+      {
+        "path": "integrity.json",
+        "bytes": 1837,
+        "sha256": "8afc8fcc40ef22dc2ddb188be35f0e15613fd5ddd35604ac7b9864267f79103c",
+        "git_blob_sha": "d5a614c5679408839b5b22b1eef2cee342ab1da1"
+      }
+    ]
+  },
+  {
+    "id": 12218879668,
+    "node_id": "MDg6QXJ0aWZhY3QxMjIxODg3OTY2OA==",
+    "name": "leaf-transfer-review-1",
+    "size_in_bytes": 292812,
+    "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12218879668/zip",
+    "expired": false,
+    "digest": "sha256:991886ddf24a9fc7d709013b7a4e3d159e6a4d5c664727930f82464b33d95a17",
+    "created_at": "2026-10-19T20:41:49Z",
+    "updated_at": "2026-10-19T20:41:49Z",
+    "expires_at": "2027-01-17T20:40:17Z",
+    "workflow_run": {
+      "id": 39321243644,
+      "repository_id": 1148068528,
+      "head_repository_id": 1148068528,
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "head_sha": "ff15da628698d40df7d72798e3f0ae32b8f7b544"
+    },
+    "git_blob_sha": "cc69ca47037ae9ec31b6d3ceedbef8ee2f2779a3",
+    "members": [
+      {
+        "path": "artifact_manifest.json",
+        "bytes": 1020,
+        "sha256": "16f957a1e511c18cbb2219afd99396b7f35467df27068798c043a26fcf7a06a9",
+        "git_blob_sha": "0ddd984a132411c929537634d91b1df468a810f2"
+      },
+      {
+        "path": "integrity.json",
+        "bytes": 1837,
+        "sha256": "8afc8fcc40ef22dc2ddb188be35f0e15613fd5ddd35604ac7b9864267f79103c",
+        "git_blob_sha": "d5a614c5679408839b5b22b1eef2cee342ab1da1"
+      },
+      {
+        "path": "model_metadata.json",
+        "bytes": 459,
+        "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+        "git_blob_sha": "928720139032813386b0cf0819cb291a2846a468"
+      },
+      {
+        "path": "prompt.txt",
+        "bytes": 414042,
+        "sha256": "6e65015572514c81ae2c3aa90a0a63dcda90d15d13a9b60782e52c48d23ee429",
+        "git_blob_sha": "10acec25bf57c1732222d6882156b419c53d6427"
+      },
+      {
+        "path": "request.json",
+        "bytes": 416282,
+        "sha256": "a764748e67f9835204b7629129ff9792a8560478cc1bc2e2c8b68abda386b9eb",
+        "git_blob_sha": "431d554ec342dc49830d5610332fd0aac4a372a9"
+      },
+      {
+        "path": "response.json",
+        "bytes": 35845,
+        "sha256": "806c565198794f7a15d79bcfeebf250b6907d0016b1457c7f28d7ffaa1130918",
+        "git_blob_sha": "b4580e40324ab55f91222ea1d580ca11bdbd1f59"
+      },
+      {
+        "path": "review.txt",
+        "bytes": 2028,
+        "sha256": "3453cd83b0ab2e35dd12195076b6a719a02f932457d75ebf5bba90d07e54bbb5",
+        "git_blob_sha": "c126c991fed504434852f930a05228d628fbbae2"
+      },
+      {
+        "path": "review_identity.json",
+        "bytes": 462,
+        "sha256": "c21729f5f8559f67665e5838e28e37ddbfc7c3f7205439f5efe6f1b926c5f35b",
+        "git_blob_sha": "c07b523a5f50b897fa552b81c5b16c8cf9fa8897"
+      },
+      {
+        "path": "verdict.json",
+        "bytes": 2029,
+        "sha256": "08111aa0b620e934622c9d1a300d46b3ddedbb72f3e6afbaaf781da21bbcbf1f",
+        "git_blob_sha": "a32ceb5594e9dc13322c3588e357cb2a3695fffc"
+      }
+    ]
+  }
+]

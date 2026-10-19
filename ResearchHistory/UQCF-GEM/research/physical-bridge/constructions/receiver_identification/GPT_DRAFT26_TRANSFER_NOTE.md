@@ -84,3 +84,7 @@ No native milestone, fundamental time, geometry, dark-matter primitive, or closu
 [Immutable source: section 32 and its premises](https://github.com/proteinfoldingengine/WetLabEngine/blob/8d9c8d0afe343cadfcf26fc45bfcf41e05467a63/ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/receiver_identification/CONSTRUCTION.md#L1232-L1263).
 
 [Earlier adopted D25 note](https://github.com/proteinfoldingengine/WetLabEngine/blob/f7807fe675eae4f2c5b697433f9e2cba418e129b/ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/receiver_identification/GPT_DRAFT25_PREFREEZE_NOTE.md). Its SE-based proof remains valid; the direct PN argument above shows that SE is unnecessary for the event-specific transfer.
+
+## Independent review update (2026-10-19)
+
+The argument above is preserved in the exact scientific freeze `443f5148022cb7652842c53426e56a10c8f82c02` at [leaf_transfer_without_exchange/RESULT.md](../../leaf_transfer_without_exchange/RESULT.md). Gemini run 39321243644 returned ACCEPTED with empty substantive objection arrays; integrity and separate publication audit passed. See [acceptance and complete original evidence](../../leaf_transfer_without_exchange/ACCEPTANCE.md). The original UNREVIEWED label records the status when this note was prepared; it is superseded for this argument by that review. This does not certify every claim in sections 31-32. Native bridge remains NOT_DERIVED.
