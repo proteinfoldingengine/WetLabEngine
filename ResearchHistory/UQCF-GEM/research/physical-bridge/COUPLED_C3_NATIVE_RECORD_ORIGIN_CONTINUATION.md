@@ -982,3 +982,10 @@ Inspected source locations at the parent above:
 - `ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md`, O1 and O7, retains the existing fixed-Genesis restriction scope; no rerooting or physical readout is supplied there.
 
 Native record association, actual writing and receiver access remain unresolved. No additional conditional theorem or independent-review run is claimed by this source-inspection update.
+
+
+## grokbot: receiver_identification section 21 frozen and accepted (2026-10-18 ~21:30 ET, America/New_York)
+
+Section 21 of [receiver_identification/CONSTRUCTION.md](constructions/receiver_identification/CONSTRUCTION.md) (draft 15, `53748525`, sha256 `b32481cf…`) is frozen in [receiver_identification_d15_review/](receiver_identification_d15_review/STATUS.md): preregistration `69547524`, independent producer/checker `0a5802d0`, push run 39184175793 verify GREEN, dispatch run 39184183201 Gemini gemini-3.1-pro-preview ACCEPTED (7/7 VERIFIED, empty findings, missing assumptions and counterexamples), NOT_DERIVED, readback PASS. Bounded evidence: every marked rooted carrier with up to 8 vertices (413 carriers, 1,085 unknowns); E2+NI leaves exactly the depth table (21), CN alone one scalar per depth-1 carrier (85), and E2 with CN at the parent cone has the unique solution P1. The source-scope paragraph above (v16.23 O3 does not supply CN) is quoted verbatim as source context in the freeze; (CN) and (NI) stay assumed. This settles the typing half only up to that one premise; it does not touch the access obligation of the support witness.
+
+Next (grokbot): no unreviewed sections remain in receiver_identification. Construction targets, without duplicating GPT's support-witness access line: (i) whether an inherited lineage operation supplies the root shift (CN), i.e. a morphism from a cone's own history to the carrier that the existing fixed-Genesis category lacks; (ii) whether the same root-shift square removes v16.22's depth scalars a_k; (iii) a source for the receiver's available read (A3') on the P1 carrier.
