@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "evidence_commit": "b08011519ee24744e2f534e8084f5728680305e1",
+  "scientific_commit": "443f5148022cb7652842c53426e56a10c8f82c02",
+  "workflow_commit": "ff15da628698d40df7d72798e3f0ae32b8f7b544",
+  "run_id": 39321243644,
+  "text_readbacks": [
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-publication-1/publication.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-integrity-1/artifact_manifest.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-integrity-1/integrity.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-review-1/artifact_manifest.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-review-1/integrity.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-review-1/model_metadata.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-review-1/prompt.txt",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-review-1/request.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-review-1/response.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-review-1/review.txt",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-review-1/review_identity.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/leaf-transfer-review-1/verdict.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/job-118295547682.log",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/job-118295632375.log",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/job-118296297245.log",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/evidence/ARCHIVES.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/VERIFIED_REVIEW.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/RECEIVER_RECORD_CONTINUATION.md",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/UPSTREAM_SOURCES.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/ACCEPTANCE.md",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/receiver_identification/GPT_DRAFT26_TRANSFER_NOTE.md",
+    ".github/scripts/uqcf_leaf_transfer_review.py",
+    ".github/scripts/uqcf_leaf_transfer_publication.py",
+    ".github/workflows/uqcf-leaf-transfer-review.yml",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/RESULT.md",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/SOURCE_PACKET.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange/FREEZE.json"
+  ],
+  "original_archives": [
+    {
+      "path": "evidence/leaf-transfer-publication-1.zip",
+      "bytes": 512,
+      "sha256": "sha256:8bf5e6f6462e3e4e522d88476ace1d7afb9deb0bb41bc0c6865b5f2468208b50",
+      "git_blob_sha": "acdb7ae01793699d77e89b4aa8c30827c3254995"
+    },
+    {
+      "path": "evidence/leaf-transfer-integrity-1.zip",
+      "bytes": 1256,
+      "sha256": "sha256:bfb5381c730cd0c48e079847eecc14621f3103184ba4a0100a1f64c2abd679c4",
+      "git_blob_sha": "cc240ac287d3e111f8d2841ea0b6f804c7a05296"
+    },
+    {
+      "path": "evidence/leaf-transfer-review-1.zip",
+      "bytes": 292812,
+      "sha256": "sha256:991886ddf24a9fc7d709013b7a4e3d159e6a4d5c664727930f82464b33d95a17",
+      "git_blob_sha": "cc69ca47037ae9ec31b6d3ceedbef8ee2f2779a3"
+    }
+  ],
+  "exact_original_member_blob_matches": 12,
+  "scope": "28 full text comparisons at immutable publication commit (20 evidence/continuation files, 2 status updates, 3 runner files, 3 frozen inputs); original archive Git blob/size checks; local downloads matched Actions metadata SHA-256 and passed CRC; raw model answer/request and source freeze reconstructed. No scientific numerical execution or physical closure."
+}
