@@ -1,3 +1,7 @@
+# Recovery status superseded: both reviews accepted
+
+The subsequent authorized retries succeeded: both reviews returned ACCEPTED and both publication audits passed. See [complete successful evidence](../gemini_review_completion_2026_10_19/README.md). The billing-blocked record below is preserved as history.
+
 # Gemini review recovery after credit update
 
 2026-10-19 America/Phoenix. **Both outstanding reviews remain blocked by HTTP 402 Payment Required. No new Gemini verdict was returned.**

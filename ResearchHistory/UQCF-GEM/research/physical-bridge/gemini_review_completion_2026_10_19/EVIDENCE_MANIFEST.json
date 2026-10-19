@@ -1,0 +1,94 @@
+{
+  "status": "BOTH_REVIEWS_ACCEPTED_BOTH_PUBLICATION_AUDITS_PASS",
+  "date": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "runs": [
+    {
+      "run_id": 39040205957,
+      "attempt": 4,
+      "scientific_workflow_sha": "639c1f7ce6cebd7f342c5f57e834a2e23c78c7ee",
+      "model": "gemini-3.1-pro-preview",
+      "verdict": "ACCEPTED",
+      "response_sha256": "8d6e5c70a7d400ad985d8735190061cb905d953e2fa33309d5fe09e31c5ebeb0",
+      "review_sha256": "c24bfedb1be36d514b0b7188f2a68beb1eca87c321f04442e2779a6f9584c8a1",
+      "publication_audit": "PASS"
+    },
+    {
+      "run_id": 39258153723,
+      "attempt": 4,
+      "scientific_workflow_sha": "5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a",
+      "model": "gemini-3.1-pro-preview",
+      "verdict": "ACCEPTED",
+      "response_sha256": "5e545232b10f7084bd13dbc80b5038c4bafbb1a2f95b77aa78e0bfd3e098f0d2",
+      "review_sha256": "20fb12bc672f986fd0a3e15cae53baa74b5eb3228120d700f4892ea1d59cc095",
+      "publication_audit": "PASS"
+    }
+  ],
+  "archives": [
+    {
+      "path": "evidence/run-39040205957/ledger-integrity-4.zip",
+      "artifact_id": 12192424538,
+      "bytes": 2523,
+      "sha256": "f8d2643da03b7c2a85088d18e6b11640eb6b4ad83ba5950bab0b32cc6dd42d19",
+      "git_blob": "84e83607eea53a0ddd74d21074ec5075371e6772"
+    },
+    {
+      "path": "evidence/run-39040205957/ledger-publication-4.zip",
+      "artifact_id": 12195045432,
+      "bytes": 3478,
+      "sha256": "3325010cd23d640659f9a35f653457cf10c0f16442ada76e1e2070bcc06cb155",
+      "git_blob": "ba6e7b8259d38f73162fc2ee182745850dfe4499"
+    },
+    {
+      "path": "evidence/run-39040205957/ledger-review-4.zip",
+      "artifact_id": 12193478471,
+      "bytes": 73101,
+      "sha256": "d69f7639620a4bba8ac6778762b2a4d75ffce1bf4d0cd18ead2919abc5236718",
+      "git_blob": "4fa22a9fc3bf9cca88b6d2f837d82065711fa701"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-review-3.zip",
+      "artifact_id": 12193203512,
+      "bytes": 204935,
+      "sha256": "9a00e8987361e33f9dcdf34f34617261192bb0fe4132113793d5f68e41331146",
+      "git_blob": "282aafbb8081752ba5920307f405794b9f880ce4"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-verify-3.zip",
+      "artifact_id": 12193008301,
+      "bytes": 7666,
+      "sha256": "93875066e8f42e10371a912eb13d91304638d6a055419bfd544d8aa00faf599f",
+      "git_blob": "61acfdafe7d35df8eea0db848ed78e4bc17183c7"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-verify-4.zip",
+      "artifact_id": 12193469539,
+      "bytes": 7666,
+      "sha256": "35bd1b287c6360be0cc68f7962795dd791c8bd2f5af6d7f53d4add9a748482d7",
+      "git_blob": "29cdaea410657695bec2e3f054426e418de6566c"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-review-4.zip",
+      "artifact_id": 12194630438,
+      "bytes": 223770,
+      "sha256": "c9e406290b212c04114514c01f613c9bdc6bc6b084055ae2b89c79211bd16d4a",
+      "git_blob": "329f3d234fee0ee0ff15f202a7debcd83fae90e1"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-publication-4.zip",
+      "artifact_id": 12194710546,
+      "bytes": 878,
+      "sha256": "66dfd917287d6a983f0602b4915be63cc78f0f6246c63c061095f0b633973431",
+      "git_blob": "84e72bfd1da5ad9e06296118299a33a2d403b23f"
+    }
+  ],
+  "checks": {
+    "zip_byte_lengths_sha256_crc": "PASS",
+    "raw_review_reconstruction_and_manifest_hashes": "PASS",
+    "same_requests_as_previous_attempts": "EXACT_BYTES_MATCH",
+    "rid21_verification_reproduced": "EXACT_BYTES_MATCH",
+    "empty_substantive_objections": true
+  },
+  "native_bridge": "NOT_DERIVED",
+  "prior_evidence": "../gemini_review_recovery_2026_10_19/README.md"
+}

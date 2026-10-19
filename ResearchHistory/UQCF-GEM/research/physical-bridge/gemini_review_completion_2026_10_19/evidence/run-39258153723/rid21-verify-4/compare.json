@@ -1,0 +1,343 @@
+{
+ "checker_sha256": "02ffd89a50ab4c83bd096f050ab21c21e9f7a901010d146195d843ce21a38868",
+ "controls": {
+  "R1_nu_off_leaf_local": "REJECTED",
+  "R2_climb_without_leaf_locality_forces_identity": "REJECTED",
+  "R3_no_depth_horizon": "REJECTED",
+  "R4_identity_below_horizon": "REJECTED",
+  "R5_ledger_forces_zero_extension_square": "REJECTED",
+  "R6_general_defect_vanishes": "REJECTED",
+  "R7_offdiagonal_passes_leaf_locality": "REJECTED",
+  "R8_case_failure": "REJECTED"
+ },
+ "freeze_sha256": "23707ec6a1425dfb0cdb3a5bec587c1295b84166ac1eb2a206450c22232057d2",
+ "frozen_sha256": {
+  "RESULT.md": "7c0eb6f830e6ca167ec62839e760d092c88fb1084ce72c91877b7c314414b229"
+ },
+ "instances": {
+  "Y1.defect": [
+   "0",
+   "-1",
+   "1"
+  ],
+  "Y1.read": [
+   "1",
+   "-1",
+   "1"
+  ],
+  "Y2": {
+   "PN": 6,
+   "PN+CL_1": 5,
+   "PN+CL_2": 4,
+   "PN+S_L": 3,
+   "PN+S_L+BU_1": 2,
+   "PN+S_L+BU_2": 1,
+   "PN+S_L+CL_1": 2,
+   "PN+S_L+CL_2": 1,
+   "PN+S_L+C_recv": 1,
+   "PN+W2_1": 3
+  },
+  "Y3": [
+   "0",
+   "-7",
+   "8"
+  ],
+  "Y4": {
+   "after": "5",
+   "before": "0",
+   "r": "3/2"
+  },
+  "Y5": {
+   "after": "2",
+   "before": "-3"
+  }
+ },
+ "producer_sha256": "45f948579bac4383929f7d2265b5cb6b2086f491186c604f17d2b0dd5de87921",
+ "status": "GREEN",
+ "tamper": {
+  "control_flip": "DETECTED",
+  "diagnostic_altered": "DETECTED",
+  "duplicated_carrier": "DETECTED",
+  "duplicated_key": "DETECTED",
+  "extra_key": "DETECTED",
+  "false_provenance": "DETECTED",
+  "flipped_identity_digest": "DETECTED",
+  "missing_control": "DETECTED",
+  "missing_record": "DETECTED",
+  "no_horizon_both": "DETECTED",
+  "producer_as_checker": "DETECTED",
+  "row_count_altered": "DETECTED",
+  "sharpness_case_dropped_both": "DETECTED",
+  "substituted_universe": "DETECTED",
+  "violation_hidden": "DETECTED",
+  "witness_leaf_local_both": "DETECTED",
+  "wrong_result_bytes": "DETECTED",
+  "wrong_value_Y1": "DETECTED"
+ },
+ "universes": {
+  "U3": {
+   "R7_holds": false,
+   "before_after": {
+    "before_after": 8,
+    "cases": 8,
+    "pair": 8
+   },
+   "carriers": 4,
+   "digest": "7036969c61343c3eee305d2a8d8de59cf9e5e1fdaa3a277085df8f6bc19fe23f",
+   "dims": {
+    "PN": 6,
+    "PN+CL_1": 5,
+    "PN+CL_2": 4,
+    "PN+S_L": 3,
+    "PN+S_L+BU_1": 2,
+    "PN+S_L+BU_2": 1,
+    "PN+S_L+CL_1": 2,
+    "PN+S_L+CL_2": 1,
+    "PN+S_L+C_recv": 1,
+    "PN+W2_1": 3
+   },
+   "event": {
+    "blind": 36,
+    "cases": 36,
+    "conserved": 36,
+    "contrast": 36,
+    "pn": 36
+   },
+   "family_acquisition": true,
+   "horizon": {
+    "carriers": [
+     3,
+     4
+    ],
+    "ok": true,
+    "sharp": [
+     1,
+     0
+    ],
+    "vertices": [
+     4,
+     8
+    ]
+   },
+   "kernel": {
+    "T1_zero": 7,
+    "cases": 7,
+    "nonzero_gen": 7,
+    "nonzero_off": 1,
+    "ok": 7
+   },
+   "leaves": 4,
+   "ledger": {
+    "cases": 11,
+    "ok": 11
+   },
+   "nu_off": {
+    "SL_violations": 1,
+    "pn_and_climbs_hold": true
+   },
+   "row_counts": {
+    "CR": 4,
+    "PN": 20,
+    "SL": 7,
+    "W21": 20
+   },
+   "sum_n": 9,
+   "universe_digest": "a5fe58401f1b46d85c9247ae32ab7ba4123d90d30e4c049d340a70014454643f",
+   "unknowns": 23
+  },
+  "U7": {
+   "R7_holds": false,
+   "before_after": {
+    "before_after": 504,
+    "cases": 504,
+    "pair": 504
+   },
+   "carriers": 85,
+   "digest": "4974a0942b8a9df0c09d4cc567243921bb00cac8aee1e93554f6fdcbaea18dbf",
+   "dims": {
+    "PN": 28,
+    "PN+CL_1": 27,
+    "PN+CL_2": 26,
+    "PN+CL_3": 25,
+    "PN+CL_4": 24,
+    "PN+CL_5": 23,
+    "PN+CL_6": 22,
+    "PN+S_L": 7,
+    "PN+S_L+BU_1": 6,
+    "PN+S_L+BU_2": 5,
+    "PN+S_L+BU_3": 4,
+    "PN+S_L+BU_4": 3,
+    "PN+S_L+BU_5": 2,
+    "PN+S_L+BU_6": 1,
+    "PN+S_L+CL_1": 6,
+    "PN+S_L+CL_2": 5,
+    "PN+S_L+CL_3": 4,
+    "PN+S_L+CL_4": 3,
+    "PN+S_L+CL_5": 2,
+    "PN+S_L+CL_6": 1,
+    "PN+S_L+C_recv": 1,
+    "PN+W2_1": 7
+   },
+   "event": {
+    "blind": 2268,
+    "cases": 2268,
+    "conserved": 2268,
+    "contrast": 2268,
+    "pn": 2268
+   },
+   "family_acquisition": true,
+   "horizon": {
+    "carriers": [
+     7,
+     30,
+     60,
+     78,
+     84,
+     85
+    ],
+    "ok": true,
+    "sharp": [
+     150,
+     86,
+     33,
+     8,
+     1,
+     0
+    ],
+    "vertices": [
+     85,
+     248,
+     398,
+     484,
+     517,
+     525
+    ]
+   },
+   "kernel": {
+    "T1_zero": 1369,
+    "cases": 1369,
+    "nonzero_gen": 1369,
+    "nonzero_off": 227,
+    "ok": 1369
+   },
+   "leaves": 252,
+   "ledger": {
+    "cases": 1621,
+    "ok": 1621
+   },
+   "nu_off": {
+    "SL_violations": 227,
+    "pn_and_climbs_hold": true
+   },
+   "row_counts": {
+    "CR": 252,
+    "PN": 9016,
+    "SL": 1369,
+    "W21": 9016
+   },
+   "sum_n": 526,
+   "universe_digest": "010e9b1034d796d5737dea804c989ae8af13ffc32a804e63dec4e1fecc9c9df7",
+   "unknowns": 3384
+  },
+  "U8": {
+   "R7_holds": false,
+   "before_after": {
+    "before_after": 1372,
+    "cases": 1372,
+    "pair": 1372
+   },
+   "carriers": 200,
+   "digest": "54d95fe9b74843bd35489e98ce4603ec28bbbb87163ccd34ce65c34518ec94b6",
+   "dims": {
+    "PN": 36,
+    "PN+CL_1": 35,
+    "PN+CL_2": 34,
+    "PN+CL_3": 33,
+    "PN+CL_4": 32,
+    "PN+CL_5": 31,
+    "PN+CL_6": 30,
+    "PN+CL_7": 29,
+    "PN+S_L": 8,
+    "PN+S_L+BU_1": 7,
+    "PN+S_L+BU_2": 6,
+    "PN+S_L+BU_3": 5,
+    "PN+S_L+BU_4": 4,
+    "PN+S_L+BU_5": 3,
+    "PN+S_L+BU_6": 2,
+    "PN+S_L+BU_7": 1,
+    "PN+S_L+CL_1": 7,
+    "PN+S_L+CL_2": 6,
+    "PN+S_L+CL_3": 5,
+    "PN+S_L+CL_4": 4,
+    "PN+S_L+CL_5": 3,
+    "PN+S_L+CL_6": 2,
+    "PN+S_L+CL_7": 1,
+    "PN+S_L+C_recv": 1,
+    "PN+W2_1": 8
+   },
+   "event": {
+    "blind": 6174,
+    "cases": 6174,
+    "conserved": 6174,
+    "contrast": 6174,
+    "pn": 6174
+   },
+   "family_acquisition": true,
+   "horizon": {
+    "carriers": [
+     8,
+     45,
+     113,
+     167,
+     192,
+     199,
+     200
+    ],
+    "ok": true,
+    "sharp": [
+     402,
+     270,
+     127,
+     42,
+     9,
+     1,
+     0
+    ],
+    "vertices": [
+     200,
+     595,
+     997,
+     1267,
+     1394,
+     1436,
+     1445
+    ]
+   },
+   "kernel": {
+    "T1_zero": 4407,
+    "cases": 4407,
+    "nonzero_gen": 4407,
+    "nonzero_off": 660,
+    "ok": 4407
+   },
+   "leaves": 686,
+   "ledger": {
+    "cases": 5093,
+    "ok": 5093
+   },
+   "nu_off": {
+    "SL_violations": 660,
+    "pn_and_climbs_hold": true
+   },
+   "row_counts": {
+    "CR": 686,
+    "PN": 33320,
+    "SL": 4407,
+    "W21": 33320
+   },
+   "sum_n": 1446,
+   "universe_digest": "f35fdbabe88315338b9ce97e51db72e6f655f333ba5282efcc11cfc951c4e406",
+   "unknowns": 10744
+  }
+ }
+}
