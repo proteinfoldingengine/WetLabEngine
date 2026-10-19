@@ -1,0 +1,1135 @@
+﻿2026-10-19T19:17:30.6742478Z Current runner version: '2.337.0'
+2026-10-19T19:17:30.6766606Z ##[group]Runner Image Provisioner
+2026-10-19T19:17:30.6768096Z Hosted Compute Agent
+2026-10-19T19:17:30.6768703Z Version: 20261012.601
+2026-10-19T19:17:30.6769440Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-19T19:17:30.6770242Z Build Date: 2026-10-12T17:48:21Z
+2026-10-19T19:17:30.6770967Z Worker ID: {6f833840-04fc-4375-bddf-4c832235242f}
+2026-10-19T19:17:30.6771727Z Region: southcentralus
+2026-10-19T19:17:30.6772329Z Cloud: Azure
+2026-10-19T19:17:30.6772985Z ##[endgroup]
+2026-10-19T19:17:30.6774597Z ##[group]Operating System
+2026-10-19T19:17:30.6775293Z Ubuntu
+2026-10-19T19:17:30.6775854Z 24.04.5
+2026-10-19T19:17:30.6776372Z LTS
+2026-10-19T19:17:30.6776981Z ##[endgroup]
+2026-10-19T19:17:30.6777907Z ##[group]Runner Image
+2026-10-19T19:17:30.6778529Z Image: ubuntu-24.04
+2026-10-19T19:17:30.6779205Z Version: 20261012.334.1
+2026-10-19T19:17:30.6780474Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-19T19:17:30.6782186Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-19T19:17:30.6783177Z ##[endgroup]
+2026-10-19T19:17:30.6784439Z ##[group]GITHUB_TOKEN Permissions
+2026-10-19T19:17:30.6786579Z Actions: read
+2026-10-19T19:17:30.6787794Z Contents: read
+2026-10-19T19:17:30.6788374Z Metadata: read
+2026-10-19T19:17:30.6789019Z ##[endgroup]
+2026-10-19T19:17:30.6791049Z Secret source: Actions
+2026-10-19T19:17:30.6792068Z Cache mode: write
+2026-10-19T19:17:30.6793059Z Prepare workflow directory
+2026-10-19T19:17:30.8510596Z Prepare all required actions
+2026-10-19T19:17:30.8556896Z Getting action download info
+2026-10-19T19:17:31.0996165Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-19T19:17:31.2175436Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-19T19:17:31.2938996Z Download action repository 'actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2026-10-19T19:17:31.8159447Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-19T19:17:32.1544152Z Complete job name: publication-reproduction
+2026-10-19T19:17:32.2662632Z ##[group]Run evidence_dir="$RUNNER_TEMP/rid24-$STAGE"
+2026-10-19T19:17:32.2663547Z [36;1mevidence_dir="$RUNNER_TEMP/rid24-$STAGE"[0m
+2026-10-19T19:17:32.2664398Z [36;1mprintf 'EVIDENCE_DIR=%s\n' "$evidence_dir" >> "$GITHUB_ENV"[0m
+2026-10-19T19:17:32.2665456Z [36;1mprintf 'INITIAL_DIR=%s/rid24-first-artifact\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"[0m
+2026-10-19T19:17:32.2666371Z [36;1mmkdir -p "$evidence_dir/logs"[0m
+2026-10-19T19:17:32.2667094Z [36;1mdate +%s > "$evidence_dir/job_started_epoch.txt"[0m
+2026-10-19T19:17:32.2992606Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-19T19:17:32.2994001Z env:
+2026-10-19T19:17:32.2995335Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:17:32.2996998Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:17:32.2998311Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:17:32.2999313Z   RUN_ID: 39309476526
+2026-10-19T19:17:32.3000097Z   RUN_ATTEMPT: 1
+2026-10-19T19:17:32.3000814Z   EVENT_NAME: push
+2026-10-19T19:17:32.3001546Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:17:32.3002481Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:17:32.3003591Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:17:32.3004531Z   PYTHONHASHSEED: 0
+2026-10-19T19:17:32.3005045Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:17:32.3005617Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:17:32.3006128Z   OMP_NUM_THREADS: 1
+2026-10-19T19:17:32.3006655Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:17:32.3007316Z   MKL_NUM_THREADS: 1
+2026-10-19T19:17:32.3008125Z   STAGE: publication-reproduction
+2026-10-19T19:17:32.3008746Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:17:32.3009696Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:17:32.3010690Z ##[endgroup]
+2026-10-19T19:17:32.4871794Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-10-19T19:17:32.4872698Z with:
+2026-10-19T19:17:32.4873226Z   ref: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:17:32.4873873Z   fetch-depth: 0
+2026-10-19T19:17:32.4874391Z   persist-credentials: false
+2026-10-19T19:17:32.4875005Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-19T19:17:32.4879298Z   token: ***
+2026-10-19T19:17:32.4879796Z   ssh-strict: true
+2026-10-19T19:17:32.4880287Z   ssh-user: git
+2026-10-19T19:17:32.4880757Z   clean: true
+2026-10-19T19:17:32.4881256Z   sparse-checkout-cone-mode: true
+2026-10-19T19:17:32.4881835Z   fetch-tags: false
+2026-10-19T19:17:32.4882332Z   show-progress: true
+2026-10-19T19:17:32.4882855Z   lfs: false
+2026-10-19T19:17:32.4883318Z   submodules: false
+2026-10-19T19:17:32.4883829Z   set-safe-directory: true
+2026-10-19T19:17:32.4884401Z   allow-unsafe-pr-checkout: false
+2026-10-19T19:17:32.4884979Z env:
+2026-10-19T19:17:32.4885874Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:17:32.4886957Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:17:32.4887863Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:17:32.4888558Z   RUN_ID: 39309476526
+2026-10-19T19:17:32.4889070Z   RUN_ATTEMPT: 1
+2026-10-19T19:17:32.4889557Z   EVENT_NAME: push
+2026-10-19T19:17:32.4890073Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:17:32.4890714Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:17:32.4891453Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:17:32.4892111Z   PYTHONHASHSEED: 0
+2026-10-19T19:17:32.4892631Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:17:32.4893199Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:17:32.4893704Z   OMP_NUM_THREADS: 1
+2026-10-19T19:17:32.4894217Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:17:32.4894741Z   MKL_NUM_THREADS: 1
+2026-10-19T19:17:32.4895266Z   STAGE: publication-reproduction
+2026-10-19T19:17:32.4895866Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:17:32.4896769Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:17:32.4898014Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:17:32.4898915Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:17:32.4899606Z ##[endgroup]
+2026-10-19T19:17:32.5854827Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-19T19:17:32.5858440Z ##[group]Getting Git version info
+2026-10-19T19:17:32.5860015Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-19T19:17:32.5862093Z [command]/usr/bin/git version
+2026-10-19T19:17:32.5999868Z git version 2.55.0
+2026-10-19T19:17:32.6020528Z ##[endgroup]
+2026-10-19T19:17:32.6035496Z Temporarily overriding HOME='/home/runner/work/_temp/b6cb846f-9dec-44b0-8af7-3cbd41ad15ca' before making global git config changes
+2026-10-19T19:17:32.6038670Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-19T19:17:32.6042283Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-19T19:17:32.6108954Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-19T19:17:32.6112516Z ##[group]Initializing the repository
+2026-10-19T19:17:32.6118282Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-19T19:17:32.6271695Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-19T19:17:32.6273781Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-19T19:17:32.6275764Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-19T19:17:32.6277710Z hint: call:
+2026-10-19T19:17:32.6278460Z hint:
+2026-10-19T19:17:32.6279400Z hint: 	git config --global init.defaultBranch <name>
+2026-10-19T19:17:32.6280618Z hint:
+2026-10-19T19:17:32.6281902Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-19T19:17:32.6283649Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-19T19:17:32.6285119Z hint:
+2026-10-19T19:17:32.6285887Z hint: 	git branch -m <name>
+2026-10-19T19:17:32.6286713Z hint:
+2026-10-19T19:17:32.6288022Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-19T19:17:32.6290085Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-19T19:17:32.6293263Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-19T19:17:32.6353761Z ##[endgroup]
+2026-10-19T19:17:32.6358877Z ##[group]Disabling automatic garbage collection
+2026-10-19T19:17:32.6370113Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-19T19:17:32.6406132Z ##[endgroup]
+2026-10-19T19:17:32.6407972Z ##[group]Setting up auth
+2026-10-19T19:17:32.6414819Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-19T19:17:32.6462190Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-19T19:17:32.6893193Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-19T19:17:32.6930040Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-19T19:17:32.7176446Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-19T19:17:32.7221675Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-19T19:17:32.7467524Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-19T19:17:32.7511237Z ##[endgroup]
+2026-10-19T19:17:32.7513346Z ##[group]Fetching the repository
+2026-10-19T19:17:32.7523075Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-10-19T19:18:11.8718939Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-19T19:18:11.8720787Z  * [new branch]        agent/retire-legacy-retained-atlas-loop -> origin/agent/retire-legacy-retained-atlas-loop
+2026-10-19T19:18:11.8722660Z  * [new branch]        archive/v15.28-scientific-source-34892900423 -> origin/archive/v15.28-scientific-source-34892900423
+2026-10-19T19:18:11.8725783Z  * [new branch]        ci/retained-execution-audit -> origin/ci/retained-execution-audit
+2026-10-19T19:18:11.8728633Z  * [new branch]        ci/retained-execution-optimization -> origin/ci/retained-execution-optimization
+2026-10-19T19:18:11.8730059Z  * [new branch]        engineering/uqcf-execution-efficiency -> origin/engineering/uqcf-execution-efficiency
+2026-10-19T19:18:11.8732603Z  * [new branch]        gen3-historical-backbone-reconstruction-v1 -> origin/gen3-historical-backbone-reconstruction-v1
+2026-10-19T19:18:11.8734634Z  * [new branch]        gpt/native-structure-resource-audit -> origin/gpt/native-structure-resource-audit
+2026-10-19T19:18:11.8736515Z  * [new branch]        grok/recoverable-pruning-ledger-freeze -> origin/grok/recoverable-pruning-ledger-freeze
+2026-10-19T19:18:11.8738765Z  * [new branch]        grok/relational-reference-admission -> origin/grok/relational-reference-admission
+2026-10-19T19:18:11.8740256Z  * [new branch]        main                  -> origin/main
+2026-10-19T19:18:11.8741187Z  * [new branch]        mainmain              -> origin/mainmain
+2026-10-19T19:18:11.8743100Z  * [new branch]        maintenance/v15.01-checker-repro -> origin/maintenance/v15.01-checker-repro
+2026-10-19T19:18:11.8745148Z  * [new branch]        maintenance/withdrawn-lab-history-cleanup -> origin/maintenance/withdrawn-lab-history-cleanup
+2026-10-19T19:18:11.8747868Z  * [new branch]        publication/uqcf-v1544-v1545-main -> origin/publication/uqcf-v1544-v1545-main
+2026-10-19T19:18:11.8749915Z  * [new branch]        research/a12-evidence-37500570046-1 -> origin/research/a12-evidence-37500570046-1
+2026-10-19T19:18:11.8751697Z  * [new branch]        research/a12-evidence-37500792495-1 -> origin/research/a12-evidence-37500792495-1
+2026-10-19T19:18:11.8753076Z  * [new branch]        research/a12-evidence-37502203890-1 -> origin/research/a12-evidence-37502203890-1
+2026-10-19T19:18:11.8754329Z  * [new branch]        research/a12-evidence-37835021712-1 -> origin/research/a12-evidence-37835021712-1
+2026-10-19T19:18:11.8755874Z  * [new branch]        research/a12-evidence-37835473620-1 -> origin/research/a12-evidence-37835473620-1
+2026-10-19T19:18:11.8757559Z  * [new branch]        research/a12-evidence-37835621311-1 -> origin/research/a12-evidence-37835621311-1
+2026-10-19T19:18:11.8759307Z  * [new branch]        research/c3-artifact-recovery-20261008 -> origin/research/c3-artifact-recovery-20261008
+2026-10-19T19:18:11.8760684Z  * [new branch]        research/foundational-closure-verification -> origin/research/foundational-closure-verification
+2026-10-19T19:18:11.8761839Z  * [new branch]        research/protein-p0-v9-native-information-audit -> origin/research/protein-p0-v9-native-information-audit
+2026-10-19T19:18:11.8763035Z  * [new branch]        research/protein-p1-v9-regularizer-reduction -> origin/research/protein-p1-v9-regularizer-reduction
+2026-10-19T19:18:11.8764107Z  * [new branch]        research/protein-p4-backbone-tpo-replay -> origin/research/protein-p4-backbone-tpo-replay
+2026-10-19T19:18:11.8765044Z  * [new branch]        research/protein-p5-constrained-backbone-survival -> origin/research/protein-p5-constrained-backbone-survival
+2026-10-19T19:18:11.8766084Z  * [new branch]        research/protein-p6-continuation-decision -> origin/research/protein-p6-continuation-decision
+2026-10-19T19:18:11.8767099Z  * [new branch]        research/protein-p6-native-blind-preorganization -> origin/research/protein-p6-native-blind-preorganization
+2026-10-19T19:18:11.8768764Z  * [new branch]        research/protein-p7-early-backbone-controller-survival -> origin/research/protein-p7-early-backbone-controller-survival
+2026-10-19T19:18:11.8770912Z  * [new branch]        research/protein-p8-patch622-624-reopen -> origin/research/protein-p8-patch622-624-reopen
+2026-10-19T19:18:11.8772183Z  * [new branch]        research/protein-p8-patch622-624-reopen-certification -> origin/research/protein-p8-patch622-624-reopen-certification
+2026-10-19T19:18:11.8773159Z  * [new branch]        research/protein-p8b-authoritative-launch -> origin/research/protein-p8b-authoritative-launch
+2026-10-19T19:18:11.8774021Z  * [new branch]        research/protein-p8b-independent-verifier -> origin/research/protein-p8b-independent-verifier
+2026-10-19T19:18:11.8774888Z  * [new branch]        research/protein-p8b-measurement-layer -> origin/research/protein-p8b-measurement-layer
+2026-10-19T19:18:11.8775673Z  * [new branch]        research/protein-p8b-result-record -> origin/research/protein-p8b-result-record
+2026-10-19T19:18:11.8776723Z  * [new branch]        research/protein-p8b-valid-backbone-controller-gate -> origin/research/protein-p8b-valid-backbone-controller-gate
+2026-10-19T19:18:11.8777984Z  * [new branch]        research/protein-p9-coherence-state-falsifier -> origin/research/protein-p9-coherence-state-falsifier
+2026-10-19T19:18:11.8779195Z  * [new branch]        research/protein-p9-retained-coherence-falsifier -> origin/research/protein-p9-retained-coherence-falsifier
+2026-10-19T19:18:11.8780264Z  * [new branch]        research/protein-program-go-no-go-closeout -> origin/research/protein-program-go-no-go-closeout
+2026-10-19T19:18:11.8781573Z  * [new branch]        research/protein-program-post-p6-closeout -> origin/research/protein-program-post-p6-closeout
+2026-10-19T19:18:11.8783214Z  * [new branch]        research/protein-ufi-foldability-audit -> origin/research/protein-ufi-foldability-audit
+2026-10-19T19:18:11.8784740Z  * [new branch]        research/uqcf-overlapping-guard-exchange -> origin/research/uqcf-overlapping-guard-exchange
+2026-10-19T19:18:11.8786296Z  * [new branch]        research/v13.26-rscl-origin -> origin/research/v13.26-rscl-origin
+2026-10-19T19:18:11.8788885Z  * [new branch]        research/v13.27-gravity-progress-demo -> origin/research/v13.27-gravity-progress-demo
+2026-10-19T19:18:11.8790701Z  * [new branch]        research/v13.27-peer-review -> origin/research/v13.27-peer-review
+2026-10-19T19:18:11.8792464Z  * [new branch]        research/v13.27-peer-review-2 -> origin/research/v13.27-peer-review-2
+2026-10-19T19:18:11.8794371Z  * [new branch]        research/v13.27-projective-coupled-source -> origin/research/v13.27-projective-coupled-source
+2026-10-19T19:18:11.8796043Z  * [new branch]        research/v13.27-rescope-revision -> origin/research/v13.27-rescope-revision
+2026-10-19T19:18:11.8797937Z  * [new branch]        research/v13.28-rgcl-pairing-audit -> origin/research/v13.28-rgcl-pairing-audit
+2026-10-19T19:18:11.8800143Z  * [new branch]        research/v14.01-global-admissibility -> origin/research/v14.01-global-admissibility
+2026-10-19T19:18:11.8801671Z  * [new branch]        research/v14.02-convex-dual-normal -> origin/research/v14.02-convex-dual-normal
+2026-10-19T19:18:11.8803308Z  * [new branch]        research/v14.03-projective-source-ray -> origin/research/v14.03-projective-source-ray
+2026-10-19T19:18:11.8804809Z  * [new branch]        research/v14.04-provenance-representation -> origin/research/v14.04-provenance-representation
+2026-10-19T19:18:11.8806298Z  * [new branch]        research/v15.01-common-parent-representation -> origin/research/v15.01-common-parent-representation
+2026-10-19T19:18:11.8807976Z  * [new branch]        research/v15.01-red-proof -> origin/research/v15.01-red-proof
+2026-10-19T19:18:11.8809568Z  * [new branch]        research/v15.02-shared-label-equivariance -> origin/research/v15.02-shared-label-equivariance
+2026-10-19T19:18:11.8811125Z  * [new branch]        research/v15.03-graph-site-source-lift -> origin/research/v15.03-graph-site-source-lift
+2026-10-19T19:18:11.8812833Z  * [new branch]        research/v15.04-spectral-source-freedom -> origin/research/v15.04-spectral-source-freedom
+2026-10-19T19:18:11.8814582Z  * [new branch]        research/v15.05-composition-selector-boundary -> origin/research/v15.05-composition-selector-boundary
+2026-10-19T19:18:11.8817049Z  * [new branch]        research/v15.06-recoverability-multiplicativity-boundary -> origin/research/v15.06-recoverability-multiplicativity-boundary
+2026-10-19T19:18:11.8819036Z  * [new branch]        research/v15.07-canonical-neutral-reference -> origin/research/v15.07-canonical-neutral-reference
+2026-10-19T19:18:11.8820092Z  * [new branch]        research/v15.08-genesis-source-semantics -> origin/research/v15.08-genesis-source-semantics
+2026-10-19T19:18:11.8821088Z  * [new branch]        research/v15.09-quantum-carrier-origin -> origin/research/v15.09-quantum-carrier-origin
+2026-10-19T19:18:11.8822073Z  * [new branch]        research/v15.10-pruning-order-emergent-time -> origin/research/v15.10-pruning-order-emergent-time
+2026-10-19T19:18:11.8823175Z  * [new branch]        research/v15.11-ontology-continuity-reconciliation -> origin/research/v15.11-ontology-continuity-reconciliation
+2026-10-19T19:18:11.8824203Z  * [new branch]        research/v15.12-integrated-pretime-history -> origin/research/v15.12-integrated-pretime-history
+2026-10-19T19:18:11.8825215Z  * [new branch]        research/v15.13-independent-events -> origin/research/v15.13-independent-events
+2026-10-19T19:18:11.8826077Z  * [new branch]        research/v15.14-record-dependencies -> origin/research/v15.14-record-dependencies
+2026-10-19T19:18:11.8826830Z  * [new branch]        research/v15.15-coherent-records -> origin/research/v15.15-coherent-records
+2026-10-19T19:18:11.8828818Z  * [new branch]        research/v15.16-partial-pruning -> origin/research/v15.16-partial-pruning
+2026-10-19T19:18:11.8830293Z  * [new branch]        research/v15.17-retained-motion -> origin/research/v15.17-retained-motion
+2026-10-19T19:18:11.8831247Z  * [new branch]        research/v15.20-artifact-preservation -> origin/research/v15.20-artifact-preservation
+2026-10-19T19:18:11.8832124Z  * [new branch]        research/v15.20-results-archive -> origin/research/v15.20-results-archive
+2026-10-19T19:18:11.8832910Z  * [new branch]        research/v15.21-record-readout -> origin/research/v15.21-record-readout
+2026-10-19T19:18:11.8833735Z  * [new branch]        research/v15.22-event-sufficiency -> origin/research/v15.22-event-sufficiency
+2026-10-19T19:18:11.8834829Z  * [new branch]        research/v15.23-sufficient-channel-family -> origin/research/v15.23-sufficient-channel-family
+2026-10-19T19:18:11.8836181Z  * [new branch]        research/v15.24-composition-gate -> origin/research/v15.24-composition-gate
+2026-10-19T19:18:11.8837845Z  * [new branch]        research/v15.25-pretime-gravity-canary -> origin/research/v15.25-pretime-gravity-canary
+2026-10-19T19:18:11.8839315Z  * [new branch]        research/v15.26-response-selector-rank -> origin/research/v15.26-response-selector-rank
+2026-10-19T19:18:11.8840904Z  * [new branch]        research/v15.27-target-origin -> origin/research/v15.27-target-origin
+2026-10-19T19:18:11.8841719Z  * [new branch]        research/v15.28-coupling-space -> origin/research/v15.28-coupling-space
+2026-10-19T19:18:11.8842548Z  * [new branch]        research/v15.29-provenance-faithfulness -> origin/research/v15.29-provenance-faithfulness
+2026-10-19T19:18:11.8843502Z  * [new branch]        research/v15.30-provenance-fiber-definability -> origin/research/v15.30-provenance-fiber-definability
+2026-10-19T19:18:11.8845551Z  * [new branch]        research/v15.31-source-extension-minimality -> origin/research/v15.31-source-extension-minimality
+2026-10-19T19:18:11.8847716Z  * [new branch]        research/v15.32-commutant-sector-decomposition -> origin/research/v15.32-commutant-sector-decomposition
+2026-10-19T19:18:11.8848773Z  * [new branch]        research/v15.33-sector-weight-constraint-audit -> origin/research/v15.33-sector-weight-constraint-audit
+2026-10-19T19:18:11.8849989Z  * [new branch]        research/v15.34-canonical-adjacency-commutant -> origin/research/v15.34-canonical-adjacency-commutant
+2026-10-19T19:18:11.8851516Z  * [new branch]        research/v15.35-support-radius-locality -> origin/research/v15.35-support-radius-locality
+2026-10-19T19:18:11.8853162Z  * [new branch]        research/v15.36-order-semigroup-constraint -> origin/research/v15.36-order-semigroup-constraint
+2026-10-19T19:18:11.8855015Z  * [new branch]        research/v15.37-response-selector-irreducibility -> origin/research/v15.37-response-selector-irreducibility
+2026-10-19T19:18:11.8856846Z  * [new branch]        research/v15.38-response-axiom-admissibility -> origin/research/v15.38-response-axiom-admissibility
+2026-10-19T19:18:11.8858884Z  * [new branch]        research/v15.39-higher-incidence-source-axioms -> origin/research/v15.39-higher-incidence-source-axioms
+2026-10-19T19:18:11.8860818Z  * [new branch]        research/v15.40-global-balance-geometry-specificity -> origin/research/v15.40-global-balance-geometry-specificity
+2026-10-19T19:18:11.8863167Z  * [new branch]        research/v15.41-formal-connection-curvature-source-correspondence -> origin/research/v15.41-formal-connection-curvature-source-correspondence
+2026-10-19T19:18:11.8865403Z  * [new branch]        research/v15.42-duality-covariant-transport-repair -> origin/research/v15.42-duality-covariant-transport-repair
+2026-10-19T19:18:11.8867098Z  * [new branch]        research/v15.43-certified-response-geometry -> origin/research/v15.43-certified-response-geometry
+2026-10-19T19:18:11.8869065Z  * [new branch]        research/v15.44-intrinsic-curvature-interpretation -> origin/research/v15.44-intrinsic-curvature-interpretation
+2026-10-19T19:18:11.8871316Z  * [new branch]        research/v15.45-curvature-factorization-spectral-boundary -> origin/research/v15.45-curvature-factorization-spectral-boundary
+2026-10-19T19:18:11.8873179Z  * [new branch]        research/v15.46-primitive-joint-source-admissibility -> origin/research/v15.46-primitive-joint-source-admissibility
+2026-10-19T19:18:11.8874255Z  * [new branch]        research/v15.55-source-compatibility-response -> origin/research/v15.55-source-compatibility-response
+2026-10-19T19:18:11.8875228Z  * [new branch]        research/v15.56-response-selector-obstruction -> origin/research/v15.56-response-selector-obstruction
+2026-10-19T19:18:11.8876165Z  * [new branch]        research/v15.56-source-edge-factorization -> origin/research/v15.56-source-edge-factorization
+2026-10-19T19:18:11.8877078Z  * [new branch]        research/v15.57-source-law-specificity -> origin/research/v15.57-source-law-specificity
+2026-10-19T19:18:11.8878293Z  * [new branch]        research/v15.58-asymmetric-heldout-ensemble -> origin/research/v15.58-asymmetric-heldout-ensemble
+2026-10-19T19:18:11.8879182Z  * [new branch]        research/v15.59-nonclosed-source-class -> origin/research/v15.59-nonclosed-source-class
+2026-10-19T19:18:11.8880301Z  * [new branch]        research/v15.60-shared-response-geometry -> origin/research/v15.60-shared-response-geometry
+2026-10-19T19:18:11.8882013Z  * [new branch]        research/v15.61-source-derivative-classification -> origin/research/v15.61-source-derivative-classification
+2026-10-19T19:18:11.8883003Z  * [new branch]        research/v15.62-symmetric-leakage-null -> origin/research/v15.62-symmetric-leakage-null
+2026-10-19T19:18:11.8883922Z  * [new branch]        research/v15.63-global-symmetric-null-lift -> origin/research/v15.63-global-symmetric-null-lift
+2026-10-19T19:18:11.8885139Z  * [new branch]        research/v15.64-source-vector-field-null -> origin/research/v15.64-source-vector-field-null
+2026-10-19T19:18:11.8886026Z  * [new branch]        research/v15.65-null-asymptotic-scaling -> origin/research/v15.65-null-asymptotic-scaling
+2026-10-19T19:18:11.8886897Z  * [new branch]        research/v15.66-polar-derivative-numerics -> origin/research/v15.66-polar-derivative-numerics
+2026-10-19T19:18:11.8888075Z  * [new branch]        research/v15.67-highprecision-identity-audit -> origin/research/v15.67-highprecision-identity-audit
+2026-10-19T19:18:11.8889032Z  * [new branch]        research/v15.68-complex-highprecision-repair -> origin/research/v15.68-complex-highprecision-repair
+2026-10-19T19:18:11.8889930Z  * [new branch]        research/v15.69-covariant-symmetric-null -> origin/research/v15.69-covariant-symmetric-null
+2026-10-19T19:18:11.8891054Z  * [new branch]        research/v15.70-atlas-descent-composition -> origin/research/v15.70-atlas-descent-composition
+2026-10-19T19:18:11.8891901Z  * [new branch]        research/v15.71-memory-enriched-null -> origin/research/v15.71-memory-enriched-null
+2026-10-19T19:18:11.8893040Z  * [new branch]        research/v15.71-minimal-extension-memory -> origin/research/v15.71-minimal-extension-memory
+2026-10-19T19:18:11.8894721Z  * [new branch]        research/v15.72-extension-memory-numerics -> origin/research/v15.72-extension-memory-numerics
+2026-10-19T19:18:11.8896504Z  * [new branch]        research/v15.72-operational-mixture-affinity -> origin/research/v15.72-operational-mixture-affinity
+2026-10-19T19:18:11.8898403Z  * [new branch]        research/v15.73-two-body-unitary-source -> origin/research/v15.73-two-body-unitary-source
+2026-10-19T19:18:11.8900055Z  * [new branch]        research/v15.74-hamiltonian-null-classification -> origin/research/v15.74-hamiltonian-null-classification
+2026-10-19T19:18:11.8901677Z  * [new branch]        research/v15.75-affine-open-null -> origin/research/v15.75-affine-open-null
+2026-10-19T19:18:11.8903107Z  * [new branch]        research/v15.76-cptp-null-composition -> origin/research/v15.76-cptp-null-composition
+2026-10-19T19:18:11.8904544Z  * [new branch]        research/v15.77-active-baseline-null -> origin/research/v15.77-active-baseline-null
+2026-10-19T19:18:11.8906210Z  * [new branch]        research/v15.78-source-free-covariance -> origin/research/v15.78-source-free-covariance
+2026-10-19T19:18:11.8908163Z  * [new branch]        research/v15.79-covariant-source-couplings -> origin/research/v15.79-covariant-source-couplings
+2026-10-19T19:18:11.8909767Z  * [new branch]        research/v15.80-signed-cptp-tangents -> origin/research/v15.80-signed-cptp-tangents
+2026-10-19T19:18:11.8911594Z  * [new branch]        research/v15.81-source-component-interference -> origin/research/v15.81-source-component-interference
+2026-10-19T19:18:11.8912666Z  * [new branch]        research/v15.82-polar-boundary-obstruction -> origin/research/v15.82-polar-boundary-obstruction
+2026-10-19T19:18:11.8913597Z  * [new branch]        research/v15.83-support-loop-composition -> origin/research/v15.83-support-loop-composition
+2026-10-19T19:18:11.8914523Z  * [new branch]        research/v15.84-loop-channel-recoverability -> origin/research/v15.84-loop-channel-recoverability
+2026-10-19T19:18:11.8915451Z  * [new branch]        research/v15.85-affine-shift-obstruction -> origin/research/v15.85-affine-shift-obstruction
+2026-10-19T19:18:11.8916327Z  * [new branch]        research/v15.86-cptp-support-completion -> origin/research/v15.86-cptp-support-completion
+2026-10-19T19:18:11.8917136Z  * [new branch]        research/v15.87-cptp-erasure-cost -> origin/research/v15.87-cptp-erasure-cost
+2026-10-19T19:18:11.8918362Z  * [new branch]        research/v15.88-exact-erasure-entanglement -> origin/research/v15.88-exact-erasure-entanglement
+2026-10-19T19:18:11.8919400Z  * [new branch]        research/v15.89-weakest-direction-entanglement-bound -> origin/research/v15.89-weakest-direction-entanglement-bound
+2026-10-19T19:18:11.8920414Z  * [new branch]        research/v15.90-arbitrary-input-negativity -> origin/research/v15.90-arbitrary-input-negativity
+2026-10-19T19:18:11.8921475Z  * [new branch]        research/v15.91-separable-output-rotation -> origin/research/v15.91-separable-output-rotation
+2026-10-19T19:18:11.8923120Z  * [new branch]        research/v15.92-preparation-span-obstruction -> origin/research/v15.92-preparation-span-obstruction
+2026-10-19T19:18:11.8924773Z  * [new branch]        research/v15.93-oriented-rank-two-response -> origin/research/v15.93-oriented-rank-two-response
+2026-10-19T19:18:11.8926503Z  * [new branch]        research/v15.94-oriented-composition-compatibility -> origin/research/v15.94-oriented-composition-compatibility
+2026-10-19T19:18:11.8928067Z  * [new branch]        research/v15.95-compatible-holonomy-reduction -> origin/research/v15.95-compatible-holonomy-reduction
+2026-10-19T19:18:11.8929256Z  * [new branch]        research/v15.96-overlap-holonomy-common-line -> origin/research/v15.96-overlap-holonomy-common-line
+2026-10-19T19:18:11.8930739Z  * [new branch]        research/v15.97-overlap-hidden-response -> origin/research/v15.97-overlap-hidden-response
+2026-10-19T19:18:11.8932332Z  * [new branch]        research/v15.98-composed-four-body-response -> origin/research/v15.98-composed-four-body-response
+2026-10-19T19:18:11.8933595Z  * [new branch]        research/v15.99-intermediate-eb-retention -> origin/research/v15.99-intermediate-eb-retention
+2026-10-19T19:18:11.8934486Z  * [new branch]        research/v16.00-precision-readout-audit -> origin/research/v16.00-precision-readout-audit
+2026-10-19T19:18:11.8935341Z  * [new branch]        research/v16.01-global-input-precision -> origin/research/v16.01-global-input-precision
+2026-10-19T19:18:11.8936187Z  * [new branch]        research/v16.02-full-ensemble-precision -> origin/research/v16.02-full-ensemble-precision
+2026-10-19T19:18:11.8937071Z  * [new branch]        research/v16.03-finite-source-continuation -> origin/research/v16.03-finite-source-continuation
+2026-10-19T19:18:11.8938303Z  * [new branch]        research/v16.04-inserted-channel-factorization -> origin/research/v16.04-inserted-channel-factorization
+2026-10-19T19:18:11.8939461Z  * [new branch]        research/v16.05-retained-edge-localization -> origin/research/v16.05-retained-edge-localization
+2026-10-19T19:18:11.8940272Z  * [new branch]        research/v16.06-sixth-edge-domain -> origin/research/v16.06-sixth-edge-domain
+2026-10-19T19:18:11.8941212Z  * [new branch]        research/v16.07-support-stratum-stability -> origin/research/v16.07-support-stratum-stability
+2026-10-19T19:18:11.8942090Z  * [new branch]        research/v16.08-physical-channel-paths -> origin/research/v16.08-physical-channel-paths
+2026-10-19T19:18:11.8943389Z  * [new branch]        research/v16.09-boundary-polar-limits -> origin/research/v16.09-boundary-polar-limits
+2026-10-19T19:18:11.8944602Z  * [new branch]        research/v16.10-source-reversal -> origin/research/v16.10-source-reversal
+2026-10-19T19:18:11.8945820Z  * [new branch]        research/v16.11-coherence-family -> origin/research/v16.11-coherence-family
+2026-10-19T19:18:11.8947377Z  * [new branch]        research/v16.12-continuous-response -> origin/research/v16.12-continuous-response
+2026-10-19T19:18:11.8948774Z  * [new branch]        research/v16.13-local-gauge-content -> origin/research/v16.13-local-gauge-content
+2026-10-19T19:18:11.8950162Z  * [new branch]        research/v16.13F-foundational-closure -> origin/research/v16.13F-foundational-closure
+2026-10-19T19:18:11.8951606Z  * [new branch]        research/v16.14-closed-network-response -> origin/research/v16.14-closed-network-response
+2026-10-19T19:18:11.8953152Z  * [new branch]        research/v16.14F-obstruction-carrier-closure -> origin/research/v16.14F-obstruction-carrier-closure
+2026-10-19T19:18:11.8954679Z  * [new branch]        research/v16.15-network-interpretation -> origin/research/v16.15-network-interpretation
+2026-10-19T19:18:11.8956203Z  * [new branch]        research/v16.15F-graded-obstruction-descent -> origin/research/v16.15F-graded-obstruction-descent
+2026-10-19T19:18:11.8957810Z  * [new branch]        research/v16.16-information-exhaust -> origin/research/v16.16-information-exhaust
+2026-10-19T19:18:11.8959315Z  * [new branch]        research/v16.19-response-information-kernel -> origin/research/v16.19-response-information-kernel
+2026-10-19T19:18:11.8960877Z  * [new branch]        research/v16.20-second-order-information -> origin/research/v16.20-second-order-information
+2026-10-19T19:18:11.8962552Z  * [new branch]        research/v16.21-foundational-closure-verification -> origin/research/v16.21-foundational-closure-verification
+2026-10-19T19:18:11.8964236Z  * [new branch]        research/v16.22-response-selection-closure -> origin/research/v16.22-response-selection-closure
+2026-10-19T19:18:11.8965642Z  * [new branch]        research/v16.23-overlap-descent -> origin/research/v16.23-overlap-descent
+2026-10-19T19:18:11.8966915Z  * [new branch]        research/v16.24-consistency-order -> origin/research/v16.24-consistency-order
+2026-10-19T19:18:11.8968553Z  * [new branch]        research/v16.25-pruning-refinement-closure -> origin/research/v16.25-pruning-refinement-closure
+2026-10-19T19:18:11.8970106Z  * [new branch]        research/v16.26-consistency-increment-law -> origin/research/v16.26-consistency-increment-law
+2026-10-19T19:18:11.8971718Z  * [new branch]        research/v16.27-increment-attribution-closure -> origin/research/v16.27-increment-attribution-closure
+2026-10-19T19:18:11.8973339Z  * [new branch]        research/v16.28-diamond-attribution-closure -> origin/research/v16.28-diamond-attribution-closure
+2026-10-19T19:18:11.8974807Z  * [new branch]        research/v16.29-local-profile-closure -> origin/research/v16.29-local-profile-closure
+2026-10-19T19:18:11.8976342Z  * [new branch]        research/v16.30-interaction-component-closure -> origin/research/v16.30-interaction-component-closure
+2026-10-19T19:18:11.8978219Z  * [new branch]        research/v16.31-global-component-factorization -> origin/research/v16.31-global-component-factorization
+2026-10-19T19:18:11.8979887Z  * [new branch]        research/v16.32-retained-state-reconstruction -> origin/research/v16.32-retained-state-reconstruction
+2026-10-19T19:18:11.8981720Z  * [new branch]        research/v16.33-consistency-quotient-kernel -> origin/research/v16.33-consistency-quotient-kernel
+2026-10-19T19:18:11.8983450Z  * [new branch]        research/v16.34-fiber-component-invariant -> origin/research/v16.34-fiber-component-invariant
+2026-10-19T19:18:11.8984946Z  * [new branch]        research/v16.35-fiber-barrier-closure -> origin/research/v16.35-fiber-barrier-closure
+2026-10-19T19:18:11.8986304Z  * [new branch]        research/v16.36-barrier-law-closure -> origin/research/v16.36-barrier-law-closure
+2026-10-19T19:18:11.8987910Z  * [new branch]        research/v16.36-pair-completeness-closure -> origin/research/v16.36-pair-completeness-closure
+2026-10-19T19:18:11.8989364Z  * [new branch]        research/v16.36-proof-ledger-closure -> origin/research/v16.36-proof-ledger-closure
+2026-10-19T19:18:11.8990639Z  * [new branch]        research/v16.37-audit-receipt -> origin/research/v16.37-audit-receipt
+2026-10-19T19:18:11.8991862Z  * [new branch]        research/v16.37-certified-closure -> origin/research/v16.37-certified-closure
+2026-10-19T19:18:11.8993245Z  * [new branch]        research/v16.37-minimax-structural-audit -> origin/research/v16.37-minimax-structural-audit
+2026-10-19T19:18:11.8994555Z  * [new branch]        research/v16.38-audit-receipt -> origin/research/v16.38-audit-receipt
+2026-10-19T19:18:11.8995793Z  * [new branch]        research/v16.38-six-vertex-barriers -> origin/research/v16.38-six-vertex-barriers
+2026-10-19T19:18:11.8997069Z  * [new branch]        research/v16.39-audit-receipt -> origin/research/v16.39-audit-receipt
+2026-10-19T19:18:11.8998526Z  * [new branch]        research/v16.39-structural-unit-barrier -> origin/research/v16.39-structural-unit-barrier
+2026-10-19T19:18:11.8999896Z  * [new branch]        research/v16.39-theorem-validation -> origin/research/v16.39-theorem-validation
+2026-10-19T19:18:11.9001141Z  * [new branch]        research/v16.40-audit-receipt -> origin/research/v16.40-audit-receipt
+2026-10-19T19:18:11.9002469Z  * [new branch]        research/v16.40-coordinate-obstruction -> origin/research/v16.40-coordinate-obstruction
+2026-10-19T19:18:11.9003752Z  * [new branch]        research/v16.41-audit-receipt -> origin/research/v16.41-audit-receipt
+2026-10-19T19:18:11.9005055Z  * [new branch]        research/v16.41-unit-barrier-dichotomy -> origin/research/v16.41-unit-barrier-dichotomy
+2026-10-19T19:18:11.9006328Z  * [new branch]        research/v16.42-audit-receipt -> origin/research/v16.42-audit-receipt
+2026-10-19T19:18:11.9007797Z  * [new branch]        research/v16.42-overlapping-core-repair -> origin/research/v16.42-overlapping-core-repair
+2026-10-19T19:18:11.9009106Z  * [new branch]        research/v16.43-audit-receipt -> origin/research/v16.43-audit-receipt
+2026-10-19T19:18:11.9010439Z  * [new branch]        research/v16.43-star-fiber-classification -> origin/research/v16.43-star-fiber-classification
+2026-10-19T19:18:11.9011757Z  * [new branch]        research/v16.44-audit-receipt -> origin/research/v16.44-audit-receipt
+2026-10-19T19:18:11.9013055Z  * [new branch]        research/v16.44-two-branch-unit-barrier -> origin/research/v16.44-two-branch-unit-barrier
+2026-10-19T19:18:11.9014327Z  * [new branch]        research/v16.45-audit-receipt -> origin/research/v16.45-audit-receipt
+2026-10-19T19:18:11.9015639Z  * [new branch]        research/v16.45-binary-fork-unit-barrier -> origin/research/v16.45-binary-fork-unit-barrier
+2026-10-19T19:18:11.9016921Z  * [new branch]        research/v16.46-audit-receipt -> origin/research/v16.46-audit-receipt
+2026-10-19T19:18:11.9018319Z  * [new branch]        research/v16.46-nested-chain-repair -> origin/research/v16.46-nested-chain-repair
+2026-10-19T19:18:11.9019533Z  * [new branch]        research/v16.47-audit-receipt -> origin/research/v16.47-audit-receipt
+2026-10-19T19:18:11.9020814Z  * [new branch]        research/v16.47-saturated-chain-repair -> origin/research/v16.47-saturated-chain-repair
+2026-10-19T19:18:11.9022078Z  * [new branch]        research/v16.48-audit-receipt -> origin/research/v16.48-audit-receipt
+2026-10-19T19:18:11.9023548Z  * [new branch]        research/v16.48-recursive-chain-repair -> origin/research/v16.48-recursive-chain-repair
+2026-10-19T19:18:11.9024920Z  * [new branch]        research/v16.49-audit-receipt -> origin/research/v16.49-audit-receipt
+2026-10-19T19:18:11.9026132Z  * [new branch]        research/v16.49-fork-chain-interface -> origin/research/v16.49-fork-chain-interface
+2026-10-19T19:18:11.9027516Z  * [new branch]        research/v16.50-audit-receipt -> origin/research/v16.50-audit-receipt
+2026-10-19T19:18:11.9028858Z  * [new branch]        research/v16.50-recursive-binary-composition -> origin/research/v16.50-recursive-binary-composition
+2026-10-19T19:18:11.9030166Z  * [new branch]        research/v16.51-audit-receipt -> origin/research/v16.51-audit-receipt
+2026-10-19T19:18:11.9031307Z  * [new branch]        research/v16.51-ternary-interface -> origin/research/v16.51-ternary-interface
+2026-10-19T19:18:11.9032505Z  * [new branch]        research/v16.52-artifact-transfer -> origin/research/v16.52-artifact-transfer
+2026-10-19T19:18:11.9033648Z  * [new branch]        research/v16.52-audit-receipt -> origin/research/v16.52-audit-receipt
+2026-10-19T19:18:11.9034997Z  * [new branch]        research/v16.52-recursive-ternary-composition -> origin/research/v16.52-recursive-ternary-composition
+2026-10-19T19:18:11.9036419Z  * [new branch]        research/v16.53-artifact-transfer -> origin/research/v16.53-artifact-transfer
+2026-10-19T19:18:11.9037708Z  * [new branch]        research/v16.53-audit-receipt -> origin/research/v16.53-audit-receipt
+2026-10-19T19:18:11.9038889Z  * [new branch]        research/v16.53-four-child-boundary -> origin/research/v16.53-four-child-boundary
+2026-10-19T19:18:11.9040185Z  * [new branch]        research/v16.54-evidence-37069220208-1 -> origin/research/v16.54-evidence-37069220208-1
+2026-10-19T19:18:11.9041504Z  * [new branch]        research/v16.54-evidence-37074296257-1 -> origin/research/v16.54-evidence-37074296257-1
+2026-10-19T19:18:11.9042823Z  * [new branch]        research/v16.54-evidence-37085148218-1 -> origin/research/v16.54-evidence-37085148218-1
+2026-10-19T19:18:11.9044251Z  * [new branch]        research/v16.54-parent-support-connectivity -> origin/research/v16.54-parent-support-connectivity
+2026-10-19T19:18:11.9045934Z  * [new branch]        research/v16.55-actual-merge-checkpoint-37211847122-1 -> origin/research/v16.55-actual-merge-checkpoint-37211847122-1
+2026-10-19T19:18:11.9047850Z  * [new branch]        research/v16.55-actual-merge-evidence-37211847122-1 -> origin/research/v16.55-actual-merge-evidence-37211847122-1
+2026-10-19T19:18:11.9049370Z  * [new branch]        research/v16.55-evidence-37207960846-1 -> origin/research/v16.55-evidence-37207960846-1
+2026-10-19T19:18:11.9050705Z  * [new branch]        research/v16.55-renewable-guard-repair -> origin/research/v16.55-renewable-guard-repair
+2026-10-19T19:18:11.9051840Z  * [new branch]        uqcf-history-assembly -> origin/uqcf-history-assembly
+2026-10-19T19:18:11.9052861Z  * [new branch]        uqcf-history-backfill-final -> origin/uqcf-history-backfill-final
+2026-10-19T19:18:11.9053932Z  * [new branch]        uqcf-history-backfill-v13 -> origin/uqcf-history-backfill-v13
+2026-10-19T19:18:11.9055071Z  * [new branch]        uqcf-history-backfill-v13-final -> origin/uqcf-history-backfill-v13-final
+2026-10-19T19:18:11.9056134Z  * [new branch]        uqcf-history-finalize -> origin/uqcf-history-finalize
+2026-10-19T19:18:11.9057049Z  * [new branch]        uqcf-history-publish  -> origin/uqcf-history-publish
+2026-10-19T19:18:11.9058197Z  * [new branch]        uqcf-history-v13-backfill -> origin/uqcf-history-v13-backfill
+2026-10-19T19:18:11.9059142Z  * [new branch]        uqcf-v13-24-publish   -> origin/uqcf-v13-24-publish
+2026-10-19T19:18:11.9060021Z  * [new branch]        uqcf-v13-24-publish2  -> origin/uqcf-v13-24-publish2
+2026-10-19T19:18:11.9060900Z  * [new branch]        uqcf-v13-24-publish3  -> origin/uqcf-v13-24-publish3
+2026-10-19T19:18:11.9061777Z  * [new branch]        uqcf-v13-24-publish4  -> origin/uqcf-v13-24-publish4
+2026-10-19T19:18:11.9062917Z  * [new branch]        uqcf-v13-24-publish5  -> origin/uqcf-v13-24-publish5
+2026-10-19T19:18:11.9063799Z  * [new branch]        uqcf-v13-24-publish6  -> origin/uqcf-v13-24-publish6
+2026-10-19T19:18:11.9064837Z  * [new branch]        uqcf-v13-24-publish7  -> origin/uqcf-v13-24-publish7
+2026-10-19T19:18:11.9065719Z  * [new branch]        uqcf-v13-24-publish8  -> origin/uqcf-v13-24-publish8
+2026-10-19T19:18:11.9066583Z  * [new branch]        uqcf-v13-24-publish9  -> origin/uqcf-v13-24-publish9
+2026-10-19T19:18:11.9067883Z  * [new tag]           uqcf-gem-v15.20-artifacts-34798361336-a1 -> uqcf-gem-v15.20-artifacts-34798361336-a1
+2026-10-19T19:18:11.9069026Z  * [new tag]           uqcf-gem-v15.21-34800673289-a1 -> uqcf-gem-v15.21-34800673289-a1
+2026-10-19T19:18:11.9069994Z  * [new tag]           uqcf-gem-v15.22-34802604073-a1 -> uqcf-gem-v15.22-34802604073-a1
+2026-10-19T19:18:11.9070958Z  * [new tag]           uqcf-gem-v15.23-34847969675-a1 -> uqcf-gem-v15.23-34847969675-a1
+2026-10-19T19:18:11.9071962Z  * [new tag]           uqcf-gem-v15.24-34861726829-a1 -> uqcf-gem-v15.24-34861726829-a1
+2026-10-19T19:18:11.9072963Z  * [new tag]           uqcf-gem-v15.25-34869134143-a1 -> uqcf-gem-v15.25-34869134143-a1
+2026-10-19T19:18:11.9073974Z  * [new tag]           uqcf-gem-v15.26-34870478027-a1 -> uqcf-gem-v15.26-34870478027-a1
+2026-10-19T19:18:11.9074970Z  * [new tag]           uqcf-gem-v15.27-34876560680-a1 -> uqcf-gem-v15.27-34876560680-a1
+2026-10-19T19:18:11.9075966Z  * [new tag]           uqcf-gem-v15.28-34892900423-a1 -> uqcf-gem-v15.28-34892900423-a1
+2026-10-19T19:18:11.9077018Z  * [new tag]           uqcf-gem-v15.29-35251080495-a2 -> uqcf-gem-v15.29-35251080495-a2
+2026-10-19T19:18:11.9078183Z  * [new tag]           uqcf-gem-v15.30-35266670939-a1 -> uqcf-gem-v15.30-35266670939-a1
+2026-10-19T19:18:11.9080763Z [command]/usr/bin/git rev-parse --verify --quiet 4e200083097143cca0441b53eab9570a63db4113^{object}
+2026-10-19T19:18:11.9081716Z 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:11.9083108Z ##[endgroup]
+2026-10-19T19:18:11.9083818Z ##[group]Determining the checkout info
+2026-10-19T19:18:11.9084585Z ##[endgroup]
+2026-10-19T19:18:11.9085066Z [command]/usr/bin/git sparse-checkout disable
+2026-10-19T19:18:11.9086484Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-19T19:18:11.9088450Z ##[group]Checking out the ref
+2026-10-19T19:18:11.9089356Z [command]/usr/bin/git checkout --progress --force 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:13.2489779Z Updating files:  25% (3164/12508)
+2026-10-19T19:18:13.5140057Z Updating files:  26% (3253/12508)
+2026-10-19T19:18:13.9244506Z Updating files:  27% (3378/12508)
+2026-10-19T19:18:14.0820366Z Updating files:  27% (3447/12508)
+2026-10-19T19:18:14.6463316Z Updating files:  28% (3503/12508)
+2026-10-19T19:18:14.9767405Z Updating files:  29% (3628/12508)
+2026-10-19T19:18:15.2692091Z Updating files:  29% (3732/12508)
+2026-10-19T19:18:15.6160553Z Updating files:  30% (3753/12508)
+2026-10-19T19:18:15.9435988Z Updating files:  31% (3878/12508)
+2026-10-19T19:18:16.1995815Z Updating files:  31% (3945/12508)
+2026-10-19T19:18:16.5003837Z Updating files:  32% (4003/12508)
+2026-10-19T19:18:16.9368031Z Updating files:  33% (4128/12508)
+2026-10-19T19:18:17.2537007Z Updating files:  33% (4162/12508)
+2026-10-19T19:18:17.5758650Z Updating files:  34% (4253/12508)
+2026-10-19T19:18:17.9141138Z Updating files:  35% (4378/12508)
+2026-10-19T19:18:18.1232913Z Updating files:  35% (4453/12508)
+2026-10-19T19:18:18.8755837Z Updating files:  36% (4503/12508)
+2026-10-19T19:18:18.9169910Z Updating files:  37% (4628/12508)
+2026-10-19T19:18:19.1485521Z Updating files:  37% (4686/12508)
+2026-10-19T19:18:19.7989986Z Updating files:  38% (4754/12508)
+2026-10-19T19:18:19.9142975Z Updating files:  39% (4879/12508)
+2026-10-19T19:18:20.1405153Z Updating files:  39% (4951/12508)
+2026-10-19T19:18:20.4742151Z Updating files:  40% (5004/12508)
+2026-10-19T19:18:20.9126982Z Updating files:  41% (5129/12508)
+2026-10-19T19:18:21.0822276Z Updating files:  41% (5225/12508)
+2026-10-19T19:18:21.2659100Z Updating files:  42% (5254/12508)
+2026-10-19T19:18:21.9771367Z Updating files:  43% (5379/12508)
+2026-10-19T19:18:21.9785531Z Updating files:  43% (5494/12508)
+2026-10-19T19:18:22.2544985Z Updating files:  44% (5504/12508)
+2026-10-19T19:18:22.2821093Z Updating files:  45% (5629/12508)
+2026-10-19T19:18:22.4141975Z Updating files:  46% (5754/12508)
+2026-10-19T19:18:22.8854870Z Updating files:  47% (5879/12508)
+2026-10-19T19:18:22.8959295Z Updating files:  48% (6004/12508)
+2026-10-19T19:18:22.9057360Z Updating files:  49% (6129/12508)
+2026-10-19T19:18:22.9125729Z Updating files:  50% (6254/12508)
+2026-10-19T19:18:22.9163909Z Updating files:  50% (6338/12508)
+2026-10-19T19:18:22.9248615Z Updating files:  51% (6380/12508)
+2026-10-19T19:18:22.9335500Z Updating files:  52% (6505/12508)
+2026-10-19T19:18:22.9415694Z Updating files:  53% (6630/12508)
+2026-10-19T19:18:22.9554092Z Updating files:  54% (6755/12508)
+2026-10-19T19:18:22.9779892Z Updating files:  55% (6880/12508)
+2026-10-19T19:18:22.9953519Z Updating files:  56% (7005/12508)
+2026-10-19T19:18:23.0052292Z Updating files:  57% (7130/12508)
+2026-10-19T19:18:23.0199512Z Updating files:  58% (7255/12508)
+2026-10-19T19:18:23.0484261Z Updating files:  59% (7380/12508)
+2026-10-19T19:18:23.0785601Z Updating files:  60% (7505/12508)
+2026-10-19T19:18:23.1662635Z Updating files:  61% (7630/12508)
+2026-10-19T19:18:23.1977134Z Updating files:  62% (7755/12508)
+2026-10-19T19:18:23.2112358Z Updating files:  63% (7881/12508)
+2026-10-19T19:18:23.2216925Z Updating files:  64% (8006/12508)
+2026-10-19T19:18:23.4387464Z Updating files:  65% (8131/12508)
+2026-10-19T19:18:23.4785202Z Updating files:  66% (8256/12508)
+2026-10-19T19:18:23.4962801Z Updating files:  67% (8381/12508)
+2026-10-19T19:18:23.5065655Z Updating files:  68% (8506/12508)
+2026-10-19T19:18:23.5167732Z Updating files:  69% (8631/12508)
+2026-10-19T19:18:23.5292102Z Updating files:  70% (8756/12508)
+2026-10-19T19:18:23.5438865Z Updating files:  71% (8881/12508)
+2026-10-19T19:18:23.5561633Z Updating files:  72% (9006/12508)
+2026-10-19T19:18:23.5658305Z Updating files:  73% (9131/12508)
+2026-10-19T19:18:23.5762110Z Updating files:  74% (9256/12508)
+2026-10-19T19:18:23.5852191Z Updating files:  75% (9381/12508)
+2026-10-19T19:18:23.9243906Z Updating files:  76% (9507/12508)
+2026-10-19T19:18:23.9999678Z Updating files:  76% (9603/12508)
+2026-10-19T19:18:24.0240804Z Updating files:  77% (9632/12508)
+2026-10-19T19:18:24.1125524Z Updating files:  78% (9757/12508)
+2026-10-19T19:18:24.3219050Z Updating files:  79% (9882/12508)
+2026-10-19T19:18:24.3293409Z Updating files:  80% (10007/12508)
+2026-10-19T19:18:24.4046263Z Updating files:  81% (10132/12508)
+2026-10-19T19:18:24.4205472Z Updating files:  82% (10257/12508)
+2026-10-19T19:18:24.4647743Z Updating files:  83% (10382/12508)
+2026-10-19T19:18:24.4792422Z Updating files:  84% (10507/12508)
+2026-10-19T19:18:24.8561796Z Updating files:  85% (10632/12508)
+2026-10-19T19:18:24.9133902Z Updating files:  86% (10757/12508)
+2026-10-19T19:18:25.0362474Z Updating files:  86% (10838/12508)
+2026-10-19T19:18:25.1976223Z Updating files:  87% (10882/12508)
+2026-10-19T19:18:25.2542628Z Updating files:  88% (11008/12508)
+2026-10-19T19:18:25.3060762Z Updating files:  89% (11133/12508)
+2026-10-19T19:18:25.3138416Z Updating files:  90% (11258/12508)
+2026-10-19T19:18:25.3211388Z Updating files:  91% (11383/12508)
+2026-10-19T19:18:25.3274784Z Updating files:  92% (11508/12508)
+2026-10-19T19:18:25.7076820Z Updating files:  93% (11633/12508)
+2026-10-19T19:18:25.7486459Z Updating files:  94% (11758/12508)
+2026-10-19T19:18:25.8020415Z Updating files:  95% (11883/12508)
+2026-10-19T19:18:25.8586806Z Updating files:  96% (12008/12508)
+2026-10-19T19:18:25.8737423Z Updating files:  97% (12133/12508)
+2026-10-19T19:18:25.8936399Z Updating files:  98% (12258/12508)
+2026-10-19T19:18:25.9152042Z Updating files:  99% (12383/12508)
+2026-10-19T19:18:25.9357445Z Updating files:  99% (12464/12508)
+2026-10-19T19:18:25.9358469Z Updating files: 100% (12508/12508)
+2026-10-19T19:18:25.9358897Z Updating files: 100% (12508/12508), done.
+2026-10-19T19:18:26.0892110Z Note: switching to '4e200083097143cca0441b53eab9570a63db4113'.
+2026-10-19T19:18:26.0892785Z 
+2026-10-19T19:18:26.0893727Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-19T19:18:26.0894735Z changes and commit them, and you can discard any commits you make in this
+2026-10-19T19:18:26.0895784Z state without impacting any branches by switching back to a branch.
+2026-10-19T19:18:26.0896563Z 
+2026-10-19T19:18:26.0897339Z If you want to create a new branch to retain commits you create, you may
+2026-10-19T19:18:26.0898381Z do so (now or later) by using -c with the switch command. Example:
+2026-10-19T19:18:26.0898930Z 
+2026-10-19T19:18:26.0899379Z   git switch -c <new-branch-name>
+2026-10-19T19:18:26.0899911Z 
+2026-10-19T19:18:26.0900154Z Or undo this operation with:
+2026-10-19T19:18:26.0900510Z 
+2026-10-19T19:18:26.0900707Z   git switch -
+2026-10-19T19:18:26.0900984Z 
+2026-10-19T19:18:26.0901465Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-19T19:18:26.0902176Z 
+2026-10-19T19:18:26.0902863Z HEAD is now at 4e200083 Run one frozen D24 regenerated certificate-export campaign (proteinfolding-gpt)
+2026-10-19T19:18:26.1233800Z ##[endgroup]
+2026-10-19T19:18:26.1279696Z [command]/usr/bin/git log -1 --format=%H
+2026-10-19T19:18:26.1312542Z 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:26.1327706Z ##[group]Removing auth
+2026-10-19T19:18:26.1334246Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-19T19:18:26.1368943Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-19T19:18:26.1603138Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-19T19:18:26.1628859Z http.https://github.com/.extraheader
+2026-10-19T19:18:26.1637727Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-19T19:18:26.2474085Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-19T19:18:26.2710714Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-19T19:18:26.2743734Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-19T19:18:26.2978234Z ##[endgroup]
+2026-10-19T19:18:26.6509116Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-10-19T19:18:26.6509563Z with:
+2026-10-19T19:18:26.6509772Z   python-version: 3.12.15
+2026-10-19T19:18:26.6510017Z   check-latest: false
+2026-10-19T19:18:26.6512412Z   token: ***
+2026-10-19T19:18:26.6512642Z   update-environment: true
+2026-10-19T19:18:26.6512888Z   allow-prereleases: false
+2026-10-19T19:18:26.6513116Z   freethreaded: false
+2026-10-19T19:18:26.6513323Z env:
+2026-10-19T19:18:26.6513743Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:18:26.6514287Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:26.6514627Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:26.6514931Z   RUN_ID: 39309476526
+2026-10-19T19:18:26.6515135Z   RUN_ATTEMPT: 1
+2026-10-19T19:18:26.6515332Z   EVENT_NAME: push
+2026-10-19T19:18:26.6515540Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:18:26.6515870Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:18:26.6516231Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:18:26.6516537Z   PYTHONHASHSEED: 0
+2026-10-19T19:18:26.6516762Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:18:26.6517005Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:18:26.6517422Z   OMP_NUM_THREADS: 1
+2026-10-19T19:18:26.6517826Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:18:26.6518052Z   MKL_NUM_THREADS: 1
+2026-10-19T19:18:26.6518285Z   STAGE: publication-reproduction
+2026-10-19T19:18:26.6518556Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:18:26.6518984Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:18:26.6519557Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:18:26.6519986Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:18:26.6520305Z ##[endgroup]
+2026-10-19T19:18:26.7811858Z ##[group]Installed versions
+2026-10-19T19:18:27.0554197Z (node:2449) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-19T19:18:27.0555501Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-19T19:18:27.0556285Z Successfully set up CPython (3.12.15)
+2026-10-19T19:18:27.0557095Z ##[endgroup]
+2026-10-19T19:18:27.1197553Z ##[group]Run python - <<'PY' > "$EVIDENCE_DIR/logs/preflight.stdout.log" 2> "$EVIDENCE_DIR/logs/preflight.stderr.log"
+2026-10-19T19:18:27.1198552Z [36;1mpython - <<'PY' > "$EVIDENCE_DIR/logs/preflight.stdout.log" 2> "$EVIDENCE_DIR/logs/preflight.stderr.log"[0m
+2026-10-19T19:18:27.1199187Z [36;1mimport hashlib, json, os, re, shutil, subprocess, sys[0m
+2026-10-19T19:18:27.1199553Z [36;1mfrom pathlib import Path[0m
+2026-10-19T19:18:27.1199819Z [36;1mroot = Path.cwd()[0m
+2026-10-19T19:18:27.1200110Z [36;1mevidence = Path(os.environ['EVIDENCE_DIR'])[0m
+2026-10-19T19:18:27.1200673Z [36;1mpackage = 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence'[0m
+2026-10-19T19:18:27.1201332Z [36;1mworkflow = '.github/workflows/uqcf-gem-rid24-certificate-export.yml'[0m
+2026-10-19T19:18:27.1201775Z [36;1mmarker_path = package + '/EXECUTE_ONCE.md'[0m
+2026-10-19T19:18:27.1205343Z [36;1mreviewed = {'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/ARCHIVE_CONTRACT.md': '32ac119faec345e06ccc2c3727d3a0773da93751c97e19d71ca9f59ff2047e48', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/checker_export.py': '7547f11ca4e4aa7ec4962e4c1483883aa619a7d44653c86cf2c0c026fba0318d', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/producer_export.py': 'bf00f37e603814d2ece28ed8fd5b42dbedc4a29e2fca09a7044077a09ebfba48', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/test_archive_mutations.py': '92556fb7ff0a922fd5579a63380c1b5aca0adf744b2b4c85058d8ccc7501e961', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/verify_archive.py': '3dede4847c25f0d5c589a32f1286a5cdf5ceb4ab8466abfc85e8a281547f739b'}[0m
+2026-10-19T19:18:27.1212523Z [36;1moriginal = {'.github/scripts/uqcf_rid24_checker.py': '2f7789a70113a08eaab4d9ce159245813bb1e982dd1971e8f646d999ea44dc2c', '.github/scripts/uqcf_rid24_compare.py': '4e2d754a63aacac5e3f7d0b5855af8823507d5eed7c98a658c7b22a3a84e35e5', '.github/scripts/uqcf_rid24_producer.py': '942ea9de0835849973046f0e6c079acb5c7e73fa04524eca289d7546bfd5d004', '.github/scripts/uqcf_rid24_publication.py': '7f795b50ce236ace100300c2527731ee55a84823a4e0f36514cb3422e92b2b1d', '.github/scripts/uqcf_rid24_review.py': '0bd9a890fd3c8a8e379c58aa9d6151011142c45d73ac2acc091c5fbadfcade85', '.github/workflows/uqcf-gem-rid24-review.yml': '0aceef6b226248842ec04205b07b53cd878d3d2e0a1e472c913661e3e1234cb9', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/FREEZE.md': 'a0bc94537c4dd008fd0e4349e7bfbc9b154707a63a67f6e8a7f9d5e5f3f4ebf1', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/RESULT.md': '7600ad3708baa287ac877afa582d83073a02f0ec72bf11d6ddcfbeb091ba43cc'}[0m
+2026-10-19T19:18:27.1216293Z [36;1mdef require(ok, message):[0m
+2026-10-19T19:18:27.1216593Z [36;1m    if not ok: raise RuntimeError(message)[0m
+2026-10-19T19:18:27.1217073Z [36;1mdef git(*args):[0m
+2026-10-19T19:18:27.1217550Z [36;1m    return subprocess.check_output(['git', *args], text=True).strip()[0m
+2026-10-19T19:18:27.1217949Z [36;1mdef strict_pairs(pairs):[0m
+2026-10-19T19:18:27.1218207Z [36;1m    out = {}[0m
+2026-10-19T19:18:27.1218433Z [36;1m    for key, value in pairs:[0m
+2026-10-19T19:18:27.1218776Z [36;1m        require(key not in out, 'Duplicate JSON key: ' + key)[0m
+2026-10-19T19:18:27.1219119Z [36;1m        out[key] = value[0m
+2026-10-19T19:18:27.1219361Z [36;1m    return out[0m
+2026-10-19T19:18:27.1219594Z [36;1mdef write(path, value):[0m
+2026-10-19T19:18:27.1220061Z [36;1m    with path.open('x') as stream: json.dump(value, stream, sort_keys=True, indent=2); stream.write('\n')[0m
+2026-10-19T19:18:27.1220610Z [36;1minvocation = {key: os.environ.get(key) for key in ([0m
+2026-10-19T19:18:27.1221036Z [36;1m    'RUN_SHA', 'WORKFLOW_SHA', 'RUN_ID', 'RUN_ATTEMPT', 'EVENT_NAME',[0m
+2026-10-19T19:18:27.1221604Z [36;1m    'ACTOR', 'REF_NAME', 'REPOSITORY', 'STAGE')}[0m
+2026-10-19T19:18:27.1221986Z [36;1mwrite(evidence / 'invocation.json', invocation)[0m
+2026-10-19T19:18:27.1222516Z [36;1mrequire(os.environ['REPOSITORY'] == 'proteinfoldingengine/WetLabEngine', 'Wrong repository')[0m
+2026-10-19T19:18:27.1223125Z [36;1mrequire(os.environ['ACTOR'] == 'proteinfolding-gpt', 'Wrong initiating actor')[0m
+2026-10-19T19:18:27.1223624Z [36;1mrequire(os.environ['EVENT_NAME'] == 'push', 'Push only')[0m
+2026-10-19T19:18:27.1224172Z [36;1mrequire(os.environ['REF_NAME'] == 'research/uqcf-overlapping-guard-exchange', 'Wrong branch')[0m
+2026-10-19T19:18:27.1224752Z [36;1mrequire(os.environ['RUN_ATTEMPT'] == '1', 'No rerun is authorized')[0m
+2026-10-19T19:18:27.1225252Z [36;1mrequire(sys.version_info[:3] == (3, 12, 15), 'Python version mismatch')[0m
+2026-10-19T19:18:27.1225900Z [36;1mrequire(git('rev-parse', 'HEAD') == os.environ['RUN_SHA'] == os.environ['WORKFLOW_SHA'], 'Checkout/workflow SHA mismatch')[0m
+2026-10-19T19:18:27.1226658Z [36;1mevent = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text(), object_pairs_hook=strict_pairs)[0m
+2026-10-19T19:18:27.1227377Z [36;1mparents = git('rev-list', '--parents', '-n', '1', 'HEAD').split()[0m
+2026-10-19T19:18:27.1227971Z [36;1mrequire(len(parents) == 2 and parents[1] == event.get('before'), 'One parent matching push.before required')[0m
+2026-10-19T19:18:27.1228691Z [36;1mrequire(event.get('after') == os.environ['RUN_SHA'] and event.get('forced') is False, 'Wrong or forced push')[0m
+2026-10-19T19:18:27.1229414Z [36;1mrequire(event.get('deleted') is False and event.get('created') is False, 'Existing branch push required')[0m
+2026-10-19T19:18:27.1230143Z [36;1mchanged = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-status', '-r', '-z', 'HEAD'])[0m
+2026-10-19T19:18:27.1230863Z [36;1mrequire(changed == ('A\0' + marker_path + '\0').encode(), 'Trigger commit must only add the execution marker')[0m
+2026-10-19T19:18:27.1231727Z [36;1mrequire(git('rev-list', '--full-history', 'HEAD', '--', marker_path).splitlines() == [os.environ['RUN_SHA']], 'Marker must first appear in this branch history')[0m
+2026-10-19T19:18:27.1232397Z [36;1mraw = Path(marker_path).read_bytes()[0m
+2026-10-19T19:18:27.1232754Z [36;1mrequire(len(raw) <= 16384, 'Marker size exceeds bound')[0m
+2026-10-19T19:18:27.1233168Z [36;1mmarker = json.loads(raw, object_pairs_hook=strict_pairs)[0m
+2026-10-19T19:18:27.1233567Z [36;1mrequire(type(marker) is dict and set(marker) == {[0m
+2026-10-19T19:18:27.1234189Z [36;1m    'schema', 'campaign', 'evidence_kind', 'prepared_commit', 'expected_files', 'original_run', 'max_attempt'}, 'Marker keys mismatch')[0m
+2026-10-19T19:18:27.1234919Z [36;1mrequire(marker['schema'] == 'uqcf-rid24-execute-once-v1', 'Marker schema mismatch')[0m
+2026-10-19T19:18:27.1235553Z [36;1mrequire(marker['campaign'] == 'uqcf-rid24-certificate-export-20261019', 'Campaign mismatch')[0m
+2026-10-19T19:18:27.1236152Z [36;1mrequire(marker['evidence_kind'] == 'regenerated', 'Evidence kind mismatch')[0m
+2026-10-19T19:18:27.1236945Z [36;1mrequire(type(marker['original_run']) is int and marker['original_run'] == 39300667905, 'Origin run mismatch')[0m
+2026-10-19T19:18:27.1237800Z [36;1mrequire(type(marker['max_attempt']) is int and marker['max_attempt'] == 1, 'Attempt bound mismatch')[0m
+2026-10-19T19:18:27.1238299Z [36;1mprepared = marker['prepared_commit'][0m
+2026-10-19T19:18:27.1238822Z [36;1mrequire(type(prepared) is str and re.fullmatch('[0-9a-f]{40}', prepared), 'Prepared commit must be a full SHA')[0m
+2026-10-19T19:18:27.1239499Z [36;1mrequire(prepared != os.environ['RUN_SHA'], 'Prospective publication must precede trigger')[0m
+2026-10-19T19:18:27.1240103Z [36;1msubprocess.run(['git', 'merge-base', '--is-ancestor', prepared, 'HEAD'], check=True)[0m
+2026-10-19T19:18:27.1240556Z [36;1mexpected = marker['expected_files'][0m
+2026-10-19T19:18:27.1241343Z [36;1mrequire(type(expected) is dict and set(expected) == set(reviewed) | {package + '/EXECUTION_PLAN.md', workflow}, 'Exactly seven prospective paths required')[0m
+2026-10-19T19:18:27.1242212Z [36;1mrequire(all(type(v) is str and re.fullmatch('[0-9a-f]{64}', v) for v in expected.values()), 'Invalid digest')[0m
+2026-10-19T19:18:27.1242924Z [36;1mrequire(all(expected[p] == digest for p, digest in reviewed.items()), 'Reviewed five-file package changed')[0m
+2026-10-19T19:18:27.1243420Z [36;1msource_hashes = {}[0m
+2026-10-19T19:18:27.1243746Z [36;1mfor path, digest in sorted({**original, **expected}.items()):[0m
+2026-10-19T19:18:27.1244116Z [36;1m    file = Path(path)[0m
+2026-10-19T19:18:27.1244509Z [36;1m    require(file.is_file() and not file.is_symlink(), 'Nonregular source: ' + path)[0m
+2026-10-19T19:18:27.1244928Z [36;1m    data = file.read_bytes()[0m
+2026-10-19T19:18:27.1245381Z [36;1m    require(hashlib.sha256(data).hexdigest() == digest, 'Current source hash mismatch: ' + path)[0m
+2026-10-19T19:18:27.1246001Z [36;1m    prospective = subprocess.check_output(['git', 'show', prepared + ':' + path])[0m
+2026-10-19T19:18:27.1246655Z [36;1m    require(hashlib.sha256(prospective).hexdigest() == digest, 'Prospective source hash mismatch: ' + path)[0m
+2026-10-19T19:18:27.1247345Z [36;1m    destination = evidence / 'source' / path[0m
+2026-10-19T19:18:27.1247738Z [36;1m    destination.parent.mkdir(parents=True, exist_ok=True)[0m
+2026-10-19T19:18:27.1248171Z [36;1m    with destination.open('xb') as stream: stream.write(data)[0m
+2026-10-19T19:18:27.1248741Z [36;1m    source_hashes[path] = {'bytes': len(data), 'sha256': digest, 'git_blob': git('rev-parse', 'HEAD:' + path)}[0m
+2026-10-19T19:18:27.1249318Z [36;1mshutil.copyfile(marker_path, evidence / 'EXECUTE_ONCE.md')[0m
+2026-10-19T19:18:27.1249705Z [36;1mwrite(evidence / 'provenance.json', {[0m
+2026-10-19T19:18:27.1250165Z [36;1m    'schema': 'uqcf-rid24-execution-provenance-v1', 'evidence_kind': 'regenerated',[0m
+2026-10-19T19:18:27.1250783Z [36;1m    'stage': os.environ['STAGE'], 'campaign': marker['campaign'], 'prepared_commit': prepared,[0m
+2026-10-19T19:18:27.1251446Z [36;1m    'checked_out_scientific_sha': os.environ['RUN_SHA'], 'workflow_sha': os.environ['WORKFLOW_SHA'],[0m
+2026-10-19T19:18:27.1252054Z [36;1m    'run_id': int(os.environ['RUN_ID']), 'run_attempt': int(os.environ['RUN_ATTEMPT']),[0m
+2026-10-19T19:18:27.1252609Z [36;1m    'trigger_parent': parents[1], 'marker_sha256': hashlib.sha256(raw).hexdigest(),[0m
+2026-10-19T19:18:27.1253119Z [36;1m    'original_code_sha': '57895f62297c6100c1a4b8f185857a7905da780b',[0m
+2026-10-19T19:18:27.1253560Z [36;1m    'original_run_id': 39300667905, 'original_run_attempt': 1,[0m
+2026-10-19T19:18:27.1253961Z [36;1m    'original_verification_artifact_id': 12211286997,[0m
+2026-10-19T19:18:27.1254531Z [36;1m    'original_verification_zip_sha256': '215496706fcb15cb10c5f70f46d14cabbeccbfd0bde0b3d4e6b3e18be6ffb181',[0m
+2026-10-19T19:18:27.1255070Z [36;1m    'source_files': source_hashes,[0m
+2026-10-19T19:18:27.1255430Z [36;1m    'limits': {'job_minutes': 60, 'scientific_step_minutes': 45,[0m
+2026-10-19T19:18:27.1256064Z [36;1m               'combined_process_seconds': 2640, 'science_stop_seconds_from_job_start': 3000,[0m
+2026-10-19T19:18:27.1256545Z [36;1m               'address_space_bytes_per_process': 6442450944,[0m
+2026-10-19T19:18:27.1256949Z [36;1m               'max_file_bytes_per_process': 1073741824, 'retries': 0}})[0m
+2026-10-19T19:18:27.1257643Z [36;1mprint('Prospective sources, trigger and identity verified; no scientific execution in preflight.')[0m
+2026-10-19T19:18:27.1258131Z [36;1mPY[0m
+2026-10-19T19:18:27.1591284Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-19T19:18:27.1591716Z env:
+2026-10-19T19:18:27.1592259Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:18:27.1592959Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:27.1593397Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:27.1593788Z   RUN_ID: 39309476526
+2026-10-19T19:18:27.1594206Z   RUN_ATTEMPT: 1
+2026-10-19T19:18:27.1594466Z   EVENT_NAME: push
+2026-10-19T19:18:27.1594748Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:18:27.1595115Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:18:27.1595563Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:18:27.1595946Z   PYTHONHASHSEED: 0
+2026-10-19T19:18:27.1596227Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:18:27.1596543Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:18:27.1596816Z   OMP_NUM_THREADS: 1
+2026-10-19T19:18:27.1597086Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:18:27.1597529Z   MKL_NUM_THREADS: 1
+2026-10-19T19:18:27.1597818Z   STAGE: publication-reproduction
+2026-10-19T19:18:27.1598172Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:18:27.1598732Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:18:27.1599477Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:18:27.1600045Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:18:27.1600550Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:27.1601107Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T19:18:27.1601659Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:27.1602167Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:27.1602663Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:27.1603164Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T19:18:27.1603584Z ##[endgroup]
+2026-10-19T19:18:28.2098255Z ##[group]Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+2026-10-19T19:18:28.2098715Z with:
+2026-10-19T19:18:28.2098916Z   artifact-ids: 12214219463
+2026-10-19T19:18:28.2099201Z   path: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:18:28.2099513Z   merge-multiple: true
+2026-10-19T19:18:28.2099778Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-19T19:18:28.2100083Z   run-id: 39309476526
+2026-10-19T19:18:28.2100284Z env:
+2026-10-19T19:18:28.2100688Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:18:28.2101198Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:28.2101543Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:28.2101837Z   RUN_ID: 39309476526
+2026-10-19T19:18:28.2102041Z   RUN_ATTEMPT: 1
+2026-10-19T19:18:28.2102241Z   EVENT_NAME: push
+2026-10-19T19:18:28.2102457Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:18:28.2102772Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:18:28.2103117Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:18:28.2103412Z   PYTHONHASHSEED: 0
+2026-10-19T19:18:28.2103630Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:18:28.2103868Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:18:28.2104076Z   OMP_NUM_THREADS: 1
+2026-10-19T19:18:28.2104285Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:18:28.2104692Z   MKL_NUM_THREADS: 1
+2026-10-19T19:18:28.2104926Z   STAGE: publication-reproduction
+2026-10-19T19:18:28.2105186Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:18:28.2105611Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:18:28.2106174Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:18:28.2106615Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:18:28.2107003Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:28.2107761Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T19:18:28.2108179Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:28.2108555Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:28.2108926Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:28.2109298Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T19:18:28.2109624Z ##[endgroup]
+2026-10-19T19:18:28.3568606Z Downloading artifacts by ID
+2026-10-19T19:18:28.3700586Z (node:2495) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-19T19:18:28.3702034Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-19T19:18:28.5527919Z Found 1 artifact(s)
+2026-10-19T19:18:28.5528955Z Preparing to download the following artifacts:
+2026-10-19T19:18:28.5530407Z - rid24-initial-export-39309476526-1 (ID: 12214219463, Size: 406570, Expected Digest: sha256:249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5)
+2026-10-19T19:18:28.7476512Z Redirecting to blob download url: https://productionresultssa10.blob.core.windows.net/actions-results/5d774353-4b7e-84b3-b773-5d59b513d019/workflow-job-run-35eda743-3845-56e9-bf97-689d96bcc381/artifacts/62455770662d0affa01433a7075b3807c0ea0b1baf80c24f212f059f07dab477.zip
+2026-10-19T19:18:28.7480669Z Starting download of artifact to: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:18:28.9148375Z (node:2495) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-19T19:18:29.0763219Z SHA256 digest of downloaded artifact is 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:18:29.0764032Z Artifact download completed successfully.
+2026-10-19T19:18:29.0764429Z Total of 1 artifact(s) downloaded
+2026-10-19T19:18:29.0769510Z Download artifact has finished successfully
+2026-10-19T19:18:29.0943278Z ##[group]Run python - <<'PY' > "$EVIDENCE_DIR/logs/verify.stdout.log" 2> "$EVIDENCE_DIR/logs/verify.stderr.log"
+2026-10-19T19:18:29.0944100Z [36;1mpython - <<'PY' > "$EVIDENCE_DIR/logs/verify.stdout.log" 2> "$EVIDENCE_DIR/logs/verify.stderr.log"[0m
+2026-10-19T19:18:29.0944620Z [36;1mimport hashlib, json, os, re, shutil[0m
+2026-10-19T19:18:29.0944938Z [36;1mfrom pathlib import Path[0m
+2026-10-19T19:18:29.0945277Z [36;1mincoming = Path(os.environ['INITIAL_DIR'])[0m
+2026-10-19T19:18:29.0945642Z [36;1mevidence = Path(os.environ['EVIDENCE_DIR'])[0m
+2026-10-19T19:18:29.0945963Z [36;1mdef require(ok, message):[0m
+2026-10-19T19:18:29.0946266Z [36;1m    if not ok: raise RuntimeError(message)[0m
+2026-10-19T19:18:29.0946780Z [36;1mrequire(re.fullmatch('[0-9]+', os.environ['INITIAL_ARTIFACT_ID']), 'Missing initial artifact ID')[0m
+2026-10-19T19:18:29.0947861Z [36;1mrequire(re.fullmatch('[0-9a-f]{64}', os.environ['INITIAL_ARTIFACT_DIGEST']), 'Missing initial artifact digest')[0m
+2026-10-19T19:18:29.0948486Z [36;1mmanifest = json.loads((incoming / 'manifest.json').read_text())[0m
+2026-10-19T19:18:29.0949341Z [36;1mrequire(manifest['stage'] == 'initial-export' and manifest['scientific_status'] == 'PASS' and manifest['job_status_before_finalization'] == 'success', 'Initial stage did not pass')[0m
+2026-10-19T19:18:29.0950352Z [36;1mrequire(manifest['run_id'] == int(os.environ['RUN_ID']) and manifest['run_attempt'] == 1, 'Initial artifact run mismatch')[0m
+2026-10-19T19:18:29.0951471Z [36;1mrequire(manifest['checked_out_scientific_sha'] == os.environ['RUN_SHA'] and manifest['workflow_sha'] == os.environ['WORKFLOW_SHA'], 'Initial artifact SHA mismatch')[0m
+2026-10-19T19:18:29.0952149Z [36;1mactual = {}[0m
+2026-10-19T19:18:29.0952408Z [36;1mfor file in sorted(incoming.rglob('*')):[0m
+2026-10-19T19:18:29.0952807Z [36;1m    require(not file.is_symlink(), 'Symlink in initial artifact')[0m
+2026-10-19T19:18:29.0953389Z [36;1m    if file.is_file() and file.relative_to(incoming).as_posix() not in ('manifest.json', 'SHA256SUMS'):[0m
+2026-10-19T19:18:29.0954239Z [36;1m        actual[file.relative_to(incoming).as_posix()] = {'bytes': file.stat().st_size, 'sha256': hashlib.file_digest(file.open('rb'), 'sha256').hexdigest()}[0m
+2026-10-19T19:18:29.0955050Z [36;1mrequire(actual == manifest['files'], 'Initial artifact file inventory/hash mismatch')[0m
+2026-10-19T19:18:29.0955495Z [36;1mchecks = [][0m
+2026-10-19T19:18:29.0955922Z [36;1mfor file in sorted(p for p in incoming.rglob('*') if p.is_file() and p != incoming / 'SHA256SUMS'):[0m
+2026-10-19T19:18:29.0956686Z [36;1m    checks.append(hashlib.file_digest(file.open('rb'), 'sha256').hexdigest() + '  ' + file.relative_to(incoming).as_posix() + '\n')[0m
+2026-10-19T19:18:29.0957667Z [36;1mrequire((incoming / 'SHA256SUMS').read_text() == ''.join(checks), 'Initial checksums mismatch')[0m
+2026-10-19T19:18:29.0958205Z [36;1mfor name in ('provenance.json', 'EXECUTE_ONCE.md'):[0m
+2026-10-19T19:18:29.0958610Z [36;1m    first = json.loads((incoming / name).read_text())[0m
+2026-10-19T19:18:29.0959010Z [36;1m    current = json.loads((evidence / name).read_text())[0m
+2026-10-19T19:18:29.0959370Z [36;1m    if name == 'provenance.json':[0m
+2026-10-19T19:18:29.0959705Z [36;1m        first.pop('stage'); current.pop('stage')[0m
+2026-10-19T19:18:29.0960149Z [36;1m    require(first == current, 'Initial source/marker provenance mismatch')[0m
+2026-10-19T19:18:29.0960639Z [36;1mfor relative, digest in manifest['source_files'].items():[0m
+2026-10-19T19:18:29.0961306Z [36;1m    require(hashlib.sha256(Path(relative).read_bytes()).hexdigest() == digest['sha256'], 'Current source differs from initial source')[0m
+2026-10-19T19:18:29.0962005Z [36;1mshutil.copytree(incoming / 'original', evidence / 'original')[0m
+2026-10-19T19:18:29.0962500Z [36;1mwith (evidence / 'initial_artifact_binding.json').open('x') as stream:[0m
+2026-10-19T19:18:29.0963363Z [36;1m    json.dump({'artifact_id': os.environ['INITIAL_ARTIFACT_ID'], 'upload_reported_zip_sha256': os.environ['INITIAL_ARTIFACT_DIGEST'],[0m
+2026-10-19T19:18:29.0964164Z [36;1m               'manifest_sha256': hashlib.sha256((incoming / 'manifest.json').read_bytes()).hexdigest(),[0m
+2026-10-19T19:18:29.0964705Z [36;1m               'complete_unpacked_file_hashes_verified': True,[0m
+2026-10-19T19:18:29.0965309Z [36;1m               'compressed_zip_independently_rehashed_here': False}, stream, sort_keys=True, indent=2); stream.write('\n')[0m
+2026-10-19T19:18:29.0966096Z [36;1mprint('First-stage artifact identity, complete inventory, hashes and prospective provenance verified.')[0m
+2026-10-19T19:18:29.0966609Z [36;1mPY[0m
+2026-10-19T19:18:29.1028526Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-19T19:18:29.1028869Z env:
+2026-10-19T19:18:29.1029311Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:18:29.1029858Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:29.1030220Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:29.1030536Z   RUN_ID: 39309476526
+2026-10-19T19:18:29.1030751Z   RUN_ATTEMPT: 1
+2026-10-19T19:18:29.1030955Z   EVENT_NAME: push
+2026-10-19T19:18:29.1031175Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:18:29.1031469Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:18:29.1031831Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:18:29.1032285Z   PYTHONHASHSEED: 0
+2026-10-19T19:18:29.1032511Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:18:29.1032760Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:18:29.1032983Z   OMP_NUM_THREADS: 1
+2026-10-19T19:18:29.1033198Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:18:29.1033426Z   MKL_NUM_THREADS: 1
+2026-10-19T19:18:29.1033655Z   STAGE: publication-reproduction
+2026-10-19T19:18:29.1033938Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:18:29.1034380Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:18:29.1034960Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:18:29.1035406Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:18:29.1035805Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:29.1036235Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T19:18:29.1036666Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:29.1037053Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:29.1037603Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:29.1038001Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T19:18:29.1038331Z ##[endgroup]
+2026-10-19T19:18:29.1927957Z ##[group]Run python -m pip install --disable-pip-version-check --no-cache-dir --retries 0 --timeout 30 --only-binary=:all: numpy==2.3.5 scipy==1.16.3 > "$EVIDENCE_DIR/logs/dependencies.stdout.log" 2> "$EVIDENCE_DIR/logs/dependencies.stderr.log"
+2026-10-19T19:18:29.1929698Z [36;1mpython -m pip install --disable-pip-version-check --no-cache-dir --retries 0 --timeout 30 --only-binary=:all: numpy==2.3.5 scipy==1.16.3 > "$EVIDENCE_DIR/logs/dependencies.stdout.log" 2> "$EVIDENCE_DIR/logs/dependencies.stderr.log"[0m
+2026-10-19T19:18:29.1993889Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-19T19:18:29.1994255Z env:
+2026-10-19T19:18:29.1994702Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:18:29.1995286Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:29.1995656Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:29.1995978Z   RUN_ID: 39309476526
+2026-10-19T19:18:29.1996240Z   RUN_ATTEMPT: 1
+2026-10-19T19:18:29.1996455Z   EVENT_NAME: push
+2026-10-19T19:18:29.1996684Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:18:29.1996996Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:18:29.1997644Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:18:29.1998000Z   PYTHONHASHSEED: 0
+2026-10-19T19:18:29.1998234Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:18:29.1998499Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:18:29.1998729Z   OMP_NUM_THREADS: 1
+2026-10-19T19:18:29.1998955Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:18:29.1999192Z   MKL_NUM_THREADS: 1
+2026-10-19T19:18:29.1999426Z   STAGE: publication-reproduction
+2026-10-19T19:18:29.1999714Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:18:29.2000204Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:18:29.2000804Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:18:29.2001272Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:18:29.2001682Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:29.2002129Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T19:18:29.2002571Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:29.2002988Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:29.2003397Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:29.2003814Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T19:18:29.2004163Z ##[endgroup]
+2026-10-19T19:18:37.7445861Z ##[group]Run python - <<'PY' > "$EVIDENCE_DIR/logs/environment.stdout.log" 2> "$EVIDENCE_DIR/logs/environment.stderr.log"
+2026-10-19T19:18:37.7446938Z [36;1mpython - <<'PY' > "$EVIDENCE_DIR/logs/environment.stdout.log" 2> "$EVIDENCE_DIR/logs/environment.stderr.log"[0m
+2026-10-19T19:18:37.7447907Z [36;1mimport importlib.metadata, json, os, platform, subprocess, sys[0m
+2026-10-19T19:18:37.7448317Z [36;1mfrom pathlib import Path[0m
+2026-10-19T19:18:37.7448673Z [36;1mout = Path(os.environ['EVIDENCE_DIR']) / 'environment.json'[0m
+2026-10-19T19:18:37.7449238Z [36;1mversions = {name: importlib.metadata.version(name) for name in ('numpy', 'scipy', 'pip')}[0m
+2026-10-19T19:18:37.7449787Z [36;1massert sys.version_info[:3] == (3, 12, 15), sys.version[0m
+2026-10-19T19:18:37.7450257Z [36;1massert versions['numpy'] == '2.3.5' and versions['scipy'] == '1.16.3', versions[0m
+2026-10-19T19:18:37.7450732Z [36;1mos_release = Path('/etc/os-release').read_text()[0m
+2026-10-19T19:18:37.7451176Z [36;1massert 'VERSION_ID="24.04"' in os_release, os_release[0m
+2026-10-19T19:18:37.7451685Z [36;1mpayload = {'python': sys.version, 'executable': sys.executable, 'packages': versions,[0m
+2026-10-19T19:18:37.7452253Z [36;1m           'platform': platform.platform(), 'os_release': os_release,[0m
+2026-10-19T19:18:37.7452898Z [36;1m           'runner_image': {name: os.environ.get(name) for name in ('ImageOS', 'ImageVersion', 'RUNNER_ARCH', 'RUNNER_OS')},[0m
+2026-10-19T19:18:37.7453951Z [36;1m           'fixed_environment': {name: os.environ.get(name) for name in ('PYTHONHASHSEED', 'PYTHONDONTWRITEBYTECODE', 'PYTHONUNBUFFERED', 'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS')},[0m
+2026-10-19T19:18:37.7454975Z [36;1m           'pip_freeze': subprocess.check_output([sys.executable, '-m', 'pip', 'freeze', '--all'], text=True),[0m
+2026-10-19T19:18:37.7455545Z [36;1m           'memory': Path('/proc/meminfo').read_text(),[0m
+2026-10-19T19:18:37.7456063Z [36;1m           'disk_free': subprocess.check_output(['df', '-B1', os.environ['EVIDENCE_DIR']], text=True)}[0m
+2026-10-19T19:18:37.7456736Z [36;1mwith out.open('x') as stream: json.dump(payload, stream, sort_keys=True, indent=2); stream.write('\n')[0m
+2026-10-19T19:18:37.7457937Z [36;1mprint('Pinned Python and package versions verified; environment recorded.')[0m
+2026-10-19T19:18:37.7458367Z [36;1mPY[0m
+2026-10-19T19:18:37.7520067Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-19T19:18:37.7520421Z env:
+2026-10-19T19:18:37.7520873Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:18:37.7521445Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:37.7521812Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:37.7522131Z   RUN_ID: 39309476526
+2026-10-19T19:18:37.7522360Z   RUN_ATTEMPT: 1
+2026-10-19T19:18:37.7522568Z   EVENT_NAME: push
+2026-10-19T19:18:37.7522799Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:18:37.7523106Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:18:37.7523479Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:18:37.7523795Z   PYTHONHASHSEED: 0
+2026-10-19T19:18:37.7524026Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:18:37.7524283Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:18:37.7524510Z   OMP_NUM_THREADS: 1
+2026-10-19T19:18:37.7524741Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:18:37.7524990Z   MKL_NUM_THREADS: 1
+2026-10-19T19:18:37.7525224Z   STAGE: publication-reproduction
+2026-10-19T19:18:37.7525504Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:18:37.7525979Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:18:37.7526583Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:18:37.7527039Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:18:37.7527714Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:37.7528362Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T19:18:37.7528822Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:37.7529344Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:37.7529761Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:37.7530180Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T19:18:37.7530524Z ##[endgroup]
+2026-10-19T19:18:38.0950164Z ##[group]Run python - <<'PY' > "$EVIDENCE_DIR/logs/scientific.stdout.log" 2> "$EVIDENCE_DIR/logs/scientific.stderr.log"
+2026-10-19T19:18:38.0951107Z [36;1mpython - <<'PY' > "$EVIDENCE_DIR/logs/scientific.stdout.log" 2> "$EVIDENCE_DIR/logs/scientific.stderr.log"[0m
+2026-10-19T19:18:38.0951782Z [36;1mimport datetime, hashlib, json, os, resource, signal, subprocess, sys, time[0m
+2026-10-19T19:18:38.0952234Z [36;1mfrom pathlib import Path[0m
+2026-10-19T19:18:38.0952562Z [36;1mevidence = Path(os.environ['EVIDENCE_DIR'])[0m
+2026-10-19T19:18:38.0952954Z [36;1mpackage = Path(os.environ['PACKAGE_DIR']).resolve()[0m
+2026-10-19T19:18:38.0953362Z [36;1mexports = evidence / 'exports'; exports.mkdir()[0m
+2026-10-19T19:18:38.0953708Z [36;1moriginal = evidence / 'original'[0m
+2026-10-19T19:18:38.0954043Z [36;1mreports = evidence / 'reports'; reports.mkdir()[0m
+2026-10-19T19:18:38.0954444Z [36;1mprocesses = evidence / 'processes'; processes.mkdir()[0m
+2026-10-19T19:18:38.0954944Z [36;1mjob_started = float((evidence / 'job_started_epoch.txt').read_text())[0m
+2026-10-19T19:18:38.0955499Z [36;1m# Preserve a ten-minute finalization/upload margin within the 60-minute job.[0m
+2026-10-19T19:18:38.0956017Z [36;1mremaining_job_science = 3000 - (time.time() - job_started)[0m
+2026-10-19T19:18:38.0956477Z [36;1mdeadline = time.monotonic() + min(2640, remaining_job_science)[0m
+2026-10-19T19:18:38.0956861Z [36;1mstage = os.environ['STAGE'][0m
+2026-10-19T19:18:38.0957523Z [36;1mdef now(): return datetime.datetime.now(datetime.timezone.utc).isoformat()[0m
+2026-10-19T19:18:38.0957967Z [36;1mdef write(path, data):[0m
+2026-10-19T19:18:38.0958445Z [36;1m    with path.open('x') as stream: json.dump(data, stream, sort_keys=True, indent=2); stream.write('\n')[0m
+2026-10-19T19:18:38.0958939Z [36;1mdef limits():[0m
+2026-10-19T19:18:38.0959284Z [36;1m    resource.setrlimit(resource.RLIMIT_AS, (6442450944, 6442450944))[0m
+2026-10-19T19:18:38.0959794Z [36;1m    resource.setrlimit(resource.RLIMIT_FSIZE, (1073741824, 1073741824))[0m
+2026-10-19T19:18:38.0960246Z [36;1m    resource.setrlimit(resource.RLIMIT_CORE, (0, 0))[0m
+2026-10-19T19:18:38.0960646Z [36;1mdef run(name, argv, extra_environment=None):[0m
+2026-10-19T19:18:38.0961019Z [36;1m    remaining = deadline - time.monotonic()[0m
+2026-10-19T19:18:38.0961483Z [36;1m    if remaining <= 0: raise TimeoutError('Combined scientific budget exhausted')[0m
+2026-10-19T19:18:38.0961924Z [36;1m    env = os.environ.copy()[0m
+2026-10-19T19:18:38.0962263Z [36;1m    if extra_environment: env.update(extra_environment)[0m
+2026-10-19T19:18:38.0962787Z [36;1m    record = {'phase': name, 'argv': argv, 'cwd': str(Path.cwd()), 'started_at': now(), 'stage': stage}[0m
+2026-10-19T19:18:38.0963561Z [36;1m    with (evidence / 'logs' / (name + '.stdout.log')).open('xb') as stdout, (evidence / 'logs' / (name + '.stderr.log')).open('xb') as stderr:[0m
+2026-10-19T19:18:38.0964414Z [36;1m        child = subprocess.Popen(argv, stdout=stdout, stderr=stderr, env=env, start_new_session=True, preexec_fn=limits)[0m
+2026-10-19T19:18:38.0964990Z [36;1m        record['pid'] = child.pid[0m
+2026-10-19T19:18:38.0965276Z [36;1m        try:[0m
+2026-10-19T19:18:38.0965579Z [36;1m            record['returncode'] = child.wait(timeout=remaining)[0m
+2026-10-19T19:18:38.0965973Z [36;1m        except subprocess.TimeoutExpired:[0m
+2026-10-19T19:18:38.0966355Z [36;1m            os.killpg(child.pid, signal.SIGKILL); child.wait()[0m
+2026-10-19T19:18:38.0966831Z [36;1m            record['returncode'] = child.returncode; record['timed_out'] = True[0m
+2026-10-19T19:18:38.0967438Z [36;1m        finally:[0m
+2026-10-19T19:18:38.0967809Z [36;1m            record['finished_at'] = now(); write(processes / (name + '.json'), record)[0m
+2026-10-19T19:18:38.0968486Z [36;1m    if record['returncode'] != 0 or record.get('timed_out'):[0m
+2026-10-19T19:18:38.0968973Z [36;1m        raise RuntimeError(name + ' failed or exceeded the combined time bound')[0m
+2026-10-19T19:18:38.0969619Z [36;1mstatus = {'stage': stage, 'status': 'RED', 'started_at': now()}[0m
+2026-10-19T19:18:38.0969981Z [36;1mtry:[0m
+2026-10-19T19:18:38.0970225Z [36;1m    for role in ('producer', 'checker'):[0m
+2026-10-19T19:18:38.0970663Z [36;1m        run(role + '-export', [sys.executable, str(package / (role + '_export.py')),[0m
+2026-10-19T19:18:38.0971242Z [36;1m            str(exports / (role + '.summary.json')), str(exports / (role + '.archive.json'))])[0m
+2026-10-19T19:18:38.0971872Z [36;1m        if (exports / (role + '.summary.json')).read_bytes() != (original / (role + '.json')).read_bytes():[0m
+2026-10-19T19:18:38.0972473Z [36;1m            raise RuntimeError(role + ' complete original summary bytes differ')[0m
+2026-10-19T19:18:38.0973055Z [36;1m    run('validate-current-pair', [sys.executable, str(package / 'verify_archive.py'),[0m
+2026-10-19T19:18:38.0973651Z [36;1m        str(exports / 'producer.archive.json'), str(exports / 'checker.archive.json'),[0m
+2026-10-19T19:18:38.0974313Z [36;1m        str(original / 'producer.json'), str(original / 'checker.json'), str(reports / 'current-pair.json')])[0m
+2026-10-19T19:18:38.0974850Z [36;1m    if stage == 'publication-reproduction':[0m
+2026-10-19T19:18:38.0975240Z [36;1m        initial = Path(os.environ['INITIAL_DIR']) / 'exports'[0m
+2026-10-19T19:18:38.0975756Z [36;1m        run('validate-first-pair', [sys.executable, str(package / 'verify_archive.py'),[0m
+2026-10-19T19:18:38.0976354Z [36;1m            str(initial / 'producer.archive.json'), str(initial / 'checker.archive.json'),[0m
+2026-10-19T19:18:38.0977009Z [36;1m            str(original / 'producer.json'), str(original / 'checker.json'), str(reports / 'first-pair.json')])[0m
+2026-10-19T19:18:38.0977773Z [36;1m        comparisons = {}[0m
+2026-10-19T19:18:38.0978085Z [36;1m        for role in ('producer', 'checker'):[0m
+2026-10-19T19:18:38.0978431Z [36;1m            for kind in ('archive', 'summary'):[0m
+2026-10-19T19:18:38.0978775Z [36;1m                name = role + '.' + kind + '.json'[0m
+2026-10-19T19:18:38.0979139Z [36;1m                first, fresh = initial / name, exports / name[0m
+2026-10-19T19:18:38.0979586Z [36;1m                if first.resolve() == fresh.resolve() or first.samefile(fresh):[0m
+2026-10-19T19:18:38.0980105Z [36;1m                    raise RuntimeError('Fresh process output aliases first output')[0m
+2026-10-19T19:18:38.0980570Z [36;1m                a, b = first.read_bytes(), fresh.read_bytes()[0m
+2026-10-19T19:18:38.0981016Z [36;1m                if a != b: raise RuntimeError('Complete fresh bytes differ: ' + name)[0m
+2026-10-19T19:18:38.0981667Z [36;1m                comparisons[name] = {'bytes': len(a), 'sha256': hashlib.sha256(a).hexdigest(), 'complete_bytes_equal': True}[0m
+2026-10-19T19:18:38.0982282Z [36;1m        write(reports / 'byte-reproduction.json', comparisons)[0m
+2026-10-19T19:18:38.0982662Z [36;1m        test_environment = {[0m
+2026-10-19T19:18:38.0983043Z [36;1m            'D24_PRODUCER_ARCHIVE': str(initial / 'producer.archive.json'),[0m
+2026-10-19T19:18:38.0983530Z [36;1m            'D24_CHECKER_ARCHIVE': str(initial / 'checker.archive.json'),[0m
+2026-10-19T19:18:38.0984024Z [36;1m            'D24_ORIGINAL_PRODUCER_JSON': str(original / 'producer.json'),[0m
+2026-10-19T19:18:38.0984505Z [36;1m            'D24_ORIGINAL_CHECKER_JSON': str(original / 'checker.json'),[0m
+2026-10-19T19:18:38.0985015Z [36;1m            'D24_FRESH_PRODUCER_ARCHIVE': str(exports / 'producer.archive.json'),[0m
+2026-10-19T19:18:38.0985536Z [36;1m            'D24_FRESH_CHECKER_ARCHIVE': str(exports / 'checker.archive.json'),[0m
+2026-10-19T19:18:38.0985991Z [36;1m            'D24_EXPORTER_EXECUTION_AUTHORIZED': 'yes'}[0m
+2026-10-19T19:18:38.0991858Z [36;1m        test_program = "import json, os, sys, unittest\nfrom pathlib import Path\npackage = Path(os.environ['PACKAGE_DIR']).resolve()\nsys.path.insert(0, str(package))\nrequired = ('D24_PRODUCER_ARCHIVE', 'D24_CHECKER_ARCHIVE', 'D24_ORIGINAL_PRODUCER_JSON', 'D24_ORIGINAL_CHECKER_JSON', 'D24_FRESH_PRODUCER_ARCHIVE', 'D24_FRESH_CHECKER_ARCHIVE')\nif any(not os.environ.get(name) or not Path(os.environ[name]).is_file() for name in required):\n    raise RuntimeError('All six complete input paths are required')\nif os.environ.get('D24_EXPORTER_EXECUTION_AUTHORIZED') != 'yes':\n    raise RuntimeError('Exporter control switch not enabled')\nsuite = unittest.defaultTestLoader.discover(str(package), pattern='test_archive_mutations.py')\ncount = suite.countTestCases()\nif count != 43: raise RuntimeError('Expected 43 tests, discovered ' + str(count))\nresult = unittest.TextTestRunner(verbosity=2, failfast=True).run(suite)\nreport = {'discovered': count, 'run': result.testsRun, 'failures': len(result.failures), 'errors': len(result.errors),\n          'skips': len(result.skipped), 'expected_failures': len(result.expectedFailures),\n          'unexpected_successes': len(result.unexpectedSuccesses)}\nreport['status'] = 'PASS' if result.wasSuccessful() and report['run'] == 43 and not any(report[key] for key in ('failures', 'errors', 'skips', 'expected_failures', 'unexpected_successes')) else 'RED'\nwith (Path(os.environ['EVIDENCE_DIR']) / 'mutation_summary.json').open('x') as stream:\n    json.dump(report, stream, sort_keys=True, indent=2); stream.write('\\n')\nraise SystemExit(0 if report['status'] == 'PASS' else 1)"[0m
+2026-10-19T19:18:38.0997701Z [36;1m        run('all-43-mutation-tests', [sys.executable, '-c', test_program], test_environment)[0m
+2026-10-19T19:18:38.0998281Z [36;1m    subprocess.run(['git', 'diff', '--exit-code', 'HEAD', '--'], check=True)[0m
+2026-10-19T19:18:38.0998689Z [36;1m    status['status'] = 'PASS'[0m
+2026-10-19T19:18:38.0998979Z [36;1mexcept BaseException as exc:[0m
+2026-10-19T19:18:38.0999370Z [36;1m    status['error_type'] = type(exc).__name__; status['error'] = str(exc)[0m
+2026-10-19T19:18:38.0999760Z [36;1m    raise[0m
+2026-10-19T19:18:38.0999972Z [36;1mfinally:[0m
+2026-10-19T19:18:38.1000334Z [36;1m    status['finished_at'] = now(); write(evidence / 'scientific_status.json', status)[0m
+2026-10-19T19:18:38.1001010Z [36;1mprint(stage + ' scientific checks passed; archival and publication closure still require parent readback.')[0m
+2026-10-19T19:18:38.1001537Z [36;1mPY[0m
+2026-10-19T19:18:38.1062683Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-19T19:18:38.1063027Z env:
+2026-10-19T19:18:38.1063463Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:18:38.1064006Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:38.1064354Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:18:38.1064661Z   RUN_ID: 39309476526
+2026-10-19T19:18:38.1064889Z   RUN_ATTEMPT: 1
+2026-10-19T19:18:38.1065095Z   EVENT_NAME: push
+2026-10-19T19:18:38.1065317Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:18:38.1065609Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:18:38.1065971Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:18:38.1066274Z   PYTHONHASHSEED: 0
+2026-10-19T19:18:38.1066503Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:18:38.1066749Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:18:38.1066968Z   OMP_NUM_THREADS: 1
+2026-10-19T19:18:38.1067454Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:18:38.1067692Z   MKL_NUM_THREADS: 1
+2026-10-19T19:18:38.1067918Z   STAGE: publication-reproduction
+2026-10-19T19:18:38.1068185Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:18:38.1068622Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:18:38.1069200Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:18:38.1069639Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:18:38.1070205Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:38.1070648Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T19:18:38.1071079Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:38.1071570Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:38.1071966Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:18:38.1072355Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T19:18:38.1072683Z ##[endgroup]
+2026-10-19T19:24:24.3223927Z ##[group]Run python - <<'PY'
+2026-10-19T19:24:24.3224287Z [36;1mpython - <<'PY'[0m
+2026-10-19T19:24:24.3224570Z [36;1mimport hashlib, json, os, platform, sys[0m
+2026-10-19T19:24:24.3224903Z [36;1mfrom pathlib import Path[0m
+2026-10-19T19:24:24.3225374Z [36;1mevidence = Path(os.environ['EVIDENCE_DIR']); evidence.mkdir(parents=True, exist_ok=True)[0m
+2026-10-19T19:24:24.3225856Z [36;1mdef load(name):[0m
+2026-10-19T19:24:24.3226105Z [36;1m    path = evidence / name[0m
+2026-10-19T19:24:24.3226484Z [36;1m    return json.loads(path.read_text()) if path.is_file() else {}[0m
+2026-10-19T19:24:24.3226900Z [36;1mprovenance = load('provenance.json')[0m
+2026-10-19T19:24:24.3227432Z [36;1mscientific = load('scientific_status.json')[0m
+2026-10-19T19:24:24.3227742Z [36;1mfiles = {}[0m
+2026-10-19T19:24:24.3228008Z [36;1mfor path in sorted(evidence.rglob('*')):[0m
+2026-10-19T19:24:24.3228467Z [36;1m    if path.is_symlink(): raise RuntimeError('Evidence symlink forbidden')[0m
+2026-10-19T19:24:24.3228874Z [36;1m    if path.is_file():[0m
+2026-10-19T19:24:24.3229313Z [36;1m        with path.open('rb') as stream: digest = hashlib.file_digest(stream, 'sha256').hexdigest()[0m
+2026-10-19T19:24:24.3229969Z [36;1m        files[path.relative_to(evidence).as_posix()] = {'bytes': path.stat().st_size, 'sha256': digest}[0m
+2026-10-19T19:24:24.3230448Z [36;1mmanifest = {[0m
+2026-10-19T19:24:24.3230812Z [36;1m    'schema': 'uqcf-rid24-run-artifact-v1', 'evidence_kind': 'regenerated',[0m
+2026-10-19T19:24:24.3231456Z [36;1m    'stage': os.environ['STAGE'], 'run_id': int(os.environ['RUN_ID']), 'run_attempt': int(os.environ['RUN_ATTEMPT']),[0m
+2026-10-19T19:24:24.3232168Z [36;1m    'checked_out_scientific_sha': os.environ['RUN_SHA'], 'workflow_sha': os.environ['WORKFLOW_SHA'],[0m
+2026-10-19T19:24:24.3232893Z [36;1m    'prepared_commit': provenance.get('prepared_commit'), 'source_files': provenance.get('source_files', {}),[0m
+2026-10-19T19:24:24.3233613Z [36;1m    'original_code_sha': '57895f62297c6100c1a4b8f185857a7905da780b', 'original_run_id': 39300667905,[0m
+2026-10-19T19:24:24.3234226Z [36;1m    'original_run_attempt': 1, 'original_verification_artifact_id': 12211286997,[0m
+2026-10-19T19:24:24.3234884Z [36;1m    'original_verification_zip_sha256': '215496706fcb15cb10c5f70f46d14cabbeccbfd0bde0b3d4e6b3e18be6ffb181',[0m
+2026-10-19T19:24:24.3235514Z [36;1m    'scientific_status': scientific.get('status', 'NOT_COMPLETED'),[0m
+2026-10-19T19:24:24.3235988Z [36;1m    'job_status_before_finalization': os.environ['JOB_STATUS'],[0m
+2026-10-19T19:24:24.3236516Z [36;1m    'finalizer_python': sys.version, 'platform': platform.platform(), 'files': files,[0m
+2026-10-19T19:24:24.3237403Z [36;1m    'claim_boundary': 'Regenerated bounded certificate support only; no new Gemini review, native access or full AGENTS closure.'}[0m
+2026-10-19T19:24:24.3238066Z [36;1mwith (evidence / 'manifest.json').open('x') as stream:[0m
+2026-10-19T19:24:24.3238554Z [36;1m    json.dump(manifest, stream, sort_keys=True, indent=2); stream.write('\n')[0m
+2026-10-19T19:24:24.3239027Z [36;1mwith (evidence / 'SHA256SUMS').open('x') as stream:[0m
+2026-10-19T19:24:24.3239555Z [36;1m    for path in sorted(p for p in evidence.rglob('*') if p.is_file() and p != evidence / 'SHA256SUMS'):[0m
+2026-10-19T19:24:24.3240214Z [36;1m        with path.open('rb') as source: digest = hashlib.file_digest(source, 'sha256').hexdigest()[0m
+2026-10-19T19:24:24.3240975Z [36;1m        stream.write(digest + '  ' + path.relative_to(evidence).as_posix() + '\n')[0m
+2026-10-19T19:24:24.3241584Z [36;1mprint('Complete available files manifested, including partial/RED evidence when present.')[0m
+2026-10-19T19:24:24.3242060Z [36;1mPY[0m
+2026-10-19T19:24:24.3303094Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-19T19:24:24.3303446Z env:
+2026-10-19T19:24:24.3303873Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:24:24.3304586Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:24:24.3304946Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:24:24.3305257Z   RUN_ID: 39309476526
+2026-10-19T19:24:24.3305469Z   RUN_ATTEMPT: 1
+2026-10-19T19:24:24.3305678Z   EVENT_NAME: push
+2026-10-19T19:24:24.3305899Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:24:24.3306190Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:24:24.3306549Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:24:24.3306863Z   PYTHONHASHSEED: 0
+2026-10-19T19:24:24.3307088Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:24:24.3307492Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:24:24.3307705Z   OMP_NUM_THREADS: 1
+2026-10-19T19:24:24.3307924Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:24:24.3308146Z   MKL_NUM_THREADS: 1
+2026-10-19T19:24:24.3308372Z   STAGE: publication-reproduction
+2026-10-19T19:24:24.3308642Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:24:24.3309086Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:24:24.3309642Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:24:24.3310072Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:24:24.3310457Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:24:24.3310884Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T19:24:24.3311310Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:24:24.3311691Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:24:24.3312073Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:24:24.3312465Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T19:24:24.3312793Z   JOB_STATUS: success
+2026-10-19T19:24:24.3313009Z ##[endgroup]
+2026-10-19T19:24:24.4051165Z Complete available files manifested, including partial/RED evidence when present.
+2026-10-19T19:24:24.4260707Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-19T19:24:24.4261134Z with:
+2026-10-19T19:24:24.4261394Z   name: rid24-publication-reproduction-39309476526-1
+2026-10-19T19:24:24.4261803Z   path: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:24:24.4262169Z   if-no-files-found: error
+2026-10-19T19:24:24.4262416Z   include-hidden-files: true
+2026-10-19T19:24:24.4262663Z   retention-days: 90
+2026-10-19T19:24:24.4262899Z   compression-level: 6
+2026-10-19T19:24:24.4263123Z   overwrite: false
+2026-10-19T19:24:24.4263333Z env:
+2026-10-19T19:24:24.4263740Z   PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+2026-10-19T19:24:24.4264268Z   RUN_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:24:24.4264615Z   WORKFLOW_SHA: 4e200083097143cca0441b53eab9570a63db4113
+2026-10-19T19:24:24.4264929Z   RUN_ID: 39309476526
+2026-10-19T19:24:24.4265148Z   RUN_ATTEMPT: 1
+2026-10-19T19:24:24.4265381Z   EVENT_NAME: push
+2026-10-19T19:24:24.4265599Z   ACTOR: proteinfolding-gpt
+2026-10-19T19:24:24.4265888Z   REF_NAME: research/uqcf-overlapping-guard-exchange
+2026-10-19T19:24:24.4266243Z   REPOSITORY: proteinfoldingengine/WetLabEngine
+2026-10-19T19:24:24.4266550Z   PYTHONHASHSEED: 0
+2026-10-19T19:24:24.4266774Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-19T19:24:24.4267020Z   PYTHONUNBUFFERED: 1
+2026-10-19T19:24:24.4267514Z   OMP_NUM_THREADS: 1
+2026-10-19T19:24:24.4267929Z   OPENBLAS_NUM_THREADS: 1
+2026-10-19T19:24:24.4268167Z   MKL_NUM_THREADS: 1
+2026-10-19T19:24:24.4268399Z   STAGE: publication-reproduction
+2026-10-19T19:24:24.4268670Z   INITIAL_ARTIFACT_ID: 12214219463
+2026-10-19T19:24:24.4269117Z   INITIAL_ARTIFACT_DIGEST: 249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5
+2026-10-19T19:24:24.4269684Z   EVIDENCE_DIR: /home/runner/work/_temp/rid24-publication-reproduction
+2026-10-19T19:24:24.4270119Z   INITIAL_DIR: /home/runner/work/_temp/rid24-first-artifact
+2026-10-19T19:24:24.4270516Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:24:24.4270971Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T19:24:24.4271405Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:24:24.4271796Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:24:24.4272192Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T19:24:24.4272582Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T19:24:24.4272920Z ##[endgroup]
+2026-10-19T19:24:24.5921131Z (node:2659) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-19T19:24:24.5922084Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-19T19:24:24.6358460Z With the provided path, there will be 67 files uploaded
+2026-10-19T19:24:24.6359320Z Artifact name is valid!
+2026-10-19T19:24:24.6359587Z Root directory input is valid!
+2026-10-19T19:24:24.9009714Z Beginning upload of artifact content to blob storage
+2026-10-19T19:24:25.0608737Z (node:2659) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-19T19:24:25.3587893Z Uploaded bytes 412686
+2026-10-19T19:24:25.4050551Z Finished uploading artifact content to blob storage!
+2026-10-19T19:24:25.4052153Z SHA256 digest of uploaded artifact zip is c2cbc9ab9e7196c90122180b962d3b5d082939139af0bfd895b381bb21f90a53
+2026-10-19T19:24:25.4054510Z Finalizing artifact upload
+2026-10-19T19:24:25.6640677Z Artifact rid24-publication-reproduction-39309476526-1.zip successfully finalized. Artifact ID 12215213566
+2026-10-19T19:24:25.6642383Z Artifact rid24-publication-reproduction-39309476526-1 has been successfully uploaded! Final size is 412686 bytes. Artifact ID is 12215213566
+2026-10-19T19:24:25.6647674Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39309476526/artifacts/12215213566
+2026-10-19T19:24:25.7071128Z Post job cleanup.
+2026-10-19T19:24:25.8263374Z (node:2675) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-19T19:24:25.8264482Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-19T19:24:25.8786651Z Post job cleanup.
+2026-10-19T19:24:25.9643582Z [command]/usr/bin/git version
+2026-10-19T19:24:25.9688100Z git version 2.55.0
+2026-10-19T19:24:25.9758567Z Temporarily overriding HOME='/home/runner/work/_temp/d7b86c18-107a-41e6-b538-94bfdac5100a' before making global git config changes
+2026-10-19T19:24:25.9760007Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-19T19:24:25.9768579Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-19T19:24:25.9819238Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-19T19:24:25.9864812Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-19T19:24:26.0131452Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-19T19:24:26.0169658Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-19T19:24:26.0437831Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-19T19:24:26.0472914Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-19T19:24:26.0929284Z Cleaning up orphan processes
+2026-10-19T19:24:26.1239659Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

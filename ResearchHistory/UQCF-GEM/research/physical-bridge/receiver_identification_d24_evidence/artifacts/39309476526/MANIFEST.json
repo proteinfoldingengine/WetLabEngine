@@ -1,0 +1,120 @@
+{
+  "claim_boundary": "Bounded retained certificate support; unchanged accepted conditional mathematics; native receiver access NOT_DERIVED; full inherited-stack and post-merge closure not claimed.",
+  "evidence_kind": "regenerated",
+  "files": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/ARCHIVE_STATUS.md": {
+      "bytes": 6932,
+      "git_blob": "37bf01c97d7b46808223918bbf816526906cf18e",
+      "sha256": "ba51a4f9854a3206ea9c6d3e1e657c621498c8999ab105e78a0436565878721d"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/artifacts/39309476526/initial-original.zip": {
+      "bytes": 406570,
+      "git_blob": "9b6eccdb583a5d95595e18cf2a65830b08cc16e0",
+      "sha256": "249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/artifacts/39309476526/job_118255032117.log": {
+      "bytes": 113673,
+      "git_blob": "05c2c7ebdbd5a7638a155c6efc5fe3e4c1b426c0",
+      "sha256": "d55d84b215d1b62db7dd0f32ce8699140bd70a2fa52c2bcf2655647b897d2a98"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/artifacts/39309476526/job_118255873215.log": {
+      "bytes": 115738,
+      "git_blob": "1d7040b0a172ba7497f3975a544e0c645df4d441",
+      "sha256": "6690bd9244391bb8da4eabf0d5dad1d1e58064947c38cc837afcfd40378f4b5b"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/artifacts/39309476526/publication-original.zip": {
+      "bytes": 412686,
+      "git_blob": "a41f65de1f9d8895f05c85a7f023e84df3163ee2",
+      "sha256": "c2cbc9ab9e7196c90122180b962d3b5d082939139af0bfd895b381bb21f90a53"
+    }
+  },
+  "original_actions_zip_artifact_ids": {
+    "initial-original.zip": 12214219463,
+    "publication-original.zip": 12215213566
+  },
+  "raw_gemini_review_material_included": false,
+  "reconciliation": {
+    "complete_byte_reproduction": true,
+    "job_logs": {
+      "job_118255032117.log": {
+        "bytes": 113673,
+        "sha256": "d55d84b215d1b62db7dd0f32ce8699140bd70a2fa52c2bcf2655647b897d2a98"
+      },
+      "job_118255873215.log": {
+        "bytes": 115738,
+        "sha256": "6690bd9244391bb8da4eabf0d5dad1d1e58064947c38cc837afcfd40378f4b5b"
+      }
+    },
+    "prepared_sha": "e400b25ab4e401b37467fb77bacf5e86ab62497e",
+    "run_attempt": 1,
+    "run_id": 39309476526,
+    "scope": "byte/provenance reconciliation only; Actions performed certificate checks and tests",
+    "stages": {
+      "initial": {
+        "complete_manifest_files": 55,
+        "exports": {
+          "checker.archive.json": {
+            "bytes": 4817924,
+            "sha256": "0fac330f5ea9687b35b1864513135fa21a5de0bd60143d55cc862bffd3653c37"
+          },
+          "checker.summary.json": {
+            "bytes": 45493,
+            "sha256": "9bace24c70c57cd2c62a47e1f15ce1f01977a1c86e1ba3be9f752daa384a7572"
+          },
+          "producer.archive.json": {
+            "bytes": 5208177,
+            "sha256": "36aeab0ef4a554d67c053b8a1ea003bbb4b33069e43fd4b1e621a63daf93b902"
+          },
+          "producer.summary.json": {
+            "bytes": 47074,
+            "sha256": "04be86d04551748dca905eb2aa2cac74977d86d7edd8f2aaa5d7db9ee411a9f9"
+          }
+        },
+        "manifest_sha256": "cedc66f0a93c1e272cadba0c89b0ed31d0745d2bb98859f3565b556dcdbafb4f",
+        "source_and_manifest_full_bytes_verified": true,
+        "source_file_count": 15,
+        "zip_bytes": 406570,
+        "zip_sha256": "249bed6beb18a1aa461cec6e821b3ae0187cc5a3449b67e48a3cdb084c752cf5"
+      },
+      "publication": {
+        "complete_manifest_files": 65,
+        "exports": {
+          "checker.archive.json": {
+            "bytes": 4817924,
+            "sha256": "0fac330f5ea9687b35b1864513135fa21a5de0bd60143d55cc862bffd3653c37"
+          },
+          "checker.summary.json": {
+            "bytes": 45493,
+            "sha256": "9bace24c70c57cd2c62a47e1f15ce1f01977a1c86e1ba3be9f752daa384a7572"
+          },
+          "producer.archive.json": {
+            "bytes": 5208177,
+            "sha256": "36aeab0ef4a554d67c053b8a1ea003bbb4b33069e43fd4b1e621a63daf93b902"
+          },
+          "producer.summary.json": {
+            "bytes": 47074,
+            "sha256": "04be86d04551748dca905eb2aa2cac74977d86d7edd8f2aaa5d7db9ee411a9f9"
+          }
+        },
+        "manifest_sha256": "fe6ce6dca52cab04a0c6cc6faa31ef112f628113d13553a5c30ab44f33f3f966",
+        "source_and_manifest_full_bytes_verified": true,
+        "source_file_count": 15,
+        "zip_bytes": 412686,
+        "zip_sha256": "c2cbc9ab9e7196c90122180b962d3b5d082939139af0bfd895b381bb21f90a53"
+      }
+    },
+    "status": "VERIFIED",
+    "test_outcomes": {
+      "discovered": 43,
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "run": 43,
+      "skips": 0,
+      "status": "PASS",
+      "unexpected_successes": 0
+    },
+    "trigger_sha": "4e200083097143cca0441b53eab9570a63db4113"
+  },
+  "schema": "uqcf-rid24-durable-certificate-support-v1"
+}
