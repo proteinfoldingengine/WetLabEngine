@@ -1,0 +1,397 @@
+﻿2026-10-19T13:15:17.4230795Z Current runner version: '2.337.0'
+2026-10-19T13:15:17.4257094Z ##[group]Runner Image Provisioner
+2026-10-19T13:15:17.4258001Z Hosted Compute Agent
+2026-10-19T13:15:17.4258582Z Version: 20261012.601
+2026-10-19T13:15:17.4259271Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-19T13:15:17.4260031Z Build Date: 2026-10-12T17:48:21Z
+2026-10-19T13:15:17.4261063Z Worker ID: {81b4f1d0-33d8-4805-8ed2-2d650bdafbf8}
+2026-10-19T13:15:17.4261846Z Region: westus
+2026-10-19T13:15:17.4262384Z Cloud: Azure
+2026-10-19T13:15:17.4262956Z ##[endgroup]
+2026-10-19T13:15:17.4264667Z ##[group]Operating System
+2026-10-19T13:15:17.4265336Z Ubuntu
+2026-10-19T13:15:17.4265974Z 24.04.5
+2026-10-19T13:15:17.4266531Z LTS
+2026-10-19T13:15:17.4267133Z ##[endgroup]
+2026-10-19T13:15:17.4267722Z ##[group]Runner Image
+2026-10-19T13:15:17.4268338Z Image: ubuntu-24.04
+2026-10-19T13:15:17.4268955Z Version: 20261012.334.1
+2026-10-19T13:15:17.4270567Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-19T13:15:17.4272280Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-19T13:15:17.4273242Z ##[endgroup]
+2026-10-19T13:15:17.4274412Z ##[group]GITHUB_TOKEN Permissions
+2026-10-19T13:15:17.4276598Z Contents: read
+2026-10-19T13:15:17.4277735Z Metadata: read
+2026-10-19T13:15:17.4278295Z ##[endgroup]
+2026-10-19T13:15:17.4280829Z Secret source: Actions
+2026-10-19T13:15:17.4281850Z Cache mode: write
+2026-10-19T13:15:17.4282653Z Prepare workflow directory
+2026-10-19T13:15:17.4635988Z Prepare all required actions
+2026-10-19T13:15:17.4686609Z Getting action download info
+2026-10-19T13:15:17.8456382Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-19T13:15:17.9363647Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-19T13:15:18.0181958Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-19T13:15:18.2371933Z Complete job name: verify
+2026-10-19T13:15:18.3192640Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-10-19T13:15:18.3193717Z with:
+2026-10-19T13:15:18.3194192Z   ref: 5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a
+2026-10-19T13:15:18.3194794Z   persist-credentials: false
+2026-10-19T13:15:18.3195361Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-19T13:15:18.3199493Z   token: ***
+2026-10-19T13:15:18.3199925Z   ssh-strict: true
+2026-10-19T13:15:18.3200614Z   ssh-user: git
+2026-10-19T13:15:18.3201037Z   clean: true
+2026-10-19T13:15:18.3201469Z   sparse-checkout-cone-mode: true
+2026-10-19T13:15:18.3201985Z   fetch-depth: 1
+2026-10-19T13:15:18.3202403Z   fetch-tags: false
+2026-10-19T13:15:18.3202840Z   show-progress: true
+2026-10-19T13:15:18.3203275Z   lfs: false
+2026-10-19T13:15:18.3203683Z   submodules: false
+2026-10-19T13:15:18.3204148Z   set-safe-directory: true
+2026-10-19T13:15:18.3204644Z   allow-unsafe-pr-checkout: false
+2026-10-19T13:15:18.3205422Z ##[endgroup]
+2026-10-19T13:15:18.4269221Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-19T13:15:18.4272405Z ##[group]Getting Git version info
+2026-10-19T13:15:18.4273628Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-19T13:15:18.4275312Z [command]/usr/bin/git version
+2026-10-19T13:15:18.4346458Z git version 2.55.0
+2026-10-19T13:15:18.4371633Z ##[endgroup]
+2026-10-19T13:15:18.4386943Z Temporarily overriding HOME='/home/runner/work/_temp/545e64b3-4816-4ec2-826e-460f4a9be2c0' before making global git config changes
+2026-10-19T13:15:18.4389884Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-19T13:15:18.4392749Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-19T13:15:18.4444440Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-19T13:15:18.4449174Z ##[group]Initializing the repository
+2026-10-19T13:15:18.4453576Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-19T13:15:18.4612419Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-19T13:15:18.4615887Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-19T13:15:18.4617499Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-19T13:15:18.4619061Z hint: call:
+2026-10-19T13:15:18.4619695Z hint:
+2026-10-19T13:15:18.4620921Z hint: 	git config --global init.defaultBranch <name>
+2026-10-19T13:15:18.4621981Z hint:
+2026-10-19T13:15:18.4623113Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-19T13:15:18.4624737Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-19T13:15:18.4626471Z hint:
+2026-10-19T13:15:18.4628484Z hint: 	git branch -m <name>
+2026-10-19T13:15:18.4629420Z hint:
+2026-10-19T13:15:18.4630387Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-19T13:15:18.4631528Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-19T13:15:18.4633753Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-19T13:15:18.4698710Z ##[endgroup]
+2026-10-19T13:15:18.4700034Z ##[group]Disabling automatic garbage collection
+2026-10-19T13:15:18.4704430Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-19T13:15:18.4741552Z ##[endgroup]
+2026-10-19T13:15:18.4743295Z ##[group]Setting up auth
+2026-10-19T13:15:18.4750022Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-19T13:15:18.4789138Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-19T13:15:18.5239723Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-19T13:15:18.5291882Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-19T13:15:18.5567167Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-19T13:15:18.5607943Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-19T13:15:18.5840345Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-19T13:15:18.5883799Z ##[endgroup]
+2026-10-19T13:15:18.5884700Z ##[group]Fetching the repository
+2026-10-19T13:15:18.5894079Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a
+2026-10-19T13:17:36.1450331Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-19T13:17:36.1451378Z  * branch            5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a -> FETCH_HEAD
+2026-10-19T13:17:36.1454122Z ##[endgroup]
+2026-10-19T13:17:36.1455057Z ##[group]Determining the checkout info
+2026-10-19T13:17:36.1456350Z ##[endgroup]
+2026-10-19T13:17:36.1465679Z [command]/usr/bin/git sparse-checkout disable
+2026-10-19T13:17:36.1526720Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-19T13:17:36.1561770Z ##[group]Checking out the ref
+2026-10-19T13:17:36.1602507Z [command]/usr/bin/git checkout --progress --force 5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a
+2026-10-19T13:17:37.3172751Z Updating files:  25% (3154/12380)
+2026-10-19T13:17:37.7810047Z Updating files:  26% (3219/12380)
+2026-10-19T13:17:38.1996239Z Updating files:  27% (3343/12380)
+2026-10-19T13:17:38.3068228Z Updating files:  27% (3437/12380)
+2026-10-19T13:17:38.8095908Z Updating files:  28% (3467/12380)
+2026-10-19T13:17:39.1683639Z Updating files:  29% (3591/12380)
+2026-10-19T13:17:39.2038101Z Updating files:  30% (3714/12380)
+2026-10-19T13:17:39.8608559Z Updating files:  30% (3719/12380)
+2026-10-19T13:17:40.1883241Z Updating files:  31% (3838/12380)
+2026-10-19T13:17:40.4954153Z Updating files:  31% (3933/12380)
+2026-10-19T13:17:40.8035118Z Updating files:  32% (3962/12380)
+2026-10-19T13:17:41.2224134Z Updating files:  33% (4086/12380)
+2026-10-19T13:17:41.3756623Z Updating files:  33% (4150/12380)
+2026-10-19T13:17:41.6965738Z Updating files:  34% (4210/12380)
+2026-10-19T13:17:42.2101479Z Updating files:  35% (4333/12380)
+2026-10-19T13:17:42.3789942Z Updating files:  35% (4384/12380)
+2026-10-19T13:17:42.7124336Z Updating files:  36% (4457/12380)
+2026-10-19T13:17:43.1808293Z Updating files:  37% (4581/12380)
+2026-10-19T13:17:43.5079152Z Updating files:  37% (4612/12380)
+2026-10-19T13:17:43.6561518Z Updating files:  38% (4705/12380)
+2026-10-19T13:17:44.2435588Z Updating files:  39% (4829/12380)
+2026-10-19T13:17:44.3359116Z Updating files:  39% (4872/12380)
+2026-10-19T13:17:44.5897559Z Updating files:  40% (4952/12380)
+2026-10-19T13:17:45.2028539Z Updating files:  41% (5076/12380)
+2026-10-19T13:17:45.2886491Z Updating files:  41% (5142/12380)
+2026-10-19T13:17:45.5696699Z Updating files:  42% (5200/12380)
+2026-10-19T13:17:45.8108744Z Updating files:  43% (5324/12380)
+2026-10-19T13:17:46.2270437Z Updating files:  44% (5448/12380)
+2026-10-19T13:17:46.3743808Z Updating files:  44% (5477/12380)
+2026-10-19T13:17:46.6659878Z Updating files:  45% (5571/12380)
+2026-10-19T13:17:46.6849052Z Updating files:  46% (5695/12380)
+2026-10-19T13:17:47.1621284Z Updating files:  47% (5819/12380)
+2026-10-19T13:17:47.1811374Z Updating files:  48% (5943/12380)
+2026-10-19T13:17:47.1906021Z Updating files:  48% (5955/12380)
+2026-10-19T13:17:47.2005296Z Updating files:  49% (6067/12380)
+2026-10-19T13:17:47.2107588Z Updating files:  50% (6190/12380)
+2026-10-19T13:17:47.2205301Z Updating files:  51% (6314/12380)
+2026-10-19T13:17:47.2281431Z Updating files:  52% (6438/12380)
+2026-10-19T13:17:47.2371729Z Updating files:  53% (6562/12380)
+2026-10-19T13:17:47.2455512Z Updating files:  54% (6686/12380)
+2026-10-19T13:17:47.2679735Z Updating files:  55% (6809/12380)
+2026-10-19T13:17:47.2889809Z Updating files:  56% (6933/12380)
+2026-10-19T13:17:47.3001924Z Updating files:  57% (7057/12380)
+2026-10-19T13:17:47.3149188Z Updating files:  58% (7181/12380)
+2026-10-19T13:17:47.3238954Z Updating files:  59% (7305/12380)
+2026-10-19T13:17:47.3792033Z Updating files:  60% (7428/12380)
+2026-10-19T13:17:47.3815759Z Updating files:  61% (7552/12380)
+2026-10-19T13:17:47.4939937Z Updating files:  62% (7676/12380)
+2026-10-19T13:17:47.5018074Z Updating files:  63% (7800/12380)
+2026-10-19T13:17:47.5171389Z Updating files:  64% (7924/12380)
+2026-10-19T13:17:47.7072477Z Updating files:  65% (8047/12380)
+2026-10-19T13:17:47.8068709Z Updating files:  66% (8171/12380)
+2026-10-19T13:17:47.8443663Z Updating files:  67% (8295/12380)
+2026-10-19T13:17:47.8549544Z Updating files:  68% (8419/12380)
+2026-10-19T13:17:47.8654810Z Updating files:  69% (8543/12380)
+2026-10-19T13:17:47.8763248Z Updating files:  70% (8666/12380)
+2026-10-19T13:17:47.8908049Z Updating files:  71% (8790/12380)
+2026-10-19T13:17:47.9033356Z Updating files:  72% (8914/12380)
+2026-10-19T13:17:47.9115875Z Updating files:  73% (9038/12380)
+2026-10-19T13:17:47.9222525Z Updating files:  74% (9162/12380)
+2026-10-19T13:17:47.9316937Z Updating files:  75% (9285/12380)
+2026-10-19T13:17:48.1894094Z Updating files:  76% (9409/12380)
+2026-10-19T13:17:48.3294600Z Updating files:  76% (9470/12380)
+2026-10-19T13:17:48.3624084Z Updating files:  77% (9533/12380)
+2026-10-19T13:17:48.7709636Z Updating files:  78% (9657/12380)
+2026-10-19T13:17:48.7811967Z Updating files:  79% (9781/12380)
+2026-10-19T13:17:48.7896759Z Updating files:  80% (9904/12380)
+2026-10-19T13:17:48.8651915Z Updating files:  81% (10028/12380)
+2026-10-19T13:17:48.8826134Z Updating files:  82% (10152/12380)
+2026-10-19T13:17:48.9138459Z Updating files:  83% (10276/12380)
+2026-10-19T13:17:48.9597879Z Updating files:  84% (10400/12380)
+2026-10-19T13:17:49.1973768Z Updating files:  85% (10523/12380)
+2026-10-19T13:17:49.2678422Z Updating files:  85% (10613/12380)
+2026-10-19T13:17:49.5020424Z Updating files:  86% (10647/12380)
+2026-10-19T13:17:49.6419315Z Updating files:  87% (10771/12380)
+2026-10-19T13:17:49.6689604Z Updating files:  88% (10895/12380)
+2026-10-19T13:17:49.7294014Z Updating files:  89% (11019/12380)
+2026-10-19T13:17:49.7368078Z Updating files:  90% (11142/12380)
+2026-10-19T13:17:49.7445501Z Updating files:  91% (11266/12380)
+2026-10-19T13:17:49.7524691Z Updating files:  92% (11390/12380)
+2026-10-19T13:17:50.1354808Z Updating files:  93% (11514/12380)
+2026-10-19T13:17:50.1761359Z Updating files:  94% (11638/12380)
+2026-10-19T13:17:50.1779090Z Updating files:  95% (11761/12380)
+2026-10-19T13:17:50.2345658Z Updating files:  95% (11765/12380)
+2026-10-19T13:17:50.2915189Z Updating files:  96% (11885/12380)
+2026-10-19T13:17:50.3068029Z Updating files:  97% (12009/12380)
+2026-10-19T13:17:50.3275216Z Updating files:  98% (12133/12380)
+2026-10-19T13:17:50.3701114Z Updating files:  99% (12257/12380)
+2026-10-19T13:17:50.3701928Z Updating files: 100% (12380/12380)
+2026-10-19T13:17:50.3702426Z Updating files: 100% (12380/12380), done.
+2026-10-19T13:17:50.5217377Z Note: switching to '5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a'.
+2026-10-19T13:17:50.5218443Z 
+2026-10-19T13:17:50.5219112Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-19T13:17:50.5220773Z changes and commit them, and you can discard any commits you make in this
+2026-10-19T13:17:50.5222004Z state without impacting any branches by switching back to a branch.
+2026-10-19T13:17:50.5222875Z 
+2026-10-19T13:17:50.5223491Z If you want to create a new branch to retain commits you create, you may
+2026-10-19T13:17:50.5224760Z do so (now or later) by using -c with the switch command. Example:
+2026-10-19T13:17:50.5225582Z 
+2026-10-19T13:17:50.5225919Z   git switch -c <new-branch-name>
+2026-10-19T13:17:50.5226433Z 
+2026-10-19T13:17:50.5226710Z Or undo this operation with:
+2026-10-19T13:17:50.5227069Z 
+2026-10-19T13:17:50.5227250Z   git switch -
+2026-10-19T13:17:50.5227485Z 
+2026-10-19T13:17:50.5228417Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-19T13:17:50.5229099Z 
+2026-10-19T13:17:50.5230530Z HEAD is now at 5ba2f23 UQCF receiver_identification d21 freeze: independent producer/checker, comparator, Gemini review and publication audit for section 27 (grokbot)
+2026-10-19T13:17:50.5619132Z ##[endgroup]
+2026-10-19T13:17:50.5676016Z [command]/usr/bin/git log -1 --format=%H
+2026-10-19T13:17:50.5710002Z 5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a
+2026-10-19T13:17:50.5722771Z ##[group]Removing auth
+2026-10-19T13:17:50.5727987Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-19T13:17:50.5767575Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-19T13:17:50.6016682Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-19T13:17:50.6047709Z http.https://github.com/.extraheader
+2026-10-19T13:17:50.6058525Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-19T13:17:50.7773384Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-19T13:17:50.8022227Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-19T13:17:50.8062077Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-19T13:17:50.8307014Z ##[endgroup]
+2026-10-19T13:17:50.9672226Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-10-19T13:17:50.9672829Z with:
+2026-10-19T13:17:50.9673042Z   python-version: 3.12
+2026-10-19T13:17:50.9673281Z   check-latest: false
+2026-10-19T13:17:50.9676021Z   token: ***
+2026-10-19T13:17:50.9676238Z   update-environment: true
+2026-10-19T13:17:50.9676482Z   allow-prereleases: false
+2026-10-19T13:17:50.9676714Z   freethreaded: false
+2026-10-19T13:17:50.9676925Z ##[endgroup]
+2026-10-19T13:17:51.1047632Z ##[group]Installed versions
+2026-10-19T13:17:51.8197818Z (node:2441) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-19T13:17:51.8198848Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-19T13:17:51.8199600Z Successfully set up CPython (3.12.15)
+2026-10-19T13:17:51.8200897Z ##[endgroup]
+2026-10-19T13:17:51.9611058Z ##[group]Run python -m pip install --no-cache-dir sympy==1.14.0 mpmath==1.3.0 numpy==2.3.5
+2026-10-19T13:17:51.9611833Z [36;1mpython -m pip install --no-cache-dir sympy==1.14.0 mpmath==1.3.0 numpy==2.3.5[0m
+2026-10-19T13:17:52.6826354Z shell: /usr/bin/bash -e {0}
+2026-10-19T13:17:52.6826803Z env:
+2026-10-19T13:17:52.6827231Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:17:52.6827895Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T13:17:52.6828641Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:17:52.6829296Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:17:52.6829941Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:17:52.6830803Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T13:17:52.6831365Z ##[endgroup]
+2026-10-19T13:17:53.6689013Z Collecting sympy==1.14.0
+2026-10-19T13:17:53.7141748Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+2026-10-19T13:17:53.7248063Z Collecting mpmath==1.3.0
+2026-10-19T13:17:53.7273212Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-10-19T13:17:53.9465396Z Collecting numpy==2.3.5
+2026-10-19T13:17:53.9493243Z   Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-10-19T13:17:53.9736080Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+2026-10-19T13:17:53.9948201Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 473.0 MB/s  0:00:00
+2026-10-19T13:17:53.9974566Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-10-19T13:17:54.0003014Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 731.0 MB/s  0:00:00
+2026-10-19T13:17:54.0026699Z Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+2026-10-19T13:17:54.0277905Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 720.1 MB/s  0:00:00
+2026-10-19T13:17:54.1346926Z Installing collected packages: mpmath, sympy, numpy
+2026-10-19T13:18:03.0373419Z 
+2026-10-19T13:18:03.0385113Z Successfully installed mpmath-1.3.0 numpy-2.3.5 sympy-1.14.0
+2026-10-19T13:18:03.0985551Z ##[group]Run mkdir -p rid21_verify && python .github/scripts/uqcf_rid21_producer.py rid21_verify/producer.json
+2026-10-19T13:18:03.0986408Z [36;1mmkdir -p rid21_verify && python .github/scripts/uqcf_rid21_producer.py rid21_verify/producer.json[0m
+2026-10-19T13:18:03.1049943Z shell: /usr/bin/bash -e {0}
+2026-10-19T13:18:03.1050332Z env:
+2026-10-19T13:18:03.1050601Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:18:03.1051059Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T13:18:03.1051504Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:18:03.1051938Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:18:03.1052356Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:18:03.1052780Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T13:18:03.1053140Z ##[endgroup]
+2026-10-19T13:18:15.2835804Z {"U3": {"PN": 6, "PN+CL_1": 5, "PN+CL_2": 4, "PN+S_L": 3, "PN+S_L+BU_1": 2, "PN+S_L+BU_2": 1, "PN+S_L+CL_1": 2, "PN+S_L+CL_2": 1, "PN+S_L+C_recv": 1, "PN+W2_1": 3}, "U7": {"PN": 28, "PN+CL_1": 27, "PN+CL_2": 26, "PN+CL_3": 25, "PN+CL_4": 24, "PN+CL_5": 23, "PN+CL_6": 22, "PN+S_L": 7, "PN+S_L+BU_1": 6, "PN+S_L+BU_2": 5, "PN+S_L+BU_3": 4, "PN+S_L+BU_4": 3, "PN+S_L+BU_5": 2, "PN+S_L+BU_6": 1, "PN+S_L+CL_1": 6, "PN+S_L+CL_2": 5, "PN+S_L+CL_3": 4, "PN+S_L+CL_4": 3, "PN+S_L+CL_5": 2, "PN+S_L+CL_6": 1, "PN+S_L+C_recv": 1, "PN+W2_1": 7}, "U8": {"PN": 36, "PN+CL_1": 35, "PN+CL_2": 34, "PN+CL_3": 33, "PN+CL_4": 32, "PN+CL_5": 31, "PN+CL_6": 30, "PN+CL_7": 29, "PN+S_L": 8, "PN+S_L+BU_1": 7, "PN+S_L+BU_2": 6, "PN+S_L+BU_3": 5, "PN+S_L+BU_4": 4, "PN+S_L+BU_5": 3, "PN+S_L+BU_6": 2, "PN+S_L+BU_7": 1, "PN+S_L+CL_1": 7, "PN+S_L+CL_2": 6, "PN+S_L+CL_3": 5, "PN+S_L+CL_4": 4, "PN+S_L+CL_5": 3, "PN+S_L+CL_6": 2, "PN+S_L+CL_7": 1, "PN+S_L+C_recv": 1, "PN+W2_1": 8}}
+2026-10-19T13:18:15.2935373Z ##[group]Run python .github/scripts/uqcf_rid21_checker.py rid21_verify/checker.json
+2026-10-19T13:18:15.2935978Z [36;1mpython .github/scripts/uqcf_rid21_checker.py rid21_verify/checker.json[0m
+2026-10-19T13:18:15.3001362Z shell: /usr/bin/bash -e {0}
+2026-10-19T13:18:15.3001638Z env:
+2026-10-19T13:18:15.3001924Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:18:15.3002420Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T13:18:15.3002892Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:18:15.3003319Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:18:15.3003744Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:18:15.3004171Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T13:18:15.3004530Z ##[endgroup]
+2026-10-19T13:19:29.1946500Z {"U3": {"PN": 6, "PN+CL_1": 5, "PN+CL_2": 4, "PN+S_L": 3, "PN+S_L+BU_1": 2, "PN+S_L+BU_2": 1, "PN+S_L+CL_1": 2, "PN+S_L+CL_2": 1, "PN+S_L+C_recv": 1, "PN+W2_1": 3}, "U7": {"PN": 28, "PN+CL_1": 27, "PN+CL_2": 26, "PN+CL_3": 25, "PN+CL_4": 24, "PN+CL_5": 23, "PN+CL_6": 22, "PN+S_L": 7, "PN+S_L+BU_1": 6, "PN+S_L+BU_2": 5, "PN+S_L+BU_3": 4, "PN+S_L+BU_4": 3, "PN+S_L+BU_5": 2, "PN+S_L+BU_6": 1, "PN+S_L+CL_1": 6, "PN+S_L+CL_2": 5, "PN+S_L+CL_3": 4, "PN+S_L+CL_4": 3, "PN+S_L+CL_5": 2, "PN+S_L+CL_6": 1, "PN+S_L+C_recv": 1, "PN+W2_1": 7}, "U8": {"PN": 36, "PN+CL_1": 35, "PN+CL_2": 34, "PN+CL_3": 33, "PN+CL_4": 32, "PN+CL_5": 31, "PN+CL_6": 30, "PN+CL_7": 29, "PN+S_L": 8, "PN+S_L+BU_1": 7, "PN+S_L+BU_2": 6, "PN+S_L+BU_3": 5, "PN+S_L+BU_4": 4, "PN+S_L+BU_5": 3, "PN+S_L+BU_6": 2, "PN+S_L+BU_7": 1, "PN+S_L+CL_1": 7, "PN+S_L+CL_2": 6, "PN+S_L+CL_3": 5, "PN+S_L+CL_4": 4, "PN+S_L+CL_5": 3, "PN+S_L+CL_6": 2, "PN+S_L+CL_7": 1, "PN+S_L+C_recv": 1, "PN+W2_1": 8}} violations 0
+2026-10-19T13:19:29.2098758Z ##[group]Run python .github/scripts/uqcf_rid21_producer.py rid21_verify/producer_repro.json && cmp rid21_verify/producer.json rid21_verify/producer_repro.json
+2026-10-19T13:19:29.2099898Z [36;1mpython .github/scripts/uqcf_rid21_producer.py rid21_verify/producer_repro.json && cmp rid21_verify/producer.json rid21_verify/producer_repro.json[0m
+2026-10-19T13:19:29.2166434Z shell: /usr/bin/bash -e {0}
+2026-10-19T13:19:29.2166818Z env:
+2026-10-19T13:19:29.2167257Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:29.2168160Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T13:19:29.2168959Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:29.2169747Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:29.2170732Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:29.2171272Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T13:19:29.2171679Z ##[endgroup]
+2026-10-19T13:19:41.1861568Z {"U3": {"PN": 6, "PN+CL_1": 5, "PN+CL_2": 4, "PN+S_L": 3, "PN+S_L+BU_1": 2, "PN+S_L+BU_2": 1, "PN+S_L+CL_1": 2, "PN+S_L+CL_2": 1, "PN+S_L+C_recv": 1, "PN+W2_1": 3}, "U7": {"PN": 28, "PN+CL_1": 27, "PN+CL_2": 26, "PN+CL_3": 25, "PN+CL_4": 24, "PN+CL_5": 23, "PN+CL_6": 22, "PN+S_L": 7, "PN+S_L+BU_1": 6, "PN+S_L+BU_2": 5, "PN+S_L+BU_3": 4, "PN+S_L+BU_4": 3, "PN+S_L+BU_5": 2, "PN+S_L+BU_6": 1, "PN+S_L+CL_1": 6, "PN+S_L+CL_2": 5, "PN+S_L+CL_3": 4, "PN+S_L+CL_4": 3, "PN+S_L+CL_5": 2, "PN+S_L+CL_6": 1, "PN+S_L+C_recv": 1, "PN+W2_1": 7}, "U8": {"PN": 36, "PN+CL_1": 35, "PN+CL_2": 34, "PN+CL_3": 33, "PN+CL_4": 32, "PN+CL_5": 31, "PN+CL_6": 30, "PN+CL_7": 29, "PN+S_L": 8, "PN+S_L+BU_1": 7, "PN+S_L+BU_2": 6, "PN+S_L+BU_3": 5, "PN+S_L+BU_4": 4, "PN+S_L+BU_5": 3, "PN+S_L+BU_6": 2, "PN+S_L+BU_7": 1, "PN+S_L+CL_1": 7, "PN+S_L+CL_2": 6, "PN+S_L+CL_3": 5, "PN+S_L+CL_4": 4, "PN+S_L+CL_5": 3, "PN+S_L+CL_6": 2, "PN+S_L+CL_7": 1, "PN+S_L+C_recv": 1, "PN+W2_1": 8}}
+2026-10-19T13:19:41.2003533Z ##[group]Run python .github/scripts/uqcf_rid21_compare.py rid21_verify/producer.json rid21_verify/checker.json rid21_verify/compare.json
+2026-10-19T13:19:41.2004639Z [36;1mpython .github/scripts/uqcf_rid21_compare.py rid21_verify/producer.json rid21_verify/checker.json rid21_verify/compare.json[0m
+2026-10-19T13:19:41.2069267Z shell: /usr/bin/bash -e {0}
+2026-10-19T13:19:41.2069560Z env:
+2026-10-19T13:19:41.2069870Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.2070542Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T13:19:41.2071058Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.2071525Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.2071988Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.2072447Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T13:19:41.2073014Z ##[endgroup]
+2026-10-19T13:19:41.2524630Z {
+2026-10-19T13:19:41.2525193Z  "frozen_sha256": {
+2026-10-19T13:19:41.2526089Z   "RESULT.md": "7c0eb6f830e6ca167ec62839e760d092c88fb1084ce72c91877b7c314414b229"
+2026-10-19T13:19:41.2526740Z  },
+2026-10-19T13:19:41.2527022Z  "status": "GREEN",
+2026-10-19T13:19:41.2527345Z  "tamper": {
+2026-10-19T13:19:41.2527671Z   "control_flip": "DETECTED",
+2026-10-19T13:19:41.2528097Z   "diagnostic_altered": "DETECTED",
+2026-10-19T13:19:41.2528522Z   "duplicated_carrier": "DETECTED",
+2026-10-19T13:19:41.2528932Z   "duplicated_key": "DETECTED",
+2026-10-19T13:19:41.2529315Z   "extra_key": "DETECTED",
+2026-10-19T13:19:41.2529684Z   "false_provenance": "DETECTED",
+2026-10-19T13:19:41.2530440Z   "flipped_identity_digest": "DETECTED",
+2026-10-19T13:19:41.2530947Z   "missing_control": "DETECTED",
+2026-10-19T13:19:41.2531299Z   "missing_record": "DETECTED",
+2026-10-19T13:19:41.2531641Z   "no_horizon_both": "DETECTED",
+2026-10-19T13:19:41.2532001Z   "producer_as_checker": "DETECTED",
+2026-10-19T13:19:41.2532384Z   "row_count_altered": "DETECTED",
+2026-10-19T13:19:41.2532777Z   "sharpness_case_dropped_both": "DETECTED",
+2026-10-19T13:19:41.2533190Z   "substituted_universe": "DETECTED",
+2026-10-19T13:19:41.2533566Z   "violation_hidden": "DETECTED",
+2026-10-19T13:19:41.2533928Z   "witness_leaf_local_both": "DETECTED",
+2026-10-19T13:19:41.2534311Z   "wrong_result_bytes": "DETECTED",
+2026-10-19T13:19:41.2534675Z   "wrong_value_Y1": "DETECTED"
+2026-10-19T13:19:41.2534992Z  }
+2026-10-19T13:19:41.2535227Z }
+2026-10-19T13:19:41.2631631Z ##[group]Run python -c "import sys,numpy,sympy,json;json.dump({'python':sys.version,'numpy':numpy.__version__,'sympy':sympy.__version__,'sha':'5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a','workflow_sha':'5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a'},open('rid21_verify/env.json','w'))"
+2026-10-19T13:19:41.2633569Z [36;1mpython -c "import sys,numpy,sympy,json;json.dump({'python':sys.version,'numpy':numpy.__version__,'sympy':sympy.__version__,'sha':'5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a','workflow_sha':'5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a'},open('rid21_verify/env.json','w'))"[0m
+2026-10-19T13:19:41.2634724Z [36;1msha256sum rid21_verify/* > rid21_verify/SHA256SUMS || true[0m
+2026-10-19T13:19:41.2698815Z shell: /usr/bin/bash -e {0}
+2026-10-19T13:19:41.2699105Z env:
+2026-10-19T13:19:41.2699378Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.2700365Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T13:19:41.2700893Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.2701301Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.2701703Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.2702104Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T13:19:41.2702447Z ##[endgroup]
+2026-10-19T13:19:41.7194157Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-19T13:19:41.7194605Z with:
+2026-10-19T13:19:41.7194812Z   name: rid21-verify-1
+2026-10-19T13:19:41.7195036Z   path: rid21_verify
+2026-10-19T13:19:41.7195259Z   if-no-files-found: error
+2026-10-19T13:19:41.7195496Z   retention-days: 90
+2026-10-19T13:19:41.7195710Z   compression-level: 6
+2026-10-19T13:19:41.7195922Z   overwrite: false
+2026-10-19T13:19:41.7196140Z   include-hidden-files: false
+2026-10-19T13:19:41.7196392Z env:
+2026-10-19T13:19:41.7196644Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.7197072Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-19T13:19:41.7197497Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.7197878Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.7198260Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-19T13:19:41.7198679Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-19T13:19:41.7199008Z ##[endgroup]
+2026-10-19T13:19:41.8938059Z (node:2543) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-19T13:19:41.8939339Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-19T13:19:41.9007988Z With the provided path, there will be 6 files uploaded
+2026-10-19T13:19:41.9030895Z Artifact name is valid!
+2026-10-19T13:19:41.9031716Z Root directory input is valid!
+2026-10-19T13:19:42.3107888Z Beginning upload of artifact content to blob storage
+2026-10-19T13:19:42.3389168Z (node:2543) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-19T13:19:42.5946701Z Uploaded bytes 7666
+2026-10-19T13:19:42.6655686Z Finished uploading artifact content to blob storage!
+2026-10-19T13:19:42.6657376Z SHA256 digest of uploaded artifact zip is dc07e9a51366c71bc6455095ca8688df962b357c0ca7a4c0fa45f1e2cbed5ecf
+2026-10-19T13:19:42.6658509Z Finalizing artifact upload
+2026-10-19T13:19:42.9300569Z Artifact rid21-verify-1.zip successfully finalized. Artifact ID 12188947232
+2026-10-19T13:19:42.9302385Z Artifact rid21-verify-1 has been successfully uploaded! Final size is 7666 bytes. Artifact ID is 12188947232
+2026-10-19T13:19:42.9309882Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39258153723/artifacts/12188947232
+2026-10-19T13:19:42.9485215Z Post job cleanup.
+2026-10-19T13:19:43.0749379Z (node:2555) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-19T13:19:43.0751002Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-19T13:19:43.0955374Z Post job cleanup.
+2026-10-19T13:19:43.2016837Z [command]/usr/bin/git version
+2026-10-19T13:19:43.2068735Z git version 2.55.0
+2026-10-19T13:19:43.2126601Z Temporarily overriding HOME='/home/runner/work/_temp/ef7ee5ba-2e5a-4559-a3fa-f38cfa133e3a' before making global git config changes
+2026-10-19T13:19:43.2128127Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-19T13:19:43.2137931Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-19T13:19:43.2213658Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-19T13:19:43.2271776Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-19T13:19:43.2622397Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-19T13:19:43.2686046Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-19T13:19:43.3058934Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-19T13:19:43.3123679Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-19T13:19:43.3574117Z Cleaning up orphan processes
+2026-10-19T13:19:43.3888249Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

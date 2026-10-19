@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "status": "BLOCKED_HTTP_402_NO_VERDICTS",
+  "author": "proteinfolding-gpt",
+  "attempts": [
+    {
+      "run": 39258153723,
+      "attempt": 2,
+      "sha": "5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a",
+      "verification": "GREEN",
+      "review": "HTTP_402",
+      "verdict": null
+    },
+    {
+      "run": 39040205957,
+      "attempt": 3,
+      "sha": "639c1f7ce6cebd7f342c5f57e834a2e23c78c7ee",
+      "integrity": "PASS",
+      "review": "HTTP_402",
+      "verdict": null
+    }
+  ],
+  "archives": [
+    {
+      "path": "evidence/run-39258153723/rid21-review-1.zip",
+      "bytes": 204935,
+      "sha256": "88fdfaa48d3dd22116474bcf08b22093ec15fc0f3d1d2e3fac01ea32319d7af5",
+      "git_blob": "32cd8dd4392fa6f4699d382d2fc6cdc57bc365f5"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-verify-1.zip",
+      "bytes": 7666,
+      "sha256": "dc07e9a51366c71bc6455095ca8688df962b357c0ca7a4c0fa45f1e2cbed5ecf",
+      "git_blob": "e84a31b8abd4ba4148479c18cc6371ee043e2411"
+    },
+    {
+      "path": "evidence/run-39040205957/ledger-review-3.zip",
+      "bytes": 62013,
+      "sha256": "82bedb7c94cd2296681feb267cf25df21c1baf945a6494b65c2668678e95f398",
+      "git_blob": "9a25c8cd58182c3899b951551cba9ee60db5e81f"
+    },
+    {
+      "path": "evidence/run-39040205957/ledger-integrity-3.zip",
+      "bytes": 2523,
+      "sha256": "3340998a92f55a78298a5066fdb19baf46afa8420116d6896c17dd37639485c1",
+      "git_blob": "bf506b9ab11102613843ea165f56b1f4b25c779f"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-verify-2.zip",
+      "bytes": 7666,
+      "sha256": "082d674b5edec2e327ef560283a59eb722a1e333f4fabd3970e32ce2177313a2",
+      "git_blob": "c248d961deee3f08539872621a078d27ba974906"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-review-2.zip",
+      "bytes": 204935,
+      "sha256": "8300172129b1799e19fa950a555a8321010a521d9bd9c4e1ddff0c65df3faa82",
+      "git_blob": "9aad78c464ea2065dde827397fa6107eab6c5431"
+    }
+  ],
+  "checks": {
+    "archive_lengths_sha256_crc": "PASS",
+    "rid21_verification_reproduction_against_attempt_1": "EXACT_BYTES_MATCH",
+    "rid21_prompt_request_model_metadata_against_attempt_1": "EXACT_BYTES_MATCH",
+    "ledger_manifest_and_integrity_hashes": "PASS",
+    "ledger_prompt_request_equality": "PASS",
+    "response_present": false
+  },
+  "scope": "Fresh retries following the user's credit update. All original archives include complete produced contents; no raw response or verdict was returned. Historical ledger attempts 1 and 2 remain in their existing published evidence directory."
+}

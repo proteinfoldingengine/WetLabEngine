@@ -1,0 +1,248 @@
+{
+  "total_count": 3,
+  "jobs": [
+    {
+      "id": 118097480676,
+      "run_id": 39258153723,
+      "workflow_name": "UQCF receiver_identification d21 freeze review (section 27, a leaf reads only what it holds; one record climb fixes reads up to its depth) (grokbot)",
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/39258153723",
+      "run_attempt": 2,
+      "node_id": "CR_kwDORG4isM8AAAAbfyiL5A",
+      "head_sha": "5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/118097480676",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39258153723/job/118097480676",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-19T13:50:46Z",
+      "started_at": "2026-10-19T13:50:48Z",
+      "completed_at": "2026-10-19T13:53:39Z",
+      "name": "verify",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-19T13:50:49Z",
+          "completed_at": "2026-10-19T13:50:49Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-19T13:50:49Z",
+          "completed_at": "2026-10-19T13:51:48Z"
+        },
+        {
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-19T13:51:48Z",
+          "completed_at": "2026-10-19T13:51:48Z"
+        },
+        {
+          "name": "Pinned dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-19T13:51:48Z",
+          "completed_at": "2026-10-19T13:51:59Z"
+        },
+        {
+          "name": "Producer (pure-Python exact Fractions, parent-array AHU enumeration, vertex-coordinate condition rows, exact sparse Gauss-Jordan with a shared PN echelon basis, cone-coordinate depth-matrix reads)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-19T13:51:59Z",
+          "completed_at": "2026-10-19T13:52:11Z"
+        },
+        {
+          "name": "Checker (independent leaf-attachment enumeration, canonical DFS isomorphisms, sparse mod-p ranks plus explicit rational families, common-ancestor depth-matrix reads)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-19T13:52:11Z",
+          "completed_at": "2026-10-19T13:53:25Z"
+        },
+        {
+          "name": "Fresh producer reproduction (deterministic bytes)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-19T13:53:25Z",
+          "completed_at": "2026-10-19T13:53:37Z"
+        },
+        {
+          "name": "Comparator and tampering controls",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-19T13:53:37Z",
+          "completed_at": "2026-10-19T13:53:37Z"
+        },
+        {
+          "name": "Environment record",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-19T13:53:37Z",
+          "completed_at": "2026-10-19T13:53:37Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-19T13:53:37Z",
+          "completed_at": "2026-10-19T13:53:38Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-19T13:53:38Z",
+          "completed_at": "2026-10-19T13:53:38Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-19T13:53:38Z",
+          "completed_at": "2026-10-19T13:53:38Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-19T13:53:38Z",
+          "completed_at": "2026-10-19T13:53:39Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/118097480676",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000004626,
+      "runner_name": "GitHub Actions 1000004626",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 118098933760,
+      "run_id": 39258153723,
+      "workflow_name": "UQCF receiver_identification d21 freeze review (section 27, a leaf reads only what it holds; one record climb fixes reads up to its depth) (grokbot)",
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/39258153723",
+      "run_attempt": 2,
+      "node_id": "CR_kwDORG4isM8AAAAbfz64AA",
+      "head_sha": "5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/118098933760",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39258153723/job/118098933760",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-19T13:53:40Z",
+      "started_at": "2026-10-19T13:53:42Z",
+      "completed_at": "2026-10-19T13:54:58Z",
+      "name": "argument-review",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-19T13:53:43Z",
+          "completed_at": "2026-10-19T13:53:44Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-19T13:53:44Z",
+          "completed_at": "2026-10-19T13:54:52Z"
+        },
+        {
+          "name": "Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-19T13:54:52Z",
+          "completed_at": "2026-10-19T13:54:53Z"
+        },
+        {
+          "name": "Fresh independent Gemini whole-argument review",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 4,
+          "started_at": "2026-10-19T13:54:53Z",
+          "completed_at": "2026-10-19T13:54:55Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-19T13:54:55Z",
+          "completed_at": "2026-10-19T13:54:56Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-19T13:54:56Z",
+          "completed_at": "2026-10-19T13:54:56Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-19T13:54:56Z",
+          "completed_at": "2026-10-19T13:54:56Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/118098933760",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000004629,
+      "runner_name": "GitHub Actions 1000004629",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 118099590611,
+      "run_id": 39258153723,
+      "workflow_name": "UQCF receiver_identification d21 freeze review (section 27, a leaf reads only what it holds; one record climb fixes reads up to its depth) (grokbot)",
+      "head_branch": "research/uqcf-overlapping-guard-exchange",
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/39258153723",
+      "run_attempt": 2,
+      "node_id": "CR_kwDORG4isM8AAAAbf0i90w",
+      "head_sha": "5ba2f23c6710b2fdcd29df57f98cd5c11d5c7e3a",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/118099590611",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39258153723/job/118099590611",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-10-19T13:54:58Z",
+      "started_at": "2026-10-19T13:54:58Z",
+      "completed_at": "2026-10-19T13:54:58Z",
+      "name": "publication-audit",
+      "steps": [],
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/118099590611",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": null,
+      "runner_name": null,
+      "runner_group_id": null,
+      "runner_group_name": null
+    }
+  ]
+}
