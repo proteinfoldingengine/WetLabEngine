@@ -6,7 +6,7 @@ from pathlib import Path
 REPO = os.environ["GITHUB_REPOSITORY"]
 SHA = os.environ["GITHUB_SHA"]
 ROOT = "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d27_review"
-FILES = [ROOT + "/RESULT.md", ROOT + "/FREEZE.md",
+FILES = [ROOT + "/RESULT.md", ROOT + "/FREEZE.md", ROOT + "/AMENDMENT_1.md",
          ".github/scripts/uqcf_rid27_producer.py", ".github/scripts/uqcf_rid27_checker.py",
          ".github/scripts/uqcf_rid27_compare.py", ".github/scripts/uqcf_rid27_review.py",
          ".github/scripts/uqcf_rid27_publication.py", ".github/workflows/uqcf-gem-rid27-review.yml"]
