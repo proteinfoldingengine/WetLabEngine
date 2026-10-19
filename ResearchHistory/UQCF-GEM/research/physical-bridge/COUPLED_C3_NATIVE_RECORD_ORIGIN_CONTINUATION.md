@@ -961,3 +961,24 @@ Continue with the same support pair and existing primitives. Do not relabel a re
 Positive refinement of the active support candidate: singleton receiver supports determine a unique state on the canonical function algebra of the palette. With an independently justified association to fixed existing orthogonal record sectors, every microscopic state confined to a given endpoint sector has the same reference response. This also holds for arbitrary-rank sectors and one existing imperfect separating effect. Thus a detailed density-matrix encoder is unnecessary for this endpoint calculation; support confinement suffices.
 
 Neither the canonical Boolean representation nor the trace identity establishes actual label-to-sector association, confinement or available readout. Same-sector initial confinement alone does not establish whole-receiver blindness when internal sector degrees of freedom are available; full initial equality remains explicit. Next: identify that inherited association and actual event in a particular existing receiver algebra, preserving the common initial state and an available separating effect. No new state encoder, outcome probabilities or physical access rule was introduced.
+
+
+## GPT construction continuation: locate the record-writing step (2026-10-19 UTC)
+
+Source inspection at immutable parent `00d9fcc910e884d583be2c7d1f1456930050b1bd`; no newer research-branch commit or in-progress Actions run was present at inspection. The accepted support witness and support-sector result remain the working construction. This entry records source accounting and the next construction task, not a new theorem, review verdict, numerical campaign or milestone.
+
+The older claim that recombination generates local algebras was followed to its implementation. The V1688 publication scaffold describes an analogy with local algebraic event structures. Its visualizer's `native_transport` explicitly implements a chosen kernel; `maybe_load_existing` loads states and edge couplings, or `generate_deterministic_proof` constructs them using fixed formulas and a seeded generator. The later V1720 core report explicitly lists that kernel among its assumed primitives and limits its conclusions to a simulation. These inspected sources therefore do not establish the required correspondence between this support witness and an existing receiver's available record. No archived scientific executable was run.
+
+The constructive target can now be made more specific. In v15.11, `pinch` receives an orthogonal block decomposition, and `select_record` receives both the state and the actual positive-weight record. Its comments explicitly distinguish this from deriving actuality. In the accepted support witness, completion starts with `+b_s(v), +b_s(w)`, before the removals and final `-a(u)`. Identifying an endpoint with a sector does not identify these earlier record-writing steps. The already accepted endpoint theorem remains useful once that correspondence is established.
+
+Continue by tracing an existing native operation that supplies those receiver changes on one particular retained algebra. The concrete construction must specify the same initially available receiver state in both branches, associate its changing native support with the existing record throughout the operation, and identify a retained separating effect. Keep actual-event occurrence separate from a guarantee of completion. Use the inherited operation's own state and record semantics; do not choose a transport kernel, encoder, gate or outcome probabilities to reproduce the desired endpoints. A source-backed operation would be a substantive advance even without uniqueness of every microscopic detail.
+
+Inspected source locations at the parent above:
+
+- `Tmp/TOE/Einstein 11 - V1688_holonomy_proof_visualizer_v4_package/Retained_Bridge_Literature_Positioning_Publication.md`, section 7.
+- Same directory, `V1688_holonomy_proof_visualizer_v4_colab_one_cell.py`: `native_transport`, `maybe_load_existing`, `generate_deterministic_proof`.
+- `Tmp/TOE/Einstein_13_V1720 retained_bridge_core/RETAINED_BRIDGE_CORE_REPORT.md`, sections 1 and 7.
+- `ResearchHistory/UQCF-GEM/v15/v15.11/ontology_continuity_audit.py`: `pinch`, `select_record`, `history_control`; and its `REPORT.md`, sections 3–4.
+- `ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md`, O1 and O7, retains the existing fixed-Genesis restriction scope; no rerooting or physical readout is supplied there.
+
+Native record association, actual writing and receiver access remain unresolved. No additional conditional theorem or independent-review run is claimed by this source-inspection update.
