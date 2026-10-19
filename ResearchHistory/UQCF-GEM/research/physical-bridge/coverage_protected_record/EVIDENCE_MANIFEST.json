@@ -1,0 +1,36 @@
+{
+  "scientific_freeze": "2349d92d59371fd438b1d0880358f7d9da81a558",
+  "workflow_sha": "9446edfec45bf85678fc42a24f78affad1662bd4",
+  "run_id": 39193948469,
+  "attempt": 1,
+  "status": "VERIFIED_LOCALLY_PUBLIC_RAW_ARCHIVE_PENDING",
+  "archives": [
+    {
+      "name": "coverage-record-review-1.zip",
+      "artifact_id": 12161051802,
+      "bytes": 69493,
+      "sha256": "bb576004d03d104aa6c587f45d48f12903886fa128e7c8983aef75fe39f37163"
+    },
+    {
+      "name": "coverage-record-integrity-1.zip",
+      "artifact_id": 12160873611,
+      "bytes": 1321,
+      "sha256": "113e2760b2f68cf81e343be2d6739a53e3ffadedeb9f91701645bd67c27147ef"
+    },
+    {
+      "name": "coverage-record-publication-1.zip",
+      "artifact_id": 12160639602,
+      "bytes": 514,
+      "sha256": "a0a401c9e889ef3eb88157fc4eb8ab2a42652922082bdb9fbf60673cf31eb3ba"
+    }
+  ],
+  "verification": {
+    "archive_digests_and_crc": true,
+    "review_artifact_manifests": true,
+    "request_matches_prompt": true,
+    "exact_frozen_documents_in_prompt": true,
+    "raw_review_matches_parsed_verdict": true,
+    "all_three_jobs_succeeded": true
+  },
+  "native_bridge": "NOT_DERIVED"
+}
