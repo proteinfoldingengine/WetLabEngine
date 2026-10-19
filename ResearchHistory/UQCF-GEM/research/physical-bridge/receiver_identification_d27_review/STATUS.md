@@ -34,3 +34,19 @@ outstanding. The [D27] event-transfer argument itself was reviewed separately in
 
 Next: once the Gemini quota is confirmed, one fresh review dispatch at the same code SHA, recorded as an amendment to FREEZE
 section 5 before it is sent (same frozen RESULT.md bytes; no prior verdict exists to show).
+
+## Amendment 1 dispatch (2026-10-19 ~18:00 ET)
+
+[AMENDMENT_1.md](AMENDMENT_1.md), committed with the review-script change at `6997aeb4` before any dispatch under it: exact
+RESULT.md excerpts (headers, revision notes and credit; sections 26-32) in place of the whole file, whole-file hash asserted;
+compare.json pinned to `be2c1952…`; one preregistered 300 s cooldown retry on HTTP 429/503. FREEZE.md, RESULT.md, producer,
+checker, comparator and workflow unchanged. Push run [39331488190](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39331488190)
+GREEN with a byte-identical compare.json (sha256 `be2c1952ef33f4a7eca39aa1b794915beabb8a715734c73b8e87e6cc737cb233`).
+Dispatch [39331510927](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39331510927) (review = true): verify
+success; prompt 209,348 bytes (half the earlier size); both requests (22:05:32Z and, after the 300 s cooldown, 22:10:32Z)
+returned HTTP 429 RESOURCE_EXHAUSTED with the API message "Your project has exceeded its monthly spending cap" (kept in the
+review artifact's transport.json). So the earlier 429s were a spending-cap hold on the Gemini project, not a prompt-size or
+request-rate limit. No verdict. Publication audit skipped by the workflow. The amendment's same-SHA rerun is NOT used: the cause
+is a known quota hold (Aaron's refined directive of 2026-10-19: avoid repeated review calls against a known quota hold).
+Sections 31-32 remain UNREVIEWED. Next: one dispatch at `6997aeb4` (or its same-SHA rerun) once the project's spending cap is
+raised; nothing else changes.
