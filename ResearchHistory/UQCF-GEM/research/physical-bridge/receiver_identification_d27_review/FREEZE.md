@@ -133,3 +133,14 @@ and [D26](i)-(iii) on TM and the small trees; the row counts 128 and 200. protei
 were reviewed in its own freeze. Not computed before this file was committed: any exact certificate; the FULL|TM ranges; the
 REST ranges for D = 1 and 3 beyond the scratch; the DROPF and DROPC LP ranges; X2 on TM with (FC) on every carrier, X10 and
 X12 as coded; R1-R10 as coded. The GitHub Actions run is the preregistered execution.
+
+## 7. Erratum and dry-run disclosure (added with the code commit, before any Actions run)
+
+Section 3's structural line lists the variable counts of S1 and S2 as 3 and 6. Those are arithmetic errors: the number of
+variables is Σ_v (depth(v) + 1), which is 1 + 2 + 2 = 5 for S1 and 1 + 2 + 3 + 2 = 8 for S2 (the TB and TM values 49 and 73
+are correct). The comparator uses 5 and 8 and cites this section. No other preregistered value is changed. Disclosure: before
+committing the programs, both were run once locally on the box (Python 3.12 with scipy from a local venv) to debug them; the
+first local checker run flagged two of its own certificates for DROPF|(1, (0, 1)) as using a row outside that system (the
+removed fork), which was a checker bug (the SE certificate tried the removed fork before the chain row) and was fixed; after
+the fix, every range, table, instance and control equalled the preregistered values, except the two variable counts above.
+The Actions run on push is the preregistered execution.
