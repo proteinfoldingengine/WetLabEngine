@@ -29,7 +29,7 @@ No numerical scientific campaign, archived-program replay, main merge or numbere
 
 The proof and review workflow are on the research branch. The [checksum manifest](EVIDENCE_MANIFEST.json) records the original archive identities.
 
-**Full raw-evidence publication remains PENDING.** Automatic approval review rejected the new raw archive upload because the earlier explicit public-publication authorization was interpreted as covering only the previous prepared package. The complete new package has been prepared for the user, including original ZIPs, raw responses and opaque model signatures, prompts, requests, model metadata, logs and scientific documents. This outcome receipt and checksum manifest do not discharge the full durable public-evidence requirement.
+**Full raw evidence is published with this receipt.** The evidence directory contains all three original artifact ZIPs, extracted raw Gemini responses (including opaque thought signatures), prompts, requests, metadata, job logs and run records. Archive identities are recorded in the checksum manifest. The earlier upload was blocked by automatic approval review; the user's subsequent standing authorization for all publications permitted completion. The earlier outcome-only receipt remains in Git history. Immutable readback is recorded separately in PUBLICATION.md and READBACK.json.
 
 ## Next native obligation
 
