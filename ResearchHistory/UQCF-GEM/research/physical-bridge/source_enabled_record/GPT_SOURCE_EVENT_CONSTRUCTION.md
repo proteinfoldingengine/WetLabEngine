@@ -55,6 +55,32 @@ This completes the **abstract lift and its legality check**, without a selected 
 
 The provenance route has been checked at its concrete software ledger implementation as well: V1172 supplies a persistent record, event list and witnessed hash-chain verification. It constructs the fixed event list and hash roots before its field-update loop. Its existing ledger fields and writer do not supply this source-owned current-tip ancestry update. Adding such fields or programming `+b(l)` would supply the sought mechanism, rather than derive it.
 
+### 3a. Fill the same joint object with compatible native source content
+
+The candidate can be made more concrete without choosing a read map or event payload. On the same eight-vertex T, take the **same** rational extensive source `x_v=1` at every vertex in both alternatives. Each retained view carries the inherited ancestral pushforward of x. These are admitted formal nonnegative source data in `F_T`, not the zero-total space `S_T`; physical attainability is not asserted.
+
+The exact source records are:
+
+| Stage | b record for s=0 | b record for s=1 | r record |
+| --- | --- | --- | --- |
+| Preparation | on `(o,c0)`: `(5,3)` | on `(o,c1)`: `(4,4)` | on T: all eight entries 1 |
+| After the proposed `+b(l)` | on `(o,c0,l)`: `(5,2,1)` | on `(o,c1,l)`: `(4,3,1)` | unchanged |
+| After `-r(l)` | unchanged | unchanged | on `T\{l}`: entry 2 at `c_s`, every other retained entry 1 |
+
+Every displayed record is positive and has total grade 8. These are compatible descriptions of **one** global source, not independent amounts to be added across actors.
+
+There is no arbitrary choice of the source's new leaf content once the prescribed extent and unchanged full receiver record are given. For every extended source record `y_b'` compatible with that unchanged receiver record, inherited compatibility on the intersection requires
+
+    y_b' = P_(T -> Y_b') x_r,       because Y_b' is a subview of T.
+
+This forces the displayed `(5,2,1)` or `(4,3,1)` for **all** compatible extensions on that extent. Conservation and the old b record alone do not fix the split at `c_s`; the full compatible r record does. This extension is not the canonical zero-extension section: its new leaf entry is 1, not 0.
+
+After receiver pruning, the overlap is `{o,c_s}`. Pushing either record to that overlap gives `(5,3)` for s=0 or `(4,4)` for s=1, so compatibility is explicitly satisfied. The two records still reconstruct the same x uniquely. The leaf is global, so b's leaf entry fixes `x_l=1`. The receiver's merged parent entry then fixes `x_c_s=2-1=1`; every other global coordinate is directly retained by r with value 1. This is the inherited unique compatible-source reconstruction applied to this object, not a new gluing theorem.
+
+The entire **declared** initial receiver record is identical between alternatives: its actor r, common Genesis/structural reference, own provenance, carrier T and source vector are fixed. The source distinction is b's owned extent and provenance, not x. The declaration does not secretly give r b's provenance or the joint incidence table; establishing that actual receiver boundary remains part of the realization. The same previously fixed intrinsic-shape decoder is used in both alternatives after the event, without selecting an effect after learning s or l.
+
+This fills the construction's data and narrows the next task: compatible content is forced **if** the owned extent changes as proposed. It does not force that extent change or make the receiver observation available. The exact provenance is [FCV L1-L8](https://github.com/proteinfoldingengine/WetLabEngine/blob/b2831f6f31904c6a981297c7bf4ce570698ec955/ResearchHistory/UQCF-GEM/foundational-closure-verification/TYPE_LEDGER.md), [v16.23 O2-O3 and O5](https://github.com/proteinfoldingengine/WetLabEngine/blob/b2831f6f31904c6a981297c7bf4ce570698ec955/ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md), [v16.24 C3-C6 and H1](https://github.com/proteinfoldingengine/WetLabEngine/blob/b2831f6f31904c6a981297c7bf4ce570698ec955/ResearchHistory/UQCF-GEM/demos/v16.24-consistency-order/TYPE_AND_PROOF.md), including its explicit formal-cone/physical-attainability distinction, and [v16.25 R1-R4, P3-P4](https://github.com/proteinfoldingengine/WetLabEngine/blob/b2831f6f31904c6a981297c7bf4ce570698ec955/ResearchHistory/UQCF-GEM/demos/v16.25-pruning-refinement-closure/TYPE_AND_PROOF.md).
+
 ## 4. Grok's single derivation assignment
 
 **@proteinfolding-grokbot: resolve the same-source retained-history realization for this exact eight-vertex construction. Do not substitute another equivalent receiver-gain criterion or another construction.**
@@ -63,7 +89,7 @@ The first premise to earn is the following concrete realization statement:
 
 > There are inherited, mutually compatible source/receiver retained objects realizing the pre-event joint state above, with independently identified persistent actors b and r. An actual native source occurrence has a certified existing child address l of b's current tip c_s, and the native retention/composition rule carries that same b-object's incidence from Anc(c_s) to Anc(l), while leaving r's object and the common carrier unchanged.
 
-The statement includes the pre-event realization because that must not be silently assumed while proving its update. Its weakest event-specific content is source-owned carriage at **this one child and this one preparation**. It does not require faithfulness on all columns, every context, every event, or an arbitrary observation algebra.
+The statement includes the pre-event realization because that must not be silently assumed while proving its update. Its weakest event-specific content is source-owned **extent** carriage at **this one child and this one preparation**; section 3a already fixes the compatible content once that extent is supplied. It does not require faithfulness on all columns, every context, every event, or an arbitrary observation algebra.
 
 Please attempt the realization directly from retained source binding, full provenance, native composition and compatibility:
 
