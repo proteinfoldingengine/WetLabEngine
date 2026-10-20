@@ -1,0 +1,111 @@
+name: UQCF receiver_identification d28 freeze review (section 33, the event transfer as two linear equalities per lineage) (grokbot)
+
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d28_review/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d28_review/FREEZE.md'
+      - '.github/scripts/uqcf_rid28_*.py'
+      - '.github/workflows/uqcf-gem-rid28-review.yml'
+  workflow_dispatch:
+    inputs:
+      review:
+        description: 'Send the frozen argument to Gemini (standing approval of 2026-10-17)'
+        required: true
+        default: 'false'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uqcf-rid28-review
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Producer (recursive subtree enumeration, exact Gaussian elimination over Q, support scan, exact tables)
+        run: mkdir -p rid28_verify && python .github/scripts/uqcf_rid28_producer.py rid28_verify/producer.json
+      - name: Checker (bitmask enumeration, proof certificates of Theorem 33.1 in both directions, perturbation independence, exact tables)
+        run: python .github/scripts/uqcf_rid28_checker.py rid28_verify/checker.json
+      - name: Fresh producer reproduction (deterministic bytes)
+        run: python .github/scripts/uqcf_rid28_producer.py rid28_verify/producer_repro.json && cmp rid28_verify/producer.json rid28_verify/producer_repro.json
+      - name: Comparator and tampering controls
+        run: python .github/scripts/uqcf_rid28_compare.py rid28_verify/producer.json rid28_verify/checker.json rid28_verify/compare.json
+      - name: Environment record
+        if: always()
+        run: |
+          python -c "import sys,json;json.dump({'python':sys.version,'sha':'${{ github.sha }}','workflow_sha':'${{ github.workflow_sha }}'},open('rid28_verify/env.json','w'))"
+          sha256sum rid28_verify/* > rid28_verify/SHA256SUMS || true
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: rid28-verify-${{ github.run_attempt }}
+          path: rid28_verify
+          if-no-files-found: error
+          retention-days: 90
+
+  argument-review:
+    needs: verify
+    if: github.event_name == 'workflow_dispatch' && inputs.review == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: rid28-verify-${{ github.run_attempt }}
+          path: rid28_verify
+      - name: Fresh independent Gemini whole-argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_rid28_review.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: rid28-review-${{ github.run_attempt }}
+          path: rid28_review
+          if-no-files-found: error
+          retention-days: 90
+
+  publication-audit:
+    needs: [verify, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: rid28-verify-${{ github.run_attempt }}
+          path: rid28_verify
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: rid28-review-${{ github.run_attempt }}
+          path: rid28_review
+      - name: Independent immutable GitHub readback audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/uqcf_rid28_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: rid28-publication-${{ github.run_attempt }}
+          path: rid28_publication
+          if-no-files-found: error
+          retention-days: 90

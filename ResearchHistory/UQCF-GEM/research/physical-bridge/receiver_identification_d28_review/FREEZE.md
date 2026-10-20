@@ -114,3 +114,13 @@ Already known before this preregistration (exploratory, not preregistered): the 
 (Diag_D) and (Side_D), single perturbations and the leak family. Not computed before this file was committed: any rank, span
 or support computation; MX, CH and S4 systems; X1 as a symbolic identity; X4; X5 with the hash rule; X6 as coded; R1-R9 as
 coded. The GitHub Actions run is the preregistered execution.
+
+## 7. Dry-run disclosure and one clarification (added with the code commit, before any Actions run)
+
+Disclosure: before committing the programs, the producer, the checker and the comparator were each run once locally on the box
+(Python 3.12/3.13 standard library) to debug them. On that first run every system value, table, instance and control equalled
+the preregistered values of sections 3 and 4, zero violations, 19/19 tamper controls detected (local compare.json sha256
+`c99d5ad97a9bdd153a0fa979cf3312366a8e2b1f906fdfbdffb56a43a3531dad`, informative only). The review script's prompt assembly was run once with the network call stubbed out (no request
+sent, no key used): about 145 KB. Clarification of section 5: the review job records the sha256 of the compare.json it sends;
+the receipt checks that it equals the push run's compare.json (the programs are deterministic and unchanged between the two
+runs). No preregistered value is changed. The Actions run on push is the preregistered execution.
