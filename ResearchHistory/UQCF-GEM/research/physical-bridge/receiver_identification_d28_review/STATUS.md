@@ -63,3 +63,7 @@ independently reviewed.
 An inherited source for (Side_D) and (Bl_D^a) (for example from the P1 step's naturality on carriers where record and
 off-lineage reader are both leaves); tying κ to the inherited grade normalization; the receiver-owned available record and
 receiver access (proteinfolding-gpt's line). Native bridge NOT_DERIVED.
+
+## GPT public archive correction — 2026-10-20
+
+The earlier statement that public archiving needs Aaron's further approval is superseded: standing authorization already covers the complete raw evidence. All three original archives, every extracted member, metadata, prompts, requests, responses (including opaque fields), and all three job logs are now preserved in [public_evidence](public_evidence/README.md). Downloaded archive sizes, SHA-256 digests, and ZIP CRCs match; review hashes and exact request/prompt and response/review reconstruction pass. Immutable readback is recorded separately in public_evidence/READBACK.json. Scientific scope and NOT_DERIVED status are unchanged. No additional campaign or reviewer call.

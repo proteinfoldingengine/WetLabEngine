@@ -1,0 +1,27 @@
+{
+  "verdict": "ACCEPTED",
+  "reconstruction": [
+    "Lemma 33.0 (ledger conservation for every table under PN): VERIFIED by a direct telescoping sum of the holding formula from Lemma 31.0, yielding exactly \u03ba for every carrier and unit.",
+    "Theorem 33.1 ((ET_D) iff (Bl_D^a) and (Side_D) iff (Diag_D) and (Side_D)): VERIFIED under PN alone, with no positivity, sibling comparison, or uniformity between carriers. The case analysis of the vertices of a carrier in which a_d is a leaf, and the test carriers [0, a_d] and [0, a_{i+1}] union [0, c], correctly establish the equivalences. The after-step statement is VERIFIED via PN and the P1 step (CN).",
+    "Proposition 33.2(a) (each equality independent and needed, count of equalities): VERIFIED by the provided \u03ba id witness tables with single entry perturbations.",
+    "Proposition 33.2(b) (every other entry free, signed or not): VERIFIED. The leak t satisfies (POS) only for t = 0 when a_m has a second child, and (FC) only for t = 0.",
+    "Proposition 33.2(c) (no second child address is needed): VERIFIED. On a chain, (Side_D) is vacuous, making (ET_D) exactly (Bl_D^a).",
+    "Proposition 33.2(d) (sign of \u03ba): VERIFIED.",
+    "Corollary 33.3(a) (positivity on Genesis, forks, and lines of descent as a source of (Side_D)): VERIFIED by citing Theorem 31.1(a)-(b).",
+    "Corollary 33.3(b) (cone-local reads (S) as a second source): VERIFIED. (Side_D) is strictly weaker than (S), correctly demonstrated by the example on 0 -> {1 -> 2, 3} for the two climbs, yielding the vector (0, -1, 1, 1).",
+    "Hand-written instances Y1 to Y5 and preregistered values: VERIFIED by exact recomputation. Y1 yields [\"0\", \"-1\", \"1\", \"1\"], Y2 yields \"1/2\", Y3 yields \"1\", Y4 yields \"-1/2\", and Y5 yields [\"0\", \"0\", \"1\"]."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "inserted_mechanisms": [
+    "(Bl_D^a) and (Side_D) are honestly declared as assumed conditions on proposed reads and not as inherited physical facts.",
+    "The carriers used in the proofs are presented only as test configurations of the read law and not as occurring events.",
+    "No vertex is presented as performing a read, a holding as an available record, conservation as information creation, or depth as time or distance.",
+    "The finite checks are separated from the general proofs and the scratch is correctly disclosed, including the corrected hand prediction.",
+    "The receiver's gain is honestly described as a redistribution of a conserved holding and not as physical acquisition or access."
+  ],
+  "limitations": [],
+  "novelty_assessment": "Mathematically elementary linear algebra on the address table and telescoping sums. The text correctly disclaims any relation to data processing inequalities, decoherence, einselection, quantum Darwinism, or Landauer bounds. No new mathematics is claimed.",
+  "native_bridge_status": "NOT_DERIVED"
+}

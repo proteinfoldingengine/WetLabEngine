@@ -1,0 +1,43 @@
+{
+ "files": {
+  ".github/scripts/uqcf_rid28_checker.py": {
+   "match": true,
+   "remote_sha256": "3e463ea7ac63ca5fbf428ecc7ed698acba312da79fa3107fa2a140e50a8bfa3e"
+  },
+  ".github/scripts/uqcf_rid28_compare.py": {
+   "match": true,
+   "remote_sha256": "a4db87faca40c4a42dd5f43075392c5ff6c927e5455c513842ca1f9417b3e7d2"
+  },
+  ".github/scripts/uqcf_rid28_producer.py": {
+   "match": true,
+   "remote_sha256": "8c1153f74aa00dd1042c72175e08f16f50148f727e07d0ef00ab849266ff60a9"
+  },
+  ".github/scripts/uqcf_rid28_publication.py": {
+   "match": true,
+   "remote_sha256": "b427f018597ad7e08574759d96b56f0aaa295a364ea397ac68fb1c6d7d94e9f8"
+  },
+  ".github/scripts/uqcf_rid28_review.py": {
+   "match": true,
+   "remote_sha256": "3c0687f2b33bcdd82d7649a35ac7631196f3508abbaffd0ce74ebfd48b454e69"
+  },
+  ".github/workflows/uqcf-gem-rid28-review.yml": {
+   "match": true,
+   "remote_sha256": "dcaf595051fcf7790a0c7aafebf7fe17e2eed62a1ec295bbc6ba7614debecf87"
+  },
+  "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d28_review/FREEZE.md": {
+   "match": true,
+   "remote_sha256": "51715b028151e586dc48297f6a54d5b0dcb12c79526b2bea0f79bff501d52cdd"
+  },
+  "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d28_review/RESULT.md": {
+   "match": true,
+   "remote_sha256": "a747459613ab088fb363c583cc6cd5ed4333850b64758b88fbba14fcd50529e4"
+  }
+ },
+ "model_returned": "gemini-3.1-pro-preview",
+ "review_sha256": "44d11a76635806d5a8c5251303c627620e032743ea9e0ac31c3ce7391396d638",
+ "run_id": "39346463757",
+ "sha": "4780e0e76098aedf7e8446ec67ec9926c817ab44",
+ "status": "PASS",
+ "verdict": "ACCEPTED",
+ "verify_status": "GREEN"
+}
