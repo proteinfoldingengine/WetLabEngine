@@ -1,0 +1,237 @@
+{
+  "status": "PASS",
+  "date": "2026-10-20",
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "branch": "research/uqcf-overlapping-guard-exchange",
+  "publication_commit": "520b70638427ed48f8061fa5d2ef8ee61b4a5a44",
+  "publication_parent": "0ca26a872be93d6bff4ac4cacb26533f202b4ebe",
+  "scientific_sha": "86ea348c5886005431413eefd2207a293438f8fc",
+  "workflow_sha": "af114e24727f82c6e632ffce74452e9c62c323d3",
+  "run_id": 39429834992,
+  "run_attempt": 1,
+  "authorization": "User explicitly approved publication of this run's three original archives, raw responses, prompts, metadata and logs to the public research branch on 2026-10-20.",
+  "scope": "Publication integrity of the accepted conditional single-event receiver-gain result; no new scientific execution or native derivation.",
+  "original_archives": 3,
+  "extracted_members": 13,
+  "complete_job_logs": 3,
+  "verification": {
+    "original_zip_size_digest_crc_and_all_members": "PASS",
+    "complete_artifact_manifests": "PASS",
+    "exact_frozen_prompt_and_request_reconstruction": "PASS",
+    "raw_response_answer_and_verdict_reconstruction": "PASS",
+    "fresh_log_readback_match": "PASS",
+    "immutable_published_content_and_git_blob_checks": "PASS",
+    "continuation_exact_readback": "PASS",
+    "frozen_scientific_files_unchanged": "PASS"
+  },
+  "published_files": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/ACCEPTANCE.md",
+      "bytes": 6206,
+      "sha256": "9e2b40e40deab0f619c82f4fc3312425e4244ae79ab49f530b71273630c2dc83",
+      "git_blob": "11fb0c3e8254b916b3a10e8f7a55d06f4f29bfe8",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/ARCHIVE_VERIFICATION.json",
+      "bytes": 3971,
+      "sha256": "70373da24ce0f4650789066ec62d575693b44e01579449e4fe7f46f839fdb879",
+      "git_blob": "779e2ee31617ee3e1e9c2cab0a4481351ab54a60",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/MANIFEST.json",
+      "bytes": 5706,
+      "sha256": "503566dec8a2536fccd58f21ddb7bffae74ae594f722b400e6477b581018e8c8",
+      "git_blob": "2f1dc546fbe0f1d659e24d09554bca3154bb0252",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/README.md",
+      "bytes": 3261,
+      "sha256": "06e943dfbab8a870e0247a4c77ca9eec962fa779142526bebae0215fdcba6961",
+      "git_blob": "8aba9e90c8a903814465da86fac785cb8db9ecc7",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/archives/single-event-gain-integrity-1.zip",
+      "bytes": 1823,
+      "sha256": "f5ef4f01b8b978c88166d45d6d34f7e24292472bd4aa4cc92518115b19140e10",
+      "git_blob": "623712752f18235fa751030827d71e944af29cef",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/archives/single-event-gain-publication-1.zip",
+      "bytes": 1972,
+      "sha256": "3dd96f9436d5e98a9480ba0e0477c866f102e694691c6b213766b35ac03bbf03",
+      "git_blob": "2b919e662c295a316de41de258e22dbc19eb920e",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/archives/single-event-gain-review-1.zip",
+      "bytes": 143847,
+      "sha256": "daa6a669c5740998d150e3614ec33001370951a84ff18738544fde29cc45cb9d",
+      "git_blob": "36c8269d4dc97727ef92ea02ece805f97e15ce8e",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-integrity-1/artifact_manifest.json",
+      "bytes": 130,
+      "sha256": "165e6712e922dfb245d96ffb21ef849920a58f2f142501c6aed8abd15c577545",
+      "git_blob": "5607756b40a3befe5baf9182955a104d286d9fc1",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-integrity-1/integrity.json",
+      "bytes": 5386,
+      "sha256": "00ee4bb2638c6d90b8f78aebc7bfcc45b235343deacc04be95f6f99d103405cf",
+      "git_blob": "f9cdc9b92a2af5b965062216126b97fc0b95a636",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-publication-1/artifact_manifest.json",
+      "bytes": 132,
+      "sha256": "aeba02ca2ba13fee4c2492f0c378daeeb55836c9b734e53af7beebe5b5f9458d",
+      "git_blob": "46914d62870b7520090d1bcb7123caaadc6d899f",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-publication-1/publication.json",
+      "bytes": 5655,
+      "sha256": "4db894941b24f963c5a397b81a625d9dd1a4488db420041e1959778702c9427e",
+      "git_blob": "c036ded9ba74bf1a38c41186408d12a99a492561",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-review-1/artifact_manifest.json",
+      "bytes": 1020,
+      "sha256": "21db7eff23f0550f0e7a11399b04c7b09c0a711b32e3262f3ae2518e9151787e",
+      "git_blob": "b24369f7724969d83742819e4a8fd5cdf533fe34",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-review-1/integrity.json",
+      "bytes": 5386,
+      "sha256": "00ee4bb2638c6d90b8f78aebc7bfcc45b235343deacc04be95f6f99d103405cf",
+      "git_blob": "f9cdc9b92a2af5b965062216126b97fc0b95a636",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-review-1/model_metadata.json",
+      "bytes": 459,
+      "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+      "git_blob": "928720139032813386b0cf0819cb291a2846a468",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-review-1/prompt.txt",
+      "bytes": 167794,
+      "sha256": "55ee81516115cec5161584f339c7d8d4f32cbf3e6a9fe9fdc8dd42ff62188e93",
+      "git_blob": "460136e19e217dbaf9ce6f779955ef0ccc0ca510",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-review-1/request.json",
+      "bytes": 169615,
+      "sha256": "c4155eee880aa3bd250bdfa5ae8090ece38dc86787a2ab1108a9215e717b256f",
+      "git_blob": "cc51816038f74df66406909396338ffd9275ecb9",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-review-1/response.json",
+      "bytes": 27478,
+      "sha256": "5612d94f931e88fecbf0a800382c22dadb48b2fedf915a9574165f3c2f63613a",
+      "git_blob": "cb06922e594ebe76c29dbca3328210738e3c1cf7",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-review-1/review.txt",
+      "bytes": 3455,
+      "sha256": "e2ef309b183fa520e40751e9a1a3211c20cad2f03d579e2b6d65b46a9bc30148",
+      "git_blob": "6b5af84b14a5040f5740f0f54d830b3463ed8ff8",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-review-1/review_identity.json",
+      "bytes": 462,
+      "sha256": "91be776d73dfb4fd40b625bdc1a5c4674658b2adfe70f841050a4aaae34e3c21",
+      "git_blob": "9b8aaebc32cb0f8405e9bcc5ffa7bb38746a6326",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/artifacts/single-event-gain-review-1/verdict.json",
+      "bytes": 3456,
+      "sha256": "77d36b473dffdad5c7a682aa8b77bb5a838a6f8c59028c05811f865c6cdaea26",
+      "git_blob": "7c8090d8f9218e472d88f06ddb1acf6d00b3f12b",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/logs/argument-review-118651781519.log",
+      "bytes": 17990,
+      "sha256": "6222c933b4cef057041ce819dcc5541f781c0384841a23e0687aa427181bfbef",
+      "git_blob": "173f1e98de8d1581ead92af90d218fa4f9b4bbf4",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/logs/integrity-118651685440.log",
+      "bytes": 21672,
+      "sha256": "f74a8127d9b7dd316ac040cf4d948f60f2026da9614938f853ed23c837655b9b",
+      "git_blob": "8230350808c5cf4e8c584deecc364739493dde03",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/logs/publication-audit-118652343272.log",
+      "bytes": 17807,
+      "sha256": "251afc23c7a0a0b6924b8df9775e451840bd469a5ad3e00d69da420e13a16294",
+      "git_blob": "d3eeb480516800f4d1e2212a7450b6e8cc434d52",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/metadata/workflow_artifacts.json",
+      "bytes": 2629,
+      "sha256": "04919a4cf045d5b2585ccae061bea7faa80c2e7846cbcfbfe458d0c65c1a52a1",
+      "git_blob": "afab5d9cd0344121bbd3b6c79ea3180f25ccb0e5",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/metadata/workflow_jobs.json",
+      "bytes": 4246,
+      "sha256": "edd7c8a22600613ae5cea5cd0b1f7d4cbdf68a4b9f0d928dbbe5615487006315",
+      "git_blob": "df7c4ea84a452150b51dad25daba9184762c0c61",
+      "exact_content_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/public_evidence/metadata/workflow_run.json",
+      "bytes": 15229,
+      "sha256": "c0236100382f7136a2054f78652b6ac8d3fbf4bc68ee90254d67df8fb6805f27",
+      "git_blob": "a1685dbbf6818f25200d874178e8882ba6574c8c",
+      "exact_content_match": true
+    }
+  ],
+  "continuation": {
+    "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+    "git_blob": "044c65f5ec9b17235829b044508c3bef2addb5c7",
+    "exact_content_match": true
+  },
+  "frozen_scientific_files": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/RESULT.md",
+      "git_blob": "035beb1ad4f8bd0342bc7aa479afa1ca428efa82",
+      "unchanged_from_scientific_freeze": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/SOURCE_PACKET.json",
+      "git_blob": "a098cc5901bc0eb414ff87945cea5f42cb0ed6cf",
+      "unchanged_from_scientific_freeze": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain/FREEZE.json",
+      "git_blob": "eef816f7e57c52e5f92f4ea32ddfb829c0fb514d",
+      "unchanged_from_scientific_freeze": true
+    }
+  ],
+  "scientific_verdict": "ACCEPTED",
+  "native_bridge_status": "NOT_DERIVED",
+  "separate_fixed_record_acquisition_review": "NOT_INCLUDED; UNREVIEWED_ANALYTICAL_SUPPORT",
+  "note": "This receipt is added after verifying the evidence publication commit. It does not include its own hash."
+}
