@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "publication_commit": "9664c5e64182b911bd7d6169e46305021d644d7e",
+  "publication_parent": "af114e24727f82c6e632ffce74452e9c62c323d3",
+  "branch": "research/uqcf-overlapping-guard-exchange",
+  "authorization": "User explicitly approved publication of the draft, source manifest and continuation note in this conversation on 2026-10-20.",
+  "scientific_status": "UNREVIEWED_ANALYTICAL_SUPPORT",
+  "independent_review": false,
+  "native_bridge_status": "NOT_DERIVED",
+  "scientific_execution": false,
+  "scope": "Publication integrity only; no mathematical acceptance or physical derivation.",
+  "recovery": "Workspace maintenance removed scratch files. The saved ZIP download returned HTTP 522 twice. Manuscript and continuation addition were recovered from their exact conversation text; the eight-source manifest was regenerated from the same pinned source bytes and construction algorithm. These checks compare GitHub with that prepared payload, not with a newly downloaded ZIP.",
+  "checks": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_record_acquisition/CONSTRUCTION.md",
+      "bytes": 14646,
+      "sha256": "4234cfbdd617300f0aee4ea7cb29236552b5086c095b81b13d6281d116396ecf",
+      "git_blob": "ba8c8178adf328d9febb6ded9a2c94105a43faf1",
+      "exact_text_match": true,
+      "git_blob_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_record_acquisition/SOURCE_MANIFEST.json",
+      "bytes": 5363,
+      "sha256": "3c914d88819e76caca939ef2b830f33091120d0a89405cbf67f4480f73fcef26",
+      "git_blob": "1aae64c0ad49798524e486dd678f8f55423ed114",
+      "exact_text_match": true,
+      "git_blob_match": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "bytes": 261481,
+      "sha256": "f2acc73be7d9ec724c94c9e942727ec228eaf5cb32e7477c3b6c4a7de542d2e9",
+      "git_blob": "776991d95c287c9c04f026efd90fec4526d0d308",
+      "exact_text_match": true,
+      "git_blob_match": true
+    }
+  ]
+}
