@@ -1,0 +1,262 @@
+{
+  "status": "PASS",
+  "publication_commit": "d9b2fa15092180409c9b783eec72f813ba1957c0",
+  "source_workflow_sha": "4780e0e76098aedf7e8446ec67ec9926c817ab44",
+  "run_id": 39346463757,
+  "attempt": 1,
+  "scope": "Original evidence preservation; not a new scientific acceptance",
+  "archive_download_verification": "All three original ZIP sizes and SHA-256 digests matched GitHub artifact metadata; CRC checks passed before publication.",
+  "review_verification": "All five original review-manifest hashes verified; exact request/prompt and response/review reconstruction passed before publication.",
+  "fresh_readback": {
+    "text_checks": [
+      {
+        "path": "ARTIFACTS.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "MANIFEST.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "argument-review.log",
+        "exact_text_match": true
+      },
+      {
+        "path": "publication-audit.log",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-publication-1/publication.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-review-1/manifest.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-review-1/model_metadata.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-review-1/prompt.txt",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-review-1/request.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-review-1/response.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-review-1/review.txt",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-review-1/transport.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-verify-1/SHA256SUMS",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-verify-1/checker.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-verify-1/compare.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-verify-1/env.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-verify-1/producer.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "rid28-verify-1/producer_repro.json",
+        "exact_text_match": true
+      },
+      {
+        "path": "verify.log",
+        "exact_text_match": true
+      }
+    ],
+    "blob_checks": [
+      {
+        "path": "ARTIFACTS.json",
+        "size": 2133,
+        "sha256": "7e8d9038403571c2f6c218a9dae9673cdf037bc6a591a49e1e29d9c6437b43ba",
+        "git_blob": "791c82d22977250c7edfccb88ea8a3595225ea73",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "argument-review.log",
+        "size": 23041,
+        "sha256": "049ad4d1cb738edff16c08b10319793c0e2b2e9b6987e58949c4a7e9339f1ba0",
+        "git_blob": "7ff6cf248b148a906572b5e8dec4418fed986771",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "publication-audit.log",
+        "size": 28467,
+        "sha256": "e6501dfacc0718860159e4ee0ef3982a820e6878f83180bef27ec9ff085ae10c",
+        "git_blob": "561e42641c2aa343e889b67dcedc43ce02d3c596",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-publication-1/publication.json",
+        "size": 1661,
+        "sha256": "0f1246af174ec702d7d61b059499b4c685bb16c7dd10fa67f8b653ff97530d5b",
+        "git_blob": "fee619615101953bf7e78b0e8a4fec10b75cdf48",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-publication-1.zip",
+        "size": 880,
+        "sha256": "713c6cbe9af6e8ca30ff5960cd7595a684dcfe39b705d5d2b6044c46949fb24b",
+        "git_blob": "79e55488e272d827f020e7972784f54adb33f3e0",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-review-1/manifest.json",
+        "size": 1300,
+        "sha256": "5896982fc02a5986410094b1d9b9b65b8d6e6a63f9426cf901120188d6cabef8",
+        "git_blob": "a3c2429b5d8c87fd7a0d95a51d8aa17646cacc01",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-review-1/model_metadata.json",
+        "size": 459,
+        "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+        "git_blob": "928720139032813386b0cf0819cb291a2846a468",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-review-1/prompt.txt",
+        "size": 146381,
+        "sha256": "f418e56a60afcea7556f694621f3745211d5048382e720851be4b16193025d5a",
+        "git_blob": "d7fac25b7599c80115b0d7bb006080b04b1a934a",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-review-1/request.json",
+        "size": 148080,
+        "sha256": "451304f16e4267cb3f684c6ac8bf26caa81cb40a4b66fd975e9423562f95cccd",
+        "git_blob": "f94f59dde659202bccf31e355b549517f7a16c89",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-review-1/response.json",
+        "size": 21743,
+        "sha256": "eac4c160c0a3a624339cedb3bcc920eeb4c3ebdd0ac2382d8c6ca401a0e45443",
+        "git_blob": "a4fb60854a200168f5c1bcffc0cae01d39264cf3",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-review-1/review.txt",
+        "size": 2942,
+        "sha256": "44d11a76635806d5a8c5251303c627620e032743ea9e0ac31c3ce7391396d638",
+        "git_blob": "0b9be31e895450a70bf887c7c7dcac8634f54941",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-review-1/transport.json",
+        "size": 75,
+        "sha256": "bbb9f343df9a7b9ee0cd8acd7b4091cce8dcb11ad4bd0725852b147963af43f8",
+        "git_blob": "d0cf1363219a278fd5e7d52de7a02ba48ea99c92",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-review-1.zip",
+        "size": 109079,
+        "sha256": "c76fd52062ec02bdc8bc39fd05d6ae3d93276efe04b114b6a5024b03e72c2413",
+        "git_blob": "97c808ed7dcdfa4195d71564cf2834325e3df917",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-verify-1/SHA256SUMS",
+        "size": 464,
+        "sha256": "5c9f09b9dffd3c713b6a350e76e8df35e584663681b5a761df27312108dc97d0",
+        "git_blob": "4396bb0fba4934cc3f818cdb0b89b0f7be28085e",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-verify-1/checker.json",
+        "size": 4853,
+        "sha256": "37774630e72a192a5af5e0daa651c32c96a303a909ced22dcbef8f08d7197611",
+        "git_blob": "94ad8362e47ae286ac8a2f18f80be9170dc2962a",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-verify-1/compare.json",
+        "size": 5671,
+        "sha256": "c99d5ad97a9bdd153a0fa979cf3312366a8e2b1f906fdfbdffb56a43a3531dad",
+        "git_blob": "8edc520560ade7b14eefe8432800c91415fae9e8",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-verify-1/env.json",
+        "size": 175,
+        "sha256": "03502029d9ba8c62b5fd9e8b636e4227c54adb38cbab5da2553f188c35ff5ea4",
+        "git_blob": "dac014d07315ce67df99708d5f3b16b4e78aff28",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-verify-1/producer.json",
+        "size": 4854,
+        "sha256": "c029dd8bc91f8b12ca40bb4e5dc9561b3772d909c7f5e5736a44a0d6722f7b58",
+        "git_blob": "bd52c64bd9ecbe8578a69eb53aecb7ca4f5eff23",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-verify-1/producer_repro.json",
+        "size": 4854,
+        "sha256": "c029dd8bc91f8b12ca40bb4e5dc9561b3772d909c7f5e5736a44a0d6722f7b58",
+        "git_blob": "bd52c64bd9ecbe8578a69eb53aecb7ca4f5eff23",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "rid28-verify-1.zip",
+        "size": 5114,
+        "sha256": "f07505ff30f9338570afd671427a469ad3105e2f54fc23f984c0f923412365d0",
+        "git_blob": "c05cdc29a092aec1025c8551c19b2539f8597671",
+        "git_blob_match": true,
+        "size_match": true
+      },
+      {
+        "path": "verify.log",
+        "size": 27775,
+        "sha256": "d97c881d0c504b825807df4ac3d9ab08377c6668f1dac2f8b9cff26a4ae78ebf",
+        "git_blob": "df849b42c5653fcda4de27eed24c2254b5fd5d77",
+        "git_blob_match": true,
+        "size_match": true
+      }
+    ]
+  },
+  "prior_readback": "README.md, STATUS.md and continuation full texts also matched immutable publication during the preceding turn; 22 total full text checks then.",
+  "native_bridge_status": "NOT_DERIVED"
+}
