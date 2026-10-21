@@ -102,3 +102,8 @@ The ledger correction matters here: a receiver can gain information without crea
 The target is one derived transfer of a distinction. Code will verify the construction after the mechanism is established."
 
 How it applies: each run advances ONE positive construction. It starts from a source distinction and an uninformed receiver, builds their joint retained structure from earned composition and compatibility, and finds the receiver consequence that structure determines (a partial one is fine). The transfer is redistribution or correlation, not global creation of information. The strongest version is written first, as a committed construction document. Adversarial review, admission grading and code verification wait until the mechanism is drafted, and then it goes to Gemini review. No new runs are spent on stop or rejection records.
+
+
+## Addendum 2026-10-21: operation-first course correction
+
+Following Aaron's request to get the research back on rails, apply [DIRECTION_UPDATE_2026_10_21.md](DIRECTION_UPDATE_2026_10_21.md). It supersedes mandatory pursuit of the exact eight-vertex realization and the recent extra requirement to derive measurement occurrence. Actual atemporal measurement occurrence remains the accepted starting input; the operation/state/receiver-record correspondence must still be earned. Begin from an inherited operation and derive its consequence, allowing the example to change. Credit new necessary mathematics separately from physical identification. The next concrete task is one existing P1 retained record traced through its event into a justified existing consumer or available observation. Preserve every scientific and independent-review gate and avoid repeating already documented gaps.
