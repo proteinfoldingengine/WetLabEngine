@@ -1,0 +1,86 @@
+{
+  "carrier_receipts": [
+    {
+      "L": 5,
+      "baseline_reason": null,
+      "baseline_status": "IDENTIFIABLE",
+      "complex_reason": null,
+      "flat": true,
+      "gauge_orbit_count": 1,
+      "scale": "1",
+      "status": "IDENTIFIABLE",
+      "tangent_rank": 2
+    },
+    {
+      "L": 5,
+      "baseline_reason": null,
+      "baseline_status": "IDENTIFIABLE",
+      "complex_reason": null,
+      "flat": true,
+      "gauge_orbit_count": 1,
+      "scale": "7/3",
+      "status": "IDENTIFIABLE",
+      "tangent_rank": 2
+    },
+    {
+      "L": 7,
+      "baseline_reason": null,
+      "baseline_status": "IDENTIFIABLE",
+      "complex_reason": null,
+      "flat": true,
+      "gauge_orbit_count": 1,
+      "scale": "1",
+      "status": "IDENTIFIABLE",
+      "tangent_rank": 2
+    },
+    {
+      "L": 7,
+      "baseline_reason": null,
+      "baseline_status": "IDENTIFIABLE",
+      "complex_reason": null,
+      "flat": true,
+      "gauge_orbit_count": 1,
+      "scale": "7/3",
+      "status": "IDENTIFIABLE",
+      "tangent_rank": 2
+    }
+  ],
+  "origin_receipts": {
+    "application.py": {
+      "blob": "30348d71d366a751932ec2d58d18a9148d81ae83"
+    },
+    "application_controls.py": {
+      "blob": "4e3d4eeadc525dc1e263ca451de8c8ec0ad77835"
+    },
+    "carriers.py": {
+      "blob": "5cd286b014bb44025e16832ee91a6e6665291c8c"
+    },
+    "evaluate.py": {
+      "blob": "de3f568bb394ca34e127e4158e7ffd8c059b7595"
+    },
+    "evidence.py": {
+      "blob": "8b577fb0370ae77018e5b03945ffa2a51cf1b988"
+    },
+    "exact_algebra": {
+      "blob": "c67ea42b61321469f7735ce589f2e729b241666a"
+    },
+    "holonomy": {
+      "blob": "bad3f06b291bb448a903b4f48344a9e54a633f68"
+    },
+    "operational_complex": {
+      "blob": "8163beba8e52bc2a3a6d0c8cf59dd1257222f65c"
+    },
+    "presentation_checks.py": {
+      "blob": "d7735c945a916ca9d9c8a33e2b02e2182f9bfc39"
+    },
+    "projection.py": {
+      "blob": "f857f2cf1cd4c265c193121236af8e441b1f01dc"
+    },
+    "protocol_types": {
+      "blob": "e90a98d17baa6028f0d50a165f0b9d0046de13a2"
+    },
+    "transport": {
+      "blob": "df552284c16d43bc876340fbc13fe91eb9ee6a00"
+    }
+  }
+}
