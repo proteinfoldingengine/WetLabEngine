@@ -1,0 +1,100 @@
+name: UQCF Theorem O witness check (VERIFICATION_PLAN + AMENDMENT_1)
+on:
+  push:
+    branches: [grok/ordering-reduction-theorem-o]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification/*.py'
+      - '.github/workflows/uqcf-theorem-o-witness.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: uqcf-theorem-o-witness
+  cancel-in-progress: false
+env:
+  V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+jobs:
+  witness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Producer (DFS) and independent checker (BFS over prefixes) with mutation controls
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          git rev-parse HEAD > out/execution-head.txt
+          python --version > out/python-version.txt
+          python -B "$V/producer.py" out/producer_output.json 2>&1 | tee out/producer.log
+          set +e
+          python -B "$V/checker.py" out/producer_output.json > out/checker_report.json 2> out/checker.stderr
+          code=$?
+          set -e
+          echo "checker_exit=$code" | tee out/checker_exit.txt
+          python - <<'PY'
+          import json
+          r=json.load(open('out/checker_report.json'))
+          print('verdict', r['verdict']); print('failures', r['failures'])
+          for m in r['mutation_controls']: print(m['mutation'], 'REJECTED' if m['rejected'] else 'ACCEPTED(UNSOUND)')
+          json.dump(r['mutation_controls'], open('out/mutation_controls.json','w'), indent=1, ensure_ascii=False)
+          PY
+          (cd out && sha256sum * > SHA256SUMS)
+          test "$code" -eq 0
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: theorem-o-witness-${{ github.sha }}
+          if-no-files-found: error
+          path: out
+  inherited-fcv1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: FCV-1 behavioral and deliberate-defect suite (unchanged)
+        run: |
+          set -euo pipefail
+          mkdir -p fcv
+          git rev-parse HEAD > fcv/execution-head.txt
+          python -m pip freeze > fcv/dependencies.txt
+          set +e
+          (cd ResearchHistory/UQCF-GEM/foundational-closure-verification && python -B tests/test_fcv.py) 2>&1 | tee fcv/test_fcv.log
+          s=("${PIPESTATUS[@]}")
+          set -e
+          echo "test_fcv_exit=${s[0]}" | tee fcv/exit.txt
+          (cd fcv && sha256sum * > SHA256SUMS)
+          test "${s[0]}" -eq 0
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: theorem-o-inherited-fcv1-${{ github.sha }}
+          if-no-files-found: error
+          path: fcv
+  publication:
+    needs: [witness, inherited-fcv1]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: theorem-o-witness-${{ github.sha }}
+          path: got
+      - name: Regenerate producer bytes and compare byte-for-byte; verify artifact digests
+        run: |
+          set -euo pipefail
+          (cd got && sha256sum -c SHA256SUMS)
+          python -B "$V/producer.py" regen.json > /dev/null
+          cmp regen.json got/producer_output.json
+          sha256sum regen.json got/producer_output.json
+          echo "producer bytes reproduced"
