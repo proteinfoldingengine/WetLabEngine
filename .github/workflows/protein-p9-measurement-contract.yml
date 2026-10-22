@@ -1,0 +1,33 @@
+name: Protein P9 Measurement Contract
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "ResearchHistory/UQCF-GEM/protein/P9/**"
+      - ".github/workflows/protein-p9-measurement-contract.yml"
+  push:
+    branches:
+      - research/protein-p9-coherence-state-falsifier
+    paths:
+      - "ResearchHistory/UQCF-GEM/protein/P9/**"
+      - ".github/workflows/protein-p9-measurement-contract.yml"
+
+jobs:
+  measurement-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest numpy
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Run P9 measurement contract
+        run: |
+          python -m pytest -q ResearchHistory/UQCF-GEM/protein/P9/test_p9_measurement.py

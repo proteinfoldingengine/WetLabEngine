@@ -1,0 +1,110 @@
+name: Protein P9 Authoritative Measurement
+
+on:
+  push:
+    branches:
+      - research/protein-p9-coherence-state-falsifier
+    paths:
+      - "ResearchHistory/UQCF-GEM/protein/P9/P9_AUTHORITATIVE_LAUNCH.md"
+
+jobs:
+  measurement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout exact launch head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify frozen scientific packet
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/protein/P9/P9_ACCEPTANCE.md)" = "d6251c7a58bb98c5ecd97825a6d01e57b62a4e7c"
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/protein/P9/P9_SOURCE_MANIFEST.json)" = "16ab23c9405b371af6886cf034e79370c54359bc"
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/protein/P9/p9_core.py)" = "c421e210b8f14fe2639c92be7635621651ae0187"
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/protein/P9/test_p9_contract.py)" = "b93fdb116c586e44034ab60a16fea67e670361b0"
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/protein/P9/p9_measurement.py)" = "c4247d98db9944709176ee305ddda452cb8b533a"
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/protein/P9/test_p9_measurement.py)" = "b938c7bebe092de6faed9797ebd8f5afaed78cf3"
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/protein/P1/p1_core.py)" = "511f57dabceb895a77a2d0d258d4fda83baac8a1"
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/protein/P5/p5_core.py)" = "3eb97d04b793588cf1f54ca7bfd9cc15be8dcff2"
+          test "$(git rev-parse HEAD:ResearchHistory/UQCF-GEM/protein/P6/p6_core.py)" = "e517164834636ffc5e52ea118f9d43624edebdad"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install measurement dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest numpy
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Re-certify frozen contracts
+        run: |
+          python -m pytest -q ResearchHistory/UQCF-GEM/protein/P9/test_p9_contract.py
+          python -m pytest -q ResearchHistory/UQCF-GEM/protein/P9/test_p9_measurement.py
+
+      - name: Verify premeasurement certification boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("ResearchHistory/UQCF-GEM/protein/P9/P9_PREMEASUREMENT_CERTIFICATION.json")
+          data = json.loads(p.read_text())
+          assert data["schema"] == "protein-p9-premeasurement-certification-v1"
+          assert data["prospective_measurement_authorized"] is True
+          assert data["native_result_exposed"] is False
+          assert data["core_contract"]["green_run_id"] == 35383868978
+          assert data["measurement_contract"]["green_run_id"] == 35384332131
+          PY
+
+      - name: Run authoritative P9 measurement
+        run: |
+          rm -rf ResearchHistory/UQCF-GEM/protein/P9/measurement_output
+          python ResearchHistory/UQCF-GEM/protein/P9/p9_measurement.py
+
+      - name: Validate authoritative packet
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          root = Path("ResearchHistory/UQCF-GEM/protein/P9/measurement_output")
+          required = [
+              "p9_results.csv",
+              "p9_group_correlations.csv",
+              "p9_primary_comparisons.csv",
+              "p9_summary.csv",
+              "p9_acceptance.json",
+              "p9_run_manifest.json",
+              "SHA256SUMS.txt",
+          ]
+          for name in required:
+              assert (root / name).is_file(), name
+          acceptance = json.loads((root / "p9_acceptance.json").read_text())
+          assert acceptance["decision"] in {
+              "GO_TRANSFERABLE_COHERENCE_HANDOFF_COORDINATE",
+              "NO_GO_TRANSFERABLE_COHERENCE_HANDOFF_COORDINATE",
+          }
+          manifest = json.loads((root / "p9_run_manifest.json").read_text())
+          assert manifest["schema"] == "protein-p9-measurement-v1"
+          assert manifest["git_head"] == "${{ github.sha }}"
+          expected = {}
+          for line in (root / "SHA256SUMS.txt").read_text().splitlines():
+              digest, name = line.split("  ", 1)
+              expected[name] = digest
+          for name, digest in expected.items():
+              actual = hashlib.sha256((root / name).read_bytes()).hexdigest()
+              assert actual == digest, (name, actual, digest)
+          PY
+
+      - name: Upload authoritative P9 packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: protein-p9-authoritative-measurement
+          path: ResearchHistory/UQCF-GEM/protein/P9/measurement_output/
+          retention-days: 90
+          if-no-files-found: error

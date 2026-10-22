@@ -1,0 +1,31 @@
+{
+  "schema": "protein-p8b-contract-certification-v1",
+  "preregistration_commit": "02683349f5c0d7c961b06401e8b6e5bdda9d2592",
+  "source_manifest_commit": "d0cca9658631cf3527e53d7948a08920f7417b18",
+  "red": {
+    "head": "aebd57f9660392f835c33bd762285203b7698133",
+    "run_id": 35359790594,
+    "job_id": 105647934546,
+    "conclusion": "failure",
+    "expected_failure": "ModuleNotFoundError: No module named 'p8b_core'"
+  },
+  "green": {
+    "implementation_head": "aff558482ca1bf4763aceeaf620884c12222ae11",
+    "run_id": 35360068820,
+    "job_id": 105648856978,
+    "conclusion": "success",
+    "tests": "8 tests passed",
+    "runtime_seconds": 0.079
+  },
+  "frozen_predicates": [
+    "protocol constants and four arms",
+    "exact historical contact-graph Betti1 proxy",
+    "nonconsecutive qualifying-count lifetime semantics",
+    "earliest fixed-time LockIn control at step 99",
+    "coordinate-effective Compaction and LockIn force sets",
+    "untuned recovered coefficients",
+    "common matched initial torsions across arms",
+    "native-information firewall"
+  ],
+  "scientific_boundary": "Contract certification only. No prospective native-evaluation outcome has been exposed."
+}

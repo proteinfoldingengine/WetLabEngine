@@ -1,0 +1,49 @@
+# 1ubq_baseline.yaml
+#
+# Baseline experiment configuration for folding 1UBQ.
+
+# --- Experiment Metadata ---
+patch_id: "Patch_623.0_Torsional_Incoherence_Penalty"
+random_seed: 42
+
+# --- Simulation Setup ---
+pdb_id: "1UBQ"
+num_residues: 76
+num_steps: 2000
+log_interval: 50
+force_random_coil_init: True
+
+# --- Tunable Hyperparameters ---
+learning_rates:
+  coords: 0.001
+  gamma: 0.1
+
+# --- Tunable Force Constants ---
+tunable_forces:
+  k_contact_spring_base: 1.5
+  k_df_funnel: 6000.0
+  k_gamma_surge: 2.0
+  k_phi_torque_base: 1.0
+  k_lj_repulsion_base: 1.25
+  k_hydro_base: 0.75
+  k_electrostatic_base: 1.0
+  k_rama: 0.05
+  K_ENTROPY_BURST: 2.0
+  # ✅ New constant for the torsional penalty force
+  k_torsion_penalty: 0.5
+
+# --- Physics-Based Gating Parameters ---
+topological_gating:
+  betti_threshold: 8
+  dag_transition_lifetime: 100
+  force_activation_lifetime: 50
+
+# --- Coherence Potential Well Parameters ---
+coherence_well:
+  gamma_target: 3.0
+  phi_max: 2.0
+
+# --- ✅ Patch 623.0: Torsional Incoherence Penalty Parameters ---
+torsional_penalty_params:
+  gamma_coherence_threshold: 2.5
+  phi_rms_disorder_threshold: 1.2

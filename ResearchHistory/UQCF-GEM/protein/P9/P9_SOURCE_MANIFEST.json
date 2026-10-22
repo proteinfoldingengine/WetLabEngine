@@ -1,0 +1,91 @@
+{
+  "schema": "protein-p9-source-manifest-v1",
+  "parent_branch": "research/protein-p8b-result-record",
+  "main_base": "dcf493aa898b286d500c2693925038747096042f",
+  "preregistration": {
+    "commit": "f194ad2eabfb722983bf2aac84df4da51f49712c",
+    "file": "ResearchHistory/UQCF-GEM/protein/P9/P9_ACCEPTANCE.md",
+    "git_blob": "d6251c7a58bb98c5ecd97825a6d01e57b62a4e7c"
+  },
+  "contract_red": {
+    "tests_commit": "08e9a4f04563cf5f07c89352c94587215cd686dc",
+    "workflow_commit": "cc5ab22456ca4baef5e407b726bd2fece4da19ea",
+    "workflow_run_id": 35383675093,
+    "job_id": 105725497187,
+    "expected_failure": "ModuleNotFoundError: No module named 'p9_core'"
+  },
+  "core_green": {
+    "implementation_head": "b4573dd46436adc36fd7b957b4f546bdf0f00079",
+    "workflow_run_id": 35383868978,
+    "job_id": 105726089975,
+    "test_result": "8 passed",
+    "runtime_seconds": 24.51
+  },
+  "frozen_git_blobs": {
+    "p9_acceptance": "d6251c7a58bb98c5ecd97825a6d01e57b62a4e7c",
+    "p9_contract_tests": "b93fdb116c586e44034ab60a16fea67e670361b0",
+    "p9_core": "c421e210b8f14fe2639c92be7635621651ae0187",
+    "p9_contract_workflow": "77aa044a6863f931b2bd660582adb5f9a339d2d4",
+    "p1_core": "511f57dabceb895a77a2d0d258d4fda83baac8a1",
+    "p5_core": "3eb97d04b793588cf1f54ca7bfd9cc15be8dcff2",
+    "p6_core": "e517164834636ffc5e52ea118f9d43624edebdad"
+  },
+  "protocol": {
+    "targets": [
+      "1VII",
+      "1L2Y",
+      "1UAO",
+      "1CRN"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "generator_steps": 200,
+    "checkpoints_completed_steps": [
+      50,
+      100,
+      150,
+      200
+    ],
+    "handoff_steps": 100,
+    "optimizer": "Adam",
+    "learning_rate": 0.02,
+    "dtype": "float64",
+    "device": "CPU",
+    "generator_objective": "P6 physical_real_sequence",
+    "handoff_objective": "P6 physical_real_sequence",
+    "optimizer_reset_at_handoff": true,
+    "v9_used_as_force": false,
+    "native_information_used_in_generator": false,
+    "native_information_used_in_score": false,
+    "native_information_used_in_handoff": false,
+    "primary_candidate": "closure_ready",
+    "primary_controls": [
+      "flat_primary",
+      "flat_secondary"
+    ],
+    "primary_outcome": "future_quality = -best_handoff_ca_rmsd_A",
+    "group_statistic": "Spearman across six seeds within target/checkpoint",
+    "n_groups": 16,
+    "comparison_test": "exact two-sided paired sign-flip over group-level Spearman differences",
+    "multiplicity": "Holm across two primary comparisons"
+  },
+  "go_rule": {
+    "mean_candidate_group_spearman_min": 0.35,
+    "candidate_mean_above_both_controls": true,
+    "candidate_positive_each_target": true,
+    "candidate_minus_each_control_positive_each_target": true,
+    "both_holm_adjusted_p_lt": 0.05,
+    "max_covalent_drift": 1e-8,
+    "native_firewall_required": true,
+    "frozen_v9_formula_reproduction_tolerance": 1e-12
+  },
+  "prospective_measurement_authorized": false,
+  "native_result_exposed": false,
+  "boundary": "No P9 native-evaluation state matrix or handoff result has been run or exposed at this manifest point."
+}

@@ -1,0 +1,153 @@
+{
+  "schema": "protein-p8b-independent-verification-v1",
+  "authoritative": {
+    "launch_head": "14a37025b6869b46a79dd5b016aee9889aa7ba4c",
+    "frozen_premeasurement_head": "a85a50c9f9ccdc95871afb653a5200da3ce01007",
+    "workflow_run": 35361130812,
+    "job_id": 105652373518,
+    "artifact_id": 10556959039,
+    "artifact_name": "protein-p8b-authoritative-measurement",
+    "artifact_sha256": "dccab3bb0b261c815f203d62ae1c7c5b5e000dedb8de22b8ded0e73d2f86be6e",
+    "artifact_internal_sha256sums_verified": true
+  },
+  "verifier": {
+    "test_freeze_commit": "1c04499c33cee2aa8bfcb333dce9bd0895e91ded",
+    "implementation_commit": "7f04a23ad5c3ac15b4909d9fb40b426ff92584df",
+    "workflow_head": "a760e1455a4f01441e213875e053536ebbba0ca0",
+    "workflow_run": 35366692881,
+    "job_id": 105670770520,
+    "tests": "4 passed",
+    "frozen_before_authoritative_result_exposure": true
+  },
+  "run_matrix": {
+    "rows": 72,
+    "unique_rows": 72,
+    "targets": [
+      "1VII",
+      "1L2Y",
+      "1UAO"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "modes": [
+      "recovered_state_gate",
+      "fixed_step99_lockin",
+      "static_lockin",
+      "compaction_only"
+    ]
+  },
+  "pooled_primary_precision_mean": {
+    "recovered_state_gate": 0.22530864197530864,
+    "fixed_step99_lockin": 0.22530864197530864,
+    "static_lockin": 0.19814814814814816,
+    "compaction_only": 0.2160493827160494
+  },
+  "comparisons": [
+    {
+      "control": "fixed_step99_lockin",
+      "mean_delta": 0,
+      "median_delta": 0,
+      "wins": 0,
+      "ties": 18,
+      "raw_exact_sign_flip_p": 1,
+      "holm_adjusted_p": 1,
+      "target_mean_deltas": {
+        "1VII": 0,
+        "1L2Y": 0,
+        "1UAO": 0
+      }
+    },
+    {
+      "control": "static_lockin",
+      "mean_delta": 0.027160493827160494,
+      "median_delta": 0,
+      "wins": 5,
+      "ties": 13,
+      "raw_exact_sign_flip_p": 0.0625,
+      "holm_adjusted_p": 0.1875,
+      "target_mean_deltas": {
+        "1VII": 0.06481481481481481,
+        "1L2Y": 0.016666666666666666,
+        "1UAO": 0
+      }
+    },
+    {
+      "control": "compaction_only",
+      "mean_delta": 0.009259259259259259,
+      "median_delta": 0,
+      "wins": 2,
+      "ties": 16,
+      "raw_exact_sign_flip_p": 0.5,
+      "holm_adjusted_p": 1,
+      "target_mean_deltas": {
+        "1VII": 0.027777777777777776,
+        "1L2Y": 0,
+        "1UAO": 0
+      }
+    }
+  ],
+  "candidate_start_primary_mean": {
+    "1VII": 0.25,
+    "1L2Y": 0.21666666666666667,
+    "1UAO": 0.26666666666666666
+  },
+  "candidate_final_primary_mean": {
+    "1VII": 0.09259259259259259,
+    "1L2Y": 0.11666666666666667,
+    "1UAO": 0.4666666666666667
+  },
+  "candidate_rg_ratio_median": {
+    "1VII": 0.5361237329981463,
+    "1L2Y": 0.4605802685933045,
+    "1UAO": 0.6406059147236696
+  },
+  "candidate_transition_steps": {
+    "1VII": [
+      99,
+      99,
+      99,
+      99,
+      99,
+      99
+    ],
+    "1L2Y": [
+      99,
+      99,
+      99,
+      99,
+      99,
+      99
+    ],
+    "1UAO": [
+      99,
+      113,
+      100,
+      111,
+      119,
+      99
+    ]
+  },
+  "conditions": {
+    "complete_unique_72_run_matrix": true,
+    "candidate_highest_pooled_mean_primary_precision": false,
+    "candidate_beats_every_control_on_every_target": false,
+    "all_three_holm_adjusted_p_lt_0_05": false,
+    "candidate_improves_from_start_on_every_target": false,
+    "all_candidate_trajectories_exercise_lockin": true,
+    "candidate_rg_ratio_gate_every_target": false,
+    "all_runs_preserve_canonical_covalent_geometry": true,
+    "all_runs_numerically_healthy": true,
+    "native_information_firewall_passed": true,
+    "historical_source_integrity_and_proxy_passed": true
+  },
+  "generated_decision": "NO_GO_RECOVERED_TOPOLOGY_GATED_PREORGANIZATION",
+  "independent_decision": "NO_GO_RECOVERED_TOPOLOGY_GATED_PREORGANIZATION",
+  "decisions_match": true,
+  "conclusion": "Recovered historical mechanism remains materially distinct at source level, but its state-dependent topology gate does not produce transferable native-blind preorganization beyond same-force nonadaptive controls under the frozen valid-backbone P8B test."
+}

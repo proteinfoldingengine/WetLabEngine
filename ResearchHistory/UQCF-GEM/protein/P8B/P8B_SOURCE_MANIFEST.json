@@ -1,0 +1,149 @@
+{
+  "schema": "protein-p8b-source-manifest-v1",
+  "preregistration_commit": "02683349f5c0d7c961b06401e8b6e5bdda9d2592",
+  "parent_branch": "research/protein-p8-patch622-624-reopen-certification",
+  "p8_source_certification": {
+    "certified_head": "2a8a23a91b00a052f56bcd176afbecded6d40cf2",
+    "workflow_run_id": 35358832587,
+    "job_id": 105644748977,
+    "artifact_id": 10553705794,
+    "artifact_sha256": "bbc2e54e6231e57a0f500fc610ecad9eee2a1901a59e491dc20085bdc260fcca",
+    "conclusion": "success"
+  },
+  "p6_valid_backbone_parent": {
+    "certified_scientific_head": "bc00fa3af135219fdf498ed0d271b6a8a649496a",
+    "authoritative_run_id": 35299722526,
+    "authoritative_artifact_id": 10530595637,
+    "authoritative_artifact_sha256": "d0545fb6b70e28b2cfc26799ddc0b308febd69ebfafc0c05dd87e1013c2594ef",
+    "p6_acceptance_git_blob": "f7d2568200cb62e11eb3fca2976b4837f18f292b",
+    "p6_source_manifest_git_blob": "c27a3f4e3b503cd3efe2d3bf9cef82a9d8ab0e11",
+    "p6_core_git_blob": "e517164834636ffc5e52ea118f9d43624edebdad"
+  },
+  "recovered_coordinate_mechanism": {
+    "drive_snapshots": {
+      "globular_fold_qis_folder_id": "1kYk-we-NgI_Fbg_BG8IY1InFXnzEkxRU",
+      "stable_globular_qis_best_folder_id": "1xW0FbrtXCR048VfdS7Hi01QvjTezDljk",
+      "exact_named_patch_release": false
+    },
+    "frozen_source_hashes": {
+      "dag_engine.py": "1eccbcdd4367db5ee63459e631657e634788387208d113eb7713880b2c08b43f",
+      "force_field.py": "1aa99c3e681c1c9a8c9e591e2c514e3762ed568b2fc5d2725313aa3b97578935",
+      "physics_metrics.py": "1663b78670077936129989654684158f2bbe989e1533c90bac3247598086ca46",
+      "physics_constants.py": "2018c8335aa366be4598eb55df1dc6d5b7a5fe08b313ef12defaedc6e31ce708",
+      "metrics_history.py": "bb5883f08721e2cf0394a3218fe890369eba47d3899ba8704010b886520b0bd6"
+    },
+    "common_drive_ids": {
+      "physics_metrics": [
+        "1xXdxAjpFwrGwjWKZuTLE8hye5VHq6ekF",
+        "1I0jhWOKiSFcp5TswyMQSMFUQm5k0MzqY"
+      ],
+      "physics_constants": [
+        "19IbBmvxnC2u5J4PfK0r8tzq4gxMQ-8uc",
+        "1-9Dw0gmO4uM1qHkiPVFrlMwpC4SEFHph"
+      ],
+      "metrics_history": [
+        "1cdpUU8ZD-ZM0plQzjHna1DawkGRomKs9",
+        "1WW8zMyciwhsYUkHhI5rg_vTvS3Iu2Jza"
+      ]
+    },
+    "byte_identity_across_recovered_folders": {
+      "physics_metrics": true,
+      "physics_constants": true,
+      "metrics_history": true
+    },
+    "coordinate_effective_coefficients": {
+      "k_contact_spring_base": 1.5,
+      "k_df_funnel": 6000,
+      "k_phi_torque_base": 1,
+      "k_lj_repulsion_base": 1.25,
+      "k_hydro_base": 0.75,
+      "k_electrostatic_base": 1,
+      "k_rama": 0.05,
+      "contact_dist_A": 8,
+      "debye_length_A": 5
+    },
+    "hydrophobic_residues": [
+      "A",
+      "V",
+      "I",
+      "L",
+      "M",
+      "F",
+      "W",
+      "Y",
+      "C"
+    ],
+    "residue_charges": {
+      "D": -1,
+      "E": -1,
+      "K": 1,
+      "R": 1,
+      "H": 1
+    },
+    "scalar_only_terms_excluded_from_coordinate_objective": [
+      "gamma_well",
+      "torsional_incoherence_penalty"
+    ]
+  },
+  "historical_betti1_proxy": {
+    "contact_cutoff_A": 8,
+    "excludes_self": true,
+    "excludes_immediate_sequence_neighbors": true,
+    "formula": "max(0, int(E_nonadjacent_contacts - (N - 1)))",
+    "mathematical_persistent_homology_betti1": false,
+    "threshold": 8,
+    "history_maxlen": 120,
+    "lifetime_semantics": "count of stored proxy values >= threshold; not necessarily consecutive",
+    "dag_transition_qualifying_count": 100,
+    "lockin_force_activation_qualifying_count": 50
+  },
+  "protocol": {
+    "targets": [
+      "1VII",
+      "1L2Y",
+      "1UAO"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "modes": [
+      "recovered_state_gate",
+      "fixed_step99_lockin",
+      "static_lockin",
+      "compaction_only"
+    ],
+    "steps": 2000,
+    "optimizer": "Adam",
+    "learning_rate": 0.02,
+    "dtype": "float64",
+    "device": "CPU",
+    "deterministic_algorithms": true,
+    "common_random_initial_torsions": true,
+    "fixed_time_lockin_first_step": 99,
+    "primary_endpoint": "final fixed-budget top-K long-range native-contact precision",
+    "primary_contact_min_sequence_separation": 4,
+    "native_contact_cutoff_A": 8,
+    "top_k_rule": "max(1,floor(N/2)) capped by eligible pairs",
+    "rg_ratio_gate": [
+      0.75,
+      1.25
+    ],
+    "native_information_used_in_objective": false
+  },
+  "primary_comparisons": [
+    "recovered_state_gate - fixed_step99_lockin",
+    "recovered_state_gate - static_lockin",
+    "recovered_state_gate - compaction_only"
+  ],
+  "statistics": {
+    "matched_pairs_per_comparison": 18,
+    "test": "exact two-sided paired sign-flip",
+    "multiplicity": "Holm across 3 primary comparisons",
+    "alpha": 0.05
+  }
+}
