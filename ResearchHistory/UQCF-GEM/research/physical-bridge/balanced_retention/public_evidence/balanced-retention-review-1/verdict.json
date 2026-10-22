@@ -1,0 +1,28 @@
+{
+  "constructive_analysis": [
+    "Theorem 1 is mathematically exact: for any finite rooted tree and prefix-closed Z containing p, r_XZ(u)=p iff c_u is absent. The parent contrast C_p(Z) = g a_{k+1}(1[c_v in Z] - 1[c_u in Z]) is rigorously derived.",
+    "The joint equality when neither child survives, and the scalar blindness with joint distinction when both survive, are correctly proven.",
+    "The minimal surviving-child protection condition (Corollary 1) correctly establishes that the contrast g a_{k+1} is preserved exactly as long as p and c_v are retained and c_u is absent, independent of deeper pruning.",
+    "Theorem 2 correctly derives the threshold formula for arbitrary nested sequences, proving the plateau sign, interval min(tau_u, tau_v) <= j < max(tau_u, tau_v), and the absence of attenuation or revival.",
+    "The asymmetric carrier-only example correctly yields chain lengths max(r-t,0) and max(s-t,0), thresholds r and s, and a plateau of exactly s-r stages with amplitude independent of branch lengths and other coefficients.",
+    "The rational table for k=1, r=1, s=4 exactly matches the derived formulas, correctly illustrating the extended plateau.",
+    "All rejecting controls (removing both child roots, retaining both, removing only the short child root, removing the receiver, a_{k+1}=0, equal branch lengths, preparation-dependent sets, address-dependent holdings, infinite retention) are accurately audited and mathematically sound.",
+    "Credit to Grok T-004 is properly assigned for the asymmetric two-branch preparation and carrier-only frontier contraction, while correctly scoping the novel contribution to the arbitrary-sequence threshold consequence and extended plateau."
+  ],
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "The holding family H is a declared mathematical rule, not an automatically derived law of a physical record.",
+    "Native preparation of the contrasted pair and the physical availability of the scalar H_p are supplied, not derived.",
+    "Extra accessible child-resolved data may invalidate initial blindness; the theorem only guarantees scalar blindness.",
+    "Actual event typing and occurrence are supplied inputs; the inherited P1 map does not derive that actual events are frontier-wide or follow the selected mathematical schedule.",
+    "The stage count in the plateau is an ordered event index, not a physical duration or fundamental time variable.",
+    "The consumer trace uses a supplied READS/controller interface; no native grade-to-record association or actual resolving effect is derived.",
+    "Occupancy-only readouts (1[H_p>0]) cannot distinguish the intermediate positive holdings; a claimed physical effect must genuinely distinguish the amounts.",
+    "No universal retention law for arbitrary pairs is claimed; preservation requires the declared surviving-child condition, which is not enforced by any derived physical law."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Identify an inherited rule assigning the native admissible preparations to the existing record model's input states, with receiver ownership and event correspondence justified independently of the desired response, before evaluating the fixed receiver effect.",
+  "verdict": "ACCEPTED"
+}
