@@ -1,0 +1,137 @@
+[
+ {
+  "first_reason": "C3_1: identity set mismatch missing=['1|C3|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=[]",
+  "mutation": "C3_1:omission",
+  "rejected": true
+ },
+ {
+  "first_reason": "C3_1: duplicate identities ['1|C3|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)']",
+  "mutation": "C3_1:duplicate-for-omission",
+  "rejected": true
+ },
+ {
+  "first_reason": "C3_1: identity set mismatch missing=['1|C3|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=['1|C3|−a(x)|−a(y)|−a(u)|−a(v)']",
+  "mutation": "C3_1:truncation",
+  "rejected": true
+ },
+ {
+  "first_reason": "C3_1: identity set mismatch missing=['1|C3|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=['1|C3|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)|−r(y)']",
+  "mutation": "C3_1:extension",
+  "rejected": true
+ },
+ {
+  "first_reason": "C3_1: first response/decoded mismatch for 1|C3|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)",
+  "mutation": "C3_1:wrong-decoded",
+  "rejected": true
+ },
+ {
+  "first_reason": "C3_1: identity set mismatch missing=['1|C3|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=['1|C3|+a(o)|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)']",
+  "mutation": "C3_1:illegal-splice",
+  "rejected": true
+ },
+ {
+  "first_reason": "C3_1: identity set mismatch missing=['1|C3|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=['0|C3|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)']",
+  "mutation": "C3_1:wrong-source",
+  "rejected": true
+ },
+ {
+  "first_reason": "C3_1: declared counts disagree with records",
+  "mutation": "C3_1:false-metadata-count",
+  "rejected": true
+ },
+ {
+  "first_reason": "C3_1: declared hash disagrees with records",
+  "mutation": "C3_1:false-metadata-hash",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_0: identity set mismatch missing=['0|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)'] extra=[]",
+  "mutation": "O_0:omission",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_0: duplicate identities ['0|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)']",
+  "mutation": "O_0:duplicate-for-omission",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_0: identity set mismatch missing=['0|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)'] extra=['0|O|−a(x)|−a(y)|−a(u)|−a(v)']",
+  "mutation": "O_0:truncation",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_0: identity set mismatch missing=['0|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)'] extra=['0|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)|+r(v)']",
+  "mutation": "O_0:extension",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_0: first response/decoded mismatch for 0|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)",
+  "mutation": "O_0:wrong-decoded",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_0: identity set mismatch missing=['0|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)'] extra=['0|O|+a(o)|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)']",
+  "mutation": "O_0:illegal-splice",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_0: identity set mismatch missing=['0|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)'] extra=['1|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(v)']",
+  "mutation": "O_0:wrong-source",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_0: declared counts disagree with records",
+  "mutation": "O_0:false-metadata-count",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_0: declared hash disagrees with records",
+  "mutation": "O_0:false-metadata-hash",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_1: identity set mismatch missing=['1|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=[]",
+  "mutation": "O_1:omission",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_1: duplicate identities ['1|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)']",
+  "mutation": "O_1:duplicate-for-omission",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_1: identity set mismatch missing=['1|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=['1|O|−a(x)|−a(y)|−a(u)|−a(v)']",
+  "mutation": "O_1:truncation",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_1: identity set mismatch missing=['1|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=['1|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)|−r(y)']",
+  "mutation": "O_1:extension",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_1: first response/decoded mismatch for 1|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)",
+  "mutation": "O_1:wrong-decoded",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_1: identity set mismatch missing=['1|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=['1|O|+a(o)|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)']",
+  "mutation": "O_1:illegal-splice",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_1: identity set mismatch missing=['1|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)'] extra=['0|O|−a(x)|−a(y)|−a(u)|−a(v)|−r(x)']",
+  "mutation": "O_1:wrong-source",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_1: declared counts disagree with records",
+  "mutation": "O_1:false-metadata-count",
+  "rejected": true
+ },
+ {
+  "first_reason": "O_1: declared hash disagrees with records",
+  "mutation": "O_1:false-metadata-hash",
+  "rejected": true
+ }
+]
