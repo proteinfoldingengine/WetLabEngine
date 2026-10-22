@@ -1,0 +1,52 @@
+name: Protein P7 Early DAG Source Reduction
+
+on:
+  push:
+    branches:
+      - research/protein-p7-early-backbone-controller-survival
+    paths:
+      - 'ResearchHistory/UQCF-GEM/protein/P7/**'
+      - '.github/workflows/protein-p7-source-reduction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-reduction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: ResearchHistory/UQCF-GEM/protein/P7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install bounded source-audit dependencies
+        run: |
+          python -m pip install --quiet numpy==1.26.4
+          python -m pip install --quiet torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+      - name: Compile recovered source
+        run: python -m py_compile recovered_stable_dag/*.py
+      - name: Run source-reduction tests
+        run: python -m unittest -v test_p7_source_reduction.py
+      - name: Generate result
+        run: python p7_source_reduction.py > P7_SOURCE_REDUCTION_RESULT.json
+      - name: Verify verdict
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('P7_SOURCE_REDUCTION_RESULT.json'))
+          assert d['verdict']=='NO_DISTINCT_MULTIFORCE_ADAPTIVE_CONTROLLER_AFTER_SOURCE_REDUCTION'
+          assert d['phase0_effective_optimizer_steps']==0
+          assert d['phase2_minus_phase1']==['contact_springs']
+          assert d['fractal_funnel_coordinate_gradient_path'] is False
+          print(json.dumps(d,indent=2,sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: protein-p7-source-reduction
+          path: ResearchHistory/UQCF-GEM/protein/P7/P7_SOURCE_REDUCTION_RESULT.json
+          retention-days: 90
