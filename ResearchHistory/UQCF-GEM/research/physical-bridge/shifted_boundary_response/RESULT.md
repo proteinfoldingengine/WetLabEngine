@@ -1,8 +1,8 @@
 # Shifted boundary response under prefix-tree pruning
 
-**Status:** consolidated analytical draft, 2026-10-23. Not independently accepted or physically realized. Native bridge **NOT_DERIVED**. No scientific code, enumeration or new experiment has been run for this package.
+**Status:** consolidated analytical draft, 2026-10-23. Not independently accepted or physically realized. Native bridge **NOT_DERIVED**. This session ran no scientific code or enumeration. Grok's later disclosed exploratory scratch checks are recorded in §9; they are not verification evidence.
 
-**Authors and provenance:** ChatGPT research session with Aaron (distinct from dot): T-075, T-077 and T-078; Grok: T-076 corrections and Proposition M; dot: scoped source audit and the nonadditive-statistic/counterexample checks. Exact sources and outstanding checks are in §9. Standard Schur elimination, spectral calculus and inequalities are used; no mathematical novelty priority is claimed.
+**Authors and provenance:** ChatGPT research session with Aaron (distinct from dot): T-075, T-077 and T-078; Grok: T-076 corrections and Proposition M, T-079 bounds B1–B3; dot: scoped source audit and the nonadditive-statistic/counterexample checks. Exact sources and outstanding checks are in §9. Standard Schur elimination, spectral calculus and inequalities are used; no mathematical novelty priority is claimed.
 
 ## 1. Question, premises and result
 
@@ -152,6 +152,40 @@ For two forests at one anchor with equal h>0 and k_1<k_2, (12) gives
 
 If all other anchor terms coincide, this separates their boundary operators. Strict separation of a chosen scalar requires coupling to the differing anchor; it is not asserted for every j.
 
+### 5.1 Sharper bounds using the same summary (T-079 B1–B3)
+
+These refinements use no additional premise or stored statistic. For a unit load at hidden vertex i, the grounded solution has unit potential jump precisely along the anchor-to-i path and zero jump on other edges. Therefore (C_a^(-1))_ii=depth(i). Summing and counting each edge once for every vertex below it gives
+
+    tr(C_a^(-1))=Σ_i depth(i)=Σ_e n_e.
+    λ_min(C_a)^(-1)≤tr(C_a^(-1))≤sqrt(hk).
+
+The last inequality is Cauchy–Schwarz on the h discarded edges, using k=Σ_e n_e². Combine it with §5 to define
+
+    T=T_{h,k}=min(D_h,sqrt(hk)).
+
+The probability variable x=1/λ under ν lies in (0,T], with mean k/h≤T. Convexity places f(x)=1/(1+sx) below its chord on [0,T]:
+
+    f(x)≤1-xs/(1+sT).
+
+Consequently, for every s>0,
+
+    hs/(1+sk/h) ≤ φ(s) ≤ hs-ks²/(1+sT).                       (17)
+
+This upper bound is at most both hs and the polynomial upper bound in (12), since 1/(1+sT)≥1-sT and T≤D_h. Replacing u_a in (13) by the upper end of (17) sharpens the response enclosure.
+
+For probability laws on the RELAXED interval [0,T] with specified mean k/h, Jensen's lower end is attained by a point mass at the mean and the chord upper end by a law on {0,T}. This is an extremality statement for that relaxed probability class, not proof of optimality over realizable tree forests. Finite positive C gives x>0; an atom at zero used by the relaxed upper extremizer need not be realizable. Actual pendant leaves attain the lower bound (C=Id, k=h). Further tree constraints could improve either guarantee; no tree-optimality claim is made.
+
+For equal h and k_1<k_2, subtract the upper bound for forest 2 from the lower for forest 1:
+
+    φ_1-φ_2 ≥ s²[k_2/(1+sT_2)-k_1/(1+sk_1/h)].
+
+The right side is positive when
+
+    0<s<(k_2-k_1)/[k_1(T_2-k_2/h)],                           (18)
+
+or for every s>0 if T_2=k_2/h. Here k_1>0 and T_2≥k_2/h follow from the nonempty-forest premises. For the star/chain, T_2=3, and the guaranteed difference is at least s²(3-s)/[(1+s)(1+3s)] for 0<s<3. This improves the summary-only interval 0<s<1/5, while the exact pair still separates for all positive s. No extra moment or new campaign is needed.
+
+
 ## 6. Equal counts, different shape: four-vertex carriers
 
 Use P6. Retain Y={o,a}, edge o→a. The star adds two children u,v of a; the chain adds a→u→v. Both give m=(1,3). The discarded edge counts are respectively (1,1) and (2,1), hence k=(0,2) versus (0,5).
@@ -229,8 +263,10 @@ Immutable source packet:
 - [T-078](https://github.com/proteinfoldingengine/WetLabEngine/blob/e2a3c24152dabab87043893f6730a3ce688d5bfc/ResearchHistory/UQCF-GEM/research/physical-bridge/AGENT_THREAD/THREAD.md): this session derived bounds and the same-summary pair.
 - [Dot's T-077/078 response](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-6369883881): inspected the nonadditive-statistic inference and independently re-derived the component counts, four component fractions and final two-by-two response. This is a scoped bot check, not Gemini acceptance.
 
-For this consolidation the author inspected those complete entries, re-derived the displayed edge partitions, Schur identities, spectral moments, Jensen bound, path-energy estimate, remainder and rational examples. No new mathematical conclusion is being added by consolidation.
+For this consolidation the author inspected those complete entries, re-derived the displayed edge partitions, Schur identities, spectral moments, Jensen bound, path-energy estimate, remainder and rational examples. The later T-079 refinements are included with their proofs in §5.1; the distinction between relaxed-measure extremality and tree-optimality is explicit.
 
-At preparation, Grok's requested general update/refinement and bounds checks remain pending. The full consolidated argument has no independent Gemini verdict and no workflow run or raw-response hash. No scientific implementation, exhaustive verification, publication closure or post-merge audit is claimed. The PR must remain draft.
+[Grok's T-079](https://github.com/proteinfoldingengine/WetLabEngine/blob/62b7b4094417e1b60c519acefc9183eba8701231/ResearchHistory/UQCF-GEM/research/physical-bridge/AGENT_THREAD/THREAD.md) checks T-077 steps 3–7 and T-078 steps 1–5 and supplies B1–B3. This session inspected the complete entry and re-derived the trace identity by a unit-load solution, its edge-count form, Cauchy–Schwarz, the chord inequality and the algebra of (18). These scoped bot checks are complete; they are not independent Gemini acceptance.
 
-The next analytical reviewer should reconstruct (1)–(16), challenge the prefix-closure and current-leaf conditions, seek counterexamples to (10)–(14), verify the two rational controls, and identify any physical premise being smuggled into the conclusions. Independent review must use the standing Gemini Actions workflow on an exact frozen commit with the source packet, preserving raw request/response, model, run ID, hashes, logs and publication evidence. A review of the author's summary alone is insufficient.
+T-079 also reports 4,000 random scratch forests with h≤9 at seven s values and exact fraction checks. That execution was exploratory, not prospectively registered, and no script, seed or run artifact was inspected here. The report is preserved as a disclosure, not used as evidence for any universal claim or relabeled preregistered. The request to Grok is to preserve the exact exploratory code, seeds if available and outputs with that status. There is no request for more executions. The full consolidated argument has no independent Gemini verdict and no workflow run or raw-response hash. No new repository scientific implementation, exhaustive verification, publication closure or post-merge audit is claimed. The PR must remain draft.
+
+The next analytical reviewer should reconstruct (1)–(18), challenge the prefix-closure and current-leaf conditions, seek counterexamples to (10)–(14), verify the two rational controls, and identify any physical premise being smuggled into the conclusions. Independent review must use the standing Gemini Actions workflow on an exact frozen commit with the source packet, preserving raw request/response, model, run ID, hashes, logs and publication evidence. A review of the author's summary alone is insufficient.
