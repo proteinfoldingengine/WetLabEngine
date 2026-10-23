@@ -1,0 +1,18 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The finite-climb equalities do not imply global root-shift naturality; the depth-horizon family provides a strict counterexample.",
+    "A selected blind read does not discharge the receiver access obligation; complete initial receiver blindness and post-event availability must still be established.",
+    "The native bridge remains NOT_DERIVED. Native preparation/source binding, actual event typing, complete initial receiver record, available separating output effect, and retention remain logically distinct and unproven."
+  ],
+  "constructive_analysis": [
+    "Reconstructed the positive fixed-step address-table result under class-wide PN. The before and after receiver coefficients match the cited formula, and their difference is exactly A_l(l). This difference equals the post-event coefficient G only under selected parent-read blindness B_e. All-context blindness at this one step requires A_p(p) = A_l(l) and A_u(p) = 0 for all siblings u, which is correctly verified by the chain and one-sibling carriers. W2_F supplies the sibling/Side entries, but its existence as a grade-level P2 map does not imply read naturality (D28 §26.4).",
+    "Reconstructed the all-finite-carrier depth-horizon family. The subtree holding s_v = a_{depth(v)} c_v yields the individual holding h_v(x) = a_k x_v + (a_k - a_{k+1}) \\sum c_u. This satisfies PN, W2_F, rooted-isomorphism invariance, positivity, and unit column sums. The D-step diagonal equalities hold, but fail at depth D+1. The D=1 apex square on the old child unit yields (e_1+e_2)/2 instead of e_2, proving G+ fails despite the depth-one climb's diagonal equality. This confirms that finite equalities are strictly weaker than global root-shift naturality (D28 §27.4, §28.3).",
+    "Reconstructed the access distinction. Theorem 23.2 classifies individual linear local reads under uniform descendant blindness, not the complete available effect algebra, and explicitly retains availability premises (D28 §23). On 0→p→l with F=I and equal-total preparations g e_0 and g e_l, the initial own-grade equality is 0 vs 0, and post-pruning contrast is 0 vs g. However, the initial incoming field-edge contrast is 0 vs a_1 g, meaning a receiver with complete local-field access is already informed. This confirms that restricted own-grade access is a supplied interface, and formal selected-read blindness does not entail complete receiver blindness."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Start with an existing native receiver-owned record and its actual state-to-record association. Establish the record's event ledger, complete receiver blindness before the event, two positive local responses (with at least one nonzero), and one already justified post-event effect with nonzero contrast and retained source/reference association."
+}
