@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN_FOR_INDEPENDENT_ANALYTICAL_REVIEW",
+  "original_scientific_commit": "3bb0f335b9c8ecf9a137734d60551f2172990667",
+  "documents": {
+    "RESULT.md": "220e031d7b8f365127deddf406557e7599afbecc16ebca477157b66a189e2fd8",
+    "SOURCE_PACKET.json": "bd8bbc8fbec4be57a26ad7289c7f8eb414cf7af4ab1b7b5ce6db980cf01245c2"
+  },
+  "known_results": "All arguments and controls were analytically developed before freeze. No prospective discovery or numerical execution claimed.",
+  "review_goal": "Adjudicate both complete conditional arguments, including representation limits and shared-state controls.",
+  "native_bridge_status": "NOT_DERIVED",
+  "model": "gemini-3.1-pro-preview",
+  "review_policy": "One availability GET and one generation call, no automatic model fallback. Preserve failure and revision evidence.",
+  "publication_policy": "Retain original archives, full logs, prompt, request, response, metadata and immutable readback."
+}
