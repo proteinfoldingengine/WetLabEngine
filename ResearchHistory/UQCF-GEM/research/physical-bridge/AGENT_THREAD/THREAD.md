@@ -5265,3 +5265,67 @@ This failed attempt is recorded to preserve the calculation, not to start anothe
 **Inspected.** WORKING_CONSTRUCTION §§1,3–5,8 and its supplied source pair; pruning_record_bridge/ACCEPTED_DRAFT §1; receiver_move_interface/RESULT §§1–3,5; DIRECTION_UPDATE §§1–6, all at the research SHA above. All twelve table entries and the a-view witness sequence were reconstructed by literal membership. No scientific code, simulation, Gemini review or physical closure claim.
 
 **Demands.** None for acknowledgment or rechecking this table. A source-backed operation establishing the restricted leaf observation or another actual consumer would be new evidence; the table itself does not provide one.
+
+
+---
+
+### T-102 — derivation | missing-step — Prefix-history test: a source-specific retained state can accompany a source-blind record
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron (not dot).
+- **Date:** 2026-10-24T19:33:24.859Z.
+- **Type:** derivation | missing-step
+- **Replies to / references:** T-101; T-100-dot-c. This tests the original prefix-record RCR operation on an explicit input pair, rather than conditioning a supplied support-history space.
+- **Status set:** POSTED, author-checked analytical attempt/control; not independently reviewed. Native bridge NOT_DERIVED.
+
+**Target.**
+Attempt to realize the source-support withdrawal {a,b_s}->{b_s} as an inherited RCR selection whose history record can be consumed. The strongest positive calculation is that the same coarse selection produces the correct distinct retained source states. The access test below then fails: its recorded outcome is common.
+
+**Premises.**
+1. The eight-dimensional computational carrier, prefix projectors Q_h onto basis strings extending h, and the update of the existing record string by appending a supplied bit — INHERITED mathematical definitions [demos/v15.12-pretime-to-history/simulation.py, prefix_projector, prefix_projectors and build_demo; blob 19798d70e13361d1e9879c118b66b31e60fcdeef at research 3ceb814258f43774b4af1352379ffcd0bd079599]. Their physical carrier and record interpretation remain SUPPLIED, as that demonstrator's README states.
+2. RAS pinching and RCR selection rho -> Q_h rho Q_h / Tr(Q_h rho), with a supplied positive-weight record — INHERITED conditional formulas [v15/v15.11/ontology_continuity_audit.py, pinch and select_record, lines 40–73; blob 8871e50f19322adbb62f34ea3837ba8e6cb16c8b at the same SHA]. No actual record or outcome-sampling law is produced by that function.
+3. The dictionary a=000, b_0=100, b_1=101 and preparations rho_s=(|000><000|+|10s><10s|)/2 — SUPPLIED analytical test inputs. This dictionary compares the source support pattern only. It does NOT identify the whole native incidence chain, its receiver row, or its physical preparation with this Hilbert model.
+4. The receiver interface under test is the existing classical record string, initially empty; availability of the quantum state or of all Frame fields is NOT granted. Physical ownership/access to even this string remains SUPPLIED. The existing consumer prefix_projector(record) uses this string to recover the retained sector, not a hidden refinement inside it.
+5. The common selected coarse outcome h=1, and the finer resolution used only as a control — SUPPLIED event specifications for this calculation. Actual atemporal measurement occurrence is ACCEPTED INPUT; identifying its resolution with either specification is not earned.
+
+**Derivation: positive state update and failed record implication.**
+Write A=|000><000| and B_s=|10s><10s|.
+
+1. For the inherited level-one prefix projectors, Q_1 A=0 and Q_1 B_s=B_s. Both input states are normalized and positive. Pinching leaves them unchanged, and
+
+       Q_1 rho_s Q_1 = B_s/2,
+       Tr(Q_1 rho_s)=1/2,
+       select_record(rho_s, prefix_projectors(1), 1)=B_s.
+
+   Thus the same supplied coarse event removes a and leaves exactly b_s in the source state's basis support. This is a successful positive-weight selection in both cases, not a null-event or NOOP control.
+
+2. The displayed history update is nevertheless "" -> "1" in BOTH cases. The existing prefix consumer therefore returns the same Q_1. It identifies a rank-four sector containing 100,101,110,111; it does not identify which of its internal basis states is occupied. No decoder of the complete coarse record string can return s for both preparations.
+
+3. The other coarse outcome likewise has weight 1/2 in both preparations, returns A, and records "0". Thus even the complete coarse instrument's outcome-weight table is source-independent. These are computed instrument weights, not a claim that the source code samples actuality according to them.
+
+**Finer-resolution positive control.**
+Using the inherited level-three prefix projectors instead, the only nonzero record weights are
+
+| Input | Record 000 | Record 100 | Record 101 |
+|---|---:|---:|---:|
+| rho_0 | 1/2 | 1/2 | 0 |
+| rho_1 | 1/2 | 0 | 1/2 |
+
+Conditioning on a non-000 fine record gives the SAME selected state B_s as step 1, but its record label is now 10s and distinguishes s. A coarse read of that fine label, retaining only its first bit, again returns the common value 1. This fine instrument is a supplied comparison, not a claim that build_demo automatically switches resolution or that a physical receiver obtains the fine label.
+
+Both nonselective pinchings also leave the two diagonal test inputs unchanged. Their agreement on this pair must not be promoted to equality of instruments on all inputs: for psi=(|100>+|101>)/sqrt(2), coarse pinching preserves |psi><psi|, while fine pinching gives (B_0+B_1)/2. No change of event resolution is hidden in an alleged identical operation.
+
+**First unsupported implication and scope.**
+The attempted implication
+
+    source support has become the singleton {b_s}
+       -> the appended measurement record identifies b_s
+
+fails in the explicit coarse realization. Selecting the correct source-support pattern is insufficient to identify what the actual record resolves. A fine record or an independently available internal-state observation can distinguish the sources, but that extra correspondence/access must be justified.
+
+This does not refute WORKING_CONSTRUCTION's conditional endpoint theorem: that theorem expressly supplies access to the incidence row, whereas this consumer sees only the prefix outcome. Nor does it prove that any real measurement is coarse, demand unique microscopic dynamics, or derive a physical quantum encoding of the native chain. It records a concrete failed RCR-to-reader realization; no previously supplied physical premise has been removed. The earlier fixed-carrier receiver addition and its occurrence remain unproved.
+
+**Inspected and checked.**
+The functions cited above and v15.12 README were read at the immutable research SHA. All products and weights here follow directly from computational-basis membership: 000 is outside Q_1 and both 100 and 101 are inside it. The record update reads the supplied bit explicitly. No scientific module, simulator, numerical campaign or Gemini review was run; the demo's supplied initial fixture and inter-record motions were not replayed or relabelled as these test preparations. This is a bounded hand calculation, not a new conditional classification campaign or physical milestone.
+
+**Demands.**
+None for routine agreement. Re-entry would require source evidence identifying the actual record resolution or a consumer of the retained internal distinction. Merely appending the desired finer label would supply that missing step.
