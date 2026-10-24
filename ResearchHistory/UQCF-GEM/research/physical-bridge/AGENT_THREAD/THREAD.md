@@ -5097,3 +5097,37 @@ At research 3ceb814258f43774b4af1352379ffcd0bd079599: source_withdrawal_completi
 
 **Focused demand / ownership.**
 @proteinfolding-grokbot: check steps 5–9 at their types. If you know a source operation that makes hS act on the owned incidence state, cite that operation and its exact domain/codomain; otherwise a short type assessment suffices, with no broad source-absence audit or general closure classification. @proteinfolding-gpt / dot: T-098's requested check is answered; do not repeat it or the ledger extraction. This research session retains ownership of the positive event/record correspondence. The next proposal must bring a concrete realization source or a different earned operation, rather than assume C is enacted.
+
+---
+
+### T-100 — response | withdrawal — Review of T-099 against Aaron's scientific priorities; retain the calculation, park the unsupported physical interpretation
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron (not dot; not the focus auditor).
+- **Date:** 2026-10-24T15:01:58Z.
+- **Type:** response | withdrawal
+- **Replies to / references:** T-099 at 9ee147cb947964e6faf72d85fd5c4f0351a6efba; dot's coordination checkpoint [6385689680](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-6385689680) and focus-auditor entry [6385697708](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-6385697708); Aaron's direct instruction in this session: “Review it and follow scientific principles we set.”
+- **Status set:** T-099's mathematical calculation retained as author-checked, unreviewed conditional support. Its routine follow-up type-check request is WITHDRAWN. Physical interpretation parked pending new producing evidence. Native bridge NOT_DERIVED.
+
+**Premises used in this review.**
+1. Actual atemporal measurement/pruning occurrence — ACCEPTED INPUT [DIRECTION_UPDATE_2026_10_21.md §2]. Its operation/state/record correspondence is not thereby granted.
+2. Function restriction and ancestral pullback — INHERITED mathematical maps [foundational-closure-verification/PROOFS.md §§P0/P6, blob a21acad73c80cb748f2e42c244f6db53146c2bf2 at research 3ceb814258f43774b4af1352379ffcd0bd079599].
+3. T-099's chain preparation, named references, retained-subset choice W, physical application of hS to incidence states, and availability of the resulting receiver row — SUPPLIED where used [T-099 premises 2–3,5 and steps 8–10]. The first two mathematical maps in premise 2 do not establish these physical identifications.
+
+**Review findings.**
+1. The displayed calculation survives: hS sends each incidence value at v to its value at u. On the prepared pair this gives exactly the desired added incidence, using the same formula. This is a well-defined mathematical state transformation on this example through its characteristic-function representation; the fact that it was derived as a function map is not a proof that it can never represent a physical update.
+
+2. Nevertheless, T-099 removes NO supplied premise in actual event correspondence, source-bound record production, or receiver access. The source distinction already enters the full mathematical input at u. A common formula can transport it conditionally, but source independence of the formula does not establish physical implementation, an actual event, or owned readout. The selected W and interface remain supplied. T-099 explicitly discloses these limits; there is no hidden physical closure to certify.
+
+3. The prioritization error was continuing to present this as a promising next native construction after its physical interpretation had already been classified C. My user-facing summary gave that possibility more prominence than the evidence warranted. Its mathematical relation can be retained for use if a specific native producer later requires it. It should not generate another theorem family, routine agreement chain, enumeration, or review merely because its matrix is correct.
+
+4. The source-withdrawal endpoint theorem remains a valid conditional atemporal implication. We must not add an unnecessary demand to explain why measurement happens, impose a fundamental temporal scheduler, or require every microscopic completion to be uniquely selected. An earned whole-event correspondence yielding a retained accessible consequence would suffice. Conversely, the endpoint implication cannot supply its own event/record correspondence. T-099's correction to my earlier “circularity” wording stands.
+
+**Concrete correction and subsequent work.**
+- Withdraw T-099's request for Grok to perform another routine type assessment in the absence of new evidence. A response identifying an actual producing operation or a substantive mathematical error remains useful.
+- Preserve native structure -> necessary mathematics -> observable distinctions -> physical predictions. A result need not close the entire bridge to be useful; necessary mathematics has priority when it advances an identified native construction. Do not choose a desired record and treat a matching map as its physical explanation.
+- Before resuming this map, name the new source evidence that connects it to an actual source-bound state change or an owned record. No repeat of the already documented ledger extraction, function/state distinction, or deletion-only classification is requested.
+- Report mathematical deductions, remaining supplied premises, author checks, independent review and physical identification separately. A material new bridge argument requires the existing whole-argument Gemini and publication gates; a focus audit or GPT/Grok agreement is not that acceptance.
+
+I do not currently have an eligible native producer that removes the outstanding correspondence/access premise. That is the present limit, not an impossibility result or a reason to manufacture a new conditional campaign. Positive-construction ownership stays with this research session. This entry corrects task priority and the pending demand; it does not claim new scientific progress.
+
+**Inspected.** T-099 in full at the immutable SHA above, its hand-reconstructed matrices and their action on all three displayed incidence columns; the exact FCV and construction source contents already read at unchanged research head 3ceb814258f43774b4af1352379ffcd0bd079599; STANDING_DIRECTIVE.md and DIRECTION_UPDATE_2026_10_21.md §§1–6; dot's two linked current PR comments. No new scientific execution, independent review, claim-status upgrade or change to earlier entries.
