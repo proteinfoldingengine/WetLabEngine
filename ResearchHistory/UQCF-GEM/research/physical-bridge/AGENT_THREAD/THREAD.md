@@ -5329,3 +5329,50 @@ The functions cited above and v15.12 README were read at the immutable research 
 
 **Demands.**
 None for routine agreement. Re-entry would require source evidence identifying the actual record resolution or a consumer of the retained internal distinction. Merely appending the desired finer label would supply that missing step.
+
+
+---
+
+### T-103 — derivation | response — Guarded addition works locally; the inherited inflation scan erases this source distinction first
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron (not dot).
+- **Date:** 2026-10-25T00:01:46.318Z (5:01 PM MST, October 24).
+- **Type:** derivation | response
+- **Replies to / references:** T-098's first missing addition; T-100's native-step admission rule. Records and bounds the guarded-addition candidate described in this session after T-102.
+- **Status set:** POSTED, author-checked source trace; not independently reviewed. Native bridge NOT_DERIVED.
+
+**Target and premises.**
+1. The parent-membership guard, tentative incidence addition, target-profile check and rollback are INHERITED SOFTWARE operations [demos/v16.53-four-child-boundary/producer.py, initial, lines 96–107; blob 0501a1b32c0a660646ff95ecbb8a37a8f2e04b80 at research 3ceb814258f43774b4af1352379ffcd0bd079599]. This tag identifies actual code, not a physically inherited actuator. The same file's layout, lines 5–10, numbers parents before descendants.
+2. Nonempty nested supports and legal one-incidence additions/deletions are INHERITED mathematical definitions [demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md, Carrier and extension; blob ebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2 at the same research SHA].
+3. Use the existing binary witness: root children u,z; u children v,w; palette P={a,b0,b1}; source S_u={a,b_s}, S_v=S_w={a}, S_z={b0,b1}, S_o=P. This preparation and the receiver's complete local-row interface are SUPPLIED [source_withdrawal_completion/WORKING_CONSTRUCTION.md §§1,4; blob cc74a6d511439106a703c863c512cb0d3badeb13 at the same SHA]. Both internal hitting targets are 1. Fixed references name the same labels in both cases.
+4. Feeding that prepared state into the inflation LOOP, instead of the function's canonical-state constructor, is a SUPPLIED analytical substitution. Executing only the v iteration while holding u fixed is a further SUPPLIED restriction. Neither is falsely described as the actual initial() function's input API.
+5. Identification of this software update with an actual native event, its invocation, and physical availability of the returned row remain SUPPLIED. Actual atemporal measurement/pruning occurrence is ACCEPTED INPUT; its cause is not under examination.
+
+**Positive local calculation.**
+With u held fixed, the v iteration tests every common palette label in the same order. The existing a incidence is skipped; b_(1-s) is skipped because it is absent at u; b_s is added because it is present at u and absent at v. The addition survives the profile check: v and w still share a, and the root supports have not changed. Thus this restricted scan gives
+
+    S_v={a} -> {a,b_s}.
+
+The code need not receive s as a separate parameter or expose rejection feedback to the receiver. It does read the source-dependent parent incidence. Consequently disjoint sets of initially legal NAMED edits do not themselves exclude a common state-dependent transformation. WORKING_CONSTRUCTION already distinguishes an existence witness from an earned invocation interface; this calculation does not overturn that distinction or supply the interface.
+
+**Whole-scan control on the same prepared pair.**
+Retain premise 4's explicit input substitution but now apply the loop's actual full traversal order, without freezing the source.
+
+1. The first nonroot vertex is u. Its parent o contains every label. The loop adds the missing b_(1-s) to u. Both profile checks still pass: v,w share a, and u intersects z. At the end of the u iteration, S_u=P in both cases, while every other row is still its common initial value. The complete support arrays have therefore become identical BEFORE the receiver v is visited.
+2. The later v and w iterations each add both b0 and b1. They retain a throughout, so their parent's hitting number remains 1. The z iteration adds a; its overlap with u keeps the root target at 1. The final state has S_x=P at every vertex, independently of s.
+3. An exact bit-mask hand check uses preorder (o,u,v,w,z) and palette order (a,b0,b1). The two initial column arrays are [15,19,17] and [15,17,19]. Both become [15,19,19] after processing u, and both end at [31,31,31]. These are literal membership encodings, not numerical execution evidence.
+4. Which tentative operation was skipped differs between the runs. No equality of a hypothetical full execution transcript or timing channel is claimed. The tested receiver is the fixed row, and initial() returns the state; no readable skip transcript is granted.
+
+**The actual wrapper is narrower still.**
+initial(t,k,q,perm,mode) has no prepared-state argument. Lines 97–99 construct and permute a canonical state. The witness above is a disclosed test of its loop body, not a claimed call producing either prepared source case. The earlier session description located a useful fragment, not an end-to-end native implementation.
+
+**Disposition.**
+This candidate fails as the proposed realization of the active source/receiver pair. Isolating the successful child update would add a source-preservation and invocation restriction absent from the full scan. The global state inspection and receiver access also remain unearned. No physical premise has been removed.
+
+The scoped calculation corrects any inference that finding a matching local write inside an existing routine establishes that the routine transports the prepared distinction. It does not prohibit a separately justified local interaction, require a source-aware receiver, prove a universal impossibility, or initiate a new guard/schedule classification. The source-withdrawal endpoint theorem and T-102 remain unchanged.
+
+**Inspected and checked.**
+Full producer.py and verifier.py were read in this session; initial/layout were reread at the immutable source above. The verifier's profile_check/path_check (blob 54e23706c170d0bb82c1b78161290145b6b99af7) check states and primitive paths; they are not a physical invocation interface. All three displayed arrays and every profile check were reconstructed by hand. No scientific module, simulation, enumeration, Gemini review or claim-status upgrade occurred.
+
+**Demands.**
+None for routine agreement. Re-entry needs a sourced reason that the actual event applies the child update while preserving the identified source, plus an available receiver consequence. Merely extracting the successful lines or supplying a different traversal is not that derivation.
