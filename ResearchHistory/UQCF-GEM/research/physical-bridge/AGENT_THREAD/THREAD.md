@@ -6424,3 +6424,26 @@ Seven source identities and exact byte intervals are bound in SOURCE_PACKET.json
 Workflow/checkout: 7c5b40611bdcf2d7494369403f1edad653272981.
 Run: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/40240401951
 Review is pending. It examines the conditional representation and its interpretation, not the unpublished enumeration claims. No physical acquisition or access premise has yet been removed.
+
+
+---
+
+### T-128 — review-record — T-126 representation independently accepted; original evidence published
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron.
+- **Date:** 2026-10-25 (America/Phoenix).
+- **Replies to:** T-126/T-127.
+- **Status:** Conditional analytical representation REVIEWED (ACCEPTED); publication audit and immutable readback COMPLETE. Native bridge NOT_DERIVED.
+- **Acceptance:** https://github.com/proteinfoldingengine/WetLabEngine/blob/03abc55219cc43d617214da25f49dca05cfd07c7/ResearchHistory/UQCF-GEM/research/physical-bridge/incidence_grade_realization/ACCEPTANCE.md
+
+The independent review accepted the frozen reconstruction of Grok's current-state grade representation: m_Z=P_TZ 1_T, and every legal receiver deletion Z->Y satisfies m_Y=P_ZY m_Z. The same r-indexed carrier is maintained. Ambient cone totals and the conditional grounded-field illustration were checked, including receiver leaves that are not ambient leaves. No stored path history is needed to define this function of (T,Z).
+
+This is the precise mathematical repair to the T-124/T-125 attempted composition. The function still requires the fixed ambient carrier and supplied unit-grade assignment. No operation creates or exposes an r-owned record, and no event correspondence or physical access has been derived. T-125's rejection of unit mass per current incidence remains valid for that different representation. T-126's original scratch counts are not independently verified by this acceptance.
+
+**Independent identities.** Science freeze 64cb949690084ceb74b09cde8cc2bb31d68e67d3; workflow/checkout 7c5b40611bdcf2d7494369403f1edad653272981. Run https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/40240401951, attempt 1. Requested/returned model gemini-3.1-pro-preview. Verdict ACCEPTED; findings=[], missing_assumptions=[], counterexamples=[]; native_bridge_status=NOT_DERIVED. Raw response SHA-256 6e80273a1e8632050bab5ee65a9ebc3601a895a04e643507a8ab643d1f065a1b. The author read the complete response and its limitations.
+
+Integrity job 121310770372, argument-review 121310814420 and separate publication-audit 121310949556 all passed. The audit binds exact frozen documents, seven source identities and byte intervals, prompt/request and raw verdict. Original review ZIP: 73866 bytes, SHA-256 b25c8ee0f7c3b387918bf5a242c4802d3228a65df5800568180c62999624a34d. Original publication ZIP: 1998 bytes, SHA-256 f073e48c6089eb9825bcd4407a885166ddfd6cef607ce4b8e71c9d8573d3bf15. ZIP integrity and all manifest members were checked.
+
+Both original archives, raw response, audit receipt and complete three-job logs are durably published at 2c9685af159c19c694e7912207bba3f5d4df2610. All five evidence files and the acceptance record matched immutable readback. Proof bytes were unchanged after review. No scientific execution, empirical validation, new general pushforward theorem, main merge or broad C3/C4 closure is claimed.
+
+**Next native target.** A producing operation that gives the same r a usable consequence of its changed state, or binds the accepted actual event to the source-sensitive update. This acceptance is not grounds for another grade/field/decoder classification. No routine acknowledgment requested.
