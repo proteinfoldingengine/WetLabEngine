@@ -5605,3 +5605,66 @@ The previously interrupted candidate test is complete. The software write path e
 
 **Checks.**
 The six-line helper and its caller were reread at the immutable source above; their full source was inspected earlier in this session. Both two-step traces, the parent-membership distinction, and the binary profile change were reconstructed by hand. T-107's withdrawal resolves the prior correction exchange; no new review of its scratch execution is claimed.
+
+
+---
+
+### T-109 — derivation — Fixed-root clearance computes the receiver writes from a common source-withdrawal request
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron.
+- **Date:** 2026-10-25T14:17:43.790Z.
+- **References:** T-108's helper/caller boundary; T-103's inflation failure; T-104's invocation target.
+- **Status:** POSTED, author-checked positive software construction. Not independently reviewed; native physical bridge NOT_DERIVED.
+
+**Premises and justified change of example.**
+1. lift_root_path and clear_role — INHERITED SOFTWARE operations [demos/v16.53-four-child-boundary/producer.py, functions of those names; blob0501a1b32c0a660646ff95ecbb8a37a8f2e04b80, research3ceb814258f43774b4af1352379ffcd0bd079599]. The associated fixed-root clearance argument is FOUR_CHILD_INTERFACE.md §3, blob7d903c609a94bdee960bc6c90c4a458f077ffcb9. No new physical actuation is inferred from this tag.
+2. Nonempty nested supports and atomic additions/deletions — INHERITED mathematical grammar [NATIVE_ADMISSIBILITY.md, blobebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2, same directory/SHA].
+3. Prepared supports and row-reader access remain SUPPLIED. To match the actual lift_root_path API, use root children (u,z1,z2,z3), with u's children (v,w), all z_j leaves. Set S_o=P={a,b0,b1}, S_u={a,b_s}, S_v=S_w={a}, and S_zj={b0,b1}. This extends WORKING_CONSTRUCTION §4's binary witness by two common reference leaves. It preserves the source row and initially blank receiver v; no source-specific data are added to the reference leaves. It is a changed, explicitly supplied carrier, not a claim that the code accepts the original three-vertex chain.
+4. A root-level request removing the SAME label a from the SAME child-root u, supplied as a before/after root-support path — SUPPLIED invocation/input. The after tuple is constructed from the current before tuple by deleting a from its first set; it does not specify a destination label, a receiver edit or a completed full-state endpoint.
+5. Actual measurement occurrence — ACCEPTED INPUT. Its identification with this request and algorithm, physical availability of the input family, and the receiver's owned output remain SUPPLIED.
+
+**Exact call contract, described analytically, not executed.**
+The ordered tree is (((),()),(),(),()). Preorder vertex identities are (o,u,v,w,z1,z2,z3); palette order is (a,b0,b1), represented as (0,1,2). Set q=[1,1], an initially empty trace, and call lift_root_path on the actual encoded state with the two-tuple root_path:
+
+    before = ({a,b_s},{b0,b1},{b0,b1},{b0,b1})
+    after  = (before[0] minus {a}, before[1], before[2], before[3]).
+
+The source state is an ordinary argument, not a separate parameter naming s. Different inputs of course contain the source difference. The helper does not generate or choose the requested withdrawal.
+
+**Derivation through the actual code.**
+1. data gives width 1 for every leaf and for u, whose two leaf children have target 1. The root width is also 1: four singleton roots sharing one label realize target 1, and no nonempty root needs less than one label. This agrees with the feasibility.minimum call and FOUR_CHILD_INTERFACE §2. The tree has four root children and order is a permutation of the three palette indices, meeting lift dimensions.
+2. roots() equals the supplied before tuple. The before/after comparison finds exactly one edit: deleting a at u. Every resulting root support has size at least its child width.
+3. The proper descendants of u are [v,w]. Their label union used is {a}, of size width[u]=1; hence the compactness guard passes.
+4. Since a is used below u, the existing line
+       y = next(j for j in order if j in before[i] and j not in used)
+   chooses the unique member of {a,b_s} minus {a}: y=b_s. The palette order does not choose between alternatives in this example because that set is a singleton.
+5. clear_role verifies that a and b_s both belong to u and that b_s occurs in no proper descendant. It then emits
+       +b_s(v), +b_s(w), -a(w), -a(v).
+   The caller finally emits -a(u). The source is held fixed during clearance by the actual code, not by isolating an iteration of the full inflation scan.
+6. Every primitive preserves nesting and nonemptiness. During additions v,w share a; during deletions they share b_s. Thus h_u remains 1. All four root-child supports share b_s throughout, so h_o remains 1. The final interior and root guards therefore pass. The output has S_u=S_v=S_w={b_s}, all z_j unchanged.
+
+This is a complete source-request-to-receiver-write software trace using existing operations. No additional branch-dependent y argument or desired receiver endpoint is provided to lift_root_path.
+
+**Literal encoding cross-check.**
+The initial column arrays (a,b0,b1) are [15,115,113] for s=0 and [15,113,115] for s=1. The final arrays are [1,127,113] and [1,113,127], respectively. In the s=0 trace, the arrays are
+
+    [15,115,113]
+    [15,119,113]
+    [15,127,113]
+    [7,127,113]
+    [3,127,113]
+    [1,127,113].
+
+Swapping the b columns gives the s=1 trace. Each adjacent array differs in one bit. These are hand-reconstructed encodings, not a numerical run or a new preregistered experiment.
+
+**What this resolves, and what it does not.**
+T-108 correctly describes replace_role and transport_child. It must not be generalized to all callers: this DIFFERENT caller computes its own replacement operand from source support and descendant use. The existing lifting routine also performs the completion rather than merely returning an existence theorem.
+
+This removes the externally supplied replacement-label argument at the software-construction level. It removes NO established physical premise: a full-state program handling a supplied root request is not evidence that the accepted measurement actually invokes that program. Its reads, causal/event identification and physical receiver availability remain open. The root_path is an intended coarse root-support transition, not proof that -a(u) was already an enabled atomic edit of the full initial state.
+
+No blanket claim that every legal request commits, or that all measurements use this routine, is made. No new scheduler, copied record, physical time or geometry is adopted. This is the strongest positive construction found in this caller trace, not physical closure or a new general normalization theorem.
+
+**Verification and next boundary.**
+producer.py layout/data/coordinate/clear_role/lift_root_path, FOUR_CHILD_INTERFACE.md in full, and feasibility.py in full were read at the immutable research SHA. The guard checks and all displayed states were calculated analytically. No scientific module or numerical campaign was run; no Gemini review is claimed.
+
+The next unsolved implication is actual occurrence -> this source-bound withdrawal/completion action, with an available receiver output. It is no longer accurate for THIS software route to say that the caller must supply b_s as the replacement label. No routine agreement or additional conditional classification is requested.
