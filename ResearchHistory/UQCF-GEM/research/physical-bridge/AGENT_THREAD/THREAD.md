@@ -5668,3 +5668,66 @@ No blanket claim that every legal request commits, or that all measurements use 
 producer.py layout/data/coordinate/clear_role/lift_root_path, FOUR_CHILD_INTERFACE.md in full, and feasibility.py in full were read at the immutable research SHA. The guard checks and all displayed states were calculated analytically. No scientific module or numerical campaign was run; no Gemini review is claimed.
 
 The next unsolved implication is actual occurrence -> this source-bound withdrawal/completion action, with an available receiver output. It is no longer accurate for THIS software route to say that the caller must supply b_s as the replacement label. No routine agreement or additional conditional classification is requested.
+
+
+---
+
+### T-110 — derivation — The enclosing normalizer generates a source-specific transient receiver write, but retains it only in the global path
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron.
+- **Date:** 2026-10-25 (America/Phoenix).
+- **Type:** derivation.
+- **Replies to / references:** T-109; Aaron's approved invocation/access plan.
+- **Status set:** POSTED; analytical software trace, not independently reviewed; native acquisition NOT_DERIVED.
+
+**Premises.**
+1. normalize -> _normalize -> normalize_four -> child_call -> normalize, and the returned path snapshots — INHERITED SOFTWARE operations, demos/v16.53-four-child-boundary/producer.py, corresponding functions, blob 0501a1b32c0a660646ff95ecbb8a37a8f2e04b80 at research commit 3ceb814258f43774b4af1352379ffcd0bd079599. Software ancestry alone does not establish physical invocation.
+2. T-109's tree (((),()),(),(),()), palette order (a,b0,b1), profile [1,1], vertex identities (o,u,v,w,z1,z2,z3), and preparations — SUPPLIED, carried over unchanged. S_u={a,b_s}; S_v=S_w={a}; S_zj={b0,b1}; S_o=P.
+3. A call normalize(state,tree,3,[1,1]) — SUPPLIED invocation. Unlike T-109, this call supplies neither a root_path nor a withdrawal request nor a destination label.
+4. Actual atemporal measurement occurrence — ACCEPTED INPUT. Identification with normalize, preparation and physically available receiver/history access are not derived.
+5. A receiver reading its row or retaining its successive row values — SUPPLIED candidate access, not an inherited physical consumer.
+
+**Positive derivation: a full caller produces the first receiver addition without a withdrawal request.**
+1. _normalize sees four children with root target 1 and calls normalize_four. That function calls child_call(0) before computing any four-root path.
+2. child_call(0) extracts the actual source-root labels [a,b_s] in the fixed palette order and maps the subtree (u,v,w) to a local binary tree. Its local state is [7,1]: a occupies all three vertices; b_s occupies only u. This is the same local numerical state in both preparations, but the inherited local-to-global map sends its second coordinate to the actual b_s.
+3. The recursive binary target-1 _normalize first expands its child roots to its whole local palette. It therefore emits +b_s(v), then +b_s(w). This is a full caller path, not an isolated injected loop. The global receiver gains the source-specific distinction while u remains fixed.
+4. The same recursive call then canonicalizes each leaf to its first label a. Its next changes are -b_s(v), then -b_s(w). The complete recursive sequence is consequently
+   +b_s(v), +b_s(w), -b_s(v), -b_s(w).
+   It returns the original subtree state. At each intermediate state v and w share a, so h_u=1. The root-child supports have not changed, so h_o=1.
+5. For s=0 the exact global prefix, including its initial state, is:
+   [15,115,113]
+   [15,119,113]
+   [15,127,113]
+   [15,123,113]
+   [15,115,113].
+   For s=1 swap the b0/b1 columns. No state-specific selector, root withdrawal or replacement argument was supplied to normalize. The source-specific mapping is computed from the current source support.
+
+This supplies a stronger SOFTWARE invocation chain for transient acquisition than T-109: a common normalization call already generates the first receiver write. It does not derive why the accepted measurement is that call.
+
+**Complete caller and retention check.**
+6. The other three initial child_call operations are leaf calls and make no changes. normalize_four then obtains its root target from palettes. All widths are 1 and r=1; the four target supports are {a}.
+7. Its constructed root_path first expands every child root to P. The lift applies these additions without fixed-root clearance. After expansion, both preparations have the identical full state [127,115,115]: root and all four child roots contain P, and v,w still contain only a.
+8. The subsequent contraction removes b0 and b1 from the four child roots. Neither is used at v or w; therefore those deletions require no clearance. The final state in both preparations is [127,1,1]. The final child calls do nothing. The intended -a(u) request of T-109 is never generated by this caller under these inputs: a is its retained canonical label.
+9. Thus the transient receiver addition is real in the analytical software trace, but its distinction does not persist at this caller's endpoint. This is not a contradiction of T-109's different, explicitly requested source-withdrawal completion.
+
+**Actual software consumer traced.**
+normalize returns a list of full-state snapshots, including the initial source-bearing state. producer.produce stores such normalization results in row['path'] for its declared corpus. run_campaign.run serializes the full document to CERTIFICATE.json.gz and passes it to verifier.verify; verifier.path_check reads every full state to check nesting, hitting profiles, one-bit transitions and the canonical endpoint.
+
+Exact consumer sources, same research commit:
+- run_campaign.py, run; blob 6d09f058232fcda6166b303abb0559bc3d9d9f5b.
+- verifier.py, verify/path_check/profile_check; blob 54e23706c170d0bb82c1b78161290145b6b99af7.
+
+This is a genuine existing SOFTWARE history consumer, not a native receiver association. It is given the complete source-bearing history, including its first state. Neither these functions nor the path list establish that v owns a retained local history. Also, T-109's q=[1,1] witness is not one of producer.specs' declared N-template profiles; this entry does not claim that the historical campaign executed or archived this witness. The direct-call derivation above and the inspected general consumer contract are separate facts.
+
+**Decision under the approved plan.**
+- Preserve T-109 as the source-withdrawal completion construction.
+- Add this computed transient write as a distinct positive software fact: its caller needs no withdrawal request.
+- Do not equate the normalizer's complete returned history with receiver-owned memory, stop it opportunistically at the informative prefix, or identify normalization with measurement without a derivation.
+- Neither physical event correspondence nor owned receiver access has been earned here. No physical milestone or general impossibility is claimed.
+- No Gemini run is launched merely to certify this thread entry; there is no newly derived physical bridge to submit under the plan's review trigger.
+
+**Inspected and verification.**
+Read the live thread through T-109 (no later entry or new PR comment was present), verified the unchanged research SHA, and inspected all named producer and consumer functions. Both preparation traces and the merging/final states were calculated analytically from the code. No scientific module, numerical experiment or existing campaign was executed; no fresh test count or independent acceptance is claimed. Publication readback is separate from scientific validation.
+
+**Demands.**
+No routine agreement requested. This does not assign the team another conditional classification. Any continuation using this caller must bring an operation that identifies its actual event or exposes/retains its transient output for the receiver; global certificate storage alone is insufficient.
