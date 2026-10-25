@@ -1,0 +1,88 @@
+{
+  "checkout_sha": "bf25f920ec9c63089024ee4c920a2152482b46ab",
+  "documents": {
+    "FREEZE.json": "7f091337430e655e55ebfc0fca7c6f876a9e0bb99b11759fface0ca58391773f",
+    "RESULT.md": "f7da8aa8a9477ff3b38796c69d65ddd7aad333a4e7d3934a24590f95e7357027",
+    "SOURCE_PACKET.json": "f5e880ba36820ba4185eb350f65c51dffd50cd291c7a4592e7bff5fc0143eec8"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge": "NOT_DERIVED",
+  "prompt_sha256": "f7620fc143206b0f683528e24988e55c24588aa31447bfbf472dad9f009fd2c8",
+  "response_sha256": "0e4fcb1eb85823967bf1348080e61a29a3f823573cd45d860c8f69c174f692bd",
+  "run_attempt": "1",
+  "run_id": "40232106950",
+  "scientific_execution": false,
+  "scientific_sha": "bf0fe6655f356aeba0a65a0f28e4ed2c46b9ead0",
+  "source_commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+  "source_count": 6,
+  "sources": [
+    {
+      "byte_end": 3615,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 3615,
+      "excerpt_sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "full_bytes": 3615,
+      "full_sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "git_blob": "ebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2",
+      "path": "ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md"
+    },
+    {
+      "byte_end": 16612,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 16612,
+      "excerpt_sha256": "3841f8c25c79cc2231d14a505506929156ae054ba3c64c5233aad8732879b17d",
+      "full_bytes": 16612,
+      "full_sha256": "3841f8c25c79cc2231d14a505506929156ae054ba3c64c5233aad8732879b17d",
+      "git_blob": "5f4a3758cfc59b9a7d023d541a8765801254943b",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/RESULT.md"
+    },
+    {
+      "byte_end": 5868,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 5868,
+      "excerpt_sha256": "0fe7f7ac7eca74366309fa4402a9ec0757dbef1e33815f55656b2f831ab668d2",
+      "full_bytes": 5868,
+      "full_sha256": "0fe7f7ac7eca74366309fa4402a9ec0757dbef1e33815f55656b2f831ab668d2",
+      "git_blob": "e9d4308e02fdb61bd5b1ba82747cca4b60474ab4",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/REVIEW_ACCEPTANCE.md"
+    },
+    {
+      "byte_end": 11892,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 11892,
+      "excerpt_sha256": "2b129b42e3cd2a6b3631dd299ec344340615cc82634067521d9100a3d265baac",
+      "full_bytes": 11892,
+      "full_sha256": "2b129b42e3cd2a6b3631dd299ec344340615cc82634067521d9100a3d265baac",
+      "git_blob": "0aa3337324836844c47ab011ba2bc2adb9f280d9",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/intrinsic_receiver_shape/RESULT.md"
+    },
+    {
+      "byte_end": 7797,
+      "byte_start": 0,
+      "commit": "5c57913d5e1226b5abaad7f2c9eb56d2ba9321a8",
+      "excerpt_bytes": 7797,
+      "excerpt_sha256": "2fbee289c2f022ea13e7a3d4e0831c85a0c2a4026dd8ce40dc568c4c3338d510",
+      "full_bytes": 7797,
+      "full_sha256": "2fbee289c2f022ea13e7a3d4e0831c85a0c2a4026dd8ce40dc568c4c3338d510",
+      "git_blob": "0a3f2981eeee772e2997ac18af6c836ff98fba01",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/two_feature_receiver_signal/RESULT.md"
+    },
+    {
+      "byte_end": 3929,
+      "byte_start": 0,
+      "commit": "5c57913d5e1226b5abaad7f2c9eb56d2ba9321a8",
+      "excerpt_bytes": 3929,
+      "excerpt_sha256": "ae6e1effedcfcd1f9dc669be861a0331504edafa0d8ffe8a3854c687660dad40",
+      "full_bytes": 3929,
+      "full_sha256": "ae6e1effedcfcd1f9dc669be861a0331504edafa0d8ffe8a3854c687660dad40",
+      "git_blob": "bea13f76ab117682eabe5701b94187ff8e7577db",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/two_feature_receiver_signal/ACCEPTANCE.md"
+    }
+  ],
+  "status": "PASS",
+  "workflow_sha": "bf25f920ec9c63089024ee4c920a2152482b46ab"
+}
