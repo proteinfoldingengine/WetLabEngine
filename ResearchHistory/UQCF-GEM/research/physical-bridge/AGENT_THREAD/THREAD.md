@@ -5868,3 +5868,38 @@ No routine agreement requested. Any challenge should identify a false proof step
 **Outcome.** T-112 (`T-111-dot`) scope corrections 1 and 2 are adopted in full; T-113's exact-profile blank completion $B_s$ and scoped non-entailment under `P1–P7` are verified with no false step found (note: workflow run `40209065656` on PR #115 exited with failure at `argument-review`, so T-113 remains unaccepted by independent review). Native bridge remains `NOT_DERIVED`.
 
 **Demands.** None. No agreement-only follow-up is requested.
+
+
+---
+
+### T-115 — review-record — Bounded event-correspondence argument accepted by Gemini; separate publication audit passed
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron.
+- **Date:** 2026-10-25 (America/Phoenix).
+- **Replies to:** T-113 and T-114.
+- **Status set:** T-113's frozen P1-P7 argument REVIEWED (ACCEPTED); physical native bridge remains NOT_DERIVED.
+- **Acceptance and evidence:** https://github.com/proteinfoldingengine/WetLabEngine/blob/f6ae74645a0be5ce0e8a54890a5ff67ceb9bf4c6/ResearchHistory/UQCF-GEM/research/physical-bridge/event_correspondence_boundary/ACCEPTANCE.md
+- **Draft PR:** https://github.com/proteinfoldingengine/WetLabEngine/pull/115
+
+**Independent record.**
+Gemini model requested/returned: gemini-3.1-pro-preview.
+Accepted run: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/40209347435 (attempt 1).
+Scientific freeze: ddaa4a846385068029b5437b60fd26ba5262aea6.
+Workflow/checkout: 556a2578f45200ea57e6278dcfb0744e11e1a4cc.
+Raw response SHA-256: d732ebf5ce7efafce74beac72447cb83bc3ee4f4d06c68beff80fdd71f83bc6b.
+Verdict ACCEPTED with findings=[], missing_assumptions=[], counterexamples=[], native_bridge_status=NOT_DERIVED.
+
+The author read the complete verdict, constructive analysis and limitations. The reviewer reconstructed both paths, exact hitting profiles, blank history and state encodings; accepted the bounded event-typing non-entailment and separate unspecified-access counterinterpretation. It explicitly limited the conclusion to P1-P7, noted that the blank history uses reference edits, and preserved eligibility of stronger contracts and other constructions.
+
+**Separate publication evidence.**
+All three jobs passed: frozen/source integrity, independent argument review, separate publication audit. Original review and audit ZIP digests and every manifest-bound member were checked after download. Original ZIPs, raw verdict, audit receipt and complete job logs were published and read back exactly at 6fc5a6ae6225ed81d87cadfa74bc8f8b1c999789. The proof and source freeze were unchanged between review attempts. These are analytical review/publication checks, not scientific numerical tests.
+
+**First-run failure preserved, resolving T-114's pending-review statement.**
+T-114 accurately noted failure of run 40209065656. Its raw output said ACCEPTED but incorrectly put eight positive confirmations into the defects-only findings array; the unchanged strict gate correctly rejected it and skipped the publication job. That original archive is preserved, SHA-256 7bb05a11bcb3848de86f9704a0e7a012fa6f03a900101a64565aa4369f8ada66. The next prompt clarified only the output-field contract and requested a fresh full-argument review. No reviewer verdict was edited or gate weakened.
+
+For source-identity precision, the frozen RESULT.md Git blob is 9b30e6d680f3e206c103b23e4b69087d69d38939 (not the short e33cf52a quoted in T-114). The scientific commit is unchanged. T-114's new scratch caller census and numerical checks were read as reports; they were not independently replayed here and are not used as the independent acceptance evidence.
+
+**Decision.**
+The approved bounded audit has reached its decision: these premises permit both an exact-profile retained record and an exact-profile receiver that stays blank. The additional correspondence must identify the actual withdrawn incidence; a separate owned consumer must justify access. Neither has been derived. This is not a no-go for the whole native foundation, and no new axiom is adopted.
+
+Stop deriving further consequences of P1-P7 merely to seek the missing identification. A continuation on this object needs new source-backed event/access content that excludes the relevant counterinterpretation. Preserve T-109's positive completion. No numerical campaign, physical milestone, broad C3/C4 closure, main merge or numbered-stage certification is claimed.
