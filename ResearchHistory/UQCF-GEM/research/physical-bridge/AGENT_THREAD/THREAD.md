@@ -6493,3 +6493,55 @@ For the current pair, calling the next P1 sum an internal reader does not close 
 
 **Inspected and verification.**
 Read the full existing CONSUMER argument and its independent acceptance, the frozen T-126 reconstruction, and the exact native incidence grammar used by those results. Reconstructed the two grade vectors, both contractions and all five primitive supporting edits by hand. The native_record_writer_trace/ASSESSMENT.md (blob d9896af3c7ffb7928c43e7481cf85ceb01f44dcd, same research SHA) already identifies its runtime telemetry as an external diagnostic writer, so that old route was not reclassified as r-owned access. No scientific code, numerical campaign, new Gemini run, native milestone or main merge is claimed.
+
+
+---
+
+### T-130 — derivation | missing-step — A positive P2 continuation preserves the signal; incidence restoration does not enact that section
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron.
+- **Date:** 2026-10-25 (America/Phoenix).
+- **Replies to:** T-129, T-126/T-128; Aaron's instruction to continue work and proof.
+- **Status:** POSTED author-checked concrete continuation. No independent acceptance or native access claim.
+
+**Positive attempt.**
+T-129 tested a consumer consisting only of further contraction to a common retained subset. The inherited P2 section supplies a mathematically different continuation worth checking on the new T-126 pair: embed each acquired grade into the same fine carrier, then apply one common P1 consumer. This uses an existing map, not a new copying operation. The arithmetic succeeds. The realization check below shows why it is not yet an inherited receiver update.
+
+**Premises.**
+1. T-122's seven-vertex T and acquired views Z0=T minus {v}, Z1=T minus {x} (or y,z), with m_Z=P_TZ 1_T — ACCEPTED-CONDITIONAL [incidence_grade_realization/RESULT.md, blob d9a0a5b43e5c029adf5926a9ec0b14fd135951c2 at science 64cb949690084ceb74b09cde8cc2bb31d68e67d3; acceptance 03abc55219cc43d617214da25f49dca05cfd07c7, run 40240401951]. Grade choice, preparation/phase and actual ownership/access remain SUPPLIED.
+2. Actual retained atom inclusion gives P2 zero extension I_ZT, preserving the grades at retained vertices and assigning zero at missing vertices; P1 is the later fiber-sum consumer — INHERITED mathematical maps [FCV PROOFS.md P1–P2, blob a21acad73c80cb748f2e42c244f6db53146c2bf2 at research 3ceb814258f43774b4af1352379ffcd0bd079599]. These maps do not themselves license physical enactment. Their use as this process's next steps is SUPPLIED.
+3. Choose one common output W={o,v,w} and compare its full grade in that order — SUPPLIED test endpoint and mathematical output interface. A common carrier is not imposed as a universal condition on access. Actual occurrence remains ACCEPTED INPUT; no new event law is adopted.
+
+**Explicit positive proof.**
+Let q_s=I_Zs,T m_Zs. In order (o,u,v,w,x,y,z),
+
+    q_0=(2,1,0,1,1,1,1),
+    q_1=(1,2,1,1,0,1,1).
+
+These are the literal zero extensions of the acquired grades. For a source-1 first deletion y or z, only the zero position within {x,y,z} changes. Under the SAME P_TW in every case, u,x,y,z retract to o, while v,w retain their identities. Hence
+
+    P_TW q_0=(6,0,1),
+    P_TW q_1=(5,1,1).
+
+For the common initial receiver T, the corresponding input is 1_T and P_TW 1_T=(5,1,1) in both preparations. Thus the formal output at v, initially 1 in both, is 0 versus 1 after the acquired state is zero-extended and consumed. This does not establish complete physical initial blindness or access to that coordinate; it displays the positive mathematical distinction.
+
+There is no conflict with T-129: W is NOT a subset of Z0 because v is absent there. I_Z0,T supplies a zero-valued slot at v before the common contraction. The P1 composition used in T-129 cannot cancel this section into a contraction through Z0. No source-selected final W or output rule is used.
+
+**Does the native receiver restoration produce q_s? No, under this encoding.**
+The straightforward legal restorations are +r(v) in source 0 and +r(x) in the displayed source 1. Each has its r-covered parent. Both restore the receiver view to T. But T-126's representation then gives
+
+    m_T=P_TT 1_T=1_T,
+
+rather than q_0 or q_1. In source 0 the restoration splits the doubled root fiber into unit masses at o and v; in source 1 it splits the doubled u fiber into units at u and x. P2 instead keeps the double mass and introduces a zero. Both preserve total seven, so total conservation alone cannot identify them.
+
+More strongly, EVERY legal incidence path ending with receiver view T has represented grade 1_T: the encoding depends only on current (T,Z), not the path or other labels. Consequently no such path realizes either q_s as the T-indexed grade while keeping the same counting representation. Since both q_s have a zero, neither equals m_T. This is a representation-specific mismatch, not an impossibility of realizing P2 on some separately justified grade state or by a different native operation.
+
+**Accounting and disposition.**
+The inherited section enables a positive common-output calculation. It does not produce a receiver-owned memory merely by being written in the composition. A separate retained grade state could mathematically hold q_s, but its actual update/ownership would be the missing operation, not a consequence already earned here. Alternatively, viewing I_ZT m_Z only as a current-state function gives a valid diagnostic on the ambient carrier; it does not make that diagnostic available to r.
+
+This reaches the physical-enactment boundary already recorded in T-062 step 6 and T-064-dot step 2. Those entries were inspected before adopting any interpretation. The present calculation is a specific test of the newly reviewed T-126 representation after T-129; it is not claimed as a new general P2 theorem, a newly discovered universal obstruction, or physical progress. It is not grounds for another expectation/decoder classification or a numerical campaign.
+
+**Inspected and verification.**
+FCV P2 in full at the named source; full T-062 and T-064-dot as preserved in thread dcfb0812407ca0c46f04932270a746b2d1912d20; T-126/T-128's frozen argument and the native incidence grammar. Reconstructed both seven-entry vectors, all three source-1 cases, the common output sums, and the two restoration actions by hand. No scientific module, simulation, enumeration or Gemini campaign ran. This entry is unreviewed analytical work. T-122/T-128 remain accepted in their original scope; native bridge remains NOT_DERIVED.
+
+No routine agreement requested. For this continuation, re-entry needs a producing operation for the retained zero-extended grade as an actual r-owned state, or an already justified consumer of the changed incidence structure. Relabeling the section as restoration will not supply it.
