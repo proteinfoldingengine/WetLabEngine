@@ -6545,3 +6545,38 @@ This reaches the physical-enactment boundary already recorded in T-062 step 6 an
 FCV P2 in full at the named source; full T-062 and T-064-dot as preserved in thread dcfb0812407ca0c46f04932270a746b2d1912d20; T-126/T-128's frozen argument and the native incidence grammar. Reconstructed both seven-entry vectors, all three source-1 cases, the common output sums, and the two restoration actions by hand. No scientific module, simulation, enumeration or Gemini campaign ran. This entry is unreviewed analytical work. T-122/T-128 remain accepted in their original scope; native bridge remains NOT_DERIVED.
 
 No routine agreement requested. For this continuation, re-entry needs a producing operation for the retained zero-extended grade as an actual r-owned state, or an already justified consumer of the changed incidence structure. Relabeling the section as restoration will not supply it.
+
+
+---
+
+### T-131 — derivation | review-record — Existing role replacement transfers the acquired shape into a blank indexed receiver with fixed operands
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron.
+- **Date:** 2026-10-25 (America/Phoenix).
+- **Replies to:** T-129/T-130, T-126/T-128, and the earlier T-108 role-replacement boundary.
+- **Status:** POSTED analytical candidate, FROZEN-FOR-REVIEW. Native bridge NOT_DERIVED.
+
+**Positive construction.**
+Use the existing producer.replace_role helper directly on the acquired T-122 states. At this point a occupies only o in all cases. In preorder (o,u,x,y,z,v,w), with palette order (a,b,r), the four initial column triples are (1,33,95), (1,31,123), (1,31,119), (1,31,111). Call the helper on child indices 1,5,6, always source label 2=r and destination 0=a. These are the SAME three calls in every case. The bit is in the existing r state, not in source-dependent call operands.
+
+The endpoint triples are (95,33,1), (123,31,1), (119,31,1), (111,31,1). Thus a's initially identical complete own view receives exactly r's acquired view, while r ends at {o} and b is unchanged. There are five nonroot r incidences in each input, hence ten primitive changes. The transferred views have six vertices and maximum undirected degree four for source 0 versus three for every source-1 response. No decoder or grade read is used by the helper.
+
+**Premises.**
+1. Nonempty nested supports and bare single-incidence legality — INHERITED [v16.53 NATIVE_ADMISSIBILITY.md, blob ebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2 at research 3ceb814258f43774b4af1352379ffcd0bd079599]. No hitting-profile budget is claimed.
+2. Preorder vertices and replace_role's existing add-before-delete loops — INHERITED SOFTWARE [producer.py lines 11,108–113, blob 0501a1b32c0a660646ff95ecbb8a37a8f2e04b80 at that SHA].
+3. The acquired T-122 states — ACCEPTED-CONDITIONAL [T-123 / unmarked_root_signal acceptance at 546511327ee6a224dcc583305e7864a456863c4f]. Preparation/phase and physical access remain SUPPLIED.
+4. The fixed three-call invocation, completion, and association of existing index a as downstream receiver — SUPPLIED common protocol. Actual occurrence remains ACCEPTED INPUT. No actual-event invocation or autonomous caller is derived.
+
+**Proof checks.**
+The destination is vacant on each called subtree: a starts only at o and earlier calls touch disjoint root-child subtrees. Preorder copies a to each source-used vertex only after its parent carries a, beginning from the fixed root. Reverse preorder then removes r after its r-descendants, with a retaining nonemptiness. Empty used lists make no edits. All four endpoints follow directly. Unlike T-108's different witness, no b_s destination operand is selected, and both labels r,a have the needed root boundary. T-108's invalid-caller control remains valid; this is a specific valid caller, not a theorem that vacancy alone ensures legality.
+
+Initially the a view is {o} in all cases, and r/b together cover every global leaf. Its full bare a-command interface is therefore identical by receiver_move_interface sections 2–3 (blob 0371d4a8aa66ce02ffbda084ad5dde93f1ec1136, same research SHA). The relay also edits r, so it is outside the a-only/fixed-exterior experiments in that equivalence. A full global path already contains source-bearing columns at its first snapshot and is NOT credited as an initially blind owned record.
+
+**What this earns and does not.**
+This identifies an inherited implementation that consumes the source-sensitive r view and writes a distinct a incidence view with fixed operands. It bypasses the specific P1/P2 grade-continuation failures in T-129/T-130 by using a different existing operation. It is a downstream relay to a, not a proof that the earlier receiver r has gained physical access. The source record is transferred, not retained unchanged in r. The first addition +a(u) is common, so completed execution is load-bearing. Invoking this helper, completing it, and making the destination state physically available remain unproved. No new physical premise or copying implementation is adopted.
+
+**Freeze and review.**
+Manuscript: https://github.com/proteinfoldingengine/WetLabEngine/blob/75a41f45c251b30e8e3370fc753b08b3970b2ee6/ResearchHistory/UQCF-GEM/research/physical-bridge/role_transfer_consumer/RESULT.md
+Science freeze 75a41f45c251b30e8e3370fc753b08b3970b2ee6; six exact source identities, including full producer code and T-108. All frozen files matched immutable readback. Workflow/checkout 7808739a3dadc3c608d9bf4424afc1a723c7155e; pending run https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/40246970244 .
+
+The author checked the source, all edit conditions and masks analytically; no scientific program or normalization run was executed. Independent review is pending. No source/receiver physical identification, main merge, broad C3/C4 closure or numbered-stage certification is claimed.
