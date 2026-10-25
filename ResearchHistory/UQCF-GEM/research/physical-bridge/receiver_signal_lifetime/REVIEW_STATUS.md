@@ -2,7 +2,7 @@
 
 Date: 2026-10-25 America/Phoenix.
 
-**Conditional analytical review ACCEPTED after reconciliation. Native bridge NOT_DERIVED. Public raw-evidence archival remains BLOCKED; full publication closeout is not claimed.**
+**Conditional analytical review ACCEPTED after reconciliation. Native bridge NOT_DERIVED. Public raw-evidence archival and immutable readback are COMPLETE; see the dated completion below.**
 
 ## Accepted scope
 
@@ -48,3 +48,15 @@ The archives and raw responses are preserved locally and in their original finit
 This status note publishes only the author's bounded review outcome and evidence identities, not the blocked raw payload. Full raw-evidence publication/readback remains outstanding pending explicit user approval. A passing publication-audit job verifies consistency; it does not discharge this separate durable-archival obligation.
 
 No scientific simulation, enumeration, numerical campaign, main merge, broad C3/C4 closure or empirical validation is claimed. PR #116 remains draft.
+
+
+## Publication completion — 2026-10-25
+
+Aaron explicitly authorized publication of both runs' original review archives, raw responses and logs ("Publish and work"). The previously blocked action then succeeded.
+
+All ten evidence files are durably published at commit 6c7968b617dc713774df3d830c14156cb77a472b and each full text/base64 payload matched immutable readback exactly. Original decoded ZIP sizes and SHA-256 values remain those listed above; no review response was edited.
+
+- First run: [review ZIP](evidence/RUN_40231873744_REVIEW.zip.b64), [audit ZIP](evidence/RUN_40231873744_PUBLICATION.zip.b64), [raw response](evidence/RUN_40231873744_REVIEW_RAW.json), [audit receipt](evidence/RUN_40231873744_PUBLICATION_AUDIT.json), [logs](evidence/RUN_40231873744_LOGS.json).
+- Reconciled run: [review ZIP](evidence/RUN_40232106950_REVIEW.zip.b64), [audit ZIP](evidence/RUN_40232106950_PUBLICATION.zip.b64), [raw response](evidence/RUN_40232106950_REVIEW_RAW.json), [audit receipt](evidence/RUN_40232106950_PUBLICATION_AUDIT.json), [logs](evidence/RUN_40232106950_LOGS.json).
+
+The earlier blocked/pending statements are retained above as historical records and are superseded by this completion. T-119's conditional analytical review and durable evidence publication are complete. Native bridge remains NOT_DERIVED. PR #116 remains draft, with no main merge or broad C3/C4 closure.
