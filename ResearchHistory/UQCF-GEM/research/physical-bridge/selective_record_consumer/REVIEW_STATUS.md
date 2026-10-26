@@ -71,3 +71,15 @@ After the user replied "Continue" to the explicit upload question, the same firs
 No archive or companion evidence file was uploaded during this retry, and no alternative route was attempted. The five original payloads above remain pending. Explicit approval for those five files at the named public PR117 branch/directory is still required by automatic approval review.
 
 Unaffected work continued: the overbroad prose in constructions/record_access/CONSTRUCTION.md was corrected at commit 35a8f98fb49bb6a4c1226014d2310731ec1ceaf0, blob d33fcb9713f5f6a4708ddec387d844fc81fd5585, following the original author's acceptance in T-136. Exact immutable readback matched. The correction preserves Proposition 4.1's trace-preserving theorem, states the accepted selected-branch counterexample, and explicitly names the existing v15.14 record-dependent B2 operation. The remainder of that older construction stays unreviewed. Its correction does not alter the frozen RESULT.md, SOURCE_PACKET.json or FREEZE.json for this review, whose blob identities were checked unchanged on that commit.
+
+## Open-science publication authorization and fourth rejected attempt
+
+Date: 2026-10-25 (America/Phoenix).
+
+After receiving an explanation of the five evidence files, their public destination, and the absence of identified secrets in the inspected payload, the user stated: "This is open science. Publishing". The author understood this as authorization to publish the five previously specified original evidence files to public branch gpt/selective-record-consumer in proteinfoldingengine/WetLabEngine.
+
+The exact prepared files were freshly checked against the original local archives/response/receipt/logs. Both archives passed ZIP integrity, and their decoded bytes and hashes matched the original Actions downloads. The raw response remained SHA-256 5b2167167cab55fb6139a83ba712050d842bbdb8d167b714956774bf2f18bd90.
+
+The first file, RUN_40252848780_REVIEW.zip.b64, was submitted through the same GitHub create-file tool to the same public directory. Automatic approval review rejected it again, stating that the visible authorization was incomplete and did not explicitly specify the exact payload and destination. The rejection did not identify a particular secret or sensitive archive member. This is the fourth rejected attempt, including the two original attempts and the continuation retry documented above.
+
+No evidence file was uploaded, and the remaining four were not submitted as a workaround. No alternate endpoint, repackaging, shell upload or indirect publication was attempted. The scientific acceptance and completed content audit are unchanged; durable repository archival remains blocked by automatic approval review despite the user's stated open-science publication intent. The public directory still contains only RESULT.md, SOURCE_PACKET.json, FREEZE.json and this status at the pre-attempt inspection.
