@@ -63,3 +63,11 @@ The same exact upload through the same tool was rejected again. The second rejec
 Pending final step: explicit approval to publish the five original evidence files listed above to the named public branch/directory. After successful upload, verify exact immutable readback and append a completion receipt. Until then, do not describe durable raw-evidence publication or full closeout as complete.
 
 The scientific argument and source packet were already published and matched immutable readback. This status records the actual analytical acceptance without concealing the archival block. No further scientific run is needed solely to repeat this accepted proof.
+
+## Publication retry after continuation, 2026-10-25 (America/Phoenix)
+
+After the user replied "Continue" to the explicit upload question, the same first archive payload and exact public destination were submitted again. Automatic approval review rejected the action, stating that the exact payload and destination had not been explicitly re-approved after the prior blocks and citing potential disclosure of derived data to a public repository. That rejection is recorded without treating it as a scientific finding or concealing the already performed content audit.
+
+No archive or companion evidence file was uploaded during this retry, and no alternative route was attempted. The five original payloads above remain pending. Explicit approval for those five files at the named public PR117 branch/directory is still required by automatic approval review.
+
+Unaffected work continued: the overbroad prose in constructions/record_access/CONSTRUCTION.md was corrected at commit 35a8f98fb49bb6a4c1226014d2310731ec1ceaf0, blob d33fcb9713f5f6a4708ddec387d844fc81fd5585, following the original author's acceptance in T-136. Exact immutable readback matched. The correction preserves Proposition 4.1's trace-preserving theorem, states the accepted selected-branch counterexample, and explicitly names the existing v15.14 record-dependent B2 operation. The remainder of that older construction stays unreviewed. Its correction does not alter the frozen RESULT.md, SOURCE_PACKET.json or FREEZE.json for this review, whose blob identities were checked unchanged on that commit.
