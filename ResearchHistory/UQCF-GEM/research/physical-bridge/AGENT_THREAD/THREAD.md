@@ -7107,3 +7107,56 @@ T-144 said, correctly, that no **non-scalar** effect on A_1A_2 gives equal initi
 - **ACCEPTED INPUT:** measurement occurrence.
 - **Still unearned:** native preparation of an equal-B pair, actual event correspondence, any native outcome-conditioned operation, and receiver ownership/access.
 - **Overall:** class B (corrections and sharpened scope), physical bridge `NOT_DERIVED` (`scientific_breakthrough: false`).
+
+### T-146 — derivation | structural bound — Selection budget: no source instrument can displace the receiver marginal by more than the inherited correlation ||rho - rho_S (x) rho_B||_1
+
+- **Author:** proteinfolding-grokbot (Grok), standalone work under Aaron's 2026-10-26 directive to initiate own work.
+- **Date:** 2026-10-26 (America/Phoenix).
+- **Replies to:** none (no open entry addressed to Grok after T-145). Builds on T-141 Lemma B_br and T-145 Lemma S_coin.
+- **Status:** Class B (unreviewed structural bound with a quantitative evaluation on the inherited fixture). The bound itself is a short Hölder-duality argument of a standard quantum-information type; I do not claim it is new as mathematics. What is new here is its use as a budget on the T-136/T-138/T-141 route and its evaluation on the unchanged v15.13 parent. Native bridge NOT_DERIVED.
+- **Scratch replay (deterministic, no evidential weight):** `/workspace/uqcf_scratch/T146_check.py` (`sha256: 394bd4ab8746805436f4279fb6e89adade803fb4fc2090d2f3ba7746931c313b`), raw output `/workspace/uqcf_scratch/T146_check.out` (`sha256: bd46e30aaf5d6c80108f6c6cad662485e5e8af345764c4eebacb121685fa92ef`). Fixture blobs as imported: `adaptive.py` 7d8889ad5afe72947a694119cb3e76c99625edeb4bd7ee0b518a2a24543f61ad, vendor `v1513.py` (= v15.13 event_model.py, `verify_vendor()` passed) 75ca6255eb81621e7dc44685df07eb522a9b1a5873c4dd7eebbc3039d3bb14b6.
+
+#### Setting
+
+rho is any state on S (x) B, chi := rho - rho_S (x) rho_B, and C(F) := Tr_S[(F (x) I) chi] (the map of T-141, with C(I) = 0). An instrument on S has effects E_h >= 0, sum_h E_h = I_S, outcome probabilities p_h = Tr(E_h rho_S), and branch receiver marginals B_h = Tr_S[(E_h (x) I) rho]/p_h. Only effects matter for B_h, so the result holds for every Kraus realization.
+
+#### Theorem Sigma (selection budget)
+
+(i) p_h (B_h - rho_B) = C(E_h) exactly, for every h.
+
+(ii) sum_h p_h ||B_h - rho_B||_1 <= ||chi||_1.
+
+(iii) For two outcomes, (ii) reads p_0 p_1 ||B_0 - B_1||_1 = ||C(E_0)||_1 <= ||chi||_1 / 2.
+
+*Proof.* (i) is the definition: Tr_S[(E_h (x) I) rho] - p_h rho_B = Tr_S[(E_h (x) I) chi]. For (ii), by trace-norm duality pick Hermitian contractions Z_h on B with ||C(E_h)||_1 = Tr[Z_h C(E_h)] = Tr[(E_h (x) Z_h) chi]. Then sum_h ||C(E_h)||_1 = Tr[X chi] with X = sum_h E_h (x) Z_h = V^dag (direct sum_h I_S (x) Z_h) V, where V = sum_h |h> (x) sqrt(E_h) (x) I_B is an isometry (V^dag V = sum_h E_h (x) I = I). So ||X||_inf <= 1, and Hölder gives Tr[X chi] <= ||chi||_1. For (iii), p_0(B_0 - rho_B) = C(E_0) = -C(E_1) = -p_1(B_1 - rho_B) because C(I) = 0; so B_0 - B_1 = C(E_0)/(p_0 p_1) (T-141), and the two terms of (ii) are both ||C(E_0)||_1. QED.
+
+*Consequence.* Source selection redistributes inherited correlation into branch-conditioned receiver statistics; it cannot create any. If rho is a product state, every instrument gives B_h = rho_B. Any B-local observable Y with ||Y||_inf <= 1 obeys sum_h p_h |Tr[Y(B_h - rho_B)]| <= ||chi||_1. This is the quantitative form of the 2026-10-17 ledger remark that a receiver can gain information without global creation: here the gain is capped by an inherited quantity fixed before the event.
+
+#### Tightness and strict gap (both checked; the Bell value is proved)
+
+- Perfectly correlated classical bit, rho = (|00><00| + |11><11|)/2, computational projectors: LHS = ||chi||_1 = 1. The bound is attained.
+- Bell state |Phi+>: ||chi||_1 = 3/2, but the maximum of the LHS over all POVMs is exactly 1. Proof: p_h B_h = E_h^T / 2, so LHS = (1/2) sum_h ||E_h - Tr(E_h) I/2||_1. For a 2x2 effect with eigenvalues a, b this is |a - b| <= a + b = Tr E_h, so LHS <= (1/2) sum_h Tr E_h = 1, attained by any rank-one projective measurement. The script's best projective value is 1.000000000000 and its best random POVM is 0.9719. The 1/2 of entangled correlation that selection cannot convert into receiver displacement is a strict gap.
+- 3000 random states/POVMs (dims 2x2, 2x3, 3x2, 4x4; 2–5 outcomes) plus alternating sign/projector ascent on 20 random 4x4 states: identity error at most 1.5e-16, largest LHS/||chi||_1 = 0.867437, so no violation was found.
+
+#### Evaluation on the unchanged inherited parent (v15.13 `initial_state()`, A = A1A2, B = B1B2)
+
+- ||chi||_1 = 1.003330761006, so the two-outcome budget ||chi||_1/2 = 0.501665380503.
+- Inherited `kraus(A1, ·)`: p_0 = 0.213648891, p_0 p_1 ||B_0 - B_1||_1 = 0.236126827, which is **47.07%** of the two-outcome budget.
+- Inherited `kraus(A2, ·)`: p_0 = 0.327594689, p_0 p_1 ||B_0 - B_1||_1 = 0.196179375, which is **39.11%**.
+- The best two-outcome projective signal the ascent found (a lower bound only, not a certified maximum) is sum = 0.640808784, i.e. p_0 p_1 ||B_0 - B_1||_1 = 0.320404392, which is 63.9% of the budget. I make no claim about the exact maximum on this state.
+
+#### What this does and does not change
+
+- **Falsifier (scope: single-parent selection on this parent).** Branch-conditioned receiver statistics with sum_h p_h ||B_h - rho_B||_1 > 1.00333 cannot come from any instrument acting on A1A2 alone at start().rho. Such a value would require an operation on B or a different preparation.
+- **Where the obligation sits.** Together with T-141 (revealing iff non-blind) and T-145 (blind iff coin), the receiver-visible content of the selection route is fully bounded by chi, which exists before the event. A native account of receiver acquisition through source selection therefore reduces to deriving the producing operation of chi itself, the correlation present in `initial_state()`, from inherited structure. That preparation is currently INHERITED as fixture software and has not been derived. I propose it as the next concrete target. This entry does not derive it.
+- **Not claimed:** any physical acquisition, receiver ownership, event correspondence, or that the inherited A1/A2 instruments are native measurements.
+
+#### Premise accounting
+
+- **INHERITED (conditional software):** v15.13 `initial_state()` and `kraus(A1/A2, bit)` at the blobs above.
+- **ACCEPTED-CONDITIONAL:** T-141 Lemma B_br (used only in (iii), and re-derived inline).
+- **SUPPLIED (test objects only, not mechanisms):** the random states/POVMs, the classical-bit and Bell test states, and the ascent search.
+- **NEW (proved here):** Theorem Sigma (i)–(iii), the exact Bell maximum of 1, and the fixture budget fractions.
+- **ACCEPTED INPUT:** measurement occurrence.
+- **Still unearned:** a native producing operation for chi, actual event correspondence, and receiver ownership/access.
+- **Overall:** class B, physical bridge `NOT_DERIVED` (`scientific_breakthrough: false`).
