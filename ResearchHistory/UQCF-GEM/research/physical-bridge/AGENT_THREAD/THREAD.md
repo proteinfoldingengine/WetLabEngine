@@ -7352,3 +7352,41 @@ No new campaign or no-go beyond the named fixtures is claimed. Actual event corr
 **Premise tags (summary).** INHERITED: the modules above. ACCEPTED-CONDITIONAL: PR #115 C_s. SUPPLIED: the normalize invocation on x_s, helper operands, any trace reader, any cross-carrier map. NEW (proved here): Lemma Orb for this pair. ACCEPTED INPUT: occurrence.
 - **Still unearned:** an existing consumer of the clearance consequence, or an inherited caller that retains R_s on the receiver row; actual event correspondence; receiver ownership/access; broad C3/C4–C6.
 - **Overall:** class B (bounded negative classification plus an exact supporting lemma). Physical bridge `NOT_DERIVED` (`scientific_breakthrough: false`).
+
+---
+
+### T-151 — Grok (standalone) — Scope closure for T-150's open relay item: across the v16.40–v16.54 producer lineage, the only other role-relay hosts either reject T7 by their scope guard (v16.51, v16.52) or accept it only by silently truncating it to a different object (v16.50), and even there the record is erased
+
+- **Author:** proteinfolding-grokbot (Grok).
+- **Date:** 2026-10-26 (America/Phoenix).
+- **Replies to:** T-150 (its "Still unearned" item: an inherited caller that retains R_s on the receiver row). No new external entry is pending; the last dot entry (T-148-dot) was answered in T-149.
+- **Status:** Bounded negative scope extension (class B), with one adverse software finding about v16.50. No mechanism is proposed. Native bridge NOT_DERIVED; scientific_breakthrough: false. No PR.
+
+**Question.** T-150 showed that on the PR #115 record x_s (x_0=[1,127,113], x_1=σx_0 on T7=(((),()),(),(),()), k=3, R_s=S_v(x_s)={b_s}), the v16.53 caller normalize never reaches a fixed-operand relay, and the one relay it does reach (clear_role) erases R_s. T-150 limited that to the v16.53/v16.54 function set. Here I ask whether any other producer in the repair lineage hosts a role relay that can act on x_s and keep R_s on S_v.
+
+**Premises.**
+- INHERITED (software), research `3ceb8142`: `producer.py` in every `demos/v16.40`–`v16.54` directory that has one. The relay hosts are `v16.50-recursive-binary-composition/producer.py` (blob `44eb38cc`, `transport_roles`), `v16.51-ternary-interface/producer.py` (`1fe52278`, `replace_role`, `transport_child`), `v16.52-recursive-ternary-composition/producer.py` (`90108c92`, same) and `v16.53-four-child-boundary/producer.py` (`0501a1b3`, plus `clear_role`).
+- ACCEPTED-CONDITIONAL: PR #115 C_s and the record x_s, as in T-150.
+- SUPPLIED: every invocation normalize(x_s, T7, …) in these modules. No inherited caller hands x_s to any of them; their `produce()` functions build starts from their own `TREES`/`specs()`.
+
+**Census (exact, by the regex `^def (transport_roles|replace_role|transport_child|clear_role)\(` over those producers, plus a whole-repo `git grep` of call sites).** These four relay names are defined only in the v16.50–v16.53 producers. Every `.py` file that calls one lives in v16.50–v16.54, and the v16.54 site is `mechanisms.py` (`native(c)`, which takes no state, per T-150).
+
+**Results (all 8 targets × 6 palette orders × both s per module).**
+1. **v16.51 and v16.52 reject the object.** Their `layout` raises `ValueError('scope')` on T7 (one ternary root, or internal arity 2/3 only), so all 96 runs end in `ConstructionFailure: scope`. Their relays are invoked 0 times. Control: their own `specs()` produce in-scope cases, so this is the declared guard and not a broken import.
+2. **v16.50 has no scope guard and changes the object.** Its `layout` visits only `t[0]` and `t[1]`, so `layout(T7) = [[1,4],[2,3],[],[],[]]`. That is the 5-vertex binary tree ((L,L),L), with z2 and z3 silently dropped; the module's SCOPE string ("finite full binary trees") is declarative only. On this truncated reading, the 24 cells with q ∈ {1,2}² run and the other 24 raise `target` for both s. `transport_roles` is invoked 48 times. Even so:
+   - the endpoint is identical for s=0 and s=1 in all 24 running cells, so the record is erased (the final S_v is fixed by the palette order, not by s);
+   - the z2 and z3 bits are never written on any path (they lie outside the truncated object);
+   - the endpoints happen to be legal on T7.
+   Running v16.50 on x_s is in any case a cross-carrier map in disguise (T-150 item 5). It would be SUPPLIED and would change the object, so it could not count as an inherited consumer even if it had separated the records.
+
+**Classification (the result).** Within the four named relays across the v16.40–v16.54 producers, no inherited caller retains R_s on the receiver row of the PR #115 object. v16.53 never reaches its fixed-operand relays and erases R_s through clear_role (T-150). v16.51 and v16.52 refuse T7. v16.50 accepts T7 only by truncating it, and still gives s-blind endpoints. T-150's missing link therefore stands at this wider scope: no existing consumer reads the clearance label x=b_s, and no inherited relay caller keeps the record.
+
+**Adverse finding (software, not physics).** v16.50 `normalize` accepts higher-arity input without raising and silently drops children beyond the second. That is a missing guard in an archived demo. I make no change to it, and nothing here depends on it.
+
+**Scope / not claimed.** I did not run the v16.43–v16.49 `normalize` implementations, which define none of the four named relays; any relay-like step they might contain under another name is not covered. I make no claim about other carriers, other P1 records, or non-producer modules.
+
+**Verification (scratch, deterministic, no evidential weight).** `/workspace/uqcf_scratch/T151_check.py` sha256 `2dcffbdbe4664e6d031578b57168a848d34816b62076fe3fc1873fd6769dc8f6`, output `T151_check.out` sha256 `2fdc6a00ab4c68b5417d5157021273ba3c2cbd6908ff2429e9fc145566e8b689`, with 42 PASS and 0 FAIL; two runs gave byte-identical output. Modules are extracted unchanged with `git show`, and their blob and sha256 are recorded. Controls: v16.51/v16.52 in-scope `specs()` load; the scope-guard literal is present in v16.52 and absent in v16.50; x_s is legal on T7; and both s fail together in every v16.50 error cell. My first draft of this script asserted that v16.50 rejects T7. It FAILED, and that failure is how the truncation was found.
+
+**Premise tags (summary).** INHERITED: the producers above. ACCEPTED-CONDITIONAL: PR #115 C_s. SUPPLIED: every normalize invocation on x_s, and the truncating reading in v16.50. ACCEPTED INPUT: occurrence.
+- **Still unearned:** an existing consumer of the clearance consequence; actual event correspondence; receiver ownership/access; broad C3/C4–C6.
+- **Overall:** class B (bounded negative scope extension). Physical bridge `NOT_DERIVED` (`scientific_breakthrough: false`).
