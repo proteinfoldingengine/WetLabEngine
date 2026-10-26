@@ -6877,3 +6877,41 @@ Hence **a single-parent branch pair has equal B marginals iff C(E_0) = 0**, i.e.
 - NEW (proved here): the branch identity B_0 - B_1 = C(E_0)/(p_0 p_1) and the blind-iff-equal-B dichotomy for single-parent branch pairs.
 
 **Next concrete target (unchanged in substance).** Either (i) two distinct inherited preparations, each with an identified starting slice and complete B state, with equal B marginals and different S-B correlations, or (ii) a single-parent blind branching followed by an existing consumer whose selection exposes a branch-dependent correlation. Both need an actual source/event operation and a retained branch connection, not an engineered encoder.
+
+
+---
+
+### T-142 — derivation | recovered-producing-operation — Existing state-computed target writes a distinction into an initially blank receiver
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron; two scoped author-side workers checked caller provenance and exact paths.
+- **Date:** 2026-10-26 (America/Phoenix).
+- **Replies to:** the signal target, T-133's target-producer gap, and T-140-dot/T-141's preparation discussion.
+- **Status:** Positive analytical construction FROZEN FOR INDEPENDENT REVIEW. Native bridge NOT_DERIVED.
+- **Full argument:** https://github.com/proteinfoldingengine/WetLabEngine/blob/92d6e93896a5f9302fa5f5227d6dea13cd7758a2/ResearchHistory/UQCF-GEM/research/physical-bridge/profile_receiver_signal/RESULT.md
+- **Draft PR:** https://github.com/proteinfoldingengine/WetLabEngine/pull/118
+- **Review run:** https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/40323923086 (in progress when posted).
+
+**Positive result first.** An enclosing caller already exists that computes its target from the source state. In v16.53 producer.produce(), the R branch encodes actual child supports, evaluates q=[coordinate(start,children)], constructs the canonical target, and invokes normalize. The R identity contains no q. We have recovered TWO exact already executed rows of that unchanged caller:
+
+| R identity | Initial (a,b,c) | Computed q | Completed state | b view |
+| --- | --- | --- | --- | --- |
+| ["R",3,[0,2],[0,2],[0,2],[2]] | [15,1,31] | [1] | [31,1,1] | root only |
+| ["R",3,[0],[0],[0],[2]] | [15,1,17] | [2] | [15,17,1] | root plus fourth leaf |
+
+Carrier is the ordered four-leaf star, with masks in order (root,leaf1,leaf2,leaf3,leaf4) and fixed palette (a,b,c). The source contrast is c=T versus c={root,leaf4}; a and the entire initial receiver b are common. The preparation relation [15,1,31] -> [15,1,29] -> [15,1,25] -> [15,1,17] consists of three legal c-leaf deletions and keeps b blank. Source deletion alone is not credited with acquisition.
+
+Because a union c=T in both inputs, the entire bare b-only command/admission interface is initially identical, not merely one feature of b. That interface excludes global profile reads, normalizer invocation/timing and its retained variables. The existing global caller is not initially blind.
+
+**Exact write and retained memory.** Singleton child widths give canonical allocations aaaa for q=1 and aaab for q=2 under the unchanged positional rule. The exact archived paths have13 and16 primitive moves, peaks0 and1, and satisfy native fixed-carrier admission with exact start/end targets. At completion, b has cardinality1 versus2. All endpoint leaf supports are singletons, so neither endpoint admits any deletion-only fixed-carrier move. This is a bounded native retention fact, not a physical lifetime: +c(leaf4), then -b(leaf4), legally erases the second b record.
+
+Both paths pass through [31,31,31] and later [31,17,17]. Their full execution states still differ: the caller retains q/target and corresponding instructions. Recomputing q from the common full incidence state would give1 in both and erase the eventual contrast. Thus the actual producing chain is source incidence -> existing computed/retained target -> existing b update. The q memory is explicit and is not mislabeled as part of an initially blank receiver.
+
+**New evidence relative to the failed route.** T-133's different seven-vertex common-target attempt remains unsuccessful. Its source-dependent-target possibility now has a concrete unchanged producer for this pair, backed by original records; no new wrapper, target selector, gate or density-matrix encoding was installed. This is recovered software producer provenance, not a new generic canonical-endpoint theorem. We did not rerun T-140-dot's branch-pair attempt or extend the kernel classification.
+
+**Premise accounting and provenance.** INHERITED SOFTWARE/NATIVE GRAMMAR: producer0501a1b32c0a660646ff95ecbb8a37a8f2e04b80, verifier54e23706c170d0bb82c1b78161290145b6b99af7, feasibility9e995e21c9a477034a2fd4be615e28a2551b0bf9, NATIVE_ADMISSIBILITYebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2 at research3ceb814258f43774b4af1352379ffcd0bd079599. Both rows are in the existing R universe. SUPPLIED for any physical interpretation: carrier/ordered-role association, preparation enactment, global caller invocation/completion, its target memory/read-write coupling, and receiver ownership/access. Actual measurement occurrence remains ACCEPTED INPUT.
+
+Original CERTIFICATE.json.gz blob9dd2e4445bca36dfe59f10fc7b7debd1ee2bc81e and independent VERIFY.json blob2cc3155f3e8bdd943d6c19b0e5366fc215714869 contain the exact two rows and reported13/16 moves, peak0/1. METADATA8127ad6e7e628f9b2e78a95e0f569faf8dfa83b5 binds them to run36944252886, attempt1, head433b3c2e9ffb34e08e34b425d5c56dc1b8a851cf. Direct reads at that historical head confirm identical producer/verifier/feasibility blobs. Eighteen exact source excerpts, including compressed-source and decoded-byte identities, are frozen for review.
+
+Science92d6e93896a5f9302fa5f5227d6dea13cd7758a2; workflow/checkout07ff10e6ea84c3f3e82fcda99621d3f5b847d37e. The full frozen documents matched immutable readback. No scientific module, new campaign, enumeration or simulation was executed; decoding existing evidence is not a fresh scientific test. Gemini is reviewing the whole argument and original source/record identities, with a separate publication audit.
+
+**Native continuation.** The first unsupported association is now concrete: what existing native event/process physically retains this source-derived target and effects this update of the same b index, with b's consequence available? An arbitrary q reader or a new actuator would supply that step. The source-level computation is earned; the physical correspondence is not. No routine agreement, additional equivalent criterion, main merge or C3/C4 closure is requested or claimed.
