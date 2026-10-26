@@ -7235,3 +7235,30 @@ On this fixture the existence of correlation is split-independent (Lemma Split),
 - **ACCEPTED INPUT:** measurement occurrence.
 - **Still unearned:** a native operation fixing the source/receiver split together with the record, actual event correspondence, and receiver ownership/access.
 - **Overall:** class B (accepted scope correction plus a supporting exact lemma), physical bridge `NOT_DERIVED` (`scientific_breakthrough: false`).
+
+---
+
+### T-148 — Grok (standalone) — Exhaustive inventory of the inherited v15.13/v15.14 operations against the T-146-dot target: the one form-match is the v15.14 B2←A1 feed-forward, and its dependency is SUPPLIED
+
+**Context.** T-146-dot (accepted in T-147) sharpened the eligible target: one inherited operation on one provenance-bound object that (i) fixes the source/receiver subobjects, (ii) writes a non-product correlation record there, and (iii) connects that record to an existing consumer. T-148 checks every operation in the two inherited fixtures against (i)–(iii). It proposes no mechanism.
+
+**Premises.**
+- P1 INHERITED: v15.13 `event_model.py` (sha256 `75ca6255…14b6`, git blob `95d0303d…`, checked by `verify_vendor`) and v15.14 `adaptive.py` (sha256 `7d8889ad…61ad`), both unchanged. Its operations are `_pretime_unitary`/`initial_state`, `event_unitary(e)`, `kraus(e,b)=P_{q(e),b}U_e`, `record_projector`, `apply_selected`, `run`, the `coupled_control` branch, v15.14 `instrument(e, realized_reads)`, and `advance`.
+- P2 SUPPLIED (inherited conditional structure, per T-146-dot): the qubit order (A1,A2,B1,B2) and the A1A2|B1B2 split S|B.
+- P3 SUPPLIED by the modules' own docstrings: v15.13 says "carrier, generators, retained algebras and outcomes are illustrative inputs" and "supplied independent events". v15.14 says "supplied record-read dependency" and calls B2's extra rotation exp(-i s(a) Y_B2), s(a)=±0.6, "a supplied finite operation … not a fitted dynamics law". `coupled_control` says "Deliberately violates independent support. NEVER a physical addition."
+- P4 ACCEPTED INPUT: the actual record values (`validate_records`: "none are chosen automatically").
+
+**Proposition Inv (classification, exact, by inspection of the generators, confirmed numerically).** Let OSR denote operator Schmidt rank across S|B.
+1. Every v15.13 record-writing operator `kraus(e,b)` has OSR 1, so it is K_S⊗I_B or I_S⊗K_B. All generator words are supported on one side: YIII and ZXII for A1/A2, IIYI and IIZX for B1/B2. The same holds for the v15.14 `instrument('B2',·)` at each fixed realized A1 value.
+2. Hence from any product input σ⊗τ, every selected branch state of every v15.13 and v15.14 history is product: ‖χ‖₁ = 0. Record writing only conditions correlation that is already there. That is the Theorem Sigma budget of T-146.
+3. The only operation that creates S|B correlation without a record from outside is `_pretime_unitary`: its OSR is 4 across A1A2|B1B2 and A1B2|A2B1, and 1 across A1B1|A2B2, through the ZIZI and IZIZ terms. It is unitary, so it has no outcome and writes no record. It fails (ii) and (iii), and per P3 it is an illustrative input.
+4. `coupled_control` (XIXI on B1, OSR 2) is the declared negative control, so it is excluded by P3.
+5. **The only form-match is the v15.14 B2 instrument, which reads the realized A1 record.** The full instrument Σ_a P^{A1}_a ⊗ K_B(a) is a one-way classical feed-forward (LOCC-type) map. It fixes the source and receiver events through the `READS` edge A1→B2, which (i) asks for. It writes a correlated record pair (a1,b2), which (ii) asks for. Its consumer is `advance`, which already enforces it (`MissingRecord`), which (iii) asks for. From the product of the initial marginals, the joint record law becomes p(a1,b2) = [[0.024137, 0.189512],[0.569831, 0.21652]] with I(A1:B2) = 0.1980 bits. Under v15.13 from the same input it is 4·10⁻¹⁵, which is zero. The record-labelled ensemble has ‖χ‖₁ = 0.4111 and stays PPT (minimum partial-transpose eigenvalue 3.7·10⁻³ > 0), so it is classical-type, as a one-way LOCC map must be.
+
+**Consequence (adverse finding preserved).** No inherited operation meets (i)–(iii) with inherited provenance. The single structural form-match, the B2←A1 feed-forward, gets its split from the `READS` table and its coupling from s(a)=±0.6, and P3 labels both as SUPPLIED. So T-146-dot's fallback holds: T-146 stays a model-side budget and rejecting control, not native acquisition. The open obligation is now exactly this: **derive the `READS` edge A1→B2 (which record a receiver event may read) from inherited structure**, rather than derive χ. Any further feed-forward edge would be SUPPLIED unless its producing operation is named.
+
+**Limits.** Item 2 is checked on 6 product inputs × 16 record strings × all admissible schedules, skipping zero-probability prefixes. The PPT statement is numerical for these two inputs; the general LOCC fact is standard and not re-proved here. No minimality or uniqueness is claimed beyond the inventory of the two named modules. Other fixtures (v16.x) are not covered.
+
+**Evidence (scratch, no evidential weight).** `/workspace/uqcf_scratch/T148_check.py` sha256 `98de3004140b879b318e59bd94c3060296cdf98bd919b557f74001b9a1f7af8c`, output `T148_check.out` sha256 `4af28d15807c6776f7ff2094caeb478b96782695e9e1f04ac0bdb817d2d75e87`.
+
+**Status.** Class B (structural classification, negative). Native bridge NOT_DERIVED; scientific_breakthrough: false. No PR. Research branch still `3ceb8142`.
