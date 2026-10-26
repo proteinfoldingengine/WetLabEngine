@@ -6580,3 +6580,26 @@ Manuscript: https://github.com/proteinfoldingengine/WetLabEngine/blob/75a41f45c2
 Science freeze 75a41f45c251b30e8e3370fc753b08b3970b2ee6; six exact source identities, including full producer code and T-108. All frozen files matched immutable readback. Workflow/checkout 7808739a3dadc3c608d9bf4424afc1a723c7155e; pending run https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/40246970244 .
 
 The author checked the source, all edit conditions and masks analytically; no scientific program or normalization run was executed. Independent review is pending. No source/receiver physical identification, main merge, broad C3/C4 closure or numbered-stage certification is claimed.
+
+
+---
+
+### T-132 — review-record — Fixed-operand role-transfer consumer accepted; original evidence published
+
+- **Author:** proteinfolding-gpt / ChatGPT research session with Aaron.
+- **Date:** 2026-10-25 (America/Phoenix).
+- **Replies to:** T-131.
+- **Status:** Conditional analytical result REVIEWED (ACCEPTED); publication audit and immutable readback COMPLETE. Native bridge NOT_DERIVED.
+- **Acceptance:** https://github.com/proteinfoldingengine/WetLabEngine/blob/5bd8e83cad83d42ef3805d3d38f2f35f233f21ad/ResearchHistory/UQCF-GEM/research/physical-bridge/role_transfer_consumer/ACCEPTANCE.md
+
+**Accepted result.** The existing replace_role helper consumes the acquired r view and transfers it into the initially identical a view under the same three supplied calls with fixed operands r,a. All four first-response cases satisfy destination vacancy, parent membership, nesting and nonemptiness. Their final a views retain the T-122 distinction after exactly ten primitive changes. The initially common bare a-command interface was checked with the external indices fixed; the relay also deletes r and is not an a-only experiment. The global returned path is not credited as an initially blind record.
+
+This is an inherited software/native-grammar downstream consumer, with a explicitly distinct from r. It does not establish actual-event invocation, completion or physical availability. Source state is read by the routine; no source-dependent operand is passed to select the answer. T-108's different invalid-caller example is preserved. T-129/T-130 grade boundaries are unaffected. No physical copying implementation, read API or new event law is adopted.
+
+**Independent evidence.** Science freeze 75a41f45c251b30e8e3370fc753b08b3970b2ee6; workflow/checkout 7808739a3dadc3c608d9bf4424afc1a723c7155e. Run https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/40246970244, attempt 1; requested/returned model gemini-3.1-pro-preview. Verdict ACCEPTED; findings=[], missing_assumptions=[], counterexamples=[]; native_bridge_status=NOT_DERIVED. Raw response SHA-256 8e00edc7a233826d205897abeba4dd34b529e8c4fc195930bea62f42d0edd8d0. Complete response and limitations were read by the author. The review's suggestion of an autonomous caller is not adopted as a universal requirement; the target is justified event/process correspondence and accessible consequence, without reopening occurrence or universal completion.
+
+Integrity 121330474551, argument-review 121330508182 and publication-audit 121330669264 all passed. Six exact source identities, frozen document bytes, prompt/request and raw verdict were separately audited. Original review ZIP: 76430 bytes, SHA-256 b9f8593ddf9d4ce5128e462d893bf30b425d5ef7f477fb3f99d78944c0d3c265. Original audit ZIP: 1828 bytes, SHA-256 e0fcf4a794305fc2be4dd3b2c64fd617822fc00255e24e88e479f3d44f44f60b. ZIP integrity and every manifest member were verified.
+
+Both original ZIPs, raw response, audit receipt and complete three-job logs are published at 1c33760acf7c44f91f852d9fa40bdac0dc2daadf. All five evidence payloads, scientific freeze files and the acceptance record matched immutable readback. No proof bytes changed after review. No scientific simulation, normalization execution, numerical enumeration, empirical validation, main merge or broad C3/C4 closure is claimed.
+
+**Native continuation.** The producing software update is now concrete for this source pair. The unresolved step is identifying an actual event/process that invokes and completes this transfer on the same tracked indices, with an available receiver consequence. Another mathematical rewrite of the relay would not earn that step. No routine agreement requested.
