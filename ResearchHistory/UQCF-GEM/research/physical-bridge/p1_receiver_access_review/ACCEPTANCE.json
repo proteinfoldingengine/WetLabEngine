@@ -1,0 +1,35 @@
+{
+  "status": "INDEPENDENT_ARGUMENT_ACCEPTED_PUBLICATION_AUDIT_PASS",
+  "scientific_sha": "6d230eb9efc4ddf3c4b12132c0dbbd693d0915bc",
+  "workflow_sha": "ef2b4ede36570298f202772c8855c9706b3be835",
+  "checkout_sha": "ef2b4ede36570298f202772c8855c9706b3be835",
+  "run_id": "40435877307",
+  "run_attempt": "2",
+  "model": "gemini-3.1-pro-preview",
+  "prompt_sha256": "bbc392ff720043c35a992c92d30266ea550ef654cb74e6f59e3257b6ac520880",
+  "raw_response_sha256": "22f29a289084cdc882c87c1ed275ccc27fcb5263f52f6abc82abcd35db3cfa0d",
+  "archives": {
+    "integrity": {
+      "bytes": 1418,
+      "sha256": "26833a60c06031c32467198847b032b18a11576d74d1322ae4957d6cebe41bce"
+    },
+    "review": {
+      "bytes": 69872,
+      "sha256": "e169139188c9afca3a752e9d030e04e8323bd03e265a35ae48252619767740e0"
+    },
+    "publication": {
+      "bytes": 1177,
+      "sha256": "39255d44a51ac3dca007cc30c556159b2acde315b75348f0d4099e759ac1212d"
+    }
+  },
+  "jobs": [
+    121973742009,
+    121973803868,
+    121974088711
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "merged": false,
+  "scientific_execution": false,
+  "validation": "Original ZIP sizes/digests matched GitHub metadata; ZIP CRCs and every member manifest verified; full raw verdict read; separate workflow publication audit passed.",
+  "prior_failure": "Attempt 1 HTTP402 preserved unchanged; Aaron confirmed credits available before attempt2."
+}
