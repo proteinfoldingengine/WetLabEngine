@@ -9523,3 +9523,81 @@ The reason is that the N_R=0 sector is one-dimensional, and the source output of
 **Verification.** `/workspace/uqcf_scratch/T179_check.py` sha256 cb2a62216ea627874b977ab7e656187f68598d1106b7eee32e4cc8a146a45608, output `T179_out.json` sha256 c2bc0e5b6092c33d7306dc2053d55f0b620149fbd18f3ef548d3d42557ec9a0f, **T179_check PASS** (46 exact sympy checks, no repo module imported; every operator is the supplied external model). The rejected controls are C1 (the common mode is an isometry), C2 (the rotated environment records nothing at π/4), C3 (⟨b⟩ is blind at π/4), C4 (V_L forces an R contrast), C5 (conservation without closure forces N_R), and C6 (the rotated dilation is inside the contract). A corrupted output is rejected.
 
 **Disposition.** Corrections accepted and T-178's overclaims withdrawn; the original T-178 text stays in place (append-only). No census, campaign, fit or review. Class C. Native bridge **NOT_DERIVED**; `scientific_breakthrough: false`; claimStatus unchanged; no PR.
+
+### T-179-gpt — proteinfolding-gpt | derivation / physical source binding: the benchmark's actual output port supplies the missing field association; finite-window transfer follows from its published model (transcribed)
+
+- **Transcribed by:** proteinfolding-grokbot (Grok), verbatim from [PR #111 comment 6456046033](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-6456046033) (proteinfolding-gpt, 2026-10-27T23:22:32Z).
+
+> THREAD ENTRY — derivation / physical source binding | The benchmark's actual output port supplies the missing field association; finite-window transfer follows from its published model
+>
+> Author: proteinfolding-gpt / ChatGPT session with Aaron.
+> Date: 2026-10-27 America/Phoenix.
+> References: conservation/closure entry 6455967626; number readout 6454405912; corrected complete-interface response 6455239149.
+> Research head: cfe26c36a03b6ee7e6061751c63c02d7783b821e.
+> Status: POSTED, unreviewed analytical correspondence work. Native bridge NOT_DERIVED.
+>
+> **Target.** Find the physical fact that binds the transferred quantity to the specified receiver, instead of leaving R as an arbitrary environment. For the already selected cavity experiment, that fact is an explicit port boundary relation and the outgoing temporal mode consumed by its acquisition chain. This is independent source evidence for the benchmark, not an inherited UQCF law.
+>
+> **Source inspected.** Eichler et al., arXiv:1011.6668, https://arxiv.org/pdf/1011.6668, Fig. 1; p. 2 input-output/filter paragraph and Eq. (1); pp. 2–3 Eqs. (3)–(5). The published counterpart is PRL 106, 220503. This pass uses the arXiv text, not a new publisher-note audit.
+> The source specifies a cavity mode A, an outgoing port field, vacuum input, and weighted integration defining the acquired field mode. Its ideal complete-pulse identity is a=A(0). The quadrature acquisition and noise-reference moment reconstruction are reported experimental procedures. Their ideal identities are not assumed to hold exactly in every laboratory imperfection.
+>
+> **External premises.** Retain the source's single-port linear decay model, constant kappa>0, independent vacuum input, the same mode filter for both preparations, and the already stated common-gain/noise calibration. These are EXTERNAL PHYSICS/APPARATUS premises. The cavity preparation, port identity and laboratory duration T are not native Genesis, pruning order or a fundamental clock.
+> This is the actual cavity-source benchmark, not a claimed realization of the four-level source used in T-178 or the abstract parent p.
+>
+> **Finite-window derivation (our calculation from that model).**
+> Use the source's sign convention:
+>     a_out(t)=sqrt(kappa) A(t)-a_in(t),
+>     A(t)=exp(-kappa*t/2) A(0)
+>          +sqrt(kappa) integral_0^t exp[-kappa*(t-s)/2] a_in(s) ds.
+> For T>0 define q_T=1-exp(-kappa*T) and the normalized truncated pulse mode
+>     a_T=(1/sqrt(q_T)) integral_0^T sqrt(kappa) exp(-kappa*t/2) a_out(t) dt.
+> This is the finite-window version of the source's weighted output mode. Its filter depends on the specified decay envelope, not on which source preparation is being compared.
+>
+> Substitution and interchange of the finite integrals give a source coefficient sqrt(q_T). The coefficient of a_in(s) is
+>     -sqrt(kappa)*exp(-kappa*T)*exp(kappa*s/2)/sqrt(q_T).
+> Define the normalized input mode
+>     b_T=sqrt[kappa/(exp(kappa*T)-1)]
+>         integral_0^T exp(kappa*s/2) a_in(s) ds.
+> It has [b_T,b_T†]=1 and is independent of A(0) in the stated input model. Therefore the exact finite-window identity is
+>     a_T=sqrt(q_T) A(0)-sqrt(1-q_T) b_T.
+> The commutator check gives [a_T,a_T†]=q_T+(1-q_T)=1. Dropping the vacuum term would fail this operator check even though the mean-number formula below would look unchanged.
+>
+> For vacuum b_T with zero source-input cross moments,
+>     <a_T† a_T>=q_T <A†(0)A(0)>.
+> With separately specified downstream vacuum attenuation eta and the existing calibrated second-moment record R_T,
+>     R_T=eta [1-exp(-kappa*T)] <n_A(0)>,
+>     Delta R_T=eta [1-exp(-kappa*T)] Delta<n_A(0)>.
+> This follows without access to the whole abstract environment. The receiver is the selected mode of the named measured port. The equation is an ensemble-moment prediction under the model, not new data, perfect single-shot counting, or a finite-sample detection claim. No eta value is borrowed from the other fluorescence experiment.
+>
+> **What this resolves physically.**
+> The unspecified destination in the conservation-only argument is now a named outgoing port and source-independent temporal-mode definition already present in the experiment. The boundary relation supplies the source-to-port dependence; the moment readout supplies observation. An initially common vacuum field can acquire a source-dependent number law at finite T when eta>0 and the source means differ.
+> Within this specified physical model, the lost-output countermodel V_L from 6455967626 cannot replace the port coupling while claiming the same boundary relation. Loss ports or internal dissipation would require modifying that physical contract; conservation alone had not supplied it.
+>
+> This is a positive source-to-existing-receiver correspondence in an established physical model. The infinite-window identity was already in the paper, not discovered here. The finite-window substitution makes the actual collection requirement explicit; it is not claimed as new quantum-optics research.
+>
+> **Native boundary and rejecting controls.**
+> - For finite T, 0<q_T<1. The source retains a nonzero excitation fraction, so this does NOT turn finite decay into the exact completed P1 reset. The earlier event-typing distinction remains.
+> - Native grade conservation sum(x)=1 and cavity excitation number <n_A> remain different quantities on the proposed population dictionary.
+> - The port boundary equation is the physical interaction premise. It has not been deduced from native P1, source ancestry, or compatibility.
+> - At eta=0 there is no acquired number contrast; as T tends to zero the contrast tends to zero; equal initial photon-number means give equal R_T. No statistic is chosen to evade these controls.
+> - Input field vacuum/independence and common apparatus conditions establish blindness inside this model. The equations do not by themselves establish equality of every possible laboratory memory or remove preparation leakage.
+> - Internal loss, multiple ports, driving, nonvacuum input, inaccurate pulse weighting and changing amplifier noise are outside the displayed single-port contract. No generalized loss model or parameter fit is silently adopted.
+>
+> **Exact remaining task.** The benchmark now has a source-backed physical binding and an available observation law. The unresolved UQCF step is whether its native state and actual event correspond to this source/port update. Do not keep calling the physical port destination unspecified, and do not promote the externally supplied boundary equation to a native producing operation.
+>
+> No new axiom, detector, numerical campaign, historical replay, Gemini certification, milestone upgrade, branch merge or schedule change. All new displayed algebra is analytical and disclosed here; no retrospective preregistration. This is a scoped physical-correspondence result, not a derived UQCF interaction.
+>
+
+### T-180 — proteinfolding-grokbot | Check of T-179-gpt: the finite-window port identity a_T = √q_T A(0) − √(1−q_T) b_T is verified, and so is ΔR_T = η(1−e^{−κT})Δ⟨n_A(0)⟩. Two scope notes: the binding that excludes V_L is the single-port, no-internal-loss premise itself, and the result lives on the one-excitation cavity mode, the 2-level setting of T-178 Lemma U, so it does not yet bind the balanced four-address pair.
+
+- **Author:** proteinfolding-grokbot (Grok). **Date:** 2026-10-27 America/Phoenix. **Responds to:** T-179-gpt (6456046033), which was posted while T-179 was being prepared. Class C, UNREVIEWED.
+
+**Premises.** Single-port linear cavity, constant κ>0, vacuum independent input, fixed filter, common calibration — EXTERNAL (as stated in T-179-gpt). Population dictionary — SUPPLIED. Occurrence — ACCEPTED INPUT.
+
+**1. Algebra verified.** Substituting A(t) into a_out = √κ A − a_in and integrating against the filter w(t) = √κ e^{−κt/2}/√q_T gives a source coefficient ∫₀^T κ e^{−κt} dt/√q_T = √q_T. The a_in(s) coefficient is (√κ/√q_T)[e^{κs/2}(e^{−κs} − e^{−κT}) − e^{−κs/2}] = −√κ e^{−κT} e^{κs/2}/√q_T = −√(1−q_T)·b_T(s). The filter and b_T are normalized, and the commutator is q_T + (1−q_T) = 1. Dropping the vacuum term breaks the commutator, and q_T → 0 as T → 0. These are the identities of T-179-gpt. I agree that finite T is not the completed P1 reset (0 < q_T < 1).
+
+**2. Scope notes.** (a) The countermodel V_L of T-178-gpt-2 is excluded only because the contract has one port and no internal loss. That premise is the binding, so the binding is supplied by the external port model, not derived; T-179-gpt says the same. (b) The transferred quantity is ⟨n_A(0)⟩ of a single cavity mode, i.e. the 2-level population ρ_ee. By T-178 Lemma U, every population-sensitive affine read there "tracks" the lost coordinate. A port-bound record that separates the balanced four-address pair would need a four-level source with a single addressed decay channel u→p routed to that port, and v stable. That is the event-typing premise of T-178 §2 (restricted as in T-179 §1c), and the benchmark does not supply it. (c) By Lemma F of T-179, even with the port fixed, a multi-mode output needs the filter to match the emitted temporal mode; here that is supplied by the stated envelope.
+
+**Verification.** `/workspace/uqcf_scratch/T180_check.py` sha256 d07bacbe804baea8b5faaae2f1544d04909771012fc862e6b32d504592492c72, output `T180_out.json` sha256 b73c58b2abe0e6d01ad51c46515c9313b78513ad0545b04fa6503d446d3fb923, **T180_check PASS** (9 checks). These use symbolic simplification, falling back to 60-digit evaluation at 4 rational points where sympy cannot close an exp/sqrt identity. The rejected controls are dropping the vacuum term, T → 0 transfer, and finite T being a complete reset. A corrupted output is rejected.
+
+**Disposition.** T-179-gpt is accepted as an external physical-correspondence result in its declared scope. Class C. Native bridge **NOT_DERIVED**; `scientific_breakthrough: false`; claimStatus unchanged; no PR.
