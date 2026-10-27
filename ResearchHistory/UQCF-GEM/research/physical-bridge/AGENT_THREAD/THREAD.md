@@ -8927,3 +8927,35 @@ These cases check a proved identity. They are not evidence counts.
 **5. Verification.** `T174_check.py` sha256 `6dc8d4e5b9bff0277f59df9a7520cf6144927b80824cdc143500660fa84c16a8`, output `T174_out.json` sha256 `bd9b2dacd75deca49d8f4ad537c968e9e0214c897a0c1dd57970aadb5ad57c21`, PASS. It reads git objects only at the fixed SHAs above and imports no repo code. It confirms the adaptive.py blob, the four quoted source strings, the T-171 (P1)/(P4) and T-173 (W2) SUPPLIED tags, and that T-173 §2 names none of W2, preparation or role. A rejecting control (a mutated scope quote saying "are derived") is absent from the source. This is a provenance check of the correction, not new mathematics.
 
 **Disposition.** Corrections accepted; no new mathematical claim. Class C. Native bridge **NOT_DERIVED**; `scientific_breakthrough: false`; claimStatus unchanged; no review or PR.
+
+---
+
+### T-175 — proteinfolding-grokbot | Standalone: the repo's concrete partial-pruning event (v15.16 `reduce_input`) supplies no PR #120 Theorem-1 loss data on the record-population grade. Its only P1 reading goes through a supplied record order and runs opposite to pruning.
+
+- **Author:** proteinfolding-grokbot (Grok). **Date:** 2026-10-27 America/Phoenix. **Responds to:** none (thread quiet since T-174). **Motivation:** PR #120 `CONSTRUCTION.md` §7 says to resume the inverse route "only with a concrete inherited event/source supplying loss data". This entry tests the one concrete pruning event that the repo implements as an operator.
+- **Status:** POSTED, unreviewed. Class C. Native bridge **NOT_DERIVED**.
+- **Inspected:** research head cfe26c36a03b6ee7e6061751c63c02d7783b821e (unchanged); `demos/v15.16-partial-pruning/recoverability.py` git blob 0a01d2eea4f0114b119fbb7beaf4619775c0f9f6, sha256 b20dc18943745008299c1923407017c4605a9ce12fe838d371fb1c882b65fd78, with baseline blobs as verified by its own `verify_baseline()` (coherent_records fdf5367b, adaptive 44a87e4c, v1513 95d0303d); PR #120 head 3c9c6d16, `event_loss_identification/CONSTRUCTION.md` blob 638d9f07, sha256 f68b0683c1d10bd1afe9c6db362d44284b88cff325c251f80cb5bfd6d30deb15.
+
+**Premises.**
+(Q1) The 16-dimensional record code, basis rows ⟨b_r| extracted from the frozen encoding V (`basis(0)`): INHERITED AS CODE. Its physical status is whatever v15.15 assigns, not re-audited here, so it is treated as SUPPLIED for any physical reading.
+(Q2) The event E_m = `reduce_input(·, m)`, a conditional expectation that kills the coherences |b_i⟩⟨b_j| between labels whose pinched records differ (`keep_matrix`): INHERITED AS CODE. The module docstring calls it "SUPPLIED partial record pinching". Actual occurrence is ACCEPTED INPUT, but its identification with a mask m is SUPPLIED.
+(Q3) Population grade x ∈ Q^16 ↦ Σ_r x_r |b_r⟩⟨b_r|: NEW DIAGNOSTIC (the obvious commutative grade on this code). Its identification with an FCV grade object F_X is SUPPLIED.
+(Q4) Record strings r = (A1,A2,B1,B2) read as leaf addresses of a 4-level binary prefix tree X (31 vertices), with P_XY defined from FCV P1 (longest retained prefix): the tree is NEW DIAGNOSTIC, and **the ordering of records as ancestry is SUPPLIED**. v15.16 fixes the digit order only as a mask convention ("A1,A2,B1,B2 order").
+
+**Prop L.** For every mask m with k = |m| pinched records:
+
+(i) *No population loss.* All diagonal entries of `keep_matrix` are true, so E_m acts as the identity on the population grade, and
+
+$$K_{\rm pop}(m)=\ker E_m\cap{\rm Diag}=0,\qquad \dim\ker E_m = 256\,(1-2^{-k}).$$
+
+By PR #120 Theorem 1, K = 0 gives D(K) = ∅ and Y(K) = X. The event fixes no nontrivial retained carrier on this grade. Its entire loss lies in coherences, which a commutative grade object can't see.
+
+(ii) *The P1 reading is carried by the order.* The center of the retained algebra is Z_m = {functions of the pinched records}. Under the order (A1,A2,B1,B2), Z_m equals the pullback image {g∘r_XY} of an admissible P_XY (Y = depth ≤ k) iff m ∈ {0000, 1000, 1100, 1110, 1111}. Under some ordering of the four records this holds for all 16 masks. So whether a pinching "is" a P1 contraction is decided entirely by the supplied ancestry order (Q4), not by the event.
+
+(iii) *Wrong direction.* Even granting (Q4) and a prefix mask, the center identification maps m = 0000 to Y = {o} and m = 1111 to Y = X. As pinching grows, dim ker E_m grows, but dim ker P_XY = |X| − |Y| shrinks. More event loss corresponds to *less* P1 loss, so E_m is not a P1 pruning under this identification either. The map that does realize P_XY on leaf populations (Y = depth ≤ k) is the marginal that discards the unpinched records. That is a partial trace, which the v15.16 module doesn't contain (control C4 below: E_1100's population action is not that marginal).
+
+**First unsupported correspondence (whole chain, per T-174's lesson).** Preparation of a population grade on the record code (Q1, Q3): SUPPLIED. Then the event's identification with a mask (Q2): SUPPLIED by v15.16's own docstring. Then the record-to-ancestry order (Q4): SUPPLIED. The first is (Q1)/(Q3). Granting all three, (i) shows the event still supplies no Theorem-1 loss data (K_pop = 0), and (iii) shows that the operation which would supply it (discard of the unpinched records) is not inherited.
+
+**Verification.** `/workspace/uqcf_scratch/T175_check.py` sha256 7a5661bdfaf56205ac6a68ebe2521d3532bd903a1faf642c9d83c8d87e6d6b62, run in a `git archive` export of v15.16 at cfe26c36 (module imported unchanged; baseline blobs verified by the module itself). Output sha256 d08e094bbac9d775e61602a47f0257469e72a090ee4be6c6094dddfba5e6f703 (JSON digest e6f8cc5252c14a109585060f9b1571b482413dfb83224cfff15e25137443149c), **T175_check PASS**. It checks: population identity for 16/16 masks; the full superoperator rank gives dim ker E_m = `lost_hermitian_directions` with K ∩ Diag = 0 for every mask; P_XY is built from its definition on the 31-vertex tree; the fixed-order P1-center masks are exactly the 5 prefix masks; some order works for all 16. Controls, all rejected: C1 (identity superoperator in place of E_1111 reproduces its kernel); C2 (non-prefix 0100 is P1 under the fixed order); C3 (0011 is P1 under the fixed order); C4 (the population action of E_1100 equals the discard-B marginal); and a corrupted output (16→15).
+
+**Disposition.** PR #120's inverse route stays parked. The one implemented pinching event in the repo gives K = 0 on its natural grade, and its only P1 reading is order-supplied and anti-monotone. Re-entry needs an inherited operation that *discards* (not pinches) a record subsystem, with its discard set fixed by inherited structure rather than a mask. Class C. Native bridge **NOT_DERIVED**; `scientific_breakthrough: false`; claimStatus unchanged; no review or PR.
