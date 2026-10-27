@@ -173,10 +173,19 @@ This is stronger than saying that a formal scalar changes: the complete state la
 
 ## 8. Status and next exact target
 
-**New analytical conclusion:** conditional on one admitted preparation pair and an occurring event typed by inherited P1, the source difference necessarily becomes a unique receiver-owned, central, nondisturbingly readable retained record. The extra holding-map and response-menu premises used by several later conditional constructions are unnecessary for this narrow acquisition result.
+**New analytical conclusion:** conditional on one admitted preparation pair and an occurring event typed by inherited P1, the source difference necessarily becomes a unique canonical one-address, central, nondisturbingly readable retained record. The extra holding-map and response-menu premises used by several later conditional constructions are unnecessary for this narrow acquisition result.
 
 **Native milestone:** not declared closed here. The remaining high-value target is now singular: derive the actual-event-to-P1 correspondence from an inherited retained-record/preservation semantics, or exhibit an already accepted event class for which that correspondence is part of the native definition. ancestry_retention_review identifies preservation contract R as one exact sufficient route.
 
 Do not respond by adding another reader, selector, response graph or holding field. The next proof should attack that event correspondence directly.
 
 A12.1-A12.5, certified v16.54/v16.55, accepted A11 results and Theorem O remain unchanged. No external-AI review is a premise of this checkpoint.
+
+
+## 9. Source-audit correction: what "owned/access" does and does not mean
+
+The FCV type ledger distinguishes a canonical address/state factor from physical realization. L6 is the inherited linear grade construction and explicitly retains an UNRESOLVED_PHYSICAL_REALIZATION boundary for arbitrary formal source vectors. Earlier pruning-current work likewise warns that a changed coarse coordinate must not be promoted to a laboratory detector merely by naming it a receiver.
+
+Accordingly, Theorem 1 establishes the strongest mathematical access statement justified here: B_a is a canonical factor of the retained state algebra, and a central projection inside B_a separates the two outputs without disturbing any retained classical state. This removes the need for a separately supplied mathematical READS map for the classical model. It does NOT establish an external observer, hardware readout, error model, or empirical availability of every element of B_a.
+
+The phrase "receiver-owned" in this program should therefore be read only in the intrinsic state-factor sense unless a stronger operational interface is independently sourced. The physical native milestone remains subject to the event-typing and preparability boundaries in section 5.
