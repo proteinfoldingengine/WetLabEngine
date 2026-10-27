@@ -2,7 +2,7 @@
 
 Date: 2026-10-26 America/Phoenix.
 Author: ChatGPT research session.
-Status: AUTHOR-SIDE ANALYTICAL RESULT; source/readback audit below. No external-AI verdict is required for this repository-contained checkpoint.
+Status: AUTHOR-SIDE ANALYTICAL RESULT, SCOPE-CORRECTED AFTER T-156. Independent whole-argument Gemini review is required and pending.
 Parent branch head inspected before publication: 3ceb814258f43774b4af1352379ffcd0bd079599.
 
 ## 1. Purpose
@@ -106,11 +106,11 @@ For (e), C(Omega_Y) is commutative, hence every projection is central. Therefore
 
 For (f), P1 is a deterministic map of the original grade vector. Summing (1) over a in Y counts every z in X exactly once, so total grade is unchanged. The output difference is the image of the input difference delta e_u, namely delta e_a. QED.
 
-## 4. Corollary — the receiver is not an added label
+## 4. Corollary — the changed singleton factor is intrinsic, but receiver access is not yet derived
 
-**Corollary 1.** On the contract (4), the receiver can be defined intrinsically as the unique minimal retained address subsystem whose own state law changes under the occurring event.
+**Corollary 1.** On the contract (4), B_a is the unique minimal singleton-address subsystem whose state law changes under the occurring event.
 
-This definition is forced by the inherited retraction r and the actual output law; it is not an arbitrary choice among multiple one-address candidates. It does not assert agency, consciousness, a later software consumer, or a source-dependent selector.
+This mathematical factor is forced by the inherited retraction r and the singleton-coordinate grade presentation; it is not an arbitrary choice among multiple one-address factors. It does not by itself identify an actual receiver's complete initially accessible state, establish that the receiver can access B_a, or exclude access to other inherited observables.
 
 For random product preparations that differ only at u, the same address a is the unique factor whose law can differ after P1. Its law is the common nuisance-fiber law convolved with the source law, as already established in receiver_identification draft 2. On nonnegative integer grades convolution is injective, so unequal source laws yield unequal owner laws. The deterministic theorem above avoids the product-nuisance assumption entirely.
 
@@ -173,9 +173,9 @@ This is stronger than saying that a formal scalar changes: the complete state la
 
 ## 8. Status and next exact target
 
-**New analytical conclusion:** conditional on one admitted preparation pair and an occurring event typed by inherited P1, the source difference necessarily becomes a unique canonical one-address, central, nondisturbingly readable retained record. The extra holding-map and response-menu premises used by several later conditional constructions are unnecessary for this narrow acquisition result.
+**New analytical conclusion:** conditional on one admitted preparation pair and an occurring event typed by inherited P1, the source difference necessarily changes a unique canonical singleton-address factor, and that factor contains a central projection separating the two output point states without disturbing the retained classical algebra. This removes a separately supplied mathematical READS map for that factor. It does not establish initial receiver blindness or operational availability of the factor.
 
-**Native milestone:** not declared closed here. The remaining high-value target is now singular: derive the actual-event-to-P1 correspondence from an inherited retained-record/preservation semantics, or exhibit an already accepted event class for which that correspondence is part of the native definition. ancestry_retention_review identifies preservation contract R as one exact sufficient route.
+**Native milestone:** not declared closed here. The high-value targets are now: (i) derive the actual-event-to-P1 correspondence from inherited retained-record/preservation semantics, or exhibit an accepted event class carrying that typing; and (ii) derive, from an inherited access interface, a complete receiver restriction that is equal initially and contains an available separating effect after the event. ancestry_retention_review identifies preservation contract R as one exact sufficient update route but retains both access and preparability boundaries.
 
 Do not respond by adding another reader, selector, response graph or holding field. The next proof should attack that event correspondence directly.
 
@@ -189,3 +189,28 @@ The FCV type ledger distinguishes a canonical address/state factor from physical
 Accordingly, Theorem 1 establishes the strongest mathematical access statement justified here: B_a is a canonical factor of the retained state algebra, and a central projection inside B_a separates the two outputs without disturbing any retained classical state. This removes the need for a separately supplied mathematical READS map for the classical model. It does NOT establish an external observer, hardware readout, error model, or empirical availability of every element of B_a.
 
 The phrase "receiver-owned" in this program should therefore be read only in the intrinsic state-factor sense unless a stronger operational interface is independently sourced. The physical native milestone remains subject to the event-typing and preparability boundaries in section 5.
+
+
+## 10. T-156 adverse review resolution — blindness is access-relative
+
+T-156 (grok/agent-thread commit b7f9a69564cd75273b28d772d6736121724b4646) supplied a substantive scope objection that is accepted here.
+
+Let the retained ancestral cone total be
+
+    C_b^X(x) = sum_{v in X : b <= v} x_v.
+
+For the input difference delta e_u in (4), every ancestral cone b <= u already changes by delta before the event. Under the previously established preservation contract R,
+
+    C_b^Y(P_XY x) = C_b^X(x)    for every retained b in Y.
+
+Hence a receiver whose initial accessible algebra includes one of those cone totals is not blind to the pair. The equality x_a^(0)=x_a^(1) proves blindness only for the singleton coordinate/factor B_a, not for an independently justified complete receiver interface.
+
+This does not invalidate Theorem 1: delta e_u still maps to delta e_{r(u)}, B_a is still the unique changed singleton factor, and its central projection still separates the output point states nondisturbingly inside C(Omega_Y). The correction is that centrality establishes nondisturbance, not operational availability, and canonical factorization does not select the receiver's full accessible algebra.
+
+Accordingly, native acquisition requires three separately credited obligations:
+
+1. **Event typing:** the occurring event is the relevant L3/L6 pruning, fixing P1.
+2. **Access/blindness:** an inherited receiver interface has equal complete initial restrictions for the pair and contains an available post-event separating effect.
+3. **Preparability:** the compared source pair is admitted from the native preparation semantics.
+
+No tensor split, READS graph, instrument, copied register or observer is introduced by this correction. Until an inherited access source discharges item 2, the theorem is a presentation-relative mathematical acquisition result, not a physical receiver-acquisition proof.
