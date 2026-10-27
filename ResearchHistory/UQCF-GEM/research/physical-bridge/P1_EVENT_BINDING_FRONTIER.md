@@ -2,7 +2,7 @@
 
 Date: 2026-10-26 America/Phoenix.
 Author: ChatGPT research session.
-Status: SOURCE-AUDITED FRONTIER; no new physical mechanism asserted.
+Status: SOURCE-AUDITED FRONTIER, SCOPE-CORRECTED AFTER T-156; independent Gemini review pending. No new physical mechanism asserted.
 Parent: bda0ba504c63fbbf547d86f2df8a42ee2e47c316.
 
 ## 1. What is now closed mathematically
@@ -18,10 +18,12 @@ Two new repository-contained deductions narrow the operation-first bridge:
 Therefore the next work must NOT re-prove:
 - fiber summation,
 - P1 composition,
-- source-to-owner transfer,
+- source-to-singleton-factor transfer,
 - canonical address factorization,
-- commutative central readability,
+- commutative central nondisturbance,
 - auxiliary holding-map response conditions.
+
+These mathematical results do not by themselves establish the actual receiver's complete initial restriction or operational access.
 
 ## 2. Exact source audit
 
@@ -52,7 +54,12 @@ No inspected source establishes the cross-boundary implication
     actual occurring measurement/pruning event
        => this concrete same-Genesis L3 arrow X->Y on this L6 grade.       (E->L3)
 
-That implication therefore remains the singular unearned correspondence.
+T-156 also shows that the receiver-access implication remains separate:
+
+    canonical changed singleton factor B_a
+       => initially blind and operationally available receiver interface. (B_a->Access)
+
+The first implication types the update. The second identifies an actual receiver interface. Neither follows from the name of an address, and centrality establishes nondisturbance rather than availability.
 
 ## 3. Minimal target
 
@@ -65,7 +72,7 @@ For one accepted occurring event e, show from inherited event/provenance/retenti
 - one pre-event prefix carrier X and one post-event prefix-closed retained carrier Y subset X in the same Genesis component;
 - the event's retained source amount before and after is the same finitely additive extensive grade object under that carrier reduction.
 
-Then e is an L3/L6 typed pruning event. L4/L7 automatically give P1, and P1_CANONICAL_RECEIVER_ACQUISITION automatically gives the one-address retained distinction for the declared blind source pair.
+Then e is an L3/L6 typed pruning event. L4/L7 automatically give P1, and P1_CANONICAL_RECEIVER_ACQUISITION gives the changed singleton factor and an algebraic separating projection. EB alone does not establish that an actual receiver was initially blind or can access that projection.
 
 EB does not require:
 - explaining why e occurs;
@@ -75,12 +82,25 @@ EB does not require:
 - a new reader;
 - a response probability if the event is already realized.
 
+## 3a. Access-binding target
+
+**Access-binding target AB.**
+For the same event and preparation pair, identify from inherited native structure a receiver interface A_R such that:
+- the pair has the same complete restriction to A_R before the event;
+- after the event A_R contains an available effect separating the two retained states;
+- the identity of A_R and the available effect are not selected from the source value or introduced as a READS table, observer, instrument or copied register.
+
+T-156's cone-total control is mandatory: if A_R initially contains any retained ancestral cone total that already separates the pair, the pair is not initially blind for that interface. Singleton-coordinate equality alone is insufficient unless inherited semantics justify singleton-only initial access.
+
+EB and AB are logically distinct. Either may be discharged by separate inherited sources; neither is replaced by the other.
+
 ## 4. Candidate evidence to inspect next
 
 The highest-value existing sources are those that already bind one realized event to:
 1. a same-Genesis lineage address,
 2. a retained/pruned address set after the event,
-3. a source-grade identity that survives that retention.
+3. a source-grade identity that survives that retention,
+4. an inherited receiver interface whose complete initial restriction is blind to the declared source pair and whose post-event interface contains the separating distinction.
 
 Priority source families:
 - native source binding / full lineage provenance,
@@ -102,17 +122,17 @@ A source file that merely computes P_XY after X,Y are supplied does not establis
 
 ## 6. Scientific significance
 
-If EB is derived for one actual event class, then the full classical operation-first chain for that event becomes:
+If EB and an inherited access/blindness contract are derived for one actual event class, then the full classical operation-first chain for that event becomes:
 
     accepted occurring event
       -> native L3 pruning type
       -> derived L4 ancestral retraction
       -> derived L7/P1 extensive-grade update
-      -> unique changed retained address factor
-      -> central nondisturbing separating record.
+      -> unique changed retained singleton factor
+      -> inherited receiver interface containing a central nondisturbing separator.
 
-At that point the remaining caveats would be preparation scope and physical interpretation beyond the classical retained-grade model, not an inserted source-to-receiver interaction law.
+At that point the remaining caveats would include preparation scope and physical interpretation beyond the classical retained-grade model, not an inserted source-to-receiver interaction law.
 
-Until EB is earned, the native milestone remains OPEN.
+Until both event typing and inherited receiver access/blindness are earned, with preparability kept explicit, the native milestone remains OPEN.
 
 No A12.6, new numerical campaign, geometry, force, energy, GR/ADM, dark-matter primitive or fundamental-time claim is opened by this frontier note.
