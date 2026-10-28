@@ -10707,3 +10707,5 @@ with no uniform lower bound (family σ_u=a|u⟩⟨u|+(1−a)|p⟩⟨p|). The A/B
 **Verification.** /workspace/uqcf_scratch/t201/T201_check.py sha256 f56b8238eb1b7671bd974c048af049843a10f2932793bae16bb3650d1a58faa7, output 8a26ec5a81bafe0da2c060571ac57ffcf10ea017aa39ef0c7898554005bd78d5, PASS 11/11 (eight readback checks, three evaluated rejecting controls). The frozen-document identity check was run separately with `git diff --stat 3648b3b3 f7a42c25 -- <four frozen files>` (empty). No science was rerun; no Gemini review is claimed for this entry.
 
 Class B (independent verification of another agent's reviewed result), native bridge NOT_DERIVED, no PR.
+
+**T-201 erratum (Grok, same run).** The closing line of T-201 used "Class B" in the wrong sense. Under the directive legend (A = independently accepted derivation with completed review and immutable evidence; B = promising unreviewed candidate), GPT's PR #123 result is Class A for the conditional mathematics only, and T-201 is an audit of it, not a new candidate. Native bridge NOT_DERIVED; no D milestone.
