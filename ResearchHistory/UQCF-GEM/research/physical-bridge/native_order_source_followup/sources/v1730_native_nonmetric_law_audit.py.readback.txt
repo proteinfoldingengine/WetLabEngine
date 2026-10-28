@@ -1,0 +1,231 @@
+"""
+V1730 — Native Nonmetric Law Audit
+Tests the candidate native law class:
+    associator/source defect -> shear nonmetricity Q_shear -> curvature downstream.
+Non-tuned gates:
+1) Associator features predict Q_shear on holdout better than shuffled/random nulls.
+2) A simple defect-balance residual D_order Q + div J_Q - Pi(A) is smaller than null.
+3) Curvature is downstream of Q: R is predicted by quadratic/derivative contractions of Q better than associator/source alone.
+
+This harness uses the same minimal retained-recombination model as V1721/V1728/V1729.
+"""
+import numpy as np
+from pathlib import Path
+
+DIM=6; G=0.17; EPS=1e-5
+_COMP_RNG=np.random.default_rng(173001)
+_COMP_A=_COMP_RNG.normal(size=(651,48))/np.sqrt(48)
+
+def roll(v): return np.roll(v,1)
+
+def star(a,b,g=G,assoc=False):
+    if g==0: return a.copy()
+    if assoc:
+        # associative/linear-ish control used in earlier audits
+        return a + g*np.mean(b)*a
+    return a + g*(roll(a)*b - a*roll(b))
+
+def associator(a,b,c,g=G,assoc=False):
+    return star(star(a,b,g,assoc),c,g,assoc) - star(a,star(b,c,g,assoc),g,assoc)
+
+def Kmat(q,g=G):
+    n=len(q); K=np.zeros((n,n))
+    if g==0: return K
+    for a in range(n):
+        e=np.zeros(n); e[a]=1.0
+        K[:,a]=g*(roll(e)*q - e*roll(q))
+    return K
+
+def native_jac(q,g=G,assoc=False):
+    n=len(q); J=np.eye(n)
+    if g==0: return J.copy()
+    if assoc:
+        return (1.0+g*np.mean(q))*np.eye(n)
+    return np.eye(n)+Kmat(q,g)
+
+def dJ_dq(g=G,assoc=False):
+    n=DIM; d=np.zeros((n,n,n)) # d[a,k,i] = ∂J[k,i]/∂q_a
+    if g==0: return d
+    if assoc:
+        for a in range(n): d[a]+= (g/n)*np.eye(n)
+    else:
+        for a in range(n):
+            for k in range(n):
+                for i in range(n):
+                    d[a,k,i]=g*((1 if a==k and i==(k-1)%n else 0) - (1 if i==k and a==(k-1)%n else 0))
+    return d
+
+def metric(q,g=G,assoc=False):
+    J=native_jac(q,g,assoc); M=0.5*(J+J.T)
+    w=np.linalg.eigvalsh(M)
+    if w.min()<1e-6: M=M+(1e-6-w.min())*np.eye(len(q))
+    return M
+
+def dG_all(g=G,assoc=False):
+    dJ=dJ_dq(g,assoc)
+    return 0.5*(dJ + np.swapaxes(dJ,1,2))
+
+def gamma_native(g=G,assoc=False):
+    return np.transpose(dJ_dq(g,assoc),(1,0,2))
+
+def Q_tensor(q,g=G,assoc=False):
+    M=metric(q,g,assoc); dG=dG_all(g,assoc); Ga=gamma_native(g,assoc); n=len(q)
+    Q=np.zeros((n,n,n))
+    for a in range(n):
+        for i in range(n):
+            for j in range(n):
+                term=dG[a,i,j]
+                for m in range(n):
+                    term -= Ga[m,a,i]*M[m,j] + Ga[m,a,j]*M[i,m]
+                Q[a,i,j]=term
+    return Q
+
+def shear_part(Q):
+    # shear/traceless over metric-index pair, Euclidean trace in this minimal harness
+    n=Q.shape[0]
+    S=Q.copy()
+    for a in range(n):
+        tr=np.trace(Q[a])/n
+        S[a]-=tr*np.eye(n)
+    return S
+
+def ricci_scalar(q,g=G,assoc=False,h=1e-4):
+    # same finite-difference Levi-Civita scalar proxy as earlier audits
+    n=DIM
+    def mf(x): return metric(x,g,assoc)
+    def dg(x,k):
+        e=np.zeros(n); e[k]=h
+        return (mf(x+e)-mf(x-e))/(2*h)
+    def christ(x):
+        M=mf(x); Mi=np.linalg.inv(M); dGs=[dg(x,k) for k in range(n)]
+        Ga=np.zeros((n,n,n))
+        for l in range(n):
+            for i in range(n):
+                for j in range(n):
+                    s=0.0
+                    for m in range(n): s += Mi[l,m]*(dGs[i][m,j]+dGs[j][m,i]-dGs[m][i,j])
+                    Ga[l,i,j]=0.5*s
+        return Ga
+    M=mf(q); Mi=np.linalg.inv(M); Ga=christ(q)
+    dGa=np.zeros((n,n,n,n))
+    for k in range(n):
+        e=np.zeros(n); e[k]=h
+        dGa[k]=(christ(q+e)-christ(q-e))/(2*h)
+    Ric=np.zeros((n,n))
+    for i in range(n):
+        for j in range(n):
+            s=0.0
+            for l in range(n):
+                term=dGa[l,l,i,j]-dGa[i,l,l,j]
+                for m in range(n): term += Ga[l,l,m]*Ga[m,i,j]-Ga[l,i,m]*Ga[m,l,j]
+                s += term
+            Ric[i,j]=s
+    return float(np.einsum('ij,ij->',Mi,Ric))
+
+def assoc_features(q,g=G,assoc=False):
+    # Frozen associator feature bank: A(e_i,e_j,q), A(e_i,q,e_j), A(q,e_i,e_j), plus norms and contractions.
+    Es=np.eye(DIM)
+    feats=[]
+    for i in range(DIM):
+        for j in range(DIM):
+            feats.extend(associator(Es[i],Es[j],q,g,assoc))
+            feats.extend(associator(Es[i],q,Es[j],g,assoc))
+            feats.extend(associator(q,Es[i],Es[j],g,assoc))
+    A=np.array(feats)
+    # add low-dimensional invariant contractions, fixed before fitting
+    return np.concatenate([A, [np.linalg.norm(A), np.dot(q,q), np.linalg.norm(Kmat(q,g))]]) @ _COMP_A
+
+def source_features_from_Q(q,g=G,assoc=False):
+    Q=shear_part(Q_tensor(q,g,assoc))
+    # quadratic Q features for downstream curvature test; not for predicting Q from associator
+    return np.array([
+        np.linalg.norm(Q),
+        np.sum(Q*Q),
+        np.linalg.norm(np.sum(Q,axis=0)),
+        np.linalg.norm(np.sum(Q,axis=1)),
+        np.linalg.norm(np.sum(Q,axis=2)),
+        np.linalg.norm(Kmat(q,g)),
+    ])
+
+def ridge_fit(X,Y,lam=1e-8):
+    X1=np.column_stack([np.ones(len(X)),X])
+    A=X1.T@X1 + lam*np.eye(X1.shape[1]); A[0,0]-=lam
+    B=np.linalg.solve(A,X1.T@Y)
+    return B
+
+def pred(B,X): return np.column_stack([np.ones(len(X)),X])@B
+
+def r2_score(Y,Yp):
+    ss=np.sum((Y-Yp)**2); base=np.sum((Y-Y.mean(axis=0,keepdims=True))**2)
+    return 1-ss/(base+1e-12)
+
+def scalar_r2(y,yp):
+    return 1-np.sum((y-yp)**2)/(np.sum((y-y.mean())**2)+1e-12)
+
+def make_dataset(seed=1730,N=100,g=G,assoc=False):
+    rng=np.random.default_rng(seed)
+    qs=[rng.normal(size=DIM)*rng.uniform(0.4,2.5) for _ in range(N)]
+    X_A=np.array([assoc_features(q,g,assoc) for q in qs])
+    Y_Q=np.array([shear_part(Q_tensor(q,g,assoc)).ravel() for q in qs])
+    X_Q=np.array([source_features_from_Q(q,g,assoc) for q in qs])
+    R=np.array([ricci_scalar(q,g,assoc) for q in qs])
+    # order derivative sample: q -> roll(q) as retained-order neighbor
+    Y_dQ=[]; X_A_mid=[]
+    for q in qs:
+        q2=roll(q)
+        Y_dQ.append((shear_part(Q_tensor(q2,g,assoc))-shear_part(Q_tensor(q,g,assoc))).ravel())
+        X_A_mid.append(assoc_features(q,g,assoc))
+    return qs, X_A, Y_Q, X_Q, R, np.array(X_A_mid), np.array(Y_dQ)
+
+def run_case(label,g=G,assoc=False):
+    qs,XA,YQ,XQ,R,XAm,YdQ=make_dataset(1730,24,g,assoc)
+    idx=np.arange(len(qs)); tr=idx[:16]; te=idx[16:]
+    # Gate 1: A -> Q_shear holdout
+    B=ridge_fit(XA[tr],YQ[tr]); Yp=pred(B,XA[te])
+    r2_AQ=r2_score(YQ[te],Yp)
+    corr_norm=np.corrcoef(np.linalg.norm(YQ[te],axis=1),np.linalg.norm(Yp,axis=1))[0,1] if np.std(np.linalg.norm(Yp,axis=1))>1e-12 else np.nan
+    # Shuffle/null for A -> Q
+    rng=np.random.default_rng(44)
+    nulls=[]
+    for k in range(3):
+        perm=rng.permutation(len(tr))
+        Bs=ridge_fit(XA[tr][perm],YQ[tr]); # feature rows permuted relative to Y by fitting wrong pairing? Actually XA permuted, Y fixed
+        nulls.append(r2_score(YQ[te],pred(Bs,XA[te])))
+    # random features same dimension
+    rnull=[]
+    for k in range(3):
+        rng2=np.random.default_rng(900+k)
+        Xrand=rng2.normal(size=XA.shape)
+        Br=ridge_fit(Xrand[tr],YQ[tr])
+        rnull.append(r2_score(YQ[te],pred(Br,Xrand[te])))
+    # Gate 2: A -> D_order Q_shear (balance source term)
+    Bd=ridge_fit(XAm[tr],YdQ[tr]); dPred=pred(Bd,XAm[te])
+    r2_balance=r2_score(YdQ[te],dPred)
+    # Gate 3: R downstream of Q quadratic features vs A features alone
+    Bq=ridge_fit(XQ[tr],R[tr][:,None]); Rpq=pred(Bq,XQ[te]).ravel()
+    Ba=ridge_fit(XA[tr],R[tr][:,None]); Rpa=pred(Ba,XA[te]).ravel()
+    r2_R_Q=scalar_r2(R[te],Rpq); r2_R_A=scalar_r2(R[te],Rpa)
+    return dict(label=label,g=g,assoc=assoc,Qnorm=float(np.mean(np.linalg.norm(YQ,axis=1))),Rmean=float(R.mean()),Rstd=float(R.std()),
+                A_to_Q_R2=float(r2_AQ),A_to_Q_normcorr=float(corr_norm),A_to_Q_shuffle_mean=float(np.mean(nulls)),A_to_Q_shuffle_std=float(np.std(nulls)),A_to_Q_rand_mean=float(np.mean(rnull)),A_to_Q_rand_std=float(np.std(rnull)),
+                balance_A_to_dQ_R2=float(r2_balance),R_from_Q_R2=float(r2_R_Q),R_from_A_R2=float(r2_R_A))
+
+def main():
+    cases=[run_case('native g=.17',G,False), run_case('flat g=0',0.0,False), run_case('associative control',G,True)]
+    print('V1730 — Native Nonmetric Law Audit')
+    print('Candidate: associator sources Q_shear; Q_shear transports under retained order; curvature downstream of Q.\n')
+    for c in cases:
+        print(c['label'])
+        print(f"  mean ||Q_shear||: {c['Qnorm']:.6f} | R mean/std: {c['Rmean']:.6f}/{c['Rstd']:.6f}")
+        print(f"  A -> Q_shear holdout R2: {c['A_to_Q_R2']:.4f} | norm corr: {c['A_to_Q_normcorr']:.4f}")
+        print(f"    shuffled-pair null R2: {c['A_to_Q_shuffle_mean']:.4f} ± {c['A_to_Q_shuffle_std']:.4f}")
+        print(f"    random-feature null R2: {c['A_to_Q_rand_mean']:.4f} ± {c['A_to_Q_rand_std']:.4f}")
+        print(f"  A -> D_order Q balance R2: {c['balance_A_to_dQ_R2']:.4f}")
+        print(f"  R from Q-quadratic features R2: {c['R_from_Q_R2']:.4f}")
+        print(f"  R from associator features R2: {c['R_from_A_R2']:.4f}\n")
+    native=cases[0]
+    pass_gate = (native['A_to_Q_R2']>0.5 and native['A_to_Q_R2']>native['A_to_Q_shuffle_mean']+3*native['A_to_Q_shuffle_std'] and native['balance_A_to_dQ_R2']>0.3 and native['R_from_Q_R2']>0.5)
+    partial = (native['A_to_Q_R2']>native['A_to_Q_shuffle_mean']+2*native['A_to_Q_shuffle_std'] and native['R_from_Q_R2']>native['R_from_A_R2'])
+    print('VERDICT:', 'PASS — native nonmetric law supported.' if pass_gate else ('PARTIAL — associator/Q relation or Q->R hierarchy appears, but balance law not closed.' if partial else 'FAIL — no native law closure found.'))
+    print('\nInterpretation rule: A full law needs A->Q, A->D_order Q balance, and Q->R downstream gates. A single correlation is not enough.')
+
+if __name__=='__main__': main()

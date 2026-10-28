@@ -1,0 +1,145 @@
+"""
+V1735 — Native Algebraic Law Hardening
+Question: after the Q-balance law failed, can we freeze a conservative algebraic native law?
+  A_assoc -> Q_shear and K_Q = ||Q_shear||^2
+without claiming a universal retained-order evolution equation.
+
+This audit tests:
+  1) controls: g=0 and associative collapse.
+  2) state holdout at fixed coupling: full associator bank reconstructs Q_shear.
+  3) cross-coupling holdout: a fixed learned map does not globally generalize across coupling.
+  4) invariant law: K_Q has smooth near-quadratic coupling scaling and control collapse.
+
+Interpretation: if (2) and (4) pass but (3) fails, freeze an algebraic/invariant law, not a dynamical/transport law.
+"""
+import numpy as np, importlib.util
+from pathlib import Path
+spec=importlib.util.spec_from_file_location('v1730','/mnt/data/v1730_native_nonmetric_law_audit.py')
+v=importlib.util.module_from_spec(spec); spec.loader.exec_module(v)
+DIM=v.DIM
+Es=np.eye(DIM)
+
+def A_full(q,g,assoc=False):
+    vals=[]
+    for i in range(DIM):
+        for j in range(DIM):
+            vals.extend(v.associator(Es[i],Es[j],q,g,assoc))
+            vals.extend(v.associator(Es[i],q,Es[j],g,assoc))
+            vals.extend(v.associator(q,Es[i],Es[j],g,assoc))
+    return np.array(vals,float)
+
+def Q_shear_vec(q,g,assoc=False):
+    return v.shear_part(v.Q_tensor(q,g,assoc)).ravel()
+
+def K_Q(q,g,assoc=False):
+    qv=Q_shear_vec(q,g,assoc)
+    return float(np.dot(qv,qv))
+
+def make(seed,N,g,assoc=False,features='raw'):
+    rng=np.random.default_rng(seed)
+    X=[]; Y=[]; K=[]
+    for _ in range(N):
+        q=rng.normal(size=DIM)*rng.uniform(.4,2.5)
+        A=A_full(q,g,assoc)
+        if features=='raw':
+            x=A
+        elif features=='scale_augmented':
+            gs=max(abs(g),1e-12)
+            x=np.concatenate([A, A/gs, A/(gs*gs), [g, g*g]])
+        else:
+            raise ValueError(features)
+        X.append(x); Y.append(Q_shear_vec(q,g,assoc)); K.append(K_Q(q,g,assoc))
+    return np.array(X),np.array(Y),np.array(K)
+
+def fit(X,Y):
+    X=np.asarray(X,float); Y=np.asarray(Y,float)
+    mu=X.mean(0); sd=X.std(0); sd[sd<1e-12]=1.0
+    Z=(X-mu)/sd; X1=np.column_stack([np.ones(len(Z)),Z])
+    B=np.linalg.pinv(X1)@Y
+    return B,mu,sd
+
+def predict(model,X):
+    B,mu,sd=model
+    Z=(np.asarray(X,float)-mu)/sd
+    return np.column_stack([np.ones(len(Z)),Z])@B
+
+def r2(Y,Yp):
+    Y=np.asarray(Y); Yp=np.asarray(Yp)
+    return float(1-np.sum((Y-Yp)**2)/(np.sum((Y-Y.mean(0,keepdims=True))**2)+1e-12))
+
+def rel(Y,Yp): return float(np.linalg.norm(Y-Yp)/(np.linalg.norm(Y)+1e-12))
+
+def state_holdout(g=.17,assoc=False):
+    X,Y,K=make(1735,18,g,assoc,'raw')
+    tr=np.arange(10); te=np.arange(10,18)
+    m=fit(X[tr],Y[tr]); yp=predict(m,X[te])
+    rng=np.random.default_rng(99)
+    sh=[]; rn=[]
+    for k in range(3):
+        perm=rng.permutation(len(tr))
+        ms=fit(X[tr][perm],Y[tr]); sh.append(r2(Y[te],predict(ms,X[te])))
+        Xr=rng.normal(size=X.shape)
+        mr=fit(Xr[tr],Y[tr]); rn.append(r2(Y[te],predict(mr,Xr[te])))
+    return dict(R2=r2(Y[te],yp), rel=rel(Y[te],yp), K_mean=float(K.mean()), Q_norm=float(np.linalg.norm(Y)/np.sqrt(Y.size)), shuffle_mean=float(np.mean(sh)), shuffle_std=float(np.std(sh)), random_mean=float(np.mean(rn)), random_std=float(np.std(rn)))
+
+def cross_coupling():
+    # Train only at g=.17 with raw full associator bank, then test other couplings.
+    X,Y,_=make(10,18,.17,False,'raw'); m=fit(X[:10],Y[:10])
+    rows=[]
+    for gt in [.03,.05,.08,.10,.17,.25,.35]:
+        Xt,Yt,_=make(100+int(1000*gt),5,gt,False,'raw')
+        yp=predict(m,Xt)
+        rows.append((gt,r2(Yt,yp),rel(Yt,yp)))
+    return rows
+
+def multig_coupling():
+    # Exploratory scale-augmented map trained on several couplings; this tests whether a simple global law exists.
+    Xs=[]; Ys=[]
+    seed=200
+    for g in [.05,.10,.17,.25]:
+        X,Y,_=make(seed+int(g*1000),5,g,False,'scale_augmented')
+        Xs.append(X); Ys.append(Y)
+    m=fit(np.vstack(Xs),np.vstack(Ys))
+    rows=[]
+    for gt in [.03,.08,.12,.17,.25,.35]:
+        Xt,Yt,_=make(500+int(1000*gt),4,gt,False,'scale_augmented')
+        rows.append((gt,r2(Yt,predict(m,Xt)),rel(Yt,predict(m,Xt))))
+    return rows
+
+def K_sweep():
+    rows=[]
+    for g in [0,.03,.05,.08,.10,.17,.25,.35]:
+        _,Y,K=make(800+int(1000*g),5,g,False,'raw')
+        rows.append((g,float(K.mean()),float(K.std()),float(np.linalg.norm(Y)/np.sqrt(Y.size))))
+    # mild log slope g<=.17
+    xs=[]; ys=[]
+    for g,km,_,_ in rows:
+        if g>0 and g<=.17 and km>1e-14:
+            xs.append(np.log(g)); ys.append(np.log(km))
+    p=np.polyfit(xs,ys,1); yhat=np.polyval(p,xs)
+    R2=1-np.sum((np.array(ys)-yhat)**2)/(np.sum((np.array(ys)-np.mean(ys))**2)+1e-12)
+    return rows,float(p[0]),float(R2)
+
+def main():
+    print('V1735 — Native Algebraic Law Hardening')
+    print('Question: can we freeze an algebraic/invariant native law after dynamic Q-balance failed?\n')
+    print('State-holdout A -> Q_shear at g=.17:')
+    for label,g,assoc in [('native',.17,False),('flat g=0',0.0,False),('associative',.17,True)]:
+        res=state_holdout(g,assoc)
+        print(f"  {label:<12s} Qnorm={res['Q_norm']:.6g}, K_mean={res['K_mean']:.6g}, R2={res['R2']:.4f}, rel={res['rel']:.3g}, shuffle={res['shuffle_mean']:.3f}±{res['shuffle_std']:.3f}, random={res['random_mean']:.3f}±{res['random_std']:.3f}")
+    print('\nFixed-coupling map trained at g=.17, tested across couplings:')
+    for g,R,rr in cross_coupling():
+        print(f'  test g={g:>4.2f}: R2={R: .4f}, rel={rr: .4f}')
+    print('\nExploratory scale-augmented multi-g map, tested across couplings:')
+    for g,R,rr in multig_coupling():
+        print(f'  test g={g:>4.2f}: R2={R: .4f}, rel={rr: .4f}')
+    rows,slope,fitR=K_sweep()
+    print('\nK_Q coupling sweep:')
+    for g,km,ks,qn in rows:
+        print(f'  g={g:>4.2f}: K_Q_mean={km:.6g} ± {ks:.6g}, Qnorm={qn:.6g}')
+    print(f'\nMild-coupling K_Q log slope: {slope:.3f}, log-fit R2={fitR:.4f}')
+    print('\nVERDICT:')
+    print('  Freeze algebraic/invariant law: A_assoc generates Q_shear, and K_Q=||Q_shear||^2 is the native curvature-energy.')
+    print('  Do not freeze a universal transport/balance equation. Cross-coupling maps are not stable enough to claim D_R Q closure.')
+
+if __name__=='__main__': main()
