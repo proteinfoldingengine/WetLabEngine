@@ -1,0 +1,28 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The generator-sector probability formula p_mu = (delta_{mu,lambda} + ||Pi_mu Q psi||^2)/2 and the general degenerate-eigenspace leakage formula L = ||(I-Pi_lambda)Q psi||^2/2 are exact algebraic consequences of applying the nonselective Lueders operation Delta_Q to the initial state |psi><psi| where K psi = lambda psi.",
+    "The rank-one specialization L = (1-q^2)/2 and the selected-branch leakage L_z = (1-zq)/2 correctly follow from the condition Rank(Pi_lambda) = 1, which implies Pi_lambda = |psi><psi|.",
+    "The K=X, Q=Z, psi=|+> control correctly demonstrates that Delta_Z produces a post-state I/2, changing the K distribution to (1/2, 1/2), and that subsequent K pinching E_X(I/2) = I/2 makes no further state change.",
+    "The same-effects/different-instrument control is mathematically exact: A_z = |z><z| (which implements Delta_Z) and B_z = |+><z| both yield effects E_z = |z><z| and probabilities 1/2 for input |+>, but A_z yields leakage 1/2 while B_z yields leakage 0, proving the post-measurement state depends on the specific instrument.",
+    "The degeneracy control (K=Z tensor Z, Q=Z tensor I, psi=(|00>+|11>)/sqrt(2)) correctly shows that q=0 but L=0, demonstrating that the rank-one assumption is strictly necessary for the L = (1-q^2)/2 formula.",
+    "The apparatus-blindness proof in RESULT.md is mathematically exact: any isometry V extending a channel that fixes the pure states |0><0| and |1><1| must satisfy V|z> = |z>|e_z>. Consequently, the reduced environment state sigma_E(rho) depends strictly on the diagonal populations rho_00 and rho_11.",
+    "Because |+x> and |-x> have identical Z-basis populations, they produce the exact same reduced environment state for any such isometry. This equality holds regardless of whether <e_1|e_0> = 0, meaning it applies equally to exact dephasing and partial dephasing."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The apparatus-blindness proof strictly assumes the apparatus is initially uncorrelated with the source (independent preparation) and that the isometry V is input-independent.",
+    "The proof applies only to environment-only observables; joint source-environment measurements or conditional postselection can still distinguish the |+x> and |-x> preparations.",
+    "The external Linpeng et al. experiment is evaluated solely on the author's descriptive claims; no independent verification of the raw data, calibration, or physical apparatus is performed.",
+    "The mathematical existence of the leakage law and the environment state does not derive the physical occurrence of the measurement event, the selection of the basis, or the ownership of the record."
+  ],
+  "constructive_analysis": [
+    "Purification of a mixed initial apparatus state simply enlarges the environment Hilbert space E to E_1 tensor E_2. The isometry V still maps |z> to |z>|e_z> in the enlarged space, and tracing out the source still yields an environment state dependent only on Z populations. The blindness therefore holds for any arbitrary accessible receiver subsystem.",
+    "The exact dephasing positive control correctly identifies that Delta_Z(|0><1|) = 0 forces <e_1|e_0> = 0. This confirms that |0> and |1> produce orthogonal environment states, proving the channel can transfer distinctions for other inputs and is not universally non-interacting.",
+    "The logical separation between a source's changed generator-sector distribution (a mathematical state update) and a written apparatus record (a physical environment state) is rigorously maintained. The exact ideal channel cannot produce an environment-only distinction for the |+/- x> pair.",
+    "Within the exact sources provided, no already specified operation removes the disclosed event-to-owned-record gaps. The transition from a mathematical projection (Delta_Q) to a physical recording event in an accessible environment remains a bounded missing association, requiring a supplied premise."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Identify a canonically derived noncommutative relational instrument or a compatibility-generated event selector that physically instantiates the measurement and writes the record, without relying on supplied external apparatus or input-dependent implementations."
+}
