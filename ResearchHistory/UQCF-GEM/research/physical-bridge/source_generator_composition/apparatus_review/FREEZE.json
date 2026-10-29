@@ -1,0 +1,26 @@
+{
+  "status": "PROSPECTIVE_ANALYTICAL_REVIEW_CONTRACT",
+  "date": "2026-10-29 America/Phoenix",
+  "original_argument_commit": "e3b0c1fd88f0908e10f25d2a18df13ed72417b52",
+  "documents": {
+    "RESULT.md": "7e84a5e75092a78fc197c8ae4e31665f6db00ecbea49e382b644e499e2fb5c14",
+    "SOURCE_PACKET.json": "5ab7b01cf4360a86c88b57e7d2961a20fa77f742962ee86407f2bf252821d9ec"
+  },
+  "scope": [
+    "Independently reconstruct source-generator leakage claims and controls in NOTE.md, and apparatus-blindness proof and controls in RESULT.md.",
+    "Challenge all fixed implementation, initial independence, mixed apparatus, partial dephasing, subsystem and joint-access quantifiers.",
+    "Conditional mathematics only. Exact scientific source text was already public; this is prospective review, not preregistration of a new mathematical discovery."
+  ],
+  "excluded": [
+    "No independent revalidation of the external experimental paper, its apparatus characterization, numerical data or calibration. The reviewer receives the exact author assessment but not the full paper.",
+    "No original archive binary verification, historical test replay, native signal claim, detector/coupling search, numerical campaign, stage closure or main merge."
+  ],
+  "resource_rule": "One model availability GET and one generation; no automatic retry or model fallback; preserve REVISE/FAIL and infrastructure errors.",
+  "review_gates": [
+    "Immutable full-source and exact-byte integrity plus rejecting controls before review.",
+    "Whole-argument Gemini challenge; unacknowledged proof defects require REVISE or FAIL.",
+    "Separate prompt/source/raw-response publication audit and durable evidence readback."
+  ],
+  "initial_status": "UNREVIEWED; native NOT_DERIVED",
+  "author_exploration_disclosed": "All displayed arguments and controls already appeared in e317784d and e3b0c1fd; no new numerical execution."
+}
