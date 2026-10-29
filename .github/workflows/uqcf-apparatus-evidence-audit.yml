@@ -1,0 +1,40 @@
+name: UQCF held apparatus review evidence audit
+on:
+  push:
+    branches: [research/uqcf-source-generator-composition]
+    paths:
+      - '.github/scripts/uqcf_apparatus_evidence_audit.py'
+      - '.github/workflows/uqcf-apparatus-evidence-audit.yml'
+permissions:
+  contents: read
+  actions: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+concurrency:
+  group: uqcf-apparatus-evidence-audit
+  cancel-in-progress: false
+jobs:
+  evidence-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: apparatus-record-review-1
+          path: apparatus_record_review
+          run-id: 40880862457
+          github-token: ${{ github.token }}
+      - name: Independently audit held response and immutable published ZIPs
+        run: python3 .github/scripts/uqcf_apparatus_evidence_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: apparatus-evidence-audit-${{ github.run_attempt }}
+          path: apparatus_evidence_audit
+          if-no-files-found: error
+          retention-days: 90
