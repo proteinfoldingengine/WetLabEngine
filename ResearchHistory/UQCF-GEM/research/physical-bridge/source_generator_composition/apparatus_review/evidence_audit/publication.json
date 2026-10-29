@@ -1,0 +1,100 @@
+{
+  "archive_commit": "3dc1f6b7bb79f167865ae0e2f6533bd9b188de5d",
+  "archived_files": 16,
+  "audit_checkout_sha": "826d07df5868ff2f8ec39e7c3652ac68f5ccd86f",
+  "audit_run_id": "40882103152",
+  "audit_workflow_sha": "826d07df5868ff2f8ec39e7c3652ac68f5ccd86f",
+  "checkout_sha": "0edc3b4ed82b2e866550426164a4f2cc335d6d50",
+  "documents": {
+    "FREEZE.json": "a51c3f463ed2c59cc1976aee3e7a9615393be9799d6c8e1e957d4215b63ece81",
+    "RESULT.md": "7e84a5e75092a78fc197c8ae4e31665f6db00ecbea49e382b644e499e2fb5c14",
+    "SOURCE_PACKET.json": "5ab7b01cf4360a86c88b57e7d2961a20fa77f742962ee86407f2bf252821d9ec"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge": "NOT_DERIVED",
+  "original_acceptance_job": "failure",
+  "original_publication_job": "skipped",
+  "prompt_sha256": "4d0a142dc52b0b3e87f604922efb660f0d5ed028214bbf9cfe05582d99854876",
+  "raw_verdict": "ACCEPTED",
+  "response_sha256": "29d907ba7e466815a235e700724c82619db421fa4c2706756fca63b71e9a8d13",
+  "run_attempt": "1",
+  "run_id": "40880862457",
+  "scientific_execution": false,
+  "scientific_sha": "014f7afdfe9c060fc52a0901935eb5ade620e3e2",
+  "source_commit": "e3b0c1fd88f0908e10f25d2a18df13ed72417b52",
+  "source_count": 7,
+  "sources": [
+    {
+      "byte_end": 8212,
+      "byte_start": 0,
+      "excerpt_bytes": 8212,
+      "excerpt_sha256": "7bfc3e4335c01d05d5a2463e4721afa00a478696c2d2de76773afe31eea887bb",
+      "full_bytes": 8212,
+      "full_sha256": "7bfc3e4335c01d05d5a2463e4721afa00a478696c2d2de76773afe31eea887bb",
+      "git_blob": "06283ff09b082e65c590a6f4cc41c61a25690644",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/source_generator_composition/NOTE.md"
+    },
+    {
+      "byte_end": 1411,
+      "byte_start": 0,
+      "excerpt_bytes": 1411,
+      "excerpt_sha256": "e64df139775be89c02fa97f2f83e3161bce99db895a0adcb3d48fa31144264a7",
+      "full_bytes": 1411,
+      "full_sha256": "e64df139775be89c02fa97f2f83e3161bce99db895a0adcb3d48fa31144264a7",
+      "git_blob": "6da5a934154142160a54ca403a2050fb219ceb5e",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/source_generator_composition/SOURCES.json"
+    },
+    {
+      "byte_end": 5157,
+      "byte_start": 0,
+      "excerpt_bytes": 5157,
+      "excerpt_sha256": "ef5938baa5b58185b3befd5bb0f1b2adf7d81bbab1997817cab23082480b7932",
+      "full_bytes": 5157,
+      "full_sha256": "ef5938baa5b58185b3befd5bb0f1b2adf7d81bbab1997817cab23082480b7932",
+      "git_blob": "3cca0909d6d6da2dd606e990462483f1781a415f",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/source_generator_composition/sources/v9_33.readback.md"
+    },
+    {
+      "byte_end": 7270,
+      "byte_start": 0,
+      "excerpt_bytes": 7270,
+      "excerpt_sha256": "981d4b343bd3dd5316b45e76447910532e8ea855818676f949cc957f3e3c614e",
+      "full_bytes": 7270,
+      "full_sha256": "981d4b343bd3dd5316b45e76447910532e8ea855818676f949cc957f3e3c614e",
+      "git_blob": "8d5210d4adb9e9a4dd2020093713e98319b625b8",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/source_generator_composition/sources/v9_34.readback.md"
+    },
+    {
+      "byte_end": 5695,
+      "byte_start": 0,
+      "excerpt_bytes": 5695,
+      "excerpt_sha256": "374967d02f0888218dd800a50e5440359a13bbd414e4bd542e6df45790315495",
+      "full_bytes": 5695,
+      "full_sha256": "374967d02f0888218dd800a50e5440359a13bbd414e4bd542e6df45790315495",
+      "git_blob": "722daad544d827f09394f9fbc3d349ddf8ab1c2d",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/source_generator_composition/sources/v9_35.readback.md"
+    },
+    {
+      "byte_end": 6476,
+      "byte_start": 0,
+      "excerpt_bytes": 6476,
+      "excerpt_sha256": "7e84a5e75092a78fc197c8ae4e31665f6db00ecbea49e382b644e499e2fb5c14",
+      "full_bytes": 6476,
+      "full_sha256": "7e84a5e75092a78fc197c8ae4e31665f6db00ecbea49e382b644e499e2fb5c14",
+      "git_blob": "d59318bcc8b23c584c63e93a23db8f030685c918",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/source_generator_composition/physical_correspondence/ASSESSMENT.md"
+    },
+    {
+      "byte_end": 1320,
+      "byte_start": 0,
+      "excerpt_bytes": 1320,
+      "excerpt_sha256": "a6e1adff76a4330859d8a676ba7b56689ea22318f1718c5e6a0ba804b208cb7e",
+      "full_bytes": 1320,
+      "full_sha256": "a6e1adff76a4330859d8a676ba7b56689ea22318f1718c5e6a0ba804b208cb7e",
+      "git_blob": "9cfd6fa37a941ec8cc9e5725992965f0c7c726f9",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/source_generator_composition/physical_correspondence/SOURCES.json"
+    }
+  ],
+  "status": "EVIDENCE_MATCHED_REVIEW_GATE_HELD",
+  "workflow_sha": "0edc3b4ed82b2e866550426164a4f2cc335d6d50"
+}
