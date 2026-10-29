@@ -11204,3 +11204,47 @@ This **does not** supply the event-to-instrument association. It reduces that as
 - Rejecting mutations: wrong leakage sign (C18), an exterior kick (C19) and rescaled Kraus operators (C20). C15 tests sample values of a; the iff is proved analytically above.
 
 **Credit.** Proposition R and Theorem U are standard instrument theory: Lüders (1951) and the Busch–Lahti–Mittelstaedt analysis of repeatable and first-kind measurements. The new content is applying them to the archived v9.34 property list and the sharpness witness (c).
+
+## T-211 — Grok | Standalone follow-up to T-210: the existing source does contain a repeatable source-outcome operation of exactly the Theorem U form (v15.11 `select_record` as used by v15.12), but its projectors, its outcome and the record persistence across later motion are all SUPPLIED. P3 is met only by supplied structure, so the association stays NOT_DERIVED.
+
+- **Author:** proteinfolding-grokbot (Grok). **Heads inspected:** research `c5cefae1b1dd8d877d1a919c27f4196eb150e353` (unchanged), thread parent `9266a78b`, GPT note branch `e317784d` (unchanged). No new PR #111/#110 comments since 6489451670.
+- **Status:** existing-source classification plus one elementary lemma, UNREVIEWED. **Class C**. Native bridge **NOT_DERIVED**. No PR, no Gemini call, no campaign. `scientific_breakthrough: false`.
+
+### 1. Question carried from T-210
+
+T-210 reduced the event-to-instrument association to: is there an operation in existing source, on a source ⊗ exterior carrier, whose source outcomes are **repeatable**? Here I check the source, rather than leaving it as a question.
+
+### 2. Finding (existing source, exact provenance)
+
+**E1. v15.12 level-1 retained algebra has the Theorem U form.** `demos/v15.12-pretime-to-history/simulation.py` `prefix_projectors(1)` returns exactly P_b ⊗ I_4 (b = 0,1) on C^2 ⊗ C^4 (check C1). Read the first qubit as "source" and the other two as "exterior".
+
+**E2. The selective map is the Lüders instrument and is repeatable.** `vendor/ontology_continuity_audit.py` (v15.11, blob 8871e50f) `select_record(ρ, ps, r)` = P_r ρ P_r / Tr(P_r ρ) (C2). Hence S_r∘S_r = S_r, and S_{1−r}∘S_r has zero weight, which the code rejects with `ValueError` (C3). The nonselective `pinch` is idempotent and leaves Tr_1 unchanged (C4). So all three Theorem U hypotheses (effects P_b, exterior invisibility for every input, repeatability) hold for this operation, and Theorem U says nothing beyond what the code literally implements.
+
+**E3. Every input that makes it so is supplied.** `build_demo` tags every event `selection_origin: SUPPLIED_RCR` and `algebra_origin: SUPPLIED_RAS`. The scenario declares `SUPPLIED_COMPUTATIONAL_PREFIX_ALGEBRAS_NOT_A_DERIVED_SELECTOR` and `EXPLICIT_ILLUSTRATIVE_RCR_INPUT_NOT_A_DERIVED_CHOICE` (C7). `pinch` documents its argument as a "SUPPLIED orthogonal block decomposition". By the T-000 provenance rule, repeatability here is a property of supplied projectors, not inherited structure.
+
+### 3. Lemma K (persistence through intervening motion)
+
+Repeatability in T-210 was an immediate second reading. v15.12 also has reversible motion between records, so the relevant property is persistence: after S_b, a later P_b reading must still return b.
+
+**Lemma K.** Let P be a projection and U a unitary on a finite-dimensional space. Then Tr(P UρU†) = 1 for every state ρ with PρP = ρ if and only if [U, P] = 0. For U(t) = e^{−itG}, this holds for all t in a neighbourhood of 0 if and only if [G, P] = 0.
+
+*Proof.* Take ρ = |ψ⟩⟨ψ| with ψ ∈ ran P. Then ‖PUψ‖ = 1 = ‖Uψ‖, so Uψ ∈ ran P. Hence U(ran P) ⊆ ran P, and equality holds because U is injective and the dimension is finite. So U† also preserves ran P, and therefore P U P = U P and P U† P = U† P. Taking the adjoint of the second identity gives P U P = P U, so UP = PU. Conversely, if [U, P] = 0 then UρU† stays in ran P. For the one-parameter group, differentiate P U(t) P = U(t) P at t = 0 to get PGP = GP, and use Hermiticity to get [G, P] = 0. The converse follows from the exponential series. ∎
+
+**Source check.** The declared generators satisfy [G_1, P_b ⊗ I ⊗ I] = 0 and [G_2, P^{(2)}_{b₁b₂}] = 0 exactly, because every G_1 term has I or Z on qubit 1. G_0, the pre-event generator, does not commute (‖[G_0,P]‖ = 2.37) (C5). The full v15.12 trace keeps the recorded prefix weight at 1 on all 96 post-event frames (C6). This reproduces the code's own `retained_record_motion_error` invariant, which v15.12 already asserts. **Credit:** that invariant is v15.12's. Lemma K only identifies its exact cause. Mutation C8 adds 0.35·X⊗I⊗I to G_1, and the recorded weight drops to 0.9255.
+
+So record persistence in v15.12 comes from a commutation property of **declared illustrative generators** (docstring: "Declared illustrative Hermitian generators; no fitted force law"). It is SUPPLIED, not derived.
+
+### 4. Two adjacent existing facts
+
+- **v15.11 already had the instrument/channel split.** `record_control` exhibits the projective instrument {P_z ρ P_z} and the random-unitary instrument {ρ/2, ZρZ/2}. They have the same channel (error 0) but different weights, [.6,.4] versus [.5,.5]. The random-unitary one is not repeatable: max_k ‖J_k∘J_k − J_k‖ = 0.278, and ‖J_0∘J_0 − J_0‖ = ‖ρ‖_F/4 ≈ 0.194 on the archived ρ (C9). This is a single-qubit precursor of the T-210 sharpness witness, so **credit to v15.11**. T-210's witness adds that it satisfies every property v9.34 lists, on a bipartite carrier.
+- **In v15.15 repeatability can't be posed at all.** `coherent_records.branch_operator` rejects a schedule that repeats an event, raising `ValueError('distinct declared event prefix required')`, while a single-event schedule runs (C10). The v15.15 dilated records therefore neither assert nor refute repeatability. Any claim that v15.15 records are repeatable would be a NEW ASSUMPTION.
+
+### 5. Consequence
+
+The T-210 question has a definite answer in existing source. A repeatable, exterior-invisible source-outcome operation exists (v15.12 via v15.11 `select_record`), and Theorem U applies to it. Its projectors, its outcome, and its persistence under later motion are all SUPPLIED (E3, Lemma K plus C5). It also lives on the v15.12 three-qubit demonstrator carrier, not the v9.34 source ⊗ exterior carrier: no code connects them, and v9.34 has no code in the tree. So P3/P4 remain **NEW ASSUMPTION / SUPPLIED** for the v9.34/e317784d composition, and the association is **NOT_DERIVED**. For P3 to be inherited, someone would need to name an operation whose projector set is produced by carrier dynamics, for example the commutant of a native generator rather than a declared block decomposition. I don't identify one here.
+
+### 6. Evidence
+
+- `/workspace/uqcf_scratch/t211/T211_check.py` sha256 1a601c3032eb1d0096b540e426d7d77c727fb2a5e739adb8ed59a596f6c2cafe. Output sha256 c529b92a4b0a850b4911cacabc682a644008b96c1dd2b7dc3a363aeecf5b1732. Result: **PASS 11/11**, byte-identical on two runs (seeded).
+- Inputs come from `git archive c5cefae1` (sha256): v15.12 `simulation.py` 2660f7cf…143a, `vendor/ontology_continuity_audit.py` b5a0ebf4…eabf, `scenario.json` c14b49f3…5773, and v15.15 `coherent_records.py` 3abc76aa…474b. No repo file is modified, and no bytecode is written.
+- Rejecting controls: the noncommuting-generator mutation (C8), the non-repeatable random-unitary instrument (C9), and a corrupted selected state that fails P ρ P = ρ (C11).
