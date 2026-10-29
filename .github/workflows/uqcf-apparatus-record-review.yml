@@ -1,0 +1,89 @@
+name: UQCF ideal apparatus record analytical review
+on:
+  push:
+    branches: [research/uqcf-source-generator-composition]
+    paths:
+      - '.github/scripts/uqcf_apparatus_record_*.py'
+      - '.github/workflows/uqcf-apparatus-record-review.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+concurrency:
+  group: uqcf-apparatus-record-review
+  cancel-in-progress: false
+jobs:
+  integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/source_generator_composition/apparatus_review
+      - name: Check source-tampering and incomplete-response rejection
+        run: python3 .github/scripts/uqcf_apparatus_record_tests.py
+      - name: Verify frozen proof, full source identities and exact excerpts
+        run: python3 .github/scripts/uqcf_apparatus_record_review.py integrity
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: apparatus-record-integrity-${{ github.run_attempt }}
+          path: apparatus_record_review
+          if-no-files-found: error
+          retention-days: 90
+  argument-review:
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/source_generator_composition/apparatus_review
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: apparatus-record-integrity-${{ github.run_attempt }}
+          path: apparatus_record_review
+      - name: Independent full-argument Gemini review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_apparatus_record_review.py review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: apparatus-record-review-${{ github.run_attempt }}
+          path: apparatus_record_review
+          if-no-files-found: error
+          retention-days: 90
+  publication-audit:
+    needs: [integrity, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: apparatus-record-review-${{ github.run_attempt }}
+          path: apparatus_record_review
+      - name: Separate immutable source and raw-response audit
+        run: python3 .github/scripts/uqcf_apparatus_record_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: apparatus-record-publication-${{ github.run_attempt }}
+          path: apparatus_record_publication
+          if-no-files-found: error
+          retention-days: 90
+
