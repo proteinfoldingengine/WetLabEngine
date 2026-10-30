@@ -8,7 +8,7 @@ Native physical bridge: NOT_DERIVED. No numbered stage or scientific breakthroug
 
 ## 1. Positive construction and the concrete question
 
-Can the existing receiver's current incidence view itself produce a grade that follows P1, without the external ambient reference and ambient unit grade used in T-126?
+Can the existing receiver's current incidence view determine a signed diagnostic that follows P1, without the external ambient reference and ambient unit grade used in T-126?
 
 There is a simple signed representation. For the current finite rooted receiver tree Z, put
 
@@ -132,7 +132,7 @@ These vectors are NOT the balanced nonnegative preparations (1,1,2,1)/5 and (1,1
 - **Nontrivial source change is compatible with unchanged retained response.** Both L and j change with the carrier. Holding the old L fixed after pruning would be a different, incorrectly typed consumer.
 - **No uniqueness claim for grading.** Root-supported delta_o is another intrinsic P1-natural grade family. The native rules have not selected between it, e_Z or other admissible representations.
 - **No universal absence claim.** The calculation does not exclude other sources, consumers, retained-grade observations, changes of carrier information, or a justified physical interface.
-- **Prior mathematics credited.** Cone inversion, P1 composition, signed natural families and the Laplacian boundary identity are already inherited. The contribution here is this explicit current-view construction and its complete source-to-consumer trace, not a new classification or a rediscovery of those theorems.
+- **Prior mathematics credited.** Cone inversion, P1 composition, signed natural families and the Laplacian boundary identity are already inherited. In positive_retained_holdings §2, choosing nu(k,0)=1 and nu(k,m)=0 for m>0 gives exactly H_Z(x)=(sum_v x_v)e_Z. Thus e is explicitly a specialization of that existing signed classification; it fails its positivity condition on branching trees. The contribution here is selecting this current-view diagnostic for a concrete source-to-consumer trace, not a new classification or naturality theorem.
 
 ## 7. Outcome and verification status
 
@@ -141,5 +141,7 @@ The positive representation is exact: current native incidence determines a sign
 The attempted bridge through the already inherited Laplacian response does not yield a changing retained-address response. Its output is lineage depth. Physical ownership/access and actual event correspondence remain unearned.
 
 All arguments and the displayed example were derived analytically before publication. No scientific code, finite enumeration, simulation, detector, coupling or new outcome law was executed or introduced. This is a bounded working construction, not a frozen or independently accepted proof. A collaborator's check, if later recorded, is not Gemini independent review. No expensive review or numerical campaign is requested solely to certify this unsuccessful physical bridge.
+
+Two same-lineage collaborators analytically reconstructed §§3-5 and inspected the scope at commit `969bae8df7de37624d255fca1248d00530052018`, blob `2004ad4b2e72a4327537a24c276a1063184a16bc`. They reported no mathematical error and identified the explicit signed-family specialization now credited above. These checks involved no scientific execution and are not independent Gemini acceptance.
 
 The existing positive P1 acquisition results remain unchanged. This note does not reopen the parked channel/rate/symmetry investigations or change research schedules.
