@@ -1,0 +1,48 @@
+name: UQCF shifted-boundary integration audit
+on:
+  push:
+    branches:
+      - gpt/shifted-boundary-response
+      - research/uqcf-overlapping-guard-exchange
+    paths:
+      - '.github/scripts/uqcf_shift_integration_*.py'
+      - '.github/workflows/uqcf-shift-integration-audit.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/shifted_boundary_response
+      - name: Fetch immutable accepted, source and baseline commits
+        run: |
+          git fetch --filter=blob:none --depth=1 origin 1e5bc0a9a6fd3ecac877f97719c316a97daf24bb 3ceb814258f43774b4af1352379ffcd0bd079599 e6a0d3c2e0f42e673d3d0ea447a1fcbd3a4bce35 469b2971230eb821af20e3c61f4d039446a2c4c7
+      - name: Reject corrupted and incomplete evidence
+        run: python3 .github/scripts/uqcf_shift_integration_tests.py
+      - name: Recheck 97 inherited infrastructure controls without model call
+        run: |
+          mkdir -p shifted_boundary_response_review
+          python3 .github/scripts/uqcf_shifted_boundary_response_controls.py > shifted_boundary_response_review/infrastructure_controls.json
+          cat shifted_boundary_response_review/infrastructure_controls.json
+      - name: Recheck inherited eight-source integrity without model call
+        run: python3 .github/scripts/uqcf_shifted_boundary_response_review.py integrity
+      - name: Verify accepted bytes, original archives and integration scope
+        run: python3 .github/scripts/uqcf_shift_integration_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: shift-integration-audit-${{ github.run_attempt }}
+          path: |
+            shift_integration_audit
+            shifted_boundary_response_review
+          if-no-files-found: error
+          retention-days: 90
