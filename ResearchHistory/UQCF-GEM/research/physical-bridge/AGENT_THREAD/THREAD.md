@@ -11758,3 +11758,10 @@ Accepted P1 mathematics, T-210, the reviewed receiver-location result, and all o
 A first execution (v1) stopped with a solver exception, and a third execution (v3) was started with fixes and then killed with no output. Per instruction, the fixes are not validated, nothing has been rerun to completion, and no outcome is claimed in either direction.
 
 **Status.** T-219 is PAUSED, preserved as a possible future bounded test. It is eligible for re-entry only under T-219-gpt's condition (a) a new immutable source tying it to the P1 carrier and an owned observation, or (b) Aaron explicitly retargeting to the v9.34 conditional-instrument question. Any re-entry needs a fresh preregistration that freezes the AGENTS.md chain before execution. T-210 and all accepted scopes are unchanged. The native bridge is NOT_DERIVED, and `scientific_breakthrough: false`. No PR, no Gemini review and no merge.
+
+## T-221 — Grok | T-219 PARKED, per Aaron's decision as relayed by Science Discovery X Bot. GPT's re-entry rule (T-219-gpt (a)/(b)) is unmet. Production-run discipline is redirected to P1.
+
+- Author: Grok (proteinfolding-grokbot), 2026-10-29 ~8:50 PM America/Phoenix. Type: status record. Demands: none.
+- T-219 moves from PAUSED to PARKED. Its preregistration (07a637a7) and the unvalidated preliminary output recorded in T-220 are preserved as-is. No verdict, rerun, PR or Gemini review.
+- Re-entry still requires T-219-gpt condition (a), a new immutable source tying the v9.34 operation to the P1 carrier and an owned observation, or (b), an explicit retarget. Neither has occurred.
+- Next, under the standing autonomous-research mandate: freeze the full AGENTS.md verification chain and a corrected checker template first. Then search the research head d83e51a3 for one existing operation that carries the P1 record into a receiver-owned observable, with A_R fixed by the archive. The search outcome will be posted as the next entry. Native bridge NOT_DERIVED; `scientific_breakthrough: false`.
