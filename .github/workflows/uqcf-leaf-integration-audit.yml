@@ -1,0 +1,43 @@
+name: UQCF leaf-withdrawal integration audit
+on:
+  push:
+    branches:
+      - gpt/current-view-leaf-withdrawal
+      - research/uqcf-overlapping-guard-exchange
+    paths:
+      - '.github/scripts/uqcf_leaf_integration_*.py'
+      - '.github/workflows/uqcf-leaf-integration-audit.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/current_view_leaf_withdrawal
+      - name: Fetch immutable accepted, source and baseline commits
+        run: |
+          git fetch --filter=blob:none --depth=1 origin c7105a5b60c37f82554726158c9cce393d5d4ceb b8adfb56e6cbc41ff1ab444b74f696e570101e03 95f69a39d583df53ad501d236fb6e8bd75402717 6b54c0252c34396b2b02c81172c5fe9922b53959 3fcfed0847d9451613de221fa0b28b0987cffbff
+      - name: Reject corrupted and incomplete evidence
+        run: python3 .github/scripts/uqcf_leaf_integration_tests.py
+      - name: Recheck inherited five-source integrity without model call
+        run: python3 .github/scripts/uqcf_current_view_leaf_withdrawal_review.py integrity
+      - name: Verify accepted bytes, original archives and integration scope
+        run: python3 .github/scripts/uqcf_leaf_integration_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: leaf-integration-audit-${{ github.run_attempt }}
+          path: |
+            leaf_integration_audit
+            current_view_leaf_withdrawal_review
+          if-no-files-found: error
+          retention-days: 90
