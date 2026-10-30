@@ -1,4 +1,4 @@
-# Intrinsic incidence grade: an exact P1 representation and its inherited response
+# Intrinsic incidence grade: P1 representation and response conventions
 
 Author: GPT research session with Aaron.
 Date: 2026-10-30, America/Phoenix.
@@ -20,7 +20,7 @@ The calculation below establishes
 
     e_Y = P_ZY e_Z,
 
-for every inherited prefix-closed pruning Z -> Y, and therefore for every legal receiver-incidence deletion. It then traces the grade into an already inherited consumer: the rooted tree Laplacian response. After the canonical root compensation, that response is exactly lineage depth. Hence it does not change at any surviving address.
+for every inherited prefix-closed pruning Z -> Y, and therefore for every legal receiver-incidence deletion. It then traces the grade into an already inherited consumer: the rooted tree Laplacian response. After the declared root compensation, that response is exactly lineage depth. Hence it does not change at any surviving address. Section 8 separately applies the unchanged raw-source `solve` routine, which uses fresh uniform source centering and gives a different answer.
 
 This is a new candidate application in this investigation, not a new general theorem about trees. Its purpose is to test one explicit current-view -> grade -> inherited-response composition. No mathematical priority is claimed. The choice to investigate e_Z is an author proposal; the native rules are not asserted to select it as a physical source.
 
@@ -79,7 +79,7 @@ Let o be the root, delta_o its unit coordinate, and
 
     j_Z = e_Z - delta_o.
 
-Then j_Z has total zero, so it is a correctly typed input to the existing Laplacian inverse. Root compensation is a declared mathematical construction fixed by the distinguished root; it is not physical background production. Since P1 fixes delta_o, (4) implies
+Then j_Z has total zero, so it is a correctly typed input to the existing Laplacian inverse. Root compensation is a declared mathematical construction fixed by the distinguished root; it is not physical background production. It changes the forcing supplied to the inverse. It is not the choice of a root-zero potential representative, and it is not the raw-source `solve(Z,e_Z)` convention (section 8). Since P1 fixes delta_o, (4) implies
 
     j_Y = P_ZY j_Z.                                    (5)
 
@@ -145,3 +145,65 @@ All arguments and the displayed example were derived analytically before publica
 Two same-lineage collaborators analytically reconstructed §§3-5 and inspected the scope at commit `969bae8df7de37624d255fca1248d00530052018`, blob `2004ad4b2e72a4327537a24c276a1063184a16bc`. They reported no mathematical error and identified the explicit signed-family specialization now credited above. These checks involved no scientific execution and are not independent Gemini acceptance.
 
 The existing positive P1 acquisition results remain unchanged. This note does not reopen the parked channel/rate/symmetry investigations or change research schedules.
+
+
+## 8. Continuation: complete the comparison with the existing raw-source routine
+
+Added 2026-10-30 after inspecting the actual consumer and the earlier centering analysis. This is a completion and scope clarification of this working example, not a new theorem or a reopened acquisition route.
+
+The earlier sections feed the zero-sum source `j_Z=e_Z-delta_o` to the inherited inverse. In contrast, the unchanged v15.56 `pruning_response.py::solve(keys,J)` first executes `j=J-J.mean()`. On raw input e_Z, whose total is one, its equation is therefore
+
+    L_Z phi_Z = e_Z - u_Z,       u_Z = 1_Z/|Z|.         (9)
+
+The implementation returns a zero-mean potential. Below, subtracting its root value gives a root-zero representative of the SAME solution class. That potential-gauge change is harmless. Replacing delta_o by u_Z in the SOURCE is a different forcing, not a gauge change.
+
+### 8.1 Exact nonzero output in the existing four-address example
+
+Use the same Z=(o,p,u,v) and Y=(o,p,v), with u pruned into p.
+
+| Quantity | Before on Z | After on Y |
+| --- | --- | --- |
+| raw grade e | (0,-1,1,1) | (0,0,1) |
+| fresh-uniform centered forcing e-u | (-1/4,-5/4,3/4,3/4) | (-1/3,-1/3,2/3) |
+| root-zero representative of solve(e) | (0,1/4,1,1) | (0,1/3,1) |
+| restriction of the old representative | — | (0,1/4,1) |
+| new minus restricted old | — | (0,1/12,0) |
+
+These are direct exact substitutions into the two incidence Laplacians. For example, before pruning the p row gives 3(1/4)-0-1-1=-5/4; afterwards it gives 2(1/3)-0-1=-1/3. The root and leaf rows give the other displayed forcing entries. Thus the retained p-to-root potential difference increases by 1/12 under this raw-source routine. It is not an additive-gauge artifact.
+
+This is a before/after comparison for one proposed diagnostic, not two physically prepared source alternatives with the same complete initial receiver state.
+
+### 8.2 Attribute the change using the already inherited identity
+
+FCV P6 and PRUNING_CONSISTENCY_AUDIT section 2 already give
+
+    P L_Z = L_Y S,
+
+where S restricts potentials to Y. Since e_Y=P e_Z, equation (9) implies
+
+    L_Y(phi_Y-S phi_Z) = P u_Z-u_Y.                     (10)
+
+On this example,
+
+    P u_Z-u_Y = (1/4,1/2,1/4)-(1/3,1/3,1/3)
+              = (-1/12,1/6,-1/12).
+
+The root-zero vector (0,1/12,0) in the table solves exactly this equation. The whole change is accounted for by the reset from transported background P u_Z to fresh uniform background u_Y.
+
+Equation (10) is an application of the prior audit and T-164/T-167/T-168, not a new defect theorem. T-168 already treats arbitrary total-one background families. Its root-supported family is precisely the compensation used in sections 4-5 here. More generally, P6 already says every consistently P1-transported zero-sum forcing preserves the response class under retained-vertex restriction. The invariant-response conclusion is not special to the incidence grade.
+
+The comparison here is restriction to the SAME surviving addresses. It is not the separate fiber-mean `aggregate` used by the historical demo's `run()`; that averaging operation must not be silently substituted for an existing receiver's retained value.
+
+### 8.3 Consequence for this construction
+
+The current-view representation provides a nonzero output when composed mathematically with the existing raw-source routine. It does not derive that an actual pruning event performs a fresh solve, physically resets a compensating background, or makes its potential available to an existing receiver. Those are exactly the correspondences the earlier audit and T-167/T-168 left open. Defining e from the current view does not supply them.
+
+Accordingly, this note does not claim that all interpretations of the existing response are unchanged. It establishes the unchanged root-compensated response and displays the different fresh-uniform response with its cause identified. Neither has acquired a physical event/record association.
+
+Source identities inspected at the shared parent:
+- `demos/v15.56-response-selector-obstruction/pruning_response.py`, blob `937325efc761d988d3cf34eb3378035a610e0773`: `lap`, `push`, `solve`, `aggregate`.
+- Same directory, `PRUNING_CONSISTENCY_AUDIT.md`, blob `53bcb4abe6460cd5b840531b2b9415ce79806cd2`, sections 1-4.
+- FCV `PROOFS.md`, blob `a21acad73c80cb748f2e42c244f6db53146c2bf2`, P4/P6.
+- Thread T-167/T-168, blob `248839ffecb6eae96da1bd319aaf4987984497e5`; inspected as prior analytical arguments, without adopting their reported execution counts as new verification.
+
+Verification of this addition is analytical substitution and reconstruction from the cited identities. No scientific module was executed. The two collaborator checks recorded in section 7 cover the earlier text only, not this addition. No Gemini acceptance, new source law, native advance or merge is claimed. No new campaign is warranted merely to reverify the already documented centering effect.
