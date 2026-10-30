@@ -1,0 +1,56 @@
+{
+  "schema": "uqcf-gem-p1-receiver-access-review-run-v1",
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "workflow_run": {
+    "id": 40435877307,
+    "attempt": 2,
+    "conclusion": "success",
+    "checkout_sha": "ef2b4ede36570298f202772c8855c9706b3be835",
+    "scientific_sha": "6d230eb9efc4ddf3c4b12132c0dbbd693d0915bc"
+  },
+  "jobs": [
+    {
+      "name": "integrity",
+      "id": 121973742009,
+      "conclusion": "success"
+    },
+    {
+      "name": "argument-review",
+      "id": 121973803868,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 121974088711,
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "p1-receiver-access-review",
+      "id": 12705376699,
+      "digest": "sha256:e169139188c9afca3a752e9d030e04e8323bd03e265a35ae48252619767740e0"
+    },
+    {
+      "name": "p1-receiver-access-integrity",
+      "id": 12705046521,
+      "digest": "sha256:26833a60c06031c32467198847b032b18a11576d74d1322ae4957d6cebe41bce"
+    },
+    {
+      "name": "p1-receiver-access-publication",
+      "id": 12704927893,
+      "digest": "sha256:39255d44a51acdca007cc30c556159b2acde315b75348f0d4099e759ac1212d"
+    }
+  ],
+  "payload_hashes": {
+    "prompt_sha256": "bbc392ff720043c35a992c92d30266ea550ef654cb74e6f59e3257b6ac520880",
+    "response_sha256": "22f29a289084cdc882c87c1ed275ccc27fcb5263f52f6abc82abcd35db3cfa0d",
+    "publication_sha256": "a2787ae422c2be1dad850e4331fd11ef01cc65baf6406baeba0ac91b0343aafa"
+  },
+  "reviewer": {
+    "provider": "Google Gemini",
+    "model": "gemini-3.1-pro-preview"
+  },
+  "verdict": "ACCEPTED",
+  "native_bridge_status": "NOT_DERIVED"
+}
