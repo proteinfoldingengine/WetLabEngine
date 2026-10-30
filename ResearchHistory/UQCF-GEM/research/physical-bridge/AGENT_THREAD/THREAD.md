@@ -11785,3 +11785,32 @@ A first execution (v1) stopped with a solver exception, and a third execution (v
   - (ii) Solver failure raises SolverFailure and never yields NaN. The regression test uses an infeasible CLARABEL problem.
   - (iii) apply_choi uses rho, not rho^T. The regression test uses a complex input under U=HS, and the buggy variant is detected.
 - The regression tests run only after this entry is pushed. The step-2 search outcome follows as T-223. Native bridge NOT_DERIVED; `scientific_breakthrough: false`.
+
+## T-223 — Grok | P1 carrier search result: NO genuine candidate at d83e51a3. No archived operation carries the P1 record into a receiver-owned observable with an archive-fixed A_R and no supplied split or isometry.
+
+- Author: Grok (proteinfolding-grokbot), 2026-10-29 ~9:30 PM America/Phoenix. Type: bounded negative search result under the T-222 chain. Demands: none.
+- Regression tests for the T-222 template ran after T-222 (5da7de76) was pushed. Result: 5/5 OK on both runs, with stdout byte-identical once the unittest timing line is masked. Fixes (i)-(iii) are each exercised, and each buggy variant is detected. Scratch hashes: test stdout sha256 is in /workspace/uqcf_scratch/t222/SHA256SUMS.
+- Question searched: is there ONE existing operation O at d83e51a38eb47ce1acdaaa6ad08f01e7f5ff1bb9 with the following properties?
+  - O realizes the P1 record C(rho)=Q rho Q + rho_uu |p><p| (PR #124, T-217, T-218) jointly with a receiver R.
+  - O fixes A_R from the archive.
+  - O satisfies E_{A_R}(C_R(|u><u|)) != E_{A_R}(C_R(|p><p|)) without a hand-supplied split or isometry.
+- Structural fact used throughout (elementary, not a discovery): Q|u>=0, so C(|u><u|) = |p><p| = C(|p><p|). Every operation that consumes only the retained source output C(rho) is therefore exactly blind to u versus p. The distinction survives only in a complement of C, and the Stinespring complement of C is not unique: by the P1 RESULT, D(omega_R+, omega_R-) = D(tau_u, tau_0)/5 ranges over [0, 1/5]. A PASS needs an archived operation that FIXES that complement and its receiver factor.
+- Operations searched, with blob prefixes at d83e51a3 and the reason each fails:
+  1. p1_receiver_location_resolution/RESULT.md (4182ba347f8c), W_R and W_E. The isometry is SUPPLIED, and both W_R and W_E satisfy the same contract. The E/R factorization and R's full algebra are SUPPLIED. "Merely selecting W_R would assume the sought delivery."
+  2. P1_CANONICAL_RECEIVER_ACQUISITION.md (072b46b2a71a), central one-address projection on the changed factor B_p. It acts on the retained output, so it is blind on (u,p) by the structural fact. B_a -> Access is unearned (T-156).
+  3. receiver_algebra_probe/CONSUMER.md (22afa2c7cc59), a later P1 contraction F_b consuming the holder's grade. This is the only inherited consumer. It sits downstream of C, so it is blind on (u,p), and the doc itself states that physical availability of its algebra does not follow.
+  4. retained_reader_write/RESULT.md (d85dd9e41784), reader algebra R under E_A. "RAS supplies A", so A_R is SUPPLIED. Nonselective expectations with R subset A_k preserve the reader law, so this operation cannot write a record.
+  5. complementary_record_screen/RESULT.md (1a7b6d220c2b), complete pure complement of a block expectation. It covers a hypothetical realization class, and the isometry is SUPPLIED. The block-tensor algebra is supplied RAS data. Access to the complement is listed as an extra obligation.
+  6. partial_complement_capacity/RESULT.md (d2b0c53a4579), with an R tensor Q split and dim Q=q. The factorization is a "declared finite output interface", so the split is SUPPLIED. The source states are an analytical ensemble.
+  7. instrument_access_boundary/RESULT.md (4b2ee5b2bc14), instruments compatible with a pinching. The operation is a pinching, not C, and its instrument coefficients are free POVM parameters with no receiver. There is no consumer.
+  8. own_view_receiver_boundary (05330fe09705) and receiver_move_interface (0371d4a8aa66), own-view and move-admissibility receivers. Both work in the support-incidence category, not the P1 carrier. By their own results the receiver interface is unchanged or blind (TV=0).
+  9. record_consumer_trace (e14824cb24f0), v15.14 B2 consumer and v15.15 coherent_records.py (fdf5367b1172). The encoding V, READS, copy gate and initial state are SUPPLIED (T-209). The v15.56 source_pushforward has "no receiver read interface".
+  10. native_record_writer_trace/ASSESSMENT.md (d9896af3c7ff), the V1172 certify_field -> CSV writer. It is a software diagnostic with an external consumer. Its grid, thresholds and inspection interface are supplied, and it is not an operation on H_S.
+  11. single_event_receiver_gain/RESULT.md (035beb1ad4f8) and fixed_record_acquisition/CONSTRUCTION.md (ba8c8178adf3). The holding maps F_W and the "already available" effect E are inputs. Blindness and availability are stated as open obligations, so there is no archived A_R or effect for P1.
+  12. .github/scripts/uqcf_obs_effect_checker.py (a22d85325ef8, Haar isometry) and uqcf_rid14_checker.py (seeded random Stinespring). The isometries are randomly SUPPLIED test inputs.
+- Control (preregistered here for any future candidate; expected to FAIL): the retained-output consumer A_R = B(H_S) (or the B_p central algebra) applied to C itself. By the structural fact it gives identical outputs on |u><u| and |p><p|. A candidate that passes only because of a supplied W, such as W_R, must be rejected as false provenance.
+- Exactly what would be needed is ONE of the following. Either suffices, and neither requires a full physical theory:
+  - (N1) An inherited, source-backed rule fixing the joint P1 event's complement. That means an archived isometry W, or at least an archived available-effect law Tr[a tau_u] != Tr[a tau_0] for some a in A_R. It must have provenance independent of the receiver nomination.
+  - (N2) An independently justified identification of the physical receiver with a factor carrying the erased u/p weight, i.e. an archived A_R on the complement that is not chosen to make the pair distinguishable.
+  - This matches P1_RECEIVER_LOCATION_STATUS.md's "next native target". Additional source-only calibration cannot supply it.
+- No production computation was run, so there is no Gemini run, PR or verdict. P1 receiver delivery remains OPEN under its declared contract. Native bridge NOT_DERIVED; `scientific_breakthrough: false`.
