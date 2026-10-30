@@ -1,0 +1,73 @@
+{
+  "schema": "uqcf-pr114-integration-evidence-v1",
+  "audits": [
+    {
+      "kind": "candidate",
+      "run_id": 41108624564,
+      "job_id": 124244811353,
+      "artifact_id": 13001244329,
+      "run_attempt": 1,
+      "bytes": 5976,
+      "sha256": "3cdf273158bada44df7646f7ed9c1a4e55d8440ef960702b6bed4b039728903d"
+    },
+    {
+      "kind": "merged",
+      "run_id": 41108819629,
+      "job_id": 124245568768,
+      "artifact_id": 13003081170,
+      "run_attempt": 1,
+      "bytes": 5976,
+      "sha256": "7fc555ac88ef3e3107c246be3ec67bb0247382519272575bf4d4b7d03dae1659"
+    }
+  ],
+  "payloads": [
+    {
+      "path": "INTEGRATION_RECEIPT.md",
+      "bytes": 3932,
+      "sha256": "1a2f056611e9068342a1fcc61dbe8a49c5cc2049fcece749e22039d4c25c7398",
+      "git_blob": "e54e20a66789c2f85c72148e7db5eed87f0c69d0"
+    },
+    {
+      "path": "RED.log",
+      "bytes": 1567,
+      "sha256": "78c5290cc2623be219bedc2c418548c081b78bc7cada697852b8858ebaa2306d",
+      "git_blob": "195b9befa3b9e514cd3c348b7162c83b8cb23d02"
+    },
+    {
+      "path": "candidate-audit.json",
+      "bytes": 16156,
+      "sha256": "d19c02baffef35ffb78c5a69cad6e5af64a86c870260bfa5f9d692568626fe16",
+      "git_blob": "5acf96a8d8b250cda9e61e9f9eeb88817dcda61e"
+    },
+    {
+      "path": "candidate.log",
+      "bytes": 20069,
+      "sha256": "d457d5297488e99f09fe4a59d7a4fdbfdec81871d6872e88d47968efdc169f50",
+      "git_blob": "b28ce3c045100ad6518f3f1511128ae40a11f5c5"
+    },
+    {
+      "path": "candidate.zip.b64",
+      "bytes": 7969,
+      "sha256": "efb9a4601069c3d992e28f8c2033928e8e5d9920bb75fe2514295ee05dda14af",
+      "git_blob": "13a6e5e528514e9fadfe70899def52f76f45288d"
+    },
+    {
+      "path": "merged-audit.json",
+      "bytes": 16156,
+      "sha256": "3bbe8d02d8b91b7057eb61f236935892f7c0312e14ff59b0694ee34c98ac058d",
+      "git_blob": "e1c11bc9645af644423e42da3e87a56ec7f283e9"
+    },
+    {
+      "path": "merged.log",
+      "bytes": 20072,
+      "sha256": "c147b85e2d685dac2423efbc5e801841bab7e83eff99321a43efd4f2a74e26cd",
+      "git_blob": "8941c262ffd7e4e9107c5dff2d6cda7f26edc495"
+    },
+    {
+      "path": "merged.zip.b64",
+      "bytes": 7969,
+      "sha256": "48f3c658b1e4bd189f977c12baffa63f2087dddef9994083a01ada6677271914",
+      "git_blob": "59587fafc5c103b239dc841542b9edc27c7dc5b7"
+    }
+  ]
+}
