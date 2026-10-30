@@ -5,6 +5,8 @@ Draft 1, 2026-10-17 America/New_York (~21:00 ET loop). Baseline research head `8
 Mode: CONSTRUCTION MODE (STANDING_DIRECTIVE addendum (b)); Aaron's 20:00/20:01 ET reconciliation directive (trace one event to a receiver-readable record; separate (i) occurrence, (ii) state change, (iii) access; name the smallest missing implication once).
 Status: **unreviewed construction draft.** No milestone, native-access closure, CLOSED/CERTIFIED status, geometry, fundamental clock, dark-matter primitive or heuristic fitting is claimed. Time = pruning / ordered recoverability update. Scratch checks only (disclosed in section 9); independent producer/checker and Gemini come at freeze.
 
+> Editorial correction, 2026-10-25 (America/Phoenix), by proteinfolding-gpt: item 4 and section 4 below now distinguish trace-preserving channels from selected source branches. The original author accepted this correction in T-136. Its counterexample and existing adaptive-consumer construction are independently reviewed in [selective_record_consumer/RESULT.md](../../selective_record_consumer/RESULT.md), frozen at 8e66dea87a2fa09fcd69ab33011f127d9031d6e7 and accepted by Gemini in run 40252848780. This correction does not certify the other claims of this unreviewed draft. Its older occurrence discussion is superseded by DIRECTION_UPDATE_2026_10_21.md: actual atemporal measurement occurrence is accepted input; state/action and receiver-access correspondence remain to be earned. [Review and archival status](../../selective_record_consumer/REVIEW_STATUS.md).
+
 ## Credit: what this builds on
 
 Everything load-bearing below is inherited. The new content is the way the pieces are put side by side, and three short results (Theorem 2.1, Proposition 4.1, Theorem 5.1 with Proposition 5.2).
@@ -20,7 +22,7 @@ Everything load-bearing below is inherited. The new content is the way the piece
 1. **Readability is exactly centrality (Theorem 2.1).** Inside a retained algebra, a record can be read without disturbing any retained state, and stays readable under every later inherited pinching, if and only if its projections are central. This derives the "readable, jointly measurable, invariant" half of access premise A from inherited structure. It is a known fact about nondisturbing measurements, applied here.
 2. **In the executed v15.16 code, the pruning event and the receiver's own read are the same map (Theorem 3.1).** Pinching record bits S is identical, as a channel, to the Lüders read of the receiver's own register projectors Q_s. After it, the read is repeatable. No readout channel is added. But the receiver's local register state is the same before and after every pinching.
 3. **So the ledger's noncommutative "acquisition" is a change of status, not a write (Corollary 3.2).** In Witness C, receiver A's own register already separates the two preparations perfectly before any pinching. The write happened at the v15.15 controlled-NOT, which is a supplied copying interaction.
-4. **No receiver-local event can inform a blank receiver (Proposition 4.1).** A transfer needs a joint event acting on source and receiver together. Every inherited pinching and every v15.13 local operator is receiver-local or source-local; the only joint event in the quantum stack is the supplied v15.15 write.
+4. **Fixed product trace-preserving channels preserve a receiver's initial blindness (Proposition 4.1).** This excludes unconditioned gain under those channels. A selected source-local branch can instead reveal pre-existing correlations in the conditional receiver state; forgetting the source outcome restores the equal receiver marginals. T-134 gives an exact positive unconditioned B2 contrast using the existing v15.14 A1-record-dependent B2 operation. That process escapes the fixed product-channel class through its supplied record connection and controller. No native preparation or record-access law follows from this correction.
 5. **P1 absorption is a native joint event, and its reversible form is the v15.15 write (Theorem 5.1, Proposition 5.2).** On the address-wise configuration space, the inherited pushforward of one complete-fiber contraction factorizes into pairwise moves (x_u, x_a) -> (0, x_a + x_u) from each removed atom u to its owner a. Each move changes the owner's coordinate iff x_u != 0, is not a copy, conserves total grade, and resets u. Its canonical reversible dilation is a controlled-add from u into a followed by discarding the removed address u. For a blank owner and 0/1 grades this is exactly v15.15's `copy_gate` followed by pruning of the control.
 6. **The smallest missing implication, named once (section 7):** I* = "a P1 carrier address is a receiver subsystem whose state is its own grade coordinate". Under I*, an admissible complete-fiber contraction necessarily changes an accessible receiver record (obligations (ii) and (iii)), with occurrence (i) still open. Without I*, the commutative stack has the native joint event but no subsystem, and the quantum stack has the subsystem but only a supplied write.
 
@@ -65,13 +67,30 @@ v15.15 and v15.16 execute V = sum_r |r>_R (x) K_r with K_r = |r><b_r| (`basis` l
 
 So, for the executed quantum stack: (iii-a), (iii-b) are earned (Theorem 2.1 and 3.1(c)), (iii-c) is inherited from v15.13 locality (supplied there), and the event that changes the receiver's record, (ii), is the v15.15 write. That write is a copying interaction, which addendum 2026-10-17 grades D when supplied. The pinching (the ordered recoverability update) never changes the receiver's local record; what it removes are the receiver-rest coherences (ledger Theorem 12.2, item 6).
 
-## 4. Why a receiver-local event can never inform a blank receiver
+## 4. Product channels, selected source branches, and the existing record connection
 
-**Proposition 4.1.** Let H = H_R (x) H_rest with the receiver's factor H_R, and let Lambda = Phi (x) Psi be any product of channels (either factor may be the identity). If two joint states have the same receiver marginal, so do their images. In particular no pinching with receiver-local projectors, no v15.13 local operator k_A (x) I_B, and no source-local operation can make a blank receiver informed.
+**Proposition 4.1 (unchanged channel theorem; scope corrected).** Let H = H_R (x) H_rest with receiver factor H_R, and let Lambda = Phi (x) Psi be a fixed product of trace-preserving quantum channels (either factor may be the identity). If two joint states have the same receiver marginal, so do their images.
 
 *Proof.* Tr_rest (Phi (x) Psi)(X) = Phi(Tr_rest X), since Psi is trace preserving. QED.
 
-This is the no-signalling form of data processing; it is standard. Its use here is to say exactly what kind of event (ii) needs: a *joint* event, acting on the source part and the receiver's factor at once. Inside the inherited quantum stack, the only joint events are the v15.15 controlled writes (system label -> fresh register, and the A1-controlled B2 block), both supplied.
+The theorem is a standard no-signalling/data-processing statement. It applies to a complete outcome-averaged source instrument. It does **not** apply to an individual trace-decreasing selected source branch followed by normalization. The earlier extension to every v15.13 local operator and every source-local operation is withdrawn.
+
+**Exact selected-branch correction (T-134, independently accepted).** In source-then-receiver order, let
+
+    omega_0 = (|00><00| + |11><11|)/2,
+    omega_1 = (|01><01| + |10><10|)/2.
+
+Both complete source marginals and both complete receiver marginals are I/2. The same source-local selected projector K_h = |h><h| (x) I has weight 1/2 in either preparation s and leaves receiver state |h XOR s><h XOR s|. For a fixed h these receiver states differ. Averaging h returns I/2 in either preparation. This is revelation of pre-existing correlations, not unconditioned communication through a source-local channel. The required source/branch association cannot be inferred from the conditional state formula alone.
+
+**Existing positive consumer.** The v15.14 adaptive B2 operation already reads A1 and B1 through its declared READS interface (adaptive.py blob 44a87e4cc5bcf531ef7798aadab5d9dbba3482cb at research 3ceb814258f43774b4af1352379ffcd0bd079599). T-134's frozen four-qubit construction uses that exact operation and the unchanged Snapshot/advance API. For its explicitly engineered inputs with identical complete initial B states and empty initial records, it proves
+
+    p_s(B2=0) = [1 - (-1)^s sin(1.2)]/2
+
+after averaging both A1 outcomes. The B2-only total-variation contrast is sin(1.2)>0. The full proof, validity conditions and fixed-controller control are in the linked frozen result; this paragraph does not supply a new construction.
+
+This process is not a fixed product channel on A|B: B2 consumes the A1 record through the existing supplied connection. Thus the useful necessary conclusion is that unconditioned receiver gain must escape the fixed product-channel class. The earlier assertion that the only relevant inherited operation was the v15.15 controlled write was incomplete: the v15.14 record-dependent B2 instrument must also be named. A new coherent joint gate is not required by the argument.
+
+**Scope retained.** T-134's correlated preparations, factor ownership, physical invocation, quantum outcome law, record connection/controller and receiver availability remain supplied. The source distinction is in the joint correlations; A1's label alone is independent of s. The original channel proof remains valid, and no native physics bridge or physical signal is derived. Initial receiver blindness is evaluated before the A1 record becomes available; the expanded (A1 record, B) interface may already distinguish the preparations before B2 acts.
 
 ## 5. The commutative stack has the native joint event: P1 absorption as a move
 
