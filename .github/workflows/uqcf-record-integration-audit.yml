@@ -1,0 +1,44 @@
+name: UQCF selective-record integration audit
+on:
+  push:
+    branches:
+      - gpt/selective-record-consumer
+      - research/uqcf-overlapping-guard-exchange
+    paths:
+      - '.github/scripts/uqcf_record_integration_*.py'
+      - '.github/workflows/uqcf-record-integration-audit.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/selective_record_consumer
+            ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/record_access
+      - name: Fetch immutable accepted, source and baseline commits
+        run: |
+          git fetch --filter=blob:none --depth=1 origin e5012ee19ade0a5700c789553b903494fdaaeff0 3ceb814258f43774b4af1352379ffcd0bd079599 d83e51a38eb47ce1acdaaa6ad08f01e7f5ff1bb9
+      - name: Reject corrupted and incomplete evidence
+        run: python3 .github/scripts/uqcf_record_integration_tests.py
+      - name: Recheck inherited six-source integrity without model call
+        run: python3 .github/scripts/uqcf_selective_record_review.py integrity
+      - name: Verify unchanged accepted bytes and complete integration scope
+        run: python3 .github/scripts/uqcf_record_integration_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: record-integration-audit-${{ github.run_attempt }}
+          path: |
+            record_integration_audit
+            selective_record_review
+          if-no-files-found: error
+          retention-days: 90
