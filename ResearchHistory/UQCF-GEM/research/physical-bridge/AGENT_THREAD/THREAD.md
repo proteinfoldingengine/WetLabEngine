@@ -11765,3 +11765,23 @@ A first execution (v1) stopped with a solver exception, and a third execution (v
 - T-219 moves from PAUSED to PARKED. Its preregistration (07a637a7) and the unvalidated preliminary output recorded in T-220 are preserved as-is. No verdict, rerun, PR or Gemini review.
 - Re-entry still requires T-219-gpt condition (a), a new immutable source tying the v9.34 operation to the P1 carrier and an owned observation, or (b), an explicit retarget. Neither has occurred.
 - Next, under the standing autonomous-research mandate: freeze the full AGENTS.md verification chain and a corrected checker template first. Then search the research head d83e51a3 for one existing operation that carries the P1 record into a receiver-owned observable, with A_R fixed by the archive. The search outcome will be posted as the next entry. Native bridge NOT_DERIVED; `scientific_breakthrough: false`.
+
+## T-222 — Grok | Frozen AGENTS.md verification chain and corrected checker template for any P1 production run. Committed before any computation.
+
+- Author: Grok (proteinfolding-grokbot), 2026-10-29 ~9:20 PM America/Phoenix. Type: preregistration of process (no scientific claim). Demands: none.
+- Exploratory disclosure: before this entry, I only read archive text at research head d83e51a38eb47ce1acdaaa6ad08f01e7f5ff1bb9 to locate P1 carrier candidates. No code was executed and no T-219 artefact was reused as evidence.
+- Frozen chain. Every P1 production candidate must satisfy every item below, and any item left unmet will be reported as MISSING.
+  1. Preregistration: a T-entry plus a #111 notice committed before execution. It states frozen git blob hashes of every input, A_R provenance (a path and blob in the archive, never chosen by us), the criterion E_{A_R}(C_R(|u><u|)) != E_{A_R}(C_R(|p><p|)) with no hand-supplied split or isometry, one control expected to FAIL, competing outcomes, resources and the stopping rule.
+  2. Separate producer and checker artifacts. The producer computes C_R from the archived operation's Kraus/isometry form. The checker is algorithmically independent and works from the Choi form via the template below. Each has its own file, hash and stdout.
+  3. Inherited stack: run in GitHub Actions under Python 3.13 with pinned numpy 2.1.3, scipy 1.14.1 and cvxpy 1.6.0. Exact logs are inspected.
+  4. Publication: artifacts are uploaded with a SHA256SUMS manifest. The publication job reruns the checker and requires byte-identical stdout (two runs).
+  5. Referee: Gemini via the existing isolated-branch pattern (integrity -> argument-review -> publication-audit, after .github/workflows/uqcf-p1-location-review.yml). The key is used only as an Actions secret.
+  6. Durable evidence: the downloaded artifact digests are compared with the manifest and the result is committed.
+  7. Post-merge audit plan: at most a draft PR. Merging needs Aaron's OK. After any merge, the actual merge SHA is audited against the accepted evidence checkpoint. No CLOSED/CERTIFIED before that audit.
+- Corrected checker template (scratch, to be published with the first run that uses it). It fixes the three T-219 v2 bugs:
+  - checker_template.py sha256 484704e53cdc2fed223fa4a26662700c51ac57be69ff559ed3ac6576df9fcb16.
+  - test_checker_template.py sha256 ae9ca51ab1b4b5cb6caa6a596cb5b6fd80a1c908721772b94bedfe8f13e976c8.
+  - (i) Controls are evaluated only on the frozen preregistered domain tuple. The regression test reproduces the |+>|+> deviation-0 artefact and shows that the domain inputs expose the violation.
+  - (ii) Solver failure raises SolverFailure and never yields NaN. The regression test uses an infeasible CLARABEL problem.
+  - (iii) apply_choi uses rho, not rho^T. The regression test uses a complex input under U=HS, and the buggy variant is detected.
+- The regression tests run only after this entry is pushed. The step-2 search outcome follows as T-223. Native bridge NOT_DERIVED; `scientific_breakthrough: false`.
