@@ -1,0 +1,280 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-20T15:44:03Z",
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "branch": "gpt/single-event-challenge-scope-20261020",
+  "pr": 107,
+  "authenticated_login": "proteinfolding-gpt",
+  "archive_commit": "0fac497f09a2dcc12191bb7830e90127c54f727d",
+  "archive_parent": "9ead84faf9081fc5d22ba24159d2078cc0f73a21",
+  "archive_author": "proteinfolding-gpt",
+  "archive_committer": "proteinfolding-gpt",
+  "exact_diff": {
+    "added_files": 26,
+    "modified_files": 0,
+    "deleted_files": 0,
+    "paths": [
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/STATUS.md",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/MANIFEST.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/README.md",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/branch_runs.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/integrity/artifact_manifest.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/integrity/integrity.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/jobs.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/logs/argument-review.log",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/logs/integrity.log",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/logs/publication-audit.log",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/original_zips/challenge-scope-integrity-1.zip",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/original_zips/challenge-scope-publication-1.zip",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/original_zips/challenge-scope-review-1.zip",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/publication/artifact_manifest.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/publication/publication.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/review/artifact_manifest.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/review/integrity.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/review/model_metadata.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/review/prompt.txt",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/review/request.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/review/response.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/review/review.txt",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/review/review_identity.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/review/verdict.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/run.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge/review/public_evidence/service_artifacts.json"
+    ]
+  },
+  "full_byte_readback": {
+    "files": [
+      {
+        "relative": "STATUS.md",
+        "bytes": 7990,
+        "sha256": "8d0cb23a2170b862801383ba1c9ce3c8e4d77c91ebb0129d8ae4d01f7295f81c",
+        "git_blob": "188ca3a70357273365c3dd2fd34fbff7868cbd7e",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/MANIFEST.json",
+        "bytes": 5677,
+        "sha256": "52d042d0f38433d04be323f5e6b154f52eeebaa2ec5490c7f5bcabb7bab8d1a6",
+        "git_blob": "8e703d68c45fc5a98b0203d95bfe7aaeee918823",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/README.md",
+        "bytes": 1708,
+        "sha256": "d759a0230395565c3f2436d2aa61a2efa87e14cc8227612a07162128f90558ee",
+        "git_blob": "bfbe7eee12c80bd5a5dd52c0f61fcaae21941c90",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/branch_runs.json",
+        "bytes": 16973,
+        "sha256": "05fa9ccf105cc6dc739aafa872ced7824f5a8ea2421f588c0bba63f19f128113",
+        "git_blob": "7de8524d8a08b9b8393bc1501a6bed9d123d19bc",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/integrity/artifact_manifest.json",
+        "bytes": 114,
+        "sha256": "4255237483ffbcb92dc7f2ffa4382d3eaf411e54cdadd33f7b5c00c943a9e01f",
+        "git_blob": "f1e7fdf4e4f24fef0292ee964b7e536903c8e9a7",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/integrity/integrity.json",
+        "bytes": 3796,
+        "sha256": "6563078f14b1dd0761cbef026aae0919db10f3c9d5b793e7489456be6c1a200f",
+        "git_blob": "ec5694080df986f7d6c0e93643bbe18a77f9459e",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/jobs.json",
+        "bytes": 9621,
+        "sha256": "47f30e96453b63e0bdc304ade754f0e5ca4bf4bef96083d3284af760e2f83b23",
+        "git_blob": "1d73fb0d00d0537389fb18d753334ae7fd6e8979",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/logs/argument-review.log",
+        "bytes": 18289,
+        "sha256": "7092c5b24749323c1b082918ded24128fee16704a359654d4b74ea7a4cc7a465",
+        "git_blob": "fdf23fd65e56635dcdf91d551438e9cd64210d05",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/logs/integrity.log",
+        "bytes": 26833,
+        "sha256": "88cb1e73ff76b152eede56bd894c31f47726abcad56aa5243e2a64b4eddf5f58",
+        "git_blob": "c27110423e5eed19bcac9d697de7c566cb124993",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/logs/publication-audit.log",
+        "bytes": 18128,
+        "sha256": "ac99824e82e830db8a7ee433dd317783c42438fd500cd40d1074e6a9a8fc6896",
+        "git_blob": "5fdf1d49864d45fa36674ef812bdeebb449c38d3",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/original_zips/challenge-scope-integrity-1.zip",
+        "bytes": 1791,
+        "sha256": "597fa25b30bdd9f17f3b446095f2a1a42effbcb38783a3a8d831231dc6c6c41d",
+        "git_blob": "eb77b02bbed050151bf24f60a3e7e8a206e79920",
+        "encoding": "base64",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/original_zips/challenge-scope-publication-1.zip",
+        "bytes": 3885,
+        "sha256": "2a5743ba7a4d60eaa1150d5f7e1cc22d1974d8384c44de07dc7ee22751a5dbc7",
+        "git_blob": "efe4f0deb56d0b343fa06166b8686b6d067e6617",
+        "encoding": "base64",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/original_zips/challenge-scope-review-1.zip",
+        "bytes": 121362,
+        "sha256": "b57eaa79526a181e5c6995342cc8ababf34a0ef17f86564ff68fe76deeaee2a6",
+        "git_blob": "837bfb216b6c501bb076346c2f862c6685886cd8",
+        "encoding": "base64",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/publication/artifact_manifest.json",
+        "bytes": 132,
+        "sha256": "bc68e7b90fb9a1f6fab282c565d3171b6176a5a849c2e66fba08089b3083d9db",
+        "git_blob": "0226b8fafa2905a231c4d66eb2be9ee055ccb629",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/publication/publication.json",
+        "bytes": 8864,
+        "sha256": "55854e15088d0c7dd92b7d5952320c31f229e1f04a964578a81e6db54ff7122d",
+        "git_blob": "b42c6a0154c0425ac256e2d692702ed6813f7dda",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/review/artifact_manifest.json",
+        "bytes": 906,
+        "sha256": "d4053cd0bf5b03f1c6dc03e86f52694f2c33b48d8a47dfb6e3e7826ae7cc3362",
+        "git_blob": "98c93f8ec3d844a05176bb82a21b7dcbda33c0aa",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/review/integrity.json",
+        "bytes": 3796,
+        "sha256": "6563078f14b1dd0761cbef026aae0919db10f3c9d5b793e7489456be6c1a200f",
+        "git_blob": "ec5694080df986f7d6c0e93643bbe18a77f9459e",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/review/model_metadata.json",
+        "bytes": 459,
+        "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+        "git_blob": "928720139032813386b0cf0819cb291a2846a468",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/review/prompt.txt",
+        "bytes": 144539,
+        "sha256": "b7f3b8f499855460e1cc9529bf8aad6fd1c59f76a730498431890c6fae95df65",
+        "git_blob": "0123abc0d36a68a30d9af115d0e2c11031298c65",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/review/request.json",
+        "bytes": 145857,
+        "sha256": "f964c5e1ce1a7d4179092473b68f049d58fbac7c3934348f5b4fd26b030bf07a",
+        "git_blob": "dea4a7704017a3bfb6a07c0911a4329fd8ed1daa",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/review/response.json",
+        "bytes": 27457,
+        "sha256": "c8a5a0951001ab17dd6177c29197dbff2ad3cd50764495dee55f7b28b5cb8f9c",
+        "git_blob": "73a79b6ad708c3d41db83ba873c1dd69266eb294",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/review/review.txt",
+        "bytes": 2957,
+        "sha256": "18702bb4c6dd01fc719ebd31dde7134391fd6cfcd47ddbdb8e2220454522146e",
+        "git_blob": "1ad0e5c1dac71c14909c222688aad90b1a15dec9",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/review/review_identity.json",
+        "bytes": 498,
+        "sha256": "e55eb3f25be34994202c12759b3138bd8f4729a6406bb6e7f5d6b8c0a98a6da4",
+        "git_blob": "b7e240e1e49b63b55880aec72fddd0de05cc15d7",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/review/verdict.json",
+        "bytes": 2908,
+        "sha256": "c13d3e78fe5b686b19aee5aae770dc4702210c65d59acb24d3ac0e5c71b56652",
+        "git_blob": "933e60cc881de46c9c414e6e8d89b53e4a4765a5",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/run.json",
+        "bytes": 15932,
+        "sha256": "53ca3edc6f775c196f171a24dbdbb033e234067b9f0e200ccd9758cad8661c92",
+        "git_blob": "f5d6f2a8628b7c98153376b1162c8f21b7b11e4e",
+        "encoding": "utf-8",
+        "readback_exact": true
+      },
+      {
+        "relative": "public_evidence/service_artifacts.json",
+        "bytes": 2491,
+        "sha256": "d9cfb566812e472da59c2092886907113f2dfc08da96846b7f71d70643d734a0",
+        "git_blob": "3516d417c90e723a54b2d18e5bfc6ef89f5d43c7",
+        "encoding": "utf-8",
+        "readback_exact": true
+      }
+    ],
+    "base64_readback": "ZIP payloads compared after removing base64 transport whitespace; decoded bytes equal original service-digest-verified ZIPs. Text payloads compared exactly without newline normalization."
+  },
+  "original_artifacts": {
+    "zip_count": 3,
+    "extracted_member_count": 13,
+    "all_service_sizes_and_sha256_match": true,
+    "all_member_manifests_match": true,
+    "raw_prompt_request_response_and_opaque_fields_preserved": true
+  },
+  "scientific_scope": {
+    "actual_gemini_verdict": "ACCEPTED",
+    "publication_audit": "PASS",
+    "native_bridge_status": "NOT_DERIVED",
+    "classification": "C: independently reviewed application-scope clarification",
+    "visible_coverage_limit": "The readable response does not separately reconstruct POS_e under B_e or coarse/noisy h versus pre-event pullback. No exhaustive separately documented subcheck coverage is claimed."
+  },
+  "research_head": "b2831f6f31904c6a981297c7bf4ce570698ec955",
+  "pr_branch_head_when_checked": "0fac497f09a2dcc12191bb7830e90127c54f727d",
+  "generation_requests": 1,
+  "workflow_attempt": 1,
+  "scientific_execution": false,
+  "merge_performed": false,
+  "direct_research_branch_update": false,
+  "receipt_boundary": "This receipt verifies the preceding immutable archive commit. Its own publication is verified separately in the local final reconciliation."
+}

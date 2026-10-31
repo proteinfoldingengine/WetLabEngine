@@ -1,0 +1,97 @@
+name: UQCF PR107 clarification whole-argument review
+on:
+  push:
+    branches: [gpt/single-event-challenge-scope-20261020]
+    paths:
+      - '.github/uqcf_challenge_scope_review.trigger'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  UQCF_PUSH_BEFORE: ${{ github.event.before }}
+concurrency:
+  group: uqcf-pr107-clarification-review
+  cancel-in-progress: false
+jobs:
+  integrity:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge
+      - name: Offline rejecting plumbing controls, no scientific execution
+        run: python3 .github/scripts/uqcf_challenge_scope_tests.py
+      - name: Verify frozen bytes, marker provenance and unique request eligibility
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/uqcf_challenge_scope_review.py integrity
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: challenge-scope-integrity-${{ github.run_attempt }}
+          path: challenge_scope_review
+          if-no-files-found: error
+          retention-days: 90
+  argument-review:
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/single_event_receiver_gain_challenge
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: challenge-scope-integrity-${{ github.run_attempt }}
+          path: challenge_scope_review
+      - name: One independent whole-argument Gemini request
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_challenge_scope_review.py review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: challenge-scope-review-${{ github.run_attempt }}
+          path: challenge_scope_review
+          if-no-files-found: error
+          retention-days: 90
+  publication-audit:
+    needs: [integrity, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: challenge-scope-review-${{ github.run_attempt }}
+          path: challenge_scope_review
+      - name: Separate immutable source, prompt and raw-response audit
+        run: python3 .github/scripts/uqcf_challenge_scope_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: challenge-scope-publication-${{ github.run_attempt }}
+          path: challenge_scope_publication
+          if-no-files-found: error
+          retention-days: 90
