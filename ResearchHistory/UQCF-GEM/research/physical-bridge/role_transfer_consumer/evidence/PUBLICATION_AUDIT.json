@@ -1,0 +1,88 @@
+{
+  "checkout_sha": "7808739a3dadc3c608d9bf4424afc1a723c7155e",
+  "documents": {
+    "FREEZE.json": "e68b8f92b18d24f2ccae3b690b74b52fc0364e644381a47fd3e2e0038b353445",
+    "RESULT.md": "d9361c4a5c114491343f35197737e6037c2e862ee5ceafcb27419ff0b54ba480",
+    "SOURCE_PACKET.json": "7a9c78b225cee7c5e055c721050c88195ca13876ff43087039cd3d7ffa8cf9b1"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge": "NOT_DERIVED",
+  "prompt_sha256": "8277042281ebccdb15c9aa2636419a32efade8a2108a6d04e66aae8de41b6ce2",
+  "response_sha256": "8e00edc7a233826d205897abeba4dd34b529e8c4fc195930bea62f42d0edd8d0",
+  "run_attempt": "1",
+  "run_id": "40246970244",
+  "scientific_execution": false,
+  "scientific_sha": "75a41f45c251b30e8e3370fc753b08b3970b2ee6",
+  "source_commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+  "source_count": 6,
+  "sources": [
+    {
+      "byte_end": 16406,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 16406,
+      "excerpt_sha256": "c134d1de7b9e16495a07ab2dc1e7a1ed3b4e7bc4661776ca20961e606732d4a8",
+      "full_bytes": 16406,
+      "full_sha256": "c134d1de7b9e16495a07ab2dc1e7a1ed3b4e7bc4661776ca20961e606732d4a8",
+      "git_blob": "0501a1b32c0a660646ff95ecbb8a37a8f2e04b80",
+      "path": "ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py"
+    },
+    {
+      "byte_end": 8307,
+      "byte_start": 0,
+      "commit": "43596de4fe9fd1083500987997ee04e15793f60c",
+      "excerpt_bytes": 8307,
+      "excerpt_sha256": "1dbe854571a61e23c8944d6d66005d6fb89bb30bea7d660ed38d4e4ee62aca46",
+      "full_bytes": 8307,
+      "full_sha256": "1dbe854571a61e23c8944d6d66005d6fb89bb30bea7d660ed38d4e4ee62aca46",
+      "git_blob": "785d5a979ea2f0bd2089acbe154e939c4e57ca1e",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/unmarked_root_signal/RESULT.md"
+    },
+    {
+      "byte_end": 4171,
+      "byte_start": 0,
+      "commit": "546511327ee6a224dcc583305e7864a456863c4f",
+      "excerpt_bytes": 4171,
+      "excerpt_sha256": "e22811d0adf124e035f6c34a702174c978aa38db9defef3fc6c47960326c75de",
+      "full_bytes": 4171,
+      "full_sha256": "e22811d0adf124e035f6c34a702174c978aa38db9defef3fc6c47960326c75de",
+      "git_blob": "d31ad879e732ae61d69678038f135f99eee15e11",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/unmarked_root_signal/ACCEPTANCE.md"
+    },
+    {
+      "byte_end": 14856,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 14856,
+      "excerpt_sha256": "91ea3f0e5581cd7e95a05dd1e21afa1d946e4d58e9ca4f74bec8b9e3d089bde2",
+      "full_bytes": 14856,
+      "full_sha256": "91ea3f0e5581cd7e95a05dd1e21afa1d946e4d58e9ca4f74bec8b9e3d089bde2",
+      "git_blob": "0371d4a8aa66ce02ffbda084ad5dde93f1ec1136",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/RESULT.md"
+    },
+    {
+      "byte_end": 3615,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 3615,
+      "excerpt_sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "full_bytes": 3615,
+      "full_sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "git_blob": "ebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2",
+      "path": "ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md"
+    },
+    {
+      "byte_end": 896214,
+      "byte_start": 891062,
+      "commit": "affc677fed704722f5f4ca2fcc11e37982cc37db",
+      "excerpt_bytes": 5152,
+      "excerpt_sha256": "563f0005a7d41bdc6cd68f064fab643bc8ad5f02959797df8b78ca18d0c48c4b",
+      "full_bytes": 1015440,
+      "full_sha256": "3caf3c7cc57ce2b1ae468dc601fd54892dafe3b436693ac85ff7c2ea8725736e",
+      "git_blob": "6a6a1539219e9ceff860383b093e27e570950e73",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AGENT_THREAD/THREAD.md"
+    }
+  ],
+  "status": "PASS",
+  "workflow_sha": "7808739a3dadc3c608d9bf4424afc1a723c7155e"
+}

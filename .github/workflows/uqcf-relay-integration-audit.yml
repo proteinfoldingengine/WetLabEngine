@@ -1,0 +1,56 @@
+name: UQCF relay integration audit
+on:
+  push:
+    branches:
+      - gpt/two-feature-receiver-signal
+      - research/uqcf-overlapping-guard-exchange
+    paths:
+      - '.github/scripts/uqcf_relay_integration_*.py'
+      - '.github/workflows/uqcf-relay-integration-audit.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/two_feature_receiver_signal
+            ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_signal_lifetime
+            ResearchHistory/UQCF-GEM/research/physical-bridge/unmarked_root_signal
+            ResearchHistory/UQCF-GEM/research/physical-bridge/incidence_grade_realization
+            ResearchHistory/UQCF-GEM/research/physical-bridge/role_transfer_consumer
+      - name: Fetch immutable accepted, source and baseline commits
+        run: |
+          git fetch --filter=blob:none --depth=1 origin 16248b77ccf7e94a52f7f444ae7c60d72366ffe1 1905a492669c777c1b4df5a53ecccd254b0f7de5 1fdc861e03259ded4315e02958bcfef5347ae997 3ceb814258f43774b4af1352379ffcd0bd079599 43596de4fe9fd1083500987997ee04e15793f60c 546511327ee6a224dcc583305e7864a456863c4f 5c57913d5e1226b5abaad7f2c9eb56d2ba9321a8 839b94d0bbcf272e5ea51e2627c5e472c6ac423f 8ca86003e85fd38816ab03c1677e2e06ddeaf91d affc677fed704722f5f4ca2fcc11e37982cc37db
+      - name: Reject corrupted and incomplete evidence
+        run: python3 .github/scripts/uqcf_relay_integration_tests.py
+      - name: Recheck five inherited source packets without model calls
+        run: |
+          python3 .github/scripts/uqcf_receiver_signal_review.py integrity
+          python3 .github/scripts/uqcf_signal_lifetime_review.py integrity
+          python3 .github/scripts/uqcf_unmarked_signal_review.py integrity
+          python3 .github/scripts/uqcf_incidence_grade_review.py integrity
+          python3 .github/scripts/uqcf_role_transfer_review.py integrity
+      - name: Verify unchanged accepted bytes and complete integration scope
+        run: python3 .github/scripts/uqcf_relay_integration_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: relay-integration-audit-${{ github.run_attempt }}
+          path: |
+            relay_integration_audit
+            receiver_signal_review
+            signal_lifetime_review
+            unmarked_signal_review
+            incidence_grade_review
+            role_transfer_review
+          if-no-files-found: error
+          retention-days: 90

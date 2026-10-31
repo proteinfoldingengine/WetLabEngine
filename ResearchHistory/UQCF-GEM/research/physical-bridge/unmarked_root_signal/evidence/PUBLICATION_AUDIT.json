@@ -1,0 +1,88 @@
+{
+  "checkout_sha": "b10b5a097431ee4cde60e15708535bdc07437035",
+  "documents": {
+    "FREEZE.json": "043df566b420a9d8b20a90407242024bac8e7b7ced5c09ae39af4b45534e8600",
+    "RESULT.md": "1dbe854571a61e23c8944d6d66005d6fb89bb30bea7d660ed38d4e4ee62aca46",
+    "SOURCE_PACKET.json": "1f3aa780e00a0a165664ac71930fd709fc168c103d49169bbf5d08ed73547628"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge": "NOT_DERIVED",
+  "prompt_sha256": "a77be86f5c2c94727535f0e8c783e59d42d6b393144c32e883916080fc450560",
+  "response_sha256": "0973e6d84c9203a909415687f9fd577c5c9f093552efb538d2555d59682cda97",
+  "run_attempt": "1",
+  "run_id": "40235454564",
+  "scientific_execution": false,
+  "scientific_sha": "43596de4fe9fd1083500987997ee04e15793f60c",
+  "source_commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+  "source_count": 6,
+  "sources": [
+    {
+      "byte_end": 3615,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 3615,
+      "excerpt_sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "full_bytes": 3615,
+      "full_sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "git_blob": "ebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2",
+      "path": "ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md"
+    },
+    {
+      "byte_end": 16612,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 16612,
+      "excerpt_sha256": "3841f8c25c79cc2231d14a505506929156ae054ba3c64c5233aad8732879b17d",
+      "full_bytes": 16612,
+      "full_sha256": "3841f8c25c79cc2231d14a505506929156ae054ba3c64c5233aad8732879b17d",
+      "git_blob": "5f4a3758cfc59b9a7d023d541a8765801254943b",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/RESULT.md"
+    },
+    {
+      "byte_end": 5868,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 5868,
+      "excerpt_sha256": "0fe7f7ac7eca74366309fa4402a9ec0757dbef1e33815f55656b2f831ab668d2",
+      "full_bytes": 5868,
+      "full_sha256": "0fe7f7ac7eca74366309fa4402a9ec0757dbef1e33815f55656b2f831ab668d2",
+      "git_blob": "e9d4308e02fdb61bd5b1ba82747cca4b60474ab4",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/REVIEW_ACCEPTANCE.md"
+    },
+    {
+      "byte_end": 11892,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 11892,
+      "excerpt_sha256": "2b129b42e3cd2a6b3631dd299ec344340615cc82634067521d9100a3d265baac",
+      "full_bytes": 11892,
+      "full_sha256": "2b129b42e3cd2a6b3631dd299ec344340615cc82634067521d9100a3d265baac",
+      "git_blob": "0aa3337324836844c47ab011ba2bc2adb9f280d9",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/intrinsic_receiver_shape/RESULT.md"
+    },
+    {
+      "byte_end": 7815,
+      "byte_start": 0,
+      "commit": "16248b77ccf7e94a52f7f444ae7c60d72366ffe1",
+      "excerpt_bytes": 7815,
+      "excerpt_sha256": "f7da8aa8a9477ff3b38796c69d65ddd7aad333a4e7d3934a24590f95e7357027",
+      "full_bytes": 7815,
+      "full_sha256": "f7da8aa8a9477ff3b38796c69d65ddd7aad333a4e7d3934a24590f95e7357027",
+      "git_blob": "b269088e42203f87ffedf27618e7e3999ba42866",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_signal_lifetime/RESULT.md"
+    },
+    {
+      "byte_end": 6069,
+      "byte_start": 0,
+      "commit": "16248b77ccf7e94a52f7f444ae7c60d72366ffe1",
+      "excerpt_bytes": 6069,
+      "excerpt_sha256": "b660f9229be58a5f96e8be4de0c89fb60ea17228fd576bc4377c95b70fa6b29d",
+      "full_bytes": 6069,
+      "full_sha256": "b660f9229be58a5f96e8be4de0c89fb60ea17228fd576bc4377c95b70fa6b29d",
+      "git_blob": "71670300065fce02fba636e774b2164c6dae0136",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_signal_lifetime/REVIEW_STATUS.md"
+    }
+  ],
+  "status": "PASS",
+  "workflow_sha": "b10b5a097431ee4cde60e15708535bdc07437035"
+}
