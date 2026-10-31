@@ -1,0 +1,63 @@
+{
+  "candidate": {
+    "artifact": 13047657706,
+    "attempt": 1,
+    "job": 124576462497,
+    "run": 41214627056,
+    "status": "success",
+    "zip_bytes": 15386,
+    "zip_sha256": "c5c7a9208bb24d4a0fabb311dad73b5097c31c30d71b622c0b9907dc1734c9c0"
+  },
+  "files": {
+    "INTEGRATION_RECEIPT.md": {
+      "bytes": 4188,
+      "git_blob": "94980203e6bd2109c2b47bf9f67b66d377d4b8a3",
+      "sha256": "1c8762014d519d70e9cf196791bdf11ca2a88b0742f5f969548406d24f608d15"
+    },
+    "RED.log": {
+      "bytes": 1692,
+      "git_blob": "bb6937a5dabbdb37d3d5ef70ef5b896daec3cb2c",
+      "sha256": "9a7d84f00b346f0186bfba736881fe1ddcb60a93c59d85a04d1b9670d1894248"
+    },
+    "candidate-audit.json": {
+      "bytes": 30611,
+      "git_blob": "25c4da055a2b328dadc210e3e4e9f61e6efb1503",
+      "sha256": "5552ae2caa3415e6fb868c9d35cc7bfd5e778066ddca8eb2741853a89f60dd89"
+    },
+    "candidate.log": {
+      "bytes": 22027,
+      "git_blob": "ea2c00c9ddfedf32882e44d4efcba89204a83a47",
+      "sha256": "cad50d2d479bc243c770652a5d6a50bd6e2843371bc536d952ef360b65bb6f5b"
+    },
+    "candidate.zip.b64": {
+      "bytes": 20517,
+      "git_blob": "cc59122d77e4576c3c85992e326c44080df02adb",
+      "sha256": "e1f227117097f62855c213b7f3fa5fd165ace636b06e72526c58e48426cd23c9"
+    },
+    "merged-audit.json": {
+      "bytes": 30611,
+      "git_blob": "3307705587e2cf244d90a3c4ecf542090bfe7831",
+      "sha256": "b56ffba98df9b6cb145960da9d95726b32dcac67f5f202ca7f1d1caba22cc753"
+    },
+    "merged.log": {
+      "bytes": 26433,
+      "git_blob": "51573e85f711444871e22d6b82a7cd794ebc2d83",
+      "sha256": "8ba36a8ea1cb5096b640c2c681b7289600ffb3a6642f044dc17f9b05ac251477"
+    },
+    "merged.zip.b64": {
+      "bytes": 20517,
+      "git_blob": "4698502a8b1ba4fb5c7d57b0017d814e72a49c03",
+      "sha256": "aad6538feb97a291aa79793cb93d3a87707d39399925abf062d837f82f9c299a"
+    }
+  },
+  "merged": {
+    "artifact": 13047667790,
+    "attempt": 1,
+    "job": 124576629736,
+    "run": 41214681408,
+    "status": "success",
+    "zip_bytes": 15385,
+    "zip_sha256": "9efabe65e9a108cfd1aeb05dc437bb3cc3763447287ba1b85b3018392ba9d8fd"
+  },
+  "scope": "PR116 archival integration only; native bridge NOT_DERIVED"
+}

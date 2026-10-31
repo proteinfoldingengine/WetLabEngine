@@ -1,0 +1,321 @@
+﻿2026-10-31T15:24:13.3936006Z Current runner version: '2.338.2'
+2026-10-31T15:24:13.3962675Z ##[group]Runner Image Provisioner
+2026-10-31T15:24:13.3963618Z Hosted Compute Agent
+2026-10-31T15:24:13.3964314Z Version: 20261021.618
+2026-10-31T15:24:13.3965021Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-31T15:24:13.3965788Z Build Date: 2026-10-21T00:45:21Z
+2026-10-31T15:24:13.3966559Z Worker ID: {a8c1a377-d45a-47ab-b0c2-06b60233c563}
+2026-10-31T15:24:13.3967319Z Region: westus3
+2026-10-31T15:24:13.3967954Z Cloud: Azure
+2026-10-31T15:24:13.3968520Z ##[endgroup]
+2026-10-31T15:24:13.3970362Z ##[group]Operating System
+2026-10-31T15:24:13.3971186Z Ubuntu
+2026-10-31T15:24:13.3971775Z 24.04.5
+2026-10-31T15:24:13.3972337Z LTS
+2026-10-31T15:24:13.3972892Z ##[endgroup]
+2026-10-31T15:24:13.3973472Z ##[group]Runner Image
+2026-10-31T15:24:13.3974138Z Image: ubuntu-24.04
+2026-10-31T15:24:13.3974751Z Version: 20261025.353.1
+2026-10-31T15:24:13.3976089Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-31T15:24:13.3977699Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-10-31T15:24:13.3978738Z ##[endgroup]
+2026-10-31T15:24:13.3980157Z ##[group]GITHUB_TOKEN Permissions
+2026-10-31T15:24:13.3982422Z Contents: read
+2026-10-31T15:24:13.3983235Z Metadata: read
+2026-10-31T15:24:13.3983823Z ##[endgroup]
+2026-10-31T15:24:13.3986314Z Secret source: Actions
+2026-10-31T15:24:13.3987301Z Cache mode: write
+2026-10-31T15:24:13.3988136Z Prepare workflow directory
+2026-10-31T15:24:13.4532217Z Prepare all required actions
+2026-10-31T15:24:13.4582039Z Getting action download info
+2026-10-31T15:24:13.7782888Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-31T15:24:13.8920759Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-31T15:24:14.0902754Z Complete job name: integration
+2026-10-31T15:24:14.1742585Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-10-31T15:24:14.1743821Z with:
+2026-10-31T15:24:14.1744336Z   ref: efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:14.1744975Z   persist-credentials: false
+2026-10-31T15:24:14.1747681Z   sparse-checkout: .github
+ResearchHistory/UQCF-GEM/research/physical-bridge/two_feature_receiver_signal
+ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_signal_lifetime
+ResearchHistory/UQCF-GEM/research/physical-bridge/unmarked_root_signal
+ResearchHistory/UQCF-GEM/research/physical-bridge/incidence_grade_realization
+ResearchHistory/UQCF-GEM/research/physical-bridge/role_transfer_consumer
+
+2026-10-31T15:24:14.1750681Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-31T15:24:14.1754617Z   token: ***
+2026-10-31T15:24:14.1755064Z   ssh-strict: true
+2026-10-31T15:24:14.1755497Z   ssh-user: git
+2026-10-31T15:24:14.1755926Z   clean: true
+2026-10-31T15:24:14.1756376Z   sparse-checkout-cone-mode: true
+2026-10-31T15:24:14.1756965Z   fetch-depth: 1
+2026-10-31T15:24:14.1757406Z   fetch-tags: false
+2026-10-31T15:24:14.1757871Z   show-progress: true
+2026-10-31T15:24:14.1758326Z   lfs: false
+2026-10-31T15:24:14.1758744Z   submodules: false
+2026-10-31T15:24:14.1759198Z   set-safe-directory: true
+2026-10-31T15:24:14.1759840Z   allow-unsafe-pr-checkout: false
+2026-10-31T15:24:14.1760652Z env:
+2026-10-31T15:24:14.1761208Z   UQCF_WORKFLOW_SHA: efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:14.1761873Z ##[endgroup]
+2026-10-31T15:24:14.4312172Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-31T15:24:14.4314892Z ##[group]Getting Git version info
+2026-10-31T15:24:14.4316163Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-31T15:24:14.4318013Z [command]/usr/bin/git version
+2026-10-31T15:24:14.4401289Z git version 2.56.0
+2026-10-31T15:24:14.4434493Z ##[endgroup]
+2026-10-31T15:24:14.4446106Z Temporarily overriding HOME='/home/runner/work/_temp/0352d8c7-420b-4409-bc50-35395e92d2c0' before making global git config changes
+2026-10-31T15:24:14.4449221Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-31T15:24:14.4454944Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-31T15:24:14.4539438Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-31T15:24:14.4545226Z ##[group]Initializing the repository
+2026-10-31T15:24:14.4552469Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-31T15:24:14.4664779Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-31T15:24:14.4667306Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-31T15:24:14.4669022Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-31T15:24:14.4670576Z hint: call:
+2026-10-31T15:24:14.4671416Z hint:
+2026-10-31T15:24:14.4672261Z hint: 	git config --global init.defaultBranch <name>
+2026-10-31T15:24:14.4673253Z hint:
+2026-10-31T15:24:14.4674270Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-31T15:24:14.4675864Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-31T15:24:14.4677060Z hint:
+2026-10-31T15:24:14.4677800Z hint: 	git branch -m <name>
+2026-10-31T15:24:14.4678637Z hint:
+2026-10-31T15:24:14.4679868Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-31T15:24:14.4681691Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-31T15:24:14.4701997Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-31T15:24:14.4767822Z ##[endgroup]
+2026-10-31T15:24:14.4769273Z ##[group]Disabling automatic garbage collection
+2026-10-31T15:24:14.4771120Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-31T15:24:14.4840499Z ##[endgroup]
+2026-10-31T15:24:14.4841930Z ##[group]Setting up auth
+2026-10-31T15:24:14.4843745Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-31T15:24:14.4892219Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-31T15:24:14.5355278Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-31T15:24:14.5399090Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-31T15:24:14.5651798Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-31T15:24:14.5702932Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-31T15:24:14.5955597Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-31T15:24:14.6006540Z ##[endgroup]
+2026-10-31T15:24:14.6007476Z ##[group]Fetching the repository
+2026-10-31T15:24:14.6019503Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:15.2155952Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-31T15:24:15.2157988Z  * branch            efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c -> FETCH_HEAD
+2026-10-31T15:24:15.2162372Z ##[endgroup]
+2026-10-31T15:24:15.2163896Z ##[group]Determining the checkout info
+2026-10-31T15:24:15.2166044Z ##[endgroup]
+2026-10-31T15:24:15.2168027Z ##[group]Setting up sparse checkout
+2026-10-31T15:24:15.2175179Z [command]/usr/bin/git sparse-checkout set .github ResearchHistory/UQCF-GEM/research/physical-bridge/two_feature_receiver_signal ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_signal_lifetime ResearchHistory/UQCF-GEM/research/physical-bridge/unmarked_root_signal ResearchHistory/UQCF-GEM/research/physical-bridge/incidence_grade_realization ResearchHistory/UQCF-GEM/research/physical-bridge/role_transfer_consumer
+2026-10-31T15:24:15.2237400Z ##[endgroup]
+2026-10-31T15:24:15.2238341Z ##[group]Checking out the ref
+2026-10-31T15:24:15.2246235Z [command]/usr/bin/git checkout --progress --force efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:16.2435031Z Updating files:  30% (339/1102)
+2026-10-31T15:24:16.2441717Z Updating files:  31% (342/1102)
+2026-10-31T15:24:16.2448693Z Updating files:  32% (353/1102)
+2026-10-31T15:24:16.2454679Z Updating files:  33% (364/1102)
+2026-10-31T15:24:16.2459123Z Updating files:  34% (375/1102)
+2026-10-31T15:24:16.2463698Z Updating files:  35% (386/1102)
+2026-10-31T15:24:16.2469046Z Updating files:  36% (397/1102)
+2026-10-31T15:24:16.2474030Z Updating files:  37% (408/1102)
+2026-10-31T15:24:16.2478454Z Updating files:  38% (419/1102)
+2026-10-31T15:24:16.2483964Z Updating files:  39% (430/1102)
+2026-10-31T15:24:16.2489112Z Updating files:  40% (441/1102)
+2026-10-31T15:24:16.2496769Z Updating files:  41% (452/1102)
+2026-10-31T15:24:16.2503942Z Updating files:  42% (463/1102)
+2026-10-31T15:24:16.2509327Z Updating files:  43% (474/1102)
+2026-10-31T15:24:16.2514884Z Updating files:  44% (485/1102)
+2026-10-31T15:24:16.2521773Z Updating files:  45% (496/1102)
+2026-10-31T15:24:16.2528310Z Updating files:  46% (507/1102)
+2026-10-31T15:24:16.2536999Z Updating files:  47% (518/1102)
+2026-10-31T15:24:16.2543837Z Updating files:  48% (529/1102)
+2026-10-31T15:24:16.2549159Z Updating files:  49% (540/1102)
+2026-10-31T15:24:16.2555739Z Updating files:  50% (551/1102)
+2026-10-31T15:24:16.2562259Z Updating files:  51% (563/1102)
+2026-10-31T15:24:16.2570581Z Updating files:  52% (574/1102)
+2026-10-31T15:24:16.2577432Z Updating files:  53% (585/1102)
+2026-10-31T15:24:16.2585247Z Updating files:  54% (596/1102)
+2026-10-31T15:24:16.2593631Z Updating files:  55% (607/1102)
+2026-10-31T15:24:16.2602647Z Updating files:  56% (618/1102)
+2026-10-31T15:24:16.2608336Z Updating files:  57% (629/1102)
+2026-10-31T15:24:16.2616018Z Updating files:  58% (640/1102)
+2026-10-31T15:24:16.2623514Z Updating files:  59% (651/1102)
+2026-10-31T15:24:16.2634261Z Updating files:  60% (662/1102)
+2026-10-31T15:24:16.2641081Z Updating files:  61% (673/1102)
+2026-10-31T15:24:16.2647482Z Updating files:  62% (684/1102)
+2026-10-31T15:24:16.2656276Z Updating files:  63% (695/1102)
+2026-10-31T15:24:16.2664742Z Updating files:  64% (706/1102)
+2026-10-31T15:24:16.2673280Z Updating files:  65% (717/1102)
+2026-10-31T15:24:16.2680185Z Updating files:  66% (728/1102)
+2026-10-31T15:24:16.2687044Z Updating files:  67% (739/1102)
+2026-10-31T15:24:16.2695620Z Updating files:  68% (750/1102)
+2026-10-31T15:24:16.2703818Z Updating files:  69% (761/1102)
+2026-10-31T15:24:16.2712200Z Updating files:  70% (772/1102)
+2026-10-31T15:24:16.2720114Z Updating files:  71% (783/1102)
+2026-10-31T15:24:16.2727097Z Updating files:  72% (794/1102)
+2026-10-31T15:24:16.2734964Z Updating files:  73% (805/1102)
+2026-10-31T15:24:16.2743923Z Updating files:  74% (816/1102)
+2026-10-31T15:24:16.2751732Z Updating files:  75% (827/1102)
+2026-10-31T15:24:16.2759955Z Updating files:  76% (838/1102)
+2026-10-31T15:24:16.2780840Z Updating files:  77% (849/1102)
+2026-10-31T15:24:16.2788477Z Updating files:  78% (860/1102)
+2026-10-31T15:24:16.2797212Z Updating files:  79% (871/1102)
+2026-10-31T15:24:16.2805947Z Updating files:  80% (882/1102)
+2026-10-31T15:24:16.2814508Z Updating files:  81% (893/1102)
+2026-10-31T15:24:16.2822892Z Updating files:  82% (904/1102)
+2026-10-31T15:24:16.2830066Z Updating files:  83% (915/1102)
+2026-10-31T15:24:16.2837951Z Updating files:  84% (926/1102)
+2026-10-31T15:24:16.2846777Z Updating files:  85% (937/1102)
+2026-10-31T15:24:16.2855273Z Updating files:  86% (948/1102)
+2026-10-31T15:24:16.2863138Z Updating files:  87% (959/1102)
+2026-10-31T15:24:16.2871001Z Updating files:  88% (970/1102)
+2026-10-31T15:24:16.2878292Z Updating files:  89% (981/1102)
+2026-10-31T15:24:16.2885875Z Updating files:  90% (992/1102)
+2026-10-31T15:24:16.2894023Z Updating files:  91% (1003/1102)
+2026-10-31T15:24:16.2902975Z Updating files:  92% (1014/1102)
+2026-10-31T15:24:16.2912160Z Updating files:  93% (1025/1102)
+2026-10-31T15:24:16.2925003Z Updating files:  94% (1036/1102)
+2026-10-31T15:24:16.2942747Z Updating files:  95% (1047/1102)
+2026-10-31T15:24:16.2958964Z Updating files:  96% (1058/1102)
+2026-10-31T15:24:16.2976173Z Updating files:  97% (1069/1102)
+2026-10-31T15:24:16.2990212Z Updating files:  98% (1080/1102)
+2026-10-31T15:24:16.3010027Z Updating files:  99% (1091/1102)
+2026-10-31T15:24:16.3010779Z Updating files: 100% (1102/1102)
+2026-10-31T15:24:16.3011437Z Updating files: 100% (1102/1102), done.
+2026-10-31T15:24:16.3153805Z Note: switching to 'efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c'.
+2026-10-31T15:24:16.3154369Z 
+2026-10-31T15:24:16.3154910Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-31T15:24:16.3156322Z changes and commit them, and you can discard any commits you make in this
+2026-10-31T15:24:16.3157534Z state without impacting any branches by switching back to a branch.
+2026-10-31T15:24:16.3158215Z 
+2026-10-31T15:24:16.3158650Z If you want to create a new branch to retain commits you create, you may
+2026-10-31T15:24:16.3159999Z do so (now or later) by using -c with the switch command. Example:
+2026-10-31T15:24:16.3160595Z 
+2026-10-31T15:24:16.3160844Z   git switch -c <new-branch-name>
+2026-10-31T15:24:16.3161236Z 
+2026-10-31T15:24:16.3161476Z Or undo this operation with:
+2026-10-31T15:24:16.3161847Z 
+2026-10-31T15:24:16.3162058Z   git switch -
+2026-10-31T15:24:16.3162342Z 
+2026-10-31T15:24:16.3162842Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-31T15:24:16.3163700Z 
+2026-10-31T15:24:16.3164185Z HEAD is now at efec0e2 Merge PR116: preserve five reviewed receiver checkpoints
+2026-10-31T15:24:16.3173314Z ##[endgroup]
+2026-10-31T15:24:16.3229881Z [command]/usr/bin/git log -1 --format=%H
+2026-10-31T15:24:16.3266883Z efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:16.3375751Z ##[group]Removing auth
+2026-10-31T15:24:16.3391766Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-31T15:24:16.3396073Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-31T15:24:16.3627101Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-31T15:24:16.3670043Z http.https://github.com/.extraheader
+2026-10-31T15:24:16.3679158Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-31T15:24:16.3725821Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-31T15:24:16.4015711Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-31T15:24:16.4064031Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-31T15:24:16.4336840Z ##[endgroup]
+2026-10-31T15:24:16.4566772Z ##[group]Run git fetch --filter=blob:none --depth=1 origin 16248b77ccf7e94a52f7f444ae7c60d72366ffe1 1905a492669c777c1b4df5a53ecccd254b0f7de5 1fdc861e03259ded4315e02958bcfef5347ae997 3ceb814258f43774b4af1352379ffcd0bd079599 43596de4fe9fd1083500987997ee04e15793f60c 546511327ee6a224dcc583305e7864a456863c4f 5c57913d5e1226b5abaad7f2c9eb56d2ba9321a8 839b94d0bbcf272e5ea51e2627c5e472c6ac423f 8ca86003e85fd38816ab03c1677e2e06ddeaf91d affc677fed704722f5f4ca2fcc11e37982cc37db
+2026-10-31T15:24:16.4571419Z [36;1mgit fetch --filter=blob:none --depth=1 origin 16248b77ccf7e94a52f7f444ae7c60d72366ffe1 1905a492669c777c1b4df5a53ecccd254b0f7de5 1fdc861e03259ded4315e02958bcfef5347ae997 3ceb814258f43774b4af1352379ffcd0bd079599 43596de4fe9fd1083500987997ee04e15793f60c 546511327ee6a224dcc583305e7864a456863c4f 5c57913d5e1226b5abaad7f2c9eb56d2ba9321a8 839b94d0bbcf272e5ea51e2627c5e472c6ac423f 8ca86003e85fd38816ab03c1677e2e06ddeaf91d affc677fed704722f5f4ca2fcc11e37982cc37db[0m
+2026-10-31T15:24:16.4598284Z shell: /usr/bin/bash -e {0}
+2026-10-31T15:24:16.4598695Z env:
+2026-10-31T15:24:16.4599088Z   UQCF_WORKFLOW_SHA: efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:16.4599924Z ##[endgroup]
+2026-10-31T15:24:17.1131395Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-31T15:24:17.1132250Z  * branch            16248b77ccf7e94a52f7f444ae7c60d72366ffe1 -> FETCH_HEAD
+2026-10-31T15:24:17.1132724Z  * branch            1905a492669c777c1b4df5a53ecccd254b0f7de5 -> FETCH_HEAD
+2026-10-31T15:24:17.1133205Z  * branch            1fdc861e03259ded4315e02958bcfef5347ae997 -> FETCH_HEAD
+2026-10-31T15:24:17.1133647Z  * branch            3ceb814258f43774b4af1352379ffcd0bd079599 -> FETCH_HEAD
+2026-10-31T15:24:17.1134129Z  * branch            43596de4fe9fd1083500987997ee04e15793f60c -> FETCH_HEAD
+2026-10-31T15:24:17.1134542Z  * branch            546511327ee6a224dcc583305e7864a456863c4f -> FETCH_HEAD
+2026-10-31T15:24:17.1134962Z  * branch            5c57913d5e1226b5abaad7f2c9eb56d2ba9321a8 -> FETCH_HEAD
+2026-10-31T15:24:17.1135401Z  * branch            839b94d0bbcf272e5ea51e2627c5e472c6ac423f -> FETCH_HEAD
+2026-10-31T15:24:17.1135825Z  * branch            8ca86003e85fd38816ab03c1677e2e06ddeaf91d -> FETCH_HEAD
+2026-10-31T15:24:17.1136252Z  * branch            affc677fed704722f5f4ca2fcc11e37982cc37db -> FETCH_HEAD
+2026-10-31T15:24:17.1199406Z ##[group]Run python3 .github/scripts/uqcf_relay_integration_tests.py
+2026-10-31T15:24:17.1200335Z [36;1mpython3 .github/scripts/uqcf_relay_integration_tests.py[0m
+2026-10-31T15:24:17.1221664Z shell: /usr/bin/bash -e {0}
+2026-10-31T15:24:17.1221949Z env:
+2026-10-31T15:24:17.1222257Z   UQCF_WORKFLOW_SHA: efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:17.1222617Z ##[endgroup]
+2026-10-31T15:24:17.2228525Z test_a_audit_is_implemented (__main__.IntegrationTests.test_a_audit_is_implemented) ... ok
+2026-10-31T15:24:17.2454731Z test_all_six_review_records (__main__.IntegrationTests.test_all_six_review_records) ... ok
+2026-10-31T15:24:17.2502237Z test_complete_accepted_file_set (__main__.IntegrationTests.test_complete_accepted_file_set) ... ok
+2026-10-31T15:24:17.2512029Z test_member_corruption_missing_and_extra (__main__.IntegrationTests.test_member_corruption_missing_and_extra) ... ok
+2026-10-31T15:24:17.2522450Z test_missing_substituted_and_wrong_blob_files (__main__.IntegrationTests.test_missing_substituted_and_wrong_blob_files) ... ok
+2026-10-31T15:24:17.2665211Z test_original_archives_and_changed_bytes (__main__.IntegrationTests.test_original_archives_and_changed_bytes) ... ok
+2026-10-31T15:24:17.2666480Z test_scope_rejects_missing_unrelated_and_wrong_status (__main__.IntegrationTests.test_scope_rejects_missing_unrelated_and_wrong_status) ... ok
+2026-10-31T15:24:17.2667273Z 
+2026-10-31T15:24:17.2667477Z ----------------------------------------------------------------------
+2026-10-31T15:24:17.2667978Z Ran 7 tests in 0.049s
+2026-10-31T15:24:17.2668167Z 
+2026-10-31T15:24:17.2668277Z OK
+2026-10-31T15:24:17.2798326Z ##[group]Run python3 .github/scripts/uqcf_receiver_signal_review.py integrity
+2026-10-31T15:24:17.2798931Z [36;1mpython3 .github/scripts/uqcf_receiver_signal_review.py integrity[0m
+2026-10-31T15:24:17.2799420Z [36;1mpython3 .github/scripts/uqcf_signal_lifetime_review.py integrity[0m
+2026-10-31T15:24:17.2800278Z [36;1mpython3 .github/scripts/uqcf_unmarked_signal_review.py integrity[0m
+2026-10-31T15:24:17.2800761Z [36;1mpython3 .github/scripts/uqcf_incidence_grade_review.py integrity[0m
+2026-10-31T15:24:17.2801236Z [36;1mpython3 .github/scripts/uqcf_role_transfer_review.py integrity[0m
+2026-10-31T15:24:17.2822326Z shell: /usr/bin/bash -e {0}
+2026-10-31T15:24:17.2822597Z env:
+2026-10-31T15:24:17.2822877Z   UQCF_WORKFLOW_SHA: efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:17.2823514Z ##[endgroup]
+2026-10-31T15:24:18.5917970Z Exact frozen documents, complete source identities and byte excerpts verified; no scientific execution.
+2026-10-31T15:24:19.9541660Z Exact frozen documents, complete source identities and byte excerpts verified; no scientific execution.
+2026-10-31T15:24:21.6744214Z Exact frozen documents, complete source identities and byte excerpts verified; no scientific execution.
+2026-10-31T15:24:23.6737743Z Exact frozen documents, complete source identities and byte excerpts verified; no scientific execution.
+2026-10-31T15:24:25.5423740Z Exact frozen documents, complete source identities and byte excerpts verified; no scientific execution.
+2026-10-31T15:24:25.5551969Z ##[group]Run python3 .github/scripts/uqcf_relay_integration_audit.py
+2026-10-31T15:24:25.5552483Z [36;1mpython3 .github/scripts/uqcf_relay_integration_audit.py[0m
+2026-10-31T15:24:25.5572243Z shell: /usr/bin/bash -e {0}
+2026-10-31T15:24:25.5572494Z env:
+2026-10-31T15:24:25.5572775Z   UQCF_WORKFLOW_SHA: efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:25.5573108Z ##[endgroup]
+2026-10-31T15:24:30.1538992Z PASS: 66 accepted files; 12 original archives; 5 accepted checkpoints plus historical inconsistent review; 35 source bindings; 71-path integration scope.
+2026-10-31T15:24:30.1727527Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-31T15:24:30.1727971Z with:
+2026-10-31T15:24:30.1728187Z   name: relay-integration-audit-1
+2026-10-31T15:24:30.1728802Z   path: relay_integration_audit
+receiver_signal_review
+signal_lifetime_review
+unmarked_signal_review
+incidence_grade_review
+role_transfer_review
+
+2026-10-31T15:24:30.1729433Z   if-no-files-found: error
+2026-10-31T15:24:30.1730131Z   retention-days: 90
+2026-10-31T15:24:30.1730525Z   compression-level: 6
+2026-10-31T15:24:30.1730931Z   overwrite: false
+2026-10-31T15:24:30.1731325Z   include-hidden-files: false
+2026-10-31T15:24:30.1731737Z env:
+2026-10-31T15:24:30.1732187Z   UQCF_WORKFLOW_SHA: efec0e2c3e70ace67b2ada0fb0ba7d893b80a56c
+2026-10-31T15:24:30.1732767Z ##[endgroup]
+2026-10-31T15:24:30.3561271Z (node:2676) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-31T15:24:30.3562077Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-31T15:24:30.3772274Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-31T15:24:30.3776221Z The least common ancestor is /home/runner/work/WetLabEngine/WetLabEngine. This will be the root directory of the artifact
+2026-10-31T15:24:30.3777458Z With the provided path, there will be 11 files uploaded
+2026-10-31T15:24:30.3778605Z Artifact name is valid!
+2026-10-31T15:24:30.3779161Z Root directory input is valid!
+2026-10-31T15:24:30.7462576Z Beginning upload of artifact content to blob storage
+2026-10-31T15:24:30.7904362Z (node:2676) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-31T15:24:31.0393585Z Uploaded bytes 15385
+2026-10-31T15:24:31.1014227Z Finished uploading artifact content to blob storage!
+2026-10-31T15:24:31.1015296Z SHA256 digest of uploaded artifact zip is 9efabe65e9a108cfd1aeb05dc437bb3cc3763447287ba1b85b3018392ba9d8fd
+2026-10-31T15:24:31.1017376Z Finalizing artifact upload
+2026-10-31T15:24:31.5710203Z Artifact relay-integration-audit-1.zip successfully finalized. Artifact ID 13047667790
+2026-10-31T15:24:31.5711172Z Artifact relay-integration-audit-1 has been successfully uploaded! Final size is 15385 bytes. Artifact ID is 13047667790
+2026-10-31T15:24:31.5718372Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/41214681408/artifacts/13047667790
+2026-10-31T15:24:31.5978372Z Post job cleanup.
+2026-10-31T15:24:31.6881481Z [command]/usr/bin/git version
+2026-10-31T15:24:31.6931634Z git version 2.56.0
+2026-10-31T15:24:31.6979038Z Temporarily overriding HOME='/home/runner/work/_temp/4ab66d52-588a-416e-9a45-30f9c4306c64' before making global git config changes
+2026-10-31T15:24:31.6980489Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-31T15:24:31.6985801Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-31T15:24:31.7036967Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-31T15:24:31.7081558Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-31T15:24:31.7389502Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-31T15:24:31.7432053Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-31T15:24:31.7758922Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-31T15:24:31.7847349Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-31T15:24:31.8306177Z Cleaning up orphan processes
+2026-10-31T15:24:31.8730230Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
