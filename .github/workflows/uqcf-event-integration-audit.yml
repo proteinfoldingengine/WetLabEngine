@@ -1,0 +1,43 @@
+name: UQCF event-boundary integration audit
+on:
+  push:
+    branches:
+      - gpt/event-correspondence-boundary
+      - research/uqcf-overlapping-guard-exchange
+    paths:
+      - '.github/scripts/uqcf_event_integration_*.py'
+      - '.github/workflows/uqcf-event-integration-audit.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/event_correspondence_boundary
+      - name: Fetch immutable accepted, source and baseline commits
+        run: |
+          git fetch --filter=blob:none --depth=1 origin f6ae74645a0be5ce0e8a54890a5ff67ceb9bf4c6 3ceb814258f43774b4af1352379ffcd0bd079599 5b632ec8ce404472060fd3eab6db6075325825d7 e56f79fa78a60e8ebde2995e0b8eaca7a7c3fa4a
+      - name: Reject corrupted and incomplete evidence
+        run: python3 .github/scripts/uqcf_event_integration_tests.py
+      - name: Recheck inherited seven-source integrity without model call
+        run: python3 .github/scripts/uqcf_event_boundary_review.py integrity
+      - name: Verify unchanged accepted bytes and complete integration scope
+        run: python3 .github/scripts/uqcf_event_integration_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: event-integration-audit-${{ github.run_attempt }}
+          path: |
+            event_integration_audit
+            event_boundary_review
+          if-no-files-found: error
+          retention-days: 90

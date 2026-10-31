@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "scientific_sha": "1d002be6251e7a990141596268b0fb072ceb3959",
+  "workflow_sha": "35dcc346dbb0e890d61d6e48aeb0727f62b1a269",
+  "checkout_sha": "35dcc346dbb0e890d61d6e48aeb0727f62b1a269",
+  "run_id": 39836955711,
+  "run_attempt": 1,
+  "evidence_commit": "a515d2776c80ae0b0faf4df4ca06ae5986864260",
+  "model": "gemini-3.1-pro-preview",
+  "verdict": "ACCEPTED",
+  "raw_response_sha256": "f730a5ce711452e8b68a81bb09a1d65754848d8e6a4e6a4f6c9531aa944a08d6",
+  "readbacks": [
+    {
+      "path": "ACCEPTANCE.md",
+      "sha": "f572ffe677b1e86141504c97f49908371176af63",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/ARTIFACTS.json",
+      "sha": "dc7f13915319b7bc93bfdb8f7534442fd4792af5",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/MANIFEST.json",
+      "sha": "a21271d7e5e5bffd974307c9eebb0889305c76f4",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/RUN.json",
+      "sha": "7b56a5e8f011322ae19d92990c37108c3d97d355",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-integrity-1/artifact_manifest.json",
+      "sha": "1053c31e3ae85648b105a445a976bb85698b0db7",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-integrity-1/integrity.json",
+      "sha": "2e6a699f3e1f7e87ecf6e06ad49e676dc0ec57ab",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-integrity-1.zip",
+      "sha": "9da16570447b1a3df3cb15187f5788b944c0b341",
+      "method": "immutable commit base64 byte equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-publication-1/artifact_manifest.json",
+      "sha": "66b7f3921af89162427ea0b7415e6ab132ad51cf",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-publication-1/publication.json",
+      "sha": "5c5930b21a92935c7bd7ec0e8c2812c1915150b5",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-publication-1.zip",
+      "sha": "79b5a9531d37d628dc046cb259952af3221c1745",
+      "method": "immutable commit base64 byte equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1/artifact_manifest.json",
+      "sha": "2f58d3db6b9f9d4ba962c14fb587731db7873f0e",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1/integrity.json",
+      "sha": "2e6a699f3e1f7e87ecf6e06ad49e676dc0ec57ab",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1/model_metadata.json",
+      "sha": "928720139032813386b0cf0819cb291a2846a468",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1/prompt.txt",
+      "sha": "0a20020c19a852a02ee97161987ff29c31a65bd0",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1/request.json",
+      "sha": "782735e592697cd2af86306bc50f426a11289d67",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1/response.json",
+      "sha": "bae40388508f56489955ab6c3622e7789f33a643",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1/review.txt",
+      "sha": "cfdebc9c2e1c9d52666ae3221b258b1dc68801ad",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1/review_identity.json",
+      "sha": "d7d5125a721926257c7d9649e2bc8ea443e98526",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1/verdict.json",
+      "sha": "0c5646c910e894729240bea463bc109ab5e13d67",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/current-view-leaf-withdrawal-review-1.zip",
+      "sha": "e2bf68efa68e89e468dafbfd9ebec5948a32b966",
+      "method": "immutable commit base64 byte equality"
+    },
+    {
+      "path": "public_evidence/logs/argument-review.log",
+      "sha": "218f05d671c9115b55e68cc504760f8c7fcb568d",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/logs/integrity.log",
+      "sha": "431d6376f7dec1f37188fab81ba52cf7112dada0",
+      "method": "immutable commit full-text equality"
+    },
+    {
+      "path": "public_evidence/logs/publication-audit.log",
+      "sha": "b83057f2adc1baa9b412588830dab37e3fb8a361",
+      "method": "immutable commit full-text equality"
+    }
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "scientific_execution": false,
+  "notes": [
+    "All 23 acceptance/evidence files read from the immutable evidence commit and compared exactly with verified local bytes; ZIP archives read back using base64 file fetch.",
+    "Original ZIP hashes and lengths match Actions artifact metadata; every extracted manifest member checked.",
+    "Full frozen science and workflow documents separately read back exactly before the run.",
+    "This receipt records publication verification, not numbered-stage closure or physical validation."
+  ]
+}
