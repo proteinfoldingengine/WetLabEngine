@@ -1,0 +1,40 @@
+name: UQCF P1 receiver resolution integration audit
+on:
+  push:
+    branches:
+      - research/uqcf-p1-location-integration
+      - research/uqcf-overlapping-guard-exchange
+    paths:
+      - '.github/scripts/uqcf_receiver_archive_*.py'
+      - '.github/workflows/uqcf-receiver-archive-audit.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  archive-and-integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution
+      - name: Fetch immutable accepted checkpoint
+        run: git fetch --filter=blob:none --depth=1 origin 5865e4d0525e5bcf3bc706c7de60f84774ccdb86
+      - name: Run inherited review rejection tests
+        run: python3 .github/scripts/uqcf_p1_location_tests.py
+      - name: Reject changed archives and extracted evidence
+        run: python3 .github/scripts/uqcf_receiver_archive_tests.py
+      - name: Verify exact accepted bytes and original archives
+        run: python3 .github/scripts/uqcf_receiver_archive_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: receiver-archive-audit-${{ github.run_attempt }}
+          path: receiver_archive_audit
+          if-no-files-found: error
+          retention-days: 90

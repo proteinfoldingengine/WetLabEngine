@@ -1,0 +1,41 @@
+name: UQCF event review archive and integration audit
+on:
+  push:
+    branches:
+      - research/uqcf-event-source-correspondence-review
+      - research/uqcf-overlapping-guard-exchange
+    paths:
+      - '.github/scripts/uqcf_event_archive_*.py'
+      - '.github/workflows/uqcf-event-archive-audit.yml'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/event_source_correspondence_review/evidence/archives/**'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  archive-and-integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/event_source_correspondence_review
+      - name: Fetch immutable accepted checkpoint
+        run: git fetch --filter=blob:none --depth=1 origin f7a42c259f7978b50c2af3b9173c9881443f8cb5
+      - name: Run inherited review rejection tests
+        run: python3 .github/scripts/uqcf_event_correspondence_tests.py
+      - name: Run archive rejection tests
+        run: python3 .github/scripts/uqcf_event_archive_tests.py
+      - name: Verify exact accepted bytes and original archives
+        run: python3 .github/scripts/uqcf_event_archive_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: event-archive-audit-${{ github.run_attempt }}
+          path: event_archive_audit
+          if-no-files-found: error
+          retention-days: 90
