@@ -1,0 +1,224 @@
+﻿2026-11-01T16:55:58.1084864Z Current runner version: '2.338.2'
+2026-11-01T16:55:58.1112634Z ##[group]Runner Image Provisioner
+2026-11-01T16:55:58.1113500Z Hosted Compute Agent
+2026-11-01T16:55:58.1114103Z Version: 20261021.618
+2026-11-01T16:55:58.1114814Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-01T16:55:58.1115584Z Build Date: 2026-10-21T00:45:21Z
+2026-11-01T16:55:58.1116257Z Worker ID: {5e6e43d5-7010-45e8-af8b-c7891a07c6a4}
+2026-11-01T16:55:58.1117042Z Region: eastus
+2026-11-01T16:55:58.1117604Z Cloud: Azure
+2026-11-01T16:55:58.1118238Z ##[endgroup]
+2026-11-01T16:55:58.1120144Z ##[group]Operating System
+2026-11-01T16:55:58.1120904Z Ubuntu
+2026-11-01T16:55:58.1121485Z 24.04.5
+2026-11-01T16:55:58.1122003Z LTS
+2026-11-01T16:55:58.1122616Z ##[endgroup]
+2026-11-01T16:55:58.1123220Z ##[group]Runner Image
+2026-11-01T16:55:58.1124182Z Image: ubuntu-24.04
+2026-11-01T16:55:58.1124871Z Version: 20261025.353.1
+2026-11-01T16:55:58.1126136Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-01T16:55:58.1127820Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-11-01T16:55:58.1128792Z ##[endgroup]
+2026-11-01T16:55:58.1130518Z ##[group]GITHUB_TOKEN Permissions
+2026-11-01T16:55:58.1132648Z Actions: read
+2026-11-01T16:55:58.1133473Z Contents: write
+2026-11-01T16:55:58.1134047Z Metadata: read
+2026-11-01T16:55:58.1134681Z ##[endgroup]
+2026-11-01T16:55:58.1136714Z Secret source: Actions
+2026-11-01T16:55:58.1137751Z Cache mode: write
+2026-11-01T16:55:58.1138845Z Prepare workflow directory
+2026-11-01T16:55:58.1654815Z Prepare all required actions
+2026-11-01T16:55:58.1705523Z Getting action download info
+2026-11-01T16:55:58.3630193Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-01T16:55:58.5612873Z Complete job name: durable-archive
+2026-11-01T16:55:58.6645395Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-01T16:55:58.6646485Z with:
+2026-11-01T16:55:58.6646974Z   ref: 8977c128900f1a132eadb2824e692015f22e5ca6
+2026-11-01T16:55:58.6647595Z   fetch-depth: 2
+2026-11-01T16:55:58.6648411Z   sparse-checkout: .github
+ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review
+
+2026-11-01T16:55:58.6649615Z   repository: proteinfoldingengine/WetLabEngine
+2026-11-01T16:55:58.6653593Z   token: ***
+2026-11-01T16:55:58.6654042Z   ssh-strict: true
+2026-11-01T16:55:58.6654491Z   ssh-user: git
+2026-11-01T16:55:58.6654947Z   persist-credentials: true
+2026-11-01T16:55:58.6655440Z   clean: true
+2026-11-01T16:55:58.6655888Z   sparse-checkout-cone-mode: true
+2026-11-01T16:55:58.6656414Z   fetch-tags: false
+2026-11-01T16:55:58.6656862Z   show-progress: true
+2026-11-01T16:55:58.6657328Z   lfs: false
+2026-11-01T16:55:58.6657757Z   submodules: false
+2026-11-01T16:55:58.6658229Z   set-safe-directory: true
+2026-11-01T16:55:58.6658770Z   allow-unsafe-pr-checkout: false
+2026-11-01T16:55:58.6659731Z env:
+2026-11-01T16:55:58.6660310Z   UQCF_WORKFLOW_SHA: 8977c128900f1a132eadb2824e692015f22e5ca6
+2026-11-01T16:55:58.6660969Z ##[endgroup]
+2026-11-01T16:55:58.9659527Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-11-01T16:55:58.9661845Z ##[group]Getting Git version info
+2026-11-01T16:55:58.9662768Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-01T16:55:58.9663977Z [command]/usr/bin/git version
+2026-11-01T16:55:58.9747652Z git version 2.56.0
+2026-11-01T16:55:58.9780722Z ##[endgroup]
+2026-11-01T16:55:58.9791780Z Temporarily overriding HOME='/home/runner/work/_temp/83ae51f2-1acf-4af6-9ad6-1e5e94432e37' before making global git config changes
+2026-11-01T16:55:58.9794337Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-01T16:55:58.9796458Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-01T16:55:58.9849834Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-01T16:55:58.9853350Z ##[group]Initializing the repository
+2026-11-01T16:55:58.9857390Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-01T16:55:58.9985323Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-01T16:55:58.9987262Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-01T16:55:58.9988966Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-01T16:55:58.9990694Z hint: call:
+2026-11-01T16:55:58.9991422Z hint:
+2026-11-01T16:55:58.9992330Z hint: 	git config --global init.defaultBranch <name>
+2026-11-01T16:55:58.9993503Z hint:
+2026-11-01T16:55:58.9994630Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-01T16:55:58.9996316Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-01T16:55:58.9997663Z hint:
+2026-11-01T16:55:58.9998548Z hint: 	git branch -m <name>
+2026-11-01T16:55:58.9999764Z hint:
+2026-11-01T16:55:59.0000920Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-01T16:55:59.0002875Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-11-01T16:55:59.0013402Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-01T16:55:59.0061962Z ##[endgroup]
+2026-11-01T16:55:59.0063522Z ##[group]Disabling automatic garbage collection
+2026-11-01T16:55:59.0066939Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-01T16:55:59.0117376Z ##[endgroup]
+2026-11-01T16:55:59.0119129Z ##[group]Setting up auth
+2026-11-01T16:55:59.0121122Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-01T16:55:59.0150939Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-01T16:55:59.0683279Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-01T16:55:59.0742097Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-01T16:55:59.1004555Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-01T16:55:59.1054506Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-01T16:55:59.1322510Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-01T16:55:59.1375872Z ##[endgroup]
+2026-11-01T16:55:59.1377902Z ##[group]Fetching the repository
+2026-11-01T16:55:59.1392368Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=2 origin 8977c128900f1a132eadb2824e692015f22e5ca6
+2026-11-01T16:55:59.4037685Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-01T16:55:59.4038721Z  * branch            8977c128900f1a132eadb2824e692015f22e5ca6 -> FETCH_HEAD
+2026-11-01T16:55:59.4043659Z ##[endgroup]
+2026-11-01T16:55:59.4044497Z ##[group]Determining the checkout info
+2026-11-01T16:55:59.4045856Z ##[endgroup]
+2026-11-01T16:55:59.4046747Z ##[group]Setting up sparse checkout
+2026-11-01T16:55:59.4052699Z [command]/usr/bin/git sparse-checkout set .github ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review
+2026-11-01T16:55:59.4114453Z ##[endgroup]
+2026-11-01T16:55:59.4115325Z ##[group]Checking out the ref
+2026-11-01T16:55:59.4121814Z [command]/usr/bin/git checkout --progress --force 8977c128900f1a132eadb2824e692015f22e5ca6
+2026-11-01T16:55:59.8720773Z Note: switching to '8977c128900f1a132eadb2824e692015f22e5ca6'.
+2026-11-01T16:55:59.8722739Z 
+2026-11-01T16:55:59.8723821Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-01T16:55:59.8726221Z changes and commit them, and you can discard any commits you make in this
+2026-11-01T16:55:59.8728992Z state without impacting any branches by switching back to a branch.
+2026-11-01T16:55:59.8730581Z 
+2026-11-01T16:55:59.8731505Z If you want to create a new branch to retain commits you create, you may
+2026-11-01T16:55:59.8733880Z do so (now or later) by using -c with the switch command. Example:
+2026-11-01T16:55:59.8735346Z 
+2026-11-01T16:55:59.8735955Z   git switch -c <new-branch-name>
+2026-11-01T16:55:59.8736904Z 
+2026-11-01T16:55:59.8737479Z Or undo this operation with:
+2026-11-01T16:55:59.8738390Z 
+2026-11-01T16:55:59.8738955Z   git switch -
+2026-11-01T16:55:59.8740268Z 
+2026-11-01T16:55:59.8741539Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-01T16:55:59.8743356Z 
+2026-11-01T16:55:59.8744950Z HEAD is now at 8977c12 review: run exact RD-8 correction checks, Gemini and full publication stack
+2026-11-01T16:55:59.8751149Z ##[endgroup]
+2026-11-01T16:55:59.8806083Z [command]/usr/bin/git log -1 --format=%H
+2026-11-01T16:55:59.8842366Z 8977c128900f1a132eadb2824e692015f22e5ca6
+2026-11-01T16:55:59.9123217Z ##[group]Run python .github/scripts/uqcf_rd8_archive.py
+2026-11-01T16:55:59.9125065Z [36;1mpython .github/scripts/uqcf_rd8_archive.py[0m
+2026-11-01T16:55:59.9151339Z shell: /usr/bin/bash -e {0}
+2026-11-01T16:55:59.9152526Z env:
+2026-11-01T16:55:59.9153736Z   UQCF_WORKFLOW_SHA: 8977c128900f1a132eadb2824e692015f22e5ca6
+2026-11-01T16:55:59.9166517Z   GH_TOKEN: ***
+2026-11-01T16:55:59.9167541Z ##[endgroup]
+2026-11-01T16:56:02.3737771Z Original artifact ZIP digests and all complete member manifests verified; raw evidence retained.
+2026-11-01T16:56:02.3740165Z ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1
+2026-11-01T16:56:02.3901881Z ##[group]Run set -euo pipefail
+2026-11-01T16:56:02.3902234Z [36;1mset -euo pipefail[0m
+2026-11-01T16:56:02.3902503Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-01T16:56:02.3902896Z [36;1mtest "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"[0m
+2026-11-01T16:56:02.3903282Z [36;1mgit config user.name proteinfolding-gpt[0m
+2026-11-01T16:56:02.3903694Z [36;1mgit config user.email proteinfolding-gpt@users.noreply.github.com[0m
+2026-11-01T16:56:02.3904280Z [36;1mgit add ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence[0m
+2026-11-01T16:56:02.3904918Z [36;1mgit commit -m "evidence: preserve rd8-correction full-stack run $GITHUB_RUN_ID"[0m
+2026-11-01T16:56:02.3905366Z [36;1mgit push origin "HEAD:$REVIEW_BRANCH"[0m
+2026-11-01T16:56:02.3925669Z shell: /usr/bin/bash -e {0}
+2026-11-01T16:56:02.3925913Z env:
+2026-11-01T16:56:02.3926167Z   UQCF_WORKFLOW_SHA: 8977c128900f1a132eadb2824e692015f22e5ca6
+2026-11-01T16:56:02.3926581Z   REVIEW_BRANCH: research/uqcf-rd8-correction-review
+2026-11-01T16:56:02.3926884Z ##[endgroup]
+2026-11-01T16:56:02.5503804Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-01T16:56:02.5504400Z  * branch            research/uqcf-rd8-correction-review -> FETCH_HEAD
+2026-11-01T16:56:02.5505102Z  * [new branch]      research/uqcf-rd8-correction-review -> origin/research/uqcf-rd8-correction-review
+2026-11-01T16:56:02.7572166Z [detached HEAD 79f178b] evidence: preserve rd8-correction full-stack run 41328460756
+2026-11-01T16:56:02.7572936Z  49 files changed, 3378 insertions(+)
+2026-11-01T16:56:02.7573622Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/DOWNLOAD_AUDIT.json
+2026-11-01T16:56:02.7574674Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/SHA256SUMS
+2026-11-01T16:56:02.7575701Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/job-124913280073.log
+2026-11-01T16:56:02.7577239Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/job-124913999247.log
+2026-11-01T16:56:02.7579758Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/job-124914167323.log
+2026-11-01T16:56:02.7580840Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-integrity-1.zip
+2026-11-01T16:56:02.7582007Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-integrity-1/artifact_manifest.json
+2026-11-01T16:56:02.7583184Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-integrity-1/integrity.json
+2026-11-01T16:56:02.7584324Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-publication-1.zip
+2026-11-01T16:56:02.7585504Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-publication-1/artifact_manifest.json
+2026-11-01T16:56:02.7586737Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-publication-1/publication.json
+2026-11-01T16:56:02.7587870Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1.zip
+2026-11-01T16:56:02.7589010Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/PRODUCTION.json
+2026-11-01T16:56:02.7590770Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/REPRODUCED_1615F.json
+2026-11-01T16:56:02.7592001Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/VERIFICATION.json
+2026-11-01T16:56:02.7593339Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/artifact_manifest.json
+2026-11-01T16:56:02.7594525Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/certificates.json.xz
+2026-11-01T16:56:02.7595765Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/commands.json
+2026-11-01T16:56:02.7596940Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/historical-reproduction.log
+2026-11-01T16:56:02.7598154Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/independent-verifier.log
+2026-11-01T16:56:02.7599585Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/producer.log
+2026-11-01T16:56:02.7600854Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-replay-1/receipt.json
+2026-11-01T16:56:02.7601942Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1.zip
+2026-11-01T16:56:02.7603066Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1/artifact_manifest.json
+2026-11-01T16:56:02.7604244Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1/integrity.json
+2026-11-01T16:56:02.7605531Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1/model_metadata.json
+2026-11-01T16:56:02.7606657Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1/prompt.txt
+2026-11-01T16:56:02.7607769Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1/request.json
+2026-11-01T16:56:02.7608875Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1/response.json
+2026-11-01T16:56:02.7610228Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1/review.txt
+2026-11-01T16:56:02.7611372Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1/review_identity.json
+2026-11-01T16:56:02.7612508Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-review-1/verdict.json
+2026-11-01T16:56:02.7613637Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1.zip
+2026-11-01T16:56:02.7614717Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/PRODUCTION.json
+2026-11-01T16:56:02.7615991Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/REPRODUCED_1615F.json
+2026-11-01T16:56:02.7617148Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/VERIFICATION.json
+2026-11-01T16:56:02.7618310Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/artifact_manifest.json
+2026-11-01T16:56:02.7619850Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/certificates.json.xz
+2026-11-01T16:56:02.7620992Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/commands.json
+2026-11-01T16:56:02.7622121Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/dependencies.log
+2026-11-01T16:56:02.7623237Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/fcv-tests.log
+2026-11-01T16:56:02.7624402Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/historical-reproduction.log
+2026-11-01T16:56:02.7625595Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/historical-tests.log
+2026-11-01T16:56:02.7626764Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/independent-verifier.log
+2026-11-01T16:56:02.7627924Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/parent-tests.log
+2026-11-01T16:56:02.7629034Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/producer.log
+2026-11-01T16:56:02.7630610Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/rd8-exact-witnesses.log
+2026-11-01T16:56:02.7631761Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/receipt.json
+2026-11-01T16:56:02.7632885Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/rd8_correction_review/evidence/run-41328460756-attempt-1/rd8-correction-stack-1/source-snapshot.zip
+2026-11-01T16:56:04.5527016Z To https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-01T16:56:04.5528166Z    8977c12..79f178b  HEAD -> research/uqcf-rd8-correction-review
+2026-11-01T16:56:04.5771946Z Post job cleanup.
+2026-11-01T16:56:04.6618453Z [command]/usr/bin/git version
+2026-11-01T16:56:04.6661891Z git version 2.56.0
+2026-11-01T16:56:04.6702830Z Temporarily overriding HOME='/home/runner/work/_temp/39aa3fb2-7925-45a4-b094-9d99381f7fbb' before making global git config changes
+2026-11-01T16:56:04.6704230Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-01T16:56:04.6706097Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-01T16:56:04.6746916Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-01T16:56:04.6784143Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-01T16:56:04.7080810Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-01T16:56:04.7108578Z http.https://github.com/.extraheader
+2026-11-01T16:56:04.7124426Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-01T16:56:04.7181343Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-01T16:56:04.7491865Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-01T16:56:04.7542209Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-01T16:56:04.7958816Z Cleaning up orphan processes
+2026-11-01T16:56:04.8347859Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
