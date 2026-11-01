@@ -1,0 +1,16 @@
+# RD-8 correction full-stack implementation plan
+
+Date: 2026-11-01 America/Phoenix. User explicitly requested full-stack continuation after the challenge. Execute inline through Gemini response, adjudication and durable publication, under existing permissions.
+
+Goal: independently review DERIVATION.md's bounded correction. Architecture: adapt the existing source-integrity/Gemini/publication/stack adapters to an isolated rd8 branch; preserve previous runs and accepted files. Python 3.11, sympy 1.13.3, mpmath 1.3.0, Gemini gemini-3.1-pro-preview through Actions secret only. Spec: DERIVATION.md and the exact T-243 source excerpt.
+
+Known findings are disclosed, not claimed blinded or prospectively discovered. No new numerical search or universal inference from finite tests. Freeze these exact calibration fixtures before execution: (a) C² counterexample e_p=0,e_u=e_v=e_o=1; (b,c) fixed C³ tensor C³ informative/blind allocations in DERIVATION §3; original rational pair (1,1,2,1)/5 vs (1,1,1,2)/5. Exact fixture checks reconstruct W columns and reduced matrices, reject the incorrect two-zero sufficiency and reject promotion of complete-complement orthogonality to R ownership. General necessity/sufficiency is proved analytically and reviewed independently. Existing FCV universes and controls remain unchanged.
+
+- [ ] Commit proof, complete dependencies/exact original T-243 excerpt, and freeze hashes before execution.
+- [ ] Implement isolated uqcf_rd8_review adapters. Source identities include per-source immutable commits; preserve exact slices and full-source hashes. Accept substantive nonempty paragraph/list constructive analysis. Reject missing analysis, wrong model, blocked/incomplete responses, tampering, nonempty defect arrays and physical-closure verdicts.
+- [ ] Run full inherited FCV/parent/historical tests and independent verifier plus exact fixed-witness checks. Preserve logs and certificates. Snapshot only executable/source dependencies and frozen documents, not previous evidence bundles.
+- [ ] One model availability GET and one generation POST; no favorable prior verdict, automatic retry, hidden fallback, or replacement of inconvenient findings. Independent reviewer reconstructs all proof steps and searches counterexamples.
+- [ ] Separate job re-fetches sources, rebuilds prompt/request and validates raw review. Fresh producer/verifier and historical reproduction at the SAME execution SHA; byte-compare all four output files. If REVISE/FAIL, preserve original and repair before fresh review.
+- [ ] Download original ZIPs, verify API digests and complete member manifests, preserve raw evidence and logs. Split oversized ZIPs losslessly if necessary. Commit with exact-head check, fetch/readback, write disposition receipt and update research safely. Do not merge default branch.
+
+Review focus: all four versus two overlaps; fixed event versus existential construction; complete complement versus fixed R; diagonal full-domain ownership versus one-pair contrast; supplied quantum assumptions versus native P1. No native closure or new mechanism claim. This bounded correction completes an explicit user review request and does not authorize a successor variant campaign.
