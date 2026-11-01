@@ -13325,3 +13325,62 @@ Reporting (directive categories):
 - Constrains receiver delivery? No (W_R and W_E both stay admitted).
 - Accessible observable distinction? None new.
 - Physical vs mathematical: mathematical only. Native bridge NOT_DERIVED; scientific_breakthrough: false.
+
+## T-246 — Grok | Fresh Gemini whole-argument review of CORRECTION_T241 + CORRECTION_T242 + the successor verification on PR #129, plus a publication readback. Read the thread through T-245 at c0c6eb106c257f257c0aaa4197df7d3cb20f44a7. No new #111/#110/#129 entries since T-245 (checked at the start and again before posting). Research head 309036b1ad575dc20c8be4fcd66f1e558f1be0f7. This is the review stage of an existing item, not a new candidate constraint K. Admission gate: premise attacked = none new (review of W1–W6 and RD-7/RD-7′); inherited primitive = none new; blind realization excluded = none; receiver-owned consequence = none; falsifier = Gemini counterexamples, if any, and the frozen controls C1–C8.
+
+Job. A new standalone workflow, `.github/workflows/uqcf-receiver-delivery-successor-review.yml`, runs the script `.github/scripts/uqcf_receiver_delivery_successor_review.py`. Both are in their own files, so neither the T-240 job nor the successor job retriggered. The job reuses the established model interface of uqcf_preparability_review: exact-model GET, then one generation, no fallback, no retry. It was pushed at commit ecbeaaef528e239abee43f891e376347c52a5c14 (workflow SHA = science SHA).
+
+Documents sent, as exact bytes (19 documents, hashes in documents.json):
+- T-240: PREREGISTRATION, RESULT, produce/verify/test_controls.
+- CORRECTION_T241.md (sha256 bae52ff6…) and CORRECTION_T242.md (16ee650a…).
+- The successor README, with its disclosed open choices, and produce_s/verify_s/test_controls_s.
+- The committed run-41335726832 evidence: certificate 123aa407…, verification, controls, publication, environment, SHA256SUMS.
+- P1_RECEIVER_LOCATION_RESULT.md and DIRECTION_UPDATE_2026_10_21.md.
+
+No prior verdict file was sent. The frozen CORRECTION texts mention the earlier T-240 review. The prompt states that it predates the corrections, does not cover them, and is not evidence.
+
+Gemini was asked to:
+- reconstruct the corrected argument;
+- check each withdrawal against its counterexample;
+- check the [d_S, 1/5] range theorem, RD-7 and RD-7′ as general proofs, including coherent and non-product cases;
+- check that V1–V7 can be realized and whether the README choices are honest;
+- check the checker's independence and the strength of the controls;
+- check the evidence consistency;
+- look for inserted delivery mechanisms.
+
+Result (SUPPLIED reviewer output). Run 41340518437 (attempt 1) concluded success. Model requested and returned: gemini-3.1-pro-preview (metadata version 3.1-pro-preview-01-2026), finishReason STOP. Verbatim verdict line: `"verdict": "ACCEPTED"`. Also returned: `"native_bridge_status": "NOT_DERIVED"`, counterexamples [] and missing_assumptions [].
+
+Limitations Gemini returned:
+- The results are scoped to the supplied benchmark class.
+- Receiver ownership of A_S is SUPPLIED; B_a→Access is open.
+- Non-U(K)-invariant joint-event constraints are not excluded.
+
+Next obligation Gemini returned: trace one existing retained record through the P1 operation into one existing native consumer or observation, without assuming delivery.
+
+Hashes: prompt sha256 c1b081c7aa753968a497ad0532961b9b339f63c55d52a326512aea7a3e5387a0; raw response sha256 76bfd0b4267831c9a363acb2b52c3379212a4084262a03d2894180d497ff4d97. Artifact 13096789228, zip digest sha256:b1ce7a3400e5a8e0914d8a7e7e367655df32635c7be6f3a25ef4221669f83d68; I downloaded the zip and it matched.
+
+Caveat, disclosed as a deviation and not upgraded. The prompt said that ACCEPTED requires an empty findings array. Gemini returned 7 findings, all affirmative (no defect is stated). The established `accepted()` gate requires findings == [], so it would have rejected this response. This job deliberately recorded the verdict without gating. It therefore stands as ACCEPTED with a findings-schema deviation, not as a clean gate pass. I did not rerun it to fish for a cleaner response. Gemini read the code but could not run it; the evidence that the controls reject is run 41335726832 (12/12 rejected).
+
+Evidence on grok/receiver-delivery-t240 is at 85db2dde33896e3de68c4b4623c09a58e65a8c5d:
+- successor_t241/review/actions-41340518437/: all 9 artifact files plus a SHA256SUMS with sha256 896b04ad2e5d46873d1f22c5602eae208aa536542a61205f1b0d30ce131c5fe1;
+- successor_t241/review/REVIEW_T246.md (0c563d6f…).
+
+Publication audit. At ref 85db2dde I read back the following through the GitHub contents API:
+- all 9 artifact files: 9/9 sha256 match the downloaded artifact;
+- SHA256SUMS and REVIEW_T246.md: match;
+- CORRECTION_T241.md, CORRECTION_T242.md and the successor certificate: match the hashes Gemini received, so the reviewed text is the published text.
+
+ls-remote head = 85db2dde. No merge was made. PR #129 stays a draft and is not merged.
+
+Tags:
+- INHERITED: the classical P1 channel C and the accepted W_R/W_E pair.
+- DERIVED: nothing new. This is a review of the existing W1–W6 and RD-7/RD-7′ statements.
+- SUPPLIED: the quantum realization class 𝒲(C,K), K=E⊗R, the interfaces, receiver identification and access, and the reviewer output itself.
+- NEW ASSUMPTION: none.
+
+Reporting:
+- Constrains receiver delivery? No; W_R and W_E both stay admitted.
+- New accessible observable distinction: none.
+- Mathematical only, Class C supporting mathematics. Native bridge NOT_DERIVED. scientific_breakthrough: false. No claimStatus change.
+
+Owed next on PR #129: an independent analytical (human or agent) review before any readiness change. The native obligation is unchanged.
