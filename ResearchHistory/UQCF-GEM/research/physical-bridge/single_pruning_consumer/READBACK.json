@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "kind": "immutable_content_readback",
+  "scope": "Conditional analytical support only; native bridge NOT_DERIVED. Not a merge audit or numbered scientific-stage certification.",
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "commit_sha": "3e2e72ec9a4cfd86b3dd6931d38b239c5ea98746",
+  "scientific_sha": "ef38e370834d7b9f94360d39bca78d9b5cee054b",
+  "workflow_sha": "bcbd3985df379c0f8f4898e3ada067dc1200b2c8",
+  "run_id": 41248688388,
+  "run_attempt": 1,
+  "files_verified": 21,
+  "method": "Fetch every published file at the immutable evidence commit and compare full decoded content to the exact submitted source bytes; use blob fetch when file content is omitted. Original ZIP size, digest, CRC and member manifests were checked before publication.",
+  "entries": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/FREEZE.json",
+      "blob_sha": "411968cbd52ed515094e7971092bc0bf69a510f2",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/RESULT.md",
+      "blob_sha": "35564832c886f90978b3bcefc777b70766f1d7fd",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/SOURCE_PACKET.json",
+      "blob_sha": "2003313cfdad54140139a954244b5c44df5dacdf",
+      "exact_content": true
+    },
+    {
+      "path": ".github/scripts/uqcf_single_pruning_review.py",
+      "blob_sha": "8c075f0131ff970b1543763853413bff48d2011a",
+      "exact_content": true
+    },
+    {
+      "path": ".github/scripts/uqcf_single_pruning_publication.py",
+      "blob_sha": "b37d19b808e629d3e97c2fabd5533edb7883d2aa",
+      "exact_content": true
+    },
+    {
+      "path": ".github/workflows/uqcf-single-pruning-review.yml",
+      "blob_sha": "f1b0aa5219300a7334125aa6a7d393982b69cc3b",
+      "exact_content": true
+    },
+    {
+      "path": ".github/scripts/uqcf_single_pruning_tests.py",
+      "blob_sha": "c4b9f99679dcdb78451aaf29b16e1f041e0c6ac4",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/EVIDENCE_NOTES.md",
+      "blob_sha": "0d7d42fb5bb59695306e9b75e1640fd3b9cda6cf",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/REVIEW_STATUS.md",
+      "blob_sha": "4d49c0c8953719b56e7f8bbc3a5eb39a99fddbf0",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/verdict.json",
+      "blob_sha": "cef4336efa9451293baeda6ed67dd7e7d2aa1124",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/review.txt",
+      "blob_sha": "c46402b8a5dfd487b45221023025ee142b7f856f",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/response.json",
+      "blob_sha": "419c4767b2300ef57abce2d8a4f0f56c1f5264a9",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/PUBLICATION_ARTIFACT.zip.b64",
+      "blob_sha": "1cfdd34afc7c877e80ce732d2ac03ee412636f73",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/ARTIFACTS.json",
+      "blob_sha": "ab43c0933e25f8b2d27ecf675c3028706a1379d6",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/review_identity.json",
+      "blob_sha": "478185835cd45f7c1695c359609cd1e78ef325b4",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/INTEGRITY_ARTIFACT.zip.b64",
+      "blob_sha": "b05cf29990e89ccf85765f20f9aabfe8cb33adb7",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/integrity.json",
+      "blob_sha": "7f3ef0f6d67caba5d90816f3e4d3ec430a5f6ce1",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/MANIFEST.json",
+      "blob_sha": "3904eafc615375dbb5498cdb1d606422b419eed7",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/JOB_LOGS.json",
+      "blob_sha": "9d8f1f0058f90c8e1ef245b7ecbdc4794105b60a",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/REVIEW_ARTIFACT.zip.b64",
+      "blob_sha": "6b9ea913a44ae0ffbe9160ef08bbf4866f231be1",
+      "exact_content": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer/evidence/publication.json",
+      "blob_sha": "bb66602b39aa6bef1c06ec289252446647cc9ee5",
+      "exact_content": true
+    }
+  ]
+}

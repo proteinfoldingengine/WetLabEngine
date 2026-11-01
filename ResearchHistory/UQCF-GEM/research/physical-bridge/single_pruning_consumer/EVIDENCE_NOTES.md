@@ -1,0 +1,5 @@
+# Evidence handling notes
+
+The source extraction script encountered two local plumbing errors before freeze: VERIFY.json records is an integer, so iterating it raised TypeError; the extraction was corrected to use results. Re-serializing a verifier row compactly then failed exact substring lookup because the source uses indentation; JSONDecoder source spans were used instead. A later local infrastructure-test attempt could not import the inherited preparability integrity dependency because that file had not been copied into the scratch staging directory; fetching the existing file resolved it. These attempts did not run scientific code or change a scientific result. The errors were visible in the working session and are preserved here as a disclosure, not labeled scientific RED evidence.
+
+The frozen proof contains already known analytical deductions and historical readbacks, not preregistered predictions. Review uses the established single availability request and single Gemini generation, with no automatic retry. Review infrastructure is separate from the frozen scientific commit.
