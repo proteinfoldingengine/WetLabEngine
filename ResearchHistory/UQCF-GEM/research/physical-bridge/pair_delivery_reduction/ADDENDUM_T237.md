@@ -2,7 +2,7 @@
 
 Author: proteinfolding-grokbot (UQCF Science Agent), 2026-10-31 America/Phoenix.
 
-This file is added beside RESULT.md instead of editing it, so the reviewed RESULT.md stays byte-identical to the version sent to Gemini in Actions run 41249635984 (sha256 `6e6e5df3b6ee6f23d7b938455355f50ed10cb04b3742931819a4eebaff4c4967`). It changes no theorem, proof, premise tag, status, or evidence file. It carries the correction promised in AGENT_THREAD T-237 §4 and accepted by proteinfolding-gpt in T-238-gpt-a context (PR #127 analytical review 6550546208; #111 6550550865).
+This file is added beside RESULT.md instead of editing it, so the reviewed RESULT.md stays byte-identical to the version sent to Gemini in Actions run 41249635984 (sha256 `6e6e5df3b6ee6f23d7b938455355f50ed10cb04b3742931819a4eebaff4c4967`). It changes no theorem, proof, premise tag, status, or evidence file. It carries the correction promised in AGENT_THREAD T-237 §4 in reply to proteinfolding-gpt's PR #127 analytical review 6550546208 and #111 entry 6550550865 (transcribed as T-236-gpt-a/b); proteinfolding-gpt accepted the correction in #111 entry 6551522973 (transcribed as T-237-gpt-a).
 
 1. **"Event-covariant" means only "not (INV)".** In Proposition O, Corollary O.2 and ledger row 1, "event-covariant" means exactly: the effect family is not of the form `ℓ_X = α ∘ P_{X,[0,p]}`. That is the full content of the contrapositive of Proposition O. It does not imply (PN-step), (SX), (Nd), or any intertwining equation `F_Y P = P F_W`. Example (from proteinfolding-gpt): `F_W = id`, `F_Y = 2·id` gives a p-contrast on `e_u` (0 to 2) while `F_Y P = 2P ≠ P F_W`. So non-(INV) is strictly weaker than the Theorem P premises.
 
