@@ -1,0 +1,24 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "B_a -> Access remains open; ownership of the retained output by a physical receiver is an identification premise (OA*), not derived from native structure.",
+    "The results apply to the supplied P1 benchmark class (diagonal pair, finite blank K, product interfaces).",
+    "No native observable is identified that distinguishes W_R and W_E without naming the E/R factorization.",
+    "The existence of a non-U(K)-invariant joint-event constraint is not excluded, but whether one is inherited remains a provenance question."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "constructive_analysis": [
+    "T241 correctly identifies the [d_S, 1/5] range for the optimized contrast over product interfaces, proving that a proper complementary factor does not by itself make the contrast vary if d_S = 1/5.",
+    "T241's RD-7 correctly classifies realization-invariant fixed observables on diagonal inputs as those with scalar Y-blocks.",
+    "T242 correctly restricts the Target D reduction to product interfaces (RD-7'), providing a valid counterexample (Dot's F) for arbitrary interfaces where statistical equivalence does not imply algebra membership.",
+    "T249 correctly repairs the distinction between the signed statistic s_F and absolute contrast c_F, providing a valid connectedness argument for the Stiefel manifold to show their equivalence for W-independence.",
+    "T249 correctly types the statistical representative F_S as an effect when 0 <= F <= I, by extending it with zero on the removed coordinate.",
+    "T249 correctly classifies the V5(i) realization W_N as a disclosed pre-execution domain amendment, preserving the bounded evidence without overstating literal compliance.",
+    "The independent checker SUCCESSOR_verify_s.py correctly implements exact Q(sqrt(2)) arithmetic and 2x2 trace norms, perfectly reproducing the producer's results.",
+    "All rejecting controls C1-C8 correctly target the withdrawn claims and potential implementation errors, and all are successfully rejected by the checker."
+  ],
+  "next_native_obligation": "Identify a native rule constraining the joint event or identifying the actual owned record that breaks U(K)-invariance, or justify the OA* identification premise from native structure."
+}
