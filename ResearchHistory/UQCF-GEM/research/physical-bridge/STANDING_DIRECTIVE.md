@@ -107,3 +107,10 @@ How it applies: each run advances ONE positive construction. It starts from a so
 ## Addendum 2026-10-21: operation-first course correction
 
 Following Aaron's request to get the research back on rails, apply [DIRECTION_UPDATE_2026_10_21.md](DIRECTION_UPDATE_2026_10_21.md). It supersedes mandatory pursuit of the exact eight-vertex realization and the recent extra requirement to derive measurement occurrence. Actual atemporal measurement occurrence remains the accepted starting input; the operation/state/receiver-record correspondence must still be earned. Begin from an inherited operation and derive its consequence, allowing the example to change. Credit new necessary mathematics separately from physical identification. The next concrete task is one existing P1 retained record traced through its event into a justified existing consumer or available observation. Preserve every scientific and independent-review gate and avoid repeating already documented gaps.
+
+
+## Addendum 2026-11-01: receiver delivery frontier (Aaron)
+
+Apply [RECEIVER_DELIVERY_FRONTIER_DIRECTIVE_2026_11_01.md](RECEIVER_DELIVERY_FRONTIER_DIRECTIVE_2026_11_01.md) as the governing next-work direction. It supersedes conflicting earlier work-sequence requirements, including a mandatory positive construction before the W_R/W_E adversarial test. Preserve accepted scoped P1 infrastructure; the next advance must constrain native delivery to the designated receiver, or establish an exact minimal-new-premise boundary. Answer all five admission questions and test W_R/W_E before a large campaign. Source-only calibration, another conditional consumer, response/holding map or alternate P1 representation is deprioritized unless it directly removes part of that relation. Independent scientific review and publication gates remain in force for material results; no duplicate review is required merely to publish this directive.
+
+[Bounded source audit and handoff](RECEIVER_DELIVERY_SOURCE_AUDIT_2026_11_01.md) records the inspected scope and coordinates with Dot's T-239-dot-a. It is not a theorem, a physical advance, or a certification.
