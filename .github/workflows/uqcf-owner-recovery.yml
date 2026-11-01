@@ -44,7 +44,10 @@ jobs:
       - name: Audit unchanged sources and original raw Gemini response
         run: python .github/scripts/uqcf_owner_recovery_audit.py
       - name: Fresh inherited producer, independent verifier and exact byte replay
-        run: python .github/scripts/uqcf_owner_scope_stack.py replay
+        run: |
+          git fetch --depth=1 origin a17595036ca21c435a9061ad844d92dd88d0a000
+          git checkout --detach a17595036ca21c435a9061ad844d92dd88d0a000
+          python .github/scripts/uqcf_owner_scope_stack.py replay
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
