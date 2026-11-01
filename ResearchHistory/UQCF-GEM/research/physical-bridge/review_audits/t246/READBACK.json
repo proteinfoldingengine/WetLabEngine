@@ -1,0 +1,57 @@
+{
+  "audit_script_sha256": "8ccc42198a0b78fdb5f0ca39f85e347b68b395947903aaa2749c24adfff15517",
+  "audited_commit": "85db2dde33896e3de68c4b4623c09a58e65a8c5d",
+  "checks": {
+    "controls.json": {
+      "C1_withdrawn_constant_contrast": true,
+      "C2_pre_event_blindness": true,
+      "C3_fixed_effect_invariance": true,
+      "C4_nonscalar_Y_block_claimed_invariant": true,
+      "C5_corrupted_rational": true,
+      "C6_swapped_V4_labels": true,
+      "C7a_F_in_product": true,
+      "C7b_nontrivial_intersection": true,
+      "C8a_nonscalar_Y_block": true,
+      "C8b_wrong_pair_contrast": true,
+      "all_controls_rejected": true,
+      "baseline_accepts": true,
+      "dropped_section": true,
+      "false_producer_hash": true
+    },
+    "documents_exact_in_prompt_and_at_both_commits": 19,
+    "original_review_zip_exact_members": 9,
+    "original_review_zip_sha256": "b1ce7a3400e5a8e0914d8a7e7e367655df32635c7be6f3a25ef4221669f83d68",
+    "raw_response_review_verdict_identity_agree": true,
+    "request_contains_exact_prompt": true,
+    "review_manifest_files": 8,
+    "review_sha256sums": true,
+    "scientific_evidence_sha256sums": true,
+    "verification.json": {
+      "certificate_matches_recomputation": true,
+      "mismatched_sections": [],
+      "predictions": {
+        "V1": true,
+        "V2": true,
+        "V3": true,
+        "V4": true,
+        "V5_i": true,
+        "V5_ii": true,
+        "V6": true,
+        "V6b": true,
+        "V7": true,
+        "realizations_valid": true
+      },
+      "producer_hash_matches": true,
+      "schema_ok": true,
+      "status": "GREEN"
+    }
+  },
+  "established_acceptance_gate_passes": false,
+  "findings_count": 7,
+  "model_verdict": "ACCEPTED",
+  "native_bridge_status": "NOT_DERIVED",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "raw_response_sha256": "76bfd0b4267831c9a363acb2b52c3379212a4084262a03d2894180d497ff4d97",
+  "review_science_commit": "ecbeaaef528e239abee43f891e376347c52a5c14",
+  "scope": "Published-byte integrity, original review ZIP and frozen stdlib checker/controls replay only. No producer, FCV or model rerun; no general proof certification, full log audit, or merge acceptance."
+}
