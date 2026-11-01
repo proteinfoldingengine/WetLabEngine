@@ -1,0 +1,43 @@
+name: UQCF single-pruning integration audit
+on:
+  push:
+    branches:
+      - gpt/single-pruning-consumer
+      - research/uqcf-overlapping-guard-exchange
+    paths:
+      - '.github/scripts/uqcf_pr126_integration_*.py'
+      - '.github/workflows/uqcf-single-pruning-integration-audit.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/single_pruning_consumer
+      - name: Fetch immutable accepted, source and baseline commits
+        run: |
+          git fetch --filter=blob:none --depth=1 origin 62c7aed86ae95778fd7b06ea222d9ee4264d6e37 0dfa5c60bd0a2838f70480035bff255428e934dd bdaa14e95691e9cebf99741447f055fe4852b051
+      - name: Reject corrupted and incomplete evidence
+        run: python3 .github/scripts/uqcf_pr126_integration_tests.py
+      - name: Recheck inherited 28-source integrity without model call
+        run: python3 .github/scripts/uqcf_single_pruning_review.py integrity
+      - name: Verify unchanged accepted bytes and complete integration scope
+        run: python3 .github/scripts/uqcf_pr126_integration_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: single-pruning-integration-audit-${{ github.run_attempt }}
+          path: |
+            pr126_integration_audit
+            single_pruning_review
+          if-no-files-found: error
+          retention-days: 90
