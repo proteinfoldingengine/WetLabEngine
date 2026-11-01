@@ -1,0 +1,76 @@
+{
+  "artifacts": [
+    {
+      "api_digest": "sha256:78b33e3e973a8ef8f333c863959b0844c631e5e2b092e815d59f899573ff5ed6",
+      "download_sha256": "78b33e3e973a8ef8f333c863959b0844c631e5e2b092e815d59f899573ff5ed6",
+      "id": 13092835474,
+      "member_count": 10,
+      "name": "rd8-correction-replay-1",
+      "zip_bytes": 305142
+    },
+    {
+      "api_digest": "sha256:e333c042f32aba4d1e1cd84cfebf85a48634d0e668038d79160e8303c91b5a61",
+      "download_sha256": "e333c042f32aba4d1e1cd84cfebf85a48634d0e668038d79160e8303c91b5a61",
+      "id": 13092541739,
+      "member_count": 9,
+      "name": "rd8-correction-review-1",
+      "zip_bytes": 84397
+    },
+    {
+      "api_digest": "sha256:b01f1bf5dfbe0d9b1b111eed1f5eca79679a11fe2c98df0467c25bf0b58edf95",
+      "download_sha256": "b01f1bf5dfbe0d9b1b111eed1f5eca79679a11fe2c98df0467c25bf0b58edf95",
+      "id": 13092307771,
+      "member_count": 2,
+      "name": "rd8-correction-publication-1",
+      "zip_bytes": 1806
+    },
+    {
+      "api_digest": "sha256:5b66326c708166b8ca1863f5bf3aff7fcf2c3612b5cc94c9d9f8faa9561613b7",
+      "download_sha256": "5b66326c708166b8ca1863f5bf3aff7fcf2c3612b5cc94c9d9f8faa9561613b7",
+      "id": 13091878073,
+      "member_count": 16,
+      "name": "rd8-correction-stack-1",
+      "zip_bytes": 1810637
+    },
+    {
+      "api_digest": "sha256:be882466b314684fe1f9ffe17424ec9f1c878056786b3b57dba4b6cb3b5476a6",
+      "download_sha256": "be882466b314684fe1f9ffe17424ec9f1c878056786b3b57dba4b6cb3b5476a6",
+      "id": 13091693557,
+      "member_count": 2,
+      "name": "rd8-correction-integrity-1",
+      "zip_bytes": 1656
+    }
+  ],
+  "attempt": "1",
+  "checkout_sha": "8977c128900f1a132eadb2824e692015f22e5ca6",
+  "completed_job_logs": [
+    {
+      "bytes": 32147,
+      "conclusion": "success",
+      "file": "job-124913280073.log",
+      "id": 124913280073,
+      "name": "verification",
+      "sha256": "5810a84949fb07c9f1f544f88d2367beab23d0de6091db2adfdec39c40364507"
+    },
+    {
+      "bytes": 17900,
+      "conclusion": "success",
+      "file": "job-124913999247.log",
+      "id": 124913999247,
+      "name": "argument-review",
+      "sha256": "ace1ec5f936cd26dbf8a51e85482f9550ec27cf2f87bf3d32ffd18c2627f5ae2"
+    },
+    {
+      "bytes": 36105,
+      "conclusion": "success",
+      "file": "job-124914167323.log",
+      "id": 124914167323,
+      "name": "publication-audit",
+      "sha256": "5c6269a895b2499d123c00bbc9cdd6360bd6f01e0ca57bec13fc8ccf28960c48"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "run_id": "41328460756",
+  "status": "PASS",
+  "workflow_sha": "8977c128900f1a132eadb2824e692015f22e5ca6"
+}
