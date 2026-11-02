@@ -1,0 +1,24 @@
+{
+  "constructive_analysis": [
+    "RD-0 and RD-0' correctly apply standard Stinespring dilation uniqueness to characterize the orbit of isometric realizations W(C,K). The derivation of e_0 and e_u from the pure states of the channel C is mathematically exact.",
+    "RD-1 accurately audits the inherited constraints from TYPE_LEDGER.md, P1_CANONICAL_RECEIVER_ACQUISITION.md, and other sources, confirming they depend only on source data, retained output, or the reduced channel, and thus are U(K)-invariant.",
+    "RD-2 and RD-3 correctly compute the minimum contrast over the U(K) orbit for product interfaces. The compression argument in RD-2 rigorously proves that a proper complementary factor (dim K_B >= 2) cannot be guaranteed delivery by U(K)-invariant constraints.",
+    "RD-4 and the NF necessity argument correctly deduce that forcing delivery to a proper complementary factor requires a new identification premise (OA* or OC) or a non-U(K)-invariant dynamical premise (NF). The case split is exhaustive.",
+    "RD-5 correctly identifies that W_R delivers the fine-grained ker P direction (e_u - e_p), not the P1 owner coordinate, which is consistent with the removed-summand control.",
+    "The weaker-premise counterexamples (w1)-(w6) are logically sound and correctly demonstrate the insufficiency of partial identification premises.",
+    "Physical and mathematical claims are strictly separated (Section 5), and supplied inputs (E4, E5, E6, Pi_Y, K = E x R) are explicitly tagged as such, avoiding any circular derivation.",
+    "The verifier (verify.py) is algorithmically independent of the producer (produce.py), utilizing standard library fractions and its own restricted growth string partition enumerator. The controls (test_controls.py) genuinely reject all 10 preregistered mutations, as confirmed by EVIDENCE_controls.json."
+  ],
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "B_a -> Access (that a physical receiver can read the owner factor) remains open, as acknowledged in T-156 and P1_EVENT_BINDING_FRONTIER.md.",
+    "Event -> L3 typing and the Hilbert/CPTP encoding (Pi_X, Pi_Y, C) remain explicitly supplied.",
+    "No NF-type law that selects where the fine-grained removed-summand record goes is derived from inherited structure.",
+    "The mathematical results are scoped to the supplied benchmark class (one removed address, diagonal pair, blank finite K, product interfaces)."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Derive the event-to-L3 typing correspondence and the B_a -> Access identification from inherited native structure, without inserting a factor-naming dynamical premise or an arbitrary readout channel.",
+  "verdict": "ACCEPTED"
+}

@@ -1,0 +1,59 @@
+{
+  "empty_gate_arrays": {
+    "counterexamples": true,
+    "findings": true,
+    "missing_assumptions": true
+  },
+  "extracted_files": {
+    "artifact_manifest.json": {
+      "bytes": 1020,
+      "sha256": "8c83ae81e36368c95311ed37d2fe80d77057e5356e19c3314200b91eed4c040d"
+    },
+    "documents.json": {
+      "bytes": 5206,
+      "sha256": "e00dec7aa04befcb6b53bdaf0cf4341f1f7e34383aa96adceb0cde99869c0261"
+    },
+    "model_metadata.json": {
+      "bytes": 459,
+      "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438"
+    },
+    "prompt.txt": {
+      "bytes": 120011,
+      "sha256": "33379a0ef8198d7dbd13e24fd867fb5abeeda8cb842a480578781c0a08870b8a"
+    },
+    "request.json": {
+      "bytes": 123128,
+      "sha256": "007920d694164e04ab0e37cfe50c8b0669dd968c16cc7e226fce50e1960ba57d"
+    },
+    "response.json": {
+      "bytes": 44118,
+      "sha256": "22e78de96d3d7bcdf28d84e6d25e729ee84c3167e7c9c693f38ecb70b3b1327d"
+    },
+    "review.txt": {
+      "bytes": 2370,
+      "sha256": "3e4eb7494e2c0a22a0cefccc018d620b45822c508eb6d6e2011418ab437a4f01"
+    },
+    "review_identity.json": {
+      "bytes": 444,
+      "sha256": "616d2b74109c91b0e11743bac49f3ac09ca49931bea8c6177516b29c5e2c62b1"
+    },
+    "verdict.json": {
+      "bytes": 2371,
+      "sha256": "aed4906c434fbf24ba41f372862647780e1304b8c1f9c2bdd3dd56087604ce0e"
+    }
+  },
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge_status": "NOT_DERIVED",
+  "prior_failure_artifact_id": 13103472358,
+  "prior_failure_run": 41356533442,
+  "prior_failure_zip_sha256": "091abb7133a4380ff908bd1c728c9f5f4e74d978b7aa3fb10d99c90363e1d682",
+  "prompt_sha256": "33379a0ef8198d7dbd13e24fd867fb5abeeda8cb842a480578781c0a08870b8a",
+  "response_sha256": "22e78de96d3d7bcdf28d84e6d25e729ee84c3167e7c9c693f38ecb70b3b1327d",
+  "review_artifact_id": 13103418137,
+  "review_head": "4b6a49c0a6dabc5c2f45cb5ed7a709aa91911229",
+  "review_run": 41356747755,
+  "review_zip_sha256": "bb6d78a3dd6b0e7ba68d60812b7b63647467c8ac8167e9da30a8a7e5643648a2",
+  "scope": "Independent analytical review and evidence publication; not native receiver delivery or merge approval.",
+  "status": "PUBLICATION_AUDIT_PASS",
+  "verdict": "ACCEPTED"
+}

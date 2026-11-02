@@ -1,0 +1,94 @@
+name: UQCF T-250 publish corrected review evidence
+on:
+  push:
+    branches: [grok/receiver-delivery-t240]
+    paths:
+      - '.github/workflows/uqcf-receiver-delivery-t249-publish.yml'
+permissions:
+  contents: write
+concurrency:
+  group: uqcf-receiver-delivery-t249-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+          fetch-depth: 1
+      - name: Download and audit original review artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          out="ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/t249_review_evidence"
+          rm -rf "$out"
+          mkdir -p "$out/review" "$out/prior_failure"
+          gh api "/repos/${GITHUB_REPOSITORY}/actions/artifacts/13103418137/zip" > "$out/review-run-41356747755.zip"
+          gh api "/repos/${GITHUB_REPOSITORY}/actions/artifacts/13103472358/zip" > "$out/failure-run-41356533442.zip"
+          printf '%s  %s\n' "bb6d78a3dd6b0e7ba68d60812b7b63647467c8ac8167e9da30a8a7e5643648a2" "$out/review-run-41356747755.zip" | sha256sum -c -
+          printf '%s  %s\n' "091abb7133a4380ff908bd1c728c9f5f4e74d978b7aa3fb10d99c90363e1d682" "$out/failure-run-41356533442.zip" | sha256sum -c -
+          unzip -q "$out/review-run-41356747755.zip" -d "$out/review"
+          unzip -q "$out/failure-run-41356533442.zip" -d "$out/prior_failure"
+          python3 - "$out" <<'PY'
+          import hashlib, json, pathlib, sys
+          out = pathlib.Path(sys.argv[1])
+          review = out / "review"
+          manifest = json.loads((review / "artifact_manifest.json").read_text())
+          for name, rec in manifest.items():
+              raw = (review / name).read_bytes()
+              assert len(raw) == rec["bytes"], (name, len(raw), rec["bytes"])
+              assert hashlib.sha256(raw).hexdigest() == rec["sha256"], name
+          verdict = json.loads((review / "verdict.json").read_text())
+          assert verdict["verdict"] == "ACCEPTED"
+          assert verdict["findings"] == []
+          assert verdict["missing_assumptions"] == []
+          assert verdict["counterexamples"] == []
+          assert verdict["native_bridge_status"] == "NOT_DERIVED"
+          ident = json.loads((review / "review_identity.json").read_text())
+          assert ident["run_id"] == "41356747755"
+          assert ident["science_sha"] == "4b6a49c0a6dabc5c2f45cb5ed7a709aa91911229"
+          assert ident["model_requested"] == ident["model_returned"] == "gemini-3.1-pro-preview"
+          failure = json.loads((out / "prior_failure" / "failure.json").read_text())
+          assert failure["run_id"] == "41356533442"
+          assert failure["status"] == "REVIEW_INFRASTRUCTURE_OR_PARSE_FAILURE"
+          def sha(path):
+              return hashlib.sha256(path.read_bytes()).hexdigest()
+          audit = {
+              "status": "PUBLICATION_AUDIT_PASS",
+              "review_run": 41356747755,
+              "review_head": "4b6a49c0a6dabc5c2f45cb5ed7a709aa91911229",
+              "review_artifact_id": 13103418137,
+              "review_zip_sha256": sha(out / "review-run-41356747755.zip"),
+              "prior_failure_run": 41356533442,
+              "prior_failure_artifact_id": 13103472358,
+              "prior_failure_zip_sha256": sha(out / "failure-run-41356533442.zip"),
+              "verdict": verdict["verdict"],
+              "native_bridge_status": verdict["native_bridge_status"],
+              "empty_gate_arrays": {
+                  "findings": verdict["findings"] == [],
+                  "missing_assumptions": verdict["missing_assumptions"] == [],
+                  "counterexamples": verdict["counterexamples"] == [],
+              },
+              "prompt_sha256": ident["prompt_sha256"],
+              "response_sha256": ident["response_sha256"],
+              "model": ident["model_returned"],
+              "extracted_files": {
+                  p.name: {"bytes": p.stat().st_size, "sha256": sha(p)}
+                  for p in sorted(review.iterdir()) if p.is_file()
+              },
+              "scope": "Independent analytical review and evidence publication; not native receiver delivery or merge approval.",
+          }
+          (out / "PUBLICATION_AUDIT.json").write_text(json.dumps(audit, indent=2, sort_keys=True) + "\n")
+          PY
+      - name: Commit immutable evidence to PR branch
+        run: |
+          set -euo pipefail
+          git config user.name "proteinfolding-gpt"
+          git config user.email "aspradaz+gpt@gmail.com"
+          git add ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/t249_review_evidence
+          git commit -m "T-250: publish clean corrected-head Gemini review and preserved failure"
+          git push origin HEAD:grok/receiver-delivery-t240
