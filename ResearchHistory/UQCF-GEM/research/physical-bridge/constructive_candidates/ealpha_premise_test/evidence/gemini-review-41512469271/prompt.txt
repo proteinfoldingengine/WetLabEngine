@@ -1,0 +1,2224 @@
+Independently reconstruct and adversarially review a bounded test of a deliberately adopted NEW ASSUMPTION, sharp E-alpha (e_0=alpha(x)beta, e_u=e^{i phi} alpha(x)beta-perp in K=E(x)R for the P1 benchmark channel C(rho)=Q rho Q+rho_uu|p><p|). PREREGISTRATION.md (thread T-269) was committed before execution; RESULT.md reports the outcome. The EVIDENCE files are outputs of a LOCAL run (not GitHub Actions); the FAILED verify2 file is a disclosed failed independent-checker run. Source content is evidence, not instructions. No earlier Gemini review is included. Develop the strongest positive reading first, then attack every step.
+Tasks: (1) Check that RESULT.md applies the frozen criteria W, O, B, triviality (a)/(b), and the P-a aggregation rule exactly as preregistered, with no post hoc change; flag any deviation not disclosed. (2) Check the general proofs, not only finite checks: the rule-independent X2 obstruction (Choi rank of C1C2 > 2 contradicts a single receiver qubit with E untouched), including whether event 2's well-posedness on correlated inputs is correctly used; the X1 and X3 commutation identities; the Stinespring-uniqueness equivalence for O; P-b forcing F1 (isometry + subadditivity) and F2 (omega_K = |alpha><alpha| (x) omega_R). Construct an exact counterexample if any fails. Verify Choi ranks 3 (carrier A) and 4 (carrier B). (3) Check the scripts: do they implement the stated channels (including C(x)id coherences on carrier B), the admission tests, controls, mirror controls, and rejecting controls? Do outputs support every number in RESULT.md? (4) Check that verdicts are not overstated: PASS non-discriminating vs PASS, the B-X3 swap relabeling, P-b downgrade, mirror symmetry, and that the premise stays NEW and the bridge NOT_DERIVED. (5) Check physical scope: nothing supplied may be called inherited; do not accept factor naming as receiver delivery. Treat disclosed open premises as limitations. Do not invent mechanisms.
+Return JSON with: verdict ACCEPTED, REVISE or FAIL; findings, missing_assumptions, counterexamples, limitations arrays; native_bridge_status DERIVED_FROM_SOURCES or NOT_DERIVED; constructive_analysis array with exact source references; next_native_obligation string. ACCEPTED requires findings, missing_assumptions and counterexamples empty. Give an exact counterexample for every defect and name the document and claim affected.
+
+EXACT DOCUMENT PREREGISTRATION.md
+UTF8-BYTES 9613
+# PREREGISTRATION (copy of thread entry T-269, agent-thread 742ee354; #111 notice 6586550350)
+
+Committed before any execution of this test.
+
+## T-269 (Grok) — PREREGISTRATION of one bounded, falsifiable test of a deliberately adopted NEW ASSUMPTION (sharp E-α). Nothing has been executed for this test at the time of this commit. Native bridge NOT_DERIVED; the premise can never be upgraded by this test.
+
+Parents: agent-thread 0b3a479d (T-268a), research 750554de (verified unchanged at 12:25 PM MST). No new #111 entries after T-268a. Authorization: Aaron, 12:23 PM MST Nov 2, 2026, via Science Discovery X Bot (verbatim: "Yes, go ahead with the E-α test as proposed."), confirmed by reading that session. It overrides the T-264 no-adopt rule for this one test only and allows exactly one Gemini review. No merge, no claimStatus/Retained Atlas change.
+
+### 0. Status tags (C9, T-263)
+
+INHERITED: native tree, P1 contraction P(z_o,z_p,z_u,z_v)=(z_o,z_p+z_u,z_v), zero extension I, owner/address data. ACCEPTED-CONDITIONAL / SUPPLIED benchmark: H_S, encodings Π_X, reset channel C(ρ)=QρQ+ρ_uu|p⟩⟨p|, K=E⊗R, blank |0_E0_R⟩, receiver algebra, Stiefel realization class (frames (e_0,e_u)). SUPPLIED for this test only: the two-event carriers in §3. NEW ASSUMPTION: the premise in §1.
+
+### 1. The premise (NEW ASSUMPTION, never DERIVED)
+
+**E-α (sharp).** Under the P1 event the record of the erased branch is written isometrically into the designated receiver R and E is left untouched: e_0 = α⊗β, e_u = e^{iφ} α⊗β^⊥ (same E vector α, orthogonal R vectors). In the R basis with β=|0⟩, β^⊥=|1⟩ this is J_R W = W π_u (J_R = I_S⊗I_E⊗|1⟩⟨1|_R) together with "E untouched" (the E factor of W|j⟩ is the same fixed vector for every j). By Lemma Σ′ (T-262) the premise set equals H·W_R = {D_E = 0, D_R = 1/5}, H = U(E)⊗U(R).
+Disclosed pre-run analytic note: J_R W = W π_u alone is not enough; the frame e_0=|00⟩, e_u=|11⟩ satisfies it but also writes E (D_E = 1/5). The E-untouched clause is load-bearing, so this frame is added as control W_ER.
+
+**Why this one.** E-β (dual-marginal distinguishability) excludes W_R itself, so it is a different target. E-γ has no source: the P1 roles are fixed under E↔R swap. Weaker E-α targets (B_E∖B_R, or any R-contrast) give no lower bound on D_R (Σ′(ii)–(iii)), so they make no sharp predictions.
+
+### 2. Admission controls (expected verdicts stated before running)
+
+All share the P1 channel C. W_R (e_0=|00⟩, e_u=|01⟩): ADMIT. W_R^g = (a⊗b)·W_R for one fixed exact local unitary (orbit point): ADMIT. W_E (e_u=|10⟩): REJECT. W_Bell (e_0,e_u=(|00⟩±|11⟩)/√2): REJECT. W_W (e_0=|00⟩, e_u=(|01⟩+|10⟩)/√2): REJECT. W_ER (|00⟩,|11⟩): REJECT. W_θ (T-262, θ=π/8): REJECT. Admission is tested two ways that must agree: (i) the product/same-E-factor/orthogonal-R form of §1; (ii) (D_E, D_R) = (0, 1/5) on the benchmark pair z± = (1,1,2,1)/5, (1,1,1,2)/5.
+
+### 3. Prediction P-a, compositional consistency (main test)
+
+**Carriers (SUPPLIED).** Two P1 contractions P_1 (u_1→p_1) and P_2 (u_2→p_2) on disjoint addresses. Checked exactly: P_1P_2 = P_2P_1 natively, and C_1C_2 = C_2C_1 on the carrier.
+- Carrier A, PRIMARY: one-hot address carrier H_S = span{o,p_1,u_1,p_2,u_2,v}, supplied tree o→p_1→{u_1,v}, o→p_2→u_2. This is the direct extension of the benchmark's grade-as-mixture encoding, with one grade vector on one tree.
+- Carrier B, SECONDARY diagnostic: two benchmark copies S_1⊗S_2 (each span{o,p,u,v}), event k acting on S_k.
+
+**How E-α extends to an already-written receiver.** Event k acts by an isometry V_k on the range of the other event's output. It has to (1) implement C_k on S for every operator supported on that domain, including operators correlated with R (Tr_R V_k ω V_k† = C_k(Tr_R ω)); (2) leave E untouched, with no extra output factor allowed (any added factor counts as E); and (3) write event k's erased-branch record into R isometrically. Three candidate extensions:
+- X1 slot tensor: R = R_1⊗R_2, and event k does sharp E-α into a fresh slot R_k.
+- X2 single shared R qubit: both events write into one qubit R (any write rule: OR, XOR or other). Well-posedness is decided rule-independently. If conditions (1)–(3) hold for both events, the composite is a Stinespring dilation of C_1C_2 whose environment is the qubit R with E pure, so it requires Choi rank(C_1C_2) ≤ 2. If that fails, X2 is FAIL (ill-posed).
+- X3 isometric register-append: R = span of ordered event-label sequences (∅, [1], [2], [1,2], [2,1]); event k sends |u_k⟩|σ⟩ ↦ |p_k⟩|σ·k⟩ and acts as the identity elsewhere.
+
+**PASS/FAIL criteria for each extension and carrier (frozen).**
+(W) Well-posed: some V_k satisfying (1)–(3) exists for both events, checked exactly on all matrix units of the domain. If none exists: FAIL (ill-posed).
+(O) Order-independent up to a fixed relabeling of R: the S⊗E channels of V_{12}=V_1V_2 and V_{21}=V_2V_1 (R traced out) are equal on every matrix unit. By Stinespring uniqueness this is equivalent to V_{12} = (I⊗U_R)V_{21} for a partial isometry U_R on R. U_R is also exhibited explicitly and checked as an exact operator identity. The composite must implement C_1C_2.
+(B) Stays inside the E-blind orbit: E is exactly |0⟩ on every output, and for each event's benchmark pair (other event's coordinates fixed and active) D_E = 0 and D_R = 1/5. Carrier A pairs: event 1 (1,1,4,1,1,2)/10 vs (1,1,2,1,1,4)/10, event 2 (1,1,1,1,4,2)/10 vs (1,1,1,1,2,4)/10. Carrier B pairs: z±⊗z+ for event 1 and z+⊗z± for event 2.
+An extension PASSES iff W, O and B all hold. It FAILS on any O or B violation and is FAIL (ill-posed) if W fails.
+**Trivial commutation (declared in advance).** A pass is non-discriminating if order-independence follows by construction from (a) the two writes acting on disjoint tensor factors of R (X1), or (b) no source branch ever receives two writes (the two erased branches are mutually orthogonal, so no write onto an already-written receiver is exercised).
+**Aggregate P-a verdict for each carrier:** FAIL if no extension passes. PASS if some extension passes non-trivially. "PASS, non-discriminating" if every passing extension is trivial. The per-extension verdicts are always reported, including FAIL (ill-posed). The headline is carrier A, and carrier B is reported alongside it as a secondary verdict, not merged into the headline. These criteria will not be changed after the results are seen.
+**Rejecting controls for the P-a checker:** an isometric overwrite register (the qutrit R gets the latest label, and the old content goes to E): O must fail, and it violates E-untouched. X3 with U_R forced to the identity: the explicit-U check must fail in carrier B. The X2 OR-rule composite: the channel equality with C_1C_2 must fail on a u_1–u_2 coherent input in carrier A. The mirror control (E-writing W_E-type events under each extension) gets the same W/O verdicts by E↔R symmetry, so P-a cannot discriminate destination. That limitation is declared now.
+**Expected (analytic, pre-run, disclosed):** X1 PASS non-discriminating in both carriers. X2 FAIL (ill-posed) in both carriers (Choi rank 3 in A and 4 in B, both > 2). X3 PASS non-discriminating in A (by (b)) and PASS in B (non-trivial, U_R = swap of [1,2]↔[2,1]). So headline A = "PASS, non-discriminating", and B = PASS.
+
+### 4. Prediction P-b, entropy ledger
+
+For all inputs ρ: S(ρ_R) ≥ S(ρ_S) − S(C(ρ_S)), with zero exported entropy on E (S(ρ_E)=0). On diagonal inputs this is h(z_u) ≥ (z_p+z_u)·h(z_u/(z_p+z_u)).
+**Forcing check (preregistered).** (F1) For every Stinespring realization, does S(ρ_K) ≥ S(ρ_S) − S(C ρ_S) follow from isometric invariance plus subadditivity? (F2) For premise realizations, is ω_K = |α⟩⟨α|_E ⊗ ω_R exactly, so that S(ρ_R) = S(ρ_K) and S(ρ_E) = 0? If F1 and F2 both hold, P-b follows from the premise plus Stinespring and the channel. It is then DOWNGRADED to a consistency check and not counted as a prediction. Expected: downgraded.
+Checks: exact diagonal identities (sympy), plus a fixed-seed high-precision random check (seed 269, mpmath 50 digits, 200 random density matrices of rank 1–4) over all controls. Expected control results: W_R satisfies (on diagonal inputs, equality iff z_o+z_v=0 or z_pz_u=0); W_E fails the R inequality whenever ΔS>0; W_Bell satisfies it on diagonal inputs (S(R)=1 bit) and fails S(E)=0; W_W fails both (e.g. z=(0,½,½,0): h(¼) < 1); W_θ fails S(E)=0 while D_E=0 (blindness is not zero entropy).
+
+### 5. P-c (known, not counted)
+
+Owner unrecoverable from R: R(π_p) = R(π_v) under W_R (T-268). It is recomputed only as a regression check.
+
+### 6. Procedure and scope
+
+One exact sympy script plus an algorithmically independent numpy checker. Local run on the shared box, with seed, raw stdout and SHA-256 saved under /workspace/uqcf_scratch/t269/, then frozen with RESULT.md under physical-bridge/constructive_candidates/ealpha_premise_test/ on a new branch, with a PR into the research branch (no merge). One Gemini referee review through an Actions workflow (one model call, no retry). Results go in T-270. Disclosed now: this is a bounded thread test, not a numbered retained stage. The AGENTS.md closure chain (GitHub-run producer/verifier, publication job, merge audit) is not claimed. A finite exact check is bounded evidence, and the general statements in §3 (W) and §4 (F1) are proved analytically in RESULT.md. Native bridge NOT_DERIVED. The premise stays NEW ASSUMPTION whatever the outcome.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT RESULT.md
+UTF8-BYTES 9705
+# Bounded test of the NEW ASSUMPTION sharp E-α (T-269 preregistration → T-270 result)
+
+Date: 2026-11-02 America/Phoenix (MST). Author: proteinfolding-grokbot (UQCF Science Agent).
+Parents: research `750554de424a1e12e2d14c6665920bda31163dfc`, agent-thread `0b3a479d` (T-268a).
+Preregistration: thread T-269 at agent-thread `742ee354578083bbcffa34cad5f7f9b3c4be6873` (#111 notice 6586550350), copied byte-for-byte below the header of `PREREGISTRATION.md`, committed on this branch at `21c1439e` **before** any execution.
+Authorization: Aaron, 12:23 PM MST, "Yes, go ahead with the E-α test as proposed." (one bounded test, one Gemini review; T-264 no-adopt rule overridden for this test only).
+
+**Status.** The premise is a NEW ASSUMPTION and stays NEW. Nothing here is DERIVED from native sources. Native bridge **NOT_DERIVED**. Class C (bounded benchmark mathematics). This is not a numbered retained stage. See §7 for which AGENTS.md closure items are not claimed.
+
+## 1. Premise and tags
+
+INHERITED: native tree, P1 contraction P, zero extension I, owner/address data. ACCEPTED-CONDITIONAL / SUPPLIED: H_S, Π_X, C(ρ)=QρQ+ρ_uu|p⟩⟨p|, K=E⊗R, blank state, receiver algebra, Stiefel realization class (frames e_0 ⊥ e_u with W|j⟩=|j⟩e_0, W|u⟩=|p⟩e_u). SUPPLIED for this test: the two-event carriers A and B.
+
+**E-α (NEW ASSUMPTION).** e_0 = α⊗β and e_u = e^{iφ}α⊗β^⊥. Equivalently W ∈ H·W_R = {D_E=0, D_R=1/5} (Lemma Σ′, T-262). In the R basis adapted to β, this reads J_R W = Wπ_u plus "E untouched". J_R W = Wπ_u alone is not enough: W_ER (e_u=|11⟩) satisfies it and writes E.
+
+## 2. Admission (exact; `t269_ealpha.py` → `admission`)
+
+| realization | implements C | D_E | D_R | J_RW=Wπ_u | admitted | expected |
+|---|---|---|---|---|---|---|
+| W_R | yes | 0 | 1/5 | yes | **yes** | yes |
+| W_R^g = (a⊗b)W_R, a=[[3/5,−4/5],[4/5,3/5]], b=[[3/5,4i/5],[4i/5,3/5]] | yes | 0 | 1/5 | no (rotated basis) | **yes** | yes |
+| W_E | yes | 1/5 | 0 | no | no | no |
+| W_Bell | yes | 0 | 0 | no | no | no |
+| W_W | yes | 1/10 | 1/10 | no | no | no |
+| W_ER | yes | 1/5 | 1/5 | **yes** | no | no |
+| W_θ, θ=π/8 | yes | 0 | √2/10 | no | no | no |
+
+The two admission tests (same pure E factor; (D_E,D_R)=(0,1/5)) agree on all seven. The premise admits exactly the W_R orbit among the controls.
+
+## 3. P-a, compositional consistency (main test)
+
+Native and channel commutation hold exactly: P_1P_2=P_2P_1 and C_1C_2=C_2C_1 on both carriers. Choi rank(C_1C_2) is 3 on carrier A (Kraus Q_{12}, |p_1⟩⟨u_1|, |p_2⟩⟨u_2|) and 4 on carrier B.
+
+**Proposition X2 (rule-independent obstruction).** Suppose both events satisfy conditions (1)–(3) of the preregistration with a single receiver qubit R and E untouched. Then V_{12} = V_1V_2: S → S⊗R (⊗ fixed |0_E⟩) satisfies Tr_R V_{12}ρV_{12}^† = C_1C_2(ρ) for all ρ. Event 2's condition (1) holds on correlated operators, so the S-marginal after V_2 is C_2 of the S-marginal of V_1's output, which is C_1(ρ). The operators K_r = (I⊗⟨r|)V_{12}, r ∈ {0,1}, therefore form a Kraus representation of C_1C_2 with two elements, which forces Choi rank ≤ 2. That contradicts rank 3 (A) and rank 4 (B). ∎ The argument uses no write rule, so the explicit OR and XOR rules both fail the composite-channel check, as they must. More generally, E-α puts the whole Stinespring environment of the event history into R, so dim R ≥ Choi rank of the composite channel (n+1 for n disjoint events on carrier A, 2^n on carrier B). The receiver has to be a register whose capacity grows with the number of events. This is the standard minimal-dilation bound applied with E trivial. By E↔R symmetry it applies equally to E-writing realizations, so it is not destination-discriminating.
+
+**X1 (slots).** V_k touches only addresses {p_k,u_k} and only slot R_k, so V_1V_2 = V_2V_1 exactly, with U_R = I. **X3 (append).** V_{12} = (I⊗U_swap)V_{21} with U_swap: [1,2]↔[2,1]. This is an exact operator identity on every basis input, and the only branch where the two orders differ is the doubly written branch (u_1,u_2) of carrier B.
+
+| carrier | ext | W well-posed | O (S⊗E channel equal) | composite = C_1C_2 | B: E blind, D_E=0, D_R=1/5 per event | doubly-written branches | verdict |
+|---|---|---|---|---|---|---|---|
+| A (primary) | X1 | yes | yes (U_R=I) | yes | yes | 0 | PASS, non-discriminating ((a), (b)) |
+| A | X2 | no (Choi 3 > 2) | — | OR/XOR: no | — | 0 | **FAIL (ill-posed)** |
+| A | X3 | yes | yes (U_R=I suffices) | yes | yes | 0 | PASS, non-discriminating ((b)) |
+| B (secondary) | X1 | yes | yes (U_R=I) | yes | yes | 1 | PASS, non-discriminating ((a)) |
+| B | X2 | no (Choi 4 > 2) | — | OR/XOR: no | — | 1 | **FAIL (ill-posed)** |
+| B | X3 | yes | yes (U_R=swap; identity fails) | yes | yes | 1 | **PASS** (non-trivial by the frozen definition) |
+
+**Aggregate.** Headline, carrier A: **PASS, non-discriminating**. Secondary, carrier B: **PASS**. In both carriers, X2 (the only extension in which an event writes onto an already-written receiver of fixed dimension) is FAIL (ill-posed).
+
+**Rejecting controls for the checker (all rejected as required).** Overwrite→E (carrier B): O fails and E is touched. X3 on carrier B with U_R forced to I: the explicit identity fails. The OR composite on carrier A fails C_1C_2 (it creates |p_1⟩⟨p_2| coherence from |u_1⟩⟨u_2|). **Mirror (E-writing) controls:** they get the same W/O/composite verdicts as E-α under X1 and X3 on both carriers, with (D_E, D_R) = (1/5, 0). So P-a checks that E-α is internally composable. It cannot tell destinations apart, as declared in advance.
+
+Reading. P-a was a real chance to fail, and one natural reading (a single shared receiver qubit) did fail. The sharp premise is consistent only when each event gets fresh receiver capacity (a slot or a new register cell). In the primary carrier that makes commutation automatic. The one non-trivial pass (B-X3) depends on the preregistered allowance of a fixed relabeling of R, and the record keeps the event order up to that relabeling.
+
+## 4. P-b, entropy ledger
+
+**F1 (any Stinespring realization).** S(WρW^†) = S(ρ), and subadditivity gives S(ρ) ≤ S(C(ρ)) + S(ω_K). Hence S(ω_K) ≥ S(ρ_S) − S(C(ρ_S)) for every realization of C. **F2 (premise).** W|j⟩ = |s_j⟩⊗α⊗β_j, so ω_K = |α⟩⟨α| ⊗ ω_R. This was checked exactly on 20 random rational inputs for W_R and W_R^g. It gives S(ω_R) = S(ω_K) and S(ω_E) = 0. F1 and F2 both hold, so **P-b is DOWNGRADED to a consistency check** and does not count as a prediction. The diagonal grouping identity H(z) − H(z_o,z_p+z_u,z_v) = (z_p+z_u)h(z_u/(z_p+z_u)) is verified symbolically (residual 0).
+
+Numerics: mpmath, 50 digits, seed 269, 200 random inputs of ranks 1–4 plus 3 diagonal specials. The independent numpy checker used 2001 inputs.
+
+| realization | S(R) ≥ ΔS on all inputs | min slack | S(E)=0 | max S(E) bits | F1 min slack |
+|---|---|---|---|---|---|
+| W_R, W_R^g | yes | 0 (equality at z=(0,½,½,0)) | yes | ≤ 4e−51 | 0 |
+| W_E | no (81/203) | −1 | no | 1 | 0 |
+| W_Bell | yes | 0 | no | 1 | 0 |
+| W_W | no (at z=(0,½,½,0)) | h(¼)−1 = −0.18872 | no | 0.936 | 0 |
+| W_ER | yes | 0 | no | 1 | 0 |
+| W_θ(π/8) | yes | 0 | no | 0.6009 (constant on diagonals; D_E=0) | 0 |
+
+These match the preregistered expectations for every control. W_θ shows that E-blindness is not the same as zero exported entropy.
+
+## 5. P-c (not counted)
+
+R(π_p) = R(π_v) under W_R holds exactly (regression of T-268).
+
+## 6. Directive categories
+
+- **Native premises:** native tree, P1 contraction, I, owner/address data. Nothing new.
+- **New derived consequence:** inside the supplied benchmark only. Under the NEW premise, a single fixed-dimension receiver cannot absorb two events (dim R ≥ Choi rank of the composite channel). Sharp E-α composes only with fresh receiver capacity per event (slot or register cell). P-b is a consequence of the premise plus Stinespring.
+- **Still supplied:** the premise itself, the benchmark channel and factorization, the carriers, the receiver algebra, access, and the probability law.
+- **Constrains delivery?** No. It constrains the premise's own composability (receiver capacity), not where delivery goes. Mirror controls pass identically.
+- **Accessible observable?** None new.
+- **Physical vs mathematical:** mathematical only.
+
+## 7. Scope, deviations and disclosures
+
+- Local run on the shared Grok box, not GitHub Actions. Main script `t269_ealpha.py` ran once (start 12:37:21 MST, exit 0, empty stderr). Independent checker `t269_verify_np.py`: run 1 crashed (checker Choi sizing bug), run 2 disagreed on carrier B because its reference channel dropped coherences that C⊗id keeps (checker bug, Choi rank 8 instead of 4), run 3 agreed on every verdict. The failed checker runs and their scripts are preserved under `evidence/local-run-1/failed/`.
+- Two edits were made to the main script after it was written but **before** its single run: the mirror controls now check the untouched factor R, and the rational→mpf conversion was fixed. No main-script run preceded them.
+- The analytic expectations in T-269 were disclosed before the run, and every outcome matched them. In that sense the test confirms a pre-run analysis.
+- AGENTS.md closure items not claimed: a GitHub-run producer/verifier with pinned stack, a publication job with fresh reproduction, a merge audit, and CLOSED/CERTIFIED status. Only the single Gemini review runs on Actions. Finite exact checks are bounded evidence. The general statements are the proofs in §§3–4.
+- Native bridge NOT_DERIVED. No claimStatus or Retained Atlas change.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT t269_ealpha.py
+UTF8-BYTES 26659
+"""T-269/T-270 bounded test of the NEW ASSUMPTION sharp E-alpha (preregistered at agent-thread 742ee354,
+branch grok/ealpha-premise-test 21c1439e). Exact sympy on sparse basis-dictionary operators, plus a
+fixed-seed (269) mpmath 50-digit random-input check for P-b. Prints one JSON document.
+No verdict below upgrades anything: the premise stays NEW, the native bridge stays NOT_DERIVED."""
+import itertools, json, random, sys
+import sympy as sp
+import mpmath as mp
+
+R0 = sp.Rational
+I_ = sp.I
+s2 = sp.sqrt(2)
+out = {"seed": 269, "sympy": sp.__version__, "mpmath": mp.__version__, "python": sys.version.split()[0]}
+
+# ---------- sparse exact linear algebra on labelled basis tuples ----------
+def vadd(acc, vec, c=1):
+    for k, v in vec.items():
+        acc[k] = sp.nsimplify(acc.get(k, 0) + c * v) if False else acc.get(k, 0) + c * v
+    return acc
+
+def clean(vec):
+    r = {}
+    for k, v in vec.items():
+        v = sp.simplify(v)
+        if v != 0:
+            r[k] = v
+    return r
+
+def apply(V, vec):
+    """V: function basis-tuple -> sparse vector (dict)."""
+    acc = {}
+    for k, c in vec.items():
+        vadd(acc, V(k), c)
+    return clean(acc)
+
+def ptrace_op(x, y, keep):
+    """Tr over positions not in keep of |x><y| (x,y sparse vectors over tuples). Returns dict (a,b)->coeff."""
+    acc = {}
+    for kx, cx in x.items():
+        for ky, cy in y.items():
+            tx = tuple(kx[i] for i in range(len(kx)) if i not in keep)
+            ty = tuple(ky[i] for i in range(len(ky)) if i not in keep)
+            if tx != ty:
+                continue
+            a = tuple(kx[i] for i in keep); b = tuple(ky[i] for i in keep)
+            acc[(a, b)] = acc.get((a, b), 0) + cx * sp.conjugate(cy)
+    return {k: sp.simplify(v) for k, v in acc.items() if sp.simplify(v) != 0}
+
+def opeq(A, B):
+    keys = set(A) | set(B)
+    return all(sp.simplify(A.get(k, 0) - B.get(k, 0)) == 0 for k in keys)
+
+def opsum(ops_coeffs):
+    acc = {}
+    for op, c in ops_coeffs:
+        for k, v in op.items():
+            acc[k] = acc.get(k, 0) + c * v
+    return {k: sp.simplify(v) for k, v in acc.items() if sp.simplify(v) != 0}
+
+def to_matrix(op, labels):
+    idx = {l: i for i, l in enumerate(labels)}
+    M = sp.zeros(len(labels))
+    for (a, b), v in op.items():
+        M[idx[a], idx[b]] += v
+    return M
+
+def half_trace_norm(M):
+    M = sp.Matrix(M)
+    if M.is_diagonal():
+        return sp.nsimplify(sp.simplify(sum(sp.Abs(M[i, i]) for i in range(M.rows)) / 2))
+    ev = M.eigenvals()
+    return sp.simplify(sum(sp.Abs(e) * m for e, m in ev.items()) / 2)
+
+# ---------- single-event benchmark (S,E,R) ----------
+X = ['o', 'p', 'u', 'v']
+
+def Cmap(s, t, P, U):
+    """C_k(|s><t|) for one P1 event with erased u=U, parent p=P on basis labels; returns dict."""
+    if s != U and t != U:
+        return {(s, t): 1}
+    if s == U and t == U:
+        return {(P, P): 1}
+    return {}
+
+def frame_W(e0, eu):
+    """frames are dicts (E,R)->coeff. W|j> = |j> e0 (j != u), W|u> = |p> eu. tuples (S,E,R)."""
+    def V(k):
+        (s,) = k
+        if s == 'u':
+            return {('p',) + kk: c for kk, c in eu.items()}
+        return {(s,) + kk: c for kk, c in e0.items()}
+    return V
+
+ket = lambda e, r: {(e, r): 1}
+def lin(*pairs):
+    acc = {}
+    for c, v in pairs:
+        for k, x in v.items():
+            acc[k] = acc.get(k, 0) + c * x
+    return {k: sp.simplify(x) for k, x in acc.items() if sp.simplify(x) != 0}
+
+def local(a, b, vec):
+    """apply a (on E) ⊗ b (on R), 2x2 sympy matrices, to a K-vector."""
+    acc = {}
+    for (e, r), c in vec.items():
+        for e2 in (0, 1):
+            for r2 in (0, 1):
+                acc[(e2, r2)] = acc.get((e2, r2), 0) + a[e2, e] * b[r2, r] * c
+    return {k: sp.simplify(x) for k, x in acc.items() if sp.simplify(x) != 0}
+
+th = sp.pi / 8
+ga = sp.Matrix([[R0(3, 5), R0(-4, 5)], [R0(4, 5), R0(3, 5)]])
+gb = sp.Matrix([[R0(3, 5), 4 * I_ / 5], [4 * I_ / 5, R0(3, 5)]])
+assert sp.simplify(ga * ga.H - sp.eye(2)) == sp.zeros(2) and sp.simplify(gb * gb.H - sp.eye(2)) == sp.zeros(2)
+FR = {
+    'W_R': (ket(0, 0), ket(0, 1)),
+    'W_R^g': (local(ga, gb, ket(0, 0)), local(ga, gb, ket(0, 1))),
+    'W_E': (ket(0, 0), ket(1, 0)),
+    'W_Bell': (lin((1 / s2, ket(0, 0)), (1 / s2, ket(1, 1))), lin((1 / s2, ket(0, 0)), (-1 / s2, ket(1, 1)))),
+    'W_W': (ket(0, 0), lin((1 / s2, ket(0, 1)), (1 / s2, ket(1, 0)))),
+    'W_ER': (ket(0, 0), ket(1, 1)),
+    'W_theta(pi/8)': (lin((sp.cos(th), ket(0, 0)), (sp.sin(th), ket(1, 1))), lin((sp.cos(th), ket(0, 1)), (sp.sin(th), ket(1, 0)))),
+}
+EXPECT_ADMIT = {'W_R': True, 'W_R^g': True, 'W_E': False, 'W_Bell': False, 'W_W': False, 'W_ER': False, 'W_theta(pi/8)': False}
+
+def single_checks(name, e0, eu):
+    V = frame_W(e0, eu)
+    res = {}
+    # implements C on every matrix unit (trace E,R: keep position 0)
+    ok = True
+    for s in X:
+        for t in X:
+            got = ptrace_op(V((s,)), V((t,)), keep=[0])
+            want = {((a,), (b,)): c for (a, b), c in Cmap(s, t, 'p', 'u').items()}
+            ok &= opeq(got, want)
+    res['implements_C_all_matrix_units'] = bool(ok)
+    # isometry
+    res['isometry'] = bool(all(sp.simplify(sum(V((s,)).get(k, 0) * sp.conjugate(V((t,)).get(k, 0)) for k in set(V((s,))) | set(V((t,)))) - (1 if s == t else 0)) == 0 for s in X for t in X))
+    # (i) product / same-E-factor / orthogonal-R form
+    Kv = lambda vec: {(k[1], k[2]): c for k, c in vec.items()}
+    rhoE0 = to_matrix(ptrace_op(e0, e0, keep=[0]), [(0,), (1,)])
+    rhoEu = to_matrix(ptrace_op(eu, eu, keep=[0]), [(0,), (1,)])
+    sameE = sp.simplify(rhoE0 - rhoEu) == sp.zeros(2)
+    pureE = sp.simplify((rhoE0 * rhoE0 - rhoE0)) == sp.zeros(2)
+    form_i = bool(sameE and pureE)  # same pure E factor => both product; orthogonality of e0,eu then forces orthogonal R factors
+    res['form_i_sameE_pure'] = form_i
+    # (ii) D_E, D_R on benchmark pair z+ = (1,1,2,1)/5, z- = (1,1,1,2)/5
+    zp = dict(zip(X, [R0(1, 5), R0(1, 5), R0(2, 5), R0(1, 5)]))
+    zm = dict(zip(X, [R0(1, 5), R0(1, 5), R0(1, 5), R0(2, 5)]))
+    def marg(z, pos):
+        return opsum([(ptrace_op(V((s,)), V((s,)), keep=[pos]), z[s]) for s in X])
+    DE = half_trace_norm(to_matrix(marg(zp, 1), [(0,), (1,)]) - to_matrix(marg(zm, 1), [(0,), (1,)]))
+    DR = half_trace_norm(to_matrix(marg(zp, 2), [(0,), (1,)]) - to_matrix(marg(zm, 2), [(0,), (1,)]))
+    res['D_E'] = str(sp.nsimplify(sp.simplify(DE))); res['D_R'] = str(sp.simplify(DR))
+    form_ii = bool(sp.simplify(DE) == 0 and sp.simplify(DR - R0(1, 5)) == 0)
+    res['form_ii_DE0_DR1/5'] = form_ii
+    # basis form J_R W = W pi_u
+    JR = lambda vec: {k: c for k, c in vec.items() if k[2] == 1}
+    res['basis_form_JRW_eq_Wpiu'] = bool(all(opeq({(k, 0): v for k, v in JR(V((s,))).items()}, {(k, 0): v for k, v in (V((s,)) if s == 'u' else {}).items()}) for s in X))
+    res['admitted'] = form_i and form_ii
+    res['forms_agree'] = form_i == form_ii
+    res['expected_admit'] = EXPECT_ADMIT[name]
+    res['matches_expectation'] = res['admitted'] == EXPECT_ADMIT[name]
+    return res
+
+out['admission'] = {n: single_checks(n, *FR[n]) for n in FR}
+
+# ---------- P-c regression: R(pi_p) == R(pi_v) under W_R ----------
+VR = frame_W(*FR['W_R'])
+out['P_c_regression_R(pi_p)==R(pi_v)_W_R'] = bool(opeq(ptrace_op(VR(('p',)), VR(('p',)), keep=[2]), ptrace_op(VR(('v',)), VR(('v',)), keep=[2])))
+
+# ---------- two-event carriers ----------
+A_S = ['o', 'p1', 'u1', 'p2', 'u2', 'v']
+B_S = [(a, b) for a in X for b in X]
+EV_A = {1: ('p1', 'u1'), 2: ('p2', 'u2')}
+
+def Pk_A(k, s):
+    P, U = EV_A[k]
+    return P if s == U else s
+def Pk_B(k, s):
+    s = list(s)
+    if s[k - 1] == 'u':
+        s[k - 1] = 'p'
+    return tuple(s)
+def erased_A(k, s):
+    return s == EV_A[k][1]
+def erased_B(k, s):
+    return s[k - 1] == 'u'
+
+# native commutation P1P2 = P2P1 and channel commutation C1C2 = C2C1 (exact, on carriers)
+def native_comm(S, Pk):
+    return all(Pk(1, Pk(2, s)) == Pk(2, Pk(1, s)) for s in S)
+
+def chan_A(k, s, t):
+    P, U = EV_A[k]
+    return Cmap(s, t, P, U)
+def chan_B(k, s, t):
+    i = k - 1
+    if s[1 - i] != t[1 - i] and False:
+        pass
+    loc = Cmap(s[i], t[i], 'p', 'u')
+    r = {}
+    for (a, b), c in loc.items():
+        s2_ = list(s); t2_ = list(t); s2_[i] = a; t2_[i] = b
+        r[(tuple(s2_), tuple(t2_))] = c
+    return r
+def chan_apply(ch, k, op):
+    acc = {}
+    for (s, t), c in op.items():
+        for kk, v in ch(k, s, t).items():
+            acc[kk] = acc.get(kk, 0) + c * v
+    return {kk: v for kk, v in acc.items() if v != 0}
+def chan_comm(S, ch):
+    for s in S:
+        for t in S:
+            u = {(s, t): 1}
+            if not opeq(chan_apply(ch, 1, chan_apply(ch, 2, u)), chan_apply(ch, 2, chan_apply(ch, 1, u))):
+                return False
+    return True
+out['native_P1P2_eq_P2P1'] = {'A': native_comm(A_S, Pk_A), 'B': native_comm(B_S, Pk_B)}
+out['channel_C1C2_eq_C2C1'] = {'A': chan_comm(A_S, chan_A), 'B': chan_comm(B_S, chan_B)}
+
+# Choi rank of composite C1C2 (Kraus products)
+def choi_rank(S, kraus_list):
+    idx = {s: i for i, s in enumerate(S)}
+    n = len(S)
+    def K(k, which):
+        M = sp.zeros(n)
+        P_, U_ = which
+        for s in S:
+            if k == 'Q':
+                if not U_(s):
+                    M[idx[s], idx[s]] = 1
+            else:
+                if U_(s):
+                    M[idx[P_(s)], idx[s]] = 1
+        return M
+    mats = kraus_list(K)
+    cols = [sp.Matrix(m.reshape(n * n, 1)) for m in mats]
+    return sp.Matrix.hstack(*cols).rank()
+def krausA(K):
+    k1 = [K(t, (lambda s: Pk_A(1, s), lambda s: erased_A(1, s))) for t in ('Q', 'L')]
+    k2 = [K(t, (lambda s: Pk_A(2, s), lambda s: erased_A(2, s))) for t in ('Q', 'L')]
+    return [a * b for a in k1 for b in k2]
+def krausB(K):
+    k1 = [K(t, (lambda s: Pk_B(1, s), lambda s: erased_B(1, s))) for t in ('Q', 'L')]
+    k2 = [K(t, (lambda s: Pk_B(2, s), lambda s: erased_B(2, s))) for t in ('Q', 'L')]
+    return [a * b for a in k1 for b in k2]
+out['choi_rank_C1C2'] = {'A': int(choi_rank(A_S, krausA)), 'B': int(choi_rank(B_S, krausB))}
+
+# ---------- extensions. Tuple layout: (s, e, rcontent). E is a qubit initially 0 (E untouched = stays 0). ----------
+def make_ext(name, carrier, mirror=False):
+    Pk = Pk_A if carrier == 'A' else Pk_B
+    er = erased_A if carrier == 'A' else erased_B
+    if name == 'X1':
+        fresh = (0, 0)
+        def write(k, r):
+            if r[k - 1] != 0:
+                return None
+            r = list(r); r[k - 1] = 1; return tuple(r)
+    elif name == 'X3':
+        fresh = ()
+        def write(k, r):
+            if k in r:
+                return None
+            return r + (k,)
+    elif name == 'OVERWRITE':  # rejecting control: R qutrit holds latest label, old content displaced into E
+        fresh = 0
+    else:
+        raise ValueError
+    def V(k):
+        def Vk(key):
+            s, e, r = key
+            if name == 'OVERWRITE':
+                if er(k, s):
+                    if e != 0:
+                        return None
+                    return {(Pk(k, s), r, k): 1}
+                return {(s, e, r): 1}
+            if er(k, s):
+                w = write(k, r)
+                if w is None:
+                    return None
+                if mirror:  # E-writing mirror control: record goes to E register instead; R untouched
+                    raise ValueError
+                return {(Pk(k, s), e, w): 1}
+            return {(s, e, r): 1}
+        return Vk
+    return V, fresh
+
+def make_mirror(name, carrier):
+    """mirror control: identical write rule, but the record register is E and R stays blank."""
+    Pk = Pk_A if carrier == 'A' else Pk_B
+    er = erased_A if carrier == 'A' else erased_B
+    freshE = (0, 0) if name == 'X1' else ()
+    def write(k, r):
+        if name == 'X1':
+            if r[k - 1] != 0:
+                return None
+            r = list(r); r[k - 1] = 1; return tuple(r)
+        if k in r:
+            return None
+        return r + (k,)
+    def V(k):
+        def Vk(key):
+            s, e, r = key
+            if er(k, s):
+                w = write(k, e)
+                if w is None:
+                    return None
+                return {(Pk(k, s), w, r): 1}
+            return {(s, e, r): 1}
+        return Vk
+    return V, freshE, 0
+
+def run_ext(V, S, carrier, fresh_e, fresh_r, label, U_R=None, upos=1):
+    """upos = position of the factor that must stay untouched (1 = E for E-alpha; 2 = R for the E<->R mirror control)."""
+    ch = chan_A if carrier == 'A' else chan_B
+    er = erased_A if carrier == 'A' else erased_B
+    res = {}
+    def Vsafe(k):
+        f = V(k)
+        def g(key):
+            r = f(key)
+            if r is None:
+                raise RuntimeError('undefined on reachable domain')
+            return r
+        return g
+    try:
+        V1, V2 = Vsafe(1), Vsafe(2)
+        fresh = lambda s: {(s, fresh_e, fresh_r): 1}
+        # domains: range of the other event's (fresh) output
+        dom = {1: set(), 2: set()}
+        for s in S:
+            for kk in apply(V2, fresh(s)): dom[1].add(kk)
+            for kk in apply(V1, fresh(s)): dom[2].add(kk)
+        # (W) well-posed: per-event isometry on its domain and channel condition (C_k ⊗ id_E) after tracing R, on all matrix units
+        W_ok = True
+        for k, Vk in ((1, V1), (2, V2)):
+            D = sorted(dom[k], key=str)
+            imgs = {x: Vk(x) for x in D}
+            for x in D:
+                for y in D:
+                    ip = sum(imgs[x].get(z, 0) * sp.conjugate(imgs[y].get(z, 0)) for z in set(imgs[x]) | set(imgs[y]))
+                    if sp.simplify(ip - (1 if x == y else 0)) != 0:
+                        W_ok = False
+                    got = ptrace_op(imgs[x], imgs[y], keep=[0, upos])
+                    base = ptrace_op({x: 1}, {y: 1}, keep=[0, upos])
+                    want = {}
+                    for ((a, ea), (b, eb)), c in base.items():
+                        for (a2, b2), c2 in ch(k, a, b).items():
+                            want[((a2, ea), (b2, eb))] = want.get(((a2, ea), (b2, eb)), 0) + c * c2
+                    if not opeq(got, want):
+                        W_ok = False
+        res['W_well_posed'] = bool(W_ok)
+        # (O) S⊗E channels of V12 and V21 equal on every matrix unit; composite implements C1C2 (trace E and R)
+        V12 = {s: apply(V1, apply(V2, fresh(s))) for s in S}
+        V21 = {s: apply(V2, apply(V1, fresh(s))) for s in S}
+        O_ok = True; comp_ok = True
+        for s in S:
+            for t in S:
+                if not opeq(ptrace_op(V12[s], V12[t], keep=[0, upos]), ptrace_op(V21[s], V21[t], keep=[0, upos])):
+                    O_ok = False
+                want = chan_apply(ch, 1, chan_apply(ch, 2, {(s, t): 1}))
+                want = {((a,), (b,)): c for (a, b), c in want.items()}
+                if not opeq(ptrace_op(V12[s], V12[t], keep=[0]), want):
+                    comp_ok = False
+        res['O_SE_channel_equal'] = bool(O_ok)
+        res['composite_implements_C1C2'] = bool(comp_ok)
+        if U_R is not None:
+            res['explicit_U_R'] = U_R[0]
+            res['explicit_U_R_identity_holds'] = bool(all(opeq(V12[s], {(a, e, U_R[1](r)): c for (a, e, r), c in V21[s].items()}) for s in S))
+        # E untouched
+        fz = fresh_e if upos == 1 else fresh_r
+        res['untouched_factor_fixed'] = bool(all(k[upos] == fz for s in S for k in V12[s]) and all(k[upos] == fz for s in S for k in V21[s]))
+        res['E_untouched_all_outputs'] = bool(all(k[1] == fresh_e for s in S for k in V12[s]) and all(k[1] == fresh_e for s in S for k in V21[s]))
+        # (B) per-event benchmark contrasts at E and R (diagonal inputs, other event active)
+        if carrier == 'A':
+            pairs = {1: ([1, 1, 4, 1, 1, 2], [1, 1, 2, 1, 1, 4]), 2: ([1, 1, 1, 1, 4, 2], [1, 1, 1, 1, 2, 4])}
+            pairs = {k: tuple(dict(zip(A_S, [R0(x, 10) for x in z])) for z in v) for k, v in pairs.items()}
+        else:
+            zp = dict(zip(X, [R0(1, 5), R0(1, 5), R0(2, 5), R0(1, 5)])); zm = dict(zip(X, [R0(1, 5), R0(1, 5), R0(1, 5), R0(2, 5)]))
+            pairs = {1: ({(a, b): zp[a] * zp[b] for a, b in B_S}, {(a, b): zm[a] * zp[b] for a, b in B_S}),
+                     2: ({(a, b): zp[a] * zp[b] for a, b in B_S}, {(a, b): zp[a] * zm[b] for a, b in B_S})}
+        Bres = {}
+        for k, (zplus, zminus) in pairs.items():
+            def marg(z, pos):
+                return opsum([(ptrace_op(V12[s], V12[s], keep=[pos]), z[s]) for s in S])
+            dd = {}
+            for pos, nm in ((1, 'D_E'), (2, 'D_R')):
+                mp_, mm_ = marg(zplus, pos), marg(zminus, pos)
+                labs = sorted({a for (a, b) in list(mp_) + list(mm_)} | {b for (a, b) in list(mp_) + list(mm_)}, key=str)
+                dd[nm] = sp.simplify(half_trace_norm(to_matrix(mp_, labs) - to_matrix(mm_, labs)))
+            Bres['event%d' % k] = {kk: str(v) for kk, v in dd.items()}
+            Bres['event%d_ok' % k] = bool(dd['D_E'] == 0 and sp.simplify(dd['D_R'] - R0(1, 5)) == 0)
+        res['B_contrasts'] = Bres
+        res['B_E_blind_orbit'] = bool(res['E_untouched_all_outputs'] and Bres['event1_ok'] and Bres['event2_ok'])
+        # triviality diagnostics
+        res['doubly_written_branches'] = sum(1 for s in S if er(1, s) and er(2, s))
+        res['PASS'] = bool(W_ok and O_ok and comp_ok and res['B_E_blind_orbit'])
+    except RuntimeError as ex:
+        res['W_well_posed'] = False; res['PASS'] = False; res['error'] = str(ex)
+    return res
+
+ext = {}
+for carrier, S in (('A', A_S), ('B', B_S)):
+    V, fr = make_ext('X1', carrier)
+    r1 = run_ext(V, S, carrier, 0, fr, 'X1', U_R=('identity', lambda r: r))
+    r1['trivial_reason'] = '(a) writes act on disjoint R factors by construction' + ('; (b) also holds' if r1.get('doubly_written_branches') == 0 else '')
+    r1['verdict'] = ('PASS, non-discriminating' if r1['PASS'] else ('FAIL (ill-posed)' if not r1['W_well_posed'] else 'FAIL'))
+    V, fr = make_ext('X3', carrier)
+    swap = lambda r: {(1, 2): (2, 1), (2, 1): (1, 2)}.get(r, r)
+    r3 = run_ext(V, S, carrier, 0, fr, 'X3', U_R=('swap [1,2]<->[2,1]', swap))
+    triv3 = r3.get('doubly_written_branches', 1) == 0
+    r3['trivial_reason'] = '(b) no doubly-written branch' if triv3 else 'none: a branch is written twice into the same register'
+    r3['verdict'] = ('FAIL (ill-posed)' if not r3['W_well_posed'] else ('FAIL' if not r3['PASS'] else ('PASS, non-discriminating' if triv3 else 'PASS')))
+    # X2 single shared qubit: rule-independent obstruction via Choi rank, plus explicit OR and XOR candidates
+    cr = out['choi_rank_C1C2'][carrier]
+    x2 = {'rule_independent_obstruction': 'composite would dilate C1C2 with environment dim 2 (E pure); needs Choi rank <= 2',
+          'choi_rank': cr, 'obstruction_holds': cr > 2}
+    for rule in ('OR', 'XOR'):
+        Pk = Pk_A if carrier == 'A' else Pk_B; er = erased_A if carrier == 'A' else erased_B
+        def Vq(k, rule=rule, Pk=Pk, er=er):
+            def f(key):
+                s, e, r = key
+                if er(k, s):
+                    return {(Pk(k, s), e, (1 if rule == 'OR' else 1 - r)): 1}
+                return {(s, e, r): 1}
+            return f
+        x2[rule] = {kk: vv for kk, vv in run_ext(Vq, S, carrier, 0, 0, 'X2-' + rule).items() if kk in ('W_well_posed', 'composite_implements_C1C2', 'O_SE_channel_equal', 'PASS', 'error')}
+    x2['verdict'] = 'FAIL (ill-posed)' if x2['obstruction_holds'] else 'UNDECIDED'
+    passing = [(n, r['verdict']) for n, r in (('X1', r1), ('X3', r3))]
+    if x2['verdict'].startswith('PASS'):
+        passing.append(('X2', x2['verdict']))
+    pv = [v for n, v in passing if v.startswith('PASS')]
+    agg = 'FAIL' if not pv else ('PASS' if 'PASS' in pv else 'PASS, non-discriminating')
+    ext[carrier] = {'X1': r1, 'X2': x2, 'X3': r3, 'aggregate': agg}
+
+# rejecting controls for the P-a checker
+rej = {}
+V, fr = make_ext('OVERWRITE', 'B')
+ro = run_ext(V, B_S, 'B', 0, fr, 'OVERWRITE')
+rej['overwrite_to_E_B'] = {'O_SE_channel_equal': ro.get('O_SE_channel_equal'), 'E_untouched_all_outputs': ro.get('E_untouched_all_outputs'),
+                           'rejected': (ro.get('O_SE_channel_equal') is False) and (ro.get('E_untouched_all_outputs') is False)}
+V, fr = make_ext('X3', 'B')
+rid = run_ext(V, B_S, 'B', 0, fr, 'X3-idU', U_R=('identity (forced)', lambda r: r))
+rej['X3_B_with_U_R_identity'] = {'explicit_U_R_identity_holds': rid['explicit_U_R_identity_holds'], 'rejected': rid['explicit_U_R_identity_holds'] is False}
+rej['X2_OR_composite_A'] = {'composite_implements_C1C2': ext['A']['X2']['OR']['composite_implements_C1C2'],
+                            'rejected': ext['A']['X2']['OR']['composite_implements_C1C2'] is False}
+mir = {}
+for carrier, S in (('A', A_S), ('B', B_S)):
+    for nm in ('X1', 'X3'):
+        V, fe, frr = make_mirror(nm, carrier)
+        # in the mirror the E slot is the register; reuse run_ext with fresh_e=register, fresh_r=0
+        rm = run_ext(V, S, carrier, fe, frr, 'mirror-' + nm, upos=2)
+        mir[carrier + '-' + nm] = {'W_well_posed': rm['W_well_posed'], 'O_SE_channel_equal': rm.get('O_SE_channel_equal'),
+                                   'composite_implements_C1C2': rm.get('composite_implements_C1C2'), 'R_untouched': rm.get('untouched_factor_fixed'), 'B_E_blind_orbit': rm.get('B_E_blind_orbit'),
+                                   'same_W_O_as_Ealpha': (rm['W_well_posed'] == ext[carrier][nm]['W_well_posed']) and (rm.get('O_SE_channel_equal') == ext[carrier][nm]['O_SE_channel_equal']) and (rm.get('composite_implements_C1C2') == ext[carrier][nm]['composite_implements_C1C2']),
+                                   'B_contrasts': rm.get('B_contrasts')}
+rej['mirror_E_writing'] = mir
+out['P_a'] = ext
+out['P_a_rejecting_controls'] = rej
+out['P_a_headline_carrier_A'] = ext['A']['aggregate']
+out['P_a_secondary_carrier_B'] = ext['B']['aggregate']
+
+# ---------- P-b ----------
+z_o, z_p, z_u, z_v = sp.symbols('z_o z_p z_u z_v', positive=True)
+H = lambda *ps: -sum(p * sp.log(p) for p in ps)
+grouping = sp.simplify(sp.expand_log(H(z_o, z_p, z_u, z_v) - H(z_o, z_p + z_u, z_v) - (z_p + z_u) * H(z_u / (z_p + z_u), z_p / (z_p + z_u)), force=True))
+out['P_b_diag_grouping_identity_residual'] = str(grouping)
+# F2 exact: premise realizations give omega_K = |alpha><alpha| ⊗ omega_R on 20 random rational inputs
+rng = random.Random(269)
+def rand_rat_rho(n):
+    A = sp.Matrix(n, n, lambda i, j: sp.Rational(rng.randint(-5, 5)) + I_ * sp.Rational(rng.randint(-5, 5)))
+    M = A * A.H
+    return M / M.trace()
+def dense_W(e0, eu):
+    V = frame_W(e0, eu)
+    labs = [(s, e, r) for s in X for e in (0, 1) for r in (0, 1)]
+    M = sp.zeros(16, 4)
+    for j, s in enumerate(X):
+        for k, c in V((s,)).items():
+            M[labs.index(k), j] = c
+    return M, labs
+def ptrace_dense(rho, labs, keep):
+    kl = sorted({tuple(l[i] for i in keep) for l in labs})
+    M = sp.zeros(len(kl))
+    for a, la in enumerate(labs):
+        for b, lb in enumerate(labs):
+            if all(la[i] == lb[i] for i in range(3) if i not in keep):
+                M[kl.index(tuple(la[i] for i in keep)), kl.index(tuple(lb[i] for i in keep))] += rho[a, b]
+    return M, kl
+F2 = {}
+for nm in ('W_R', 'W_R^g'):
+    W, labs = dense_W(*FR[nm])
+    # alpha = E factor of e0 (pure E marginal)
+    rE0 = to_matrix(ptrace_op(FR[nm][0], FR[nm][0], keep=[0]), [(0,), (1,)])
+    ok = True
+    for _ in range(20):
+        rho = rand_rat_rho(4)
+        om = W * rho * W.H
+        K, kl = ptrace_dense(om, labs, keep=[1, 2])
+        Rm, _ = ptrace_dense(om, labs, keep=[2])
+        ok &= sp.simplify(K - sp.kronecker_product(rE0, Rm)) == sp.zeros(4)
+    F2[nm] = bool(ok)
+out['P_b_F2_premise_omegaK_eq_alpha_tensor_omegaR'] = F2
+
+mp.mp.dps = 50
+rngm = random.Random(269)
+def mpS(M):
+    ev = mp.eighe(M)[0] if hasattr(mp, 'eighe') else mp.eigh(M)[0]
+    return -mp.fsum([x * mp.log(x, 2) for x in ev if x > mp.mpf(10) ** -45])
+def mp_rand_rho(rank):
+    A = mp.matrix(4, rank)
+    for i in range(4):
+        for j in range(rank):
+            A[i, j] = mp.mpc(rngm.gauss(0, 1), rngm.gauss(0, 1))
+    M = A * A.transpose_conj()
+    tr = mp.fsum([M[i, i] for i in range(4)])
+    return M / tr
+def mp_ptrace(om, labs, keep):
+    kl = sorted({tuple(l[i] for i in keep) for l in labs})
+    M = mp.matrix(len(kl), len(kl))
+    for a, la in enumerate(labs):
+        for b, lb in enumerate(labs):
+            if all(la[i] == lb[i] for i in range(3) if i not in keep):
+                M[kl.index(tuple(la[i] for i in keep)), kl.index(tuple(lb[i] for i in keep))] += om[a, b]
+    return M
+def mpC(rho):
+    idx = {s: i for i, s in enumerate(X)}
+    M = mp.matrix(4, 4)
+    for s in X:
+        for t in X:
+            for (a, b), c in Cmap(s, t, 'p', 'u').items():
+                M[idx[a], idx[b]] += c * rho[idx[s], idx[t]]
+    return M
+inputs = []
+for i in range(200):
+    inputs.append(mp_rand_rho(1 + i % 4))
+diag_specials = [[0, R0(1, 2), R0(1, 2), 0], [R0(1, 5), R0(1, 5), R0(2, 5), R0(1, 5)], [R0(1, 10), R0(3, 10), R0(3, 10), R0(3, 10)]]
+Pb = {}
+for nm in FR:
+    W, labs = dense_W(*FR[nm])
+    Wm = mp.matrix([[complex(sp.N(W[i, j], 60)) if False else mp.mpc(str(sp.re(sp.N(W[i, j], 60))), str(sp.im(sp.N(W[i, j], 60)))) for j in range(4)] for i in range(16)])
+    minR = None; minK = None; maxE = mp.mpf(0); violR = 0
+    allin = inputs + [mp.diag([mp.mpf(sp.Rational(x).p) / sp.Rational(x).q for x in d]) for d in diag_specials]
+    rec_special = []
+    for n_, rho in enumerate(allin):
+        om = Wm * rho * Wm.transpose_conj()
+        dS = mpS(rho) - mpS(mpC(rho))
+        SR = mpS(mp_ptrace(om, labs, [2])); SE = mpS(mp_ptrace(om, labs, [1])); SK = mpS(mp_ptrace(om, labs, [1, 2]))
+        sl = SR - dS; sk = SK - dS
+        minR = sl if minR is None or sl < minR else minR
+        minK = sk if minK is None or sk < minK else minK
+        maxE = SE if SE > maxE else maxE
+        if sl < -mp.mpf(10) ** -40:
+            violR += 1
+        if n_ >= len(inputs):
+            rec_special.append({'z': [str(x) for x in diag_specials[n_ - len(inputs)]], 'S_R': mp.nstr(SR, 12), 'S_E': mp.nstr(SE, 12), 'dS': mp.nstr(dS, 12)})
+    Pb[nm] = {'min_slack_R_ineq': mp.nstr(minR, 15), 'R_ineq_violations': violR, 'min_slack_K_ineq(F1)': mp.nstr(minK, 15),
+              'F1_holds': bool(minK > -mp.mpf(10) ** -40), 'max_S_E_bits': mp.nstr(maxE, 15),
+              'R_ineq_holds_all': violR == 0, 'S_E_zero_all': bool(maxE < mp.mpf(10) ** -40), 'diag_specials': rec_special}
+out['P_b_numeric'] = Pb
+out['P_b_downgraded_to_consistency_check'] = bool(all(Pb[n]['F1_holds'] for n in Pb) and all(F2.values()))
+out['P_b_premise_realizations_pass_consistency'] = bool(all(Pb[n]['R_ineq_holds_all'] and Pb[n]['S_E_zero_all'] for n in ('W_R', 'W_R^g')))
+print(json.dumps(out, indent=1, sort_keys=True, default=str))
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT t269_verify_np.py
+UTF8-BYTES 7786
+"""Independent dense-numpy checker for t269_ealpha.py (different construction: dense matrices, Choi matrices,
+SVD ranks, float64 entropies with numpy default_rng(269)). Prints JSON of booleans and key numbers."""
+import itertools, json
+import numpy as np
+tol = 1e-10
+out = {}
+X = ['o', 'p', 'u', 'v']
+def C1(rho, P, U, idx):
+    Q = np.eye(rho.shape[0]); Q[idx[U], idx[U]] = 0
+    r = Q @ rho @ Q
+    r[idx[P], idx[P]] += rho[idx[U], idx[U]]
+    return r
+def choi(ch, n):
+    J = None
+    for i in range(n):
+        for j in range(n):
+            E = np.zeros((n, n)); E[i, j] = 1
+            t = np.kron(E, ch(E))
+            J = t if J is None else J + t
+    return J
+def ptr(rho, dims, keep):
+    n = len(dims); r = rho.reshape(dims + dims)
+    tr = [i for i in range(n) if i not in keep]
+    for c, i in enumerate(sorted(tr, reverse=True)):
+        r = np.trace(r, axis1=i, axis2=i + r.ndim // 2)
+    d = int(np.prod([dims[i] for i in keep]))
+    return r.reshape(d, d)
+def H(p):
+    p = np.real(p); p = p[p > 1e-14]; return float(-(p * np.log2(p)).sum())
+def S(rho):
+    return H(np.linalg.eigvalsh((rho + rho.conj().T) / 2))
+def D(a, b):
+    return 0.5 * np.abs(np.linalg.eigvalsh(a - b)).sum()
+# single-event frames, K = E(x)R, index 2e+r
+k = lambda e, r: np.eye(4)[2 * e + r]
+s2 = np.sqrt(2); th = np.pi / 8
+ga = np.array([[.6, -.8], [.8, .6]]); gb = np.array([[.6, .8j], [.8j, .6]])
+G = np.kron(ga, gb)
+FR = {'W_R': (k(0, 0), k(0, 1)), 'W_R^g': (G @ k(0, 0), G @ k(0, 1)), 'W_E': (k(0, 0), k(1, 0)),
+      'W_Bell': ((k(0, 0) + k(1, 1)) / s2, (k(0, 0) - k(1, 1)) / s2), 'W_W': (k(0, 0), (k(0, 1) + k(1, 0)) / s2),
+      'W_ER': (k(0, 0), k(1, 1)), 'W_theta(pi/8)': (np.cos(th) * k(0, 0) + np.sin(th) * k(1, 1), np.cos(th) * k(0, 1) + np.sin(th) * k(1, 0))}
+idx = {s: i for i, s in enumerate(X)}
+def Wmat(e0, eu):
+    W = np.zeros((16, 4), complex)
+    for s in X:
+        tgt = 'p' if s == 'u' else s
+        W[:, idx[s]] = np.kron(np.eye(4)[idx[tgt]], eu if s == 'u' else e0)
+    return W
+zp = np.diag([1, 1, 2, 1]) / 5; zm = np.diag([1, 1, 1, 2]) / 5
+adm = {}
+for nm, (e0, eu) in FR.items():
+    W = Wmat(e0, eu)
+    chW = lambda r, W=W: ptr(W @ r @ W.conj().T, [4, 2, 2], [0])
+    okC = np.allclose(choi(chW, 4), choi(lambda r: C1(r, 'p', 'u', idx), 4), atol=tol)
+    oE = lambda z: ptr(W @ z @ W.conj().T, [4, 2, 2], [1]); oR = lambda z: ptr(W @ z @ W.conj().T, [4, 2, 2], [2])
+    DE, DR = D(oE(zp), oE(zm)), D(oR(zp), oR(zm))
+    adm[nm] = {'implements_C': bool(okC), 'D_E': round(DE, 12), 'D_R': round(DR, 12), 'admitted': bool(abs(DE) < tol and abs(DR - .2) < tol)}
+out['admission'] = adm
+# two-event carriers as dense maps on S(x)E(x)R
+def carrier(c):
+    if c == 'A':
+        S_ = ['o', 'p1', 'u1', 'p2', 'u2', 'v']
+        er = lambda kk, s: s == ('u1' if kk == 1 else 'u2'); Pk = lambda kk, s: ('p1' if kk == 1 else 'p2') if er(kk, s) else s
+    else:
+        S_ = [(a, b) for a in X for b in X]
+        er = lambda kk, s: s[kk - 1] == 'u'
+        Pk = lambda kk, s: tuple('p' if (i == kk - 1 and s[i] == 'u') else s[i] for i in range(2))
+    return S_, er, Pk
+def chan_ref(c):
+    S_, er, Pk = carrier(c); n = len(S_); ii = {s: i for i, s in enumerate(S_)}
+    def Ck(kk, rho):
+        # Kraus form C_k(rho) = Q rho Q + L rho L^dag, L = sum_{erased s} |P_k s><s| (keeps coherences in the other factor)
+        Q = np.diag([0. if er(kk, s) else 1. for s in S_])
+        L = np.zeros((n, n))
+        for s in S_:
+            if er(kk, s):
+                L[ii[Pk(kk, s)], ii[s]] = 1
+        return Q @ rho @ Q + L @ rho @ L.T
+    return S_, Ck
+def build(c, ext):
+    S_, er, Pk = carrier(c)
+    if ext == 'X1': Ereg, Rreg = [0], [(0, 0), (1, 0), (0, 1), (1, 1)]
+    elif ext == 'X3': Ereg, Rreg = [0], [(), (1,), (2,), (1, 2), (2, 1)]
+    elif ext == 'OW': Ereg, Rreg = [0, 1, 2], [0, 1, 2]
+    elif ext in ('OR', 'XOR'): Ereg, Rreg = [0], [0, 1]
+    basis = [(s, e, r) for s in S_ for e in Ereg for r in Rreg]; ib = {b: i for i, b in enumerate(basis)}
+    def wr(kk, e, r):
+        if ext == 'X1':
+            if r[kk - 1]: return None
+            r = list(r); r[kk - 1] = 1; return e, tuple(r)
+        if ext == 'X3':
+            return (e, r + (kk,)) if kk not in r and len(r) < 2 else None
+        if ext == 'OW': return (r, kk) if e == 0 else None
+        if ext == 'OR': return e, 1
+        if ext == 'XOR': return e, 1 - r
+    V = {}
+    for kk in (1, 2):
+        M = np.zeros((len(basis), len(basis)))
+        for (s, e, r) in basis:
+            if er(kk, s):
+                w = wr(kk, e, r)
+                if w is None: continue
+                M[ib[(Pk(kk, s),) + w], ib[(s, e, r)]] = 1
+            else:
+                M[ib[(s, e, r)], ib[(s, e, r)]] = 1
+        V[kk] = M
+    fresh = (0, (0, 0) if ext == 'X1' else (() if ext == 'X3' else 0))
+    F = np.zeros((len(basis), len(S_)))
+    for j, s in enumerate(S_): F[ib[(s,) + fresh], j] = 1
+    return S_, basis, V, F, (len(S_), len(Ereg), len(Rreg)), Rreg
+def analyze(c, ext, relabel=None):
+    S_, basis, V, F, dims, Rreg = build(c, ext); _, Ck = chan_ref(c); n = len(S_)
+    V12 = V[1] @ V[2] @ F; V21 = V[2] @ V[1] @ F
+    iso = np.allclose(V12.T @ V12, np.eye(n)) and np.allclose(V21.T @ V21, np.eye(n))
+    SE = lambda W: (lambda r: ptr(W @ r @ W.conj().T, list(dims), [0, 1]))
+    Sm = lambda W: (lambda r: ptr(W @ r @ W.conj().T, list(dims), [0]))
+    O = np.allclose(choi(SE(V12), n), choi(SE(V21), n), atol=tol)
+    comp = np.allclose(choi(Sm(V12), n), choi(lambda r: Ck(1, Ck(2, r)), n), atol=tol)
+    res = {'isometric_composites': bool(iso), 'O': bool(O), 'composite_C1C2': bool(comp)}
+    if relabel is not None:
+        P = np.zeros((len(Rreg), len(Rreg)))
+        for i, r in enumerate(Rreg): P[Rreg.index(relabel(r)), i] = 1
+        U = np.kron(np.eye(dims[0] * dims[1]), P)
+        res['explicit_U'] = bool(np.allclose(V12, U @ V21))
+    if ext in ('X1', 'X3'):
+        if c == 'A':
+            pr = {1: ([1, 1, 4, 1, 1, 2], [1, 1, 2, 1, 1, 4]), 2: ([1, 1, 1, 1, 4, 2], [1, 1, 1, 1, 2, 4])}
+            pr = {kk: tuple(np.diag(np.array(z) / 10) for z in v) for kk, v in pr.items()}
+        else:
+            pr = {1: (np.kron(zp, zp), np.kron(zm, zp)), 2: (np.kron(zp, zp), np.kron(zp, zm))}
+        for kk, (a, b) in pr.items():
+            oa, ob = V12 @ a @ V12.T, V12 @ b @ V12.T
+            res['event%d_DE_DR' % kk] = [round(D(ptr(oa, list(dims), [1]), ptr(ob, list(dims), [1])), 12), round(D(ptr(oa, list(dims), [2]), ptr(ob, list(dims), [2])), 12)]
+    return res
+pa = {}
+swap = lambda r: {(1, 2): (2, 1), (2, 1): (1, 2)}.get(r, r)
+for c in ('A', 'B'):
+    pa[c] = {'X1': analyze(c, 'X1', relabel=lambda r: r), 'X3': analyze(c, 'X3', relabel=swap), 'X3_identityU': analyze(c, 'X3', relabel=lambda r: r)}
+    for rule in ('OR', 'XOR'):
+        pa[c][rule] = analyze(c, rule)
+    # Choi rank of C1C2 via SVD
+    S_, Ck = chan_ref(c); n = len(S_)
+    pa[c]['choi_rank_C1C2'] = int(np.linalg.matrix_rank(choi(lambda r: Ck(1, Ck(2, r)), n), tol=1e-9))
+pa['B']['overwrite'] = analyze('B', 'OW')
+out['P_a'] = pa
+# P-b float check, numpy default_rng(269), 2000 inputs
+rng = np.random.default_rng(269)
+pb = {}
+ins = []
+for t in range(2000):
+    rk = 1 + t % 4; A = rng.normal(size=(4, rk)) + 1j * rng.normal(size=(4, rk)); r = A @ A.conj().T; ins.append(r / np.trace(r).real)
+ins.append(np.diag([0, .5, .5, 0]))
+for nm, (e0, eu) in FR.items():
+    W = Wmat(e0, eu); mR = 9; mK = 9; mE = 0
+    for r in ins:
+        om = W @ r @ W.conj().T; dS = S(r) - S(C1(r, 'p', 'u', idx))
+        mR = min(mR, S(ptr(om, [4, 2, 2], [2])) - dS); mK = min(mK, S(ptr(om, [4, 2, 2], [1, 2])) - dS); mE = max(mE, S(ptr(om, [4, 2, 2], [1])))
+    pb[nm] = {'min_slack_R': round(mR, 9), 'min_slack_K': round(mK, 9), 'max_S_E': round(mE, 9)}
+out['P_b'] = pb
+print(json.dumps(out, indent=1, sort_keys=True))
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT SHA256SUMS
+UTF8-BYTES 1403
+cfd294437424781f5a31d1476376922c01b05db98debc5c23dc22760f1021c5d  t269_ealpha.py
+57cf92007f9e7465c566e3c9d565fc1994f3630a8f693b90350f7ecaaf7837bc  t269_verify_np.py
+d0127d64d23f58c0e817d6a7c267a25f7cb797d3403f5c374fd253c4246f2997  PREREGISTRATION.md
+152715e0bbd1e761d4ee3e821969ec69ad552263c1608c48ba7dbea5966bd967  evidence/local-run-1/run1_stdout.json
+4bb87bac67c1d355d5bb7cdcb4591e0e0110154905beb600cf068a14cde8bb06  evidence/local-run-1/verify3_stdout.json
+c304825ed5c086cb1c62c81a0bf30f6162e42cfd0421614fce4f3bda680d2a38  evidence/local-run-1/environment.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/local-run-1/run1_stderr.txt
+317b2e63b36554d194c11f0818b200272317d419836b6ffed13ca48c612cb0b1  evidence/local-run-1/seed.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/local-run-1/verify3_stderr.txt
+c6952ee0fb4986220e80a25e0e45479db58fb1445e774e6a444f9c63facaa777  evidence/local-run-1/failed/verify1_FAILED_checker_bug_stderr.txt
+2a731233e0e1a213fedd828a36e123183f949a453249eac5523e9b0b88b115ad  evidence/local-run-1/failed/verify1_FAILED_t269_verify_np.py
+b3d587c94320f25321c14e5792bde3b9ea4e7a57cff54bc2f7d453e80a50e493  evidence/local-run-1/failed/verify2_FAILED_checker_wrong_refchannel_B_stdout.json
+13a03fa23f135d39687ac90408fb27a7a533fdedf9f48dee554811ce6d39a09d  evidence/local-run-1/failed/verify2_FAILED_t269_verify_np.py
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT EVIDENCE_run1_stdout.json
+UTF8-BYTES 13558
+{
+ "P_a": {
+  "A": {
+   "X1": {
+    "B_E_blind_orbit": true,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event1_ok": true,
+     "event2": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event2_ok": true
+    },
+    "E_untouched_all_outputs": true,
+    "O_SE_channel_equal": true,
+    "PASS": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "doubly_written_branches": 0,
+    "explicit_U_R": "identity",
+    "explicit_U_R_identity_holds": true,
+    "trivial_reason": "(a) writes act on disjoint R factors by construction; (b) also holds",
+    "untouched_factor_fixed": true,
+    "verdict": "PASS, non-discriminating"
+   },
+   "X2": {
+    "OR": {
+     "O_SE_channel_equal": true,
+     "PASS": false,
+     "W_well_posed": false,
+     "composite_implements_C1C2": false
+    },
+    "XOR": {
+     "O_SE_channel_equal": true,
+     "PASS": false,
+     "W_well_posed": false,
+     "composite_implements_C1C2": false
+    },
+    "choi_rank": 3,
+    "obstruction_holds": true,
+    "rule_independent_obstruction": "composite would dilate C1C2 with environment dim 2 (E pure); needs Choi rank <= 2",
+    "verdict": "FAIL (ill-posed)"
+   },
+   "X3": {
+    "B_E_blind_orbit": true,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event1_ok": true,
+     "event2": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event2_ok": true
+    },
+    "E_untouched_all_outputs": true,
+    "O_SE_channel_equal": true,
+    "PASS": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "doubly_written_branches": 0,
+    "explicit_U_R": "swap [1,2]<->[2,1]",
+    "explicit_U_R_identity_holds": true,
+    "trivial_reason": "(b) no doubly-written branch",
+    "untouched_factor_fixed": true,
+    "verdict": "PASS, non-discriminating"
+   },
+   "aggregate": "PASS, non-discriminating"
+  },
+  "B": {
+   "X1": {
+    "B_E_blind_orbit": true,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event1_ok": true,
+     "event2": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event2_ok": true
+    },
+    "E_untouched_all_outputs": true,
+    "O_SE_channel_equal": true,
+    "PASS": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "doubly_written_branches": 1,
+    "explicit_U_R": "identity",
+    "explicit_U_R_identity_holds": true,
+    "trivial_reason": "(a) writes act on disjoint R factors by construction",
+    "untouched_factor_fixed": true,
+    "verdict": "PASS, non-discriminating"
+   },
+   "X2": {
+    "OR": {
+     "O_SE_channel_equal": true,
+     "PASS": false,
+     "W_well_posed": false,
+     "composite_implements_C1C2": false
+    },
+    "XOR": {
+     "O_SE_channel_equal": true,
+     "PASS": false,
+     "W_well_posed": false,
+     "composite_implements_C1C2": false
+    },
+    "choi_rank": 4,
+    "obstruction_holds": true,
+    "rule_independent_obstruction": "composite would dilate C1C2 with environment dim 2 (E pure); needs Choi rank <= 2",
+    "verdict": "FAIL (ill-posed)"
+   },
+   "X3": {
+    "B_E_blind_orbit": true,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event1_ok": true,
+     "event2": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event2_ok": true
+    },
+    "E_untouched_all_outputs": true,
+    "O_SE_channel_equal": true,
+    "PASS": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "doubly_written_branches": 1,
+    "explicit_U_R": "swap [1,2]<->[2,1]",
+    "explicit_U_R_identity_holds": true,
+    "trivial_reason": "none: a branch is written twice into the same register",
+    "untouched_factor_fixed": true,
+    "verdict": "PASS"
+   },
+   "aggregate": "PASS"
+  }
+ },
+ "P_a_headline_carrier_A": "PASS, non-discriminating",
+ "P_a_rejecting_controls": {
+  "X2_OR_composite_A": {
+   "composite_implements_C1C2": false,
+   "rejected": true
+  },
+  "X3_B_with_U_R_identity": {
+   "explicit_U_R_identity_holds": false,
+   "rejected": true
+  },
+  "mirror_E_writing": {
+   "A-X1": {
+    "B_E_blind_orbit": false,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event1_ok": false,
+     "event2": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event2_ok": false
+    },
+    "O_SE_channel_equal": true,
+    "R_untouched": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "same_W_O_as_Ealpha": true
+   },
+   "A-X3": {
+    "B_E_blind_orbit": false,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event1_ok": false,
+     "event2": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event2_ok": false
+    },
+    "O_SE_channel_equal": true,
+    "R_untouched": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "same_W_O_as_Ealpha": true
+   },
+   "B-X1": {
+    "B_E_blind_orbit": false,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event1_ok": false,
+     "event2": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event2_ok": false
+    },
+    "O_SE_channel_equal": true,
+    "R_untouched": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "same_W_O_as_Ealpha": true
+   },
+   "B-X3": {
+    "B_E_blind_orbit": false,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event1_ok": false,
+     "event2": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event2_ok": false
+    },
+    "O_SE_channel_equal": true,
+    "R_untouched": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "same_W_O_as_Ealpha": true
+   }
+  },
+  "overwrite_to_E_B": {
+   "E_untouched_all_outputs": false,
+   "O_SE_channel_equal": false,
+   "rejected": true
+  }
+ },
+ "P_a_secondary_carrier_B": "PASS",
+ "P_b_F2_premise_omegaK_eq_alpha_tensor_omegaR": {
+  "W_R": true,
+  "W_R^g": true
+ },
+ "P_b_diag_grouping_identity_residual": "0",
+ "P_b_downgraded_to_consistency_check": true,
+ "P_b_numeric": {
+  "W_Bell": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "1.0",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "1.0",
+     "S_R": "1.0",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "1.0",
+     "S_R": "1.0",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "1.0",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  },
+  "W_E": {
+   "F1_holds": true,
+   "R_ineq_holds_all": false,
+   "R_ineq_violations": 81,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "1.0",
+     "S_R": "0.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.970950594455",
+     "S_R": "0.0",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.881290899231",
+     "S_R": "0.0",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "1.0",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "-1.0"
+  },
+  "W_ER": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "1.0",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.970950594455",
+     "S_R": "0.970950594455",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.881290899231",
+     "S_R": "0.881290899231",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "1.0",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  },
+  "W_R": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": true,
+   "diag_specials": [
+    {
+     "S_E": "0.0",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.0",
+     "S_R": "0.970950594455",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.0",
+     "S_R": "0.881290899231",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "1.92799219635652e-51",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  },
+  "W_R^g": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": true,
+   "diag_specials": [
+    {
+     "S_E": "-3.85598439271e-51",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "-3.85598439271e-51",
+     "S_R": "0.970950594455",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.0",
+     "S_R": "0.881290899231",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "0.0",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  },
+  "W_W": {
+   "F1_holds": true,
+   "R_ineq_holds_all": false,
+   "R_ineq_violations": 1,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "0.811278124459",
+     "S_R": "0.811278124459",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.721928094887",
+     "S_R": "0.721928094887",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.609840304716",
+     "S_R": "0.609840304716",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "0.936143639076551",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "-0.188721875540867"
+  },
+  "W_theta(pi/8)": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "0.600876036693",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.600876036693",
+     "S_R": "0.985524570864",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.600876036693",
+     "S_R": "0.941497028217",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "0.600876036692856",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  }
+ },
+ "P_b_premise_realizations_pass_consistency": true,
+ "P_c_regression_R(pi_p)==R(pi_v)_W_R": true,
+ "admission": {
+  "W_Bell": {
+   "D_E": "0",
+   "D_R": "0",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_E": {
+   "D_E": "1/5",
+   "D_R": "0",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_ER": {
+   "D_E": "1/5",
+   "D_R": "1/5",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": true,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_R": {
+   "D_E": "0",
+   "D_R": "1/5",
+   "admitted": true,
+   "basis_form_JRW_eq_Wpiu": true,
+   "expected_admit": true,
+   "form_i_sameE_pure": true,
+   "form_ii_DE0_DR1/5": true,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_R^g": {
+   "D_E": "0",
+   "D_R": "1/5",
+   "admitted": true,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": true,
+   "form_i_sameE_pure": true,
+   "form_ii_DE0_DR1/5": true,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_W": {
+   "D_E": "1/10",
+   "D_R": "1/10",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_theta(pi/8)": {
+   "D_E": "0",
+   "D_R": "sqrt(2)/10",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  }
+ },
+ "channel_C1C2_eq_C2C1": {
+  "A": true,
+  "B": true
+ },
+ "choi_rank_C1C2": {
+  "A": 3,
+  "B": 4
+ },
+ "mpmath": "1.3.0",
+ "native_P1P2_eq_P2P1": {
+  "A": true,
+  "B": true
+ },
+ "python": "3.13.5",
+ "seed": 269,
+ "sympy": "1.14.0"
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT EVIDENCE_verify3_stdout.json
+UTF8-BYTES 3173
+{
+ "P_a": {
+  "A": {
+   "OR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": true
+   },
+   "X1": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3_identityU": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "XOR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": true
+   },
+   "choi_rank_C1C2": 3
+  },
+  "B": {
+   "OR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": false
+   },
+   "X1": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3_identityU": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": false,
+    "isometric_composites": true
+   },
+   "XOR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": false
+   },
+   "choi_rank_C1C2": 4,
+   "overwrite": {
+    "O": false,
+    "composite_C1C2": true,
+    "isometric_composites": true
+   }
+  }
+ },
+ "P_b": {
+  "W_Bell": {
+   "max_S_E": 1.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_E": {
+   "max_S_E": 1.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": -1.0
+  },
+  "W_ER": {
+   "max_S_E": 1.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_R": {
+   "max_S_E": 0.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_R^g": {
+   "max_S_E": 0.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_W": {
+   "max_S_E": 0.966061477,
+   "min_slack_K": 0.0,
+   "min_slack_R": -0.188721876
+  },
+  "W_theta(pi/8)": {
+   "max_S_E": 0.600876037,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  }
+ },
+ "admission": {
+  "W_Bell": {
+   "D_E": 0.0,
+   "D_R": 0.0,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_E": {
+   "D_E": 0.2,
+   "D_R": 0.0,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_ER": {
+   "D_E": 0.2,
+   "D_R": 0.2,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_R": {
+   "D_E": 0.0,
+   "D_R": 0.2,
+   "admitted": true,
+   "implements_C": true
+  },
+  "W_R^g": {
+   "D_E": 0.0,
+   "D_R": 0.2,
+   "admitted": true,
+   "implements_C": true
+  },
+  "W_W": {
+   "D_E": 0.1,
+   "D_R": 0.1,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_theta(pi/8)": {
+   "D_E": 0.0,
+   "D_R": 0.141421356237,
+   "admitted": false,
+   "implements_C": true
+  }
+ }
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT EVIDENCE_environment.txt
+UTF8-BYTES 74
+python 3.13.5
+sympy 1.14.0
+mpmath 1.3.0
+numpy 2.5.4
+Linux 6.12.94+ x86_64
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT EVIDENCE_FAILED_verify2_stdout.json
+UTF8-BYTES 3177
+{
+ "P_a": {
+  "A": {
+   "OR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": true
+   },
+   "X1": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3_identityU": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "XOR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": true
+   },
+   "choi_rank_C1C2": 3
+  },
+  "B": {
+   "OR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": false
+   },
+   "X1": {
+    "O": true,
+    "composite_C1C2": false,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3": {
+    "O": true,
+    "composite_C1C2": false,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3_identityU": {
+    "O": true,
+    "composite_C1C2": false,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": false,
+    "isometric_composites": true
+   },
+   "XOR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": false
+   },
+   "choi_rank_C1C2": 8,
+   "overwrite": {
+    "O": false,
+    "composite_C1C2": false,
+    "isometric_composites": true
+   }
+  }
+ },
+ "P_b": {
+  "W_Bell": {
+   "max_S_E": 1.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_E": {
+   "max_S_E": 1.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": -1.0
+  },
+  "W_ER": {
+   "max_S_E": 1.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_R": {
+   "max_S_E": 0.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_R^g": {
+   "max_S_E": 0.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_W": {
+   "max_S_E": 0.966061477,
+   "min_slack_K": 0.0,
+   "min_slack_R": -0.188721876
+  },
+  "W_theta(pi/8)": {
+   "max_S_E": 0.600876037,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  }
+ },
+ "admission": {
+  "W_Bell": {
+   "D_E": 0.0,
+   "D_R": 0.0,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_E": {
+   "D_E": 0.2,
+   "D_R": 0.0,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_ER": {
+   "D_E": 0.2,
+   "D_R": 0.2,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_R": {
+   "D_E": 0.0,
+   "D_R": 0.2,
+   "admitted": true,
+   "implements_C": true
+  },
+  "W_R^g": {
+   "D_E": 0.0,
+   "D_R": 0.2,
+   "admitted": true,
+   "implements_C": true
+  },
+  "W_W": {
+   "D_E": 0.1,
+   "D_R": 0.1,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_theta(pi/8)": {
+   "D_E": 0.0,
+   "D_R": 0.141421356237,
+   "admitted": false,
+   "implements_C": true
+  }
+ }
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT P1_RECEIVER_LOCATION_RESULT.md
+UTF8-BYTES 10619
+# Exact P1 source correspondence does not determine an existing receiver's record
+
+Date: 2026-10-29 America/Phoenix. Author: proteinfolding-gpt.
+Inspected shared head: c5cefae1b1dd8d877d1a919c27f4196eb150e353.
+Status: AUTHOR ANALYTICAL RESOLUTION of one implication; independent review pending.
+Class C: application of the existing complementary-output boundary to the current P1 contract. Native bridge NOT_DERIVED. No mathematical priority or new physical law is claimed.
+
+## 1. What is being resolved
+
+The user asks whether the missing actual-event-to-owned-record connection can be resolved. The precise question addressed here is:
+
+> If the current P1 event has exact physical source correspondence, faithful preparations and unchanged physical representations of retained states, does that force a distinction into one already designated, initially blind, accessible receiver R?
+
+The answer to this implication is **no**. The proof below satisfies those source conditions in both cases, with the same R, its complete initial state and its available observations. R remains completely unchanged in one case and acquires a probability contrast of 1/5 in the other. Both implement the identical nonidentity source channel on every quantum input.
+
+This is not a proof that UQCF-GEM cannot have interactions, that no receiver anywhere can change, or that an actual experiment has a blind receiver. It resolves an inference from source correspondence to nominated-receiver acquisition within the explicitly stated contract. A native rule constraining the joint event or identifying the actual owned record could exclude the blind case; no such rule is asserted absent from every possible extension.
+
+## 2. Provenance and the stronger source contract
+
+The inherited native tree has o->p, p->u, p->v. Let X=(o,p,u,v) and Y=(o,p,v). P1 is
+
+    P(z_o,z_p,z_u,z_v) = (z_o,z_p+z_u,z_v).
+
+P2 is the literal zero extension I from Y to X. These are the existing FCV operations. They do not themselves identify physical state factors with addresses.
+
+Reuse the current conditional quantum benchmark, without treating its physical premises as native-derived:
+
+    H_S = span{|o>,|p>,|u>,|v>},
+    Q = I_S - |u><u|,
+    C(rho) = Q rho Q + rho_uu |p><p|.
+
+This is the existing completed reset, not a new finite-duration damping model. Actual occurrence of the relevant event is assumed in each comparison; absence of occurrence is not used as a counterexample.
+
+Fix the SAME source encodings in both cases:
+
+    Pi_X(z) = sum_(i in X) z_i |i><i|,
+    Pi_Y(y) = sum_(i in Y) y_i |i><i|.
+
+The grades here are normalized nonnegative vectors. Their interpretation as physical mixture weights remains a SUPPLIED benchmark premise. On the entire simplex both encodings are positive, normalized, affine and injective, and
+
+    C Pi_X = Pi_Y P,
+    Pi_X I = Pi_Y.
+
+Thus physical retention of all retained atomic codes is imposed, not left free. C in fact fixes every density operator supported on span{|o>,|p>,|v>}, including its coherences. This goes beyond mere equality of the native output labels.
+
+Use the same pair as the prior P1 correspondence result:
+
+    z+ = (1,1,2,1)/5,   z- = (1,1,1,2)/5,
+    rho+ = Pi_X(z+),    rho- = Pi_X(z-).
+
+The four calibration states sigma_i=|i><i| satisfy all four source/preparation conditions of the prior positive proof, with a=<u|sigma_u|u>=1. No input code is swapped between the two implementations.
+
+The comparison adds a fixed output interface: qubits E and R, initially in |0_E 0_R>, independent of the source preparation. R is the same existing receiver in both cases; E is outside its specified accessible interface. Give R its ENTIRE qubit observable algebra, including the same effect N_R=|1><1|. Thus the negative case is not caused by choosing a poor detector or hiding another available degree of freedom inside R. These factorization and access specifications are explicit conditional premises, not deductions from native addresses.
+
+## 3. The strongest positive construction
+
+Write output vectors in the order S,E,R. Define the fixed isometry W_R by
+
+    W_R|j> = |j>|0>|0>  for j=o,p,v,
+    W_R|u> = |p>|0>|1>.
+
+Its four columns are orthonormal. The colliding source outputs p and u are distinguished by R. Tracing E and R gives C on every matrix, not just the two tested states: the retained block Q rho Q survives, the u population becomes |p><p|, and all coherences joining u to a retained basis state vanish.
+
+For a diagonal source Pi_X(z), the complete receiver state is
+
+    omega_R^write(z) = (1-z_u)|0><0| + z_u|1><1|.
+
+Consequently
+
+    omega_R^write(+) = diag(3,2)/5,
+    omega_R^write(-) = diag(4,1)/5.
+
+N_R has probability difference 1/5 and the two receiver states have trace distance 1/5. The initial complete receiver is |0><0| in both preparations. This realizes the earlier positive port argument with its explicit joint-operation premise. It is a supplied implementation, not the desired native derivation.
+
+## 4. A blind receiver with every source condition retained
+
+Define a second fixed isometry W_E on the SAME spaces and initial environment:
+
+    W_E|j> = |j>|0>|0>  for j=o,p,v,
+    W_E|u> = |p>|1>|0>.
+
+Again the four columns are orthonormal, and tracing E,R gives exactly C on every matrix. Equivalently W_R=(I_S tensor SWAP_ER) W_E, so their reduced source channels are identical. Both isometries can be extended to unitaries on S,E,R with the same blank input subspace, by completing their orthonormal columns. No Hamiltonian, elapsed duration, energy conservation or physical implementation is inferred from that extension.
+
+For W_E,
+
+    omega_R^blind(z) = |0><0| for EVERY source state.
+
+In particular omega_R^blind(+)=omega_R^blind(-), so every available receiver POVM has the same outcome distribution. A fixed subsequent receiver-only operation, including an instrument with its complete outcome record, cannot distinguish equal input states. This statement does not include later access to S or E, or source-informed postselection.
+
+The source outputs are identical across the two implementations:
+
+    C(rho+) = (|o><o|+3|p><p|+|v><v|)/5,
+    C(rho-) = (|o><o|+2|p><p|+2|v><v|)/5.
+
+They exactly represent the same P1 outputs. In the blind case E carries the record that R carries in the positive case. The full E,R outputs still distinguish the pair; nothing claims global destruction or contradicts complementary-record preservation.
+
+What varies is the unresolved joint realization, not the source encoding, retained physical codes, source event channel, nominated receiver, its complete initial state, or its available measurements. Because both source channels agree on all matrices, adding a reference ancilla to a source-only characterization also cannot distinguish them: both induce C tensor identity on that interface. The joint event is distinguishable by observing the output interface; source-only correspondence does not determine it.
+
+## 5. Exact receiver contrast range in this benchmark
+
+The two constructions already disprove the proposed implication. A direct bound shows that they attain the extremes for the fixed diagonal pair.
+
+Let W be ANY fixed isometry implementing C with environment E tensor R. Since C sends each basis state to a pure source state,
+
+    W|j> = |j>|e_j> for j=o,p,v,
+    W|u> = |p>|e_u>.
+
+Preservation of every retained off-diagonal |j><k| forces <e_k|e_j>=1, so all retained environment vectors equal one normalized vector e_0. Orthogonality of W|p> and W|u> forces <e_0|e_u>=0. Let
+
+    tau_0 = Tr_E |e_0><e_0|,
+    tau_u = Tr_E |e_u><e_u|.
+
+For the stipulated diagonal pair,
+
+    omega_R(+) - omega_R(-) = (tau_u-tau_0)/5,
+    D(omega_R(+),omega_R(-)) = D(tau_u,tau_0)/5 <= 1/5,
+
+where D(A,B)=||A-B||_1/2. The last inequality follows from the triangle inequality and unit trace of the positive matrices tau_u,tau_0. W_E attains zero; W_R attains 1/5. Hence the exact minimum and maximum over this implementation class are 0 and 1/5. No parameter sweep or numerical evidence is needed.
+
+For the COMPLETE environment, e_0 and e_u are orthogonal and its contrast is always 1/5. If R is independently established to be that complete environment, the blind construction is outside that stronger contract. The proof identifies exactly why full-complement statements cannot silently be applied to a nominated accessible part.
+
+## 6. Relation to established work and decision
+
+- The prior P1 event/source counterexample held one joint interaction fixed and varied the input code; its blind code violated physical retained-state correspondence. Here the code and physical retention are held fixed; the varied object is the joint realization left unspecified by its source channel. The earlier theorem and counterexample remain valid.
+- The existing partial-complement result already establishes the general freedom to move record information between accessible factors, unread factors and correlations without changing a source channel. This note applies that known boundary to the exact current four-atom P1 contract. It is not a newly discovered general no-hiding or channel theorem.
+- The corrected canonical P1 acquisition result still forces a change in the formal p-coordinate. Neither isometry identifies physical R with that coordinate. That missing ownership identification is the point under test, not a premise the blind example pretends to satisfy.
+- The result does not quantify over every native operation or every physically accessible subsystem. It proves non-entailment for the explicitly strengthened source contract above. It does not show that every physical model compatible with the whole UQCF archive is noninteracting.
+
+The current inference is therefore resolved negatively: even earning exact source event correspondence and retained source representation would not, by themselves, earn delivery to the nominated receiver. The required next connection is a source-backed relation between the actual joint event and that receiver's owned output, or an independently justified identification of the relevant retained factor with its accessible state. A derived law for one available effect can suffice; a full physical theory or unique microscopic dynamics is not required. Merely selecting W_R would assume the sought delivery.
+
+This is a scoped logical resolution, not an achieved native physical prediction. No detector design, fundamental clock, geometry, new grading axiom, historical recertification, numerical campaign, branch merge or stage closure is claimed. Actual event occurrence remains ACCEPTED INPUT. Mathematical and physical identification claims remain separate.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT DIRECTION_UPDATE_2026_10_21.md
+UTF8-BYTES 7061
+# UQCF-GEM course correction: start from the native operation
+
+Date: 2026-10-21 America/Phoenix.
+Author: proteinfolding-gpt, implementing Aaron's request, "Get us back on rails."
+The implementation below is agent-authored, not a verbatim quotation of Aaron.
+Inspected shared parent: 6423103576573f8024473b5b19dcdf376548e8d6.
+Status: research direction; no scientific result, new physical axiom or milestone.
+
+## 1. Restore the scientific sequence
+
+Native informational structure -> necessary mathematical consequences -> observable distinctions -> physical predictions.
+
+The mathematical consequences remain valuable work. A new necessary consequence or a justified removal of a premise can be substantive progress before the entire physical bridge closes. Report mathematical progress, physical identification and verification separately. A count of fully closed obligations is not a percentage of completion or a measure of the whole program.
+
+The objective is one native event whose consequence becomes an available retained distinction for a receiver that was initially uninformed. The example must follow the inherited operation. Do not choose an output and then invent a mechanism that reproduces it.
+
+## 2. Restore the accepted starting input
+
+Actual atemporal measurement/pruning occurrence is the accepted empirical starting input for this investigation. Do not restart a proof of why measurement occurs, a cause-of-collapse search, inevitability, fairness, or universal completion.
+
+This boundary is already recorded in constructions/receiver_identification/CONSTRUCTION.md, including sections 18 and 33, and in the existing GitHub monitoring instructions. My recent five-obligation framing overstated the task by making occurrence another independent derivation hurdle.
+
+Occurrence of a measurement does not identify its operation with an arbitrary Q_l, guarantee every abstract legal edit, or supply a response probability. The task still needs the actual event/state/record correspondence. If a probabilistic consequence is claimed, its law and available record need justification. Keep these distinct from explaining why an event happens.
+
+## 3. Release the preferred example
+
+The eight-vertex construction in PRs #108-110 remains an accepted conditional test case. Its fixed carrier, separately indexed edits, sector representation and branch-shape decoder are not universal requirements on native physics.
+
+GPT and Grok may change the example when the inherited operation requires a different carrier, record or receiver. Preserve the old result and state which premises the new example uses. A change of carrier is allowed when its source identity, retained consequence and receiver association are tracked.
+
+The assignments to realize that exact example are superseded as mandatory priorities. Do not reopen its closed composition, cover, injectivity, shared-state or center-access arguments without new relevant input.
+
+## 4. The next concrete scientific task
+
+Start with the inherited P1 retained-source contraction, whose effect on the grade record is already explicit:
+
+    x -> P_XY x,  (P_XY x)(a) = sum_{v: r_XY(v)=a} x(v).
+
+Use this as an inherited conditional operation, not as proof that every mathematical contraction is an actual measurement. The parent/leaf absorption identity and its conditional transfer witnesses are already known.
+
+GPT's next task is to trace ONE existing retained record through this operation into ONE existing native consumer or available observation, on the same provenance-bound object. Specify:
+- the actual input record and its native source association;
+- the event's identification with this contraction;
+- the retained output and how its identity is maintained;
+- an existing operation or observation that uses that output;
+- two admissible preparations with the same complete initial receiver restriction and a different retained consequence.
+
+Attempt the first unsupported correspondence in that concrete trace. Do not merely name an address a receiver, set its state equal to a grade coordinate, attach certificate fields, or construct an arbitrary register. Executed software that reads a vector is not automatically a native receiver. If no consumer is justified, state the missing association without deriving another equivalent access criterion.
+
+The accepted Drafts 27-28, receiver-algebra probe, record_access construction and single-event gain results are starting evidence. Their outstanding PN/Bl/Side and availability premises remain explicit. Do not repeat their transfer identities or treat their hypotheses as established facts.
+
+This is a bounded starting task, not a requirement to keep P1 if a better sourced native operation is found. Any replacement must identify the new source evidence and the concrete connection it could derive.
+
+## 5. Work allocation and progress standard
+
+GPT owns the positive construction and actual derivation attempt. Grok works on the first unsupported premise of that same operation-to-record trace, looking for a derivation and then challenging hidden source choices, ownership, readout or retention assumptions. Neither agent should demand a full physical ontology before recognizing a correctly scoped necessary mathematical consequence.
+
+A useful next contribution must contain a new proof step, a newly justified source-to-operation/record association, or a concrete new counterexample that changes this construction. A plan, sharper wording of the same gap, more equivalent identities, successful archive checks, or additional tests of a supplied mechanism are not advances toward native acquisition.
+
+Keep the strongest construction visible before adversarial testing. Preserve genuine failures. For a material new argument, use the standing independent Gemini review and publication process; numerical campaigns require prospective contracts, independent producer/checker logic and rejecting controls. Do not run reviews just to certify this direction update.
+
+## 6. Prevent another loop
+
+Before resuming a route, identify the exact new premise or source evidence unavailable in the previous attempt. Consult its existing result once rather than rediscovering it.
+
+If the same gap remains with no new input, record no material change and move only to a specifically motivated alternative; do not generate another stop report or proposal merely to show activity. Scheduled monitoring should be quiet on unchanged work and must not imply continuous execution. Do not pause or alter schedules without authorization.
+
+Preserve accepted RAS/RCR and all conditional results with their original scope. No invented geometry, fundamental time, dark-matter variable, fitted selector, arbitrary reader or secretly adopted new physical primitive. A proposed extension may be labeled and examined under Aaron's authorization, but it is not native derivation.
+
+Native acquisition, broad C3/C4-C6 and physical origin remain open until the corresponding claims are earned. This correction changes how the research is pursued, not the status of its proofs.
+
+END EXACT DOCUMENT
