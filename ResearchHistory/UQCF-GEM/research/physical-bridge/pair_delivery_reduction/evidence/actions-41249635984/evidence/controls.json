@@ -1,0 +1,21 @@
+{
+ "controls_total": 16,
+ "duplicated_O_case": "REJECTED: Reject: duplicated O case",
+ "duplicated_P_case": "REJECTED: Reject: duplicated P case",
+ "false_carrier_coverage": "REJECTED: Reject: O value mismatch: carriers",
+ "false_coverage_count": "REJECTED: Reject: false coverage: tree counts",
+ "false_provenance": "REJECTED: Reject: false provenance",
+ "honest": "ACCEPTED",
+ "invalid_fork_state": "REJECTED: Reject: invalid fork",
+ "missing_O_case": "REJECTED: Reject: missing or substituted O case",
+ "missing_P_case": "REJECTED: Reject: missing or substituted P case",
+ "non_prefix_carrier": "REJECTED: Reject: non-prefix-closed carrier",
+ "status": "GREEN",
+ "substituted_key": "REJECTED: Reject: duplicated P case",
+ "wrong_O_dim": "REJECTED: Reject: O value mismatch: dim",
+ "wrong_P_dim": "REJECTED: Reject: P value mismatch: dim",
+ "wrong_c": "REJECTED: Reject: wrong pre value",
+ "wrong_control_value": "REJECTED: Reject: P value mismatch: cone_total_control",
+ "wrong_kappa": "REJECTED: Reject: P value mismatch: witness",
+ "wrong_post_value": "REJECTED: Reject: wrong post value"
+}
