@@ -1,0 +1,678 @@
+Independently reconstruct and adversarially review the frozen analytical argument in ARGUMENT.md. It is conditional on a SUPPLIED finite-dimensional channel benchmark and the NEW ASSUMPTION TB; it is not claimed as native receiver delivery. No previous Gemini verdict is evidence. Develop the strongest positive reading first and then attack every step.
+Tasks: (1) Verify the rank proof for arbitrary unitaries on S(x)E(x)R, including both pure-marginal factorization steps and all dimension/rank quantifiers. (2) Decide whether 2 rank(tau_E) <= d_E is only necessary or is being overstated as sufficient anywhere. (3) Verify the full-rank consequence and the entropic companion, including whether the entropy bound itself proves mixedness. (4) Verify the post-processing/SWAP control and whether it blocks record-location and receiver-ownership readings. (5) Check that the listed corrections to the PR130/131 local packages are logically compatible with this theorem and that no false multi-fiber threshold, fresh-capacity necessity, or entropy-equality statement has been imported. (6) Enforce scope: TB, C, E(x)R, dimensions, receiver algebra, access, and probability law remain supplied/NEW unless an exact inherited producing operation is identified.
+Return JSON with keys: verdict (ACCEPTED, REVISE, or FAIL); findings, missing_assumptions, counterexamples, limitations arrays; native_bridge_status (DERIVED_FROM_SOURCES or NOT_DERIVED); constructive_analysis array with exact source references; next_native_obligation string. ACCEPTED requires findings, missing_assumptions, and counterexamples all empty. Every defect must name the affected claim and give an exact correction or counterexample. An ACCEPTED verdict certifies only the conditional theorem in ARGUMENT.md, never TB or native delivery.
+
+EXACT DOCUMENT ARGUMENT.md
+UTF8-BYTES 4988
+# T-273 rank refinement — frozen whole-argument review target
+
+Date frozen: 2026-11-02 UTC.
+Base scientific SHA: `750554de424a1e12e2d14c6665920bda31163dfc`.
+Status before review: POSTED, not adopted. Native bridge **NOT_DERIVED**.
+
+## Provenance and scope
+
+This freezes the strongest positive theorem first posted in [T-272-dot](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-6587373426) and independently reconstructed by Grok in [T-273 at `f4f8b3e744c00ae3760e60baaf67019b94b7c96e`](https://github.com/proteinfoldingengine/WetLabEngine/commit/f4f8b3e744c00ae3760e60baaf67019b94b7c96e).
+
+The theorem is conditional on the **SUPPLIED** finite-dimensional benchmark and the **NEW ASSUMPTION** TB. It is not an inherited native-delivery theorem.
+
+## Exact supplied benchmark
+
+Let the system contain orthogonal basis states (|p\rangle,|u\rangle). The supplied channel is
+[
+C(\rho)=Q\rho Q+\rho_{uu}|p\rangle\langle p|,
+]
+so for
+[
+\rho_*=(|p\rangle\langle p|+|u\rangle\langle u|)/2
+]
+one has (C(\rho_*)=|p\rangle\langle p|).
+
+The supplied joint realization class has finite systems (S,E,R), fixed output dimensions (dim E=d_E), and an arbitrary unitary (U) on (S\otimes E\otimes R). Initially (E) is in (	au_E) of rank (k), and (R) is in a pure blank (|0\rangle\langle0|). A realization satisfies
+[
+\operatorname{Tr}_{ER}U(\rho\otimes\tau_E\otimes|0\rangle\langle0|)U^\dagger=C(\rho)
+]
+for every system input (ho).
+
+TB is the new premise that (	au_E) is a finite positive-temperature Gibbs density, hence full rank (k=d_E). The weaker rank-(k) form below does not require Gibbs structure.
+
+## Theorem T273-R
+
+For any realizing unitary (U), if the final (R) marginal on input (ho_*) is pure, then
+[
+2k\le d_E.
+]
+Consequently, under full-rank TB ((k=d_E>0)), every realization sends the initially pure (R) to a mixed state on (ho_*).
+
+### Proof
+
+1. The initial total state (ho_*\otimes\tau_E\otimes|0\rangle\langle0|) has rank (2k).
+2. Unitary conjugation preserves rank, so the final joint state has rank (2k).
+3. Its (S) marginal is (C(ho_*)=|p\rangle\langle p|), which is pure.
+4. Any joint density operator with a pure marginal factorizes across that marginal. Hence the final state is
+   [
+   |p\rangle\langle p|\otimes\omega_{ER}
+   ]
+   and (operatorname{rank}omega_{ER}=2k).
+5. If the final (R) marginal is pure, the same factorization fact gives
+   [
+   \omega_{ER}=\omega_E\otimes|r\rangle\langle r|.
+   ]
+   Therefore (operatorname{rank}omega_{ER}=operatorname{rank}omega_E\le d_E).
+6. Combining steps 4 and 5 yields (2k\le d_E). For full-rank TB, this would require (2d_E\le d_E), impossible for (d_E>0). QED.
+
+## Entropic companion
+
+On (ho_*), unitary invariance and the pure (S) output give
+[
+S(\omega_{ER})=1+S(\tau_E).
+]
+Subadditivity and (S(\omega_E)\le\log d_E) imply
+[
+S(\omega_R)\ge 1+S(\tau_E)-\log d_E.
+]
+For full-rank (	au_E), this lower bound need not be strictly positive; the rank theorem is the strict mixedness result.
+
+## Sharp location control
+
+Post-processing covariance remains decisive: if (U) realizes (C), then ((I_S\otimes V_{ER})U) also realizes (C). In the accepted benchmark, the explicit (W_R;\mathrm{SWAP}_{ER}) control leaves the erased-branch record in (E) while the final (R) state equals (	au_E) and has zero source contrast (D_R=0).
+
+Thus T273-R forces a realization-invariant **system-side state change of R under NEW TB**, but it does not show that R owns the erased record. R may carry the bath spectrum rather than the source distinction.
+
+## Explicit non-claims and corrections
+
+- No inherited operation produces TB, the channel (C), the factorization (E\otimes R), the designated receiver algebra, an access law, or a probability law.
+- The theorem does not derive native receiver delivery, record location, or event/state/record correspondence.
+- (2k\le d_E) is a necessary condition for pure final R on (ho_*), not a general sufficiency theorem for realizing a multi-collision channel.
+- The collision-local formula (operatorname{rank}\tau_E\le d_E/f) is not asserted globally. PR #131's multi-fiber extension is challenged by the Choi-rank-three carrier-A counterexample.
+- A fixed receiver can realize a finite composite when its dimension reaches the composite Choi rank; fresh slots are sufficient, not necessary at a fixed finite horizon.
+- The correct equality condition in PR #130's diagonal entropy comparison is (z_u=0) or (z_o+z_v=0).
+- The finite-temperature statement is “the Gibbs density has no zero eigenvalues,” not “the bath has no pure component.”
+
+## Review obligations
+
+The independent reviewer must reconstruct every proof step, test the pure-marginal factorization uses, search for dimension/rank counterexamples, distinguish necessary from sufficient conditions, verify the location control, and grade the physical scope. An ACCEPTED verdict may certify only this conditional theorem and its non-claims. Sharp E-alpha and TB remain NEW; native bridge remains NOT_DERIVED.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT AGENTS.md
+UTF8-BYTES 2368
+# Scientific closure requirements
+
+These requirements govern every numbered retained-research stage. They are user requirements, not optional recommendations.
+
+- Start from the exact verified integrated parent. Record both workflow SHA and checked-out scientific SHA.
+- Commit prospective preregistration before new scientific execution. Disclose all already-known exploratory findings; never relabel them preregistered after the fact.
+- Freeze mathematical objects, primary objectives, diagnostic objectives, full enumeration domain, competing outcomes, resource rules and stopping rules.
+- Use algorithmically independent production and verification. Reconstruct the entire canonical universe and require exact identity equality, not supplied-record validation or count checks alone.
+- Include substantive rejecting controls: missing, duplicated and substituted records; wrong values; invalid states/moves; false provenance/coverage. Preserve genuine RED evidence and failed runs.
+- Provide typed mathematical arguments and distinguish general proofs, bounded evidence and unresolved propositions. No finite no-counterexample result is a universal theorem.
+- Run the complete inherited foundational stack with pinned dependencies on GitHub. Inspect exact logs.
+- Upload source, complete scientific certificates, logs, metadata and checksums as execution artifacts. Freshly reproduce deterministic scientific bytes in the publication job.
+- Commit durable scientific evidence and verified manifests to GitHub; inspect downloaded artifact digests, not just upload success.
+- Mark PR ready only after review, scientific verification and publication closure. Merge the verified head and audit the actual merge SHA, including replay, manifests, coverage and inherited stack.
+- Never use CLOSED/CERTIFIED for a stage before the post-merge audit passes. Report every missing requirement explicitly.
+- For barriers, primary B1, Binf and Bs are three INDEPENDENT scalar minima. LEX_BARRIER is a separate diagnostic. Their bounds need not be jointly attained by one path.
+- Time is pruning / ordered recoverability update. Combinatorial barriers do not imply physical energy, action, metric, gravity or fundamental time.
+
+Future agents must continue the complete closure chain within the user's authorized scope; recording a plan or contract does not resolve a requested run.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT DIRECTION_UPDATE_2026_10_21.md
+UTF8-BYTES 7061
+# UQCF-GEM course correction: start from the native operation
+
+Date: 2026-10-21 America/Phoenix.
+Author: proteinfolding-gpt, implementing Aaron's request, "Get us back on rails."
+The implementation below is agent-authored, not a verbatim quotation of Aaron.
+Inspected shared parent: 6423103576573f8024473b5b19dcdf376548e8d6.
+Status: research direction; no scientific result, new physical axiom or milestone.
+
+## 1. Restore the scientific sequence
+
+Native informational structure -> necessary mathematical consequences -> observable distinctions -> physical predictions.
+
+The mathematical consequences remain valuable work. A new necessary consequence or a justified removal of a premise can be substantive progress before the entire physical bridge closes. Report mathematical progress, physical identification and verification separately. A count of fully closed obligations is not a percentage of completion or a measure of the whole program.
+
+The objective is one native event whose consequence becomes an available retained distinction for a receiver that was initially uninformed. The example must follow the inherited operation. Do not choose an output and then invent a mechanism that reproduces it.
+
+## 2. Restore the accepted starting input
+
+Actual atemporal measurement/pruning occurrence is the accepted empirical starting input for this investigation. Do not restart a proof of why measurement occurs, a cause-of-collapse search, inevitability, fairness, or universal completion.
+
+This boundary is already recorded in constructions/receiver_identification/CONSTRUCTION.md, including sections 18 and 33, and in the existing GitHub monitoring instructions. My recent five-obligation framing overstated the task by making occurrence another independent derivation hurdle.
+
+Occurrence of a measurement does not identify its operation with an arbitrary Q_l, guarantee every abstract legal edit, or supply a response probability. The task still needs the actual event/state/record correspondence. If a probabilistic consequence is claimed, its law and available record need justification. Keep these distinct from explaining why an event happens.
+
+## 3. Release the preferred example
+
+The eight-vertex construction in PRs #108-110 remains an accepted conditional test case. Its fixed carrier, separately indexed edits, sector representation and branch-shape decoder are not universal requirements on native physics.
+
+GPT and Grok may change the example when the inherited operation requires a different carrier, record or receiver. Preserve the old result and state which premises the new example uses. A change of carrier is allowed when its source identity, retained consequence and receiver association are tracked.
+
+The assignments to realize that exact example are superseded as mandatory priorities. Do not reopen its closed composition, cover, injectivity, shared-state or center-access arguments without new relevant input.
+
+## 4. The next concrete scientific task
+
+Start with the inherited P1 retained-source contraction, whose effect on the grade record is already explicit:
+
+    x -> P_XY x,  (P_XY x)(a) = sum_{v: r_XY(v)=a} x(v).
+
+Use this as an inherited conditional operation, not as proof that every mathematical contraction is an actual measurement. The parent/leaf absorption identity and its conditional transfer witnesses are already known.
+
+GPT's next task is to trace ONE existing retained record through this operation into ONE existing native consumer or available observation, on the same provenance-bound object. Specify:
+- the actual input record and its native source association;
+- the event's identification with this contraction;
+- the retained output and how its identity is maintained;
+- an existing operation or observation that uses that output;
+- two admissible preparations with the same complete initial receiver restriction and a different retained consequence.
+
+Attempt the first unsupported correspondence in that concrete trace. Do not merely name an address a receiver, set its state equal to a grade coordinate, attach certificate fields, or construct an arbitrary register. Executed software that reads a vector is not automatically a native receiver. If no consumer is justified, state the missing association without deriving another equivalent access criterion.
+
+The accepted Drafts 27-28, receiver-algebra probe, record_access construction and single-event gain results are starting evidence. Their outstanding PN/Bl/Side and availability premises remain explicit. Do not repeat their transfer identities or treat their hypotheses as established facts.
+
+This is a bounded starting task, not a requirement to keep P1 if a better sourced native operation is found. Any replacement must identify the new source evidence and the concrete connection it could derive.
+
+## 5. Work allocation and progress standard
+
+GPT owns the positive construction and actual derivation attempt. Grok works on the first unsupported premise of that same operation-to-record trace, looking for a derivation and then challenging hidden source choices, ownership, readout or retention assumptions. Neither agent should demand a full physical ontology before recognizing a correctly scoped necessary mathematical consequence.
+
+A useful next contribution must contain a new proof step, a newly justified source-to-operation/record association, or a concrete new counterexample that changes this construction. A plan, sharper wording of the same gap, more equivalent identities, successful archive checks, or additional tests of a supplied mechanism are not advances toward native acquisition.
+
+Keep the strongest construction visible before adversarial testing. Preserve genuine failures. For a material new argument, use the standing independent Gemini review and publication process; numerical campaigns require prospective contracts, independent producer/checker logic and rejecting controls. Do not run reviews just to certify this direction update.
+
+## 6. Prevent another loop
+
+Before resuming a route, identify the exact new premise or source evidence unavailable in the previous attempt. Consult its existing result once rather than rediscovering it.
+
+If the same gap remains with no new input, record no material change and move only to a specifically motivated alternative; do not generate another stop report or proposal merely to show activity. Scheduled monitoring should be quiet on unchanged work and must not imply continuous execution. Do not pause or alter schedules without authorization.
+
+Preserve accepted RAS/RCR and all conditional results with their original scope. No invented geometry, fundamental time, dark-matter variable, fitted selector, arbitrary reader or secretly adopted new physical primitive. A proposed extension may be labeled and examined under Aaron's authorization, but it is not native derivation.
+
+Native acquisition, broad C3/C4-C6 and physical origin remain open until the corresponding claims are earned. This correction changes how the research is pursued, not the status of its proofs.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT STANDING_DIRECTIVE.md
+UTF8-BYTES 11873
+# UQCF-GEM — Standing Directive (Corrective Scientific Research Directive)
+
+- **Date recorded:** 2026-10-16
+- **Issued by:** Aaron Spradlin (relayed to the research agent)
+- **Precedence:** This directive SUPERSEDES earlier guidance where they conflict. Notably, **independent review must now be performed by Gemini via GitHub Actions**; a same-lineage (Grok Bot) self-review or fresh-context self-review does not satisfy the independent-review requirement.
+- **Truncation notice:** The received text was cut off mid-sentence in section 6 ("stop that candidat"). Any sections after that point were not received and are not recorded here.
+
+---
+
+UQCF-GEM — Corrective Scientific Research Directive
+
+Authorization: Continue autonomous Path-A first-principles research.
+
+Repository: proteinfoldingengine/WetLabEngine
+Branch: research/uqcf-overlapping-guard-exchange
+Research authority: ResearchHistory/UQCF-GEM/research/physical-bridge/
+
+## 1. Scientific mission
+
+The objective is not to accumulate additional conditional mathematical theorems.
+
+The primary objective is: derive one native informational interaction in which a source difference necessarily produces an accessible consequence without inserting the interaction, observation mechanism, or outcome law by hand.
+
+A successful result may be deterministic or probabilistic. It need not explain gravity, unify physics, or guarantee that every possible event completes.
+
+It must demonstrate a genuinely derived connection between:
+1. an existing native informational distinction;
+2. a justified interaction or update rule;
+3. an actual retained consequence or derived outcome distribution;
+4. an identifiable receiver with justified access;
+5. a mathematically established separation between the original preparations.
+
+Do not mistake mathematical admissibility for physical enforcement, an available event for an actual event, or an ensemble average for a single realized record.
+
+## 2. Immediate corrective actions
+
+Before new research, fetch and verify the live immutable branch head; read AGENTS.md, NATIVE_EVENT_MILESTONE.md, COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md, COUPLED_C3_PHYSICAL_FRONTIER_DECISION.md; read the latest covariant_outcome_register/RESULT.md, raw review, review response, and publication evidence; identify every unresolved reviewer objection and confirm whether the corrections resolve it; determine whether another research or review workflow is active; avoid duplicate work and preserve the complete history.
+
+Do not declare the covariant outcome-register checkpoint independently certified based solely on a review from the same Grok Bot agent lineage.
+
+## 3. Restore genuine independent mathematical review
+
+A fresh context from the same authoring agent is a self-check, not independent review. Use the repository's existing GitHub Actions integration with Gemini. The previously working text-review model was gemini-3.1-pro-preview; verify availability first and do not repeatedly retry models known to fail. Use GEMINI_API_KEY only through Actions secrets; never print, download, disclose, or commit it. The review must receive the exact frozen argument and relevant source evidence, not a favorable summary.
+
+Ask the reviewer to independently reconstruct the proof, identify missing assumptions and circular definitions, search for explicit counterexamples, challenge the physical interpretation, identify any mechanism, orientation, reader, or event law inserted by assumption, distinguish valid mathematical conclusions from unsupported physical claims, and return ACCEPTED, REVISE, or FAIL.
+
+Preserve the raw response, model identifier, workflow run ID, reviewed commit SHA, response hash, and findings. ACCEPTED is evidence of independent analytical review, not empirical validation or physical truth.
+
+## 4. Make GitHub the scientific verification system
+
+**Branches and commits:** keep Path-A work on the research branch; make every checkpoint traceable to an immutable commit; never silently change a frozen proof or test contract after verification; substantive corrections need a new commit and fresh verification.
+
+**GitHub Actions:** separate jobs for source integrity and prerequisites; mathematical proof and independent computational reconstruction; rejecting controls and inherited regression tests; independent Gemini review; independent publication consistency audit; immutable final readback. Gate downstream review on successful verification of the exact source commit. A successful workflow without a valid mathematical verdict is not scientific acceptance.
+
+**Independent verification:** for new bounded claims, use independently implemented producer and checker logic, where the checker does not call the producer's decision functions; enumerate the complete prospectively declared finite universe where feasible, including rejected cases; preserve counterexamples and failures; do not adjust thresholds, domains, or assumptions after unfavorable outcomes without recording and reviewing the change.
+
+**Artifacts and provenance:** retain original ZIP archives, complete workflow logs, raw reviewer responses, test manifests, source hashes, and publication receipts; verify byte lengths, SHA-256, git blob identities, and source commit relationships; GitHub history, Actions artifacts, and immutable readback are the authoritative trail.
+
+**PRs and checks:** use a draft PR when useful to compare a substantial checkpoint with its verified parent; require integrity, verification, and review gates before closeout; do not merge into the default branch unless separately authorized.
+
+## 5. Strict research admission gate
+
+Before a new major investigation, answer what currently missing native mechanism the candidate could actually derive. Each checkpoint must identify the precise unsolved obligation, the existing native primitives used, the new deduction that might follow, the strongest known counterexample, the accessible consequence to be tested, and the assumptions that would invalidate a physical interpretation.
+
+Classify:
+- **A** — Native mechanism candidate: a credible path to deriving interaction, retained output, or receiver access from existing primitives.
+- **B** — Necessary mathematical support for an A candidate.
+- **C** — Conditional illustration after supplying a mechanism.
+- **D** — Repetition or an already closed obstruction.
+
+Prioritize A, pursue B only in support of a specific A, document C briefly, and do not launch expensive verification for D. A negative result is valuable when it eliminates a genuinely plausible mechanism or a sharply scoped new boundary; do not manufacture progress through variations of understood obstructions.
+
+## 6. Correct the current direction
+
+The latest covariant-instrument research shows symmetry alone does not select a physical measurement or ensure a retained receiver gets a useful record. Do not respond by arbitrarily introducing a preferred basis, tensor factorization, noncentral reference, continuous outcome register, or nonidentity interaction. Instead investigate whether existing native retained-source, lineage, pruning, or compatibility structures already force one of these.
+
+The strongest candidate should answer: can an existing native relational distinction require a change in an independently justified accessible record across all mechanisms allowed by the derived premises? If yes, derive it and subject it to independent review. If no, identify the exact missing premise and stop that candidat
+
+[TRUNCATED — received text ends here; remaining sections not received]
+
+
+## Addendum 2026-10-17: priority direction from Aaron (verbatim)
+
+"I would now prioritize finding an inherited native operation that creates or changes a retained record, rather than continuing to test variations of supplied information channels."
+
+The top priority is to search the existing inherited native structures (retained-source, lineage, pruning, compatibility, ordered recoverability update) for an operation that itself writes or alters a retained record. Candidates that only vary supplied information channels (controlled gates, swaps, POVMs, copying interactions) are graded D and are not pursued.
+
+
+## Addendum 2026-10-17 (b): construction mode, course correction from Aaron (verbatim). Takes priority over the admission-gate emphasis.
+
+"too much effort rejecting candidates and correcting claims. That protects rigor, but it hasn't supplied the constructive step we need.
+
+I'll focus on how the existing primitives can work together to produce one accessible record:
+
+* Begin with a native source distinction and an initially uninformed receiver.
+* Construct their joint retained structure using earned composition and compatibility relations.
+* Look for a consequence those relations determine in the receiver, even if they leave other details unresolved.
+* Develop the strongest positive construction before challenging it.
+
+The ledger correction matters here: a receiver can gain information without creating information globally. We should pursue that possibility.
+
+The target is one derived transfer of a distinction. Code will verify the construction after the mechanism is established."
+
+How it applies: each run advances ONE positive construction. It starts from a source distinction and an uninformed receiver, builds their joint retained structure from earned composition and compatibility, and finds the receiver consequence that structure determines (a partial one is fine). The transfer is redistribution or correlation, not global creation of information. The strongest version is written first, as a committed construction document. Adversarial review, admission grading and code verification wait until the mechanism is drafted, and then it goes to Gemini review. No new runs are spent on stop or rejection records.
+
+
+## Addendum 2026-10-21: operation-first course correction
+
+Following Aaron's request to get the research back on rails, apply [DIRECTION_UPDATE_2026_10_21.md](DIRECTION_UPDATE_2026_10_21.md). It supersedes mandatory pursuit of the exact eight-vertex realization and the recent extra requirement to derive measurement occurrence. Actual atemporal measurement occurrence remains the accepted starting input; the operation/state/receiver-record correspondence must still be earned. Begin from an inherited operation and derive its consequence, allowing the example to change. Credit new necessary mathematics separately from physical identification. The next concrete task is one existing P1 retained record traced through its event into a justified existing consumer or available observation. Preserve every scientific and independent-review gate and avoid repeating already documented gaps.
+
+
+## Addendum 2026-11-01: receiver delivery frontier (Aaron)
+
+Apply [RECEIVER_DELIVERY_FRONTIER_DIRECTIVE_2026_11_01.md](RECEIVER_DELIVERY_FRONTIER_DIRECTIVE_2026_11_01.md) as the governing next-work direction. It supersedes conflicting earlier work-sequence requirements, including a mandatory positive construction before the W_R/W_E adversarial test. Preserve accepted scoped P1 infrastructure; the next advance must constrain native delivery to the designated receiver, or establish an exact minimal-new-premise boundary. Answer all five admission questions and test W_R/W_E before a large campaign. Source-only calibration, another conditional consumer, response/holding map or alternate P1 representation is deprioritized unless it directly removes part of that relation. Independent scientific review and publication gates remain in force for material results; no duplicate review is required merely to publish this directive.
+
+[Bounded source audit and handoff](RECEIVER_DELIVERY_SOURCE_AUDIT_2026_11_01.md) records the inspected scope and coordinates with Dot's T-239-dot-a. It is not a theorem, a physical advance, or a certification.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT RECEIVER_DELIVERY_FRONTIER_DIRECTIVE_2026_11_01.md
+UTF8-BYTES 9675
+# UQCF-GEM Path-A — Receiver Delivery Frontier Directive
+
+Issued by Aaron Spradlin, 2026-11-01 (America/Phoenix). The directive below is transcribed from the user's instruction. This governs new receiver-delivery work and supersedes conflicting earlier work-sequence guidance. Existing scientific results and their scope are preserved.
+
+Repository: proteinfoldingengine/WetLabEngine
+Branch: research/uqcf-overlapping-guard-exchange
+Authority: Continue under existing research and publication permissions.
+Primary research area: ResearchHistory/UQCF-GEM/research/physical-bridge/
+
+## Scientific objective
+
+The next important advance must constrain the missing native relation
+
+native event/source update → receiver-owned retained output.
+
+Do not spend the next research cycle producing another conditional consumer, decoder, response menu, holding map, profile statistic, or alternate P1 representation unless it directly removes part of this missing relation.
+
+The project already has substantial mathematics showing that, once an event is legitimately typed as a native P1 pruning of an extensive grade:
+
+1. the retained ancestral retraction is fixed;
+2. the extensive-grade pushforward is fixed by finite additivity;
+3. a single source difference is transferred to the corresponding retained owner coordinate;
+4. the canonical retained address factor containing that coordinate is mathematically identifiable;
+5. central classical effects can distinguish the resulting retained states nondisturbingly.
+
+These should now be treated as established mathematical infrastructure within their accepted scope, not repeatedly re-derived.
+
+The current unresolved scientific question is narrower:
+
+What inherited native structure forces the actual joint event to deliver the source distinction to the identified receiver-owned output rather than to some other complementary subsystem?
+
+The accepted P1 receiver-location counterexample is the key boundary. Two joint realizations can implement the same source-side P1 channel while placing the distinction in different complementary outputs. Therefore source correspondence alone does not determine receiver delivery.
+
+New work must confront that fact directly.
+
+## Required work sequence
+
+### 1. Freeze the exact missing implication
+
+Start from the strongest currently accepted premises and write the target implication explicitly.
+
+For example:
+
+Given:
+
+* an actual occurring event;
+* a native same-Genesis pruning X→Y;
+* the inherited P1 extensive-grade update;
+* an initially blind designated receiver R;
+* the mathematically identified P1 owner r(u);
+
+derive, rather than assume, one of the following:
+
+A. R is the output subsystem corresponding to r(u); or
+B. a specific receiver-owned observable/effect of R must change; or
+C. every joint realization satisfying an inherited native constraint gives the same nonzero receiver consequence.
+
+Do not weaken the target into “some complementary system contains the information.” That is already known and is insufficient.
+
+### 2. Search only inherited structures that could constrain joint realization
+
+Prioritize existing native objects that may tie the event to a receiver-owned output:
+
+* lineage and ancestry ownership;
+* retained-source identity;
+* receiver/owner correspondence already present in P1;
+* retained algebra or record compatibility;
+* native subsystem ownership;
+* existing actual-record primitives;
+* provenance binding;
+* preservation/retention constraints;
+* composition or compatibility relations that act on both source and receiver;
+* any inherited rule that distinguishes the P1 owner from an arbitrary environment factor.
+
+The question is not whether these structures are mathematically convenient.
+
+The question is:
+
+Do they eliminate the blind realization while retaining the informative realization?
+
+If a proposed premise does not distinguish those two realizations, it does not advance the frontier.
+
+### 3. Use the blind/informative pair as a standing adversarial test
+
+The existing P1 receiver-location result should be treated as the canonical challenge.
+
+For every proposed native constraint K, test:
+
+* Does W_R satisfy K?
+* Does W_E satisfy K?
+* If both satisfy K, K does not determine receiver delivery.
+* If only W_R satisfies K, prove why K is inherited rather than inserted.
+* If neither satisfies K, determine whether the candidate is simply unrelated to the actual native model.
+
+This test should happen before launching a large numerical or review campaign.
+
+### 4. Prefer an invariant or necessity theorem over a designed mechanism
+
+The strongest result would look like:
+
+For every joint realization J compatible with native premises N,
+
+receiver_contrast(J) ≠ 0.
+
+or
+
+the receiver-owned output factor is uniquely determined by N.
+
+or
+
+the complementary location freedom is removed by an inherited ownership/retention condition.
+
+A weaker but still important result is acceptable if it proves that a clearly identified inherited condition eliminates a substantial class of blind realizations.
+
+Do not choose a coupling because it works and then attempt to justify it afterward.
+
+### 5. Keep physical and mathematical claims separate
+
+A theorem may establish a necessary mathematical consequence without yet proving a laboratory realization.
+
+Report separately:
+
+* native premises;
+* newly derived consequence;
+* what remains supplied;
+* whether the result constrains receiver delivery;
+* whether it produces an accessible observable distinction;
+* whether the result has physical interpretation or remains mathematical.
+
+Do not promote canonical factorization, centrality, source pushforward, or a software consumer into physical access by terminology alone.
+
+## Research admission gate
+
+Before starting a new substantial work item, answer all five:
+
+1. What exact missing receiver-delivery premise does this candidate attack?
+2. What inherited primitive could remove that premise?
+3. Which existing blind realization is the candidate intended to exclude?
+4. What measurable or receiver-owned consequence would follow if successful?
+5. What result would falsify the candidate?
+
+If these cannot be answered precisely, deprioritize the work.
+
+## High-value possible targets
+
+The following are worth pursuing:
+
+### Target A — native ownership theorem
+
+Determine whether the inherited meaning of the P1 owner r(u) already carries a stronger ownership property than “coordinate receiving the pushforward.”
+
+Can ownership be derived as an operational state factor or retained subsystem relation that excludes routing the complementary information elsewhere?
+
+### Target B — joint-event compatibility
+
+Search for an inherited compatibility/naturality condition on the full event, not just its reduced source channel, that constrains complementary outputs.
+
+The condition must be independently motivated by existing UQCF-GEM structure.
+
+### Target C — retained-record necessity
+
+Determine whether an actual retained-record primitive forces the information associated with a removed source to remain in the P1 owner’s retained record.
+
+Do not assume the record. Derive its source association and ownership.
+
+### Target D — realization-invariant observable
+
+Search for a receiver observable whose contrast is fixed by the native premises across every allowed joint realization.
+
+This would avoid needing a unique microscopic coupling.
+
+### Target E — sharpened impossibility boundary
+
+If none of the inherited structures can distinguish informative and blind realizations, prove the smallest additional premise required.
+
+The goal would then be to state exactly what physical postulate is missing, rather than continuing to rediscover variants of the same gap.
+
+## Work that should now be deprioritized
+
+Unless directly needed for one of the targets above, do not spend major effort on:
+
+* another P1 propagation theorem;
+* another response graph;
+* another legality decoder;
+* another fixed-profile consumer;
+* another supplied controller;
+* another holding map;
+* another conditional copy/register construction;
+* another source-only calibration;
+* another numerical campaign demonstrating a supplied mechanism works;
+* another theorem whose conclusion is only that “some information survives somewhere.”
+
+Those may be mathematically valid, but they do not address the current frontier.
+
+## Verification discipline
+
+For a material new result:
+
+1. freeze the exact theorem and source dependencies;
+2. record all assumptions with explicit tags such as INHERITED, DERIVED, SUPPLIED, or NEW ASSUMPTION;
+3. attempt the W_R / W_E adversarial comparison first;
+4. preserve counterexamples and failed versions;
+5. if bounded computation is needed, freeze the domain and controls before execution;
+6. independently reconstruct the mathematical claim;
+7. perform publication/source readback;
+8. do not infer physical closure from a successful workflow.
+
+## Success criterion
+
+A scientifically important advance occurs if the work establishes one of the following:
+
+* an inherited condition that forces the P1 distinction into the receiver-owned output;
+* a realization-independent nonzero receiver observable consequence;
+* a proof that the receiver factor is uniquely fixed by native structure;
+* or an exact theorem identifying the minimal genuinely new physical premise required for receiver delivery.
+
+Anything weaker should be reported as supporting mathematics, not as closure of the native interaction bridge.
+
+The objective is no longer to show that UQCF-GEM can contain conditional source-to-receiver constructions.
+
+The objective is to determine why the native event must deliver its distinction to this receiver.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT P1_RECEIVER_LOCATION_RESULT.md
+UTF8-BYTES 10619
+# Exact P1 source correspondence does not determine an existing receiver's record
+
+Date: 2026-10-29 America/Phoenix. Author: proteinfolding-gpt.
+Inspected shared head: c5cefae1b1dd8d877d1a919c27f4196eb150e353.
+Status: AUTHOR ANALYTICAL RESOLUTION of one implication; independent review pending.
+Class C: application of the existing complementary-output boundary to the current P1 contract. Native bridge NOT_DERIVED. No mathematical priority or new physical law is claimed.
+
+## 1. What is being resolved
+
+The user asks whether the missing actual-event-to-owned-record connection can be resolved. The precise question addressed here is:
+
+> If the current P1 event has exact physical source correspondence, faithful preparations and unchanged physical representations of retained states, does that force a distinction into one already designated, initially blind, accessible receiver R?
+
+The answer to this implication is **no**. The proof below satisfies those source conditions in both cases, with the same R, its complete initial state and its available observations. R remains completely unchanged in one case and acquires a probability contrast of 1/5 in the other. Both implement the identical nonidentity source channel on every quantum input.
+
+This is not a proof that UQCF-GEM cannot have interactions, that no receiver anywhere can change, or that an actual experiment has a blind receiver. It resolves an inference from source correspondence to nominated-receiver acquisition within the explicitly stated contract. A native rule constraining the joint event or identifying the actual owned record could exclude the blind case; no such rule is asserted absent from every possible extension.
+
+## 2. Provenance and the stronger source contract
+
+The inherited native tree has o->p, p->u, p->v. Let X=(o,p,u,v) and Y=(o,p,v). P1 is
+
+    P(z_o,z_p,z_u,z_v) = (z_o,z_p+z_u,z_v).
+
+P2 is the literal zero extension I from Y to X. These are the existing FCV operations. They do not themselves identify physical state factors with addresses.
+
+Reuse the current conditional quantum benchmark, without treating its physical premises as native-derived:
+
+    H_S = span{|o>,|p>,|u>,|v>},
+    Q = I_S - |u><u|,
+    C(rho) = Q rho Q + rho_uu |p><p|.
+
+This is the existing completed reset, not a new finite-duration damping model. Actual occurrence of the relevant event is assumed in each comparison; absence of occurrence is not used as a counterexample.
+
+Fix the SAME source encodings in both cases:
+
+    Pi_X(z) = sum_(i in X) z_i |i><i|,
+    Pi_Y(y) = sum_(i in Y) y_i |i><i|.
+
+The grades here are normalized nonnegative vectors. Their interpretation as physical mixture weights remains a SUPPLIED benchmark premise. On the entire simplex both encodings are positive, normalized, affine and injective, and
+
+    C Pi_X = Pi_Y P,
+    Pi_X I = Pi_Y.
+
+Thus physical retention of all retained atomic codes is imposed, not left free. C in fact fixes every density operator supported on span{|o>,|p>,|v>}, including its coherences. This goes beyond mere equality of the native output labels.
+
+Use the same pair as the prior P1 correspondence result:
+
+    z+ = (1,1,2,1)/5,   z- = (1,1,1,2)/5,
+    rho+ = Pi_X(z+),    rho- = Pi_X(z-).
+
+The four calibration states sigma_i=|i><i| satisfy all four source/preparation conditions of the prior positive proof, with a=<u|sigma_u|u>=1. No input code is swapped between the two implementations.
+
+The comparison adds a fixed output interface: qubits E and R, initially in |0_E 0_R>, independent of the source preparation. R is the same existing receiver in both cases; E is outside its specified accessible interface. Give R its ENTIRE qubit observable algebra, including the same effect N_R=|1><1|. Thus the negative case is not caused by choosing a poor detector or hiding another available degree of freedom inside R. These factorization and access specifications are explicit conditional premises, not deductions from native addresses.
+
+## 3. The strongest positive construction
+
+Write output vectors in the order S,E,R. Define the fixed isometry W_R by
+
+    W_R|j> = |j>|0>|0>  for j=o,p,v,
+    W_R|u> = |p>|0>|1>.
+
+Its four columns are orthonormal. The colliding source outputs p and u are distinguished by R. Tracing E and R gives C on every matrix, not just the two tested states: the retained block Q rho Q survives, the u population becomes |p><p|, and all coherences joining u to a retained basis state vanish.
+
+For a diagonal source Pi_X(z), the complete receiver state is
+
+    omega_R^write(z) = (1-z_u)|0><0| + z_u|1><1|.
+
+Consequently
+
+    omega_R^write(+) = diag(3,2)/5,
+    omega_R^write(-) = diag(4,1)/5.
+
+N_R has probability difference 1/5 and the two receiver states have trace distance 1/5. The initial complete receiver is |0><0| in both preparations. This realizes the earlier positive port argument with its explicit joint-operation premise. It is a supplied implementation, not the desired native derivation.
+
+## 4. A blind receiver with every source condition retained
+
+Define a second fixed isometry W_E on the SAME spaces and initial environment:
+
+    W_E|j> = |j>|0>|0>  for j=o,p,v,
+    W_E|u> = |p>|1>|0>.
+
+Again the four columns are orthonormal, and tracing E,R gives exactly C on every matrix. Equivalently W_R=(I_S tensor SWAP_ER) W_E, so their reduced source channels are identical. Both isometries can be extended to unitaries on S,E,R with the same blank input subspace, by completing their orthonormal columns. No Hamiltonian, elapsed duration, energy conservation or physical implementation is inferred from that extension.
+
+For W_E,
+
+    omega_R^blind(z) = |0><0| for EVERY source state.
+
+In particular omega_R^blind(+)=omega_R^blind(-), so every available receiver POVM has the same outcome distribution. A fixed subsequent receiver-only operation, including an instrument with its complete outcome record, cannot distinguish equal input states. This statement does not include later access to S or E, or source-informed postselection.
+
+The source outputs are identical across the two implementations:
+
+    C(rho+) = (|o><o|+3|p><p|+|v><v|)/5,
+    C(rho-) = (|o><o|+2|p><p|+2|v><v|)/5.
+
+They exactly represent the same P1 outputs. In the blind case E carries the record that R carries in the positive case. The full E,R outputs still distinguish the pair; nothing claims global destruction or contradicts complementary-record preservation.
+
+What varies is the unresolved joint realization, not the source encoding, retained physical codes, source event channel, nominated receiver, its complete initial state, or its available measurements. Because both source channels agree on all matrices, adding a reference ancilla to a source-only characterization also cannot distinguish them: both induce C tensor identity on that interface. The joint event is distinguishable by observing the output interface; source-only correspondence does not determine it.
+
+## 5. Exact receiver contrast range in this benchmark
+
+The two constructions already disprove the proposed implication. A direct bound shows that they attain the extremes for the fixed diagonal pair.
+
+Let W be ANY fixed isometry implementing C with environment E tensor R. Since C sends each basis state to a pure source state,
+
+    W|j> = |j>|e_j> for j=o,p,v,
+    W|u> = |p>|e_u>.
+
+Preservation of every retained off-diagonal |j><k| forces <e_k|e_j>=1, so all retained environment vectors equal one normalized vector e_0. Orthogonality of W|p> and W|u> forces <e_0|e_u>=0. Let
+
+    tau_0 = Tr_E |e_0><e_0|,
+    tau_u = Tr_E |e_u><e_u|.
+
+For the stipulated diagonal pair,
+
+    omega_R(+) - omega_R(-) = (tau_u-tau_0)/5,
+    D(omega_R(+),omega_R(-)) = D(tau_u,tau_0)/5 <= 1/5,
+
+where D(A,B)=||A-B||_1/2. The last inequality follows from the triangle inequality and unit trace of the positive matrices tau_u,tau_0. W_E attains zero; W_R attains 1/5. Hence the exact minimum and maximum over this implementation class are 0 and 1/5. No parameter sweep or numerical evidence is needed.
+
+For the COMPLETE environment, e_0 and e_u are orthogonal and its contrast is always 1/5. If R is independently established to be that complete environment, the blind construction is outside that stronger contract. The proof identifies exactly why full-complement statements cannot silently be applied to a nominated accessible part.
+
+## 6. Relation to established work and decision
+
+- The prior P1 event/source counterexample held one joint interaction fixed and varied the input code; its blind code violated physical retained-state correspondence. Here the code and physical retention are held fixed; the varied object is the joint realization left unspecified by its source channel. The earlier theorem and counterexample remain valid.
+- The existing partial-complement result already establishes the general freedom to move record information between accessible factors, unread factors and correlations without changing a source channel. This note applies that known boundary to the exact current four-atom P1 contract. It is not a newly discovered general no-hiding or channel theorem.
+- The corrected canonical P1 acquisition result still forces a change in the formal p-coordinate. Neither isometry identifies physical R with that coordinate. That missing ownership identification is the point under test, not a premise the blind example pretends to satisfy.
+- The result does not quantify over every native operation or every physically accessible subsystem. It proves non-entailment for the explicitly strengthened source contract above. It does not show that every physical model compatible with the whole UQCF archive is noninteracting.
+
+The current inference is therefore resolved negatively: even earning exact source event correspondence and retained source representation would not, by themselves, earn delivery to the nominated receiver. The required next connection is a source-backed relation between the actual joint event and that receiver's owned output, or an independently justified identification of the relevant retained factor with its accessible state. A derived law for one available effect can suffice; a full physical theory or unique microscopic dynamics is not required. Merely selecting W_R would assume the sought delivery.
+
+This is a scoped logical resolution, not an achieved native physical prediction. No detector design, fundamental clock, geometry, new grading axiom, historical recertification, numerical campaign, branch merge or stage closure is claimed. Actual event occurrence remains ACCEPTED INPUT. Mathematical and physical identification claims remain separate.
+
+END EXACT DOCUMENT
