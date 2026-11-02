@@ -52,7 +52,7 @@ for item in items:
             parts.append(dict(file=pn,bytes=len(part),sha256=digest(part)))
         write(zipname+'.parts.json',dict(original_file=zipname,bytes=len(raw),sha256=h,parts=parts,
               reconstruction='Concatenate parts in listed order as raw bytes; verify total byte count and SHA-256.'))
-        rebuilt=b''.join((root[p['file']]).read_bytes() for p in parts)
+        rebuilt=b''.join((root/p['file']).read_bytes() for p in parts)
         assert rebuilt==raw;del rebuilt
     else:(root/zipname).write_bytes(raw)
     dest=root/name;dest.mkdir(exist_ok=True)
@@ -88,9 +88,16 @@ for job in jobs:
     raw=download('/actions/jobs/'+str(job['id'])+'/logs'); name='job-'+str(job['id'])+'.log';(root/name).write_bytes(raw)
     logs.append(dict(id=job['id'],name=job['name'],conclusion=job['conclusion'],file=name,bytes=len(raw),sha256=digest(raw)))
 write('LARGE_MEMBERS.json',binaries)
+failed_repair_logs=[]
+for prior_run in ('41541044219',):
+    prior_jobs=json.loads(api('/actions/runs/'+prior_run+'/jobs?per_page=100'))['jobs']
+    for job in prior_jobs:
+        assert job['status']=='completed'
+        raw=download('/actions/jobs/'+str(job['id'])+'/logs');name='prior-repair-job-'+str(job['id'])+'.log';(root/name).write_bytes(raw)
+        failed_repair_logs.append(dict(run_id=prior_run,job_id=job['id'],conclusion=job['conclusion'],file=name,sha256=digest(raw)))
 write('DOWNLOAD_AUDIT.json',dict(status='PASS',science_sha=science,original_run=run,original_conclusion=run_info['conclusion'],
       repair_run=os.environ['GITHUB_RUN_ID'],repair_sha=os.environ['GITHUB_SHA'],artifacts=receipts,completed_job_logs=logs,
-      review_verdict=review['verdict'],native_bridge_status='NOT_DERIVED',
+      review_verdict=review['verdict'],native_bridge_status='NOT_DERIVED',failed_repair_logs=failed_repair_logs,
       storage='Original ZIP bytes preserved. Large ZIPs are chunked; large extracted members remain recoverable from those exact original ZIPs.'))
 assert all(p.stat().st_size<=limit for p in root.rglob('*') if p.is_file())
 (root/'SHA256SUMS').write_text(''.join(digest(p.read_bytes())+'  '+str(p.relative_to(root))+'\n' for p in sorted(root.rglob('*')) if p.is_file() and p.name!='SHA256SUMS'))

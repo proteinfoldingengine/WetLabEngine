@@ -20,6 +20,8 @@ jobs:
           sparse-checkout: |
             .github
             ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+      - name: Regression check of the production chunk reconstruction
+        run: python ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/review_tools/test_archive_chunks.py .github/scripts/uqcf_t277_archive_repair.py
       - name: Preserve original frozen run with reconstructable large-file storage
         env:
           GH_TOKEN: ${{ github.token }}
