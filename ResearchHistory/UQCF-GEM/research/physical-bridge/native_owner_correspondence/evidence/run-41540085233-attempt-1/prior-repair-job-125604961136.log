@@ -1,0 +1,158 @@
+﻿2026-11-02T22:53:46.4167627Z Current runner version: '2.338.2'
+2026-11-02T22:53:46.4195674Z ##[group]Runner Image Provisioner
+2026-11-02T22:53:46.4196753Z Hosted Compute Agent
+2026-11-02T22:53:46.4197445Z Version: 20261021.618
+2026-11-02T22:53:46.4198149Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-02T22:53:46.4199102Z Build Date: 2026-10-21T00:45:21Z
+2026-11-02T22:53:46.4199943Z Worker ID: {a73f97df-bfcb-45d8-a060-64078bad9ff4}
+2026-11-02T22:53:46.4200706Z Region: northcentralus
+2026-11-02T22:53:46.4201437Z Cloud: Azure
+2026-11-02T22:53:46.4202055Z ##[endgroup]
+2026-11-02T22:53:46.4204220Z ##[group]Operating System
+2026-11-02T22:53:46.4205224Z Ubuntu
+2026-11-02T22:53:46.4205796Z 24.04.5
+2026-11-02T22:53:46.4206468Z LTS
+2026-11-02T22:53:46.4207167Z ##[endgroup]
+2026-11-02T22:53:46.4207830Z ##[group]Runner Image
+2026-11-02T22:53:46.4208559Z Image: ubuntu-24.04
+2026-11-02T22:53:46.4209214Z Version: 20261025.353.1
+2026-11-02T22:53:46.4210680Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-02T22:53:46.4213031Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-11-02T22:53:46.4214189Z ##[endgroup]
+2026-11-02T22:53:46.4215566Z ##[group]GITHUB_TOKEN Permissions
+2026-11-02T22:53:46.4218102Z Actions: read
+2026-11-02T22:53:46.4218764Z Contents: write
+2026-11-02T22:53:46.4219544Z Metadata: read
+2026-11-02T22:53:46.4220233Z ##[endgroup]
+2026-11-02T22:53:46.4223011Z Secret source: Actions
+2026-11-02T22:53:46.4224039Z Cache mode: write
+2026-11-02T22:53:46.4225169Z Prepare workflow directory
+2026-11-02T22:53:46.4670453Z Prepare all required actions
+2026-11-02T22:53:46.4723591Z Getting action download info
+2026-11-02T22:53:46.6954396Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-02T22:53:47.0614857Z Complete job name: archive-repair
+2026-11-02T22:53:47.1621221Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-02T22:53:47.1622674Z with:
+2026-11-02T22:53:47.1623223Z   ref: 546eb5da7be45fba4d245e573acaade804ced338
+2026-11-02T22:53:47.1623832Z   fetch-depth: 2
+2026-11-02T22:53:47.1624704Z   sparse-checkout: .github
+ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+
+2026-11-02T22:53:47.1625712Z   repository: proteinfoldingengine/WetLabEngine
+2026-11-02T22:53:47.1629627Z   token: ***
+2026-11-02T22:53:47.1630093Z   ssh-strict: true
+2026-11-02T22:53:47.1630568Z   ssh-user: git
+2026-11-02T22:53:47.1631046Z   persist-credentials: true
+2026-11-02T22:53:47.1631561Z   clean: true
+2026-11-02T22:53:47.1632043Z   sparse-checkout-cone-mode: true
+2026-11-02T22:53:47.1632758Z   fetch-tags: false
+2026-11-02T22:53:47.1633241Z   show-progress: true
+2026-11-02T22:53:47.1633724Z   lfs: false
+2026-11-02T22:53:47.1634162Z   submodules: false
+2026-11-02T22:53:47.1635023Z   set-safe-directory: true
+2026-11-02T22:53:47.1635710Z   allow-unsafe-pr-checkout: false
+2026-11-02T22:53:47.1636590Z ##[endgroup]
+2026-11-02T22:53:47.7813969Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-11-02T22:53:47.7817080Z ##[group]Getting Git version info
+2026-11-02T22:53:47.7818384Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-02T22:53:47.7819751Z [command]/usr/bin/git version
+2026-11-02T22:53:47.8095061Z git version 2.56.0
+2026-11-02T22:53:47.8115746Z ##[endgroup]
+2026-11-02T22:53:47.8133862Z Temporarily overriding HOME='/home/runner/work/_temp/cda17db4-f22f-45be-ac5c-2e87a7d51461' before making global git config changes
+2026-11-02T22:53:47.8136763Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-02T22:53:47.8139720Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-02T22:53:47.8197952Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-02T22:53:47.8204206Z ##[group]Initializing the repository
+2026-11-02T22:53:47.8206957Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-02T22:53:47.8738618Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-02T22:53:47.8740192Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-02T22:53:47.8741640Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-02T22:53:47.8743198Z hint: call:
+2026-11-02T22:53:47.8743917Z hint:
+2026-11-02T22:53:47.8744828Z hint: 	git config --global init.defaultBranch <name>
+2026-11-02T22:53:47.8745890Z hint:
+2026-11-02T22:53:47.8746913Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-02T22:53:47.8748047Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-02T22:53:47.8748879Z hint:
+2026-11-02T22:53:47.8749377Z hint: 	git branch -m <name>
+2026-11-02T22:53:47.8749964Z hint:
+2026-11-02T22:53:47.8750748Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-02T22:53:47.8763545Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-11-02T22:53:47.8767931Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-02T22:53:47.8831894Z ##[endgroup]
+2026-11-02T22:53:47.8833677Z ##[group]Disabling automatic garbage collection
+2026-11-02T22:53:47.8836885Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-02T22:53:47.8885607Z ##[endgroup]
+2026-11-02T22:53:47.8887018Z ##[group]Setting up auth
+2026-11-02T22:53:47.8893554Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-02T22:53:47.9144867Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-02T22:53:47.9533252Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-02T22:53:47.9579715Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-02T22:53:47.9835822Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-02T22:53:47.9882845Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-02T22:53:48.0143736Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-02T22:53:48.0197671Z ##[endgroup]
+2026-11-02T22:53:48.0199034Z ##[group]Fetching the repository
+2026-11-02T22:53:48.0210327Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=2 origin 546eb5da7be45fba4d245e573acaade804ced338
+2026-11-02T22:53:49.9243707Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-02T22:53:49.9245229Z  * branch            546eb5da7be45fba4d245e573acaade804ced338 -> FETCH_HEAD
+2026-11-02T22:53:49.9247790Z ##[endgroup]
+2026-11-02T22:53:49.9248324Z ##[group]Determining the checkout info
+2026-11-02T22:53:49.9250493Z ##[endgroup]
+2026-11-02T22:53:49.9251063Z ##[group]Setting up sparse checkout
+2026-11-02T22:53:49.9256831Z [command]/usr/bin/git sparse-checkout set .github ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+2026-11-02T22:53:49.9321160Z ##[endgroup]
+2026-11-02T22:53:49.9321732Z ##[group]Checking out the ref
+2026-11-02T22:53:49.9326784Z [command]/usr/bin/git checkout --progress --force 546eb5da7be45fba4d245e573acaade804ced338
+2026-11-02T22:53:50.5959302Z Note: switching to '546eb5da7be45fba4d245e573acaade804ced338'.
+2026-11-02T22:53:50.5959821Z 
+2026-11-02T22:53:50.5960208Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-02T22:53:50.5961037Z changes and commit them, and you can discard any commits you make in this
+2026-11-02T22:53:50.5961773Z state without impacting any branches by switching back to a branch.
+2026-11-02T22:53:50.5962964Z 
+2026-11-02T22:53:50.5963243Z If you want to create a new branch to retain commits you create, you may
+2026-11-02T22:53:50.5963903Z do so (now or later) by using -c with the switch command. Example:
+2026-11-02T22:53:50.5964180Z 
+2026-11-02T22:53:50.5964297Z   git switch -c <new-branch-name>
+2026-11-02T22:53:50.5964496Z 
+2026-11-02T22:53:50.5964606Z Or undo this operation with:
+2026-11-02T22:53:50.5964825Z 
+2026-11-02T22:53:50.5964920Z   git switch -
+2026-11-02T22:53:50.5965067Z 
+2026-11-02T22:53:50.5965314Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-02T22:53:50.5965635Z 
+2026-11-02T22:53:50.5965944Z HEAD is now at 546eb5d Repair oversized archive publication; preserve unchanged T277 review and science
+2026-11-02T22:53:50.5978486Z ##[endgroup]
+2026-11-02T22:53:50.6042950Z [command]/usr/bin/git log -1 --format=%H
+2026-11-02T22:53:50.6085341Z 546eb5da7be45fba4d245e573acaade804ced338
+2026-11-02T22:53:50.6338719Z ##[group]Run python .github/scripts/uqcf_t277_archive_repair.py
+2026-11-02T22:53:50.6339321Z [36;1mpython .github/scripts/uqcf_t277_archive_repair.py[0m
+2026-11-02T22:53:50.6365149Z shell: /usr/bin/bash -e {0}
+2026-11-02T22:53:50.6365436Z env:
+2026-11-02T22:53:50.6368030Z   GH_TOKEN: ***
+2026-11-02T22:53:50.6368265Z ##[endgroup]
+2026-11-02T22:53:54.5875069Z Traceback (most recent call last):
+2026-11-02T22:53:54.5876584Z   File "/home/runner/work/WetLabEngine/WetLabEngine/.github/scripts/uqcf_t277_archive_repair.py", line 55, in <module>
+2026-11-02T22:53:54.5877638Z     rebuilt=b''.join((root[p['file']]).read_bytes() for p in parts)
+2026-11-02T22:53:54.5878190Z             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-02T22:53:54.5879068Z   File "/home/runner/work/WetLabEngine/WetLabEngine/.github/scripts/uqcf_t277_archive_repair.py", line 55, in <genexpr>
+2026-11-02T22:53:54.5879986Z     rebuilt=b''.join((root[p['file']]).read_bytes() for p in parts)
+2026-11-02T22:53:54.5880772Z                       ~~~~^^^^^^^^^^^
+2026-11-02T22:53:54.5881204Z TypeError: 'PosixPath' object is not subscriptable
+2026-11-02T22:53:54.6201061Z ##[error]Process completed with exit code 1.
+2026-11-02T22:53:54.6340890Z Post job cleanup.
+2026-11-02T22:53:54.7236082Z [command]/usr/bin/git version
+2026-11-02T22:53:54.7286140Z git version 2.56.0
+2026-11-02T22:53:54.7331965Z Temporarily overriding HOME='/home/runner/work/_temp/70bb123f-aabc-4a3e-adef-f2819bf7054b' before making global git config changes
+2026-11-02T22:53:54.7333269Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-02T22:53:54.7336762Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-02T22:53:54.7385737Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-02T22:53:54.7456046Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-02T22:53:54.7772060Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-02T22:53:54.7804798Z http.https://github.com/.extraheader
+2026-11-02T22:53:54.7818047Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-02T22:53:54.7863276Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-02T22:53:54.8179921Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-02T22:53:54.8287671Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-02T22:53:54.8705020Z Cleaning up orphan processes
+2026-11-02T22:53:54.9092015Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
