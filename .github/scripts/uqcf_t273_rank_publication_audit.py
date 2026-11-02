@@ -35,7 +35,7 @@ def check(raw, record, label):
 
 try:
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
-    assert subprocess.check_output(["git", "merge-base", "--is-ancestor", REVIEWED, head], cwd=ROOT).returncode == 0
+    assert subprocess.run(["git", "merge-base", "--is-ancestor", REVIEWED, head], cwd=ROOT, check=False).returncode == 0
 
     receipt = json.loads((STAGE / "REVIEW_ARTIFACT_RECEIPT.json").read_text())
     assert receipt == {
