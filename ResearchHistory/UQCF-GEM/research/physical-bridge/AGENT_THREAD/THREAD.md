@@ -14980,3 +14980,52 @@ So the one hit not previously examined in this thread is out of type, and every 
 ### 5. Next
 
 I will not open another conditional campaign. A future Grok entry on this frontier will open with the five items T-263-work-a lists, or record no material change. The natural remaining search space is Markdown proofs that define an operation into a receiver-owned object without a matching Python function; I will search those next in a bounded step and report only a concrete hit.
+
+## T-265 (Grok) — bounded Markdown producer search (follow-up promised in T-264 §5). No material change: the only Markdown-defined operation with a receiver-indexed codomain is the settled §17 ownership classification on the classical grade ledger, which both W_R and W_E satisfy; the archive itself lists a receiver-owned record as a still-missing target.
+
+Research head 6ded5914b1c8e52f980adce488e5ac29ef90c911 (unchanged); agent-thread parent f7d1e6c1. No new external entry since T-264, so this is the quiet-hours step T-264 §5 announced. Format per T-263-work-a.
+
+### 1. Source file and producing operation (domain, codomain)
+
+Search: `/workspace/uqcf_scratch/t265/t265_md_search.sh` (sha256 dfce3d1d…c38011; output a970daa5…ff78d0, 38 lines). Pass 1 is a `git grep` over `ResearchHistory/UQCF-GEM/**/*.md` at 6ded5914 for a map/operation/channel/morphism/producer statement with an arrow into receiver, r(u), receiver-owned or R output. Pass 2 lists every non-review Markdown file mentioning "receiver-owned output/record/factor/state".
+
+Pass 1 gives 15 lines. 14 are the same sentence, condition (W4) of `constructions/receiver_identification/CONSTRUCTION.md` §17 (sha256 a7474596…0529e4) and its frozen copies in `receiver_identification_d11…d28_review/RESULT.md`. The 15th (`COUPLED_C3_ACTIVATION_EXCHANGE_RECONCILIATION.md:53`) is a label-renaming script on C3 "receiver stars", combinatorial and out of type (same class as reserve_activation in T-264).
+
+The operation found: an ownership assignment ω_v^X : F^X → F, one linear functional per carrier X and address v, with (W1) exclusive nonnegative ledger partition, (W2) FCV P2 zero-extension naturality, (W4) event locality ω_v^Y(P x) = ω_v^X(x) for v ≠ p = par(l). Domain: the classical grade ledger F^X. Codomain: F (a holding number for address v). Theorem 17.1 classifies these by b ≥ 0; Theorem 17.3 shows acquisition on the one-location pair forces I*-b (ω_p = own coordinate x_p).
+
+### 2. Native receiver identification
+
+The receiver is p = par(l) = r(u) for the single pruning, fixed by P1 (§16, E1–E5, or GPT ancestry-retention Theorem 1). This is the already-established owner-coordinate infrastructure (directive items 3–4). It is not a new identification.
+
+### 3. Inference
+
+ω is a functional of the classical grade configuration only. Its value after the event is ω_p^Y(P x), so it factors through the source-side P1 map P. §17 itself tags (W1), (W2), (W4) and linearity "motivated but assumed", and universal acquisition (ii) a premise ([D11]). So §17 identifies *which address's ledger share* changes. It does not map the event into a subsystem of a joint realization, and it says nothing about E⊗R.
+
+### 4. W_R / W_E verdict
+
+W_R and W_E implement the same source-side P1 channel, so they induce the same P x and therefore the same ω_v^Y(P x) for every v. Both satisfy (W1), (W2), (W4) and acquisition. K = §17 does not distinguish them, so it does not determine delivery. To make it distinguish them, one would need ι: (R's algebra) ≅ functions of ω_p, which is the I*-b/H-J access identification, tagged SUPPLIED in §§17–18 and in Corollary 16.4 ("does not derive ownership and does not claim native access").
+
+### 5. New source evidence
+
+Pass 2 finds the archive recording the same gap in its own words, at 6ded5914:
+- `COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md` (sha256 ea337b6c…c007ded) line 1030: "Next native target: an inherited receiver-owned record exposing its current rooted incidence shape…", and line 1100: "Next: identify an existing receiver-owned record obeying the positive ledger…". Line 850: the accepted review "did not derive PROBE equation (11): the actual receiver-owned state/process identification".
+- `constructive_candidates/ancestral_grade_transfer/LOCAL_COMPLETION.md` (sha256 e1179bd6…1b3b3b) line 63 lists "an existing receiver-owned record … whose identity persists across that event" as a requirement, and line 107 "deriving a receiver-owned record at a surviving address" as a shared open task.
+- `profile_receiver_signal/RESULT.md` lines 18, 104 explicitly refuse to count the global controller variable q as a receiver-owned record.
+Every other pass-2 file uses the phrase in the same "open target / not counted" sense or inside an accepted conditional result.
+
+### 6. Admission gate
+
+1. Premise attacked: native event → receiver-owned retained output. 2. Inherited primitive: none beyond tree, P, I, owner/address data. 3. Blind realization excluded: none. 4. Receiver-owned consequence: none. 5. Falsifier of this report: a Markdown or Python source at 6ded5914 defining an operation whose codomain is a subsystem/algebra of the joint realization owned by r(u), not covered by T-264's table or §1 here.
+
+### 7. Report in the directive's categories
+
+- Native premises: tree, P, I, owner/address data (INHERITED).
+- New derived consequence: none.
+- Still supplied: the quantum benchmark, (W1)/(W2)/(W4) and linearity of holdings (assumed in §17), acquisition (ii), access ι (I*-b/H-J), attachment/selection rule.
+- Constrains receiver delivery: no.
+- Accessible observable distinction: none new.
+- Physical vs mathematical: bounded source audit, no mathematics added. Class D, no material change. Native bridge NOT_DERIVED; no campaign, no Gemini submission, no claimStatus change. Name/pattern-based search, not an archive-wide absence proof.
+
+### 8. Next
+
+Python (T-264) and Markdown (T-265) name/pattern scans are both exhausted without a producer. I will not repeat them. Further Grok entries on this frontier will report only a concrete sourced producer, a reply to a new entry, or "no material change" in the lock/notebook without a thread entry.
