@@ -15483,3 +15483,45 @@ Completion rule: on the E=|1⟩, R=|0⟩ input, e′_0 is the normalized project
 Q-1 PASS: the T-270 tie between E-α and its R-untouched mirror is broken under TB. Q-L negative: TB does not fix record location, and no initial-state ingredient can. TB does not select W_R among E-touching writers. Q-2 consistency holds.
 
 Plan: one local exact sympy run (script and SHA-256 under /workspace/uqcf_scratch/t271/), an optional independent numpy checker (failures kept), frozen files in constructive_candidates/thermal_bath_purity_test/ with SHA256SUMS, a PR into the research branch (no merge), one Gemini review via Actions, and the result in T-272. The criteria are frozen here. TB stays NEW, and the native bridge stays NOT_DERIVED.
+
+## T-272 (Grok) — RESULT of the T-271 preregistered thermal-bath / pure-receiver test. Q-1 PASS; Q-L not admissible (confirmed); Q-2 consistency. Ingredient TB stays a NEW ASSUMPTION. Native bridge NOT_DERIVED.
+Parents: T-271 (agent-thread d37a3be5; PREREGISTRATION.md committed at 5b125e8b before execution), T-270.
+Artifacts: PR #131 (https://github.com/proteinfoldingengine/WetLabEngine/pull/131; open, NOT merged). Branch grok/thermal-bath-purity-test: base 750554de → 5b125e8b (prereg) → f041bf5d (script, evidence, RESULT) → 15574ea7 (review workflow) → efba286e (review evidence and adjudication). Folder: constructive_candidates/thermal_bath_purity_test/, with SHA256SUMS.
+Execution: one local exact sympy run of t271_tb.py (sha256 daf1fc2f…78756) on the shared Grok box, 13:00:48 MST, exit 0, empty stderr, output run1_stdout.json (sha256 4d206a4d…7e27). Independent numpy checker t271_verify_np.py: one run, agreed, no failures.
+
+### Counted outcome (all as preregistered)
+- **Q-1(a).** W_R⊗I_E realizes C exactly, for τ_E=diag(2/3,1/3) and for I/2.
+- **Q-1(b), the fixed-ingredient mirror (TB fixed, writer swapped to W_E, R untouched).** It does NOT realize C: ⟨p|Φ(ρ*)|p⟩ = 2/3 (τ_q) and 1/2 (τ_½). These equal the Ky Fan optimum KF_{d_E}(ρ*⊗τ_E). Haar search over 2000 U_SE: max 0.4854 and 0.4130, both ≤ KF.
+- **Q-1(c), the jointly swapped sanity mirror** (τ_q on R, E pure). W_E⊗I_R realizes C; W_R⊗I_E reaches only 2/3 = KF.
+- **Theorem L threshold (d_E=4).** Rank 2: exact R-untouched realization. Rank 3: value 2/3 = KF.
+- **(iv), two events on fresh slots.** The W_R slots realize C₁C₂ (carriers A and B). The R-untouched optima equal KF: 2/3 (A) and 1/3 (B).
+- **Q-1: PASS.**
+
+### Uncounted / admissibility
+- **Q-L: not admissible**, confirmed. W_R;SWAP_ER realizes C with D_E=1/5 and D_R=0 (Lemma PP).
+- **Completions that touch R also realize C.** W_E^c, W_Bell^c and W_W^c all do, so TB does not single out W_R.
+- **Q-2.** S(ω_R) ≥ ΔS under τ_½ (min slack 0). Forced; consistency only.
+
+### Reading
+Under TB, the T-270 tie is broken: the R-untouched class becomes empty, while the E-untouched class contains W_R. What TB forces is that **R's purity is consumed**. It does not force the record to stay in R, and it does not select W_R. The asymmetry is supplied by the NEW premise, not derived.
+
+**Directive categories**
+- Native premises: unchanged.
+- New derived consequence (conditional on TB, inside the benchmark): Theorem L and Lemma PP.
+- Still supplied: TB, C, the factorization, the receiver algebra, the dimensions and the access law.
+- Constrains delivery: partially.
+- New accessible observable: none.
+- Status: a mathematical consequence of a physically motivated supplied premise.
+
+### Gemini review
+Run https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/41515580146 (13:02:59–13:07:12 MST; one call, no retry; gemini-3.1-pro-preview, both requested and returned; SHA 15574ea7). **Verdict: ACCEPTED.** Findings, missing_assumptions and counterexamples are all empty; native_bridge_status is NOT_DERIVED.
+
+**Adjudication: accepted as consistent.** One minor imprecision in Gemini's Q-2 justification. The precise reason is S(ω_E) ≤ log d_E = S(τ_½) plus unitarity and subadditivity. No verdict changes.
+
+Gemini's next_native_obligation (trace a retained record through the inherited P1 contraction into an existing native consumer or observation, without supplied premises) is recorded as open.
+
+### Deviations (disclosed)
+1. **Pre-run edits to the script.** Exact-to-mpmath conversion via 60-digit strings instead of Python complex, and removal of an unused line in KF(). Both were made before the single run; the draft is committed as evidence/prerun_draft_t271_tb.py.
+2. **Wording in T-271.** It said owner illustration (1) holds "for every control". It holds for every realization; the non-realizing fixed mirror gives unequal π_p/π_v states. It is not counted, and no criterion was changed.
+3. **Run location.** Local run, not Actions; AGENTS.md closure chain not claimed.
+4. **Haar search.** The supplementary search does not approach the KF optimum; the theorem and the explicit construction carry the result.
