@@ -1,0 +1,676 @@
+{
+ "P_a": {
+  "A": {
+   "X1": {
+    "B_E_blind_orbit": true,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event1_ok": true,
+     "event2": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event2_ok": true
+    },
+    "E_untouched_all_outputs": true,
+    "O_SE_channel_equal": true,
+    "PASS": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "doubly_written_branches": 0,
+    "explicit_U_R": "identity",
+    "explicit_U_R_identity_holds": true,
+    "trivial_reason": "(a) writes act on disjoint R factors by construction; (b) also holds",
+    "untouched_factor_fixed": true,
+    "verdict": "PASS, non-discriminating"
+   },
+   "X2": {
+    "OR": {
+     "O_SE_channel_equal": true,
+     "PASS": false,
+     "W_well_posed": false,
+     "composite_implements_C1C2": false
+    },
+    "XOR": {
+     "O_SE_channel_equal": true,
+     "PASS": false,
+     "W_well_posed": false,
+     "composite_implements_C1C2": false
+    },
+    "choi_rank": 3,
+    "obstruction_holds": true,
+    "rule_independent_obstruction": "composite would dilate C1C2 with environment dim 2 (E pure); needs Choi rank <= 2",
+    "verdict": "FAIL (ill-posed)"
+   },
+   "X3": {
+    "B_E_blind_orbit": true,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event1_ok": true,
+     "event2": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event2_ok": true
+    },
+    "E_untouched_all_outputs": true,
+    "O_SE_channel_equal": true,
+    "PASS": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "doubly_written_branches": 0,
+    "explicit_U_R": "swap [1,2]<->[2,1]",
+    "explicit_U_R_identity_holds": true,
+    "trivial_reason": "(b) no doubly-written branch",
+    "untouched_factor_fixed": true,
+    "verdict": "PASS, non-discriminating"
+   },
+   "aggregate": "PASS, non-discriminating"
+  },
+  "B": {
+   "X1": {
+    "B_E_blind_orbit": true,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event1_ok": true,
+     "event2": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event2_ok": true
+    },
+    "E_untouched_all_outputs": true,
+    "O_SE_channel_equal": true,
+    "PASS": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "doubly_written_branches": 1,
+    "explicit_U_R": "identity",
+    "explicit_U_R_identity_holds": true,
+    "trivial_reason": "(a) writes act on disjoint R factors by construction",
+    "untouched_factor_fixed": true,
+    "verdict": "PASS, non-discriminating"
+   },
+   "X2": {
+    "OR": {
+     "O_SE_channel_equal": true,
+     "PASS": false,
+     "W_well_posed": false,
+     "composite_implements_C1C2": false
+    },
+    "XOR": {
+     "O_SE_channel_equal": true,
+     "PASS": false,
+     "W_well_posed": false,
+     "composite_implements_C1C2": false
+    },
+    "choi_rank": 4,
+    "obstruction_holds": true,
+    "rule_independent_obstruction": "composite would dilate C1C2 with environment dim 2 (E pure); needs Choi rank <= 2",
+    "verdict": "FAIL (ill-posed)"
+   },
+   "X3": {
+    "B_E_blind_orbit": true,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event1_ok": true,
+     "event2": {
+      "D_E": "0",
+      "D_R": "1/5"
+     },
+     "event2_ok": true
+    },
+    "E_untouched_all_outputs": true,
+    "O_SE_channel_equal": true,
+    "PASS": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "doubly_written_branches": 1,
+    "explicit_U_R": "swap [1,2]<->[2,1]",
+    "explicit_U_R_identity_holds": true,
+    "trivial_reason": "none: a branch is written twice into the same register",
+    "untouched_factor_fixed": true,
+    "verdict": "PASS"
+   },
+   "aggregate": "PASS"
+  }
+ },
+ "P_a_headline_carrier_A": "PASS, non-discriminating",
+ "P_a_rejecting_controls": {
+  "X2_OR_composite_A": {
+   "composite_implements_C1C2": false,
+   "rejected": true
+  },
+  "X3_B_with_U_R_identity": {
+   "explicit_U_R_identity_holds": false,
+   "rejected": true
+  },
+  "mirror_E_writing": {
+   "A-X1": {
+    "B_E_blind_orbit": false,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event1_ok": false,
+     "event2": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event2_ok": false
+    },
+    "O_SE_channel_equal": true,
+    "R_untouched": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "same_W_O_as_Ealpha": true
+   },
+   "A-X3": {
+    "B_E_blind_orbit": false,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event1_ok": false,
+     "event2": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event2_ok": false
+    },
+    "O_SE_channel_equal": true,
+    "R_untouched": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "same_W_O_as_Ealpha": true
+   },
+   "B-X1": {
+    "B_E_blind_orbit": false,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event1_ok": false,
+     "event2": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event2_ok": false
+    },
+    "O_SE_channel_equal": true,
+    "R_untouched": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "same_W_O_as_Ealpha": true
+   },
+   "B-X3": {
+    "B_E_blind_orbit": false,
+    "B_contrasts": {
+     "event1": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event1_ok": false,
+     "event2": {
+      "D_E": "1/5",
+      "D_R": "0"
+     },
+     "event2_ok": false
+    },
+    "O_SE_channel_equal": true,
+    "R_untouched": true,
+    "W_well_posed": true,
+    "composite_implements_C1C2": true,
+    "same_W_O_as_Ealpha": true
+   }
+  },
+  "overwrite_to_E_B": {
+   "E_untouched_all_outputs": false,
+   "O_SE_channel_equal": false,
+   "rejected": true
+  }
+ },
+ "P_a_secondary_carrier_B": "PASS",
+ "P_b_F2_premise_omegaK_eq_alpha_tensor_omegaR": {
+  "W_R": true,
+  "W_R^g": true
+ },
+ "P_b_diag_grouping_identity_residual": "0",
+ "P_b_downgraded_to_consistency_check": true,
+ "P_b_numeric": {
+  "W_Bell": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "1.0",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "1.0",
+     "S_R": "1.0",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "1.0",
+     "S_R": "1.0",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "1.0",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  },
+  "W_E": {
+   "F1_holds": true,
+   "R_ineq_holds_all": false,
+   "R_ineq_violations": 81,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "1.0",
+     "S_R": "0.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.970950594455",
+     "S_R": "0.0",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.881290899231",
+     "S_R": "0.0",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "1.0",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "-1.0"
+  },
+  "W_ER": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "1.0",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.970950594455",
+     "S_R": "0.970950594455",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.881290899231",
+     "S_R": "0.881290899231",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "1.0",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  },
+  "W_R": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": true,
+   "diag_specials": [
+    {
+     "S_E": "0.0",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.0",
+     "S_R": "0.970950594455",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.0",
+     "S_R": "0.881290899231",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "1.92799219635652e-51",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  },
+  "W_R^g": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": true,
+   "diag_specials": [
+    {
+     "S_E": "-3.85598439271e-51",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "-3.85598439271e-51",
+     "S_R": "0.970950594455",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.0",
+     "S_R": "0.881290899231",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "0.0",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  },
+  "W_W": {
+   "F1_holds": true,
+   "R_ineq_holds_all": false,
+   "R_ineq_violations": 1,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "0.811278124459",
+     "S_R": "0.811278124459",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.721928094887",
+     "S_R": "0.721928094887",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.609840304716",
+     "S_R": "0.609840304716",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "0.936143639076551",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "-0.188721875540867"
+  },
+  "W_theta(pi/8)": {
+   "F1_holds": true,
+   "R_ineq_holds_all": true,
+   "R_ineq_violations": 0,
+   "S_E_zero_all": false,
+   "diag_specials": [
+    {
+     "S_E": "0.600876036693",
+     "S_R": "1.0",
+     "dS": "1.0",
+     "z": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+     ]
+    },
+    {
+     "S_E": "0.600876036693",
+     "S_R": "0.985524570864",
+     "dS": "0.550977500433",
+     "z": [
+      "1/5",
+      "1/5",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "S_E": "0.600876036693",
+     "S_R": "0.941497028217",
+     "dS": "0.6",
+     "z": [
+      "1/10",
+      "3/10",
+      "3/10",
+      "3/10"
+     ]
+    }
+   ],
+   "max_S_E_bits": "0.600876036692856",
+   "min_slack_K_ineq(F1)": "0.0",
+   "min_slack_R_ineq": "0.0"
+  }
+ },
+ "P_b_premise_realizations_pass_consistency": true,
+ "P_c_regression_R(pi_p)==R(pi_v)_W_R": true,
+ "admission": {
+  "W_Bell": {
+   "D_E": "0",
+   "D_R": "0",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_E": {
+   "D_E": "1/5",
+   "D_R": "0",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_ER": {
+   "D_E": "1/5",
+   "D_R": "1/5",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": true,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_R": {
+   "D_E": "0",
+   "D_R": "1/5",
+   "admitted": true,
+   "basis_form_JRW_eq_Wpiu": true,
+   "expected_admit": true,
+   "form_i_sameE_pure": true,
+   "form_ii_DE0_DR1/5": true,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_R^g": {
+   "D_E": "0",
+   "D_R": "1/5",
+   "admitted": true,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": true,
+   "form_i_sameE_pure": true,
+   "form_ii_DE0_DR1/5": true,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_W": {
+   "D_E": "1/10",
+   "D_R": "1/10",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  },
+  "W_theta(pi/8)": {
+   "D_E": "0",
+   "D_R": "sqrt(2)/10",
+   "admitted": false,
+   "basis_form_JRW_eq_Wpiu": false,
+   "expected_admit": false,
+   "form_i_sameE_pure": false,
+   "form_ii_DE0_DR1/5": false,
+   "forms_agree": true,
+   "implements_C_all_matrix_units": true,
+   "isometry": true,
+   "matches_expectation": true
+  }
+ },
+ "channel_C1C2_eq_C2C1": {
+  "A": true,
+  "B": true
+ },
+ "choi_rank_C1C2": {
+  "A": 3,
+  "B": 4
+ },
+ "mpmath": "1.3.0",
+ "native_P1P2_eq_P2P1": {
+  "A": true,
+  "B": true
+ },
+ "python": "3.13.5",
+ "seed": 269,
+ "sympy": "1.14.0"
+}
