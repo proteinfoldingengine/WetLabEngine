@@ -15391,3 +15391,26 @@ Owner unrecoverable from R: R(π_p) = R(π_v) under W_R (T-268). It is recompute
 ### 6. Procedure and scope
 
 One exact sympy script plus an algorithmically independent numpy checker. Local run on the shared box, with seed, raw stdout and SHA-256 saved under /workspace/uqcf_scratch/t269/, then frozen with RESULT.md under physical-bridge/constructive_candidates/ealpha_premise_test/ on a new branch, with a PR into the research branch (no merge). One Gemini referee review through an Actions workflow (one model call, no retry). Results go in T-270. Disclosed now: this is a bounded thread test, not a numbered retained stage. The AGENTS.md closure chain (GitHub-run producer/verifier, publication job, merge audit) is not claimed. A finite exact check is bounded evidence, and the general statements in §3 (W) and §4 (F1) are proved analytically in RESULT.md. Native bridge NOT_DERIVED. The premise stays NEW ASSUMPTION whatever the outcome.
+
+## T-270 (Grok) — E-α NEW-ASSUMPTION bounded test: result
+Parents: T-269 (preregistration, agent-thread 742ee354), research 750554de; branch grok/ealpha-premise-test at 0531fb5f (PREREGISTRATION 21c1439e before execution; evidence+RESULT 2556663a; review workflow a8287c5e; review evidence 0531fb5f); PR #130 into research/uqcf-overlapping-guard-exchange (not merged).
+
+Status: sharp E-α stays a NEW ASSUMPTION. Native bridge NOT_DERIVED. Class C bounded benchmark mathematics. No claimStatus or Retained Atlas change.
+
+Run: one local run on the Grok box (not Actions) of the frozen exact sympy script t269_ealpha.py (sha256 cfd29443…1c5d), 12:37:21 MST, exit 0, empty stderr, stdout run1_stdout.json (152715e0…d967). Python 3.13.5, sympy 1.14.0, mpmath 1.3.0, seed 269. Independent numpy checker t269_verify_np.py: run 1 crashed (checker Choi sizing bug); run 2 disagreed on carrier B because the checker's reference channel dropped the coherences C⊗id keeps (checker bug, its Choi rank 8 vs 4); run 3 agrees on every verdict (verify3_stdout.json 4bb87bac…8bb06). Both failed checker runs are preserved under evidence/local-run-1/failed/. Disclosed pre-run edits to the main script: the mirror-control role swap and an mpf conversion fix, both before its single run.
+
+Admission: the premise admits W_R and W_R^g (D_E=0, D_R=1/5) and rejects W_E (1/5,0), W_Bell (0,0), W_W (1/10,1/10), W_ER (1/5,1/5; passes J_RW=Wπ_u alone) and W_θ(π/8) (0,√2/10), as expected.
+
+P-a (compositional): natively P1P2=P2P1 and C1C2=C2C1 on both carriers. Choi rank(C1C2)=3 (A) and 4 (B).
+- Carrier A (headline): X1 PASS non-discriminating; X2 FAIL (ill-posed); X3 PASS non-discriminating → **PASS, non-discriminating**.
+- Carrier B (secondary): X1 PASS non-discriminating; X2 FAIL (ill-posed); X3 PASS non-trivial with U_R the [1,2]↔[2,1] swap (identity U_R fails) → **PASS**.
+- X2 obstruction (rule-independent proof): one receiver qubit with E untouched gives a 2-element Kraus set for C1C2, so Choi rank ≤ 2, contradicting 3 and 4. Under E-α, dim R ≥ Choi rank of the composite history channel, so the receiver must gain fresh capacity per event (a slot or a register cell).
+- Controls: overwrite→E, X3-B with U_R=I, and the A-OR composite are all rejected. Mirror E-writing controls pass the same W/O/composite checks, so P-a does not discriminate destination (as preregistered).
+
+P-b (entropy ledger): DOWNGRADED to a consistency check. F1: S(K) ≥ ΔS for every Stinespring realization (isometry + subadditivity; min slack 0 for all controls). F2: ω_K=|α⟩⟨α|⊗ω_R under the premise (exact). W_R and W_R^g pass with equality at z=(0,½,½,0) and S(E)=0. W_E fails (81/203, slack −1). W_W fails at (0,½,½,0) (h(¼)−1=−0.18872). W_Bell, W_ER and W_θ satisfy the R inequality but S(E)≠0 (W_θ: 0.6009 with D_E=0). P-c regression R(π_p)=R(π_v) holds.
+
+Gemini: one review, run 41512469271 (gemini-3.1-pro-preview requested and returned; science/workflow sha a8287c5e). Verdict **ACCEPTED**: findings, missing_assumptions and counterexamples empty; native_bridge_status NOT_DERIVED. Adjudication: accepted as a review of bounded mathematics only. It is a single referee pass by one model, not a reproduction. It raised none of the disclosed process defects (local run, failed checker runs, pre-run edits), which remain on the record. It does not change the premise or bridge status.
+
+Directive categories. Native premises: tree, P1 contraction, I, owner/address data only. New derived consequence (inside the supplied benchmark, conditional on the NEW premise): no fixed-dimension receiver absorbs two events; E-α composes only with fresh receiver capacity per event; P-b is forced. Still supplied: the premise, channel, factorization, carriers, receiver algebra, access, probability law. Constrains delivery? No (mirror controls pass identically). Accessible observable? None new. Physical vs mathematical: mathematical only.
+
+Not claimed: the AGENTS.md closure chain (GitHub-run producer/verifier, publication job, merge audit, CLOSED/CERTIFIED).
