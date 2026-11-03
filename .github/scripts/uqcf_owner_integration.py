@@ -29,6 +29,13 @@ def write(name, value):
 def check_bytes(raw, expected, label):
     require(len(raw) == expected['bytes'] and digest(raw) == expected['sha256'], label)
 
+def compare_history(raw, original, current_sha, original_sha):
+    current = json.loads(raw)
+    prior = json.loads(original)
+    require(current.pop('execution_head') == current_sha, 'current historical execution identity')
+    require(prior.pop('execution_head') == original_sha, 'original historical execution identity')
+    require(current == prior, 'historical scientific payload')
+
 def main():
     OUT.mkdir()
     commands = []
@@ -100,24 +107,33 @@ def main():
         (FCV / 'evidence/REPRODUCED_1615F.json').write_bytes((DEMOS / 'v16.15F-graded-obstruction-descent/result.json').read_bytes())
         call('producer.log', [sys.executable, 'produce_certificates.py'], FCV)
         call('independent-verifier.log', [sys.executable, 'verify_certificates.py'], FCV)
+        (OUT / 'inherited').mkdir()
         for name in ('certificates.json.xz', 'PRODUCTION.json', 'VERIFICATION.json', 'REPRODUCED_1615F.json'):
             raw = (FCV / 'evidence' / name).read_bytes()
-            require(raw == (OLD / 'owner-correspondence-verification-1/inherited' / name).read_bytes(), 'inherited replay ' + name)
-            (OUT / name).write_bytes(raw)
-        require(json.loads((OUT / 'VERIFICATION.json').read_bytes())['all_valid'] is True, 'inherited certificate')
+            (OUT / 'inherited' / name).write_bytes(raw)
+            original = (OLD / 'owner-correspondence-verification-1/inherited' / name).read_bytes()
+            if name == 'REPRODUCED_1615F.json':
+                compare_history(raw, original, checkout, 'c721762f4890a81036fb2bff11d394881384496f')
+            else:
+                require(raw == original, 'inherited replay ' + name)
+        require(json.loads((OUT / 'inherited/VERIFICATION.json').read_bytes())['all_valid'] is True, 'inherited certificate')
         write('receipt.json', {'status': 'PASS', 'checkout_sha': checkout,
               'workflow_sha': os.environ.get('UQCF_WORKFLOW_SHA'), 'run_id': os.environ['GITHUB_RUN_ID'],
               'run_attempt': os.environ['GITHUB_RUN_ATTEMPT'], 'ref': os.environ['GITHUB_REF'],
               'original_execution_sha': 'c721762f4890a81036fb2bff11d394881384496f',
               'argument_blob': git('hash-object', str(BASE / 'ANALYTICAL_BOUNDARY.md')),
               'archived_files_checked': len(declared), 'original_zip_sha256': whole.hexdigest(),
-              'replayed_files': 7, 'new_model_calls': 0, 'native_bridge': 'NOT_DERIVED'})
+              'byte_identical_files': 6, 'history_payload_identical': True,
+              'historical_execution_head_checked_separately': True,
+              'new_model_calls': 0, 'native_bridge': 'NOT_DERIVED'})
         for path in (Path('.github/scripts/uqcf_owner_integration.py'), Path('.github/workflows/uqcf-owner-integration.yml')):
             (OUT / path.name).write_bytes((ROOT / path).read_bytes())
     except Exception as exc:
         write('failure.json', {'status': 'FAILED', 'type': type(exc).__name__, 'detail': str(exc)})
         raise
     finally:
+        names = [str(p.relative_to(OUT)) for p in OUT.rglob('*') if p.is_file()]
+        require(len({n.casefold() for n in names}) == len(names), 'case-insensitive artifact path collision')
         write('artifact_manifest.json', {str(p.relative_to(OUT)): {'bytes': p.stat().st_size, 'sha256': digest(p.read_bytes())}
               for p in sorted(OUT.rglob('*')) if p.is_file() and p.name != 'artifact_manifest.json'})
 
