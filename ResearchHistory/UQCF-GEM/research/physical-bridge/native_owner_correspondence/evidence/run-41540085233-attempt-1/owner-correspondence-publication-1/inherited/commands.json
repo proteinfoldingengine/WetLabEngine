@@ -1,0 +1,29 @@
+[
+  {
+    "stage": "historical-reproduction",
+    "command": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "gate.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent",
+    "exit_code": 0
+  },
+  {
+    "stage": "producer",
+    "command": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "produce_certificates.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0
+  },
+  {
+    "stage": "independent-verifier",
+    "command": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "verify_certificates.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,83 @@
+{
+  "artifacts": [
+    {
+      "api_digest": "sha256:33bd99c8118a05540c3c9549203af6b2575625ea0f43cea77f44dcf2573103a2",
+      "chunked": false,
+      "download_sha256": "33bd99c8118a05540c3c9549203af6b2575625ea0f43cea77f44dcf2573103a2",
+      "id": 13186961343,
+      "member_count": 51,
+      "name": "owner-correspondence-publication-1",
+      "zip_bytes": 330878
+    },
+    {
+      "api_digest": "sha256:1f3ad9eff09c12e9f77a2c6e9a8f18ff6839f5bb363c47e592ba605e5560957a",
+      "chunked": true,
+      "download_sha256": "1f3ad9eff09c12e9f77a2c6e9a8f18ff6839f5bb363c47e592ba605e5560957a",
+      "id": 13186946001,
+      "member_count": 55,
+      "name": "owner-correspondence-verification-1",
+      "zip_bytes": 118205941
+    },
+    {
+      "api_digest": "sha256:f28f975ce723fc6e8a9f084b336b60472877d8793b3a9a793443855cf24a09d9",
+      "chunked": false,
+      "download_sha256": "f28f975ce723fc6e8a9f084b336b60472877d8793b3a9a793443855cf24a09d9",
+      "id": 13186826308,
+      "member_count": 10,
+      "name": "owner-correspondence-review-1",
+      "zip_bytes": 121885
+    }
+  ],
+  "completed_job_logs": [
+    {
+      "bytes": 28376,
+      "conclusion": "success",
+      "file": "job-125601715856.log",
+      "id": 125601715856,
+      "name": "verification",
+      "sha256": "f9ef188d3f49b1db6cfc43d41c18597a3fae27c531482a211ea06ce23f8c4a77"
+    },
+    {
+      "bytes": 25353,
+      "conclusion": "success",
+      "file": "job-125603291243.log",
+      "id": 125603291243,
+      "name": "review",
+      "sha256": "9807203387f52100330933ed66c8713c53479369d4eaba4ee930a1db354e3628"
+    },
+    {
+      "bytes": 33307,
+      "conclusion": "success",
+      "file": "job-125603732530.log",
+      "id": 125603732530,
+      "name": "publication",
+      "sha256": "3502bd10b38ea82f8a5f803c926ae73cfcbd30d7f0612f545f359cbb1a5fa0ce"
+    },
+    {
+      "bytes": 42068,
+      "conclusion": "failure",
+      "file": "job-125604331291.log",
+      "id": 125604331291,
+      "name": "archive",
+      "sha256": "4231d881870a035f3dfc6bda2905a59b4700bcd586f0558b0ac9e31075c11ff0"
+    }
+  ],
+  "failed_repair_logs": [
+    {
+      "conclusion": "failure",
+      "file": "prior-repair-job-125604961136.log",
+      "job_id": 125604961136,
+      "run_id": "41541044219",
+      "sha256": "674927a4e5dc07b41c88b2ac9275cfd02ea5e4ae1fd6de76736c2cd8a49a037b"
+    }
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "original_conclusion": "failure",
+  "original_run": "41540085233",
+  "repair_run": "41541244483",
+  "repair_sha": "d26556fd515fecfcc28321bd490fe8ee4c8262bc",
+  "review_verdict": "ACCEPTED",
+  "science_sha": "c721762f4890a81036fb2bff11d394881384496f",
+  "status": "PASS",
+  "storage": "Original ZIP bytes preserved. Large ZIPs are chunked; large extracted members remain recoverable from those exact original ZIPs."
+}

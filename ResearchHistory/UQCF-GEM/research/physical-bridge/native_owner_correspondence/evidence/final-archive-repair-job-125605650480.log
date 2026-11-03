@@ -1,0 +1,310 @@
+﻿2026-11-02T22:55:15.1932104Z Current runner version: '2.338.2'
+2026-11-02T22:55:15.1959337Z ##[group]Runner Image Provisioner
+2026-11-02T22:55:15.1960267Z Hosted Compute Agent
+2026-11-02T22:55:15.1960980Z Version: 20261021.618
+2026-11-02T22:55:15.1961730Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-02T22:55:15.1962550Z Build Date: 2026-10-21T00:45:21Z
+2026-11-02T22:55:15.1963335Z Worker ID: {266e5509-f34a-426c-a0c9-5165766fbe1c}
+2026-11-02T22:55:15.1964187Z Region: westcentralus
+2026-11-02T22:55:15.1965009Z Cloud: Azure
+2026-11-02T22:55:15.1965671Z ##[endgroup]
+2026-11-02T22:55:15.1967127Z ##[group]Operating System
+2026-11-02T22:55:15.1967879Z Ubuntu
+2026-11-02T22:55:15.1968467Z 24.04.5
+2026-11-02T22:55:15.1969026Z LTS
+2026-11-02T22:55:15.1969713Z ##[endgroup]
+2026-11-02T22:55:15.1970330Z ##[group]Runner Image
+2026-11-02T22:55:15.1971096Z Image: ubuntu-24.04
+2026-11-02T22:55:15.1971749Z Version: 20261025.353.1
+2026-11-02T22:55:15.1973625Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-02T22:55:15.1975665Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-11-02T22:55:15.1976785Z ##[endgroup]
+2026-11-02T22:55:15.1978073Z ##[group]GITHUB_TOKEN Permissions
+2026-11-02T22:55:15.1980635Z Actions: read
+2026-11-02T22:55:15.1981305Z Contents: write
+2026-11-02T22:55:15.1981920Z Metadata: read
+2026-11-02T22:55:15.1982617Z ##[endgroup]
+2026-11-02T22:55:15.1985476Z Secret source: Actions
+2026-11-02T22:55:15.1986648Z Cache mode: write
+2026-11-02T22:55:15.1987430Z Prepare workflow directory
+2026-11-02T22:55:15.2342904Z Prepare all required actions
+2026-11-02T22:55:15.2391462Z Getting action download info
+2026-11-02T22:55:15.5225870Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-02T22:55:15.7213734Z Complete job name: archive-repair
+2026-11-02T22:55:15.8273462Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-02T22:55:15.8274736Z with:
+2026-11-02T22:55:15.8275262Z   ref: d26556fd515fecfcc28321bd490fe8ee4c8262bc
+2026-11-02T22:55:15.8275885Z   fetch-depth: 2
+2026-11-02T22:55:15.8276780Z   sparse-checkout: .github
+ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+
+2026-11-02T22:55:15.8277828Z   repository: proteinfoldingengine/WetLabEngine
+2026-11-02T22:55:15.8282047Z   token: ***
+2026-11-02T22:55:15.8282510Z   ssh-strict: true
+2026-11-02T22:55:15.8282972Z   ssh-user: git
+2026-11-02T22:55:15.8283444Z   persist-credentials: true
+2026-11-02T22:55:15.8283958Z   clean: true
+2026-11-02T22:55:15.8284426Z   sparse-checkout-cone-mode: true
+2026-11-02T22:55:15.8285076Z   fetch-tags: false
+2026-11-02T22:55:15.8285542Z   show-progress: true
+2026-11-02T22:55:15.8286007Z   lfs: false
+2026-11-02T22:55:15.8286448Z   submodules: false
+2026-11-02T22:55:15.8286922Z   set-safe-directory: true
+2026-11-02T22:55:15.8287498Z   allow-unsafe-pr-checkout: false
+2026-11-02T22:55:15.8288252Z ##[endgroup]
+2026-11-02T22:55:16.0513710Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-11-02T22:55:16.0516291Z ##[group]Getting Git version info
+2026-11-02T22:55:16.0517115Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-02T22:55:16.0518318Z [command]/usr/bin/git version
+2026-11-02T22:55:16.0565607Z git version 2.56.0
+2026-11-02T22:55:16.0618755Z ##[endgroup]
+2026-11-02T22:55:16.0637963Z Temporarily overriding HOME='/home/runner/work/_temp/6af79f34-fd91-4e1d-8a54-dc4f4764cbbb' before making global git config changes
+2026-11-02T22:55:16.0640277Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-02T22:55:16.0643492Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-02T22:55:16.0715777Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-02T22:55:16.0729077Z ##[group]Initializing the repository
+2026-11-02T22:55:16.0730492Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-02T22:55:16.0827688Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-02T22:55:16.0829697Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-02T22:55:16.0831439Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-02T22:55:16.0832899Z hint: call:
+2026-11-02T22:55:16.0833751Z hint:
+2026-11-02T22:55:16.0834942Z hint: 	git config --global init.defaultBranch <name>
+2026-11-02T22:55:16.0836186Z hint:
+2026-11-02T22:55:16.0837323Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-02T22:55:16.0839041Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-02T22:55:16.0840458Z hint:
+2026-11-02T22:55:16.0841304Z hint: 	git branch -m <name>
+2026-11-02T22:55:16.0842267Z hint:
+2026-11-02T22:55:16.0843564Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-02T22:55:16.0845859Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-11-02T22:55:16.0849520Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-02T22:55:16.0901663Z ##[endgroup]
+2026-11-02T22:55:16.0902962Z ##[group]Disabling automatic garbage collection
+2026-11-02T22:55:16.0907043Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-02T22:55:16.0948910Z ##[endgroup]
+2026-11-02T22:55:16.0950144Z ##[group]Setting up auth
+2026-11-02T22:55:16.0957204Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-02T22:55:16.1004478Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-02T22:55:16.1420572Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-02T22:55:16.1473524Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-02T22:55:16.1753772Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-02T22:55:16.1808860Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-02T22:55:16.2083265Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-02T22:55:16.2136929Z ##[endgroup]
+2026-11-02T22:55:16.2137919Z ##[group]Fetching the repository
+2026-11-02T22:55:16.2149714Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=2 origin d26556fd515fecfcc28321bd490fe8ee4c8262bc
+2026-11-02T22:55:16.9516719Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-02T22:55:16.9518763Z  * branch            d26556fd515fecfcc28321bd490fe8ee4c8262bc -> FETCH_HEAD
+2026-11-02T22:55:16.9522321Z ##[endgroup]
+2026-11-02T22:55:16.9523765Z ##[group]Determining the checkout info
+2026-11-02T22:55:16.9526107Z ##[endgroup]
+2026-11-02T22:55:16.9527763Z ##[group]Setting up sparse checkout
+2026-11-02T22:55:16.9547146Z [command]/usr/bin/git sparse-checkout set .github ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+2026-11-02T22:55:16.9603251Z ##[endgroup]
+2026-11-02T22:55:16.9604235Z ##[group]Checking out the ref
+2026-11-02T22:55:16.9605561Z [command]/usr/bin/git checkout --progress --force d26556fd515fecfcc28321bd490fe8ee4c8262bc
+2026-11-02T22:55:17.9336160Z Note: switching to 'd26556fd515fecfcc28321bd490fe8ee4c8262bc'.
+2026-11-02T22:55:17.9336684Z 
+2026-11-02T22:55:17.9337586Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-02T22:55:17.9338663Z changes and commit them, and you can discard any commits you make in this
+2026-11-02T22:55:17.9339342Z state without impacting any branches by switching back to a branch.
+2026-11-02T22:55:17.9340045Z 
+2026-11-02T22:55:17.9340301Z If you want to create a new branch to retain commits you create, you may
+2026-11-02T22:55:17.9340910Z do so (now or later) by using -c with the switch command. Example:
+2026-11-02T22:55:17.9341246Z 
+2026-11-02T22:55:17.9341417Z   git switch -c <new-branch-name>
+2026-11-02T22:55:17.9341688Z 
+2026-11-02T22:55:17.9341919Z Or undo this operation with:
+2026-11-02T22:55:17.9342140Z 
+2026-11-02T22:55:17.9342307Z   git switch -
+2026-11-02T22:55:17.9342560Z 
+2026-11-02T22:55:17.9342881Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-02T22:55:17.9343251Z 
+2026-11-02T22:55:17.9343648Z HEAD is now at d26556f Fix archive path join with a reproduced RED-to-GREEN reconstruction check
+2026-11-02T22:55:17.9353412Z ##[endgroup]
+2026-11-02T22:55:17.9415798Z [command]/usr/bin/git log -1 --format=%H
+2026-11-02T22:55:17.9459157Z d26556fd515fecfcc28321bd490fe8ee4c8262bc
+2026-11-02T22:55:17.9693962Z ##[group]Run python ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/review_tools/test_archive_chunks.py .github/scripts/uqcf_t277_archive_repair.py
+2026-11-02T22:55:17.9695679Z [36;1mpython ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/review_tools/test_archive_chunks.py .github/scripts/uqcf_t277_archive_repair.py[0m
+2026-11-02T22:55:17.9722030Z shell: /usr/bin/bash -e {0}
+2026-11-02T22:55:17.9722390Z ##[endgroup]
+2026-11-02T22:55:18.0138297Z Production chunk reconstruction PASS
+2026-11-02T22:55:18.0264078Z ##[group]Run python .github/scripts/uqcf_t277_archive_repair.py
+2026-11-02T22:55:18.0264912Z [36;1mpython .github/scripts/uqcf_t277_archive_repair.py[0m
+2026-11-02T22:55:18.0289274Z shell: /usr/bin/bash -e {0}
+2026-11-02T22:55:18.0289599Z env:
+2026-11-02T22:55:18.0292854Z   GH_TOKEN: ***
+2026-11-02T22:55:18.0293147Z ##[endgroup]
+2026-11-02T22:55:29.1052761Z Original ZIP API digests, exact member manifests and reconstructed chunks PASS; no science or model rerun.
+2026-11-02T22:55:29.1222427Z ##[group]Run set -euo pipefail
+2026-11-02T22:55:29.1222800Z [36;1mset -euo pipefail[0m
+2026-11-02T22:55:29.1223080Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-02T22:55:29.1223447Z [36;1mtest "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"[0m
+2026-11-02T22:55:29.1223823Z [36;1mgit config user.name proteinfolding-gpt[0m
+2026-11-02T22:55:29.1224284Z [36;1mgit config user.email proteinfolding-gpt@users.noreply.github.com[0m
+2026-11-02T22:55:29.1225292Z [36;1mgit add ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence[0m
+2026-11-02T22:55:29.1225959Z [36;1mgit commit -m "Preserve T277 raw run with verified large-archive reconstruction"[0m
+2026-11-02T22:55:29.1226413Z [36;1mgit push origin "HEAD:$REVIEW_BRANCH"[0m
+2026-11-02T22:55:29.1226741Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-02T22:55:29.1227110Z [36;1mtest "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"[0m
+2026-11-02T22:55:29.1227671Z [36;1mpython .github/scripts/uqcf_t277_archive_repair.py readback FETCH_HEAD[0m
+2026-11-02T22:55:29.1250887Z shell: /usr/bin/bash -e {0}
+2026-11-02T22:55:29.1251202Z env:
+2026-11-02T22:55:29.1251500Z   REVIEW_BRANCH: gpt/native-owner-calibration-boundary
+2026-11-02T22:55:29.1251846Z ##[endgroup]
+2026-11-02T22:55:29.4521229Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-02T22:55:29.4522143Z  * branch            gpt/native-owner-calibration-boundary -> FETCH_HEAD
+2026-11-02T22:55:29.4523192Z  * [new branch]      gpt/native-owner-calibration-boundary -> origin/gpt/native-owner-calibration-boundary
+2026-11-02T22:55:33.1738227Z [detached HEAD 89dbe5e] Preserve T277 raw run with verified large-archive reconstruction
+2026-11-02T22:55:33.1738959Z  129 files changed, 6611 insertions(+)
+2026-11-02T22:55:33.1739886Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/DOWNLOAD_AUDIT.json
+2026-11-02T22:55:33.1741989Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/LARGE_MEMBERS.json
+2026-11-02T22:55:33.1743530Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/SHA256SUMS
+2026-11-02T22:55:33.1745252Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/job-125601715856.log
+2026-11-02T22:55:33.1746463Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/job-125603291243.log
+2026-11-02T22:55:33.1747454Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/job-125603732530.log
+2026-11-02T22:55:33.1748447Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/job-125604331291.log
+2026-11-02T22:55:33.1749604Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1.zip
+2026-11-02T22:55:33.1750926Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/REVIEW_FREEZE.json
+2026-11-02T22:55:33.1752465Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/artifact_manifest.json
+2026-11-02T22:55:33.1753766Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/certificate.json
+2026-11-02T22:55:33.1755566Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/certificate.json.stderr
+2026-11-02T22:55:33.1756867Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/commands.json
+2026-11-02T22:55:33.1758090Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/controls.json
+2026-11-02T22:55:33.1759313Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/controls.json.stderr
+2026-11-02T22:55:33.1760528Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited.log
+2026-11-02T22:55:33.1761739Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited.log.stderr
+2026-11-02T22:55:33.1763158Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/PRODUCTION.json
+2026-11-02T22:55:33.1764489Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/REPRODUCED_1615F.json
+2026-11-02T22:55:33.1766144Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/VERIFICATION.json
+2026-11-02T22:55:33.1767478Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/artifact_manifest.json
+2026-11-02T22:55:33.1768981Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/certificates.json.xz
+2026-11-02T22:55:33.1770284Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/commands.json
+2026-11-02T22:55:33.1771652Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/historical-reproduction.log
+2026-11-02T22:55:33.1773028Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/independent-verifier.log
+2026-11-02T22:55:33.1774344Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/producer.log
+2026-11-02T22:55:33.1775842Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/inherited/receipt.json
+2026-11-02T22:55:33.1777082Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/integrity.json
+2026-11-02T22:55:33.1778290Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/receipt.json
+2026-11-02T22:55:33.1779510Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/duplicate.json
+2026-11-02T22:55:33.1780919Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/duplicate.stderr
+2026-11-02T22:55:33.1782172Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/duplicate.stdout
+2026-11-02T22:55:33.1783395Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/empty.json
+2026-11-02T22:55:33.1784708Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/empty.stderr
+2026-11-02T22:55:33.1785957Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/empty.stdout
+2026-11-02T22:55:33.1787194Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/false_source.json
+2026-11-02T22:55:33.1788446Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/false_source.stderr
+2026-11-02T22:55:33.1789711Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/false_source.stdout
+2026-11-02T22:55:33.1790961Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/false_witness.json
+2026-11-02T22:55:33.1792224Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/false_witness.stderr
+2026-11-02T22:55:33.1793625Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/false_witness.stdout
+2026-11-02T22:55:33.1795098Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/invalid_carrier.json
+2026-11-02T22:55:33.1796376Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/invalid_carrier.stderr
+2026-11-02T22:55:33.1797654Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/invalid_carrier.stdout
+2026-11-02T22:55:33.1798913Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/missing.json
+2026-11-02T22:55:33.1800142Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/missing.stderr
+2026-11-02T22:55:33.1801361Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/missing.stdout
+2026-11-02T22:55:33.1802596Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/substituted.json
+2026-11-02T22:55:33.1803842Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/substituted.stderr
+2026-11-02T22:55:33.1805342Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/substituted.stdout
+2026-11-02T22:55:33.1806581Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/wrong_P.json
+2026-11-02T22:55:33.1807834Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/wrong_P.stderr
+2026-11-02T22:55:33.1809054Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/wrong_P.stdout
+2026-11-02T22:55:33.1810261Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/wrong_S.json
+2026-11-02T22:55:33.1811473Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/wrong_S.stderr
+2026-11-02T22:55:33.1812675Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/red/wrong_S.stdout
+2026-11-02T22:55:33.1813903Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/review_readback.json
+2026-11-02T22:55:33.1815227Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/verification.json
+2026-11-02T22:55:33.1816484Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-publication-1/verification.json.stderr
+2026-11-02T22:55:33.1817893Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1.zip
+2026-11-02T22:55:33.1819038Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/REVIEW_FREEZE.json
+2026-11-02T22:55:33.1820242Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/artifact_manifest.json
+2026-11-02T22:55:33.1821438Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/integrity.json
+2026-11-02T22:55:33.1822649Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/model_metadata.json
+2026-11-02T22:55:33.1823885Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/prompt.txt
+2026-11-02T22:55:33.1825180Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/request.json
+2026-11-02T22:55:33.1826369Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/response.json
+2026-11-02T22:55:33.1827519Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/review.txt
+2026-11-02T22:55:33.1828819Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/review_identity.json
+2026-11-02T22:55:33.1830006Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-review-1/verdict.json
+2026-11-02T22:55:33.1831262Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1.zip.part-000
+2026-11-02T22:55:33.1832837Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1.zip.part-001
+2026-11-02T22:55:33.1834532Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1.zip.part-002
+2026-11-02T22:55:33.1836220Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1.zip.parts.json
+2026-11-02T22:55:33.1837763Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/REVIEW_FREEZE.json
+2026-11-02T22:55:33.1839301Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/artifact_manifest.json
+2026-11-02T22:55:33.1840816Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/certificate.json
+2026-11-02T22:55:33.1842361Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/certificate.json.stderr
+2026-11-02T22:55:33.1844056Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/commands.json
+2026-11-02T22:55:33.1845607Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/controls.json
+2026-11-02T22:55:33.1846976Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/controls.json.stderr
+2026-11-02T22:55:33.1848494Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited.log
+2026-11-02T22:55:33.1849982Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited.log.stderr
+2026-11-02T22:55:33.1851525Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/PRODUCTION.json
+2026-11-02T22:55:33.1853129Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/REPRODUCED_1615F.json
+2026-11-02T22:55:33.1854961Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/VERIFICATION.json
+2026-11-02T22:55:33.1856772Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/artifact_manifest.json
+2026-11-02T22:55:33.1858305Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/certificates.json.xz
+2026-11-02T22:55:33.1859624Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/commands.json
+2026-11-02T22:55:33.1860925Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/dependencies.log
+2026-11-02T22:55:33.1862226Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/fcv-tests.log
+2026-11-02T22:55:33.1863560Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/historical-reproduction.log
+2026-11-02T22:55:33.1865124Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/historical-tests.log
+2026-11-02T22:55:33.1866483Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/independent-verifier.log
+2026-11-02T22:55:33.1867836Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/parent-tests.log
+2026-11-02T22:55:33.1869129Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/producer.log
+2026-11-02T22:55:33.1870576Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/inherited/receipt.json
+2026-11-02T22:55:33.1871836Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/integrity.json
+2026-11-02T22:55:33.1873053Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/receipt.json
+2026-11-02T22:55:33.1874284Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/duplicate.json
+2026-11-02T22:55:33.1875768Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/duplicate.stderr
+2026-11-02T22:55:33.1877041Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/duplicate.stdout
+2026-11-02T22:55:33.1878280Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/empty.json
+2026-11-02T22:55:33.1879502Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/empty.stderr
+2026-11-02T22:55:33.1880739Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/empty.stdout
+2026-11-02T22:55:33.1882125Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/false_source.json
+2026-11-02T22:55:33.1883455Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/false_source.stderr
+2026-11-02T22:55:33.1884892Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/false_source.stdout
+2026-11-02T22:55:33.1886171Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/false_witness.json
+2026-11-02T22:55:33.1887441Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/false_witness.stderr
+2026-11-02T22:55:33.1888722Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/false_witness.stdout
+2026-11-02T22:55:33.1889983Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/invalid_carrier.json
+2026-11-02T22:55:33.1891263Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/invalid_carrier.stderr
+2026-11-02T22:55:33.1892558Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/invalid_carrier.stdout
+2026-11-02T22:55:33.1893812Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/missing.json
+2026-11-02T22:55:33.1895359Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/missing.stderr
+2026-11-02T22:55:33.1896592Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/missing.stdout
+2026-11-02T22:55:33.1897833Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/substituted.json
+2026-11-02T22:55:33.1899097Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/substituted.stderr
+2026-11-02T22:55:33.1900360Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/substituted.stdout
+2026-11-02T22:55:33.1901589Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/wrong_P.json
+2026-11-02T22:55:33.1902803Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/wrong_P.stderr
+2026-11-02T22:55:33.1904025Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/wrong_P.stdout
+2026-11-02T22:55:33.1905412Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/wrong_S.json
+2026-11-02T22:55:33.1906784Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/wrong_S.stderr
+2026-11-02T22:55:33.1908023Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/red/wrong_S.stdout
+2026-11-02T22:55:33.1909254Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/verification.json
+2026-11-02T22:55:33.1910511Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/owner-correspondence-verification-1/verification.json.stderr
+2026-11-02T22:55:33.1911728Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence/run-41540085233-attempt-1/prior-repair-job-125604961136.log
+2026-11-02T22:55:46.9671341Z To https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-02T22:55:46.9671869Z    d26556f..89dbe5e  HEAD -> gpt/native-owner-calibration-boundary
+2026-11-02T22:55:47.4772202Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-02T22:55:47.4772978Z  * branch            gpt/native-owner-calibration-boundary -> FETCH_HEAD
+2026-11-02T22:55:48.0308335Z Remote commit readback PASS: FETCH_HEAD files 128
+2026-11-02T22:55:48.0517884Z Post job cleanup.
+2026-11-02T22:55:48.1424077Z [command]/usr/bin/git version
+2026-11-02T22:55:48.1469059Z git version 2.56.0
+2026-11-02T22:55:48.1507907Z Temporarily overriding HOME='/home/runner/work/_temp/309f3bb9-d297-43d5-accf-189d9bfce946' before making global git config changes
+2026-11-02T22:55:48.1509202Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-02T22:55:48.1513486Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-02T22:55:48.1558351Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-02T22:55:48.1600127Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-02T22:55:48.1945290Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-02T22:55:48.1978665Z http.https://github.com/.extraheader
+2026-11-02T22:55:48.1991812Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-02T22:55:48.2038627Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-02T22:55:48.2355056Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-02T22:55:48.2402887Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-02T22:55:48.2866964Z Cleaning up orphan processes
+2026-11-02T22:55:48.3280339Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

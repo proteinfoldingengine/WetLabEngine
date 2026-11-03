@@ -1,0 +1,44 @@
+name: UQCF T277 publication-only archive repair
+on:
+  push:
+    branches: [gpt/native-owner-calibration-boundary]
+    paths:
+      - '.github/scripts/uqcf_t277_archive_repair.py'
+      - '.github/workflows/uqcf-t277-archive-repair.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  archive-repair:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+      - name: Regression check of the production chunk reconstruction
+        run: python ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/review_tools/test_archive_chunks.py .github/scripts/uqcf_t277_archive_repair.py
+      - name: Preserve original frozen run with reconstructable large-file storage
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python .github/scripts/uqcf_t277_archive_repair.py
+      - name: Commit raw evidence and verify remote readback
+        env:
+          REVIEW_BRANCH: gpt/native-owner-calibration-boundary
+        run: |
+          set -euo pipefail
+          git fetch origin "$REVIEW_BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
+          git config user.name proteinfolding-gpt
+          git config user.email proteinfolding-gpt@users.noreply.github.com
+          git add ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/evidence
+          git commit -m "Preserve T277 raw run with verified large-archive reconstruction"
+          git push origin "HEAD:$REVIEW_BRANCH"
+          git fetch origin "$REVIEW_BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"
+          python .github/scripts/uqcf_t277_archive_repair.py readback FETCH_HEAD
+
