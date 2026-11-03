@@ -1,0 +1,101 @@
+{
+  "version": "V1689.16",
+  "title": "Common-Generator Sub-Branch Postmortem",
+  "verdict": "STRUCTURE_CORRECT_COMPATIBILITY_NOT_ESTABLISHED",
+  "executive_summary": {
+    "what_worked": [
+      "The branch successfully moved from regression target fitting to retained connection identity testing.",
+      "G_p was defined as a generated retained recombination algebra, not a vector space.",
+      "Generated-algebra faithfulness defects were formalized.",
+      "Curvature was correctly upgraded from scalar holonomy to basepoint-normalized endomorphism defect.",
+      "The source-balanced identity D_Gamma R_Gamma = J_P replaced premature source-free closure.",
+      "J_P was converted from an arbitrary current vector into event-action rho_P.",
+      "Event-action rho_P was normalized by boundary event mass and algebra scale.",
+      "The upstream null was fixed by emitting full parallel pipelines.",
+      "A common generator A_pq was emitted before T_pq and rho_e."
+    ],
+    "what_failed": [
+      "The clean-room A_pq generator did not produce compatibility.",
+      "D_Gamma R_Gamma and rho_P(J_P) remained poorly oriented.",
+      "The residual E_Gamma stayed high even when scale, null placement, and common-generator emission were corrected.",
+      "Therefore the clean-room generator is not the compatibility-generating connection."
+    ],
+    "core_result": "The protocol stack is now structurally admissible, but the actual generating principle for A_pq remains underived.",
+    "final_status": "No retained field-law closure. No compatibility law established. Strong methodological and mathematical object progress."
+  },
+  "evidence": {
+    "V1689_13": {
+      "finding": "orientation mismatch diagnosed",
+      "mean_cosine_D_J": 0.14428950863064063,
+      "J_perp_fraction": 0.9885104637174156,
+      "meaning": "rho_P was clean but not aligned with D_Gamma R_Gamma."
+    },
+    "V1689_15": {
+      "finding": "common-generator structural emitter completed",
+      "rho_e_from_A_pq_rate": 1.0,
+      "A_uses_forbidden_fields_rate": 0.0,
+      "mean_cosine_D_J": -0.2130819294654739,
+      "mean_E_relative_norm": 0.7961649150003967,
+      "meaning": "Common generator emission alone did not solve compatibility."
+    }
+  },
+  "root_cause": {
+    "primary": "A_pq was structurally emitted but not derived from an extremal/admissibility principle.",
+    "details": [
+      "The generator was built from local differences in B, O3, H4, S, and Pi.",
+      "That is admissible as a scaffold but not sufficient as a law-generating connection.",
+      "A connection is not just any algebra-faithful map; it must be the native minimal/admissible update selected by the retained recombination principle.",
+      "Without a selection principle for A_pq, D_Gamma R_Gamma and rho_P(J_P) need not align."
+    ]
+  },
+  "mathematical_gap": {
+    "missing_object": "A_pq selection principle",
+    "question": "What first-principles variational/admissibility rule selects the retained connection generator A_pq?",
+    "candidate_principle": "A_pq should minimize generated-algebra faithfulness action subject to provenance/source/order current constraints.",
+    "candidate_action": "I_Gamma[A] = ||\u03b4_product||^2 + ||\u03b4_O3||^2 + ||\u03b4_H4||^2 + ||\u03b4_S||^2 + ||\u03b4_Pi||^2 + \u03bb ||source/order constraint||^2",
+    "identity_expectation": "If A_pq is selected by this constrained admissibility action, then the Euler-Lagrange residual should yield D_Gamma R_Gamma - rho_P(J_P), not an arbitrary fitted target."
+  },
+  "what_to_keep": [
+    "G_p generated retained algebra definition.",
+    "A_Gamma generated-algebra faithfulness gates.",
+    "R_Gamma as endomorphism defect.",
+    "D_Gamma R_Gamma covariant comparison.",
+    "J_P as provenance/source/pruning-order current.",
+    "rho_P as event-action representation.",
+    "Boundary event mass and algebra scale normalization.",
+    "Upstream full-pipeline nulls.",
+    "A_pq as required common generator."
+  ],
+  "what_to_downgrade": [
+    {
+      "item": "clean-room A_pq = local difference generator",
+      "new_status": "scaffold only",
+      "reason": "It does not produce compatibility."
+    },
+    {
+      "item": "standalone event projectors",
+      "new_status": "diagnostic only",
+      "reason": "They do not align with D_Gamma R_Gamma."
+    },
+    {
+      "item": "schema success",
+      "new_status": "methodological success only",
+      "reason": "It does not imply law closure."
+    }
+  ],
+  "next_valid_branch": {
+    "name": "V1690 \u2014 Retained Connection Variational Principle",
+    "not": "another emitter tweak",
+    "goal": "derive A_pq from a first-principles action/admissibility principle",
+    "deliverable": [
+      "define admissibility action I_Gamma[A]",
+      "define constraints from provenance/source/order current",
+      "derive Euler-Lagrange or discrete stationarity condition",
+      "show whether D_Gamma R_Gamma = rho_P(J_P) follows as identity residual",
+      "only then build a new emitter"
+    ]
+  },
+  "frozen_stop_rule": "Do not continue modifying clean-room A_pq heuristically. No new generator term is admissible unless derived from the variational/admissibility principle.",
+  "safe_claim": "V1689 established the correct retained connection object stack and proved that compatibility requires a principled generator A_pq, not target fitting or arbitrary clean-room transport construction.",
+  "claim_boundary": "Postmortem and branch reset only. No retained field-law validation."
+}

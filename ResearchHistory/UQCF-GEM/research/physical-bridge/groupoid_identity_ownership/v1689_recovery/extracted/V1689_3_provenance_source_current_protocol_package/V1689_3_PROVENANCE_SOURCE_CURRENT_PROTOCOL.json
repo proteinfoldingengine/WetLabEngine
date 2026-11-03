@@ -1,0 +1,147 @@
+{
+  "version": "V1689.3",
+  "title": "Provenance / Source Current J_P Protocol",
+  "verdict": "PROVENANCE_SOURCE_CURRENT_PROTOCOL_FROZEN_NO_EXECUTION",
+  "precondition": "V1689.2 defines D_Gamma R_Gamma on an admissible comparison boundary. J_P must be emitted over that same boundary and independently from curvature.",
+  "core_rule": "J_P is not a fitted residual. It is a ledger-derived current measuring provenance/source/pruning-order flux across the same retained comparison boundary used by D_Gamma R_Gamma.",
+  "identity_context": {
+    "compatibility_identity": "D_Gamma R_Gamma = J_P",
+    "residual": "E_Gamma = D_Gamma R_Gamma - J_P",
+    "source_free_case": "J_P = 0 implies D_Gamma R_Gamma = 0",
+    "source_balanced_priority": "source-balanced closure is primary; source-free closure is a special case"
+  },
+  "boundary_definition": {
+    "comparison_boundary": "B_ij is the retained boundary separating loop/cell i from loop/cell j, with base comparison Comp_{j->i}.",
+    "same_boundary_rule": "J_P,ij must be computed over exactly the same adjacency/boundary as (D_Gamma R_Gamma)_{ij}.",
+    "orientation": "J_P,ij is signed with respect to the ordered comparison direction j -> i or i -> j as declared in comparisons.csv.",
+    "forbidden": "Do not compute J_P on a different region than the curvature comparison boundary."
+  },
+  "ledger_events": {
+    "allowed_event_types": [
+      "source_injection",
+      "source_removal",
+      "branch_birth",
+      "branch_prune",
+      "dependency_addition",
+      "dependency_break",
+      "repair_event",
+      "closure_event",
+      "provenance_relabel",
+      "order_boundary_crossing"
+    ],
+    "required_fields": [
+      "event_id",
+      "ordered_index",
+      "event_type",
+      "node_id",
+      "source_label",
+      "magnitude",
+      "dependencies",
+      "prior_event_ids",
+      "valid_order_arrow",
+      "boundary_id"
+    ],
+    "forbidden_fields_for_J": [
+      "R_Gamma",
+      "D_Gamma_R_Gamma",
+      "E_Gamma",
+      "weak_target",
+      "scalar_holonomy",
+      "posthoc_fit_residual"
+    ]
+  },
+  "component_currents": {
+    "J_source": {
+      "formula": "J_source,ij = signed_sum(source_injection - source_removal across B_ij)",
+      "meaning": "net source magnitude entering/leaving the retained comparison boundary"
+    },
+    "J_dependency": {
+      "formula": "J_dependency,ij = signed_sum(dependency_addition - dependency_break across B_ij)",
+      "meaning": "net provenance-dependency flux across the boundary"
+    },
+    "J_repair": {
+      "formula": "J_repair,ij = signed_sum(repair_event - unresolved_break across B_ij)",
+      "meaning": "net repair/closure current coupled to provenance restoration"
+    },
+    "J_order": {
+      "formula": "J_order,ij = signed_sum(order_boundary_crossing) - order_arrow_violations",
+      "meaning": "retained-order flux and admissible pruning-order direction"
+    },
+    "J_label": {
+      "formula": "J_label,ij = signed_sum(provenance_relabel with conserved lineage) - lineage_breaks",
+      "meaning": "provenance label transport current"
+    }
+  },
+  "aggregate_current": {
+    "formula": "J_P,ij = J_source + J_dependency + J_repair + J_order + J_label",
+    "type": "endomorphism-valued or algebra-state-valued current re-expressed in End_alg(G_i) using the same comparison basis as D_Gamma R_Gamma",
+    "normalization": "Each component must be reported separately and normalized by local boundary ledger scale.",
+    "no_hiding_rule": "A small aggregate J_P cannot hide a failed component current or order-arrow violation."
+  },
+  "representation": {
+    "scalar_diagnostic": "||J_P,ij|| is diagnostic only.",
+    "primary_object": "J_P,ij must be represented in the same algebraic comparison space as D_Gamma R_Gamma.",
+    "projection_rule": "If D_Gamma R_Gamma is endomorphism-valued, J_P must be lifted/represented as a source-current endomorphism or compatible algebra-state current through a declared current-to-endomorphism representation map.",
+    "representation_map": "rho_P : provenance/source current -> End_alg(G_i)",
+    "rho_requirement": "rho_P must use ledger event structure only, not curvature residuals."
+  },
+  "admissibility": {
+    "J_boundary_pass": "all events used in J_P share boundary_id with comparison_id",
+    "J_order_pass": "valid_order_arrow true for all contributing events or violations explicitly counted",
+    "J_independence_pass": "no forbidden fields used",
+    "J_conservation_pass": "source/provenance event accounting balances internally before comparison to curvature",
+    "J_P_admissible": "J_boundary_pass \u2227 J_order_pass \u2227 J_independence_pass \u2227 J_conservation_pass"
+  },
+  "output_schema": {
+    "provenance_events.csv": [
+      "event_id",
+      "ordered_index",
+      "event_type",
+      "node_id",
+      "source_label",
+      "magnitude",
+      "dependencies",
+      "prior_event_ids",
+      "valid_order_arrow",
+      "boundary_id"
+    ],
+    "source_currents.csv": [
+      "comparison_id",
+      "boundary_id",
+      "J_source",
+      "J_dependency",
+      "J_repair",
+      "J_order",
+      "J_label",
+      "J_P_serialized",
+      "rho_P_map_id",
+      "J_P_norm",
+      "J_boundary_pass",
+      "J_order_pass",
+      "J_independence_pass",
+      "J_conservation_pass",
+      "J_P_admissible"
+    ],
+    "current_manifest.json": [
+      "forbidden_fields_absent",
+      "rho_P_definition",
+      "event_accounting_rule",
+      "boundary_alignment_rule",
+      "claim_boundary"
+    ]
+  },
+  "killer_null_update": {
+    "N_source_shuffle": "preserve event counts and magnitudes but shuffle boundary assignments",
+    "N_order_reverse": "preserve events but reverse ordered_index dependencies",
+    "N_label_shuffle": "preserve labels counts but break lineage continuity",
+    "N_current_zero": "force J_P=0 in active-source regimes",
+    "expected": "valid J_P balances D_Gamma R_Gamma; null currents fail E_Gamma or fail J_admissibility"
+  },
+  "frozen_nonclaims": [
+    "J_P is not a target fitted after seeing curvature.",
+    "J_P is not weak_target.",
+    "J_P is not scalar holonomy.",
+    "J_P cannot be computed from E_Gamma.",
+    "source-free closure cannot be tested before source-balanced closure."
+  ]
+}
