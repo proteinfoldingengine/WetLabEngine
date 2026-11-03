@@ -1,0 +1,272 @@
+﻿2026-11-03T02:28:17.1476316Z Current runner version: '2.338.2'
+2026-11-03T02:28:17.1493617Z ##[group]Runner Image Provisioner
+2026-11-03T02:28:17.1494130Z Hosted Compute Agent
+2026-11-03T02:28:17.1494557Z Version: 20261021.618
+2026-11-03T02:28:17.1494937Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-03T02:28:17.1495389Z Build Date: 2026-10-21T00:45:21Z
+2026-11-03T02:28:17.1495842Z Worker ID: {25793896-aaac-4226-9ecf-e20e0f478bac}
+2026-11-03T02:28:17.1496265Z Region: centralus
+2026-11-03T02:28:17.1496636Z Cloud: Azure
+2026-11-03T02:28:17.1496968Z ##[endgroup]
+2026-11-03T02:28:17.1497954Z ##[group]Operating System
+2026-11-03T02:28:17.1498541Z Ubuntu
+2026-11-03T02:28:17.1498860Z 24.04.5
+2026-11-03T02:28:17.1499215Z LTS
+2026-11-03T02:28:17.1499533Z ##[endgroup]
+2026-11-03T02:28:17.1499859Z ##[group]Runner Image
+2026-11-03T02:28:17.1500292Z Image: ubuntu-24.04
+2026-11-03T02:28:17.1500641Z Version: 20261025.353.1
+2026-11-03T02:28:17.1501438Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-03T02:28:17.1502558Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-11-03T02:28:17.1503158Z ##[endgroup]
+2026-11-03T02:28:17.1503855Z ##[group]GITHUB_TOKEN Permissions
+2026-11-03T02:28:17.1505221Z Actions: read
+2026-11-03T02:28:17.1505569Z Contents: write
+2026-11-03T02:28:17.1506020Z Metadata: read
+2026-11-03T02:28:17.1506360Z ##[endgroup]
+2026-11-03T02:28:17.1507649Z Secret source: Actions
+2026-11-03T02:28:17.1508352Z Cache mode: write
+2026-11-03T02:28:17.1508802Z Prepare workflow directory
+2026-11-03T02:28:17.1747173Z Prepare all required actions
+2026-11-03T02:28:17.1778685Z Getting action download info
+2026-11-03T02:28:17.3737397Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-03T02:28:17.4920199Z Complete job name: archive
+2026-11-03T02:28:17.5501456Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-03T02:28:17.5501976Z with:
+2026-11-03T02:28:17.5502242Z   ref: 4fb1fd497b708713fb9135b65990b6416023a3cb
+2026-11-03T02:28:17.5502561Z   fetch-depth: 2
+2026-11-03T02:28:17.5503017Z   sparse-checkout: .github
+ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit
+
+2026-11-03T02:28:17.5503556Z   repository: proteinfoldingengine/WetLabEngine
+2026-11-03T02:28:17.5505833Z   token: ***
+2026-11-03T02:28:17.5506073Z   ssh-strict: true
+2026-11-03T02:28:17.5506315Z   ssh-user: git
+2026-11-03T02:28:17.5506564Z   persist-credentials: true
+2026-11-03T02:28:17.5506833Z   clean: true
+2026-11-03T02:28:17.5507082Z   sparse-checkout-cone-mode: true
+2026-11-03T02:28:17.5507376Z   fetch-tags: false
+2026-11-03T02:28:17.5507624Z   show-progress: true
+2026-11-03T02:28:17.5507873Z   lfs: false
+2026-11-03T02:28:17.5508229Z   submodules: false
+2026-11-03T02:28:17.5508480Z   set-safe-directory: true
+2026-11-03T02:28:17.5508779Z   allow-unsafe-pr-checkout: false
+2026-11-03T02:28:17.5509142Z ##[endgroup]
+2026-11-03T02:28:17.7267394Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-11-03T02:28:17.7268839Z ##[group]Getting Git version info
+2026-11-03T02:28:17.7269444Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-03T02:28:17.7270288Z [command]/usr/bin/git version
+2026-11-03T02:28:17.7325548Z git version 2.56.0
+2026-11-03T02:28:17.7344795Z ##[endgroup]
+2026-11-03T02:28:17.7353301Z Temporarily overriding HOME='/home/runner/work/_temp/c38e3ee6-9a80-4e1e-98e2-467af8b8c580' before making global git config changes
+2026-11-03T02:28:17.7354484Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-03T02:28:17.7357107Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-03T02:28:17.7401873Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-03T02:28:17.7405979Z ##[group]Initializing the repository
+2026-11-03T02:28:17.7409520Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-03T02:28:17.7479493Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-03T02:28:17.7480432Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-03T02:28:17.7481169Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-03T02:28:17.7481745Z hint: call:
+2026-11-03T02:28:17.7482035Z hint:
+2026-11-03T02:28:17.7482327Z hint: 	git config --global init.defaultBranch <name>
+2026-11-03T02:28:17.7482647Z hint:
+2026-11-03T02:28:17.7482942Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-03T02:28:17.7483418Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-03T02:28:17.7483909Z hint:
+2026-11-03T02:28:17.7484128Z hint: 	git branch -m <name>
+2026-11-03T02:28:17.7484373Z hint:
+2026-11-03T02:28:17.7484720Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-03T02:28:17.7487535Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-11-03T02:28:17.7496711Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-03T02:28:17.7538646Z ##[endgroup]
+2026-11-03T02:28:17.7539357Z ##[group]Disabling automatic garbage collection
+2026-11-03T02:28:17.7542352Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-03T02:28:17.7578232Z ##[endgroup]
+2026-11-03T02:28:17.7578851Z ##[group]Setting up auth
+2026-11-03T02:28:17.7583382Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-03T02:28:17.7612498Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-03T02:28:17.7900311Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-03T02:28:17.7935271Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-03T02:28:17.8120422Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-03T02:28:17.8155172Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-03T02:28:17.8337276Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-03T02:28:17.8378067Z ##[endgroup]
+2026-11-03T02:28:17.8378977Z ##[group]Fetching the repository
+2026-11-03T02:28:17.8386137Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=2 origin 4fb1fd497b708713fb9135b65990b6416023a3cb
+2026-11-03T02:28:18.3049301Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-03T02:28:18.3050191Z  * branch            4fb1fd497b708713fb9135b65990b6416023a3cb -> FETCH_HEAD
+2026-11-03T02:28:18.3053454Z ##[endgroup]
+2026-11-03T02:28:18.3054160Z ##[group]Determining the checkout info
+2026-11-03T02:28:18.3055778Z ##[endgroup]
+2026-11-03T02:28:18.3056233Z ##[group]Setting up sparse checkout
+2026-11-03T02:28:18.3060125Z [command]/usr/bin/git sparse-checkout set .github ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit
+2026-11-03T02:28:18.3107355Z ##[endgroup]
+2026-11-03T02:28:18.3107842Z ##[group]Checking out the ref
+2026-11-03T02:28:18.3110393Z [command]/usr/bin/git checkout --progress --force 4fb1fd497b708713fb9135b65990b6416023a3cb
+2026-11-03T02:28:19.0359580Z Note: switching to '4fb1fd497b708713fb9135b65990b6416023a3cb'.
+2026-11-03T02:28:19.0360565Z 
+2026-11-03T02:28:19.0361138Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-03T02:28:19.0362638Z changes and commit them, and you can discard any commits you make in this
+2026-11-03T02:28:19.0364087Z state without impacting any branches by switching back to a branch.
+2026-11-03T02:28:19.0365161Z 
+2026-11-03T02:28:19.0365725Z If you want to create a new branch to retain commits you create, you may
+2026-11-03T02:28:19.0367062Z do so (now or later) by using -c with the switch command. Example:
+2026-11-03T02:28:19.0367821Z 
+2026-11-03T02:28:19.0368288Z   git switch -c <new-branch-name>
+2026-11-03T02:28:19.0368829Z 
+2026-11-03T02:28:19.0369184Z Or undo this operation with:
+2026-11-03T02:28:19.0369698Z 
+2026-11-03T02:28:19.0369987Z   git switch -
+2026-11-03T02:28:19.0370386Z 
+2026-11-03T02:28:19.0371063Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-03T02:28:19.0371802Z 
+2026-11-03T02:28:19.0372558Z HEAD is now at 4fb1fd4 Complete original source audit publication without repeating science or model review
+2026-11-03T02:28:19.0376245Z ##[endgroup]
+2026-11-03T02:28:19.0420122Z [command]/usr/bin/git log -1 --format=%H
+2026-11-03T02:28:19.0449255Z 4fb1fd497b708713fb9135b65990b6416023a3cb
+2026-11-03T02:28:19.0641193Z ##[group]Run python .github/scripts/uqcf_native_source_archive.py
+2026-11-03T02:28:19.0642406Z [36;1mpython .github/scripts/uqcf_native_source_archive.py[0m
+2026-11-03T02:28:19.0661503Z shell: /usr/bin/bash -e {0}
+2026-11-03T02:28:19.0662171Z env:
+2026-11-03T02:28:19.0671457Z   GH_TOKEN: ***
+2026-11-03T02:28:19.0673265Z ##[endgroup]
+2026-11-03T02:28:23.0205849Z Exact original ZIPs, all 85 manifest members, 10 deterministic replay outputs and 3 completed-job logs preserved. No science/model rerun.
+2026-11-03T02:28:23.0318804Z ##[group]Run set -euo pipefail
+2026-11-03T02:28:23.0319016Z [36;1mset -euo pipefail[0m
+2026-11-03T02:28:23.0319161Z [36;1mgit fetch origin "$ARCHIVE_BRANCH"[0m
+2026-11-03T02:28:23.0319346Z [36;1mtest "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"[0m
+2026-11-03T02:28:23.0319544Z [36;1mgit config user.name proteinfolding-gpt[0m
+2026-11-03T02:28:23.0319764Z [36;1mgit config user.email proteinfolding-gpt@users.noreply.github.com[0m
+2026-11-03T02:28:23.0320102Z [36;1mgit add ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence[0m
+2026-11-03T02:28:23.0320434Z [36;1mgit commit -m "Preserve original native source audit artifacts and raw logs"[0m
+2026-11-03T02:28:23.0320667Z [36;1mgit push origin "HEAD:$ARCHIVE_BRANCH"[0m
+2026-11-03T02:28:23.0320835Z [36;1mgit fetch origin "$ARCHIVE_BRANCH"[0m
+2026-11-03T02:28:23.0321027Z [36;1mtest "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"[0m
+2026-11-03T02:28:23.0321298Z [36;1mpython .github/scripts/uqcf_native_source_archive.py readback FETCH_HEAD[0m
+2026-11-03T02:28:23.0337126Z shell: /usr/bin/bash -e {0}
+2026-11-03T02:28:23.0337273Z env:
+2026-11-03T02:28:23.0337433Z   ARCHIVE_BRANCH: gpt/native-source-audit-publication
+2026-11-03T02:28:23.0337606Z ##[endgroup]
+2026-11-03T02:28:23.2908072Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-03T02:28:23.2908804Z  * branch            gpt/native-source-audit-publication -> FETCH_HEAD
+2026-11-03T02:28:23.2909136Z  * [new branch]      gpt/native-source-audit-publication -> origin/gpt/native-source-audit-publication
+2026-11-03T02:28:23.4412647Z [detached HEAD 363298e] Preserve original native source audit artifacts and raw logs
+2026-11-03T02:28:23.4413078Z  96 files changed, 9020 insertions(+)
+2026-11-03T02:28:23.4413611Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/DOWNLOAD_AUDIT.json
+2026-11-03T02:28:23.4414439Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/SHA256SUMS
+2026-11-03T02:28:23.4415257Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/job-125417925597.log
+2026-11-03T02:28:23.4416074Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/job-125422849441.log
+2026-11-03T02:28:23.4416889Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/job-125423719905.log
+2026-11-03T02:28:23.4417933Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1.zip
+2026-11-03T02:28:23.4419094Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/FREEZE.json
+2026-11-03T02:28:23.4419793Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/PLAN.md
+2026-11-03T02:28:23.4420778Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/PROMPT.txt
+2026-11-03T02:28:23.4421768Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/SOURCE_PACKET.json
+2026-11-03T02:28:23.4422941Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/artifact_manifest.json
+2026-11-03T02:28:23.4424232Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/commands.json
+2026-11-03T02:28:23.4425288Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/controller-snapshot.zip
+2026-11-03T02:28:23.4426320Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/dependencies.log
+2026-11-03T02:28:23.4427340Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/fcv-PRODUCTION.json
+2026-11-03T02:28:23.4428512Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/fcv-REPRODUCED_1615F.json
+2026-11-03T02:28:23.4429585Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/fcv-VERIFICATION.json
+2026-11-03T02:28:23.4430328Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/fcv-certificates.json.xz
+2026-11-03T02:28:23.4430981Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/fcv-independent-verifier.log
+2026-11-03T02:28:23.4431725Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/fcv-producer.log
+2026-11-03T02:28:23.4432604Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/fcv-publication-checksums.log
+2026-11-03T02:28:23.4433241Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/fcv-tests.log
+2026-11-03T02:28:23.4434310Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/historical-reproduction.log
+2026-11-03T02:28:23.4435360Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/historical-tests.log
+2026-11-03T02:28:23.4436092Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/integrity.json
+2026-11-03T02:28:23.4436727Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/original-certificate.json
+2026-11-03T02:28:23.4437489Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/original-certificate.json.stderr.log
+2026-11-03T02:28:23.4438353Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/original-controls.json
+2026-11-03T02:28:23.4439008Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/original-controls.json.stderr.log
+2026-11-03T02:28:23.4439696Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/original-publication-checksums.log
+2026-11-03T02:28:23.4440460Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/original-verification.json
+2026-11-03T02:28:23.4441136Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/original-verification.json.stderr.log
+2026-11-03T02:28:23.4441790Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/parent-tests.log
+2026-11-03T02:28:23.4442403Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/receipt.json
+2026-11-03T02:28:23.4443017Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/review-readback.json
+2026-11-03T02:28:23.4443659Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/source-snapshot-files.json
+2026-11-03T02:28:23.4444296Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/source-snapshot.zip
+2026-11-03T02:28:23.4444935Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/successor-certificate.json
+2026-11-03T02:28:23.4445615Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/successor-certificate.json.stderr.log
+2026-11-03T02:28:23.4446284Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/successor-controls.json
+2026-11-03T02:28:23.4446941Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/successor-controls.json.stderr.log
+2026-11-03T02:28:23.4447624Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/successor-publication-checksums.log
+2026-11-03T02:28:23.4448518Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/successor-verification.json
+2026-11-03T02:28:23.4449202Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-publication-1/successor-verification.json.stderr.log
+2026-11-03T02:28:23.4449843Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1.zip
+2026-11-03T02:28:23.4450411Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/FREEZE.json
+2026-11-03T02:28:23.4450981Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/PLAN.md
+2026-11-03T02:28:23.4451554Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/PROMPT.txt
+2026-11-03T02:28:23.4452143Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/SOURCE_PACKET.json
+2026-11-03T02:28:23.4452835Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/artifact_manifest.json
+2026-11-03T02:28:23.4453430Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/integrity.json
+2026-11-03T02:28:23.4454021Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/model_metadata.json
+2026-11-03T02:28:23.4454608Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/prompt.txt
+2026-11-03T02:28:23.4455177Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/request.json
+2026-11-03T02:28:23.4455757Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/response.json
+2026-11-03T02:28:23.4456329Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/result.json
+2026-11-03T02:28:23.4456895Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/review.txt
+2026-11-03T02:28:23.4457480Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-review-1/review_identity.json
+2026-11-03T02:28:23.4458065Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1.zip
+2026-11-03T02:28:23.4458765Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/FREEZE.json
+2026-11-03T02:28:23.4459350Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/PLAN.md
+2026-11-03T02:28:23.4459933Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/PROMPT.txt
+2026-11-03T02:28:23.4460620Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/SOURCE_PACKET.json
+2026-11-03T02:28:23.4461264Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/artifact_manifest.json
+2026-11-03T02:28:23.4461953Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/commands.json
+2026-11-03T02:28:23.4462575Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/controller-snapshot.zip
+2026-11-03T02:28:23.4463201Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/dependencies.log
+2026-11-03T02:28:23.4463827Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/fcv-PRODUCTION.json
+2026-11-03T02:28:23.4464466Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/fcv-REPRODUCED_1615F.json
+2026-11-03T02:28:23.4465179Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/fcv-VERIFICATION.json
+2026-11-03T02:28:23.4465816Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/fcv-certificates.json.xz
+2026-11-03T02:28:23.4466467Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/fcv-independent-verifier.log
+2026-11-03T02:28:23.4467106Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/fcv-producer.log
+2026-11-03T02:28:23.4467748Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/fcv-publication-checksums.log
+2026-11-03T02:28:23.4468535Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/fcv-tests.log
+2026-11-03T02:28:23.4469163Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/historical-reproduction.log
+2026-11-03T02:28:23.4469803Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/historical-tests.log
+2026-11-03T02:28:23.4470426Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/integrity.json
+2026-11-03T02:28:23.4471063Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/original-certificate.json
+2026-11-03T02:28:23.4471734Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/original-certificate.json.stderr.log
+2026-11-03T02:28:23.4472398Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/original-controls.json
+2026-11-03T02:28:23.4473130Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/original-controls.json.stderr.log
+2026-11-03T02:28:23.4473811Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/original-publication-checksums.log
+2026-11-03T02:28:23.4474481Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/original-verification.json
+2026-11-03T02:28:23.4475325Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/original-verification.json.stderr.log
+2026-11-03T02:28:23.4476407Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/parent-tests.log
+2026-11-03T02:28:23.4477204Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/receipt.json
+2026-11-03T02:28:23.4477921Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/source-snapshot-files.json
+2026-11-03T02:28:23.4478695Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/source-snapshot.zip
+2026-11-03T02:28:23.4536111Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/successor-certificate.json
+2026-11-03T02:28:23.4537383Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/successor-certificate.json.stderr.log
+2026-11-03T02:28:23.4538744Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/successor-controls.json
+2026-11-03T02:28:23.4539831Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/successor-controls.json.stderr.log
+2026-11-03T02:28:23.4540892Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/successor-publication-checksums.log
+2026-11-03T02:28:23.4541902Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/successor-verification.json
+2026-11-03T02:28:23.4542999Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence/run-41486442606-attempt-1/native-source-audit-verification-1/successor-verification.json.stderr.log
+2026-11-03T02:28:25.4446075Z To https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-03T02:28:25.4446432Z    4fb1fd4..363298e  HEAD -> gpt/native-source-audit-publication
+2026-11-03T02:28:25.7050097Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-03T02:28:25.7050498Z  * branch            gpt/native-source-audit-publication -> FETCH_HEAD
+2026-11-03T02:28:25.9042280Z {"status": "PASS", "remote_ref": "FETCH_HEAD", "commit": "363298eea7f498b972fa1e74a82e9de0e29a6027", "verified_files": 95, "original_zip_count": 3, "scientific_acceptance": false, "native_bridge_status": "NOT_DERIVED"}
+2026-11-03T02:28:25.9170732Z Post job cleanup.
+2026-11-03T02:28:25.9685117Z [command]/usr/bin/git version
+2026-11-03T02:28:25.9715522Z git version 2.56.0
+2026-11-03T02:28:25.9738177Z Temporarily overriding HOME='/home/runner/work/_temp/15c5f768-4072-4952-bfde-f1c0c12b0567' before making global git config changes
+2026-11-03T02:28:25.9738856Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-03T02:28:25.9741869Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-03T02:28:25.9772812Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-03T02:28:25.9826130Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-03T02:28:26.0059759Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-03T02:28:26.0077650Z http.https://github.com/.extraheader
+2026-11-03T02:28:26.0086465Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-03T02:28:26.0122373Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-03T02:28:26.0343324Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-03T02:28:26.0378817Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-03T02:28:26.0690271Z Cleaning up orphan processes
+2026-11-03T02:28:26.0923071Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

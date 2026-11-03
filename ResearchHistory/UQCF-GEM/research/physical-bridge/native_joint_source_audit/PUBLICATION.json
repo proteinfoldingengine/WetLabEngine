@@ -1,5 +1,5 @@
 {
-  "status": "PENDING_FRESH_PUBLICATION_AND_DURABLE_READBACK",
+  "status": "DURABLE_PUBLICATION_AND_IMMUTABLE_READBACK_COMPLETE",
   "run_id": 41486442606,
   "controller_sha": "340a9465a92e8ffd387bd26d31c8fe2f5e33f3fe",
   "source_sha": "2f7a788f551face7b69521b0d07d2ec3e3ea3871",
@@ -7,5 +7,22 @@
   "review_job": 125422849441,
   "publication_job": 125423719905,
   "scientific_acceptance": false,
-  "native_bridge_status": "NOT_DERIVED"
+  "native_bridge_status": "NOT_DERIVED",
+  "fresh_publication_verified": true,
+  "deterministic_outputs_identical": 10,
+  "archive_run": 41566294628,
+  "archive_job": 125688542238,
+  "archive_controller_sha": "4fb1fd497b708713fb9135b65990b6416023a3cb",
+  "evidence_commit": "363298eea7f498b972fa1e74a82e9de0e29a6027",
+  "evidence_tree": "b43a637a9ba778bfc1488db8a518e09bb3458784",
+  "archived_files_verified": 95,
+  "original_zip_count": 3,
+  "manifest_member_count": 85,
+  "original_job_log_count": 3,
+  "review_disposition": "NO_CANDIDATE_WITH_MATERIAL_ERRORS_AND_INCOMPLETE_COVERAGE",
+  "archive_log_utf8_sha256": "020c7ad374d2cc157f52dcc30eabcdc06017a0e68848b5f2cf66801f8f9dcbbf",
+  "prior_pending_receipt": "PUBLICATION_PENDING_ORIGINAL.json",
+  "evidence_path": "evidence/run-41486442606-attempt-1",
+  "scientific_rerun": false,
+  "new_model_requests": 0
 }
