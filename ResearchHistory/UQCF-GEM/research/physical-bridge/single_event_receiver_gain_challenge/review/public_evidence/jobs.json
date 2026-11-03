@@ -1,0 +1,257 @@
+{
+  "total_count": 3,
+  "jobs": [
+    {
+      "id": 118719455867,
+      "run_id": 39449286888,
+      "workflow_name": "UQCF PR107 clarification whole-argument review",
+      "head_branch": "gpt/single-event-challenge-scope-20261020",
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/39449286888",
+      "run_attempt": 1,
+      "node_id": "CR_kwDORG4isM8AAAAbpDsiew",
+      "head_sha": "9ead84faf9081fc5d22ba24159d2078cc0f73a21",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/118719455867",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39449286888/job/118719455867",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-20T15:32:01Z",
+      "started_at": "2026-10-20T15:32:03Z",
+      "completed_at": "2026-10-20T15:32:12Z",
+      "name": "integrity",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-20T15:32:04Z",
+          "completed_at": "2026-10-20T15:32:04Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-20T15:32:04Z",
+          "completed_at": "2026-10-20T15:32:06Z"
+        },
+        {
+          "name": "Offline rejecting plumbing controls, no scientific execution",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-20T15:32:06Z",
+          "completed_at": "2026-10-20T15:32:06Z"
+        },
+        {
+          "name": "Verify frozen bytes, marker provenance and unique request eligibility",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-20T15:32:06Z",
+          "completed_at": "2026-10-20T15:32:09Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-20T15:32:09Z",
+          "completed_at": "2026-10-20T15:32:10Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-20T15:32:10Z",
+          "completed_at": "2026-10-20T15:32:10Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-20T15:32:10Z",
+          "completed_at": "2026-10-20T15:32:10Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/118719455867",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000004670,
+      "runner_name": "GitHub Actions 1000004670",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 118719553925,
+      "run_id": 39449286888,
+      "workflow_name": "UQCF PR107 clarification whole-argument review",
+      "head_branch": "gpt/single-event-challenge-scope-20261020",
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/39449286888",
+      "run_attempt": 1,
+      "node_id": "CR_kwDORG4isM8AAAAbpDyhhQ",
+      "head_sha": "9ead84faf9081fc5d22ba24159d2078cc0f73a21",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/118719553925",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39449286888/job/118719553925",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-20T15:32:12Z",
+      "started_at": "2026-10-20T15:32:14Z",
+      "completed_at": "2026-10-20T15:33:31Z",
+      "name": "argument-review",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-20T15:32:15Z",
+          "completed_at": "2026-10-20T15:32:16Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-20T15:32:16Z",
+          "completed_at": "2026-10-20T15:32:17Z"
+        },
+        {
+          "name": "Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-20T15:32:17Z",
+          "completed_at": "2026-10-20T15:32:18Z"
+        },
+        {
+          "name": "One independent whole-argument Gemini request",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-20T15:32:18Z",
+          "completed_at": "2026-10-20T15:33:28Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-20T15:33:28Z",
+          "completed_at": "2026-10-20T15:33:29Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-20T15:33:29Z",
+          "completed_at": "2026-10-20T15:33:29Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-20T15:33:29Z",
+          "completed_at": "2026-10-20T15:33:29Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/118719553925",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000004671,
+      "runner_name": "GitHub Actions 1000004671",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 118720276052,
+      "run_id": 39449286888,
+      "workflow_name": "UQCF PR107 clarification whole-argument review",
+      "head_branch": "gpt/single-event-challenge-scope-20261020",
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/39449286888",
+      "run_attempt": 1,
+      "node_id": "CR_kwDORG4isM8AAAAbpEemVA",
+      "head_sha": "9ead84faf9081fc5d22ba24159d2078cc0f73a21",
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/118720276052",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39449286888/job/118720276052",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-20T15:33:31Z",
+      "started_at": "2026-10-20T15:33:33Z",
+      "completed_at": "2026-10-20T15:33:45Z",
+      "name": "publication-audit",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-20T15:33:34Z",
+          "completed_at": "2026-10-20T15:33:35Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-20T15:33:35Z",
+          "completed_at": "2026-10-20T15:33:38Z"
+        },
+        {
+          "name": "Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-20T15:33:38Z",
+          "completed_at": "2026-10-20T15:33:39Z"
+        },
+        {
+          "name": "Separate immutable source, prompt and raw-response audit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-20T15:33:39Z",
+          "completed_at": "2026-10-20T15:33:42Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-20T15:33:42Z",
+          "completed_at": "2026-10-20T15:33:43Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-20T15:33:43Z",
+          "completed_at": "2026-10-20T15:33:43Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-20T15:33:43Z",
+          "completed_at": "2026-10-20T15:33:43Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/118720276052",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000004672,
+      "runner_name": "GitHub Actions 1000004672",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}
