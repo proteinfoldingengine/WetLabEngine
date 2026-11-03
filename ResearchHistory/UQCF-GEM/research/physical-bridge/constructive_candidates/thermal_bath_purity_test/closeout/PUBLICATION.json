@@ -1,0 +1,93 @@
+{
+  "status": "COMPLETE",
+  "science_sha": "d030af7cb64b11cbea652d42652bcd2d740dd702",
+  "preserved_evidence_commit": "d7f1d90a9f354648fce32cb79086d47ef0081d61",
+  "original_head": "23543a5b8c5f8938fe0d25c42be975296c8055fb",
+  "original_files_preserved": 26,
+  "plan_commit": "77ec93c7e83ba7d29dcc0bdb45156885d1ff4477",
+  "run_id": 41579136130,
+  "run_attempt": 1,
+  "workflow_conclusion": "success",
+  "jobs": {
+    "thermal": "success",
+    "inherited": "success",
+    "review": "success",
+    "publication": "success"
+  },
+  "verification": {
+    "artifacts": [
+      {
+        "id": 13205093576,
+        "manifest_entries": 46,
+        "member_count": 47,
+        "name": "thermal-publication-inherited-1",
+        "status": "PASS",
+        "zip_bytes": 330906,
+        "zip_sha256": "896894d2d4af9ce1a99eaefc45eb63f1be9fa5bc5c463077a3c180b682325d92"
+      },
+      {
+        "id": 13205092935,
+        "manifest_entries": 46,
+        "member_count": 47,
+        "name": "thermal-inherited-1",
+        "status": "PASS",
+        "zip_bytes": 330904,
+        "zip_sha256": "19e1045a00b1d0650fcea5cd3efa6f92be31f50e36489acca709ddedaacb0daa"
+      },
+      {
+        "id": 13204899043,
+        "manifest_entries": 80,
+        "member_count": 82,
+        "name": "thermal-publication-1",
+        "status": "PASS",
+        "zip_bytes": 184392,
+        "zip_sha256": "449b44e25b1cbd4c1f635938f25a42db37c10fa0f7a1e699b6a0724a5a07f122"
+      },
+      {
+        "id": 13204418306,
+        "manifest_entries": 79,
+        "member_count": 81,
+        "name": "thermal-initial-1",
+        "status": "PASS",
+        "zip_bytes": 183912,
+        "zip_sha256": "9cca8227b41d63a6f1ea2a1cc3e5778a15342fc1655acc0c0c6ac094f50e3fd9"
+      },
+      {
+        "id": 13204158779,
+        "manifest_entries": 51,
+        "member_count": 53,
+        "name": "thermal-review-1",
+        "status": "PASS",
+        "zip_bytes": 280319,
+        "zip_sha256": "8fa6b3f50bfc36fc8c1fda25edf3bee9a538ffa83e2678b524aaee132413dd6d"
+      }
+    ],
+    "cross_checks": {
+      "deterministic_inherited_outputs": 7,
+      "deterministic_thermal_outputs": 7,
+      "native_bridge": "NOT_DERIVED",
+      "response_sha256": "ecf4078616ce996fee7de4eccf8878a01cd57c1cf9e12d8cdd8c96c454f8db66",
+      "review_documents_checked": 36,
+      "science_sha": "d030af7cb64b11cbea652d42652bcd2d740dd702",
+      "status": "PASS",
+      "verdict": "ACCEPTED"
+    }
+  },
+  "immutable_readback": {
+    "publication_sha": "d7f1d90a9f354648fce32cb79086d47ef0081d61",
+    "tree": "98b8d65f8d1d4b2b47b586afaecdc7b0c421ec93",
+    "all_new_files": 328,
+    "exact_zip_readbacks": 5,
+    "status": "PASS",
+    "exact_critical_text_readbacks": 8
+  },
+  "generation_requests": 1,
+  "review_verdict": "ACCEPTED",
+  "native_bridge": "NOT_DERIVED",
+  "merge_disposition": "PENDING_RECORDED_OWNER_REVIEW",
+  "original_branch_modified": false,
+  "thermal_research_branch_continues": false,
+  "native_return_note": "Research direction only; not included in the Gemini mathematical review",
+  "archive": "evidence/run-41579136130-attempt-1",
+  "external_checker_command": "python tools/check_artifacts.py evidence/run-41579136130-attempt-1"
+}
