@@ -1,0 +1,46 @@
+{
+ "all_true": true,
+ "choi_rank_C1C2": {
+  "A": 3,
+  "B": 4
+ },
+ "disjoint_erasure_choi_rank": {
+  "1": 2,
+  "2": 3,
+  "3": 4
+ },
+ "python": "3.13.5",
+ "script": "t289_c1c2.py",
+ "slack_bits": {
+  "(0,0,1/2,1/2)": "1",
+  "(0,1/2,1/2,0)": "0"
+ },
+ "sympy": "1.14.0",
+ "verdicts": {
+  "C1_i_A_rank3": true,
+  "C1_i_B_rank4": true,
+  "C1_ii_qutrit_witness": true,
+  "C1_iii_N1_rank_N+1": true,
+  "C1_iii_N2_rank_N+1": true,
+  "C1_iii_N3_rank_N+1": true,
+  "C1_iv_E_mirror_same": true,
+  "C2_i_cov_eq_zu(zo+zv)": true,
+  "C2_ii_slack_eq_I(A;B)": true,
+  "C2_iii_a_slack0": true,
+  "C2_iii_b_slack1bit": true
+ },
+ "witness_E_mirror": {
+  "channel_eq_C1C2_all_matrix_units": true,
+  "commute": true,
+  "kraus_match": true,
+  "other_register_untouched": true,
+  "rank": 3
+ },
+ "witness_R": {
+  "channel_eq_C1C2_all_matrix_units": true,
+  "commute": true,
+  "kraus_match": true,
+  "other_register_untouched": true,
+  "rank": 3
+ }
+}
