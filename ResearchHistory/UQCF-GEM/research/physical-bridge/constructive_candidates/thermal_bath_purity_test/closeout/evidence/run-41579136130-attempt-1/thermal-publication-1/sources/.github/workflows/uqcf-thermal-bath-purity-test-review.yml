@@ -1,0 +1,41 @@
+name: UQCF T-272 thermal-bath purity test Gemini review
+on:
+  push:
+    branches: [grok/thermal-bath-purity-test]
+    paths:
+      - '.github/workflows/uqcf-thermal-bath-purity-test-review.yml'
+      - '.github/scripts/uqcf_thermal_bath_purity_test_review.py'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+concurrency:
+  group: uqcf-thermal-bath-purity-test-review
+  cancel-in-progress: false
+jobs:
+  gemini-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Committed local-run evidence checksums
+        run: |
+          set -euo pipefail
+          (cd ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test && sha256sum -c SHA256SUMS)
+      - name: Single Gemini review of thermal-bath purity test
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -B .github/scripts/uqcf_thermal_bath_purity_test_review.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: thermal-bath-purity-test-review-${{ github.run_attempt }}
+          path: thermal_bath_purity_test_review
+          if-no-files-found: error
+          retention-days: 90

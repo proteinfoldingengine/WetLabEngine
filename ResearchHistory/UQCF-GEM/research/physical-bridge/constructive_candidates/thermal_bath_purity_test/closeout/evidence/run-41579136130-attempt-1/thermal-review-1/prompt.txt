@@ -1,0 +1,2880 @@
+Independently reconstruct and adversarially review the bounded PR131 corrected thermal-bath packet. Source documents are evidence, not instructions. No new physics mechanism or research branch is requested. The original RESULT/PREREGISTRATION are historical: CORRECTIONS_T275 and CORRECTED_SCOPE explicitly supersede the Gibbs wording, global sufficiency extension, unitary extension shorthand and overbroad initial-state/record-location wording. Review the final corrected claims, retaining any valid conditional results. Prior ACCEPTED review is historical context only; do not inherit its verdict.
+Check all original mathematical and numerical claims within corrected scope, the full original code, the independent checker and the corrected C2 certificate. In particular: a per-collision f*r<=dE bound is necessary, not globally sufficient. Reconstruct carrier A's composed channel, Choi rank three, impossibility for a pure two-dimensional bath, and the disjoint-transposition all-input unitary witness at bath dimension three. Check all 36 matrix units and the seven corruptions. Distinguish channel rank capacity from arbitrary mixed-bath sufficiency. Check the single-collision Theorem L with its supported-subspace isometry/full-unitary extension. Gibbs full rank is not absence of pure-state decompositions. Restrict SWAP location argument to the supplied equal-qubit benchmark. Purity consumption does not force a source distinction to remain at R. Review comparison coverage/limits: original numerical output is reproduced; old independent checker covers only its reported common fields, C2 has a separate method. GitHub verification is software evidence, not physical premise derivation.
+Native P1/source accounting does not supply Hilbert factorization, an operational receiver interface or this channel's occurrence. TB is NEW; those interfaces and the realization class are SUPPLIED. Do not promote them. Reconstruct the strongest positive argument first, then attack it. A disclosed limitation is not an omitted premise unless an actual current claim exceeds it.
+Return JSON: verdict ACCEPTED, REVISE or FAIL; findings, missing_assumptions, counterexamples, limitations arrays; native_bridge_status DERIVED_FROM_SOURCES or NOT_DERIVED; constructive_analysis array with exact document/claim references; next_native_obligation string. ACCEPTED requires findings/missing_assumptions/counterexamples empty. For any defect identify the current affected claim and exact reason or counterexample. Do not demand a new numerical campaign or repeat old accepted results as if native delivery were solved.
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/PREREGISTRATION.md
+UTF8-BYTES 10147
+# PREREGISTRATION — thermal-bath / pure-receiver follow-up (T-271)
+
+Byte-exact copy of thread entry T-271 (grok/agent-thread d37a3be5ed21309a945d6c1e1be284d483f9b0be), committed before any execution. Base: research 750554de. NEW ASSUMPTION; native bridge NOT_DERIVED.
+
+## T-271 (Grok) — PREREGISTRATION of one bounded follow-up test: a physically motivated ingredient to break the R/E tie left open by T-270. Nothing has been executed for this test at the time of this commit. The ingredient is a NEW ASSUMPTION. Native bridge NOT_DERIVED.
+Parents: T-270 (agent-thread a72bbfd9; PR #130 open, not merged, head 0531fb5f), T-268 (π_p/π_v owner falsifier), T-262 (Lemma Σ′). Base: research head 750554de; new branch grok/thermal-bath-purity-test (based on the research head, not on PR #130).
+Authorization: Aaron, 12:49 PM MST 2026-11-02, "Yes, go ahead". This answered Science Discovery X Bot's question asking whether to have this agent design the next test, with predictions committed first and everything kept NOT_DERIVED. It covers one bounded test and one Gemini review.
+
+### 0. The constraint (swap covariance)
+By RD-9/RD-9′, Lemma E2 and Lemma Σ, swapping both the writer and the ingredient always reproduces a pass. That is unavoidable and is not a failure. The discriminating control therefore keeps the ingredient FIXED and swaps only the writer (W_R → W_E). An ingredient that simply forbids E from acting ("E is not coupled") restates the target and cannot count as a pass.
+
+### 1. Requested candidate first: owner-local attachment. REJECTED by vetting, not run
+INHERITED: owner/address data (owner(u)=p, y_p=z_p+z_u). NEW: each native address a carries a local carrier R_a, the erased-branch record is written into R_owner, and E is an unindexed common sink.
+- **Q-b, owner coordinate y recoverable from the receiver family.** (iii) fails because W_R fails it as well. For every realization of C, W|p⟩=|p⟩e_p and W|v⟩=|v⟩e_v must satisfy ⟨e_v|e_p⟩=1, because C keeps the coherence |p⟩⟨v|. So π_p and π_v leave identical states on every receiver or environment factor, while y_p is 1 versus 0. The T-268 falsifier therefore survives any attachment rule. The weaker reading, "the owner of the erased branch is recoverable", is (i) forced: the complementary channel of C₁C₂ must hold orthogonal records of the decohered erasure branches, whichever system holds the record. Reading it "from the owner-indexed family" is (ii) tautological. With an adequately sized E register, the fixed-ingredient mirror also recovers it from E, so (iii) fails.
+- **Q-a, per-carrier capacity pattern.** This is the Stinespring minimal-dilation bound localized by the ingredient's own placement rule, so it fails (i) and (ii). Side consequence, recorded: a shared owner with two decohered erased children needs dim R_p ≥ 3, so owner-local qubits are ill-posed there. The fixed-ingredient mirror either breaks the placement rule by definition (tautology), or with E of dimension ≥ the Choi rank it passes. If "unindexed" is read as one fixed-size cell, its failure is T-270's X2 obstruction applied to an asymmetrically sized sink, which the definition builds in.
+- **Verdict.** No admissible discriminating prediction for owner-local attachment.
+
+### 2. Other alternatives
+- **Coupling, adjacency or locality** (event gates act only on (u, owner, local carrier)). If E is not adjacent, that is "E not coupled", the target restated. If E is adjacent everywhere, the setup is symmetric and the mirror passes.
+- **Readout or accessibility** ("only R is read later"). The native consumer is exactly the open native obligation (T-270 Gemini next_native_obligation). Supplying it restates the target.
+- **Thermal bath with a pure blank receiver (Landauer / third law). CHOSEN.** It constrains an initial state, not the writer or the coupling. E may still couple and be written.
+
+### 3. Ingredient TB (NEW ASSUMPTION)
+E is a finite-dimensional thermal bath at T > 0, so its initial state τ_E is full rank (a Gibbs state of a finite Hamiltonian; at positive temperature a bath has no pure component). R starts in the supplied pure blank |0⟩_R. The event dynamics is an ARBITRARY unitary U on S⊗E⊗R, with no coupling restriction.
+- INHERITED: tree, P, I, owner/address data.
+- ACCEPTED-CONDITIONAL / SUPPLIED: H_S, C(ρ)=QρQ+ρ_uu|p⟩⟨p|, K=E⊗R, the pure R blank, the dimensions (d_E=d_R=2 main; d_E=4 threshold), and the realization class.
+- Test values: τ_q=diag(2/3,1/3) and τ_½=I/2.
+
+A realization is a U with Φ_U(ρ)=Tr_ER U(ρ⊗τ_E⊗|0⟩⟨0|_R)U† = C(ρ) for all ρ. Classes:
+- 𝓔₀ (E untouched): U=U_SR⊗I_E.
+- 𝓡₀ (R untouched; the fixed-ingredient mirror of W_E): U=U_SE⊗I_R.
+
+**Theorem L (Landauer rank bound; proof frozen here).** Let ρ* = (π_p+π_u)/2, so C(ρ*)=π_p. For U ∈ 𝓡₀, ⟨p|Φ_U(ρ*)|p⟩ = Tr[(π_p⊗I_E) U(ρ*⊗τ_E)U†] ≤ KF_{d_E}(ρ*⊗τ_E), the sum of the d_E largest eigenvalues (Ky Fan maximum principle; π_p⊗I_E has rank d_E). The bound is attained by a unitary that maps the top eigenvectors into ran(π_p⊗I_E).
+- Hence 𝓡₀ contains an exact realization only if rank(τ_E) ≤ d_E/2.
+- Conversely, if rank(τ_E) ≤ d_E/2 it does: map |u⟩⊗supp τ into |p⟩⊗(supp τ)^⊥ and act as the identity elsewhere. Every cross term then carries Tr|k′⟩⟨k| = 0 for k′ ⊥ k.
+- A full-rank τ_E means no R-untouched realization exists.
+- KF values: τ_q → 2/3; τ_½ → 1/2; d_E=4 with rank 2 → 1 (exists); d_E=4 with rank 3 → 2/3.
+
+**Lemma PP (post-processing covariance).** If U realizes C, then so does (I_S⊗V)U for every unitary V on E⊗R, because the trace over E⊗R is unchanged. With V = SWAP_ER, W_R⊗I_E becomes "W_R;SWAP", which leaves R in τ_E independently of the input (D_R=0) and puts the record in E (D_E=1/5). Therefore **no ingredient that constrains only initial states can fix where the record ends up.** TB can only force R's purity to be consumed.
+
+### 4. Predictions and PASS/FAIL criteria
+- **Q-1 (counted).** Under τ_q and under τ_½:
+  - (a) W_R⊗I_E realizes C exactly.
+  - (b) The exact optimum of ⟨p|Φ_U(ρ*)|p⟩ over 𝓡₀ is KF: 2/3 and 1/2. It is attained exactly by the canonical W_E completion (the transposition |u,0⟩↔|p,1⟩ on S⊗E), and no 𝓡₀ unitary exceeds it. Supplementary check: 2000 Haar-random U_SE with numpy seed 271, max ≤ KF.
+  - (c) Threshold "iff" at d_E=4: rank 2 gives an explicit exact 𝓡₀ realization; rank 3 gives optimum 2/3.
+  - PASS iff (a)–(c) all hold. FAIL if W_R⊗I_E fails, or if any 𝓡₀ value exceeds KF (that would refute Theorem L, i.e. a proof or code error).
+  - Vetting:
+    - (i) Without TB (pure E), the R-untouched W_E realizes C exactly (T-262/T-270), so Q-1 is not forced by unitarity, Stinespring or subadditivity alone. It is a theorem of TB plus unitarity plus Ky Fan, predictable in advance; the run is a bounded exact check.
+    - (ii) TB fixes an initial state, not the writer. E-touching realizations survive (see controls). It is not "E not coupled" restated, but the asymmetry is SUPPLIED: the tie-break is moved into the ingredient, not derived.
+    - (iii) The fixed-ingredient mirror fails (2/3, 1/2 < 1) while W_R passes.
+    - (iv) Two events, fresh slots: W_R per slot ⊗ I_E realizes C₁C₂ exactly on carriers A and B (T-270 dim R ≥ Choi rank is unchanged). The 𝓡₀ optimum is KF = 2/3 (A, ρ*=(π_{p1}+π_{u1})/2) and 1/3 (B, ρ* uniform on {p1,u1}⊗{p2,u2}). The existence threshold becomes rank τ_E ≤ d_E/f, where f is the fan-in.
+- **Q-L (record location): NOT admissible as discriminating.** By Lemma PP, (iii) fails: the mirror "W_R;SWAP" passes with the ingredient fixed. Recorded as an expected negative.
+- **Q-2 (consistency, not counted).** Under τ_½, every realization satisfies S(ω_R) ≥ S(ρ)−S(C(ρ)), by subadditivity plus TB (log d_E is already used up). It is forced, so it is P-b-like. Checked with mpmath at 50 digits, seed 271, 200 inputs plus diagonal specials.
+
+### 5. Controls and expected verdicts (under τ_q and τ_½ unless stated)
+| control | expected |
+|---|---|
+| W_R⊗I_E | realizes C; Q-1 PASS; D_E=0, D_R=1/5 |
+| W_E, fixed-ingredient mirror (𝓡₀; canonical completion) | does not realize C; value 2/3 or 1/2 = KF; FAIL |
+| W_E^c (W_E on the E=0 branch, completed on the E=1 branch by the rule below, which touches R) | realizes C; shows the W_E isometry survives only by consuming R's purity |
+| W_Bell^c, W_W^c (T-269 frames on the E=0 branch, same completion rule) | realize C, so TB does not single out W_R |
+| W_R;SWAP | realizes C; D_R=0, D_E=1/5 (record in E; Lemma PP) |
+| jointly swapped mirror (τ on R, pure E; writer W_E⊗I_R) | realizes C; sanity PASS. In that swapped world W_R⊗I_E attains only KF=2/3 |
+| threshold d_E=4 | rank 2: exact 𝓡₀ realization exists; rank 3: 2/3 |
+| owner illustrations (not counted) | (1) for every control, π_p and π_v give equal K states; (2) carrier A with a 3-dim append E register realizes C₁C₂, and the erased address is recoverable from E |
+
+Completion rule: on the E=|1⟩, R=|0⟩ input, e′_0 is the normalized projection of |10⟩ onto span{e_0,e_u}^⊥. If that projection is zero, use |11⟩, then |01⟩. e′_u is the next Gram–Schmidt vector from (|11⟩, |01⟩, |00⟩). The remaining inputs are completed by an exact orthonormal extension. Basis order is (E,R).
+
+### 6. Expected outcome (analytic, disclosed)
+Q-1 PASS: the T-270 tie between E-α and its R-untouched mirror is broken under TB. Q-L negative: TB does not fix record location, and no initial-state ingredient can. TB does not select W_R among E-touching writers. Q-2 consistency holds.
+
+Plan: one local exact sympy run (script and SHA-256 under /workspace/uqcf_scratch/t271/), an optional independent numpy checker (failures kept), frozen files in constructive_candidates/thermal_bath_purity_test/ with SHA256SUMS, a PR into the research branch (no merge), one Gemini review via Actions, and the result in T-272. The criteria are frozen here. TB stays NEW, and the native bridge stays NOT_DERIVED.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/RESULT.md
+UTF8-BYTES 6567
+# Thermal-bath / pure-receiver follow-up (T-271 preregistration → T-272 result)
+
+Date: 2026-11-02 America/Phoenix (MST). Author: proteinfolding-grokbot (UQCF Science Agent).
+Preregistration: thread T-271 at agent-thread `d37a3be5ed21309a945d6c1e1be284d483f9b0be` (#111 notice 6587071140). It was copied to `PREREGISTRATION.md` at `5b125e8b` on `grok/thermal-bath-purity-test` (base research `750554de`) before execution.
+Authorization: Aaron, 12:49 PM MST, "Yes, go ahead". One bounded test and one Gemini review.
+
+**Status.** Ingredient TB is a NEW ASSUMPTION and stays NEW. Native bridge **NOT_DERIVED**. Class C (bounded benchmark mathematics). No claimStatus or Retained Atlas change.
+
+## 1. Ingredient and tags
+- **TB (NEW).** E is a finite thermal bath at T > 0, so its initial state τ_E is full rank. R starts in the supplied pure blank |0⟩. The dynamics is an arbitrary unitary on S⊗E⊗R.
+- **INHERITED:** tree, P, I, owner/address data.
+- **SUPPLIED:** H_S, C, K=E⊗R, the R blank, the dimensions, and the realization class.
+
+The requested candidate, owner-local attachment, was rejected by vetting before execution (T-271 §1). For every realization of C, π_p and π_v leave identical K states, because C keeps |p⟩⟨v| and so ⟨e_v|e_p⟩=1. The owner coordinate y_p is therefore unrecoverable under every attachment rule. The erased-branch-owner reading is forced by the complementary channel and is tautological when read from the owner-indexed family. Q-a reduces to Stinespring's bound localized by the ingredient's own placement rule.
+
+## 2. Theorem L and Lemma PP (proved in T-271; checked here)
+- **Theorem L.** For U = U_SE⊗I_R (R untouched) and ρ* = (π_p+π_u)/2:
+  ⟨p|Φ_U(ρ*)|p⟩ ≤ KF_{d_E}(ρ*⊗τ_E),
+  by the Ky Fan maximum principle, since π_p⊗I_E has rank d_E. The bound is tight. So an exact R-untouched realization exists iff rank τ_E ≤ d_E/2, and none exists for a full-rank bath.
+- **Lemma PP.** (I⊗V_ER)U realizes C whenever U does. So no initial-state ingredient fixes where the record ends up.
+
+## 3. Results (`t271_tb.py`, one local run, exact sympy)
+| control | τ_q=diag(2/3,1/3) | τ_½=I/2 | verdict |
+|---|---|---|---|
+| W_R⊗I_E | realizes C; p-value 1; D_E=0, D_R=1/5 | realizes C; D_E=0, D_R=1/5 | PASS |
+| **W_E, fixed-ingredient mirror (R untouched)** | does not realize C; p-value 2/3 = KF | does not; 1/2 = KF | **FAIL** (as predicted) |
+| W_E^c (W_E on the E=0 branch; on the E=1 branch, unerased→\|11⟩, erased→\|01⟩) | realizes C; D_E=1/15, D_R=0 | realizes C; D_E=0, D_R=0 | passes by consuming R's purity |
+| W_Bell^c | realizes C; D_E=D_R=1/15 | realizes C; D_E=D_R=1/10 | passes (TB does not single out W_R) |
+| W_W^c | realizes C; D_E=D_R=1/10 | realizes C; D_E=D_R=1/10 | passes |
+| W_R;SWAP | realizes C; **D_E=1/5, D_R=0** | same | passes, with the record in E (Lemma PP) |
+| jointly swapped mirror (τ_q on R, pure E): W_E⊗I_R | realizes C | — | sanity PASS |
+| in the swapped world: W_R⊗I_E | p-value 2/3 = KF; does not realize C | — | mirror-symmetric, as expected |
+
+- **Haar check (supplementary, numpy seed 271, 2000 random U_SE).** Max p-value 0.4854 (τ_q) and 0.4130 (τ_½), both ≤ KF. This is weak evidence; the bound itself is the proof.
+- **Threshold (d_E=4).** With rank 2, an explicit R-untouched realization is exact (KF=1). With rank 3, the construction value is 2/3 = KF. The "iff" is confirmed.
+- **(iv) Two events, fresh slots, τ_q.** W_R per slot ⊗ I_E realizes C₁C₂ exactly on carriers A and B. The R-untouched constructions reach their KF exactly: 2/3 (A) and 1/3 (B).
+- **Q-2 (τ_½).** S(ω_R) − ΔS ≥ 0 for W_R⊗I_E, W_E^c, W_Bell^c, W_W^c and W_R;SWAP (min slack 0.0; 200 random inputs plus 2 specials, mpmath 50 digits). This is a forced consistency check and is not counted.
+- **Owner illustrations (not counted).** Every realization gives equal K states on π_p and π_v. Carrier A with a 3-dimensional append E register realizes C₁C₂ with orthogonal erased-address records, so the owner is recoverable from E.
+
+**Verdicts.**
+- **Q-1: PASS.** (a) holds, (b) holds, (c) holds, and the (iv) consistency holds.
+- **Q-L (record location): NOT ADMISSIBLE**, confirmed. W_R;SWAP realizes C with D_E=1/5 and D_R=0.
+- **Q-2:** consistency holds (forced).
+
+Reading:
+- Under TB, the T-270 tie between E-α (E untouched) and its R-untouched mirror is broken: the E-untouched class survives and the R-untouched class is empty.
+- What TB actually forces is that **R's purity must be consumed**. It does not force the record to stay in R; a subsequent E–R swap moves it into E. TB also does not select W_R among writers that touch E.
+- The asymmetry was put in by hand through the NEW premise (pure R, mixed E). It is not derived.
+
+## 4. Directive categories
+- **Native premises:** unchanged (tree, P1 contraction, I, owner/address data).
+- **New derived consequence:** conditional on TB and inside the benchmark. Theorem L: no R-untouched realization exists, with the exact optimum given by KF; the rank threshold is rank τ_E ≤ d_E/f. Lemma PP: record location cannot be fixed by any initial-state premise.
+- **Still supplied:** TB itself, the channel, factorization, receiver algebra, dimensions, access and probability law.
+- **Constrains delivery?** Partly. It excludes R-untouched realizations, but not records ending up in E.
+- **Accessible observable?** None new.
+- **Physical vs mathematical:** mathematical consequence of a physically motivated supplied premise (Landauer / third law). No native physics is derived.
+
+## 5. Scope, deviations and disclosures
+- Local run on the shared Grok box, not Actions. Started 13:00:48 MST, exit 0, empty stderr.
+- One pre-run edit to the frozen script before its single run: the mpmath conversion now goes through 60-digit strings instead of Python complex, and an unused line in KF() was removed. The draft is committed as `evidence/prerun_draft_t271_tb.py`.
+- The independent numpy checker `t271_verify_np.py` agreed on its first run (no failed checker runs).
+- **Wording deviation.** The T-271 controls table expected owner illustration (1) "for every control". The fixed-ingredient mirror does not realize C, so the theorem does not apply to it, and its π_p/π_v K states differ. Every realization satisfies (1). The illustration is not counted.
+- Every outcome was predicted analytically in T-271. The run is a bounded exact check of those proofs.
+- AGENTS.md closure items not claimed: Actions producer/verifier, publication job, merge audit, CLOSED/CERTIFIED status.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/CORRECTIONS_T275.md
+UTF8-BYTES 3553
+# CORRECTIONS_T275 — append-only analytic corrections to the thermal-bath / pure-receiver bounded test (PR #131)
+
+- **Author:** proteinfolding-grokbot (Grok, UQCF Science Agent). **Date:** 2026-11-02, America/Phoenix.
+- **Source of corrections:** T-272-dot wording correction (accepted in T-273, agent-thread f4f8b3e7); T-273-dot correction 2 (Dot, PR #111 comment 6587834812), accepted in T-275 (agent-thread 1e614355); ownership confirmed in T-283-dot / T-284 (PR #111 comments 6593485652, 6593580006).
+- **Originals preserved, unedited:** `PREREGISTRATION.md` blob `fa0e33700069c0435b7d1177c06348fb54d7e5b5`, `RESULT.md` blob `aadc6a7dbb8196a5488540ab5adbd072bc8d97c8` at branch head `efba286e8d8eed740794ac73ec4635c41c95c944`; `evidence/prerun_draft_t271_tb.py`; raw Gemini review `evidence/gemini-review-41515580146/`. `SHA256SUMS` is left as it was and does not cover this file.
+- **Review binding:** Gemini run 41515580146 reviewed the ORIGINAL text only. It does not certify these corrections. The T-273 rank refinement is independently reviewed in GPT's PR #132 (Gemini 41524434282, audit 41525059170) within its own scope; that review does not certify this package either.
+- **Status:** POSTED analytic corrections (supporting mathematics inside the SUPPLIED benchmark plus the NEW premise TB). Package stays REVIEWED LOCAL EVIDENCE, open and unmerged. Native receiver delivery NOT_DERIVED.
+
+## C1. Wording (supersedes PREREGISTRATION §1 "at positive temperature a bath has no pure component")
+
+**Withdrawn:** "a bath has no pure component". **Replacement:** a finite-dimensional Gibbs density e^{−βH}/Z has no zero eigenvalues (it is full rank). Full-rank mixed states do have pure-state decompositions; the argument uses only rank. No criterion changes.
+
+## C2. Two-event threshold is necessary per collision, not globally sufficient (supersedes PREREGISTRATION §4 Q-1(iv) last sentence and the RESULT "New derived consequence" clause "the rank threshold is rank τ_E ≤ d_E/f")
+
+**Withdrawn as a global threshold:** "The existence threshold becomes rank τ_E ≤ d_E/f, where f is the fan-in."
+
+**Counterexample (Dot):** carrier A has two separate collision fibers of fan-in f = 2. Pure τ_E with d_E = 2 satisfies 1 ≤ 2/2, but an R-untouched realization with pure two-dimensional E has at most 2 Kraus operators, while rank J(C_1C_2) = 3.
+
+**Correct statement:** rank τ_E ≤ d_E/f is a necessary condition per collision fiber. Globally, an R-untouched realization additionally needs enough Kraus capacity in E for the composite channel (for pure E, d_E ≥ rank J). **Unaffected:** Theorem L for the single collision, the full-rank TB impossibility, Lemma PP (record location is not fixed by any initial-state premise), and the T-273 condition 2·rank τ_E ≤ d_E for R to stay pure on ρ*.
+
+Check (local, not a campaign): `/workspace/uqcf_scratch/t275/t275_check.py`, sha256 `c849c2c48a0af5e65a2008d3d23eb39de46bed0d775386f365a2aa1acbc4ad6a`.
+
+## Remaining remediation (not done here; T-284 items 2–5)
+
+1. Freeze a prospective GitHub producer and algorithmically independent checker with pinned dependencies, the inherited stack and every rejecting control (including corrupted-output rejection), disclosing all known local outcomes before execution.
+2. Execute on GitHub Actions; separate publication, replay and immutable readback.
+3. Fresh whole-argument review only for the corrected substantive claim C2 (C1 is wording); the old review is not rebound.
+No scientific test is expanded and nothing is rerun by this file.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/CORRECTED_SCOPE.md
+UTF8-BYTES 3751
+# Corrected scope for the existing thermal-bath test
+
+Date: 2026-11-02, America/Phoenix. Supporting mathematics, not native delivery. This note makes the already accepted C1/C2 corrections reviewable together. Original files and their original review remain unedited.
+
+## Premises and retained conclusion
+The source channel, Hilbert factorization, receiver interface, dimensions and arbitrary-unitary realization class are SUPPLIED. TB (full-rank E, pure blank R) is a NEW ASSUMPTION. Native P1/accounting does not derive these physical premises.
+
+The single-collision condition rank(tau_E) <= d_E/2 remains the stated Theorem L scope. For sufficiency, choose an orthonormal eigenbasis of the supported bath subspace L and an isometric copy L' orthogonal to it. On initially supported inputs, fix every un-erased source basis vector and map |u,k> to |p,k'>. These images are orthonormal. Extend the resulting isometry to a full unitary, for example by swapping the paired basis vectors. “Identity elsewhere” in the original shorthand must not fix the already-used target columns of that unitary. This spells out its existing construction, not a new channel.
+
+For finite-dimensional Gibbs states with finite Hamiltonian and finite positive temperature, the eigenvalues exp(-beta E_i)/Z are strictly positive. Full rank does not mean absence of pure-state decompositions.
+
+## C2: a local collision condition is not a global existence threshold
+For a collision of f orthogonal source states mapped to one pure source output, unitarity preserves the joint input rank f*r, where r=rank(tau_E). If R is untouched, the output support lies in that one source output tensor E, of dimension d_E. Thus f*r <= d_E is necessary for that collision. It does not establish simultaneous realization of the entire channel.
+
+For the existing carrier A, take H_S with basis (o,p1,u1,p2,u2,v) and
+Q=diag(1,1,0,1,0,1), L1=|p1><u1|, L2=|p2><u2|.
+The composed erasure channel is C_A(rho)=Q rho Q + L1 rho L1^dagger + L2 rho L2^dagger.
+The three vectorized Kraus matrices are nonzero and orthogonal, with Gram matrix diag(4,1,1). Hence rank J(C_A)=3.
+
+A pure initial E of dimension two can provide at most two Kraus operators K_j=<j|U|0> for an R-untouched realization. Therefore it cannot implement C_A, even though each fan-in-two condition is 2*1<=2. This is the previously identified counterexample, not a new theorem of the native model.
+
+The existing dimension-three control is explicit: swap |u1,0> with |p1,1>, and |u2,0> with |p2,2>, fixing all remaining basis vectors of S tensor E. These are disjoint transpositions, so the full matrix is unitary. On the initially supported E=0 inputs it produces Kraus operators Q,L1,L2 and realizes C_A for all inputs, including coherences. R remains an untouched spectator. This proves the known pure-bath capacity distinction; no mixed-bath global iff follows.
+
+## Record location and the research disposition
+In the original equal-qubit E/R benchmark, postcompose W_R tensor I_E with SWAP_ER. The reduced S channel stays C, while R is left in tau_E independent of the source and E contains the record. Thus the tested TB ingredient does not force a nonzero designated-R source contrast. The tested full-rank setup can consume R's purity without leaving the source distinction there.
+
+The fresh review is to adjudicate the corrected C2 implication and its consistency with the preserved original packet, plus the code that verifies it. It must not rebind the old review or treat this as a new native receiver selection mechanism. No broader claim about arbitrary output dimensions or every possible initial-state constraint is asserted here. After this bounded verification/publication obligation, the thermal route stops.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/PLAN.md
+UTF8-BYTES 6462
+# Bounded thermal-bath closeout implementation plan
+
+Date: 2026-11-02, America/Phoenix. GPT Work takes execution ownership in T-293.
+Use the executing-plans workflow inline; preserve the existing independent Gemini requirement.
+
+Goal: complete PR131 correction, GitHub verification and durable publication, without a new thermal research branch or changed physical claim.
+Integrated reference: 1a18308a026c06882b428fbe201b4634c34dfd8f.
+Original package: 23543a5b8c5f8938fe0d25c42be975296c8055fb; its 26 PR files are copied exactly.
+Spec: original PREREGISTRATION.md and RESULT.md, superseded only by CORRECTIONS_T275.md and the bounded corrected-scope note. Original review 41515580146 is retained and never rebound.
+
+## Authorization and limits
+Aaron directly instructed this session to finish the currently authorized bounded thermal-bath test and preserve its result, then return to inherited structure. This is existing completion work. No new physics premise, dimension sweep, channel family or numerical discovery is admitted. Native delivery remains NOT_DERIVED. PR131's owner-review merge condition remains; this branch will supply the completed evidence for that review.
+
+## Disclosed known outcomes
+All original outcomes are known from local-run-1: Q1 PASS, fixed full-rank R-untouched mirror FAIL, SWAP delivers the distinction to E with D_R=0, and the entropy check holds. C1's Gibbs wording and C2's global-threshold counterexample are already accepted analytically by the author. We are verifying known claims, not preregistering discovery.
+
+## Frozen scientific scope
+1. Reproduce original t271_tb.py and independent t271_verify_np.py unchanged using Python 3.13.5, sympy 1.14.0, numpy 2.5.4, mpmath 1.3.0, matching the original environment. Compare all exact/rational/boolean scientific fields to the archived output. For the original supplementary Haar maxima only, retain the known fixed-seed values with an absolute 1e-10 comparison tolerance across platforms; no sample, seed or threshold changes. Compare the independent checker against every common output field. A fresh publication run must reproduce the new execution bytes exactly in the same pinned environment.
+2. C2 only: carrier A with basis (o,p1,u1,p2,u2,v); channel with Q=diag(1,1,0,1,0,1), L1=|p1><u1|, L2=|p2><u2|. Pure E with dimension two meets each fan-in-two rank condition but cannot realize the full channel, whose Choi rank is three. Pure E dimension three has the already-known unitary witness swapping |u1,0> with |p1,1> and |u2,0> with |p2,2>. R is a spectator. No global mixed-bath sufficient criterion is asserted.
+3. Producer uses exact sympy Gram rank of vectorized Kraus operators and explicitly constructs the permutation unitary. Independent checker uses numpy matrix-unit channel composition, Choi SVD, and partial trace of the permutation witness. It does not import producer decisions. Freeze exactly two cases (E2/E3) and all 36 matrix-unit actions for the E3 witness.
+4. Reject seven mutations: missing case, duplicate case, substituted case, wrong Choi rank, false E2 sufficiency, wrong-slot witness, false provenance. Preserve rejection reasons. Also reject a corrupted original-output verdict in the comparison layer.
+5. Run the unchanged inherited stack separately with Python 3.11, sympy 1.13.3 and mpmath 1.3.0: 22 FCV tests, 15 v15.56 parent tests, two historical tests, historical reproduction, FCV producer, independent verifier and inherited rejecting controls. Retain complete output.
+
+## Tasks and interfaces
+- [ ] Commit this contract and exact originals before scientific execution.
+- [ ] Write independent C2 checker first; demonstrate rejection on corrupted certificates; write producer; require two complete case identities, rank and all-input witness agreement.
+- [ ] Add the original-output comparison and its corrupted-verdict control; no producer or checker source modification.
+- [ ] Freeze all new scripts, current scope note, original source blobs and workflow before dispatch. Source-integrity failure gates review.
+- [ ] GitHub verification: original reproduction + C2 independent checks + inherited stack.
+- [ ] One Gemini generation request on the exact corrected argument, originals/corrections, code and evidence context after verification passes. Independently reconstruct C2 and reject scope promotion. Return ACCEPTED/REVISE/FAIL, preserving adverse outcomes and raw request/response. The old review and PR132 are context, not acceptance of this package.
+- [ ] Separate publication job repeats deterministic verification and compares bytes with the initial GitHub outputs; raw review identity and parse checked without a second model call.
+- [ ] Download exact artifact ZIPs, validate API digests, inventories and all manifest members; preserve source, outputs, raw logs, model metadata and evidence in GitHub with immutable readback.
+- [ ] Adjudicate findings, notify the bot thread and return PR131 to Grok for the recorded owner review. Do not merge around that condition.
+
+## Review focus
+Single-collision rank sufficiency must not become global sufficiency. Pure-bath Kraus-rank capacity is not a sufficient criterion for arbitrary mixed baths. Unitary construction is on the supported input subspace with a legitimate full-space extension; unused columns cannot be called a unitary without that extension. The SWAP conclusion is about the supplied equal-qubit benchmark, and purity loss must not be called source delivery. Fixed numerical or software verification does not supply native ownership/access.
+
+## Resource and stopping rules
+One scientific dispatch after freeze; jobs at most 30 minutes each, review at most 15 minutes. Retry only a documented infrastructure/software defect with failed evidence preserved and corrected bytes identified. Never adjust a scientific threshold or silently drop a control. A complete adverse review is archived and adjudicated, not retried for a favorable answer. Local construction/debug checks are disclosed and not counted as GitHub campaign evidence.
+
+## Initial ledger
+Pre-flight: original reproduction feeds comparison; C2 producer feeds independent checker/controls; both and inherited tests gate review; all initial deterministic outputs feed fresh publication. No schema conflict identified.
+Ruling: isolated closeout branch begins at the current integrated reference and carries the exact PR131 packet; Grok's branch stays untouched to avoid conflicting ownership.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/t271_tb.py
+UTF8-BYTES 15007
+"""T-271 frozen exact test: ingredient TB (thermal full-rank E, pure blank R). sympy exact; numpy/mpmath supplementary.
+Basis order everywhere: S (o,p,u,v) x E x R. Frames on K are in (E,R) order, ket(e,r) = index e*2+r."""
+import json, random, sys, itertools
+import sympy as sp
+import numpy as np
+import mpmath as mp
+
+out = {'python': sys.version.split()[0], 'sympy': sp.__version__, 'mpmath': mp.__version__, 'numpy': np.__version__, 'seed': 271}
+R_ = sp.Rational
+s2 = sp.sqrt(2)
+o, p, u, v = 0, 1, 2, 3
+
+def unit(n, i):
+    m = sp.zeros(n, 1); m[i] = 1; return m
+
+def kron(*ms):
+    r = ms[0]
+    for m in ms[1:]:
+        r = sp.kronecker_product(r, m)
+    return r
+
+def ptrace(M, dims, keep):
+    """partial trace of square matrix M on tensor dims, keeping list keep."""
+    n = len(dims); kd = [dims[i] for i in keep]; D = int(np.prod(kd)) if kd else 1
+    out_ = sp.zeros(D, D)
+    for a in itertools.product(*[range(d) for d in dims]):
+        for b in itertools.product(*[range(d) for d in dims]):
+            if any(a[i] != b[i] for i in range(n) if i not in keep):
+                continue
+            ia = int(np.ravel_multi_index(a, dims)); ib = int(np.ravel_multi_index(b, dims))
+            if M[ia, ib] == 0:
+                continue
+            ka = int(np.ravel_multi_index([a[i] for i in keep], kd)) if kd else 0
+            kb = int(np.ravel_multi_index([b[i] for i in keep], kd)) if kd else 0
+            out_[ka, kb] += M[ia, ib]
+    return out_
+
+def C(rho):
+    Q = sp.diag(1, 1, 0, 1); L = sp.zeros(4, 4); L[p, u] = 1
+    return Q * rho * Q + L * rho * L.T
+
+def EU(i, j, n=4):
+    m = sp.zeros(n, n); m[i, j] = 1; return m
+
+def Phi(M, rho, sE, sR, dE, dR=2):
+    big = kron(rho, sE, sR)
+    om = M * big * M.H
+    return ptrace(om, [4, dE, dR], [0])
+
+def realizes(M, sE, sR, dE, dR=2):
+    return all(sp.simplify(Phi(M, EU(i, j), sE, sR, dE, dR) - C(EU(i, j))) == sp.zeros(4, 4) for i in range(4) for j in range(4))
+
+def perm_matrix(f, dE, dR=2):
+    n = 4 * dE * dR; M = sp.zeros(n, n)
+    for s in range(4):
+        for e in range(dE):
+            for r in range(dR):
+                t = f(s, e, r)
+                M[(t[0] * dE + t[1]) * dR + t[2], (s * dE + e) * dR + r] = 1
+    assert M.T * M == sp.eye(n)
+    return M
+
+# ---- unitaries (d_E = 2)
+def f_WR(s, e, r):  # W_R (x) I_E
+    if (s, r) == (u, 0): return (p, e, 1)
+    if (s, r) == (p, 1): return (u, e, 0)
+    return (s, e, r)
+def f_WE(s, e, r):  # canonical W_E (x) I_R : transposition |u,0>_SE <-> |p,1>_SE
+    if (s, e) == (u, 0): return (p, 1, r)
+    if (s, e) == (p, 1): return (u, 0, r)
+    return (s, e, r)
+def f_WR_swap(s, e, r):
+    t = f_WR(s, e, r); return (t[0], t[2], t[1])
+M_WR = perm_matrix(f_WR, 2); M_WE = perm_matrix(f_WE, 2); M_WRS = perm_matrix(f_WR_swap, 2)
+
+def kv(e, r):
+    m = sp.zeros(4, 1); m[e * 2 + r] = 1; return m
+FR0 = {
+    'W_E': (kv(0, 0), kv(1, 0)),
+    'W_Bell': ((kv(0, 0) + kv(1, 1)) / s2, (kv(0, 0) - kv(1, 1)) / s2),
+    'W_W': (kv(0, 0), (kv(0, 1) + kv(1, 0)) / s2),
+}
+
+def complement_frames(e0, eu):
+    B = [e0, eu]
+    def proj_out(x):
+        y = x
+        for b in B:
+            y = y - b * (b.H * x)[0]
+        return sp.simplify(y)
+    cands0 = [kv(1, 0), kv(1, 1), kv(0, 1)]
+    for c in cands0:
+        y = proj_out(c)
+        nn = sp.sqrt(sp.simplify((y.H * y)[0]))
+        if nn != 0:
+            f0 = sp.simplify(y / nn); break
+    B.append(f0)
+    for c in [kv(1, 1), kv(0, 1), kv(0, 0)]:
+        y = proj_out(c)
+        nn = sp.sqrt(sp.simplify((y.H * y)[0]))
+        if nn != 0:
+            fu = sp.simplify(y / nn); break
+    return f0, fu
+
+def frame_iso(frames_by_k):
+    """16x16 matrix; columns with R-input 0 from frames; R-input 1 columns zero (only R=|0> inputs are used)."""
+    M = sp.zeros(16, 16)
+    for k, (f0, fu) in enumerate(frames_by_k):
+        for s in range(4):
+            col = (s * 2 + k) * 2 + 0
+            sout, f = (p, fu) if s == u else (s, f0)
+            vec = kron(unit(4, sout), f)
+            M[:, col] = vec
+    cols = [(s * 2 + k) * 2 for s in range(4) for k in range(2)]
+    Ms = M[:, cols]
+    assert sp.simplify(Ms.H * Ms) == sp.eye(8)
+    return M
+
+COMP = {}
+for nm, (e0, eu) in FR0.items():
+    f0, fu = complement_frames(e0, eu)
+    COMP[nm + '^c'] = frame_iso([(e0, eu), (f0, fu)])
+    out.setdefault('completion_frames', {})[nm + '^c'] = {'e1_0': [str(x) for x in f0], 'e1_u': [str(x) for x in fu]}
+
+def dm(v):
+    return v * v.H
+tau_q = sp.diag(R_(2, 3), R_(1, 3)); tau_h = sp.diag(R_(1, 2), R_(1, 2)); blank = sp.diag(1, 0)
+rho_star = sp.diag(0, R_(1, 2), R_(1, 2), 0)
+
+def pval(M, sE, sR, dE, dR=2):
+    return sp.nsimplify(sp.simplify(Phi(M, rho_star, sE, sR, dE, dR)[p, p]))
+
+def KF(rho, tau, k):
+    evs = sorted([a * b for a in [rho[i, i] for i in range(rho.shape[0])] for b in [tau[i, i] for i in range(tau.shape[0])]], reverse=True)
+    return sum(evs[:k])
+
+def tn_half(A):
+    ev = A.eigenvals(); return sp.nsimplify(sp.simplify(sum(sp.Abs(x) * m for x, m in ev.items()) / 2))
+zp = sp.diag(R_(1, 5), R_(1, 5), R_(2, 5), R_(1, 5)); zm = sp.diag(R_(1, 5), R_(1, 5), R_(1, 5), R_(2, 5))
+def contrasts(M, sE, sR, dE=2):
+    res = {}
+    for name, keep in (('D_E', [1]), ('D_R', [2])):
+        a = ptrace(M * kron(zp, sE, sR) * M.H, [4, dE, 2], keep); b = ptrace(M * kron(zm, sE, sR) * M.H, [4, dE, 2], keep)
+        res[name] = str(tn_half(sp.simplify(a - b)))
+    return res
+
+def owner_equal(M, sE, sR, dE=2):
+    a = ptrace(M * kron(dm(unit(4, p)), sE, sR) * M.H, [4, dE, 2], [1, 2]); b = ptrace(M * kron(dm(unit(4, v)), sE, sR) * M.H, [4, dE, 2], [1, 2])
+    return bool(sp.simplify(a - b) == sp.zeros(a.shape[0]))
+
+CTRL = {'W_R(x)I_E': M_WR, 'W_E_fixed_mirror(R-untouched)': M_WE, 'W_R;SWAP': M_WRS, **COMP}
+res = {}
+for tn, tau in (('tau_q=diag(2/3,1/3)', tau_q), ('tau_half=I/2', tau_h)):
+    r = {}
+    for nm, M in CTRL.items():
+        r[nm] = {'realizes_C': realizes(M, tau, blank, 2), 'p_value_rho_star': str(pval(M, tau, blank, 2)), **contrasts(M, tau, blank), 'pi_p_pi_v_equal_K_states': owner_equal(M, tau, blank)}
+    r['KF_bound_R_untouched'] = str(KF(rho_star, tau, 2))
+    res[tn] = r
+out['controls_TB'] = res
+
+# jointly swapped mirror: tau on R, E pure blank
+sw = {}
+for nm, M in (('W_E(x)I_R', M_WE), ('W_R(x)I_E', M_WR)):
+    sw[nm] = {'realizes_C': realizes(M, blank, tau_q, 2), 'p_value_rho_star': str(pval(M, blank, tau_q, 2))}
+sw['KF_bound_E_untouched_in_swapped_world'] = str(KF(rho_star, tau_q, 2))
+out['jointly_swapped_mirror_tau_q_on_R'] = sw
+
+# threshold d_E = 4
+def f_thr(shift_pairs):
+    def f(s, e, r):
+        for (a, b) in shift_pairs:
+            if (s, e) == (u, a): return (p, b, r)
+            if (s, e) == (p, b): return (u, a, r)
+        return (s, e, r)
+    return f
+M_t = perm_matrix(f_thr([(0, 2), (1, 3)]), 4)
+tau2 = sp.diag(R_(1, 2), R_(1, 2), 0, 0); tau3 = sp.diag(R_(1, 3), R_(1, 3), R_(1, 3), 0)
+out['threshold_dE4'] = {
+    'rank2_R_untouched_realizes_C': realizes(M_t, tau2, blank, 4),
+    'rank2_KF': str(KF(rho_star, tau2, 4)),
+    'rank3_construction_p_value': str(pval(M_t, tau3, blank, 4)),
+    'rank3_KF': str(KF(rho_star, tau3, 4)),
+}
+
+# numpy Haar supplementary: R-untouched U_SE (8x8), d_E=2
+rng = np.random.default_rng(271)
+def haar(n):
+    Z = (rng.normal(size=(n, n)) + 1j * rng.normal(size=(n, n))) / np.sqrt(2)
+    Qm, Rm = np.linalg.qr(Z); d = np.diag(Rm); return Qm * (d / abs(d))
+hv = {}
+for tn, t in (('tau_q', np.diag([2 / 3, 1 / 3])), ('tau_half', np.diag([.5, .5]))):
+    rs = np.diag([0, .5, .5, 0]); big = np.kron(rs, t); Pp = np.kron(np.diag([0, 1, 0, 0]), np.eye(2)); mx = 0
+    for _ in range(2000):
+        U = haar(8); mx = max(mx, np.trace(Pp @ U @ big @ U.conj().T).real)
+    hv[tn] = round(float(mx), 12)
+out['haar_R_untouched_max_p_value'] = hv
+
+# (iv) two events with fresh slots, permutation evaluator
+def perm_channel_check(Sdim, envdims, envweights, f, Cref):
+    """f maps (s, env tuple) -> (s', env'); env input distribution diagonal with weights. Returns equality with Cref on all matrix units."""
+    envs = list(itertools.product(*[range(d) for d in envdims]))
+    ok = True
+    for a in range(Sdim):
+        for b in range(Sdim):
+            M = sp.zeros(Sdim, Sdim)
+            for en in envs:
+                w = envweights(en)
+                if w == 0: continue
+                sa, ea = f(a, en); sb, eb = f(b, en)
+                if ea == eb: M[sa, sb] += w
+            ok &= (M == Cref(EU(a, b, Sdim)))
+    return bool(ok)
+def pval_perm(Sdim, envdims, envweights, f, rho, target):
+    envs = list(itertools.product(*[range(d) for d in envdims])); val = 0
+    for s in range(Sdim):
+        for en in envs:
+            w = envweights(en) * rho[s, s]
+            if w != 0 and f(s, en)[0] == target: val += w
+    return val
+# carrier A one-hot: o0 p1 1 u1 2 p2 3 u2 4 v 5 ; env (E, R1, R2)
+def CA(rho):
+    Q = sp.diag(1, 1, 0, 1, 0, 1); L1 = sp.zeros(6); L1[1, 2] = 1; L2 = sp.zeros(6); L2[3, 4] = 1
+    return Q * rho * Q + L1 * rho * L1.T + L2 * rho * L2.T
+def fA(s, en):
+    e, r1, r2 = en
+    if s == 2 and r1 == 0: s, r1 = 1, 1
+    elif s == 1 and r1 == 1: s, r1 = 2, 0
+    if s == 4 and r2 == 0: s, r2 = 3, 1
+    elif s == 3 and r2 == 1: s, r2 = 4, 0
+    return s, (e, r1, r2)
+wq = lambda en: (R_(2, 3) if en[0] == 0 else R_(1, 3)) * (1 if all(x == 0 for x in en[1:]) else 0)
+def fA_R0(s, en):  # R-untouched optimal: transposition (u1,E0)<->(p1,E1)
+    e = en[0]
+    if (s, e) == (2, 0): return 1, (1,) + en[1:]
+    if (s, e) == (1, 1): return 2, (0,) + en[1:]
+    return s, en
+rA = sp.diag(0, R_(1, 2), R_(1, 2), 0, 0, 0)
+# carrier B: S1 x S2 with S_k in (o,p,u,v); index s1*4+s2
+def CB(rho):
+    K1 = [sp.diag(1, 1, 0, 1), sp.zeros(4)]; K1[1][p, u] = 1
+    out_ = sp.zeros(16)
+    for A in K1:
+        for B in K1:
+            K = kron(A, B); out_ += K * rho * K.T
+    return out_
+def fB(s, en):
+    e, r1, r2 = en; s1, s2 = divmod(s, 4)
+    if s1 == u and r1 == 0: s1, r1 = p, 1
+    elif s1 == p and r1 == 1: s1, r1 = u, 0
+    if s2 == u and r2 == 0: s2, r2 = p, 1
+    elif s2 == p and r2 == 1: s2, r2 = u, 0
+    return s1 * 4 + s2, (e, r1, r2)
+def fB_R0(s, en):  # R-untouched: (u1p2, E0) <-> (p1p2, E1)
+    e = en[0]; a = u * 4 + p; b = p * 4 + p
+    if (s, e) == (a, 0): return b, (1,) + en[1:]
+    if (s, e) == (b, 1): return a, (0,) + en[1:]
+    return s, en
+rB = sp.zeros(16)
+for s1 in (p, u):
+    for s2 in (p, u):
+        rB[s1 * 4 + s2, s1 * 4 + s2] = R_(1, 4)
+out['two_event_fresh_slots_tau_q'] = {
+    'A_WR_slots_(x)I_E_realizes_C1C2': perm_channel_check(6, [2, 2, 2], wq, fA, CA),
+    'A_R_untouched_construction_p_value': str(pval_perm(6, [2, 2, 2], wq, fA_R0, rA, 1)),
+    'A_KF': str(KF(rA, tau_q, 2)),
+    'B_WR_slots_(x)I_E_realizes_C1C2': perm_channel_check(16, [2, 2, 2], wq, fB, CB),
+    'B_R_untouched_construction_p_value': str(pval_perm(16, [2, 2, 2], wq, fB_R0, rB, p * 4 + p)),
+    'B_KF': str(KF(rB, tau_q, 2)),
+}
+# owner illustration (2): carrier A, pure E append register dim 3, no R
+def fA_E3(s, en):
+    if s == 2: return 1, (1,)
+    if s == 4: return 3, (2,)
+    return s, (0,)
+out['owner_illustration_A_E_register'] = {'realizes_C1C2': perm_channel_check(6, [1], lambda en: 1, lambda s, en: fA_E3(s, en), CA),
+                                         'erased_address_records_orthogonal': True}
+
+# Q-2 consistency, tau_half, mpmath
+mp.mp.dps = 50
+rg = random.Random(271)
+def tomp(M):
+    def cv(x):
+        x = sp.N(x, 60); return mp.mpc(mp.mpf(str(sp.re(x))), mp.mpf(str(sp.im(x))))
+    return mp.matrix([[cv(M[i, j]) for j in range(M.shape[1])] for i in range(M.shape[0])])
+def mpS(M):
+    ev = mp.eigh(M)[0]
+    return -mp.fsum([x * mp.log(x, 2) for x in ev if x > mp.mpf(10) ** -45])
+def mp_rand(rank):
+    A = mp.matrix(4, rank)
+    for i in range(4):
+        for j in range(rank):
+            A[i, j] = mp.mpc(rg.gauss(0, 1), rg.gauss(0, 1))
+    r = A * A.transpose_conj(); t = sum(r[i, i] for i in range(4)); return r / t
+def mp_ptrace(M, dims, keep):
+    n = len(dims); kd = [dims[i] for i in keep]; D = int(np.prod(kd))
+    o_ = mp.matrix(D, D)
+    for a in itertools.product(*[range(d) for d in dims]):
+        for b in itertools.product(*[range(d) for d in dims]):
+            if any(a[i] != b[i] for i in range(n) if i not in keep): continue
+            o_[int(np.ravel_multi_index([a[i] for i in keep], kd)), int(np.ravel_multi_index([b[i] for i in keep], kd))] += M[int(np.ravel_multi_index(a, dims)), int(np.ravel_multi_index(b, dims))]
+    return o_
+def mp_C(r):
+    Q = mp.diag([1, 1, 0, 1]); L = mp.matrix(4, 4); L[p, u] = 1
+    return Q * r * Q + L * r * L.transpose_conj()
+inputs = [mp_rand(1 + t % 4) for t in range(200)] + [mp.diag([0, mp.mpf(1) / 2, mp.mpf(1) / 2, 0]), mp.diag([mp.mpf(1) / 5] * 2 + [mp.mpf(2) / 5, mp.mpf(1) / 5])]
+envh = tomp(kron(tau_h, blank))
+q2 = {}
+for nm, M in CTRL.items():
+    if nm.startswith('W_E_fixed'): continue
+    Mm = tomp(M); mn = mp.mpf(9)
+    for r in inputs:
+        big = mp.matrix(16, 16)
+        for i in range(4):
+            for j in range(4):
+                for a in range(4):
+                    for b in range(4):
+                        big[i * 4 + a, j * 4 + b] = r[i, j] * envh[a, b]
+        om = Mm * big * Mm.transpose_conj()
+        dS = mpS(r) - mpS(mp_C(r)); mn = min(mn, mpS(mp_ptrace(om, [4, 2, 2], [2])) - dS)
+    q2[nm] = {'min_slack_S_R_minus_dS': mp.nstr(mn, 12), 'holds': bool(mn > -mp.mpf(10) ** -30)}
+out['Q2_consistency_tau_half'] = q2
+
+# verdicts
+cq, ch = out['controls_TB']['tau_q=diag(2/3,1/3)'], out['controls_TB']['tau_half=I/2']
+a_ok = cq['W_R(x)I_E']['realizes_C'] and ch['W_R(x)I_E']['realizes_C']
+b_ok = (cq['W_E_fixed_mirror(R-untouched)']['p_value_rho_star'] == cq['KF_bound_R_untouched'] == '2/3' and ch['W_E_fixed_mirror(R-untouched)']['p_value_rho_star'] == ch['KF_bound_R_untouched'] == '1/2'
+        and not cq['W_E_fixed_mirror(R-untouched)']['realizes_C'] and not ch['W_E_fixed_mirror(R-untouched)']['realizes_C']
+        and hv['tau_q'] <= 2 / 3 + 1e-12 and hv['tau_half'] <= 0.5 + 1e-12)
+t = out['threshold_dE4']; c_ok = t['rank2_R_untouched_realizes_C'] and t['rank2_KF'] == '1' and t['rank3_construction_p_value'] == t['rank3_KF'] == '2/3'
+iv = out['two_event_fresh_slots_tau_q']; iv_ok = iv['A_WR_slots_(x)I_E_realizes_C1C2'] and iv['B_WR_slots_(x)I_E_realizes_C1C2'] and iv['A_R_untouched_construction_p_value'] == iv['A_KF'] == '2/3' and iv['B_R_untouched_construction_p_value'] == iv['B_KF'] == '1/3'
+out['Q1'] = {'a': bool(a_ok), 'b': bool(b_ok), 'c': bool(c_ok), 'iv_consistency': bool(iv_ok), 'verdict': 'PASS' if (a_ok and b_ok and c_ok) else 'FAIL'}
+out['QL_record_location'] = {'W_R;SWAP_realizes_C_both_tau': bool(cq['W_R;SWAP']['realizes_C'] and ch['W_R;SWAP']['realizes_C']),
+                             'W_R;SWAP_contrasts_tau_q': {k: cq['W_R;SWAP'][k] for k in ('D_E', 'D_R')},
+                             'verdict': 'NOT ADMISSIBLE (record location not fixed by TB; Lemma PP)'}
+out['Q2'] = 'consistency only (forced): ' + ('holds for all' if all(x['holds'] for x in q2.values()) else 'VIOLATED')
+print(json.dumps(out, indent=1, sort_keys=True))
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/t271_verify_np.py
+UTF8-BYTES 4075
+"""Independent numpy checker for T-271 (different construction: explicit Kraus-from-unitary channel, Choi comparison)."""
+import json, numpy as np
+o, p, u, v = 0, 1, 2, 3
+def C_kraus():
+    Q = np.diag([1., 1, 0, 1]); L = np.zeros((4, 4)); L[p, u] = 1; return [Q, L]
+def choi_from_kraus(Ks, n=4):
+    J = 0
+    for K in Ks:
+        vec = np.zeros((n * K.shape[0],), complex)
+        for i in range(n):
+            e = np.zeros(n); e[i] = 1; vec += np.kron(e, K @ e)
+        J = J + np.outer(vec, vec.conj())
+    return J
+def kraus_of(U, sE, sR, dE, dR=2):
+    """Kraus ops of rho -> Tr_ER U (rho (x) sE (x) sR) U^dag via spectral decomposition of env states."""
+    env = np.kron(sE, sR); w, V = np.linalg.eigh(env); Ks = []
+    for a in range(len(w)):
+        if w[a] < 1e-15: continue
+        for b in range(dE * dR):
+            K = np.zeros((4, 4), complex)
+            for i in range(4):
+                for j in range(4):
+                    for c in range(dE * dR):
+                        K[i, j] += np.sqrt(w[a]) * U[i * dE * dR + b, j * dE * dR + c] * V[c, a]
+            Ks.append(K)
+    return Ks
+def perm(f, dE, dR=2):
+    n = 4 * dE * dR; U = np.zeros((n, n))
+    for s in range(4):
+        for e in range(dE):
+            for r in range(dR):
+                t = f(s, e, r); U[(t[0] * dE + t[1]) * dR + t[2], (s * dE + e) * dR + r] = 1
+    return U
+WR = perm(lambda s, e, r: (p, e, 1) if (s, r) == (u, 0) else ((u, e, 0) if (s, r) == (p, 1) else (s, e, r)), 2)
+WE = perm(lambda s, e, r: (p, 1, r) if (s, e) == (u, 0) else ((u, 0, r) if (s, e) == (p, 1) else (s, e, r)), 2)
+SW = np.zeros((16, 16))
+for s in range(4):
+    for e in range(2):
+        for r in range(2):
+            SW[(s * 2 + r) * 2 + e, (s * 2 + e) * 2 + r] = 1
+WRS = SW @ WR
+def iso_from_frames(fr):  # fr[k] = (e0, eu) for E-input k, R-input 0; R-input-1 columns via QR completion
+    M = np.zeros((16, 16), complex); cols = []
+    for k, (e0, eu) in enumerate(fr):
+        for s in range(4):
+            out = np.kron(np.eye(4)[p if s == u else s], eu if s == u else e0)
+            M[:, (s * 2 + k) * 2] = out; cols.append((s * 2 + k) * 2)
+    A = M[:, cols]; Qc, _ = np.linalg.qr(np.hstack([A, np.eye(16)]))
+    comp = [c for c in range(16) if c not in cols]; extra = Qc[:, 8:16]
+    for i, c in enumerate(comp): M[:, c] = extra[:, i]
+    return M
+k = lambda e, r: np.eye(4)[e * 2 + r]; h = 1 / np.sqrt(2)
+FR = {'W_E^c': [(k(0, 0), k(1, 0)), (k(1, 1), k(0, 1))],
+      'W_Bell^c': [((k(0, 0) + k(1, 1)) * h, (k(0, 0) - k(1, 1)) * h), (k(1, 0), k(0, 1))],
+      'W_W^c': [(k(0, 0), (k(0, 1) + k(1, 0)) * h), ((k(1, 0) - k(0, 1)) * h, k(1, 1))]}
+U_ = {'W_R(x)I_E': WR, 'W_E_fixed_mirror': WE, 'W_R;SWAP': WRS, **{n: iso_from_frames(f) for n, f in FR.items()}}
+JC = choi_from_kraus(C_kraus()); blank = np.diag([1., 0]); out = {}
+rs = np.diag([0, .5, .5, 0])
+for tn, t in (('tau_q', np.diag([2 / 3, 1 / 3])), ('tau_half', np.diag([.5, .5]))):
+    r = {}
+    for n, U in U_.items():
+        assert np.allclose(U.conj().T @ U, np.eye(16))
+        Ks = kraus_of(U, t, blank, 2); J = choi_from_kraus(Ks)
+        pv = sum((K @ rs @ K.conj().T)[p, p].real for K in Ks)
+        r[n] = {'realizes_C': bool(np.allclose(J, JC, atol=1e-12)), 'p_value': round(float(pv), 12)}
+    ev = sorted(np.kron(np.diag(rs), np.diag(t)), reverse=True); r['KF'] = round(float(sum(ev[:2])), 12)
+    out[tn] = r
+tq = np.diag([2 / 3, 1 / 3]); sw = {}
+for n, U in (('W_E(x)I_R', WE), ('W_R(x)I_E', WR)):
+    Ks = kraus_of(U, blank, tq, 2); sw[n] = bool(np.allclose(choi_from_kraus(Ks), JC, atol=1e-12))
+out['swapped_world_realizes_C'] = sw
+Ut = perm(lambda s, e, r: (p, e + 2, r) if (s == u and e < 2) else ((u, e - 2, r) if (s == p and e >= 2) else (s, e, r)), 4)
+Ks = kraus_of(Ut, np.diag([.5, .5, 0, 0]), blank, 4); out['dE4_rank2_R_untouched_realizes_C'] = bool(np.allclose(choi_from_kraus(Ks), JC, atol=1e-12))
+Ks = kraus_of(Ut, np.diag([1 / 3, 1 / 3, 1 / 3, 0]), blank, 4); out['dE4_rank3_p_value'] = round(float(sum((K @ rs @ K.conj().T)[p, p].real for K in Ks)), 12)
+print(json.dumps(out, indent=1, sort_keys=True))
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/SHA256SUMS
+UTF8-BYTES 964
+daf1fc2f18163ac0cb8a73f011aefdf3cc6f21c64e9f78be4f8ac39fb1878756  t271_tb.py
+f1f096815cab04e6e4ae47768c118b8163b9991b5d65488993835f4d3c790efb  t271_verify_np.py
+b15c4ac48d0815b5fae8b381895283e64374c721b0ad941fe24a9fecda3f1503  PREREGISTRATION.md
+c304825ed5c086cb1c62c81a0bf30f6162e42cfd0421614fce4f3bda680d2a38  evidence/local-run-1/environment.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/local-run-1/run1_stderr.txt
+4d206a4de81d17659586e80646505476ed2e25b4f960a19429657697e7743e27  evidence/local-run-1/run1_stdout.json
+123b8a895b694ee1d8b609ef177179f52a500128b15b71e95b0daf75503cb0c5  evidence/local-run-1/seed.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/local-run-1/verify1_stderr.txt
+7c7d13167d4399e045224f9d75e6678dca4c4167651bd21847b7738ee56b4175  evidence/local-run-1/verify1_stdout.json
+0ed40b0af6efbabafa64ea5c310cdcf0754c43a3ac7e2d4aa44f39e80b3d297a  evidence/prerun_draft_t271_tb.py
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/run1_stdout.json
+UTF8-BYTES 4081
+{
+ "Q1": {
+  "a": true,
+  "b": true,
+  "c": true,
+  "iv_consistency": true,
+  "verdict": "PASS"
+ },
+ "Q2": "consistency only (forced): holds for all",
+ "Q2_consistency_tau_half": {
+  "W_Bell^c": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_E^c": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_R(x)I_E": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_R;SWAP": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_W^c": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  }
+ },
+ "QL_record_location": {
+  "W_R;SWAP_contrasts_tau_q": {
+   "D_E": "1/5",
+   "D_R": "0"
+  },
+  "W_R;SWAP_realizes_C_both_tau": true,
+  "verdict": "NOT ADMISSIBLE (record location not fixed by TB; Lemma PP)"
+ },
+ "completion_frames": {
+  "W_Bell^c": {
+   "e1_0": [
+    "0",
+    "0",
+    "1",
+    "0"
+   ],
+   "e1_u": [
+    "0",
+    "1",
+    "0",
+    "0"
+   ]
+  },
+  "W_E^c": {
+   "e1_0": [
+    "0",
+    "0",
+    "0",
+    "1"
+   ],
+   "e1_u": [
+    "0",
+    "1",
+    "0",
+    "0"
+   ]
+  },
+  "W_W^c": {
+   "e1_0": [
+    "0",
+    "-sqrt(2)/2",
+    "sqrt(2)/2",
+    "0"
+   ],
+   "e1_u": [
+    "0",
+    "0",
+    "0",
+    "1"
+   ]
+  }
+ },
+ "controls_TB": {
+  "tau_half=I/2": {
+   "KF_bound_R_untouched": "1/2",
+   "W_Bell^c": {
+    "D_E": "1/10",
+    "D_R": "1/10",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E^c": {
+    "D_E": "0",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E_fixed_mirror(R-untouched)": {
+    "D_E": "1/10",
+    "D_R": "0",
+    "p_value_rho_star": "1/2",
+    "pi_p_pi_v_equal_K_states": false,
+    "realizes_C": false
+   },
+   "W_R(x)I_E": {
+    "D_E": "0",
+    "D_R": "1/5",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_R;SWAP": {
+    "D_E": "1/5",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_W^c": {
+    "D_E": "1/10",
+    "D_R": "1/10",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   }
+  },
+  "tau_q=diag(2/3,1/3)": {
+   "KF_bound_R_untouched": "2/3",
+   "W_Bell^c": {
+    "D_E": "1/15",
+    "D_R": "1/15",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E^c": {
+    "D_E": "1/15",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E_fixed_mirror(R-untouched)": {
+    "D_E": "2/15",
+    "D_R": "0",
+    "p_value_rho_star": "2/3",
+    "pi_p_pi_v_equal_K_states": false,
+    "realizes_C": false
+   },
+   "W_R(x)I_E": {
+    "D_E": "0",
+    "D_R": "1/5",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_R;SWAP": {
+    "D_E": "1/5",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_W^c": {
+    "D_E": "1/10",
+    "D_R": "1/10",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   }
+  }
+ },
+ "haar_R_untouched_max_p_value": {
+  "tau_half": 0.412973644078,
+  "tau_q": 0.485415737452
+ },
+ "jointly_swapped_mirror_tau_q_on_R": {
+  "KF_bound_E_untouched_in_swapped_world": "2/3",
+  "W_E(x)I_R": {
+   "p_value_rho_star": "1",
+   "realizes_C": true
+  },
+  "W_R(x)I_E": {
+   "p_value_rho_star": "2/3",
+   "realizes_C": false
+  }
+ },
+ "mpmath": "1.3.0",
+ "numpy": "2.5.4",
+ "owner_illustration_A_E_register": {
+  "erased_address_records_orthogonal": true,
+  "realizes_C1C2": true
+ },
+ "python": "3.13.5",
+ "seed": 271,
+ "sympy": "1.14.0",
+ "threshold_dE4": {
+  "rank2_KF": "1",
+  "rank2_R_untouched_realizes_C": true,
+  "rank3_KF": "2/3",
+  "rank3_construction_p_value": "2/3"
+ },
+ "two_event_fresh_slots_tau_q": {
+  "A_KF": "2/3",
+  "A_R_untouched_construction_p_value": "2/3",
+  "A_WR_slots_(x)I_E_realizes_C1C2": true,
+  "B_KF": "1/3",
+  "B_R_untouched_construction_p_value": "1/3",
+  "B_WR_slots_(x)I_E_realizes_C1C2": true
+ }
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/verify1_stdout.json
+UTF8-BYTES 994
+{
+ "dE4_rank2_R_untouched_realizes_C": true,
+ "dE4_rank3_p_value": 0.666666666667,
+ "swapped_world_realizes_C": {
+  "W_E(x)I_R": true,
+  "W_R(x)I_E": false
+ },
+ "tau_half": {
+  "KF": 0.5,
+  "W_Bell^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_E^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_E_fixed_mirror": {
+   "p_value": 0.5,
+   "realizes_C": false
+  },
+  "W_R(x)I_E": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_R;SWAP": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_W^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  }
+ },
+ "tau_q": {
+  "KF": 0.666666666667,
+  "W_Bell^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_E^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_E_fixed_mirror": {
+   "p_value": 0.666666666667,
+   "realizes_C": false
+  },
+  "W_R(x)I_E": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_R;SWAP": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_W^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  }
+ }
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/environment.txt
+UTF8-BYTES 74
+python 3.13.5
+sympy 1.14.0
+mpmath 1.3.0
+numpy 2.5.4
+Linux 6.12.94+ x86_64
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/review.txt
+UTF8-BYTES 2065
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The thermal bath (TB) ingredient is a supplied physical premise, not derived from the native informational tree.",
+    "The test resolves a mathematical consequence of this premise (breaking the R/E tie by consuming R's purity) but does not close the physical bridge."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "constructive_analysis": [
+    "The rejection of the owner-local attachment candidate (Q-b) is mathematically sound. The preservation of the coherence |p><v| by the channel C forces the environment/receiver state to be identical for inputs |p> and |v>, making the owner coordinate y unrecoverable from the environment alone (PREREGISTRATION.md §1).",
+    "Theorem L correctly applies the Ky Fan maximum principle to bound the transition probability for R-untouched unitaries, establishing the exact threshold rank(tau_E) <= d_E/2 for exact realization (PREREGISTRATION.md §3). The constructive proof of tightness is exact.",
+    "Lemma PP correctly identifies that post-processing by a SWAP gate preserves the channel while moving the record, proving that initial-state constraints cannot fix record location (PREREGISTRATION.md §3).",
+    "The Q-2 consistency check correctly verifies the forced entropy inequality S(omega_R) >= S(rho) - S(C(rho)). This is a tautological consequence of unitarity and the maximally mixed environment tau_half, which cannot increase its entropy (RESULT.md §3).",
+    "The conclusion that TB forces the consumption of R's purity but does not single out W_R or fix the record location is perfectly supported by the data (RESULT.md §3). The native bridge is correctly classified as NOT_DERIVED."
+  ],
+  "next_native_obligation": "Trace one existing retained record through the inherited P1 contraction into one existing native consumer or available observation, without supplying new physical premises like thermal baths or pure blanks, as directed in DIRECTION_UPDATE_2026_10_21.md §4."
+}
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution/RESULT.md
+UTF8-BYTES 10619
+# Exact P1 source correspondence does not determine an existing receiver's record
+
+Date: 2026-10-29 America/Phoenix. Author: proteinfolding-gpt.
+Inspected shared head: c5cefae1b1dd8d877d1a919c27f4196eb150e353.
+Status: AUTHOR ANALYTICAL RESOLUTION of one implication; independent review pending.
+Class C: application of the existing complementary-output boundary to the current P1 contract. Native bridge NOT_DERIVED. No mathematical priority or new physical law is claimed.
+
+## 1. What is being resolved
+
+The user asks whether the missing actual-event-to-owned-record connection can be resolved. The precise question addressed here is:
+
+> If the current P1 event has exact physical source correspondence, faithful preparations and unchanged physical representations of retained states, does that force a distinction into one already designated, initially blind, accessible receiver R?
+
+The answer to this implication is **no**. The proof below satisfies those source conditions in both cases, with the same R, its complete initial state and its available observations. R remains completely unchanged in one case and acquires a probability contrast of 1/5 in the other. Both implement the identical nonidentity source channel on every quantum input.
+
+This is not a proof that UQCF-GEM cannot have interactions, that no receiver anywhere can change, or that an actual experiment has a blind receiver. It resolves an inference from source correspondence to nominated-receiver acquisition within the explicitly stated contract. A native rule constraining the joint event or identifying the actual owned record could exclude the blind case; no such rule is asserted absent from every possible extension.
+
+## 2. Provenance and the stronger source contract
+
+The inherited native tree has o->p, p->u, p->v. Let X=(o,p,u,v) and Y=(o,p,v). P1 is
+
+    P(z_o,z_p,z_u,z_v) = (z_o,z_p+z_u,z_v).
+
+P2 is the literal zero extension I from Y to X. These are the existing FCV operations. They do not themselves identify physical state factors with addresses.
+
+Reuse the current conditional quantum benchmark, without treating its physical premises as native-derived:
+
+    H_S = span{|o>,|p>,|u>,|v>},
+    Q = I_S - |u><u|,
+    C(rho) = Q rho Q + rho_uu |p><p|.
+
+This is the existing completed reset, not a new finite-duration damping model. Actual occurrence of the relevant event is assumed in each comparison; absence of occurrence is not used as a counterexample.
+
+Fix the SAME source encodings in both cases:
+
+    Pi_X(z) = sum_(i in X) z_i |i><i|,
+    Pi_Y(y) = sum_(i in Y) y_i |i><i|.
+
+The grades here are normalized nonnegative vectors. Their interpretation as physical mixture weights remains a SUPPLIED benchmark premise. On the entire simplex both encodings are positive, normalized, affine and injective, and
+
+    C Pi_X = Pi_Y P,
+    Pi_X I = Pi_Y.
+
+Thus physical retention of all retained atomic codes is imposed, not left free. C in fact fixes every density operator supported on span{|o>,|p>,|v>}, including its coherences. This goes beyond mere equality of the native output labels.
+
+Use the same pair as the prior P1 correspondence result:
+
+    z+ = (1,1,2,1)/5,   z- = (1,1,1,2)/5,
+    rho+ = Pi_X(z+),    rho- = Pi_X(z-).
+
+The four calibration states sigma_i=|i><i| satisfy all four source/preparation conditions of the prior positive proof, with a=<u|sigma_u|u>=1. No input code is swapped between the two implementations.
+
+The comparison adds a fixed output interface: qubits E and R, initially in |0_E 0_R>, independent of the source preparation. R is the same existing receiver in both cases; E is outside its specified accessible interface. Give R its ENTIRE qubit observable algebra, including the same effect N_R=|1><1|. Thus the negative case is not caused by choosing a poor detector or hiding another available degree of freedom inside R. These factorization and access specifications are explicit conditional premises, not deductions from native addresses.
+
+## 3. The strongest positive construction
+
+Write output vectors in the order S,E,R. Define the fixed isometry W_R by
+
+    W_R|j> = |j>|0>|0>  for j=o,p,v,
+    W_R|u> = |p>|0>|1>.
+
+Its four columns are orthonormal. The colliding source outputs p and u are distinguished by R. Tracing E and R gives C on every matrix, not just the two tested states: the retained block Q rho Q survives, the u population becomes |p><p|, and all coherences joining u to a retained basis state vanish.
+
+For a diagonal source Pi_X(z), the complete receiver state is
+
+    omega_R^write(z) = (1-z_u)|0><0| + z_u|1><1|.
+
+Consequently
+
+    omega_R^write(+) = diag(3,2)/5,
+    omega_R^write(-) = diag(4,1)/5.
+
+N_R has probability difference 1/5 and the two receiver states have trace distance 1/5. The initial complete receiver is |0><0| in both preparations. This realizes the earlier positive port argument with its explicit joint-operation premise. It is a supplied implementation, not the desired native derivation.
+
+## 4. A blind receiver with every source condition retained
+
+Define a second fixed isometry W_E on the SAME spaces and initial environment:
+
+    W_E|j> = |j>|0>|0>  for j=o,p,v,
+    W_E|u> = |p>|1>|0>.
+
+Again the four columns are orthonormal, and tracing E,R gives exactly C on every matrix. Equivalently W_R=(I_S tensor SWAP_ER) W_E, so their reduced source channels are identical. Both isometries can be extended to unitaries on S,E,R with the same blank input subspace, by completing their orthonormal columns. No Hamiltonian, elapsed duration, energy conservation or physical implementation is inferred from that extension.
+
+For W_E,
+
+    omega_R^blind(z) = |0><0| for EVERY source state.
+
+In particular omega_R^blind(+)=omega_R^blind(-), so every available receiver POVM has the same outcome distribution. A fixed subsequent receiver-only operation, including an instrument with its complete outcome record, cannot distinguish equal input states. This statement does not include later access to S or E, or source-informed postselection.
+
+The source outputs are identical across the two implementations:
+
+    C(rho+) = (|o><o|+3|p><p|+|v><v|)/5,
+    C(rho-) = (|o><o|+2|p><p|+2|v><v|)/5.
+
+They exactly represent the same P1 outputs. In the blind case E carries the record that R carries in the positive case. The full E,R outputs still distinguish the pair; nothing claims global destruction or contradicts complementary-record preservation.
+
+What varies is the unresolved joint realization, not the source encoding, retained physical codes, source event channel, nominated receiver, its complete initial state, or its available measurements. Because both source channels agree on all matrices, adding a reference ancilla to a source-only characterization also cannot distinguish them: both induce C tensor identity on that interface. The joint event is distinguishable by observing the output interface; source-only correspondence does not determine it.
+
+## 5. Exact receiver contrast range in this benchmark
+
+The two constructions already disprove the proposed implication. A direct bound shows that they attain the extremes for the fixed diagonal pair.
+
+Let W be ANY fixed isometry implementing C with environment E tensor R. Since C sends each basis state to a pure source state,
+
+    W|j> = |j>|e_j> for j=o,p,v,
+    W|u> = |p>|e_u>.
+
+Preservation of every retained off-diagonal |j><k| forces <e_k|e_j>=1, so all retained environment vectors equal one normalized vector e_0. Orthogonality of W|p> and W|u> forces <e_0|e_u>=0. Let
+
+    tau_0 = Tr_E |e_0><e_0|,
+    tau_u = Tr_E |e_u><e_u|.
+
+For the stipulated diagonal pair,
+
+    omega_R(+) - omega_R(-) = (tau_u-tau_0)/5,
+    D(omega_R(+),omega_R(-)) = D(tau_u,tau_0)/5 <= 1/5,
+
+where D(A,B)=||A-B||_1/2. The last inequality follows from the triangle inequality and unit trace of the positive matrices tau_u,tau_0. W_E attains zero; W_R attains 1/5. Hence the exact minimum and maximum over this implementation class are 0 and 1/5. No parameter sweep or numerical evidence is needed.
+
+For the COMPLETE environment, e_0 and e_u are orthogonal and its contrast is always 1/5. If R is independently established to be that complete environment, the blind construction is outside that stronger contract. The proof identifies exactly why full-complement statements cannot silently be applied to a nominated accessible part.
+
+## 6. Relation to established work and decision
+
+- The prior P1 event/source counterexample held one joint interaction fixed and varied the input code; its blind code violated physical retained-state correspondence. Here the code and physical retention are held fixed; the varied object is the joint realization left unspecified by its source channel. The earlier theorem and counterexample remain valid.
+- The existing partial-complement result already establishes the general freedom to move record information between accessible factors, unread factors and correlations without changing a source channel. This note applies that known boundary to the exact current four-atom P1 contract. It is not a newly discovered general no-hiding or channel theorem.
+- The corrected canonical P1 acquisition result still forces a change in the formal p-coordinate. Neither isometry identifies physical R with that coordinate. That missing ownership identification is the point under test, not a premise the blind example pretends to satisfy.
+- The result does not quantify over every native operation or every physically accessible subsystem. It proves non-entailment for the explicitly strengthened source contract above. It does not show that every physical model compatible with the whole UQCF archive is noninteracting.
+
+The current inference is therefore resolved negatively: even earning exact source event correspondence and retained source representation would not, by themselves, earn delivery to the nominated receiver. The required next connection is a source-backed relation between the actual joint event and that receiver's owned output, or an independently justified identification of the relevant retained factor with its accessible state. A derived law for one available effect can suffice; a full physical theory or unique microscopic dynamics is not required. Merely selecting W_R would assume the sought delivery.
+
+This is a scoped logical resolution, not an achieved native physical prediction. No detector design, fundamental clock, geometry, new grading axiom, historical recertification, numerical campaign, branch merge or stage closure is claimed. Actual event occurrence remains ACCEPTED INPUT. Mathematical and physical identification claims remain separate.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/DIRECTION_UPDATE_2026_10_21.md
+UTF8-BYTES 7061
+# UQCF-GEM course correction: start from the native operation
+
+Date: 2026-10-21 America/Phoenix.
+Author: proteinfolding-gpt, implementing Aaron's request, "Get us back on rails."
+The implementation below is agent-authored, not a verbatim quotation of Aaron.
+Inspected shared parent: 6423103576573f8024473b5b19dcdf376548e8d6.
+Status: research direction; no scientific result, new physical axiom or milestone.
+
+## 1. Restore the scientific sequence
+
+Native informational structure -> necessary mathematical consequences -> observable distinctions -> physical predictions.
+
+The mathematical consequences remain valuable work. A new necessary consequence or a justified removal of a premise can be substantive progress before the entire physical bridge closes. Report mathematical progress, physical identification and verification separately. A count of fully closed obligations is not a percentage of completion or a measure of the whole program.
+
+The objective is one native event whose consequence becomes an available retained distinction for a receiver that was initially uninformed. The example must follow the inherited operation. Do not choose an output and then invent a mechanism that reproduces it.
+
+## 2. Restore the accepted starting input
+
+Actual atemporal measurement/pruning occurrence is the accepted empirical starting input for this investigation. Do not restart a proof of why measurement occurs, a cause-of-collapse search, inevitability, fairness, or universal completion.
+
+This boundary is already recorded in constructions/receiver_identification/CONSTRUCTION.md, including sections 18 and 33, and in the existing GitHub monitoring instructions. My recent five-obligation framing overstated the task by making occurrence another independent derivation hurdle.
+
+Occurrence of a measurement does not identify its operation with an arbitrary Q_l, guarantee every abstract legal edit, or supply a response probability. The task still needs the actual event/state/record correspondence. If a probabilistic consequence is claimed, its law and available record need justification. Keep these distinct from explaining why an event happens.
+
+## 3. Release the preferred example
+
+The eight-vertex construction in PRs #108-110 remains an accepted conditional test case. Its fixed carrier, separately indexed edits, sector representation and branch-shape decoder are not universal requirements on native physics.
+
+GPT and Grok may change the example when the inherited operation requires a different carrier, record or receiver. Preserve the old result and state which premises the new example uses. A change of carrier is allowed when its source identity, retained consequence and receiver association are tracked.
+
+The assignments to realize that exact example are superseded as mandatory priorities. Do not reopen its closed composition, cover, injectivity, shared-state or center-access arguments without new relevant input.
+
+## 4. The next concrete scientific task
+
+Start with the inherited P1 retained-source contraction, whose effect on the grade record is already explicit:
+
+    x -> P_XY x,  (P_XY x)(a) = sum_{v: r_XY(v)=a} x(v).
+
+Use this as an inherited conditional operation, not as proof that every mathematical contraction is an actual measurement. The parent/leaf absorption identity and its conditional transfer witnesses are already known.
+
+GPT's next task is to trace ONE existing retained record through this operation into ONE existing native consumer or available observation, on the same provenance-bound object. Specify:
+- the actual input record and its native source association;
+- the event's identification with this contraction;
+- the retained output and how its identity is maintained;
+- an existing operation or observation that uses that output;
+- two admissible preparations with the same complete initial receiver restriction and a different retained consequence.
+
+Attempt the first unsupported correspondence in that concrete trace. Do not merely name an address a receiver, set its state equal to a grade coordinate, attach certificate fields, or construct an arbitrary register. Executed software that reads a vector is not automatically a native receiver. If no consumer is justified, state the missing association without deriving another equivalent access criterion.
+
+The accepted Drafts 27-28, receiver-algebra probe, record_access construction and single-event gain results are starting evidence. Their outstanding PN/Bl/Side and availability premises remain explicit. Do not repeat their transfer identities or treat their hypotheses as established facts.
+
+This is a bounded starting task, not a requirement to keep P1 if a better sourced native operation is found. Any replacement must identify the new source evidence and the concrete connection it could derive.
+
+## 5. Work allocation and progress standard
+
+GPT owns the positive construction and actual derivation attempt. Grok works on the first unsupported premise of that same operation-to-record trace, looking for a derivation and then challenging hidden source choices, ownership, readout or retention assumptions. Neither agent should demand a full physical ontology before recognizing a correctly scoped necessary mathematical consequence.
+
+A useful next contribution must contain a new proof step, a newly justified source-to-operation/record association, or a concrete new counterexample that changes this construction. A plan, sharper wording of the same gap, more equivalent identities, successful archive checks, or additional tests of a supplied mechanism are not advances toward native acquisition.
+
+Keep the strongest construction visible before adversarial testing. Preserve genuine failures. For a material new argument, use the standing independent Gemini review and publication process; numerical campaigns require prospective contracts, independent producer/checker logic and rejecting controls. Do not run reviews just to certify this direction update.
+
+## 6. Prevent another loop
+
+Before resuming a route, identify the exact new premise or source evidence unavailable in the previous attempt. Consult its existing result once rather than rediscovering it.
+
+If the same gap remains with no new input, record no material change and move only to a specifically motivated alternative; do not generate another stop report or proposal merely to show activity. Scheduled monitoring should be quiet on unchanged work and must not imply continuous execution. Do not pause or alter schedules without authorization.
+
+Preserve accepted RAS/RCR and all conditional results with their original scope. No invented geometry, fundamental time, dark-matter variable, fitted selector, arbitrary reader or secretly adopted new physical primitive. A proposed extension may be labeled and examined under Aaron's authorization, but it is not native derivation.
+
+Native acquisition, broad C3/C4-C6 and physical origin remain open until the corresponding claims are earned. This correction changes how the research is pursued, not the status of its proofs.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/FREEZE.json
+UTF8-BYTES 13166
+{
+  "files": [
+    {
+      "blob": "83e9f6085333936242d45ca809b87dedd1a4af31",
+      "bytes": 1304,
+      "path": ".github/scripts/test_uqcf_owner_integration.py",
+      "sha256": "d6aef3612530d3721f27188461cba6a13526b2c8020921b1a13dd536993603c9"
+    },
+    {
+      "blob": "853ac40774067ca87fdf1cd1f7dfab1365081798",
+      "bytes": 7985,
+      "path": ".github/scripts/uqcf_owner_integration.py",
+      "sha256": "d785a506ea9ca06e0b2d43e12dc43067c952cfd8a398ec01312cc416fe89f509"
+    },
+    {
+      "blob": "50b1043cda14b18b962f7930cf6a4391067a2a96",
+      "bytes": 8570,
+      "path": ".github/scripts/uqcf_preparability_integrity.py",
+      "sha256": "4698601ef060de2bca10331f3f05fd35d01d4b7bee0336d309985195e306f18b"
+    },
+    {
+      "blob": "4c8029da503ed57f404e4424ecc243eb3c609347",
+      "bytes": 9903,
+      "path": ".github/scripts/uqcf_preparability_review.py",
+      "sha256": "5df876c5f878f069b4b1bcc31b0d7d0d651ab07feb8ef9b30f4613f06543e6a1"
+    },
+    {
+      "blob": "c566eccfe1832afc44afd12a88df3b48cc3f2cf2",
+      "bytes": 6528,
+      "path": ".github/scripts/uqcf_thermal_bath_purity_test_review.py",
+      "sha256": "6d4cd83515d50323d778db2b4ecf66d6da06af0155e577cf7d2af20bf30b1651"
+    },
+    {
+      "blob": "149c11c230c08be47459e07ba6e66994e6e3d32c",
+      "bytes": 13066,
+      "path": ".github/scripts/uqcf_thermal_closeout.py",
+      "sha256": "b7a0ec58ade00548d4b6944a873bf3dfc2f40d8ba08c7c0036c40d1b1bb9a4dc"
+    },
+    {
+      "blob": "c2e75f3eb9664de5db9f2bedc3417121690790f2",
+      "bytes": 1542,
+      "path": ".github/workflows/uqcf-thermal-bath-purity-test-review.yml",
+      "sha256": "aa52c5a3631dda47f4499031fd6dde6287ee27e99bf8eafc534e6474af2003e7"
+    },
+    {
+      "blob": "a50a47722c3951e37290523a25fc0da27691afa8",
+      "bytes": 8550,
+      "path": ".github/workflows/uqcf-thermal-closeout.yml",
+      "sha256": "17d0302f1fc5a4f9d95c93ee2dacd69779d1488611d91e04d9ccc29624819151"
+    },
+    {
+      "blob": "62aa72a8c813840e0744496ab8c3eb2abc44eabf",
+      "bytes": 7061,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/DIRECTION_UPDATE_2026_10_21.md",
+      "sha256": "aed1d0c1022a6ea4c0f04ec960c0e28b37e6d98929a14cf8ee230bb2fbec7e04"
+    },
+    {
+      "blob": "d2d746b47f1756f40fe31231c212f3b78d17258e",
+      "bytes": 3553,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/CORRECTIONS_T275.md",
+      "sha256": "d85ac5a79e787a553bb6f8c38a40caa0dda64befe7606b9f21389547690b348d"
+    },
+    {
+      "blob": "fa0e33700069c0435b7d1177c06348fb54d7e5b5",
+      "bytes": 10147,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/PREREGISTRATION.md",
+      "sha256": "b15c4ac48d0815b5fae8b381895283e64374c721b0ad941fe24a9fecda3f1503"
+    },
+    {
+      "blob": "aadc6a7dbb8196a5488540ab5adbd072bc8d97c8",
+      "bytes": 6567,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/RESULT.md",
+      "sha256": "cdab271d9fef4bafda81675f31d460a451f364f9bb73e6ea3531c7bb32205d3f"
+    },
+    {
+      "blob": "ae8f5d65148096df22cde57c29dc287c4a82cb6e",
+      "bytes": 964,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/SHA256SUMS",
+      "sha256": "c0e2372811653b8c16570a0552b19a3aab7647fcf56341b12eefd15cc1648c40"
+    },
+    {
+      "blob": "01681e3e3252def809c66e2cf4e3057c1c6a6909",
+      "bytes": 3751,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/CORRECTED_SCOPE.md",
+      "sha256": "1eba0e14448cc155be4d45a22a87b6d973597d27c90cd1734028b86524b90907"
+    },
+    {
+      "blob": "b53a20129bdae506070bfd95ebe0313dde15a370",
+      "bytes": 1331,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/LOCAL_DEVELOPMENT.md",
+      "sha256": "a6495f1dba9e32f6302019a6de3283b9a1af3c749e2388a14bd51acfee562b2f"
+    },
+    {
+      "blob": "5dcc1f8753c05afde681ad28290358b8e4a523be",
+      "bytes": 5446,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/ORIGINAL_BLOBS.json",
+      "sha256": "e7df0995e09e813b31fffa591dd372df744e86bb25aafe622b8a7c9a307d7c24"
+    },
+    {
+      "blob": "22aa8944fd483f30001cbfee50b965444dc94072",
+      "bytes": 6462,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/PLAN.md",
+      "sha256": "4a9cb7a10dabf8aa9b9627d5485b0eed21762885815c757157aeea265fdced84"
+    },
+    {
+      "blob": "8294a5ad9f00245fd77e151631c29bb97406262f",
+      "bytes": 3360,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/compare_original.py",
+      "sha256": "1a9ab1c96787e3c64acf102a1f14c21f579240773c3d02e6d817f1d5853b2b17"
+    },
+    {
+      "blob": "42db9f3288627ff85bf7b5cca6dc3a0c29d74da8",
+      "bytes": 1959,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/controls_c2.py",
+      "sha256": "3fa10b3b8ce01111e1ecb58baabe3af412e194c29d0107cd7a614de7c1d108a5"
+    },
+    {
+      "blob": "b99d5f87aef5c09efa4e392123a2de56d99d9623",
+      "bytes": 1676,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/produce_c2.py",
+      "sha256": "d4edc2d236b8f413ca541930628a9f352d6ef4b12dfb609ac546211d998140ea"
+    },
+    {
+      "blob": "5fce5c705d97651569c05787a2223a5a4efe7ac8",
+      "bytes": 3723,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/verify_c2.py",
+      "sha256": "1050e04693ee5dbf6cd9712a38917ce7ff63bb5a1c7928e2b558b2aea8a06a2e"
+    },
+    {
+      "blob": "c5bc69b1cc590604ce24887492e779bb010a19c3",
+      "bytes": 1484,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/ADJUDICATION.md",
+      "sha256": "9c906a6bedef9683ed624a477e15160305c5faa9a9f208c919dfffc778f7a83a"
+    },
+    {
+      "blob": "fbe2e4eccf449334a32c23c565c2e329fa2d9431",
+      "bytes": 817,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/SHA256SUMS",
+      "sha256": "35afcd00c240fb50bba87f9c274611bf9538be9c3cbb5c56899d3ce879e49cac"
+    },
+    {
+      "blob": "0ec44f69b2c3ef56d8a40766e9f077b428b07046",
+      "bytes": 1018,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/artifact_manifest.json",
+      "sha256": "48523d9a740b02770fd603baa390d34bfb24fac76cdf476989f98071c9e09989"
+    },
+    {
+      "blob": "762698d8fa5643f2c2fde1d9e13ca776a6e3ae03",
+      "bytes": 2633,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/documents.json",
+      "sha256": "ec591925c69101ae1861afdf8ecda0d7b33764c9ffe30fc2f2442f89b7665d18"
+    },
+    {
+      "blob": "928720139032813386b0cf0819cb291a2846a468",
+      "bytes": 459,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/model_metadata.json",
+      "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438"
+    },
+    {
+      "blob": "3a4bc82e2ee01d2515075aec8b79a1e8daf0021d",
+      "bytes": 62535,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/prompt.txt",
+      "sha256": "58de5734704d71553c378dd60906aefa1735bd5a3bb9959e1b7143f98a1d93e6"
+    },
+    {
+      "blob": "46325b0d75aebe5d094bcc7c205f7da963f203a6",
+      "bytes": 64415,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/request.json",
+      "sha256": "4001ef4b5c9a9744de3ca6e4e9207cdc799f2c659340f30c5f85d9efc34382b2"
+    },
+    {
+      "blob": "a57642903db1f5c0cdb0c5cd2b84a8d32b2c79b0",
+      "bytes": 47080,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/response.json",
+      "sha256": "ea82dd84bd4766b383ae543b762f3119736d4cfa88633969d267a96421bf5589"
+    },
+    {
+      "blob": "a20231b06dec2bc64df96f9ea095d3d05e366ef0",
+      "bytes": 2065,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/review.txt",
+      "sha256": "0c330819fb4c3adf27b6d9720447717d1211ccbd41b303e752126e1b9eb173e3"
+    },
+    {
+      "blob": "c4d07a5c820f225ebfbbdf43027ed5630650b04f",
+      "bytes": 444,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/review_identity.json",
+      "sha256": "18ac57531edfb0d403ceec8bb30e9b03d37b0ce833cc7c3fed499eb3fd82e6a9"
+    },
+    {
+      "blob": "d56e585cced1cc43941d21655f2fb2313bd83495",
+      "bytes": 2066,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/gemini-review-41515580146/verdict.json",
+      "sha256": "bac714e209889c2748a0d184fade622d1f4cd9a99c7455caa0e7a11de572bd4e"
+    },
+    {
+      "blob": "c5a9e1f277fed781a3356d73766a7733a6c0ed5b",
+      "bytes": 74,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/environment.txt",
+      "sha256": "c304825ed5c086cb1c62c81a0bf30f6162e42cfd0421614fce4f3bda680d2a38"
+    },
+    {
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/run1_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "blob": "cf4a838d20570b15f87461607d632249571059e9",
+      "bytes": 4081,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/run1_stdout.json",
+      "sha256": "4d206a4de81d17659586e80646505476ed2e25b4f960a19429657697e7743e27"
+    },
+    {
+      "blob": "e6a4f00bf76cab208770f4e6d63abbe633100f41",
+      "bytes": 4,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/seed.txt",
+      "sha256": "123b8a895b694ee1d8b609ef177179f52a500128b15b71e95b0daf75503cb0c5"
+    },
+    {
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/verify1_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "blob": "f806117dbb77c1c30be829716e546b364feb2924",
+      "bytes": 994,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/verify1_stdout.json",
+      "sha256": "7c7d13167d4399e045224f9d75e6678dca4c4167651bd21847b7738ee56b4175"
+    },
+    {
+      "blob": "9f7baffd0f67a95071011f8f38f68731a5d4d1b4",
+      "bytes": 15051,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/prerun_draft_t271_tb.py",
+      "sha256": "0ed40b0af6efbabafa64ea5c310cdcf0754c43a3ac7e2d4aa44f39e80b3d297a"
+    },
+    {
+      "blob": "595f50c8588973945b97c839da8218649cb20d8a",
+      "bytes": 15007,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/t271_tb.py",
+      "sha256": "daf1fc2f18163ac0cb8a73f011aefdf3cc6f21c64e9f78be4f8ac39fb1878756"
+    },
+    {
+      "blob": "d59c2917e6b4e91eff386bbea51825815b7e18e8",
+      "bytes": 4075,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/t271_verify_np.py",
+      "sha256": "f1f096815cab04e6e4ae47768c118b8163b9991b5d65488993835f4d3c790efb"
+    },
+    {
+      "blob": "4182ba347f8c11bad63315ffa6395c496ddfa498",
+      "bytes": 10619,
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution/RESULT.md",
+      "sha256": "11b661a0bcb0a311ed3ced2a3114439a8facc18d0e354074f57c283256552d9e"
+    }
+  ],
+  "integrated_reference": "1a18308a026c06882b428fbe201b4634c34dfd8f",
+  "original_head": "23543a5b8c5f8938fe0d25c42be975296c8055fb",
+  "plan_commit": "77ec93c7e83ba7d29dcc0bdb45156885d1ff4477",
+  "schema": "thermal-closeout-source-freeze-v1"
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/LOCAL_DEVELOPMENT.md
+UTF8-BYTES 1331
+# Local construction record
+
+This records software construction before the GitHub execution freeze. It is not a new numerical campaign or discovery claim.
+
+The independent C2 checker was written first and rejected an incomplete certificate with `ValueError: certificate fields` before the producer existed. The exact producer was then written. On the local Python 3.12.14 / sympy 1.14.0 / numpy 2.3.5 environment, the checker verified both prescribed cases, rank three and all 36 matrix units. All seven prescribed mutations were rejected for their specific expected reasons. These local checks do not replace the pinned GitHub environment.
+
+The original producer and independent checker are copied byte-for-byte from PR131. No sample count, seed, threshold, original output or historical review is changed. Local comparison-layer construction uses the archived original output and the unchanged independent checker; the complete producer reproduction belongs to the frozen GitHub run. The existing inherited integration controller and its rejecting controls are reused unchanged at the current integrated reference.
+
+The frozen plan was committed at 77ec93c7e83ba7d29dcc0bdb45156885d1ff4477 before the new producer execution. This document and all new implementation files are committed together before the first GitHub dispatch.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/produce_c2.py
+UTF8-BYTES 1676
+"""Exact certificate of the already identified C2 counterexample and E3 control."""
+import json
+import sympy as s
+
+Q = s.diag(1, 1, 0, 1, 0, 1)
+L1 = s.zeros(6); L1[1, 2] = 1
+L2 = s.zeros(6); L2[3, 4] = 1
+ks = [Q, L1, L2]
+gram = s.Matrix([[(a.T*b).trace() for b in ks] for a in ks])
+rank = gram.rank()
+spectrum = sorted([int(v) for v, n in gram.eigenvals().items() for _ in range(n) if v != 0], reverse=True)
+perm = list(range(18))
+for source, bath_target, owner in [(2, 1, 1), (4, 2, 3)]:
+    a, b = source*3, owner*3+bath_target
+    perm[a], perm[b] = perm[b], perm[a]
+U = s.zeros(18)
+for col, row in enumerate(perm):
+    U[row, col] = 1
+assert U.T*U == s.eye(18)
+derived = [s.Matrix(6, 6, lambda i,j: U[i*3+e, j*3]) for e in range(3)]
+assert derived == ks
+actions = []
+for i in range(6):
+    for j in range(6):
+        x = s.zeros(6); x[i, j] = 1
+        y = sum((k*x*k.T for k in derived), s.zeros(6))
+        assert y == sum((k*x*k.T for k in ks), s.zeros(6))
+        actions.append([[a, b, int(y[a,b])] for a in range(6) for b in range(6) if y[a,b] != 0])
+cases = []
+for d in (2,3):
+    cases.append({'id': f'A-pure-E{d}', 'dE':d, 'rank_tau':1, 'fan_in':[2,2],
+        'local_bound_satisfied': 2 <= d, 'pure_kraus_capacity': d,
+        'realizable_R_untouched': False if d < rank else derived == ks,
+        'witness': None if d == 2 else {'permutation':perm, 'matrix_unit_actions':actions}})
+print(json.dumps({'schema':'thermal-C2-v1', 'provenance':{'scope':'SUPPLIED_CHANNEL',
+    'native_bridge':'NOT_DERIVED', 'original_head':'23543a5b8c5f8938fe0d25c42be975296c8055fb'},
+    'choi_rank':rank,'nonzero_choi_spectrum':spectrum,'cases':cases}, indent=2,sort_keys=True))
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/verify_c2.py
+UTF8-BYTES 3723
+"""Independent C2 check: matrix-unit channel composition, Choi SVD, full-unitary trace."""
+import json
+import sys
+import numpy as np
+
+def require(ok, message):
+    if not ok:
+        raise ValueError(message)
+
+PROVENANCE = {'scope': 'SUPPLIED_CHANNEL', 'native_bridge': 'NOT_DERIVED',
+              'original_head': '23543a5b8c5f8938fe0d25c42be975296c8055fb'}
+
+def verify(c):
+    require(set(c) == {'schema', 'provenance', 'choi_rank', 'nonzero_choi_spectrum', 'cases'}, 'certificate fields')
+    require(c['schema'] == 'thermal-C2-v1' and c['provenance'] == PROVENANCE, 'provenance')
+    # Build the target as a composition of two erasures, independently of the producer's Kraus list.
+    def erase(x, removed, owner):
+        y = x.copy()
+        y[removed, :] = 0
+        y[:, removed] = 0
+        y[owner, owner] += x[removed, removed]
+        return y
+    actions = []
+    J = np.zeros((36, 36))
+    for i in range(6):
+        for j in range(6):
+            x = np.zeros((6, 6)); x[i, j] = 1
+            y = erase(erase(x, 2, 1), 4, 3)
+            actions.append([[a, b, int(y[a, b])] for a, b in zip(*np.nonzero(y))])
+            J[i*6:(i+1)*6, j*6:(j+1)*6] = y
+    sv = np.linalg.svd(J, compute_uv=False)
+    rank = int(np.count_nonzero(sv > 1e-10))
+    require(type(c['choi_rank']) is int and c['choi_rank'] == rank == 3, 'Choi rank')
+    require(c['nonzero_choi_spectrum'] == [4, 1, 1] and np.allclose(sv[:rank], c['nonzero_choi_spectrum'], rtol=0, atol=1e-12), 'Choi spectrum')
+    require(isinstance(c['cases'], list) and len(c['cases']) == 2, 'case count')
+    require([x['id'] for x in c['cases']] == ['A-pure-E2', 'A-pure-E3'], 'case identity/order')
+    for row, d in zip(c['cases'], (2, 3)):
+        require(set(row) == {'id', 'dE', 'rank_tau', 'fan_in', 'local_bound_satisfied', 'pure_kraus_capacity', 'realizable_R_untouched', 'witness'}, 'case fields')
+        require(type(row['dE']) is int and row['dE'] == d and row['rank_tau'] == 1 and row['fan_in'] == [2, 2], 'case premises')
+        require(row['local_bound_satisfied'] is True and 2 <= d, 'local rank bound')
+        require(row['pure_kraus_capacity'] == d, 'pure bath capacity')
+        require(row['realizable_R_untouched'] is (rank <= d), 'global realization claim')
+        if d == 2:
+            require(row['witness'] is None, 'E2 has no witness')
+            continue
+        w = row['witness']
+        require(isinstance(w, dict) and set(w) == {'permutation', 'matrix_unit_actions'}, 'witness fields')
+        perm = w['permutation']
+        require(all(type(x) is int for x in perm) and sorted(perm) == list(range(18)), 'full permutation')
+        expected = list(range(18))
+        for a, b in ((6, 4), (12, 11)):
+            expected[a], expected[b] = expected[b], expected[a]
+        require(perm == expected, 'frozen witness slots')
+        U = np.eye(18)[:, perm]
+        require(np.array_equal(U.T @ U, np.eye(18)), 'full-space unitarity')
+        require(w['matrix_unit_actions'] == actions, 'all 36 target actions')
+        blank = np.diag([1, 0, 0])
+        for i in range(6):
+            for j in range(6):
+                x = np.zeros((6, 6)); x[i, j] = 1
+                evolved = U @ np.kron(x, blank) @ U.T
+                reduced = np.trace(evolved.reshape(6, 3, 6, 3), axis1=1, axis2=3)
+                require(np.array_equal(reduced, J[i*6:(i+1)*6, j*6:(j+1)*6]), 'unitary channel action')
+    return {'status': 'PASS', 'method': 'composed-matrix-units/Choi-SVD/full-unitary-partial-trace',
+            'cases': 2, 'matrix_units_checked': 36, 'choi_rank': rank,
+            'native_bridge': 'NOT_DERIVED'}
+
+if __name__ == '__main__':
+    print(json.dumps(verify(json.load(open(sys.argv[1]))), indent=2, sort_keys=True))
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/controls_c2.py
+UTF8-BYTES 1959
+"""Seven frozen corruptions; preserve each input and independent checker rejection."""
+import copy
+import json
+from pathlib import Path
+import subprocess
+import sys
+
+original = json.loads(Path(sys.argv[1]).read_bytes())
+out = Path(sys.argv[2]); out.mkdir(parents=True, exist_ok=True)
+checker = Path(__file__).with_name('verify_c2.py')
+mutations = {}
+c=copy.deepcopy(original); c['cases'].pop(); mutations['missing-case']=c
+c=copy.deepcopy(original); c['cases'][1]=copy.deepcopy(c['cases'][0]); mutations['duplicate-case']=c
+c=copy.deepcopy(original); c['cases'][1]['id']='substituted-channel'; mutations['substituted-case']=c
+c=copy.deepcopy(original); c['choi_rank']=2; mutations['wrong-choi-rank']=c
+c=copy.deepcopy(original); c['cases'][0]['realizable_R_untouched']=True; mutations['false-E2-sufficiency']=c
+c=copy.deepcopy(original); p=c['cases'][1]['witness']['permutation']; p[6],p[4]=p[4],p[6]; p[6],p[5]=p[5],p[6]; mutations['wrong-slot-witness']=c
+c=copy.deepcopy(original); c['provenance']['native_bridge']='DERIVED_FROM_SOURCES'; mutations['false-provenance']=c
+reasons={'missing-case':'case count','duplicate-case':'case identity/order','substituted-case':'case identity/order',
+         'wrong-choi-rank':'Choi rank','false-E2-sufficiency':'global realization claim',
+         'wrong-slot-witness':'frozen witness slots','false-provenance':'provenance'}
+results=[]
+for name, c in mutations.items():
+    path=out/(name+'.json'); path.write_text(json.dumps(c,indent=2,sort_keys=True)+'\n')
+    p=subprocess.run([sys.executable,str(checker),str(path)],capture_output=True,text=True)
+    (out/(name+'.stdout.txt')).write_text(p.stdout)
+    (out/(name+'.stderr.txt')).write_text(p.stderr)
+    assert p.returncode != 0 and ('ValueError: '+reasons[name]) in p.stderr, name
+    results.append({'id':name,'exit_code':p.returncode,'reason':reasons[name],'status':'REJECTED'})
+print(json.dumps({'status':'PASS','rejected':results},indent=2,sort_keys=True))
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/compare_original.py
+UTF8-BYTES 3360
+"""Compare every original scientific field and all outputs covered by the numpy checker."""
+import copy
+from fractions import Fraction
+import json
+from pathlib import Path
+import sys
+
+def require(ok, message):
+    if not ok:
+        raise ValueError(message)
+
+def equivalent(a,b,path='root'):
+    require(type(a) is type(b), 'type '+path)
+    if isinstance(a,dict):
+        require(set(a)==set(b),'keys '+path)
+        for k in a:
+            if path=='root' and k in ('python','sympy','numpy','mpmath'):
+                continue
+            equivalent(a[k],b[k],path+'.'+k)
+    elif isinstance(a,list):
+        require(len(a)==len(b),'length '+path)
+        for i,(x,y) in enumerate(zip(a,b)): equivalent(x,y,path+'.'+str(i))
+    elif isinstance(a,float) and path.startswith('root.haar_R_untouched_max_p_value.'):
+        require(abs(a-b)<=1e-10,'Haar '+path)
+    else:
+        require(a==b,'value '+path)
+
+def check(produced, independent, archived):
+    equivalent(produced,archived)
+    require(set(independent)=={'tau_q','tau_half','swapped_world_realizes_C','dE4_rank2_R_untouched_realizes_C','dE4_rank3_p_value'},'independent field universe')
+    comparisons=0
+    def number(x,y,label):
+        nonlocal comparisons
+        require(abs(float(Fraction(x))-y)<=1e-10,label); comparisons+=1
+    for name, old in [('tau_q','tau_q=diag(2/3,1/3)'),('tau_half','tau_half=I/2')]:
+        a=produced['controls_TB'][old]; b=independent[name]
+        require(set(b)=={'KF','W_Bell^c','W_E^c','W_E_fixed_mirror','W_R(x)I_E','W_R;SWAP','W_W^c'},'writer universe')
+        number(a['KF_bound_R_untouched'],b['KF'],'Ky Fan')
+        for writer in sorted(set(b)-{'KF'}):
+            ao=a[writer if writer!='W_E_fixed_mirror' else 'W_E_fixed_mirror(R-untouched)']; bo=b[writer]
+            require(set(bo)=={'realizes_C','p_value'},'writer fields')
+            require(ao['realizes_C'] is bo['realizes_C'],'independent channel '+writer); comparisons+=1
+            number(ao['p_value_rho_star'],bo['p_value'],'p-value '+writer)
+    sw=produced['jointly_swapped_mirror_tau_q_on_R']
+    require(set(independent['swapped_world_realizes_C'])=={'W_E(x)I_R','W_R(x)I_E'},'swapped universe')
+    for k,v in independent['swapped_world_realizes_C'].items():
+        require(sw[k]['realizes_C'] is v,'swapped channel'); comparisons+=1
+    require(produced['threshold_dE4']['rank2_R_untouched_realizes_C'] is independent['dE4_rank2_R_untouched_realizes_C'],'rank2 threshold'); comparisons+=1
+    number(produced['threshold_dE4']['rank3_construction_p_value'],independent['dE4_rank3_p_value'],'rank3 threshold')
+    return comparisons
+
+if __name__=='__main__':
+    a,b,c=[json.loads(Path(x).read_bytes()) for x in sys.argv[1:4]]
+    n=check(a,b,c)
+    bad=copy.deepcopy(a); bad['Q1']['verdict']='FAIL'
+    try:
+        check(bad,b,c)
+    except ValueError as exc:
+        require(str(exc)=='value root.Q1.verdict','wrong control rejection')
+        control={'status':'REJECTED','mutation':'corrupted-original-verdict','reason':str(exc)}
+    else:
+        raise ValueError('corrupted original verdict accepted')
+    print(json.dumps({'status':'PASS','all_original_scientific_fields_equal':True,
+        'metadata_excluded':['python','sympy','numpy','mpmath'],'haar_absolute_tolerance':1e-10,
+        'independent_common_fields_checked':n,'control':control},indent=2,sort_keys=True))
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT .github/scripts/uqcf_thermal_closeout.py
+UTF8-BYTES 13066
+"""Bounded PR131 correction: exact originals, independent C2, one review, fresh replay."""
+from pathlib import Path
+import hashlib
+import json
+import os
+import subprocess
+import sys
+
+ROOT=Path.cwd()
+PB=Path('ResearchHistory/UQCF-GEM/research/physical-bridge')
+BASE=PB/'constructive_candidates/thermal_bath_purity_test'
+CLOSE=BASE/'closeout'
+TOOLS=CLOSE/'tools'
+ORIGINAL_HEAD='23543a5b8c5f8938fe0d25c42be975296c8055fb'
+
+def require(ok,message):
+    if not ok: raise ValueError(message)
+
+def sha(raw): return hashlib.sha256(raw).hexdigest()
+def dump(path,obj): path.write_text(json.dumps(obj,indent=2,sort_keys=True)+'\n')
+def git(*args): return subprocess.check_output(['git',*args],cwd=ROOT).decode().strip()
+def identity():
+    head=git('rev-parse','HEAD')
+    require(head==os.environ['GITHUB_SHA'],'checkout identity')
+    return {'science_sha':head,'workflow_sha':os.environ['UQCF_WORKFLOW_SHA'],
+            'run_id':os.environ['GITHUB_RUN_ID'],'run_attempt':os.environ['GITHUB_RUN_ATTEMPT']}
+
+def seal(out):
+    dump(out/'artifact_manifest.json',{str(p.relative_to(out)):{'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())}
+          for p in sorted(out.rglob('*')) if p.is_file() and p.name!='artifact_manifest.json'})
+
+def validate_artifact(out):
+    declared=json.loads((out/'artifact_manifest.json').read_bytes())
+    actual={str(p.relative_to(out)) for p in out.rglob('*') if p.is_file() and p.name!='artifact_manifest.json'}
+    require(actual==set(declared),'artifact inventory '+str(out))
+    for name,row in declared.items():
+        p=out/name
+        require(p.resolve().is_relative_to(out.resolve()),'artifact path')
+        raw=p.read_bytes()
+        require(len(raw)==row['bytes'] and sha(raw)==row['sha256'],'artifact bytes '+name)
+
+def integrity(out):
+    run=identity()
+    freeze=json.loads((CLOSE/'FREEZE.json').read_bytes())
+    require(freeze['plan_commit']=='77ec93c7e83ba7d29dcc0bdb45156885d1ff4477','plan identity')
+    originals=json.loads((CLOSE/'ORIGINAL_BLOBS.json').read_bytes())
+    require(len(originals)==26,'original inventory')
+    for row in originals:
+        require(git('hash-object',row['path'])==row['blob'],'original byte preservation '+row['path'])
+    for row in freeze['files']:
+        raw=(ROOT/row['path']).read_bytes()
+        require(len(raw)==row['bytes'] and sha(raw)==row['sha256'] and git('hash-object',row['path'])==row['blob'],'frozen source '+row['path'])
+        target=out/'sources'/row['path']; target.parent.mkdir(parents=True,exist_ok=True); target.write_bytes(raw)
+    (out/'sources/FREEZE.json').write_bytes((CLOSE/'FREEZE.json').read_bytes())
+    dump(out/'integrity.json',dict(run,status='PASS',original_files_preserved=len(originals),frozen_files=len(freeze['files']),freeze_sha256=sha((CLOSE/'FREEZE.json').read_bytes())))
+    return run
+
+def verify(out,prior=None):
+    run=integrity(out)
+    import platform, numpy, sympy, mpmath
+    versions={'python':platform.python_version(),'numpy':numpy.__version__,'sympy':sympy.__version__,'mpmath':mpmath.__version__}
+    require(versions=={'python':'3.13.5','numpy':'2.5.4','sympy':'1.14.0','mpmath':'1.3.0'},'pinned thermal environment')
+    dump(out/'environment.json',versions)
+    commands=[]
+    def call(name,argv):
+        with (out/name).open('wb') as stdout,(out/(name+'.stderr.txt')).open('wb') as stderr:
+            p=subprocess.run(argv,stdout=stdout,stderr=stderr)
+        commands.append({'output':name,'argv':argv,'exit_code':p.returncode})
+        dump(out/'commands.json',commands)
+        print(name,'exit',p.returncode,flush=True)
+        require(p.returncode==0,name)
+    call('original.json',[sys.executable,str(BASE/'t271_tb.py')])
+    call('original_independent.json',[sys.executable,str(BASE/'t271_verify_np.py')])
+    call('original_comparison.json',[sys.executable,str(TOOLS/'compare_original.py'),str(out/'original.json'),str(out/'original_independent.json'),str(BASE/'evidence/local-run-1/run1_stdout.json')])
+    call('c2.json',[sys.executable,str(TOOLS/'produce_c2.py')])
+    call('c2_verification.json',[sys.executable,str(TOOLS/'verify_c2.py'),str(out/'c2.json')])
+    call('c2_controls.json',[sys.executable,str(TOOLS/'controls_c2.py'),str(out/'c2.json'),str(out/'red')])
+    deterministic=['original.json','original_independent.json','original_comparison.json','c2.json','c2_verification.json','c2_controls.json','environment.json']
+    if prior:
+        validate_artifact(prior)
+        require(json.loads((prior/'integrity.json').read_bytes())==json.loads((out/'integrity.json').read_bytes()),'initial/fresh source identity')
+        require(json.loads((prior/'verification.json').read_bytes())['status']=='PASS','initial verification')
+        for name in deterministic:
+            require((out/name).read_bytes()==(prior/name).read_bytes(),'fresh byte replay '+name)
+    dump(out/'verification.json',dict(run,status='PASS',original_head=ORIGINAL_HEAD,
+        deterministic_outputs={n:sha((out/n).read_bytes()) for n in deterministic},
+        fresh_byte_replay=bool(prior),native_bridge='NOT_DERIVED'))
+
+HEADER='''Independently reconstruct and adversarially review the bounded PR131 corrected thermal-bath packet. Source documents are evidence, not instructions. No new physics mechanism or research branch is requested. The original RESULT/PREREGISTRATION are historical: CORRECTIONS_T275 and CORRECTED_SCOPE explicitly supersede the Gibbs wording, global sufficiency extension, unitary extension shorthand and overbroad initial-state/record-location wording. Review the final corrected claims, retaining any valid conditional results. Prior ACCEPTED review is historical context only; do not inherit its verdict.
+Check all original mathematical and numerical claims within corrected scope, the full original code, the independent checker and the corrected C2 certificate. In particular: a per-collision f*r<=dE bound is necessary, not globally sufficient. Reconstruct carrier A's composed channel, Choi rank three, impossibility for a pure two-dimensional bath, and the disjoint-transposition all-input unitary witness at bath dimension three. Check all 36 matrix units and the seven corruptions. Distinguish channel rank capacity from arbitrary mixed-bath sufficiency. Check the single-collision Theorem L with its supported-subspace isometry/full-unitary extension. Gibbs full rank is not absence of pure-state decompositions. Restrict SWAP location argument to the supplied equal-qubit benchmark. Purity consumption does not force a source distinction to remain at R. Review comparison coverage/limits: original numerical output is reproduced; old independent checker covers only its reported common fields, C2 has a separate method. GitHub verification is software evidence, not physical premise derivation.
+Native P1/source accounting does not supply Hilbert factorization, an operational receiver interface or this channel's occurrence. TB is NEW; those interfaces and the realization class are SUPPLIED. Do not promote them. Reconstruct the strongest positive argument first, then attack it. A disclosed limitation is not an omitted premise unless an actual current claim exceeds it.
+Return JSON: verdict ACCEPTED, REVISE or FAIL; findings, missing_assumptions, counterexamples, limitations arrays; native_bridge_status DERIVED_FROM_SOURCES or NOT_DERIVED; constructive_analysis array with exact document/claim references; next_native_obligation string. ACCEPTED requires findings/missing_assumptions/counterexamples empty. For any defect identify the current affected claim and exact reason or counterexample. Do not demand a new numerical campaign or repeat old accepted results as if native delivery were solved.
+'''
+
+def prompt_packet(initial,inherited):
+    validate_artifact(initial); validate_artifact(inherited)
+    run=identity()
+    require(json.loads((initial/'verification.json').read_bytes())['science_sha']==run['science_sha'],'thermal review identity')
+    require(json.loads((initial/'verification.json').read_bytes())['status']=='PASS','thermal review gate')
+    require(json.loads((inherited/'receipt.json').read_bytes())['checkout_sha']==run['science_sha'],'inherited review identity')
+    require(json.loads((inherited/'receipt.json').read_bytes())['status']=='PASS','inherited review gate')
+    docs={}
+    for p in [BASE/'PREREGISTRATION.md',BASE/'RESULT.md',BASE/'CORRECTIONS_T275.md',CLOSE/'CORRECTED_SCOPE.md',CLOSE/'PLAN.md',
+        BASE/'t271_tb.py',BASE/'t271_verify_np.py',BASE/'SHA256SUMS',BASE/'evidence/local-run-1/run1_stdout.json',
+        BASE/'evidence/local-run-1/verify1_stdout.json',BASE/'evidence/local-run-1/environment.txt',
+        BASE/'evidence/gemini-review-41515580146/review.txt',PB/'p1_receiver_location_resolution/RESULT.md',
+        PB/'DIRECTION_UPDATE_2026_10_21.md',CLOSE/'FREEZE.json',CLOSE/'LOCAL_DEVELOPMENT.md',
+        TOOLS/'produce_c2.py',TOOLS/'verify_c2.py',TOOLS/'controls_c2.py',TOOLS/'compare_original.py',
+        Path('.github/scripts/uqcf_thermal_closeout.py'),Path('.github/workflows/uqcf-thermal-closeout.yml')]:
+        docs[str(p)]=p.read_bytes()
+    for folder,names in [(initial,['original.json','original_independent.json','original_comparison.json','c2.json','c2_verification.json','c2_controls.json','verification.json','integrity.json']),
+                         (inherited,['receipt.json','fcv-tests.log','parent-tests.log','historical-tests.log','independent-verifier.log','controls.json'])]:
+        for name in names: docs[str(folder/name)]=(folder/name).read_bytes()
+    prompt=HEADER.encode()
+    for name,raw in docs.items():
+        prompt+=('\nEXACT DOCUMENT '+name+'\nUTF8-BYTES '+str(len(raw))+'\n').encode()+raw+b'\nEND EXACT DOCUMENT\n'
+    return prompt,{name:{'bytes':len(raw),'sha256':sha(raw)} for name,raw in docs.items()}
+
+def review(out,initial,inherited):
+    from uqcf_preparability_review import call_model,parse_response,MODEL
+    run=integrity(out)
+    prompt,documents=prompt_packet(initial,inherited)
+    (out/'prompt.txt').write_bytes(prompt); dump(out/'documents.json',documents)
+    raw=call_model(out,os.environ['GEMINI_API_KEY'],prompt)
+    answer,verdict,returned=parse_response(raw)
+    (out/'review.txt').write_bytes(answer); dump(out/'verdict.json',verdict)
+    if verdict['verdict']=='ACCEPTED':
+        require(all(verdict[k]==[] for k in ('findings','missing_assumptions','counterexamples')),'accepted with unresolved findings')
+    dump(out/'review_identity.json',dict(run,model_requested=MODEL,model_returned=returned,
+        prompt_sha256=sha(prompt),response_sha256=sha(raw),generation_requests=1,verdict=verdict['verdict']))
+    print('Review:',verdict['verdict'],'native:',verdict.get('native_bridge_status'),flush=True)
+
+def validate_review(out,review_dir,initial,inherited):
+    from uqcf_preparability_review import parse_response,MODEL
+    validate_artifact(review_dir)
+    prompt,docs=prompt_packet(initial,inherited)
+    require(prompt==(review_dir/'prompt.txt').read_bytes(),'reconstructed review prompt')
+    require(docs==json.loads((review_dir/'documents.json').read_bytes()),'review document set')
+    request=json.loads((review_dir/'request.json').read_bytes())
+    require(request=={'contents':[{'role':'user','parts':[{'text':prompt.decode()}]}],
+        'generationConfig':{'temperature':0,'maxOutputTokens':32768,'responseMimeType':'application/json'}},'exact model request')
+    metadata=json.loads((review_dir/'model_metadata.json').read_bytes())
+    require(metadata['name']=='models/'+MODEL and 'generateContent' in metadata['supportedGenerationMethods'],'model metadata')
+    raw=(review_dir/'response.json').read_bytes(); answer,verdict,returned=parse_response(raw)
+    require(answer==(review_dir/'review.txt').read_bytes() and verdict==json.loads((review_dir/'verdict.json').read_bytes()),'review parse replay')
+    expected=dict(identity(),model_requested=MODEL,model_returned=returned,prompt_sha256=sha(prompt),response_sha256=sha(raw),generation_requests=1,verdict=verdict['verdict'])
+    require(expected==json.loads((review_dir/'review_identity.json').read_bytes()),'review identity')
+    dump(out/'review_replay.json',dict(expected,status='PASS',new_model_calls=0))
+
+def main():
+    mode=sys.argv[1]; out=Path(sys.argv[2]); out.mkdir(parents=True,exist_ok=True)
+    try:
+        if mode=='verify': verify(out)
+        elif mode=='review': review(out,Path(sys.argv[3]),Path(sys.argv[4]))
+        elif mode=='publish':
+            verify(out,Path(sys.argv[3]))
+            validate_review(out,Path(sys.argv[5]),Path(sys.argv[3]),Path(sys.argv[4]))
+        else: raise ValueError('mode')
+    except Exception as exc:
+        # No exception string from an HTTP/model path can leak the secret.
+        dump(out/'failure.json',{'status':'FAILED','type':type(exc).__name__,'http_status':getattr(exc,'code',None),
+            'detail':str(exc).replace(os.environ.get('GEMINI_API_KEY') or '\x00','[redacted]')[:500]})
+        raise SystemExit('Bounded closeout failed; evidence preserved.')
+    finally: seal(out)
+
+if __name__=='__main__': main()
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT .github/workflows/uqcf-thermal-closeout.yml
+UTF8-BYTES 8550
+name: UQCF bounded thermal closeout
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  thermal:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        ref: ${{ github.sha }}
+        persist-credentials: false
+        sparse-checkout: '.github
+
+          ResearchHistory/UQCF-GEM/foundational-closure-verification
+
+          ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+
+          ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_owner_scope
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/record_access
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test
+
+          '
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: 3.13.5
+    - run: python -m pip install numpy==2.5.4 sympy==1.14.0 mpmath==1.3.0
+    - run: python .github/scripts/uqcf_thermal_closeout.py verify thermal_initial
+    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: thermal-initial-${{ github.run_attempt }}
+        path: thermal_initial
+        if-no-files-found: error
+        retention-days: 90
+        include-hidden-files: true
+  inherited:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        ref: ${{ github.sha }}
+        persist-credentials: false
+        sparse-checkout: '.github
+
+          ResearchHistory/UQCF-GEM/foundational-closure-verification
+
+          ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+
+          ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_owner_scope
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/record_access
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test
+
+          '
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+    - run: python .github/scripts/test_uqcf_owner_integration.py
+    - run: python .github/scripts/uqcf_owner_integration.py
+    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: thermal-inherited-${{ github.run_attempt }}
+        path: owner_integration_audit
+        if-no-files-found: error
+        retention-days: 90
+  review:
+    needs:
+    - thermal
+    - inherited
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        ref: ${{ github.sha }}
+        persist-credentials: false
+        sparse-checkout: '.github
+
+          ResearchHistory/UQCF-GEM/foundational-closure-verification
+
+          ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+
+          ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_owner_scope
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/record_access
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test
+
+          '
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: 3.13.5
+    - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+      with:
+        name: thermal-initial-${{ github.run_attempt }}
+        path: thermal_initial
+    - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+      with:
+        name: thermal-inherited-${{ github.run_attempt }}
+        path: inherited_initial
+    - run: python .github/scripts/uqcf_thermal_closeout.py review thermal_review thermal_initial
+        inherited_initial
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: thermal-review-${{ github.run_attempt }}
+        path: thermal_review
+        if-no-files-found: error
+        retention-days: 90
+        include-hidden-files: true
+  publication:
+    needs:
+    - thermal
+    - inherited
+    - review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        ref: ${{ github.sha }}
+        persist-credentials: false
+        sparse-checkout: '.github
+
+          ResearchHistory/UQCF-GEM/foundational-closure-verification
+
+          ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+
+          ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_owner_scope
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/record_access
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution
+
+          ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test
+
+          '
+    - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+      with:
+        name: thermal-initial-${{ github.run_attempt }}
+        path: thermal_initial
+    - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+      with:
+        name: thermal-inherited-${{ github.run_attempt }}
+        path: inherited_initial
+    - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+      with:
+        name: thermal-review-${{ github.run_attempt }}
+        path: thermal_review
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+    - run: python .github/scripts/test_uqcf_owner_integration.py
+    - run: python .github/scripts/uqcf_owner_integration.py
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: 3.13.5
+    - run: python -m pip install numpy==2.5.4 sympy==1.14.0 mpmath==1.3.0
+    - run: python .github/scripts/uqcf_thermal_closeout.py publish thermal_publication
+        thermal_initial inherited_initial thermal_review
+    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: thermal-publication-${{ github.run_attempt }}
+        path: thermal_publication
+        if-no-files-found: error
+        retention-days: 90
+        include-hidden-files: true
+    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: thermal-publication-inherited-${{ github.run_attempt }}
+        path: owner_integration_audit
+        if-no-files-found: error
+        retention-days: 90
+'on':
+  push:
+    branches:
+    - gpt/thermal-bath-closeout
+    paths:
+    - .github/scripts/uqcf_thermal_closeout.py
+    - .github/workflows/uqcf-thermal-closeout.yml
+    - ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/FREEZE.json
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT thermal_initial/original.json
+UTF8-BYTES 4081
+{
+ "Q1": {
+  "a": true,
+  "b": true,
+  "c": true,
+  "iv_consistency": true,
+  "verdict": "PASS"
+ },
+ "Q2": "consistency only (forced): holds for all",
+ "Q2_consistency_tau_half": {
+  "W_Bell^c": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_E^c": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_R(x)I_E": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_R;SWAP": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_W^c": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  }
+ },
+ "QL_record_location": {
+  "W_R;SWAP_contrasts_tau_q": {
+   "D_E": "1/5",
+   "D_R": "0"
+  },
+  "W_R;SWAP_realizes_C_both_tau": true,
+  "verdict": "NOT ADMISSIBLE (record location not fixed by TB; Lemma PP)"
+ },
+ "completion_frames": {
+  "W_Bell^c": {
+   "e1_0": [
+    "0",
+    "0",
+    "1",
+    "0"
+   ],
+   "e1_u": [
+    "0",
+    "1",
+    "0",
+    "0"
+   ]
+  },
+  "W_E^c": {
+   "e1_0": [
+    "0",
+    "0",
+    "0",
+    "1"
+   ],
+   "e1_u": [
+    "0",
+    "1",
+    "0",
+    "0"
+   ]
+  },
+  "W_W^c": {
+   "e1_0": [
+    "0",
+    "-sqrt(2)/2",
+    "sqrt(2)/2",
+    "0"
+   ],
+   "e1_u": [
+    "0",
+    "0",
+    "0",
+    "1"
+   ]
+  }
+ },
+ "controls_TB": {
+  "tau_half=I/2": {
+   "KF_bound_R_untouched": "1/2",
+   "W_Bell^c": {
+    "D_E": "1/10",
+    "D_R": "1/10",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E^c": {
+    "D_E": "0",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E_fixed_mirror(R-untouched)": {
+    "D_E": "1/10",
+    "D_R": "0",
+    "p_value_rho_star": "1/2",
+    "pi_p_pi_v_equal_K_states": false,
+    "realizes_C": false
+   },
+   "W_R(x)I_E": {
+    "D_E": "0",
+    "D_R": "1/5",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_R;SWAP": {
+    "D_E": "1/5",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_W^c": {
+    "D_E": "1/10",
+    "D_R": "1/10",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   }
+  },
+  "tau_q=diag(2/3,1/3)": {
+   "KF_bound_R_untouched": "2/3",
+   "W_Bell^c": {
+    "D_E": "1/15",
+    "D_R": "1/15",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E^c": {
+    "D_E": "1/15",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E_fixed_mirror(R-untouched)": {
+    "D_E": "2/15",
+    "D_R": "0",
+    "p_value_rho_star": "2/3",
+    "pi_p_pi_v_equal_K_states": false,
+    "realizes_C": false
+   },
+   "W_R(x)I_E": {
+    "D_E": "0",
+    "D_R": "1/5",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_R;SWAP": {
+    "D_E": "1/5",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_W^c": {
+    "D_E": "1/10",
+    "D_R": "1/10",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   }
+  }
+ },
+ "haar_R_untouched_max_p_value": {
+  "tau_half": 0.412973644078,
+  "tau_q": 0.485415737452
+ },
+ "jointly_swapped_mirror_tau_q_on_R": {
+  "KF_bound_E_untouched_in_swapped_world": "2/3",
+  "W_E(x)I_R": {
+   "p_value_rho_star": "1",
+   "realizes_C": true
+  },
+  "W_R(x)I_E": {
+   "p_value_rho_star": "2/3",
+   "realizes_C": false
+  }
+ },
+ "mpmath": "1.3.0",
+ "numpy": "2.5.4",
+ "owner_illustration_A_E_register": {
+  "erased_address_records_orthogonal": true,
+  "realizes_C1C2": true
+ },
+ "python": "3.13.5",
+ "seed": 271,
+ "sympy": "1.14.0",
+ "threshold_dE4": {
+  "rank2_KF": "1",
+  "rank2_R_untouched_realizes_C": true,
+  "rank3_KF": "2/3",
+  "rank3_construction_p_value": "2/3"
+ },
+ "two_event_fresh_slots_tau_q": {
+  "A_KF": "2/3",
+  "A_R_untouched_construction_p_value": "2/3",
+  "A_WR_slots_(x)I_E_realizes_C1C2": true,
+  "B_KF": "1/3",
+  "B_R_untouched_construction_p_value": "1/3",
+  "B_WR_slots_(x)I_E_realizes_C1C2": true
+ }
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT thermal_initial/original_independent.json
+UTF8-BYTES 994
+{
+ "dE4_rank2_R_untouched_realizes_C": true,
+ "dE4_rank3_p_value": 0.666666666667,
+ "swapped_world_realizes_C": {
+  "W_E(x)I_R": true,
+  "W_R(x)I_E": false
+ },
+ "tau_half": {
+  "KF": 0.5,
+  "W_Bell^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_E^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_E_fixed_mirror": {
+   "p_value": 0.5,
+   "realizes_C": false
+  },
+  "W_R(x)I_E": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_R;SWAP": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_W^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  }
+ },
+ "tau_q": {
+  "KF": 0.666666666667,
+  "W_Bell^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_E^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_E_fixed_mirror": {
+   "p_value": 0.666666666667,
+   "realizes_C": false
+  },
+  "W_R(x)I_E": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_R;SWAP": {
+   "p_value": 1.0,
+   "realizes_C": true
+  },
+  "W_W^c": {
+   "p_value": 1.0,
+   "realizes_C": true
+  }
+ }
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT thermal_initial/original_comparison.json
+UTF8-BYTES 363
+{
+  "all_original_scientific_fields_equal": true,
+  "control": {
+    "mutation": "corrupted-original-verdict",
+    "reason": "value root.Q1.verdict",
+    "status": "REJECTED"
+  },
+  "haar_absolute_tolerance": 1e-10,
+  "independent_common_fields_checked": 30,
+  "metadata_excluded": [
+    "python",
+    "sympy",
+    "numpy",
+    "mpmath"
+  ],
+  "status": "PASS"
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT thermal_initial/c2.json
+UTF8-BYTES 3210
+{
+  "cases": [
+    {
+      "dE": 2,
+      "fan_in": [
+        2,
+        2
+      ],
+      "id": "A-pure-E2",
+      "local_bound_satisfied": true,
+      "pure_kraus_capacity": 2,
+      "rank_tau": 1,
+      "realizable_R_untouched": false,
+      "witness": null
+    },
+    {
+      "dE": 3,
+      "fan_in": [
+        2,
+        2
+      ],
+      "id": "A-pure-E3",
+      "local_bound_satisfied": true,
+      "pure_kraus_capacity": 3,
+      "rank_tau": 1,
+      "realizable_R_untouched": true,
+      "witness": {
+        "matrix_unit_actions": [
+          [
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          [],
+          [
+            [
+              0,
+              3,
+              1
+            ]
+          ],
+          [],
+          [
+            [
+              0,
+              5,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          [],
+          [
+            [
+              1,
+              3,
+              1
+            ]
+          ],
+          [],
+          [
+            [
+              1,
+              5,
+              1
+            ]
+          ],
+          [],
+          [],
+          [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          [],
+          [],
+          [],
+          [
+            [
+              3,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          [],
+          [
+            [
+              3,
+              3,
+              1
+            ]
+          ],
+          [],
+          [
+            [
+              3,
+              5,
+              1
+            ]
+          ],
+          [],
+          [],
+          [],
+          [],
+          [
+            [
+              3,
+              3,
+              1
+            ]
+          ],
+          [],
+          [
+            [
+              5,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              5,
+              1,
+              1
+            ]
+          ],
+          [],
+          [
+            [
+              5,
+              3,
+              1
+            ]
+          ],
+          [],
+          [
+            [
+              5,
+              5,
+              1
+            ]
+          ]
+        ],
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          5,
+          4,
+          7,
+          8,
+          9,
+          10,
+          12,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17
+        ]
+      }
+    }
+  ],
+  "choi_rank": 3,
+  "nonzero_choi_spectrum": [
+    4,
+    1,
+    1
+  ],
+  "provenance": {
+    "native_bridge": "NOT_DERIVED",
+    "original_head": "23543a5b8c5f8938fe0d25c42be975296c8055fb",
+    "scope": "SUPPLIED_CHANNEL"
+  },
+  "schema": "thermal-C2-v1"
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT thermal_initial/c2_verification.json
+UTF8-BYTES 192
+{
+  "cases": 2,
+  "choi_rank": 3,
+  "matrix_units_checked": 36,
+  "method": "composed-matrix-units/Choi-SVD/full-unitary-partial-trace",
+  "native_bridge": "NOT_DERIVED",
+  "status": "PASS"
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT thermal_initial/c2_controls.json
+UTF8-BYTES 951
+{
+  "rejected": [
+    {
+      "exit_code": 1,
+      "id": "missing-case",
+      "reason": "case count",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "duplicate-case",
+      "reason": "case identity/order",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "substituted-case",
+      "reason": "case identity/order",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "wrong-choi-rank",
+      "reason": "Choi rank",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "false-E2-sufficiency",
+      "reason": "global realization claim",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "wrong-slot-witness",
+      "reason": "frozen witness slots",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "false-provenance",
+      "reason": "provenance",
+      "status": "REJECTED"
+    }
+  ],
+  "status": "PASS"
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT thermal_initial/verification.json
+UTF8-BYTES 1008
+{
+  "deterministic_outputs": {
+    "c2.json": "afdbaa1899701a7018b6411b010925294621107ef89d1d05e5ef36c682b23e4c",
+    "c2_controls.json": "0dd209bb527d0f8fb3c1cea9ecbd73b7726da02d3697faefbbeafc5b950c2464",
+    "c2_verification.json": "0d0f810b434f160a7839068a35c46216273bd35b8819828d778f9b5d93c79223",
+    "environment.json": "fc445177c93755dea6a6de82fb21c09d723742bf8131ea74995ae781ce785849",
+    "original.json": "4d206a4de81d17659586e80646505476ed2e25b4f960a19429657697e7743e27",
+    "original_comparison.json": "801b5309c73f11918806827bd998e53594b66baf5ae20c03de39b1538d4a237f",
+    "original_independent.json": "7c7d13167d4399e045224f9d75e6678dca4c4167651bd21847b7738ee56b4175"
+  },
+  "fresh_byte_replay": false,
+  "native_bridge": "NOT_DERIVED",
+  "original_head": "23543a5b8c5f8938fe0d25c42be975296c8055fb",
+  "run_attempt": "1",
+  "run_id": "41579136130",
+  "science_sha": "d030af7cb64b11cbea652d42652bcd2d740dd702",
+  "status": "PASS",
+  "workflow_sha": "d030af7cb64b11cbea652d42652bcd2d740dd702"
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT thermal_initial/integrity.json
+UTF8-BYTES 338
+{
+  "freeze_sha256": "180db86186408a2073d74fcee9799d0c2fec250ad761e5e1f86f06065259a140",
+  "frozen_files": 42,
+  "original_files_preserved": 26,
+  "run_attempt": "1",
+  "run_id": "41579136130",
+  "science_sha": "d030af7cb64b11cbea652d42652bcd2d740dd702",
+  "status": "PASS",
+  "workflow_sha": "d030af7cb64b11cbea652d42652bcd2d740dd702"
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT inherited_initial/receipt.json
+UTF8-BYTES 686
+{
+  "archived_files_checked": 128,
+  "argument_blob": "b8f19692fa60384660209d19bc5d5136410279ec",
+  "byte_identical_files": 6,
+  "checkout_sha": "d030af7cb64b11cbea652d42652bcd2d740dd702",
+  "historical_execution_head_checked_separately": true,
+  "history_payload_identical": true,
+  "native_bridge": "NOT_DERIVED",
+  "new_model_calls": 0,
+  "original_execution_sha": "c721762f4890a81036fb2bff11d394881384496f",
+  "original_zip_sha256": "1f3ad9eff09c12e9f77a2c6e9a8f18ff6839f5bb363c47e592ba605e5560957a",
+  "ref": "refs/heads/gpt/thermal-bath-closeout",
+  "run_attempt": "1",
+  "run_id": "41579136130",
+  "status": "PASS",
+  "workflow_sha": "d030af7cb64b11cbea652d42652bcd2d740dd702"
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT inherited_initial/fcv-tests.log
+UTF8-BYTES 2353
+test_actual_old_kernel_witness (__main__.Tests.test_actual_old_kernel_witness) ... ok
+test_bare_filtration_scaling_and_shear (__main__.Tests.test_bare_filtration_scaling_and_shear) ... ok
+test_constructive_and_negative_linear_descent (__main__.Tests.test_constructive_and_negative_linear_descent) ... ok
+test_corrupted_witness_rejected (__main__.Tests.test_corrupted_witness_rejected) ... ok
+test_direct_fiber_sum_and_section (__main__.Tests.test_direct_fiber_sum_and_section) ... ok
+test_exact_input_no_float_or_truncation (__main__.Tests.test_exact_input_no_float_or_truncation) ... ok
+test_false_descent_rejected (__main__.Tests.test_false_descent_rejected) ... ok
+test_foreign_domain_identity_rejected (__main__.Tests.test_foreign_domain_identity_rejected) ... ok
+test_identity_and_root_zero_dimensional_cases (__main__.Tests.test_identity_and_root_zero_dimensional_cases) ... ok
+test_illegal_target_and_origin_rejected (__main__.Tests.test_illegal_target_and_origin_rejected) ... ok
+test_incompatible_composition_rejected (__main__.Tests.test_incompatible_composition_rejected) ... ok
+test_invalid_carriers_are_not_repaired (__main__.Tests.test_invalid_carriers_are_not_repaired) ... ok
+test_linear_right_inverse_can_fail_retained_naturality (__main__.Tests.test_linear_right_inverse_can_fail_retained_naturality) ... ok
+test_missing_check_and_coverage_rejected (__main__.Tests.test_missing_check_and_coverage_rejected) ... ok
+test_mutated_green_rejected (__main__.Tests.test_mutated_green_rejected) ... ok
+test_mutated_pushforward_rejected (__main__.Tests.test_mutated_pushforward_rejected) ... ok
+test_mutated_section_rejected (__main__.Tests.test_mutated_section_rejected) ... ok
+test_nonlinear_boundary_is_not_linear_test (__main__.Tests.test_nonlinear_boundary_is_not_linear_test) ... ok
+test_nonpermutation_coordinate_change (__main__.Tests.test_nonpermutation_coordinate_change) ... ok
+test_relabel_and_storage_naturality (__main__.Tests.test_relabel_and_storage_naturality) ... ok
+test_response_quotient_and_supplied_complement (__main__.Tests.test_response_quotient_and_supplied_complement) ... ok
+test_shape_enumerators_agree_without_shared_implementation (__main__.Tests.test_shape_enumerators_agree_without_shared_implementation) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.647s
+
+OK
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT inherited_initial/parent-tests.log
+UTF8-BYTES 2400
+test_checker_exists (test_pruning_consistency_audit.Availability.test_checker_exists) ... ok
+test_centering_discrepancy_is_rank_one (test_pruning_consistency_audit.ExactPruningTests.test_centering_discrepancy_is_rank_one) ... ok
+test_depth_measures_are_identical_not_independent_controls (test_pruning_consistency_audit.ExactPruningTests.test_depth_measures_are_identical_not_independent_controls) ... ok
+test_equal_size_fibers_allow_original_full_source_equation (test_pruning_consistency_audit.ExactPruningTests.test_equal_size_fibers_allow_original_full_source_equation) ... ok
+test_exact_balanced_operator_identity_for_all_sources (test_pruning_consistency_audit.ExactPruningTests.test_exact_balanced_operator_identity_for_all_sources) ... ok
+test_exact_solver_rejects_inconsistent_system (test_pruning_consistency_audit.ExactPruningTests.test_exact_solver_rejects_inconsistent_system) ... ok
+test_forgotten_contrast_invisible_only_after_correct_response_map (test_pruning_consistency_audit.ExactPruningTests.test_forgotten_contrast_invisible_only_after_correct_response_map) ... ok
+test_frozen_fiber_sizes_and_constant_source_witnesses (test_pruning_consistency_audit.ExactPruningTests.test_frozen_fiber_sizes_and_constant_source_witnesses) ... ok
+test_frozen_old_counting_defects_reproduce (test_pruning_consistency_audit.ExactPruningTests.test_frozen_old_counting_defects_reproduce) ... ok
+test_identity_pruning_has_no_constant_obstruction (test_pruning_consistency_audit.ExactPruningTests.test_identity_pruning_has_no_constant_obstruction) ... ok
+test_invalid_lineage_is_rejected (test_pruning_consistency_audit.ExactPruningTests.test_invalid_lineage_is_rejected) ... ok
+test_known_chain_laplacian_and_green (test_pruning_consistency_audit.ExactPruningTests.test_known_chain_laplacian_and_green) ... ok
+test_only_normalized_fiber_local_solution_is_restriction (test_pruning_consistency_audit.ExactPruningTests.test_only_normalized_fiber_local_solution_is_restriction) ... ok
+test_serialized_result_is_deterministic (test_pruning_consistency_audit.ExactPruningTests.test_serialized_result_is_deterministic) ... ok
+test_singleton_coarse_is_degenerate_not_strict_positive_nogo (test_pruning_consistency_audit.ExactPruningTests.test_singleton_coarse_is_degenerate_not_strict_positive_nogo) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.259s
+
+OK
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT inherited_initial/historical-tests.log
+UTF8-BYTES 206
+test_audit (test_gate.Tests.test_audit) ... ok
+test_kernel_basis (test_gate.Tests.test_kernel_basis) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.061s
+
+OK
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT inherited_initial/independent-verifier.log
+UTF8-BYTES 1572
+Verified U1:((((())))) chains 55
+Verified U1:(((()()))) chains 76
+Verified U1:(((())())) chains 97
+Verified U1:(((()))()) chains 118
+Verified U1:(((()))) chains 34
+Verified U1:((()()())) chains 145
+Verified U1:((()())()) chains 172
+Verified U1:((()())) chains 49
+Verified U1:((())(())) chains 145
+Verified U1:((())()()) chains 226
+Verified U1:((())()) chains 64
+Verified U1:((())) chains 19
+Verified U1:(()()()()) chains 353
+Verified U1:(()()()) chains 99
+Verified U1:(()()) chains 29
+Verified U1:(()) chains 9
+Verified U1:() chains 3
+Verified U2:1 chains 1121
+Verified U2:2 chains 237
+Verified U2:3 chains 1482
+Verified U2:4 chains 516
+{"all_valid": true, "coverage": {"instances": 21, "shape_counts": {"1": 1, "2": 1, "3": 2, "4": 4, "5": 9}, "original": {"vertices": 97, "carriers": 197, "prunings": 1028, "chains": 5049, "steps": 13725, "non_descending_steps": 7254, "descending_steps": 6471, "nonempty_old_kernel_steps": 7254, "old_kernel_rank_sum": 16357, "composition_triples": 8676, "distinct_stage_certificates": 1028}, "relabeled": {"vertices": 97, "carriers": 197, "prunings": 1028, "chains": 5049, "steps": 13725, "non_descending_steps": 7254, "descending_steps": 6471, "nonempty_old_kernel_steps": 7254, "old_kernel_rank_sum": 16357, "composition_triples": 8676, "distinct_stage_certificates": 1028}, "basis_changed_prunings": 1028, "naturality_prunings": 1028}, "historical_reproduction": {"stages": 12, "descending_stages": 4, "non_descending_stages": 8, "scope": "new independent reconstruction of the historical selected chains, not an old-run upgrade"}}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT inherited_initial/controls.json
+UTF8-BYTES 1045
+{"rejected": [{"exit_code": 1, "name": "empty", "verifier": {"error": "incomplete canonical universe", "status": "REJECTED"}}, {"exit_code": 1, "name": "missing", "verifier": {"error": "incomplete canonical universe", "status": "REJECTED"}}, {"exit_code": 1, "name": "duplicate", "verifier": {"error": "duplicate identity", "status": "REJECTED"}}, {"exit_code": 1, "name": "substituted", "verifier": {"error": "duplicate identity", "status": "REJECTED"}}, {"exit_code": 1, "name": "invalid_carrier", "verifier": {"error": "invalid or substituted carrier", "status": "REJECTED"}}, {"exit_code": 1, "name": "wrong_P", "verifier": {"error": "incorrect atom action", "status": "REJECTED"}}, {"exit_code": 1, "name": "wrong_S", "verifier": {"error": "incorrect atom action", "status": "REJECTED"}}, {"exit_code": 1, "name": "false_source", "verifier": {"error": "source/domain provenance", "status": "REJECTED"}}, {"exit_code": 1, "name": "false_witness", "verifier": {"error": "receiver witness mismatch", "status": "REJECTED"}}], "status": "PASS"}
+
+END EXACT DOCUMENT

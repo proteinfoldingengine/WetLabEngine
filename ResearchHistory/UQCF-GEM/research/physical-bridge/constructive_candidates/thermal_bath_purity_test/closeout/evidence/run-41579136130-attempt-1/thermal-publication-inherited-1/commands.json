@@ -1,0 +1,102 @@
+[
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/review_tools/produce.py"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "name": "certificate.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/review_tools/verify.py",
+      "/home/runner/work/WetLabEngine/WetLabEngine/owner_integration_audit/certificate.json"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "name": "verification.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence/review_tools/controls.py",
+      "/home/runner/work/WetLabEngine/WetLabEngine/owner_integration_audit/certificate.json",
+      "/home/runner/work/WetLabEngine/WetLabEngine/owner_integration_audit/red"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "name": "controls.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-m",
+      "pip",
+      "freeze"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "name": "dependencies.log"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "tests/test_fcv.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0,
+    "name": "fcv-tests.log"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-m",
+      "unittest",
+      "-v",
+      "test_pruning_consistency_audit"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction",
+    "exit_code": 0,
+    "name": "parent-tests.log"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-m",
+      "unittest",
+      "-v"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent",
+    "exit_code": 0,
+    "name": "historical-tests.log"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "gate.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent",
+    "exit_code": 0,
+    "name": "historical-reproduction.log"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "produce_certificates.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0,
+    "name": "producer.log"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "verify_certificates.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0,
+    "name": "independent-verifier.log"
+  }
+]

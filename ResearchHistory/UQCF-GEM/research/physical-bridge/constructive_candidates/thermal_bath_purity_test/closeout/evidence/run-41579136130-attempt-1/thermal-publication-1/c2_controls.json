@@ -1,0 +1,47 @@
+{
+  "rejected": [
+    {
+      "exit_code": 1,
+      "id": "missing-case",
+      "reason": "case count",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "duplicate-case",
+      "reason": "case identity/order",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "substituted-case",
+      "reason": "case identity/order",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "wrong-choi-rank",
+      "reason": "Choi rank",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "false-E2-sufficiency",
+      "reason": "global realization claim",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "wrong-slot-witness",
+      "reason": "frozen witness slots",
+      "status": "REJECTED"
+    },
+    {
+      "exit_code": 1,
+      "id": "false-provenance",
+      "reason": "provenance",
+      "status": "REJECTED"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.13.5/x64/bin/python",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/t271_tb.py"
+    ],
+    "exit_code": 0,
+    "output": "original.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.13.5/x64/bin/python",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/t271_verify_np.py"
+    ],
+    "exit_code": 0,
+    "output": "original_independent.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.13.5/x64/bin/python",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/compare_original.py",
+      "thermal_publication/original.json",
+      "thermal_publication/original_independent.json",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/evidence/local-run-1/run1_stdout.json"
+    ],
+    "exit_code": 0,
+    "output": "original_comparison.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.13.5/x64/bin/python",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/produce_c2.py"
+    ],
+    "exit_code": 0,
+    "output": "c2.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.13.5/x64/bin/python",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/verify_c2.py",
+      "thermal_publication/c2.json"
+    ],
+    "exit_code": 0,
+    "output": "c2_verification.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.13.5/x64/bin/python",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/thermal_bath_purity_test/closeout/tools/controls_c2.py",
+      "thermal_publication/c2.json",
+      "thermal_publication/red"
+    ],
+    "exit_code": 0,
+    "output": "c2_controls.json"
+  }
+]

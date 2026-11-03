@@ -1,0 +1,214 @@
+{
+ "Q1": {
+  "a": true,
+  "b": true,
+  "c": true,
+  "iv_consistency": true,
+  "verdict": "PASS"
+ },
+ "Q2": "consistency only (forced): holds for all",
+ "Q2_consistency_tau_half": {
+  "W_Bell^c": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_E^c": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_R(x)I_E": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_R;SWAP": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  },
+  "W_W^c": {
+   "holds": true,
+   "min_slack_S_R_minus_dS": "0.0"
+  }
+ },
+ "QL_record_location": {
+  "W_R;SWAP_contrasts_tau_q": {
+   "D_E": "1/5",
+   "D_R": "0"
+  },
+  "W_R;SWAP_realizes_C_both_tau": true,
+  "verdict": "NOT ADMISSIBLE (record location not fixed by TB; Lemma PP)"
+ },
+ "completion_frames": {
+  "W_Bell^c": {
+   "e1_0": [
+    "0",
+    "0",
+    "1",
+    "0"
+   ],
+   "e1_u": [
+    "0",
+    "1",
+    "0",
+    "0"
+   ]
+  },
+  "W_E^c": {
+   "e1_0": [
+    "0",
+    "0",
+    "0",
+    "1"
+   ],
+   "e1_u": [
+    "0",
+    "1",
+    "0",
+    "0"
+   ]
+  },
+  "W_W^c": {
+   "e1_0": [
+    "0",
+    "-sqrt(2)/2",
+    "sqrt(2)/2",
+    "0"
+   ],
+   "e1_u": [
+    "0",
+    "0",
+    "0",
+    "1"
+   ]
+  }
+ },
+ "controls_TB": {
+  "tau_half=I/2": {
+   "KF_bound_R_untouched": "1/2",
+   "W_Bell^c": {
+    "D_E": "1/10",
+    "D_R": "1/10",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E^c": {
+    "D_E": "0",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E_fixed_mirror(R-untouched)": {
+    "D_E": "1/10",
+    "D_R": "0",
+    "p_value_rho_star": "1/2",
+    "pi_p_pi_v_equal_K_states": false,
+    "realizes_C": false
+   },
+   "W_R(x)I_E": {
+    "D_E": "0",
+    "D_R": "1/5",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_R;SWAP": {
+    "D_E": "1/5",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_W^c": {
+    "D_E": "1/10",
+    "D_R": "1/10",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   }
+  },
+  "tau_q=diag(2/3,1/3)": {
+   "KF_bound_R_untouched": "2/3",
+   "W_Bell^c": {
+    "D_E": "1/15",
+    "D_R": "1/15",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E^c": {
+    "D_E": "1/15",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_E_fixed_mirror(R-untouched)": {
+    "D_E": "2/15",
+    "D_R": "0",
+    "p_value_rho_star": "2/3",
+    "pi_p_pi_v_equal_K_states": false,
+    "realizes_C": false
+   },
+   "W_R(x)I_E": {
+    "D_E": "0",
+    "D_R": "1/5",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_R;SWAP": {
+    "D_E": "1/5",
+    "D_R": "0",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   },
+   "W_W^c": {
+    "D_E": "1/10",
+    "D_R": "1/10",
+    "p_value_rho_star": "1",
+    "pi_p_pi_v_equal_K_states": true,
+    "realizes_C": true
+   }
+  }
+ },
+ "haar_R_untouched_max_p_value": {
+  "tau_half": 0.412973644078,
+  "tau_q": 0.485415737452
+ },
+ "jointly_swapped_mirror_tau_q_on_R": {
+  "KF_bound_E_untouched_in_swapped_world": "2/3",
+  "W_E(x)I_R": {
+   "p_value_rho_star": "1",
+   "realizes_C": true
+  },
+  "W_R(x)I_E": {
+   "p_value_rho_star": "2/3",
+   "realizes_C": false
+  }
+ },
+ "mpmath": "1.3.0",
+ "numpy": "2.5.4",
+ "owner_illustration_A_E_register": {
+  "erased_address_records_orthogonal": true,
+  "realizes_C1C2": true
+ },
+ "python": "3.13.5",
+ "seed": 271,
+ "sympy": "1.14.0",
+ "threshold_dE4": {
+  "rank2_KF": "1",
+  "rank2_R_untouched_realizes_C": true,
+  "rank3_KF": "2/3",
+  "rank3_construction_p_value": "2/3"
+ },
+ "two_event_fresh_slots_tau_q": {
+  "A_KF": "2/3",
+  "A_R_untouched_construction_p_value": "2/3",
+  "A_WR_slots_(x)I_E_realizes_C1C2": true,
+  "B_KF": "1/3",
+  "B_R_untouched_construction_p_value": "1/3",
+  "B_WR_slots_(x)I_E_realizes_C1C2": true
+ }
+}

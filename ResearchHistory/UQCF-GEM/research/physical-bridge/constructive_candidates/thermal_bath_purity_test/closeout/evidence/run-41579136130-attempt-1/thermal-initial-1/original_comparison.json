@@ -1,0 +1,17 @@
+{
+  "all_original_scientific_fields_equal": true,
+  "control": {
+    "mutation": "corrupted-original-verdict",
+    "reason": "value root.Q1.verdict",
+    "status": "REJECTED"
+  },
+  "haar_absolute_tolerance": 1e-10,
+  "independent_common_fields_checked": 30,
+  "metadata_excluded": [
+    "python",
+    "sympy",
+    "numpy",
+    "mpmath"
+  ],
+  "status": "PASS"
+}

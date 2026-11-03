@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "dE": 2,
+      "fan_in": [
+        2,
+        2
+      ],
+      "id": "A-pure-E2",
+      "local_bound_satisfied": true,
+      "pure_kraus_capacity": 2,
+      "rank_tau": 1,
+      "realizable_R_untouched": false,
+      "witness": null
+    }
+  ],
+  "choi_rank": 3,
+  "nonzero_choi_spectrum": [
+    4,
+    1,
+    1
+  ],
+  "provenance": {
+    "native_bridge": "NOT_DERIVED",
+    "original_head": "23543a5b8c5f8938fe0d25c42be975296c8055fb",
+    "scope": "SUPPLIED_CHANNEL"
+  },
+  "schema": "thermal-C2-v1"
+}

@@ -1,0 +1,19 @@
+{
+  "constructive_analysis": [
+    "The rejection of the owner-local attachment candidate (Q-b) is mathematically sound. The preservation of the coherence |p><v| by the channel C forces the environment/receiver state to be identical for inputs |p> and |v>, making the owner coordinate y unrecoverable from the environment alone (PREREGISTRATION.md §1).",
+    "Theorem L correctly applies the Ky Fan maximum principle to bound the transition probability for R-untouched unitaries, establishing the exact threshold rank(tau_E) <= d_E/2 for exact realization (PREREGISTRATION.md §3). The constructive proof of tightness is exact.",
+    "Lemma PP correctly identifies that post-processing by a SWAP gate preserves the channel while moving the record, proving that initial-state constraints cannot fix record location (PREREGISTRATION.md §3).",
+    "The Q-2 consistency check correctly verifies the forced entropy inequality S(omega_R) >= S(rho) - S(C(rho)). This is a tautological consequence of unitarity and the maximally mixed environment tau_half, which cannot increase its entropy (RESULT.md §3).",
+    "The conclusion that TB forces the consumption of R's purity but does not single out W_R or fix the record location is perfectly supported by the data (RESULT.md §3). The native bridge is correctly classified as NOT_DERIVED."
+  ],
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "The thermal bath (TB) ingredient is a supplied physical premise, not derived from the native informational tree.",
+    "The test resolves a mathematical consequence of this premise (breaking the R/E tie by consuming R's purity) but does not close the physical bridge."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Trace one existing retained record through the inherited P1 contraction into one existing native consumer or available observation, without supplying new physical premises like thermal baths or pure blanks, as directed in DIRECTION_UPDATE_2026_10_21.md §4.",
+  "verdict": "ACCEPTED"
+}
