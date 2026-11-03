@@ -1,0 +1,69 @@
+{
+  "archive_controller": "4fb1fd497b708713fb9135b65990b6416023a3cb",
+  "archive_run": "41566294628",
+  "artifacts": [
+    {
+      "bytes": 1651735,
+      "id": 13163605957,
+      "manifest_members": 37,
+      "name": "native-source-audit-publication-1",
+      "sha256": "8d26257fc6d0c32ad12fc2beee9b834fa2af8cad0e49ae4a0e909b61f6e1f0d5"
+    },
+    {
+      "bytes": 1651387,
+      "id": 13161939280,
+      "manifest_members": 36,
+      "name": "native-source-audit-verification-1",
+      "sha256": "1060d99a5606505113268991c3aaff8c019b3b657b42fdc8524292ede92faaa9"
+    },
+    {
+      "bytes": 271556,
+      "id": 13161934934,
+      "manifest_members": 12,
+      "name": "native-source-audit-review-1",
+      "sha256": "0ba8c47888793eaef98fce14bd833251591d8eb18b1daeb6d0c873a42eb31cd7"
+    }
+  ],
+  "controller_sha": "340a9465a92e8ffd387bd26d31c8fe2f5e33f3fe",
+  "deterministic_files": [
+    "fcv-certificates.json.xz",
+    "fcv-PRODUCTION.json",
+    "fcv-VERIFICATION.json",
+    "fcv-REPRODUCED_1615F.json",
+    "original-certificate.json",
+    "original-verification.json",
+    "original-controls.json",
+    "successor-certificate.json",
+    "successor-verification.json",
+    "successor-controls.json"
+  ],
+  "job_logs": [
+    {
+      "bytes": 38165,
+      "file": "job-125417925597.log",
+      "job_id": 125417925597,
+      "name": "verification",
+      "sha256": "9183282ec83c75726cd62b0460b4a43dbb0745c41585fbd2ac090751bf0e664a"
+    },
+    {
+      "bytes": 35351,
+      "file": "job-125422849441.log",
+      "job_id": 125422849441,
+      "name": "review",
+      "sha256": "d48b4c03946bc6c0bfa1cd222da1d61e35d135600fcdd2d36ffbc32a90e5d676"
+    },
+    {
+      "bytes": 47817,
+      "file": "job-125423719905.log",
+      "job_id": 125423719905,
+      "name": "publication",
+      "sha256": "4eac79fb64960d8659074819a1a6e2a4202bce0e1e9dae5253c6c8ea10398d9e"
+    }
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "original_run": 41486442606,
+  "review_disposition": "NO_CANDIDATE_WITH_MATERIAL_ERRORS_AND_INCOMPLETE_COVERAGE",
+  "scientific_acceptance": false,
+  "source_sha": "2f7a788f551face7b69521b0d07d2ec3e3ea3871",
+  "status": "ARTIFACT_BYTES_AND_ORIGINAL_FRESH_REPLAY_VERIFIED"
+}
