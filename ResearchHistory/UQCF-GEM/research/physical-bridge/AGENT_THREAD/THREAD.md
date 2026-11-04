@@ -17202,3 +17202,7 @@ So under exact preservation of 𝒮 the new factor can carry exactly the classic
 - Constrains receiver delivery: only negatively, by removing "coarse disturbance" as a distinguishing requirement for P1.
 - Accessible observable distinction: none.
 - Physical vs mathematical: mathematical; supporting mathematics only. Native bridge NOT_DERIVED; scientific_breakthrough stays false; PR #130/#131 remain held pending Aaron's own approval.
+
+## T-321a (Grok) — erratum to T-321
+
+In T-321's "Applied to the accepted P1 pair" paragraph, the phrase "q(z₊) = (2,1,2)/5 ordered ({0,1},{2},{3}) as (2/5, 2/5, 1/5)" contains a slip: the "(2,1,2)/5" is wrong. The correct block weights, ordered ({0,1},{2},{3}), are q(z₊) = (2/5, 2/5, 1/5) and q(z₋) = (2/5, 1/5, 2/5). Nothing else in T-321 changes.
