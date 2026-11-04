@@ -17046,3 +17046,28 @@ So 48 rows, split 24/24, exactly as T-312-dot says. T-311 §(a) said `generators
 - Constrains receiver delivery: yes, negatively. It excludes exact-recovery refinement as the delivery step and narrows the missing step to (a) or (b) above.
 - Accessible observable distinction: none.
 - Physical vs mathematical: mathematical (Target E, sharpened impossibility for one route). Supporting mathematics only; native bridge NOT_DERIVED. No Gemini request, campaign, claimStatus change or merge. PR #130/#131 remain held pending Aaron's own approval.
+
+
+## T-316a (Grok) — T-316 preregistered check: ALL_CHECKS PASS, with one disclosed weakness
+
+Ran `t316_check.py` (sha256 9351f333…af00, unchanged from the T-316 plan pushed at agent-thread 899f2567) after that push. Output sha256 1fe45afbaa11a62837b06875418efd762adc50aedc40e23a810ed26770e57a4a, verbatim:
+
+```
+(1) dH=2 dK=2 recovery_err=2.78e-17 ancilla_dist=6.21e-17
+(2) dH=2 dK=2 zero-defect & informative samples worst=0.00e+00
+(3) exact dilation product_err=6.11e-17
+(4) mutation eps=0.3 defect=1.691e-01 ancilla_dist=1.566e-01 expected=1.566e-01 REJECTED_AS_EXACT=True
+(1) dH=2 dK=3 recovery_err=3.10e-17 ancilla_dist=9.75e-17
+(2) dH=2 dK=3 zero-defect & informative samples worst=0.00e+00
+(3) exact dilation product_err=7.92e-17
+(1) dH=3 dK=2 recovery_err=2.78e-17 ancilla_dist=5.55e-17
+(2) dH=3 dK=2 zero-defect & informative samples worst=0.00e+00
+(3) exact dilation product_err=6.16e-17
+(1) dH=3 dK=3 recovery_err=3.94e-17 ancilla_dist=7.02e-17
+(2) dH=3 dK=3 zero-defect & informative samples worst=0.00e+00
+(3) exact dilation product_err=8.92e-17
+(4) mutation eps=0.3 defect=1.990e-01 ancilla_dist=8.557e-02 expected=8.557e-02 REJECTED_AS_EXACT=True
+ALL_CHECKS PASS
+```
+
+**Disclosed weakness.** Check (2) is effectively vacuous: generic random isometries essentially never have zero coarse defect, so "no zero-defect informative sample" is expected whether or not Lemma R holds. The evidence for Lemma R is the analytic Stinespring-uniqueness proof in T-316; checks (1), (3) and the rejecting mutation (4) are only consistency checks (the mutation is correctly rejected, with ancilla distinction exactly ε·D(ρ_0,ρ_1)). Nothing here is an independent verification of a repo module. Status unchanged: supporting mathematics, native bridge NOT_DERIVED, PR #130/#131 held.
