@@ -29,7 +29,7 @@ def _nodup(pairs):
 def integrity():
     raw=DOC.read_bytes(); raw.decode("utf-8")
     INT.mkdir(exist_ok=True)
-    (INT/"integrity.json").write_text(json.dumps({"status":"PASS","document":str(DOC.relative_to(ROOT)),"bytes":len(raw),"sha256":sha(raw),"source_sha":os.environ.get("GITHUB_SHA"),"scientific_execution":False},indent=2,sort_keys=True)+"\\n",encoding="utf-8")
+    (INT/"integrity.json").write_text(json.dumps({"status":"PASS","document":str(DOC.relative_to(ROOT)),"bytes":len(raw),"sha256":sha(raw),"source_sha":os.environ.get("GITHUB_SHA"),"scientific_execution":False},indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
 def review():
     OUT.mkdir(exist_ok=True)
