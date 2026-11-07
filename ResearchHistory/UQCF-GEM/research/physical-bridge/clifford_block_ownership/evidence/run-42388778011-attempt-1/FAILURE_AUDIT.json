@@ -1,0 +1,283 @@
+{
+  "artifacts": [
+    {
+      "extra": [],
+      "id": 13580607624,
+      "missing": [
+        "sources/.github/scripts/uqcf_clifford_owner.py",
+        "sources/.github/scripts/uqcf_clifford_owner_archive.py",
+        "sources/.github/workflows/uqcf-clifford-owner.yml"
+      ],
+      "name": "clifford-owner-verification-1",
+      "sha256": "f730cfe65c5a0bb3b4fda63fdbece3f9ceec96060ee72c0d5b65b92609105fdc"
+    },
+    {
+      "extra": [],
+      "id": 13580477279,
+      "missing": [],
+      "name": "clifford-owner-review-1",
+      "sha256": "cd9259f1ccf436b392b69b944ffa7a7d4f8cb38cbd89ece6bb117543d4614c34"
+    }
+  ],
+  "cause": "upload omitted three hidden-path source files; exact manifest validation rejected before Gemini request",
+  "jobs": [
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/128451727681",
+      "completed_at": "2026-11-07T15:59:12Z",
+      "conclusion": "success",
+      "created_at": "2026-11-07T15:56:21Z",
+      "head_branch": "gpt/clifford-block-ownership",
+      "head_sha": "dc6729e1f9f8ffc23dba9dbdcebf2058c044f4e4",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/42388778011/job/128451727681",
+      "id": 128451727681,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "verification",
+      "node_id": "CR_kwDORG4isM8AAAAd6FHRQQ",
+      "run_attempt": 1,
+      "run_id": 42388778011,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/42388778011",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000004825,
+      "runner_name": "GitHub Actions 1000004825",
+      "started_at": "2026-11-07T15:56:22Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-11-07T15:56:23Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-11-07T15:56:23Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:56:28Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "started_at": "2026-11-07T15:56:23Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:56:28Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 3,
+          "started_at": "2026-11-07T15:56:28Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:56:35Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install sympy==1.13.3 mpmath==1.3.0",
+          "number": 4,
+          "started_at": "2026-11-07T15:56:28Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:02Z",
+          "conclusion": "success",
+          "name": "Independent reconstruction, rejecting controls and inherited stack",
+          "number": 5,
+          "started_at": "2026-11-07T15:56:35Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:10Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "number": 6,
+          "started_at": "2026-11-07T15:59:02Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:10Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 11,
+          "started_at": "2026-11-07T15:59:10Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:11Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 12,
+          "started_at": "2026-11-07T15:59:10Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:11Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "started_at": "2026-11-07T15:59:11Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/128451727681",
+      "workflow_name": "Clifford block ownership verification and review"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/128452377060",
+      "completed_at": "2026-11-07T15:59:29Z",
+      "conclusion": "failure",
+      "created_at": "2026-11-07T15:59:12Z",
+      "head_branch": "gpt/clifford-block-ownership",
+      "head_sha": "dc6729e1f9f8ffc23dba9dbdcebf2058c044f4e4",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/42388778011/job/128452377060",
+      "id": 128452377060,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "review",
+      "node_id": "CR_kwDORG4isM8AAAAd6Fu55A",
+      "run_attempt": 1,
+      "run_id": 42388778011,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/42388778011",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000004826,
+      "runner_name": "GitHub Actions 1000004826",
+      "started_at": "2026-11-07T15:59:14Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-11-07T15:59:16Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-11-07T15:59:14Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:21Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "started_at": "2026-11-07T15:59:16Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:21Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 3,
+          "started_at": "2026-11-07T15:59:21Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:26Z",
+          "conclusion": "success",
+          "name": "Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+          "number": 4,
+          "started_at": "2026-11-07T15:59:21Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:27Z",
+          "conclusion": "failure",
+          "name": "Independent whole-argument Gemini review",
+          "number": 5,
+          "started_at": "2026-11-07T15:59:26Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:28Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "number": 6,
+          "started_at": "2026-11-07T15:59:27Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:28Z",
+          "conclusion": "skipped",
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 11,
+          "started_at": "2026-11-07T15:59:28Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:28Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 12,
+          "started_at": "2026-11-07T15:59:28Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-11-07T15:59:28Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "started_at": "2026-11-07T15:59:28Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/128452377060",
+      "workflow_name": "Clifford block ownership verification and review"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/128452444414",
+      "completed_at": "2026-11-07T15:59:30Z",
+      "conclusion": "skipped",
+      "created_at": "2026-11-07T15:59:30Z",
+      "head_branch": "gpt/clifford-block-ownership",
+      "head_sha": "dc6729e1f9f8ffc23dba9dbdcebf2058c044f4e4",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/42388778011/job/128452444414",
+      "id": 128452444414,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "publication",
+      "node_id": "CR_kwDORG4isM8AAAAd6FzA_g",
+      "run_attempt": 1,
+      "run_id": 42388778011,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/42388778011",
+      "runner_group_id": null,
+      "runner_group_name": null,
+      "runner_id": null,
+      "runner_name": null,
+      "started_at": "2026-11-07T15:59:30Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/128452444414",
+      "workflow_name": "Clifford block ownership verification and review"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/check-runs/128452444643",
+      "completed_at": "2026-11-07T15:59:30Z",
+      "conclusion": "skipped",
+      "created_at": "2026-11-07T15:59:30Z",
+      "head_branch": "gpt/clifford-block-ownership",
+      "head_sha": "dc6729e1f9f8ffc23dba9dbdcebf2058c044f4e4",
+      "html_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/42388778011/job/128452444643",
+      "id": 128452444643,
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "name": "archive",
+      "node_id": "CR_kwDORG4isM8AAAAd6FzB4w",
+      "run_attempt": 1,
+      "run_id": 42388778011,
+      "run_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/runs/42388778011",
+      "runner_group_id": null,
+      "runner_group_name": null,
+      "runner_id": null,
+      "runner_name": null,
+      "started_at": "2026-11-07T15:59:30Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/jobs/128452444643",
+      "workflow_name": "Clifford block ownership verification and review"
+    }
+  ],
+  "model_called": false,
+  "run_id": 42388778011,
+  "source_sha": "dc6729e1f9f8ffc23dba9dbdcebf2058c044f4e4",
+  "status": "PRESERVED_FAILURE"
+}

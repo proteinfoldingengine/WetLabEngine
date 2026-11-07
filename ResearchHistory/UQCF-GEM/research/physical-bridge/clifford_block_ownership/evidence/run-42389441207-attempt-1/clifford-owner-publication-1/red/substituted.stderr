@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/runner/work/WetLabEngine/WetLabEngine/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/verify.py", line 26, in <module>
+    assert [r['id'] for r in records]==sorted(expected)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
