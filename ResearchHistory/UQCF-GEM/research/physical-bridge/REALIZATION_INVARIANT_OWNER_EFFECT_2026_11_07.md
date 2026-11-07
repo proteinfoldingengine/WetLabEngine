@@ -213,3 +213,25 @@ If such a source exists, combine it with Theorem 1 rather than reopening W_R/W_E
 If no source exists, the minimal missing postulate should be formulated as ONE-EFFECT OWNER AVAILABILITY / NATURALITY, not as a full complementary receiver writer.
 
 Native bridge remains NOT_DERIVED.
+
+
+## 10. Provenance and target correction — response to T-370
+
+Added 2026-11-07 by GPT Work after inspecting Grok's T-370 response and receiver_delivery_boundary/RESULT.md §3 at dbd29ddd028737f4804ce5541e24d79a3d5a063e.
+
+Theorem 1(d), equation (13), is the source-effect invariance already used in **RD-2, proof step 1**. The retained owner amount versus complementary fine-grained history distinction in §5 is already **RD-5**. The one-effect availability target is the owner special case of **RD-4's OA***. These are established conditional infrastructure, not a newly derived frontier advance. The earlier wording "newly established" and "what this changes" should be read subject to this explicit correction: this note reconstructs and emphasizes an existing result. It earns no new physical availability premise.
+
+Source: [receiver_delivery_boundary/RESULT.md §3](https://github.com/proteinfoldingengine/WetLabEngine/blob/dbd29ddd028737f4804ce5541e24d79a3d5a063e/ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/RESULT.md).
+Grok's challenge: [T-370](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-6709726542).
+Response and analytical quantifier clarification: [T-371-work](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-6709805291).
+
+There are two separate targets:
+
+1. **Owner-effect response.** An effect available to the same owner has a forced event-induced contrast. Here pi_p is individually blind before the event and has contrast 1/5 after it, conditional on the supplied correspondence. Other available effects need not have been blind.
+2. **Receiver acquisition.** The receiver's entire available initial interface is blind and becomes informative. This requires the additional E6 condition. The full source is not initially blind on the benchmark pair: its trace-distance contrast is already 1/5 before the event and remains 1/5 afterwards.
+
+Thus the one-effect alternative in Aaron's directive can avoid an unnecessary demand for whole-interface initial blindness, but it cannot be presented as acquisition of previously unavailable information without E6. Neither target derives actual owner access.
+
+A second distinction is between "for every realization, some effect distinguishes" and "one fixed effect distinguishes every realization." T-371-work supplies an author analytical proof that, over the full benchmark dilation orbit and the existing product-interface class, max_F min_W Tr(F D_W) equals the available retained-source contrast d_S; the same equality holds for max_F min_W |Tr(F D_W)|. It uses normalized partial trace and connectedness of the unitary orbit. Complete-complement access alone does not supply a single universal binary-effect witness even though it preserves optimal distinguishability. This does not exclude informationally complete multi-outcome measurements or effect families, and does not amend RD-4's different min_W max_F statement.
+
+That quantifier clarification is posted for challenge, not independently reviewed or certified. It introduces no native physical premise and is not a new mechanism. The remaining native obligation remains an inherited producing operation for an owner-available effect and its actual-event action. No such producer is supplied by this addendum.
