@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/uqcf_scratch/t269/t269_verify_np.py", line 141, in <module>
+    pa['B']['overwrite'] = analyze('B', 'OW')
+                           ~~~~~~~^^^^^^^^^^^
+  File "/workspace/uqcf_scratch/t269/t269_verify_np.py", line 114, in analyze
+    O = np.allclose(choi(SE(V12), n), choi(SE(V21), n), atol=tol)
+                    ~~~~^^^^^^^^^^^^
+  File "/workspace/uqcf_scratch/t269/t269_verify_np.py", line 18, in choi
+    J += np.kron(E, ch(E))
+ValueError: operands could not be broadcast together with shapes (256,256) (768,768) (256,256) 
