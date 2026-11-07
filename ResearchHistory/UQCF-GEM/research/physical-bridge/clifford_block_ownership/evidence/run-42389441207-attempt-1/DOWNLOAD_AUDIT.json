@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "api_digest": "sha256:60a19d00b09ac44867f1b4e084fadee809ca6682cb83a9ebbfe11a6ae45ed701",
+      "download_sha256": "60a19d00b09ac44867f1b4e084fadee809ca6682cb83a9ebbfe11a6ae45ed701",
+      "id": 13581102214,
+      "member_count": 54,
+      "name": "clifford-owner-publication-1",
+      "zip_bytes": 342924
+    },
+    {
+      "api_digest": "sha256:4e768f1e8780a628765a1270b40e31d9a0a549e12122cab19f8c9ec80c78a639",
+      "download_sha256": "4e768f1e8780a628765a1270b40e31d9a0a549e12122cab19f8c9ec80c78a639",
+      "id": 13580658816,
+      "member_count": 17,
+      "name": "clifford-owner-review-1",
+      "zip_bytes": 93320
+    },
+    {
+      "api_digest": "sha256:dcc31fd9d25a8f3c637dd4099c07cb38e81d5f8a6d0d9b45296ff212188cbcf0",
+      "download_sha256": "dcc31fd9d25a8f3c637dd4099c07cb38e81d5f8a6d0d9b45296ff212188cbcf0",
+      "id": 13580248894,
+      "member_count": 58,
+      "name": "clifford-owner-verification-1",
+      "zip_bytes": 239379324
+    }
+  ],
+  "attempt": "1",
+  "checkout_sha": "669a7a7fa46769f60e4035da41b1546a694d46e0",
+  "completed_job_logs": [
+    {
+      "bytes": 28784,
+      "conclusion": "success",
+      "file": "job-128453711157.log",
+      "id": 128453711157,
+      "name": "verification",
+      "sha256": "8c623e719f19e5103aa4da7723ea4b33172ad6436067cde1cd59d4f0205d3abc"
+    },
+    {
+      "bytes": 28013,
+      "conclusion": "success",
+      "file": "job-128454332262.log",
+      "id": 128454332262,
+      "name": "review",
+      "sha256": "b66d55789343434271784181a09de94ff4b731147c21dae62727fab469b7227b"
+    },
+    {
+      "bytes": 32942,
+      "conclusion": "success",
+      "file": "job-128454683295.log",
+      "id": 128454683295,
+      "name": "publication",
+      "sha256": "5fdd1a78ee017a7ff756f40d5fe248cf3ccfa572f4bd0e3757390791f33042a8"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "run_id": "42389441207",
+  "status": "PASS",
+  "workflow_sha": "669a7a7fa46769f60e4035da41b1546a694d46e0"
+}
