@@ -46,6 +46,7 @@ jobs:
           path: evidence
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
   review:
     needs: verification
     runs-on: ubuntu-24.04
@@ -81,6 +82,7 @@ jobs:
           path: reviewed
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
   publication:
     needs: [verification, review]
     runs-on: ubuntu-24.04
@@ -121,6 +123,7 @@ jobs:
           path: published
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
   archive:
     needs: publication
     runs-on: ubuntu-24.04
@@ -159,3 +162,7 @@ jobs:
           git add ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence
           git commit -m "Archive Clifford block ownership run $GITHUB_RUN_ID"
           git push origin "HEAD:$REVIEW_BRANCH"
+          git fetch origin "$REVIEW_BRANCH"
+          test "$(git rev-parse HEAD)" = "$(git rev-parse FETCH_HEAD)"
+          python .github/scripts/uqcf_clifford_owner_archive.py readback FETCH_HEAD
+
