@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETE",
+  "verdict": "ACCEPTED",
+  "native_bridge": "NOT_DERIVED",
+  "scientific_breakthrough": false,
+  "run_id": 42420884489,
+  "attempt": 1,
+  "reviewed_commit": "3fb80b3fefef37ddfc4f03877aad994e870b4cec",
+  "archive_commit": "9614163e8af85570393a2ea3257a4732834e3efe",
+  "jobs": [
+    {
+      "id": 128548862352,
+      "name": "verification",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128549412949,
+      "name": "review",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128549646649,
+      "name": "publication",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128549860251,
+      "name": "archive",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "archive_log": {
+    "file": "job-128549860251.log",
+    "encoding": "UTF-8",
+    "bytes": 43863,
+    "sha256": "445b862bf203c79c9d0bbca92ecd12dc34f99658f17b7a762454223a1faffc14"
+  },
+  "raw_review_immutable_readback": "PASS",
+  "adjudication": "../../ADJUDICATION.md",
+  "evidence_directory": "../../evidence/run-42420884489-attempt-1"
+}
