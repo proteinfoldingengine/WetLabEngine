@@ -1,0 +1,3 @@
+pipeline_id,pipeline_family,null_id,null_family,preserved_statistics,broken_structure,expected_failure_mode,surface_statistics_verified,faithfulness_broken_verified
+P_VALID_GEN,valid,NONE,valid,n/a,none,n/a,True,False
+P_NGEN_SHUFFLE,N_generator_shuffle,NGEN,N_generator_shuffle,A_pq norm scale|node count|edge topology|loop topology|event counts,generator component orientation|product/O3/H4/provenance alignment,faithfulness/admissibility failure before identity promotion,True,True

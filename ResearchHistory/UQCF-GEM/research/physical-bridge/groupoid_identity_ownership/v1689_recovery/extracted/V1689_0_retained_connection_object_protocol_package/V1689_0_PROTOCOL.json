@@ -1,0 +1,88 @@
+{
+  "version": "V1689.0",
+  "title": "Retained Connection Object Protocol",
+  "verdict": "DERIVATION_PROTOCOL_FROZEN_NO_REGRESSION_TARGET",
+  "branch_reset": "from regression target fitting to retained connection identity testing",
+  "core_statement": "The missing bridge is not a better holonomy scalar. It is the correct retained curvature object of a generated-algebra connection, plus a source-balanced compatibility identity.",
+  "local_generated_algebra": {
+    "symbol": "G_p = <B_p, O3_p, H4_perp_p, S_p, Pi_p, op_plus_p>",
+    "components": {
+      "B_p": "retained branch generators",
+      "O3_p": "third-order associator obstruction",
+      "H4_perp_p": "fourth-order residual outside span(B_p, O3_p)",
+      "S_p": "source/access/divergence state",
+      "Pi_p": "provenance/pruning-order ledger",
+      "op_plus_p": "native retained recombination product"
+    },
+    "principle": "G_p is not just a vector space; it is a generated retained recombination algebra with provenance order."
+  },
+  "admissible_transport": {
+    "symbol": "T_pq : G_p -> G_q",
+    "required_faithfulness_conditions": [
+      "branch faithfulness: T_pq(B_p) \u2248 B_q",
+      "product faithfulness: T_pq(x op_plus_p y) \u2248 T_pq(x) op_plus_q T_pq(y)",
+      "L3 associator faithfulness: T_pq(O3_p) \u2248 O3_q",
+      "L4 residual faithfulness: T_pq(H4_perp_p) \u2248 H4_perp_q",
+      "source/provenance faithfulness: T_pq(Pi_p) respects pruning-order dependencies in Pi_q",
+      "order-arrow faithfulness: T_pq must not reverse admissible retained-order direction"
+    ],
+    "inadmissible": [
+      "Kabsch/Procrustes transport as driver",
+      "Gramian/vector alignment as connection law",
+      "branch-only transport when product/O3/H4 preservation fails",
+      "scalar holonomy as primary curvature object"
+    ]
+  },
+  "curvature_object": {
+    "loop": "C = (p0 -> p1 -> ... -> pn -> p0)",
+    "loop_transport": "Omega_C,p0 = T_pn,p0 o ... o T_p1,p2 o T_p0,p1",
+    "curvature": "R_Gamma(C)_p0 = Omega_C,p0 - Id_Gp0",
+    "type": "basepoint-normalized generated-algebra endomorphism defect",
+    "invariant_form": "[R_Gamma(C)_p0] in End_alg(G_p0) / Aut_alg(G_p0)",
+    "reason": "Curvature must be considered modulo admissible generated-algebra automorphisms, not arbitrary vector frame rotations."
+  },
+  "covariant_comparison": {
+    "problem": "R_i and R_j live in End(G_i) and End(G_j), so raw subtraction is invalid.",
+    "comparison": "Comp_{j->i}(R_j), defined by admissible retained transport",
+    "invertible_case": "Comp_{j->i}(R_j) = T_ji R_j T_ij",
+    "directed_case": "Comp_{j->i}(R_j) = Pi_i o T_{j->i} o R_j o T_{i->j}^{admissible}",
+    "covariant_derivative": "(D_Gamma R_Gamma)_{ij} = Comp_{j->i}(R_j) - R_i"
+  },
+  "source_balanced_identity": {
+    "identity": "D_Gamma R_Gamma = J_P",
+    "residual": "E_Gamma = D_Gamma R_Gamma - J_P",
+    "J_P": "provenance/source/pruning-order current across the comparison boundary",
+    "source_free_special_case": "if J_P = 0, then D_Gamma R_Gamma = 0",
+    "principle": "A retained recombination system is not assumed source-free; source-balanced closure precedes source-free closure."
+  },
+  "killer_null": {
+    "name": "N_alg_shuffle",
+    "preserve": [
+      "source/access/divergence marginals",
+      "O3 norm distribution",
+      "H4 norm distribution",
+      "cycle length distribution",
+      "local graph degree distribution",
+      "cycle defect histogram"
+    ],
+    "break": [
+      "product alignment across transports",
+      "O3 associator transport alignment",
+      "H4_perp residual transport alignment",
+      "provenance/pruning-order alignment"
+    ],
+    "pass_condition": "valid Gamma_R gives small/structured/convergent ||D_Gamma R_Gamma - J_P|| while N_alg_shuffle fails despite preserved surface statistics",
+    "kill_condition": "if N_alg_shuffle also satisfies the identity, the identity is construction artifact rather than retained connection law"
+  },
+  "governance_freeze": [
+    "dashboard metrics are visualization only",
+    "generic scalar holonomy is diagnostic only",
+    "toy weak_target is banned as law evidence",
+    "construction recovery is not law discovery",
+    "target/predictor provenance separation is mandatory",
+    "generated-algebra faithfulness is mandatory",
+    "source-balanced closure precedes source-free closure",
+    "no regression rescue without a first-principles identity"
+  ],
+  "next_allowed_execution": "Only after a concrete Gamma_R emitter produces G_p objects, admissible T_pq faithfulness defects, R_Gamma loop endomorphisms, J_P currents, and N_alg_shuffle nulls."
+}

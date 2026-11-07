@@ -1,0 +1,93 @@
+{
+  "version": "V1689.9",
+  "title": "Derivation of rho_P from Provenance Event Action on Generated Algebra",
+  "verdict": "RHO_P_EVENT_ACTION_DERIVATION_FROZEN_NO_EXECUTION",
+  "problem_from_V1689_8": "Arbitrary current-to-endomorphism maps leave high E_Gamma and create scale mismatch. rho_P must be derived from how provenance/source events act on G_p.",
+  "core_rule": "rho_P is not a fitted embedding. rho_P is the linearized endomorphism induced by ledger events acting on the generated retained algebra G_p.",
+  "objects": {
+    "G_p": "<B_p, O3_p, H4_perp_p, S_p, Pi_p, op_plus_p>",
+    "event": "e in provenance ledger Pi_p",
+    "event_action": "A_e : G_p -> G_p'",
+    "rho_e": "rho_e = dA_e|_{G_p}, the infinitesimal/linearized endomorphism action of event e on G_p",
+    "rho_P_J": "rho_P(J_P,ij) = signed_sum_{e crossing B_ij} magnitude(e) * rho_e"
+  },
+  "event_action_types": {
+    "source_injection": {
+      "action": "adds or strengthens a source generator s_e in S_p and modifies branch availability",
+      "endomorphism": "rho_source(e) = projector onto source-affected branch/source subspace",
+      "sign": "+ for injection, - for removal"
+    },
+    "branch_birth": {
+      "action": "adds a generator b_e to B_p",
+      "endomorphism": "rho_birth(e) = rank-one insertion/projection into new generator direction",
+      "sign": "+"
+    },
+    "branch_prune": {
+      "action": "removes or suppresses a generator from B_p",
+      "endomorphism": "rho_prune(e) = negative projector on pruned generator direction",
+      "sign": "-"
+    },
+    "dependency_addition": {
+      "action": "adds a retained-order dependency edge in Pi_p",
+      "endomorphism": "rho_dep_add(e) = incidence action on dependency-supported branch pair",
+      "sign": "+"
+    },
+    "dependency_break": {
+      "action": "breaks a dependency relation in Pi_p",
+      "endomorphism": "rho_dep_break(e) = negative incidence action on broken dependency pair",
+      "sign": "-"
+    },
+    "repair_event": {
+      "action": "restores algebra faithfulness by reducing product/O3/H4 defects",
+      "endomorphism": "rho_repair(e) = projector onto repaired defect subspace",
+      "sign": "+"
+    },
+    "closure_event": {
+      "action": "closes a retained dependency or local recombination relation",
+      "endomorphism": "rho_closure(e) = stabilizer action on closed subspace",
+      "sign": "+"
+    },
+    "order_boundary_crossing": {
+      "action": "moves retained-order dependency across comparison boundary",
+      "endomorphism": "rho_order(e) = signed incidence operator respecting ordered_index",
+      "sign": "orientation of crossing"
+    },
+    "provenance_relabel": {
+      "action": "changes label while preserving or breaking lineage",
+      "endomorphism": "rho_label(e) = conjugation/permutation action on provenance-labeled subspace",
+      "sign": "+ if lineage conserved, - if lineage broken"
+    }
+  },
+  "mathematical_definition": {
+    "single_event": "rho_e = Proj_target(e) * sigma(e), where Proj_target(e) is the algebra subspace affected by event e and sigma(e) is event orientation/sign.",
+    "boundary_current": "rho_P(J_P,ij) = \u03a3_{e \u2208 Events(B_ij)} sigma(e) magnitude(e) rho_e",
+    "normalization": "rho_P is normalized by boundary algebra scale ||G_i||_alg, not by E_Gamma or D_Gamma R_Gamma.",
+    "forbidden": "rho_P may not depend on R_Gamma, D_Gamma R_Gamma, E_Gamma, weak_target, or fitted coefficients."
+  },
+  "subspace_construction": {
+    "branch_projector": "P_B(k) = b_k b_k^T / (||b_k||^2 + eps)",
+    "source_projector": "P_S(e) derived from source-affected branch/source vector",
+    "dependency_incidence": "I_dep(a,b) = (b_a - b_b)(b_a - b_b)^T / ||b_a - b_b||^2",
+    "O3_projector": "P_O3 = O3 O3^T / (||O3||^2 + eps)",
+    "H4_projector": "P_H4 = H4_perp H4_perp^T / (||H4_perp||^2 + eps)",
+    "repair_projector": "P_repair can act on product/O3/H4 defect subspaces, but must be constructed before E_Gamma."
+  },
+  "claim_condition": {
+    "identity": "D_Gamma R_Gamma = rho_P(J_P)",
+    "residual": "E_Gamma = D_Gamma R_Gamma - rho_P(J_P)",
+    "validity": "E_Gamma may be tested only after rho_P is generated from event actions and null pipelines regenerate full ledgers upstream."
+  },
+  "killer_nulls_specific_to_rho": {
+    "N_event_action_shuffle": "preserve event counts/magnitudes but assign events to wrong affected algebra subspaces; should break rho_P alignment.",
+    "N_order_reverse": "reverse event orientation sigma(e); should break source-balanced identity in active-order regimes.",
+    "N_projector_shuffle": "preserve projector norms but shuffle branch/O3/H4 target subspaces; should break identity while preserving scalar distributions.",
+    "N_current_zero": "zero rho_P in active-source regimes; should fail if source-balanced closure is real."
+  },
+  "execution_preconditions_for_V1689_10": [
+    "Each provenance event must declare affected_subspace_id.",
+    "Each affected subspace must be constructible from B_p, O3_p, H4_perp_p, S_p, Pi_p before curvature residuals.",
+    "rho_P table must include event-level rho_e terms before aggregation.",
+    "Null pipelines must regenerate event-action maps upstream."
+  ],
+  "claim_boundary": "Derivation protocol only; no validation run and no law claim."
+}

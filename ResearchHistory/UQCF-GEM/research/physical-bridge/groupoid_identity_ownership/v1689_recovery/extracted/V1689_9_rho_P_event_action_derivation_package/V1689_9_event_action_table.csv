@@ -1,0 +1,8 @@
+event_type,rho_e_action,affected_subspace
+source_injection/removal,± source projector P_S(e),source-affected branch/source subspace
+branch_birth/prune,± branch projector P_B(k),branch generator direction
+dependency_addition/break,"± incidence projector I_dep(a,b)",dependency-supported branch pair
+repair_event,+ repair defect projector,product/O3/H4 defect subspace
+closure_event,+ stabilizer action,closed retained relation subspace
+order_boundary_crossing,σ_order I_order,retained-order incidence subspace
+provenance_relabel,± label projector/permutation,provenance-labeled subspace

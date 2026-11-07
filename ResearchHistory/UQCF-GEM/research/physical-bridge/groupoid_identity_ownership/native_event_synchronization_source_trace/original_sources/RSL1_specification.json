@@ -1,0 +1,69 @@
+{
+  "object": "RSL-1",
+  "name": "Retained-State Update Law v1",
+  "status": "CLOSED_AS_MINIMAL_RETAINED_ACTION_LEDGER_FAMILY__OPERATOR_COUPLING_OPEN",
+  "parent_grammar": "RAG-0",
+  "purpose": "Define the compact retained-state update object forced by RAG-0 finite-capacity conserved-current law, ordered composition, and target-blind action residuals.",
+  "claim_boundary": {
+    "closed": [
+      "minimal retained finite-capacity action ledger family",
+      "compact Markov update form under ordered composition",
+      "target-blind local action residual from declared finite-capacity law family"
+    ],
+    "open": [
+      "operator-active retained-provenance coupling",
+      "future capacity/conductance update law",
+      "simulation proto-gravity certification",
+      "ADM / Einstein bridge"
+    ]
+  },
+  "types": {
+    "retained_state": "rho_n in R = compact edge/local retained action state at ordered slice n",
+    "finite_capacity_law": "d f_n = b_n ; f_n = c_n \u2299 sigma((a_n \u2299 d*phi_n)/c_n)",
+    "pressure": "x_n = (a_n \u2299 d*phi_n)/c_n",
+    "sigma_potential": "A_sigma(x)=integral_0^x sigma(u) du",
+    "local_action_density": "L_sigma(x)=x*sigma(x)-A_sigma(x)",
+    "retained_increment": "ell_n = c_n \u2299 L_sigma(x_n)"
+  },
+  "law_family": {
+    "RSL1_update": "rho_{n+1} = rho_n \u2295 P_G(ell_n)",
+    "minimal_vector_gauge": "rho_{n+1} = rho_n + P_G(ell_n)",
+    "P_G": "gauge / representation projection preserving admissible retained-order equivalence",
+    "ell_n": "c_n \u2299 [x_n sigma(x_n)-A_sigma(x_n)]",
+    "composition": "rho_{n+2} = rho_n + P_G(ell_n) + P_G(ell_{n+1})",
+    "no_target_leakage": "ell_n is computed from current ordered slice before future target scoring"
+  },
+  "necessity_statement": {
+    "theorem": "Under RAG-0, if the retained state is compact, target-blind, generated from local finite-capacity action residuals, and compositional under ordered-slice concatenation, then the update must be a monoid homomorphism from slice increments into retained state. In the minimal vector representation, this is additive up to gauge.",
+    "what_is_unique": "the additive/monoid update form and local finite-capacity action-residual family",
+    "what_is_not_unique": "choice of sigma within Sigma, projection gauge P_G, repair/coupling law from rho to future a/c/operator"
+  },
+  "non_smuggling_controls": [
+    "no metric / curvature / gravity primitive",
+    "no spatial coordinate primitive",
+    "no target K_ab",
+    "no future operator",
+    "no learned latent/RNN/lookup table",
+    "no target-indexed residual projector",
+    "rho update computed before target future transport solve"
+  ],
+  "why_L_sigma": {
+    "origin": "convex action potential associated with finite-capacity constitutive law sigma",
+    "stationarity": "finite-capacity flow solves conservation-compatible stationarity of declared action",
+    "nonlinearity_measure": "L_sigma is zero at zero pressure and increases with finite-capacity stress under monotone sigma",
+    "target_blind": "depends only on current slice pressure x_n and declared sigma"
+  },
+  "open_next_object": {
+    "name": "ROC-1 retained-operator coupling law",
+    "required": "derive how rho_n lawfully modifies future operator/capacity/conductance/accessibility without smuggling provenance force",
+    "must_pass": [
+      "inside RAG-0 grammar",
+      "target-blind",
+      "composition closure",
+      "prequential heldout ordered-slice prediction",
+      "generator-blind worlds",
+      "separating-probe identifiability",
+      "equal-bit latent controls"
+    ]
+  }
+}
