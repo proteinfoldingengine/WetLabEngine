@@ -1,0 +1,29 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The theorem applies to a single fixed binary effect and does not constrain adaptive measurements or multi-outcome informationally complete POVMs.",
+    "The result relies on the full unitary orbit of the environment K; restricted realization sets that are disconnected might not satisfy the sign reversal argument.",
+    "The physical identification of the receiver and the event-induced response remain supplied assumptions, not natively derived."
+  ],
+  "reconstruction": [
+    "The document defines V_signed = max_F min_W Tr(F D_W) and V_abs = max_F min_W |Tr(F D_W)| for F in a product interface A = A_S tensor B(K_A) tensor I_{K_B}.",
+    "Claim 1 establishes V_signed = d_S. The lower bound is achieved by choosing F = E tensor I_K, which gives Tr(F D_W) = Tr(E C(Delta)) independent of W. The upper bound is proven by twirling F over the compact unitary group U(K). The twirled operator E_bar = Tr_K(F)/dim(K) is shown to be a valid effect in A_S, yielding min_W Tr(F D_W) <= Tr(E_bar C(Delta)) <= d_S.",
+    "Claim 2 establishes V_abs = d_S. It uses the continuity of g(U) = Tr(F D_{W_U}) over the connected compact group U(K). If g(U) changes sign, it must cross zero, giving a minimum absolute value of 0 <= d_S. If it has constant sign, the bound from Claim 1 applies directly (if positive) or to the complement I-F (if negative).",
+    "The 1/5 benchmark is verified: for A_S = C I_S and full K access, d_S = 0, so V_signed = V_abs = 0. However, the adaptive contrast V_adaptive = min_W max_F Tr(F D_W) is 1/5, demonstrating that a single fixed effect can be blind even when the complete complement retains a trace distance of 1/5.",
+    "The derivation correctly distinguishes between the fixed-effect minimax order (max_F min_W) and the adaptive minimax order (min_W max_F) used in RD-4.",
+    "The physical scope is explicitly bounded: actual event occurrence is accepted input, and the theorem does not claim native derivation of the interface, the unitary orbit, or the physical availability of effects."
+  ],
+  "constructive_analysis": [
+    "The mathematical proof is rigorous and correctly handles all quantifiers without relying on illicit minimax swaps.",
+    "The use of the normalized partial trace E_bar = Tr_K(F)/dim(K) correctly maps the product interface A into A_S, preserving positivity and unitality even for noncommutative A_S.",
+    "The connectedness of U(K) is a crucial and correctly applied topological property that ensures the Intermediate Value Theorem holds for the sign reversal argument.",
+    "The distinction between output contrast and event-induced response is sharply maintained, correctly noting that one-effect blindness does not equate to whole-interface initial blindness (E6).",
+    "The edge case d_S = 0 is naturally absorbed by the absolute value argument without requiring separate handling."
+  ],
+  "contribution_assessment": "The document provides a mathematically sound and rigorously scoped proof that a single fixed binary effect cannot guarantee a positive contrast across the full unitary orbit unless the source interface itself provides that contrast. It successfully separates the fixed-effect quantifier order from the adaptive order, clarifying the physical bridge requirements.",
+  "next_native_obligation": "Establish a native derivation for the physical identification of the receiver's accessible interface and the specific realization W, or prove a native constraint that breaks the full unitary orbit.",
+  "native_bridge_status": "NOT_DERIVED"
+}

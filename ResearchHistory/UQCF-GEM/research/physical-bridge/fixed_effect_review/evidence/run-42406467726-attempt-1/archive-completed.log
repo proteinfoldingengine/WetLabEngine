@@ -1,0 +1,409 @@
+﻿2026-11-07T19:34:22.5054613Z Current runner version: '2.338.2'
+2026-11-07T19:34:22.5089823Z ##[group]Runner Image Provisioner
+2026-11-07T19:34:22.5091612Z Hosted Compute Agent
+2026-11-07T19:34:22.5092680Z Version: 20261028.624
+2026-11-07T19:34:22.5094018Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-07T19:34:22.5095291Z Build Date: 2026-10-28T21:51:42Z
+2026-11-07T19:34:22.5096917Z Worker ID: {714f1318-8410-4e32-877a-9d6a583bc140}
+2026-11-07T19:34:22.5098269Z Region: eastus2
+2026-11-07T19:34:22.5099233Z Cloud: Azure
+2026-11-07T19:34:22.5100413Z ##[endgroup]
+2026-11-07T19:34:22.5102670Z ##[group]Operating System
+2026-11-07T19:34:22.5103772Z Ubuntu
+2026-11-07T19:34:22.5104874Z 24.04.5
+2026-11-07T19:34:22.5105755Z LTS
+2026-11-07T19:34:22.5107146Z ##[endgroup]
+2026-11-07T19:34:22.5108215Z ##[group]Runner Image
+2026-11-07T19:34:22.5110097Z Image: ubuntu-24.04
+2026-11-07T19:34:22.5111530Z Version: 20261101.360.1
+2026-11-07T19:34:22.5113788Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-07T19:34:22.5117335Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-07T19:34:22.5119164Z ##[endgroup]
+2026-11-07T19:34:22.5121535Z ##[group]GITHUB_TOKEN Permissions
+2026-11-07T19:34:22.5124626Z Actions: read
+2026-11-07T19:34:22.5125827Z Contents: write
+2026-11-07T19:34:22.5127118Z Metadata: read
+2026-11-07T19:34:22.5128141Z ##[endgroup]
+2026-11-07T19:34:22.5131549Z Secret source: Actions
+2026-11-07T19:34:22.5133271Z Cache mode: write
+2026-11-07T19:34:22.5134969Z Prepare workflow directory
+2026-11-07T19:34:22.5872833Z Prepare all required actions
+2026-11-07T19:34:22.5946565Z Getting action download info
+2026-11-07T19:34:22.7849445Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-07T19:34:22.8910833Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-07T19:34:23.0656882Z Complete job name: archive
+2026-11-07T19:34:23.1467145Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-07T19:34:23.1468250Z with:
+2026-11-07T19:34:23.1468744Z   ref: 4e8d52aa8e1b6bb39a0b98a4438712141257801c
+2026-11-07T19:34:23.1469347Z   fetch-depth: 20
+2026-11-07T19:34:23.1471801Z   sparse-checkout: .github
+ResearchHistory/UQCF-GEM/foundational-closure-verification
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent
+ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review
+
+2026-11-07T19:34:23.1474411Z   repository: proteinfoldingengine/WetLabEngine
+2026-11-07T19:34:23.1478643Z   token: ***
+2026-11-07T19:34:23.1479091Z   ssh-strict: true
+2026-11-07T19:34:23.1479535Z   ssh-user: git
+2026-11-07T19:34:23.1479985Z   persist-credentials: true
+2026-11-07T19:34:23.1480481Z   clean: true
+2026-11-07T19:34:23.1480979Z   sparse-checkout-cone-mode: true
+2026-11-07T19:34:23.1481510Z   fetch-tags: false
+2026-11-07T19:34:23.1481963Z   show-progress: true
+2026-11-07T19:34:23.1482763Z   lfs: false
+2026-11-07T19:34:23.1483203Z   submodules: false
+2026-11-07T19:34:23.1483656Z   set-safe-directory: true
+2026-11-07T19:34:23.1484174Z   allow-unsafe-pr-checkout: false
+2026-11-07T19:34:23.1485007Z env:
+2026-11-07T19:34:23.1485549Z   UQCF_WORKFLOW_SHA: 4e8d52aa8e1b6bb39a0b98a4438712141257801c
+2026-11-07T19:34:23.1486530Z ##[endgroup]
+2026-11-07T19:34:23.4038352Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-11-07T19:34:23.4041264Z ##[group]Getting Git version info
+2026-11-07T19:34:23.4042616Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-07T19:34:23.4044528Z [command]/usr/bin/git version
+2026-11-07T19:34:23.4125174Z git version 2.56.0
+2026-11-07T19:34:23.4147282Z ##[endgroup]
+2026-11-07T19:34:23.4162057Z Temporarily overriding HOME='/home/runner/work/_temp/af7d14e5-4b6c-4337-b4b8-085ac9f24962' before making global git config changes
+2026-11-07T19:34:23.4165150Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T19:34:23.4167614Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-07T19:34:23.4238742Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-07T19:34:23.4242456Z ##[group]Initializing the repository
+2026-11-07T19:34:23.4246742Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-07T19:34:23.4360546Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-07T19:34:23.4362594Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-07T19:34:23.4363704Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-07T19:34:23.4364594Z hint: call:
+2026-11-07T19:34:23.4365042Z hint:
+2026-11-07T19:34:23.4365617Z hint: 	git config --global init.defaultBranch <name>
+2026-11-07T19:34:23.4366743Z hint:
+2026-11-07T19:34:23.4367519Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-07T19:34:23.4368605Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-07T19:34:23.4369462Z hint:
+2026-11-07T19:34:23.4369921Z hint: 	git branch -m <name>
+2026-11-07T19:34:23.4370453Z hint:
+2026-11-07T19:34:23.4371170Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-07T19:34:23.4383745Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-11-07T19:34:23.4397614Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T19:34:23.4456642Z ##[endgroup]
+2026-11-07T19:34:23.4458191Z ##[group]Disabling automatic garbage collection
+2026-11-07T19:34:23.4463157Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-07T19:34:23.4498435Z ##[endgroup]
+2026-11-07T19:34:23.4500101Z ##[group]Setting up auth
+2026-11-07T19:34:23.4507013Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T19:34:23.4547567Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T19:34:23.4980786Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T19:34:23.5026875Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T19:34:23.5290408Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T19:34:23.5338164Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T19:34:23.5614504Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-07T19:34:23.5672183Z ##[endgroup]
+2026-11-07T19:34:23.5691867Z ##[group]Fetching the repository
+2026-11-07T19:34:23.5693462Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=20 origin 4e8d52aa8e1b6bb39a0b98a4438712141257801c
+2026-11-07T19:34:23.8499029Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T19:34:23.8501155Z  * branch            4e8d52aa8e1b6bb39a0b98a4438712141257801c -> FETCH_HEAD
+2026-11-07T19:34:23.8505456Z ##[endgroup]
+2026-11-07T19:34:23.8507702Z ##[group]Determining the checkout info
+2026-11-07T19:34:23.8509990Z ##[endgroup]
+2026-11-07T19:34:23.8511928Z ##[group]Setting up sparse checkout
+2026-11-07T19:34:23.8522009Z [command]/usr/bin/git sparse-checkout set .github ResearchHistory/UQCF-GEM/foundational-closure-verification ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review
+2026-11-07T19:34:23.8584311Z ##[endgroup]
+2026-11-07T19:34:23.8586571Z ##[group]Checking out the ref
+2026-11-07T19:34:23.8596192Z [command]/usr/bin/git checkout --progress --force 4e8d52aa8e1b6bb39a0b98a4438712141257801c
+2026-11-07T19:34:26.6428756Z Updating files:   0% (1/2295)
+2026-11-07T19:34:26.6444168Z Updating files:   1% (23/2295)
+2026-11-07T19:34:26.6462572Z Updating files:   2% (46/2295)
+2026-11-07T19:34:26.6476874Z Updating files:   3% (69/2295)
+2026-11-07T19:34:26.6493550Z Updating files:   4% (92/2295)
+2026-11-07T19:34:26.6512641Z Updating files:   5% (115/2295)
+2026-11-07T19:34:26.6525081Z Updating files:   6% (138/2295)
+2026-11-07T19:34:26.6546521Z Updating files:   7% (161/2295)
+2026-11-07T19:34:26.6563256Z Updating files:   8% (184/2295)
+2026-11-07T19:34:26.6582474Z Updating files:   9% (207/2295)
+2026-11-07T19:34:26.6602877Z Updating files:  10% (230/2295)
+2026-11-07T19:34:26.6613529Z Updating files:  11% (253/2295)
+2026-11-07T19:34:26.6626203Z Updating files:  12% (276/2295)
+2026-11-07T19:34:26.6635311Z Updating files:  13% (299/2295)
+2026-11-07T19:34:26.6651110Z Updating files:  14% (322/2295)
+2026-11-07T19:34:26.6662215Z Updating files:  15% (345/2295)
+2026-11-07T19:34:26.6673284Z Updating files:  16% (368/2295)
+2026-11-07T19:34:26.6685196Z Updating files:  17% (391/2295)
+2026-11-07T19:34:26.6694416Z Updating files:  18% (414/2295)
+2026-11-07T19:34:26.6704340Z Updating files:  19% (437/2295)
+2026-11-07T19:34:26.6714186Z Updating files:  20% (459/2295)
+2026-11-07T19:34:26.6723296Z Updating files:  21% (482/2295)
+2026-11-07T19:34:26.6736785Z Updating files:  22% (505/2295)
+2026-11-07T19:34:26.6748400Z Updating files:  23% (528/2295)
+2026-11-07T19:34:26.6760219Z Updating files:  24% (551/2295)
+2026-11-07T19:34:26.6772627Z Updating files:  25% (574/2295)
+2026-11-07T19:34:26.6783635Z Updating files:  26% (597/2295)
+2026-11-07T19:34:26.6797883Z Updating files:  27% (620/2295)
+2026-11-07T19:34:26.6809138Z Updating files:  28% (643/2295)
+2026-11-07T19:34:26.6820508Z Updating files:  29% (666/2295)
+2026-11-07T19:34:26.6846105Z Updating files:  30% (689/2295)
+2026-11-07T19:34:26.6871157Z Updating files:  31% (712/2295)
+2026-11-07T19:34:26.6900812Z Updating files:  32% (735/2295)
+2026-11-07T19:34:26.6911555Z Updating files:  33% (758/2295)
+2026-11-07T19:34:26.6935106Z Updating files:  34% (781/2295)
+2026-11-07T19:34:26.6985762Z Updating files:  35% (804/2295)
+2026-11-07T19:34:26.7025525Z Updating files:  36% (827/2295)
+2026-11-07T19:34:26.7046782Z Updating files:  37% (850/2295)
+2026-11-07T19:34:26.7061116Z Updating files:  38% (873/2295)
+2026-11-07T19:34:26.7076733Z Updating files:  39% (896/2295)
+2026-11-07T19:34:26.7109312Z Updating files:  40% (918/2295)
+2026-11-07T19:34:26.8883461Z Updating files:  41% (941/2295)
+2026-11-07T19:34:26.9207346Z Updating files:  41% (961/2295)
+2026-11-07T19:34:26.9267719Z Updating files:  42% (964/2295)
+2026-11-07T19:34:26.9302951Z Updating files:  43% (987/2295)
+2026-11-07T19:34:26.9316946Z Updating files:  44% (1010/2295)
+2026-11-07T19:34:26.9331591Z Updating files:  45% (1033/2295)
+2026-11-07T19:34:26.9488754Z Updating files:  46% (1056/2295)
+2026-11-07T19:34:26.9501406Z Updating files:  47% (1079/2295)
+2026-11-07T19:34:26.9518278Z Updating files:  48% (1102/2295)
+2026-11-07T19:34:26.9538250Z Updating files:  49% (1125/2295)
+2026-11-07T19:34:26.9587818Z Updating files:  50% (1148/2295)
+2026-11-07T19:34:26.9600336Z Updating files:  51% (1171/2295)
+2026-11-07T19:34:26.9621800Z Updating files:  52% (1194/2295)
+2026-11-07T19:34:26.9658516Z Updating files:  53% (1217/2295)
+2026-11-07T19:34:26.9670010Z Updating files:  54% (1240/2295)
+2026-11-07T19:34:26.9686619Z Updating files:  55% (1263/2295)
+2026-11-07T19:34:26.9735327Z Updating files:  56% (1286/2295)
+2026-11-07T19:34:26.9767743Z Updating files:  57% (1309/2295)
+2026-11-07T19:34:26.9782834Z Updating files:  58% (1332/2295)
+2026-11-07T19:34:26.9800656Z Updating files:  59% (1355/2295)
+2026-11-07T19:34:26.9816817Z Updating files:  60% (1377/2295)
+2026-11-07T19:34:26.9834367Z Updating files:  61% (1400/2295)
+2026-11-07T19:34:26.9848113Z Updating files:  62% (1423/2295)
+2026-11-07T19:34:26.9864287Z Updating files:  63% (1446/2295)
+2026-11-07T19:34:26.9874721Z Updating files:  64% (1469/2295)
+2026-11-07T19:34:26.9885186Z Updating files:  65% (1492/2295)
+2026-11-07T19:34:26.9904841Z Updating files:  66% (1515/2295)
+2026-11-07T19:34:26.9921430Z Updating files:  67% (1538/2295)
+2026-11-07T19:34:26.9940658Z Updating files:  68% (1561/2295)
+2026-11-07T19:34:26.9959094Z Updating files:  69% (1584/2295)
+2026-11-07T19:34:26.9972995Z Updating files:  70% (1607/2295)
+2026-11-07T19:34:26.9986094Z Updating files:  71% (1630/2295)
+2026-11-07T19:34:27.0002207Z Updating files:  72% (1653/2295)
+2026-11-07T19:34:27.0018471Z Updating files:  73% (1676/2295)
+2026-11-07T19:34:27.0033106Z Updating files:  74% (1699/2295)
+2026-11-07T19:34:27.0046598Z Updating files:  75% (1722/2295)
+2026-11-07T19:34:27.0061880Z Updating files:  76% (1745/2295)
+2026-11-07T19:34:27.0076725Z Updating files:  77% (1768/2295)
+2026-11-07T19:34:27.0091597Z Updating files:  78% (1791/2295)
+2026-11-07T19:34:27.0105637Z Updating files:  79% (1814/2295)
+2026-11-07T19:34:27.0131331Z Updating files:  80% (1836/2295)
+2026-11-07T19:34:27.0147097Z Updating files:  81% (1859/2295)
+2026-11-07T19:34:27.0162724Z Updating files:  82% (1882/2295)
+2026-11-07T19:34:27.0177682Z Updating files:  83% (1905/2295)
+2026-11-07T19:34:27.0194541Z Updating files:  84% (1928/2295)
+2026-11-07T19:34:27.0210291Z Updating files:  85% (1951/2295)
+2026-11-07T19:34:27.0223846Z Updating files:  86% (1974/2295)
+2026-11-07T19:34:27.0239237Z Updating files:  87% (1997/2295)
+2026-11-07T19:34:27.0260055Z Updating files:  88% (2020/2295)
+2026-11-07T19:34:27.0276228Z Updating files:  89% (2043/2295)
+2026-11-07T19:34:27.0292618Z Updating files:  90% (2066/2295)
+2026-11-07T19:34:27.0302966Z Updating files:  91% (2089/2295)
+2026-11-07T19:34:27.0315129Z Updating files:  92% (2112/2295)
+2026-11-07T19:34:27.0329929Z Updating files:  93% (2135/2295)
+2026-11-07T19:34:27.0351510Z Updating files:  94% (2158/2295)
+2026-11-07T19:34:27.0360588Z Updating files:  95% (2181/2295)
+2026-11-07T19:34:27.0374415Z Updating files:  96% (2204/2295)
+2026-11-07T19:34:27.2412491Z Updating files:  97% (2227/2295)
+2026-11-07T19:34:27.2420562Z Updating files:  98% (2250/2295)
+2026-11-07T19:34:27.2431330Z Updating files:  99% (2273/2295)
+2026-11-07T19:34:27.2432163Z Updating files: 100% (2295/2295)
+2026-11-07T19:34:27.2432607Z Updating files: 100% (2295/2295), done.
+2026-11-07T19:34:27.2577308Z Note: switching to '4e8d52aa8e1b6bb39a0b98a4438712141257801c'.
+2026-11-07T19:34:27.2577769Z 
+2026-11-07T19:34:27.2578124Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-07T19:34:27.2578619Z changes and commit them, and you can discard any commits you make in this
+2026-11-07T19:34:27.2579084Z state without impacting any branches by switching back to a branch.
+2026-11-07T19:34:27.2579385Z 
+2026-11-07T19:34:27.2579570Z If you want to create a new branch to retain commits you create, you may
+2026-11-07T19:34:27.2580001Z do so (now or later) by using -c with the switch command. Example:
+2026-11-07T19:34:27.2580249Z 
+2026-11-07T19:34:27.2580349Z   git switch -c <new-branch-name>
+2026-11-07T19:34:27.2580519Z 
+2026-11-07T19:34:27.2580613Z Or undo this operation with:
+2026-11-07T19:34:27.2580766Z 
+2026-11-07T19:34:27.2580851Z   git switch -
+2026-11-07T19:34:27.2580967Z 
+2026-11-07T19:34:27.2581179Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-07T19:34:27.2581475Z 
+2026-11-07T19:34:27.2581803Z HEAD is now at 4e8d52a Run independent Gemini challenge, inherited verification and durable fixed-effect review
+2026-11-07T19:34:27.2641552Z ##[endgroup]
+2026-11-07T19:34:27.2695875Z [command]/usr/bin/git log -1 --format=%H
+2026-11-07T19:34:27.2732383Z 4e8d52aa8e1b6bb39a0b98a4438712141257801c
+2026-11-07T19:34:27.3069129Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-11-07T19:34:27.3069538Z with:
+2026-11-07T19:34:27.3069737Z   python-version: 3.11
+2026-11-07T19:34:27.3069959Z   check-latest: false
+2026-11-07T19:34:27.3072478Z   token: ***
+2026-11-07T19:34:27.3072695Z   update-environment: true
+2026-11-07T19:34:27.3072941Z   allow-prereleases: false
+2026-11-07T19:34:27.3073165Z   freethreaded: false
+2026-11-07T19:34:27.3073364Z env:
+2026-11-07T19:34:27.3073609Z   UQCF_WORKFLOW_SHA: 4e8d52aa8e1b6bb39a0b98a4438712141257801c
+2026-11-07T19:34:27.3073930Z ##[endgroup]
+2026-11-07T19:34:27.4485347Z ##[group]Installed versions
+2026-11-07T19:34:27.4612814Z (node:2379) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-07T19:34:27.4613746Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-07T19:34:27.4615339Z Successfully set up CPython (3.11.18)
+2026-11-07T19:34:27.4616734Z ##[endgroup]
+2026-11-07T19:34:27.4820283Z ##[group]Run python .github/scripts/uqcf_fixed_effect_archive.py
+2026-11-07T19:34:27.4821111Z [36;1mpython .github/scripts/uqcf_fixed_effect_archive.py[0m
+2026-11-07T19:34:27.4862237Z shell: /usr/bin/bash -e {0}
+2026-11-07T19:34:27.4862501Z env:
+2026-11-07T19:34:27.4862764Z   UQCF_WORKFLOW_SHA: 4e8d52aa8e1b6bb39a0b98a4438712141257801c
+2026-11-07T19:34:27.4863179Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T19:34:27.4863803Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-07T19:34:27.4864561Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T19:34:27.4865217Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T19:34:27.4865866Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T19:34:27.4866915Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-07T19:34:27.4871758Z   GH_TOKEN: ***
+2026-11-07T19:34:27.4872093Z ##[endgroup]
+2026-11-07T19:34:35.9991233Z Original ZIP digests, complete manifests and reversible chunks verified.
+2026-11-07T19:34:35.9992091Z ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1
+2026-11-07T19:34:36.0150228Z ##[group]Run set -euo pipefail
+2026-11-07T19:34:36.0150557Z [36;1mset -euo pipefail[0m
+2026-11-07T19:34:36.0150816Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-07T19:34:36.0151153Z [36;1mtest "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"[0m
+2026-11-07T19:34:36.0151518Z [36;1mgit config user.name proteinfolding-gpt[0m
+2026-11-07T19:34:36.0151925Z [36;1mgit config user.email proteinfolding-gpt@users.noreply.github.com[0m
+2026-11-07T19:34:36.0152498Z [36;1mgit add ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence[0m
+2026-11-07T19:34:36.0153077Z [36;1mgit commit -m "Archive fixed-effect review run $GITHUB_RUN_ID"[0m
+2026-11-07T19:34:36.0153472Z [36;1mgit push origin "HEAD:$REVIEW_BRANCH"[0m
+2026-11-07T19:34:36.0153774Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-07T19:34:36.0154140Z [36;1mtest "$(git rev-parse HEAD)" = "$(git rev-parse FETCH_HEAD)"[0m
+2026-11-07T19:34:36.0154653Z [36;1mpython .github/scripts/uqcf_fixed_effect_archive.py readback FETCH_HEAD[0m
+2026-11-07T19:34:36.0176185Z shell: /usr/bin/bash -e {0}
+2026-11-07T19:34:36.0176469Z env:
+2026-11-07T19:34:36.0176730Z   UQCF_WORKFLOW_SHA: 4e8d52aa8e1b6bb39a0b98a4438712141257801c
+2026-11-07T19:34:36.0177129Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T19:34:36.0177546Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-07T19:34:36.0177966Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T19:34:36.0178338Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T19:34:36.0178711Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T19:34:36.0179090Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-07T19:34:36.0179464Z   REVIEW_BRANCH: gpt/fixed-effect-review
+2026-11-07T19:34:36.0179911Z ##[endgroup]
+2026-11-07T19:34:36.1778526Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T19:34:36.1779412Z  * branch            gpt/fixed-effect-review -> FETCH_HEAD
+2026-11-07T19:34:36.1780306Z  * [new branch]      gpt/fixed-effect-review -> origin/gpt/fixed-effect-review
+2026-11-07T19:34:49.4643219Z [detached HEAD 1ec9c25] Archive fixed-effect review run 42406467726
+2026-11-07T19:34:49.4643781Z  89 files changed, 5755 insertions(+)
+2026-11-07T19:34:49.4644615Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/CHUNKS.json
+2026-11-07T19:34:49.4646421Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/DOWNLOAD_AUDIT.json
+2026-11-07T19:34:49.4648388Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/SHA256SUMS
+2026-11-07T19:34:49.4650427Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1.zip
+2026-11-07T19:34:49.4651999Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/artifact_manifest.json
+2026-11-07T19:34:49.4653601Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/commands.json
+2026-11-07T19:34:49.4655140Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/controls.json
+2026-11-07T19:34:49.4656796Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited.log
+2026-11-07T19:34:49.4658050Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited.log.stderr
+2026-11-07T19:34:49.4659622Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/PRODUCTION.json
+2026-11-07T19:34:49.4660888Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/REPRODUCED_1615F.json
+2026-11-07T19:34:49.4662125Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/VERIFICATION.json
+2026-11-07T19:34:49.4663361Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/artifact_manifest.json
+2026-11-07T19:34:49.4664608Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/certificates.json.xz
+2026-11-07T19:34:49.4665866Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/commands.json
+2026-11-07T19:34:49.4667396Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/historical-reproduction.log
+2026-11-07T19:34:49.4668739Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/independent-verifier.log
+2026-11-07T19:34:49.4669980Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/producer.log
+2026-11-07T19:34:49.4671324Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/inherited/receipt.json
+2026-11-07T19:34:49.4672497Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/integrity.json
+2026-11-07T19:34:49.4673619Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/receipt.json
+2026-11-07T19:34:49.4674768Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/review_readback.json
+2026-11-07T19:34:49.4676338Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/sources/.github/scripts/uqcf_fixed_effect.py
+2026-11-07T19:34:49.4677744Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/sources/.github/scripts/uqcf_fixed_effect_archive.py
+2026-11-07T19:34:49.4679140Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/sources/.github/workflows/uqcf-fixed-effect.yml
+2026-11-07T19:34:49.4680673Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/DERIVATION.md
+2026-11-07T19:34:49.4682374Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/FREEZE.json
+2026-11-07T19:34:49.4684224Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/REVIEW_PLAN.md
+2026-11-07T19:34:49.4686189Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/SOURCE_PACKET.json
+2026-11-07T19:34:49.4687625Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1.zip
+2026-11-07T19:34:49.4688716Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/artifact_manifest.json
+2026-11-07T19:34:49.4689836Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/integrity.json
+2026-11-07T19:34:49.4690953Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/model_metadata.json
+2026-11-07T19:34:49.4692056Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/prompt.txt
+2026-11-07T19:34:49.4693119Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/request.json
+2026-11-07T19:34:49.4694190Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/response.json
+2026-11-07T19:34:49.4695251Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/review.txt
+2026-11-07T19:34:49.4696640Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/review_identity.json
+2026-11-07T19:34:49.4697886Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/sources/.github/scripts/uqcf_fixed_effect.py
+2026-11-07T19:34:49.4699227Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/sources/.github/scripts/uqcf_fixed_effect_archive.py
+2026-11-07T19:34:49.4700575Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/sources/.github/workflows/uqcf-fixed-effect.yml
+2026-11-07T19:34:49.4702204Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/DERIVATION.md
+2026-11-07T19:34:49.4703977Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/FREEZE.json
+2026-11-07T19:34:49.4705655Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/REVIEW_PLAN.md
+2026-11-07T19:34:49.4707666Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/SOURCE_PACKET.json
+2026-11-07T19:34:49.4709055Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-review-1/verdict.json
+2026-11-07T19:34:49.4710356Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1.zip.part-0000
+2026-11-07T19:34:49.4711508Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1.zip.part-0001
+2026-11-07T19:34:49.4712639Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1.zip.part-0002
+2026-11-07T19:34:49.4713762Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1.zip.part-0003
+2026-11-07T19:34:49.4714884Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1.zip.part-0004
+2026-11-07T19:34:49.4716165Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1.zip.part-0005
+2026-11-07T19:34:49.4717335Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/artifact_manifest.json
+2026-11-07T19:34:49.4718493Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/commands.json
+2026-11-07T19:34:49.4719608Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/controls.json
+2026-11-07T19:34:49.4720721Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited.log
+2026-11-07T19:34:49.4721990Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited.log.stderr
+2026-11-07T19:34:49.4723191Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/PRODUCTION.json
+2026-11-07T19:34:49.4724428Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/REPRODUCED_1615F.json
+2026-11-07T19:34:49.4725679Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/VERIFICATION.json
+2026-11-07T19:34:49.4727047Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/artifact_manifest.json
+2026-11-07T19:34:49.4728311Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/certificates.json.xz
+2026-11-07T19:34:49.4729545Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/commands.json
+2026-11-07T19:34:49.4730774Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/dependencies.log
+2026-11-07T19:34:49.4732712Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/fcv-tests.log
+2026-11-07T19:34:49.4734463Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/historical-reproduction.log
+2026-11-07T19:34:49.4736211Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/historical-tests.log
+2026-11-07T19:34:49.4737580Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/independent-verifier.log
+2026-11-07T19:34:49.4738859Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/parent-tests.log
+2026-11-07T19:34:49.4740088Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/producer.log
+2026-11-07T19:34:49.4741292Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/receipt.json
+2026-11-07T19:34:49.4742565Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/source-snapshot.zip.part-0000
+2026-11-07T19:34:49.4743902Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/source-snapshot.zip.part-0001
+2026-11-07T19:34:49.4745225Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/source-snapshot.zip.part-0002
+2026-11-07T19:34:49.4746820Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/source-snapshot.zip.part-0003
+2026-11-07T19:34:49.4748157Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/source-snapshot.zip.part-0004
+2026-11-07T19:34:49.4749626Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/inherited/source-snapshot.zip.part-0005
+2026-11-07T19:34:49.4750860Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/integrity.json
+2026-11-07T19:34:49.4752004Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/receipt.json
+2026-11-07T19:34:49.4753236Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/sources/.github/scripts/uqcf_fixed_effect.py
+2026-11-07T19:34:49.4754646Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/sources/.github/scripts/uqcf_fixed_effect_archive.py
+2026-11-07T19:34:49.4756299Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/sources/.github/workflows/uqcf-fixed-effect.yml
+2026-11-07T19:34:49.4757861Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/DERIVATION.md
+2026-11-07T19:34:49.4759562Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/FREEZE.json
+2026-11-07T19:34:49.4761418Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/REVIEW_PLAN.md
+2026-11-07T19:34:49.4763143Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/fixed-effect-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/SOURCE_PACKET.json
+2026-11-07T19:34:49.4764482Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/job-128505148158.log
+2026-11-07T19:34:49.4765429Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/job-128505742461.log
+2026-11-07T19:34:49.4766526Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_effect_review/evidence/run-42406467726-attempt-1/job-128505976579.log
+2026-11-07T19:35:22.5068799Z To https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T19:35:22.5069351Z    4e8d52a..1ec9c25  HEAD -> gpt/fixed-effect-review
+2026-11-07T19:35:22.6702954Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T19:35:22.6703790Z  * branch            gpt/fixed-effect-review -> FETCH_HEAD
+2026-11-07T19:35:24.7011066Z Committed original bytes and all chunk reconstructions verified
+2026-11-07T19:35:24.7250007Z Post job cleanup.
+2026-11-07T19:35:24.8463761Z (node:2591) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-07T19:35:24.8464720Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-07T19:35:24.8695431Z Post job cleanup.
+2026-11-07T19:35:24.9676758Z [command]/usr/bin/git version
+2026-11-07T19:35:24.9736574Z git version 2.56.0
+2026-11-07T19:35:24.9753190Z Temporarily overriding HOME='/home/runner/work/_temp/e68c477a-bfe4-4b4c-b0ce-f694961cff47' before making global git config changes
+2026-11-07T19:35:24.9755093Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T19:35:24.9759874Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-07T19:35:24.9803015Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T19:35:24.9851616Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T19:35:25.0158775Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T19:35:25.0195462Z http.https://github.com/.extraheader
+2026-11-07T19:35:25.0204704Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-07T19:35:25.0248025Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T19:35:25.0568526Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T19:35:25.0622960Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T19:35:25.1054762Z Cleaning up orphan processes
+2026-11-07T19:35:25.1454364Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
