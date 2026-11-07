@@ -27,4 +27,12 @@ Fresh independent production and verification reproduced all deterministic scien
 
 All four jobs in [run 42389441207](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/42389441207) succeeded. Durable evidence commit: ef314c1682b56415843d02cf3752cc67b8b32848. Archive job 128455030746 checked the downloaded original ZIP digests, preserved the failed run, pushed only the isolated branch, fetched the remote ref, and verified every committed checksum and reconstructed original large-file hash. Its completed log is retained alongside the evidence.
 
-The frozen ARGUMENT.md retains its pre-review status line as historical source; this note records the subsequent review. PR136 remains draft/unmerged. No merge or post-merge audit has occurred, so no integrated-stage closure or certification is claimed. Research tip and PR130/131 holds remain unchanged.
+The frozen ARGUMENT.md retains its pre-review status line as historical source; this note records the subsequent review. PR136 remains draft/unmerged. No merge or post-merge audit has occurred, so no integrated-stage closure or certification is claimed. This bounded run does not modify the research branch or PR130/131 holds.
+
+## Concurrent research-head update
+
+Final readback observed concurrent research commits 7ca75025ba23e2ff1f3c831797aa91112d6f70a1 and dbd29ddd028737f4804ce5541e24d79a3d5a063e. The former sharpens the owner-held-effect directive; the latter is an author analytical synthesis for the supplied P1 benchmark. Our frozen parent remains 1a18308a026c06882b428fbe201b4634c34dfd8f; it is not the current branch head.
+
+The new benchmark note identifies Z_p=pi_p on the retained source output, with C*(Z_p)=pi_p+pi_u and contrast 1/5 for every dilation implementing C. This concerns retained owner amount, not the complementary fine-grained history flag. It is compatible with the Clifford ownership result, which concerns different supplied algebras and effects. The benchmark still supplies the physical encoding and channel and leaves native owner availability unresolved. Its analytical synthesis was not part of PR136's independent review.
+
+Accordingly, do not require exclusion of W_E for a retained-source effect whose contrast all admitted dilations share. The native search should now target one owner-available effect and its actual-event correspondence, while retaining the distinction between source-output amount and complementary history.
