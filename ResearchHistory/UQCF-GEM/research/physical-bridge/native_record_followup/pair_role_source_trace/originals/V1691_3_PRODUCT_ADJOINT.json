@@ -1,0 +1,61 @@
+{
+  "version": "V1691.3",
+  "title": "Exact Adjoint Derivation for Product Residual",
+  "verdict": "PRODUCT_ADJOINT_DERIVED_NO_EXECUTION",
+  "starting_point": "V1691.2 derived branch/source adjoints. V1691.3 derives the bilinear product residual adjoint.",
+  "claim_boundary": "Mathematical derivation only. No emitter, no simulation, no law validation.",
+  "objects": {
+    "A": "edge retained connection generator A_pq",
+    "T_A": "Exp_R(A), retained transport",
+    "Xi": "admissible generator variation",
+    "oplus_p": "native recombination product at p",
+    "oplus_q": "native recombination product at q",
+    "x_y": "retained test pair (x,y) in T_p",
+    "R_oplus_xy": "product residual covector value for test pair (x,y)",
+    "W_B": "branch/output inner-product weight",
+    "W_A": "generator inner-product weight",
+    "L_A": "D_A T_A, transport derivative"
+  },
+  "product_residual": {
+    "definition": "\u03b4_oplus[A](x,y) = T_A(x \u2295_p y) - (T_A x \u2295_q T_A y)",
+    "component_space": "V_oplus consists of bilinear residual maps over retained test pairs T_p.",
+    "inner_product": "<K,L>_oplus = \u03a3_(x,y) \u03c9_xy <K(x,y), L(x,y)>_B"
+  },
+  "variation": {
+    "formula": "D_A\u03b4_oplus[Xi](x,y) = L_A[Xi](x\u2295_p y) - D_1\u2295_q[T_Ax,T_Ay](L_A[Xi]x) - D_2\u2295_q[T_Ax,T_Ay](L_A[Xi]y)",
+    "D1": "left derivative of q-product with respect to first argument",
+    "D2": "right derivative of q-product with respect to second argument",
+    "meaning": "variation has one transported-product term and two output-product correction terms."
+  },
+  "adjoint": {
+    "adjoint_condition": "\u03a3_xy \u03c9_xy <D_A\u03b4_oplus[Xi](x,y), R_xy>_B = <Xi, (D_A\u03b4_oplus)^*R>_A",
+    "pullback_vector_for_pair": "M_xy = W_B R_xy",
+    "pair_covector": "C_xy = M_xy (x\u2295_p y)^T - D1_q^*[M_xy] x^T - D2_q^*[M_xy] y^T",
+    "general_adjoint": "(D_A\u03b4_oplus)^*R = W_A^{-1} L_A^*[ \u03a3_xy \u03c9_xy C_xy ]",
+    "first_order": "If T_A\u2248I+A and L_A[Xi]\u2248Xi, then (D_A\u03b4_oplus)^*R = W_A^{-1} \u03a3_xy \u03c9_xy C_xy"
+  },
+  "derivative_of_product": {
+    "for_oplus_q_u_v": "D_1\u2295_q[u,v](a) = d/deps ((u+eps a)\u2295_q v)|0",
+    "D1_adjoint": "<D_1\u2295_q[u,v](a), m>_B = <a, D_1\u2295_q[u,v]^*m>_B",
+    "D2_adjoint": "<D_2\u2295_q[u,v](b), m>_B = <b, D_2\u2295_q[u,v]^*m>_B",
+    "native_kernel_required": "For any declared op_plus kernel, D1, D2, D1*, D2* must be derived from that kernel."
+  },
+  "stationarity_contribution": {
+    "Grad_oplus": "2 w_oplus (D_A\u03b4_oplus)^* \u03b4_oplus",
+    "meaning": "product stress is a sum over retained test-pair covectors; it is not the scalar mean product defect."
+  },
+  "why_v1690_failed": [
+    "V1690 used scalar product defects and post-hoc component projection.",
+    "The exact product adjoint includes D1_q^* and D2_q^* correction terms.",
+    "Those terms couple transport variation to the native recombination product.",
+    "Without them, product compatibility cannot be separated from nulls component-wise."
+  ],
+  "forbidden": [
+    "using mean product defect as Grad_oplus",
+    "dropping D1_q^* and D2_q^* terms",
+    "choosing retained test pairs after seeing nulls",
+    "using E_source/E_stress to weight product pairs",
+    "replacing bilinear covector with scalar holonomy"
+  ],
+  "next": "V1691.4 \u2014 Associator and H4 quotient adjoints"
+}

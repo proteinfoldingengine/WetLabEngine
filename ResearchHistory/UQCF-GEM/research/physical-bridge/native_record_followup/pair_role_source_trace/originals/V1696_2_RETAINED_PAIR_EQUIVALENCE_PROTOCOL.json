@@ -1,0 +1,57 @@
+{
+  "version": "V1696.2",
+  "title": "Retained Pair Equivalence Class Protocol",
+  "verdict": "RETAINED_PAIR_EQUIVALENCE_CLASS_PROTOCOL_FROZEN_NO_EXECUTION",
+  "starting_point": "V1696.1 showed that even aggregation-derived R_pair failed cross-scale transport. Therefore retained pair identity should not be assumed to be vector-transportable across scale.",
+  "claim_boundary": "Protocol only. No execution, no compatibility claim, no retained field-law validation.",
+  "discarded_framing": {
+    "cross_scale_vector_transport": "discard as active target",
+    "reason": "nearest-cell and aggregation-derived R_pair both failed killer nulls",
+    "do_not_retry": [
+      "nearest-cell matching",
+      "post-hoc aggregation weights",
+      "Gram-only transport",
+      "scale matching by residual minimization"
+    ]
+  },
+  "new_object": {
+    "symbol": "[p]_R",
+    "name": "retained pair equivalence class",
+    "definition": "Two product pairs p and q are R-equivalent if they preserve the same retained product role under Phi_oplus response, orientation, support/provenance admissibility, and D1/D2 action profile.",
+    "not_a_vector": "The equivalence class is not a transported vector and not a nearest coarse/fine cell match.",
+    "space": "quotient of retained pair actions by role-preserving transformations"
+  },
+  "equivalence_requirements": {
+    "E1_product_role": "same product-role label, e.g. B0_B1, B1_B2, O3_B0, or declared role morphism",
+    "E2_orientation": "same signed provenance/orientation or admissible sign morphism",
+    "E3_D1D2_profile": "same derivative-response profile under Phi_oplus up to declared normalization",
+    "E4_pair_Gram_relation": "same signed pair-Gram relation to other retained roles in the local product algebra",
+    "E5_support_admissibility": "same support/provenance admissibility class",
+    "E6_order_ledger": "same retained-order dependency class where available"
+  },
+  "coarse_graining_rule": {
+    "coarse_class": "[P_A^C]_R = quotient-aggregate({[p_a^F]_R : a in block(A)})",
+    "aggregate_condition": "coarse class exists only if fine classes form a compatible role-preserving family",
+    "failure_mode": "if fine classes do not cohere, coarse pair identity is undefined rather than forced."
+  },
+  "invariant": {
+    "class_signature": "Sig([p]_R) = (role, orientation, D1D2_profile, signed_Gram_context, support_class, order_class)",
+    "coherence_score": "C_R(A) = consistency of fine class signatures inside coarse aggregate A",
+    "cross_scale_test": "coarse class preservation means Sig([P_A^C]_R) matches quotient-aggregate Sig({[p_a^F]_R}) better than class-breaking nulls.",
+    "important": "This tests equivalence-class preservation, not vector transport."
+  },
+  "killer_nulls": {
+    "N_role_preserved_vector_scrambled": "preserve local vector norms but scramble product-role labels; must fail.",
+    "N_D1D2_profile_scramble": "preserve Gram signatures but scramble derivative-response profiles; must fail.",
+    "N_orientation_flip": "flip orientation signs while preserving magnitudes; must fail unless sign morphism declared.",
+    "N_support_class_shuffle": "preserve product pairs but shuffle support/provenance admissibility; must fail.",
+    "N_local_signature_preserved_class_broken": "preserve local pair-labeled invariants but break quotient aggregate compatibility; must fail."
+  },
+  "promotion_rules": {
+    "level_0": "equivalence-class schema emitted",
+    "level_1": "local retained pair classes separate class-breaking nulls",
+    "level_2": "coarse classes preserve quotient-aggregate signatures across scale and beat nulls",
+    "not_allowed": "No vector transport, D=rho+Q compatibility, or global law claim."
+  },
+  "next": "V1696.3 \u2014 Retained Pair Equivalence Class Python Test"
+}
