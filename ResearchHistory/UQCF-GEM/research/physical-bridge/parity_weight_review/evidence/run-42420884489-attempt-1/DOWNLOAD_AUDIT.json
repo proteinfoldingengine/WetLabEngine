@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "api_digest": "sha256:ce97e216bc05096ff721b40d8071c46573d3c66bedcaabd431681ab231dec80a",
+      "download_sha256": "ce97e216bc05096ff721b40d8071c46573d3c66bedcaabd431681ab231dec80a",
+      "id": 13593656529,
+      "member_count": 16,
+      "name": "parity-weight-review-1",
+      "zip_bytes": 82923
+    },
+    {
+      "api_digest": "sha256:a563c2baba0dcf928e6a2b5423fce94711e43fc3d86e9bc6323aab4b6edc5210",
+      "download_sha256": "a563c2baba0dcf928e6a2b5423fce94711e43fc3d86e9bc6323aab4b6edc5210",
+      "id": 13593561606,
+      "member_count": 29,
+      "name": "parity-weight-verification-1",
+      "zip_bytes": 239367469
+    },
+    {
+      "api_digest": "sha256:5141c5cab329ccb315d4f2abc370381581e3afd928ee071cccec589d58dddd36",
+      "download_sha256": "5141c5cab329ccb315d4f2abc370381581e3afd928ee071cccec589d58dddd36",
+      "id": 13593164252,
+      "member_count": 25,
+      "name": "parity-weight-publication-1",
+      "zip_bytes": 330998
+    }
+  ],
+  "attempt": "1",
+  "checkout_sha": "3fb80b3fefef37ddfc4f03877aad994e870b4cec",
+  "completed_job_logs": [
+    {
+      "bytes": 29471,
+      "conclusion": "success",
+      "file": "job-128548862352.log",
+      "id": 128548862352,
+      "name": "verification",
+      "sha256": "801dea126e69c98987d135b1a2b00072834687610ff01598c31025542c07fbaa"
+    },
+    {
+      "bytes": 28744,
+      "conclusion": "success",
+      "file": "job-128549412949.log",
+      "id": 128549412949,
+      "name": "review",
+      "sha256": "7427edbfcef39298c17dabd7fcb51d349a579c864c553d80ee15c2fab14cd5a1"
+    },
+    {
+      "bytes": 33626,
+      "conclusion": "success",
+      "file": "job-128549646649.log",
+      "id": 128549646649,
+      "name": "publication",
+      "sha256": "71e69e4ad2606d7a342a219f9bf0333098859971194ad303f0d6e3e6e37cafa4"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "run_id": "42420884489",
+  "status": "PASS",
+  "workflow_sha": "3fb80b3fefef37ddfc4f03877aad994e870b4cec"
+}
