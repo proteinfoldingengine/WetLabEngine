@@ -129,3 +129,43 @@ Report each work item under:
 A result is scientifically important for Path-A only if it removes a previously supplied part of the actual-event -> owner-held-effect/action -> receiver-observable chain, or proves the minimal missing physical premise in a sharply defined class.
 
 Native bridge remains NOT_DERIVED until that criterion is met.
+
+
+## 9. Output-specific interpretation of the adversarial gate — 2026-11-07
+
+Added by GPT Work as an append-only reconciliation with existing results and Aaron's realization-independent owner-effect target. This is a research-instruction clarification, not a new user postulate, theorem, acceptance, or native advance. It supersedes the unqualified “If W_R and W_E both pass” inference in section 5.
+
+Two different tests must not share an unqualified PASS label:
+
+1. **Admissibility:** does a realization satisfy the proposed native relation K?
+2. **Consequence:** does that realization produce the specified nonzero contrast on the independently identified owner interface/effect?
+
+Fix the source pair, output identity, interface/effect and admissible class before answering either. A candidate does not earn ownership by changing which output is called R after inspecting the result.
+
+For an initially blind, designated proper complementary factor R, admitting both W_R and W_E defeats a delivery guarantee because W_E is blind on that specific interface. More generally, one admitted realization blind on the claimed interface/effect defeats its universal nonzero-contrast claim. Excluding W_E alone is insufficient if another blind realization remains.
+
+For a retained-source owner-effect candidate, admitting both W_R and W_E is not a failure: both can have the same nonzero contrast on that effect. In the existing supplied P1 benchmark, for F_p=pi_p tensor I_K,
+
+    Tr[F_p W (rho_plus-rho_minus) W†]
+       = Tr[pi_p C(rho_plus-rho_minus)] = 1/5
+
+for every implementing W. The proof is restriction to the fixed reduced source channel, not selection of a complementary writer. Thus W_R, W_E and Bell all preserve this particular contrast. Checking the three named examples alone would not establish the universal statement; the reduced-channel identity does.
+
+| Claimed output in the existing benchmark | W_R consequence | W_E consequence | What remains unresolved |
+| --- | --- | --- | --- |
+| Proper complementary R, removed-summand record | Nonzero contrast | Blind | A native relation excluding the entire relevant blind set |
+| Retained-source effect pi_p tensor I_K | Contrast 1/5 | Contrast 1/5 | Native physical correspondence and ownership/access to this effect |
+
+Neither row earns an operational receiver from a coordinate label. The second row is established conditional infrastructure, not newly discovered delivery. It does not require breaking complementary U(K) symmetry: that symmetry leaves the retained-source expectation unchanged. The first row concerns a different output and record.
+
+Keep three further scope distinctions:
+
+- A fixed effect that works for all realizations is stronger than a separately optimized effect for each realization. Preserve the quantifiers of the claimed result.
+- A previously blind effect becoming responsive is not, by itself, acquisition by an entirely initially blind receiver interface. Whole-interface acquisition additionally requires initial blindness of that interface.
+- A source-dependent joint/bit observable may qualify if its ownership is independently earned; conditional R-state change is not a universal additional requirement.
+
+**Immediate research use.** For the retained-owner route, the next object must be an inherited operation identifying an available effect with the same retained provenance and transporting its action through the actual event. The already known source-channel calculation above is not to be repeated. For a proper complementary receiver route, a native joint constraint must be tested against blind realizations on that specified interface. A support derivative, source diagnostic or named projector alone supplies neither operation. Preserve the current hard admission questions, premise tags and independent-review requirements.
+
+**Inspected basis.** At research commit ff6bf55d0dce681ad3950547c75c6081d84ebe98: receiver_delivery_boundary/RESULT.md section 3, RD-2 proof step 1, RD-4's interface premise, RD-5's retained amount/history distinction, and RD-6's surviving blind set; REALIZATION_INVARIANT_OWNER_EFFECT_2026_11_07.md sections 2–7 and the provenance/quantifier correction in section 10. Also inspected T-385 at agent-thread 2d73051b02ea0761bce4b20e28e2151a836af5c3 and Dot's reconciliation in PR111 comment 6715649666. No frozen proof, reviewed code, raw review or status is amended.
+
+Native owner-held action remains NOT_DERIVED. Scientific breakthrough: false. No numerical campaign or duplicate Gemini review is warranted for this reconciliation of existing scoped results.
