@@ -1,0 +1,68 @@
+{
+  "version": "V1696.0",
+  "title": "Renormalized Retained-Pair Transport Derivation",
+  "verdict": "RENORMALIZED_PAIR_TRANSPORT_DERIVED_NO_EXECUTION",
+  "starting_point": "V1695.6 showed that local pair-labeled product curvature survives, but cross-scale transport failed because the coarse-to-fine map was underived.",
+  "claim_boundary": "Mathematical derivation protocol only. No execution, no compatibility claim, no retained field-law validation.",
+  "discarded_as_evidence": {
+    "nearest_cell_coarse_to_fine_matching": "discarded",
+    "reason": "failed cross-scale alignment and did not derive retained-pair aggregation."
+  },
+  "kept": {
+    "local_pair_labeled_invariant": "pair-labeled Phi_oplus diagnostic",
+    "D1_D2_structure": "product derivative correction requirement",
+    "scalar_collapse_rejection": "Phi_oplus is not scalar noise"
+  },
+  "core_object": {
+    "R_pair": "renormalized retained-pair transport operator",
+    "direction": "fine retained-pair space -> coarse retained-pair space",
+    "domain": "V_pair,fine*",
+    "codomain": "V_pair,coarse*",
+    "meaning": "aggregates fine retained product-pair covectors into coarse retained product-pair covectors while preserving admissible pair labels/orientation."
+  },
+  "coarse_pair_definition": {
+    "formula": "P_A^C = Normalize(\u03a3_{a\u2208block(A)} \u03b1_a P_a^F)",
+    "description": "A coarse retained pair is not nearest-cell matched; it is an aggregation of fine retained pairs inside the coarse block.",
+    "weights": "\u03b1_a are admissibility weights from retained support, provenance orientation, and product contribution.",
+    "normalization": "scale normalization must preserve pair Gram energy or declared invariant norm."
+  },
+  "transport_operator": {
+    "formula": "R_pair[C,A] = \u03a3_{a\u2208block(A)} \u03b1_a T_pair(a\u2192A)",
+    "T_pair": "component map from fine pair label a to coarse pair label A",
+    "orientation": "signed orientation from \u03a0 must be retained",
+    "admissibility": [
+      "fine pair belongs to coarse support block",
+      "orientation is preserved or explicitly signed",
+      "pair contribution weight is declared before invariant evaluation",
+      "normalization is independent of null outcomes"
+    ]
+  },
+  "scale_normalized_gram": {
+    "fine": "G_F[a,b] = <\u03a6_a, \u03a6_b>",
+    "coarse_predicted": "G_C_pred[A,B] = R_pair G_F R_pair^T",
+    "coarse_observed": "G_C_obs[A,B] = <\u03a6_A^C, \u03a6_B^C>",
+    "invariant": "I_RG = ||Normalize(G_C_obs) - Normalize(G_C_pred)||",
+    "claim_boundary": "Only a transport diagnostic. Not a field law."
+  },
+  "conservation_condition": {
+    "statement": "renormalized pair transport is admissible only if aggregate pair Gram energy is approximately conserved under declared normalization.",
+    "formula": "Tr(N(G_C_obs)) \u2248 Tr(N(R_pair G_F R_pair^T))",
+    "meaning": "prevents arbitrary matching or post-hoc rescaling."
+  },
+  "killer_nulls": {
+    "N_local_signature_preserved_aggregation_broken": "preserve local pair signatures but randomize block aggregation; must fail.",
+    "N_orientation_drop": "drop \u03a0 sign/orientation in R_pair; must fail.",
+    "N_weight_shuffle": "shuffle \u03b1 weights across fine pairs while preserving distribution; must fail.",
+    "N_nearest_cell_transport": "use old nearest-cell transport; must fail or be clearly weaker.",
+    "N_scale_scramble": "preserve local signatures but scramble cross-scale covariance; must fail."
+  },
+  "required_audits": [
+    "R_pair row/column support audit",
+    "orientation preservation audit",
+    "weight normalization audit",
+    "Gram energy conservation audit",
+    "cross-scale residual I_RG",
+    "null separation summary"
+  ],
+  "next": "V1696.1 \u2014 Renormalized Pair Transport Python Test"
+}

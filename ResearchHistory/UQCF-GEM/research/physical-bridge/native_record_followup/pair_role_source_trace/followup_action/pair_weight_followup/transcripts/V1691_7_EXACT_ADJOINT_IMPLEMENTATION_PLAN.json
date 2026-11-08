@@ -1,0 +1,124 @@
+{
+  "version": "V1691.7",
+  "title": "Exact-Adjoint Minimal Implementation Plan",
+  "verdict": "EXACT_ADJOINT_IMPLEMENTATION_PLAN_FROZEN_NO_EXECUTION",
+  "starting_point": "V1691.6 consolidated the exact component-dual identity, exact adjoint gradients, and signed dual-transported boundary Q_A.",
+  "claim_boundary": "Implementation plan only. No emitter, no simulation, no retained field-law validation.",
+  "purpose": "Define the minimal admissible Python implementation needed to test V1691 without returning to heuristic component projections.",
+  "minimal_scope": {
+    "geometry": "small retained graph with at least two adjacent loops",
+    "components": [
+      "B",
+      "S",
+      "oplus",
+      "O3",
+      "H4",
+      "Pi"
+    ],
+    "transport": "first-order retained generator approximation T_A \u2248 I + A for v0 implementation",
+    "adjoint_mode": "exact first-order adjoints from V1691.2\u2013V1691.5",
+    "boundary_mode": "signed boundary trace with explicit component dual transport ids",
+    "nulls": [
+      "N_dual_shuffle",
+      "N_boundary_adjoint_break",
+      "N_H4_leak",
+      "N_Pi_relabel",
+      "N_fake_QA",
+      "N_rho_label_only"
+    ]
+  },
+  "allowed_simplifications": [
+    "Use first-order retained approximation L_A[Xi]\u2248Xi for the first implementation.",
+    "Use identity W_A, W_B, W_S, W_O3 initially if declared before execution.",
+    "Use fixed H4 target quotient projector P_perp_q for first implementation.",
+    "Use a finite retained test-pair set T_p declared before execution.",
+    "Use identity dual transport \u03c4_e\u2192C for v0 only if all edge covectors are already represented in the same declared frame; otherwise emit failure."
+  ],
+  "forbidden_simplifications": [
+    "Do not project D_GammaR_Gamma by heuristic basis split.",
+    "Do not assign rho_P components by event label only.",
+    "Do not compute Q_A from E_source.",
+    "Do not use scalar product/O3/H4 defect as gradient.",
+    "Do not tune weights after seeing residuals.",
+    "Do not aggregate before component residuals are emitted."
+  ],
+  "implementation_modules": {
+    "module_1_component_duals": [
+      "declare W_k",
+      "construct P_perp for H4",
+      "declare retained product test pairs",
+      "declare Pi incidence matrix"
+    ],
+    "module_2_exact_adjoint_gradients": [
+      "compute delta_B and Grad_B",
+      "compute delta_S and Grad_S",
+      "compute delta_oplus and Grad_oplus with D1*/D2*",
+      "compute delta_O3 and Grad_O3 with D1*/D2*/D3*",
+      "compute delta_H4 and Grad_H4 with quotient admissibility",
+      "compute delta_Pi and Grad_Pi using d_Pi*"
+    ],
+    "module_3_stationary_solver": [
+      "solve A using exact adjoint Grad_total",
+      "emit solver trace",
+      "freeze A before compatibility residuals"
+    ],
+    "module_4_curvature_and_current": [
+      "compute R_Gamma = \u03a9_C - Id",
+      "compute D_GammaR_Gamma in declared dual components",
+      "compute rho_P in component dual space using A-induced event action",
+      "reject event-label-only rho"
+    ],
+    "module_5_boundary_QA": [
+      "compute Q_A^k = \u03a3 \u03c3(C,e)\u03c4_e\u2192C^k(G_e^k)",
+      "emit dual_boundary_trace.csv",
+      "reject Q_A without boundary trace support"
+    ],
+    "module_6_nulls": [
+      "N_dual_shuffle",
+      "N_boundary_adjoint_break",
+      "N_H4_leak",
+      "N_Pi_relabel",
+      "N_fake_QA",
+      "N_rho_label_only"
+    ]
+  },
+  "required_tables": {
+    "component_duals.csv": "declared component weights, dual rules, admissibility constraints",
+    "adjoint_gradients.csv": "exact adjoint residuals and gradients by edge/component",
+    "solver_trace.csv": "exact-adjoint stationarity trace",
+    "stationary_generators.csv": "initial/final A and stationarity gate",
+    "dual_boundary_trace.csv": "signed dual-transported stress contributions",
+    "component_identity_residuals.csv": "D, rho, Q_A, E by component",
+    "null_manifest.csv": "null preservation/breakage declarations",
+    "run_manifest.json": "claim boundary and summary"
+  },
+  "pass_fail_gates": {
+    "schema_gate": [
+      "all required tables emitted",
+      "uses_exact_adjoint=true for all components",
+      "uses_forbidden_fields=false"
+    ],
+    "stationarity_gate": [
+      "Grad_total exact-adjoint norm decreases under I_Gamma",
+      "A is frozen before residuals",
+      "solver does not use E residuals"
+    ],
+    "dual_admissibility_gate": [
+      "H4 covectors annihilate span(B,O3)",
+      "Pi covectors preserve retained-order orientation",
+      "rho_P is component-dual, not label-only",
+      "Q_A has signed boundary trace support"
+    ],
+    "falsification_gate": [
+      "valid component identity residual beats exact-structure nulls",
+      "N_fake_QA rejected",
+      "N_rho_label_only rejected",
+      "N_boundary_adjoint_break rejected"
+    ]
+  },
+  "promotion_rules": {
+    "after_v1691_8_possible": "At most Level 1/2 diagnostic if exact-adjoint schema and stationarity pass and nulls are separated.",
+    "not_allowed": "No law closure unless component-dual residuals pass exact-structure nulls across seeds/sizes."
+  },
+  "next": "V1691.8 \u2014 Exact-Adjoint Minimal Python Emitter v0"
+}

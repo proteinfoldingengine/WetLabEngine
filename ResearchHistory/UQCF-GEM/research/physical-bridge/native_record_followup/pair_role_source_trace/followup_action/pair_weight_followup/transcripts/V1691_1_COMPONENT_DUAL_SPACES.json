@@ -1,0 +1,91 @@
+{
+  "version": "V1691.1",
+  "title": "Component Inner Products and Dual Space Definitions",
+  "verdict": "COMPONENT_DUAL_SPACES_FROZEN_NO_EXECUTION",
+  "starting_point": "V1691.0 required exact component inner products and dual/cotangent spaces before deriving adjoint boundary maps.",
+  "goal": "Define V_G, V_G*, component inner products, and admissible dual covectors for B, op_plus, O3, H4_perp, S, and Pi.",
+  "claim_boundary": "Mathematical definition only. No execution, no law validation.",
+  "local_algebra": {
+    "G_p": "<B_p, op_plus_p, O3_p, H4_perp_p, S_p, Pi_p>",
+    "primal_space": "V_G(p) = V_B(p) \u2295 V_oplus(p) \u2295 V_O3(p) \u2295 V_H4(p) \u2295 V_S(p) \u2295 V_Pi(p)",
+    "dual_space": "V_G*(p) = V_B*(p) \u2295 V_oplus*(p) \u2295 V_O3*(p) \u2295 V_H4*(p) \u2295 V_S*(p) \u2295 V_Pi*(p)",
+    "generator_space": "A_pq \u2208 End_R(G_p,G_q), an admissible generated-algebra derivation/connection generator"
+  },
+  "component_spaces": {
+    "V_B": {
+      "primal": "matrix/frame variations \u0394B with same branch index structure as B_p",
+      "inner_product": "<X,Y>_B = tr(X^T W_B Y)",
+      "weight": "W_B positive semidefinite, observable branch-confidence / retained mass weighting",
+      "dual": "V_B* identified by W_B-weighted covectors C_B where C_B(X)=tr(C_B^T W_B X)"
+    },
+    "V_oplus": {
+      "primal": "bilinear product residual maps K: V_B \u00d7 V_B -> V_B",
+      "inner_product": "<K,L>_oplus = \u03a3_{a,b\u2208T_p} \u03c9_ab <K(a,b), L(a,b)>_B",
+      "weight": "T_p is a retained test-pair set from generators/O3/H4/source directions; \u03c9_ab are observable pair weights",
+      "dual": "V_oplus* consists of weighted bilinear covectors over retained test pairs"
+    },
+    "V_O3": {
+      "primal": "associator vector/subspace variations \u0394O3",
+      "inner_product": "<u,v>_O3 = u^T W_O3 v",
+      "weight": "W_O3 from retained associator scale/provenance confidence",
+      "dual": "O3 covectors identified by W_O3-weighted vectors"
+    },
+    "V_H4": {
+      "primal": "H4_perp variations in quotient Q_H4 = V / span(B,O3)",
+      "inner_product": "<u,v>_H4 = (P_perp u)^T W_H4 (P_perp v)",
+      "weight": "W_H4 positive semidefinite on quotient/perpendicular residual direction",
+      "dual": "V_H4* consists only of covectors annihilating span(B,O3)"
+    },
+    "V_S": {
+      "primal": "source/access/divergence state variations \u0394S",
+      "inner_product": "<s,t>_S = s^T W_S t",
+      "weight": "W_S from source mass/access confidence; must be independent of E residual",
+      "dual": "source covectors W_S s"
+    },
+    "V_Pi": {
+      "primal": "retained-order incidence variations over dependencies/events",
+      "inner_product": "<P,Q>_Pi = \u03a3_{e\u2208Pi} \u03c9_e P_e Q_e + \u03a3_{paths} \u03c9_path P_path Q_path",
+      "weight": "dependency/event weights from ledger confidence, ordered-index validity, and source provenance",
+      "dual": "incidence covectors on dependency/order/event cochains"
+    }
+  },
+  "global_inner_product": {
+    "definition": "<u,v>_G = \u03a3_k w_k <u_k,v_k>_k",
+    "components": [
+      "B",
+      "oplus",
+      "O3",
+      "H4",
+      "S",
+      "Pi"
+    ],
+    "rule": "weights w_k must be declared before stationarity and cannot be tuned using compatibility residuals.",
+    "purpose": "makes adjoints (D_A delta_k)^* well-defined."
+  },
+  "generator_inner_product": {
+    "definition": "<X,Y>_A = tr(X^T W_A Y)",
+    "W_A": "W_A induced from the component action of A on V_G, or identity as a minimal scaffold until exact induced metric is derived.",
+    "rule": "same W_A must be used for gradients, stationarity, and boundary adjoints."
+  },
+  "dual_admissibility": {
+    "B_dual": "must act only on retained branch-frame variations",
+    "oplus_dual": "must act on retained product test pairs, not arbitrary dense pairs unless declared",
+    "O3_dual": "must act on associator residuals",
+    "H4_dual": "must annihilate span(B,O3)",
+    "S_dual": "must be independent of post-hoc residuals",
+    "Pi_dual": "must respect retained-order incidence orientation"
+  },
+  "component_identity_target": {
+    "general": "For every component k, D_Gamma R_Gamma^k \u2208 V_k* and rho_P^k + Q_A^k \u2208 V_k*.",
+    "identity": "D_Gamma R_Gamma^k[A] = rho_P^k(J_P[A]) + Q_A^k[A]",
+    "meaning": "component equality is dual-space equality, not scalar norm similarity."
+  },
+  "forbidden": [
+    "component projections chosen after seeing null performance",
+    "component weights tuned to lower E_stress",
+    "H4 covectors that do not annihilate span(B,O3)",
+    "Pi covectors that ignore retained-order orientation",
+    "event-label assignment used as substitute for dual derivation"
+  ],
+  "next": "V1691.2 \u2014 Derive (D_A delta_B)^* and (D_A delta_S)^* as first adjoint cases"
+}
