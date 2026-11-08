@@ -1,0 +1,62 @@
+{
+  "archive_job_log_pending": true,
+  "artifacts": [
+    {
+      "api_digest": "sha256:26627cb8beff46a255c1e898bab033136556da45e76160acda9e603dd9ab60da",
+      "download_sha256": "26627cb8beff46a255c1e898bab033136556da45e76160acda9e603dd9ab60da",
+      "id": 13612030933,
+      "member_count": 39,
+      "name": "weight-polar-lift-verification-1",
+      "zip_bytes": 239396699
+    },
+    {
+      "api_digest": "sha256:6a8be9fff4978085a2fc9b176d80647bd2dcf722bea71f5674aad71cd1f74a04",
+      "download_sha256": "6a8be9fff4978085a2fc9b176d80647bd2dcf722bea71f5674aad71cd1f74a04",
+      "id": 13611748126,
+      "member_count": 35,
+      "name": "weight-polar-lift-publication-1",
+      "zip_bytes": 361168
+    },
+    {
+      "api_digest": "sha256:c12479a358ef02b0e0386b7ea21a65bad215653780237225150ab096ddf2a969",
+      "download_sha256": "c12479a358ef02b0e0386b7ea21a65bad215653780237225150ab096ddf2a969",
+      "id": 13611604043,
+      "member_count": 26,
+      "name": "weight-polar-lift-review-1",
+      "zip_bytes": 107933
+    }
+  ],
+  "attempt": "1",
+  "checkout_sha": "ac94885a229d222f389b22aa5797ecfab8a7c016",
+  "completed_job_logs": [
+    {
+      "bytes": 71275,
+      "conclusion": "success",
+      "file": "job-128686882243.log",
+      "id": 128686882243,
+      "name": "verification",
+      "sha256": "bc6aa962a575e6bff9a1f988636f490d296c820ca3fd07cc95f77a17e3bbb9bf"
+    },
+    {
+      "bytes": 70680,
+      "conclusion": "success",
+      "file": "job-128687414602.log",
+      "id": 128687414602,
+      "name": "review",
+      "sha256": "a35148448dd4b0e96e89f31edd40c6f327c50f66fcb6a745a3131b9cc99a9eb9"
+    },
+    {
+      "bytes": 75446,
+      "conclusion": "success",
+      "file": "job-128687646087.log",
+      "id": 128687646087,
+      "name": "publication",
+      "sha256": "12c525bcc67c089aad5c9b7c528b4650e6def529b2aed8991b93977ca5399a2a"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "reviewer_native_bridge_status": "DERIVED_FROM_SOURCES",
+  "run_id": "42466420886",
+  "status": "PASS",
+  "workflow_sha": "ac94885a229d222f389b22aa5797ecfab8a7c016"
+}
