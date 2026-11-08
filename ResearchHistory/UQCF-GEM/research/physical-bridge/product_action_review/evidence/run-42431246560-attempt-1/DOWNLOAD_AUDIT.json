@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "api_digest": "sha256:13f4374c4a71504498065427e21b721744693c0fb72ed3a4746251f752e5fcb1",
+      "download_sha256": "13f4374c4a71504498065427e21b721744693c0fb72ed3a4746251f752e5fcb1",
+      "id": 13598035660,
+      "member_count": 37,
+      "name": "product-action-publication-1",
+      "zip_bytes": 361334
+    },
+    {
+      "api_digest": "sha256:81bf22c57337e85764254c28db9ccaa75c8a601555972282748f5301db16a310",
+      "download_sha256": "81bf22c57337e85764254c28db9ccaa75c8a601555972282748f5301db16a310",
+      "id": 13597457093,
+      "member_count": 41,
+      "name": "product-action-verification-1",
+      "zip_bytes": 239396798
+    },
+    {
+      "api_digest": "sha256:905a4bd64fd9109f1932634d471ec5618a8acb2fd7caab17333192e32aded7ac",
+      "download_sha256": "905a4bd64fd9109f1932634d471ec5618a8acb2fd7caab17333192e32aded7ac",
+      "id": 13597229963,
+      "member_count": 28,
+      "name": "product-action-review-1",
+      "zip_bytes": 120476
+    }
+  ],
+  "attempt": "1",
+  "checkout_sha": "305859be0bd3fa26b903c35fd5a7be75b9d811ac",
+  "completed_job_logs": [
+    {
+      "bytes": 28895,
+      "conclusion": "success",
+      "file": "job-128580394414.log",
+      "id": 128580394414,
+      "name": "verification",
+      "sha256": "7edbf820dc40b545eb84c3a9c2cfcd81a4a0d5d1746ddf4dad1efeec55e4b87e"
+    },
+    {
+      "bytes": 28171,
+      "conclusion": "success",
+      "file": "job-128580988809.log",
+      "id": 128580988809,
+      "name": "review",
+      "sha256": "d19eb488704d28e3d0af9ef818b9afca2993bab6803683e095dc343b15369beb"
+    },
+    {
+      "bytes": 33051,
+      "conclusion": "success",
+      "file": "job-128581176242.log",
+      "id": 128581176242,
+      "name": "publication",
+      "sha256": "ee05757c368e39fa21e9405339edf164853d05d05eb4b7360eb15065d69745c7"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "run_id": "42431246560",
+  "status": "PASS",
+  "workflow_sha": "305859be0bd3fa26b903c35fd5a7be75b9d811ac"
+}
