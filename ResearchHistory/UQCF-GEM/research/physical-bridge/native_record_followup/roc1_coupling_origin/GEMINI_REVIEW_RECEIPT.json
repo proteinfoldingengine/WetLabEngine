@@ -1,0 +1,83 @@
+{
+  "schema": "uqcf-roc1-coupling-author-review-receipt-v1",
+  "scientific_source_sha": "2d10a74516ce2e8b818091d8ace1fabaff011ecc",
+  "reviewed_assessment_sha256": "3ec064ae0e23ca338493444cb30a1bc904d9a3c46a567ab2df4fba58bfea8c0a",
+  "protocol_freeze_sha": "c6f6283414dd2ec07236d16b387c5edcd94bd905",
+  "workflow_checkout_sha": "1704eccc56a83b2587b31876f71805506c038523",
+  "run_id": "42633980069",
+  "run_attempt": 1,
+  "run_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/42633980069",
+  "evidence_archive_commit": "d1976e6b56550eecc7b3d26126ac375b7f9e5f7b",
+  "complete_evidence_commit": "063a993edfd53dd17124bc0d31ea491d3c2d5451",
+  "evidence_directory": "ResearchHistory/UQCF-GEM/research/physical-bridge/roc1_coupling_review/evidence/run-42633980069-attempt-1",
+  "review": {
+    "checkout_sha": "1704eccc56a83b2587b31876f71805506c038523",
+    "model": "gemini-3.1-pro-preview",
+    "prompt_sha256": "9b9c7356f73589627834f5914e4af65f0f9d6e6ffc84fc3fd95e47cb37147a08",
+    "response_sha256": "8658a8c5fd376864a09c52958db8829f7eeda3a4b2525365bfddd0d91f7d5eac",
+    "run_attempt": "1",
+    "run_id": "42633980069",
+    "scientific_source_sha": "2d10a74516ce2e8b818091d8ace1fabaff011ecc",
+    "verdict": "ACCEPTED",
+    "workflow_sha": "1704eccc56a83b2587b31876f71805506c038523"
+  },
+  "review_text_sha256": "5b98cf3e9b3ee885d87e5c9887c82941d837bd6ea62678aec727d9cde28d202a",
+  "artifacts": [
+    {
+      "api_digest": "sha256:46f9f92cda51bca28d8b4a31b6ea85a37ef2cc41d613575c312024d15b5092c2",
+      "download_sha256": "46f9f92cda51bca28d8b4a31b6ea85a37ef2cc41d613575c312024d15b5092c2",
+      "id": 13681998756,
+      "member_count": 33,
+      "name": "roc1-coupling-verification-1",
+      "zip_bytes": 239371084
+    },
+    {
+      "api_digest": "sha256:2c63ee90da66c5d41d2e0529585e92deea1be474f3b624b4c569263a8646cc6e",
+      "download_sha256": "2c63ee90da66c5d41d2e0529585e92deea1be474f3b624b4c569263a8646cc6e",
+      "id": 13681843088,
+      "member_count": 20,
+      "name": "roc1-coupling-review-1",
+      "zip_bytes": 77480
+    },
+    {
+      "api_digest": "sha256:ec5132e63c966c74b1e4f3f366014915ae0a1e66e8fc33f602968b37163b001a",
+      "download_sha256": "ec5132e63c966c74b1e4f3f366014915ae0a1e66e8fc33f602968b37163b001a",
+      "id": 13681119155,
+      "member_count": 29,
+      "name": "roc1-coupling-publication-1",
+      "zip_bytes": 334959
+    }
+  ],
+  "job_results": [
+    {
+      "id": 129217180027,
+      "name": "verification",
+      "conclusion": "success"
+    },
+    {
+      "id": 129218557001,
+      "name": "review",
+      "conclusion": "success"
+    },
+    {
+      "id": 129219234488,
+      "name": "publication",
+      "conclusion": "success"
+    },
+    {
+      "id": 129219943479,
+      "name": "archive",
+      "conclusion": "success"
+    }
+  ],
+  "author_disposition": "ACCEPT_SCOPED_ARGUMENT_CORRECT_CONDITIONAL_STATUS",
+  "additional_physical_postulate_adopted": false,
+  "new_scientific_campaign": false,
+  "native_bridge": "NOT_DERIVED",
+  "adjudication_review_scope": "Review applies to frozen assessment at scientific_source_sha; this author adjudication and receipt were added afterward.",
+  "closeout_sha256": "b626b8f4f4013288dd276d57b558193bc38ad0aa40b5123c1ad41f9df1d8636f",
+  "final_archive_job_log_sha256": "6bd0ca284a75ab72407c0d49af19cf3b7d7dbecf3127440c34361ab4f7bb9845",
+  "complete_evidence_manifest_sha256": "843a6918c24418798eab38b63214b51b35464181a6bca107cc760412eb5decd5",
+  "draft_pr": 141,
+  "merge_authorized": false
+}
