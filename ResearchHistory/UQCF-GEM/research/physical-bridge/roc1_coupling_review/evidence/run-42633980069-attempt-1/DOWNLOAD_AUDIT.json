@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "api_digest": "sha256:46f9f92cda51bca28d8b4a31b6ea85a37ef2cc41d613575c312024d15b5092c2",
+      "download_sha256": "46f9f92cda51bca28d8b4a31b6ea85a37ef2cc41d613575c312024d15b5092c2",
+      "id": 13681998756,
+      "member_count": 33,
+      "name": "roc1-coupling-verification-1",
+      "zip_bytes": 239371084
+    },
+    {
+      "api_digest": "sha256:2c63ee90da66c5d41d2e0529585e92deea1be474f3b624b4c569263a8646cc6e",
+      "download_sha256": "2c63ee90da66c5d41d2e0529585e92deea1be474f3b624b4c569263a8646cc6e",
+      "id": 13681843088,
+      "member_count": 20,
+      "name": "roc1-coupling-review-1",
+      "zip_bytes": 77480
+    },
+    {
+      "api_digest": "sha256:ec5132e63c966c74b1e4f3f366014915ae0a1e66e8fc33f602968b37163b001a",
+      "download_sha256": "ec5132e63c966c74b1e4f3f366014915ae0a1e66e8fc33f602968b37163b001a",
+      "id": 13681119155,
+      "member_count": 29,
+      "name": "roc1-coupling-publication-1",
+      "zip_bytes": 334959
+    }
+  ],
+  "attempt": "1",
+  "checkout_sha": "1704eccc56a83b2587b31876f71805506c038523",
+  "completed_job_logs": [
+    {
+      "bytes": 28866,
+      "conclusion": "success",
+      "file": "job-129217180027.log",
+      "id": 129217180027,
+      "name": "verification",
+      "sha256": "4919faa30aec679e22b1b3a16681bb940dd2b27c99817dd9ec670f4fc4785355"
+    },
+    {
+      "bytes": 28137,
+      "conclusion": "success",
+      "file": "job-129218557001.log",
+      "id": 129218557001,
+      "name": "review",
+      "sha256": "58cb89d18d03d8fec32f0f326e39bd3345862aa100f2dbd1e638631c23b24303"
+    },
+    {
+      "bytes": 33078,
+      "conclusion": "success",
+      "file": "job-129219234488.log",
+      "id": 129219234488,
+      "name": "publication",
+      "sha256": "f1243862f6e8b02ea6b32879753abd1eded7c9d66917489f2bbd89389be77519"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "run_id": "42633980069",
+  "status": "PASS",
+  "workflow_sha": "1704eccc56a83b2587b31876f71805506c038523"
+}

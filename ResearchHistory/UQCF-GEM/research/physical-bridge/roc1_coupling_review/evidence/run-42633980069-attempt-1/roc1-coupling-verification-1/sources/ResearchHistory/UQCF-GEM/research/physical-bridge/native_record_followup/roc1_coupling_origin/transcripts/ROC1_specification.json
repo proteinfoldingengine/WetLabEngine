@@ -1,0 +1,77 @@
+{
+  "object": "ROC-1",
+  "name": "Retained-Operator Coupling Law v1",
+  "status": "CLOSED_AS_MINIMAL_ACCESSIBILITY_MULTIPLIER_COUPLING_FAMILY__PROTO_GRAVITY_CERTIFICATION_STILL_OPEN",
+  "parent_objects": [
+    "RAG-0",
+    "FC-CL",
+    "RSL-1"
+  ],
+  "purpose": "Define how compact retained finite-capacity action state rho_n lawfully modifies the future transport/accessibility operator without adding a manual provenance force.",
+  "starting_point": {
+    "FC_CL": [
+      "d f_n = b_n",
+      "f_n = c_n \u2299 sigma((a_n \u2299 d*phi_n)/c_n)"
+    ],
+    "RSL_1": [
+      "rho_{n+1} = rho_n \u2295 P_G(ell_n)",
+      "ell_n = c_n \u2299 [x_n sigma(x_n)-A_sigma(x_n)]",
+      "x_n = (a_n \u2299 d*phi_n)/c_n"
+    ]
+  },
+  "derived_coupling": {
+    "dimensionless_retained_burden": "r_n = P_G(rho_n / c_ref), with r_n >= 0 in admissible gauge",
+    "accessibility_multiplier": "m_n = exp(-r_n)",
+    "effective_conductance": "a_n^eff = m_n \u2299 a_n",
+    "effective_capacity": "c_n^eff = m_n \u2299 c_n",
+    "future_flow_law": "d f_{n+1}=b_{n+1}; f_{n+1}=c_n^eff \u2299 sigma((a_n^eff \u2299 d*phi_{n+1})/c_n^eff)",
+    "future_linearized_operator": "O_{n+1}(q)=response under d diag(a_n^eff \u2299 sigma'((a_n^eff\u2299d*phi_{n+1})/c_n^eff)) d*"
+  },
+  "why_this_is_forced_minimally": [
+    "Retained action can only affect future transport through admissible primitives inside RAG-0.",
+    "Operator coefficients must remain positive.",
+    "No coordinate, curvature, metric, target K, or future target operator can be used.",
+    "Ordered composition requires sequential retained burdens to compose associatively.",
+    "The only scalar positive compositional accessibility map with identity at zero burden and additive retained burden is exponential up to gauge/scale: m(r1+r2)=m(r1)m(r2), m(0)=1, m>=0 -> m=exp(-r).",
+    "Applying the same multiplier to a and c changes accessible transport domain while preserving the finite-capacity constitutive shape and pressure ratio.",
+    "This is the minimal coupling: retained state gates accessibility, not a new force term."
+  ],
+  "composition": {
+    "retained_burden_update": "r_{n+1}=r_n+P_G(ell_n/c_ref) in minimal vector gauge",
+    "multiplier_update": "m_{n+1}=m_n \u2299 exp(-P_G(ell_n/c_ref))",
+    "two_step_closure": "m_{n+2}=m_n\u2299exp(-\u0394r_n)\u2299exp(-\u0394r_{n+1}) = m_n\u2299exp(-(\u0394r_n+\u0394r_{n+1}))"
+  },
+  "repair_extension_not_closed": {
+    "optional_form": "m_{n+1}=m_n\u2299exp(-\u0394r_n + repair_n)",
+    "status": "OPEN_EXTENSION",
+    "reason": "repair budget law must be separately derived and cannot be inserted as a free healing term"
+  },
+  "non_smuggling_guards": [
+    "rho_n generated before future target scoring",
+    "m_n depends only on rho_n and fixed reference capacity gauge",
+    "no target future operator",
+    "no target K_ab",
+    "no learned latent",
+    "no history ID",
+    "no coordinate/metric/curvature primitive",
+    "coupling is multiplicative accessibility restriction, not additive force"
+  ],
+  "closed_claim": "ROC-1 closes the minimal retained-action-to-operator accessibility coupling family inside RAG-0.",
+  "open_claims": [
+    "empirical prequential success not yet run",
+    "operator-active retained provenance not yet certified on heldout worlds",
+    "repair law open",
+    "simulation proto-gravity certification open",
+    "ADM / Einstein bridge open"
+  ],
+  "next_object": {
+    "name": "ROC-1P",
+    "purpose": "Prequential retained-operator coupling challenge",
+    "required": [
+      "predict future operator from rho_n before target solve",
+      "compare to no-rho, equal-bit latent, shuffled-rho, same-chi, and high-capacity controls",
+      "run generator-blind and separating-probe challenge worlds",
+      "verify composition residual over ordered updates"
+    ]
+  }
+}
