@@ -1,0 +1,98 @@
+{
+  "archive_job_log": {
+    "bytes": 47152,
+    "file": "job-129219943479.log",
+    "representation": "Complete decoded GitHub job log, UTF-8; connector response preserved without text edits.",
+    "sha256": "6bd0ca284a75ab72407c0d49af19cf3b7d7dbecf3127440c34361ab4f7bb9845"
+  },
+  "artifacts": [
+    {
+      "api_digest": "sha256:46f9f92cda51bca28d8b4a31b6ea85a37ef2cc41d613575c312024d15b5092c2",
+      "download_sha256": "46f9f92cda51bca28d8b4a31b6ea85a37ef2cc41d613575c312024d15b5092c2",
+      "id": 13681998756,
+      "member_count": 33,
+      "name": "roc1-coupling-verification-1",
+      "zip_bytes": 239371084
+    },
+    {
+      "api_digest": "sha256:2c63ee90da66c5d41d2e0529585e92deea1be474f3b624b4c569263a8646cc6e",
+      "download_sha256": "2c63ee90da66c5d41d2e0529585e92deea1be474f3b624b4c569263a8646cc6e",
+      "id": 13681843088,
+      "member_count": 20,
+      "name": "roc1-coupling-review-1",
+      "zip_bytes": 77480
+    },
+    {
+      "api_digest": "sha256:ec5132e63c966c74b1e4f3f366014915ae0a1e66e8fc33f602968b37163b001a",
+      "download_sha256": "ec5132e63c966c74b1e4f3f366014915ae0a1e66e8fc33f602968b37163b001a",
+      "id": 13681119155,
+      "member_count": 29,
+      "name": "roc1-coupling-publication-1",
+      "zip_bytes": 334959
+    }
+  ],
+  "complete_original_artifact_manifests_and_reversible_chunk_readback": "PASS in archive job; original archive retained unchanged",
+  "jobs": [
+    {
+      "completed_at": "2026-11-09T14:24:35Z",
+      "conclusion": "success",
+      "id": 129217180027,
+      "name": "verification",
+      "started_at": "2026-11-09T14:22:10Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-09T14:25:45Z",
+      "conclusion": "success",
+      "id": 129218557001,
+      "name": "review",
+      "started_at": "2026-11-09T14:24:37Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-09T14:27:00Z",
+      "conclusion": "success",
+      "id": 129219234488,
+      "name": "publication",
+      "started_at": "2026-11-09T14:25:48Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-09T14:28:12Z",
+      "conclusion": "success",
+      "id": 129219943479,
+      "name": "archive",
+      "started_at": "2026-11-09T14:27:03Z",
+      "status": "completed"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "original_archive_manifest_sha256": "1109bccb8022e56ec28ba08b44d465b048799bce624484c70a6638243eb01156",
+  "original_artifact_archive_commit": "d1976e6b56550eecc7b3d26126ac375b7f9e5f7b",
+  "original_artifact_archive_tree": "c1611dfc90e9da355b4240002a0700bb077fdd2a",
+  "publication_fresh_byte_reproduction": true,
+  "publication_receipt_sha256": "827cedb35fb878456286c67f995051330b2ba3d0829e4134958957045d768156",
+  "raw_review_reconciled_with_request_identity_and_verdict": true,
+  "review": {
+    "checkout_sha": "1704eccc56a83b2587b31876f71805506c038523",
+    "model": "gemini-3.1-pro-preview",
+    "prompt_sha256": "9b9c7356f73589627834f5914e4af65f0f9d6e6ffc84fc3fd95e47cb37147a08",
+    "response_sha256": "8658a8c5fd376864a09c52958db8829f7eeda3a4b2525365bfddd0d91f7d5eac",
+    "run_attempt": "1",
+    "run_id": "42633980069",
+    "scientific_source_sha": "2d10a74516ce2e8b818091d8ace1fabaff011ecc",
+    "verdict": "ACCEPTED",
+    "workflow_sha": "1704eccc56a83b2587b31876f71805506c038523"
+  },
+  "review_protocol_freeze_sha": "c6f6283414dd2ec07236d16b387c5edcd94bd905",
+  "run_attempt": "1",
+  "run_id": "42633980069",
+  "run_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/42633980069",
+  "schema": "uqcf-roc1-coupling-review-closeout-v1",
+  "scientific_source_sha": "2d10a74516ce2e8b818091d8ace1fabaff011ecc",
+  "scope": "Accepted scalar necessity counterexample only. Inherited regression and integrity checks do not establish physical receiver delivery. No new scientific simulation or parameter campaign.",
+  "selected_durable_file_hash_readback": "PASS for 12 inspected receipt, control, log and verdict files plus DOWNLOAD_AUDIT.json against original SHA256SUMS",
+  "status": "PASS",
+  "verification_receipt_sha256": "d2a24447329fed28860ef255e5e37b773d01f8ae80441b47681e18c0c8d3da41",
+  "workflow_checkout_sha": "1704eccc56a83b2587b31876f71805506c038523"
+}
