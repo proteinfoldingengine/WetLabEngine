@@ -1,0 +1,454 @@
+{
+  "scope": "Original-byte and table-schema inspection of these three archives only; no historical scientific code executed and no diagnostic rerun.",
+  "records": [
+    {
+      "archive": "V1696_1_renormalized_pair_transport_python_test_package.zip",
+      "source": {
+        "library_file_id": "libfile_530426a7081481919ba8f5105b408799",
+        "file_id": "file_0000000027d0720ebd529346be467507",
+        "created_at": "2026-06-08T18:37:12.336628Z",
+        "reported_size_bytes": 11552,
+        "expected_sha256": "3995ad79f0dca764e4e7237d42e89210ecec3bbdd88c5bf2344c2aa9b4a6e982"
+      },
+      "bytes": 11552,
+      "sha256": "3995ad79f0dca764e4e7237d42e89210ecec3bbdd88c5bf2344c2aa9b4a6e982",
+      "git_blob_sha1": "39821fadad7172d3e894070551ff2464570bb715",
+      "crc_error_member": null,
+      "member_count": 9,
+      "member_extension_counts": {
+        ".csv": 6,
+        ".json": 2,
+        ".md": 1
+      },
+      "python_or_notebook_members": [],
+      "manifest_byte_identical_to_summary": true,
+      "historical_verdict": "RENORMALIZED_PAIR_TRANSPORT_FAIL_NO_LAW_CLAIM",
+      "members": [
+        {
+          "name": "renormalized_pair_transport_residuals.csv",
+          "bytes": 729,
+          "sha256": "eaa953df8e3f9f113518cc7edc48e9e6407b2057910fdd7aa7ca77a71a060c13",
+          "columns": [
+            "seed",
+            "ladder_step",
+            "coarse_size",
+            "fine_size",
+            "I_RG",
+            "energy_gap",
+            "R_pair_nonzero",
+            "R_pair_shape"
+          ],
+          "data_rows": 10
+        },
+        {
+          "name": "renormalized_pair_transport_nulls.csv",
+          "bytes": 4830,
+          "sha256": "d3bafc15e92aa7f155d5babea8e9ab4bff4522b5d6f82d527df0a864e2e9d378",
+          "columns": [
+            "seed",
+            "ladder_step",
+            "null_family",
+            "I_RG_null",
+            "I_RG_valid",
+            "null_gap",
+            "valid_beats_null"
+          ],
+          "data_rows": 50
+        },
+        {
+          "name": "R_pair_support_audit.csv",
+          "bytes": 27105,
+          "sha256": "173178a2e2c247fb8a5f1ca3d1c873361d7d6f69cc2e01529ac58a394b63c04f",
+          "columns": [
+            "seed",
+            "ladder_step",
+            "coarse_cell",
+            "fine_cell",
+            "pair_index",
+            "weight",
+            "orientation_factor",
+            "drop_orientation"
+          ],
+          "data_rows": 600
+        },
+        {
+          "name": "stationary_generators.csv",
+          "bytes": 20865,
+          "sha256": "885392da3d6a13d121b9f161b7cf3fe6527d92fcb6483eddeccab0b0f6943d32",
+          "columns": [
+            "seed",
+            "rows",
+            "cols",
+            "edge_id",
+            "action_reduction",
+            "action_reduced"
+          ],
+          "data_rows": 870
+        },
+        {
+          "name": "V1696_1_null_summary.csv",
+          "bytes": 502,
+          "sha256": "57f2a551224efd90397d4a8ebee9240a8177c0fdc731a3bed9b2f83538b65d7d",
+          "columns": [
+            "null_family",
+            "n",
+            "valid_beats_rate",
+            "mean_null_gap",
+            "min_null_gap",
+            "mean_I_RG_null"
+          ],
+          "data_rows": 5
+        },
+        {
+          "name": "V1696_1_ladder_summary.csv",
+          "bytes": 151,
+          "sha256": "e49c634d703b8013b5fdf7e77ef7a118ebc02ee8b596ffbeed06cf2df00c831d",
+          "columns": [
+            "ladder_step",
+            "n",
+            "mean_I_RG",
+            "mean_energy_gap",
+            "mean_R_nonzero"
+          ],
+          "data_rows": 2
+        },
+        {
+          "name": "V1696_1_SUMMARY.json",
+          "bytes": 2314,
+          "sha256": "379fa0f9484f7c7cc78284b9ef0e595f324cd312bbc962383ceabe2e763b0448",
+          "top_level_keys": [
+            "version",
+            "verdict",
+            "purpose",
+            "overall",
+            "promotion_level",
+            "null_summary",
+            "ladder_summary",
+            "claim_boundary",
+            "runtime_seconds"
+          ]
+        },
+        {
+          "name": "run_manifest.json",
+          "bytes": 2314,
+          "sha256": "379fa0f9484f7c7cc78284b9ef0e595f324cd312bbc962383ceabe2e763b0448",
+          "top_level_keys": [
+            "version",
+            "verdict",
+            "purpose",
+            "overall",
+            "promotion_level",
+            "null_summary",
+            "ladder_summary",
+            "claim_boundary",
+            "runtime_seconds"
+          ]
+        },
+        {
+          "name": "V1696_1_RENORMALIZED_PAIR_TRANSPORT_TEST_REPORT.md",
+          "bytes": 513,
+          "sha256": "433287a1e5d3a55ada3f06785947041d14004cc693cc5cfdc623c8aff8961df9"
+        }
+      ]
+    },
+    {
+      "archive": "V1696_3_retained_pair_equivalence_class_python_test_package.zip",
+      "source": {
+        "library_file_id": "libfile_436c49a7b9d881918424428840370063",
+        "file_id": "file_00000000244c720ebc1259ff228c6654",
+        "created_at": "2026-06-08T18:42:51.036784Z",
+        "reported_size_bytes": 29171,
+        "expected_sha256": "362a15f7b130c063d7240d2f34386bad1c2d40c43af3261cfd1d0966438f0fb8"
+      },
+      "bytes": 29171,
+      "sha256": "362a15f7b130c063d7240d2f34386bad1c2d40c43af3261cfd1d0966438f0fb8",
+      "git_blob_sha1": "cf9c3b25a2dce1455deead610e44c67146973c2a",
+      "crc_error_member": null,
+      "member_count": 9,
+      "member_extension_counts": {
+        ".csv": 6,
+        ".json": 2,
+        ".md": 1
+      },
+      "python_or_notebook_members": [],
+      "manifest_byte_identical_to_summary": true,
+      "historical_verdict": "RETAINED_PAIR_CLASS_DIAGNOSTIC_MIXED_NO_LAW_CLAIM",
+      "members": [
+        {
+          "name": "retained_pair_class_residuals.csv",
+          "bytes": 13289,
+          "sha256": "b0cfa70fb3a34afa52be71bac25ac86a9ad85c2d757110e995c2964dbf24cf28",
+          "columns": [
+            "seed",
+            "ladder_step",
+            "coarse_cell",
+            "role",
+            "class_distance",
+            "coherence_score",
+            "coarse_class_defined",
+            "fine_block_size"
+          ],
+          "data_rows": 210
+        },
+        {
+          "name": "retained_pair_class_nulls.csv",
+          "bytes": 100024,
+          "sha256": "2fed7436afcfde85a9e395b36ea1f720ea4ebf8b5a5a72bc80d2f1043c61fccb",
+          "columns": [
+            "seed",
+            "ladder_step",
+            "coarse_cell",
+            "role",
+            "null_family",
+            "null_class_distance",
+            "valid_class_distance",
+            "valid_beats_null",
+            "null_class_defined"
+          ],
+          "data_rows": 1050
+        },
+        {
+          "name": "retained_pair_class_audits.csv",
+          "bytes": 5315,
+          "sha256": "eb2349b1d8901dc35d2d53258d0fffcdf08cba5e9c495e94263aef8fd2ce971c",
+          "columns": [
+            "seed",
+            "ladder_step",
+            "coarse_cell",
+            "role",
+            "fine_classes",
+            "compatible_family"
+          ],
+          "data_rows": 210
+        },
+        {
+          "name": "stationary_generators.csv",
+          "bytes": 29189,
+          "sha256": "46da6f88b65bdfcbfca386c77f9fae8b83dba45ed2dfe2f117b3dcdc6f9e621b",
+          "columns": [
+            "seed",
+            "rows",
+            "cols",
+            "edge_id",
+            "action_reduction",
+            "action_reduced"
+          ],
+          "data_rows": 1218
+        },
+        {
+          "name": "V1696_3_null_summary.csv",
+          "bytes": 478,
+          "sha256": "e00d822061ff8b57159ab1a32cd00a68589f6542be0729884bf38c0e87023d44",
+          "columns": [
+            "null_family",
+            "n",
+            "valid_beats_rate",
+            "mean_null_distance",
+            "mean_valid_distance"
+          ],
+          "data_rows": 5
+        },
+        {
+          "name": "V1696_3_ladder_summary.csv",
+          "bytes": 164,
+          "sha256": "3fc6c9818958cb4a99b5cfceff5b267a9a9c68efe6f45c91dd2096566a106450",
+          "columns": [
+            "ladder_step",
+            "n",
+            "mean_class_distance",
+            "mean_coherence_score",
+            "defined_rate"
+          ],
+          "data_rows": 2
+        },
+        {
+          "name": "V1696_3_SUMMARY.json",
+          "bytes": 2362,
+          "sha256": "83b7d4d8b49a62b5dfa8368d4614e2db12df79075ff93f2e0394085a0af09553",
+          "top_level_keys": [
+            "version",
+            "verdict",
+            "purpose",
+            "overall",
+            "promotion_level",
+            "null_summary",
+            "ladder_summary",
+            "claim_boundary",
+            "runtime_seconds"
+          ]
+        },
+        {
+          "name": "run_manifest.json",
+          "bytes": 2362,
+          "sha256": "83b7d4d8b49a62b5dfa8368d4614e2db12df79075ff93f2e0394085a0af09553",
+          "top_level_keys": [
+            "version",
+            "verdict",
+            "purpose",
+            "overall",
+            "promotion_level",
+            "null_summary",
+            "ladder_summary",
+            "claim_boundary",
+            "runtime_seconds"
+          ]
+        },
+        {
+          "name": "V1696_3_RETAINED_PAIR_EQUIVALENCE_CLASS_TEST_REPORT.md",
+          "bytes": 613,
+          "sha256": "fcfcb6b96ebb40be65d71de3c029ec96b8cb3a5a0a7f8209af755a65c437bf66"
+        }
+      ]
+    },
+    {
+      "archive": "V1696_9_intrinsic_d1d2_operator_invariant_test_package.zip",
+      "source": {
+        "library_file_id": "libfile_da94675564e48191a6f8ba41020a6b6f",
+        "file_id": "file_0000000037a8720eb94ef129a495587b",
+        "created_at": "2026-06-08T18:52:54.554794Z",
+        "reported_size_bytes": 33637,
+        "expected_sha256": "3b6d73384800ebd0982db484bfad4448dee4d4f8de6cae27be21ea3fdffcc314"
+      },
+      "bytes": 33637,
+      "sha256": "3b6d73384800ebd0982db484bfad4448dee4d4f8de6cae27be21ea3fdffcc314",
+      "git_blob_sha1": "e078156eebbc6f85a892ef1887989f9061bbf34d",
+      "crc_error_member": null,
+      "member_count": 9,
+      "member_extension_counts": {
+        ".csv": 6,
+        ".json": 2,
+        ".md": 1
+      },
+      "python_or_notebook_members": [],
+      "manifest_byte_identical_to_summary": true,
+      "historical_verdict": "INTRINSIC_D1D2_OPERATOR_CLASS_DIAGNOSTIC_PRESENT_NO_LAW_CLAIM",
+      "members": [
+        {
+          "name": "operator_pair_class_residuals.csv",
+          "bytes": 11340,
+          "sha256": "8cfecb5856f1638d4871f86c8bf75242f54c569b633ece2923ff4c976d62a033",
+          "columns": [
+            "seed",
+            "ladder_step",
+            "coarse_cell",
+            "role",
+            "class_distance",
+            "coherence_score",
+            "coarse_class_defined",
+            "fine_block_size"
+          ],
+          "data_rows": 180
+        },
+        {
+          "name": "operator_pair_class_nulls.csv",
+          "bytes": 130449,
+          "sha256": "5f99675b4462bb28689d66ded2e2d844fcaf8fb40a849744e1e9e46ae98296ae",
+          "columns": [
+            "seed",
+            "ladder_step",
+            "coarse_cell",
+            "role",
+            "null_family",
+            "null_class_distance",
+            "valid_class_distance",
+            "valid_beats_null",
+            "null_class_defined"
+          ],
+          "data_rows": 1440
+        },
+        {
+          "name": "operator_invariant_audits.csv",
+          "bytes": 5110,
+          "sha256": "a0582bf2f2cf5b9ecc1168107e9e8f41f5eab457cbe18d8190b41fc05abc6a2d",
+          "columns": [
+            "seed",
+            "ladder_step",
+            "coarse_cell",
+            "role",
+            "OD_len",
+            "OD_nonzero",
+            "compatible_family"
+          ],
+          "data_rows": 180
+        },
+        {
+          "name": "stationary_generators.csv",
+          "bytes": 25027,
+          "sha256": "a4a12bed24cb8132c9c32876b71c0b59c31bcc9113fa89d0e9f3ca9c39c9c5e9",
+          "columns": [
+            "seed",
+            "rows",
+            "cols",
+            "edge_id",
+            "action_reduction",
+            "action_reduced"
+          ],
+          "data_rows": 1044
+        },
+        {
+          "name": "V1696_9_null_summary.csv",
+          "bytes": 673,
+          "sha256": "563a160c1450a3963edd3ece5de29b97ce407f445303c27b297335bac6911cb0",
+          "columns": [
+            "null_family",
+            "n",
+            "valid_beats_rate",
+            "mean_null_distance",
+            "mean_valid_distance"
+          ],
+          "data_rows": 8
+        },
+        {
+          "name": "V1696_9_ladder_summary.csv",
+          "bytes": 161,
+          "sha256": "cd08a239d0373764d63c963903bffe0c30884c1005650b149c85702862f93a75",
+          "columns": [
+            "ladder_step",
+            "n",
+            "mean_class_distance",
+            "mean_coherence_score",
+            "defined_rate"
+          ],
+          "data_rows": 2
+        },
+        {
+          "name": "V1696_9_SUMMARY.json",
+          "bytes": 3105,
+          "sha256": "a04c928116d96f715937afb70c9e5230a15aa3a569359f446f075f26f3820772",
+          "top_level_keys": [
+            "version",
+            "verdict",
+            "purpose",
+            "overall",
+            "promotion_level",
+            "null_summary",
+            "ladder_summary",
+            "claim_boundary",
+            "runtime_seconds"
+          ]
+        },
+        {
+          "name": "run_manifest.json",
+          "bytes": 3105,
+          "sha256": "a04c928116d96f715937afb70c9e5230a15aa3a569359f446f075f26f3820772",
+          "top_level_keys": [
+            "version",
+            "verdict",
+            "purpose",
+            "overall",
+            "promotion_level",
+            "null_summary",
+            "ladder_summary",
+            "claim_boundary",
+            "runtime_seconds"
+          ]
+        },
+        {
+          "name": "V1696_9_INTRINSIC_D1D2_OPERATOR_INVARIANT_TEST_REPORT.md",
+          "bytes": 764,
+          "sha256": "4ca0082f4807c06c7055a65df37a41c5bf94d031f77f9eaaf0ca0b949b5408b2"
+        }
+      ]
+    }
+  ]
+}
