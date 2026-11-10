@@ -1,0 +1,15 @@
+test_http_failure_body_durable_without_retry (test_transport.TransportTests.test_http_failure_body_durable_without_retry) ... FAIL
+test_thought_excluded_opaque_bytes_unchanged (test_transport.TransportTests.test_thought_excluded_opaque_bytes_unchanged) ... ok
+
+======================================================================
+FAIL: test_http_failure_body_durable_without_retry (test_transport.TransportTests.test_http_failure_body_durable_without_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a72694aeb347/common_decoder_review_20261110/implementation/test_transport.py", line 16, in test_http_failure_body_durable_without_retry
+    self.assertTrue((p/'response.json').exists(),'Raw failed response was not preserved')
+AssertionError: False is not true : Raw failed response was not preserved
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1)
