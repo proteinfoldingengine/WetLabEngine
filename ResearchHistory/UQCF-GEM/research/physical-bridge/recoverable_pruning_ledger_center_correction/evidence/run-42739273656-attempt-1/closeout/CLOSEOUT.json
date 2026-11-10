@@ -1,0 +1,49 @@
+{
+  "closeout_attempt": "1",
+  "closeout_checkout_sha": "036fddc61fb5644d67b77efd37cb7f59bcf9a277",
+  "closeout_run_id": "42740376184",
+  "completed_original_job_logs": [
+    {
+      "bytes": 29374,
+      "conclusion": "success",
+      "file": "job-129576033317.log",
+      "id": 129576033317,
+      "name": "verification",
+      "sha256": "3d2e48ac4f68365f5c76d0b2b16eae3182733a19fc346648287c72e4ba70e891"
+    },
+    {
+      "bytes": 28625,
+      "conclusion": "success",
+      "file": "job-129576928320.log",
+      "id": 129576928320,
+      "name": "review",
+      "sha256": "e1e264abcba6f4d9d23f7ef6be63ecbd0c561bf1fd62532643c74e719d0426fa"
+    },
+    {
+      "bytes": 33573,
+      "conclusion": "success",
+      "file": "job-129577308095.log",
+      "id": 129577308095,
+      "name": "publication",
+      "sha256": "26e20b96a2f0fe92474db379900bace183793d17825f39c5afeb022aec2c74a8"
+    },
+    {
+      "bytes": 71440,
+      "conclusion": "success",
+      "file": "job-129577866422.log",
+      "id": 129577866422,
+      "name": "archive",
+      "sha256": "6778b2b353f9cd3e487966967d45aaa4eff12c06a1cc5ae7806006771d233b95"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "original_run_attempt": "1",
+  "original_run_id": "42739273656",
+  "original_workflow_checkout_sha": "d7bd45f4f14e2dc0b897c167ff0af28a0f802f10",
+  "scientific_sha": "e7da2fc3ceaff336660848b9d964e5a283309f90",
+  "scope": "Publication-only additive original-run log preservation; no model call or scientific execution",
+  "source_archive_manifest_sha256": "e58758606b395198d040def7d09571d3e991b5471b76419e9b949b464b150fa6",
+  "source_archive_readback_confirmed_in_completed_log": true,
+  "source_archive_sha": "3fc9635fdf484b2d2a98b22ad73bc29c89336f1b",
+  "status": "PASS"
+}
