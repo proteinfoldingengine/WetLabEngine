@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "record_type": "completed-run append-only closeout",
+  "run_id": 42761562725,
+  "run_attempt": 1,
+  "run_conclusion": "success",
+  "reviewer_model": "gemini-3.1-pro-preview",
+  "reviewer_verdict": "ACCEPTED",
+  "scientific_disposition": "ACCEPTED-CONDITIONAL",
+  "native_bridge": "NOT_DERIVED",
+  "scientific_breakthrough": false,
+  "scientific_sha": "dfe3ac5206ef7cac1d9a33f8f69bdb88bec0d5f7",
+  "review_freeze_sha": "490aefc472ff941f9edb3d6d210a64b265580088",
+  "workflow_sha": "30aa20a7af1fc64ecf8b42f05d00bc5a70b6c11b",
+  "archive_sha": "41033f6bd6db8273b58b61a93ec06191a5c7fc82",
+  "archive_only_additions": 141,
+  "original_zip_digests_match_api": true,
+  "all_artifact_manifests_valid": true,
+  "archive_git_readback": "PASS per completed archive job log",
+  "original_three_logs_match_archive": true,
+  "job_logs": [
+    {
+      "id": 129648196211,
+      "name": "verification",
+      "conclusion": "success",
+      "bytes": 29489,
+      "sha256": "b557cf0c4a4c71d56023891baa4e02832a9c4f43a9aa209d707f4a2c3220d283",
+      "file": "job-129648196211.log"
+    },
+    {
+      "id": 129649052763,
+      "name": "review",
+      "conclusion": "success",
+      "bytes": 28667,
+      "sha256": "e7828b3ef9792b8a0e9428ad5af4ec46d3bf34aa4a43195a83cc6eb0c350c45c",
+      "file": "job-129649052763.log"
+    },
+    {
+      "id": 129649314822,
+      "name": "publication",
+      "conclusion": "success",
+      "bytes": 33677,
+      "sha256": "365158b88f0cc22db0e483ae47a23d6e57355b9ca73dfdcca28cc34bad088bee",
+      "file": "job-129649314822.log"
+    },
+    {
+      "id": 129649733252,
+      "name": "archive",
+      "conclusion": "success",
+      "bytes": 63875,
+      "sha256": "dcf4296801738d4d7ec5e1c3c8947f4be1981222f82efa846a8acccd7b0341de",
+      "file": "closeout/job-129649733252.log"
+    }
+  ],
+  "raw_review_response_sha256": "e2c5c9041b53c5dc448522009e9e8993fbdba09a94e3be3076aae1dff1b88734",
+  "complete_review_read_in_session": true,
+  "remote_raw_answer_matches_original_artifact": true,
+  "limitations": [
+    "conditional mathematical boundary only",
+    "physical owner access and event/channel correspondence not derived",
+    "finite-dimensional supported effect class only",
+    "full generated-algebra availability separately supplied"
+  ]
+}
