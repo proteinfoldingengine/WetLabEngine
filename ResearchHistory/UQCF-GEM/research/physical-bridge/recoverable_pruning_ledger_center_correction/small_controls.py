@@ -87,11 +87,16 @@ def fixed_checks():
     assert canonical(graph_center(old,old))==canonical(old)
     assert len(intersection_basis(old,[unit]))==1
     result.append(dict(case='closure_unitalization',bare_common_dimension=1,final_common_dimension=2,omitted_unit_dimension=1))
-    assert norm([1,-1])==2 and norm([0])==0
+    states=([F(1),F(0)],[F(0),F(1)])
+    scalar_restriction=[[F(1),F(1)]]
+    restricted=[[sum(a*x for a,x in zip(row,state)) for row in scalar_restriction] for state in states]
+    before_nonhereditary=norm([a-b for a,b in zip(*states)])
+    after_nonhereditary=norm([a-b for a,b in zip(*restricted)])
+    assert before_nonhereditary==2 and after_nonhereditary==0
     old_raw=[F(1,5),-F(1,5)];new_raw=old_raw+[F(0)]
     before=norm([x/F(1,5) for x in old_raw]);after=norm(new_raw)
     assert before==2 and after==F(2,5) and norm(old_raw)==norm(new_raw)
-    result.append(dict(case='nonhereditary_and_mass',nonhereditary_contrast=['2','0'],conditional_contrast=[str(before),str(after)],raw_contrast=str(norm(new_raw))))
+    result.append(dict(case='nonhereditary_and_mass',nonhereditary_input_states=[[str(x) for x in v] for v in states],nonhereditary_restricted_states=[[str(x) for x in v] for v in restricted],nonhereditary_contrast=[str(before_nonhereditary),str(after_nonhereditary)],conditional_contrast=[str(before),str(after)],raw_contrast=str(norm(new_raw))))
     old3=[[1,0,0],[0,1,0],[0,0,1]];final3=[[1,0,0],[0,1,1]]
     assert member(old3[0],final3) and not member(old3[1],final3)
     selected_unital=[[1,0,0],[1,1,1]]
