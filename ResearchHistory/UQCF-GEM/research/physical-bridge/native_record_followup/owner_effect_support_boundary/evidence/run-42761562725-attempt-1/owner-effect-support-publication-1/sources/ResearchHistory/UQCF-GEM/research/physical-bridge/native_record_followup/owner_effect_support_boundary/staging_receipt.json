@@ -1,0 +1,8 @@
+{
+  "initial": "Source integrity rejected an extra staging newline",
+  "fixed": [
+    "NOTE.md",
+    "CHECK.stdout.txt"
+  ],
+  "resolution": "Only removed the one final newline whose removal reproduces the original Git blob; all original files now exact."
+}
