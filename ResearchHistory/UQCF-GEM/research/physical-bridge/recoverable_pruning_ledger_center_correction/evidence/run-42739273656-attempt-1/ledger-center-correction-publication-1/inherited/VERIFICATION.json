@@ -1,0 +1,403 @@
+{
+  "all_valid": true,
+  "coverage": {
+    "basis_changed_prunings": 1028,
+    "instances": 21,
+    "naturality_prunings": 1028,
+    "original": {
+      "carriers": 197,
+      "chains": 5049,
+      "composition_triples": 8676,
+      "descending_steps": 6471,
+      "distinct_stage_certificates": 1028,
+      "non_descending_steps": 7254,
+      "nonempty_old_kernel_steps": 7254,
+      "old_kernel_rank_sum": 16357,
+      "prunings": 1028,
+      "steps": 13725,
+      "vertices": 97
+    },
+    "relabeled": {
+      "carriers": 197,
+      "chains": 5049,
+      "composition_triples": 8676,
+      "descending_steps": 6471,
+      "distinct_stage_certificates": 1028,
+      "non_descending_steps": 7254,
+      "nonempty_old_kernel_steps": 7254,
+      "old_kernel_rank_sum": 16357,
+      "prunings": 1028,
+      "steps": 13725,
+      "vertices": 97
+    },
+    "shape_counts": {
+      "1": 1,
+      "2": 1,
+      "3": 2,
+      "4": 4,
+      "5": 9
+    }
+  },
+  "coverage_count_sha256": "2431486e75a53e27cfde10b9f6d8deeeb2a5d5c64c9e69e30cdec1316379567f",
+  "deliberate_defects": [
+    {
+      "defect": "P-coefficient",
+      "reason": "wrong P defining map",
+      "rejected": true
+    },
+    {
+      "defect": "section",
+      "reason": "wrong I defining map",
+      "rejected": true
+    },
+    {
+      "defect": "Green",
+      "reason": "wrong Green operator",
+      "rejected": true
+    },
+    {
+      "defect": "domain",
+      "reason": "illegal domain identification",
+      "rejected": true
+    },
+    {
+      "defect": "descent",
+      "reason": "false fixed-target descent claim",
+      "rejected": true
+    },
+    {
+      "defect": "witness",
+      "reason": "witness image",
+      "rejected": true
+    },
+    {
+      "defect": "coverage",
+      "reason": "chain coverage count",
+      "rejected": true
+    },
+    {
+      "defect": "missing-field",
+      "reason": "missing required field: {'I'}",
+      "rejected": true
+    },
+    {
+      "defect": "linear-but-nonnatural-section",
+      "reason": "retained naturality square fails",
+      "rejected": true
+    }
+  ],
+  "execution_status": "completed",
+  "historical_reproduction": {
+    "descending_stages": 4,
+    "non_descending_stages": 8,
+    "scope": "new independent reconstruction of the historical selected chains, not an old-run upgrade",
+    "stages": 12
+  },
+  "input_validity": "all reconstructed inputs and coverage validated",
+  "instances": [
+    {
+      "carriers": 5,
+      "chains": 55,
+      "composition_triples": 85,
+      "descending_steps": 80,
+      "distinct_stage_certificates": 15,
+      "non_descending_steps": 60,
+      "nonempty_old_kernel_steps": 60,
+      "old_kernel_rank_sum": 125,
+      "prunings": 15,
+      "steps": 140,
+      "tag": "U1:((((()))))",
+      "vertices": 5
+    },
+    {
+      "carriers": 6,
+      "chains": 76,
+      "composition_triples": 120,
+      "descending_steps": 108,
+      "distinct_stage_certificates": 20,
+      "non_descending_steps": 88,
+      "nonempty_old_kernel_steps": 88,
+      "old_kernel_rank_sum": 163,
+      "prunings": 20,
+      "steps": 196,
+      "tag": "U1:(((()())))",
+      "vertices": 5
+    },
+    {
+      "carriers": 7,
+      "chains": 97,
+      "composition_triples": 155,
+      "descending_steps": 136,
+      "distinct_stage_certificates": 25,
+      "non_descending_steps": 116,
+      "nonempty_old_kernel_steps": 116,
+      "old_kernel_rank_sum": 216,
+      "prunings": 25,
+      "steps": 252,
+      "tag": "U1:(((())()))",
+      "vertices": 5
+    },
+    {
+      "carriers": 8,
+      "chains": 118,
+      "composition_triples": 190,
+      "descending_steps": 164,
+      "distinct_stage_certificates": 30,
+      "non_descending_steps": 144,
+      "nonempty_old_kernel_steps": 144,
+      "old_kernel_rank_sum": 280,
+      "prunings": 30,
+      "steps": 308,
+      "tag": "U1:(((()))())",
+      "vertices": 5
+    },
+    {
+      "carriers": 4,
+      "chains": 34,
+      "composition_triples": 50,
+      "descending_steps": 52,
+      "distinct_stage_certificates": 10,
+      "non_descending_steps": 32,
+      "nonempty_old_kernel_steps": 32,
+      "old_kernel_rank_sum": 55,
+      "prunings": 10,
+      "steps": 84,
+      "tag": "U1:(((())))",
+      "vertices": 4
+    },
+    {
+      "carriers": 9,
+      "chains": 145,
+      "composition_triples": 236,
+      "descending_steps": 199,
+      "distinct_stage_certificates": 36,
+      "non_descending_steps": 182,
+      "nonempty_old_kernel_steps": 182,
+      "old_kernel_rank_sum": 320,
+      "prunings": 36,
+      "steps": 381,
+      "tag": "U1:((()()()))",
+      "vertices": 5
+    },
+    {
+      "carriers": 10,
+      "chains": 172,
+      "composition_triples": 282,
+      "descending_steps": 234,
+      "distinct_stage_certificates": 42,
+      "non_descending_steps": 220,
+      "nonempty_old_kernel_steps": 220,
+      "old_kernel_rank_sum": 399,
+      "prunings": 42,
+      "steps": 454,
+      "tag": "U1:((()())())",
+      "vertices": 5
+    },
+    {
+      "carriers": 5,
+      "chains": 49,
+      "composition_triples": 74,
+      "descending_steps": 73,
+      "distinct_stage_certificates": 14,
+      "non_descending_steps": 50,
+      "nonempty_old_kernel_steps": 50,
+      "old_kernel_rank_sum": 77,
+      "prunings": 14,
+      "steps": 123,
+      "tag": "U1:((()()))",
+      "vertices": 4
+    },
+    {
+      "carriers": 9,
+      "chains": 145,
+      "composition_triples": 236,
+      "descending_steps": 199,
+      "distinct_stage_certificates": 36,
+      "non_descending_steps": 182,
+      "nonempty_old_kernel_steps": 182,
+      "old_kernel_rank_sum": 348,
+      "prunings": 36,
+      "steps": 381,
+      "tag": "U1:((())(()))",
+      "vertices": 5
+    },
+    {
+      "carriers": 12,
+      "chains": 226,
+      "composition_triples": 374,
+      "descending_steps": 304,
+      "distinct_stage_certificates": 54,
+      "non_descending_steps": 296,
+      "nonempty_old_kernel_steps": 296,
+      "old_kernel_rank_sum": 552,
+      "prunings": 54,
+      "steps": 600,
+      "tag": "U1:((())()())",
+      "vertices": 5
+    },
+    {
+      "carriers": 6,
+      "chains": 64,
+      "composition_triples": 98,
+      "descending_steps": 94,
+      "distinct_stage_certificates": 18,
+      "non_descending_steps": 68,
+      "nonempty_old_kernel_steps": 68,
+      "old_kernel_rank_sum": 108,
+      "prunings": 18,
+      "steps": 162,
+      "tag": "U1:((())())",
+      "vertices": 4
+    },
+    {
+      "carriers": 3,
+      "chains": 19,
+      "composition_triples": 26,
+      "descending_steps": 31,
+      "distinct_stage_certificates": 6,
+      "non_descending_steps": 14,
+      "nonempty_old_kernel_steps": 14,
+      "old_kernel_rank_sum": 19,
+      "prunings": 6,
+      "steps": 45,
+      "tag": "U1:((()))",
+      "vertices": 3
+    },
+    {
+      "carriers": 16,
+      "chains": 353,
+      "composition_triples": 593,
+      "descending_steps": 466,
+      "distinct_stage_certificates": 81,
+      "non_descending_steps": 480,
+      "nonempty_old_kernel_steps": 480,
+      "old_kernel_rank_sum": 876,
+      "prunings": 81,
+      "steps": 946,
+      "tag": "U1:(()()()())",
+      "vertices": 5
+    },
+    {
+      "carriers": 8,
+      "chains": 99,
+      "composition_triples": 155,
+      "descending_steps": 142,
+      "distinct_stage_certificates": 27,
+      "non_descending_steps": 112,
+      "nonempty_old_kernel_steps": 112,
+      "old_kernel_rank_sum": 171,
+      "prunings": 27,
+      "steps": 254,
+      "tag": "U1:(()()())",
+      "vertices": 4
+    },
+    {
+      "carriers": 4,
+      "chains": 29,
+      "composition_triples": 41,
+      "descending_steps": 46,
+      "distinct_stage_certificates": 9,
+      "non_descending_steps": 24,
+      "nonempty_old_kernel_steps": 24,
+      "old_kernel_rank_sum": 30,
+      "prunings": 9,
+      "steps": 70,
+      "tag": "U1:(()())",
+      "vertices": 3
+    },
+    {
+      "carriers": 2,
+      "chains": 9,
+      "composition_triples": 11,
+      "descending_steps": 16,
+      "distinct_stage_certificates": 3,
+      "non_descending_steps": 4,
+      "nonempty_old_kernel_steps": 4,
+      "old_kernel_rank_sum": 4,
+      "prunings": 3,
+      "steps": 20,
+      "tag": "U1:(())",
+      "vertices": 2
+    },
+    {
+      "carriers": 1,
+      "chains": 3,
+      "composition_triples": 3,
+      "descending_steps": 6,
+      "distinct_stage_certificates": 1,
+      "non_descending_steps": 0,
+      "nonempty_old_kernel_steps": 0,
+      "old_kernel_rank_sum": 0,
+      "prunings": 1,
+      "steps": 6,
+      "tag": "U1:()",
+      "vertices": 1
+    },
+    {
+      "carriers": 25,
+      "chains": 1121,
+      "composition_triples": 1996,
+      "descending_steps": 1367,
+      "distinct_stage_certificates": 196,
+      "non_descending_steps": 1750,
+      "nonempty_old_kernel_steps": 1750,
+      "old_kernel_rank_sum": 4204,
+      "prunings": 196,
+      "steps": 3117,
+      "tag": "U2:1",
+      "vertices": 7
+    },
+    {
+      "carriers": 11,
+      "chains": 237,
+      "composition_triples": 399,
+      "descending_steps": 312,
+      "distinct_stage_certificates": 53,
+      "non_descending_steps": 324,
+      "nonempty_old_kernel_steps": 324,
+      "old_kernel_rank_sum": 664,
+      "prunings": 53,
+      "steps": 636,
+      "tag": "U2:2",
+      "vertices": 6
+    },
+    {
+      "carriers": 30,
+      "chains": 1482,
+      "composition_triples": 2652,
+      "descending_steps": 1794,
+      "distinct_stage_certificates": 252,
+      "non_descending_steps": 2340,
+      "nonempty_old_kernel_steps": 2340,
+      "old_kernel_rank_sum": 5746,
+      "prunings": 252,
+      "steps": 4134,
+      "tag": "U2:3",
+      "vertices": 7
+    },
+    {
+      "carriers": 16,
+      "chains": 516,
+      "composition_triples": 900,
+      "descending_steps": 648,
+      "distinct_stage_certificates": 100,
+      "non_descending_steps": 768,
+      "nonempty_old_kernel_steps": 768,
+      "old_kernel_rank_sum": 2000,
+      "prunings": 100,
+      "steps": 1416,
+      "tag": "U2:4",
+      "vertices": 7
+    }
+  ],
+  "proof_status": "general arguments P0-P7 in PROOFS.md; code provides bounded exact certificates; self-reviewed",
+  "raw_certificate_sha256": "21357bdc79429f9d4214024b125e75693609a2538a08a57037978b191ab432c6",
+  "scientific_verdicts": {
+    "fixed_target_descent": "OLD_KERNEL_OBSTRUCTION_WITNESSED",
+    "old_kernel_condition_matches": true,
+    "response_comparisons_verified": 1028,
+    "source_sections_verified": 1028,
+    "stage_composition_diagrams_verified": 8676
+  },
+  "scope": "finite prefix-tree retained structures and the inherited rational Green-response diagnostic; no physical source realization or geometry claim"
+}

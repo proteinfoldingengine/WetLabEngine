@@ -1,0 +1,98 @@
+{
+  "cases": [
+    {
+      "case": "scalar_C2",
+      "common_center": [
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "dimension": 1,
+      "old_individual_span_rejected": true
+    },
+    {
+      "case": "four_address",
+      "common_center": [
+        [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "dimension": 3,
+      "old_individual_span_rejected": true
+    },
+    {
+      "case": "incomparable_centers",
+      "common_center": [
+        [
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "dimension": 1,
+      "old_individual_span_rejected": true
+    },
+    {
+      "bare_common_dimension": 1,
+      "case": "closure_unitalization",
+      "final_common_dimension": 2,
+      "omitted_unit_dimension": 1
+    },
+    {
+      "case": "nonhereditary_and_mass",
+      "conditional_contrast": [
+        "2",
+        "2/5"
+      ],
+      "nonhereditary_contrast": [
+        "2",
+        "0"
+      ],
+      "nonhereditary_input_states": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "nonhereditary_restricted_states": [
+        [
+          "1"
+        ],
+        [
+          "1"
+        ]
+      ],
+      "raw_contrast": "2/5"
+    },
+    {
+      "case": "hereditary_selected_not_whole_center",
+      "e2_lost": true,
+      "selected_e1_survives": true,
+      "selected_unital_record_dimension": 2
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "retained_effect_contrast": "1/5",
+  "scope": "Six fixed exact controls only; no universal theorem or historical conformance certification",
+  "status": "PASS"
+}

@@ -1,0 +1,39 @@
+{
+  "checkout_sha": "d7bd45f4f14e2dc0b897c167ff0af28a0f802f10",
+  "commands": [
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent",
+      "exit_code": 0,
+      "stage": "historical-reproduction"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "produce_certificates.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "stage": "producer"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "verify_certificates.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "stage": "independent-verifier"
+    }
+  ],
+  "fresh_byte_reproduction": true,
+  "mode": "replay",
+  "native_bridge": "NOT_DERIVED",
+  "run_attempt": "1",
+  "run_id": "42739273656",
+  "status": "PASS",
+  "workflow_sha": "d7bd45f4f14e2dc0b897c167ff0af28a0f802f10"
+}

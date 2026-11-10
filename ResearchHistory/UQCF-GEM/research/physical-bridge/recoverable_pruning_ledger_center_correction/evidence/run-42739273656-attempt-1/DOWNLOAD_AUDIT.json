@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "api_digest": "sha256:70967789156a0ff0203facf32f8979ff43bee32802daf5847c35451a55e7227d",
+      "download_sha256": "70967789156a0ff0203facf32f8979ff43bee32802daf5847c35451a55e7227d",
+      "id": 13729340125,
+      "member_count": 52,
+      "name": "ledger-center-correction-publication-1",
+      "zip_bytes": 448913
+    },
+    {
+      "api_digest": "sha256:02b89495352c15b938a5c9e376bd005b1b2c10e5a7bc4025f7040392214f25ca",
+      "download_sha256": "02b89495352c15b938a5c9e376bd005b1b2c10e5a7bc4025f7040392214f25ca",
+      "id": 13728456859,
+      "member_count": 40,
+      "name": "ledger-center-correction-review-1",
+      "zip_bytes": 280011
+    },
+    {
+      "api_digest": "sha256:7e0b7bcb820abe656d254d2c7189c90838ba5176bf7efdc27d5ef518b242482b",
+      "download_sha256": "7e0b7bcb820abe656d254d2c7189c90838ba5176bf7efdc27d5ef518b242482b",
+      "id": 13728203696,
+      "member_count": 56,
+      "name": "ledger-center-correction-verification-1",
+      "zip_bytes": 239483469
+    }
+  ],
+  "attempt": "1",
+  "checkout_sha": "d7bd45f4f14e2dc0b897c167ff0af28a0f802f10",
+  "completed_job_logs": [
+    {
+      "bytes": 29374,
+      "conclusion": "success",
+      "file": "job-129576033317.log",
+      "id": 129576033317,
+      "name": "verification",
+      "sha256": "3d2e48ac4f68365f5c76d0b2b16eae3182733a19fc346648287c72e4ba70e891"
+    },
+    {
+      "bytes": 28625,
+      "conclusion": "success",
+      "file": "job-129576928320.log",
+      "id": 129576928320,
+      "name": "review",
+      "sha256": "e1e264abcba6f4d9d23f7ef6be63ecbd0c561bf1fd62532643c74e719d0426fa"
+    },
+    {
+      "bytes": 33573,
+      "conclusion": "success",
+      "file": "job-129577308095.log",
+      "id": 129577308095,
+      "name": "publication",
+      "sha256": "26e20b96a2f0fe92474db379900bace183793d17825f39c5afeb022aec2c74a8"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "run_id": "42739273656",
+  "status": "PASS",
+  "workflow_sha": "d7bd45f4f14e2dc0b897c167ff0af28a0f802f10"
+}
