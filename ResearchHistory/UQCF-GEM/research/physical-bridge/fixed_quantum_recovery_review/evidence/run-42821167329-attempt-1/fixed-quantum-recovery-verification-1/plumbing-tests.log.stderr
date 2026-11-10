@@ -1,0 +1,18 @@
+test_adverse_verdict_not_infrastructure_error (test_review.ProtocolTests.test_adverse_verdict_not_infrastructure_error) ... ok
+test_empty_reconstruction_rejected (test_review.ProtocolTests.test_empty_reconstruction_rejected) ... ok
+test_false_acceptance_rejected (test_review.ProtocolTests.test_false_acceptance_rejected) ... ok
+test_identity_mutations_rejected (test_review.ProtocolTests.test_identity_mutations_rejected) ... ok
+test_original_attempt_not_hidden_by_later_skipped_job (test_review.ProtocolTests.test_original_attempt_not_hidden_by_later_skipped_job) ... ok
+test_raw_native_label_not_silently_rewritten (test_review.ProtocolTests.test_raw_native_label_not_silently_rewritten) ... ok
+test_real_manifest_mutations_rejected (test_review.ProtocolTests.test_real_manifest_mutations_rejected) ... ok
+test_reject_repeated_or_uncertain_generation (test_review.ProtocolTests.test_reject_repeated_or_uncertain_generation) ... ok
+test_request_config_and_model_metadata_mutations_rejected (test_review.ProtocolTests.test_request_config_and_model_metadata_mutations_rejected) ... ok
+test_source_packet_mutations_rejected (test_review.ProtocolTests.test_source_packet_mutations_rejected) ... ok
+test_http_failure_body_durable_without_retry (test_transport.TransportTests.test_http_failure_body_durable_without_retry) ... ok
+test_partial_response_read_failure_preserved (test_transport.TransportTests.test_partial_response_read_failure_preserved) ... ok
+test_thought_excluded_opaque_bytes_unchanged (test_transport.TransportTests.test_thought_excluded_opaque_bytes_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.181s
+
+OK

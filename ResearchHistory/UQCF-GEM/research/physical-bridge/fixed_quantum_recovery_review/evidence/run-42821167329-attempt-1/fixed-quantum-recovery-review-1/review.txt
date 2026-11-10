@@ -1,0 +1,27 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The result is a conditional mathematical counterexample, not a derivation of a native physical mechanism or a universal impossibility theorem.",
+    "The physical availability, ownership, preparation, and actual-event/channel association of the constructed operations (such as the E-flag or the retained-source effect Pi_p) remain unearned and are explicitly supplied as premises.",
+    "The construction relies on a specific finite-dimensional benchmark (4D source, 2D environment, 2D receiver) and does not rule out that other independent physical postulates or constraints might force receiver delivery."
+  ],
+  "reconstruction": [
+    "General D_W completion: For any isometry W, D_W(X) = W^dagger X W + Tr[(I - W W^dagger) X] tau is CPTP and exactly recovers X from W X W^dagger. This demonstrates that individual global recoverability is a generic property of isometries, not a localization condition.",
+    "Common classical decoder: A single measure-and-prepare CPTP map D_cl, using a fixed basis partition (assigning |p,0,1> and |p,1,0> to u, and all other |j,e,r> to j), recovers all diagonal source states for both W_R and W_E. It explicitly fails for the Bell representative's u atom, confirming it is not a universal quantum decoder.",
+    "Common quantum decoder: Two isometries A and B (where B is the old W_E) are constructed to implement the same reduced source channel C. Linear maps L_0 and L_1 are defined such that L_0 B = I, L_1 B = 0, L_0 A = I/sqrt(2), and L_1 A = I/sqrt(2). The CPTP completion D(X) = L_0 X L_0^dagger + L_1 X L_1^dagger + Tr[(I-P)X]|o><o| exactly recovers all quantum states for both A and B.",
+    "R blindness vs contrast: Under B, the receiver R is always in the state |0><0| (completely blind). Under A, R is |+><+| for retained states and |-><-| for the u state, yielding a contrast of 1/5 for the effect F=|-><-| on the source pair. The initial state of R is identical across both implementations.",
+    "Single-effect follow-through: The exact binary projection G = D*(Pi_u) evaluates to Pi_p \\otimes Pi_1^E \\otimes I_R. On the code subspace P, it satisfies P G P = P G_E P where G_E = I_S \\otimes Pi_1^E \\otimes I_R. Off-code (e.g., on |o,1,0>), G and G_E differ, showing that the full-domain effect genuinely depends on S and E.",
+    "P1/P2 relation: The mathematical nonfactorization P(e_u - e_p) = 0 is verified. P2 yields the signed loss vector z_u(e_u - e_p). This is correctly identified as an algebraic decomposition, not a physically stored or owner-accessible flag."
+  ],
+  "constructive_analysis": [
+    "The argument successfully isolates the mathematical existence of a global recovery channel from the physical localization of the recovered information, rigorously falsifying the implication that global recoverability forces a nominated receiver to acquire the record.",
+    "By providing explicit isometries A and B that share a single quantum decoder but differ entirely in their R-system output, the proof demonstrates that the joint realization remains underdetermined by the source channel and the existence of a global decoder.",
+    "The distinction between the full-domain effect G and the E-only effect G_E on the code subspace clarifies that while the information can be read from E alone for these specific encodings, the global recovery map itself genuinely depends on S and E, preventing the trivial assignment of the effect to a single factor globally.",
+    "The analysis correctly identifies that the next native obligation is to provide a producing operation and immutable source that make at least one fixed separating effect available to the same retained owner, rather than relying on global recoverability as a proxy for delivery."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Provide a producing operation and immutable source that make at least one fixed separating effect available to the same retained owner, identifying the complete typed source-only chain without assuming the delivery it seeks to prove."
+}

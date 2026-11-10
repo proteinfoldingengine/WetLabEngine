@@ -1,0 +1,16 @@
+test_http_failure_body_durable_without_retry (test_transport.TransportTests.test_http_failure_body_durable_without_retry) ... ok
+test_partial_response_read_failure_preserved (test_transport.TransportTests.test_partial_response_read_failure_preserved) ... FAIL
+test_thought_excluded_opaque_bytes_unchanged (test_transport.TransportTests.test_thought_excluded_opaque_bytes_unchanged) ... ok
+
+======================================================================
+FAIL: test_partial_response_read_failure_preserved (test_transport.TransportTests.test_partial_response_read_failure_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a72694aeb347/common_decoder_review_20261110/implementation/test_transport.py", line 31, in test_partial_response_read_failure_preserved
+    self.assertTrue((p/'response.partial').exists(),'Partial response bytes lost')
+AssertionError: False is not true : Partial response bytes lost
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+FAILED (failures=1)
