@@ -1,0 +1,11 @@
+# Q154 RESULT (2026-11-11T15:38:18-07:00): the pinching side adds no label dependence; product-frame label-free core = Core_j ⊗ A_{S_j}
+Science, local, supporting math. Not posted. NOT_DERIVED; Not claimed; scientific_breakthrough false.
+Original Q154 (pinching-chain receivers chain-intrinsic?) was DROPPED at the gate as implied: Z(A_S) is characteristic and the pinching chain makes no survivor choice (ledger §13 l.435).
+Prop 154.1 (proved). Let A_j = B_j ⊗ A_{S_j} (premise J), B_0 = D(X_0). Every unitary g preserving all A_j is g = Σ_x |πx⟩⟨x| ⊗ U_x with π ∈ G (tree chain automorphisms), each U_x normalizing every A_{S_j}, and U_x^*U_{x'} ∈ A_{S_j}' whenever x ~_j x'.
+ Proof: g permutes the minimal central projections e_x⊗I of A_0, giving the form. g preserves Z(A_j) = B_j ⊗ Z(A_{S_j}), so e_β⊗I ↦ e_{πβ}⊗I is a sum of minimal central projections e_{β'}⊗P_s; so πβ is a union of π_j blocks, and since π is a bijection on k blocks it maps blocks to blocks, i.e. π ∈ G. Finally e_β⊗a ↦ Σ_{x∈β} e_{πx} ⊗ U_x a U_x^* ∈ B_j ⊗ A_{S_j} forces U_x a U_x^* ∈ A_{S_j}, constant over x ∈ β. ∎
+Thm 154.2 (proved). Core^J_j := ∩_{g} g(𝒮_j ⊗ A_{S_j}) = Core_j ⊗ A_{S_j}, with Core_j the truncated unit history of Thm 152.1.
+ Proof: each shell lies in one π_j block, so g(e_A ⊗ a) = e_{πA} ⊗ U a U^* with U a U^* ∈ A_{S_j}; hence g(𝒮_j⊗A_{S_j}) = π𝒮_j ⊗ A_{S_j}. G ⊗ I ⊆ G_J, and intersection commutes with ⊗ A_{S_j} in finite dimension. ∎
+Corollary 154.3. In the product frame, the (E1)-dependent part of the survivor reading is exactly the tree part (levels below c_j(w)); the pinching factor is fully chain-intrinsic. The ledger's joint witness (l.445, where R_min = B_j suffices) uses only chain-intrinsic data on both sides.
+Check (prereg PASS criterion met, support only): n=4 witness, 2-qubit pinching, 60 sampled g (seed 154) with per-atom phases and bit flips, all verified in G_J. dim Core^J_1 = 32 and dim Core^J_2 = 8, as predicted. Artifacts: PREREG.md, q154.py, stdout.txt.
+Limits: no access, receiver ownership semantics or retention is derived; this is a corollary of Thm 152.1 plus the structure of premise J, below the posting bar (no notification).
+NEXT Q155: leave the label line (Q144–Q154 closed). Dedup-first pick from the backlog Targets A/C/E (not B/D label questions), checked against all RESULT headers and the stop notes.

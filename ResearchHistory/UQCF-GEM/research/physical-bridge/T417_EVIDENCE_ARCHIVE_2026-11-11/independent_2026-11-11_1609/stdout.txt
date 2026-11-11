@@ -1,0 +1,4 @@
+support-equivariance checks: 860000 violations: 0
+balanced pair support-guarded transcript differences (words len<=3): 0
+after removing u: x+ -> {'o': 1, 'p': 3, 'v': 1}  x- -> {'o': 1, 'p': 2, 'v': 2}  same support: True
+signed control: supp before ['o', 'p', 'u', 'v'] after prune u ['o', 'v'] (p cancels)
