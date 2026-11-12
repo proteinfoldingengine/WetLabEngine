@@ -1,0 +1,8 @@
+# Q176m RESULT: PASS. "Minimal" for D_dc is earned under stated hypotheses (Engineering requirement 1 for T-425).
+Run 2026-11-12 01:38 MST, python3 3.13.5, Fractions, bytecode off. q176m.py reuses the helper definitions of q176.py (loaded by exec of its header, disclosed); output stdout.txt.
+Prop 176.2 (proof). Let D = {D_X} be any family with D_X ⊆ F_X^+ that is stable under source zero extension I_YX (v16.22 TYPE_LEDGER A3, line 10, for prefix Y ⊆ X) and contains every strictly positive state on every carrier. Then D_dc(X)\{0} ⊆ D_X for every X.
+Proof: for nonzero x ∈ D_dc(X), the zero set is descendant-closed, so supp(x) is ancestor-closed and nonempty; it contains the root and is a prefix Y. x|_Y is strictly positive on Y, and x = I_YX(x|_Y), so x ∈ D_X.
+With Prop 176.1 (D_dc is P1-, I- and relabel-stable), D_dc\{0} is the least family stable under P1, I and relabeling that contains all strictly positive states. It contains x± (both strictly positive). P1-stability is not needed for the inclusion, only for D_dc itself being admissible.
+Exact check: nonzero D_dc supports equal the root-containing prefixes on T (5 = 5) and C (21 = 21); strictly positive states on every prefix extend by zero into D_dc (0 failures). Control: the Q174b interior-zero support on T is not a prefix and not in D_dc.
+Scope: the two hypotheses (I-stability, containing all strictly positive states) are the stated SUPPLIED framing of "map-stable positive domain"; nothing here says D_dc is the physical attainable set. The zero state is an edge case (empty carrier) and is not used.
+Not physical; native bridge NOT_DERIVED; Not claimed; scientific_breakthrough false.

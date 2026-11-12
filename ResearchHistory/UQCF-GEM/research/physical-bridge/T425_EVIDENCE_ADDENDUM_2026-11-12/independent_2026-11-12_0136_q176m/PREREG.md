@@ -1,0 +1,7 @@
+# Q176m PREREG (2026-11-12 01:37 MST; written before code). Engineering requirement 1 for T-425: prove "minimal" for D_dc or drop it.
+Claim (Prop 176.2): let D = {D_X} be any family of subsets D_X ⊆ F_X^+ indexed by finite rooted carriers, stable under source zero extension I_YX (v16.22 TYPE_LEDGER A3: "I_YX:S_Y->S_X is source zero extension", for ancestral prefix Y ⊆ X), and containing every strictly positive state on every carrier. Then D_dc(X)\{0} ⊆ D_X.
+Proof sketch: for x ∈ D_dc(X), x ≠ 0, the support S = supp(x) is ancestor-closed (complement of a descendant-closed set) and nonempty, so it contains the root and is a prefix Y. x|_Y is strictly positive on Y and x = I_YX(x|_Y). Hence x ∈ D_X.
+With Q176 (D_dc is P1-, I- and relabel-stable), D_dc\{0} is the least such family, so "minimal" is earned under exactly these stated hypotheses. The zero state is in D_dc only if 0 is admitted (empty carrier); stated as an edge case, not used.
+Hypotheses are SUPPLIED framing for the minimality statement (stability under I and inclusion of strictly positive states); no claim that D_dc is the physical attainable set.
+Exact check: on carriers T (4 vertices) and C (7 vertices) from q176.py, enumerate all 2^|X| supports S; PASS iff {S nonempty : S = supp of some D_dc point} == {prefixes Y containing root} (prefix list from q176.py prefixes()), and for one random strictly positive x on each prefix, I_YX(x) ∈ D_dc. Control: an interior-zero support (e.g. T with p=0, u,v>0) must be rejected as non-prefix.
+FAIL: any mismatch.
