@@ -1,0 +1,4 @@
+uniform trace: fixed(x+)= False  fixed(x-)= True
+weights {'p': 1, 'u': 2} : fixed(x+)= True  fixed(x-)= False
+weights {'p': 2, 'u': 1} : fixed(x+)= False  fixed(x-)= False
+post x+ (Fraction(1, 5), Fraction(3, 5), Fraction(1, 5)) post x- (Fraction(1, 5), Fraction(2, 5), Fraction(2, 5))

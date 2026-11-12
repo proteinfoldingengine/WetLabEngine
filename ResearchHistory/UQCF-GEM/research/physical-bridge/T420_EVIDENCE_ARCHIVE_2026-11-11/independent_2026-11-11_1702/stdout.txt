@@ -1,0 +1,14 @@
+g=1 COUNTING                                 w_p/w_u=1     fixed(x+)=False fixed(x-)=True separates=True
+g=1 ABS_DEPTH(|p|=0)                         w_p/w_u=2     fixed(x+)=False fixed(x-)=False separates=False
+g=1 FIBER_DEPTH                              w_p/w_u=2     fixed(x+)=False fixed(x-)=False separates=False
+g=1 NORMALIZED_RESTRICTION=L8 indicator      w_p/w_u=inf   fixed(x+)=False fixed(x-)=False separates=False
+g=2 COUNTING                                 w_p/w_u=1     fixed(x+)=False fixed(x-)=True separates=True
+g=2 ABS_DEPTH(|p|=0)                         w_p/w_u=4     fixed(x+)=False fixed(x-)=False separates=False
+g=2 FIBER_DEPTH                              w_p/w_u=4     fixed(x+)=False fixed(x-)=False separates=False
+g=2 NORMALIZED_RESTRICTION=L8 indicator      w_p/w_u=inf   fixed(x+)=False fixed(x-)=False separates=False
+g=3 COUNTING                                 w_p/w_u=1     fixed(x+)=False fixed(x-)=True separates=True
+g=3 ABS_DEPTH(|p|=0)                         w_p/w_u=8     fixed(x+)=False fixed(x-)=False separates=False
+g=3 FIBER_DEPTH                              w_p/w_u=8     fixed(x+)=False fixed(x-)=False separates=False
+g=3 NORMALIZED_RESTRICTION=L8 indicator      w_p/w_u=inf   fixed(x+)=False fixed(x-)=False separates=False
+self-reference: fixed(x+,x+)= True  fixed(x-,x-)= True  separates=False
+ABS_DEPTH ratio = 2^g for |p|=0..3, g=1,2: OK
