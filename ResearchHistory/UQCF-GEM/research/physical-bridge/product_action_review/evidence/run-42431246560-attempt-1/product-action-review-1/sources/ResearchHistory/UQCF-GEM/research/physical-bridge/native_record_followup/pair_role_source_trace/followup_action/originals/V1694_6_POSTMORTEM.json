@@ -1,0 +1,218 @@
+{
+  "version": "V1694.6",
+  "title": "Product Identity Failure Postmortem and Identity-Form Decision",
+  "verdict": "D_EQUALS_RHO_PLUS_Q_PRODUCT_IDENTITY_DISCARDED_FOR_NOW",
+  "starting_point": "V1694.5 tested the exact support-boundary decomposition and product identity failed decisively.",
+  "V1694_5_summary": {
+    "graph_cases": 9,
+    "comparison_cases": 21,
+    "stationarity_pass_rate": 1.0,
+    "positive_action_reduction_rate": 1.0,
+    "boundary_support_disjointness_rate": 1.0,
+    "support_current_disjointness_rate": 1.0,
+    "product_identity_pass_rate": 0.0,
+    "mean_E_norm": 0.0010218964448680593,
+    "mean_valid_null_min_norm": 7.11642399870178e-05,
+    "valid_advantage_mean": -0.0009507322048810414,
+    "mean_Q_rho_overlap_cosine": 0.9808410798185537,
+    "Q_contains_support_rate": 0.0,
+    "rho_contains_boundary_rate": 0.0
+  },
+  "null_summary": [
+    {
+      "null_family": "N_Q_support_contamination",
+      "n": 21,
+      "valid_beats_rate": 1.0,
+      "mean_null_E": 0.0014043361284510143,
+      "mean_valid_E": 0.0010218964448680142,
+      "margin": 0.00038243968358300014
+    },
+    {
+      "null_family": "N_pair_birth_unsigned",
+      "n": 21,
+      "valid_beats_rate": 0.9523809523809523,
+      "mean_null_E": 0.0011313237031296763,
+      "mean_valid_E": 0.0010218964448680142,
+      "margin": 0.0001094272582616621
+    },
+    {
+      "null_family": "N_rho_boundary_contamination",
+      "n": 21,
+      "valid_beats_rate": 1.0,
+      "mean_null_E": 0.0010271110560071096,
+      "mean_valid_E": 0.0010218964448680142,
+      "margin": 5.214611139095406e-06
+    },
+    {
+      "null_family": "N_source_free_false",
+      "n": 21,
+      "valid_beats_rate": 0.0,
+      "mean_null_E": 7.116423998700944e-05,
+      "mean_valid_E": 0.0010218964448680142,
+      "margin": -0.0009507322048810048
+    },
+    {
+      "null_family": "N_weight_label_only",
+      "n": 21,
+      "valid_beats_rate": 0.0,
+      "mean_null_E": 7.116423998700944e-05,
+      "mean_valid_E": 0.0010218964448680142,
+      "margin": -0.0009507322048810048
+    }
+  ],
+  "rho_support_term_summary": [
+    {
+      "support_term": "delta_T",
+      "n": 21,
+      "mean_term_norm": 0.00011703911626506434,
+      "max_term_norm": 0.0003374570797063,
+      "contains_boundary_rate": 0.0
+    },
+    {
+      "support_term": "delta_kernel",
+      "n": 21,
+      "mean_term_norm": 0.001008078730775019,
+      "max_term_norm": 0.003076602130733,
+      "contains_boundary_rate": 0.0
+    },
+    {
+      "support_term": "delta_orientation",
+      "n": 21,
+      "mean_term_norm": 6.488893409796328e-05,
+      "max_term_norm": 0.0002177512478783,
+      "contains_boundary_rate": 0.0
+    },
+    {
+      "support_term": "delta_w",
+      "n": 21,
+      "mean_term_norm": 0.00011211389300645133,
+      "max_term_norm": 0.0004461550577059,
+      "contains_boundary_rate": 0.0
+    }
+  ],
+  "size_diagnostics": [
+    {
+      "rows": 2,
+      "cols": 3,
+      "nodes": 6,
+      "comparisons": 3,
+      "identity_rate": 0.0,
+      "mean_E": 0.0005821209742763333,
+      "mean_null_min": 3.8869500516504304e-05,
+      "advantage_mean": -0.000543251473759829,
+      "mean_overlap": 0.9807387936877392
+    },
+    {
+      "rows": 2,
+      "cols": 4,
+      "nodes": 8,
+      "comparisons": 6,
+      "identity_rate": 0.0,
+      "mean_E": 0.0008077163889874,
+      "mean_null_min": 5.684656060185911e-05,
+      "advantage_mean": -0.000750869828385541,
+      "mean_overlap": 0.9850788821478464
+    },
+    {
+      "rows": 3,
+      "cols": 3,
+      "nodes": 9,
+      "comparisons": 12,
+      "identity_rate": 0.0,
+      "mean_E": 0.0012389303404562416,
+      "mean_null_min": 8.63967645472109e-05,
+      "advantage_mean": -0.0011525335759090308,
+      "mean_overlap": 0.978747750186611
+    }
+  ],
+  "what_survived": [
+    "Product derivative structure remains meaningful from prior tests.",
+    "Stationarity passed.",
+    "Support-boundary decomposition emitted correctly.",
+    "Disjointness gates passed.",
+    "Contamination nulls were rejected."
+  ],
+  "what_failed": [
+    "The product identity D = rho + Q failed with 0.0 pass rate.",
+    "Source-free and weight-label-only nulls outperformed the valid decomposed model.",
+    "Q and rho were nearly collinear in product dual space.",
+    "Adding both Q and rho appears to overcorrect rather than explain D."
+  ],
+  "root_causes": [
+    {
+      "cause": "identity_form_failed_after_clean_decomposition",
+      "evidence": {
+        "product_identity_pass_rate": 0.0,
+        "boundary_support_disjointness_rate": 1.0,
+        "support_current_disjointness_rate": 1.0
+      },
+      "meaning": "The failure is not due to obvious contamination between boundary and support terms."
+    },
+    {
+      "cause": "D_equals_rho_plus_Q_overcorrects",
+      "evidence": {
+        "mean_E_norm": 0.0010218964448680593,
+        "mean_valid_null_min_norm": 7.11642399870178e-05
+      },
+      "meaning": "Adding both support current and boundary Q makes the residual much worse than simpler null/special-case alternatives."
+    },
+    {
+      "cause": "Q_and_rho_collinearity",
+      "evidence": {
+        "mean_Q_rho_overlap_cosine": 0.9808410798185537
+      },
+      "meaning": "Even disjoint construction channels project into nearly the same direction in V_oplus*, so additive correction is structurally ill-conditioned."
+    },
+    {
+      "cause": "source_free_and_weight_label_nulls_win",
+      "evidence": {
+        "N_source_free_false_valid_beats_rate": 0.0,
+        "N_weight_label_only_valid_beats_rate": 0.0
+      },
+      "meaning": "The identity does not need, or is harmed by, the current decomposition used here."
+    }
+  ],
+  "scientific_decision": "Discard D_GammaR_Gamma^oplus = rho^oplus + Q^oplus as the active product identity. Keep Phi_oplus as a meaningful structure probe, but search for a different invariant.",
+  "discard_or_downgrade": [
+    {
+      "item": "D_oplus = rho_support + Q_A",
+      "status": "discard for now",
+      "reason": "failed after exact support-boundary decomposition"
+    },
+    {
+      "item": "additive source-balanced identity form",
+      "status": "downgrade",
+      "reason": "Q/rho collinearity and overcorrection"
+    },
+    {
+      "item": "rho_support as additive current",
+      "status": "not sufficient",
+      "reason": "does not improve identity against source-free/weight nulls"
+    }
+  ],
+  "keep": [
+    "Phi_oplus curvature-dual product probe",
+    "D1/D2 correction requirement",
+    "retained-pair null governance",
+    "exact-adjoint stationarity discipline",
+    "support-boundary decomposition as diagnostic/audit"
+  ],
+  "next_required_branch": {
+    "name": "V1695 \u2014 Product Curvature Invariant Search",
+    "objective": "Search for a non-additive invariant of Phi_oplus that preserves derivative/pair structure without using rho and Q as correction terms.",
+    "candidate_invariants": [
+      "source-free residual norm D_oplus relative to structural nulls",
+      "angle/alignment invariant between D_oplus and Q_A",
+      "orthogonal component of D_oplus after projecting out support/boundary span",
+      "pairwise covariance/rank signature of Phi_oplus",
+      "scale-stable ratio invariant across grid sizes"
+    ],
+    "hard_rules": [
+      "No target fitting.",
+      "No additive rho+Q correction.",
+      "Nulls must include D1/D2 drop, scalar collapse, pair shuffle, boundary/support contamination."
+    ]
+  },
+  "safe_claim": "The product probe has meaningful bilinear retained-pair structure, but the additive source-balanced identity D=rho+Q failed and should be discarded for now.",
+  "claim_boundary": "Postmortem only. No retained field-law validation."
+}

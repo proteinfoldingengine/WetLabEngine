@@ -1,0 +1,15 @@
+# Product-action source challenge: independent analytical review
+
+Authorization: continue Aaron's approved research/publication work and requested Gemini challenge through GitHub Actions. This reviews the already posted source challenge at comment 6715177563. It does not reopen the historical product-identity numerical campaign.
+
+Source baseline: ff6bf55d0dce681ad3950547c75c6081d84ebe98. Known before freeze: ordinary differentiation gives the positive kernel term; the scalar substitution gives +2 versus the printed -2; the recovered V1694.2 ZIP lacks Python; later sources propose a support-variation current and then discard the additive identity. These are disclosed author findings, not prospective discoveries.
+
+Freeze DERIVATION.md, SOURCE_PACKET.json and this review plan by SHA-256 before execution. The derivation is an exact copy of the published FOLLOWUP.md. The source packet binds all eleven published text files and the original ZIP. Verify every byte against the immutable parent; reconstruct ZIP member identities and hashes, and distinguish the absence of Python in this ZIP from an archive-wide absence claim.
+
+Run the unchanged pinned FCV, parent and historical tests, independent certificate producer/verifier and historical reproduction. No new scientific simulation or enumeration. Reject changed, missing and additional integrity-evidence files. These checks establish source integrity and inherited regression results, not the analytical derivative theorem.
+
+One Gemini model-availability request and one generation through the existing Actions-secret integration, using gemini-3.1-pro-preview. No fallback, verdict shopping or repeat to obtain acceptance. Give the exact full argument and complete relevant source texts, not a favorable summary. Reconstruct the real/complex directional derivative, scalar substitution, sign-convention objection, historical replacement, source/archive limitations and owner-codomain boundary. Review the strongest alternative interpretation: could the printed term coherently denote a negative force, or a differently oriented variation, under the actual supplied definitions? Preserve adverse findings and ACCEPTED/REVISE/FAIL verbatim.
+
+Separate publication job freshly reproduces inherited bytes; parses and reconciles the raw Gemini response; checks exact prompt/request/model identity; downloads every reviewed source at immutable checkout SHA, including the original binary ZIP. Preserve original Actions artifact ZIPs, API digests, complete member manifests and logs. Validate committed archive bytes and reconstruct any chunks. Add the final archive-job log and an author adjudication after the run.
+
+Stopping rule: complete this one review/publication cycle and post the actual outcome to PR111. Keep the review PR draft and unmerged. Acceptance would support the bounded source correction only. No claim that the historical implementation used the sign, that the sign caused a reported failure, or that a corrected derivative derives owner-held action. Native bridge NOT_DERIVED.

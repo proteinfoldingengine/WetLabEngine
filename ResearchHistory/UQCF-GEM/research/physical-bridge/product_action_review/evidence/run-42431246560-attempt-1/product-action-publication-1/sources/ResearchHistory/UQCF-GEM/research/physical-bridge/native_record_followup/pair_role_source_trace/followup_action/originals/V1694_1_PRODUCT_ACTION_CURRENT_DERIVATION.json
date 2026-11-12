@@ -1,0 +1,46 @@
+{
+  "version": "V1694.1",
+  "title": "Product-Action Source Current Derivation",
+  "verdict": "PRODUCT_ACTION_CURRENT_DERIVED_NO_EXECUTION",
+  "starting_point": "V1694.0 required rho_P^oplus to be derived from product action variation, not event projector current.",
+  "claim_boundary": "Mathematical derivation only. No execution, no retained field-law validation.",
+  "product_action": {
+    "definition": "I_oplus[A] = \u03a3_edges \u03a3_(x,y)\u2208T_p \u03c9_xy ||\u03b4_oplus[A_e](x,y)||_B^2",
+    "residual": "\u03b4_oplus[A](x,y)=T_A(x\u2295_p y) - (T_Ax\u2295_q T_Ay)",
+    "meaning": "Measures faithfulness of retained recombination product under connection transport."
+  },
+  "variation_split": {
+    "total_variation": "\u03b4I_oplus = interior_stationarity + boundary_trace + source_remainder",
+    "boundary_term": "Q_oplus = Tr_boundary(Grad_oplus)",
+    "source_current": "J_oplus = residual variation caused by support/source variation of product domain, weights, and retained test-pair ledger",
+    "key_correction": "rho_oplus is not event labels and not arbitrary E_event projection; it is the source remainder of \u03b4I_oplus after stationary and boundary terms are removed."
+  },
+  "derived_current": {
+    "formula": "rho_var^oplus = SourceRemainder_oplus = \u03b4_support I_oplus - Q_support",
+    "expanded_sources": [
+      "variation of retained pair set T_p",
+      "variation of pair weights \u03c9_xy",
+      "variation of native product parameter/kernel \u2295_p",
+      "variation of source/access support S that changes admissible product pairs",
+      "variation of provenance/order incidence \u03a0 that changes pair admissibility or orientation"
+    ],
+    "dual_space": "V_oplus*",
+    "not_allowed": [
+      "event-label-only current",
+      "\u03a3 \u03a6_oplus(E_event) without product-action variation support",
+      "rho scaling fitted after residuals",
+      "source current inserted as correction term"
+    ]
+  },
+  "operational_definition": {
+    "for_execution": "rho_var^oplus is computed by finite or analytic source-variation derivative of I_oplus with A frozen and boundary Q removed.",
+    "test": "Perturb S/Pi support variables that determine T_p and \u03c9_xy; measure induced dual covector on product residuals.",
+    "gate": "rho_var must beat label-only and event-projector currents under nulls."
+  },
+  "source_free_special_case": {
+    "condition": "\u03b4_support I_oplus = 0 and pair ledger T_p,\u03c9_xy,S,\u03a0 are frozen/inactive",
+    "identity": "D_GammaR_Gamma^oplus = Q_A^oplus",
+    "rule": "May only be tested if support audit confirms source variation is zero."
+  },
+  "next": "V1694.2 \u2014 Product Source-Variation Current Python Test"
+}

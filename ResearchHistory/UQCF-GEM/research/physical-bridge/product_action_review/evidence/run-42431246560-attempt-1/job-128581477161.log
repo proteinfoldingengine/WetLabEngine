@@ -1,0 +1,445 @@
+﻿2026-11-08T00:50:28.9409516Z Current runner version: '2.338.2'
+2026-11-08T00:50:28.9444254Z ##[group]Runner Image Provisioner
+2026-11-08T00:50:28.9445630Z Hosted Compute Agent
+2026-11-08T00:50:28.9446692Z Version: 20261028.624
+2026-11-08T00:50:28.9447798Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-08T00:50:28.9449120Z Build Date: 2026-10-28T21:51:42Z
+2026-11-08T00:50:28.9450437Z Worker ID: {f6257ebb-1d8e-4f0f-8e42-76b8486cf16c}
+2026-11-08T00:50:28.9451711Z Region: westus2
+2026-11-08T00:50:28.9452700Z Cloud: Azure
+2026-11-08T00:50:28.9453641Z ##[endgroup]
+2026-11-08T00:50:28.9456333Z ##[group]Operating System
+2026-11-08T00:50:28.9457480Z Ubuntu
+2026-11-08T00:50:28.9458322Z 24.04.5
+2026-11-08T00:50:28.9459195Z LTS
+2026-11-08T00:50:28.9460239Z ##[endgroup]
+2026-11-08T00:50:28.9461361Z ##[group]Runner Image
+2026-11-08T00:50:28.9462448Z Image: ubuntu-24.04
+2026-11-08T00:50:28.9463538Z Version: 20261101.360.1
+2026-11-08T00:50:28.9466529Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-08T00:50:28.9469375Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-08T00:50:28.9471232Z ##[endgroup]
+2026-11-08T00:50:28.9473356Z ##[group]GITHUB_TOKEN Permissions
+2026-11-08T00:50:28.9476508Z Actions: read
+2026-11-08T00:50:28.9477593Z Contents: write
+2026-11-08T00:50:28.9478591Z Metadata: read
+2026-11-08T00:50:28.9479710Z ##[endgroup]
+2026-11-08T00:50:28.9483385Z Secret source: Actions
+2026-11-08T00:50:28.9485567Z Cache mode: write
+2026-11-08T00:50:28.9487168Z Prepare workflow directory
+2026-11-08T00:50:29.0167914Z Prepare all required actions
+2026-11-08T00:50:29.0216309Z Getting action download info
+2026-11-08T00:50:29.3497081Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-08T00:50:29.4395563Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-08T00:50:29.6044595Z Complete job name: archive
+2026-11-08T00:50:29.6861817Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-08T00:50:29.6862943Z with:
+2026-11-08T00:50:29.6863463Z   ref: 305859be0bd3fa26b903c35fd5a7be75b9d811ac
+2026-11-08T00:50:29.6864314Z   fetch-depth: 20
+2026-11-08T00:50:29.6867654Z   sparse-checkout: .github
+ResearchHistory/UQCF-GEM/foundational-closure-verification
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent
+ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review
+ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action
+
+2026-11-08T00:50:29.6871116Z   repository: proteinfoldingengine/WetLabEngine
+2026-11-08T00:50:29.6875077Z   token: ***
+2026-11-08T00:50:29.6875544Z   ssh-strict: true
+2026-11-08T00:50:29.6876034Z   ssh-user: git
+2026-11-08T00:50:29.6876536Z   persist-credentials: true
+2026-11-08T00:50:29.6877058Z   clean: true
+2026-11-08T00:50:29.6877517Z   sparse-checkout-cone-mode: true
+2026-11-08T00:50:29.6878061Z   fetch-tags: false
+2026-11-08T00:50:29.6878523Z   show-progress: true
+2026-11-08T00:50:29.6878990Z   lfs: false
+2026-11-08T00:50:29.6879422Z   submodules: false
+2026-11-08T00:50:29.6879890Z   set-safe-directory: true
+2026-11-08T00:50:29.6880417Z   allow-unsafe-pr-checkout: false
+2026-11-08T00:50:29.6881228Z env:
+2026-11-08T00:50:29.6881785Z   UQCF_WORKFLOW_SHA: 305859be0bd3fa26b903c35fd5a7be75b9d811ac
+2026-11-08T00:50:29.6882458Z ##[endgroup]
+2026-11-08T00:50:29.9369334Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-11-08T00:50:29.9372048Z ##[group]Getting Git version info
+2026-11-08T00:50:29.9373162Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-08T00:50:29.9374783Z [command]/usr/bin/git version
+2026-11-08T00:50:29.9457572Z git version 2.56.0
+2026-11-08T00:50:29.9482038Z ##[endgroup]
+2026-11-08T00:50:29.9497452Z Temporarily overriding HOME='/home/runner/work/_temp/70ab0bb0-3479-4f0b-9357-066b1ba83136' before making global git config changes
+2026-11-08T00:50:29.9499999Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-08T00:50:29.9502734Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-08T00:50:29.9554925Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-08T00:50:29.9559083Z ##[group]Initializing the repository
+2026-11-08T00:50:29.9563154Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-08T00:50:29.9657914Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-08T00:50:29.9659513Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-08T00:50:29.9661077Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-08T00:50:29.9662297Z hint: call:
+2026-11-08T00:50:29.9662930Z hint:
+2026-11-08T00:50:29.9663712Z hint: 	git config --global init.defaultBranch <name>
+2026-11-08T00:50:29.9664920Z hint:
+2026-11-08T00:50:29.9665946Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-08T00:50:29.9667471Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-08T00:50:29.9668653Z hint:
+2026-11-08T00:50:29.9669295Z hint: 	git branch -m <name>
+2026-11-08T00:50:29.9670043Z hint:
+2026-11-08T00:50:29.9671032Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-08T00:50:29.9672721Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-11-08T00:50:29.9681642Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-08T00:50:29.9729881Z ##[endgroup]
+2026-11-08T00:50:29.9731312Z ##[group]Disabling automatic garbage collection
+2026-11-08T00:50:29.9732574Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-08T00:50:29.9768298Z ##[endgroup]
+2026-11-08T00:50:29.9769830Z ##[group]Setting up auth
+2026-11-08T00:50:29.9773524Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-08T00:50:29.9813826Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-08T00:50:30.0251597Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-08T00:50:30.0311604Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-08T00:50:30.0626939Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-08T00:50:30.0671404Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-08T00:50:30.0912509Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-08T00:50:30.0960187Z ##[endgroup]
+2026-11-08T00:50:30.0972113Z ##[group]Fetching the repository
+2026-11-08T00:50:30.0973666Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=20 origin 305859be0bd3fa26b903c35fd5a7be75b9d811ac
+2026-11-08T00:50:30.5154999Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-08T00:50:30.5158088Z  * branch            305859be0bd3fa26b903c35fd5a7be75b9d811ac -> FETCH_HEAD
+2026-11-08T00:50:30.5164599Z ##[endgroup]
+2026-11-08T00:50:30.5167325Z ##[group]Determining the checkout info
+2026-11-08T00:50:30.5170249Z ##[endgroup]
+2026-11-08T00:50:30.5173004Z ##[group]Setting up sparse checkout
+2026-11-08T00:50:30.5184662Z [command]/usr/bin/git sparse-checkout set .github ResearchHistory/UQCF-GEM/foundational-closure-verification ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action
+2026-11-08T00:50:30.5239313Z ##[endgroup]
+2026-11-08T00:50:30.5242053Z ##[group]Checking out the ref
+2026-11-08T00:50:30.5245812Z [command]/usr/bin/git checkout --progress --force 305859be0bd3fa26b903c35fd5a7be75b9d811ac
+2026-11-08T00:50:34.5778184Z Updating files:   0% (1/2309)
+2026-11-08T00:50:34.5794808Z Updating files:   1% (24/2309)
+2026-11-08T00:50:34.5813621Z Updating files:   2% (47/2309)
+2026-11-08T00:50:34.5828354Z Updating files:   3% (70/2309)
+2026-11-08T00:50:34.5851342Z Updating files:   4% (93/2309)
+2026-11-08T00:50:34.5864045Z Updating files:   5% (116/2309)
+2026-11-08T00:50:34.5877615Z Updating files:   6% (139/2309)
+2026-11-08T00:50:34.5899081Z Updating files:   7% (162/2309)
+2026-11-08T00:50:34.5916715Z Updating files:   8% (185/2309)
+2026-11-08T00:50:34.5938435Z Updating files:   9% (208/2309)
+2026-11-08T00:50:34.5958316Z Updating files:  10% (231/2309)
+2026-11-08T00:50:34.5969949Z Updating files:  11% (254/2309)
+2026-11-08T00:50:34.5982775Z Updating files:  12% (278/2309)
+2026-11-08T00:50:34.5994270Z Updating files:  13% (301/2309)
+2026-11-08T00:50:34.6008646Z Updating files:  14% (324/2309)
+2026-11-08T00:50:34.6019569Z Updating files:  15% (347/2309)
+2026-11-08T00:50:34.6030929Z Updating files:  16% (370/2309)
+2026-11-08T00:50:34.6042292Z Updating files:  17% (393/2309)
+2026-11-08T00:50:34.6051820Z Updating files:  18% (416/2309)
+2026-11-08T00:50:34.6061866Z Updating files:  19% (439/2309)
+2026-11-08T00:50:34.6072199Z Updating files:  20% (462/2309)
+2026-11-08T00:50:34.6081726Z Updating files:  21% (485/2309)
+2026-11-08T00:50:34.6096417Z Updating files:  22% (508/2309)
+2026-11-08T00:50:34.6108103Z Updating files:  23% (532/2309)
+2026-11-08T00:50:34.6120938Z Updating files:  24% (555/2309)
+2026-11-08T00:50:34.6132780Z Updating files:  25% (578/2309)
+2026-11-08T00:50:34.6143483Z Updating files:  26% (601/2309)
+2026-11-08T00:50:34.6157822Z Updating files:  27% (624/2309)
+2026-11-08T00:50:34.6169202Z Updating files:  28% (647/2309)
+2026-11-08T00:50:34.6191885Z Updating files:  29% (670/2309)
+2026-11-08T00:50:34.6206958Z Updating files:  30% (693/2309)
+2026-11-08T00:50:34.6239289Z Updating files:  31% (716/2309)
+2026-11-08T00:50:34.6260733Z Updating files:  32% (739/2309)
+2026-11-08T00:50:34.6272921Z Updating files:  33% (762/2309)
+2026-11-08T00:50:34.6298265Z Updating files:  34% (786/2309)
+2026-11-08T00:50:34.6348511Z Updating files:  35% (809/2309)
+2026-11-08T00:50:34.6389122Z Updating files:  36% (832/2309)
+2026-11-08T00:50:34.6409560Z Updating files:  37% (855/2309)
+2026-11-08T00:50:34.6424344Z Updating files:  38% (878/2309)
+2026-11-08T00:50:34.6439457Z Updating files:  39% (901/2309)
+2026-11-08T00:50:34.6471540Z Updating files:  40% (924/2309)
+2026-11-08T00:50:34.8531280Z Updating files:  41% (947/2309)
+2026-11-08T00:50:34.8611488Z Updating files:  42% (970/2309)
+2026-11-08T00:50:34.8624668Z Updating files:  43% (993/2309)
+2026-11-08T00:50:34.8641769Z Updating files:  44% (1016/2309)
+2026-11-08T00:50:34.8694868Z Updating files:  45% (1040/2309)
+2026-11-08T00:50:34.8809306Z Updating files:  46% (1063/2309)
+2026-11-08T00:50:34.8824905Z Updating files:  47% (1086/2309)
+2026-11-08T00:50:34.8840595Z Updating files:  48% (1109/2309)
+2026-11-08T00:50:34.8862438Z Updating files:  49% (1132/2309)
+2026-11-08T00:50:34.8911876Z Updating files:  50% (1155/2309)
+2026-11-08T00:50:34.8931389Z Updating files:  51% (1178/2309)
+2026-11-08T00:50:34.8962894Z Updating files:  52% (1201/2309)
+2026-11-08T00:50:34.8982764Z Updating files:  53% (1224/2309)
+2026-11-08T00:50:34.8993235Z Updating files:  54% (1247/2309)
+2026-11-08T00:50:34.9010184Z Updating files:  55% (1270/2309)
+2026-11-08T00:50:34.9067409Z Updating files:  56% (1294/2309)
+2026-11-08T00:50:34.9088519Z Updating files:  57% (1317/2309)
+2026-11-08T00:50:34.9104641Z Updating files:  58% (1340/2309)
+2026-11-08T00:50:34.9122147Z Updating files:  59% (1363/2309)
+2026-11-08T00:50:34.9135475Z Updating files:  60% (1386/2309)
+2026-11-08T00:50:34.9154657Z Updating files:  61% (1409/2309)
+2026-11-08T00:50:34.9170305Z Updating files:  62% (1432/2309)
+2026-11-08T00:50:34.9181062Z Updating files:  63% (1455/2309)
+2026-11-08T00:50:34.9192097Z Updating files:  64% (1478/2309)
+2026-11-08T00:50:34.9207472Z Updating files:  65% (1501/2309)
+2026-11-08T00:50:34.9225060Z Updating files:  66% (1524/2309)
+2026-11-08T00:50:34.9247934Z Updating files:  67% (1548/2309)
+2026-11-08T00:50:34.9261737Z Updating files:  68% (1571/2309)
+2026-11-08T00:50:34.9279594Z Updating files:  69% (1594/2309)
+2026-11-08T00:50:34.9292259Z Updating files:  70% (1617/2309)
+2026-11-08T00:50:34.9306539Z Updating files:  71% (1640/2309)
+2026-11-08T00:50:34.9322530Z Updating files:  72% (1663/2309)
+2026-11-08T00:50:34.9338870Z Updating files:  73% (1686/2309)
+2026-11-08T00:50:34.9354055Z Updating files:  74% (1709/2309)
+2026-11-08T00:50:34.9368017Z Updating files:  75% (1732/2309)
+2026-11-08T00:50:34.9382861Z Updating files:  76% (1755/2309)
+2026-11-08T00:50:34.9397328Z Updating files:  77% (1778/2309)
+2026-11-08T00:50:34.9412298Z Updating files:  78% (1802/2309)
+2026-11-08T00:50:34.9437870Z Updating files:  79% (1825/2309)
+2026-11-08T00:50:34.9454696Z Updating files:  80% (1848/2309)
+2026-11-08T00:50:34.9470937Z Updating files:  81% (1871/2309)
+2026-11-08T00:50:34.9486214Z Updating files:  82% (1894/2309)
+2026-11-08T00:50:34.9502049Z Updating files:  83% (1917/2309)
+2026-11-08T00:50:34.9517512Z Updating files:  84% (1940/2309)
+2026-11-08T00:50:34.9533041Z Updating files:  85% (1963/2309)
+2026-11-08T00:50:34.9547859Z Updating files:  86% (1986/2309)
+2026-11-08T00:50:34.9568925Z Updating files:  87% (2009/2309)
+2026-11-08T00:50:34.9587731Z Updating files:  88% (2032/2309)
+2026-11-08T00:50:34.9604649Z Updating files:  89% (2056/2309)
+2026-11-08T00:50:34.9613477Z Updating files:  90% (2079/2309)
+2026-11-08T00:50:34.9627182Z Updating files:  91% (2102/2309)
+2026-11-08T00:50:34.9636240Z Updating files:  92% (2125/2309)
+2026-11-08T00:50:34.9662328Z Updating files:  93% (2148/2309)
+2026-11-08T00:50:34.9673822Z Updating files:  94% (2171/2309)
+2026-11-08T00:50:34.9684643Z Updating files:  95% (2194/2309)
+2026-11-08T00:50:35.1363214Z Updating files:  96% (2217/2309)
+2026-11-08T00:50:35.1372999Z Updating files:  97% (2240/2309)
+2026-11-08T00:50:35.1382897Z Updating files:  98% (2263/2309)
+2026-11-08T00:50:35.1398891Z Updating files:  99% (2286/2309)
+2026-11-08T00:50:35.1399666Z Updating files: 100% (2309/2309)
+2026-11-08T00:50:35.1400278Z Updating files: 100% (2309/2309), done.
+2026-11-08T00:50:35.1546051Z Note: switching to '305859be0bd3fa26b903c35fd5a7be75b9d811ac'.
+2026-11-08T00:50:35.1546382Z 
+2026-11-08T00:50:35.1546594Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-08T00:50:35.1547222Z changes and commit them, and you can discard any commits you make in this
+2026-11-08T00:50:35.1547826Z state without impacting any branches by switching back to a branch.
+2026-11-08T00:50:35.1548120Z 
+2026-11-08T00:50:35.1548314Z If you want to create a new branch to retain commits you create, you may
+2026-11-08T00:50:35.1548756Z do so (now or later) by using -c with the switch command. Example:
+2026-11-08T00:50:35.1549016Z 
+2026-11-08T00:50:35.1549122Z   git switch -c <new-branch-name>
+2026-11-08T00:50:35.1549301Z 
+2026-11-08T00:50:35.1549419Z Or undo this operation with:
+2026-11-08T00:50:35.1549586Z 
+2026-11-08T00:50:35.1549676Z   git switch -
+2026-11-08T00:50:35.1549798Z 
+2026-11-08T00:50:35.1550013Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-08T00:50:35.1550317Z 
+2026-11-08T00:50:35.1550621Z HEAD is now at 305859b Run frozen product-action Gemini review with inherited checks and durable evidence
+2026-11-08T00:50:35.1609437Z ##[endgroup]
+2026-11-08T00:50:35.1665915Z [command]/usr/bin/git log -1 --format=%H
+2026-11-08T00:50:35.1700895Z 305859be0bd3fa26b903c35fd5a7be75b9d811ac
+2026-11-08T00:50:35.2041945Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-11-08T00:50:35.2042370Z with:
+2026-11-08T00:50:35.2042582Z   python-version: 3.11
+2026-11-08T00:50:35.2042811Z   check-latest: false
+2026-11-08T00:50:35.2045478Z   token: ***
+2026-11-08T00:50:35.2045707Z   update-environment: true
+2026-11-08T00:50:35.2045952Z   allow-prereleases: false
+2026-11-08T00:50:35.2046179Z   freethreaded: false
+2026-11-08T00:50:35.2046379Z env:
+2026-11-08T00:50:35.2046630Z   UQCF_WORKFLOW_SHA: 305859be0bd3fa26b903c35fd5a7be75b9d811ac
+2026-11-08T00:50:35.2046954Z ##[endgroup]
+2026-11-08T00:50:35.3450913Z ##[group]Installed versions
+2026-11-08T00:50:35.3540363Z (node:2603) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-08T00:50:35.3541653Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-08T00:50:35.3556468Z Successfully set up CPython (3.11.18)
+2026-11-08T00:50:35.3557380Z ##[endgroup]
+2026-11-08T00:50:35.3742439Z ##[group]Run python .github/scripts/uqcf_product_action_archive.py
+2026-11-08T00:50:35.3743034Z [36;1mpython .github/scripts/uqcf_product_action_archive.py[0m
+2026-11-08T00:50:35.3776596Z shell: /usr/bin/bash -e {0}
+2026-11-08T00:50:35.3776877Z env:
+2026-11-08T00:50:35.3777155Z   UQCF_WORKFLOW_SHA: 305859be0bd3fa26b903c35fd5a7be75b9d811ac
+2026-11-08T00:50:35.3777582Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-08T00:50:35.3778028Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-08T00:50:35.3778463Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-08T00:50:35.3778854Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-08T00:50:35.3779242Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-08T00:50:35.3779623Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-08T00:50:35.3782209Z   GH_TOKEN: ***
+2026-11-08T00:50:35.3782426Z ##[endgroup]
+2026-11-08T00:50:49.3817702Z Original ZIP digests, complete manifests and reversible chunks verified.
+2026-11-08T00:50:49.3818817Z ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1
+2026-11-08T00:50:49.3992858Z ##[group]Run set -euo pipefail
+2026-11-08T00:50:49.3993184Z [36;1mset -euo pipefail[0m
+2026-11-08T00:50:49.3993445Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-08T00:50:49.3993782Z [36;1mtest "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"[0m
+2026-11-08T00:50:49.3994498Z [36;1mgit config user.name proteinfolding-gpt[0m
+2026-11-08T00:50:49.3994914Z [36;1mgit config user.email proteinfolding-gpt@users.noreply.github.com[0m
+2026-11-08T00:50:49.3995496Z [36;1mgit add ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence[0m
+2026-11-08T00:50:49.3996083Z [36;1mgit commit -m "Archive product-action review run $GITHUB_RUN_ID"[0m
+2026-11-08T00:50:49.3996496Z [36;1mgit push origin "HEAD:$REVIEW_BRANCH"[0m
+2026-11-08T00:50:49.3996824Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-08T00:50:49.3997180Z [36;1mtest "$(git rev-parse HEAD)" = "$(git rev-parse FETCH_HEAD)"[0m
+2026-11-08T00:50:49.3997707Z [36;1mpython .github/scripts/uqcf_product_action_archive.py readback FETCH_HEAD[0m
+2026-11-08T00:50:49.4019333Z shell: /usr/bin/bash -e {0}
+2026-11-08T00:50:49.4019577Z env:
+2026-11-08T00:50:49.4019841Z   UQCF_WORKFLOW_SHA: 305859be0bd3fa26b903c35fd5a7be75b9d811ac
+2026-11-08T00:50:49.4020254Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-08T00:50:49.4020686Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-08T00:50:49.4021120Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-08T00:50:49.4021494Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-08T00:50:49.4021879Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-08T00:50:49.4022443Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-08T00:50:49.4022800Z   REVIEW_BRANCH: gpt/product-action-review
+2026-11-08T00:50:49.4023078Z ##[endgroup]
+2026-11-08T00:50:49.7273742Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-08T00:50:49.7274826Z  * branch            gpt/product-action-review -> FETCH_HEAD
+2026-11-08T00:50:49.7275640Z  * [new branch]      gpt/product-action-review -> origin/gpt/product-action-review
+2026-11-08T00:51:03.0608432Z [detached HEAD 5446f55] Archive product-action review run 42431246560
+2026-11-08T00:51:03.0609050Z  125 files changed, 11295 insertions(+)
+2026-11-08T00:51:03.0610021Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/CHUNKS.json
+2026-11-08T00:51:03.0611860Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/DOWNLOAD_AUDIT.json
+2026-11-08T00:51:03.0612939Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/SHA256SUMS
+2026-11-08T00:51:03.0614358Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/job-128580394414.log
+2026-11-08T00:51:03.0616348Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/job-128580988809.log
+2026-11-08T00:51:03.0617648Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/job-128581176242.log
+2026-11-08T00:51:03.0618749Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1.zip
+2026-11-08T00:51:03.0619985Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/artifact_manifest.json
+2026-11-08T00:51:03.0621276Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/commands.json
+2026-11-08T00:51:03.0622770Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/controls.json
+2026-11-08T00:51:03.0624240Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited.log
+2026-11-08T00:51:03.0625620Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited.log.stderr
+2026-11-08T00:51:03.0627053Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/PRODUCTION.json
+2026-11-08T00:51:03.0628347Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/REPRODUCED_1615F.json
+2026-11-08T00:51:03.0629664Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/VERIFICATION.json
+2026-11-08T00:51:03.0630945Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/artifact_manifest.json
+2026-11-08T00:51:03.0632239Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/certificates.json.xz
+2026-11-08T00:51:03.0633507Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/commands.json
+2026-11-08T00:51:03.0636159Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/historical-reproduction.log
+2026-11-08T00:51:03.0637551Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/independent-verifier.log
+2026-11-08T00:51:03.0638854Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/producer.log
+2026-11-08T00:51:03.0640088Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/inherited/receipt.json
+2026-11-08T00:51:03.0641298Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/integrity.json
+2026-11-08T00:51:03.0642517Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/receipt.json
+2026-11-08T00:51:03.0643857Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/review_readback.json
+2026-11-08T00:51:03.0645607Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/.github/scripts/uqcf_product_action.py
+2026-11-08T00:51:03.0647061Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/.github/scripts/uqcf_product_action_archive.py
+2026-11-08T00:51:03.0648514Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/.github/workflows/uqcf-product-action.yml
+2026-11-08T00:51:03.0650470Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/ARCHIVE_INVENTORY.json
+2026-11-08T00:51:03.0652562Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/FOLLOWUP.md
+2026-11-08T00:51:03.0654926Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/SOURCE_PROVENANCE.json
+2026-11-08T00:51:03.0657201Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/extracted/V1694_2_PRODUCT_SOURCE_VARIATION_CURRENT_TEST_REPORT.md
+2026-11-08T00:51:03.0659477Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/extracted/V1694_2_SUMMARY.json
+2026-11-08T00:51:03.0661715Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_1_PRODUCT_ACTION_CURRENT_DERIVATION.json
+2026-11-08T00:51:03.0664337Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_1_PRODUCT_ACTION_SOURCE_CURRENT_DERIVATION.md
+2026-11-08T00:51:03.0666732Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_2_product_source_variation_current_test_package.zip
+2026-11-08T00:51:03.0669138Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_4_EXACT_PRODUCT_SUPPORT_BOUNDARY_DECOMPOSITION.md
+2026-11-08T00:51:03.0671528Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_4_PRODUCT_SUPPORT_BOUNDARY_DECOMPOSITION.json
+2026-11-08T00:51:03.0673822Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_6_POSTMORTEM.json
+2026-11-08T00:51:03.0676192Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_6_PRODUCT_IDENTITY_FAILURE_POSTMORTEM.md
+2026-11-08T00:51:03.0678428Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/DERIVATION.md
+2026-11-08T00:51:03.0680183Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/FREEZE.json
+2026-11-08T00:51:03.0681931Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/REVIEW_PLAN.md
+2026-11-08T00:51:03.0683724Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/SOURCE_PACKET.json
+2026-11-08T00:51:03.0685460Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1.zip
+2026-11-08T00:51:03.0686603Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/artifact_manifest.json
+2026-11-08T00:51:03.0687774Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/integrity.json
+2026-11-08T00:51:03.0689061Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/model_metadata.json
+2026-11-08T00:51:03.0690204Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/prompt.txt
+2026-11-08T00:51:03.0691312Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/request.json
+2026-11-08T00:51:03.0692434Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/response.json
+2026-11-08T00:51:03.0693544Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/review.txt
+2026-11-08T00:51:03.0695011Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/review_identity.json
+2026-11-08T00:51:03.0696307Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/.github/scripts/uqcf_product_action.py
+2026-11-08T00:51:03.0697707Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/.github/scripts/uqcf_product_action_archive.py
+2026-11-08T00:51:03.0699120Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/.github/workflows/uqcf-product-action.yml
+2026-11-08T00:51:03.0701771Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/ARCHIVE_INVENTORY.json
+2026-11-08T00:51:03.0706061Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/FOLLOWUP.md
+2026-11-08T00:51:03.0708186Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/SOURCE_PROVENANCE.json
+2026-11-08T00:51:03.0710416Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/extracted/V1694_2_PRODUCT_SOURCE_VARIATION_CURRENT_TEST_REPORT.md
+2026-11-08T00:51:03.0712661Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/extracted/V1694_2_SUMMARY.json
+2026-11-08T00:51:03.0715164Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_1_PRODUCT_ACTION_CURRENT_DERIVATION.json
+2026-11-08T00:51:03.0718761Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_1_PRODUCT_ACTION_SOURCE_CURRENT_DERIVATION.md
+2026-11-08T00:51:03.0722001Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_2_product_source_variation_current_test_package.zip
+2026-11-08T00:51:03.0724764Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_4_EXACT_PRODUCT_SUPPORT_BOUNDARY_DECOMPOSITION.md
+2026-11-08T00:51:03.0727152Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_4_PRODUCT_SUPPORT_BOUNDARY_DECOMPOSITION.json
+2026-11-08T00:51:03.0729397Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_6_POSTMORTEM.json
+2026-11-08T00:51:03.0731602Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_6_PRODUCT_IDENTITY_FAILURE_POSTMORTEM.md
+2026-11-08T00:51:03.0735742Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/DERIVATION.md
+2026-11-08T00:51:03.0739401Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/FREEZE.json
+2026-11-08T00:51:03.0741342Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/REVIEW_PLAN.md
+2026-11-08T00:51:03.0743108Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/SOURCE_PACKET.json
+2026-11-08T00:51:03.0745825Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-review-1/verdict.json
+2026-11-08T00:51:03.0747555Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1.zip.part-0000
+2026-11-08T00:51:03.0748956Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1.zip.part-0001
+2026-11-08T00:51:03.0750324Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1.zip.part-0002
+2026-11-08T00:51:03.0751673Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1.zip.part-0003
+2026-11-08T00:51:03.0753009Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1.zip.part-0004
+2026-11-08T00:51:03.0755944Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1.zip.part-0005
+2026-11-08T00:51:03.0757240Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/artifact_manifest.json
+2026-11-08T00:51:03.0758475Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/commands.json
+2026-11-08T00:51:03.0759660Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/controls.json
+2026-11-08T00:51:03.0760831Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited.log
+2026-11-08T00:51:03.0762036Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited.log.stderr
+2026-11-08T00:51:03.0763298Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/PRODUCTION.json
+2026-11-08T00:51:03.0764887Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/REPRODUCED_1615F.json
+2026-11-08T00:51:03.0766194Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/VERIFICATION.json
+2026-11-08T00:51:03.0767484Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/artifact_manifest.json
+2026-11-08T00:51:03.0768974Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/certificates.json.xz
+2026-11-08T00:51:03.0770257Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/commands.json
+2026-11-08T00:51:03.0771515Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/dependencies.log
+2026-11-08T00:51:03.0772806Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/fcv-tests.log
+2026-11-08T00:51:03.0774367Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/historical-reproduction.log
+2026-11-08T00:51:03.0775724Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/historical-tests.log
+2026-11-08T00:51:03.0777051Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/independent-verifier.log
+2026-11-08T00:51:03.0778355Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/parent-tests.log
+2026-11-08T00:51:03.0779611Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/producer.log
+2026-11-08T00:51:03.0780990Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/receipt.json
+2026-11-08T00:51:03.0782316Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/source-snapshot.zip.part-0000
+2026-11-08T00:51:03.0783693Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/source-snapshot.zip.part-0001
+2026-11-08T00:51:03.0785332Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/source-snapshot.zip.part-0002
+2026-11-08T00:51:03.0786702Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/source-snapshot.zip.part-0003
+2026-11-08T00:51:03.0788082Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/source-snapshot.zip.part-0004
+2026-11-08T00:51:03.0789459Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/inherited/source-snapshot.zip.part-0005
+2026-11-08T00:51:03.0791098Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/integrity.json
+2026-11-08T00:51:03.0793403Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/receipt.json
+2026-11-08T00:51:03.0795086Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/.github/scripts/uqcf_product_action.py
+2026-11-08T00:51:03.0796738Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/.github/scripts/uqcf_product_action_archive.py
+2026-11-08T00:51:03.0798235Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/.github/workflows/uqcf-product-action.yml
+2026-11-08T00:51:03.0800044Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/ARCHIVE_INVENTORY.json
+2026-11-08T00:51:03.0802136Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/FOLLOWUP.md
+2026-11-08T00:51:03.0805156Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/SOURCE_PROVENANCE.json
+2026-11-08T00:51:03.0807648Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/extracted/V1694_2_PRODUCT_SOURCE_VARIATION_CURRENT_TEST_REPORT.md
+2026-11-08T00:51:03.0811297Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/extracted/V1694_2_SUMMARY.json
+2026-11-08T00:51:03.0813589Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_1_PRODUCT_ACTION_CURRENT_DERIVATION.json
+2026-11-08T00:51:03.0816407Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_1_PRODUCT_ACTION_SOURCE_CURRENT_DERIVATION.md
+2026-11-08T00:51:03.0818817Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_2_product_source_variation_current_test_package.zip
+2026-11-08T00:51:03.0821231Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_4_EXACT_PRODUCT_SUPPORT_BOUNDARY_DECOMPOSITION.md
+2026-11-08T00:51:03.0823624Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_4_PRODUCT_SUPPORT_BOUNDARY_DECOMPOSITION.json
+2026-11-08T00:51:03.0826636Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_6_POSTMORTEM.json
+2026-11-08T00:51:03.0828989Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/native_record_followup/pair_role_source_trace/followup_action/originals/V1694_6_PRODUCT_IDENTITY_FAILURE_POSTMORTEM.md
+2026-11-08T00:51:03.0831047Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/DERIVATION.md
+2026-11-08T00:51:03.0833134Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/FREEZE.json
+2026-11-08T00:51:03.0835261Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/REVIEW_PLAN.md
+2026-11-08T00:51:03.0837069Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/evidence/run-42431246560-attempt-1/product-action-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/product_action_review/SOURCE_PACKET.json
+2026-11-08T00:51:32.6470465Z To https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-08T00:51:32.6471212Z    305859b..5446f55  HEAD -> gpt/product-action-review
+2026-11-08T00:51:32.8619273Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-08T00:51:32.8619757Z  * branch            gpt/product-action-review -> FETCH_HEAD
+2026-11-08T00:51:34.8081379Z Committed original bytes and all chunk reconstructions verified
+2026-11-08T00:51:34.8300775Z Post job cleanup.
+2026-11-08T00:51:34.9512977Z (node:2861) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-08T00:51:34.9513762Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-08T00:51:34.9722982Z Post job cleanup.
+2026-11-08T00:51:35.0640491Z [command]/usr/bin/git version
+2026-11-08T00:51:35.0684158Z git version 2.56.0
+2026-11-08T00:51:35.0722522Z Temporarily overriding HOME='/home/runner/work/_temp/4e7c5173-d00b-4b55-9fff-f8ae536e9960' before making global git config changes
+2026-11-08T00:51:35.0723893Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-08T00:51:35.0729078Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-08T00:51:35.0770925Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-08T00:51:35.0817159Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-08T00:51:35.1112051Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-08T00:51:35.1157248Z http.https://github.com/.extraheader
+2026-11-08T00:51:35.1159399Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-08T00:51:35.1199824Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-08T00:51:35.1537965Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-08T00:51:35.1585338Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-08T00:51:35.2009781Z Cleaning up orphan processes
+2026-11-08T00:51:35.2417126Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
