@@ -1,0 +1,7 @@
+candidate P1 residual count 0 I residual count 0
+control-bad P1 residual count 70 I residual count 0
+homogeneity residual [0, 0, 0, 0, 0, 0]
+psi=16r-7 x+ f= [1/5, 101/500, 101/250, 97/500] fixed: True
+psi=16r-7 x- f= [1/5, 101/500, 97/500, 101/250] fixed: False
+reverse psi(r)=-4r+1 [psi(1/2)=-1? see below] x+ f= [1/5, 99/500, 101/250, 99/500] fixed: False
+reverse psi(r)=-4r+1 [psi(1/2)=-1? see below] x- f= [1/5, 99/500, 99/500, 101/250] fixed: True
