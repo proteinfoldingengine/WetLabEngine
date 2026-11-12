@@ -1,0 +1,8 @@
+flux psi=16r-7 relabelings checked 1255 residual count 0
+flux psi=8r-3 relabelings checked 1255 residual count 0
+frozen psi=16r-7 relabelings checked 16 residual count 0 | u<->v maps f(x+) to f(x-): residual 0
+frozen psi=8r-3 relabelings checked 16 residual count 0 | u<->v maps f(x+) to f(x-): residual 0
+star psi=16r-7 relabelings checked 120 residual count 0
+star psi=8r-3 relabelings checked 120 residual count 0
+control (name-dependent map) relabel residual count 8 (must be > 0)
+ALL_RELABEL_RESIDUALS_ZERO

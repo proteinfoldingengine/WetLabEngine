@@ -1,0 +1,75 @@
+{
+  "schema": "uqcf-pr113-integration-evidence-v1",
+  "audits": [
+    {
+      "kind": "candidate",
+      "run_id": 41106587227,
+      "job_id": 124237906858,
+      "artifact_id": 13001651137,
+      "conclusion": "success",
+      "run_attempt": 1,
+      "bytes": 4976,
+      "sha256": "62de456337ed65fa53835528aacf6c614393f3910a0f9425146e754fbf430d5d"
+    },
+    {
+      "kind": "merged",
+      "run_id": 41106699843,
+      "job_id": 124238291059,
+      "artifact_id": 13001192676,
+      "conclusion": "success",
+      "run_attempt": 1,
+      "bytes": 4974,
+      "sha256": "d4c7953defc62ccad41bf1f4e8cda8bbff072470eb97be582a6e9fc7b025c99a"
+    }
+  ],
+  "payloads": [
+    {
+      "path": "INTEGRATION_RECEIPT.md",
+      "bytes": 3512,
+      "sha256": "7fda3a4d927afcebca3001de92729b3f1f8a1303a08bb2a6d91d954936ab7ebc",
+      "git_blob": "bd9539c3b75a9b475f7f21ffe8ff71656803d4cb"
+    },
+    {
+      "path": "RED.log",
+      "bytes": 1566,
+      "sha256": "80b4f08116b45b0f274019d411cddbfe35a0d6b0af0585eb2e312608850d8914",
+      "git_blob": "fbcd9c3c06042d5d37cc23e255868d90691ffa24"
+    },
+    {
+      "path": "candidate-audit.json",
+      "bytes": 15316,
+      "sha256": "6f0c896acd0a3b226983367b5b997b7e218376cd8f7136f7e3df4df52ca27491",
+      "git_blob": "fde43a938bfafe44c6c1a5c1ff3de226ad9f4af0"
+    },
+    {
+      "path": "candidate.log",
+      "bytes": 19311,
+      "sha256": "5be279ca89c6ebfe94775d36ee945bbf6acd66101d736920ec5fee4154baf4f0",
+      "git_blob": "17c2654d39f16adab48346394822384815d0e0fc"
+    },
+    {
+      "path": "candidate.zip.b64",
+      "bytes": 6637,
+      "sha256": "104a40d30d297bff5b8fbea1de1fd5f685576d8b9bbdcfe37732ab6f8d0a16dd",
+      "git_blob": "cdd0b55cc88c07f3079c063f9bbbd937f0921b68"
+    },
+    {
+      "path": "merged-audit.json",
+      "bytes": 15316,
+      "sha256": "7821f941e385de1a27d12535fe9e7797891eacf9c41f70edec3c9a402325c69d",
+      "git_blob": "9a18fada1aad770edded32be7506a2cc7c0a5b75"
+    },
+    {
+      "path": "merged.log",
+      "bytes": 19317,
+      "sha256": "ffbf85ac9bdd4f720739f585d0aeb5cacfecc700dfde95e89957e94e27012d59",
+      "git_blob": "e1a81530665bbd75aa53d92ae4ceeffc47e89763"
+    },
+    {
+      "path": "merged.zip.b64",
+      "bytes": 6633,
+      "sha256": "d1e2a629fef0c59460abc1000c442160fb91c073770fbe2ff28eb9fa0c1b2a7b",
+      "git_blob": "840a5824c51f4871e520f2b5f4832d3720465f29"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+name: UQCF original native-source audit publication
+on:
+  push:
+    branches: [gpt/native-source-audit-publication]
+    paths:
+      - '.github/scripts/uqcf_native_source_archive.py'
+      - '.github/workflows/uqcf-native-source-archive.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  archive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit
+      - name: Preserve original artifacts, original fresh replay and logs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python .github/scripts/uqcf_native_source_archive.py
+      - name: Commit evidence and verify immutable remote readback
+        env:
+          ARCHIVE_BRANCH: gpt/native-source-audit-publication
+        run: |
+          set -euo pipefail
+          git fetch origin "$ARCHIVE_BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
+          git config user.name proteinfolding-gpt
+          git config user.email proteinfolding-gpt@users.noreply.github.com
+          git add ResearchHistory/UQCF-GEM/research/physical-bridge/native_joint_source_audit/evidence
+          git commit -m "Preserve original native source audit artifacts and raw logs"
+          git push origin "HEAD:$ARCHIVE_BRANCH"
+          git fetch origin "$ARCHIVE_BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$(git rev-parse HEAD)"
+          python .github/scripts/uqcf_native_source_archive.py readback FETCH_HEAD

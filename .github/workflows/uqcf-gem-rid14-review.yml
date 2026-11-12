@@ -1,0 +1,115 @@
+name: UQCF receiver_identification d14 freeze review (revised sec 18, secs 19-20, follow-up) (grokbot)
+
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d14_review/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d14_review/FREEZE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d14_review/FOLLOWUP.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d14_review/CORRESPONDENCE.md'
+      - '.github/scripts/uqcf_rid14_*.py'
+      - '.github/workflows/uqcf-gem-rid14-review.yml'
+  workflow_dispatch:
+    inputs:
+      review:
+        description: 'Send the frozen argument to Gemini (only after Aaron confirms the API key quota)'
+        required: true
+        default: 'false'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uqcf-rid14-review
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Pinned dependencies
+        run: python -m pip install --no-cache-dir sympy==1.14.0 mpmath==1.3.0 numpy==2.3.5
+      - name: Producer (pure-Python exact Fractions and Gaussian rationals, Kraus-form extensions with exact Cayley unitaries, prefix sums)
+        run: mkdir -p rid14_verify && python .github/scripts/uqcf_rid14_producer.py rid14_verify/producer.json
+      - name: Checker (independent numpy Stinespring isometries from QR, Schroedinger Gram read-off, chain cone totals, RGS partitions, orbit invariance, integer laws, rejecting controls)
+        run: python .github/scripts/uqcf_rid14_checker.py rid14_verify/checker.json
+      - name: Fresh producer reproduction (deterministic bytes)
+        run: python .github/scripts/uqcf_rid14_producer.py rid14_verify/producer_repro.json && cmp rid14_verify/producer.json rid14_verify/producer_repro.json
+      - name: Comparator and tampering controls
+        run: python .github/scripts/uqcf_rid14_compare.py rid14_verify/producer.json rid14_verify/checker.json rid14_verify/compare.json
+      - name: Environment record
+        if: always()
+        run: |
+          python -c "import sys,numpy,sympy,json;json.dump({'python':sys.version,'numpy':numpy.__version__,'sympy':sympy.__version__,'sha':'${{ github.sha }}','workflow_sha':'${{ github.workflow_sha }}'},open('rid14_verify/env.json','w'))"
+          sha256sum rid14_verify/* > rid14_verify/SHA256SUMS || true
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: rid14-verify-${{ github.run_attempt }}
+          path: rid14_verify
+          if-no-files-found: error
+          retention-days: 90
+
+  argument-review:
+    needs: verify
+    if: github.event_name == 'workflow_dispatch' && inputs.review == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: rid14-verify-${{ github.run_attempt }}
+          path: rid14_verify
+      - name: Fresh independent Gemini whole-argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_rid14_review.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: rid14-review-${{ github.run_attempt }}
+          path: rid14_review
+          if-no-files-found: error
+          retention-days: 90
+
+  publication-audit:
+    needs: [verify, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: rid14-verify-${{ github.run_attempt }}
+          path: rid14_verify
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: rid14-review-${{ github.run_attempt }}
+          path: rid14_review
+      - name: Independent immutable GitHub readback audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/uqcf_rid14_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: rid14-publication-${{ github.run_attempt }}
+          path: rid14_publication
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,209 @@
+{
+  "version": "V1696.7",
+  "title": "Hardened Signature Mixed Result Postmortem and D1/D2-Intrinsic Reset",
+  "verdict": "PAIR_CLASS_OBJECT_SURVIVES_D1D2_INTRINSIC_INVARIANT_MISSING",
+  "starting_point": "V1696.6 tested hardened retained pair equivalence-class signatures.",
+  "V1696_6_summary": {
+    "class_cases": 210,
+    "action_reduction_rate": 0.0,
+    "coarse_class_defined_rate": 1.0,
+    "mean_class_distance": 0.5624734684524351,
+    "mean_coherence_score": 0.6415704913808189,
+    "all_null_valid_beats_rate": 0.8198412698412698,
+    "D1D2_scramble_valid_beats_rate": 0.4857142857142857,
+    "support_shuffle_valid_beats_rate": 0.8523809523809524,
+    "order_scramble_valid_beats_rate": 0.9809523809523809,
+    "role_vector_scramble_valid_beats_rate": 0.6,
+    "orientation_flip_valid_beats_rate": 1.0,
+    "class_broken_valid_beats_rate": 1.0
+  },
+  "null_summary": [
+    {
+      "null_family": "N_D1D2_profile_scramble",
+      "n": 210,
+      "valid_beats_rate": 0.4857142857142857,
+      "mean_null_distance": 0.5643897929966218,
+      "mean_valid_distance": 0.562473468452435,
+      "distance_margin": 0.001916324544186887
+    },
+    {
+      "null_family": "N_local_signature_preserved_class_broken",
+      "n": 210,
+      "valid_beats_rate": 1.0,
+      "mean_null_distance": 0.9949145193495402,
+      "mean_valid_distance": 0.562473468452435,
+      "distance_margin": 0.4324410508971053
+    },
+    {
+      "null_family": "N_order_adjacency_scramble",
+      "n": 210,
+      "valid_beats_rate": 0.9809523809523809,
+      "mean_null_distance": 0.6472183475772355,
+      "mean_valid_distance": 0.562473468452435,
+      "distance_margin": 0.08474487912480055
+    },
+    {
+      "null_family": "N_orientation_flip",
+      "n": 210,
+      "valid_beats_rate": 1.0,
+      "mean_null_distance": 0.83520074117941,
+      "mean_valid_distance": 0.562473468452435,
+      "distance_margin": 0.27272727272697506
+    },
+    {
+      "null_family": "N_role_preserved_vector_scrambled",
+      "n": 210,
+      "valid_beats_rate": 0.6,
+      "mean_null_distance": 0.581746472068324,
+      "mean_valid_distance": 0.562473468452435,
+      "distance_margin": 0.019273003615889017
+    },
+    {
+      "null_family": "N_support_class_shuffle",
+      "n": 210,
+      "valid_beats_rate": 0.8523809523809524,
+      "mean_null_distance": 0.6140254305983663,
+      "mean_valid_distance": 0.562473468452435,
+      "distance_margin": 0.051551962145931385
+    }
+  ],
+  "role_diagnostics": [
+    {
+      "role": "B0_B1",
+      "n": 70,
+      "mean_class_distance": 0.573359390794384,
+      "mean_coherence_score": 0.6368160785575229,
+      "defined_rate": 1.0
+    },
+    {
+      "role": "B1_B2",
+      "n": 70,
+      "mean_class_distance": 0.5774603303898306,
+      "mean_coherence_score": 0.6352582090085729,
+      "defined_rate": 1.0
+    },
+    {
+      "role": "O3_B0",
+      "n": 70,
+      "mean_class_distance": 0.5366006841730904,
+      "mean_coherence_score": 0.6526371865763608,
+      "defined_rate": 1.0
+    }
+  ],
+  "audit_diagnostics": [
+    {
+      "index": "mean",
+      "JD_GD_len": 58.0,
+      "support_nonzero": 5.2,
+      "order_nonzero": 4.1,
+      "compatible_family": 1.0
+    },
+    {
+      "index": "min",
+      "JD_GD_len": 58.0,
+      "support_nonzero": 4.0,
+      "order_nonzero": 2.0,
+      "compatible_family": NaN
+    },
+    {
+      "index": "max",
+      "JD_GD_len": 58.0,
+      "support_nonzero": 7.0,
+      "order_nonzero": 6.0,
+      "compatible_family": NaN
+    }
+  ],
+  "what_survived": [
+    "Retained pair equivalence-class object remains the best cross-scale object so far.",
+    "Support/provenance incidence hardening worked.",
+    "Retained-order adjacency hardening worked.",
+    "Orientation flip remains strongly separated.",
+    "Class-broken quotient aggregate remains strongly separated."
+  ],
+  "what_blocks_promotion": [
+    "D1/D2 profile scramble remains weak.",
+    "Role-preserved vector scramble remains only partial.",
+    "Mean coherence score dropped after hardening.",
+    "Stationarity/action reduction remains unrestored.",
+    "No retained law claim is supported."
+  ],
+  "root_causes": [
+    {
+      "cause": "support_and_order_hardening_worked",
+      "evidence": {
+        "support_shuffle_valid_beats_rate": 0.8523809523809524,
+        "order_scramble_valid_beats_rate": 0.9809523809523809
+      },
+      "meaning": "Replacing scalar support/order labels with incidence/adjoining cochains fixed those nulls."
+    },
+    {
+      "cause": "D1D2_hardening_did_not_work",
+      "evidence": {
+        "D1D2_scramble_valid_beats_rate": 0.4857142857142857
+      },
+      "meaning": "The derivative-response Jacobian/Gram block is still not intrinsic; scrambling it barely changes class distance."
+    },
+    {
+      "cause": "JD_GD_is_too_basis_or_norm_degenerate",
+      "evidence": "The D1/D2 block was encoded as basis-response vector/Jacobian data, so profile scrambles can preserve enough global norm/Gram structure.",
+      "meaning": "The missing invariant is not a bigger derivative vector; it must encode the operator relation between D1 and D2 responses."
+    },
+    {
+      "cause": "coherence_dropped_after_hardening",
+      "evidence": {
+        "mean_coherence_score": 0.6415704913808189,
+        "mean_class_distance": 0.5624734684524351
+      },
+      "meaning": "Adding stronger support/order blocks raised class distance; the object is more discriminating but less coherent."
+    },
+    {
+      "cause": "stationarity_not_restored",
+      "evidence": {
+        "action_reduction_rate": 0.0
+      },
+      "meaning": "This remains a structural diagnostic. Stronger law-level statements require restoring stationary/action-reducing transport."
+    }
+  ],
+  "scientific_decision": "Keep [p]_R and the hardened support/order components. Replace the D1/D2 block with an intrinsic operator invariant, not a basis-response vector/Jacobian dump.",
+  "discard_or_downgrade": [
+    {
+      "item": "raw JD/GD derivative-response block as D1/D2 invariant",
+      "status": "downgrade",
+      "reason": "D1D2 scramble still passes too often"
+    },
+    {
+      "item": "larger derivative vector signatures",
+      "status": "forbid as default fix",
+      "reason": "problem is operator structure, not vector size"
+    }
+  ],
+  "keep": [
+    "[p]_R retained pair equivalence class",
+    "role block",
+    "orientation block",
+    "support incidence cochain",
+    "retained-order adjacency cochain",
+    "signed pair-Gram context",
+    "quotient aggregate test"
+  ],
+  "next_required_branch": {
+    "name": "V1696.8 \u2014 Intrinsic D1/D2 Operator Invariant Derivation",
+    "objective": "Derive an invariant of the D1/D2 product derivative relation itself.",
+    "candidate_objects": [
+      "commutator/antisymmetry invariant C_D = D1^*D2 - D2^*D1",
+      "operator-angle invariant between D1 and D2 response subspaces",
+      "singular-value signature of [D1 D2] modulo basis change",
+      "cross-Gram invariant G12 = D1^T D2 normalized by G11,G22",
+      "defect of Leibniz-like product response under role-preserving perturbations"
+    ],
+    "hard_rules": [
+      "must be invariant to basis relabeling",
+      "must degrade under D1/D2 profile scramble",
+      "must not be only norm/trace/stable-rank",
+      "must integrate with [p]_R without lowering support/order sensitivity",
+      "restore action-reduction/stationarity gate before next promotion attempt"
+    ]
+  },
+  "safe_claim": "The retained pair equivalence-class object remains promising, and support/order hardening worked. The missing piece is an intrinsic D1/D2 operator invariant.",
+  "claim_boundary": "Postmortem only. No retained field-law validation."
+}

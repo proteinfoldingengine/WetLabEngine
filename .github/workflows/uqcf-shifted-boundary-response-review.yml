@@ -1,0 +1,92 @@
+name: UQCF shifted boundary response review
+on:
+  push:
+    branches: [gpt/shifted-boundary-response]
+    paths:
+      - '.github/scripts/uqcf_shifted_boundary_response_*.py'
+      - '.github/workflows/uqcf-shifted-boundary-response-review.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+concurrency:
+  group: uqcf-shifted-boundary-response-review
+  cancel-in-progress: false
+jobs:
+  integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/shifted_boundary_response
+      - name: Verify frozen proof, full source identities and exact excerpts
+        run: |
+          mkdir -p shifted_boundary_response_review
+          python3 .github/scripts/uqcf_shifted_boundary_response_controls.py > shifted_boundary_response_review/infrastructure_controls.json
+          python3 .github/scripts/uqcf_shifted_boundary_response_review.py integrity
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: shifted-boundary-response-integrity-${{ github.run_attempt }}
+          path: shifted_boundary_response_review
+          if-no-files-found: error
+          retention-days: 90
+  argument-review:
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/shifted_boundary_response
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: shifted-boundary-response-integrity-${{ github.run_attempt }}
+          path: shifted_boundary_response_review
+      - name: Independent full-argument Gemini review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_shifted_boundary_response_review.py review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: shifted-boundary-response-review-${{ github.run_attempt }}
+          path: shifted_boundary_response_review
+          if-no-files-found: error
+          retention-days: 90
+  publication-audit:
+    needs: [integrity, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: shifted-boundary-response-review-${{ github.run_attempt }}
+          path: shifted_boundary_response_review
+      - name: Separate immutable source and raw-response audit
+        run: python3 .github/scripts/uqcf_shifted_boundary_response_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: shifted-boundary-response-publication-${{ github.run_attempt }}
+          path: shifted_boundary_response_publication
+          if-no-files-found: error
+          retention-days: 90
+
+
+

@@ -1,0 +1,81 @@
+{
+  "schema": "uqcf-pr115-integration-evidence-v1",
+  "audits": [
+    {
+      "kind": "candidate",
+      "run_id": 41135995408,
+      "job_id": 124338460293,
+      "artifact_id": 13015582812,
+      "run_attempt": 1,
+      "conclusion": "success",
+      "bytes": 3935,
+      "sha256": "7af5189431176d957f15dca47e284732fad5ec0ef040f62fa72c522a49e09ea7"
+    },
+    {
+      "kind": "merged",
+      "run_id": 41136088781,
+      "job_id": 124338783775,
+      "artifact_id": 13015827876,
+      "run_attempt": 1,
+      "conclusion": "success",
+      "bytes": 3933,
+      "sha256": "51b1d95ebc9c107105abe42fb0051ecaf241ccef8fd9bd5975622584d7bcbfe1"
+    }
+  ],
+  "payloads": [
+    {
+      "path": "FORMAT_RED.log",
+      "bytes": 1996,
+      "sha256": "8a67f56a305bb53b6d1a5a4ba42aaf71960f4100d9e728cf58e76b2a2a705509",
+      "git_blob": "720b4b7e501fa685d554005a99ed414715a0711e"
+    },
+    {
+      "path": "INTEGRATION_RECEIPT.md",
+      "bytes": 3837,
+      "sha256": "6a2de5161413d96b9119130aabdd35274d8e952a4660c3cfee691a4363e1ee1b",
+      "git_blob": "986277d0a2a2b3a31550f7ad97a837904951ac03"
+    },
+    {
+      "path": "RED.log",
+      "bytes": 1567,
+      "sha256": "65042884a8c5a8e4fff85505b26f978242aeb7bf27c9c347b24e49668f88d54c",
+      "git_blob": "6880796f980c9113e0936d41a8b734f42efa8b09"
+    },
+    {
+      "path": "candidate-audit.json",
+      "bytes": 7115,
+      "sha256": "5062d653d4e5917119b1093a4d6aad921166865cb322471f915ac27afdce493b",
+      "git_blob": "659cefe1fa80f1a689072f8f6f3ab608fa726261"
+    },
+    {
+      "path": "candidate.log",
+      "bytes": 19252,
+      "sha256": "ef5e5c4aa2ece8b9966508190e90d05a9ff810c7889b8068b438fa28c30f6903",
+      "git_blob": "4673470702d12afb52aa1eb0dd217dd2ad21601c"
+    },
+    {
+      "path": "candidate.zip.b64",
+      "bytes": 5249,
+      "sha256": "d7096d16789e1ec725a2c6166c8b6514b5610e13777876191f5d86b34aaf7679",
+      "git_blob": "80c1b4e6a88fcdcb0790593a6c159c77bad10388"
+    },
+    {
+      "path": "merged-audit.json",
+      "bytes": 7115,
+      "sha256": "3e0de91c858fe93bb793dcc962c02b10ccbf9d9faed7fbec7bc8b059f136b40e",
+      "git_blob": "a35f016d67a9ae9c262057294d6c5831cddcf18e"
+    },
+    {
+      "path": "merged.log",
+      "bytes": 19259,
+      "sha256": "83670e3cf7e554fb2b0541ef6e2a4a930da9c6c04825a67fd55bbb522014ec4f",
+      "git_blob": "96f97fabde2ce290fd068f29e582da62a6026cc0"
+    },
+    {
+      "path": "merged.zip.b64",
+      "bytes": 5245,
+      "sha256": "f8cc7ad030b52bb962aa4177e778a9361599058e2d5a0f0ac79360a8129ae594",
+      "git_blob": "097e98db3a6fe351dd6d1becac98ec87bfa29980"
+    }
+  ]
+}

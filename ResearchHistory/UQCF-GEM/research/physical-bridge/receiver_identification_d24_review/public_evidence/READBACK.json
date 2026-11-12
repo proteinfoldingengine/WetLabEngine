@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "evidence_commit": "3e7c3749ba923eaf583b42415e04014dbeb38114",
+  "text_files_read_back": [
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-review-1/manifest.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-review-1/model_metadata.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-review-1/prompt.txt",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-review-1/request.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-review-1/response.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-review-1/review.txt",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-verify-1/SHA256SUMS",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-verify-1/checker.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-verify-1/compare.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-verify-1/env.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-verify-1/producer.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-verify-1/producer_repro.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/rid24-publication-1/publication.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/job-118225413077.log",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/job-118226741952.log",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/job-118227738211.log",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/ARCHIVES.json",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/public_evidence/README.md"
+  ],
+  "original_zips": [
+    {
+      "path": "rid24-review-1.zip",
+      "bytes": 248296,
+      "sha256": "sha256:18affac340f0de67c750bb887bb09b5f86c3eb61e94b88cdbdad64cadaacb19b",
+      "git_blob": "6e47562622212f13249279bedd667e0421f49c3c"
+    },
+    {
+      "path": "rid24-verify-1.zip",
+      "bytes": 13890,
+      "sha256": "sha256:215496706fcb15cb10c5f70f46d14cabbeccbfd0bde0b3d4e6b3e18be6ffb181",
+      "git_blob": "e0a3475144ddd5e11d3547961b565dd2828fe700"
+    },
+    {
+      "path": "rid24-publication-1.zip",
+      "bytes": 878,
+      "sha256": "sha256:7198a6ce69b3ded3acdff87520bc8fd3124a40df7efc820732caf19d858f824c",
+      "git_blob": "467906273e4980881ffaa919d0cac684039826b3"
+    }
+  ],
+  "scope": "18 exact text comparisons; 3 ZIP Git blob and byte-size readbacks; downloaded originals matched metadata SHA-256 and passed CRC. No new scientific execution."
+}

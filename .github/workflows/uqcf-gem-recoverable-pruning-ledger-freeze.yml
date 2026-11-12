@@ -1,0 +1,119 @@
+name: UQCF recoverable pruning ledger freeze review
+
+on:
+  push:
+    branches: [grok/recoverable-pruning-ledger-freeze]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/recoverable_pruning_ledger/**'
+      - '.github/scripts/uqcf_rpl_freeze_review.py'
+      - '.github/workflows/uqcf-gem-recoverable-pruning-ledger-freeze.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+
+concurrency:
+  group: uqcf-rpl-freeze-review
+  cancel-in-progress: false
+
+jobs:
+  integrity:
+    name: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/recoverable_pruning_ledger
+            .github/scripts
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - name: Verify frozen documents and committed producer/checker PASS evidence
+        run: python research_snapshot/.github/scripts/uqcf_rpl_freeze_review.py integrity
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rpl-integrity-${{ github.run_attempt }}
+          path: rpl_integrity
+          if-no-files-found: error
+          retention-days: 90
+
+  reconstruct:
+    name: reconstruct
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/recoverable_pruning_ledger
+            .github/scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.12"
+      - name: Re-run independent producer then checker; require PASS and matching stream hash
+        env:
+          SCIENTIFIC_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          BASE=research_snapshot/ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/recoverable_pruning_ledger
+          EXPECTED=$(python3 -c "import json; print(json.load(open('$BASE/evidence/producer_summary.json'))['tree_stats']['stream_sha256'])")
+          rm -f "$BASE/evidence/producer_universe.jsonl" "$BASE/evidence/producer_summary.json" "$BASE/evidence/checker_report.json"
+          python3 "$BASE/code/producer.py" | tee reconstruct_producer.log
+          python3 "$BASE/code/checker.py" | tee reconstruct_checker.log
+          GOT=$(python3 -c "import json; print(json.load(open('$BASE/evidence/producer_summary.json'))['tree_stats']['stream_sha256'])")
+          test "$GOT" = "$EXPECTED"
+          test "$(python3 -c "import json; print(json.load(open('$BASE/evidence/checker_report.json'))['status'])")" = "PASS"
+          mkdir -p rpl_reconstruction
+          cp reconstruct_producer.log reconstruct_checker.log "$BASE/evidence/producer_summary.json" "$BASE/evidence/checker_report.json" rpl_reconstruction/
+          python3 -c "import json,os; from pathlib import Path; Path('rpl_reconstruction/certificate.json').write_text(json.dumps({'status':'GREEN','expected_stream_sha256':'$EXPECTED','got_stream_sha256':'$GOT','scientific_sha':os.environ['SCIENTIFIC_SHA']}, sort_keys=True, indent=2)+'\n')"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rpl-reconstruction-${{ github.run_attempt }}
+          path: rpl_reconstruction
+          if-no-files-found: error
+          retention-days: 90
+
+  gemini-review:
+    name: gemini-review
+    needs: [integrity, reconstruct]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: research_snapshot
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/recoverable_pruning_ledger
+            .github/scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: rpl-integrity-${{ github.run_attempt }}
+          path: rpl_integrity
+      - name: Fresh independent Gemini whole-argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python research_snapshot/.github/scripts/uqcf_rpl_freeze_review.py review
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rpl-review-${{ github.run_attempt }}
+          path: rpl_review
+          if-no-files-found: error
+          retention-days: 90

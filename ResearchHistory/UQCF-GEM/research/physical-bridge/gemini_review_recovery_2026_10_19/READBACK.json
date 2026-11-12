@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "evidence_commit": "545840cd27ba1350d928ed36afd2f36a834913d3",
+  "review_status": "BOTH_PENDING_HTTP_402",
+  "files": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39258153723/job-118079979797.log",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39258153723/job-118082168286.log",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39258153723/job-118097480676.log",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39258153723/job-118098933760.log",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39040205957/job-118097531124.log",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39040205957/job-118097621443.log",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39258153723/workflow_run.json",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39258153723/jobs.json",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39258153723/artifacts.json",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39040205957/workflow_run.json",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39040205957/jobs.json",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/evidence/run-39040205957/artifacts.json",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/README.md",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/gemini_review_recovery_2026_10_19/EVIDENCE_MANIFEST.json",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/ledger_screen_correction/STATUS.md",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d21_review/STATUS.md",
+      "status": "EXACT_TEXT_MATCH"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_NATIVE_RECORD_ORIGIN_CONTINUATION.md",
+      "status": "EXACT_TEXT_MATCH"
+    }
+  ],
+  "archives": [
+    {
+      "path": "evidence/run-39258153723/rid21-review-1.zip",
+      "git_blob": "32cd8dd4392fa6f4699d382d2fc6cdc57bc365f5",
+      "bytes": 204935,
+      "sha256": "88fdfaa48d3dd22116474bcf08b22093ec15fc0f3d1d2e3fac01ea32319d7af5",
+      "status": "IMMUTABLE_GIT_BLOB_AND_SIZE_MATCH"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-verify-1.zip",
+      "git_blob": "e84a31b8abd4ba4148479c18cc6371ee043e2411",
+      "bytes": 7666,
+      "sha256": "dc07e9a51366c71bc6455095ca8688df962b357c0ca7a4c0fa45f1e2cbed5ecf",
+      "status": "IMMUTABLE_GIT_BLOB_AND_SIZE_MATCH"
+    },
+    {
+      "path": "evidence/run-39040205957/ledger-review-3.zip",
+      "git_blob": "9a25c8cd58182c3899b951551cba9ee60db5e81f",
+      "bytes": 62013,
+      "sha256": "82bedb7c94cd2296681feb267cf25df21c1baf945a6494b65c2668678e95f398",
+      "status": "IMMUTABLE_GIT_BLOB_AND_SIZE_MATCH"
+    },
+    {
+      "path": "evidence/run-39040205957/ledger-integrity-3.zip",
+      "git_blob": "bf506b9ab11102613843ea165f56b1f4b25c779f",
+      "bytes": 2523,
+      "sha256": "3340998a92f55a78298a5066fdb19baf46afa8420116d6896c17dd37639485c1",
+      "status": "IMMUTABLE_GIT_BLOB_AND_SIZE_MATCH"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-verify-2.zip",
+      "git_blob": "c248d961deee3f08539872621a078d27ba974906",
+      "bytes": 7666,
+      "sha256": "082d674b5edec2e327ef560283a59eb722a1e333f4fabd3970e32ce2177313a2",
+      "status": "IMMUTABLE_GIT_BLOB_AND_SIZE_MATCH"
+    },
+    {
+      "path": "evidence/run-39258153723/rid21-review-2.zip",
+      "git_blob": "9aad78c464ea2065dde827397fa6107eab6c5431",
+      "bytes": 204935,
+      "sha256": "8300172129b1799e19fa950a555a8321010a521d9bd9c4e1ddff0c65df3faa82",
+      "status": "IMMUTABLE_GIT_BLOB_AND_SIZE_MATCH"
+    }
+  ],
+  "scope": "Publication integrity only; no Gemini response or verdict was returned. Original ZIP SHA-256 and CRC checks passed locally."
+}

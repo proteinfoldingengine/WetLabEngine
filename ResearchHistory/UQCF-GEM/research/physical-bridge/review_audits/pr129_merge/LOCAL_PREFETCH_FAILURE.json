@@ -1,0 +1,6 @@
+{
+  "status": "INFRASTRUCTURE_FETCH_FAILED",
+  "operation": "git fetch multiple small blob SHA objects",
+  "error": "fatal: bad revision 03a66801494d9463b78ea02bdb78e529b4789b25; remote did not send all necessary objects",
+  "resolution": "The already running sequential exact-commit Git readback completed successfully for all 84 evidence files and the manifest. The optional batched prefetch was not used for the verdict; no scientific or Actions rerun was performed."
+}

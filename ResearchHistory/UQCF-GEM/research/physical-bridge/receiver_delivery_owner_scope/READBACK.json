@@ -1,0 +1,61 @@
+{
+  "complete_source_documents": 6,
+  "coverage": {
+    "basis_changed_prunings": 1028,
+    "instances": 21,
+    "naturality_prunings": 1028,
+    "original": {
+      "carriers": 197,
+      "chains": 5049,
+      "composition_triples": 8676,
+      "descending_steps": 6471,
+      "distinct_stage_certificates": 1028,
+      "non_descending_steps": 7254,
+      "nonempty_old_kernel_steps": 7254,
+      "old_kernel_rank_sum": 16357,
+      "prunings": 1028,
+      "steps": 13725,
+      "vertices": 97
+    },
+    "relabeled": {
+      "carriers": 197,
+      "chains": 5049,
+      "composition_triples": 8676,
+      "descending_steps": 6471,
+      "distinct_stage_certificates": 1028,
+      "non_descending_steps": 7254,
+      "nonempty_old_kernel_steps": 7254,
+      "old_kernel_rank_sum": 16357,
+      "prunings": 1028,
+      "steps": 13725,
+      "vertices": 97
+    },
+    "shape_counts": {
+      "1": 1,
+      "2": 1,
+      "3": 2,
+      "4": 4,
+      "5": 9
+    }
+  },
+  "defect_count": 0,
+  "exact_reproduced_outputs": {
+    "PRODUCTION.json": "6e77e438aa3ee971ff7293e04f0f9aba12032bbbef325051304b25c58b4270ef",
+    "REPRODUCED_1615F.json": "b843e316a7b64ffe80cd8ebda471b83865bdc1df18c2d27fa9a45049d441549d",
+    "VERIFICATION.json": "3bd2f5892e861a227172319cb13ab7ea9471e425151c68215c3e80adf5665052",
+    "certificates.json.xz": "b035e14709825657a485bddd1e495471f4f15147ffa78b0e6d79a512e6301ac4"
+  },
+  "failed_replay_difference": "execution_head only; all other parsed fields identical",
+  "files_hash_checked": 69,
+  "manifest_members_checked": 44,
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge": "NOT_DERIVED",
+  "original_zip_artifacts": 7,
+  "raw_gemini_response_sha256": "a3854dd49132e571467d80d3bf22ae72c825e9c867a430f5bd84a93911d13671",
+  "readback_commit": "63712eeb12b5f3b14d40c328ec5bfb5e3d19e7cc",
+  "recovery_run": "41323770979",
+  "rejecting_controls": 9,
+  "source_snapshot_commit": "a17595036ca21c435a9061ad844d92dd88d0a000",
+  "status": "PASS",
+  "verdict": "ACCEPTED"
+}

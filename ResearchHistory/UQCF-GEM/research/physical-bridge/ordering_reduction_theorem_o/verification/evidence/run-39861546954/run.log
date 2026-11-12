@@ -1,0 +1,971 @@
+inherited-fcv1	Set up job	﻿2026-10-22T21:59:26.2351118Z Current runner version: '2.338.0'
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2374149Z ##[group]Runner Image Provisioner
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2375095Z Hosted Compute Agent
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2375680Z Version: 20261012.601
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2376351Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2377145Z Build Date: 2026-10-12T17:48:21Z
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2377846Z Worker ID: {3ef4b521-f8b5-490b-8e0e-27f55f4f5d2f}
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2378568Z Region: westus3
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2379108Z Cloud: Azure
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2379621Z ##[endgroup]
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2381221Z ##[group]Operating System
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2381969Z Ubuntu
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2382856Z 24.04.5
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2383421Z LTS
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2383926Z ##[endgroup]
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2384482Z ##[group]Runner Image
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2385139Z Image: ubuntu-24.04
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2385701Z Version: 20261012.334.1
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2386743Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2388747Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2389711Z ##[endgroup]
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2390774Z ##[group]GITHUB_TOKEN Permissions
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2393168Z Contents: read
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2393779Z Metadata: read
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2394365Z ##[endgroup]
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2396316Z Secret source: Actions
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2397289Z Cache mode: write
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2398165Z Prepare workflow directory
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2728200Z Prepare all required actions
+inherited-fcv1	Set up job	2026-10-22T21:59:26.2775723Z Getting action download info
+inherited-fcv1	Set up job	2026-10-22T21:59:26.6031083Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+inherited-fcv1	Set up job	2026-10-22T21:59:26.7031564Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+inherited-fcv1	Set up job	2026-10-22T21:59:26.8103697Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+inherited-fcv1	Set up job	2026-10-22T21:59:27.0313824Z Complete job name: inherited-fcv1
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-22T21:59:27.0958266Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0959284Z with:
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0959886Z   repository: proteinfoldingengine/WetLabEngine
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0963666Z   token: ***
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0964165Z   ssh-strict: true
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0964642Z   ssh-user: git
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0965150Z   persist-credentials: true
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0965691Z   clean: true
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0966220Z   sparse-checkout-cone-mode: true
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0966775Z   fetch-depth: 1
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0967260Z   fetch-tags: false
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0967778Z   show-progress: true
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0968297Z   lfs: false
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0968751Z   submodules: false
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0969285Z   set-safe-directory: true
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0969865Z   allow-unsafe-pr-checkout: false
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0970591Z env:
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0971407Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.0972402Z ##[endgroup]
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.1900967Z Syncing repository: proteinfoldingengine/WetLabEngine
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.1903877Z ##[group]Getting Git version info
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.1905042Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.1906488Z [command]/usr/bin/git version
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.1990136Z git version 2.55.0
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2017682Z ##[endgroup]
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2025645Z Temporarily overriding HOME='/home/runner/work/_temp/b137e024-2d9e-4b48-a69f-6dad7dd0be06' before making global git config changes
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2027584Z Adding repository directory to the temporary git global config as a safe directory
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2031648Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2096115Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2098161Z ##[group]Initializing the repository
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2106280Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2228994Z hint: Using 'master' as the name for the initial branch. This default branch name
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2230513Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2232243Z hint: to use in all of your new repositories, which will suppress this warning,
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2233399Z hint: call:
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2233908Z hint:
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2234506Z hint: 	git config --global init.defaultBranch <name>
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2235196Z hint:
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2235852Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2236842Z hint: 'development'. The just-created branch can be renamed via this command:
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2238165Z hint:
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2238869Z hint: 	git branch -m <name>
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2239516Z hint:
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2240228Z hint: Disable this message with "git config set advice.defaultBranchName false"
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2241306Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2243383Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2285211Z ##[endgroup]
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2286067Z ##[group]Disabling automatic garbage collection
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2289916Z [command]/usr/bin/git config --local gc.auto 0
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2316675Z ##[endgroup]
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2317503Z ##[group]Setting up auth
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2324547Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2352231Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2665783Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2694314Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2929533Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.2959757Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.3149477Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.3183603Z ##[endgroup]
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.3184966Z ##[group]Fetching the repository
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.3192739Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3a375cd6490bc4974a3d3cf10a7791457cf2cc5f:refs/remotes/origin/grok/ordering-reduction-theorem-o
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:19.7028455Z From https://github.com/proteinfoldingengine/WetLabEngine
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:19.7030793Z  * [new ref]         3a375cd6490bc4974a3d3cf10a7791457cf2cc5f -> origin/grok/ordering-reduction-theorem-o
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:19.7034902Z ##[endgroup]
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:19.7036037Z ##[group]Determining the checkout info
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:19.7037451Z ##[endgroup]
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:19.7044715Z [command]/usr/bin/git sparse-checkout disable
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:19.7095616Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:19.7121918Z ##[group]Checking out the ref
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:19.7126224Z [command]/usr/bin/git checkout --progress --force -B grok/ordering-reduction-theorem-o refs/remotes/origin/grok/ordering-reduction-theorem-o
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:20.8422486Z Updating files:  24% (3141/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:21.3065411Z Updating files:  25% (3181/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:21.7362823Z Updating files:  26% (3308/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:22.0077374Z Updating files:  26% (3412/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:22.3247773Z Updating files:  27% (3435/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:22.7405277Z Updating files:  28% (3562/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:23.1066566Z Updating files:  28% (3593/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:23.7827054Z Updating files:  29% (3690/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:23.8781204Z Updating files:  29% (3778/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:24.2759575Z Updating files:  30% (3817/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:24.7513904Z Updating files:  31% (3944/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:25.2185511Z Updating files:  31% (3973/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:25.7405277Z Updating files:  32% (4071/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:25.9767082Z Updating files:  32% (4183/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:26.3435122Z Updating files:  33% (4198/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:26.7663698Z Updating files:  34% (4326/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:27.2211993Z Updating files:  34% (4404/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:27.6854379Z Updating files:  35% (4453/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:27.7382817Z Updating files:  36% (4580/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:28.7610706Z Updating files:  36% (4602/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:29.2070243Z Updating files:  36% (4645/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:29.8046254Z Updating files:  37% (4707/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:29.8159038Z Updating files:  37% (4788/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:30.7458963Z Updating files:  38% (4834/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:31.4468769Z Updating files:  38% (4898/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:31.8080378Z Updating files:  39% (4962/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:32.0963486Z Updating files:  39% (4997/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:32.8300850Z Updating files:  40% (5089/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:33.9183707Z Updating files:  40% (5170/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:33.9207173Z Updating files:  40% (5183/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:34.3551611Z Updating files:  41% (5216/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:34.7535339Z Updating files:  42% (5343/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:34.7575765Z Updating files:  42% (5466/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:35.7522482Z Updating files:  43% (5471/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:36.5047823Z Updating files:  43% (5510/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:36.7441201Z Updating files:  44% (5598/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:36.9080925Z Updating files:  44% (5631/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:37.0149375Z Updating files:  45% (5725/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:37.8069377Z Updating files:  46% (5852/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:38.7427332Z Updating files:  46% (5922/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.1670620Z Updating files:  46% (5969/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.3517855Z Updating files:  47% (5979/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.3604614Z Updating files:  48% (6107/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.3694352Z Updating files:  49% (6234/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.3786929Z Updating files:  50% (6361/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.3850041Z Updating files:  51% (6488/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.3932190Z Updating files:  52% (6615/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.4023653Z Updating files:  53% (6743/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.4275708Z Updating files:  54% (6870/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.4474828Z Updating files:  55% (6997/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.4592758Z Updating files:  56% (7124/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.4723145Z Updating files:  57% (7251/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.4836075Z Updating files:  58% (7379/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.6341528Z Updating files:  59% (7506/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.6420860Z Updating files:  60% (7633/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.7670026Z Updating files:  61% (7760/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.9441907Z Updating files:  61% (7831/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.9514262Z Updating files:  62% (7888/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:39.9898822Z Updating files:  63% (8015/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.4318961Z Updating files:  64% (8142/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.6748705Z Updating files:  65% (8269/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.7110357Z Updating files:  66% (8396/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.7318798Z Updating files:  67% (8524/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.7425153Z Updating files:  68% (8651/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.7495996Z Updating files:  68% (8677/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.7691490Z Updating files:  69% (8778/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.7848630Z Updating files:  70% (8905/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.8171660Z Updating files:  71% (9032/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.8353066Z Updating files:  72% (9160/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.8441148Z Updating files:  73% (9287/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.8608950Z Updating files:  74% (9414/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:40.8693944Z Updating files:  75% (9541/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:41.2987188Z Updating files:  76% (9668/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:41.7671964Z Updating files:  77% (9796/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:41.8795636Z Updating files:  77% (9817/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:41.9270598Z Updating files:  78% (9923/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:42.4761414Z Updating files:  79% (10050/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:42.4898351Z Updating files:  80% (10177/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:42.6235645Z Updating files:  81% (10305/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:42.6265538Z Updating files:  82% (10432/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:42.6948103Z Updating files:  83% (10559/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:42.7353088Z Updating files:  84% (10686/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:42.7408362Z Updating files:  84% (10734/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:43.0661819Z Updating files:  85% (10813/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:43.5128442Z Updating files:  86% (10941/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:43.7430313Z Updating files:  87% (11068/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:43.8257958Z Updating files:  87% (11150/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:43.9324523Z Updating files:  88% (11195/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.0078584Z Updating files:  89% (11322/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.0137885Z Updating files:  90% (11449/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.0192441Z Updating files:  91% (11577/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.0240449Z Updating files:  92% (11704/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.5335693Z Updating files:  93% (11831/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.5831982Z Updating files:  94% (11958/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.6487671Z Updating files:  95% (12085/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.7439750Z Updating files:  96% (12213/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.7536938Z Updating files:  96% (12268/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.7795074Z Updating files:  97% (12340/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.8223171Z Updating files:  98% (12467/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.9227873Z Updating files:  99% (12594/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.9228877Z Updating files: 100% (12721/12721)
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:44.9229383Z Updating files: 100% (12721/12721), done.
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:45.3067940Z Switched to a new branch 'grok/ordering-reduction-theorem-o'
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:45.3068955Z branch 'grok/ordering-reduction-theorem-o' set up to track 'origin/grok/ordering-reduction-theorem-o'.
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:45.3265129Z ##[endgroup]
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:45.3309180Z [command]/usr/bin/git log -1 --format=%H
+inherited-fcv1	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:45.3348027Z 3a375cd6490bc4974a3d3cf10a7791457cf2cc5f
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-10-22T22:00:45.4600417Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4601006Z with:
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4601314Z   python-version: 3.11
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4601650Z   check-latest: false
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4604262Z   token: ***
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4604571Z   update-environment: true
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4605000Z   allow-prereleases: false
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4605350Z   freethreaded: false
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4605663Z env:
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4606129Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.4606636Z ##[endgroup]
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.5884926Z ##[group]Installed versions
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.5985858Z (node:2112) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.5986791Z (Use `node --trace-deprecation ...` to show where the warning was created)
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.5987595Z Successfully set up CPython (3.11.17)
+inherited-fcv1	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:45.5988502Z ##[endgroup]
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	﻿2026-10-22T22:00:45.6262451Z ##[group]Run python -m pip install sympy==1.13.3 mpmath==1.3.0
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6263549Z ^[[36;1mpython -m pip install sympy==1.13.3 mpmath==1.3.0^[[0m
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6802158Z shell: /usr/bin/bash -e {0}
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6803084Z env:
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6803611Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6804457Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6804974Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6805471Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6805950Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6806392Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6806844Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:45.6807249Z ##[endgroup]
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:49.5150435Z Collecting sympy==1.13.3
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:49.6219103Z   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:49.8277950Z Collecting mpmath==1.3.0
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:49.8383058Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:50.1375615Z Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:50.7527339Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 10.1 MB/s  0:00:00
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:50.7637565Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:51.1099208Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 797.3 kB/s  0:00:00
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:51.4695181Z Installing collected packages: mpmath, sympy
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:56.2525174Z 
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:56.2533787Z Successfully installed mpmath-1.3.0 sympy-1.13.3
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:56.2541376Z 
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:56.2542342Z [notice] A new release of pip is available: 26.2.1 -> 26.2.2
+inherited-fcv1	Run python -m pip install sympy==1.13.3 mpmath==1.3.0	2026-10-22T22:00:56.2543243Z [notice] To update, run: pip install --upgrade pip
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	﻿2026-10-22T22:00:56.3107029Z ##[group]Run set -euo pipefail
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3107505Z ^[[36;1mset -euo pipefail^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3107843Z ^[[36;1mmkdir -p fcv^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3108270Z ^[[36;1mgit rev-parse HEAD > fcv/execution-head.txt^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3108720Z ^[[36;1mpython -m pip freeze > fcv/dependencies.txt^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3109106Z ^[[36;1mset +e^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3109788Z ^[[36;1m(cd ResearchHistory/UQCF-GEM/foundational-closure-verification && python -B tests/test_fcv.py) 2>&1 | tee fcv/test_fcv.log^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3110423Z ^[[36;1ms=("${PIPESTATUS[@]}")^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3110764Z ^[[36;1mset -e^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3111136Z ^[[36;1mecho "test_fcv_exit=${s[0]}" | tee fcv/exit.txt^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3111556Z ^[[36;1m(cd fcv && sha256sum * > SHA256SUMS)^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3111989Z ^[[36;1mtest "${s[0]}" -eq 0^[[0m
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3156233Z shell: /usr/bin/bash -e {0}
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3156640Z env:
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3157144Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3157913Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3158630Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3159259Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3159801Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3160367Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3160918Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.3161329Z ##[endgroup]
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:56.9967158Z test_actual_old_kernel_witness (__main__.Tests.test_actual_old_kernel_witness) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0030170Z test_bare_filtration_scaling_and_shear (__main__.Tests.test_bare_filtration_scaling_and_shear) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0034218Z test_constructive_and_negative_linear_descent (__main__.Tests.test_constructive_and_negative_linear_descent) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0193618Z test_corrupted_witness_rejected (__main__.Tests.test_corrupted_witness_rejected) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0504948Z test_direct_fiber_sum_and_section (__main__.Tests.test_direct_fiber_sum_and_section) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0506068Z test_exact_input_no_float_or_truncation (__main__.Tests.test_exact_input_no_float_or_truncation) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0650255Z test_false_descent_rejected (__main__.Tests.test_false_descent_rejected) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0709034Z test_foreign_domain_identity_rejected (__main__.Tests.test_foreign_domain_identity_rejected) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0733501Z test_identity_and_root_zero_dimensional_cases (__main__.Tests.test_identity_and_root_zero_dimensional_cases) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0734776Z test_illegal_target_and_origin_rejected (__main__.Tests.test_illegal_target_and_origin_rejected) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0736002Z test_incompatible_composition_rejected (__main__.Tests.test_incompatible_composition_rejected) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0738058Z test_invalid_carriers_are_not_repaired (__main__.Tests.test_invalid_carriers_are_not_repaired) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0742894Z test_linear_right_inverse_can_fail_retained_naturality (__main__.Tests.test_linear_right_inverse_can_fail_retained_naturality) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0907028Z test_missing_check_and_coverage_rejected (__main__.Tests.test_missing_check_and_coverage_rejected) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.0954687Z test_mutated_green_rejected (__main__.Tests.test_mutated_green_rejected) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.1014552Z test_mutated_pushforward_rejected (__main__.Tests.test_mutated_pushforward_rejected) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.1072408Z test_mutated_section_rejected (__main__.Tests.test_mutated_section_rejected) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.1074314Z test_nonlinear_boundary_is_not_linear_test (__main__.Tests.test_nonlinear_boundary_is_not_linear_test) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.1205547Z test_nonpermutation_coordinate_change (__main__.Tests.test_nonpermutation_coordinate_change) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.2275821Z test_relabel_and_storage_naturality (__main__.Tests.test_relabel_and_storage_naturality) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.2633288Z test_response_quotient_and_supplied_complement (__main__.Tests.test_response_quotient_and_supplied_complement) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.2667636Z test_shape_enumerators_agree_without_shared_implementation (__main__.Tests.test_shape_enumerators_agree_without_shared_implementation) ... ok
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.2674648Z 
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.2675318Z ----------------------------------------------------------------------
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.2676201Z Ran 22 tests in 0.610s
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.2676438Z 
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.2676627Z OK
+inherited-fcv1	FCV-1 behavioral and deliberate-defect suite (unchanged)	2026-10-22T22:00:57.3139346Z test_fcv_exit=0
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	﻿2026-10-22T22:00:57.3295129Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3295618Z with:
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3296026Z   name: theorem-o-inherited-fcv1-3a375cd6490bc4974a3d3cf10a7791457cf2cc5f
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3296530Z   if-no-files-found: error
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3296849Z   path: fcv
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3297122Z   compression-level: 6
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3297449Z   overwrite: false
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3297753Z   include-hidden-files: false
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3298068Z env:
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3298599Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3299172Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3299679Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3300149Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3300626Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3301179Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3301624Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.3302021Z ##[endgroup]
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.4898851Z (node:2159) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.4900111Z (Use `node --trace-deprecation ...` to show where the warning was created)
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.4965662Z With the provided path, there will be 5 files uploaded
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.4966672Z Artifact name is valid!
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.4967427Z Root directory input is valid!
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.8361788Z Beginning upload of artifact content to blob storage
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:57.8597563Z (node:2159) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:58.0893782Z Uploaded bytes 1453
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:58.1470137Z Finished uploading artifact content to blob storage!
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:58.1471312Z SHA256 digest of uploaded artifact zip is cf681dc66fdce9450776256289aee338a4841e828b67a7f5d56cdab10196eebe
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:58.1472303Z Finalizing artifact upload
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:58.6299354Z Artifact theorem-o-inherited-fcv1-3a375cd6490bc4974a3d3cf10a7791457cf2cc5f.zip successfully finalized. Artifact ID 12461434894
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:58.6300633Z Artifact theorem-o-inherited-fcv1-3a375cd6490bc4974a3d3cf10a7791457cf2cc5f has been successfully uploaded! Final size is 1453 bytes. Artifact ID is 12461434894
+inherited-fcv1	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:00:58.6305795Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39861546954/artifacts/12461434894
+inherited-fcv1	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-10-22T22:00:58.7051864Z Post job cleanup.
+inherited-fcv1	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:58.8237622Z (node:2171) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+inherited-fcv1	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:00:58.8238581Z (Use `node --trace-deprecation ...` to show where the warning was created)
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-22T22:00:58.9454776Z Post job cleanup.
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0294129Z [command]/usr/bin/git version
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0323493Z git version 2.55.0
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0351584Z Temporarily overriding HOME='/home/runner/work/_temp/fb8a07e4-3f91-4f54-b219-1add93df1ffd' before making global git config changes
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0353025Z Adding repository directory to the temporary git global config as a safe directory
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0357517Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0417031Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0448910Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0674411Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0696158Z http.https://github.com/.extraheader
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0707598Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.0829904Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.1055626Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+inherited-fcv1	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:00:59.1084203Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+inherited-fcv1	Complete job	﻿2026-10-22T22:00:59.1463067Z Cleaning up orphan processes
+inherited-fcv1	Complete job	2026-10-22T22:00:59.1731024Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+witness	Set up job	﻿2026-10-22T21:59:26.4389404Z Current runner version: '2.338.0'
+witness	Set up job	2026-10-22T21:59:26.4417835Z ##[group]Runner Image Provisioner
+witness	Set up job	2026-10-22T21:59:26.4418753Z Hosted Compute Agent
+witness	Set up job	2026-10-22T21:59:26.4419368Z Version: 20261012.601
+witness	Set up job	2026-10-22T21:59:26.4420097Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+witness	Set up job	2026-10-22T21:59:26.4420833Z Build Date: 2026-10-12T17:48:21Z
+witness	Set up job	2026-10-22T21:59:26.4421530Z Worker ID: {990894ba-cc6c-409f-875f-67c01c96a0a5}
+witness	Set up job	2026-10-22T21:59:26.4422297Z Region: westus
+witness	Set up job	2026-10-22T21:59:26.4422833Z Cloud: Azure
+witness	Set up job	2026-10-22T21:59:26.4423394Z ##[endgroup]
+witness	Set up job	2026-10-22T21:59:26.4424936Z ##[group]Operating System
+witness	Set up job	2026-10-22T21:59:26.4425602Z Ubuntu
+witness	Set up job	2026-10-22T21:59:26.4426442Z 24.04.5
+witness	Set up job	2026-10-22T21:59:26.4427028Z LTS
+witness	Set up job	2026-10-22T21:59:26.4427643Z ##[endgroup]
+witness	Set up job	2026-10-22T21:59:26.4428280Z ##[group]Runner Image
+witness	Set up job	2026-10-22T21:59:26.4428976Z Image: ubuntu-24.04
+witness	Set up job	2026-10-22T21:59:26.4429650Z Version: 20261012.334.1
+witness	Set up job	2026-10-22T21:59:26.4430780Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+witness	Set up job	2026-10-22T21:59:26.4432596Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+witness	Set up job	2026-10-22T21:59:26.4433592Z ##[endgroup]
+witness	Set up job	2026-10-22T21:59:26.4435197Z ##[group]GITHUB_TOKEN Permissions
+witness	Set up job	2026-10-22T21:59:26.4437679Z Contents: read
+witness	Set up job	2026-10-22T21:59:26.4438424Z Metadata: read
+witness	Set up job	2026-10-22T21:59:26.4439062Z ##[endgroup]
+witness	Set up job	2026-10-22T21:59:26.4441727Z Secret source: Actions
+witness	Set up job	2026-10-22T21:59:26.4442711Z Cache mode: write
+witness	Set up job	2026-10-22T21:59:26.4443696Z Prepare workflow directory
+witness	Set up job	2026-10-22T21:59:26.4872007Z Prepare all required actions
+witness	Set up job	2026-10-22T21:59:26.4922829Z Getting action download info
+witness	Set up job	2026-10-22T21:59:26.9258351Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+witness	Set up job	2026-10-22T21:59:27.0368093Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+witness	Set up job	2026-10-22T21:59:27.1567186Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+witness	Set up job	2026-10-22T21:59:27.3765911Z Complete job name: witness
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-22T21:59:27.4632187Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4633441Z with:
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4634010Z   repository: proteinfoldingengine/WetLabEngine
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4638509Z   token: ***
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4639031Z   ssh-strict: true
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4639517Z   ssh-user: git
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4640005Z   persist-credentials: true
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4640546Z   clean: true
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4641043Z   sparse-checkout-cone-mode: true
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4641623Z   fetch-depth: 1
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4642098Z   fetch-tags: false
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4642658Z   show-progress: true
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4643151Z   lfs: false
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4643618Z   submodules: false
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4644124Z   set-safe-directory: true
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4644674Z   allow-unsafe-pr-checkout: false
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4645576Z env:
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4646658Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.4647697Z ##[endgroup]
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5719603Z Syncing repository: proteinfoldingengine/WetLabEngine
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5722689Z ##[group]Getting Git version info
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5724098Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5726138Z [command]/usr/bin/git version
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5781134Z git version 2.55.0
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5811886Z ##[endgroup]
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5827218Z Temporarily overriding HOME='/home/runner/work/_temp/1e36fcc2-4a7b-4364-8ec9-fd0895f7541f' before making global git config changes
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5835457Z Adding repository directory to the temporary git global config as a safe directory
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5838093Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5883350Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5898762Z ##[group]Initializing the repository
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.5900513Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6005796Z hint: Using 'master' as the name for the initial branch. This default branch name
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6009722Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6012873Z hint: to use in all of your new repositories, which will suppress this warning,
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6016819Z hint: call:
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6018181Z hint:
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6019573Z hint: 	git config --global init.defaultBranch <name>
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6021136Z hint:
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6022757Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6025852Z hint: 'development'. The just-created branch can be renamed via this command:
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6028505Z hint:
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6029637Z hint: 	git branch -m <name>
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6030836Z hint:
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6032253Z hint: Disable this message with "git config set advice.defaultBranchName false"
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6034244Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6037955Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6079384Z ##[endgroup]
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6080780Z ##[group]Disabling automatic garbage collection
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6083486Z [command]/usr/bin/git config --local gc.auto 0
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6121800Z ##[endgroup]
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6123146Z ##[group]Setting up auth
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6139262Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6171457Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6560827Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6604585Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6863836Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.6903303Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.7137067Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.7181369Z ##[endgroup]
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.7182385Z ##[group]Fetching the repository
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T21:59:27.7192531Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3a375cd6490bc4974a3d3cf10a7791457cf2cc5f:refs/remotes/origin/grok/ordering-reduction-theorem-o
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:14.9060712Z From https://github.com/proteinfoldingengine/WetLabEngine
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:14.9062520Z  * [new ref]         3a375cd6490bc4974a3d3cf10a7791457cf2cc5f -> origin/grok/ordering-reduction-theorem-o
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:14.9065156Z ##[endgroup]
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:14.9066159Z ##[group]Determining the checkout info
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:14.9069229Z ##[endgroup]
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:14.9075857Z [command]/usr/bin/git sparse-checkout disable
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:14.9135214Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:14.9168850Z ##[group]Checking out the ref
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:14.9174893Z [command]/usr/bin/git checkout --progress --force -B grok/ordering-reduction-theorem-o refs/remotes/origin/grok/ordering-reduction-theorem-o
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:16.3170031Z Updating files:  25% (3189/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:16.9020324Z Updating files:  26% (3308/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:16.9770023Z Updating files:  27% (3435/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:17.1523079Z Updating files:  27% (3472/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:17.7787757Z Updating files:  28% (3562/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:17.9761859Z Updating files:  29% (3690/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:18.4406780Z Updating files:  29% (3754/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:18.7572374Z Updating files:  30% (3817/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:18.9837492Z Updating files:  31% (3944/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:19.5270896Z Updating files:  31% (3968/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:19.9580143Z Updating files:  32% (4071/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:20.1644684Z Updating files:  32% (4183/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:20.4618858Z Updating files:  33% (4198/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:21.0833995Z Updating files:  34% (4326/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:21.1588295Z Updating files:  34% (4413/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:21.4995420Z Updating files:  35% (4453/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:22.0095440Z Updating files:  36% (4580/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:22.2151264Z Updating files:  36% (4643/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:22.5589302Z Updating files:  37% (4707/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:22.9789106Z Updating files:  38% (4834/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:23.2409970Z Updating files:  38% (4895/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:23.5927909Z Updating files:  39% (4962/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:23.9931872Z Updating files:  40% (5089/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:24.3145348Z Updating files:  40% (5170/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:24.6025051Z Updating files:  41% (5216/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:24.7303837Z Updating files:  42% (5343/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:24.9519493Z Updating files:  43% (5471/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:25.4260562Z Updating files:  43% (5493/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:25.7163264Z Updating files:  44% (5598/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:25.7422255Z Updating files:  45% (5725/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:25.9570843Z Updating files:  46% (5852/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.2507248Z Updating files:  46% (5922/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.2807838Z Updating files:  47% (5979/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.2905538Z Updating files:  48% (6107/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.3008209Z Updating files:  49% (6234/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.3105479Z Updating files:  50% (6361/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.3184367Z Updating files:  51% (6488/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.3278528Z Updating files:  52% (6615/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.3384455Z Updating files:  53% (6743/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.3632649Z Updating files:  54% (6870/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.3827525Z Updating files:  55% (6997/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.3969051Z Updating files:  56% (7124/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.4102522Z Updating files:  57% (7251/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.4220900Z Updating files:  58% (7379/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.4720948Z Updating files:  59% (7506/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.4813960Z Updating files:  60% (7633/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.5971297Z Updating files:  61% (7760/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.6060407Z Updating files:  62% (7888/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.6226043Z Updating files:  63% (8015/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.8158481Z Updating files:  64% (8142/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.8833122Z Updating files:  65% (8269/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.8981308Z Updating files:  66% (8396/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.9131509Z Updating files:  67% (8524/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.9243284Z Updating files:  68% (8651/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.9361135Z Updating files:  69% (8778/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.9471234Z Updating files:  70% (8905/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.9515936Z Updating files:  71% (9032/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.9647002Z Updating files:  71% (9076/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.9767808Z Updating files:  72% (9160/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.9886972Z Updating files:  73% (9287/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:26.9982545Z Updating files:  74% (9414/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.0081596Z Updating files:  75% (9541/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.2210164Z Updating files:  76% (9668/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.4068655Z Updating files:  77% (9796/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.4342362Z Updating files:  78% (9923/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.6646340Z Updating files:  79% (10050/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.6740700Z Updating files:  80% (10177/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.7531404Z Updating files:  81% (10305/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.7590059Z Updating files:  82% (10432/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.7911934Z Updating files:  83% (10559/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.8124826Z Updating files:  84% (10686/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:27.9661850Z Updating files:  85% (10813/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:28.0241145Z Updating files:  85% (10918/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:28.2856508Z Updating files:  86% (10941/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:28.5077131Z Updating files:  87% (11068/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:28.5725815Z Updating files:  88% (11195/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:28.6267291Z Updating files:  89% (11322/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:28.6346131Z Updating files:  90% (11449/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:28.6422382Z Updating files:  91% (11577/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:28.6492165Z Updating files:  92% (11704/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.0339330Z Updating files:  93% (11831/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.0344997Z Updating files:  93% (11949/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.0842557Z Updating files:  94% (11958/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.1325594Z Updating files:  95% (12085/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.1937333Z Updating files:  96% (12213/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.2087395Z Updating files:  97% (12340/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.2294419Z Updating files:  98% (12467/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.2717070Z Updating files:  99% (12594/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.2717648Z Updating files: 100% (12721/12721)
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.2718107Z Updating files: 100% (12721/12721), done.
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.5204372Z Switched to a new branch 'grok/ordering-reduction-theorem-o'
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.5207101Z branch 'grok/ordering-reduction-theorem-o' set up to track 'origin/grok/ordering-reduction-theorem-o'.
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.5569110Z ##[endgroup]
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.5621949Z [command]/usr/bin/git log -1 --format=%H
+witness	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:29.5656713Z 3a375cd6490bc4974a3d3cf10a7791457cf2cc5f
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-10-22T22:01:29.8211176Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8211636Z with:
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8211872Z   python-version: 3.11
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8212116Z   check-latest: false
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8214589Z   token: ***
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8214816Z   update-environment: true
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8215071Z   allow-prereleases: false
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8215310Z   freethreaded: false
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8215529Z env:
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8215935Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.8216747Z ##[endgroup]
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:29.9564608Z ##[group]Installed versions
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:30.6403463Z (node:2359) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:30.6404868Z (Use `node --trace-deprecation ...` to show where the warning was created)
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:30.6405674Z Successfully set up CPython (3.11.17)
+witness	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:30.6407915Z ##[endgroup]
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	﻿2026-10-22T22:01:30.6659527Z ##[group]Run set -euo pipefail
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6660100Z ^[[36;1mset -euo pipefail^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6660411Z ^[[36;1mmkdir -p out^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6660747Z ^[[36;1mgit rev-parse HEAD > out/execution-head.txt^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6661277Z ^[[36;1mpython --version > out/python-version.txt^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6661768Z ^[[36;1mpython -B "$V/producer.py" out/producer_output.json 2>&1 | tee out/producer.log^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6662195Z ^[[36;1mset +e^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6662626Z ^[[36;1mpython -B "$V/checker.py" out/producer_output.json > out/checker_report.json 2> out/checker.stderr^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6663121Z ^[[36;1mcode=$?^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6663324Z ^[[36;1mset -e^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6663596Z ^[[36;1mecho "checker_exit=$code" | tee out/checker_exit.txt^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6663942Z ^[[36;1mpython - <<'PY'^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6664173Z ^[[36;1mimport json^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6664438Z ^[[36;1mr=json.load(open('out/checker_report.json'))^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6664857Z ^[[36;1mprint('verdict', r['verdict']); print('failures', r['failures'])^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6665753Z ^[[36;1mfor m in r['mutation_controls']: print(m['mutation'], 'REJECTED' if m['rejected'] else 'ACCEPTED(UNSOUND)')^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6667395Z ^[[36;1mjson.dump(r['mutation_controls'], open('out/mutation_controls.json','w'), indent=1, ensure_ascii=False)^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6668385Z ^[[36;1mPY^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6668757Z ^[[36;1m(cd out && sha256sum * > SHA256SUMS)^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:30.6669273Z ^[[36;1mtest "$code" -eq 0^[[0m
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4241430Z shell: /usr/bin/bash -e {0}
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4241843Z env:
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4242467Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4243302Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4243993Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4244636Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4245240Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4245770Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4246501Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:31.4247045Z ##[endgroup]
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:32.1525094Z O_0 stopped 5 dead_ends 14
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:32.1526091Z O_1 stopped 70 dead_ends 280
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:32.1527260Z C3_1 stopped 480 dead_ends 1562
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9804305Z checker_exit=0
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9978725Z verdict PASS
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9979261Z failures []
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9979678Z C3_1:omission REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9980193Z C3_1:duplicate-for-omission REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9980767Z C3_1:truncation REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9981261Z C3_1:extension REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9981731Z C3_1:wrong-decoded REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9982242Z C3_1:illegal-splice REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9982758Z C3_1:wrong-source REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9983293Z C3_1:false-metadata-count REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9983774Z C3_1:false-metadata-hash REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9984122Z O_0:omission REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9984427Z O_0:duplicate-for-omission REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9984778Z O_0:truncation REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9985071Z O_0:extension REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9985365Z O_0:wrong-decoded REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9985681Z O_0:illegal-splice REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9985998Z O_0:wrong-source REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9986532Z O_0:false-metadata-count REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9986891Z O_0:false-metadata-hash REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9987227Z O_1:omission REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9987533Z O_1:duplicate-for-omission REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9987890Z O_1:truncation REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9988192Z O_1:extension REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9988485Z O_1:wrong-decoded REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9988798Z O_1:illegal-splice REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9989116Z O_1:wrong-source REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9989778Z O_1:false-metadata-count REJECTED
+witness	Producer (DFS) and independent checker (BFS over prefixes) with mutation controls	2026-10-22T22:01:33.9990134Z O_1:false-metadata-hash REJECTED
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	﻿2026-10-22T22:01:34.0138381Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0138836Z with:
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0139142Z   name: theorem-o-witness-3a375cd6490bc4974a3d3cf10a7791457cf2cc5f
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0139526Z   if-no-files-found: error
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0139763Z   path: out
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0139979Z   compression-level: 6
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0140213Z   overwrite: false
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0140438Z   include-hidden-files: false
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0140689Z env:
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0141093Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0141657Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0142098Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0142531Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0142922Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0143516Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0143972Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.0144311Z ##[endgroup]
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.1882255Z (node:2380) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.1883077Z (Use `node --trace-deprecation ...` to show where the warning was created)
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.1958402Z With the provided path, there will be 9 files uploaded
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.1965152Z Artifact name is valid!
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.1966130Z Root directory input is valid!
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.5789653Z Beginning upload of artifact content to blob storage
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.6199662Z (node:2380) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:34.9339089Z Uploaded bytes 16131
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:35.0449683Z Finished uploading artifact content to blob storage!
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:35.0450872Z SHA256 digest of uploaded artifact zip is b776618dc6e7c8a14afdb46b863130fc2bfdffd447777bd547a0bd8fd62fdc94
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:35.0452042Z Finalizing artifact upload
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:35.5322432Z Artifact theorem-o-witness-3a375cd6490bc4974a3d3cf10a7791457cf2cc5f.zip successfully finalized. Artifact ID 12462396068
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:35.5324563Z Artifact theorem-o-witness-3a375cd6490bc4974a3d3cf10a7791457cf2cc5f has been successfully uploaded! Final size is 16131 bytes. Artifact ID is 12462396068
+witness	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-22T22:01:35.5331037Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39861546954/artifacts/12462396068
+witness	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-10-22T22:01:35.5521863Z Post job cleanup.
+witness	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:35.6784204Z (node:2392) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+witness	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:01:35.6785674Z (Use `node --trace-deprecation ...` to show where the warning was created)
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-22T22:01:35.7036947Z Post job cleanup.
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.7997113Z [command]/usr/bin/git version
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8046391Z git version 2.55.0
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8087684Z Temporarily overriding HOME='/home/runner/work/_temp/e32c5217-b7c7-4239-9a9e-2362af7c917e' before making global git config changes
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8089181Z Adding repository directory to the temporary git global config as a safe directory
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8093736Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8140868Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8182550Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8479978Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8537346Z http.https://github.com/.extraheader
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8539866Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.8619336Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.9020379Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+witness	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:35.9093929Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+witness	Complete job	﻿2026-10-22T22:01:35.9569528Z Cleaning up orphan processes
+witness	Complete job	2026-10-22T22:01:35.9885813Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+publication	Set up job	﻿2026-10-22T22:01:41.3952412Z Current runner version: '2.338.0'
+publication	Set up job	2026-10-22T22:01:41.3990832Z ##[group]Runner Image Provisioner
+publication	Set up job	2026-10-22T22:01:41.3992336Z Hosted Compute Agent
+publication	Set up job	2026-10-22T22:01:41.3993456Z Version: 20261012.601
+publication	Set up job	2026-10-22T22:01:41.3994699Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+publication	Set up job	2026-10-22T22:01:41.3996020Z Build Date: 2026-10-12T17:48:21Z
+publication	Set up job	2026-10-22T22:01:41.3997303Z Worker ID: {82c86e76-52b7-4cce-97cc-d46ef20d1d56}
+publication	Set up job	2026-10-22T22:01:41.3998824Z Region: eastus
+publication	Set up job	2026-10-22T22:01:41.3999898Z Cloud: Azure
+publication	Set up job	2026-10-22T22:01:41.4001298Z ##[endgroup]
+publication	Set up job	2026-10-22T22:01:41.4003946Z ##[group]Operating System
+publication	Set up job	2026-10-22T22:01:41.4005078Z Ubuntu
+publication	Set up job	2026-10-22T22:01:41.4006153Z 24.04.5
+publication	Set up job	2026-10-22T22:01:41.4007158Z LTS
+publication	Set up job	2026-10-22T22:01:41.4008178Z ##[endgroup]
+publication	Set up job	2026-10-22T22:01:41.4009230Z ##[group]Runner Image
+publication	Set up job	2026-10-22T22:01:41.4010301Z Image: ubuntu-24.04
+publication	Set up job	2026-10-22T22:01:41.4011726Z Version: 20261012.334.1
+publication	Set up job	2026-10-22T22:01:41.4013738Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+publication	Set up job	2026-10-22T22:01:41.4017467Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+publication	Set up job	2026-10-22T22:01:41.4019358Z ##[endgroup]
+publication	Set up job	2026-10-22T22:01:41.4021851Z ##[group]GITHUB_TOKEN Permissions
+publication	Set up job	2026-10-22T22:01:41.4024838Z Contents: read
+publication	Set up job	2026-10-22T22:01:41.4026033Z Metadata: read
+publication	Set up job	2026-10-22T22:01:41.4027055Z ##[endgroup]
+publication	Set up job	2026-10-22T22:01:41.4030169Z Secret source: Actions
+publication	Set up job	2026-10-22T22:01:41.4032149Z Cache mode: write
+publication	Set up job	2026-10-22T22:01:41.4033966Z Prepare workflow directory
+publication	Set up job	2026-10-22T22:01:41.4598761Z Prepare all required actions
+publication	Set up job	2026-10-22T22:01:41.4654397Z Getting action download info
+publication	Set up job	2026-10-22T22:01:41.6695994Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+publication	Set up job	2026-10-22T22:01:41.7666526Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+publication	Set up job	2026-10-22T22:01:41.9657930Z Download action repository 'actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+publication	Set up job	2026-10-22T22:01:42.2412427Z Complete job name: publication
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-22T22:01:42.3189527Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3191168Z with:
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3191726Z   repository: proteinfoldingengine/WetLabEngine
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3195686Z   token: ***
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3196127Z   ssh-strict: true
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3196570Z   ssh-user: git
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3197021Z   persist-credentials: true
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3197509Z   clean: true
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3197966Z   sparse-checkout-cone-mode: true
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3198508Z   fetch-depth: 1
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3198939Z   fetch-tags: false
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3199394Z   show-progress: true
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3199853Z   lfs: false
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3200275Z   submodules: false
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3200986Z   set-safe-directory: true
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3201541Z   allow-unsafe-pr-checkout: false
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3202527Z env:
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3203330Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.3204291Z ##[endgroup]
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4296809Z Syncing repository: proteinfoldingengine/WetLabEngine
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4299833Z ##[group]Getting Git version info
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4301484Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4303596Z [command]/usr/bin/git version
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4403831Z git version 2.55.0
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4415488Z ##[endgroup]
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4434592Z Temporarily overriding HOME='/home/runner/work/_temp/9c4b3143-712a-4591-86d4-c31554c7bd08' before making global git config changes
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4437523Z Adding repository directory to the temporary git global config as a safe directory
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4443665Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4511970Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4518305Z ##[group]Initializing the repository
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4524206Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4645286Z hint: Using 'master' as the name for the initial branch. This default branch name
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4647205Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4648538Z hint: to use in all of your new repositories, which will suppress this warning,
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4649564Z hint: call:
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4650539Z hint:
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4651771Z hint: 	git config --global init.defaultBranch <name>
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4653029Z hint:
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4658539Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4660920Z hint: 'development'. The just-created branch can be renamed via this command:
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4662615Z hint:
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4663354Z hint: 	git branch -m <name>
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4664313Z hint:
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4665485Z hint: Disable this message with "git config set advice.defaultBranchName false"
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4667400Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4670045Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4731483Z ##[endgroup]
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4740099Z ##[group]Disabling automatic garbage collection
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4741628Z [command]/usr/bin/git config --local gc.auto 0
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4783846Z ##[endgroup]
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4785241Z ##[group]Setting up auth
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4792383Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.4852937Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.5297661Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.5345915Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.5598200Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.5639361Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.5869465Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.5913502Z ##[endgroup]
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.5914828Z ##[group]Fetching the repository
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:01:42.5924655Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3a375cd6490bc4974a3d3cf10a7791457cf2cc5f:refs/remotes/origin/grok/ordering-reduction-theorem-o
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:23.2423965Z From https://github.com/proteinfoldingengine/WetLabEngine
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:23.2425537Z  * [new ref]         3a375cd6490bc4974a3d3cf10a7791457cf2cc5f -> origin/grok/ordering-reduction-theorem-o
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:23.2428514Z ##[endgroup]
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:23.2429459Z ##[group]Determining the checkout info
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:23.2431053Z ##[endgroup]
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:23.2437393Z [command]/usr/bin/git sparse-checkout disable
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:23.2493928Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:23.2527177Z ##[group]Checking out the ref
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:23.2535422Z [command]/usr/bin/git checkout --progress --force -B grok/ordering-reduction-theorem-o refs/remotes/origin/grok/ordering-reduction-theorem-o
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:24.6467160Z Updating files:  25% (3189/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:25.2312476Z Updating files:  26% (3308/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:25.3082465Z Updating files:  27% (3435/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:25.4852164Z Updating files:  27% (3472/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:26.1212500Z Updating files:  28% (3562/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:26.2825122Z Updating files:  29% (3690/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:26.7710548Z Updating files:  29% (3748/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:27.0887844Z Updating files:  30% (3817/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:27.3152303Z Updating files:  31% (3944/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:27.8505517Z Updating files:  31% (3968/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:28.2788602Z Updating files:  32% (4071/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:28.4804749Z Updating files:  32% (4183/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:28.7724588Z Updating files:  33% (4198/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:29.3286639Z Updating files:  34% (4326/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:29.3320131Z Updating files:  34% (4419/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:29.6764808Z Updating files:  35% (4453/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:30.2925490Z Updating files:  36% (4580/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:30.3741235Z Updating files:  36% (4646/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:30.7135134Z Updating files:  37% (4707/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:31.3006148Z Updating files:  38% (4834/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:31.3867813Z Updating files:  38% (4901/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:31.7338335Z Updating files:  39% (4962/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:32.2726134Z Updating files:  40% (5089/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:32.4457615Z Updating files:  40% (5175/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:32.7296338Z Updating files:  41% (5216/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:32.8552124Z Updating files:  42% (5343/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:33.3175336Z Updating files:  43% (5471/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:33.5326944Z Updating files:  43% (5510/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:33.8222216Z Updating files:  44% (5598/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:33.8476259Z Updating files:  45% (5725/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.2758086Z Updating files:  46% (5852/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.3512030Z Updating files:  46% (5969/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.3791446Z Updating files:  47% (5979/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.3891933Z Updating files:  48% (6107/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.3995177Z Updating files:  49% (6234/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.4096151Z Updating files:  50% (6361/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.4175420Z Updating files:  51% (6488/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.4271544Z Updating files:  52% (6615/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.4375653Z Updating files:  53% (6743/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.4609531Z Updating files:  54% (6870/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.4815927Z Updating files:  55% (6997/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.4947122Z Updating files:  56% (7124/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.5079064Z Updating files:  57% (7251/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.5196867Z Updating files:  58% (7379/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.5684222Z Updating files:  59% (7506/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.5786543Z Updating files:  60% (7633/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.6896023Z Updating files:  61% (7760/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.6982424Z Updating files:  62% (7888/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.7159295Z Updating files:  63% (8015/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.9093541Z Updating files:  64% (8142/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.9754067Z Updating files:  65% (8269/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:34.9906024Z Updating files:  66% (8396/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.0050416Z Updating files:  67% (8524/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.0164963Z Updating files:  68% (8651/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.0281728Z Updating files:  69% (8778/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.0387096Z Updating files:  70% (8905/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.0548705Z Updating files:  71% (9032/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.0672620Z Updating files:  72% (9160/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.0789504Z Updating files:  73% (9287/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.0884512Z Updating files:  74% (9414/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.0983442Z Updating files:  75% (9541/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.3002691Z Updating files:  76% (9668/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.3076799Z Updating files:  76% (9767/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.4911295Z Updating files:  77% (9796/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.5176316Z Updating files:  78% (9923/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.7785804Z Updating files:  79% (10050/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.7875366Z Updating files:  80% (10177/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.8827847Z Updating files:  81% (10305/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.8882753Z Updating files:  82% (10432/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.9192795Z Updating files:  83% (10559/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:35.9401086Z Updating files:  84% (10686/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:36.1457456Z Updating files:  85% (10813/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:36.2982173Z Updating files:  86% (10941/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:36.4140118Z Updating files:  86% (10956/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:36.6325511Z Updating files:  87% (11068/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:36.6958090Z Updating files:  88% (11195/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:36.7502993Z Updating files:  89% (11322/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:36.7580579Z Updating files:  90% (11449/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:36.7662886Z Updating files:  91% (11577/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:36.7729672Z Updating files:  92% (11704/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.1586947Z Updating files:  93% (11831/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.1994642Z Updating files:  94% (11958/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.2550075Z Updating files:  95% (12085/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.2804405Z Updating files:  96% (12213/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.3162372Z Updating files:  96% (12241/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.3314595Z Updating files:  97% (12340/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.3518220Z Updating files:  98% (12467/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.3944418Z Updating files:  99% (12594/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.3945611Z Updating files: 100% (12721/12721)
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.3946583Z Updating files: 100% (12721/12721), done.
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.9300203Z Switched to a new branch 'grok/ordering-reduction-theorem-o'
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.9301838Z branch 'grok/ordering-reduction-theorem-o' set up to track 'origin/grok/ordering-reduction-theorem-o'.
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.9526345Z ##[endgroup]
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.9579569Z [command]/usr/bin/git log -1 --format=%H
+publication	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:37.9611521Z 3a375cd6490bc4974a3d3cf10a7791457cf2cc5f
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-10-22T22:02:38.2701389Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2701869Z with:
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2702131Z   python-version: 3.11
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2702377Z   check-latest: false
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2704875Z   token: ***
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2705100Z   update-environment: true
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2705356Z   allow-prereleases: false
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2705603Z   freethreaded: false
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2705823Z env:
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2706238Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.2706735Z ##[endgroup]
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.4080217Z ##[group]Installed versions
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.5305135Z (node:2322) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.5306385Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.5307073Z Successfully set up CPython (3.11.17)
+publication	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:38.5308038Z ##[endgroup]
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	﻿2026-10-22T22:02:38.6653756Z ##[group]Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6654259Z with:
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6654580Z   name: theorem-o-witness-3a375cd6490bc4974a3d3cf10a7791457cf2cc5f
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6654982Z   path: got
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6655206Z   merge-multiple: false
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6655492Z   repository: proteinfoldingengine/WetLabEngine
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6655820Z   run-id: 39861546954
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6656042Z env:
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6656475Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6657081Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6657561Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6658013Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6658411Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6658821Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6659283Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:38.6659794Z ##[endgroup]
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.1714754Z Downloading single artifact
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.1871201Z (node:2330) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.1872568Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.2743227Z Preparing to download the following artifacts:
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.2744869Z - theorem-o-witness-3a375cd6490bc4974a3d3cf10a7791457cf2cc5f (ID: 12462396068, Size: 16131, Expected Digest: sha256:b776618dc6e7c8a14afdb46b863130fc2bfdffd447777bd547a0bd8fd62fdc94)
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.4078482Z Redirecting to blob download url: https://productionresultssa15.blob.core.windows.net/actions-results/bda6469e-c8e5-8c41-ae46-66d3b0a304c0/workflow-job-run-3954121a-79b1-58fb-b013-e460ddb0e87e/artifacts/3ec77b6ba231a3d6ffc25f16cab4c7f1e70118a305987c2b93f90054a15bac9f.zip
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.4082208Z Starting download of artifact to: /home/runner/work/WetLabEngine/WetLabEngine/got
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.4587277Z (node:2330) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.4749561Z SHA256 digest of downloaded artifact is b776618dc6e7c8a14afdb46b863130fc2bfdffd447777bd547a0bd8fd62fdc94
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.4750877Z Artifact download completed successfully.
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.4751599Z Total of 1 artifact(s) downloaded
+publication	Run actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093	2026-10-22T22:02:39.4758514Z Download artifact has finished successfully
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	﻿2026-10-22T22:02:39.4925099Z ##[group]Run set -euo pipefail
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.4925514Z ^[[36;1mset -euo pipefail^[[0m
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.4925856Z ^[[36;1m(cd got && sha256sum -c SHA256SUMS)^[[0m
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.4926300Z ^[[36;1mpython -B "$V/producer.py" regen.json > /dev/null^[[0m
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.4926753Z ^[[36;1mcmp regen.json got/producer_output.json^[[0m
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.4927196Z ^[[36;1msha256sum regen.json got/producer_output.json^[[0m
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.4927603Z ^[[36;1mecho "producer bytes reproduced"^[[0m
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5297383Z shell: /usr/bin/bash -e {0}
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5297872Z env:
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5298630Z   V: ResearchHistory/UQCF-GEM/research/physical-bridge/ordering_reduction_theorem_o/verification
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5299663Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5300466Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5301478Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5302188Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5302975Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5303605Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5304092Z ##[endgroup]
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5442938Z checker.stderr: OK
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5443478Z checker_exit.txt: OK
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5443979Z checker_report.json: OK
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5444484Z execution-head.txt: OK
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5444972Z mutation_controls.json: OK
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5445466Z producer.log: OK
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5445951Z producer_output.json: OK
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:39.5446598Z python-version.txt: OK
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:40.4441431Z aeed4371bf1d435c9bbc20393f629c8d3fbce76c788edf847315ecf2dd2c07b3  regen.json
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:40.4443126Z aeed4371bf1d435c9bbc20393f629c8d3fbce76c788edf847315ecf2dd2c07b3  got/producer_output.json
+publication	Regenerate producer bytes and compare byte-for-byte; verify artifact digests	2026-10-22T22:02:40.4445914Z producer bytes reproduced
+publication	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-10-22T22:02:40.4544992Z Post job cleanup.
+publication	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:40.5751813Z (node:2348) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publication	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-22T22:02:40.5753696Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-22T22:02:40.5941905Z Post job cleanup.
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.6894175Z [command]/usr/bin/git version
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.6939631Z git version 2.55.0
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.6979351Z Temporarily overriding HOME='/home/runner/work/_temp/53e69a5a-d93f-4a63-a261-6b999df09c68' before making global git config changes
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.6980885Z Adding repository directory to the temporary git global config as a safe directory
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.6985685Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.7029828Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.7068594Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.7357541Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.7387991Z http.https://github.com/.extraheader
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.7401391Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.7438609Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.7814644Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publication	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-22T22:02:40.7871566Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publication	Complete job	﻿2026-10-22T22:02:40.8368191Z Cleaning up orphan processes
+publication	Complete job	2026-10-22T22:02:40.8774427Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

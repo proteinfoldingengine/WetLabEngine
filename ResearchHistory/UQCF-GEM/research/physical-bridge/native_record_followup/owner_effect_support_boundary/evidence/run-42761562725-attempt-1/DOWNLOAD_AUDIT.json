@@ -1,0 +1,73 @@
+{
+  "accepted": true,
+  "artifacts": [
+    {
+      "api_digest": "sha256:3d769ebebe611dbc8bfd213143bf6beac4fb9f1ecd1968ee026ed70d0cda46f1",
+      "bytes": 388905,
+      "download_sha256": "3d769ebebe611dbc8bfd213143bf6beac4fb9f1ecd1968ee026ed70d0cda46f1",
+      "id": 13738047781,
+      "manifest_status": "VALID",
+      "members": 44,
+      "name": "owner-effect-support-publication-1"
+    },
+    {
+      "api_digest": "sha256:ef3369e30c24d5dda13e1c2c90116220343a101088755599a679f649ec31aae3",
+      "bytes": 179203,
+      "download_sha256": "ef3369e30c24d5dda13e1c2c90116220343a101088755599a679f649ec31aae3",
+      "id": 13737873052,
+      "manifest_status": "VALID",
+      "members": 30,
+      "name": "owner-effect-support-review-1"
+    },
+    {
+      "api_digest": "sha256:2caef56c1e787aebd5d2d5ebac8894988a3249e959957e20f82039f18e0136c7",
+      "bytes": 239423733,
+      "download_sha256": "2caef56c1e787aebd5d2d5ebac8894988a3249e959957e20f82039f18e0136c7",
+      "id": 13737592967,
+      "manifest_status": "VALID",
+      "members": 48,
+      "name": "owner-effect-support-verification-1"
+    }
+  ],
+  "attempt": "1",
+  "checkout_sha": "30aa20a7af1fc64ecf8b42f05d00bc5a70b6c11b",
+  "completed_job_logs": [
+    {
+      "bytes": 29489,
+      "conclusion": "success",
+      "file": "job-129648196211.log",
+      "id": 129648196211,
+      "name": "verification",
+      "sha256": "b557cf0c4a4c71d56023891baa4e02832a9c4f43a9aa209d707f4a2c3220d283"
+    },
+    {
+      "bytes": 28667,
+      "conclusion": "success",
+      "file": "job-129649052763.log",
+      "id": 129649052763,
+      "name": "review",
+      "sha256": "e7828b3ef9792b8a0e9428ad5af4ec46d3bf34aa4a43195a83cc6eb0c350c45c"
+    },
+    {
+      "bytes": 33677,
+      "conclusion": "success",
+      "file": "job-129649314822.log",
+      "id": 129649314822,
+      "name": "publication",
+      "sha256": "365158b88f0cc22db0e483ae47a23d6e57355b9ca73dfdcca28cc34bad088bee"
+    }
+  ],
+  "job_states": {
+    "publication": "success",
+    "review": "success",
+    "verification": "success"
+  },
+  "missing_stage_artifacts": [],
+  "native_bridge": "NOT_DERIVED",
+  "preservation_status": "COMPLETE",
+  "reviewer_verdict": "ACCEPTED",
+  "run_id": "42761562725",
+  "scientific_pipeline_complete": true,
+  "validation_errors": [],
+  "workflow_sha": "30aa20a7af1fc64ecf8b42f05d00bc5a70b6c11b"
+}

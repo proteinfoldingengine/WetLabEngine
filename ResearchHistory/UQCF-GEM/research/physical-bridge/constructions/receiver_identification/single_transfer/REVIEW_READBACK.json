@@ -1,0 +1,32 @@
+{
+  "status": "VERIFIED_READBACK",
+  "run_id": 39144601008,
+  "source_workflow_sha": "9823002929442aa4ef2246bfd970fb57e1931ccc",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "verdict": "ACCEPTED",
+  "native_bridge_status": "NOT_DERIVED",
+  "review_text_sha256": "d19286a9c1aa00eff3a6169dd8c2bff4fd91a17df34323ac89628b746ee12a36",
+  "review_original_response_match": true,
+  "review_internal_manifest_hashes": "PASS",
+  "publication_report_status": "PASS",
+  "publication_report_file_matches": 8,
+  "review_source_and_freeze_hashes_match": true,
+  "zip_archives": [
+    {
+      "artifact_id": 12144098131,
+      "name": "rid9-review-1.zip",
+      "bytes": 97641,
+      "sha256": "088bd1dd123f46da8d4ad53f290c08f47c322875d21c6e8ab2e36eef4b046d74",
+      "zip_crc": "PASS"
+    },
+    {
+      "artifact_id": 12144077288,
+      "name": "rid9-publication-1.zip",
+      "bytes": 881,
+      "sha256": "069c14f41509dd0d895ee2d1906313d00deab85ef8362732f16ba40a1e5f872c",
+      "zip_crc": "PASS"
+    }
+  ],
+  "scope": "Readback of original evidence, not a fresh scientific replay or review of draft 11/single_transfer."
+}

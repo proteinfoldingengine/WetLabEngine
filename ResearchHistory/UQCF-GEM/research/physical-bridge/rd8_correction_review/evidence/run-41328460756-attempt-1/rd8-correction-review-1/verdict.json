@@ -1,0 +1,22 @@
+{
+  "constructive_analysis": [
+    "The counterexample successfully invalidates the universal sufficiency of the two-zero condition stated in T-243 RD-8(iii). By choosing K=C^2 with e_p=|0> and e_u=e_v=e_o=|1>, the two required overlaps <e_v|e_p> and <e_o|e_p> vanish, yet N_K(pi_u) = N_K(pi_v) = |1><1|. This yields identical complete-complement states for inputs with different owner indicator values (1 and 0), proving that no fixed effect can represent the full owner value. The rational pair contrast is exactly zero, directly contradicting the quantified RD-8(iii) claim.",
+    "The corrected criterion correctly identifies that full-domain ownership requires the support spans A_R and B_R to be orthogonal. The proof of necessity rigorously uses positivity (0 <= M <= I_R) to show that M must act as the identity on A_R and zero on B_R, forcing orthogonal eigenspaces. The sufficiency proof correctly constructs the orthogonal projector, accommodating mixed/rank-deficient states and unused directions.",
+    "For the pure complete-complement specialization, the condition correctly expands to require all four cross-block overlaps to vanish (<e_o|e_p>, <e_v|e_p>, <e_o|e_u>, <e_v|e_u>), not just the two involving e_p. The counterexample explicitly violates this by having <e_o|e_u> = <e_v|e_u> = 1.",
+    "The informative/blind test with E=R=C^3 is mathematically sound. Both isometries share the same complete complement Gram matrix, ensuring equality of their full reduced SOURCE channels via every matrix unit. The informative member achieves A_R orthogonal to B_R, while the blind member yields A_R = B_R = span{|0>}. Both admit a blank-input unitary extension, confirming that blank preparation supplies no obstruction.",
+    "The paper correctly distinguishes full-domain ownership from weaker nonzero pair contrast, and ensures it does not silently change the old W_R/W_E, drop its exact C restriction, assert native preparability, or infer physical ownership from representation."
+  ],
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "The existing FCV execution is infrastructure validation, not an enumeration proof of a universal quantum assertion.",
+    "The derivation operates within an explicitly supplied representation class and does not derive the physical identification of the receiver from native structure.",
+    "Actual occurrence is accepted input and plays no role in this conditional linear-algebra calculation.",
+    "No physical preparability of the calibration atoms is asserted.",
+    "The result does not create a joint-event or owner-retention operation that excludes the blind allocation while admitting an informative one."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Establish a source-backed relation between the actual joint event and the nominated receiver's owned output, or independently justify the identification of the relevant retained factor with its accessible state, without relying on supplied complementary dilations.",
+  "verdict": "ACCEPTED"
+}

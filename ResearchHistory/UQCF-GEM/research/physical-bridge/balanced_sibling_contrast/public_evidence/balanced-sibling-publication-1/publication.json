@@ -1,0 +1,52 @@
+{
+  "checkout_sha": "7baac8ce3265fed1eb87ff7c1284498e128a260c",
+  "documents": {
+    "FREEZE.json": "7955dc68ac22816435b4c628383b5ab5a91a4651cc2a36b49e3ba6a35654b5c8",
+    "RESULT.md": "49b031d7d75e30e92facefed0f7e19f7beda5b2466873e488db0e88f4d1191b6",
+    "SOURCE_PACKET.json": "52de7f38fd4837fb27069628fa4ba327da53cfba65c0088c64153a4243b748e2"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge": "NOT_DERIVED",
+  "prompt_sha256": "26d5513485925b8fb75bc168a59c0c63b2b742108482ce2508eb6726b7d5a73d",
+  "response_sha256": "5a839c6408e591f06e7493de3c4988ef7a4422ea49a48561a7a1d8bc12e68f63",
+  "run_attempt": "1",
+  "run_id": "39693706755",
+  "scientific_execution": false,
+  "scientific_sha": "a034bbb58bf250316b04d33d85ba89b9018793cd",
+  "source_commit": "def537e928c9839fe956aeddb6ad81ed5e6380ba",
+  "source_count": 3,
+  "sources": [
+    {
+      "byte_end": 17164,
+      "byte_start": 0,
+      "excerpt_bytes": 17164,
+      "excerpt_sha256": "25be9a3acc15f46774ea665650b1718a15170e06c59d9fd08ac3832055ecd06b",
+      "full_bytes": 17164,
+      "full_sha256": "25be9a3acc15f46774ea665650b1718a15170e06c59d9fd08ac3832055ecd06b",
+      "git_blob": "feb28cd2480db73ba41a7a02e3a93d5c93dabc09",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/positive_retained_holdings/RESULT.md"
+    },
+    {
+      "byte_end": 135570,
+      "byte_start": 122653,
+      "excerpt_bytes": 12917,
+      "excerpt_sha256": "7604a5c8b3224eecfd45d45ed8096e972aeeb630dc3871bfdd5f3cd995ad6427",
+      "full_bytes": 389240,
+      "full_sha256": "a747459613ab088fb363c583cc6cd5ed4333850b64758b88fbba14fcd50529e4",
+      "git_blob": "69f01eb4ea2c99689f443add988beb58fccfa4a8",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/receiver_identification/CONSTRUCTION.md"
+    },
+    {
+      "byte_end": 303726,
+      "byte_start": 288058,
+      "excerpt_bytes": 15668,
+      "excerpt_sha256": "2c22eb8f1aa4de7e27141c850a6bf5c70a10a1ca69b4ac4b3eb5162dfa4182a4",
+      "full_bytes": 389240,
+      "full_sha256": "a747459613ab088fb363c583cc6cd5ed4333850b64758b88fbba14fcd50529e4",
+      "git_blob": "69f01eb4ea2c99689f443add988beb58fccfa4a8",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/receiver_identification/CONSTRUCTION.md"
+    }
+  ],
+  "status": "PASS",
+  "workflow_sha": "7baac8ce3265fed1eb87ff7c1284498e128a260c"
+}

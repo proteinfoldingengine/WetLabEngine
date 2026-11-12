@@ -1,0 +1,8 @@
+chain2      n=2 kernel_dim=1 PASS
+chain4      n=4 kernel_dim=1 PASS
+star4       n=4 kernel_dim=1 PASS
+q157shape   n=4 kernel_dim=1 PASS
+branched6   n=6 kernel_dim=1 PASS
+mixed7      n=7 kernel_dim=1 PASS
+ALL_PASS
+forced w: fixed(x+)= False  fixed(x-)= True

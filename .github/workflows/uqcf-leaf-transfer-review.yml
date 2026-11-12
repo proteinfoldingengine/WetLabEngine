@@ -1,0 +1,86 @@
+name: UQCF SE-free leaf transfer review
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - '.github/scripts/uqcf_leaf_transfer_*.py'
+      - '.github/workflows/uqcf-leaf-transfer-review.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+concurrency:
+  group: uqcf-leaf-transfer-review
+  cancel-in-progress: false
+jobs:
+  integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange
+      - name: Verify exact frozen proof and dependency bytes
+        run: python3 .github/scripts/uqcf_leaf_transfer_review.py integrity
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: leaf-transfer-integrity-${{ github.run_attempt }}
+          path: leaf_transfer_review
+          if-no-files-found: error
+          retention-days: 90
+  argument-review:
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/leaf_transfer_without_exchange
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: leaf-transfer-integrity-${{ github.run_attempt }}
+          path: leaf_transfer_review
+      - name: Independent full-argument Gemini review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_leaf_transfer_review.py review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: leaf-transfer-review-${{ github.run_attempt }}
+          path: leaf_transfer_review
+          if-no-files-found: error
+          retention-days: 90
+  publication-audit:
+    needs: [integrity, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: leaf-transfer-review-${{ github.run_attempt }}
+          path: leaf_transfer_review
+      - name: Separate immutable source and raw-response audit
+        run: python3 .github/scripts/uqcf_leaf_transfer_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: leaf-transfer-publication-${{ github.run_attempt }}
+          path: leaf_transfer_publication
+          if-no-files-found: error
+          retention-days: 90

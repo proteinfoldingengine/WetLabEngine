@@ -1,0 +1,97 @@
+{
+  "schema": "uqcf-protected-grading-source-recovery-v1",
+  "baseline": "a8cf8efe2818b88fbf002803dff096a0ac2c32fa",
+  "status": "SOURCE_RECOVERY_AND_UNREVIEWED_CONDITIONAL_CANDIDATE",
+  "native_bridge": "NOT_DERIVED",
+  "original_reports": [
+    {
+      "path": "originals/UQCF_GEM_v10_0_Minimal_Protected_Source_Primitive_Consistency_Gate.md",
+      "source": "Earlier UQCF-GEM report, retrieved from the user research archive on 2026-10-18",
+      "original_created_date": "2026-09-08",
+      "bytes": 6978,
+      "sha256": "f18c9541552fbda9a453466d6d29cdb9f85e3dc649d0a4501105fee4b7c53a2d",
+      "git_blob": "c9778239e6686e7be65b6677ad4636d94ef94677"
+    },
+    {
+      "path": "originals/UQCF_GEM_v10_1_Protected_Token_Naturality_Splitting_Gate.md",
+      "source": "Earlier UQCF-GEM report, retrieved from the user research archive on 2026-10-18",
+      "original_created_date": "2026-09-08",
+      "bytes": 9962,
+      "sha256": "097457e8f7cf8863f4d0671d1452cc487fe55f3d402fdfe7a1ceb4693bb528fe",
+      "git_blob": "d0238d81ba0e12879bb7f60a64c4cc582fba1fe0"
+    },
+    {
+      "path": "originals/UQCF_GEM_v10_2_Protected_Grading_Provenance_Coupling_Gate.md",
+      "source": "Earlier UQCF-GEM report, retrieved from the user research archive on 2026-10-18",
+      "original_created_date": "2026-09-08",
+      "bytes": 9105,
+      "sha256": "3defb7c6b43dc81a075d9deb27b3b217c4d6478beb6f4b4e0797fb6764a1b8d0",
+      "git_blob": "efc9e7eb9de7c5785c2387718c8ddd0b877e9f82"
+    }
+  ],
+  "github_sources": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/v13/v13.26/REPORT.md",
+      "commit": "a8cf8efe2818b88fbf002803dff096a0ac2c32fa",
+      "bytes": 7465,
+      "sha256": "3677e07ab0ea9c40b5f9615673736027834d93260d149419605535aa14996858",
+      "git_blob": "9917085b211ca0e1f4737082227f55097cc72b66"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/retained_amplitude.py",
+      "commit": "a8cf8efe2818b88fbf002803dff096a0ac2c32fa",
+      "bytes": 1210,
+      "sha256": "77451fa3609e1fa3666aa7b325fbcc702ce06c334c3c4e5713d5838e1bd8d100",
+      "git_blob": "1cd7c0545f75b0cf0387550117e2028d1f7378d7"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/source_binding.py",
+      "commit": "a8cf8efe2818b88fbf002803dff096a0ac2c32fa",
+      "bytes": 1802,
+      "sha256": "cc7e92c661bf7b56a332173993da392aa1a70d0aa8c60d35ac7f691ea9c765cd",
+      "git_blob": "a1df8db6c1d1b3fd4491a5f502267841725f3f32"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md",
+      "commit": "a8cf8efe2818b88fbf002803dff096a0ac2c32fa",
+      "bytes": 13575,
+      "sha256": "d14ff5103268cd83521cf3e43821ecc080dd54b4a15af8899cafa6f09d7277ac",
+      "git_blob": "a21acad73c80cb748f2e42c244f6db53146c2bf2"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/TYPE_LEDGER.md",
+      "commit": "a8cf8efe2818b88fbf002803dff096a0ac2c32fa",
+      "bytes": 9516,
+      "sha256": "4a4d2868d22bdd468ba2688494091e5a620b39421e8d1e0e404665065866627a",
+      "git_blob": "aa2d66adbfd552188dd3dec9270824fd605981d8"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/v15/v15.11/REPORT.md",
+      "commit": "a8cf8efe2818b88fbf002803dff096a0ac2c32fa",
+      "bytes": 9470,
+      "sha256": "ddee424afcdb610812aa0c33947a0abb8968c2142fcbd1cfee8c39f17598bdaf",
+      "git_blob": "255a62a329cc4ebb445122a8c5602df6e2dabc9c"
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/receiver_identification/single_transfer/SOURCE_CORRESPONDENCE.md",
+      "commit": "a8cf8efe2818b88fbf002803dff096a0ac2c32fa",
+      "bytes": 9709,
+      "sha256": "079fbd5ac12cdcd905e16a0e8869782f79f4ecd921cc58cf8c7387c3ab77bb07",
+      "git_blob": "60cbee96687400fb300de6978ece5db2c6407cd8"
+    }
+  ],
+  "argument": {
+    "path": "CONSTRUCTION.md",
+    "bytes": 11612,
+    "sha256": "46934471e5955104ba86b94d63fc2c1df7cb1822943026fd35a98f30222aa324",
+    "git_blob": "5a118c50aef1fd15243d78dce1b9d9b18988707b"
+  },
+  "checks": {
+    "three_original_report_sizes_match": true,
+    "seven_github_source_git_blobs_match": true,
+    "originals_modified": false,
+    "scientific_execution": false,
+    "independent_review": false
+  },
+  "genealogy_limit": "v10.0 -> v10.1 -> v10.2 is explicitly referenced; v13.26 does not identify its protected-grading predecessor by filename/hash, so an exact direct dependency is not certified."
+}

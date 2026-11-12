@@ -1,0 +1,24 @@
+{
+ "verdict": "ACCEPTED",
+ "reconstruction": [
+  "Lemma 27.0: VERIFIED. The P1 step $P$ adds the pruned leaf's entry to its parent's entry and leaves all other entries unchanged. Applying this to the read vector in the (PN) equation $\\hat{F}_Y(Px) = P \\hat{F}_W(x)$ immediately gives $\\hat{F}_Y(Px)_p = \\hat{F}_W(x)_p + \\hat{F}_W(x)_l$ and $\\hat{F}_Y(Px)_z = \\hat{F}_W(x)_z$ for $z \\neq p$. Summing over all retained vertices yields the total read conservation.",
+  "Lemma 27.1: VERIFIED. Zero extension $I$ pads with zeros, and $P_{X'X}$ sums the pruned leaves into their parents. Since the pruned leaves have 0 grade, the parents' values are unchanged, so $P_{X'X} I = id$. Then $P_{X'X} (\\hat{F}_{X'} I - I \\hat{F}_X) = P_{X'X} \\hat{F}_{X'} I - P_{X'X} I \\hat{F}_X$. By (PN), $P_{X'X} \\hat{F}_{X'} = \\hat{F}_X P_{X'X}$, so the first term is $\\hat{F}_X P_{X'X} I = \\hat{F}_X$. The second term is $id \\hat{F}_X = \\hat{F}_X$. The difference is 0. The witness $\\nu = I + E_{20} - E_{21}$ on $0 \\to 1 \\to 2$ gives $\\hat{F}_{X'}(I \\delta_0) = (1, -1, 1)$ and $I \\hat{F}_X(\\delta_0) = (1, 0, 0)$, with defect $(0, -1, 1)$ which is in $\\ker P$.",
+  "Proposition 27.2: VERIFIED. (S_L) iff (E0): By linearity, $\\hat{F}_W(x)_l$ depending only on $x_l$ means it is $c x_l$, which vanishes when $x_l = 0$ (E0). Conversely, if $\\hat{F}_W(x)_l = 0$ for $x_l = 0$, then $\\hat{F}_W(x - x_l \\delta_l)_l = 0$, so $\\hat{F}_W(x)_l = \\hat{F}_W(x_l \\delta_l)_l$. (E0) iff (W2_1): By Lemma 27.0, $\\hat{F}_X(y)_p = \\hat{F}_{X'}(Iy)_p + \\hat{F}_{X'}(Iy)_l$. (W2_1) requires $\\hat{F}_{X'}(Iy)_l = 0$, which is exactly (E0) since $Iy$ are the grades with $x_l = 0$. (S_L) implies (S): On a chain, $A(d, m) = \\sum_{j \\le m} \\nu(d, j)$. (S_L) forces $A(d, m) = 0$ for $m < d$, so $\\nu$ is diagonal, which is equivalent to (S). No finite-universe artifact exists because the proof uses only chains up to the universe depth.",
+  "Theorem 27.3: VERIFIED. With $\\nu$ diagonal, $\\hat{F}(e_l)_p = \\nu(d-1, d-1) - \\nu(d, d)$ and $\\hat{F}(e_l)_l = \\nu(d, d)$. The receiver's gain is $\\nu(d-1, d-1)$. Acquisition at step $d$ means blind before ($\\nu(d-1, d-1) = \\nu(d, d)$) and gain $\\neq 0$ ($\\nu(d-1, d-1) \\neq 0$). For $d=1 \\dots D$, this forces $\\nu(0,0) = \\dots = \\nu(D,D) = \\kappa \\neq 0$. This implies $\\hat{F}_v = \\kappa(c_v - \\sum c_u) = \\kappa x_v$ for depth $< D$, and also at depth $D$ if the carrier has depth $\\le D$ (no children).",
+  "Proposition 27.4(a)-(d): VERIFIED. (a) $\\nu(k,k)$ for $k > D$ are unconstrained, leaving dimension $N - D$. Sharpness holds because a depth $D$ vertex with a child reads $\\kappa - \\nu(D+1, D+1)$ of the child's unit. (b) For $e_l + r e_p$, $\\hat{F}_p = \\nu(d-1, d-1)(1+r) - \\nu(d, d) = 0 \\implies r = (\\nu(d, d) - \\nu(d-1, d-1))/\\nu(d-1, d-1)$. The gain is $\\nu(d, d)$. (c) The witness $\\nu = I + E_{20} - E_{21}$ has $A(k, k) = 1$, so $A(d-1, d-1) - A(d, d) = 0$ and gain is 1, satisfying (CL_D), but fails (S_L) because leaf 2 reads $\\delta_0$ as 1. (d) The zero read satisfies all conditions except separation."
+ ],
+ "findings": [],
+ "missing_assumptions": [],
+ "counterexamples": [],
+ "inserted_mechanisms": [
+  "(E0) 'an empty leaf reads nothing' is honestly declared as assumed and not inherited. Calling it 'the read form of the second clause of section 17's (W2)' is accurate since W2 states new addresses get nothing.",
+  "Reducing universal receiver blindness (C_recv) to the D steps of one realized climb is stated with its exact price (the depth horizon) and without claiming the existential one-step occurrence input.",
+  "The identification of (CL_D)'s acquisition with the construction's starting condition of an initially uninformed receiver is fair and logically sound.",
+  "No vertex is presented as performing a read, the reads as a physical field, or depth as time or distance.",
+  "Infinite-class statements are correctly separated from the finite-universe evidence (e.g., the horizon closing).",
+  "'The ledger is redistribution' is an exact linear statement (Lemma 27.0) and not a thermodynamic claim."
+ ],
+ "limitations": [],
+ "novelty_assessment": "The mathematical techniques (naturality modulo the kernel of a map with a section, vanishing on generators spreading along morphisms, finite differences) are standard and correctly identified as elementary. The novelty claims are properly scoped to UQCF: the leaf-reader form (E0) of the locality premise, the exact kernel description of what (PN) leaves of the zero-extension square, and the fact that acquisition along one realized record climb fixes own-grade reads up to that depth.",
+ "native_bridge_status": "NOT_DERIVED"
+}

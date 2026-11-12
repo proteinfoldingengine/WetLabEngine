@@ -77,3 +77,40 @@ The latest covariant-instrument research shows symmetry alone does not select a 
 The strongest candidate should answer: can an existing native relational distinction require a change in an independently justified accessible record across all mechanisms allowed by the derived premises? If yes, derive it and subject it to independent review. If no, identify the exact missing premise and stop that candidat
 
 [TRUNCATED — received text ends here; remaining sections not received]
+
+
+## Addendum 2026-10-17: priority direction from Aaron (verbatim)
+
+"I would now prioritize finding an inherited native operation that creates or changes a retained record, rather than continuing to test variations of supplied information channels."
+
+The top priority is to search the existing inherited native structures (retained-source, lineage, pruning, compatibility, ordered recoverability update) for an operation that itself writes or alters a retained record. Candidates that only vary supplied information channels (controlled gates, swaps, POVMs, copying interactions) are graded D and are not pursued.
+
+
+## Addendum 2026-10-17 (b): construction mode, course correction from Aaron (verbatim). Takes priority over the admission-gate emphasis.
+
+"too much effort rejecting candidates and correcting claims. That protects rigor, but it hasn't supplied the constructive step we need.
+
+I'll focus on how the existing primitives can work together to produce one accessible record:
+
+* Begin with a native source distinction and an initially uninformed receiver.
+* Construct their joint retained structure using earned composition and compatibility relations.
+* Look for a consequence those relations determine in the receiver, even if they leave other details unresolved.
+* Develop the strongest positive construction before challenging it.
+
+The ledger correction matters here: a receiver can gain information without creating information globally. We should pursue that possibility.
+
+The target is one derived transfer of a distinction. Code will verify the construction after the mechanism is established."
+
+How it applies: each run advances ONE positive construction. It starts from a source distinction and an uninformed receiver, builds their joint retained structure from earned composition and compatibility, and finds the receiver consequence that structure determines (a partial one is fine). The transfer is redistribution or correlation, not global creation of information. The strongest version is written first, as a committed construction document. Adversarial review, admission grading and code verification wait until the mechanism is drafted, and then it goes to Gemini review. No new runs are spent on stop or rejection records.
+
+
+## Addendum 2026-10-21: operation-first course correction
+
+Following Aaron's request to get the research back on rails, apply [DIRECTION_UPDATE_2026_10_21.md](DIRECTION_UPDATE_2026_10_21.md). It supersedes mandatory pursuit of the exact eight-vertex realization and the recent extra requirement to derive measurement occurrence. Actual atemporal measurement occurrence remains the accepted starting input; the operation/state/receiver-record correspondence must still be earned. Begin from an inherited operation and derive its consequence, allowing the example to change. Credit new necessary mathematics separately from physical identification. The next concrete task is one existing P1 retained record traced through its event into a justified existing consumer or available observation. Preserve every scientific and independent-review gate and avoid repeating already documented gaps.
+
+
+## Addendum 2026-11-01: receiver delivery frontier (Aaron)
+
+Apply [RECEIVER_DELIVERY_FRONTIER_DIRECTIVE_2026_11_01.md](RECEIVER_DELIVERY_FRONTIER_DIRECTIVE_2026_11_01.md) as the governing next-work direction. It supersedes conflicting earlier work-sequence requirements, including a mandatory positive construction before the W_R/W_E adversarial test. Preserve accepted scoped P1 infrastructure; the next advance must constrain native delivery to the designated receiver, or establish an exact minimal-new-premise boundary. Answer all five admission questions and test W_R/W_E before a large campaign. Source-only calibration, another conditional consumer, response/holding map or alternate P1 representation is deprioritized unless it directly removes part of that relation. Independent scientific review and publication gates remain in force for material results; no duplicate review is required merely to publish this directive.
+
+[Bounded source audit and handoff](RECEIVER_DELIVERY_SOURCE_AUDIT_2026_11_01.md) records the inspected scope and coordinates with Dot's T-239-dot-a. It is not a theorem, a physical advance, or a certification.

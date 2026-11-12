@@ -1,0 +1,26 @@
+test_a_audit_is_implemented (__main__.IntegrationTests.test_a_audit_is_implemented) ... ok
+test_complete_accepted_file_set (__main__.IntegrationTests.test_complete_accepted_file_set) ... ok
+test_full_review_and_failed_history (__main__.IntegrationTests.test_full_review_and_failed_history) ... ERROR
+test_member_corruption_missing_and_extra (__main__.IntegrationTests.test_member_corruption_missing_and_extra) ... ok
+test_missing_substituted_and_wrong_blob_files (__main__.IntegrationTests.test_missing_substituted_and_wrong_blob_files) ... ok
+test_original_archives_and_changed_bytes (__main__.IntegrationTests.test_original_archives_and_changed_bytes) ... ok
+test_scope_rejects_missing_unrelated_and_wrong_status (__main__.IntegrationTests.test_scope_rejects_missing_unrelated_and_wrong_status) ... ok
+
+======================================================================
+ERROR: test_full_review_and_failed_history (__main__.IntegrationTests.test_full_review_and_failed_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/19dc6d30e949/integration115_staging/checkout/.github/scripts/uqcf_event_integration_tests.py", line 69, in test_full_review_and_failed_history
+    archives,publication=m.verify_review(ROOT)
+                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/19dc6d30e949/integration115_staging/checkout/.github/scripts/uqcf_event_integration_audit.py", line 67, in verify_review
+    require(review['response.json']==(root/BASE/'evidence/REVIEW_RAW.json').read_bytes(),'Raw response copy mismatch')
+  File "/workspace/scratch/19dc6d30e949/integration115_staging/checkout/.github/scripts/uqcf_event_integration_audit.py", line 23, in require
+    if not ok: raise ValueError(message)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Raw response copy mismatch
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.016s
+
+FAILED (errors=1)

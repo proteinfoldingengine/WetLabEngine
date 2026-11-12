@@ -1,0 +1,119 @@
+{
+  "archives": [
+    {
+      "archive_bytes": 1972,
+      "archive_sha256": "3dd96f9436d5e98a9480ba0e0477c866f102e694691c6b213766b35ac03bbf03",
+      "artifact_id": 12268250079,
+      "complete_member_manifest": "PASS",
+      "expected_digest": "sha256:3dd96f9436d5e98a9480ba0e0477c866f102e694691c6b213766b35ac03bbf03",
+      "members": [
+        {
+          "bytes": 132,
+          "crc32": "c5b82989",
+          "path": "artifact_manifest.json",
+          "sha256": "aeba02ca2ba13fee4c2492f0c378daeeb55836c9b734e53af7beebe5b5f9458d"
+        },
+        {
+          "bytes": 5655,
+          "crc32": "6dc793ea",
+          "path": "publication.json",
+          "sha256": "4db894941b24f963c5a397b81a625d9dd1a4488db420041e1959778702c9427e"
+        }
+      ],
+      "name": "single-event-gain-publication-1",
+      "zip_crc": "PASS"
+    },
+    {
+      "archive_bytes": 1823,
+      "archive_sha256": "f5ef4f01b8b978c88166d45d6d34f7e24292472bd4aa4cc92518115b19140e10",
+      "artifact_id": 12267302142,
+      "complete_member_manifest": "PASS",
+      "expected_digest": "sha256:f5ef4f01b8b978c88166d45d6d34f7e24292472bd4aa4cc92518115b19140e10",
+      "members": [
+        {
+          "bytes": 130,
+          "crc32": "73d99cb8",
+          "path": "artifact_manifest.json",
+          "sha256": "165e6712e922dfb245d96ffb21ef849920a58f2f142501c6aed8abd15c577545"
+        },
+        {
+          "bytes": 5386,
+          "crc32": "c332f13f",
+          "path": "integrity.json",
+          "sha256": "00ee4bb2638c6d90b8f78aebc7bfcc45b235343deacc04be95f6f99d103405cf"
+        }
+      ],
+      "name": "single-event-gain-integrity-1",
+      "zip_crc": "PASS"
+    },
+    {
+      "archive_bytes": 143847,
+      "archive_sha256": "daa6a669c5740998d150e3614ec33001370951a84ff18738544fde29cc45cb9d",
+      "artifact_id": 12267004861,
+      "complete_member_manifest": "PASS",
+      "expected_digest": "sha256:daa6a669c5740998d150e3614ec33001370951a84ff18738544fde29cc45cb9d",
+      "members": [
+        {
+          "bytes": 1020,
+          "crc32": "43f1fc50",
+          "path": "artifact_manifest.json",
+          "sha256": "21db7eff23f0550f0e7a11399b04c7b09c0a711b32e3262f3ae2518e9151787e"
+        },
+        {
+          "bytes": 459,
+          "crc32": "9d1c9e67",
+          "path": "model_metadata.json",
+          "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438"
+        },
+        {
+          "bytes": 5386,
+          "crc32": "c332f13f",
+          "path": "integrity.json",
+          "sha256": "00ee4bb2638c6d90b8f78aebc7bfcc45b235343deacc04be95f6f99d103405cf"
+        },
+        {
+          "bytes": 167794,
+          "crc32": "b0038891",
+          "path": "prompt.txt",
+          "sha256": "55ee81516115cec5161584f339c7d8d4f32cbf3e6a9fe9fdc8dd42ff62188e93"
+        },
+        {
+          "bytes": 169615,
+          "crc32": "0565893e",
+          "path": "request.json",
+          "sha256": "c4155eee880aa3bd250bdfa5ae8090ece38dc86787a2ab1108a9215e717b256f"
+        },
+        {
+          "bytes": 27478,
+          "crc32": "962ddfb5",
+          "path": "response.json",
+          "sha256": "5612d94f931e88fecbf0a800382c22dadb48b2fedf915a9574165f3c2f63613a"
+        },
+        {
+          "bytes": 3455,
+          "crc32": "d62deb4d",
+          "path": "review.txt",
+          "sha256": "e2ef309b183fa520e40751e9a1a3211c20cad2f03d579e2b6d65b46a9bc30148"
+        },
+        {
+          "bytes": 462,
+          "crc32": "8645aa20",
+          "path": "review_identity.json",
+          "sha256": "91be776d73dfb4fd40b625bdc1a5c4674658b2adfe70f841050a4aaae34e3c21"
+        },
+        {
+          "bytes": 3456,
+          "crc32": "8d82bdf1",
+          "path": "verdict.json",
+          "sha256": "77d36b473dffdad5c7a682aa8b77bb5a838a6f8c59028c05811f865c6cdaea26"
+        }
+      ],
+      "name": "single-event-gain-review-1",
+      "zip_crc": "PASS"
+    }
+  ],
+  "run_attempt": 1,
+  "run_id": 39429834992,
+  "scientific_execution": false,
+  "status": "PASS"
+}

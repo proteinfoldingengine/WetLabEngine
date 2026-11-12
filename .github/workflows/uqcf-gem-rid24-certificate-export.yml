@@ -1,0 +1,737 @@
+# Prospective, bounded archival regeneration. Publish and read back before adding the marker.
+name: UQCF D24 certificate export and publication reproduction
+
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/EXECUTE_ONCE.md'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: uqcf-rid24-certificate-export-20261019
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  PACKAGE_DIR: ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence
+  RUN_SHA: ${{ github.sha }}
+  WORKFLOW_SHA: ${{ github.workflow_sha }}
+  RUN_ID: ${{ github.run_id }}
+  RUN_ATTEMPT: ${{ github.run_attempt }}
+  EVENT_NAME: ${{ github.event_name }}
+  ACTOR: ${{ github.actor }}
+  REF_NAME: ${{ github.ref_name }}
+  REPOSITORY: ${{ github.repository }}
+  PYTHONHASHSEED: '0'
+  PYTHONDONTWRITEBYTECODE: '1'
+  PYTHONUNBUFFERED: '1'
+  OMP_NUM_THREADS: '1'
+  OPENBLAS_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+
+jobs:
+  initial-export:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    outputs:
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
+      artifact-digest: ${{ steps.upload.outputs.artifact-digest }}
+    env:
+      STAGE: initial-export
+    steps:
+      - name: Create evidence directories
+        run: |
+          evidence_dir="$RUNNER_TEMP/rid24-$STAGE"
+          printf 'EVIDENCE_DIR=%s\n' "$evidence_dir" >> "$GITHUB_ENV"
+          printf 'INITIAL_DIR=%s/rid24-first-artifact\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+          mkdir -p "$evidence_dir/logs"
+          date +%s > "$evidence_dir/job_started_epoch.txt"
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # original D24 v4 pin
+        timeout-minutes: 3
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # original D24 v5 pin
+        timeout-minutes: 3
+        with:
+          python-version: '3.12.15'
+      - name: Preflight identity and prospective freeze
+        timeout-minutes: 3
+        run: |
+          python - <<'PY' > "$EVIDENCE_DIR/logs/preflight.stdout.log" 2> "$EVIDENCE_DIR/logs/preflight.stderr.log"
+          import hashlib, json, os, re, shutil, subprocess, sys
+          from pathlib import Path
+          root = Path.cwd()
+          evidence = Path(os.environ['EVIDENCE_DIR'])
+          package = 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence'
+          workflow = '.github/workflows/uqcf-gem-rid24-certificate-export.yml'
+          marker_path = package + '/EXECUTE_ONCE.md'
+          reviewed = {'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/ARCHIVE_CONTRACT.md': '32ac119faec345e06ccc2c3727d3a0773da93751c97e19d71ca9f59ff2047e48', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/checker_export.py': '7547f11ca4e4aa7ec4962e4c1483883aa619a7d44653c86cf2c0c026fba0318d', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/producer_export.py': 'bf00f37e603814d2ece28ed8fd5b42dbedc4a29e2fca09a7044077a09ebfba48', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/test_archive_mutations.py': '92556fb7ff0a922fd5579a63380c1b5aca0adf744b2b4c85058d8ccc7501e961', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/verify_archive.py': '3dede4847c25f0d5c589a32f1286a5cdf5ceb4ab8466abfc85e8a281547f739b'}
+          original = {'.github/scripts/uqcf_rid24_checker.py': '2f7789a70113a08eaab4d9ce159245813bb1e982dd1971e8f646d999ea44dc2c', '.github/scripts/uqcf_rid24_compare.py': '4e2d754a63aacac5e3f7d0b5855af8823507d5eed7c98a658c7b22a3a84e35e5', '.github/scripts/uqcf_rid24_producer.py': '942ea9de0835849973046f0e6c079acb5c7e73fa04524eca289d7546bfd5d004', '.github/scripts/uqcf_rid24_publication.py': '7f795b50ce236ace100300c2527731ee55a84823a4e0f36514cb3422e92b2b1d', '.github/scripts/uqcf_rid24_review.py': '0bd9a890fd3c8a8e379c58aa9d6151011142c45d73ac2acc091c5fbadfcade85', '.github/workflows/uqcf-gem-rid24-review.yml': '0aceef6b226248842ec04205b07b53cd878d3d2e0a1e472c913661e3e1234cb9', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/FREEZE.md': 'a0bc94537c4dd008fd0e4349e7bfbc9b154707a63a67f6e8a7f9d5e5f3f4ebf1', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/RESULT.md': '7600ad3708baa287ac877afa582d83073a02f0ec72bf11d6ddcfbeb091ba43cc'}
+          def require(ok, message):
+              if not ok: raise RuntimeError(message)
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True).strip()
+          def strict_pairs(pairs):
+              out = {}
+              for key, value in pairs:
+                  require(key not in out, 'Duplicate JSON key: ' + key)
+                  out[key] = value
+              return out
+          def write(path, value):
+              with path.open('x') as stream: json.dump(value, stream, sort_keys=True, indent=2); stream.write('\n')
+          invocation = {key: os.environ.get(key) for key in (
+              'RUN_SHA', 'WORKFLOW_SHA', 'RUN_ID', 'RUN_ATTEMPT', 'EVENT_NAME',
+              'ACTOR', 'REF_NAME', 'REPOSITORY', 'STAGE')}
+          write(evidence / 'invocation.json', invocation)
+          require(os.environ['REPOSITORY'] == 'proteinfoldingengine/WetLabEngine', 'Wrong repository')
+          require(os.environ['ACTOR'] == 'proteinfolding-gpt', 'Wrong initiating actor')
+          require(os.environ['EVENT_NAME'] == 'push', 'Push only')
+          require(os.environ['REF_NAME'] == 'research/uqcf-overlapping-guard-exchange', 'Wrong branch')
+          require(os.environ['RUN_ATTEMPT'] == '1', 'No rerun is authorized')
+          require(sys.version_info[:3] == (3, 12, 15), 'Python version mismatch')
+          require(git('rev-parse', 'HEAD') == os.environ['RUN_SHA'] == os.environ['WORKFLOW_SHA'], 'Checkout/workflow SHA mismatch')
+          event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text(), object_pairs_hook=strict_pairs)
+          parents = git('rev-list', '--parents', '-n', '1', 'HEAD').split()
+          require(len(parents) == 2 and parents[1] == event.get('before'), 'One parent matching push.before required')
+          require(event.get('after') == os.environ['RUN_SHA'] and event.get('forced') is False, 'Wrong or forced push')
+          require(event.get('deleted') is False and event.get('created') is False, 'Existing branch push required')
+          changed = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-status', '-r', '-z', 'HEAD'])
+          require(changed == ('A\0' + marker_path + '\0').encode(), 'Trigger commit must only add the execution marker')
+          require(git('rev-list', '--full-history', 'HEAD', '--', marker_path).splitlines() == [os.environ['RUN_SHA']], 'Marker must first appear in this branch history')
+          raw = Path(marker_path).read_bytes()
+          require(len(raw) <= 16384, 'Marker size exceeds bound')
+          marker = json.loads(raw, object_pairs_hook=strict_pairs)
+          require(type(marker) is dict and set(marker) == {
+              'schema', 'campaign', 'evidence_kind', 'prepared_commit', 'expected_files', 'original_run', 'max_attempt'}, 'Marker keys mismatch')
+          require(marker['schema'] == 'uqcf-rid24-execute-once-v1', 'Marker schema mismatch')
+          require(marker['campaign'] == 'uqcf-rid24-certificate-export-20261019', 'Campaign mismatch')
+          require(marker['evidence_kind'] == 'regenerated', 'Evidence kind mismatch')
+          require(type(marker['original_run']) is int and marker['original_run'] == 39300667905, 'Origin run mismatch')
+          require(type(marker['max_attempt']) is int and marker['max_attempt'] == 1, 'Attempt bound mismatch')
+          prepared = marker['prepared_commit']
+          require(type(prepared) is str and re.fullmatch('[0-9a-f]{40}', prepared), 'Prepared commit must be a full SHA')
+          require(prepared != os.environ['RUN_SHA'], 'Prospective publication must precede trigger')
+          subprocess.run(['git', 'merge-base', '--is-ancestor', prepared, 'HEAD'], check=True)
+          expected = marker['expected_files']
+          require(type(expected) is dict and set(expected) == set(reviewed) | {package + '/EXECUTION_PLAN.md', workflow}, 'Exactly seven prospective paths required')
+          require(all(type(v) is str and re.fullmatch('[0-9a-f]{64}', v) for v in expected.values()), 'Invalid digest')
+          require(all(expected[p] == digest for p, digest in reviewed.items()), 'Reviewed five-file package changed')
+          source_hashes = {}
+          for path, digest in sorted({**original, **expected}.items()):
+              file = Path(path)
+              require(file.is_file() and not file.is_symlink(), 'Nonregular source: ' + path)
+              data = file.read_bytes()
+              require(hashlib.sha256(data).hexdigest() == digest, 'Current source hash mismatch: ' + path)
+              prospective = subprocess.check_output(['git', 'show', prepared + ':' + path])
+              require(hashlib.sha256(prospective).hexdigest() == digest, 'Prospective source hash mismatch: ' + path)
+              destination = evidence / 'source' / path
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              with destination.open('xb') as stream: stream.write(data)
+              source_hashes[path] = {'bytes': len(data), 'sha256': digest, 'git_blob': git('rev-parse', 'HEAD:' + path)}
+          shutil.copyfile(marker_path, evidence / 'EXECUTE_ONCE.md')
+          write(evidence / 'provenance.json', {
+              'schema': 'uqcf-rid24-execution-provenance-v1', 'evidence_kind': 'regenerated',
+              'stage': os.environ['STAGE'], 'campaign': marker['campaign'], 'prepared_commit': prepared,
+              'checked_out_scientific_sha': os.environ['RUN_SHA'], 'workflow_sha': os.environ['WORKFLOW_SHA'],
+              'run_id': int(os.environ['RUN_ID']), 'run_attempt': int(os.environ['RUN_ATTEMPT']),
+              'trigger_parent': parents[1], 'marker_sha256': hashlib.sha256(raw).hexdigest(),
+              'original_code_sha': '57895f62297c6100c1a4b8f185857a7905da780b',
+              'original_run_id': 39300667905, 'original_run_attempt': 1,
+              'original_verification_artifact_id': 12211286997,
+              'original_verification_zip_sha256': '215496706fcb15cb10c5f70f46d14cabbeccbfd0bde0b3d4e6b3e18be6ffb181',
+              'source_files': source_hashes,
+              'limits': {'job_minutes': 60, 'scientific_step_minutes': 45,
+                         'combined_process_seconds': 2640, 'science_stop_seconds_from_job_start': 3000,
+                         'address_space_bytes_per_process': 6442450944,
+                         'max_file_bytes_per_process': 1073741824, 'retries': 0}})
+          print('Prospective sources, trigger and identity verified; no scientific execution in preflight.')
+          PY
+      - name: Download only the pinned original verification artifact
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        timeout-minutes: 3
+        run: |
+          python - <<'PY' > "$EVIDENCE_DIR/logs/download.stdout.log" 2> "$EVIDENCE_DIR/logs/download.stderr.log"
+          import hashlib, json, os, stat, urllib.error, urllib.parse, urllib.request, zipfile
+          from pathlib import Path
+          evidence = Path(os.environ['EVIDENCE_DIR'])
+          original = evidence / 'original'
+          original.mkdir()
+          expected = {'producer.json': {'bytes': 47074, 'sha256': '04be86d04551748dca905eb2aa2cac74977d86d7edd8f2aaa5d7db9ee411a9f9'}, 'checker.json': {'bytes': 45493, 'sha256': '9bace24c70c57cd2c62a47e1f15ce1f01977a1c86e1ba3be9f752daa384a7572'}, 'compare.json': {'bytes': 46473, 'sha256': 'e2d741a54f05899075dbf6c94e3c700095506231042fe0b3a18601d17e45849e'}, 'SHA256SUMS': {'bytes': 464, 'sha256': 'd18f721c44634294fa6cae4c665f77974793efc16b05c90059097dc72693c0b2'}, 'env.json': {'bytes': 212, 'sha256': '9a53a53150035124ec469938818b5413cefee968932570cad7c65741d3610d5c'}, 'producer_repro.json': {'bytes': 47074, 'sha256': '04be86d04551748dca905eb2aa2cac74977d86d7edd8f2aaa5d7db9ee411a9f9'}}
+          zip_sha = '215496706fcb15cb10c5f70f46d14cabbeccbfd0bde0b3d4e6b3e18be6ffb181'
+          base = 'https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/12211286997'
+          def require(ok, message):
+              if not ok: raise RuntimeError(message)
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, request, fp, code, message, headers, newurl): return None
+          opener = urllib.request.build_opener(NoRedirect)
+          def api(url):
+              request = urllib.request.Request(url, headers={
+                  'Authorization': 'Bearer ' + os.environ['GH_READ_TOKEN'],
+                  'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28'})
+              return opener.open(request, timeout=30)
+          with api(base) as response: metadata = json.load(response)
+          with (original / 'artifact_metadata.json').open('x') as stream:
+              json.dump({key: metadata.get(key) for key in ('id', 'name', 'size_in_bytes', 'digest', 'expired', 'workflow_run')}, stream, sort_keys=True, indent=2); stream.write('\n')
+          require(metadata['id'] == 12211286997 and metadata['name'] == 'rid24-verify-1', 'Wrong artifact')
+          require(metadata['expired'] is False and metadata['size_in_bytes'] == 13890, 'Expired or wrong-sized artifact')
+          require(metadata['workflow_run']['id'] == 39300667905, 'Wrong artifact origin run')
+          require(metadata['workflow_run']['head_sha'] == '57895f62297c6100c1a4b8f185857a7905da780b', 'Wrong origin code SHA')
+          require(metadata.get('digest') == 'sha256:' + zip_sha, 'Artifact service digest mismatch')
+          try:
+              response = api(base + '/zip')
+          except urllib.error.HTTPError as response:
+              require(response.code == 302, 'Expected one signed artifact redirect')
+              location = response.headers.get('Location', '')
+          else:
+              response.close()
+              raise RuntimeError('Expected signed artifact redirect')
+          parts = urllib.parse.urlsplit(location)
+          require(parts.scheme == 'https' and parts.hostname and parts.hostname.endswith('.blob.core.windows.net')
+                  and parts.port in (None, 443) and not parts.username and not parts.password, 'Unexpected artifact storage destination')
+          # Anonymous second request: the GitHub credential is never forwarded to storage.
+          received = original / 'original-download.received.bin'
+          try:
+              # Persist the bounded prefix as it arrives, including a partial response on I/O failure.
+              with received.open('xb') as stream, urllib.request.urlopen(location, timeout=30) as response:
+                  remaining = 13891
+                  while remaining:
+                      chunk = response.read(min(4096, remaining))
+                      if not chunk: break
+                      stream.write(chunk); stream.flush(); remaining -= len(chunk)
+          finally:
+              if received.exists():
+                  data = received.read_bytes()
+                  with (original / 'download_observation.json').open('x') as stream:
+                      json.dump({'observed_bytes': len(data), 'observed_sha256': hashlib.sha256(data).hexdigest(),
+                                 'maximum_received_bytes': 13891, 'expected_bytes': 13890, 'expected_sha256': zip_sha},
+                                stream, sort_keys=True, indent=2); stream.write('\n')
+          require(len(data) == 13890 and hashlib.sha256(data).hexdigest() == zip_sha, 'Original ZIP byte/hash mismatch')
+          archive = original / 'rid24-12211286997.zip'
+          with archive.open('xb') as stream: stream.write(data)
+          with zipfile.ZipFile(archive) as zipped:
+              entries = zipped.infolist()
+              require(len(entries) == len(expected) and {entry.filename for entry in entries} == set(expected), 'Unexpected or duplicate ZIP members')
+              for entry in entries:
+                  name = entry.filename
+                  require('/' not in name and '\\' not in name and not entry.is_dir(), 'Unsafe member path')
+                  require(not entry.flag_bits & 1, 'Encrypted member forbidden')
+                  mode = entry.external_attr >> 16
+                  require(not stat.S_ISLNK(mode) and stat.S_IFMT(mode) in (0, stat.S_IFREG), 'Nonregular member forbidden')
+                  require(entry.file_size == expected[name]['bytes'], 'Member size mismatch')
+                  payload = zipped.read(entry)
+                  require(hashlib.sha256(payload).hexdigest() == expected[name]['sha256'], 'Member hash mismatch')
+                  with (original / name).open('xb') as stream: stream.write(payload)
+          print('Original verification ZIP and all six allowed members verified. No review artifact requested.')
+          PY
+      - name: Install the pinned scientific dependencies
+        timeout-minutes: 4
+        run: |
+          python -m pip install --disable-pip-version-check --no-cache-dir --retries 0 --timeout 30 --only-binary=:all: numpy==2.3.5 scipy==1.16.3 > "$EVIDENCE_DIR/logs/dependencies.stdout.log" 2> "$EVIDENCE_DIR/logs/dependencies.stderr.log"
+      - name: Environment record and version gate
+        timeout-minutes: 1
+        run: |
+          python - <<'PY' > "$EVIDENCE_DIR/logs/environment.stdout.log" 2> "$EVIDENCE_DIR/logs/environment.stderr.log"
+          import importlib.metadata, json, os, platform, subprocess, sys
+          from pathlib import Path
+          out = Path(os.environ['EVIDENCE_DIR']) / 'environment.json'
+          versions = {name: importlib.metadata.version(name) for name in ('numpy', 'scipy', 'pip')}
+          assert sys.version_info[:3] == (3, 12, 15), sys.version
+          assert versions['numpy'] == '2.3.5' and versions['scipy'] == '1.16.3', versions
+          os_release = Path('/etc/os-release').read_text()
+          assert 'VERSION_ID="24.04"' in os_release, os_release
+          payload = {'python': sys.version, 'executable': sys.executable, 'packages': versions,
+                     'platform': platform.platform(), 'os_release': os_release,
+                     'runner_image': {name: os.environ.get(name) for name in ('ImageOS', 'ImageVersion', 'RUNNER_ARCH', 'RUNNER_OS')},
+                     'fixed_environment': {name: os.environ.get(name) for name in ('PYTHONHASHSEED', 'PYTHONDONTWRITEBYTECODE', 'PYTHONUNBUFFERED', 'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS')},
+                     'pip_freeze': subprocess.check_output([sys.executable, '-m', 'pip', 'freeze', '--all'], text=True),
+                     'memory': Path('/proc/meminfo').read_text(),
+                     'disk_free': subprocess.check_output(['df', '-B1', os.environ['EVIDENCE_DIR']], text=True)}
+          with out.open('x') as stream: json.dump(payload, stream, sort_keys=True, indent=2); stream.write('\n')
+          print('Pinned Python and package versions verified; environment recorded.')
+          PY
+      - name: Scientific export validation and required reproduction controls
+        timeout-minutes: 45
+        run: |
+          python - <<'PY' > "$EVIDENCE_DIR/logs/scientific.stdout.log" 2> "$EVIDENCE_DIR/logs/scientific.stderr.log"
+          import datetime, hashlib, json, os, resource, signal, subprocess, sys, time
+          from pathlib import Path
+          evidence = Path(os.environ['EVIDENCE_DIR'])
+          package = Path(os.environ['PACKAGE_DIR']).resolve()
+          exports = evidence / 'exports'; exports.mkdir()
+          original = evidence / 'original'
+          reports = evidence / 'reports'; reports.mkdir()
+          processes = evidence / 'processes'; processes.mkdir()
+          job_started = float((evidence / 'job_started_epoch.txt').read_text())
+          # Preserve a ten-minute finalization/upload margin within the 60-minute job.
+          remaining_job_science = 3000 - (time.time() - job_started)
+          deadline = time.monotonic() + min(2640, remaining_job_science)
+          stage = os.environ['STAGE']
+          def now(): return datetime.datetime.now(datetime.timezone.utc).isoformat()
+          def write(path, data):
+              with path.open('x') as stream: json.dump(data, stream, sort_keys=True, indent=2); stream.write('\n')
+          def limits():
+              resource.setrlimit(resource.RLIMIT_AS, (6442450944, 6442450944))
+              resource.setrlimit(resource.RLIMIT_FSIZE, (1073741824, 1073741824))
+              resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+          def run(name, argv, extra_environment=None):
+              remaining = deadline - time.monotonic()
+              if remaining <= 0: raise TimeoutError('Combined scientific budget exhausted')
+              env = os.environ.copy()
+              if extra_environment: env.update(extra_environment)
+              record = {'phase': name, 'argv': argv, 'cwd': str(Path.cwd()), 'started_at': now(), 'stage': stage}
+              with (evidence / 'logs' / (name + '.stdout.log')).open('xb') as stdout, (evidence / 'logs' / (name + '.stderr.log')).open('xb') as stderr:
+                  child = subprocess.Popen(argv, stdout=stdout, stderr=stderr, env=env, start_new_session=True, preexec_fn=limits)
+                  record['pid'] = child.pid
+                  try:
+                      record['returncode'] = child.wait(timeout=remaining)
+                  except subprocess.TimeoutExpired:
+                      os.killpg(child.pid, signal.SIGKILL); child.wait()
+                      record['returncode'] = child.returncode; record['timed_out'] = True
+                  finally:
+                      record['finished_at'] = now(); write(processes / (name + '.json'), record)
+              if record['returncode'] != 0 or record.get('timed_out'):
+                  raise RuntimeError(name + ' failed or exceeded the combined time bound')
+          status = {'stage': stage, 'status': 'RED', 'started_at': now()}
+          try:
+              for role in ('producer', 'checker'):
+                  run(role + '-export', [sys.executable, str(package / (role + '_export.py')),
+                      str(exports / (role + '.summary.json')), str(exports / (role + '.archive.json'))])
+                  if (exports / (role + '.summary.json')).read_bytes() != (original / (role + '.json')).read_bytes():
+                      raise RuntimeError(role + ' complete original summary bytes differ')
+              run('validate-current-pair', [sys.executable, str(package / 'verify_archive.py'),
+                  str(exports / 'producer.archive.json'), str(exports / 'checker.archive.json'),
+                  str(original / 'producer.json'), str(original / 'checker.json'), str(reports / 'current-pair.json')])
+              if stage == 'publication-reproduction':
+                  initial = Path(os.environ['INITIAL_DIR']) / 'exports'
+                  run('validate-first-pair', [sys.executable, str(package / 'verify_archive.py'),
+                      str(initial / 'producer.archive.json'), str(initial / 'checker.archive.json'),
+                      str(original / 'producer.json'), str(original / 'checker.json'), str(reports / 'first-pair.json')])
+                  comparisons = {}
+                  for role in ('producer', 'checker'):
+                      for kind in ('archive', 'summary'):
+                          name = role + '.' + kind + '.json'
+                          first, fresh = initial / name, exports / name
+                          if first.resolve() == fresh.resolve() or first.samefile(fresh):
+                              raise RuntimeError('Fresh process output aliases first output')
+                          a, b = first.read_bytes(), fresh.read_bytes()
+                          if a != b: raise RuntimeError('Complete fresh bytes differ: ' + name)
+                          comparisons[name] = {'bytes': len(a), 'sha256': hashlib.sha256(a).hexdigest(), 'complete_bytes_equal': True}
+                  write(reports / 'byte-reproduction.json', comparisons)
+                  test_environment = {
+                      'D24_PRODUCER_ARCHIVE': str(initial / 'producer.archive.json'),
+                      'D24_CHECKER_ARCHIVE': str(initial / 'checker.archive.json'),
+                      'D24_ORIGINAL_PRODUCER_JSON': str(original / 'producer.json'),
+                      'D24_ORIGINAL_CHECKER_JSON': str(original / 'checker.json'),
+                      'D24_FRESH_PRODUCER_ARCHIVE': str(exports / 'producer.archive.json'),
+                      'D24_FRESH_CHECKER_ARCHIVE': str(exports / 'checker.archive.json'),
+                      'D24_EXPORTER_EXECUTION_AUTHORIZED': 'yes'}
+                  test_program = "import json, os, sys, unittest\nfrom pathlib import Path\npackage = Path(os.environ['PACKAGE_DIR']).resolve()\nsys.path.insert(0, str(package))\nrequired = ('D24_PRODUCER_ARCHIVE', 'D24_CHECKER_ARCHIVE', 'D24_ORIGINAL_PRODUCER_JSON', 'D24_ORIGINAL_CHECKER_JSON', 'D24_FRESH_PRODUCER_ARCHIVE', 'D24_FRESH_CHECKER_ARCHIVE')\nif any(not os.environ.get(name) or not Path(os.environ[name]).is_file() for name in required):\n    raise RuntimeError('All six complete input paths are required')\nif os.environ.get('D24_EXPORTER_EXECUTION_AUTHORIZED') != 'yes':\n    raise RuntimeError('Exporter control switch not enabled')\nsuite = unittest.defaultTestLoader.discover(str(package), pattern='test_archive_mutations.py')\ncount = suite.countTestCases()\nif count != 43: raise RuntimeError('Expected 43 tests, discovered ' + str(count))\nresult = unittest.TextTestRunner(verbosity=2, failfast=True).run(suite)\nreport = {'discovered': count, 'run': result.testsRun, 'failures': len(result.failures), 'errors': len(result.errors),\n          'skips': len(result.skipped), 'expected_failures': len(result.expectedFailures),\n          'unexpected_successes': len(result.unexpectedSuccesses)}\nreport['status'] = 'PASS' if result.wasSuccessful() and report['run'] == 43 and not any(report[key] for key in ('failures', 'errors', 'skips', 'expected_failures', 'unexpected_successes')) else 'RED'\nwith (Path(os.environ['EVIDENCE_DIR']) / 'mutation_summary.json').open('x') as stream:\n    json.dump(report, stream, sort_keys=True, indent=2); stream.write('\\n')\nraise SystemExit(0 if report['status'] == 'PASS' else 1)"
+                  run('all-43-mutation-tests', [sys.executable, '-c', test_program], test_environment)
+              subprocess.run(['git', 'diff', '--exit-code', 'HEAD', '--'], check=True)
+              status['status'] = 'PASS'
+          except BaseException as exc:
+              status['error_type'] = type(exc).__name__; status['error'] = str(exc)
+              raise
+          finally:
+              status['finished_at'] = now(); write(evidence / 'scientific_status.json', status)
+          print(stage + ' scientific checks passed; archival and publication closure still require parent readback.')
+          PY
+      - name: Manifest all available evidence including RED
+        if: always()
+        timeout-minutes: 2
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, platform, sys
+          from pathlib import Path
+          evidence = Path(os.environ['EVIDENCE_DIR']); evidence.mkdir(parents=True, exist_ok=True)
+          def load(name):
+              path = evidence / name
+              return json.loads(path.read_text()) if path.is_file() else {}
+          provenance = load('provenance.json')
+          scientific = load('scientific_status.json')
+          files = {}
+          for path in sorted(evidence.rglob('*')):
+              if path.is_symlink(): raise RuntimeError('Evidence symlink forbidden')
+              if path.is_file():
+                  with path.open('rb') as stream: digest = hashlib.file_digest(stream, 'sha256').hexdigest()
+                  files[path.relative_to(evidence).as_posix()] = {'bytes': path.stat().st_size, 'sha256': digest}
+          manifest = {
+              'schema': 'uqcf-rid24-run-artifact-v1', 'evidence_kind': 'regenerated',
+              'stage': os.environ['STAGE'], 'run_id': int(os.environ['RUN_ID']), 'run_attempt': int(os.environ['RUN_ATTEMPT']),
+              'checked_out_scientific_sha': os.environ['RUN_SHA'], 'workflow_sha': os.environ['WORKFLOW_SHA'],
+              'prepared_commit': provenance.get('prepared_commit'), 'source_files': provenance.get('source_files', {}),
+              'original_code_sha': '57895f62297c6100c1a4b8f185857a7905da780b', 'original_run_id': 39300667905,
+              'original_run_attempt': 1, 'original_verification_artifact_id': 12211286997,
+              'original_verification_zip_sha256': '215496706fcb15cb10c5f70f46d14cabbeccbfd0bde0b3d4e6b3e18be6ffb181',
+              'scientific_status': scientific.get('status', 'NOT_COMPLETED'),
+              'job_status_before_finalization': os.environ['JOB_STATUS'],
+              'finalizer_python': sys.version, 'platform': platform.platform(), 'files': files,
+              'claim_boundary': 'Regenerated bounded certificate support only; no new Gemini review, native access or full AGENTS closure.'}
+          with (evidence / 'manifest.json').open('x') as stream:
+              json.dump(manifest, stream, sort_keys=True, indent=2); stream.write('\n')
+          with (evidence / 'SHA256SUMS').open('x') as stream:
+              for path in sorted(p for p in evidence.rglob('*') if p.is_file() and p != evidence / 'SHA256SUMS'):
+                  with path.open('rb') as source: digest = hashlib.file_digest(source, 'sha256').hexdigest()
+                  stream.write(digest + '  ' + path.relative_to(evidence).as_posix() + '\n')
+          print('Complete available files manifested, including partial/RED evidence when present.')
+          PY
+      - name: Upload all available evidence including RED
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # original D24 v4 pin
+        timeout-minutes: 8
+        with:
+          name: rid24-initial-export-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.EVIDENCE_DIR }}
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 90
+          compression-level: 6
+          overwrite: false
+
+  publication-reproduction:
+    needs: initial-export
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      STAGE: publication-reproduction
+      INITIAL_ARTIFACT_ID: ${{ needs.initial-export.outputs.artifact-id }}
+      INITIAL_ARTIFACT_DIGEST: ${{ needs.initial-export.outputs.artifact-digest }}
+    steps:
+      - name: Create evidence directories
+        run: |
+          evidence_dir="$RUNNER_TEMP/rid24-$STAGE"
+          printf 'EVIDENCE_DIR=%s\n' "$evidence_dir" >> "$GITHUB_ENV"
+          printf 'INITIAL_DIR=%s/rid24-first-artifact\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+          mkdir -p "$evidence_dir/logs"
+          date +%s > "$evidence_dir/job_started_epoch.txt"
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # original D24 v4 pin
+        timeout-minutes: 3
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # original D24 v5 pin
+        timeout-minutes: 3
+        with:
+          python-version: '3.12.15'
+      - name: Preflight identity and prospective freeze
+        timeout-minutes: 3
+        run: |
+          python - <<'PY' > "$EVIDENCE_DIR/logs/preflight.stdout.log" 2> "$EVIDENCE_DIR/logs/preflight.stderr.log"
+          import hashlib, json, os, re, shutil, subprocess, sys
+          from pathlib import Path
+          root = Path.cwd()
+          evidence = Path(os.environ['EVIDENCE_DIR'])
+          package = 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence'
+          workflow = '.github/workflows/uqcf-gem-rid24-certificate-export.yml'
+          marker_path = package + '/EXECUTE_ONCE.md'
+          reviewed = {'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/ARCHIVE_CONTRACT.md': '32ac119faec345e06ccc2c3727d3a0773da93751c97e19d71ca9f59ff2047e48', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/checker_export.py': '7547f11ca4e4aa7ec4962e4c1483883aa619a7d44653c86cf2c0c026fba0318d', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/producer_export.py': 'bf00f37e603814d2ece28ed8fd5b42dbedc4a29e2fca09a7044077a09ebfba48', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/test_archive_mutations.py': '92556fb7ff0a922fd5579a63380c1b5aca0adf744b2b4c85058d8ccc7501e961', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_evidence/verify_archive.py': '3dede4847c25f0d5c589a32f1286a5cdf5ceb4ab8466abfc85e8a281547f739b'}
+          original = {'.github/scripts/uqcf_rid24_checker.py': '2f7789a70113a08eaab4d9ce159245813bb1e982dd1971e8f646d999ea44dc2c', '.github/scripts/uqcf_rid24_compare.py': '4e2d754a63aacac5e3f7d0b5855af8823507d5eed7c98a658c7b22a3a84e35e5', '.github/scripts/uqcf_rid24_producer.py': '942ea9de0835849973046f0e6c079acb5c7e73fa04524eca289d7546bfd5d004', '.github/scripts/uqcf_rid24_publication.py': '7f795b50ce236ace100300c2527731ee55a84823a4e0f36514cb3422e92b2b1d', '.github/scripts/uqcf_rid24_review.py': '0bd9a890fd3c8a8e379c58aa9d6151011142c45d73ac2acc091c5fbadfcade85', '.github/workflows/uqcf-gem-rid24-review.yml': '0aceef6b226248842ec04205b07b53cd878d3d2e0a1e472c913661e3e1234cb9', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/FREEZE.md': 'a0bc94537c4dd008fd0e4349e7bfbc9b154707a63a67f6e8a7f9d5e5f3f4ebf1', 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d24_review/RESULT.md': '7600ad3708baa287ac877afa582d83073a02f0ec72bf11d6ddcfbeb091ba43cc'}
+          def require(ok, message):
+              if not ok: raise RuntimeError(message)
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True).strip()
+          def strict_pairs(pairs):
+              out = {}
+              for key, value in pairs:
+                  require(key not in out, 'Duplicate JSON key: ' + key)
+                  out[key] = value
+              return out
+          def write(path, value):
+              with path.open('x') as stream: json.dump(value, stream, sort_keys=True, indent=2); stream.write('\n')
+          invocation = {key: os.environ.get(key) for key in (
+              'RUN_SHA', 'WORKFLOW_SHA', 'RUN_ID', 'RUN_ATTEMPT', 'EVENT_NAME',
+              'ACTOR', 'REF_NAME', 'REPOSITORY', 'STAGE')}
+          write(evidence / 'invocation.json', invocation)
+          require(os.environ['REPOSITORY'] == 'proteinfoldingengine/WetLabEngine', 'Wrong repository')
+          require(os.environ['ACTOR'] == 'proteinfolding-gpt', 'Wrong initiating actor')
+          require(os.environ['EVENT_NAME'] == 'push', 'Push only')
+          require(os.environ['REF_NAME'] == 'research/uqcf-overlapping-guard-exchange', 'Wrong branch')
+          require(os.environ['RUN_ATTEMPT'] == '1', 'No rerun is authorized')
+          require(sys.version_info[:3] == (3, 12, 15), 'Python version mismatch')
+          require(git('rev-parse', 'HEAD') == os.environ['RUN_SHA'] == os.environ['WORKFLOW_SHA'], 'Checkout/workflow SHA mismatch')
+          event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text(), object_pairs_hook=strict_pairs)
+          parents = git('rev-list', '--parents', '-n', '1', 'HEAD').split()
+          require(len(parents) == 2 and parents[1] == event.get('before'), 'One parent matching push.before required')
+          require(event.get('after') == os.environ['RUN_SHA'] and event.get('forced') is False, 'Wrong or forced push')
+          require(event.get('deleted') is False and event.get('created') is False, 'Existing branch push required')
+          changed = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-status', '-r', '-z', 'HEAD'])
+          require(changed == ('A\0' + marker_path + '\0').encode(), 'Trigger commit must only add the execution marker')
+          require(git('rev-list', '--full-history', 'HEAD', '--', marker_path).splitlines() == [os.environ['RUN_SHA']], 'Marker must first appear in this branch history')
+          raw = Path(marker_path).read_bytes()
+          require(len(raw) <= 16384, 'Marker size exceeds bound')
+          marker = json.loads(raw, object_pairs_hook=strict_pairs)
+          require(type(marker) is dict and set(marker) == {
+              'schema', 'campaign', 'evidence_kind', 'prepared_commit', 'expected_files', 'original_run', 'max_attempt'}, 'Marker keys mismatch')
+          require(marker['schema'] == 'uqcf-rid24-execute-once-v1', 'Marker schema mismatch')
+          require(marker['campaign'] == 'uqcf-rid24-certificate-export-20261019', 'Campaign mismatch')
+          require(marker['evidence_kind'] == 'regenerated', 'Evidence kind mismatch')
+          require(type(marker['original_run']) is int and marker['original_run'] == 39300667905, 'Origin run mismatch')
+          require(type(marker['max_attempt']) is int and marker['max_attempt'] == 1, 'Attempt bound mismatch')
+          prepared = marker['prepared_commit']
+          require(type(prepared) is str and re.fullmatch('[0-9a-f]{40}', prepared), 'Prepared commit must be a full SHA')
+          require(prepared != os.environ['RUN_SHA'], 'Prospective publication must precede trigger')
+          subprocess.run(['git', 'merge-base', '--is-ancestor', prepared, 'HEAD'], check=True)
+          expected = marker['expected_files']
+          require(type(expected) is dict and set(expected) == set(reviewed) | {package + '/EXECUTION_PLAN.md', workflow}, 'Exactly seven prospective paths required')
+          require(all(type(v) is str and re.fullmatch('[0-9a-f]{64}', v) for v in expected.values()), 'Invalid digest')
+          require(all(expected[p] == digest for p, digest in reviewed.items()), 'Reviewed five-file package changed')
+          source_hashes = {}
+          for path, digest in sorted({**original, **expected}.items()):
+              file = Path(path)
+              require(file.is_file() and not file.is_symlink(), 'Nonregular source: ' + path)
+              data = file.read_bytes()
+              require(hashlib.sha256(data).hexdigest() == digest, 'Current source hash mismatch: ' + path)
+              prospective = subprocess.check_output(['git', 'show', prepared + ':' + path])
+              require(hashlib.sha256(prospective).hexdigest() == digest, 'Prospective source hash mismatch: ' + path)
+              destination = evidence / 'source' / path
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              with destination.open('xb') as stream: stream.write(data)
+              source_hashes[path] = {'bytes': len(data), 'sha256': digest, 'git_blob': git('rev-parse', 'HEAD:' + path)}
+          shutil.copyfile(marker_path, evidence / 'EXECUTE_ONCE.md')
+          write(evidence / 'provenance.json', {
+              'schema': 'uqcf-rid24-execution-provenance-v1', 'evidence_kind': 'regenerated',
+              'stage': os.environ['STAGE'], 'campaign': marker['campaign'], 'prepared_commit': prepared,
+              'checked_out_scientific_sha': os.environ['RUN_SHA'], 'workflow_sha': os.environ['WORKFLOW_SHA'],
+              'run_id': int(os.environ['RUN_ID']), 'run_attempt': int(os.environ['RUN_ATTEMPT']),
+              'trigger_parent': parents[1], 'marker_sha256': hashlib.sha256(raw).hexdigest(),
+              'original_code_sha': '57895f62297c6100c1a4b8f185857a7905da780b',
+              'original_run_id': 39300667905, 'original_run_attempt': 1,
+              'original_verification_artifact_id': 12211286997,
+              'original_verification_zip_sha256': '215496706fcb15cb10c5f70f46d14cabbeccbfd0bde0b3d4e6b3e18be6ffb181',
+              'source_files': source_hashes,
+              'limits': {'job_minutes': 60, 'scientific_step_minutes': 45,
+                         'combined_process_seconds': 2640, 'science_stop_seconds_from_job_start': 3000,
+                         'address_space_bytes_per_process': 6442450944,
+                         'max_file_bytes_per_process': 1073741824, 'retries': 0}})
+          print('Prospective sources, trigger and identity verified; no scientific execution in preflight.')
+          PY
+      - name: Download this run's exact initial artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # original D24 v4 pin
+        timeout-minutes: 3
+        with:
+          artifact-ids: ${{ needs.initial-export.outputs.artifact-id }}
+          path: ${{ env.INITIAL_DIR }}
+          merge-multiple: true
+      - name: Verify complete first-stage artifact and provenance
+        timeout-minutes: 3
+        run: |
+          python - <<'PY' > "$EVIDENCE_DIR/logs/verify.stdout.log" 2> "$EVIDENCE_DIR/logs/verify.stderr.log"
+          import hashlib, json, os, re, shutil
+          from pathlib import Path
+          incoming = Path(os.environ['INITIAL_DIR'])
+          evidence = Path(os.environ['EVIDENCE_DIR'])
+          def require(ok, message):
+              if not ok: raise RuntimeError(message)
+          require(re.fullmatch('[0-9]+', os.environ['INITIAL_ARTIFACT_ID']), 'Missing initial artifact ID')
+          require(re.fullmatch('[0-9a-f]{64}', os.environ['INITIAL_ARTIFACT_DIGEST']), 'Missing initial artifact digest')
+          manifest = json.loads((incoming / 'manifest.json').read_text())
+          require(manifest['stage'] == 'initial-export' and manifest['scientific_status'] == 'PASS' and manifest['job_status_before_finalization'] == 'success', 'Initial stage did not pass')
+          require(manifest['run_id'] == int(os.environ['RUN_ID']) and manifest['run_attempt'] == 1, 'Initial artifact run mismatch')
+          require(manifest['checked_out_scientific_sha'] == os.environ['RUN_SHA'] and manifest['workflow_sha'] == os.environ['WORKFLOW_SHA'], 'Initial artifact SHA mismatch')
+          actual = {}
+          for file in sorted(incoming.rglob('*')):
+              require(not file.is_symlink(), 'Symlink in initial artifact')
+              if file.is_file() and file.relative_to(incoming).as_posix() not in ('manifest.json', 'SHA256SUMS'):
+                  actual[file.relative_to(incoming).as_posix()] = {'bytes': file.stat().st_size, 'sha256': hashlib.file_digest(file.open('rb'), 'sha256').hexdigest()}
+          require(actual == manifest['files'], 'Initial artifact file inventory/hash mismatch')
+          checks = []
+          for file in sorted(p for p in incoming.rglob('*') if p.is_file() and p != incoming / 'SHA256SUMS'):
+              checks.append(hashlib.file_digest(file.open('rb'), 'sha256').hexdigest() + '  ' + file.relative_to(incoming).as_posix() + '\n')
+          require((incoming / 'SHA256SUMS').read_text() == ''.join(checks), 'Initial checksums mismatch')
+          for name in ('provenance.json', 'EXECUTE_ONCE.md'):
+              first = json.loads((incoming / name).read_text())
+              current = json.loads((evidence / name).read_text())
+              if name == 'provenance.json':
+                  first.pop('stage'); current.pop('stage')
+              require(first == current, 'Initial source/marker provenance mismatch')
+          for relative, digest in manifest['source_files'].items():
+              require(hashlib.sha256(Path(relative).read_bytes()).hexdigest() == digest['sha256'], 'Current source differs from initial source')
+          shutil.copytree(incoming / 'original', evidence / 'original')
+          with (evidence / 'initial_artifact_binding.json').open('x') as stream:
+              json.dump({'artifact_id': os.environ['INITIAL_ARTIFACT_ID'], 'upload_reported_zip_sha256': os.environ['INITIAL_ARTIFACT_DIGEST'],
+                         'manifest_sha256': hashlib.sha256((incoming / 'manifest.json').read_bytes()).hexdigest(),
+                         'complete_unpacked_file_hashes_verified': True,
+                         'compressed_zip_independently_rehashed_here': False}, stream, sort_keys=True, indent=2); stream.write('\n')
+          print('First-stage artifact identity, complete inventory, hashes and prospective provenance verified.')
+          PY
+      - name: Install the pinned scientific dependencies
+        timeout-minutes: 4
+        run: |
+          python -m pip install --disable-pip-version-check --no-cache-dir --retries 0 --timeout 30 --only-binary=:all: numpy==2.3.5 scipy==1.16.3 > "$EVIDENCE_DIR/logs/dependencies.stdout.log" 2> "$EVIDENCE_DIR/logs/dependencies.stderr.log"
+      - name: Environment record and version gate
+        timeout-minutes: 1
+        run: |
+          python - <<'PY' > "$EVIDENCE_DIR/logs/environment.stdout.log" 2> "$EVIDENCE_DIR/logs/environment.stderr.log"
+          import importlib.metadata, json, os, platform, subprocess, sys
+          from pathlib import Path
+          out = Path(os.environ['EVIDENCE_DIR']) / 'environment.json'
+          versions = {name: importlib.metadata.version(name) for name in ('numpy', 'scipy', 'pip')}
+          assert sys.version_info[:3] == (3, 12, 15), sys.version
+          assert versions['numpy'] == '2.3.5' and versions['scipy'] == '1.16.3', versions
+          os_release = Path('/etc/os-release').read_text()
+          assert 'VERSION_ID="24.04"' in os_release, os_release
+          payload = {'python': sys.version, 'executable': sys.executable, 'packages': versions,
+                     'platform': platform.platform(), 'os_release': os_release,
+                     'runner_image': {name: os.environ.get(name) for name in ('ImageOS', 'ImageVersion', 'RUNNER_ARCH', 'RUNNER_OS')},
+                     'fixed_environment': {name: os.environ.get(name) for name in ('PYTHONHASHSEED', 'PYTHONDONTWRITEBYTECODE', 'PYTHONUNBUFFERED', 'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS')},
+                     'pip_freeze': subprocess.check_output([sys.executable, '-m', 'pip', 'freeze', '--all'], text=True),
+                     'memory': Path('/proc/meminfo').read_text(),
+                     'disk_free': subprocess.check_output(['df', '-B1', os.environ['EVIDENCE_DIR']], text=True)}
+          with out.open('x') as stream: json.dump(payload, stream, sort_keys=True, indent=2); stream.write('\n')
+          print('Pinned Python and package versions verified; environment recorded.')
+          PY
+      - name: Scientific export validation and required reproduction controls
+        timeout-minutes: 45
+        run: |
+          python - <<'PY' > "$EVIDENCE_DIR/logs/scientific.stdout.log" 2> "$EVIDENCE_DIR/logs/scientific.stderr.log"
+          import datetime, hashlib, json, os, resource, signal, subprocess, sys, time
+          from pathlib import Path
+          evidence = Path(os.environ['EVIDENCE_DIR'])
+          package = Path(os.environ['PACKAGE_DIR']).resolve()
+          exports = evidence / 'exports'; exports.mkdir()
+          original = evidence / 'original'
+          reports = evidence / 'reports'; reports.mkdir()
+          processes = evidence / 'processes'; processes.mkdir()
+          job_started = float((evidence / 'job_started_epoch.txt').read_text())
+          # Preserve a ten-minute finalization/upload margin within the 60-minute job.
+          remaining_job_science = 3000 - (time.time() - job_started)
+          deadline = time.monotonic() + min(2640, remaining_job_science)
+          stage = os.environ['STAGE']
+          def now(): return datetime.datetime.now(datetime.timezone.utc).isoformat()
+          def write(path, data):
+              with path.open('x') as stream: json.dump(data, stream, sort_keys=True, indent=2); stream.write('\n')
+          def limits():
+              resource.setrlimit(resource.RLIMIT_AS, (6442450944, 6442450944))
+              resource.setrlimit(resource.RLIMIT_FSIZE, (1073741824, 1073741824))
+              resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+          def run(name, argv, extra_environment=None):
+              remaining = deadline - time.monotonic()
+              if remaining <= 0: raise TimeoutError('Combined scientific budget exhausted')
+              env = os.environ.copy()
+              if extra_environment: env.update(extra_environment)
+              record = {'phase': name, 'argv': argv, 'cwd': str(Path.cwd()), 'started_at': now(), 'stage': stage}
+              with (evidence / 'logs' / (name + '.stdout.log')).open('xb') as stdout, (evidence / 'logs' / (name + '.stderr.log')).open('xb') as stderr:
+                  child = subprocess.Popen(argv, stdout=stdout, stderr=stderr, env=env, start_new_session=True, preexec_fn=limits)
+                  record['pid'] = child.pid
+                  try:
+                      record['returncode'] = child.wait(timeout=remaining)
+                  except subprocess.TimeoutExpired:
+                      os.killpg(child.pid, signal.SIGKILL); child.wait()
+                      record['returncode'] = child.returncode; record['timed_out'] = True
+                  finally:
+                      record['finished_at'] = now(); write(processes / (name + '.json'), record)
+              if record['returncode'] != 0 or record.get('timed_out'):
+                  raise RuntimeError(name + ' failed or exceeded the combined time bound')
+          status = {'stage': stage, 'status': 'RED', 'started_at': now()}
+          try:
+              for role in ('producer', 'checker'):
+                  run(role + '-export', [sys.executable, str(package / (role + '_export.py')),
+                      str(exports / (role + '.summary.json')), str(exports / (role + '.archive.json'))])
+                  if (exports / (role + '.summary.json')).read_bytes() != (original / (role + '.json')).read_bytes():
+                      raise RuntimeError(role + ' complete original summary bytes differ')
+              run('validate-current-pair', [sys.executable, str(package / 'verify_archive.py'),
+                  str(exports / 'producer.archive.json'), str(exports / 'checker.archive.json'),
+                  str(original / 'producer.json'), str(original / 'checker.json'), str(reports / 'current-pair.json')])
+              if stage == 'publication-reproduction':
+                  initial = Path(os.environ['INITIAL_DIR']) / 'exports'
+                  run('validate-first-pair', [sys.executable, str(package / 'verify_archive.py'),
+                      str(initial / 'producer.archive.json'), str(initial / 'checker.archive.json'),
+                      str(original / 'producer.json'), str(original / 'checker.json'), str(reports / 'first-pair.json')])
+                  comparisons = {}
+                  for role in ('producer', 'checker'):
+                      for kind in ('archive', 'summary'):
+                          name = role + '.' + kind + '.json'
+                          first, fresh = initial / name, exports / name
+                          if first.resolve() == fresh.resolve() or first.samefile(fresh):
+                              raise RuntimeError('Fresh process output aliases first output')
+                          a, b = first.read_bytes(), fresh.read_bytes()
+                          if a != b: raise RuntimeError('Complete fresh bytes differ: ' + name)
+                          comparisons[name] = {'bytes': len(a), 'sha256': hashlib.sha256(a).hexdigest(), 'complete_bytes_equal': True}
+                  write(reports / 'byte-reproduction.json', comparisons)
+                  test_environment = {
+                      'D24_PRODUCER_ARCHIVE': str(initial / 'producer.archive.json'),
+                      'D24_CHECKER_ARCHIVE': str(initial / 'checker.archive.json'),
+                      'D24_ORIGINAL_PRODUCER_JSON': str(original / 'producer.json'),
+                      'D24_ORIGINAL_CHECKER_JSON': str(original / 'checker.json'),
+                      'D24_FRESH_PRODUCER_ARCHIVE': str(exports / 'producer.archive.json'),
+                      'D24_FRESH_CHECKER_ARCHIVE': str(exports / 'checker.archive.json'),
+                      'D24_EXPORTER_EXECUTION_AUTHORIZED': 'yes'}
+                  test_program = "import json, os, sys, unittest\nfrom pathlib import Path\npackage = Path(os.environ['PACKAGE_DIR']).resolve()\nsys.path.insert(0, str(package))\nrequired = ('D24_PRODUCER_ARCHIVE', 'D24_CHECKER_ARCHIVE', 'D24_ORIGINAL_PRODUCER_JSON', 'D24_ORIGINAL_CHECKER_JSON', 'D24_FRESH_PRODUCER_ARCHIVE', 'D24_FRESH_CHECKER_ARCHIVE')\nif any(not os.environ.get(name) or not Path(os.environ[name]).is_file() for name in required):\n    raise RuntimeError('All six complete input paths are required')\nif os.environ.get('D24_EXPORTER_EXECUTION_AUTHORIZED') != 'yes':\n    raise RuntimeError('Exporter control switch not enabled')\nsuite = unittest.defaultTestLoader.discover(str(package), pattern='test_archive_mutations.py')\ncount = suite.countTestCases()\nif count != 43: raise RuntimeError('Expected 43 tests, discovered ' + str(count))\nresult = unittest.TextTestRunner(verbosity=2, failfast=True).run(suite)\nreport = {'discovered': count, 'run': result.testsRun, 'failures': len(result.failures), 'errors': len(result.errors),\n          'skips': len(result.skipped), 'expected_failures': len(result.expectedFailures),\n          'unexpected_successes': len(result.unexpectedSuccesses)}\nreport['status'] = 'PASS' if result.wasSuccessful() and report['run'] == 43 and not any(report[key] for key in ('failures', 'errors', 'skips', 'expected_failures', 'unexpected_successes')) else 'RED'\nwith (Path(os.environ['EVIDENCE_DIR']) / 'mutation_summary.json').open('x') as stream:\n    json.dump(report, stream, sort_keys=True, indent=2); stream.write('\\n')\nraise SystemExit(0 if report['status'] == 'PASS' else 1)"
+                  run('all-43-mutation-tests', [sys.executable, '-c', test_program], test_environment)
+              subprocess.run(['git', 'diff', '--exit-code', 'HEAD', '--'], check=True)
+              status['status'] = 'PASS'
+          except BaseException as exc:
+              status['error_type'] = type(exc).__name__; status['error'] = str(exc)
+              raise
+          finally:
+              status['finished_at'] = now(); write(evidence / 'scientific_status.json', status)
+          print(stage + ' scientific checks passed; archival and publication closure still require parent readback.')
+          PY
+      - name: Manifest all available evidence including RED
+        if: always()
+        timeout-minutes: 2
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, platform, sys
+          from pathlib import Path
+          evidence = Path(os.environ['EVIDENCE_DIR']); evidence.mkdir(parents=True, exist_ok=True)
+          def load(name):
+              path = evidence / name
+              return json.loads(path.read_text()) if path.is_file() else {}
+          provenance = load('provenance.json')
+          scientific = load('scientific_status.json')
+          files = {}
+          for path in sorted(evidence.rglob('*')):
+              if path.is_symlink(): raise RuntimeError('Evidence symlink forbidden')
+              if path.is_file():
+                  with path.open('rb') as stream: digest = hashlib.file_digest(stream, 'sha256').hexdigest()
+                  files[path.relative_to(evidence).as_posix()] = {'bytes': path.stat().st_size, 'sha256': digest}
+          manifest = {
+              'schema': 'uqcf-rid24-run-artifact-v1', 'evidence_kind': 'regenerated',
+              'stage': os.environ['STAGE'], 'run_id': int(os.environ['RUN_ID']), 'run_attempt': int(os.environ['RUN_ATTEMPT']),
+              'checked_out_scientific_sha': os.environ['RUN_SHA'], 'workflow_sha': os.environ['WORKFLOW_SHA'],
+              'prepared_commit': provenance.get('prepared_commit'), 'source_files': provenance.get('source_files', {}),
+              'original_code_sha': '57895f62297c6100c1a4b8f185857a7905da780b', 'original_run_id': 39300667905,
+              'original_run_attempt': 1, 'original_verification_artifact_id': 12211286997,
+              'original_verification_zip_sha256': '215496706fcb15cb10c5f70f46d14cabbeccbfd0bde0b3d4e6b3e18be6ffb181',
+              'scientific_status': scientific.get('status', 'NOT_COMPLETED'),
+              'job_status_before_finalization': os.environ['JOB_STATUS'],
+              'finalizer_python': sys.version, 'platform': platform.platform(), 'files': files,
+              'claim_boundary': 'Regenerated bounded certificate support only; no new Gemini review, native access or full AGENTS closure.'}
+          with (evidence / 'manifest.json').open('x') as stream:
+              json.dump(manifest, stream, sort_keys=True, indent=2); stream.write('\n')
+          with (evidence / 'SHA256SUMS').open('x') as stream:
+              for path in sorted(p for p in evidence.rglob('*') if p.is_file() and p != evidence / 'SHA256SUMS'):
+                  with path.open('rb') as source: digest = hashlib.file_digest(source, 'sha256').hexdigest()
+                  stream.write(digest + '  ' + path.relative_to(evidence).as_posix() + '\n')
+          print('Complete available files manifested, including partial/RED evidence when present.')
+          PY
+      - name: Upload all available evidence including RED
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # original D24 v4 pin
+        timeout-minutes: 8
+        with:
+          name: rid24-publication-reproduction-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.EVIDENCE_DIR }}
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 90
+          compression-level: 6
+          overwrite: false

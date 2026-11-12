@@ -1,0 +1,25 @@
+{
+  "constructive_analysis": [
+    "The manuscript successfully constructs a positive argument that native nonempty coverage inherently protects a receiver record after acquisition, without requiring a post-acquisition source-edit bound or an artificial source-freezing device.",
+    "The Coverage Lemma is mathematically sound: under a two-label ($P=\\{b,r\\}$) nonempty nested-support grammar, any vertex missing from the receiver's view ($Y_r$) must be in the source's view ($Y_b$). Nesting correctly forces all ancestors, including the branch root $c_j$, to also be in $Y_b$.",
+    "The Branch-Release Theorem is rigorously proved. A source can withdraw from a branch if and only if the receiver has no missing leaves in that branch ($Q_j=0$). The exact minimum number of edits for withdrawal is correctly identified as the number of existing $b$ incidences in that branch, as each must be deleted from the bottom up while $r$ provides the required non-empty coverage.",
+    "The Protected-Record Theorem correctly establishes that arbitrary interleavings of legal $b$ and $r$ edits preserve the coarse partial decoder's soundness (outputting $s$ or UNKNOWN) strictly before the first full restoration of the original branch ($\\tau_s$).",
+    "The controls are sharp and accurate. The ambiguity control correctly shows that a definite answer can become UNKNOWN if the other branch also develops a deficit. The erasure control correctly demonstrates that after full restoration, the decoder can output the wrong bit ($1-s$), proving the exact boundary of the claim.",
+    "The manuscript correctly identifies that changing the missing-leaf witness within the same branch preserves the deficit flag $Q_s=1$, meaning the receiver does not need to remember a specific leaf address.",
+    "The excursion-two example accurately witnesses that the broader bare-native continuation class exceeds the previously inherited unit-excursion bound, localizing the source-release sufficiency to the bare relation.",
+    "The manuscript genuinely removes only the post-acquisition edit cap. It explicitly and correctly disclaims deriving the acquisition prefix, physical enforcement, event counters, or actual access, adhering strictly to conditional analytical support."
+  ],
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "The acquisition prefix (at most one source edit before the first receiver response) remains a supplied hypothesis, not a derived physical law or an outcome enforced by a native event counter.",
+    "Physical availability of the coarse flags (the decoder) to an actual receiver is not established; coarsening a formal mathematical view does not automatically grant physical access or a readable measurement instrument.",
+    "The retention guarantee relies strictly on a two-label palette (b and r) and a fixed carrier. Introducing a third label allows the source to withdraw if the third label provides the required coverage, and carrier modifications (like deleting a leaf) can remove the deficit entirely.",
+    "The decoder does not provide indefinite retention of a definite answer. Subsequent receiver additions can erase the record (restoring the branch), and other-branch receiver deletions can make the decoder output UNKNOWN.",
+    "The total excursion from the all-one profile can reach two, meaning this continuation is valid for the bare native relation but not necessarily for subfamilies imposing a strict unit-excursion bound."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Identify an existing actual source episode with the one-edit bound and a receiver-owned available record matching this same view, establishing physical source/response enactment and access without inserting the interaction or outcome law by hand.",
+  "verdict": "ACCEPTED"
+}

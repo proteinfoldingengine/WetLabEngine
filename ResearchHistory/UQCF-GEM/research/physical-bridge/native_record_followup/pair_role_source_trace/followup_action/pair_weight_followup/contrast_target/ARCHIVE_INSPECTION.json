@@ -1,0 +1,139 @@
+{
+  "purpose": "Original archive inspection, not historical execution or native-bridge certification",
+  "archive": {
+    "name": "V1696_6_hardened_pair_class_signature_python_test_package.zip",
+    "bytes": 32626,
+    "sha256": "783d2482470e2a80cf699965561bf5c4eedfba8eb21d162651b3d8f10ec19d99",
+    "git_blob_sha1": "4ac1689b50347df46b8e1b9b7b6519f0d22f95f9",
+    "library_file_id": "libfile_860fb7cb950c8191a0e99818c1a8a15f"
+  },
+  "members": [
+    {
+      "name": "hardened_pair_class_residuals.csv",
+      "bytes": 13099,
+      "sha256": "7e97aa9ef3db999b91ba54141651edb33b8c95e32fc1fb2bc37410069d7aaa6b",
+      "columns": [
+        "seed",
+        "ladder_step",
+        "coarse_cell",
+        "role",
+        "class_distance",
+        "coherence_score",
+        "coarse_class_defined",
+        "fine_block_size"
+      ],
+      "rows": 210
+    },
+    {
+      "name": "hardened_pair_class_nulls.csv",
+      "bytes": 117789,
+      "sha256": "98b96dab03d5ec82c3ebb028be7d59fd5708f785319704d57b401298fd5dddd5",
+      "columns": [
+        "seed",
+        "ladder_step",
+        "coarse_cell",
+        "role",
+        "null_family",
+        "null_class_distance",
+        "valid_class_distance",
+        "valid_beats_null",
+        "null_class_defined"
+      ],
+      "rows": 1260
+    },
+    {
+      "name": "hardened_pair_class_audits.csv",
+      "bytes": 6182,
+      "sha256": "844217f38a42889ff561309700d853a35903966efbf6f32f9ccdc81a36e8dea3",
+      "columns": [
+        "seed",
+        "ladder_step",
+        "coarse_cell",
+        "role",
+        "JD_GD_len",
+        "support_nonzero",
+        "order_nonzero",
+        "compatible_family"
+      ],
+      "rows": 210
+    },
+    {
+      "name": "stationary_generators.csv",
+      "bytes": 29189,
+      "sha256": "1065164f9d18b3ae140b77f5bbc0dc72f2657b4b3139acf904da457add21b8a3",
+      "columns": [
+        "seed",
+        "rows",
+        "cols",
+        "edge_id",
+        "action_reduction",
+        "action_reduced"
+      ],
+      "rows": 1218
+    },
+    {
+      "name": "V1696_6_null_summary.csv",
+      "bytes": 551,
+      "sha256": "788c34d80a27a6807c0a87184c702e1bb0d8925935048473afa52954ac79579c",
+      "columns": [
+        "null_family",
+        "n",
+        "valid_beats_rate",
+        "mean_null_distance",
+        "mean_valid_distance"
+      ],
+      "rows": 6
+    },
+    {
+      "name": "V1696_6_ladder_summary.csv",
+      "bytes": 161,
+      "sha256": "b9bd8825edf6f589d0fd7b64ce28ffd723b94a3f6559712eae630dbcc0607fcf",
+      "columns": [
+        "ladder_step",
+        "n",
+        "mean_class_distance",
+        "mean_coherence_score",
+        "defined_rate"
+      ],
+      "rows": 2
+    },
+    {
+      "name": "V1696_6_SUMMARY.json",
+      "bytes": 2618,
+      "sha256": "e862538bb7a52a89419210ce382b8ff79c43efb8b4dd0100452e59279c688404"
+    },
+    {
+      "name": "run_manifest.json",
+      "bytes": 2618,
+      "sha256": "e862538bb7a52a89419210ce382b8ff79c43efb8b4dd0100452e59279c688404"
+    },
+    {
+      "name": "V1696_6_HARDENED_PAIR_CLASS_SIGNATURE_TEST_REPORT.md",
+      "bytes": 672,
+      "sha256": "7e9384d09806fc6ebd763f58ff7c2587a17f24b8592ce9be7270d097d0f5a38e"
+    }
+  ],
+  "manifest_equals_summary_bytes": true,
+  "support_count_frequencies": {
+    "4": 42,
+    "5": 105,
+    "6": 42,
+    "7": 21
+  },
+  "coarse_class_defined_frequencies": {
+    "True": 210
+  },
+  "support_shuffle_comparisons": {
+    "True": 179,
+    "False": 31
+  },
+  "postmortem_transcription": {
+    "name": "V1696_7_POSTMORTEM.json",
+    "library_file_id": "libfile_e537fcd07ed88191844233ac3cde0ac4",
+    "file_id": "file_00000000c238720ebb3ca3164d1f9c39",
+    "reported_original_bytes": 7673,
+    "preserved_bytes": 7674,
+    "sha256": "920787522a4c3d40995c4eee5060fb6d325308f2f809e0aee40e9f38faa4ae33",
+    "basis": "Complete Library full-text read; not independently compared with original downloadable bytes"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "cases": [
+    {
+      "complete_menu": "1/10",
+      "full_support": "1/10",
+      "initial_contrast": "0",
+      "name": "W_R",
+      "rank_deficient": "1/5",
+      "source_channel_units": 16
+    },
+    {
+      "complete_menu": "1/10",
+      "full_support": "1/15",
+      "initial_contrast": "0",
+      "name": "W_E",
+      "rank_deficient": "1/5",
+      "source_channel_units": 16
+    },
+    {
+      "complete_menu": "1/10",
+      "full_support": "1/8",
+      "initial_contrast": "0",
+      "name": "Bell_Phi",
+      "rank_deficient": "1/10",
+      "source_channel_units": 16
+    },
+    {
+      "complete_menu": "1/10",
+      "full_support": "1/20",
+      "initial_contrast": "0",
+      "name": "W_star",
+      "rank_deficient": "0",
+      "source_channel_units": 16
+    }
+  ],
+  "noncommuting": {
+    "ambient_support_identity": true,
+    "determinant": "1/8",
+    "individual_ranks": [
+      1,
+      1
+    ],
+    "spectral_support_polynomial": "8t-8t^2",
+    "stacked_rank": 2,
+    "trace": "1"
+  },
+  "rejected_controls": [
+    "rank_deficient_full_support",
+    "nonorthogonal_realization",
+    "corrupted_support_polynomial"
+  ],
+  "scope": "fixed examples; analytical universal proof separate",
+  "status": "PASS"
+}

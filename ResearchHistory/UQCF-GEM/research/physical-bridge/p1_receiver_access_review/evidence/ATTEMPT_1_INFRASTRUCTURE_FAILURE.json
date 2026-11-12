@@ -1,0 +1,32 @@
+{
+  "status": "INDEPENDENT_REVIEW_NOT_COMPLETED",
+  "scientific_commit": "6d230eb9efc4ddf3c4b12132c0dbbd693d0915bc",
+  "review_branch_head": "363682c80de2ec22961b0bb0c2ec01834b4f5751",
+  "pull_request": 119,
+  "workflow_run_id": 40435877307,
+  "workflow_name": "UQCF P1 receiver-access whole-argument review",
+  "integrity_job": {
+    "id": 121964304092,
+    "conclusion": "success"
+  },
+  "review_job": {
+    "id": 121964387697,
+    "conclusion": "failure"
+  },
+  "publication_audit": "SKIPPED_BY_FAILED_REVIEW_GATE",
+  "review_artifact": {
+    "id": 12703369976,
+    "name": "p1-receiver-access-review-1",
+    "digest": "sha256:08b6b8ae1a9624631c5c0878c5bda8f3d2f7d5fd607bc0661298fdae32e2d1bd",
+    "retention_days": 90
+  },
+  "raw_http_error": {
+    "error": {
+      "code": 402,
+      "message": "Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ",
+      "status": "RESOURCE_EXHAUSTED"
+    }
+  },
+  "retry_policy": "Do not retry until the existing Gemini Actions project has available credits; no alternate reviewer satisfies the standing directive.",
+  "scientific_disposition": "No independent verdict. Corrected author-side mathematics remains unreviewed. Native bridge NOT_DERIVED."
+}

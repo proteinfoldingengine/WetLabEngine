@@ -1,0 +1,102 @@
+{
+  "schema": "uqcf-ancestry-retention-review-receipt-v1",
+  "baseline": "27cfba0916317bbd6d01f7d38f585d27408954fa",
+  "freeze_sha": "ebd4d3f8ada7e8a0d436e86fa9c39b7fcea2e91d",
+  "source_sha": "82b4489c3e2b4d39a37a467dc8a666fd58adf021",
+  "workflow_sha": "82b4489c3e2b4d39a37a467dc8a666fd58adf021",
+  "run_id": 39143538184,
+  "run_attempt": 1,
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "verdict": "ACCEPTED",
+  "bridge_outcome": "CONDITIONAL_ONLY",
+  "native_bridge_status": "NOT_DERIVED",
+  "unresolved_objections": [],
+  "source_files": 14,
+  "publication_remote_readbacks": 26,
+  "publication_audit": "PASS",
+  "scientific_execution": false,
+  "jobs": [
+    {
+      "name": "integrity",
+      "id": 117722637032,
+      "conclusion": "success"
+    },
+    {
+      "name": "argument-review",
+      "id": 117722671378,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 117722826455,
+      "conclusion": "success"
+    }
+  ],
+  "original_zip_checks": [
+    {
+      "artifact_id": 12142492911,
+      "name": "ancestry_retention-publication-1",
+      "bytes": 5862,
+      "sha256": "fbada5c50e81892dcc2622642af85b17237d7b56908b103ada0d98970613b250",
+      "crc": "PASS"
+    },
+    {
+      "artifact_id": 12142032876,
+      "name": "ancestry_retention-review-1",
+      "bytes": 155406,
+      "sha256": "8e5356cf49a3a89b544ecb813a130f620f5911214b1cd7e81a3d7a0a0d704bb1",
+      "crc": "PASS"
+    },
+    {
+      "artifact_id": 12141848685,
+      "name": "ancestry_retention-integrity-1",
+      "bytes": 3037,
+      "sha256": "ce7949ac630e700c9b5a2227066d4d186c1af5e59b81a7daf43b9eb6e2188e6d",
+      "crc": "PASS"
+    }
+  ],
+  "file_identities": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/ancestry_retention_review/RESULT.md": {
+      "bytes": 14192,
+      "sha256": "f7c4b0d0512a40b764dadd3b2253da8738b5dc080ee729ecb25611ddd17af48c"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/ancestry_retention_review/FREEZE.md": {
+      "bytes": 4307,
+      "sha256": "a113c3f3d3f3fca56d4226b8c6f2e74b94d5bba0150a1daa783dd1407e5eb3af"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/ancestry_retention_review/source_lock.json": {
+      "bytes": 4062,
+      "sha256": "db6bb9f72f0620606817cf948f7e956bc62073760f771dd849e69ecb9815494a"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/ancestry_retention_review/source_packet.json": {
+      "bytes": 168503,
+      "sha256": "06d48026a9111554d8ed42623a4e7320bb65753301898e24e174e60e029e1e60"
+    },
+    "evidence/ancestry_retention-review-1/review.txt": {
+      "bytes": 4630,
+      "sha256": "ac0aca86db76cbdcf6563d1d8900fd4e951bfb9606ddc70bd48918c32efb03ca"
+    },
+    "evidence/ancestry_retention-review-1/response.json": {
+      "bytes": 22791,
+      "sha256": "a5a3f56609c9cc4d3a6f9cf0b1756b8144d9dac40e321ea7598819804747249d"
+    },
+    "evidence/ancestry_retention-review-1/prompt.txt": {
+      "bytes": 191839,
+      "sha256": "10013cef1a0deb2cc45505f1d406c8769687d627b5b1c33953871b8fc7c95ef4"
+    },
+    "evidence/ancestry_retention-review-1/manifest.json": {
+      "bytes": 1310,
+      "sha256": "ae03ea0ee0caabef5b61d03ed0842229ddb8589f9d97cd6a76d1776396c4a864"
+    },
+    "evidence/ancestry_retention-review-1/model_metadata.json": {
+      "bytes": 459,
+      "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438"
+    },
+    "evidence/ancestry_retention-publication-1/remote_readback.json": {
+      "bytes": 22576,
+      "sha256": "d63c297fe1ccb2fa94695ba7db4afca1691d484cf0e494f4b122cb94a08b0ef6"
+    }
+  },
+  "raw_review_publication": false
+}

@@ -1,0 +1,17 @@
+== S1 psi = 16r-7 witness (Q173/Q175 member)
+a b c 4/5 97/500 101/250 c==2b False (Q175 recompute)
+f(x+) ['1/5', '101/500', '101/250', '97/500'] f(x-) ['1/5', '101/500', '97/500', '101/250']
+f(x+) f(x-) entrywise >0 True
+fixed x+ True fixed x- False
+Gamma_2 factor 1+psi/100 min over r in (0,1] = at r->0: 93/100 >0; psi<0 iff r<7/16
+closed-cone point x=(1/5,0,2/5,2/5): f = ['1/5', '-1/125', '101/250', '101/250'] negative entry: True (control: must be True)
+psi witness negative outputs among 300 closed-cone samples on C: 185
+== S2 Prop 174b.1 boundary carriers (generic Gamma via table)
+Traceback (most recent call last):
+  File "/workspace/uqcf_scratch/independent_2026-11-12_0008_q174b/q174b.py", line 100, in <module>
+    bad+=fp!=eval(expr,{'a':A_,'b':B_,'c':C_})
+             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1
+    a-2c
+      ^
+SyntaxError: invalid decimal literal

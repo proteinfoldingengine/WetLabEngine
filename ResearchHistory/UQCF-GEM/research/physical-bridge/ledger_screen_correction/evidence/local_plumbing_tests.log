@@ -1,0 +1,40 @@
+test_failed_prerequisite_job_rejected (__main__.EndToEndPublicationTests.test_failed_prerequisite_job_rejected) ... ok
+test_frozen_document_substitution_rejected (__main__.EndToEndPublicationTests.test_frozen_document_substitution_rejected) ... ok
+test_full_independent_remote_audit_with_fake_transport (__main__.EndToEndPublicationTests.test_full_independent_remote_audit_with_fake_transport) ... ok
+test_nonancestor_freeze_rejected (__main__.EndToEndPublicationTests.test_nonancestor_freeze_rejected) ... ok
+test_parsed_verdict_tamper_rejected_even_when_hash_updated (__main__.EndToEndPublicationTests.test_parsed_verdict_tamper_rejected_even_when_hash_updated) ... ok
+test_prompt_tamper_rejected_even_when_hash_updated (__main__.EndToEndPublicationTests.test_prompt_tamper_rejected_even_when_hash_updated) ... ok
+test_remote_current_document_substitution_rejected (__main__.EndToEndPublicationTests.test_remote_current_document_substitution_rejected) ... ok
+test_remote_original_substitution_rejected (__main__.EndToEndPublicationTests.test_remote_original_substitution_rejected) ... ok
+test_remote_stale_run_attempt_rejected (__main__.EndToEndPublicationTests.test_remote_stale_run_attempt_rejected) ... ok
+test_altered_copied_archive_is_rejected (__main__.IntegrityTests.test_altered_copied_archive_is_rejected) ... ok
+test_archive_copy_cannot_escape_research_folder (__main__.IntegrityTests.test_archive_copy_cannot_escape_research_folder) ... ok
+test_bad_archive_member_is_rejected (__main__.IntegrityTests.test_bad_archive_member_is_rejected) ... ok
+test_baseline_substitution_is_rejected (__main__.IntegrityTests.test_baseline_substitution_is_rejected) ... ok
+test_consistent_substitution_is_rejected_against_lock (__main__.IntegrityTests.test_consistent_substitution_is_rejected_against_lock) ... ok
+test_duplicate_archive_member_is_rejected (__main__.IntegrityTests.test_duplicate_archive_member_is_rejected) ... ok
+test_duplicate_json_keys_are_rejected (__main__.IntegrityTests.test_duplicate_json_keys_are_rejected) ... ok
+test_duplicate_source_is_rejected (__main__.IntegrityTests.test_duplicate_source_is_rejected) ... ok
+test_honest_packet_reconstructs_exact_originals (__main__.IntegrityTests.test_honest_packet_reconstructs_exact_originals) ... ok
+test_missing_archive_member_is_rejected (__main__.IntegrityTests.test_missing_archive_member_is_rejected) ... ok
+test_missing_source_is_rejected (__main__.IntegrityTests.test_missing_source_is_rejected) ... ok
+test_both_author_and_committer_required (__main__.PublicationTests.test_both_author_and_committer_required) ... ok
+test_independent_prompt_and_parser_agree_on_honest_evidence (__main__.PublicationTests.test_independent_prompt_and_parser_agree_on_honest_evidence) ... ok
+test_independent_verdict_parser_rejects_duplicate_json_key (__main__.PublicationTests.test_independent_verdict_parser_rejects_duplicate_json_key) ... ok
+test_publication_imports_only_standard_library (__main__.PublicationTests.test_publication_imports_only_standard_library) ... ok
+test_remote_blob_reconstruction_rejects_substitution (__main__.PublicationTests.test_remote_blob_reconstruction_rejects_substitution) ... ok
+test_stale_run_attempt_is_rejected (__main__.PublicationTests.test_stale_run_attempt_is_rejected) ... ok
+test_complete_accepted_response (__main__.ReviewTests.test_complete_accepted_response) ... ok
+test_missing_returned_model_rejected (__main__.ReviewTests.test_missing_returned_model_rejected) ... ok
+test_model_availability_get_precedes_generation (__main__.ReviewTests.test_model_availability_get_precedes_generation) ... ok
+test_multiple_candidates_rejected (__main__.ReviewTests.test_multiple_candidates_rejected) ... ok
+test_nonempty_findings_cannot_pass_accepted_gate (__main__.ReviewTests.test_nonempty_findings_cannot_pass_accepted_gate) ... ok
+test_prompt_preserves_all_three_exact_documents_only (__main__.ReviewTests.test_prompt_preserves_all_three_exact_documents_only) ... ok
+test_truncated_response_rejected (__main__.ReviewTests.test_truncated_response_rejected) ... ok
+test_unavailable_model_never_generates (__main__.ReviewTests.test_unavailable_model_never_generates) ... ok
+test_unrequested_model_rejected (__main__.ReviewTests.test_unrequested_model_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.094s
+
+OK

@@ -1,0 +1,56 @@
+test_archive_includes_original_attempt_artifacts (test_review.FailureAndRetryContracts.test_archive_includes_original_attempt_artifacts) ... ERROR
+test_duplicate_generation_guard (test_review.FailureAndRetryContracts.test_duplicate_generation_guard) ... ERROR
+test_failed_review_preserved_without_acceptance (test_review.FailureAndRetryContracts.test_failed_review_preserved_without_acceptance) ... ERROR
+test_remote_source_identity (test_review.FailureAndRetryContracts.test_remote_source_identity) ... ERROR
+test_complete_and_adverse_verdicts (test_review.ReviewContracts.test_complete_and_adverse_verdicts) ... ok
+test_complete_stdout_comparison (test_review.ReviewContracts.test_complete_stdout_comparison) ... ok
+test_incomplete_or_contradictory_verdict_rejected (test_review.ReviewContracts.test_incomplete_or_contradictory_verdict_rejected) ... ok
+test_manifest_exact_members_and_bytes (test_review.ReviewContracts.test_manifest_exact_members_and_bytes) ... ok
+test_manifest_path_escape_rejected (test_review.ReviewContracts.test_manifest_path_escape_rejected) ... ok
+
+======================================================================
+ERROR: test_archive_includes_original_attempt_artifacts (test_review.FailureAndRetryContracts.test_archive_includes_original_attempt_artifacts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/test_review.py", line 66, in test_archive_includes_original_attempt_artifacts
+    from review_archive import select_artifacts
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/review_archive.py", line 4, in <module>
+    repo=os.environ['GITHUB_REPOSITORY']; run=os.environ['GITHUB_RUN_ID']; attempt=os.environ['GITHUB_RUN_ATTEMPT']
+         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 714, in __getitem__
+KeyError: 'GITHUB_REPOSITORY'
+
+======================================================================
+ERROR: test_duplicate_generation_guard (test_review.FailureAndRetryContracts.test_duplicate_generation_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/test_review.py", line 53, in test_duplicate_generation_guard
+    api.generation_guard('1','notehash',[])
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'controller' has no attribute 'generation_guard'
+
+======================================================================
+ERROR: test_failed_review_preserved_without_acceptance (test_review.FailureAndRetryContracts.test_failed_review_preserved_without_acceptance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/test_review.py", line 73, in test_failed_review_preserved_without_acceptance
+    from review_archive import disposition
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/review_archive.py", line 4, in <module>
+    repo=os.environ['GITHUB_REPOSITORY']; run=os.environ['GITHUB_RUN_ID']; attempt=os.environ['GITHUB_RUN_ATTEMPT']
+         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 714, in __getitem__
+KeyError: 'GITHUB_REPOSITORY'
+
+======================================================================
+ERROR: test_remote_source_identity (test_review.FailureAndRetryContracts.test_remote_source_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/test_review.py", line 62, in test_remote_source_identity
+    api.validate_remote_source(source,raw,api.blob(raw))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'controller' has no attribute 'validate_remote_source'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.006s
+
+FAILED (errors=4)

@@ -1,0 +1,115 @@
+name: UQCF receiver_identification d16 freeze review ([D16] + section 22, root shift for responses) (grokbot)
+
+on:
+  push:
+    branches: [research/uqcf-overlapping-guard-exchange]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d16_review/RESULT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d16_review/FREEZE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d16_review/CORRESPONDENCE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_d16_review/SOURCE.md'
+      - '.github/scripts/uqcf_rid16_*.py'
+      - '.github/workflows/uqcf-gem-rid16-review.yml'
+  workflow_dispatch:
+    inputs:
+      review:
+        description: 'Send the frozen argument to Gemini (only after Aaron confirms the API key quota)'
+        required: true
+        default: 'false'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uqcf-rid16-review
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Pinned dependencies
+        run: python -m pip install --no-cache-dir sympy==1.14.0 mpmath==1.3.0 numpy==2.3.5
+      - name: Producer (pure-Python exact Fractions, parent-array AHU enumeration, mask prefix subtrees, sparse Gauss-Jordan over Q of full edge-coordinate C and RS systems)
+        run: mkdir -p rid16_verify && python .github/scripts/uqcf_rid16_producer.py rid16_verify/producer.json
+      - name: Checker (independent leaf-attachment enumeration, leaf-deletion closures, union-find equivalence classes, sparse mod-p rank, explicit rational solutions, subtree-sum Green response)
+        run: python .github/scripts/uqcf_rid16_checker.py rid16_verify/checker.json
+      - name: Fresh producer reproduction (deterministic bytes)
+        run: python .github/scripts/uqcf_rid16_producer.py rid16_verify/producer_repro.json && cmp rid16_verify/producer.json rid16_verify/producer_repro.json
+      - name: Comparator and tampering controls
+        run: python .github/scripts/uqcf_rid16_compare.py rid16_verify/producer.json rid16_verify/checker.json rid16_verify/compare.json
+      - name: Environment record
+        if: always()
+        run: |
+          python -c "import sys,numpy,sympy,json;json.dump({'python':sys.version,'numpy':numpy.__version__,'sympy':sympy.__version__,'sha':'${{ github.sha }}','workflow_sha':'${{ github.workflow_sha }}'},open('rid16_verify/env.json','w'))"
+          sha256sum rid16_verify/* > rid16_verify/SHA256SUMS || true
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: rid16-verify-${{ github.run_attempt }}
+          path: rid16_verify
+          if-no-files-found: error
+          retention-days: 90
+
+  argument-review:
+    needs: verify
+    if: github.event_name == 'workflow_dispatch' && inputs.review == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: rid16-verify-${{ github.run_attempt }}
+          path: rid16_verify
+      - name: Fresh independent Gemini whole-argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_rid16_review.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: rid16-review-${{ github.run_attempt }}
+          path: rid16_review
+          if-no-files-found: error
+          retention-days: 90
+
+  publication-audit:
+    needs: [verify, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: rid16-verify-${{ github.run_attempt }}
+          path: rid16_verify
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: rid16-review-${{ github.run_attempt }}
+          path: rid16_review
+      - name: Independent immutable GitHub readback audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/uqcf_rid16_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: rid16-publication-${{ github.run_attempt }}
+          path: rid16_publication
+          if-no-files-found: error
+          retention-days: 90

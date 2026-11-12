@@ -1,0 +1,99 @@
+{
+  "checkout_sha": "7c5b40611bdcf2d7494369403f1edad653272981",
+  "documents": {
+    "FREEZE.json": "0aae102e77decf47dbfc5cde4aa2a93d7204171eeb4706aab1fc7e034409739b",
+    "RESULT.md": "fd4bfc86b0a1e7aea51b54bf33a03b242d562a33dfbb23422c6db6d390174c06",
+    "SOURCE_PACKET.json": "09ff740c3cd2cdb644d0fe4d43f4c0c66dc71bed17fa8d81ba4ff15af5ff5adf"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge": "NOT_DERIVED",
+  "prompt_sha256": "e607f1972fe0baae6bec9fa0c67c68281aaf18cd06f7b0232390e972e52bb0b8",
+  "response_sha256": "6e80273a1e8632050bab5ee65a9ebc3601a895a04e643507a8ab643d1f065a1b",
+  "run_attempt": "1",
+  "run_id": "40240401951",
+  "scientific_execution": false,
+  "scientific_sha": "64cb949690084ceb74b09cde8cc2bb31d68e67d3",
+  "source_commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+  "source_count": 7,
+  "sources": [
+    {
+      "byte_end": 13575,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 13575,
+      "excerpt_sha256": "d14ff5103268cd83521cf3e43821ecc080dd54b4a15af8899cafa6f09d7277ac",
+      "full_bytes": 13575,
+      "full_sha256": "d14ff5103268cd83521cf3e43821ecc080dd54b4a15af8899cafa6f09d7277ac",
+      "git_blob": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md"
+    },
+    {
+      "byte_end": 2359,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 2359,
+      "excerpt_sha256": "872977a8ef8bd5bd0c3d438ccf2c5309a7fb0600868200a28398aa57b9f4623c",
+      "full_bytes": 2359,
+      "full_sha256": "872977a8ef8bd5bd0c3d438ccf2c5309a7fb0600868200a28398aa57b9f4623c",
+      "git_blob": "e95e3e978779164dd91f09b80e3389247e6320c2",
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py"
+    },
+    {
+      "byte_end": 3615,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 3615,
+      "excerpt_sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "full_bytes": 3615,
+      "full_sha256": "a08edf466b041d00932e197dac01d6845bfd202ac317e6debf4695db770e9e23",
+      "git_blob": "ebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2",
+      "path": "ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md"
+    },
+    {
+      "byte_end": 8307,
+      "byte_start": 0,
+      "commit": "43596de4fe9fd1083500987997ee04e15793f60c",
+      "excerpt_bytes": 8307,
+      "excerpt_sha256": "1dbe854571a61e23c8944d6d66005d6fb89bb30bea7d660ed38d4e4ee62aca46",
+      "full_bytes": 8307,
+      "full_sha256": "1dbe854571a61e23c8944d6d66005d6fb89bb30bea7d660ed38d4e4ee62aca46",
+      "git_blob": "785d5a979ea2f0bd2089acbe154e939c4e57ca1e",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/unmarked_root_signal/RESULT.md"
+    },
+    {
+      "byte_end": 4171,
+      "byte_start": 0,
+      "commit": "546511327ee6a224dcc583305e7864a456863c4f",
+      "excerpt_bytes": 4171,
+      "excerpt_sha256": "e22811d0adf124e035f6c34a702174c978aa38db9defef3fc6c47960326c75de",
+      "full_bytes": 4171,
+      "full_sha256": "e22811d0adf124e035f6c34a702174c978aa38db9defef3fc6c47960326c75de",
+      "git_blob": "d31ad879e732ae61d69678038f135f99eee15e11",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/unmarked_root_signal/ACCEPTANCE.md"
+    },
+    {
+      "byte_end": 237053,
+      "byte_start": 223716,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 13337,
+      "excerpt_sha256": "87a57045f3a0da87872f23327467af65e41b5a3c6709dbba9c71565c0b7a53e7",
+      "full_bytes": 389240,
+      "full_sha256": "a747459613ab088fb363c583cc6cd5ed4333850b64758b88fbba14fcd50529e4",
+      "git_blob": "69f01eb4ea2c99689f443add988beb58fccfa4a8",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/receiver_identification/CONSTRUCTION.md"
+    },
+    {
+      "byte_end": 996711,
+      "byte_start": 988371,
+      "commit": "8ca86003e85fd38816ab03c1677e2e06ddeaf91d",
+      "excerpt_bytes": 8340,
+      "excerpt_sha256": "5edc6d23f880d679e3068a3a893aa05b395535cfc2c0ffc8c09c46067979c371",
+      "full_bytes": 996711,
+      "full_sha256": "ddfddbd297771af7b7d433ca7038a1278771a3b9c699c029351d64ca352e8c8a",
+      "git_blob": "9a65b0ea0e97f901cdf9c46983541a8ee7db5f33",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AGENT_THREAD/THREAD.md"
+    }
+  ],
+  "status": "PASS",
+  "workflow_sha": "7c5b40611bdcf2d7494369403f1edad653272981"
+}

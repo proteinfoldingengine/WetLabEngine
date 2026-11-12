@@ -1,0 +1,18 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "constructive_analysis": [
+    "Reconstructed the single-event gain identity: Let v = e_l - e_p. Since P v = 0, PN_e (F_Y P = P F_W) implies P F_W v = 0, so F_W v = \u03b2 v. At coordinate p, h_p^W(e_l) - h_p^W(e_p) = -\u03b2. The blindness premise h_p^W(e_l) = 0 is strictly required to conclude \u03b2 = h_p^W(e_p). At coordinate l, h_l^W(e_l) - h_l^W(e_p) = \u03b2. Letting t = h_l^W(e_p), we get h_l^W(e_l) = \u03b2 + t. The post-event gain is G = h_p^Y(e_p) = (P F_W e_l)_p = h_p^W(e_l) + h_l^W(e_l) = \u03b2 + t.",
+    "Verified positivity and kernel separation: If h_p^W(e_p) \u2265 0 and h_l^W(e_p) \u2265 0, then \u03b2, t \u2265 0. Thus G = \u03b2 + t = 0 if and only if \u03b2 = t = 0. Kernel separation \u03b2 \u2260 0 implies \u03b2 > 0, which forces G > 0, making it a sufficient condition for positive gain. It is not necessary, as G > 0 can occur if \u03b2 = 0 and t > 0.",
+    "Reconstructed the fork family control: For F_Z = s I_Z + (1-s) e_{d(Z)} 1_Z^T on W = {p, l, c} with d(W) = c, F_W e_l = s e_l + (1-s) e_c and F_W e_p = s e_p + (1-s) e_c. Actual fork blindness h_p^W(e_l) = 0 holds for all s. Here \u03b2 = s, t = 0, and G = s. PN holds for the deletion of l. On the comparison chain {p, l}, d = p, so F_{p, l} e_l = s e_l + (1-s) e_p, meaning chain blindness h_p^{\\{p, l\\}}(e_l) = 0 holds if and only if s = 1. Actual blindness does not silently substitute for chain blindness.",
+    "Verified that nonzero kernel response is not necessary: Using F_W = [[0, 0], [1, 1]], F_Y = [1], and P = [1, 1], PN_e and B_e hold. Here \u03b2 = 0, t = 1, and G = 1. The erased relocation contrast is annihilated, yet the source-presence contrast transfers to p, yielding positive gain.",
+    "Verified signed cancellation: Using F_W = [[a, 0], [-a, 0]], F_Y = [0], and P = [1, 1], PN_e and B_e hold. Here \u03b2 = a \u2260 0, t = -a, and G = 0. This confirms that without the two specific nonnegativity restrictions, a nonzero kernel response does not guarantee positive gain.",
+    "Reconstructed field restriction and pullback: Under P1, the retained cone totals c_v are exactly preserved because x_p' = x_p + x_l absorbs the removed leaf's grade, keeping the sum over any retained cone constant. Consequently, y_v = a_{depth(v)} c_v is unchanged for any depth-coefficient table, without requiring a root-shift (RS) premise. The pre-event representative of the post-event own grade is G_{p,l} = c_p - \u2211_{u \u2208 ch_W(p), u \u2260 l} c_u = x_p + x_l.",
+    "Verified the pre-informed local field witness: For W = {0 \u2192 p \u2192 l} with x^{(0)} = g e_0 and x^{(1)} = g e_l (g > 0), the own grade at p is 0 for both preparations before the event, and becomes 0 versus g after pruning l. However, the incoming edge y_p = a_1 c_p is 0 for x^{(0)} and a_1 g for x^{(1)} before the event. A receiver with complete local-field access is already informed, demonstrating that merely changing the divergence formula does not prove a native access transition."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Identify one already existing receiver-owned retained effect, its source-backed state/event association, whole-receiver initial blindness, and a nonzero output-law contrast, without introducing a new detector, READS entry, copying gate, state encoder, or assumed stochastic law."
+}

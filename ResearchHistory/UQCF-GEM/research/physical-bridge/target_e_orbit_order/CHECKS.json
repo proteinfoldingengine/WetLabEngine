@@ -1,0 +1,36 @@
+{
+  "check_count": 15,
+  "checks": [
+    "unit_phase_symbolic",
+    "marker_norms_and_orthogonality_symbolic",
+    "isometry_symbolic",
+    "channel_all_16_matrix_units_symbolic",
+    "hadamard_pair_marginals_symbolic",
+    "sharp_squared_margin_symbolic",
+    "arbitrary_product_pair_phase_multiplier_symbolic",
+    "all_orbit_members_lower_bound_identity",
+    "five_exact_sequence_values",
+    "phase_limit_minus_one",
+    "blind_endpoint_is_orthonormal_isometry",
+    "blind_endpoint_preserves_all_16_channel_units",
+    "adverse_control_orthogonality_does_not_imply_R_signal",
+    "retained_p_contrast_finite",
+    "retained_p_contrast_blind_limit"
+  ],
+  "d_R_squared_exact_values": {
+    "0": "1/25",
+    "1": "1/50",
+    "10": "1/2525",
+    "1000": "1/25000025",
+    "2": "1/125"
+  },
+  "limitations": [
+    "Algebra checks do not enumerate the infinite group.",
+    "Compactness, connectedness, universal group-orbit bound and the greatest-orbit argument are proved in RESULT.md.",
+    "This is not a native-event simulation or inherited-stack recertification."
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "scientific_breakthrough": false,
+  "status": "PASS",
+  "symbolic_d_R_squared": "1/(25*(1+t^2))"
+}

@@ -1,0 +1,93 @@
+{
+  "version": "V1694.2",
+  "verdict": "VARIATION_CURRENT_PRODUCT_IDENTITY_MIXED_NO_LAW_CLAIM",
+  "purpose": "Test product identity using variation-derived source current from product action support variation.",
+  "overall": {
+    "graph_cases": 9,
+    "comparison_cases": 21,
+    "stationarity_pass_rate": 1.0,
+    "positive_action_reduction_rate": 1.0,
+    "variation_current_used_rate": 1.0,
+    "product_identity_pass_rate": 0.5714285714285714,
+    "mean_E_norm": 3.9404389048995525e-05,
+    "mean_valid_null_min_norm": 2.7192181391162124e-05,
+    "valid_advantage_mean": -1.2212207657833399e-05,
+    "mean_rho_var_norm": 8.865115067697913e-05,
+    "mean_QA_norm": 1.309788833763946e-05
+  },
+  "promotion_level": 1,
+  "summary_by_size": [
+    {
+      "rows": 2,
+      "cols": 3,
+      "nodes": 6,
+      "comparisons": 3,
+      "identity_rate": 1.0,
+      "mean_E": 9.112398746911402e-06,
+      "mean_null_min": 9.112524914581741e-06,
+      "mean_rho_var": 4.474081231490694e-05,
+      "mean_QA": 9.112430844332459e-06
+    },
+    {
+      "rows": 2,
+      "cols": 4,
+      "nodes": 8,
+      "comparisons": 6,
+      "identity_rate": 0.5,
+      "mean_E": 3.8245448011137876e-05,
+      "mean_null_min": 2.712216801901885e-05,
+      "mean_rho_var": 8.604514910149843e-05,
+      "mean_QA": 1.2816934947156682e-05
+    },
+    {
+      "rows": 3,
+      "cols": 3,
+      "nodes": 9,
+      "comparisons": 12,
+      "identity_rate": 0.5,
+      "mean_E": 4.755685714344537e-05,
+      "mean_null_min": 3.1747102196378855e-05,
+      "mean_rho_var": 0.00010093173605523754,
+      "mean_QA": 1.42347294062076e-05
+    }
+  ],
+  "null_summary": [
+    {
+      "null_family": "N_D1D2_drop",
+      "n": 21,
+      "valid_beats_rate": 1.0,
+      "mean_null_E": 0.0008565987809267432,
+      "mean_valid_E": 3.9404389048995525e-05
+    },
+    {
+      "null_family": "N_boundary_Q_break",
+      "n": 21,
+      "valid_beats_rate": 0.5714285714285714,
+      "mean_null_E": 3.03480208371259e-05,
+      "mean_valid_E": 3.9404389048995525e-05
+    },
+    {
+      "null_family": "N_pair_shuffle",
+      "n": 21,
+      "valid_beats_rate": 1.0,
+      "mean_null_E": 0.00011281560810704489,
+      "mean_valid_E": 3.9404389048995525e-05
+    },
+    {
+      "null_family": "N_scalar_product",
+      "n": 21,
+      "valid_beats_rate": 1.0,
+      "mean_null_E": 0.00023216186463221908,
+      "mean_valid_E": 3.9404389048995525e-05
+    },
+    {
+      "null_family": "N_source_label_only",
+      "n": 21,
+      "valid_beats_rate": 0.6666666666666666,
+      "mean_null_E": 5.22485307521807e-05,
+      "mean_valid_E": 3.9404389048995525e-05
+    }
+  ],
+  "claim_boundary": "Product variation-current diagnostic only. No retained field-law validation.",
+  "runtime_seconds": 12.250534534454346
+}

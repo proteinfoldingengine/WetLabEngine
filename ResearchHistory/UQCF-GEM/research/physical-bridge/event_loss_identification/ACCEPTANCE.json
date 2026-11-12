@@ -1,0 +1,35 @@
+{
+  "status": "INDEPENDENT_ARGUMENT_ACCEPTED_PUBLICATION_AUDIT_PASS",
+  "scientific_sha": "79538ed5f139d8a7ef1c5cc72397219ae4e68f10",
+  "workflow_sha": "59de1f1c9d9b965ff515d6a2edf9f4c00ab53f81",
+  "checkout_sha": "59de1f1c9d9b965ff515d6a2edf9f4c00ab53f81",
+  "run_id": "40439041067",
+  "run_attempt": "1",
+  "model": "gemini-3.1-pro-preview",
+  "prompt_sha256": "8e8cd0996e0faf4d45d6a220699231a836d6f00406ec2e6ad1d6ee22b54059c4",
+  "raw_response_sha256": "0e2484794829341048c9bdaab0b6037b14524a5395de43bcb0ec06ff3d4cee2a",
+  "archives": {
+    "integrity": {
+      "bytes": 1559,
+      "sha256": "bc972389d7edd994a4acb99f54441636527888abc2820ab8056de0deb39967af"
+    },
+    "review": {
+      "bytes": 79433,
+      "sha256": "ec554d2d952981735489803a5b7b667eddf21d632741feebed7019f23a0f020b"
+    },
+    "publication": {
+      "bytes": 1311,
+      "sha256": "146f1e93ad6bec702037e80bb0b0d6cc86c7c19b507057be2212824c449e9bc0"
+    }
+  },
+  "jobs": [
+    121974643487,
+    121974697880,
+    121974971256
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "merged": false,
+  "scientific_execution": false,
+  "validation": "Original ZIP sizes/digests matched GitHub metadata; ZIP CRCs and every member manifest verified; full raw verdict read; separate workflow publication audit passed.",
+  "reviewer_wording_correction": "The review's first constructive_analysis sentence loosely says the basis {e_root,d_v} spans the balanced subspace. The manuscript correctly states that the full basis spans F_X, while only the d_v span the balanced subspace. Preserve raw review unchanged; acceptance applies to the manuscript's correct statement."
+}

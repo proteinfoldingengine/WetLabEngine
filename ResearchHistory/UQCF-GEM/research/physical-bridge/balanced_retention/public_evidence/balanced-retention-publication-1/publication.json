@@ -1,0 +1,88 @@
+{
+  "checkout_sha": "81345457d0468384aee48d4f89c54490924dc4f4",
+  "documents": {
+    "FREEZE.json": "674c5597c18c07d0349019277b8f69a20a3b96392a7eafa392832f41fb1b931f",
+    "RESULT.md": "f8ca056ee9e0bd466b0c3e673200963a27fb001e59ed94d8a65c09086d29cda3",
+    "SOURCE_PACKET.json": "c92749b6ab082b1ad58e52545a7f099d827f94bdbc54b024a40c575ce31bb88e"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge": "NOT_DERIVED",
+  "prompt_sha256": "b6a17869d39e0e86d01e2c475c2d074451745bb3dffba1a2c45bfcdb068e112b",
+  "response_sha256": "feaae9dd9d11b00fb8c49aae2cc817dce30bba67e14d999545f1f04c6f365445",
+  "run_attempt": "1",
+  "run_id": "39698061996",
+  "scientific_execution": false,
+  "scientific_sha": "813215d324fd03d3cb25e08f6204a75dd2e72a40",
+  "source_commit": "08c8b1e87e7ec0d248112b15c87d387df0c78229",
+  "source_count": 6,
+  "sources": [
+    {
+      "byte_end": 4041,
+      "byte_start": 1373,
+      "commit": "08c8b1e87e7ec0d248112b15c87d387df0c78229",
+      "excerpt_bytes": 2668,
+      "excerpt_sha256": "149a7ffbce8e04dfc61bb3fbfbd997352b90e9d5ece935cfc2c97c62eebb4fa4",
+      "full_bytes": 13575,
+      "full_sha256": "d14ff5103268cd83521cf3e43821ecc080dd54b4a15af8899cafa6f09d7277ac",
+      "git_blob": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md"
+    },
+    {
+      "byte_end": 36647,
+      "byte_start": 26515,
+      "commit": "7be7a1de396cfba8bcf51ea09f0ae802b37bc8b2",
+      "excerpt_bytes": 10132,
+      "excerpt_sha256": "6723982bcb5f6d17b74175e4a8503a1e5c2c88d74e234bbe034b81dbfdd17759",
+      "full_bytes": 36647,
+      "full_sha256": "d76ac99702d5d44e27b89e1de2114c881af7f6e98424112b2c554c08b5db625d",
+      "git_blob": "9c001bd1d12185011659565802b86073035a7ada",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/AGENT_THREAD/THREAD.md"
+    },
+    {
+      "byte_end": 7648,
+      "byte_start": 0,
+      "commit": "08c8b1e87e7ec0d248112b15c87d387df0c78229",
+      "excerpt_bytes": 7648,
+      "excerpt_sha256": "f8dabf185b2169cfe9196cd8522d2e1920d4b894e5444895b0acdb13da5526fd",
+      "full_bytes": 7648,
+      "full_sha256": "f8dabf185b2169cfe9196cd8522d2e1920d4b894e5444895b0acdb13da5526fd",
+      "git_blob": "19605ddf5a91c6607c9621796daffcbaf3d31978",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/record_consumer_trace/TRACE.md"
+    },
+    {
+      "byte_end": 6259,
+      "byte_start": 0,
+      "commit": "08c8b1e87e7ec0d248112b15c87d387df0c78229",
+      "excerpt_bytes": 6259,
+      "excerpt_sha256": "1c4534458fdff2d8f5c1eeb264f9eab60e70d9af93d4d9e89297f2c397dde9f3",
+      "full_bytes": 6259,
+      "full_sha256": "1c4534458fdff2d8f5c1eeb264f9eab60e70d9af93d4d9e89297f2c397dde9f3",
+      "git_blob": "e14824cb24f049882d41f416e0728ea075898274",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/record_consumer_trace/NATIVE_STATE_RECORD_INTERFACE.md"
+    },
+    {
+      "byte_end": 17164,
+      "byte_start": 0,
+      "commit": "def537e928c9839fe956aeddb6ad81ed5e6380ba",
+      "excerpt_bytes": 17164,
+      "excerpt_sha256": "25be9a3acc15f46774ea665650b1718a15170e06c59d9fd08ac3832055ecd06b",
+      "full_bytes": 17164,
+      "full_sha256": "25be9a3acc15f46774ea665650b1718a15170e06c59d9fd08ac3832055ecd06b",
+      "git_blob": "feb28cd2480db73ba41a7a02e3a93d5c93dabc09",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/positive_retained_holdings/RESULT.md"
+    },
+    {
+      "byte_end": 10115,
+      "byte_start": 0,
+      "commit": "a034bbb58bf250316b04d33d85ba89b9018793cd",
+      "excerpt_bytes": 10115,
+      "excerpt_sha256": "49b031d7d75e30e92facefed0f7e19f7beda5b2466873e488db0e88f4d1191b6",
+      "full_bytes": 10115,
+      "full_sha256": "49b031d7d75e30e92facefed0f7e19f7beda5b2466873e488db0e88f4d1191b6",
+      "git_blob": "a5ade13b7390e99649a11a0c6ec55aecdad4abef",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/balanced_sibling_contrast/RESULT.md"
+    }
+  ],
+  "status": "PASS",
+  "workflow_sha": "81345457d0468384aee48d4f89c54490924dc4f4"
+}

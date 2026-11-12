@@ -1,0 +1,1 @@
+# Q147 PREREG (2026-11-11T13:34:55-07:00): prove C4 (Q146) if-direction by top-down induction on the leveled dendrogram; confirmation check (not proof): 1500 random (tree, closed sequence) cases at n=7, seed 147, using Q146 q146b.py logic unchanged; pass = 0 mismatches.

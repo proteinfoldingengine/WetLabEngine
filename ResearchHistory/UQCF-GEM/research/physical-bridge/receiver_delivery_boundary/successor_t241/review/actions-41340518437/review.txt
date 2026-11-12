@@ -1,0 +1,39 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [
+    "The withdrawals W1-W6 accurately identify and correct the overstatements in the original T-240 package. The counterexamples provided (e.g., the coherent span{1,P_psi} interface for W1, and Dot's non-product effect for W6) are mathematically exact and correctly refute the withdrawn claims.",
+    "The range theorem [d_S, 1/5] is correctly formulated and proved for product interfaces with dim K_A, dim K_B >= 2. It correctly establishes that a proper complementary factor does not guarantee realization-independent contrast unless d_S = 1/5.",
+    "RD-7 correctly classifies realization-invariant fixed observables on diagonal inputs, and RD-7' correctly extends this to slice-map compression on product interfaces, showing that invariant statistics can be represented by a retained-source effect.",
+    "The successor plan (V1-V7, C1-C8) was properly frozen before code execution. The open choices (e.g., W_N, W_X, pair contrast definition) were resolved honestly and do not trivialize the predictions.",
+    "The independent checker verify_s.py correctly recomputes all operators and contrasts from definitions using exact Q(sqrt(2)) arithmetic and sparse tensor indexing, ensuring algorithmic independence from produce_s.py.",
+    "All rejecting controls C1-C8 genuinely cause the checker to fail, confirming the rigidity of the verification pipeline.",
+    "The evidence files are internally consistent, with matching SHA256 hashes and byte-identity claims, and no claim exceeds what the finite exact computation demonstrates."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The mathematical results are scoped to the supplied benchmark class: one removed address, diagonal pair, finite blank K, and product interfaces (except where explicitly generalized).",
+    "The ownership of the retained algebra A_S by a physical receiver remains a SUPPLIED premise (B_a -> Access is open).",
+    "The results do not exclude the possibility of an independently sourced, non-U(K)-invariant joint-event constraint that could force delivery."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "constructive_analysis": [
+    {
+      "source_reference": "CORRECTION_T241.md, W1",
+      "analysis": "The withdrawal of the realization-independence claim (C) for proper complementary factors is fully justified by the coherent A_S = span{1, P_psi} counterexample, which correctly yields a contrast of 1/20 for W_E and 1/5 for W_R."
+    },
+    {
+      "source_reference": "CORRECTION_T241.md, W3",
+      "analysis": "The correction regarding RD-3 accurately distinguishes between the optimized contrast of an interface (which is invariant for trivial K_B) and the pointwise contrast of a fixed effect (which can vary, as shown by F = 1_S (x) |01><01|)."
+    },
+    {
+      "source_reference": "CORRECTION_T242.md, W6 and RD-7'",
+      "analysis": "Dot's non-product counterexample correctly demonstrates that a fixed effect can have realization-independent statistics without residing in B(H_S) (x) 1_K. The repaired RD-7' correctly resolves this for product interfaces via slice-map compression."
+    },
+    {
+      "source_reference": "SUCCESSOR_verify_s.py",
+      "analysis": "The custom 2x2 trace norm and exact Q(sqrt(2)) arithmetic in the checker provide a robust, independent verification of the sympy-based producer, ensuring that the analytical bounds are exactly met by the finite test cases."
+    }
+  ],
+  "next_native_obligation": "Trace one existing retained record through the P1 operation into one existing native consumer or available observation, justifying the source-to-operation/record association without assuming the delivery or inserting an arbitrary reader."
+}

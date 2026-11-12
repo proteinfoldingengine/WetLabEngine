@@ -1,0 +1,21 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "constructive_analysis": [
+    "The address-table formula is correctly reconstructed from PN on the address class, matching Lemma 31.0.",
+    "The calibration A_(a_d)(a_d) = kappa is correctly derived from climb blindness.",
+    "The proof that POS_T zeroes the side-subtree coefficients without SE is flawless. It correctly uses the fork F(m,u) on the unit e_(a_{m+1}) to show A_u(a_m) = 0, and induction on chains to clear the side subtrees.",
+    "The evaluation of F_W e_l correctly observes that the next-child leak A_(a_{i+1})(a_i) does not appear in h_(a_i)(e_l) because a_{i+1} wedge l = a_{i+1}, yielding A_(a_{i+1})(a_{i+1}) = kappa. This elegantly bypasses the need for SE.",
+    "The post-event vector is correctly derived using F_Y P = P F_W.",
+    "Control 1 correctly demonstrates that SE and FC can fail while the permitted leaf-pruning events still transfer successfully, with exact matrix maps matching the address table.",
+    "Control 2 correctly shows that event transfer is strictly weaker than FC and POS_T, even when SE holds.",
+    "Control 3 correctly shows that the deepest-source fork positivity clause is necessary, as its omission allows the receiver to be pre-informed.",
+    "The document correctly distinguishes leaf-domain event transfer from global column faithfulness, and formal receiver coordinates from independently available records.",
+    "The document correctly challenges the source packet, noting that it does not supply actual field-to-record state assignment, availability, preparability, or event occurrence, and correctly sets the native bridge status to NOT_DERIVED."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Identify an inherited rule assigning native admissible preparations to the existing record model's input states, with receiver ownership and event correspondence justified independently of the desired response."
+}

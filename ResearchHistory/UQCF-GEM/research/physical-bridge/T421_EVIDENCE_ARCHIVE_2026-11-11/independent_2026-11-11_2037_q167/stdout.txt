@@ -1,0 +1,4 @@
+fixed(x+) iff -2*a10/5 - 8*a11/25 + a20 + 4*a21/5 + 8*a22/25 = 0
+fixed(x-) iff -a10/5 - 4*a11/25 + 3*a20/5 + 12*a21/25 + 4*a22/25 = 0
+difference -a10/5 - 4*a11/25 + 2*a20/5 + 8*a21/25 + 4*a22/25
+diagonal-only (j=d): x+: -8*a11/25 + 8*a22/25  x-: -4*a11/25 + 4*a22/25  coincide-as-sets: 2

@@ -1,0 +1,41 @@
+name: UQCF T-246 receiver-delivery successor Gemini review
+on:
+  push:
+    branches: [grok/receiver-delivery-t240]
+    paths:
+      - '.github/workflows/uqcf-receiver-delivery-successor-review.yml'
+      - '.github/scripts/uqcf_receiver_delivery_successor_review.py'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+concurrency:
+  group: uqcf-receiver-delivery-successor-review
+  cancel-in-progress: false
+jobs:
+  gemini-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Committed successor evidence checksums
+        run: |
+          set -euo pipefail
+          (cd ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/successor_t241/evidence/actions-41335726832 && sha256sum -c SHA256SUMS)
+      - name: Single fresh Gemini whole-argument review (one request, no retry)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -B .github/scripts/uqcf_receiver_delivery_successor_review.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: receiver-delivery-successor-review-${{ github.run_attempt }}
+          path: receiver_delivery_successor_review
+          if-no-files-found: error
+          retention-days: 90

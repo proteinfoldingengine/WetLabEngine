@@ -1,0 +1,91 @@
+{
+  "schema": "uqcf-gem-immutable-readback-v1",
+  "verified_ref": "da5aa43fdd76552d93ce954551ca7983e9564c25",
+  "verified_root": "ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_access_review/",
+  "result": "PASS",
+  "files": [
+    {
+      "path": "evidence/attempt-2/INTEGRITY.json",
+      "blob_sha": "8b1c9eb1bbf8fa5ba6da2b0d0500abf553ef2813",
+      "bytes": 2255
+    },
+    {
+      "path": "evidence/attempt-2/MODEL_METADATA.json",
+      "blob_sha": "928720139032813386b0cf0819cb291a2846a468",
+      "bytes": 459
+    },
+    {
+      "path": "evidence/attempt-2/PROMPT.txt",
+      "blob_sha": "53a77895254b12a95e7489f06a09add099a6e33c",
+      "bytes": 64114
+    },
+    {
+      "path": "evidence/attempt-2/REQUEST.json",
+      "blob_sha": "29e45da520385b843897fee0b9f9caa1e2bfd5e5",
+      "bytes": 65189
+    },
+    {
+      "path": "evidence/attempt-2/REVIEW_RAW.json",
+      "blob_sha": "6da616acddad0cb3320740a45b937c999239ada4",
+      "bytes": 27490
+    },
+    {
+      "path": "evidence/attempt-2/REVIEW.txt",
+      "blob_sha": "89b2e9bee378b7efad11e088aba78ccf3f5fcd19",
+      "bytes": 3059
+    },
+    {
+      "path": "evidence/attempt-2/REVIEW_IDENTITY.json",
+      "blob_sha": "9c6cd90e82902530eaecebd42d398e0224c284ee",
+      "bytes": 462
+    },
+    {
+      "path": "evidence/attempt-2/VERDICT.json",
+      "blob_sha": "599b69e6310ed75962fa11febc812e00ed14373e",
+      "bytes": 3065
+    },
+    {
+      "path": "evidence/attempt-2/REVIEW_ARTIFACT_MANIFEST.json",
+      "blob_sha": "8bfc4681af3bfbd0afed4271f78122bd3f56dc34",
+      "bytes": 1018
+    },
+    {
+      "path": "evidence/attempt-2/PUBLICATION_AUDIT.json",
+      "blob_sha": "2ccfefb884ff7872659f4b41643a7cabde8ac811",
+      "bytes": 1544
+    },
+    {
+      "path": "evidence/attempt-2/PUBLICATION_ARTIFACT_MANIFEST.json",
+      "blob_sha": "049573277707a2576f00d264c2ce725278ed8010",
+      "bytes": 132
+    },
+    {
+      "path": "evidence/attempt-2/JOB_LOGS.json",
+      "blob_sha": "18c0fc7c534c2d242b41a41c75f42a68f35b4b2a",
+      "bytes": 71856
+    },
+    {
+      "path": "evidence/attempt-2/WORKFLOW_RUN.json",
+      "blob_sha": "9ec5e323f1b32594a2991a1dace6ae5df1c94feb",
+      "bytes": 1654
+    },
+    {
+      "path": "ACCEPTANCE.md",
+      "blob_sha": "886d06c3bca7e2318752e7a8808209d286ca99d8",
+      "bytes": 1909
+    }
+  ],
+  "semantic_checks": {
+    "verdict": "ACCEPTED",
+    "findings": 0,
+    "missing_assumptions": 0,
+    "counterexamples": 0,
+    "native_bridge_status": "NOT_DERIVED",
+    "publication_audit": "PASS",
+    "workflow_run_id": 40435877307,
+    "workflow_attempt": 2,
+    "jobs_success": 3,
+    "complete_job_logs": 3
+  },
+  "note": "Every listed path was fetched through the GitHub contents API at the immutable verified_ref; the listed blob SHA and UTF-8 byte count are the returned values."
+}

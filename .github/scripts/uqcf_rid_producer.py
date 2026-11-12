@@ -1,0 +1,199 @@
+"""receiver_identification draft 1 freeze: PRODUCER (pure-Python exact Fractions; nearest-ancestor walk).
+Computes the preregistered exact instances (FREEZE.md section 2) and the exhaustive universe (section 3)."""
+import hashlib, itertools, json, sys
+from fractions import Fraction as F
+from pathlib import Path
+
+ROOT = Path("ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_identification_review")
+
+
+def trees(n):
+    # labelled rooted trees with parent[i] < i
+    for ps in itertools.product(*[range(i) for i in range(1, n)]):
+        yield (None,) + ps
+
+
+def retained_sets(par):
+    n = len(par)
+    out = []
+    def grow(cur, frontier):
+        out.append(frozenset(cur))
+        for i, c in enumerate(frontier):
+            kids = [z for z in range(n) if par[z] == c]
+            grow(cur | {c}, frontier[i + 1:] + kids)
+    kids0 = [z for z in range(n) if par[z] == 0]
+    grow({0}, kids0)
+    return sorted(set(out), key=lambda s: (len(s), sorted(s)))
+
+
+def owner(par, keep, z):
+    while z not in keep:
+        z = par[z]
+    return z
+
+
+def push(par, keep, x):
+    y = {a: 0 for a in keep}
+    for z, v in enumerate(x):
+        if v is not None:
+            y[owner(par, keep, z)] += v
+    return y
+
+
+def tv(p, q):
+    ks = set(p) | set(q)
+    return sum(abs(p.get(k, 0) - q.get(k, 0)) for k in ks) / 2
+
+
+def conv(p, q):
+    out = {}
+    for i, a in p.items():
+        for j, b in q.items():
+            out[i + j] = out.get(i + j, 0) + a * b
+    return out
+
+
+def s(v):
+    return str(F(v))
+
+
+def instances():
+    V = {}
+    par = (None, 0, 1); keep = {0, 1}
+    a, b = push(par, keep, (1, 0, 1)), push(par, keep, (1, 0, 0))
+    V["E1.mu_x"] = [str(a[k]) for k in sorted(keep)]; V["E1.mu_xp"] = [str(b[k]) for k in sorted(keep)]
+    V["E1.owner"] = [k for k in sorted(keep) if a[k] != b[k]]
+    par = (None, 0, 0); keep = {0}
+    a, b = push(par, keep, (0, 1, 0)), push(par, keep, (0, 0, 1))
+    V["E2.owner"] = [k for k in sorted(keep) if a[k] != b[k]]; V["E2.equal"] = a == b
+    par = (None, 0, 1, 2); chain = [{0, 1, 2}, {0, 1}, {0}]
+    x, xp = [0, 0, 0, 1], [0, 0, 0, 0]
+    hold, diffs = [], []
+    for keep in chain:
+        a, b = push(par, keep, x), push(par, keep, xp)
+        d = [k for k in sorted(keep) if a[k] != b[k]]
+        assert len(d) == 1
+        hold.append(d[0]); diffs.append(str(a[d[0]] - b[d[0]]))
+    V["E3.holders"], V["E3.diffs"] = hold, diffs
+    par = (None, 0, 0); d = [0, 1, -1]
+    step = None
+    for k, keep in enumerate([{0, 1}, {0}], 1):
+        y = push(par, keep, d)
+        if all(v == 0 for v in y.values()) and step is None:
+            step = k
+    V["E3.merge_step"] = step
+    pu, qu, pa = {0: F(1)}, {1: F(1)}, {0: F(1, 2), 1: F(1, 2)}
+    V["E4a.tv_src"] = s(tv(pu, qu)); V["E4a.tv_owner"] = s(tv(conv(pa, pu), conv(pa, qu)))
+    V["E4a.tv_point"] = s(tv(conv({0: F(1)}, pu), conv({0: F(1)}, qu)))
+    pu, qu = {0: F(1, 2), 1: F(1, 2)}, {0: F(1, 4), 1: F(3, 4)}
+    V["E4b.tv_src"] = s(tv(pu, qu)); V["E4b.tv_owner"] = s(tv(conv(pa, pu), conv(pa, qu)))
+    jp = {(0, 0): F(1, 2), (1, 1): F(1, 2)}; jq = {(0, 1): F(1, 2), (1, 0): F(1, 2)}
+    def marg(j, i):
+        m = {}
+        for k, v in j.items():
+            m[k[i]] = m.get(k[i], 0) + v
+        return m
+    def summ(j):
+        m = {}
+        for k, v in j.items():
+            m[k[0] + k[1]] = m.get(k[0] + k[1], 0) + v
+        return m
+    V["E4c.tv_src_marg"] = s(tv(marg(jp, 1), marg(jq, 1)))
+    V["E4c.tv_owner"] = s(tv(summ(jp), summ(jq))); V["E4c.tv_joint_before"] = s(tv(jp, jq))
+    # Prop 5(c): permutation |u,a> -> |u, a+u mod 2> vs CNOT table
+    cadd = {(u, a): (u, (a + u) % 2) for u in range(2) for a in range(2)}
+    cnot = {(0, 0): (0, 0), (0, 1): (0, 1), (1, 0): (1, 1), (1, 1): (1, 0)}
+    V["E5.cnot"] = cadd == cnot
+    # control |+>, blank owner: output amplitudes 1/sqrt2 on |00>,|11>; owner reduced = diag of |amp|^2
+    amps = {cadd[(u, 0)]: F(1, 2) for u in range(2)}  # squared amplitudes; off-diagonal owner terms vanish since u-values differ
+    red = [[s(sum(v for (u, a), v in amps.items() if a == i)) if i == j else "0" for j in range(2)] for i in range(2)]
+    V["E5.owner_reduced"] = red
+    pts = list(itertools.product(range(2), range(3)))
+    ok = all({p: int(p == q) for p in pts} == {p: int(p[0] == q[0]) * int(p[1] == q[1]) for p in pts} for q in pts)
+    V["P1.factor"] = ok and len(set(pts)) == 6
+    return V
+
+
+def exhaustive():
+    C = {"t2_pairs": 0, "t2_W_checks": 0, "t2_single": 0, "t2_cancel": 0, "t2_viol": 0,
+         "t3_cases": 0, "t3_viol": 0, "p4_triples": 0, "p4_viol": 0, "trees": 0, "retained_sets": 0}
+    G = [0, 1, 2]
+    for n in range(1, 6):
+        for par in trees(n):
+            C["trees"] += 1
+            sets = retained_sets(par)
+            C["retained_sets"] += len(sets)
+            for keep in sets:
+                ks = sorted(keep); rem = [z for z in range(n) if z not in keep]
+                Ws = [set(c) for m in range(1, len(ks) + 1) for c in itertools.combinations(ks, m)]
+                for x in itertools.product(G, repeat=n):
+                    for xr in itertools.product(G, repeat=len(rem)):
+                        xp = list(x)
+                        for z, v in zip(rem, xr):
+                            xp[z] = v
+                        C["t2_pairs"] += 1
+                        a, b = push(par, keep, x), push(par, keep, xp)
+                        O = {t for t in ks if sum(x[u] - xp[u] for u in rem if owner(par, keep, u) == t) != 0}
+                        if {t for t in ks if a[t] != b[t]} != O:
+                            C["t2_viol"] += 1
+                        for W in Ws:
+                            C["t2_W_checks"] += 1
+                            if any(a[t] != b[t] for t in W) != bool(W & O):
+                                C["t2_viol"] += 1
+                        dz = [u for u in range(n) if x[u] != xp[u]]
+                        if len(dz) == 1:
+                            C["t2_single"] += 1
+                            if O != {owner(par, keep, dz[0])}:
+                                C["t2_viol"] += 1
+                        if dz and not O:
+                            C["t2_cancel"] += 1
+            full = frozenset(range(n))
+            def chains(prev, depth):
+                for s2 in sets:
+                    if s2 < prev:
+                        yield [s2]
+                        if depth > 1:
+                            for rest in chains(s2, depth - 1):
+                                yield [s2] + rest
+            for ch in chains(full, 3):
+                ever = [u for u in range(n) if u not in ch[-1]]
+                for u in ever:
+                    for x in itertools.product(G, repeat=n):
+                        for v in G:
+                            if v == x[u]:
+                                continue
+                            xp = list(x); xp[u] = v
+                            C["t3_cases"] += 1
+                            for keep in ch:
+                                a, b = push(par, keep, x), push(par, keep, xp)
+                                d = [t for t in sorted(keep) if a[t] != b[t]]
+                                if d != [owner(par, keep, u)] or a[d[0]] - b[d[0]] != x[u] - v:
+                                    C["t3_viol"] += 1
+                                    break
+    grid = [p for p in itertools.product(range(4), repeat=3) if sum(p) == 3]
+    dists = [{i: F(c, 3) for i, c in enumerate(p) if c} for p in grid]
+    other = {0: F(1, 3), 1: F(1, 3), 2: F(1, 3)}
+    for pu in dists:
+        for qu in dists:
+            for pa in dists:
+                C["p4_triples"] += 1
+                src, own = tv(pu, qu), tv(conv(pa, pu), conv(pa, qu))
+                if own > src or (len(pa) == 1 and own != src):
+                    C["p4_viol"] += 1
+                jp = {(i, j): a * b for i, a in conv(pa, pu).items() for j, b in other.items()}
+                jq = {(i, j): a * b for i, a in conv(pa, qu).items() for j, b in other.items()}
+                if tv(jp, jq) != own:
+                    C["p4_viol"] += 1
+    return C
+
+
+def main():
+    rsha = hashlib.sha256((ROOT / "RESULT.md").read_bytes()).hexdigest()
+    cert = {"meta": {"role": "producer", "result_sha256": rsha, "method": "pure-Python Fractions, nearest-ancestor walk"},
+            "values": instances(), "universe": exhaustive()}
+    Path(sys.argv[1]).write_text(json.dumps(cert, indent=1, sort_keys=True) + "\n")
+    print(json.dumps(cert["universe"], sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

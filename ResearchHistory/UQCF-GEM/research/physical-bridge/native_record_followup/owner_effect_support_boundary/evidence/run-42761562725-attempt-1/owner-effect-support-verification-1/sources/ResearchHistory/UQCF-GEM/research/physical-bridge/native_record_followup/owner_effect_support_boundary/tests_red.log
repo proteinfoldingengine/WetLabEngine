@@ -1,0 +1,50 @@
+test_complete_and_adverse_verdicts (test_review.ReviewContracts.test_complete_and_adverse_verdicts) ... FAIL
+test_complete_stdout_comparison (test_review.ReviewContracts.test_complete_stdout_comparison) ... FAIL
+test_incomplete_or_contradictory_verdict_rejected (test_review.ReviewContracts.test_incomplete_or_contradictory_verdict_rejected) ... FAIL
+test_manifest_exact_members_and_bytes (test_review.ReviewContracts.test_manifest_exact_members_and_bytes) ... FAIL
+test_manifest_path_escape_rejected (test_review.ReviewContracts.test_manifest_path_escape_rejected) ... FAIL
+
+======================================================================
+FAIL: test_complete_and_adverse_verdicts (test_review.ReviewContracts.test_complete_and_adverse_verdicts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/test_review.py", line 14, in setUp
+    self.assertIsNotNone(api,'review controller is not implemented')
+AssertionError: unexpectedly None : review controller is not implemented
+
+======================================================================
+FAIL: test_complete_stdout_comparison (test_review.ReviewContracts.test_complete_stdout_comparison)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/test_review.py", line 14, in setUp
+    self.assertIsNotNone(api,'review controller is not implemented')
+AssertionError: unexpectedly None : review controller is not implemented
+
+======================================================================
+FAIL: test_incomplete_or_contradictory_verdict_rejected (test_review.ReviewContracts.test_incomplete_or_contradictory_verdict_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/test_review.py", line 14, in setUp
+    self.assertIsNotNone(api,'review controller is not implemented')
+AssertionError: unexpectedly None : review controller is not implemented
+
+======================================================================
+FAIL: test_manifest_exact_members_and_bytes (test_review.ReviewContracts.test_manifest_exact_members_and_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/test_review.py", line 14, in setUp
+    self.assertIsNotNone(api,'review controller is not implemented')
+AssertionError: unexpectedly None : review controller is not implemented
+
+======================================================================
+FAIL: test_manifest_path_escape_rejected (test_review.ReviewContracts.test_manifest_path_escape_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/owner_effect_review/test_review.py", line 14, in setUp
+    self.assertIsNotNone(api,'review controller is not implemented')
+AssertionError: unexpectedly None : review controller is not implemented
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=5)

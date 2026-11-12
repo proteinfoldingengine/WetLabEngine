@@ -1,0 +1,19 @@
+test_a_audit_is_implemented (__main__.IntegrationTests.test_a_audit_is_implemented) ... FAIL
+test_complete_accepted_file_set (__main__.IntegrationTests.test_complete_accepted_file_set) ... skipped 'waiting for implementation'
+test_member_corruption_missing_and_extra (__main__.IntegrationTests.test_member_corruption_missing_and_extra) ... skipped 'waiting for implementation'
+test_missing_substituted_and_wrong_blob_files (__main__.IntegrationTests.test_missing_substituted_and_wrong_blob_files) ... skipped 'waiting for implementation'
+test_original_archives_and_changed_bytes (__main__.IntegrationTests.test_original_archives_and_changed_bytes) ... skipped 'waiting for implementation'
+test_scope_rejects_missing_unrelated_and_wrong_status (__main__.IntegrationTests.test_scope_rejects_missing_unrelated_and_wrong_status) ... skipped 'waiting for implementation'
+
+======================================================================
+FAIL: test_a_audit_is_implemented (__main__.IntegrationTests.test_a_audit_is_implemented)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/19dc6d30e949/integration117_staging/checkout/.github/scripts/uqcf_record_integration_tests.py", line 35, in test_a_audit_is_implemented
+    self.assertTrue(SCRIPT.is_file(), 'integration audit not implemented')
+AssertionError: False is not true : integration audit not implemented
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=1, skipped=5)

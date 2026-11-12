@@ -1,0 +1,170 @@
+[
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-m",
+      "pip",
+      "freeze"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "name": "dependencies"
+  },
+  {
+    "argv": [
+      "sha256sum",
+      "-c",
+      "PUBLICATION_SHA256SUMS"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0,
+    "name": "fcv-publication-checksums"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "tests/test_fcv.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0,
+    "name": "fcv-tests"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-m",
+      "unittest",
+      "-v",
+      "test_pruning_consistency_audit"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction",
+    "exit_code": 0,
+    "name": "parent-tests"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-m",
+      "unittest",
+      "-v"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent",
+    "exit_code": 0,
+    "name": "historical-tests"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "gate.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent",
+    "exit_code": 0,
+    "name": "historical-reproduction"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "produce_certificates.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0,
+    "name": "fcv-producer"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "verify_certificates.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+    "exit_code": 0,
+    "name": "fcv-independent-verifier"
+  },
+  {
+    "argv": [
+      "sha256sum",
+      "-c",
+      "SHA256SUMS"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/evidence/actions-41313483346/evidence",
+    "exit_code": 0,
+    "name": "original-publication-checksums"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-B",
+      "/home/runner/work/WetLabEngine/WetLabEngine/science/ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/produce.py"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "name": "original-certificate.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-B",
+      "/home/runner/work/WetLabEngine/WetLabEngine/science/ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/verify.py",
+      "/home/runner/work/WetLabEngine/WetLabEngine/evidence/original-certificate.json",
+      "/home/runner/work/WetLabEngine/WetLabEngine/science/ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/produce.py"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "name": "original-verification.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-B",
+      "test_controls.py",
+      "/home/runner/work/WetLabEngine/WetLabEngine/evidence/original-certificate.json",
+      "produce.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary",
+    "exit_code": 0,
+    "name": "original-controls.json"
+  },
+  {
+    "argv": [
+      "sha256sum",
+      "-c",
+      "SHA256SUMS"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/successor_t241/evidence/actions-41335726832",
+    "exit_code": 0,
+    "name": "successor-publication-checksums"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-B",
+      "/home/runner/work/WetLabEngine/WetLabEngine/science/ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/successor_t241/produce_s.py"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "name": "successor-certificate.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-B",
+      "/home/runner/work/WetLabEngine/WetLabEngine/science/ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/successor_t241/verify_s.py",
+      "/home/runner/work/WetLabEngine/WetLabEngine/evidence/successor-certificate.json",
+      "/home/runner/work/WetLabEngine/WetLabEngine/science/ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/successor_t241/produce_s.py"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "name": "successor-verification.json"
+  },
+  {
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+      "-B",
+      "test_controls_s.py",
+      "/home/runner/work/WetLabEngine/WetLabEngine/evidence/successor-certificate.json",
+      "produce_s.py"
+    ],
+    "cwd": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_delivery_boundary/successor_t241",
+    "exit_code": 0,
+    "name": "successor-controls.json"
+  }
+]

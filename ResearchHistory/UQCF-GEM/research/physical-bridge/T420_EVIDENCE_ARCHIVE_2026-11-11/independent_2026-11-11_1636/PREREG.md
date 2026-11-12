@@ -1,0 +1,12 @@
+# Q156/Q157 PREREG (2026-11-11T16:36:50-07:00) — Science, local. Serves the 15:44 target. NOT_DERIVED; Not claimed; scientific_breakthrough false.
+Preflight: no lock; research 47b938e2, thread 7109a28a, last PR111 6809447478 (our T-418) — all = 16:15 parent-note baselines; no newer comments.
+Q156 (does an inherited stochastic law make a later P1 event grade-dependent?) DROPPED at gate: the only inherited outcome law is RCR (v15.11 l.40, SUPPLIED actual record), and its owner identification is the settled T-354–T-357 trail (T-356-dot: missing equality z = alpha_r(e_a); T-357: common-z conditioning cannot carry the contrast). Restating it would add nothing.
+Q157 question: the time primitive is ordered recoverability update (v15.11 l.38, l.71: strict refinement/recoverability descent). Can a RECOVERABILITY predicate on the actual (single) pre-event state serve as GPT's value-sensitive guard (c72d1739 §5, first alternative) for the balanced pair x+=(1,1,2,1)/5, x-=(1,1,1,2)/5 on (o,p,u,v), with the event removing u (fiber {p,u})?
+Conjecture R (to prove/refute):
+ (a) "ω is recoverable after E by SOME channel" is constant (always true) for a single state: replacement channel. So it is blind.
+ (b) "ω is recoverable by the CANONICAL recovery", where the canonical recovery is the tracial lift attached to RAS's canonical conditional expectation (v15.11 l.29). This is the fixed-point test ω∘E = ω, i.e. the grade is uniform on each merged fiber. It is value-sensitive and fiber-local to the owner's provenance, and it separates the pair: x- has (x_p,x_u) = (1/5,1/5), fixed; x+ has (1/5,2/5), not fixed.
+ (c) The descent order of algebras itself is state-independent, so eligibility from the order alone falls under GPT's type induction.
+Premises: P1 grades INHERITED; RAS canonical tracial E SUPPLIED (v15.11 primitive); the uniform-weight trace on atoms ASSUMED (if grades carry atom multiplicities, the canonical lift is multiplicity-weighted; check sensitivity); balanced pair SUPPLIED test pair.
+PASS: (a) proved; (b) exact-fraction check that the predicate differs on x±, plus a proof that it equals per-fiber uniformity; (c) one-line proof. FAIL: if (b) fails to separate, or the predicate is not fiber-local.
+Counterexample strategy: weighted trace (multiplicities m_p, m_u), where the separating set changes; and a pair with both fibers uniform.
+Not adopted: using (b) as an eligibility rule is a SUPPLIED value-sensitive guard; it would be an inserted reader unless derived.

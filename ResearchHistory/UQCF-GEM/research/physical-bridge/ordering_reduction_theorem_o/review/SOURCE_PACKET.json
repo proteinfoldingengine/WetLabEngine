@@ -1,0 +1,83 @@
+{
+  "note": "Exact source excerpts cited by RESULT.md r1 header (receiver_move_interface §§1-3; first_pruning_own_view_review §§2,4,6,8).",
+  "source_commit": "b8adfb56e6cbc41ff1ab444b74f696e570101e03",
+  "sources": [
+    {
+      "byte_end": 3145,
+      "byte_start": 1222,
+      "commit": "b8adfb56e6cbc41ff1ab444b74f696e570101e03",
+      "content": "## 1. Exact category and proposed interface\n\nFix a finite rooted tree T with root o and a fixed finite palette P. Each support S_v is nonempty, S_o=P, and child supports are contained in parent supports. Write\n\n    Y_i = {v in T : i in S_v}.\n\nThe inherited atomic primitive adds or deletes one index incidence at one nonroot vertex while preserving those conditions. T and P stay fixed. This is the bare native admissibility of the cited v16.53 definition. Its separately stated hitting-profile path budget is NOT part of this transition relation. Neither C3 floors, protected supports, a scheduler, event rates, guaranteed acceptance, nor a physical legality oracle is inferred from the definition.\n\nFix a nonempty proper coalition C of receiver indices. The mathematical interface under test consists of its complete own views (Y_i) for i in C, the common T,P and references, and the admissibility of named atomic commands on those indices. To give the candidate its strongest version, one may hypothetically allow exact legality queries, execution of any admitted command, and observation of the resulting own views. This is a test interface, not already-earned native access. A rejected command leaves the state unchanged in that hypothetical query protocol; rejection flags are not supplied by the native category itself.\n\nOnly indices in C act during a receiver experiment. Indices outside C are held fixed in each compared state. Exogenous events, changing carriers, rates, timing, notifications and extra guards are separate interfaces.\n\nLet L_*(T) be the nonroot global leaves of T, and define the external coverage set\n\n    E_C(F) = {l in L_*(T) : some j outside C belongs to S_l(F)}.\n\nThis records existence of outside coverage, not the identities or number of outside owners. It is a sufficient mathematical description of external influence on this relation; the receiver is not assumed to start knowing E_C.\n\n",
+      "full_bytes": 14856,
+      "full_sha256": "91ea3f0e5581cd7e95a05dd1e21afa1d946e4d58e9ca4f74bec8b9e3d089bde2",
+      "git_blob": "0371d4a8aa66ce02ffbda084ad5dde93f1ec1136",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/RESULT.md",
+      "section": "1"
+    },
+    {
+      "byte_end": 4652,
+      "byte_start": 3145,
+      "commit": "b8adfb56e6cbc41ff1ab444b74f696e570101e03",
+      "content": "## 2. Exact one-command conditions\n\nFor i in C and v != o, addition +i(v) is admitted exactly when\n\n    v not in Y_i,                 parent(v) in Y_i.\n\nNonemptiness is preserved by an addition. Nesting at the parent requires the second condition. Since i was absent from v, nesting in the initial valid state already excludes i from all children of v. Hence no other index membership is consulted.\n\nDeletion -i(v) is admitted exactly when v belongs to Y_i, v is a tip of Y_i, and one of the following holds:\n\n- v is internal in T; or\n- v is a global leaf and either another coalition index contains v or v belongs to E_C(F).\n\nThe tip condition means no immediate child of v belongs to Y_i; prefix closure makes this equivalent to absence of all strict own-view descendants. It is precisely the nesting condition after deletion.\n\nFor the internal-vertex case, choose any child w of v. Its support is nonempty. Since i is absent from every child, some j != i belongs to S_w, and nesting gives j in S_v. Thus another index necessarily retains v; nonemptiness at v is automatic. For a global leaf there is no such descendant witness, and the displayed coverage condition is exactly S_v minus {i} being nonempty. This proves necessity and sufficiency in every case.\n\nThe argument is about valid mathematical states, not an event obtaining the terminal fact, the carrier, or the outside-coverage fact. In particular, a fact forced in a full-state proof need not be available as an executable local certificate.\n\n",
+      "full_bytes": 14856,
+      "full_sha256": "91ea3f0e5581cd7e95a05dd1e21afa1d946e4d58e9ca4f74bec8b9e3d089bde2",
+      "git_blob": "0371d4a8aa66ce02ffbda084ad5dde93f1ec1136",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/RESULT.md",
+      "section": "2"
+    },
+    {
+      "byte_end": 7517,
+      "byte_start": 4652,
+      "commit": "b8adfb56e6cbc41ff1ab444b74f696e570101e03",
+      "content": "## 3. Exact receiver interface through finite command histories\n\nSuppose F and G have the same T,P, the same own views for every i in C, and the same E_C. Then:\n\n1. Every named coalition command is admitted in F exactly when it is admitted in G.\n2. Performing the same admitted command changes the same own incidence and leaves the outside indices fixed. The two successors again have identical coalition views and E_C.\n3. An exact legality query gives the same answer in both, and a rejected query changes neither state.\n\nThe first statement follows directly from section 2; the second and third preserve its premises. Induction therefore gives identical admissibility answers and own-view observations along every finite adaptive coalition-command experiment using only this interface. Equivalently, the two command transition systems are related by an observation-preserving labelled bisimulation: matching commands remain possible and lead to matching interface states.\n\nFor a common processing/randomization rule driven only by these answers, own views, and source-independent reference/local-memory inputs, the transcript laws also coincide. This does NOT mean arbitrary physical processes with the same unweighted move graph have the same probabilities. A separately justified hidden-state-dependent rate or resolution law could differ; the bare relation supplies no such law. Source-dependent timing, availability or stopping signals must not be smuggled into an allegedly identical transcript.\n\nThe external coverage set is also necessary for equivalence of the FULL command interface when initial own views agree. Suppose a nonroot global leaf l is externally covered in F but not G. Validity of G requires at least one coalition owner at l; by identical own views the same owners occur in F. Choose one such owner i. Delete each other coalition owner's incidence at l, leaving i in place. These are global-leaf deletions admitted in both states, because i continues covering l. They do not change E_C. Now -i(l) is admitted in F and forbidden in G. Thus a finite successful-command language differs, and an exact final legality query would distinguish the states.\n\nThis necessity claim assumes the full interface, including the specified admitted preparatory commands. A smaller physically available command family may reveal less. It does not promise completion, a readable rejection, or execution of every legal request.\n\nConsequently, with fixed T,P and own-view observations, the pair\n\n    ((Y_i) for i in C, E_C)\n\nis an exact quotient of the bare coalition-command interface. External internal incidences carry no further information through this particular relation. This is stronger than a static unchanged-view statement because receiver actions, including additions and actual safe global-leaf deletions, are allowed throughout the comparison.\n\n",
+      "full_bytes": 14856,
+      "full_sha256": "91ea3f0e5581cd7e95a05dd1e21afa1d946e4d58e9ca4f74bec8b9e3d089bde2",
+      "git_blob": "0371d4a8aa66ce02ffbda084ad5dde93f1ec1136",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/RESULT.md",
+      "section": "3"
+    },
+    {
+      "byte_end": 2939,
+      "byte_start": 1638,
+      "commit": "b8adfb56e6cbc41ff1ab444b74f696e570101e03",
+      "content": "## 2. Native carrier and preparations\n\nUse the same finite rooted shape as the accepted construction:\n\n    T = {o,w} disjoint-union U disjoint-union V.                (1)\n\nThe root o has exactly three children u,v,w. U=desc[u] and V=desc[v] are arbitrary finite nonempty rooted cones; w is a leaf. The fixed palette is P={a,b,r}, S_o=P and S_w={r}. Nonempty supports nest from children to parents. The native primitive changes one label incidence at one nonroot vertex, retaining these conditions.\n\nPrepare:\n\n| Region | s=0 | s=1 |\n| --- | --- | --- |\n| every vertex in U | {a,r} | {a,b,r} |\n| every vertex in V | {a,b,r} | {a,r} |\n| w | {r} | {r} |\n| o | {a,b,r} | {a,b,r} |\n\nWrite A_0=U, B_0=V and A_1=V, B_1=U. A_s is the branch without b; B_s is the branch with b. These are proof labels, not instructions supplied to the receiver.\n\nIn both preparations:\n\n    Y_r = {z : r belongs to S_z} = T.                         (2)\n\nThis deliberately changes the earlier construction's initial receiver view from {o,w} to T. No acquisition is credited to adding r along a source-dependent path; r is already everywhere and identically so in both cases. The only preparation difference is b's view. The full initial hitting profile is all ones in both cases, although the theorem imposes no target profile.\n\n",
+      "full_bytes": 16612,
+      "full_sha256": "3841f8c25c79cc2231d14a505506929156ae054ba3c64c5233aad8732879b17d",
+      "git_blob": "5f4a3758cfc59b9a7d023d541a8765801254943b",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/RESULT.md",
+      "section": "2"
+    },
+    {
+      "byte_end": 5606,
+      "byte_start": 4378,
+      "commit": "b8adfb56e6cbc41ff1ab444b74f696e570101e03",
+      "content": "## 4. Same source operation, with no receiver repair\n\nLet D=U union V. In both preparations request exactly the same list of a-deletions: one at every vertex in D, in a common child-before-parent ordering. During this source phase r and b are fixed. Every deletion is legal in both cases because r remains at every vertex and the a-deletion order preserves nesting. There is no initially disabled deletion requiring a hidden source-dependent r-addition.\n\nAfter all these a-deletions have occurred:\n\n    S_z={r}       for z in A_s,\n    S_z={b,r}     for z in B_s,\n    S_w={r},      S_o=P,\n    Y_r=T.                                                    (4)\n\nThe source phase itself does NOT change r's view. It changes the external leaf coverage from (3) to E_r=L(B_s). The response proved next comes from native cross-index coverage constraints after that withdrawal. No receiver is assumed to read E_r or the b-view.\n\nSource withdrawal here is a supplied finite ordered operation list on existing primitives. Its enactment and the physical ordering that places a receiver response after it are not derived. There is no inference from submitting a command to its commitment and no source-completion notification is granted to r.\n\n",
+      "full_bytes": 16612,
+      "full_sha256": "3841f8c25c79cc2231d14a505506929156ae054ba3c64c5233aad8732879b17d",
+      "git_blob": "5f4a3758cfc59b9a7d023d541a8765801254943b",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/RESULT.md",
+      "section": "4"
+    },
+    {
+      "byte_end": 10178,
+      "byte_start": 8482,
+      "commit": "b8adfb56e6cbc41ff1ab444b74f696e570101e03",
+      "content": "## 6. Structural readout in the six-vertex witness\n\nChoose U={u,x,y}, where x,y are children of u, and V={v}. Thus T={o,u,x,y,v,w}. The same rooted structure and receiver role are reference data in both preparations.\n\nThe initial and post-source receiver view is T in both cases. The first proper responses are:\n\n| Source | All admitted first r-deletions | Full resulting view |\n| --- | --- | --- |\n| 0 | -r(v) | T minus {v} |\n| 1 | -r(x), -r(y) | T minus {x}, or T minus {y} |\n\nAll these first output views have cardinality FIVE. The previous endpoint size decoder (5 versus 3) must NOT be reused here.\n\nInstead define a partial decoder on the receiver's current own view and the same known T:\n\n    d(T) = UNKNOWN;\n    d(Z) = 1 if a depth-two vertex of T is missing from Z;\n    d(Z) = 0 if v is missing and no depth-two vertex is missing. (8)\n\nOnly reachable outputs in (5) are claimed. In source 0, the only possible missing vertex is v. In source 1, any nonempty missing set contains x or y: removal of u also requires removing both descendants. Therefore (8) is sound at EVERY nonidentity receiver-pruning prefix after source withdrawal.\n\nDepth means finite ancestor-chain length in the existing rooted tree, not a physical metric or fundamental time. The unique branching child u, its depth-two leaves and the receiver role transport under simultaneous tree/palette relabeling. The tests in (8) therefore do not depend on literal vertex names or an added cross-carrier dictionary. No source-dependent reference or b-view is read.\n\nIf own-view access is physically available, (8) is sufficient. Neither the existence of this function nor naming Z as an owned view derives that availability.\n\n",
+      "full_bytes": 16612,
+      "full_sha256": "3841f8c25c79cc2231d14a505506929156ae054ba3c64c5233aad8732879b17d",
+      "git_blob": "5f4a3758cfc59b9a7d023d541a8765801254943b",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/RESULT.md",
+      "section": "6"
+    },
+    {
+      "byte_end": 13538,
+      "byte_start": 11358,
+      "commit": "b8adfb56e6cbc41ff1ab444b74f696e570101e03",
+      "content": "## 8. Controls and limits on the protocol\n\n**Before source withdrawal, the same deletion can occur in both cases.** In the six-vertex fixture, -r(v) is legal initially in both because a covers v. It would misleadingly produce the source-0 record even in source 1. Thus the post-source phase is load-bearing. The theorem gives no all-phase decoder, source-completion flag, timing signal or way for r to verify that the source phase has finished.\n\n**The first source phase writes no own-view record.** Y_r remains T across every a-deletion. Its changed native response possibilities are a dependence available to the joint relation, not an already observed bit. A proper r-response is needed to turn it into a differing own view.\n\n**Post-response additions can erase the record.** In either case, reverse a single admitted r-deletion by the corresponding legal r-addition; the receiver view returns to T. Thus persistence is specific to receiver pruning. The first-step source classification is stronger than the persistence claim in one respect: from Y_r=T, a proper first receiver-only atomic edit cannot be an addition because no r-incidence is absent. Its direction is forced to be a deletion by saturation of the INITIAL r-view. This does not prevent later additions, and does not select the actor r or force any event.\n\n**Other labels acting can give no receiver response.** After (4), b may legally be deleted at a leaf of B_s while r remains there. That is a proper native event with Y_r unchanged. Consequently \"every proper event\" would be false without the explicitly receiver-owned response class.\n\n**Source stability matters.** Restoring a or changing b alters exclusive coverage and can invalidate the decoder. Fixing the external views during the r-response is an inherited receiver-experiment contract, not a new conservation law.\n\n**No hidden legality oracle.** Formula (7) is proved from the joint native state; the receiver need not be given it as input. There is no implementation that queries hidden supports, resolves a request, emits a rejection flag or records a chosen command. Any such implementation would supply the still-open action/access connection.\n\n",
+      "full_bytes": 16612,
+      "full_sha256": "3841f8c25c79cc2231d14a505506929156ae054ba3c64c5233aad8732879b17d",
+      "git_blob": "5f4a3758cfc59b9a7d023d541a8765801254943b",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/RESULT.md",
+      "section": "8"
+    }
+  ]
+}

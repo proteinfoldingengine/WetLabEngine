@@ -1,0 +1,88 @@
+{
+  "checkout_sha": "63863eaa177d34104f0662146fac2d750dceb1a5",
+  "documents": {
+    "FREEZE.json": "3ff4f58339b5c9f77af140df0303796f766b255e13919ae54befed9fcf00d82d",
+    "RESULT.md": "1673a23a321a394e468ad982e27288c5b9eb8b93ae1c370e9295d7e3a787ac09",
+    "SOURCE_PACKET.json": "7eda0519f63fd428818621a75a13b306d4bfd9e7453bc6ab1e9af5e6946540da"
+  },
+  "model": "gemini-3.1-pro-preview",
+  "native_bridge": "NOT_DERIVED",
+  "prompt_sha256": "6537b132038c31bb9d4e8177558ebe0fe1778b16d3c5fd3386c8ded60ac79169",
+  "response_sha256": "5b2167167cab55fb6139a83ba712050d842bbdb8d167b714956774bf2f18bd90",
+  "run_attempt": "1",
+  "run_id": "40252848780",
+  "scientific_execution": false,
+  "scientific_sha": "8e66dea87a2fa09fcd69ab33011f127d9031d6e7",
+  "source_commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+  "source_count": 6,
+  "sources": [
+    {
+      "byte_end": 21698,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 21698,
+      "excerpt_sha256": "139eba08052539de815af54c9744b11d5542464e064d49d5f02cd222ef111a2b",
+      "full_bytes": 21698,
+      "full_sha256": "139eba08052539de815af54c9744b11d5542464e064d49d5f02cd222ef111a2b",
+      "git_blob": "d5557538caaae6eaf20bb1d8602c1b224b8aafee",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/record_access/CONSTRUCTION.md"
+    },
+    {
+      "byte_end": 11593,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 11593,
+      "excerpt_sha256": "75ca6255eb81621e7dc44685df07eb522a9b1a5873c4dd7eebbc3039d3bb14b6",
+      "full_bytes": 11593,
+      "full_sha256": "75ca6255eb81621e7dc44685df07eb522a9b1a5873c4dd7eebbc3039d3bb14b6",
+      "git_blob": "95d0303d617422d74e61ae017f0354233ec9454b",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.13-independent-events/event_model.py"
+    },
+    {
+      "byte_end": 11548,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 11548,
+      "excerpt_sha256": "7d8889ad5afe72947a694119cb3e76c99625edeb4bd7ee0b518a2a24543f61ad",
+      "full_bytes": 11548,
+      "full_sha256": "7d8889ad5afe72947a694119cb3e76c99625edeb4bd7ee0b518a2a24543f61ad",
+      "git_blob": "44a87e4cc5bcf531ef7798aadab5d9dbba3482cb",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies/adaptive.py"
+    },
+    {
+      "byte_end": 6053,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 6053,
+      "excerpt_sha256": "1561c3552c5c86cb64ab4f0bf2e8172160a1db6037dcf206db9196b7839714fb",
+      "full_bytes": 6053,
+      "full_sha256": "1561c3552c5c86cb64ab4f0bf2e8172160a1db6037dcf206db9196b7839714fb",
+      "git_blob": "3877378a375a72c70587c98e8ff1c82d900774c5",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies/README.md"
+    },
+    {
+      "byte_end": 7240,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 7240,
+      "excerpt_sha256": "f1b2342c6133ca3efa0fa61d1f96668734472a07be9580263ce65c2c96abfbfb",
+      "full_bytes": 7240,
+      "full_sha256": "f1b2342c6133ca3efa0fa61d1f96668734472a07be9580263ce65c2c96abfbfb",
+      "git_blob": "0d65ef13285a51ba3dcd2cd023e53bdf3d578e2d",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.13-independent-events/README.md"
+    },
+    {
+      "byte_end": 7648,
+      "byte_start": 0,
+      "commit": "3ceb814258f43774b4af1352379ffcd0bd079599",
+      "excerpt_bytes": 7648,
+      "excerpt_sha256": "f8dabf185b2169cfe9196cd8522d2e1920d4b894e5444895b0acdb13da5526fd",
+      "full_bytes": 7648,
+      "full_sha256": "f8dabf185b2169cfe9196cd8522d2e1920d4b894e5444895b0acdb13da5526fd",
+      "git_blob": "19605ddf5a91c6607c9621796daffcbaf3d31978",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/record_consumer_trace/TRACE.md"
+    }
+  ],
+  "status": "PASS",
+  "workflow_sha": "63863eaa177d34104f0662146fac2d750dceb1a5"
+}
