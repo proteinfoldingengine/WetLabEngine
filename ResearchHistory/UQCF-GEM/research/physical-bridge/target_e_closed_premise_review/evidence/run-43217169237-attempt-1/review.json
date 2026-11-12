@@ -1,0 +1,59 @@
+{
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Formulate an inherited operation identifying an available effect with the same retained provenance and transporting its action through the actual event, or prove the minimal missing physical premise in a sharply defined class.",
+  "proof_checks": [
+    {
+      "claim": "normalization and orthogonality of e_u(t)",
+      "reasoning": "The norm squared of e_u(t) is ((1-t^2)^2 + 4t^2)/(1+t^2)^2 = (1 - 2t^2 + t^4 + 4t^2)/(1+t^2)^2 = (1+t^2)^2/(1+t^2)^2 = 1. Orthogonality to e_0=|00> holds because e_u(t) is a superposition of |10> and |01>, which are orthogonal to |00>."
+    },
+    {
+      "claim": "exact reduced channel on all matrix units",
+      "reasoning": "By RD-0, any isometry with W|j> = |j>|e_0> for j in Y and W|u> = |p>|e_u> where e_0, e_u are orthonormal implements the exact reduced channel C. The constructed W_t satisfies this condition."
+    },
+    {
+      "claim": "proper-R marginal",
+      "reasoning": "Tracing out E from |e_u(t)><e_u(t)| eliminates cross terms between |10> and |01> because the E states |1> and |0> are orthogonal. This yields the exact tau_u(t) claimed: [(1-t^2)^2 |0><0| + 4t^2 |1><1|]/(1+t^2)^2."
+    },
+    {
+      "claim": "single fixed effect and rational sequence",
+      "reasoning": "The fixed effect F = I_S \\otimes I_E \\otimes |1><1| extracts the |1><1| component of tau_u(t) - tau_0, which is exactly 4t^2/(1+t^2)^2. At t=1/n, this evaluates to 4n^2/(5(n^2+1)^2) <= 4/(5n^2), which correctly limits to 0 as n goes to infinity."
+    },
+    {
+      "claim": "pointwise positivity versus an infimum and versus an attained minimum",
+      "reasoning": "For any t>0, d_R(W_t) > 0, so it is pointwise positive. The infimum over 0<t<=1 is 0. A closed subset avoiding B_R would attain its minimum by compactness, which would be strictly positive."
+    },
+    {
+      "claim": "compactness of the whole isometry class",
+      "reasoning": "The class W(C,K) is the continuous image of the compact group U(K) under the orbit map defined in RD-0, hence it is compact."
+    },
+    {
+      "claim": "continuity of trace distance",
+      "reasoning": "Trace distance is continuous with respect to the matrix entries, which depend continuously on the isometry W."
+    },
+    {
+      "claim": "declared weakness order and no inclusion-maximal closed sufficient set",
+      "reasoning": "Since G is not closed, any closed S contained in G is a proper subset. We can always add a point W' in G \\setminus S to form a strictly larger closed subset S \\cup {W'} that still avoids B_R."
+    },
+    {
+      "claim": "nonvacuity",
+      "reasoning": "The singleton set {W_R} is closed, contains W_R, and avoids B_R, so the class C_closed is non-empty."
+    },
+    {
+      "claim": "rotating-R countercontrol for a common binary effect",
+      "reasoning": "For any fixed binary effect F_R with eigenbasis a, b, choosing U_R to map |0> to (a+b)/sqrt(2) and |1> to (a-b)/sqrt(2) results in both tau_0' and tau_u' having expectation Tr(F_R)/2, yielding zero contrast."
+    },
+    {
+      "claim": "multiple-outcome measurements/effect families are not excluded",
+      "reasoning": "The countercontrol explicitly relies on F_R being a single binary effect (or scalar). An informationally complete measurement could still distinguish the states."
+    },
+    {
+      "claim": "retained-source p-effect remains a separate realization-invariant 1/5 result",
+      "reasoning": "As established in RD-5 and the owner_directive, the retained-source p-effect contrast is 1/5 for all W in W(C,K), which is unaffected by the proper-R marginal analysis."
+    }
+  ],
+  "verdict": "ACCEPTED"
+}
