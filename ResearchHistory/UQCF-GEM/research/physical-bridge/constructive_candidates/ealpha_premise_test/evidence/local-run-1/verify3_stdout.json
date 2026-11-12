@@ -1,0 +1,200 @@
+{
+ "P_a": {
+  "A": {
+   "OR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": true
+   },
+   "X1": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3_identityU": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "XOR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": true
+   },
+   "choi_rank_C1C2": 3
+  },
+  "B": {
+   "OR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": false
+   },
+   "X1": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": true,
+    "isometric_composites": true
+   },
+   "X3_identityU": {
+    "O": true,
+    "composite_C1C2": true,
+    "event1_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "event2_DE_DR": [
+     0.0,
+     0.2
+    ],
+    "explicit_U": false,
+    "isometric_composites": true
+   },
+   "XOR": {
+    "O": true,
+    "composite_C1C2": false,
+    "isometric_composites": false
+   },
+   "choi_rank_C1C2": 4,
+   "overwrite": {
+    "O": false,
+    "composite_C1C2": true,
+    "isometric_composites": true
+   }
+  }
+ },
+ "P_b": {
+  "W_Bell": {
+   "max_S_E": 1.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_E": {
+   "max_S_E": 1.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": -1.0
+  },
+  "W_ER": {
+   "max_S_E": 1.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_R": {
+   "max_S_E": 0.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_R^g": {
+   "max_S_E": 0.0,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  },
+  "W_W": {
+   "max_S_E": 0.966061477,
+   "min_slack_K": 0.0,
+   "min_slack_R": -0.188721876
+  },
+  "W_theta(pi/8)": {
+   "max_S_E": 0.600876037,
+   "min_slack_K": 0.0,
+   "min_slack_R": 0.0
+  }
+ },
+ "admission": {
+  "W_Bell": {
+   "D_E": 0.0,
+   "D_R": 0.0,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_E": {
+   "D_E": 0.2,
+   "D_R": 0.0,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_ER": {
+   "D_E": 0.2,
+   "D_R": 0.2,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_R": {
+   "D_E": 0.0,
+   "D_R": 0.2,
+   "admitted": true,
+   "implements_C": true
+  },
+  "W_R^g": {
+   "D_E": 0.0,
+   "D_R": 0.2,
+   "admitted": true,
+   "implements_C": true
+  },
+  "W_W": {
+   "D_E": 0.1,
+   "D_R": 0.1,
+   "admitted": false,
+   "implements_C": true
+  },
+  "W_theta(pi/8)": {
+   "D_E": 0.0,
+   "D_R": 0.141421356237,
+   "admitted": false,
+   "implements_C": true
+  }
+ }
+}
