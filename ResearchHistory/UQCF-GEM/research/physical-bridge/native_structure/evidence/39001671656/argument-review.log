@@ -1,0 +1,268 @@
+﻿2026-10-17T04:12:12.0452183Z Current runner version: '2.337.0'
+2026-10-17T04:12:12.0477597Z ##[group]Runner Image Provisioner
+2026-10-17T04:12:12.0478526Z Hosted Compute Agent
+2026-10-17T04:12:12.0479235Z Version: 20261012.601
+2026-10-17T04:12:12.0480205Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-17T04:12:12.0480969Z Build Date: 2026-10-12T17:48:21Z
+2026-10-17T04:12:12.0481770Z Worker ID: {6fd49d4f-ac5d-48f7-a7b7-5aade1635dd0}
+2026-10-17T04:12:12.0482516Z Region: westcentralus
+2026-10-17T04:12:12.0483143Z Cloud: Azure
+2026-10-17T04:12:12.0483750Z ##[endgroup]
+2026-10-17T04:12:12.0485481Z ##[group]Operating System
+2026-10-17T04:12:12.0486257Z Ubuntu
+2026-10-17T04:12:12.0486808Z 24.04.5
+2026-10-17T04:12:12.0487396Z LTS
+2026-10-17T04:12:12.0487980Z ##[endgroup]
+2026-10-17T04:12:12.0488564Z ##[group]Runner Image
+2026-10-17T04:12:12.0489273Z Image: ubuntu-24.04
+2026-10-17T04:12:12.0490268Z Version: 20261012.334.1
+2026-10-17T04:12:12.0492203Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-17T04:12:12.0493976Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-17T04:12:12.0495052Z ##[endgroup]
+2026-10-17T04:12:12.0496206Z ##[group]GITHUB_TOKEN Permissions
+2026-10-17T04:12:12.0498543Z Contents: read
+2026-10-17T04:12:12.0499181Z Metadata: read
+2026-10-17T04:12:12.0500166Z ##[endgroup]
+2026-10-17T04:12:12.0502483Z Secret source: Actions
+2026-10-17T04:12:12.0503635Z Cache mode: write
+2026-10-17T04:12:12.0504770Z Prepare workflow directory
+2026-10-17T04:12:12.1112398Z Prepare all required actions
+2026-10-17T04:12:12.1187016Z Getting action download info
+2026-10-17T04:12:12.4073589Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-17T04:12:12.5206743Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-17T04:12:12.7192531Z Complete job name: argument-review
+2026-10-17T04:12:12.7892837Z ##[group]Run actions/checkout@v4
+2026-10-17T04:12:12.7893782Z with:
+2026-10-17T04:12:12.7894287Z   ref: 1f64a0cb5c56132a41aa909355dc11ff79db599d
+2026-10-17T04:12:12.7894915Z   persist-credentials: false
+2026-10-17T04:12:12.7895785Z   sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/native_structure
+.github
+
+2026-10-17T04:12:12.7896774Z   repository: proteinfoldingengine/WetLabEngine
+2026-10-17T04:12:12.7900794Z   token: ***
+2026-10-17T04:12:12.7901250Z   ssh-strict: true
+2026-10-17T04:12:12.7901714Z   ssh-user: git
+2026-10-17T04:12:12.7902145Z   clean: true
+2026-10-17T04:12:12.7902607Z   sparse-checkout-cone-mode: true
+2026-10-17T04:12:12.7903152Z   fetch-depth: 1
+2026-10-17T04:12:12.7903648Z   fetch-tags: false
+2026-10-17T04:12:12.7904110Z   show-progress: true
+2026-10-17T04:12:12.7904581Z   lfs: false
+2026-10-17T04:12:12.7905014Z   submodules: false
+2026-10-17T04:12:12.7905535Z   set-safe-directory: true
+2026-10-17T04:12:12.7906106Z   allow-unsafe-pr-checkout: false
+2026-10-17T04:12:12.7906903Z env:
+2026-10-17T04:12:12.7907472Z   UQCF_WORKFLOW_SHA: 1f64a0cb5c56132a41aa909355dc11ff79db599d
+2026-10-17T04:12:12.7908137Z ##[endgroup]
+2026-10-17T04:12:12.8938568Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-10-17T04:12:12.8941625Z ##[group]Getting Git version info
+2026-10-17T04:12:12.8942934Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-17T04:12:12.8944746Z [command]/usr/bin/git version
+2026-10-17T04:12:12.9026656Z git version 2.55.0
+2026-10-17T04:12:12.9051988Z ##[endgroup]
+2026-10-17T04:12:12.9078620Z Temporarily overriding HOME='/home/runner/work/_temp/ca032672-0233-498e-a0b1-ebbf9597122e' before making global git config changes
+2026-10-17T04:12:12.9088224Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-17T04:12:12.9090511Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-17T04:12:12.9140939Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-10-17T04:12:12.9151880Z ##[group]Initializing the repository
+2026-10-17T04:12:12.9153349Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-17T04:12:12.9270526Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-17T04:12:12.9272796Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-17T04:12:12.9274642Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-17T04:12:12.9276072Z hint: call:
+2026-10-17T04:12:12.9276876Z hint:
+2026-10-17T04:12:12.9277929Z hint: 	git config --global init.defaultBranch <name>
+2026-10-17T04:12:12.9279198Z hint:
+2026-10-17T04:12:12.9281497Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-17T04:12:12.9283244Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-17T04:12:12.9284745Z hint:
+2026-10-17T04:12:12.9285810Z hint: 	git branch -m <name>
+2026-10-17T04:12:12.9286824Z hint:
+2026-10-17T04:12:12.9288022Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-17T04:12:12.9290329Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-10-17T04:12:12.9292838Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-17T04:12:12.9339158Z ##[endgroup]
+2026-10-17T04:12:12.9340737Z ##[group]Disabling automatic garbage collection
+2026-10-17T04:12:12.9344463Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-17T04:12:12.9379459Z ##[endgroup]
+2026-10-17T04:12:12.9381122Z ##[group]Setting up auth
+2026-10-17T04:12:12.9387258Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-17T04:12:12.9434910Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-17T04:12:12.9828104Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-17T04:12:12.9867043Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-17T04:12:13.0132473Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-17T04:12:13.0184102Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-17T04:12:13.0440575Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-17T04:12:13.0485611Z ##[endgroup]
+2026-10-17T04:12:13.0487043Z ##[group]Fetching the repository
+2026-10-17T04:12:13.0498595Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin 1f64a0cb5c56132a41aa909355dc11ff79db599d
+2026-10-17T04:12:13.7907593Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-10-17T04:12:13.7910141Z  * branch            1f64a0cb5c56132a41aa909355dc11ff79db599d -> FETCH_HEAD
+2026-10-17T04:12:13.7971702Z ##[endgroup]
+2026-10-17T04:12:13.7973760Z ##[group]Determining the checkout info
+2026-10-17T04:12:13.7975903Z ##[endgroup]
+2026-10-17T04:12:13.7977826Z ##[group]Setting up sparse checkout
+2026-10-17T04:12:13.7980466Z [command]/usr/bin/git sparse-checkout set ResearchHistory/UQCF-GEM/research/physical-bridge/native_structure .github
+2026-10-17T04:12:13.9279026Z ##[endgroup]
+2026-10-17T04:12:13.9281555Z ##[group]Checking out the ref
+2026-10-17T04:12:13.9283677Z [command]/usr/bin/git checkout --progress --force 1f64a0cb5c56132a41aa909355dc11ff79db599d
+2026-10-17T04:12:14.9435565Z Updating files:  43% (332/765)
+2026-10-17T04:12:14.9442989Z Updating files:  44% (337/765)
+2026-10-17T04:12:14.9470986Z Updating files:  45% (345/765)
+2026-10-17T04:12:14.9471737Z Updating files:  46% (352/765)
+2026-10-17T04:12:14.9472604Z Updating files:  47% (360/765)
+2026-10-17T04:12:14.9473221Z Updating files:  48% (368/765)
+2026-10-17T04:12:14.9493150Z Updating files:  49% (375/765)
+2026-10-17T04:12:14.9493828Z Updating files:  50% (383/765)
+2026-10-17T04:12:14.9494447Z Updating files:  51% (391/765)
+2026-10-17T04:12:14.9498791Z Updating files:  52% (398/765)
+2026-10-17T04:12:14.9509579Z Updating files:  53% (406/765)
+2026-10-17T04:12:14.9512191Z Updating files:  54% (414/765)
+2026-10-17T04:12:14.9518466Z Updating files:  55% (421/765)
+2026-10-17T04:12:14.9524787Z Updating files:  56% (429/765)
+2026-10-17T04:12:14.9530585Z Updating files:  57% (437/765)
+2026-10-17T04:12:14.9536220Z Updating files:  58% (444/765)
+2026-10-17T04:12:14.9540858Z Updating files:  59% (452/765)
+2026-10-17T04:12:14.9547336Z Updating files:  60% (459/765)
+2026-10-17T04:12:14.9552049Z Updating files:  61% (467/765)
+2026-10-17T04:12:14.9557556Z Updating files:  62% (475/765)
+2026-10-17T04:12:14.9562690Z Updating files:  63% (482/765)
+2026-10-17T04:12:14.9568518Z Updating files:  64% (490/765)
+2026-10-17T04:12:14.9573875Z Updating files:  65% (498/765)
+2026-10-17T04:12:14.9579608Z Updating files:  66% (505/765)
+2026-10-17T04:12:14.9585019Z Updating files:  67% (513/765)
+2026-10-17T04:12:14.9589774Z Updating files:  68% (521/765)
+2026-10-17T04:12:14.9595643Z Updating files:  69% (528/765)
+2026-10-17T04:12:14.9602942Z Updating files:  70% (536/765)
+2026-10-17T04:12:14.9607761Z Updating files:  71% (544/765)
+2026-10-17T04:12:14.9613533Z Updating files:  72% (551/765)
+2026-10-17T04:12:14.9619759Z Updating files:  73% (559/765)
+2026-10-17T04:12:14.9629046Z Updating files:  74% (567/765)
+2026-10-17T04:12:14.9636433Z Updating files:  75% (574/765)
+2026-10-17T04:12:14.9642205Z Updating files:  76% (582/765)
+2026-10-17T04:12:14.9647945Z Updating files:  77% (590/765)
+2026-10-17T04:12:14.9654504Z Updating files:  78% (597/765)
+2026-10-17T04:12:14.9660477Z Updating files:  79% (605/765)
+2026-10-17T04:12:14.9667217Z Updating files:  80% (612/765)
+2026-10-17T04:12:14.9673612Z Updating files:  81% (620/765)
+2026-10-17T04:12:14.9679491Z Updating files:  82% (628/765)
+2026-10-17T04:12:14.9685362Z Updating files:  83% (635/765)
+2026-10-17T04:12:14.9690492Z Updating files:  84% (643/765)
+2026-10-17T04:12:14.9695915Z Updating files:  85% (651/765)
+2026-10-17T04:12:14.9702037Z Updating files:  86% (658/765)
+2026-10-17T04:12:14.9707457Z Updating files:  87% (666/765)
+2026-10-17T04:12:14.9713199Z Updating files:  88% (674/765)
+2026-10-17T04:12:14.9718896Z Updating files:  89% (681/765)
+2026-10-17T04:12:14.9724657Z Updating files:  90% (689/765)
+2026-10-17T04:12:14.9730316Z Updating files:  91% (697/765)
+2026-10-17T04:12:14.9736128Z Updating files:  92% (704/765)
+2026-10-17T04:12:14.9742500Z Updating files:  93% (712/765)
+2026-10-17T04:12:14.9747627Z Updating files:  94% (720/765)
+2026-10-17T04:12:14.9754743Z Updating files:  95% (727/765)
+2026-10-17T04:12:14.9761352Z Updating files:  96% (735/765)
+2026-10-17T04:12:14.9767741Z Updating files:  97% (743/765)
+2026-10-17T04:12:14.9778603Z Updating files:  98% (750/765)
+2026-10-17T04:12:14.9787004Z Updating files:  99% (758/765)
+2026-10-17T04:12:14.9787681Z Updating files: 100% (765/765)
+2026-10-17T04:12:14.9788239Z Updating files: 100% (765/765), done.
+2026-10-17T04:12:14.9911337Z Note: switching to '1f64a0cb5c56132a41aa909355dc11ff79db599d'.
+2026-10-17T04:12:14.9912114Z 
+2026-10-17T04:12:14.9912456Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-17T04:12:14.9913037Z changes and commit them, and you can discard any commits you make in this
+2026-10-17T04:12:14.9913581Z state without impacting any branches by switching back to a branch.
+2026-10-17T04:12:14.9913886Z 
+2026-10-17T04:12:14.9914111Z If you want to create a new branch to retain commits you create, you may
+2026-10-17T04:12:14.9914615Z do so (now or later) by using -c with the switch command. Example:
+2026-10-17T04:12:14.9915014Z 
+2026-10-17T04:12:14.9915160Z   git switch -c <new-branch-name>
+2026-10-17T04:12:14.9915399Z 
+2026-10-17T04:12:14.9915754Z Or undo this operation with:
+2026-10-17T04:12:14.9915962Z 
+2026-10-17T04:12:14.9916077Z   git switch -
+2026-10-17T04:12:14.9916228Z 
+2026-10-17T04:12:14.9916479Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-17T04:12:14.9916820Z 
+2026-10-17T04:12:14.9917173Z HEAD is now at 1f64a0c Separate algebra access from single-reference resources; inspect native lineage route
+2026-10-17T04:12:14.9926663Z ##[endgroup]
+2026-10-17T04:12:14.9973405Z [command]/usr/bin/git log -1 --format=%H
+2026-10-17T04:12:15.0003011Z 1f64a0cb5c56132a41aa909355dc11ff79db599d
+2026-10-17T04:12:15.0013925Z ##[group]Removing auth
+2026-10-17T04:12:15.0017966Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-17T04:12:15.0053257Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-17T04:12:15.0294850Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-17T04:12:15.0329306Z http.https://github.com/.extraheader
+2026-10-17T04:12:15.0338619Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-17T04:12:15.0375391Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-17T04:12:15.0607670Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-17T04:12:15.0640886Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-17T04:12:15.0867164Z ##[endgroup]
+2026-10-17T04:12:15.1073282Z ##[group]Run python3 .github/scripts/uqcf_native_structure_review.py
+2026-10-17T04:12:15.1073928Z [36;1mpython3 .github/scripts/uqcf_native_structure_review.py[0m
+2026-10-17T04:12:15.1337508Z shell: /usr/bin/bash -e {0}
+2026-10-17T04:12:15.1337855Z env:
+2026-10-17T04:12:15.1338186Z   UQCF_WORKFLOW_SHA: 1f64a0cb5c56132a41aa909355dc11ff79db599d
+2026-10-17T04:12:15.1338948Z   GEMINI_API_KEY: ***
+2026-10-17T04:12:15.1339238Z ##[endgroup]
+2026-10-17T04:12:38.2332559Z Review incomplete; preserved evidence, no secrets printed.
+2026-10-17T04:12:38.2333027Z GEMINI_RAW_REVIEW_BEGIN
+2026-10-17T04:12:38.2333824Z {
+2026-10-17T04:12:38.2334387Z   "verdict": "ACCEPTED",
+2026-10-17T04:12:38.2334794Z   "findings": [
+2026-10-17T04:12:38.2336807Z     "Reconstructed the TV=1 known-algebra access versus TV=1/2 single quantum reference comparison. The known algebra B=span{|0><0|,|1><1|} yields TV=1 via the center_access_growth formula, whereas a single reference state sigma=|0><0| yields a maximum TV=1/2 via relational_reference_admission Theorem B.",
+2026-10-17T04:12:38.2339450Z     "Verified that the 2026-10-17 pruning note conflated these distinct resource classes. The optimum transfer is unsupported because classical knowledge/access to a projector algebra is a stronger resource than possession of a single reference system under invariant operations, and no explicit simulation theorem was provided.",
+2026-10-17T04:12:38.2341933Z     "Checked the native lineage source ledger against the v15.56 modules. The modules supply combinatorial operators (e.g., lineage Laplacian) and diagnostic constructions (rooted Green invariant) but do not derive a quantum representation, physical evolution, or measurement event.",
+2026-10-17T04:12:38.2343681Z     "Confirmed the spectral-access candidate stop: embedding a finite graph to obtain spectral projectors does not natively supply the rule making those projectors accessible, nor does it supply the physical event selecting the algebra.",
+2026-10-17T04:12:38.2345474Z     "Successfully challenged the notions that covariance is a native law, that a graph Laplacian inherently entails evolution or measurement, or that a native interaction has been achieved. The document correctly identifies these as supplied premises rather than earned native structures."
+2026-10-17T04:12:38.2346920Z   ],
+2026-10-17T04:12:38.2347130Z   "missing_assumptions": [],
+2026-10-17T04:12:38.2347411Z   "counterexamples": [],
+2026-10-17T04:12:38.2347649Z   "limitations": [
+2026-10-17T04:12:38.2348167Z     "This is an exploratory analytical correction and bounded source investigation, not a preregistered numerical discovery.",
+2026-10-17T04:12:38.2349039Z     "Does not break the physical deadlock, establish a new no-go theorem, or certify archive-wide absence of a native interaction.",
+2026-10-17T04:12:38.2414204Z     "No scientific Python module was imported or executed; no inherited numerical stack is claimed.",
+2026-10-17T04:12:38.2415302Z     "Broad C3/C4-C6 and native interaction remain OPEN.",
+2026-10-17T04:12:38.2416735Z     "Does not claim that all conceivable reductions between P_B and P_J are impossible, only that the literal optimum transfer in the inspected note is unsupported."
+2026-10-17T04:12:38.2417830Z   ]
+2026-10-17T04:12:38.2418246Z }
+2026-10-17T04:12:38.2418561Z GEMINI_RAW_REVIEW_END
+2026-10-17T04:12:38.2442322Z ##[error]Process completed with exit code 1.
+2026-10-17T04:12:38.2551909Z ##[group]Run actions/upload-artifact@v4
+2026-10-17T04:12:38.2552250Z with:
+2026-10-17T04:12:38.2552474Z   name: native-structure-review-1
+2026-10-17T04:12:38.2552752Z   path: native_structure_review
+2026-10-17T04:12:38.2553001Z   retention-days: 90
+2026-10-17T04:12:38.2553232Z   if-no-files-found: warn
+2026-10-17T04:12:38.2553476Z   compression-level: 6
+2026-10-17T04:12:38.2553727Z   overwrite: false
+2026-10-17T04:12:38.2553957Z   include-hidden-files: false
+2026-10-17T04:12:38.2554194Z env:
+2026-10-17T04:12:38.2554447Z   UQCF_WORKFLOW_SHA: 1f64a0cb5c56132a41aa909355dc11ff79db599d
+2026-10-17T04:12:38.2554776Z ##[endgroup]
+2026-10-17T04:12:38.4183439Z (node:2468) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-17T04:12:38.4184639Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-17T04:12:38.4273548Z With the provided path, there will be 6 files uploaded
+2026-10-17T04:12:38.4274540Z Artifact name is valid!
+2026-10-17T04:12:38.4274942Z Root directory input is valid!
+2026-10-17T04:12:38.7293463Z Beginning upload of artifact content to blob storage
+2026-10-17T04:12:38.7595821Z (node:2468) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-17T04:12:39.0111727Z Uploaded bytes 40357
+2026-10-17T04:12:39.0727341Z Finished uploading artifact content to blob storage!
+2026-10-17T04:12:39.0728415Z SHA256 digest of uploaded artifact zip is 5a44d2b37d34cd2bf396a59958e11568d89678bc2b03dc36c2e78f740da6f99c
+2026-10-17T04:12:39.0731113Z Finalizing artifact upload
+2026-10-17T04:12:39.2962857Z Artifact native-structure-review-1.zip successfully finalized. Artifact ID 12089855386
+2026-10-17T04:12:39.2964190Z Artifact native-structure-review-1 has been successfully uploaded! Final size is 40357 bytes. Artifact ID is 12089855386
+2026-10-17T04:12:39.2965678Z Artifact download URL: https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/39001671656/artifacts/12089855386
+2026-10-17T04:12:39.3176152Z Post job cleanup.
+2026-10-17T04:12:39.4062491Z [command]/usr/bin/git version
+2026-10-17T04:12:39.4107006Z git version 2.55.0
+2026-10-17T04:12:39.4149237Z Temporarily overriding HOME='/home/runner/work/_temp/3f94fb0a-a0b4-4790-8e20-3f4182ec76ac' before making global git config changes
+2026-10-17T04:12:39.4150854Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-17T04:12:39.4156107Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-10-17T04:12:39.4197278Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-17T04:12:39.4235110Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-17T04:12:39.4500010Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-17T04:12:39.4539632Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-17T04:12:39.4804170Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-17T04:12:39.4860938Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-17T04:12:39.5321255Z Cleaning up orphan processes
+2026-10-17T04:12:39.5718085Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
