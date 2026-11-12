@@ -1,0 +1,82 @@
+{
+  "checkout_sha": "3fb80b3fefef37ddfc4f03877aad994e870b4cec",
+  "commands": [
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stage": "dependencies"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "tests/test_fcv.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "stage": "fcv-tests"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pruning_consistency_audit"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction",
+      "exit_code": 0,
+      "stage": "parent-tests"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent",
+      "exit_code": 0,
+      "stage": "historical-tests"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "gate.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent",
+      "exit_code": 0,
+      "stage": "historical-reproduction"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "produce_certificates.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "stage": "producer"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+        "verify_certificates.py"
+      ],
+      "cwd": "ResearchHistory/UQCF-GEM/foundational-closure-verification",
+      "exit_code": 0,
+      "stage": "independent-verifier"
+    }
+  ],
+  "fresh_byte_reproduction": false,
+  "mode": "verify",
+  "native_bridge": "NOT_DERIVED",
+  "run_attempt": "1",
+  "run_id": "42420884489",
+  "status": "PASS",
+  "workflow_sha": "3fb80b3fefef37ddfc4f03877aad994e870b4cec"
+}
