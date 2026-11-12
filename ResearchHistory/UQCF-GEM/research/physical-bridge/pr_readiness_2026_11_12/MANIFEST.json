@@ -1,0 +1,34 @@
+{
+  "schema": "uqcf-pr-readiness-publication-manifest/v1",
+  "date": "2026-11-12",
+  "base_before_publication": "48e4282aae98f554ebc5c4dcd333bda304b04c9a",
+  "ready_count": 13,
+  "native_bridge": "NOT_DERIVED",
+  "self_hash_excluded": true,
+  "files": [
+    {
+      "path": "STATUS.md",
+      "bytes": 13265,
+      "sha256": "bde421c95c26d1aebdce1d8e773f8d1e0e4da6bb024002d5bb7ad1583a5d532b",
+      "git_blob": "8c64e57011e95a28e4e672e5eeb05673b4b69995"
+    },
+    {
+      "path": "FINAL_READBACK.json",
+      "bytes": 151400,
+      "sha256": "71759446dad9e604a093c920380eb14d85927df200f5e86d704288c048208c62",
+      "git_blob": "bb0450d7b894f6c7a43560e55557eb1f3da86134"
+    },
+    {
+      "path": "AUDIT_EXISTING.json",
+      "bytes": 504481,
+      "sha256": "4cecc3d192384fe2b3463cc1daf6deb53d4ae7213cb801d586c885e9a1826dfd",
+      "git_blob": "c14293f504e23c0f1073723cd0912cac03d13052"
+    },
+    {
+      "path": "PR106_MERGE_CHECK_AS_RUN.py",
+      "bytes": 8100,
+      "sha256": "7128f783c5333a54b8502150ed062f7d3d5c0840a014e48d427f45babc2574ee",
+      "git_blob": "ac5120dd23ffbf7bacecf3943fee33780f3532fa"
+    }
+  ]
+}
