@@ -1,0 +1,23 @@
+test_adverse_verdict_not_infrastructure_error (test_review.ProtocolTests.test_adverse_verdict_not_infrastructure_error) ... ok
+test_empty_reconstruction_rejected (test_review.ProtocolTests.test_empty_reconstruction_rejected) ... ok
+test_false_acceptance_rejected (test_review.ProtocolTests.test_false_acceptance_rejected) ... ok
+test_identity_mutations_rejected (test_review.ProtocolTests.test_identity_mutations_rejected) ... ok
+test_original_attempt_not_hidden_by_later_skipped_job (test_review.ProtocolTests.test_original_attempt_not_hidden_by_later_skipped_job) ... FAIL
+test_raw_native_label_not_silently_rewritten (test_review.ProtocolTests.test_raw_native_label_not_silently_rewritten) ... ok
+test_real_manifest_mutations_rejected (test_review.ProtocolTests.test_real_manifest_mutations_rejected) ... ok
+test_reject_repeated_or_uncertain_generation (test_review.ProtocolTests.test_reject_repeated_or_uncertain_generation) ... ok
+test_source_packet_mutations_rejected (test_review.ProtocolTests.test_source_packet_mutations_rejected) ... ok
+
+======================================================================
+FAIL: test_original_attempt_not_hidden_by_later_skipped_job (test_review.ProtocolTests.test_original_attempt_not_hidden_by_later_skipped_job)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a72694aeb347/common_decoder_review_20261110/implementation/test_review.py", line 46, in test_original_attempt_not_hidden_by_later_skipped_job
+    with patch.object(p,'api_json',api):self.assertTrue(p.prior_review_attempted('123'))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.041s
+
+FAILED (failures=1)

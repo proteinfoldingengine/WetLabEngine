@@ -1,0 +1,49 @@
+{
+  "closeout_attempt": "1",
+  "closeout_checkout_sha": "8de0ef72001ab8fd107c8ef096a2cdbdeb6feaf7",
+  "closeout_run_id": "42822479500",
+  "completed_original_job_logs": [
+    {
+      "bytes": 29384,
+      "conclusion": "success",
+      "file": "job-129846771520.log",
+      "id": 129846771520,
+      "name": "verification",
+      "sha256": "95d0763d59077a5ca4f7f71d089c428d2adcd00578554272b49a2c7c8c74410f"
+    },
+    {
+      "bytes": 28585,
+      "conclusion": "success",
+      "file": "job-129848366266.log",
+      "id": 129848366266,
+      "name": "review",
+      "sha256": "d8698dc15dbffd05d8d200b807c97129cdc94a772d79e89a0023e3245bbe6694"
+    },
+    {
+      "bytes": 33584,
+      "conclusion": "success",
+      "file": "job-129849062319.log",
+      "id": 129849062319,
+      "name": "publication",
+      "sha256": "f6d82ab175cca5831beae4ef73225f1ac16e54f95e36122d052d69b0d2435e95"
+    },
+    {
+      "bytes": 71414,
+      "conclusion": "success",
+      "file": "job-129849695871.log",
+      "id": 129849695871,
+      "name": "archive",
+      "sha256": "b58b5544654a5ecb4aeb44c35953d2477d964c6158fab28d5d85db44369075c5"
+    }
+  ],
+  "native_bridge": "NOT_DERIVED",
+  "original_run_attempt": "1",
+  "original_run_id": "42821167329",
+  "original_workflow_checkout_sha": "b60733e069a622ef7923a445b0676eb9a71fef16",
+  "scientific_sha": "02f6504bb4fe026557fbcef97fb12cc0775c82d9",
+  "scope": "Publication-only additive original-run log preservation; no model call or scientific execution",
+  "source_archive_manifest_sha256": "c18e4f93cbf77792f1bdf5104467c66df0c3dbd481261d39da03da2e7e465eef",
+  "source_archive_readback_confirmed_in_completed_log": true,
+  "source_archive_sha": "524d23353badc8d0b4e6b251dddbf270f5bcac73",
+  "status": "PASS"
+}

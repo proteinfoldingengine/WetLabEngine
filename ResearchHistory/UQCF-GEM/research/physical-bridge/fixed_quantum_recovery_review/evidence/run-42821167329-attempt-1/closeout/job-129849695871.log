@@ -1,0 +1,502 @@
+﻿2026-11-10T13:10:06.0094036Z Current runner version: '2.338.2'
+2026-11-10T13:10:06.0116379Z ##[group]Runner Image Provisioner
+2026-11-10T13:10:06.0117130Z Hosted Compute Agent
+2026-11-10T13:10:06.0117944Z Version: 20261028.624
+2026-11-10T13:10:06.0118616Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-10T13:10:06.0119236Z Build Date: 2026-10-28T21:51:42Z
+2026-11-10T13:10:06.0119850Z Worker ID: {04497d0a-525d-40d7-931b-9b569c227151}
+2026-11-10T13:10:06.0120458Z Region: eastus
+2026-11-10T13:10:06.0120923Z Cloud: Azure
+2026-11-10T13:10:06.0121474Z ##[endgroup]
+2026-11-10T13:10:06.0122663Z ##[group]Operating System
+2026-11-10T13:10:06.0123235Z Ubuntu
+2026-11-10T13:10:06.0123724Z 24.04.5
+2026-11-10T13:10:06.0124189Z LTS
+2026-11-10T13:10:06.0125115Z ##[endgroup]
+2026-11-10T13:10:06.0125609Z ##[group]Runner Image
+2026-11-10T13:10:06.0126165Z Image: ubuntu-24.04
+2026-11-10T13:10:06.0126686Z Version: 20261101.360.1
+2026-11-10T13:10:06.0128137Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-10T13:10:06.0129461Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-10T13:10:06.0130319Z ##[endgroup]
+2026-11-10T13:10:06.0131354Z ##[group]GITHUB_TOKEN Permissions
+2026-11-10T13:10:06.0133269Z Actions: read
+2026-11-10T13:10:06.0133807Z Contents: write
+2026-11-10T13:10:06.0134287Z Metadata: read
+2026-11-10T13:10:06.0134912Z ##[endgroup]
+2026-11-10T13:10:06.0136719Z Secret source: Actions
+2026-11-10T13:10:06.0137860Z Cache mode: write
+2026-11-10T13:10:06.0138664Z Prepare workflow directory
+2026-11-10T13:10:06.0549671Z Prepare all required actions
+2026-11-10T13:10:06.0591117Z Getting action download info
+2026-11-10T13:10:06.2456482Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-10T13:10:06.3840069Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-10T13:10:06.5726877Z Complete job name: archive
+2026-11-10T13:10:06.6441929Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-10T13:10:06.6442753Z with:
+2026-11-10T13:10:06.6443147Z   ref: b60733e069a622ef7923a445b0676eb9a71fef16
+2026-11-10T13:10:06.6443620Z   fetch-depth: 40
+2026-11-10T13:10:06.6446752Z   sparse-checkout: .github
+ResearchHistory/UQCF-GEM/foundational-closure-verification
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent
+ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review
+ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/recoverable_pruning_ledger
+ResearchHistory/UQCF-GEM/v15/v15.08
+ResearchHistory/UQCF-GEM/v15/v15.10
+ResearchHistory/UQCF-GEM/v15/v15.11
+ResearchHistory/UQCF-GEM/demos/v15.16-partial-pruning
+
+2026-11-10T13:10:06.6450181Z   repository: proteinfoldingengine/WetLabEngine
+2026-11-10T13:10:06.6453442Z   token: ***
+2026-11-10T13:10:06.6453808Z   ssh-strict: true
+2026-11-10T13:10:06.6454169Z   ssh-user: git
+2026-11-10T13:10:06.6454533Z   persist-credentials: true
+2026-11-10T13:10:06.6454927Z   clean: true
+2026-11-10T13:10:06.6455292Z   sparse-checkout-cone-mode: true
+2026-11-10T13:10:06.6455715Z   fetch-tags: false
+2026-11-10T13:10:06.6456079Z   show-progress: true
+2026-11-10T13:10:06.6456439Z   lfs: false
+2026-11-10T13:10:06.6456787Z   submodules: false
+2026-11-10T13:10:06.6457154Z   set-safe-directory: true
+2026-11-10T13:10:06.6457643Z   allow-unsafe-pr-checkout: false
+2026-11-10T13:10:06.6458223Z env:
+2026-11-10T13:10:06.6458646Z   UQCF_WORKFLOW_SHA: b60733e069a622ef7923a445b0676eb9a71fef16
+2026-11-10T13:10:06.6459158Z ##[endgroup]
+2026-11-10T13:10:06.9460736Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-11-10T13:10:06.9463091Z ##[group]Getting Git version info
+2026-11-10T13:10:06.9464118Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-10T13:10:06.9465658Z [command]/usr/bin/git version
+2026-11-10T13:10:06.9510653Z git version 2.56.0
+2026-11-10T13:10:06.9528788Z ##[endgroup]
+2026-11-10T13:10:06.9541165Z Temporarily overriding HOME='/home/runner/work/_temp/56bba1e1-b8aa-4ba1-a5c0-c90fe98f1868' before making global git config changes
+2026-11-10T13:10:06.9543376Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-10T13:10:06.9546805Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-10T13:10:06.9593494Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-10T13:10:06.9596817Z ##[group]Initializing the repository
+2026-11-10T13:10:06.9600317Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-10T13:10:06.9682695Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-10T13:10:06.9684029Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-10T13:10:06.9685406Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-10T13:10:06.9686080Z hint: call:
+2026-11-10T13:10:06.9686443Z hint:
+2026-11-10T13:10:06.9686927Z hint: 	git config --global init.defaultBranch <name>
+2026-11-10T13:10:06.9687829Z hint:
+2026-11-10T13:10:06.9688370Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-10T13:10:06.9689363Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-10T13:10:06.9690099Z hint:
+2026-11-10T13:10:06.9690807Z hint: 	git branch -m <name>
+2026-11-10T13:10:06.9691475Z hint:
+2026-11-10T13:10:06.9692347Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-10T13:10:06.9693799Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-11-10T13:10:06.9705337Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-10T13:10:06.9760171Z ##[endgroup]
+2026-11-10T13:10:06.9761768Z ##[group]Disabling automatic garbage collection
+2026-11-10T13:10:06.9762985Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-10T13:10:06.9799097Z ##[endgroup]
+2026-11-10T13:10:06.9800215Z ##[group]Setting up auth
+2026-11-10T13:10:06.9801373Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-10T13:10:06.9839639Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-10T13:10:07.0205480Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-10T13:10:07.0234494Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-10T13:10:07.0477311Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-10T13:10:07.0521163Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-10T13:10:07.0747440Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-10T13:10:07.0792442Z ##[endgroup]
+2026-11-10T13:10:07.0793227Z ##[group]Fetching the repository
+2026-11-10T13:10:07.0804526Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=40 origin b60733e069a622ef7923a445b0676eb9a71fef16
+2026-11-10T13:10:07.4048633Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-10T13:10:07.4050756Z  * branch            b60733e069a622ef7923a445b0676eb9a71fef16 -> FETCH_HEAD
+2026-11-10T13:10:07.4055153Z ##[endgroup]
+2026-11-10T13:10:07.4056552Z ##[group]Determining the checkout info
+2026-11-10T13:10:07.4058308Z ##[endgroup]
+2026-11-10T13:10:07.4060188Z ##[group]Setting up sparse checkout
+2026-11-10T13:10:07.4069274Z [command]/usr/bin/git sparse-checkout set .github ResearchHistory/UQCF-GEM/foundational-closure-verification ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review ResearchHistory/UQCF-GEM/research/physical-bridge/constructions/recoverable_pruning_ledger ResearchHistory/UQCF-GEM/v15/v15.08 ResearchHistory/UQCF-GEM/v15/v15.10 ResearchHistory/UQCF-GEM/v15/v15.11 ResearchHistory/UQCF-GEM/demos/v15.16-partial-pruning
+2026-11-10T13:10:07.4219803Z ##[endgroup]
+2026-11-10T13:10:07.4221578Z ##[group]Checking out the ref
+2026-11-10T13:10:07.4224840Z [command]/usr/bin/git checkout --progress --force b60733e069a622ef7923a445b0676eb9a71fef16
+2026-11-10T13:10:11.0993161Z Updating files:   0% (1/2382)
+2026-11-10T13:10:11.1005189Z Updating files:   1% (24/2382)
+2026-11-10T13:10:11.1019510Z Updating files:   2% (48/2382)
+2026-11-10T13:10:11.1031540Z Updating files:   3% (72/2382)
+2026-11-10T13:10:11.1049716Z Updating files:   4% (96/2382)
+2026-11-10T13:10:11.1059658Z Updating files:   5% (120/2382)
+2026-11-10T13:10:11.1070363Z Updating files:   6% (143/2382)
+2026-11-10T13:10:11.1088333Z Updating files:   7% (167/2382)
+2026-11-10T13:10:11.1104014Z Updating files:   8% (191/2382)
+2026-11-10T13:10:11.1118260Z Updating files:   9% (215/2382)
+2026-11-10T13:10:11.1131606Z Updating files:  10% (239/2382)
+2026-11-10T13:10:11.1140247Z Updating files:  11% (263/2382)
+2026-11-10T13:10:11.1149473Z Updating files:  12% (286/2382)
+2026-11-10T13:10:11.1157396Z Updating files:  13% (310/2382)
+2026-11-10T13:10:11.1168583Z Updating files:  14% (334/2382)
+2026-11-10T13:10:11.1177761Z Updating files:  15% (358/2382)
+2026-11-10T13:10:11.1187359Z Updating files:  16% (382/2382)
+2026-11-10T13:10:11.1194981Z Updating files:  17% (405/2382)
+2026-11-10T13:10:11.1203102Z Updating files:  18% (429/2382)
+2026-11-10T13:10:11.1210570Z Updating files:  19% (453/2382)
+2026-11-10T13:10:11.1218100Z Updating files:  20% (477/2382)
+2026-11-10T13:10:11.1228737Z Updating files:  21% (501/2382)
+2026-11-10T13:10:11.1236828Z Updating files:  22% (525/2382)
+2026-11-10T13:10:11.1246703Z Updating files:  23% (548/2382)
+2026-11-10T13:10:11.1256775Z Updating files:  24% (572/2382)
+2026-11-10T13:10:11.1265272Z Updating files:  25% (596/2382)
+2026-11-10T13:10:11.1276838Z Updating files:  26% (620/2382)
+2026-11-10T13:10:11.1287183Z Updating files:  27% (644/2382)
+2026-11-10T13:10:11.1297297Z Updating files:  28% (667/2382)
+2026-11-10T13:10:11.1317375Z Updating files:  29% (691/2382)
+2026-11-10T13:10:11.1329493Z Updating files:  30% (715/2382)
+2026-11-10T13:10:11.1355676Z Updating files:  31% (739/2382)
+2026-11-10T13:10:11.1372974Z Updating files:  32% (763/2382)
+2026-11-10T13:10:11.1388665Z Updating files:  33% (787/2382)
+2026-11-10T13:10:11.1433094Z Updating files:  34% (810/2382)
+2026-11-10T13:10:11.1469272Z Updating files:  35% (834/2382)
+2026-11-10T13:10:11.1485645Z Updating files:  36% (858/2382)
+2026-11-10T13:10:11.1497210Z Updating files:  37% (882/2382)
+2026-11-10T13:10:11.1512013Z Updating files:  38% (906/2382)
+2026-11-10T13:10:11.1537225Z Updating files:  39% (929/2382)
+2026-11-10T13:10:11.2911461Z Updating files:  40% (953/2382)
+2026-11-10T13:10:11.3382893Z Updating files:  41% (977/2382)
+2026-11-10T13:10:11.3409767Z Updating files:  42% (1001/2382)
+2026-11-10T13:10:11.3423735Z Updating files:  43% (1025/2382)
+2026-11-10T13:10:11.3433674Z Updating files:  44% (1049/2382)
+2026-11-10T13:10:11.3568295Z Updating files:  45% (1072/2382)
+2026-11-10T13:10:11.3579223Z Updating files:  46% (1096/2382)
+2026-11-10T13:10:11.3591747Z Updating files:  47% (1120/2382)
+2026-11-10T13:10:11.3609392Z Updating files:  48% (1144/2382)
+2026-11-10T13:10:11.3650646Z Updating files:  49% (1168/2382)
+2026-11-10T13:10:11.3665637Z Updating files:  50% (1191/2382)
+2026-11-10T13:10:11.3691412Z Updating files:  51% (1215/2382)
+2026-11-10T13:10:11.3709168Z Updating files:  52% (1239/2382)
+2026-11-10T13:10:11.3716983Z Updating files:  53% (1263/2382)
+2026-11-10T13:10:11.3729488Z Updating files:  54% (1287/2382)
+2026-11-10T13:10:11.3777181Z Updating files:  55% (1311/2382)
+2026-11-10T13:10:11.3794465Z Updating files:  56% (1334/2382)
+2026-11-10T13:10:11.3807031Z Updating files:  57% (1358/2382)
+2026-11-10T13:10:11.3821781Z Updating files:  58% (1382/2382)
+2026-11-10T13:10:11.3832803Z Updating files:  59% (1406/2382)
+2026-11-10T13:10:11.3847666Z Updating files:  60% (1430/2382)
+2026-11-10T13:10:11.3858627Z Updating files:  61% (1454/2382)
+2026-11-10T13:10:11.3866603Z Updating files:  62% (1477/2382)
+2026-11-10T13:10:11.3875242Z Updating files:  63% (1501/2382)
+2026-11-10T13:10:11.3890592Z Updating files:  64% (1525/2382)
+2026-11-10T13:10:11.3902699Z Updating files:  65% (1549/2382)
+2026-11-10T13:10:11.3919743Z Updating files:  66% (1573/2382)
+2026-11-10T13:10:11.3933348Z Updating files:  67% (1596/2382)
+2026-11-10T13:10:11.3945391Z Updating files:  68% (1620/2382)
+2026-11-10T13:10:11.3956028Z Updating files:  69% (1644/2382)
+2026-11-10T13:10:11.3969249Z Updating files:  70% (1668/2382)
+2026-11-10T13:10:11.3981474Z Updating files:  71% (1692/2382)
+2026-11-10T13:10:11.3993430Z Updating files:  72% (1716/2382)
+2026-11-10T13:10:11.4005466Z Updating files:  73% (1739/2382)
+2026-11-10T13:10:11.4017656Z Updating files:  74% (1763/2382)
+2026-11-10T13:10:11.4029974Z Updating files:  75% (1787/2382)
+2026-11-10T13:10:11.4041594Z Updating files:  76% (1811/2382)
+2026-11-10T13:10:11.4053300Z Updating files:  77% (1835/2382)
+2026-11-10T13:10:11.4077916Z Updating files:  78% (1858/2382)
+2026-11-10T13:10:11.4091481Z Updating files:  79% (1882/2382)
+2026-11-10T13:10:11.4104753Z Updating files:  80% (1906/2382)
+2026-11-10T13:10:11.4118245Z Updating files:  81% (1930/2382)
+2026-11-10T13:10:11.4131339Z Updating files:  82% (1954/2382)
+2026-11-10T13:10:11.4145278Z Updating files:  83% (1978/2382)
+2026-11-10T13:10:11.4157786Z Updating files:  84% (2001/2382)
+2026-11-10T13:10:11.4176686Z Updating files:  85% (2025/2382)
+2026-11-10T13:10:11.4193066Z Updating files:  86% (2049/2382)
+2026-11-10T13:10:11.4205406Z Updating files:  87% (2073/2382)
+2026-11-10T13:10:11.4218341Z Updating files:  88% (2097/2382)
+2026-11-10T13:10:11.4230412Z Updating files:  89% (2120/2382)
+2026-11-10T13:10:11.4244024Z Updating files:  90% (2144/2382)
+2026-11-10T13:10:11.4252804Z Updating files:  91% (2168/2382)
+2026-11-10T13:10:11.4263013Z Updating files:  92% (2192/2382)
+2026-11-10T13:10:11.4284635Z Updating files:  93% (2216/2382)
+2026-11-10T13:10:11.4294856Z Updating files:  94% (2240/2382)
+2026-11-10T13:10:11.4302061Z Updating files:  95% (2263/2382)
+2026-11-10T13:10:11.4843647Z Updating files:  96% (2287/2382)
+2026-11-10T13:10:11.5815368Z Updating files:  96% (2303/2382)
+2026-11-10T13:10:11.5822745Z Updating files:  97% (2311/2382)
+2026-11-10T13:10:11.5829412Z Updating files:  98% (2335/2382)
+2026-11-10T13:10:11.5843453Z Updating files:  99% (2359/2382)
+2026-11-10T13:10:11.5844212Z Updating files: 100% (2382/2382)
+2026-11-10T13:10:11.5844517Z Updating files: 100% (2382/2382), done.
+2026-11-10T13:10:11.6079500Z Note: switching to 'b60733e069a622ef7923a445b0676eb9a71fef16'.
+2026-11-10T13:10:11.6080185Z 
+2026-11-10T13:10:11.6080581Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-10T13:10:11.6081251Z changes and commit them, and you can discard any commits you make in this
+2026-11-10T13:10:11.6081791Z state without impacting any branches by switching back to a branch.
+2026-11-10T13:10:11.6082078Z 
+2026-11-10T13:10:11.6082476Z If you want to create a new branch to retain commits you create, you may
+2026-11-10T13:10:11.6083179Z do so (now or later) by using -c with the switch command. Example:
+2026-11-10T13:10:11.6083522Z 
+2026-11-10T13:10:11.6083650Z   git switch -c <new-branch-name>
+2026-11-10T13:10:11.6083864Z 
+2026-11-10T13:10:11.6084003Z Or undo this operation with:
+2026-11-10T13:10:11.6084207Z 
+2026-11-10T13:10:11.6084535Z   git switch -
+2026-11-10T13:10:11.6084682Z 
+2026-11-10T13:10:11.6084874Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-10T13:10:11.6085121Z 
+2026-11-10T13:10:11.6085359Z HEAD is now at b60733e Verify frozen common decoder argument and request one adversarial Gemini review
+2026-11-10T13:10:11.6133916Z ##[endgroup]
+2026-11-10T13:10:11.6181349Z [command]/usr/bin/git log -1 --format=%H
+2026-11-10T13:10:11.6212214Z b60733e069a622ef7923a445b0676eb9a71fef16
+2026-11-10T13:10:11.6631156Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-11-10T13:10:11.6631482Z with:
+2026-11-10T13:10:11.6631661Z   python-version: 3.11
+2026-11-10T13:10:11.6631852Z   check-latest: false
+2026-11-10T13:10:11.6633863Z   token: ***
+2026-11-10T13:10:11.6634038Z   update-environment: true
+2026-11-10T13:10:11.6634236Z   allow-prereleases: false
+2026-11-10T13:10:11.6634428Z   freethreaded: false
+2026-11-10T13:10:11.6634603Z env:
+2026-11-10T13:10:11.6634822Z   UQCF_WORKFLOW_SHA: b60733e069a622ef7923a445b0676eb9a71fef16
+2026-11-10T13:10:11.6635102Z ##[endgroup]
+2026-11-10T13:10:11.7752018Z ##[group]Installed versions
+2026-11-10T13:10:11.7817947Z (node:2129) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-10T13:10:11.7818519Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-10T13:10:11.7819136Z Successfully set up CPython (3.11.18)
+2026-11-10T13:10:11.7819878Z ##[endgroup]
+2026-11-10T13:10:11.8163131Z ##[group]Run python .github/scripts/uqcf_fixed_quantum_recovery_archive.py
+2026-11-10T13:10:11.8163681Z [36;1mpython .github/scripts/uqcf_fixed_quantum_recovery_archive.py[0m
+2026-11-10T13:10:11.8485247Z shell: /usr/bin/bash -e {0}
+2026-11-10T13:10:11.8485488Z env:
+2026-11-10T13:10:11.8485731Z   UQCF_WORKFLOW_SHA: b60733e069a622ef7923a445b0676eb9a71fef16
+2026-11-10T13:10:11.8486068Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-10T13:10:11.8486443Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-10T13:10:11.8486815Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-10T13:10:11.8487118Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-10T13:10:11.8487405Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-10T13:10:11.8487844Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-10T13:10:11.8490074Z   GH_TOKEN: ***
+2026-11-10T13:10:11.8490258Z ##[endgroup]
+2026-11-10T13:10:21.3405581Z Evidence preserved: COMPLETE ; reviewer verdict: ACCEPTED
+2026-11-10T13:10:21.3406435Z ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1
+2026-11-10T13:10:21.3556632Z ##[group]Run set -euo pipefail
+2026-11-10T13:10:21.3556920Z [36;1mset -euo pipefail[0m
+2026-11-10T13:10:21.3557134Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-10T13:10:21.3557413Z [36;1mtest "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"[0m
+2026-11-10T13:10:21.3558004Z [36;1mgit config user.name proteinfolding-gpt[0m
+2026-11-10T13:10:21.3558340Z [36;1mgit config user.email proteinfolding-gpt@users.noreply.github.com[0m
+2026-11-10T13:10:21.3558824Z [36;1mgit add ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence[0m
+2026-11-10T13:10:21.3559333Z [36;1mgit commit -m "Archive fixed-quantum-recovery review run $GITHUB_RUN_ID"[0m
+2026-11-10T13:10:21.3559667Z [36;1mgit push origin "HEAD:$REVIEW_BRANCH"[0m
+2026-11-10T13:10:21.3559912Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-10T13:10:21.3560196Z [36;1mtest "$(git rev-parse HEAD)" = "$(git rev-parse FETCH_HEAD)"[0m
+2026-11-10T13:10:21.3560639Z [36;1mpython .github/scripts/uqcf_fixed_quantum_recovery_archive.py readback FETCH_HEAD[0m
+2026-11-10T13:10:21.3579939Z shell: /usr/bin/bash -e {0}
+2026-11-10T13:10:21.3580144Z env:
+2026-11-10T13:10:21.3580357Z   UQCF_WORKFLOW_SHA: b60733e069a622ef7923a445b0676eb9a71fef16
+2026-11-10T13:10:21.3580675Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-10T13:10:21.3581162Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-10T13:10:21.3581493Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-10T13:10:21.3581784Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-10T13:10:21.3582074Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-10T13:10:21.3582370Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-10T13:10:21.3582663Z   REVIEW_BRANCH: gpt/fixed-quantum-recovery-review
+2026-11-10T13:10:21.3582899Z ##[endgroup]
+2026-11-10T13:10:21.5102996Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-10T13:10:21.5103414Z  * branch            gpt/fixed-quantum-recovery-review -> FETCH_HEAD
+2026-11-10T13:10:21.5103858Z  * [new branch]      gpt/fixed-quantum-recovery-review -> origin/gpt/fixed-quantum-recovery-review
+2026-11-10T13:10:33.3537001Z [detached HEAD 524d233] Archive fixed-quantum-recovery review run 42821167329
+2026-11-10T13:10:33.3537689Z  177 files changed, 12654 insertions(+)
+2026-11-10T13:10:33.3538421Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/CHUNKS.json
+2026-11-10T13:10:33.3539551Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/DOWNLOAD_AUDIT.json
+2026-11-10T13:10:33.3540683Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/SHA256SUMS
+2026-11-10T13:10:33.3542171Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1.zip
+2026-11-10T13:10:33.3543569Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/artifact_manifest.json
+2026-11-10T13:10:33.3545108Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/commands.json
+2026-11-10T13:10:33.3546646Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/fraction.json
+2026-11-10T13:10:33.3547863Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/fraction.json.stderr
+2026-11-10T13:10:33.3549158Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited.log
+2026-11-10T13:10:33.3550156Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited.log.stderr
+2026-11-10T13:10:33.3551164Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/PRODUCTION.json
+2026-11-10T13:10:33.3552200Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/REPRODUCED_1615F.json
+2026-11-10T13:10:33.3553231Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/VERIFICATION.json
+2026-11-10T13:10:33.3554282Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/artifact_manifest.json
+2026-11-10T13:10:33.3555497Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/certificates.json.xz
+2026-11-10T13:10:33.3556541Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/commands.json
+2026-11-10T13:10:33.3557725Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/historical-reproduction.log
+2026-11-10T13:10:33.3558876Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/independent-verifier.log
+2026-11-10T13:10:33.3559921Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/producer.log
+2026-11-10T13:10:33.3560937Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/inherited/receipt.json
+2026-11-10T13:10:33.3561980Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/integrity.json
+2026-11-10T13:10:33.3563029Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/plumbing-tests.log
+2026-11-10T13:10:33.3564079Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/plumbing-tests.log.stderr
+2026-11-10T13:10:33.3565094Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/receipt.json
+2026-11-10T13:10:33.3566060Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/review_readback.json
+2026-11-10T13:10:33.3567044Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/source_readback.json
+2026-11-10T13:10:33.3568448Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/.github/scripts/uqcf_fixed_quantum_recovery_archive.py
+2026-11-10T13:10:33.3569713Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/.github/scripts/uqcf_fixed_quantum_recovery_review.py
+2026-11-10T13:10:33.3570943Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/.github/scripts/uqcf_owner_correspondence_stack.py
+2026-11-10T13:10:33.3572138Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/.github/scripts/uqcf_preparability_integrity.py
+2026-11-10T13:10:33.3573320Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/.github/scripts/uqcf_preparability_review.py
+2026-11-10T13:10:33.3574529Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/.github/workflows/uqcf-fixed-quantum-recovery-review.yml
+2026-11-10T13:10:33.3575996Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/ARGUMENT.md
+2026-11-10T13:10:33.3577466Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/ENGINEERING_AUDIT.md
+2026-11-10T13:10:33.3579223Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/LOCAL_VERIFICATION.json
+2026-11-10T13:10:33.3580713Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/REVIEW_FREEZE.json
+2026-11-10T13:10:33.3582169Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/REVIEW_PLAN.md
+2026-11-10T13:10:33.3583639Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/SOURCE_PACKET.json
+2026-11-10T13:10:33.3585094Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/fraction_check.py
+2026-11-10T13:10:33.3586568Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/generation_guard_green.log
+2026-11-10T13:10:33.3588314Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/generation_guard_red.log
+2026-11-10T13:10:33.3589857Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767124759.body.txt
+2026-11-10T13:10:33.3591395Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767124759.json
+2026-11-10T13:10:33.3592930Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767202192.body.txt
+2026-11-10T13:10:33.3594471Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767202192.json
+2026-11-10T13:10:33.3596088Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/manifest.json
+2026-11-10T13:10:33.3597756Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/outside_reviewed_scope/README.md
+2026-11-10T13:10:33.3599387Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/outside_reviewed_scope/comment_6767895124.body.txt
+2026-11-10T13:10:33.3601001Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/outside_reviewed_scope/comment_6767895124.json
+2026-11-10T13:10:33.3602516Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/protocol_green.log
+2026-11-10T13:10:33.3603973Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/read_failure_green.log
+2026-11-10T13:10:33.3605445Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/read_failure_red.log
+2026-11-10T13:10:33.3606896Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/review_transport.py
+2026-11-10T13:10:33.3608698Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/sympy_check.py
+2026-11-10T13:10:33.3611141Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/test_review.py
+2026-11-10T13:10:33.3612609Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/test_transport.py
+2026-11-10T13:10:33.3614074Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/transport_green.log
+2026-11-10T13:10:33.3616518Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/transport_red.log
+2026-11-10T13:10:33.3619536Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sympy.json
+2026-11-10T13:10:33.3621223Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-publication-1/sympy.json.stderr
+2026-11-10T13:10:33.3622479Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1.zip
+2026-11-10T13:10:33.3623423Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/artifact_manifest.json
+2026-11-10T13:10:33.3624409Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/generation_guard.json
+2026-11-10T13:10:33.3625402Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/integrity.json
+2026-11-10T13:10:33.3626361Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/model_metadata.json
+2026-11-10T13:10:33.3627300Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/prompt.txt
+2026-11-10T13:10:33.3628454Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/request.json
+2026-11-10T13:10:33.3629387Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/response.json
+2026-11-10T13:10:33.3630297Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/review.txt
+2026-11-10T13:10:33.3631222Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/review_identity.json
+2026-11-10T13:10:33.3632555Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/.github/scripts/uqcf_fixed_quantum_recovery_archive.py
+2026-11-10T13:10:33.3635035Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/.github/scripts/uqcf_fixed_quantum_recovery_review.py
+2026-11-10T13:10:33.3636716Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/.github/scripts/uqcf_owner_correspondence_stack.py
+2026-11-10T13:10:33.3638047Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/.github/scripts/uqcf_preparability_integrity.py
+2026-11-10T13:10:33.3639200Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/.github/scripts/uqcf_preparability_review.py
+2026-11-10T13:10:33.3640390Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/.github/workflows/uqcf-fixed-quantum-recovery-review.yml
+2026-11-10T13:10:33.3641856Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/ARGUMENT.md
+2026-11-10T13:10:33.3643274Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/ENGINEERING_AUDIT.md
+2026-11-10T13:10:33.3644708Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/LOCAL_VERIFICATION.json
+2026-11-10T13:10:33.3646137Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/REVIEW_FREEZE.json
+2026-11-10T13:10:33.3647648Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/REVIEW_PLAN.md
+2026-11-10T13:10:33.3649197Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/SOURCE_PACKET.json
+2026-11-10T13:10:33.3650609Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/fraction_check.py
+2026-11-10T13:10:33.3652091Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/generation_guard_green.log
+2026-11-10T13:10:33.3653673Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/generation_guard_red.log
+2026-11-10T13:10:33.3655164Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767124759.body.txt
+2026-11-10T13:10:33.3656669Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767124759.json
+2026-11-10T13:10:33.3658309Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767202192.body.txt
+2026-11-10T13:10:33.3659818Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767202192.json
+2026-11-10T13:10:33.3662136Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/manifest.json
+2026-11-10T13:10:33.3663628Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/outside_reviewed_scope/README.md
+2026-11-10T13:10:33.3665301Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/outside_reviewed_scope/comment_6767895124.body.txt
+2026-11-10T13:10:33.3666890Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/outside_reviewed_scope/comment_6767895124.json
+2026-11-10T13:10:33.3668534Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/protocol_green.log
+2026-11-10T13:10:33.3669973Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/read_failure_green.log
+2026-11-10T13:10:33.3671397Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/read_failure_red.log
+2026-11-10T13:10:33.3672823Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/review_transport.py
+2026-11-10T13:10:33.3674642Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/sympy_check.py
+2026-11-10T13:10:33.3676101Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/test_review.py
+2026-11-10T13:10:33.3677524Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/test_transport.py
+2026-11-10T13:10:33.3679190Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/transport_green.log
+2026-11-10T13:10:33.3680630Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/transport_red.log
+2026-11-10T13:10:33.3681799Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-review-1/verdict.json
+2026-11-10T13:10:33.3682891Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1.zip.part-0000
+2026-11-10T13:10:33.3683870Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1.zip.part-0001
+2026-11-10T13:10:33.3684842Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1.zip.part-0002
+2026-11-10T13:10:33.3685796Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1.zip.part-0003
+2026-11-10T13:10:33.3686759Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1.zip.part-0004
+2026-11-10T13:10:33.3687877Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1.zip.part-0005
+2026-11-10T13:10:33.3688879Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/artifact_manifest.json
+2026-11-10T13:10:33.3689874Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/commands.json
+2026-11-10T13:10:33.3690823Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/fraction.json
+2026-11-10T13:10:33.3691818Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/fraction.json.stderr
+2026-11-10T13:10:33.3692800Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited.log
+2026-11-10T13:10:33.3693890Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited.log.stderr
+2026-11-10T13:10:33.3694950Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/PRODUCTION.json
+2026-11-10T13:10:33.3696020Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/REPRODUCED_1615F.json
+2026-11-10T13:10:33.3697072Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/VERIFICATION.json
+2026-11-10T13:10:33.3698283Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/artifact_manifest.json
+2026-11-10T13:10:33.3699355Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/certificates.json.xz
+2026-11-10T13:10:33.3700386Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/commands.json
+2026-11-10T13:10:33.3701542Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/dependencies.log
+2026-11-10T13:10:33.3702566Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/fcv-tests.log
+2026-11-10T13:10:33.3703623Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/historical-reproduction.log
+2026-11-10T13:10:33.3704711Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/historical-tests.log
+2026-11-10T13:10:33.3705780Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/independent-verifier.log
+2026-11-10T13:10:33.3706833Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/parent-tests.log
+2026-11-10T13:10:33.3708018Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/producer.log
+2026-11-10T13:10:33.3709057Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/receipt.json
+2026-11-10T13:10:33.3710120Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/source-snapshot.zip.part-0000
+2026-11-10T13:10:33.3711232Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/source-snapshot.zip.part-0001
+2026-11-10T13:10:33.3712336Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/source-snapshot.zip.part-0002
+2026-11-10T13:10:33.3713559Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/source-snapshot.zip.part-0003
+2026-11-10T13:10:33.3714680Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/source-snapshot.zip.part-0004
+2026-11-10T13:10:33.3715923Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/inherited/source-snapshot.zip.part-0005
+2026-11-10T13:10:33.3716972Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/integrity.json
+2026-11-10T13:10:33.3718090Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/plumbing-tests.log
+2026-11-10T13:10:33.3719124Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/plumbing-tests.log.stderr
+2026-11-10T13:10:33.3720129Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/receipt.json
+2026-11-10T13:10:33.3721218Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/source_readback.json
+2026-11-10T13:10:33.3722332Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/.github/scripts/uqcf_fixed_quantum_recovery_archive.py
+2026-11-10T13:10:33.3723555Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/.github/scripts/uqcf_fixed_quantum_recovery_review.py
+2026-11-10T13:10:33.3724768Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/.github/scripts/uqcf_owner_correspondence_stack.py
+2026-11-10T13:10:33.3725976Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/.github/scripts/uqcf_preparability_integrity.py
+2026-11-10T13:10:33.3727160Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/.github/scripts/uqcf_preparability_review.py
+2026-11-10T13:10:33.3728547Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/.github/workflows/uqcf-fixed-quantum-recovery-review.yml
+2026-11-10T13:10:33.3729898Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/ARGUMENT.md
+2026-11-10T13:10:33.3731346Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/ENGINEERING_AUDIT.md
+2026-11-10T13:10:33.3732914Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/LOCAL_VERIFICATION.json
+2026-11-10T13:10:33.3734986Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/REVIEW_FREEZE.json
+2026-11-10T13:10:33.3736476Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/REVIEW_PLAN.md
+2026-11-10T13:10:33.3738178Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/SOURCE_PACKET.json
+2026-11-10T13:10:33.3739663Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/fraction_check.py
+2026-11-10T13:10:33.3741285Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/generation_guard_green.log
+2026-11-10T13:10:33.3742785Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/generation_guard_red.log
+2026-11-10T13:10:33.3744300Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767124759.body.txt
+2026-11-10T13:10:33.3745837Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767124759.json
+2026-11-10T13:10:33.3747375Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767202192.body.txt
+2026-11-10T13:10:33.3749110Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/comment_6767202192.json
+2026-11-10T13:10:33.3750623Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/originals/manifest.json
+2026-11-10T13:10:33.3752151Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/outside_reviewed_scope/README.md
+2026-11-10T13:10:33.3753835Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/outside_reviewed_scope/comment_6767895124.body.txt
+2026-11-10T13:10:33.3755457Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/outside_reviewed_scope/comment_6767895124.json
+2026-11-10T13:10:33.3756988Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/protocol_green.log
+2026-11-10T13:10:33.3758644Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/read_failure_green.log
+2026-11-10T13:10:33.3760118Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/read_failure_red.log
+2026-11-10T13:10:33.3761694Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/review_transport.py
+2026-11-10T13:10:33.3763159Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/sympy_check.py
+2026-11-10T13:10:33.3764590Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/test_review.py
+2026-11-10T13:10:33.3766029Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/test_transport.py
+2026-11-10T13:10:33.3767481Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/transport_green.log
+2026-11-10T13:10:33.3769178Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/transport_red.log
+2026-11-10T13:10:33.3770375Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sympy.json
+2026-11-10T13:10:33.3771344Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/fixed-quantum-recovery-verification-1/sympy.json.stderr
+2026-11-10T13:10:33.3772231Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/job-129846771520.log
+2026-11-10T13:10:33.3772999Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/job-129848366266.log
+2026-11-10T13:10:33.3773866Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/fixed_quantum_recovery_review/evidence/run-42821167329-attempt-1/job-129849062319.log
+2026-11-10T13:11:11.2216498Z To https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-10T13:11:11.2217079Z    b60733e..524d233  HEAD -> gpt/fixed-quantum-recovery-review
+2026-11-10T13:11:11.3949621Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-10T13:11:11.3950189Z  * branch            gpt/fixed-quantum-recovery-review -> FETCH_HEAD
+2026-11-10T13:11:13.3132041Z Committed original evidence and chunks verified
+2026-11-10T13:11:13.3321286Z Post job cleanup.
+2026-11-10T13:11:13.4308120Z (node:2438) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-10T13:11:13.4308720Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-10T13:11:13.4474607Z Post job cleanup.
+2026-11-10T13:11:13.5258212Z [command]/usr/bin/git version
+2026-11-10T13:11:13.5299489Z git version 2.56.0
+2026-11-10T13:11:13.5330726Z Temporarily overriding HOME='/home/runner/work/_temp/7487cb2d-e6db-44ea-9d3d-39ffcbb29402' before making global git config changes
+2026-11-10T13:11:13.5331791Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-10T13:11:13.5335034Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-10T13:11:13.5377192Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-10T13:11:13.5416254Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-10T13:11:13.5705135Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-10T13:11:13.5734547Z http.https://github.com/.extraheader
+2026-11-10T13:11:13.5745600Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-10T13:11:13.5786141Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-10T13:11:13.6055680Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-10T13:11:13.6097007Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-10T13:11:13.6520001Z Cleaning up orphan processes
+2026-11-10T13:11:13.6904588Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,73 @@
+{
+  "accepted": true,
+  "artifacts": [
+    {
+      "api_digest": "sha256:e155de9da5ae947d9e88e2fe3c75acbacfdd67324fb522b92bc1a7be58ffafd2",
+      "bytes": 239451542,
+      "download_sha256": "e155de9da5ae947d9e88e2fe3c75acbacfdd67324fb522b92bc1a7be58ffafd2",
+      "id": 13768031032,
+      "manifest_status": "VALID",
+      "members": 60,
+      "name": "fixed-quantum-recovery-verification-1"
+    },
+    {
+      "api_digest": "sha256:562f3113910f2d7306d0abe36053366c3584e5e0296010ba0f4d0157bda44d4a",
+      "bytes": 207796,
+      "download_sha256": "562f3113910f2d7306d0abe36053366c3584e5e0296010ba0f4d0157bda44d4a",
+      "id": 13767856384,
+      "manifest_status": "VALID",
+      "members": 42,
+      "name": "fixed-quantum-recovery-review-1"
+    },
+    {
+      "api_digest": "sha256:7f2191615fbbdb20cad18c7449cb54e046cffb8c24377cdc1fdcd4c51370de2d",
+      "bytes": 417397,
+      "download_sha256": "7f2191615fbbdb20cad18c7449cb54e046cffb8c24377cdc1fdcd4c51370de2d",
+      "id": 13766234895,
+      "manifest_status": "VALID",
+      "members": 56,
+      "name": "fixed-quantum-recovery-publication-1"
+    }
+  ],
+  "attempt": "1",
+  "checkout_sha": "b60733e069a622ef7923a445b0676eb9a71fef16",
+  "completed_job_logs": [
+    {
+      "bytes": 29384,
+      "conclusion": "success",
+      "file": "job-129846771520.log",
+      "id": 129846771520,
+      "name": "verification",
+      "sha256": "95d0763d59077a5ca4f7f71d089c428d2adcd00578554272b49a2c7c8c74410f"
+    },
+    {
+      "bytes": 28585,
+      "conclusion": "success",
+      "file": "job-129848366266.log",
+      "id": 129848366266,
+      "name": "review",
+      "sha256": "d8698dc15dbffd05d8d200b807c97129cdc94a772d79e89a0023e3245bbe6694"
+    },
+    {
+      "bytes": 33584,
+      "conclusion": "success",
+      "file": "job-129849062319.log",
+      "id": 129849062319,
+      "name": "publication",
+      "sha256": "f6d82ab175cca5831beae4ef73225f1ac16e54f95e36122d052d69b0d2435e95"
+    }
+  ],
+  "job_states": {
+    "publication": "success",
+    "review": "success",
+    "verification": "success"
+  },
+  "missing_stage_artifacts": [],
+  "native_bridge": "NOT_DERIVED",
+  "preservation_status": "COMPLETE",
+  "reviewer_verdict": "ACCEPTED",
+  "run_id": "42821167329",
+  "scientific_pipeline_complete": true,
+  "validation_errors": [],
+  "workflow_sha": "b60733e069a622ef7923a445b0676eb9a71fef16"
+}
