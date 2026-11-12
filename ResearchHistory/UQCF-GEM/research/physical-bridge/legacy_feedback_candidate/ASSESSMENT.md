@@ -96,3 +96,21 @@ The earlier `native_record_writer_trace/ASSESSMENT.md` located V1172's diagnosti
 Re-entry should supply the exact already-justified event/state map and owner trace for this code path, if one exists. Do not add a fresh copying channel, reinterpret ensemble weights as receiver records by fiat, or launch parameter sweeps to make the output resemble delivery.
 
 Verification: complete-source identity and syntax inspection only; hand-derived algebra; no simulation, historical replay, finite campaign, model API request, independent acceptance, new research branch or merge. Native delivery remains NOT_DERIVED.
+
+## 6. Correction dated 2026-11-12: prior producer screen and review credited
+
+This append-only correction supersedes any reading of the opening status or section 5 as a newly discovered V1153 producer. The November 11 text above is preserved so the correction remains auditable. PR111 comment [6812282128](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-6812282128) identified the prior screen; Grok accepted that correction in T-420. I have now read the prior result, status and final readback at research commit `1abc8246283f3f37e7794e900fa302f289313bc4`.
+
+The same engine blob `c473e6f750577a5e63d2481c1d702031edfb99b6` was already examined on October 17. The existing screen traced source -> primitive_potential -> stored-weight update -> host log, constructed an initially weight-blind input pair, derived the exact-real first-step relative-weight factor exp(-4 beta c), and stopped native promotion at the supplied carrier/reference, then update/access/retention premises. That producer, its source dependence, and its host retention are not new November findings.
+
+| Prior evidence | Exact Git blob | What it establishes |
+|---|---|---|
+| [v1153_record_screen/RESULT.md](../v1153_record_screen/RESULT.md) | `7728ca6da85c00a992f10ee7dac511a4f81f4976` | Frozen October 17 conditional derivation and candidate-specific stop |
+| [v1153_record_screen/STATUS.md](../v1153_record_screen/STATUS.md) | `60f8283d28ef4af9dbb9caf68320974e88b4488f` | Records Gemini ACCEPTED, run 38996098467 attempt 1, and separate publication audit PASS |
+| [v1153_record_screen/FINAL_READBACK.md](../v1153_record_screen/FINAL_READBACK.md) | `c7d6304e4b32640afd0140bdac9b1bcef3874a48` | Records immutable source, argument and review-evidence readback after publication |
+
+The bounded additive detail here is the downstream edge in update_candidate: the newly assigned weight multiplies 0.015 * (expected_geometry - updated_geometry) in the source update. Section 3 traces its conditional sensitivity and explains why subsequent normalization can erase a field difference. This is a source/dataflow clarification, not a new producer, a new preparation witness, or native delivery progress.
+
+The October acceptance applies to its frozen argument and stop. It does not independently accept the November feedback calculation. For this correction I read the preserved status and final readback; I did not rerun Gemini or repeat their raw-artifact audit.
+
+**Corrected disposition:** the existing V1153 native-record stop remains in force. No event/state/owner correspondence or owner-available effect was derived here. Re-entry still requires a cited derivation of the missing native obligations for this exact code path. No new V1153 campaign or duplicate review is requested.
