@@ -1,0 +1,27 @@
+(1) countermodel:
+x+ [19/100, 101/500, 101/250, 51/250] p/u= 1/2 x p/u= 1/2
+x- [19/100, 101/500, 51/250, 101/250] p/u= 101/102 x p/u= 1
+(2a) I-naturality residuals (general alpha), x+:
+  leaf@o {'o': -a10, 'n1': a10}
+  leaf@p {'p': -a20 - 4*a21/5, 'n1': a20 + 4*a21/5}
+  chain@o {'o': -a10, 'n1': a10 - a20, 'n2': a20}
+  leaf@u {}
+solve: [{a10: 0, a20: 0, a21: 0}]
+GPT countermodel residual nonzero: True
+id residual zero: True
+(2b) positivity under k-fold zero extension:
+  ('x+', 'leaf@o new', a10)
+  ('x+', 'leaf@o parent coeff of k', -a10)
+  ('x+', 'leaf@p new', a20 + 4*a21/5)
+  ('x+', 'leaf@p parent coeff of k', -a20 - 4*a21/5)
+  ('x+', 'chain@o depth2 new', a20)
+  ('x+', 'chain@o parent coeff of k', -a20)
+  ('x-', 'leaf@o new', a10)
+  ('x-', 'leaf@o parent coeff of k', -a10)
+  ('x-', 'leaf@p new', a20 + 4*a21/5)
+  ('x-', 'leaf@p parent coeff of k', -a20 - 4*a21/5)
+  ('x-', 'chain@o depth2 new', a20)
+  ('x-', 'chain@o parent coeff of k', -a20)
+  => each 'new' >=0 and each 'coeff of k' >=0 (k unbounded) forces equality to 0: a10=0, a20=0, a21*m_p=0 with m_p=4/5 -> a21=0
+after constraints: fixed(x+): -8*a11/25 + 8*a22/25  fixed(x-): -4*a11/25 + 4*a22/25  ratio: 2
+check vs Q167 x+ cond: 0
