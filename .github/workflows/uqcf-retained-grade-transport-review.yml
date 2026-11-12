@@ -1,0 +1,114 @@
+name: Retained grade transport archival argument review
+on:
+  push:
+    branches: [gpt/retained-grade-transport]
+    paths:
+      - '.github/workflows/uqcf-retained-grade-transport-review.yml'
+permissions:
+  contents: read
+  actions: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.sha }}
+  PYTHONDONTWRITEBYTECODE: '1'
+concurrency:
+  group: uqcf-retained-grade-transport-review
+  cancel-in-progress: false
+jobs:
+  integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/retained_grade_transport
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Reject altered sources and invalid review evidence
+        shell: bash
+        run: |
+          mkdir -p integrity
+          python .github/scripts/uqcf_retained_grade_tests.py > integrity/plumbing.log 2>&1
+          cat integrity/plumbing.log
+      - name: Verify exact manuscripts and complete immutable source bindings
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python .github/scripts/uqcf_retained_grade_review.py integrity integrity
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: retained-grade-integrity-${{ github.run_attempt }}
+          path: integrity
+          if-no-files-found: error
+          retention-days: 90
+  argument-review:
+    if: github.run_attempt == 1
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/retained_grade_transport
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: retained-grade-integrity-1
+          path: integrity
+      - name: One independent whole-argument Gemini review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python .github/scripts/uqcf_retained_grade_review.py review reviewed integrity
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: retained-grade-review-1
+          path: reviewed
+          if-no-files-found: error
+          retention-days: 90
+  publication-audit:
+    if: always() && (needs.argument-review.result == 'success' || github.run_attempt > 1)
+    needs: [integrity, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/retained_grade_transport
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: retained-grade-integrity-1
+          path: integrity
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: retained-grade-review-1
+          path: reviewed
+      - name: Separate immutable-source and raw-review publication audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python .github/scripts/uqcf_retained_grade_review.py publication published reviewed integrity
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: retained-grade-publication-${{ github.run_attempt }}
+          path: published
+          if-no-files-found: error
+          retention-days: 90
