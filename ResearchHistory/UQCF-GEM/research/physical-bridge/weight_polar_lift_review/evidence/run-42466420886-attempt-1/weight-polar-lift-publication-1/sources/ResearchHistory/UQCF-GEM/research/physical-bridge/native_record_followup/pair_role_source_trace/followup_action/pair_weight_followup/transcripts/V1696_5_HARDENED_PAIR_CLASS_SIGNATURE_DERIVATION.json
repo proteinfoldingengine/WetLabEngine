@@ -1,0 +1,77 @@
+{
+  "version": "V1696.5",
+  "title": "Hardened Pair-Class Signature Derivation",
+  "verdict": "HARDENED_PAIR_CLASS_SIGNATURE_DERIVED_NO_EXECUTION",
+  "starting_point": "V1696.4 showed retained pair equivalence classes are promising, but raw D1/D2 vectors and scalar support labels were too weak.",
+  "claim_boundary": "Derivation protocol only. No execution, no compatibility claim, no retained field-law validation.",
+  "kept_object": {
+    "symbol": "[p]_R",
+    "meaning": "retained pair equivalence class",
+    "status": "kept as active cross-scale object"
+  },
+  "problem_to_fix": {
+    "D1D2_old": "raw D1/D2 vectors were appended to Sig([p]_R), but D1D2-profile scramble was weakly rejected.",
+    "support_old": "support/provenance was represented as coarse scalar class id, but support shuffle was not rejected.",
+    "required_change": "make derivative response and support/provenance intrinsic cochain signatures."
+  },
+  "hardened_signature": {
+    "formula": "Sig_H([p]_R) = (role, orientation, J_D[p], G_D[p], C_support[p], A_order[p], G_pair_context[p])",
+    "role": "product role label or declared role morphism",
+    "orientation": "signed provenance/orientation",
+    "J_D[p]": "derivative-response Jacobian signature of Phi_oplus for pair p",
+    "G_D[p]": "D1/D2 derivative-response Gram block",
+    "C_support[p]": "support/provenance incidence cochain",
+    "A_order[p]": "retained-order adjacency cochain",
+    "G_pair_context[p]": "signed pair-Gram context relative to other retained product roles"
+  },
+  "derivative_response_signature": {
+    "definition": "J_D[p] = [D1_response[p], D2_response[p], D12_cross[p]] under declared perturbation basis",
+    "Gram": "G_D[p] = J_D[p]^T J_D[p], normalized by trace or Frobenius norm",
+    "why": "A scramble of raw D1/D2 vectors should change the Jacobian/Gram structure even if vector norms are preserved.",
+    "null_target": "N_D1D2_profile_scramble must fail."
+  },
+  "support_provenance_signature": {
+    "definition": "C_support[p] is an incidence cochain over support/source/provenance nodes touched by pair p.",
+    "components": [
+      "source incidence",
+      "support block incidence",
+      "dependency edge incidence",
+      "orientation sign",
+      "admissibility mask"
+    ],
+    "why": "Support is not a scalar label; it is a local incidence structure. Shuffling labels without preserving incidence must fail.",
+    "null_target": "N_support_class_shuffle must fail."
+  },
+  "retained_order_signature": {
+    "definition": "A_order[p] is an adjacency/cochain signature of retained-order dependencies for the pair.",
+    "allowed_language": "retained-order, pruning-order, dependency sequence, order ledger",
+    "forbidden_language": "time as primitive coordinate",
+    "null_target": "order adjacency scramble must fail."
+  },
+  "equivalence_rule": {
+    "statement": "p ~_R q iff Sig_H([p]_R) and Sig_H([q]_R) agree under declared role/orientation morphisms and normalization.",
+    "distance": "d_R(p,q)=weighted block distance over role, orientation, J_D/G_D, C_support, A_order, and G_pair_context.",
+    "important": "weights are declared before execution and not tuned after nulls."
+  },
+  "coarse_class_rule": {
+    "formula": "Sig_H([P_A^C]_R) \u2248 quotient_aggregate({Sig_H([p_a^F]_R)})",
+    "undefined_case": "If fine signatures do not form a compatible family, the coarse class is undefined rather than forced."
+  },
+  "required_nulls": {
+    "N_D1D2_profile_scramble": "preserve D1/D2 norms but scramble derivative-response Jacobian/Gram.",
+    "N_support_class_shuffle": "preserve scalar support counts but shuffle incidence cochain.",
+    "N_order_adjacency_scramble": "preserve order counts but scramble retained-order adjacency.",
+    "N_role_preserved_vector_scrambled": "preserve role labels and vector norms but scramble signature body.",
+    "N_orientation_flip": "flip signed orientation.",
+    "N_local_signature_preserved_class_broken": "preserve local signatures but break quotient aggregate compatibility."
+  },
+  "required_audits": [
+    "signature_block_manifest",
+    "D1D2_Jacobian_rank_audit",
+    "support_incidence_nonzero_audit",
+    "order_adjacency_nonzero_audit",
+    "weight_freeze_manifest",
+    "null_separation_summary"
+  ],
+  "next": "V1696.6 \u2014 Hardened Pair-Class Signature Python Test"
+}

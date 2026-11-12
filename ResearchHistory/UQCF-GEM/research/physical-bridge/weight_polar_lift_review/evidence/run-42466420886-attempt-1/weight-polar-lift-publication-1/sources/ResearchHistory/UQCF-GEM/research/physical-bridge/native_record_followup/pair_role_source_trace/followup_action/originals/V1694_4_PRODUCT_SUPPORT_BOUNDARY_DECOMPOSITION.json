@@ -1,0 +1,55 @@
+{
+  "version": "V1694.4",
+  "title": "Exact Product Support-Boundary Decomposition",
+  "verdict": "PRODUCT_SUPPORT_BOUNDARY_DECOMPOSITION_DERIVED_NO_EXECUTION",
+  "starting_point": "V1694.3 showed variation-current improves product identity, but Q_A/source separation remains the blocker.",
+  "claim_boundary": "Mathematical derivation only. No execution, no retained field-law validation.",
+  "core_problem": "The product action variation must be decomposed so boundary stress Q_oplus and support current rho_var^oplus are disjoint, not overlapping approximations.",
+  "product_action": {
+    "definition": "I_oplus[A,T,w,\u2295] = \u03a3_e \u03a3_a w_{e,a} <\u03b4_{e,a}, \u03b4_{e,a}>_B",
+    "pair_index": "a indexes retained pair (x_a,y_a) \u2208 T_e",
+    "residual": "\u03b4_{e,a}=T_A(x_a\u2295_p y_a)-(T_Ax_a\u2295_qT_Ay_a)"
+  },
+  "variation_decomposition": {
+    "total": "\u03b4I_oplus = \u03b4_A I_oplus + \u03b4_support I_oplus",
+    "connection_variation": "\u03b4_A I_oplus = interior_A + boundary_A",
+    "support_variation": "\u03b4_support I_oplus = \u03b4_T I + \u03b4_w I + \u03b4_oplus_kernel I + \u03b4_orientation I",
+    "exact_identity_form": "D_GammaR_Gamma^oplus = Q_A^oplus + rho_support^oplus only if rho_support is orthogonal/disjoint from boundary_A under declared decomposition."
+  },
+  "boundary_term": {
+    "definition": "Q_A^oplus(\u2202C)=\u03a3_{e\u2208\u2202C} \u03c3(C,e) \u03c4_e\u2192C^oplus(Grad_A I_oplus,e)",
+    "allowed_dependence": "connection variation only",
+    "forbidden_dependence": [
+      "pair weight variation",
+      "pair set birth/death variation",
+      "source/support variable variation",
+      "post-hoc residual correction"
+    ]
+  },
+  "support_current": {
+    "definition": "rho_support^oplus = \u03b4_T I + \u03b4_w I + \u03b4_kernel I + \u03b4_orientation I",
+    "lives_in": "V_oplus* after mapping support variations back to retained-pair dual covectors",
+    "components": {
+      "delta_w": "\u03a3_a (\u03b4w_a) <\u03b4_a,\u03b4_a> induces scalar-weighted pair-current covector",
+      "delta_T": "pair birth/death or replacement current; must be represented by signed pair-incidence cochain",
+      "delta_kernel": "native product kernel variation \u03b4\u2295 induces covector -2w_a <\u03b4_a, T_A(\u03b4\u2295_p) - \u03b4\u2295_q(...)>",
+      "delta_orientation": "\u03a0-driven sign/orientation changes of retained pair incidence"
+    },
+    "orthogonality_rule": "rho_support may not include Grad_A I_oplus terms; Q_A may not include support variations."
+  },
+  "audits_required": [
+    "boundary_support_disjointness: Q_A terms only from A-variation",
+    "support_current_disjointness: rho terms only from T,w,kernel,orientation variation",
+    "overlap_norm: inner product <Q_A, rho_support> reported but not optimized",
+    "zero_support_gate: if \u03b4_support terms vanish, rho_support must be zero",
+    "zero_boundary_gate: if \u2202C empty or boundary gradients vanish, Q_A must be zero"
+  ],
+  "nulls": {
+    "N_Q_support_contamination": "put support variation terms into Q_A; must fail disjointness gate.",
+    "N_rho_boundary_contamination": "put boundary gradient terms into rho; must fail disjointness gate.",
+    "N_weight_label_only": "replace \u03b4w-derived current with label-only weight current; must fail.",
+    "N_pair_birth_unsigned": "drop signed pair-incidence orientation; must fail support-current gate.",
+    "N_source_free_false": "declare source-free when \u03b4_support norms are nonzero; must fail zero-support gate."
+  },
+  "next": "V1694.5 \u2014 Product Support-Boundary Decomposition Python Test"
+}

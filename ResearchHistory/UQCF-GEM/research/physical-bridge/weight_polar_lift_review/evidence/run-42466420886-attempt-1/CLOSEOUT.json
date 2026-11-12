@@ -1,0 +1,45 @@
+{
+  "adopted_native_bridge_status": "NOT_DERIVED",
+  "archive_commit": "0aaa4e3a2599cc079a183cae378bc0d447403db7",
+  "archive_job_log_pending": false,
+  "archive_job_log_source": "GitHub fetch_workflow_job_logs connector decoded UTF-8, re-encoded without changes; complete final job log, including committed-byte/chunk readback success.",
+  "attempt": 1,
+  "closeout_files": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/weight_polar_lift_review/REVIEW_DISPOSITION.md": {
+      "bytes": 4429,
+      "git_blob_sha": "8504827bf31d9c05e6ed718c4fb39e29d84dbe94",
+      "sha256": "89b1f2c6f5aca790eff9d086090c181420730193c671589b9dd4fa29bb107b60"
+    },
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/weight_polar_lift_review/evidence/run-42466420886-attempt-1/job-128687944924.log": {
+      "bytes": 95122,
+      "git_blob_sha": "ce8731fdbf2fad4f4afd397a131abba93ecf7ed5",
+      "sha256": "3412aa96b313fcbbd4bb93eb758e6fb37e29ab1717a50d9416e1c0401f43a635"
+    }
+  },
+  "draft_pr": 140,
+  "external_readback": "Connector immutable readback of raw response, review identity, publication review_readback and receipt exactly matched independently downloaded artifacts.",
+  "frozen_commit": "d3f3ba38dd3d4879b7f540a5cf215e49f8e42a2e",
+  "job_conclusions": {
+    "128686882243": "success",
+    "128687414602": "success",
+    "128687646087": "success",
+    "128687944924": "success"
+  },
+  "local_artifact_manifest_checks": {
+    "publication_members_excluding_manifest": 34,
+    "review_members_excluding_manifest": 25
+  },
+  "mathematical_review_verdict": "ACCEPTED",
+  "merged": false,
+  "no_new_numerical_scientific_campaign": true,
+  "original_archive_readback": "Archive job fetched the committed branch then verified all 118 SHA256SUMS members and both chunk reconstructions from immutable Git objects.",
+  "preserved_holds": [
+    "PR130",
+    "PR131"
+  ],
+  "review_status_discrepancy": "Reviewer native label rejected: its own limitations and next obligation leave native mu and historical current identification unproved.",
+  "reviewer_native_bridge_status": "DERIVED_FROM_SOURCES",
+  "run_id": 42466420886,
+  "status": "COMPLETE_WITH_EXPLICIT_REVIEW_STATUS_DISCREPANCY",
+  "workflow_sha": "ac94885a229d222f389b22aa5797ecfab8a7c016"
+}
