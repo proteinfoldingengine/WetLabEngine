@@ -1,0 +1,54 @@
+{
+  "all_archive_members_verified": 74,
+  "baseline": "2a72e2331e910e17c82abb537a1162280102ef78",
+  "exact_input_files_read_back": 123,
+  "full_original_text_files_reviewed": 104,
+  "integrity_artifacts": {
+    "input_manifest.json": "3c39ca74ba08676feba97268d90d02e54c9cada9837b3912b4ac29af693de133",
+    "integrity.json": "75630f9045bcd909fbad5cb13f1eee557f06171b2965eb18cff44eb2fc4fe7a3",
+    "source_manifest.json": "f488edb90ded603ae345ed0d5c636a9094837e383ac816e38f8e9248b10adc1a",
+    "tests.log": "4680442df2b78a0a4d364cb7ad96b90fd9b3ff309e621cc00ac248c4b194162c"
+  },
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "native_bridge_status": "NOT_DERIVED",
+  "original_archives_verified": 11,
+  "original_files_verified": 115,
+  "prerequisite_jobs": [
+    {
+      "conclusion": "success",
+      "head_sha": "d94eb535fe41aba2b57d96a5f657ae6058737e47",
+      "id": 131255676082,
+      "name": "integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "d94eb535fe41aba2b57d96a5f657ae6058737e47",
+      "id": 131255759052,
+      "name": "argument-review",
+      "status": "completed"
+    }
+  ],
+  "readback_manifest_sha256": "3c39ca74ba08676feba97268d90d02e54c9cada9837b3912b4ac29af693de133",
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "review_artifacts": {
+    "input_manifest.json": "3c39ca74ba08676feba97268d90d02e54c9cada9837b3912b4ac29af693de133",
+    "manifest.json": "3399f3c1840b72992f75047311fb7f8e912b59c1dde4532cdb540c36143c43cb",
+    "model_metadata.json": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+    "prompt.txt": "48dc6b519d8958d1670bbfe2b11fd971751b09f2c7f32c3fa5d6ded5ca388d8a",
+    "request.json": "6f3b6e2258c1ad147e7f0018a2518d0e1454bed1956d27ad469646ad6815db24",
+    "response.json": "1f362d86c1155fc6abb4629afa30fea0e25f431a96cdb27b45d75195f45bf6cb",
+    "review.txt": "408572d8a4b586e17aedf8bff9df561cb48be01745e08d4bf25c9079ccbbd0db",
+    "verdict.json": "9eb057fb1d12d4b14678845f084a10de3b392ef9c66d5c0e7b6ffa8eae413658"
+  },
+  "run_attempt": "1",
+  "run_id": "43239476179",
+  "scientific_execution": false,
+  "scope": "Independent analytical source-audit acceptance only; no native-delivery promotion, historical scientific replay, stage closure or merge.",
+  "source_lock_sha256": "f488edb90ded603ae345ed0d5c636a9094837e383ac816e38f8e9248b10adc1a",
+  "source_sha": "d94eb535fe41aba2b57d96a5f657ae6058737e47",
+  "status": "PASS",
+  "verdict": "ACCEPTED",
+  "workflow_sha": "d94eb535fe41aba2b57d96a5f657ae6058737e47"
+}
