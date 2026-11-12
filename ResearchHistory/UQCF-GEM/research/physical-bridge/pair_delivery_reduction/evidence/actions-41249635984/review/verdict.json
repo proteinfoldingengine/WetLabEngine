@@ -1,0 +1,56 @@
+{
+  "constructive_analysis": [
+    {
+      "analysis": "The proof is algebraically exact and complete. It correctly deduces the pre- and post-event receiver contrasts strictly from the definitions of the transposition $\\sigma$, the pushforward $P$, and the two premises (PN-step) and (SX-fork). It successfully avoids any silent reliance on $Bl_D^a$, $Side_D$, $\\kappa$, positivity, cone-locality, or inter-carrier uniformity.",
+      "claim": "Theorem P",
+      "source_references": [
+        "RESULT.md: Theorem P (pair delivery from sibling exchange)"
+      ]
+    },
+    {
+      "analysis": "The dimension calculation $n^2 - 3n + 3$ is correct. The commutant of a single transposition has dimension $n^2 - 2n + 2$, and the condition $P F (e_u - e_p) = 0$ imposes exactly $n - 1$ independent linear constraints because $P$ maps to an $(n-1)$-dimensional space and $F e_u$ is unconstrained in the commutant.",
+      "claim": "Remark P.2",
+      "source_references": [
+        "RESULT.md: Remark P.2 (dimension, diagnostic)"
+      ]
+    },
+    {
+      "analysis": "The explicit witnesses $F^{tot}$ and $F^{dif}$ correctly demonstrate that $\\kappa$ is neither necessary nor sufficient for pair delivery. The counterexamples for dropping (SX-fork) and (PN-step) are valid and exactly satisfy the remaining conditions while failing the conclusion, proving the necessity of each premise.",
+      "claim": "Proposition K and N",
+      "source_references": [
+        "RESULT.md: Proposition K",
+        "RESULT.md: Proposition N"
+      ]
+    },
+    {
+      "analysis": "The classification of (INV) effect families is rigorous. The induction correctly identifies a deepest non-chain vertex, which must be a leaf, allowing the use of the FCV P1 composition property $P_{X\\setminus\\{w\\}, [0,p]} \\circ P_{X, X\\setminus\\{w\\}} = P_{X, [0,p]}$. The dimension $depth(p) + 1$ is correct.",
+      "claim": "Proposition O",
+      "source_references": [
+        "RESULT.md: Proposition O"
+      ]
+    },
+    {
+      "analysis": "The verifier `verify.py` is genuinely independent. It uses AHU canonical strings for tree enumeration (avoiding `produce.py`'s recursive multiset partitions) and implements its own Gaussian elimination over `fractions.Fraction` (avoiding `sympy.Matrix.nullspace`). The 16 tampered controls in `test_controls.py` correctly reject all specified failure modes.",
+      "claim": "Algorithmic Independence and Controls",
+      "source_references": [
+        "verify.py",
+        "test_controls.py"
+      ]
+    },
+    {
+      "analysis": "The novelty statement accurately reflects prior art, specifically acknowledging `P1_CANONICAL_RECEIVER_ACQUISITION.md` and `d28`. The ledger correctly maintains the NOT_DERIVED status for the access/record law, (PN), (SX), and (Nd), ensuring no supplied input is falsely promoted.",
+      "claim": "Ledger and Novelty",
+      "source_references": [
+        "RESULT.md: Section 0. Disclosures",
+        "RESULT.md: Section 7. Ledger of not-derived inputs"
+      ]
+    }
+  ],
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Derive an inherited access/record law that types the receiver's effect as event-covariant (not INV), and establish an inherited source for (SX-fork) and (PN-step) strictly from the FCV admitted relabelings and pushforwards.",
+  "verdict": "ACCEPTED"
+}
