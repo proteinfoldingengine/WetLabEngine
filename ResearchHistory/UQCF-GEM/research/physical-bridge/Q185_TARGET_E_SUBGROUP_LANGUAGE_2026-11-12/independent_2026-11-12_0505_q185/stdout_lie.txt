@@ -1,0 +1,7 @@
+(e1) dim span(l ⊕ p) over R = 16 (u(4) has 16)
+(e2) [loc,p] ⊆ p: True ; dim real commutant of ad(loc)|p = 1 (1 => irreducible)
+(f) d_R(SWAP·W_R) = 0  SWAP·|01> = |10>: True  op-Schmidt rank SWAP = 4
+    SWAP(A⊗B)SWAP = B⊗A: True
+(g) op-Schmidt rank CZ = 2  (A⊗B has 1)  Schmidt rank CZ|++> = 2  (product-preserving maps give 1)
+(h) Ctrl_E: Tr(Dm) = 0  det(Dm) = -1  (det=-1 => d=1/5); CZ in Ctrl_E with U0=I,U1=Z
+(i) Schmidt rank G|00> = 2  op-Schmidt rank G = 4
