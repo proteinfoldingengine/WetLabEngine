@@ -1,0 +1,113 @@
+name: UQCF PR135 independent whole-packet review
+
+on:
+  push:
+    branches: [gpt/groupoid-identity-ownership]
+    paths:
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/groupoid_identity_ownership/independent_review_2026_11_12/FREEZE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/groupoid_identity_ownership/independent_review_2026_11_12/PROMPT.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/groupoid_identity_ownership/independent_review_2026_11_12/source_lock.json'
+      - '.github/scripts/uqcf_pr135_*.py'
+      - '.github/workflows/uqcf-pr135-independent-review.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+
+concurrency:
+  group: uqcf-pr135-independent-review
+  cancel-in-progress: false
+
+jobs:
+  integrity:
+    name: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/groupoid_identity_ownership
+            .github
+      - name: Offline rejecting controls for review plumbing only
+        shell: bash
+        run: |
+          mkdir -p pr135_integrity
+          set -o pipefail
+          python3 .github/scripts/uqcf_pr135_tests.py 2>&1 | tee pr135_integrity/tests.log
+      - name: Verify full frozen source packet and every original ZIP member
+        run: python3 .github/scripts/uqcf_pr135_integrity.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: pr135-integrity-${{ github.run_attempt }}
+          path: pr135_integrity
+          if-no-files-found: error
+          retention-days: 90
+
+  argument-review:
+    name: argument-review
+    needs: integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/groupoid_identity_ownership
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: pr135-integrity-${{ github.run_attempt }}
+          path: pr135_integrity
+      - name: One fresh independent Gemini generation on complete original text
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_pr135_review.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: pr135-review-${{ github.run_attempt }}
+          path: pr135_review
+          if-no-files-found: error
+          retention-days: 90
+
+  publication-audit:
+    name: publication-audit
+    needs: [integrity, argument-review]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/groupoid_identity_ownership
+            .github
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: pr135-integrity-${{ github.run_attempt }}
+          path: pr135_integrity
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: pr135-review-${{ github.run_attempt }}
+          path: pr135_review
+      - name: Separate immutable source readback and raw-review publication audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/uqcf_pr135_publication.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: pr135-publication-${{ github.run_attempt }}
+          path: pr135_publication
+          if-no-files-found: error
+          retention-days: 90
