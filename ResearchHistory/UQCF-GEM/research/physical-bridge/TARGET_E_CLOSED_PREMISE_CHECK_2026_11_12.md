@@ -94,3 +94,15 @@ The retained-source p-effect remains a separate accepted conditional target: its
 - Novelty: the contrast formula and unrestricted blind-set criterion are credited to the existing results. The additional statements are elementary consequences in the explicit premise language, with no literature-wide or repository-wide novelty claim.
 
 Native bridge NOT_DERIVED. Physical result not claimed. scientific_breakthrough=false.
+
+## 6. Peer check and fixed-effect control — 2026-11-12
+
+Dot independently checked the displayed isometries, all input matrix-unit cases for C, the receiver marginal, and the closed-set argument in [PR111 comment 6823073688](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-6823073688). This is peer analytical checking, not a Gemini verdict or scientific certification. Dot requested no repair and supplied the following additional control, which I checked algebraically.
+
+Define S_rot = {(I_S tensor I_E tensor U_R) W_R : U_R in U(2)}. This compact closed class contains W_R and has d_R=1/5 everywhere, since its two proper-R marker states are orthogonal. It therefore belongs to the section 3 premise class.
+
+Nevertheless, no ONE FIXED binary effect F_R distinguishes every member. Let a,b be an orthonormal eigenbasis of F_R. Choose U_R|0>=(a+b)/sqrt(2) and U_R|1>=(a-b)/sqrt(2). Both expectations of F_R equal Tr(F_R)/2, so its contrast is zero for that member. Scalar effects are covered as well. This is a permitted change of the joint implementation; the source preparation and initial blank receiver remain fixed.
+
+This control separates a uniform trace-distance guarantee (for each realization an effect exists) from a common fixed-effect guarantee. Section 3 asserts only the former. Section 2's t-family does have the explicitly displayed common effect, and is unaffected. The control is limited to one binary effect: it does not exclude a fixed informationally complete measurement with multiple outcomes or an available effect family. It also does not impose a generic reference-frame requirement.
+
+The retained-source p-effect remains 1/5 throughout S_rot. Its ownership/access question is unchanged. Dot's exact response is frozen with the review inputs; a fresh whole-argument review will assess this note including this addendum, with no prior peer verdict treated as authority.
