@@ -1,0 +1,103 @@
+{
+  "files": [
+    {
+      "bytes": 19355,
+      "git_blob": "ca22c2c30dc9e6ddf787be7cccde682b2eb84807",
+      "path": "argument-review.log",
+      "sha256": "5433167760f8645223394eef10c18893b8de6eadfd17dc3db56ac7399a6e51b9"
+    },
+    {
+      "bytes": 9899,
+      "git_blob": "ceb7f3f516c344149f3126474691fea42a9cab15",
+      "path": "github_run.json",
+      "sha256": "78543ae311d6addb92a668874fda4ec44262fc1b4ed8dbed91a871ab418174d7"
+    },
+    {
+      "bytes": 9506,
+      "git_blob": "361346ed163c45f8be362bc15a9f5f5ca242f8ca",
+      "path": "publication/remote_readback.json",
+      "sha256": "de5751c3bf211811211e62953dfa0f9a581f977dbb69db8d8703b2c077ca9a9e"
+    },
+    {
+      "bytes": 17565,
+      "git_blob": "88724540e30ed53f3e4200f3caccadb5c3a02fa3",
+      "path": "publication-audit.log",
+      "sha256": "2e13568feaf0c5bed48d17b236ae6b12f41a323e2d010f6726bc6cbc3c52a569"
+    },
+    {
+      "bytes": 2873,
+      "git_blob": "4f82513c31ee5878cc828a01424dcc6d32128b18",
+      "path": "publication.zip",
+      "sha256": "f3f06116464c89086cd1d07efef1f96cd10c103298f08579c978d6e1ad2dcbbc"
+    },
+    {
+      "bytes": 1669,
+      "git_blob": "a009d0e774fd48e7886a1f5ec4aef20d59b64db7",
+      "path": "review/manifest.json",
+      "sha256": "1d763c11d0b85919414d94d3fc4a8e9ab41f048a048b5e557b5ad042a267c9bc"
+    },
+    {
+      "bytes": 199393,
+      "git_blob": "0a6842d75638cefa859666318292db858708575d",
+      "path": "review/prompt.txt",
+      "sha256": "afc5795d8e8824a5fc41ca982a9467105de134b96a812f520de8ff8786cfc536"
+    },
+    {
+      "bytes": 212099,
+      "git_blob": "51594c39d030c6e0fabf3cb7822c99a517bc9b5c",
+      "path": "review/request_body.reconstructed.json",
+      "sha256": "046b1764b8f55b1bc3af3249fe28838d7cc474ee9c62b5ab0251e1100ee109ff"
+    },
+    {
+      "bytes": 18758,
+      "git_blob": "b1d052f09f00632a5848310ea21e18b12470a23f",
+      "path": "review/response.json",
+      "sha256": "1e5cd365a4825345c711295a217a226f19d0e7de5569f2ec4dc686426c7f32a6"
+    },
+    {
+      "bytes": 3508,
+      "git_blob": "b6a596b02699cc85cebec842522339feb296df63",
+      "path": "review/review.txt",
+      "sha256": "43a751a4364754d8f53383c162222ee58bacc744a750097ea03a5da25b01c20c"
+    },
+    {
+      "bytes": 3509,
+      "git_blob": "2e2602a66d882fb5a27c2e1b30031f10acc5902f",
+      "path": "review/verdict.json",
+      "sha256": "c086c309f0d114f0879adb9462f4a7433fefd58984f831cc0f091621bd17d72d"
+    },
+    {
+      "bytes": 80012,
+      "git_blob": "72e0c262b8566adf932060abe06eb5940a27b1c6",
+      "path": "review.zip",
+      "sha256": "5122123b116a24cc054395e87bc472411964086b7900833026d96f7d6d5dc1b1"
+    }
+  ],
+  "historical_reviewed_sha": "10c5dc0e97c5ada182f4e4fd50f594a8b7da034f",
+  "inherited_stack_replay": false,
+  "limitations": [
+    "The review is bounded to the inspected analytical arguments and the specific source files (V1025, V1172, V1152.1, V1472, Gate A, and the v15.56 modules). It does not certify archive-wide absence of a native event producer.",
+    "The accepted status confirms the exact algebraic identities and code execution paths as written in the document; it does not endorse any physical interpretation of the variables beyond their mathematical definitions.",
+    "The distinction between P_B (algebra selection) and P_J (single reference copy) is confirmed for the specific resource theory context provided, but this does not rule out other potential equivalences under different, unstated simulation theorems."
+  ],
+  "maintenance_head": "0eb4b82fbc5ad6388b7efda43bff0f47a3a4246d",
+  "marker_only": true,
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "native_status": "NOT_DERIVED",
+  "publication": {
+    "baseline_source_identities": 19,
+    "review_input_identities": 5,
+    "status": "PASS",
+    "total_identities": 24
+  },
+  "request_body_provenance": "Exact deterministic json.dumps body reconstructed from reviewed script and archived prompt. The workflow did not independently log HTTP request bytes or headers.",
+  "response_id": "0vX1aoKVE9rpz7IPyre_yQk",
+  "review_checks": 7,
+  "run_attempt": 1,
+  "run_id": 43268720150,
+  "scientific_execution": false,
+  "scientific_sha": "05c2fe7f2812bba4b2a82838381be1a1754d131f",
+  "verdict": "ACCEPTED",
+  "workflow_sha": "05c2fe7f2812bba4b2a82838381be1a1754d131f"
+}
