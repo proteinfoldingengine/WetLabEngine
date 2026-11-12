@@ -1,0 +1,17 @@
+# ROC-1 source challenge: independent analytical review
+
+Authorization: Aaron's standing research, publication and Gemini review instructions. Source baseline: 2d10a74516ce2e8b818091d8ace1fabaff011ecc. This review completes the already published source challenge; it does not open a new coupling or numerical research branch.
+
+Known before this freeze: m(r)=1 satisfies the printed necessity premises; the strictly positive attenuation class gives exp(-lambda r) with lambda>=0; lambda=0 cannot be normalized to one by a positive finite unit change; ARC-1 with m0=1 fixes m=1 whenever its capacity constraints are feasible. The claim does not say m=1 satisfies the separately stipulated exponential definition. These are disclosed analytical findings, not prospective discoveries.
+
+Review the exact ASSESSMENT.md and all four other files from the published packet, bound in SOURCE_PACKET.json by bytes, SHA-256 and Git blob. Freeze this plan and the packet before any new Actions execution. Preserve transcriptions as transcriptions: their hashes do not certify original Library bytes. No historical scientific program or empirical result is replayed to establish the new claim.
+
+Run the unchanged inherited FCV/parent/historical regression stack with its independent certificate producer and verifier. This is verification infrastructure, not a finite proof of the scalar classification. Do not add a parameter grid or implementation-mirroring math tests. Exercise the evidence validator with changed, missing and additional files, retaining rejecting results.
+
+Use the existing Actions-secret Gemini integration. Verify availability of gemini-3.1-pro-preview, then make one generation request with the exact full argument, source texts and verification identities. No fallback or verdict shopping. Ask for independent reconstruction, the strongest alternative interpretation, missing assumptions, explicit counterexamples, and separate mathematical and physical verdicts. In particular test whether the word coupling, RAG-0's allowed expressions or a gauge change already excludes the constant multiplier without supplying the target dependence. Test the ARC-1 scope, including the distinction between capacity feasibility and a finite nonlinear constitutive solution.
+
+The review scope is the frozen scalar source challenge. T-402's further scalar/vector classifications are not added to the theorem, and peer agreement is not substituted for independent reconstruction. Preserve ACCEPTED, REVISE or FAIL and every objection. A substantive correction requires a new frozen revision, not an edit to the reviewed text.
+
+Separate publication job: fresh inherited replay with deterministic byte comparison, raw-response reparse, exact prompt/request/model identity reconciliation and immutable GitHub readback of every source/protocol/implementation file. Archive the original Actions ZIPs, verify their API digests and every extracted member, preserve completed job logs, and validate committed archive bytes. Then preserve the archive job's final log and an author adjudication.
+
+Stopping rule: finish this one review, evidence-publication and adjudication cycle, and report the actual verdict in PR111. Keep the isolated review branch and any PR unmerged. Native delivery remains NOT_DERIVED irrespective of the scalar review verdict. No thermal branch, Q12/Q28 extension, detector, gravity fit, source-current campaign, or new physical postulate is authorized by this review.

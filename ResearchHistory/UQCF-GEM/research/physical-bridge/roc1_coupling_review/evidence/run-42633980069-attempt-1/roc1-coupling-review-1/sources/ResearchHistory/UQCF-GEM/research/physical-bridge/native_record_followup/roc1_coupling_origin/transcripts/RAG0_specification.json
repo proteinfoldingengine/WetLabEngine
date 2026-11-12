@@ -1,0 +1,114 @@
+{
+  "object": "RAG-0",
+  "name": "Restricted Admissible-Law Grammar v0",
+  "purpose": "Target-independent decidable grammar for Path A retained-state / transport laws.",
+  "status": "SOLVED_AS_GRAMMAR_OBJECT__NOT_YET_LAW_CLOSURE",
+  "formal_tuple": [
+    "Types",
+    "Primitives",
+    "AllowedOperations",
+    "ForbiddenOperations",
+    "ComplexityMeasure",
+    "EquivalenceRelation",
+    "EnumerationProcedure",
+    "AdmissibilityTests"
+  ],
+  "types": {
+    "NodeZeroSumScalar": "N0 = node scalar fields with total sum zero",
+    "EdgeScalar": "E = oriented edge scalar fields",
+    "PositiveEdgeScalar": "E+ = positive edge capacities/conductances",
+    "RetainedState": "R = compact retained state generated before target scoring",
+    "ProbeFamily": "Q = admissible observer probes in N0",
+    "Operator": "linearized map from probes to edge/node response"
+  },
+  "primitive_observables_allowed": [
+    "incidence/boundary operator d from graph topology",
+    "source-current demand b in N0",
+    "edge capacity c in E+",
+    "edge conductance a in E+",
+    "prior retained state rho_n in R",
+    "observer probe q in Q",
+    "ordered-slice index only as update order, not time primitive",
+    "conservation defect d f - b",
+    "capacity pressure chi_pre computed before target solve",
+    "accessibility/observer response measured by locked probe map"
+  ],
+  "primitive_observables_forbidden": [
+    "metric",
+    "curvature",
+    "gravity",
+    "spatial coordinate labels as primitives",
+    "target K_ab",
+    "target future operator",
+    "target transport residual chosen after seeing target",
+    "history ID / source ID lookup",
+    "learned latent vector without first-principles update law"
+  ],
+  "allowed_operations": [
+    "incidence pullback d* phi",
+    "divergence d f",
+    "pointwise addition/subtraction/multiplication",
+    "pointwise division by positive capacity/conductance",
+    "finite bounded monotone scalar constitutive map sigma from predeclared family Sigma",
+    "convex energy minimization when energy is determined by sigma and conservation",
+    "linearization/Jacobian of a declared law",
+    "gauge projection to zero-mean node potentials",
+    "composition of ordered updates",
+    "admissibility projection only if defined independently of target score"
+  ],
+  "forbidden_operations": [
+    "unrestricted arbitrary function composition",
+    "neural net / RNN / autoencoder latent law",
+    "lookup table over histories/sources/probes/graph labels",
+    "target-indexed residual projector",
+    "unrestricted polynomial expansion",
+    "post-hoc choice of observables/residuals after seeing target",
+    "running the target joint solve as a null reconstruction"
+  ],
+  "complexity_measure": {
+    "definition": "expression-tree cost over allowed primitives and operations",
+    "fixed_before_scoring": true,
+    "not_performance_defined": true,
+    "rules": {
+      "primitive_observable": 1,
+      "incidence_or_divergence": 1,
+      "pointwise_algebra": 1,
+      "declared_sigma_family_use": 2,
+      "convex_solve_from_declared_energy": 3,
+      "linearization_of_declared_law": 2,
+      "retained_state_update_operator": 3
+    }
+  },
+  "equivalence_relation": [
+    "node-potential gauge phi ~ phi + constant",
+    "orientation convention changes preserving edge flow sign consistency",
+    "graph relabeling preserving incidence and ordered-update relations",
+    "retained-state gauge transformations preserving order/provenance relation",
+    "constitutive parameterization changes that produce identical operator/action on all admissible probes"
+  ],
+  "enumeration_procedure": [
+    "enumerate expression trees by increasing complexity",
+    "reject any tree containing forbidden primitives or operations",
+    "reject any tree failing conservation/source-current compatibility",
+    "reject any tree requiring target future operator or K_ab as input",
+    "group expressions by declared equivalence relation",
+    "test minimal survivors on prequential heldout ordered-slice challenges"
+  ],
+  "first_solved_law_family": {
+    "name": "FC-CL: finite-capacity conserved-current law family",
+    "status": "UNIQUE_MINIMAL_FAMILY_WITHIN_RAG0_FOR_BOUNDED_CONSERVED_EDGE_CURRENT__SIGMA_NOT_UNIQUELY_FIXED",
+    "law": [
+      "d f = b",
+      "f = c \u2299 sigma((a \u2299 d*phi) / c)",
+      "sigma in Sigma: odd, monotone, bounded, sigma(0)=0, sigma'(0)=1"
+    ],
+    "joint_constraint": "K_ab = f(b_a+b_b) - f(b_a) - f(b_b)",
+    "linearized_transport_operator": "O_b(q) = response under d diag(a \u2299 sigma'((a\u2299d*phi_b)/c)) d*",
+    "claim": "This law family formalizes the 57.3B/57.3C finite-capacity joint field without claiming retained-state or gravity closure."
+  },
+  "open_subobject": {
+    "name": "RSL-1 retained-state update law",
+    "status": "OPEN",
+    "reason": "RAG-0 does not yet force a unique endogenous retained-provenance update law."
+  }
+}
