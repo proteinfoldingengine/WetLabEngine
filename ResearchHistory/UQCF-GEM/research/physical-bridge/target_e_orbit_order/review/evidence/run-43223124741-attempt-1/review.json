@@ -1,0 +1,63 @@
+{
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "Acknowledged supplied premises and missing native access.",
+    "The result applies only to the chosen premise language (closed subgroups and their orbits) and does not rule out a maximal sufficient orbit, only a greatest one.",
+    "The proof relies on the finite-dimensional matrix topology of the supplied benchmark, which is not a derived physical robustness principle."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Formulate an inherited operation that produces a receiver-owned action or access change, moving beyond the analysis of supplied premise languages and structural bounds.",
+  "proof_checks": [
+    {
+      "claim": "The same channel on all source matrix units.",
+      "reasoning": "The isometry W is defined such that W|j> = |j>|e_0> for j=o,p,v and W|u> = |p>|e_u>. Because e_0 and e_u are orthogonal, tracing out the complement exactly reproduces the coordinate deletion map Q and the |p><p| term. The checker explicitly verifies this across all 16 matrix units (channel_all_16_matrix_units_symbolic)."
+    },
+    {
+      "claim": "The fixed proper-R factorization and source pair.",
+      "reasoning": "The document explicitly adopts the supplied benchmark definitions: K = E \\otimes R = C^2 \\otimes C^2, and the diagonal source pair \\rho_+, \\rho_-. No deviations from the benchmark are introduced."
+    },
+    {
+      "claim": "H_t = V_t L V_t^dagger closed and connected.",
+      "reasoning": "L is the continuous image of the compact and connected group U(2) x U(2). Therefore, L is compact (hence closed in the finite-dimensional space) and connected. Conjugation by the unitary V_t is a homeomorphism, preserving both topological properties."
+    },
+    {
+      "claim": "Its entire orbit parameterization.",
+      "reasoning": "Because V_t^dagger fixes the reference markers |00> and |01>, the action of H_t on W_R is entirely determined by the action of L on those markers, which spans all unit vectors 'a' in E and all orthonormal bases (b_0, b_u) in R. The parameterization e_j = V_t(a \\otimes b_j) is exact and exhaustive."
+    },
+    {
+      "claim": "The marginal map for all unit a and orthonormal b_0, b_u.",
+      "reasoning": "The partial trace over E of |e_j><e_j| is correctly computed. Since V_t = |0><0| \\otimes I + |1><1| \\otimes Z_t, tracing out the 'a' register yields the convex combination p|b_j><b_j| + (1-p)Z_t|b_j><b_j|Z_t^dagger, where p = |<0|a>|^2."
+    },
+    {
+      "claim": "The exact phase-multiplier and trace-distance identities.",
+      "reasoning": "The algebraic expansion of the trace distance squared D(\\tau_u, \\tau_0)^2 in terms of z and w is exact. The phase multiplier |p + (1-p)\\zeta_t|^2 simplifies correctly to (1+(2p-1)^2 t^2)/(1+t^2). The checker confirms these symbolic identities (arbitrary_product_pair_phase_multiplier_symbolic, all_orbit_members_lower_bound_identity)."
+    },
+    {
+      "claim": "The sharp positive minimum 1/(5 sqrt(1+t^2)).",
+      "reasoning": "The expression for D^2 - 1/(1+t^2) is shown to be a sum of non-negative terms, bounded below by 0. The minimum is achieved when p=1/2 and z=0. Scaling by 1/5 for d_R yields the exact sharp margin. The checker confirms this (sharp_squared_margin_symbolic)."
+    },
+    {
+      "claim": "Attainment by the displayed Hadamard pair.",
+      "reasoning": "Applying the Hadamard unitary F \\otimes F yields p=1/2 and z=0. The resulting marginals \\tau_0(t) and \\tau_u(t) exactly match the theoretical minimum. The checker verifies the marginals (hadamard_pair_marginals_symbolic)."
+    },
+    {
+      "claim": "The blind accumulation point.",
+      "reasoning": "Taking the limit as t -> \\infty, \\zeta_t -> -1. The marginals \\tau_0 and \\tau_u both converge to I_2/2, resulting in a trace distance of 0. The limit markers remain orthonormal, preserving the channel. The checker verifies the limit and the blind endpoint properties."
+    },
+    {
+      "claim": "The compactness contradiction for a greatest orbit under actual OUTPUT-SET inclusion, also in the connected sublanguage.",
+      "reasoning": "A greatest sufficient orbit must contain all orbits O_{H_n}, hence the sequence of Hadamard-pair realizations W_n. Because the orbit of a compact group is compact (and thus closed), it must contain the limit point W_\\infty. Since W_\\infty is blind, the greatest orbit cannot be sufficient. This holds in the connected sublanguage because each H_n is connected. The proof correctly uses orbit inclusion, not subgroup inclusion, and distinguishes greatest from maximal."
+    },
+    {
+      "claim": "No closed sufficient common upper bound for this particular infinite family.",
+      "reasoning": "Any closed set containing the orbits O_{H_n} for all n must contain the sequence W_n, and therefore its limit W_\\infty. Since W_\\infty is blind, no such closed set can be sufficient. This is a valid, stronger topological obstruction."
+    },
+    {
+      "claim": "Adverse endpoint control, fixed-binary-effect scope, informationally complete measurement caveat, and retained-source p-effect 1/5.",
+      "reasoning": "The limit group V_\\infty L V_\\infty^dagger remains compact and connected but its orbit contains the blind point, proving these structural properties do not force a proper-R signal. The orbit contains the R-rotation family, so Dot's prior control applies (no single binary effect works everywhere), but this does not rule out multi-outcome measurements. The retained-source p-effect contrast remains exactly 1/5 for all members, including the blind limit, as verified by the checker."
+    }
+  ],
+  "verdict": "ACCEPTED"
+}
