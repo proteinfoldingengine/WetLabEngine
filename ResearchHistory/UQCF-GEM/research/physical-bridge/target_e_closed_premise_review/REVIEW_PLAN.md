@@ -23,10 +23,14 @@ One generation only, using gemini-3.1-pro-preview. All source documents and reus
 
 ## Execution
 
-- [ ] Write the rejecting tests and record the expected failure before implementing the controller.
-- [ ] Implement the minimal controller using the existing model transport; pass the complete local plumbing suite.
-- [ ] Publish locked inputs and code, verify immutable readback, then publish the triggering workflow.
-- [ ] Stay in session through review and publication audit. Inspect actual verdict, findings, model identity and logs.
-- [ ] Preserve raw evidence and exact readback receipts. Report analytical acceptance separately from the native milestone.
+- [x] Write the rejecting tests and record the expected failure before implementing the controller.
+- [x] Implement the minimal controller using the existing model transport; pass the complete local plumbing suite.
+- [x] Publish locked inputs and code, verify immutable readback, then publish the triggering workflow.
+- [x] Stay in session through review and publication audit. Inspect actual verdict, findings, model identity and logs.
+- [x] Preserve raw evidence and exact readback receipts. Report analytical acceptance separately from the native milestone.
 
 Review focus: source substitutions; review-byte alterations; missing response/finish reason; accidental regeneration; confusion between a binary effect, a multi-outcome measurement and optimized trace distance. Tests address the first four; the exact frozen argument and reviewer prompt address the mathematical scope.
+
+## Completion record
+
+Completed 2026-11-12. Run 43217169237 attempt 1 finished successfully: one Gemini generation ACCEPTED the frozen conditional argument, and the separate publication audit passed. The original ZIPs, completed job logs and readable verdict were preserved and verified by exact immutable readback. See [STATUS.md](STATUS.md) for the exact accepted argument and scope. This completed review does not derive native delivery and must not be rerun for the unchanged argument.
