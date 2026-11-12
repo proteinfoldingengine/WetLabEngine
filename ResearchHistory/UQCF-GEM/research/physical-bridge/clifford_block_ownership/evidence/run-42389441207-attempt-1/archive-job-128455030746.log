@@ -1,0 +1,479 @@
+﻿2026-11-07T16:09:47.9336124Z Current runner version: '2.338.2'
+2026-11-07T16:09:47.9353664Z ##[group]Runner Image Provisioner
+2026-11-07T16:09:47.9354251Z Hosted Compute Agent
+2026-11-07T16:09:47.9354880Z Version: 20261028.624
+2026-11-07T16:09:47.9355286Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-07T16:09:47.9355726Z Build Date: 2026-10-28T21:51:42Z
+2026-11-07T16:09:47.9356195Z Worker ID: {b6fa4191-1795-4974-aedb-dd9ab0acec26}
+2026-11-07T16:09:47.9356691Z Region: westus3
+2026-11-07T16:09:47.9357071Z Cloud: Azure
+2026-11-07T16:09:47.9357484Z ##[endgroup]
+2026-11-07T16:09:47.9358286Z ##[group]Operating System
+2026-11-07T16:09:47.9358708Z Ubuntu
+2026-11-07T16:09:47.9359072Z 24.04.5
+2026-11-07T16:09:47.9359382Z LTS
+2026-11-07T16:09:47.9359751Z ##[endgroup]
+2026-11-07T16:09:47.9360099Z ##[group]Runner Image
+2026-11-07T16:09:47.9360488Z Image: ubuntu-24.04
+2026-11-07T16:09:47.9360916Z Version: 20261101.360.1
+2026-11-07T16:09:47.9362018Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-07T16:09:47.9362910Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-07T16:09:47.9363521Z ##[endgroup]
+2026-11-07T16:09:47.9364258Z ##[group]GITHUB_TOKEN Permissions
+2026-11-07T16:09:47.9365636Z Actions: read
+2026-11-07T16:09:47.9365992Z Contents: write
+2026-11-07T16:09:47.9366329Z Metadata: read
+2026-11-07T16:09:47.9366753Z ##[endgroup]
+2026-11-07T16:09:47.9368430Z Secret source: Actions
+2026-11-07T16:09:47.9369062Z Cache mode: write
+2026-11-07T16:09:47.9369604Z Prepare workflow directory
+2026-11-07T16:09:47.9688703Z Prepare all required actions
+2026-11-07T16:09:47.9724344Z Getting action download info
+2026-11-07T16:09:48.2692575Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-07T16:09:48.3762407Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-07T16:09:48.6771375Z Complete job name: archive
+2026-11-07T16:09:48.7282885Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-07T16:09:48.7283413Z with:
+2026-11-07T16:09:48.7283680Z   ref: 669a7a7fa46769f60e4035da41b1546a694d46e0
+2026-11-07T16:09:48.7284007Z   fetch-depth: 20
+2026-11-07T16:09:48.7285579Z   sparse-checkout: .github
+ResearchHistory/UQCF-GEM/foundational-closure-verification
+ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction
+ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent
+ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence
+ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership
+
+2026-11-07T16:09:48.7287078Z   repository: proteinfoldingengine/WetLabEngine
+2026-11-07T16:09:48.7289460Z   token: ***
+2026-11-07T16:09:48.7289698Z   ssh-strict: true
+2026-11-07T16:09:48.7289944Z   ssh-user: git
+2026-11-07T16:09:48.7290196Z   persist-credentials: true
+2026-11-07T16:09:48.7290472Z   clean: true
+2026-11-07T16:09:48.7290762Z   sparse-checkout-cone-mode: true
+2026-11-07T16:09:48.7291054Z   fetch-tags: false
+2026-11-07T16:09:48.7291304Z   show-progress: true
+2026-11-07T16:09:48.7291551Z   lfs: false
+2026-11-07T16:09:48.7291779Z   submodules: false
+2026-11-07T16:09:48.7292031Z   set-safe-directory: true
+2026-11-07T16:09:48.7292314Z   allow-unsafe-pr-checkout: false
+2026-11-07T16:09:48.7292678Z env:
+2026-11-07T16:09:48.7292962Z   UQCF_WORKFLOW_SHA: 669a7a7fa46769f60e4035da41b1546a694d46e0
+2026-11-07T16:09:48.7293318Z ##[endgroup]
+2026-11-07T16:09:48.9597000Z Syncing repository: proteinfoldingengine/WetLabEngine
+2026-11-07T16:09:48.9598263Z ##[group]Getting Git version info
+2026-11-07T16:09:48.9598732Z Working directory is '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-07T16:09:48.9599414Z [command]/usr/bin/git version
+2026-11-07T16:09:48.9687086Z git version 2.56.0
+2026-11-07T16:09:48.9700126Z ##[endgroup]
+2026-11-07T16:09:48.9719706Z Temporarily overriding HOME='/home/runner/work/_temp/4ae22b12-7885-4d34-8b6a-8e43a480daa2' before making global git config changes
+2026-11-07T16:09:48.9721378Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T16:09:48.9723207Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-07T16:09:48.9779116Z Deleting the contents of '/home/runner/work/WetLabEngine/WetLabEngine'
+2026-11-07T16:09:48.9781776Z ##[group]Initializing the repository
+2026-11-07T16:09:48.9784891Z [command]/usr/bin/git init /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-07T16:09:48.9882095Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-07T16:09:48.9883325Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-07T16:09:48.9884335Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-07T16:09:48.9885255Z hint: call:
+2026-11-07T16:09:48.9885691Z hint:
+2026-11-07T16:09:48.9886248Z hint: 	git config --global init.defaultBranch <name>
+2026-11-07T16:09:48.9886967Z hint:
+2026-11-07T16:09:48.9887538Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-07T16:09:48.9888456Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-07T16:09:48.9889178Z hint:
+2026-11-07T16:09:48.9889580Z hint: 	git branch -m <name>
+2026-11-07T16:09:48.9890052Z hint:
+2026-11-07T16:09:48.9890656Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-07T16:09:48.9891697Z Initialized empty Git repository in /home/runner/work/WetLabEngine/WetLabEngine/.git/
+2026-11-07T16:09:48.9901711Z [command]/usr/bin/git remote add origin https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T16:09:48.9945792Z ##[endgroup]
+2026-11-07T16:09:48.9946526Z ##[group]Disabling automatic garbage collection
+2026-11-07T16:09:48.9948241Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-07T16:09:48.9986048Z ##[endgroup]
+2026-11-07T16:09:48.9986814Z ##[group]Setting up auth
+2026-11-07T16:09:48.9987989Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T16:09:49.0031604Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T16:09:49.0407812Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T16:09:49.0449637Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T16:09:49.0650877Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T16:09:49.0689494Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T16:09:49.0887921Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-07T16:09:49.0980104Z ##[endgroup]
+2026-11-07T16:09:49.0980719Z ##[group]Fetching the repository
+2026-11-07T16:09:49.0990401Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=20 origin 669a7a7fa46769f60e4035da41b1546a694d46e0
+2026-11-07T16:09:49.7548014Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T16:09:49.7550015Z  * branch            669a7a7fa46769f60e4035da41b1546a694d46e0 -> FETCH_HEAD
+2026-11-07T16:09:49.7553956Z ##[endgroup]
+2026-11-07T16:09:49.7555093Z ##[group]Determining the checkout info
+2026-11-07T16:09:49.7556366Z ##[endgroup]
+2026-11-07T16:09:49.7557569Z ##[group]Setting up sparse checkout
+2026-11-07T16:09:49.7564891Z [command]/usr/bin/git sparse-checkout set .github ResearchHistory/UQCF-GEM/foundational-closure-verification ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent ResearchHistory/UQCF-GEM/research/physical-bridge/native_owner_correspondence ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership
+2026-11-07T16:09:49.7623474Z ##[endgroup]
+2026-11-07T16:09:49.7625008Z ##[group]Checking out the ref
+2026-11-07T16:09:49.7627466Z [command]/usr/bin/git checkout --progress --force 669a7a7fa46769f60e4035da41b1546a694d46e0
+2026-11-07T16:09:54.1970644Z Updating files:   0% (1/2294)
+2026-11-07T16:09:54.1980539Z Updating files:   1% (23/2294)
+2026-11-07T16:09:54.1993408Z Updating files:   2% (46/2294)
+2026-11-07T16:09:54.2003041Z Updating files:   3% (69/2294)
+2026-11-07T16:09:54.2015042Z Updating files:   4% (92/2294)
+2026-11-07T16:09:54.2028293Z Updating files:   5% (115/2294)
+2026-11-07T16:09:54.2037485Z Updating files:   6% (138/2294)
+2026-11-07T16:09:54.2052588Z Updating files:   7% (161/2294)
+2026-11-07T16:09:54.2064574Z Updating files:   8% (184/2294)
+2026-11-07T16:09:54.2078381Z Updating files:   9% (207/2294)
+2026-11-07T16:09:54.2092766Z Updating files:  10% (230/2294)
+2026-11-07T16:09:54.2100162Z Updating files:  11% (253/2294)
+2026-11-07T16:09:54.2109077Z Updating files:  12% (276/2294)
+2026-11-07T16:09:54.2114986Z Updating files:  13% (299/2294)
+2026-11-07T16:09:54.2125472Z Updating files:  14% (322/2294)
+2026-11-07T16:09:54.2133465Z Updating files:  15% (345/2294)
+2026-11-07T16:09:54.2140325Z Updating files:  16% (368/2294)
+2026-11-07T16:09:54.2148909Z Updating files:  17% (390/2294)
+2026-11-07T16:09:54.2155295Z Updating files:  18% (413/2294)
+2026-11-07T16:09:54.2161854Z Updating files:  19% (436/2294)
+2026-11-07T16:09:54.2168839Z Updating files:  20% (459/2294)
+2026-11-07T16:09:54.2174962Z Updating files:  21% (482/2294)
+2026-11-07T16:09:54.2184575Z Updating files:  22% (505/2294)
+2026-11-07T16:09:54.2192264Z Updating files:  23% (528/2294)
+2026-11-07T16:09:54.2200615Z Updating files:  24% (551/2294)
+2026-11-07T16:09:54.2209104Z Updating files:  25% (574/2294)
+2026-11-07T16:09:54.2216804Z Updating files:  26% (597/2294)
+2026-11-07T16:09:54.2227347Z Updating files:  27% (620/2294)
+2026-11-07T16:09:54.2234765Z Updating files:  28% (643/2294)
+2026-11-07T16:09:54.2242654Z Updating files:  29% (666/2294)
+2026-11-07T16:09:54.2261349Z Updating files:  30% (689/2294)
+2026-11-07T16:09:54.2279327Z Updating files:  31% (712/2294)
+2026-11-07T16:09:54.2301072Z Updating files:  32% (735/2294)
+2026-11-07T16:09:54.2308213Z Updating files:  33% (758/2294)
+2026-11-07T16:09:54.2325949Z Updating files:  34% (780/2294)
+2026-11-07T16:09:54.2362834Z Updating files:  35% (803/2294)
+2026-11-07T16:09:54.2391745Z Updating files:  36% (826/2294)
+2026-11-07T16:09:54.2406676Z Updating files:  37% (849/2294)
+2026-11-07T16:09:54.2416156Z Updating files:  38% (872/2294)
+2026-11-07T16:09:54.2427678Z Updating files:  39% (895/2294)
+2026-11-07T16:09:54.2451041Z Updating files:  40% (918/2294)
+2026-11-07T16:09:54.4002266Z Updating files:  41% (941/2294)
+2026-11-07T16:09:54.4065284Z Updating files:  42% (964/2294)
+2026-11-07T16:09:54.4075797Z Updating files:  43% (987/2294)
+2026-11-07T16:09:54.4085753Z Updating files:  44% (1010/2294)
+2026-11-07T16:09:54.4095859Z Updating files:  45% (1033/2294)
+2026-11-07T16:09:54.4212420Z Updating files:  46% (1056/2294)
+2026-11-07T16:09:54.4221803Z Updating files:  47% (1079/2294)
+2026-11-07T16:09:54.4233590Z Updating files:  48% (1102/2294)
+2026-11-07T16:09:54.4247961Z Updating files:  49% (1125/2294)
+2026-11-07T16:09:54.4284977Z Updating files:  50% (1147/2294)
+2026-11-07T16:09:54.4293570Z Updating files:  51% (1170/2294)
+2026-11-07T16:09:54.4308761Z Updating files:  52% (1193/2294)
+2026-11-07T16:09:54.4336446Z Updating files:  53% (1216/2294)
+2026-11-07T16:09:54.4344218Z Updating files:  54% (1239/2294)
+2026-11-07T16:09:54.4354798Z Updating files:  55% (1262/2294)
+2026-11-07T16:09:54.4383555Z Updating files:  56% (1285/2294)
+2026-11-07T16:09:54.4408785Z Updating files:  57% (1308/2294)
+2026-11-07T16:09:54.4419327Z Updating files:  58% (1331/2294)
+2026-11-07T16:09:54.4430980Z Updating files:  59% (1354/2294)
+2026-11-07T16:09:54.4442347Z Updating files:  60% (1377/2294)
+2026-11-07T16:09:54.4453787Z Updating files:  61% (1400/2294)
+2026-11-07T16:09:54.4463162Z Updating files:  62% (1423/2294)
+2026-11-07T16:09:54.4473022Z Updating files:  63% (1446/2294)
+2026-11-07T16:09:54.4480167Z Updating files:  64% (1469/2294)
+2026-11-07T16:09:54.4487345Z Updating files:  65% (1492/2294)
+2026-11-07T16:09:54.4500406Z Updating files:  66% (1515/2294)
+2026-11-07T16:09:54.4512779Z Updating files:  67% (1537/2294)
+2026-11-07T16:09:54.4525574Z Updating files:  68% (1560/2294)
+2026-11-07T16:09:54.4537852Z Updating files:  69% (1583/2294)
+2026-11-07T16:09:54.4547965Z Updating files:  70% (1606/2294)
+2026-11-07T16:09:54.4557372Z Updating files:  71% (1629/2294)
+2026-11-07T16:09:54.4568780Z Updating files:  72% (1652/2294)
+2026-11-07T16:09:54.4578732Z Updating files:  73% (1675/2294)
+2026-11-07T16:09:54.4589861Z Updating files:  74% (1698/2294)
+2026-11-07T16:09:54.4599283Z Updating files:  75% (1721/2294)
+2026-11-07T16:09:54.4609651Z Updating files:  76% (1744/2294)
+2026-11-07T16:09:54.4620849Z Updating files:  77% (1767/2294)
+2026-11-07T16:09:54.4630886Z Updating files:  78% (1790/2294)
+2026-11-07T16:09:54.4641475Z Updating files:  79% (1813/2294)
+2026-11-07T16:09:54.4660283Z Updating files:  80% (1836/2294)
+2026-11-07T16:09:54.4671672Z Updating files:  81% (1859/2294)
+2026-11-07T16:09:54.4683070Z Updating files:  82% (1882/2294)
+2026-11-07T16:09:54.4693298Z Updating files:  83% (1905/2294)
+2026-11-07T16:09:54.4704340Z Updating files:  84% (1927/2294)
+2026-11-07T16:09:54.4715654Z Updating files:  85% (1950/2294)
+2026-11-07T16:09:54.4729598Z Updating files:  86% (1973/2294)
+2026-11-07T16:09:54.4738085Z Updating files:  87% (1996/2294)
+2026-11-07T16:09:54.4753399Z Updating files:  88% (2019/2294)
+2026-11-07T16:09:54.4764382Z Updating files:  89% (2042/2294)
+2026-11-07T16:09:54.4775885Z Updating files:  90% (2065/2294)
+2026-11-07T16:09:54.4782326Z Updating files:  91% (2088/2294)
+2026-11-07T16:09:54.4790780Z Updating files:  92% (2111/2294)
+2026-11-07T16:09:54.4801962Z Updating files:  93% (2134/2294)
+2026-11-07T16:09:54.4816383Z Updating files:  94% (2157/2294)
+2026-11-07T16:09:54.4822034Z Updating files:  95% (2180/2294)
+2026-11-07T16:09:54.4831638Z Updating files:  96% (2203/2294)
+2026-11-07T16:09:54.6163409Z Updating files:  97% (2226/2294)
+2026-11-07T16:09:54.6167156Z Updating files:  98% (2249/2294)
+2026-11-07T16:09:54.6174176Z Updating files:  99% (2272/2294)
+2026-11-07T16:09:54.6174611Z Updating files: 100% (2294/2294)
+2026-11-07T16:09:54.6175190Z Updating files: 100% (2294/2294), done.
+2026-11-07T16:09:54.7045352Z Note: switching to '669a7a7fa46769f60e4035da41b1546a694d46e0'.
+2026-11-07T16:09:54.7045634Z 
+2026-11-07T16:09:54.7045809Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-07T16:09:54.7046215Z changes and commit them, and you can discard any commits you make in this
+2026-11-07T16:09:54.7046610Z state without impacting any branches by switching back to a branch.
+2026-11-07T16:09:54.7046955Z 
+2026-11-07T16:09:54.7047216Z If you want to create a new branch to retain commits you create, you may
+2026-11-07T16:09:54.7047593Z do so (now or later) by using -c with the switch command. Example:
+2026-11-07T16:09:54.7047807Z 
+2026-11-07T16:09:54.7047898Z   git switch -c <new-branch-name>
+2026-11-07T16:09:54.7048046Z 
+2026-11-07T16:09:54.7048130Z Or undo this operation with:
+2026-11-07T16:09:54.7048268Z 
+2026-11-07T16:09:54.7048343Z   git switch -
+2026-11-07T16:09:54.7048447Z 
+2026-11-07T16:09:54.7048629Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-07T16:09:54.7048886Z 
+2026-11-07T16:09:54.7049144Z HEAD is now at 669a7a7 Preserve hidden evidence sources and chunk original archives; retain first failed run
+2026-11-07T16:09:54.7104393Z ##[endgroup]
+2026-11-07T16:09:54.7153147Z [command]/usr/bin/git log -1 --format=%H
+2026-11-07T16:09:54.7185537Z 669a7a7fa46769f60e4035da41b1546a694d46e0
+2026-11-07T16:09:54.7621414Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-11-07T16:09:54.7621991Z with:
+2026-11-07T16:09:54.7622180Z   python-version: 3.11
+2026-11-07T16:09:54.7622388Z   check-latest: false
+2026-11-07T16:09:54.7625129Z   token: ***
+2026-11-07T16:09:54.7625322Z   update-environment: true
+2026-11-07T16:09:54.7625530Z   allow-prereleases: false
+2026-11-07T16:09:54.7625727Z   freethreaded: false
+2026-11-07T16:09:54.7625907Z env:
+2026-11-07T16:09:54.7626061Z   UQCF_WORKFLOW_SHA: 669a7a7fa46769f60e4035da41b1546a694d46e0
+2026-11-07T16:09:54.7626249Z ##[endgroup]
+2026-11-07T16:09:54.8683836Z ##[group]Installed versions
+2026-11-07T16:09:54.8748848Z (node:2122) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-07T16:09:54.8749370Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-07T16:09:54.8749684Z Successfully set up CPython (3.11.18)
+2026-11-07T16:09:54.8750184Z ##[endgroup]
+2026-11-07T16:09:54.9138999Z ##[group]Run python .github/scripts/uqcf_clifford_owner_archive.py
+2026-11-07T16:09:54.9139402Z [36;1mpython .github/scripts/uqcf_clifford_owner_archive.py[0m
+2026-11-07T16:09:54.9178508Z shell: /usr/bin/bash -e {0}
+2026-11-07T16:09:54.9178662Z env:
+2026-11-07T16:09:54.9178821Z   UQCF_WORKFLOW_SHA: 669a7a7fa46769f60e4035da41b1546a694d46e0
+2026-11-07T16:09:54.9179050Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T16:09:54.9179296Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-07T16:09:54.9179531Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T16:09:54.9179743Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T16:09:54.9179955Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T16:09:54.9180165Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-07T16:09:54.9181820Z   GH_TOKEN: ***
+2026-11-07T16:09:54.9181940Z ##[endgroup]
+2026-11-07T16:10:23.6578053Z Original ZIP digests, complete successful manifests and failed-run inventory verified; reversible chunks retained.
+2026-11-07T16:10:23.6579688Z ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1
+2026-11-07T16:10:23.6732848Z ##[group]Run set -euo pipefail
+2026-11-07T16:10:23.6733054Z [36;1mset -euo pipefail[0m
+2026-11-07T16:10:23.6733207Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-07T16:10:23.6733402Z [36;1mtest "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"[0m
+2026-11-07T16:10:23.6733610Z [36;1mgit config user.name proteinfolding-gpt[0m
+2026-11-07T16:10:23.6733847Z [36;1mgit config user.email proteinfolding-gpt@users.noreply.github.com[0m
+2026-11-07T16:10:23.6734191Z [36;1mgit add ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence[0m
+2026-11-07T16:10:23.6734865Z [36;1mgit commit -m "Archive Clifford block ownership run $GITHUB_RUN_ID"[0m
+2026-11-07T16:10:23.6735093Z [36;1mgit push origin "HEAD:$REVIEW_BRANCH"[0m
+2026-11-07T16:10:23.6735266Z [36;1mgit fetch origin "$REVIEW_BRANCH"[0m
+2026-11-07T16:10:23.6735482Z [36;1mtest "$(git rev-parse HEAD)" = "$(git rev-parse FETCH_HEAD)"[0m
+2026-11-07T16:10:23.6735784Z [36;1mpython .github/scripts/uqcf_clifford_owner_archive.py readback FETCH_HEAD[0m
+2026-11-07T16:10:23.6753578Z shell: /usr/bin/bash -e {0}
+2026-11-07T16:10:23.6753717Z env:
+2026-11-07T16:10:23.6753879Z   UQCF_WORKFLOW_SHA: 669a7a7fa46769f60e4035da41b1546a694d46e0
+2026-11-07T16:10:23.6754108Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T16:10:23.6754346Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-07T16:10:23.6754772Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T16:10:23.6754986Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T16:10:23.6755203Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-07T16:10:23.6755417Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-07T16:10:23.6755621Z   REVIEW_BRANCH: gpt/clifford-block-ownership
+2026-11-07T16:10:23.6755930Z ##[endgroup]
+2026-11-07T16:10:24.0539787Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T16:10:24.0540247Z  * branch            gpt/clifford-block-ownership -> FETCH_HEAD
+2026-11-07T16:10:24.0540542Z  * [new branch]      gpt/clifford-block-ownership -> origin/gpt/clifford-block-ownership
+2026-11-07T16:10:38.2768034Z [detached HEAD ef314c1] Archive Clifford block ownership run 42389441207
+2026-11-07T16:10:38.2768470Z  160 files changed, 9303 insertions(+)
+2026-11-07T16:10:38.2768847Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/CHUNKS.json
+2026-11-07T16:10:38.2769628Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/FAILURE_AUDIT.json
+2026-11-07T16:10:38.2770537Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/SHA256SUMS
+2026-11-07T16:10:38.2771537Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/clifford-owner-review-1.zip
+2026-11-07T16:10:38.2772576Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/clifford-owner-verification-1.zip.part-0000
+2026-11-07T16:10:38.2773453Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/clifford-owner-verification-1.zip.part-0001
+2026-11-07T16:10:38.2774290Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/clifford-owner-verification-1.zip.part-0002
+2026-11-07T16:10:38.2775517Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/clifford-owner-verification-1.zip.part-0003
+2026-11-07T16:10:38.2777151Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/clifford-owner-verification-1.zip.part-0004
+2026-11-07T16:10:38.2778138Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/clifford-owner-verification-1.zip.part-0005
+2026-11-07T16:10:38.2778758Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/job-128451727681.log
+2026-11-07T16:10:38.2779312Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42388778011-attempt-1/job-128452377060.log
+2026-11-07T16:10:38.2779852Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/CHUNKS.json
+2026-11-07T16:10:38.2780394Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/DOWNLOAD_AUDIT.json
+2026-11-07T16:10:38.2780940Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/SHA256SUMS
+2026-11-07T16:10:38.2781511Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1.zip
+2026-11-07T16:10:38.2782167Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/artifact_manifest.json
+2026-11-07T16:10:38.2782846Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/certificate.json
+2026-11-07T16:10:38.2783527Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/certificate.json.stderr
+2026-11-07T16:10:38.2784330Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/commands.json
+2026-11-07T16:10:38.2785427Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/controls.json
+2026-11-07T16:10:38.2786416Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited.log
+2026-11-07T16:10:38.2787449Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited.log.stderr
+2026-11-07T16:10:38.2788529Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/PRODUCTION.json
+2026-11-07T16:10:38.2789634Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/REPRODUCED_1615F.json
+2026-11-07T16:10:38.2790737Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/VERIFICATION.json
+2026-11-07T16:10:38.2791857Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/artifact_manifest.json
+2026-11-07T16:10:38.2792665Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/certificates.json.xz
+2026-11-07T16:10:38.2793370Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/commands.json
+2026-11-07T16:10:38.2794341Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/historical-reproduction.log
+2026-11-07T16:10:38.2795342Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/independent-verifier.log
+2026-11-07T16:10:38.2796052Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/producer.log
+2026-11-07T16:10:38.2796760Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/inherited/receipt.json
+2026-11-07T16:10:38.2797433Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/integrity.json
+2026-11-07T16:10:38.2798089Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/receipt.json
+2026-11-07T16:10:38.2798751Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/duplicate.json
+2026-11-07T16:10:38.2799426Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/duplicate.stderr
+2026-11-07T16:10:38.2800101Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/duplicate.stdout
+2026-11-07T16:10:38.2800872Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/false_count.json
+2026-11-07T16:10:38.2801550Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/false_count.stderr
+2026-11-07T16:10:38.2802229Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/false_count.stdout
+2026-11-07T16:10:38.2802903Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/false_source.json
+2026-11-07T16:10:38.2803583Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/false_source.stderr
+2026-11-07T16:10:38.2804276Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/false_source.stdout
+2026-11-07T16:10:38.2805123Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/invalid_word.json
+2026-11-07T16:10:38.2805802Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/invalid_word.stderr
+2026-11-07T16:10:38.2806481Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/invalid_word.stdout
+2026-11-07T16:10:38.2807150Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/missing.json
+2026-11-07T16:10:38.2807909Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/missing.stderr
+2026-11-07T16:10:38.2808575Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/missing.stdout
+2026-11-07T16:10:38.2809255Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/substituted.json
+2026-11-07T16:10:38.2809933Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/substituted.stderr
+2026-11-07T16:10:38.2810623Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/substituted.stdout
+2026-11-07T16:10:38.2811306Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/wrong_phase.json
+2026-11-07T16:10:38.2811977Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/wrong_phase.stderr
+2026-11-07T16:10:38.2812653Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/wrong_phase.stdout
+2026-11-07T16:10:38.2813325Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/wrong_word.json
+2026-11-07T16:10:38.2813995Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/wrong_word.stderr
+2026-11-07T16:10:38.2814881Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/red/wrong_word.stdout
+2026-11-07T16:10:38.2815554Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/review_readback.json
+2026-11-07T16:10:38.2816279Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/sources/.github/scripts/uqcf_clifford_owner.py
+2026-11-07T16:10:38.2817077Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/sources/.github/scripts/uqcf_clifford_owner_archive.py
+2026-11-07T16:10:38.2817883Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/sources/.github/workflows/uqcf-clifford-owner.yml
+2026-11-07T16:10:38.2818785Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/ARGUMENT.md
+2026-11-07T16:10:38.2819904Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/PREREGISTRATION.md
+2026-11-07T16:10:38.2820888Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/SOURCE_ARGUMENT.md
+2026-11-07T16:10:38.2821953Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/produce.py
+2026-11-07T16:10:38.2822909Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/verify.py
+2026-11-07T16:10:38.2823723Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/verification.json
+2026-11-07T16:10:38.2824409Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-publication-1/verification.json.stderr
+2026-11-07T16:10:38.2825191Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1.zip
+2026-11-07T16:10:38.2825826Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/artifact_manifest.json
+2026-11-07T16:10:38.2826476Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/integrity.json
+2026-11-07T16:10:38.2827117Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/model_metadata.json
+2026-11-07T16:10:38.2827753Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/prompt.txt
+2026-11-07T16:10:38.2828383Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/request.json
+2026-11-07T16:10:38.2829089Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/response.json
+2026-11-07T16:10:38.2829707Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/review.txt
+2026-11-07T16:10:38.2830791Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/review_identity.json
+2026-11-07T16:10:38.2831909Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/sources/.github/scripts/uqcf_clifford_owner.py
+2026-11-07T16:10:38.2832974Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/sources/.github/scripts/uqcf_clifford_owner_archive.py
+2026-11-07T16:10:38.2833755Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/sources/.github/workflows/uqcf-clifford-owner.yml
+2026-11-07T16:10:38.2834785Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/ARGUMENT.md
+2026-11-07T16:10:38.2835820Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/PREREGISTRATION.md
+2026-11-07T16:10:38.2837569Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/SOURCE_ARGUMENT.md
+2026-11-07T16:10:38.2838727Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/produce.py
+2026-11-07T16:10:38.2839664Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/verify.py
+2026-11-07T16:10:38.2840440Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-review-1/verdict.json
+2026-11-07T16:10:38.2841092Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1.zip.part-0000
+2026-11-07T16:10:38.2841887Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1.zip.part-0001
+2026-11-07T16:10:38.2842637Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1.zip.part-0002
+2026-11-07T16:10:38.2843519Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1.zip.part-0003
+2026-11-07T16:10:38.2844254Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1.zip.part-0004
+2026-11-07T16:10:38.2845324Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1.zip.part-0005
+2026-11-07T16:10:38.2846079Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/artifact_manifest.json
+2026-11-07T16:10:38.2846835Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/certificate.json
+2026-11-07T16:10:38.2847595Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/certificate.json.stderr
+2026-11-07T16:10:38.2848344Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/commands.json
+2026-11-07T16:10:38.2849068Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/controls.json
+2026-11-07T16:10:38.2849792Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited.log
+2026-11-07T16:10:38.2850528Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited.log.stderr
+2026-11-07T16:10:38.2851293Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/PRODUCTION.json
+2026-11-07T16:10:38.2852095Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/REPRODUCED_1615F.json
+2026-11-07T16:10:38.2853072Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/VERIFICATION.json
+2026-11-07T16:10:38.2854206Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/artifact_manifest.json
+2026-11-07T16:10:38.2855385Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/certificates.json.xz
+2026-11-07T16:10:38.2856096Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/commands.json
+2026-11-07T16:10:38.2856802Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/dependencies.log
+2026-11-07T16:10:38.2857512Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/fcv-tests.log
+2026-11-07T16:10:38.2858234Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/historical-reproduction.log
+2026-11-07T16:10:38.2858968Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/historical-tests.log
+2026-11-07T16:10:38.2859700Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/independent-verifier.log
+2026-11-07T16:10:38.2860422Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/parent-tests.log
+2026-11-07T16:10:38.2861456Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/producer.log
+2026-11-07T16:10:38.2862140Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/receipt.json
+2026-11-07T16:10:38.2862867Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/source-snapshot.zip.part-0000
+2026-11-07T16:10:38.2863625Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/source-snapshot.zip.part-0001
+2026-11-07T16:10:38.2864389Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/source-snapshot.zip.part-0002
+2026-11-07T16:10:38.2865267Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/source-snapshot.zip.part-0003
+2026-11-07T16:10:38.2866016Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/source-snapshot.zip.part-0004
+2026-11-07T16:10:38.2866764Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/inherited/source-snapshot.zip.part-0005
+2026-11-07T16:10:38.2867467Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/integrity.json
+2026-11-07T16:10:38.2868216Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/receipt.json
+2026-11-07T16:10:38.2868873Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/duplicate.json
+2026-11-07T16:10:38.2869540Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/duplicate.stderr
+2026-11-07T16:10:38.2870214Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/duplicate.stdout
+2026-11-07T16:10:38.2870892Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/false_count.json
+2026-11-07T16:10:38.2871574Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/false_count.stderr
+2026-11-07T16:10:38.2872252Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/false_count.stdout
+2026-11-07T16:10:38.2872927Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/false_source.json
+2026-11-07T16:10:38.2873612Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/false_source.stderr
+2026-11-07T16:10:38.2874302Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/false_source.stdout
+2026-11-07T16:10:38.2875208Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/invalid_word.json
+2026-11-07T16:10:38.2875887Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/invalid_word.stderr
+2026-11-07T16:10:38.2876571Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/invalid_word.stdout
+2026-11-07T16:10:38.2877243Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/missing.json
+2026-11-07T16:10:38.2877911Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/missing.stderr
+2026-11-07T16:10:38.2878582Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/missing.stdout
+2026-11-07T16:10:38.2879254Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/substituted.json
+2026-11-07T16:10:38.2879990Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/substituted.stderr
+2026-11-07T16:10:38.2880912Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/substituted.stdout
+2026-11-07T16:10:38.2881846Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/wrong_phase.json
+2026-11-07T16:10:38.2882527Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/wrong_phase.stderr
+2026-11-07T16:10:38.2883206Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/wrong_phase.stdout
+2026-11-07T16:10:38.2883879Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/wrong_word.json
+2026-11-07T16:10:38.2884688Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/wrong_word.stderr
+2026-11-07T16:10:38.2885370Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/red/wrong_word.stdout
+2026-11-07T16:10:38.2886099Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/sources/.github/scripts/uqcf_clifford_owner.py
+2026-11-07T16:10:38.2886895Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/sources/.github/scripts/uqcf_clifford_owner_archive.py
+2026-11-07T16:10:38.2887697Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/sources/.github/workflows/uqcf-clifford-owner.yml
+2026-11-07T16:10:38.2888579Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/ARGUMENT.md
+2026-11-07T16:10:38.2889652Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/PREREGISTRATION.md
+2026-11-07T16:10:38.2890642Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/SOURCE_ARGUMENT.md
+2026-11-07T16:10:38.2891611Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/produce.py
+2026-11-07T16:10:38.2892576Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/sources/ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/verify.py
+2026-11-07T16:10:38.2893389Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/verification.json
+2026-11-07T16:10:38.2894068Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/clifford-owner-verification-1/verification.json.stderr
+2026-11-07T16:10:38.2894870Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/job-128453711157.log
+2026-11-07T16:10:38.2895421Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/job-128454332262.log
+2026-11-07T16:10:38.2896057Z  create mode 100644 ResearchHistory/UQCF-GEM/research/physical-bridge/clifford_block_ownership/evidence/run-42389441207-attempt-1/job-128454683295.log
+2026-11-07T16:11:21.7964273Z To https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T16:11:22.1437260Z    669a7a7..ef314c1  HEAD -> gpt/clifford-block-ownership
+2026-11-07T16:11:22.1437682Z From https://github.com/proteinfoldingengine/WetLabEngine
+2026-11-07T16:11:22.1438029Z  * branch            gpt/clifford-block-ownership -> FETCH_HEAD
+2026-11-07T16:11:24.3680613Z Committed original bytes and all chunk reconstructions verified
+2026-11-07T16:11:24.3868300Z Post job cleanup.
+2026-11-07T16:11:24.4663707Z (node:2429) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-07T16:11:24.4664337Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-07T16:11:24.4806475Z Post job cleanup.
+2026-11-07T16:11:24.5419534Z [command]/usr/bin/git version
+2026-11-07T16:11:24.5475291Z git version 2.56.0
+2026-11-07T16:11:24.5499321Z Temporarily overriding HOME='/home/runner/work/_temp/1c8c7bf1-a9a0-4351-95cd-f8a9c2f41b1f' before making global git config changes
+2026-11-07T16:11:24.5500323Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T16:11:24.5502732Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/WetLabEngine/WetLabEngine
+2026-11-07T16:11:24.5540014Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T16:11:24.5574091Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T16:11:24.5818467Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T16:11:24.5851190Z http.https://github.com/.extraheader
+2026-11-07T16:11:24.5869305Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-07T16:11:24.5923214Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T16:11:24.6176930Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T16:11:24.6221562Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T16:11:24.6592571Z Cleaning up orphan processes
+2026-11-07T16:11:24.6830800Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
