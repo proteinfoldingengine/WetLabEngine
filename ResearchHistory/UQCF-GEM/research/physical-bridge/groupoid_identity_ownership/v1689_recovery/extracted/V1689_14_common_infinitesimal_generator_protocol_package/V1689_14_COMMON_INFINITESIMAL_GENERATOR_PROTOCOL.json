@@ -1,0 +1,95 @@
+{
+  "version": "V1689.14",
+  "title": "Common Infinitesimal Generator Protocol for \u0393_R and \u03c1_P",
+  "verdict": "COMMON_GENERATOR_PROTOCOL_FROZEN_NO_EXECUTION",
+  "problem_from_V1689_13": "Event-action rho_P is structurally clean and normalized, but its orientation is mostly perpendicular to D_Gamma R_Gamma.",
+  "core_correction": "\u0393_R transport and provenance current representation must be induced by the same generated-algebra infinitesimal generator A_pq.",
+  "central_object": {
+    "symbol": "A_pq",
+    "type": "infinitesimal generated-algebra derivation / connection generator",
+    "transport_relation": "T_pq \u2248 exp(A_pq)",
+    "event_relation": "rho_e must be a component/projection of the same generator algebra as A_pq",
+    "curvature_relation": "R_Gamma loop curvature is produced by noncommuting composition of A_pq around loops"
+  },
+  "derivation_requirements": {
+    "A_pq_must_act_on": [
+      "branch generators B_p",
+      "native product op_plus_p",
+      "O3 associator subspace",
+      "H4_perp residual direction",
+      "source/access/divergence state S_p",
+      "provenance/pruning-order ledger Pi_p"
+    ],
+    "A_pq_must_satisfy": [
+      "derivation-like product rule: A(x op_plus y) \u2248 A(x) op_plus y + x op_plus A(y) + source/provenance correction",
+      "associator covariance: A(A3_p) matches induced change in O3 across p->q",
+      "H4 covariance: A(H4_perp_p) matches induced change in H4_perp across p->q",
+      "source/provenance coupling: source/order events map into the same generator space",
+      "order-arrow admissibility: A_pq may be directed and non-invertible"
+    ]
+  },
+  "generator_components": {
+    "A_B": "branch generator action",
+    "A_product": "native product derivation defect/action",
+    "A_O3": "L3 associator action",
+    "A_H4": "L4 residual action",
+    "A_S": "source/access/divergence action",
+    "A_Pi": "provenance/pruning-order incidence action"
+  },
+  "curvature_from_generator": {
+    "edge_transport": "T_pq = Exp_R(A_pq), where Exp_R may be directed/truncated/admissible rather than reversible matrix exponential",
+    "small_loop_approx": "R_Gamma(C) \u2248 \u03a3_edges A_e + \u03a3_commutators [A_e,A_f] + higher retained terms",
+    "noncommutativity": "curvature arises from failure of generated-algebra derivations to commute around retained loops",
+    "directed_warning": "do not require A_qp = -A_pq unless reversible transport is independently admissible"
+  },
+  "rho_from_generator": {
+    "event_action": "For event e on boundary B_ij, rho_e = projection of A_pq onto the event-affected generated-algebra component.",
+    "formula": "rho_e = P_event(e) A_pq P_event(e) or signed incidence component of A_pq",
+    "represented_current": "rho_P(J_P,ij) = \u03a3_e \u03c3(e) |m_e| rho_e / (M_B * G_B)",
+    "orientation_rule": "rho_e orientation must come from A_pq, not standalone projectors."
+  },
+  "identity": {
+    "source_balanced": "D_Gamma R_Gamma = rho_P(J_P)",
+    "residual": "E_Gamma = D_Gamma R_Gamma - rho_P(J_P)",
+    "meaning": "source/provenance current is the generator-induced boundary term of curvature compatibility."
+  },
+  "new_required_tables": {
+    "generators.csv": [
+      "pipeline_id",
+      "edge_id",
+      "from_node",
+      "to_node",
+      "A_pq_serialized",
+      "A_source",
+      "A_B_norm",
+      "A_product_norm",
+      "A_O3_norm",
+      "A_H4_norm",
+      "A_S_norm",
+      "A_Pi_norm",
+      "A_order_directed",
+      "A_uses_forbidden_fields"
+    ],
+    "event_actions.csv additions": [
+      "A_edge_id",
+      "rho_e_from_A_pq",
+      "event_projector_serialized",
+      "rho_orientation_source"
+    ]
+  },
+  "killer_nulls": {
+    "N_generator_shuffle": "preserve A_pq norms and scalar transport statistics but shuffle generator component orientations across edges.",
+    "N_event_projection_shuffle": "preserve event counts/magnitudes and A_pq, but attach events to wrong generator components.",
+    "N_commutator_flatten": "preserve edge A norms but force commuting generators; should reduce/alter curvature while preserving scalar magnitudes.",
+    "N_reverse_generator": "reverse directed generator orientation; should fail order/provenance compatibility."
+  },
+  "failure_conditions": [
+    "rho_e still built from standalone projectors",
+    "A_pq computed from E_Gamma or fitted residual",
+    "T_pq and rho_P use different generator spaces",
+    "N_generator_shuffle passes identity",
+    "source-free closure used before source-balanced closure"
+  ],
+  "next_execution": "V1689.15 should emit A_pq generators first, derive T_pq and rho_e from A_pq, then rerun structural audit with generator-level nulls.",
+  "claim_boundary": "Derivation protocol only. No validation or law claim."
+}

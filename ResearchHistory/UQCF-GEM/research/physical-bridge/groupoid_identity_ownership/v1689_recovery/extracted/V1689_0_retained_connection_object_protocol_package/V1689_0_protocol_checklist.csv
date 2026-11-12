@@ -1,0 +1,16 @@
+item,status
+"Define G_p with B_p, O3_p, H4_perp_p, S_p, Pi_p, op_plus_p",required before Python
+"Define T_pq as generated-algebra transport, not vector alignment",required before Python
+Define product faithfulness defect delta_pq,required before Python
+Define O3 transport faithfulness defect,required before Python
+Define H4_perp transport faithfulness defect,required before Python
+"Define loop transport Omega_C,p",required before Python
+Define R_Gamma(C)_p as endomorphism defect,required before Python
+Define admissible automorphism quotient,required before Python
+Define Comp_{j->i}(R_j),required before Python
+Define D_Gamma R_Gamma,required before Python
+Define provenance/source current J_P,required before Python
+Define E_Gamma = D_Gamma R_Gamma - J_P,required before Python
+Define N_alg_shuffle killer null,required before Python
+Ban toy weak_target as law evidence,frozen governance
+Downgrade scalar holonomy to diagnostic,frozen governance

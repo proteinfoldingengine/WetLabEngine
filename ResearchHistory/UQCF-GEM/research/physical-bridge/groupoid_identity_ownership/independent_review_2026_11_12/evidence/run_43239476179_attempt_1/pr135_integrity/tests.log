@@ -1,0 +1,36 @@
+test_additional_source_rejected (__main__.PacketControls.test_additional_source_rejected) ... ok
+test_changed_original_rejected (__main__.PacketControls.test_changed_original_rejected) ... ok
+test_complete_original_sources_and_all_members (__main__.PacketControls.test_complete_original_sources_and_all_members) ... ok
+test_duplicate_source_rejected (__main__.PacketControls.test_duplicate_source_rejected) ... ok
+test_duplicated_member_rejected (__main__.PacketControls.test_duplicated_member_rejected) ... ok
+test_missing_member_rejected (__main__.PacketControls.test_missing_member_rejected) ... ok
+test_missing_source_rejected (__main__.PacketControls.test_missing_source_rejected) ... ok
+test_prompt_full_exact_text_and_independent_reconstruction (__main__.PacketControls.test_prompt_full_exact_text_and_independent_reconstruction) ... ok
+test_publication_rebuilds_complete_packet_and_rejects_wrong_tree (__main__.PacketControls.test_publication_rebuilds_complete_packet_and_rejects_wrong_tree) ... ok
+test_substituted_extraction_rejected (__main__.PacketControls.test_substituted_extraction_rejected) ... ok
+test_substituted_source_rejected (__main__.PacketControls.test_substituted_source_rejected) ... ok
+test_wrong_byte_length_rejected (__main__.PacketControls.test_wrong_byte_length_rejected) ... ok
+test_wrong_digest_rejected (__main__.PacketControls.test_wrong_digest_rejected) ... ok
+test_wrong_git_blob_rejected (__main__.PacketControls.test_wrong_git_blob_rejected) ... ok
+test_wrong_provenance_rejected (__main__.PacketControls.test_wrong_provenance_rejected) ... ok
+test_corrupted_integrity_evidence_rejected (__main__.PublicationControls.test_corrupted_integrity_evidence_rejected) ... ok
+test_independent_publication_acceptance (__main__.PublicationControls.test_independent_publication_acceptance) ... ok
+test_replaced_generation_request_rejected (__main__.PublicationControls.test_replaced_generation_request_rejected) ... ok
+test_spoofed_parsed_verdict_rejected (__main__.PublicationControls.test_spoofed_parsed_verdict_rejected) ... ok
+test_stale_run_rejected (__main__.PublicationControls.test_stale_run_rejected) ... ok
+test_tampered_prompt_even_with_new_artifact_hash_rejected (__main__.PublicationControls.test_tampered_prompt_even_with_new_artifact_hash_rejected) ... ok
+test_wrong_returned_model_with_consistent_stored_manifest_rejected (__main__.PublicationControls.test_wrong_returned_model_with_consistent_stored_manifest_rejected) ... ok
+test_accepted_with_unresolved_findings_rejected (__main__.ReviewControls.test_accepted_with_unresolved_findings_rejected) ... ok
+test_adverse_response_retained_and_rejected (__main__.ReviewControls.test_adverse_response_retained_and_rejected) ... ok
+test_blocked_prompt_and_duplicate_json_rejected (__main__.ReviewControls.test_blocked_prompt_and_duplicate_json_rejected) ... ok
+test_exact_model_transport_one_generation_and_no_key_in_saved_request (__main__.ReviewControls.test_exact_model_transport_one_generation_and_no_key_in_saved_request) ... ok
+test_thought_only_text_rejected (__main__.ReviewControls.test_thought_only_text_rejected) ... ok
+test_truncated_and_ambiguous_replies_rejected (__main__.ReviewControls.test_truncated_and_ambiguous_replies_rejected) ... ok
+test_unavailable_requested_model_does_not_generate (__main__.ReviewControls.test_unavailable_requested_model_does_not_generate) ... ok
+test_valid_raw_response (__main__.ReviewControls.test_valid_raw_response) ... ok
+test_wrong_or_missing_model_rejected (__main__.ReviewControls.test_wrong_or_missing_model_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.280s
+
+OK

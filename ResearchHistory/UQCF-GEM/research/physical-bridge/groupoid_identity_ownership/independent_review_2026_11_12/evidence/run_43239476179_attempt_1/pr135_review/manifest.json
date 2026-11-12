@@ -1,0 +1,26 @@
+{
+  "artifact_hashes": {
+    "input_manifest.json": "3c39ca74ba08676feba97268d90d02e54c9cada9837b3912b4ac29af693de133",
+    "model_metadata.json": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+    "prompt.txt": "48dc6b519d8958d1670bbfe2b11fd971751b09f2c7f32c3fa5d6ded5ca388d8a",
+    "request.json": "6f3b6e2258c1ad147e7f0018a2518d0e1454bed1956d27ad469646ad6815db24",
+    "response.json": "1f362d86c1155fc6abb4629afa30fea0e25f431a96cdb27b45d75195f45bf6cb",
+    "review.txt": "408572d8a4b586e17aedf8bff9df561cb48be01745e08d4bf25c9079ccbbd0db",
+    "verdict.json": "9eb057fb1d12d4b14678845f084a10de3b392ef9c66d5c0e7b6ffa8eae413658"
+  },
+  "generation_calls_maximum": 1,
+  "integrity_artifacts": {
+    "input_manifest.json": "3c39ca74ba08676feba97268d90d02e54c9cada9837b3912b4ac29af693de133",
+    "integrity.json": "75630f9045bcd909fbad5cb13f1eee557f06171b2965eb18cff44eb2fc4fe7a3",
+    "source_manifest.json": "f488edb90ded603ae345ed0d5c636a9094837e383ac816e38f8e9248b10adc1a",
+    "tests.log": "4680442df2b78a0a4d364cb7ad96b90fd9b3ff309e621cc00ac248c4b194162c"
+  },
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "run_attempt": "1",
+  "run_id": "43239476179",
+  "source_sha": "d94eb535fe41aba2b57d96a5f657ae6058737e47",
+  "status": "ACCEPTED",
+  "workflow_sha": "d94eb535fe41aba2b57d96a5f657ae6058737e47"
+}
