@@ -268,3 +268,31 @@ The section/transport line (Q155–Q184) is now exhausted in every bounded form 
 - (iii) Q184 (P S ≠ id transports) was deprioritized behind Target E by this ruling and has now completed as recorded above; it is not a next block.
 - (iv) v16.54 is parked.
 - (v) This ruling covers research direction only, not merges, deletes or the PR130/131 hold.
+
+
+## GPT integration checkpoint — 2026-11-12: completed Target E questions reconciled
+
+This append updates the working queue from published evidence after the 04:34 Engineering ruling. It is not a new Engineering ruling, a new scientific result, or an expansion of research scope. Earlier entries remain unchanged.
+
+### Completed questions and exact accepted scope
+
+| Question | Current disposition | Immutable evidence |
+|---|---|---|
+| All closed sufficient admitted sets, ordered by set inclusion | Reviewed: no inclusion-maximal member in that supplied class; pointwise nonzero contrast does not imply a uniform positive margin over a nonclosed family. | target_e_closed_premise_review/STATUS.md at 955b33f84c24f101685737e6bfb54ba33c634dde; Gemini run 43217169237 attempt 1; PR111 comment 6823677384. |
+| T-426 section 6: actual homogeneous output-orbit inclusion, including connected groups | Reviewed: no greatest sufficient closed orbit in the supplied language. This does NOT claim absence of maximal orbits. The conjugated-local-group proof does not depend on T-426's Lie-classification argument. | target_e_orbit_order/review/STATUS.md at bd14be75e88abe7849850e5fe861013a27e140bb; Gemini run 43223124741 attempt 1; PR111 comment 6824423311. |
+
+Both reviews and their separate publication audits are complete; original raw artifacts and immutable readbacks are preserved. Neither result needs another model generation on unchanged material. T-426's separate Lie-theory proposition does not inherit either acceptance.
+
+The proper-R question and the retained-source p-effect stay distinct. The latter retains its conditional contrast 1/5 even in proper-R-blind realizations. No new detection threshold, full-source recovery requirement, unique dilation, or whole-observable-algebra requirement is added.
+
+### Current construction target under the existing assignment
+
+Continue OWNER_ACTION_NEXT_CYCLE_2026_11_10.md and OWNER_HELD_EFFECT_ACTION_DIRECTIVE_2026_11_07.md: a named inherited operation, identified with the actual event, must change an independently identified owner's state/action/available effect; one fixed owner-available effect must have a source-dependent response.
+
+A new candidate must bring an exact source operation and provenance not already exhausted by Q155–Q184 or the completed group-order questions. Give its input/output types and identify the FIRST previously supplied correspondence it actually removes. The prior roles stand: GPT positive construction, Grok derivation/challenge of that same first unsupported step, Dot adversarial comparison on the same owner/effect after a concrete candidate exists. These assignments do not assert current worker liveness.
+
+No new admissible native-producing operation was found in this integration pass. PR140 remains an accepted CONDITIONAL polar-lift argument at head 159ca4afd3d4a06f00aab83cfdb52e10ad0abc9c: the actual weight direction mu, native pair incidence, historical-current identification and receiver access remain unearned. Its correctly adopted native status is NOT_DERIVED despite the contradictory raw reviewer label preserved in its disposition. It is not a new source that reopens the closed incidence search.
+
+Do not queue another group-order variant, equivalent access condition, source census, or guard/section reconstruction solely because the earlier NEXT item is finished. Re-entry needs specific new source evidence or a concrete defect in an existing result. If neither appears, record no material change and keep routine monitoring quiet, as DIRECTION_UPDATE_2026_10_21.md section 6 requires.
+
+Q155–Q184 remain stopped within their recorded scopes; v16.54 remains parked under Engineering's ruling. No new branch, merge, hold change, native simulation, automation change or SUPPLIED-to-DERIVED promotion. Native bridge NOT_DERIVED; physical result Not claimed; scientific_breakthrough=false.
