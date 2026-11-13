@@ -1,0 +1,9 @@
+# Charge-statistics review adaptation check
+
+Root statically compared this narrow configuration adaptation with the independently inspected PR148 transport. The whole controller AST is identical after excluding REL, packet digest, ordered document IDs, review prompt and the success log label. All eleven functions retain their behavior. Tests and workflow are byte-identical after reversing the intended names/paths. Both reused helper files are unchanged; embedded document hashes were checked. Detailed source identities are in ADAPTATION_CHECK.json. This is a root adaptation check, not a newly claimed independent code review or scientific certificate.
+
+The dedicated workflow trigger is a push on gpt/charge-statistics-20261113 changing its own workflow file. It retains read-only permissions, pinned actions, triggering-commit checkout, one first-attempt-only exact-model call, and a separate publication job with no model key/call. The inherited retry prohibition, immutable file-source checks, raw request/response equality checks, artifact manifests and NOT_DERIVED gate are unchanged. PEER_CONTEXT.json freezes the attributed mutable comment as an immutable repository file for this review.
+
+The eight existing rejecting controls passed before execution. The prompt asks for the new statistical and mixed-preparation argument, credits the peer criterion, and treats all prior documents as context. It does not request a repeat review of unchanged PR147/148.
+
+Known manual gates remain mandatory after execution: read substantive proof_checks and next_native_obligation; compare manifest ACCEPTED status and returned model with the raw response and exact requested model metadata. The parser does not enforce those extra reasoning fields or redundant manifest comparisons. An automated pass alone is insufficient. Author premise labels and limitations remain in force even if the raw limitations array is empty.
