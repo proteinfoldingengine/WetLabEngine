@@ -1,0 +1,77 @@
+test_complete_raw_review_is_accepted (__main__.ReviewControls.test_complete_raw_review_is_accepted) ... FAIL
+test_generation_is_forbidden_on_retry (__main__.ReviewControls.test_generation_is_forbidden_on_retry) ... FAIL
+test_prompt_contains_each_exact_document_once (__main__.ReviewControls.test_prompt_contains_each_exact_document_once) ... FAIL
+test_rejects_altered_prompt_verdict_and_run_identity (__main__.ReviewControls.test_rejects_altered_prompt_verdict_and_run_identity) ... FAIL
+test_rejects_changed_packet_before_source_use (__main__.ReviewControls.test_rejects_changed_packet_before_source_use) ... FAIL
+test_rejects_different_remote_source_bytes (__main__.ReviewControls.test_rejects_different_remote_source_bytes) ... FAIL
+test_rejects_missing_duplicate_and_changed_sources (__main__.ReviewControls.test_rejects_missing_duplicate_and_changed_sources) ... FAIL
+test_rejects_truncation_wrong_model_defects_and_native_promotion (__main__.ReviewControls.test_rejects_truncation_wrong_model_defects_and_native_promotion) ... FAIL
+
+======================================================================
+FAIL: test_complete_raw_review_is_accepted (__main__.ReviewControls.test_complete_raw_review_is_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/quiet_reference_work/package/.github/scripts/uqcf_quiet_reference_tests.py", line 15, in setUp
+    self.assertIsNotNone(m, 'Frozen-note review controller is not implemented')
+AssertionError: unexpectedly None : Frozen-note review controller is not implemented
+
+======================================================================
+FAIL: test_generation_is_forbidden_on_retry (__main__.ReviewControls.test_generation_is_forbidden_on_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/quiet_reference_work/package/.github/scripts/uqcf_quiet_reference_tests.py", line 15, in setUp
+    self.assertIsNotNone(m, 'Frozen-note review controller is not implemented')
+AssertionError: unexpectedly None : Frozen-note review controller is not implemented
+
+======================================================================
+FAIL: test_prompt_contains_each_exact_document_once (__main__.ReviewControls.test_prompt_contains_each_exact_document_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/quiet_reference_work/package/.github/scripts/uqcf_quiet_reference_tests.py", line 15, in setUp
+    self.assertIsNotNone(m, 'Frozen-note review controller is not implemented')
+AssertionError: unexpectedly None : Frozen-note review controller is not implemented
+
+======================================================================
+FAIL: test_rejects_altered_prompt_verdict_and_run_identity (__main__.ReviewControls.test_rejects_altered_prompt_verdict_and_run_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/quiet_reference_work/package/.github/scripts/uqcf_quiet_reference_tests.py", line 15, in setUp
+    self.assertIsNotNone(m, 'Frozen-note review controller is not implemented')
+AssertionError: unexpectedly None : Frozen-note review controller is not implemented
+
+======================================================================
+FAIL: test_rejects_changed_packet_before_source_use (__main__.ReviewControls.test_rejects_changed_packet_before_source_use)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/quiet_reference_work/package/.github/scripts/uqcf_quiet_reference_tests.py", line 15, in setUp
+    self.assertIsNotNone(m, 'Frozen-note review controller is not implemented')
+AssertionError: unexpectedly None : Frozen-note review controller is not implemented
+
+======================================================================
+FAIL: test_rejects_different_remote_source_bytes (__main__.ReviewControls.test_rejects_different_remote_source_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/quiet_reference_work/package/.github/scripts/uqcf_quiet_reference_tests.py", line 15, in setUp
+    self.assertIsNotNone(m, 'Frozen-note review controller is not implemented')
+AssertionError: unexpectedly None : Frozen-note review controller is not implemented
+
+======================================================================
+FAIL: test_rejects_missing_duplicate_and_changed_sources (__main__.ReviewControls.test_rejects_missing_duplicate_and_changed_sources)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/quiet_reference_work/package/.github/scripts/uqcf_quiet_reference_tests.py", line 15, in setUp
+    self.assertIsNotNone(m, 'Frozen-note review controller is not implemented')
+AssertionError: unexpectedly None : Frozen-note review controller is not implemented
+
+======================================================================
+FAIL: test_rejects_truncation_wrong_model_defects_and_native_promotion (__main__.ReviewControls.test_rejects_truncation_wrong_model_defects_and_native_promotion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/25b1738236c6/quiet_reference_work/package/.github/scripts/uqcf_quiet_reference_tests.py", line 15, in setUp
+    self.assertIsNotNone(m, 'Frozen-note review controller is not implemented')
+AssertionError: unexpectedly None : Frozen-note review controller is not implemented
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=8)

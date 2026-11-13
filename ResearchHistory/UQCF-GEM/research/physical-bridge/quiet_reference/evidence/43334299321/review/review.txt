@@ -1,0 +1,19 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "proof_checks": [
+    "Checked exact channel action: Preservation of retained matrix units and positivity correctly forces the retained frame to be independent of the source state (a_{s,i} = a_i). Unitarity and the channel's action on |u><u| correctly force the erased frame b_i to be orthonormal and mutually orthogonal to a_i at matching indices, and the cross-index orthogonality <a_i|b_j>=0 follows from the orthogonality of the initial source states p and u.",
+    "Checked QR propagation: The Quiet Retained reference (QR) assumption on p, combined with the positivity of the bath eigenvalues lambda_i > 0, correctly forces every a_i to lie entirely in the blank-R subspace B. This rigorously propagates the blank-R condition to all retained inputs.",
+    "Checked subspace dimensions: The retained frame spans a k-dimensional subspace T within the d-dimensional blank subspace B. The erased frame b_i must be orthogonal to T, so its projection into B is restricted to the intersection of B and T-perpendicular, which has dimension exactly d-k.",
+    "Checked spectral bound: The leakage ell is exactly 1 - Tr(Lambda M), where M is the projection of the b_i frame into B. The constraints 0 <= M <= I and rank(M) <= d-k correctly bound Tr(Lambda M) by the sum of the m = min(k, d-k) largest eigenvalues of tau. The descending-eigenvalue optimization is mathematically sound and yields the sharp lower bound on the leakage.",
+    "Checked signed contrast and cross terms: The all-input fixed-effect probability ell*rho_uu is correct because the cross terms vanish exactly; the operator I_E tensor F_R annihilates every a_i since they lie in B. The contrast Delta_F = ell/5 follows directly.",
+    "Checked explicit attainment: The constructed frames a_i and b_i are mutually orthogonal and orthonormal. For 1 <= i <= m, b_i is placed in the remaining d-k dimensions of B, and for m < i <= k, b_i is placed in the orthogonal |1>_R subspace. This perfectly attains the leakage bound for every 1 <= k <= d.",
+    "Checked edge cases: At k=d, m=0, the bound gives ell=1 (contrast 1/5). At 2k <= d, m=k, the bound gives ell=0, permitting a completely blank R despite QR. Both are correctly identified.",
+    "Checked analytical controls: W_R followed by H_R yields a contrast of 0 for F_R because both |+> and |-> have a 1/2 probability for |1><1|, violating QR since the p-state leaves R in |+><+| instead of |0><0|. W_R followed by SWAP_ER leaves R in the state tau for all inputs, making it completely source-blind but violating QR. The d=2, k=1 W_E arrangement obeys QR but yields a blank R, proving QR alone is insufficient without the capacity threshold."
+  ],
+  "next_native_obligation": "Justify the actual interaction, ownership, and access relation from native sources, as the Quiet Retained reference (QR) is currently a new conditional assumption and not derived from the native tree."
+}
