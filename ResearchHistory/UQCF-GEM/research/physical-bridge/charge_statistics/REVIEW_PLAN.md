@@ -1,0 +1,10 @@
+# Charge-statistics review plan
+
+Scope: one bounded continuation of the authorized NEW-assumption diagnostics, triggered by Q196's exact vector-completion criterion and explicit exclusion of channel-level equivalence. The new statistical proof, mixed-preparation counterexample and pure-preparation control are analytical findings known before freeze. Native-source searches remain closed absent specific new evidence.
+
+1. Freeze ARGUMENT.md and the exact attributed peer comment on a separate PR from verified research parent `2ab565c3f5bf10305a96ddeef30901de49959ba5`. Keep previous proofs unchanged and preserve their exact identities.
+2. Pin the new argument/context, previous charge and prepared-domain arguments/adjudication, benchmark and owner directive. Reuse the review transport with only paths, locks, prompt and labels changed. Verify unchanged function behavior and run the existing eight rejecting controls before one new independent Gemini call.
+3. Review the global Gamma projector and its restricted identities, statistical sufficiency versus writer equivalence, finite spectral-Gram completion criterion, pure-versus-mixed preparation distinction, identical full SER output example, no vectorwise completion, and the separately labeled pure-bath rejecting control. Verify norm/source-count scope without rerunning peer numerics. Do not promote equivalent output laws into mechanisms.
+4. Read the complete raw response and retain all author premises regardless of the review's limitations field. Complete the separate source/raw-response publication audit, hash and retain original ZIPs and logs, and exactly read back every addition before readiness and bot handoff. The known manual gates for substantive reasoning/next obligation and manifest status/model agreement remain mandatory.
+
+No numerical scientific execution, duplicate review of unchanged previous arguments, model fallback/retry, merge, hold release, automation edit, native promotion or stage certification is part of this task.
