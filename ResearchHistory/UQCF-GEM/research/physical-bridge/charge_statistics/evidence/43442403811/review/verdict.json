@@ -1,0 +1,22 @@
+{
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "Hilbert factorization, normalized encoding, exact C, product preparation, and same-owner effect access remain SUPPLIED.",
+    "Physical singleton charge pi_u, Q_E, F_R as charge, bath exclusion, and conservation statements remain NEW assumptions.",
+    "The coarse condition is an equivalent expression of the required output law, not an independent native mechanism.",
+    "No native operation, physical conservation law, detector, empirical signal, or numbered-stage certification is derived."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Identify an inherited event operation and its same-owner action/access, or explicitly justify an additional physical correspondence. Native extensive-grade conservation alone is not evidence for Q_S=pi_u, [U,K]=0, the bath exclusion, or accessible ownership of F_R.",
+  "substantive_proof_checks": [
+    "Verified the finite spectral argument: Gamma = Lambda + 1 is disjoint from Lambda and Lambda + 2 due to the no-unit-gap condition. The global projector identity P_Gamma(K) = pi_u tensor I_E tensor pi_0,R + Q tensor I_E tensor F_R is algebraically exact.",
+    "Checked the positivity upgrade: since the output source marginal is supported on Q, the joint output state must be supported on Q tensor E tensor R, allowing the reduction of P_Gamma(K) to I_Q tensor I_E tensor F_R and yielding q(rho) = rho_uu.",
+    "Verified Q196's finite vectorwise completion criterion: the Gram equality <x, P_kappa(K) y> = <Ux, P_kappa(K) Uy> is necessary and sufficient for a well-defined isometry, which extends to a unitary on finite eigenspaces. The moment bound n=0,...,r-1 holds via polynomial interpolation for r distinct eigenvalues.",
+    "Checked the mixed preparation counterexample: U = W_R X_E with tau = I/2 and Q_E = diag(0,2). The full SER output exactly matches the conserving realization W_R, conserving all K statistics. However, U fails global commutation (D|o,e_0,0> = 2|o,e_2,0>) and admits no vectorwise completion on the K-invariant L.",
+    "Verified the pure-tau control (tau = |e_0><e_0|): the same U fails full K statistics conservation (charge shifts from 0 to 2 for input o), confirming the distinction between the mixed-tau counterexample and pure-tau behavior.",
+    "Confirmed peer precision claims: PR148's defect operator norm is 2 and Frobenius norm is 4 (derived from singular values 2, 2 duplicated by I_R). The 9 matrix units check is a valid algebraic reduction of the original 16."
+  ],
+  "verdict": "ACCEPTED"
+}
