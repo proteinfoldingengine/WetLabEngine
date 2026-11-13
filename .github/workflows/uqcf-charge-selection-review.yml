@@ -1,0 +1,79 @@
+name: Charge selection and native-grade admission review
+on:
+  push:
+    branches: [gpt/charge-selection-20261113]
+    paths:
+      - '.github/workflows/uqcf-charge-selection-review.yml'
+permissions:
+  contents: read
+  actions: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.sha }}
+concurrency:
+  group: uqcf-charge-selection-review
+  cancel-in-progress: false
+jobs:
+  review:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/charge_selection
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Reject source substitution and incomplete or altered review evidence
+        shell: bash
+        run: |
+          mkdir -p reviewed
+          python .github/scripts/uqcf_charge_selection_tests.py > reviewed/plumbing.log 2>&1
+          cat reviewed/plumbing.log
+      - name: One independent whole-argument Gemini review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python .github/scripts/uqcf_charge_selection_review.py review reviewed
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: charge-selection-review-1
+          path: reviewed
+          if-no-files-found: error
+          retention-days: 90
+  publication:
+    if: always() && (needs.review.result == 'success' || github.run_attempt > 1)
+    needs: review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ResearchHistory/UQCF-GEM/research/physical-bridge/charge_selection
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: charge-selection-review-1
+          path: reviewed
+      - name: Separate immutable-source and raw-verdict audit
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: python .github/scripts/uqcf_charge_selection_review.py publication published reviewed
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: charge-selection-publication-${{ github.run_attempt }}
+          path: published
+          if-no-files-found: error
+          retention-days: 90

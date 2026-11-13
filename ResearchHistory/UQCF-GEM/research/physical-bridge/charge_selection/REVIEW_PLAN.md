@@ -1,0 +1,10 @@
+# Charge-selection proof review plan
+
+The user's delegated NEW-assumption exploration authorizes this bounded conditional study. Native-source provenance has been checked separately and failed to supply the new charge or joint law. The positive theorem, adverse controls, and equal-charge obstruction are analytical findings known before freeze. This is not a native-source search campaign or a repeat review of PR145/146.
+
+1. Freeze ARGUMENT.md on a separate PR branch from `2ab565c3f5bf10305a96ddeef30901de49959ba5`. Preserve the current research branch and all merge/hold boundaries.
+2. Pin the new argument and seven benchmark/provenance/directive documents in the review packet. Reuse the previously checked one-call controller with only the paths, document locks, prompt and labels adapted. Run its existing rejecting controls and inspect the adaptation before the model call; no new scientific executable is introduced.
+3. Obtain one independent Gemini review of the global-block proof for arbitrary tau, full all-input effect identity, nonempty writer, both removed-premise controls, equal-charge blankness/rank obstruction, insufficiency of 2k<=d, and the finite pure-bath boundary. Require a direct comparison with the earlier balance attempt and exact native types. No borrowed acceptance can certify the new argument.
+4. Inspect the full raw reasoning/verdict/limitations, then complete the separate immutable-source/raw-response publication audit. Download and hash the original ZIPs; preserve request, response, source packet, logs, metadata, pre-execution review and receipts. Verify exact readbacks before readiness and bot handoff.
+
+The inherited review parser's two manual gates remain mandatory: substantive proof_checks and next_native_obligation must be present; raw model identity, manifest model/status, and publication receipt must agree. No model retry/fallback, numerical scientific execution, inherited-stack recertification, numbered-stage closure, merge, held-PR release, or automation edit is authorized by this plan. Native status remains NOT_DERIVED even if the conditional proof is accepted.
