@@ -1,0 +1,13 @@
+test_complete_raw_review_is_accepted (__main__.ReviewControls.test_complete_raw_review_is_accepted) ... ok
+test_generation_is_forbidden_on_retry (__main__.ReviewControls.test_generation_is_forbidden_on_retry) ... ok
+test_prompt_contains_each_exact_document_once (__main__.ReviewControls.test_prompt_contains_each_exact_document_once) ... ok
+test_rejects_altered_prompt_verdict_and_run_identity (__main__.ReviewControls.test_rejects_altered_prompt_verdict_and_run_identity) ... ok
+test_rejects_changed_packet_before_source_use (__main__.ReviewControls.test_rejects_changed_packet_before_source_use) ... ok
+test_rejects_different_remote_source_bytes (__main__.ReviewControls.test_rejects_different_remote_source_bytes) ... ok
+test_rejects_missing_duplicate_and_changed_sources (__main__.ReviewControls.test_rejects_missing_duplicate_and_changed_sources) ... ok
+test_rejects_truncation_wrong_model_defects_and_native_promotion (__main__.ReviewControls.test_rejects_truncation_wrong_model_defects_and_native_promotion) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.020s
+
+OK
