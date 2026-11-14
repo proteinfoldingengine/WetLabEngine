@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "freeze": "ca6f8feeef1d73f3af2165820b4e9054eafc727b",
+  "review_commit": "772270795b268f6b79d6a9830d7c4109ec28c7e3",
+  "document_count": 6,
+  "helper_count": 2,
+  "exact_immutable_sources": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/charge_channel/ARGUMENT.md",
+      "ref": "ca6f8feeef1d73f3af2165820b4e9054eafc727b",
+      "git_blob": "e70ec93b1a129c829c0bdd49c9350d1a1237e808",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/charge_channel/PEER_CONTEXT.json",
+      "ref": "ca6f8feeef1d73f3af2165820b4e9054eafc727b",
+      "git_blob": "29443dfa8e17a8acc44edf0747b97def9f6fc961",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/charge_statistics/ARGUMENT.md",
+      "ref": "45914f4c28432332a2146ae4df3bb89cb2e57db7",
+      "git_blob": "d77766110cbdd0edf1137e26494cd21dd0957bbd",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/charge_statistics/ADJUDICATION.md",
+      "ref": "45914f4c28432332a2146ae4df3bb89cb2e57db7",
+      "git_blob": "ab4123fe98b296462e5529d9a17f4f07cef7440a",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution/RESULT.md",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "4182ba347f8c11bad63315ffa6395c496ddfa498",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/OWNER_ACTION_NEXT_CYCLE_2026_11_10.md",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "d191e8c4ba97176875a0b9cce3db8e69e6603311",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/scripts/uqcf_preparability_integrity.py",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "50b1043cda14b18b962f7930cf6a4391067a2a96",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/scripts/uqcf_preparability_review.py",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "4c8029da503ed57f404e4424ecc243eb3c609347",
+      "exact_bytes": true
+    }
+  ],
+  "exact_added_file_readbacks": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/charge_channel/ARGUMENT.md",
+      "git_blob": "e70ec93b1a129c829c0bdd49c9350d1a1237e808",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/charge_channel/REVIEW_PLAN.md",
+      "git_blob": "f7baa41898b1485f66b6a1771181c9782b7c4567",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/charge_channel/PEER_CONTEXT.json",
+      "git_blob": "29443dfa8e17a8acc44edf0747b97def9f6fc961",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/charge_channel/review/SOURCE_PACKET.json",
+      "git_blob": "b799a2a7f65e1274e35513907cf9a590d1bafdfe",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/scripts/uqcf_charge_channel_review.py",
+      "git_blob": "b1a0bb5a8d96f29f88c3135765ed921dcf2760e5",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/scripts/uqcf_charge_channel_tests.py",
+      "git_blob": "7447719acfaaf9a6712c08731fe279aee004fcb0",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/workflows/uqcf-charge-channel-review.yml",
+      "git_blob": "a92e2275d7f46b7f7d954488670d521a65d726cc",
+      "exact_bytes": true
+    }
+  ],
+  "scientific_execution": false
+}
