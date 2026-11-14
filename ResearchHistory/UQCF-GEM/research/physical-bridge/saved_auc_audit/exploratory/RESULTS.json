@@ -1,0 +1,609 @@
+{
+  "scope": "One saved V725 main dataset and one saved V737 main dataset; no generators or sweeps executed.",
+  "numpy_version": "2.3.5",
+  "v725_csv_sha256": "7a34ae50a613d3899c6ca2ce46457d6c91f57a170141badf43f5019bc2559f5b",
+  "v725_rows": 480,
+  "v725": {
+    "restoration_distance": {
+      "comparisons": 57600,
+      "wins": 57595,
+      "exact_ties": 0,
+      "approx_ties": 0,
+      "close_wins": 0,
+      "close_losses": 0,
+      "v725_formula_auc": 0.9999131944444445,
+      "exact_tie_auc": 0.9999131944444445,
+      "bias_fraction": [
+        0,
+        115200
+      ],
+      "bias": 0.0,
+      "unequal_close_examples": [],
+      "archived_summary_auc": 0.9999131944444445
+    },
+    "adm_z": {
+      "comparisons": 57600,
+      "wins": 57595,
+      "exact_ties": 0,
+      "approx_ties": 0,
+      "close_wins": 0,
+      "close_losses": 0,
+      "v725_formula_auc": 0.9999131944444445,
+      "exact_tie_auc": 0.9999131944444445,
+      "bias_fraction": [
+        0,
+        115200
+      ],
+      "bias": 0.0,
+      "unequal_close_examples": [],
+      "archived_summary_auc": 0.9999131944444445
+    },
+    "g_atrium_observable_only": {
+      "comparisons": 57600,
+      "wins": 57488,
+      "exact_ties": 0,
+      "approx_ties": 0,
+      "close_wins": 0,
+      "close_losses": 0,
+      "v725_formula_auc": 0.9980555555555556,
+      "exact_tie_auc": 0.9980555555555556,
+      "bias_fraction": [
+        0,
+        115200
+      ],
+      "bias": 0.0,
+      "unequal_close_examples": [],
+      "archived_summary_auc": 0.9980555555555556
+    },
+    "g_atrium_with_k_oracle": {
+      "comparisons": 57600,
+      "wins": 57556,
+      "exact_ties": 0,
+      "approx_ties": 0,
+      "close_wins": 0,
+      "close_losses": 0,
+      "v725_formula_auc": 0.9992361111111111,
+      "exact_tie_auc": 0.9992361111111111,
+      "bias_fraction": [
+        0,
+        115200
+      ],
+      "bias": 0.0,
+      "unequal_close_examples": [],
+      "archived_summary_auc": 0.9992361111111111
+    },
+    "passive_mean": {
+      "comparisons": 57600,
+      "wins": 28680,
+      "exact_ties": 240,
+      "approx_ties": 254,
+      "close_wins": 7,
+      "close_losses": 7,
+      "v725_formula_auc": 0.5001215277777777,
+      "exact_tie_auc": 0.5,
+      "bias_fraction": [
+        14,
+        115200
+      ],
+      "bias": 0.00012152777777777777,
+      "unequal_close_examples": [
+        {
+          "positive_pair_id": "6",
+          "negative_pair_id": "142",
+          "p": 0.49808397393402637,
+          "n": 0.498085953718274,
+          "win": false,
+          "difference": 1.9797842476521055e-06,
+          "threshold": 4.990859537182741e-06
+        },
+        {
+          "positive_pair_id": "24",
+          "negative_pair_id": "65",
+          "p": 0.5052135036274827,
+          "n": 0.505210800443534,
+          "win": true,
+          "difference": 2.7031839487934306e-06,
+          "threshold": 5.062108004435339e-06
+        },
+        {
+          "positive_pair_id": "33",
+          "negative_pair_id": "97",
+          "p": 0.5032786266114031,
+          "n": 0.5032749374337495,
+          "win": true,
+          "difference": 3.68917765358745e-06,
+          "threshold": 5.042749374337496e-06
+        },
+        {
+          "positive_pair_id": "65",
+          "negative_pair_id": "24",
+          "p": 0.505210800443534,
+          "n": 0.5052135036274827,
+          "win": false,
+          "difference": 2.7031839487934306e-06,
+          "threshold": 5.062135036274828e-06
+        },
+        {
+          "positive_pair_id": "74",
+          "negative_pair_id": "169",
+          "p": 0.49164581889934234,
+          "n": 0.49164480937996646,
+          "win": true,
+          "difference": 1.0095193758719034e-06,
+          "threshold": 4.926448093799665e-06
+        },
+        {
+          "positive_pair_id": "92",
+          "negative_pair_id": "139",
+          "p": 0.501357443866491,
+          "n": 0.5013591650622371,
+          "win": false,
+          "difference": 1.7211957461515937e-06,
+          "threshold": 5.0235916506223715e-06
+        },
+        {
+          "positive_pair_id": "97",
+          "negative_pair_id": "33",
+          "p": 0.5032749374337495,
+          "n": 0.5032786266114031,
+          "win": false,
+          "difference": 3.68917765358745e-06,
+          "threshold": 5.042786266114031e-06
+        },
+        {
+          "positive_pair_id": "139",
+          "negative_pair_id": "92",
+          "p": 0.5013591650622371,
+          "n": 0.501357443866491,
+          "win": true,
+          "difference": 1.7211957461515937e-06,
+          "threshold": 5.02357443866491e-06
+        },
+        {
+          "positive_pair_id": "142",
+          "negative_pair_id": "6",
+          "p": 0.498085953718274,
+          "n": 0.49808397393402637,
+          "win": true,
+          "difference": 1.9797842476521055e-06,
+          "threshold": 4.990839739340264e-06
+        },
+        {
+          "positive_pair_id": "162",
+          "negative_pair_id": "182",
+          "p": 0.49093975867686424,
+          "n": 0.4909350322305348,
+          "win": true,
+          "difference": 4.726446329428313e-06,
+          "threshold": 4.9193503223053485e-06
+        },
+        {
+          "positive_pair_id": "169",
+          "negative_pair_id": "74",
+          "p": 0.49164480937996646,
+          "n": 0.49164581889934234,
+          "win": false,
+          "difference": 1.0095193758719034e-06,
+          "threshold": 4.926458188993424e-06
+        },
+        {
+          "positive_pair_id": "173",
+          "negative_pair_id": "175",
+          "p": 0.4944587941791383,
+          "n": 0.49445906228126224,
+          "win": false,
+          "difference": 2.681021239459014e-07,
+          "threshold": 4.954590622812623e-06
+        },
+        {
+          "positive_pair_id": "175",
+          "negative_pair_id": "173",
+          "p": 0.49445906228126224,
+          "n": 0.4944587941791383,
+          "win": true,
+          "difference": 2.681021239459014e-07,
+          "threshold": 4.954587941791383e-06
+        },
+        {
+          "positive_pair_id": "182",
+          "negative_pair_id": "162",
+          "p": 0.4909350322305348,
+          "n": 0.49093975867686424,
+          "win": false,
+          "difference": 4.726446329428313e-06,
+          "threshold": 4.919397586768643e-06
+        }
+      ],
+      "archived_summary_auc": 0.5001215277777777
+    },
+    "passive_curvature": {
+      "comparisons": 57600,
+      "wins": 28680,
+      "exact_ties": 240,
+      "approx_ties": 242,
+      "close_wins": 1,
+      "close_losses": 1,
+      "v725_formula_auc": 0.5000173611111111,
+      "exact_tie_auc": 0.5,
+      "bias_fraction": [
+        2,
+        115200
+      ],
+      "bias": 1.736111111111111e-05,
+      "unequal_close_examples": [
+        {
+          "positive_pair_id": "52",
+          "negative_pair_id": "114",
+          "p": 0.17924694557023332,
+          "n": 0.1792477632963457,
+          "win": false,
+          "difference": 8.17726112378736e-07,
+          "threshold": 1.802477632963457e-06
+        },
+        {
+          "positive_pair_id": "114",
+          "negative_pair_id": "52",
+          "p": 0.1792477632963457,
+          "n": 0.17924694557023332,
+          "win": true,
+          "difference": 8.17726112378736e-07,
+          "threshold": 1.8024694557023332e-06
+        }
+      ],
+      "archived_summary_auc": 0.5000173611111111
+    }
+  },
+  "v725_source_git_blob": "cf8a1bd5937acde59586b6d42ae8979742fd4e89",
+  "v737": {
+    "bundle_sha256": "edbe49efad09130ec81b6f1a772405887a8388c074a74f1b5fbd5d75a88bab7c",
+    "source_git_blob": "8b4f50b515603d978f8b2ca6e31c875314541c40",
+    "main_csv_sha256": "a5de3faac83acff2da4c87c10351d69102f2931972bf3f76a3b53bba74e3f2e7",
+    "rows": 840,
+    "scores": {
+      "atrium_scalar": {
+        "comparisons": 176400,
+        "wins": 169348,
+        "exact_ties": 0,
+        "approx_ties": 0,
+        "close_wins": 0,
+        "close_losses": 0,
+        "v725_formula_auc": 0.9600226757369614,
+        "exact_tie_auc": 0.9600226757369614,
+        "bias_fraction": [
+          0,
+          352800
+        ],
+        "bias": 0.0,
+        "unequal_close_examples": [],
+        "archived_summary_auc": 0.9600226757369613,
+        "v737_formula_auc": 0.9600226757369613
+      },
+      "restoration_residual": {
+        "comparisons": 176400,
+        "wins": 176400,
+        "exact_ties": 0,
+        "approx_ties": 0,
+        "close_wins": 0,
+        "close_losses": 0,
+        "v725_formula_auc": 1.0,
+        "exact_tie_auc": 1.0,
+        "bias_fraction": [
+          0,
+          352800
+        ],
+        "bias": 0.0,
+        "unequal_close_examples": [],
+        "archived_summary_auc": 1.0,
+        "v737_formula_auc": 1.0
+      },
+      "passive_mean": {
+        "comparisons": 176400,
+        "wins": 87990,
+        "exact_ties": 420,
+        "approx_ties": 446,
+        "close_wins": 13,
+        "close_losses": 13,
+        "v725_formula_auc": 0.5000736961451248,
+        "exact_tie_auc": 0.5,
+        "bias_fraction": [
+          26,
+          352800
+        ],
+        "bias": 7.369614512471656e-05,
+        "unequal_close_examples": [
+          {
+            "positive_pair_id": "7",
+            "negative_pair_id": "107",
+            "p": 0.05839596975807683,
+            "n": 0.058396036120214566,
+            "win": false,
+            "difference": 6.636213773641986e-08,
+            "threshold": 5.939603612021457e-07
+          },
+          {
+            "positive_pair_id": "10",
+            "negative_pair_id": "217",
+            "p": 0.055819979824225374,
+            "n": 0.05582044959232413,
+            "win": false,
+            "difference": 4.6976809875420855e-07,
+            "threshold": 5.682044959232414e-07
+          },
+          {
+            "positive_pair_id": "67",
+            "negative_pair_id": "215",
+            "p": 0.055886447002649525,
+            "n": 0.055886113201982696,
+            "win": true,
+            "difference": 3.3380066682964227e-07,
+            "threshold": 5.68861132019827e-07
+          },
+          {
+            "positive_pair_id": "69",
+            "negative_pair_id": "273",
+            "p": 0.05869496621713693,
+            "n": 0.05869454390778279,
+            "win": true,
+            "difference": 4.223093541394496e-07,
+            "threshold": 5.96945439077828e-07
+          },
+          {
+            "positive_pair_id": "75",
+            "negative_pair_id": "388",
+            "p": 0.055321973231282934,
+            "n": 0.05532156790570465,
+            "win": true,
+            "difference": 4.053255782815457e-07,
+            "threshold": 5.632156790570466e-07
+          },
+          {
+            "positive_pair_id": "104",
+            "negative_pair_id": "278",
+            "p": 0.05907710408841809,
+            "n": 0.05907658476364033,
+            "win": true,
+            "difference": 5.193247777576793e-07,
+            "threshold": 6.007658476364034e-07
+          },
+          {
+            "positive_pair_id": "107",
+            "negative_pair_id": "7",
+            "p": 0.058396036120214566,
+            "n": 0.05839596975807683,
+            "win": true,
+            "difference": 6.636213773641986e-08,
+            "threshold": 5.939596975807683e-07
+          },
+          {
+            "positive_pair_id": "125",
+            "negative_pair_id": "413",
+            "p": 0.056919120324660795,
+            "n": 0.056918588048777224,
+            "win": true,
+            "difference": 5.322758835704655e-07,
+            "threshold": 5.791858804877723e-07
+          },
+          {
+            "positive_pair_id": "137",
+            "negative_pair_id": "364",
+            "p": 0.05729456217479721,
+            "n": 0.0572950062841496,
+            "win": false,
+            "difference": 4.44109352390476e-07,
+            "threshold": 5.829500628414961e-07
+          },
+          {
+            "positive_pair_id": "148",
+            "negative_pair_id": "270",
+            "p": 0.06182777500874941,
+            "n": 0.06182799225621053,
+            "win": false,
+            "difference": 2.172474611178421e-07,
+            "threshold": 6.282799225621054e-07
+          },
+          {
+            "positive_pair_id": "185",
+            "negative_pair_id": "351",
+            "p": 0.06199373789840733,
+            "n": 0.061994356409768026,
+            "win": false,
+            "difference": 6.185113606976822e-07,
+            "threshold": 6.299435640976803e-07
+          },
+          {
+            "positive_pair_id": "199",
+            "negative_pair_id": "297",
+            "p": 0.061077037356603144,
+            "n": 0.06107692568984871,
+            "win": true,
+            "difference": 1.116667544334704e-07,
+            "threshold": 6.207692568984871e-07
+          },
+          {
+            "positive_pair_id": "205",
+            "negative_pair_id": "222",
+            "p": 0.06033834706814936,
+            "n": 0.06033806807367955,
+            "win": true,
+            "difference": 2.789944698114444e-07,
+            "threshold": 6.133806807367956e-07
+          },
+          {
+            "positive_pair_id": "215",
+            "negative_pair_id": "67",
+            "p": 0.055886113201982696,
+            "n": 0.055886447002649525,
+            "win": false,
+            "difference": 3.3380066682964227e-07,
+            "threshold": 5.688644700264953e-07
+          },
+          {
+            "positive_pair_id": "217",
+            "negative_pair_id": "10",
+            "p": 0.05582044959232413,
+            "n": 0.055819979824225374,
+            "win": true,
+            "difference": 4.6976809875420855e-07,
+            "threshold": 5.681997982422538e-07
+          },
+          {
+            "positive_pair_id": "222",
+            "negative_pair_id": "205",
+            "p": 0.06033806807367955,
+            "n": 0.06033834706814936,
+            "win": false,
+            "difference": 2.789944698114444e-07,
+            "threshold": 6.133834706814937e-07
+          },
+          {
+            "positive_pair_id": "270",
+            "negative_pair_id": "148",
+            "p": 0.06182799225621053,
+            "n": 0.06182777500874941,
+            "win": true,
+            "difference": 2.172474611178421e-07,
+            "threshold": 6.282777500874942e-07
+          },
+          {
+            "positive_pair_id": "273",
+            "negative_pair_id": "69",
+            "p": 0.05869454390778279,
+            "n": 0.05869496621713693,
+            "win": false,
+            "difference": 4.223093541394496e-07,
+            "threshold": 5.969496621713694e-07
+          },
+          {
+            "positive_pair_id": "278",
+            "negative_pair_id": "104",
+            "p": 0.05907658476364033,
+            "n": 0.05907710408841809,
+            "win": false,
+            "difference": 5.193247777576793e-07,
+            "threshold": 6.00771040884181e-07
+          },
+          {
+            "positive_pair_id": "297",
+            "negative_pair_id": "199",
+            "p": 0.06107692568984871,
+            "n": 0.061077037356603144,
+            "win": false,
+            "difference": 1.116667544334704e-07,
+            "threshold": 6.207703735660315e-07
+          },
+          {
+            "positive_pair_id": "351",
+            "negative_pair_id": "185",
+            "p": 0.061994356409768026,
+            "n": 0.06199373789840733,
+            "win": true,
+            "difference": 6.185113606976822e-07,
+            "threshold": 6.299373789840733e-07
+          },
+          {
+            "positive_pair_id": "364",
+            "negative_pair_id": "137",
+            "p": 0.0572950062841496,
+            "n": 0.05729456217479721,
+            "win": true,
+            "difference": 4.44109352390476e-07,
+            "threshold": 5.829456217479722e-07
+          },
+          {
+            "positive_pair_id": "388",
+            "negative_pair_id": "75",
+            "p": 0.05532156790570465,
+            "n": 0.055321973231282934,
+            "win": false,
+            "difference": 4.053255782815457e-07,
+            "threshold": 5.632197323128293e-07
+          },
+          {
+            "positive_pair_id": "400",
+            "negative_pair_id": "419",
+            "p": 0.0596596113256252,
+            "n": 0.0596596759520072,
+            "win": false,
+            "difference": 6.462638199589144e-08,
+            "threshold": 6.06596759520072e-07
+          },
+          {
+            "positive_pair_id": "413",
+            "negative_pair_id": "125",
+            "p": 0.056918588048777224,
+            "n": 0.056919120324660795,
+            "win": false,
+            "difference": 5.322758835704655e-07,
+            "threshold": 5.79191203246608e-07
+          },
+          {
+            "positive_pair_id": "419",
+            "negative_pair_id": "400",
+            "p": 0.0596596759520072,
+            "n": 0.0596596113256252,
+            "win": true,
+            "difference": 6.462638199589144e-08,
+            "threshold": 6.065961132562521e-07
+          }
+        ],
+        "archived_summary_auc": 0.5,
+        "v737_formula_auc": 0.5
+      },
+      "passive_curvature": {
+        "comparisons": 176400,
+        "wins": 87990,
+        "exact_ties": 420,
+        "approx_ties": 424,
+        "close_wins": 2,
+        "close_losses": 2,
+        "v725_formula_auc": 0.5000113378684807,
+        "exact_tie_auc": 0.5,
+        "bias_fraction": [
+          4,
+          352800
+        ],
+        "bias": 1.1337868480725624e-05,
+        "unequal_close_examples": [
+          {
+            "positive_pair_id": "135",
+            "negative_pair_id": "322",
+            "p": 0.005718725290585496,
+            "n": 0.0057187055017912615,
+            "win": true,
+            "difference": 1.978879423433083e-08,
+            "threshold": 6.718705501791262e-08
+          },
+          {
+            "positive_pair_id": "322",
+            "negative_pair_id": "135",
+            "p": 0.0057187055017912615,
+            "n": 0.005718725290585496,
+            "win": false,
+            "difference": 1.978879423433083e-08,
+            "threshold": 6.718725290585496e-08
+          },
+          {
+            "positive_pair_id": "357",
+            "negative_pair_id": "390",
+            "p": 0.0068508531066712,
+            "n": 0.006850844600281566,
+            "win": true,
+            "difference": 8.506389634344025e-09,
+            "threshold": 7.850844600281566e-08
+          },
+          {
+            "positive_pair_id": "390",
+            "negative_pair_id": "357",
+            "p": 0.006850844600281566,
+            "n": 0.0068508531066712,
+            "win": false,
+            "difference": 8.506389634344025e-09,
+            "threshold": 7.850853106671201e-08
+          }
+        ],
+        "archived_summary_auc": 0.5,
+        "v737_formula_auc": 0.5
+      }
+    }
+  }
+}

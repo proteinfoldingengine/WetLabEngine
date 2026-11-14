@@ -1,0 +1,23 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "Saved main rows only; V725 scan/ablation row values not present in inspected item.",
+    "V737 gap CSV present in original ZIP but not scored.",
+    "No scientific generator imported or executed; static fixed-score arithmetic only.",
+    "Does not authenticate historical runtime, executable environment, or creation-chain provenance."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "proof_checks": [
+    "Independently verified V725 active scores (restoration_distance, adm_z, g_atrium_observable_only, g_atrium_with_k_oracle) have exactly 0 approx_ties out of 57600 comparisons.",
+    "Independently verified V725 passive_mean has 240 exact ties, 254 approx ties, 7 close wins, and 7 close losses, yielding a bias of 14/115200.",
+    "Independently verified V725 passive_curvature has 240 exact ties, 242 approx ties, 1 close win, and 1 close loss, yielding a bias of 2/115200.",
+    "Independently verified V737 atrium_scalar has 169348 strict wins and 0 exact ties out of 176400 comparisons.",
+    "Independently verified V737 row-means aggregation yields 0.9600226757369613, while exact rational conversion yields 0.9600226757369614.",
+    "Confirmed V737 source code uses strict greater-than plus half exact-equality, avoiding the V725 isclose overlap.",
+    "Verified SHA256 hashes of all provided CSV and JSON files match the declared source identities."
+  ],
+  "next_native_obligation": "Locate exact original row-level outputs for other historical numbers to verify the comparator on those inputs, and establish a source-backed event-operation-same-owner available-effect correspondence."
+}
