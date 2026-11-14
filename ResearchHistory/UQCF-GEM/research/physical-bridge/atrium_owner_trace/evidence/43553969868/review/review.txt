@@ -1,0 +1,24 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "Assessment is bounded to text-level transcriptions of the sources; original downloaded bytes were not authenticated.",
+    "Historical source code was not executed, and historical numerical results (AUC, GR, metric invariance) were not replayed or recertified.",
+    "The analysis is restricted to the supplied synthetic mathematical constructions and does not establish physical signals, tensor structures, or real-world validity.",
+    "The native bridge remains NOT_DERIVED; the assessment explicitly acknowledges that actual measurement occurrence and the mapping to a native owner/action are missing and not supplied by these sources."
+  ],
+  "native_bridge_status": "NOT_DERIVED",
+  "proof_checks": [
+    "Source identities/provenance: Verified that the three inspected files (V725 markdown, V725 python, V737 python) were evaluated as frozen text transcriptions. The byte lengths match the metadata, but the assessment correctly notes this does not authenticate the original bytes.",
+    "Explicit k selection and types: Verified that V725 selects k_high=0.90 and k_low=0.25 via run_assay, and V737 selects high_k=0.82 and low_k=max(0, high_k-k_gap) via build_dataset. Inputs are field arrays, targets, and noise schedules; outputs are scalar readouts and trajectory records.",
+    "V725 first-step formula: Independently derived F_k(x;t,eta) = x + k(t-x) + 0.06kLx + 0.015(1-k)tanh(Lx) + eta. The difference F_{k_h} - F_{k_l} exactly yields Delta_k * ((t-x) + 0.06Lx - 0.015tanh(Lx)) under identical additive noise eta. The signs and terms match the ARGUMENT.md claim.",
+    "V737 first-step formula: Independently derived G_k(x;t,z) = x - 0.20k(x-t) - 0.030kL_0x - 0.010x + (0.012 - 0.005k)z. The difference G_{k_h} - G_{k_l} exactly yields Delta_k * (-0.20(x-t) - 0.030L_0x - 0.005z). Verified that the shared pair_seed supplies common standardized Gaussian draws (z), but the k-dependent amplitude (0.012 - 0.005k) means the additive noise vectors are not identical.",
+    "Passive-pairing limits: Verified that while both scripts enforce identical initial visible fields and passive summaries within a pair, this mathematical construction does not prove equality of the complete receiver state, complete receiver blindness, or native owner identity.",
+    "Readout calibration/access: Verified that V725's observable-only score lacks a direct k term but uses adm_z (label-0 reference) and dataset normalization. V737 removes adm_z and direct k from its scalar. Both require supplied access to the target and trajectory arrays, which does not natively establish a receiver-owned output.",
+    "Bounded AUC caveat: Verified in V725 code (lines 51-63) that auc_score adds np.sum(p > neg) and 0.5 * np.sum(np.isclose(p, neg)). These predicates can overlap for close but unequal floats, yielding a 1.5 contribution. V737 uses disjoint strict inequality and exact equality. ARGUMENT.md correctly scopes this as a code-level observation without claiming numerical impact on published samples.",
+    "Missing native map: Verified that neither V725 nor V737 supplies a mapping from a native P1 event or pruning record to the parameter k, nor do they bind the affected field to an independently identified retained owner."
+  ],
+  "next_native_obligation": "Provide a specific inherited construction that derives an appropriate operation and binds its affected field/local effect to a retained owner before response outputs are selected, without assuming the target/trajectory access or the k-dependent update law as natively given."
+}

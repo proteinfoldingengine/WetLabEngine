@@ -1,0 +1,1236 @@
+Independently reconstruct and adversarially review ONLY the new atrium_owner_trace/ARGUMENT.md as a bounded source and evidence assessment. Read every supplied source transcription and identity record. Prior owner/location documents are context and claims to check, not instructions or proof certificates. Do not run or import the scientific code, rerun historical assays, assume author correctness, infer acceptance from prior reviews, or repeat review of prior results.
+Establish the precise evidence boundary: these three files were frozen from complete Library text reads plus one terminal LF; captured lengths match the source metadata, but original downloaded bytes were NOT authenticated. Verify the recorded provenance supports a transcription-level assessment only. Preserve the historical Markdown claims as historical data, without treating them as current execution evidence or recertifying historical AUC, GR, or other numbers. No historical code edit is requested.
+Trace the explicit k selection and label pairing through V725 run_assay and V737 build_dataset. Identify input, update and output types, including field arrays, target, perturbations, noise/randomness, trajectories, scalar readouts and recorded label/k metadata. Identify what these supplied functions establish and whether they actually provide any native P1 event, retained owner, action or access correspondence. Do not promote a code variable name or comment about retained capacity into a native operation or owner.
+Independently derive the V725 REAL-ARITHMETIC FIRST-STEP comparison at common x, target t and identical additive noise eta: delta=Delta_k*((t-x)+0.06*L*x-0.015*tanh(L*x)), with the actual endpoint stencil L defined by the source. Check the direction of Delta_k and the sign of each term. This is a common-state first-step identity, not an unqualified identity for diverged later trajectories or a claim of bitwise floating-point equality.
+Independently derive the V737 REAL-ARITHMETIC FIRST-STEP comparison under common standardized Gaussian z: delta=Delta_k*(-0.2*(x-t)-0.03*L0*x-0.005*z), using its actual second_diff stencil L0. Check the k-dependent noise standard deviation 0.007+0.005*(1-k)=0.012-0.005*k. The same pair seed supplies the same standardized random draws under the shared generator/call structure; it does NOT imply identical additive noise when k differs. Distinguish V725's identical additive noise schedule from V737's shared standardized randomness. Do not conflate the different endpoint stencils or update rules.
+Check exactly what passive pairing proves: the initial visible field is identical within each paired construction, while the selected model parameter k differs. Equality of that field and its passive summaries does not establish equality of the complete receiver state, complete receiver blindness, native owner identity, or a retained receiver-owned output. Do not turn this bounded missing-correspondence finding into a universal impossibility claim. Preserve acceptance of actual measurement occurrence without using occurrence alone to fill the missing native owner/action/access map.
+Audit the readout access requirements and calibration. V725 readouts use the supplied target and trajectories; its observable-only score has no direct k term, but adm_z uses the label-0 reference subset and other terms use dataset normalization. Its separate k-oracle score is explicit. V737 removes adm_z and direct k from its scalar, while recording k as metadata; supplied k-dependent dynamics, target and trajectory access remain. V737 also changes the update, noise and metric, so do not call it an exact replay of V725. Identify the specific remaining supplied premises rather than claiming a direct k leak in either score where none appears.
+Check the bounded AUC implementation caveat directly in the transcriptions: V725 auc_score separately adds strict-greater wins and one-half isclose, whose predicates can overlap and count one pair as 1.5; V737 roc_auc instead uses equality for its half-tie term. Verify this conditional code-level observation, without claiming such overlap occurred in published samples, changing any historical source, rerunning numerics, or asserting a published numerical impact.
+Scope is only the new source adjudication. No native premise is removed, no physical signal or native delivery is established, and no W_R or W_E score may be assigned without a source-grounded correspondence and ownership/access map. The literal source transcriptions and immutable owner/location materials bound the evidence; no uninspected artifacts may be treated as proof. Explicitly retain supplied dynamics, calibration/target/trajectory access, transcription provenance and historical-execution limitations. The next obligation must name a concrete missing native P1 event/retained-owner/action/access correspondence or source needed to discharge it.
+Return one JSON object with EXACT keys verdict, findings, missing_assumptions, counterexamples, limitations, native_bridge_status, proof_checks, next_native_obligation. verdict must be ACCEPTED, REVISE or FAIL; findings, missing_assumptions, counterexamples and limitations must be arrays; native_bridge_status must be NOT_DERIVED or DERIVED_FROM_SOURCES; proof_checks must be an array; next_native_obligation must be a string. Use the literal key proof_checks. Populate proof_checks with substantive, independently reconstructed checks of source identities/provenance, explicit k selection and types, both first-step formulas and noise distinctions, passive-pairing limits, readout calibration/access, the bounded AUC caveat, and the missing native map. State next_native_obligation concretely. ACCEPTED requires empty findings, missing_assumptions and counterexamples. A valid assessment can explicitly find missing native inputs without pretending its bounded source-adjudication claim depends on those inputs already being supplied. Give a concrete defect or exact repair for any failure while preserving valid parts; retain explicit limitations and do not promote the native bridge.
+
+EXACT DOCUMENT argument
+UTF8-BYTES 12171
+# Atrium restoration: trace from a supplied update to an observed response
+
+Date: 2026-11-13 America/Phoenix / 2026-11-14 UTC.
+Status: bounded source assessment and direct algebra, pending independent review. Native receiver delivery **NOT_DERIVED**.
+
+## 1. Why this specific source was inspected
+
+After PR150 settled its fixed-resource charge-channel question, the next target returned to an actual event acting on an independently identified retained owner. The historical Atrium experiment is a concrete lead because it reports an active restoration distinction while passive measurements stay blind. Its existing updater and consumer could, in principle, provide an operation-to-observation trace without constructing another quantum receiver.
+
+This pass inspected exactly three sources: the V725 observable-only report, its Python program, and the V737 reproduction program. It did not search all historical native models, execute either program, replay numerical results, or reopen metric-invariance/GR campaigns. The historical source labels such as "certified" are retained as quotations inside the source transcriptions, not newly endorsed statuses.
+
+Full returned text and provenance are preserved in `source_transcriptions/` and `SOURCE_IDENTITIES.json`. All reads were complete; adding one terminal LF yielded the byte lengths reported by the source metadata. These are **text transcriptions, not authenticated original-byte downloads**. The V737 read reported that it parsed the backing file directly because full-text fetch was unavailable. Length agreement is not a substitute for an original-file checksum.
+
+The source response is real within its specified mathematical construction: the chosen updater depends on k and can produce different visible paths from the same initial field. The question here is whether the source also derives that updater and its owner association from a native event. It does not do so in the inspected files.
+
+## 2. Positive trace through the executable definitions
+
+Line references below refer to the preserved text transcriptions. Neither Python file was imported or executed in this assessment.
+
+| Link | V725 observable-only program | V737 reproduction program |
+|---|---|---|
+| Input field and target | `make_target` lines 73–82; `make_passive_equivalent_state` 85–92; `perturb_state` 95–102 | `make_target` 45–52; `perturbation` 55–79; initial field in `simulate` 82–90 |
+| Capacity choice | `run_assay` 228–279 takes `k_high=0.90`, `k_low=0.25` and selects `(label,k)` arms | `build_dataset` 141–158 sets `high_k=0.82`, `low_k=max(0,high_k-k_gap)` |
+| Operation that changes the field | `relax_response` 105–137 directly uses k in the restorative, Laplacian and nonlinear terms | `simulate` 82–90 directly uses k in the force and noise amplitude |
+| Existing consumer | `compute_metrics` 140–178 reads target and trajectory; `finalize_metric` 195–225 combines metrics | `metrics_for_run` 93–138 reads target and trajectory and combines metrics |
+| Calibration/read access | `zscore_from_admissible` 181–186 selects label-zero values; normalization uses the supplied dataset | No `adm_z`; target and trajectory remain explicit metric inputs |
+
+The inputs and outputs are numerical arrays, scalar configuration parameters, random-draw schedules, trajectories, and computed metric records. The scripts do not supply a mapping from a same-Genesis pruning record to k or to the chosen evolution law. They do not identify the array with an independently named retained owner's state or grant that owner the program's read access to target and trajectory. The name "retained atlas field" in a docstring is not such a map.
+
+An experimenter can legitimately choose a perturbation, know a target and measure a trajectory in a synthetic assay. Those permissions must not silently become native owner-available observations. An independently justified non-Hilbert owner and one local effect could suffice; a separate qubit receiver or this entire composite metric is not required.
+
+## 3. V725: exactly where the active contrast enters
+
+Let x be the common perturbed field, t the common target, eta the shared additive noise at one update, and L the discrete Laplacian implemented by `relax_response`, including its one-sided endpoint entries. In real arithmetic its update is
+
+\[
+ F_k(x;t,\eta)=x+k(t-x)+0.06kLx
+       +0.015(1-k)\tanh(Lx)+\eta. \tag{1}
+\]
+
+Tanh acts componentwise. For a common input field and common target/noise, with `Delta k=k_high-k_low`, direct subtraction gives
+
+\[
+ F_{k_h}(x;t,\eta)-F_{k_l}(x;t,\eta)
+ =\Delta k\big[(t-x)+0.06Lx-0.015\tanh(Lx)\big]. \tag{2}
+\]
+
+This is the exact first-update route by which a chosen capacity contrast can enter the visible field, without putting a direct k term inside the observable-only final score. The bracket can vanish; equation (2) is not a theorem of nonzero response for every input or of any AUC value. Later trajectory differences require propagating different states and are not given by this common-state identity alone.
+
+`run_assay` makes x_pert, target and noise_schedule once for each pair and passes them to both k arms. `relax_response` copies its start. Therefore the complete visible starting field is identical between the paired runs, and the additive noise schedule is identical in V725. The program configuration still differs in k. Equality of the field, or of its passive summaries, is not equality of every hidden model parameter or a proved equality of a physical receiver's complete initial restriction.
+
+The source report's statement "only k changes" refers to this controlled synthetic comparison. It does not derive k from retained order, P1, a native source event or an owned action. The first unsupported correspondence for the proposed native trace is the connection of an actual event and its native record to **this** F_k acting on **this** independently identified owner. Deriving a scalar k alone would not automatically justify the remainder of the update law or its access assumptions.
+
+## 4. V737: common seed is not common additive noise
+
+V737 uses the same target and perturbation within a pair, starts each arm at `x=t+0.55*pert`, and initializes a new RNG from the same pair_seed for each arm. Let L_0 denote its `second_diff`, whose two endpoint entries are zero. Its real-arithmetic one-step stochastic model can be written
+
+\[
+ G_k(x;t,z)=x-0.20k(x-t)-0.030kL_0x-0.010x
+             +(0.012-0.005k)z, \tag{3}
+\]
+
+where z is the common standardized Gaussian draw. This expression interprets the code's normal draw through its location/scale parameterization; it is not a new bit-for-bit replay claim about any software version.
+
+At a common x,t,z,
+
+\[
+ G_{k_h}(x;t,z)-G_{k_l}(x;t,z)
+ =\Delta k\big[-0.20(x-t)-0.030L_0x-0.005z\big]. \tag{4}
+\]
+
+Thus the changed k affects both deterministic restoration and the additive-noise amplitude. Same pair_seed shares the underlying standardized draws in the model; it does **not** make the added noise vectors equal when the amplitudes differ. A k-dependent stochastic amplitude is not direct k leakage into the scalar formula, and is not inherently an invalid experiment. It is part of the supplied response law and must be disclosed when comparing mechanisms or interpreting the signal.
+
+The V737 program uses different force coefficients and Laplacian sign/boundary convention, noise law, target/perturbation construction and scalar from the inspected V725 program. It describes its purpose as synthetic reproducibility. It is not an exact replay of those V725 trajectory bytes. This observation does not refute an intended qualitative robustness demonstration; no such numerical claim is reproduced or recertified here.
+
+## 5. What the observer formula does and does not establish
+
+V725 separates its `g_atrium_observable_only` from an explicitly marked `g_atrium_with_k_oracle`. Direct k is absent from the former formula and present in the latter control. However, its `adm_z` is computed relative to the label-zero/high-capacity arm, and its min/max normalizations use the supplied metric dataset. Its raw restoration quantities also use target and trajectory arrays. The normalization therefore includes a specified reference/calibration procedure. That can be legitimate calibration; its existence is not a proof that an independently identified native owner can perform it.
+
+V737 removes `adm_z` and omits direct k and labels from the expression for `atrium_scalar`. It still reads the known target and the generated trajectory. This is a meaningful distinction between the two metric implementations, but neither program derives native readout permission or the production of a receiver-owned record by an actual event.
+
+Both programs make the initial visible field the same within each pair. Their respective passive metrics are deterministic functions of shared initial inputs, so the paired values are identical by construction. This is a useful controlled baseline for testing a hidden dynamical parameter. It is not evidence of an earned native source-to-owner correspondence, and it must not be promoted into an independent complete-initial-blindness theorem for a physical receiver.
+
+No source-to-W_R/W_E map is supplied by these programs, so this assessment assigns no W_R/W_E pass/fail score. Nor does it replace the operational receiver by the whole array or by a program that has unrestricted access to all simulation variables.
+
+## 6. Separate static AUC implementation caveat
+
+V725's `auc_score`, lines 51–63, sums `p > neg` and `0.5*np.isclose(p, neg)` for each positive score p. These predicates need not be disjoint. Whenever p is strictly greater than a negative score and also considered close, that comparison contributes `1+0.5=1.5`. This is not a consistent Mann–Whitney win/tie contribution for that case. V737's `roc_auc`, lines 27–34, uses strict greater-than plus exact equality, whose cases are disjoint for finite scores.
+
+This is a bounded source-code caveat, not a numerical finding about the published dataset. No comparison records were replayed to determine whether the overlap occurred, how often it occurred, or whether any reported AUC would change. It does not by itself invalidate the supplied k-dependent update or establish that the active/passive separation disappears. Historical source code is preserved unchanged; no correction or re-certification is claimed. Any future use of the affected V725 routine needs a separately verified comparator before relying on newly calculated AUCs.
+
+## 7. Disposition and next admissible input
+
+The positive conditional mechanism is now explicit: a supplied k selects a supplied array update, and an existing software consumer reads the resulting path. Equations (2) and (4) locate the first-update dependence, including the V737 noise channel. None of this requires a new decoder or a newly invented receiver register.
+
+The inspected source does not derive the desired native operation-to-owner binding. No native premise moves from SUPPLIED to DERIVED. Actual atemporal measurement/pruning occurrence remains ACCEPTED INPUT; this assessment adds no demand to explain why events occur. The missing correspondence is which actual event implements an inherited operation that changes one identified owner's available source-dependent effect.
+
+Re-entry on this lead requires a specific inherited construction that derives an appropriate operation and binds its affected field/local effect to a retained owner before response outputs are selected. A justified alternate operation or carrier remains eligible. Complete field tomography, this scalar, a unique generator, global synchronization, physical time or a full theory of gravity are not necessary new hurdles.
+
+The source trace stops here. Do not launch another k sweep, tune coefficients, create an owner label, call a metric read a native observation by definition, or repeat these source readings without new relevant evidence. Historical active-restoration mathematics remains scoped to its supplied synthetic law; it is not converted into a physical signal or an archive-wide impossibility result.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT source_identities
+UTF8-BYTES 3340
+{
+  "schema": 1,
+  "date_utc": "2026-11-14",
+  "sources": [
+    {
+      "name": "V725_OBSERVABLE_ONLY_ATRIUM_METRIC_EXTRACTION.md",
+      "library_file_id": "libfile_71b71d944ec88191aae7e58085b00e8b",
+      "file_id": "file_0000000096dc71f5b77639b5f4eb0cdf",
+      "version_id": null,
+      "declared_size_bytes": 3515,
+      "source_created_at": "2026-05-19T03:09:36.839467Z",
+      "source_modified_at": "2026-05-19T03:09:36.839697Z",
+      "read_start_line": 1,
+      "read_end_line": 126,
+      "total_lines": 126,
+      "has_more": false,
+      "warnings": [],
+      "access_route": "Library full-text read; exact returned text plus one terminal LF, not authenticated original-byte download",
+      "repo_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/V725_OBSERVABLE_ONLY_ATRIUM_METRIC_EXTRACTION.md",
+      "transcription_bytes": 3515,
+      "transcription_sha256": "90a4bf92700db32820fe7b1202d42a505176c436d4bcf180ea1f1470093c4922",
+      "git_blob": "82ea556020126e824de7fe38b3733862a5544241",
+      "length_matches_source_metadata": true
+    },
+    {
+      "name": "v725_observable_only_atrium_metric_extraction.py",
+      "library_file_id": "libfile_16f0d9c3709c81918709bedf4c81a22b",
+      "file_id": "file_00000000857c71f5bc035e4847018acc",
+      "version_id": null,
+      "declared_size_bytes": 16319,
+      "source_created_at": "2026-05-19T03:09:39.174633Z",
+      "source_modified_at": "2026-05-19T03:09:39.174914Z",
+      "read_start_line": 1,
+      "read_end_line": 480,
+      "total_lines": 480,
+      "has_more": false,
+      "warnings": [],
+      "access_route": "Library full-text read; exact returned text plus one terminal LF, not authenticated original-byte download",
+      "repo_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/v725_observable_only_atrium_metric_extraction.py",
+      "transcription_bytes": 16319,
+      "transcription_sha256": "872dd55d27e5faa2ef39faa41c5f3f11b188b29a035693d552e02460204c66ce",
+      "git_blob": "cf8a1bd5937acde59586b6d42ae8979742fd4e89",
+      "length_matches_source_metadata": true
+    },
+    {
+      "name": "v737_reproduce_atrium_metric.py",
+      "library_file_id": "libfile_1c3b59f9ce488191b9f943c2e9282fc3",
+      "file_id": "file_00000000092c722fa87c3325be38ef81",
+      "version_id": null,
+      "declared_size_bytes": 7044,
+      "source_created_at": "2026-05-19T03:50:08.483575Z",
+      "source_modified_at": "2026-05-19T03:50:08.483837Z",
+      "read_start_line": 1,
+      "read_end_line": 223,
+      "total_lines": 223,
+      "has_more": false,
+      "warnings": [
+        "Full-text fetch was unavailable; parsed the backing file directly instead."
+      ],
+      "access_route": "Library full-text read; exact returned text plus one terminal LF, not authenticated original-byte download",
+      "repo_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/v737_reproduce_atrium_metric.py",
+      "transcription_bytes": 7044,
+      "transcription_sha256": "6dca9d42c8debb23bc7402422f195f81e21a55f5d798be021d103353f4114ab1",
+      "git_blob": "8b4f50b515603d978f8b2ca6e31c875314541c40",
+      "length_matches_source_metadata": true
+    }
+  ],
+  "scientific_execution": false,
+  "original_bytes_authenticated": false
+}
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT v725_note
+UTF8-BYTES 3515
+# V725 Observable-Only Atrium Metric Extraction
+
+## Boundary
+
+This is Step 3 only: extract an operational Atrium metric scalar from V723-style passive-equivalent perturbation-response assays.
+
+It does **not** claim a GR metric tensor, Einstein equations, spacetime curvature, or universality.
+
+## Assay
+
+Each counterfactual pair has:
+
+- same passive baseline,
+- same pre-probe state,
+- same perturbation mask,
+- same perturbation amplitude,
+- same relaxation noise schedule,
+- same target field,
+- same observation window,
+- only `k` changes.
+
+V723 result carried forward:
+
+```text
+passive burden = chance
+active restoration = signal
+```
+
+V725 asks:
+
+```text
+What response geometry is the restoration signal living in?
+```
+
+## Extracted components
+
+For each paired run, the script computes:
+
+1. restoration distance,
+2. local/global contraction rate,
+3. trajectory deviation,
+4. response curvature-like second variation,
+5. observation-window boundary term,
+6. k-dependent metric deformation as an external validation variable only. Direct k is not included in the certified metric.
+
+## Candidate scalar
+
+```text
+g_atrium = adm_z
+         + 1.50 * contraction_failure
+         + 0.75 * trajectory_deviation
+         + 0.75 * curvature_second_variation
+         + 0.50 * observation_window_boundary
+         + 0.25 * metric_strain
+```
+
+Where `adm_z` is the restoration-distance deficit normalized against the high-k admissible arm.
+
+## Main result
+
+```text
+restoration_distance AUC: 1.000
+adm_z AUC:                1.000
+g_atrium_observable_only AUC: 0.998
+g_atrium_with_k_oracle AUC:   0.999
+passive_mean AUC:         0.500
+passive_curvature AUC:    0.500
+```
+
+Passive-equivalence checks:
+
+```text
+max paired passive mean delta:      0
+max paired passive curvature delta: 0
+mean paired delta g_atrium:         5.532
+```
+
+## k-gap ablation
+
+| k_gap | k_low | observable-only AUC | k-oracle AUC | adm_z AUC | passive mean AUC |
+|---:|---:|---:|---:|---:|---:|
+| 0.80 | 0.10 | 1.000 | 1.000 | 1.000 | 0.500 |
+| 0.65 | 0.25 | 0.998 | 0.999 | 1.000 | 0.500 |
+| 0.50 | 0.40 | 0.904 | 0.946 | 0.977 | 0.500 |
+| 0.30 | 0.60 | 0.597 | 0.701 | 0.771 | 0.500 |
+| 0.15 | 0.75 | 0.468 | 0.594 | 0.619 | 0.500 |
+| 0.05 | 0.85 | 0.462 | 0.574 | 0.535 | 0.500 |
+| 0.00 | 0.90 | 0.500 | 0.500 | 0.500 | 0.500 |
+
+## Monotonic deformation scan
+
+| k_low | k_gap | observable-only AUC | k-oracle AUC | mean paired delta g |
+|---:|---:|---:|---:|---:|
+| 0.85 | 0.05 | 0.457 | 0.572 | -0.183 |
+| 0.75 | 0.15 | 0.488 | 0.600 | -0.049 |
+| 0.60 | 0.30 | 0.601 | 0.709 | 0.426 |
+| 0.45 | 0.45 | 0.817 | 0.881 | 1.606 |
+| 0.30 | 0.60 | 0.988 | 0.994 | 4.190 |
+| 0.15 | 0.75 | 1.000 | 1.000 | 11.229 |
+| 0.05 | 0.85 | 1.000 | 1.000 | 272.246 |
+
+## Interpretation
+
+V725 cleanly supports this narrow statement:
+
+> A composite response-geometry scalar can be extracted from passive-equivalent perturbation-response runs, separates hidden restorative capacity while passive burden is fixed, changes monotonically with k-dependent restoration capacity without direct k leakage, and collapses to null when the k-gap disappears.
+
+## What remains unproven
+
+V725 does not prove:
+
+- tensor structure,
+- coordinate invariance,
+- perturbation-family invariance,
+- Lyapunov functional derivation,
+- GR compatibility,
+- Einstein-like dynamics,
+- real-world validity.
+
+## Correct next order
+
+```text
+V726: Test metric invariance across perturbation families
+V727: Derive Lyapunov/energy functional from metric
+V728: Only then compare to GR-like structure
+```
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT v725_code
+UTF8-BYTES 16319
+"""
+V725 Observable-Only Atrium Metric Extraction
+
+Purpose:
+  Reset Step 3 to the correct order after V723:
+    passive burden = chance
+    active restoration = signal
+
+  This script extracts a first operational Atrium metric scalar from paired,
+  passive-equivalent perturbation-response assays.
+
+Boundary:
+  This is NOT a GR metric tensor and does NOT derive Einstein equations.
+  It is a response-geometry scalar candidate to be tested before V726 invariance.
+
+Run:
+  python v725_clean_atrium_metric_extraction.py
+"""
+
+from __future__ import annotations
+
+import json
+from dataclasses import asdict, dataclass
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+import numpy as np
+
+
+EPS = 1e-9
+
+
+@dataclass
+class RunMetrics:
+    pair_id: int
+    label: int                 # 0 = high restorative capacity, 1 = impaired restorative capacity
+    k: float
+    restoration_distance: float
+    contraction_rate: float
+    trajectory_deviation: float
+    curvature_second_variation: float
+    observation_window_boundary: float
+    metric_strain: float
+    passive_mean: float
+    passive_curvature: float
+    adm_z: float = np.nan
+    g_atrium_observable_only: float = np.nan
+    g_atrium_with_k_oracle: float = np.nan
+
+
+def auc_score(y_true: np.ndarray, score: np.ndarray) -> float:
+    """Mann-Whitney AUC without sklearn dependency."""
+    y_true = np.asarray(y_true).astype(int)
+    score = np.asarray(score).astype(float)
+    pos = score[y_true == 1]
+    neg = score[y_true == 0]
+    if len(pos) == 0 or len(neg) == 0:
+        return float("nan")
+    wins = 0.0
+    total = len(pos) * len(neg)
+    for p in pos:
+        wins += np.sum(p > neg) + 0.5 * np.sum(np.isclose(p, neg))
+    return float(wins / total)
+
+
+def curvature_like(x: np.ndarray) -> float:
+    """Mean absolute second difference across a 1D retained atlas field."""
+    if x.size < 3:
+        return 0.0
+    return float(np.mean(np.abs(np.diff(x, n=2))))
+
+
+def make_target(n: int, rng: np.random.Generator) -> np.ndarray:
+    """Smooth target field with mixed low-frequency structure."""
+    t = np.linspace(0, 2 * np.pi, n)
+    target = (
+        0.85 * np.sin(t)
+        + 0.35 * np.sin(2.7 * t + 0.4)
+        + 0.18 * np.cos(5.1 * t - 0.2)
+    )
+    target += 0.03 * rng.normal(size=n)
+    return target
+
+
+def make_passive_equivalent_state(target: np.ndarray, rng: np.random.Generator) -> np.ndarray:
+    """Create same passive burden start for each pair; both arms copy this exactly."""
+    n = target.size
+    t = np.linspace(0, 2 * np.pi, n)
+    burden_shape = 0.75 * np.sin(1.3 * t + 1.2) + 0.35 * np.cos(3.9 * t)
+    local_roughness = 0.08 * rng.normal(size=n)
+    x0 = target + burden_shape + local_roughness
+    return x0
+
+
+def perturb_state(
+    x0: np.ndarray,
+    mask: np.ndarray,
+    amplitude: float,
+    direction: np.ndarray,
+) -> np.ndarray:
+    """Identical perturbation applied to both paired arms."""
+    return x0 + amplitude * mask * direction
+
+
+def relax_response(
+    x_start: np.ndarray,
+    target: np.ndarray,
+    k: float,
+    noise_schedule: np.ndarray,
+    steps: int,
+) -> np.ndarray:
+    """
+    Active restoration dynamics.
+
+    k controls retained restorative capacity. Everything else is shared within each pair.
+    The nonlinear flow term adds a weak geometry-dependent response component without
+    changing the passive baseline.
+    """
+    x = x_start.copy()
+    path = [x.copy()]
+    n = x.size
+
+    for s in range(steps):
+        residual = target - x
+        lap = np.zeros_like(x)
+        lap[1:-1] = x[:-2] - 2 * x[1:-1] + x[2:]
+        lap[0] = x[1] - x[0]
+        lap[-1] = x[-2] - x[-1]
+
+        # restorative pull + mild smoothing + deterministic paired noise
+        dx = k * residual + 0.06 * k * lap + noise_schedule[s]
+        # capacity-dependent inefficiency: weaker k leaves more deformation unresolved
+        dx += 0.015 * (1.0 - k) * np.tanh(lap)
+        x = x + dx
+        path.append(x.copy())
+
+    return np.asarray(path)
+
+
+def compute_metrics(
+    pair_id: int,
+    label: int,
+    k: float,
+    x0: np.ndarray,
+    x_pert: np.ndarray,
+    target: np.ndarray,
+    path: np.ndarray,
+) -> RunMetrics:
+    d0 = float(np.linalg.norm(x_pert - target))
+    dT = float(np.linalg.norm(path[-1] - target))
+    d_prev = float(np.linalg.norm(path[-2] - target)) if len(path) > 1 else dT
+
+    contraction = (d0 - dT) / (d0 + EPS)
+
+    increments = np.diff(path, axis=0)
+    path_length = float(np.sum(np.linalg.norm(increments, axis=1)))
+    straight_distance = float(np.linalg.norm(path[-1] - path[0]))
+    trajectory_deviation = path_length / (straight_distance + EPS) - 1.0
+
+    second = path[2:] - 2 * path[1:-1] + path[:-2]
+    curvature_second_variation = float(np.mean(np.linalg.norm(second, axis=1))) if len(path) > 2 else 0.0
+
+    observation_window_boundary = abs(dT - d_prev) / (d0 + EPS)
+    metric_strain = path_length / (d0 - dT + EPS) if d0 > dT else path_length / EPS
+
+    return RunMetrics(
+        pair_id=pair_id,
+        label=label,
+        k=float(k),
+        restoration_distance=dT,
+        contraction_rate=float(contraction),
+        trajectory_deviation=float(trajectory_deviation),
+        curvature_second_variation=curvature_second_variation,
+        observation_window_boundary=float(observation_window_boundary),
+        metric_strain=float(metric_strain),
+        passive_mean=float(np.mean(np.abs(x0 - target))),
+        passive_curvature=curvature_like(x0 - target),
+    )
+
+
+def zscore_from_admissible(values: np.ndarray, labels: np.ndarray) -> np.ndarray:
+    """Normalize by high-capacity/admissible arm only."""
+    base = values[labels == 0]
+    mu = float(np.mean(base))
+    sd = float(np.std(base) + EPS)
+    return (values - mu) / sd
+
+
+def normalize01(values: np.ndarray) -> np.ndarray:
+    lo = float(np.min(values))
+    hi = float(np.max(values))
+    return (values - lo) / (hi - lo + EPS)
+
+
+def finalize_metric(metrics: List[RunMetrics]) -> List[RunMetrics]:
+    labels = np.array([m.label for m in metrics])
+
+    restoration = np.array([m.restoration_distance for m in metrics])
+    contraction_fail = 1.0 - np.array([m.contraction_rate for m in metrics])
+    traj_dev = np.array([m.trajectory_deviation for m in metrics])
+    curvature = np.array([m.curvature_second_variation for m in metrics])
+    boundary = np.array([m.observation_window_boundary for m in metrics])
+    strain = np.log1p(np.array([max(m.metric_strain, 0.0) for m in metrics]))
+    retained_capacity_deficit = 1.0 - np.array([m.k for m in metrics])  # oracle/leakage control only
+
+    adm_z = zscore_from_admissible(restoration, labels)
+
+    # Certified candidate: observable-only, no direct k.
+    g_observable = (
+        adm_z
+        + 1.50 * normalize01(contraction_fail)
+        + 0.75 * normalize01(traj_dev)
+        + 0.75 * normalize01(curvature)
+        + 0.50 * normalize01(boundary)
+        + 0.25 * normalize01(strain)
+    )
+
+    # Oracle/leakage control: direct k is reported but does not count.
+    g_oracle = g_observable + 0.50 * normalize01(retained_capacity_deficit)
+
+    for i, m in enumerate(metrics):
+        m.adm_z = float(adm_z[i])
+        m.g_atrium_observable_only = float(g_observable[i])
+        m.g_atrium_with_k_oracle = float(g_oracle[i])
+    return metrics
+
+
+def run_assay(
+    k_high: float = 0.90,
+    k_low: float = 0.25,
+    n_pairs: int = 240,
+    n: int = 64,
+    steps: int = 32,
+    seed: int = 725,
+) -> Tuple[List[RunMetrics], Dict[str, float]]:
+    rng = np.random.default_rng(seed)
+    metrics: List[RunMetrics] = []
+
+    for pair_id in range(n_pairs):
+        target = make_target(n, rng)
+        x0 = make_passive_equivalent_state(target, rng)
+        mask = (rng.uniform(size=n) < 0.42).astype(float)
+        direction = rng.normal(size=n)
+        direction = direction / (np.std(direction) + EPS)
+        amplitude = rng.uniform(0.35, 0.85)
+        x_pert = perturb_state(x0, mask, amplitude, direction)
+
+        # Identical relaxation noise in both arms.
+        noise_schedule = 0.0025 * rng.normal(size=(steps, n))
+
+        for label, k in [(0, k_high), (1, k_low)]:
+            path = relax_response(x_pert, target, k, noise_schedule, steps)
+            metrics.append(compute_metrics(pair_id, label, k, x0, x_pert, target, path))
+
+    metrics = finalize_metric(metrics)
+
+    y = np.array([m.label for m in metrics])
+    summary = {
+        "n_pairs": n_pairs,
+        "k_high": k_high,
+        "k_low": k_low,
+        "k_gap": k_high - k_low,
+        "restoration_distance_auc": auc_score(y, np.array([m.restoration_distance for m in metrics])),
+        "adm_z_auc": auc_score(y, np.array([m.adm_z for m in metrics])),
+        "g_atrium_observable_only_auc": auc_score(y, np.array([m.g_atrium_observable_only for m in metrics])),
+        "g_atrium_with_k_oracle_auc": auc_score(y, np.array([m.g_atrium_with_k_oracle for m in metrics])),
+        "passive_mean_auc": auc_score(y, np.array([m.passive_mean for m in metrics])),
+        "passive_curvature_auc": auc_score(y, np.array([m.passive_curvature for m in metrics])),
+        "mean_paired_delta_g": float(np.mean([
+            metrics[2*i+1].g_atrium_observable_only - metrics[2*i].g_atrium_observable_only for i in range(n_pairs)
+        ])),
+        "max_abs_paired_delta_passive_mean": float(np.max([
+            abs(metrics[2*i+1].passive_mean - metrics[2*i].passive_mean) for i in range(n_pairs)
+        ])),
+        "max_abs_paired_delta_passive_curvature": float(np.max([
+            abs(metrics[2*i+1].passive_curvature - metrics[2*i].passive_curvature) for i in range(n_pairs)
+        ])),
+    }
+    return metrics, summary
+
+
+def k_gap_ablation() -> List[Dict[str, float]]:
+    rows = []
+    for gap in [0.80, 0.65, 0.50, 0.30, 0.15, 0.05, 0.00]:
+        k_high = 0.90
+        k_low = max(0.0, k_high - gap)
+        _, summary = run_assay(k_high=k_high, k_low=k_low, n_pairs=160, seed=725 + int(gap * 1000))
+        rows.append({
+            "k_gap": gap,
+            "k_high": k_high,
+            "k_low": k_low,
+            "g_atrium_observable_only_auc": summary["g_atrium_observable_only_auc"],
+            "g_atrium_with_k_oracle_auc": summary["g_atrium_with_k_oracle_auc"],
+            "adm_z_auc": summary["adm_z_auc"],
+            "passive_mean_auc": summary["passive_mean_auc"],
+        })
+    return rows
+
+
+def monotonic_by_k_scan() -> List[Dict[str, float]]:
+    """Unpaired scan to verify metric deformation is ordered by k."""
+    rows = []
+    for k_low in [0.85, 0.75, 0.60, 0.45, 0.30, 0.15, 0.05]:
+        _, summary = run_assay(k_high=0.90, k_low=k_low, n_pairs=160, seed=900 + int(k_low * 1000))
+        rows.append({
+            "k_low": k_low,
+            "k_gap": 0.90 - k_low,
+            "g_atrium_observable_only_auc": summary["g_atrium_observable_only_auc"],
+            "g_atrium_with_k_oracle_auc": summary["g_atrium_with_k_oracle_auc"],
+            "mean_paired_delta_g": summary["mean_paired_delta_g"],
+        })
+    return rows
+
+
+def write_outputs(metrics: List[RunMetrics], summary: Dict[str, float], ablation: List[Dict[str, float]], scan: List[Dict[str, float]]) -> None:
+    out_dir = Path("/mnt/data")
+    json_path = out_dir / "v725_observable_only_atrium_metric_results.json"
+    csv_path = out_dir / "v725_observable_only_atrium_metric_paired_metrics.csv"
+    md_path = out_dir / "V725_OBSERVABLE_ONLY_ATRIUM_METRIC_EXTRACTION.md"
+
+    payload = {"summary": summary, "k_gap_ablation": ablation, "monotonic_scan": scan}
+    json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+    fields = list(asdict(metrics[0]).keys())
+    with csv_path.open("w", encoding="utf-8") as f:
+        f.write(",".join(fields) + "\n")
+        for m in metrics:
+            row = asdict(m)
+            f.write(",".join(str(row[k]) for k in fields) + "\n")
+
+    ablation_lines = "\n".join(
+        f"| {r['k_gap']:.2f} | {r['k_low']:.2f} | {r['g_atrium_observable_only_auc']:.3f} | {r['g_atrium_with_k_oracle_auc']:.3f} | {r['adm_z_auc']:.3f} | {r['passive_mean_auc']:.3f} |"
+        for r in ablation
+    )
+    scan_lines = "\n".join(
+        f"| {r['k_low']:.2f} | {r['k_gap']:.2f} | {r['g_atrium_observable_only_auc']:.3f} | {r['g_atrium_with_k_oracle_auc']:.3f} | {r['mean_paired_delta_g']:.3f} |"
+        for r in scan
+    )
+
+    md = f"""# V725 Observable-Only Atrium Metric Extraction
+
+## Boundary
+
+This is Step 3 only: extract an operational Atrium metric scalar from V723-style passive-equivalent perturbation-response assays.
+
+It does **not** claim a GR metric tensor, Einstein equations, spacetime curvature, or universality.
+
+## Assay
+
+Each counterfactual pair has:
+
+- same passive baseline,
+- same pre-probe state,
+- same perturbation mask,
+- same perturbation amplitude,
+- same relaxation noise schedule,
+- same target field,
+- same observation window,
+- only `k` changes.
+
+V723 result carried forward:
+
+```text
+passive burden = chance
+active restoration = signal
+```
+
+V725 asks:
+
+```text
+What response geometry is the restoration signal living in?
+```
+
+## Extracted components
+
+For each paired run, the script computes:
+
+1. restoration distance,
+2. local/global contraction rate,
+3. trajectory deviation,
+4. response curvature-like second variation,
+5. observation-window boundary term,
+6. k-dependent metric deformation as an external validation variable only. Direct k is not included in the certified metric.
+
+## Candidate scalar
+
+```text
+g_atrium = adm_z
+         + 1.50 * contraction_failure
+         + 0.75 * trajectory_deviation
+         + 0.75 * curvature_second_variation
+         + 0.50 * observation_window_boundary
+         + 0.25 * metric_strain
+```
+
+Where `adm_z` is the restoration-distance deficit normalized against the high-k admissible arm.
+
+## Main result
+
+```text
+restoration_distance AUC: {summary['restoration_distance_auc']:.3f}
+adm_z AUC:                {summary['adm_z_auc']:.3f}
+g_atrium_observable_only AUC: {summary['g_atrium_observable_only_auc']:.3f}
+g_atrium_with_k_oracle AUC:   {summary['g_atrium_with_k_oracle_auc']:.3f}
+passive_mean AUC:         {summary['passive_mean_auc']:.3f}
+passive_curvature AUC:    {summary['passive_curvature_auc']:.3f}
+```
+
+Passive-equivalence checks:
+
+```text
+max paired passive mean delta:      {summary['max_abs_paired_delta_passive_mean']:.6g}
+max paired passive curvature delta: {summary['max_abs_paired_delta_passive_curvature']:.6g}
+mean paired delta g_atrium:         {summary['mean_paired_delta_g']:.3f}
+```
+
+## k-gap ablation
+
+| k_gap | k_low | observable-only AUC | k-oracle AUC | adm_z AUC | passive mean AUC |
+|---:|---:|---:|---:|---:|---:|
+{ablation_lines}
+
+## Monotonic deformation scan
+
+| k_low | k_gap | observable-only AUC | k-oracle AUC | mean paired delta g |
+|---:|---:|---:|---:|---:|
+{scan_lines}
+
+## Interpretation
+
+V725 cleanly supports this narrow statement:
+
+> A composite response-geometry scalar can be extracted from passive-equivalent perturbation-response runs, separates hidden restorative capacity while passive burden is fixed, changes monotonically with k-dependent restoration capacity without direct k leakage, and collapses to null when the k-gap disappears.
+
+## What remains unproven
+
+V725 does not prove:
+
+- tensor structure,
+- coordinate invariance,
+- perturbation-family invariance,
+- Lyapunov functional derivation,
+- GR compatibility,
+- Einstein-like dynamics,
+- real-world validity.
+
+## Correct next order
+
+```text
+V726: Test metric invariance across perturbation families
+V727: Derive Lyapunov/energy functional from metric
+V728: Only then compare to GR-like structure
+```
+"""
+    md_path.write_text(md, encoding="utf-8")
+
+
+def main() -> None:
+    metrics, summary = run_assay()
+    ablation = k_gap_ablation()
+    scan = monotonic_by_k_scan()
+    write_outputs(metrics, summary, ablation, scan)
+
+    print("=========== V725 OBSERVABLE-ONLY ATRIUM METRIC EXTRACTION ===========")
+    for k, v in summary.items():
+        if isinstance(v, float):
+            print(f"{k:40s}: {v:.6f}")
+        else:
+            print(f"{k:40s}: {v}")
+    print("\nK-gap ablation:")
+    for row in ablation:
+        print(row)
+    print("\nOutputs:")
+    print("/mnt/data/v725_observable_only_atrium_metric_results.json")
+    print("/mnt/data/v725_observable_only_atrium_metric_paired_metrics.csv")
+    print("/mnt/data/V725_OBSERVABLE_ONLY_ATRIUM_METRIC_EXTRACTION.md")
+
+
+if __name__ == "__main__":
+    main()
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT v737_code
+UTF8-BYTES 7044
+"""
+V737 Reproduce Atrium Metric
+
+Independent reproducibility harness for the frozen V725/V726 result.
+
+Boundary:
+  - no direct k in certified metric
+  - no adm_z-only shortcut
+  - no GR claim
+  - no tensor claim
+
+Run:
+  python v737_reproduce_atrium_metric.py
+"""
+
+from __future__ import annotations
+import json
+from pathlib import Path
+import numpy as np
+import pandas as pd
+
+EPS = 1e-9
+OUT = Path(__file__).resolve().parent / "outputs"
+OUT.mkdir(exist_ok=True)
+
+
+def roc_auc(y_true, scores):
+    y_true = np.asarray(y_true).astype(int)
+    scores = np.asarray(scores).astype(float)
+    pos = scores[y_true == 1]
+    neg = scores[y_true == 0]
+    if len(pos) == 0 or len(neg) == 0:
+        return float("nan")
+    return float(np.mean([(p > neg).mean() + 0.5 * (p == neg).mean() for p in pos]))
+
+
+def second_var(v):
+    return float(np.mean(np.diff(v, n=2) ** 2))
+
+
+def second_diff(v):
+    return np.r_[0.0, np.diff(v, n=2), 0.0]
+
+
+def make_target(n, rng):
+    x = np.linspace(0, 2 * np.pi, n)
+    y = (
+        0.50 * np.sin(1.15 * x + 0.2)
+        + 0.24 * np.cos(3.1 * x - 0.4)
+        + 0.12 * np.sin(7.4 * x + 0.1)
+    )
+    return y + rng.normal(0, 0.025, n)
+
+
+def perturbation(n, fam, rng):
+    x = np.linspace(0, 1, n)
+    p = np.zeros(n)
+
+    if fam == "gaussian_packet":
+        c = rng.uniform(0.2, 0.8)
+        w = rng.uniform(0.035, 0.10)
+        p = np.exp(-((x - c) ** 2) / (2 * w * w)) * rng.choice([-1, 1])
+    elif fam == "sawtooth":
+        freq = rng.integers(3, 7)
+        p = 2 * ((freq * x + rng.uniform()) % 1) - 1
+    elif fam == "double_kink":
+        c1, c2 = np.sort(rng.uniform(0.15, 0.85, 2))
+        p = np.tanh((x - c1) / 0.025) - np.tanh((x - c2) / 0.025)
+    elif fam == "colored_noise":
+        raw = rng.normal(0, 1, n)
+        kernel = np.exp(-np.linspace(-2, 2, 9) ** 2)
+        kernel /= kernel.sum()
+        p = np.convolve(raw, kernel, mode="same")
+    else:
+        p = np.sin(2 * np.pi * (2 * x + rng.uniform())) + 0.25 * rng.normal(0, 1, n)
+
+    p -= p.mean()
+    p /= p.std() + EPS
+    return p
+
+
+def simulate(target, pert, k, rng, steps=28):
+    state = target + 0.55 * pert
+    traj = [state.copy()]
+    for _ in range(steps):
+        force = -k * 0.20 * (state - target) - k * 0.030 * second_diff(state) - 0.010 * state
+        noise = rng.normal(0, 0.007 + 0.005 * (1 - k), len(state))
+        state = state + force + noise
+        traj.append(state.copy())
+    return np.asarray(traj), target + 0.55 * pert
+
+
+def metrics_for_run(pair_id, label, k, family, target, perturbed, traj):
+    initial = traj[0]
+    final = traj[-1]
+    n = len(target)
+
+    d0 = float(np.linalg.norm(initial - target) / np.sqrt(n))
+    dT = float(np.linalg.norm(final - target) / np.sqrt(n))
+    restoration_residual = dT / (d0 + EPS)
+
+    path_len = float(np.sum(np.linalg.norm(np.diff(traj, axis=0), axis=1)) / np.sqrt(n))
+    direct = float(np.linalg.norm(final - initial) / np.sqrt(n))
+    trajectory_deviation = np.log1p(max(path_len / (direct + EPS) - 1.0, 0.0))
+
+    c0 = second_var(initial - target)
+    cT = second_var(final - target)
+    curvature_residual = np.log1p(max(cT / (c0 + EPS), 0.0))
+
+    observation_boundary = float(
+        np.mean(np.abs(traj[-5:] - target[None, :]))
+        / (np.mean(np.abs(traj[:5] - target[None, :])) + EPS)
+    )
+
+    metric_strain = np.log1p(path_len / (max(d0 - dT, 0.0) + EPS))
+
+    atrium_scalar = (
+        1.50 * restoration_residual
+        + 0.75 * trajectory_deviation
+        + 0.75 * curvature_residual
+        + 0.50 * observation_boundary
+        + 0.25 * metric_strain
+    )
+
+    return {
+        "pair_id": pair_id,
+        "label": label,
+        "k": k,
+        "family": family,
+        "restoration_residual": restoration_residual,
+        "trajectory_deviation": trajectory_deviation,
+        "curvature_residual": curvature_residual,
+        "observation_boundary": observation_boundary,
+        "metric_strain": metric_strain,
+        "atrium_scalar": atrium_scalar,
+        "passive_mean": float(np.mean(perturbed)),
+        "passive_curvature": second_var(perturbed),
+    }
+
+
+def build_dataset(k_gap=0.80, n_pairs=360, seed=7370):
+    rng = np.random.default_rng(seed)
+    families = ["gaussian_packet", "sawtooth", "double_kink", "colored_noise", "mixed"]
+    high_k = 0.82
+    low_k = max(0.0, high_k - k_gap)
+    rows = []
+
+    for pair_id in range(n_pairs):
+        target = make_target(72, rng)
+        fam = families[pair_id % len(families)]
+        pert = perturbation(72, fam, rng)
+        pair_seed = rng.integers(0, 2**32 - 1)
+
+        for label, k in [(0, high_k), (1, low_k)]:
+            traj, perturbed = simulate(target, pert, k, np.random.default_rng(pair_seed))
+            rows.append(metrics_for_run(pair_id, label, k, fam, target, perturbed, traj))
+
+    return pd.DataFrame(rows)
+
+
+def summarize(df):
+    y = df["label"].to_numpy()
+    return {
+        "n": int(len(df)),
+        "atrium_auc": roc_auc(y, df["atrium_scalar"]),
+        "restoration_residual_auc": roc_auc(y, df["restoration_residual"]),
+        "passive_mean_auc": roc_auc(y, df["passive_mean"]),
+        "passive_curvature_auc": roc_auc(y, df["passive_curvature"]),
+        "mean_atrium_high_k": float(df[df.label == 0]["atrium_scalar"].mean()),
+        "mean_atrium_low_k": float(df[df.label == 1]["atrium_scalar"].mean()),
+    }
+
+
+def main():
+    main_df = build_dataset(k_gap=0.80, n_pairs=420, seed=7370)
+    main_summary = summarize(main_df)
+
+    gap_results = []
+    gap_frames = []
+    for i, gap in enumerate([0.80, 0.65, 0.50, 0.30, 0.15, 0.05, 0.00]):
+        df = build_dataset(k_gap=gap, n_pairs=260, seed=8000 + i)
+        sc = summarize(df)
+        sc["k_gap"] = gap
+        gap_results.append(sc)
+        gap_frames.append(df)
+
+    family_results = []
+    for fam, sub in main_df.groupby("family"):
+        sc = summarize(sub)
+        sc["family"] = fam
+        family_results.append(sc)
+
+    results = {
+        "version": "V737",
+        "title": "Independent Atrium Metric Reproducibility Harness",
+        "direct_k_in_metric": False,
+        "uses_adm_z": False,
+        "main": main_summary,
+        "gap_results": gap_results,
+        "family_results": family_results,
+        "pass_conditions": {
+            "atrium_auc_high": main_summary["atrium_auc"] > 0.90,
+            "passive_controls_chance": abs(main_summary["passive_mean_auc"] - 0.5) < 0.05
+            and abs(main_summary["passive_curvature_auc"] - 0.5) < 0.05,
+            "null_gap_chance": abs(gap_results[-1]["atrium_auc"] - 0.5) < 0.08,
+        },
+        "boundary": [
+            "No direct k inside metric.",
+            "No adm_z-only shortcut.",
+            "No GR or tensor claim.",
+            "Synthetic reproducibility only."
+        ]
+    }
+
+    main_df.to_csv(OUT / "v737_main_metrics.csv", index=False)
+    pd.concat(gap_frames, ignore_index=True).to_csv(OUT / "v737_gap_metrics.csv", index=False)
+    (OUT / "v737_results.json").write_text(json.dumps(results, indent=2))
+
+    print(json.dumps(results, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT location
+UTF8-BYTES 10619
+# Exact P1 source correspondence does not determine an existing receiver's record
+
+Date: 2026-10-29 America/Phoenix. Author: proteinfolding-gpt.
+Inspected shared head: c5cefae1b1dd8d877d1a919c27f4196eb150e353.
+Status: AUTHOR ANALYTICAL RESOLUTION of one implication; independent review pending.
+Class C: application of the existing complementary-output boundary to the current P1 contract. Native bridge NOT_DERIVED. No mathematical priority or new physical law is claimed.
+
+## 1. What is being resolved
+
+The user asks whether the missing actual-event-to-owned-record connection can be resolved. The precise question addressed here is:
+
+> If the current P1 event has exact physical source correspondence, faithful preparations and unchanged physical representations of retained states, does that force a distinction into one already designated, initially blind, accessible receiver R?
+
+The answer to this implication is **no**. The proof below satisfies those source conditions in both cases, with the same R, its complete initial state and its available observations. R remains completely unchanged in one case and acquires a probability contrast of 1/5 in the other. Both implement the identical nonidentity source channel on every quantum input.
+
+This is not a proof that UQCF-GEM cannot have interactions, that no receiver anywhere can change, or that an actual experiment has a blind receiver. It resolves an inference from source correspondence to nominated-receiver acquisition within the explicitly stated contract. A native rule constraining the joint event or identifying the actual owned record could exclude the blind case; no such rule is asserted absent from every possible extension.
+
+## 2. Provenance and the stronger source contract
+
+The inherited native tree has o->p, p->u, p->v. Let X=(o,p,u,v) and Y=(o,p,v). P1 is
+
+    P(z_o,z_p,z_u,z_v) = (z_o,z_p+z_u,z_v).
+
+P2 is the literal zero extension I from Y to X. These are the existing FCV operations. They do not themselves identify physical state factors with addresses.
+
+Reuse the current conditional quantum benchmark, without treating its physical premises as native-derived:
+
+    H_S = span{|o>,|p>,|u>,|v>},
+    Q = I_S - |u><u|,
+    C(rho) = Q rho Q + rho_uu |p><p|.
+
+This is the existing completed reset, not a new finite-duration damping model. Actual occurrence of the relevant event is assumed in each comparison; absence of occurrence is not used as a counterexample.
+
+Fix the SAME source encodings in both cases:
+
+    Pi_X(z) = sum_(i in X) z_i |i><i|,
+    Pi_Y(y) = sum_(i in Y) y_i |i><i|.
+
+The grades here are normalized nonnegative vectors. Their interpretation as physical mixture weights remains a SUPPLIED benchmark premise. On the entire simplex both encodings are positive, normalized, affine and injective, and
+
+    C Pi_X = Pi_Y P,
+    Pi_X I = Pi_Y.
+
+Thus physical retention of all retained atomic codes is imposed, not left free. C in fact fixes every density operator supported on span{|o>,|p>,|v>}, including its coherences. This goes beyond mere equality of the native output labels.
+
+Use the same pair as the prior P1 correspondence result:
+
+    z+ = (1,1,2,1)/5,   z- = (1,1,1,2)/5,
+    rho+ = Pi_X(z+),    rho- = Pi_X(z-).
+
+The four calibration states sigma_i=|i><i| satisfy all four source/preparation conditions of the prior positive proof, with a=<u|sigma_u|u>=1. No input code is swapped between the two implementations.
+
+The comparison adds a fixed output interface: qubits E and R, initially in |0_E 0_R>, independent of the source preparation. R is the same existing receiver in both cases; E is outside its specified accessible interface. Give R its ENTIRE qubit observable algebra, including the same effect N_R=|1><1|. Thus the negative case is not caused by choosing a poor detector or hiding another available degree of freedom inside R. These factorization and access specifications are explicit conditional premises, not deductions from native addresses.
+
+## 3. The strongest positive construction
+
+Write output vectors in the order S,E,R. Define the fixed isometry W_R by
+
+    W_R|j> = |j>|0>|0>  for j=o,p,v,
+    W_R|u> = |p>|0>|1>.
+
+Its four columns are orthonormal. The colliding source outputs p and u are distinguished by R. Tracing E and R gives C on every matrix, not just the two tested states: the retained block Q rho Q survives, the u population becomes |p><p|, and all coherences joining u to a retained basis state vanish.
+
+For a diagonal source Pi_X(z), the complete receiver state is
+
+    omega_R^write(z) = (1-z_u)|0><0| + z_u|1><1|.
+
+Consequently
+
+    omega_R^write(+) = diag(3,2)/5,
+    omega_R^write(-) = diag(4,1)/5.
+
+N_R has probability difference 1/5 and the two receiver states have trace distance 1/5. The initial complete receiver is |0><0| in both preparations. This realizes the earlier positive port argument with its explicit joint-operation premise. It is a supplied implementation, not the desired native derivation.
+
+## 4. A blind receiver with every source condition retained
+
+Define a second fixed isometry W_E on the SAME spaces and initial environment:
+
+    W_E|j> = |j>|0>|0>  for j=o,p,v,
+    W_E|u> = |p>|1>|0>.
+
+Again the four columns are orthonormal, and tracing E,R gives exactly C on every matrix. Equivalently W_R=(I_S tensor SWAP_ER) W_E, so their reduced source channels are identical. Both isometries can be extended to unitaries on S,E,R with the same blank input subspace, by completing their orthonormal columns. No Hamiltonian, elapsed duration, energy conservation or physical implementation is inferred from that extension.
+
+For W_E,
+
+    omega_R^blind(z) = |0><0| for EVERY source state.
+
+In particular omega_R^blind(+)=omega_R^blind(-), so every available receiver POVM has the same outcome distribution. A fixed subsequent receiver-only operation, including an instrument with its complete outcome record, cannot distinguish equal input states. This statement does not include later access to S or E, or source-informed postselection.
+
+The source outputs are identical across the two implementations:
+
+    C(rho+) = (|o><o|+3|p><p|+|v><v|)/5,
+    C(rho-) = (|o><o|+2|p><p|+2|v><v|)/5.
+
+They exactly represent the same P1 outputs. In the blind case E carries the record that R carries in the positive case. The full E,R outputs still distinguish the pair; nothing claims global destruction or contradicts complementary-record preservation.
+
+What varies is the unresolved joint realization, not the source encoding, retained physical codes, source event channel, nominated receiver, its complete initial state, or its available measurements. Because both source channels agree on all matrices, adding a reference ancilla to a source-only characterization also cannot distinguish them: both induce C tensor identity on that interface. The joint event is distinguishable by observing the output interface; source-only correspondence does not determine it.
+
+## 5. Exact receiver contrast range in this benchmark
+
+The two constructions already disprove the proposed implication. A direct bound shows that they attain the extremes for the fixed diagonal pair.
+
+Let W be ANY fixed isometry implementing C with environment E tensor R. Since C sends each basis state to a pure source state,
+
+    W|j> = |j>|e_j> for j=o,p,v,
+    W|u> = |p>|e_u>.
+
+Preservation of every retained off-diagonal |j><k| forces <e_k|e_j>=1, so all retained environment vectors equal one normalized vector e_0. Orthogonality of W|p> and W|u> forces <e_0|e_u>=0. Let
+
+    tau_0 = Tr_E |e_0><e_0|,
+    tau_u = Tr_E |e_u><e_u|.
+
+For the stipulated diagonal pair,
+
+    omega_R(+) - omega_R(-) = (tau_u-tau_0)/5,
+    D(omega_R(+),omega_R(-)) = D(tau_u,tau_0)/5 <= 1/5,
+
+where D(A,B)=||A-B||_1/2. The last inequality follows from the triangle inequality and unit trace of the positive matrices tau_u,tau_0. W_E attains zero; W_R attains 1/5. Hence the exact minimum and maximum over this implementation class are 0 and 1/5. No parameter sweep or numerical evidence is needed.
+
+For the COMPLETE environment, e_0 and e_u are orthogonal and its contrast is always 1/5. If R is independently established to be that complete environment, the blind construction is outside that stronger contract. The proof identifies exactly why full-complement statements cannot silently be applied to a nominated accessible part.
+
+## 6. Relation to established work and decision
+
+- The prior P1 event/source counterexample held one joint interaction fixed and varied the input code; its blind code violated physical retained-state correspondence. Here the code and physical retention are held fixed; the varied object is the joint realization left unspecified by its source channel. The earlier theorem and counterexample remain valid.
+- The existing partial-complement result already establishes the general freedom to move record information between accessible factors, unread factors and correlations without changing a source channel. This note applies that known boundary to the exact current four-atom P1 contract. It is not a newly discovered general no-hiding or channel theorem.
+- The corrected canonical P1 acquisition result still forces a change in the formal p-coordinate. Neither isometry identifies physical R with that coordinate. That missing ownership identification is the point under test, not a premise the blind example pretends to satisfy.
+- The result does not quantify over every native operation or every physically accessible subsystem. It proves non-entailment for the explicitly strengthened source contract above. It does not show that every physical model compatible with the whole UQCF archive is noninteracting.
+
+The current inference is therefore resolved negatively: even earning exact source event correspondence and retained source representation would not, by themselves, earn delivery to the nominated receiver. The required next connection is a source-backed relation between the actual joint event and that receiver's owned output, or an independently justified identification of the relevant retained factor with its accessible state. A derived law for one available effect can suffice; a full physical theory or unique microscopic dynamics is not required. Merely selecting W_R would assume the sought delivery.
+
+This is a scoped logical resolution, not an achieved native physical prediction. No detector design, fundamental clock, geometry, new grading axiom, historical recertification, numerical campaign, branch merge or stage closure is claimed. Actual event occurrence remains ACCEPTED INPUT. Mathematical and physical identification claims remain separate.
+
+END EXACT DOCUMENT
+
+EXACT DOCUMENT owner_directive
+UTF8-BYTES 5777
+# Path-A next-cycle assignment: produce one owner-held action
+
+Date: 2026-11-10 America/Phoenix.
+Author: proteinfolding-gpt / ChatGPT Work.
+Authority: execution of Aaron's "Do work" following the productivity assessment; this is an agent-authored work allocation, not a new physical postulate or a quotation of Aaron.
+Baseline: research d373865d27052562d52a55fbe4cd18a263f00fc5; thread through T-414 at a2416763ae820cddf46959e63de492319e8bc898.
+
+## Decision
+
+Prioritize discovery of the producing operation in OWNER_HELD_EFFECT_ACTION_DIRECTIVE_2026_11_07.md sections 2,4,9. The decoder and shell-partition work has answered its bounded questions. Stop extending those examples as the default continuation. Correct a specific material error if discovered, but do not generate new lemmas merely to keep the cycle busy.
+
+The reviewed fixed-decoder counterexample remains accepted within its frozen scope (run 42821167329, draft PR143). The shared-joint-reference rigidity argument remains outside that acceptance. T-411 through T-414's peer repairs do not upgrade their status to independently reviewed. Preserve all prior evidence and existing PR holds.
+
+## The concrete target
+
+Produce one chain with all three links:
+1. An actual event identified with a named inherited operation.
+2. That operation changes a state, action or available effect on an independently identified retained owner.
+3. One fixed, owner-available effect has a source-dependent response.
+
+Work first in the native objects and operations. A quantum representation may verify an already justified relation; it must not introduce its ownership, availability or writer by construction.
+
+The known conditional p-coordinate contrast is sufficient as a mathematical target. Full source recovery, recovery of the removed u-population, unique microscopic realization, all-input calibration and availability of a whole observable algebra are NOT additional requirements. If claiming acquisition by an entirely initially blind interface, verify that stronger initial-blindness condition separately; do not confuse it with one previously blind effect becoming responsive.
+
+## Grok: one constructive candidate, not another census
+
+On the next substantive pass, deliver ONE candidate operation/composition with:
+- Its exact existing source path, immutable commit and section or executable function; spell out its input and output types.
+- The exact step that acts on an owner-held object. Trace the provenance tying that object to the same retained owner. A source coordinate or chosen codomain label alone is not the trace.
+- The actual available readout/effect before and after the event; identify where its availability is established.
+- The particular supplied premise this operation would remove.
+- A short derivation of the resulting fixed-effect contrast and an explicit blind implementation that would falsify the proposed implication.
+
+Use existing operations or their explicitly justified compositions. If a new law is needed, label it NEW ASSUMPTION and separate it from native discovery. If no candidate meets the admission questions, report that directly with the precise first missing operation. Do not replace it with a broader source census, a new decoder, or another representation of the known p-sum.
+
+## Dot: independently try to break that specific candidate
+
+After a candidate is posted, hold fixed its source pair, owner identity and effect/interface. Attempt to build two realizations satisfying EVERY cited native premise, with a blind owner in one.
+
+- Distinguish admissibility of a realization from its observable consequence.
+- For nominated proper R, any admitted R-blind realization defeats universal delivery.
+- For the retained-source p-effect, W_R and W_E may both produce its existing contrast; their joint admission is not an objection by itself. Challenge the earned ownership/access step.
+- Explicitly identify any newly inserted operation, read permission, physical correspondence, source-dependent relabelling or selection of the desired output.
+- Return a precise derivation or countermodel, not an agreement-only response.
+
+Do not claim a bot is running merely because this assignment is posted. There is no duplicate Gemini dispatch. Independent review is for an admissible, frozen scientific argument; previously reviewed material does not need another generation.
+
+## Work: admission and integration
+
+I will assess the candidate against the five existing admission questions before commissioning computation/review. The acceptance ledger must say exactly which premise moved from SUPPLIED to DERIVED and list every remaining correspondence premise. If none moved, say so. A sharper missing-premise result can be recorded within its explicit class, but it does not count as delivery discovery.
+
+For any admitted candidate, use the existing source-integrity, independent verification and Gemini/publication process. Preserve adverse outcomes. Do not revise frozen science silently or resubmit unchanged material for a better verdict.
+
+## Current scientific triage
+
+- Global recovery, even one common exact quantum decoder: reviewed insufficient for nominated-R delivery.
+- Fixed decoder plus joint reference: conditional rigidity, not ownership/access; no new variant requested.
+- Shell partitions and chronology: corrected supporting mathematics; the four-address re-entry returns to the existing p contrast and removes no access premise.
+- Actual-event -> same-owner available effect: open, primary work.
+
+No merge, acceptance upgrade, physical claim, automation pause, cadence change, new research branch, detector design or gravity fitting is authorized by this assignment. Existing authorizations remain in force. Native bridge NOT_DERIVED; scientific_breakthrough false.
+
+END EXACT DOCUMENT

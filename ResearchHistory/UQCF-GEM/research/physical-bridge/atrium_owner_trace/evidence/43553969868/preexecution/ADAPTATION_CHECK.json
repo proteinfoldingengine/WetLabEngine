@@ -1,0 +1,149 @@
+{
+  "baseline": "PR150 locally preserved transport and recorded final readback",
+  "controls_passed": 8,
+  "documents": 7,
+  "entire_controller_ast_unchanged_except": [
+    "HEADER",
+    "IDS",
+    "PACKET_SHA256",
+    "REL",
+    "success log label"
+  ],
+  "freeze_commit": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+  "fresh_remote_verification": false,
+  "generated_files": [
+    {
+      "bytes": 64086,
+      "git_blob": "fedc993f5787b87dd59426e1a630c8cb366246f8",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/review/SOURCE_PACKET.json",
+      "sha256": "a839702fa38c8fe1abf9071793029ec1d02f5c89459207575052b4899a8e1c40"
+    },
+    {
+      "bytes": 15440,
+      "git_blob": "87d5d57ca2da654fa409482a530d9b3cbb02b3e0",
+      "path": ".github/scripts/uqcf_atrium_owner_trace_review.py",
+      "sha256": "a0eaa81d259089ba37b96bc32893e29a9e3570a563ea8ca616a973a4365e663f"
+    },
+    {
+      "bytes": 5773,
+      "git_blob": "cc7f123f58474715fd4c10ade6ab9eaa1ebdf699",
+      "path": ".github/scripts/uqcf_atrium_owner_trace_tests.py",
+      "sha256": "8e17f1e017dac46c462651946bc1ff4520abed411ac3d8cb247a5ab9dc583301"
+    },
+    {
+      "bytes": 2895,
+      "git_blob": "d73a22992f2e19a4042d5096409083084d359ed6",
+      "path": ".github/workflows/uqcf-atrium-owner-trace-review.yml",
+      "sha256": "2470e1127c1eb6f499ae88790dd5daeebddd11322c0efb5be3da0530d9c13ac6"
+    }
+  ],
+  "github_writes": 0,
+  "helper_records": [
+    {
+      "bytes": 8570,
+      "git_blob": "50b1043cda14b18b962f7930cf6a4391067a2a96",
+      "path": ".github/scripts/uqcf_preparability_integrity.py",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "sha256": "4698601ef060de2bca10331f3f05fd35d01d4b7bee0336d309985195e306f18b"
+    },
+    {
+      "bytes": 9903,
+      "git_blob": "4c8029da503ed57f404e4424ecc243eb3c609347",
+      "path": ".github/scripts/uqcf_preparability_review.py",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "sha256": "5df876c5f878f069b4b1bcc31b0d7d0d651ab07feb8ef9b30f4613f06543e6a1"
+    }
+  ],
+  "helpers": 2,
+  "helpers_byte_identical": true,
+  "identical_function_count": 11,
+  "identical_function_names": [
+    "hashes",
+    "validate_record",
+    "load_packet",
+    "remote_record",
+    "prompt_for",
+    "first_attempt",
+    "identity",
+    "audit_review",
+    "artifact_manifest",
+    "verify_artifact",
+    "main"
+  ],
+  "manual_gates": [
+    "read substantive raw proof_checks and next_native_obligation",
+    "compare manifest ACCEPTED status and returned model with raw response and exact model metadata",
+    "exact immutable remote source readback before execution/publication"
+  ],
+  "model_calls": 0,
+  "original_source_bytes_authenticated": false,
+  "parser_unchanged": true,
+  "predecessor_commit": "6193e4e7c64fb9af0e795a397771edd7b5f05b0e",
+  "reviewer": "charge_channel_plumbing subagent; local Atrium adaptation review",
+  "scientific_execution": false,
+  "source_count": 9,
+  "source_packet_sha256": "a839702fa38c8fe1abf9071793029ec1d02f5c89459207575052b4899a8e1c40",
+  "source_provenance": "Complete Library text reads plus one terminal LF; transcription identities only",
+  "source_records": [
+    {
+      "bytes": 12171,
+      "git_blob": "89320ffe559802dbf625cfb1d917964a8d6e7f89",
+      "id": "argument",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/ARGUMENT.md",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "sha256": "88e124108caeef9e00147eb7c3f1b762de805ee69832105cca4a7ce36431fa6f"
+    },
+    {
+      "bytes": 3340,
+      "git_blob": "ffb54c2478d9a4ab1fcfa4929f7839f3e6a70e7a",
+      "id": "source_identities",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/SOURCE_IDENTITIES.json",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "sha256": "1c9237fc9eda9ef3b1bdb1d0d09c7c5ddfcaf5dd32550e22bf6377bcb0064ff7"
+    },
+    {
+      "bytes": 3515,
+      "git_blob": "82ea556020126e824de7fe38b3733862a5544241",
+      "id": "v725_note",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/V725_OBSERVABLE_ONLY_ATRIUM_METRIC_EXTRACTION.md",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "sha256": "90a4bf92700db32820fe7b1202d42a505176c436d4bcf180ea1f1470093c4922"
+    },
+    {
+      "bytes": 16319,
+      "git_blob": "cf8a1bd5937acde59586b6d42ae8979742fd4e89",
+      "id": "v725_code",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/v725_observable_only_atrium_metric_extraction.py",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "sha256": "872dd55d27e5faa2ef39faa41c5f3f11b188b29a035693d552e02460204c66ce"
+    },
+    {
+      "bytes": 7044,
+      "git_blob": "8b4f50b515603d978f8b2ca6e31c875314541c40",
+      "id": "v737_code",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/v737_reproduce_atrium_metric.py",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "sha256": "6dca9d42c8debb23bc7402422f195f81e21a55f5d798be021d103353f4114ab1"
+    },
+    {
+      "bytes": 10619,
+      "git_blob": "4182ba347f8c11bad63315ffa6395c496ddfa498",
+      "id": "location",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution/RESULT.md",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "sha256": "11b661a0bcb0a311ed3ced2a3114439a8facc18d0e354074f57c283256552d9e"
+    },
+    {
+      "bytes": 5777,
+      "git_blob": "d191e8c4ba97176875a0b9cce3db8e69e6603311",
+      "id": "owner_directive",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/OWNER_ACTION_NEXT_CYCLE_2026_11_10.md",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "sha256": "4b3afa90fd1f0981578f0eaa6069af4e589be0e8337896fa1dbe106c7b7f58ec"
+    }
+  ],
+  "status": "PASS",
+  "tests_unchanged_except_names": true,
+  "workflow_branch": "gpt/atrium-owner-trace-20261114",
+  "workflow_unchanged_except_names_and_paths": true
+}
