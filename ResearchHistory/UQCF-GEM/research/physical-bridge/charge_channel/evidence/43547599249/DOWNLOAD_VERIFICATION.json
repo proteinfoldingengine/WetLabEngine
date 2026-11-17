@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "run_id": "43547599249",
+  "checkout_sha": "772270795b268f6b79d6a9830d7c4109ec28c7e3",
+  "workflow_sha": "772270795b268f6b79d6a9830d7c4109ec28c7e3",
+  "original_archives": [
+    {
+      "artifact_id": 14094523842,
+      "file": "charge-channel-review-1-43547599249.zip",
+      "bytes": 87696,
+      "sha256": "e75f95d79e41048ce6c8d7a1e12bfcf9e8928a09df38c3393b5e716e5c774d40",
+      "github_digest": "sha256:e75f95d79e41048ce6c8d7a1e12bfcf9e8928a09df38c3393b5e716e5c774d40"
+    },
+    {
+      "artifact_id": 14094234527,
+      "file": "charge-channel-publication-1-43547599249.zip",
+      "bytes": 791,
+      "sha256": "f2b9ba6dda135f71aea87f0531bec725e88795ae30fab2d33a68a74ff74aa898",
+      "github_digest": "sha256:f2b9ba6dda135f71aea87f0531bec725e88795ae30fab2d33a68a74ff74aa898"
+    }
+  ],
+  "review_source_packet_sha256": "c19f257f03b006295d4ead30679283ef5280c5f1141bef04a2afa30569597675",
+  "raw_response_sha256": "2bce933cb195c48f3439c12e7227bf6ff91fb5d2eee115b8c24fa175a2512cbd",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "substantive_proof_checks_to_read": 7,
+  "raw_proof_checks_key": "proof_checks",
+  "manual_reasoning_inspection": "PASS",
+  "exact_source_and_helper_identities": 8,
+  "raw_request_response_artifact_and_publication_checks": "PASS",
+  "native_bridge": "NOT_DERIVED",
+  "scientific_execution": false,
+  "manual_reasoning_notes": [
+    "Root read complete ordinary review, all seven proof_checks, all six limitations and next_native_obligation.",
+    "Full fixed-resource channel obstruction and the E-traced conserving realization were independently reconstructed; no operational receiver separation or native promotion is inferred.",
+    "The final check about isolation to the unaccessed coherent bath applies to this example, not universal necessity of coherence.",
+    "Exact requested/returned/manifest model identity and accepted manifest status verified; no model generation repeated."
+  ]
+}
