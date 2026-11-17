@@ -1,0 +1,10 @@
+# Noisy-reference proof review plan
+
+Goal: complete the user's next bounded question, whether the exact quiet-reference theorem tolerates nonzero reference response with the same receiver/effect. Spec: ARGUMENT.md. The proof and countermodels are analytical findings known before freeze.
+
+1. Freeze the new proof on a separate PR branch from verified integrated parent `2ab565c3f5bf10305a96ddeef30901de49959ba5`; pin the antecedent PR145 argument and its SWAP qualification at `fe4a49b9093cc1e24c619d84ec646d9f6d075de0`. PR145 is not merged and its earlier review is not replayed.
+2. Reuse the same previously inspected review controller/controls with only new document locks, review prompt and dedicated path/branch/artifact names. Preserve the first-attempt-only generation and no-model publication phases. Run the controller-specific rejecting tests before one new model call. The new review judges only the new noisy-reference proof.
+3. Gemini must check full-rank/qubit basis saturation, trace allocation, inverse piecewise spectrum bounds, explicit rotated-frame attainment, all source coherences, the signed-versus-absolute contrast distinction, exact threshold, and the limitation to reference leakage. In particular it must reject a population-only receiver formula for general coherent inputs under noisy QR.
+4. Inspect raw reasoning, verdict and limitations; run the separate immutable-source/raw-response publication audit, download and hash both original ZIPs, preserve raw request/response and logs, and read back all final additions before readiness. Keep NOT_DERIVED and all new/supplied premises explicit.
+
+No numerical scientific execution or new enumeration is needed: the general proof and explicit controls decide the bounded question. No inherited-stack recertification, post-merge audit, merge, held-PR release or numbered-stage certification is claimed. The two minor manual gates identified in PR145's plumbing review (reasoning-field presence and redundant manifest fields) remain mandatory before adjudication. No additional planning approval is needed under the user's delegated approach and latest “Next.”
