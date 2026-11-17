@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "reviewer": "root, static adaptation check of previously independently reviewed transport",
+  "prior_review": "PR148 pre-execution independent plumbing check",
+  "entire_controller_ast_unchanged_except": [
+    "HEADER",
+    "IDS",
+    "PACKET_SHA256",
+    "REL",
+    "success log label"
+  ],
+  "identical_function_count": 11,
+  "tests_unchanged_except_names": true,
+  "workflow_unchanged_except_names": true,
+  "source_packet_sha256": "2fc6d12e0a4ef02da1a4ffbd76d2a3891f91ca2458105d58f67cd14569a61cfa",
+  "documents": 7,
+  "helpers": 2,
+  "source_records": [
+    {
+      "id": "argument",
+      "ref": "0aba87d55f57ca803f69a85aca6c0304596dc56e",
+      "git_blob": "d77766110cbdd0edf1137e26494cd21dd0957bbd"
+    },
+    {
+      "id": "previous_charge_note",
+      "ref": "70b14bf9303a42da831a22ef22f1473f5d4a396d",
+      "git_blob": "b2f47d735e30c7ee8ffd5fc1bf859269626fd4d3"
+    },
+    {
+      "id": "previous_domain_note",
+      "ref": "f3e0642d14375a2a7e60ee42f19183ea1fa706a0",
+      "git_blob": "19745d887370870ae6cc138b3e441a845361f902"
+    },
+    {
+      "id": "previous_domain_adjudication",
+      "ref": "f3e0642d14375a2a7e60ee42f19183ea1fa706a0",
+      "git_blob": "ec4e32bbea746f94ae7bdc4bceb1efcdc2a37461"
+    },
+    {
+      "id": "peer_context",
+      "ref": "0aba87d55f57ca803f69a85aca6c0304596dc56e",
+      "git_blob": "26eca9a6214a2ecd4be2cc81170214d0a56d34f6"
+    },
+    {
+      "id": "location",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "4182ba347f8c11bad63315ffa6395c496ddfa498"
+    },
+    {
+      "id": "owner_directive",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "d191e8c4ba97176875a0b9cce3db8e69e6603311"
+    }
+  ],
+  "scientific_execution": false,
+  "manual_gates": [
+    "full raw proof_checks and next_native_obligation",
+    "manifest accepted status and raw/model metadata agreement"
+  ]
+}
