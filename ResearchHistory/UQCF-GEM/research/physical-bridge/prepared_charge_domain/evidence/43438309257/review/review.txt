@@ -1,0 +1,17 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "proof_checks": [
+    "Verified the isometry T and the defect block B. The matrix multiplication T^\\dagger T = I holds exactly. The commutator block B = Q_E|_{B_0} T - T(Q_E|_{A_0} + I) evaluates exactly to (1/4)[[sqrt(15), -3], [-5, sqrt(15)]].",
+    "Verified the prepared-input vector condition and its orthogonal failure. For the prepared state a = (sqrt(3/8), sqrt(5/8))^T, Ba = 0 holds exactly, confirming D P_L = 0. For the orthogonal complement a_perp = (-sqrt(5/8), sqrt(3/8))^T, B a_perp = 2 b_perp holds exactly, confirming the failure of global conservation.",
+    "Verified the charge distribution moments. The input K distribution for source u has values 1 and 5 with probabilities 3/8 and 5/8. The output has values 2 and 6 with probabilities 5/8 and 3/8. Both yield a mean of 7/2 and a second moment of 16. The third moments evaluate to 157/2 and 86 respectively, confirming the distributions differ despite matching scalar expectations.",
+    "Verified Lemma 2 (finite commuting completion). Because M is K-invariant, it decomposes orthogonally into K-eigenspaces. The condition D P_M = 0 ensures U acts as an isometry from each eigenspace M_kappa into the full K-eigenspace for kappa. Finite dimensionality guarantees this isometry can be extended to a unitary U_c on each full eigenspace, ensuring global commutation.",
+    "Verified Corollary 3. The charge-generated hull Ahat is by definition Q_E-invariant, making Lhat K-invariant. Lemma 2 then provides a globally commuting U_c that agrees with U on Lhat. Since the original inputs reside in Lhat, U_c implements the exact channel C on them, satisfying PR147's premises without requiring C to hold on arbitrary replacement bath states.",
+    "Verified scope and provenance constraints. The document correctly maintains the NOT_DERIVED native bridge status, introduces no new native operations or physical time, and properly contextualizes the Reeb and Wolf citation as non-native context rather than a native mechanism."
+  ],
+  "next_native_obligation": "Produce one chain with all three links: an actual event identified with a named inherited operation, changing a state/action on an independently identified retained owner, yielding a source-dependent response on a fixed owner-available effect."
+}

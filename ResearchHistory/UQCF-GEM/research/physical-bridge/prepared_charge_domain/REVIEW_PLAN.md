@@ -1,0 +1,10 @@
+# Prepared-input conservation review plan
+
+The user's ongoing research and NEW-assumption exploration authorize this one bounded diagnostic. The previous frozen theorem remains correct. The new question is whether a vector commutator identity restricted to the prepared support can replace global conservation; an explicit coherent-bath counterexample and a commuting-completion sufficient condition are known before freeze.
+
+1. Freeze the analytical argument on a separate PR from verified research parent `2ab565c3f5bf10305a96ddeef30901de49959ba5`. Keep the same source, receiver, effect and source pair. Preserve PR147's original proof and review without a repeat generation.
+2. Pin the new argument, PR147 argument/adjudication, and narrow benchmark/predecessor/directive context. Adapt only packet locks, prompt, paths and labels in the previously inspected review transport. Run its existing eight rejecting controls and inspect the adaptation before one new independent Gemini call.
+3. Review the exact finite matrix construction, unitary extension, full source channel, full receiver blindness, prepared vector commutator, failure off support, scalar moment illustration, and the invariant-domain commuting completion. Check that only original-tau exact C is needed. Explicitly distinguish a completion corollary from a new mechanism, and supplied conservation domains from physical preparation access.
+4. Inspect the raw review's reasoning and limitations, complete the separate immutable-source/raw-response audit, hash original downloaded ZIPs, preserve raw artifacts and logs, and exactly read back all published files. Post a scoped result and peer follow-up in PR111.
+
+No scientific numerical execution, new enumeration, model fallback/retry, merge, hold release, native-source census, inherited-stack recertification or automation change is part of this task. The existing manual review gates for reasoning fields and manifest/model/status agreement remain required. The citation to Reeb–Wolf is a verified literature attribution, not an independent acceptance of this new counterexample. Native status remains NOT_DERIVED throughout.

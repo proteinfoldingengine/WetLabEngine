@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "run_id": "43438309257",
+  "checkout_sha": "63187e27952265b7c78d94ac3bf769efe6c5047c",
+  "workflow_sha": "63187e27952265b7c78d94ac3bf769efe6c5047c",
+  "original_archives": [
+    {
+      "artifact_id": 14045375557,
+      "file": "prepared-charge-domain-publication-1-43438309257.zip",
+      "bytes": 792,
+      "sha256": "6cebd0dbd8e18803245c2742d25eefd5a40c233f7b3273a574f42cfe2af424fb",
+      "github_digest": "sha256:6cebd0dbd8e18803245c2742d25eefd5a40c233f7b3273a574f42cfe2af424fb"
+    },
+    {
+      "artifact_id": 14045125631,
+      "file": "prepared-charge-domain-review-1-43438309257.zip",
+      "bytes": 100806,
+      "sha256": "0e628c41093e15f088b5be67c232225d5e9733cac2126dfa7395ba96ad8c7017",
+      "github_digest": "sha256:0e628c41093e15f088b5be67c232225d5e9733cac2126dfa7395ba96ad8c7017"
+    }
+  ],
+  "review_source_packet_sha256": "c01874b23c99c53f98aa3398d20ba7c84fa096c573f7d3afe63d71e3e5828c41",
+  "raw_response_sha256": "fa62e2e36872b5d294103444ad4f8008afe09d0a72c15ba46d2c861fcee94451",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "substantive_proof_checks_to_read": 6,
+  "manual_reasoning_inspection": "PASS: six substantive proof checks and next native obligation read; author limitations retained despite raw limitations=[]; retained-input step scoped in ADJUDICATION.md",
+  "exact_source_and_helper_identities": 9,
+  "raw_request_response_artifact_and_publication_checks": "PASS",
+  "native_bridge": "NOT_DERIVED",
+  "scientific_execution": false
+}
