@@ -1,0 +1,133 @@
+{
+  "summary": {
+    "n_pairs": 240,
+    "k_high": 0.9,
+    "k_low": 0.25,
+    "k_gap": 0.65,
+    "restoration_distance_auc": 0.9999131944444445,
+    "adm_z_auc": 0.9999131944444445,
+    "g_atrium_observable_only_auc": 0.9980555555555556,
+    "g_atrium_with_k_oracle_auc": 0.9992361111111111,
+    "passive_mean_auc": 0.5001215277777777,
+    "passive_curvature_auc": 0.5000173611111111,
+    "mean_paired_delta_g": 5.532178160001399,
+    "max_abs_paired_delta_passive_mean": 0.0,
+    "max_abs_paired_delta_passive_curvature": 0.0
+  },
+  "k_gap_ablation": [
+    {
+      "k_gap": 0.8,
+      "k_high": 0.9,
+      "k_low": 0.09999999999999998,
+      "g_atrium_observable_only_auc": 1.0,
+      "g_atrium_with_k_oracle_auc": 1.0,
+      "adm_z_auc": 1.0,
+      "passive_mean_auc": 0.500078125
+    },
+    {
+      "k_gap": 0.65,
+      "k_high": 0.9,
+      "k_low": 0.25,
+      "g_atrium_observable_only_auc": 0.9980859375,
+      "g_atrium_with_k_oracle_auc": 0.9993359375,
+      "adm_z_auc": 0.99984375,
+      "passive_mean_auc": 0.50015625
+    },
+    {
+      "k_gap": 0.5,
+      "k_high": 0.9,
+      "k_low": 0.4,
+      "g_atrium_observable_only_auc": 0.9038671875,
+      "g_atrium_with_k_oracle_auc": 0.946015625,
+      "adm_z_auc": 0.977109375,
+      "passive_mean_auc": 0.5001171875
+    },
+    {
+      "k_gap": 0.3,
+      "k_high": 0.9,
+      "k_low": 0.6000000000000001,
+      "g_atrium_observable_only_auc": 0.5969140625,
+      "g_atrium_with_k_oracle_auc": 0.700859375,
+      "adm_z_auc": 0.771171875,
+      "passive_mean_auc": 0.5001953125
+    },
+    {
+      "k_gap": 0.15,
+      "k_high": 0.9,
+      "k_low": 0.75,
+      "g_atrium_observable_only_auc": 0.46806640625,
+      "g_atrium_with_k_oracle_auc": 0.594296875,
+      "adm_z_auc": 0.6190234375,
+      "passive_mean_auc": 0.5001953125
+    },
+    {
+      "k_gap": 0.05,
+      "k_high": 0.9,
+      "k_low": 0.85,
+      "g_atrium_observable_only_auc": 0.4617578125,
+      "g_atrium_with_k_oracle_auc": 0.5737890625,
+      "adm_z_auc": 0.5345703125,
+      "passive_mean_auc": 0.50015625
+    },
+    {
+      "k_gap": 0.0,
+      "k_high": 0.9,
+      "k_low": 0.9,
+      "g_atrium_observable_only_auc": 0.5,
+      "g_atrium_with_k_oracle_auc": 0.5,
+      "adm_z_auc": 0.5,
+      "passive_mean_auc": 0.50015625
+    }
+  ],
+  "monotonic_scan": [
+    {
+      "k_low": 0.85,
+      "k_gap": 0.050000000000000044,
+      "g_atrium_observable_only_auc": 0.4565625,
+      "g_atrium_with_k_oracle_auc": 0.572109375,
+      "mean_paired_delta_g": -0.18277466461584815
+    },
+    {
+      "k_low": 0.75,
+      "k_gap": 0.15000000000000002,
+      "g_atrium_observable_only_auc": 0.488359375,
+      "g_atrium_with_k_oracle_auc": 0.6001171875,
+      "mean_paired_delta_g": -0.04917909053657559
+    },
+    {
+      "k_low": 0.6,
+      "k_gap": 0.30000000000000004,
+      "g_atrium_observable_only_auc": 0.60099609375,
+      "g_atrium_with_k_oracle_auc": 0.70890625,
+      "mean_paired_delta_g": 0.42628504608295403
+    },
+    {
+      "k_low": 0.45,
+      "k_gap": 0.45,
+      "g_atrium_observable_only_auc": 0.8174609375,
+      "g_atrium_with_k_oracle_auc": 0.881484375,
+      "mean_paired_delta_g": 1.606450855096051
+    },
+    {
+      "k_low": 0.3,
+      "k_gap": 0.6000000000000001,
+      "g_atrium_observable_only_auc": 0.9882421875,
+      "g_atrium_with_k_oracle_auc": 0.9943359375,
+      "mean_paired_delta_g": 4.1900914275953545
+    },
+    {
+      "k_low": 0.15,
+      "k_gap": 0.75,
+      "g_atrium_observable_only_auc": 1.0,
+      "g_atrium_with_k_oracle_auc": 1.0,
+      "mean_paired_delta_g": 11.228688552714747
+    },
+    {
+      "k_low": 0.05,
+      "k_gap": 0.85,
+      "g_atrium_observable_only_auc": 1.0,
+      "g_atrium_with_k_oracle_auc": 1.0,
+      "mean_paired_delta_g": 272.2462748585861
+    }
+  ]
+}

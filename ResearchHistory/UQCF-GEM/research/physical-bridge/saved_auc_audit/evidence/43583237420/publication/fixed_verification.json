@@ -1,0 +1,308 @@
+{
+  "datasets": {
+    "725": {
+      "metrics": {
+        "adm_z": {
+          "approx_ties": 0,
+          "archived_auc": 0.9999131944444445,
+          "asymmetric_classifications": 0,
+          "close_losses": 0,
+          "close_wins": 0,
+          "comparisons": 57600,
+          "exact_auc": 0.9999131944444445,
+          "exact_fraction": "11519/11520",
+          "exact_ties": 0,
+          "rounding_difference": 0.0,
+          "v725_formula": 0.9999131944444445,
+          "v737_row_means_formula": 0.9999131944444445,
+          "wins": 57595
+        },
+        "g_atrium_observable_only": {
+          "approx_ties": 0,
+          "archived_auc": 0.9980555555555556,
+          "asymmetric_classifications": 0,
+          "close_losses": 0,
+          "close_wins": 0,
+          "comparisons": 57600,
+          "exact_auc": 0.9980555555555556,
+          "exact_fraction": "3593/3600",
+          "exact_ties": 0,
+          "rounding_difference": 1.1102230246251565e-16,
+          "v725_formula": 0.9980555555555556,
+          "v737_row_means_formula": 0.9980555555555557,
+          "wins": 57488
+        },
+        "g_atrium_with_k_oracle": {
+          "approx_ties": 0,
+          "archived_auc": 0.9992361111111111,
+          "asymmetric_classifications": 0,
+          "close_losses": 0,
+          "close_wins": 0,
+          "comparisons": 57600,
+          "exact_auc": 0.9992361111111111,
+          "exact_fraction": "14389/14400",
+          "exact_ties": 0,
+          "rounding_difference": 1.1102230246251565e-16,
+          "v725_formula": 0.9992361111111111,
+          "v737_row_means_formula": 0.9992361111111112,
+          "wins": 57556
+        },
+        "passive_curvature": {
+          "approx_ties": 242,
+          "archived_auc": 0.5000173611111111,
+          "asymmetric_classifications": 0,
+          "close_losses": 1,
+          "close_wins": 1,
+          "comparisons": 57600,
+          "exact_auc": 0.5,
+          "exact_fraction": "1/2",
+          "exact_ties": 240,
+          "rounding_difference": 0.0,
+          "v725_formula": 0.5000173611111111,
+          "v737_row_means_formula": 0.5,
+          "wins": 28680
+        },
+        "passive_mean": {
+          "approx_ties": 254,
+          "archived_auc": 0.5001215277777777,
+          "asymmetric_classifications": 0,
+          "close_losses": 7,
+          "close_wins": 7,
+          "comparisons": 57600,
+          "exact_auc": 0.5,
+          "exact_fraction": "1/2",
+          "exact_ties": 240,
+          "rounding_difference": 0.0,
+          "v725_formula": 0.5001215277777777,
+          "v737_row_means_formula": 0.5,
+          "wins": 28680
+        },
+        "restoration_distance": {
+          "approx_ties": 0,
+          "archived_auc": 0.9999131944444445,
+          "asymmetric_classifications": 0,
+          "close_losses": 0,
+          "close_wins": 0,
+          "comparisons": 57600,
+          "exact_auc": 0.9999131944444445,
+          "exact_fraction": "11519/11520",
+          "exact_ties": 0,
+          "rounding_difference": 0.0,
+          "v725_formula": 0.9999131944444445,
+          "v737_row_means_formula": 0.9999131944444445,
+          "wins": 57595
+        }
+      },
+      "pairs": 240,
+      "rows": 480
+    },
+    "737": {
+      "metrics": {
+        "atrium_scalar": {
+          "approx_ties": 0,
+          "archived_auc": 0.9600226757369613,
+          "asymmetric_classifications": 0,
+          "close_losses": 0,
+          "close_wins": 0,
+          "comparisons": 176400,
+          "exact_auc": 0.9600226757369614,
+          "exact_fraction": "42337/44100",
+          "exact_ties": 0,
+          "rounding_difference": -1.1102230246251565e-16,
+          "v725_formula": 0.9600226757369614,
+          "v737_row_means_formula": 0.9600226757369613,
+          "wins": 169348
+        },
+        "passive_curvature": {
+          "approx_ties": 424,
+          "archived_auc": 0.5,
+          "asymmetric_classifications": 0,
+          "close_losses": 2,
+          "close_wins": 2,
+          "comparisons": 176400,
+          "exact_auc": 0.5,
+          "exact_fraction": "1/2",
+          "exact_ties": 420,
+          "rounding_difference": 0.0,
+          "v725_formula": 0.5000113378684807,
+          "v737_row_means_formula": 0.5,
+          "wins": 87990
+        },
+        "passive_mean": {
+          "approx_ties": 446,
+          "archived_auc": 0.5,
+          "asymmetric_classifications": 0,
+          "close_losses": 13,
+          "close_wins": 13,
+          "comparisons": 176400,
+          "exact_auc": 0.5,
+          "exact_fraction": "1/2",
+          "exact_ties": 420,
+          "rounding_difference": 0.0,
+          "v725_formula": 0.5000736961451248,
+          "v737_row_means_formula": 0.5,
+          "wins": 87990
+        },
+        "restoration_residual": {
+          "approx_ties": 0,
+          "archived_auc": 1.0,
+          "asymmetric_classifications": 0,
+          "close_losses": 0,
+          "close_wins": 0,
+          "comparisons": 176400,
+          "exact_auc": 1.0,
+          "exact_fraction": "1",
+          "exact_ties": 0,
+          "rounding_difference": 0.0,
+          "v725_formula": 1.0,
+          "v737_row_means_formula": 1.0,
+          "wins": 176400
+        }
+      },
+      "pairs": 420,
+      "rows": 840
+    }
+  },
+  "input_sha256": {
+    "v725_main_metrics.csv": "7a34ae50a613d3899c6ca2ce46457d6c91f57a170141badf43f5019bc2559f5b",
+    "v725_results.json": "8c78148ef5aafc1aa76705381d789501245e753ed5b42ef2613c524c0f18a9b6",
+    "v737_main_metrics.csv": "a5de3faac83acff2da4c87c10351d69102f2931972bf3f76a3b53bba74e3f2e7",
+    "v737_results.json": "882a50f6ef6b3bed19bf02f3726e61e9e065a9ad89cc586bce8eb3de2a4dcb6d"
+  },
+  "negative_controls": [
+    {
+      "case": "missing_row",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing_row",
+      "layer": "semantic",
+      "reason": "row count",
+      "result": "REJECTED"
+    },
+    {
+      "case": "duplicate_row",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "duplicate_row",
+      "layer": "semantic",
+      "reason": "row count",
+      "result": "REJECTED"
+    },
+    {
+      "case": "substituted_pair",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "substituted_pair",
+      "layer": "semantic",
+      "reason": "pair/label multiplicity",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong_label",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong_label",
+      "layer": "semantic",
+      "reason": "pair/label multiplicity",
+      "result": "REJECTED"
+    },
+    {
+      "case": "malformed_label",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "malformed_label",
+      "layer": "semantic",
+      "reason": "invalid label",
+      "result": "REJECTED"
+    },
+    {
+      "case": "nonfinite",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "nonfinite",
+      "layer": "semantic",
+      "reason": "nonfinite CSV value",
+      "result": "REJECTED"
+    },
+    {
+      "case": "malformed_numeric",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "malformed_numeric",
+      "layer": "semantic",
+      "reason": "could not convert string to float: 'not-a-number'",
+      "result": "REJECTED"
+    },
+    {
+      "case": "finite_score_substitution",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "finite_score_substitution",
+      "layer": "semantic",
+      "reason": "saved AUC mismatch: adm_z",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong_result",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong_result",
+      "layer": "semantic",
+      "reason": "saved AUC mismatch: adm_z",
+      "result": "REJECTED"
+    },
+    {
+      "case": "nonfinite_result",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "nonfinite_result",
+      "layer": "semantic",
+      "reason": "nonfinite JSON constant NaN",
+      "result": "REJECTED"
+    },
+    {
+      "case": "rank_preserving_substitution",
+      "layer": "identity",
+      "reason": "input SHA256 identity mismatch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "rank_preserving_substitution",
+      "layer": "semantic",
+      "reason": "rank invariance cannot authenticate bytes; mandatory identity gate does",
+      "result": "ACCEPTED_AS_EXPECTED"
+    }
+  ],
+  "result": "PASS",
+  "scope": "Saved main rows only. No generators, gaps, scans, dynamics or physical certification. Stdlib binary64 reduction emulation is scoped to these arrays."
+}

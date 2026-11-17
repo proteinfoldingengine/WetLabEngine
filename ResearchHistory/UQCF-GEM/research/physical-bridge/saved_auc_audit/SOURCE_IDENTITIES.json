@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "scope": "Current original Library downloads, not authenticated historical runtime; native source event-owner binding NOT_DERIVED",
+  "pr151_source_ref": "571c647615f9ea2e77ce4705febf5e1b497cbba9",
+  "sources": [
+    {
+      "path": "data/v725_main_metrics.csv",
+      "bytes": 107841,
+      "sha256": "7a34ae50a613d3899c6ca2ce46457d6c91f57a170141badf43f5019bc2559f5b",
+      "git_blob": "fe4e4ec54627cc0d42d69f4022b20bd094985608"
+    },
+    {
+      "path": "data/v725_results.json",
+      "bytes": 3744,
+      "sha256": "8c78148ef5aafc1aa76705381d789501245e753ed5b42ef2613c524c0f18a9b6",
+      "git_blob": "8786fe898b212033b33792784132738b8921f599"
+    },
+    {
+      "path": "data/v737_main_metrics.csv",
+      "bytes": 155998,
+      "sha256": "a5de3faac83acff2da4c87c10351d69102f2931972bf3f76a3b53bba74e3f2e7",
+      "git_blob": "2a414b376b9e704257662577514f9053c86acda3"
+    },
+    {
+      "path": "data/v737_results.json",
+      "bytes": 4303,
+      "sha256": "882a50f6ef6b3bed19bf02f3726e61e9e065a9ad89cc586bce8eb3de2a4dcb6d",
+      "git_blob": "ee56055d74297600bc11803971dcd24b03ac269f"
+    },
+    {
+      "path": "sources/v725_observable_only_atrium_metric_extraction.py",
+      "bytes": 16319,
+      "sha256": "872dd55d27e5faa2ef39faa41c5f3f11b188b29a035693d552e02460204c66ce",
+      "git_blob": "cf8a1bd5937acde59586b6d42ae8979742fd4e89"
+    },
+    {
+      "path": "sources/v737_reproduce_atrium_metric.py",
+      "bytes": 7044,
+      "sha256": "6dca9d42c8debb23bc7402422f195f81e21a55f5d798be021d103353f4114ab1",
+      "git_blob": "8b4f50b515603d978f8b2ca6e31c875314541c40"
+    }
+  ],
+  "v737_container_sha256": "edbe49efad09130ec81b6f1a772405887a8388c074a74f1b5fbd5d75a88bab7c",
+  "limitations": [
+    "Saved main rows only",
+    "V725 scan/ablation row values not present in inspected item",
+    "V737 gap CSV present in original ZIP but not scored",
+    "No scientific generator imported or executed"
+  ]
+}
