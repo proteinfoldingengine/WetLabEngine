@@ -1,0 +1,20 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The review is bounded to the inspected analytical arguments and the specific source files (V1025, V1172, V1152.1, V1472, Gate A, and the v15.56 modules). It does not certify archive-wide absence of a native event producer.",
+    "The accepted status confirms the exact algebraic identities and code execution paths as written in the document; it does not endorse any physical interpretation of the variables beyond their mathematical definitions.",
+    "The distinction between P_B (algebra selection) and P_J (single reference copy) is confirmed for the specific resource theory context provided, but this does not rule out other potential equivalences under different, unstated simulation theorems."
+  ],
+  "checks": [
+    "Reconstructed the TV=1 vs TV=1/2 resource comparison: For A=M_2, rho0=|0><0|, rho1=|1><1|, Delta=rho1-rho0. With B=span{|0><0|,|1><1|}, TV=1. With a single reference copy sigma=|0><0| under invariant operations, the optimum is (1/2)|Tr(Delta sigma)| = 1/2. The document correctly identifies that transferring the optimum between these different resource classes is unsupported.",
+    "Verified the V1172/V1152.1 ledger construction: The code in `make_ledger(mode)` uses the exact same `registry`, `root`, `events`, and `witnesses` for the modes `valid_label_transported`, `source_event_shuffle`, and `genesis_valid_source_shuffled`. Consequently, the deterministic hash chain (`roots`) is identical for these modes, confirming that the cryptographic payload does not bind the evolving fields or actual selected transitions.",
+    "Inspected V1472 adapter/governor: The code in `v1472_11_run_trace_preregistered.py` explicitly consumes an external trace (CSV/JSON) containing fields like `prior_dependency`, `entropy_before`, and `damaged_dependencies`. The `certify` function validates this supplied history rather than generating repair actions from a native pre-event state.",
+    "Reconstructed the V1025 `native_update` and `continuity` identity: The update computes `flux = div(J*source)` and sets `s' = max(s - DT*flux, 0)`. The diagnostic recomputes `flux` from the old `source` and `repair`. Letting `x = s - DT*flux`, the residual is `C = s' - s + DT*flux = max(x, 0) - x = max(-x, 0)`. This exact real-arithmetic identity confirms that the residual is purely the clipping correction, independent of floating-point zeros or physical conservation.",
+    "Checked the Gate A finite-graph construction: The script synthesizes `y_full = R_full @ J_true` where `J_true = J0 + Z @ a_true` and `a_true` is explicitly chosen. This demonstrates conditional identifiability (response inversion) from supplied data, not a derived physical event or receiver acquisition.",
+    "Reconstructed the signed node-0 cut identity: With the incidence convention of -1 at the tail and +1 at the head, node 0 is the tail for edges e0, e2, and e6. For a cut indicator `h` selecting node 0, `(B^T h)^T J = -J_e0 - J_e2 - J_e6`. Since `s[0] = -1`, any exact solution to `BJ = s` satisfies `-(J_e0 + J_e2 + J_e6) = -1`. The document correctly identifies this as a conditional constraint value, not a newly generated record.",
+    "Verified that the document correctly stops the inspected implementations at their supplied update/acquisition premises without demanding full-current uniqueness or absolute gravity calibration, preserving the partial retained consequence."
+  ]
+}
