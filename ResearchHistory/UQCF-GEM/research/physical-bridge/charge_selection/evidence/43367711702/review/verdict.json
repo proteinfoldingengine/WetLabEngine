@@ -1,0 +1,23 @@
+{
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "Explicit NEW charge law (Q_S = pi_u) is not the native preserved total grade.",
+    "Exact spectral exclusion (no unit gap in bath charge) is a supplied physical restriction.",
+    "Supplied Hilbert factorization, independent product preparation, and exact all-input channel C remain conditional premises.",
+    "The theorem specifies the effect probability but does not provide a general population-only formula for the complete receiver state.",
+    "The result is an analytical proof of a conditional physical law, not a native derivation or physical discovery."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "next_native_obligation": "Identify an inherited event operation and its same-owner action/access, or explicitly justify an additional physical correspondence. Native extensive-grade conservation alone does not supply Q_S=pi_u, global commutation, bath spectral exclusion, or accessible ownership of F_R.",
+  "proof_checks": [
+    "Global block identity: Verified. The commutation [U, Q_S+Q_E+F_R]=0 yields Q_E B_{sr;tr'} - B_{sr;tr'} Q_E = (q_t+r'-q_s-r)B_{sr;tr'}. If the required shift is +/-1 and spec(Q_E) lacks a unit gap, the block is exactly zero on the entire bath space. This correctly bypasses any need for tau to be diagonal or have Q_E-invariant support.",
+    "Pure reduced-system support: Verified. Because exact C maps pi_a to pure pi_a, the joint output must factorize. Positivity on supp(tau) combined with the zeroed blocks (requiring forbidden bath shifts) strictly confines the receiver output to 0 for retained inputs and 1 for input u.",
+    "POVM argument: Verified. The map rho -> q(rho) defines an effect M with 0 <= M <= I. The diagonal constraints M_aa=0 and M_uu=1 force all off-diagonal elements to zero via the positivity condition |M_ij|^2 <= M_ii M_jj. This rigorously extends the proof to all coherent inputs.",
+    "Nonempty class and controls: Verified. W_R commutes with K for any Q_E and implements C. The SWAP_ER W_R control correctly demonstrates that allowing a unit gap in Q_E permits the bath to absorb the charge, leaving R in state tau (violating quiet-reference). The H_R W_R control correctly shows that dropping conservation allows fixed-effect blindness.",
+    "Theorem B (Equal source charge): Verified. Setting q_u=q_p forces the u -> p transition to require a -1 bath shift to excite the receiver, which is forbidden by spectral exclusion, leaving R blank. The rank bottleneck (input rank 2k must fit into output rank d) rigorously proves the exact implementation class is empty for finite full-rank baths.",
+    "Native provenance: Verified. The text accurately distinguishes this new global commuting/spectral hypothesis from the old isometry mean balance (which was equivalent to the sharp writer relation). It correctly identifies that the native total is I_S, not pi_u, and that substituting I_S into this theorem yields a blank receiver and an empty class for full-rank baths."
+  ],
+  "verdict": "ACCEPTED"
+}

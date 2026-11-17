@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "run_id": "43367711702",
+  "checkout_sha": "32631a5e08c639d6c234fff3dd3fb1180aaf4807",
+  "workflow_sha": "32631a5e08c639d6c234fff3dd3fb1180aaf4807",
+  "original_archives": [
+    {
+      "artifact_id": 14011162531,
+      "file": "charge-selection-review-1-43367711702.zip",
+      "bytes": 113677,
+      "sha256": "7b76e65e42a2c44de9a060dde28da7efef25af14063d771f8ae41719bd8d0b9e",
+      "github_digest": "sha256:7b76e65e42a2c44de9a060dde28da7efef25af14063d771f8ae41719bd8d0b9e"
+    },
+    {
+      "artifact_id": 14010587833,
+      "file": "charge-selection-publication-1-43367711702.zip",
+      "bytes": 790,
+      "sha256": "279b2d5c81453ccb65d68f8afd2873c38c383cbe7044b9f8de6125a5c8de3e60",
+      "github_digest": "sha256:279b2d5c81453ccb65d68f8afd2873c38c383cbe7044b9f8de6125a5c8de3e60"
+    }
+  ],
+  "review_source_packet_sha256": "fe010792b8745124075129802589c5314fbff7d862414a83423a06dca5b1298a",
+  "raw_response_sha256": "e202315311066fca37df4866fe769372019565270837b58e79860ec03acdfc35",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "substantive_proof_checks_to_read": 6,
+  "manual_reasoning_inspection": "PASS: full six proof checks, limitations and next obligation read; SWAP exception and conditional-law wording scoped in ADJUDICATION.md",
+  "exact_source_and_helper_identities": 10,
+  "raw_request_response_artifact_and_publication_checks": "PASS",
+  "native_bridge": "NOT_DERIVED",
+  "scientific_execution": false
+}
