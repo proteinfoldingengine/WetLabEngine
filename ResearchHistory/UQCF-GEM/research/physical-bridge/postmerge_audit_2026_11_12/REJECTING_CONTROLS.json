@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "scope": "Four rejecting integration-audit controls; no scientific simulation or theorem test.",
+  "controls": [
+    {
+      "name": "missing_rank_refinement_merge",
+      "mutation_sha256": "6aa6e409590a83335961df927c37835336f9ba6724c94afc8417002b3bf07044",
+      "rejected": true,
+      "exit_code": 1,
+      "assertion": "AssertionError: (135, 'missing or reordered first-parent integration')"
+    },
+    {
+      "name": "duplicated_pr_record",
+      "mutation_sha256": "01c33864aa56c97c31fac3dd23a62acd9c296b1bc87f5de6d4529ed61c0477a2",
+      "rejected": true,
+      "exit_code": 1,
+      "assertion": "AssertionError: duplicate PR"
+    },
+    {
+      "name": "substituted_reviewed_head",
+      "mutation_sha256": "c5cdc555ae597f7c218bd34c51f7097f599bc2a665fb273a38cbe9c175b962f0",
+      "rejected": true,
+      "exit_code": 1,
+      "assertion": "AssertionError: (128, 'reviewed-head parent mismatch')"
+    },
+    {
+      "name": "wrong_actual_merge_identity",
+      "mutation_sha256": "6c09c45994f93e1217a0ede472e0d1b83ab3fb765117771f3efecf6a917395f2",
+      "rejected": true,
+      "exit_code": 1,
+      "assertion": "AssertionError: (132, 'missing or reordered first-parent integration')"
+    }
+  ]
+}

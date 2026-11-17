@@ -1,0 +1,174 @@
+{
+  "pr": 106,
+  "pr_url": "https://github.com/proteinfoldingengine/WetLabEngine/pull/106",
+  "state": "open",
+  "draft": false,
+  "merged": false,
+  "mergeable": true,
+  "final_head": "002f5b4b179cd0b868f8c5af21c0142243b6b209",
+  "maintenance_head": "0eb4b82fbc5ad6388b7efda43bff0f47a3a4246d",
+  "marker_sha": "05c2fe7f2812bba4b2a82838381be1a1754d131f",
+  "scientific_sha": "05c2fe7f2812bba4b2a82838381be1a1754d131f",
+  "workflow_sha": "05c2fe7f2812bba4b2a82838381be1a1754d131f",
+  "branch": "gpt/native-structure-resource-audit",
+  "run_id": 43268720150,
+  "run_attempt": 1,
+  "run_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/43268720150",
+  "model": "gemini-3.1-pro-preview",
+  "verdict": "ACCEPTED",
+  "empty_defect_arrays": true,
+  "reconstruction_checks": 7,
+  "review_scope_limitations": 3,
+  "argument_review_job_id": 131359171196,
+  "publication_job_id": 131359588565,
+  "publication": "PASS",
+  "source_input_identities": 24,
+  "original_artifacts": [
+    {
+      "id": 13967181962,
+      "name": "native-structure-review-1",
+      "size_in_bytes": 80012,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/13967181962",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/13967181962/zip",
+      "expired": false,
+      "created_at": "2026-11-12T17:22:58Z",
+      "expires_at": "2027-02-10T17:22:19Z",
+      "updated_at": "2026-11-12T17:22:58Z",
+      "digest": "sha256:5122123b116a24cc054395e87bc472411964086b7900833026d96f7d6d5dc1b1",
+      "workflow_run": {
+        "id": 43268720150,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "gpt/native-structure-resource-audit",
+        "head_sha": "05c2fe7f2812bba4b2a82838381be1a1754d131f"
+      }
+    },
+    {
+      "id": 13966657867,
+      "name": "native-structure-publication-1",
+      "size_in_bytes": 2873,
+      "url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/13966657867",
+      "archive_download_url": "https://api.github.com/repos/proteinfoldingengine/WetLabEngine/actions/artifacts/13966657867/zip",
+      "expired": false,
+      "created_at": "2026-11-12T17:23:19Z",
+      "expires_at": "2027-02-10T17:22:19Z",
+      "updated_at": "2026-11-12T17:23:19Z",
+      "digest": "sha256:f3f06116464c89086cd1d07efef1f96cd10c103298f08579c978d6e1ad2dcbbc",
+      "workflow_run": {
+        "id": 43268720150,
+        "repository_id": 1148068528,
+        "head_repository_id": 1148068528,
+        "head_branch": "gpt/native-structure-resource-audit",
+        "head_sha": "05c2fe7f2812bba4b2a82838381be1a1754d131f"
+      }
+    }
+  ],
+  "exact_immutable_evidence_readbacks": [
+    {
+      "path": "argument-review.log",
+      "bytes": 19355,
+      "git_blob": "ca22c2c30dc9e6ddf787be7cccde682b2eb84807",
+      "sha256": "5433167760f8645223394eef10c18893b8de6eadfd17dc3db56ac7399a6e51b9",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "evidence_manifest.json",
+      "bytes": 4324,
+      "git_blob": "d6f3e89a5293154ac21e4fb6df1c5865feac040f",
+      "sha256": "fa55aa18488bbdb6c7d12b282b24d5c1e27c692e3c45a8ea958d523afa48d7b7",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "github_run.json",
+      "bytes": 9899,
+      "git_blob": "ceb7f3f516c344149f3126474691fea42a9cab15",
+      "sha256": "78543ae311d6addb92a668874fda4ec44262fc1b4ed8dbed91a871ab418174d7",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "publication/remote_readback.json",
+      "bytes": 9506,
+      "git_blob": "361346ed163c45f8be362bc15a9f5f5ca242f8ca",
+      "sha256": "de5751c3bf211811211e62953dfa0f9a581f977dbb69db8d8703b2c077ca9a9e",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "publication-audit.log",
+      "bytes": 17565,
+      "git_blob": "88724540e30ed53f3e4200f3caccadb5c3a02fa3",
+      "sha256": "2e13568feaf0c5bed48d17b236ae6b12f41a323e2d010f6726bc6cbc3c52a569",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "publication.zip",
+      "bytes": 2873,
+      "git_blob": "4f82513c31ee5878cc828a01424dcc6d32128b18",
+      "sha256": "f3f06116464c89086cd1d07efef1f96cd10c103298f08579c978d6e1ad2dcbbc",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "review/manifest.json",
+      "bytes": 1669,
+      "git_blob": "a009d0e774fd48e7886a1f5ec4aef20d59b64db7",
+      "sha256": "1d763c11d0b85919414d94d3fc4a8e9ab41f048a048b5e557b5ad042a267c9bc",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "review/prompt.txt",
+      "bytes": 199393,
+      "git_blob": "0a6842d75638cefa859666318292db858708575d",
+      "sha256": "afc5795d8e8824a5fc41ca982a9467105de134b96a812f520de8ff8786cfc536",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "review/request_body.reconstructed.json",
+      "bytes": 212099,
+      "git_blob": "51594c39d030c6e0fabf3cb7822c99a517bc9b5c",
+      "sha256": "046b1764b8f55b1bc3af3249fe28838d7cc474ee9c62b5ab0251e1100ee109ff",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "review/response.json",
+      "bytes": 18758,
+      "git_blob": "b1d052f09f00632a5848310ea21e18b12470a23f",
+      "sha256": "1e5cd365a4825345c711295a217a226f19d0e7de5569f2ec4dc686426c7f32a6",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "review/review.txt",
+      "bytes": 3508,
+      "git_blob": "b6a596b02699cc85cebec842522339feb296df63",
+      "sha256": "43a751a4364754d8f53383c162222ee58bacc744a750097ea03a5da25b01c20c",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "review/verdict.json",
+      "bytes": 3509,
+      "git_blob": "2e2602a66d882fb5a27c2e1b30031f10acc5902f",
+      "sha256": "c086c309f0d114f0879adb9462f4a7433fefd58984f831cc0f091621bd17d72d",
+      "exact_base64_readback": true
+    },
+    {
+      "path": "review.zip",
+      "bytes": 80012,
+      "git_blob": "72e0c262b8566adf932060abe06eb5940a27b1c6",
+      "sha256": "5122123b116a24cc054395e87bc472411964086b7900833026d96f7d6d5dc1b1",
+      "exact_base64_readback": true
+    }
+  ],
+  "pr_body_exact_remote_readback": true,
+  "marker_only_html_comment": true,
+  "evidence_commit_adds_only_run_archive": true,
+  "evidence_commit_triggered_run_count": 0,
+  "reviewed_commit_triggered_run_count": 1,
+  "native_status": "NOT_DERIVED",
+  "scientific_execution": false,
+  "inherited_replay": false,
+  "research_branch_mutated": false,
+  "force_push": false,
+  "live_base": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+  "live_merge_base": "48e4282aae98f554ebc5c4dcd333bda304b04c9a",
+  "ahead_by": 13,
+  "behind_by": 128,
+  "archive_url": "https://github.com/proteinfoldingengine/WetLabEngine/tree/002f5b4b179cd0b868f8c5af21c0142243b6b209/ResearchHistory/UQCF-GEM/research/physical-bridge/native_structure/evidence/43268720150"
+}

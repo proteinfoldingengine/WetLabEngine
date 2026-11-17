@@ -1,0 +1,163 @@
+{
+  "pr": {
+    "number": 132,
+    "url": "https://github.com/proteinfoldingengine/WetLabEngine/pull/132",
+    "base_branch": "research/uqcf-overlapping-guard-exchange",
+    "base_sha": "750554de424a1e12e2d14c6665920bda31163dfc",
+    "head_sha": "7718b659c49ffe44fb72d4adaad24da09b8982fc",
+    "merge_sha": "0d79b6bfbc9f1ee48dcf6be4b090e17796885d91",
+    "merge_parents": [
+      "5df9bde7c40553568c276177bee725683e43ad1d",
+      "7718b659c49ffe44fb72d4adaad24da09b8982fc"
+    ],
+    "merged_by": "proteinfolding-grokbot",
+    "merged_at_utc": "2026-11-12T16:55:54Z",
+    "integrated_research_sha": "2ab565c3f5bf10305a96ddeef30901de49959ba5"
+  },
+  "scope": {
+    "status": "ACCEPTED_CONDITIONAL_ANALYTICAL_RESULT",
+    "theorem": "Under the supplied finite-dimensional channel benchmark, if a realizing unitary leaves R pure on rho_*, then 2 rank(tau_E) <= d_E. New full-rank TB forces R mixed on rho_* for every realizing unitary.",
+    "scope_control": "With the benchmark equal-dimensional E and R, a receiver-writing realization followed by SWAP moves the source record to E and gives R the source-independent bath state tau_E. R mixedness alone establishes no delivery, location, ownership, access, event/state/record correspondence, or probability law.",
+    "entropy_companion": "In bits, S(R) >= 1 + S(tau_E) - log2(d_E); the bound can be nonpositive. The strict mixedness conclusion uses rank.",
+    "native_bridge_status": "NOT_DERIVED",
+    "numbered_stage_certification": false,
+    "required_correction": null,
+    "related_prs": {
+      "130": "open and unmerged",
+      "131": "open and unmerged"
+    }
+  },
+  "review": {
+    "model_requested": "gemini-3.1-pro-preview",
+    "model_returned": "gemini-3.1-pro-preview",
+    "prompt_sha256": "10ceba6fe561a73f14909aa49f3a2fbda39b2ff4dd5ee5fb33d16b25d4489c21",
+    "response_sha256": "da31b55cefdc806fe8a34d343aef010f2d6c94bcb53463dd43b14a3ba96df9ce",
+    "run_attempt": "1",
+    "run_id": "41524434282",
+    "science_sha": "8921a58e3ec687b3c712b07a75746e5a392ef54b",
+    "workflow_sha": "8921a58e3ec687b3c712b07a75746e5a392ef54b",
+    "job_id": 125548408532,
+    "actions_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/41524434282",
+    "response_id": "W_roauPPKuvTjMcP1tqzMQ",
+    "finish_reason": "STOP",
+    "model_metadata_version": "3.1-pro-preview-01-2026",
+    "verdict": "ACCEPTED",
+    "native_bridge_status": "NOT_DERIVED",
+    "findings": [],
+    "missing_assumptions": [],
+    "counterexamples": [],
+    "limitations": [],
+    "verdict_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/review/actions-41524434282/verdict.json",
+    "raw_response_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/review/actions-41524434282/response.json"
+  },
+  "publication": {
+    "controller_sha": "05dccd97511c201fc56822012335f3333b947143",
+    "native_bridge_status": "NOT_DERIVED",
+    "publication_replay": true,
+    "review_run_id": 41524434282,
+    "reviewed_sha": "8921a58e3ec687b3c712b07a75746e5a392ef54b",
+    "scientific_breakthrough": false,
+    "scope": "conditional rank theorem under SUPPLIED benchmark plus NEW TB",
+    "status": "PASS",
+    "run_id": 41525059170,
+    "run_attempt": 1,
+    "workflow_sha": "05dccd97511c201fc56822012335f3333b947143",
+    "verification_job_id": 125550559083,
+    "publication_job_id": 125551617013,
+    "actions_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/41525059170",
+    "verified_deterministic_replay_files": [
+      "review-gate.json",
+      "source-readback.json"
+    ]
+  },
+  "evidence": {
+    "argument_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/ARGUMENT.md",
+    "adjudication_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/ADJUDICATION.md",
+    "review_receipt_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/REVIEW_ARTIFACT_RECEIPT.json",
+    "audit_receipt_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/AUDIT_ARTIFACT_RECEIPT.json",
+    "archives": {
+      "review": {
+        "artifact_id": 13179825871,
+        "zip_sha256": "660efc5a5a54ca4c627fdaad0aaa8c2c0dc44f87c578260454e94b1888d1d5e4",
+        "git_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/review/actions-41524434282",
+        "entry_count": 9,
+        "verified_against": [
+          "7718b659c49ffe44fb72d4adaad24da09b8982fc",
+          "0d79b6bfbc9f1ee48dcf6be4b090e17796885d91",
+          "2ab565c3f5bf10305a96ddeef30901de49959ba5"
+        ]
+      },
+      "verification": {
+        "artifact_id": 13180435111,
+        "zip_sha256": "d1f268a76264651d49b46e138e1c1c8a58448089405c953ef0f4a03d50b6cf14",
+        "git_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/audit/actions-41525059170/verification",
+        "entry_count": 4,
+        "verified_against": [
+          "7718b659c49ffe44fb72d4adaad24da09b8982fc",
+          "0d79b6bfbc9f1ee48dcf6be4b090e17796885d91",
+          "2ab565c3f5bf10305a96ddeef30901de49959ba5"
+        ]
+      },
+      "publication": {
+        "artifact_id": 13179272577,
+        "zip_sha256": "5810d8afa68ac3711e142b3cf797765ed29fcbd6235846e680b5ae67d5851e81",
+        "git_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/audit/actions-41525059170/publication",
+        "entry_count": 4,
+        "verified_against": [
+          "7718b659c49ffe44fb72d4adaad24da09b8982fc",
+          "0d79b6bfbc9f1ee48dcf6be4b090e17796885d91",
+          "2ab565c3f5bf10305a96ddeef30901de49959ba5"
+        ]
+      }
+    },
+    "source_documents": {
+      "AGENTS.md": {
+        "bytes": 2368,
+        "path": "ResearchHistory/UQCF-GEM/AGENTS.md",
+        "sha256": "56d5ffb2d1f8f0d1a1660b6cc5b31ebae92b59fb48b547e7d47ea13f0bafdee0"
+      },
+      "ARGUMENT.md": {
+        "bytes": 4988,
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/constructive_candidates/t273_rank_refinement/ARGUMENT.md",
+        "sha256": "f3fab346c195cf0eb421f41b37b5af4a990a746b0f27fd43f7ca5cb150cd9544"
+      },
+      "DIRECTION_UPDATE_2026_10_21.md": {
+        "bytes": 7061,
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/DIRECTION_UPDATE_2026_10_21.md",
+        "sha256": "aed1d0c1022a6ea4c0f04ec960c0e28b37e6d98929a14cf8ee230bb2fbec7e04"
+      },
+      "P1_RECEIVER_LOCATION_RESULT.md": {
+        "bytes": 10619,
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution/RESULT.md",
+        "sha256": "11b661a0bcb0a311ed3ced2a3114439a8facc18d0e354074f57c283256552d9e"
+      },
+      "RECEIVER_DELIVERY_FRONTIER_DIRECTIVE_2026_11_01.md": {
+        "bytes": 9675,
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/RECEIVER_DELIVERY_FRONTIER_DIRECTIVE_2026_11_01.md",
+        "sha256": "a847dcce3f876f8fbbd757fe9663d61b14f18bcd2b201a4dc9cf7acb8f47d72c"
+      },
+      "STANDING_DIRECTIVE.md": {
+        "bytes": 11873,
+        "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/STANDING_DIRECTIVE.md",
+        "sha256": "ea80da6feebaf23b988974e63006a00d3ad1c8a21c68a5d6d03fb998fc74ff33"
+      }
+    },
+    "source_documents_verified_against": [
+      "8921a58e3ec687b3c712b07a75746e5a392ef54b",
+      "05dccd97511c201fc56822012335f3333b947143",
+      "7718b659c49ffe44fb72d4adaad24da09b8982fc",
+      "0d79b6bfbc9f1ee48dcf6be4b090e17796885d91",
+      "2ab565c3f5bf10305a96ddeef30901de49959ba5"
+    ],
+    "actions_log_checks": {
+      "gemini_review": "ACCEPTED / NOT_DERIVED at reviewed SHA",
+      "verification": "readback executed at controller SHA",
+      "publication": "verification ZIP digest matched on download; fresh replay executed at controller SHA"
+    }
+  },
+  "evidence_limits": [
+    "This is a scoped analytical review and publication replay. Neither T-273 workflow ran a numbered-stage preregistration, independent exhaustive enumeration with rejecting controls, or the inherited foundational stack.",
+    "The current post-merge audit independently checked saved archive bytes, review inputs/outputs, manifests, and deterministic replay equality. It made no new model calls and ran no new numerical campaign.",
+    "Review obligations for the numbered retained-stage pipeline, and separate remediation of PRs 130 and 131, cannot be satisfied by these receipts."
+  ]
+}
