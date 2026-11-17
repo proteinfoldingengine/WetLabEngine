@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "freeze": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+  "review_commit": "3767901171a8d6313f17d212dab221f8c660c557",
+  "exact_immutable_sources": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/ARGUMENT.md",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "git_blob": "89320ffe559802dbf625cfb1d917964a8d6e7f89",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/SOURCE_IDENTITIES.json",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "git_blob": "ffb54c2478d9a4ab1fcfa4929f7839f3e6a70e7a",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/V725_OBSERVABLE_ONLY_ATRIUM_METRIC_EXTRACTION.md",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "git_blob": "82ea556020126e824de7fe38b3733862a5544241",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/v725_observable_only_atrium_metric_extraction.py",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "git_blob": "cf8a1bd5937acde59586b6d42ae8979742fd4e89",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/v737_reproduce_atrium_metric.py",
+      "ref": "3c13c77bdab9995dd3f817ac01ed1dff5c6b25c9",
+      "git_blob": "8b4f50b515603d978f8b2ca6e31c875314541c40",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution/RESULT.md",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "4182ba347f8c11bad63315ffa6395c496ddfa498",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/OWNER_ACTION_NEXT_CYCLE_2026_11_10.md",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "d191e8c4ba97176875a0b9cce3db8e69e6603311",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/scripts/uqcf_preparability_integrity.py",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "50b1043cda14b18b962f7930cf6a4391067a2a96",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/scripts/uqcf_preparability_review.py",
+      "ref": "2ab565c3f5bf10305a96ddeef30901de49959ba5",
+      "git_blob": "4c8029da503ed57f404e4424ecc243eb3c609347",
+      "exact_bytes": true
+    }
+  ],
+  "exact_added_file_readbacks": [
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/ARGUMENT.md",
+      "git_blob": "89320ffe559802dbf625cfb1d917964a8d6e7f89",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/REVIEW_PLAN.md",
+      "git_blob": "43dee0e409672610625b8a0a45e5552729615e04",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/SOURCE_IDENTITIES.json",
+      "git_blob": "ffb54c2478d9a4ab1fcfa4929f7839f3e6a70e7a",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/V725_OBSERVABLE_ONLY_ATRIUM_METRIC_EXTRACTION.md",
+      "git_blob": "82ea556020126e824de7fe38b3733862a5544241",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/v725_observable_only_atrium_metric_extraction.py",
+      "git_blob": "cf8a1bd5937acde59586b6d42ae8979742fd4e89",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/source_transcriptions/v737_reproduce_atrium_metric.py",
+      "git_blob": "8b4f50b515603d978f8b2ca6e31c875314541c40",
+      "exact_bytes": true
+    },
+    {
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/atrium_owner_trace/review/SOURCE_PACKET.json",
+      "git_blob": "fedc993f5787b87dd59426e1a630c8cb366246f8",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/scripts/uqcf_atrium_owner_trace_review.py",
+      "git_blob": "87d5d57ca2da654fa409482a530d9b3cbb02b3e0",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/scripts/uqcf_atrium_owner_trace_tests.py",
+      "git_blob": "cc7f123f58474715fd4c10ade6ab9eaa1ebdf699",
+      "exact_bytes": true
+    },
+    {
+      "path": ".github/workflows/uqcf-atrium-owner-trace-review.yml",
+      "git_blob": "d73a22992f2e19a4042d5096409083084d359ed6",
+      "exact_bytes": true
+    }
+  ],
+  "original_historical_bytes_authenticated": false,
+  "scope": "Exact repository bytes of frozen source transcriptions; no authentication of original historical downloads",
+  "scientific_execution": false
+}

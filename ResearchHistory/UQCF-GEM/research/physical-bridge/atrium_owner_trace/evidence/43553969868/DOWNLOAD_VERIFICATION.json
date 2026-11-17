@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "run_id": "43553969868",
+  "checkout_sha": "3767901171a8d6313f17d212dab221f8c660c557",
+  "workflow_sha": "3767901171a8d6313f17d212dab221f8c660c557",
+  "original_archives": [
+    {
+      "artifact_id": 14097361932,
+      "file": "atrium-owner-trace-review-1-43553969868.zip",
+      "bytes": 83518,
+      "sha256": "8e5af76e67002df12e8f91ea1765e452ff56a033016d48cbe5605795ea5e87dc",
+      "github_digest": "sha256:8e5af76e67002df12e8f91ea1765e452ff56a033016d48cbe5605795ea5e87dc"
+    },
+    {
+      "artifact_id": 14097322087,
+      "file": "atrium-owner-trace-publication-1-43553969868.zip",
+      "bytes": 791,
+      "sha256": "029796496de3f9d3fa4f529ddf0aad162ddd5460d635ea8ad688b2294bb95aff",
+      "github_digest": "sha256:029796496de3f9d3fa4f529ddf0aad162ddd5460d635ea8ad688b2294bb95aff"
+    }
+  ],
+  "review_source_packet_sha256": "a839702fa38c8fe1abf9071793029ec1d02f5c89459207575052b4899a8e1c40",
+  "raw_response_sha256": "a27b41c7b24b3ec13df08d7aabb3ea053a367d66150bd72a5d7dab427e8e6aea",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "substantive_proof_checks_to_read": 8,
+  "raw_proof_checks_key": "proof_checks",
+  "manual_reasoning_inspection": "PASS_WITH_EXPLICIT_SCOPE_CORRECTION",
+  "exact_source_and_helper_identities": 9,
+  "raw_request_response_artifact_and_publication_checks": "PASS",
+  "native_bridge": "NOT_DERIVED",
+  "scientific_execution": false,
+  "manual_reasoning_notes": [
+    "Root read complete ordinary review, all eight proof_checks, all four limitations and next_native_obligation.",
+    "Both common-state formulas, supplied parameter/readout trace, V737 noise scaling and bounded AUC predicate caveat were inspected; no historical numerical result was replayed.",
+    "Raw limitation4 is not adopted literally: actual measurement/pruning occurrence remains ACCEPTED INPUT; the missing correspondence is event-operation-owner-action/access. Raw response preserved unchanged; no repeat generation.",
+    "Transcription identity/length checks do not authenticate original historical bytes or independently reconstruct Library retrieval.",
+    "Exact requested/returned/manifest model identity and accepted manifest status verified; native bridge NOT_DERIVED."
+  ]
+}
