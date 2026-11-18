@@ -1,0 +1,25 @@
+{
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "The interpretation of the repair coordinate as a potential is supplied explicitly as a test condition, not derived from native geometry.",
+    "Other physical fields, response variables, representations, or history-dependent rules require their own derivation.",
+    "The foundational identity test assigns neither physical duration nor physical measurability to an edge drop.",
+    "Carrying the fine contrast into a survivor's accessible record requires a rule for retaining or writing it as that edge disappears; a first arrival in the separate repair simulation does not supply this rule.",
+    "A coarse source observable intended to ignore the lost split has no obligation to carry that record."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "proof_checks": [
+    "The elementary leaf column of the native Laplacian correctly gives L e_u = e_u - e_p.",
+    "Direct evaluation correctly gives P(e_u - e_p) = 0, confirming the leaf-parent contrast survives P1.",
+    "The fine potential difference is correctly identified as the class [e_u], with an oriented drop from leaf to parent of exactly one.",
+    "Restricting to surviving vertices correctly gives the zero class, meaning every retained potential difference has zero contrast.",
+    "The repair difference between the parent p and the protected sibling w is a relative value, correctly invariant under common constant shifts.",
+    "After one archived sweep, the parent first coordinate is correctly calculated as f(7/20) for input a and f(13/40) for input b.",
+    "The contrast of the retained parent-minus-sibling difference is correctly evaluated as f(13/40) - f(7/20) < 0, relying on the strict monotonicity of f(t).",
+    "The original native retained potential gives zero for the same contrast, correctly demonstrating that the archived rule at default strength fails this direct potential identification.",
+    "The independent rational solutions and gauge shifts are correctly reconstructed and verified in the exact arithmetic cross-check."
+  ],
+  "verdict": "ACCEPTED"
+}
