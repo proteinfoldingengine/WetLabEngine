@@ -1,4 +1,4 @@
-name: Lineage repair first arrival and P1 coarse output
+name: Native leaf potential and retained parent contrast
 on:
   push:
     branches: [gpt/v1686-recombination-audit-20261118]
@@ -35,11 +35,13 @@ jobs:
       - name: Reproduce every frozen finite control
         run: |
           python -m pip install 'numpy==2.3.5'
-          python "$TRACE_DIR/verify.py" > replay.json
-          diff -u "$TRACE_DIR/verification.json" replay.json
+          python "$TRACE_DIR/verify.py" > primary_replay.json
+          diff -u "$TRACE_DIR/verification.json" primary_replay.json
+          python "$TRACE_DIR/native_potential/verify.py" > replay.json
+          diff -u "$TRACE_DIR/native_potential/verification.json" replay.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: lineage-repair-source-replay
+          name: native-leaf-source-replay
           path: replay.json
           if-no-files-found: error
           retention-days: 90
@@ -64,11 +66,11 @@ jobs:
       - name: Independent whole-argument challenge
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 "$TRACE_DIR/review.py" review review_evidence
+        run: python3 "$TRACE_DIR/native_potential/review.py" review review_evidence
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: lineage-repair-whole-argument-review
+          name: native-leaf-whole-argument-review
           path: review_evidence
           if-no-files-found: error
           retention-days: 90
@@ -92,13 +94,13 @@ jobs:
             /ResearchHistory/UQCF-GEM/research/physical-bridge/p1_receiver_location_resolution/RESULT.md
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: lineage-repair-whole-argument-review
+          name: native-leaf-whole-argument-review
           path: review_evidence
       - name: Verify raw reviewer output and frozen source identities
-        run: python3 "$TRACE_DIR/review.py" audit review_evidence
+        run: python3 "$TRACE_DIR/native_potential/review.py" audit review_evidence
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: lineage-repair-publication-readback
+          name: native-leaf-publication-readback
           path: review_evidence/publication_audit.json
           if-no-files-found: error
           retention-days: 90
