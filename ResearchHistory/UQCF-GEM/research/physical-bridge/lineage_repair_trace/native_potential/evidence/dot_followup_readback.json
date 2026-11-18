@@ -1,0 +1,23 @@
+{
+  "columns": [
+    "parent_grade_before",
+    "parent_grade_after",
+    "parent_minus_sibling_before",
+    "parent_minus_sibling_after"
+  ],
+  "contrasts_b_minus_a": {
+    "parent_to_leaf": [
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    "sibling_to_leaf": [
+      "0",
+      "1",
+      "1",
+      "1"
+    ]
+  },
+  "status": "PASS"
+}
