@@ -1,0 +1,59 @@
+name: Phase51 bounded provenance review
+on:
+  push:
+    branches: [gpt/phase51-provenance-20261118]
+    paths:
+      - '.github/workflows/uqcf-phase51-provenance.yml'
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+concurrency:
+  group: phase51-provenance-review
+  cancel-in-progress: false
+jobs:
+  argument-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/phase51_provenance
+            .github
+      - name: Adversarial whole-argument review only
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 .github/scripts/uqcf_phase51_provenance.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase51-review-${{ github.run_attempt }}
+          path: phase51_review
+          retention-days: 90
+  publication-audit:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            ResearchHistory/UQCF-GEM/research/physical-bridge/phase51_provenance
+            .github
+      - uses: actions/download-artifact@v4
+        with:
+          name: phase51-review-${{ github.run_attempt }}
+          path: phase51_review
+      - name: Separate immutable publication audit
+        run: python3 .github/scripts/uqcf_phase51_provenance.py audit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase51-publication-${{ github.run_attempt }}
+          path: phase51_review
+          retention-days: 90
