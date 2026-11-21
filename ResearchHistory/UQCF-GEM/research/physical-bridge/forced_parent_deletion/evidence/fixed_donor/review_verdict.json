@@ -1,0 +1,51 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The result is an exact software and constrained-grade result; it does not identify a physical occurrence with that caller, make its grade readable by B, or produce a common gravitational field contrast.",
+    "No mass calibration or force law follows from the mathematical contrast.",
+    "A bare matching deletion does not identify which invocation is physically occurring, as the original software supplies its own continuation state once entered.",
+    "The diagnostic reports membership, not a fixed-junction comparison when that junction is absent. It is not a receiver-selection theorem invariant under discarding the palette order.",
+    "The four-label minimality is specific to this design's distinct fixed B, D, absent B at the source, occupancy exactly {D, X}, and two alternative X different from B, D. It is not a minimality result for all native interactions.",
+    "The physical work still needs an inherited occurrence-to-caller/grade association and a B-owned read or common field consequence.",
+    "The bounded source inspection found no new such caller; it is not a global impossibility result."
+  ],
+  "proof_checks": {
+    "preparations": {
+      "AD": [257, 63, 199, 319],
+      "CD": [1, 63, 455, 319]
+    },
+    "root_hitting_profiles": {
+      "q_AD": [2, 1, 2, 1, 0, 0, 0, 0, 0],
+      "q_CD": [1, 1, 2, 1, 0, 0, 0, 0, 0]
+    },
+    "junction_formula": "R = g(j) + (1-I)g(h)",
+    "exact_interaction_contrast": "[R_AD,D(g) - R_CD,D(g)] - [R_AD,A(g) - R_CD,C(g)] = [g(j) - (g(j)+g(h))] - [(g(j)+g(h)) - (g(j)+g(h))] = -g(h)",
+    "positive_contrast_holder_sequence_AD_delete_D": [
+      ["C"], ["C"], ["B", "C"], ["B"], ["B"], ["B"], ["B"], ["B"], ["B"], ["B"], ["B"], ["B"], ["B"], ["B"], ["B"], ["B"], ["B"]
+    ],
+    "B_junction_values": {
+      "high_path": [2, 1],
+      "controls": [4, 4]
+    },
+    "literal_intersection_comparison": "common = tuple(sorted(set(chain.view(state[B])) & set(chain.view(63))))",
+    "identical_internal_atom_diverges": true,
+    "same_D_source_and_loss_all_nine_basis": true,
+    "common_potential_changes": 0,
+    "permutation_diagnostic": {
+      "total_paths": 144,
+      "high_arm_B_leaf_1_condition": "B at position 1",
+      "other_arms_B_leaf_1_condition": "B at position 0"
+    },
+    "verification_counts": {
+      "basis_state_occurrences": 900,
+      "local_field_checks": 3600,
+      "main_and_diagnostic_paths": 150,
+      "directed_regression_cases": 210,
+      "rejected_corruption_controls": 8
+    }
+  },
+  "native_bridge_status": "OPEN"
+}
