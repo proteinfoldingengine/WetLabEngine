@@ -1,0 +1,375 @@
+{
+  "archive_sha256": "569526d89a44ecf4f947dd63f4aefcb5c8d4cbae9c2b0e622348e86e95e180e9",
+  "archived_calls_in_selected_tree": 41,
+  "arms": {
+    "delete_A": {
+      "B_at_v7_including_start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "archive_normalization": 2,
+      "end": [
+        455,
+        63,
+        1
+      ],
+      "fixed_child_v1": {
+        "parent_labels": [
+          0,
+          1,
+          2
+        ],
+        "q": [
+          1,
+          2,
+          1
+        ],
+        "raw_state": [
+          1,
+          31,
+          99
+        ],
+        "returned_local_path": [
+          [
+            1,
+            31,
+            99
+          ],
+          [
+            65,
+            31,
+            99
+          ],
+          [
+            65,
+            31,
+            35
+          ],
+          [
+            67,
+            31,
+            35
+          ],
+          [
+            99,
+            31,
+            35
+          ],
+          [
+            99,
+            31,
+            3
+          ],
+          [
+            99,
+            31,
+            1
+          ]
+        ]
+      },
+      "q": [
+        1,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "start": [
+        1,
+        63,
+        455
+      ],
+      "state_id": 8,
+      "whole_moves": 10
+    },
+    "delete_C": {
+      "B_at_v7_including_start": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "archive_normalization": 33,
+      "end": [
+        257,
+        199,
+        63
+      ],
+      "fixed_child_v1": {
+        "parent_labels": [
+          1,
+          2
+        ],
+        "q": [
+          1,
+          2,
+          1
+        ],
+        "raw_state": [
+          31,
+          99
+        ],
+        "returned_local_path": [
+          [
+            31,
+            99
+          ],
+          [
+            95,
+            99
+          ],
+          [
+            95,
+            35
+          ],
+          [
+            95,
+            39
+          ],
+          [
+            95,
+            47
+          ],
+          [
+            95,
+            63
+          ],
+          [
+            79,
+            63
+          ],
+          [
+            71,
+            63
+          ],
+          [
+            67,
+            63
+          ],
+          [
+            99,
+            63
+          ],
+          [
+            99,
+            31
+          ]
+        ]
+      },
+      "q": [
+        2,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "start": [
+        257,
+        63,
+        199
+      ],
+      "state_id": 14725,
+      "whole_moves": 10
+    },
+    "no_deletion": {
+      "B_at_v7_including_start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "archive_normalization": null,
+      "end": [
+        455,
+        63,
+        1
+      ],
+      "fixed_child_v1": {
+        "parent_labels": [
+          0,
+          1,
+          2
+        ],
+        "q": [
+          1,
+          2,
+          1
+        ],
+        "raw_state": [
+          1,
+          31,
+          99
+        ],
+        "returned_local_path": [
+          [
+            1,
+            31,
+            99
+          ],
+          [
+            65,
+            31,
+            99
+          ],
+          [
+            65,
+            31,
+            35
+          ],
+          [
+            67,
+            31,
+            35
+          ],
+          [
+            99,
+            31,
+            35
+          ],
+          [
+            99,
+            31,
+            3
+          ],
+          [
+            99,
+            31,
+            1
+          ]
+        ]
+      },
+      "q": [
+        1,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "start": [
+        257,
+        63,
+        455
+      ],
+      "state_id": 14730,
+      "whole_moves": 9
+    }
+  },
+  "coalesced_state_after_2_low_moves": [
+    257,
+    63,
+    199
+  ],
+  "common_field": {
+    "basis_drives": 8,
+    "distinct_states": 21,
+    "edge": [
+      1,
+      7
+    ],
+    "first_high_B_edit_port_functional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "nonzero_common_field_residuals": 0,
+    "overlap_residual": 0,
+    "source_atom_loss_and_field_A_C": [
+      {
+        "field": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "lost_source": [
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "field": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "lost_source": [
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    ],
+    "unit_local_drive_drop": 1,
+    "whole_field_equalities": 168
+  },
+  "complete_domain_entries": 6,
+  "directed_corpus_cases": 210,
+  "graph_states": 34321,
+  "native_physical_activation_and_access": "OPEN",
+  "restart_with_recomputed_q_reproduces_high": true,
+  "unchanged_default_producer_matches_full_archive": true
+}
