@@ -1,4 +1,4 @@
-name: Retained field component of two pruning events
+name: Field component retained after one pruning event
 on:
   push:
     branches: [gpt/v1686-recombination-audit-20261118]
@@ -27,40 +27,23 @@ jobs:
             /.github/scripts/uqcf_preparability_integrity.py
             /.github/scripts/uqcf_preparability_review.py
             /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
-            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
-            /ResearchHistory/UQCF-GEM/foundational-closure-verification/produce_certificates.py
-            /ResearchHistory/UQCF-GEM/foundational-closure-verification/verify_certificates.py
             /ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/PROOFS.md
             /ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py
             /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
             /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
-            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/test_gate.py
             /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
-            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/producer.py
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/verifier.py
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/INTERFACE_LEMMA.md
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/coverage.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/feasibility.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/FOUR_CHILD_INTERFACE.md
-            /ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/RESULT.md
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.11'
       - name: Reproduce every frozen finite control
         run: |
           python -m pip install --disable-pip-version-check 'sympy==1.14.0'
-          python "$TRACE_DIR/check_common_field.py" > replay.json
-          diff -u "$TRACE_DIR/common_field_results.json" replay.json
-          python "$TRACE_DIR/check_attached_contraction.py" > contraction.json
-          diff -u "$TRACE_DIR/attached_contraction_results.json" contraction.json
+          python "$TRACE_DIR/check_loss_support.py" > replay.json
+          diff -u "$TRACE_DIR/loss_support_results.json" replay.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: common-field-source-replay
-          path: |
-            replay.json
-            contraction.json
+          name: loss-support-source-replay
+          path: replay.json
           if-no-files-found: error
           retention-days: 90
   argument-review:
@@ -79,32 +62,19 @@ jobs:
             /.github/scripts/uqcf_preparability_integrity.py
             /.github/scripts/uqcf_preparability_review.py
             /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
-            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
-            /ResearchHistory/UQCF-GEM/foundational-closure-verification/produce_certificates.py
-            /ResearchHistory/UQCF-GEM/foundational-closure-verification/verify_certificates.py
             /ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/PROOFS.md
             /ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py
             /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
             /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
-            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/test_gate.py
             /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
-            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/producer.py
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/verifier.py
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/INTERFACE_LEMMA.md
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/coverage.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/feasibility.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/FOUR_CHILD_INTERFACE.md
-            /ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/RESULT.md
       - name: Independent whole-argument challenge
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 "$TRACE_DIR/review_common_field.py" review review_evidence
+        run: python3 "$TRACE_DIR/review_loss_support.py" review review_evidence
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: common-field-whole-argument-review
+          name: loss-support-whole-argument-review
           path: review_evidence
           if-no-files-found: error
           retention-days: 90
@@ -124,39 +94,24 @@ jobs:
             /.github/scripts/uqcf_preparability_integrity.py
             /.github/scripts/uqcf_preparability_review.py
             /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
-            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
-            /ResearchHistory/UQCF-GEM/foundational-closure-verification/produce_certificates.py
-            /ResearchHistory/UQCF-GEM/foundational-closure-verification/verify_certificates.py
             /ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/PROOFS.md
             /ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py
             /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
             /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
-            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/test_gate.py
             /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
-            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/producer.py
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/verifier.py
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/INTERFACE_LEMMA.md
-            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/coverage.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/feasibility.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/FOUR_CHILD_INTERFACE.md
-            /ResearchHistory/UQCF-GEM/research/physical-bridge/receiver_move_interface/RESULT.md
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: common-field-whole-argument-review
+          name: loss-support-whole-argument-review
           path: review_evidence
       - name: Verify raw reviewer output and frozen source identities
         run: |
           python3 -m pip install --disable-pip-version-check 'sympy==1.14.0'
-          python3 "$TRACE_DIR/check_common_field.py" > publication_replay.json
-          diff -u "$TRACE_DIR/common_field_results.json" publication_replay.json
-          python3 "$TRACE_DIR/check_attached_contraction.py" > publication_contraction.json
-          diff -u "$TRACE_DIR/attached_contraction_results.json" publication_contraction.json
-          python3 "$TRACE_DIR/review_common_field.py" audit review_evidence
+          python3 "$TRACE_DIR/check_loss_support.py" > publication_replay.json
+          diff -u "$TRACE_DIR/loss_support_results.json" publication_replay.json
+          python3 "$TRACE_DIR/review_loss_support.py" audit review_evidence
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: common-field-publication-readback
+          name: loss-support-publication-readback
           path: review_evidence/publication_audit.json
           if-no-files-found: error
           retention-days: 90
