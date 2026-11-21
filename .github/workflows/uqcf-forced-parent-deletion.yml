@@ -1,4 +1,4 @@
-name: Forced parent deletion and whole-argument review
+name: Original root trigger after forced parent deletion
 on:
   push:
     branches: [gpt/v1686-recombination-audit-20261118]
@@ -26,21 +26,25 @@ jobs:
             /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
             /.github/scripts/uqcf_preparability_integrity.py
             /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/TYPE_AND_PROOF.md
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/evidence/PRODUCTION.json
             /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/verifier.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/coverage.py
-            /ResearchHistory/UQCF-GEM/research/physical-bridge/source_withdrawal_completion/WORKING_CONSTRUCTION.md
-            /ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/RESULT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_record_bridge/ACCEPTED_DRAFT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/view_local_pruning/REVIEWED_DRAFT.md
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.11'
       - name: Reproduce every frozen finite control
         run: |
-          python "$TRACE_DIR/verify.py" > replay.json
-          diff -u "$TRACE_DIR/verification.json" replay.json
+          python "$TRACE_DIR/replay_original_atomic.py" > original_replay.json
+          diff -u "$TRACE_DIR/original_atomic_replay.json" original_replay.json
+          python "$TRACE_DIR/replay_root_trigger.py" > replay.json
+          diff -u "$TRACE_DIR/root_trigger_replay.json" replay.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: forced-parent-deletion-source-replay
+          name: root-trigger-source-replay
           path: replay.json
           if-no-files-found: error
           retention-days: 90
@@ -59,19 +63,21 @@ jobs:
             /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
             /.github/scripts/uqcf_preparability_integrity.py
             /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/TYPE_AND_PROOF.md
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/evidence/PRODUCTION.json
             /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/verifier.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/coverage.py
-            /ResearchHistory/UQCF-GEM/research/physical-bridge/source_withdrawal_completion/WORKING_CONSTRUCTION.md
-            /ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/RESULT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_record_bridge/ACCEPTED_DRAFT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/view_local_pruning/REVIEWED_DRAFT.md
       - name: Independent whole-argument challenge
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 "$TRACE_DIR/review.py" review review_evidence
+        run: python3 "$TRACE_DIR/review_root_trigger.py" review review_evidence
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: forced-parent-deletion-whole-argument-review
+          name: root-trigger-whole-argument-review
           path: review_evidence
           if-no-files-found: error
           retention-days: 90
@@ -90,23 +96,27 @@ jobs:
             /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
             /.github/scripts/uqcf_preparability_integrity.py
             /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/TYPE_AND_PROOF.md
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/evidence/PRODUCTION.json
             /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/NATIVE_ADMISSIBILITY.md
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/verifier.py
-            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/coverage.py
-            /ResearchHistory/UQCF-GEM/research/physical-bridge/source_withdrawal_completion/WORKING_CONSTRUCTION.md
-            /ResearchHistory/UQCF-GEM/research/physical-bridge/first_pruning_own_view_review/RESULT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_record_bridge/ACCEPTED_DRAFT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/view_local_pruning/REVIEWED_DRAFT.md
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: forced-parent-deletion-whole-argument-review
+          name: root-trigger-whole-argument-review
           path: review_evidence
       - name: Verify raw reviewer output and frozen source identities
         run: |
-          python3 "$TRACE_DIR/verify.py" > publication_replay.json
-          diff -u "$TRACE_DIR/verification.json" publication_replay.json
-          python3 "$TRACE_DIR/review.py" audit review_evidence
+          python3 "$TRACE_DIR/replay_original_atomic.py" > original_replay.json
+          diff -u "$TRACE_DIR/original_atomic_replay.json" original_replay.json
+          python3 "$TRACE_DIR/replay_root_trigger.py" > publication_replay.json
+          diff -u "$TRACE_DIR/root_trigger_replay.json" publication_replay.json
+          python3 "$TRACE_DIR/review_root_trigger.py" audit review_evidence
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: forced-parent-deletion-publication-readback
+          name: root-trigger-publication-readback
           path: review_evidence/publication_audit.json
           if-no-files-found: error
           retention-days: 90
