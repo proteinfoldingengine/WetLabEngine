@@ -1,0 +1,61 @@
+{
+  "B3": {
+    "checked": 28,
+    "distinct_complete_operands": 13,
+    "distinct_lookalike_slopes": [
+      "-6",
+      "0",
+      "102",
+      "234"
+    ],
+    "first_positive_transfer": {
+      "edits": [
+        [
+          0,
+          5,
+          3
+        ],
+        [
+          2,
+          3,
+          0
+        ]
+      ],
+      "removed_grades_at_edits": [
+        11,
+        3
+      ]
+    },
+    "minimum_absolute_gap": "54",
+    "positive_transfer_count": 20,
+    "target_slope": "-60"
+  },
+  "B4": {
+    "checked": 6,
+    "distinct_complete_operands": 1,
+    "distinct_lookalike_slopes": [
+      "3"
+    ],
+    "first_positive_transfer": {
+      "edits": [
+        [
+          1,
+          3,
+          9
+        ],
+        [
+          1,
+          9,
+          4
+        ]
+      ],
+      "removed_grades_at_edits": [
+        3,
+        1
+      ]
+    },
+    "minimum_absolute_gap": "3",
+    "positive_transfer_count": 1,
+    "target_slope": "0"
+  }
+}
