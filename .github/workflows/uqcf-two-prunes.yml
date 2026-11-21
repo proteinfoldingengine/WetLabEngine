@@ -64,7 +64,7 @@ jobs:
             /Tmp/TOE/Einstein_13_V1720 retained_bridge_core/History/H4_rock_test/v1687_16.py
             /.github/scripts/uqcf_preparability_review.py
             /.github/scripts/uqcf_preparability_integrity.py
-      - name: Independently reconstruct the frozen complete argument
+      - name: Independently check the proof with explicit review field types
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 "$SCI/review_two_prunes.py" review handoff_review
