@@ -1,0 +1,28 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "Event-selection assumption: The proof conditions on two consecutive successful incidence deletions from a common preparation, but does not provide a physical mechanism or autonomous selector for this event sequence.",
+    "Independently usable physical grade assumption: The formal A-root amount is a coordinate of the mathematically labelled A view, but no inspected native event writes this grade into a physically available register on A's behalf.",
+    "The proof grants neither a physically realized episode nor a transfer to an otherwise untouched physical observer.",
+    "No relation to physical gravity or a measurement probability has been inferred."
+  ],
+  "proof_checks": [
+    "Reconstructed A, C intersections: After A is removed at l and p, the retained A view is {o, d} and the C view is {o, p, w}, intersecting exactly at the root {o}. After B is removed at l and p, the retained A view is {o, p, l, d} and the C view is {o, p, w}, intersecting at {o, p}.",
+    "Inequalities from overlap and nonnegative joint realizability: In the A-removed branch, the joint source on {o, p, w, d} is (a-m, u, v, M-a). Nonnegativity requires a-m >= 0 (a >= m) and M-a >= 0 (a <= M). In the B-removed branch, overlap projection on {o, p} gives a + a_d = b at o. Nonnegativity of a_d requires a <= b.",
+    "Ranges derived: The exact possible A-root amounts are [m, M] for the A-removed branch and [0, b] for the B-removed branch.",
+    "Sharp threshold: The intervals are disjoint exactly when m > b, which is algebraically equivalent to m > M/2.",
+    "Explicit attainments: Every rational point in the ranges is attained by the full nonnegative sources (a-m, u, 0, v, M-a) and (a, u, 0, v, b-a) respectively.",
+    "Equality case: When m = b, the intervals touch exactly at the shared value m.",
+    "Initial/middle blindness: With arbitrary intermediate grades consistent with C, both pre-parent-edit ranges are [0, 2]. The fixed property 'more than half the total is at A's root' is false for all allowed intermediate readings and becomes true precisely on the A branch.",
+    "Counting marginal: The original fiber push of (1,1,1,1,1) to C yields (2, 2, 1), so b=2, u=2, v=1, m=3, M=5. The ranges are [3, 5] and [0, 2], forcing at least one unit of separation (normalized minimum gap of 1/5).",
+    "Common-unit special case: For equal weights C = (2, 1, 1), m=2 and b=2. The ranges are [2, 4] and [0, 2], touching at 2.",
+    "Negative signed control: Local vectors A=(0, 5), B=(2, 2, 1), C=(2, 2, 1) are individually nonnegative and compatible on all intersections, yielding a unique signed full-tree source (-3, 1, 1, 1, 5). This is correctly rejected by the positive gluing routine, proving that local matching without joint nonnegativity fails to force the gap.",
+    "Integer domain: There are exactly 9 nonnegative integer allocations of five units to this tree that admit the C marginal (2, 2, 1). They are parameterized as (s, t, 2-t, 1, 2-s) for s, t in {0, 1, 2}.",
+    "Normalizer control: The v16.50 normalizer constructs 9-move and 7-move paths starting with +B(d) and +C(d), reaching the same terminal rows at zero profile excursion without executing the required matching parent deletion.",
+    "Comparison of source types: The October counting convention proves parent absorption when every view receives its full ambient counting assignment. In contrast, the v16.23/v16.24 routines separately define and check the formal graded source domain, allowing the A update and endpoint joint source to be left unspecified. The formal owner and physical access assumptions remain distinct, as a fixed raw incidence view does not compel any physical amount to be preserved."
+  ],
+  "native_bridge_status": "OPEN"
+}

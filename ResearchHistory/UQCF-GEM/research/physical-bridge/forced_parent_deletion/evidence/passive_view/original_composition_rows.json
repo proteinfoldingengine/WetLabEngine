@@ -1,0 +1,74 @@
+{
+  "frozen_gemini_packet": false,
+  "results": [
+    {
+      "original_A_p_basis_row": {
+        "basis": 1,
+        "coarse": [
+          0,
+          4
+        ],
+        "direct": [
+          "1",
+          "0"
+        ],
+        "fine": [
+          0,
+          1,
+          4
+        ],
+        "mid": [
+          0,
+          4
+        ],
+        "staged": [
+          "1",
+          "0"
+        ],
+        "view": 0
+      },
+      "root_with_counting_input": 4,
+      "source": "A"
+    },
+    {
+      "original_A_p_basis_row": {
+        "basis": 1,
+        "coarse": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "direct": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "fine": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "mid": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "staged": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "view": 0
+      },
+      "root_with_counting_input": 1,
+      "source": "B"
+    }
+  ],
+  "scope": "Post-freeze direct original calls on the two stipulated endpoints. The root_with_counting_input column weights the returned basis rows by the middle A counting marginal. The original caller emits a global list indexed by view and basis.",
+  "source": "v16.25 engine.certify_refinement and composition_records, blob e9c576a2590c8e16812f1b3fa0436111e3648f1c"
+}

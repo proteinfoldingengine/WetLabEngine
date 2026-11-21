@@ -1,0 +1,28 @@
+{
+  "audit": {
+    "members": [
+      "publication_audit.json"
+    ],
+    "sha256": "fcb28bbdd3cf94d77e3f0f1ed1ee2ca079ec3c191784b53e14b1575d9f43cd39",
+    "size_bytes": 1248
+  },
+  "replay": {
+    "members": [
+      "replay.json"
+    ],
+    "sha256": "9e0b7eb5d1f9891647b9a434ae0b4245d7d377cbc6a97169a38c4ddffe8e283b",
+    "size_bytes": 796
+  },
+  "review": {
+    "members": [
+      "model_metadata.json",
+      "prompt.txt",
+      "request.json",
+      "receipt.json",
+      "review.txt",
+      "response.json"
+    ],
+    "sha256": "9500119e813489c23966234eb46a95d15201193e2678081b68e4c191e94ffdac",
+    "size_bytes": 101333
+  }
+}
