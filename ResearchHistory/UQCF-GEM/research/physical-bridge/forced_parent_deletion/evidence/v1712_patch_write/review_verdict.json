@@ -1,0 +1,27 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "F_a_b_i": "a_i + g^2(a_i b_{i-1} - a_{i-1}b_i)",
+    "Delta_F_i": "g^2(a_i d_{i-1} - a_{i-1}d_i)",
+    "kernel_right_input": "span(a)",
+    "A_k": "g(e_k e_{k-1}^T - e_{k+1}e_{k+1}^T)",
+    "Q_k_q": "\\partial_k G(q) - A_k^T G(q) - G(q)A_k",
+    "Q_k_k_plus_1_k_plus_1": "g - 2g^2 q_k",
+    "first_coarse_patch_contrast": "a + 3g^2(-e_0 + 2e_1 - e_2)",
+    "q_infty_bound": "1.18",
+    "diagonal_dominance_bound": "0.59",
+    "baseline_medians": "[0.3547220179, 0.3547220179]",
+    "changed_medians": "[0.3547220179, 0.3549475352]",
+    "shifted_medians": "[0.3547220179, 0.3549475352]",
+    "parallel_medians": "[0.3547220179, 0.3547220179]",
+    "zero_coupling_medians": "[0.0000000000, 0.0000000000]",
+    "fixture_difference": "The independent checker mocks the random number generator to feed four fixed declared inputs (a, b, a, a) into the unchanged original caller, replacing the original Gaussian draws.",
+    "literal_P1_comparison": "A contrast parallel to 'a' is invisible to the subsequent read of the written patch but changes the literal P1 sum a+b, demonstrating that the two operations differ on this interface.",
+    "unsupported_implications_rejected": "The physical event, ownership, and gravitational correspondence remain open. No input or output binding between the V1472.20 adapter and V1712 caller is evidenced in their source. The proof supplies no restriction on the physical realizations W_R, W_E. The patch values have no established physical source units, and the caller's non-metricity statistic has no established correspondence to a physical gravity observable."
+  },
+  "native_bridge_status": "OPEN"
+}
