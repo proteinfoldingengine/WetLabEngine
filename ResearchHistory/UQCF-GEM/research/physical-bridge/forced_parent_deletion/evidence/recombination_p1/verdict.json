@@ -1,0 +1,27 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The local finite-reading negatives apply only to fixed archived fields and parameters, not arbitrary calibrated amplitude.",
+    "The bounded-copy rational obstruction applies to fixed uniform copy bounds and does not exclude unbounded copies, state-dependent programming, or approximation.",
+    "The survival result compares two supplied right operands and gives no event that chooses them.",
+    "A fixed read should not be conflated with unobserved intermediate states, nor a generated amplitude with an actual physical activation.",
+    "A bounded no-go is not a universal impossibility."
+  ],
+  "proof_checks": {
+    "directed_cycle_columns_and_rank": "Reconstructed successfully. The Jacobian difference columns are $\\gamma s_{\\sigma j}(e_{\\sigma j}-e_j)$. These form edges of a directed cycle. Any proper subset of edges in a cycle forms a forest, implying linear independence. Thus, the rank is exactly $\\min(n-1, |\\operatorname{supp}(\\Delta q)|)$. For the archived difference with 10 non-zero coordinates, the rank is 10.",
+    "elementary_p1_support": "Verified. A single P1 edit $u \\to p$ with literal inclusion changes $q$ by $q_u(e_p-e_u)$, yielding a maximum support of 2. The rank is at most 2, regardless of event amplitude.",
+    "two_step_expansion_bound": "Verified. A single inner leaf change spreads to itself and its neighbor. Two nested operations spread to at most 3 consecutive slots. Mixed orientations for two inputs yield a maximum support of 6, bounding the rank to 6. This rejects the rank-8 matched-inner-gate comparison as the result of a single edit.",
+    "no_monotone_sequence": "Verified. $q^{(3)}$ and $q^{(4)}$ have zero sets {2, 11} and {11} respectively. Monotone deletion requires removed non-zero entries to become zero. Since no non-zero entry of $q^{(3)}$ is zero in $q^{(4)}$ (and only index 2 vice versa), a monotone sequence cannot bridge the 10-slot difference.",
+    "exact_one_merge_conditions": "Verified for arbitrary left-factorization and same-law coarse cyclic identity. The conditions for $p=a$ ($q_b=0$), $p=b$ ($q_{\\sigma p}=0$), and otherwise ($q_b=q_{\\sigma p}=0$) exactly match the algebraic requirements for the fine correction $q_{\\sigma j}(e_{r(\\sigma j)}-e_{r(j)})$ to project to the coarse correction or vanish.",
+    "132_possible_pairs": "Classified correctly as $12 \\times 11 = 132$ ordered pairs from zeros.",
+    "absolute_mismatch_on_exceptional_cases": "Verified. The two same-law contrast mergers (9,10) and (10,9) both have $q_{10}=4$, yielding an identical non-zero difference between fine-projected and coarse Jacobians of $-12(e_p-e_8)e_8^\\top$.",
+    "fixed_site3_observations": "Verified. 90 maps retain site 3 for any factor, and 73 (or 74 for contrast) for the same coarse rule.",
+    "two_free_input_nonfactorization": "Reconstructed. For a proper quotient, the bilinear correction projects to a non-zero coarse edge for one fine tail and zero for another in the same head fiber, proving no function of the two P1 marginals can return the entire projected original output.",
+    "adaptive_prefix_next_record_law": "Reconstructed. The pinch on already written memory registers commutes with the block-diagonal later controls and fresh writes, leaving every prefix and complete-string probability unchanged.",
+    "bounded_copy_rational_obstruction": "Reconstructed. A finite-copy instrument yields rational conditional means. The derivative must be rational. The exact logarithmic susceptibility $\\chi(x) \\sim 2z / \\log(2/(1-x))$ as $x \\to 1^-$ has a logarithmic singularity, which cannot be matched by any rational function, proving the exact obstruction."
+  },
+  "native_bridge_status": "The full machine result is bound by SHA 6374af0b6eb5136819934446fb7d73886ba54eae8411880162b126bcdac161da. The physical bridge remains OPEN. The candidate interface requires changing a grouping, gate, or effective right input through a named inherited event operation. The literal one-event grade insertion at a fixed grouping cannot account for the archived matrix. The fresh log tilt remains a mathematically defined response requiring physical implementation."
+}

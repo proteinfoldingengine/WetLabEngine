@@ -1,0 +1,62 @@
+{
+  "ledger_accesses_in_selection_caller": [
+    [
+      356,
+      "Store"
+    ],
+    [
+      428,
+      "Load"
+    ]
+  ],
+  "ledgers": [
+    {
+      "changed_head_rejected": true,
+      "events": [
+        "genesis_source_key",
+        "source_origin_identity",
+        "retained_sequence_identity",
+        "label_transport",
+        "geometry_commit",
+        "source_flow_commit",
+        "closure_commit"
+      ],
+      "every_prefix_passed": true,
+      "head": "4914d2431e9a",
+      "mode": "valid_label_transported"
+    },
+    {
+      "changed_head_rejected": true,
+      "events": [
+        "closure_commit",
+        "source_flow_commit",
+        "geometry_commit",
+        "label_transport",
+        "retained_sequence_identity",
+        "source_origin_identity",
+        "genesis_source_key"
+      ],
+      "every_prefix_passed": true,
+      "head": "c1e672a943f7",
+      "mode": "retained_order_shuffle"
+    },
+    {
+      "changed_head_rejected": true,
+      "events": [
+        "genesis_source_key",
+        "source_origin_identity",
+        "retained_sequence_identity",
+        "label_transport",
+        "geometry_commit",
+        "source_flow_commit",
+        "closure_commit"
+      ],
+      "every_prefix_passed": true,
+      "head": "4914d2431e9a",
+      "mode": "genesis_valid_source_shuffled"
+    }
+  ],
+  "old_mode_control_has_independent_tensor_transform": true,
+  "run_scope": "ledger verification and caller syntax",
+  "source_blob": "c3fbc4fc1356f52e823678b694ba7ed86d73fff3"
+}

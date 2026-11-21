@@ -1,0 +1,29 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "6ffd4ea5cbe79f89117fa5a2b83d1a9bfa1af81e",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "75da116443910d319615bd1d2fec2b559de7b07ae0c1ab8ef2745f7ff0530232",
+  "request_sha256": "036b90062e0677faa3b338d8772c3191a558957e27c7da641983427d168a2414",
+  "response_sha256": "d3bd25ecce824daec6aa8d98eb1fc00bc1cf312172d3a7ebd2a4bf38df316cfe",
+  "run_id": "44946149162",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v15.14-record-dependencies/adaptive.py": "44a87e4cc5bcf531ef7798aadab5d9dbba3482cb",
+    "ResearchHistory/UQCF-GEM/demos/v15.15-coherent-records/coherent_records.py": "fdf5367b11729fc1e2bfccd8d8daa2a0c7209049",
+    "ResearchHistory/UQCF-GEM/demos/v15.16-partial-pruning/recoverability.py": "0a01d2eea4f0114b119fbb7beaf4619775c0f9f6",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py": "b18f52109ccff9c7dc77542d3b8f3e5d5989102a",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/exponential_operation_bridge/RESULT.md": "27426646e87aa9aafd4ec3e80612bf4380df280d",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/RECOMBINATION_P1.md": "dfdf1edda8b23946dd8d78cdeaaa2ee84b7e7104",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/RECOMBINATION_P1_PROTOCOL.md": "9ce35e703e1501405dbfa70cadbc5457937287cb",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/RECORD_NATIVE_LIMIT.md": "f4372d0e919a8da8ccfc5123c9b973db9cb45412",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/SAME_PORT_RESPONSE.md": "215e94d3ab8609c235b2103084358cb105690092",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_bracket_ports.py": "80e74e11ef3af58ff41d49e1838091342b5ac6bf",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_bracket_pruning.py": "274a37c61009da3dce5ad533ed43e0970f4a6a5b",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/evidence/recombination_p1/summary.json": "bcddaa4fbb2aebc9275f004978ff91e53a656b15",
+    "Tmp/TOE/Einstein_13_V1720 retained_bridge_core/History/H4_rock_test/v1687_16.py": "090a03bf665b97d7784f688c8294a348ad20507f"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "6ffd4ea5cbe79f89117fa5a2b83d1a9bfa1af81e"
+}
