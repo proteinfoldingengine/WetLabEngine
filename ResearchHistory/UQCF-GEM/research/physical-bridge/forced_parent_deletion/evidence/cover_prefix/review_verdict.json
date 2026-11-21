@@ -1,0 +1,51 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "W1/W2 are supplied as physical associations, not inferred from atemporal events.",
+    "A bit mask is only a representation of the retained carrier, not a physical receiver.",
+    "The countermodels T and Z are adversarial extensions of weakened grade assumptions, not proposed physical mechanisms.",
+    "The original v16.48 implementation still has no grade argument.",
+    "The fresh-call/episode boundary is supplied.",
+    "W1/W2 still need an occurrence-to-state association.",
+    "B-owned access has not been constructed.",
+    "A forced coordinate is not a physical receiver.",
+    "No new numbered or numerical campaign, old archive rerun, probability law, physical clock, geometry, shared gravitational signal, or stage certification is claimed."
+  ],
+  "proof_checks": [
+    {
+      "step": "unchanged_covers",
+      "D_deletion_AD": "A(257) | B(63) | C(199) = 511 = U",
+      "D_deletion_CD": "A(1) | B(63) | C(455) = 511 = U",
+      "B_addition_H1": "A(257) | C(199) | D(63) = 511 = U"
+    },
+    {
+      "step": "B_grade_formulas",
+      "old_b_j": "g(j) + g(h)",
+      "new_b_j": "g(j)",
+      "new_b_h": "g(h)"
+    },
+    {
+      "step": "H9_countermodels",
+      "W_union": "A(257) | C(127) | D(7) = 383 = U \\ {7}",
+      "P_UW_kernel": "span(delta_7 - delta_1)",
+      "T_g_minus_g": "(g(1)-g(7))/2 * (delta_7 - delta_1)",
+      "Z_g_minus_g": "-g(7) * (delta_7 - delta_1)",
+      "T_g0": "T(g0)(1) = 2, T(g0)(7) = 2",
+      "T_g1": "T(g1)(1) = 2, T(g1)(7) = 2",
+      "Z_g": "Z(g)(1) = g(1) + g(7), Z(g)(7) = 0",
+      "coarse_preservation_violation": "T violates coarse preservation exactly when g(1) != g(7)"
+    },
+    {
+      "step": "K_identity",
+      "K_subset": "K={0,1,2} is in B and C at all high states",
+      "S_value": "g(1) + g(7)",
+      "b_high_K": "b_high(1) + b_high(7) = S",
+      "b_low_K": "b_low(1) = S",
+      "contrast": "b_high(1) - b_low(1) = -b_high(7)"
+    }
+  ],
+  "native_bridge_status": "OPEN"
+}
