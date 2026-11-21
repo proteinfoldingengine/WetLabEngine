@@ -1,0 +1,110 @@
+name: Verify recorded event dependencies
+on:
+  push:
+    branches: [gpt/v1686-recombination-audit-20261118]
+    paths: ['.github/workflows/uqcf-record-dependency.yml']
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  OPENBLAS_NUM_THREADS: '1'
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+jobs:
+  exact-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /Tmp/TOE/Einstein 7/v1472_3_admissible_slice_geometry_corrected_package/v1472_3_admissible_slice_geometry_corrected.py
+            /Tmp/TOE/Einstein_13_V1720 retained_bridge_core/History/V1700_2_nontautological_momentum_test_package.zip
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Replay both original record paths and controls
+        run: |
+          python3 -m pip install --disable-pip-version-check sympy==1.14.0 numpy==2.3.5
+          mkdir -p handoff
+          python3 "$SCI/check_trace_dependency.py" > handoff/trace.json
+          python3 "$SCI/check_momentum_dependency.py" > handoff/momentum.json
+          cmp handoff/trace.json "$SCI/evidence/record_dependency/trace.json"
+          cmp handoff/momentum.json "$SCI/evidence/record_dependency/momentum.json"
+          python3 -c 'import sys, zipfile; assert zipfile.ZipFile(sys.argv[1]).read("V1700_2_nontautological_momentum_test.py") == open(sys.argv[2], "rb").read()' "Tmp/TOE/Einstein_13_V1720 retained_bridge_core/History/V1700_2_nontautological_momentum_test_package.zip" "$SCI/evidence/record_dependency/source_member.py.txt"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: record-dependency-replay
+          path: handoff
+          if-no-files-found: error
+  argument-review:
+    needs: exact-replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /Tmp/TOE/Einstein 7/v1472_3_admissible_slice_geometry_corrected_package/v1472_3_admissible_slice_geometry_corrected.py
+            /Tmp/TOE/Einstein_13_V1720 retained_bridge_core/History/V1700_2_nontautological_momentum_test_package.zip
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Independently check the proof with explicit review field types
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_record_dependency.py" review handoff_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: record-dependency-review
+          path: handoff_review
+          if-no-files-found: error
+  replay-publication:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /Tmp/TOE/Einstein 7/v1472_3_admissible_slice_geometry_corrected_package/v1472_3_admissible_slice_geometry_corrected.py
+            /Tmp/TOE/Einstein_13_V1720 retained_bridge_core/History/V1700_2_nontautological_momentum_test_package.zip
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: record-dependency-replay
+          path: earlier
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: record-dependency-review
+          path: handoff_review
+      - name: Reproduce deterministic bytes and inspect the returned review
+        run: |
+          python3 -m pip install --disable-pip-version-check sympy==1.14.0 numpy==2.3.5
+          mkdir -p handoff
+          python3 "$SCI/check_trace_dependency.py" > handoff/trace.json
+          python3 "$SCI/check_momentum_dependency.py" > handoff/momentum.json
+          cmp handoff/trace.json "$SCI/evidence/record_dependency/trace.json"
+          cmp handoff/momentum.json "$SCI/evidence/record_dependency/momentum.json"
+          python3 -c 'import sys, zipfile; assert zipfile.ZipFile(sys.argv[1]).read("V1700_2_nontautological_momentum_test.py") == open(sys.argv[2], "rb").read()' "Tmp/TOE/Einstein_13_V1720 retained_bridge_core/History/V1700_2_nontautological_momentum_test_package.zip" "$SCI/evidence/record_dependency/source_member.py.txt"
+          diff -r earlier handoff
+          python3 "$SCI/review_record_dependency.py" audit handoff_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: record-dependency-publication
+          path: handoff_review/publication_audit.json
+          if-no-files-found: error

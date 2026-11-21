@@ -1,0 +1,362 @@
+#!/usr/bin/env python3
+"""
+V1700.2 — Non-Tautological Momentum Constraint Test
+===================================================
+
+Purpose
+-------
+V1700.1 found one closing momentum-like candidate:
+
+    D(Kq + L^T lambda)
+
+But this is the incidence projection of the KKT first equation and is therefore
+tautological unless it carries independent source/boundary flux content after the
+KKT identity component is removed.
+
+This script tests non-tautological momentum candidates by:
+    1. computing KKT action objects
+    2. projecting candidate vectors against the KKT-identity span
+    3. testing residual content after identity projection
+    4. requiring source/boundary flux correlation
+    5. requiring resolution stability and null rejection
+
+Boundary:
+    Pillar 3 attempt only.
+    No ADM/GR recovery claim unless a non-tautological candidate closes.
+"""
+
+from __future__ import annotations
+from pathlib import Path
+from typing import Any, Dict, List, Tuple
+import argparse, csv, hashlib, json, math, shutil
+import numpy as np
+
+try:
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    HAS_PLOT=True
+except Exception:
+    HAS_PLOT=False
+
+EPS=1e-8
+SIZES=[9,13,17,25,33,49,65,97]
+MODES=["valid","source_shuffle","order_shuffle","support_shuffle","transition_shuffle","W3_shuffle","constraint_operator_break"]
+CANDS=[
+    "source_boundary_flux_balance",
+    "q_flux_minus_source_boundary",
+    "lambda_flux_minus_source_boundary",
+    "connection_energy_flux_balance",
+    "orthogonal_noether_flux",
+    "projected_source_boundary_current",
+]
+
+def clean(x):
+    if isinstance(x,np.bool_): return bool(x)
+    if isinstance(x,np.integer): return int(x)
+    if isinstance(x,np.floating): return float(x)
+    if isinstance(x,np.ndarray): return x.tolist()
+    if isinstance(x,dict): return {k:clean(v) for k,v in x.items()}
+    if isinstance(x,list): return [clean(v) for v in x]
+    return x
+def digest(*items,n=16): return hashlib.sha256("|".join(map(str,items)).encode()).hexdigest()[:n]
+def phase(sig):
+    v=int(hashlib.sha256(sig.encode()).hexdigest()[:8],16)
+    return (v%1000003)/1000003*2*math.pi
+def save_csv(path,rows,cols):
+    with path.open("w",newline="") as f:
+        w=csv.DictWriter(f,fieldnames=cols); w.writeheader()
+        for r in rows: w.writerow({c:clean(r.get(c,"")) for c in cols})
+def save_json(path,data): path.write_text(json.dumps(clean(data),indent=2))
+
+def root(n): return digest("V1700.2","NONTAUTO_MOMENTUM",n)
+def source_profile(n):
+    x=np.arange(n)/n
+    s=np.exp(-((x-.15)/.055)**2)-.70*np.exp(-((x-.52)/.075)**2)-.30*np.exp(-((x-.78)/.06)**2)
+    return s-np.mean(s)
+def weight(src,order,i): return 1.+.05*math.sin(phase(src+"::"+order)+.31*i)
+def charts(n):
+    r=root(n); prior=r; out=[]
+    for i,val in enumerate(source_profile(n)):
+        src=digest("SRC",r,i,float(val)); order=digest("ORDER",r,i); support=digest("SUPPORT",r,i)
+        ev=digest("EVENT",r,prior,i,src,order,support)
+        out.append(dict(chart=f"U{i}",idx=i,theta=float(2*math.pi*i/n),source=float(val),root=r,prior=prior,event=ev,
+                        source_witness=src,order_witness=order,support_witness=support))
+        prior=ev
+    return r,out
+def current_node(C): return np.array([c["source"]*weight(c["source_witness"],c["order_witness"],c["idx"]) for c in C])
+def frame(i,n,J):
+    th=2*math.pi*i/n
+    a=.12*math.sin(th)+.07*math.cos(2*th)+.025*J[i]
+    c,s=math.cos(a),math.sin(a)
+    R=np.array([[c,-s,0.],[s,c,0.],[0.,0.,1.]])
+    S=np.diag([1+.025*math.sin(th),1+.022*math.cos(th),1+.015*math.sin(2*th)])
+    Sh=np.eye(3); Sh[0,1]=.012*math.cos(th)
+    return R@S@Sh
+def transport(C):
+    n=len(C); J=current_node(C); F={i:frame(i,n,J) for i in range(n)}; T={}
+    for i in range(n):
+        for st in [1,2]:
+            j=(i+st)%n
+            T[(f"U{i}",f"U{j}")]=np.linalg.inv(F[j])@F[i]
+            T[(f"U{j}",f"U{i}")]=np.linalg.inv(F[i])@F[j]
+    return T
+def cells(n,r):
+    out=[]
+    for i in range(n):
+        nodes=[f"U{i}",f"U{(i+1)%n}",f"U{(i+2)%n}"]
+        prov=digest("W3P",r,i,*nodes); adj=digest("W3A",r,i,f"C{(i-1)%n}",f"C{(i+1)%n}")
+        sub=digest("W3S",r,i,digest("L",r,i),digest("R",r,i)); cf=digest("W3CF",r,i//2)
+        out.append(dict(cell=f"C{i}",i=i,nodes=nodes,ori=1 if i%2==0 else -1,W3=True,
+                        w3_prov=prov,w3_adj=adj,w3_sub=sub,w3_cf=cf,w3_basis=digest("W3B",prov,adj,sub,cf)))
+    return out
+def expected_basis(c): return digest("W3B",c["w3_prov"],c["w3_adj"],c["w3_sub"],c["w3_cf"])
+def integrity(C,ref,r,K,refK):
+    g=sum(c["root"]!=r for c in C)
+    R={c["chart"]:c for c in ref}; cb=0
+    for c in C:
+        rc=R[c["chart"]]
+        for f in ["source","source_witness","order_witness","support_witness"]:
+            cb+=int(str(c[f])!=str(rc[f]))
+    RK={c["cell"]:c for c in refK}; wb=0
+    for c in K:
+        rc=RK[c["cell"]]
+        checks=[c["W3"]==rc["W3"],c["w3_prov"]==rc["w3_prov"],c["w3_adj"]==rc["w3_adj"],
+                c["w3_sub"]==rc["w3_sub"],c["w3_cf"]==rc["w3_cf"],c["w3_basis"]==rc["w3_basis"],
+                c["w3_basis"]==expected_basis(c)]
+        wb+=sum(not v for v in checks)
+    return int(g),int(cb),int(wb)
+def closure(T,K):
+    inv=[float(np.linalg.norm(T[(b,a)]@X-np.eye(3))) if (b,a) in T else float("inf") for (a,b),X in T.items()]
+    co=[]
+    for c in K:
+        a,b,d=c["nodes"]
+        if (a,b) in T and (b,d) in T and (d,a) in T:
+            H=T[(d,a)]@T[(b,d)]@T[(a,b)]
+            co.append(float(np.linalg.norm(H-np.eye(3))))
+        else: co.append(float("inf"))
+    return max(inv),max(co),max(co)
+def curv(T,c):
+    a,b,d=c["nodes"]; H=T[(d,a)]@T[(b,d)]@T[(a,b)]
+    return c["ori"]*float(np.linalg.norm(H-np.eye(3)))
+def J(M,c):
+    vals=[]
+    for u in c["nodes"]:
+        ch=M[u]; vals.append(ch["source"]*weight(ch["source_witness"],ch["order_witness"],ch["idx"]))
+    return c["ori"]*float(np.mean(vals))
+def B(M,c,T):
+    if not c["W3"]: return float("nan")
+    vals=[]; phs=[]
+    for u in c["nodes"]:
+        ch=M[u]
+        vals.append(ch["source"]*weight(ch["source_witness"],ch["order_witness"],ch["idx"]))
+        phs.append(math.sin(phase(ch["source_witness"]+"::"+ch["order_witness"])))
+    sb=c["ori"]*float(np.mean(vals))
+    pb=.008*c["ori"]*float(np.mean(phs))
+    wb=.003*c["ori"]*(math.sin(phase(c["w3_prov"]))+math.sin(phase(c["w3_adj"]))+math.sin(phase(c["w3_sub"]))+
+                       math.sin(phase(c["w3_cf"]))+math.cos(phase(c["w3_basis"])))
+    a,b,d=c["nodes"]
+    tb=.0008*c["ori"]*float(np.trace(T[(a,b)])+np.trace(T[(b,d)])+np.trace(T[(d,a)]))
+    return float(sb+pb+wb+tb)
+def action(C,T,K):
+    M={c["chart"]:c for c in C}
+    R=[]; Jv=[]; Bv=[]; meta=[]
+    for c in K:
+        rr=curv(T,c); jj=J(M,c); bb=B(M,c,T)
+        R.append(rr); Jv.append(jj); Bv.append(bb); meta.append(dict(cell=c["cell"],i=c["i"],R=rr,J=jj,B=bb,raw=rr-jj+bb))
+    r0=np.array(R)-np.array(Jv)+np.array(Bv)
+    n=len(K); L=np.eye(n)
+    D=np.zeros((n,n))
+    for i in range(n):
+        D[i,i]=-1.; D[i,(i+1)%n]=1.
+    Kmat=np.eye(n)+D.T@D
+    return np.array(R),np.array(Jv),np.array(Bv),r0,L,Kmat,D,meta
+def solve(r0,L,Kmat,enabled=True):
+    if not enabled or not np.all(np.isfinite(r0)):
+        n=len(r0); return np.full(n,np.nan),np.full(n,np.nan),float("inf"),float("inf")
+    n=L.shape[1]; m=L.shape[0]
+    A=np.block([[Kmat,L.T],[L,np.zeros((m,m))]])
+    rhs=np.concatenate([np.zeros(n),-r0])
+    sol=np.linalg.solve(A,rhs); q=sol[:n]; lam=sol[n:]
+    grad=Kmat@q+L.T@lam; cons=L@q+r0
+    return q,lam,float(np.linalg.norm(grad)),float(np.linalg.norm(cons))
+def project_out_identity(v,identity):
+    # remove component parallel to tautological KKT incidence identity
+    den=float(np.dot(identity,identity))
+    if den<1e-30: return v.copy(),0.0
+    coef=float(np.dot(v,identity)/den)
+    return v-coef*identity,coef
+def corr(a,b):
+    if not np.all(np.isfinite(a)) or not np.all(np.isfinite(b)): return float("nan")
+    aa=a-np.mean(a); bb=b-np.mean(b)
+    den=float(np.linalg.norm(aa)*np.linalg.norm(bb))
+    if den<1e-30: return 0.0
+    return float(np.dot(aa,bb)/den)
+def candidate_vectors(q,lam,R,Jv,Bv,Kmat,D):
+    dq=D@q; dl=D@lam; dJ=D@Jv; dB=D@Bv
+    # KKT identity object
+    identity=D@(Kmat@q+lam)
+    src_boundary_flux=dJ-dB
+    energy_flux=D@(Kmat@q)
+    return {
+        "source_boundary_flux_balance": src_boundary_flux,
+        "q_flux_minus_source_boundary": dq-src_boundary_flux,
+        "lambda_flux_minus_source_boundary": dl-src_boundary_flux,
+        "connection_energy_flux_balance": energy_flux+src_boundary_flux,
+        "orthogonal_noether_flux": D@(Kmat@q)+dJ-dB,
+        "projected_source_boundary_current": src_boundary_flux-np.mean(src_boundary_flux),
+    }, identity, src_boundary_flux
+def analyze_candidates(q,lam,R,Jv,Bv,Kmat,D):
+    if not np.all(np.isfinite(q)):
+        return {c:dict(norm=float("inf"),orthogonal_norm=float("inf"),identity_fraction=float("nan"),flux_corr=float("nan"),non_taut_closes=False) for c in CANDS}
+    vecs,identity,flux=candidate_vectors(q,lam,R,Jv,Bv,Kmat,D)
+    out={}
+    for name,v in vecs.items():
+        orth,coef=project_out_identity(v,identity)
+        norm=float(np.linalg.norm(v)/np.sqrt(len(v)))
+        onorm=float(np.linalg.norm(orth)/np.sqrt(len(v)))
+        ident_norm=float(abs(coef)*np.linalg.norm(identity)/np.sqrt(len(v)))
+        frac=float(ident_norm/(norm+1e-30))
+        fc=abs(corr(orth,flux))
+        out[name]=dict(norm=norm,orthogonal_norm=onorm,identity_fraction=frac,flux_corr=fc,
+                       non_taut_closes=(onorm<=EPS and fc>0.25 and frac<0.95))
+    return out
+def mutate(mode,n,r,C,T,K):
+    import copy
+    C2=copy.deepcopy(C); T2={k:v.copy() for k,v in T.items()}; K2=copy.deepcopy(K); enabled=True
+    if mode=="source_shuffle":
+        vals=[c["source"] for c in C2][2:]+[c["source"] for c in C2][:2]
+        for c,v in zip(C2,vals): c["source"]=v
+    elif mode=="order_shuffle":
+        vals=[c["order_witness"] for c in C2][1:]+[C2[0]["order_witness"]]
+        for c,v in zip(C2,vals): c["order_witness"]=v
+    elif mode=="support_shuffle":
+        vals=[c["support_witness"] for c in C2][3:]+[c["support_witness"] for c in C2][:3]
+        for c,v in zip(C2,vals): c["support_witness"]=v
+    elif mode=="transition_shuffle":
+        keys=list(T2.keys()); vals=[T2[k] for k in keys][5:]+[T2[k] for k in keys][:5]; T2={k:v for k,v in zip(keys,vals)}
+    elif mode=="W3_shuffle":
+        vals=[c["w3_basis"] for c in K2][3:]+[c["w3_basis"] for c in K2][:3]
+        for c,v in zip(K2,vals): c["w3_basis"]=v
+    elif mode=="constraint_operator_break":
+        enabled=False
+    return C2,T2,K2,enabled
+def eval_case(n,mode):
+    r,C=charts(n); T=transport(C); K=cells(n,r)
+    C2,T2,K2,enabled=mutate(mode,n,r,C,T,K)
+    g,cb,wb=integrity(C2,C,r,K2,K)
+    inv,coc,hol=closure(T2,K2)
+    R,Jv,Bv,r0,L,Kmat,D,meta=action(C2,T2,K2)
+    q,lam,grad,cons=solve(r0,L,Kmat,enabled)
+    H=float(np.linalg.norm(r0+q)/np.sqrt(n)) if np.all(np.isfinite(q)) else float("inf")
+    cand=analyze_candidates(q,lam,R,Jv,Bv,Kmat,D)
+    gate=inv<=EPS and coc<=EPS and hol<=EPS and g==0 and cb==0 and wb==0 and enabled and grad<=EPS and cons<=EPS and H<=EPS
+    row=dict(n=n,mode=mode,genesis_mismatches=g,chart_mismatches=cb,W3_mismatches=wb,operator_ok=enabled,
+             atlas_inverse_residual=inv,atlas_cocycle_residual=coc,atlas_holonomy_residual=hol,
+             KKT_grad_norm=grad,KKT_constraint_norm=cons,H_like_constraint_norm=H,full_stack_gate=gate)
+    for name,vals in cand.items():
+        for k,v in vals.items():
+            row[f"{name}_{k}"]=v
+    return row,[dict(n=n,mode=mode,cell=m["cell"],i=m["i"],R=m["R"],J=m["J"],B=m["B"],
+                     q=float(q[i]) if np.isfinite(q[i]) else float("nan"),
+                     lambda_kkt=float(lam[i]) if np.isfinite(lam[i]) else float("nan")) for i,m in enumerate(meta)]
+def fit_power(ns,ys):
+    xs=np.array(ns,float); yy=np.array(ys,float)
+    mask=np.isfinite(yy)&(yy>0)
+    if mask.sum()<3: return dict(power=float("nan"),ok=False)
+    p=np.polyfit(np.log(xs[mask]),np.log(yy[mask]),1)
+    return dict(power=float(p[0]),intercept=float(p[1]),ok=True)
+def run(outdir):
+    if outdir.exists(): shutil.rmtree(outdir)
+    outdir.mkdir(parents=True)
+    rows=[]; details=[]
+    for n in SIZES:
+        for m in MODES:
+            r,d=eval_case(n,m); rows.append(r); details.extend(d)
+    base_cols=["n","mode","genesis_mismatches","chart_mismatches","W3_mismatches","operator_ok",
+               "atlas_inverse_residual","atlas_cocycle_residual","atlas_holonomy_residual","KKT_grad_norm","KKT_constraint_norm",
+               "H_like_constraint_norm","full_stack_gate"]
+    cand_cols=[]
+    for c in CANDS:
+        for k in ["norm","orthogonal_norm","identity_fraction","flux_corr","non_taut_closes"]:
+            cand_cols.append(f"{c}_{k}")
+    save_csv(outdir/"V1700_2_candidate_rows.csv",rows,base_cols+cand_cols)
+    save_csv(outdir/"V1700_2_cell_details.csv",details,["n","mode","cell","i","R","J","B","q","lambda_kkt"])
+    valid=[r for r in rows if r["mode"]=="valid"]; nulls=[r for r in rows if r["mode"]!="valid"]
+    summaries=[]
+    for c in CANDS:
+        norms=[r[f"{c}_orthogonal_norm"] for r in valid]
+        max_orth=max(norms)
+        min_corr=min(r[f"{c}_flux_corr"] for r in valid)
+        max_ident=max(r[f"{c}_identity_fraction"] for r in valid if np.isfinite(r[f"{c}_identity_fraction"]))
+        fit=fit_power([r["n"] for r in valid],[max(x,1e-18) for x in norms])
+        closes=all(r[f"{c}_non_taut_closes"] for r in valid)
+        summaries.append(dict(candidate=c,max_valid_orthogonal_norm=max_orth,min_valid_flux_corr=min_corr,
+                              max_identity_fraction=max_ident,scaling_power=fit["power"],scaling_ok=fit["ok"],
+                              non_tautological_closes=closes))
+    save_csv(outdir/"V1700_2_candidate_summary.csv",summaries,
+             ["candidate","max_valid_orthogonal_norm","min_valid_flux_corr","max_identity_fraction","scaling_power","scaling_ok","non_tautological_closes"])
+    closing=[s for s in summaries if s["non_tautological_closes"]]
+    metrics={
+        "valid_full_stack_gate_rate":sum(r["full_stack_gate"] for r in valid)/len(valid),
+        "null_full_stack_fail_rate":sum(not r["full_stack_gate"] for r in nulls)/len(nulls),
+        "non_tautological_closing_candidates":[s["candidate"] for s in closing],
+        "candidate_summary":summaries,
+        "null_fail_by_mode":{}
+    }
+    for m in MODES:
+        if m=="valid": continue
+        sub=[r for r in rows if r["mode"]==m]
+        metrics["null_fail_by_mode"][m]=sum(not r["full_stack_gate"] for r in sub)/len(sub)
+    passed=metrics["valid_full_stack_gate_rate"]==1.0 and metrics["null_full_stack_fail_rate"]==1.0 and len(closing)>0
+    verdict="PILLAR3_NONTAUTOLOGICAL_MOMENTUM_CANDIDATE_FOUND" if passed else "PILLAR3_NONTAUTOLOGICAL_MOMENTUM_NOT_FOUND"
+    result={"version":"V1700.2","title":"Non-Tautological Momentum Constraint Test","verdict":verdict,
+            "metrics":metrics,
+            "interpretation":"If no candidate closes after projecting out the KKT identity, Pillar 3 momentum recovery remains open.",
+            "pillar_status":{"Pillar 1 - Global Atlas Closure":"COMPLETE",
+                             "Pillar 2 - Retained Curvature / Source-Current Compatibility":"NONTRIVIAL FINITE-SECTOR ACTION PASS",
+                             "Pillar 3 - GR / ADM Correspondence and Continuum Identification":"OPEN"},
+            "boundary":"No ADM/GR momentum recovery claim."}
+    save_json(outdir/"V1700_2_SUMMARY.json",result)
+    report=f"""# V1700.2 — Non-Tautological Momentum Constraint Test
+
+**Verdict:** `{verdict}`
+
+## Test
+
+Each momentum-like candidate was projected against the tautological KKT-identity object.
+
+A candidate only counts if its orthogonal component closes and still carries source/boundary flux content.
+
+## Metrics
+
+```json
+{json.dumps(clean(metrics), indent=2)}
+```
+
+## Interpretation
+
+If no candidate remains after KKT-identity projection, the previous M-like closure was a variational identity rather than a non-tautological momentum analogue.
+
+## Pillar status
+
+```text
+Pillar 1 — Global Atlas Closure: COMPLETE
+Pillar 2 — Retained Curvature / Source-Current Compatibility: NONTRIVIAL FINITE-SECTOR ACTION PASS
+Pillar 3 — GR / ADM Correspondence and Continuum Identification: OPEN
+```
+"""
+    (outdir/"V1700_2_NONTAUTOLOGICAL_MOMENTUM_REPORT.md").write_text(report)
+    if HAS_PLOT:
+        xs=[r["n"] for r in valid]
+        fig,ax=plt.subplots(figsize=(10,5))
+        for c in CANDS:
+            ax.plot(xs,[max(r[f"{c}_orthogonal_norm"],1e-18) for r in valid],marker="o",label=c)
+        ax.set_yscale("log"); ax.set_xlabel("retained resolution"); ax.set_ylabel("orthogonal candidate norm")
+        ax.set_title("V1700.2 non-tautological momentum test"); ax.grid(True,alpha=.25); ax.legend(fontsize=7)
+        fig.tight_layout(); fig.savefig(outdir/"V1700_2_candidate_scaling.png",dpi=160); plt.close(fig)
+    return result
+def main():
+    ap=argparse.ArgumentParser(); ap.add_argument("--outdir",default="V1700_2_outputs")
+    args=ap.parse_args(); print(json.dumps(clean(run(Path(args.outdir))),indent=2)); return 0
+if __name__=="__main__": raise SystemExit(main())
