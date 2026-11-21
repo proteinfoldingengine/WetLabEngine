@@ -7,7 +7,7 @@ import review_common_field
 
 DOCUMENTS = {
     "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1698_SOURCE_TO_GEOMETRY.md": "d836e0ae5b51f74a1b0fbb715be68cfe9e3554ed",
-    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1698_source_to_geometry.py": "c1a07390176bef7cdc697de03d45e4e9a6795be7"
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1698_source_to_geometry.py": "da5b4abe959587484a1a913979a3c6964eeed5e2"
 }
 QUESTION = """Independently audit the exact historical emitter, archived CSV rows and validator.
 Check the dependency of each numerical edge and curvature object on source, support, order

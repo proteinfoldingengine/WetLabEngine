@@ -89,7 +89,7 @@ def compare_geometry(emitter, inputs, changed_transport=False):
         "transports": {(e["p"], e["q"]): e["T_pq"] for e in edges},
         "r2": {(r["p"], r["q"], r["r"]): r["F2_matrix"] for r in r2},
         "r3": {r["cycle_nodes"]: (r["holonomy_matrix"], r["F3_matrix"]) for r in r3},
-        "current": [r["JR_value"] for r in emitter.build_JR(w3)],
+        "current": [float(r["JR_value"]) for r in emitter.build_JR(w3)],
         "bianchi": [r["B_R_norm"] for r in br],
         "boundary": signed["C_signed"],
     }
