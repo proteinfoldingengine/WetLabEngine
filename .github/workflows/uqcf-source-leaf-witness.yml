@@ -1,0 +1,84 @@
+name: Review path-local source-leaf witness
+on:
+  push:
+    branches: [gpt/uqcf-source-leaf-witness-20261121]
+    paths: ['.github/workflows/uqcf-source-leaf-witness.yml']
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+jobs:
+  analytical-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Independently reconstruct and challenge the frozen argument
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_source_leaf_witness.py" review source_leaf_witness_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: source-leaf-witness-review
+          path: source_leaf_witness_review
+          if-no-files-found: error
+  publication-audit:
+    needs: analytical-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: source-leaf-witness-review
+          path: source_leaf_witness_review
+      - name: Audit frozen sources, prompt, request and raw response
+        run: python3 "$SCI/review_source_leaf_witness.py" audit source_leaf_witness_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: source-leaf-witness-publication
+          path: source_leaf_witness_review/publication_audit.json
+          if-no-files-found: error
+  archive-readback:
+    needs: publication-audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+      - name: Verify GitHub artifact digests and export exact raw review bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 "$SCI/export_source_leaf_witness_archives.py"
