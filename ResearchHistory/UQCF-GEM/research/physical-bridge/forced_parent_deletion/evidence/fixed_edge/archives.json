@@ -1,0 +1,62 @@
+{
+  "archives": [
+    {
+      "bytes": 79542,
+      "id": 14721967928,
+      "members": {
+        "model_metadata.json": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+        "prompt.txt": "7c376e6e0ed6580873657488057c082bb77c8dce67d5c27622b4e4f239199c93",
+        "receipt.json": "ff7bd9451914eef4dc7ea84d3c25fb314c44c15a2869d311adfe1ae6c8ffedc2",
+        "request.json": "270a06f2f1a0256d636ca83ddcd80904ca80ec371bd4cefc3c0a06860d58eac7",
+        "response.json": "7d2bb513226c492b781735049336e58cdefa5dd1581ffb0dc6e32abc8c96c2ce",
+        "review.txt": "8ac5dc42976d10a9eb1476e9b58a33684001794383b52746c9d806a65678a256"
+      },
+      "name": "review",
+      "sha256": "77cbab89a002f2b3bd48bbbfb089fb716c7a699e067de477062aca996aa76964"
+    },
+    {
+      "bytes": 1213,
+      "id": 14721847023,
+      "members": {
+        "publication_audit.json": "5d443845242ba6c861fd6bb03bbef693c1cb022aa696387fdd475bd34dad403b"
+      },
+      "name": "publication",
+      "sha256": "df068da7fa25338aa2afe7eb65d9d6b9aced8cde2c8bcfa4f6047654e331337a"
+    },
+    {
+      "bytes": 1012,
+      "id": 14721424326,
+      "members": {
+        "geometry.json": "75c6215da7554e83b4f9f5b2b2efa0df0056df602d0e0cc4d1eb5df59c9c38b7",
+        "relay.json": "e9e7bc92ac9d0fc4babe92606a9affbff0e35cf8ea895c20929c2262b32a29bc"
+      },
+      "name": "replay",
+      "sha256": "c15ee98cadbf2cb17ee0f9bc2aeb62f473bfcd44ef58978121b9bf595fe7d46f"
+    }
+  ],
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 136960882379,
+      "name": "exact-replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 136960948420,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 136961074396,
+      "name": "replay-publication"
+    }
+  ],
+  "logs": {
+    "argument-review": "c7837b97786cec545468ec9aea281f21d25978ce6ebf680de7ec4ce293e95b94",
+    "exact-replay": "636266d92feb649e2cf45a92c40e9b6338c9929d1f0f8baa9b04da1610257484",
+    "replay-publication": "7751d33ac6d9a89d714d6e070cee1d0c3337d4b6ba39bf7c489242653cca9396"
+  },
+  "logs_sha256": "233ede34e660fb1c5ac979456e07fbccb30815111b069ea95496916b4ee4d02b",
+  "run": 44941954172,
+  "sha": "dd781dce4195dee37486c0754a43de41b62bbe2e"
+}
