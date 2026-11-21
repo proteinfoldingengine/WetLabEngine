@@ -1,0 +1,189 @@
+{
+  "archive_rows": 7236,
+  "archive_sha256": "374769815047dbfeebf14cc73b628ca4510dc385075cfb67e440b5a20533f0b9",
+  "historical_root_q": "supplied by campaign spec",
+  "runs": {
+    "delete_A_v5": {
+      "archive_row_zero_based": 36,
+      "final": [
+        95,
+        33
+      ],
+      "initial": [
+        95,
+        33
+      ],
+      "q_computed_separately": [
+        2,
+        1
+      ],
+      "untouched_leaf_v6": {
+        "k": 1,
+        "q": [],
+        "raw": [
+          1
+        ],
+        "returned_path": [
+          [
+            1
+          ]
+        ]
+      },
+      "untouched_subtree_v1": {
+        "k": 1,
+        "q": [
+          1
+        ],
+        "raw": [
+          15
+        ],
+        "returned_path": [
+          [
+            15
+          ]
+        ]
+      },
+      "whole_path_moves": 0
+    },
+    "delete_B_v5": {
+      "archive_row_zero_based": 6,
+      "final": [
+        127,
+        1
+      ],
+      "initial": [
+        127,
+        1
+      ],
+      "q_computed_separately": [
+        1,
+        1
+      ],
+      "untouched_leaf_v6": {
+        "k": 2,
+        "q": [],
+        "raw": [
+          1,
+          1
+        ],
+        "returned_path": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "untouched_subtree_v1": {
+        "k": 2,
+        "q": [
+          1
+        ],
+        "raw": [
+          15,
+          1
+        ],
+        "returned_path": [
+          [
+            15,
+            1
+          ],
+          [
+            15,
+            3
+          ],
+          [
+            15,
+            7
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            15,
+            13
+          ],
+          [
+            15,
+            9
+          ],
+          [
+            15,
+            1
+          ]
+        ]
+      },
+      "whole_path_moves": 12
+    },
+    "no_deletion": {
+      "archive_row_zero_based": null,
+      "final": [
+        127,
+        1
+      ],
+      "initial": [
+        127,
+        33
+      ],
+      "q_computed_separately": [
+        1,
+        1
+      ],
+      "untouched_leaf_v6": {
+        "k": 2,
+        "q": [],
+        "raw": [
+          1,
+          1
+        ],
+        "returned_path": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "untouched_subtree_v1": {
+        "k": 2,
+        "q": [
+          1
+        ],
+        "raw": [
+          15,
+          1
+        ],
+        "returned_path": [
+          [
+            15,
+            1
+          ],
+          [
+            15,
+            3
+          ],
+          [
+            15,
+            7
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            15,
+            13
+          ],
+          [
+            15,
+            9
+          ],
+          [
+            15,
+            1
+          ]
+        ]
+      },
+      "whole_path_moves": 11
+    }
+  }
+}

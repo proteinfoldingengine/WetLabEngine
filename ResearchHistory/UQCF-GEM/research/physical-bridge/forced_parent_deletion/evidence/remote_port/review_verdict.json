@@ -1,0 +1,24 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The physical trigger for the normalizer, its route, and a mechanism that would place a new balanced source into C are open.",
+    "A nonzero change in the shared root-to-v3 drop requires a change of ambient load at v3, or a separately derived change to the response law.",
+    "The observed difference of two chart representations supplies neither physical detection nor observational calibration.",
+    "The secondary dipole, overlap cancellation, and v16.24 certificate comparison are exploratory and postdate the original historical archive."
+  ],
+  "proof_checks": [
+    "Projected masks at v3 for rows 1782, 2466, 2468 match local traces and widths [1,2,3,2,1] vs [1,2,1,2,1].",
+    "144-case classification verified: 48 cases of 3 vs 1, 12 quiet, 84 identical. 36 have same named prefix, 12 have original owner, 8 have both.",
+    "Six-move alternative path verified with widths [1,2,1] and 0 profile excursion.",
+    "Secondary dipole signs verified: +1 for v1 deletion (step 5, index B), -1 for v4 deletion (step 4, index A). Same-actor step 4 comparison yields same signs.",
+    "Overlap cancellation verified: change in view representative exactly matches change in overlap, yielding 0 change after subtraction. C's own field change is 0.",
+    "Primary loss at v1/v4 verified: formal lost source [-1,1,0,0,0] and [-1,0,0,0,1] yield 0 root-to-v3 response in surviving C.",
+    "Four-drive replay verified: 10,304 full-field equalities over 2,576 distinct states with 0 residuals.",
+    "One-versus-two port representation verified: minimum holders for v2,v3 is 1 for v1 deletion and 2 for v4 deletion.",
+    "v16.24 certify code verified: case 174 with signed sample (1,0,1,1,0) yields ambient grade [-1,0,1,1,0], A root grade 0, and bad mask entry [3]. Case 59 yields A root grade -1 and bad mask entry []."
+  ],
+  "native_bridge_status": "OPEN"
+}

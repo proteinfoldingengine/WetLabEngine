@@ -1,0 +1,24 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The historical campaigns do not implement the combined event-to-target call.",
+    "A leaf receiving a list in software does not establish a persistent physical receiver, access to a reading, or a gravity response.",
+    "Splicing the q origin of the v16.53 caller and the child call of the v16.52 normalizer assumes a missing link."
+  ],
+  "proof_checks": [
+    "Source leaf is verified as v5.",
+    "Masks are verified as [127, 33] in order A, B.",
+    "Tau values (q) are verified as [1, 1] for the B-deletion and [2, 1] for the A-deletion.",
+    "Whole path move counts are verified as 12 for the B-deletion and 0 for the A-deletion.",
+    "For v6, the raw arguments are [1, 1] (k=2) and [1] (k=1), returning [[1, 1]] and [[1]] respectively.",
+    "For the subtree at v1, the raw arguments are [15, 1] and [15]. The first performs internal edits (returned path length > 1) and the second performs none (returned path length == 1).",
+    "The no-deletion control run on [127, 33] with target [1, 1] correctly gives [1, 1] at v6.",
+    "q is supplied by the campaign specification in v16.52, not calculated by the produce routine.",
+    "The event output is not automatically passed to the routine, and no observable is physically delivered.",
+    "The v16.53 four-star caller computes its own target, but its focal leaf is called at different phases, preventing a direct combination without assuming a missing link."
+  ],
+  "native_bridge_status": "none"
+}
