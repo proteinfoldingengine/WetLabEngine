@@ -1,0 +1,21 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": [
+    "The prospective search for the designated last preorder leaf (leaf 10) with a unique untouched twin yielded 0 hits, as confirmed by `census.json`.",
+    "The exploratory search across all outer root leaves without the unique twin requirement yielded exactly 3 hits at leaf 9 (indices 178, 184, 190), all sharing the degree sequence (3,2,3,2) and reversal permutation.",
+    "The W1/W2 proof correctly establishes the root-grade transfer. D initially holds 1 and 9 and excludes 10, giving root grade h = g0 + g10 and leaf grade a = g9.",
+    "B gains leaf 9 while D is unedited. Their intersection holds 1 and 9 and excludes 10. W2 compatibility ensures B's root and leaf grades are (h, a). W1 anchors these values on B through D's loss and C's gain.",
+    "When D loses 9, it holds 1 and excludes 9 and 10. Its projection to the intersection with B gives D(0) = h + a. The change is ΔD(0) = (h + a) - h = +a = +g9.",
+    "When C acquires 9, it transitions from holding 1 (excluding 9 and 10) to holding 1 and 9. Its root grade changes from C(0) = h + a to C(0) = h, giving ΔC(0) = -a = -g9, and C_after(9) = a = g9.",
+    "The exact fractional control with base grades 2 and a varied input moving 1/2 unit from root 0 to leaf 9 (g0 = 3/2, g9 = 5/2) correctly yields a pre-acquisition C root of 6 in both cases. Post-acquisition, the base root is 4 and leaf is 2, while the varied root is 7/2 and leaf is 5/2.",
+    "Coarsening the post-acquisition state back to the pre-gain carrier removes the source distinction, as C(0) + C(9) = 7/2 + 5/2 = 6.",
+    "The terminal factor control is verified: `atom.factor` accepts the before/after donor states and emits the identical donor deletion as its final edit, leaving C untouched. This proves the deletion certificate alone does not force C's acquisition.",
+    "The provenance trace confirms C is a temporary color chosen by the existing `star_normalize.py` routine (lines 24), and C eventually releases leaf 9 in all three paths (final receiver mask 47, 135, 175 do not contain bit 9).",
+    "The additive checker correction in `MINIMAL_COMPLETION_EXACT_READOUT.md` is verified by `exact_readout.json`, which correctly identifies the legacy truncated fraction (1 vs 1 instead of 3/2 vs 1) and rejects the two false claims (`in_domain_nonminimum` and `minimum_wrong_integer_root`)."
+  ],
+  "native_bridge_status": "OPEN"
+}
