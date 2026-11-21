@@ -1,0 +1,288 @@
+{
+  "canonical_counting_A_root": {
+    "A": [
+      1,
+      1,
+      4
+    ],
+    "B": [
+      1,
+      1,
+      1
+    ]
+  },
+  "controls": {
+    "common_A_root_at_touch": 2,
+    "four_unit_touch_sources": [
+      [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      [
+        2,
+        1,
+        0,
+        1,
+        0
+      ]
+    ],
+    "local_only_vectors": [
+      [
+        0,
+        5
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ]
+    ],
+    "positive_lift_rejected": true,
+    "rational_interior_A_root": [
+      "7/2",
+      "3/2"
+    ],
+    "signed_union": [
+      -3,
+      1,
+      1,
+      1,
+      5
+    ]
+  },
+  "equal_mass_fiber": {
+    "admitted_full_sources": [
+      [
+        0,
+        0,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        0,
+        1,
+        0
+      ]
+    ],
+    "assignments_screened": 70,
+    "possible_A_root": {
+      "A": [
+        2,
+        3,
+        4
+      ],
+      "B": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "fixed_C_marginal": [
+    2,
+    2,
+    1
+  ],
+  "integer_fiber": {
+    "admitted_full_sources": [
+      [
+        0,
+        0,
+        2,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        0,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        1,
+        0
+      ]
+    ],
+    "assignments_screened": 126,
+    "possible_A_root": {
+      "A": [
+        3,
+        4,
+        5
+      ],
+      "B": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "ordered_full_vertices": [
+    "o",
+    "p",
+    "l",
+    "w",
+    "d"
+  ],
+  "original_path_selectors": {
+    "A": {
+      "edits": [
+        "+B(d)",
+        "+C(d)",
+        "+A(l)",
+        "-B(l)",
+        "+B(w)",
+        "-C(w)",
+        "-C(p)",
+        "-B(d)",
+        "-C(d)"
+      ],
+      "endpoint_columns": [
+        23,
+        11,
+        1
+      ],
+      "refinement_options": 2
+    },
+    "B": {
+      "edits": [
+        "+B(d)",
+        "+C(d)",
+        "+B(w)",
+        "-C(w)",
+        "-C(p)",
+        "-B(d)",
+        "-C(d)"
+      ],
+      "endpoint_columns": [
+        23,
+        11,
+        1
+      ],
+      "refinement_options": 2
+    }
+  },
+  "physical_event_and_A_grade_access": "OPEN",
+  "pre_parent_integer_ranges": {
+    "after_A_leaf": [
+      0,
+      1,
+      2
+    ],
+    "after_B_leaf": [
+      0,
+      1,
+      2
+    ],
+    "initial": [
+      0,
+      1,
+      2
+    ]
+  },
+  "zero_mass_fiber": {
+    "admitted_full_sources": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "assignments_screened": 1,
+    "possible_A_root": {
+      "A": [
+        0
+      ],
+      "B": [
+        0
+      ]
+    }
+  }
+}
