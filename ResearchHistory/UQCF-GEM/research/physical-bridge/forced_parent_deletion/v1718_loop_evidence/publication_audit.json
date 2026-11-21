@@ -1,0 +1,19 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "498a08fd3619b755aab1543f65810904d8218438",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "fb902708d5e86820d64f6f22e2e205c60b58a81aa1841d6118d13a357367a2da",
+  "request_sha256": "0c7ba5ca1e68e2ecf0cb18581b3f5674524f274ff92d228ee01e603b0a002c6a",
+  "response_sha256": "d266bb74a631e1a244373c73edb290537a06fd9cc7dbd62fd1d17ea5c86c12c7",
+  "run_id": "44960357330",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1718_LOOP_REVERSIBILITY.md": "7dc0a572f5afe9dfcd3ca67d3885e84c39047f78",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1718_loop.py": "61c7f0c6f4c1924f3aff91fe0240c520ce17d233",
+    "handoff/replay.json": "76b516c1c0ca8b81adb32d5692624cbf32e068f0",
+    "handoff/v1718_complete.py": "638e68d00762642d6b58f692e7a1747816752232"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "498a08fd3619b755aab1543f65810904d8218438"
+}

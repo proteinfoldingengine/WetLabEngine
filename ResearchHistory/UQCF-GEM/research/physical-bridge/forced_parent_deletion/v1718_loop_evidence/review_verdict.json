@@ -1,0 +1,15 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "loop_order_and_determinants": "The loop order M(q_0)M(q_2)M(q_1) is correctly identified from the modulo arithmetic in loop_drift. The fixed-total source profiles e_0+e_2 and 2e_0 yield exact determinants 0.6889 and 0.66 respectively, confirming that the loop operators are invertible but not similar, and that the source distinction reaches the geometric calculation.",
+    "reverse_and_inverse": "The fwd_rev function applies the forward map twice when endpoints are equal, yielding a nonzero error (0.3111) for x=e_1, q=e_0. Solving the linear system against the exact forward matrix yields zero error, confirming the map is invertible and the reported error is an artifact of the test's proxy for reversal.",
+    "skew_generator_control": "The unpruned control exponentiates the skew-symmetric part of A(q). For q=e_0, this generates a pure rotation of 0.085 radians in the (e_0, e_7) plane. The loop norm reader returns 1.0, missing the 0.0849 Euclidean displacement, confirming norm preservation does not imply the identity operator.",
+    "moments_and_drift": "The conditional expectation E[M(q)x|x] = x and E[||M(q)x||^2|x] = (1+2g^2)||x||^2 are exact for independent zero-mean, unit-variance source draws. The one-step squared norm factor 1.0578 is correctly derived and verified. The sample mean of the norm is correctly distinguished from the expected squared norm.",
+    "pruning_attribution": "The numerical source-to-loop dataflow is established within the simulation's supplied carrier and independent draws. The archive's attribution of these effects to a physical pruning event or pre-time gravity signal is not justified by the loop and reverse comparisons."
+  },
+  "native_bridge_status": "OPEN"
+}
