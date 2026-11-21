@@ -1,4 +1,4 @@
-name: Local grade and shared field on the original routed paths
+name: Verify constrained receiver grade and historical metric comparison
 on:
   push:
     branches: [gpt/v1686-recombination-audit-20261118]
@@ -20,6 +20,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /Tmp/TOE/v498_retained_geometry_formal_report_package/v498_retained_geometry_proof.py
             /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
             /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
             /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py
@@ -59,6 +60,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /Tmp/TOE/v498_retained_geometry_formal_report_package/v498_retained_geometry_proof.py
             /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
             /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
             /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py
@@ -98,6 +100,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /Tmp/TOE/v498_retained_geometry_formal_report_package/v498_retained_geometry_proof.py
             /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
             /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
             /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py
