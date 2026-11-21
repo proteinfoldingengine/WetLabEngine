@@ -1,0 +1,15 @@
+# Fixed remote port comparison
+
+This is a follow-up on the existing ordered four-leaf archive and draft PR 153 at abdb8b8ccdfa1af5f2119a37219192ade8c8b05b. The question is whether the same remote site gives an operationally distinguishable response to the original source deletion. The input state is [19,23,11]. Designate the originally C-private site v3 and the original holder C before either comparison. Retain the no-deletion control.
+
+## Exploratory observations already known
+
+Rows 1782, 2466 and 2468 and their endpoints were inspected previously. Projection of the two edited rows at v3 already revealed C,AC,ABC versus C,AC,C. The second local changes occur at different whole-path indices. An exploratory enumeration has already shown that 48 of 144 placements distinguish the two branches at the originally third-private site's second change, 12 leave it quiet in one arm, and 84 give equal complete occupancy histories. An alternative admissible six-move low path avoids the pulse. The original leaf call, the tree Green and overlap gluing operations and the canonical terminal split on v2 and v3 were also inspected. These findings are exploratory. The earlier loss-support proof predicts that the projection of a leaf loss at v1 or v4 has zero root-to-v3 response in the unit star.
+
+## Exact checks to archive
+
+1. Regenerate the complete R population with the unmodified v16.53 entry point. Compare frozen historical R identities and paths, validate the two original v16.26 atoms, and recover the unchanged control. Independently project support words and rerun the 6 by 24 motif census.
+2. Apply precisely the same existing v16.26 deletion command for C at v3 to copies of the matched histories at each of the first three local states. Report exact success or native precondition failure, confirm both membership and leafness of C at the decisive snapshot, and distinguish this diagnostic call from an actual receiver receipt. Verify the rejecting six-move route.
+3. For each distinct support state visited anywhere in the archived R paths, use the four balanced leaf-to-root basis drives. Push through every view, solve the inherited unit Green field and glue with v16.23 O4. Compare the full reconstructed potential against the original ambient potential. Separately compute each event's own lost source component from the same ambient counting grade, and compute its remote and source-site field values. Report differences that survive the same preparation, same fixed port and same inherited law.
+4. On the two private leaves inspect whether their common local source port remains representable by a single index at the canonical endpoint. Check both its global two-terminal field and any claim of an existing caller at that pair.
+5. Freeze the outputs with this protocol, submit the whole argument and historical code for Gemini challenge, and publish its original evidence. Report failures or scope corrections explicitly. The finite checks require at most one unchanged producer replay per invocation. No physical detection, event rate, automatic route or dimensional calibration is assumed.
