@@ -2,7 +2,11 @@ name: Review path-local source-leaf witness
 on:
   push:
     branches: [gpt/uqcf-source-leaf-witness-20261121]
-    paths: ['.github/workflows/uqcf-source-leaf-witness.yml']
+    paths:
+      - '.github/workflows/uqcf-source-leaf-witness.yml'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/SOURCE_LEAF_WITNESS.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/SOURCE_LEAF_WITNESS_AUTHOR_RESPONSE.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_source_leaf_witness.py'
 permissions:
   contents: read
 env:

@@ -14,7 +14,7 @@ Use the published rooted union `U={v0,...,v8}` with parent list
 
     (-1,0,1,2,3,3,2,1,0).
 
-The source leaf is `s=v8`; `K={v0,v1,v2}`. The initial compatible grades are the P1 marginals of one formal rational source `g` on U. Retain only:
+The source leaf is `s=v8`; `K={v0,v1,v2}`. The initial compatible grades are the P1 marginals of one formal rational source `g` on U. Apply W1/W2 to the external D(v8) deletion as well as to the completion edits. In the low arm the unchanged A,B,C masks satisfy `1 OR 63 OR 455 = 511`; in the high arm they satisfy `257 OR 63 OR 199 = 511`. The cover lemma therefore forces both AFTER families to inherit that same pre-event `g`. Retain only:
 
 - **W1:** every unedited indexed chart keeps exactly the same grade across an edit;
 - **W2:** the post-edit family is P1-compatible on every literal intersection.
@@ -87,7 +87,7 @@ Using (2) in (5) gives `b_low(v0)=g0`. Therefore, for every formal rational sour
 
     R_high(g) - R_low(g) = g8.                       (6)
 
-The high path needs no new cover claim here: D's unchanged K grade and endpoint compatibility are sufficient. Equation (6) is a source-grade coordinate identity on the same provenance-bound P1 object. It is not a root potential, probability law, instrument outcome, force, or physical receiver observation.
+The high path needs no new cover claim here: D's unchanged K grade and endpoint compatibility are sufficient. Equation (6) is a source-grade coordinate identity on the same rooted union, with the same original v8 amount and the same D-anchored K restriction. It does **not** require every other ambient coordinate to stay fixed: at the reordered `-C(v6)` step the unchanged union is `1 OR 327 OR 63 = 383 = U\{v7}`, so drift along `delta7-delta1` is still allowed. The theorem protects exactly the source-leaf amount and anchored root relation it uses. It is not a root potential, probability law, instrument outcome, force, or physical receiver observation.
 
 ## 6. Sharp boundary: endpoint selection alone does not earn (6)
 
