@@ -1,0 +1,22 @@
+{
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "The result characterizes a supplied calibration class and does not derive native access or physical correspondence from first principles.",
+    "The fixed-effect criterion requires the effect to be independently available to the owner, which is not yet established for the native P1 event.",
+    "The bounds depend on the assumption that the hidden factor can be arbitrarily large and that the realization can explore the full unitary orbit."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "proof_checks": [
+    "Reconstructed the exact interval [a_- - b_+, a_+ - b_-]/5 for the fixed effect response.",
+    "Verified that the orthogonal flags construction e_u = a \\otimes 1 and e_0 = b \\otimes 0 preserves the coherent source channel C(\\rho) on all 16 matrix units.",
+    "Checked the relationship to the T249 qubit exception, confirming that a minimal complement of dimension 2 restricts the response to 1/50 for the overlapping effect.",
+    "Recomputed the exact effects and fixed controls, confirming the overlapping interval [-3/50, 1/10] and separated interval [2/25, 4/25].",
+    "Verified that the qubit example uses the exact same owner effect and source input pair under the identity embedding into the enlarged hidden space.",
+    "Confirmed that whole-interface acquisition is not claimed, as the effect is individually blind but the full interface is not.",
+    "Determined that the criterion only characterizes a supplied calibration class and correctly identifies the native bridge status as NOT_DERIVED.",
+    "Verified the distinction between fixed-effect response (min_W s_F(W)) and optimized interface response (min_W max_F s_F(W))."
+  ],
+  "verdict": "ACCEPTED"
+}

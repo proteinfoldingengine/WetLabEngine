@@ -1,0 +1,52 @@
+{
+  "C_dual_Q_effect": "identity",
+  "C_dual_parent_effect": "pi_p+pi_u",
+  "C_dual_u_effect": "zero",
+  "Q_and_u_branch_outputs_both_supported_in_Q": true,
+  "canonical_preparations": [
+    {
+      "Q_conditioned_parent": "1/3",
+      "nonselective_parent": "3/5",
+      "q_weight": "3/5",
+      "u_conditioned_parent": "1",
+      "u_weight": "2/5"
+    },
+    {
+      "Q_conditioned_parent": "1/4",
+      "nonselective_parent": "2/5",
+      "q_weight": "4/5",
+      "u_conditioned_parent": "1",
+      "u_weight": "1/5"
+    }
+  ],
+  "exact_trace_pairings": 256,
+  "freeze_commit": "e8660972544938a08f701834cb0a2c4fddd1a7c6",
+  "independent_review": "NOT_REQUESTED_FOR_THIS_FOLLOWUP",
+  "matrix_units_checked": 16,
+  "native_event_binding": "NOT_DERIVED",
+  "no_source_output_effect_recovers_original_binary_record": true,
+  "numpy_version": "2.3.5",
+  "old_pinch_preserves_u_effect": true,
+  "original_source_bytes_unchanged": true,
+  "original_source_max_abs_error": 0.0,
+  "original_source_numeric_comparisons": 7,
+  "owner_access": "NOT_DERIVED",
+  "parent_contrasts": {
+    "Q_conditioned_parent": "1/12",
+    "nonselective_parent": "1/5",
+    "u_conditioned_parent": "0"
+  },
+  "prior_review_does_not_cover_this_followup": true,
+  "pure_p_u_source_output_collision": true,
+  "rejecting_controls": {
+    "claim_u_conditioned_canonical_separation": true,
+    "identify_reset_as_projector_refinement": true,
+    "retain_original_u_effect": true
+  },
+  "scientific_breakthrough": false,
+  "scope": "AUTHOR_CHECKED_APPLICATION_OF_EXISTING_FIBER_CRITERION",
+  "script_sha256": "fb1409ef5b1e89ee726c6cf91d832bcf16e51b0c04efe621f18be7d9d60d329b",
+  "source_git_blob": "8871e50f19322adbb62f34ea3837ba8e6cb16c8b",
+  "status": "PASS",
+  "u_to_p_is_original_projector_refinement": false
+}

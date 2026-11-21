@@ -1,0 +1,18 @@
+{
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "The exact-real reach of the normalization injectivity does not prevent binary64 saturation for large collinear inputs, as demonstrated by the 1e8 and 2e8 control.",
+    "The P1 factorization test deliberately changes the fine initial parent as well as the leaf, which tests sufficiency of the coarse output but is separate from acquisition by an initially equal parent.",
+    "No gravity signal, P1 event implementation, physical owner, physical time, or observational access follows from this computational audit."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "NOT_DERIVED",
+  "proof_checks": [
+    "The first-arrival distance exactly matches the graph distance in the unprotected component, verified across all 64 protected subsets for the depth-2 tree.",
+    "The parent response factors through the coarse sum if and only if the strength s equals d_p / (d_p + 1), which is correctly derived as 2/3 for degree 2 and verified to produce equal parent rows within rounding.",
+    "The default strength of 13/20 yields the exact predicted coefficient of -1/40, correctly resolving the fine splits in the default configuration.",
+    "The binary64 saturation counterexample correctly demonstrates that the 1e-12 epsilon addition absorbs into the mantissa for inputs >= 1e8, destroying the exact-real injectivity."
+  ],
+  "verdict": "ACCEPTED"
+}

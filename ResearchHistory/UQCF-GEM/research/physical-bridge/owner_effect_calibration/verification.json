@@ -1,0 +1,106 @@
+{
+  "controls": {
+    "nonorthogonal_frame": "REJECTED",
+    "qubit_bound_on_hidden_class": "REJECTED",
+    "substituted_owner_effect": "REJECTED"
+  },
+  "frames": {
+    "hidden_00": {
+      "overlapping_calibration": {
+        "pre_probability_both": "3/10",
+        "response": "1/10"
+      },
+      "separated_calibration": {
+        "pre_probability_both": "11/50",
+        "response": "3/25"
+      }
+    },
+    "hidden_01": {
+      "overlapping_calibration": {
+        "pre_probability_both": "3/10",
+        "response": "1/50"
+      },
+      "separated_calibration": {
+        "pre_probability_both": "11/50",
+        "response": "2/25"
+      }
+    },
+    "hidden_10": {
+      "overlapping_calibration": {
+        "pre_probability_both": "3/10",
+        "response": "1/50"
+      },
+      "separated_calibration": {
+        "pre_probability_both": "11/50",
+        "response": "4/25"
+      }
+    },
+    "hidden_11": {
+      "overlapping_calibration": {
+        "pre_probability_both": "3/10",
+        "response": "-3/50"
+      },
+      "separated_calibration": {
+        "pre_probability_both": "11/50",
+        "response": "3/25"
+      }
+    },
+    "hidden_blind": {
+      "overlapping_calibration": {
+        "pre_probability_both": "3/10",
+        "response": "0"
+      },
+      "separated_calibration": {
+        "pre_probability_both": "11/50",
+        "response": "3/25"
+      }
+    },
+    "minimal_basis": {
+      "overlapping_calibration": {
+        "pre_probability_both": "3/10",
+        "response": "1/50"
+      },
+      "separated_calibration": {
+        "pre_probability_both": "11/50",
+        "response": "4/25"
+      }
+    },
+    "minimal_rotated": {
+      "overlapping_calibration": {
+        "pre_probability_both": "3/10",
+        "response": "1/50"
+      },
+      "separated_calibration": {
+        "pre_probability_both": "11/50",
+        "response": "68/625"
+      }
+    }
+  },
+  "intervals": {
+    "overlapping_calibration": {
+      "guaranteed_absolute_response": "0",
+      "signed_interval": [
+        "-3/50",
+        "1/10"
+      ]
+    },
+    "separated_calibration": {
+      "guaranteed_absolute_response": "2/25",
+      "signed_interval": [
+        "2/25",
+        "4/25"
+      ]
+    }
+  },
+  "matrix_units_verified": 112,
+  "native_owner_access": "NOT_DERIVED",
+  "scope": "fixed finite exact controls supporting the stated proof",
+  "source_order": [
+    "o",
+    "p",
+    "u",
+    "v"
+  ],
+  "status": "PASS",
+  "sympy": "1.14.0"
+}

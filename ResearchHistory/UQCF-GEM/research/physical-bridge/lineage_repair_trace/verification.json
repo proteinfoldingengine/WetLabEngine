@@ -1,0 +1,696 @@
+{
+  "actual_selectors": {
+    "actual_seed_rows": {
+      "leaf": [
+        2
+      ],
+      "root": [
+        0
+      ]
+    },
+    "first_observed": {
+      "leaf": [
+        1,
+        0,
+        null
+      ],
+      "root": [
+        null,
+        0,
+        null
+      ]
+    },
+    "fraction": 0.05,
+    "parent": 0,
+    "rng_seed": 0,
+    "source": 1
+  },
+  "arrival": {
+    "first_observed_by_sweep": [
+      64,
+      32,
+      32,
+      8,
+      8,
+      0
+    ],
+    "never_observed_in_fixtures": 304,
+    "per_protected_set": {
+      "0": [
+        null,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "0,1": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,2": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,2,4": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,2,4,5": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,2,4,5,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,2,4,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,2,5": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,2,5,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,2,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,4": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,4,5": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,4,5,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,4,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,5": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,5,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,1,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,2": [
+        null,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "0,2,4": [
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,2,4,5": [
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,2,4,5,6": [
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,2,4,6": [
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,2,5": [
+        null,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "0,2,5,6": [
+        null,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "0,2,6": [
+        null,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "0,4": [
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,4,5": [
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,4,5,6": [
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,4,6": [
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "0,5": [
+        null,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "0,5,6": [
+        null,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "0,6": [
+        null,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "1": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,2": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,2,4": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,2,4,5": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,2,4,5,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,2,4,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,2,5": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,2,5,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,2,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,4": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,4,5": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,4,5,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,4,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,5": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,5,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "1,6": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "2": [
+        2,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "2,4": [
+        2,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "2,4,5": [
+        2,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "2,4,5,6": [
+        2,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "2,4,6": [
+        2,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "2,5": [
+        2,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "2,5,6": [
+        2,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "2,6": [
+        2,
+        1,
+        null,
+        0,
+        2,
+        null,
+        null
+      ],
+      "4": [
+        2,
+        1,
+        3,
+        0,
+        null,
+        4,
+        4
+      ],
+      "4,5": [
+        2,
+        1,
+        3,
+        0,
+        null,
+        null,
+        4
+      ],
+      "4,5,6": [
+        2,
+        1,
+        3,
+        0,
+        null,
+        null,
+        null
+      ],
+      "4,6": [
+        2,
+        1,
+        3,
+        0,
+        null,
+        4,
+        null
+      ],
+      "5": [
+        2,
+        1,
+        3,
+        0,
+        2,
+        null,
+        4
+      ],
+      "5,6": [
+        2,
+        1,
+        3,
+        0,
+        2,
+        null,
+        null
+      ],
+      "6": [
+        2,
+        1,
+        3,
+        0,
+        2,
+        4,
+        null
+      ],
+      "empty": [
+        2,
+        1,
+        3,
+        0,
+        2,
+        4,
+        4
+      ]
+    },
+    "protected_source": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "row_first_arrivals_checked": 448,
+    "row_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "row_sweep_comparisons": 2688,
+    "seed_sets": 64,
+    "zero_strength": [
+      null,
+      null,
+      null,
+      0,
+      null,
+      null,
+      null
+    ]
+  },
+  "domain": "prescribed finite fixtures using archived repair",
+  "horizon": 5,
+  "native_delivery": "NOT_DERIVED",
+  "numpy": "2.3.5",
+  "p1": {
+    "coarse_field_both": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "default_parent_A": [
+      0.330350424728,
+      0.943858356365
+    ],
+    "default_parent_B": [
+      0.309086072337,
+      0.95103406873
+    ],
+    "default_parent_L2_gap": 0.022442449299,
+    "default_strength": "13/20",
+    "degree": 2,
+    "difference_coefficient_B_minus_A": "-1/40",
+    "matched_max_allowed_roundoff": 5e-15,
+    "matched_parent_A": [
+      0.316227766017,
+      0.94868329805
+    ],
+    "matched_parent_B": [
+      0.316227766017,
+      0.94868329805
+    ],
+    "matched_strength": "2/3",
+    "saturation_common_binary64_row": [
+      1.0,
+      0.0
+    ],
+    "saturation_distinct_input_sizes": [
+      100000000.0,
+      200000000.0
+    ]
+  },
+  "source": "Tmp/TOE/retained_branch_identity_audit.py",
+  "source_blob": "5032b156203183b33318e44f3c4492e5ac697503",
+  "status": "PASS"
+}

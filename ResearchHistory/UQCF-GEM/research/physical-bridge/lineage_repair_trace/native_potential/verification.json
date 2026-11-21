@@ -1,0 +1,52 @@
+{
+  "native": {
+    "centered_a": [
+      "2/3",
+      "-1/3",
+      "-1/3"
+    ],
+    "centered_b": [
+      "-1/3",
+      "2/3",
+      "-1/3"
+    ],
+    "coarse_potential_a_and_b": [
+      "0",
+      "-1/3"
+    ],
+    "coarse_source_a_and_b_after_fine_centering": [
+      "1/3",
+      "-1/3"
+    ],
+    "fine_leaf_minus_parent_contrast": "1",
+    "fine_potential_a": [
+      "0",
+      "-1/3",
+      "-1/3"
+    ],
+    "fine_potential_b": [
+      "0",
+      "2/3",
+      "-1/3"
+    ],
+    "independent_gauge_shifts": [
+      "11/7",
+      "-5/3"
+    ],
+    "order": [
+      "parent",
+      "leaf",
+      "sibling"
+    ],
+    "retained_parent_minus_sibling_contrast": "0",
+    "retained_parent_minus_sibling_each": "1/3"
+  },
+  "native_receiver_delivery": "NOT_DERIVED",
+  "repair": {
+    "identification": "first repair coordinate as scalar potential on unchanged addresses, supplied",
+    "parent_minus_sibling_a": 0.330350424728,
+    "parent_minus_sibling_b": 0.309086072337,
+    "relative_contrast_b_minus_a": -0.021264352391
+  },
+  "status": "PASS"
+}

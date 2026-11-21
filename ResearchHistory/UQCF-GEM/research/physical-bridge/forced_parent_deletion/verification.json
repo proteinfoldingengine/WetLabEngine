@@ -1,0 +1,140 @@
+{
+  "archived_git_blobs": {
+    "NATIVE_ADMISSIBILITY.md": "ebc315f7f2f6423fe9f6861cc3b8a0cfcf8420f2",
+    "coverage.py": "e90576a0285357f62ca2f9d9cac872b2a226e823",
+    "verifier.py": "54e23706c170d0bb82c1b78161290145b6b99af7"
+  },
+  "domain": {
+    "admitted": 553,
+    "candidate_one_bit_edits_per_admitted_state": 12,
+    "directed_signed_edges": 4152,
+    "fixed_root_row_encodings_screened": 4096,
+    "local_rule_disagreements": 0
+  },
+  "initial": {
+    "d": "C",
+    "l": "AB",
+    "o": "ABC",
+    "p": "ABC",
+    "w": "C"
+  },
+  "maximal_deletion_histories": [
+    {
+      "edits": [
+        "-A(l)",
+        "-A(p)"
+      ],
+      "final_parent": "BC",
+      "parent_A_effect": [
+        1,
+        1,
+        0
+      ],
+      "profile_excursion": 0,
+      "signed_menus": [
+        [
+          "+A(d)",
+          "+A(w)",
+          "+B(d)",
+          "+B(w)",
+          "+C(l)",
+          "-A(l)",
+          "-B(l)"
+        ],
+        [
+          "+A(d)",
+          "+A(l)",
+          "+A(w)",
+          "+B(d)",
+          "+B(w)",
+          "+C(l)",
+          "-A(p)"
+        ],
+        [
+          "+A(d)",
+          "+A(p)",
+          "+B(d)",
+          "+B(w)",
+          "+C(l)"
+        ]
+      ]
+    },
+    {
+      "edits": [
+        "-B(l)",
+        "-B(p)"
+      ],
+      "final_parent": "AC",
+      "parent_A_effect": [
+        1,
+        1,
+        1
+      ],
+      "profile_excursion": 0,
+      "signed_menus": [
+        [
+          "+A(d)",
+          "+A(w)",
+          "+B(d)",
+          "+B(w)",
+          "+C(l)",
+          "-A(l)",
+          "-B(l)"
+        ],
+        [
+          "+A(d)",
+          "+A(w)",
+          "+B(d)",
+          "+B(l)",
+          "+B(w)",
+          "+C(l)",
+          "-B(p)"
+        ],
+        [
+          "+A(d)",
+          "+A(w)",
+          "+B(d)",
+          "+B(p)",
+          "+C(l)"
+        ]
+      ]
+    }
+  ],
+  "mixed_erasure": {
+    "common_final": {
+      "d": "C",
+      "l": "C",
+      "o": "ABC",
+      "p": "C",
+      "w": "C"
+    },
+    "deletion_maximal": true,
+    "first_rejoin_step_counted_from_common_initial": 3,
+    "matched_parent_rows_including_initial": [
+      "ABC",
+      "ABC",
+      "ABC",
+      "ABC",
+      "BC",
+      "C"
+    ],
+    "paths": [
+      [
+        "-A(l)",
+        "+C(l)",
+        "-B(l)",
+        "-A(p)",
+        "-B(p)"
+      ],
+      [
+        "-B(l)",
+        "+C(l)",
+        "-A(l)",
+        "-A(p)",
+        "-B(p)"
+      ]
+    ]
+  },
+  "physical_event_and_owner_access": "OPEN",
+  "unchanged_profile_undo_rejoins_both_branches": true
+}

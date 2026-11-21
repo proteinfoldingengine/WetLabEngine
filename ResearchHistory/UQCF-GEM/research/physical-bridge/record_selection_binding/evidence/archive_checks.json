@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "run_id": 44845772193,
+  "checkout_sha": "35b05a2deb68a52c81f91973c4383e4a382734de",
+  "artifacts": {
+    "record-selection-joint-source-replay.zip": {
+      "artifact_id": 14682418013,
+      "bytes": 598,
+      "sha256": "601f1beb2132ce1de62d1c93ddadef469fcd7d2cbbda6433f940571692ee64d5",
+      "members": ["replay.json"],
+      "crc_check": "PASS"
+    },
+    "record-selection-joint-whole-argument-review.zip": {
+      "artifact_id": 14682662531,
+      "bytes": 66867,
+      "sha256": "2e26f5f84037bd6007eff8f38abb30395c302e671e44adb9aecd0e905a5144c8",
+      "members": ["prompt.txt", "request.json", "model_metadata.json", "receipt.json", "review.txt", "response.json"],
+      "crc_check": "PASS"
+    },
+    "record-selection-joint-publication-readback.zip": {
+      "artifact_id": 14683326650,
+      "bytes": 946,
+      "sha256": "8d28b19325404752bfe68e0e8c5ef3b47e36d916b296f35eafc6873f802dd3f1",
+      "members": ["publication_audit.json"],
+      "crc_check": "PASS"
+    }
+  }
+}

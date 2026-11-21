@@ -1,0 +1,21 @@
+# What the native tree potential retains when the leaf disappears
+
+This is an application of the existing foundational P1, P4 and P6 identities to the already reported degree-two split. The split, both software outputs and the intended comparison were known when this note was written. The direct native Laplacian replay and its independent review are prospective. No new physical interpretation is assumed. [Foundational proofs](../../../../foundational-closure-verification/PROOFS.md) · [Source and repair calculation](../ASSESSMENT.md)
+
+## The disappearing edge
+
+Let $L$ be the unweighted combinatorial Laplacian of a finite rooted tree, $u$ a leaf with sole neighbor $p$, and $P$ the elementary pruning that adds the leaf grade to its parent. Work on zero-sum sources and on potentials modulo additive constants, as in the inherited P4 and P6 results. In the frozen three-row fixture, the varying first-coordinate grades are $a=e_p$ and $b=e_u$. Center both by the same uniform vector when solving for each potential. Their source difference is $b-a=e_u-e_p$.
+
+One column of the native Laplacian gives $L e_u=e_u-e_p$. Direct evaluation gives $P(e_u-e_p)=0$. It follows that the fine potential difference is the class $[e_u]$. Its oriented drop from leaf to parent, $\phi_u-\phi_p$, equals one. Every other edge drop is zero. Restricting to surviving vertices gives the zero class, hence every retained potential difference has zero contrast. This also follows from $R T_X=T_Y P$ on zero-sum sources. Both claims are valid for an arbitrary such tree and any choice of potential gauge. A scaled split scales the drops. A general input outside this particular lost direction can have a retained response.
+
+## A comparison with the same parent in the repair calculation
+
+In the already fixed depth-one tree the sibling $w$ survives and is protected in the repair routine. Its first-coordinate output is zero under both inputs. Consider the supplied comparison that reads the first repair component as a candidate scalar potential, at the same retained vertex labels. The repair difference between $p$ and $w$ is a relative value, so adding a common constant at each output cannot change the verdict.
+
+Write $\epsilon=10^{-12}$ and $f(t)=t/(\sqrt{1+t^2}+\epsilon)$. After one archived sweep the parent first coordinate is $f(7/20)$ for $a$ and $f(13/40)$ for $b$. The contrast of the retained parent-minus-sibling difference is therefore $f(13/40)-f(7/20)<0$ because $f$ is strictly increasing. The original native retained potential gives zero for the same contrast. The archived rule at default strength therefore fails this direct potential identification even after gauge freedom is allowed. The interpretation of the repair coordinate as a potential is supplied explicitly. Other physical fields, response variables, representations or history-dependent rules require their own derivation.
+
+In particular, native geometry already gives the contrast on a specific fine edge using no elapsed time. On this split, carrying that contrast into a survivor's accessible record would require a rule for retaining or writing it as that edge disappears. A first arrival in the separate repair simulation does not supply this rule. A coarse source observable intended to ignore the lost split has no obligation to carry that record.
+
+## Finite cross-check and scope
+
+Use the previously fixed tree ordered $(p,u,w)$ and the original degree-two inputs. In exact rational arithmetic, build the adjacency Laplacian and the P1 fiber-sum matrix, solve the two centered equations independently with the parent gauge fixed, and verify the drops, restricted contrasts and the two-node coarse equation. Verify the result is unchanged by separate constant shifts of the two solutions. Use the frozen primary replay for the two repair vectors and the original function for the common protected-sibling output. Require the native retained difference to be zero, the fine leaf-minus-parent contrast to be one and the archived relative contrast to have the predicted sign. An inconsistent check reopens the corresponding calculation. This use of the foundational identity is a test for an existing model-to-model identification. It assigns neither physical duration nor physical measurability to an edge drop.

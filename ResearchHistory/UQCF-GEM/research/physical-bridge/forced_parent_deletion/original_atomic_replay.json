@@ -1,0 +1,64 @@
+{
+  "A": {
+    "bundled_edit_rejection": "not atomic",
+    "first_successful_sites": [
+      [
+        "A",
+        "l"
+      ],
+      [
+        "B",
+        "l"
+      ]
+    ],
+    "next_successful_sites": [
+      [
+        "A",
+        "p"
+      ]
+    ],
+    "nonroot_requests_tried_per_state": 12,
+    "supplied_endpoint_factor_lengths": [
+      1,
+      2
+    ],
+    "view_of_removed_label_after_second": [
+      0
+    ],
+    "view_of_removed_label_after_source": [
+      0,
+      1
+    ]
+  },
+  "B": {
+    "bundled_edit_rejection": "not atomic",
+    "first_successful_sites": [
+      [
+        "A",
+        "l"
+      ],
+      [
+        "B",
+        "l"
+      ]
+    ],
+    "next_successful_sites": [
+      [
+        "B",
+        "p"
+      ]
+    ],
+    "nonroot_requests_tried_per_state": 12,
+    "supplied_endpoint_factor_lengths": [
+      1,
+      2
+    ],
+    "view_of_removed_label_after_second": [
+      0
+    ],
+    "view_of_removed_label_after_source": [
+      0,
+      1
+    ]
+  }
+}
