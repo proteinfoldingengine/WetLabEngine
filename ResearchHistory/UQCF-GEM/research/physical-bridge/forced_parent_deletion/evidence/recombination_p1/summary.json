@@ -1,0 +1,165 @@
+{
+  "coarse_factorization": {
+    "B3": {
+      "any_affine_factor": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          9
+        ]
+      ],
+      "coarse_cyclic_identity": [],
+      "site3_any_factor": 90,
+      "site3_coarse_cyclic_identity": 73,
+      "site3_same_response_with_both_probe_sites": 65
+    },
+    "B3_minus_B4": {
+      "any_affine_factor": [
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          9
+        ]
+      ],
+      "coarse_cyclic_identity": [
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          9
+        ]
+      ],
+      "site3_any_factor": 90,
+      "site3_coarse_cyclic_identity": 74,
+      "site3_same_response_with_both_probe_sites": 65
+    },
+    "B4": {
+      "any_affine_factor": [
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          9
+        ]
+      ],
+      "coarse_cyclic_identity": [],
+      "site3_any_factor": 90,
+      "site3_coarse_cyclic_identity": 73,
+      "site3_same_response_with_both_probe_sites": 65
+    }
+  },
+  "direct": [
+    {
+      "destination": "B4",
+      "full_matches": 0,
+      "nonzero_coordinates_that_could_be_deleted": [],
+      "origin": "B3",
+      "single_read_matches": 0,
+      "trials": 132
+    },
+    {
+      "destination": "B3",
+      "full_matches": 0,
+      "nonzero_coordinates_that_could_be_deleted": [
+        2
+      ],
+      "origin": "B4",
+      "single_read_matches": 0,
+      "trials": 132
+    }
+  ],
+  "full_json_bytes": 439816,
+  "full_json_sha256": "6374af0b6eb5136819934446fb7d73886ba54eae8411880162b126bcdac161da",
+  "nested": [
+    {
+      "edited_input": 2,
+      "grouping": "B3",
+      "max_support": 6,
+      "max_unit_support": 6,
+      "nonzero_unit_transfer_at_chosen_read": 60,
+      "single_read_matches": 0,
+      "trials": 132
+    },
+    {
+      "edited_input": 3,
+      "grouping": "B3",
+      "max_support": 6,
+      "max_unit_support": 6,
+      "nonzero_unit_transfer_at_chosen_read": 42,
+      "single_read_matches": 0,
+      "trials": 132
+    },
+    {
+      "edited_input": 4,
+      "grouping": "B3",
+      "max_support": 4,
+      "max_unit_support": 4,
+      "nonzero_unit_transfer_at_chosen_read": 42,
+      "single_read_matches": 0,
+      "trials": 132
+    },
+    {
+      "edited_input": 2,
+      "grouping": "B4",
+      "max_support": 4,
+      "max_unit_support": 4,
+      "nonzero_unit_transfer_at_chosen_read": 42,
+      "single_read_matches": 0,
+      "trials": 132
+    },
+    {
+      "edited_input": 3,
+      "grouping": "B4",
+      "max_support": 6,
+      "max_unit_support": 6,
+      "nonzero_unit_transfer_at_chosen_read": 42,
+      "single_read_matches": 0,
+      "trials": 132
+    },
+    {
+      "edited_input": 4,
+      "grouping": "B4",
+      "max_support": 6,
+      "max_unit_support": 6,
+      "nonzero_unit_transfer_at_chosen_read": 22,
+      "single_read_matches": 0,
+      "trials": 132
+    }
+  ],
+  "p1_basis_checks": 1584,
+  "positive_two_input_loss_checks": 264
+}
