@@ -1,0 +1,22 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "ed9eacfb72e75f609dc6ea9fe85a0415f3bb2c44",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "8f943cbcb3fddde14e33bcfa173980c951208bcf6a1686a85ac33ed4f0e4390e",
+  "request_sha256": "154a8b21b696b78c8b3a7e2e4b6a11395ad2c3d54903e05fd184b62b1bb13d32",
+  "response_sha256": "d5b2c07e3dfd27f924ca617a1592190893c4219d18971d126f13f3788abc66d0",
+  "run_id": "44958987715",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1698_SOURCE_TO_GEOMETRY.md": "d836e0ae5b51f74a1b0fbb715be68cfe9e3554ed",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1698_source_to_geometry.py": "da5b4abe959587484a1a913979a3c6964eeed5e2",
+    "handoff/original_ledger_rows.json": "423ffe6a1fe9c41766a3abe7176999b69a3ee4a7",
+    "handoff/replay.json": "0ddf6305adfd187629b01d1a366555e19fd52b40",
+    "handoff/v1698_75_emitter.py": "a9bc54aac82a6c4b120fb794fc5e6d16172afd83",
+    "handoff/v1698_75_validator.py": "7448b1813a19f0ab43289de99ad70831cc63301b",
+    "handoff/v1698_77_postmortem.md": "097090636800820206f81d2cae1315b98dfd7600"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "ed9eacfb72e75f609dc6ea9fe85a0415f3bb2c44"
+}
