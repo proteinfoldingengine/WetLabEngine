@@ -1,0 +1,133 @@
+name: Verify remote-port archives and original ternary child calls
+on:
+  push:
+    branches: [gpt/v1686-recombination-audit-20261118]
+    paths: ['.github/workflows/uqcf-fixed-port-readback.yml']
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+jobs:
+  archive-readback:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Read and verify the three immutable historical review archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 "$SCI/readback_port_archives.py"
+  ternary-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Reproduce two original paths and direct child calls
+        run: |
+          python3 "$SCI/readback_ternary_child.py" > ternary.json
+          echo "TERNARY_RECEIPT_B64=$(base64 -w0 ternary.json)"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ternary-child-replay
+          path: ternary.json
+          if-no-files-found: error
+  ternary-review:
+    needs: ternary-replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Challenge scope and historical child calls
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_ternary_child.py" review ternary_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ternary-child-review
+          path: ternary_review
+          if-no-files-found: error
+  ternary-publication:
+    needs: ternary-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: ternary-child-review
+          path: ternary_review
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: ternary-child-replay
+          path: earlier
+      - name: Reproduce the trace and check the raw independent review
+        run: |
+          python3 "$SCI/readback_ternary_child.py" > ternary.json
+          cmp ternary.json earlier/ternary.json
+          python3 "$SCI/review_ternary_child.py" audit ternary_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ternary-child-publication
+          path: ternary_review/publication_audit.json
+          if-no-files-found: error
