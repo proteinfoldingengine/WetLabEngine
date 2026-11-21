@@ -1,0 +1,117 @@
+name: Verify V1698 source and geometry dependencies
+on:
+  push:
+    branches: [gpt/v1686-recombination-audit-20261118]
+    paths: ['.github/workflows/uqcf-v1698-source-to-geometry.yml']
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  OPENBLAS_NUM_THREADS: '1'
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1698_source_to_geometry.py
+            /Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1698_75_validator_failure_record_extraction_final_alignment_package.zip
+            /Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1698_76_multi_mode_full_stack_ledger_replication_run_package.zip
+            /Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1698_77_multimode_replication_postmortem_freeze_package.zip
+      - name: Replay the historical code and reconstruct the archived comparisons
+        run: |
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          python3 -m pip install --disable-pip-version-check numpy==2.3.5
+          mkdir -p handoff
+          python3 "$SCI/check_v1698_source_to_geometry.py" handoff > handoff/replay.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: v1698-source-to-geometry-replay
+          path: handoff
+          if-no-files-found: error
+
+
+  argument-review:
+    needs: replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1698_source_to_geometry.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1698_SOURCE_TO_GEOMETRY.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_v1698_source_to_geometry.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_common_field.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: v1698-source-to-geometry-replay
+          path: handoff
+      - name: Independently adjudicate the mathematical and software claims
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_v1698_source_to_geometry.py" review review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v1698-source-to-geometry-review
+          path: review_evidence
+          if-no-files-found: error
+
+
+  replay-publication:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1698_source_to_geometry.py
+            /Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1698_75_validator_failure_record_extraction_final_alignment_package.zip
+            /Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1698_76_multi_mode_full_stack_ledger_replication_run_package.zip
+            /Tmp/TOE/Einstein_12_V1698_valid_only_slow_atlas_closure_mp4_package/WorkProduct /V1698_77_multimode_replication_postmortem_freeze_package.zip
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1698_SOURCE_TO_GEOMETRY.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_v1698_source_to_geometry.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_common_field.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: v1698-source-to-geometry-replay
+          path: earlier
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: v1698-source-to-geometry-review
+          path: review_evidence
+      - name: Verify the exact replay bytes and read back the independent review
+        run: |
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          python3 -m pip install --disable-pip-version-check numpy==2.3.5
+          mkdir -p handoff
+          python3 "$SCI/check_v1698_source_to_geometry.py" handoff > handoff/replay.json
+          diff -r earlier handoff
+          python3 "$SCI/review_v1698_source_to_geometry.py" audit review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: v1698-source-to-geometry-publication
+          path: |
+            handoff/replay.json
+            review_evidence/publication_audit.json
+          if-no-files-found: error
