@@ -1,0 +1,25 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "2be9a6e464b1dabb00f91ebc6e63b74d2b862854",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "3720b2716e9cd1fc12e80f7e2ff2bdaa7c71d9a6833260f75730867e69b1ec6b",
+  "request_sha256": "08228e8a3833650b8221423f9ed3e7d5b7e69a5d80237968b8ad5627c138f7e9",
+  "response_sha256": "ca5adde58671466cb23483459f5c147c09bbcca9a548d7eb53278a2c69004659",
+  "run_id": "44915748265",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/PROOFS.md": "fd92415cc08e83858d4368047721c2bb27f9e500",
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py": "9b71ce47bbef83132f00270f8a9a19e7721864d6",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md": "0c8223367caf4d81dd1fe5a33a4e94d092f1aac4",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py": "b18f52109ccff9c7dc77542d3b8f3e5d5989102a",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/COMMON_FIELD.md": "79f295f93bd4b35d6382ffa5280e948c348c9358",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/LOSS_SUPPORT.md": "3e25e54be68c827bc9d945ca976d06a043fe1354",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_loss_support.py": "6e26973f70f4a54d5fbc66b26e716efda2f17212",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/loss_support_results.json": "fc1bffe06616376b41e234ece21a25d399afeebc"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "2be9a6e464b1dabb00f91ebc6e63b74d2b862854"
+}

@@ -1,0 +1,21 @@
+{
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "Existing declared model and empirical premises are inherited.",
+    "Finite counts in the bounded enumeration cannot prove arbitrary size; the general result relies on the algebraic proof.",
+    "Actual physical readout, active state update, and the event selector remain open."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "Open. The mathematical availability of the lost component in other views is proven, but an event selector and a physical mechanism to read or record this component as a changed local state are not provided.",
+  "proof_checks": [
+    "Argument reconstruction: For any finite rooted tree, deleting leaf h of M moves its charge to parent g via P_ME. The residual is D x_M = q(\u03b4_h - \u03b4_g) with q = x_M(h). Inclusion I_MX embeds this into X. Projection P_XV to V yields q(\u03b4_h - \u03b4_g) if h \u2208 V (since g \u2208 V by ancestor closure), and 0 otherwise (since h and g map to the same retained ancestor). This confirms the exact set of nonzero holders is {V : h \u2208 V} for q \u2260 0.",
+    "Unit-conductance Green step: The potential f(z) = q * 1[h is an ancestor of z] on V has Laplacian q at h and -q at g, exactly matching P_XV d. This confirms the exact response step.",
+    "Old-amplitude recovery: Depends exactly on overlap source compatibility. For J = M \u2229 V, h is a leaf of J. Thus q = P_MJ x_M(h) = P_VJ x_V(h), which is the sum of x_V(z) over V-descendants of h.",
+    "Passive invariance: Depends exactly on coverage preservation (union U is unchanged) and initial compatible response classes. By O2-O4, the glued source and response on U remain identical.",
+    "Mean-centering vs gauge: Adding a constant to a potential is a gauge change, but a unit balanced source dipole changes the physical drop. Independent mean-centering fails because pushing (1,1,1) on o-h-w to (o,h) gives (1,2); local mean-centering gives a drop of 1/2, whereas global gives 0.",
+    "Bounded enumeration: check_loss_support.py successfully tests h internal to X but a leaf of M, proper union, multiple holders, signed cancellation, and nonzero negative q (-2). Rational column checks confirm the matrix identities.",
+    "Prior results: Statements about signed source gluing, subtree totals, and response classes were already established in O2-O4."
+  ],
+  "verdict": "ACCEPTED"
+}
