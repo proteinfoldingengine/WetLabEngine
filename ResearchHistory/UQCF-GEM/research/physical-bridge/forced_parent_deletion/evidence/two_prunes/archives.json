@@ -1,0 +1,61 @@
+{
+  "archives": [
+    {
+      "bytes": 844,
+      "id": 14724390431,
+      "members": {
+        "publication_audit.json": "e77d540970c0eef9a625dad17aa4de2e6b891a8cb90e89d16c070b386791380d"
+      },
+      "name": "publication",
+      "sha256": "3454fa111a9a16413ea5f7fa6b6faf6982549902db73a524e571c616cda5db1e"
+    },
+    {
+      "bytes": 38141,
+      "id": 14723948245,
+      "members": {
+        "model_metadata.json": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+        "prompt.txt": "baffb92faafac6dad003c3e097d00c5b0a8eb0d2dc4c42c11eb86fb580543ae9",
+        "receipt.json": "9ca066b7aa6fdeb1b4e65acd393c19e602a4f3c94dda7e360b3c6974cc372799",
+        "request.json": "69e11f82818a3923ab48a071366dd4a077d3f1be90bb1c7d2600ef9d31a6ef56",
+        "response.json": "8bce3c261e0a9324cd2fd923c761aa0a194a59f5304c1e1a079b6d37fd706dce",
+        "review.txt": "e8d0ca5948bae2672d1c44cae838d60736a52651770d75a14ce4922c7b72a2c4"
+      },
+      "name": "review",
+      "sha256": "257a306c9363d6ae36498539730b2054722d3b49626bd0b7f3df78cbff9c1ddd"
+    },
+    {
+      "bytes": 1654,
+      "id": 14723788579,
+      "members": {
+        "result.json": "8dc3071541e5eb334e8c70fca8d253f6ef75efe0fdf5759d3f0cbeda34b17da3"
+      },
+      "name": "replay",
+      "sha256": "a9ed196828b2833531181d5868ed7ef50333b44fbfc2c318207f5a918c87ede8"
+    }
+  ],
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 136976699966,
+      "name": "exact-replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 136976819993,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 136976931989,
+      "name": "replay-publication"
+    }
+  ],
+  "logs": {
+    "argument-review": "2e343fd556b76f6ade642f4d695b18bf4ec745ced65390403d22d917981fbbf8",
+    "exact-replay": "431cfd542c47d41149441d754c0189eee786fa0cc3838cadb2e524e7751b8088",
+    "replay-publication": "49fade3d2723ab5e0bb556f27a0ef2dd6d9dca90bcfdf8898a3184af452c89bd"
+  },
+  "logs_sha256": "b63f6e64d5ea72bb625956d2139c19819c4487aa1bf0e8c2d11a504f5e22a819",
+  "run": 44947103700,
+  "sha": "78f51556e71cdaffb452d7433d3405b06c4b5aa5"
+}

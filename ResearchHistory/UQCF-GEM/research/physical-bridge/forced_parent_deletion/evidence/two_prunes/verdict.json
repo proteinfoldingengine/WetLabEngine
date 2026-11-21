@@ -1,0 +1,19 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The fixed-operator full contrast remains unexplained under the tested literal input binding.",
+    "The scalar match does not identify the grouping or transfer history and is not established as a universally identifying measurement.",
+    "Actual event selection, physical receiver access, and gravitational interpretation remain open."
+  ],
+  "proof_checks": {
+    "denominator_21": "Reconstructed exact integer scaling using denominator 21 for vectorized execution of the rational functions.",
+    "ordered_histories": "Verified 148,104 ordered histories per arm, derived from 396 first choices multiplied by 374 second choices (110 same operand + 264 different operands).",
+    "two_edit_witness": "Confirmed the two-edit witness produces q[3]=-21 and q[2]=1 (scaled to -441 and 21), yielding the exact slopes -63 and +3.",
+    "archive_equality_vs_slope": "Distinguished full right-operand equality (identifying the entire contrast matrix) from a scalar match (matching only the baseline-subtracted slope at a specific port).",
+    "frozen_replay": "The frozen replay exhaustively compares the complete deterministic domain of two-prune edits against the two pinned historical operands."
+  },
+  "native_bridge_status": "OPEN"
+}

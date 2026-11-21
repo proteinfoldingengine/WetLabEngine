@@ -1,0 +1,7 @@
+# Review and replay of the two-prune result
+
+Gemini gemini-3.1-pro-preview returned ACCEPTED with empty findings and native bridge OPEN on revision 78f51556e71cdaffb452d7433d3405b06c4b5aa5. The [successful run](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/44947103700) replayed all 296,208 histories and published a fresh exact replay. Raw response SHA-256 8bce3c261e0a9324cd2fd923c761aa0a194a59f5304c1e1a079b6d37fd706dce. The download verification matched the three artifact sizes and digests, ZIP CRCs, exact scientific result bytes and the prompt, request and response hashes.
+
+The [first run](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/44946784296) passed exact replay. Its response expressed mathematical acceptance but used strings in place of arrays and failed the workflow schema. The [original archive](evidence/two_prunes/review_attempt1.zip) is preserved. The retry clarified those fields and compacted the review prompt. The argument, checker and full replay domain were preserved. The [additional two-port check](TWO_PORT_CONTROL.md) is a locally verified post-freeze control.
+
+[Proof](TWO_PRUNES.md) · [verdict](evidence/two_prunes/verdict.json) · [raw review](evidence/two_prunes/review.zip) · [replay](evidence/two_prunes/replay.zip) · [publication archive](evidence/two_prunes/publication.zip) · [audit](evidence/two_prunes/audit.json) · [log archive](evidence/two_prunes/logs.zip) · [checksums](evidence/two_prunes/archives.json).
