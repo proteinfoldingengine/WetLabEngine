@@ -1,0 +1,26 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "d014a0a41eaec3e354d0b3141a2065f5c1252ab3",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "53ece06977f3f3f751ded10ecd7277a371681002a48bf81d0a5510c5df1172b4",
+  "request_sha256": "f530a54dc13677e529635ee90396d7486e00afc86925aaf28a2e95f64be12065",
+  "response_sha256": "ed586821b95834cf06df5957fc478cefe104317f07b5f47a05c6cd069dbc8033",
+  "run_id": "44978506960",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/docs/RESULTS.json": "ac8eb10ed90360fee6dcc0f170f19fffd0d74116",
+    "ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/source_axiom_canary.py": "620a8a64ed93d8c30a6e04730ed5bfc0e6e1252a",
+    "ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_generation.py": "afd5a68ce74f7f80f49b6fd6307ebb0681182bf5",
+    "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/README.md": "c939816a8b5b528fad2e82846e47dc7104cdc247",
+    "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py": "90f76146e7f6a875531a941290ad15679a8fb52f",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_B2_SOURCE_INTERFACE.md": "ff5a82b6eb575d94df794c7a1e897a528cf03c58",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION.md": "c927a82fef384bdbc40bfa679cf2b2f404a98cb1",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION_RESULT.md": "3a680f917bed6e9d4e9bea19ffc5bb05bc8a2765",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_p1_b2_source_interface.py": "ade2ef4a6d8e408bb7438202a69fbaa3cc988f32",
+    "handoff/replay.json": "9c9bb28bf00e80d2057128a36dd65d46240f214b"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "d014a0a41eaec3e354d0b3141a2065f5c1252ab3"
+}
