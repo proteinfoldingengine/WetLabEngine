@@ -1,4 +1,4 @@
-name: Verify the first receiver write and the controller phase
+name: Verify receiver writes across actual fork rise events
 on:
   push:
     branches: [gpt/v1686-recombination-audit-20261118]

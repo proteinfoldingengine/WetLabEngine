@@ -31,6 +31,57 @@ def load_module(name, path, expected):
     return module
 
 
+def rise_control(entries, writer, atom, verifier):
+    """Compare stored and freshly initialized continuations after each observed global rise."""
+    summary = {}
+    witness = None
+    for entry in entries:
+        if (entry["b"], entry["c"]) != (2, 2):
+            continue
+        k = entry["k"]
+        graph = entry["graph"]
+        states = graph["states"]
+        q = [graph["attained_profiles"][i] for i in graph["profile_ids"]]
+        counts = {"rise_visits": 0, "different_next_when_both_exist": 0,
+                  "different_first_receiver_including_silence": 0, "different_first_receiver_both_exist": 0}
+        for row in entry["normalizations"]:
+            path = row["path"]
+            for pos, (i, j) in enumerate(zip(path, path[1:]), 1):
+                if max(q[j]) != max(q[i]) + 1:
+                    continue
+                before, after = states[i], states[j]
+                (source, bit), = [(n, x^y) for n,(x,y) in enumerate(zip(before,after)) if x != y]
+                source_views = [[v for v in range(7) if mask >> v & 1] for mask in before]
+                cert = atom.atomic(PARENTS, source_views, source, bit.bit_length()-1)
+                verifier.verify_atomic(cert)
+                assert [sum(1 << v for v in view) for view in cert["after"]] == after
+                assert cert["trigger"] and cert["delta_h"] == 1
+                history = [states[t] for t in path[pos:]]
+                fresh = writer.normalize(after,2,2,k,q[j])
+                counts["rise_visits"] += 1
+                if len(history) > 1 and len(fresh) > 1 and history[1] != fresh[1]:
+                    counts["different_next_when_both_exist"] += 1
+                for c in range(k):
+                    if c == source:
+                        continue
+                    observed = next((s[c] for s in history if s[c] != after[c]), None)
+                    replayed = next((s[c] for s in fresh if s[c] != after[c]), None)
+                    if observed != replayed:
+                        counts["different_first_receiver_including_silence"] += 1
+                        if observed is not None and replayed is not None:
+                            counts["different_first_receiver_both_exist"] += 1
+                    if (k, row["state"], pos, c) == (3, 0, 8, 1):
+                        assert before == [15,1,115] and after == [15,1,113]
+                        assert (source, bit, observed, replayed) == (2,2,17,3)
+                        witness = {"representative":0, "position":pos, "source_certificate":cert,
+                                   "receiver_index":c, "original_first_receiver_mask":observed,
+                                   "fresh_first_receiver_mask":replayed,
+                                   "stored_suffix":history, "fresh_continuation":fresh}
+        summary[str(k)] = counts
+    assert witness and [summary[k]["rise_visits"] for k in ("2","3")] == [6,3]
+    return {"counts":summary,"counterexample":witness}
+
+
 def run(out):
     atom = load_module("source_atom", ATOM/"engine.py", "c10ac57f988a439144e21898bd2b33ece0838a9b")
     verifier = load_module("source_verify", ATOM/"verify.py", "91cd1e507e955683e744fbdbb0745cac19d66cb3")
@@ -38,7 +89,8 @@ def run(out):
     sys.path.insert(0, str(FORK.resolve()))
     writer = load_module("original_writer", FORK/"producer.py", "e73a02ee05e11f0c6b041b783ba6ff9738271073")
     archive = read_blob(FORK/"evidence/science/scientific/CERTIFICATE.json.gz", "3ed66277766b9836804ed9ec222d9728009b2b67")
-    entry = next(e for e in json.loads(gzip.decompress(archive))["entries"] if (e["b"], e["c"], e["k"]) == (2,2,2))
+    entries = json.loads(gzip.decompress(archive))["entries"]
+    entry = next(e for e in entries if (e["b"], e["c"], e["k"]) == (2,2,2))
     graph = entry["graph"]
     states = list(map(tuple, graph["states"]))
     ids = {s: i for i, s in enumerate(states)}
@@ -139,7 +191,7 @@ def run(out):
                           "stored_visits":raw})
     samples = [c for c in cases if not c["swap_branch_names"] and c["marked"]==[2,5] and c["C_index"]==0]
     assert samples[0]["unrestricted_silent_terminal"] == samples[1]["unrestricted_silent_terminal"] == (55,91)
-    result = {"cases":cases,"matched_preparations_in_fixed_numbering":8,"distinct_fresh_paths_checked":len(membership_paths)}
+    result = {"archived_global_rises":rise_control(entries, writer, atom, verifier), "cases":cases,"matched_preparations_in_fixed_numbering":8,"distinct_fresh_paths_checked":len(membership_paths)}
     out.mkdir(parents=True, exist_ok=True)
     data = (json.dumps(result, sort_keys=True, indent=2)+"\n").encode()
     (out/"first_write_certificate.json").write_bytes(data)
