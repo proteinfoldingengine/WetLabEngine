@@ -1,4 +1,4 @@
-name: Check star ordering and validate its independent review
+name: Verify the frozen star ordering result
 on:
   push:
     branches: [gpt/v1686-recombination-audit-20261118]
