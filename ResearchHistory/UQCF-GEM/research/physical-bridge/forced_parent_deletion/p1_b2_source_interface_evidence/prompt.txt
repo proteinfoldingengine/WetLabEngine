@@ -1,0 +1,3133 @@
+Independently verify the scoped source-interface audit from the frozen documents and
+exact replay. First give the strongest positive reading of the v15.39 closed-face source: check
+that delta is a B2 face column, that B1 delta is zero, that the higher-incidence kappa channel is
+nonnull, and that the archived ledger reports the stated additivity, reversal, covariance and
+four-size coverage. Then challenge its use as the missing source for the reviewed P1 work-to-loop
+chain. Inspect whether the v15.39 source axiom is derived or approved, whether it uses pruning,
+whether its coarse vertex q channel carries a closed face, how v15.40 constructs centered face
+sources, and what v15.43 acquisition actually imports and consumes. Check the published source-
+correspondence status and the P1 proof's supplied periodic catalog, four-corner grades and label
+association. Decide whether the inspected dependency closure contains an inherited provenance-
+preserving map from a retained P1 vertex-grade record to the B2/periodic source. Do not claim a
+universal no-go: noninspected or newly derived interfaces remain possible. Preserve the reviewed
+conditional P1 work-to-connection result. Physical event binding, receiver ownership and access
+remain open. Treat the exact replay as evidence and do not claim you executed it.
+Return one JSON object with these exact field types: {"verdict":"ACCEPTED","findings":[],
+"missing_assumptions":[],"counterexamples":[],"limitations":[],"proof_checks":{},
+"native_bridge_status":"OPEN"}. For ACCEPTED leave findings, missing_assumptions and
+counterexamples empty and use substantive string values in proof_checks. Use REVISE or FAIL for
+any actual defect.
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_B2_SOURCE_INTERFACE.md
+# P1 retained grade versus the inherited B2 higher-incidence source
+
+This audit follows the reviewed [P1 work-to-connection result](P1_WORK_CONNECTION_RESULT.md). That result exposed a precise remaining premise: its four-corner grade family and association to the periodic catalog were supplied. The closest archived source-shaped object is the v15.39/v15.40 face-boundary construction. This document tests the strongest positive use of that object and locates the first unsupported correspondence.
+
+## Source boundary
+
+- **INHERITED:** FCV P1 contracts a vertex grade by adding the deleted child's amount to its surviving parent. The reviewed work result then computes a source-sensitive work table from retained grades.
+- **INHERITED historical software:** v15.39 defines a lifted occurrence with edge input \(\delta\), coarse vertex channel \(q=B_1\delta\), and higher-incidence channel \(\kappa\) proportional to a face-boundary column of \(B_2\). v15.40 defines centered face sources and a global-balance response. v15.43 acquires those v15.40 sources and responses and sends their work and fields to the carrier and loop evaluator.
+- **SUPPLIED in the reviewed P1 connection control:** the four-corner vertex grades, periodic address association, fixed deletion, and association of 25 work labels to 25 periodic sites.
+- **ACCEPTED INPUT:** actual atemporal occurrence. It does not identify any v15.39 occurrence with the tested P1 deletion.
+
+## 1. Strongest positive correspondence candidate
+
+The v15.39 closed-face construction is genuinely four-supported and structured. For an oriented face \(f\),
+
+\[
+\delta_f=B_2e_f,\qquad B_1\delta_f=B_1B_2e_f=0.
+\]
+
+The archived ledger verifies at \(L=5,7,9,11\) that the closed face has delta equal to the corresponding \(B_2\) column, its coarse \(q\) is null, its higher-incidence \(\kappa\) is nonzero, and the construction is additive, reversible and covariant under the tested generators. The v15.40 acquisition later uses centered face sources and its selected global-balance response to recover the periodic square neighbor relation. These facts make the B2 path a concrete candidate for the multi-address structure missing from the supplied four-corner control.
+
+## 2. The candidate is not a P1 retained-source bridge
+
+The same immutable evidence fixes the boundary.
+
+1. The v15.39 ledger says source_axiom_derived_from_frozen_ontology is false, source_axiom_user_approved_before_execution is true, and uses_pruning is false.
+2. The only archived map from the closed edge source to the coarse vertex channel is \(q=B_1\delta\), and for the four-supported closed-face source that value is identically zero.
+3. The v15.43 acquisition imports the v15.40 response generator and response-geometry evaluator. It constructs centered_source(L,label) independently for each periodic face and does not consume an FCV P1 carrier, a P1 contraction, or a retained vertex-grade record.
+4. The v15.43 published interpretation marks source correspondence NOT_EVALUATED.
+5. The reviewed P1 work-to-connection proof explicitly supplies the periodic address catalog, four-corner grade preparation and label association.
+
+Therefore the inspected code contains two distinct channels:
+
+\[
+\text{P1 retained vertex grade}\longrightarrow \text{retained work},
+\]
+
+and
+
+\[
+\text{approved face occurrence}\longrightarrow
+(\delta_f,\;q=0,\;\kappa_f)\longrightarrow
+\text{periodic response geometry}.
+\]
+
+No inherited operation in the inspected dependency closure maps the first channel into the second while preserving source provenance. The equality \(B_1B_2=0\) does not transfer a P1 record; it erases the closed face from the coarse vertex channel. Treating \(\kappa_f\) or the periodic face label as the P1 record would introduce precisely the event/state correspondence that remains to be derived.
+
+This is not a no-go theorem against every possible interface. It is a source-boundary result for the inspected implementations. A new eligible route must exhibit an inherited event operation that produces a nonzero higher-incidence output from the retained P1 record, or an inherited source output already carrying both the retained vertex-grade provenance and the required multi-address relation.
+
+## 3. Consequence for the native-consumer trace
+
+The reviewed P1 connection result remains positive and important: once the supplied four-corner family is present, the inherited pruning changes the existing work table, opens the original connection builder, and reaches the original loop evaluator. This audit does not retract that conditional chain.
+
+It does show that the nearest archived four-support generator does not remove the supplied-source premise. Its source axiom was approved rather than derived, its closed-face coarse vertex channel is zero, and v15.43 reacquires independent centered face sources. The first unsupported correspondence is now explicit:
+
+\[
+\boxed{\text{retained P1 vertex-grade record}
+\;\not\!\!\xrightarrow{\text{inspected inherited code}}\;
+\text{v15.39/v15.40 face-incidence source}.}
+\]
+
+Physical receiver ownership, actual event binding and access to the loop record remain open. No geometry, probability law, clock, instrument or reader is added.
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_p1_b2_source_interface.py
+"""Audit whether the archived B2 source is an inherited P1 source interface."""
+
+from __future__ import annotations
+
+import ast
+import hashlib
+import json
+from pathlib import Path
+import sys
+
+
+BASE = Path("ResearchHistory/UQCF-GEM")
+PHYS = BASE / "research/physical-bridge/forced_parent_deletion"
+PINS = {
+    BASE / "demos/v15.39-higher-incidence-source-axioms/source_axiom_canary.py":
+        "620a8a64ed93d8c30a6e04730ed5bfc0e6e1252a",
+    BASE / "demos/v15.39-higher-incidence-source-axioms/docs/RESULTS.json":
+        "ac8eb10ed90360fee6dcc0f170f19fffd0d74116",
+    BASE / "demos/v15.40-global-balance-geometry-specificity/response_generation.py":
+        "afd5a68ce74f7f80f49b6fd6307ebb0681182bf5",
+    BASE / "demos/v15.43-certified-response-geometry/acquire.py":
+        "90f76146e7f6a875531a941290ad15679a8fb52f",
+    BASE / "demos/v15.43-certified-response-geometry/README.md":
+        "c939816a8b5b528fad2e82846e47dc7104cdc247",
+    PHYS / "P1_WORK_CONNECTION.md":
+        "c927a82fef384bdbc40bfa679cf2b2f404a98cb1",
+    PHYS / "P1_WORK_CONNECTION_RESULT.md":
+        "3a680f917bed6e9d4e9bea19ffc5bb05bc8a2765",
+    BASE / "foundational-closure-verification/PROOFS.md":
+        "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+}
+
+
+def git_blob(data: bytes) -> str:
+    return hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest()
+
+
+def function_text(path: Path, name: str) -> str:
+    tree = ast.parse(path.read_text())
+    for node in tree.body:
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name == name:
+            return ast.unparse(node)
+    raise AssertionError(f"missing function {name} in {path}")
+
+
+def run(out: Path) -> dict:
+    out.mkdir(parents=True, exist_ok=True)
+    source_pins = []
+    for path, expected in PINS.items():
+        data = path.read_bytes()
+        actual = git_blob(data)
+        assert actual == expected, (path, actual)
+        target = out / (path.parent.name + "__" + path.name)
+        target.write_bytes(data)
+        source_pins.append({
+            "path": str(path),
+            "blob": actual,
+            "sha256": hashlib.sha256(data).hexdigest(),
+        })
+
+    ledger = json.loads(
+        (BASE / "demos/v15.39-higher-incidence-source-axioms/docs/RESULTS.json").read_text()
+    )
+    protocol = ledger["source_protocol"]
+    assert ledger["source_axiom_derived_from_frozen_ontology"] is False
+    assert ledger["source_axiom_user_approved_before_execution"] is True
+    assert ledger["uses_pruning"] is False
+    assert protocol["all_B1_B2_zero"] is True
+    assert protocol["closed_face_coarse_q_null"] is True
+    assert protocol["closed_face_higher_incidence_source_nonnull"] is True
+    assert protocol["source_additivity_exact"] is True
+    assert protocol["source_reversal_exact"] is True
+    assert protocol["source_carrier"] == "Q_PLUS_BOUNDARY_INCIDENCE_PROVENANCE"
+    assert all(
+        row["closed_face_delta_is_B2_column"]
+        and row["closed_face_coarse_q_null"]
+        and row["closed_face_higher_incidence_source_nonnull"]
+        for row in protocol["size_rows"]
+    )
+
+    source_path = BASE / "demos/v15.39-higher-incidence-source-axioms/source_axiom_canary.py"
+    lift = function_text(source_path, "source_lift")
+    assert "q = _int_matvec(c.B1, delta)" in lift
+    assert "c.B2[e, face_index]" in lift
+    assert "kappa = _scale(a * sigma, boundary)" in lift
+
+    generation_path = BASE / "demos/v15.40-global-balance-geometry-specificity/response_generation.py"
+    centered = function_text(generation_path, "centered_source")
+    family = function_text(generation_path, "_unit_family")
+    assert "source[face_index] += 1" in centered
+    assert "centered_source(L, label)" in family
+
+    acquire_path = BASE / "demos/v15.43-certified-response-geometry/acquire.py"
+    acquisition = function_text(acquire_path, "_project_modules")
+    imports = {
+        alias.name
+        for node in ast.parse(acquire_path.read_text()).body
+        if isinstance(node, ast.Import)
+        for alias in node.names
+    }
+    assert "generation.response_family" in acquisition
+    assert "geometry_module.construct_response_geometry" in acquisition
+    assert not any("lineage" in name.lower() or "prun" in name.lower() for name in imports)
+
+    readme = (BASE / "demos/v15.43-certified-response-geometry/README.md").read_text()
+    assert "Source correspondence is NOT_EVALUATED" in readme
+
+    proof = (PHYS / "P1_WORK_CONNECTION.md").read_text()
+    assert "SUPPLIED. The same-Genesis trees, periodic address catalog, source preparations" in proof
+    assert "Building the required multi-address preparation from a native source" in proof
+
+    return {
+        "source_pins": source_pins,
+        "positive_candidate": {
+            "closed_face_delta_is_B2_column_all_sizes": True,
+            "closed_face_higher_incidence_nonnull": True,
+            "additive_and_reversible": True,
+            "coarse_vertex_q_is_B1_delta": True,
+        },
+        "boundary": {
+            "source_axiom_derived_from_frozen_ontology": False,
+            "source_axiom_user_approved_before_execution": True,
+            "uses_pruning": False,
+            "closed_face_coarse_q_null": True,
+            "v1543_source_correspondence": "NOT_EVALUATED",
+            "v1543_acquisition_consumes_p1": False,
+            "p1_four_corner_preparation_supplied": True,
+        },
+        "conclusion": (
+            "the inspected B2 higher-incidence source does not provide an inherited "
+            "P1-retained-grade-to-periodic-source correspondence"
+        ),
+        "native_bridge_status": "OPEN",
+    }
+
+
+if __name__ == "__main__":
+    print(json.dumps(run(Path(sys.argv[1])), allow_nan=False, indent=2, sort_keys=True))
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION.md
+# When an exact P1 work output can enter the archived connection
+
+This follows the [same-pruning work result](P1_GRADE_WORK_RESULT.md). It tests the next actual caller, v15.43's carrier builder and field evaluator. The question is whether the work table produced using the unit-tree Green response can enable that connection after an event on the same retained tree. A restriction on single-address probes and a matched four-address control address the same caller.
+
+## Inherited calls and supplied objects
+
+- INHERITED. FCV `lineage.Pruning.aggregate`, the unit-tree inverse of the v16.22 `root_laplacian`, and the v15.40 `construct_response_geometry` work and minimum-neighbor operations. The [earlier proof](P1_GRADE_WORK.md) pins their implementations and gives the exact sum of squared subtree contrasts on the removed edges.
+- INHERITED historical software. [v15.43 `build_carrier` and `evaluate_field`](https://github.com/proteinfoldingengine/WetLabEngine/tree/096fe37e2efef60452e4d22d0afbba6c24115b0d/ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry) use the v15.42 operational complex and tangent/cotangent protocol. The carrier requires the complete minimum-neighbor graph, degree four, two chordless four-cycles through each edge, and the specified tangent and baseline checks. On an accepted carrier the field evaluator calls the original edge transport and four-factor differentiated holonomy. These are the original constructors in a bounded exact replay.
+- SUPPLIED. The same-Genesis trees, periodic address catalog, source preparations, fixed deletion and association of the 25 work labels with the 25 surviving star sites. The four-corner preparation uses the vertices of an elementary square in the archived five-by-five periodic catalog. This supplies structured grade inputs. It is a test of the archived numerical interface, with no claim that a native process selects this preparation. Actual atemporal occurrence is ACCEPTED INPUT. The tested event and physical identity/access of a receiver remain separate questions.
+
+## Single-address probes cannot supply an induced square
+
+For a common background grade and a common amplitude \(a\ne0\), take preparation \(i\) to add \(a(e_{x_i}-e_o)\). Then the source contrast between \(i,j\) is \(a(e_{x_i}-e_{x_j})\). Its subtree contrasts are \(\pm a\) on the unique path between the endpoints and zero elsewhere. The inherited work formula gives \(a^2d_X(x_i,x_j)\), for unit edges. It is also a weighted tree distance, scaled by \(a^2\), if each edge has a fixed positive response coefficient. After P1 the site \(x_i\) is replaced by its retracted site in \(Y\), so the same form holds on every retained carrier.
+
+Suppose the minimum-neighbor graph had a chordless four-cycle on distinct sites \(1,2,3,4\). Its four edge distances would all be the positive global minimum \(m\), and both diagonals would be strictly larger than \(m\). The three opposite-pair sums would then be \(2m,2m,D_{13}+D_{24}\), in the corresponding order. A tree metric has two equal largest opposite-pair sums. To see this directly, restrict to the subtree of the four sites. Every 1–3 split contributes equally to the three sums. Any 2–2 splits on the subtree separate the same two pairs, since two different equal-size splits are crossing and cannot both be edges of a tree. Such an edge contributes twice its positive length to two sums and zero to the third. These rules prove the equality and contradict the proposed cycle. If any sites coincide with positive amplitude, the off-diagonal minimum is zero and its graph is a union of cliques on the coincidence classes. This again has no chordless four-cycle, and the v15.43 positive-off-diagonal test also fails.
+
+The claim covers a family of equal-amplitude single-address differences on a common background. In particular it covers transporting the single-address form of v15.40's centered sources to a tree response. It also covers arbitrary fixed positive edge lengths within that class. A four-regular nearest graph by itself is insufficient. The five leaves of a star give a complete graph on five vertices, with degree four and zero chordless squares. The original constructor must reject it at the edge-cycle test. The replay holds the fixture size at 25 for a separate single-address case and checks that it rejects at the degree test.
+
+## A matched four-corner control that reaches the original loop call
+
+Let the full tree consist of root \(o\), 25 children \(s_{x,y}\) labeled by the archive's periodic \(5\times5\) catalog, and two children \(u,v\) of \(p=s_{0,0}\). In every preparation label \((x,y)\) add a unit at each of the four sites of the corresponding elementary square, and subtract four at the root. Start from the common positive background 5 at every address. For any preparation whose square contains \(p\), place that one unit on \(u\) in family A and \(v\) in family B, leaving its other three units at their sites. The total and positivity are identical. For every label the potential on the 25 fixed sites is exactly its four-corner indicator, both before and after pruning, when read relative to the matching aggregate of the background. On the site \(p\) this follows from the total in its subtree.
+
+Write \(S_i\) for the four corners at label \(i\) and \(a_i=1[p\in S_i]\). The work on the full tree in either family is exactly
+
+\[
+W_{ij}=|S_i\triangle S_j|+(a_i-a_j)^2.
+\]
+
+The first term uses the 25 fixed star edges. The second uses the one child edge on which the source difference sits. Apply the same P1 deletion of \(u\) in both families. The retained keys agree. In A the grade previously on \(u\) enters its parent and the second term disappears. In B \(u\) carried only the common background, so the second term remains on \(v\). Both post-event fields on the 25 labels are the same. Subsequent deletion of \(v\) removes that term in B and gives identical final work tables. In the square with lower-left site \((0,0)\) the parent starts at grade 5 and ends at 11 in A and 10 in B under the matched event.
+
+In the plain four-corner table, distinct squares sharing a side have work 4, squares sharing only a corner have work 6, and disjoint squares have work 8. These are Hamming distances of the four-corner sets and obey the triangle inequality. The minimum edges are the archive's fifty periodic grid edges with degree four. There are 25 elementary square cycles. Opposite neighbors of a site have pair work 8 while perpendicular neighbors have work 6. Adding the child term raises the weight of eight of the fifty edges, precisely the boundary of the two-by-two set of four preparation labels whose squares contain \(p\). The minimum remains 4 and there are only 42 minimum edges. Thus both fine payloads and the post-event B payload reach `degree_not_four`. After the same event in A the complete input returns to the square graph. We test whether the actual v15.43 builder yields its flat baseline and the actual evaluator runs on the unchanged four-corner field.
+
+On the fixed face \((0,1,6,5)\) use the field for square label \((0,0)\). In the flat identity presentation the two components of the centered derivative are the two opposite-neighbor differences divided by 2. For an edge with unit direction \(d=(d_x,d_y)\), the antisymmetric entry in position \((2,1)\) of the transport derivative is \((\bar q_y d_x-\bar q_x d_y)/2\), with \(\bar q\) the mean endpoint derivative. The scalar parts telescope around the face. Traversing the fixed face adds four equal terms of magnitude \(1/4\) with the same sign, giving the invariant 1 in the archived squared convention. Swapping the oriented frame does not change the invariant. An independent comparison evaluates this formula on every elementary face. A constant field gives zero by the same rule.
+
+## Frozen work and interpretation
+
+The no-go argument, preparation formulas, exact work and edge counts, reject reasons and fixed-face invariant precede the freeze. The replay binds all archived implementation bytes, independently reconstructs the work and each face invariant, checks the admitted and rejected variants, and records the simultaneous terminal and constant-field controls. It exercises the scoped constructors and evaluator as historical software on the declared inputs. The original population, profile projection and historical v15.43 campaign retain their separate scopes.
+
+A single-address grade route into this particular square connection is excluded under the exact tree-response identification. A supplied four-corner preparation can make the same pruning enable the original geometric operation at the same retained order. The frozen calculation fixes the connecting cause inside the software to the P1 loss of the leaf's extra work term, with an identical retained field. Building the required multi-address preparation from a native source, selecting the actual event and justifying access to the output remain open.
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION_RESULT.md
+# A grade-dependent P1 change reaches the archived loop evaluator
+
+November 21, 2026. The [frozen proof and cases](P1_WORK_CONNECTION.md) were replayed at `a7d21ffa55d77d6141a79b9a291a983ff9ddb149`. The [GitHub run](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/44977844379) passed exact replay, Gemini argument review and an independent publication replay.
+
+Using the same fine tree, both supplied source families start with identical work geometry and the same field on all 25 labeled sites. The same P1 deletion removes the child-edge work term in one family. The resulting 50-edge graph passes the original v15.43 connection builder. The same deletion in the other family leaves 42 edges, which triggers the original degree test. Both post-event trees and their 25-site fields agree. The work table alone determines the difference at the connection entry point.
+
+| Case | Minimum-work edges | Original connection result |
+| --- | ---: | --- |
+| Before deletion, either family | 42 | Degree-four test fails |
+| After deletion, grade contrast on the removed child | 50 | Rank two, flat baseline, one gauge orbit |
+| After deletion, grade contrast on the surviving child | 42 | Degree-four test fails |
+
+The original field evaluator produces **17 nonzero differentiated loop invariants across 25 faces** on the admitted carrier. On the fixed square with corners 0, 1, 6 and 5, its invariant is exactly 1. An independent expression in centered differences reproduced all 25 values. A constant field gave 25 zeros. The rejected case stops before loop evaluation. After the second child is removed, the two work tables agree.
+
+For common-background, equal-amplitude single-address probes the work is a tree distance between the retained destinations of the probes. The tree four-point condition excludes the chordless squares required by this particular connection. A five-ray star verifies the distinct issue even with degree four. Its nearest graph is a five-clique and the original constructor rejects it at the square count.
+
+The four-corner preparation and its association to the periodic catalog were supplied for the replay. Its work is a Hamming metric on the multi-address preparations, with one extra binary coordinate when the contrast remains on a child. This specifies the metric type referred to informally as a tree metric in one review check. The four-point condition applies to the single-address theorem. Deriving a native multi-address preparation and showing that a physical receiver owns the loop record remain open.
+
+[Exact replay](p1_work_connection_evidence/replay.json) · [Gemini verdict](p1_work_connection_evidence/review_verdict.json) · [Publication audit](p1_work_connection_evidence/publication_audit.json) · [Artifact verification](p1_work_connection_evidence/readback.json). The archives preserve the twelve pinned source files, raw review and jobs, and the complete per-face invariant table used in this comparison.
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/source_axiom_canary.py
+from __future__ import annotations
+
+from dataclasses import dataclass
+from fractions import Fraction
+from functools import lru_cache
+from pathlib import Path
+import argparse
+import hashlib
+import importlib
+import json
+import sys
+
+REPO_ROOT = Path(__file__).resolve().parents[4]
+V1528 = REPO_ROOT / "ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space"
+V1538 = REPO_ROOT / "ResearchHistory/UQCF-GEM/demos/v15.38-response-axiom-admissibility"
+SPEC = REPO_ROOT / "docs/superpowers/specs/2026-09-19-v1539-higher-incidence-source-axioms-design.md"
+
+BASE_SHA = "825b47b276c6a17df35e6620f6de6630a1d729e2"
+CANDIDATE_KEYS = (
+    "DIRECT_INHERITANCE",
+    "ONE_INCIDENCE_TRANSPORT",
+    "GLOBAL_BALANCE_COMPLETION",
+)
+
+EVIDENCE = {
+    "representation_actions.py": (
+        V1528 / "representation_actions.py",
+        "7260147cd6ca47ec21634172b44b98de726904af",
+    ),
+    "exact_linear.py": (
+        V1528 / "exact_linear.py",
+        "05cc1b8cfec70d501408377b5e44190b259a4514",
+    ),
+    "v15.38-results": (
+        V1538 / "docs/RESULTS.json",
+        "9caa94fe6e700a6684fa9c899b37503a2736bece",
+    ),
+    "v15.39-design": (
+        SPEC,
+        "edabb9837d293f49ff78f007c31c3904bf04c3e5",
+    ),
+}
+
+
+@dataclass(frozen=True)
+class SourceOccurrence:
+    face_index: int
+    edge_index: int
+    amplitude: Fraction
+
+
+@dataclass(frozen=True)
+class LiftedSource:
+    delta: tuple[Fraction, ...]
+    q: tuple[Fraction, ...]
+    kappa: tuple[Fraction, ...]
+    incidence_sign: int
+
+
+@dataclass(frozen=True)
+class CandidateResponse:
+    key: str
+    response: tuple[Fraction, ...]
+    boundary_coordinates: tuple[Fraction, ...]
+    boundary_sector: bool
+    unique_response_ray: bool
+    balance_equation_exact: bool
+
+
+def git_blob(path: Path) -> str:
+    raw = path.read_bytes()
+    return hashlib.sha1(f"blob {len(raw)}".encode() + bytes([0]) + raw).hexdigest()
+
+
+def verify_evidence() -> dict[str, str]:
+    out = {}
+    for key, (path, expected) in EVIDENCE.items():
+        actual = git_blob(path)
+        if actual != expected:
+            raise ValueError(f"evidence drift: {key}: {actual}")
+        out[key] = actual
+    inherited = json.loads((V1538 / "docs/RESULTS.json").read_text())
+    if inherited["status"] != "PRETIME_RESPONSE_AXIOM_ADMISSIBILITY_CONTRACT_CERTIFIED_NONSELECTIVE":
+        raise AssertionError("v15.38 admissibility status drift")
+    if inherited["response_function_selected"]:
+        raise AssertionError("v15.38 unexpectedly selected a response")
+    return out
+
+
+def load_upstream():
+    verify_evidence()
+    p = str(V1528)
+    if p not in sys.path:
+        sys.path.insert(0, p)
+    return importlib.import_module("representation_actions"), importlib.import_module("exact_linear")
+
+
+def _fraction(value) -> Fraction:
+    if isinstance(value, bool) or not isinstance(value, (int, Fraction)):
+        raise TypeError("exact integer or Fraction amplitude required")
+    return Fraction(value)
+
+
+def _zero(n: int) -> tuple[Fraction, ...]:
+    return tuple(Fraction(0) for _ in range(n))
+
+
+def _add(*vectors) -> tuple[Fraction, ...]:
+    if not vectors:
+        raise ValueError("at least one vector required")
+    n = len(vectors[0])
+    if any(len(v) != n for v in vectors):
+        raise ValueError("vector dimension mismatch")
+    return tuple(sum((Fraction(v[i]) for v in vectors), Fraction(0)) for i in range(n))
+
+
+def _scale(a, vector) -> tuple[Fraction, ...]:
+    a = Fraction(a)
+    return tuple(a * Fraction(x) for x in vector)
+
+
+def _int_matvec(matrix, vector) -> tuple[Fraction, ...]:
+    vector = tuple(Fraction(x) for x in vector)
+    rows, cols = matrix.shape
+    if len(vector) != cols:
+        raise ValueError("matrix/vector dimension mismatch")
+    return tuple(
+        sum((Fraction(int(matrix[i, j])) * vector[j] for j in range(cols)), Fraction(0))
+        for i in range(rows)
+    )
+
+
+def source_lift(c, face_index: int, edge_index: int, amplitude) -> LiftedSource:
+    if type(face_index) is not int or not 0 <= face_index < c.B2.shape[1]:
+        raise ValueError("invalid face index")
+    if type(edge_index) is not int or not 0 <= edge_index < c.B2.shape[0]:
+        raise ValueError("invalid edge index")
+    a = _fraction(amplitude)
+    sigma = int(c.B2[edge_index, face_index])
+    if sigma not in (-1, 1):
+        raise ValueError("edge is not an occurrence in the selected face")
+
+    delta = list(_zero(c.B1.shape[1]))
+    delta[edge_index] = a
+    delta = tuple(delta)
+    q = _int_matvec(c.B1, delta)
+    boundary = tuple(Fraction(int(c.B2[e, face_index])) for e in range(c.B2.shape[0]))
+    kappa = _scale(a * sigma, boundary)
+    return LiftedSource(delta, q, kappa, sigma)
+
+
+def compose_sources(sources) -> LiftedSource:
+    sources = tuple(sources)
+    if not sources:
+        raise ValueError("at least one lifted source required")
+    return LiftedSource(
+        _add(*(s.delta for s in sources)),
+        _add(*(s.q for s in sources)),
+        _add(*(s.kappa for s in sources)),
+        0,
+    )
+
+
+def transform_occurrence(actions, c, occurrence: SourceOccurrence, g) -> SourceOccurrence:
+    edge = actions.edge_action(c, g)
+    face = actions.face_action(c, g)
+    return SourceOccurrence(
+        face.image[occurrence.face_index],
+        edge.image[occurrence.edge_index],
+        occurrence.amplitude * edge.sign[occurrence.edge_index],
+    )
+
+
+def _source_protocol_for_size(actions, L: int) -> dict:
+    c = actions.load_frozen_complex(L)
+    f0 = c.face_index[(0, 0)]
+    loop = c.face_loops[(0, 0)]
+
+    typed = []
+    for edge_index, _loop_sign in loop:
+        lifted = source_lift(c, f0, edge_index, Fraction(2, 3))
+        typed.append(all(x == 0 for x in _int_matvec(c.B1, lifted.kappa)))
+
+    identity = actions.D4[0]
+    generators = (
+        actions.CellAutomorphism(identity, (1, 0), L),
+        actions.CellAutomorphism(identity, (0, 1), L),
+        *(actions.CellAutomorphism(m, (0, 0), L) for m in actions.D4),
+    )
+    covariance = True
+    for edge_index, _loop_sign in loop:
+        occurrence = SourceOccurrence(f0, edge_index, Fraction(2, 3))
+        lifted = source_lift(c, occurrence.face_index, occurrence.edge_index, occurrence.amplitude)
+        for g in generators:
+            transformed = transform_occurrence(actions, c, occurrence, g)
+            lifted_transformed = source_lift(
+                c,
+                transformed.face_index,
+                transformed.edge_index,
+                transformed.amplitude,
+            )
+            covariance &= (
+                actions.edge_action(c, g).apply(lifted.delta) == lifted_transformed.delta
+                and actions.vertex_action(c, g).apply(lifted.q) == lifted_transformed.q
+                and actions.edge_action(c, g).apply(lifted.kappa) == lifted_transformed.kappa
+            )
+
+    second_face = c.face_index[(1 % L, 2 % L)]
+    second_edge = c.face_loops[(1 % L, 2 % L)][1][0]
+    first = source_lift(c, f0, loop[0][0], Fraction(2, 3))
+    second = source_lift(c, second_face, second_edge, Fraction(-5, 7))
+    composed = compose_sources((first, second))
+    additive = (
+        composed.delta == _add(first.delta, second.delta)
+        and composed.q == _add(first.q, second.q)
+        and composed.kappa == _add(first.kappa, second.kappa)
+    )
+
+    reversed_first = source_lift(c, f0, loop[0][0], Fraction(-2, 3))
+    reversal = (
+        reversed_first.delta == _scale(-1, first.delta)
+        and reversed_first.q == _scale(-1, first.q)
+        and reversed_first.kappa == _scale(-1, first.kappa)
+    )
+
+    closed_parts = [
+        source_lift(c, f0, edge_index, Fraction(loop_sign))
+        for edge_index, loop_sign in loop
+    ]
+    closed = compose_sources(closed_parts)
+    face_boundary = tuple(Fraction(int(c.B2[e, f0])) for e in range(c.B2.shape[0]))
+    closed_q_null = all(x == 0 for x in closed.q)
+    closed_kappa_four = closed.kappa == _scale(4, face_boundary)
+
+    return {
+        "L": L,
+        "all_B1_kappa_zero": all(typed),
+        "generator_covariance_exact": bool(covariance),
+        "source_additivity_exact": additive,
+        "source_reversal_exact": reversal,
+        "closed_face_delta_is_B2_column": closed.delta == face_boundary,
+        "closed_face_coarse_q_null": closed_q_null,
+        "closed_face_higher_incidence_source_nonnull": any(closed.kappa),
+        "closed_face_kappa_multiple": 4 if closed_kappa_four else None,
+    }
+
+
+
+def _primitive_translations(actions, L: int):
+    identity = actions.D4[0]
+    return tuple(
+        actions.CellAutomorphism(identity, displacement, L)
+        for displacement in ((1, 0), (L - 1, 0), (0, 1), (0, L - 1))
+    )
+
+
+def _edge_adjacency(actions, c, vector) -> tuple[Fraction, ...]:
+    return _add(*(
+        actions.edge_action(c, g).apply(vector)
+        for g in _primitive_translations(actions, c.L)
+    ))
+
+
+def _matrix_sum(ql, matrices):
+    matrices = tuple(matrices)
+    if not matrices:
+        raise ValueError("at least one matrix required")
+    out = matrices[0]
+    for matrix in matrices[1:]:
+        out = ql.add(out, matrix)
+    return out
+
+
+@lru_cache(None)
+def _face_model(L: int):
+    actions, ql = load_upstream()
+    c = actions.load_frozen_complex(L)
+    basis = actions.augmentation_basis(len(c.faces))
+    representations = tuple(
+        actions.restricted_representation(basis, actions.face_action(c, g))
+        for g in _primitive_translations(actions, L)
+    )
+    adjacency = _matrix_sum(ql, representations)
+    defect = ql.add(
+        ql.scale(4, ql.identity(basis.dimension)),
+        ql.scale(-1, adjacency),
+    )
+    return c, basis, adjacency, defect
+
+
+def _canonical_face_coordinates(basis, face_index: int) -> tuple[Fraction, ...]:
+    count = basis.ambient_dimension
+    if type(face_index) is not int or not 0 <= face_index < count:
+        raise ValueError("invalid face index")
+    full = [Fraction(-1, count) for _ in range(count)]
+    full[face_index] += 1
+    return basis.coordinates(tuple(full))
+
+
+def _boundary_from_coordinates(c, basis, coordinates) -> tuple[Fraction, ...]:
+    return _int_matvec(c.B2, basis.combine(coordinates))
+
+
+def _rank_of_columns(ql, columns) -> int:
+    columns = tuple(tuple(Fraction(x) for x in column) for column in columns)
+    if not columns:
+        return 0
+    ambient_dimension = len(columns[0])
+    if any(len(column) != ambient_dimension for column in columns):
+        raise ValueError("column dimension mismatch")
+    rows = tuple(
+        tuple(column[i] for column in columns)
+        for i in range(ambient_dimension)
+    )
+    return ql.rank(rows)
+
+
+def _exact_complex_structure(actions, ql, c) -> dict:
+    boundary_columns = tuple(
+        tuple(Fraction(int(c.B2[e, f])) for e in range(c.B2.shape[0]))
+        for f in range(c.B2.shape[1])
+    )
+    B1_B2_zero = all(
+        all(x == 0 for x in _int_matvec(c.B1, column))
+        for column in boundary_columns
+    )
+
+    cycle_basis = actions.cycle_basis_exact(c.B1.astype(int))
+    boundary_dimension = _rank_of_columns(ql, boundary_columns)
+    horizontal_cycle = tuple(
+        Fraction(1) if kind == "h" and u[1] == 0 else Fraction(0)
+        for u, _v, kind in c.edges
+    )
+    vertical_cycle = tuple(
+        Fraction(1) if kind == "v" and u[0] == 0 else Fraction(0)
+        for u, _v, kind in c.edges
+    )
+    canonical_homology = (horizontal_cycle, vertical_cycle)
+    homology_cycles_closed = all(
+        all(x == 0 for x in _int_matvec(c.B1, cycle))
+        for cycle in canonical_homology
+    )
+    canonical_homology_rank = _rank_of_columns(ql, canonical_homology)
+    combined_rank = _rank_of_columns(
+        ql,
+        boundary_columns + canonical_homology,
+    )
+    homology_dimension = cycle_basis.dimension - boundary_dimension
+    canonical_split = all((
+        B1_B2_zero,
+        homology_cycles_closed,
+        cycle_basis.dimension == c.L * c.L + 1,
+        boundary_dimension == c.L * c.L - 1,
+        homology_dimension == 2,
+        canonical_homology_rank == 2,
+        combined_rank == cycle_basis.dimension,
+        combined_rank == boundary_dimension + canonical_homology_rank,
+    ))
+
+    model_c, face_basis, face_adjacency, _face_defect = _face_model(c.L)
+    if model_c.B2.shape != c.B2.shape:
+        raise ArithmeticError("face model/complex mismatch")
+    adjacency_preserves_boundary = True
+    for i in range(face_basis.dimension):
+        coordinates = tuple(
+            Fraction(1) if j == i else Fraction(0)
+            for j in range(face_basis.dimension)
+        )
+        boundary = _boundary_from_coordinates(c, face_basis, coordinates)
+        transported = _edge_adjacency(actions, c, boundary)
+        expected = _boundary_from_coordinates(
+            c,
+            face_basis,
+            ql.matvec(face_adjacency, coordinates),
+        )
+        if transported != expected:
+            adjacency_preserves_boundary = False
+            break
+
+    return {
+        "B1_B2_zero": B1_B2_zero,
+        "cycle_dimension": cycle_basis.dimension,
+        "boundary_dimension": boundary_dimension,
+        "homology_dimension": homology_dimension,
+        "canonical_homology_rank": canonical_homology_rank,
+        "canonical_cycle_boundary_homology_split_exact": canonical_split,
+        "adjacency_preserves_boundary_sector_exact": adjacency_preserves_boundary,
+    }
+
+
+def solve_unique(ql, matrix, rhs) -> tuple[Fraction, ...]:
+    matrix = ql.matrix(matrix)
+    rhs = tuple(Fraction(x) for x in rhs)
+    n, m = ql.shape(matrix)
+    if n != m or len(rhs) != n:
+        raise ValueError("square system with matching right side required")
+    augmented = tuple(tuple(matrix[i]) + (rhs[i],) for i in range(n))
+    reduced, pivots = ql.rref(augmented, ncols=n + 1)
+    coefficient_pivots = tuple(p for p in pivots if p < n)
+    if coefficient_pivots != tuple(range(n)):
+        raise ValueError("boundary defect operator is not invertible")
+    solution = tuple(reduced[i][n] for i in range(n))
+    if ql.matvec(matrix, solution) != rhs:
+        raise ArithmeticError("exact solve verification failed")
+    return solution
+
+
+@lru_cache(None)
+def _unit_balance_coordinates(L: int, face_index: int) -> tuple[Fraction, ...]:
+    _c, face_basis, _face_adjacency, face_defect = _face_model(L)
+    actions, ql = load_upstream()
+    del actions
+    rhs = _canonical_face_coordinates(face_basis, face_index)
+    return solve_unique(ql, face_defect, rhs)
+
+
+def candidate_response(actions, ql, c, occurrence: SourceOccurrence, key: str) -> CandidateResponse:
+    if key not in CANDIDATE_KEYS:
+        raise ValueError(f"unknown candidate: {key}")
+    lifted = source_lift(
+        c,
+        occurrence.face_index,
+        occurrence.edge_index,
+        occurrence.amplitude,
+    )
+    model_c, face_basis, face_adjacency, face_defect = _face_model(c.L)
+    if model_c.B2.shape != c.B2.shape:
+        raise ArithmeticError("face model/complex mismatch")
+    source_coordinates = _scale(
+        occurrence.amplitude * lifted.incidence_sign,
+        _canonical_face_coordinates(face_basis, occurrence.face_index),
+    )
+
+    if key == "DIRECT_INHERITANCE":
+        coordinates = source_coordinates
+        response = lifted.kappa
+        balance_exact = False
+    elif key == "ONE_INCIDENCE_TRANSPORT":
+        coordinates = ql.matvec(face_adjacency, source_coordinates)
+        response = _edge_adjacency(actions, c, lifted.kappa)
+        balance_exact = False
+    else:
+        coordinates = _scale(
+            occurrence.amplitude * lifted.incidence_sign,
+            _unit_balance_coordinates(c.L, occurrence.face_index),
+        )
+        response = _boundary_from_coordinates(c, face_basis, coordinates)
+        edge_defect_response = _add(
+            _scale(4, response),
+            _scale(-1, _edge_adjacency(actions, c, response)),
+        )
+        balance_exact = edge_defect_response == lifted.kappa
+        if not balance_exact:
+            raise ArithmeticError("ambient global-balance equation failed")
+
+    reconstructed = _boundary_from_coordinates(c, face_basis, coordinates)
+    boundary_sector = reconstructed == response
+    if not boundary_sector:
+        raise ArithmeticError("candidate left canonical boundary sector")
+    return CandidateResponse(
+        key=key,
+        response=response,
+        boundary_coordinates=coordinates,
+        boundary_sector=True,
+        unique_response_ray=True,
+        balance_equation_exact=balance_exact,
+    )
+
+
+def torus_face_distance(c, first, second) -> int:
+    dx = abs(first[0] - second[0])
+    dy = abs(first[1] - second[1])
+    return min(dx, c.L - dx) + min(dy, c.L - dy)
+
+
+def remote_shell(c, source_face) -> tuple:
+    distances = {face: torus_face_distance(c, source_face, face) for face in c.faces}
+    maximum = max(distances.values())
+    return tuple(face for face in c.faces if distances[face] == maximum)
+
+
+def remote_support_square(c, response, source_face) -> Fraction:
+    edges = {
+        edge
+        for face in remote_shell(c, source_face)
+        for edge, _sign in c.face_loops[face]
+    }
+    return sum((Fraction(response[edge]) ** 2 for edge in edges), Fraction(0))
+
+
+def remote_commutator_precursor(
+    c,
+    response,
+    source_face,
+    axis_commutator_square=Fraction(1),
+) -> Fraction:
+    axis_commutator_square = _fraction(axis_commutator_square)
+    if axis_commutator_square < 0:
+        raise ValueError("squared commutator coefficient must be nonnegative")
+    total = Fraction(0)
+    for face in remote_shell(c, source_face):
+        horizontal = [
+            (edge, sign)
+            for edge, sign in c.face_loops[face]
+            if c.edges[edge][2] == "h"
+        ]
+        vertical = [
+            (edge, sign)
+            for edge, sign in c.face_loops[face]
+            if c.edges[edge][2] == "v"
+        ]
+        for h, hs in horizontal:
+            for v, vs in vertical:
+                product = Fraction(hs) * Fraction(response[h]) * Fraction(vs) * Fraction(response[v])
+                total += axis_commutator_square * product * product
+    return total
+
+
+def _edge_defect(actions, c, vector) -> tuple[Fraction, ...]:
+    return _add(_scale(4, vector), _scale(-1, _edge_adjacency(actions, c, vector)))
+
+
+def _candidate_equation_holds(actions, c, key, lifted, response) -> bool:
+    if key == "DIRECT_INHERITANCE":
+        return response == lifted.kappa
+    if key == "ONE_INCIDENCE_TRANSPORT":
+        return response == _edge_adjacency(actions, c, lifted.kappa)
+    if key == "GLOBAL_BALANCE_COMPLETION":
+        return _edge_defect(actions, c, response) == lifted.kappa
+    raise ValueError(key)
+
+
+def _fraction_text(value) -> str:
+    value = Fraction(value)
+    return str(value.numerator) if value.denominator == 1 else f"{value.numerator}/{value.denominator}"
+
+
+def _candidate_covariance_exact(actions, c, occurrence, key, response) -> bool:
+    identity = actions.D4[0]
+    generators = (
+        actions.CellAutomorphism(identity, (1, 0), c.L),
+        actions.CellAutomorphism(identity, (0, 1), c.L),
+        *(actions.CellAutomorphism(m, (0, 0), c.L) for m in actions.D4),
+    )
+    for g in generators:
+        transformed_occurrence = transform_occurrence(actions, c, occurrence, g)
+        transformed_lift = source_lift(
+            c,
+            transformed_occurrence.face_index,
+            transformed_occurrence.edge_index,
+            transformed_occurrence.amplitude,
+        )
+        transformed_response = actions.edge_action(c, g).apply(response)
+        if not _candidate_equation_holds(
+            actions,
+            c,
+            key,
+            transformed_lift,
+            transformed_response,
+        ):
+            return False
+    return True
+
+
+@lru_cache(None)
+def _candidate_size_audit(L: int) -> dict:
+    actions, ql = load_upstream()
+    c = actions.load_frozen_complex(L)
+    structure = _exact_complex_structure(actions, ql, c)
+    source_face = (0, 0)
+    face_index = c.face_index[source_face]
+    loop = c.face_loops[source_face]
+    translation = actions.CellAutomorphism(actions.D4[0], (1, 2), L)
+    translated_face_index = actions.face_action(c, translation).image[face_index]
+    translated_face = c.faces[translated_face_index]
+
+    rows = []
+    all_scale_closure = True
+    all_scale_verdicts = True
+    all_additivity = True
+    all_reversal = True
+    all_translation_metrics = True
+    all_commuting_controls_zero = True
+
+    for key in CANDIDATE_KEYS:
+        orientation_rows = []
+        unit_occurrence = SourceOccurrence(face_index, loop[0][0], Fraction(1))
+        unit_lift = source_lift(c, face_index, loop[0][0], Fraction(1))
+        unit_response = candidate_response(actions, ql, c, unit_occurrence, key)
+        covariance = _candidate_covariance_exact(
+            actions,
+            c,
+            unit_occurrence,
+            key,
+            unit_response.response,
+        )
+
+        reversed_occurrence = SourceOccurrence(face_index, loop[0][0], Fraction(-1))
+        reversed_response = candidate_response(actions, ql, c, reversed_occurrence, key)
+        reversal = reversed_response.response == _scale(-1, unit_response.response)
+        all_reversal &= reversal
+
+        transformed_unit = actions.edge_action(c, translation).apply(unit_response.response)
+        support0 = remote_support_square(c, unit_response.response, source_face)
+        commutator0 = remote_commutator_precursor(c, unit_response.response, source_face)
+        commuting0 = remote_commutator_precursor(
+            c,
+            unit_response.response,
+            source_face,
+            axis_commutator_square=Fraction(0),
+        )
+        all_commuting_controls_zero &= commuting0 == 0
+        support_translated = remote_support_square(c, transformed_unit, translated_face)
+        commutator_translated = remote_commutator_precursor(c, transformed_unit, translated_face)
+        translation_metrics = (
+            support_translated == support0 and commutator_translated == commutator0
+        )
+        all_translation_metrics &= translation_metrics
+
+        first_response = _scale(Fraction(2, 3), unit_response.response)
+        second_response = _scale(Fraction(-5, 7), transformed_unit)
+        first_kappa = _scale(Fraction(2, 3), unit_lift.kappa)
+        transformed_kappa = actions.edge_action(c, translation).apply(unit_lift.kappa)
+        second_kappa = _scale(Fraction(-5, 7), transformed_kappa)
+        combined_response = _add(first_response, second_response)
+        combined_kappa = _add(first_kappa, second_kappa)
+        if key == "DIRECT_INHERITANCE":
+            additive = combined_response == combined_kappa
+        elif key == "ONE_INCIDENCE_TRANSPORT":
+            additive = combined_response == _edge_adjacency(actions, c, combined_kappa)
+        else:
+            additive = _edge_defect(actions, c, combined_response) == combined_kappa
+        all_additivity &= additive
+
+        for edge_index, loop_sign in loop:
+            occurrence = SourceOccurrence(face_index, edge_index, Fraction(1))
+            lifted = source_lift(c, face_index, edge_index, Fraction(1))
+            candidate = candidate_response(actions, ql, c, occurrence, key)
+            candidate_equation_exact = _candidate_equation_holds(
+                actions,
+                c,
+                key,
+                lifted,
+                candidate.response,
+            )
+            support = remote_support_square(c, candidate.response, source_face)
+            commutator = remote_commutator_precursor(c, candidate.response, source_face)
+            closure_rows = []
+            scale_invariant = True
+            for lam in (Fraction(1), Fraction(7, 3)):
+                current = _add(_scale(-1, lifted.delta), _scale(lam, candidate.response))
+                residual = _add(_int_matvec(c.B1, current), lifted.q)
+                closure_rows.append(all(x == 0 for x in residual))
+                scaled = _scale(lam, candidate.response)
+                scale_invariant &= (
+                    remote_support_square(c, scaled, source_face) == lam * lam * support
+                    and remote_commutator_precursor(c, scaled, source_face)
+                    == lam ** 4 * commutator
+                )
+            all_scale_closure &= all(closure_rows)
+            all_scale_verdicts &= scale_invariant
+            orientation_rows.append({
+                "slot_sign": int(loop_sign),
+                "response_nonzero": any(candidate.response),
+                "boundary_sector": candidate.boundary_sector,
+                "unique_response_ray": candidate.unique_response_ray,
+                "candidate_equation_exact": candidate_equation_exact,
+                "balance_equation_exact": candidate.balance_equation_exact,
+                "B1_response_zero": all(
+                    x == 0 for x in _int_matvec(c.B1, candidate.response)
+                ),
+                "remote_support_square": _fraction_text(support),
+                "remote_support_positive": support > 0,
+                "remote_commutator_precursor": _fraction_text(commutator),
+                "remote_commutator_positive": commutator > 0,
+                "lambda_closure_exact": all(closure_rows),
+                "projective_scale_predicates_exact": scale_invariant,
+            })
+
+        orientation_structural = all(
+            r["response_nonzero"]
+            and r["boundary_sector"]
+            and r["B1_response_zero"]
+            and r["unique_response_ray"]
+            and r["candidate_equation_exact"]
+            and r["lambda_closure_exact"]
+            and r["projective_scale_predicates_exact"]
+            for r in orientation_rows
+        )
+        structural = all((
+            structure["B1_B2_zero"],
+            structure["canonical_cycle_boundary_homology_split_exact"],
+            structure["adjacency_preserves_boundary_sector_exact"],
+            covariance,
+            reversal,
+            additive,
+            translation_metrics,
+            orientation_structural,
+        ))
+        remote_support_all = all(r["remote_support_positive"] for r in orientation_rows)
+        remote_commutator_all = all(r["remote_commutator_positive"] for r in orientation_rows)
+        if not structural:
+            size_verdict = "STRUCTURALLY_REJECTED"
+        elif not remote_support_all or not remote_commutator_all:
+            size_verdict = "STRUCTURAL_ONLY_LOCAL"
+        else:
+            size_verdict = "PRETIME_GLOBAL_ORGANIZATION_SURVIVES"
+        rows.append({
+            "key": key,
+            "structural_checks_pass": structural,
+            "response_covariance_exact": covariance,
+            "response_reversal_exact": reversal,
+            "response_additivity_exact": additive,
+            "translation_remote_metrics_exact": translation_metrics,
+            "remote_support_all_orientations": remote_support_all,
+            "remote_commutator_all_orientations": remote_commutator_all,
+            "orientation_rows": orientation_rows,
+            "size_verdict": size_verdict,
+            "spectrum_queries": 0,
+            "spectral_edge_parameters": 0,
+            "gravity_fit_parameters": 0,
+            "candidate_specific_thresholds": 0,
+        })
+
+    zero_outputs = []
+    for key in CANDIDATE_KEYS:
+        zero_occurrence = SourceOccurrence(face_index, loop[0][0], Fraction(0))
+        zero_outputs.append(
+            not any(candidate_response(actions, ql, c, zero_occurrence, key).response)
+        )
+    local_lift = source_lift(c, face_index, loop[0][0], Fraction(1))
+    local_current = _scale(-1, local_lift.delta)
+    local_residual = _add(_int_matvec(c.B1, local_current), local_lift.q)
+    local_remote = remote_support_square(c, local_current, source_face)
+
+    return {
+        "L": L,
+        **structure,
+        "dim_B": L * L - 1,
+        "max_remote_face_distance": max(
+            torus_face_distance(c, source_face, face) for face in c.faces
+        ),
+        "remote_shell_face_count": len(remote_shell(c, source_face)),
+        "candidate_rows": rows,
+        "all_outputs_in_boundary_sector": all(
+            all(r["boundary_sector"] for r in row["orientation_rows"]) for row in rows
+        ),
+        "all_outputs_cycle_closed": all(
+            all(r["B1_response_zero"] for r in row["orientation_rows"]) for row in rows
+        ),
+        "global_balance_boundary_inverse_exact": next(
+            all(
+                orientation["unique_response_ray"]
+                and orientation["balance_equation_exact"]
+                for orientation in row["orientation_rows"]
+            )
+            for row in rows
+            if row["key"] == "GLOBAL_BALANCE_COMPLETION"
+        ),
+        "lambda_closure_exact": all_scale_closure,
+        "projective_scale_predicates_exact": all_scale_verdicts,
+        "candidate_additivity_exact": all_additivity,
+        "candidate_reversal_exact": all_reversal,
+        "translation_remote_metrics_exact": all_translation_metrics,
+        "hostile_controls": {
+            "zero_source_response_zero": all(zero_outputs),
+            "coarse_only_erasure_response_zero": all(zero_outputs),
+            "bare_local_cancellation_closure_zero": all(x == 0 for x in local_residual),
+            "bare_local_cancellation_remote_support_zero": local_remote == 0,
+            "commuting_axis_precursor_zero": all_commuting_controls_zero,
+            "holdout_rule_unchanged": True,
+            "spectral_edge_audit_clean": True,
+            "locality_controls_unexcused": True,
+        },
+    }
+
+
+def exact_size_audit(L: int) -> dict:
+    if type(L) is not int or L not in (5, 7, 9, 11):
+        raise ValueError("L must be one of the preregistered sizes")
+    return _candidate_size_audit(L)
+
+
+def next_required_object_for_status(status: str) -> str:
+    mapping = {
+        "SOURCE_AXIOM_PROTOCOL_INVALID":
+            "REPAIR_TYPED_SOURCE_PROTOCOL_BEFORE_ANY_CANARY",
+        "NO_ADMISSIBLE_RESPONSE_CANDIDATE":
+            "REVISE_OR_REJECT_EXPLICIT_SOURCE_RESPONSE_AXIOMS_WITHOUT_TUNING",
+        "ADMISSIBLE_CANDIDATES_NO_GLOBAL_SIGNAL":
+            "REVISE_OR_REJECT_EXPLICIT_SOURCE_RESPONSE_AXIOMS_WITHOUT_TUNING",
+        "AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL":
+            "INDEPENDENT_GEOMETRY_AND_CORRESPONDENCE_TESTS_FOR_FROZEN_AXIOM_SURVIVOR",
+    }
+    if status not in mapping:
+        raise ValueError(f"unknown gate status: {status}")
+    return mapping[status]
+
+
+def audit() -> dict:
+    actions, _ql = load_upstream()
+    sizes = (5, 7, 9, 11)
+    source_rows = [_source_protocol_for_size(actions, L) for L in sizes]
+    size_rows = [exact_size_audit(L) for L in sizes]
+    protocol = {
+        "source_carrier": "Q_PLUS_BOUNDARY_INCIDENCE_PROVENANCE",
+        "all_B1_B2_zero": all(r["B1_B2_zero"] for r in size_rows),
+        "canonical_cycle_boundary_homology_split_exact": all(
+            r["canonical_cycle_boundary_homology_split_exact"] for r in size_rows
+        ),
+        "adjacency_preserves_boundary_sector_exact": all(
+            r["adjacency_preserves_boundary_sector_exact"] for r in size_rows
+        ),
+        "all_B1_kappa_zero": all(r["all_B1_kappa_zero"] for r in source_rows),
+        "generator_covariance_exact": all(r["generator_covariance_exact"] for r in source_rows),
+        "source_additivity_exact": all(r["source_additivity_exact"] for r in source_rows),
+        "source_reversal_exact": all(r["source_reversal_exact"] for r in source_rows),
+        "closed_face_coarse_q_null": all(r["closed_face_coarse_q_null"] for r in source_rows),
+        "closed_face_higher_incidence_source_nonnull": all(
+            r["closed_face_higher_incidence_source_nonnull"] for r in source_rows
+        ),
+        "closed_face_kappa_multiple": (
+            4 if all(r["closed_face_kappa_multiple"] == 4 for r in source_rows) else None
+        ),
+        "size_rows": source_rows,
+    }
+
+    candidate_verdicts = {}
+    for key in CANDIDATE_KEYS:
+        rows = [
+            next(row for row in size_row["candidate_rows"] if row["key"] == key)
+            for size_row in size_rows
+        ]
+        if not all(row["structural_checks_pass"] for row in rows):
+            verdict = "STRUCTURALLY_REJECTED"
+        elif not all(
+            row["remote_support_all_orientations"]
+            and row["remote_commutator_all_orientations"]
+            for row in rows
+        ):
+            verdict = "STRUCTURAL_ONLY_LOCAL"
+        else:
+            verdict = "PRETIME_GLOBAL_ORGANIZATION_SURVIVES"
+        candidate_verdicts[key] = verdict
+
+    common_source_protocol_invalid = not all((
+        protocol["all_B1_B2_zero"],
+        protocol["canonical_cycle_boundary_homology_split_exact"],
+        protocol["adjacency_preserves_boundary_sector_exact"],
+        protocol["all_B1_kappa_zero"],
+        protocol["generator_covariance_exact"],
+        protocol["source_additivity_exact"],
+        protocol["source_reversal_exact"],
+        protocol["closed_face_coarse_q_null"],
+        protocol["closed_face_higher_incidence_source_nonnull"],
+    ))
+    admissible_count = sum(
+        verdict != "STRUCTURALLY_REJECTED"
+        for verdict in candidate_verdicts.values()
+    )
+    survivor_count = sum(
+        verdict == "PRETIME_GLOBAL_ORGANIZATION_SURVIVES"
+        for verdict in candidate_verdicts.values()
+    )
+    if common_source_protocol_invalid:
+        status = "SOURCE_AXIOM_PROTOCOL_INVALID"
+    elif admissible_count == 0:
+        status = "NO_ADMISSIBLE_RESPONSE_CANDIDATE"
+    elif survivor_count == 0:
+        status = "ADMISSIBLE_CANDIDATES_NO_GLOBAL_SIGNAL"
+    else:
+        status = "AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL"
+
+    hostile_keys = tuple(size_rows[0]["hostile_controls"])
+    hostile = {
+        key: all(row["hostile_controls"][key] for row in size_rows)
+        for key in hostile_keys
+    }
+    next_required_object = next_required_object_for_status(status)
+
+    return {
+        "version": "v15.39",
+        "base_sha": BASE_SHA,
+        "status": status,
+        "finite_size_controls": list(sizes),
+        "holdout_size": 11,
+        "holdout_formula_unchanged": True,
+        "source_protocol": protocol,
+        "closed_face_null_reinterpreted_by_new_axiom": True,
+        "candidate_keys": list(CANDIDATE_KEYS),
+        "candidate_formula_manifest": {
+            "DIRECT_INHERITANCE": "y=kappa",
+            "ONE_INCIDENCE_TRANSPORT": "y=A*kappa",
+            "GLOBAL_BALANCE_COMPLETION": "(4I-A)y=kappa_on_imB2",
+        },
+        "size_audits": size_rows,
+        "all_candidate_outputs_in_boundary_sector": all(
+            row["all_outputs_in_boundary_sector"] and row["all_outputs_cycle_closed"]
+            for row in size_rows
+        ),
+        "global_balance_boundary_inverse_exact": all(
+            row["global_balance_boundary_inverse_exact"] for row in size_rows
+        ),
+        "ambient_pseudoinverse_used": False,
+        "exact_zero_nonzero_predicates_only": True,
+        "candidate_specific_thresholds": 0,
+        "accepted_candidate_spectrum_queries": 0,
+        "accepted_candidate_spectral_edge_parameters": 0,
+        "commuting_axis_precursor_zero": hostile["commuting_axis_precursor_zero"],
+        "candidate_verdicts": candidate_verdicts,
+        "mechanical_candidate_rule_applied": True,
+        "admissible_candidate_count": admissible_count,
+        "global_survivor_count": survivor_count,
+        "pretime_global_organization_signal": survivor_count > 0,
+        "projective_scale_discipline_enforced": True,
+        "absolute_response_scale_derived": False,
+        "lambda_closure_exact_for_tested_scales": all(
+            row["lambda_closure_exact"] for row in size_rows
+        ),
+        "projective_verdict_scale_invariant": all(
+            row["projective_scale_predicates_exact"] for row in size_rows
+        ),
+        "hostile_controls": hostile,
+        "new_source_semantics_axiom_added": True,
+        "new_response_axiom_candidates_tested": True,
+        "source_axiom_derived_from_frozen_ontology": False,
+        "source_axiom_user_approved_before_execution": True,
+        "axiom_preregistration_commit": "c71d16ead84620a9d3ac8762c3feb59e5be5c487",
+        "red_run_receipt": {
+            "run_id": 35452558930,
+            "job_id": 105922134054,
+            "head_sha": "f5548eb73991705d36349ebe1afa550c4eb207d1",
+            "expected_failure": "ModuleNotFoundError: No module named 'source_axiom_canary'",
+        },
+        "gravity_facing_canary_evaluated": True,
+        "finite_holonomy_precursor_evaluated": True,
+        "full_SU2_holonomy_evaluated": False,
+        "signal_of_life": survivor_count > 0,
+        "conditional_signal_of_life": survivor_count > 0,
+        "signal_is_axiom_dependent": survivor_count > 0,
+        "response_axiom_selected_by_canary": False,
+        "physical_gravity_derived": False,
+        "gravity_canary_certified": False,
+        "einstein_equations_derived": False,
+        "continuum_limit_derived": False,
+        "uses_pruning": False,
+        "uses_entropy": False,
+        "uses_physical_time": False,
+        "uses_metric_selector": False,
+        "uses_holonomy_selector": False,
+        "uses_newton_or_gr_selector": False,
+        "gravity_fit_parameters": 0,
+        "scientific_breakthrough": False,
+        "Pillar_3": "OPEN",
+        "next_required_object": next_required_object,
+        "evidence_pins": verify_evidence(),
+    }
+
+
+def canonical_json(result: dict) -> str:
+    return json.dumps(result, indent=2, sort_keys=True) + "\n"
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out")
+    parser.add_argument("--check")
+    args = parser.parse_args()
+    text = canonical_json(audit())
+    if args.out:
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(text)
+    if args.check and Path(args.check).read_text() != text:
+        raise SystemExit("committed v15.39 result differs from regenerated audit")
+    print(text, end="")
+
+
+if __name__ == "__main__":
+    main()
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/docs/RESULTS.json
+{
+  "Pillar_3": "OPEN",
+  "absolute_response_scale_derived": false,
+  "accepted_candidate_spectral_edge_parameters": 0,
+  "accepted_candidate_spectrum_queries": 0,
+  "admissible_candidate_count": 3,
+  "all_candidate_outputs_in_boundary_sector": true,
+  "ambient_pseudoinverse_used": false,
+  "axiom_preregistration_commit": "c71d16ead84620a9d3ac8762c3feb59e5be5c487",
+  "base_sha": "825b47b276c6a17df35e6620f6de6630a1d729e2",
+  "candidate_formula_manifest": {
+    "DIRECT_INHERITANCE": "y=kappa",
+    "GLOBAL_BALANCE_COMPLETION": "(4I-A)y=kappa_on_imB2",
+    "ONE_INCIDENCE_TRANSPORT": "y=A*kappa"
+  },
+  "candidate_keys": [
+    "DIRECT_INHERITANCE",
+    "ONE_INCIDENCE_TRANSPORT",
+    "GLOBAL_BALANCE_COMPLETION"
+  ],
+  "candidate_specific_thresholds": 0,
+  "candidate_verdicts": {
+    "DIRECT_INHERITANCE": "STRUCTURAL_ONLY_LOCAL",
+    "GLOBAL_BALANCE_COMPLETION": "PRETIME_GLOBAL_ORGANIZATION_SURVIVES",
+    "ONE_INCIDENCE_TRANSPORT": "STRUCTURAL_ONLY_LOCAL"
+  },
+  "closed_face_null_reinterpreted_by_new_axiom": true,
+  "commuting_axis_precursor_zero": true,
+  "conditional_signal_of_life": true,
+  "continuum_limit_derived": false,
+  "einstein_equations_derived": false,
+  "evidence_pins": {
+    "exact_linear.py": "05cc1b8cfec70d501408377b5e44190b259a4514",
+    "representation_actions.py": "7260147cd6ca47ec21634172b44b98de726904af",
+    "v15.38-results": "9caa94fe6e700a6684fa9c899b37503a2736bece",
+    "v15.39-design": "edabb9837d293f49ff78f007c31c3904bf04c3e5"
+  },
+  "exact_zero_nonzero_predicates_only": true,
+  "finite_holonomy_precursor_evaluated": true,
+  "finite_size_controls": [
+    5,
+    7,
+    9,
+    11
+  ],
+  "full_SU2_holonomy_evaluated": false,
+  "global_balance_boundary_inverse_exact": true,
+  "global_survivor_count": 1,
+  "gravity_canary_certified": false,
+  "gravity_facing_canary_evaluated": true,
+  "gravity_fit_parameters": 0,
+  "holdout_formula_unchanged": true,
+  "holdout_size": 11,
+  "hostile_controls": {
+    "bare_local_cancellation_closure_zero": true,
+    "bare_local_cancellation_remote_support_zero": true,
+    "coarse_only_erasure_response_zero": true,
+    "commuting_axis_precursor_zero": true,
+    "holdout_rule_unchanged": true,
+    "locality_controls_unexcused": true,
+    "spectral_edge_audit_clean": true,
+    "zero_source_response_zero": true
+  },
+  "lambda_closure_exact_for_tested_scales": true,
+  "mechanical_candidate_rule_applied": true,
+  "new_response_axiom_candidates_tested": true,
+  "new_source_semantics_axiom_added": true,
+  "next_required_object": "INDEPENDENT_GEOMETRY_AND_CORRESPONDENCE_TESTS_FOR_FROZEN_AXIOM_SURVIVOR",
+  "physical_gravity_derived": false,
+  "pretime_global_organization_signal": true,
+  "projective_scale_discipline_enforced": true,
+  "projective_verdict_scale_invariant": true,
+  "red_run_receipt": {
+    "expected_failure": "ModuleNotFoundError: No module named 'source_axiom_canary'",
+    "head_sha": "f5548eb73991705d36349ebe1afa550c4eb207d1",
+    "job_id": 105922134054,
+    "run_id": 35452558930
+  },
+  "response_axiom_selected_by_canary": false,
+  "scientific_breakthrough": false,
+  "signal_is_axiom_dependent": true,
+  "signal_of_life": true,
+  "size_audits": [
+    {
+      "B1_B2_zero": true,
+      "L": 5,
+      "adjacency_preserves_boundary_sector_exact": true,
+      "all_outputs_cycle_closed": true,
+      "all_outputs_in_boundary_sector": true,
+      "boundary_dimension": 24,
+      "candidate_additivity_exact": true,
+      "candidate_reversal_exact": true,
+      "candidate_rows": [
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "DIRECT_INHERITANCE",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": false,
+          "remote_support_all_orientations": false,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "STRUCTURAL_ONLY_LOCAL",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        },
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "ONE_INCIDENCE_TRANSPORT",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": false,
+          "remote_support_all_orientations": false,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "STRUCTURAL_ONLY_LOCAL",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        },
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "GLOBAL_BALANCE_COMPLETION",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/1562500",
+              "remote_support_positive": true,
+              "remote_support_square": "2/625",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/1562500",
+              "remote_support_positive": true,
+              "remote_support_square": "2/625",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/1562500",
+              "remote_support_positive": true,
+              "remote_support_square": "2/625",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/1562500",
+              "remote_support_positive": true,
+              "remote_support_square": "2/625",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": true,
+          "remote_support_all_orientations": true,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "PRETIME_GLOBAL_ORGANIZATION_SURVIVES",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        }
+      ],
+      "canonical_cycle_boundary_homology_split_exact": true,
+      "canonical_homology_rank": 2,
+      "cycle_dimension": 26,
+      "dim_B": 24,
+      "global_balance_boundary_inverse_exact": true,
+      "homology_dimension": 2,
+      "hostile_controls": {
+        "bare_local_cancellation_closure_zero": true,
+        "bare_local_cancellation_remote_support_zero": true,
+        "coarse_only_erasure_response_zero": true,
+        "commuting_axis_precursor_zero": true,
+        "holdout_rule_unchanged": true,
+        "locality_controls_unexcused": true,
+        "spectral_edge_audit_clean": true,
+        "zero_source_response_zero": true
+      },
+      "lambda_closure_exact": true,
+      "max_remote_face_distance": 4,
+      "projective_scale_predicates_exact": true,
+      "remote_shell_face_count": 4,
+      "translation_remote_metrics_exact": true
+    },
+    {
+      "B1_B2_zero": true,
+      "L": 7,
+      "adjacency_preserves_boundary_sector_exact": true,
+      "all_outputs_cycle_closed": true,
+      "all_outputs_in_boundary_sector": true,
+      "boundary_dimension": 48,
+      "candidate_additivity_exact": true,
+      "candidate_reversal_exact": true,
+      "candidate_rows": [
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "DIRECT_INHERITANCE",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": false,
+          "remote_support_all_orientations": false,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "STRUCTURAL_ONLY_LOCAL",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        },
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "ONE_INCIDENCE_TRANSPORT",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": false,
+          "remote_support_all_orientations": false,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "STRUCTURAL_ONLY_LOCAL",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        },
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "GLOBAL_BALANCE_COMPLETION",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/23059204",
+              "remote_support_positive": true,
+              "remote_support_square": "2/2401",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/23059204",
+              "remote_support_positive": true,
+              "remote_support_square": "2/2401",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/23059204",
+              "remote_support_positive": true,
+              "remote_support_square": "2/2401",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/23059204",
+              "remote_support_positive": true,
+              "remote_support_square": "2/2401",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": true,
+          "remote_support_all_orientations": true,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "PRETIME_GLOBAL_ORGANIZATION_SURVIVES",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        }
+      ],
+      "canonical_cycle_boundary_homology_split_exact": true,
+      "canonical_homology_rank": 2,
+      "cycle_dimension": 50,
+      "dim_B": 48,
+      "global_balance_boundary_inverse_exact": true,
+      "homology_dimension": 2,
+      "hostile_controls": {
+        "bare_local_cancellation_closure_zero": true,
+        "bare_local_cancellation_remote_support_zero": true,
+        "coarse_only_erasure_response_zero": true,
+        "commuting_axis_precursor_zero": true,
+        "holdout_rule_unchanged": true,
+        "locality_controls_unexcused": true,
+        "spectral_edge_audit_clean": true,
+        "zero_source_response_zero": true
+      },
+      "lambda_closure_exact": true,
+      "max_remote_face_distance": 6,
+      "projective_scale_predicates_exact": true,
+      "remote_shell_face_count": 4,
+      "translation_remote_metrics_exact": true
+    },
+    {
+      "B1_B2_zero": true,
+      "L": 9,
+      "adjacency_preserves_boundary_sector_exact": true,
+      "all_outputs_cycle_closed": true,
+      "all_outputs_in_boundary_sector": true,
+      "boundary_dimension": 80,
+      "candidate_additivity_exact": true,
+      "candidate_reversal_exact": true,
+      "candidate_rows": [
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "DIRECT_INHERITANCE",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": false,
+          "remote_support_all_orientations": false,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "STRUCTURAL_ONLY_LOCAL",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        },
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "ONE_INCIDENCE_TRANSPORT",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": false,
+          "remote_support_all_orientations": false,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "STRUCTURAL_ONLY_LOCAL",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        },
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "GLOBAL_BALANCE_COMPLETION",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/172186884",
+              "remote_support_positive": true,
+              "remote_support_square": "2/6561",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/172186884",
+              "remote_support_positive": true,
+              "remote_support_square": "2/6561",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/172186884",
+              "remote_support_positive": true,
+              "remote_support_square": "2/6561",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/172186884",
+              "remote_support_positive": true,
+              "remote_support_square": "2/6561",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": true,
+          "remote_support_all_orientations": true,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "PRETIME_GLOBAL_ORGANIZATION_SURVIVES",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        }
+      ],
+      "canonical_cycle_boundary_homology_split_exact": true,
+      "canonical_homology_rank": 2,
+      "cycle_dimension": 82,
+      "dim_B": 80,
+      "global_balance_boundary_inverse_exact": true,
+      "homology_dimension": 2,
+      "hostile_controls": {
+        "bare_local_cancellation_closure_zero": true,
+        "bare_local_cancellation_remote_support_zero": true,
+        "coarse_only_erasure_response_zero": true,
+        "commuting_axis_precursor_zero": true,
+        "holdout_rule_unchanged": true,
+        "locality_controls_unexcused": true,
+        "spectral_edge_audit_clean": true,
+        "zero_source_response_zero": true
+      },
+      "lambda_closure_exact": true,
+      "max_remote_face_distance": 8,
+      "projective_scale_predicates_exact": true,
+      "remote_shell_face_count": 4,
+      "translation_remote_metrics_exact": true
+    },
+    {
+      "B1_B2_zero": true,
+      "L": 11,
+      "adjacency_preserves_boundary_sector_exact": true,
+      "all_outputs_cycle_closed": true,
+      "all_outputs_in_boundary_sector": true,
+      "boundary_dimension": 120,
+      "candidate_additivity_exact": true,
+      "candidate_reversal_exact": true,
+      "candidate_rows": [
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "DIRECT_INHERITANCE",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": false,
+          "remote_support_all_orientations": false,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "STRUCTURAL_ONLY_LOCAL",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        },
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "ONE_INCIDENCE_TRANSPORT",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": false,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": false,
+              "remote_commutator_precursor": "0",
+              "remote_support_positive": false,
+              "remote_support_square": "0",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": false,
+          "remote_support_all_orientations": false,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "STRUCTURAL_ONLY_LOCAL",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        },
+        {
+          "candidate_specific_thresholds": 0,
+          "gravity_fit_parameters": 0,
+          "key": "GLOBAL_BALANCE_COMPLETION",
+          "orientation_rows": [
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/857435524",
+              "remote_support_positive": true,
+              "remote_support_square": "2/14641",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/857435524",
+              "remote_support_positive": true,
+              "remote_support_square": "2/14641",
+              "response_nonzero": true,
+              "slot_sign": 1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/857435524",
+              "remote_support_positive": true,
+              "remote_support_square": "2/14641",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            },
+            {
+              "B1_response_zero": true,
+              "balance_equation_exact": true,
+              "boundary_sector": true,
+              "candidate_equation_exact": true,
+              "lambda_closure_exact": true,
+              "projective_scale_predicates_exact": true,
+              "remote_commutator_positive": true,
+              "remote_commutator_precursor": "1/857435524",
+              "remote_support_positive": true,
+              "remote_support_square": "2/14641",
+              "response_nonzero": true,
+              "slot_sign": -1,
+              "unique_response_ray": true
+            }
+          ],
+          "remote_commutator_all_orientations": true,
+          "remote_support_all_orientations": true,
+          "response_additivity_exact": true,
+          "response_covariance_exact": true,
+          "response_reversal_exact": true,
+          "size_verdict": "PRETIME_GLOBAL_ORGANIZATION_SURVIVES",
+          "spectral_edge_parameters": 0,
+          "spectrum_queries": 0,
+          "structural_checks_pass": true,
+          "translation_remote_metrics_exact": true
+        }
+      ],
+      "canonical_cycle_boundary_homology_split_exact": true,
+      "canonical_homology_rank": 2,
+      "cycle_dimension": 122,
+      "dim_B": 120,
+      "global_balance_boundary_inverse_exact": true,
+      "homology_dimension": 2,
+      "hostile_controls": {
+        "bare_local_cancellation_closure_zero": true,
+        "bare_local_cancellation_remote_support_zero": true,
+        "coarse_only_erasure_response_zero": true,
+        "commuting_axis_precursor_zero": true,
+        "holdout_rule_unchanged": true,
+        "locality_controls_unexcused": true,
+        "spectral_edge_audit_clean": true,
+        "zero_source_response_zero": true
+      },
+      "lambda_closure_exact": true,
+      "max_remote_face_distance": 10,
+      "projective_scale_predicates_exact": true,
+      "remote_shell_face_count": 4,
+      "translation_remote_metrics_exact": true
+    }
+  ],
+  "source_axiom_derived_from_frozen_ontology": false,
+  "source_axiom_user_approved_before_execution": true,
+  "source_protocol": {
+    "adjacency_preserves_boundary_sector_exact": true,
+    "all_B1_B2_zero": true,
+    "all_B1_kappa_zero": true,
+    "canonical_cycle_boundary_homology_split_exact": true,
+    "closed_face_coarse_q_null": true,
+    "closed_face_higher_incidence_source_nonnull": true,
+    "closed_face_kappa_multiple": 4,
+    "generator_covariance_exact": true,
+    "size_rows": [
+      {
+        "L": 5,
+        "all_B1_kappa_zero": true,
+        "closed_face_coarse_q_null": true,
+        "closed_face_delta_is_B2_column": true,
+        "closed_face_higher_incidence_source_nonnull": true,
+        "closed_face_kappa_multiple": 4,
+        "generator_covariance_exact": true,
+        "source_additivity_exact": true,
+        "source_reversal_exact": true
+      },
+      {
+        "L": 7,
+        "all_B1_kappa_zero": true,
+        "closed_face_coarse_q_null": true,
+        "closed_face_delta_is_B2_column": true,
+        "closed_face_higher_incidence_source_nonnull": true,
+        "closed_face_kappa_multiple": 4,
+        "generator_covariance_exact": true,
+        "source_additivity_exact": true,
+        "source_reversal_exact": true
+      },
+      {
+        "L": 9,
+        "all_B1_kappa_zero": true,
+        "closed_face_coarse_q_null": true,
+        "closed_face_delta_is_B2_column": true,
+        "closed_face_higher_incidence_source_nonnull": true,
+        "closed_face_kappa_multiple": 4,
+        "generator_covariance_exact": true,
+        "source_additivity_exact": true,
+        "source_reversal_exact": true
+      },
+      {
+        "L": 11,
+        "all_B1_kappa_zero": true,
+        "closed_face_coarse_q_null": true,
+        "closed_face_delta_is_B2_column": true,
+        "closed_face_higher_incidence_source_nonnull": true,
+        "closed_face_kappa_multiple": 4,
+        "generator_covariance_exact": true,
+        "source_additivity_exact": true,
+        "source_reversal_exact": true
+      }
+    ],
+    "source_additivity_exact": true,
+    "source_carrier": "Q_PLUS_BOUNDARY_INCIDENCE_PROVENANCE",
+    "source_reversal_exact": true
+  },
+  "status": "AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL",
+  "uses_entropy": false,
+  "uses_holonomy_selector": false,
+  "uses_metric_selector": false,
+  "uses_newton_or_gr_selector": false,
+  "uses_physical_time": false,
+  "uses_pruning": false,
+  "version": "v15.39"
+}
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_generation.py
+from __future__ import annotations
+
+from collections import deque
+from dataclasses import dataclass
+from fractions import Fraction
+from functools import lru_cache
+from pathlib import Path
+import hashlib
+import importlib
+import json
+import sys
+
+VectorQ = tuple[Fraction, ...]
+SignedSupport = tuple[tuple[int, ...], ...]
+REPO_ROOT = Path(__file__).resolve().parents[4]
+V1528 = REPO_ROOT / "ResearchHistory/UQCF-GEM/demos/v15.28-coupling-space"
+V1539 = REPO_ROOT / "ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms"
+SPEC = REPO_ROOT / "docs/superpowers/specs/2026-09-19-v1540-global-balance-geometry-specificity-design.md"
+BASE_SHA = "0f3e10602929dd0a148b195f32406efa52082070"
+EVIDENCE = {
+    "v15.39-source": (V1539 / "source_axiom_canary.py", "620a8a64ed93d8c30a6e04730ed5bfc0e6e1252a"),
+    "v15.39-results": (V1539 / "docs/RESULTS.json", "ac8eb10ed90360fee6dcc0f170f19fffd0d74116"),
+    "representation_actions.py": (V1528 / "representation_actions.py", "7260147cd6ca47ec21634172b44b98de726904af"),
+    "exact_linear.py": (V1528 / "exact_linear.py", "05cc1b8cfec70d501408377b5e44190b259a4514"),
+    "v15.40-design": (SPEC, "5f75f9a7ba1df5b21715f775d26bedbedc07297f"),
+}
+GENERATORS = {
+    "GLOBAL_BALANCE_COMPLETION": ((1, 0), (-1, 0), (0, 1), (0, -1)),
+    "MATCHED_DIAGONAL_BALANCE": ((1, 1), (1, -1), (-1, 1), (-1, -1)),
+    "MATCHED_STEP2_BALANCE": ((2, 0), (-2, 0), (0, 2), (0, -2)),
+}
+CONTROL_KEYS = ("DIRECT_INHERITANCE", "ONE_INCIDENCE_TRANSPORT", "MATCHED_DIAGONAL_BALANCE", "MATCHED_STEP2_BALANCE")
+FAMILY_KEYS = ("GLOBAL_BALANCE_COMPLETION",) + CONTROL_KEYS
+
+
+@dataclass(frozen=True)
+class ResponseFamily:
+    key: str
+    labels: tuple[int, ...]
+    sources: tuple[VectorQ, ...]
+    responses: tuple[VectorQ, ...]
+
+
+@dataclass(frozen=True)
+class StructuralAudit:
+    key: str
+    connected: bool
+    invertible_on_augmentation: bool
+    translation_D4_covariant: bool
+    valence_four: bool
+    response_equations_exact: bool
+
+
+def git_blob(path):
+    raw = Path(path).read_bytes()
+    return hashlib.sha1(f"blob {len(raw)}".encode() + bytes([0]) + raw).hexdigest()
+
+
+@lru_cache(None)
+def verify_evidence():
+    verified = {}
+    for key, (path, expected) in EVIDENCE.items():
+        actual = git_blob(path)
+        if actual != expected:
+            raise ValueError(f"evidence drift: {key}: {actual}")
+        verified[key] = actual
+    inherited = json.loads((V1539 / "docs/RESULTS.json").read_text())
+    if inherited["status"] != "AXIOM_DEPENDENT_PRETIME_GLOBAL_ORGANIZATION_SIGNAL":
+        raise AssertionError("v15.39 status drift")
+    expected = {"GLOBAL_BALANCE_COMPLETION": "PRETIME_GLOBAL_ORGANIZATION_SURVIVES", "DIRECT_INHERITANCE": "STRUCTURAL_ONLY_LOCAL", "ONE_INCIDENCE_TRANSPORT": "STRUCTURAL_ONLY_LOCAL"}
+    if any(inherited["candidate_verdicts"].get(key) != value for key, value in expected.items()):
+        raise AssertionError("v15.39 candidate verdict drift")
+    return verified
+
+
+@lru_cache(None)
+def load_upstream():
+    verify_evidence()
+    if str(V1528) not in sys.path:
+        sys.path.insert(0, str(V1528))
+    return importlib.import_module("representation_actions"), importlib.import_module("exact_linear")
+
+
+def _scale(scale, vector):
+    return tuple(Fraction(scale) * Fraction(value) for value in vector)
+
+
+def _add(*vectors):
+    return tuple(sum((Fraction(vector[i]) for vector in vectors), Fraction(0)) for i in range(len(vectors[0])))
+
+
+def _int_matvec(matrix, vector):
+    rows, columns = matrix.shape
+    return tuple(sum((Fraction(int(matrix[i, j])) * Fraction(vector[j]) for j in range(columns)), Fraction(0)) for i in range(rows))
+
+
+@lru_cache(None)
+def _complex(L):
+    if type(L) is not int or L not in (5, 7, 9, 11):
+        raise ValueError("L must be one of 5, 7, 9, 11")
+    return load_upstream()[0].load_frozen_complex(L)
+
+
+def centered_source(L, face_index):
+    count = L * L
+    if type(face_index) is not int or not 0 <= face_index < count:
+        raise ValueError("invalid face index")
+    source = [Fraction(-1, count) for _ in range(count)]; source[face_index] += 1
+    return tuple(source)
+
+
+def signed_support_B2(L):
+    matrix = _complex(L).B2
+    return tuple(tuple(int(matrix[row, column]) for column in range(matrix.shape[1])) for row in range(matrix.shape[0]))
+
+
+def B2_column(L, face_index):
+    return tuple(Fraction(row[face_index]) for row in signed_support_B2(L))
+
+
+def boundary_from_face_vector(L, vector):
+    return _int_matvec(_complex(L).B2, vector)
+
+
+def deterministic_permutation(L):
+    count = L * L
+    permutation = tuple((2 * index + 1) % count for index in range(count))
+    if sorted(permutation) != list(range(count)):
+        raise ArithmeticError("deterministic relabeling is not bijective")
+    return permutation
+
+
+def relabel_vector(vector, permutation):
+    if len(vector) != len(permutation) or sorted(permutation) != list(range(len(permutation))):
+        raise ValueError("invalid relabeling permutation")
+    out = [Fraction(0)] * len(vector)
+    for old, new in enumerate(permutation): out[new] = Fraction(vector[old])
+    return tuple(out)
+
+
+def relabel_family(family, permutation):
+    count = len(family.labels); sources = [None] * count; responses = [None] * count
+    for position, label in enumerate(family.labels):
+        new = permutation[label]
+        sources[new] = relabel_vector(family.sources[position], permutation)
+        responses[new] = relabel_vector(family.responses[position], permutation)
+    return ResponseFamily(family.key, tuple(range(count)), tuple(sources), tuple(responses))
+
+
+def relabel_support_columns(support, permutation):
+    rows = []
+    for row in support:
+        out = [0] * len(row)
+        for old, new in enumerate(permutation): out[new] = row[old]
+        rows.append(tuple(out))
+    return tuple(rows)
+
+
+@lru_cache(None)
+def _permutations(L, key):
+    actions, _ = load_upstream(); complex_ = _complex(L)
+    return tuple(actions.face_action(complex_, actions.CellAutomorphism(actions.D4[0], displacement, L)) for displacement in GENERATORS[key])
+
+
+def _adjacency_apply(L, key, vector):
+    return _add(*(permutation.apply(vector) for permutation in _permutations(L, key)))
+
+
+def inverse_on_augmentation(matrix):
+    ql = load_upstream()[1]; inverse = ql.inverse(matrix); identity = ql.identity(len(matrix))
+    if ql.matmul(matrix, inverse) != identity or ql.matmul(inverse, matrix) != identity:
+        raise ArithmeticError("exact augmentation inverse verification failed")
+    return inverse
+
+
+def solve_with_verified_inverse(matrix, inverse, rhs):
+    ql = load_upstream()[1]; solution = ql.matvec(inverse, rhs)
+    if ql.matvec(matrix, solution) != tuple(rhs):
+        raise ArithmeticError("exact solve verification failed")
+    return solution
+
+
+@lru_cache(None)
+def _balance_model(L, key):
+    actions, ql = load_upstream(); basis = actions.augmentation_basis(L * L)
+    matrices = tuple(actions.restricted_representation(basis, p) for p in _permutations(L, key))
+    adjacency = matrices[0]
+    for matrix in matrices[1:]: adjacency = ql.add(adjacency, matrix)
+    defect = ql.add(ql.scale(4, ql.identity(basis.dimension)), ql.scale(-1, adjacency))
+    return basis, defect, inverse_on_augmentation(defect)
+
+
+def _unit_response(L, key, source):
+    if key == "DIRECT_INHERITANCE": return source
+    if key == "ONE_INCIDENCE_TRANSPORT": return _adjacency_apply(L, "GLOBAL_BALANCE_COMPLETION", source)
+    if key in GENERATORS:
+        basis, defect, inverse = _balance_model(L, key)
+        return basis.combine(solve_with_verified_inverse(defect, inverse, basis.coordinates(source)))
+    raise ValueError(f"unknown response family: {key}")
+
+
+@lru_cache(None)
+def _unit_family(L, key):
+    if key not in FAMILY_KEYS: raise ValueError(f"unknown response family: {key}")
+    labels = tuple(range(L * L)); sources = tuple(centered_source(L, label) for label in labels)
+    return ResponseFamily(key, labels, sources, tuple(_unit_response(L, key, source) for source in sources))
+
+
+def response_family(L, key, scale=Fraction(1)):
+    if isinstance(scale, bool) or not isinstance(scale, (int, Fraction)): raise TypeError("exact scale required")
+    scale = Fraction(scale)
+    if scale <= 0: raise ValueError("positive projective scale required")
+    family = _unit_family(L, key)
+    return family if scale == 1 else ResponseFamily(key, family.labels, family.sources, tuple(_scale(scale, response) for response in family.responses))
+
+
+def _graph_properties(L, key):
+    count = L * L; neighbors = [set() for _ in range(count)]
+    for permutation in _permutations(L, key):
+        for old, new in enumerate(permutation.image): neighbors[old].add(new)
+    seen = {0}; queue = deque([0])
+    while queue:
+        for neighbor in sorted(neighbors[queue.popleft()]):
+            if neighbor not in seen: seen.add(neighbor); queue.append(neighbor)
+    return len(seen) == count, all(len(row) == 4 for row in neighbors)
+
+
+def _covariant(L, key):
+    actions = load_upstream()[0]; expected = frozenset((x % L, y % L) for x, y in GENERATORS[key])
+    return all(frozenset(((m[0][0]*x+m[0][1]*y)%L, (m[1][0]*x+m[1][1]*y)%L) for x, y in GENERATORS[key]) == expected for m in actions.D4)
+
+
+def structural_audit(L, key):
+    connected, valence = _graph_properties(L, key); basis, defect, inverse = _balance_model(L, key)
+    equations = all(basis.combine(solve_with_verified_inverse(defect, inverse, basis.coordinates(centered_source(L, label)))) == _unit_response(L, key, centered_source(L, label)) for label in range(L * L))
+    return StructuralAudit(key, connected, True, _covariant(L, key), valence, equations)
+
+
+@lru_cache(None)
+def generation_audit(L):
+    actions, ql = load_upstream(); complex_ = _complex(L); support = signed_support_B2(L)
+    matrix = tuple(tuple(Fraction(value) for value in row) for row in support)
+    rank = ql.rank(matrix); nullspace = ql.nullspace(matrix)
+    isomorphism = rank == L*L-1 and len(nullspace) == 1 and all(x == nullspace[0][0] for x in nullspace[0]) and all(boundary_from_face_vector(L, centered_source(L, face)) == B2_column(L, face) for face in range(L*L))
+    structural = {key: structural_audit(L, key) for key in GENERATORS}
+    covariance = True; additivity = True; orientation = True
+    first, second = 0, complex_.face_index[(1 % L, 2 % L)]
+    for key in FAMILY_KEYS:
+        family = response_family(L, key)
+        combined_source = _add(_scale(Fraction(2, 3), family.sources[first]), _scale(Fraction(-5, 7), family.sources[second]))
+        combined_response = _unit_response(L, key, combined_source)
+        additivity &= combined_response == _add(_scale(Fraction(2, 3), family.responses[first]), _scale(Fraction(-5, 7), family.responses[second]))
+        for face in range(L * L):
+            loop = complex_.face_loops[complex_.faces[face]]
+            orientation &= len(loop) == 4 and all(support[edge][face] in (-1, 1) and support[edge][face] * support[edge][face] == 1 for edge, _sign in loop)
+        automorphisms = (
+            actions.CellAutomorphism(actions.D4[0], (1, 0), L),
+            actions.CellAutomorphism(actions.D4[0], (0, 1), L),
+            *(actions.CellAutomorphism(matrix_d4, (0, 0), L) for matrix_d4 in actions.D4),
+        )
+        for automorphism in automorphisms:
+            image = actions.face_action(complex_, automorphism).image
+            covariance &= all(relabel_vector(family.responses[label], image) == family.responses[image[label]] for label in range(L*L))
+    return {
+        "L": L, "evidence_verified": bool(verify_evidence()), "B2_rank": rank,
+        "B2_kernel_constant_line": len(nullspace)==1 and all(x == nullspace[0][0] for x in nullspace[0]),
+        "canonical_augmentation_isomorphism_exact": isomorphism,
+        "all_response_equations_exact": all(item.response_equations_exact for item in structural.values()),
+        "all_orientation_rays_exact": orientation,
+        "all_additivity_exact": additivity,
+        "all_translation_D4_covariance_exact": covariance and all(item.translation_D4_covariant for item in structural.values()),
+        "matched_controls_structurally_admissible": all(all((structural[key].connected, structural[key].invertible_on_augmentation, structural[key].translation_D4_covariant, structural[key].valence_four, structural[key].response_equations_exact)) for key in ("MATCHED_DIAGONAL_BALANCE", "MATCHED_STEP2_BALANCE")),
+        "structural_audits": {key: item.__dict__ for key, item in structural.items()},
+    }
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import tempfile
+from fractions import Fraction
+from hashlib import sha256
+from pathlib import Path
+
+LOCAL = str(Path(__file__).resolve().parent)
+if LOCAL not in sys.path:
+    sys.path.insert(0, LOCAL)
+
+from evidence import git_blob, verify_evidence, verify_origins
+from projection import DEPENDENCIES, FAMILY_KEYS, Field, Payload, Projection, canonical_bytes, decode_projection, encode_projection
+
+
+def _verified_modules():
+    root = Path(__file__).resolve().parents[4]
+    receipt = verify_evidence(root)
+    locations = {Path(path).stem: Path(item["path"]).parent
+                 for path, item in receipt["acquisition"].items()
+                 if Path(path).stem in ("response_generation", "response_geometry")}
+    for location in locations.values():
+        text = str(location)
+        if text not in sys.path:
+            sys.path.insert(0, text)
+    import response_generation as generation
+    import response_geometry as geometry
+    pins = dict((Path(path).stem, blob) for path, blob in DEPENDENCIES
+                if Path(path).stem in ("response_generation", "response_geometry"))
+    verify_origins((generation, geometry), pins, "acquisition")
+    return generation, geometry, receipt["parent"], DEPENDENCIES
+
+
+def _project_modules(generation, geometry_module, parent, dependencies):
+    payloads = []
+    for L in (5, 7):
+        for amplitude in (Fraction(1), Fraction(7, 3)):
+            canonical = generation.response_family(L, "GLOBAL_BALANCE_COMPLETION", amplitude)
+            geometry = geometry_module.construct_response_geometry(
+                canonical.labels, canonical.sources, canonical.responses)
+            fields = tuple(Field(key, response_index, tuple(values))
+                           for key in FAMILY_KEYS
+                           for response_index, values in enumerate(
+                               generation.response_family(L, key, amplitude).responses))
+            edges = tuple(sorted(tuple(sorted(edge)) for edge in geometry.neighbors))
+            payloads.append(Payload(L, amplitude, tuple(geometry.labels),
+                                    tuple(tuple(value for value in row) for row in geometry.work),
+                                    edges, fields))
+    hashes = tuple(sha256(canonical_bytes({
+        "L": payload.L, "scale": str(payload.scale), "labels": list(payload.labels),
+        "work": [[str(value) for value in row] for row in payload.work],
+        "neighbors": [list(edge) for edge in payload.neighbors],
+        "fields": [{"family": field.family, "response_index": field.response_index,
+                    "values": [str(value) for value in field.values]} for field in payload.fields],
+    })).hexdigest() for payload in payloads)
+    return encode_projection(Projection(parent, tuple(dependencies), tuple(payloads), hashes))
+
+
+def _verify_loaded_closure(receipt):
+    expected = {Path(item["path"]).resolve(): item["blob"]
+                for item in receipt["acquisition"].values()}
+    local = {Path(__file__).resolve(), (Path(__file__).parent / "evidence.py").resolve(),
+             (Path(__file__).parent / "projection.py").resolve()}
+    permitted = set(expected) | local
+    loaded = []
+    pins = {}
+    for module in tuple(sys.modules.values()):
+        origin = module.__file__ if hasattr(module, "__file__") else None
+        if type(origin) is not str:
+            continue
+        path = Path(origin).resolve()
+        if Path(__file__).resolve().parents[4] in path.parents and path not in permitted:
+            raise ValueError(f"unexpected acquisition repository module: {path.name}")
+        if path in expected:
+            loaded.append(module)
+            pins[module.__name__] = expected[path]
+    if {Path(module.__file__).resolve() for module in loaded} != set(expected):
+        raise ValueError("incomplete acquisition module closure")
+    verify_origins(tuple(loaded), pins, "acquisition")
+    return {**{path.name: {"blob": blob} for path, blob in expected.items()},
+            **{path.name: {"blob": git_blob(path.read_bytes())} for path in sorted(local)}}
+
+
+def _acquire_with_receipt():
+    generation, geometry, parent, dependencies = _verified_modules()
+    raw = _project_modules(generation, geometry, parent, dependencies)
+    receipt = verify_evidence(Path(__file__).resolve().parents[4])
+    origins = _verify_loaded_closure(receipt)
+    return decode_projection(raw), origins
+
+
+def acquire_projection() -> Projection:
+    return _acquire_with_receipt()[0]
+
+
+def write_projection(path: Path) -> None:
+    raw = encode_projection(acquire_projection())
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(dir=path.parent, prefix=path.name + ".", delete=False) as stream:
+        temporary = Path(stream.name)
+        stream.write(raw)
+        stream.flush()
+    temporary.replace(path)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", required=True, type=Path)
+    parser.add_argument("--receipt", type=Path)
+    args = parser.parse_args()
+    projection, origins = _acquire_with_receipt()
+    raw = encode_projection(projection)
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_bytes(raw)
+    if args.receipt:
+        args.receipt.write_text(json.dumps(origins, sort_keys=True, indent=2) + "\n")
+
+
+if __name__ == "__main__":
+    main()
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/README.md
+# UQCF-GEM v15.43: Certified response geometry
+
+## Finite result
+
+The frozen v15.42 transport applied to the frozen response fields yields
+`CANONICAL_RESPONSE_CURVATURE_NONZERO`: 740 cases, 148 canonical cases,
+and 30,260 face records. The completed audit has no failed gate.
+All five response families are nonflat on the common canonical carrier.
+Nonzero curvature alone therefore does not establish canonical-family specificity.
+
+The recovered full audit exited zero in 4,140 seconds. Its INPUTS and RESULTS
+Git blobs match the previously reviewed artifacts byte-for-byte:
+`f6435267950cde0985889056a67d5427f60f637f` and
+`937024b3f90570c9b177bfb2eee7cdab25a13985`, respectively.
+
+## Reproduction
+
+From this directory, run `python -I response_geometry_gate.py --check docs/RESULTS.json`.
+To regenerate, use `python -I response_geometry_gate.py --out docs/RESULTS.json`.
+Official certification uses CPython 3.13.5, NumPy 2.3.5 and `PYTHONHASHSEED=0`
+via `python ci_verify.py`; its exact-head success remains required.
+
+## Interpretation boundary
+
+Source correspondence is NOT_EVALUATED; physical claims and scientific breakthrough are false; Pillar 3 remains OPEN.
+
+Source arrays are confined to inherited acquisition. The separate evaluator receives
+only validated operational geometry and exact scalar responses, without source or
+target data. Transport and inherited scientific artifacts remain unchanged.
+The calculation depends on the inherited axioms and isotropic scalar lift.
+No fundamental time or dark-matter primitive is introduced.
+The prescribed next object is preregistered intrinsic-curvature interpretation
+without source fitting. Novelty requires a separate prior-art assessment.
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+# FCV-1 — Proofs for retained closure, descent and comparison
+
+Written before the new adjudication implementation. Review status: self-reviewed mathematical arguments; finite checks and deliberate-defect tests have separate receipts. A future GREEN does not prove these theorems by itself. All references to source and response objects use TYPE_LEDGER.md. This document corrects the broad missing-splitting/transport interpretation, not the historical program outputs.
+
+## P0 — Scalar structure and linearity
+
+For a finite set X and a specified commutative additive monoid M, finite additivity says mu(A)=sum_{x in A} mu({x}); fiber pushforward is meaningful and additive. No subtraction or vector-space kernel follows for a general M.
+
+For F-valued signed measures with F=Q or R, singleton evaluation is a bijection to F^X: define mu_x(A)=sum_{v in A}x_v, and evaluate singleton sets for the inverse. Pointwise addition and scalar multiplication agree under this bijection. Therefore a finite fiber sum, zero extension, function restriction and pullback are F-linear. This is the explicit linear representation used in the inherited rational diagnostic, not a claim that every signed vector is a physically preparable grade. The symbolic proofs below hold over Q/R. Rational bounded tests check implementations; they are not a density argument for real universality.
+
+## P1 — Admissibility, fiber composition and cumulative kernels
+
+Let X superset Y superset Z be nonempty finite prefix-closed sets with one common Genesis/root. Define r_XY(x) as its longest prefix in Y. Every prefix of x in Z is a prefix of r_XY(x), and conversely a Z-prefix of r_XY(x) is a Z-prefix of x. Their longest elements are equal. Thus r_YZ r_XY=r_XZ. This proves composition from addresses, including identities and repeated pruning.
+
+For z in Z the disjoint fiber identity is
+
+    {x:r_XZ(x)=z} = disjoint union_{y:r_YZ(y)=z} {x:r_XY(x)=y}.
+
+Finite additivity gives (P_YZ P_XY x)_z=sum_{r_XZ(v)=z}x_v=P_XZ x. The matrix product is a representation of this argument, not its premise. Summing over all fibers preserves total grade. In particular each K_j=ker P_0j lies in S_X0, and composition implies K_{j-1} subset K_j. No coarse recentering is substituted.
+
+## P2 — Supplied source section and split loss sequence
+
+Define I_YX on atoms by e_y -> e_{i(y)}; in singleton coordinates it is zero extension. Since r_XY i_YX=id_Y, P_XY I_YX=id_{F_Y}; both preserve total sum. These maps commute with every admissible relabeling because atom inclusion and ancestral fibers do. Hence
+
+    F_X = ker P_XY direct-sum I_YX(F_Y),
+    S_X = ker P_XY direct-sum I_YX(S_Y),
+    x = (x-I_YX P_XY x) + I_YX P_XY x.
+
+The first term is in ker P; the intersection is zero because PI=id. This is a section supplied by retention, not an arbitrary vector-space splitting. It is not claimed unique among all linear sections.
+
+For X0->X_{j-1}->X_j, let P_a=P_0,j-1 and P_b=P_j-1,j. Restriction of P_a gives the exact sequence
+
+    0 -> K_{j-1} -> K_j -> ker P_b -> 0.
+
+Indeed P_b P_a x=0 for x in K_j. Its kernel is K_{j-1}. Given y in ker P_b, I_0,j-1 y belongs to K_j and P_a I_0,j-1 y=y, proving surjectivity and giving the section. All domains refer to actual nested sets, not equal cardinalities.
+
+For cumulative E_j=I_0j P_0j on F_X0 (E_0=id), E_j^2=E_j and, for i<=j, E_i E_j=E_j E_i=E_j. To see this, I_0j factors through I_0i, and restricting ancestral pruning to X_i is its own X_i->X_j retraction. These address identities establish both products. Therefore D_j=E_{j-1}-E_j is idempotent, D_i D_j=0 for i!=j, and
+
+    K_j = direct-sum_{l=1..j} im D_l,
+    im D_j = I_0,j-1(ker P_j-1,j),
+    sum_{l=a+1..b} D_l = E_a-E_b.
+
+These are algebraically complementary projectors, not an assertion of orthogonality in a physical metric. Inserting an intermediate retained subset refines the decomposition by the last telescoping identity. Different factorizations with the same endpoints have the same total lost part, though their individual layer labels need not agree.
+
+## P3 — Bare-filtration naturality obstruction (NOT a retained no-go)
+
+Category: finite-dimensional F-vector spaces with fixed-length filtrations 0=K_0 subset ... subset K_m, with all filtration-preserving linear maps. The functors gr_j=K_j/K_{j-1} act by induced quotient maps.
+
+Any natural family of linear maps tau:gr_j -> gr_{j+1} is zero. At any object choose vector-space complements solely to exhibit an automorphism a that acts by 2 on gr_j and identity on gr_{j+1}, preserving the whole flag. Naturality requires tau composed with 2id = id composed with tau, so tau=0 (F=Q/R). This addresses every natural transformation in the declared class; it is stronger than observing that the inclusion becomes zero. Trivial grades are covered automatically.
+
+There is likewise no section of every bare extension 0->A->B->B/A->0 natural under all filtered linear maps when A and B/A are both nonzero. In temporary coordinates B=A direct-sum C, each shear a_u(a,c)=(a+u(c),c) is identity on A and B/A. A natural section s would satisfy a_u s=s for every u:C->A, impossible for a class c with u(c)!=0. A complement is used to exhibit symmetries in the proof, not selected as retained data.
+
+P2 does not conflict: the retained category carries actual atoms, inclusions and retractions and excludes those arbitrary shears as structural relabelings. The external associated graded exists in both categories; a natural reconstruction of representatives depends on which data and morphisms are retained.
+
+## P4 — Actual inherited response: quotient and invertibility
+
+For finite connected prefix tree X, form L_X from unweighted parent-child incidence. Its row and column sums are zero. For real a,
+
+    a^t L_X a = sum_{parent-child edges} (a_child-a_parent)^2.
+
+This vanishes exactly for constants by connectivity. Over Q the same follows by embedding in R; the rooted reduced matrix has a nonzero rational determinant. Thus L_X induces an isomorphism l_X:W_X=F_X/F1 -> S_X. Put Z_X=id-11^t/n and U_X=11^t/n. L_X+U_X is invertible, and G_X=(L_X+U_X)^(-1)-U_X satisfies LG=GL=Z, G1=0, and ZG=G. These identities follow by decomposing into constants and S_X; no new inverse or inner-product selection is introduced beyond the inherited unweighted diagnostic.
+
+T_X=q_X G_X|S_X is inverse to l_X. Its zero-mean representative is G_X x; its root-zero representative is G_X x-(G_X x)_root 1. They represent the SAME quotient class, not an identity of sources and potentials. For a root-only carrier S_X=W_X=0 and G_X=0, so the statements remain meaningful.
+
+Every K_j lies in S_X0. Therefore the actual cumulative O_0j=T_X0|K_j is injective, with rank dim K_j. Its restriction to K_{j-1} has rank dim K_{j-1}. This predicts the mathematical restriction law; the independent verifier must still reconstruct and check actual matrices and admissible witnesses.
+
+## P5 — Fixed-target descent, witness, and the distinct response quotient
+
+For any linear T:K_j->W, the rule [x]->Tx with codomain W is representative independent iff T(K_{j-1})=0: necessity compares k and 0; sufficiency compares x+k and x. For the actual T_X0 restriction, P4 proves that this holds iff K_{j-1}=0. Once a previous pruning is nontrivial, fixed-target descent fails; identity stages after an earlier loss do not magically restore it.
+
+An explicit admissible witness uses X0={(),(0),(0,0)}, X1={(),(0)}, X2={()}. In this listed order,
+
+    L0 = [[1,-1,0],[-1,2,-1],[0,-1,1]],
+    P01 = [[1,0,0],[0,1,1]],
+    k = [0,-1,1],
+    G0 k = [-1/3,-1/3,2/3].
+
+P01 k=0, sum k=0, L0(G0 k)=k and sum(G0 k)=0. The output is not constant (last minus root equals 1), hence q0 G0 k !=0. k and 0 are the same class in K2/K1 but have different W0 outputs. k is a difference of two positive unit atoms within one admissible fiber; it is a formal signed source distinction in the inherited linear domain. No new physical source law is inferred.
+
+Alternative, explicitly different codomain: F_j=T_X0(K_j) subset W0 is nested. The map
+
+    bar O_j:K_j/K_{j-1} -> W0/F_{j-1}, [x]->[T_X0 x]
+
+is well defined since representatives differ by a vector whose image is in F_{j-1}. It is injective because T_X0 is injective, and its image is F_j/F_{j-1}. It discards exactly the response subspace of previously lost sources; it does not recover that response unchanged. Quotient projections W0/F_i -> W0/F_j for i<=j compose canonically. P6-P7 are still needed to compare the different native stage carriers W_Xj.
+
+## P6 — Already-earned boundary comparison and derived response lift
+
+For actual retained inclusion define S_XY:F_X->F_Y by potential restriction. It sends constants to constants and induces R_XY:W_X->W_Y. From retraction define h_YX:F_Y->F_X by h psi=psi composed with r_XY; it induces H_YX:W_Y->W_X. These are typed differently from source P and I. In coordinates S=I^t and h=P^t, but their definitions use set maps, not an added physical metric.
+
+On a prefix tree, a retraction fiber has exactly one retained vertex. Every edge crossing fibers is an original edge between retained vertices. Summing L_X phi over a fiber cancels internal edges and leaves precisely L_Y S phi. Hence
+
+    P_XY L_X = L_Y S_XY.
+
+This is the inherited corrected boundary theorem. Also h psi is constant along every internal fiber edge. At a discarded vertex L_X h psi=0, while at a retained vertex its value is L_Y psi. Thus independently
+
+    L_X h_YX = I_YX L_Y.
+
+It follows on the typed zero-sum sources that
+
+    R_XY T_X = T_Y P_XY,
+    T_X I_YX = H_YX T_Y,
+    R_XY H_YX = id_WY.
+
+On arbitrary raw source arrays the first equation instead has the necessary centering: Z_Y S_XY G_X=G_Y P_XY Z_X. Do not remove Z_X or replace P_XY Z_X by Z_Y P_XY. No arbitrary historical A_r is used: R is actual restriction, H is ancestral pullback, and the intertwining has just been proved from the existing tree.
+
+Both comparisons commute with parent-preserving relabelings. R_YZ R_XY=R_XZ and H_YX H_ZY=H_ZX because the underlying set maps compose. For a general graph or a non-prefix retained subset the crossing-edge proof may fail. No theorem for those classes is asserted.
+
+## P7 — Cumulative/stage obstruction compatibility without redefining either
+
+Let X0->X1->X2, x in K2=ker P02. Then u=P01 x is in ker P12, z=x-I10 u is in K1, and x=z+I10 u. Linearity and P6 give the exact identity in ONE explicit codomain W0:
+
+    O02(x) = O01(z) + H10 O12(u),
+    z=x-I10 P01 x, u=P01 x.
+
+Here O02:K2->W0 and O01:K1->W0 are cumulative/fine obstructions, O12:ker P12->W1 is the native stage obstruction, and H10:W1->W0 is the earned comparison. The stage pullback O12 P01 kills K1, but its lift is only the NEW component. It equals O02 only after the old component O01(z) is subtracted. Thus no tautological substitution certifies fixed-target descent.
+
+Define response cumulative projectors E'_j=H_j0 R_0j on W0. P6 implies T0 E_j=E'_j T0 on S0. They are nested commuting idempotents, and D'_j=E'_{j-1}-E'_j gives T0 D_j=D'_j T0. Therefore the source splitting of P2 has a compatible response splitting in this SPECIFIC inherited finite-tree response, not merely from a source section alone.
+
+For three or more stages, expand each source as its D_l components plus E_final and apply T0. Associativity follows from ordinary linear addition, P/I/R/H composition, and the already-proved telescoping projectors. Inserting an intermediate legal pruning replaces E_a-E_c by (E_a-E_b)+(E_b-E_c); applying T0 yields the exact corresponding response refinement. Different factorizations with the same endpoints have identical cumulative lost response, not literally identical individually indexed grades.
+
+The selected representative on a new source grade is E_{j-1}x for x in K_j. It is independent of adding k in K_{j-1}. T0 E_{j-1}x realizes the quotient response in the supplied complement. This is NOT T0 x in general; the difference is the explicitly removed old response T0(Id-E_{j-1})x.
+
+## Corrections and limits
+
+The bare-filtration obstruction in P3 is real, but it does not prove a retained no-go once literal inclusion is restored. The full retained source splitting and the prefix-tree response comparison in P2/P6/P7 are contrary to the earlier broad missing-transport interpretation. The .15F non-descent computation is compatible with these results: fixed-target descent fails because the fixed full-fine response is injective, while canonical layer decomposition and quotient descent are different, available constructions. This is not evidence by itself of a new dynamical memory mechanism.
+
+What is closed here: the algebra of the specified finite prefix-tree pruning, formal signed-source split sequences, and the already-fixed Green-response comparisons. What is not closed: selection of a physical response law, realizability of every formal source vector, arbitrary graph/refinement classes, independent Genesis identification, the quantum leg, or any metric/connection/curvature/gravity claim. Time remains pruning / ordered recoverability update.
+
+## Mathematical context (no novelty claim)
+
+Split exact sequences and quotient factorization are standard algebra: Stacks Project, Definition 12.5.9, https://stacks.math.columbia.edu/tag/010F . Graph boundary elimination is standard; see Dörfler and Bullo, Kron Reduction of Graphs with Applications to Electrical Networks, arXiv:1102.2950, https://arxiv.org/abs/1102.2950 . The direct prefix-tree arguments above are complete and do not assume an external geometric model or borrow a general graph theorem without checking its hypotheses.
+
+END EXACT FILE
+
+BEGIN EXACT FILE handoff/replay.json
+{
+  "boundary": {
+    "closed_face_coarse_q_null": true,
+    "p1_four_corner_preparation_supplied": true,
+    "source_axiom_derived_from_frozen_ontology": false,
+    "source_axiom_user_approved_before_execution": true,
+    "uses_pruning": false,
+    "v1543_acquisition_consumes_p1": false,
+    "v1543_source_correspondence": "NOT_EVALUATED"
+  },
+  "conclusion": "the inspected B2 higher-incidence source does not provide an inherited P1-retained-grade-to-periodic-source correspondence",
+  "native_bridge_status": "OPEN",
+  "positive_candidate": {
+    "additive_and_reversible": true,
+    "closed_face_delta_is_B2_column_all_sizes": true,
+    "closed_face_higher_incidence_nonnull": true,
+    "coarse_vertex_q_is_B1_delta": true
+  },
+  "source_pins": [
+    {
+      "blob": "620a8a64ed93d8c30a6e04730ed5bfc0e6e1252a",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/source_axiom_canary.py",
+      "sha256": "0be0227293e5fc637ddeac01008c4f17bca06a28c68d1a347d8dc2ca9f9e04cb"
+    },
+    {
+      "blob": "ac8eb10ed90360fee6dcc0f170f19fffd0d74116",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/docs/RESULTS.json",
+      "sha256": "dc96d5a714e98178691c6a18cb09b0260cc1f3528fe066a9fafbd2b4055fd960"
+    },
+    {
+      "blob": "afd5a68ce74f7f80f49b6fd6307ebb0681182bf5",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_generation.py",
+      "sha256": "b79b8f7d40edbaad1bd34950497d8743a4b58e4a712626fd5766f6413c7f202e"
+    },
+    {
+      "blob": "90f76146e7f6a875531a941290ad15679a8fb52f",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py",
+      "sha256": "d2070cd9ea02bac4f0ca599e94aa3595915b9982e48fa26d75c91024f0dd453a"
+    },
+    {
+      "blob": "c939816a8b5b528fad2e82846e47dc7104cdc247",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/README.md",
+      "sha256": "2ea3da5ae6fe7df79d9d610cd921282e5c0fc8fcd790dc661ba828aa36c54cb0"
+    },
+    {
+      "blob": "c927a82fef384bdbc40bfa679cf2b2f404a98cb1",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION.md",
+      "sha256": "3ef2fc46c0401b6686c337c6c0793e35be43b4b78cbffd9718900aa53834f7c6"
+    },
+    {
+      "blob": "3a680f917bed6e9d4e9bea19ffc5bb05bc8a2765",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION_RESULT.md",
+      "sha256": "2a8b0836292c8e47f58795efd420fe674a14e0c6b7aa66c0fdb7e010c3b275d5"
+    },
+    {
+      "blob": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md",
+      "sha256": "d14ff5103268cd83521cf3e43821ecc080dd54b4a15af8899cafa6f09d7277ac"
+    }
+  ]
+}
+
+END EXACT FILE
