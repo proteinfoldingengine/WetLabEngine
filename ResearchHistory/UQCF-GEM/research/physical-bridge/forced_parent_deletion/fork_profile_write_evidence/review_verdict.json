@@ -1,0 +1,67 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "source_and_receiver_match": {
+      "initial_masks": [31, 15, 113],
+      "source_operations": {
+        "drop_bare_right_parent": {
+          "site": 4,
+          "post_source_mask": [15, 15, 113],
+          "root_cover": 2,
+          "left_cover": 1,
+          "right_cover": 1
+        },
+        "drop_left_leaf": {
+          "site": 2,
+          "post_source_mask": [27, 15, 113],
+          "root_cover": 1,
+          "left_cover": 1,
+          "right_cover": 1
+        }
+      },
+      "verified": true
+    },
+    "path_rejoin_and_separation": {
+      "common_state": [31, 17, 113],
+      "receiver_preceding_edits": [11, 3, 1, 17],
+      "divergence": {
+        "root_cover_2": {
+          "next_edit": "B adds leaf 5",
+          "receiver_mask_transition": "17 -> 49",
+          "final_right_leaves": [5, 6]
+        },
+        "root_cover_1": {
+          "next_edit": "A adds leaf 5",
+          "receiver_mask_transition": "17 -> 1",
+          "final_right_leaves": []
+        }
+      },
+      "verified": true
+    },
+    "campaign_trajectory_divergence": {
+      "representatives": [0, 6],
+      "shared_states": [600, 595, 594, 1463, 1488],
+      "divergent_states": {
+        "rep_0": 2657,
+        "rep_6": 1518
+      },
+      "divergent_masks": {
+        "rep_0": [63, 17, 113],
+        "rep_6": [31, 49, 113]
+      },
+      "reset_endpoint": [127, 1, 1],
+      "verified": true
+    },
+    "controls_and_scope": {
+      "binary_fork_counterexample": "Reproduces Dot's control with coalescing paths",
+      "palette_ownership": "Receiver B records different final bits in 4 out of 6 orderings",
+      "verification": "Original producers and verifiers imported, entries regenerated and compared to Git-pinned certificate",
+      "verified": true
+    }
+  },
+  "native_bridge_status": "OPEN"
+}
