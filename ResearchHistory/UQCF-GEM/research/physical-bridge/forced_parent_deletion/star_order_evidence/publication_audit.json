@@ -1,0 +1,24 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "78f10593c9d9bfaf19461266d03e0aab18391b26",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "a49b27ebff151aba6a4f217d33d2a0af6a39081735a9b3ac2efb014272cc3dc9",
+  "request_sha256": "a886e6a1dd07d9a609852d5db1497ba6bea375b0b6647ca4eeccd560ea970e4e",
+  "response_sha256": "98b074e6d3971f45018da7fa86f5111608ee5520db7fe0e91761aa627349762c",
+  "run_id": "45040711800",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/producer.py": "ffd513619d182abea2b31bd90c38e12784557bf3",
+    "ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/verifier.py": "80a47f10231a086af161c4999c582fa038d064c7",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/STAR_ORDER.md": "c37e1e3941d1c127a41f17259017306641359634",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/STAR_ORDER_CHECK_PLAN.md": "e19cf047c16d68de78e7747429dd1de31aaa3873",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_star_order.py": "83a30ac071b1f268bdfa52d31e908e4e8650d048",
+    "handoff/replay.json": "31ae9abb61402aafc293f2599c0d25eb60c3b059",
+    "handoff/star_order_certificate.json": "09c8db9e5a907b3e5c6486e6065f932e69632541"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "78f10593c9d9bfaf19461266d03e0aab18391b26"
+}
