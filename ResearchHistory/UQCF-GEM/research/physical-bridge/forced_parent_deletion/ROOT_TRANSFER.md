@@ -41,6 +41,14 @@ Keep the same transfer, union, initial preparation and exhaustion. Remove only t
 
 The live cover distinguishes the guarded histories throughout. In particular the cover-two junction history never goes through the cover-one meeting state of the older controller. If that specific historical path is required, a deterministic function of its current tree and fixed continuously compatible grades still cannot supply both next edits. The earlier memory obstruction stands.
 
+## What the archive's own exact-profile components force
+
+The v16.45 graph also records the connected components in which the entire measured cover profile stays fixed at every edit. Take the actual component containing each post-source state and inspect every endpoint with a single holder for each root branch. Reaching such an endpoint is an explicit endpoint condition. It is not an automatic consequence of remaining inside the component.
+
+The junction component has 48 states. Its exclusive endpoints are all six permutations of (1,15,113). The leaf component has 3,673 states. Its exclusive endpoints are the three permutations of (127,1,1). In the leaf arm C must change from its original mask 113 under *every* such completion. It must either gain the left branch or relinquish the right. Also, the two non-source views B and C together always distinguish the arms at completion, even with arbitrary scheduling. Both statements hold without the proposed transfer rule.
+
+There are also two nine-edit paths along which C takes identical values at all ten successive states. The stored paths end at (113,15,1) and (127,1,1). In both paths C remains at 113 for the first seven states, then passes through 81, 17 and 1. The matched profile never changes on either path. For any common ambient grade, all C grades obtained by direct P1 projection match at each step as well. This archive-level counterexample distinguishes *a forced change in C* from *a forced source-specific record in C*. The proposed transfer rule forces the latter by preventing a recipient from acquiring a previously unheld root junction.
+
 ## Reproducible checks
 
 The checker imports the original atomic producer, verifier and FCV grade implementation. It exhausts every admitted transfer choice on the two archived seven-vertex graphs with two and three labels, checks each constituent edit against the original stored graph edge set, and verifies the terminal owner reconstruction for every omitted index. It separately verifies all six reindexings of the matched preparation and the rejecting paths. The implemented intra-block copy and removal order is fixed for reproducibility. Other valid prefix-respecting orders have the same block endpoint by construction. No gravity law is inferred.

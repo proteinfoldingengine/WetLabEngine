@@ -1,4 +1,5 @@
 """Exhaust a proposed order-free transfer rule on archived fork graph states."""
+from collections import deque
 from functools import cache
 from itertools import permutations
 import gzip
@@ -93,6 +94,84 @@ class Graph:
         return frozenset().union(*(self.ends(path[-1]) for path in paths))
 
 
+def profile_component_control(entry, starts):
+    """Compare archived exact-profile components without imposing transfer blocks."""
+    graph = entry["graph"]
+    states = [tuple(row) for row in graph["states"]]
+    index = {state: i for i, state in enumerate(states)}
+    arms = ("junction", "leaf")
+    components = {}
+    terminals = {}
+    neighbors = {}
+    for arm in arms:
+        start = index[starts[arm]]
+        profile = graph["profiles"][graph["profile_ids"][start]]
+        component = next(set(row) for row in profile["zero_components"] if start in row)
+        components[arm] = component
+        terminals[arm] = {i for i in component if width(states[i]) == 2}
+        neighbors[arm] = {}
+        for i in component:
+            state = states[i]
+            adjacent = []
+            for label, mask in enumerate(state):
+                for site in range(1, 7):
+                    toggled = mask ^ (1 << site)
+                    j = index.get(state[:label] + (toggled,) + state[label+1:])
+                    if j in component:
+                        smaller = i if mask < toggled else j
+                        assert graph["forward_moves"][smaller] >> (6*label + site-1) & 1
+                        adjacent.append(j)
+            neighbors[arm][i] = adjacent
+
+    ends = {arm: sorted(states[i] for i in terminals[arm]) for arm in arms}
+    assert ends["junction"] == sorted(permutations((1, 15, 113)))
+    assert ends["leaf"] == sorted(set(permutations((1, 1, 127))))
+    assert all(state[2] != 113 for state in ends["leaf"])
+    assert set(s[1:] for s in ends["junction"]).isdisjoint(s[1:] for s in ends["leaf"])
+
+    # Match C's exact edit sequence while allowing unobserved A/B edits to interleave.
+    start = tuple(index[starts[arm]] for arm in arms)
+    queue = deque([start])
+    previous = {start: None}
+    while queue:
+        pair = queue.popleft()
+        left, right = pair
+        if left in terminals["junction"] and right in terminals["leaf"]:
+            break
+        visible = states[left][2]
+        assert visible == states[right][2]
+        ln = neighbors["junction"][left]
+        rn = neighbors["leaf"][right]
+        choices = [(j, right) for j in ln if states[j][2] == visible]
+        choices.extend((left, j) for j in rn if states[j][2] == visible)
+        choices.extend((a, b) for a in ln if states[a][2] != visible
+                       for b in rn if states[b][2] == states[a][2])
+        for new in choices:
+            if new not in previous:
+                previous[new] = pair
+                queue.append(new)
+    else:
+        raise AssertionError("No matching C histories reach complete holdings")
+    pairs = []
+    while pair is not None:
+        pairs.append(pair)
+        pair = previous[pair]
+    pairs.reverse()
+    records = {}
+    histories = []
+    for arm, side in zip(arms, (0, 1)):
+        indices = [p[side] for j, p in enumerate(pairs) if j == 0 or p[side] != pairs[j-1][side]]
+        assert all(b in neighbors[arm][a] for a, b in zip(indices, indices[1:]))
+        records[arm] = [states[i] for i in indices]
+        histories.append([s[2] for j, s in enumerate(records[arm])
+                          if j == 0 or s[2] != records[arm][j-1][2]])
+    assert histories[0] == histories[1] and histories[0][-1] == 1
+    stepwise = [s[2] for s in records["junction"]]
+    assert stepwise == [s[2] for s in records["leaf"]]
+    return {"component_sizes": {k: len(v) for k, v in components.items()},
+            "terminal_masks": ends, "same_C_edit_history": histories[0], "C_after_each_state": stepwise, "witnesses": records}
+
+
 def run(out):
     atom=module("original_atomic",ATOM/"engine.py","c10ac57f988a439144e21898bd2b33ece0838a9b")
     verify=module("original_verify",ATOM/"verify.py","91cd1e507e955683e744fbdbb0745cac19d66cb3")
@@ -165,7 +244,8 @@ def run(out):
         return tuple(int(projection.aggregate(tuple(int(i==v) for i in range(7)))[0]) for v in range(7))
     covector=tuple(a-b for a,b in zip(root_row(1),root_row(113)))
     assert covector==(0,0,0,0,1,1,1)
-    cert={"certificate_to_original_writer":wired,"sources":sources,"terminal_sets":endpoints,"unguarded_control":[j,l],
+    control=profile_component_control(next(e for e in entries if e["b"]==e["c"]==2 and e["k"]==3),sources)
+    cert={"archived_exact_profile_control":control,"certificate_to_original_writer":wired,"sources":sources,"terminal_sets":endpoints,"unguarded_control":[j,l],
           "original_veto_certificate":veto,"counts":counts,"C_root_covector":covector}
     out.mkdir(parents=True,exist_ok=True)
     data=(json.dumps(cert,indent=2,sort_keys=True)+"\n").encode()
