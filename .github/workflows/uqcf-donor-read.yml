@@ -1,4 +1,4 @@
-name: Verify the original donor read and fork cleanup controls
+name: Review the donor read and check the original receiver writes
 on:
   push:
     branches: [gpt/v1686-recombination-audit-20261118]
