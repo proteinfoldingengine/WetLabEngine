@@ -1,0 +1,382 @@
+{
+  "families": {
+    "L": {
+      "fine": {
+        "minimum": "25/16",
+        "nearest_pairs": [
+          [
+            0,
+            2
+          ]
+        ],
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "2",
+            "25/16"
+          ],
+          [
+            "2",
+            "0",
+            "57/16"
+          ],
+          [
+            "25/16",
+            "57/16",
+            "0"
+          ]
+        ]
+      },
+      "local": {
+        "minimum": "1",
+        "nearest_pairs": [
+          [
+            0,
+            1
+          ]
+        ],
+        "owner_grade": "5",
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "1",
+            "25/16"
+          ],
+          [
+            "1",
+            "0",
+            "41/16"
+          ],
+          [
+            "25/16",
+            "41/16",
+            "0"
+          ]
+        ]
+      },
+      "remote": {
+        "minimum": "25/16",
+        "nearest_pairs": [
+          [
+            0,
+            2
+          ]
+        ],
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "2",
+            "25/16"
+          ],
+          [
+            "2",
+            "0",
+            "57/16"
+          ],
+          [
+            "25/16",
+            "57/16",
+            "0"
+          ]
+        ]
+      },
+      "terminal_after_local": {
+        "minimum": "1",
+        "nearest_pairs": [
+          [
+            0,
+            1
+          ]
+        ],
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "1",
+            "25/16"
+          ],
+          [
+            "1",
+            "0",
+            "41/16"
+          ],
+          [
+            "25/16",
+            "41/16",
+            "0"
+          ]
+        ]
+      },
+      "terminal_after_remote": {
+        "minimum": "1",
+        "nearest_pairs": [
+          [
+            0,
+            1
+          ]
+        ],
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "1",
+            "25/16"
+          ],
+          [
+            "1",
+            "0",
+            "41/16"
+          ],
+          [
+            "25/16",
+            "41/16",
+            "0"
+          ]
+        ]
+      }
+    },
+    "R": {
+      "fine": {
+        "minimum": "25/16",
+        "nearest_pairs": [
+          [
+            0,
+            2
+          ]
+        ],
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "2",
+            "25/16"
+          ],
+          [
+            "2",
+            "0",
+            "57/16"
+          ],
+          [
+            "25/16",
+            "57/16",
+            "0"
+          ]
+        ]
+      },
+      "local": {
+        "minimum": "25/16",
+        "nearest_pairs": [
+          [
+            0,
+            2
+          ]
+        ],
+        "owner_grade": "4",
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "2",
+            "25/16"
+          ],
+          [
+            "2",
+            "0",
+            "57/16"
+          ],
+          [
+            "25/16",
+            "57/16",
+            "0"
+          ]
+        ]
+      },
+      "remote": {
+        "minimum": "1",
+        "nearest_pairs": [
+          [
+            0,
+            1
+          ]
+        ],
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "1",
+            "25/16"
+          ],
+          [
+            "1",
+            "0",
+            "41/16"
+          ],
+          [
+            "25/16",
+            "41/16",
+            "0"
+          ]
+        ]
+      },
+      "terminal_after_local": {
+        "minimum": "1",
+        "nearest_pairs": [
+          [
+            0,
+            1
+          ]
+        ],
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "1",
+            "25/16"
+          ],
+          [
+            "1",
+            "0",
+            "41/16"
+          ],
+          [
+            "25/16",
+            "41/16",
+            "0"
+          ]
+        ]
+      },
+      "terminal_after_remote": {
+        "minimum": "1",
+        "nearest_pairs": [
+          [
+            0,
+            1
+          ]
+        ],
+        "separated": true,
+        "triangle": true,
+        "work": [
+          [
+            "0",
+            "1",
+            "25/16"
+          ],
+          [
+            "1",
+            "0",
+            "41/16"
+          ],
+          [
+            "25/16",
+            "41/16",
+            "0"
+          ]
+        ]
+      }
+    }
+  },
+  "fine_keys": [
+    [],
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "local_deleted_leaf": [
+    0,
+    0
+  ],
+  "local_owner": [
+    0
+  ],
+  "remote_deleted_leaf": [
+    1,
+    0
+  ],
+  "source_pins": [
+    {
+      "blob": "e95e3e978779164dd91f09b80e3389247e6320c2",
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py",
+      "sha256": "872977a8ef8bd5bd0c3d438ccf2c5309a7fb0600868200a28398aa57b9f4623c"
+    },
+    {
+      "blob": "9b71ce47bbef83132f00270f8a9a19e7721864d6",
+      "path": "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py",
+      "sha256": "3cde04bc56c94f63373a94ca5ff5370e92bd97b9fc3f329849a19c1126dc82e9"
+    },
+    {
+      "blob": "9128c24b695c1b539ac60dc93aeaf0bd4795c57b",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py",
+      "sha256": "4f3114e04ccfc4fdf840d6271748fb80cb339882f730267068778d25fadfedf1"
+    }
+  ],
+  "within_fiber_control": {
+    "coarse": {
+      "minimum": "0",
+      "nearest_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "separated": false,
+      "triangle": true,
+      "work": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "fine": {
+      "minimum": "1",
+      "nearest_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "separated": true,
+      "triangle": true,
+      "work": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ]
+    }
+  }
+}

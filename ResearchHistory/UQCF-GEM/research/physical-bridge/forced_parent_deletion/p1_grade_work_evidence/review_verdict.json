@@ -1,0 +1,23 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "unit_tree_work_coordinates": "Verified. The identity D_X(i,j) = \\sum_{v \\ne o} c_v(z)^2 follows from summation by parts on the tree, where the potential drop across the edge to the parent is exactly c_v(z) under the unit-edge Green response.",
+    "exact_decrement_under_P1": "Verified. Since P1 preserves the subtree sums c_v(z) for all surviving vertices v \\in Y, the difference D_X(i,j) - D_Y(i,j) is exactly the sum of c_v(z)^2 over the deleted vertices v \\in X \\setminus Y.",
+    "single_leaf_magnitude_and_sign": "Verified. For a single deleted leaf u, the work decrement is exactly c_u(z)^2 = (g_i(u) - g_j(u))^2. This mathematically determines the magnitude of the transfer contrast at the parent, while the sign remains a separate input.",
+    "rank_bound_and_decay": "Verified. The decrement table is the squared-distance table of the vectors (c_v(g_i))_{v \\in X \\setminus Y}. Its double-centered Gram matrix has rank bounded by the number of removed vertices. The cumulative decrement is independent of the deletion order.",
+    "depth_coefficient_corollary": "Verified. Using the v16.22 depth-diagonal family, the edge drop is a_{|v|} c_v(z). Summation by parts yields the decrement with multiplier a_{|v|} on each term. Since depth is preserved under P1, positive multipliers preserve the sign of the unit-edge case.",
+    "three_pair_tables_and_fine_equality": "Verified. The fine tree work values (2, 25/16, 57/16) and the unique nearest pair (02) match the replay.json output for both families L and R, confirming identical initial work geometry.",
+    "identical_retained_carrier_distinct_parent_grades": "Verified. After local deletion of u, family L yields work 01 = 1 and nearest pair 01, with owner grade 5. Family R yields work 01 = 2 and nearest pair 02, with owner grade 4. The retained carrier is identical but the work geometry diverges.",
+    "neighbor_switch_remote_terminal": "Verified. Remote deletion of v interchanges the contrast across L and R. Terminal deletion of both leaves yields identical pair-work geometry (work 01 = 1) for both families, confirming convergence.",
+    "within_fiber_collapse": "Verified. The coarse control b + e_u - e_p compared to b yields an initial work of 1, which collapses to 0 upon deletion of u. The v15.40 separated flag correctly evaluates to false for this collapsed state.",
+    "evaluator_observables_and_interface": "Verified. The v15.40 response_geometry.py routine exactly computes the stated observables (work, minimum, neighbors, separated). The new calling interface correctly binds the exact graded-tree response to these legacy inputs.",
+    "scalar_work_vs_fixed_responses": "Verified. The text correctly distinguishes the scalar work read (which aggregates over the whole carrier) from a receiver with access to all fixed old-tree edge drops, which could already distinguish the preparation pair.",
+    "abstract_evaluator_vs_physical_blindness": "Verified. The text explicitly separates the software evaluation of the exact grade family from the physical receiver's blindness, noting that the native process binding these inputs remains open.",
+    "scope_of_physical_selection": "Verified. The text explicitly states that selection by physical dynamics, source-based event selection, and the availability of an actual receiver's work read remain open."
+  },
+  "native_bridge_status": "OPEN"
+}
