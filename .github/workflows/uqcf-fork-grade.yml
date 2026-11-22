@@ -61,7 +61,7 @@ jobs:
         with:
           name: fork-grade-replay
           path: handoff
-      - name: Independently adjudicate the mathematical and software claims
+      - name: Request worked checks for each mathematical claim
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 "$SCI/review_fork_grade.py" review review_evidence
