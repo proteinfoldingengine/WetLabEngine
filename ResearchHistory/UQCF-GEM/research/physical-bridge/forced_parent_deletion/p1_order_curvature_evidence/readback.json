@@ -1,0 +1,36 @@
+{
+  "artifacts": [
+    {
+      "digest": "sha256:10fc96e8582130cdb327dd13a7e778e048ef5d9f10e2df3bdbce1216750f06c1",
+      "id": 14734962284,
+      "name": "p1-order-curvature-publication",
+      "size_in_bytes": 1646
+    },
+    {
+      "digest": "sha256:477933555db7c7a0c917b8a0a42fc13b86ff2e0f87b0aea09c7db89e1b386a54",
+      "id": 14734532479,
+      "name": "p1-order-curvature-review",
+      "size_in_bytes": 32672
+    },
+    {
+      "digest": "sha256:be71e77aba4c36e978370b96e7a356837324a0fbeb22b4b86b2b7f1aaa4fc374",
+      "id": 14734089027,
+      "name": "p1-order-curvature-replay",
+      "size_in_bytes": 5784
+    }
+  ],
+  "edge_table_sha256": "1687d8352d78d0407dc52f31e3ac7d2588fe3ac787a3d8f44fe6ce2597883ce9",
+  "jobs": {
+    "argument_review": 137059589169,
+    "replay": 137059511747,
+    "replay_publication": 137059684424
+  },
+  "local_replay_and_originals_equal": true,
+  "logs_sha256": "67a6d7343261436ac88c48007928bb6314946a771350550f258c4d6e6f74e5ca",
+  "publication_replay_equal": true,
+  "raw_response_and_audit_match_log": true,
+  "run_attempt": 1,
+  "source_commit": "7545053edc9418848231635b7717aca46928d003",
+  "workflow_diff_success": true,
+  "workflow_run_id": 44973935842
+}

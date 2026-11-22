@@ -1,0 +1,19 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "dag_input_and_depth": "Verified that the DAG input is the strict prefix closure of the parent-child matrix, and the archive's rank computation corresponds exactly to depth.",
+    "profile_and_gram_correction": "Confirmed that removing a leaf removes its ancestor and descendant entries, changing the raw profile Gram matrix by exactly -e_p e_p^T at the owner's row.",
+    "normalization_and_neighbors": "Checked that the row norm of the owner p decreases, multiplying off-diagonal similarities by a factor strictly greater than 1. This guarantees a strictly larger symmetric output weight for selected pairs without requiring a tie-breaking convention.",
+    "fixture_metrics": "Calculated the matched fixture's edge count as 98, with deg(p)=7 and deg(a)=17, yielding a curvature coefficient of 4 - 7 - 17 = -20.",
+    "held_edge_values": "Evaluated the held-edge weight as 1/((1+eps)(sqrt(3)+eps)) for fine/remote and 1/((1+eps)(sqrt(2)+eps)) for local removal, matching the Forman proxies of -11.547 and -14.142 respectively.",
+    "scalar_assembly_change": "Verified the scalar slice assembly changes by exactly -20 * 7 * Delta W_{pa} / (98 * (98+eps)), consistent with the replay's scalar difference.",
+    "sink_mask_control": "Inspected the sink-mask control, confirming that masking a sink's outgoing arcs leaves the incoming column intact and produces identical geometric input to the reader.",
+    "grade_control_independence": "Evaluated the grade-control pair using the original P1 code, confirming that the reader factors entirely through the Boolean order and yields identical geometry for a fixed carrier despite different owner grades (4 vs 5).",
+    "event_distinctions": "Distinguished the structural consequence of a specified deletion from a grade-selected event, noting that physical access, joint-realization, and native grade-sensitive coupling remain open."
+  },
+  "native_bridge_status": "OPEN"
+}
