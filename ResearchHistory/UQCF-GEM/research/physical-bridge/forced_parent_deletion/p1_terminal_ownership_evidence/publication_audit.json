@@ -1,0 +1,22 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "d684c0e0bf587cb2dc4e1366c8d7a16f9b2dbb09",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "8b6c478ef76061ecd536466fa24bd6f22d3de2d9a5cb0cdac75040b987758284",
+  "request_sha256": "4cf7ce57bfeb02f9f07dca93238d919cbca2e88172e233d9e9176c20f654be60",
+  "response_sha256": "3f5666795672a8ed140b6b98582bba76f06a7d8dd6ac26c7234c9774692b866e",
+  "run_id": "44986431080",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/TYPE_AND_PROOF.md": "69ace252586ad0b323ca3c460304ead8da8fd917",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_OWNER_ACTION_RESULT.md": "3ad8d7583b877e9ba03b7657409f06cd3d35bbfa",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_TERMINAL_OWNERSHIP.md": "61ebdfebfe956fabcd3d03cf72c2dfc457f67437",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_p1_terminal_ownership.py": "4901c99544ca269115860c13e2d7b7dfd99bd501",
+    "handoff/replay.json": "b7ab78200e611b67e4659f59138fef59e7038953"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "d684c0e0bf587cb2dc4e1366c8d7a16f9b2dbb09"
+}

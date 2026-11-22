@@ -1,0 +1,30 @@
+{
+  "certificate_sha256": "20320f12c7b8e8d407cbbd8991b05af60e99c83a97967890d5e7f2c8e8c8838a",
+  "fixture": {
+    "deletion_lengths": {
+      "t_fewest_shared_record": 1333,
+      "t_fewest_split_record": 1332,
+      "t_most_shared_record": 1300,
+      "t_most_split_record": 1299,
+      "u_fewest_shared_record": 1333,
+      "u_fewest_split_record": 1332,
+      "u_most_shared_record": 1300,
+      "u_most_split_record": 1299
+    },
+    "root_star_equal_length": 1,
+    "shared_full_terminals": "137369900626569127919715942598229385418793943383832182092025785413140781304303845376",
+    "start_incidence": 1453,
+    "strict_terminals_per_arm": "137369900626569127919715942598229385418793943383832182092025785413140781304303845376",
+    "terminal_counts_per_arm": "274739801253138255839431885196458770837587886767664364184051570826281562608607690752",
+    "vertices": 85,
+    "views": 25
+  },
+  "grammar": "v16.26 deletion-only",
+  "small": {
+    "interface_pairs": 936,
+    "moves": 2241,
+    "sinks": 99,
+    "states": 754
+  },
+  "tree_shapes": 8
+}
