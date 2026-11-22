@@ -1,0 +1,120 @@
+name: Verify retained grade memory and the receiver root response
+on:
+  push:
+    branches: [gpt/v1686-recombination-audit-20261118]
+    paths: ['.github/workflows/uqcf-fork-grade.yml']
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  OPENBLAS_NUM_THREADS: '1'
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_fork_grade.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/fork_profile_write_evidence/fork-profile-write-replay.zip
+      - name: Replay original fork paths and matched source atoms
+        run: |
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          mkdir -p handoff
+          python3 "$SCI/check_fork_grade.py" handoff > handoff/replay.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fork-grade-replay
+          path: handoff
+          if-no-files-found: error
+
+
+  argument-review:
+    needs: replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_fork_grade.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/FORK_GRADE.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/ROUTED_GRADE.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/FORK_PROFILE_WRITE_RESULT.md
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_fork_grade.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_common_field.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: fork-grade-replay
+          path: handoff
+      - name: Independently adjudicate the mathematical and software claims
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_fork_grade.py" review review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fork-grade-review
+          path: review_evidence
+          if-no-files-found: error
+
+
+  replay-publication:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_fork_grade.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/fork_profile_write_evidence/fork-profile-write-replay.zip
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/FORK_GRADE.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/ROUTED_GRADE.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/FORK_PROFILE_WRITE_RESULT.md
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_fork_grade.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_common_field.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: fork-grade-replay
+          path: earlier
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: fork-grade-review
+          path: review_evidence
+      - name: Verify the exact replay bytes and read back the independent review
+        run: |
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          mkdir -p handoff
+          python3 "$SCI/check_fork_grade.py" handoff > handoff/replay.json
+          diff -r earlier handoff
+          python3 "$SCI/review_fork_grade.py" audit review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fork-grade-publication
+          path: |
+            handoff/replay.json
+            review_evidence/publication_audit.json
+          if-no-files-found: error
