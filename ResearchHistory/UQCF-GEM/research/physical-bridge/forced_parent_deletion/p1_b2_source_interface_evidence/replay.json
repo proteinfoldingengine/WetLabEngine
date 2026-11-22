@@ -1,0 +1,61 @@
+{
+  "boundary": {
+    "closed_face_coarse_q_null": true,
+    "p1_four_corner_preparation_supplied": true,
+    "source_axiom_derived_from_frozen_ontology": false,
+    "source_axiom_user_approved_before_execution": true,
+    "uses_pruning": false,
+    "v1543_acquisition_consumes_p1": false,
+    "v1543_source_correspondence": "NOT_EVALUATED"
+  },
+  "conclusion": "the inspected B2 higher-incidence source does not provide an inherited P1-retained-grade-to-periodic-source correspondence",
+  "native_bridge_status": "OPEN",
+  "positive_candidate": {
+    "additive_and_reversible": true,
+    "closed_face_delta_is_B2_column_all_sizes": true,
+    "closed_face_higher_incidence_nonnull": true,
+    "coarse_vertex_q_is_B1_delta": true
+  },
+  "source_pins": [
+    {
+      "blob": "620a8a64ed93d8c30a6e04730ed5bfc0e6e1252a",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/source_axiom_canary.py",
+      "sha256": "0be0227293e5fc637ddeac01008c4f17bca06a28c68d1a347d8dc2ca9f9e04cb"
+    },
+    {
+      "blob": "ac8eb10ed90360fee6dcc0f170f19fffd0d74116",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/docs/RESULTS.json",
+      "sha256": "dc96d5a714e98178691c6a18cb09b0260cc1f3528fe066a9fafbd2b4055fd960"
+    },
+    {
+      "blob": "afd5a68ce74f7f80f49b6fd6307ebb0681182bf5",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_generation.py",
+      "sha256": "b79b8f7d40edbaad1bd34950497d8743a4b58e4a712626fd5766f6413c7f202e"
+    },
+    {
+      "blob": "90f76146e7f6a875531a941290ad15679a8fb52f",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py",
+      "sha256": "d2070cd9ea02bac4f0ca599e94aa3595915b9982e48fa26d75c91024f0dd453a"
+    },
+    {
+      "blob": "c939816a8b5b528fad2e82846e47dc7104cdc247",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/README.md",
+      "sha256": "2ea3da5ae6fe7df79d9d610cd921282e5c0fc8fcd790dc661ba828aa36c54cb0"
+    },
+    {
+      "blob": "c927a82fef384bdbc40bfa679cf2b2f404a98cb1",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION.md",
+      "sha256": "3ef2fc46c0401b6686c337c6c0793e35be43b4b78cbffd9718900aa53834f7c6"
+    },
+    {
+      "blob": "3a680f917bed6e9d4e9bea19ffc5bb05bc8a2765",
+      "path": "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION_RESULT.md",
+      "sha256": "2a8b0836292c8e47f58795efd420fe674a14e0c6b7aa66c0fdb7e010c3b275d5"
+    },
+    {
+      "blob": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md",
+      "sha256": "d14ff5103268cd83521cf3e43821ecc080dd54b4a15af8899cafa6f09d7277ac"
+    }
+  ]
+}
