@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "bytes": 2561,
+      "digest": "sha256:11e41a814ddb1287bc7a56dd39346f5522e1e160e3cbcbdcf6f7ee6688e8f56d",
+      "id": 14765045411,
+      "name": "native-writer-phase-replay"
+    },
+    {
+      "bytes": 55360,
+      "digest": "sha256:c917460479ff6aa62a70f8287bb7c07cef39d9c77b23b82d96c67a71122c9662",
+      "id": 14764965936,
+      "name": "native-writer-phase-review"
+    },
+    {
+      "bytes": 1358,
+      "digest": "sha256:5606ed77aaaa8bcf07d7d050251846c57dbb429aaa5e10bac732016d78bc2a2f",
+      "id": 14763948736,
+      "name": "native-writer-phase-publication"
+    }
+  ],
+  "freeze": "326509374b803d32d7e89b97f6e204b4ef391f2c",
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 137288628928,
+      "name": "replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 137288732696,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 137288903414,
+      "name": "replay-publication"
+    }
+  ],
+  "local_replay_matches_entire_ci_replay": true,
+  "logged_response_and_audit_match_artifact_bytes": true,
+  "logs_zip_sha256": "0350477b11ea6acf99a5307bbc518fcee8878a009d729735be1aeaca2d76e044",
+  "native_writer_phase_certificate_sha256": "88ca4777cb390e7cd400f356b950797adc2726646e0cbb5b3853b5676ceebc23",
+  "raw_review_response_sha256": "cd16a5050c6edd654135e30a5093f25ed93674fcde81239f341e6fc4005f55e1",
+  "run": 45048629395,
+  "second_ci_replay_and_review_audit": "PASS"
+}

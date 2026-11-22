@@ -1,0 +1,18 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The full event, target, original preparation, and receiver-local prefix are insufficient to deterministically predict the actual receiver futures.",
+    "The historical continuations use broader one-incidence support rules, whereas the source atom is verified in the original deletion grammar.",
+    "No physical reprise of the loop, invocation of the normalizer, or access to its transient record is derived."
+  ],
+  "native_bridge_status": "OPEN",
+  "proof_checks": {
+    "repeated_event": "In v16.53 campaign row 2835, the G tree has root children 1, 6, 7, and 8, with child 1 having leaves 2 through 5. The initial and final state is (207, 275, 35) with target (2, 3). View 0 deletes vertex 5 at transitions 8→9 and 30→31, changing state from (239, 307, 35) to (207, 307, 35). View 1 deletes vertex 5 at transitions 9→10 and 31→32, changing state from (207, 307, 35) to (207, 275, 35). View 2 is the receiver. Following the early event, view 2 adds vertex 6, changing its mask from 35 to 99. Following the late event, it stays at mask 35. The difference arises because the original code has one more root lift pending after the first child pass, whereas after the second pass the lift is already finished. This distinguishes the receiver outcomes despite the same initial preparation, target, and complete event.",
+    "rising_event": "Before view 1 deletes vertex 5, views 0 and 1 together cover leaves 2, 3, 4, and 5. Afterward, leaf 5 belongs only to view 2, leaves 2 and 3 remain with view 0, and leaf 4 remains with view 1. All three views become necessary for the children of vertex 1, while the root remains covered by two views. This raises the global consistency height from 2 to 3. At the first receiver write on the early route, view 2 adds vertex 6 (mask 35→99), and its root grade drops from 4 to 3.",
+    "local_history": "In v16.52 campaign rows 5402 and 5403, the J tree has root children 1, 7, and 13. Both runs reach state (7871, 122947, 387) and execute the identical deletion of vertex 1 by view 2, returning (7871, 122947, 385). The receiver-local history at view 1 is identical, consisting of the common mask 122947. In row 5402, the root overlap anchor is at view 2, and the deletion finishes a role transfer out of subtree 1. The next transfer in subtree 7 selects view 1, adding vertex 7 (mask 122947→123075), which drops the root grade from 7 to 1. In row 5403, the anchor is at view 0, and the deletion finishes trimming an excess holder. The code then enters recursive normalization in subtree 7, and view 1 stays at root grade 7.",
+    "scope": "The full event, target, original preparation, and receiver-local prefix (including retained grade changes) are insufficient inputs to a deterministic rule for the actual receiver futures. The source atom is verified in the original deletion grammar, while the historical continuations use the broader one-incidence support rules of their respective normalizers. The physical links remain unsupplied: no physical reprise of the loop, invocation of the normalizer, or access to its transient record is derived."
+  }
+}
