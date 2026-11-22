@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "bytes": 41807,
+      "digest": "sha256:bcea3ee0fe8ae66acbf15444df55e89430c3abcff387b307385bf2335897cdef",
+      "id": 14765526241,
+      "name": "remote-pair-work-review"
+    },
+    {
+      "bytes": 1673,
+      "digest": "sha256:f9cee0affdc96b3ba9a9ddbf0c37afe02137095a71ffe020633abb4cdf9cce77",
+      "id": 14765088548,
+      "name": "remote-pair-work-replay"
+    },
+    {
+      "bytes": 1264,
+      "digest": "sha256:a7ed3ec1fa030dede56109aab04ba1f5568d8d33248e18db44a76fddf833cab1",
+      "id": 14764819888,
+      "name": "remote-pair-work-publication"
+    }
+  ],
+  "freeze": "3acc08a9bee9a2ed88a6e5c3096ab82a18d8511d",
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 137294379056,
+      "name": "replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 137294434566,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 137294613108,
+      "name": "replay-publication"
+    }
+  ],
+  "local_replay_matches_entire_ci_replay": true,
+  "logged_response_and_audit_match_artifact_bytes": true,
+  "logs_zip_sha256": "174346fc4a85bf616a4d83c325c6823905c4a26a36c819e41cc1d6943073d2f5",
+  "raw_review_response_sha256": "5218995d8638504aaa3e357cf7400ba5bc111677b173a52d2289fc21a5cdec30",
+  "remote_pair_work_certificate_sha256": "ebe789453029b86c0c9190a30ff7657a40fd1d985053a64e3ccf7e2ad6be2a0f",
+  "run": 45050517336,
+  "second_ci_replay_and_review_audit": "PASS"
+}
