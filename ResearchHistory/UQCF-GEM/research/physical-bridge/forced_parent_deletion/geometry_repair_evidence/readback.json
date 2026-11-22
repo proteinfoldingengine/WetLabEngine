@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1424,
+      "digest": "sha256:25ed62679c219274bd73533ad766d48c7837aafbe48e60bcec0c76c79830fdf1",
+      "id": 14762305755,
+      "name": "geometry-repair-publication"
+    },
+    {
+      "bytes": 56190,
+      "digest": "sha256:a26f271c0af362d90b5cd310f290513244c7b7002a5f60db1036b1a3e6e684d1",
+      "id": 14761924099,
+      "name": "geometry-repair-review"
+    },
+    {
+      "bytes": 7852,
+      "digest": "sha256:7d5dc0a84f3976aab9061cda8be41d0a5dc1b688a9592831fdbe89ffe25d14c2",
+      "id": 14761689952,
+      "name": "geometry-repair-replay"
+    }
+  ],
+  "freeze": "74bbeec18f91a60f3bb9a68943764e5a59730072",
+  "geometry_repair_certificate_sha256": "28b4892855331ac627986167f3882304e246b90d882df685e0917a3f6e404aa2",
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 137269469102,
+      "name": "replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 137269564851,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 137269733176,
+      "name": "replay-publication"
+    }
+  ],
+  "local_replay_matches_entire_ci_replay": true,
+  "logged_response_and_audit_match_artifact_bytes": true,
+  "logs_zip_sha256": "bebc3ce6d1f568bd1fc57836c1c8fe520ed9cb140b06c870fb054de6b89f7f83",
+  "raw_review_response_sha256": "43a8e0e5fb10e97fd9ea0b8f60d93f8bcf9c942e535b252d93aa1c1fc14a301b",
+  "run": 45042380003,
+  "second_ci_replay_and_review_audit": "PASS"
+}
