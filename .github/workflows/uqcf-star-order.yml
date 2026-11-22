@@ -1,4 +1,4 @@
-name: Check source events against star receiver order
+name: Check star ordering and validate its independent review
 on:
   push:
     branches: [gpt/v1686-recombination-audit-20261118]
