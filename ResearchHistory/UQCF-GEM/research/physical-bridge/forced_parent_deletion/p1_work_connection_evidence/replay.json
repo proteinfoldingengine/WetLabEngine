@@ -1,0 +1,421 @@
+{
+  "cases": {
+    "A": {
+      "fine_edges": 42,
+      "fine_rejection": "degree_not_four",
+      "fixed_field": [
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "post_acceptance": {
+        "baseline_reason": null,
+        "baseline_status": "IDENTIFIABLE",
+        "complex_reason": null,
+        "flat": true,
+        "gauge_orbit_count": 1,
+        "status": "IDENTIFIABLE",
+        "tangent_rank": 2
+      },
+      "post_edges": 50,
+      "post_owner_grade": "11"
+    },
+    "B": {
+      "fine_edges": 42,
+      "fine_rejection": "degree_not_four",
+      "fixed_field": [
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "post_edges": 42,
+      "post_owner_grade": "10",
+      "post_rejection": "degree_not_four"
+    }
+  },
+  "cut_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      15,
+      20
+    ],
+    [
+      19,
+      24
+    ],
+    [
+      20,
+      21
+    ],
+    [
+      23,
+      24
+    ]
+  ],
+  "loop": {
+    "all_invariants": [
+      [
+        [
+          0,
+          1,
+          5,
+          6
+        ],
+        "1"
+      ],
+      [
+        [
+          0,
+          1,
+          20,
+          21
+        ],
+        "1/16"
+      ],
+      [
+        [
+          0,
+          4,
+          5,
+          9
+        ],
+        "1/16"
+      ],
+      [
+        [
+          0,
+          4,
+          20,
+          24
+        ],
+        "0"
+      ],
+      [
+        [
+          1,
+          2,
+          6,
+          7
+        ],
+        "1/16"
+      ],
+      [
+        [
+          1,
+          2,
+          21,
+          22
+        ],
+        "0"
+      ],
+      [
+        [
+          2,
+          3,
+          7,
+          8
+        ],
+        "1/16"
+      ],
+      [
+        [
+          2,
+          3,
+          22,
+          23
+        ],
+        "1/64"
+      ],
+      [
+        [
+          3,
+          4,
+          8,
+          9
+        ],
+        "1/16"
+      ],
+      [
+        [
+          3,
+          4,
+          23,
+          24
+        ],
+        "1/64"
+      ],
+      [
+        [
+          5,
+          6,
+          10,
+          11
+        ],
+        "1/16"
+      ],
+      [
+        [
+          5,
+          9,
+          10,
+          14
+        ],
+        "0"
+      ],
+      [
+        [
+          6,
+          7,
+          11,
+          12
+        ],
+        "0"
+      ],
+      [
+        [
+          7,
+          8,
+          12,
+          13
+        ],
+        "1/64"
+      ],
+      [
+        [
+          8,
+          9,
+          13,
+          14
+        ],
+        "1/64"
+      ],
+      [
+        [
+          10,
+          11,
+          15,
+          16
+        ],
+        "1/16"
+      ],
+      [
+        [
+          10,
+          14,
+          15,
+          19
+        ],
+        "1/64"
+      ],
+      [
+        [
+          11,
+          12,
+          16,
+          17
+        ],
+        "1/64"
+      ],
+      [
+        [
+          12,
+          13,
+          17,
+          18
+        ],
+        "0"
+      ],
+      [
+        [
+          13,
+          14,
+          18,
+          19
+        ],
+        "0"
+      ],
+      [
+        [
+          15,
+          16,
+          20,
+          21
+        ],
+        "1/16"
+      ],
+      [
+        [
+          15,
+          19,
+          20,
+          24
+        ],
+        "1/64"
+      ],
+      [
+        [
+          16,
+          17,
+          21,
+          22
+        ],
+        "1/64"
+      ],
+      [
+        [
+          17,
+          18,
+          22,
+          23
+        ],
+        "0"
+      ],
+      [
+        [
+          18,
+          19,
+          23,
+          24
+        ],
+        "0"
+      ]
+    ],
+    "constant_zero_count": 25,
+    "face_count": 25,
+    "fixed_face": [
+      0,
+      1,
+      5,
+      6
+    ],
+    "fixed_face_invariant": "1",
+    "nonzero_count": 17
+  },
+  "same_initial_work_and_fixed_retained_field": true,
+  "single_address_controls": {
+    "25_rayed_star": "degree_not_four",
+    "5_rayed_degree_four_star": "edge_cycle_count"
+  },
+  "source_pins": [
+    {
+      "blob": "e95e3e978779164dd91f09b80e3389247e6320c2",
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py",
+      "sha256": "872977a8ef8bd5bd0c3d438ccf2c5309a7fb0600868200a28398aa57b9f4623c"
+    },
+    {
+      "blob": "9b71ce47bbef83132f00270f8a9a19e7721864d6",
+      "path": "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py",
+      "sha256": "3cde04bc56c94f63373a94ca5ff5370e92bd97b9fc3f329849a19c1126dc82e9"
+    },
+    {
+      "blob": "9128c24b695c1b539ac60dc93aeaf0bd4795c57b",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py",
+      "sha256": "4f3114e04ccfc4fdf840d6271748fb80cb339882f730267068778d25fadfedf1"
+    },
+    {
+      "blob": "c67ea42b61321469f7735ce589f2e729b241666a",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/exact_algebra.py",
+      "sha256": "cfdbcc834885689a999b3371ba532ed32ca9340f4f3ce5f171aa2c03c35d3fa0"
+    },
+    {
+      "blob": "8163beba8e52bc2a3a6d0c8cf59dd1257222f65c",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/operational_complex.py",
+      "sha256": "bf2f1b00c6cf78178ae20517edd8dc8a109fc51c664c6496ce2cdd45cb12b555"
+    },
+    {
+      "blob": "9704660b4183f040c84a0734b52702258d1d42da",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/fixtures.py",
+      "sha256": "938654d69a84fe2a87d7886a0df625c68adf4507456299544b1f63805fab6f80"
+    },
+    {
+      "blob": "e90a98d17baa6028f0d50a165f0b9d0046de13a2",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/protocol_types.py",
+      "sha256": "382d06629145b1c8567464cc023644b728eefaf2738cf31de35d8a734260e187"
+    },
+    {
+      "blob": "df552284c16d43bc876340fbc13fe91eb9ee6a00",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/transport.py",
+      "sha256": "aa4dce82fb4fe24224adb8385bf8f8505fb80ad22d642e3ea0b2697329e9865e"
+    },
+    {
+      "blob": "bad3f06b291bb448a903b4f48344a9e54a633f68",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/holonomy.py",
+      "sha256": "a983c09362cad9273c9f1cd42be2e3befbdbb831577a0789dfec8bd95a407ab8"
+    },
+    {
+      "blob": "f857f2cf1cd4c265c193121236af8e441b1f01dc",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/projection.py",
+      "sha256": "49a8112c1ad100580f79f3d6a2c64902fc2d1b0709f74143787f8e8fa1418b3d"
+    },
+    {
+      "blob": "5cd286b014bb44025e16832ee91a6e6665291c8c",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py",
+      "sha256": "604390a0f6f842704a749e58723f65ad4f8f0da00ac61eb543bb1ab8d872dbf4"
+    },
+    {
+      "blob": "30348d71d366a751932ec2d58d18a9148d81ae83",
+      "path": "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/application.py",
+      "sha256": "032ff58fbf55fc105dead31cee86917b2b7461dad5d3ff33210cc2380be0fb66"
+    }
+  ],
+  "terminal_work_equal_after_second_pruning": true
+}

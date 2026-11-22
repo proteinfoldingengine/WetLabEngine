@@ -1,0 +1,35 @@
+{
+  "artifacts": [
+    {
+      "digest": "sha256:fb01d3e5c5d65819dcf8331d014a12adb9cb7f1a4dc9b8dc84ceb31318c8929d",
+      "id": 14736536429,
+      "name": "p1-work-connection-review",
+      "size_in_bytes": 58822
+    },
+    {
+      "digest": "sha256:4a97f7ca91163c3d681a6fe5f65351c3862d88f70967334c5a810229404a1039",
+      "id": 14736461748,
+      "name": "p1-work-connection-replay",
+      "size_in_bytes": 23320
+    },
+    {
+      "digest": "sha256:cdb44250bb98c726447edf9b9a446345cabc37e20bec58e5ee879fae58626064",
+      "id": 14736432096,
+      "name": "p1-work-connection-publication",
+      "size_in_bytes": 3034
+    }
+  ],
+  "jobs": {
+    "argument_review": 137071681654,
+    "replay": 137071609543,
+    "replay_publication": 137071825967
+  },
+  "local_replay_and_originals_equal": true,
+  "logs_sha256": "fa6d706c9423fbaf163a13deb9ff79d99e0ab7c4a8435a8d188498db5ad8d4e4",
+  "publication_replay_equal": true,
+  "raw_response_and_audit_match_log": true,
+  "run_attempt": 1,
+  "source_commit": "a7d21ffa55d77d6141a79b9a291a983ff9ddb149",
+  "workflow_diff_success": true,
+  "workflow_run_id": 44977844379
+}

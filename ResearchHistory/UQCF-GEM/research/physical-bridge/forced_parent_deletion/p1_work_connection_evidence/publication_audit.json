@@ -1,0 +1,27 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "a7d21ffa55d77d6141a79b9a291a983ff9ddb149",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "acebe8dea6a146489668a7943663a5a0d6691edbdf577bbc47abfed47ec27df3",
+  "request_sha256": "fcad4569bf4617ab567808b408c8233bda1d8294aa06db14ce41ad0ab549761f",
+  "response_sha256": "ad3bb74c09b80303747d4c17e7afc4a5f0d382cf0f7028cf4c00914b53148f35",
+  "run_id": "44977844379",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION.md": "c927a82fef384bdbc40bfa679cf2b2f404a98cb1",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_p1_grade_work.py": "b5f5dba8a1998811cc1b879d6bee12c06afe15e7",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_p1_work_connection.py": "b155645e93753dcbf5312d2022b24b6cf3333975",
+    "handoff/application.py": "30348d71d366a751932ec2d58d18a9148d81ae83",
+    "handoff/carriers.py": "5cd286b014bb44025e16832ee91a6e6665291c8c",
+    "handoff/engine.py": "9b71ce47bbef83132f00270f8a9a19e7721864d6",
+    "handoff/holonomy.py": "bad3f06b291bb448a903b4f48344a9e54a633f68",
+    "handoff/lineage.py": "e95e3e978779164dd91f09b80e3389247e6320c2",
+    "handoff/operational_complex.py": "8163beba8e52bc2a3a6d0c8cf59dd1257222f65c",
+    "handoff/replay.json": "3aaa87ad281d7cc6390deffe08cc6a7bd0e062a6",
+    "handoff/response_geometry.py": "9128c24b695c1b539ac60dc93aeaf0bd4795c57b",
+    "handoff/transport.py": "df552284c16d43bc876340fbc13fe91eb9ee6a00"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "a7d21ffa55d77d6141a79b9a291a983ff9ddb149"
+}
