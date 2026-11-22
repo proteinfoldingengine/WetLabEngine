@@ -1,0 +1,134 @@
+name: Test the geometric record between two views of the historical star writer
+on:
+  push:
+    branches: [gpt/v1686-recombination-audit-20261118]
+    paths: ['.github/workflows/uqcf-remote-pair-work.yml']
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  OPENBLAS_NUM_THREADS: '1'
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_remote_pair_work.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/graph_producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/graph_verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_donor_read.py
+      - name: Replay each original order and its matched source intervention
+        run: |
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          mkdir -p handoff
+          python3 "$SCI/check_remote_pair_work.py" handoff > handoff/replay.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: remote-pair-work-replay
+          path: handoff
+          if-no-files-found: error
+
+
+  argument-review:
+    needs: replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/REMOTE_PAIR_WORK.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/REMOTE_PAIR_WORK_CHECK_PLAN.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_remote_pair_work.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_remote_pair_work.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_common_field.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: remote-pair-work-replay
+          path: handoff
+      - name: Request worked checks for each mathematical claim
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_remote_pair_work.py" review review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: remote-pair-work-review
+          path: review_evidence
+          if-no-files-found: error
+
+
+  replay-publication:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_remote_pair_work.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/graph_producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/graph_verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/demos/v16.43-star-fiber-classification/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_donor_read.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/REMOTE_PAIR_WORK.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/REMOTE_PAIR_WORK_CHECK_PLAN.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_remote_pair_work.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_common_field.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: remote-pair-work-replay
+          path: earlier
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: remote-pair-work-review
+          path: review_evidence
+      - name: Verify the exact replay bytes and read back the independent review
+        run: |
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          mkdir -p handoff
+          python3 "$SCI/check_remote_pair_work.py" handoff > handoff/replay.json
+          diff -r earlier handoff
+          python3 "$SCI/review_remote_pair_work.py" audit review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: remote-pair-work-publication
+          path: |
+            handoff/replay.json
+            review_evidence/publication_audit.json
+          if-no-files-found: error
