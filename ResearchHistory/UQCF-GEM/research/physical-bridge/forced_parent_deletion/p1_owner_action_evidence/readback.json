@@ -1,0 +1,36 @@
+{
+  "artifacts": [
+    {
+      "digest": "sha256:e38f1b71ca398ac068c504d1e00c8a9bc05b22bb0c88a1ad6c4fb52f57108605",
+      "id": 14738376493,
+      "name": "p1-owner-action-replay",
+      "size_in_bytes": 31745
+    },
+    {
+      "digest": "sha256:3d7b0bd7158dc8de5c825cfa4aa3e732f7f38e837118c8cff556bf0871ec51d3",
+      "id": 14738064236,
+      "name": "p1-owner-action-publication",
+      "size_in_bytes": 3258
+    },
+    {
+      "digest": "sha256:b3fbbe7423d779d88d5a0abb5db10721ac0c2e1e780a9851ee8529d8c7021c0b",
+      "id": 14737969432,
+      "name": "p1-owner-action-review",
+      "size_in_bytes": 79153
+    }
+  ],
+  "jobs": {
+    "argument-review": 137086141332,
+    "replay": 137086050091,
+    "replay-publication": 137086271757
+  },
+  "local_replay_and_originals_equal": true,
+  "logs_sha256": "4d05053e9af08239f4801aa40c1fbd8434533e430be26b147039170efe35940c",
+  "publication_replay_equal": true,
+  "raw_response_and_audit_match_log": true,
+  "raw_review_sha256": "d567c6b9ef30db0a98da51e3a37bdcb3f0fc9b2ecc51c32bf75ea7cf7e56aa24",
+  "run_attempt": 1,
+  "source_commit": "1a6dd12f41726b96a9461049921d470de40e1707",
+  "workflow_diff_success": true,
+  "workflow_run_id": 44982566980
+}
